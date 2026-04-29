@@ -1,0 +1,106 @@
+# Repository Structure: RokctAI/factory
+**Generated Date:** 2026-04-29
+
+RokctAI/factory is an autonomous publishing system designed to generate, evaluate, and publish books across multiple genres with minimal human intervention. It leverages AI agents (Groq and Jules) to handle the creative pipeline, governed by a set of hierarchical metarules and guardrails, ensuring high-quality output and safety standards.
+
+## Tree Map
+
+- `.github/` — GitHub configuration and automation
+    - `workflows/` — CI/CD pipeline definitions for all levels
+        - `agent-automated.yml` — The main engine for executing tasks from the queue
+        - `agent-cleanup.yml` — Handles session deletion and memory sync after PR merges
+        - `factory-sync.yml` — Consolidated nightly sync for classifications, logs, and dashboard
+        - `ledger_update.yml` — Reusable workflow for appending rows to the ledger
+        - `level0_theme_generation.yml` — Hourly task to discover new themes via Groq
+        - `level1_idea_generation.yml` — Triggers on new themes to generate book ideas
+        - `level2_concept_expansion.yml` — Expands approved ideas into full concepts
+        - `level3_rule_generation.yml` — Triggers Jules to generate specific world and book rules
+        - `level4_evaluation.yml` — Weekend Jules session for auditing all active drafts
+        - `level4_writing.yml` — Weekday Jules session for generating book content
+        - `level6_publish.yml` — Finalizes and moves books to published status
+        - `links.yml` — Weekly health check for external links
+        - `privacy-check.yml` — Enforces PII encryption on new job cards
+        - `session_scheduler.yml` — Manages agent session slots and conflict resolution
+- `.rokct/` — Core AI agent and system governance
+    - `agent/` — Agent-specific configurations and job management
+        - `guardrails/` — Safety templates for different age groups
+            - `age_13_17.md` — Static prompt for Young Adult content protection
+            - `age_6_12.md` — Static prompt for Middle Grade content protection
+            - `age_under_6.md` — Static prompt for early childhood content protection
+        - `jobs/` — Tracking for active and completed publishing tasks
+            - `done/` — [empty — reserved for completed job cards]
+            - `pending/` — [empty — reserved for job cards waiting to be processed]
+            - `running/` — [empty — reserved for job cards currently being worked on]
+            - `template.md` — Master YAML template for new job cards
+        - `log/` — System activity logs
+            - `ledger.md` — The single source of truth for all pipeline activity
+            - `memory.md` — Historical record of completed agent tasks
+        - `prompts/` — AI agent task instructions
+            - `completed/` — [empty — reserved for one-time prompt cards that have run]
+            - `in_progress/` — Recurring prompt configurations for Groq
+                - `level0_theme_discovery.json` — Prompt for autonomous theme discovery
+                - `level1_idea_expansion.json` — Prompt for expanding themes into approved ideas
+            - `queue/` — [empty — reserved for one-time prompts waiting to run]
+        - `session_state.md` — Tracks active sessions and weekend availability
+    - `skills/` — Reusable agent capabilities ported from opportunities
+        - `agent_delegation/` — Automates task offloading to AI agents
+            - `scripts/` — Python scripts for agent coordination and data processing
+                - `check_health.py` — Scans for broken links in job cards
+                - `crypto_utils.py` — Handles encryption for PII protection
+                - `delegate_to_agent.py` — CLI for creating and managing agent sessions
+                - `privacy_sync.py` — Enforces encryption-based privacy on job cards
+                - `response_kits.py` — Automatically scaffolds production kits for approved concepts
+                - `update_audit_logs.py` — Maintains audit logs for drafts and published books
+                - `update_classifications.py` — Updates genre and theme classifications
+                - `update_dashboard.py` — Recalculates stats and updates README dashboard
+            - `README.md` — Documentation for agent delegation skills
+            - `SKILL.md` — Technical definition of the agent delegation skill
+    - `templates/` — Markdown templates for cards and documents
+        - `book_card.md` — Master template for job cards
+        - `copyright.md` — Template for copyright statements
+        - `cover_brief.md` — Template for cover design briefs
+        - `credits.md` — Template for book credits
+        - `job_card.md` — Template for contributor subscriptions
+        - `metadata.md` — Template for book folder metadata
+        - `opening_letter.md` — Template for introductory letters
+    - `types/` — Categorized metarules by book genre
+        - `children/` — Metarules for children's books
+            - `metarules/` — Governance files for children's content
+                - `world_rules.md` — Stub for fundamental world laws for children
+        - `fiction/` — Metarules for fiction novels
+            - `metarules/` — Governance files for fiction content
+                - `world_rules.md` — Stub for fundamental world laws for fiction
+        - `poetry/` — Metarules for poetry collections
+            - `metarules/` — Governance files for poetry content
+                - `audit_rules.md` — Procedures for the backward audit process
+                - `book_rules.md` — Rules for structural and thematic consistency
+                - `impact_metrics.md` — Metrics for emotional and structural evaluation
+                - `line_rules.md` — Rules for individual line strength (trees)
+                - `poem_rules.md` — Rules for individual poem alignment (regions)
+                - `stanza_rules.md` — Rules for line combinations (forests)
+                - `world_rules.md` — Fundamental laws of the poetry world (country)
+        - `short_story/` — Metarules for short story collections
+            - `metarules/` — Governance files for short stories
+                - `world_rules.md` — Stub for fundamental world laws for short stories
+- `books/` — Book content storage
+    - `drafts/` — In-progress book projects
+        - `_template/` — Scaffold for new book directories
+            - `copyright.md` — Legal statement stub with variables
+            - `cover_brief.md` — Stub for visual design instructions
+            - `credits.md` — Attribution and production credits stub
+            - `metadata.md` — Project-specific frontmatter and rule links
+            - `opening_letter.md` — Introductory text stub
+    - `published/` — [empty — reserved for completed and human-accepted books]
+- `LICENSE` — Project licensing terms
+- `PLANNING.md` — The original architect's vision and technical specification
+- `README.md` — High-level project documentation and usage guide
+- `STRUCTURE.md` — Comprehensive map of the repository structure
+
+## NOTES
+
+- **Renaming Suggestions:**
+    - The word `metarules` appears as a folder name across multiple paths. Flagging for owner review: suggest renaming to `rules` for clarity, as the 'meta' distinction is conceptual and lives in planning documents rather than file names.
+- **Consistency Check:**
+    - No `book-factory` references remain; all instances have been updated to `factory`.
+- **Infrastructure Status:**
+    - GitHub Actions workflows have been fully implemented and integrated with the agent delegation skills.

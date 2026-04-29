@@ -1,0 +1,29 @@
+name: Level 4 - Writing Session
+on:
+  schedule:
+    - cron: '0 8 * * 1-5' # 08:00 weekdays
+  workflow_dispatch:
+
+jobs:
+  writing_session:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Trigger Jules Writing Session
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: |
+          python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+            --repo "sources/github/RokctAI/factory" \
+            --prompt "TASK: Daily Writing Session. Focus on the oldest book in production status. Generate the next chapter or poem based on the world rules and metarules. Ensure consistency and emotional resonance." \
+            --title "Daily Writing Session" \
+            --automation-mode "AUTO_CREATE_PR"

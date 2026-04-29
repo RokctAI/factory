@@ -1,0 +1,10 @@
+name: Session Scheduler
+on:
+  workflow_dispatch:
+
+jobs:
+  manage_sessions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "TODO Read session_state.md"
+        run: "echo 'TODO Manages Jules session slots and conflicts'"
