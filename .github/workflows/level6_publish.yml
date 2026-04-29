@@ -1,0 +1,83 @@
+name: Level 6 - Final Publishing
+on:
+  push:
+    paths:
+      - 'books/drafts/**/metadata.md'
+    branches:
+      - main
+
+jobs:
+  publish_book:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Identify Accepted Draft and Publish
+        id: publish_task
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD | grep 'books/drafts/.*/metadata.md' || true)
+
+          if [ -z "$FILES" ]; then
+            echo "ℹ️ No draft metadata changes found."
+            exit 0
+          fi
+
+          for FILE in $FILES; do
+            if [ ! -f "$FILE" ]; then continue; fi
+
+            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+            ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+            TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
+            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
+
+            if [ "$STATUS" != "accepted" ]; then continue; fi
+
+            BOOK_DIR=$(dirname "$FILE")
+            BOOK_NAME=$(basename "$BOOK_DIR")
+
+            echo "🚀 Publishing book: $BOOK_NAME..."
+
+            # Simulate Publishing Logic
+            mkdir -p "books/published/$BOOK_NAME"
+            cp -r "$BOOK_DIR"/* "books/published/$BOOK_NAME/"
+
+            # Update status in the published folder
+            sed -i 's/status: accepted/status: published/' "books/published/$BOOK_NAME/metadata.md"
+
+            # Cleanup draft
+            rm -rf "$BOOK_DIR"
+
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add books/
+            git commit -m "chore: publish book $BOOK_NAME [skip ci]"
+            git push origin main
+
+            echo "card_id=$ID" >> "$GITHUB_OUTPUT"
+            echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
+            echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
+          done
+
+  update_ledger:
+    needs: publish_book
+    if: needs.publish_book.outputs.card_id != ''
+    uses: ./.github/workflows/ledger_update.yml
+    with:
+      id: ${{ needs.publish_book.outputs.card_id }}
+      type: ${{ needs.publish_book.outputs.card_type }}
+      theme: ${{ needs.publish_book.outputs.card_theme }}
+      status: "published"
+      agent: "human"
+      session: "—"
+    secrets: inherit

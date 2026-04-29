@@ -1,0 +1,29 @@
+name: Level 4 - Evaluation Session
+on:
+  schedule:
+    - cron: '0 8 * * 6,0' # Weekends
+  workflow_dispatch:
+
+jobs:
+  evaluation_session:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Trigger Jules Evaluation Session
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: |
+          python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+            --repo "sources/github/RokctAI/factory" \
+            --prompt "TASK: Weekend Evaluation Session. Audit all books in production or draft status. Perform a backward audit (Line -> Stanza -> Poem -> Book -> World). Score each element (0-10) and suggest improvements where score < 8." \
+            --title "Weekend Evaluation Session" \
+            --automation-mode "AUTO_CREATE_PR"

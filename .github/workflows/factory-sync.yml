@@ -1,0 +1,46 @@
+name: "Factory: System Sync"
+on:
+  schedule:
+    - cron: '0 0 * * *' # Daily at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv pycryptodome pandas
+
+      - name: Update Classifications
+        run: python .rokct/skills/agent_delegation/scripts/update_classifications.py
+
+      - name: Update Job Audit Logs
+        run: python .rokct/skills/agent_delegation/scripts/update_audit_logs.py
+
+      - name: Update Dashboard
+        run: python .rokct/skills/agent_delegation/scripts/update_dashboard.py
+
+      - name: Privacy Sync
+        env:
+          EMAIL_ENCRYPTION_KEY: ${{ secrets.EMAIL_ENCRYPTION_KEY }}
+        run: python .rokct/skills/agent_delegation/scripts/privacy_sync.py
+
+      - name: Commit Updates
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No updates to sync."
+          else
+            git commit -m "chore: nightly factory system sync [skip ci]"
+            git push origin main
+          fi

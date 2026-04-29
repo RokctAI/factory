@@ -1,0 +1,77 @@
+name: Level 2 - Concept Expansion
+on:
+  push:
+    paths:
+      - '.rokct/agent/jobs/pending/*.md'
+    branches:
+      - main
+
+jobs:
+  expand_concept:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Identify Approved Idea and Delegate
+        id: delegate_task
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template.md' || true)
+
+          if [ -z "$FILES" ]; then
+            echo "ℹ️ No modified job cards found."
+            exit 0
+          fi
+
+          for FILE in $FILES; do
+            if [ ! -f "$FILE" ]; then continue; fi
+
+            ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+            TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
+            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
+            IDEA_STATUS=$(grep '^idea_status:' "$FILE" | cut -d':' -f2 | xargs)
+            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+
+            if [ "$IDEA_STATUS" != "approved" ]; then continue; fi
+            if [ "$STATUS" != "pending_approval" ]; then continue; fi
+
+            echo "🚀 Delegating Concept Expansion for $ID..."
+
+            RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              --repo "sources/github/RokctAI/factory" \
+              --prompt "TASK: Develop a full concept for the book '$ID' (Type: $TYPE, Theme: $THEME). Include angle, emotional world, target feeling, and structural approach. Reference metarules for $TYPE. Update the card $FILE and set status to 'concept_expanding'." \
+              --title "Level 2: Concept Expansion - $ID" \
+              --automation-mode "AUTO_CREATE_PR")
+
+            SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
+
+            echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
+            echo "card_id=$ID" >> "$GITHUB_OUTPUT"
+            echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
+            echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
+          done
+
+  update_ledger:
+    needs: expand_concept
+    if: needs.expand_concept.outputs.session_id != ''
+    uses: ./.github/workflows/ledger_update.yml
+    with:
+      id: ${{ needs.expand_concept.outputs.card_id }}
+      type: ${{ needs.expand_concept.outputs.card_type }}
+      theme: ${{ needs.expand_concept.outputs.card_theme }}
+      status: "concept_expanding"
+      agent: "groq"
+      session: ${{ needs.expand_concept.outputs.session_id }}
+    secrets: inherit

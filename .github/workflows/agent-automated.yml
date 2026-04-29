@@ -1,0 +1,113 @@
+# Copyright (c) 2026 RokctAI
+name: "Agent: Automated Delegation"
+
+on:
+  push:
+    paths:
+      - '.rokct/agent/queue/*.json'
+      - '.rokct/agent/prompts/in_progress/*.json'
+    branches:
+      - main
+  schedule:
+    - cron: '0 20 * * *' # Daily at 20:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: agent-delegation
+  cancel-in-progress: false
+
+permissions: write-all
+
+jobs:
+  delegate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Process Queue
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: |
+          # 1. Gather all potential task files
+          FILES=$(ls .rokct/agent/queue/*.json .rokct/agent/prompts/in_progress/*.json 2>/dev/null || true)
+
+          if [ -z "$FILES" ]; then
+            echo "ℹ️ No task files found to process."
+            exit 0
+          fi
+
+          CURRENT_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          HAS_UPDATES=false
+
+          for FILE in $FILES; do
+            if [ ! -f "$FILE" ]; then continue; fi
+
+            echo "📂 Analyzing: $FILE"
+
+            # Check for scheduled_at
+            SCHEDULED_AT=$(jq -r '.scheduled_at // empty' "$FILE")
+            if [ -n "$SCHEDULED_AT" ] && [[ "$CURRENT_TIME" < "$SCHEDULED_AT" ]]; then
+              echo "⏳ Task is scheduled for $SCHEDULED_AT. Skipping (Current: $CURRENT_TIME)."
+              continue
+            fi
+
+            IMMEDIATE=$(jq -r '.immediate // "true"' "$FILE")
+            if [ -z "$SCHEDULED_AT" ] && [ "$IMMEDIATE" == "false" ]; then
+               echo "🕒 Task marked as immediate:false with no schedule. Skipping until manually scheduled or triggered."
+               continue
+            fi
+
+            REPO=$(jq -r '.repo' "$FILE")
+            PROMPT=$(jq -r '.prompt' "$FILE")
+            BRANCH=$(jq -r '.branch // "main"' "$FILE")
+            TITLE=$(jq -r '.title // "AI-Automation"' "$FILE")
+            AUTOMATION_MODE=$(jq -r '.automation_mode // "AUTO_CREATE_PR"' "$FILE")
+            RECURRENCE=$(jq -r '.recurrence // "Once"' "$FILE")
+
+            echo "🚀 Delegating $TITLE for $REPO..."
+
+            if python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              --repo "sources/github/$REPO" \
+              --prompt "$PROMPT" \
+              --branch "$BRANCH" \
+              --title "$TITLE" \
+              --automation-mode "$AUTOMATION_MODE"; then
+
+              echo "✅ Delegation successful."
+
+              if [ "$RECURRENCE" == "Daily" ]; then
+                NEXT_RUN=$(date -u -d "tomorrow 20:00" +"%Y-%m-%dT%H:%M:%SZ")
+                jq --arg next "$NEXT_RUN" '.scheduled_at = $next' "$FILE" > tmp.json && mv tmp.json "$FILE"
+                HAS_UPDATES=true
+              elif [ "$RECURRENCE" == "Weekly" ]; then
+                NEXT_RUN=$(date -u -d "next week 20:00" +"%Y-%m-%dT%H:%M:%SZ")
+                jq --arg next "$NEXT_RUN" '.scheduled_at = $next' "$FILE" > tmp.json && mv tmp.json "$FILE"
+                HAS_UPDATES=true
+              elif [ "$RECURRENCE" == "Once" ]; then
+                mkdir -p .rokct/agent/prompts/completed
+                mv "$FILE" ".rokct/agent/prompts/completed/$(basename "$FILE")"
+                HAS_UPDATES=true
+              fi
+            else
+              echo "❌ Delegation failed."
+            fi
+          done
+
+          if [ "$HAS_UPDATES" == "true" ]; then
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add .
+            git commit -m "🤖 [CI] Update Agent Task Queue [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi

@@ -1,0 +1,53 @@
+name: "Agent: Cleanup & Memory"
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract Session ID
+        id: extract_id
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+        run: |
+          if [[ "$BRANCH_NAME" =~ ([0-9]{18,20}) ]]; then
+            SESSION_ID="${BASH_REMATCH[1]}"
+            echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
+            echo "✅ Found Agent Session ID: $SESSION_ID"
+          else
+            echo "ℹ️ No Agent Session ID in branch: $BRANCH_NAME"
+            exit 0
+          fi
+
+      - name: Delete Session
+        if: steps.extract_id.outputs.session_id != ''
+        env:
+          AGENT_API_KEY: ${{ secrets.JULES_API_KEY }}
+          SESSION_ID: ${{ steps.extract_id.outputs.session_id }}
+        run: |
+          python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py delete \
+            --id "$SESSION_ID"
+
+      - name: Update Agent Memory
+        if: steps.extract_id.outputs.session_id != ''
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          DATE=$(date +'%Y-%m-%d')
+          mkdir -p .rokct/agent/log
+          echo "* **[$DATE]** - Completed Agent Task: $PR_TITLE ($PR_URL)" >> .rokct/agent/log/memory.md
+
+      - name: Commit Knowledge Updates
+        if: steps.extract_id.outputs.session_id != ''
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .rokct/agent/log/memory.md
+          git commit -m "🤖 chore: sync agent memory after PR merge [skip ci]" || echo "No changes to commit"
+          git push
