@@ -1,8 +1,8 @@
 ---
-weekend_block: open
-weekend_session_id:
-weekend_started:
-weekend_finished:
 active_sessions: 0
-last_updated:
+last_updated: '2026-04-30 09:33:01'
+weekend_block: open
+weekend_finished: null
+weekend_session_id: null
+weekend_started: null
 ---
