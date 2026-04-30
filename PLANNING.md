@@ -432,3 +432,39 @@ Generates reel.json inside books/published/{book_name}/visuals/
 The reel brief is consumed by an external video generation system (not yet implemented).
 The hook_text is the line or lines extracted from the book that will appear on screen.
 The hook must work in under 5 seconds. It is one tree from the forest, shown to the world.
+
+## Bible Series Stream (Added alongside book factory)
+
+The factory supports a second content stream for long-form research series.
+Content lives in bible/ not books/.
+Same pipeline and agent infrastructure.
+Different metarules under .rokct/types/series_episode/
+
+First series: Forbidden Questions
+Location: bible/forbidden_questions/
+Status: 15 episodes complete, characters and deep-dives to build.
+
+To generate a new episode:
+  theme: [topic]
+  type: series_episode
+  series: forbidden_questions
+
+The factory reads the series metarules, the master thread, and the existing episodes as style reference before generating.
+
+## Bible Series Stream (Added alongside book factory)
+
+The factory supports a second content stream for long-form research series.
+Content lives in bible/ not books/.
+Same pipeline and agent infrastructure.
+Different metarules under .rokct/types/series_episode/
+
+First series: Forbidden Questions
+Location: bible/forbidden_questions/
+Status: 15 episodes complete, characters and deep-dives to build.
+
+To generate a new episode:
+  theme: [topic]
+  type: series_episode
+  series: forbidden_questions
+
+The factory reads the series metarules, the master thread, and the existing episodes as style reference before generating.
