@@ -3,8 +3,22 @@
 
 import os
 import re
-import pandas as pd
 from pathlib import Path
+import difflib
+
+def is_duplicate_theme(new_theme, existing_themes_path, threshold=0.8):
+    if not os.path.exists(existing_themes_path):
+        return False, ""
+
+    with open(existing_themes_path, 'r', encoding='utf-8') as f:
+        existing_themes = [line.strip() for line in f.readlines() if line.strip()]
+
+    for existing in existing_themes:
+        similarity = difflib.SequenceMatcher(None, new_theme.lower(), existing.lower()).ratio()
+        if similarity >= threshold:
+            return True, existing
+
+    return False, ""
 
 # Ported from opportunities: Adapt for 'factory' book jobs context
 def update_classifications():

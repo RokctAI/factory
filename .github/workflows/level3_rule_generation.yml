@@ -10,6 +10,12 @@ jobs:
   generate_rules:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    outputs:
+      session_id: ${{ steps.delegate_task.outputs.session_id }}
+      card_id: ${{ steps.delegate_task.outputs.card_id }}
+      card_type: ${{ steps.delegate_task.outputs.card_type }}
+      card_theme: ${{ steps.delegate_task.outputs.card_theme }}
+      card_file: ${{ steps.delegate_task.outputs.card_file }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
-      - name: Identify Approved Concept and Delegate
+      - name: Identify Approved Concept and Claim Lock
         id: delegate_task
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
@@ -32,36 +38,79 @@ jobs:
 
           if [ -z "$FILES" ]; then
             echo "ℹ️ No modified job cards found."
-            exit 0
+          else
+            for FILE in $FILES; do
+              if [ ! -f "$FILE" ]; then continue; fi
+
+              ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+              TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
+              THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
+              CONCEPT_STATUS=$(grep '^concept_status:' "$FILE" | cut -d':' -f2 | xargs)
+              STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+
+              if [ "$CONCEPT_STATUS" != "approved" ]; then continue; fi
+              if [ "$STATUS" != "concept_generated" ]; then continue; fi
+
+              # Claim Job Lock
+              if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "jules" --session "JS-RULES-$GITHUB_RUN_ID"; then
+                echo "Card $FILE is locked by another session. Skipping."
+                continue
+              fi
+
+              echo "🚀 Delegating Rule Generation for $ID..."
+
+              RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                --repo "sources/github/RokctAI/factory" \
+                --prompt "TASK: Generate hierarchical rules for the book '$ID' (Type: $TYPE, Theme: $THEME). Generate: World rules -> Book rules -> Poem/Chapter rules -> Stanza/Scene rules -> Line rules. Reference metarules for $TYPE. Update the card $FILE and set status to 'rules_generating'." \
+                --title "Level 3: Rule Generation - $ID" \
+                --automation-mode "AUTO_CREATE_PR")
+
+              SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
+
+              echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
+              echo "card_id=$ID" >> "$GITHUB_OUTPUT"
+              echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
+              echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
+              echo "card_file=$FILE" >> "$GITHUB_OUTPUT"
+              break
+            done
           fi
 
-          for FILE in $FILES; do
-            if [ ! -f "$FILE" ]; then continue; fi
+      - name: Release Job Lock
+        if: success() && steps.delegate_task.outputs.card_file != ''
+        run: |
+          python .rokct/skills/agent_delegation/scripts/lock_job.py \
+            --file "${{ steps.delegate_task.outputs.card_file }}" \
+            --action release
 
-            ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
-            TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
-            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
-            CONCEPT_STATUS=$(grep '^concept_status:' "$FILE" | cut -d':' -f2 | xargs)
-            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+      - name: Handle Failure
+        if: failure() && steps.delegate_task.outputs.card_file != ''
+        run: |
+          CARD_FILE="${{ steps.delegate_task.outputs.card_file }}"
+          ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+          NEW_ATTEMPTS=$((ATTEMPTS + 1))
+          sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$CARD_FILE"
+          sed -i "s/^last_error: .*/last_error: ${{ github.run_id }} failed at $(date -u)/" "$CARD_FILE"
 
-            if [ "$CONCEPT_STATUS" != "approved" ]; then continue; fi
-            if [ "$STATUS" != "concept_generated" ]; then continue; fi
+          echo "[$(date -u +'%Y-%m-%d %H:%M:%S')] ${{ steps.delegate_task.outputs.card_id }} | Level 3 | ${{ github.run_id }} | Agent call failed" >> .rokct/agent/log/errors.log
 
-            echo "🚀 Delegating Rule Generation for $ID..."
+          if [ "$NEW_ATTEMPTS" -ge 3 ]; then
+            echo "3 attempts failed. Marking as stalled."
+            python .rokct/skills/agent_delegation/scripts/update_status.py \
+              --file "$CARD_FILE" \
+              --status stalled
+          else
+            echo "Attempt $NEW_ATTEMPTS failed. Will retry on next scheduled run."
+            python .rokct/skills/agent_delegation/scripts/lock_job.py \
+              --file "$CARD_FILE" \
+              --action release
+          fi
 
-            RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
-              --repo "sources/github/RokctAI/factory" \
-              --prompt "TASK: Generate hierarchical rules for the book '$ID' (Type: $TYPE, Theme: $THEME). Generate: World rules -> Book rules -> Poem/Chapter rules -> Stanza/Scene rules -> Line rules. Reference metarules for $TYPE. Update the card $FILE and set status to 'rules_generating'." \
-              --title "Level 3: Rule Generation - $ID" \
-              --automation-mode "AUTO_CREATE_PR")
-
-            SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
-
-            echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
-            echo "card_id=$ID" >> "$GITHUB_OUTPUT"
-            echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
-            echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
-          done
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$CARD_FILE" .rokct/agent/log/errors.log
+          git commit -m "fail: recorded error for ${{ steps.delegate_task.outputs.card_id }} [skip ci]"
+          git push origin main
 
   update_ledger:
     needs: generate_rules
