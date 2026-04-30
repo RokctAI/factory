@@ -16,7 +16,7 @@ Long-form research series exploring the hidden architecture of scripture.
 
 ---
 
-## Shared Infrastructure
+## Shared Infrastructure (Highlights)
 
 ### .rokct/
 - **agent/**: Prompts, jobs, ledger, and guardrails.
