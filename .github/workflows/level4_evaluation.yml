@@ -18,12 +18,78 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
+      - name: Identify Drafts and Claim Locks
+        id: claim_locks
+        run: |
+          # Audit all books in production or draft status
+          FILES=$(find books/drafts -name "metadata.md" | sort)
+          LOCKED_FILES=""
+          for FILE in $FILES; do
+            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+            if [ "$STATUS" == "production" ] || [ "$STATUS" == "writing" ] || [ "$STATUS" == "evaluating" ]; then
+              # Check iterations first
+              ITERATIONS=$(grep '^loop_iterations:' "$FILE" | cut -d':' -f2 | xargs)
+              MAX=$(grep '^max_iterations:' "$FILE" | cut -d':' -f2 | xargs)
+              if [ "$ITERATIONS" -ge "$MAX" ]; then
+                 echo "Max iterations reached for $FILE. Flagging as stalled."
+                 python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status stalled
+                 continue
+              fi
+
+              if python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "jules" --session "JS-EVAL-$GITHUB_RUN_ID"; then
+                LOCKED_FILES="$LOCKED_FILES $FILE"
+              fi
+            fi
+          done
+          if [ -n "$LOCKED_FILES" ]; then
+            echo "card_files=$LOCKED_FILES" >> "$GITHUB_OUTPUT"
+            echo "session_id=JS-EVAL-$GITHUB_RUN_ID" >> "$GITHUB_OUTPUT"
+          else
+            echo "No available books to lock."
+          fi
+
       - name: Trigger Jules Evaluation Session
+        if: steps.claim_locks.outputs.card_files != ''
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         run: |
           python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
             --repo "sources/github/RokctAI/factory" \
-            --prompt "TASK: Weekend Evaluation Session. Audit all books in production or draft status. Perform a backward audit (Line -> Stanza -> Poem -> Book -> World). Score each element (0-10) and suggest improvements where score < 8." \
+            --prompt "TASK: Weekend Evaluation Session. Audit these files: ${{ steps.claim_locks.outputs.card_files }}. Perform a backward audit (Line -> Stanza -> Poem -> Book -> World). Score each element (0-10) and suggest improvements where score < 8." \
             --title "Weekend Evaluation Session" \
             --automation-mode "AUTO_CREATE_PR"
+
+      - name: Increment Loop Counter
+        if: success() && steps.claim_locks.outputs.card_files != ''
+        run: |
+          for FILE in ${{ steps.claim_locks.outputs.card_files }}; do
+            CURRENT=$(grep '^loop_iterations:' "$FILE" | cut -d':' -f2 | xargs)
+            NEW=$((CURRENT + 1))
+            sed -i "s/^loop_iterations: .*/loop_iterations: $NEW/" "$FILE"
+          done
+
+      - name: Handle Failure
+        if: failure() && steps.claim_locks.outputs.card_files != ''
+        run: |
+          for FILE in ${{ steps.claim_locks.outputs.card_files }}; do
+            ATTEMPTS=$(grep '^attempts:' "$FILE" | cut -d':' -f2 | xargs)
+            NEW_ATTEMPTS=$((ATTEMPTS + 1))
+            sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$FILE"
+            sed -i "s/^last_error: .*/last_error: ${{ github.run_id }} failed at $(date -u)/" "$FILE"
+
+            if [ "$NEW_ATTEMPTS" -ge 3 ]; then
+              echo "3 attempts failed for $FILE. Marking as stalled."
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status stalled
+            else
+              python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+            fi
+          done
+
+      - name: Release Job Locks
+        if: always() && steps.claim_locks.outputs.card_files != ''
+        run: |
+          for FILE in ${{ steps.claim_locks.outputs.card_files }}; do
+            if [ -f "$FILE" ]; then
+              python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+            fi
+          done

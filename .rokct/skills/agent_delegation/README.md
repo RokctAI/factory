@@ -1,6 +1,6 @@
 # Agent Delegation Skills (Factory Context)
 
-This directory contains essential automation skills adapted from the opportunities registry to serve the autonomous book factory.
+This directory contains essential automation skills adapted from the opportunities registry to serve the autonomous factory.
 
 ## Core Skills
 

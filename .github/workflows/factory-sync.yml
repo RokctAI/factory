@@ -17,7 +17,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install requests python-dotenv pycryptodome pandas
+        run: pip install requests python-dotenv pycryptodome
 
       - name: Update Classifications
         run: python .rokct/skills/agent_delegation/scripts/update_classifications.py

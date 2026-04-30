@@ -30,7 +30,7 @@ Use the provided Python script to create a session:
 
 ```bash
 python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
-  --repo "sources/github/RokctAI/Spazafy" \
+  --repo "sources/github/RokctAI/factory" \
   --prompt "Your detailed task description here" \
   --title "Feature/Task Name"
 ```

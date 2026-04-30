@@ -18,12 +18,87 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
+      - name: Identify Book and Claim Lock
+        id: claim_lock
+        run: |
+          # Identify oldest book in production
+          FILES=$(find books/drafts -name "metadata.md" | sort)
+          FOUND=false
+          for FILE in $FILES; do
+            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+            if [ "$STATUS" == "production" ] || [ "$STATUS" == "writing" ]; then
+              if python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "jules" --session "JS-WRITING-$GITHUB_RUN_ID"; then
+                echo "card_file=$FILE" >> "$GITHUB_OUTPUT"
+                echo "session_id=JS-WRITING-$GITHUB_RUN_ID" >> "$GITHUB_OUTPUT"
+                FOUND=true
+                break
+              fi
+            fi
+          done
+          if [ "$FOUND" = false ]; then
+            echo "No available books to lock."
+          fi
+
+      - name: Check Loop Safety
+        if: steps.claim_lock.outputs.card_file != ''
+        run: |
+          CARD_FILE="${{ steps.claim_lock.outputs.card_file }}"
+          ITERATIONS=$(grep '^loop_iterations:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+          MAX=$(grep '^max_iterations:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+          if [ "$ITERATIONS" -ge "$MAX" ]; then
+            echo "Max iterations reached for $CARD_FILE. Flagging as stalled."
+            python .rokct/skills/agent_delegation/scripts/update_status.py \
+              --file "$CARD_FILE" \
+              --status stalled
+            echo "stalled=true" >> "$GITHUB_OUTPUT"
+          fi
+        id: safety_check
+
       - name: Trigger Jules Writing Session
+        if: steps.claim_lock.outputs.card_file != '' && steps.safety_check.outputs.stalled != 'true'
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         run: |
           python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
             --repo "sources/github/RokctAI/factory" \
-            --prompt "TASK: Daily Writing Session. Focus on the oldest book in production status. Generate the next chapter or poem based on the world rules and metarules. Ensure consistency and emotional resonance." \
+            --prompt "TASK: Daily Writing Session for ${{ steps.claim_lock.outputs.card_file }}. Generate the next chapter or poem based on the world rules and metarules. Ensure consistency and emotional resonance." \
             --title "Daily Writing Session" \
             --automation-mode "AUTO_CREATE_PR"
+
+      - name: Increment Loop Counter
+        if: success() && steps.claim_lock.outputs.card_file != '' && steps.safety_check.outputs.stalled != 'true'
+        run: |
+          CARD_FILE="${{ steps.claim_lock.outputs.card_file }}"
+          CURRENT=$(grep '^loop_iterations:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+          NEW=$((CURRENT + 1))
+          sed -i "s/^loop_iterations: .*/loop_iterations: $NEW/" "$CARD_FILE"
+
+      - name: Handle Failure
+        if: failure() && steps.claim_lock.outputs.card_file != ''
+        run: |
+          CARD_FILE="${{ steps.claim_lock.outputs.card_file }}"
+          ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+          NEW_ATTEMPTS=$((ATTEMPTS + 1))
+          sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$CARD_FILE"
+          sed -i "s/^last_error: .*/last_error: ${{ github.run_id }} failed at $(date -u)/" "$CARD_FILE"
+
+          if [ "$NEW_ATTEMPTS" -ge 3 ]; then
+            echo "3 attempts failed. Marking as stalled."
+            python .rokct/skills/agent_delegation/scripts/update_status.py \
+              --file "$CARD_FILE" \
+              --status stalled
+          else
+            echo "Attempt $NEW_ATTEMPTS failed. Will retry on next scheduled run."
+            python .rokct/skills/agent_delegation/scripts/lock_job.py \
+              --file "$CARD_FILE" \
+              --action release
+          fi
+
+      - name: Release Job Lock
+        if: always() && steps.claim_lock.outputs.card_file != ''
+        run: |
+          if [ -f "${{ steps.claim_lock.outputs.card_file }}" ]; then
+            python .rokct/skills/agent_delegation/scripts/lock_job.py \
+              --file "${{ steps.claim_lock.outputs.card_file }}" \
+              --action release
+          fi

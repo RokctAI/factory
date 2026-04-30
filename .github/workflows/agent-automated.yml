@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -37,8 +37,8 @@ jobs:
       - name: Process Queue
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          # 1. Gather all potential task files
           FILES=$(ls .rokct/agent/queue/*.json .rokct/agent/prompts/in_progress/*.json 2>/dev/null || true)
 
           if [ -z "$FILES" ]; then
@@ -48,49 +48,86 @@ jobs:
 
           CURRENT_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           HAS_UPDATES=false
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M")
 
           for FILE in $FILES; do
             if [ ! -f "$FILE" ]; then continue; fi
 
             echo "📂 Analyzing: $FILE"
 
-            # Check for scheduled_at
             SCHEDULED_AT=$(jq -r '.scheduled_at // empty' "$FILE")
             if [ -n "$SCHEDULED_AT" ] && [[ "$CURRENT_TIME" < "$SCHEDULED_AT" ]]; then
-              echo "⏳ Task is scheduled for $SCHEDULED_AT. Skipping (Current: $CURRENT_TIME)."
+              echo "⏳ Task is scheduled for $SCHEDULED_AT. Skipping."
               continue
             fi
 
             IMMEDIATE=$(jq -r '.immediate // "true"' "$FILE")
             if [ -z "$SCHEDULED_AT" ] && [ "$IMMEDIATE" == "false" ]; then
-               echo "🕒 Task marked as immediate:false with no schedule. Skipping until manually scheduled or triggered."
+               echo "🕒 Task marked as immediate:false. Skipping."
                continue
             fi
 
+            # Claim Lock
+            CARD_FILE=$(jq -r '.card_file // empty' "$FILE")
+            if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
+              if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$CARD_FILE" --action claim --agent "jules" --session "AUTO-$GITHUB_RUN_ID"; then
+                 echo "Card $CARD_FILE is locked. Skipping task $FILE."
+                 continue
+              fi
+            fi
+
+            AGENT=$(jq -r '.agent // "jules"' "$FILE")
             REPO=$(jq -r '.repo' "$FILE")
             PROMPT=$(jq -r '.prompt' "$FILE")
-            BRANCH=$(jq -r '.branch // "main"' "$FILE")
             TITLE=$(jq -r '.title // "AI-Automation"' "$FILE")
-            AUTOMATION_MODE=$(jq -r '.automation_mode // "AUTO_CREATE_PR"' "$FILE")
-            RECURRENCE=$(jq -r '.recurrence // "Once"' "$FILE")
+            LEVEL=$(jq -r '.level // 0' "$FILE")
 
-            echo "🚀 Delegating $TITLE for $REPO..."
+            SUCCESS=false
+            SESSION_ID="—"
+            if [ "$AGENT" == "groq" ]; then
+              echo "🚀 Calling Groq for $TITLE..."
+              RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py --prompt "$PROMPT")
 
-            if python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
-              --repo "sources/github/$REPO" \
-              --prompt "$PROMPT" \
-              --branch "$BRANCH" \
-              --title "$TITLE" \
-              --automation-mode "$AUTOMATION_MODE"; then
+              if [ $? -eq 0 ] && [ -n "$RESPONSE" ]; then
+                echo "✅ Groq responded. Handling output..."
+                python .rokct/skills/agent_delegation/scripts/handle_groq_output.py --level "$LEVEL" --content "$RESPONSE"
+                SUCCESS=true
+                HAS_UPDATES=true
+              else
+                echo "❌ Groq call failed."
+              fi
+            else
+              echo "🚀 Delegating to Jules for $TITLE..."
+              RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                --repo "sources/github/$REPO" \
+                --prompt "$PROMPT" \
+                --title "$TITLE")
+              if [ $? -eq 0 ]; then
+                echo "✅ Jules delegation successful."
+                SESSION_ID=$(echo "$RESULT" | jq -r '.id // "—"')
+                SUCCESS=true
+                HAS_UPDATES=true
+              else
+                echo "❌ Jules delegation failed."
+              fi
+            fi
 
-              echo "✅ Delegation successful."
+            if [ "$SUCCESS" = true ]; then
+              # Update Ledger Manually (Multi-file processing)
+              if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
+                 ID=$(grep '^id:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+                 TYPE=$(grep '^type:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+                 THEME=$(grep '^theme:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+                 STATUS=$(grep '^status:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+                 echo "| $ID | $TYPE | $THEME | $STATUS | $AGENT | $SESSION_ID | — | $TIMESTAMP |" >> .rokct/agent/log/ledger.md
 
+                 python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$CARD_FILE" --action release
+              fi
+
+              # Handle recurrence/cleanup
+              RECURRENCE=$(jq -r '.recurrence // "Once"' "$FILE")
               if [ "$RECURRENCE" == "Daily" ]; then
                 NEXT_RUN=$(date -u -d "tomorrow 20:00" +"%Y-%m-%dT%H:%M:%SZ")
-                jq --arg next "$NEXT_RUN" '.scheduled_at = $next' "$FILE" > tmp.json && mv tmp.json "$FILE"
-                HAS_UPDATES=true
-              elif [ "$RECURRENCE" == "Weekly" ]; then
-                NEXT_RUN=$(date -u -d "next week 20:00" +"%Y-%m-%dT%H:%M:%SZ")
                 jq --arg next "$NEXT_RUN" '.scheduled_at = $next' "$FILE" > tmp.json && mv tmp.json "$FILE"
                 HAS_UPDATES=true
               elif [ "$RECURRENCE" == "Once" ]; then
@@ -99,7 +136,22 @@ jobs:
                 HAS_UPDATES=true
               fi
             else
-              echo "❌ Delegation failed."
+              # Handle Failure for Automated Delegation
+              if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
+                 ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" | cut -d':' -f2 | xargs)
+                 NEW_ATTEMPTS=$((ATTEMPTS + 1))
+                 sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$CARD_FILE"
+                 sed -i "s/^last_error: .*/last_error: ${{ github.run_id }} failed at $(date -u)/" "$CARD_FILE"
+
+                 echo "[$TIMESTAMP] Automated | $TITLE | ${{ github.run_id }} | Failure" >> .rokct/agent/log/errors.log
+
+                 if [ "$NEW_ATTEMPTS" -ge 3 ]; then
+                   python .rokct/skills/agent_delegation/scripts/update_status.py --file "$CARD_FILE" --status stalled
+                 else
+                   python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$CARD_FILE" --action release
+                 fi
+                 HAS_UPDATES=true
+              fi
             fi
           done
 
@@ -107,7 +159,6 @@ jobs:
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
             git add .
-            git commit -m "🤖 [CI] Update Agent Task Queue [skip ci]"
-            git pull --rebase origin main
+            git commit -m "🤖 [CI] Agent Automation Updates & Ledger [skip ci]" || echo "No changes"
             git push origin main
           fi

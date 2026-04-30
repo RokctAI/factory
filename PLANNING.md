@@ -1,4 +1,4 @@
-# RokctAI Book Factory — Planning Document
+# RokctAI Factory — Planning Document
 > For: AI Agent tasked with building this system
 > Based on: RokctAI/opportunities repo patterns
 > Author: System Architect
@@ -392,3 +392,12 @@ One input file. Four different planets.
 8. GitHub Actions workflows — one per pipeline level
 9. Session state file — Jules weekend availability
 10. Book folder templates — metadata, credits, copyright stubs
+## Reliability Layer (Added post-audit)
+
+Six fixes implemented after external audit:
+1. Job locking — lock_job.py prevents race conditions
+2. Single state authority — card is truth, ledger is log
+3. State machine enforcement — update_status.py validates all transitions
+4. Generation loop exit — max_iterations prevents infinite loops
+5. Failure states — stalled status and retry logic with 3 attempt limit
+6. Deduplication — similarity check before Level 0 creates theme cards
