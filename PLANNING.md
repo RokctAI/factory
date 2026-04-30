@@ -401,3 +401,22 @@ Six fixes implemented after external audit:
 4. Generation loop exit — max_iterations prevents infinite loops
 5. Failure states — stalled status and retry logic with 3 attempt limit
 6. Deduplication — similarity check before Level 0 creates theme cards
+
+## Visual Layer (Added post-infrastructure)
+
+Triggered after human accepts a draft and sets visual preferences in metadata.md.
+
+Three fields control visual generation:
+  visuals_cover: true|false
+  visuals_illustrations: true|false
+  visuals_illustration_scope: none|per_poem|per_chapter
+
+Four stage pipeline:
+  Stage 6a: Jules summarizes full book into visuals/book_summary.md
+  Stage 6b: Groq generates cover.json from summary
+  Stage 6c: Groq generates illustration JSON files one at a time
+  Stage 6d: Image rendering from JSON files (external system, not yet implemented)
+
+All visual briefs are JSON. No images are generated in the repo.
+Rendered images land in visuals/rendered/ when external system processes the JSONs.
+Age guardrail is injected into every Groq visual brief call if age is set on the book.

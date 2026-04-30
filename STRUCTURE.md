@@ -1062,6 +1062,81 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
             session: "—"
           secrets: inherit
       ```
+    - **File: level6a_visual_summary.yml**
+      ```yaml
+      name: Level 6a - Visual Summary
+      on:
+        push:
+          paths:
+            - 'books/drafts/**/metadata.md'
+          branches:
+            - main
+
+      jobs:
+        summarize:
+          if: github.actor != 'github-actions[bot]'
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+
+            - name: Identify Book and Trigger Summary
+              run: |
+                FILES=$(git diff --name-only HEAD~1 HEAD | grep 'books/drafts/.*/metadata.md' || true)
+                for FILE in $FILES; do
+                  STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+                  VISUALS=$(grep '^visuals_status:' "$FILE" | cut -d':' -f2 | xargs)
+                  if [ "$STATUS" == "publishing" ] && [ "$VISUALS" == "pending" ]; then
+                    ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+                    echo "🚀 Triggering Visual Summary for $ID..."
+                    python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                      --repo "sources/github/RokctAI/factory" \
+                      --prompt "TASK: Read the entire folder for book '$ID'. Summarize emotional world, dominant themes, recurring images, tone, target feeling, and age guardrail. Save to visuals/book_summary.md inside the book folder. Then update visuals_status to 'summarizing' via update_status.py." \
+                      --title "Level 6a: Visual Summary - $ID"
+                  fi
+                done
+      ```
+    - **File: level6b_visual_briefs.yml**
+      ```yaml
+      name: Level 6b - Visual Briefs
+      on:
+        push:
+          paths:
+            - 'books/drafts/**/metadata.md'
+          branches:
+            - main
+
+      jobs:
+        brief:
+          if: github.actor != 'github-actions[bot]'
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+
+            - name: Identify Book and Trigger Briefs
+              run: |
+                FILES=$(git diff --name-only HEAD~1 HEAD | grep 'books/drafts/.*/metadata.md' || true)
+                for FILE in $FILES; do
+                  VISUALS=$(grep '^visuals_status:' "$FILE" | cut -d':' -f2 | xargs)
+                  if [ "$VISUALS" == "briefing" ]; then
+                    ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+                    echo "🚀 Triggering Visual Briefs for $ID..."
+                    # Task A: Cover Brief
+                    python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                      --repo "sources/github/RokctAI/factory" \
+                      --prompt "TASK: Generate cover.json from visuals/book_summary.md and metadata.md for book '$ID'. JSON only. Follow the schema: element_type, book_id, title, mood, palette, composition, focal_point, style, typography, imagery, guardrail_applied." \
+                      --title "Level 6b: Cover Brief - $ID"
+
+                    # Task B: Illustration Briefs (if enabled)
+                    ILLUS=$(grep '^visuals_illustrations:' "$FILE" | cut -d':' -f2 | xargs)
+                    if [ "$ILLUS" == "true" ]; then
+                      python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                        --repo "sources/github/RokctAI/factory" \
+                        --prompt "TASK: Generate illustration JSON files for each poem/chapter in book '$ID'. Use book_summary.md and age guardrail. JSON only. Follow schema: element_type, book_id, reference_file, page_layout, mood, palette, composition, focal_point, style, text_overlay, guardrail_applied." \
+                        --title "Level 6b: Illustration Briefs - $ID"
+                    fi
+                  fi
+                done
+      ```
     - **File: links.yml** — Weekly health check for external links
       ```yaml
       name: Link Health Check
@@ -1216,11 +1291,10 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         status:
         created:
         last_updated:
-        locked_by:
-        locked_at:
+        session_id:
+        session_started:
         attempts: 0
         last_error:
-        session_id:
         loop_iterations: 0
         max_iterations: 10
         ---
@@ -1834,14 +1908,23 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           id: {theme.replace(' ', '_').lower()}_{hash_str}
           theme: {theme}
           type: {book_type}
+          age:
+          metarules:
+          guardrail:
+          idea:
+          idea_status:
+          concept:
+          concept_status:
+          rules_status:
+          book_name:
+          book_path:
           status: idea_generated
           created: {datetime.now().strftime('%Y-%m-%d')}
           last_updated: {datetime.now().strftime('%Y-%m-%d')}
-          locked_by:
-          locked_at:
+          session_id:
+          session_started:
           attempts: 0
           last_error:
-          session_id:
           loop_iterations: 0
           max_iterations: 10
           ---
@@ -1885,14 +1968,13 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           from datetime import datetime, timedelta
 
           def get_field(content, field):
-              match = re.search(rf'^{field}:[ 	]*(.*)', content, re.MULTILINE)
+              match = re.search(rf'^{field}:[ \t]*(.*)', content, re.MULTILINE)
               return match.group(1).strip() if match else ""
 
           def set_field(content, field, value):
               if re.search(rf'^{field}:', content, re.MULTILINE):
                   return re.sub(rf'^{field}:.*', f'{field}: {value}', content, flags=re.MULTILINE)
               else:
-                  # If field doesn't exist, append before the last ---
                   if '---' in content:
                       parts = content.rsplit('---', 1)
                       return f"{parts[0]}{field}: {value}\n---{parts[1]}"
@@ -1902,7 +1984,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
               parser = argparse.ArgumentParser(description="Claim or release a lock on a job card.")
               parser.add_argument("--file", required=True, help="Path to the job card file")
               parser.add_argument("--action", required=True, choices=["claim", "release", "check"], help="Action to perform")
-              parser.add_argument("--agent", help="Agent name (required for claim)")
+              parser.add_argument("--agent", help="Agent name (Unused in new schema but kept for compat)")
               parser.add_argument("--session", help="Session ID (required for claim)")
 
               args = parser.parse_args()
@@ -1915,19 +1997,18 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
               with open(file_path, 'r', encoding='utf-8') as f:
                   content = f.read()
 
-              locked_by = get_field(content, "locked_by")
-              locked_at = get_field(content, "locked_at")
+              session_id = get_field(content, "session_id")
+              session_started = get_field(content, "session_started")
 
               now = datetime.utcnow()
 
               if args.action == "check":
-                  print(locked_by)
-                  sys.exit(0 if not locked_by else 1)
+                  print(session_id)
+                  sys.exit(0 if not session_id else 1)
 
               elif args.action == "release":
-                  content = set_field(content, "locked_by", "")
-                  content = set_field(content, "locked_at", "")
                   content = set_field(content, "session_id", "")
+                  content = set_field(content, "session_started", "")
                   with open(file_path, 'w', encoding='utf-8') as f:
                       f.write(content)
                   print("Lock released.")
@@ -1935,28 +2016,27 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
 
               elif args.action == "claim":
                   is_stale = False
-                  if locked_at:
+                  if session_started:
                       try:
-                          locked_time = datetime.strptime(locked_at, "%Y-%m-%d %H:%M:%S")
-                          if now - locked_time > timedelta(hours=6):
+                          start_time = datetime.strptime(session_started, "%Y-%m-%d %H:%M:%S")
+                          if now - start_time > timedelta(hours=6):
                               is_stale = True
                       except ValueError:
-                          is_stale = True # Assume stale if date format is broken
+                          is_stale = True
 
-                  if not locked_by or is_stale:
-                      if not args.agent or not args.session:
-                          print("Error: --agent and --session required for claim action.")
+                  if not session_id or is_stale:
+                      if not args.session:
+                          print("Error: --session required for claim action.")
                           sys.exit(1)
 
-                      content = set_field(content, "locked_by", args.agent)
-                      content = set_field(content, "locked_at", now.strftime("%Y-%m-%d %H:%M:%S"))
                       content = set_field(content, "session_id", args.session)
+                      content = set_field(content, "session_started", now.strftime("%Y-%m-%d %H:%M:%S"))
                       with open(file_path, 'w', encoding='utf-8') as f:
                           f.write(content)
-                      print(f"Lock claimed by {args.agent}.")
+                      print(f"Lock claimed with session {args.session}.")
                       sys.exit(0)
                   else:
-                      print(f"LOCKED by {locked_by}")
+                      print(f"LOCKED by session {session_id}")
                       sys.exit(1)
 
           if __name__ == "__main__":
@@ -2453,8 +2533,15 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
               "stalled": ["writing", "failed"]
           }
 
+          VISUALS_TRANSITIONS = {
+              "pending": ["summarizing"],
+              "summarizing": ["briefing"],
+              "briefing": ["rendering"],
+              "rendering": ["done"]
+          }
+
           def get_field(content, field):
-              match = re.search(rf'^{field}:[ 	]*(.*)', content, re.MULTILINE)
+              match = re.search(rf'^{field}:[ \t]*(.*)', content, re.MULTILINE)
               return match.group(1).strip() if match else ""
 
           def set_field(content, field, value):
@@ -2469,7 +2556,8 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           def update_status():
               parser = argparse.ArgumentParser(description="Update the status of a job card with validation.")
               parser.add_argument("--file", required=True, help="Path to the job card file")
-              parser.add_argument("--status", required=True, help="New status to set")
+              parser.add_argument("--status", help="New status to set")
+              parser.add_argument("--visuals-status", help="New visuals status to set")
               parser.add_argument("--agent", default="system", help="Agent performing the transition")
 
               args = parser.parse_args()
@@ -2482,24 +2570,42 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
               with open(file_path, 'r', encoding='utf-8') as f:
                   content = f.read()
 
-              current_status = get_field(content, "status")
+              now = datetime.utcnow()
               card_id = get_field(content, "id")
               attempts = int(get_field(content, "attempts") or 0)
+              log_entries = []
 
-              # Validation
-              if current_status and current_status in ALLOWED_TRANSITIONS:
-                  if args.status not in ALLOWED_TRANSITIONS[current_status]:
-                      print(f"Error: Invalid transition from {current_status} to {args.status}")
-                      sys.exit(1)
-              elif current_status:
-                  # If status is not in map, only allow failed/stalled
-                  if args.status not in ["failed", "stalled"]:
-                      print(f"Error: Unknown current status {current_status}. Transition to {args.status} rejected.")
-                      sys.exit(1)
+              # Update main status
+              if args.status:
+                  current_status = get_field(content, "status")
+                  if current_status and current_status in ALLOWED_TRANSITIONS:
+                      if args.status not in ALLOWED_TRANSITIONS[current_status]:
+                          print(f"Error: Invalid transition from {current_status} to {args.status}")
+                          sys.exit(1)
+                  elif current_status:
+                      if args.status not in ["failed", "stalled"]:
+                          print(f"Error: Unknown current status {current_status}. Transition to {args.status} rejected.")
+                          sys.exit(1)
+
+                  content = set_field(content, "status", args.status)
+                  log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | {current_status} -> {args.status} | {args.agent}")
+
+              # Update visuals status
+              if args.visuals_status:
+                  current_visuals = get_field(content, "visuals_status")
+                  if current_visuals and current_visuals in VISUALS_TRANSITIONS:
+                      if args.visuals_status not in VISUALS_TRANSITIONS[current_visuals]:
+                          print(f"Error: Invalid visuals transition from {current_visuals} to {args.visuals_status}")
+                          sys.exit(1)
+
+                  content = set_field(content, "visuals_status", args.visuals_status)
+                  log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | Visuals: {current_visuals} -> {args.visuals_status} | {args.agent}")
+
+              if not args.status and not args.visuals_status:
+                  print("Error: Either --status or --visuals-status must be provided.")
+                  sys.exit(1)
 
               # Perform Update
-              now = datetime.utcnow()
-              content = set_field(content, "status", args.status)
               content = set_field(content, "last_updated", now.strftime("%Y-%m-%d %H:%M:%S"))
               content = set_field(content, "attempts", str(attempts + 1))
 
@@ -2510,11 +2616,11 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
               log_path = Path('.rokct/agent/log/transitions.log')
               log_path.parent.mkdir(parents=True, exist_ok=True)
 
-              log_entry = f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | {current_status} -> {args.status} | {args.agent}\n"
               with open(log_path, 'a', encoding='utf-8') as f:
-                  f.write(log_entry)
+                  for entry in log_entries:
+                      f.write(entry + "\n")
 
-              print(f"Status updated successfully: {current_status} -> {args.status}")
+              print("Status updated successfully.")
 
           if __name__ == "__main__":
               update_status()
@@ -2558,6 +2664,10 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
       status:
       metarules_link:
       rules:
+      visuals_cover: true
+      visuals_illustrations: false
+      visuals_illustration_scope: none  # none | per_poem | per_chapter
+      visuals_status: pending  # pending | summarizing | briefing | rendering | done
       ---
       ```
     - **File: opening_letter.md** — Template for introductory letters
@@ -2745,6 +2855,10 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         status:
         metarules_link:
         rules:
+        visuals_cover: true
+        visuals_illustrations: false
+        visuals_illustration_scope: none  # none | per_poem | per_chapter
+        visuals_status: pending  # pending | summarizing | briefing | rendering | done
         ---
         ```
       - **File: opening_letter.md** — Introductory text stub
@@ -2752,6 +2866,15 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         # Opening Letter
         [To be generated based on theme and rules]
         ```
+      - **Directory: visuals/**
+        - **File: book_summary.md**
+          ```markdown
+          # Book Summary
+          ```
+        - **Directory: rendered/**
+          - **File: .gitkeep**
+            ```
+            ```
   - **Directory: published/** — [empty — reserved for completed and human-accepted books]
     - **File: .gitkeep**
       ```
@@ -2759,7 +2882,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
 
 ## NOTES
 
-- **Renaming Suggestions:**
-    - The word `metarules` appears as a folder name across multiple paths. Flagging for owner review: suggest renaming to `rules` for clarity, as the 'meta' distinction is conceptual and lives in planning documents rather than file names.
-- **Infrastructure Status:**
+- metarules/ folder name is intentional. It distinguishes governing philosophy rules from book-specific rules generated at Level 3. No rename needed.
+- No `book-factory` references remain; all instances have been updated to `factory`.
+- Infrastructure Status:
     - GitHub Actions workflows have been fully implemented and integrated with the agent delegation skills.

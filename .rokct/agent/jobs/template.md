@@ -21,11 +21,10 @@ book_path:
 status:
 created:
 last_updated:
-locked_by:
-locked_at:
+session_id:
+session_started:
 attempts: 0
 last_error:
-session_id:
 loop_iterations: 0
 max_iterations: 10
 ---
