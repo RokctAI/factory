@@ -27,10 +27,13 @@ ALLOWED_TRANSITIONS = {
 }
 
 VISUALS_TRANSITIONS = {
-    "pending": ["summarizing"],
+    "pending": ["summarizing", "reel_briefing"],
     "summarizing": ["briefing"],
     "briefing": ["rendering"],
-    "rendering": ["done"]
+    "rendering": ["done"],
+    "reel_pending": ["reel_briefing"],
+    "reel_briefing": ["reel_rendering"],
+    "reel_rendering": ["reel_done"]
 }
 
 def get_field(content, field):
@@ -83,16 +86,19 @@ def update_status():
         content = set_field(content, "status", args.status)
         log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | {current_status} -> {args.status} | {args.agent}")
 
-    # Update visuals status
+    # Update visuals/reel status
     if args.visuals_status:
-        current_visuals = get_field(content, "visuals_status")
-        if current_visuals and current_visuals in VISUALS_TRANSITIONS:
-            if args.visuals_status not in VISUALS_TRANSITIONS[current_visuals]:
-                print(f"Error: Invalid visuals transition from {current_visuals} to {args.visuals_status}")
+        is_reel = args.visuals_status.startswith("reel_")
+        field = "visuals_reel_status" if is_reel else "visuals_status"
+        current_val = get_field(content, field)
+
+        if current_val and current_val in VISUALS_TRANSITIONS:
+            if args.visuals_status not in VISUALS_TRANSITIONS[current_val]:
+                print(f"Error: Invalid transition from {current_val} to {args.visuals_status}")
                 sys.exit(1)
 
-        content = set_field(content, "visuals_status", args.visuals_status)
-        log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | Visuals: {current_visuals} -> {args.visuals_status} | {args.agent}")
+        content = set_field(content, field, args.visuals_status)
+        log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | {field}: {current_val} -> {args.visuals_status} | {args.agent}")
 
     if not args.status and not args.visuals_status:
         print("Error: Either --status or --visuals-status must be provided.")

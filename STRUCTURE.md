@@ -1062,7 +1062,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
             session: "—"
           secrets: inherit
       ```
-    - **File: level6a_visual_summary.yml**
+    - **File: level6a_visual_summary.yml** — Jules summarizes full book into visuals/book_summary.md
       ```yaml
       name: Level 6a - Visual Summary
       on:
@@ -1095,7 +1095,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
                   fi
                 done
       ```
-    - **File: level6b_visual_briefs.yml**
+    - **File: level6b_visual_briefs.yml** — Groq generates cover and illustration JSON briefs
       ```yaml
       name: Level 6b - Visual Briefs
       on:
@@ -1134,6 +1134,45 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
                         --prompt "TASK: Generate illustration JSON files for each poem/chapter in book '$ID'. Use book_summary.md and age guardrail. JSON only. Follow schema: element_type, book_id, reference_file, page_layout, mood, palette, composition, focal_point, style, text_overlay, guardrail_applied." \
                         --title "Level 6b: Illustration Briefs - $ID"
                     fi
+                  fi
+                done
+      ```
+    - **File: level6c_reel_brief.yml** — Groq generates social media reel JSON brief
+      ```yaml
+      name: Level 6c - Social Media Reel Brief
+      on:
+        push:
+          paths:
+            - 'books/published/**/metadata.md'
+          branches:
+            - main
+
+      jobs:
+        generate_reel_brief:
+          if: github.actor != 'github-actions[bot]'
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+
+            - name: Identify Book and Trigger Reel Brief
+              run: |
+                FILES=$(git diff --name-only HEAD~1 HEAD | grep 'books/published/.*/metadata.md' || true)
+                for FILE in $FILES; do
+                  REEL=$(grep '^visuals_reel:' "$FILE" | cut -d':' -f2 | xargs)
+                  STATUS=$(grep '^visuals_reel_status:' "$FILE" | cut -d':' -f2 | xargs)
+                  if [ "$REEL" == "true" ] && [ "$STATUS" == "pending" ]; then
+                    ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+                    echo "🚀 Triggering Social Media Reel Brief for $ID..."
+
+                    SYSTEM_PROMPT="You are selecting the hook for a social media reel promoting a book. Your job is to find the single most powerful moment in this book — the line or lines that would make someone stop scrolling. Do not summarize the book. Do not explain the theme. Extract the hit. The hook must work in under 5 seconds. The viewer reads it and cannot look away. Return JSON only. No preamble. No explanation. No markdown. If age guardrail is provided, the hook must be appropriate for that audience."
+
+                    python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                      --repo "sources/github/RokctAI/factory" \
+                      --prompt "TASK: Generate reel.json for book '$ID'. Inputs: visuals/book_summary.md and all content files. Select hook based on impact_metrics. Schema: element_type, book_id, book_title, hook_text, hook_source_file, hook_type, visual_style, mood, pacing, text_animation, background_brief, call_to_action, platform, duration_seconds, guardrail_applied. JSON ONLY." \
+                      --title "Level 6c: Reel Brief - $ID"
+
+                    # Update status
+                    python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --visuals-status reel_briefing --agent "system"
                   fi
                 done
       ```
@@ -1300,7 +1339,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         ---
         ```
     - **Directory: log/** — System activity logs
-      - **File: errors.log**
+      - **File: errors.log** — Historical record of pipeline errors
         ```
         # Error Log
         # Format: [timestamp] card_id | workflow | run_id | error
@@ -1323,12 +1362,13 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         | ID | Type | Theme | Status | Agent | Session | PR | Timestamp |
         |----|------|-------|--------|-------|---------|----|-----------|
         ```
-      - **File: transitions.log**
+      - **File: transitions.log** — Audit trail of job status transitions
         ```
         # Status Transition Log
         # Format: [timestamp] card_id | old_status -> new_status | agent
         # This file is append-only. Do not edit.
         [2026-04-29 22:01:19]  | idea_generated -> pending_approval | system
+        [2026-04-30 08:16:03]  | Visuals: pending  # pending | summarizing | briefing | rendering | done -> summarizing | system
         ```
     - **Directory: prompts/** — AI agent task instructions
       - **Directory: completed/** — [empty — reserved for one-time prompt cards that have run]
@@ -1467,7 +1507,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         - **Context**: Mentioning specific file paths or patterns helps Jules narrow its scope.
         ```
       - **Directory: scripts/** — Python scripts for agent coordination and data processing
-        - **File: call_groq.py**
+        - **File: call_groq.py** — Interfacing script for direct Groq API calls
           ```python
           # Licensed under the MIT License.
           # Copyright 2024 RokctAI
@@ -1853,7 +1893,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           if __name__ == "__main__":
               main()
           ```
-        - **File: handle_groq_output.py**
+        - **File: handle_groq_output.py** — Processes Groq responses into file changes
           ```python
           # Licensed under the MIT License.
           # Copyright 2024 RokctAI
@@ -1956,7 +1996,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           if __name__ == "__main__":
               main()
           ```
-        - **File: lock_job.py**
+        - **File: lock_job.py** — Mechanism to prevent race conditions on job cards
           ```python
           # Licensed under the MIT License.
           # Copyright 2024 RokctAI
@@ -2317,7 +2357,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           if __name__ == "__main__":
               update_audit_logs()
           ```
-        - **File: update_classifications.py** — Updates genre and theme classifications
+        - **File: update_classifications.py** — Updates genre and theme classifications with deduplication
           ```python
           # Licensed under the MIT License.
           # Copyright 2024 RokctAI
@@ -2376,7 +2416,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           if __name__ == "__main__":
               update_classifications()
           ```
-        - **File: update_dashboard.py** — Recalculates stats and updates README dashboard
+        - **File: update_dashboard.py**
           ```python
           # Licensed under the MIT License.
           # Copyright 2024 RokctAI
@@ -2503,7 +2543,7 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           if __name__ == "__main__":
               update_readme_stats()
           ```
-        - **File: update_status.py**
+        - **File: update_status.py** — Validated state machine for all status transitions
           ```python
           # Licensed under the MIT License.
           # Copyright 2024 RokctAI
@@ -2534,10 +2574,13 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           }
 
           VISUALS_TRANSITIONS = {
-              "pending": ["summarizing"],
+              "pending": ["summarizing", "reel_briefing"],
               "summarizing": ["briefing"],
               "briefing": ["rendering"],
-              "rendering": ["done"]
+              "rendering": ["done"],
+              "reel_pending": ["reel_briefing"],
+              "reel_briefing": ["reel_rendering"],
+              "reel_rendering": ["reel_done"]
           }
 
           def get_field(content, field):
@@ -2590,16 +2633,19 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
                   content = set_field(content, "status", args.status)
                   log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | {current_status} -> {args.status} | {args.agent}")
 
-              # Update visuals status
+              # Update visuals/reel status
               if args.visuals_status:
-                  current_visuals = get_field(content, "visuals_status")
-                  if current_visuals and current_visuals in VISUALS_TRANSITIONS:
-                      if args.visuals_status not in VISUALS_TRANSITIONS[current_visuals]:
-                          print(f"Error: Invalid visuals transition from {current_visuals} to {args.visuals_status}")
+                  is_reel = args.visuals_status.startswith("reel_")
+                  field = "visuals_reel_status" if is_reel else "visuals_status"
+                  current_val = get_field(content, field)
+
+                  if current_val and current_val in VISUALS_TRANSITIONS:
+                      if args.visuals_status not in VISUALS_TRANSITIONS[current_val]:
+                          print(f"Error: Invalid transition from {current_val} to {args.visuals_status}")
                           sys.exit(1)
 
-                  content = set_field(content, "visuals_status", args.visuals_status)
-                  log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | Visuals: {current_visuals} -> {args.visuals_status} | {args.agent}")
+                  content = set_field(content, field, args.visuals_status)
+                  log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | {field}: {current_val} -> {args.visuals_status} | {args.agent}")
 
               if not args.status and not args.visuals_status:
                   print("Error: Either --status or --visuals-status must be provided.")
@@ -2668,6 +2714,8 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
       visuals_illustrations: false
       visuals_illustration_scope: none  # none | per_poem | per_chapter
       visuals_status: pending  # pending | summarizing | briefing | rendering | done
+      visuals_reel: false
+      visuals_reel_status: pending  # pending | briefing | rendering | done
       ---
       ```
     - **File: opening_letter.md** — Template for introductory letters
@@ -2701,54 +2749,161 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
           ```
     - **Directory: poetry/** — Metarules for poetry collections
       - **Directory: metarules/** — Governance files for poetry content
-        - **File: audit_rules.md** — Procedures for the backward audit process
+        - **File: audit_rules.md** — Governing philosophy for the backward audit process
           ```markdown
           # Audit Rules
-          This file defines the backward audit process to ensure every element serves the higher levels.
 
-          ## Rules
+          After generation every element is audited backwards. The audit is not a reading. It is a structural test. The question at every level is the same: does this belong here and does it earn its place?
+
+          ## The Backward Audit Chain
+
+          Line -> Stanza -> Poem -> Book -> World
+
+          For every line ask: does this line serve the stanza's purpose?
+          For every stanza ask: does this stanza serve the poem's purpose?
+          For every poem ask: does this poem serve the book's rules?
+          For every book ask: does this book honor the world rules?
+
+          If anything fails at any level it is flagged and rewritten specifically at that level only. The rewrite does not touch what is not broken.
+
+          ## Audit Rules
+
+          1. The audit runs bottom-up after all content is generated. Never during generation.
+          2. The agent that generated the content does not run the audit. Different agent always.
+          3. A failed line triggers a line rewrite only. Not a stanza rewrite.
+          4. A failed stanza triggers a stanza rewrite only. Not a poem rewrite.
+          5. A failed poem triggers a poem rewrite only. Not a book rewrite.
+          6. The audit does not rewrite for style. It rewrites for structural failure only.
+          7. A line that hits but does not belong to its stanza has failed the audit even if it scores 10/10 on impact metrics.
+          8. The audit records every flag and every rewrite in a separate audit log inside the book folder.
+          9. Maximum three rewrite attempts per element. If an element fails three audits it is flagged for human review.
+          10. The audit chain runs once per generation session. Not per line. Not continuously.
           ```
-        - **File: book_rules.md** — Rules for structural and thematic consistency
+        - **File: book_rules.md** — Governing philosophy for structural and thematic consistency
           ```markdown
           # Book Rules
-          This file governs the structure, thematic consistency, and overall flow of the poetry collection.
+
+          The book is a country. The poems inside it are regions obeying the same laws. The reader who finishes the last poem has been somewhere. The book has a climate that no single poem fully contains.
+
+          The book rules are never stated anywhere in the text. They are only demonstrated. The reader absorbs them by being inside them.
 
           ## Rules
+
+          1. Every poem in the book must stand alone and also belong. A poem that only works inside the book has failed. A book that is just poems gathered together has failed.
+          2. The book has a direction. Reading it in order takes the reader somewhere different than reading it in reverse.
+          3. The book's climate is established by the third poem and never broken.
+          4. No two consecutive poems occupy the same emotional register. The book breathes.
+          5. The book does not announce its theme. The theme emerges from the accumulated weight of all poems.
+          6. The first poem opens a door. The last poem closes it differently than it was opened.
+          7. A reader who reads one poem from the book should want to read the next. Not because of a cliffhanger but because the world pulled them.
+          8. The book answers one question the reader did not know they were asking.
           ```
-        - **File: impact_metrics.md** — Metrics for emotional and structural evaluation
+        - **File: impact_metrics.md** — Governing philosophy for emotional and structural evaluation
           ```markdown
           # Impact Metrics
-          This file defines the metrics used to evaluate the emotional and structural impact of the content.
 
-          ## Rules
+          Every element is scored 0-10 against two axes independently.
+
+          Axis 1: Immediate Impact
+          Does it hit on first contact? Does the reader feel something before they have time to analyze? A score of 10 means the line lands like a physical thing. A score of 0 means the reader passes over it without friction.
+
+          Axis 2: Standalone Integrity
+          Does it stand without context? Remove everything around it. Does it still mean something? Does it still hit? A score of 10 means it could be printed alone on a wall and stop someone. A score of 0 means it only exists as part of something else.
+
+          ## Scoring Rules
+
+          1. Both axes are scored independently. A line can score 9/10 on impact and 3/10 on standalone. Both scores matter.
+          2. A score below 7 on either axis triggers a suggested replacement.
+          3. The suggestion is shown alongside the original. Neither is deleted.
+          4. A comparator agent evaluates original vs suggestion on both axes.
+          5. The version with the higher combined score survives.
+          6. If scores are equal the original survives. Ties go to the writer.
+          7. The evaluator never wrote the element it evaluates. Creation and evaluation are always separate agents.
+          8. Scores are not averaged into one number. Both axis scores are recorded separately and permanently.
+          9. A stanza scores on whether it creates climate beyond its lines. A poem scores on whether it moves the reader. A book scores on whether it creates a world.
+          10. The Wayne Delay test: does the meaning arrive before the line is finished, or does it arrive in the silence after? Both are valid. Neither is penalized. What is penalized is a line where no meaning arrives at all.
           ```
-        - **File: line_rules.md** — Rules for individual line strength (trees)
+        - **File: line_rules.md** — Governing philosophy for individual line strength (trees)
           ```markdown
           # Line Rules
-          This file governs the individual line (tree), ensuring it stands alone and hits hard.
+
+          The line is a tree. It stands alone. It requires nothing before it and nothing after it to land. It hits on first contact. It never uses rhythm to carry it — the words alone do the work. It never explains itself. It never bridges to the next line. Every line must earn its place by striking something true.
+
+          A line that exists only to set up the next line is forbidden.
+          A line that requires the reader to remember the previous line to understand it has failed.
+          A line that uses rhythm or meter to land is relying on a crutch — the meaning must land without it.
+          A line that softens its own impact by anticipating what comes next has failed.
+
+          The test: remove every other line from the poem. If this line still hits, it passes.
 
           ## Rules
+
+          1. Every line must be able to stand alone as a complete unit of impact.
+          2. No line may require the line before it to make sense or land.
+          3. Rhythm must never be load-bearing. The words carry the weight, not the beat.
+          4. No line exists as a bridge or setup. Every line is a destination.
+          5. A line that explains itself has already failed.
+          6. The line does not announce what it is doing. It does it.
+          7. Short lines are not weak lines. Long lines are not strong lines. Length is irrelevant. Impact is everything.
+          8. The line lands before the reader is ready. That is the goal.
           ```
-        - **File: poem_rules.md** — Rules for individual poem alignment (regions)
+        - **File: poem_rules.md** — Governing philosophy for individual poem alignment (regions)
           ```markdown
           # Poem Rules
-          This file governs the individual poem's structure, tone, and alignment with the book's themes.
+
+          The poem is a region. It has its own climate, its own rules, its own emotional laws. The reader enters the poem somewhere and exits somewhere different. The poem must leave the reader in a place they were not before the first line.
+
+          A poem that ends where it began has failed. The punch accumulates — line by line, stanza by stanza — until the reader is overwhelmed and has nothing left to give. Like the comedian who puts you on the floor. You do not notice it happening until it already has.
 
           ## Rules
+
+          1. The poem must move the reader from one emotional position to another.
+          2. The final stanza lands somewhere the reader did not see coming.
+          3. Every stanza is a necessary stop on the journey. No stanza is furniture.
+          4. The poem does not state its theme. It demonstrates it through accumulated impact.
+          5. A poem that can be summarized in one sentence without loss has not done its work.
+          6. The first line does not introduce. It hits. The reader is already inside.
+          7. The poem has no wasted lines. If a line could be removed without loss, it must be removed.
+          8. The poem exhausts the reader in the right way. They finish with nothing left to feel because they felt it all.
+          9. A poem may have one question it is asking. That question is never asked out loud.
           ```
-        - **File: stanza_rules.md** — Rules for line combinations (forests)
+        - **File: stanza_rules.md** — Governing philosophy for line combinations (forests)
           ```markdown
           # Stanza Rules
-          This file governs how trees (lines) come together to form a forest (stanza).
+
+          The stanza is a forest. The trees inside it stand alone but together they create something that no single tree contains. A stanza must do more than its lines added together. It must create a climate — a specific emotional weather the reader is standing inside by the last line.
+
+          The stanza never explains its own meaning. The meaning is felt through accumulation. Each line adds without depending. The forest has its own gravity.
 
           ## Rules
+
+          1. A stanza must create something its individual lines do not contain alone.
+          2. The stanza has a climate. The reader must feel different at the end than at the beginning.
+          3. No line in a stanza exists to transition between other lines. Every line hits.
+          4. The stanza does not explain what it is about. The reader discovers it.
+          5. The last line of a stanza does not summarize. It detonates.
+          6. A stanza of one line is valid if that line creates its own climate.
+          7. Stanza length is determined by when the climate is complete, not by convention.
+          8. The stanza connects backwards to the poem's purpose, not forward to the next stanza.
           ```
-        - **File: world_rules.md** — Fundamental laws of the poetry world (country)
+        - **File: world_rules.md** — Governing philosophy for fundamental laws of the poetry world
           ```markdown
           # World Rules
-          This file governs the overarching environment, climate, and fundamental laws of the book's world.
+
+          The world is the overarching law that all books in the collection obey. Different books interpret the world differently — same gravity, different terrain. The world is never named or described anywhere. It is only felt as consistency across books.
+
+          A reader who has read two books in the universe should feel they have been on different planets that orbit the same sun.
 
           ## Rules
+
+          1. The world has a single governing truth that every book in it demonstrates differently.
+          2. That truth is never stated in any book. It is only felt.
+          3. Different books may contradict each other in surface details but never in the governing truth.
+          4. The world has a consistent emotional register. Some things are always heavy here. Some things are always unresolved.
+          5. A book that could exist in a different world has failed to belong to this one.
+          6. The world is defined before any book is written. All book rules derive from it.
+          7. A reader does not need to read all books to feel the world. One book should carry the world's gravity.
+          8. The world expands with each book but never changes. New terrain, same sun.
           ```
     - **Directory: short_story/** — Metarules for short story collections
       - **Directory: metarules/** — Governance files for short stories
@@ -2859,6 +3014,8 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         visuals_illustrations: false
         visuals_illustration_scope: none  # none | per_poem | per_chapter
         visuals_status: pending  # pending | summarizing | briefing | rendering | done
+        visuals_reel: false
+        visuals_reel_status: pending  # pending | briefing | rendering | done
         ---
         ```
       - **File: opening_letter.md** — Introductory text stub
@@ -2866,12 +3023,12 @@ RokctAI/factory is an autonomous publishing system designed to generate, evaluat
         # Opening Letter
         [To be generated based on theme and rules]
         ```
-      - **Directory: visuals/**
-        - **File: book_summary.md**
+      - **Directory: visuals/** — Directory for book summaries and visual briefs
+        - **File: book_summary.md** — Internal summary for agent coordination
           ```markdown
           # Book Summary
           ```
-        - **Directory: rendered/**
+        - **Directory: rendered/** — [empty — reserved for rendered images]
           - **File: .gitkeep**
             ```
             ```
