@@ -51,14 +51,23 @@ def handle_groq_output(level, content):
 id: {theme.replace(' ', '_').lower()}_{hash_str}
 theme: {theme}
 type: {book_type}
+age:
+metarules:
+guardrail:
+idea:
+idea_status:
+concept:
+concept_status:
+rules_status:
+book_name:
+book_path:
 status: idea_generated
 created: {datetime.now().strftime('%Y-%m-%d')}
 last_updated: {datetime.now().strftime('%Y-%m-%d')}
-locked_by:
-locked_at:
+session_id:
+session_started:
 attempts: 0
 last_error:
-session_id:
 loop_iterations: 0
 max_iterations: 10
 ---

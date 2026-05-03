@@ -401,3 +401,70 @@ Six fixes implemented after external audit:
 4. Generation loop exit — max_iterations prevents infinite loops
 5. Failure states — stalled status and retry logic with 3 attempt limit
 6. Deduplication — similarity check before Level 0 creates theme cards
+
+## Visual Layer (Added post-infrastructure)
+
+Triggered after human accepts a draft and sets visual preferences in metadata.md.
+
+Three fields control visual generation:
+  visuals_cover: true|false
+  visuals_illustrations: true|false
+  visuals_illustration_scope: none|per_poem|per_chapter
+
+Four stage pipeline:
+  Stage 6a: Jules summarizes full book into visuals/book_summary.md
+  Stage 6b: Groq generates cover.json from summary
+  Stage 6c: Groq generates illustration JSON files one at a time
+  Stage 6d: Image rendering from JSON files (external system, not yet implemented)
+
+All visual briefs are JSON. No images are generated in the repo.
+Rendered images land in visuals/rendered/ when external system processes the JSONs.
+Age guardrail is injected into every Groq visual brief call if age is set on the book.
+
+## Social Media Reel Pipeline (Added post-visual layer)
+
+Triggered automatically after visuals_status reaches done, if visuals_reel is true in metadata.
+
+Groq reads book_summary.md and scans all content for highest impact lines.
+Selects hook based on impact_metrics philosophy — punch, delay, or accumulation.
+Generates reel.json inside books/published/{book_name}/visuals/
+
+The reel brief is consumed by an external video generation system (not yet implemented).
+The hook_text is the line or lines extracted from the book that will appear on screen.
+The hook must work in under 5 seconds. It is one tree from the forest, shown to the world.
+
+## Bible Series Stream (Added alongside book factory)
+
+The factory supports a second content stream for long-form research series.
+Content lives in bible/ not books/.
+Same pipeline and agent infrastructure.
+Different metarules under .rokct/types/series_episode/
+
+First series: Forbidden Questions
+Location: bible/forbidden_questions/
+Status: 15 episodes complete, characters and deep-dives to build.
+
+To generate a new episode:
+  theme: [topic]
+  type: series_episode
+  series: forbidden_questions
+
+The factory reads the series metarules, the master thread, and the existing episodes as style reference before generating.
+
+## Bible Series Stream (Added alongside book factory)
+
+The factory supports a second content stream for long-form research series.
+Content lives in bible/ not books/.
+Same pipeline and agent infrastructure.
+Different metarules under .rokct/types/series_episode/
+
+First series: Forbidden Questions
+Location: bible/forbidden_questions/
+Status: 15 episodes complete, characters and deep-dives to build.
+
+To generate a new episode:
+  theme: [topic]
+  type: series_episode
+  series: forbidden_questions
+
+The factory reads the series metarules, the master thread, and the existing episodes as style reference before generating.

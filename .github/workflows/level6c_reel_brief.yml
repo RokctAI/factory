@@ -1,0 +1,36 @@
+name: Level 6c - Social Media Reel Brief
+on:
+  push:
+    paths:
+      - 'books/published/**/metadata.md'
+    branches:
+      - main
+
+jobs:
+  generate_reel_brief:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Identify Book and Trigger Reel Brief
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD | grep 'books/published/.*/metadata.md' || true)
+          for FILE in $FILES; do
+            REEL=$(grep '^visuals_reel:' "$FILE" | cut -d':' -f2 | xargs)
+            STATUS=$(grep '^visuals_reel_status:' "$FILE" | cut -d':' -f2 | xargs)
+            if [ "$REEL" == "true" ] && [ "$STATUS" == "pending" ]; then
+              ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+              echo "🚀 Triggering Social Media Reel Brief for $ID..."
+
+              SYSTEM_PROMPT="You are selecting the hook for a social media reel promoting a book. Your job is to find the single most powerful moment in this book — the line or lines that would make someone stop scrolling. Do not summarize the book. Do not explain the theme. Extract the hit. The hook must work in under 5 seconds. The viewer reads it and cannot look away. Return JSON only. No preamble. No explanation. No markdown. If age guardrail is provided, the hook must be appropriate for that audience."
+
+              python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                --repo "sources/github/RokctAI/factory" \
+                --prompt "TASK: Generate reel.json for book '$ID'. Inputs: visuals/book_summary.md and all content files. Select hook based on impact_metrics. Schema: element_type, book_id, book_title, hook_text, hook_source_file, hook_type, visual_style, mood, pacing, text_animation, background_brief, call_to_action, platform, duration_seconds, guardrail_applied. JSON ONLY." \
+                --title "Level 6c: Reel Brief - $ID"
+
+              # Update status
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --visuals-status reel_briefing --agent "system"
+            fi
+          done
