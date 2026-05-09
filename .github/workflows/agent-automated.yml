@@ -113,7 +113,11 @@ jobs:
             fi
 
             if [ "$SUCCESS" = true ]; then
-              # Update Ledger Manually (Multi-file processing)
+              # Update Audit Log
+              echo "| $TIMESTAMP | $TITLE | $AGENT | ✅ SUCCESS | $SESSION_ID | Task processed successfully. |" >> .rokct/agent/logs/ai_delegation.md
+              HAS_UPDATES=true
+              
+              # Update Ledger Manually (Legacy support)
               if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
                  ID=$(grep '^id:' "$CARD_FILE" | cut -d':' -f2 | xargs)
                  TYPE=$(grep '^type:' "$CARD_FILE" | cut -d':' -f2 | xargs)
@@ -136,7 +140,10 @@ jobs:
                 HAS_UPDATES=true
               fi
             else
-              # Handle Failure for Automated Delegation
+              # Handle Failure
+              echo "| $TIMESTAMP | $TITLE | $AGENT | ❌ FAILED | ${{ github.run_id }} | Automation failed. |" >> .rokct/agent/logs/ai_delegation.md
+              HAS_UPDATES=true
+              
               if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
                  ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" | cut -d':' -f2 | xargs)
                  NEW_ATTEMPTS=$((ATTEMPTS + 1))
