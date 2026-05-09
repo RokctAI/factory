@@ -141,7 +141,10 @@ jobs:
               fi
             else
               # Handle Failure
-              echo "| $TIMESTAMP | $TITLE | $AGENT | ❌ FAILED | ${{ github.run_id }} | Automation failed. |" >> .rokct/agent/logs/ai_delegation.md
+              ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" 2>/dev/null | cut -d':' -f2 | xargs || echo "0")
+              [ -z "$ATTEMPTS" ] && ATTEMPTS=0
+              NEW_ATTEMPTS=$((ATTEMPTS + 1))
+              echo "| $TIMESTAMP | $TITLE | $AGENT | ❌ FAILED | ${{ github.run_id }} | Automation failed. Attempt $NEW_ATTEMPTS. |" >> .rokct/agent/logs/ai_delegation.md
               HAS_UPDATES=true
               
               if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
