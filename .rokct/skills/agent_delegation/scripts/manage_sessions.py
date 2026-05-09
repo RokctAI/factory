@@ -52,6 +52,10 @@ def manage_sessions():
     print(f"📊 Active sessions detected: {active_count}")
 
     # 4. Update state
+    if state.get('active_sessions') == active_count:
+        print("ℹ️ No change in active sessions. Skipping update to reduce noise.")
+        return
+
     state['active_sessions'] = active_count
     state['last_updated'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
