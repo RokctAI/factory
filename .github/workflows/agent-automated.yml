@@ -86,26 +86,28 @@ jobs:
             SESSION_ID="—"
             if [ "$AGENT" == "groq" ]; then
               echo "🚀 Calling Groq for $TITLE..."
-              if RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py --prompt "$PROMPT") && [ -n "$RESPONSE" ]; then
+              if RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py --prompt "$PROMPT" 2>&1) && [ -n "$RESPONSE" ]; then
                 echo "✅ Groq responded. Handling output..."
                 python .rokct/skills/agent_delegation/scripts/handle_groq_output.py --level "$LEVEL" --content "$RESPONSE"
                 SUCCESS=true
                 HAS_UPDATES=true
               else
                 echo "❌ Groq call failed."
+                REASON=$(echo "$RESPONSE" | tail -n 1 | sed 's/|/\\|/g')
               fi
             else
               echo "🚀 Delegating to Jules for $TITLE..."
               if RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
                 --repo "sources/github/$REPO" \
                 --prompt "$PROMPT" \
-                --title "$TITLE"); then
+                --title "$TITLE" 2>&1); then
                 echo "✅ Jules delegation successful."
                 SESSION_ID=$(echo "$RESULT" | jq -r '.id // "—"')
                 SUCCESS=true
                 HAS_UPDATES=true
               else
                 echo "❌ Jules delegation failed."
+                REASON=$(echo "$RESULT" | tail -n 1 | sed 's/|/\\|/g')
               fi
             fi
 
