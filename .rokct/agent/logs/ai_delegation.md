@@ -15,3 +15,5 @@ This log tracks all automated AI task delegations (Jules, Groq, etc.) within the
 | 2026-05-11 21:23 | Level 1: Idea Expansion | jules | ❌ FAILED | 25698134809 | Automation failed. Attempt 1. |
 | 2026-05-12 21:24 | Level 0: Theme Discovery | jules | ❌ FAILED | 25763090986 | Automation failed. Attempt 1. |
 | 2026-05-12 21:24 | Level 1: Idea Expansion | jules | ❌ FAILED | 25763090986 | Automation failed. Attempt 1. |
+| 2026-05-13 21:40 | Level 0: Theme Discovery | jules | ❌ FAILED | 25828031597 | Attempt 1. Reason: Error: Agent API Key is missing. Provide via --api-key, AGENT_API_KEY, or JULES_API_KEY env var. |
+| 2026-05-13 21:40 | Level 1: Idea Expansion | jules | ❌ FAILED | 25828031597 | Attempt 1. Reason: Error: Agent API Key is missing. Provide via --api-key, AGENT_API_KEY, or JULES_API_KEY env var. |
