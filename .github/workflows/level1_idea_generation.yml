@@ -57,7 +57,7 @@ jobs:
 
               echo "🚀 Delegating Idea Expansion for $ID..."
 
-              RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/RokctAI/factory" \
                 --prompt "TASK: Expand the theme '$THEME' for a '$TYPE' book. Generate 5 unique one-line book ideas. Update the card $FILE with these ideas and change status to 'pending_approval'." \
                 --title "Level 1: Idea Expansion - $ID" \
