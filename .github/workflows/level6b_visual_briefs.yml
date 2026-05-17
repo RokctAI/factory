@@ -22,7 +22,7 @@ jobs:
               ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
               echo "🚀 Triggering Visual Briefs for $ID..."
               # Task A: Cover Brief
-              python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/RokctAI/factory" \
                 --prompt "TASK: Generate cover.json from visuals/book_summary.md and metadata.md for book '$ID'. JSON only. Follow the schema: element_type, book_id, title, mood, palette, composition, focal_point, style, typography, imagery, guardrail_applied." \
                 --title "Level 6b: Cover Brief - $ID"
@@ -30,7 +30,7 @@ jobs:
               # Task B: Illustration Briefs (if enabled)
               ILLUS=$(grep '^visuals_illustrations:' "$FILE" | cut -d':' -f2 | xargs)
               if [ "$ILLUS" == "true" ]; then
-                python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+                python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                   --repo "sources/github/RokctAI/factory" \
                   --prompt "TASK: Generate illustration JSON files for each poem/chapter in book '$ID'. Use book_summary.md and age guardrail. JSON only. Follow schema: element_type, book_id, reference_file, page_layout, mood, palette, composition, focal_point, style, text_overlay, guardrail_applied." \
                   --title "Level 6b: Illustration Briefs - $ID"
