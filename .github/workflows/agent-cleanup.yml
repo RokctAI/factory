@@ -30,7 +30,7 @@ jobs:
           AGENT_API_KEY: ${{ secrets.JULES_API_KEY }}
           SESSION_ID: ${{ steps.extract_id.outputs.session_id }}
         run: |
-          python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py delete \
+          python .rokct/skills/agent_delegation/scripts/call_jules.py delete \
             --id "$SESSION_ID"
 
       - name: Update Agent Memory
