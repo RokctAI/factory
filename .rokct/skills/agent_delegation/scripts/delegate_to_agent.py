@@ -7,52 +7,66 @@ import json
 import argparse
 import sys
 
-# Ported from opportunities: Adapt for 'factory' context
-# Attempt to load from .env if available
-try:
-    from dotenv import load_dotenv
+def parse_env_content(content):
+    """Parses shell-style exports and returns True if a key was successfully found and set."""
+    found = False
+    for line in content.splitlines():
+        if "JULES_API_KEY=" in line or "AGENT_API_KEY=" in line:
+            # Strip 'export ', whitespace, and quotes
+            val = line.replace("export ", "").strip().split("=", 1)[1].strip("'\" ")
+            key_name = "JULES_API_KEY" if "JULES_API_KEY" in line else "AGENT_API_KEY"
+            os.environ[key_name] = val
+            found = True
+            if os.environ.get("GITHUB_ACTIONS"):
+                print(f"✅ [CI Debug] Successfully set {key_name} from content.")
+    return found
+
+def load_monorepo_env():
+    """Prioritizes the Remote Vault if MONOREPO_PAT is present."""
+    pat = os.environ.get("MONOREPO_PAT")
+    if not pat:
+        return False
+
+    url = "https://raw.githubusercontent.com/RokctAI/monorepo/main/.env/production.env"
+    if os.environ.get("GITHUB_ACTIONS"):
+        print(f"🔍 [CI Debug] MONOREPO_PAT detected. Dialing home to: {url}")
+
+    try:
+        headers = {"Authorization": f"token {pat}"}
+        response = requests.get(url, headers=headers, timeout=15)
+        response.raise_for_status()
+        return parse_env_content(response.text)
+    except Exception as e:
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"⚠️ [CI Debug] Remote Vault resolution failed: {e}")
+        return False
+
+def load_local_env():
+    """Fallback to local environment files."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    # Path depth verification: scripts -> agent_delegation -> skills -> .rokct -> root
     monorepo_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(script_dir))))
     env_path = os.path.join(monorepo_root, ".env", "production.env")
 
     # Debug prints for CI logs
     if os.environ.get("GITHUB_ACTIONS"):
-        print(f"🔍 [CI Debug] Script location: {script_dir}")
-        print(f"🔍 [CI Debug] Calculated Monorepo Root: {monorepo_root}")
-        print(f"🔍 [CI Debug] Looking for env at: {env_path}")
-        print(f"🔍 [CI Debug] Env file exists: {os.path.exists(env_path)}")
+        print(f"🔍 [CI Debug] Looking for local env at: {env_path}")
 
-    if os.path.exists(env_path):
-        load_dotenv(env_path)
-        # Aggressive Manual Fallback: if dotenv failed to populate the ENV (e.g. formatting issues)
-        if not os.environ.get("JULES_API_KEY") and not os.environ.get("AGENT_API_KEY"):
-            with open(env_path, 'r', encoding='utf-8') as f:
-                for line in f:
-                    if "JULES_API_KEY=" in line or "AGENT_API_KEY=" in line:
-                        # Strip 'export ', whitespace, and quotes
-                        val = line.replace("export ", "").strip().split("=", 1)[1].strip("'\" ")
-                        key_name = "JULES_API_KEY" if "JULES_API_KEY" in line else "AGENT_API_KEY"
-                        os.environ[key_name] = val
-                        if os.environ.get("GITHUB_ACTIONS"):
-                            print(f"✅ [CI Debug] Manually recovered {key_name} from file.")
-    else:
-        load_dotenv()
-except ImportError:
-    if os.environ.get("GITHUB_ACTIONS"):
-        print("⚠️ [CI Debug] python-dotenv not installed. Manual recovery only.")
-    # Fallback manual read if env_path exists even without dotenv
     try:
         if os.path.exists(env_path):
             with open(env_path, 'r', encoding='utf-8') as f:
-                for line in f:
-                    if "JULES_API_KEY=" in line or "AGENT_API_KEY=" in line:
-                        val = line.replace("export ", "").strip().split("=", 1)[1].strip("'\" ")
-                        key_name = "JULES_API_KEY" if "JULES_API_KEY" in line else "AGENT_API_KEY"
-                        os.environ[key_name] = val
-    except:
-        pass
-    pass
+                return parse_env_content(f.read())
+
+        # Try default .env if production.env doesn't exist
+        try:
+            from dotenv import load_dotenv
+            load_dotenv()
+            return os.environ.get("JULES_API_KEY") or os.environ.get("AGENT_API_KEY")
+        except ImportError:
+            return False
+    except Exception as e:
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"⚠️ [CI Debug] Local env resolution failed: {e}")
+        return False
 
 BASE_URL = "https://jules.googleapis.com/v1alpha"
 
@@ -116,6 +130,13 @@ class AgentCLI:
         return response.json().get("sessions", [])
 
 def main():
+    # Priority: Remote Vault > Local Env > Local File
+    if os.environ.get("MONOREPO_PAT"):
+        load_monorepo_env()
+
+    if not os.environ.get("JULES_API_KEY") and not os.environ.get("AGENT_API_KEY"):
+        load_local_env()
+
     parser = argparse.ArgumentParser(description="Delegate tasks to an AI Agent.")
     parser.add_argument("--api-key", help="Agent API Key (overrides AGENT_API_KEY or JULES_API_KEY env var)")
     subparsers = parser.add_subparsers(dest="command", help="Commands")
