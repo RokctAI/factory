@@ -98,7 +98,7 @@ jobs:
               fi
             else
               echo "🚀 Delegating to Jules for $TITLE..."
-              if RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              if RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/$REPO" \
                 --prompt "$PROMPT" \
                 --title "$TITLE" 2>&1); then
