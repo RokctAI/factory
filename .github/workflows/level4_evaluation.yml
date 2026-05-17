@@ -1,4 +1,4 @@
-name: Level 4 - Evaluation Session
+﻿name: Level 4 - Evaluation Session
 on:
   schedule:
     - cron: '0 8 * * 6,0' # Weekends
@@ -53,7 +53,7 @@ jobs:
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         run: |
-          python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+          python .rokct/skills/agent_delegation/scripts/call_jules.py create \
             --repo "sources/github/RokctAI/factory" \
             --prompt "TASK: Weekend Evaluation Session. Audit these files: ${{ steps.claim_locks.outputs.card_files }}. Perform a backward audit (Line -> Stanza -> Poem -> Book -> World). Score each element (0-10) and suggest improvements where score < 8." \
             --title "Weekend Evaluation Session" \
