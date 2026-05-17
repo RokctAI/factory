@@ -59,7 +59,7 @@ jobs:
 
               echo "🚀 Delegating Rule Generation for $ID..."
 
-              RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/RokctAI/factory" \
                 --prompt "TASK: Generate hierarchical rules for the book '$ID' (Type: $TYPE, Theme: $THEME). Generate: World rules -> Book rules -> Poem/Chapter rules -> Stanza/Scene rules -> Line rules. Reference metarules for $TYPE. Update the card $FILE and set status to 'rules_generating'." \
                 --title "Level 3: Rule Generation - $ID" \
