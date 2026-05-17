@@ -34,11 +34,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
-       - name: Process Queue
-         env:
-           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
-           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+      - name: Process Queue
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
           FILES=$(ls .rokct/agent/queue/*.json .rokct/agent/prompts/in_progress/*.json 2>/dev/null || true)
 
