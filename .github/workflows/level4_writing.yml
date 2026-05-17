@@ -1,4 +1,4 @@
-name: Level 4 - Writing Session
+﻿name: Level 4 - Writing Session
 on:
   schedule:
     - cron: '0 8 * * 1-5' # 08:00 weekdays
@@ -59,7 +59,7 @@ jobs:
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
         run: |
-          python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+          python .rokct/skills/agent_delegation/scripts/call_jules.py create \
             --repo "sources/github/RokctAI/factory" \
             --prompt "TASK: Daily Writing Session for ${{ steps.claim_lock.outputs.card_file }}. Generate the next chapter or poem based on the world rules and metarules. Ensure consistency and emotional resonance." \
             --title "Daily Writing Session" \
