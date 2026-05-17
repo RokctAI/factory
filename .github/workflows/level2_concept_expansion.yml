@@ -59,7 +59,7 @@ jobs:
 
               echo "🚀 Delegating Concept Expansion for $ID..."
 
-              RESULT=$(python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/RokctAI/factory" \
                 --prompt "TASK: Develop a full concept for the book '$ID' (Type: $TYPE, Theme: $THEME). Include angle, emotional world, target feeling, and structural approach. Reference metarules for $TYPE. Update the card $FILE and set status to 'concept_expanding'." \
                 --title "Level 2: Concept Expansion - $ID" \
