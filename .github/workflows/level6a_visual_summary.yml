@@ -22,7 +22,7 @@ jobs:
             if [ "$STATUS" == "publishing" ] && [ "$VISUALS" == "pending" ]; then
               ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
               echo "🚀 Triggering Visual Summary for $ID..."
-              python .rokct/skills/agent_delegation/scripts/delegate_to_agent.py create \
+              python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/RokctAI/factory" \
                 --prompt "TASK: Read the entire folder for book '$ID'. Summarize emotional world, dominant themes, recurring images, tone, target feeling, and age guardrail. Save to visuals/book_summary.md inside the book folder. Then update visuals_status to 'summarizing' via update_status.py." \
                 --title "Level 6a: Visual Summary - $ID"
