@@ -87,7 +87,7 @@ jobs:
             SESSION_ID="—"
             if [ "$AGENT" == "groq" ]; then
               echo "🚀 Calling Groq for $TITLE..."
-              if RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py --prompt "$PROMPT" 2>&1) && [ -n "$RESPONSE" ]; then
+              if RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py groq --prompt "$PROMPT" 2>&1) && [ -n "$RESPONSE" ]; then
                 echo "✅ Groq responded. Handling output..."
                 python .rokct/skills/agent_delegation/scripts/handle_groq_output.py --level "$LEVEL" --content "$RESPONSE"
                 SUCCESS=true
