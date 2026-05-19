@@ -1,60 +1,32 @@
-# Licensed under the MIT License.
-# Copyright 2024 RokctAI
+#!/usr/bin/env python3
+"""
+factory call_groq — thin redirect to The-Rokct-Protocol shared implementation.
+"""
+import os, sys
 
-import os
-import requests
-import json
-import argparse
-import sys
+_here = os.path.dirname(os.path.abspath(__file__))
+_rock_root = os.path.dirname(os.path.dirname(os.path.dirname(_here)))   # .rokct/
+_workspace_parent = os.path.dirname(_rock_root)                       # parent of factory/
 
-# Script to call Groq API directly, following patterns in universal-release.yml
-def call_groq(prompt, system_prompt=None, model="llama-3.3-70b-versatile"):
-    api_key = os.environ.get("GROQ_API_KEY")
-    if not api_key:
-        print("Error: GROQ_API_KEY is missing.")
-        return None
+_candidates = [
+    os.path.join(_workspace_parent, "The-Rokct-Protocol", "core",
+                 "skills", "agent_delegation", "scripts"),
+]
 
-    url = "https://api.groq.com/openai/v1/chat/completions"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
-    }
+_search = os.path.dirname(_here)
+for _ in range(5):
+    _candidates.append(os.path.join(_search, "The-Rokct-Protocol", "core",
+                                    "skills", "agent_delegation", "scripts"))
+    _p = os.path.dirname(_search)
+    if _p == _search: break
+    _search = _p
 
-    messages = []
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": prompt})
+_shared_dir = next((c for c in _candidates if os.path.isdir(c)), None)
+if not _shared_dir:
+    print("Error: The-Rokct-Protocol/core/skills/agent_delegation/scripts not found",
+          file=sys.stderr)
+    sys.exit(1)
 
-    payload = {
-        "model": model,
-        "messages": messages,
-        "temperature": 0.2
-    }
-
-    try:
-        response = requests.post(url, json=payload, headers=headers, timeout=60)
-        response.raise_for_status()
-        data = response.json()
-        return data.get("choices", [{}])[0].get("message", {}).get("content")
-    except Exception as e:
-        print(f"Error calling Groq: {e}")
-        if hasattr(e, 'response') and e.response is not None:
-            print(f"Details: {e.response.text}")
-        return None
-
-def main():
-    parser = argparse.ArgumentParser(description="Call Groq API directly.")
-    parser.add_argument("--prompt", required=True, help="User prompt")
-    parser.add_argument("--system", help="System prompt")
-    parser.add_argument("--model", default="llama-3.3-70b-versatile", help="Groq model")
-
-    args = parser.parse_args()
-
-    content = call_groq(args.prompt, args.system, args.model)
-    if content:
-        print(content)
-    else:
-        sys.exit(1)
-
-if __name__ == "__main__":
-    main()
+sys.path.insert(0, _shared_dir)
+import delegate_to_agent   # shared canonical implementation
+sys.exit(delegate_to_agent.main())
