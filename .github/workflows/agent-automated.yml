@@ -62,11 +62,11 @@ jobs:
               continue
             fi
 
-            IMMEDIATE=$(jq -r '.immediate // "true"' "$FILE")
-            if [ -z "$SCHEDULED_AT" ] && [ "$IMMEDIATE" == "false" ]; then
-               echo "🕒 Task marked as immediate:false. Skipping."
-               continue
-            fi
+            AGENT=$(jq -r '.agent // "jules"' "$FILE")
+            REPO=$(jq -r '.repo' "$FILE")
+            PROMPT=$(jq -r '.prompt' "$FILE")
+            TITLE=$(jq -r '.title // "AI-Automation"' "$FILE")
+            LEVEL=$(jq -r '.level // 0' "$FILE")
 
             # Claim Lock
             CARD_FILE=$(jq -r '.card_file // empty' "$FILE")
@@ -76,12 +76,6 @@ jobs:
                  continue
               fi
             fi
-
-            AGENT=$(jq -r '.agent // "jules"' "$FILE")
-            REPO=$(jq -r '.repo' "$FILE")
-            PROMPT=$(jq -r '.prompt' "$FILE")
-            TITLE=$(jq -r '.title // "AI-Automation"' "$FILE")
-            LEVEL=$(jq -r '.level // 0' "$FILE")
 
             SUCCESS=false
             SESSION_ID="—"
@@ -116,7 +110,7 @@ jobs:
               # Update Audit Log
               echo "| $TIMESTAMP | $TITLE | $AGENT | ✅ SUCCESS | $SESSION_ID | Task processed successfully. |" >> .rokct/agent/logs/ai_delegation.md
               HAS_UPDATES=true
-              
+
               # Update Ledger Manually (Legacy support)
               if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
                  ID=$(grep '^id:' "$CARD_FILE" | cut -d':' -f2 | xargs)
@@ -146,7 +140,7 @@ jobs:
               NEW_ATTEMPTS=$((ATTEMPTS + 1))
               echo "| $TIMESTAMP | $TITLE | $AGENT | ❌ FAILED | ${{ github.run_id }} | Attempt $NEW_ATTEMPTS. Reason: $REASON |" >> .rokct/agent/logs/ai_delegation.md
               HAS_UPDATES=true
-              
+
               if [ -n "$CARD_FILE" ] && [ -f "$CARD_FILE" ]; then
                  ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" | cut -d':' -f2 | xargs)
                  NEW_ATTEMPTS=$((ATTEMPTS + 1))
