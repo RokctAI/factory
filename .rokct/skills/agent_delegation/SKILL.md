@@ -10,19 +10,21 @@ This skill delegates work to external AI agents (Jules) or the Groq API. It uses
 ## Architecture
 
 ```
-factory .rokct/                          The-Rokct-Protocol/
- └─ skills/agent_delegation/             └─ core/skills/agent_delegation/scripts/
-     ├─ scripts/call_jules.py            │    ├─ delegate_to_agent.py   (canonical — excluded from copy)
-     ├─ scripts/call_groq.py             │    └─ utils/
-     ├─ scripts/handle_groq_output.py    └──►     ├─ call_jules.py
-     └─ scripts/update_classifications.py        ├─ call_groq.py
-                                                    └─ handle_groq_output.py
+Project .rokct/                         The-Rokct-Protocol/
+ └─ agent_delegation/                   └─ core/skills/agent_delegation/scripts/
+     ├─ call_jules.py ──────────────────► delegate_to_agent.py   (canonical — excluded from copy)
+     ├─ call_groq.py  ──────────────────► delegate_to_agent.py   (canonical)
+     └─ handle_groq_output.py            └─ utils/
+                                                ├─ call_jules.py
+                                                ├─ call_groq.py
+                                                ├─ handle_groq_output.py
+                                                └─ manage_sessions.py
 ```
 
-- **Thin wrappers** (`call_jules.py`, `call_groq.py`) live in `.rokct/skills/agent_delegation/scripts/`. They locate `The-Rokct-Protocol` by walking up the directory tree and redirect to `delegate_to_agent.py`.
-- **`delegate_to_agent.py`** is the single canonical implementation in The-Rokct-Protocol. It is **excluded** during `init_protocol` copy.
-- **`handle_groq_output.py`** is project-specific — parses Groq LLM output into job cards for `.rokct/agent/jobs/pending/`. Uses `update_classifications.py` from the same scripts directory; reads `.rokct/config/classifications/factory_themes.txt` for deduplication.
-- **`update_classifications.py`** is project-specific — generates/exports theme/genre lists for this project's classification files.
+- **Thin wrappers** (`call_jules.py`, `call_groq.py`) live in each project's `.rokct/`. They locate `The-Rokct-Protocol` by walking up the directory tree and redirect to `delegate_to_agent.py`.
+- **`delegate_to_agent.py`** is the single canonical implementation in The-Rokct-Protocol. It is **excluded** during `init_protocol` copy because wrapper scripts delegate directly to it.
+- **`handle_groq_output.py`** is project-specific — parses Groq LLM output into job cards for `.rokct/agent/jobs/pending/`. Uses `update_classifications.py` (same project) for topic deduplication. A reference copy lives in The-Rokct-Protocol `utils/` as a scaffold.
+- **`manage_sessions.py`** — reads `session_state.md` + `ledger.md`, detects stalled cards, counts active Jules sessions. `core/` copy.
 
 ## Prerequisites
 - **Jules API Key**: `JULES_API_KEY` or `AGENT_API_KEY` (env, `.env`, or remote vault).
@@ -57,13 +59,22 @@ Order of fallback:
 - **Direct (Antigravity)**: Architecture design, UI/UX, multi-repo sync, complex discovery.
 - **Groq**: Fast LLM calls without a Jules session (theme generation, structured output).
 
-## How to Use
+## Project Layouts
+
+| Project | Jules wrapper | Groq wrapper |
+|---|---|---|
+| **factory** | `.rokct/skills/agent_delegation/scripts/call_jules.py` | `.rokct/skills/agent_delegation/scripts/call_groq.py` |
+| **opportunities** | `.rokct/scripts/agent_delegation/call_jules.py` | `.rokct/scripts/agent_delegation/call_groq.py` |
+
+## How to Use (Init Reference)
+
+Use this section when building the `init_protocol` scaffold for a new project.
 
 ### 1. Delegate to Jules
 
 ```bash
-python .rokct/skills/agent_delegation/scripts/call_jules.py create \
-  --repo "sources/github/RokctAI/factory" \
+python .rokct/scripts/agent_delegation/call_jules.py create \
+  --repo "sources/github/OWNER/REPO" \
   --prompt "Your detailed task description here" \
   --title "Feature/Task Name"
 ```
@@ -71,29 +82,25 @@ python .rokct/skills/agent_delegation/scripts/call_jules.py create \
 Monitor status:
 
 ```bash
-python .rokct/skills/agent_delegation/scripts/call_jules.py status --id "SESSION_ID"
+python .rokct/scripts/agent_delegation/call_jules.py status --id "SESSION_ID"
 ```
 
 ### 2. Call Groq Directly
 
 ```bash
-python .rokct/skills/agent_delegation/scripts/call_groq.py groq \
+python .rokct/scripts/agent_delegation/call_groq.py groq \
   --prompt "Your prompt here" \
   --system "Optional system prompt" \
   --model "llama-3.3-70b-versatile"
 ```
 
-### 3. Handle Groq Output (Pipeline)
+### 3. Handle Groq Output (Pipeline — factory)
+
+Create the project-side `handle_groq_output.py` under the project's wrapper directory. It reads `update_classifications.py` (same directory) for deduplication.
 
 ```bash
-python .rokct/skills/agent_delegation/scripts/handle_groq_output.py \
-  --level 0 \
-  --content "$GROQ_RESPONSE"
+python .rokct/scripts/agent_delegation/handle_groq_output.py --level 0 --content "$GROQ_RESPONSE"
 ```
-
-Pipeline levels:
-- **Level 0**: Parses `theme | type` lines → creates `.rokct/agent/jobs/pending/` job cards.
-- **Level 1**: Parses 5 ideas per card (extension point).
 
 ### 4. Manage Sessions
 
@@ -101,14 +108,12 @@ Pipeline levels:
 python .rokct/skills/agent_delegation/scripts/manage_sessions.py
 ```
 
-Reads `session_state.md` and `ledger.md`, detects stalled cards, reports active Jules sessions.
-
 ### 5. Approve Plans (Optional)
 
 ```bash
-python .rokct/skills/agent_delegation/scripts/call_jules.py approve --id "SESSION_ID"
+python .rokct/scripts/agent_delegation/call_jules.py approve --id "SESSION_ID"
 ```
 
 ## Best Practices
 - **Repo format**: Always use full source name (`sources/github/Owner/Repo`).
-- **Context**: Mention specific file paths or patterns to narrow scope.
+- **Context**: Mention specific file paths or patterns to narrow Jules' scope.
