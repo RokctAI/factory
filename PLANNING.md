@@ -14,7 +14,7 @@ An autonomous publishing factory that generates, evaluates, improves, and publis
 ## 2. Core Philosophy
 
 ### The Poetry Foundation
-Every design decision in this system flows from a poetry philosophy:
+Every design decision in this system flows from a book.poetry philosophy:
 
 - **Line = Tree** — stands alone, hits alone, needs nothing else to survive
 - **Stanza = Forest** — trees together create something larger without losing individual strength
@@ -35,7 +35,7 @@ The system accepts a single input card with three fields:
 
 ```
 theme: [any theme]
-type: [book.poetry | book.fiction | book.short_story | book.children | film.documentary]
+type: [book.poetry | book.fiction | book.book.short_story | book.children | film.documentary]
 age: [optional — number]
 ```
 
@@ -144,7 +144,7 @@ RokctAI/factory/                         # New repo, separate from opportunities
       age_13_17.md                       # Young adult static prompt
 
   types/
-    poetry/
+    book.poetry/
       metarules/
         world_rules.md
         book_rules.md
@@ -162,7 +162,7 @@ RokctAI/factory/                         # New repo, separate from opportunities
         line_rules.md
         impact_metrics.md
         audit_rules.md
-    short_story/
+    book.short_story/
       metarules/
         [same structure]
     children/
@@ -206,15 +206,15 @@ books/
 
 ### Idea Card (lives in `.rokct/agent/jobs/`)
 Filename: `{theme}_{type}_{hash}.md`
-Example: `loneliness_poetry_a3f7b2.md`
+Example: `loneliness_book.poetry_a3f7b2.md`
 
 ```markdown
 ---
-id: loneliness_poetry_a3f7b2
+id: loneliness_book.poetry_a3f7b2
 theme: loneliness
-type: poetry
+type: book.poetry
 age:
-metarules: .rokct/types/poetry/metarules/
+metarules: .rokct/types/book.poetry/metarules/
 guardrail:
 idea: Blank spaces between people who share a bed
 idea_status: pending_approval
@@ -243,13 +243,13 @@ File: `.rokct/agent/log/ledger.md`
 ```markdown
 | ID              | Type    | Theme      | Status                  | Agent | Session  | PR    | Timestamp           |
 |-----------------|---------|------------|-------------------------|-------|----------|-------|---------------------|
-| loneliness_a3f7 | poetry  | loneliness | idea_generated          | groq  | GS-0001  | —     | 2026-04-29 08:00    |
-| loneliness_a3f7 | poetry  | loneliness | pending_approval        | —     | —        | —     | 2026-04-29 08:01    |
-| loneliness_a3f7 | poetry  | loneliness | concept_expanding       | groq  | GS-0002  | —     | 2026-04-29 09:00    |
-| loneliness_a3f7 | poetry  | loneliness | rules_generating        | jules | JS-0001  | #12   | 2026-04-29 20:00    |
-| loneliness_a3f7 | poetry  | loneliness | writing                 | jules | JS-0002  | #15   | 2026-04-30 08:00    |
-| loneliness_a3f7 | poetry  | loneliness | draft_ready             | jules | JS-0003  | #18   | 2026-05-03 20:00    |
-| loneliness_a3f7 | poetry  | loneliness | published               | human | —        | #22   | 2026-05-04 10:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | idea_generated          | groq  | GS-0001  | —     | 2026-04-29 08:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | pending_approval        | —     | —        | —     | 2026-04-29 08:01    |
+| loneliness_a3f7 | book.poetry  | loneliness | concept_expanding       | groq  | GS-0002  | —     | 2026-04-29 09:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | rules_generating        | jules | JS-0001  | #12   | 2026-04-29 20:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | writing                 | jules | JS-0002  | #15   | 2026-04-30 08:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | draft_ready             | jules | JS-0003  | #18   | 2026-05-03 20:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | published               | human | —        | #22   | 2026-05-04 10:00    |
 ```
 
 Session naming:
@@ -365,14 +365,14 @@ The same pipeline with zero structural changes supports:
 - Fiction novels
 - Short story collections
 - Children's books (any age, guardrail injected automatically)
-- Children's poetry books
+- Children's book.poetry books
 - Any future genre — add metarules folder, system works immediately
 
 Same theme across types produces different books:
 ```
-theme: loneliness  type: poetry     age: —   → Adult poetry collection
-theme: loneliness  type: short_story age: —  → Adult short stories
-theme: loneliness  type: poetry     age: 5   → Children's poetry book
+theme: loneliness  type: book.poetry     age: —   → Adult book.poetry collection
+theme: loneliness  type: book.short_story age: —  → Adult short stories
+theme: loneliness  type: book.poetry     age: 5   → Children's book.poetry book
 theme: loneliness  type: book.fiction    age: 14  → YA novel
 ```
 
@@ -385,7 +385,7 @@ One input file. Four different planets.
 1. Repo scaffold — folders, README, placeholder files
 2. Ledger system — structure, CI writer workflow
 3. Guardrails — static prompt templates for each age group
-4. Metarules — poetry first, other types can be empty stubs
+4. Metarules — book.poetry first, other types can be empty stubs
 5. Groq prompt cards — Level 0 and Level 1 scheduled prompts
 6. Jules job templates — writing, evaluation, publishing
 7. Session scheduler — reads ledger, manages slots

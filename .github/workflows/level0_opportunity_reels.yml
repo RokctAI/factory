@@ -46,6 +46,15 @@ jobs:
                               pass
           PYEOF
           python cleanup_expired.py
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add opportunities/
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: remove expired opportunity cards"
+            git push
+          else
+            echo "No expired cards to remove."
+          fi
 
       - name: Trigger Jules to pull new Opportunities for Reels
         env:

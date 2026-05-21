@@ -12,18 +12,26 @@ jobs:
 
       - name: Check Queue and Trigger
         run: |
-          PENDING_COUNT=$(ls .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v "template.md" | wc -l)
-          echo "Current pending themes: $PENDING_COUNT"
-          if [ "$PENDING_COUNT" -lt 5 ]; then
-            echo "🚀 Triggering Level 0 Theme Discovery..."
-            # For simplicity, we trigger the agent-automated workflow if possible,
-            # or just rely on its next scheduled run.
-            # Here we just mark the prompt card as immediate:true to be picked up.
-            jq '.immediate = "true"' .rokct/agent/prompts/in_progress/level0_theme_discovery.json > tmp.json && mv tmp.json .rokct/agent/prompts/in_progress/level0_theme_discovery.json
+                    TYPES=("book.poetry" "book.fiction" "book.short_story" "book.children" "film.documentary")
 
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add .rokct/agent/prompts/in_progress/level0_theme_discovery.json
-            git commit -m "🤖 [CI] Trigger Theme Discovery [skip ci]" || exit 0
-            git push origin main
-          fi
+          for TYPE in "${TYPES[@]}"; do
+            PENDING_COUNT=$(ls .rokct/agent/jobs/pending/*_${TYPE}_*.md 2>/dev/null | grep -v "template.md" | wc -l)
+            echo "Current pending themes for $TYPE: $PENDING_COUNT"
+
+            if [ "$PENDING_COUNT" -lt 5 ]; then
+              echo "🚀 Triggering Level 0 Theme Discovery for $TYPE..."
+
+              # Update prompt card to focus on this type
+              PROMPT="Generate 5 new unique themes for $TYPE. Return only the list in the format: theme | type"
+              jq --arg p "$PROMPT" '.prompt = $p | .immediate = "true"' .rokct/agent/prompts/in_progress/level0_theme_discovery.json > tmp.json && mv tmp.json .rokct/agent/prompts/in_progress/level0_theme_discovery.json
+
+              git config --global user.name "github-actions[bot]"
+              git config --global user.email "github-actions[bot]@users.noreply.github.com"
+              git add .rokct/agent/prompts/in_progress/level0_theme_discovery.json
+              git commit -m "🤖 [CI] Trigger Theme Discovery for $TYPE [skip ci]" || true
+              eval "git push origin main"
+
+              # Break after triggering one to avoid overwhelming
+              break
+            fi
+          done
