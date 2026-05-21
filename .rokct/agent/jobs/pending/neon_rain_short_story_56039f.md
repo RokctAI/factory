@@ -7,7 +7,7 @@
 ---
 id: neon_rain_56039f
 theme: Neon Rain
-type: short_story
+type: book.short_story
 age:
 metarules:
 guardrail:

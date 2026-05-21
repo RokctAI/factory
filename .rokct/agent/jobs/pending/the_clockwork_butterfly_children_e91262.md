@@ -7,7 +7,7 @@
 ---
 id: the_clockwork_butterfly_e91262
 theme: The Clockwork Butterfly
-type: children
+type: book.children
 age:
 metarules:
 guardrail:

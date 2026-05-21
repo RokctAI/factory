@@ -7,7 +7,7 @@
 ---
 id: echoes_of_the_void_862e48
 theme: Echoes of the Void
-type: fiction
+type: book.fiction
 age:
 metarules:
 guardrail:

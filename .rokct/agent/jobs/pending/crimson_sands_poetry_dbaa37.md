@@ -7,7 +7,7 @@
 ---
 id: crimson_sands_dbaa37
 theme: Crimson Sands
-type: poetry
+type: book.poetry
 age:
 metarules:
 guardrail:

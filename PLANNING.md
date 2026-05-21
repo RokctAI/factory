@@ -35,7 +35,7 @@ The system accepts a single input card with three fields:
 
 ```
 theme: [any theme]
-type: [poetry | fiction | short_story | children]
+type: [book.poetry | book.fiction | book.short_story | book.children]
 age: [optional — number]
 ```
 
@@ -373,7 +373,7 @@ Same theme across types produces different books:
 theme: loneliness  type: poetry     age: —   → Adult poetry collection
 theme: loneliness  type: short_story age: —  → Adult short stories
 theme: loneliness  type: poetry     age: 5   → Children's poetry book
-theme: loneliness  type: fiction    age: 14  → YA novel
+theme: loneliness  type: book.fiction    age: 14  → YA novel
 ```
 
 One input file. Four different planets.
@@ -438,7 +438,7 @@ The hook must work in under 5 seconds. It is one tree from the forest, shown to 
 The factory supports a second content stream for long-form research series.
 Content lives in bible/ not books/.
 Same pipeline and agent infrastructure.
-Different metarules under .rokct/types/series_episode/
+Different metarules under .rokct/types/bible.series/
 
 First series: Forbidden Questions
 Location: bible/forbidden_questions/
@@ -446,7 +446,7 @@ Status: 15 episodes complete, characters and deep-dives to build.
 
 To generate a new episode:
   theme: [topic]
-  type: series_episode
+  type: bible.series
   series: forbidden_questions
 
 The factory reads the series metarules, the master thread, and the existing episodes as style reference before generating.
@@ -456,7 +456,7 @@ The factory reads the series metarules, the master thread, and the existing epis
 The factory supports a second content stream for long-form research series.
 Content lives in bible/ not books/.
 Same pipeline and agent infrastructure.
-Different metarules under .rokct/types/series_episode/
+Different metarules under .rokct/types/bible.series/
 
 First series: Forbidden Questions
 Location: bible/forbidden_questions/
@@ -464,7 +464,7 @@ Status: 15 episodes complete, characters and deep-dives to build.
 
 To generate a new episode:
   theme: [topic]
-  type: series_episode
+  type: bible.series
   series: forbidden_questions
 
 The factory reads the series metarules, the master thread, and the existing episodes as style reference before generating.

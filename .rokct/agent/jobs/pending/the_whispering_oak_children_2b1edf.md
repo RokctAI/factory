@@ -7,7 +7,7 @@
 ---
 id: the_whispering_oak_2b1edf
 theme: The Whispering Oak
-type: children
+type: book.children
 age:
 metarules:
 guardrail:

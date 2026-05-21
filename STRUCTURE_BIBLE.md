@@ -2410,7 +2410,7 @@ God made a promise about a land. He described what it would become. The path to 
 
 ---
 ## Metarules (Full Content)
-> Location: `.rokct/types/series_episode/metarules/`
+> Location: `.rokct/types/bible.series/metarules/`
 
 ### Metarule: `audit_rules.md`
 ```markdown

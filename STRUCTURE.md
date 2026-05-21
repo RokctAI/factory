@@ -4,13 +4,13 @@ This repository contains two parallel content streams managed by the same agent 
 
 ## 1. Books Stream (`books/`)
 Automated publishing factory for poetry, fiction, and children's books.
-- **Rules:** `.rokct/types/{poetry|fiction|children|short_story}/`
+- **Rules:** `.rokct/types/{book.poetry|book.fiction|book.children|book.short_story}/`
 - **Output:** `books/published/`
 - **See:** [STRUCTURE_BOOKS.md](STRUCTURE_BOOKS.md)
 
 ## 2. Bible Series Stream (`bible/`)
 Long-form research series exploring the hidden architecture of scripture.
-- **Rules:** `.rokct/types/series_episode/`
+- **Rules:** `.rokct/types/bible.series/`
 - **Output:** `bible/{series_name}/`
 - **See:** [STRUCTURE_BIBLE.md](STRUCTURE_BIBLE.md)
 
