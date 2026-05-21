@@ -27,7 +27,8 @@ jobs:
       - name: Delete Session
         if: steps.extract_id.outputs.session_id != ''
         env:
-          AGENT_API_KEY: ${{ secrets.JULES_API_KEY }}
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
           SESSION_ID: ${{ steps.extract_id.outputs.session_id }}
         run: |
           python .rokct/skills/agent_delegation/scripts/call_jules.py delete \
