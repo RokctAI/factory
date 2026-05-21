@@ -34,9 +34,10 @@ jobs:
         id: delegate_task
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
           # Find the oldest card with status: theme_generated
-          # We use ls -rt to sort by modification time (oldest first)
           ALL_CARDS=$(ls -rt .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template.md' || true)
 
           FILE=""
