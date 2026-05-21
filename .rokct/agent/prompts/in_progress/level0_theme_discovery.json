@@ -1,10 +1,12 @@
 {
   "repo": "RokctAI/factory",
-  "prompt": "Analyze the current pending theme cards in .rokct/agent/jobs/pending/. If there are fewer than 5 themes, generate 5 new unique themes for books across supported types (poetry, fiction, short_story, children). Write each theme as a new card in .rokct/agent/jobs/pending/ using the template. Filename: {theme}_{type}_{hash}.md.",
+  "agent": "groq",
+  "level": 0,
+  "prompt": "Generate 5 new unique book themes across supported types (poetry, fiction, short_story, children). Return only the list in the format: theme | type",
   "branch": "main",
   "title": "Level 0: Theme Discovery",
   "automation_mode": "AUTO_CREATE_PR",
   "recurrence": "Daily",
-  "immediate": "true",
+  "immediate": "false",
   "scheduled_at": "2026-04-29T12:00:00Z"
 }
