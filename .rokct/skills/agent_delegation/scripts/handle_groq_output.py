@@ -2,15 +2,29 @@
 # Copyright 2024 RokctAI
 
 import os
+import sys
 import re
 import json
 import hashlib
 import argparse
+import subprocess
 from pathlib import Path
 from datetime import datetime
+
+# Ensure we can import from the same directory
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from update_classifications import is_duplicate_theme
 
-def handle_groq_output(level, content):
+def set_field(content, field, value):
+    if re.search(rf'^{field}:', content, re.MULTILINE):
+        return re.sub(rf'^{field}:.*', f'{field}: {value}', content, flags=re.MULTILINE)
+    else:
+        if '---' in content:
+            parts = content.rsplit('---', 1)
+            return f"{parts[0]}{field}: {value}\n---{parts[1]}"
+        return f"{content}\n{field}: {value}"
+
+def handle_groq_output(level, content, file_path=None):
     """Parses Groq output and performs file operations based on the pipeline level."""
     print(f"🛠️ Processing Groq Output for Level {level}...")
 
@@ -61,7 +75,7 @@ concept_status:
 rules_status:
 book_name:
 book_path:
-status: idea_generated
+status: theme_generated
 created: {datetime.now().strftime('%Y-%m-%d')}
 last_updated: {datetime.now().strftime('%Y-%m-%d')}
 session_id:
@@ -76,12 +90,53 @@ max_iterations: 10
                 f.write(card_content)
             print(f"✅ Created job card: {filename}")
             count += 1
+
+        # Update classifications after creating new cards
+        try:
+            scripts_dir = Path(__file__).parent
+            subprocess.run(['python', str(scripts_dir / 'update_classifications.py')], check=True)
+        except Exception as e:
+            print(f"⚠️ Failed to update classifications: {e}")
+
         return count > 0
 
     elif level == 1:
         # Level 1: Expected output is 5 ideas for a specific card
-        print("ℹ️ Level 1 Groq output handling: Card update logic.")
-        return True
+        if not file_path:
+            print("Error: --file is required for Level 1 output handling.")
+            return False
+
+        card_path = Path(file_path)
+        if not card_path.exists():
+            print(f"Error: Card file {file_path} not found.")
+            return False
+
+        with open(card_path, 'r', encoding='utf-8') as f:
+            card_content = f.read()
+
+        # Clean up content (remove conversational filler if any)
+        ideas = content.strip()
+
+        # Update the card content
+        updated_content = set_field(card_content, "idea", ideas.replace('\n', ' '))
+
+        with open(card_path, 'w', encoding='utf-8') as f:
+            f.write(updated_content)
+
+        # Use update_status.py to handle the state transition
+        try:
+            scripts_dir = Path(__file__).parent
+            subprocess.run([
+                'python', str(scripts_dir / 'update_status.py'),
+                '--file', str(card_path),
+                '--status', 'pending_approval',
+                '--agent', 'groq'
+            ], check=True)
+            print(f"✅ Updated card {file_path} with ideas and status 'pending_approval'.")
+            return True
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Failed to update status for {file_path}: {e}")
+            return False
 
     return False
 
@@ -89,12 +144,14 @@ def main():
     parser = argparse.ArgumentParser(description="Handle Groq output.")
     parser.add_argument("--level", type=int, required=True, help="Pipeline level (0-6)")
     parser.add_argument("--content", required=True, help="Content from Groq")
+    parser.add_argument("--file", help="Path to the job card file (required for level > 0)")
 
     args = parser.parse_args()
 
-    success = handle_groq_output(args.level, args.content)
+    success = handle_groq_output(args.level, args.content, args.file)
     if not success:
         print("⚠️ No actionable content found in Groq output.")
+        exit(1)
 
 if __name__ == "__main__":
     main()

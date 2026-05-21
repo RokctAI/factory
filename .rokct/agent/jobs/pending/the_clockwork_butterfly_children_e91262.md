@@ -18,7 +18,7 @@ concept_status:
 rules_status:
 book_name:
 book_path:
-status: idea_generated
+status: theme_generated
 created: 2026-05-20
 last_updated: 2026-05-20
 session_id:

@@ -5,6 +5,9 @@ on:
       - '.rokct/agent/jobs/pending/*.md'
     branches:
       - main
+  schedule:
+    - cron: '30 * * * *' # Every hour
+  workflow_dispatch:
 
 jobs:
   generate_ideas:
@@ -18,8 +21,6 @@ jobs:
       card_file: ${{ steps.delegate_task.outputs.card_file }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,53 +30,65 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
-      - name: Identify New Card and Claim Lock
+      - name: Identify Oldest Card and Claim Lock
         id: delegate_task
         env:
-          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
-          FILES=$(git diff --name-only HEAD~1 HEAD | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template.md' || true)
+          # Find the oldest card with status: theme_generated
+          # We use ls -rt to sort by modification time (oldest first)
+          ALL_CARDS=$(ls -rt .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template.md' || true)
 
-          if [ -z "$FILES" ]; then
-            echo "ℹ️ No new job cards found."
+          FILE=""
+          for f in $ALL_CARDS; do
+            STATUS=$(grep '^status:' "$f" | cut -d':' -f2 | xargs)
+            if [ "$STATUS" == "theme_generated" ]; then
+              FILE="$f"
+              break
+            fi
+          done
+
+          if [ -z "$FILE" ]; then
+            echo "ℹ️ No cards pending idea generation found."
           else
-            for FILE in $FILES; do
-              if [ ! -f "$FILE" ]; then continue; fi
+            ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+            TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
+            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
 
-              ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
-              TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
-              THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
-              STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+            # Claim Job Lock
+            if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "groq" --session "GS-IDEA-$GITHUB_RUN_ID"; then
+              echo "Card $FILE is locked by another session. Skipping."
+              exit 0
+            fi
 
-              if [ "$STATUS" != "idea_generated" ]; then continue; fi
+            echo "🚀 Requesting Ideas from Groq for $ID..."
 
-              # Claim Job Lock
-              if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "groq" --session "GS-IDEA-$GITHUB_RUN_ID"; then
-                echo "Card $FILE is locked by another session. Skipping."
-                continue
-              fi
+            PROMPT="Generate 5 unique one-line book ideas for the theme '$THEME' and type '$TYPE'. Return only the ideas."
+            RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py groq --prompt "$PROMPT")
 
-              echo "🚀 Delegating Idea Expansion for $ID..."
+            if [ -n "$RESPONSE" ]; then
+              echo "✅ Groq responded. Updating card..."
+              python .rokct/skills/agent_delegation/scripts/handle_groq_output.py --level 1 --file "$FILE" --content "$RESPONSE"
 
-              RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
-                --repo "sources/github/RokctAI/factory" \
-                --prompt "TASK: Expand the theme '$THEME' for a '$TYPE' book. Generate 5 unique one-line book ideas. Update the card $FILE with these ideas and change status to 'pending_approval'." \
-                --title "Level 1: Idea Expansion - $ID" \
-                --automation-mode "AUTO_CREATE_PR")
+              git config --global user.name "github-actions[bot]"
+              git config --global user.email "github-actions[bot]@users.noreply.github.com"
+              git add "$FILE" .rokct/agent/log/transitions.log
+              git commit -m "🤖 [CI] Level 1: Idea Expansion for $ID [skip ci]"
+              git push origin main
 
-              SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
-
-              echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
+              echo "session_id=GROQ-$GITHUB_RUN_ID" >> "$GITHUB_OUTPUT"
               echo "card_id=$ID" >> "$GITHUB_OUTPUT"
               echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
               echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
               echo "card_file=$FILE" >> "$GITHUB_OUTPUT"
-              break
-            done
+            else
+              echo "❌ Groq call failed."
+              exit 1
+            fi
           fi
 
       - name: Release Job Lock
-        if: success() && steps.delegate_task.outputs.card_file != ''
+        if: always() && steps.delegate_task.outputs.card_file != ''
         run: |
           python .rokct/skills/agent_delegation/scripts/lock_job.py \
             --file "${{ steps.delegate_task.outputs.card_file }}" \

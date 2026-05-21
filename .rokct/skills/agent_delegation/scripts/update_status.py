@@ -8,7 +8,8 @@ from pathlib import Path
 from datetime import datetime
 
 ALLOWED_TRANSITIONS = {
-    "idea_generated": ["pending_approval", "failed", "stalled"],
+    "theme_generated": ["pending_approval", "failed", "stalled"],
+    "idea_generated": ["pending_approval", "failed", "stalled"], # Legacy/Fallback
     "pending_approval": ["concept_expanding", "declined", "failed", "stalled"],
     "concept_expanding": ["concept_generated", "failed", "stalled"],
     "concept_generated": ["pending_concept_approval", "failed", "stalled"],
@@ -66,7 +67,7 @@ def update_status():
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    now = datetime.utcnow()
+    now = datetime.now()
     card_id = get_field(content, "id")
     attempts = int(get_field(content, "attempts") or 0)
     log_entries = []

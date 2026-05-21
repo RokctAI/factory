@@ -1,6 +1,8 @@
 {
   "repo": "RokctAI/factory",
-  "prompt": "Pick the oldest pending theme card in .rokct/agent/jobs/pending/ where status is 'theme_generated'. Generate 5 unique one-line book ideas for this theme and type. Update the card with these ideas and change status to 'pending_approval'. Format ideas for human review.",
+  "agent": "groq",
+  "level": 1,
+  "prompt": "Pick the oldest pending theme card in .rokct/agent/jobs/pending/ where status is 'theme_generated'. Generate 5 unique one-line book ideas for this theme and type. Return only the ideas.",
   "branch": "main",
   "title": "Level 1: Idea Expansion",
   "automation_mode": "AUTO_CREATE_PR",
