@@ -1,6 +1,6 @@
 # Repository Map — RokctAI Book Factory
 
-This repository contains two parallel content streams managed by the same agent infrastructure.
+This repository contains three parallel content streams managed by the same agent infrastructure.
 
 ## 1. Books Stream (`books/`)
 Automated publishing factory for poetry, fiction, and children's books.
@@ -13,6 +13,12 @@ Long-form research series exploring the hidden architecture of scripture.
 - **Rules:** `.rokct/types/bible.series/`
 - **Output:** `bible/{series_name}/`
 - **See:** [STRUCTURE_BIBLE.md](STRUCTURE_BIBLE.md)
+
+## 3. Film Stream (`film/`)
+Documentary and scripting content output.
+- **Rules:** `.rokct/types/film.documentary/`
+- **Output:** `film/{project_name}/`
+- **See:** [STRUCTURE_FILM.md](STRUCTURE_FILM.md)
 
 ---
 
