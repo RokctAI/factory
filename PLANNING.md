@@ -35,7 +35,7 @@ The system accepts a single input card with three fields:
 
 ```
 theme: [any theme]
-type: [book.poetry | book.fiction | book.book.short_story | book.children | film.documentary]
+type: [book.poetry | book.fiction | book.short_story | book.children | film.documentary]
 age: [optional — number]
 ```
 
