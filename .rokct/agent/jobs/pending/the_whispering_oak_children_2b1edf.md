@@ -7,7 +7,7 @@
 ---
 id: the_whispering_oak_2b1edf
 theme: The Whispering Oak
-type: children
+type: book.children
 age:
 metarules:
 guardrail:
@@ -21,9 +21,9 @@ book_path:
 status: theme_generated
 created: 2026-05-20
 last_updated: 2026-05-20
-session_id: 
-session_started: 
-attempts: 1
+session_id:
+session_started:
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10
