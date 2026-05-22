@@ -26,10 +26,12 @@ An autonomous publishing factory that generates, evaluates, improves, and publis
 
 ## 👥 Human Decision Points
 
-1. **Approve Idea** (Level 1): Change `idea_status` to `approved` in the job card.
-2. **Approve Concept** (Level 2): Change `concept_status` to `approved` in the job card.
-3. **Approve Rules** (Level 3): Change `rules_status` to `approved` in the job card.
-4. **Accept Final Draft** (Level 5): Change `status` to `accepted` in `metadata.md`.
+*For detailed instructions on how human intervention works at each stage and how the pipeline depends on it, please read the [HOW_TO_USE.md](HOW_TO_USE.md) guide.*
+
+1. **Approve Idea** (Level 1): Change the job card status from `pending_approval` to `concept_expanding`.
+2. **Approve Concept** (Level 2): Change the job card status from `pending_concept_approval` to `rules_generating`.
+3. **Approve Rules** (Level 3): Change the job card status from `pending_rules_approval` to `writing`.
+4. **Accept Final Draft** (Level 5): Change the status from `pending_acceptance` to `publishing`.
 
 ## 📁 Repository Structure
 

@@ -5,9 +5,9 @@
      Direct edits to status field will be rejected by the state machine.
 -->
 ---
-id: neon_rain_56039f
-theme: Neon Rain
-type: short_story
+id: the_clockwork_butterfly_e91262
+theme: The Clockwork Butterfly
+type: book.children
 age:
 metarules:
 guardrail:

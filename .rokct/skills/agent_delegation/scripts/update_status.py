@@ -39,7 +39,7 @@ VISUALS_TRANSITIONS = {
 
 def get_field(content, field):
     match = re.search(rf'^{field}:[ \t]*(.*)', content, re.MULTILINE)
-    return match.group(1).strip() if match else ""
+    return match.group(1).split('#')[0].strip() if match else ""
 
 def set_field(content, field, value):
     if re.search(rf'^{field}:', content, re.MULTILINE):
@@ -84,7 +84,17 @@ def update_status():
                 print(f"Error: Unknown current status {current_status}. Transition to {args.status} rejected.")
                 sys.exit(1)
 
-        content = set_field(content, "status", args.status)
+        status_to_write = args.status
+        if args.status == "pending_approval":
+            status_to_write = f"{args.status} # next step is concept_expanding"
+        elif args.status == "pending_concept_approval":
+            status_to_write = f"{args.status} # next step is rules_generating"
+        elif args.status == "pending_rules_approval":
+            status_to_write = f"{args.status} # next step is writing"
+        elif args.status == "pending_acceptance":
+            status_to_write = f"{args.status} # next step is publishing"
+
+        content = set_field(content, "status", status_to_write)
         log_entries.append(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {card_id} | {current_status} -> {args.status} | {args.agent}")
 
     # Update visuals/reel status

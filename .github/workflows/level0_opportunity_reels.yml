@@ -1,0 +1,71 @@
+name: Level 0 - Opportunity Reels
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Runs once a week on Monday at 00:00
+  workflow_dispatch:
+
+jobs:
+  trigger_reels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv python-dateutil
+
+      - name: Cleanup Expired Cards Locally
+        run: |
+          echo "🧹 Cleaning up expired opportunity cards in factory..."
+          cat << 'PYEOF' > cleanup_expired.py
+          import os
+          import re
+          from datetime import datetime
+          from dateutil import parser
+
+          now = datetime.now()
+          for root, _, files in os.walk('opportunities/'):
+              for file in files:
+                  if file.endswith('.md'):
+                      path = os.path.join(root, file)
+                      with open(path, 'r') as f:
+                          content = f.read()
+                      match = re.search(r'^closing_date:\s*(.*)', content, re.MULTILINE)
+                      if match:
+                          date_str = match.group(1).strip()
+                          try:
+                              closing = parser.parse(date_str)
+                              if closing < now:
+                                  print(f"🗑️ Deleting expired card: {path} (Expired on {date_str})")
+                                  os.remove(path)
+                          except:
+                              pass
+          PYEOF
+          python cleanup_expired.py
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add opportunities/
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: remove expired opportunity cards"
+            git push
+          else
+            echo "No expired cards to remove."
+          fi
+
+      - name: Trigger Jules to pull new Opportunities for Reels
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: |
+          echo "🚀 Triggering Jules to select top 5 opportunities..."
+
+          SYSTEM_PROMPT="You are a social media manager for RokctAI. Your job is to review opportunity cards from the external opportunities repo and select the top 5 that are furthest from their closing date (plenty of time left to apply). For each selected card, generate a job card in the factory's 'opportunities/' directory containing a social media reel brief designed to hook users and drive them to rokct.ai."
+
+          python .rokct/skills/agent_delegation/scripts/call_jules.py create \
+            --repo "sources/github/RokctAI/opportunities" \
+            --prompt "TASK: Review opportunity cards across grants, tenders, and equity. Select top 5 active opportunities prioritizing those furthest from expiry (plenty of time left). Generate a job card in the factory 'opportunities/' directory for each. The card must include: type (e.g., opportunity.grants), closing_date, and a reel brief containing: element_type, hook_text, call_to_action ('Find more at rokct.ai'). Refer to factory metarules for reel_rules.md." \
+            --title "Weekly Opportunity Reels Generation" \
+            --automation-mode "AUTO_CREATE_PR"
