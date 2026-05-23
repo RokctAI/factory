@@ -23,7 +23,7 @@ created: 2026-05-20
 last_updated: 2026-05-20
 session_id: 
 session_started: 
-attempts: 1
+attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10
