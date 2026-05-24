@@ -18,12 +18,12 @@ concept_status:
 rules_status:
 book_name:
 book_path:
-status: theme_generated
+status: stalled
 created: 2026-05-20
-last_updated: 2026-05-20
-session_id: 
-session_started: 
-attempts: 2
+last_updated: 2026-05-24 20:48:01
+session_id: AUTO-26372367807
+session_started: 2026-05-24 20:48:01
+attempts: 4
 last_error:
 loop_iterations: 0
 max_iterations: 10
