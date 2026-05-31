@@ -21,9 +21,9 @@ book_path:
 status: theme_generated
 created: 2026-05-20
 last_updated: 2026-05-21 14:09:13
-session_id:
-session_started:
-attempts: 1
+session_id: 
+session_started: 
+attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10
