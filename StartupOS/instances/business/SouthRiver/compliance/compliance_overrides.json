@@ -1,0 +1,38 @@
+{
+  "_note": "compliance_overrides.json — South River Water & Beverages",
+  "_instructions": [
+    "This file is the FINAL override layer. It runs after all PDFs are parsed.",
+    "Any field with a non-null value here will replace what was read from the PDFs or placeholders.",
+    "Use this when your operational reality differs from your official CIPC documents.",
+    "Set a field to null (or delete it) to stop overriding it and fall back to the PDF/placeholder.",
+    "Run generate_canvases.py after editing this file to regenerate all documents."
+  ],
+
+  "_section_cipc": "--- CIPC / Company Registration overrides ---",
+  "company_name": null,
+  "reg_number": null,
+  "reg_date": null,
+  "tax_number": null,
+  "registered_office": null,
+  "postal_address": null,
+
+  "_section_bee": "--- B-BBEE Certificate overrides ---",
+  "bee_level": null,
+  "bee_procurement_recognition": null,
+  "bee_black_ownership": null,
+  "bee_youth_owned": null,
+  "bee_disabled_owned": null,
+  "bee_rural_owned": null,
+  "bee_cert_number": null,
+  "bee_issue_date": null,
+  "bee_expiry_date": null,
+
+  "_section_contacts": "--- Contacts & operational details (not on CIPC) ---",
+  "contacts": {
+    "phone": null,
+    "email": null,
+    "website": null,
+    "physical_address": null,
+    "banking": null
+  }
+}
