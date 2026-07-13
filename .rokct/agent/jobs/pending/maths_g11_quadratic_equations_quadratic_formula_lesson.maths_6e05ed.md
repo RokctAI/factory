@@ -23,7 +23,7 @@ idea_status: approved
 concept: |
   The Grandmaster delivers a stark, authoritative introduction to the quadratic formula, framing it as the "ultimate weapon" when factorisation fails. The lesson immediately tackles the example problem (3x²-2x-4=0) to demonstrate the formula's power over irrational roots. Pacing is fast and focused on precise execution, with clear breakdowns of the discriminant and step-by-step substitution.
 concept_status:
-rules_status:
+rules_status: passed
 lesson_name: Quadratic Equations - Quadratic formula
 lesson_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed
 script_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/script.md
@@ -33,12 +33,12 @@ mcq_data_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e
 comprehension_check_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/comprehension_check.json
 reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/reel_clip.json
 mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_qa_transcript.md
-status: concept_generated
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-13
-last_updated: 2026-07-14 01:08:11
+last_updated: 2026-07-13 23:10:53
 session_id: 
 session_started: 
-attempts: 2
+attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
