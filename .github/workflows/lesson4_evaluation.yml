@@ -71,9 +71,13 @@ jobs:
               python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status evaluated --agent system
               python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
 
+              # Evaluated is terminal for this phase: move the card out of the
+              # pending queue so Level 0's PENDING_COUNT stays meaningful.
+              # The future Level 6 brief picks evaluated cards up from done/.
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
-              git add "$FILE" .rokct/agent/log/transitions.log
+              git mv "$FILE" ".rokct/agent/jobs/done/$(basename "$FILE")"
+              git add .rokct/agent/log/transitions.log
               git commit -m "🤖 [CI] Lesson 4: Evaluated (Level 4 approved) $ID [skip ci]"
               git push origin main
 
