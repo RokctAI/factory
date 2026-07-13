@@ -19,7 +19,7 @@ metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
 idea: |
   The lesson will commence with a hook, revisiting the limitations of factorisation in solving quadratic equations. The Grandmaster will then introduce the quadratic formula, deriving it from the general form of a quadratic equation. The example problem, 3x²-2x-4=0, will be used to illustrate the application of the quadratic formula, with the Grandmaster guiding students through the calculation. The lesson will conclude with students applying the formula to solve the example problem, reinforcing their understanding of this powerful tool. The Grandmaster's formal tone will ensure a focused and efficient lesson.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

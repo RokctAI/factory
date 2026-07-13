@@ -79,7 +79,10 @@ jobs:
                 --title "Level 3: Rule Generation - $ID" \
                 --automation-mode "AUTO_CREATE_PR")
 
-              SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
+              # Strip [CI Debug] preamble before the JSON or jq fails after
+              # the session was already created.
+              SESSION_ID=$(echo "$RESULT" | sed -n '/^{/,$p' | jq -r '.name // .id // empty' 2>/dev/null | sed 's|.*/||')
+              if [ -z "$SESSION_ID" ]; then SESSION_ID="unknown"; fi
 
               echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
               echo "card_id=$ID" >> "$GITHUB_OUTPUT"

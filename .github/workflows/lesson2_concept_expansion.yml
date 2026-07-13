@@ -110,7 +110,11 @@ jobs:
                 exit 1
               fi
 
-              SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
+              # The delegate prints [CI Debug] lines before the JSON payload;
+              # strip to the first '{' or jq fails after the session was
+              # already created (which spawns duplicate sessions on retry).
+              SESSION_ID=$(echo "$RESULT" | sed -n '/^{/,$p' | jq -r '.name // .id // empty' 2>/dev/null | sed 's|.*/||')
+              if [ -z "$SESSION_ID" ]; then SESSION_ID="unknown"; fi
 
               python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status concept_expanding --agent jules
               python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
@@ -125,25 +129,6 @@ jobs:
               break
             done
           fi
-
-      - name: Probe Jules Auth (diagnostic)
-        if: always()
-        env:
-          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
-          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
-        run: |
-          if [ -z "$JULES_API_KEY" ]; then KEYSTATE="JULES_API_KEY: EMPTY"; else KEYSTATE="JULES_API_KEY: set (${#JULES_API_KEY} chars)"; fi
-          if [ -z "$MONOREPO_PAT" ]; then PATSTATE="MONOREPO_PAT: EMPTY"; else PATSTATE="MONOREPO_PAT: set"; fi
-          OUT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py list 2>&1 | head -c 400 | tr '\n' ' ' | sed 's/|/\\|/g') || true
-          echo "| $(date -u +'%Y-%m-%d %H:%M') | Lesson 2 auth probe | jules | ℹ️ DIAG | $GITHUB_RUN_ID | $KEYSTATE; $PATSTATE; list => $OUT |" >> .rokct/agent/logs/ai_delegation.md
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git stash --include-untracked || true
-          git pull --rebase origin main || true
-          git stash pop || true
-          git add .rokct/agent/logs/ai_delegation.md
-          git commit -m "diag: lesson 2 jules auth probe [skip ci]" || true
-          git push origin main || true
 
       - name: Handle Failure
         if: failure() && steps.delegate_task.outputs.card_file != ''
