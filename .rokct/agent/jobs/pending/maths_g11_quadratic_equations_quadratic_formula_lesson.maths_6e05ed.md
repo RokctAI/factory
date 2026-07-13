@@ -35,7 +35,7 @@ reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_
 mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_qa_transcript.md
 status: concept_generated
 created: 2026-07-13
-last_updated: 2026-07-13 22:36:57
+last_updated: 2026-07-14 01:08:11
 session_id: 
 session_started: 
 attempts: 2
