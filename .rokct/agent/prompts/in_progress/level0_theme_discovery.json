@@ -2,11 +2,11 @@
   "repo": "RokctAI/factory",
   "agent": "groq",
   "level": 0,
-  "prompt": "Generate 5 new unique book themes across supported types (book.poetry, book.fiction, book.short_story, book.children, film.documentary). Return only the list in the format: theme | type",
+  "prompt": "Generate 5 new unique themes for book.poetry. Return only the list in the format: theme | type",
   "branch": "main",
   "title": "Level 0: Theme Discovery",
   "automation_mode": "AUTO_CREATE_PR",
   "recurrence": "Daily",
-  "immediate": "false",
+  "immediate": "true",
   "scheduled_at": "2026-04-29T12:00:00Z"
 }
