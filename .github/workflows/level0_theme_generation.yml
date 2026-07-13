@@ -40,7 +40,11 @@ jobs:
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
               git add .rokct/agent/prompts/in_progress/level0_theme_discovery.json
-              git commit -m "🤖 [CI] Trigger Theme Discovery for $TYPE [skip ci]" || true
+              # Deliberately NOT [skip ci]: agent.yml's push trigger watches this exact
+              # path (.rokct/agent/prompts/in_progress/*.json) to process the new prompt.
+              # [skip ci] here would suppress that trigger entirely, leaving the prompt
+              # written but never actually processed -- which is what was happening.
+              git commit -m "🤖 [CI] Trigger Theme Discovery for $TYPE" || true
               eval "git push origin main"
 
               # Break after triggering one to avoid overwhelming
