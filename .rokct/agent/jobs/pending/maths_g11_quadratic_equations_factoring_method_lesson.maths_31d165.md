@@ -33,12 +33,12 @@ mcq_data_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d
 comprehension_check_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/comprehension_check.json
 reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/reel_clip.json
 mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/mandy_qa_transcript.md
-status: pending_concept_approval # next step is rules_generating
+status: evaluated
 created: 2026-07-14
-last_updated: 2026-07-13 22:41:31
+last_updated: 2026-07-13 22:43:01
 session_id: 
 session_started: 
-attempts: 3
+attempts: 4
 last_error:
 loop_iterations: 0
 max_iterations: 10
