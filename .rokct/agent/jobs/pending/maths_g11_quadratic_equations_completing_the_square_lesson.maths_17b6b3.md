@@ -12,13 +12,14 @@ subject: Maths
 grade: 11
 topic: Quadratic Equations
 subtopic: Completing the square
-tutor: 
+tutor: Grandmaster — formal
 example_problem: x²+6x+2=0
 prior_knowledge: Student can expand brackets and factorise perfect squares
 metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  The lesson will commence with a hook that reviews the importance of solving quadratic equations, followed by a concise explanation of the concept of completing the square. The Grandmaster will then illustrate the step-by-step process of completing the square, highlighting key algebraic manipulations. The example problem x²+6x+2=0 will be introduced as a non-perfect square trinomial, requiring the completion of the square method to solve. The Grandmaster will guide students through this problem, emphasizing precision and attention to detail. By the end of the 15-minute lesson, students should be able to apply the method to similar problems.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -31,12 +32,12 @@ mcq_data_path:
 comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-13
-last_updated: 2026-07-13
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-13 23:45:58
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
