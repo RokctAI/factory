@@ -1,0 +1,75 @@
+{
+  "_comment": [
+    "Hand-written CAPS-aligned seed list for lesson Level 0 topic selection.",
+    "No machine-readable CAPS pacing data exists in the workspace yet — the",
+    "product docs list 'CAPS curriculum pacing' as an unbuilt feature",
+    "(agent/replay/docs/supacharge-unbuilt-features-brief.md), so this file is",
+    "the interim source of truth for which subject/grade/topic/subtopic",
+    "combinations the factory may open lesson jobs for. Replace or extend it",
+    "when a real CAPS pacing source lands.",
+    "Field names follow the Prompt Template in agent/replay/docs/supacharge-tech.md",
+    "§4: Subject, Grade, Topic, Subtopic, Example problem, Tutor, Prior knowledge.",
+    "tutor is optional — when omitted, Level 1 recommends one",
+    "(Grandmaster — formal | Big John — simplistic, lower grade logic).",
+    "Launch scope per supacharge-tech.md §5 Phase 0: Grade 12 Maths first,",
+    "plus the Grade 11 quadratics entries used as the pipeline's worked example."
+  ],
+  "entries": [
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "topic": "Quadratic Equations",
+      "subtopic": "Factoring method",
+      "example_problem": "2x²+5x+3=0",
+      "prior_knowledge": "Student knows multiplication, basic algebra",
+      "tutor": "Grandmaster — formal"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "topic": "Quadratic Equations",
+      "subtopic": "Quadratic formula",
+      "example_problem": "3x²-2x-4=0",
+      "prior_knowledge": "Student can factorise simple quadratics and work with surds"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "topic": "Quadratic Equations",
+      "subtopic": "Completing the square",
+      "example_problem": "x²+6x+2=0",
+      "prior_knowledge": "Student can expand brackets and factorise perfect squares"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "topic": "Quadratic Equations",
+      "subtopic": "Factoring method",
+      "example_problem": "2x²+5x+3=0",
+      "prior_knowledge": "Student knows multiplication, basic algebra",
+      "tutor": "Grandmaster — formal"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "topic": "Sequences and Series",
+      "subtopic": "Arithmetic sequences",
+      "example_problem": "Find the 20th term of 3; 7; 11; ...",
+      "prior_knowledge": "Student knows Grade 11 number patterns and linear expressions"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "topic": "Sequences and Series",
+      "subtopic": "Geometric sequences",
+      "example_problem": "Find the 10th term of 2; 6; 18; ...",
+      "prior_knowledge": "Student knows arithmetic sequences and exponents"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+name: Lesson 3 - Rules Check
+on:
+  push:
+    paths:
+      - '.rokct/agent/jobs/pending/*.md'
+      - 'lessons/drafts/**'
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  check_rules:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    outputs:
+      card_id: ${{ steps.run_checks.outputs.card_id }}
+      card_type: ${{ steps.run_checks.outputs.card_type }}
+      card_theme: ${{ steps.run_checks.outputs.card_theme }}
+      card_file: ${{ steps.run_checks.outputs.card_file }}
+      new_status: ${{ steps.run_checks.outputs.new_status }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Initiate Protocol
+        run: |
+          if [ -f ".rokct/initiate.py" ]; then
+            echo "🚀 Running local initiate.py..."
+            python .rokct/initiate.py
+          else
+            echo "🌐 Fetching web initiate.py from remote protocol..."
+            curl -sSL https://raw.githubusercontent.com/RokctAI/The-Rokct-Protocol/main/profiles/web/initiate.py -o initiate_temp.py
+            python initiate_temp.py
+            rm initiate_temp.py
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Pedagogical Rules Checks
+        id: run_checks
+        run: |
+          # On workflow_dispatch, scan everything; on push, only touched cards.
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            FILES=$(ls .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
+          else
+            FILES=$(ls .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
+            CHANGED=$(git diff --name-only HEAD~1 HEAD || true)
+            # A merged Jules PR may only touch lessons/drafts/**; if so, still
+            # scan all lesson cards for one awaiting checks.
+            if ! echo "$CHANGED" | grep -q 'lessons/drafts/'; then
+              FILES=$(echo "$CHANGED" | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template' || true)
+            fi
+          fi
+
+          for FILE in $FILES; do
+            if [ ! -f "$FILE" ]; then continue; fi
+
+            TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
+            case "$TYPE" in lesson.*) ;; *) continue ;; esac
+
+            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
+            LESSON_PATH=$(grep '^lesson_path:' "$FILE" | cut -d':' -f2 | xargs)
+
+            # Content merged but Jules did not flip the status: advance it
+            # here so the checks can run (concept_expanding -> concept_generated).
+            if [ "$STATUS" == "concept_expanding" ] && [ -n "$LESSON_PATH" ] && [ -d "$LESSON_PATH" ]; then
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status concept_generated --agent system
+              STATUS="concept_generated"
+            fi
+
+            if [ "$STATUS" != "concept_generated" ]; then continue; fi
+
+            ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2- | xargs)
+
+            if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "system" --session "SYS-LESSON-RULES-$GITHUB_RUN_ID"; then
+              echo "Card $FILE is locked by another session. Skipping."
+              continue
+            fi
+
+            echo "🔍 Running Level 3 checks for $ID..."
+            if python lessons/scripts/lesson_pipeline.py check --file "$FILE"; then
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status pending_concept_approval --agent system
+              NEW_STATUS="pending_concept_approval"
+            else
+              echo "❌ Level 3 checks failed for $ID (rules_status: failed). Fix the content and push again."
+              NEW_STATUS="concept_generated"
+            fi
+
+            python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add "$FILE" .rokct/agent/log/transitions.log
+            git commit -m "🤖 [CI] Lesson 3: Rules check ($NEW_STATUS) for $ID [skip ci]"
+            git push origin main
+
+            echo "card_id=$ID" >> "$GITHUB_OUTPUT"
+            echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
+            echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
+            echo "card_file=$FILE" >> "$GITHUB_OUTPUT"
+            echo "new_status=$NEW_STATUS" >> "$GITHUB_OUTPUT"
+            break
+          done
+
+  update_ledger:
+    needs: check_rules
+    if: needs.check_rules.outputs.card_id != ''
+    uses: ./.github/workflows/ledger_update.yml
+    with:
+      id: ${{ needs.check_rules.outputs.card_id }}
+      type: ${{ needs.check_rules.outputs.card_type }}
+      theme: ${{ needs.check_rules.outputs.card_theme }}
+      status: ${{ needs.check_rules.outputs.new_status }}
+      agent: "system"
+      session: "SYS-LESSON-RULES-${{ github.run_id }}"
+    secrets: inherit

@@ -1,4 +1,4 @@
-name: Level 1 - Idea Generation
+name: Lesson 1 - Plan Generation
 on:
   push:
     paths:
@@ -6,11 +6,11 @@ on:
     branches:
       - main
   schedule:
-    - cron: '30 * * * *' # Every hour
+    - cron: '45 * * * *' # Hourly, offset from book Level 1
   workflow_dispatch:
 
 jobs:
-  generate_ideas:
+  generate_plan:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     outputs:
@@ -42,21 +42,20 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
-      - name: Identify Oldest Card and Claim Lock
+      - name: Identify Oldest Lesson Card and Claim Lock
         id: delegate_task
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
-          # Find the oldest card with status: theme_generated
-          ALL_CARDS=$(ls -rt .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template.md' || true)
+          # Find the oldest lesson.* card with status: theme_generated
+          ALL_CARDS=$(ls -rt .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
 
           FILE=""
           for f in $ALL_CARDS; do
-            # lesson.* cards have their own pipeline (lesson1_plan_generation.yml)
-            CARD_TYPE=$(grep '^type:' "$f" | cut -d':' -f2 | xargs)
-            case "$CARD_TYPE" in lesson.*) continue ;; esac
+            TYPE=$(grep '^type:' "$f" | cut -d':' -f2 | xargs)
+            case "$TYPE" in lesson.*) ;; *) continue ;; esac
             STATUS=$(grep '^status:' "$f" | cut -d':' -f2 | xargs)
             if [ "$STATUS" == "theme_generated" ]; then
               FILE="$f"
@@ -65,31 +64,33 @@ jobs:
           done
 
           if [ -z "$FILE" ]; then
-            echo "ℹ️ No cards pending idea generation found."
+            echo "ℹ️ No lesson cards pending plan generation found."
           else
             ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
             TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
-            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
+            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2- | xargs)
 
             # Claim Job Lock
-            if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "groq" --session "GS-IDEA-$GITHUB_RUN_ID"; then
+            if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "groq" --session "GS-LESSON-PLAN-$GITHUB_RUN_ID"; then
               echo "Card $FILE is locked by another session. Skipping."
               exit 0
             fi
 
-            echo "🚀 Requesting Ideas from Groq for $ID..."
+            echo "🚀 Requesting Lesson Plan from Groq for $ID..."
 
-            PROMPT="Generate 5 unique one-line book ideas for the theme '$THEME' and type '$TYPE'. Return only the ideas."
+            PROMPT=$(python lessons/scripts/lesson_pipeline.py prompt --file "$FILE" --level 1)
             RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py groq --prompt "$PROMPT")
 
             if [ -n "$RESPONSE" ]; then
               echo "✅ Groq responded. Updating card..."
-              python .rokct/skills/agent_delegation/scripts/handle_groq_output.py --level 1 --file "$FILE" --content "$RESPONSE"
+              python lessons/scripts/lesson_pipeline.py plan --file "$FILE" --content "$RESPONSE"
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status pending_approval --agent groq
+              python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
 
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
               git add "$FILE" .rokct/agent/log/transitions.log
-              git commit -m "🤖 [CI] Level 1: Idea Expansion for $ID [skip ci]"
+              git commit -m "🤖 [CI] Lesson 1: Plan captured for $ID [skip ci]"
               git push origin main
 
               echo "session_id=GROQ-$GITHUB_RUN_ID" >> "$GITHUB_OUTPUT"
@@ -103,13 +104,6 @@ jobs:
             fi
           fi
 
-      - name: Release Job Lock
-        if: always() && steps.delegate_task.outputs.card_file != ''
-        run: |
-          python .rokct/skills/agent_delegation/scripts/lock_job.py \
-            --file "${{ steps.delegate_task.outputs.card_file }}" \
-            --action release
-
       - name: Handle Failure
         if: failure() && steps.delegate_task.outputs.card_file != ''
         run: |
@@ -119,7 +113,7 @@ jobs:
           sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$CARD_FILE"
           sed -i "s/^last_error: .*/last_error: ${{ github.run_id }} failed at $(date -u)/" "$CARD_FILE"
 
-          echo "[$(date -u +'%Y-%m-%d %H:%M:%S')] ${{ steps.delegate_task.outputs.card_id }} | Level 1 | ${{ github.run_id }} | Agent call failed" >> .rokct/agent/log/errors.log
+          echo "[$(date -u +'%Y-%m-%d %H:%M:%S')] ${{ steps.delegate_task.outputs.card_id }} | Lesson 1 | ${{ github.run_id }} | Agent call failed" >> .rokct/agent/log/errors.log
 
           if [ "$NEW_ATTEMPTS" -ge 3 ]; then
             echo "3 attempts failed. Marking as stalled."
@@ -140,14 +134,14 @@ jobs:
           git push origin main
 
   update_ledger:
-    needs: generate_ideas
-    if: needs.generate_ideas.outputs.session_id != ''
+    needs: generate_plan
+    if: needs.generate_plan.outputs.session_id != ''
     uses: ./.github/workflows/ledger_update.yml
     with:
-      id: ${{ needs.generate_ideas.outputs.card_id }}
-      type: ${{ needs.generate_ideas.outputs.card_type }}
-      theme: ${{ needs.generate_ideas.outputs.card_theme }}
+      id: ${{ needs.generate_plan.outputs.card_id }}
+      type: ${{ needs.generate_plan.outputs.card_type }}
+      theme: ${{ needs.generate_plan.outputs.card_theme }}
       status: "pending_approval"
       agent: "groq"
-      session: ${{ needs.generate_ideas.outputs.session_id }}
+      session: ${{ needs.generate_plan.outputs.session_id }}
     secrets: inherit

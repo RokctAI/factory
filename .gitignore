@@ -1,5 +1,8 @@
 __pycache__/
 *.pyc
 *.log
-.rokct/agent/log/transitions.log
-.rokct/agent/log/errors.log
+# The state-machine audit trail must be committed: level workflows
+# `git add` these after every transition, and an ignored path makes
+# that command exit 1 and fail the step.
+!.rokct/agent/log/transitions.log
+!.rokct/agent/log/errors.log

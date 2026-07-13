@@ -1,13 +1,14 @@
-name: Level 3 - Rule Generation
+name: Lesson 2 - Content Generation
 on:
   push:
     paths:
       - '.rokct/agent/jobs/pending/*.md'
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  generate_rules:
+  expand_lesson:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     outputs:
@@ -41,12 +42,17 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
-      - name: Identify Approved Concept and Claim Lock
+      - name: Identify Approved Lesson Plan and Delegate to Jules
         id: delegate_task
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
-          FILES=$(git diff --name-only HEAD~1 HEAD | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template.md' || true)
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            FILES=$(ls .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
+          else
+            FILES=$(git diff --name-only HEAD~1 HEAD | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template' || true)
+          fi
 
           if [ -z "$FILES" ]; then
             echo "ℹ️ No modified job cards found."
@@ -54,32 +60,43 @@ jobs:
             for FILE in $FILES; do
               if [ ! -f "$FILE" ]; then continue; fi
 
-              ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
               TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
-              # lesson.* cards have their own pipeline (lesson3_rules_check.yml)
-              case "$TYPE" in lesson.*) continue ;; esac
-              THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
-              CONCEPT_STATUS=$(grep '^concept_status:' "$FILE" | cut -d':' -f2 | xargs)
-              STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+              case "$TYPE" in lesson.*) ;; *) continue ;; esac
 
-              if [ "$CONCEPT_STATUS" != "approved" ]; then continue; fi
-              if [ "$STATUS" != "concept_generated" ]; then continue; fi
+              ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+              THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2- | xargs)
+              IDEA_STATUS=$(grep '^idea_status:' "$FILE" | cut -d':' -f2 | xargs)
+              STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
+
+              if [ "$IDEA_STATUS" != "approved" ]; then continue; fi
+              if [ "$STATUS" != "pending_approval" ]; then continue; fi
 
               # Claim Job Lock
-              if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "jules" --session "JS-RULES-$GITHUB_RUN_ID"; then
+              if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "jules" --session "JS-LESSON-$GITHUB_RUN_ID"; then
                 echo "Card $FILE is locked by another session. Skipping."
                 continue
               fi
 
-              echo "🚀 Delegating Rule Generation for $ID..."
+              echo "🚀 Delegating Lesson Content Generation for $ID..."
+
+              PROMPT=$(python lessons/scripts/lesson_pipeline.py prompt --file "$FILE" --level 2)
 
               RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/RokctAI/factory" \
-                --prompt "TASK: Generate hierarchical rules for the book '$ID' (Type: $TYPE, Theme: $THEME). Generate: World rules -> Book rules -> Poem/Chapter rules -> Stanza/Scene rules -> Line rules. Reference metarules for $TYPE. Update the card $FILE and set status to 'rules_generating'." \
-                --title "Level 3: Rule Generation - $ID" \
+                --prompt "$PROMPT" \
+                --title "Lesson 2: Content Generation - $ID" \
                 --automation-mode "AUTO_CREATE_PR")
 
               SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
+
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status concept_expanding --agent jules
+              python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+
+              git config --global user.name "github-actions[bot]"
+              git config --global user.email "github-actions[bot]@users.noreply.github.com"
+              git add "$FILE" .rokct/agent/log/transitions.log
+              git commit -m "🤖 [CI] Lesson 2: Content generation delegated for $ID [skip ci]"
+              git push origin main
 
               echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
               echo "card_id=$ID" >> "$GITHUB_OUTPUT"
@@ -90,13 +107,6 @@ jobs:
             done
           fi
 
-      - name: Release Job Lock
-        if: success() && steps.delegate_task.outputs.card_file != ''
-        run: |
-          python .rokct/skills/agent_delegation/scripts/lock_job.py \
-            --file "${{ steps.delegate_task.outputs.card_file }}" \
-            --action release
-
       - name: Handle Failure
         if: failure() && steps.delegate_task.outputs.card_file != ''
         run: |
@@ -106,7 +116,7 @@ jobs:
           sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$CARD_FILE"
           sed -i "s/^last_error: .*/last_error: ${{ github.run_id }} failed at $(date -u)/" "$CARD_FILE"
 
-          echo "[$(date -u +'%Y-%m-%d %H:%M:%S')] ${{ steps.delegate_task.outputs.card_id }} | Level 3 | ${{ github.run_id }} | Agent call failed" >> .rokct/agent/log/errors.log
+          echo "[$(date -u +'%Y-%m-%d %H:%M:%S')] ${{ steps.delegate_task.outputs.card_id }} | Lesson 2 | ${{ github.run_id }} | Agent call failed" >> .rokct/agent/log/errors.log
 
           if [ "$NEW_ATTEMPTS" -ge 3 ]; then
             echo "3 attempts failed. Marking as stalled."
@@ -114,7 +124,7 @@ jobs:
               --file "$CARD_FILE" \
               --status stalled
           else
-            echo "Attempt $NEW_ATTEMPTS failed. Will retry on next scheduled run."
+            echo "Attempt $NEW_ATTEMPTS failed. Will retry on next push."
             python .rokct/skills/agent_delegation/scripts/lock_job.py \
               --file "$CARD_FILE" \
               --action release
@@ -127,14 +137,14 @@ jobs:
           git push origin main
 
   update_ledger:
-    needs: generate_rules
-    if: needs.generate_rules.outputs.session_id != ''
+    needs: expand_lesson
+    if: needs.expand_lesson.outputs.session_id != ''
     uses: ./.github/workflows/ledger_update.yml
     with:
-      id: ${{ needs.generate_rules.outputs.card_id }}
-      type: ${{ needs.generate_rules.outputs.card_type }}
-      theme: ${{ needs.generate_rules.outputs.card_theme }}
-      status: "rules_generating"
+      id: ${{ needs.expand_lesson.outputs.card_id }}
+      type: ${{ needs.expand_lesson.outputs.card_type }}
+      theme: ${{ needs.expand_lesson.outputs.card_theme }}
+      status: "concept_expanding"
       agent: "jules"
-      session: ${{ needs.generate_rules.outputs.session_id }}
+      session: ${{ needs.expand_lesson.outputs.session_id }}
     secrets: inherit
