@@ -20,19 +20,20 @@ guardrail: age_13_17
 idea: |
   The lesson will commence with a concise review of algebraic expressions, serving as a hook to refocus students. The Grandmaster will then delve into the concept of factoring quadratic equations, elucidating the method's underlying principles. The example problem, 2x²+5x+3=0, will be introduced as a case study to illustrate the factoring method, with the Grandmaster guiding students through the step-by-step process of factoring. Key teaching beats will include identifying the coefficients, factoring by grouping, and applying the zero-product property. By the lesson's conclusion, students will have grasped the fundamental technique of factoring quadratic equations.
 idea_status: approved
-concept:
+concept: |
+  The lesson leverages the Grandmaster's authoritative persona to break down the factoring method of quadratic equations sharply and methodically. It begins with a swift review of algebraic expressions to establish a firm foundation before introducing the standard quadratic form. The core of the lesson focuses on the example problem 2x²+5x+3=0, utilizing the "magic numbers" technique to identify factors that multiply to a*c and sum to b. The pacing is rapid and precise, guiding the student through factoring by grouping and culminating in the application of the zero-product property to find the final solutions. The example problem lands effectively in the middle and is fully resolved by the end of the lesson, setting up the student for independent MCQ practice.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-status: pending_approval # next step is concept_expanding
+lesson_name: Quadratic Equations Factoring Method
+lesson_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165
+script_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/script.md
+manim_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/manim_scene.py
+subtopics_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/subtopics.json
+mcq_data_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/mcq.json
+comprehension_check_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/comprehension_check.json
+reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/reel_clip.json
+mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/mandy_qa_transcript.md
+status: concept_generated # next step is rule_generation
 created: 2026-07-14
 last_updated: 2026-07-14 00:33:06
 session_id: 
