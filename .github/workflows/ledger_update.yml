@@ -29,6 +29,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The calling workflow usually pushed a card commit moments ago;
+          # start from the branch tip, not the triggering SHA, or our push
+          # is rejected as non-fast-forward.
+          ref: main
 
       - name: Append to Ledger
         run: |
@@ -44,4 +49,8 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .rokct/agent/log/ledger.md
           git commit -m "chore: update ledger for ${{ inputs.id }} [skip ci]" || exit 0
-          git push origin main
+          for i in 1 2 3; do
+            git push origin main && break
+            git pull --rebase origin main || { git rebase --abort; exit 1; }
+            sleep $((RANDOM % 4 + 1))
+          done
