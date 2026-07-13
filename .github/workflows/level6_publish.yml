@@ -17,6 +17,8 @@ jobs:
       card_file: ${{ steps.publish_task.outputs.card_file }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Initiate Protocol
         run: |
@@ -29,8 +31,6 @@ jobs:
             python initiate_temp.py
             rm initiate_temp.py
           fi
-        with:
-          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@v5
