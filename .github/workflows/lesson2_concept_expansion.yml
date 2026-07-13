@@ -98,7 +98,15 @@ jobs:
                 --automation-mode "AUTO_CREATE_PR" 2>&1) && [[ ! "$RESULT" == *"Error:"* ]]; then
                 echo "✅ Jules session created."
               else
-                echo "❌ Jules delegation failed: $(echo "$RESULT" | tail -n 3)"
+                REASON=$(echo "$RESULT" | tail -n 6 | tr '\n' ' ' | sed 's/|/\\|/g')
+                echo "❌ Jules delegation failed: $REASON"
+                mkdir -p .rokct/agent/logs
+                echo "| $(date -u +'%Y-%m-%d %H:%M') | Lesson 2: $ID | jules | ❌ FAILED | $GITHUB_RUN_ID | $REASON |" >> .rokct/agent/logs/ai_delegation.md
+                git config --global user.name "github-actions[bot]"
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                git add .rokct/agent/logs/ai_delegation.md
+                git commit -m "fail: record Jules delegation error for $ID [skip ci]"
+                git push origin main || true
                 exit 1
               fi
 
