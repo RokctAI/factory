@@ -33,12 +33,12 @@ mcq_data_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e
 comprehension_check_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/comprehension_check.json
 reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/reel_clip.json
 mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_qa_transcript.md
-status: pending_concept_approval # next step is rules_generating
+status: evaluated
 created: 2026-07-13
-last_updated: 2026-07-13 23:10:53
+last_updated: 2026-07-13 23:12:58
 session_id: 
 session_started: 
-attempts: 3
+attempts: 4
 last_error:
 loop_iterations: 0
 max_iterations: 10
