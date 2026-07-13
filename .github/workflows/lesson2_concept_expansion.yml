@@ -77,15 +77,30 @@ jobs:
                 continue
               fi
 
+              # Set outputs up front so Handle Failure has context
+              echo "card_id=$ID" >> "$GITHUB_OUTPUT"
+              echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
+              echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
+              echo "card_file=$FILE" >> "$GITHUB_OUTPUT"
+
               echo "🚀 Delegating Lesson Content Generation for $ID..."
 
-              PROMPT=$(python lessons/scripts/lesson_pipeline.py prompt --file "$FILE" --level 2)
+              if ! PROMPT=$(python lessons/scripts/lesson_pipeline.py prompt --file "$FILE" --level 2 2>&1); then
+                echo "❌ Prompt construction failed:"
+                echo "$PROMPT"
+                exit 1
+              fi
 
-              RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
+              if RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
                 --repo "sources/github/RokctAI/factory" \
                 --prompt "$PROMPT" \
                 --title "Lesson 2: Content Generation - $ID" \
-                --automation-mode "AUTO_CREATE_PR")
+                --automation-mode "AUTO_CREATE_PR" 2>&1) && [[ ! "$RESULT" == *"Error:"* ]]; then
+                echo "✅ Jules session created."
+              else
+                echo "❌ Jules delegation failed: $(echo "$RESULT" | tail -n 3)"
+                exit 1
+              fi
 
               SESSION_ID=$(echo "$RESULT" | jq -r '.id // "unknown"')
 
@@ -99,10 +114,6 @@ jobs:
               git push origin main
 
               echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
-              echo "card_id=$ID" >> "$GITHUB_OUTPUT"
-              echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"
-              echo "card_theme=$THEME" >> "$GITHUB_OUTPUT"
-              echo "card_file=$FILE" >> "$GITHUB_OUTPUT"
               break
             done
           fi
