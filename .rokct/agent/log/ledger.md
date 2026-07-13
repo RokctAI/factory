@@ -6,3 +6,4 @@
 | maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | evaluated | system | SYS-LESSON-EVAL-29290763798 | — | 2026-07-13 22:43 |
 | maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | pending_concept_approval | system | SYS-LESSON-RULES-29292233088 | — | 2026-07-13 23:11 |
 | maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | evaluated | system | SYS-LESSON-EVAL-29292343116 | — | 2026-07-13 23:13 |
+| maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | pending_approval | groq | GROQ-29294000997 | — | 2026-07-13 23:46 |
