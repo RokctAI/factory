@@ -34,10 +34,10 @@ reel_brief_path:
 mandy_transcript_path:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 00:29:21
+last_updated: 2026-07-14 00:33:06
 session_id: 
 session_started: 
-attempts: 1
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10
