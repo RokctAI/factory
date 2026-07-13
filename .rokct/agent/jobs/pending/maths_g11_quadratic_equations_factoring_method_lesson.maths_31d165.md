@@ -22,8 +22,8 @@ idea: |
 idea_status: approved
 concept: |
   The teaching approach is formal and structured, fitting the Grandmaster persona. The lesson begins with a brief expansion hook before defining standard quadratic form and coefficients. The core pacing methodically works through finding the target product and sum, splitting the middle term, and factoring by grouping. The example problem (2x²+5x+3=0) is integrated step-by-step as the primary teaching vehicle, culminating in the application of the zero-product property to find the final roots. The tone remains sharp, authoritative, and formula-first.
-concept_status: approved
-rules_status: approved
+concept_status:
+rules_status:
 lesson_name: Mastering the Factoring Method
 lesson_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165
 script_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/script.md
@@ -35,7 +35,7 @@ reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_3
 mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/mandy_qa_transcript.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-14 00:26:32
+last_updated: 2026-07-14 00:38:08
 session_id: 
 session_started: 
 attempts: 2
