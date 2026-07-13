@@ -32,12 +32,12 @@ mcq_data_path:
 comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
-status: pending_approval # next step is concept_expanding
+status: concept_expanding
 created: 2026-07-13
-last_updated: 2026-07-13 22:19:12
+last_updated: 2026-07-13 22:36:57
 session_id: 
 session_started: 
-attempts: 1
+attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10
