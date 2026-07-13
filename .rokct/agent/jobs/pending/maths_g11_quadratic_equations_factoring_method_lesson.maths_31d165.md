@@ -20,19 +20,20 @@ guardrail: age_13_17
 idea: |
   The lesson will commence with a concise review of algebraic expressions, serving as a hook to refocus students. The Grandmaster will then delve into the concept of factoring quadratic equations, elucidating the method's underlying principles. The example problem, 2x²+5x+3=0, will be introduced as a case study to illustrate the factoring method, with the Grandmaster guiding students through the step-by-step process of factoring. Key teaching beats will include identifying the coefficients, factoring by grouping, and applying the zero-product property. By the lesson's conclusion, students will have grasped the fundamental technique of factoring quadratic equations.
 idea_status: approved
-concept:
+concept: |
+  The Grandmaster formally breaks down the "factoring by grouping" method as reverse-engineering a lock. The 15-minute pacing begins with a rapid vocabulary recap before stepping heavily into finding two specific numbers that multiply to ac and add to b. The example 2x²+5x+3=0 is mapped to these principles meticulously, culminating in a breakdown of the Zero-Product Property.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-status: pending_approval # next step is concept_expanding
+lesson_name: "Quadratic Equations: Factoring Method"
+lesson_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165
+script_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/script.md
+manim_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/manim_scene.py
+subtopics_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/subtopics.json
+mcq_data_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/mcq.json
+comprehension_check_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/comprehension_check.json
+reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/reel_clip.json
+mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_factoring_method_31d165/mandy_qa_transcript.md
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-13 22:22:49
 session_id: 

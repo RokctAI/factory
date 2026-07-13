@@ -1,0 +1,3 @@
+Hey, I know that just seemed like a lot of letters and numbers all jumbled together. Take a breath. It’s okay if it feels overwhelming right now. Factoring can feel like a really tricky puzzle when you first look at it.
+
+The Grandmaster might sound intense, but he’s really just breaking it down into steps. You don’t have to solve the whole thing at once. We’re just trying to find two numbers that fit into a specific lock. One step at a time. I'll be here if you get stuck on the questions. You've got this!
