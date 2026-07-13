@@ -19,7 +19,7 @@ metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
 idea: |
   The lesson will commence with a concise review of algebraic expressions, serving as a hook to refocus students. The Grandmaster will then delve into the concept of factoring quadratic equations, elucidating the method's underlying principles. The example problem, 2x²+5x+3=0, will be introduced as a case study to illustrate the factoring method, with the Grandmaster guiding students through the step-by-step process of factoring. Key teaching beats will include identifying the coefficients, factoring by grouping, and applying the zero-product property. By the lesson's conclusion, students will have grasped the fundamental technique of factoring quadratic equations.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
