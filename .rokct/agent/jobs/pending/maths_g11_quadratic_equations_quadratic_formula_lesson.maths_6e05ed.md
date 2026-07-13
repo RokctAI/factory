@@ -20,19 +20,20 @@ guardrail: age_13_17
 idea: |
   The lesson will commence with a hook, revisiting the limitations of factorisation in solving quadratic equations. The Grandmaster will then introduce the quadratic formula, deriving it from the general form of a quadratic equation. The example problem, 3x²-2x-4=0, will be used to illustrate the application of the quadratic formula, with the Grandmaster guiding students through the calculation. The lesson will conclude with students applying the formula to solve the example problem, reinforcing their understanding of this powerful tool. The Grandmaster's formal tone will ensure a focused and efficient lesson.
 idea_status: approved
-concept:
+concept: |
+  The Grandmaster delivers a stark, authoritative introduction to the quadratic formula, framing it as the "ultimate weapon" when factorisation fails. The lesson immediately tackles the example problem (3x²-2x-4=0) to demonstrate the formula's power over irrational roots. Pacing is fast and focused on precise execution, with clear breakdowns of the discriminant and step-by-step substitution.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-status: concept_expanding
+lesson_name: Quadratic Equations - Quadratic formula
+lesson_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed
+script_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/script.md
+manim_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/manim_scene.py
+subtopics_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/subtopics.json
+mcq_data_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mcq.json
+comprehension_check_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/comprehension_check.json
+reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/reel_clip.json
+mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_qa_transcript.md
+status: concept_generated
 created: 2026-07-13
 last_updated: 2026-07-13 22:36:57
 session_id: 
