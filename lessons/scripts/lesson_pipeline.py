@@ -278,7 +278,7 @@ Also produce comprehension check questions (item 5 of the canonical output
 list in agent/replay/docs/supacharge-tech.md §4 "How A Lesson Is Created").
 
 Follow the lesson idea already approved on the job card {card_file} (idea
-block) and the metarules under .rokct/types/lesson.maths/metarules/.
+block) and the metarules under {get_field(card, 'metarules') or '.rokct/types/' + get_field(card, 'type') + '/metarules'}/.
 
 Write the files into {lesson_dir}/ exactly as follows:
 - {lesson_dir}/script.md — the lesson script in the tutor's voice, with a

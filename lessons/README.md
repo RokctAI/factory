@@ -34,7 +34,13 @@ does not exist yet and is a separate future brief.
   `comprehension_check.json`, `mandy_nervous_script.md` (optional),
   `reel_clip.json`, `mandy_qa_transcript.md`.
 - Card template: `.rokct/agent/jobs/template_lesson.md`.
-- Metarules: `.rokct/types/lesson.maths/metarules/`.
+- Metarules: `.rokct/types/lesson.<subject>/metarules/` — one directory per
+  lesson type (`lesson.maths`, `lesson.physical_sciences`,
+  `lesson.economics`, `lesson.geography`); `pedagogy_rules.md` and
+  `mcq_rules.md` are shared conventions, `lesson_rules.md` carries the
+  subject flavour. To onboard a new subject: add its type to
+  `lesson0_topic_selection.yml`'s `TYPES` array, create its metarules
+  directory, and add seed rows to `curriculum/caps_seed.json`.
 
 MCQ and subtopic JSON shapes are contracts with the shipped app
 (`McqQuestion.fromJson`, `ReplayLessonEngine` subtopic_end exercise batches)
