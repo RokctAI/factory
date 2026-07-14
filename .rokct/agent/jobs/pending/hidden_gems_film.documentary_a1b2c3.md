@@ -19,11 +19,11 @@ concept: |
   **Emotional World:** Nostalgic, urgent, and deeply respectful. The tone shifts between the quiet dignity of the past and the vibrant, sometimes desperate, energy of the present.
   **Target Feeling:** A sense of awe at the depth of the culture, mixed with a poignant realization of its fragility. The audience should feel inspired by the community's resilience.
   **Structural Approach:** A three-act structure. Act 1: The Elders (establishing the history and artifacts). Act 2: The Disconnect (showing the modern pressures on the youth). Act 3: The Bridge (highlighting successful efforts to merge the old and the new). The film will rely heavily on verité footage and intimate, direct-to-camera interviews.
-concept_status:
+concept_status: approved
 rules_status:
 book_name:
 book_path:
-status: concept_generated # next step is pending_concept_approval
+status: concept_generated
 created: 2026-05-21
 last_updated: 2026-05-21 23:26:48
 session_id:
