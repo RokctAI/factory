@@ -20,20 +20,21 @@ guardrail: age_13_17
 idea: |
   The lesson will commence with a brief review of Newton's laws, focusing on the second law. The Grandmaster will then introduce the concept of force, mass, and acceleration, emphasizing their relationship as described by Newton's second law. The example problem will be presented as an illustration of applying this law, where students will be guided through calculating the acceleration of the crate. The lesson will conclude with a summary of key concepts and a check for understanding, ensuring students can apply Newton's second law to solve similar problems.
 idea_status: approved
-concept:
+concept: |
+  The lesson will be structured in three parts: Stating Newton's Second Law, Applying Newton's Second Law, and Summary and Final Thoughts. The tone is sharp, authoritative, and formal, fitting the 'Grandmaster' persona. The mathematical relationship F_net = m * a is introduced first as a rigorous truth. Then, the example problem (5 kg crate, 20 N force) is solved step-by-step using the exact CAPS method (formula, substitution, answer with SI units).
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
-status: concept_expanding
+lesson_name: Newton's Second Law
+lesson_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed
+script_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/script.md
+manim_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/manim_scene.py
+subtopics_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/subtopics.json
+mcq_data_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mcq.json
+comprehension_check_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/comprehension_check.json
+reel_brief_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/reel_clip.json
+mandy_transcript_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_nervous_script.md
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-14 00:04:00
 session_id: 
