@@ -23,7 +23,7 @@ idea_status: approved
 concept: |
   The Grandmaster tutor persona leads a rigorous 15-minute, whiteboard-driven explanation of market equilibrium, strictly distinguishing between shifts of a curve vs movements along it. Pacing is formal and theory-first. The example problem of increased income driving beef demand is solved step-by-step to show the new, higher equilibrium price and quantity, keeping supply static.
 concept_status:
-rules_status:
+rules_status: passed
 lesson_name: Demand and Supply Equilibrium
 lesson_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f
 script_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/script.md
@@ -34,12 +34,12 @@ comprehension_check_path: lessons/drafts/economics_g11_dynamics_of_markets_deman
 reel_brief_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/reel_clip.json
 mandy_transcript_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_nervous_script.md
-status: concept_generated
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-14 00:09:52
+last_updated: 2026-07-14 00:23:25
 session_id: 
 session_started: 
-attempts: 2
+attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
