@@ -79,7 +79,11 @@ jobs:
               git mv "$FILE" ".rokct/agent/jobs/done/$(basename "$FILE")"
               git add .rokct/agent/log/transitions.log
               git commit -m "🤖 [CI] Lesson 4: Evaluated (Level 4 approved) $ID [skip ci]"
-              git push origin main
+              for i in 1 2 3; do
+                git push origin main && break
+                git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+                sleep $((RANDOM % 3 + 1))
+              done
 
               echo "card_id=$ID" >> "$GITHUB_OUTPUT"
               echo "card_type=$TYPE" >> "$GITHUB_OUTPUT"

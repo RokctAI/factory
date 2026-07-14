@@ -35,7 +35,7 @@ mandy_transcript_path:
 mandy_nervous_script_path:
 status: theme_generated
 created: 2026-07-14
-last_updated: 2026-07-14
+last_updated: 2026-07-14 02:46:41
 session_id:
 session_started:
 attempts: 0

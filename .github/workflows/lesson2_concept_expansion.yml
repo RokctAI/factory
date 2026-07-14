@@ -123,7 +123,11 @@ jobs:
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
               git add "$FILE" .rokct/agent/log/transitions.log
               git commit -m "🤖 [CI] Lesson 2: Content generation delegated for $ID [skip ci]"
-              git push origin main
+              for i in 1 2 3; do
+                git push origin main && break
+                git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+                sleep $((RANDOM % 3 + 1))
+              done
 
               echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
               break
@@ -157,7 +161,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add "$CARD_FILE" .rokct/agent/log/errors.log
           git commit -m "fail: recorded error for ${{ steps.delegate_task.outputs.card_id }} [skip ci]"
-          git push origin main
+          for i in 1 2 3; do
+            git push origin main && break
+            git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+            sleep $((RANDOM % 3 + 1))
+          done
 
   update_ledger:
     needs: expand_lesson
