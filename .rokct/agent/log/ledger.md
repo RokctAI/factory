@@ -9,3 +9,4 @@
 | maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | pending_approval | groq | GROQ-29294000997 | — | 2026-07-13 23:46 |
 | physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | pending_approval | groq | GROQ-29294756169 | — | 2026-07-14 00:02 |
 | physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | concept_expanding | jules | 14590217926937046181 | — | 2026-07-14 00:04 |
+| geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0 | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Gradient calculation | pending_approval | groq | GROQ-29294978117 | — | 2026-07-14 00:06 |
