@@ -55,7 +55,8 @@ does not exist yet and is a separate future brief.
 - Card template: `.rokct/agent/jobs/template_lesson.md`.
 - Metarules: `.rokct/types/lesson.<subject>/metarules/` — one directory per
   lesson type (`lesson.maths`, `lesson.physical_sciences`,
-  `lesson.economics`, `lesson.geography`); `pedagogy_rules.md` and
+  `lesson.economics`, `lesson.geography`, `lesson.maths_literacy`,
+  `lesson.accounting`); `pedagogy_rules.md` and
   `mcq_rules.md` are shared conventions, `lesson_rules.md` carries the
   subject flavour. To onboard a new subject: add its type to
   `lesson0_topic_selection.yml`'s `TYPES` array, create its metarules
