@@ -1,11 +1,12 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-14 19:41 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-14 21:12 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
-## Waiting on you (17)
+## Waiting on you (18)
 
 | Card | Subject | Action |
 |---|---|---|
+| `accounting_g11_cost_accounting_break_even_analysis_ad0b83` | Accounting G11 | approve the lesson idea (`idea_status: approved`) |
 | `accounting_g11_reconciliations_bank_reconciliation_statement_ba219e` | Accounting G11 | approve the lesson idea (`idea_status: approved`) |
 | `accounting_g11_value_added_tax_vat_calculations_09d287` | Accounting G11 | approve the lesson idea (`idea_status: approved`) |
 | `economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d` | Economics G11 | approve the lesson idea (`idea_status: approved`) |
@@ -32,20 +33,20 @@ No stalled, failed or blocked cards.
 
 | Subject | theme_generated | pending_approval | concept_expanding | evaluated | total |
 |---|---|---|---|---|---|
-| Accounting |  | 2 |  |  | 2 |
+| Accounting |  | 3 |  |  | 3 |
 | Economics |  | 3 |  | 1 | 4 |
 | Geography |  | 3 |  | 1 | 4 |
 | Mathematical Literacy | 1 | 2 |  |  | 3 |
 | Maths |  | 4 | 1 | 2 | 7 |
 | Physical Sciences |  | 3 |  | 1 | 4 |
-| **All** | **1** | **17** | **1** | **5** | **24** |
+| **All** | **1** | **18** | **1** | **5** | **25** |
 
 ## Seed backlog (topics not yet opened as cards)
 
 | Subject | Grade | Opened | Remaining |
 |---|---|---|---|
 | Accounting | 10 | 0 | 9 |
-| Accounting | 11 | 2 | 9 |
+| Accounting | 11 | 3 | 8 |
 | Accounting | 12 | 0 | 11 |
 | Economics | 10 | 0 | 9 |
 | Economics | 11 | 2 | 6 |
@@ -63,7 +64,7 @@ No stalled, failed or blocked cards.
 | Physical Sciences | 11 | 3 | 10 |
 | Physical Sciences | 12 | 1 | 12 |
 
-Seed rows total: 215; opened: 24; remaining: 191.
+Seed rows total: 215; opened: 25; remaining: 190.
 
 ## Evaluated (Level 4 complete, awaiting Level 6): 5
 
@@ -77,7 +78,7 @@ Seed rows total: 215; opened: 24; remaining: 191.
 
 | Window | Groq calls | Groq tokens | Jules sessions |
 |---|---|---|---|
-| Last 24 h | 7 | 4386 | 0 |
-| All time | 7 | 4386 | 0 |
+| Last 24 h | 10 | 5500 | 0 |
+| All time | 10 | 5500 | 0 |
 
 Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
