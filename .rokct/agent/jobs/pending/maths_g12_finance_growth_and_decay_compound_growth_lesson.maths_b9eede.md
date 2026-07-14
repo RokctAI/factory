@@ -20,7 +20,7 @@ metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: This subtopic has a strong real-world anchor in finance and investment, making it a good fit for Big John's intuitive and concrete approach.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

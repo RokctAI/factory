@@ -53,6 +53,13 @@ SCRIPT_MIN_WORDS = 900
 TUTOR_GRANDMASTER = "Grandmaster — formal"
 TUTOR_BIG_JOHN = "Big John — simplistic, lower grade logic"
 
+# Tutor persona cards (.rokct/tutors/): every subject has an Expert +
+# Simplifier duo (supacharge-characters.md §1) and the same duo spans all
+# grades of a subject. roster.json maps subject -> duo so a different duo
+# can be attached per subject later without touching this code. The legacy
+# constants above stay as the fallback when the roster is unavailable.
+TUTORS_DIR = Path(".rokct/tutors")
+
 CONTENT_FILES = {
     "script_path": "script.md",
     "manim_path": "manim_scene.py",
@@ -279,6 +286,65 @@ max_iterations: 10
     return 0
 
 
+# --- tutor persona cards ---
+
+def load_roster():
+    path = TUTORS_DIR / "roster.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_tutor_card(slug):
+    path = TUTORS_DIR / f"{slug}.md"
+    return path.read_text(encoding="utf-8") if path.exists() else ""
+
+
+def card_roster_key(card):
+    """roster.json subject key for a job card — the lesson.* type suffix
+    (lesson.maths_literacy -> maths_literacy), falling back to the subject
+    name for cards without a lesson.* type."""
+    t = get_field(card, "type")
+    if t.startswith("lesson."):
+        return t.split(".", 1)[1]
+    return get_field(card, "subject").lower().replace(" ", "_")
+
+
+def subject_duo(card):
+    """[(slug, persona card text)] for this card's subject, Expert first.
+    Empty when the roster has no entry (callers fall back to the legacy
+    Maths duo so old cards keep working)."""
+    entry = load_roster().get("subjects", {}).get(card_roster_key(card), {})
+    duo = []
+    for role in ("expert", "simplifier"):
+        text = load_tutor_card(entry.get(role, ""))
+        if text:
+            duo.append((entry[role], text))
+    return duo
+
+
+def persona_label(text):
+    return get_field(text, "pipeline_label")
+
+
+def persona_style(text):
+    m = re.search(r"^## Style / teaching philosophy.*?\n(.*?)(?=^## |\Z)",
+                  text, re.MULTILINE | re.DOTALL)
+    return " ".join(m.group(1).split()) if m else ""
+
+
+def match_persona(duo, tutor):
+    """(slug, card text, canonical label) for the duo member whose name
+    (the pipeline_label part before the em-dash) appears in the tutor
+    string; (None, "", "") when nothing matches."""
+    for slug, text in duo:
+        label = persona_label(text)
+        name = label.split("—")[0].strip()
+        if name and name.lower() in tutor.lower():
+            return slug, text, label
+    return None, "", ""
+
+
 # --- prompts (Level 1 tutor/plan capture, Level 2 content generation) ---
 
 def build_level1_prompt(card):
@@ -291,13 +357,29 @@ def build_level1_prompt(card):
     example = get_field(card, "example_problem")
     prior = get_field(card, "prior_knowledge")
 
+    duo = subject_duo(card)
+    allowed = " | ".join(persona_label(t) for _, t in duo) if duo \
+        else f"{TUTOR_GRANDMASTER} | {TUTOR_BIG_JOHN}"
+
     if tutor:
         tutor_line = f"The tutor persona is already fixed: {tutor}. Repeat it verbatim in the TUTOR line."
-    else:
+    elif duo:
         # Both personas serve every FET grade — the difference is teaching
-        # style, not level. Naming the style trade-off (rather than "lower
-        # grade logic" alone) is what stops the model defaulting to
-        # Grandmaster for every Grade 11/12 card.
+        # style, not level. Naming the style trade-off per persona (from
+        # the card, not a generic blurb) is what stops the model defaulting
+        # to the Expert for every Grade 11/12 card.
+        options = "\n".join(
+            f"- {persona_label(t)} ({get_field(t, 'title')}): {persona_style(t)}"
+            for _, t in duo)
+        tutor_line = f"""Choose the tutor persona from this subject's duo. Supacharge publishes
+lessons in BOTH voices across Grades 10-12 — neither persona is the default,
+and both teach every grade:
+{options}
+Judge THIS subtopic's teaching-style fit only. A Grade 11 or 12 topic with a
+strong real-world anchor is a Simplifier lesson; abstraction-heavy formal
+precision is an Expert lesson."""
+    else:
+        # Legacy fallback: roster unavailable — the original Maths duo.
         tutor_line = f"""Choose the tutor persona. Supacharge publishes lessons in BOTH voices across
 Grades 10-12 — neither persona is the default, and both teach every grade:
 - {TUTOR_GRANDMASTER}: fast reveal, sharp, formula first. Best when the
@@ -320,7 +402,7 @@ Subtopic: {subtopic}
 {"Prior knowledge assumptions are already fixed: " + prior + ". Repeat them verbatim." if prior else "State the prior knowledge a student needs before this lesson."}
 
 Reply in exactly this format, nothing else:
-TUTOR: <exactly one of: {TUTOR_GRANDMASTER} | {TUTOR_BIG_JOHN}>
+TUTOR: <exactly one of: {allowed}>
 TUTOR_REASON: <one line: why this persona's teaching style fits this subtopic>
 EXAMPLE_PROBLEM: <one problem on a single line>
 PRIOR_KNOWLEDGE: <one line>
@@ -347,6 +429,21 @@ def build_level2_prompt(card, card_file):
     prior = get_field(card, "prior_knowledge")
     lesson_dir = content_dir(subject, grade, term, card_id)
 
+    # Embed the selected tutor's full persona card so the script reflects
+    # the established character instead of Jules re-deriving the voice from
+    # the bare tutor label each session.
+    slug, persona_card, _ = match_persona(subject_duo(card), tutor)
+    persona_block = ""
+    if persona_card:
+        persona_block = f"""
+TUTOR PERSONA CARD (.rokct/tutors/{slug}.md) — every tutor-voiced item
+(script, reel clip) must be written in exactly this established character;
+do not re-derive or soften the voice:
+--- persona card start ---
+{persona_card.strip()}
+--- persona card end ---
+"""
+
     return f"""TASK: Generate the full content for one Supacharge lesson.
 
 Subject: [{subject}]
@@ -357,7 +454,7 @@ Subtopic: [{subtopic}]
 Example problem: [{example}]
 Tutor: [{tutor}]
 Prior knowledge: [{prior}]
-
+{persona_block}
 Produce:
 1. Lesson script — tutor voice, 15 minutes teaching
 2. Manim Python file — whiteboard style, step by step
@@ -465,7 +562,15 @@ def cmd_plan(args):
     if not (tutor and example and prior and angle):
         print("Error: Groq plan output missing one of TUTOR / EXAMPLE_PROBLEM / PRIOR_KNOWLEDGE / LESSON_ANGLE.")
         return 1
-    if TUTOR_GRANDMASTER.split(" ")[0].lower() not in tutor.lower() and "john" not in tutor.lower():
+    duo = subject_duo(card)
+    if duo:
+        _, _, label = match_persona(duo, tutor)
+        if not label:
+            valid = " | ".join(persona_label(t) for _, t in duo)
+            print(f"Error: tutor persona '{tutor}' is not in this subject's duo ({valid}).")
+            return 1
+        tutor = label  # normalise to the card's canonical pipeline_label
+    elif TUTOR_GRANDMASTER.split(" ")[0].lower() not in tutor.lower() and "john" not in tutor.lower():
         print(f"Error: unrecognised tutor persona: {tutor}")
         return 1
 

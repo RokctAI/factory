@@ -13,7 +13,7 @@ grade: 12
 term: 1
 topic: Geomorphology
 subtopic: River profiles and rejuvenation
-tutor: Grandmaster — formal
+tutor: Dr Molefe — formal
 example_problem: Differentiate between a graded and an ungraded river profile, and explain river rejuvenation using a labelled diagram.
 prior_knowledge: Student knows drainage basins and fluvial erosion and deposition
 metarules: .rokct/types/lesson.geography/metarules
