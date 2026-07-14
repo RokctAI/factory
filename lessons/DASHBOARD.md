@@ -1,13 +1,15 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-14 09:15 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-14 11:42 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
-## Waiting on you (11)
+## Waiting on you (13)
 
 | Card | Subject | Action |
 |---|---|---|
 | `accounting_g11_reconciliations_bank_reconciliation_statement_ba219e` | Accounting G11 | approve the lesson idea (`idea_status: approved`) |
 | `economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d` | Economics G11 | approve the lesson idea (`idea_status: approved`) |
+| `economics_g12_economic_pursuits_inflation_and_the_cpi_b92223` | Economics G12 | approve the lesson idea (`idea_status: approved`) |
+| `economics_g12_macroeconomics_the_multiplier_646d16` | Economics G12 | approve the lesson idea (`idea_status: approved`) |
 | `mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d` | Mathematical Literacy G12 | approve the lesson idea (`idea_status: approved`) |
 | `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | approve the lesson idea (`idea_status: approved`) |
 | `maths_g12_finance_growth_and_decay_compound_growth_b9eede` | Maths G12 | approve the lesson idea (`idea_status: approved`) |
@@ -27,12 +29,12 @@ No stalled, failed or blocked cards.
 | Subject | theme_generated | pending_approval | evaluated | total |
 |---|---|---|---|---|
 | Accounting |  | 1 |  | 1 |
-| Economics | 2 | 1 | 1 | 4 |
-| Geography |  |  | 1 | 1 |
+| Economics |  | 3 | 1 | 4 |
+| Geography | 1 |  | 1 | 2 |
 | Mathematical Literacy |  | 1 |  | 1 |
 | Maths |  | 5 | 2 | 7 |
 | Physical Sciences |  | 3 | 1 | 4 |
-| **All** | **2** | **11** | **5** | **18** |
+| **All** | **1** | **13** | **5** | **19** |
 
 ## Seed backlog (topics not yet opened as cards)
 
@@ -46,7 +48,7 @@ No stalled, failed or blocked cards.
 | Economics | 12 | 2 | 9 |
 | Geography | 10 | 0 | 10 |
 | Geography | 11 | 0 | 11 |
-| Geography | 12 | 1 | 15 |
+| Geography | 12 | 2 | 14 |
 | Mathematical Literacy | 10 | 0 | 9 |
 | Mathematical Literacy | 11 | 0 | 12 |
 | Mathematical Literacy | 12 | 1 | 11 |
@@ -57,7 +59,7 @@ No stalled, failed or blocked cards.
 | Physical Sciences | 11 | 3 | 10 |
 | Physical Sciences | 12 | 1 | 12 |
 
-Seed rows total: 215; opened: 18; remaining: 197.
+Seed rows total: 215; opened: 19; remaining: 196.
 
 ## Evaluated (Level 4 complete, awaiting Level 6): 5
 
@@ -69,4 +71,9 @@ Seed rows total: 215; opened: 18; remaining: 197.
 
 ## API usage (Groq/Jules)
 
-No usage recorded yet — the log starts with the first Groq/Jules call after the delegate's usage logging deployed.
+| Window | Groq calls | Groq tokens | Jules sessions |
+|---|---|---|---|
+| Last 24 h | 2 | 1190 | 0 |
+| All time | 2 | 1190 | 0 |
+
+Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
