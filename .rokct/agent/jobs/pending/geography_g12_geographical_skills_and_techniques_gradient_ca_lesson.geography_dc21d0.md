@@ -19,7 +19,7 @@ metarules: .rokct/types/lesson.geography/metarules
 guardrail: age_13_17
 idea: |
   The lesson will commence with a hook, where the Grandmaster tutor poses a thought-provoking question about the importance of gradient calculation in real-world geography. The tutor will then delve into the concept of gradient, explaining the formula and its application. The example problem will be introduced as a practical illustration of the concept, where students will be guided to calculate the average gradient. The tutor will break down the solution, emphasizing key steps and providing opportunities for students to engage with the calculation. The lesson will conclude with a summary of the key takeaways, reinforcing the students' understanding of gradient calculation.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
