@@ -34,3 +34,4 @@
 | economics_g12_macroeconomics_the_multiplier_646d16 | lesson.economics | Economics Grade 12: Macroeconomics - The multiplier | pending_approval | groq | GROQ-29328025321 | — | 2026-07-14 11:12 |
 | geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b | lesson.geography | Geography Grade 12: Climate and Weather - Mid-latitude cyclones | pending_approval | groq | GROQ-29334115969 | — | 2026-07-14 12:52 |
 | geography_g12_geographical_skills_and_techniques_map_scale_a_eb274e | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Map scale and distance | pending_approval | groq | GROQ-29344162645 | — | 2026-07-14 15:10 |
+| geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d | lesson.geography | Geography Grade 12: Geomorphology - River profiles and rejuvenation | pending_approval | groq | GROQ-29351264503 | — | 2026-07-14 16:50 |
