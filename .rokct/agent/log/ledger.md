@@ -33,3 +33,4 @@
 | economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | pending_approval | groq | GROQ-29321900343 | — | 2026-07-14 09:29 |
 | economics_g12_macroeconomics_the_multiplier_646d16 | lesson.economics | Economics Grade 12: Macroeconomics - The multiplier | pending_approval | groq | GROQ-29328025321 | — | 2026-07-14 11:12 |
 | geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b | lesson.geography | Geography Grade 12: Climate and Weather - Mid-latitude cyclones | pending_approval | groq | GROQ-29334115969 | — | 2026-07-14 12:52 |
+| geography_g12_geographical_skills_and_techniques_map_scale_a_eb274e | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Map scale and distance | pending_approval | groq | GROQ-29344162645 | — | 2026-07-14 15:10 |
