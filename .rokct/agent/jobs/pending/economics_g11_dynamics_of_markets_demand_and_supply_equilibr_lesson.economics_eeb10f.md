@@ -17,8 +17,9 @@ example_problem: Show on one graph how an increase in consumer income shifts the
 prior_knowledge: Student knows the demand curve, the supply curve, and how to read a graph
 metarules: .rokct/types/lesson.economics/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  The lesson will commence with a hook, where the Grandmaster poses a thought-provoking question about the dynamics of markets, specifically how changes in consumer income affect market equilibrium. The first teaching beat will review the concept of demand and supply curves, ensuring students are familiar with the foundational concepts. The second teaching beat will introduce the concept of equilibrium and how it is affected by changes in demand. The example problem will be presented as the third teaching beat, where students will analyze the graph and identify the new equilibrium price and quantity. The lesson will conclude with a summary of key takeaways, emphasizing the importance of understanding demand and supply equilibrium in the context of market dynamics.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -32,12 +33,12 @@ comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
 mandy_nervous_script_path:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 02:05:59
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 00:08:25
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
