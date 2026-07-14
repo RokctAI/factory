@@ -36,3 +36,4 @@
 | geography_g12_geographical_skills_and_techniques_map_scale_a_eb274e | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Map scale and distance | pending_approval | groq | GROQ-29344162645 | — | 2026-07-14 15:10 |
 | geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d | lesson.geography | Geography Grade 12: Geomorphology - River profiles and rejuvenation | pending_approval | groq | GROQ-29351264503 | — | 2026-07-14 16:50 |
 | mathematical_literacy_g11_finance_simple_interest_8f7530 | lesson.maths_literacy | Mathematical Literacy Grade 11: Finance - Simple interest | pending_approval | groq | GROQ-29359202867 | — | 2026-07-14 18:46 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | pending_approval | groq | GROQ-29361804737 | — | 2026-07-14 19:26 |
