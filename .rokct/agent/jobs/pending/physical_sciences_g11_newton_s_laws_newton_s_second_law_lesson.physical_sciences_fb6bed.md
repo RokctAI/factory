@@ -22,7 +22,7 @@ idea: |
 idea_status: approved
 concept: |
   The lesson will be structured in three parts: Stating Newton's Second Law, Applying Newton's Second Law, and Summary and Final Thoughts. The tone is sharp, authoritative, and formal, fitting the 'Grandmaster' persona. The mathematical relationship F_net = m * a is introduced first as a rigorous truth. Then, the example problem (5 kg crate, 20 N force) is solved step-by-step using the exact CAPS method (formula, substitution, answer with SI units).
-concept_status:
+concept_status: approved
 rules_status: passed
 lesson_name: Newton's Second Law
 lesson_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed
