@@ -36,7 +36,7 @@ mandy_transcript_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton
 mandy_nervous_script_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_nervous_script.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-14 00:04:00
+last_updated: 2026-07-14 02:13:25
 session_id: 
 session_started: 
 attempts: 2
