@@ -13,13 +13,14 @@ grade: 11
 term: 1
 topic: Reconciliations
 subtopic: Bank reconciliation statement
-tutor: 
+tutor: Grandmaster — formal
 example_problem: The bank statement shows a favourable balance of R5 320. Outstanding deposit: R2 100. Outstanding cheques: no. 411 for R1 480 and no. 415 for R650. Prepare the bank reconciliation statement to find the bank account balance.
 prior_knowledge: Student knows the bank account in the general ledger and debit/credit conventions
 metarules: .rokct/types/lesson.accounting/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  Tutor choice: The bank reconciliation statement involves procedural and abstract concepts that require exam-style precision.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -33,12 +34,12 @@ comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
 mandy_nervous_script_path:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 01:06:43
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
