@@ -23,7 +23,7 @@ idea_status: approved
 concept: |
   The lesson will be structured in three parts: Stating Newton's Second Law, Applying Newton's Second Law, and Summary and Final Thoughts. The tone is sharp, authoritative, and formal, fitting the 'Grandmaster' persona. The mathematical relationship F_net = m * a is introduced first as a rigorous truth. Then, the example problem (5 kg crate, 20 N force) is solved step-by-step using the exact CAPS method (formula, substitution, answer with SI units).
 concept_status:
-rules_status:
+rules_status: passed
 lesson_name: Newton's Second Law
 lesson_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed
 script_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/script.md
@@ -34,12 +34,12 @@ comprehension_check_path: lessons/drafts/physical_sciences_g11_newton_s_laws_new
 reel_brief_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/reel_clip.json
 mandy_transcript_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_nervous_script.md
-status: concept_generated
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-14 02:13:25
+last_updated: 2026-07-14 00:14:42
 session_id: 
 session_started: 
-attempts: 2
+attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
