@@ -59,8 +59,8 @@ jobs:
               # lesson.* cards have their own pipeline (lesson3_rules_check.yml)
               case "$TYPE" in lesson.*) continue ;; esac
               THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2 | xargs)
-              CONCEPT_STATUS=$(grep '^concept_status:' "$FILE" | cut -d':' -f2 | xargs)
-              STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | xargs)
+              CONCEPT_STATUS=$(grep '^concept_status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
+              STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
 
               if [ "$CONCEPT_STATUS" != "approved" ]; then continue; fi
               if [ "$STATUS" != "concept_generated" ]; then continue; fi
