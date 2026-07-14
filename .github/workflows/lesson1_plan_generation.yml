@@ -49,8 +49,10 @@ jobs:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
-          # Find the oldest lesson.* card with status: theme_generated
-          ALL_CARDS=$(ls -rt .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
+          # Find the first lesson.* card with status: theme_generated.
+          # Alphabetical order: mtimes are all checkout-time in CI, so
+          # 'ls -rt' was nondeterministic, not oldest-first.
+          ALL_CARDS=$(ls -1 .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
 
           FILE=""
           for f in $ALL_CARDS; do
