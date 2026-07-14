@@ -13,13 +13,14 @@ grade: 11
 term: 4
 topic: Value Added Tax
 subtopic: VAT calculations
-tutor: 
+tutor: Aunty Grace — simplistic, lower grade logic
 example_problem: An item is marked R2 875 including VAT at 15%. Calculate the VAT amount and the price excluding VAT.
 prior_knowledge: Student knows percentages and the concept of VAT
 metarules: .rokct/types/lesson.accounting/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  Tutor choice: This subtopic has a strong real-world anchor, making it a good fit for a Simplifier lesson.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -36,12 +37,12 @@ mandy_nervous_script_path:
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 19:26:31
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
