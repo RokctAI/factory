@@ -25,11 +25,19 @@ does not exist yet and is a separate future brief.
 
 ## Layout
 
-- `curriculum/caps_seed.json` — hand-written CAPS-aligned topic list (interim
-  source of truth until a real CAPS pacing source exists). Every entry
-  carries a `term` (CAPS school term 1–4, verified against the DBE 2023/24
-  Annual Teaching Plans; `all` = skills integrated across terms, e.g.
-  Geography mapwork; `unknown` = no verifiable ATP placement — never guess).
+- `curriculum/caps_seed.json` — CAPS-aligned topic list covering Grades
+  10–12 across all six subjects (interim source of truth until a real CAPS
+  pacing source exists). Every entry carries a `term` (CAPS school term
+  1–4, verified against the DBE 2023/24 Annual Teaching Plans; `all` =
+  skills integrated across terms, e.g. Geography mapwork; `unknown` = no
+  verifiable ATP placement — never guess). The `_sources` map records the
+  exact education.gov.za ATP document each subject-grade was verified
+  against, plus the ATP edition and verification date.
+- `scripts/atp_drift_check.py` — re-verifies every seed term against the
+  recorded ATP sources (the DBE reissues ATPs yearly and placements can
+  shift between editions). Run it when a new school year's ATPs publish:
+  update the `_sources` URLs/edition, run the check, and fix any DRIFT
+  rows by hand — the script reports, it never rewrites.
 - `scripts/lesson_pipeline.py` — seeding, prompt construction (§4 Prompt
   Template verbatim), plan capture, Level 3/4 checks. Seeding refuses
   structural duplicates: an existing pending/running/done card with the same

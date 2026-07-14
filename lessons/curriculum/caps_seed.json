@@ -23,6 +23,39 @@
     "3-pending-per-subject throttle paces card creation regardless of seed",
     "depth. Grade 10 rows are a future addition."
   ],
+  "_sources": {
+    "_about": [
+      "Term placements are verified against these DBE Annual Teaching Plan",
+      "PDFs (2023/24 edition, education.gov.za). The DBE reissues ATPs each",
+      "year and term placement can shift between editions — run",
+      "lessons/scripts/atp_drift_check.py to re-verify this file against the",
+      "recorded sources (or newer URLs) before trusting term data in a new",
+      "school year. Index page:",
+      "https://www.education.gov.za/Curriculum/NationalCurriculumStatementsGradesR-12/2023ATPsFET.aspx"
+    ],
+    "atp_edition": "2023/24",
+    "verified": "2026-07-14",
+    "documents": {
+      "Maths Grade 10": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.580%20ATP%202023-24%20Gr%2010%20Maths%20final.pdf",
+      "Maths Grade 11": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.590%20ATP%202023-24%20Gr%2011%20Maths%20final.pdf",
+      "Maths Grade 12": "https://www.education.gov.za/LinkClick.aspx?fileticket=_kS5tgxXQ0I%3D&tabid=3205&portalid=0&mid=10755",
+      "Physical Sciences Grade 10": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.520%20ATP%202023-24%20Gr%2010%20Phys%20Sci%20final.pdf",
+      "Physical Sciences Grade 11": "https://www.education.gov.za/LinkClick.aspx?fileticket=HofhdeKXMCM%3D&tabid=3205&portalid=0&mid=10752",
+      "Physical Sciences Grade 12": "https://www.education.gov.za/LinkClick.aspx?fileticket=6y_u-yjj97c%3D&tabid=3205&portalid=0&mid=10755",
+      "Economics Grade 10": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.210%20ATP%202023-24%20Gr%2010%20Eco%20final.pdf",
+      "Economics Grade 11": "https://www.education.gov.za/LinkClick.aspx?fileticket=BjrxUz7iUNo%3D&tabid=3205&portalid=0&mid=10752",
+      "Economics Grade 12": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.230%20ATP%202023-24%20Gr%2012%20Eco%20final.pdf",
+      "Geography Grade 10": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.380%20ATP%202023-24%20Gr%2010%20Geo%20final.pdf",
+      "Geography Grade 11": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.390%20ATP%202023-24%20Gr%2011%20Geo%20final.pdf",
+      "Geography Grade 12": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.400%20ATP%202023-24%20Gr%2012%20Geo%20final.pdf",
+      "Mathematical Literacy Grade 10": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.020%20ATP%202023-24%20Gr%2010%20Maths%20Lit%20final.pdf",
+      "Mathematical Literacy Grade 11": "https://www.education.gov.za/LinkClick.aspx?fileticket=EqZ41-tXhWA%3D&tabid=3205&portalid=0&mid=10752",
+      "Mathematical Literacy Grade 12": "https://www.education.gov.za/LinkClick.aspx?fileticket=X4ZvlGUQ0vY%3D&tabid=3205&portalid=0&mid=10755",
+      "Accounting Grade 10": "https://www.education.gov.za/LinkClick.aspx?fileticket=xMiwoYjt1vw%3D&tabid=3205&portalid=0&mid=10736",
+      "Accounting Grade 11": "https://www.education.gov.za/LinkClick.aspx?fileticket=qxPOjU7FXcA%3D&tabid=3205&portalid=0&mid=10752",
+      "Accounting Grade 12": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.150%20ATP%202023-24%20Gr%2012%20Acc%20final.pdf"
+    }
+  },
   "entries": [
     {
       "type": "lesson.maths",
@@ -1588,6 +1621,596 @@
       "subtopic": "VAT control account",
       "example_problem": "Complete the VAT control account: output VAT R48 300, input VAT R31 050, and a payment to SARS; determine the closing balance and state what it represents.",
       "prior_knowledge": "Student knows VAT calculations from Grade 11"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 1,
+      "topic": "Algebraic Expressions",
+      "subtopic": "Factorising",
+      "example_problem": "Factorise 3x² - 12 completely.",
+      "prior_knowledge": "Student knows common factors and difference of squares from Grade 9"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 1,
+      "topic": "Exponents",
+      "subtopic": "Laws of exponents",
+      "example_problem": "Simplify (2x³)² × x⁻⁴.",
+      "prior_knowledge": "Student knows basic exponent notation"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 1,
+      "topic": "Equations and Inequalities",
+      "subtopic": "Linear equations and inequalities",
+      "example_problem": "Solve 3(x - 2) + 5 = 2x + 7, and solve 2x - 1 < 7 showing the answer on a number line.",
+      "prior_knowledge": "Student can simplify algebraic expressions"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 1,
+      "topic": "Trigonometry",
+      "subtopic": "Defining the trigonometric ratios",
+      "example_problem": "In a right-angled triangle the side opposite θ is 3 and the hypotenuse is 5. Determine sin θ, cos θ and tan θ.",
+      "prior_knowledge": "Student knows Pythagoras and similar triangles"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 2,
+      "topic": "Euclidean Geometry",
+      "subtopic": "Properties of quadrilaterals",
+      "example_problem": "Use the properties of a rhombus to calculate the marked angles in the given figure.",
+      "prior_knowledge": "Student knows angle relationships on parallel lines"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 2,
+      "topic": "Analytical Geometry",
+      "subtopic": "Distance and midpoint",
+      "example_problem": "For A(2;3) and B(6;9), calculate the length of AB and the coordinates of its midpoint.",
+      "prior_knowledge": "Student can plot points and use Pythagoras"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 2,
+      "topic": "Functions",
+      "subtopic": "Straight line and parabola",
+      "example_problem": "Sketch f(x) = 2x + 1 and g(x) = x² - 4 on the same axes, showing all intercepts.",
+      "prior_knowledge": "Student can complete tables of values and plot points"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 3,
+      "topic": "Trigonometry",
+      "subtopic": "Solving 2D problems",
+      "example_problem": "From a point 50 m from the base of a building, the angle of elevation to the top is 32°. Calculate the height of the building.",
+      "prior_knowledge": "Student knows the trig ratios"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 3,
+      "topic": "Finance and Growth",
+      "subtopic": "Simple and compound growth",
+      "example_problem": "Compare the value of R5 000 invested for 3 years at 8% per annum simple interest versus compound interest.",
+      "prior_knowledge": "Student can calculate percentages"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 3,
+      "topic": "Statistics",
+      "subtopic": "Five-number summary",
+      "example_problem": "For the data set 4; 7; 9; 12; 15; 18; 21; 25, determine the five-number summary and draw a box-and-whisker diagram.",
+      "prior_knowledge": "Student can order data and find the median"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 4,
+      "topic": "Number Patterns",
+      "subtopic": "Linear number patterns",
+      "example_problem": "Determine the nth term of the pattern 5; 9; 13; 17; ... and hence the 50th term.",
+      "prior_knowledge": "Student can identify a constant difference"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": 4,
+      "topic": "Measurement",
+      "subtopic": "Volume and surface area of prisms",
+      "example_problem": "Calculate the volume and total surface area of a rectangular prism measuring 4 m × 3 m × 2 m.",
+      "prior_knowledge": "Student knows area formulas for rectangles"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 1,
+      "topic": "Transverse and Longitudinal Waves",
+      "subtopic": "Wave speed calculations",
+      "example_problem": "A wave has a frequency of 50 Hz and a wavelength of 0,4 m. Calculate the speed of the wave.",
+      "prior_knowledge": "Student knows frequency, wavelength and amplitude definitions"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 1,
+      "topic": "Sound",
+      "subtopic": "Speed of sound in context",
+      "example_problem": "Thunder is heard 3 s after a lightning flash. Taking the speed of sound as 340 m·s⁻¹, calculate how far away the storm is.",
+      "prior_knowledge": "Student knows speed = distance/time"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 1,
+      "topic": "Electrostatics",
+      "subtopic": "Conservation of charge",
+      "example_problem": "Two identical conducting spheres carrying +6 μC and -2 μC touch and are separated. Calculate the final charge on each sphere.",
+      "prior_knowledge": "Student knows positive and negative charge"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 2,
+      "topic": "States of Matter",
+      "subtopic": "Kinetic molecular theory",
+      "example_problem": "Describe the changes in particle energy and spacing as ice melts and then boils, naming each phase change.",
+      "prior_knowledge": "Student knows the three states of matter"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 2,
+      "topic": "The Periodic Table",
+      "subtopic": "Groups, periods and ions",
+      "example_problem": "For the element with atomic number 17: write the electron configuration, state its group and period, and give the ion it typically forms.",
+      "prior_knowledge": "Student knows atomic structure (protons, electrons)"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 2,
+      "topic": "Chemical Bonding",
+      "subtopic": "Ionic and covalent bonding",
+      "example_problem": "Classify the bonding in NaCl and in H₂O, and draw the Lewis diagram of the water molecule.",
+      "prior_knowledge": "Student knows valence electrons and the periodic table"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 2,
+      "topic": "Electric Circuits",
+      "subtopic": "Potential difference in series circuits",
+      "example_problem": "Two identical bulbs are connected in series across a 12 V battery. Determine the potential difference across each bulb.",
+      "prior_knowledge": "Student knows a simple circuit's components"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 3,
+      "topic": "Motion in One Dimension",
+      "subtopic": "Equations of motion",
+      "example_problem": "A car accelerates from rest at 2 m·s⁻² for 5 s. Calculate its final velocity and the distance covered.",
+      "prior_knowledge": "Student knows velocity and acceleration definitions"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 3,
+      "topic": "Vectors and Scalars",
+      "subtopic": "Resultant in one dimension",
+      "example_problem": "A learner walks 8 m east and then 3 m west. Distinguish the distance travelled from the displacement, and give the resultant displacement.",
+      "prior_knowledge": "Student can add and subtract signed numbers"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": 3,
+      "topic": "Energy",
+      "subtopic": "Gravitational potential and kinetic energy",
+      "example_problem": "A 2 kg ball is held 10 m above the ground. Calculate its potential energy, and its speed just before landing using energy conservation (g = 9,8 m·s⁻²).",
+      "prior_knowledge": "Student knows mass, height and velocity concepts"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 1,
+      "topic": "Geographical Skills and Techniques",
+      "subtopic": "Map skills consolidation",
+      "example_problem": "Use the 1:50 000 map extract to give a four-figure grid reference, the direction from A to B, and the straight-line distance between them.",
+      "prior_knowledge": "Student knows Grade 9 map basics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 1,
+      "topic": "The Atmosphere",
+      "subtopic": "Composition and structure",
+      "example_problem": "Name the layers of the atmosphere with one characteristic of each, and state in which layer weather occurs.",
+      "prior_knowledge": "Student knows the atmosphere exists in layers"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 1,
+      "topic": "The Atmosphere",
+      "subtopic": "Heating of the atmosphere",
+      "example_problem": "Explain how the atmosphere is heated from below through terrestrial radiation, and describe the natural greenhouse effect.",
+      "prior_knowledge": "Student knows insolation and radiation basics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 2,
+      "topic": "Plate Tectonics",
+      "subtopic": "Plate boundaries",
+      "example_problem": "Describe the three types of plate boundaries and give one example landform produced at each.",
+      "prior_knowledge": "Student knows the Earth's structural layers"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 2,
+      "topic": "Folding and Faulting",
+      "subtopic": "Fold mountains and rift valleys",
+      "example_problem": "Explain, with diagrams, how fold mountains and rift valleys form.",
+      "prior_knowledge": "Student knows plate movement basics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 2,
+      "topic": "Earthquakes and Volcanoes",
+      "subtopic": "Earthquake hazards",
+      "example_problem": "Distinguish the focus from the epicentre of an earthquake, and describe two preparedness strategies for earthquake-prone regions.",
+      "prior_knowledge": "Student knows plate boundaries"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 3,
+      "topic": "Population",
+      "subtopic": "Distribution and density",
+      "example_problem": "A region has 28 million people on 400 000 km². Calculate its population density and give two factors explaining sparsely populated areas.",
+      "prior_knowledge": "Student can divide large numbers and read maps"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 3,
+      "topic": "Population",
+      "subtopic": "Population structure and pyramids",
+      "example_problem": "Interpret a wide-based population pyramid: what does it indicate about births and life expectancy, and give two planning implications.",
+      "prior_knowledge": "Student can read bar graphs"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 4,
+      "topic": "Water Resources",
+      "subtopic": "Water management in South Africa",
+      "example_problem": "Explain why South Africa is considered water-stressed and evaluate two water management strategies.",
+      "prior_knowledge": "Student knows rainfall distribution in SA"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": 4,
+      "topic": "Floods",
+      "subtopic": "Causes and impacts of floods",
+      "example_problem": "Discuss the causes of urban flooding and describe two mitigation measures a municipality can take.",
+      "prior_knowledge": "Student knows the water cycle"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 1,
+      "topic": "Basic Concepts",
+      "subtopic": "Scarcity and opportunity cost",
+      "example_problem": "Define scarcity, choice and opportunity cost using a learner's own example, and state the three central economic questions.",
+      "prior_knowledge": "Student understands needs versus wants"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 1,
+      "topic": "Circular Flow",
+      "subtopic": "Two-sector circular flow",
+      "example_problem": "Draw the circular flow between households and firms, labelling real and money flows, and identify one leakage and one injection.",
+      "prior_knowledge": "Student knows households and businesses as participants"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 1,
+      "topic": "Business Cycles",
+      "subtopic": "Phases of the business cycle",
+      "example_problem": "Name and describe the four phases of the business cycle using a labelled diagram.",
+      "prior_knowledge": "Student knows that economies grow and shrink over time"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 2,
+      "topic": "Dynamics of the Market",
+      "subtopic": "Demand and supply from schedules",
+      "example_problem": "Plot the demand and supply curves from the given schedules and read off the equilibrium price and quantity.",
+      "prior_knowledge": "Student can plot points on a graph"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 2,
+      "topic": "Public Sector Intervention",
+      "subtopic": "Taxes and subsidies",
+      "example_problem": "Show on a graph how a producer subsidy shifts the supply curve, and state the effect on price and quantity.",
+      "prior_knowledge": "Student knows demand and supply curves"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 2,
+      "topic": "Production Possibility Curve",
+      "subtopic": "Opportunity cost on the PPC",
+      "example_problem": "Draw a production possibility curve from the given table and calculate the opportunity cost of moving between two points on it.",
+      "prior_knowledge": "Student knows scarcity and choice"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 3,
+      "topic": "Growth, Development and Globalisation",
+      "subtopic": "Growth versus development",
+      "example_problem": "Distinguish economic growth from economic development and give two indicators used to measure each.",
+      "prior_knowledge": "Student knows GDP as a concept"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 3,
+      "topic": "Population and Labour Force",
+      "subtopic": "Labour force concepts",
+      "example_problem": "Define the economically active population, employed and unemployed, and calculate the labour force participation rate from given figures.",
+      "prior_knowledge": "Student can calculate percentages"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": 4,
+      "topic": "Unemployment",
+      "subtopic": "Types of unemployment",
+      "example_problem": "Classify structural, cyclical, frictional and seasonal unemployment, giving a South African example of each.",
+      "prior_knowledge": "Student knows the labour force concepts"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 1,
+      "topic": "Numbers and Calculations",
+      "subtopic": "Rounding and estimation in context",
+      "example_problem": "Round R47,368 sensibly for a till payment, estimate the total of a five-item shopping list, and calculate what percentage of a R900 budget it uses.",
+      "prior_knowledge": "Student can add, multiply and round numbers"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 1,
+      "topic": "Patterns, Relationships and Representations",
+      "subtopic": "Tables and graphs of relationships",
+      "example_problem": "A taxi charges R12 plus R8 per kilometre. Complete the cost table for 1-10 km, draw the graph, and read the cost of a 7 km trip.",
+      "prior_knowledge": "Student can substitute into a rule and plot points"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 1,
+      "topic": "Data Handling",
+      "subtopic": "Collecting and representing data",
+      "example_problem": "Classify the responses of a class survey as categorical or numerical, and represent the results in a bar graph.",
+      "prior_knowledge": "Student can tally and draw simple graphs"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 2,
+      "topic": "Finance",
+      "subtopic": "Household bills",
+      "example_problem": "An electricity account has a basic charge of R95 plus R2,10 per kWh. Calculate the total bill for 320 kWh used.",
+      "prior_knowledge": "Student can multiply decimals and add money"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 2,
+      "topic": "Measurement",
+      "subtopic": "Everyday conversions",
+      "example_problem": "Convert 2 500 ml to litres and 1,25 kg to grams, and calculate the total mass of a listed shopping basket.",
+      "prior_knowledge": "Student knows metric units"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 2,
+      "topic": "Maps, Plans and Other Representations",
+      "subtopic": "Seating and layout plans",
+      "example_problem": "Use the given stadium seating plan to locate a seat, describe a route to it, and count the seats in a block.",
+      "prior_knowledge": "Student can read simple diagrams"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 2,
+      "topic": "Probability",
+      "subtopic": "Games of chance",
+      "example_problem": "Calculate the probability of rolling a 6 with one die, and explain whether the described game is fair or unfair.",
+      "prior_knowledge": "Student knows fractions"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 3,
+      "topic": "Finance",
+      "subtopic": "Profit and loss for a small business",
+      "example_problem": "A spaza shop buys chips at R6,00 and sells at R9,50 per packet. Calculate the weekly profit on 120 packets after fixed costs of R150.",
+      "prior_knowledge": "Student can multiply and subtract money amounts"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": 3,
+      "topic": "Measurement",
+      "subtopic": "Reading timetables and time calculations",
+      "example_problem": "Use the bus timetable to determine the departure time needed to arrive by 08:00, and calculate the journey duration.",
+      "prior_knowledge": "Student can read time in 24-hour format"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 1,
+      "topic": "Accounting Concepts",
+      "subtopic": "GAAP principles and ethics",
+      "example_problem": "Match each GAAP principle (going concern, prudence, historical cost, matching) to the given scenarios and explain one ethical duty of a bookkeeper.",
+      "prior_knowledge": "Student knows what a business transaction is"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 1,
+      "topic": "Accounting Equation",
+      "subtopic": "Analysing transactions",
+      "example_problem": "Analyse five given transactions and show the effect of each on Assets, Owner's Equity and Liabilities.",
+      "prior_knowledge": "Student knows the terms asset, liability and owner's equity"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 2,
+      "topic": "Bookkeeping of a Sole Trader",
+      "subtopic": "Cash journals",
+      "example_problem": "Record the given cash transactions in the Cash Receipts Journal and Cash Payments Journal, and post the totals to the bank account.",
+      "prior_knowledge": "Student knows source documents"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 2,
+      "topic": "Bookkeeping of a Sole Trader",
+      "subtopic": "Debtors and credit sales",
+      "example_problem": "Record the given credit sales in the Debtors Journal and post to the debtors ledger.",
+      "prior_knowledge": "Student knows the cash journals"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 2,
+      "topic": "Salaries and Wages",
+      "subtopic": "Wage calculations",
+      "example_problem": "An employee works 40 normal hours at R45 per hour plus 5 hours overtime at 1,5 times the rate. Calculate the gross wage and the net wage after 7,5% deductions.",
+      "prior_knowledge": "Student can multiply and calculate percentages"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 3,
+      "topic": "Year-end Accounting Procedures",
+      "subtopic": "The trial balance",
+      "example_problem": "Prepare a trial balance from the given ledger balances and identify the type of error if it does not balance.",
+      "prior_knowledge": "Student can post to the general ledger"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 3,
+      "topic": "Financial Statements",
+      "subtopic": "Income statement of a sole trader",
+      "example_problem": "Calculate gross profit and net profit from sales of R150 000, cost of sales R90 000 and the listed operating expenses.",
+      "prior_knowledge": "Student knows the trading stock account"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 4,
+      "topic": "Cost Accounting",
+      "subtopic": "Basic cost concepts",
+      "example_problem": "Classify the given costs as direct or indirect, and calculate the total cost and unit cost of producing 200 units.",
+      "prior_knowledge": "Student can add and divide amounts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": 4,
+      "topic": "Budgeting",
+      "subtopic": "A simple cash budget",
+      "example_problem": "Draft a one-month cash budget for a tuck shop from the given expected receipts and payments.",
+      "prior_knowledge": "Student knows income versus expenses"
     }
   ]
 }
