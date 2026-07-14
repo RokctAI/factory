@@ -25,3 +25,4 @@
 | mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - Municipal tariff calculations | pending_approval | groq | GROQ-29306278810 | — | 2026-07-14 04:34 |
 | maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | pending_approval | groq | GROQ-29307515962 | — | 2026-07-14 05:03 |
 | maths_g12_sequences_and_series_geometric_sequences_a6eefc | lesson.maths | Maths Grade 12: Sequences and Series - Geometric sequences | pending_approval | groq | GROQ-29307743473 | — | 2026-07-14 05:08 |
+| economics_g11_crosscheck_corruption_test_c0ffee | lesson.economics | Economics Grade 11: Dynamics of Markets - Crosscheck corruption test | pending_concept_approval (crosscheck: failed) | system | SYS-LESSON-RULES-29307893004 | — | 2026-07-14 05:12 |
