@@ -7,3 +7,4 @@
 | maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | pending_concept_approval | system | SYS-LESSON-RULES-29292233088 | — | 2026-07-13 23:11 |
 | maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | evaluated | system | SYS-LESSON-EVAL-29292343116 | — | 2026-07-13 23:13 |
 | maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | pending_approval | groq | GROQ-29294000997 | — | 2026-07-13 23:46 |
+| physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | pending_approval | groq | GROQ-29294756169 | — | 2026-07-14 00:02 |
