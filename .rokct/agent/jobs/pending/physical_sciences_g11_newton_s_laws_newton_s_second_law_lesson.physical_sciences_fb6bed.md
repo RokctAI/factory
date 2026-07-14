@@ -19,7 +19,7 @@ metarules: .rokct/types/lesson.physical_sciences/metarules
 guardrail: age_13_17
 idea: |
   The lesson will commence with a brief review of Newton's laws, focusing on the second law. The Grandmaster will then introduce the concept of force, mass, and acceleration, emphasizing their relationship as described by Newton's second law. The example problem will be presented as an illustration of applying this law, where students will be guided through calculating the acceleration of the crate. The lesson will conclude with a summary of key concepts and a check for understanding, ensuring students can apply Newton's second law to solve similar problems.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
