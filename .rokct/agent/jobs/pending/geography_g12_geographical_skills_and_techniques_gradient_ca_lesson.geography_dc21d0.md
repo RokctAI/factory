@@ -36,7 +36,7 @@ mandy_transcript_path: lessons/drafts/geography_g12_geographical_skills_and_tech
 mandy_nervous_script_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-14 00:06:13
+last_updated: 2026-07-14 02:18:22
 session_id: 
 session_started: 
 attempts: 1
