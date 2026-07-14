@@ -19,3 +19,4 @@
 | economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | pending_concept_approval | system | SYS-LESSON-RULES-29295777171 | — | 2026-07-14 00:23 |
 | economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | evaluated | system | SYS-LESSON-EVAL-29295819853 | — | 2026-07-14 00:24 |
 | physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58 | lesson.physical_sciences | Physical Sciences Grade 11: Quantitative Aspects of Chemical Change - Stoichiometric calculations | pending_approval | groq | GROQ-29296843467 | — | 2026-07-14 00:47 |
+| maths_g12_finance_growth_and_decay_compound_growth_b9eede | lesson.maths | Maths Grade 12: Finance, Growth and Decay - Compound growth | pending_approval | groq | GROQ-29296931354 | — | 2026-07-14 00:49 |
