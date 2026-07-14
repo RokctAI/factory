@@ -19,7 +19,7 @@ metarules: .rokct/types/lesson.economics/metarules
 guardrail: age_13_17
 idea: |
   The lesson will commence with a hook, where the Grandmaster poses a thought-provoking question about the dynamics of markets, specifically how changes in consumer income affect market equilibrium. The first teaching beat will review the concept of demand and supply curves, ensuring students are familiar with the foundational concepts. The second teaching beat will introduce the concept of equilibrium and how it is affected by changes in demand. The example problem will be presented as the third teaching beat, where students will analyze the graph and identify the new equilibrium price and quantity. The lesson will conclude with a summary of key takeaways, emphasizing the importance of understanding demand and supply equilibrium in the context of market dynamics.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
