@@ -13,13 +13,14 @@ grade: 11
 term: 2
 topic: Dynamics of Markets
 subtopic: Price elasticity of demand
-tutor: 
+tutor: Big John — simplistic, lower grade logic
 example_problem: The price of a product rises from R10 to R12 and quantity demanded falls from 100 to 80 units. Calculate the price elasticity of demand and classify it.
 prior_knowledge: Student knows demand and supply and percentage change calculations
 metarules: .rokct/types/lesson.economics/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  Tutor choice: This subtopic has a natural everyday anchor in prices and quantity demanded, making it a good fit for Big John's intuitive and concrete approach.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -36,12 +37,12 @@ mandy_nervous_script_path:
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 06:57:17
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
