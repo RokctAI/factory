@@ -93,23 +93,29 @@ jobs:
 
             echo "🔍 Running Level 3 checks for $ID..."
             RC=0
-            python lessons/scripts/lesson_pipeline.py check --file "$FILE" || RC=$?
+            CHECK_OUT=$(python lessons/scripts/lesson_pipeline.py check --file "$FILE" 2>&1) || RC=$?
+            echo "$CHECK_OUT"
             if [ "$RC" -eq 0 ]; then
               # Level 3.5: independent AI review before the human gate.
               # Fail-closed: if the check itself errors, the card is marked
               # crosscheck_status: error and does NOT advance.
               CRC=0
-              python lessons/scripts/lesson_pipeline.py crosscheck --file "$FILE" || CRC=$?
+              CROSSCHECK_OUT=$(python lessons/scripts/lesson_pipeline.py crosscheck --file "$FILE" 2>&1) || CRC=$?
+              echo "$CROSSCHECK_OUT"
               if [ "$CRC" -ne 0 ]; then
                 echo "❌ Independent crosscheck could not run — blocking advancement (fail-closed)."
-                python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+                # Run-step logs are admin-only: persist the reason in-repo.
+                REASON=$(echo "$CROSSCHECK_OUT" | tail -n 4 | tr '\n' ' ' | sed 's/|/\\|/g')
+                mkdir -p .rokct/agent/logs
+                echo "| $(date -u +'%Y-%m-%d %H:%M') | Lesson 3.5: $ID | groq | ❌ CROSSCHECK ERROR | $GITHUB_RUN_ID | $REASON |" >> .rokct/agent/logs/ai_delegation.md
+                python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release || true
                 git config --global user.name "github-actions[bot]"
                 git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                git add "$FILE"
-                git commit -m "🤖 [CI] Lesson 3.5: crosscheck error (blocked) for $ID [skip ci]"
+                git add "$FILE" .rokct/agent/logs/ai_delegation.md || true
+                git commit -m "🤖 [CI] Lesson 3.5: crosscheck error (blocked) for $ID [skip ci]" || true
                 for i in 1 2 3; do
                   git push origin main && break
-                  git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+                  git pull --rebase origin main || { git rebase --abort || true; break; }
                   sleep $((RANDOM % 3 + 1))
                 done
                 exit 1
