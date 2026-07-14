@@ -13,3 +13,4 @@
 | economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | pending_approval | groq | GROQ-29295085255 | — | 2026-07-14 00:08 |
 | economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | concept_expanding | jules | 4664121147337177218 | — | 2026-07-14 00:10 |
 | physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | pending_concept_approval | system | SYS-LESSON-RULES-29295383337 | — | 2026-07-14 00:14 |
+| physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | evaluated | system | SYS-LESSON-EVAL-29295450180 | — | 2026-07-14 00:16 |
