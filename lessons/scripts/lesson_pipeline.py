@@ -1444,6 +1444,46 @@ def cmd_dashboard(args):
         lines.append(f"- `{c['id']}` — {c['subject']} G{c['grade']} term {c['term']}")
     lines.append("")
 
+    # 6. API usage (written by the shared delegate; committed by the
+    # lesson workflows). Groq free tier: 30 RPM / 1 000 req/day / 12k TPM /
+    # 100k tokens/day; Jules free: 15 tasks/day (Pro: 100/day).
+    usage_path = Path(".rokct/agent/log/api_usage.jsonl")
+    lines += ["## API usage (Groq/Jules)", ""]
+    if usage_path.exists():
+        from datetime import timedelta
+        cutoff = (datetime.utcnow() - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        day = {"groq_calls": 0, "groq_tokens": 0, "jules_sessions": 0}
+        total = {"groq_calls": 0, "groq_tokens": 0, "jules_sessions": 0}
+        for raw in usage_path.read_text(encoding="utf-8").splitlines():
+            try:
+                r = json.loads(raw)
+            except ValueError:
+                continue
+            recent = r.get("ts", "") >= cutoff
+            if r.get("api") == "groq":
+                total["groq_calls"] += 1
+                total["groq_tokens"] += r.get("total_tokens") or 0
+                if recent:
+                    day["groq_calls"] += 1
+                    day["groq_tokens"] += r.get("total_tokens") or 0
+            elif r.get("api") == "jules":
+                total["jules_sessions"] += 1
+                if recent:
+                    day["jules_sessions"] += 1
+        lines.append("| Window | Groq calls | Groq tokens | Jules sessions |")
+        lines.append("|---|---|---|---|")
+        lines.append(f"| Last 24 h | {day['groq_calls']} | {day['groq_tokens']} | {day['jules_sessions']} |")
+        lines.append(f"| All time | {total['groq_calls']} | {total['groq_tokens']} | {total['jules_sessions']} |")
+        lines.append("")
+        lines.append("Documented limits — Groq free tier: 30 req/min, 1 000 req/day, "
+                     "12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** "
+                     "(Google AI Pro: 100/day). A lesson consumes ~2 Groq calls "
+                     "(~4-5k tokens) and 1-2 Jules sessions.")
+    else:
+        lines.append("No usage recorded yet — the log starts with the first "
+                     "Groq/Jules call after the delegate's usage logging deployed.")
+    lines.append("")
+
     out = "\n".join(lines)
     DASHBOARD_PATH.write_text(out, encoding="utf-8")
     print(f"Dashboard written to {DASHBOARD_PATH}: {len(cards)} cards, "

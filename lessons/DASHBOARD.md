@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-14 07:56 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-14 08:01 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (11)
 
@@ -66,3 +66,7 @@ Seed rows total: 215; opened: 18; remaining: 197.
 - `maths_g11_quadratic_equations_factoring_method_31d165` — Maths G11 term 1
 - `maths_g11_quadratic_equations_quadratic_formula_6e05ed` — Maths G11 term 1
 - `physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed` — Physical Sciences G11 term 1
+
+## API usage (Groq/Jules)
+
+No usage recorded yet — the log starts with the first Groq/Jules call after the delegate's usage logging deployed.
