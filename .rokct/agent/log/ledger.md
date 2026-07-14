@@ -40,3 +40,4 @@
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | pending_approval | groq | GROQ-29366784147 | — | 2026-07-14 20:43 |
 | 1._cosmic_dreams_f07a10 | poetry | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-14 21:00 |
 | 5._starlight_serenades_438caf | sonnet | 5. Starlight Serenades | pending_approval | groq | GROQ-29369181492 | — | 2026-07-14 21:21 |
+| mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | pending_approval | groq | GROQ-29370288020 | — | 2026-07-14 21:39 |
