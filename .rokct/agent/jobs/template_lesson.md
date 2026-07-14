@@ -51,6 +51,7 @@ session_id:
 session_started:
 attempts: 0
 last_error:
+expansion_requested:
 loop_iterations: 0
 max_iterations: 10
 ---

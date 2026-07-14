@@ -45,6 +45,11 @@ SEED_PATH = Path("lessons/curriculum/caps_seed.json")
 # not be verified against a real CAPS/ATP source — never guess a term.
 VALID_TERMS = {"1", "2", "3", "4", "all", "unknown"}
 
+# §4 asks for "15 minutes teaching"; at a spoken pace that is well over a
+# thousand words, but scripts interleave whiteboard beats, so 900 is the
+# floor below which a script cannot plausibly fill the session.
+SCRIPT_MIN_WORDS = 900
+
 TUTOR_GRANDMASTER = "Grandmaster — formal"
 TUTOR_BIG_JOHN = "Big John — simplistic, lower grade logic"
 
@@ -414,9 +419,24 @@ def cmd_prompt(args):
         print(build_level1_prompt(card))
     elif args.level == 2:
         print(build_level2_prompt(card, args.file.replace("\\", "/")))
+    elif args.level == 3:
+        print(build_expansion_prompt(card, args.file.replace("\\", "/")))
     else:
         print(f"Error: no prompt builder for level {args.level}.")
         return 1
+    return 0
+
+
+def cmd_mark_expansion(args):
+    """Record that the single permitted expansion pass has been requested."""
+    card = read_card(args.file)
+    if get_field(card, "expansion_requested"):
+        print("Error: expansion already requested for this card.")
+        return 1
+    card = set_field(card, "expansion_requested", "1")
+    card = set_field(card, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    write_card(args.file, card)
+    print(f"Expansion pass recorded on {args.file}.")
     return 0
 
 
@@ -719,12 +739,15 @@ def run_checks(card, card_file):
         return (errors, warnings)
 
     # Script: non-trivial, subtopic-structured, in scope for 15 minutes.
+    # Length shortfalls are tagged expandable: the Level 3 workflow re-prompts
+    # Jules once to expand before hard-failing (see cmd_check).
     script = paths["script_path"].read_text(encoding="utf-8")
     words = len(script.split())
-    if words < 300:
-        errors.append(f"script.md too short to be a 15-minute lesson ({words} words)")
-    elif words < 900:
-        warnings.append(f"script.md is short for 15 minutes of teaching ({words} words)")
+    if words < SCRIPT_MIN_WORDS:
+        errors.append(
+            f"[expandable] script.md too short for 15 minutes of teaching "
+            f"({words} words, minimum {SCRIPT_MIN_WORDS})"
+        )
 
     # Manim file: a Community-edition scene.
     manim = paths["manim_path"].read_text(encoding="utf-8")
@@ -822,6 +845,10 @@ def run_checks(card, card_file):
 
 
 def cmd_check(args):
+    """Exit codes: 0 = pass; 1 = hard fail; 2 = only failure is an
+    expandable script-length shortfall and no expansion has been requested
+    yet — the Level 3 workflow should re-prompt Jules once instead of
+    stalling the card on a fixable length issue."""
     card = read_card(args.file)
     errors, warnings = run_checks(card, args.file)
     for w in warnings:
@@ -829,15 +856,56 @@ def cmd_check(args):
     if errors:
         for e in errors:
             print(f"FAIL: {e}")
-        card = set_field(card, "rules_status", "failed")
+        only_expandable = all(e.startswith("[expandable]") for e in errors)
+        not_yet_expanded = not get_field(card, "expansion_requested")
+        if only_expandable and not_yet_expanded:
+            card = set_field(card, "rules_status", "expanding")
+            rc = 2
+            print("Script length is the only failure and no expansion has been "
+                  "requested yet — eligible for one Jules expansion pass.")
+        else:
+            card = set_field(card, "rules_status", "failed")
+            rc = 1
         card = set_field(card, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         write_card(args.file, card)
-        return 1
+        return rc
     card = set_field(card, "rules_status", "passed")
     card = set_field(card, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     write_card(args.file, card)
     print(f"Level 3 checks passed for {args.file} ({len(warnings)} warning(s)).")
     return 0
+
+
+def build_expansion_prompt(card, card_file):
+    """One-shot Jules re-prompt: expand the existing script to length without
+    regenerating the rest of the lesson."""
+    card_id = get_field(card, "id")
+    tutor = get_field(card, "tutor") or TUTOR_GRANDMASTER
+    script_path = get_field(card, "script_path")
+    subtopics_path = get_field(card, "subtopics_path")
+    return f"""TASK: Expand an existing Supacharge lesson script that is too short.
+
+The lesson content for job card {card_file} is complete and reviewed except
+that {script_path} does not fill the required 15 minutes of teaching
+(minimum {SCRIPT_MIN_WORDS} words; aim for 1200-1800).
+
+Expand {script_path} IN PLACE, in the existing tutor's voice ({tutor}):
+- Keep every existing '## Subtopic:' heading and the existing teaching
+  sequence — deepen each subtopic (fuller working, an extra example or
+  common-mistake discussion per subtopic, richer transitions), do not bolt
+  new subtopics on.
+- Keep the worked example and all of its mathematics exactly as it is.
+- If the pacing changes, adjust the timestamps in {subtopics_path} so the
+  subtopics stay contiguous and total close to 900 seconds; keep every ref
+  unchanged.
+- Do NOT modify mcq.json, comprehension_check.json, reel_clip.json, the
+  Mandy files, the Manim file (unless a timestamp comment references the
+  script), or any job card field other than last_updated. Do not touch the
+  status or gate fields on {card_file}.
+
+This is the single permitted expansion pass for {card_id}; if the script
+still falls short of {SCRIPT_MIN_WORDS} words it will be failed for human
+attention, so expand it properly."""
 
 
 def cmd_evaluate(args):
@@ -870,9 +938,12 @@ def main():
     p.add_argument("--type", required=True, help="Lesson type, e.g. lesson.maths")
     p.add_argument("--limit", type=int, default=1, help="Max cards to create this run")
 
-    p = sub.add_parser("prompt", help="Print the agent prompt for a level")
+    p = sub.add_parser("prompt", help="Print the agent prompt for a level (3 = script expansion)")
     p.add_argument("--file", required=True)
-    p.add_argument("--level", type=int, required=True, choices=[1, 2])
+    p.add_argument("--level", type=int, required=True, choices=[1, 2, 3])
+
+    p = sub.add_parser("mark-expansion", help="Record the single permitted script-expansion pass")
+    p.add_argument("--file", required=True)
 
     p = sub.add_parser("plan", help="Level 1: apply Groq plan output to the card")
     p.add_argument("--file", required=True)
@@ -906,6 +977,7 @@ def main():
         "check": cmd_check,
         "evaluate": cmd_evaluate,
         "check-duplicate": cmd_check_duplicate,
+        "mark-expansion": cmd_mark_expansion,
     }
     if args.command not in handlers:
         parser.print_help()
