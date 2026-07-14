@@ -23,7 +23,7 @@ idea_status: approved
 concept: |
   The teaching approach relies on the Grandmaster's formal, precise tone to demystify gradient calculation. The lesson is paced to ensure each mathematical step is distinctly covered: identifying the formula, finding the Vertical Interval, finding the Horizontal Equivalent, syncing units, and calculating the final ratio. The example problem lands progressively across these steps, anchoring the abstraction into a real-world application.
 concept_status:
-rules_status:
+rules_status: passed
 lesson_name: Gradient calculation
 lesson_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0
 script_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/script.md
@@ -34,12 +34,12 @@ comprehension_check_path: lessons/drafts/geography_g12_geographical_skills_and_t
 reel_brief_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/reel_clip.json
 mandy_transcript_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
-status: concept_generated
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-14 02:18:22
+last_updated: 2026-07-14 00:19:46
 session_id: 
 session_started: 
-attempts: 1
+attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10
