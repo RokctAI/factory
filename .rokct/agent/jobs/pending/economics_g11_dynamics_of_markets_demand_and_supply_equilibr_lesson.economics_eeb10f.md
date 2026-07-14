@@ -20,20 +20,21 @@ guardrail: age_13_17
 idea: |
   The lesson will commence with a hook, where the Grandmaster poses a thought-provoking question about the dynamics of markets, specifically how changes in consumer income affect market equilibrium. The first teaching beat will review the concept of demand and supply curves, ensuring students are familiar with the foundational concepts. The second teaching beat will introduce the concept of equilibrium and how it is affected by changes in demand. The example problem will be presented as the third teaching beat, where students will analyze the graph and identify the new equilibrium price and quantity. The lesson will conclude with a summary of key takeaways, emphasizing the importance of understanding demand and supply equilibrium in the context of market dynamics.
 idea_status: approved
-concept:
+concept: |
+  The Grandmaster tutor persona leads a rigorous 15-minute, whiteboard-driven explanation of market equilibrium, strictly distinguishing between shifts of a curve vs movements along it. Pacing is formal and theory-first. The example problem of increased income driving beef demand is solved step-by-step to show the new, higher equilibrium price and quantity, keeping supply static.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
-status: concept_expanding
+lesson_name: Demand and Supply Equilibrium
+lesson_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f
+script_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/script.md
+manim_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/manim_scene.py
+subtopics_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/subtopics.json
+mcq_data_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mcq.json
+comprehension_check_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/comprehension_check.json
+reel_brief_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/reel_clip.json
+mandy_transcript_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_nervous_script.md
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-14 00:09:52
 session_id: 
