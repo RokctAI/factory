@@ -13,13 +13,14 @@ grade: 12
 term: 3
 topic: Finance, Growth and Decay
 subtopic: Compound growth
-tutor: 
+tutor: Big John — simplistic, lower grade logic
 example_problem: R5 000 is invested at 8% per annum, compounded annually. Calculate the investment's value after 3 years.
 prior_knowledge: Student knows percentages and the simple growth formula
 metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  Tutor choice: This subtopic has a strong real-world anchor in finance and investment, making it a good fit for Big John's intuitive and concrete approach.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -33,12 +34,12 @@ comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
 mandy_nervous_script_path:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 02:48:45
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 00:48:59
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
