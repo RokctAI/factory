@@ -32,6 +32,7 @@ mcq_data_path:
 comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
+mandy_nervous_script_path:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-13
 last_updated: 2026-07-13 23:45:58

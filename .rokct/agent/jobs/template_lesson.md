@@ -42,6 +42,7 @@ mcq_data_path:
 comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
+mandy_nervous_script_path:
 status:
 created:
 last_updated:

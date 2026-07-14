@@ -54,6 +54,13 @@ CONTENT_FILES = {
     "mandy_transcript_path": "mandy_qa_transcript.md",
 }
 
+# §4's Prompt Template item 5 is "Nervous student Mandy audio script (if
+# needed)" — optional by spec, but when produced it must be tracked on the
+# card like every other content item.
+OPTIONAL_CONTENT_FILES = {
+    "mandy_nervous_script_path": "mandy_nervous_script.md",
+}
+
 
 # --- card field helpers (same conventions as the protocol's job_manager) ---
 
@@ -184,6 +191,7 @@ mcq_data_path:
 comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
+mandy_nervous_script_path:
 status: theme_generated
 created: {now.strftime('%Y-%m-%d')}
 last_updated: {now.strftime('%Y-%m-%d')}
@@ -299,7 +307,9 @@ Write the files into {lesson_dir}/ exactly as follows:
   "question": "...", "expected_answer": "..."}}, ...]}} — end-of-lesson
   comprehension check.
 - {lesson_dir}/mandy_nervous_script.md — only if needed: short reassurance
-  script Mandy can speak to a nervous student for this subtopic.
+  script Mandy can speak to a nervous student for this subtopic. If you
+  create this file, you MUST also set the card's mandy_nervous_script_path
+  field to its path; if you do not create it, leave the field empty.
 - {lesson_dir}/reel_clip.json — the 60-second TikTok clip script, JSON only,
   schema: {{"element_type": "lesson_reel", "lesson_id": "{card_id}",
   "lesson_title": "...", "hook_text": "...", "hook_source_file":
@@ -314,8 +324,8 @@ Write the files into {lesson_dir}/ exactly as follows:
 Then update the job card {card_file}:
 - fill lesson_name (short human title) and lesson_path ({lesson_dir}),
 - fill script_path, manim_path, subtopics_path, mcq_data_path,
-  comprehension_check_path, reel_brief_path, mandy_transcript_path with the
-  paths above,
+  comprehension_check_path, reel_brief_path, mandy_transcript_path (and
+  mandy_nervous_script_path if produced) with the paths above,
 - write a 'concept: |' block summarising the teaching approach (angle,
   pacing, where the example problem lands),
 - set status to 'concept_generated'.
@@ -372,6 +382,212 @@ def cmd_plan(args):
     return 0
 
 
+# --- answer-key verification (lightweight, maths-family) ---
+#
+# Wrong-answer MCQs are a known LLM failure mode. Where a question is simple
+# enough to compute programmatically, verify that correct_index points at the
+# computed answer and fail Level 3 on any mismatch. Questions outside these
+# recognisable forms are skipped, never guessed at:
+#   - quadratic ax²+bx+c=0: number of real solutions (discriminant)
+#   - quadratic with rational roots: solve, match the option listing them
+#   - factored form (px+q)(rx+s)=0 in the question: roots
+#   - "factors as" questions: expand each factored option, compare
+#   - "expanding (x+a)(x+b)" questions: compare expansion strings
+#   - pure-arithmetic "value of <expr>" with all-numeric options
+
+import math
+from fractions import Fraction
+
+
+def _compact(s):
+    """Normalise LaTeX/unicode maths text to a compact comparable form."""
+    s = str(s)
+    s = s.replace("−", "-").replace(" ", " ")
+    s = s.replace("$", "").replace("\\", "").replace("{", "").replace("}", "")
+    s = re.sub(r"\s+", "", s)
+    s = s.replace("x^2", "x²")
+    return s
+
+
+def _num_forms(fr):
+    """Textual forms a Fraction may take inside an option string."""
+    forms = set()
+    if fr.denominator == 1:
+        forms.add(str(fr.numerator))
+    else:
+        forms.add(f"{fr.numerator}/{fr.denominator}")
+        dec = fr.numerator / fr.denominator
+        if abs(dec - round(dec, 3)) < 1e-12:
+            forms.add(repr(round(dec, 3)).rstrip("0").rstrip("."))
+    return forms
+
+
+def _contains_number(text, fr):
+    for form in _num_forms(fr):
+        # A positive value must not match inside a negative one (the "4"
+        # in "-4"), and no form may match inside a longer number/fraction.
+        lookbehind = r"(?<![\d./])" if form.startswith("-") else r"(?<![-\d./])"
+        if re.search(lookbehind + re.escape(form) + r"(?![\d./])", text):
+            return True
+    return False
+
+
+def _coeff(g, default=1):
+    if g in ("", "+", None):
+        return default
+    if g == "-":
+        return -default
+    return int(g)
+
+
+def _parse_quadratic(compact):
+    m = re.search(r"([+-]?\d*)x²([+-]\d*)x([+-]\d+)", compact)
+    if not m:
+        return None
+    return (_coeff(m.group(1)), _coeff(m.group(2)), int(m.group(3)))
+
+
+def _parse_factored(compact):
+    m = re.search(r"\((\d*)x([+-]\d+)\)\((\d*)x([+-]\d+)\)", compact)
+    if not m:
+        return None
+    return (_coeff(m.group(1)), int(m.group(2)), _coeff(m.group(3)), int(m.group(4)))
+
+
+def _rational_roots(a, b, c):
+    disc = b * b - 4 * a * c
+    if disc < 0:
+        return None
+    s = math.isqrt(disc)
+    if s * s != disc:
+        return None
+    return sorted({Fraction(-b + s, 2 * a), Fraction(-b - s, 2 * a)})
+
+
+def _match_root_options(options, roots):
+    """Indexes of options containing every root (and no spurious extras)."""
+    hits = []
+    for i, opt in enumerate(options):
+        c = _compact(opt)
+        if all(_contains_number(c, r) for r in roots):
+            hits.append(i)
+    return hits
+
+
+def _expected_index(question, options):
+    """Return (index, how) when the answer is computable, else None."""
+    q = _compact(question)
+    opts = [_compact(o) for o in options]
+
+    # "How many (real) solutions/roots does ax²+bx+c=0 have?"
+    if re.search(r"howmany(real)?(solutions|roots)", q, re.IGNORECASE):
+        quad = _parse_quadratic(q)
+        if quad:
+            a, b, c = quad
+            disc = b * b - 4 * a * c
+            n = 2 if disc > 0 else (1 if disc == 0 else 0)
+            words = {0: ("0", "none", "zero"), 1: ("1", "one"), 2: ("2", "two")}[n]
+            hits = [i for i, o in enumerate(opts) if o.lower() in words]
+            if len(hits) == 1:
+                return hits[0], f"discriminant={disc} -> {n} solutions"
+        return None
+
+    # "factors as" -> expand each factored option, compare to the quadratic
+    if "factorsas" in q.replace(" ", "").lower() or "factorises" in q.lower() or "factorizes" in q.lower():
+        quad = _parse_quadratic(q)
+        if quad:
+            hits = []
+            for i, o in enumerate(opts):
+                f = _parse_factored(o)
+                if f and (f[0] * f[2], f[0] * f[3] + f[1] * f[2], f[1] * f[3]) == quad:
+                    hits.append(i)
+            if len(hits) == 1:
+                return hits[0], "expanded factored options"
+        return None
+
+    # "expanding (px+q)(rx+s)" -> compose the product string
+    if "expand" in q.lower():
+        f = _parse_factored(q)
+        if f:
+            p, qq, r, s = f
+            a, b, c = p * r, p * s + qq * r, qq * s
+            expected = f"{'' if a == 1 else a}x²{'+' if b >= 0 else ''}{b}x{'+' if c >= 0 else ''}{c}"
+            hits = [i for i, o in enumerate(opts) if expected in o]
+            if len(hits) == 1:
+                return hits[0], f"expansion {expected}"
+        return None
+
+    # Roots of a factored equation in the question: (px+q)(rx+s)=0
+    f = _parse_factored(q)
+    if f and "=0" in q:
+        p, qq, r, s = f
+        roots = sorted({Fraction(-qq, p), Fraction(-s, r)})
+        hits = _match_root_options(options, roots)
+        if len(hits) == 1:
+            return hits[0], f"roots of factored form: {[str(x) for x in roots]}"
+        return None
+
+    # Solve/roots of a standard-form quadratic with rational roots
+    if re.search(r"solve|roots|solutions", q, re.IGNORECASE):
+        quad = _parse_quadratic(q)
+        if quad and "=0" in q:
+            roots = _rational_roots(*quad)
+            if roots:
+                hits = _match_root_options(options, roots)
+                if len(hits) == 1:
+                    return hits[0], f"quadratic roots: {[str(x) for x in roots]}"
+        return None
+
+    # Pure-arithmetic "value of <expr>" with all-numeric options
+    m = re.search(r"valueof(.+?)[?？]", q, re.IGNORECASE)
+    if m:
+        expr = m.group(1).replace("²", "**2").replace("³", "**3")
+        expr = expr.replace("×", "*").replace("·", "*").replace("^", "**")
+        if re.fullmatch(r"[\d+\-*/(). ]+", expr.replace("**", "*")):
+            try:
+                value = eval(expr, {"__builtins__": {}}, {})
+            except Exception:
+                return None
+            numeric = []
+            for o in opts:
+                if re.fullmatch(r"[-+]?\d+(\.\d+)?", o):
+                    numeric.append(float(o))
+                else:
+                    return None
+            hits = [i for i, v in enumerate(numeric) if abs(v - value) < 1e-9]
+            if len(hits) == 1:
+                return hits[0], f"arithmetic: {m.group(1)} = {value}"
+    return None
+
+
+def verify_answer_keys(mcq):
+    """Programmatically verify computable MCQ answer keys.
+
+    Returns (errors, verified) — errors on any computed-answer mismatch,
+    verified = list of (question_id, how) that were confirmed correct.
+    """
+    errors, verified = [], []
+    for batch in mcq.get("subtopics", []):
+        for qn in batch.get("questions", []):
+            options = qn.get("options", [])
+            ci = qn.get("correct_index")
+            if not options or not isinstance(ci, int) or not 0 <= ci < len(options):
+                continue  # structural checks report these separately
+            result = _expected_index(qn.get("question", ""), options)
+            if result is None:
+                continue
+            idx, how = result
+            if idx == ci:
+                verified.append((qn.get("id"), how))
+            else:
+                errors.append(
+                    f"answer key mismatch on {qn.get('id')}: computed answer is "
+                    f"option {idx} ({options[idx]!r}) but correct_index is {ci} "
+                    f"({options[ci]!r}) [{how}]"
+                )
+    return errors, verified
+
+
 # --- Levels 3/4: content checks and evaluation ---
 
 def _load_json(path, errors, label):
@@ -408,6 +624,18 @@ def run_checks(card, card_file):
             errors.append(f"{field} points at a missing file: {p}")
             continue
         paths[field] = Path(p)
+
+    # Optional items: tracked when produced, produced only when tracked.
+    for field, default_name in OPTIONAL_CONTENT_FILES.items():
+        p = get_field(card, field)
+        on_disk = base / default_name
+        if p and not Path(p).exists():
+            errors.append(f"{field} points at a missing file: {p}")
+        elif not p and on_disk.exists():
+            errors.append(
+                f"{on_disk} exists but the card's {field} field is empty — "
+                "content must be tracked on the job card"
+            )
     if errors:
         return (errors, warnings)
 
@@ -484,6 +712,13 @@ def run_checks(card, card_file):
                     errors.append(f"mcq {qid}: invalid time_limit_seconds")
         if mcq_refs != sub_refs:
             errors.append(f"mcq refs {sorted(map(str, mcq_refs))} do not match subtopic refs {sorted(map(str, sub_refs))}")
+
+        key_errors, verified = verify_answer_keys(mcq)
+        errors.extend(key_errors)
+        if verified:
+            print(f"Answer keys verified programmatically: {len(verified)}")
+            for qid, how in verified:
+                print(f"  {qid}: {how}")
 
     # Comprehension check questions.
     cc = _load_json(paths["comprehension_check_path"], errors, "comprehension_check")

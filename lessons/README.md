@@ -31,8 +31,15 @@ does not exist yet and is a separate future brief.
   Template verbatim), plan capture, Level 3/4 checks.
 - `drafts/<card_id>/` — one directory per lesson: `script.md`,
   `manim_scene.py`, `subtopics.json`, `mcq.json`,
-  `comprehension_check.json`, `mandy_nervous_script.md` (optional),
+  `comprehension_check.json`, `mandy_nervous_script.md` (optional — but
+  when produced it must be referenced by the card's
+  `mandy_nervous_script_path` field; Level 3 fails untracked content),
   `reel_clip.json`, `mandy_qa_transcript.md`.
+- Level 3 also verifies MCQ answer keys programmatically where the question
+  is computable (quadratic roots/factoring/expansion/solution counts,
+  pure-arithmetic values) and fails the check on any mismatch — wrong
+  answer keys are a known LLM failure mode. Non-computable questions are
+  skipped, never guessed; the human accuracy gate still reviews everything.
 - Card template: `.rokct/agent/jobs/template_lesson.md`.
 - Metarules: `.rokct/types/lesson.<subject>/metarules/` — one directory per
   lesson type (`lesson.maths`, `lesson.physical_sciences`,
