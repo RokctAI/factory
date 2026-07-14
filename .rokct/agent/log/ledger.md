@@ -27,3 +27,4 @@
 | maths_g12_sequences_and_series_geometric_sequences_a6eefc | lesson.maths | Maths Grade 12: Sequences and Series - Geometric sequences | pending_approval | groq | GROQ-29307743473 | — | 2026-07-14 05:08 |
 | economics_g11_crosscheck_corruption_test_c0ffee | lesson.economics | Economics Grade 11: Dynamics of Markets - Crosscheck corruption test | pending_concept_approval (crosscheck: failed) | system | SYS-LESSON-RULES-29307893004 | — | 2026-07-14 05:12 |
 | physical_sciences_g11_electric_circuits_resistors_in_paralle_6f716c | lesson.physical_sciences | Physical Sciences Grade 11: Electric Circuits - Resistors in parallel | pending_approval | groq | GROQ-29308001163 | — | 2026-07-14 05:14 |
+| geography_g12_crosscheck_clean_test_beef01 | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Crosscheck clean test | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29308115955 | — | 2026-07-14 05:17 |
