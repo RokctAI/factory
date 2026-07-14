@@ -18,8 +18,10 @@ example_problem: 2x²+5x+3=0
 prior_knowledge: Student knows multiplication, basic algebra
 metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  Tutor choice: The Grandmaster's formal approach fits the factoring method subtopic as it requires a systematic and structured explanation to ensure students understand the underlying principles.
+  The lesson will begin with a hook, reviewing the importance of quadratic equations in real-world applications. The Grandmaster will then introduce the factoring method, breaking it down into step-by-step beats, emphasizing the need for precision and attention to detail. The example problem, 2x²+5x+3=0, will be presented as a case study, where students will learn to apply the factoring method to solve the equation. Through guided practice and feedback, students will develop their problem-solving skills and gain confidence in using the factoring method to solve quadratic equations. The lesson will conclude with a summary of key takeaways and a preview of upcoming topics.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -33,12 +35,12 @@ comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
 mandy_nervous_script_path:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 01:03:34
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
