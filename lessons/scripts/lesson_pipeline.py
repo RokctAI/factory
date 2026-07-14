@@ -255,6 +255,9 @@ comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
 mandy_nervous_script_path:
+expansion_requested:
+crosscheck_status:
+crosscheck_notes:
 status: theme_generated
 created: {now.strftime('%Y-%m-%d')}
 last_updated: {now.strftime('%Y-%m-%d')}
@@ -687,6 +690,162 @@ def verify_answer_keys(mcq):
     return errors, verified
 
 
+# --- arithmetic-identity verification (all subjects) ---
+#
+# The metarules require every worked example to show explicit substitution
+# and arithmetic ("Formula. Substitution. Answer."), so lesson text is full
+# of fully-numeric statements like "R120 + 450 × R1,85 = R952,50" or
+# "300 / 4 500 = 1:15". Recompute every such statement and fail Level 3 on
+# any mismatch — the same real-computation philosophy as the maths
+# answer-key verifier, extended to Physical Sciences, Geography,
+# Mathematical Literacy, Accounting and Economics worked arithmetic.
+# Statements containing symbols/variables are skipped, never guessed at.
+
+_IDENT_NUM = r"[0-9][0-9\s .,]*"
+
+
+def _sa_number(tok):
+    """Parse a South African formatted number: space/nbsp thousands,
+    comma or point decimals. Returns float or None."""
+    t = tok.replace(" ", " ").strip()
+    t = re.sub(r"\s+", "", t)
+    if "," in t and "." not in t:
+        # ',ddd' groups are thousands ("1,200", "4,500"); a lone comma with
+        # any other digit count is an SA decimal ("0,01", "1,85").
+        if re.fullmatch(r"-?\d{1,3}(,\d{3})+", t):
+            t = t.replace(",", "")
+        elif t.count(",") == 1:
+            t = t.replace(",", ".")
+        else:
+            return None
+    elif "," in t and "." in t:
+        t = t.replace(",", "")
+    if not re.fullmatch(r"-?\d+(\.\d+)?", t):
+        return None
+    return float(t)
+
+
+def _identity_normalize(text):
+    """Normalise lesson text so numeric identities become parseable."""
+    t = str(text)
+    t = t.replace("−", "-").replace("−", "-").replace("–", "-")
+    t = t.replace("×", "*").replace("·", "*").replace("÷", "/")
+    t = t.replace("²", "^2").replace("³", "^3")
+    t = t.replace("≈", "=")
+    t = re.sub(r"\\frac\{([^{}]+)\}\{([^{}]+)\}", r"((\1)/(\2))", t)
+    t = t.replace("\\times", "*").replace("\\cdot", "*")
+    t = t.replace("$", " ")
+    # currency and percent are presentation, not maths
+    t = re.sub(r"(?i)\bR\s?(?=\d)", "", t)
+    t = t.replace("%", " ")
+    # word operators between numbers ("4.5 multiplied by 1,000")
+    t = re.sub(r"(?i)\bmultiplied\s+by\b", "*", t)
+    t = re.sub(r"(?i)\bdivided\s+by\b", "/", t)
+    t = re.sub(r"(?i)(?<=\d)\s+plus\s+(?=[\d(])", " + ", t)
+    t = re.sub(r"(?i)(?<=\d)\s+minus\s+(?=[\d(])", " - ", t)
+    # unit words directly after a number are presentation, not maths
+    t = re.sub(
+        r"(?i)(?<=\d)\s*(meters?|metres?|kilometres?|kilometers?|litres?|"
+        r"liters?|kWh|rands?|newtons?|volts?|amperes?|ohms?|joules?|watts?|"
+        r"units?|kilograms?|percent)\b",
+        " ",
+        t,
+    )
+    return t
+
+
+def _eval_arithmetic(expr):
+    """Evaluate a pure-arithmetic expression (SA number format, + - * / ^ π).
+    Returns float or None if anything non-arithmetic is present."""
+    e = expr.strip().rstrip("=").strip()
+    e = e.replace("π", f"({math.pi})").replace("\\pi", f"({math.pi})")
+    # normalise each number token to python format
+    def repl(m):
+        v = _sa_number(m.group(0))
+        return "None" if v is None else repr(v)
+    e2 = re.sub(_IDENT_NUM, repl, e)
+    e2 = e2.replace("^", "**")
+    if "None" in e2 or not re.fullmatch(r"[0-9eE.+\-*/() ]+", e2.replace("**", "*")):
+        return None
+    try:
+        return float(eval(e2, {"__builtins__": {}}, {}))
+    except Exception:
+        return None
+
+
+def _numbers_match(computed, stated_text):
+    stated = _eval_arithmetic(stated_text)
+    if stated is None:
+        return None
+    if computed == stated:
+        return True
+    tol = max(0.01, abs(stated) * 0.005)
+    if abs(computed - stated) <= tol:
+        return True
+    # accept when the computed value rounds to the stated precision
+    m = re.search(r"\.(\d+)$", repr(stated))
+    dp = len(m.group(1)) if m else 0
+    return round(computed, dp) == round(stated, dp)
+
+
+def verify_arithmetic_identities(text, label):
+    """Find fully-numeric `expr = value` statements and recompute them.
+    Returns (errors, verified_count). Skips anything containing letters or
+    unsupported symbols — never guesses."""
+    errors, verified = [], 0
+    t = _identity_normalize(text)
+    # candidate: operator-bearing numeric expression = numeric value/ratio
+    pattern = re.compile(
+        rf"({_IDENT_NUM}(?:[+\-*/^()\s]+{_IDENT_NUM})+)\s*=\s*"
+        rf"(1\s*:\s*{_IDENT_NUM}|\(?{_IDENT_NUM}(?:\s*/\s*{_IDENT_NUM})?\)?)"
+    )
+    for m in pattern.finditer(t):
+        lhs_text, rhs_text = m.group(1), m.group(2).rstrip().rstrip(",.;:")
+        # guard: reject only when letters/symbols are DIRECTLY adjacent to
+        # the statement (algebra like "= 5a"); words after intervening
+        # whitespace are prose. The RHS match may absorb trailing
+        # whitespace, so anchor on its last non-whitespace character.
+        rhs_clean = m.group(2).rstrip().rstrip(",.;:")
+        start = m.start()
+        end = m.start(2) + len(rhs_clean)
+        before = t[start - 1:start]
+        after = t[end:end + 1]
+        if re.match(r"[A-Za-z_π\\]", before) or re.match(r"[A-Za-z_π\\^]", after):
+            continue
+        if not re.search(r"[+\-*/^]", lhs_text):
+            continue
+        computed = _eval_arithmetic(lhs_text)
+        if computed is None:
+            continue
+        ratio = re.fullmatch(r"1\s*:\s*(" + _IDENT_NUM + r")", rhs_text.strip())
+        if ratio:
+            x = _sa_number(ratio.group(1))
+            if x is None or computed == 0:
+                continue
+            ok = _numbers_match(1.0 / computed if computed > 1 else computed, f"1/{x}")
+            # gradient convention: VI/HE = 1:x means x = HE/VI = 1/computed
+            ok = ok or _numbers_match(computed, f"1/{x}")
+            if not ok:
+                errors.append(
+                    f"arithmetic mismatch in {label}: '{lhs_text.strip()} = {rhs_text.strip()}' "
+                    f"— computed {computed:.6g}, which is not 1:{x:g}"
+                )
+            else:
+                verified += 1
+            continue
+        ok = _numbers_match(computed, rhs_text)
+        if ok is None:
+            continue
+        if not ok:
+            errors.append(
+                f"arithmetic mismatch in {label}: '{lhs_text.strip()} = {rhs_text.strip()}' "
+                f"— recomputed left side is {computed:.6g}"
+            )
+        else:
+            verified += 1
+    return errors, verified
+
+
 # --- Levels 3/4: content checks and evaluation ---
 
 def _load_json(path, errors, label):
@@ -822,10 +981,32 @@ def run_checks(card, card_file):
             for qid, how in verified:
                 print(f"  {qid}: {how}")
 
+
     # Comprehension check questions.
     cc = _load_json(paths["comprehension_check_path"], errors, "comprehension_check")
     if cc is not None and not cc.get("questions"):
         errors.append("comprehension_check.json has no questions")
+
+    # Recompute every explicit numeric identity in the teaching text —
+    # covers worked arithmetic in all six subjects.
+    ident_total = 0
+    ident_sources = [("script", script)]
+    if mcq is not None:
+        for batch in mcq.get("subtopics", []):
+            for qn in batch.get("questions", []):
+                ident_sources.append((
+                    f"mcq {qn.get('id')}",
+                    str(qn.get("question", "")) + " " + " ".join(map(str, qn.get("options", []))),
+                ))
+    if cc is not None:
+        for qn in cc.get("questions", []):
+            ident_sources.append((f"comprehension {qn.get('id')}", str(qn.get("expected_answer", ""))))
+    for label, text in ident_sources:
+        ident_errors, ident_verified = verify_arithmetic_identities(text, label)
+        errors.extend(ident_errors)
+        ident_total += ident_verified
+    if ident_total:
+        print(f"Arithmetic identities recomputed and verified: {ident_total}")
 
     # 60-second reel clip script (level6c reel-brief convention).
     reel = _load_json(paths["reel_brief_path"], errors, "reel_clip")
@@ -919,6 +1100,17 @@ def cmd_evaluate(args):
     if get_field(card, "rules_status") != "passed":
         print("Error: rules_status is not 'passed' — Level 3 checks must pass first.")
         return 1
+    crosscheck = get_field(card, "crosscheck_status")
+    if crosscheck not in ("passed", "failed"):
+        print(
+            "Error: the independent AI crosscheck has not recorded a verdict "
+            f"(crosscheck_status is {crosscheck or 'empty'}) — Level 4 is "
+            "blocked until it runs successfully (fail-closed)."
+        )
+        return 1
+    if crosscheck == "failed":
+        print("NOTE: the independent review recorded issues (see crosscheck_notes); "
+              "the human reviewer approved with that report in view.")
     errors, warnings = run_checks(card, args.file)
     if errors:
         for e in errors:
@@ -927,6 +1119,177 @@ def cmd_evaluate(args):
     for w in warnings:
         print(f"WARN: {w}")
     print(f"Level 4 evaluation passed for {args.file}: content complete, checks green, human-approved.")
+    return 0
+
+
+# --- Level 3.5: independent AI cross-check before the human gate ---
+#
+# The Level 4 human is not a subject teacher; this pass gives them a concrete
+# independent report to decide on. Independence: the review runs as a fresh
+# Groq call (llama family) with an error-finding prompt — a different model
+# and context from the Jules session that generated the content. Computed
+# checks (answer keys, arithmetic identities) remain the primary trust
+# anchor; this pass covers what cannot be reduced to a computation.
+
+REVIEW_CRITERIA = {
+    "physical_sciences": """- Unit consistency: every quantity carries correct SI units; unit algebra in
+  worked examples is right (N = kg·m·s⁻², mol·dm⁻³ etc.).
+- Formula correctness: every formula matches the official NSC Physical
+  Sciences data sheet form; no invented or mis-stated relations.
+- Worked-example arithmetic and substitutions are actually correct.
+- Directions/signs and physical reasoning (e.g. what net force means,
+  equilibrium conditions, Le Chatelier direction) match standard physics
+  and chemistry.""",
+    "economics": """- Market mechanisms are internally consistent and match standard economic
+  theory: shift vs movement along a curve, shift direction for the stated
+  cause, resulting equilibrium price AND quantity direction, elastic vs
+  inelastic classification, normal vs inferior goods.
+- Any calculation (elasticity, multiplier, CPI) is arithmetically right.
+- Graph descriptions match the mechanism described in the text.""",
+    "geography": """- Formulas and conversions (gradient = VI/HE, map scale, unit conversions)
+  are stated and applied correctly; answers in correct NSC formats (1:x).
+- Physical-process descriptions (cyclone stages, fluvial processes,
+  atmospheric circulation) are factually correct for the Southern
+  Hemisphere where hemisphere matters.
+- Worked mapwork arithmetic is actually correct.""",
+    "maths_literacy": """- All worked arithmetic (tariffs, VAT at 15%, interest, measurement) is
+  correct, including the 15/115 extraction for VAT-inclusive amounts.
+- Rounding follows CAPS conventions (money to 2 decimals; round UP for
+  materials/containers) and the final answer is stated in context with
+  real units.
+- The context and documents used are realistic and CAPS-appropriate.""",
+    "accounting": """- Double-entry logic is correct: what is debited and credited, and why.
+- Prescribed formats are respected (which side outstanding items enter a
+  bank reconciliation, statement line order, ledger account structure).
+- All figures are arithmetically consistent and traceable to the given
+  information; totals and balancing figures are right.
+- VAT arithmetic uses the correct 15% / 15-115 relationships.""",
+    "maths": """- Every algebraic step follows from the previous one; no sign errors,
+  invalid operations, or wrong formula statements.
+- Definitions and theorems are stated correctly for the CAPS syllabus.
+- MCQ distractor explanations (if any) do not accidentally assert
+  falsehoods as true.""",
+}
+
+
+def build_review_prompt(card):
+    subject = get_field(card, "subject")
+    grade = get_field(card, "grade")
+    topic = get_field(card, "topic")
+    subtopic = get_field(card, "subtopic")
+    subject_key = slugify(subject)
+    if subject_key == "mathematical_literacy":
+        subject_key = "maths_literacy"
+    criteria = REVIEW_CRITERIA.get(subject_key, REVIEW_CRITERIA["maths"])
+
+    script = Path(get_field(card, "script_path")).read_text(encoding="utf-8")[:7000]
+    mcq = json.loads(Path(get_field(card, "mcq_data_path")).read_text(encoding="utf-8"))
+    qa_lines = []
+    for batch in mcq.get("subtopics", []):
+        for qn in batch.get("questions", []):
+            opts = qn.get("options", [])
+            ci = qn.get("correct_index", 0)
+            marked = "; ".join(
+                f"[CORRECT] {o}" if i == ci else str(o) for i, o in enumerate(opts)
+            )
+            qa_lines.append(f"Q ({qn.get('id')}): {qn.get('question')}\n   Options: {marked}")
+    cc = json.loads(Path(get_field(card, "comprehension_check_path")).read_text(encoding="utf-8"))
+    for qn in cc.get("questions", []):
+        qa_lines.append(f"Comprehension ({qn.get('id')}): {qn.get('question')}\n   Expected answer: {qn.get('expected_answer')}")
+    qa_text = "\n".join(qa_lines)[:5000]
+
+    return f"""You are an independent subject-matter reviewer for South African CAPS/NSC
+lesson content. You did NOT write this lesson. Your only job is to find
+genuine subject-content errors before this lesson reaches students — you are
+rewarded for catching real errors and penalised for inventing nitpicks.
+Style, tone, and length are NOT your concern; another process handles those.
+
+Lesson under review: {subject} Grade {grade} — {topic}: {subtopic}
+
+Check specifically:
+{criteria}
+
+=== LESSON SCRIPT ===
+{script}
+
+=== QUESTIONS AND MARKED ANSWERS ===
+{qa_text}
+
+Reply in EXACTLY this format and nothing else:
+VERDICT: PASS or FAIL
+ISSUES:
+- <each genuine subject-content error, with where it occurs and why it is wrong>
+Write "- none" under ISSUES if you found no genuine errors. FAIL only for
+real content errors (wrong facts, wrong arithmetic, wrong mechanism, wrong
+answer marked correct), never for style or brevity."""
+
+
+def _parse_review(text):
+    """Strict verdict parsing — anything malformed is an error (fail-closed)."""
+    m = re.search(r"^\s*VERDICT:\s*(PASS|FAIL)\s*$", text, re.MULTILINE | re.IGNORECASE)
+    if not m:
+        return None, []
+    verdict = m.group(1).upper()
+    issues = re.findall(r"^\s*-\s+(.+)$", text.split("ISSUES:", 1)[-1], re.MULTILINE)
+    issues = [i.strip() for i in issues if i.strip().lower() not in ("none", "none.")]
+    return verdict, issues
+
+
+def cmd_crosscheck(args):
+    """Run the independent AI review and record the result on the card.
+
+    Exit codes: 0 = review ran and a verdict was recorded (passed or
+    failed); 1 = the check itself could not run or returned garbage — the
+    card is marked crosscheck_status: error, which blocks Level 4
+    (fail-closed: a broken check never looks like a passed one)."""
+    card = read_card(args.file)
+    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    def record(status, notes):
+        c = read_card(args.file)
+        c = set_field(c, "crosscheck_status", status)
+        c = set_block_field(c, "crosscheck_notes", notes[:1800])
+        c = set_field(c, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        write_card(args.file, c)
+
+    try:
+        prompt = build_review_prompt(card)
+    except Exception as e:
+        record("error", f"[{now}] crosscheck could not assemble content: {e}")
+        print(f"Error: could not assemble review content: {e}")
+        return 1
+
+    if args.ai_response_file:
+        # test hook: parse a canned response instead of calling the API
+        response = Path(args.ai_response_file).read_text(encoding="utf-8")
+    else:
+        import subprocess
+        proc = subprocess.run(
+            [sys.executable, ".rokct/skills/agent_delegation/scripts/call_groq.py",
+             "groq", "--prompt", prompt],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+        )
+        response = (proc.stdout or "").strip()
+        if proc.returncode != 0 or not response or "Error:" in response:
+            record("error", f"[{now}] independent review call failed: "
+                            f"{(response or proc.stderr or 'no output')[:400]}")
+            print("Error: independent review call failed (fail-closed).")
+            return 1
+
+    verdict, issues = _parse_review(response)
+    if verdict is None:
+        record("error", f"[{now}] review response had no parseable VERDICT: {response[:400]}")
+        print("Error: review response malformed (fail-closed).")
+        return 1
+
+    status = "passed" if verdict == "PASS" else "failed"
+    lines = [f"[{now}] Independent AI review (fresh Groq/llama call, not the generating agent): {verdict}"]
+    if issues:
+        lines += [f"- {i}" for i in issues]
+    else:
+        lines.append("- no issues found")
+    record(status, "\n".join(lines))
+    print(f"Crosscheck recorded: {status}" + (f" ({len(issues)} issue(s))" if issues else ""))
     return 0
 
 
@@ -955,6 +1318,10 @@ def main():
     p = sub.add_parser("evaluate", help="Level 4: final evaluation gate")
     p.add_argument("--file", required=True)
 
+    p = sub.add_parser("crosscheck", help="Level 3.5: independent AI review; records crosscheck_status/notes")
+    p.add_argument("--file", required=True)
+    p.add_argument("--ai-response-file", help="Test hook: parse this canned response instead of calling the API")
+
     p = sub.add_parser("check-duplicate", help="Exit 1 if a card already exists for (subject, grade, topic, subtopic)")
     p.add_argument("--subject", required=True)
     p.add_argument("--grade", required=True)
@@ -978,6 +1345,7 @@ def main():
         "evaluate": cmd_evaluate,
         "check-duplicate": cmd_check_duplicate,
         "mark-expansion": cmd_mark_expansion,
+        "crosscheck": cmd_crosscheck,
     }
     if args.command not in handlers:
         parser.print_help()

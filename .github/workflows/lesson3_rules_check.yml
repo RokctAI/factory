@@ -48,6 +48,7 @@ jobs:
         id: run_checks
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
           # On workflow_dispatch, scan everything; on push, only touched cards.
@@ -94,8 +95,28 @@ jobs:
             RC=0
             python lessons/scripts/lesson_pipeline.py check --file "$FILE" || RC=$?
             if [ "$RC" -eq 0 ]; then
+              # Level 3.5: independent AI review before the human gate.
+              # Fail-closed: if the check itself errors, the card is marked
+              # crosscheck_status: error and does NOT advance.
+              CRC=0
+              python lessons/scripts/lesson_pipeline.py crosscheck --file "$FILE" || CRC=$?
+              if [ "$CRC" -ne 0 ]; then
+                echo "❌ Independent crosscheck could not run — blocking advancement (fail-closed)."
+                python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+                git config --global user.name "github-actions[bot]"
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                git add "$FILE"
+                git commit -m "🤖 [CI] Lesson 3.5: crosscheck error (blocked) for $ID [skip ci]"
+                for i in 1 2 3; do
+                  git push origin main && break
+                  git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+                  sleep $((RANDOM % 3 + 1))
+                done
+                exit 1
+              fi
+              CROSSCHECK=$(grep '^crosscheck_status:' "$FILE" | cut -d':' -f2 | xargs)
               python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status pending_concept_approval --agent system
-              NEW_STATUS="pending_concept_approval"
+              NEW_STATUS="pending_concept_approval (crosscheck: $CROSSCHECK)"
             elif [ "$RC" -eq 2 ]; then
               # Script length is the only failure: re-prompt Jules once to
               # expand rather than stalling the card; hard-fail only if the

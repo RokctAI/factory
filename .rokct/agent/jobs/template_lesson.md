@@ -52,6 +52,8 @@ session_started:
 attempts: 0
 last_error:
 expansion_requested:
+crosscheck_status:
+crosscheck_notes:
 loop_iterations: 0
 max_iterations: 10
 ---

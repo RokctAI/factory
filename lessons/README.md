@@ -47,11 +47,25 @@ does not exist yet and is a separate future brief.
   when produced it must be referenced by the card's
   `mandy_nervous_script_path` field; Level 3 fails untracked content),
   `reel_clip.json`, `mandy_qa_transcript.md`.
-- Level 3 also verifies MCQ answer keys programmatically where the question
-  is computable (quadratic roots/factoring/expansion/solution counts,
-  pure-arithmetic values) and fails the check on any mismatch — wrong
-  answer keys are a known LLM failure mode. Non-computable questions are
-  skipped, never guessed; the human accuracy gate still reviews everything.
+- Level 3 also verifies content programmatically wherever it is computable
+  — MCQ answer keys (quadratic roots/factoring/expansion/solution counts,
+  pure-arithmetic values) and every fully-numeric worked-arithmetic
+  identity in the script/MCQs/comprehension text across all six subjects
+  (SA and US number formats, word operators, unit words) — failing the
+  check on any recomputed mismatch. Non-computable statements are skipped,
+  never guessed.
+- **Level 3.5 — independent AI cross-check**: after structural and computed
+  checks pass, a fresh Groq (llama) call — a different model and context
+  from the Jules session that generated the content — reviews the lesson
+  against subject-scoped criteria (units/formulas for sciences, market
+  mechanisms for economics, hemisphere-correct processes for geography,
+  CAPS rounding for maths literacy, double-entry/format discipline for
+  accounting). The verdict lands on the card as `crosscheck_status`
+  (passed/failed/error) with a `crosscheck_notes` report. The Level 4 human
+  is no longer asked "is this correct" but "given this independent report,
+  proceed?" — a `failed` verdict advances WITH its report for the human to
+  weigh; an `error` (API failure, malformed response) blocks Level 4
+  entirely until the check runs (fail-closed).
 - Card template: `.rokct/agent/jobs/template_lesson.md`.
 - Metarules: `.rokct/types/lesson.<subject>/metarules/` — one directory per
   lesson type (`lesson.maths`, `lesson.physical_sciences`,
