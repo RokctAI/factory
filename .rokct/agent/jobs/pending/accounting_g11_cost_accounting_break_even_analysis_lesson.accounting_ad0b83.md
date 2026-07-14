@@ -13,13 +13,14 @@ grade: 11
 term: 3
 topic: Cost Accounting
 subtopic: Break-even analysis
-tutor: 
+tutor: Aunty Grace — simplistic, lower grade logic
 example_problem: A manufacturer has fixed costs of R60 000 per month. The selling price is R50 per unit and the variable cost is R30 per unit. Calculate the break-even point in units.
 prior_knowledge: Student knows fixed vs variable costs
 metarules: .rokct/types/lesson.accounting/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  Tutor choice: Break-even analysis has a strong real-world anchor, making it a good fit for a Simplifier lesson.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -36,12 +37,12 @@ mandy_nervous_script_path:
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 20:43:18
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
