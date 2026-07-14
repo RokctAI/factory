@@ -22,3 +22,4 @@
 | maths_g12_finance_growth_and_decay_compound_growth_b9eede | lesson.maths | Maths Grade 12: Finance, Growth and Decay - Compound growth | pending_approval | groq | GROQ-29296931354 | — | 2026-07-14 00:49 |
 | maths_g12_quadratic_equations_factoring_method_5b7a49 | lesson.maths | Maths Grade 12: Quadratic Equations - Factoring method | pending_approval | groq | GROQ-29297585999 | — | 2026-07-14 01:03 |
 | accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | pending_approval | groq | GROQ-29297722025 | — | 2026-07-14 01:06 |
+| mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - Municipal tariff calculations | pending_approval | groq | GROQ-29306278810 | — | 2026-07-14 04:34 |
