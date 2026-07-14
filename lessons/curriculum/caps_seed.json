@@ -16,8 +16,12 @@
     "marks skills topics the ATP integrates across every term (e.g. Geography",
     "mapwork); 'unknown' marks topics with no verifiable ATP placement — do",
     "not guess terms.",
-    "Launch scope per supacharge-tech.md §5 Phase 0: Grade 12 Maths first,",
-    "plus the Grade 11 quadratics entries used as the pipeline's worked example."
+    "plus the Grade 11 quadratics entries used as the pipeline's worked example.",
+    "Coverage: full DBE ATP topic coverage for Grades 11-12 across all six",
+    "subjects (expanded 2026-07-14 from the launch-scope starter set) — the",
+    "launch is narrow but the content library is built ahead. Level 0's",
+    "3-pending-per-subject throttle paces card creation regardless of seed",
+    "depth. Grade 10 rows are a future addition."
   ],
   "entries": [
     {
@@ -354,6 +358,1236 @@
       "subtopic": "Debtors' collection schedule",
       "example_problem": "Credit sales: May R80 000, June R100 000. Debtors pay 60% in the month of sale and 40% in the following month. Calculate the expected cash receipts from debtors for June.",
       "prior_knowledge": "Student knows percentages and the purpose of a cash budget"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 1,
+      "topic": "Exponents and Surds",
+      "subtopic": "Simplifying surds",
+      "example_problem": "Simplify √50 + √18 without a calculator.",
+      "prior_knowledge": "Student knows square roots and factorising into perfect squares"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 1,
+      "topic": "Exponents and Surds",
+      "subtopic": "Rational exponents",
+      "example_problem": "Simplify (27x⁶)^(2/3).",
+      "prior_knowledge": "Student knows exponent laws with integer exponents"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 1,
+      "topic": "Equations and Inequalities",
+      "subtopic": "Quadratic inequalities",
+      "example_problem": "Solve x² - x - 6 < 0 and represent the solution graphically.",
+      "prior_knowledge": "Student can factorise quadratics and read a parabola sketch"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 1,
+      "topic": "Equations and Inequalities",
+      "subtopic": "Simultaneous equations (linear and quadratic)",
+      "example_problem": "Solve simultaneously: y = x + 1 and y = x² - 1.",
+      "prior_knowledge": "Student can solve linear simultaneous equations and factorise"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 1,
+      "topic": "Equations and Inequalities",
+      "subtopic": "Nature of roots",
+      "example_problem": "Determine the values of k for which x² + 2x + k = 0 has two distinct real roots.",
+      "prior_knowledge": "Student knows the discriminant b² - 4ac"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 1,
+      "topic": "Trigonometry",
+      "subtopic": "Reduction formulae",
+      "example_problem": "Simplify sin(180° - x)·cos(360° - x) / tan(180° + x).",
+      "prior_knowledge": "Student knows the trig ratios in all four quadrants"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 1,
+      "topic": "Trigonometry",
+      "subtopic": "General solutions of trigonometric equations",
+      "example_problem": "Determine the general solution of 2sin x = 1.",
+      "prior_knowledge": "Student can solve basic trig equations in a given interval"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 2,
+      "topic": "Euclidean Geometry",
+      "subtopic": "Angle at the centre theorem",
+      "example_problem": "Apply the theorem that the angle subtended by an arc at the centre is double the angle at the circumference to calculate the marked angle x.",
+      "prior_knowledge": "Student knows basic circle terminology and angle relationships"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 2,
+      "topic": "Analytical Geometry",
+      "subtopic": "Gradient and angle of inclination",
+      "example_problem": "Determine the angle of inclination of the line through A(1;2) and B(4;8).",
+      "prior_knowledge": "Student can calculate gradient between two points and use tan"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 2,
+      "topic": "Functions",
+      "subtopic": "The parabola in vertex form",
+      "example_problem": "Sketch f(x) = 2(x-1)² - 8, showing intercepts and the turning point.",
+      "prior_knowledge": "Student can sketch y = ax² + q and complete the square"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 2,
+      "topic": "Functions",
+      "subtopic": "Hyperbola with shifted asymptotes",
+      "example_problem": "Sketch g(x) = 3/(x-2) + 1, showing asymptotes and intercepts.",
+      "prior_knowledge": "Student knows the basic hyperbola y = a/x"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 3,
+      "topic": "Trigonometry",
+      "subtopic": "Sine and cosine rules",
+      "example_problem": "In triangle ABC, a = 8, b = 6 and C = 50°. Calculate the length of side c.",
+      "prior_knowledge": "Student knows right-triangle trigonometry"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 3,
+      "topic": "Trigonometry",
+      "subtopic": "Area rule",
+      "example_problem": "Calculate the area of triangle PQR if p = 7, q = 9 and angle R = 40°.",
+      "prior_knowledge": "Student knows the sine ratio and triangle area basics"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 3,
+      "topic": "Statistics",
+      "subtopic": "Mean and standard deviation",
+      "example_problem": "Calculate the mean and standard deviation of the data set 5; 7; 8; 10; 15.",
+      "prior_knowledge": "Student can calculate a mean and use a calculator's stats mode"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 3,
+      "topic": "Probability",
+      "subtopic": "Venn diagrams and the addition rule",
+      "example_problem": "Given P(A) = 0,4; P(B) = 0,5 and P(A and B) = 0,2, calculate P(A or B) and state whether A and B are mutually exclusive.",
+      "prior_knowledge": "Student knows basic probability of single events"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 3,
+      "topic": "Finance, Growth and Decay",
+      "subtopic": "Depreciation on a reducing balance",
+      "example_problem": "Equipment worth R10 000 depreciates at 15% per annum on the reducing balance. Calculate its value after 4 years.",
+      "prior_knowledge": "Student knows compound growth A = P(1 + i)ⁿ"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": 4,
+      "topic": "Number Patterns",
+      "subtopic": "Quadratic number patterns",
+      "example_problem": "Determine the nth term of the pattern 3; 8; 15; 24; ...",
+      "prior_knowledge": "Student knows linear number patterns and second differences"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 1,
+      "topic": "Sequences and Series",
+      "subtopic": "Sigma notation and series",
+      "example_problem": "Evaluate the sum of (3k + 1) for k = 1 to 20 using sigma notation.",
+      "prior_knowledge": "Student knows arithmetic sequences and the sum formula"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 1,
+      "topic": "Sequences and Series",
+      "subtopic": "Infinite geometric series",
+      "example_problem": "Determine the sum to infinity of 18 + 6 + 2 + ...",
+      "prior_knowledge": "Student knows geometric sequences and the condition -1 < r < 1"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 1,
+      "topic": "Functions",
+      "subtopic": "Inverse functions",
+      "example_problem": "Given f(x) = 2x + 3, determine f⁻¹(x) and sketch both graphs with the line y = x.",
+      "prior_knowledge": "Student can sketch straight lines and understands function notation"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 1,
+      "topic": "Functions",
+      "subtopic": "Logarithms and the log function",
+      "example_problem": "Solve for x: log₂ x = 5, and sketch y = log₂ x as the inverse of y = 2ˣ.",
+      "prior_knowledge": "Student knows exponential graphs and exponent laws"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 1,
+      "topic": "Trigonometry",
+      "subtopic": "Compound angle identities",
+      "example_problem": "Evaluate cos 75° without a calculator by expanding cos(45° + 30°).",
+      "prior_knowledge": "Student knows special angles and basic identities"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 1,
+      "topic": "Trigonometry",
+      "subtopic": "Double angle identities",
+      "example_problem": "If sin x = 3/5 and x is acute, calculate sin 2x and cos 2x.",
+      "prior_knowledge": "Student knows compound angle formulae and Pythagoras"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 2,
+      "topic": "Euclidean Geometry",
+      "subtopic": "Proportionality theorem",
+      "example_problem": "In triangle ABC, DE is parallel to BC with AD = 4, DB = 6 and AE = 6. Calculate EC.",
+      "prior_knowledge": "Student knows similar triangles and ratio"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 2,
+      "topic": "Analytical Geometry",
+      "subtopic": "Equation of a circle and its tangent",
+      "example_problem": "Determine the equation of the tangent to the circle x² + y² = 25 at the point (3;4).",
+      "prior_knowledge": "Student knows gradients, perpendicular lines and the circle equation"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 2,
+      "topic": "Differential Calculus",
+      "subtopic": "Derivative from first principles",
+      "example_problem": "Determine f'(x) from first principles if f(x) = x².",
+      "prior_knowledge": "Student knows function notation and limits informally"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 2,
+      "topic": "Differential Calculus",
+      "subtopic": "Rules of differentiation",
+      "example_problem": "Differentiate f(x) = 3x³ - 2x + 5 and determine the gradient of the curve at x = 2.",
+      "prior_knowledge": "Student knows the power rule concept from first principles"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 2,
+      "topic": "Differential Calculus",
+      "subtopic": "Cubic graphs and turning points",
+      "example_problem": "Sketch f(x) = x³ - 3x², determining intercepts and turning points using the derivative.",
+      "prior_knowledge": "Student can differentiate polynomials and solve quadratics"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 3,
+      "topic": "Finance, Growth and Decay",
+      "subtopic": "Present value annuities",
+      "example_problem": "A loan of R200 000 at 10% per annum compounded monthly is repaid over 20 years. Calculate the monthly instalment.",
+      "prior_knowledge": "Student knows compound interest and future value annuities"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 3,
+      "topic": "Statistics",
+      "subtopic": "Regression and correlation",
+      "example_problem": "For given paired data, determine the least-squares regression line ŷ = a + bx and interpret the gradient b.",
+      "prior_knowledge": "Student can calculate means and use a calculator's stats functions"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": 3,
+      "topic": "Counting and Probability",
+      "subtopic": "Fundamental counting principle",
+      "example_problem": "How many different arrangements can be made of the letters of the word NUMBER, and how many begin with N?",
+      "prior_knowledge": "Student knows factorial notation and basic probability"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 1,
+      "topic": "Vectors in Two Dimensions",
+      "subtopic": "Resultant of perpendicular vectors",
+      "example_problem": "Forces of 30 N east and 40 N north act on an object. Calculate the magnitude and direction of the resultant force.",
+      "prior_knowledge": "Student knows Pythagoras and basic trig ratios"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 1,
+      "topic": "Newton's Laws",
+      "subtopic": "Forces on an inclined plane",
+      "example_problem": "A 10 kg block rests on a frictionless 30° incline. Calculate the component of the gravitational force parallel to the incline (g = 9,8 m·s⁻²).",
+      "prior_knowledge": "Student knows weight, normal force and trig components"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 1,
+      "topic": "Electrostatics",
+      "subtopic": "Coulomb's law",
+      "example_problem": "Two point charges of +2 μC and -3 μC are 0,1 m apart. Calculate the magnitude of the electrostatic force between them (k = 9×10⁹ N·m²·C⁻²).",
+      "prior_knowledge": "Student knows charge, attraction/repulsion and scientific notation"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 1,
+      "topic": "Electrostatics",
+      "subtopic": "Electric field of a point charge",
+      "example_problem": "Calculate the electric field strength 0,05 m from a +4 μC point charge.",
+      "prior_knowledge": "Student knows Coulomb's law"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 2,
+      "topic": "Electromagnetism",
+      "subtopic": "Faraday's law of electromagnetic induction",
+      "example_problem": "A coil of 200 turns experiences a change in magnetic flux of 0,04 Wb in 0,2 s. Calculate the magnitude of the induced emf.",
+      "prior_knowledge": "Student knows magnetic fields and flux as a concept"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 2,
+      "topic": "Electric Circuits",
+      "subtopic": "Series-parallel combinations",
+      "example_problem": "A 4 Ω resistor is in series with a parallel pair of 6 Ω and 3 Ω. Calculate the total resistance of the circuit.",
+      "prior_knowledge": "Student knows Ohm's law and series/parallel rules separately"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 2,
+      "topic": "Intermolecular Forces",
+      "subtopic": "Intermolecular forces and boiling points",
+      "example_problem": "Explain why water (H₂O) has a much higher boiling point than hydrogen sulphide (H₂S), referring to hydrogen bonding.",
+      "prior_knowledge": "Student knows molecular polarity and covalent bonding"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 3,
+      "topic": "Quantitative Aspects of Chemical Change",
+      "subtopic": "Limiting reagents",
+      "example_problem": "20 g of H₂ reacts with 100 g of O₂ to form water. Identify the limiting reagent and calculate the mass of H₂O formed.",
+      "prior_knowledge": "Student can do mole calculations from balanced equations"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 3,
+      "topic": "Quantitative Aspects of Chemical Change",
+      "subtopic": "Concentration of solutions",
+      "example_problem": "Calculate the concentration in mol·dm⁻³ when 5,85 g of NaCl is dissolved in 500 cm³ of solution.",
+      "prior_knowledge": "Student knows molar mass and the mole concept"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": 3,
+      "topic": "Acids and Bases",
+      "subtopic": "Neutralisation reactions",
+      "example_problem": "Write the balanced equation for HCl reacting with NaOH and calculate the mass of salt formed from 0,1 mol of HCl.",
+      "prior_knowledge": "Student knows acids, bases and balancing equations"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 1,
+      "topic": "Momentum and Impulse",
+      "subtopic": "Conservation of linear momentum",
+      "example_problem": "A 2 kg trolley moving at 3 m·s⁻¹ collides with and couples to a stationary 1 kg trolley. Calculate their common velocity after the collision.",
+      "prior_knowledge": "Student knows momentum p = mv"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 1,
+      "topic": "Momentum and Impulse",
+      "subtopic": "Impulse and force",
+      "example_problem": "A 0,5 kg ball strikes a wall at 10 m·s⁻¹ and rebounds at 8 m·s⁻¹. Contact time is 0,1 s. Calculate the average force on the ball.",
+      "prior_knowledge": "Student knows momentum and Newton's second law"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 1,
+      "topic": "Vertical Projectile Motion",
+      "subtopic": "Projectiles moving upward",
+      "example_problem": "A stone is thrown vertically upward at 15 m·s⁻¹. Calculate the maximum height reached and the total time in the air (g = 9,8 m·s⁻²).",
+      "prior_knowledge": "Student knows the equations of motion"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 1,
+      "topic": "Organic Molecules",
+      "subtopic": "IUPAC naming",
+      "example_problem": "Give the IUPAC name of CH₃CH₂CH₂OH and draw the structural formula of 2-methylbutane.",
+      "prior_knowledge": "Student knows carbon bonding and homologous series"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 1,
+      "topic": "Organic Molecules",
+      "subtopic": "Physical properties and intermolecular forces",
+      "example_problem": "Explain why butan-1-ol has a higher boiling point than butane, referring to the intermolecular forces of each.",
+      "prior_knowledge": "Student knows organic functional groups and IMF types"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 2,
+      "topic": "Doppler Effect",
+      "subtopic": "Moving source calculations",
+      "example_problem": "An ambulance siren emits 700 Hz while approaching a stationary listener at 30 m·s⁻¹ (speed of sound 340 m·s⁻¹). Calculate the observed frequency.",
+      "prior_knowledge": "Student knows wave speed, frequency and wavelength"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 3,
+      "topic": "Electric Circuits",
+      "subtopic": "Internal resistance and emf",
+      "example_problem": "A battery with emf 12 V and internal resistance 0,5 Ω delivers a current of 2 A. Calculate the terminal potential difference.",
+      "prior_knowledge": "Student knows Ohm's law and series circuits"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 3,
+      "topic": "Electrodynamics",
+      "subtopic": "Generators and motors",
+      "example_problem": "Explain the principle of an AC generator and sketch its output potential difference against time.",
+      "prior_knowledge": "Student knows electromagnetic induction"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 3,
+      "topic": "Electrochemical Reactions",
+      "subtopic": "Galvanic cells and standard emf",
+      "example_problem": "For a Zn-Cu galvanic cell, write both half-reactions and calculate the standard cell emf (E° Zn²⁺/Zn = -0,76 V; E° Cu²⁺/Cu = +0,34 V).",
+      "prior_knowledge": "Student knows oxidation and reduction"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": 3,
+      "topic": "Optical Phenomena",
+      "subtopic": "Photoelectric effect",
+      "example_problem": "Light of frequency 5×10¹⁴ Hz strikes a metal with work function 2,0×10⁻¹⁹ J. Calculate the maximum kinetic energy of the emitted electrons (h = 6,63×10⁻³⁴ J·s).",
+      "prior_knowledge": "Student knows photon energy E = hf"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": 1,
+      "topic": "Economic Systems",
+      "subtopic": "Market, planned and mixed economies",
+      "example_problem": "Compare how the central economic questions (what, how, for whom) are answered in a market economy versus a planned economy, with one country example of each.",
+      "prior_knowledge": "Student knows scarcity and the basic economic problem"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": 1,
+      "topic": "Circular Flow",
+      "subtopic": "Participants and flows in a closed economy",
+      "example_problem": "Illustrate the circular flow between households, firms and government, distinguishing real flows from money flows.",
+      "prior_knowledge": "Student knows the roles of households and businesses"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": 2,
+      "topic": "Dynamics of Markets",
+      "subtopic": "Market structures overview",
+      "example_problem": "Classify the four basic market structure models as perfect or imperfect and give one distinguishing characteristic of each.",
+      "prior_knowledge": "Student knows demand, supply and competition basics"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": 2,
+      "topic": "Dynamics of Markets",
+      "subtopic": "Price elasticity of supply",
+      "example_problem": "The price of a good rises from R20 to R25 and quantity supplied rises from 200 to 240 units. Calculate the price elasticity of supply and classify it.",
+      "prior_knowledge": "Student can calculate percentage changes"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": 2,
+      "topic": "Dynamics of Markets",
+      "subtopic": "Price ceilings and floors",
+      "example_problem": "Show on a graph the effect of a government maximum price set below equilibrium, and identify the resulting shortage.",
+      "prior_knowledge": "Student knows demand and supply equilibrium"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": 3,
+      "topic": "Money and Banking",
+      "subtopic": "Evolution and functions of money",
+      "example_problem": "Trace the evolution from barter to modern money and explain the three main functions money performs, with a South African example of each.",
+      "prior_knowledge": "Student knows basic exchange and trade concepts"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 1,
+      "topic": "Macroeconomics",
+      "subtopic": "Business cycles",
+      "example_problem": "Describe the four phases of the business cycle and name two leading indicators used to forecast turning points in South Africa.",
+      "prior_knowledge": "Student knows aggregate demand and supply concepts"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 1,
+      "topic": "Macroeconomics",
+      "subtopic": "The public sector and fiscal policy",
+      "example_problem": "Explain how the national budget can be used to stimulate aggregate demand, and distinguish a surplus from a deficit budget.",
+      "prior_knowledge": "Student knows the circular flow with government"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 1,
+      "topic": "Macroeconomics",
+      "subtopic": "Foreign exchange markets",
+      "example_problem": "The rand moves from R15,00/$ to R18,00/$. Calculate the percentage change, state whether the rand depreciated or appreciated, and give one effect on exporters.",
+      "prior_knowledge": "Student knows imports, exports and exchange rate basics"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 1,
+      "topic": "Macroeconomics",
+      "subtopic": "Balance of payments",
+      "example_problem": "Name the accounts of the balance of payments and explain what a current account deficit means for an economy.",
+      "prior_knowledge": "Student knows imports, exports and the circular flow"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 2,
+      "topic": "Microeconomics",
+      "subtopic": "Monopoly",
+      "example_problem": "Contrast the long-run equilibrium of a monopoly with perfect competition in terms of price, output and economic profit, using a graph.",
+      "prior_knowledge": "Student knows cost and revenue curves and perfect competition"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 2,
+      "topic": "Microeconomics",
+      "subtopic": "Market failure and externalities",
+      "example_problem": "Use a graph to show how a negative externality leads to overproduction, and explain how a corrective tax addresses it.",
+      "prior_knowledge": "Student knows market equilibrium and efficiency"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 2,
+      "topic": "Microeconomics",
+      "subtopic": "Cost and revenue analysis",
+      "example_problem": "From a total cost schedule, derive average and marginal cost, and identify the shut-down point of a firm.",
+      "prior_knowledge": "Student knows fixed and variable costs"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": 3,
+      "topic": "Economic Pursuits",
+      "subtopic": "Demand-side and supply-side approaches",
+      "example_problem": "Distinguish demand-side from supply-side approaches to economic growth, naming one policy instrument of each used in South Africa.",
+      "prior_knowledge": "Student knows fiscal and monetary policy basics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 1,
+      "topic": "The Atmosphere",
+      "subtopic": "Earth's energy balance",
+      "example_problem": "Explain the unequal heating of the Earth's surface and the role of the Earth's tilt in causing seasons.",
+      "prior_knowledge": "Student knows latitude, rotation and revolution"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 1,
+      "topic": "The Atmosphere",
+      "subtopic": "Africa's weather and climate",
+      "example_problem": "Explain why equatorial Africa receives convectional rainfall throughout the year, referring to the movement of the ITCZ.",
+      "prior_knowledge": "Student knows global pressure belts and air circulation"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 1,
+      "topic": "The Atmosphere",
+      "subtopic": "Droughts and desertification",
+      "example_problem": "Discuss the causes and effects of desertification in the Sahel and evaluate two management strategies.",
+      "prior_knowledge": "Student knows rainfall patterns and land use basics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 2,
+      "topic": "Geomorphology",
+      "subtopic": "Topography of horizontal strata",
+      "example_problem": "Describe the development of a mesa and a butte from horizontally layered rock, with a labelled diagram.",
+      "prior_knowledge": "Student knows rock types and weathering"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 2,
+      "topic": "Geomorphology",
+      "subtopic": "Slope elements",
+      "example_problem": "Identify and describe the slope elements (crest, cliff/scarp, talus, pediment) on a slope profile diagram.",
+      "prior_knowledge": "Student knows contours and basic landforms"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 2,
+      "topic": "Geomorphology",
+      "subtopic": "Mass movement",
+      "example_problem": "Differentiate between soil creep, mudflows and rockfalls, and describe their impact on human activity.",
+      "prior_knowledge": "Student knows gravity, slope and weathering concepts"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 3,
+      "topic": "Development",
+      "subtopic": "Frameworks for development",
+      "example_problem": "Compare a developed and a developing country using GDP per capita, HDI and the Gini coefficient.",
+      "prior_knowledge": "Student can read tables and basic statistics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 3,
+      "topic": "Development",
+      "subtopic": "Trade and development",
+      "example_problem": "Explain how unfavourable terms of trade can hinder development in primary-product exporting countries.",
+      "prior_knowledge": "Student knows imports, exports and primary products"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 4,
+      "topic": "Resources and Sustainability",
+      "subtopic": "Soil erosion",
+      "example_problem": "Discuss the main causes of soil erosion in South Africa and describe two conservation strategies.",
+      "prior_knowledge": "Student knows soil formation and farming basics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": 4,
+      "topic": "Resources and Sustainability",
+      "subtopic": "Conventional and non-conventional energy",
+      "example_problem": "Compare coal-fired power and solar power for South Africa, giving two advantages and two disadvantages of each.",
+      "prior_knowledge": "Student knows renewable vs non-renewable resources"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 1,
+      "topic": "Climate and Weather",
+      "subtopic": "Tropical cyclones",
+      "example_problem": "Describe the stages in the development of a tropical cyclone and discuss two impacts on the east coast of southern Africa.",
+      "prior_knowledge": "Student knows air pressure, Coriolis force and ocean temperatures"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 1,
+      "topic": "Climate and Weather",
+      "subtopic": "Subtropical anticyclones",
+      "example_problem": "Explain the influence of the South Atlantic, South Indian and Kalahari anticyclones on South African weather.",
+      "prior_knowledge": "Student knows global air circulation and pressure systems"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 1,
+      "topic": "Climate and Weather",
+      "subtopic": "Valley climates",
+      "example_problem": "Explain anabatic and katabatic winds and the development of temperature inversions and frost pockets in valleys.",
+      "prior_knowledge": "Student knows heating/cooling of air and slopes"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 1,
+      "topic": "Climate and Weather",
+      "subtopic": "Urban heat islands",
+      "example_problem": "Explain the causes of the urban heat island effect and evaluate two strategies to reduce it.",
+      "prior_knowledge": "Student knows urban land use and surface heating"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 1,
+      "topic": "Geomorphology",
+      "subtopic": "Drainage patterns and density",
+      "example_problem": "Identify dendritic, trellis and radial drainage patterns and explain two factors that influence drainage density.",
+      "prior_knowledge": "Student knows river systems and rock structure"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 2,
+      "topic": "Settlement Geography",
+      "subtopic": "Rural settlement patterns",
+      "example_problem": "Classify rural settlements by pattern (dispersed vs nucleated) and explain how site and situation affect their location.",
+      "prior_knowledge": "Student knows basic settlement terminology"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 2,
+      "topic": "Settlement Geography",
+      "subtopic": "Rural depopulation",
+      "example_problem": "Discuss the causes and consequences of rural depopulation in South Africa and evaluate two strategies to address it.",
+      "prior_knowledge": "Student knows migration push and pull factors"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 2,
+      "topic": "Settlement Geography",
+      "subtopic": "Urban hierarchy",
+      "example_problem": "Rank settlement types from hamlet to megalopolis and explain the concepts of threshold population and range of goods.",
+      "prior_knowledge": "Student knows settlement classification basics"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 2,
+      "topic": "Settlement Geography",
+      "subtopic": "Urban structure and land use",
+      "example_problem": "Describe the internal structure of a city (CBD, transition zone, suburbs) and explain the shape of the urban profile.",
+      "prior_knowledge": "Student knows urban land use zones"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 2,
+      "topic": "Settlement Geography",
+      "subtopic": "Informal settlements",
+      "example_problem": "Explain the growth of informal settlements in South African cities and discuss two associated issues with one management case study.",
+      "prior_knowledge": "Student knows urbanisation and migration"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 3,
+      "topic": "Economic Geography of South Africa",
+      "subtopic": "Mining and the economy",
+      "example_problem": "Assess the contribution of platinum mining to the South African economy and discuss two challenges facing the sector.",
+      "prior_knowledge": "Student knows primary economic activities"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": 3,
+      "topic": "Economic Geography of South Africa",
+      "subtopic": "Industrial regions",
+      "example_problem": "Locate the Gauteng (PWV) industrial region and explain two factors that favoured industrial development there.",
+      "prior_knowledge": "Student knows factors of industrial location"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 1,
+      "topic": "Finance",
+      "subtopic": "Income and expenditure statements",
+      "example_problem": "Draw up a personal monthly income-and-expenditure statement for a wage of R8 500 with listed expenses, and determine the surplus or shortfall.",
+      "prior_knowledge": "Student can add and subtract money amounts"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 1,
+      "topic": "Measurement",
+      "subtopic": "Perimeter and area in context",
+      "example_problem": "Calculate the area of paving needed for a 1 m wide border around a 6 m × 4 m rectangular pool, and its cost at R180 per square metre.",
+      "prior_knowledge": "Student knows perimeter and area of rectangles"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 1,
+      "topic": "Measurement",
+      "subtopic": "Conversions in recipes and projects",
+      "example_problem": "A recipe for 4 people uses 250 g flour and 1,5 ℓ milk. Convert the quantities to feed 10 people, in kg and ml.",
+      "prior_knowledge": "Student can multiply and convert metric units"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 2,
+      "topic": "Finance",
+      "subtopic": "Exchange rates",
+      "example_problem": "Convert R12 500 to US dollars at R18,45/$ and calculate how many rand you get back if you re-convert after a 5% commission.",
+      "prior_knowledge": "Student can divide amounts and calculate percentages"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 2,
+      "topic": "Maps, Plans and Other Representations",
+      "subtopic": "Number and bar scales",
+      "example_problem": "On a street map with scale 1:200, the distance between two buildings measures 15 cm. Calculate the real distance in metres.",
+      "prior_knowledge": "Student can multiply and convert cm to m"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 2,
+      "topic": "Probability",
+      "subtopic": "The probability scale",
+      "example_problem": "A weather service reports a 30% chance of rain. Express this as a fraction and a decimal, and calculate the probability of drawing a red card from a standard deck.",
+      "prior_knowledge": "Student knows fractions, decimals and percentages"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 3,
+      "topic": "Finance",
+      "subtopic": "Banking documents and fees",
+      "example_problem": "Read the given bank statement, calculate the total bank fees for the month, and verify the closing balance.",
+      "prior_knowledge": "Student can read tables and add/subtract money"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 3,
+      "topic": "Finance",
+      "subtopic": "Inflation",
+      "example_problem": "A loaf of bread costs R18,00 now. Calculate its expected price after 2 years at 6% annual inflation.",
+      "prior_knowledge": "Student can calculate percentage increases"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 3,
+      "topic": "Maps, Plans and Other Representations",
+      "subtopic": "Building plans and scale",
+      "example_problem": "On a floor plan drawn at 1:50, a wall measures 120 mm. Calculate the actual wall length in metres.",
+      "prior_knowledge": "Student knows scale and mm-to-m conversion"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": 3,
+      "topic": "Finance",
+      "subtopic": "Budgets",
+      "example_problem": "Compile a household budget from the given income and expenses, and compare budgeted with actual figures to find the variance.",
+      "prior_knowledge": "Student can draw up an income and expenditure list"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 1,
+      "topic": "Finance",
+      "subtopic": "Compound interest on investments",
+      "example_problem": "R10 000 is invested at 9% per annum compounded annually. Calculate the value of the investment after 4 years.",
+      "prior_knowledge": "Student knows simple interest and percentages"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 1,
+      "topic": "Finance",
+      "subtopic": "Inflation and buying power",
+      "example_problem": "A salary increases by 5% while inflation is 7%. Explain and calculate the real change in buying power.",
+      "prior_knowledge": "Student can calculate percentage changes"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 1,
+      "topic": "Finance",
+      "subtopic": "Exchange rate comparisons",
+      "example_problem": "A tourist converts $2 000 at R17,80/$. Calculate the rand received, and the difference if the rate had been R18,20/$.",
+      "prior_knowledge": "Student can multiply money amounts"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 1,
+      "topic": "Probability",
+      "subtopic": "Compound events",
+      "example_problem": "Calculate the probability of rolling a sum of 7 with two dice, and draw a tree diagram for two coin tosses.",
+      "prior_knowledge": "Student knows single-event probability"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 2,
+      "topic": "Measurement",
+      "subtopic": "Tiling and flooring calculations",
+      "example_problem": "Calculate how many 400 mm × 400 mm tiles are needed for a 5,2 m × 3,8 m floor (round up to full boxes of 6) and the total cost at R289 per box.",
+      "prior_knowledge": "Student knows area and unit conversion"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 2,
+      "topic": "Measurement",
+      "subtopic": "Body Mass Index",
+      "example_problem": "Calculate the BMI of a person of mass 78 kg and height 1,72 m, and classify the result using the standard categories.",
+      "prior_knowledge": "Student can substitute into a formula and round"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 2,
+      "topic": "Maps, Plans and Other Representations",
+      "subtopic": "Route maps and travel planning",
+      "example_problem": "On a 1:2 000 000 route map two towns are 7,5 cm apart. Calculate the real distance and the travel time at an average 100 km/h.",
+      "prior_knowledge": "Student knows scale, distance and speed-time-distance"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 2,
+      "topic": "Measurement",
+      "subtopic": "Surface area and painting",
+      "example_problem": "Calculate the paint needed for the curved surface of a cylindrical tank (radius 1,2 m, height 2,5 m) if 1 litre covers 8 m²; round up to full litres.",
+      "prior_knowledge": "Student knows surface area formulas with a formula sheet"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": 3,
+      "topic": "Maps, Plans and Other Representations",
+      "subtopic": "3D scale models",
+      "example_problem": "A box measures 30 cm × 20 cm × 15 cm in a 1:5 scale model. Calculate the real object's dimensions and volume.",
+      "prior_knowledge": "Student knows scale and volume of rectangular prisms"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 1,
+      "topic": "Reconciliations",
+      "subtopic": "Creditors reconciliation",
+      "example_problem": "Reconcile the creditor's statement showing R14 250 with the creditors ledger account of R12 980, given goods returned and a payment recorded after statement date.",
+      "prior_knowledge": "Student knows the creditors ledger and source documents"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 1,
+      "topic": "Fixed Assets",
+      "subtopic": "Depreciation calculations",
+      "example_problem": "Equipment cost R80 000 and depreciates at 20% per annum on cost. Calculate the depreciation for year 2 and the carrying value at the end of year 2.",
+      "prior_knowledge": "Student knows the fixed asset register and percentages"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 1,
+      "topic": "Fixed Assets",
+      "subtopic": "Disposal of an asset",
+      "example_problem": "A vehicle that cost R150 000 with accumulated depreciation of R90 000 is sold for R70 000 cash. Calculate the profit or loss on disposal and show the entries.",
+      "prior_knowledge": "Student knows depreciation and the asset disposal account"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 1,
+      "topic": "Partnerships",
+      "subtopic": "Appropriation of profit",
+      "example_problem": "Partners A (capital R200 000) and B (capital R300 000) earn 10% interest on capital; A receives a salary of R60 000; the remainder is shared equally. Appropriate a net profit of R180 000.",
+      "prior_knowledge": "Student knows the concept of a partnership agreement"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 2,
+      "topic": "Partnerships",
+      "subtopic": "Current accounts",
+      "example_problem": "Prepare the current account note for a partner given drawings, salary, interest on capital and share of remaining profit.",
+      "prior_knowledge": "Student knows the appropriation account"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 2,
+      "topic": "Interpretation",
+      "subtopic": "Stock turnover and collection periods",
+      "example_problem": "Cost of sales is R240 000 and average stock R40 000. Calculate the stock turnover rate and comment on the result for a clothing business.",
+      "prior_knowledge": "Student knows the trading account figures"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 3,
+      "topic": "Budgeting",
+      "subtopic": "Cash budget for a sole trader",
+      "example_problem": "Prepare the August cash budget given an opening balance of R12 000 and the listed projected receipts and payments.",
+      "prior_knowledge": "Student knows receipts vs payments and the purpose of budgeting"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": 3,
+      "topic": "Cost Accounting",
+      "subtopic": "Unit costs in manufacturing",
+      "example_problem": "Direct materials cost R45 000, direct labour R30 000 and overheads R15 000 to produce 4 500 units. Calculate the cost per unit and the selling price at 40% mark-up.",
+      "prior_knowledge": "Student knows cost classification (direct vs indirect)"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 1,
+      "topic": "Companies",
+      "subtopic": "Year-end adjustments",
+      "example_problem": "Adjust the pre-adjustment trial balance for accrued expenses of R4 200 and prepaid insurance of R1 800, and show the effect on net profit.",
+      "prior_knowledge": "Student knows the accrual concept and final accounts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 1,
+      "topic": "Companies",
+      "subtopic": "Statement of financial position: equity",
+      "example_problem": "Complete the ordinary share capital and retained income notes: 500 000 shares issued at R2, additional issue of 100 000 shares at R2,50, dividends and net profit given.",
+      "prior_knowledge": "Student knows the structure of company equity"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 1,
+      "topic": "Companies",
+      "subtopic": "Cash flow statement",
+      "example_problem": "Calculate cash generated from operating activities given net profit before tax R320 000, depreciation R45 000, and the given changes in working capital.",
+      "prior_knowledge": "Student knows the income statement and balance sheet"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 1,
+      "topic": "Companies",
+      "subtopic": "Liquidity ratios",
+      "example_problem": "Current assets are R150 000 (including inventory of R60 000) and current liabilities R75 000. Calculate the current ratio and acid-test ratio, and comment.",
+      "prior_knowledge": "Student knows the statement of financial position"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 1,
+      "topic": "Companies",
+      "subtopic": "Earnings and dividends per share",
+      "example_problem": "Net income after tax is R400 000, total dividends R150 000, with 1 000 000 shares in issue. Calculate EPS and DPS and interpret for a shareholder.",
+      "prior_knowledge": "Student knows company profit distribution"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 2,
+      "topic": "Inventory Valuation",
+      "subtopic": "FIFO and weighted average",
+      "example_problem": "Opening stock 100 units @ R10; purchases 200 @ R12 and 100 @ R15; 250 units sold. Calculate closing stock under FIFO and weighted average.",
+      "prior_knowledge": "Student knows the perpetual and periodic inventory systems"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 2,
+      "topic": "Manufacturing",
+      "subtopic": "Production cost statement",
+      "example_problem": "Prepare the production cost statement: direct materials R120 000, direct labour R80 000, factory overheads R40 000, work-in-progress opening R15 000 and closing R10 000.",
+      "prior_knowledge": "Student knows cost concepts from Grade 11"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 2,
+      "topic": "Reconciliations",
+      "subtopic": "Debtors age analysis",
+      "example_problem": "Interpret a debtors age analysis where 40% of debtors are over 60 days, and recommend two internal control measures.",
+      "prior_knowledge": "Student knows debtors control and credit terms"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": 3,
+      "topic": "Value Added Tax",
+      "subtopic": "VAT control account",
+      "example_problem": "Complete the VAT control account: output VAT R48 300, input VAT R31 050, and a payment to SARS; determine the closing balance and state what it represents.",
+      "prior_knowledge": "Student knows VAT calculations from Grade 11"
     }
   ]
 }
