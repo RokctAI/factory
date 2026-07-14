@@ -13,13 +13,14 @@ grade: 12
 term: 1
 topic: Sequences and Series
 subtopic: Geometric sequences
-tutor: 
+tutor: Grandmaster — formal
 example_problem: Find the 10th term of 2; 6; 18; ...
 prior_knowledge: Student knows arithmetic sequences and exponents
 metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
-idea:
-idea_status:
+idea: |
+  Tutor choice: Geometric sequences involve abstract concepts and formula manipulation, making a formal approach more suitable.
+idea_status: pending
 concept:
 concept_status:
 rules_status:
@@ -33,12 +34,12 @@ comprehension_check_path:
 reel_brief_path:
 mandy_transcript_path:
 mandy_nervous_script_path:
-status: theme_generated
+status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-14 05:08:39
+session_id: 
+session_started: 
+attempts: 1
 last_error:
 loop_iterations: 0
 max_iterations: 10
