@@ -30,3 +30,4 @@
 | geography_g12_crosscheck_clean_test_beef01 | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Crosscheck clean test | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29308115955 | — | 2026-07-14 05:17 |
 | physical_sciences_g12_work_energy_and_power_conservation_of__663086 | lesson.physical_sciences | Physical Sciences Grade 12: Work, Energy and Power - Conservation of mechanical energy | pending_approval | groq | GROQ-29308179046 | — | 2026-07-14 05:18 |
 | economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | pending_approval | groq | GROQ-29312940336 | — | 2026-07-14 06:57 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | pending_approval | groq | GROQ-29321900343 | — | 2026-07-14 09:29 |
