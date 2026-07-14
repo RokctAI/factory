@@ -6,6 +6,15 @@
 > and will be its own separate brief once this phase is proven, since it requires real new VPS
 > infrastructure, not just CI/template work.
 
+## Future enhancement (noted, not yet scoped) — ground content in real past papers
+
+Free CAPS/NSC-aligned South African past exam papers are available (Testpapers, SA Exam Papers, WCED
+ePortal, the DBE's own site) and could feed two things once this pipeline is further along: (1) real
+ground-truth example problems/answers for Level 0/1 topic and example-problem selection instead of
+purely LLM-invented ones, and (2) a concrete reference Level 3 could check generated MCQs/example
+problems against, rather than relying only on structural validation. Not scoped into this brief — a
+later addition once Levels 0–4 are proven across all subjects.
+
 ## Context — what `factory` already is (confirmed, don't re-derive)
 
 `factory` (`C:\Users\sinya\Desktop\RokctAI\factory`) is a working, CI-driven autonomous content pipeline —
