@@ -77,7 +77,10 @@ jobs:
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
               git mv "$FILE" ".rokct/agent/jobs/done/$(basename "$FILE")"
-              git add .rokct/agent/log/transitions.log
+              # git mv stages the OLD index blob — explicitly stage the moved
+              # file's worktree content or the evaluated status write is lost
+              # (this exact bug silently rewound three archived cards).
+              git add ".rokct/agent/jobs/done/$(basename "$FILE")" .rokct/agent/log/transitions.log
               git commit -m "🤖 [CI] Lesson 4: Evaluated (Level 4 approved) $ID [skip ci]"
               for i in 1 2 3; do
                 git push origin main && break

@@ -35,7 +35,7 @@ comprehension_check_path: lessons/economics/grade11/term2/economics_g11_dynamics
 reel_brief_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/reel_clip.json
 mandy_transcript_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_nervous_script.md
-status: pending_concept_approval # next step is rules_generating
+status: evaluated
 created: 2026-07-14
 last_updated: 2026-07-14 02:40:59
 session_id: 

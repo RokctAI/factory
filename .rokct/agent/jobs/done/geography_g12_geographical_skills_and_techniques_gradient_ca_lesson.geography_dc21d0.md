@@ -35,7 +35,7 @@ comprehension_check_path: lessons/geography/grade12/term_all/geography_g12_geogr
 reel_brief_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/reel_clip.json
 mandy_transcript_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
-status: pending_concept_approval # next step is rules_generating
+status: evaluated
 created: 2026-07-14
 last_updated: 2026-07-14 02:41:00
 session_id: 

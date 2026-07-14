@@ -33,6 +33,23 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Regenerate Dashboard
+        run: |
+          python lessons/scripts/lesson_pipeline.py dashboard
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add lessons/DASHBOARD.md
+          if git diff --staged --quiet; then
+            echo "Dashboard unchanged."
+          else
+            git commit -m "🤖 [CI] Refresh lesson dashboard [skip ci]"
+            for i in 1 2 3; do
+              git push origin main && break
+              git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+              sleep $((RANDOM % 3 + 1))
+            done
+          fi
+
       - name: Check Queue and Seed Topics
         run: |
           TYPES=("lesson.maths" "lesson.physical_sciences" "lesson.economics" "lesson.geography" "lesson.maths_literacy" "lesson.accounting")

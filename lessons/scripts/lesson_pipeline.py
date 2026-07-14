@@ -1293,6 +1293,164 @@ def cmd_crosscheck(args):
     return 0
 
 
+# --- pipeline dashboard ---
+
+DASHBOARD_PATH = Path("lessons/DASHBOARD.md")
+
+# Pipeline order for the status matrix columns.
+STATUS_ORDER = [
+    "theme_generated", "pending_approval", "concept_expanding",
+    "concept_generated", "pending_concept_approval", "evaluated",
+    "stalled", "failed", "declined",
+]
+
+
+def _load_all_cards():
+    cards = []
+    for d, bucket in ((PENDING_DIR, "pending"), (RUNNING_DIR, "running"), (DONE_DIR, "done")):
+        if not d.exists():
+            continue
+        for f in sorted(d.glob("*.md")):
+            if f.name.startswith("template"):
+                continue
+            c = f.read_text(encoding="utf-8")
+            if not get_field(c, "type").startswith("lesson."):
+                continue
+            cards.append({
+                "file": f, "bucket": bucket,
+                "id": get_field(c, "id"), "subject": get_field(c, "subject"),
+                "grade": get_field(c, "grade"), "term": get_field(c, "term"),
+                "topic": get_field(c, "topic"), "subtopic": get_field(c, "subtopic"),
+                "status": get_field(c, "status"), "idea_status": get_field(c, "idea_status"),
+                "concept_status": get_field(c, "concept_status"),
+                "crosscheck": get_field(c, "crosscheck_status"),
+                "attempts": int(get_field(c, "attempts") or 0),
+                "max_iterations": int(get_field(c, "max_iterations") or 10),
+                "expansion": get_field(c, "expansion_requested"),
+            })
+    return cards
+
+
+def cmd_dashboard(args):
+    """Regenerate lessons/DASHBOARD.md from the actual job cards and seed."""
+    cards = _load_all_cards()
+    seed = json.loads(SEED_PATH.read_text(encoding="utf-8")) if SEED_PATH.exists() else {"entries": []}
+    seeded_hashes = set()
+    for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
+        if d.exists():
+            for f in d.glob("*.md"):
+                m = re.search(r"_([0-9a-f]{6})\.md$", f.name)
+                if m:
+                    seeded_hashes.add(m.group(1))
+
+    lines = [
+        "# Lesson Pipeline Dashboard",
+        "",
+        f"*Generated {datetime.utcnow().strftime('%Y-%m-%d %H:%M')} UTC by "
+        "`lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on "
+        "seed pushes — if this timestamp is old, check the Lesson 0 workflow).*",
+        "",
+    ]
+
+    # 1. Needs-you-now queue: the human-approval bottleneck.
+    gates = []
+    for c in cards:
+        if c["bucket"] == "done":
+            continue
+        if c["status"] == "pending_approval" and c["idea_status"] != "approved":
+            gates.append((c, "approve the lesson idea (`idea_status: approved`)"))
+        elif c["status"] == "pending_concept_approval" and c["concept_status"] != "approved":
+            note = " — **independent crosscheck FAILED, read crosscheck_notes first**" if c["crosscheck"] == "failed" else ""
+            gates.append((c, f"review content accuracy (`concept_status: approved`){note}"))
+    lines += [f"## Waiting on you ({len(gates)})", ""]
+    if gates:
+        lines.append("| Card | Subject | Action |")
+        lines.append("|---|---|---|")
+        for c, action in gates:
+            lines.append(f"| `{c['id']}` | {c['subject']} G{c['grade']} | {action} |")
+    else:
+        lines.append("Nothing — the pipeline is not blocked on a human gate.")
+    lines.append("")
+
+    # 2. Attention: stalled / failed / crosscheck errors / retry-worn cards.
+    attention = []
+    for c in cards:
+        reasons = []
+        if c["status"] in ("stalled", "failed", "declined"):
+            reasons.append(f"status {c['status']}")
+        if c["crosscheck"] == "error":
+            reasons.append("crosscheck error (blocked, fail-closed)")
+        if c["attempts"] >= 3:
+            reasons.append(f"attempts {c['attempts']}")
+        if c["expansion"]:
+            reasons.append("script expansion pass used")
+        if reasons and c["bucket"] != "done":
+            attention.append((c, "; ".join(reasons)))
+    lines += [f"## Needs intervention ({len(attention)})", ""]
+    if attention:
+        lines.append("| Card | Subject | Why |")
+        lines.append("|---|---|---|")
+        for c, why in attention:
+            lines.append(f"| `{c['id']}` | {c['subject']} G{c['grade']} | {why} |")
+    else:
+        lines.append("No stalled, failed or blocked cards.")
+    lines.append("")
+
+    # 3. Status matrix by subject.
+    subjects = sorted({c["subject"] for c in cards})
+    live_statuses = [s for s in STATUS_ORDER
+                     if any(c["status"] == s for c in cards)]
+    lines += ["## Cards by status and subject", ""]
+    lines.append("| Subject | " + " | ".join(live_statuses) + " | total |")
+    lines.append("|---|" + "---|" * (len(live_statuses) + 1))
+    for s in subjects:
+        row = [s]
+        subj_cards = [c for c in cards if c["subject"] == s]
+        for st in live_statuses:
+            row.append(str(sum(1 for c in subj_cards if c["status"] == st) or ""))
+        row.append(str(len(subj_cards)))
+        lines.append("| " + " | ".join(row) + " |")
+    totals = ["**All**"]
+    for st in live_statuses:
+        totals.append(f"**{sum(1 for c in cards if c['status'] == st)}**")
+    totals.append(f"**{len(cards)}**")
+    lines.append("| " + " | ".join(totals) + " |")
+    lines.append("")
+
+    # 4. Seed backlog per subject/grade.
+    from collections import Counter
+    seed_total = Counter()
+    seed_used = Counter()
+    for e in seed.get("entries", []):
+        key = (e["subject"], str(e["grade"]))
+        seed_total[key] += 1
+        if entry_hash(e) in seeded_hashes:
+            seed_used[key] += 1
+    lines += ["## Seed backlog (topics not yet opened as cards)", ""]
+    lines.append("| Subject | Grade | Opened | Remaining |")
+    lines.append("|---|---|---|---|")
+    for key in sorted(seed_total):
+        s, g = key
+        lines.append(f"| {s} | {g} | {seed_used[key]} | {seed_total[key] - seed_used[key]} |")
+    lines.append(f"\nSeed rows total: {sum(seed_total.values())}; opened: "
+                 f"{sum(seed_used.values())}; remaining: "
+                 f"{sum(seed_total.values()) - sum(seed_used.values())}.")
+    lines.append("")
+
+    # 5. Evaluated lessons ready for the future Level 6.
+    done = [c for c in cards if c["status"] == "evaluated"]
+    lines += [f"## Evaluated (Level 4 complete, awaiting Level 6): {len(done)}", ""]
+    for c in done:
+        lines.append(f"- `{c['id']}` — {c['subject']} G{c['grade']} term {c['term']}")
+    lines.append("")
+
+    out = "\n".join(lines)
+    DASHBOARD_PATH.write_text(out, encoding="utf-8")
+    print(f"Dashboard written to {DASHBOARD_PATH}: {len(cards)} cards, "
+          f"{len(gates)} at human gates, {len(attention)} need intervention.")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="Lesson pipeline helpers (Levels 0-4).")
     sub = parser.add_subparsers(dest="command")
@@ -1317,6 +1475,8 @@ def main():
 
     p = sub.add_parser("evaluate", help="Level 4: final evaluation gate")
     p.add_argument("--file", required=True)
+
+    sub.add_parser("dashboard", help="Regenerate lessons/DASHBOARD.md from real card data")
 
     p = sub.add_parser("crosscheck", help="Level 3.5: independent AI review; records crosscheck_status/notes")
     p.add_argument("--file", required=True)
@@ -1346,6 +1506,7 @@ def main():
         "check-duplicate": cmd_check_duplicate,
         "mark-expansion": cmd_mark_expansion,
         "crosscheck": cmd_crosscheck,
+        "dashboard": cmd_dashboard,
     }
     if args.command not in handlers:
         parser.print_help()
