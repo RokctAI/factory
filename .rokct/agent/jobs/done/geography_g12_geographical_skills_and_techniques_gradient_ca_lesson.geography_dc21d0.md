@@ -10,6 +10,7 @@ theme: Geography Grade 12: Geographical Skills and Techniques - Gradient calcula
 type: lesson.geography
 subject: Geography
 grade: 12
+term: all
 topic: Geographical Skills and Techniques
 subtopic: Gradient calculation
 tutor: Grandmaster — formal
@@ -25,18 +26,18 @@ concept: |
 concept_status: approved
 rules_status: passed
 lesson_name: Gradient calculation
-lesson_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0
-script_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/script.md
-manim_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/manim_scene.py
-subtopics_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/subtopics.json
-mcq_data_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mcq.json
-comprehension_check_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/comprehension_check.json
-reel_brief_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/reel_clip.json
-mandy_transcript_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_qa_transcript.md
-mandy_nervous_script_path: lessons/drafts/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
+lesson_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0
+script_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/script.md
+manim_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/manim_scene.py
+subtopics_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/subtopics.json
+mcq_data_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mcq.json
+comprehension_check_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/comprehension_check.json
+reel_brief_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/reel_clip.json
+mandy_transcript_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-14 00:19:46
+last_updated: 2026-07-14 02:41:00
 session_id: 
 session_started: 
 attempts: 2

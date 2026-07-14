@@ -21,6 +21,7 @@ theme:
 type:
 subject:
 grade:
+term:
 topic:
 subtopic:
 tutor:

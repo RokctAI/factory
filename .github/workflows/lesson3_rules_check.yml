@@ -3,7 +3,8 @@ on:
   push:
     paths:
       - '.rokct/agent/jobs/pending/*.md'
-      - 'lessons/drafts/**'
+      # Lesson content lives under lessons/<subject>/<grade>/<term>/<id>/
+      - 'lessons/**'
     branches:
       - main
   workflow_dispatch:
@@ -49,9 +50,10 @@ jobs:
           else
             FILES=$(ls .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
             CHANGED=$(git diff --name-only HEAD~1 HEAD || true)
-            # A merged Jules PR may only touch lessons/drafts/**; if so, still
-            # scan all lesson cards for one awaiting checks.
-            if ! echo "$CHANGED" | grep -q 'lessons/drafts/'; then
+            # A merged Jules PR may only touch lesson content under
+            # lessons/<subject>/<grade>/...; if so, still scan all lesson
+            # cards for one awaiting checks.
+            if ! echo "$CHANGED" | grep -qE 'lessons/[a-z_]+/grade[0-9]+/'; then
               FILES=$(echo "$CHANGED" | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template' || true)
             fi
           fi

@@ -10,6 +10,7 @@ theme: Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium
 type: lesson.economics
 subject: Economics
 grade: 11
+term: 2
 topic: Dynamics of Markets
 subtopic: Demand and supply equilibrium
 tutor: Grandmaster — formal
@@ -25,18 +26,18 @@ concept: |
 concept_status: approved
 rules_status: passed
 lesson_name: Demand and Supply Equilibrium
-lesson_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f
-script_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/script.md
-manim_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/manim_scene.py
-subtopics_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/subtopics.json
-mcq_data_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mcq.json
-comprehension_check_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/comprehension_check.json
-reel_brief_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/reel_clip.json
-mandy_transcript_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_qa_transcript.md
-mandy_nervous_script_path: lessons/drafts/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_nervous_script.md
+lesson_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f
+script_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/script.md
+manim_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/manim_scene.py
+subtopics_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/subtopics.json
+mcq_data_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mcq.json
+comprehension_check_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/comprehension_check.json
+reel_brief_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/reel_clip.json
+mandy_transcript_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_nervous_script.md
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-14 00:23:25
+last_updated: 2026-07-14 02:40:59
 session_id: 
 session_started: 
 attempts: 3

@@ -10,6 +10,7 @@ theme: Maths Grade 11: Quadratic Equations - Completing the square
 type: lesson.maths
 subject: Maths
 grade: 11
+term: 1
 topic: Quadratic Equations
 subtopic: Completing the square
 tutor: Grandmaster — formal

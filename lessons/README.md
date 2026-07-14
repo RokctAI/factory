@@ -26,10 +26,22 @@ does not exist yet and is a separate future brief.
 ## Layout
 
 - `curriculum/caps_seed.json` — hand-written CAPS-aligned topic list (interim
-  source of truth until a real CAPS pacing source exists).
+  source of truth until a real CAPS pacing source exists). Every entry
+  carries a `term` (CAPS school term 1–4, verified against the DBE 2023/24
+  Annual Teaching Plans; `all` = skills integrated across terms, e.g.
+  Geography mapwork; `unknown` = no verifiable ATP placement — never guess).
 - `scripts/lesson_pipeline.py` — seeding, prompt construction (§4 Prompt
-  Template verbatim), plan capture, Level 3/4 checks.
-- `drafts/<card_id>/` — one directory per lesson: `script.md`,
+  Template verbatim), plan capture, Level 3/4 checks. Seeding refuses
+  structural duplicates: an existing pending/running/done card with the same
+  `(subject, grade, topic, subtopic)` tuple is skipped and flagged
+  (`check-duplicate` runs the same test standalone).
+- Tutor personas: both Grandmaster and Big John teach every FET grade — the
+  Level 1 prompt selects on teaching-style fit (real-world-anchored
+  subtopics → Big John; abstraction-heavy ones → Grandmaster) and records a
+  `Tutor choice:` line in the idea block. Seed rows may pin `tutor`
+  explicitly.
+- `<subject>/<grade>/<term>/<card_id>/` (e.g.
+  `maths/grade11/term1/..._31d165/`) — one directory per lesson: `script.md`,
   `manim_scene.py`, `subtopics.json`, `mcq.json`,
   `comprehension_check.json`, `mandy_nervous_script.md` (optional — but
   when produced it must be referenced by the card's

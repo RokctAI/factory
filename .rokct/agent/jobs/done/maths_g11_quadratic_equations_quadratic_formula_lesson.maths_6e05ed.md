@@ -10,6 +10,7 @@ theme: Maths Grade 11: Quadratic Equations - Quadratic formula
 type: lesson.maths
 subject: Maths
 grade: 11
+term: 1
 topic: Quadratic Equations
 subtopic: Quadratic formula
 tutor: Grandmaster — formal
@@ -25,17 +26,18 @@ concept: |
 concept_status: approved
 rules_status: passed
 lesson_name: Quadratic Equations - Quadratic formula
-lesson_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed
-script_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/script.md
-manim_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/manim_scene.py
-subtopics_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/subtopics.json
-mcq_data_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mcq.json
-comprehension_check_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/comprehension_check.json
-reel_brief_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/reel_clip.json
-mandy_transcript_path: lessons/drafts/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_qa_transcript.md
+lesson_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed
+script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/script.md
+manim_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/manim_scene.py
+subtopics_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/subtopics.json
+mcq_data_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mcq.json
+comprehension_check_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/comprehension_check.json
+reel_brief_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/reel_clip.json
+mandy_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_nervous_script.md
 status: evaluated
 created: 2026-07-13
-last_updated: 2026-07-13 23:12:58
+last_updated: 2026-07-14 02:41:25
 session_id: 
 session_started: 
 attempts: 4

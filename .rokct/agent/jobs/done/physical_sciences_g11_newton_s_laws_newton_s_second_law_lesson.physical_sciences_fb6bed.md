@@ -10,6 +10,7 @@ theme: Physical Sciences Grade 11: Newton's Laws - Newton's second law
 type: lesson.physical_sciences
 subject: Physical Sciences
 grade: 11
+term: 1
 topic: Newton's Laws
 subtopic: Newton's second law
 tutor: Grandmaster — formal
@@ -25,18 +26,18 @@ concept: |
 concept_status: approved
 rules_status: passed
 lesson_name: Newton's Second Law
-lesson_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed
-script_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/script.md
-manim_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/manim_scene.py
-subtopics_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/subtopics.json
-mcq_data_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mcq.json
-comprehension_check_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/comprehension_check.json
-reel_brief_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/reel_clip.json
-mandy_transcript_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_qa_transcript.md
-mandy_nervous_script_path: lessons/drafts/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_nervous_script.md
+lesson_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed
+script_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/script.md
+manim_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/manim_scene.py
+subtopics_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/subtopics.json
+mcq_data_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mcq.json
+comprehension_check_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/comprehension_check.json
+reel_brief_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/reel_clip.json
+mandy_transcript_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_nervous_script.md
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-14 00:14:42
+last_updated: 2026-07-14 02:41:00
 session_id: 
 session_started: 
 attempts: 3

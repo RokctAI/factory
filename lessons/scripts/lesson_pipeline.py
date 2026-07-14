@@ -39,7 +39,11 @@ PENDING_DIR = Path(".rokct/agent/jobs/pending")
 RUNNING_DIR = Path(".rokct/agent/jobs/running")
 DONE_DIR = Path(".rokct/agent/jobs/done")
 SEED_PATH = Path("lessons/curriculum/caps_seed.json")
-DRAFTS_DIR = Path("lessons/drafts")
+
+# CAPS school terms. "all" is for skills topics the ATP integrates across
+# every term (e.g. Geography mapwork); "unknown" is for topics that could
+# not be verified against a real CAPS/ATP source — never guess a term.
+VALID_TERMS = {"1", "2", "3", "4", "all", "unknown"}
 
 TUTOR_GRANDMASTER = "Grandmaster — formal"
 TUTOR_BIG_JOHN = "Big John — simplistic, lower grade logic"
@@ -126,6 +130,46 @@ def guardrail_for_grade(grade):
     return "age_13_17"
 
 
+def normalize_term(value):
+    v = str(value).strip().lower() if value not in (None, "") else "unknown"
+    return v if v in VALID_TERMS else "unknown"
+
+
+def content_dir(subject, grade, term, card_id):
+    """Grouped lesson content location: lessons/<subject>/<grade>/<term>/<id>."""
+    term = normalize_term(term)
+    term_dir = f"term{term}" if term.isdigit() else f"term_{term}"
+    return f"lessons/{slugify(subject)}/grade{int(grade)}/{term_dir}/{card_id}"
+
+
+def find_duplicate_card(subject, grade, topic, subtopic):
+    """Structural duplicate check: an existing card (pending/running/done)
+    with the same (subject, grade, topic, subtopic) tuple, regardless of how
+    its theme string is worded. Returns the matching card path or None."""
+    def norm(s):
+        return re.sub(r"\s+", " ", str(s)).strip().lower()
+
+    target = (norm(subject), str(grade).strip(), norm(topic), norm(subtopic))
+    for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
+        if not d.exists():
+            continue
+        for f in d.glob("*.md"):
+            if f.name.startswith("template"):
+                continue
+            card = f.read_text(encoding="utf-8")
+            if not get_field(card, "type").startswith("lesson."):
+                continue
+            existing = (
+                norm(get_field(card, "subject")),
+                get_field(card, "grade").strip(),
+                norm(get_field(card, "topic")),
+                norm(get_field(card, "subtopic")),
+            )
+            if existing == target:
+                return f
+    return None
+
+
 # --- Level 0: seed job cards from the CAPS curriculum list ---
 
 def cmd_seed(args):
@@ -154,9 +198,22 @@ def cmd_seed(args):
         h = entry_hash(entry)
         if h in existing:
             continue
+        # Structural duplicate check on the (subject, grade, topic, subtopic)
+        # tuple — the hash above only dedups identical seed rows; this catches
+        # reworded rows and any future non-seed topic source.
+        dup = find_duplicate_card(entry["subject"], entry["grade"], entry["topic"], entry["subtopic"])
+        if dup:
+            print(
+                f"DUPLICATE SKIPPED: ({entry['subject']}, grade {entry['grade']}, "
+                f"{entry['topic']}, {entry['subtopic']}) already has card {dup.name}"
+            )
+            continue
         slug = slugify(f"{entry['subject']}_g{entry['grade']}_{entry['topic']}_{entry['subtopic']}")[:60]
         card_id = f"{slug}_{h}"
         theme = f"{entry['subject']} Grade {entry['grade']}: {entry['topic']} - {entry['subtopic']}"
+        term = normalize_term(entry.get("term"))
+        if term == "unknown" and str(entry.get("term", "")).strip().lower() not in ("", "unknown"):
+            print(f"WARN: seed entry has invalid term {entry.get('term')!r}; recording 'unknown'")
         now = datetime.now()
         card = f"""<!-- CARD RULES
      This card is the source of truth for this job.
@@ -170,6 +227,7 @@ theme: {theme}
 type: {entry['type']}
 subject: {entry['subject']}
 grade: {entry['grade']}
+term: {term}
 topic: {entry['topic']}
 subtopic: {entry['subtopic']}
 tutor: {entry.get('tutor', '')}
@@ -218,20 +276,35 @@ max_iterations: 10
 def build_level1_prompt(card):
     subject = get_field(card, "subject")
     grade = get_field(card, "grade")
+    term = get_field(card, "term")
     topic = get_field(card, "topic")
     subtopic = get_field(card, "subtopic")
     tutor = get_field(card, "tutor")
     example = get_field(card, "example_problem")
     prior = get_field(card, "prior_knowledge")
 
-    tutor_line = (
-        f"The tutor persona is already fixed: {tutor}. Repeat it verbatim."
-        if tutor
-        else f"Choose the better-suited tutor persona for this audience: [{TUTOR_GRANDMASTER}] or [{TUTOR_BIG_JOHN}]."
-    )
+    if tutor:
+        tutor_line = f"The tutor persona is already fixed: {tutor}. Repeat it verbatim in the TUTOR line."
+    else:
+        # Both personas serve every FET grade — the difference is teaching
+        # style, not level. Naming the style trade-off (rather than "lower
+        # grade logic" alone) is what stops the model defaulting to
+        # Grandmaster for every Grade 11/12 card.
+        tutor_line = f"""Choose the tutor persona. Supacharge publishes lessons in BOTH voices across
+Grades 10-12 — neither persona is the default, and both teach every grade:
+- {TUTOR_GRANDMASTER}: fast reveal, sharp, formula first. Best when the
+  subtopic is abstract or procedural and rewards exam-style precision.
+- {TUTOR_BIG_JOHN}: slow reveal, messy, real world first. Best when the
+  subtopic has a natural everyday anchor (money, movement, weather, prices,
+  maps) or commonly confuses students on first contact — he builds intuition
+  with concrete pictures before any symbols.
+Judge THIS subtopic's teaching-style fit only. A Grade 11 or 12 topic with a
+strong real-world anchor is a Big John lesson; abstraction-heavy symbol
+manipulation is a Grandmaster lesson."""
     return f"""You are planning one Supacharge lesson (South African CAPS curriculum).
 Subject: {subject}
 Grade: {grade}
+Term: {term}
 Topic: {topic}
 Subtopic: {subtopic}
 {tutor_line}
@@ -239,7 +312,8 @@ Subtopic: {subtopic}
 {"Prior knowledge assumptions are already fixed: " + prior + ". Repeat them verbatim." if prior else "State the prior knowledge a student needs before this lesson."}
 
 Reply in exactly this format, nothing else:
-TUTOR: <one of: {TUTOR_GRANDMASTER} | {TUTOR_BIG_JOHN}>
+TUTOR: <exactly one of: {TUTOR_GRANDMASTER} | {TUTOR_BIG_JOHN}>
+TUTOR_REASON: <one line: why this persona's teaching style fits this subtopic>
 EXAMPLE_PROBLEM: <one problem on a single line>
 PRIOR_KNOWLEDGE: <one line>
 LESSON_ANGLE:
@@ -257,17 +331,19 @@ def build_level2_prompt(card, card_file):
     card_id = get_field(card, "id")
     subject = get_field(card, "subject")
     grade = get_field(card, "grade")
+    term = get_field(card, "term") or "unknown"
     topic = get_field(card, "topic")
     subtopic = get_field(card, "subtopic")
     tutor = get_field(card, "tutor") or TUTOR_GRANDMASTER
     example = get_field(card, "example_problem")
     prior = get_field(card, "prior_knowledge")
-    lesson_dir = f"lessons/drafts/{card_id}"
+    lesson_dir = content_dir(subject, grade, term, card_id)
 
     return f"""TASK: Generate the full content for one Supacharge lesson.
 
 Subject: [{subject}]
 Grade: [{grade}]
+Term: [{term}]
 Topic: [{topic}]
 Subtopic: [{subtopic}]
 Example problem: [{example}]
@@ -355,10 +431,13 @@ def cmd_plan(args):
         return m.group(1).strip() if m else ""
 
     tutor = take("TUTOR")
+    tutor_reason = take("TUTOR_REASON")
     example = take("EXAMPLE_PROBLEM")
     prior = take("PRIOR_KNOWLEDGE")
     angle_match = re.search(r"^LESSON_ANGLE:\s*$(.*)", content, re.MULTILINE | re.DOTALL)
     angle = angle_match.group(1).strip() if angle_match else ""
+    if tutor_reason:
+        angle = f"Tutor choice: {tutor_reason}\n{angle}"
 
     if not (tutor and example and prior and angle):
         print("Error: Groq plan output missing one of TUTOR / EXAMPLE_PROBLEM / PRIOR_KNOWLEDGE / LESSON_ANGLE.")
@@ -805,13 +884,28 @@ def main():
     p = sub.add_parser("evaluate", help="Level 4: final evaluation gate")
     p.add_argument("--file", required=True)
 
+    p = sub.add_parser("check-duplicate", help="Exit 1 if a card already exists for (subject, grade, topic, subtopic)")
+    p.add_argument("--subject", required=True)
+    p.add_argument("--grade", required=True)
+    p.add_argument("--topic", required=True)
+    p.add_argument("--subtopic", required=True)
+
     args = parser.parse_args()
+    def cmd_check_duplicate(a):
+        dup = find_duplicate_card(a.subject, a.grade, a.topic, a.subtopic)
+        if dup:
+            print(f"DUPLICATE: ({a.subject}, grade {a.grade}, {a.topic}, {a.subtopic}) already has card {dup}")
+            return 1
+        print("No existing card for this (subject, grade, topic, subtopic).")
+        return 0
+
     handlers = {
         "seed": cmd_seed,
         "prompt": cmd_prompt,
         "plan": cmd_plan,
         "check": cmd_check,
         "evaluate": cmd_evaluate,
+        "check-duplicate": cmd_check_duplicate,
     }
     if args.command not in handlers:
         parser.print_help()
