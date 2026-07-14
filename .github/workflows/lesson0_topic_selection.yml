@@ -35,7 +35,7 @@ jobs:
 
       - name: Check Queue and Seed Topics
         run: |
-          TYPES=("lesson.maths" "lesson.physical_sciences" "lesson.economics" "lesson.geography")
+          TYPES=("lesson.maths" "lesson.physical_sciences" "lesson.economics" "lesson.geography" "lesson.maths_literacy" "lesson.accounting")
 
           for TYPE in "${TYPES[@]}"; do
             PENDING_COUNT=$(ls .rokct/agent/jobs/pending/*_${TYPE}_*.md 2>/dev/null | grep -v "template" | wc -l)
