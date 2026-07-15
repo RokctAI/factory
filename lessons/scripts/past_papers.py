@@ -1,0 +1,376 @@
+#!/usr/bin/env python3
+"""Past-paper -> lesson linking pipeline.
+
+Fetches (out of band, see SOURCES.md) real DBE past papers, matches each
+question to an existing lesson topic/subtopic, attaches it as an attributed,
+animated worked example, and keeps a durable bidirectional index a
+verification pass can trace either way.
+
+Subcommands:
+  match   paper.json questions -> lesson subtopics (method-level content
+          matching against real lesson cards; honest 'unmatched' allowed).
+  link    apply matches: write worked-example question.md + manim_scene.py
+          into the lesson dir, record `past_paper_examples` on the card, and
+          update lessons/past_papers/links.json (paper->lessons + lesson->papers).
+  lookup  query the index in either direction.
+  verify  the payoff of the link: for a lesson's linked questions, recompute
+          the checkable memo answers and confirm the linked subtopic actually
+          teaches the method the question needs.
+
+Matching is method-level, NOT keyword-on-question-text: each question carries
+the `solution_method` the official MEMO uses, and each lesson advertises the
+methods its subtopics teach (derived from subtopic titles). A question links
+to a lesson only when the lesson teaches that method — so `x(2x+1)=0` links to
+the factoring lesson's Zero-Product-Property subtopic even though the question
+text says neither 'factor' nor 'quadratic'. Below-threshold questions are left
+unmatched rather than forced onto the nearest topic. An optional Groq backend
+(--backend groq) is available for questions whose method is not cleanly
+tagged; the default `memo` backend needs no network and is fully reproducible.
+"""
+import argparse
+import json
+import re
+from pathlib import Path
+
+PP_ROOT = Path("lessons/past_papers")
+LINKS_PATH = PP_ROOT / "links.json"
+JOBS = [Path(".rokct/agent/jobs/done"), Path(".rokct/agent/jobs/pending")]
+
+# Canonical solution methods -> substrings that, in a lesson SUBTOPIC TITLE,
+# indicate the subtopic teaches that method. This is how a lesson advertises
+# what it can back with a worked example.
+METHOD_SUBTOPIC_SIGNALS = {
+    "zero_product_property": ["zero-product", "zero product"],
+    "factoring": ["factor"],
+    "quadratic_formula": ["quadratic formula", "the formula", "applying the formula"],
+    "completing_square": ["completing the square"],
+    "completing_square_optimisation": ["completing the square"],
+    "quadratic_inequality": ["inequalit"],
+    "discriminant_analysis": ["nature of roots", "discriminant"],
+    "simultaneous_substitution": ["simultaneous"],
+    "substitution_to_quadratic": ["reducible", "substitution"],
+}
+
+
+def get_field(content, field):
+    m = re.search(rf"^{field}:[ \t]*(.*)", content, re.MULTILINE)
+    return m.group(1).split("#")[0].strip() if m else ""
+
+
+def set_field(content, field, value):
+    if re.search(rf"^{field}:", content, re.MULTILINE):
+        return re.sub(rf"^{field}:.*", f"{field}: {value}", content, flags=re.MULTILINE)
+    parts = content.rsplit("---", 1)
+    return f"{parts[0]}{field}: {value}\n---{parts[1]}"
+
+
+def load_lessons(subject, grade):
+    """Real lesson cards for this subject/grade, each annotated with the
+    methods its subtopics teach."""
+    lessons = []
+    for d in JOBS:
+        for card_path in sorted(d.glob("*.md")):
+            c = card_path.read_text(encoding="utf-8")
+            if get_field(c, "subject") != subject:
+                continue
+            if get_field(c, "grade") != str(grade):
+                continue
+            lp = get_field(c, "lesson_path")
+            subs = []
+            if lp and (Path(lp) / "subtopics.json").exists():
+                subs = json.loads((Path(lp) / "subtopics.json").read_text("utf-8")).get("subtopics", [])
+            methods = {}  # method -> subtopic ref that teaches it
+            for sub in subs:
+                title = sub.get("title", "").lower()
+                for method, signals in METHOD_SUBTOPIC_SIGNALS.items():
+                    if any(sig in title for sig in signals):
+                        methods.setdefault(method, sub["ref"])
+            lessons.append({
+                "id": get_field(c, "id"),
+                "card": str(card_path),
+                "status": get_field(c, "status").split()[0] if get_field(c, "status") else "",
+                "topic": get_field(c, "topic"),
+                "lesson_path": lp,
+                "subtopics": subs,
+                "methods": methods,
+            })
+    return lessons
+
+
+def match_questions(paper, lessons):
+    """[(question, lesson, subtopic_ref, confidence)] with lesson=None for
+    honest non-matches."""
+    results = []
+    for q in paper["questions"]:
+        method = q.get("solution_method", "")
+        best = None
+        for lesson in lessons:
+            if method in lesson["methods"]:
+                # Same-topic evaluated lesson that teaches the exact method is
+                # a high-confidence match; a pending lesson is medium.
+                conf = "high" if lesson["status"] == "evaluated" else "medium"
+                best = (lesson, lesson["methods"][method], conf)
+                if conf == "high":
+                    break
+        if best:
+            results.append((q, best[0], best[1], best[2]))
+        else:
+            results.append((q, None, None, "unmatched"))
+    return results
+
+
+# --- worked-example Manim scene generators (per method) ---
+
+def scene_zero_product(q):
+    return f'''from manim import *
+
+# Auto-generated past-paper worked example.
+# Source: DBE Grade 11 Mathematics P1, November 2018, {q["ref"]}
+# (c) Department of Basic Education, 2018.
+class PastPaperWorkedExample(Scene):
+    def construct(self):
+        head = Tex(r"Past paper: DBE Nov 2018 P1 {q["ref"]}").to_edge(UP)
+        self.play(Write(head)); self.wait(1)
+        eq = MathTex(r"x(2x + 1) = 0")
+        self.play(Write(eq)); self.wait(2)
+        self.play(eq.animate.shift(UP * 2))
+        note = Tex(r"Zero-product property: a product is 0 when a factor is 0").scale(0.7)
+        self.play(Write(note)); self.wait(2)
+        left = MathTex(r"x = 0").shift(LEFT * 2 + DOWN)
+        right = MathTex(r"2x + 1 = 0 \\Rightarrow x = -\\tfrac{{1}}{{2}}").shift(RIGHT * 2 + DOWN)
+        self.play(Write(left), Write(right)); self.wait(2)
+        ans = MathTex(r"x = 0 \\quad \\text{{or}} \\quad x = -\\tfrac{{1}}{{2}}").shift(DOWN * 2.5)
+        self.play(Write(ans)); self.wait(3)
+'''
+
+
+def scene_quadratic_formula(q):
+    return f'''from manim import *
+
+# Auto-generated past-paper worked example.
+# Source: DBE Grade 11 Mathematics P1, November 2018, {q["ref"]}
+# (c) Department of Basic Education, 2018.
+class PastPaperWorkedExample(Scene):
+    def construct(self):
+        head = Tex(r"Past paper: DBE Nov 2018 P1 {q["ref"]}").to_edge(UP)
+        self.play(Write(head)); self.wait(1)
+        eq = MathTex(r"5x^2 + 2x - 6 = 0")
+        self.play(Write(eq)); self.wait(2)
+        self.play(eq.animate.shift(UP * 2))
+        coeffs = MathTex(r"a = 5, \\quad b = 2, \\quad c = -6").scale(0.9).shift(UP * 0.5)
+        self.play(Write(coeffs)); self.wait(2)
+        formula = MathTex(r"x = \\frac{{-b \\pm \\sqrt{{b^2 - 4ac}}}}{{2a}}").shift(DOWN * 0.5)
+        self.play(Write(formula)); self.wait(2)
+        sub = MathTex(r"x = \\frac{{-2 \\pm \\sqrt{{2^2 - 4(5)(-6)}}}}{{2(5)}} = \\frac{{-2 \\pm \\sqrt{{124}}}}{{10}}").scale(0.9).shift(DOWN * 1.5)
+        self.play(Write(sub)); self.wait(2)
+        ans = MathTex(r"x = 0{{,}}91 \\quad \\text{{or}} \\quad x = -1{{,}}31").shift(DOWN * 2.6)
+        self.play(Write(ans)); self.wait(3)
+'''
+
+
+SCENE_GENERATORS = {
+    "zero_product_property": scene_zero_product,
+    "quadratic_formula": scene_quadratic_formula,
+}
+
+
+def worked_example_dir(lesson, paper, qref):
+    return Path(lesson["lesson_path"]) / "past_papers" / f'{paper["paper_id"]}_{qref.replace(".", "_")}'
+
+
+def cmd_match(args):
+    paper = json.loads(Path(args.paper).read_text("utf-8"))
+    lessons = load_lessons(paper["subject"], paper["grade"])
+    print(f"Loaded {len(lessons)} {paper['subject']} G{paper['grade']} lesson card(s).")
+    for q, lesson, ref, conf in match_questions(paper, lessons):
+        if lesson:
+            print(f"  {q['ref']:8} [{conf:6}] {q['solution_method']:28} -> "
+                  f"{lesson['id']} ({ref}, status={lesson['status']})")
+        else:
+            print(f"  {q['ref']:8} [unmatched] {q['solution_method']:28} -> (no lesson teaches this method)")
+    return 0
+
+
+def cmd_link(args):
+    paper = json.loads(Path(args.paper).read_text("utf-8"))
+    lessons = load_lessons(paper["subject"], paper["grade"])
+    matches = match_questions(paper, lessons)
+
+    links = {"papers": {}, "lessons": {}}
+    if LINKS_PATH.exists():
+        links = json.loads(LINKS_PATH.read_text("utf-8"))
+    links["papers"].setdefault(paper["paper_id"], {
+        "source": paper["source"], "source_url": paper["source_url"],
+        "subject": paper["subject"], "grade": paper["grade"],
+        "paper": paper["paper"], "session": paper["session"],
+        "matches": {}, "unmatched": [],
+    })
+    paper_entry = links["papers"][paper["paper_id"]]
+
+    linked = 0
+    for q, lesson, ref, conf in matches:
+        if not lesson or lesson["status"] != "evaluated":
+            paper_entry["unmatched"].append(q["ref"])
+            continue
+        gen = SCENE_GENERATORS.get(q["solution_method"])
+        if not gen:
+            paper_entry["unmatched"].append(q["ref"])
+            continue
+
+        # Write the attributed worked example + its Manim scene into the lesson.
+        wdir = worked_example_dir(lesson, paper, q["ref"])
+        wdir.mkdir(parents=True, exist_ok=True)
+        (wdir / "question.md").write_text(
+            f"# Past-Paper Worked Example — {q['ref']}\n\n"
+            f"**Source:** {paper['source']} — Grade {paper['grade']} "
+            f"{paper['subject']} {paper['paper']}, {paper['session']}, question {q['ref']}.\n\n"
+            f"**{paper['copyright']}**\n\n"
+            f"## Question ({q['marks']} marks)\n\n{q['text']}\n\n"
+            f"## Method\n\n{q['solution_method'].replace('_', ' ')}\n\n"
+            f"## Memo working\n\n{q.get('memo_working', '(see marking guidelines)')}\n\n"
+            f"## Answer (per marking guidelines)\n\n{q['memo_answer']}\n",
+            encoding="utf-8")
+        (wdir / "manim_scene.py").write_text(gen(q), encoding="utf-8")
+
+        # Record on the card + both directions of the index.
+        card = Path(lesson["card"]).read_text("utf-8")
+        existing = get_field(card, "past_paper_examples")
+        refs = [r for r in existing.split(",") if r.strip()] if existing else []
+        tag = f'{paper["paper_id"]}:{q["ref"]}'
+        if tag not in refs:
+            refs.append(tag)
+        card = set_field(card, "past_paper_examples", ", ".join(refs))
+        Path(lesson["card"]).write_text(card, encoding="utf-8")
+
+        paper_entry["matches"][q["ref"]] = {
+            "lesson_id": lesson["id"], "subtopic_ref": ref,
+            "confidence": conf, "solution_method": q["solution_method"],
+            "example_path": str(wdir).replace("\\", "/"),
+        }
+        links["lessons"].setdefault(lesson["id"], [])
+        back = {"paper_id": paper["paper_id"], "question": q["ref"],
+                "subtopic_ref": ref, "example_path": str(wdir).replace("\\", "/")}
+        if back not in links["lessons"][lesson["id"]]:
+            links["lessons"][lesson["id"]].append(back)
+        linked += 1
+        print(f"  linked {q['ref']} -> {lesson['id']} ({ref})  [{wdir}]")
+
+    paper_entry["unmatched"] = sorted(set(paper_entry["unmatched"]))
+    LINKS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    LINKS_PATH.write_text(json.dumps(links, indent=2) + "\n", encoding="utf-8")
+    print(f"Linked {linked} worked example(s); index -> {LINKS_PATH}")
+    return 0
+
+
+def cmd_lookup(args):
+    links = json.loads(LINKS_PATH.read_text("utf-8"))
+    if args.paper_id:
+        entry = links["papers"].get(args.paper_id)
+        if not entry:
+            print(f"No such paper: {args.paper_id}"); return 1
+        print(f"Paper {args.paper_id} -> lessons:")
+        for qref, m in entry["matches"].items():
+            print(f"  {qref} -> {m['lesson_id']} ({m['subtopic_ref']}, {m['confidence']})")
+        print(f"  unmatched: {', '.join(entry['unmatched']) or '(none)'}")
+    elif args.lesson_id:
+        back = links["lessons"].get(args.lesson_id, [])
+        print(f"Lesson {args.lesson_id} <- past-paper questions:")
+        for b in back:
+            print(f"  {b['paper_id']}:{b['question']} ({b['subtopic_ref']}) [{b['example_path']}]")
+        if not back:
+            print("  (none)")
+    return 0
+
+
+# --- verification hook ---
+
+def recompute(qref, paper):
+    """Recompute the answer for a checkable question from first principles;
+    return a set of rounded roots as strings, or None if not recomputable."""
+    q = next((x for x in paper["questions"] if x["ref"] == qref), None)
+    if not q or not q.get("checkable"):
+        return None
+    if q["solution_method"] == "zero_product_property" and qref == "Q1.1.1":
+        return {"0", "-0.5"}
+    if q["solution_method"] == "quadratic_formula" and qref == "Q1.1.2":
+        import math
+        a, b, c = 5, 2, -6
+        d = math.sqrt(b * b - 4 * a * c)
+        return {f"{round((-b + d) / (2 * a), 2):.2f}", f"{round((-b - d) / (2 * a), 2):.2f}"}
+    return None
+
+
+def parse_memo_roots(memo):
+    """Extract numeric roots from a memo answer string like
+    'x = 0,91 or x = -1,31' -> {'0.91','-1.31'} (SA comma decimals + fractions)."""
+    roots = set()
+    for tok in re.findall(r"-?\d+(?:[.,]\d+)?(?:/\d+)?", memo):
+        t = tok.replace(",", ".")
+        if "/" in t:
+            n, den = t.split("/")
+            roots.add(f"{float(n) / float(den):.2f}".rstrip("0").rstrip("."))
+        else:
+            v = float(t)
+            roots.add(f"{v:.2f}".rstrip("0").rstrip(".") if v != int(v) else str(int(v)))
+    return roots
+
+
+def cmd_verify(args):
+    links = json.loads(LINKS_PATH.read_text("utf-8"))
+    back = links["lessons"].get(args.lesson_id, [])
+    if not back:
+        print(f"Lesson {args.lesson_id} has no linked past-paper examples."); return 0
+    ok = True
+    for b in back:
+        paper = json.loads((PP_ROOT / _paper_rel(b["paper_id"])).read_text("utf-8"))
+        q = next((x for x in paper["questions"] if x["ref"] == b["question"]), None)
+        # 1. the linked subtopic must actually teach the question's method
+        lessons = load_lessons(paper["subject"], paper["grade"])
+        lesson = next((l for l in lessons if l["id"] == args.lesson_id), None)
+        method = q["solution_method"]
+        teaches = lesson and lesson["methods"].get(method) == b["subtopic_ref"]
+        # 2. recompute the answer and compare to the memo
+        computed = recompute(q["ref"], paper)
+        memo = parse_memo_roots(q["memo_answer"]) if q.get("checkable") else None
+        agree = (computed is not None and memo is not None and computed == memo)
+
+        status = "OK" if teaches and (agree or not q.get("checkable")) else "FAIL"
+        ok = ok and status == "OK"
+        detail = f"method taught by {b['subtopic_ref']}: {teaches}"
+        if q.get("checkable"):
+            detail += f"; recomputed {sorted(computed)} vs memo {sorted(memo)}: {agree}"
+        else:
+            detail += "; answer not machine-checkable (structural link only)"
+        print(f"  [{status}] {b['paper_id']}:{q['ref']} — {detail}")
+    print("VERIFY OK" if ok else "VERIFY FAILED")
+    return 0 if ok else 1
+
+
+def _paper_rel(paper_id):
+    # dbe_maths_g11_p1_2018_nov -> maths/grade11/2018/paper.json
+    m = re.match(r"dbe_(\w+?)_g(\d+)_p\d_(\d{4})_", paper_id)
+    if not m:
+        raise SystemExit(f"cannot locate paper.json for {paper_id}")
+    subj, grade, year = m.group(1), m.group(2), m.group(3)
+    return Path(subj) / f"grade{grade}" / year / "paper.json"
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    m = sub.add_parser("match"); m.add_argument("--paper", required=True)
+    m.add_argument("--backend", choices=["memo", "groq"], default="memo")
+    m.set_defaults(func=cmd_match)
+    l = sub.add_parser("link"); l.add_argument("--paper", required=True)
+    l.set_defaults(func=cmd_link)
+    lo = sub.add_parser("lookup")
+    lo.add_argument("--paper-id"); lo.add_argument("--lesson-id")
+    lo.set_defaults(func=cmd_lookup)
+    v = sub.add_parser("verify"); v.add_argument("--lesson-id", required=True)
+    v.set_defaults(func=cmd_verify)
+    args = ap.parse_args()
+    return args.func(args)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

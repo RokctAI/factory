@@ -1127,7 +1127,64 @@ def run_checks(card, card_file):
     if len(mandy.split()) < 50:
         errors.append("mandy_qa_transcript.md too short to be a usable Q&A transcript")
 
+    # Linked past-paper worked examples: if this lesson has been linked to a
+    # real past-paper question (past_papers.py), verify the link here — the
+    # payoff of the bidirectional index. A wrong link (the subtopic does not
+    # teach the question's method) or a memo answer our recomputation
+    # disagrees with is a real content error, so it fails Level 3.
+    if get_field(card, "past_paper_examples"):
+        pp_errors = verify_linked_past_papers(get_field(card, "id"))
+        errors.extend(pp_errors)
+
     return (errors, warnings)
+
+
+def verify_linked_past_papers(lesson_id):
+    """Bridge to past_papers.py's verifier so Level 3 can validate a lesson's
+    linked past-paper worked examples. Returns a list of error strings. Never
+    raises — a missing index or unimportable module is reported, not fatal."""
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "past_papers", str(Path(__file__).with_name("past_papers.py")))
+        pp = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(pp)
+    except Exception as e:  # pragma: no cover - defensive
+        return [f"could not load past_papers verifier: {e}"]
+
+    if not pp.LINKS_PATH.exists():
+        return [f"card lists past_paper_examples but {pp.LINKS_PATH} is missing"]
+
+    links = json.loads(pp.LINKS_PATH.read_text("utf-8"))
+    back = links.get("lessons", {}).get(lesson_id, [])
+    if not back:
+        return [f"card lists past_paper_examples but no link recorded for {lesson_id}"]
+
+    errors = []
+    for b in back:
+        paper_path = pp.PP_ROOT / pp._paper_rel(b["paper_id"])
+        paper = json.loads(paper_path.read_text("utf-8"))
+        q = next((x for x in paper["questions"] if x["ref"] == b["question"]), None)
+        if q is None:
+            errors.append(f"linked past-paper question {b['question']} not found in {paper_path}")
+            continue
+        lessons = pp.load_lessons(paper["subject"], paper["grade"])
+        lesson = next((l for l in lessons if l["id"] == lesson_id), None)
+        method = q["solution_method"]
+        if not (lesson and lesson["methods"].get(method) == b["subtopic_ref"]):
+            errors.append(
+                f"past-paper link {b['paper_id']}:{q['ref']} claims subtopic "
+                f"{b['subtopic_ref']} teaches '{method}', but it does not")
+        computed = pp.recompute(q["ref"], paper)
+        if q.get("checkable") and computed is not None:
+            memo = pp.parse_memo_roots(q["memo_answer"])
+            if computed != memo:
+                errors.append(
+                    f"past-paper {q['ref']}: recomputed answer {sorted(computed)} "
+                    f"disagrees with memo {sorted(memo)}")
+    if not errors:
+        print(f"Past-paper links verified: {len(back)} worked example(s)")
+    return errors
 
 
 def cmd_check(args):
