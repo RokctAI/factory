@@ -1,0 +1,175 @@
+name: Lesson 6 - Production (Manim JSON + Audio + Manifest)
+
+# Turns Level-4-approved (`status: evaluated`) lesson cards into the ReplaySDK
+# asset triple the app downloads — manifest.json, audio.mp3, animations.json —
+# and publishes them as a GitHub Release the backend can serve.
+#
+# WHY A SCHEDULED CI JOB, NOT A PERSISTENT VPS
+# Production is periodic and human-gated (a card only reaches `evaluated`
+# after a human approves it at Level 4), so a always-on render server sits
+# idle almost all the time. A weekly batch job — the same mechanism as every
+# other level here — does the bounded work and stops. See
+# docs/level6-manim-ci-production-brief.md and the feasibility note in
+# lessons/scripts/README-level6.md.
+#
+# RUNNER FEASIBILITY (measured, not assumed)
+# - Manim JSON export: CPU-only and light. The exporter shims Tex/MathTex to
+#   Pango text, so NO TeX distribution is needed — the single heaviest Manim
+#   dependency is removed. Runs in seconds on ubuntu-latest.
+# - Audio: `sapi` backend (espeak/pyttsx3) is CPU-only and runs here — used to
+#   prove the whole loop end to end WITHOUT a GPU. `vibevoice` backend is a
+#   ~3B-param BF16 neural TTS that REQUIRES a CUDA GPU (Colab supports only
+#   the 1.5B model; there is no practical CPU path). Standard GitHub runners
+#   have no GPU, so production audio runs the `vibevoice` backend on a GPU
+#   runner (`linux_4_core_gpu`, ~$0.052/min, NVIDIA T4 — fits the 1.5B model's
+#   ~6 GB) or an on-demand spot GPU, billed only for the batch's duration.
+#   That is still far cheaper than a persistent GPU VPS billed 24/7.
+
+on:
+  schedule:
+    - cron: '0 2 * * 0'   # Sundays 02:00 UTC — weekly batch
+  workflow_dispatch:
+    inputs:
+      audio_backend:
+        description: 'Audio backend: sapi (CPU, no GPU) or vibevoice (needs GPU runner)'
+        type: choice
+        options: [sapi, vibevoice]
+        default: sapi
+      max_cards:
+        description: 'Max evaluated cards to produce this run'
+        default: '5'
+
+# The audio backend defaults to the CPU-only `sapi` path so this workflow runs
+# green on a standard runner. For production audio, dispatch with
+# audio_backend=vibevoice AND change `runs-on` below to your GPU runner label.
+env:
+  AUDIO_BACKEND: ${{ github.event.inputs.audio_backend || 'sapi' }}
+  MAX_CARDS: ${{ github.event.inputs.max_cards || '5' }}
+
+jobs:
+  produce_lessons:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest   # production audio: swap for a GPU runner label
+    permissions:
+      contents: write        # create GitHub Releases + push card updates
+    outputs:
+      produced_ids: ${{ steps.produce.outputs.produced_ids }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Initiate Protocol
+        run: |
+          if [ -f ".rokct/initiate.py" ]; then
+            python .rokct/initiate.py
+          else
+            curl -sSL https://raw.githubusercontent.com/RokctAI/The-Rokct-Protocol/main/profiles/web/initiate.py -o initiate_temp.py
+            python initiate_temp.py
+            rm initiate_temp.py
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install system + Python dependencies
+        run: |
+          # Manim needs cairo/pango headers; NO texlive (exporter shims Tex).
+          # ffmpeg: wav->mp3.  espeak: sapi/pyttsx3 CPU voice fallback.
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config ffmpeg espeak
+          pip install manim pyttsx3 requests python-dotenv
+
+      - name: Produce evaluated lessons
+        id: produce
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${{ github.repository }}"
+          PRODUCED=""
+          COUNT=0
+
+          for FILE in .rokct/agent/jobs/done/*.md; do
+            [ -f "$FILE" ] || continue
+            TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
+            case "$TYPE" in lesson.*) ;; *) continue ;; esac
+            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
+            [ "$STATUS" = "evaluated" ] || continue
+
+            if [ "$COUNT" -ge "$MAX_CARDS" ]; then
+              echo "Reached MAX_CARDS=$MAX_CARDS; stopping."
+              break
+            fi
+
+            ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+            THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2- | xargs)
+
+            # Claim the job lock so a concurrent run cannot double-produce.
+            if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "level6" --session "L6-$GITHUB_RUN_ID"; then
+              echo "Card $FILE locked; skipping."
+              continue
+            fi
+
+            echo "🎬 Producing $ID (audio backend: $AUDIO_BACKEND)..."
+            python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status producing --agent level6
+
+            OUT=".rokct/tmp/level6/$ID"
+            rm -rf "$OUT"; mkdir -p "$OUT"
+
+            if ! python lessons/scripts/lesson_manifest.py --card "$FILE" --out-dir "$OUT" --audio-backend "$AUDIO_BACKEND"; then
+              echo "❌ Assembly failed for $ID"
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status failed --agent level6 || true
+              python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+              continue
+            fi
+
+            # Validate the manifest against the real ReplaySDK ManifestParser
+            # if the replay package is present in the composed workspace; a
+            # malformed manifest must never be published.
+            if [ -f "agent/replay/dart/tool/validate_manifest.dart" ]; then
+              (cd agent/replay/dart && dart run tool/validate_manifest.dart "$GITHUB_WORKSPACE/$OUT/manifest.json") || {
+                echo "❌ Manifest failed ManifestParser validation for $ID"
+                python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status failed --agent level6 || true
+                python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+                continue
+              }
+            fi
+
+            # Publish assets as a per-lesson GitHub Release (free, CDN-fronted,
+            # durable, direct download URLs — no new infra). Cloudflare R2 is
+            # the documented scale-up path once egress volume warrants it.
+            TAG="lesson-$ID"
+            gh release delete "$TAG" --repo "$REPO" --yes --cleanup-tag 2>/dev/null || true
+            gh release create "$TAG" --repo "$REPO" \
+              --title "Lesson assets: $ID" \
+              --notes "Level 6 produced assets (manifest/audio/animations) for $ID." \
+              "$OUT/manifest.json" "$OUT/audio.mp3" "$OUT/animations.json"
+
+            BASE="https://github.com/$REPO/releases/download/$TAG"
+            python lessons/scripts/record_production.py \
+              --card "$FILE" --out-dir "$OUT" --base-url "$BASE"
+
+            python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status produced --agent level6
+            python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+
+            PRODUCED="$PRODUCED $ID"
+            COUNT=$((COUNT + 1))
+          done
+
+          echo "produced_ids=$PRODUCED" >> "$GITHUB_OUTPUT"
+
+          if [ -n "$PRODUCED" ]; then
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add .rokct/agent/jobs/done/ .rokct/agent/log/transitions.log
+            git commit -m "🤖 [CI] Lesson 6: produced assets for$PRODUCED [skip ci]"
+            for i in 1 2 3; do
+              git push origin main && break
+              git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+              sleep $((RANDOM % 3 + 1))
+            done
+          else
+            echo "ℹ️ No evaluated lesson cards to produce."
+          fi
