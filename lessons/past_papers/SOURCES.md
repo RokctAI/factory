@@ -12,6 +12,16 @@ terms were checked before fetching anything. Checked 2026-07-15.
 
 ## What was fetched
 
+- `geography/grade12/2018/paper2.pdf` — DBE, NSC Grade 12 Geography P2
+  (mapwork, Pietermaritzburg 1:50 000 extract), November 2018, English
+  (`fileticket=SyVEO7Woybo`, via the 2018NSCNovemberpastpapers.aspx page).
+  15 pp, real text layer.
+- `geography/grade12/2018/memo2.pdf` — the matching Marking Guidelines
+  (`fileticket=uMTatGRjfvI`). 15 pp, real text layer. Both extracted with
+  pdfplumber and cross-checked page-by-page; map-read inputs (trig height,
+  measured distance) come from the memo's accepted values since the
+  topographic map sheet itself is not part of the PDF.
+
 - `maths/grade11/2018/paper1.pdf` — DBE, Grade 11 Mathematics P1, November 2018,
   English (`fileticket=1KiiLnULnVY`). 16 pp, scanned (image-only, no text layer).
 - `maths/grade11/2018/memo1.pdf` — the matching Marking Guidelines

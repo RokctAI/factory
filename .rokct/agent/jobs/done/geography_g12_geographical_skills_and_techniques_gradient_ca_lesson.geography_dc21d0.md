@@ -47,4 +47,5 @@ attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10
+past_paper_examples: dbe_geography_g12_p2_2018_nov:Q2.2.2
 ---

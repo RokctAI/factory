@@ -59,6 +59,10 @@ METHOD_SUBTOPIC_SIGNALS = {
     "friction_equilibrium": ["friction"],
     "incline_dynamics": ["inclined plane", "incline"],
     "universal_gravitation": ["universal gravitation"],
+    # Geography (mapwork skills)
+    "gradient_calculation": ["gradient"],
+    "map_scale_distance": ["map scale", "scale and distance"],
+    "cross_section_exaggeration": ["cross-section", "vertical exaggeration"],
 }
 
 
@@ -222,11 +226,41 @@ class PastPaperWorkedExample(Scene):
 '''
 
 
+def scene_gradient(q):
+    """Average-gradient worked example, built from the question's map_inputs
+    (memo-accepted map readings) so the animation shows the real numbers."""
+    mi = q["map_inputs"]
+    vi = mi["trig_station_height_m"] - mi["contour_height_m"]
+    he_m = mi["map_distance_cm"] * mi["map_scale_denominator"] / 100
+    ratio = he_m / vi
+    return f'''from manim import *
+
+# Auto-generated past-paper worked example.
+# Source: DBE NSC Grade 12 Geography P2, November 2018, {q["ref"]}
+# (c) Department of Basic Education, 2018.
+class PastPaperWorkedExample(Scene):
+    def construct(self):
+        head = Tex(r"Past paper: DBE Nov 2018 Geography P2 {q["ref"]}").to_edge(UP)
+        self.play(Write(head)); self.wait(1)
+        formula = MathTex(r"\\text{{Average gradient}} = \\frac{{\\text{{vertical interval (VI)}}}}{{\\text{{horizontal equivalent (HE)}}}}").scale(0.8).shift(UP * 1.8)
+        self.play(Write(formula)); self.wait(2)
+        vi = MathTex(r"VI = {mi["trig_station_height_m"]:g}\\,\\text{{m}} - {mi["contour_height_m"]:g}\\,\\text{{m}} = {vi:g}\\,\\text{{m}}").scale(0.85).shift(UP * 0.6)
+        self.play(Write(vi)); self.wait(2)
+        he = MathTex(r"HE = {mi["map_distance_cm"]:g}\\,\\text{{cm}} \\times {mi["map_scale_denominator"]} = {he_m:g}\\,\\text{{m}}").scale(0.85).shift(DOWN * 0.4)
+        self.play(Write(he)); self.wait(2)
+        grad = MathTex(r"\\text{{Gradient}} = \\frac{{{vi:g}}}{{{he_m:g}}}").scale(0.85).shift(DOWN * 1.4)
+        self.play(Write(grad)); self.wait(2)
+        ans = MathTex(r"= 1 : {ratio:.1f}").scale(1.0).shift(DOWN * 2.4)
+        self.play(Write(ans)); self.wait(3)
+'''
+
+
 SCENE_GENERATORS = {
     "zero_product_property": scene_zero_product,
     "quadratic_formula": scene_quadratic_formula,
     "state_newtons_second_law": scene_state_second_law,
     "newtons_second_law_application": scene_second_law_graph,
+    "gradient_calculation": scene_gradient,
 }
 
 
@@ -361,6 +395,17 @@ def recompute(qref, paper):
         gradient = (2.5 - 0) / (1.25 - 0)
         f_net = 1 / gradient
         return {f"{f_net:g}"}
+    if pid == "dbe_geography_g12_p2_2018_nov" and qref == "Q2.2.2":
+        # Average gradient = VI/HE as 1:x, from the memo-accepted map
+        # readings recorded in the question's map_inputs.
+        mi = q["map_inputs"]
+        vi = mi["trig_station_height_m"] - mi["contour_height_m"]
+        he_m = mi["map_distance_cm"] * mi["map_scale_denominator"] / 100
+        ratio = round(he_m / vi, 1)
+        lo, hi = mi["accepted_final_range"]
+        if not lo <= ratio <= hi:
+            return {"OUT_OF_ACCEPTED_RANGE"}
+        return {"1", f"{ratio:g}"}
     return None
 
 
