@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-16 09:24 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-16 11:36 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (19)
 
@@ -70,7 +70,7 @@ Seed rows total: 215; opened: 25; remaining: 190.
 ## Evaluated (Level 4 complete, awaiting Level 6): 5
 
 - `economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f` — Economics G11 term 2
-- `geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0` — Geography G12 term all
+- `geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0` — Geography G12 term skills
 - `maths_g11_quadratic_equations_factoring_method_31d165` — Maths G11 term 1
 - `maths_g11_quadratic_equations_quadratic_formula_6e05ed` — Maths G11 term 1
 - `physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed` — Physical Sciences G11 term 1
