@@ -12,6 +12,14 @@ terms were checked before fetching anything. Checked 2026-07-15.
 
 ## What was fetched
 
+- `maths/grade11/2017/paper1.pdf` — DBE, Grade 11 Mathematics P1, November
+  2017, English (`fileticket=b5H9lDVw-o4`, Grade11Exams.aspx "Mathematics:
+  2017" module). 7 pp, scanned (no text layer) — question wording verified by
+  reading the rendered pages.
+- `maths/grade11/2017/memo1.pdf` — Memo 1 (Afrikaans and English)
+  (`fileticket=DDENSGJw7eo`). 16 pp, real text layer (pdfplumber) —
+  equations and answers cross-checked against the rendered paper.
+
 - `geography/grade12/2018/paper2.pdf` — DBE, NSC Grade 12 Geography P2
   (mapwork, Pietermaritzburg 1:50 000 extract), November 2018, English
   (`fileticket=SyVEO7Woybo`, via the 2018NSCNovemberpastpapers.aspx page).

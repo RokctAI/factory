@@ -1,0 +1,113 @@
+{
+  "_comment": [
+    "DBE Grade 11 Mathematics P1, November 2017. The question paper is a",
+    "scanned PDF (no text layer): question wording was verified by reading",
+    "the rendered pages; equations and memo answers come from the memo's",
+    "real text layer (pdfplumber), cross-checked against the rendered paper.",
+    "Question 1 (equations) transcribed in full; Question 2 onward recorded",
+    "at heading level. `recompute` is a machine-checkable spec the verifier",
+    "recomputes from first principles; `scene_data` feeds the parameterized",
+    "Manim worked-example generators."
+  ],
+  "paper_id": "dbe_maths_g11_p1_2017_nov",
+  "source": "Department of Basic Education",
+  "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade11Exams.aspx",
+  "paper_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659",
+  "memo_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659",
+  "paper_file": "paper1.pdf",
+  "memo_file": "memo1.pdf",
+  "_note_binaries": "PDFs gitignored (copyrighted DBE binaries); fetch via the *_download_url fields.",
+  "copyright": "© Department of Basic Education, 2017. Reproduced for educational use with attribution.",
+  "subject": "Maths",
+  "grade": 11,
+  "paper": "P1",
+  "session": "November 2017",
+  "language": "English",
+  "total_marks": 150,
+  "questions": [
+    {
+      "ref": "Q1.1.1",
+      "text": "Solve for x:  (2x - 3)(x + 7) = 0",
+      "marks": 2,
+      "topic": "Quadratic Equations",
+      "solution_method": "zero_product_property",
+      "memo_answer": "x = 3/2 or x = -7",
+      "memo_working": "(2x-3)(x+7)=0 -> 2x-3=0 or x+7=0 -> x=3/2 or x=-7",
+      "checkable": true,
+      "recompute": {"kind": "linear_factor_roots", "factors": [[2, -3], [1, 7]]},
+      "scene_data": {
+        "given_latex": "(2x - 3)(x + 7) = 0",
+        "factor_steps": [
+          "2x - 3 = 0 \\Rightarrow x = \\tfrac{3}{2}",
+          "x + 7 = 0 \\Rightarrow x = -7"
+        ],
+        "answer_latex": "x = \\tfrac{3}{2} \\quad \\text{or} \\quad x = -7"
+      }
+    },
+    {
+      "ref": "Q1.1.2",
+      "text": "Solve for x (leave your answer correct to TWO decimal places):  7x^2 + 3x - 2 = 0",
+      "marks": 3,
+      "topic": "Quadratic Equations",
+      "solution_method": "quadratic_formula",
+      "memo_answer": "x = -0,79 or x = 0,36",
+      "memo_working": "a=7, b=3, c=-2; x = (-3 ± sqrt(3^2 - 4(7)(-2)))/(2·7) = (-3 ± sqrt(65))/14",
+      "checkable": true,
+      "recompute": {"kind": "quadratic_formula_roots", "a": 7, "b": 3, "c": -2, "decimals": 2},
+      "scene_data": {
+        "given_latex": "7x^2 + 3x - 2 = 0",
+        "a": 7, "b": 3, "c": -2,
+        "sub_latex": "x = \\frac{-3 \\pm \\sqrt{3^2 - 4(7)(-2)}}{2(7)} = \\frac{-3 \\pm \\sqrt{65}}{14}",
+        "answer_latex": "x = -0{,}79 \\quad \\text{or} \\quad x = 0{,}36"
+      }
+    },
+    {
+      "ref": "Q1.1.3",
+      "text": "Solve for x:  sqrt(x - 1) + 3 = x",
+      "marks": 6,
+      "topic": "Equations with surds",
+      "solution_method": "surd_equation_squaring",
+      "memo_answer": "x = 5 (x = 2 rejected)",
+      "memo_working": "sqrt(x-1) = x-3; square: x-1 = x^2-6x+9 -> x^2-7x+10=0 -> (x-2)(x-5)=0 -> x=5 (x≠2)",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.1.4",
+      "text": "Solve for x:  x^2 > 3(x + 6)",
+      "marks": 4,
+      "topic": "Quadratic Inequalities",
+      "solution_method": "quadratic_inequality",
+      "memo_answer": "x < -3 or x > 6",
+      "memo_working": "x^2-3x-18>0 -> (x-6)(x+3)>0 -> x<-3 or x>6",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.2",
+      "text": "Solve for x and y simultaneously:  2y + x = 1  and  x^2 + y^2 + 3xy + y = 0",
+      "marks": 6,
+      "topic": "Simultaneous Equations",
+      "solution_method": "simultaneous_substitution",
+      "memo_answer": "y = 1 or y = -1; x = -1 or x = 3",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.3",
+      "text": "If f(x) = 0 has roots x = (-5 ± sqrt(3 - 12k^2))/4, for which values of k will the roots be equal?",
+      "marks": 3,
+      "topic": "Nature of Roots",
+      "solution_method": "discriminant_analysis",
+      "memo_answer": "k = ± 1/2",
+      "memo_working": "Equal roots: 3 - 12k^2 = 0 -> k^2 = 1/4 -> k = ±1/2",
+      "checkable": false
+    },
+    {
+      "ref": "Q2",
+      "text": "Exponents and surds (simplification, exponential equations, surd manipulation).",
+      "marks": 18,
+      "topic": "Exponents and Surds",
+      "solution_method": "exponent_surd_laws",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    }
+  ]
+}

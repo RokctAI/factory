@@ -134,55 +134,80 @@ def match_questions(paper, lessons):
 
 
 # --- worked-example Manim scene generators (per method) ---
+#
+# Each generator takes (q, paper). The Maths generators are data-driven from
+# q["scene_data"] with a fallback to the first paper's (Nov 2018) content for
+# questions recorded before scene_data existed — so a new paper year needs
+# only paper.json entries, no new code.
 
-def scene_zero_product(q):
+def _scene_header(q, paper):
+    return (f"# Auto-generated past-paper worked example.\n"
+            f"# Source: DBE Grade {paper['grade']} {paper['subject']} "
+            f"{paper['paper']}, {paper['session']}, {q['ref']}\n"
+            f"# {paper['copyright']}")
+
+
+def _head_line(q, paper):
+    session_short = paper["session"].replace("November", "Nov")
+    return f"Past paper: DBE {session_short} {paper['paper']} {q['ref']}"
+
+
+def scene_zero_product(q, paper):
+    sd = q.get("scene_data") or {
+        "given_latex": "x(2x + 1) = 0",
+        "factor_steps": ["x = 0",
+                         "2x + 1 = 0 \\Rightarrow x = -\\tfrac{1}{2}"],
+        "answer_latex": "x = 0 \\quad \\text{or} \\quad x = -\\tfrac{1}{2}",
+    }
+    left, right = sd["factor_steps"]
     return f'''from manim import *
 
-# Auto-generated past-paper worked example.
-# Source: DBE Grade 11 Mathematics P1, November 2018, {q["ref"]}
-# (c) Department of Basic Education, 2018.
+{_scene_header(q, paper)}
 class PastPaperWorkedExample(Scene):
     def construct(self):
-        head = Tex(r"Past paper: DBE Nov 2018 P1 {q["ref"]}").to_edge(UP)
+        head = Tex(r"{_head_line(q, paper)}").to_edge(UP)
         self.play(Write(head)); self.wait(1)
-        eq = MathTex(r"x(2x + 1) = 0")
+        eq = MathTex(r"{sd["given_latex"]}")
         self.play(Write(eq)); self.wait(2)
         self.play(eq.animate.shift(UP * 2))
         note = Tex(r"Zero-product property: a product is 0 when a factor is 0").scale(0.7)
         self.play(Write(note)); self.wait(2)
-        left = MathTex(r"x = 0").shift(LEFT * 2 + DOWN)
-        right = MathTex(r"2x + 1 = 0 \\Rightarrow x = -\\tfrac{{1}}{{2}}").shift(RIGHT * 2 + DOWN)
+        left = MathTex(r"{left}").scale(0.9).shift(LEFT * 2.5 + DOWN)
+        right = MathTex(r"{right}").scale(0.9).shift(RIGHT * 2.5 + DOWN)
         self.play(Write(left), Write(right)); self.wait(2)
-        ans = MathTex(r"x = 0 \\quad \\text{{or}} \\quad x = -\\tfrac{{1}}{{2}}").shift(DOWN * 2.5)
+        ans = MathTex(r"{sd["answer_latex"]}").shift(DOWN * 2.5)
         self.play(Write(ans)); self.wait(3)
 '''
 
 
-def scene_quadratic_formula(q):
+def scene_quadratic_formula(q, paper):
+    sd = q.get("scene_data") or {
+        "given_latex": "5x^2 + 2x - 6 = 0", "a": 5, "b": 2, "c": -6,
+        "sub_latex": "x = \\frac{-2 \\pm \\sqrt{2^2 - 4(5)(-6)}}{2(5)} = \\frac{-2 \\pm \\sqrt{124}}{10}",
+        "answer_latex": "x = 0{,}91 \\quad \\text{or} \\quad x = -1{,}31",
+    }
     return f'''from manim import *
 
-# Auto-generated past-paper worked example.
-# Source: DBE Grade 11 Mathematics P1, November 2018, {q["ref"]}
-# (c) Department of Basic Education, 2018.
+{_scene_header(q, paper)}
 class PastPaperWorkedExample(Scene):
     def construct(self):
-        head = Tex(r"Past paper: DBE Nov 2018 P1 {q["ref"]}").to_edge(UP)
+        head = Tex(r"{_head_line(q, paper)}").to_edge(UP)
         self.play(Write(head)); self.wait(1)
-        eq = MathTex(r"5x^2 + 2x - 6 = 0")
+        eq = MathTex(r"{sd["given_latex"]}")
         self.play(Write(eq)); self.wait(2)
         self.play(eq.animate.shift(UP * 2))
-        coeffs = MathTex(r"a = 5, \\quad b = 2, \\quad c = -6").scale(0.9).shift(UP * 0.5)
+        coeffs = MathTex(r"a = {sd["a"]}, \\quad b = {sd["b"]}, \\quad c = {sd["c"]}").scale(0.9).shift(UP * 0.5)
         self.play(Write(coeffs)); self.wait(2)
         formula = MathTex(r"x = \\frac{{-b \\pm \\sqrt{{b^2 - 4ac}}}}{{2a}}").shift(DOWN * 0.5)
         self.play(Write(formula)); self.wait(2)
-        sub = MathTex(r"x = \\frac{{-2 \\pm \\sqrt{{2^2 - 4(5)(-6)}}}}{{2(5)}} = \\frac{{-2 \\pm \\sqrt{{124}}}}{{10}}").scale(0.9).shift(DOWN * 1.5)
+        sub = MathTex(r"{sd["sub_latex"]}").scale(0.9).shift(DOWN * 1.5)
         self.play(Write(sub)); self.wait(2)
-        ans = MathTex(r"x = 0{{,}}91 \\quad \\text{{or}} \\quad x = -1{{,}}31").shift(DOWN * 2.6)
+        ans = MathTex(r"{sd["answer_latex"]}").shift(DOWN * 2.6)
         self.play(Write(ans)); self.wait(3)
 '''
 
 
-def scene_state_second_law(q):
+def scene_state_second_law(q, paper):
     return f'''from manim import *
 
 # Auto-generated past-paper worked example.
@@ -205,7 +230,7 @@ class PastPaperWorkedExample(Scene):
 '''
 
 
-def scene_second_law_graph(q):
+def scene_second_law_graph(q, paper):
     return f'''from manim import *
 
 # Auto-generated past-paper worked example.
@@ -226,7 +251,7 @@ class PastPaperWorkedExample(Scene):
 '''
 
 
-def scene_gradient(q):
+def scene_gradient(q, paper):
     """Average-gradient worked example, built from the question's map_inputs
     (memo-accepted map readings) so the animation shows the real numbers."""
     mi = q["map_inputs"]
@@ -320,7 +345,7 @@ def cmd_link(args):
             f"## Memo working\n\n{q.get('memo_working', '(see marking guidelines)')}\n\n"
             f"## Answer (per marking guidelines)\n\n{q['memo_answer']}\n",
             encoding="utf-8")
-        (wdir / "manim_scene.py").write_text(gen(q), encoding="utf-8")
+        (wdir / "manim_scene.py").write_text(gen(q, paper), encoding="utf-8")
 
         # Record on the card + both directions of the index.
         card = Path(lesson["card"]).read_text("utf-8")
@@ -374,13 +399,45 @@ def cmd_lookup(args):
 
 # --- verification hook ---
 
+def _fmt_root(v, decimals=None):
+    """Root -> canonical string matching parse_memo_roots output."""
+    if decimals is not None:
+        v = round(v, decimals)
+        s = f"{v:.{decimals}f}"
+        return s.rstrip("0").rstrip(".") if "." in s else s
+    return f"{v:g}"
+
+
 def recompute(qref, paper):
     """Recompute the answer for a checkable question from first principles;
     return a set of rounded values as strings, or None if not recomputable.
-    Dispatch is per (paper_id, qref) — question refs repeat across papers."""
+
+    Preferred path: a machine-checkable `recompute` spec on the question —
+    data-driven, so new papers need no code changes:
+      {"kind": "linear_factor_roots", "factors": [[a1,b1],[a2,b2]]}
+          roots of (a1 x + b1)(a2 x + b2) = 0, i.e. -b/a each
+      {"kind": "quadratic_formula_roots", "a":…, "b":…, "c":…, "decimals": 2}
+    Legacy per-(paper_id, qref) cases below cover the papers recorded before
+    the spec existed. Question refs repeat across papers, hence the pairing."""
     q = next((x for x in paper["questions"] if x["ref"] == qref), None)
     if not q or not q.get("checkable"):
         return None
+    spec = q.get("recompute")
+    if spec:
+        import math
+        if spec["kind"] == "linear_factor_roots":
+            roots = set()
+            for a, b in spec["factors"]:
+                v = -b / a
+                roots.add(_fmt_root(v, 2 if v != int(v) else None))
+            return roots
+        if spec["kind"] == "quadratic_formula_roots":
+            a, b, c = spec["a"], spec["b"], spec["c"]
+            d = math.sqrt(b * b - 4 * a * c)
+            dec = spec.get("decimals", 2)
+            return {_fmt_root((-b + d) / (2 * a), dec),
+                    _fmt_root((-b - d) / (2 * a), dec)}
+        raise SystemExit(f"unknown recompute kind: {spec['kind']}")
     pid = paper["paper_id"]
     if pid == "dbe_maths_g11_p1_2018_nov" and qref == "Q1.1.1":
         return {"0", "-0.5"}  # x(2x+1)=0 by zero-product
