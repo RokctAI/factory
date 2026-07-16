@@ -139,11 +139,18 @@ def main():
         buckets = buckets_by_doc.get(doc)
         if buckets is None:
             continue
-        stated = str(e["term"]).lower()
+        stated = str(e.get("term", "")).lower()
         found = sorted({t for ws in entry_word_sets(e) for t in terms_containing(ws, buckets)})
+        if e.get("category") == "skill":
+            # Skills are term-independent by design (category: skill replaced
+            # the old term: "all" convention); report where the topic shows
+            # up in the ATP but never call it drift.
+            label = f"{doc} | {e['topic']} / {e['subtopic']} (skill: {e.get('skill_ref', '?')})"
+            print(f"INFO       {label} -> appears in terms {found or ['none found']}")
+            continue
         label = f"{doc} | {e['topic']} / {e['subtopic']} (term {stated})"
-        if stated in ("all", "unknown"):
-            # 'all' and 'unknown' are deliberate; report where the topic shows up
+        if stated == "unknown":
+            # 'unknown' is deliberate; report where the topic shows up
             print(f"INFO       {label} -> appears in terms {found or ['none found']}")
             continue
         if stated in found:

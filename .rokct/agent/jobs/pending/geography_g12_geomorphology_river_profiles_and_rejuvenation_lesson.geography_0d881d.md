@@ -11,6 +11,9 @@ type: lesson.geography
 subject: Geography
 grade: 12
 term: 1
+category:
+skill_ref:
+requires_skills: geography.gradient_calculation
 topic: Geomorphology
 subtopic: River profiles and rejuvenation
 tutor: Dr Molefe — formal

@@ -10,7 +10,10 @@ theme: Geography Grade 12: Geographical Skills and Techniques - Map scale and di
 type: lesson.geography
 subject: Geography
 grade: 12
-term: all
+term:
+category: skill
+skill_ref: geography.map_scale_and_distance
+requires_skills:
 topic: Geographical Skills and Techniques
 subtopic: Map scale and distance
 tutor: Ranger Themba — simplistic, lower grade logic
