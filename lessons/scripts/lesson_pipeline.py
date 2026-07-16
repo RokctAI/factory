@@ -1196,6 +1196,17 @@ def cmd_check(args):
     errors, warnings = run_checks(card, args.file)
     for w in warnings:
         print(f"WARN: {w}")
+
+    # Evaluated cards are archived history: report (useful for re-auditing a
+    # lesson, e.g. after linking a past-paper worked example) but never
+    # rewrite rules_status/last_updated on them — the state machine is done
+    # with these cards.
+    if get_field(card, "status").startswith("evaluated"):
+        for e in errors:
+            print(f"FAIL: {e}")
+        print("Card is evaluated (archived) — read-only check, card not modified.")
+        return 1 if errors else 0
+
     if errors:
         for e in errors:
             print(f"FAIL: {e}")

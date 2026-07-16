@@ -44,4 +44,5 @@ attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
+past_paper_examples: dbe_physical_sciences_g11_p1_2018_nov:Q4.1, dbe_physical_sciences_g11_p1_2018_nov:Q4.3
 ---

@@ -40,6 +40,7 @@ JOBS = [Path(".rokct/agent/jobs/done"), Path(".rokct/agent/jobs/pending")]
 # indicate the subtopic teaches that method. This is how a lesson advertises
 # what it can back with a worked example.
 METHOD_SUBTOPIC_SIGNALS = {
+    # Maths
     "zero_product_property": ["zero-product", "zero product"],
     "factoring": ["factor"],
     "quadratic_formula": ["quadratic formula", "the formula", "applying the formula"],
@@ -49,6 +50,15 @@ METHOD_SUBTOPIC_SIGNALS = {
     "discriminant_analysis": ["nature of roots", "discriminant"],
     "simultaneous_substitution": ["simultaneous"],
     "substitution_to_quadratic": ["reducible", "substitution"],
+    # Physical Sciences ("stating"/"applying" distinguish the two halves of
+    # the Newton's-second-law lesson; a bare "newton's second law" signal
+    # would match both subtopics ambiguously)
+    "state_newtons_second_law": ["stating newton"],
+    "newtons_second_law_application": ["applying newton"],
+    "vector_resolution": ["vector", "resultant", "components of forces"],
+    "friction_equilibrium": ["friction"],
+    "incline_dynamics": ["inclined plane", "incline"],
+    "universal_gravitation": ["universal gravitation"],
 }
 
 
@@ -168,9 +178,55 @@ class PastPaperWorkedExample(Scene):
 '''
 
 
+def scene_state_second_law(q):
+    return f'''from manim import *
+
+# Auto-generated past-paper worked example.
+# Source: DBE Grade 11 Physical Sciences P1, November 2018, {q["ref"]}
+# (c) Department of Basic Education, 2018.
+class PastPaperWorkedExample(Scene):
+    def construct(self):
+        head = Tex(r"Past paper: DBE Nov 2018 P1 {q["ref"]}").to_edge(UP)
+        self.play(Write(head)); self.wait(1)
+        ask = Tex(r"State Newton's Second Law of Motion in words. (2)").scale(0.8).shift(UP * 1.5)
+        self.play(Write(ask)); self.wait(2)
+        l1 = Tex(r"When a \\textbf{{net force}} acts on an object, the object").scale(0.7)
+        l2 = Tex(r"\\textbf{{accelerates}} in the \\textbf{{direction of the force}}.").scale(0.7).shift(DOWN * 0.5)
+        l3 = Tex(r"The acceleration is \\textbf{{directly proportional to the net force}}").scale(0.7).shift(DOWN * 1.2)
+        l4 = Tex(r"and \\textbf{{inversely proportional to the mass}}.").scale(0.7).shift(DOWN * 1.7)
+        for l in (l1, l2, l3, l4):
+            self.play(Write(l)); self.wait(1)
+        warn = Tex(r"Memo: $-1$ mark if a key phrase is missing.").scale(0.6).shift(DOWN * 2.8)
+        self.play(Write(warn)); self.wait(3)
+'''
+
+
+def scene_second_law_graph(q):
+    return f'''from manim import *
+
+# Auto-generated past-paper worked example.
+# Source: DBE Grade 11 Physical Sciences P1, November 2018, {q["ref"]}
+# (c) Department of Basic Education, 2018.
+class PastPaperWorkedExample(Scene):
+    def construct(self):
+        head = Tex(r"Past paper: DBE Nov 2018 P1 {q["ref"]}").to_edge(UP)
+        self.play(Write(head)); self.wait(1)
+        given = Tex(r"Graph of $\\frac{{1}}{{a}}$ versus $m$ (constant net force), gradient $= 2$").scale(0.75).shift(UP * 1.8)
+        self.play(Write(given)); self.wait(2)
+        s1 = MathTex(r"F_{{net}} = ma \\;\\Rightarrow\\; \\frac{{1}}{{a}} = \\frac{{1}}{{F_{{net}}}} \\cdot m").shift(UP * 0.6)
+        self.play(Write(s1)); self.wait(2)
+        s2 = MathTex(r"\\text{{gradient}} = \\frac{{1}}{{F_{{net}}}} = \\frac{{2{{,}}5 - 0}}{{1{{,}}25 - 0}} = 2").shift(DOWN * 0.6)
+        self.play(Write(s2)); self.wait(2)
+        ans = MathTex(r"F_{{net}} = \\frac{{1}}{{2}} = 0{{,}}5\\ \\text{{N}}").shift(DOWN * 1.9)
+        self.play(Write(ans)); self.wait(3)
+'''
+
+
 SCENE_GENERATORS = {
     "zero_product_property": scene_zero_product,
     "quadratic_formula": scene_quadratic_formula,
+    "state_newtons_second_law": scene_state_second_law,
+    "newtons_second_law_application": scene_second_law_graph,
 }
 
 
@@ -286,17 +342,25 @@ def cmd_lookup(args):
 
 def recompute(qref, paper):
     """Recompute the answer for a checkable question from first principles;
-    return a set of rounded roots as strings, or None if not recomputable."""
+    return a set of rounded values as strings, or None if not recomputable.
+    Dispatch is per (paper_id, qref) — question refs repeat across papers."""
     q = next((x for x in paper["questions"] if x["ref"] == qref), None)
     if not q or not q.get("checkable"):
         return None
-    if q["solution_method"] == "zero_product_property" and qref == "Q1.1.1":
-        return {"0", "-0.5"}
-    if q["solution_method"] == "quadratic_formula" and qref == "Q1.1.2":
+    pid = paper["paper_id"]
+    if pid == "dbe_maths_g11_p1_2018_nov" and qref == "Q1.1.1":
+        return {"0", "-0.5"}  # x(2x+1)=0 by zero-product
+    if pid == "dbe_maths_g11_p1_2018_nov" and qref == "Q1.1.2":
         import math
         a, b, c = 5, 2, -6
         d = math.sqrt(b * b - 4 * a * c)
         return {f"{round((-b + d) / (2 * a), 2):.2f}", f"{round((-b - d) / (2 * a), 2):.2f}"}
+    if pid == "dbe_physical_sciences_g11_p1_2018_nov" and qref == "Q4.3":
+        # 1/a vs m graph at constant F_net: 1/a = m/F_net, so the gradient is
+        # 1/F_net. Memo's accepted coordinates: (1,25 kg, 2,5 s^2/m).
+        gradient = (2.5 - 0) / (1.25 - 0)
+        f_net = 1 / gradient
+        return {f"{f_net:g}"}
     return None
 
 
