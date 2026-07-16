@@ -38,6 +38,9 @@ on:
       max_cards:
         description: 'Max evaluated cards to produce this run'
         default: '5'
+      card_filter:
+        description: 'Only produce cards whose id contains this substring (e.g. maths). Empty = all.'
+        default: ''
 
 # The audio backend defaults to the CPU-only `sapi` path so this workflow runs
 # green on a standard runner. For production audio, dispatch with
@@ -45,6 +48,7 @@ on:
 env:
   AUDIO_BACKEND: ${{ github.event.inputs.audio_backend || 'sapi' }}
   MAX_CARDS: ${{ github.event.inputs.max_cards || '5' }}
+  CARD_FILTER: ${{ github.event.inputs.card_filter || '' }}
 
 jobs:
   produce_lessons:
@@ -105,6 +109,11 @@ jobs:
 
             ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
             THEME=$(grep '^theme:' "$FILE" | cut -d':' -f2- | xargs)
+
+            if [ -n "$CARD_FILTER" ] && [[ "$ID" != *"$CARD_FILTER"* ]]; then
+              echo "Skipping $ID (does not match card_filter '$CARD_FILTER')."
+              continue
+            fi
 
             # Claim the job lock so a concurrent run cannot double-produce.
             if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "level6" --session "L6-$GITHUB_RUN_ID"; then
