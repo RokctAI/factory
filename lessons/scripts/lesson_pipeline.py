@@ -78,12 +78,15 @@ SCRIPT_MIN_WORDS = 900
 TUTOR_GRANDMASTER = "Grandmaster — formal"
 TUTOR_BIG_JOHN = "Big John — simplistic, lower grade logic"
 
-# Tutor persona cards (.rokct/tutors/): every subject has an Expert +
+# Tutor persona cards (lessons/tutors/): every subject has an Expert +
 # Simplifier duo (supacharge-characters.md §1) and the same duo spans all
 # grades of a subject. roster.json maps subject -> duo so a different duo
 # can be attached per subject later without touching this code. The legacy
 # constants above stay as the fallback when the roster is unavailable.
-TUTORS_DIR = Path(".rokct/tutors")
+# NOTE: the cards deliberately live under lessons/, NOT .rokct/ — CI
+# automation blanket-adds/commits .rokct/ from stale checkouts and silently
+# deleted the cards twice when they lived at .rokct/tutors/.
+TUTORS_DIR = Path("lessons/tutors")
 
 CONTENT_FILES = {
     "script_path": "script.md",
@@ -492,7 +495,7 @@ def build_level2_prompt(card, card_file):
     persona_block = ""
     if persona_card:
         persona_block = f"""
-TUTOR PERSONA CARD (.rokct/tutors/{slug}.md) — every tutor-voiced item
+TUTOR PERSONA CARD (lessons/tutors/{slug}.md) — every tutor-voiced item
 (script, reel clip) must be written in exactly this established character;
 do not re-derive or soften the voice:
 --- persona card start ---
