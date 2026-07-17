@@ -13,14 +13,14 @@ grade: 12
 term: 1
 topic: Macroeconomics
 subtopic: The multiplier
-tutor: Ms Mahlangu — formal
+tutor: Ms Mahlangu â€” formal
 example_problem: If the marginal propensity to consume is 0,75, calculate the multiplier and the total change in national income resulting from a R100 million injection.
 prior_knowledge: Student knows the circular flow model, injections and leakages
 metarules: .rokct/types/lesson.economics/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: The multiplier concept involves abstract mathematical calculations and formula manipulation, making a formal approach more suitable.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
