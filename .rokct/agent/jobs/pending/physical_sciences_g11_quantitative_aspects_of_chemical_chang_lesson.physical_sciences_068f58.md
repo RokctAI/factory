@@ -13,8 +13,8 @@ grade: 11
 term: 3
 topic: Quantitative Aspects of Chemical Change
 subtopic: Stoichiometric calculations
-tutor: Ms Dlamini â€” formal
-example_problem: Calculate the mass of COâ‚‚ produced when 8 g of CHâ‚„ burns completely in excess oxygen.
+tutor: Ms Dlamini Ã¢â‚¬â€ formal
+example_problem: Calculate the mass of COÃ¢â€šâ€š produced when 8 g of CHÃ¢â€šâ€ž burns completely in excess oxygen.
 prior_knowledge: Student can balance chemical equations and knows the mole concept
 metarules: .rokct/types/lesson.physical_sciences/metarules
 guardrail: age_13_17
@@ -36,7 +36,7 @@ mandy_transcript_path:
 mandy_nervous_script_path:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 00:46:58
+last_updated: 2026-07-17 08:59:58
 session_id: 
 session_started: 
 attempts: 1
