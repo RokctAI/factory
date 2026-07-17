@@ -24,23 +24,26 @@ guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of river profiles and rejuvenation involves abstract concepts and requires precise terminology and diagrammatic representation, making it a good fit for the Grandmaster's formal and formula-first approach.
 idea_status: approved
-concept:
+concept: |
+  Teaching Approach: The lesson takes a formal, expert-led documentary approach using the Dr Molefe persona. It strictly sequences terminology first, defining base levels before contrasting graded and ungraded profiles.
+  Pacing: Deliberate and precise, spending adequate time to build the diagrammatic intuition step by step.
+  Example Problem Placement: The core problem (differentiating graded/ungraded and explaining rejuvenation with a diagram) forms the entire backbone of the script, with the final subtopic completely dedicated to drawing and labelling the expected examination diagram.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
+lesson_name: River Profiles and Rejuvenation
+lesson_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d
+script_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/script.md
+manim_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/manim_scene.py
+subtopics_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/subtopics.json
+mcq_data_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/mcq.json
+comprehension_check_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/comprehension_check.json
+reel_brief_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/reel_clip.json
+mandy_transcript_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/geography/grade12/term1/geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d/mandy_nervous_script.md
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: concept_expanding
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-17 06:51:58
 session_id: 
