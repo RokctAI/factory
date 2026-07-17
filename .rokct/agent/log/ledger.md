@@ -63,3 +63,4 @@
 | economics_g12_macroeconomics_the_multiplier_646d16 | lesson.economics | Economics Grade 12: Macroeconomics - The multiplier | concept_expanding | jules | 5955950585964261694 | — | 2026-07-17 06:45 |
 | geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b | lesson.geography | Geography Grade 12: Climate and Weather - Mid-latitude cyclones | concept_expanding | jules | 17446768834112973071 | — | 2026-07-17 06:47 |
 | geography_g12_geographical_skills_and_techniques_map_scale_a_eb274e | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Map scale and distance | concept_expanding | jules | 5127417025643281737 | — | 2026-07-17 06:49 |
+| geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d | lesson.geography | Geography Grade 12: Geomorphology - River profiles and rejuvenation | concept_expanding | jules | 3451728773305540569 | — | 2026-07-17 06:52 |
