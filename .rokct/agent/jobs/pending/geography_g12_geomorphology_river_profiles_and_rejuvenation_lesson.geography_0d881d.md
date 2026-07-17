@@ -16,7 +16,7 @@ skill_ref:
 requires_skills: geography.gradient_calculation
 topic: Geomorphology
 subtopic: River profiles and rejuvenation
-tutor: Dr Molefe â€” formal
+tutor: Dr Molefe Ã¢â‚¬â€ formal
 example_problem: Differentiate between a graded and an ungraded river profile, and explain river rejuvenation using a labelled diagram.
 prior_knowledge: Student knows drainage basins and fluvial erosion and deposition
 metarules: .rokct/types/lesson.geography/metarules
@@ -42,7 +42,7 @@ crosscheck_status:
 crosscheck_notes:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 16:50:18
+last_updated: 2026-07-17 08:51:22
 session_id: 
 session_started: 
 attempts: 1
