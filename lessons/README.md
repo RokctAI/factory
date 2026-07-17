@@ -15,8 +15,8 @@ does not exist yet and is a separate future brief.
 | Level | Workflow | Trigger | What happens | Status after |
 |---|---|---|---|---|
 | 0 | `lesson0_topic_selection.yml` | hourly / seed push | Creates job cards from `lessons/curriculum/caps_seed.json` when pending count per type is low | `theme_generated` |
-| 1 | `lesson1_plan_generation.yml` | hourly / card push | Groq captures tutor persona, example problem, prior knowledge, lesson angle | `pending_approval` |
-| — | **human gate 1** | edit card | Set `idea_status: approved` | — |
+| 1 | `lesson1_plan_generation.yml` | hourly / card push | Groq captures tutor persona, example problem, prior knowledge, lesson angle; card is born/planned with `idea_status: approved` | `pending_approval` |
+| — | ~~human gate 1~~ | — | **Retired for lesson cards (owner decision, 2026-07-17)** — lesson ideas flow straight to Level 2. Book/film types keep their gate. | — |
 | 2 | `lesson2_concept_expansion.yml` | card push | Jules generates all §4 content items into `lessons/drafts/<id>/` and opens a PR | `concept_expanding` |
 | — | **human gate 2** | review + merge the Jules PR | Content lands; Jules' card update sets `concept_generated` | `concept_generated` |
 | 3 | `lesson3_rules_check.yml` | merge push | Structural/pedagogy checks (`lesson_pipeline.py check`): MCQ answer keys, subtopic timestamps, all files present | `pending_concept_approval` |

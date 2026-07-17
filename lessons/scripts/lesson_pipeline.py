@@ -301,7 +301,7 @@ prior_knowledge: {entry.get('prior_knowledge', '')}
 metarules: .rokct/types/{entry['type']}/metarules
 guardrail: {guardrail_for_grade(entry['grade'])}
 idea:
-idea_status:
+idea_status: approved
 concept:
 concept_status:
 rules_status:
@@ -641,10 +641,15 @@ def cmd_plan(args):
     if not get_field(card, "prior_knowledge"):
         card = set_field(card, "prior_knowledge", prior)
     card = set_block_field(card, "idea", angle)
-    card = set_field(card, "idea_status", "pending")
+    # Gate 1 (manual idea approval) retired for lesson cards by owner
+    # decision 2026-07-17: lesson ideas flow straight to Level 2. Gates 2
+    # (concept approval / Jules PR merge) and 4 (evaluation) remain human.
+    # Book/film types keep their gate-1 behaviour — this pipeline is
+    # lesson.*-only.
+    card = set_field(card, "idea_status", "approved")
     card = set_field(card, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     write_card(args.file, card)
-    print(f"Level 1 plan captured on {args.file} (idea_status: pending).")
+    print(f"Level 1 plan captured on {args.file} (idea_status: approved — gate 1 retired for lessons).")
     return 0
 
 
