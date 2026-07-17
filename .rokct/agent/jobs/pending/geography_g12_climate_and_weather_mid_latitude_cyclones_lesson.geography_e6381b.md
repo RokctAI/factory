@@ -13,7 +13,7 @@ grade: 12
 term: 1
 topic: Climate and Weather
 subtopic: Mid-latitude cyclones
-tutor: Ranger Themba â€” simplistic, lower grade logic
+tutor: Ranger Themba Ã¢â‚¬â€ simplistic, lower grade logic
 example_problem: Describe the stages in the development of a mid-latitude cyclone and explain its influence on Western Cape winter weather.
 prior_knowledge: Student knows air pressure, fronts, and global wind circulation
 metarules: .rokct/types/lesson.geography/metarules
@@ -39,7 +39,7 @@ crosscheck_status:
 crosscheck_notes:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 12:51:53
+last_updated: 2026-07-17 08:47:12
 session_id: 
 session_started: 
 attempts: 1
