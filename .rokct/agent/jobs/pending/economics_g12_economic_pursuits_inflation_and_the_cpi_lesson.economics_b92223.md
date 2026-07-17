@@ -13,7 +13,7 @@ grade: 12
 term: 3
 topic: Economic Pursuits
 subtopic: Inflation and the CPI
-tutor: Bra Sipho — simplistic, lower grade logic
+tutor: Bra Sipho â€” simplistic, lower grade logic
 example_problem: Calculate the inflation rate if the consumer price index rises from 120 to 126 over one year.
 prior_knowledge: Student knows index numbers and percentage change
 metarules: .rokct/types/lesson.economics/metarules
@@ -21,7 +21,7 @@ guardrail: age_13_17
 idea: |
   Tutor choice: This subtopic has a natural everyday anchor in prices and inflation, making it a good fit for Big John's intuitive and concrete approach.
   The lesson starts with a relatable scenario of price increases and how it affects everyday life. Big John introduces the concept of inflation and its measurement using the Consumer Price Index (CPI). He uses real-world examples to illustrate how CPI is used to track price changes over time. The example problem is then introduced as a practical application of calculating inflation rate using the CPI. The lesson concludes with Big John guiding students to calculate the inflation rate and understand its implications on the economy.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

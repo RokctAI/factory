@@ -13,14 +13,14 @@ grade: 11
 term: 2
 topic: Dynamics of Markets
 subtopic: Price elasticity of demand
-tutor: Bra Sipho — simplistic, lower grade logic
+tutor: Bra Sipho â€” simplistic, lower grade logic
 example_problem: The price of a product rises from R10 to R12 and quantity demanded falls from 100 to 80 units. Calculate the price elasticity of demand and classify it.
 prior_knowledge: Student knows demand and supply and percentage change calculations
 metarules: .rokct/types/lesson.economics/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: This subtopic has a natural everyday anchor in prices and quantity demanded, making it a good fit for Big John's intuitive and concrete approach.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
