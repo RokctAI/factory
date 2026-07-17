@@ -37,7 +37,7 @@ mandy_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations
 mandy_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/mandy_nervous_script.md
 status: concept_generated
 created: 2026-07-13
-last_updated: 2026-07-17 01:44:41
+last_updated: 2026-07-17 01:50:30
 session_id: 
 session_started: 
 attempts: 2
