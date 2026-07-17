@@ -10,3 +10,4 @@
 * **[2026-07-17]** - Completed Agent Task: feat: Generate Supacharge Accounting G11 VAT Calculation lesson (https://github.com/RokctAI/factory/pull/33)
 * **[2026-07-17]** - Completed Agent Task: Generate Mid-latitude Cyclones Geography Lesson (https://github.com/RokctAI/factory/pull/35)
 * **[2026-07-17]** - Completed Agent Task: Generate Mathematical Literacy Simple Interest Lesson (https://github.com/RokctAI/factory/pull/37)
+* **[2026-07-17]** - Completed Agent Task: feat: generate complete Supacharge lesson for municipal tariffs (https://github.com/RokctAI/factory/pull/40)
