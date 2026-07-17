@@ -66,3 +66,4 @@
 | geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d | lesson.geography | Geography Grade 12: Geomorphology - River profiles and rejuvenation | concept_expanding | jules | 3451728773305540569 | — | 2026-07-17 06:52 |
 | mathematical_literacy_g11_finance_simple_interest_8f7530 | lesson.maths_literacy | Mathematical Literacy Grade 11: Finance - Simple interest | concept_expanding | jules | 3976552925239419319 | — | 2026-07-17 06:54 |
 | mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - Municipal tariff calculations | concept_expanding | jules | 5535244184001178324 | — | 2026-07-17 06:56 |
+| mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | concept_expanding | jules | 4618649057992835417 | — | 2026-07-17 06:58 |
