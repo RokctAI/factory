@@ -21,23 +21,24 @@ guardrail: age_13_17
 idea: |
   Tutor choice: Break-even analysis has a strong real-world anchor, making it a good fit for a Simplifier lesson.
 idea_status: approved
-concept:
+concept: |
+  Simplifier approach: Grounds break-even logic in a relatable spaza shop scenario (cool drinks and rent) before introducing the formal formula. The example problem (R60k fixed, R50 SP, R30 VC) is solved conversationally, showing how each unit 'contributes' to paying the fixed rent monster.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
+lesson_name: Break-even analysis
+lesson_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83
+script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/script.md
+manim_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/manim_scene.py
+subtopics_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/subtopics.json
+mcq_data_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/mcq.json
+comprehension_check_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/comprehension_check.json
+reel_brief_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/reel_clip.json
+mandy_transcript_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/mandy_nervous_script.md
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: concept_expanding
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-17 06:28:08
 session_id: 
