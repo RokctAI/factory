@@ -58,3 +58,4 @@
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_expanding | jules | 15343190423449107152 | — | 2026-07-17 06:28 |
 | accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_expanding | jules | 12859818732587201883 | — | 2026-07-17 06:31 |
 | accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_expanding | jules | 5210686244777653205 | — | 2026-07-17 06:33 |
+| economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | concept_expanding | jules | 1343133640742130634 | — | 2026-07-17 06:39 |
