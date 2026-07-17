@@ -21,7 +21,7 @@ guardrail: age_13_17
 idea: |
   Tutor choice: The Grandmaster's formal approach fits the factoring method subtopic as it requires a systematic and structured explanation to ensure students understand the underlying principles.
   The lesson will begin with a hook, reviewing the importance of quadratic equations in real-world applications. The Grandmaster will then introduce the factoring method, breaking it down into step-by-step beats, emphasizing the need for precision and attention to detail. The example problem, 2x²+5x+3=0, will be presented as a case study, where students will learn to apply the factoring method to solve the equation. Through guided practice and feedback, students will develop their problem-solving skills and gain confidence in using the factoring method to solve quadratic equations. The lesson will conclude with a summary of key takeaways and a preview of upcoming topics.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

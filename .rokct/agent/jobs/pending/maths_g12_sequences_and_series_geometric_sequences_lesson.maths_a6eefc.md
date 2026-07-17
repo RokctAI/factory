@@ -20,7 +20,7 @@ metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: Geometric sequences involve abstract concepts and formula manipulation, making a formal approach more suitable.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

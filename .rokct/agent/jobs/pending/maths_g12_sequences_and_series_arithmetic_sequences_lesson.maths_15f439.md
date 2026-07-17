@@ -20,7 +20,7 @@ metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of arithmetic sequences involves abstract and procedural concepts that require exam-style precision, making Grandmaster's formal approach a good fit.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

@@ -20,7 +20,7 @@ metarules: .rokct/types/lesson.physical_sciences/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of resistors in parallel involves abstract concepts and formula manipulation, making a formal approach more suitable.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

@@ -20,7 +20,7 @@ metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
 idea: |
   The lesson will commence with a hook that reviews the importance of solving quadratic equations, followed by a concise explanation of the concept of completing the square. The Grandmaster will then illustrate the step-by-step process of completing the square, highlighting key algebraic manipulations. The example problem x²+6x+2=0 will be introduced as a non-perfect square trinomial, requiring the completion of the square method to solve. The Grandmaster will guide students through this problem, emphasizing precision and attention to detail. By the end of the 15-minute lesson, students should be able to apply the method to similar problems.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
