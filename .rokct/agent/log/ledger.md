@@ -52,3 +52,4 @@
 | maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | concept_generated | system | SYS-LESSON-RULES-29548411983 | — | 2026-07-17 01:50 |
 | maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29548951236 | — | 2026-07-17 02:03 |
 | maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | concept_expanding | jules | 15804134847597659344 | — | 2026-07-17 05:58 |
+| maths_g12_quadratic_equations_factoring_method_5b7a49 | lesson.maths | Maths Grade 12: Quadratic Equations - Factoring method | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29558914612 | — | 2026-07-17 06:02 |
