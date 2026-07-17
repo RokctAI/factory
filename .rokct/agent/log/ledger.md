@@ -60,3 +60,4 @@
 | accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_expanding | jules | 5210686244777653205 | — | 2026-07-17 06:33 |
 | economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | concept_expanding | jules | 1343133640742130634 | — | 2026-07-17 06:39 |
 | economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_expanding | jules | 17162214382753259622 | — | 2026-07-17 06:42 |
+| economics_g12_macroeconomics_the_multiplier_646d16 | lesson.economics | Economics Grade 12: Macroeconomics - The multiplier | concept_expanding | jules | 5955950585964261694 | — | 2026-07-17 06:45 |
