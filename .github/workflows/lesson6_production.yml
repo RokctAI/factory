@@ -28,6 +28,15 @@ name: Lesson 6 - Production (Manim JSON + Audio + Manifest)
 on:
   schedule:
     - cron: '0 2 * * 0'   # Sundays 02:00 UTC — weekly batch
+  # Push-dispatch: committing .github/level6_dispatch fires a run with the
+  # KEY=VALUE overrides in that file (push events carry no workflow inputs,
+  # and this repo's CI is driven by pushes — no authenticated gh available).
+  # Scheduled runs never read the file, so leaving it in the tree is safe.
+  push:
+    paths:
+      - '.github/level6_dispatch'
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       audio_backend:
@@ -94,6 +103,13 @@ jobs:
           REPO="${{ github.repository }}"
           PRODUCED=""
           COUNT=0
+
+          # Push-dispatch overrides (see the push trigger comment above).
+          if [ "${{ github.event_name }}" = "push" ] && [ -f .github/level6_dispatch ]; then
+            echo "Push dispatch: loading overrides from .github/level6_dispatch"
+            . .github/level6_dispatch
+            echo "AUDIO_BACKEND=$AUDIO_BACKEND MAX_CARDS=$MAX_CARDS CARD_FILTER=$CARD_FILTER"
+          fi
 
           for FILE in .rokct/agent/jobs/done/*.md; do
             [ -f "$FILE" ] || continue
