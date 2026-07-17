@@ -21,20 +21,24 @@ guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of arithmetic sequences involves abstract and procedural concepts that require exam-style precision, making Grandmaster's formal approach a good fit.
 idea_status: approved
-concept:
+concept: |
+  Angle: Strict, exam-focused, procedural mastery.
+  Pacing: Brisk but precise, leaving no ambiguity in notation.
+  Example placement: Formula first, immediately applied to the example problem (finding 20th term of 3; 7; 11; ...).
+  Structural Approach: Introduce variables ($a$, $d$, $n$, $T_n$), define general formula, execute example step-by-step to earn method/accuracy marks, conclude with a distinction-level insight on solving for any unknown given the other three.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
-status: concept_expanding
+lesson_name: Arithmetic Sequences
+lesson_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439
+script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/script.md
+manim_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/manim_scene.py
+subtopics_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/subtopics.json
+mcq_data_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/mcq.json
+comprehension_check_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/comprehension_check.json
+reel_brief_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/reel_clip.json
+mandy_transcript_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/mandy_nervous_script.md
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-17 05:58:22
 session_id: 
