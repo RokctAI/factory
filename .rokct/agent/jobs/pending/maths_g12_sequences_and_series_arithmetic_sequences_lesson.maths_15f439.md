@@ -27,7 +27,7 @@ concept: |
   Example placement: Formula first, immediately applied to the example problem (finding 20th term of 3; 7; 11; ...).
   Structural Approach: Introduce variables ($a$, $d$, $n$, $T_n$), define general formula, execute example step-by-step to earn method/accuracy marks, conclude with a distinction-level insight on solving for any unknown given the other three.
 concept_status:
-rules_status: expanding
+rules_status: failed
 lesson_name: Arithmetic Sequences
 lesson_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439
 script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/script.md

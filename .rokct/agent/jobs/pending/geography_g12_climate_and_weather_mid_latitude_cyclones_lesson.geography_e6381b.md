@@ -21,23 +21,24 @@ guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of mid-latitude cyclones has a strong real-world anchor in everyday weather patterns, making it a good fit for Big John's teaching style.
 idea_status: approved
-concept:
+concept: |
+  Ranger Themba uses a "simplistic, lower grade logic" approach. He anchors the highly abstract concept of a mid-latitude cyclone in a common physical experience: the freezing morning wind and subsequent rain in the Western Cape. He uses the analogy of two battling armies (warm vs cold air) and explains the process through stages, carefully avoiding jargon until the concept is established. The example problem is woven throughout the entire lesson and explicitly answered in the final subtopic.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
+lesson_name: Mid-latitude cyclones
+lesson_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b
+script_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/script.md
+manim_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/manim_scene.py
+subtopics_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/subtopics.json
+mcq_data_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/mcq.json
+comprehension_check_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/comprehension_check.json
+reel_brief_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/reel_clip.json
+mandy_transcript_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/geography/grade12/term1/geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b/mandy_nervous_script.md
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: concept_expanding
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-17 06:47:38
 session_id: 

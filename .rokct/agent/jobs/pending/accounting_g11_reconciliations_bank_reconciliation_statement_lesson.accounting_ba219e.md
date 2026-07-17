@@ -21,20 +21,21 @@ guardrail: age_13_17
 idea: |
   Tutor choice: The bank reconciliation statement involves procedural and abstract concepts that require exam-style precision.
 idea_status: approved
-concept:
+concept: |
+  Formal procedural teaching using Prof Mokoena persona. The script explicitly works through drawing the statement skeleton, correctly placing the Bank Statement balance based on the inversion rule, posting the outstanding deposit and cheques, and calculating the final balancing figure while voicing the underlying double-entry logic. It closes with a single internal control point about detecting fraud. Pace is deliberate and format-disciplined.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
-status: concept_expanding
+lesson_name: Bank Reconciliation Statement
+lesson_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e
+script_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/script.md
+manim_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/manim_scene.py
+subtopics_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/subtopics.json
+mcq_data_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/mcq.json
+comprehension_check_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/comprehension_check.json
+reel_brief_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/reel_clip.json
+mandy_transcript_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/mandy_nervous_script.md
+status: concept_generated
 created: 2026-07-14
 last_updated: 2026-07-17 06:31:28
 session_id: 
