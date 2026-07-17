@@ -49,3 +49,4 @@
 | maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | concept_expanding | jules | 16504558747801172975 | — | 2026-07-17 01:27 |
 | maths_g12_quadratic_equations_factoring_method_5b7a49 | lesson.maths | Maths Grade 12: Quadratic Equations - Factoring method | concept_expanding | jules | 3403277436368705929 | — | 2026-07-17 01:39 |
 | maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | expansion_requested | system | SYS-LESSON-RULES-29548205232 | — | 2026-07-17 01:44 |
+| maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | concept_generated | system | SYS-LESSON-RULES-29548411983 | — | 2026-07-17 01:50 |
