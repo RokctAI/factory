@@ -24,7 +24,7 @@ idea_status: approved
 concept: |
   The lesson leverages the Grandmaster persona to teach completing the square with authoritative precision. It focuses on the algebraic machinery and explicitly targets distinction-level technique by prioritizing the algorithm before application. The pacing is brisk, treating the example problem (x²+6x+2=0) as a direct demonstration of the step-by-step method ("the critical move").
 concept_status:
-rules_status: failed
+rules_status: passed
 lesson_name: Completing the Square
 lesson_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3
 script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/script.md
@@ -35,14 +35,18 @@ comprehension_check_path: lessons/maths/grade11/term1/maths_g11_quadratic_equati
 reel_brief_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/reel_clip.json
 mandy_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/mandy_nervous_script.md
-status: concept_generated
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-13
-last_updated: 2026-07-17 01:50:30
+last_updated: 2026-07-17 02:02:55
 session_id: 
 session_started: 
-attempts: 2
+attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
 expansion_requested: 1
+crosscheck_status: passed
+crosscheck_notes: |
+  [2026-07-17 02:02] Independent AI review (fresh Groq/llama call, not the generating agent): PASS
+  - no issues found
 ---
