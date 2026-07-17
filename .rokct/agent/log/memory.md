@@ -2,3 +2,4 @@
 * **[2026-05-22]** - Completed Agent Task: Docs add how to use guide 11532762102512328214 (https://github.com/RokctAI/factory/pull/13)
 * **[2026-07-17]** - Completed Agent Task: Generate Grade 11 Maths Lesson: Completing the Square (https://github.com/RokctAI/factory/pull/23)
 * **[2026-07-17]** - Completed Agent Task: Generate Supacharge lesson for Grade 12 Maths - Factoring Method (https://github.com/RokctAI/factory/pull/24)
+* **[2026-07-17]** - Completed Agent Task: Expand math lesson script for completing the square (https://github.com/RokctAI/factory/pull/25)
