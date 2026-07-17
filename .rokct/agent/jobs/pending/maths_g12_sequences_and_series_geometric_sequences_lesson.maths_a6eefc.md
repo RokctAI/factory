@@ -13,7 +13,7 @@ grade: 12
 term: 1
 topic: Sequences and Series
 subtopic: Geometric sequences
-tutor: Grandmaster — formal
+tutor: Grandmaster â€” formal
 example_problem: Find the 10th term of 2; 6; 18; ...
 prior_knowledge: Student knows arithmetic sequences and exponents
 metarules: .rokct/types/lesson.maths/metarules
@@ -36,7 +36,7 @@ mandy_transcript_path:
 mandy_nervous_script_path:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 05:08:39
+last_updated: 2026-07-17 06:05:00
 session_id: 
 session_started: 
 attempts: 1
