@@ -1,0 +1,167 @@
+{
+  "_comment": [
+    "DBE Grade 11 Physical Sciences: Physics (P1), November 2018. Unlike the",
+    "scanned Maths paper this PDF has a real text layer, so questions and",
+    "memo answers were extracted with pdfplumber and cross-checked against",
+    "the official Marking Guidelines (memo pages read in full for Q4).",
+    "solution_method is the method the MEMO uses - the matcher's content",
+    "signal. Question 4 (the Newton's-second-law experiment) is transcribed",
+    "in full; other questions are recorded at heading level with enough",
+    "method detail to stay honestly unmatched until lessons teach them."
+  ],
+  "paper_id": "dbe_physical_sciences_g11_p1_2018_nov",
+  "source": "Department of Basic Education",
+  "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade11Exams.aspx",
+  "paper_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659",
+  "memo_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658",
+  "paper_file": "paper1.pdf",
+  "memo_file": "memo1.pdf",
+  "_note_binaries": "The PDFs are gitignored (copyrighted DBE binaries); fetch them from the *_download_url fields. Everything the pipeline needs is in this extracted paper.json.",
+  "copyright": "© Department of Basic Education, 2018. Reproduced for educational use with attribution.",
+  "subject": "Physical Sciences",
+  "grade": 11,
+  "paper": "P1",
+  "session": "November 2018",
+  "language": "English",
+  "total_marks": 150,
+  "questions": [
+    {
+      "ref": "Q1",
+      "text": "Multiple-choice questions (10 x 2 marks) across the P1 physics syllabus.",
+      "marks": 20,
+      "topic": "Multiple Choice",
+      "solution_method": "multiple_choice_mixed",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q2",
+      "text": "Two forces, of magnitudes 50 N and 80 N, act at a point on a Cartesian plane (50 N at 30 degrees above the horizontal, 80 N along the horizontal). 2.1 name the single vector with the same effect; 2.2 calculate the vertical component of the 50 N force, the magnitude of the resultant force, and its direction.",
+      "marks": 10,
+      "topic": "Vectors in Two Dimensions",
+      "solution_method": "vector_resolution",
+      "memo_answer": "See marking guidelines",
+      "checkable": false
+    },
+    {
+      "ref": "Q3",
+      "text": "A 45 kg box is pulled with a 90 N force at 50 degrees to the horizontal and moves at CONSTANT VELOCITY. Define kinetic frictional force; state Newton's First Law; calculate the horizontal component of the applied force, the normal force, and the coefficient of kinetic friction.",
+      "marks": 16,
+      "topic": "Newton's Laws",
+      "solution_method": "friction_equilibrium",
+      "memo_answer": "See marking guidelines",
+      "checkable": false
+    },
+    {
+      "ref": "Q4.1",
+      "text": "State Newton's Second Law of Motion in words.",
+      "marks": 2,
+      "topic": "Newton's Laws",
+      "solution_method": "state_newtons_second_law",
+      "memo_answer": "When a resultant/net force acts on an object, the object will accelerate in the direction of the force. The acceleration is directly proportional to the net force and inversely proportional to the mass of the object.",
+      "memo_note": "Memo instruction: penalise -1 if key words/phrase omitted - exact CAPS wording matters.",
+      "checkable": false
+    },
+    {
+      "ref": "Q4.2",
+      "text": "Learners plot the inverse of acceleration (1/a) against mass m for a constant net force. Calculate the gradient of the graph.",
+      "marks": 3,
+      "topic": "Newton's Laws",
+      "solution_method": "graph_gradient",
+      "memo_answer": "gradient = (2,5 - 0)/(1,25 - 0) = 2",
+      "memo_working": "Accept any set of coordinates from the graph, e.g. (2,5 - 0)/(1,25 - 0) = 2 or (2,1 - 1,7)/(1,05 - 0,85) = 2",
+      "checkable": false
+    },
+    {
+      "ref": "Q4.3",
+      "text": "Hence, determine the net force applied on the object during the experiment (graph of 1/a versus m, gradient 2).",
+      "marks": 2,
+      "topic": "Newton's Laws",
+      "solution_method": "newtons_second_law_application",
+      "memo_answer": "F_net = 0,5 N",
+      "memo_working": "From F_net = ma: 1/a = m/F_net, so gradient = 1/F_net = 2, giving F_net = 1/2 = 0,5 N. (Memo option 2: F_net = ma = (1)(1/2) = 0,5 N.)",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.4",
+      "text": "Write down a conclusion for this experiment.",
+      "marks": 2,
+      "topic": "Newton's Laws",
+      "solution_method": "experiment_conclusion",
+      "memo_answer": "Acceleration is inversely proportional to the mass of an object (if the net force is kept constant).",
+      "checkable": false
+    },
+    {
+      "ref": "Q5",
+      "text": "A 25 kg crate slides down a plane inclined at 15 degrees: frictionless from A to B, rough from B to C. Draw a free-body diagram; calculate the acceleration A to B; give the direction of acceleration B to C; given net acceleration 1,2 m/s^2 from B to C, calculate the frictional force.",
+      "marks": 12,
+      "topic": "Newton's Laws",
+      "solution_method": "incline_dynamics",
+      "memo_answer": "See marking guidelines",
+      "checkable": false
+    },
+    {
+      "ref": "Q6",
+      "text": "The gravitational force on the Curiosity probe on Mars is 3 338 N; radius of Mars 3 390 km, mass 6,39 x 10^23 kg. State Newton's Law of Universal Gravitation; calculate the probe's mass and its weight on Earth.",
+      "marks": 8,
+      "topic": "Newton's Law of Universal Gravitation",
+      "solution_method": "universal_gravitation",
+      "memo_answer": "See marking guidelines",
+      "checkable": false
+    },
+    {
+      "ref": "Q7",
+      "text": "Refraction: a glass prism at the bottom of a water-filled container; light passes air -> water -> glass.",
+      "marks": 11,
+      "topic": "Geometrical Optics",
+      "solution_method": "snell_refraction",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q8",
+      "text": "Diffraction experiment: effect of wavelength on the degree of diffraction with monochromatic light through a single slit.",
+      "marks": 9,
+      "topic": "2D and 3D Wavefronts",
+      "solution_method": "diffraction",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q9",
+      "text": "Electrostatics: a suspended 0,2 g sphere carrying +7 x 10^-9 C near another charge; forces and Coulomb's law.",
+      "marks": 10,
+      "topic": "Electrostatics",
+      "solution_method": "coulombs_law",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q10",
+      "text": "Electric field: points P and T, 3 mm apart, in the field of positive charge Q.",
+      "marks": 8,
+      "topic": "Electrostatics",
+      "solution_method": "electric_field",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q11",
+      "text": "Electromagnetic induction: a square induction coil, side 3 cm, 400 windings, perpendicular to a uniform magnetic field.",
+      "marks": 9,
+      "topic": "Electromagnetism",
+      "solution_method": "faraday_induction",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q12",
+      "text": "Electric circuits: circuit with battery (internal resistance ignored), series/parallel resistors.",
+      "marks": 12,
+      "topic": "Electric Circuits",
+      "solution_method": "circuit_analysis",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    }
+  ]
+}

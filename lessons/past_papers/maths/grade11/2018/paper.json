@@ -1,0 +1,106 @@
+{
+  "_comment": [
+    "DBE Grade 11 Mathematics P1, November 2018. Questions + marking-memo",
+    "answers extracted by reading the rendered scanned pages (no text layer,",
+    "no OCR) and cross-checked against the official Marking Guidelines.",
+    "solution_method is the method the MEMO uses to solve each question -",
+    "this is the content signal the matcher links against, not the surface",
+    "wording of the question. memo_answer is verbatim from the guidelines.",
+    "Only Question 1 (equations) is transcribed in full for this proof;",
+    "Question 2 (exponents/surds) onward is recorded at heading level."
+  ],
+  "paper_id": "dbe_maths_g11_p1_2018_nov",
+  "source": "Department of Basic Education",
+  "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade11Exams.aspx",
+  "paper_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659",
+  "memo_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659",
+  "paper_file": "paper1.pdf",
+  "memo_file": "memo1.pdf",
+  "_note_binaries": "The scanned PDFs are gitignored (copyrighted DBE binaries); fetch them from the *_download_url fields. Everything the pipeline needs is in this extracted paper.json.",
+  "copyright": "© Department of Basic Education, 2018. Reproduced for educational use with attribution.",
+  "subject": "Maths",
+  "grade": 11,
+  "paper": "P1",
+  "session": "November 2018",
+  "language": "English",
+  "total_marks": 150,
+  "questions": [
+    {
+      "ref": "Q1.1.1",
+      "text": "Solve for x:  x(2x + 1) = 0",
+      "marks": 2,
+      "topic": "Quadratic Equations",
+      "solution_method": "zero_product_property",
+      "memo_answer": "x = 0 or x = -1/2",
+      "memo_working": "x(2x+1)=0 -> x=0 or 2x+1=0 -> x=-1/2",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.1.2",
+      "text": "Solve for x (correct to TWO decimal places):  5x^2 + 2x - 6 = 0",
+      "marks": 3,
+      "topic": "Quadratic Equations",
+      "solution_method": "quadratic_formula",
+      "memo_answer": "x = 0,91 or x = -1,31",
+      "memo_working": "a=5, b=2, c=-6; x = (-2 ± sqrt(2^2 - 4(5)(-6)))/(2·5) = (-2 ± sqrt(124))/10",
+      "memo_note": "The memo's printed intermediate line shows (5 ± sqrt(124))/10, a known transcription slip; the final answers 0,91 / -1,31 are correct and match a recomputation.",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.1.3",
+      "text": "Solve for x:  2x^2 - 2 >= 3x",
+      "marks": 4,
+      "topic": "Quadratic Inequalities",
+      "solution_method": "quadratic_inequality",
+      "memo_answer": "x <= -1/2 or x >= 2",
+      "memo_working": "2x^2 - 3x - 2 >= 0 -> (2x+1)(x-2) >= 0 -> critical values -1/2, 2; sign analysis",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.1.4",
+      "text": "Solve for x:  sqrt(2x+5) - 3/sqrt(2x+5) = -2",
+      "marks": 6,
+      "topic": "Equations reducible to quadratic",
+      "solution_method": "substitution_to_quadratic",
+      "memo_answer": "x = -2",
+      "memo_working": "Let k = sqrt(2x+5); k - 3/k = -2 -> k^2 + 2k - 3 = 0 -> (k+3)(k-1)=0 -> k=1 (k=-3 rejected) -> 2x+5=1 -> x=-2",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.2",
+      "text": "Solve for x and y simultaneously:  y + x = 2  and  x^2 + 3xy + 8 = 0",
+      "marks": 6,
+      "topic": "Simultaneous Equations",
+      "solution_method": "simultaneous_substitution",
+      "memo_answer": "See marking guidelines",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.3",
+      "text": "The roots of f(x)=0 are x = (4 ± sqrt(16 - 4m(-m+5)))/(2m). Determine the values of m for which the roots will be non-real.",
+      "marks": 4,
+      "topic": "Nature of Roots",
+      "solution_method": "discriminant_analysis",
+      "memo_answer": "See marking guidelines",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.4",
+      "text": "Show that the maximum value of sqrt(-x^2 + 4x + 12) is 4.",
+      "marks": 4,
+      "topic": "Maxima and Minima",
+      "solution_method": "completing_square_optimisation",
+      "memo_answer": "maximum value = 4",
+      "checkable": false
+    },
+    {
+      "ref": "Q2",
+      "text": "Exponents and surds (simplification, exponential equations, surd equations).",
+      "marks": 17,
+      "topic": "Exponents and Surds",
+      "solution_method": "exponent_surd_laws",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    }
+  ]
+}

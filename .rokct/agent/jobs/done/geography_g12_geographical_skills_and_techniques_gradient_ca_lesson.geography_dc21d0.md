@@ -10,7 +10,10 @@ theme: Geography Grade 12: Geographical Skills and Techniques - Gradient calcula
 type: lesson.geography
 subject: Geography
 grade: 12
-term: all
+term:
+category: skill
+skill_ref: geography.gradient_calculation
+requires_skills:
 topic: Geographical Skills and Techniques
 subtopic: Gradient calculation
 tutor: Grandmaster — formal
@@ -26,15 +29,15 @@ concept: |
 concept_status: approved
 rules_status: passed
 lesson_name: Gradient calculation
-lesson_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0
-script_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/script.md
-manim_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/manim_scene.py
-subtopics_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/subtopics.json
-mcq_data_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mcq.json
-comprehension_check_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/comprehension_check.json
-reel_brief_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/reel_clip.json
-mandy_transcript_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_qa_transcript.md
-mandy_nervous_script_path: lessons/geography/grade12/term_all/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
+lesson_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0
+script_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/script.md
+manim_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/manim_scene.py
+subtopics_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/subtopics.json
+mcq_data_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mcq.json
+comprehension_check_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/comprehension_check.json
+reel_brief_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/reel_clip.json
+mandy_transcript_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
 status: evaluated
 created: 2026-07-14
 last_updated: 2026-07-14 02:41:00
@@ -44,4 +47,5 @@ attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10
+past_paper_examples: dbe_geography_g12_p2_2018_nov:Q2.2.2
 ---

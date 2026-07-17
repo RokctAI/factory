@@ -37,9 +37,9 @@ mandy_transcript_path: lessons/maths/grade12/term3/maths_g12_finance_growth_and_
 mandy_nervous_script_path: lessons/maths/grade12/term3/maths_g12_finance_growth_and_decay_compound_growth_b9eede/mandy_nervous_script.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-14 00:48:59
-session_id: 
-session_started: 
+last_updated: 2026-07-14 21:25:33
+session_id: 9121861025352206512
+session_started: 2026-07-14 21:25:33
 attempts: 1
 last_error:
 loop_iterations: 0

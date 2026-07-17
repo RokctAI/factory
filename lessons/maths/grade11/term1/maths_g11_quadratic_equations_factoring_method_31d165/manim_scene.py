@@ -49,8 +49,8 @@ class QuadraticFactoring(Scene):
 
         # Finding factors
         factors_text = Tex("Factors of 6:").shift(DOWN * 2.5)
-        factors_1 = Tex("$1 \times 6 = 6$, $1 + 6 = 7$ (No)").shift(DOWN * 3)
-        factors_2 = Tex("$2 \times 3 = 6$, $2 + 3 = 5$ (Yes!)").shift(DOWN * 3.5)
+        factors_1 = Tex(r"$1 \times 6 = 6$, $1 + 6 = 7$ (No)").shift(DOWN * 3)
+        factors_2 = Tex(r"$2 \times 3 = 6$, $2 + 3 = 5$ (Yes!)").shift(DOWN * 3.5)
 
         self.play(Write(factors_text))
         self.wait(1)

@@ -40,10 +40,35 @@ RUNNING_DIR = Path(".rokct/agent/jobs/running")
 DONE_DIR = Path(".rokct/agent/jobs/done")
 SEED_PATH = Path("lessons/curriculum/caps_seed.json")
 
-# CAPS school terms. "all" is for skills topics the ATP integrates across
-# every term (e.g. Geography mapwork); "unknown" is for topics that could
-# not be verified against a real CAPS/ATP source — never guess a term.
-VALID_TERMS = {"1", "2", "3", "4", "all", "unknown"}
+# CAPS school terms. "unknown" is for topics that could not be verified
+# against a real CAPS/ATP source — never guess a term. Term-independent
+# skills topics (e.g. Geography mapwork) are NOT a term value: they carry
+# `category: skill` instead (see the Skills convention below) and leave
+# term empty.
+VALID_TERMS = {"1", "2", "3", "4", "unknown"}
+
+# --- Skills convention ---
+# A skill lesson is structurally identical to any other lesson (same seven
+# content items, same pipeline levels, same gates). The only distinction is
+# scheduling: a skill lesson never gets a live broadcast slot — it lives in
+# the Library as always-available on-demand content. Schema:
+#   category: skill          on the skill lesson's card (absent = standard,
+#                            broadcast-schedulable lesson)
+#   skill_ref: <subject>.<slug>   stable reference id on the skill card,
+#                            e.g. geography.gradient_calculation — card ids
+#                            embed content hashes, skill_ref survives
+#                            reseeding and is what everything else points at
+#   requires_skills: <ref>[, <ref>]   on any lesson card that needs the
+#                            skill first (app side: pre-session assessment
+#                            tags a skill-check question; attendance
+#                            confirmation offers a non-forcing "review this
+#                            skill first?" suggestion)
+# Content lives at lessons/<subject>/grade<g>/skills/<id>/ — grade-scoped
+# (CAPS assesses the same skill at different depths per grade) but with no
+# false term claim. `lesson_pipeline.py skills-index` validates the graph
+# and generates lessons/skills_index.json for the app side.
+CATEGORY_SKILL = "skill"
+SKILLS_INDEX_PATH = Path("lessons/skills_index.json")
 
 # §4 asks for "15 minutes teaching"; at a spoken pace that is well over a
 # thousand words, but scripts interleave whiteboard beats, so 900 is the
@@ -53,12 +78,15 @@ SCRIPT_MIN_WORDS = 900
 TUTOR_GRANDMASTER = "Grandmaster — formal"
 TUTOR_BIG_JOHN = "Big John — simplistic, lower grade logic"
 
-# Tutor persona cards (.rokct/tutors/): every subject has an Expert +
+# Tutor persona cards (lessons/tutors/): every subject has an Expert +
 # Simplifier duo (supacharge-characters.md §1) and the same duo spans all
 # grades of a subject. roster.json maps subject -> duo so a different duo
 # can be attached per subject later without touching this code. The legacy
 # constants above stay as the fallback when the roster is unavailable.
-TUTORS_DIR = Path(".rokct/tutors")
+# NOTE: the cards deliberately live under lessons/, NOT .rokct/ — CI
+# automation blanket-adds/commits .rokct/ from stale checkouts and silently
+# deleted the cards twice when they lived at .rokct/tutors/.
+TUTORS_DIR = Path("lessons/tutors")
 
 CONTENT_FILES = {
     "script_path": "script.md",
@@ -147,8 +175,16 @@ def normalize_term(value):
     return v if v in VALID_TERMS else "unknown"
 
 
-def content_dir(subject, grade, term, card_id):
-    """Grouped lesson content location: lessons/<subject>/<grade>/<term>/<id>."""
+def content_dir(subject, grade, term, card_id, category=""):
+    """Grouped lesson content location.
+
+    Standard lessons: lessons/<subject>/grade<g>/term<t>/<id>.
+    Skill lessons (category: skill): lessons/<subject>/grade<g>/skills/<id> —
+    still grade-scoped (CAPS assesses a skill at each grade's depth) but
+    without a term segment, because skills are term-independent by design.
+    """
+    if category == CATEGORY_SKILL:
+        return f"lessons/{slugify(subject)}/grade{int(grade)}/skills/{card_id}"
     term = normalize_term(term)
     term_dir = f"term{term}" if term.isdigit() else f"term_{term}"
     return f"lessons/{slugify(subject)}/grade{int(grade)}/{term_dir}/{card_id}"
@@ -223,9 +259,23 @@ def cmd_seed(args):
         slug = slugify(f"{entry['subject']}_g{entry['grade']}_{entry['topic']}_{entry['subtopic']}")[:60]
         card_id = f"{slug}_{h}"
         theme = f"{entry['subject']} Grade {entry['grade']}: {entry['topic']} - {entry['subtopic']}"
-        term = normalize_term(entry.get("term"))
-        if term == "unknown" and str(entry.get("term", "")).strip().lower() not in ("", "unknown"):
-            print(f"WARN: seed entry has invalid term {entry.get('term')!r}; recording 'unknown'")
+        category = str(entry.get("category", "")).strip().lower()
+        skill_ref = str(entry.get("skill_ref", "")).strip()
+        requires_skills = entry.get("requires_skills", [])
+        if category == CATEGORY_SKILL:
+            # Skills are term-independent; a term on a skill row is a
+            # contradiction, and a skill without a stable ref is unlinkable.
+            if not skill_ref:
+                print(f"ERROR: skill seed entry missing skill_ref: {entry['subtopic']}")
+                continue
+            if str(entry.get("term", "")).strip():
+                print(f"ERROR: skill seed entry must not carry a term: {entry['subtopic']}")
+                continue
+            term = ""
+        else:
+            term = normalize_term(entry.get("term"))
+            if term == "unknown" and str(entry.get("term", "")).strip().lower() not in ("", "unknown"):
+                print(f"WARN: seed entry has invalid term {entry.get('term')!r}; recording 'unknown'")
         now = datetime.now()
         card = f"""<!-- CARD RULES
      This card is the source of truth for this job.
@@ -240,6 +290,9 @@ type: {entry['type']}
 subject: {entry['subject']}
 grade: {entry['grade']}
 term: {term}
+category: {category}
+skill_ref: {skill_ref}
+requires_skills: {', '.join(requires_skills)}
 topic: {entry['topic']}
 subtopic: {entry['subtopic']}
 tutor: {entry.get('tutor', '')}
@@ -248,7 +301,7 @@ prior_knowledge: {entry.get('prior_knowledge', '')}
 metarules: .rokct/types/{entry['type']}/metarules
 guardrail: {guardrail_for_grade(entry['grade'])}
 idea:
-idea_status:
+idea_status: approved
 concept:
 concept_status:
 rules_status:
@@ -351,6 +404,8 @@ def build_level1_prompt(card):
     subject = get_field(card, "subject")
     grade = get_field(card, "grade")
     term = get_field(card, "term")
+    if get_field(card, "category") == CATEGORY_SKILL:
+        term = "term-independent skill (library lesson, taught on demand)"
     topic = get_field(card, "topic")
     subtopic = get_field(card, "subtopic")
     tutor = get_field(card, "tutor")
@@ -421,13 +476,17 @@ def build_level2_prompt(card, card_file):
     card_id = get_field(card, "id")
     subject = get_field(card, "subject")
     grade = get_field(card, "grade")
-    term = get_field(card, "term") or "unknown"
+    category = get_field(card, "category")
+    if category == CATEGORY_SKILL:
+        term = "term-independent skill (library lesson, taught on demand)"
+    else:
+        term = get_field(card, "term") or "unknown"
     topic = get_field(card, "topic")
     subtopic = get_field(card, "subtopic")
     tutor = get_field(card, "tutor") or TUTOR_GRANDMASTER
     example = get_field(card, "example_problem")
     prior = get_field(card, "prior_knowledge")
-    lesson_dir = content_dir(subject, grade, term, card_id)
+    lesson_dir = content_dir(subject, grade, get_field(card, "term"), card_id, category)
 
     # Embed the selected tutor's full persona card so the script reflects
     # the established character instead of Jules re-deriving the voice from
@@ -436,7 +495,7 @@ def build_level2_prompt(card, card_file):
     persona_block = ""
     if persona_card:
         persona_block = f"""
-TUTOR PERSONA CARD (.rokct/tutors/{slug}.md) — every tutor-voiced item
+TUTOR PERSONA CARD (lessons/tutors/{slug}.md) — every tutor-voiced item
 (script, reel clip) must be written in exactly this established character;
 do not re-derive or soften the voice:
 --- persona card start ---
@@ -471,7 +530,16 @@ block) and the metarules under {get_field(card, 'metarules') or '.rokct/types/' 
 
 Write the files into {lesson_dir}/ exactly as follows:
 - {lesson_dir}/script.md — the lesson script in the tutor's voice, with a
-  '## Subtopic: <title>' heading per subtopic.
+  '## Subtopic: <title>' heading per subtopic. TEACHING CONTENT ONLY: the
+  platform's player supplies all session framing, so the script must contain
+  NO tutor self-introductions, NO platform mentions, NO references to Mandy
+  or any host, NO handoffs, and NO goodbyes/sign-offs. Pedagogical
+  transitions spoken by the tutor ARE teaching flow and belong in: at the
+  end of each subtopic that has MCQs, include one brief, natural
+  question lead-in in the tutor's own register (e.g. "Pause here and try a
+  few quick questions on this before we continue") — the audio is
+  continuous and the player pauses at the exercise moment, so write no
+  stage directions like [pause] or [silence] and bake in no dead air.
 - {lesson_dir}/manim_scene.py — Manim Community Python file, whiteboard
   style, one step at a time, mirroring the script's teaching beats.
 - {lesson_dir}/subtopics.json — {{"subtopics": [{{"ref": "subtopic_1",
@@ -582,10 +650,15 @@ def cmd_plan(args):
     if not get_field(card, "prior_knowledge"):
         card = set_field(card, "prior_knowledge", prior)
     card = set_block_field(card, "idea", angle)
-    card = set_field(card, "idea_status", "pending")
+    # Gate 1 (manual idea approval) retired for lesson cards by owner
+    # decision 2026-07-17: lesson ideas flow straight to Level 2. Gates 2
+    # (concept approval / Jules PR merge) and 4 (evaluation) remain human.
+    # Book/film types keep their gate-1 behaviour — this pipeline is
+    # lesson.*-only.
+    card = set_field(card, "idea_status", "approved")
     card = set_field(card, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     write_card(args.file, card)
-    print(f"Level 1 plan captured on {args.file} (idea_status: pending).")
+    print(f"Level 1 plan captured on {args.file} (idea_status: approved — gate 1 retired for lessons).")
     return 0
 
 
@@ -961,6 +1034,97 @@ def _load_json(path, errors, label):
         return None
 
 
+# --- Skills: registry, validation, generated index ---
+
+def _all_lesson_cards():
+    for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
+        if d.exists():
+            for f in sorted(d.glob("*.md")):
+                c = f.read_text(encoding="utf-8")
+                if get_field(c, "type").startswith("lesson."):
+                    yield f, c
+
+
+def load_skills():
+    """(skill_ref -> skill card info, error list) over every category: skill
+    card in pending/running/done."""
+    skills, errors = {}, []
+    for path, c in _all_lesson_cards():
+        if get_field(c, "category") != CATEGORY_SKILL:
+            continue
+        ref = get_field(c, "skill_ref")
+        if not ref:
+            errors.append(f"{path.name}: category is skill but skill_ref is empty")
+            continue
+        if ref in skills:
+            errors.append(
+                f"skill_ref '{ref}' is defined by both "
+                f"{skills[ref]['card_file']} and {path.name}")
+            continue
+        skills[ref] = {
+            "card_id": get_field(c, "id"),
+            "card_file": str(path).replace("\\", "/"),
+            "subject": get_field(c, "subject"),
+            "grade": int(get_field(c, "grade") or 0),
+            "topic": get_field(c, "topic"),
+            "subtopic": get_field(c, "subtopic"),
+            "lesson_name": get_field(c, "lesson_name"),
+            "lesson_path": get_field(c, "lesson_path"),
+            "status": get_field(c, "status").split()[0] if get_field(c, "status") else "",
+            "required_by": [],
+        }
+    return skills, errors
+
+
+def parse_requires_skills(card):
+    return [r.strip() for r in get_field(card, "requires_skills").split(",") if r.strip()]
+
+
+def cmd_skills_index(args):
+    """Validate the skills graph and regenerate lessons/skills_index.json.
+
+    Validation (exit 1 on any violation):
+    - every category: skill card has a unique, non-empty skill_ref
+    - every requires_skills entry on any card resolves to a defined skill
+    - a skill card does not require itself
+    The generated index is the app-side contract: skill_ref ->
+    {card_id, subject, grade, topic, subtopic, lesson_name, lesson_path,
+    status, required_by[]}.
+    """
+    skills, errors = load_skills()
+    for path, c in _all_lesson_cards():
+        card_id = get_field(c, "id")
+        for ref in parse_requires_skills(c):
+            if ref not in skills:
+                errors.append(f"{path.name}: requires_skills '{ref}' does not match any skill card")
+            elif skills[ref]["card_id"] == card_id:
+                errors.append(f"{path.name}: card requires itself ({ref})")
+            else:
+                skills[ref]["required_by"].append(card_id)
+    if errors:
+        for e in errors:
+            print(f"FAIL: {e}")
+        return 1
+    index = {
+        "_comment": [
+            "GENERATED by lesson_pipeline.py skills-index — do not hand-edit.",
+            "App-side contract for library-only skill lessons: a skill lesson",
+            "is a full lesson (same seven content items) that never gets a",
+            "live broadcast slot; it lives in the Library on demand. Cards",
+            "reference skills via requires_skills: <skill_ref> — the app uses",
+            "this for pre-session assessment skill-check tagging and the",
+            "non-forcing 'review this skill first?' attendance suggestion.",
+        ],
+        "generated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "skills": skills,
+    }
+    SKILLS_INDEX_PATH.write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
+    print(f"skills_index: {len(skills)} skill(s), "
+          f"{sum(len(s['required_by']) for s in skills.values())} requirement edge(s) "
+          f"-> {SKILLS_INDEX_PATH}")
+    return 0
+
+
 def run_checks(card, card_file):
     """Structural + pedagogical sanity checks for Level 3.
 
@@ -1127,7 +1291,83 @@ def run_checks(card, card_file):
     if len(mandy.split()) < 50:
         errors.append("mandy_qa_transcript.md too short to be a usable Q&A transcript")
 
+    # Skills schema consistency (see the Skills convention at the top of
+    # this file): a skill card must carry its stable ref, a non-skill card
+    # must not, and every requires_skills entry must resolve.
+    category = get_field(card, "category")
+    skill_ref = get_field(card, "skill_ref")
+    if category == CATEGORY_SKILL and not skill_ref:
+        errors.append("category is skill but skill_ref is empty")
+    if skill_ref and category != CATEGORY_SKILL:
+        errors.append(f"skill_ref '{skill_ref}' set but category is not 'skill'")
+    reqs = parse_requires_skills(card)
+    if reqs:
+        skills, skill_errors = load_skills()
+        errors.extend(skill_errors)
+        for ref in reqs:
+            if ref not in skills:
+                errors.append(f"requires_skills '{ref}' does not match any skill card")
+            elif skills[ref]["card_id"] == get_field(card, "id"):
+                errors.append(f"card requires itself ({ref})")
+
+    # Linked past-paper worked examples: if this lesson has been linked to a
+    # real past-paper question (past_papers.py), verify the link here — the
+    # payoff of the bidirectional index. A wrong link (the subtopic does not
+    # teach the question's method) or a memo answer our recomputation
+    # disagrees with is a real content error, so it fails Level 3.
+    if get_field(card, "past_paper_examples"):
+        pp_errors = verify_linked_past_papers(get_field(card, "id"))
+        errors.extend(pp_errors)
+
     return (errors, warnings)
+
+
+def verify_linked_past_papers(lesson_id):
+    """Bridge to past_papers.py's verifier so Level 3 can validate a lesson's
+    linked past-paper worked examples. Returns a list of error strings. Never
+    raises — a missing index or unimportable module is reported, not fatal."""
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "past_papers", str(Path(__file__).with_name("past_papers.py")))
+        pp = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(pp)
+    except Exception as e:  # pragma: no cover - defensive
+        return [f"could not load past_papers verifier: {e}"]
+
+    if not pp.LINKS_PATH.exists():
+        return [f"card lists past_paper_examples but {pp.LINKS_PATH} is missing"]
+
+    links = json.loads(pp.LINKS_PATH.read_text("utf-8"))
+    back = links.get("lessons", {}).get(lesson_id, [])
+    if not back:
+        return [f"card lists past_paper_examples but no link recorded for {lesson_id}"]
+
+    errors = []
+    for b in back:
+        paper_path = pp.PP_ROOT / pp._paper_rel(b["paper_id"])
+        paper = json.loads(paper_path.read_text("utf-8"))
+        q = next((x for x in paper["questions"] if x["ref"] == b["question"]), None)
+        if q is None:
+            errors.append(f"linked past-paper question {b['question']} not found in {paper_path}")
+            continue
+        lessons = pp.load_lessons(paper["subject"], paper["grade"])
+        lesson = next((l for l in lessons if l["id"] == lesson_id), None)
+        method = q["solution_method"]
+        if not (lesson and lesson["methods"].get(method) == b["subtopic_ref"]):
+            errors.append(
+                f"past-paper link {b['paper_id']}:{q['ref']} claims subtopic "
+                f"{b['subtopic_ref']} teaches '{method}', but it does not")
+        computed = pp.recompute(q["ref"], paper)
+        if q.get("checkable") and computed is not None:
+            memo = pp.parse_memo_roots(q["memo_answer"])
+            if computed != memo:
+                errors.append(
+                    f"past-paper {q['ref']}: recomputed answer {sorted(computed)} "
+                    f"disagrees with memo {sorted(memo)}")
+    if not errors:
+        print(f"Past-paper links verified: {len(back)} worked example(s)")
+    return errors
 
 
 def cmd_check(args):
@@ -1139,6 +1379,17 @@ def cmd_check(args):
     errors, warnings = run_checks(card, args.file)
     for w in warnings:
         print(f"WARN: {w}")
+
+    # Evaluated cards are archived history: report (useful for re-auditing a
+    # lesson, e.g. after linking a past-paper worked example) but never
+    # rewrite rules_status/last_updated on them — the state machine is done
+    # with these cards.
+    if get_field(card, "status").startswith("evaluated"):
+        for e in errors:
+            print(f"FAIL: {e}")
+        print("Card is evaluated (archived) — read-only check, card not modified.")
+        return 1 if errors else 0
+
     if errors:
         for e in errors:
             print(f"FAIL: {e}")
@@ -1424,7 +1675,9 @@ def _load_all_cards():
             cards.append({
                 "file": f, "bucket": bucket,
                 "id": get_field(c, "id"), "subject": get_field(c, "subject"),
-                "grade": get_field(c, "grade"), "term": get_field(c, "term"),
+                "grade": get_field(c, "grade"),
+                "term": "skills" if get_field(c, "category") == CATEGORY_SKILL
+                        else get_field(c, "term"),
                 "topic": get_field(c, "topic"), "subtopic": get_field(c, "subtopic"),
                 "status": get_field(c, "status"), "idea_status": get_field(c, "idea_status"),
                 "concept_status": get_field(c, "concept_status"),
@@ -1623,6 +1876,8 @@ def main():
 
     sub.add_parser("dashboard", help="Regenerate lessons/DASHBOARD.md from real card data")
 
+    sub.add_parser("skills-index", help="Validate the skills graph and regenerate lessons/skills_index.json")
+
     p = sub.add_parser("crosscheck", help="Level 3.5: independent AI review; records crosscheck_status/notes")
     p.add_argument("--file", required=True)
     p.add_argument("--ai-response-file", help="Test hook: parse this canned response instead of calling the API")
@@ -1652,6 +1907,7 @@ def main():
         "mark-expansion": cmd_mark_expansion,
         "crosscheck": cmd_crosscheck,
         "dashboard": cmd_dashboard,
+        "skills-index": cmd_skills_index,
     }
     if args.command not in handlers:
         parser.print_help()

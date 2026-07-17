@@ -21,26 +21,31 @@ guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of conservation of mechanical energy involves abstract concepts and symbolic manipulation, making a formal approach more suitable.
   The lesson begins with a brief review of kinetic and potential energy, followed by the introduction of the conservation of mechanical energy principle. The Grandmaster then derives the relevant equation, highlighting the conversion between potential and kinetic energy. The example problem is presented as an application of this principle, with the Grandmaster guiding students through the calculation. The lesson concludes with a summary of key concepts and a check for understanding.
-idea_status: pending
-concept:
+idea_status: approved
+concept: |
+  Angle: Formal and data-sheet driven precision.
+  Emotional World: Academic rigor, confidence.
+  Target Feeling: Preparedness and absolute clarity.
+  Structural Approach: The lesson starts by establishing the physical principles (kinetic, potential, and mechanical energy). It introduces the conservation principle and formula, then solves the example problem rigorously showing every substitution. Final wrap-up includes mark allocation advice. Pacing is fast and crisp.
+
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
-status: pending_approval # next step is concept_expanding
+lesson_name: Conservation of Mechanical Energy
+lesson_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086
+script_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/script.md
+manim_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/manim_scene.py
+subtopics_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/subtopics.json
+mcq_data_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/mcq.json
+comprehension_check_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/comprehension_check.json
+reel_brief_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/reel_clip.json
+mandy_transcript_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/physical_sciences/grade12/term2/physical_sciences_g12_work_energy_and_power_conservation_of__663086/mandy_nervous_script.md
+status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-14 05:18:36
+last_updated: 2026-07-17 07:02:37
 session_id: 
 session_started: 
-attempts: 1
+attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10

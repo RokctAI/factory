@@ -245,22 +245,24 @@
       "type": "lesson.geography",
       "subject": "Geography",
       "grade": 12,
-      "term": "all",
       "topic": "Geographical Skills and Techniques",
       "subtopic": "Gradient calculation",
       "example_problem": "Calculate the average gradient between trig beacon 251 (1 200 m) and a spot height of 900 m that are 4,5 km apart on a 1:50 000 topographic map.",
       "prior_knowledge": "Student can read contour lines and convert between map units",
-      "tutor": "Dr Molefe — formal"
+      "tutor": "Dr Molefe — formal",
+      "category": "skill",
+      "skill_ref": "geography.gradient_calculation"
     },
     {
       "type": "lesson.geography",
       "subject": "Geography",
       "grade": 12,
-      "term": "all",
       "topic": "Geographical Skills and Techniques",
       "subtopic": "Map scale and distance",
       "example_problem": "The distance between two points on a 1:50 000 topographic map is 8,6 cm. Calculate the real distance in kilometres.",
-      "prior_knowledge": "Student knows ratio scale and metric unit conversions"
+      "prior_knowledge": "Student knows ratio scale and metric unit conversions",
+      "category": "skill",
+      "skill_ref": "geography.map_scale_and_distance"
     },
     {
       "type": "lesson.geography",
@@ -280,7 +282,10 @@
       "topic": "Geomorphology",
       "subtopic": "River profiles and rejuvenation",
       "example_problem": "Differentiate between a graded and an ungraded river profile, and explain river rejuvenation using a labelled diagram.",
-      "prior_knowledge": "Student knows drainage basins and fluvial erosion and deposition"
+      "prior_knowledge": "Student knows drainage basins and fluvial erosion and deposition",
+      "requires_skills": [
+        "geography.gradient_calculation"
+      ]
     },
     {
       "type": "lesson.geography",

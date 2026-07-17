@@ -1,0 +1,8 @@
+# Level 6 push-dispatch overrides. Committing a change to this file fires
+# lesson6_production.yml as a push event with these settings (scheduled runs
+# ignore this file). KEY=VALUE, sourced by bash.
+AUDIO_BACKEND=sapi
+MAX_CARDS=1
+CARD_FILTER=maths
+# dispatch 2: diagnostic run
+# dispatch 3: espeak CLI fix

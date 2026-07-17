@@ -1,0 +1,20 @@
+name: Mark Jules PRs Ready for Review
+# Jules opens its AUTO_CREATE_PR pull requests as drafts (its own default —
+# nothing in our prompts or the delegate payload asks for draft). A draft PR
+# blocks the human merge gate behind an extra click, so flip lesson/content
+# PRs to ready automatically. Merging remains a manual human decision.
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  mark_ready:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Mark draft PR ready for review
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr ready ${{ github.event.pull_request.number }} --repo ${{ github.repository }}

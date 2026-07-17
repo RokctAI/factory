@@ -20,26 +20,27 @@ metarules: .rokct/types/lesson.maths/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: Geometric sequences involve abstract concepts and formula manipulation, making a formal approach more suitable.
-idea_status: pending
-concept:
+idea_status: approved
+concept: |
+  Formal, exam-technique-driven approach. The script starts by cementing the geometric sequence definition (constant ratio) and the general formula. It moves swiftly into solving the example problem (finding the 10th term of 2; 6; 18...) using step-by-step substitution to model examiner expectations. The final subtopic is a high-yield technique summary focusing on avoiding fatal exponent errors.
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
-status: pending_approval # next step is concept_expanding
+lesson_name: Geometric Sequences
+lesson_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc
+script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/script.md
+manim_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/manim_scene.py
+subtopics_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/subtopics.json
+mcq_data_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/mcq.json
+comprehension_check_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/comprehension_check.json
+reel_brief_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/reel_clip.json
+mandy_transcript_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_geometric_sequences_a6eefc/mandy_nervous_script.md
+status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-14 05:08:39
+last_updated: 2026-07-17 06:10:28
 session_id: 
 session_started: 
-attempts: 1
+attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10

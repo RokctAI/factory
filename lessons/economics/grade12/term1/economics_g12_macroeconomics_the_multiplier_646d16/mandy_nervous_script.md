@@ -1,0 +1,5 @@
+Hey! I know Ms Mahlangu can be super intense with all those formulas and strict definitions. It's okay if you feel a little overwhelmed! The multiplier can look scary with all the decimals and division, but it’s actually just a story about how money travels.
+
+Think of it like this: if the government gives a builder R100 to build a road, that builder doesn’t just hide the R100 under their mattress. They spend some of it, maybe R75, at the grocery store. Now the grocery store owner has an extra R75! And they spend some of *that*. That’s the multiplier effect. The money just keeps passing from hand to hand, getting a little smaller each time as people save a bit of it.
+
+You just need to know two things to ace this: the formula, and how to plug the numbers in. You’ve got this, just take a deep breath and let's practice it together.

@@ -27,8 +27,16 @@ jobs:
           TYPES=("book.poetry" "book.fiction" "book.short_story" "book.children" "film.documentary")
 
           for TYPE in "${TYPES[@]}"; do
-            PENDING_COUNT=$(ls .rokct/agent/jobs/pending/*_${TYPE}_*.md 2>/dev/null | grep -v "template.md" | wc -l)
-            echo "Current pending themes for $TYPE: $PENDING_COUNT"
+            # Count only ACTIVE cards for this type — exclude stalled so they
+            # don't inflate the queue and prevent new theme generation.
+            PENDING_COUNT=0
+            for f in .rokct/agent/jobs/pending/*_${TYPE}_*.md; do
+              [ -f "$f" ] || continue
+              [[ "$f" == *template* ]] && continue
+              grep -qE '^status:[[:space:]]*stalled' "$f" && continue
+              PENDING_COUNT=$((PENDING_COUNT + 1))
+            done
+            echo "Current active (non-stalled) pending themes for $TYPE: $PENDING_COUNT"
 
             if [ "$PENDING_COUNT" -lt 5 ]; then
               echo "🚀 Triggering Level 0 Theme Discovery for $TYPE..."
@@ -51,3 +59,29 @@ jobs:
               break
             fi
           done
+
+      - name: Surface Stuck Cards Needing Concept Approval
+        run: |
+          # Detect non-lesson cards that are stuck in concept_generated with no
+          # concept_status set — these need a human to set concept_status: approved
+          # before Level 3 can advance them, and previously had no visibility.
+          STUCK=0
+          for FILE in .rokct/agent/jobs/pending/*.md; do
+            [ -f "$FILE" ] || continue
+            [[ "$FILE" == *template* ]] && continue
+            TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
+            case "$TYPE" in lesson.*) continue ;; esac
+            STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
+            CONCEPT_STATUS=$(grep '^concept_status:' "$FILE" | cut -d':' -f2 | xargs)
+            if [ "$STATUS" = "concept_generated" ] && [ -z "$CONCEPT_STATUS" ]; then
+              ID=$(grep '^id:' "$FILE" | cut -d':' -f2 | xargs)
+              echo "⚠️  ACTION REQUIRED: $ID ($TYPE) is at status=concept_generated but concept_status is blank."
+              echo "   → Set 'concept_status: approved' in $FILE to advance to Level 3 (Rule Generation)."
+              STUCK=$((STUCK + 1))
+            fi
+          done
+          if [ "$STUCK" -eq 0 ]; then
+            echo "✅ No cards stuck waiting for concept approval."
+          else
+            echo "Total stuck: $STUCK card(s) need human concept_status approval."
+          fi

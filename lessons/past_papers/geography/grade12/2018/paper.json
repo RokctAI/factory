@@ -1,0 +1,103 @@
+{
+  "_comment": [
+    "DBE NSC Grade 12 Geography P2 (mapwork), November 2018 - Pietermaritzburg",
+    "1:50 000 topographic map extract. Both PDFs have real text layers;",
+    "questions and memo answers extracted with pdfplumber and cross-checked",
+    "page-by-page. Only Q2.2.2 (average gradient) is transcribed in full for",
+    "this iteration - it targets the evaluated geography.gradient_calculation",
+    "skill lesson; the rest of the paper is recorded at heading level.",
+    "Map-read inputs (trig station height, measured map distance) come from",
+    "the MEMO's accepted values since the topographic map itself is a",
+    "separate physical sheet: VI from 1057,9 m and 820 m; HE from 3,9 cm",
+    "(accepted 3,8-4 cm) at 1:50 000; final answer 1:8,2 (accepted",
+    "1:7,9 - 1:8,4)."
+  ],
+  "paper_id": "dbe_geography_g12_p2_2018_nov",
+  "source": "Department of Basic Education",
+  "source_url": "https://www.education.gov.za/2018NSCNovemberpastpapers.aspx",
+  "paper_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true",
+  "memo_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true",
+  "paper_file": "paper2.pdf",
+  "memo_file": "memo2.pdf",
+  "_note_binaries": "The PDFs are gitignored (copyrighted DBE binaries); fetch them from the *_download_url fields. Everything the pipeline needs is in this extracted paper.json.",
+  "copyright": "© Department of Basic Education, 2018. Reproduced for educational use with attribution.",
+  "subject": "Geography",
+  "grade": 12,
+  "paper": "P2",
+  "session": "November 2018",
+  "language": "English",
+  "total_marks": 75,
+  "questions": [
+    {
+      "ref": "Q1",
+      "text": "Multiple-choice questions on the Pietermaritzburg topographic and orthophoto maps (map codes, contour interpretation, true bearing, land use).",
+      "marks": 15,
+      "topic": "Mapwork: multiple choice",
+      "solution_method": "map_reading_mcq",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.1",
+      "text": "Map index/code of Pietermaritzburg; grid reference of Town Hill at N; contour-based feature identification for the hiking trail in block F6.",
+      "marks": 5,
+      "topic": "Map calculations and techniques",
+      "solution_method": "map_reference_reading",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.2.2",
+      "text": "Calculate the average gradient between contour line O (height 820 m) and the trigonometrical station at P on the topographic map. Show ALL calculations. Marks will be awarded for calculations. Formula: Average gradient = vertical interval (VI) / horizontal equivalent (HE).",
+      "marks": 5,
+      "topic": "Map calculations and techniques",
+      "solution_method": "gradient_calculation",
+      "memo_answer": "1 : 8,2",
+      "memo_working": "VI = 1057,9 m - 820 m = 237,9 m; HE = 3,9 cm x 50 000 = 195 000 cm = 1 950 m; gradient = 237,9 / 1 950 = 1 : 8,2. Memo accepts measurement 3,8-4 cm (HE 1 900-2 000 m) and final answers 1 : 7,9 to 1 : 8,4.",
+      "map_inputs": {
+        "trig_station_height_m": 1057.9,
+        "contour_height_m": 820,
+        "map_distance_cm": 3.9,
+        "map_scale_denominator": 50000,
+        "accepted_final_range": [7.9, 8.4]
+      },
+      "checkable": true
+    },
+    {
+      "ref": "Q2.2.3",
+      "text": "Describe the curved route of the Voortrekker Wagon Hiking Trail from its start at O to the trigonometrical station at World's View.",
+      "marks": 2,
+      "topic": "Map calculations and techniques",
+      "solution_method": "contour_route_description",
+      "memo_answer": "Any TWO descriptive points per marking guidelines (winding spur path, gentler route, avoids steep slopes, etc.)",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.3",
+      "text": "Cross-sections between benchmark 1060.9 at Q and spot height 1106 at R: match vertical exaggerations; explain the effect of vertical exaggeration.",
+      "marks": 5,
+      "topic": "Map calculations and techniques",
+      "solution_method": "cross_section_exaggeration",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q3",
+      "text": "Application and interpretation: valley frost at M (temperature inversion), slope aspect and settlement (low- vs high-income residential), drainage and stream order.",
+      "marks": 25,
+      "topic": "Application and interpretation",
+      "solution_method": "map_interpretation",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    },
+    {
+      "ref": "Q4",
+      "text": "GIS: attribute vs spatial data, relevance of scale to a geographical query, data layering, buffering.",
+      "marks": 25,
+      "topic": "Geographical Information Systems",
+      "solution_method": "gis_concepts",
+      "memo_answer": "See marking guidelines (heading-level only in this extract)",
+      "checkable": false
+    }
+  ]
+}

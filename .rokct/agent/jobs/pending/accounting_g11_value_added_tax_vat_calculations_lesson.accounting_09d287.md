@@ -13,35 +13,39 @@ grade: 11
 term: 4
 topic: Value Added Tax
 subtopic: VAT calculations
-tutor: 
+tutor: Aunty Grace — simplistic, lower grade logic
 example_problem: An item is marked R2 875 including VAT at 15%. Calculate the VAT amount and the price excluding VAT.
 prior_knowledge: Student knows percentages and the concept of VAT
 metarules: .rokct/types/lesson.accounting/metarules
 guardrail: age_13_17
-idea:
-idea_status:
-concept:
+idea: |
+  Tutor choice: This subtopic has a strong real-world anchor, making it a good fit for a Simplifier lesson.
+idea_status: approved
+concept: |
+  Aunty Grace uses a spaza shop analogy (the till and the pie) to ground the concept of extracting VAT from an inclusive amount.
+  The pacing is patient, starting with real-world money flow before introducing formal T-accounts and double-entry logic.
+  The example problem (R2 875 including 15% VAT) is worked explicitly, illustrating the "what we want / what we have" rule (15/115).
 concept_status:
 rules_status:
-lesson_name:
-lesson_path:
-script_path:
-manim_path:
-subtopics_path:
-mcq_data_path:
-comprehension_check_path:
-reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
+lesson_name: VAT Calculations (115% Rule)
+lesson_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287
+script_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/script.md
+manim_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/manim_scene.py
+subtopics_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/subtopics.json
+mcq_data_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/mcq.json
+comprehension_check_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/comprehension_check.json
+reel_brief_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/reel_clip.json
+mandy_transcript_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/mandy_qa_transcript.md
+mandy_nervous_script_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/mandy_nervous_script.md
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: theme_generated
+status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-14
-session_id:
-session_started:
-attempts: 0
+last_updated: 2026-07-17 06:33:37
+session_id: 
+session_started: 
+attempts: 2
 last_error:
 loop_iterations: 0
 max_iterations: 10

@@ -1,0 +1,214 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What is VAT?",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "What does VAT stand for?",
+          "options": [
+            "Value Added Tax",
+            "Variable Amount Tax",
+            "Valid Added Tax",
+            "Volume Added Tax"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "What is the current standard rate of VAT in South Africa?",
+          "options": [
+            "15%",
+            "14%",
+            "10%",
+            "20%"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "If a shop price tag says 'Includes VAT', what does this mean?",
+          "options": [
+            "The price is the final amount to pay, with tax already added.",
+            "You still need to add 15% to the price shown.",
+            "The price is only for the government.",
+            "The price is what the shop keeps."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Golden Rule of VAT",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "According to the Golden Rule of VAT, what percentage represents the 'Price Excluding VAT'?",
+          "options": [
+            "100%",
+            "115%",
+            "15%",
+            "85%"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "According to the Golden Rule of VAT, what percentage represents the 'Price Including VAT'?",
+          "options": [
+            "115%",
+            "100%",
+            "15%",
+            "85%"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why is it incorrect to just subtract 15% from the final (VAT inclusive) price to find the starting price?",
+          "options": [
+            "Because the 15% VAT is calculated on the smaller starting price, not the bigger final price.",
+            "Because VAT should be 14%.",
+            "Because you should subtract 115%.",
+            "Because the final price is 100%."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Calculating Price Excluding VAT",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "A fridge costs R4 599 including VAT. Which calculation correctly finds the price excluding VAT?",
+          "options": [
+            "R4 599 \u00f7 1,15",
+            "R4 599 - 15%",
+            "R4 599 \u00d7 1,15",
+            "R4 599 \u00d7 0,15"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "A microwave costs R1 499 (VAT inclusive). Calculate the price excluding VAT. (Round to 2 decimal places)",
+          "options": [
+            "R1 303,48",
+            "R1 274,15",
+            "R1 723,85",
+            "R1 303,47"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "You calculate a price excluding VAT and your calculator shows 456,238. How should this be written as money?",
+          "options": [
+            "R456,24",
+            "R456,23",
+            "R456,20",
+            "R456,238"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Calculating the VAT Amount",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "If the Price Including VAT is R500 and the Price Excluding VAT is R434,78, what is the VAT amount?",
+          "options": [
+            "R65,22",
+            "R75,00",
+            "R500,00",
+            "R434,78"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A laptop is priced at R8 999 (VAT incl). The price excluding VAT is R7 825,22. Calculate the VAT amount.",
+          "options": [
+            "R1 173,78",
+            "R1 349,85",
+            "R1 173,70",
+            "R8 999,00"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Which formula calculates the VAT amount if you have both prices?",
+          "options": [
+            "Price Including VAT - Price Excluding VAT",
+            "Price Including VAT + Price Excluding VAT",
+            "Price Excluding VAT \u00f7 1,15",
+            "Price Including VAT \u00d7 15%"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Checking Our Work",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "To calculate the VAT amount directly from the Price Excluding VAT, you should:",
+          "options": [
+            "Multiply the Price Excluding VAT by 15% (or 0,15)",
+            "Multiply the Price Excluding VAT by 115% (or 1,15)",
+            "Divide the Price Excluding VAT by 15%",
+            "Subtract 15% from the Price Excluding VAT"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "A bicycle's price excluding VAT is R2 500. Calculate the VAT amount.",
+          "options": [
+            "R375,00",
+            "R326,09",
+            "R2 875,00",
+            "R2 125,00"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "If you calculate the VAT amount as R120,455, what is the correct rounded value?",
+          "options": [
+            "R120,46",
+            "R120,45",
+            "R120,50",
+            "R120,40"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}
