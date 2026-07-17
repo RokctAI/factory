@@ -35,14 +35,24 @@ comprehension_check_path: lessons/maths/grade11/term1/maths_g11_quadratic_equati
 reel_brief_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/reel_clip.json
 mandy_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/mandy_nervous_script.md
-status: evaluated
+status: produced
 created: 2026-07-14
-last_updated: 2026-07-14 02:41:25
+last_updated: 2026-07-17 00:30:18
 session_id: 
 session_started: 
-attempts: 4
+attempts: 6
 last_error:
 loop_iterations: 0
 max_iterations: 10
 past_paper_examples: dbe_maths_g11_p1_2018_nov:Q1.1.1, dbe_maths_g11_p1_2017_nov:Q1.1.1
+manifest_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json
+manifest_checksum: f508473f894881071d42846de2dc6e095b912c573cef84c3000093698cf03f12
+manifest_size_bytes: 2233
+audio_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/audio.mp3
+audio_checksum: d43829477c03c388e6816102f0be6e929c64566f8608ef4ff2f3591a3ece1582
+audio_size_bytes: 6148098
+animation_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/animations.json
+animation_checksum: a63a32022b526c734587eb6b7918714ac909c38e1b747002580beba29553f466
+animation_size_bytes: 6028
+produced_at: 2026-07-17T00:30:18+00:00
 ---

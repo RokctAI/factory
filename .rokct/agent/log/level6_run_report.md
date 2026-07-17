@@ -1,5 +1,5 @@
-# Level 6 run report — run 29544575572 (2026-07-17 00:23:12 UTC)
-- event: push  sha: a1d3136cc1610412da1278e37fd2aad3d6892545
+# Level 6 run report — run 29544844964 (2026-07-17 00:29:51 UTC)
+- event: push  sha: 5a9dc00bcfb39246da6d41f768b3c9516bd32c04
 - AUDIO_BACKEND=sapi MAX_CARDS=1 CARD_FILTER=maths
 - scaffolds: call_groq.py call_jules.py check_health.py crypto_utils.py handle_groq_output.py lock_job.py manage_sessions.py privacy_sync.py response_kits.py update_audit_logs.py update_classifications.py update_dashboard.py update_status.py update_structure.py 
 - manim: 0.19.1
@@ -7,8 +7,6 @@
 - skip economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f: card_filter 'maths' mismatch
 - skip geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0: card_filter 'maths' mismatch
 - producing maths_g11_quadratic_equations_factoring_method_31d165 (backend sapi)
-- FAIL maths_g11_quadratic_equations_factoring_method_31d165: assembly:   File "/opt/hostedtoolcache/Python/3.10.20/x64/lib/python3.10/site-packages/pyttsx3/drivers/espeak.py", line 135, in setProperty     raise ValueError(msg) ValueError: SetVoiceByName failed with unknown return code -1 for voice: gmw/en 
-- producing maths_g11_quadratic_equations_quadratic_formula_6e05ed (backend sapi)
-- FAIL maths_g11_quadratic_equations_quadratic_formula_6e05ed: assembly:   File "/opt/hostedtoolcache/Python/3.10.20/x64/lib/python3.10/site-packages/pyttsx3/drivers/espeak.py", line 135, in setProperty     raise ValueError(msg) ValueError: SetVoiceByName failed with unknown return code -1 for voice: gmw/en 
-- skip physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed: card_filter 'maths' mismatch
-- done: produced [] (count=0)
+- assembled maths_g11_quadratic_equations_factoring_method_31d165: {"session_id": "maths_g11_quadratic_equations_factoring_method_31d165", "audio_seconds": 692.2, "tracks": 10, "primitives": 29}
+- stop: reached MAX_CARDS=1
+- done: produced [ maths_g11_quadratic_equations_factoring_method_31d165] (count=1)
