@@ -13,7 +13,7 @@ grade: 12
 term: 1
 topic: Finance
 subtopic: VAT calculations
-tutor: Big John Ã¢â‚¬â€ simplistic, lower grade logic
+tutor: Big John — simplistic, lower grade logic
 example_problem: A television is priced at R6 899 including VAT at 15%. Calculate the price excluding VAT and the VAT amount.
 prior_knowledge: Student knows percentages and can rearrange a simple formula
 metarules: .rokct/types/lesson.maths_literacy/metarules

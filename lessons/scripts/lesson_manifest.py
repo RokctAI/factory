@@ -215,6 +215,14 @@ def main():
 
     tracks = build_tracks(subtopics, mcq, tutor, subtopic_scale, audio_seconds)
 
+    # Manifest-level question bank: subtopic_end `exercise` entries are IDs
+    # the app resolves against this map (lms_sdk McqQuestion.fromJson reads
+    # mcq.json's field names directly — question/options/correct_index/
+    # time_limit_seconds). Without it the exercise moments silently no-op.
+    questions = {q["id"]: q
+                 for b in mcq.get("subtopics", [])
+                 for q in b.get("questions", []) if q.get("id")}
+
     # --- manifest (ReplayManifest.fromJson contract) ---
     manifest = {
         "version": "1",
@@ -235,6 +243,7 @@ def main():
         },
         "assets": ["animations.json"],
         "tracks": tracks,
+        **({"questions": questions} if questions else {}),
     }
     manifest_path = out_dir / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")

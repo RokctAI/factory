@@ -13,7 +13,7 @@ grade: 11
 term: 2
 topic: Electric Circuits
 subtopic: Resistors in parallel
-tutor: Ms Dlamini â€” formal
+tutor: Ms Dlamini — formal
 example_problem: Three resistors of 2 Î©, 3 Î© and 6 Î© are connected in parallel across a 12 V battery. Calculate the total current supplied by the battery.
 prior_knowledge: Student knows Ohm's law and series circuits
 metarules: .rokct/types/lesson.physical_sciences/metarules

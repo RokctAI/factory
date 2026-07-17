@@ -530,7 +530,16 @@ block) and the metarules under {get_field(card, 'metarules') or '.rokct/types/' 
 
 Write the files into {lesson_dir}/ exactly as follows:
 - {lesson_dir}/script.md — the lesson script in the tutor's voice, with a
-  '## Subtopic: <title>' heading per subtopic.
+  '## Subtopic: <title>' heading per subtopic. TEACHING CONTENT ONLY: the
+  platform's player supplies all session framing, so the script must contain
+  NO tutor self-introductions, NO platform mentions, NO references to Mandy
+  or any host, NO handoffs, and NO goodbyes/sign-offs. Pedagogical
+  transitions spoken by the tutor ARE teaching flow and belong in: at the
+  end of each subtopic that has MCQs, include one brief, natural
+  question lead-in in the tutor's own register (e.g. "Pause here and try a
+  few quick questions on this before we continue") — the audio is
+  continuous and the player pauses at the exercise moment, so write no
+  stage directions like [pause] or [silence] and bake in no dead air.
 - {lesson_dir}/manim_scene.py — Manim Community Python file, whiteboard
   style, one step at a time, mirroring the script's teaching beats.
 - {lesson_dir}/subtopics.json — {{"subtopics": [{{"ref": "subtopic_1",

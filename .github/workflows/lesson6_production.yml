@@ -157,6 +157,17 @@ jobs:
               continue
             fi
 
+            # A corrupted lesson must never reach a release: check the card
+            # and every file in its lesson directory for encoding mojibake
+            # before any asset is built or published.
+            LESSON_PATH=$(grep '^lesson_path:' "$FILE" | cut -d':' -f2- | xargs)
+            if ! python lessons/scripts/check_mojibake.py "$FILE" $(find "$LESSON_PATH" -type f 2>/dev/null); then
+              echo "❌ Mojibake found in $ID card/content — refusing to produce."
+              log_report "FAIL $ID: mojibake in card or lesson content (release blocked)"
+              python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
+              continue
+            fi
+
             echo "🎬 Producing $ID (audio backend: $AUDIO_BACKEND)..."
             log_report "producing $ID (backend $AUDIO_BACKEND)"
             python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status producing --agent level6

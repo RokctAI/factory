@@ -1,0 +1,46 @@
+name: Mojibake Check
+
+# Enforcement layer for encoding corruption (UTF-8 decoded as cp1252 —
+# 'â€' / 'Â' / 'Ã' artifacts). A corrupted card must never advance a pipeline
+# level and a corrupted lesson file must never reach a release. The same
+# checker runs locally (lessons/scripts/check_mojibake.py, fail fast before a
+# push), but local checks can be skipped — CI can't.
+#
+# Fast by design: checks only the files the push actually changed.
+# workflow_dispatch runs the full-tree scan instead.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.rokct/agent/jobs/**/*.md'
+      - 'lessons/**'
+  workflow_dispatch:
+
+jobs:
+  mojibake_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check changed files for mojibake
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual dispatch: full-tree scan."
+            python3 lessons/scripts/check_mojibake.py --all
+            exit $?
+          fi
+          FILES=$(git diff --name-only HEAD~1 HEAD -- '.rokct/agent/jobs/**/*.md' 'lessons/**' | grep -v '^lessons/scripts/check_mojibake.py$' || true)
+          # Drop deleted paths; keep only files that exist in this checkout.
+          EXISTING=""
+          for F in $FILES; do
+            [ -f "$F" ] && EXISTING="$EXISTING $F"
+          done
+          if [ -z "$EXISTING" ]; then
+            echo "No changed card/lesson files to check."
+            exit 0
+          fi
+          python3 lessons/scripts/check_mojibake.py $EXISTING
