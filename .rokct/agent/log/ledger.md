@@ -69,3 +69,4 @@
 | mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | concept_expanding | jules | 4618649057992835417 | — | 2026-07-17 06:58 |
 | physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58 | lesson.physical_sciences | Physical Sciences Grade 11: Quantitative Aspects of Chemical Change - Stoichiometric calculations | concept_expanding | jules | 1175543269283372186 | — | 2026-07-17 07:00 |
 | physical_sciences_g12_work_energy_and_power_conservation_of__663086 | lesson.physical_sciences | Physical Sciences Grade 12: Work, Energy and Power - Conservation of mechanical energy | concept_expanding | jules | 6978791425481847477 | — | 2026-07-17 07:02 |
+| maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | expansion_requested | system | SYS-LESSON-RULES-29570864183 | — | 2026-07-17 09:41 |
