@@ -1,8 +1,8 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-17 03:33 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-17 06:25 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
-## Waiting on you (15)
+## Waiting on you (16)
 
 | Card | Subject | Action |
 |---|---|---|
@@ -19,26 +19,28 @@
 | `mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d` | Mathematical Literacy G12 | approve the lesson idea (`idea_status: approved`) |
 | `mathematical_literacy_g12_finance_vat_calculations_655ffb` | Mathematical Literacy G12 | approve the lesson idea (`idea_status: approved`) |
 | `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | review content accuracy (`concept_status: approved`) |
+| `maths_g12_quadratic_equations_factoring_method_5b7a49` | Maths G12 | review content accuracy (`concept_status: approved`) |
 | `physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58` | Physical Sciences G11 | approve the lesson idea (`idea_status: approved`) |
 | `physical_sciences_g12_work_energy_and_power_conservation_of__663086` | Physical Sciences G12 | approve the lesson idea (`idea_status: approved`) |
 
-## Needs intervention (1)
+## Needs intervention (2)
 
 | Card | Subject | Why |
 |---|---|---|
 | `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | attempts 3; script expansion pass used |
+| `maths_g12_quadratic_equations_factoring_method_5b7a49` | Maths G12 | attempts 3 |
 
 ## Cards by status and subject
 
-| Subject | pending_approval | concept_expanding | concept_generated | pending_concept_approval | evaluated | total |
-|---|---|---|---|---|---|---|
-| Accounting | 3 |  |  |  |  | 3 |
-| Economics | 3 |  |  |  | 1 | 4 |
-| Geography | 3 |  |  |  | 1 | 4 |
-| Mathematical Literacy | 3 |  |  |  |  | 3 |
-| Maths | 2 | 1 | 1 | 1 | 1 | 7 |
-| Physical Sciences | 3 |  |  |  | 1 | 4 |
-| **All** | **17** | **1** | **1** | **1** | **4** | **25** |
+| Subject | pending_approval | concept_expanding | pending_concept_approval | evaluated | total |
+|---|---|---|---|---|---|
+| Accounting | 3 |  |  |  | 3 |
+| Economics | 3 |  |  | 1 | 4 |
+| Geography | 3 |  |  | 1 | 4 |
+| Mathematical Literacy | 3 |  |  |  | 3 |
+| Maths |  | 3 | 2 | 1 | 7 |
+| Physical Sciences | 2 | 1 |  | 1 | 4 |
+| **All** | **14** | **4** | **2** | **4** | **25** |
 
 ## Seed backlog (topics not yet opened as cards)
 
@@ -76,7 +78,7 @@ Seed rows total: 215; opened: 25; remaining: 190.
 
 | Window | Groq calls | Groq tokens | Jules sessions |
 |---|---|---|---|
-| Last 24 h | 1 | 3022 | 3 |
-| All time | 14 | 9368 | 3 |
+| Last 24 h | 2 | 5746 | 6 |
+| All time | 15 | 12092 | 6 |
 
 Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
