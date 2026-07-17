@@ -111,15 +111,33 @@ jobs:
             echo "AUDIO_BACKEND=$AUDIO_BACKEND MAX_CARDS=$MAX_CARDS CARD_FILTER=$CARD_FILTER"
           fi
 
+          # Run report: committed at the end of every run (even no-op ones)
+          # because run logs need authenticated API access this project's
+          # push-driven tooling doesn't have. Records every skip decision.
+          REPORT=".rokct/agent/log/level6_run_report.md"
+          {
+            echo "# Level 6 run report — run $GITHUB_RUN_ID ($(date -u +'%Y-%m-%d %H:%M:%S') UTC)"
+            echo "- event: ${{ github.event_name }}  sha: $GITHUB_SHA"
+            echo "- AUDIO_BACKEND=$AUDIO_BACKEND MAX_CARDS=$MAX_CARDS CARD_FILTER=$CARD_FILTER"
+            echo "- scaffolds: $(ls .rokct/skills/agent_delegation/scripts/ 2>&1 | tr '\n' ' ')"
+            echo "- manim: $(python -c 'import manim; print(manim.__version__)' 2>&1 | tail -1)"
+            echo "- pyttsx3: $(python -c 'import pyttsx3; print(1)' 2>&1 | tail -1)"
+          } > "$REPORT"
+          log_report() { echo "- $1" >> "$REPORT"; }
+
           for FILE in .rokct/agent/jobs/done/*.md; do
             [ -f "$FILE" ] || continue
             TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
             case "$TYPE" in lesson.*) ;; *) continue ;; esac
             STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
-            [ "$STATUS" = "evaluated" ] || continue
+            if [ "$STATUS" != "evaluated" ]; then
+              log_report "skip $(basename "$FILE"): status='$STATUS'"
+              continue
+            fi
 
             if [ "$COUNT" -ge "$MAX_CARDS" ]; then
               echo "Reached MAX_CARDS=$MAX_CARDS; stopping."
+              log_report "stop: reached MAX_CARDS=$MAX_CARDS"
               break
             fi
 
@@ -128,27 +146,34 @@ jobs:
 
             if [ -n "$CARD_FILTER" ] && [[ "$ID" != *"$CARD_FILTER"* ]]; then
               echo "Skipping $ID (does not match card_filter '$CARD_FILTER')."
+              log_report "skip $ID: card_filter '$CARD_FILTER' mismatch"
               continue
             fi
 
             # Claim the job lock so a concurrent run cannot double-produce.
-            if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "level6" --session "L6-$GITHUB_RUN_ID"; then
-              echo "Card $FILE locked; skipping."
+            if ! LOCK_OUT=$(python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "level6" --session "L6-$GITHUB_RUN_ID" 2>&1); then
+              echo "Card $FILE lock claim failed; skipping. Output: $LOCK_OUT"
+              log_report "skip $ID: lock claim failed: $(echo "$LOCK_OUT" | tail -2 | tr '\n' ' ')"
               continue
             fi
 
             echo "🎬 Producing $ID (audio backend: $AUDIO_BACKEND)..."
+            log_report "producing $ID (backend $AUDIO_BACKEND)"
             python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status producing --agent level6
 
             OUT=".rokct/tmp/level6/$ID"
             rm -rf "$OUT"; mkdir -p "$OUT"
 
-            if ! python lessons/scripts/lesson_manifest.py --card "$FILE" --out-dir "$OUT" --audio-backend "$AUDIO_BACKEND"; then
+            if ! ASM_OUT=$(python lessons/scripts/lesson_manifest.py --card "$FILE" --out-dir "$OUT" --audio-backend "$AUDIO_BACKEND" 2>&1); then
               echo "❌ Assembly failed for $ID"
+              echo "$ASM_OUT" | tail -20
+              log_report "FAIL $ID: assembly: $(echo "$ASM_OUT" | tail -3 | tr '\n' ' ')"
               python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status failed --agent level6 || true
               python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
               continue
             fi
+            echo "$ASM_OUT" | tail -5
+            log_report "assembled $ID: $(echo "$ASM_OUT" | tail -1)"
 
             # Validate the manifest against the real ReplaySDK ManifestParser
             # if the replay package is present in the composed workspace; a
@@ -184,17 +209,20 @@ jobs:
           done
 
           echo "produced_ids=$PRODUCED" >> "$GITHUB_OUTPUT"
+          log_report "done: produced [$PRODUCED] (count=$COUNT)"
 
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$PRODUCED" ]; then
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add .rokct/agent/jobs/done/ .rokct/agent/log/transitions.log
+            git add .rokct/agent/jobs/done/ .rokct/agent/log/transitions.log "$REPORT"
             git commit -m "🤖 [CI] Lesson 6: produced assets for$PRODUCED [skip ci]"
-            for i in 1 2 3; do
-              git push origin main && break
-              git pull --rebase origin main || { git rebase --abort || true; exit 1; }
-              sleep $((RANDOM % 3 + 1))
-            done
           else
             echo "ℹ️ No evaluated lesson cards to produce."
+            git add "$REPORT"
+            git commit -m "🤖 [CI] Lesson 6: run report (nothing produced) [skip ci]"
           fi
+          for i in 1 2 3; do
+            git push origin main && break
+            git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+            sleep $((RANDOM % 3 + 1))
+          done
