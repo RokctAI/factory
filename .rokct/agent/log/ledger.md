@@ -84,3 +84,4 @@
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571374392 | — | 2026-07-17 09:50 |
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571416520 | — | 2026-07-17 09:51 |
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571473210 | — | 2026-07-17 09:52 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571645403 | — | 2026-07-17 09:55 |
