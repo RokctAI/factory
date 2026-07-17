@@ -24,7 +24,7 @@ idea_status: approved
 concept: |
   Simplifier approach: Grounds break-even logic in a relatable spaza shop scenario (cool drinks and rent) before introducing the formal formula. The example problem (R60k fixed, R50 SP, R30 VC) is solved conversationally, showing how each unit 'contributes' to paying the fixed rent monster.
 concept_status:
-rules_status:
+rules_status: expanding
 lesson_name: Break-even analysis
 lesson_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83
 script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/script.md
@@ -35,12 +35,12 @@ comprehension_check_path: lessons/accounting/grade11/term3/accounting_g11_cost_a
 reel_brief_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/reel_clip.json
 mandy_transcript_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/mandy_nervous_script.md
-expansion_requested:
+expansion_requested: 1
 crosscheck_status:
 crosscheck_notes:
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-17 06:28:08
+last_updated: 2026-07-17 09:43:11
 session_id: 
 session_started: 
 attempts: 2
