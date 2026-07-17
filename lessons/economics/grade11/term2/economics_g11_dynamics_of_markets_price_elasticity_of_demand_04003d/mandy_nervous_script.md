@@ -1,0 +1,3 @@
+Hi there! I know seeing formulas with those little triangle Delta signs can make your heart beat a little faster. It happens to me too! But don't worry, Bra Sipho explained it perfectly: it’s just about how people react when prices change.
+
+If you get stuck on the math part, just take a deep breath. Remember his rule from the streets: "Quantity is always on top." You calculate the percentage change for the quantity first, then the price, and then just divide them. You've totally got this! Just take it one step at a time, exactly like we did in the example. We are going to practice it together now.
