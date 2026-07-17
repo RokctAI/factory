@@ -24,7 +24,7 @@ idea_status: approved
 concept: |
   The lesson leverages the Grandmaster persona to teach completing the square with authoritative precision. It focuses on the algebraic machinery and explicitly targets distinction-level technique by prioritizing the algorithm before application. The pacing is brisk, treating the example problem (x²+6x+2=0) as a direct demonstration of the step-by-step method ("the critical move").
 concept_status:
-rules_status: expanding
+rules_status: failed
 lesson_name: Completing the Square
 lesson_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3
 script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/script.md
@@ -37,7 +37,7 @@ mandy_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations
 mandy_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/mandy_nervous_script.md
 status: concept_generated
 created: 2026-07-13
-last_updated: 2026-07-17 01:44:41
+last_updated: 2026-07-17 01:49:47
 session_id: 
 session_started: 
 attempts: 2
