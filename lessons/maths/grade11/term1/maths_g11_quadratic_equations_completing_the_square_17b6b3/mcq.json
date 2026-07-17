@@ -1,0 +1,214 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Introduction and Importance",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "What is the primary reason we use the method of completing the square?",
+          "options": [
+            "Because not every quadratic equation can be factorised neatly.",
+            "Because it is the only way to solve any algebraic equation.",
+            "Because it makes the equation look more complicated.",
+            "Because it is required to calculate the y-intercept."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Completing the square forces a quadratic equation into which format?",
+          "options": [
+            "A perfect square format.",
+            "A cubic format.",
+            "A linear format.",
+            "A standard polynomial format."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Completing the square is the bridge to which other mathematical tool?",
+          "options": [
+            "The quadratic formula.",
+            "The distance formula.",
+            "The Pythagorean theorem.",
+            "The midpoint formula."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Algorithm of Completing the Square",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "What must be the coefficient of x² before you start completing the square?",
+          "options": [
+            "1",
+            "0",
+            "-1",
+            "Any positive integer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "If the coefficient of x² is not 1, what should you do first?",
+          "options": [
+            "Divide the entire equation by that coefficient.",
+            "Multiply the entire equation by that coefficient.",
+            "Subtract that coefficient from both sides.",
+            "Ignore it and proceed."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "After ensuring the coefficient of x² is 1, what is the next step in the algorithm?",
+          "options": [
+            "Move the constant term to the right side of the equation.",
+            "Move all terms to the left side.",
+            "Take the square root of the constant term.",
+            "Factorise the left side immediately."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Applying the Method",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Given the equation x² + 6x + 2 = 0, what is the first step according to the algorithm?",
+          "options": [
+            "Ensure the coefficient of x² is 1. It already is, so we proceed.",
+            "Factorise the equation into (x+2)(x+1) = 0.",
+            "Divide the entire equation by 6.",
+            "Subtract 6x from both sides."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For x² + 6x + 2 = 0, what does the equation look like after moving the constant term?",
+          "options": [
+            "x² + 6x = -2",
+            "x² + 6x = 2",
+            "x² = -6x - 2",
+            "x² + 2 = -6x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Why can't we simply factorise x² + 6x + 2 = 0?",
+          "options": [
+            "There are no integer factors of 2 that add up to 6.",
+            "Because 2 is an even number.",
+            "Because 6 is a multiple of 2.",
+            "We can factorise it as (x+3)(x-1)."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Critical Move",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "For the equation x² + 6x = -2, what value must be added to both sides to complete the square?",
+          "options": [
+            "9",
+            "3",
+            "36",
+            "6"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "How do we calculate the value to add to both sides?",
+          "options": [
+            "Take the coefficient of x, halve it, and square the result.",
+            "Take the coefficient of x and square it.",
+            "Take the coefficient of x² and square it.",
+            "Multiply the coefficient of x by 2."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "After adding the correct value to both sides of x² + 6x = -2, what is the right side of the equation?",
+          "options": [
+            "7",
+            "-2",
+            "9",
+            "11"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Factorising and Solving",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "How does the left side x² + 6x + 9 factorise?",
+          "options": [
+            "(x + 3)²",
+            "(x - 3)²",
+            "(x + 9)²",
+            "(x + 3)(x - 3)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "When solving (x + 3)² = 7, what is the next step?",
+          "options": [
+            "Take the square root of both sides, remembering the plus-minus.",
+            "Expand the bracket again.",
+            "Divide both sides by 3.",
+            "Square both sides."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "What are the final solutions for x in (x + 3)² = 7?",
+          "options": [
+            "x = -3 ± √7",
+            "x = 3 ± √7",
+            "x = -3 + √7 only",
+            "x = ± √7 - 3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}
