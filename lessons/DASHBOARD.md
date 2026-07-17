@@ -1,8 +1,8 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-17 00:10 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-17 03:33 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
-## Waiting on you (19)
+## Waiting on you (15)
 
 | Card | Subject | Action |
 |---|---|---|
@@ -18,29 +18,27 @@
 | `mathematical_literacy_g11_finance_simple_interest_8f7530` | Mathematical Literacy G11 | approve the lesson idea (`idea_status: approved`) |
 | `mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d` | Mathematical Literacy G12 | approve the lesson idea (`idea_status: approved`) |
 | `mathematical_literacy_g12_finance_vat_calculations_655ffb` | Mathematical Literacy G12 | approve the lesson idea (`idea_status: approved`) |
-| `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | approve the lesson idea (`idea_status: approved`) |
-| `maths_g12_quadratic_equations_factoring_method_5b7a49` | Maths G12 | approve the lesson idea (`idea_status: approved`) |
-| `maths_g12_sequences_and_series_arithmetic_sequences_15f439` | Maths G12 | approve the lesson idea (`idea_status: approved`) |
-| `maths_g12_sequences_and_series_geometric_sequences_a6eefc` | Maths G12 | approve the lesson idea (`idea_status: approved`) |
-| `physical_sciences_g11_electric_circuits_resistors_in_paralle_6f716c` | Physical Sciences G11 | approve the lesson idea (`idea_status: approved`) |
+| `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | review content accuracy (`concept_status: approved`) |
 | `physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58` | Physical Sciences G11 | approve the lesson idea (`idea_status: approved`) |
 | `physical_sciences_g12_work_energy_and_power_conservation_of__663086` | Physical Sciences G12 | approve the lesson idea (`idea_status: approved`) |
 
-## Needs intervention (0)
+## Needs intervention (1)
 
-No stalled, failed or blocked cards.
+| Card | Subject | Why |
+|---|---|---|
+| `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | attempts 3; script expansion pass used |
 
 ## Cards by status and subject
 
-| Subject | pending_approval | concept_expanding | evaluated | total |
-|---|---|---|---|---|
-| Accounting | 3 |  |  | 3 |
-| Economics | 3 |  | 1 | 4 |
-| Geography | 3 |  | 1 | 4 |
-| Mathematical Literacy | 3 |  |  | 3 |
-| Maths | 4 | 1 | 2 | 7 |
-| Physical Sciences | 3 |  | 1 | 4 |
-| **All** | **19** | **1** | **5** | **25** |
+| Subject | pending_approval | concept_expanding | concept_generated | pending_concept_approval | evaluated | total |
+|---|---|---|---|---|---|---|
+| Accounting | 3 |  |  |  |  | 3 |
+| Economics | 3 |  |  |  | 1 | 4 |
+| Geography | 3 |  |  |  | 1 | 4 |
+| Mathematical Literacy | 3 |  |  |  |  | 3 |
+| Maths | 2 | 1 | 1 | 1 | 1 | 7 |
+| Physical Sciences | 3 |  |  |  | 1 | 4 |
+| **All** | **17** | **1** | **1** | **1** | **4** | **25** |
 
 ## Seed backlog (topics not yet opened as cards)
 
@@ -67,11 +65,10 @@ No stalled, failed or blocked cards.
 
 Seed rows total: 215; opened: 25; remaining: 190.
 
-## Evaluated (Level 4 complete, awaiting Level 6): 5
+## Evaluated (Level 4 complete, awaiting Level 6): 4
 
 - `economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f` — Economics G11 term 2
 - `geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0` — Geography G12 term skills
-- `maths_g11_quadratic_equations_factoring_method_31d165` — Maths G11 term 1
 - `maths_g11_quadratic_equations_quadratic_formula_6e05ed` — Maths G11 term 1
 - `physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed` — Physical Sciences G11 term 1
 
@@ -79,7 +76,7 @@ Seed rows total: 215; opened: 25; remaining: 190.
 
 | Window | Groq calls | Groq tokens | Jules sessions |
 |---|---|---|---|
-| Last 24 h | 0 | 0 | 0 |
-| All time | 13 | 6346 | 0 |
+| Last 24 h | 1 | 3022 | 3 |
+| All time | 14 | 9368 | 3 |
 
 Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
