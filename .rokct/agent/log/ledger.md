@@ -57,3 +57,4 @@
 | physical_sciences_g11_electric_circuits_resistors_in_paralle_6f716c | lesson.physical_sciences | Physical Sciences Grade 11: Electric Circuits - Resistors in parallel | concept_expanding | jules | 15775271273051863376 | — | 2026-07-17 06:12 |
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_expanding | jules | 15343190423449107152 | — | 2026-07-17 06:28 |
 | accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_expanding | jules | 12859818732587201883 | — | 2026-07-17 06:31 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_expanding | jules | 5210686244777653205 | — | 2026-07-17 06:33 |
