@@ -40,7 +40,7 @@ mandy_transcript_path: lessons/maths/grade12/term1/maths_g12_sequences_and_serie
 mandy_nervous_script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/mandy_nervous_script.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-17 09:41:37
+last_updated: 2026-07-17 09:47:00
 session_id: 
 session_started: 
 attempts: 2
