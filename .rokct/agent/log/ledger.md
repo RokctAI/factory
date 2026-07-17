@@ -56,3 +56,4 @@
 | maths_g12_sequences_and_series_geometric_sequences_a6eefc | lesson.maths | Maths Grade 12: Sequences and Series - Geometric sequences | concept_expanding | jules | 211243395616906974 | — | 2026-07-17 06:10 |
 | physical_sciences_g11_electric_circuits_resistors_in_paralle_6f716c | lesson.physical_sciences | Physical Sciences Grade 11: Electric Circuits - Resistors in parallel | concept_expanding | jules | 15775271273051863376 | — | 2026-07-17 06:12 |
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_expanding | jules | 15343190423449107152 | — | 2026-07-17 06:28 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_expanding | jules | 12859818732587201883 | — | 2026-07-17 06:31 |
