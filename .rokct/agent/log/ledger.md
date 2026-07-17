@@ -54,3 +54,4 @@
 | maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | concept_expanding | jules | 15804134847597659344 | — | 2026-07-17 05:58 |
 | maths_g12_quadratic_equations_factoring_method_5b7a49 | lesson.maths | Maths Grade 12: Quadratic Equations - Factoring method | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29558914612 | — | 2026-07-17 06:02 |
 | maths_g12_sequences_and_series_geometric_sequences_a6eefc | lesson.maths | Maths Grade 12: Sequences and Series - Geometric sequences | concept_expanding | jules | 211243395616906974 | — | 2026-07-17 06:10 |
+| physical_sciences_g11_electric_circuits_resistors_in_paralle_6f716c | lesson.physical_sciences | Physical Sciences Grade 11: Electric Circuits - Resistors in parallel | concept_expanding | jules | 15775271273051863376 | — | 2026-07-17 06:12 |
