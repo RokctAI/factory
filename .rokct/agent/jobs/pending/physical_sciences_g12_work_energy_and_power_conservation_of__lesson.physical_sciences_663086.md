@@ -13,7 +13,7 @@ grade: 12
 term: 2
 topic: Work, Energy and Power
 subtopic: Conservation of mechanical energy
-tutor: Ms Dlamini — formal
+tutor: Ms Dlamini â€” formal
 example_problem: A 2 kg ball is dropped from a height of 5 m. Use conservation of mechanical energy to calculate its speed just before it strikes the ground.
 prior_knowledge: Student knows kinetic and gravitational potential energy
 metarules: .rokct/types/lesson.physical_sciences/metarules
@@ -21,7 +21,7 @@ guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of conservation of mechanical energy involves abstract concepts and symbolic manipulation, making a formal approach more suitable.
   The lesson begins with a brief review of kinetic and potential energy, followed by the introduction of the conservation of mechanical energy principle. The Grandmaster then derives the relevant equation, highlighting the conversion between potential and kinetic energy. The example problem is presented as an application of this principle, with the Grandmaster guiding students through the calculation. The lesson concludes with a summary of key concepts and a check for understanding.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

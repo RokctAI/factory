@@ -13,14 +13,14 @@ grade: 11
 term: 3
 topic: Quantitative Aspects of Chemical Change
 subtopic: Stoichiometric calculations
-tutor: Ms Dlamini — formal
-example_problem: Calculate the mass of CO₂ produced when 8 g of CH₄ burns completely in excess oxygen.
+tutor: Ms Dlamini â€” formal
+example_problem: Calculate the mass of COâ‚‚ produced when 8 g of CHâ‚„ burns completely in excess oxygen.
 prior_knowledge: Student can balance chemical equations and knows the mole concept
 metarules: .rokct/types/lesson.physical_sciences/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: This subtopic is heavily focused on abstract symbol manipulation and procedural calculations, making it a good fit for the Grandmaster's precise and formula-driven teaching style.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:

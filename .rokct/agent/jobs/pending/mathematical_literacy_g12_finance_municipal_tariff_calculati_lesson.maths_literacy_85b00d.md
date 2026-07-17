@@ -13,14 +13,14 @@ grade: 12
 term: 1
 topic: Finance
 subtopic: Municipal tariff calculations
-tutor: Uncle Joe — simplistic, lower grade logic
+tutor: Uncle Joe â€” simplistic, lower grade logic
 example_problem: A municipality charges a basic fee of R120 per month plus R1,85 per kWh of electricity. Calculate the total bill for a household that used 450 kWh in a month.
 prior_knowledge: Student can multiply decimals and read a tariff table
 metarules: .rokct/types/lesson.maths_literacy/metarules
 guardrail: age_13_17
 idea: |
   Tutor choice: The subtopic of municipal tariff calculations has a strong real-world anchor in everyday bills and expenses.
-idea_status: pending
+idea_status: approved
 concept:
 concept_status:
 rules_status:
