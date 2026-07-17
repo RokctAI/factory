@@ -67,3 +67,4 @@
 | mathematical_literacy_g11_finance_simple_interest_8f7530 | lesson.maths_literacy | Mathematical Literacy Grade 11: Finance - Simple interest | concept_expanding | jules | 3976552925239419319 | — | 2026-07-17 06:54 |
 | mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - Municipal tariff calculations | concept_expanding | jules | 5535244184001178324 | — | 2026-07-17 06:56 |
 | mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | concept_expanding | jules | 4618649057992835417 | — | 2026-07-17 06:58 |
+| physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58 | lesson.physical_sciences | Physical Sciences Grade 11: Quantitative Aspects of Chemical Change - Stoichiometric calculations | concept_expanding | jules | 1175543269283372186 | — | 2026-07-17 07:00 |
