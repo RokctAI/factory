@@ -71,14 +71,31 @@ def strip_script_to_narration(script_md):
 
 
 def synth_audio_sapi(text, out_wav):
-    """Offline SAPI5/espeak TTS -> wav. Real audio, no GPU."""
-    import pyttsx3
-    engine = pyttsx3.init()
-    engine.setProperty("rate", 165)
-    engine.save_to_file(text, str(out_wav))
-    engine.runAndWait()
+    """Offline OS TTS -> wav. Real audio, no GPU.
+
+    Windows: pyttsx3 over SAPI5. Linux (CI): the espeak/espeak-ng CLI
+    directly — pyttsx3's espeak driver crashes on hosted runners
+    (SetVoiceByName fails for voice 'gmw/en', a pyttsx3/espeak-ng
+    mismatch; seen on the first real Level 6 run, 29544575572)."""
+    import platform
+    import shutil
+    if platform.system() != "Windows":
+        exe = shutil.which("espeak-ng") or shutil.which("espeak")
+        if not exe:
+            raise SystemExit("no espeak/espeak-ng CLI on PATH (apt-get install espeak)")
+        text_file = Path(str(out_wav) + ".txt")
+        text_file.write_text(text, encoding="utf-8")
+        subprocess.run([exe, "-v", "en", "-s", "150",
+                        "-w", str(out_wav), "-f", str(text_file)], check=True)
+        text_file.unlink()
+    else:
+        import pyttsx3
+        engine = pyttsx3.init()
+        engine.setProperty("rate", 165)
+        engine.save_to_file(text, str(out_wav))
+        engine.runAndWait()
     if not Path(out_wav).exists() or Path(out_wav).stat().st_size == 0:
-        raise SystemExit("SAPI synthesis produced no audio")
+        raise SystemExit("OS TTS synthesis produced no audio")
 
 
 def synth_audio_vibevoice(text, out_wav, voice_preset):
