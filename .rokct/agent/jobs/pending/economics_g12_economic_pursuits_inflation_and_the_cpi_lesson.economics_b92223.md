@@ -13,7 +13,7 @@ grade: 12
 term: 3
 topic: Economic Pursuits
 subtopic: Inflation and the CPI
-tutor: Bra Sipho â€” simplistic, lower grade logic
+tutor: Bra Sipho Ã¢â‚¬â€ simplistic, lower grade logic
 example_problem: Calculate the inflation rate if the consumer price index rises from 120 to 126 over one year.
 prior_knowledge: Student knows index numbers and percentage change
 metarules: .rokct/types/lesson.economics/metarules
@@ -40,7 +40,7 @@ crosscheck_status:
 crosscheck_notes:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 09:29:37
+last_updated: 2026-07-17 08:37:42
 session_id: 
 session_started: 
 attempts: 1
