@@ -5,3 +5,4 @@
 * **[2026-07-17]** - Completed Agent Task: Expand math lesson script for completing the square (https://github.com/RokctAI/factory/pull/25)
 * **[2026-07-17]** - Completed Agent Task: feat(maths): generate arithmetic sequences lesson content (https://github.com/RokctAI/factory/pull/26)
 * **[2026-07-17]** - Completed Agent Task: Generate Supacharge lesson: Maths G12 Geometric Sequences (https://github.com/RokctAI/factory/pull/28)
+* **[2026-07-17]** - Completed Agent Task: Generate Bank Reconciliation Accounting Lesson (https://github.com/RokctAI/factory/pull/30)
