@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why the 'Price Including VAT' is considered to be 115% in a VAT calculation.",
+      "expected_answer": "The Price Excluding VAT is the base or starting price, representing 100%. VAT in South Africa is 15%. Therefore, the final Price Including VAT is the original 100% plus the 15% tax, making it 115% of the starting price."
+    },
+    {
+      "id": "cc2",
+      "question": "If your friend tries to calculate the price before VAT by subtracting 15% from the final price, how would you correct them?",
+      "expected_answer": "I would explain that they are calculating 15% of the bigger final price, not the smaller starting price. The correct method is to divide the final price by 1,15 to work backwards from 115% to 100%."
+    }
+  ]
+}
