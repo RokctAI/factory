@@ -1,27 +1,13 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-17 06:25 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-17 09:19 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
-## Waiting on you (16)
+## Waiting on you (2)
 
 | Card | Subject | Action |
 |---|---|---|
-| `accounting_g11_cost_accounting_break_even_analysis_ad0b83` | Accounting G11 | approve the lesson idea (`idea_status: approved`) |
-| `accounting_g11_reconciliations_bank_reconciliation_statement_ba219e` | Accounting G11 | approve the lesson idea (`idea_status: approved`) |
-| `accounting_g11_value_added_tax_vat_calculations_09d287` | Accounting G11 | approve the lesson idea (`idea_status: approved`) |
-| `economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d` | Economics G11 | approve the lesson idea (`idea_status: approved`) |
-| `economics_g12_economic_pursuits_inflation_and_the_cpi_b92223` | Economics G12 | approve the lesson idea (`idea_status: approved`) |
-| `economics_g12_macroeconomics_the_multiplier_646d16` | Economics G12 | approve the lesson idea (`idea_status: approved`) |
-| `geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b` | Geography G12 | approve the lesson idea (`idea_status: approved`) |
-| `geography_g12_geographical_skills_and_techniques_map_scale_a_eb274e` | Geography G12 | approve the lesson idea (`idea_status: approved`) |
-| `geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d` | Geography G12 | approve the lesson idea (`idea_status: approved`) |
-| `mathematical_literacy_g11_finance_simple_interest_8f7530` | Mathematical Literacy G11 | approve the lesson idea (`idea_status: approved`) |
-| `mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d` | Mathematical Literacy G12 | approve the lesson idea (`idea_status: approved`) |
-| `mathematical_literacy_g12_finance_vat_calculations_655ffb` | Mathematical Literacy G12 | approve the lesson idea (`idea_status: approved`) |
 | `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | review content accuracy (`concept_status: approved`) |
 | `maths_g12_quadratic_equations_factoring_method_5b7a49` | Maths G12 | review content accuracy (`concept_status: approved`) |
-| `physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58` | Physical Sciences G11 | approve the lesson idea (`idea_status: approved`) |
-| `physical_sciences_g12_work_energy_and_power_conservation_of__663086` | Physical Sciences G12 | approve the lesson idea (`idea_status: approved`) |
 
 ## Needs intervention (2)
 
@@ -32,15 +18,15 @@
 
 ## Cards by status and subject
 
-| Subject | pending_approval | concept_expanding | pending_concept_approval | evaluated | total |
-|---|---|---|---|---|---|
-| Accounting | 3 |  |  |  | 3 |
-| Economics | 3 |  |  | 1 | 4 |
-| Geography | 3 |  |  | 1 | 4 |
-| Mathematical Literacy | 3 |  |  |  | 3 |
-| Maths |  | 3 | 2 | 1 | 7 |
-| Physical Sciences | 2 | 1 |  | 1 | 4 |
-| **All** | **14** | **4** | **2** | **4** | **25** |
+| Subject | concept_expanding | pending_concept_approval | evaluated | total |
+|---|---|---|---|---|
+| Accounting | 3 |  |  | 3 |
+| Economics | 3 |  | 1 | 4 |
+| Geography | 3 |  | 1 | 4 |
+| Mathematical Literacy | 3 |  |  | 3 |
+| Maths | 3 | 2 | 1 | 7 |
+| Physical Sciences | 3 |  | 1 | 4 |
+| **All** | **18** | **2** | **4** | **25** |
 
 ## Seed backlog (topics not yet opened as cards)
 
@@ -78,7 +64,7 @@ Seed rows total: 215; opened: 25; remaining: 190.
 
 | Window | Groq calls | Groq tokens | Jules sessions |
 |---|---|---|---|
-| Last 24 h | 2 | 5746 | 6 |
-| All time | 15 | 12092 | 6 |
+| Last 24 h | 2 | 5746 | 20 |
+| All time | 15 | 12092 | 20 |
 
 Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
