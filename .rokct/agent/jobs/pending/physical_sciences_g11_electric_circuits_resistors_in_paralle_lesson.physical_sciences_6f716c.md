@@ -13,8 +13,8 @@ grade: 11
 term: 2
 topic: Electric Circuits
 subtopic: Resistors in parallel
-tutor: Ms Dlamini — formal
-example_problem: Three resistors of 2 Ω, 3 Ω and 6 Ω are connected in parallel across a 12 V battery. Calculate the total current supplied by the battery.
+tutor: Ms Dlamini â€” formal
+example_problem: Three resistors of 2 Î©, 3 Î© and 6 Î© are connected in parallel across a 12 V battery. Calculate the total current supplied by the battery.
 prior_knowledge: Student knows Ohm's law and series circuits
 metarules: .rokct/types/lesson.physical_sciences/metarules
 guardrail: age_13_17
@@ -36,7 +36,7 @@ mandy_transcript_path:
 mandy_nervous_script_path:
 status: pending_approval # next step is concept_expanding
 created: 2026-07-14
-last_updated: 2026-07-14 05:14:23
+last_updated: 2026-07-17 06:20:00
 session_id: 
 session_started: 
 attempts: 1
