@@ -204,6 +204,11 @@ jobs:
             python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status produced --agent level6
             python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
 
+            # Ledger row (same format as ledger_update.yml). Appended here
+            # rather than via the reusable single-card job because one Level 6
+            # batch can produce several cards; committed with the same push.
+            echo "| $ID | $TYPE | $THEME | produced | level6 | L6-$GITHUB_RUN_ID | $BASE/manifest.json | $(date -u +'%Y-%m-%d %H:%M') |" >> .rokct/agent/log/ledger.md
+
             PRODUCED="$PRODUCED $ID"
             COUNT=$((COUNT + 1))
           done
@@ -214,7 +219,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$PRODUCED" ]; then
-            git add .rokct/agent/jobs/done/ .rokct/agent/log/transitions.log "$REPORT"
+            git add .rokct/agent/jobs/done/ .rokct/agent/log/transitions.log .rokct/agent/log/ledger.md "$REPORT"
             git commit -m "🤖 [CI] Lesson 6: produced assets for$PRODUCED [skip ci]"
           else
             echo "ℹ️ No evaluated lesson cards to produce."

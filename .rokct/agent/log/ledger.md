@@ -45,3 +45,4 @@
 | 2._forgotten_memories_1d661c | narrative | 2. Forgotten Memories | pending_approval | groq | GROQ-29375976604 | — | 2026-07-14 23:23 |
 | 4._whispers_of_wilderness_381f06 | free verse | 4. Whispers of Wilderness | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-15 21:00 |
 | 1._cosmic_dreams_80c3ce | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29452114428 | — | 2026-07-15 21:29 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | produced | level6 | L6-29544844964 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-17 00:30 |
