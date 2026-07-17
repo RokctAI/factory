@@ -12,3 +12,4 @@
 * **[2026-07-17]** - Completed Agent Task: Generate Mathematical Literacy Simple Interest Lesson (https://github.com/RokctAI/factory/pull/37)
 * **[2026-07-17]** - Completed Agent Task: feat: generate complete Supacharge lesson for municipal tariffs (https://github.com/RokctAI/factory/pull/40)
 * **[2026-07-17]** - Completed Agent Task: Generate Maths Grade 12 Compound Growth Lesson (https://github.com/RokctAI/factory/pull/22)
+* **[2026-07-17]** - Completed Agent Task: Expand maths sequences script.md to target word count (https://github.com/RokctAI/factory/pull/43)
