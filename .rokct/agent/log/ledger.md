@@ -89,3 +89,4 @@
 | 1._cosmic_dreams_aa1120 | poetry | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-17 20:55 |
 | 2._forgotten_memories_008deb | narrative | 2. Forgotten Memories | pending_approval | groq | GROQ-29613911785 | — | 2026-07-17 21:12 |
 | accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_generated | system | SYS-LESSON-RULES-29643106649 | — | 2026-07-18 11:45 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_generated | system | SYS-LESSON-RULES-29645083449 | — | 2026-07-18 12:51 |
