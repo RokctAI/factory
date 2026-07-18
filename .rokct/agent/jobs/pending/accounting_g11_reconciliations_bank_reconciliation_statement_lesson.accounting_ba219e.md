@@ -37,7 +37,7 @@ mandy_transcript_path: lessons/accounting/grade11/term1/accounting_g11_reconcili
 mandy_nervous_script_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/mandy_nervous_script.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-18 13:07:13
+last_updated: 2026-07-18 13:13:05
 session_id: 
 session_started: 
 attempts: 2
