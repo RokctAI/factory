@@ -542,6 +542,17 @@ Write the files into {lesson_dir}/ exactly as follows:
   stage directions like [pause] or [silence] and bake in no dead air.
 - {lesson_dir}/manim_scene.py — Manim Community Python file, whiteboard
   style, one step at a time, mirroring the script's teaching beats.
+  BAND LAYOUT (mandatory): subclass MovingCameraScene and lay content out
+  in sequential vertical BANDS along a long virtual canvas — band k is one
+  frame-height, shifted DOWN * config.frame_height * k. One band per
+  step/worked example; every worked example starts a fresh band. Content
+  NEVER overwrites a previous band's space and there is NO FadeOut/Transform
+  lifecycle — old work stays on the canvas; at each band transition play
+  self.camera.frame.animate.move_to(DOWN * config.frame_height * k) so the
+  viewport moves to clean space. Size content large and legible for a
+  phone framed full-screen (scale >= 1.1 even for tiny expressions like
+  "2 x 2 = ?"; at most ~5 short lines per band). See the two reference
+  scenes under lessons/maths/grade11/term1/*/manim_scene.py.
 - {lesson_dir}/subtopics.json — {{"subtopics": [{{"ref": "subtopic_1",
   "title": "...", "start_seconds": 0, "end_seconds": 210}}, ...]}} — refs
   sequential, times in seconds, contiguous, total close to 900 (15 minutes).
@@ -1125,6 +1136,48 @@ def cmd_skills_index(args):
     return 0
 
 
+# Session-framing signatures (teaching-content-only rule): the platform's
+# player supplies all session framing, so a lesson script must not carry
+# self-introductions, platform mentions, Mandy/host references, handoffs or
+# goodbyes. IMPORTANT SCOPE: pedagogical transitions in the tutor's voice
+# are teaching flow and MUST pass — especially the question lead-ins the
+# script is required to include at MCQ subtopic ends ("Pause here and try a
+# few quick questions on this before we continue"). None of these patterns
+# can match such lead-ins: they target framing vocabulary (names, platform,
+# greetings, farewells), not pause/question/continue language.
+FRAMING_SIGNATURES = (
+    (r"\bmy name is\b", "tutor self-introduction"),
+    (r"\bcall me the\b", "tutor self-introduction (catchphrase)"),
+    (r"\bthey call me\b", "tutor self-introduction (catchphrase)"),
+    (r"\bwelcome (?:back )?to\b", "session greeting"),
+    (r"\bsupacharge\b", "platform mention"),
+    (r"\bmandy\b", "host reference"),
+    (r"\bhand(?:ing)? (?:you |it |this )?(?:over|back) to\b", "handoff"),
+    (r"\bgoodbye\b|\bsee you (?:next|in the next|tomorrow|soon)\b", "goodbye/sign-off"),
+    (r"\bthat'?s all for today\b|\buntil next time\b", "goodbye/sign-off"),
+    (r"\bthanks for (?:watching|joining|listening)\b", "goodbye/sign-off"),
+    (r"\bsigning off\b", "goodbye/sign-off"),
+)
+
+
+def verify_no_session_framing(script):
+    """Error strings for session-framing violations in a lesson script.
+    Case-insensitive; reports line numbers. Markdown headings are skipped
+    (subtopic titles like 'Summary and Sign-off' describe structure, not
+    spoken audio — the narration extractor drops headings)."""
+    errors = []
+    for n, line in enumerate(script.splitlines(), 1):
+        if line.lstrip().startswith("#"):
+            continue
+        for pattern, label in FRAMING_SIGNATURES:
+            m = re.search(pattern, line, re.IGNORECASE)
+            if m:
+                errors.append(
+                    f"script.md:{n}: session framing ({label}): '{m.group(0)}' — "
+                    "the player supplies framing; scripts are teaching content only")
+    return errors
+
+
 def run_checks(card, card_file):
     """Structural + pedagogical sanity checks for Level 3.
 
@@ -1176,6 +1229,9 @@ def run_checks(card, card_file):
             f"[expandable] script.md too short for 15 minutes of teaching "
             f"({words} words, minimum {SCRIPT_MIN_WORDS})"
         )
+
+    framing_errors = verify_no_session_framing(script)
+    errors.extend(framing_errors)
 
     # Manim file: a Community-edition scene.
     manim = paths["manim_path"].read_text(encoding="utf-8")

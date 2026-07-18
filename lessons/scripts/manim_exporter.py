@@ -23,9 +23,24 @@ How it works:
   config.frame_height, origin centre, y up) to the 0..1 top-left space
   CoordinateScaler expects.
 
+BAND LAYOUT MODEL: lesson scenes lay content out in sequential vertical
+BANDS along a long virtual canvas (band k = one frame-height, shifted
+k * frame_height DOWN), one band per step/worked example. Content never
+overwrites a previous band's space and there is no FadeOut lifecycle — the
+camera simply moves to clean space (scenes subclass MovingCameraScene and
+animate self.camera.frame down at each transition; earlier work stays on
+the canvas, partially visible at the frame edge by design). Positions are
+exported in frame units, so band-k content has y in [k, k+1] — the player
+offsets its viewport by the camera track. Each camera.frame movement is
+exported as a camera event {"time", "target": {x, y}} in a separate
+top-level "camera" array (NOT a primitive: the ManimPlayer painter renders
+unknown primitive types as marker dots, and a camera event must never
+paint).
+
 Output: {"version": "1", "scene": <name>, "duration_seconds": float,
          "primitives": [{"time": s, "primitive": type, "position": {x, y},
-                         ...type fields...}]}
+                         ...type fields...}],
+         "camera": [{"time": s, "target": {x, y}}, ...]}
 """
 import argparse
 import importlib.util
@@ -131,13 +146,32 @@ def export_scene(scene_file, out_path):
 
     scaler = {"fw": float(config.frame_width), "fh": float(config.frame_height)}
     primitives = []
+    camera_events = []
     seen = set()
+
+    def norm_point(point):
+        return {"x": round((float(point[0]) + scaler["fw"] / 2) / scaler["fw"], 4),
+                "y": round((scaler["fh"] / 2 - float(point[1])) / scaler["fh"], 4)}
 
     class Recorder(scene_cls):
         def play(self, *args, **kwargs):
             started_at = float(self.renderer.time)
             super().play(*args, **kwargs)
             self._record(started_at)
+            self._record_camera(started_at)
+
+        def _record_camera(self, at_time):
+            # Band transitions: a MovingCameraScene animating camera.frame
+            # becomes a camera event with the new viewport centre (frame
+            # units — band k's centre has y = k + 0.5). Static Scenes have
+            # no frame mobject and emit nothing.
+            frame = getattr(self.camera, "frame", None)
+            if frame is None:
+                return
+            target = norm_point(frame.get_center())
+            last = camera_events[-1]["target"] if camera_events else {"x": 0.5, "y": 0.5}
+            if abs(target["x"] - last["x"]) > 0.01 or abs(target["y"] - last["y"]) > 0.01:
+                camera_events.append({"time": round(at_time, 2), "target": target})
 
         def _record(self, at_time):
             # Whole-mobject granularity: a Text/Tex is ONE primitive, never
@@ -169,6 +203,7 @@ def export_scene(scene_file, out_path):
         "scene": scene_cls.__name__,
         "duration_seconds": round(duration, 2),
         "primitives": sorted(primitives, key=lambda p: p["time"]),
+        "camera": camera_events,
     }
     Path(out_path).write_text(json.dumps(payload, indent=2), encoding="utf-8")
     return payload
@@ -181,6 +216,7 @@ def main():
     args = ap.parse_args()
     payload = export_scene(args.scene_file, args.out)
     print(f"Exported {len(payload['primitives'])} primitives, "
+          f"{len(payload['camera'])} camera event(s), "
           f"scene duration {payload['duration_seconds']}s -> {args.out}")
 
 

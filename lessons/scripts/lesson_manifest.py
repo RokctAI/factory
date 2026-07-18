@@ -55,12 +55,20 @@ def get_field(content, field):
 
 def strip_script_to_narration(script_md):
     """Plain spoken text from script.md: drop headings, bullets, markdown
-    emphasis and stage directions in [brackets]/(parens)."""
+    emphasis, stage directions in [brackets], and any session-framing lines
+    (self-intros, platform mentions, host references, goodbyes) that slipped
+    into legacy scripts — the player supplies all framing, so produced audio
+    must never carry it. Question lead-ins at MCQ subtopic ends are teaching
+    flow and stay in (the framing signatures cannot match them)."""
+    sys.path.insert(0, str(Path(__file__).parent))
+    from lesson_pipeline import verify_no_session_framing
     lines = []
     for line in script_md.splitlines():
         s = line.strip()
         if not s or s.startswith("#") or s.startswith(">"):
             continue
+        if verify_no_session_framing(s):
+            continue  # framing line — never reaches the audio
         s = re.sub(r"[*_`]", "", s)
         s = re.sub(r"^\-\s*", "", s)
         s = re.sub(r"\[[^\]]*\]", "", s)   # [visual: ...] stage directions
@@ -121,11 +129,14 @@ def to_mp3(wav_path, mp3_path):
     )
 
 
-def build_tracks(subtopics, mcq, tutor_label, scale, audio_seconds):
+def build_tracks(subtopics, mcq, comprehension, tutor_label, scale, audio_seconds):
     """Manifest track events from subtopics.json, scaled to real audio.
     profile at 0, subtopic_start/subtopic_end per subtopic (end carries the
-    subtopic's MCQ ids as `exercise`), signoff last. All times clamped to the
-    audio length so no event lands past the declared audio duration."""
+    subtopic's MCQ ids as `exercise`), then — when the lesson ships a
+    comprehension check — a comprehension_check event at lesson end (the
+    final-assessment moment; ids resolve against the manifest-level
+    comprehension_check bank), signoff last. All times clamped to the audio
+    length so no event lands past the declared audio duration."""
     tutor_slug = tutor_label.split("—")[0].strip().lower().replace(" ", "_")
     mcq_by_ref = {b["ref"]: [q["id"] for q in b.get("questions", [])]
                   for b in mcq.get("subtopics", [])}
@@ -144,6 +155,10 @@ def build_tracks(subtopics, mcq, tutor_label, scale, audio_seconds):
                        "ref": sub["ref"], "qa_window": QA_WINDOW_SECONDS,
                        "exercise": mcq_by_ref.get(sub["ref"], []),
                        "pass_threshold": PASS_THRESHOLD})
+    cc_ids = [q["id"] for q in comprehension.get("questions", []) if q.get("id")]
+    if cc_ids:
+        tracks.append({"time": round(last_end, 2), "type": "comprehension_check",
+                       "questions": cc_ids, "qa_window": QA_WINDOW_SECONDS})
     tracks.append({"time": round(last_end, 2), "type": "signoff",
                    "tutor": tutor_slug, "audio": "audio.mp3"})
     tracks.sort(key=lambda t: t["time"])
@@ -173,6 +188,8 @@ def main():
     subtopics = json.loads((lesson_path / "subtopics.json").read_text("utf-8"))
     mcq_file = lesson_path / "mcq.json"
     mcq = json.loads(mcq_file.read_text("utf-8")) if mcq_file.exists() else {}
+    cc_file = lesson_path / "comprehension_check.json"
+    comprehension = json.loads(cc_file.read_text("utf-8")) if cc_file.exists() else {}
     script_md = (lesson_path / "script.md").read_text("utf-8")
 
     out_dir = Path(args.out_dir)
@@ -209,11 +226,13 @@ def main():
     anim_scale = audio_seconds / manim_duration
     for p in anim["primitives"]:
         p["time"] = round(p["time"] * anim_scale, 2)
+    for ev in anim.get("camera", []):
+        ev["time"] = round(ev["time"] * anim_scale, 2)
     anim["duration_seconds"] = round(audio_seconds, 2)
     anim_path.write_text(json.dumps(anim, indent=2), encoding="utf-8")
     print(f"[align] subtopic x{subtopic_scale:.3f}  animation x{anim_scale:.3f}")
 
-    tracks = build_tracks(subtopics, mcq, tutor, subtopic_scale, audio_seconds)
+    tracks = build_tracks(subtopics, mcq, comprehension, tutor, subtopic_scale, audio_seconds)
 
     # Manifest-level question bank: subtopic_end `exercise` entries are IDs
     # the app resolves against this map (lms_sdk McqQuestion.fromJson reads
@@ -222,6 +241,13 @@ def main():
     questions = {q["id"]: q
                  for b in mcq.get("subtopics", [])
                  for q in b.get("questions", []) if q.get("id")}
+
+    # Comprehension-check bank, same pattern: Level 3 validates
+    # comprehension_check.json but Level 6 never shipped it, while lms_sdk's
+    # models already have a comprehension-check concept waiting for content.
+    # The comprehension_check track event at lesson end carries the ids;
+    # this bank carries the full questions (id/question/expected_answer).
+    cc_bank = {q["id"]: q for q in comprehension.get("questions", []) if q.get("id")}
 
     # --- manifest (ReplayManifest.fromJson contract) ---
     manifest = {
@@ -244,6 +270,7 @@ def main():
         "assets": ["animations.json"],
         "tracks": tracks,
         **({"questions": questions} if questions else {}),
+        **({"comprehension_check": cc_bank} if cc_bank else {}),
     }
     manifest_path = out_dir / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
