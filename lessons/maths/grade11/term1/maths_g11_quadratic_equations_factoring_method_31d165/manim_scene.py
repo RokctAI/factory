@@ -20,6 +20,13 @@ class QuadraticFactoring(MovingCameraScene):
         self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
 
     def construct(self):
+        # Opening intro beat: the player shows the TOPIC full-screen while
+        # the tutor speaks the intro; board work must not start until the
+        # intro lands. The exporter measures the first primitive's time and
+        # the manifest publishes it as topic_display duration — this wait is
+        # what makes that a designed beat instead of a coincidence.
+        self.wait(4)
+
         # --- Band 0: Review and Introduction ---
         title = Tex("Factoring Quadratic Equations").scale(1.3).to_edge(UP)
         self.play(Write(title))

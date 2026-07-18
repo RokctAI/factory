@@ -129,23 +129,79 @@ def to_mp3(wav_path, mp3_path):
     )
 
 
-def build_tracks(subtopics, mcq, comprehension, tutor_label, scale, audio_seconds):
+BREAK_DURATION_SECONDS = 300  # replaysdk-spec break_start sample
+
+
+def resolve_tutor_pair(card_text, tutor_label):
+    """(first, second) tutor identity dicts for the manifest, derived from
+    the tutor roster's paired-duo mapping — roster.json already captures the
+    two-tutor-per-lesson design (every subject has an Expert + Simplifier
+    duo), so the second tutor needs NO new job-card field: it is simply the
+    other member of the card subject's duo. Returns (first, None) when the
+    roster cannot resolve a pair (legacy label, missing roster)."""
+    sys.path.insert(0, str(Path(__file__).parent))
+    from lesson_pipeline import (card_roster_key, load_roster, load_tutor_card,
+                                 persona_label)
+
+    def identity(slug):
+        text = load_tutor_card(slug)
+        label = persona_label(text) if text else slug
+        name = label.split("—")[0].strip() if label else slug
+        real = get_field(text, "real_name") if text else ""
+        return {"id": slug, "display_name": name,
+                **({"real_name": real} if real else {})}
+
+    fallback = {"id": tutor_label.split("—")[0].strip().lower().replace(" ", "_"),
+                "display_name": tutor_label.split("—")[0].strip()}
+    duo = load_roster().get("subjects", {}).get(card_roster_key(card_text), {})
+    slugs = [duo.get("expert", ""), duo.get("simplifier", "")]
+    if not all(slugs):
+        return fallback, None
+    name_part = tutor_label.split("—")[0].strip().lower()
+    first_slug = next(
+        (s for s in slugs
+         if persona_label(load_tutor_card(s)).split("—")[0].strip().lower() in name_part
+         or name_part in persona_label(load_tutor_card(s)).split("—")[0].strip().lower()),
+        None)
+    if first_slug is None:
+        return fallback, None
+    second_slug = slugs[1] if first_slug == slugs[0] else slugs[0]
+    return identity(first_slug), identity(second_slug)
+
+
+def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
+                 scale, audio_seconds, topic, topic_display_seconds):
     """Manifest track events from subtopics.json, scaled to real audio.
+
+    topic_display at 0 (full-screen topic while the tutor speaks the intro —
+    duration computed from when board work actually starts, see main()),
     profile at 0, subtopic_start/subtopic_end per subtopic (end carries the
-    subtopic's MCQ ids as `exercise`), then — when the lesson ships a
-    comprehension check — a comprehension_check event at lesson end (the
-    final-assessment moment; ids resolve against the manifest-level
-    comprehension_check bank), signoff last. All times clamped to the audio
-    length so no event lands past the declared audio duration."""
-    tutor_slug = tutor_label.split("—")[0].strip().lower().replace(" ", "_")
+    subtopic's MCQ ids as `exercise`), a break_start at the subtopic
+    boundary nearest the audio midpoint (the bridge between the two tutors'
+    parts — Mandy bridges, then the second tutor takes over; the duo comes
+    from roster.json), then — when the lesson ships a comprehension check —
+    a comprehension_check event at lesson end, signoff last. All times
+    clamped to the audio length."""
     mcq_by_ref = {b["ref"]: [q["id"] for q in b.get("questions", [])]
                   for b in mcq.get("subtopics", [])}
     cap = float(int(round(audio_seconds)))  # matches manifest audio duration
 
-    tracks = [{"time": 0, "type": "profile", "tutor": tutor_slug,
-               "audio": "audio.mp3"}]
+    tracks = [
+        {"time": 0, "type": "topic_display", "topic": topic,
+         "duration_seconds": round(topic_display_seconds, 2)},
+        {"time": 0, "type": "profile", "tutor": first_tutor["id"],
+         "audio": "audio.mp3"},
+    ]
+    subs = subtopics.get("subtopics", [])
+    # The two-part bridge sits at the subtopic END nearest the audio
+    # midpoint — never the final subtopic's end (that's signoff, not a
+    # bridge). Requires a resolvable second tutor and >= 2 subtopics.
+    break_at = None
+    if second_tutor and len(subs) >= 2:
+        ends = [min(s["end_seconds"] * scale, cap) for s in subs[:-1]]
+        break_at = min(ends, key=lambda e: abs(e - audio_seconds / 2))
     last_end = 0.0
-    for sub in subtopics.get("subtopics", []):
+    for sub in subs:
         start = round(min(sub["start_seconds"] * scale, cap), 2)
         end = round(min(sub["end_seconds"] * scale, cap), 2)
         last_end = end
@@ -155,12 +211,17 @@ def build_tracks(subtopics, mcq, comprehension, tutor_label, scale, audio_second
                        "ref": sub["ref"], "qa_window": QA_WINDOW_SECONDS,
                        "exercise": mcq_by_ref.get(sub["ref"], []),
                        "pass_threshold": PASS_THRESHOLD})
+        if break_at is not None and abs(min(sub["end_seconds"] * scale, cap) - break_at) < 0.01:
+            tracks.append({"time": round(end, 2), "type": "break_start",
+                           "duration_seconds": BREAK_DURATION_SECONDS,
+                           "bridge": "mandy",
+                           "next_tutor": second_tutor["id"]})
     cc_ids = [q["id"] for q in comprehension.get("questions", []) if q.get("id")]
     if cc_ids:
         tracks.append({"time": round(last_end, 2), "type": "comprehension_check",
                        "questions": cc_ids, "qa_window": QA_WINDOW_SECONDS})
     tracks.append({"time": round(last_end, 2), "type": "signoff",
-                   "tutor": tutor_slug, "audio": "audio.mp3"})
+                   "tutor": first_tutor["id"], "audio": "audio.mp3"})
     tracks.sort(key=lambda t: t["time"])
     return tracks
 
@@ -232,7 +293,25 @@ def main():
     anim_path.write_text(json.dumps(anim, indent=2), encoding="utf-8")
     print(f"[align] subtopic x{subtopic_scale:.3f}  animation x{anim_scale:.3f}")
 
-    tracks = build_tracks(subtopics, mcq, comprehension, tutor, subtopic_scale, audio_seconds)
+    # TOPIC-DISPLAY TIMING: the player shows the topic full-screen while the
+    # tutor speaks the intro, until board work begins. That duration is
+    # COMPUTED here from the real content — the time of the first animation
+    # primitive in the rescaled (real-audio) timeline — not left to
+    # coincidence: the Level 2 prompt requires scenes to open with a wait
+    # beat covering the spoken intro, and this measurement turns that beat
+    # into an explicit manifest contract.
+    topic_display_seconds = min((p["time"] for p in anim["primitives"]),
+                                default=0.0)
+
+    first_tutor, second_tutor = resolve_tutor_pair(card, tutor)
+    if second_tutor:
+        print(f"[tutors] first={first_tutor['id']} second={second_tutor['id']} (roster duo)")
+    else:
+        print(f"[tutors] first={first_tutor['id']} — no roster pair resolved; single-tutor manifest")
+
+    tracks = build_tracks(subtopics, mcq, comprehension, first_tutor,
+                          second_tutor, subtopic_scale, audio_seconds,
+                          topic, topic_display_seconds)
 
     # Manifest-level question bank: subtopic_end `exercise` entries are IDs
     # the app resolves against this map (lms_sdk McqQuestion.fromJson reads
@@ -268,6 +347,10 @@ def main():
             "engine": args.audio_backend,  # provenance; ignored by parser
         },
         "assets": ["animations.json"],
+        # Second tutor identity for the app's attendee panel
+        # (LessonScreenDeps.secondTutor / TutorPersona{id, displayName}) —
+        # sourced from roster.json's paired-duo mapping, not a card field.
+        **({"second_tutor": second_tutor} if second_tutor else {}),
         "tracks": tracks,
         **({"questions": questions} if questions else {}),
         **({"comprehension_check": cc_bank} if cc_bank else {}),

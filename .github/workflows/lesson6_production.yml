@@ -108,8 +108,13 @@ jobs:
           if [ "${{ github.event_name }}" = "push" ] && [ -f .github/level6_dispatch ]; then
             echo "Push dispatch: loading overrides from .github/level6_dispatch"
             . .github/level6_dispatch
-            echo "AUDIO_BACKEND=$AUDIO_BACKEND MAX_CARDS=$MAX_CARDS CARD_FILTER=$CARD_FILTER"
+            echo "AUDIO_BACKEND=$AUDIO_BACKEND MAX_CARDS=$MAX_CARDS CARD_FILTER=$CARD_FILTER REPRODUCE=${REPRODUCE:-0}"
           fi
+          # REPRODUCE=1 (dispatch-file only): re-export ALREADY-PRODUCED
+          # cards so existing releases match a changed asset contract. The
+          # card's status stays 'produced' throughout (no state-machine
+          # transitions); the release is re-published in place.
+          REPRODUCE="${REPRODUCE:-0}"
 
           # Run report: committed at the end of every run (even no-op ones)
           # because run logs need authenticated API access this project's
@@ -130,8 +135,10 @@ jobs:
             TYPE=$(grep '^type:' "$FILE" | cut -d':' -f2 | xargs)
             case "$TYPE" in lesson.*) ;; *) continue ;; esac
             STATUS=$(grep '^status:' "$FILE" | cut -d':' -f2 | cut -d'#' -f1 | xargs)
-            if [ "$STATUS" != "evaluated" ]; then
-              log_report "skip $(basename "$FILE"): status='$STATUS'"
+            WANT_STATUS="evaluated"
+            [ "$REPRODUCE" = "1" ] && WANT_STATUS="produced"
+            if [ "$STATUS" != "$WANT_STATUS" ]; then
+              log_report "skip $(basename "$FILE"): status='$STATUS' (want $WANT_STATUS)"
               continue
             fi
 
@@ -169,8 +176,11 @@ jobs:
             fi
 
             echo "🎬 Producing $ID (audio backend: $AUDIO_BACKEND)..."
-            log_report "producing $ID (backend $AUDIO_BACKEND)"
-            python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status producing --agent level6
+            log_report "producing $ID (backend $AUDIO_BACKEND, reproduce=$REPRODUCE)"
+            # Re-exports keep status 'produced' throughout — no transitions.
+            if [ "$REPRODUCE" != "1" ]; then
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status producing --agent level6
+            fi
 
             OUT=".rokct/tmp/level6/$ID"
             rm -rf "$OUT"; mkdir -p "$OUT"
@@ -179,7 +189,9 @@ jobs:
               echo "❌ Assembly failed for $ID"
               echo "$ASM_OUT" | tail -20
               log_report "FAIL $ID: assembly: $(echo "$ASM_OUT" | tail -3 | tr '\n' ' ')"
-              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status failed --agent level6 || true
+              if [ "$REPRODUCE" != "1" ]; then
+                python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status failed --agent level6 || true
+              fi
               python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
               continue
             fi
@@ -192,7 +204,9 @@ jobs:
             if [ -f "agent/replay/dart/tool/validate_manifest.dart" ]; then
               (cd agent/replay/dart && dart run tool/validate_manifest.dart "$GITHUB_WORKSPACE/$OUT/manifest.json") || {
                 echo "❌ Manifest failed ManifestParser validation for $ID"
-                python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status failed --agent level6 || true
+                if [ "$REPRODUCE" != "1" ]; then
+                  python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status failed --agent level6 || true
+                fi
                 python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
                 continue
               }
@@ -212,13 +226,17 @@ jobs:
             python lessons/scripts/record_production.py \
               --card "$FILE" --out-dir "$OUT" --base-url "$BASE"
 
-            python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status produced --agent level6
+            if [ "$REPRODUCE" != "1" ]; then
+              python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status produced --agent level6
+            fi
             python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
 
             # Ledger row (same format as ledger_update.yml). Appended here
             # rather than via the reusable single-card job because one Level 6
             # batch can produce several cards; committed with the same push.
-            echo "| $ID | $TYPE | $THEME | produced | level6 | L6-$GITHUB_RUN_ID | $BASE/manifest.json | $(date -u +'%Y-%m-%d %H:%M') |" >> .rokct/agent/log/ledger.md
+            LEDGER_STATUS="produced"
+            [ "$REPRODUCE" = "1" ] && LEDGER_STATUS="reproduced"
+            echo "| $ID | $TYPE | $THEME | $LEDGER_STATUS | level6 | L6-$GITHUB_RUN_ID | $BASE/manifest.json | $(date -u +'%Y-%m-%d %H:%M') |" >> .rokct/agent/log/ledger.md
 
             PRODUCED="$PRODUCED $ID"
             COUNT=$((COUNT + 1))

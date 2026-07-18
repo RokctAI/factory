@@ -19,6 +19,12 @@ class CompletingTheSquare(MovingCameraScene):
         self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
 
     def construct(self):
+        # Opening intro beat: topic stays full-screen (player-side) while
+        # the tutor speaks the intro; the first board write defines the
+        # manifest's topic_display duration. See the factoring reference
+        # scene for the full rationale.
+        self.wait(4)
+
         # --- Band 0: title + the equation we are solving ---
         title = Tex("Completing the Square").scale(1.3).to_edge(UP)
         self.play(Write(title))

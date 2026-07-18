@@ -530,7 +530,12 @@ block) and the metarules under {get_field(card, 'metarules') or '.rokct/types/' 
 
 Write the files into {lesson_dir}/ exactly as follows:
 - {lesson_dir}/script.md — the lesson script in the tutor's voice, with a
-  '## Subtopic: <title>' heading per subtopic. TEACHING CONTENT ONLY: the
+  '## Subtopic: <title>' heading per subtopic. OPEN with a spoken topic
+  intro (2-4 sentences framing what today's topic is and why it matters,
+  in the tutor's register) BEFORE any board work is referenced — the
+  player shows the topic full-screen while this intro plays, and the
+  whiteboard only starts afterwards (the scene's opening wait beat below
+  is what times this; the two must match). TEACHING CONTENT ONLY: the
   platform's player supplies all session framing, so the script must contain
   NO tutor self-introductions, NO platform mentions, NO references to Mandy
   or any host, NO handoffs, and NO goodbyes/sign-offs. Pedagogical
@@ -542,6 +547,12 @@ Write the files into {lesson_dir}/ exactly as follows:
   stage directions like [pause] or [silence] and bake in no dead air.
 - {lesson_dir}/manim_scene.py — Manim Community Python file, whiteboard
   style, one step at a time, mirroring the script's teaching beats.
+  INTRO BEAT (mandatory): the scene MUST open with self.wait(...) sized to
+  roughly 4-5%% of the scene's total duration, BEFORE the first Write —
+  this is the topic-display window: the player keeps the topic full-screen
+  while the script's spoken intro runs, and the Level 6 assembler measures
+  the first primitive's time to publish the topic_display duration. A scene
+  that writes to the board at t=0 breaks the topic beat.
   BAND LAYOUT (mandatory): subclass MovingCameraScene and lay content out
   in sequential vertical BANDS along a long virtual canvas — band k is one
   frame-height, shifted DOWN * config.frame_height * k. One band per
