@@ -78,5 +78,3 @@ Both columns now total R7 420. The statement balances. The numbers agree.
 Finally, an internal control point. Why do we do this?
 Regular bank reconciliations prevent fraud and detect errors promptly. It is a non-negotiable control for any business.
 Numbers never lie, provided you keep them honest.
-
-I am Prof Mokoena. Goodbye.
