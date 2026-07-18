@@ -14,3 +14,4 @@
 * **[2026-07-17]** - Completed Agent Task: Generate Maths Grade 12 Compound Growth Lesson (https://github.com/RokctAI/factory/pull/22)
 * **[2026-07-17]** - Completed Agent Task: Expand maths sequences script.md to target word count (https://github.com/RokctAI/factory/pull/43)
 * **[2026-07-17]** - Completed Agent Task: Expand Break-even analysis accounting lesson script (https://github.com/RokctAI/factory/pull/44)
+* **[2026-07-18]** - Completed Agent Task: Expand Accounting Grade 11 Bank Reconciliation Script (https://github.com/RokctAI/factory/pull/45)
