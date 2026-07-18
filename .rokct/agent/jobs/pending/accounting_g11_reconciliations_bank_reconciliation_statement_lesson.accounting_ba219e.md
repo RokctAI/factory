@@ -24,7 +24,7 @@ idea_status: approved
 concept: |
   Formal procedural teaching using Prof Mokoena persona. The script explicitly works through drawing the statement skeleton, correctly placing the Bank Statement balance based on the inversion rule, posting the outstanding deposit and cheques, and calculating the final balancing figure while voicing the underlying double-entry logic. It closes with a single internal control point about detecting fraud. Pace is deliberate and format-disciplined.
 concept_status:
-rules_status: expanding
+rules_status: passed
 lesson_name: Bank Reconciliation Statement
 lesson_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e
 script_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/script.md
@@ -35,14 +35,18 @@ comprehension_check_path: lessons/accounting/grade11/term1/accounting_g11_reconc
 reel_brief_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/reel_clip.json
 mandy_transcript_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/mandy_nervous_script.md
-status: concept_generated
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-18 13:13:05
+last_updated: 2026-07-18 21:53:16
 session_id: 
 session_started: 
-attempts: 2
+attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
 expansion_requested: 1
+crosscheck_status: passed
+crosscheck_notes: |
+  [2026-07-18 21:53] Independent AI review (fresh Groq/llama call, not the generating agent): PASS
+  - no issues found
 ---
