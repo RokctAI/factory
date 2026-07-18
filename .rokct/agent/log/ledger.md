@@ -90,3 +90,4 @@
 | 2._forgotten_memories_008deb | narrative | 2. Forgotten Memories | pending_approval | groq | GROQ-29613911785 | — | 2026-07-17 21:12 |
 | accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_generated | system | SYS-LESSON-RULES-29643106649 | — | 2026-07-18 11:45 |
 | accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_generated | system | SYS-LESSON-RULES-29645083449 | — | 2026-07-18 12:51 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | reproduced | level6 | L6-29645083395 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-18 12:53 |
