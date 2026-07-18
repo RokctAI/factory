@@ -88,3 +88,4 @@
 | accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29571704847 | — | 2026-07-17 09:56 |
 | 1._cosmic_dreams_aa1120 | poetry | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-17 20:55 |
 | 2._forgotten_memories_008deb | narrative | 2. Forgotten Memories | pending_approval | groq | GROQ-29613911785 | — | 2026-07-17 21:12 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_generated | system | SYS-LESSON-RULES-29643106649 | — | 2026-07-18 11:45 |
