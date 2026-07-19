@@ -121,9 +121,24 @@ def wav_duration_seconds(wav_path):
         return w.getnframes() / float(w.getframerate())
 
 
+def _ffmpeg_exe():
+    """Resolve an ffmpeg binary: PATH first (CI installs it via apt), else
+    the one bundled with imageio-ffmpeg if that package is present."""
+    import shutil
+    exe = shutil.which("ffmpeg")
+    if exe:
+        return exe
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        raise SystemExit("ffmpeg not found on PATH and imageio-ffmpeg is not "
+                         "installed (pip install imageio-ffmpeg)")
+
+
 def to_mp3(wav_path, mp3_path):
     subprocess.run(
-        ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav_path),
+        [_ffmpeg_exe(), "-y", "-loglevel", "error", "-i", str(wav_path),
          "-codec:a", "libmp3lame", "-qscale:a", "4", str(mp3_path)],
         check=True,
     )
@@ -132,13 +147,44 @@ def to_mp3(wav_path, mp3_path):
 BREAK_DURATION_SECONDS = 300  # replaysdk-spec break_start sample
 
 
+SECOND_TUTOR_FIELD = "second_tutor_from_subtopic"
+
+
+def two_part_split(card_text, subtopics):
+    """The subtopic ref at which the SECOND tutor takes over, or None for a
+    single-voice lesson.
+
+    A lesson is two-part only when its card says so — `second_tutor_from_subtopic:
+    subtopic_N`. This is the gate for `second_tutor` and `break_start`: a
+    lesson must never announce a tutor who never speaks (single-voice audio
+    with a break_start told the client to announce Big John over the
+    Grandmaster recording). The field is written by the two-block generation
+    path; every legacy/single-voice card simply lacks it."""
+    ref = get_field(card_text, SECOND_TUTOR_FIELD)
+    if not ref:
+        return None
+    refs = [s.get("ref") for s in subtopics.get("subtopics", [])]
+    if ref not in refs:
+        print(f"[warn] {SECOND_TUTOR_FIELD}={ref!r} is not a subtopic ref {refs}; "
+              "treating lesson as single-voice")
+        return None
+    if refs.index(ref) == 0:
+        print(f"[warn] {SECOND_TUTOR_FIELD}={ref!r} is the FIRST subtopic — the "
+              "lead tutor would never speak; treating lesson as single-voice")
+        return None
+    return ref
+
+
 def resolve_tutor_pair(card_text, tutor_label):
     """(first, second) tutor identity dicts for the manifest, derived from
     the tutor roster's paired-duo mapping — roster.json already captures the
     two-tutor-per-lesson design (every subject has an Expert + Simplifier
     duo), so the second tutor needs NO new job-card field: it is simply the
     other member of the card subject's duo. Returns (first, None) when the
-    roster cannot resolve a pair (legacy label, missing roster)."""
+    roster cannot resolve a pair (legacy label, missing roster).
+
+    NOTE: resolving a pair does NOT mean the lesson is two-part — see
+    two_part_split(); the caller drops `second` for single-voice lessons."""
     sys.path.insert(0, str(Path(__file__).parent))
     from lesson_pipeline import (card_roster_key, load_roster, load_tutor_card,
                                  persona_label)
@@ -169,8 +215,33 @@ def resolve_tutor_pair(card_text, tutor_label):
     return identity(first_slug), identity(second_slug)
 
 
+MAX_BREAK_QUESTIONS = 4  # client caps at 4 so a break stays a break
+
+
+def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
+    """Student questions from mandy_qa_transcript.md, for the break board.
+
+    Emitted INLINE on break_start (not into a bank): the client's
+    BreakQuestion model has no id field, and these are single-use display
+    prompts rather than scored items. Only the question is carried — the
+    board shows it while Mandy speaks the answer from the audio, so
+    ask/answer seconds stay at the client's defaults unless the bridge audio
+    gives us real ones."""
+    questions = []
+    for line in transcript_md.splitlines():
+        m = re.match(r"^\*\*Student:\*\*\s*(.+?)\s*$", line.strip())
+        if m:
+            text = re.sub(r"[*_`]", "", m.group(1)).strip()
+            if text:
+                questions.append({"question": text})
+        if len(questions) >= limit:
+            break
+    return questions
+
+
 def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
-                 scale, audio_seconds, topic, topic_display_seconds):
+                 scale, audio_seconds, topic, topic_display_seconds,
+                 split_ref=None, break_questions=None):
     """Manifest track events from subtopics.json, scaled to real audio.
 
     topic_display at 0 (full-screen topic while the tutor speaks the intro —
@@ -193,13 +264,14 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
          "audio": "audio.mp3"},
     ]
     subs = subtopics.get("subtopics", [])
-    # The two-part bridge sits at the subtopic END nearest the audio
-    # midpoint — never the final subtopic's end (that's signoff, not a
-    # bridge). Requires a resolvable second tutor and >= 2 subtopics.
-    break_at = None
-    if second_tutor and len(subs) >= 2:
-        ends = [min(s["end_seconds"] * scale, cap) for s in subs[:-1]]
-        break_at = min(ends, key=lambda e: abs(e - audio_seconds / 2))
+    # The bridge sits exactly where the card says the second tutor takes
+    # over: the END of the subtopic immediately before `split_ref`. It is
+    # never guessed from the midpoint — the handover is a content fact, and
+    # the break must line up with the actual voice change in the audio.
+    break_after_ref = None
+    if second_tutor and split_ref:
+        refs = [s.get("ref") for s in subs]
+        break_after_ref = refs[refs.index(split_ref) - 1]
     last_end = 0.0
     for sub in subs:
         start = round(min(sub["start_seconds"] * scale, cap), 2)
@@ -211,11 +283,12 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                        "ref": sub["ref"], "qa_window": QA_WINDOW_SECONDS,
                        "exercise": mcq_by_ref.get(sub["ref"], []),
                        "pass_threshold": PASS_THRESHOLD})
-        if break_at is not None and abs(min(sub["end_seconds"] * scale, cap) - break_at) < 0.01:
+        if break_after_ref is not None and sub.get("ref") == break_after_ref:
             tracks.append({"time": round(end, 2), "type": "break_start",
                            "duration_seconds": BREAK_DURATION_SECONDS,
                            "bridge": "mandy",
-                           "next_tutor": second_tutor["id"]})
+                           "next_tutor": second_tutor["id"],
+                           **({"questions": break_questions} if break_questions else {})})
     cc_ids = [q["id"] for q in comprehension.get("questions", []) if q.get("id")]
     if cc_ids:
         tracks.append({"time": round(last_end, 2), "type": "comprehension_check",
@@ -304,14 +377,31 @@ def main():
                                 default=0.0)
 
     first_tutor, second_tutor = resolve_tutor_pair(card, tutor)
-    if second_tutor:
-        print(f"[tutors] first={first_tutor['id']} second={second_tutor['id']} (roster duo)")
+    # GATE: only a lesson whose audio really has a second-tutor block may
+    # publish second_tutor / break_start. Without this, the client announces
+    # "X has joined" (break_start.time - 60s) and swaps the speaking role
+    # over audio in which X never speaks.
+    split_ref = two_part_split(card, subtopics)
+    if second_tutor and not split_ref:
+        print(f"[tutors] roster pair is {first_tutor['id']}+{second_tutor['id']}, but the "
+              f"card declares no {SECOND_TUTOR_FIELD} — single-voice audio, so "
+              "second_tutor/break_start are suppressed")
+        second_tutor = None
+    elif second_tutor:
+        print(f"[tutors] two-part: {first_tutor['id']} -> {second_tutor['id']} from {split_ref}")
     else:
         print(f"[tutors] first={first_tutor['id']} — no roster pair resolved; single-tutor manifest")
 
+    transcript_file = lesson_path / "mandy_qa_transcript.md"
+    break_questions = (extract_break_questions(transcript_file.read_text("utf-8"))
+                       if second_tutor and transcript_file.exists() else [])
+    if break_questions:
+        print(f"[break] {len(break_questions)} question(s) from mandy_qa_transcript.md")
+
     tracks = build_tracks(subtopics, mcq, comprehension, first_tutor,
                           second_tutor, subtopic_scale, audio_seconds,
-                          topic, topic_display_seconds)
+                          topic, topic_display_seconds,
+                          split_ref=split_ref, break_questions=break_questions)
 
     # Manifest-level question bank: subtopic_end `exercise` entries are IDs
     # the app resolves against this map (lms_sdk McqQuestion.fromJson reads
