@@ -35,14 +35,24 @@ comprehension_check_path: lessons/maths/grade11/term1/maths_g11_quadratic_equati
 reel_brief_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/reel_clip.json
 mandy_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_quadratic_formula_6e05ed/mandy_nervous_script.md
-status: evaluated
+status: produced
 created: 2026-07-13
-last_updated: 2026-07-14 02:41:25
+last_updated: 2026-07-19 05:28:11
 session_id: 
 session_started: 
-attempts: 4
+attempts: 6
 last_error:
 loop_iterations: 0
 max_iterations: 10
 past_paper_examples: dbe_maths_g11_p1_2018_nov:Q1.1.2, dbe_maths_g11_p1_2017_nov:Q1.1.2
+manifest_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_quadratic_formula_6e05ed/manifest.json
+manifest_checksum: e3051fe0a4e6e8f1f3886534376a384c7e824753c107bbc6163951c6025f7902
+manifest_size_bytes: 6896
+audio_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_quadratic_formula_6e05ed/audio.mp3
+audio_checksum: d1b69bf0d8ead043fac3c0baebcb285dbc9d560b531d2533e8f91ebc3c9633f7
+audio_size_bytes: 2481050
+animation_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_quadratic_formula_6e05ed/animations.json
+animation_checksum: a29072d80ef7e9df2a07e6510c7fdcf90442bce2088a915aea4d0349001c3a05
+animation_size_bytes: 1075
+produced_at: 2026-07-19T05:28:10+00:00
 ---

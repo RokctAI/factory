@@ -35,13 +35,23 @@ comprehension_check_path: lessons/economics/grade11/term2/economics_g11_dynamics
 reel_brief_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/reel_clip.json
 mandy_transcript_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/mandy_nervous_script.md
-status: evaluated
+status: produced
 created: 2026-07-14
-last_updated: 2026-07-14 02:40:59
+last_updated: 2026-07-19 05:27:45
 session_id: 
 session_started: 
-attempts: 3
+attempts: 5
 last_error:
 loop_iterations: 0
 max_iterations: 10
+manifest_url: https://github.com/RokctAI/factory/releases/download/lesson-economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/manifest.json
+manifest_checksum: edbc7fc09d6ea7489de62eaadb921a96dc5628485cf2b29ff08d1323a69a175d
+manifest_size_bytes: 9014
+audio_url: https://github.com/RokctAI/factory/releases/download/lesson-economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/audio.mp3
+audio_checksum: 48c25c89bf39e3764cb1138fdc0f8f8deec891a02d0a7eda33cf1d1748415605
+audio_size_bytes: 3160015
+animation_url: https://github.com/RokctAI/factory/releases/download/lesson-economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/animations.json
+animation_checksum: 7b7206722df5ed83ef2b14e3000150998570e9cda3c4b5b23a19858d4406e53c
+animation_size_bytes: 4822
+produced_at: 2026-07-19T05:27:45+00:00
 ---

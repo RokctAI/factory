@@ -38,12 +38,12 @@ comprehension_check_path: lessons/geography/grade12/skills/geography_g12_geograp
 reel_brief_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/reel_clip.json
 mandy_transcript_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/geography/grade12/skills/geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0/mandy_nervous_script.md
-status: evaluated
+status: failed
 created: 2026-07-14
-last_updated: 2026-07-14 02:41:00
+last_updated: 2026-07-19 05:27:57
 session_id: 
 session_started: 
-attempts: 2
+attempts: 4
 last_error:
 loop_iterations: 0
 max_iterations: 10

@@ -35,14 +35,24 @@ comprehension_check_path: lessons/physical_sciences/grade11/term1/physical_scien
 reel_brief_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/reel_clip.json
 mandy_transcript_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/physical_sciences/grade11/term1/physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/mandy_nervous_script.md
-status: evaluated
+status: produced
 created: 2026-07-14
-last_updated: 2026-07-14 02:41:00
+last_updated: 2026-07-19 05:28:35
 session_id: 
 session_started: 
-attempts: 3
+attempts: 5
 last_error:
 loop_iterations: 0
 max_iterations: 10
 past_paper_examples: dbe_physical_sciences_g11_p1_2018_nov:Q4.1, dbe_physical_sciences_g11_p1_2018_nov:Q4.3
+manifest_url: https://github.com/RokctAI/factory/releases/download/lesson-physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/manifest.json
+manifest_checksum: 1a81a8eca09f841a0d72377b321c0d4cc101e4caf49f19880cfb5354e672abae
+manifest_size_bytes: 7348
+audio_url: https://github.com/RokctAI/factory/releases/download/lesson-physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/audio.mp3
+audio_checksum: 1b52fce1bd9bb835ee0fdfe81d752b3a1be19f3651f0e5b56d584e4d4d0cf850
+audio_size_bytes: 3160144
+animation_url: https://github.com/RokctAI/factory/releases/download/lesson-physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/animations.json
+animation_checksum: b36aa5aeb322a35c56f43f3a35c7115e9998753f1b2fcebe8099eb1aa3c5aa8e
+animation_size_bytes: 5209
+produced_at: 2026-07-19T05:28:35+00:00
 ---
