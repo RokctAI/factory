@@ -1,16 +1,12 @@
-# Level 6 run report — run 29674853662 (2026-07-19 05:27:31 UTC)
-- event: schedule  sha: 177e90179d8043cf8517f930f9c1ad2d8d1b4302
-- AUDIO_BACKEND=sapi MAX_CARDS=5 CARD_FILTER=
+# Level 6 run report — run 29702153033 (2026-07-19 20:16:09 UTC)
+- event: push  sha: bbd61c04fb34f31aa698cdd1acd901f2725cf349
+- AUDIO_BACKEND=sapi MAX_CARDS=1 CARD_FILTER=maths_g11_quadratic_equations_factoring
 - scaffolds: call_groq.py call_jules.py check_health.py crypto_utils.py handle_groq_output.py lock_job.py manage_sessions.py privacy_sync.py response_kits.py update_audit_logs.py update_classifications.py update_dashboard.py update_status.py update_structure.py 
 - manim: 0.19.1
 - pyttsx3: 1
-- producing economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f (backend sapi, reproduce=0)
-- assembled economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f: {"session_id": "economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f", "audio_seconds": 352.1, "tracks": 12, "primitives": 27}
-- producing geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0 (backend sapi, reproduce=0)
-- FAIL geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0: assembly:   File "/opt/hostedtoolcache/Python/3.10.20/x64/lib/python3.10/subprocess.py", line 1863, in _execute_child     raise child_exception_type(errno_num, err_msg, err_filename) FileNotFoundError: [Errno 2] No such file or directory: 'latex' 
-- skip maths_g11_quadratic_equations_factoring_method_lesson.maths_31d165.md: status='produced' (want evaluated)
-- producing maths_g11_quadratic_equations_quadratic_formula_6e05ed (backend sapi, reproduce=0)
-- assembled maths_g11_quadratic_equations_quadratic_formula_6e05ed: {"session_id": "maths_g11_quadratic_equations_quadratic_formula_6e05ed", "audio_seconds": 281.4, "tracks": 11, "primitives": 4}
-- producing physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed (backend sapi, reproduce=0)
-- assembled physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed: {"session_id": "physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed", "audio_seconds": 357.9, "tracks": 10, "primitives": 26}
-- done: produced [ economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f maths_g11_quadratic_equations_quadratic_formula_6e05ed physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed] (count=3)
+- skip economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f: card_filter 'maths_g11_quadratic_equations_factoring' mismatch
+- skip geography_g12_geographical_skills_and_techniques_gradient_ca_lesson.geography_dc21d0.md: status='failed' (want produced)
+- producing maths_g11_quadratic_equations_factoring_method_31d165 (backend sapi, reproduce=1)
+- assembled maths_g11_quadratic_equations_factoring_method_31d165: {"session_id": "maths_g11_quadratic_equations_factoring_method_31d165", "audio_seconds": 692.2, "tracks": 12, "primitives": 32}
+- stop: reached MAX_CARDS=1
+- done: produced [ maths_g11_quadratic_equations_factoring_method_31d165] (count=1)
