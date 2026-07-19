@@ -349,8 +349,32 @@ def load_roster():
 
 
 def load_tutor_card(slug):
-    path = TUTORS_DIR / f"{slug}.md"
-    return path.read_text(encoding="utf-8") if path.exists() else ""
+    # Each tutor is a directory now: lessons/tutors/<slug>/tutor.md holds the
+    # persona card, with greetings/ and signoffs/ alongside it (the greeting
+    # and sign-off are assistant/tutor-owned assets, NOT lesson-script
+    # content). The legacy flat lessons/tutors/<slug>.md is still read as a
+    # fallback so nothing breaks mid-migration.
+    path = TUTORS_DIR / slug / "tutor.md"
+    if path.exists():
+        return path.read_text(encoding="utf-8")
+    legacy = TUTORS_DIR / f"{slug}.md"
+    return legacy.read_text(encoding="utf-8") if legacy.exists() else ""
+
+
+def tutor_asset_dir(slug, kind):
+    """Directory of a tutor's in-voice variant assets. kind is 'greetings'
+    or 'signoffs'; each holds numbered *.md variants spoken by that tutor."""
+    return TUTORS_DIR / slug / kind
+
+
+def load_tutor_variants(slug, kind):
+    """The in-voice variant texts for a tutor (greetings/signoffs), sorted by
+    filename so ordering is deterministic."""
+    d = tutor_asset_dir(slug, kind)
+    if not d.is_dir():
+        return []
+    return [p.read_text(encoding="utf-8").strip()
+            for p in sorted(d.glob("*.md"))]
 
 
 def card_roster_key(card):
