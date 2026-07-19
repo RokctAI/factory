@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-18 22:03 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-19 06:41 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (4)
 
@@ -23,15 +23,15 @@
 
 ## Cards by status and subject
 
-| Subject | concept_generated | pending_concept_approval | evaluated | total |
+| Subject | concept_generated | pending_concept_approval | failed | total |
 |---|---|---|---|---|
 | Accounting | 1 | 2 |  | 3 |
-| Economics | 3 |  | 1 | 4 |
+| Economics | 3 |  |  | 4 |
 | Geography | 3 |  | 1 | 4 |
 | Mathematical Literacy | 3 |  |  | 3 |
-| Maths | 3 | 2 | 1 | 7 |
-| Physical Sciences | 3 |  | 1 | 4 |
-| **All** | **16** | **4** | **4** | **25** |
+| Maths | 3 | 2 |  | 7 |
+| Physical Sciences | 3 |  |  | 4 |
+| **All** | **16** | **4** | **1** | **25** |
 
 ## Seed backlog (topics not yet opened as cards)
 
@@ -58,12 +58,8 @@
 
 Seed rows total: 215; opened: 25; remaining: 190.
 
-## Evaluated (Level 4 complete, awaiting Level 6): 4
+## Evaluated (Level 4 complete, awaiting Level 6): 0
 
-- `economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f` — Economics G11 term 2
-- `geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0` — Geography G12 term skills
-- `maths_g11_quadratic_equations_quadratic_formula_6e05ed` — Maths G11 term 1
-- `physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed` — Physical Sciences G11 term 1
 
 ## API usage (Groq/Jules)
 
