@@ -98,3 +98,4 @@
 | physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | produced | level6 | L6-29674853662 | https://github.com/RokctAI/factory/releases/download/lesson-physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/manifest.json | 2026-07-19 05:28 |
 | maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | reproduced | level6 | L6-29702153033 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-19 20:16 |
 | 3._wildflower_soul_36e5b2 | free verse | 3. Wildflower Soul | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-19 20:48 |
+| 1._cosmic_dreams_3148d3 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29703899957 | — | 2026-07-19 21:11 |
