@@ -100,3 +100,4 @@
 | 3._wildflower_soul_36e5b2 | free verse | 3. Wildflower Soul | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-19 20:48 |
 | 1._cosmic_dreams_3148d3 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29703899957 | — | 2026-07-19 21:11 |
 | accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | expansion_requested | system | SYS-LESSON-RULES-29709258655 | — | 2026-07-20 00:16 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | reproduced | level6 | L6-29728112187 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-20 08:32 |
