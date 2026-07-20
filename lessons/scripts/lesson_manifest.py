@@ -78,6 +78,66 @@ def strip_script_to_narration(script_md):
     return " ".join(lines)
 
 
+def split_script_into_segments(script_md):
+    """[(subtopic_index, narration)] — the script split at its
+    '## Subtopic: <title>' headings, each block reduced to spoken narration.
+
+    Per-subtopic granularity is deliberate (model (B) production):
+      * each segment is synthesized separately, so its duration is MEASURED
+        rather than estimated — subtopic boundaries become the exact sum of
+        real segment lengths instead of one global proportional stretch;
+      * it is the only granularity at which a single corrected subtopic can
+        be re-synthesized without redoing the whole lesson's audio;
+      * a two-part lesson can synthesize each speaker's own subtopics in
+        that speaker's voice.
+    Any narration appearing before the first heading is attached to
+    segment 0 so nothing is silently dropped.
+    """
+    blocks, current = [], []
+    for line in script_md.splitlines():
+        if re.match(r"^\s*##\s*Subtopic\s*:", line, re.IGNORECASE):
+            blocks.append(current)
+            current = []
+        current.append(line)
+    blocks.append(current)
+    # blocks[0] is any preamble before the first heading
+    preamble, *subtopic_blocks = blocks
+    segments = []
+    if not subtopic_blocks:
+        text = strip_script_to_narration("\n".join(preamble))
+        return [(0, text)] if text else []
+    lead = strip_script_to_narration("\n".join(preamble))
+    for i, block in enumerate(subtopic_blocks):
+        text = strip_script_to_narration("\n".join(block))
+        if i == 0 and lead:
+            text = (lead + " " + text).strip()
+        if text:
+            segments.append((i, text))
+    return segments
+
+
+def concat_wavs(parts, out_wav):
+    """Concatenate segment wavs into one track, server-side.
+
+    Client-side gapless playback is NOT achievable on the current stack
+    (measured: audioplayers has no queue/gapless API; a segment join leaves
+    ~100-150ms of audible silence), so the segments are joined here and the
+    lesson ships ONE audio file. Done on raw PCM frames — no re-encode, so
+    concatenation is lossless and sample-exact; only the final wav->mp3 step
+    encodes, exactly once."""
+    with wave.open(str(parts[0]), "rb") as first:
+        params = first.getparams()
+    with wave.open(str(out_wav), "wb") as out:
+        out.setparams(params)
+        for p in parts:
+            with wave.open(str(p), "rb") as w:
+                if w.getparams()[:3] != params[:3]:
+                    raise SystemExit(
+                        f"segment {p} has mismatched audio params "
+                        f"{w.getparams()[:3]} vs {params[:3]}")
+                out.writeframes(w.readframes(w.getnframes()))
+
+
 def synth_audio_sapi(text, out_wav):
     """Offline OS TTS -> wav. Real audio, no GPU.
 
@@ -241,7 +301,7 @@ def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
 
 def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                  scale, audio_seconds, topic, topic_display_seconds,
-                 split_ref=None, break_questions=None):
+                 split_ref=None, break_questions=None, segment_bounds=None):
     """Manifest track events from subtopics.json, scaled to real audio.
 
     topic_display at 0 (full-screen topic while the tutor speaks the intro —
@@ -273,9 +333,16 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
         refs = [s.get("ref") for s in subs]
         break_after_ref = refs[refs.index(split_ref) - 1]
     last_end = 0.0
-    for sub in subs:
-        start = round(min(sub["start_seconds"] * scale, cap), 2)
-        end = round(min(sub["end_seconds"] * scale, cap), 2)
+    for i, sub in enumerate(subs):
+        # EXACT boundaries when per-subtopic segments were measured; the
+        # proportional stretch is only the fallback for a script whose
+        # headings did not map onto the subtopic list.
+        if segment_bounds and i < len(segment_bounds):
+            start, end = segment_bounds[i]
+            start, end = round(min(start, cap), 2), round(min(end, cap), 2)
+        else:
+            start = round(min(sub["start_seconds"] * scale, cap), 2)
+            end = round(min(sub["end_seconds"] * scale, cap), 2)
         last_end = end
         tracks.append({"time": start, "type": "subtopic_start",
                        "ref": sub["ref"], "title": sub.get("title", "")})
@@ -330,22 +397,67 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # --- 5/6. audio ---
-    narration = strip_script_to_narration(script_md)
-    if args.max_narration_chars and len(narration) > args.max_narration_chars:
-        narration = narration[:args.max_narration_chars]
     wav_path = out_dir / "audio.wav"
-    print(f"[audio] backend={args.audio_backend} chars={len(narration)}")
-    if args.audio_backend == "vibevoice":
-        # Voice preset comes from the tutor persona card (documented intent
-        # today; Level 6 maps it to a real VibeVoice speaker embedding).
-        synth_audio_vibevoice(narration, wav_path, voice_preset=tutor)
-    else:
-        synth_audio_sapi(narration, wav_path)
+
+    # --- per-subtopic synthesis, then server-side concatenation ---
+    # Each subtopic is synthesized as its own segment (in the voice of the
+    # speaker who owns it) and the segments are concatenated here into ONE
+    # audio.mp3. Client-side gapless playback of separate files is not
+    # achievable on the current stack, so the join happens server-side; the
+    # concat is on raw PCM frames, so nothing is re-encoded.
+    segments = split_script_into_segments(script_md)
+    split_ref_early = two_part_split(card, subtopics)
+    sub_refs = [s.get("ref") for s in subtopics.get("subtopics", [])]
+    split_index = sub_refs.index(split_ref_early) if (
+        split_ref_early and split_ref_early in sub_refs) else None
+
+    print(f"[audio] backend={args.audio_backend} segments={len(segments)} "
+          f"chars={sum(len(t) for _, t in segments)}")
+    seg_files, seg_durations = [], []
+    for idx, text in segments:
+        if args.max_narration_chars:
+            text = text[:args.max_narration_chars]
+        # Segment voice: subtopics from the split onward are the second
+        # tutor's block. Only meaningful for a real two-part lesson.
+        voice = tutor
+        if split_index is not None and idx >= split_index:
+            _, second = resolve_tutor_pair(card, tutor)
+            if second:
+                voice = second["display_name"]
+        seg_path = out_dir / f"seg_{idx:02d}.wav"
+        if args.audio_backend == "vibevoice":
+            # Voice preset comes from the tutor persona card (documented
+            # intent today; Level 6 maps it to a VibeVoice speaker embedding).
+            synth_audio_vibevoice(text, seg_path, voice_preset=voice)
+        else:
+            synth_audio_sapi(text, seg_path)
+        d = wav_duration_seconds(seg_path)
+        seg_files.append(seg_path)
+        seg_durations.append(d)
+        print(f"  seg {idx:02d} [{voice.split('—')[0].strip()}]: {d:6.1f}s  {len(text)} chars")
+
+    if not seg_files:
+        raise SystemExit("script produced no narration segments")
+    concat_wavs(seg_files, wav_path)
     audio_seconds = wav_duration_seconds(wav_path)
+    drift = abs(audio_seconds - sum(seg_durations))
+    if drift > 0.05:
+        raise SystemExit(f"concat lost {drift:.3f}s vs the sum of segments")
+    for p in seg_files:
+        p.unlink()
     mp3_path = out_dir / "audio.mp3"
     to_mp3(wav_path, mp3_path)
     wav_path.unlink()
-    print(f"[audio] {audio_seconds:.1f}s -> {mp3_path.name}")
+    print(f"[audio] {len(seg_files)} segment(s) -> {audio_seconds:.1f}s "
+          f"(sum {sum(seg_durations):.1f}s, drift {drift:.3f}s) -> {mp3_path.name}")
+
+    # EXACT subtopic boundaries: cumulative measured segment durations, so a
+    # boundary is the real moment the narration changes subtopic — not a
+    # global proportional stretch of the intended timeline.
+    segment_bounds, _cursor = [], 0.0
+    for d in seg_durations:
+        segment_bounds.append((round(_cursor, 2), round(_cursor + d, 2)))
+        _cursor += d
 
     # --- 4. animation primitives ---
     sys.path.insert(0, str(repo / "lessons" / "scripts"))
@@ -401,7 +513,10 @@ def main():
     tracks = build_tracks(subtopics, mcq, comprehension, first_tutor,
                           second_tutor, subtopic_scale, audio_seconds,
                           topic, topic_display_seconds,
-                          split_ref=split_ref, break_questions=break_questions)
+                          split_ref=split_ref, break_questions=break_questions,
+                          segment_bounds=(segment_bounds
+                                          if len(segment_bounds) == len(subtopics.get("subtopics", []))
+                                          else None))
 
     # Manifest-level question bank: subtopic_end `exercise` entries are IDs
     # the app resolves against this map (lms_sdk McqQuestion.fromJson reads
