@@ -1,8 +1,6 @@
 ## Subtopic: Welcome and Introduction
 
-[Prof Mokoena looking directly into the camera, deliberate pace. He adjusts his glasses slightly, establishing a tone of absolute seriousness.]
-
-Numbers never lie. I am Prof Mokoena. Welcome.
+Numbers never lie.
 Today, our focus is the Bank Reconciliation Statement. This is not merely a topic; it is a fundamental pillar of financial control.
 In Accounting, precision is paramount. The prescribed format is sacrosanct. We do not deviate. We do not guess. We follow the structure, and the structure reveals the truth.
 
@@ -27,8 +25,6 @@ We have a problem to solve today. The numbers never lie, and this bank reconcili
 
 ## Subtopic: Drawing the Skeleton and the Bank Balance
 
-[Prof Mokoena gestures sharply as the skeleton of the statement appears on the screen. He points precisely to where the heading goes.]
-
 We begin by drawing the skeleton. The format first. Always the format first. An accountant without a format is lost in the wilderness.
 Heading: "Bank Reconciliation Statement as at..." followed by the specific date, usually the last day of the month. Do not omit the date. The statement is only valid for that specific moment in time.
 We will structure it simply but effectively with three columns: Details, Debit, and Credit. The Debit and Credit columns will hold our Rand values.
@@ -51,8 +47,6 @@ The Bank Reconciliation Statement is essentially an extension of the bank statem
 Therefore, you must start with the bank's framing. The format is your guide, and the bank's perspective is your starting point. Do not falter here.
 
 ## Subtopic: Outstanding Items
-
-[Prof Mokoena's pace slows slightly, emphasising each item with a deliberate point of his finger. He demands the student's full attention.]
 
 Now we must process the outstanding items. What are these? These are items—transactions—that we have correctly recorded in our books, but which the bank does not yet know about.
 Perhaps they are still in transit. Perhaps the bank's systems are slow. Whatever the reason, we must update this statement to reflect reality, acting as if the bank had processed them, so we can find our true ledger balance.
@@ -82,8 +76,6 @@ We post R650 in the Debit column.
 Every figure must be traceable back to a source document or a specific transaction. Every placement must be defensible by logic. We do not guess. If it is an outstanding receipt, the bank will credit it; we put it on the credit side. If it is an outstanding payment, the bank will debit it; we put it on the debit side. Memorize the principle, not just the rule.
 
 ## Subtopic: Balancing and Conclusion
-
-[Prof Mokoena points forcefully to the two columns, bringing his hands together to signify the bringing together of the two sets of records.]
 
 We have processed all given adjustments. Now, the final step. We balance. And we balance visibly, adhering strictly to the prescribed format.
 

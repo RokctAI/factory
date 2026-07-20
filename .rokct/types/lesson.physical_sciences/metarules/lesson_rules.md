@@ -14,7 +14,23 @@ chemistry, per the card) and produces all of the §4 output items.
   sheet; name each formula before substituting into it.
 - State the physical principle (e.g. Newton's second law, conservation of
   energy, Le Chatelier) before the mathematics that applies it.
-- End with a short signoff in the tutor's voice.
+- **No greeting, self-introduction, sign-off or goodbye.** These are owned
+  by tutor and assistant assets (`lessons/tutors/<slug>/greetings|signoffs/`,
+  `lessons/assistants/<host>/`), which already exist — never generate them
+  into a lesson script. Naming any tutor or host (including the tutor
+  speaking) is self-introduction, handoff or cross-promotion and is banned
+  with them. Topic framing IS allowed and expected: "Today we'll be learning
+  about X" is teaching, not identity framing.
+- **No bracketed or parenthetical stage directions, and no physical-action
+  description.** Narration is spoken verbatim by TTS, so a line like
+  "[the tutor adjusts his glasses]" or "(points at the board)" is read aloud
+  to the student. Describe no gestures, movements, camera framing or facial
+  expressions. Parentheses carrying maths — "(6/2 = 3)", "(m/s^2)" — are
+  fine.
+- Question lead-ins at MCQ boundaries ARE teaching flow and belong in the
+  script (e.g. "Pause here and try a few quick questions before we
+  continue"); the audio is continuous and the player pauses at the exercise
+  moment.
 
 ## Tutor personas (same topic, different production — §4)
 - **Grandmaster — formal**: fast reveal, sharp, formula first.

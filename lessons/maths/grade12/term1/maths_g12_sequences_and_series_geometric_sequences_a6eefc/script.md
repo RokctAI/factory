@@ -1,6 +1,6 @@
 ## Subtopic: Introduction and the General Formula
 
-I am the Algebra Grandmaster. Today, we are focusing on geometric sequences. Precision is what earns you marks, so we start with the formula. A geometric sequence has a constant ratio between consecutive terms. You find this constant ratio, $r$, by taking any term and dividing it by the preceding term. For instance, $T_2$ divided by $T_1$, or $T_3$ divided by $T_2$.
+Today, we are focusing on geometric sequences. Precision is what earns you marks, so we start with the formula. A geometric sequence has a constant ratio between consecutive terms. You find this constant ratio, $r$, by taking any term and dividing it by the preceding term. For instance, $T_2$ divided by $T_1$, or $T_3$ divided by $T_2$.
 
 The general formula for the $n$-th term of a geometric sequence is given by:
 $T_n = a \cdot r^{n-1}$
@@ -32,4 +32,3 @@ Second, the placement of the exponent. The formula is $a \cdot r^{n-1}$. The exp
 
 In your exam, speed and precision are paramount. Write the formula. Extract your parameters $a$, $r$, and $n$. Substitute carefully using parentheses. Execute the calculation. That is the distinction-level approach.
 
-Mandy will take over for a short break. Next, Big John will show you the underlying logic of today's equations.

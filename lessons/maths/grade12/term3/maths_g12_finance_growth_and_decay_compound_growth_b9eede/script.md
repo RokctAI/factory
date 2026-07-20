@@ -2,8 +2,6 @@
 
 ## Subtopic: The Logic of Growth on Growth
 
-They call me Big John.
-
 You know, I once had a Grade 5 learner come to me. She was struggling, looking at these big Grade 12 maths problems, thinking she could never do it. But I taught her this exact topic, and she passed. Because we didn't start with letters and formulas. We started with logic.
 
 Today we are talking about compound growth. Now, if you know how to calculate a basic percentage, and you know how simple growth works, you are already halfway there.
@@ -92,4 +90,4 @@ You get R6 298,56.
 
 Exactly the same answer! But in one step instead of three. The formula isn't some magic spell. It is just a fast way of doing the step-by-step logic we already figured out.
 
-Now that you understand the logic, Grandmaster's exam-level techniques will make complete sense. That's how you get a distinction. Keep practicing, and I'll see you next time.
+That's how you get a distinction.

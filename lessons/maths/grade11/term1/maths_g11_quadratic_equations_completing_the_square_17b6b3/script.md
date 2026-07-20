@@ -2,7 +2,7 @@
 
 ## Subtopic: Introduction and Importance
 
-Call me the Algebra Grandmaster. I teach Maths at Supacharge. Here's what I do to quadratic equations.
+Here's what I do to quadratic equations.
 
 If you want to excel, you must understand the machinery behind the equations. We are looking at quadratic equations. You already know how to expand brackets and factorise perfect squares. That is basic. You have been taught to seek out factors, to test combinations of numbers until the expression falls apart into two neat parentheses. But what happens when the numbers refuse to cooperate? What happens when the expression does not neatly factorise? Today, we elevate that knowledge.
 
@@ -100,4 +100,3 @@ These are irrational numbers. Leaving them in exact surd form is the most precis
 
 This is distinction-level thinking. Formula first, then precise application. Every step justified. You do not guess; you follow the algorithm.
 
-Mandy will take over for a short break. Next, Big John will show you the underlying logic of today's equations.

@@ -1,6 +1,6 @@
 ## Subtopic: Limitations of Factorisation
 
-Welcome. We have spent considerable time mastering the art of factorising quadratic equations. It is an elegant method. When presented with a quadratic in the standard form $ax^2 + bx + c = 0$, you instinctively search for factors of $c$ that sum to $b$, or you apply the cross-multiplication method if $a$ is not one.
+We have spent considerable time mastering the art of factorising quadratic equations. It is an elegant method. When presented with a quadratic in the standard form $ax^2 + bx + c = 0$, you instinctively search for factors of $c$ that sum to $b$, or you apply the cross-multiplication method if $a$ is not one.
 
 However, factorisation has a critical weakness: it relies on the roots being rational numbers. Consider the equation $3x^2 - 2x - 4 = 0$. Attempt to factorise it. You require factors of negative twelve that sum to negative two. Do they exist? No integer pair satisfies this condition. The method fails.
 
@@ -48,4 +48,4 @@ $x = \frac{1 \pm \sqrt{13}}{3}$
 
 These are your two solutions. $x = \frac{1 + \sqrt{13}}{3}$ and $x = \frac{1 - \sqrt{13}}{3}$. We have bypassed the limitations of factorisation to arrive at the exact, irrational roots.
 
-Practice this execution until it is flawless. The formula is a blunt instrument, but your application of it must be sharp. Until next time.
+Practice this execution until it is flawless. The formula is a blunt instrument, but your application of it must be sharp.

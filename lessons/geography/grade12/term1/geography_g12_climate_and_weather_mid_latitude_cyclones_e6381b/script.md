@@ -1,9 +1,8 @@
 # Mid-latitude cyclones
-By Ranger Themba (The Weather Walker)
 
 ## Subtopic: The Cold Wind You Felt This Morning
 
-Hey there, I'm Ranger Themba. Let's talk about that freezing wind you felt on your walk to school this morning, especially if you're down in the Western Cape. You know the one—the wind that makes you pull your beanie right down over your ears. Then, a few hours later, the sky turns grey, and it starts pouring with rain.
+Let's talk about that freezing wind you felt on your walk to school this morning, especially if you're down in the Western Cape. You know the one—the wind that makes you pull your beanie right down over your ears. Then, a few hours later, the sky turns grey, and it starts pouring with rain.
 
 That's not just random weather. That is a massive, swirling engine of air rolling off the ocean. In Geography, we call that engine a **mid-latitude cyclone**.
 

@@ -1,6 +1,6 @@
 ## Subtopic: Reading the Municipal Bill
 
-Hello everyone, Uncle Joe here. You know, just last week, my neighbour, Mr. Dlamini, came over to my house. He was holding this piece of paper, shaking his head. It was his municipal bill for the month. He looked at me and said, "Joe, I don't get it. I switched off the geyser, I told the kids to turn off the lights, but this bill... it's still eating my money!"
+You know, just last week, my neighbour, Mr. Dlamini, came over to my house. He was holding this piece of paper, shaking his head. It was his municipal bill for the month. He looked at me and said, "Joe, I don't get it. I switched off the geyser, I told the kids to turn off the lights, but this bill... it's still eating my money!"
 
 Now, I look at the paper. It's a standard municipal electricity bill. And I tell him, "My friend, before you start yelling at the kids, we need to understand what this paper is actually saying."
 
@@ -87,4 +87,4 @@ And that's it! We took a scary-looking municipal problem, broke it down into the
 
 Next time you look at a municipal bill, whether it's yours or your parents', you'll know exactly how those numbers are put together. No more guessing. Just solid, everyday maths. Keep practicing your decimals, keep remembering those basic fees, and you'll be sorting out bills in no time.
 
-Until next time, this is Uncle Joe. Stay sharp, and always count your change.
+Stay sharp, and always count your change.

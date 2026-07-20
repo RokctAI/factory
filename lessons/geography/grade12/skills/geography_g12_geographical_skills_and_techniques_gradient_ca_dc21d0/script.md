@@ -1,6 +1,6 @@
 ## Subtopic: The Concept of Gradient and the Formula
 
-Greetings, students. Geography is not merely about identifying features on a map; it is about quantifying the landscape to understand its physical reality. Today, we confront gradient calculation. Gradient is the mathematical expression of steepness. It defines the relationship between the vertical change in elevation and the horizontal distance over the ground. Why is this critical? Because gradient dictates everything from the velocity of a river to the feasibility of constructing a railway line.
+Geography is not merely about identifying features on a map; it is about quantifying the landscape to understand its physical reality. Today, we confront gradient calculation. Gradient is the mathematical expression of steepness. It defines the relationship between the vertical change in elevation and the horizontal distance over the ground. Why is this critical? Because gradient dictates everything from the velocity of a river to the feasibility of constructing a railway line.
 
 Let us proceed immediately to the core principle. The formula for gradient is absolute and non-negotiable:
 Gradient equals Vertical Interval over Horizontal Equivalent. Stated mathematically, Gradient = VI / HE.
@@ -62,4 +62,4 @@ Our fraction is now 1 over 15. We express this in the final NSC required format:
 
 This is our answer. The average gradient is 1:15. What does this signify? It means that for every 15 units of horizontal distance traveled, there is a vertical rise or fall of 1 unit. Specifically, for every 15 meters we walk horizontally, the elevation changes by 1 meter.
 
-Is this steep or gentle? A gradient of 1:15 is considered relatively gentle. A steep gradient might be 1:3 or 1:5. A very flat gradient might be 1:100. Understanding the physical reality behind the mathematics is the true mark of a geographer. You have mastered the mechanics; now ensure you apply them with precision. Until next time.
+Is this steep or gentle? A gradient of 1:15 is considered relatively gentle. A steep gradient might be 1:3 or 1:5. A very flat gradient might be 1:100. Understanding the physical reality behind the mathematics is the true mark of a geographer. You have mastered the mechanics; now ensure you apply them with precision.

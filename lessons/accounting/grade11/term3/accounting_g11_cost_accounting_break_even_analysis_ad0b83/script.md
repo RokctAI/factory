@@ -1,6 +1,6 @@
 ## Subtopic: The Spaza Shop Cash Box (Fixed vs Variable)
 
-Hello, my child. Come, sit down. I'm Aunty Grace. You know, people think accounting is just a bunch of difficult rules made up by people in suits. But it isn't. Your local spaza shop already does double-entry bookkeeping, even if you don't know it yet. It is just common sense written down neatly. Today, we're going to talk about a very important, real-world question: "Am I actually making money at the end of the month, or am I just working hard for free?"
+Hello, my child. Come, sit down. You know, people think accounting is just a bunch of difficult rules made up by people in suits. But it isn't. Your local spaza shop already does double-entry bookkeeping, even if you don't know it yet. It is just common sense written down neatly. Today, we're going to talk about a very important, real-world question: "Am I actually making money at the end of the month, or am I just working hard for free?"
 
 In formal accounting language, we call this finding the **Break-even point**. But before we get to the big formal words and the scary formulas, let's look at the everyday cash box. Let's make it real.
 
@@ -47,7 +47,7 @@ This is why we calculate the break-even point. It gives the business owner a cle
 
 ## Subtopic: The Formal Exam Format
 
-Now, you understand the cash box beautifully. You know how it works in the real world. Let's look at how Prof Mokoena and the Grade 11 exam papers want to see this. The logic is exactly the same as our spaza shop, we just need to use the formal formula and lay it out properly. The marker cannot read your mind, they can only read your pen.
+Now, you understand the cash box beautifully. You know how it works in the real world. The logic is exactly the same as our spaza shop, we just need to use the formal formula and lay it out properly. The marker cannot read your mind, they can only read your pen.
 
 Here is the example problem exactly as you will see it in a test:
 "A manufacturer has fixed costs of R60 000 per month. The selling price is R50 per unit and the variable cost is R30 per unit. Calculate the break-even point in units."
@@ -79,4 +79,4 @@ Imagine if a box of cool drinks is stolen from the shelf, or if an employee drop
 
 To prevent this disaster, you must have strong internal controls. A vital internal control is doing regular physical stock counts. At the end of every week, you or a trusted manager must count the actual physical stock on the shelf and compare it to the stock records in the books. If the books say you should have 500 bottles, but you only count 450, you know you have a problem immediately, and you can investigate before it destroys your profit. You should also make sure the storage room is locked and that only one person has the key. We call that segregation of duties and access control.
 
-Remember, my child, accounting isn't scary. It isn't just numbers on a page. It's just the spaza shop cash box, protected and written down neatly. Keep practicing those formulas, understand the logic behind them, and I will see you next time!
+Remember, my child, accounting isn't scary. It isn't just numbers on a page. It's just the spaza shop cash box, protected and written down neatly.

@@ -559,16 +559,31 @@ Write the files into {lesson_dir}/ exactly as follows:
   in the tutor's register) BEFORE any board work is referenced — the
   player shows the topic full-screen while this intro plays, and the
   whiteboard only starts afterwards (the scene's opening wait beat below
-  is what times this; the two must match). TEACHING CONTENT ONLY: the
-  platform's player supplies all session framing, so the script must contain
-  NO tutor self-introductions, NO platform mentions, NO references to Mandy
-  or any host, NO handoffs, and NO goodbyes/sign-offs. Pedagogical
-  transitions spoken by the tutor ARE teaching flow and belong in: at the
-  end of each subtopic that has MCQs, include one brief, natural
-  question lead-in in the tutor's own register (e.g. "Pause here and try a
-  few quick questions on this before we continue") — the audio is
-  continuous and the player pauses at the exercise moment, so write no
-  stage directions like [pause] or [silence] and bake in no dead air.
+  is what times this; the two must match). TEACHING CONTENT ONLY.
+
+  Greeting, handover, sign-off and timekeeping content ALREADY EXISTS as
+  separate assets and is spoken from them, never from your script:
+    * tutor greetings/sign-offs — lessons/tutors/<slug>/greetings/ and
+      .../signoffs/ (3 in-voice variants each, for every tutor)
+    * host intro/handover/sign-off/timekeeping —
+      lessons/assistants/mandy/ and lessons/assistants/bianca/
+  So the script must contain:
+    * NO greeting or welcome, of any wording;
+    * NO self-introduction — do not name the tutor speaking, and do not
+      name ANY other tutor or host (that is cross-promotion/handoff);
+    * NO platform mentions, NO handoffs, NO goodbyes or sign-offs;
+    * NO bracketed or parenthetical stage directions and NO physical-action
+      description ("[adjusts his glasses]", "(points at the board)") — the
+      narration is spoken verbatim by TTS, so a stage direction is read
+      aloud to the student. Parentheses carrying maths are fine.
+  Topic framing IS wanted: "Today we'll be learning about X" is teaching.
+  Question lead-ins ARE teaching flow: at the end of each subtopic that has
+  MCQs, include one brief, natural lead-in in the tutor's own register
+  (e.g. "Pause here and try a few quick questions on this before we
+  continue") — the audio is continuous and the player pauses at the
+  exercise moment, so bake in no dead air and write no [pause] directions.
+  These rules are enforced at Level 3 by structural pattern checks (not a
+  keyword list): a script that breaks them fails the gate.
 - {lesson_dir}/manim_scene.py — Manim Community Python file, whiteboard
   style, one step at a time, mirroring the script's teaching beats.
   INTRO BEAT (mandatory): the scene MUST open with self.wait(...) sized to
@@ -1180,36 +1195,174 @@ def cmd_skills_index(args):
 # few quick questions on this before we continue"). None of these patterns
 # can match such lead-ins: they target framing vocabulary (names, platform,
 # greetings, farewells), not pause/question/continue language.
+# Session framing is matched STRUCTURALLY, not by chasing individual phrases.
+# Each rule targets the *shape* of a greeting / self-introduction / handoff /
+# sign-off / stage direction, so a new wording Jules invents is caught by the
+# same rule rather than needing a new signature added after it ships.
+#
+# Greetings, sign-offs, handovers and timekeeping lines are owned by
+# tutor/assistant assets (lessons/tutors/<slug>/{greetings,signoffs}/ and
+# lessons/assistants/<host>/...). A lesson script is pure subtopic teaching
+# content. Question lead-ins at MCQ boundaries ARE teaching flow and must not
+# match — every rule below is checked against them in the test suite.
 FRAMING_SIGNATURES = (
-    (r"\bmy name is\b", "tutor self-introduction"),
-    (r"\bcall me the\b", "tutor self-introduction (catchphrase)"),
-    (r"\bthey call me\b", "tutor self-introduction (catchphrase)"),
-    (r"\bwelcome (?:back )?to\b", "session greeting"),
+    # --- self-introduction by TITLE. 'the' and 'big' are deliberately NOT
+    #     titles here: "This is the critical move" / "the big idea" are
+    #     ordinary teaching lines, and real self-intros ("I am the Algebra
+    #     Grandmaster", "Big John here") are caught by the roster-driven
+    #     speaker-name rule instead. ---
+    (r"\b(?:i'?m|i am|this is|it'?s)\s+(?:mr|mrs|ms|miss|dr|prof|professor|uncle|aunty|aunt|bra|ranger)\b",
+     "tutor self-introduction (titled name)"),
+    (r"\b(?:my name is|they call me|call me|you can call me)\b",
+     "tutor self-introduction"),
+    # --- session greeting: welcome/hello aimed at the room ---
+    (r"\b(?:welcome|hello|hi|greetings|good\s+(?:morning|afternoon|evening))\b[\s,!.]*(?:back\b|everyone\b|everybody\b|all\b|to\b|learners\b|students\b|class\b)",
+     "session greeting"),
+    # A bare greeting standing as its own sentence — at line start or after a
+    # sentence terminator ("Numbers never lie. Welcome.") — which the
+    # phrase-with-object rule above deliberately does not reach.
+    (r"(?:^|(?<=[.!?])\s)\s*(?:welcome|hello|hi|greetings)\s*[.!](?:\s|$)",
+     "session greeting"),
+    # --- platform reference ---
     (r"\bsupacharge\b", "platform mention"),
-    (r"\bmandy\b", "host reference"),
-    (r"\bhand(?:ing)? (?:you |it |this )?(?:over|back) to\b", "handoff"),
-    (r"\bgoodbye\b|\bsee you (?:next|in the next|tomorrow|soon)\b", "goodbye/sign-off"),
-    (r"\bthat'?s all for today\b|\buntil next time\b", "goodbye/sign-off"),
-    (r"\bthanks for (?:watching|joining|listening)\b", "goodbye/sign-off"),
-    (r"\bsigning off\b", "goodbye/sign-off"),
+    # --- handoff to another speaker (name-free shapes only; naming a
+    #     speaker is caught by the roster-driven rule in _speaker_errors) ---
+    (r"\bhand(?:ing|s|ed)?\s+(?:you\s+|it\s+|this\s+|things\s+|over\s+)?(?:over|back)?\s*to\b",
+     "handoff"),
+    (r"\btake\s+(?:it\s+)?from\s+here\b", "handoff"),
+    # NOTE: a bare "back to you" is NOT a handoff signature — real teaching
+    # uses it ("the bank owes that money back to you"). Handoffs that matter
+    # either use "hand over to" or name the speaker (roster rule).
+    # --- sign-off: leave-taking of any wording ---
+    (r"\b(?:goodbye|good\s?bye|farewell|bye for now)\b", "goodbye/sign-off"),
+    (r"\bsee\s+you\s+(?:next|in\s+the\s+next|tomorrow|soon|later|again|then)\b",
+     "goodbye/sign-off"),
+    (r"\b(?:that'?s|that is)\s+(?:all|it)\s+(?:for\s+)?(?:today|now|this\s+lesson)\b",
+     "goodbye/sign-off"),
+    (r"\buntil\s+(?:next\s+time|we\s+meet|then)\b", "goodbye/sign-off"),
+    (r"\bthanks?\s+for\s+(?:watching|joining|listening|being here|your time)\b",
+     "goodbye/sign-off"),
+    (r"\b(?:signing off|stepping out|catch you (?:next|later))\b", "goodbye/sign-off"),
+    (r"\b(?:enjoy the (?:break|rest)|take a (?:short )?break)\b", "break/handover framing"),
+)
+
+# Bracketed or parenthetical stage directions and physical-action description.
+# Found in real produced narration ("[Prof Mokoena adjusts his glasses]") —
+# TTS reads them aloud verbatim. Matched by SHAPE: a line that is entirely a
+# bracketed aside, or contains a bracketed span describing action rather than
+# maths. Inline maths/parenthetical arithmetic must NOT match, so the
+# parenthetical rule requires the span to start with a verb-ish word and
+# contain no digits or maths operators.
+# A bracketed/parenthesised span is a STAGE DIRECTION when it describes
+# physical action or names the speaker — not merely because it is in
+# brackets. "(rounded to one decimal place)" and "(6/2 = 3)" are teaching;
+# "(he points at the board)" and "[pauses for effect]" are not. The delimiter
+# shape alone is not the signal; the acted-out verb is.
+#
+# NOTE: *asterisk* spans are deliberately NOT treated as stage directions.
+# Every asterisk span in the existing corpus was an emphasised term
+# ("*Total Fixed Costs*"), never a direction, and the narration extractor
+# strips the asterisk characters so only the words are spoken.
+STAGE_DIRECTION_SPANS = (
+    (r"^\s*[\[\(][^\]\)]{4,}[\]\)]\s*$", "whole-line stage direction"),
+    (r"\[[^\]]{4,}\]", "bracketed stage direction"),
+    (r"\([^)\n]{4,}\)", "parenthetical stage direction"),
+)
+
+ACTION_WORDS = (
+    r"\b(?:point|points|pointing|walk|walks|walking|gestur\w+|adjust|adjusts|"
+    r"adjusting|tap|taps|tapping|smil\w+|laugh\w+|chuckl\w+|grin\w+|wink\w+|"
+    r"sigh\w+|paus\w+|look|looks|looking|turn|turns|turning|lean\w+|nod\w+|"
+    r"stand\w+|sits?|sitting|hold\w+|pick\w+ up|wav\w+|step\w+|glanc\w+|"
+    r"face|faces|facing|beam\w+|shrug\w+|breath\w+|appear|appears|appearing)\b"
 )
 
 
+def _is_stage_direction(span):
+    """True when a bracketed/parenthesised span describes physical action or
+    names a speaker, rather than clarifying the maths."""
+    inner = span.strip("()[]*").strip()
+    if not inner:
+        return False
+    if re.search(ACTION_WORDS, inner, re.IGNORECASE):
+        return True
+    if re.search(r"\b(?:he|she|they)\s+\w+", inner, re.IGNORECASE):
+        return True
+    return any(re.search(rf"\b{re.escape(name)}\b", inner, re.IGNORECASE)
+               for name in speaker_names())
+
+
+_SPEAKER_NAMES_CACHE = None
+
+
+def speaker_names():
+    """Every on-air speaker name — tutors (persona label name + real name)
+    and assistant hosts — read from the real asset directories. Naming any
+    of them in narration is self-introduction, handoff or cross-promotion,
+    all of which belong to tutor/assistant assets rather than a script.
+    Deriving the set from data means a new tutor is covered the day their
+    card lands, with no signature to remember to add."""
+    global _SPEAKER_NAMES_CACHE
+    if _SPEAKER_NAMES_CACHE is not None:
+        return _SPEAKER_NAMES_CACHE
+    names = set()
+    if TUTORS_DIR.is_dir():
+        for d in TUTORS_DIR.iterdir():
+            if not d.is_dir():
+                continue
+            text = load_tutor_card(d.name)
+            if not text:
+                continue
+            label = persona_label(text)
+            if label:
+                names.add(label.split("—")[0].strip())
+            real = get_field(text, "real_name")
+            if real:
+                names.add(real.strip())
+    assistants = Path("lessons/assistants")
+    if assistants.is_dir():
+        names.update(d.name.capitalize() for d in assistants.iterdir() if d.is_dir())
+    else:
+        names.update(("Mandy", "Bianca"))
+    _SPEAKER_NAMES_CACHE = {n for n in names if len(n) > 2}
+    return _SPEAKER_NAMES_CACHE
+
+
+def _speaker_errors(line, n):
+    errors = []
+    for name in sorted(speaker_names()):
+        if re.search(rf"\b{re.escape(name)}\b", line, re.IGNORECASE):
+            errors.append(
+                f"script.md:{n}: session framing (speaker named: {name}) — "
+                "self-introduction, handoff and cross-promotion are tutor+"
+                "assistant assets; scripts are teaching content only")
+            break
+    return errors
+
+
 def verify_no_session_framing(script):
-    """Error strings for session-framing violations in a lesson script.
-    Case-insensitive; reports line numbers. Markdown headings are skipped
-    (subtopic titles like 'Summary and Sign-off' describe structure, not
-    spoken audio — the narration extractor drops headings)."""
+    """Error strings for session-framing and stage-direction violations in a
+    lesson script. Case-insensitive; reports line numbers. Markdown headings
+    are skipped (subtopic titles like 'Summary and Sign-off' describe
+    structure, not spoken audio — the narration extractor drops headings)."""
     errors = []
     for n, line in enumerate(script.splitlines(), 1):
         if line.lstrip().startswith("#"):
             continue
+        errors.extend(_speaker_errors(line, n))
         for pattern, label in FRAMING_SIGNATURES:
             m = re.search(pattern, line, re.IGNORECASE)
             if m:
                 errors.append(
-                    f"script.md:{n}: session framing ({label}): '{m.group(0)}' — "
-                    "the player supplies framing; scripts are teaching content only")
+                    f"script.md:{n}: session framing ({label}): '{m.group(0).strip()}' — "
+                    "greetings/sign-offs/handovers are tutor+assistant assets; "
+                    "scripts are teaching content only")
+        for pattern, label in STAGE_DIRECTION_SPANS:
+            m = re.search(pattern, line)
+            if m and _is_stage_direction(m.group(0)):
+                errors.append(
+                    f"script.md:{n}: stage direction ({label}): '{m.group(0).strip()}' — "
+                    "narration is spoken verbatim by TTS; describe no physical action")
     return errors
 
 

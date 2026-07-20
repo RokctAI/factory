@@ -1,9 +1,8 @@
 # Lesson Script: Arithmetic Sequences (Grade 12)
-Tutor: Grandmaster
 
 ## Subtopic: Introduction to Arithmetic Sequences and the General Formula
 
-Welcome. Call me the Algebra Grandmaster. I teach Maths at Supacharge. Today, we address Grade 12 Sequences and Series, specifically arithmetic sequences.
+Today, we address Grade 12 Sequences and Series, specifically arithmetic sequences.
 
 You are already familiar with the concept of linear number patterns from Grade 11. Mathematics is about recognizing fundamental patterns, and an arithmetic sequence is precisely that: it is a sequence of numbers in which the difference between any two consecutive terms is a constant. We refer to this as the constant difference, and we denote it by the letter $d$. In any such sequence, the first term is of primary importance, and it is denoted by $a$.
 
@@ -67,4 +66,4 @@ The distinction-level takeaway is this: do not view the formula as a simple calc
 
 If you are given any three of these variables, you can always solve for the fourth using the general formula. Sometimes the examiners will hide $a$ and $d$ within simultaneous equations, giving you two different terms, such as $T_5 = 15$ and $T_10 = 30$. Even then, the underlying logic is exactly the same: construct the equations using $T_n = a + (n - 1)d$, and systematically solve for the missing pieces of the puzzle. Master this relationship, see the formula as a four-part system, and you will control the topic.
 
-Mandy will take over for a short break to answer some of the questions you might be thinking about right now. Next, Big John will show you the underlying logic of today's equations and how they connect to the real world. Keep practicing, and remember: precision is power.
+Keep practicing, and remember: precision is power.

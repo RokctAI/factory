@@ -1,6 +1,6 @@
 ## Subtopic: The Taxi Fare Reality Check
 
-Ey, welcome. I'm Bra Sipho, the Taxi Rank Economist. You see, petrol goes up, watch what happens to your taxi fare. That's economics, right there on the street.
+Ey, welcome. You see, petrol goes up, watch what happens to your taxi fare. That's economics, right there on the street.
 
 Let’s talk about a word they love in the textbooks: elasticity. Before you start sweating over graphs and big terms, think about your morning commute. You get to the rank, and the marshal says the fare to town just went up from R15 to R20. What happens? Some people will grumble but still get in the taxi, because they have to be at work by 8 AM. But others? They turn around, go to the bus stop, or they decide to share a lift with their neighbor.
 
@@ -38,7 +38,7 @@ Remember this rule: Quantity is always on top. Why? Because the change in quanti
 
 ## Subtopic: Solving the Calculation
 
-Let's do some real work. I have an example problem for us, straight from the textbook but we will handle it Bra Sipho style.
+Let's do some real work.
 
 Here is the problem: "The price of a product rises from R10 to R12 and quantity demanded falls from 100 to 80 units. Calculate the price elasticity of demand and classify it."
 
@@ -82,4 +82,4 @@ But what about our example? Our answer was exactly 1. When the answer is exactly
 
 So to answer the final part of our example problem: the price elasticity of demand is 1, and we classify it as unitary elasticity.
 
-And that is it, my friends. Whether you are selling tomatoes at the rank or managing a big factory, elasticity just tells you if your customers are going to run away when you raise prices, or if they are going to stay put. Understand that, and you understand business. Keep your eyes open on the streets, and I will see you next time.
+And that is it, my friends. Whether you are selling tomatoes at the rank or managing a big factory, elasticity just tells you if your customers are going to run away when you raise prices, or if they are going to stay put. Understand that, and you understand business.

@@ -1,6 +1,6 @@
 ## Subtopic: Introduction and Definition of the Multiplier
 
-Welcome, grade 12s. I am Ms Mahlangu, and this is Economics. Today, we are mastering a concept that drives macroeconomic policy: the multiplier.
+Welcome, grade 12s. Today, we are mastering a concept that drives macroeconomic policy: the multiplier.
 
 In Economics, precision is everything. We do not guess; we calculate. We do not assume; we prove. We will begin, as always, with the exact CAPS definition. The MULTIPLIER EFFECT is the phenomenon where an initial change in spending, or an injection, leads to a proportionately larger final change in the national income.
 
@@ -61,4 +61,4 @@ The total change in national income is R400 million.
 
 Let us review what we have achieved. We stated the definition of the multiplier effect. We identified the mechanism—how an initial injection creates successive rounds of spending depending on the Marginal Propensity to Consume. We used the correct formula, k = 1 / (1 - MPC), substituted our values perfectly, and arrived at a multiplier of 4. Finally, we proved that an initial government injection of R100 million expands to increase the national income by R400 million.
 
-Precision, logic, and structure. Master these steps, and you will secure full marks. I am Ms Mahlangu, and I will see you in the next lesson.
+Precision, logic, and structure. Master these steps, and you will secure full marks.

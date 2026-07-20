@@ -2,13 +2,11 @@
 
 ## Subtopic: The Spaza Shop Cash Box (Intro to VAT)
 
-[Aunty Grace appears in a warm, comfortable spaza shop setting, leaning gently on the counter.]
-
-Aunty Grace: Hello there, my child! I'm Aunty Grace. Your spaza shop already does double-entry bookkeeping, even if you don't know it yet. Let me show you where.
+Your spaza shop already does double-entry bookkeeping, even if you don't know it yet. Let me show you where.
 
 Today we're talking about Value Added Tax, or VAT. Don't let the word "tax" scare you. It just means the government wants a little slice of the pie when we buy or sell things. Now, in the spaza shop, when a customer buys a loaf of bread, they hand me money. That money goes into my tin. But here's the secret: not all that money in the tin belongs to me. A little piece of it belongs to SARS—the tax man.
 
-If I charge you R10 for a loaf of bread, and VAT is 15%, the tax man says, "Aunty Grace, please collect some extra money for me." So I don't just ask for my R10. I have to add VAT on top.
+I have to add VAT on top.
 
 If we have an amount *before* we add VAT, we call that the **VAT exclusive amount**. When we add the VAT, the new, bigger amount that the customer actually pays is the **VAT inclusive amount**.
 
@@ -16,7 +14,7 @@ Let's look at an example. Imagine a big bag of maize meal is marked at R2 875 on
 
 ## Subtopic: Extracting the VAT (The Calculation)
 
-Aunty Grace: We have R2 875 including VAT at 15%. We need to calculate two things: the VAT amount, and the price excluding VAT (the amount I get to keep).
+We need to calculate two things: the VAT amount, and the price excluding VAT (the amount I get to keep).
 
 A lot of learners make a mistake here. They take 15% of the R2 875. No, my child, you cannot do that! That inclusive amount is not 100%. Think about it. My exclusive price was 100%. Then I added 15% VAT. So the total amount, the inclusive amount, represents 115%.
 
@@ -37,7 +35,7 @@ So, the price excluding VAT is R2 500. That's my sales amount!
 
 ## Subtopic: Formal Ledger Accounts (Double Entry)
 
-Aunty Grace: Now that we understand the money in the tin, let's put on our formal accounting hats. How does this look in our ledger accounts?
+How does this look in our ledger accounts?
 
 We sold goods for cash, so the money came into our bank. The source document is our Cash Register Roll.
 We received a total of R2 875. So, we will **debit** the **Bank account** with R2 875. Why? Because Bank is an asset, and assets increase on the debit side. We have more money in the bank.
@@ -55,4 +53,4 @@ Does our debit equal our credits? R2 500 + R375 = R2 875. Yes! The books balance
 
 Just a quick point on ethics: always ensure that the VAT you collect from customers is strictly recorded and paid over to SARS; keeping it for the business is illegal and unethical.
 
-Keep practicing those calculations, and remember the rule of 115! See you next time!
+Keep practicing those calculations, and remember the rule of 115!

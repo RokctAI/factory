@@ -1,6 +1,6 @@
 ## Subtopic: 1. Review of Demand and Supply Curves
 
-Welcome. Today we examine the DYNAMICS OF MARKETS, specifically focusing on DEMAND AND SUPPLY EQUILIBRIUM. In Economics, a MARKET is any place or mechanism where buyers and sellers interact to trade goods and services.
+Today we examine the DYNAMICS OF MARKETS, specifically focusing on DEMAND AND SUPPLY EQUILIBRIUM. In Economics, a MARKET is any place or mechanism where buyers and sellers interact to trade goods and services.
 
 Before we identify equilibrium, we must lock in our understanding of the two foundational forces: Demand and Supply. Let us define our terms.
 
@@ -56,4 +56,4 @@ Finally, as demonstrated by the South African beef market, an outward shift in d
 
 Mastering these graph mechanics is non-negotiable for economic analysis. You must be precise with your labels and clear on the distinction between a movement along a curve and a shift of a curve.
 
-Study the definitions, practice drawing the graphs, and the logic of the market will become second nature. Until our next session, keep your minds sharp. Grandmaster out.
+Study the definitions, practice drawing the graphs, and the logic of the market will become second nature. Until our next session, keep your minds sharp.

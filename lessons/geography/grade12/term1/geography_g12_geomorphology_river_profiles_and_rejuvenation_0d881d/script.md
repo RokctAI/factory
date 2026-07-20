@@ -1,6 +1,6 @@
 ## Subtopic: Introduction to River Profiles
 
-Greetings. I am Dr Molefe. I am not here to tell you stories; I am here to give you the precise geographical language and tools you need to interpret landscapes exactly as examiners do. We are looking at Geomorphology today, specifically the anatomy of a river.
+I am not here to tell you stories; I am here to give you the precise geographical language and tools you need to interpret landscapes exactly as examiners do. We are looking at Geomorphology today, specifically the anatomy of a river.
 
 Our focus is river profiles. A river profile is a two-dimensional cross-section of a river. We examine two distinct types of profiles: longitudinal and transverse. The longitudinal profile shows the river from its source to its mouth, mapping the gradient and elevation changes over distance. The transverse, or cross-profile, slices across the river channel and valley to show its width and depth.
 
@@ -40,4 +40,4 @@ The river responds immediately. Its energy spikes, and it begins rapid downward 
 
 Observe the features we have created. The flat areas elevated above the new, active channel are the river terraces. Label them clearly. These were once the flood plain. The steep sides of the newly eroded channel form the incised meander. The point where the old profile meets the newly eroding, steeper profile is the knickpoint, which will slowly migrate upstream over time.
 
-When asked to explain rejuvenation with a labelled diagram, this is the sequence you must present. Show the initial broad valley, the rapid vertical incision, and correctly label the resulting terraces, incised meanders, and the knickpoint. This is the precise, geographical proof of rejuvenation. Numbers and diagrams never lie. I am Dr Molefe. Study well.
+When asked to explain rejuvenation with a labelled diagram, this is the sequence you must present. Show the initial broad valley, the rapid vertical incision, and correctly label the resulting terraces, incised meanders, and the knickpoint. This is the precise, geographical proof of rejuvenation. Numbers and diagrams never lie. Study well.

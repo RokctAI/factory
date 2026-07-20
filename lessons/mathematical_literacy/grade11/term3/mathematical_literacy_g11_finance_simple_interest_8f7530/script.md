@@ -1,13 +1,13 @@
 # Lesson: Simple Interest
 ## Subtopic: The Money in Your Hand: What is Interest?
 
-Hello, everyone. I'm Uncle Joe. The cashier gave you wrong change last week and you didn't notice. Let's fix that, because that's exactly what Maths Lit is about. It's about the money in your hand, the numbers on your till slip, and making sure nobody takes you for a ride.
+The cashier gave you wrong change last week and you didn't notice. Let's fix that, because that's exactly what Maths Lit is about. It's about the money in your hand, the numbers on your till slip, and making sure nobody takes you for a ride.
 
 Today, we're talking about interest. Not the kind of interest you have in a new pair of sneakers, but the kind of interest that banks use. Now, if you borrow money, the bank charges you for using their money. That's called interest. But if you put your money into a bank, if you invest it, they pay *you* for using your money. That's also interest. It's like renting out your cash.
 
 Let's look at a real-world situation. Imagine you've saved up some money. Maybe you worked over the holidays, or you got some birthday cash. You have 8,000 rand. Now, you could hide that 8,000 rand under your mattress. But what happens if you leave it there for three years? It just sits there. It's still 8,000 rand. It doesn't grow. In fact, things get more expensive, so that 8,000 rand buys you less.
 
-But what if you take that 8,000 rand and put it in a savings account or an investment? The bank looks at your money and says, "Thank you, Uncle Joe. We're going to use this for a bit, and as a thank you, we're going to pay you a percentage of it every year." That is simple interest.
+But what if you take that 8,000 rand and put it in a savings account or an investment? We're going to use this for a bit, and as a thank you, we're going to pay you a percentage of it every year." That is simple interest.
 
 Simple interest is exactly what it sounds like: it's simple. They calculate the interest on the original amount you put in, and they just pay you that exact same amount of interest every single year. Nothing complicated. Just straight, simple cash added to your pile.
 
@@ -65,5 +65,3 @@ The total value of the investment is R9 560,00.
 And there you have it. You started with R8 000. You left it alone, and it grew into R9 560,00. That is the power of simple interest. We figured it out step by step, just like checking your change at the till.
 
 Always start with what you know. Always make a little estimate so you don't get fooled. And always remember to add the interest back onto your original money if they ask for the total value.
-
-That's all for today. I'm Uncle Joe. Keep checking your change, and I'll see you next time.

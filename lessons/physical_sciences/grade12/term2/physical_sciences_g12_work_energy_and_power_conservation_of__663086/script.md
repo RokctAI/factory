@@ -1,6 +1,6 @@
 ## Subtopic: Introduction to Mechanical Energy
 
-Welcome, Grade 12s. They call me the Science Queen. I teach Physical Sciences at Supacharge, and I demand nothing less than data-sheet precision. Today, we are conquering the Conservation of Mechanical Energy. Before we touch a single formula, we must establish our foundation.
+Welcome, Grade 12s. Today, we are conquering the Conservation of Mechanical Energy. Before we touch a single formula, we must establish our foundation.
 
 You already know the two forms of mechanical energy. First, there is kinetic energy, denoted by a capital E with a subscript k. This is the energy an object possesses due to its motion. The formula from your data sheet is $E_k = \frac{1}{2}mv^2$. If an object is moving, it has kinetic energy. If it is stationary, its velocity is zero, and therefore its kinetic energy is zero.
 

@@ -1,6 +1,6 @@
 # Physical Sciences Grade 11: Newton's Laws - Newton's Second Law
 
-Welcome, scholars. I am the Grandmaster.
+Welcome, scholars.
 
 Today, we direct our intellectual focus toward the foundational pillar of classical mechanics: Newton's Second Law of Motion.
 

@@ -2,7 +2,7 @@
 
 ## Subtopic: The Architecture of the Quadratic Equation
 
-Welcome. I am the Algebra Grandmaster. Today, we dissect the quadratic equation. We are going to master the factoring method. Precision and structure are non-negotiable. If you want distinction-level marks, you must understand the architecture of what you are solving.
+Today, we dissect the quadratic equation. We are going to master the factoring method. Precision and structure are non-negotiable. If you want distinction-level marks, you must understand the architecture of what you are solving.
 
 A quadratic equation in standard form is written as ax squared plus bx plus c equals zero. The variable x represents the unknown. The coefficients a, b, and c are constants, and a cannot be zero. If a were zero, the equation would be linear, not quadratic.
 
@@ -89,4 +89,3 @@ In an exam, state both solutions clearly. They represent the x-intercepts of the
 
 Remember the distinction-level takeaway: standard form first, methodical AC method for non-monic quadratics, verify your grouping brackets match, and apply the Zero Product Property explicitly. Master this process, and quadratic equations will yield to you every time.
 
-Mandy will take over for a short break. Next, Big John will show you the underlying logic of today's equations.

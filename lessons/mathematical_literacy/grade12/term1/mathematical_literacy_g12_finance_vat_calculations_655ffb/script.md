@@ -2,9 +2,9 @@
 
 ## Subtopic: What is VAT?
 
-Right! Gather round. Big John here. Let's get straight to business.
+Right! Gather round. Let's get straight to business.
 
-Have you ever walked into a shop, picked out a nice pair of sneakers, looked at the price tag, and just paid exactly what it says? Of course you have. But here's the secret: that money you handed over to the cashier? It doesn't all go to the shop owner. Nope. A piece of it goes straight to the government. We call that piece VAT. Value Added Tax.
+Have you ever walked into a shop, picked out a nice pair of sneakers, looked at the price tag, and just paid exactly what it says? Of course you have. It doesn't all go to the shop owner. Nope. A piece of it goes straight to the government. We call that piece VAT. Value Added Tax.
 
 VAT is the government's way of collecting money to run the country, build roads, pay teachers, all of that. And they do it by adding a little extra charge onto almost everything we buy. In South Africa, that extra charge is 15%.
 
@@ -16,7 +16,7 @@ That R6 899 is the money leaving your aunt's pocket. It's the total. It includes
 
 ## Subtopic: The Golden Rule of VAT
 
-Now, here's where people get confused, so listen closely to Big John. This is the Golden Rule of VAT.
+This is the Golden Rule of VAT.
 
 The shop's price—the Price Excluding VAT—is the base. It is the starting point. It is 100%.
 
@@ -67,8 +67,6 @@ That right there is the money the shop gets to keep for the TV. R5 999,13.
 Okay, we've found the shop's price. The TV without the tax is R5 999,13.
 But the problem also asks us to calculate the VAT amount. The actual rands and cents that go to the government.
 
-There are two ways to do this, and Big John is going to show you the easiest way first, because we like to keep it simple.
-
 Think about the real world. Your aunt paid R6 899 at the till. We just worked out that the shop keeps R5 999,13.
 Where did the rest of the money go? It went to VAT!
 
@@ -104,4 +102,4 @@ Look at that! It's exactly the same amount we got when we subtracted. R899,87.
 
 We did it. We took a real-life situation, a TV on a shop floor. We took the total price of R6 899, and we stripped the VAT out of it by dividing by 1,15. We found the shop's price was R5 999,13. And we found the VAT amount was R899,87.
 
-Remember, never just minus 15% from the final price. Always work backwards from 115%. That's the Big John way. Keep it real, keep it simple. See you next time!
+Remember, never just minus 15% from the final price. Always work backwards from 115%. Keep it real, keep it simple.

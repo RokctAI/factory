@@ -1,8 +1,6 @@
 ## Subtopic: The Taxi Rank Reality (What is Inflation?)
 
-[Bra Sipho standing at the whiteboard, chalk in hand, looking directly at the camera.]
-
-Sharp, sharp. It’s Bra Sipho here. The Taxi Rank Economist.
+Sharp, sharp. The Taxi Rank Economist.
 
 Let me ask you something. You know that feeling when you go to the rank, you've got your usual R20 coin ready for your trip to town. You step up to the sliding door, and the queue marshal says, "Chief, it's R22 now."
 
@@ -61,4 +59,4 @@ The answer is 5%.
 
 Don't forget the percentage sign! That’s your unit. So, the inflation rate is 5%. This means, on average, the prices of the goods in that CPI basket went up by 5% over the year.
 
-Next time the taxi fare goes up, you can calculate the percentage change yourself. You don't need a textbook, you just need to understand the streets. Keep hustling, and keep calculating. Bra Sipho, out.
+Next time the taxi fare goes up, you can calculate the percentage change yourself. You don't need a textbook, you just need to understand the streets. Keep hustling, and keep calculating.

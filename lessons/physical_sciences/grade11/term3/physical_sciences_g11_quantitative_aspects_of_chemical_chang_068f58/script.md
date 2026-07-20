@@ -1,6 +1,6 @@
 ## Subtopic: The Principle of Stoichiometry and the Balanced Equation
 
-Welcome. They call me the Science Queen, and today we are dealing with Quantitative Aspects of Chemical Change. Specifically, we are looking at stoichiometry. In Physical Sciences, numbers never lie, provided you know exactly how to speak their language.
+Specifically, we are looking at stoichiometry. In Physical Sciences, numbers never lie, provided you know exactly how to speak their language.
 
 The physical principle here is the Law of Conservation of Mass. Matter cannot be created or destroyed in a chemical reaction. Therefore, the total mass of the reactants must exactly equal the total mass of the products. We represent this reality using a balanced chemical equation. The coefficients—those large numbers in front of the formulas—tell us the exact molar ratio in which substances react and form. If the equation is not balanced, your foundation is cracked, and every calculation that follows will be mathematically incorrect.
 
@@ -73,4 +73,4 @@ Let us review the exam technique.
 4. Convert the moles of the unknown back to the requested unit (mass) using $m = n \times M$.
 5. State the final answer with correct SI units.
 
-That is how you secure full marks in stoichiometry. Precision, correct formulas, and explicit substitution. Keep practicing. Science Queen, signing off.
+That is how you secure full marks in stoichiometry. Precision, correct formulas, and explicit substitution. Keep practicing.

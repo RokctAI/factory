@@ -2,7 +2,7 @@
 
 ## Subtopic: Introduction to Parallel Circuits
 
-Welcome, Grade 11s. I am Ms Dlamini, and today we are addressing a concept where many students needlessly forfeit marks: resistors in parallel. In Physical Sciences, precision is paramount. We do not guess; we calculate based on established principles.
+Welcome, Grade 11s. In Physical Sciences, precision is paramount. We do not guess; we calculate based on established principles.
 
 Before we look at the mathematics, let us establish the principle. When resistors are connected in parallel, the current from the source has multiple paths it can take. Think of it as a river splitting into several channels. The total current is the sum of the currents in each parallel branch.
 
@@ -61,4 +61,4 @@ Therefore, the total current supplied by the battery is 12 amperes, or 12 A.
 
 That is how you secure full marks. Principle first, formula from the data sheet, explicit substitution, and the final answer with units.
 
-Do not let these foundational calculations cost you your distinction. Master the structure, and the physics will follow. I am Ms Dlamini. Thank you for your focus.
+Do not let these foundational calculations cost you your distinction. Master the structure, and the physics will follow. Thank you for your focus.

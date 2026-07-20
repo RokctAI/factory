@@ -1,6 +1,6 @@
 ## Subtopic: Introduction to Map Scale
 
-I'm Ranger Themba. That cold wind this morning? That was your Geography homework introducing itself. But today, we're not looking up at the weather. We're looking down at the ground. Or rather, a map of the ground.
+That cold wind this morning? That was your Geography homework introducing itself. But today, we're not looking up at the weather. We're looking down at the ground. Or rather, a map of the ground.
 
 Think about your walk to school. It might be a couple of kilometres long. If you wanted to draw your whole walk to school on a piece of paper, you couldn't draw it full size. Your piece of paper would have to be a few kilometres long! You have to shrink it down. You have to *scale* it down.
 
@@ -75,4 +75,4 @@ Boom. Same answer, half the work.
 
 But listen to me carefully: you can only use this 0,5 shortcut if the map scale is exactly 1:50 000 and you want the answer in kilometres. If it's an orthophoto map at 1:10 000, or they ask for the answer in metres, you have to go back to the basic steps we learned first. When in doubt, walk the long path. It will always get you home.
 
-That's map scale. Not just numbers, but real ground beneath your feet. Practice those steps, watch those units, and I'll see you on the trail. Ranger Themba, signing out.
+That's map scale. Not just numbers, but real ground beneath your feet. Practice those steps, watch those units, and I'll see you on the trail.
