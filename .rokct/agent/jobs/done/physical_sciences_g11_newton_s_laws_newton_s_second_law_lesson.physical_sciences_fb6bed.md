@@ -13,7 +13,8 @@ grade: 11
 term: 1
 topic: Newton's Laws
 subtopic: Newton's second law
-tutor: Grandmaster — formal
+tutor: tutor_003
+tutor_style: formal
 example_problem: A 5 kg crate on a frictionless horizontal surface is pulled by a horizontal force of 20 N. Calculate its acceleration.
 prior_knowledge: Student knows forces as vectors, mass, and basic algebra
 metarules: .rokct/types/lesson.physical_sciences/metarules

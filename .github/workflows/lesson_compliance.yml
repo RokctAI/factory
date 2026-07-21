@@ -1,0 +1,61 @@
+name: Lesson Compliance
+
+# Central enforcement gate for the content standards established this cycle.
+# FAILS the build (does not warn) on any violation. The same checker runs
+# locally (lessons/scripts/lesson_compliance.py, fail fast before a push);
+# local checks can be skipped, CI can't. Rules (see the checker's docstring):
+#   R1 primitive vocabulary is the real whiteboard set (not stale spec vocab)
+#   R2 no greeting/self-intro/sign-off in script text
+#   R3 no bracketed stage directions in script text
+#   R4 tutor identity ids are opaque (^tutor_<n>$), never name/slug-derived
+#   R5 camera_move events inline in primitives (not a sibling top-level key)
+#
+# Fast by design: checks only the files a push changed. workflow_dispatch runs
+# the full-tree baseline.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.rokct/agent/jobs/**/*.md'
+      - 'lessons/**'
+  workflow_dispatch:
+
+jobs:
+  lesson_compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Check lessons for compliance
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual dispatch: full-tree compliance baseline."
+            python3 lessons/scripts/lesson_compliance.py --all
+            exit $?
+          fi
+          # Only the checkable artefact kinds the checker recognises.
+          FILES=$(git diff --name-only HEAD~1 HEAD -- \
+                    '.rokct/agent/jobs/**/*.md' \
+                    'lessons/**/script.md' \
+                    'lessons/**/animations.json' \
+                    'lessons/**/manifest.json' \
+                    'lessons/tutors/**/tutor.md' || true)
+          EXISTING=""
+          for F in $FILES; do
+            [ -f "$F" ] && EXISTING="$EXISTING $F"
+          done
+          if [ -z "$EXISTING" ]; then
+            echo "No changed lesson artefacts to check."
+            exit 0
+          fi
+          echo "Checking:$EXISTING"
+          python3 lessons/scripts/lesson_compliance.py $EXISTING
