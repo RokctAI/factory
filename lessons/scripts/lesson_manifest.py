@@ -475,8 +475,28 @@ def main():
     for ev in anim.get("camera", []):
         ev["time"] = round(ev["time"] * anim_scale, 2)
     anim["duration_seconds"] = round(audio_seconds, 2)
+
+    # CAMERA CONTRACT FIX (production bug): the exporter emitted camera pans
+    # as a sibling top-level "camera" array, but the app
+    # (ReplayLessonEngine) loads ONLY decoded["primitives"] and detects
+    # camera events by primitive type (camera_move/band_start) INSIDE that
+    # list — so every camera event was dropped on load and the band camera
+    # never panned in the app. Fold the camera events into the primitives
+    # stream as inline camera_move events (the shape the player actually
+    # reads) and drop the dead sibling array. duration_ms matches the
+    # scene's 0.8s pan; the player defaults to 800ms if absent anyway.
+    camera_events = anim.pop("camera", [])
+    for ev in camera_events:
+        anim["primitives"].append({
+            "primitive": "camera_move",
+            "time": ev["time"],
+            "target": ev["target"],
+            "duration_ms": 800,
+        })
+    anim["primitives"].sort(key=lambda p: p["time"])
     anim_path.write_text(json.dumps(anim, indent=2), encoding="utf-8")
-    print(f"[align] subtopic x{subtopic_scale:.3f}  animation x{anim_scale:.3f}")
+    print(f"[align] subtopic x{subtopic_scale:.3f}  animation x{anim_scale:.3f}  "
+          f"camera_move inlined x{len(camera_events)}")
 
     # TOPIC-DISPLAY TIMING: the player shows the topic full-screen while the
     # tutor speaks the intro, until board work begins. That duration is
