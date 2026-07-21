@@ -1,7 +1,8 @@
 # Tutor Persona: Bra Sipho
 status: PROVISIONAL - invented 2026-07-14 (Economics has no named characters in the source doc); confirm or rename before launch
 pipeline_label: Bra Sipho — simplistic, lower grade logic  # derived: display_name + ' — ' + style
-tutor_id: sipho_dube
+id: tutor_008
+legacy_slug: sipho_dube  # read-only migration breadcrumb; not used for matching
 display_name: Bra Sipho
 style: simplistic, lower grade logic
 role: simplifier

@@ -1,7 +1,8 @@
 # Tutor Persona: Grandmaster
 status: canonical (supacharge-characters.md §1)
 pipeline_label: Grandmaster — formal  # derived: display_name + ' — ' + style
-tutor_id: grandmaster
+id: tutor_001
+legacy_slug: grandmaster  # read-only migration breadcrumb; not used for matching
 display_name: Grandmaster
 style: formal
 role: expert

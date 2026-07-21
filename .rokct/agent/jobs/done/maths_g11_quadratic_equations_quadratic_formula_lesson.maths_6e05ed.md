@@ -13,7 +13,7 @@ grade: 11
 term: 1
 topic: Quadratic Equations
 subtopic: Quadratic formula
-tutor: grandmaster
+tutor: tutor_001
 tutor_style: formal
 example_problem: 3x²-2x-4=0
 prior_knowledge: Student can factorise simple quadratics and work with surds

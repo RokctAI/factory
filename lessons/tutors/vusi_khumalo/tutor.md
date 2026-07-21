@@ -1,7 +1,8 @@
 # Tutor Persona: Uncle Vusi
 status: PROVISIONAL - invented 2026-07-14 following the Expert+Simplifier formula (Physical Sciences had no named Simplifier); confirm or rename before launch
 pipeline_label: Uncle Vusi — simplistic, lower grade logic  # derived: display_name + ' — ' + style
-tutor_id: vusi_khumalo
+id: tutor_004
+legacy_slug: vusi_khumalo  # read-only migration breadcrumb; not used for matching
 display_name: Uncle Vusi
 style: simplistic, lower grade logic
 role: simplifier

@@ -1,7 +1,8 @@
 # Tutor Persona: Uncle Joe
 status: PROVISIONAL - invented 2026-07-14 (Mathematical Literacy has no named characters in the source doc); confirm or rename before launch
 pipeline_label: Uncle Joe — simplistic, lower grade logic  # derived: display_name + ' — ' + style
-tutor_id: joe_september
+id: tutor_012
+legacy_slug: joe_september  # read-only migration breadcrumb; not used for matching
 display_name: Uncle Joe
 style: simplistic, lower grade logic
 role: simplifier

@@ -417,19 +417,23 @@ def subject_duo_for(type_str, subject):
     return _duo_for_key(roster_key_for(type_str, subject))
 
 
-# Tutor identity is carried as THREE separate fields on the persona card and
-# job card, never as one conflated "Name — style" string:
-#   tutor_id  — the stable opaque id (the persona directory slug). This is
-#               the ONLY value code matches/stores on. It is treated as
-#               opaque: it is never re-derived from a display name (renaming
-#               the display name must not touch any id or reference).
+# Tutor identity is carried as separate fields on the persona card and job
+# card, never as one conflated "Name — style" string:
+#   id           — a PERMANENT ARBITRARY opaque id (tutor_XXX) with zero
+#                  relation to any name; the ONLY key code matches/stores on.
 #   display_name — the human-readable character name (freely renamable).
 #   style        — the short teaching-style descriptor (formal / simplistic).
-# The current ids happen to read like the old slugs (grandmaster, big_john),
-# but nothing may reconstruct them from display_name going forward.
+#   legacy_slug  — the old name-derived slug, kept read-only as a migration
+#                  breadcrumb; never matched on, delete once nothing refs it.
+# The persona DIRECTORY is still named by the legacy slug (lessons/tutors/
+# <slug>/) for readability — that is a file path, not an identity; matching
+# is on `id` only.
 
 def persona_id(text):
-    return get_field(text, "tutor_id")
+    """The persona's PERMANENT opaque id (tutor_XXX) — arbitrary, unrelated to
+    any name, assigned once. This is the only identity key. `legacy_slug` on
+    the card is a read-only migration breadcrumb, never matched on."""
+    return get_field(text, "id")
 
 
 def persona_display_name(text):
@@ -456,35 +460,40 @@ def persona_style(text):
 
 
 def resolve_seed_tutor(entry):
-    """(tutor_id, style) for a seed row. Accepts a split row
-    (tutor: <id>, tutor_style: <style>) or a legacy 'Name — style' label in
-    `tutor`; both resolve against the subject's roster duo. ('', '') when the
-    row names no tutor. Never derives an id from a display name."""
+    """(opaque tutor id, style) for a seed row. Accepts a split row
+    (tutor: <tutor_XXX>, tutor_style: <style>) or a legacy 'Name — style'
+    label / bare slug in `tutor`; all resolve to the opaque id via the
+    subject's roster duo. ('', '') when the row names no tutor. Never derives
+    an id from a display name."""
     raw = str(entry.get("tutor", "")).strip()
     if not raw:
         return "", ""
     duo = subject_duo_for(entry.get("type", ""), entry.get("subject", ""))
     slug, ptext = match_persona(duo, raw) if duo else (None, "")
     if slug:
-        return slug, str(entry.get("tutor_style", "")).strip() or persona_style_tag(ptext)
+        return persona_id(ptext), str(entry.get("tutor_style", "")).strip() or persona_style_tag(ptext)
     # Unresolvable against a roster (e.g. no duo) — pass the raw value through
     # only if it already looks like a bare id, else keep it for a human to fix.
     return raw, str(entry.get("tutor_style", "")).strip()
 
 
 def match_persona(duo, tutor):
-    """(slug, card text) for the duo member the job card's `tutor` refers to.
+    """(dir_slug, card text) for the duo member the job card's `tutor` refers
+    to. The returned dir_slug is for FILE PATHS only (lessons/tutors/<slug>/);
+    identity is the opaque persona_id.
 
-    Matches on tutor_id — the opaque slug — first: exact equality, no name
-    parsing. Falls back to display-name-in-string only for LEGACY cards that
-    still carry the old 'Name — style' label. (None, "") when nothing
-    matches."""
+    Matches on the opaque id (tutor_XXX) — exact equality, no name or slug
+    derivation. Falls back to the legacy dir-slug or display-name only for
+    un-migrated cards. (None, "") when nothing matches."""
     t = (tutor or "").strip()
-    for slug, text in duo:
-        if t == slug or (persona_id(text) and t == persona_id(text)):
+    for slug, text in duo:                       # opaque id — the real key
+        if persona_id(text) and t == persona_id(text):
+            return slug, text
+    for slug, text in duo:                        # legacy: bare dir-slug
+        if t == slug or t == get_field(text, "legacy_slug"):
             return slug, text
     low = t.lower()
-    for slug, text in duo:  # legacy 'Name — style' fallback
+    for slug, text in duo:                        # legacy 'Name — style'
         name = persona_display_name(text).lower()
         if name and name in low:
             return slug, text
@@ -768,7 +777,7 @@ def cmd_plan(args):
             valid = " | ".join(persona_label(t) for _, t in duo)
             print(f"Error: tutor persona '{tutor}' is not in this subject's duo ({valid}).")
             return 1
-        tutor = slug                         # store the opaque id, not a label
+        tutor = persona_id(ptext)            # store the opaque id, not a slug/label
         tutor_style = persona_style_tag(ptext)
     elif TUTOR_GRANDMASTER.split(" ")[0].lower() not in tutor.lower() and "john" not in tutor.lower():
         print(f"Error: unrecognised tutor persona: {tutor}")

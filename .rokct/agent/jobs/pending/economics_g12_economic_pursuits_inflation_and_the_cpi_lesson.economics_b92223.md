@@ -13,7 +13,7 @@ grade: 12
 term: 3
 topic: Economic Pursuits
 subtopic: Inflation and the CPI
-tutor: sipho_dube
+tutor: tutor_008
 tutor_style: simplistic, lower grade logic
 example_problem: Calculate the inflation rate if the consumer price index rises from 120 to 126 over one year.
 prior_knowledge: Student knows index numbers and percentage change

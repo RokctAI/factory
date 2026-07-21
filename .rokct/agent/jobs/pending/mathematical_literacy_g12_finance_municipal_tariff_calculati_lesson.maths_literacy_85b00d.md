@@ -13,7 +13,7 @@ grade: 12
 term: 1
 topic: Finance
 subtopic: Municipal tariff calculations
-tutor: joe_september
+tutor: tutor_012
 tutor_style: simplistic, lower grade logic
 example_problem: A municipality charges a basic fee of R120 per month plus R1,85 per kWh of electricity. Calculate the total bill for a household that used 450 kWh in a month.
 prior_knowledge: Student can multiply decimals and read a tariff table

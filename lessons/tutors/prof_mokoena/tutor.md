@@ -1,7 +1,8 @@
 # Tutor Persona: Prof Mokoena
 status: canonical name (supacharge-characters.md §1); style expanded per the Expert formula - review before launch
 pipeline_label: Prof Mokoena — formal  # derived: display_name + ' — ' + style
-tutor_id: prof_mokoena
+id: tutor_005
+legacy_slug: prof_mokoena  # read-only migration breadcrumb; not used for matching
 display_name: Prof Mokoena
 style: formal
 role: expert

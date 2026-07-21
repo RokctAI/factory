@@ -13,7 +13,7 @@ grade: 12
 term: 1
 topic: Sequences and Series
 subtopic: Geometric sequences
-tutor: grandmaster
+tutor: tutor_001
 tutor_style: formal
 example_problem: Find the 10th term of 2; 6; 18; ...
 prior_knowledge: Student knows arithmetic sequences and exponents

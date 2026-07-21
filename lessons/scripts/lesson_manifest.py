@@ -242,7 +242,7 @@ def resolve_tutor_pair(card_text, tutor_ref):
     the other member of the subject's duo, so it needs no separate card
     field. Returns (first, None) when the roster cannot resolve a pair.
 
-    Identity is read from explicit persona-card fields (tutor_id /
+    Identity is read from explicit persona-card fields (opaque `id` /
     display_name); NOTHING re-derives an id from a display name. NOTE:
     resolving a pair does NOT mean the lesson is two-part — see
     two_part_split(); the caller drops `second` for single-voice lessons."""
@@ -251,10 +251,15 @@ def resolve_tutor_pair(card_text, tutor_ref):
                                  persona_display_name, subject_duo)
 
     def identity(slug):
+        # `slug` is the persona DIRECTORY name (for loading the card); the
+        # manifest's tutor id is the card's OPAQUE id (tutor_XXX), never the
+        # directory slug.
+        from lesson_pipeline import persona_id
         text = load_tutor_card(slug)
+        oid = persona_id(text) if text else ""
         name = persona_display_name(text) if text else slug
         real = get_field(text, "real_name") if text else ""
-        return {"id": slug, "display_name": name or slug,
+        return {"id": oid or slug, "display_name": name or slug,
                 **({"real_name": real} if real else {})}
 
     duo = subject_duo(card_text)  # subject_duo reads type/subject from the text

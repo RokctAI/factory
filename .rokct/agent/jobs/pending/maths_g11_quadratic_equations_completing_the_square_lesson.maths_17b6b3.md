@@ -13,7 +13,7 @@ grade: 11
 term: 1
 topic: Quadratic Equations
 subtopic: Completing the square
-tutor: grandmaster
+tutor: tutor_001
 tutor_style: formal
 example_problem: x²+6x+2=0
 prior_knowledge: Student can expand brackets and factorise perfect squares

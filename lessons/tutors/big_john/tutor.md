@@ -1,7 +1,8 @@
 # Tutor Persona: Big John
 status: canonical (supacharge-characters.md §1)
 pipeline_label: Big John — simplistic, lower grade logic  # derived: display_name + ' — ' + style
-tutor_id: big_john
+id: tutor_002
+legacy_slug: big_john  # read-only migration breadcrumb; not used for matching
 display_name: Big John
 style: simplistic, lower grade logic
 role: simplifier

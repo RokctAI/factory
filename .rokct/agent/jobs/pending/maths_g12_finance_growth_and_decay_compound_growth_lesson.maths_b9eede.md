@@ -13,7 +13,7 @@ grade: 12
 term: 3
 topic: Finance, Growth and Decay
 subtopic: Compound growth
-tutor: big_john
+tutor: tutor_002
 tutor_style: simplistic, lower grade logic
 example_problem: R5 000 is invested at 8% per annum, compounded annually. Calculate the investment's value after 3 years.
 prior_knowledge: Student knows percentages and the simple growth formula
