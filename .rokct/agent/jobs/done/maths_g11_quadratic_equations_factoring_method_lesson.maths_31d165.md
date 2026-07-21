@@ -46,13 +46,13 @@ loop_iterations: 0
 max_iterations: 10
 past_paper_examples: dbe_maths_g11_p1_2018_nov:Q1.1.1, dbe_maths_g11_p1_2017_nov:Q1.1.1
 manifest_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json
-manifest_checksum: d687ec78d2d02a6d5337c4913f692dfe98336551b704e845e1816aedf2d7ef99
+manifest_checksum: b444ed9a390b243a172d449dddb6bc14e06eb1e8a40e33badd9a012c13ee2f39
 manifest_size_bytes: 8645
 audio_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/audio.mp3
 audio_checksum: be26572fb73b5100450bb85453a3251a8a8559b3580332cfd4711d88db43a7d6
 audio_size_bytes: 6159808
 animation_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/animations.json
-animation_checksum: ddb39b7e2357df9a388d6cf2a87d7bc44e925aeca8bd5de15a6615d661d423e5
-animation_size_bytes: 7444
-produced_at: 2026-07-20T08:32:06+00:00
+animation_checksum: 48494c19bcae80cfd152e22e1fbbbd8555bc04687fb47ecc54da8ded57640b67
+animation_size_bytes: 7845
+produced_at: 2026-07-21T18:07:54+00:00
 ---
