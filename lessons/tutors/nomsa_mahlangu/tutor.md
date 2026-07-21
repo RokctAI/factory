@@ -1,6 +1,9 @@
 # Tutor Persona: Ms Mahlangu
 status: PROVISIONAL - invented 2026-07-14 (Economics has no named characters in the source doc); confirm or rename before launch
-pipeline_label: Ms Mahlangu — formal
+pipeline_label: Ms Mahlangu — formal  # derived: display_name + ' — ' + style
+tutor_id: nomsa_mahlangu
+display_name: Ms Mahlangu
+style: formal
 role: expert
 subjects: [Economics]
 real_name: Ms Nomsa Mahlangu

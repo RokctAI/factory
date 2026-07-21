@@ -235,42 +235,36 @@ def two_part_split(card_text, subtopics):
     return ref
 
 
-def resolve_tutor_pair(card_text, tutor_label):
-    """(first, second) tutor identity dicts for the manifest, derived from
-    the tutor roster's paired-duo mapping — roster.json already captures the
-    two-tutor-per-lesson design (every subject has an Expert + Simplifier
-    duo), so the second tutor needs NO new job-card field: it is simply the
-    other member of the card subject's duo. Returns (first, None) when the
-    roster cannot resolve a pair (legacy label, missing roster).
+def resolve_tutor_pair(card_text, tutor_ref):
+    """(first, second) tutor identity dicts for the manifest, resolved from
+    the tutor roster's paired-duo mapping. `tutor_ref` is the card's `tutor`
+    field — an opaque tutor id (never a display name). The second tutor is
+    the other member of the subject's duo, so it needs no separate card
+    field. Returns (first, None) when the roster cannot resolve a pair.
 
-    NOTE: resolving a pair does NOT mean the lesson is two-part — see
+    Identity is read from explicit persona-card fields (tutor_id /
+    display_name); NOTHING re-derives an id from a display name. NOTE:
+    resolving a pair does NOT mean the lesson is two-part — see
     two_part_split(); the caller drops `second` for single-voice lessons."""
     sys.path.insert(0, str(Path(__file__).parent))
-    from lesson_pipeline import (card_roster_key, load_roster, load_tutor_card,
-                                 persona_label)
+    from lesson_pipeline import (load_tutor_card, match_persona,
+                                 persona_display_name, subject_duo)
 
     def identity(slug):
         text = load_tutor_card(slug)
-        label = persona_label(text) if text else slug
-        name = label.split("—")[0].strip() if label else slug
+        name = persona_display_name(text) if text else slug
         real = get_field(text, "real_name") if text else ""
-        return {"id": slug, "display_name": name,
+        return {"id": slug, "display_name": name or slug,
                 **({"real_name": real} if real else {})}
 
-    fallback = {"id": tutor_label.split("—")[0].strip().lower().replace(" ", "_"),
-                "display_name": tutor_label.split("—")[0].strip()}
-    duo = load_roster().get("subjects", {}).get(card_roster_key(card_text), {})
-    slugs = [duo.get("expert", ""), duo.get("simplifier", "")]
-    if not all(slugs):
-        return fallback, None
-    name_part = tutor_label.split("—")[0].strip().lower()
-    first_slug = next(
-        (s for s in slugs
-         if persona_label(load_tutor_card(s)).split("—")[0].strip().lower() in name_part
-         or name_part in persona_label(load_tutor_card(s)).split("—")[0].strip().lower()),
-        None)
+    duo = subject_duo(card_text)  # subject_duo reads type/subject from the text
+    if len(duo) < 2:
+        # No resolvable duo: single, id-as-given, name from its card if any.
+        return identity(tutor_ref.strip()), None
+    first_slug, _ = match_persona(duo, tutor_ref)
     if first_slug is None:
-        return fallback, None
+        return identity(tutor_ref.strip()), None
+    slugs = [s for s, _ in duo]
     second_slug = slugs[1] if first_slug == slugs[0] else slugs[0]
     return identity(first_slug), identity(second_slug)
 
@@ -383,7 +377,7 @@ def main():
     subject = get_field(card, "subject")
     grade = int(get_field(card, "grade") or 0)
     topic = get_field(card, "topic")
-    tutor = get_field(card, "tutor") or "Grandmaster — formal"
+    tutor = get_field(card, "tutor") or "grandmaster"  # opaque tutor id
     lesson_path = repo / get_field(card, "lesson_path")
 
     subtopics = json.loads((lesson_path / "subtopics.json").read_text("utf-8"))
@@ -413,17 +407,18 @@ def main():
 
     print(f"[audio] backend={args.audio_backend} segments={len(segments)} "
           f"chars={sum(len(t) for _, t in segments)}")
+    # Resolve the tutor identities once (by opaque id, from the roster duo).
+    # Segments before the split speak in the first tutor's voice, segments
+    # from the split onward in the second tutor's — only when the lesson is
+    # actually two-part.
+    seg_first, seg_second = resolve_tutor_pair(card, tutor)
     seg_files, seg_durations = [], []
     for idx, text in segments:
         if args.max_narration_chars:
             text = text[:args.max_narration_chars]
-        # Segment voice: subtopics from the split onward are the second
-        # tutor's block. Only meaningful for a real two-part lesson.
-        voice = tutor
-        if split_index is not None and idx >= split_index:
-            _, second = resolve_tutor_pair(card, tutor)
-            if second:
-                voice = second["display_name"]
+        voice = seg_first["display_name"]
+        if split_index is not None and idx >= split_index and seg_second:
+            voice = seg_second["display_name"]
         seg_path = out_dir / f"seg_{idx:02d}.wav"
         if args.audio_backend == "vibevoice":
             # Voice preset comes from the tutor persona card (documented
@@ -434,7 +429,7 @@ def main():
         d = wav_duration_seconds(seg_path)
         seg_files.append(seg_path)
         seg_durations.append(d)
-        print(f"  seg {idx:02d} [{voice.split('—')[0].strip()}]: {d:6.1f}s  {len(text)} chars")
+        print(f"  seg {idx:02d} [{voice}]: {d:6.1f}s  {len(text)} chars")
 
     if not seg_files:
         raise SystemExit("script produced no narration segments")

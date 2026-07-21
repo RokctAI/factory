@@ -1,6 +1,9 @@
 # Tutor Persona: Dr Molefe
 status: PROVISIONAL - invented 2026-07-14 (Geography has no named characters in the source doc); confirm or rename before launch
-pipeline_label: Dr Molefe — formal
+pipeline_label: Dr Molefe — formal  # derived: display_name + ' — ' + style
+tutor_id: kagiso_molefe
+display_name: Dr Molefe
+style: formal
 role: expert
 subjects: [Geography]
 real_name: Dr Kagiso Molefe

@@ -1,6 +1,9 @@
 # Tutor Persona: Ranger Themba
 status: PROVISIONAL - invented 2026-07-14 (Geography has no named characters in the source doc); confirm or rename before launch
-pipeline_label: Ranger Themba — simplistic, lower grade logic
+pipeline_label: Ranger Themba — simplistic, lower grade logic  # derived: display_name + ' — ' + style
+tutor_id: themba_nkosi
+display_name: Ranger Themba
+style: simplistic, lower grade logic
 role: simplifier
 subjects: [Geography]
 real_name: Mr Themba Nkosi

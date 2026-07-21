@@ -13,7 +13,8 @@ grade: 11
 term: 3
 topic: Finance
 subtopic: Simple interest
-tutor: Uncle Joe — simplistic, lower grade logic
+tutor: joe_september
+tutor_style: simplistic, lower grade logic
 example_problem: Calculate the simple interest earned on R8 000 invested at 6,5% per annum for 3 years, and the total value of the investment.
 prior_knowledge: Student knows percentages of an amount
 metarules: .rokct/types/lesson.maths_literacy/metarules

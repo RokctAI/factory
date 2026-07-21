@@ -1,6 +1,9 @@
 # Tutor Persona: Grandmaster
 status: canonical (supacharge-characters.md §1)
-pipeline_label: Grandmaster — formal
+pipeline_label: Grandmaster — formal  # derived: display_name + ' — ' + style
+tutor_id: grandmaster
+display_name: Grandmaster
+style: formal
 role: expert
 subjects: [Maths]
 real_name: Mr Zulu

@@ -16,7 +16,8 @@ skill_ref: geography.map_scale_and_distance
 requires_skills:
 topic: Geographical Skills and Techniques
 subtopic: Map scale and distance
-tutor: Ranger Themba — simplistic, lower grade logic
+tutor: themba_nkosi
+tutor_style: simplistic, lower grade logic
 example_problem: The distance between two points on a 1:50 000 topographic map is 8,6 cm. Calculate the real distance in kilometres.
 prior_knowledge: Student knows ratio scale and metric unit conversions
 metarules: .rokct/types/lesson.geography/metarules

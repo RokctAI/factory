@@ -1,6 +1,9 @@
 # Tutor Persona: Prof Mokoena
 status: canonical name (supacharge-characters.md §1); style expanded per the Expert formula - review before launch
-pipeline_label: Prof Mokoena — formal
+pipeline_label: Prof Mokoena — formal  # derived: display_name + ' — ' + style
+tutor_id: prof_mokoena
+display_name: Prof Mokoena
+style: formal
 role: expert
 subjects: [Accounting]
 real_name: Prof Mokoena

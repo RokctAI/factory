@@ -13,7 +13,8 @@ grade: 12
 term: 1
 topic: Macroeconomics
 subtopic: The multiplier
-tutor: Ms Mahlangu — formal
+tutor: nomsa_mahlangu
+tutor_style: formal
 example_problem: If the marginal propensity to consume is 0,75, calculate the multiplier and the total change in national income resulting from a R100 million injection.
 prior_knowledge: Student knows the circular flow model, injections and leakages
 metarules: .rokct/types/lesson.economics/metarules

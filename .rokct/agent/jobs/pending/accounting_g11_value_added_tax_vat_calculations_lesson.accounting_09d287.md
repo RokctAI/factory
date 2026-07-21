@@ -13,7 +13,8 @@ grade: 11
 term: 4
 topic: Value Added Tax
 subtopic: VAT calculations
-tutor: Aunty Grace — simplistic, lower grade logic
+tutor: grace_naidoo
+tutor_style: simplistic, lower grade logic
 example_problem: An item is marked R2 875 including VAT at 15%. Calculate the VAT amount and the price excluding VAT.
 prior_knowledge: Student knows percentages and the concept of VAT
 metarules: .rokct/types/lesson.accounting/metarules

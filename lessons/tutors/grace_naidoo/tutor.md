@@ -1,6 +1,9 @@
 # Tutor Persona: Aunty Grace
 status: PROVISIONAL - invented 2026-07-14 following the Expert+Simplifier formula (Accounting had no named Simplifier); confirm or rename before launch
-pipeline_label: Aunty Grace — simplistic, lower grade logic
+pipeline_label: Aunty Grace — simplistic, lower grade logic  # derived: display_name + ' — ' + style
+tutor_id: grace_naidoo
+display_name: Aunty Grace
+style: simplistic, lower grade logic
 role: simplifier
 subjects: [Accounting]
 real_name: Mrs Grace Naidoo

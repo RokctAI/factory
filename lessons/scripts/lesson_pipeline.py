@@ -262,6 +262,11 @@ def cmd_seed(args):
         category = str(entry.get("category", "")).strip().lower()
         skill_ref = str(entry.get("skill_ref", "")).strip()
         requires_skills = entry.get("requires_skills", [])
+        # Resolve the seed's tutor to (opaque id, style). A seed row may carry
+        # either the split fields (tutor: <id>, tutor_style: <style>) or a
+        # legacy 'Name — style' label; either resolves to the id + style via
+        # the subject's roster duo, never by re-deriving a slug from a name.
+        tutor_id, tutor_style = resolve_seed_tutor(entry)
         if category == CATEGORY_SKILL:
             # Skills are term-independent; a term on a skill row is a
             # contradiction, and a skill without a stable ref is unlinkable.
@@ -295,7 +300,8 @@ skill_ref: {skill_ref}
 requires_skills: {', '.join(requires_skills)}
 topic: {entry['topic']}
 subtopic: {entry['subtopic']}
-tutor: {entry.get('tutor', '')}
+tutor: {tutor_id}
+tutor_style: {tutor_style}
 example_problem: {entry.get('example_problem', '')}
 prior_knowledge: {entry.get('prior_knowledge', '')}
 metarules: .rokct/types/{entry['type']}/metarules
@@ -377,21 +383,22 @@ def load_tutor_variants(slug, kind):
             for p in sorted(d.glob("*.md"))]
 
 
-def card_roster_key(card):
-    """roster.json subject key for a job card — the lesson.* type suffix
+def roster_key_for(type_str, subject):
+    """roster.json subject key from a lesson.* type suffix
     (lesson.maths_literacy -> maths_literacy), falling back to the subject
-    name for cards without a lesson.* type."""
-    t = get_field(card, "type")
-    if t.startswith("lesson."):
-        return t.split(".", 1)[1]
-    return get_field(card, "subject").lower().replace(" ", "_")
+    name. The subject-name path is a lookup key, NOT a tutor id derivation."""
+    if type_str.startswith("lesson."):
+        return type_str.split(".", 1)[1]
+    return subject.lower().replace(" ", "_")
 
 
-def subject_duo(card):
-    """[(slug, persona card text)] for this card's subject, Expert first.
-    Empty when the roster has no entry (callers fall back to the legacy
-    Maths duo so old cards keep working)."""
-    entry = load_roster().get("subjects", {}).get(card_roster_key(card), {})
+def card_roster_key(card):
+    """roster.json subject key for a job card."""
+    return roster_key_for(get_field(card, "type"), get_field(card, "subject"))
+
+
+def _duo_for_key(key):
+    entry = load_roster().get("subjects", {}).get(key, {})
     duo = []
     for role in ("expert", "simplifier"):
         text = load_tutor_card(entry.get(role, ""))
@@ -400,26 +407,88 @@ def subject_duo(card):
     return duo
 
 
+def subject_duo(card):
+    """[(slug, persona card text)] for this card's subject, Expert first."""
+    return _duo_for_key(card_roster_key(card))
+
+
+def subject_duo_for(type_str, subject):
+    """subject_duo from a raw type/subject (seed rows, before a card exists)."""
+    return _duo_for_key(roster_key_for(type_str, subject))
+
+
+# Tutor identity is carried as THREE separate fields on the persona card and
+# job card, never as one conflated "Name — style" string:
+#   tutor_id  — the stable opaque id (the persona directory slug). This is
+#               the ONLY value code matches/stores on. It is treated as
+#               opaque: it is never re-derived from a display name (renaming
+#               the display name must not touch any id or reference).
+#   display_name — the human-readable character name (freely renamable).
+#   style        — the short teaching-style descriptor (formal / simplistic).
+# The current ids happen to read like the old slugs (grandmaster, big_john),
+# but nothing may reconstruct them from display_name going forward.
+
+def persona_id(text):
+    return get_field(text, "tutor_id")
+
+
+def persona_display_name(text):
+    return get_field(text, "display_name") or get_field(text, "pipeline_label").split("—")[0].strip()
+
+
+def persona_style_tag(text):
+    return get_field(text, "style")
+
+
 def persona_label(text):
-    return get_field(text, "pipeline_label")
+    """Human-readable 'DisplayName — style' label, DERIVED from the split
+    fields (used for prompts/logs only, never as an identity key)."""
+    dn, st = persona_display_name(text), persona_style_tag(text)
+    return f"{dn} — {st}" if dn and st else get_field(text, "pipeline_label")
 
 
 def persona_style(text):
+    """The long actionable teaching-philosophy section (for the L1 prompt) —
+    distinct from the short `style` descriptor tag above."""
     m = re.search(r"^## Style / teaching philosophy.*?\n(.*?)(?=^## |\Z)",
                   text, re.MULTILINE | re.DOTALL)
     return " ".join(m.group(1).split()) if m else ""
 
 
+def resolve_seed_tutor(entry):
+    """(tutor_id, style) for a seed row. Accepts a split row
+    (tutor: <id>, tutor_style: <style>) or a legacy 'Name — style' label in
+    `tutor`; both resolve against the subject's roster duo. ('', '') when the
+    row names no tutor. Never derives an id from a display name."""
+    raw = str(entry.get("tutor", "")).strip()
+    if not raw:
+        return "", ""
+    duo = subject_duo_for(entry.get("type", ""), entry.get("subject", ""))
+    slug, ptext = match_persona(duo, raw) if duo else (None, "")
+    if slug:
+        return slug, str(entry.get("tutor_style", "")).strip() or persona_style_tag(ptext)
+    # Unresolvable against a roster (e.g. no duo) — pass the raw value through
+    # only if it already looks like a bare id, else keep it for a human to fix.
+    return raw, str(entry.get("tutor_style", "")).strip()
+
+
 def match_persona(duo, tutor):
-    """(slug, card text, canonical label) for the duo member whose name
-    (the pipeline_label part before the em-dash) appears in the tutor
-    string; (None, "", "") when nothing matches."""
+    """(slug, card text) for the duo member the job card's `tutor` refers to.
+
+    Matches on tutor_id — the opaque slug — first: exact equality, no name
+    parsing. Falls back to display-name-in-string only for LEGACY cards that
+    still carry the old 'Name — style' label. (None, "") when nothing
+    matches."""
+    t = (tutor or "").strip()
     for slug, text in duo:
-        label = persona_label(text)
-        name = label.split("—")[0].strip()
-        if name and name.lower() in tutor.lower():
-            return slug, text, label
-    return None, "", ""
+        if t == slug or (persona_id(text) and t == persona_id(text)):
+            return slug, text
+    low = t.lower()
+    for slug, text in duo:  # legacy 'Name — style' fallback
+        name = persona_display_name(text).lower()
+        if name and name in low:
+            return slug, text
+    return None, ""
 
 
 # --- prompts (Level 1 tutor/plan capture, Level 2 content generation) ---
@@ -515,11 +584,11 @@ def build_level2_prompt(card, card_file):
     # Embed the selected tutor's full persona card so the script reflects
     # the established character instead of Jules re-deriving the voice from
     # the bare tutor label each session.
-    slug, persona_card, _ = match_persona(subject_duo(card), tutor)
+    slug, persona_card = match_persona(subject_duo(card), tutor)
     persona_block = ""
     if persona_card:
         persona_block = f"""
-TUTOR PERSONA CARD (lessons/tutors/{slug}.md) — every tutor-voiced item
+TUTOR PERSONA CARD (lessons/tutors/{slug}/tutor.md) — every tutor-voiced item
 (script, reel clip) must be written in exactly this established character;
 do not re-derive or soften the voice:
 --- persona card start ---
@@ -692,13 +761,15 @@ def cmd_plan(args):
         print("Error: Groq plan output missing one of TUTOR / EXAMPLE_PROBLEM / PRIOR_KNOWLEDGE / LESSON_ANGLE.")
         return 1
     duo = subject_duo(card)
+    tutor_style = ""
     if duo:
-        _, _, label = match_persona(duo, tutor)
-        if not label:
+        slug, ptext = match_persona(duo, tutor)
+        if not slug:
             valid = " | ".join(persona_label(t) for _, t in duo)
             print(f"Error: tutor persona '{tutor}' is not in this subject's duo ({valid}).")
             return 1
-        tutor = label  # normalise to the card's canonical pipeline_label
+        tutor = slug                         # store the opaque id, not a label
+        tutor_style = persona_style_tag(ptext)
     elif TUTOR_GRANDMASTER.split(" ")[0].lower() not in tutor.lower() and "john" not in tutor.lower():
         print(f"Error: unrecognised tutor persona: {tutor}")
         return 1
@@ -706,6 +777,8 @@ def cmd_plan(args):
     # Seeded values win; Groq only fills gaps.
     if not get_field(card, "tutor"):
         card = set_field(card, "tutor", tutor)
+    if tutor_style and not get_field(card, "tutor_style"):
+        card = set_field(card, "tutor_style", tutor_style)
     if not get_field(card, "example_problem"):
         card = set_field(card, "example_problem", example)
     if not get_field(card, "prior_knowledge"):
@@ -1313,9 +1386,9 @@ def speaker_names():
             text = load_tutor_card(d.name)
             if not text:
                 continue
-            label = persona_label(text)
-            if label:
-                names.add(label.split("—")[0].strip())
+            dn = persona_display_name(text)
+            if dn:
+                names.add(dn)
             real = get_field(text, "real_name")
             if real:
                 names.add(real.strip())

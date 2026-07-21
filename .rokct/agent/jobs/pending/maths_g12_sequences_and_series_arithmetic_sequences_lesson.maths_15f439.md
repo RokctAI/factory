@@ -13,7 +13,8 @@ grade: 12
 term: 1
 topic: Sequences and Series
 subtopic: Arithmetic sequences
-tutor: Grandmaster — formal
+tutor: grandmaster
+tutor_style: formal
 example_problem: Find the 20th term of 3; 7; 11; ...
 prior_knowledge: Student knows Grade 11 number patterns and linear expressions
 metarules: .rokct/types/lesson.maths/metarules

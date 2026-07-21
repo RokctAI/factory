@@ -13,7 +13,8 @@ grade: 12
 term: 2
 topic: Work, Energy and Power
 subtopic: Conservation of mechanical energy
-tutor: Ms Dlamini — formal
+tutor: ms_dlamini
+tutor_style: formal
 example_problem: A 2 kg ball is dropped from a height of 5 m. Use conservation of mechanical energy to calculate its speed just before it strikes the ground.
 prior_knowledge: Student knows kinetic and gravitational potential energy
 metarules: .rokct/types/lesson.physical_sciences/metarules
