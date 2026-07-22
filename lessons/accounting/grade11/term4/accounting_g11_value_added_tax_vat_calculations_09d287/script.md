@@ -2,7 +2,7 @@
 
 ## Subtopic: The Spaza Shop Cash Box (Intro to VAT)
 
-Welcome back, my child. Come sit down. Today, we are going to talk about something that touches every single person in this country, whether they are a big corporate business owner sitting in a fancy office in the city, or just a gogo buying a cold drink from my spaza shop. We are talking about Value Added Tax. Most people just call it VAT.
+Today, we are going to talk about something that touches every single person in this country, whether they are a big corporate business owner sitting in a fancy office in the city, or just a gogo buying a cold drink from my spaza shop. We are talking about Value Added Tax. Most people just call it VAT.
 
 Now, don't let the word "tax" scare you. I know when people hear about tax, their eyes glaze over, they get nervous, and they think it is far too complicated for them to understand. But I promise you, your local spaza shop already does double-entry bookkeeping, even if you don't know it yet. Let me show you exactly where, and how VAT fits into our everyday lives, step by step.
 
