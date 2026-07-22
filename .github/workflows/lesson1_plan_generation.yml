@@ -1,4 +1,16 @@
 name: Lesson 1 - Plan Generation
+#
+# GROQ PLAN GENERATION IS DISABLED (owner decision, 2026-07-22).
+# ---------------------------------------------------------------------------
+# Level 1 captured the tutor / example problem / prior knowledge / lesson
+# angle via a Groq call. Under direct in-context authoring (the same decision
+# that retired Jules at Level 2/3), those come from the authoring session
+# itself, not a separate generation call. The generate_plan job below is gated
+# OFF (if: false), kept rather than deleted so the mechanics stay visible and
+# re-enabling is a deliberate, documented one-line change — do NOT flip it
+# back on without a corresponding owner decision. (Book/film Level 1 groq is a
+# separate pipeline and is untouched.)
+# ---------------------------------------------------------------------------
 on:
   push:
     paths:
@@ -11,7 +23,8 @@ on:
 
 jobs:
   generate_plan:
-    if: github.actor != 'github-actions[bot]'
+    # Disabled: Groq plan generation retired for lessons (see header).
+    if: false
     runs-on: ubuntu-latest
     outputs:
       session_id: ${{ steps.delegate_task.outputs.session_id }}
