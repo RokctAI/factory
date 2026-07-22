@@ -109,3 +109,4 @@
 | mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29872190462 | — | 2026-07-21 22:01 |
 | accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_generated | system | SYS-LESSON-RULES-29907455191 | — | 2026-07-22 09:19 |
 | accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29909218268 | — | 2026-07-22 09:45 |
+| 3._wildflower_soul_66d8c1 | free verse | 3. Wildflower Soul | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-22 21:07 |
