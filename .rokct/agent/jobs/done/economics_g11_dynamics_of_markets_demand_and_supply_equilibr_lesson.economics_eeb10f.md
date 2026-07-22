@@ -13,7 +13,8 @@ grade: 11
 term: 2
 topic: Dynamics of Markets
 subtopic: Demand and supply equilibrium
-tutor: Grandmaster — formal
+tutor: tutor_007
+tutor_style: formal
 example_problem: Show on one graph how an increase in consumer income shifts the demand curve for beef, and identify the new equilibrium price and quantity.
 prior_knowledge: Student knows the demand curve, the supply curve, and how to read a graph
 metarules: .rokct/types/lesson.economics/metarules

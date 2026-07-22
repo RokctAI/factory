@@ -128,27 +128,16 @@ jobs:
               python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status pending_concept_approval --agent system
               NEW_STATUS="pending_concept_approval (crosscheck: $CROSSCHECK)"
             elif [ "$RC" -eq 2 ]; then
-              # Script length is the only failure: re-prompt Jules once to
-              # expand rather than stalling the card; hard-fail only if the
-              # second attempt still falls short.
-              echo "📏 Script too short — requesting the single expansion pass from Jules..."
-              if ! PROMPT=$(python lessons/scripts/lesson_pipeline.py prompt --file "$FILE" --level 3 2>&1); then
-                echo "❌ Expansion prompt construction failed:"
-                echo "$PROMPT"
-                exit 1
-              fi
-              if RESULT=$(python .rokct/skills/agent_delegation/scripts/call_jules.py create \
-                --repo "sources/github/RokctAI/factory" \
-                --prompt "$PROMPT" \
-                --title "Lesson 3: Script expansion - $ID" \
-                --automation-mode "AUTO_CREATE_PR" 2>&1) && [[ ! "$RESULT" == *"Error:"* ]]; then
-                echo "✅ Expansion session created."
-              else
-                echo "❌ Expansion delegation failed: $(echo "$RESULT" | tail -n 3)"
-                exit 1
-              fi
-              python lessons/scripts/lesson_pipeline.py mark-expansion --file "$FILE"
-              NEW_STATUS="expansion_requested"
+              # Script length is the only failure. The Jules expansion pass
+              # that used to run here is RETIRED (owner decision 2026-07-20):
+              # all lesson content generation, including expansion, moves to
+              # direct in-context authoring — see the header of
+              # lesson2_concept_expansion.yml. A short script is now a normal
+              # content gap for the author to fill directly, not a delegation
+              # trigger. Left distinct from a hard rules failure so the reason
+              # (too short) stays visible on the card.
+              echo "📏 Script too short for $ID — flagged for direct authoring (Jules expansion retired)."
+              NEW_STATUS="concept_generated"
             else
               echo "❌ Level 3 checks failed for $ID (rules_status: failed). Fix the content and push again."
               NEW_STATUS="concept_generated"

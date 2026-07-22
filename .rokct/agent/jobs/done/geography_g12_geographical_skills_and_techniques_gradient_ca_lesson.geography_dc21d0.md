@@ -16,7 +16,8 @@ skill_ref: geography.gradient_calculation
 requires_skills:
 topic: Geographical Skills and Techniques
 subtopic: Gradient calculation
-tutor: Grandmaster — formal
+tutor: tutor_009
+tutor_style: formal
 example_problem: Calculate the average gradient between trig beacon 251 (1 200 m) and a spot height of 900 m that are 4,5 km apart on a 1:50 000 topographic map.
 prior_knowledge: Student can read contour lines and convert between map units
 metarules: .rokct/types/lesson.geography/metarules

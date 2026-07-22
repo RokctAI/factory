@@ -40,6 +40,68 @@ top-rated. XTTS v2/F5-TTS have the best cloning tech but are legally off-limits 
 total, once. At ElevenLabs rates, a 20-min lesson ≈ 20,000 chars ≈ $2; a full ~300-lesson catalog ≈ **$600
 one-time**. Google/Azure land in a similar or cheaper range depending on tier.
 
+## Pocket TTS (Kyutai Labs) — added 2026-07-17, CPU-only WITH cloning (strongest fit so far)
+
+Released January 2026, MIT licensed, 100M params. The one option found so far that combines
+CPU-only inference (runs on the owner's own PC — Intel UHD, no GPU) with real zero-shot voice
+cloning (20s reference sample) — Piper/Kokoro lack or only community-support cloning; VibeVoice/
+Voxtral have cloning but need a GPU. Built on a new "Continuous Audio Language Models" architecture
+(predicts continuous audio representations, not discrete tokens). ~200ms time-to-first-chunk, 6x
+real-time — fast enough for CI batch production AND potentially fast enough for Mandy's live chat
+voice later, not just pre-produced lesson narration. English-only for now (matches current need).
+
+**If real-world quality holds up on actual tutor scripts, this could remove the GPU-tier question
+entirely** — no CI GPU-runner cost, no VibeVoice/Voxtral bake-off needed, cloning works locally.
+Test this FIRST, on the owner's own machine, before anything requiring a GPU runner.
+Source: kyutai.org/pocket-tts-technical-report, github.com/kyutai-labs/pocket-tts.
+
+## Voxtral TTS (Mistral AI) — added 2026-07-17, open-weight GPU option
+
+Released March 2026, open-weight, 4B params, self-hostable (Hugging Face) or via Mistral Studio API.
+Genuinely competitive with the commercial APIs above, not just the open-CPU tier:
+
+- **Voice cloning from <5s of reference audio** — captures accent/inflection/quirks, comparable to or
+  better than the self-hosted CPU options' cloning story (Piper has none, Kokoro's is community-only).
+- Reported to beat ElevenLabs Flash v2.5 in human preference tests; 90ms time-to-first-audio, built for
+  streaming/real-time.
+- **Runs on a single 16GB VRAM GPU** — smaller footprint than expected, and importantly the SAME class
+  of on-demand GitHub GPU runner already planned for VibeVoice (`linux_4_core_gpu`'s T4 has 16GB) fits
+  it — no bigger/costlier instance needed, so it slots into the exact same "on-demand CI GPU, ~$13/mo at
+  weekly-batch volume" architecture as VibeVoice, as an alternative model on the same infra.
+- 9 languages (en/fr/de/es/nl/pt/it/hi/ar) — no confirmed en-ZA, same gap as every other option here.
+- Self-hosted = no per-character cost (unlike ElevenLabs/Google/Azure); only the GPU-runner minutes.
+
+**Worth a real bake-off** against VibeVoice on the same GPU-runner infra before committing — same
+hosting cost class, but Voxtral's fast built-in cloning and reported quality edge make it a strong
+contender, possibly the strongest self-hosted option once actually tested against real tutor scripts.
+
+## Voicebox (jamiepine) — added 2026-07-20, an authoring tool, not a CI engine — untested
+
+Not a TTS engine itself — a local-first desktop voice studio (Tauri/React/FastAPI, MIT, 43.7k
+stars) that wraps and switches between 7 engines (Kokoro, LuxTTS, Qwen3-TTS, Chatterbox Turbo/
+Multilingual, TADA/HumeAI, Qwen CustomVoice), plus full voice cloning from a sample or 50+ presets,
+Whisper-based STT, and a timeline editor. Its own README frames it as bridging ElevenLabs (output)
+and WisprFlow (input) locally, with a bundled LLM for refinement and per-profile personas.
+
+**Real potential use, distinct from the CI question**: this doesn't need to run in production —
+Level 6 is a batch CI job, Voicebox is an interactive desktop app, wrong shape for that role. But it
+could be the tool a human uses ONCE to actually clone each tutor's voice (Grandmaster, Big John,
+Mandy) from a reference sample, before any of the CI/production questions matter. That's a genuinely
+different problem than "run this in GitHub Actions."
+
+**The deciding question, not yet answered**: does Voicebox's cloning produce a portable voice
+profile usable headlessly via the underlying engine's own CLI/API (e.g. clone in Voicebox, then run
+that same Chatterbox/Qwen3-TTS voice profile in CI without the desktop app) — or is the cloned voice
+locked inside the app's own UI, unusable outside it? If portable: Voicebox becomes the voice-creation
+step, whichever underlying engine it wraps becomes the production engine. If locked-in: it's useful
+only for prototyping/audition, not for the real pipeline. Needs a real test before either conclusion.
+
+Also surfaces four engine names not otherwise in this doc, unresearched individually — LuxTTS,
+Qwen3-TTS, Chatterbox (Turbo/Multilingual), TADA/HumeAI. Worth noting Voicebox's maintainer chose
+Kokoro as one of only 7 supported engines, consistent with Kokoro already being a reasonable pick
+above — not independent confirmation of the others' quality/license/CPU-GPU story, which remain
+unchecked.
+
 ## Recommendation (not yet decided, for your review)
 
 - **Near-term**: ElevenLabs Professional Voice Cloning — purpose-built for exactly this ("one consistent

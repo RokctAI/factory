@@ -1,4 +1,21 @@
 name: Lesson 2 - Content Generation
+#
+# JULES CONTENT GENERATION IS DISABLED (owner decision, 2026-07-20).
+# ---------------------------------------------------------------------------
+# Level 2 lesson content is no longer delegated to Jules. Content is now
+# authored directly by a Claude session that carries the full set of
+# standards established this cycle (band/camera model, script content bans,
+# tutor voice conventions, the metarules fixes). A separately-prompted
+# delegate kept re-introducing violations the pipeline then had to catch and
+# correct one at a time (e.g. it kept writing sign-offs the metarules had
+# literally instructed, and stage directions TTS would read aloud); moving
+# authoring in-context removes that whack-a-mole loop.
+#
+# The `expand_lesson` job below is gated OFF (if: false). It is kept, rather
+# than deleted, so the delegation mechanics remain visible/reviewable and so
+# re-enabling is a deliberate one-line change with this rationale attached —
+# do NOT flip it back on without a corresponding owner decision.
+# ---------------------------------------------------------------------------
 on:
   push:
     paths:
@@ -9,7 +26,8 @@ on:
 
 jobs:
   expand_lesson:
-    if: github.actor != 'github-actions[bot]'
+    # Disabled: Jules delegation retired for lesson content (see header).
+    if: false
     runs-on: ubuntu-latest
     outputs:
       session_id: ${{ steps.delegate_task.outputs.session_id }}

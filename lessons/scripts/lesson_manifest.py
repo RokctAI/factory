@@ -78,6 +78,66 @@ def strip_script_to_narration(script_md):
     return " ".join(lines)
 
 
+def split_script_into_segments(script_md):
+    """[(subtopic_index, narration)] — the script split at its
+    '## Subtopic: <title>' headings, each block reduced to spoken narration.
+
+    Per-subtopic granularity is deliberate (model (B) production):
+      * each segment is synthesized separately, so its duration is MEASURED
+        rather than estimated — subtopic boundaries become the exact sum of
+        real segment lengths instead of one global proportional stretch;
+      * it is the only granularity at which a single corrected subtopic can
+        be re-synthesized without redoing the whole lesson's audio;
+      * a two-part lesson can synthesize each speaker's own subtopics in
+        that speaker's voice.
+    Any narration appearing before the first heading is attached to
+    segment 0 so nothing is silently dropped.
+    """
+    blocks, current = [], []
+    for line in script_md.splitlines():
+        if re.match(r"^\s*##\s*Subtopic\s*:", line, re.IGNORECASE):
+            blocks.append(current)
+            current = []
+        current.append(line)
+    blocks.append(current)
+    # blocks[0] is any preamble before the first heading
+    preamble, *subtopic_blocks = blocks
+    segments = []
+    if not subtopic_blocks:
+        text = strip_script_to_narration("\n".join(preamble))
+        return [(0, text)] if text else []
+    lead = strip_script_to_narration("\n".join(preamble))
+    for i, block in enumerate(subtopic_blocks):
+        text = strip_script_to_narration("\n".join(block))
+        if i == 0 and lead:
+            text = (lead + " " + text).strip()
+        if text:
+            segments.append((i, text))
+    return segments
+
+
+def concat_wavs(parts, out_wav):
+    """Concatenate segment wavs into one track, server-side.
+
+    Client-side gapless playback is NOT achievable on the current stack
+    (measured: audioplayers has no queue/gapless API; a segment join leaves
+    ~100-150ms of audible silence), so the segments are joined here and the
+    lesson ships ONE audio file. Done on raw PCM frames — no re-encode, so
+    concatenation is lossless and sample-exact; only the final wav->mp3 step
+    encodes, exactly once."""
+    with wave.open(str(parts[0]), "rb") as first:
+        params = first.getparams()
+    with wave.open(str(out_wav), "wb") as out:
+        out.setparams(params)
+        for p in parts:
+            with wave.open(str(p), "rb") as w:
+                if w.getparams()[:3] != params[:3]:
+                    raise SystemExit(
+                        f"segment {p} has mismatched audio params "
+                        f"{w.getparams()[:3]} vs {params[:3]}")
+                out.writeframes(w.readframes(w.getnframes()))
+
+
 def synth_audio_sapi(text, out_wav):
     """Offline OS TTS -> wav. Real audio, no GPU.
 
@@ -175,42 +235,41 @@ def two_part_split(card_text, subtopics):
     return ref
 
 
-def resolve_tutor_pair(card_text, tutor_label):
-    """(first, second) tutor identity dicts for the manifest, derived from
-    the tutor roster's paired-duo mapping — roster.json already captures the
-    two-tutor-per-lesson design (every subject has an Expert + Simplifier
-    duo), so the second tutor needs NO new job-card field: it is simply the
-    other member of the card subject's duo. Returns (first, None) when the
-    roster cannot resolve a pair (legacy label, missing roster).
+def resolve_tutor_pair(card_text, tutor_ref):
+    """(first, second) tutor identity dicts for the manifest, resolved from
+    the tutor roster's paired-duo mapping. `tutor_ref` is the card's `tutor`
+    field — an opaque tutor id (never a display name). The second tutor is
+    the other member of the subject's duo, so it needs no separate card
+    field. Returns (first, None) when the roster cannot resolve a pair.
 
-    NOTE: resolving a pair does NOT mean the lesson is two-part — see
+    Identity is read from explicit persona-card fields (opaque `id` /
+    display_name); NOTHING re-derives an id from a display name. NOTE:
+    resolving a pair does NOT mean the lesson is two-part — see
     two_part_split(); the caller drops `second` for single-voice lessons."""
     sys.path.insert(0, str(Path(__file__).parent))
-    from lesson_pipeline import (card_roster_key, load_roster, load_tutor_card,
-                                 persona_label)
+    from lesson_pipeline import (load_tutor_card, match_persona,
+                                 persona_display_name, subject_duo)
 
     def identity(slug):
+        # `slug` is the persona DIRECTORY name (for loading the card); the
+        # manifest's tutor id is the card's OPAQUE id (tutor_XXX), never the
+        # directory slug.
+        from lesson_pipeline import persona_id
         text = load_tutor_card(slug)
-        label = persona_label(text) if text else slug
-        name = label.split("—")[0].strip() if label else slug
+        oid = persona_id(text) if text else ""
+        name = persona_display_name(text) if text else slug
         real = get_field(text, "real_name") if text else ""
-        return {"id": slug, "display_name": name,
+        return {"id": oid or slug, "display_name": name or slug,
                 **({"real_name": real} if real else {})}
 
-    fallback = {"id": tutor_label.split("—")[0].strip().lower().replace(" ", "_"),
-                "display_name": tutor_label.split("—")[0].strip()}
-    duo = load_roster().get("subjects", {}).get(card_roster_key(card_text), {})
-    slugs = [duo.get("expert", ""), duo.get("simplifier", "")]
-    if not all(slugs):
-        return fallback, None
-    name_part = tutor_label.split("—")[0].strip().lower()
-    first_slug = next(
-        (s for s in slugs
-         if persona_label(load_tutor_card(s)).split("—")[0].strip().lower() in name_part
-         or name_part in persona_label(load_tutor_card(s)).split("—")[0].strip().lower()),
-        None)
+    duo = subject_duo(card_text)  # subject_duo reads type/subject from the text
+    if len(duo) < 2:
+        # No resolvable duo: single, id-as-given, name from its card if any.
+        return identity(tutor_ref.strip()), None
+    first_slug, _ = match_persona(duo, tutor_ref)
     if first_slug is None:
-        return fallback, None
+        return identity(tutor_ref.strip()), None
+    slugs = [s for s, _ in duo]
     second_slug = slugs[1] if first_slug == slugs[0] else slugs[0]
     return identity(first_slug), identity(second_slug)
 
@@ -241,7 +300,7 @@ def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
 
 def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                  scale, audio_seconds, topic, topic_display_seconds,
-                 split_ref=None, break_questions=None):
+                 split_ref=None, break_questions=None, segment_bounds=None):
     """Manifest track events from subtopics.json, scaled to real audio.
 
     topic_display at 0 (full-screen topic while the tutor speaks the intro —
@@ -273,9 +332,16 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
         refs = [s.get("ref") for s in subs]
         break_after_ref = refs[refs.index(split_ref) - 1]
     last_end = 0.0
-    for sub in subs:
-        start = round(min(sub["start_seconds"] * scale, cap), 2)
-        end = round(min(sub["end_seconds"] * scale, cap), 2)
+    for i, sub in enumerate(subs):
+        # EXACT boundaries when per-subtopic segments were measured; the
+        # proportional stretch is only the fallback for a script whose
+        # headings did not map onto the subtopic list.
+        if segment_bounds and i < len(segment_bounds):
+            start, end = segment_bounds[i]
+            start, end = round(min(start, cap), 2), round(min(end, cap), 2)
+        else:
+            start = round(min(sub["start_seconds"] * scale, cap), 2)
+            end = round(min(sub["end_seconds"] * scale, cap), 2)
         last_end = end
         tracks.append({"time": start, "type": "subtopic_start",
                        "ref": sub["ref"], "title": sub.get("title", "")})
@@ -316,7 +382,7 @@ def main():
     subject = get_field(card, "subject")
     grade = int(get_field(card, "grade") or 0)
     topic = get_field(card, "topic")
-    tutor = get_field(card, "tutor") or "Grandmaster — formal"
+    tutor = get_field(card, "tutor") or "grandmaster"  # opaque tutor id
     lesson_path = repo / get_field(card, "lesson_path")
 
     subtopics = json.loads((lesson_path / "subtopics.json").read_text("utf-8"))
@@ -330,22 +396,68 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # --- 5/6. audio ---
-    narration = strip_script_to_narration(script_md)
-    if args.max_narration_chars and len(narration) > args.max_narration_chars:
-        narration = narration[:args.max_narration_chars]
     wav_path = out_dir / "audio.wav"
-    print(f"[audio] backend={args.audio_backend} chars={len(narration)}")
-    if args.audio_backend == "vibevoice":
-        # Voice preset comes from the tutor persona card (documented intent
-        # today; Level 6 maps it to a real VibeVoice speaker embedding).
-        synth_audio_vibevoice(narration, wav_path, voice_preset=tutor)
-    else:
-        synth_audio_sapi(narration, wav_path)
+
+    # --- per-subtopic synthesis, then server-side concatenation ---
+    # Each subtopic is synthesized as its own segment (in the voice of the
+    # speaker who owns it) and the segments are concatenated here into ONE
+    # audio.mp3. Client-side gapless playback of separate files is not
+    # achievable on the current stack, so the join happens server-side; the
+    # concat is on raw PCM frames, so nothing is re-encoded.
+    segments = split_script_into_segments(script_md)
+    split_ref_early = two_part_split(card, subtopics)
+    sub_refs = [s.get("ref") for s in subtopics.get("subtopics", [])]
+    split_index = sub_refs.index(split_ref_early) if (
+        split_ref_early and split_ref_early in sub_refs) else None
+
+    print(f"[audio] backend={args.audio_backend} segments={len(segments)} "
+          f"chars={sum(len(t) for _, t in segments)}")
+    # Resolve the tutor identities once (by opaque id, from the roster duo).
+    # Segments before the split speak in the first tutor's voice, segments
+    # from the split onward in the second tutor's — only when the lesson is
+    # actually two-part.
+    seg_first, seg_second = resolve_tutor_pair(card, tutor)
+    seg_files, seg_durations = [], []
+    for idx, text in segments:
+        if args.max_narration_chars:
+            text = text[:args.max_narration_chars]
+        voice = seg_first["display_name"]
+        if split_index is not None and idx >= split_index and seg_second:
+            voice = seg_second["display_name"]
+        seg_path = out_dir / f"seg_{idx:02d}.wav"
+        if args.audio_backend == "vibevoice":
+            # Voice preset comes from the tutor persona card (documented
+            # intent today; Level 6 maps it to a VibeVoice speaker embedding).
+            synth_audio_vibevoice(text, seg_path, voice_preset=voice)
+        else:
+            synth_audio_sapi(text, seg_path)
+        d = wav_duration_seconds(seg_path)
+        seg_files.append(seg_path)
+        seg_durations.append(d)
+        print(f"  seg {idx:02d} [{voice}]: {d:6.1f}s  {len(text)} chars")
+
+    if not seg_files:
+        raise SystemExit("script produced no narration segments")
+    concat_wavs(seg_files, wav_path)
     audio_seconds = wav_duration_seconds(wav_path)
+    drift = abs(audio_seconds - sum(seg_durations))
+    if drift > 0.05:
+        raise SystemExit(f"concat lost {drift:.3f}s vs the sum of segments")
+    for p in seg_files:
+        p.unlink()
     mp3_path = out_dir / "audio.mp3"
     to_mp3(wav_path, mp3_path)
     wav_path.unlink()
-    print(f"[audio] {audio_seconds:.1f}s -> {mp3_path.name}")
+    print(f"[audio] {len(seg_files)} segment(s) -> {audio_seconds:.1f}s "
+          f"(sum {sum(seg_durations):.1f}s, drift {drift:.3f}s) -> {mp3_path.name}")
+
+    # EXACT subtopic boundaries: cumulative measured segment durations, so a
+    # boundary is the real moment the narration changes subtopic — not a
+    # global proportional stretch of the intended timeline.
+    segment_bounds, _cursor = [], 0.0
+    for d in seg_durations:
+        segment_bounds.append((round(_cursor, 2), round(_cursor + d, 2)))
+        _cursor += d
 
     # --- 4. animation primitives ---
     sys.path.insert(0, str(repo / "lessons" / "scripts"))
@@ -363,8 +475,28 @@ def main():
     for ev in anim.get("camera", []):
         ev["time"] = round(ev["time"] * anim_scale, 2)
     anim["duration_seconds"] = round(audio_seconds, 2)
+
+    # CAMERA CONTRACT FIX (production bug): the exporter emitted camera pans
+    # as a sibling top-level "camera" array, but the app
+    # (ReplayLessonEngine) loads ONLY decoded["primitives"] and detects
+    # camera events by primitive type (camera_move/band_start) INSIDE that
+    # list — so every camera event was dropped on load and the band camera
+    # never panned in the app. Fold the camera events into the primitives
+    # stream as inline camera_move events (the shape the player actually
+    # reads) and drop the dead sibling array. duration_ms matches the
+    # scene's 0.8s pan; the player defaults to 800ms if absent anyway.
+    camera_events = anim.pop("camera", [])
+    for ev in camera_events:
+        anim["primitives"].append({
+            "primitive": "camera_move",
+            "time": ev["time"],
+            "target": ev["target"],
+            "duration_ms": 800,
+        })
+    anim["primitives"].sort(key=lambda p: p["time"])
     anim_path.write_text(json.dumps(anim, indent=2), encoding="utf-8")
-    print(f"[align] subtopic x{subtopic_scale:.3f}  animation x{anim_scale:.3f}")
+    print(f"[align] subtopic x{subtopic_scale:.3f}  animation x{anim_scale:.3f}  "
+          f"camera_move inlined x{len(camera_events)}")
 
     # TOPIC-DISPLAY TIMING: the player shows the topic full-screen while the
     # tutor speaks the intro, until board work begins. That duration is
@@ -401,7 +533,10 @@ def main():
     tracks = build_tracks(subtopics, mcq, comprehension, first_tutor,
                           second_tutor, subtopic_scale, audio_seconds,
                           topic, topic_display_seconds,
-                          split_ref=split_ref, break_questions=break_questions)
+                          split_ref=split_ref, break_questions=break_questions,
+                          segment_bounds=(segment_bounds
+                                          if len(segment_bounds) == len(subtopics.get("subtopics", []))
+                                          else None))
 
     # Manifest-level question bank: subtopic_end `exercise` entries are IDs
     # the app resolves against this map (lms_sdk McqQuestion.fromJson reads

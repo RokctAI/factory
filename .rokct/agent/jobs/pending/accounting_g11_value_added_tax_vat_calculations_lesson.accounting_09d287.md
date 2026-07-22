@@ -13,7 +13,8 @@ grade: 11
 term: 4
 topic: Value Added Tax
 subtopic: VAT calculations
-tutor: Aunty Grace — simplistic, lower grade logic
+tutor: tutor_006
+tutor_style: simplistic, lower grade logic
 example_problem: An item is marked R2 875 including VAT at 15%. Calculate the VAT amount and the price excluding VAT.
 prior_knowledge: Student knows percentages and the concept of VAT
 metarules: .rokct/types/lesson.accounting/metarules
@@ -26,7 +27,7 @@ concept: |
   The pacing is patient, starting with real-world money flow before introducing formal T-accounts and double-entry logic.
   The example problem (R2 875 including 15% VAT) is worked explicitly, illustrating the "what we want / what we have" rule (15/115).
 concept_status:
-rules_status: expanding
+rules_status: failed
 lesson_name: VAT Calculations (115% Rule)
 lesson_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287
 script_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/script.md

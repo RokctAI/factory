@@ -41,7 +41,8 @@ skill_ref:
 requires_skills:
 topic:
 subtopic:
-tutor:
+tutor:            # stable opaque tutor id (persona dir slug); never a display name
+tutor_style:      # short teaching-style descriptor (formal / simplistic...)
 example_problem:
 prior_knowledge:
 metarules:

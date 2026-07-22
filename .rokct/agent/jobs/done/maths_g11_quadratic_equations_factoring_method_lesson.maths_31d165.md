@@ -13,7 +13,8 @@ grade: 11
 term: 1
 topic: Quadratic Equations
 subtopic: Factoring method
-tutor: Grandmaster — formal
+tutor: tutor_001
+tutor_style: formal
 example_problem: 2x²+5x+3=0
 prior_knowledge: Student knows multiplication, basic algebra
 metarules: .rokct/types/lesson.maths/metarules
@@ -46,13 +47,13 @@ loop_iterations: 0
 max_iterations: 10
 past_paper_examples: dbe_maths_g11_p1_2018_nov:Q1.1.1, dbe_maths_g11_p1_2017_nov:Q1.1.1
 manifest_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json
-manifest_checksum: fbb0b18cc3f47cd026cb7ae57c145cede27bbeef133d94a0e212dabe31605412
-manifest_size_bytes: 8647
+manifest_checksum: b444ed9a390b243a172d449dddb6bc14e06eb1e8a40e33badd9a012c13ee2f39
+manifest_size_bytes: 8645
 audio_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/audio.mp3
-audio_checksum: d43829477c03c388e6816102f0be6e929c64566f8608ef4ff2f3591a3ece1582
-audio_size_bytes: 6148098
+audio_checksum: be26572fb73b5100450bb85453a3251a8a8559b3580332cfd4711d88db43a7d6
+audio_size_bytes: 6159808
 animation_url: https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/animations.json
-animation_checksum: be684c7388a2ea24c8a7606fdd8e7420cecee7cef9994ba16213fcfa4c013617
-animation_size_bytes: 7446
-produced_at: 2026-07-19T20:16:52+00:00
+animation_checksum: 48494c19bcae80cfd152e22e1fbbbd8555bc04687fb47ecc54da8ded57640b67
+animation_size_bytes: 7845
+produced_at: 2026-07-21T18:07:54+00:00
 ---

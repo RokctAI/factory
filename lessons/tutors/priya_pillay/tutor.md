@@ -1,6 +1,10 @@
 # Tutor Persona: Mrs Pillay
 status: PROVISIONAL - invented 2026-07-14 (Mathematical Literacy has no named characters in the source doc); confirm or rename before launch
-pipeline_label: Mrs Pillay — formal
+pipeline_label: Mrs Pillay — formal  # derived: display_name + ' — ' + style
+id: tutor_011
+legacy_slug: priya_pillay  # read-only migration breadcrumb; not used for matching
+display_name: Mrs Pillay
+style: formal
 role: expert
 subjects: [Mathematical Literacy]
 real_name: Mrs Priya Pillay

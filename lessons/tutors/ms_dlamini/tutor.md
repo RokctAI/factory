@@ -1,6 +1,10 @@
 # Tutor Persona: Ms Dlamini
 status: canonical name (supacharge-characters.md §1); style expanded per the Expert formula - review before launch
-pipeline_label: Ms Dlamini — formal
+pipeline_label: Ms Dlamini — formal  # derived: display_name + ' — ' + style
+id: tutor_003
+legacy_slug: ms_dlamini  # read-only migration breadcrumb; not used for matching
+display_name: Ms Dlamini
+style: formal
 role: expert
 subjects: [Physical Sciences]
 real_name: Ms Dlamini
