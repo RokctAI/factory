@@ -27,7 +27,7 @@ concept: |
   The pacing is patient, starting with real-world money flow before introducing formal T-accounts and double-entry logic.
   The example problem (R2 875 including 15% VAT) is worked explicitly, illustrating the "what we want / what we have" rule (15/115).
 concept_status:
-rules_status: failed
+rules_status: passed
 lesson_name: VAT Calculations (115% Rule)
 lesson_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287
 script_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/script.md
@@ -39,14 +39,16 @@ reel_brief_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax
 mandy_transcript_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/mandy_qa_transcript.md
 mandy_nervous_script_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/mandy_nervous_script.md
 expansion_requested: 1
-crosscheck_status:
-crosscheck_notes:
-status: concept_generated
+crosscheck_status: passed
+crosscheck_notes: |
+  [2026-07-22 09:45] Independent AI review (fresh Groq/llama call, not the generating agent): PASS
+  - no issues found
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-22 09:18:55
+last_updated: 2026-07-22 09:45:33
 session_id: 
 session_started: 
-attempts: 2
+attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
