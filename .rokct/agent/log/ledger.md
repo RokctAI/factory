@@ -107,3 +107,4 @@
 | accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_generated | system | SYS-LESSON-RULES-29868973124 | — | 2026-07-21 21:12 |
 | accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_generated | system | SYS-LESSON-RULES-29871427569 | — | 2026-07-21 21:49 |
 | mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29872190462 | — | 2026-07-21 22:01 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_generated | system | SYS-LESSON-RULES-29907455191 | — | 2026-07-22 09:19 |
