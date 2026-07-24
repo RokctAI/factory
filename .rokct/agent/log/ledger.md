@@ -114,3 +114,4 @@
 | 4._midnight_miracles_c0bc8b | poetry | 4. Midnight Miracles | pending_approval | groq | GROQ-29970508411 | — | 2026-07-23 00:57 |
 | 3._starlight_serenades_9853b0 | poetry | 3. Starlight Serenades | pending_approval | groq | GROQ-29980251552 | — | 2026-07-23 04:43 |
 | 1._cosmic_dreams_f83e1e | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29989548478 | — | 2026-07-23 07:53 |
+| 2._forgotten_libraries_868b40 | short story | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-24 21:03 |
