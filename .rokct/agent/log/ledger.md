@@ -116,3 +116,4 @@
 | 1._cosmic_dreams_f83e1e | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29989548478 | — | 2026-07-23 07:53 |
 | 2._forgotten_libraries_868b40 | short story | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-24 21:03 |
 | echoes_in_the_night_656777 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30131228118 | — | 2026-07-24 22:32 |
+| lost_cities_of_the_mind_6eded8 | poetry | Lost Cities of the Mind | pending_approval | groq | GROQ-30137473883 | — | 2026-07-25 00:57 |
