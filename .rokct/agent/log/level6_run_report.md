@@ -1,12 +1,12 @@
-# Level 6 run report — run 29855793486 (2026-07-21 18:07:19 UTC)
-- event: push  sha: 6207288826d43aee600a4593ef2fa202fd71044e
-- AUDIO_BACKEND=sapi MAX_CARDS=1 CARD_FILTER=maths_g11_quadratic_equations_factoring
+# Level 6 run report — run 30189645848 (2026-07-26 05:37:44 UTC)
+- event: schedule  sha: bc438aab1938533747ac0dc00a950918715050ba
+- AUDIO_BACKEND=sapi MAX_CARDS=5 CARD_FILTER=
 - scaffolds: call_groq.py call_jules.py check_health.py crypto_utils.py handle_groq_output.py lock_job.py manage_sessions.py privacy_sync.py response_kits.py update_audit_logs.py update_classifications.py update_dashboard.py update_status.py update_structure.py 
 - manim: 0.19.1
 - pyttsx3: 1
-- skip economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f: card_filter 'maths_g11_quadratic_equations_factoring' mismatch
-- skip geography_g12_geographical_skills_and_techniques_gradient_ca_lesson.geography_dc21d0.md: status='failed' (want produced)
-- producing maths_g11_quadratic_equations_factoring_method_31d165 (backend sapi, reproduce=1)
-- assembled maths_g11_quadratic_equations_factoring_method_31d165: {"session_id": "maths_g11_quadratic_equations_factoring_method_31d165", "audio_seconds": 692.1, "tracks": 12, "primitives": 39}
-- stop: reached MAX_CARDS=1
-- done: produced [ maths_g11_quadratic_equations_factoring_method_31d165] (count=1)
+- skip economics_g11_dynamics_of_markets_demand_and_supply_equilibr_lesson.economics_eeb10f.md: status='produced' (want evaluated)
+- skip geography_g12_geographical_skills_and_techniques_gradient_ca_lesson.geography_dc21d0.md: status='failed' (want evaluated)
+- skip maths_g11_quadratic_equations_factoring_method_lesson.maths_31d165.md: status='produced' (want evaluated)
+- skip maths_g11_quadratic_equations_quadratic_formula_lesson.maths_6e05ed.md: status='produced' (want evaluated)
+- skip physical_sciences_g11_newton_s_laws_newton_s_second_law_lesson.physical_sciences_fb6bed.md: status='produced' (want evaluated)
+- done: produced [] (count=0)
