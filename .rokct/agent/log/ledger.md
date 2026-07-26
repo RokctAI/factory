@@ -123,3 +123,4 @@
 | 4._whispers_of_wilderness_ef57d9 | nature poetry | 4. Whispers of Wilderness | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-26 20:57 |
 | whispers_of_the_forest_ad240e | fantasy | Whispers of the Forest | pending_approval | groq | GROQ-30221014616 | — | 2026-07-26 21:25 |
 | echoes_in_the_night_0247a7 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30223108835 | — | 2026-07-26 22:26 |
+| beyond_the_silence_197d40 | mystery | Beyond the Silence | pending_approval | groq | GROQ-30225221766 | — | 2026-07-26 23:25 |
