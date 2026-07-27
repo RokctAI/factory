@@ -10,34 +10,163 @@
     {
       "term": 1,
       "topics": [
-        "Number patterns, sequences and series",
-        "Functions: Formal definition, inverses, exponential and logarithmic",
-        "Trigonometry"
+        {
+          "name": "Number patterns, sequences and series",
+          "subtopics": [
+            "Revise number patterns with a constant second difference (quadratic general term)",
+            "Arithmetic and geometric sequences and series",
+            "Sigma notation",
+            "Derive and apply sum formulae for arithmetic and geometric series, including the sum to infinity of a convergent geometric series (−1<r<1)"
+          ]
+        },
+        {
+          "name": "Functions: Formal definition, inverses, exponential and logarithmic",
+          "subtopics": [
+            "Definition of a function",
+            "Inverse of a function; restricting the domain to obtain a one-to-one function",
+            "Determine and sketch inverses of y=ax+q, y=ax², y=bˣ (b>0, b≠1)",
+            "Graph characteristics: domain and range, intercepts, turning points, minima/maxima, asymptotes, shape and symmetry, average gradient, increasing/decreasing intervals",
+            "Revise the exponential function and exponential laws",
+            "Definition of a logarithm: y=log_b x ⇔ x=bʸ (b>0, b≠1)",
+            "Graph of y=log_b x for 0<b<1 and b>1"
+          ]
+        },
+        {
+          "name": "Trigonometry",
+          "subtopics": [
+            "Compound angle identities: sin(α±β), cos(α±β)",
+            "Double angle identities: sin2α, the three forms of cos2α",
+            "Revise proofs of the sine, cosine and area rules",
+            "Solve problems in two and three dimensions using the sine, cosine and area rules"
+          ]
+        }
+      ],
+      "sba": [
+        "Investigation or project",
+        "Test (content of Term 1)"
       ]
     },
     {
       "term": 2,
       "topics": [
-        "Euclidean Geometry",
-        "Analytical Geometry",
-        "Differential Calculus, including polynomials"
+        {
+          "name": "Euclidean Geometry",
+          "subtopics": [
+            "Revise necessary and sufficient conditions for polygons to be similar",
+            "Prove: a line parallel to one side of a triangle divides the other two sides proportionally (Mid-point Theorem as special case of the converse)",
+            "Prove: equiangular triangles are similar",
+            "Prove: triangles with sides in proportion are similar",
+            "Prove: the Pythagorean Theorem by similar triangles"
+          ]
+        },
+        {
+          "name": "Analytical Geometry",
+          "subtopics": [
+            "Revise: equation of a line through two points; through one point parallel/perpendicular to a given line; inclination of a line (m=tanθ, 0°≤θ≤180°)",
+            "Equation of a circle (x−a)²+(y−b)²=r²",
+            "Equation of a tangent to a given circle"
+          ]
+        },
+        {
+          "name": "Differential Calculus, including polynomials",
+          "subtopics": [
+            "Factorise third-degree polynomials; remainder and factor theorems (degree ≤ 3, no proofs)",
+            "Intuitive understanding of the limit concept",
+            "Derivative from first principles for f(x)=ax²+bx+c, ax³, a/x and constants",
+            "Differentiation rules: d/dx(axⁿ)=anxⁿ⁻¹; sum/difference and constant-multiple rules",
+            "Equations of tangents to graphs of functions",
+            "Second derivative and concavity",
+            "Sketch cubic polynomial graphs: stationary points, points of inflection, x-intercepts (factor theorem)",
+            "Practical optimisation and rates of change, including calculus of motion"
+          ]
+        }
+      ],
+      "sba": [
+        "Assignment",
+        "June exam/control test"
       ]
     },
     {
       "term": 3,
       "topics": [
-        "Finance, growth and decay (continuation)",
-        "Statistics",
-        "Counting and probability",
-        "Revision"
+        {
+          "name": "Finance, growth and decay (continuation)",
+          "subtopics": [
+            "Revise simple and compound growth and decay formulae A=P(1±in), A=P(1±i)ⁿ (incl. straight-line and reducing-balance depreciation)",
+            "Present value and future value annuities",
+            "Use logarithms to calculate n (the time period)",
+            "Critically analyse investment and loan options (including pyramid schemes)"
+          ]
+        },
+        {
+          "name": "Statistics",
+          "subtopics": [
+            "Revise: histograms, frequency polygons, ogives, variance and standard deviation (ungrouped), symmetric and skewed data, outliers",
+            "Bivariate data: scatterplots, least squares regression line, correlation; interpolation, extrapolation, skewness commentary"
+          ]
+        },
+        {
+          "name": "Counting and probability",
+          "subtopics": [
+            "Revise: addition rule, mutually exclusive events, complementary rule, independent events and the product rule",
+            "Venn diagrams up to three events; tree diagrams; two-way contingency tables",
+            "Fundamental counting principle",
+            "Probability problems using counting techniques"
+          ]
+        },
+        {
+          "name": "Revision"
+        }
+      ],
+      "sba": [
+        "Test",
+        "Trial examination"
       ]
     },
     {
       "term": 4,
       "topics": [
-        "Revision",
+        {
+          "name": "Revision"
+        },
+        {
+          "name": "Final examination"
+        }
+      ],
+      "sba": [
         "Final examination"
       ]
     }
+  ],
+  "exam_structure": {
+    "paper1": {
+      "marks": 150,
+      "hours": 3,
+      "sections": {
+        "Algebraic expressions, equations and inequalities": 25,
+        "Number patterns": 25,
+        "Functions and graphs": 35,
+        "Finance, growth and decay": 15,
+        "Differential Calculus": 35,
+        "Counting principle and probability": 15
+      }
+    },
+    "paper2": {
+      "marks": 150,
+      "hours": 3,
+      "sections": {
+        "Statistics": 20,
+        "Analytical Geometry": 40,
+        "Trigonometry": 40,
+        "Euclidean Geometry": 50
+      }
+    }
+  },
+  "sba_weighting": [
+    "Total SBA tasks: 6",
+    "Term 1: Investigation/project (15%) and test (15%)",
+    "Term 2: Assignment (15%) and June exam/control test (15%)",
+    "Term 3: Test (15%) and trial (25%)",
+    "Term 4: Final examination"
   ]
 }

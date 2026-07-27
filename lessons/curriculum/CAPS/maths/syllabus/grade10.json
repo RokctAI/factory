@@ -10,38 +10,186 @@
     {
       "term": 1,
       "topics": [
-        "Algebraic expressions",
-        "Exponents, equations and inequalities",
-        "Trigonometry"
+        {
+          "name": "Algebraic expressions",
+          "subtopics": [
+            "Rational and irrational real numbers",
+            "Determine between which two integers a given simple surd lies",
+            "Round real numbers to an appropriate degree of accuracy",
+            "Multiplication of a binomial by a trinomial",
+            "Factorisation: trinomials, grouping in pairs, sum and difference of two cubes",
+            "Simplify, add and subtract algebraic fractions using factorisation (denominators up to sum/difference of cubes)"
+          ]
+        },
+        {
+          "name": "Exponents, equations and inequalities",
+          "subtopics": [
+            "Revise Grade 9 laws of exponents (including negative and zero exponents)",
+            "Use exponent laws to simplify expressions and solve equations (rational exponents)",
+            "Revise solution of linear equations",
+            "Solve quadratic equations by factorisation",
+            "Solve simultaneous linear equations in two unknowns",
+            "Word problems: linear, quadratic or simultaneous linear equations",
+            "Literal equations (changing the subject of a formula)",
+            "Linear inequalities with graphical solutions; interval notation"
+          ]
+        },
+        {
+          "name": "Trigonometry",
+          "subtopics": [
+            "Define sin, cos and tan in right-angled triangles",
+            "Extend definitions of sin, cos and tan to 0°–360°",
+            "Reciprocal ratios cosec, sec and cot (examined in Grade 10 only)",
+            "Special angle values (0°, 30°, 45°, 60°, 90°) without a calculator",
+            "Two-dimensional problems involving right-angled triangles",
+            "Simple trigonometric equations for angles 0°–90°",
+            "Numerical values of ratios for angles 0°–360° from diagrams"
+          ]
+        }
+      ],
+      "sba": [
+        "Investigation or project",
+        "Test (content of Term 1)"
       ]
     },
     {
       "term": 2,
       "topics": [
-        "Euclidean Geometry",
-        "Analytical Geometry",
-        "Functions (including trigonometric functions)"
+        {
+          "name": "Euclidean Geometry",
+          "subtopics": [
+            "Revise lines, angles and triangles; similarity and congruence of triangles",
+            "Special quadrilaterals (kite, parallelogram, rectangle, rhombus, square, trapezium): investigate, conjecture and prove properties of sides, angles, diagonals, areas",
+            "Investigate the line segment joining the midpoints of two sides of a triangle",
+            "Solve problems and prove riders using parallel lines, triangles, quadrilaterals and the midpoint theorem"
+          ]
+        },
+        {
+          "name": "Analytical Geometry",
+          "subtopics": [
+            "Distance between two points",
+            "Gradient of a line segment; parallel and perpendicular lines",
+            "Coordinates of the midpoint of a line segment",
+            "Represent quadrilaterals and other figures on the Cartesian plane"
+          ]
+        },
+        {
+          "name": "Functions (including trigonometric functions)",
+          "subtopics": [
+            "Concept of a function; representations via tables, graphs, words and formulae",
+            "Point-by-point plotting of y=x², y=1/x and y=bˣ (b>0, b≠1): shape, domain, range, asymptotes, symmetry, turning points, intercepts",
+            "Effect of a and q on y=a·f(x)+q for f(x)=x, x², 1/x, bˣ",
+            "Point-by-point plotting of y=sinθ, y=cosθ, y=tanθ for θ∈[0°,360°]",
+            "Effect of a and q on y=a·sinθ+q, y=a·cosθ+q, y=a·tanθ+q",
+            "Sketch graphs, find equations of given graphs, interpret graphs"
+          ]
+        }
+      ],
+      "sba": [
+        "Assignment",
+        "Mid-year exam"
       ]
     },
     {
       "term": 3,
       "topics": [
-        "Trigonometry (2D)",
-        "Statistics",
-        "Probability",
-        "Finance and growth"
+        {
+          "name": "Trigonometry (2D)",
+          "subtopics": [
+            "Solve two-dimensional problems involving right-angled triangles"
+          ]
+        },
+        {
+          "name": "Statistics",
+          "subtopics": [
+            "Measures of central tendency in ungrouped data: mean, median, mode",
+            "Measures of central tendency in grouped data: mean estimate, modal interval, median interval",
+            "Dispersion: range, percentiles, quartiles, inter-quartile and semi-inter-quartile range",
+            "Five number summary and box-and-whisker diagram",
+            "Analyse and comment on context using statistical summaries and graphs",
+            "Histogram"
+          ]
+        },
+        {
+          "name": "Probability",
+          "subtopics": [
+            "Probability models: relative frequency vs theoretical probability",
+            "Venn diagrams for two events; addition rule P(A or B)=P(A)+P(B)−P(A and B)",
+            "Mutually exclusive and complementary events"
+          ]
+        },
+        {
+          "name": "Finance and growth",
+          "subtopics": [
+            "Simple and compound growth formulae A=P(1+in) and A=P(1+i)ⁿ (interest, hire purchase, inflation, population growth)",
+            "Implications of fluctuating foreign exchange rates"
+          ]
+        }
+      ],
+      "sba": [
+        "Test",
+        "Test"
       ]
     },
     {
       "term": 4,
       "topics": [
-        "Measurement",
-        "Number patterns",
-        "Revise Algebra",
-        "Revise Trigonometry & Geometry",
-        "Revise functions",
-        "Examination"
+        {
+          "name": "Measurement",
+          "subtopics": [
+            "Revise volume and surface area of right prisms and cylinders",
+            "Effect on volume and surface area of multiplying any dimension by a constant factor k",
+            "Volume and surface area of spheres, right pyramids, right cones and combinations of these objects"
+          ]
+        },
+        {
+          "name": "Number patterns",
+          "subtopics": [
+            "Investigate linear number patterns (constant difference between consecutive terms); general term"
+          ]
+        },
+        {
+          "name": "Revise Algebra"
+        },
+        {
+          "name": "Revise Trigonometry & Geometry"
+        },
+        {
+          "name": "Revise functions"
+        },
+        {
+          "name": "Examination"
+        }
+      ],
+      "sba": [
+        "Test"
       ]
     }
+  ],
+  "exam_structure": {
+    "paper1": {
+      "sections": {
+        "Algebra": 30,
+        "Number patterns": 15,
+        "Finance and growth": 10,
+        "Functions and graphs": 30,
+        "Probability": 15
+      }
+    },
+    "paper2": {
+      "sections": {
+        "Statistics": 15,
+        "Analytical Geometry": 15,
+        "Trigonometry": 40,
+        "Euclidean Geometry & Measurement": 30
+      }
+    }
+  },
+  "sba_weighting": [
+    "Total SBA tasks: 7",
+    "Term 1: Investigation/project (15%) and test (14%)",
+    "Term 2: Assignment (15%) and mid-year exam (14%)",
+    "Term 3: Test (14%) and test (14%)",
+    "Term 4: Test (14%)"
   ]
 }

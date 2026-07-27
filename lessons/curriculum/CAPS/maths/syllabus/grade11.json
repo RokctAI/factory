@@ -10,37 +10,186 @@
     {
       "term": 1,
       "topics": [
-        "Exponents and surds",
-        "Equations and inequalities",
-        "Trigonometry (reduction formulae, trig equations & general solutions)"
+        {
+          "name": "Exponents and surds",
+          "subtopics": [
+            "Laws of exponents for rational exponents x^(p/q) = qth root of x^p (x>0, q>0); simplify and solve equations",
+            "Add, subtract, multiply and divide simple surds",
+            "Solve simple equations involving surds"
+          ]
+        },
+        {
+          "name": "Equations and inequalities",
+          "subtopics": [
+            "Complete the square",
+            "Solve quadratic equations by factorisation and by the quadratic formula",
+            "Quadratic inequalities in one unknown (interpret solutions graphically)",
+            "Equations in two unknowns: one linear, one quadratic",
+            "Nature of roots"
+          ]
+        },
+        {
+          "name": "Trigonometry (reduction formulae, trig equations & general solutions)",
+          "subtopics": [
+            "Derive and use identities tanθ = sinθ/cosθ and sin²θ + cos²θ = 1",
+            "Derive and use reduction formulae: (90°±θ), (180°±θ), (360°±θ), (−θ)",
+            "Determine for which values of a variable an identity holds",
+            "General solutions of trigonometric equations; solutions in specific intervals"
+          ]
+        }
+      ],
+      "sba": [
+        "Investigation or project",
+        "Test (content of Term 1)"
       ]
     },
     {
       "term": 2,
       "topics": [
-        "Euclidean Geometry",
-        "Analytical Geometry",
-        "Functions (including trigonometric functions)"
+        {
+          "name": "Euclidean Geometry",
+          "subtopics": [
+            "Accept as axiom: a tangent to a circle is perpendicular to the radius at the point of contact",
+            "Prove circle theorems: line from centre perpendicular to chord bisects it; line from centre to chord midpoint is perpendicular; perpendicular bisector of a chord passes through the centre",
+            "Prove: angle at centre is double the angle at the circumference; angles subtended by a chord on the same side are equal; opposite angles of a cyclic quadrilateral are supplementary",
+            "Prove: two tangents from the same external point are equal; tangent-chord angle equals the angle in the alternate segment",
+            "Use the theorems and their converses to solve riders"
+          ]
+        },
+        {
+          "name": "Analytical Geometry",
+          "subtopics": [
+            "Revise distance, gradient (parallel and perpendicular lines) and midpoint",
+            "Equation of a line through two points; through one point parallel or perpendicular to a given line",
+            "Inclination of a line, m = tanθ (0° ≤ θ ≤ 180°)"
+          ]
+        },
+        {
+          "name": "Functions (including trigonometric functions)",
+          "subtopics": [
+            "Effect of parameters a, q and p on y=a(x+p)²+q, y=a/(x+p)+q, y=a·b^(x+p)+q (b>0, b≠1)",
+            "Average gradient between two points; intuitive gradient of a curve at a point",
+            "Point-by-point plotting of y=sinθ, y=cosθ, y=tanθ for θ∈[−360°,360°]",
+            "Effect of k on y=sin(kx), y=cos(kx), y=tan(kx)",
+            "Effect of p on y=sin(x+p), y=cos(x+p), y=tan(x+p)",
+            "Sketch y=a·sin k(x+p), y=a·cos k(x+p), y=a·tan k(x+p) (at most two parameters at a time)"
+          ]
+        }
+      ],
+      "sba": [
+        "Assignment",
+        "Mid-year exam"
       ]
     },
     {
       "term": 3,
       "topics": [
-        "Trigonometry (sine, cosine and area rules)",
-        "Statistics",
-        "Probability",
-        "Finance, growth and decay"
+        {
+          "name": "Trigonometry (sine, cosine and area rules)",
+          "subtopics": [
+            "Prove and apply the sine, cosine and area rules",
+            "Solve problems in two dimensions using the sine, cosine and area rules"
+          ]
+        },
+        {
+          "name": "Statistics",
+          "subtopics": [
+            "Revise measures of central tendency and dispersion (ungrouped and grouped data)",
+            "Revise five number summary and box-and-whisker diagram",
+            "Revise histograms",
+            "Frequency polygons",
+            "Ogives (cumulative frequency curves)",
+            "Variance and standard deviation of ungrouped data",
+            "Symmetric and skewed data",
+            "Identification of outliers"
+          ]
+        },
+        {
+          "name": "Probability",
+          "subtopics": [
+            "Revise probability models: relative frequency vs theoretical probability",
+            "Venn diagrams; addition rule; mutually exclusive and complementary events",
+            "Dependent and independent events; product rule for independent events",
+            "Venn diagrams for any three events in a sample space",
+            "Tree diagrams for consecutive or simultaneous events (not necessarily independent)",
+            "Venn diagrams, tree diagrams and contingency tables for real-life problems"
+          ]
+        },
+        {
+          "name": "Finance, growth and decay",
+          "subtopics": [
+            "Revise simple and compound growth formulae (interest, hire purchase, inflation, population growth)",
+            "Implications of fluctuating foreign exchange rates",
+            "Simple and compound decay formulae A=P(1−in), A=P(1−i)ⁿ (straight-line and reducing-balance depreciation)",
+            "Different periods of compounding; nominal and effective interest rates"
+          ]
+        }
+      ],
+      "sba": [
+        "Test",
+        "Test"
       ]
     },
     {
       "term": 4,
       "topics": [
-        "Number patterns",
-        "Revision of measurement",
-        "Revision of Algebra",
-        "Revision of Trigonometry",
-        "Examination"
+        {
+          "name": "Number patterns",
+          "subtopics": [
+            "Investigate quadratic number patterns (constant second difference); general term"
+          ]
+        },
+        {
+          "name": "Revision of measurement",
+          "subtopics": [
+            "Volume and surface area of right prisms and cylinders",
+            "Effect on volume and surface area of multiplying any dimension by a constant factor k",
+            "Volume and surface area of spheres, right prisms, right cones and combinations"
+          ]
+        },
+        {
+          "name": "Revision of Algebra"
+        },
+        {
+          "name": "Revision of Trigonometry"
+        },
+        {
+          "name": "Examination"
+        }
+      ],
+      "sba": [
+        "Test"
       ]
     }
+  ],
+  "exam_structure": {
+    "paper1": {
+      "marks": 150,
+      "hours": 3,
+      "sections": {
+        "Algebraic expressions, equations and inequalities": 45,
+        "Number patterns": 25,
+        "Finance, growth and decay": 15,
+        "Functions and graphs": 45,
+        "Probability": 20
+      }
+    },
+    "paper2": {
+      "marks": 150,
+      "hours": 3,
+      "sections": {
+        "Statistics": 20,
+        "Analytical Geometry": 30,
+        "Trigonometry": 50,
+        "Euclidean Geometry": 50
+      }
+    }
+  },
+  "sba_weighting": [
+    "Total SBA tasks: 7",
+    "Term 1: Investigation/project (15%) and test (14%)",
+    "Term 2: Assignment (15%) and mid-year exam (14%)",
+    "Term 3: Test (14%) and test (14%)",
+    "Term 4: Test (14%)"
   ]
 }
