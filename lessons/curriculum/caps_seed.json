@@ -1,27 +1,22 @@
 {
   "_comment": [
-    "Hand-written CAPS-aligned seed list for lesson Level 0 topic selection.",
-    "No machine-readable CAPS pacing data exists in the workspace yet — the",
-    "product docs list 'CAPS curriculum pacing' as an unbuilt feature",
-    "(agent/replay/docs/supacharge-unbuilt-features-brief.md), so this file is",
-    "the interim source of truth for which subject/grade/topic/subtopic",
-    "combinations the factory may open lesson jobs for. Replace or extend it",
-    "when a real CAPS pacing source lands.",
+    "SOURCE OF TRUTH: lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json -",
+    "curated, machine-readable DBE ATP data (topics, subtopics, prior knowledge,",
+    "SBA, exam structure per subject/grade). This file is the pipeline-facing",
+    "flattened view Level 0 reads; regenerate additions from CAPS/ with",
+    "lessons/scripts/caps_to_seed.py (existing rows are preserved verbatim -",
+    "open cards and dashboard counts key off them).",
+    "Original hand-written rows (no `source` field) predate CAPS/ and keep their",
+    "example_problem/tutor assignments; rows with a `source` field were generated",
+    "from the CAPS file named there and carry no example_problem/tutor - Level 1",
+    "recommends a tutor and derives the worked example for those.",
     "Field names follow the Prompt Template in agent/replay/docs/supacharge-tech.md",
-    "§4: Subject, Grade, Topic, Subtopic, Example problem, Tutor, Prior knowledge.",
-    "tutor is optional — when omitted, Level 1 recommends one",
-    "(Grandmaster — formal | Big John — simplistic, lower grade logic).",
-    "term is the CAPS school term (1-4) per the DBE 2023/24 Annual Teaching",
-    "Plans (education.gov.za, verified 2026-07-14 per subject/grade); 'all'",
-    "marks skills topics the ATP integrates across every term (e.g. Geography",
-    "mapwork); 'unknown' marks topics with no verifiable ATP placement — do",
-    "not guess terms.",
-    "plus the Grade 11 quadratics entries used as the pipeline's worked example.",
-    "Coverage: full DBE ATP topic coverage for Grades 11-12 across all six",
-    "subjects (expanded 2026-07-14 from the launch-scope starter set) — the",
-    "launch is narrow but the content library is built ahead. Level 0's",
-    "3-pending-per-subject throttle paces card creation regardless of seed",
-    "depth. Grade 10 rows are a future addition."
+    "S4: Subject, Grade, Topic, Subtopic, Example problem, Tutor, Prior knowledge.",
+    "term is the CAPS school term (1-4) per the DBE 2023/24 Annual Teaching Plans;",
+    "'all' marks skills topics the ATP integrates across every term; 'unknown'",
+    "marks topics with no verifiable ATP placement - do not guess terms.",
+    "Run lessons/scripts/atp_drift_check.py against _sources before trusting term",
+    "data in a new school year - the DBE reissues ATPs annually."
   ],
   "_sources": {
     "_about": [
@@ -40,8 +35,8 @@
       "Maths Grade 11": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.590%20ATP%202023-24%20Gr%2011%20Maths%20final.pdf",
       "Maths Grade 12": "https://www.education.gov.za/LinkClick.aspx?fileticket=_kS5tgxXQ0I%3D&tabid=3205&portalid=0&mid=10755",
       "Physical Sciences Grade 10": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.520%20ATP%202023-24%20Gr%2010%20Phys%20Sci%20final.pdf",
-      "Physical Sciences Grade 11": "https://www.education.gov.za/LinkClick.aspx?fileticket=HofhdeKXMCM%3D&tabid=3205&portalid=0&mid=10752",
-      "Physical Sciences Grade 12": "https://www.education.gov.za/LinkClick.aspx?fileticket=6y_u-yjj97c%3D&tabid=3205&portalid=0&mid=10755",
+      "Physical Sciences Grade 11": "https://www.education.gov.za/LinkClick.aspx?fileticket=6y_u-yjj97c%3D&tabid=3205&portalid=0&mid=10755",
+      "Physical Sciences Grade 12": "https://www.education.gov.za/LinkClick.aspx?fileticket=HofhdeKXMCM%3D&tabid=3205&portalid=0&mid=10752",
       "Economics Grade 10": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.210%20ATP%202023-24%20Gr%2010%20Eco%20final.pdf",
       "Economics Grade 11": "https://www.education.gov.za/LinkClick.aspx?fileticket=BjrxUz7iUNo%3D&tabid=3205&portalid=0&mid=10752",
       "Economics Grade 12": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.230%20ATP%202023-24%20Gr%2012%20Eco%20final.pdf",
@@ -2221,6 +2216,4557 @@
       "subtopic": "A simple cash budget",
       "example_problem": "Draft a one-month cash budget for a tuck shop from the given expected receipts and payments.",
       "prior_knowledge": "Student knows income versus expenses"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "1",
+      "topic": "INFORMAL/INDIGENOUS BOOKKEEPING",
+      "subtopic": "Compare bookkeeping of informal vs formal sectors: capital, fixed assets, stock, cost price, labour cost, selling price, income, expenses, profit",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Define informal and formal business sectors"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "1",
+      "topic": "INFORMAL/INDIGENOUS BOOKKEEPING",
+      "subtopic": "Management of resources; relate current procedures to indigenous practices",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Define informal and formal business sectors"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "1",
+      "topic": "INTERNAL CONTROL, ETHICS, GAAP",
+      "subtopic": "Internal control: meaning and basic processes (control environment, risk assessment, control activities, information systems and communication, monitoring)",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Background of GAAP; background/importance of internal control and ethics in any business"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "1",
+      "topic": "INTERNAL CONTROL, ETHICS, GAAP",
+      "subtopic": "Code of ethics for all parties in the financial environment (leadership, discipline, transparency, accountability, fairness, sustainability, responsible management)",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Background of GAAP; background/importance of internal control and ethics in any business"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "1",
+      "topic": "INTERNAL CONTROL, ETHICS, GAAP",
+      "subtopic": "GAAP principles: historical cost, prudence, materiality, business entity rule, going concern, matching",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Background of GAAP; background/importance of internal control and ethics in any business"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "2",
+      "topic": "DEBTORS AND CREDITORS RECONCILIATION",
+      "subtopic": "Analyse debtors and creditors control accounts and compare with lists",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Control accounts in the general ledger and subsidiary ledgers"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "2",
+      "topic": "DEBTORS AND CREDITORS RECONCILIATION",
+      "subtopic": "Identify and correct errors and omissions",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Control accounts in the general ledger and subsidiary ledgers"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "2",
+      "topic": "SALARIES AND WAGES",
+      "subtopic": "Record salaries and wages in the SJ and WJ; payments in the CPJ (manual or spreadsheet)",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Concepts and differences between salaries and wages covered in Gr 8 or 9"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "2",
+      "topic": "SALARIES AND WAGES",
+      "subtopic": "Normal time and overtime; deductions: PAYE, pension fund, UIF, medical aid, union membership",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Concepts and differences between salaries and wages covered in Gr 8 or 9"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "2",
+      "topic": "SALARIES AND WAGES",
+      "subtopic": "Employer contributions: pension fund, UIF, medical aid, skills development levy",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Concepts and differences between salaries and wages covered in Gr 8 or 9"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "PREPARATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Statement of comprehensive income: format, nominal vs balance sheet accounts, headings, adjustments with workings",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Accounting cycle, final accounts, year-end adjustments, GAAP principles"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "PREPARATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Statement of financial position: format, headings and sub-headings, effect of adjustments (trade and other receivables/payables)",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Accounting cycle, final accounts, year-end adjustments, GAAP principles"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "PREPARATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Notes to the financial statements: interest, fixed assets, inventory, trade and other receivables, cash and cash equivalents, owner's equity, trade and other payables",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Accounting cycle, final accounts, year-end adjustments, GAAP principles"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "PREPARATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Apply GAAP; integrate indigenous bookkeeping",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Accounting cycle, final accounts, year-end adjustments, GAAP principles"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "ANALYSIS AND INTERPRETATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Profitability: gross profit on sales, gross profit on cost of sales, net profit on sales, operating expenses on sales, operating profit on sales",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Understanding the information in the financial statements"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "ANALYSIS AND INTERPRETATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Liquidity: current ratio, acid-test ratio",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Understanding the information in the financial statements"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "ANALYSIS AND INTERPRETATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Solvency ratio; return on owner's equity",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Understanding the information in the financial statements"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "3",
+      "topic": "ANALYSIS AND INTERPRETATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Interpretation: comparing percentages and ratios for meaningful comment; use of the formula sheet",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Understanding the information in the financial statements"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "4",
+      "topic": "BUDGETING",
+      "subtopic": "Basic budgeting concepts: cash budget, zero-based budget, capital budget, long-term and medium-term budgets",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Cash vs non-cash items; receipts, payments, income, expenses"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 10,
+      "term": "4",
+      "topic": "BUDGETING",
+      "subtopic": "Basic budget calculations",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade10.json",
+      "prior_knowledge": "Cash vs non-cash items; receipts, payments, income, expenses"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "RECONCILIATION",
+      "subtopic": "Integrate ethics and internal control; apply GAAP",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10: cash journals and bank-account posting; creditors (CJ, CAJ, creditors control and ledger); control-account vs list reconciliations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "FIXED ASSETS",
+      "subtopic": "Need for and compilation of a fixed/tangible asset register",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 transactions for acquiring fixed assets and depreciation calculations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "FIXED ASSETS",
+      "subtopic": "Record acquisition of fixed assets",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 transactions for acquiring fixed assets and depreciation calculations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "FIXED ASSETS",
+      "subtopic": "Ethics and internal control over movement and use of fixed assets",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 transactions for acquiring fixed assets and depreciation calculations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "FINANCIAL ACCOUNTING OF PARTNERSHIPS: ADJUSTMENTS, LEDGER, ACCOUNTING EQUATION, FINAL ACCOUNTS",
+      "subtopic": "IFRS and GAAP principles (historical cost, prudence, materiality, business entity, going concern, matching)",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Partnerships as a form of ownership; Gr 10 accounting cycle, year-end adjustments and final accounts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "FINANCIAL ACCOUNTING OF PARTNERSHIPS: ADJUSTMENTS, LEDGER, ACCOUNTING EQUATION, FINAL ACCOUNTS",
+      "subtopic": "Partnership accounting cycle: documents, journals, ledgers, trial balance, final accounts; accounting-equation analysis",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Partnerships as a form of ownership; Gr 10 accounting cycle, year-end adjustments and final accounts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "FINANCIAL ACCOUNTING OF PARTNERSHIPS: ADJUSTMENTS, LEDGER, ACCOUNTING EQUATION, FINAL ACCOUNTS",
+      "subtopic": "Year-end adjustments (revision) plus new: provision for bad debts, capitalised interest on loan",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Partnerships as a form of ownership; Gr 10 accounting cycle, year-end adjustments and final accounts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "1",
+      "topic": "FINANCIAL ACCOUNTING OF PARTNERSHIPS: ADJUSTMENTS, LEDGER, ACCOUNTING EQUATION, FINAL ACCOUNTS",
+      "subtopic": "Reversal of accruals, deferred income and prepayments at the start of the next period",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Partnerships as a form of ownership; Gr 10 accounting cycle, year-end adjustments and final accounts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "2",
+      "topic": "PARTNERSHIPS: FINANCIAL STATEMENTS AND NOTES",
+      "subtopic": "Statement of comprehensive income, statement of financial position and notes",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 IFRS/GAAP principles, year-end adjustments, accounting cycle, reversals"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "2",
+      "topic": "PARTNERSHIPS: FINANCIAL STATEMENTS AND NOTES",
+      "subtopic": "Apply IFRS and GAAP principles",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 IFRS/GAAP principles, year-end adjustments, accounting cycle, reversals"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "2",
+      "topic": "PARTNERSHIPS: ANALYSIS AND INTERPRETATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Revise profitability (gross/net profit and operating indicators), liquidity (current and acid-test) and solvency indicators",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 financial indicators; percentage and ratio arithmetic"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "2",
+      "topic": "PARTNERSHIPS: ANALYSIS AND INTERPRETATION OF FINANCIAL STATEMENTS",
+      "subtopic": "Introduce risk/gearing (debt-equity ratio) and return on (average) partners' equity",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 financial indicators; percentage and ratio arithmetic"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "3",
+      "topic": "BUDGETING: BASIC CONCEPTS, CASH BUDGETS (DEBTORS’ COLLECTION AND CREDITORS’ PAYMENTS) AND PROJECTED STATEMENT OF COMPREHENSIVE INCOME (INCOME STATEMENT)",
+      "subtopic": "Differentiate a cash budget from a projected income statement",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 budget concepts and basic calculations; statement of comprehensive income; CRJ and CPJ"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "3",
+      "topic": "INVENTORY SYSTEMS",
+      "subtopic": "Perpetual vs periodic stock systems: differences, advantages, disadvantages",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 perpetual-system content: trading stock, mark-up calculations, cost of sales, gross profit"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "3",
+      "topic": "INVENTORY SYSTEMS",
+      "subtopic": "Cost of sales: perpetual (trading stock account and/or % mark-up) and periodic (opening stock, purchases, returns, carriage/customs, closing stock and/or mark-up)",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 perpetual-system content: trading stock, mark-up calculations, cost of sales, gross profit"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 11,
+      "term": "3",
+      "topic": "INVENTORY SYSTEMS",
+      "subtopic": "Ethics, internal control and internal audit relating to stock",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+      "prior_knowledge": "Gr 10 perpetual-system content: trading stock, mark-up calculations, cost of sales, gross profit"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "1",
+      "topic": "COMPANIES: UNIQUE TRANSACTIONS (Close corporations: Not assessed)",
+      "subtopic": "IFRS and GAAP; specific GAAP principles",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Companies Act 71 of 2008 basics; shares and JSE trading procedures; MOI"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "1",
+      "topic": "COMPANIES: UNIQUE TRANSACTIONS (Close corporations: Not assessed)",
+      "subtopic": "Company accounting cycle: journals, ledger accounts, trial balance",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Companies Act 71 of 2008 basics; shares and JSE trading procedures; MOI"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "1",
+      "topic": "COMPANIES: ANALYSIS AND INTERPRETATION",
+      "subtopic": "Revise Gr 11 indicators: profitability, liquidity (incl. stock turnover/holding, debtors' collection, creditors' payment periods), solvency, debt-equity",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 financial indicators; JSE trading and share-price determination vs NAV"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "1",
+      "topic": "COMPANIES: ANALYSIS AND INTERPRETATION",
+      "subtopic": "Analysis of published financial statements and annual reports: directors' report, independent auditor's report, abridged statements, governance information",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 financial indicators; JSE trading and share-price determination vs NAV"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "INVENTORY VALUATION",
+      "subtopic": "GAAP principles, ethics, internal audit and control for inventories",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 11 inventory management; related financial indicators; Gr 10-11 GAAP and ethics"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "FIXED ASSETS, INTERNAL CONTROL",
+      "subtopic": "Interpretation and reporting on movement of assets: age, replacement rate, lifespan",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 11 fixed assets; background on audit processes"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "FIXED ASSETS, INTERNAL CONTROL",
+      "subtopic": "Internal audit processes: gathering audit evidence, sampling techniques, internal audit reports, accountable management of resources",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 11 fixed assets; background on audit processes"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "FIXED ASSETS, INTERNAL CONTROL",
+      "subtopic": "Difference between the roles of internal and external auditors",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 11 fixed assets; background on audit processes"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "COST ACCOUNTING",
+      "subtopic": "Concepts unique to a manufacturing business",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 manufacturing content, accounts and calculations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "COST ACCOUNTING",
+      "subtopic": "Calculations: gross profit on finished goods sold, variable and fixed costs, unit cost, break-even point, total production cost",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 manufacturing content, accounts and calculations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "COST ACCOUNTING",
+      "subtopic": "Manufacturing ethics: product quality and age, raw materials, local products, price fixing, theft, fraud",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 manufacturing content, accounts and calculations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "COST ACCOUNTING",
+      "subtopic": "Internal audit and control in manufacturing",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 manufacturing content, accounts and calculations"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "RECONCILIATIONS",
+      "subtopic": "Analyse and interpret bank, debtors' and creditors' reconciliations",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 reconciliations; ethics and internal control over cash, debtors and creditors"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "RECONCILIATIONS",
+      "subtopic": "Reconcile creditors' statements with creditors-ledger accounts; debtors/creditors lists with control accounts",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 reconciliations; ethics and internal control over cash, debtors and creditors"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "2",
+      "topic": "RECONCILIATIONS",
+      "subtopic": "Ethics, internal audit and control: payment periods, interest, credit rating, fraud",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 reconciliations; ethics and internal control over cash, debtors and creditors"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "3",
+      "topic": "VAT",
+      "subtopic": "VAT calculations (Gr 11 revision)",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 VAT content, ethics and internal control concepts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "3",
+      "topic": "VAT",
+      "subtopic": "Calculate the amount payable to or receivable from SARS",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 VAT content, ethics and internal control concepts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "3",
+      "topic": "VAT",
+      "subtopic": "VAT control ledger account as an additional calculation method",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10-11 VAT content, ethics and internal control concepts"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "3",
+      "topic": "Budgeting",
+      "subtopic": "Projected income statement with projected revenue and expenditure (Gr 11 content); differences vs cash budgets",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10 budgets and projections; budgeted vs actual figures as planning/forecasting tools"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "3",
+      "topic": "Budgeting",
+      "subtopic": "Analysis, interpretation and comparison of projected income statements for sole traders or companies",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10 budgets and projections; budgeted vs actual figures as planning/forecasting tools"
+    },
+    {
+      "type": "lesson.accounting",
+      "subject": "Accounting",
+      "grade": 12,
+      "term": "3",
+      "topic": "Budgeting",
+      "subtopic": "Budgeted vs actual figures; ethics, internal audit and control",
+      "source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+      "prior_knowledge": "Gr 10 budgets and projections; budgeted vs actual figures as planning/forecasting tools"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "ECONOMICS: BASIC CONCEPTS & BASIC ECONOMIC PROBLEM",
+      "subtopic": "Elements, branches and methods of Economics; Economics among the sciences",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Grade 7-8 economics concepts: wants, needs, production process, exchange, consumption"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "ECONOMICS: BASIC CONCEPTS & BASIC ECONOMIC PROBLEM",
+      "subtopic": "The scarcity problem; the basic processes (production, exchange, consumption)",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Grade 7-8 economics concepts: wants, needs, production process, exchange, consumption"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "ECONOMICS: BASIC CONCEPTS & BASIC ECONOMIC PROBLEM",
+      "subtopic": "Promotion or violation of human rights and the environment",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Grade 7-8 economics concepts: wants, needs, production process, exchange, consumption"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
+      "subtopic": "Circular flow diagram; participants in an economy; closed vs open economy",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Needs and wants, factors of production, production and consumption, choice and decision-making, savings, markets"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
+      "subtopic": "Markets; flows of the variables; leakages and injections",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Needs and wants, factors of production, production and consumption, choice and decision-making, savings, markets"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
+      "subtopic": "GDP and GNI",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Needs and wants, factors of production, production and consumption, choice and decision-making, savings, markets"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "BUSINESS CYCLES",
+      "subtopic": "The phenomenon of business cycles; indicators",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Roles of participants in the economy, production and consumption, markets, economic growth, the scarcity problem"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "BUSINESS CYCLES",
+      "subtopic": "SA business cycles; time series composition; cyclical patterns",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Roles of participants in the economy, production and consumption, markets, economic growth, the scarcity problem"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "1",
+      "topic": "BUSINESS CYCLES",
+      "subtopic": "Exogenous and endogenous reasons; effects of business cycles",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Roles of participants in the economy, production and consumption, markets, economic growth, the scarcity problem"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "2",
+      "topic": "DYNAMICS OF THE MARKET",
+      "subtopic": "Value, price and utility",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Markets, demand and supply forces, drawing graphs from tables, laws of demand and supply, shifts, market equilibrium"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "2",
+      "topic": "DYNAMICS OF THE MARKET",
+      "subtopic": "Perfect and imperfect markets; world markets (the effects of electronics)",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Markets, demand and supply forces, drawing graphs from tables, laws of demand and supply, shifts, market equilibrium"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "2",
+      "topic": "DYNAMICS OF THE MARKET",
+      "subtopic": "Supply and demand; price formation; functions of markets",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Markets, demand and supply forces, drawing graphs from tables, laws of demand and supply, shifts, market equilibrium"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "2",
+      "topic": "PUBLIC SECTOR INTERVENTION",
+      "subtopic": "Maximum and minimum prices; production; minimum wages",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Roles of government, government revenue, the national budget, public goods"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "2",
+      "topic": "PRODUCTION POSSIBILITY CURVE",
+      "subtopic": "Phenomenon, choice and scarcity",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Graphing; factors of production; consumption vs production; economic efficiency"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "2",
+      "topic": "PRODUCTION POSSIBILITY CURVE",
+      "subtopic": "PPC determined by internal and external factors",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Graphing; factors of production; consumption vs production; economic efficiency"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "2",
+      "topic": "PRODUCTION POSSIBILITY CURVE",
+      "subtopic": "Consequences of inefficiencies",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Graphing; factors of production; consumption vs production; economic efficiency"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "3",
+      "topic": "LABOUR RELATIONS",
+      "subtopic": "Labour Relations Act: self-government, majorification, consultation",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Labour as a factor of production, households as owners of factors, government role in economic activity, trade unions"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "3",
+      "topic": "LABOUR RELATIONS",
+      "subtopic": "Labour rights and conventions: BCEA, LRA, COIDA",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Labour as a factor of production, households as owners of factors, government role in economic activity, trade unions"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "3",
+      "topic": "LABOUR RELATIONS",
+      "subtopic": "Collective bargaining: bargaining councils, labour unions, CCMA (conciliation, arbitration, mediation), workplace forums, labour courts",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Labour as a factor of production, households as owners of factors, government role in economic activity, trade unions"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "4",
+      "topic": "UNEMPLOYMENT",
+      "subtopic": "Nature of unemployment: numbers, unemployment rate, characteristics of SA unemployment",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Unemployment, labour as a factor of production, economically active population, income inequality, discrimination"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "4",
+      "topic": "UNEMPLOYMENT",
+      "subtopic": "Causes and consequences of unemployment",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Unemployment, labour as a factor of production, economically active population, income inequality, discrimination"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "4",
+      "topic": "UNEMPLOYMENT",
+      "subtopic": "Approaches to solve unemployment: growth of production, public works programmes, unemployment insurance",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Unemployment, labour as a factor of production, economically active population, income inequality, discrimination"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "4",
+      "topic": "ECONOMIC REDRESS",
+      "subtopic": "Economically marginalised groups",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Factors of production; influence of the national budget (Gr 8); standard of living (Gr 8)"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "4",
+      "topic": "ECONOMIC REDRESS",
+      "subtopic": "Redress and reconstruction: factors of production",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Factors of production; influence of the national budget (Gr 8); standard of living (Gr 8)"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 10,
+      "term": "4",
+      "topic": "ECONOMIC REDRESS",
+      "subtopic": "Democratisation of economic procedures: labour legislation, public hearings, NEDLAC, self-regulating bodies, macro-economic adaptations (performance, employment, income inequality, poverty, stability)",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+      "prior_knowledge": "Factors of production; influence of the national budget (Gr 8); standard of living (Gr 8)"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "1",
+      "topic": "FACTORS OF PRODUCTION",
+      "subtopic": "Factors of production and their remuneration",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Production processes; remuneration; redress methods"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "1",
+      "topic": "FACTORS OF PRODUCTION",
+      "subtopic": "Local economic planning; accessibility of marginalised groups; community participation; empowerment and procurement",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Production processes; remuneration; redress methods"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "1",
+      "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS: ECONOMIC GOODS AND SERVICES",
+      "subtopic": "Final consumption expenditure by households (C) and government (G)",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "National accounts (GDP, GDI, GDE; constant vs current); circular flow; participants; factor and product markets; leakages and injections"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "1",
+      "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS: ECONOMIC GOODS AND SERVICES",
+      "subtopic": "Gross fixed capital formation (I): definition, composition, importance",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "National accounts (GDP, GDI, GDE; constant vs current); circular flow; participants; factor and product markets; leakages and injections"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "1",
+      "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS: ECONOMIC GOODS AND SERVICES",
+      "subtopic": "Main aggregates: GVA, GNE, GNI",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "National accounts (GDP, GDI, GDE; constant vs current); circular flow; participants; factor and product markets; leakages and injections"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "1",
+      "topic": "ECONOMIC STRUCTURE OF SOUTH AFRICA",
+      "subtopic": "Sectors of the economy: primary, secondary, tertiary",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Factors of production, basic processes, growth and development"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "1",
+      "topic": "ECONOMIC STRUCTURE OF SOUTH AFRICA",
+      "subtopic": "SA's infrastructure; service provisioning and access to economic opportunity",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Factors of production, basic processes, growth and development"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "2",
+      "topic": "DYNAMICS OF THE MARKET: RELATIONSHIP BETWEEN MARKETS",
+      "subtopic": "Relationships between product and factor markets",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Markets, market forces, laws of demand and supply, shifts, market equilibrium"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "2",
+      "topic": "DYNAMICS OF MARKETS: EFFECTS OF COSTS AND REVENUE",
+      "subtopic": "Objectives of businesses",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Production costs, cost and revenue concepts, plotting graphs, averages, marginal concepts, profit and loss"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "ECONOMIC GROWTH",
+      "subtopic": "Wealth creation and patterns of distribution: income and wealth distribution; how much inequality?",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Economic redress, scarcity problem, needs and wants, production process, growth and development"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "ECONOMIC GROWTH",
+      "subtopic": "The Gini coefficient and the Lorenz curve",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Economic redress, scarcity problem, needs and wants, production process, growth and development"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "ECONOMIC GROWTH",
+      "subtopic": "Redistribution methods",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Economic redress, scarcity problem, needs and wants, production process, growth and development"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "ECONOMIC GROWTH",
+      "subtopic": "Standard of living",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Economic redress, scarcity problem, needs and wants, production process, growth and development"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "ECONOMIC DEVELOPMENT",
+      "subtopic": "Measuring levels of development; methods of development",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Inequality and poverty, education and skills, sustainable job opportunities, unemployment"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "ECONOMIC DEVELOPMENT",
+      "subtopic": "Developing strategies; South African endeavours; Indigenous Knowledge Systems (IKS)",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Inequality and poverty, education and skills, sustainable job opportunities, unemployment"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "MONEY AND BANKING",
+      "subtopic": "Banking: basic principles of credit creation, interest rates, micro-lending",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Evolution of markets, money instruments, history of money and banking, savings"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "3",
+      "topic": "MONEY AND BANKING",
+      "subtopic": "Bank failures and their consequences",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Evolution of markets, money instruments, history of money and banking, savings"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "4",
+      "topic": "GLOBALISATION",
+      "subtopic": "Meaning, causes and consequences",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Poverty, scarcity, business cycles, market forces, SA growth and development history, economic redress"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "4",
+      "topic": "GLOBALISATION",
+      "subtopic": "The north/south divide",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Poverty, scarcity, business cycles, market forces, SA growth and development history, economic redress"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "4",
+      "topic": "ENVIRONMENTAL DETERIORATION",
+      "subtopic": "The environmental problem; protecting the environment",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Scarcity problem (human rights and environment), economic redress (natural resources), international trade, population size"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 11,
+      "term": "4",
+      "topic": "ENVIRONMENTAL DETERIORATION",
+      "subtopic": "Approaches to sustainability; the global and local impact on South Africa",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+      "prior_knowledge": "Scarcity problem (human rights and environment), economic redress (natural resources), international trade, population size"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "CIRCULAR FLOW",
+      "subtopic": "Open vs closed economy; role players; injections and leakages; economy in equilibrium",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Factors of production, production process, roles of participants in the economy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "CIRCULAR FLOW",
+      "subtopic": "Autonomous consumption; MPC/MPS; the four-sector model",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Factors of production, production process, roles of participants in the economy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "CIRCULAR FLOW",
+      "subtopic": "National accounts aggregates and conversions",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Factors of production, production process, roles of participants in the economy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "CIRCULAR FLOW",
+      "subtopic": "The multiplier",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Factors of production, production process, roles of participants in the economy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "BUSINESS CYCLES",
+      "subtopic": "Composition and features; explanation/causes; types of business cycles",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "National accounts (GDP/GDI/GDE); monetary policy (SARB, interest rates, cash reserves, open-market transactions, moral suasion); fiscal policy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "BUSINESS CYCLES",
+      "subtopic": "Government policy: monetary and fiscal policy",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "National accounts (GDP/GDI/GDE); monetary policy (SARB, interest rates, cash reserves, open-market transactions, moral suasion); fiscal policy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "BUSINESS CYCLES",
+      "subtopic": "The new economic paradigm (smoothing of cycles); features underpinning forecasting",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "National accounts (GDP/GDI/GDE); monetary policy (SARB, interest rates, cash reserves, open-market transactions, moral suasion); fiscal policy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "1",
+      "topic": "PUBLIC SECTOR",
+      "subtopic": "Composition and necessity of the public sector; problems of provisioning; objectives",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Circular flow, participants in an economy, government structures, fiscal policy"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "DYNAMICS OF MARKETS: PERFECT MARKETS",
+      "subtopic": "Perfect competition; the industry vs the individual business",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Price formation: demand and supply, their laws, cost and revenue analysis, price elasticity of demand"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "DYNAMICS OF MARKETS: PERFECT MARKETS",
+      "subtopic": "Market structure; output, profits and losses",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Price formation: demand and supply, their laws, cost and revenue analysis, price elasticity of demand"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "DYNAMICS OF MARKETS: IMPERFECT MARKETS",
+      "subtopic": "Monopolies, duopolies, oligopolies, monopolistic competition",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "The market; cost and revenue analysis; price elasticity of demand theory"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "DYNAMICS OF MARKETS: MARKET FAILURES",
+      "subtopic": "Concept and causes of market failure; misallocation of resources",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "The market, competition, PPC (efficiencies and inefficiencies), public sector intervention"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "DYNAMICS OF MARKETS: MARKET FAILURES",
+      "subtopic": "Cost-benefit analysis (conserving vs using resources; public vs private expenditure)",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "The market, competition, PPC (efficiencies and inefficiencies), public sector intervention"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "INTERNATIONAL TRADE POLICIES (PROTECTIONISM & FREE TRADE)",
+      "subtopic": "Protection and free trade; globalisation; major protocols",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Economic systems, four-sector model, north/south divide (Gr 11), absolute and comparative advantage, AU/SADC/NEPAD"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "INTERNATIONAL TRADE POLICIES (PROTECTIONISM & FREE TRADE)",
+      "subtopic": "Export promotion; import substitution; arguments for and against free trade; desirable policy mix",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Economic systems, four-sector model, north/south divide (Gr 11), absolute and comparative advantage, AU/SADC/NEPAD"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "INTERNATIONAL TRADE POLICIES (PROTECTIONISM & FREE TRADE)",
+      "subtopic": "Trade liberalisation and the WTO; forms of economic integration",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Economic systems, four-sector model, north/south divide (Gr 11), absolute and comparative advantage, AU/SADC/NEPAD"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "2",
+      "topic": "ECONOMIC GROWTH AND DEVELOPMENT",
+      "subtopic": "Economic growth vs economic development",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Wealth, scarcity, means of production, income inequality, growth and development, unemployment; monetary and fiscal policy; globalisation"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "GROWTH & DEV: INDUSTRIAL DEVELOPMENT",
+      "subtopic": "Industrial development; regional development",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "SA regional landscape; SA's role and economic importance in Africa; AU and SADC"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC AND SOCIAL INDICATORS",
+      "subtopic": "Performance of the economy; economic indicators; money supply and interest rates",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Growth and development strategies and comparisons; money supply; money and banking; interest rates; globalisation"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC AND SOCIAL INDICATORS",
+      "subtopic": "Social indicators and international comparisons",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Growth and development strategies and comparisons; money supply; money and banking; interest rates; globalisation"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC AND SOCIAL INDICATORS",
+      "subtopic": "Globalisation: IMF and World Bank",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Growth and development strategies and comparisons; money supply; money and banking; interest rates; globalisation"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC ISSUES OF THE DAY: INFLATION",
+      "subtopic": "Inflation concept, types, causes and consequences",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Price formation (laws of demand/supply, AD/AS shifts, Phillips curve); monetary and fiscal policy; consumer vs producer inflation"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC ISSUES OF THE DAY: INFLATION",
+      "subtopic": "The inflation problem in SA and measures to combat inflation",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Price formation (laws of demand/supply, AD/AS shifts, Phillips curve); monetary and fiscal policy; consumer vs producer inflation"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC ISSUES OF THE DAY: TOURISM",
+      "subtopic": "Tourism concept; reasons for growth; effects and benefits",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Growth and development, unemployment, poverty, population and labour force; IKS (Gr 11)"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC ISSUES OF THE DAY: TOURISM",
+      "subtopic": "SA tourism profile (incl. IKS); policy suggestions",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Growth and development, unemployment, poverty, population and labour force; IKS (Gr 11)"
+    },
+    {
+      "type": "lesson.economics",
+      "subject": "Economics",
+      "grade": 12,
+      "term": "3",
+      "topic": "ECONOMIC ISSUES OF THE DAY: ENVIRONMENTAL SUSTAINABILITY",
+      "subtopic": "Environmental sustainability; the state of the environment",
+      "source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+      "prior_knowledge": "Basic economic problem; human rights; economic redress (Gr 11); production possibilities; public sector involvement"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Moisture in the atmosphere",
+      "subtopic": "Water in the atmosphere in different forms; evaporation, condensation and precipitation",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Moisture in the atmosphere",
+      "subtopic": "Dew point, condensation level, humidity, relative humidity",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Moisture in the atmosphere",
+      "subtopic": "How and why clouds form; cloud names and associated weather",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Moisture in the atmosphere",
+      "subtopic": "Types and mechanisms of precipitation: relief, convectional and frontal rainfall",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Moisture in the atmosphere",
+      "subtopic": "GIS: concept, components, reasons for development; remote sensing and satellite images for meteorology",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Reading and interpreting synoptic weather maps",
+      "subtopic": "Weather elements: temperature, dew-point temperature, cloud cover, wind direction and speed, atmospheric pressure",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json",
+      "prior_knowledge": "Weather maps in newspapers and weather forecasts"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Reading and interpreting synoptic weather maps",
+      "subtopic": "Collecting and recording weather data (instruments, media); presenting findings (graphs, maps, synoptic charts)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json",
+      "prior_knowledge": "Weather maps in newspapers and weather forecasts"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "1",
+      "topic": "Reading and interpreting synoptic weather maps",
+      "subtopic": "Precipitation types on station models; reading and interpreting a selection of synoptic weather maps",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json",
+      "prior_knowledge": "Weather maps in newspapers and weather forecasts"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "The structure of the earth",
+      "subtopic": "The internal structure of the earth",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "The structure of the earth",
+      "subtopic": "Classification of rocks: igneous, sedimentary, metamorphic",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "The structure of the earth",
+      "subtopic": "Mapwork: contour-line concepts and landforms associated with rock types",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Plate tectonics",
+      "subtopic": "Changes in the position of continents over time and the evidence for it",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Plate tectonics",
+      "subtopic": "Plate tectonics as the explanation for continental movement",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Plate tectonics",
+      "subtopic": "The world's volcanic and earthquake zones",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Folding and faulting",
+      "subtopic": "The process of rock folding",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Folding and faulting",
+      "subtopic": "Mapwork: locating exact position (degrees, minutes, seconds)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Earthquakes",
+      "subtopic": "How and where earthquakes occur; measuring and predicting",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Earthquakes",
+      "subtopic": "How earthquakes and tsunamis affect people and settlements; differences in vulnerability",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Earthquakes",
+      "subtopic": "Strategies to reduce impact; case examples of selected earthquakes",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Earthquakes",
+      "subtopic": "Mapwork: 1:50 000 referencing, signs and symbols, ring-of-fire maps, compass direction, true and magnetic bearing",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Volcanoes",
+      "subtopic": "Types and structure of volcanoes",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Volcanoes",
+      "subtopic": "Impact of volcanoes on people and the environment",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "2",
+      "topic": "Volcanoes",
+      "subtopic": "Mapwork: ring-of-fire location maps; simple cross-sections",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "3",
+      "topic": "Population structure",
+      "subtopic": "Population indicators and the factors that influence them",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "3",
+      "topic": "Population growth",
+      "subtopic": "World population growth over time",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "3",
+      "topic": "Population growth",
+      "subtopic": "The concept of overpopulation; managing population growth",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "3",
+      "topic": "Population growth",
+      "subtopic": "Map skills: infographic maps of growth; satellite images related to population",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "3",
+      "topic": "Population movements",
+      "subtopic": "Kinds of population movement (case studies essential)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "3",
+      "topic": "Population movements",
+      "subtopic": "Map skills revision: 1:10 000 orthophoto maps",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "4",
+      "topic": "Floods",
+      "subtopic": "Causes of flooding: physical and human",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 10,
+      "term": "4",
+      "topic": "Floods",
+      "subtopic": "Characteristics of floods; basic flood-hydrograph analysis (not for exam purposes)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "1",
+      "topic": "Droughts and desertification",
+      "subtopic": "Effects of droughts and desertification on people and the environment",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "1",
+      "topic": "Droughts and desertification",
+      "subtopic": "Management strategies (case studies)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "1",
+      "topic": "Droughts and desertification",
+      "subtopic": "Mapwork/GIS: drought-prone area maps, desertification infographics, spatial objects and scales",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Horizontally layered rocks",
+      "subtopic": "Hilly landscapes and basaltic plateaux: characteristics and processes",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Horizontally layered rocks",
+      "subtopic": "Scarp retreat and back wasting",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Horizontally layered rocks",
+      "subtopic": "Canyon and Karoo landscapes",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Horizontally layered rocks",
+      "subtopic": "Mapwork: map scale, contours and landforms, cross-sections, vertical exaggeration, gradient",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Inclined/tilted rock strata",
+      "subtopic": "Scarp and dip slopes; cuesta, homoclinal ridge, hogsback, cuesta basin and cuesta dome",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Massive igneous rocks",
+      "subtopic": "Identification of batholiths, laccoliths, lopoliths, dykes and sills",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Massive igneous rocks",
+      "subtopic": "Granite domes and tors: characteristics and processes",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Massive igneous rocks",
+      "subtopic": "Mapwork: gradient, intervisibility, vertical exaggeration",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Slopes",
+      "subtopic": "Overview of SA topography; types of slopes",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Slopes",
+      "subtopic": "Slope elements: crest, cliff (scarp/free face), talus (debris/scree), pediment",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Slopes",
+      "subtopic": "Characteristics of slope elements; the concept of slope retreat",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Slopes",
+      "subtopic": "GIS: spatial and spectral resolution; line, point, area and attribute data; raster vs vector",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Mass movement",
+      "subtopic": "Concept and kinds of mass movement: soil creep, solifluction, landslides, rock falls, mud flows, slumps",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Mass movement",
+      "subtopic": "Impact on people and the environment",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "2",
+      "topic": "Mass movement",
+      "subtopic": "Prevention/minimisation strategies with South African case studies",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Development",
+      "subtopic": "Terminology and the concept of development",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Development",
+      "subtopic": "Developed vs developing; MEDCs, LEDCs and industrial countries",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Development",
+      "subtopic": "Mapwork: locating exact position (degrees, minutes, seconds)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Development issues and challenges",
+      "subtopic": "Community-based development; rural and urban approaches (case studies)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Development issues and challenges",
+      "subtopic": "The effect of development on the environment",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Role of development aid",
+      "subtopic": "Concept of development aid and development co-operation",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Role of development aid",
+      "subtopic": "Types of aid: technical, conditional, humanitarian",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "3",
+      "topic": "Role of development aid",
+      "subtopic": "Impact of aid on development (positive and negative case studies)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Soil and soil erosion",
+      "subtopic": "Causes of soil erosion: human, animal, physical; past and present",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Soil and soil erosion",
+      "subtopic": "Evidence of soil erosion in South Africa; effects on people and the environment",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Soil and soil erosion",
+      "subtopic": "Management strategies to prevent and control soil erosion",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Conventional energy sources",
+      "subtopic": "Thermal and hydro-energy production in South Africa (maps and graphs)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Conventional energy sources",
+      "subtopic": "Thermal electricity generation using coal: principles and processes",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Conventional energy sources",
+      "subtopic": "Impact of coal mining and thermal power stations: advantages and disadvantages",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Conventional energy sources",
+      "subtopic": "SA's potential to meet long-term energy needs conventionally; nuclear energy case study",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Non-conventional energy sources",
+      "subtopic": "Solar energy: SA and world examples",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Non-conventional energy sources",
+      "subtopic": "The future of non-conventional energy in SA; effects on economy and environment",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 11,
+      "term": "4",
+      "topic": "Energy management in South Africa",
+      "subtopic": "Energy management towards greener economies and sustainable lifestyles: responsibilities of government, businesses and individuals",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Mid-latitude cyclones (frontal depression, extra tropical cyclones)",
+      "subtopic": "Consolidation of Grade 11 global air circulation",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Mid-latitude cyclones (frontal depression, extra tropical cyclones)",
+      "subtopic": "General characteristics; areas of formation; conditions necessary for formation",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Mid-latitude cyclones (frontal depression, extra tropical cyclones)",
+      "subtopic": "Impact on human activities and the environment; precautionary and management strategies",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Mid-latitude cyclones (frontal depression, extra tropical cyclones)",
+      "subtopic": "Mapwork/GIS: alphanumeric and grid references; coordinates and fixing position",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Tropical cyclones",
+      "subtopic": "General characteristics; areas of formation and regional names; formation factors; stages of development",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Tropical cyclones",
+      "subtopic": "Identification on synoptic maps and satellite images; case study of ONE recent tropical cyclone affecting southern Africa",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Tropical cyclones",
+      "subtopic": "Mapwork/GIS: contours and height, compass direction, true bearing; satellite imagery and resolution",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Valley climates",
+      "subtopic": "Slope aspect: definition; effect on temperature distribution in a valley",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Valley climates",
+      "subtopic": "Anabatic and katabatic winds, inversions, thermal belt, frost pockets, radiation fog",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Valley climates",
+      "subtopic": "Influence on human activities: settlement and farming",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Urban climates",
+      "subtopic": "Reasons for differences between rural and urban climates",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "1",
+      "topic": "Urban climates",
+      "subtopic": "Pollution domes: definition, causes, effects, reduction strategies",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes",
+      "subtopic": "River rejuvenation: definition, reasons, features (knickpoint, terraces, valley-in-a-valley, incised/entrenched meanders), significance",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes",
+      "subtopic": "River capture (stream piracy): concepts, features (captor, captured and misfit streams, elbow of capture, wind gap), impacts and implications for human activity",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes",
+      "subtopic": "Mapwork: identifying river-capture features; calculating gradient",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes & catchment and river management",
+      "subtopic": "Superimposed and antecedent drainage patterns",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes & catchment and river management",
+      "subtopic": "River management: causes of poor management; importance of drainage basins and catchment areas",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes & catchment and river management",
+      "subtopic": "Human impact: river pollution (eutrophication), overgrazing, deforestation, settlement",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes & catchment and river management",
+      "subtopic": "Management strategies; case study of one SA catchment management strategy",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Fluvial processes & catchment and river management",
+      "subtopic": "GIS: data standardisation, sharing, security; government and private-sector applications; developing a 'paper GIS'",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Study of settlements and rural settlements",
+      "subtopic": "Settlement, site and situation; rural vs urban settlements",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Rural settlement issues",
+      "subtopic": "Social justice issues: access to natural and human-made resources, limited investment, lack of infrastructure",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Rural settlement issues",
+      "subtopic": "Land reform: land tenure, redistribution, restitution",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Rural settlement issues",
+      "subtopic": "GIS: thematic data layering, manipulation and analysis; area and distance calculation",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Urban settlements",
+      "subtopic": "Origin and development of urban settlement; urbanisation of the world population",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Urban settlements",
+      "subtopic": "Concepts: urbanisation, urban growth, urban expansion, urban sprawl, rate and level of urbanisation, counter-urbanisation",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Urban settlements",
+      "subtopic": "Site and situation; functional classification: central places, trade and transport towns (break-of-bulk, junction, gateway, gap), specialised towns",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "2",
+      "topic": "Urban settlements",
+      "subtopic": "GIS: buffering, querying, data integration, statistical analysis",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Structure of the economy",
+      "subtopic": "Economic sectors: primary, secondary, tertiary, quaternary",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Structure of the economy",
+      "subtopic": "Sector contributions to GNP and GDP; employment by sector",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Structure of the economy",
+      "subtopic": "Use and interpretation of statistical and graphical information",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Agriculture",
+      "subtopic": "Contribution of agriculture to the SA economy; small-scale vs large-scale farming",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Agriculture",
+      "subtopic": "Main products for home and export markets",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Agriculture",
+      "subtopic": "Maize case study: production areas, favouring/hindering factors, economic contribution",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Agriculture",
+      "subtopic": "Food security: definitions, importance, influencing factors, improvement strategies, case studies",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Mining",
+      "subtopic": "Contribution and significance of mining to SA's development",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Mining",
+      "subtopic": "Mapwork: identifying mining activity; grid referencing, map codes and symbols",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Secondary and tertiary sectors",
+      "subtopic": "Types of industries: heavy/light, raw-material vs market orientated, footloose, ubiquitous, bridge (break-of-bulk)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Secondary and tertiary sectors",
+      "subtopic": "Factors influencing industrial development: raw materials, labour, water, energy, transport, political intervention, competition, trade",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "Secondary and tertiary sectors",
+      "subtopic": "Factors hindering industrial development (incl. over-concentration and pollution)",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "SA industrial regions",
+      "subtopic": "Four core regions: Gauteng (PWV), Durban-Pinetown, Port Elizabeth-Uitenhage, South-Western Cape",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "term": "3",
+      "topic": "SA industrial regions",
+      "subtopic": "Prescribed regions (Gauteng PWV and Port Elizabeth-Uitenhage): location factors, main activities, success factors and hindrances, economic and social impacts, case studies",
+      "source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "1",
+      "topic": "NUMBERS AND CALCULATIONS WITH NUMBERS",
+      "subtopic": "Number formats: decimal point/comma, thousand separators; positive and negative numbers in context; conversions between number formats (dozen, century, etc.)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Basic number concepts - Grade 7-9 Mathematics"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "1",
+      "topic": "NUMBERS AND CALCULATIONS WITH NUMBERS",
+      "subtopic": "Operations with whole numbers and decimals with/without a calculator (BODMAS); squares, cubes and square roots; operations with fractions",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Basic number concepts - Grade 7-9 Mathematics"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "1",
+      "topic": "NUMBERS AND CALCULATIONS WITH NUMBERS",
+      "subtopic": "Rounding (to decimal places, nearest whole, up or down); ratios; rates (meaning, types, calculations); direct and inverse proportion; percentages incl. increase and decrease",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Basic number concepts - Grade 7-9 Mathematics"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "1",
+      "topic": "DATA HANDLING",
+      "subtopic": "Classifying and organising data",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Basic number concepts - Grade 7-9 Mathematics"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "2",
+      "topic": "FINANCE",
+      "subtopic": "Tariff systems: municipal, telephone, transport tariffs and bank fees; cost calculations via tariff and/or formula; drawing and interpreting tariff graphs",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Grade 8-9 work"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "2",
+      "topic": "MEASUREMENT",
+      "subtopic": "Conversions: metric system, conversion factors and tables; time formats and conversions (sec to decades)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Grade 8-9 work"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "2",
+      "topic": "MEASUREMENT",
+      "subtopic": "Measuring and estimating: length, distance, weight/mass, volume, temperature, time; calculating costs of products and services",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Grade 8-9 work"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "2",
+      "topic": "MAPS, PLANS & OTHER REPRESENTATIONS",
+      "subtopic": "Scale: 1:500 and bar scales; actual distance and length from map/plan measurements",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Grade 8-9 work"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "2",
+      "topic": "PROBABILITY",
+      "subtopic": "Expression of probability; events, outcomes and prediction",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Grade 8-9 work"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "2",
+      "topic": "PROBABILITY",
+      "subtopic": "Relative frequency and theoretical probability of an event",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Grade 8-9 work"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "2",
+      "topic": "PROBABILITY",
+      "subtopic": "Tree diagrams and two-way tables",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Grade 8-9 work"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "3",
+      "topic": "FINANCE",
+      "subtopic": "Income, expenditure, profit and loss; fixed, variable and occasional values from financial documents; analyse and prepare income-and-expenditure statements and budgets",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Gr 8-9 financial maths; percentage calculations; introduction to VAT"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "3",
+      "topic": "FINANCE",
+      "subtopic": "Interest vs interest rate; calculate both (without formulae)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Gr 8-9 financial maths; percentage calculations; introduction to VAT"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "3",
+      "topic": "FINANCE",
+      "subtopic": "Taxation: VAT in shop purchases, till slips and bills; VAT-inclusive and -exclusive prices",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Gr 8-9 financial maths; percentage calculations; introduction to VAT"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "3",
+      "topic": "FINANCE",
+      "subtopic": "Banking, loans and investments: banking terminology, bank charges per account type, graphs from bank charges",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Gr 8-9 financial maths; percentage calculations; introduction to VAT"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "3",
+      "topic": "MEASUREMENTS",
+      "subtopic": "Perimeter and area of rectangles, triangles and circles (quarter, semi, three-quarter) using provided formulae",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Gr 8-9 Maths; substitution in formulae; interpretation of graphs"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "3",
+      "topic": "MEASUREMENTS",
+      "subtopic": "Cost-of-products problems, tasks and projects",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Gr 8-9 Maths; substitution in formulae; interpretation of graphs"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "term": "3",
+      "topic": "MAPS, PLANS & OTHER REPRESENTATIONS",
+      "subtopic": "Models: packaging cans/boxes for optimal space; most cost-effective packaging",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade10.json",
+      "prior_knowledge": "Exposure to basic floor plans and model instructions"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "PATTERNS AND RELATIONSHIPS",
+      "subtopic": "Relationships (two at a time): constant difference, inverse proportion, constant ratio between consecutive terms, combinations",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "PATTERNS AND RELATIONSHIPS",
+      "subtopic": "Representations: equations and formulae, dependent and independent variables, tables and graphs",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "PATTERNS AND RELATIONSHIPS",
+      "subtopic": "Working with two relationships: compare tariff systems and banking options using formulae, equations, tables and graphs",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "MEASUREMENTS",
+      "subtopic": "Conversions: metric to imperial; temperature (°C to °F and back); time durations; equivalent-proportionality conversions (e.g. 5 l paint covers 20 m², 1 teaspoon ≈ 5 ml)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "MEASUREMENTS",
+      "subtopic": "Measuring and estimating: length, distance, mass/weight, volume, temperature",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Financial documents: terminology and calculating values on documents",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Income (fixed, variable, occasional): personal (salaries, wages, commission) and business (sales, donations, grants) sources",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Expenditure: personal (living expenses, personal tax, loan repayments) and business (taxes, salaries, running expenses)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "2",
+      "topic": "FINANCE",
+      "subtopic": "Taxation: VAT, UIF",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "2",
+      "topic": "MAPS, PLANS & OTHER REPRESENTATIONS",
+      "subtopic": "Maps (directions and point locations): seating plans, layout plans, street maps, national/provincial road and rail maps, residential maps",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "2",
+      "topic": "DATA HANDLING",
+      "subtopic": "Developing questions; collecting data: populations and samples, collection methods and instruments",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "2",
+      "topic": "DATA HANDLING",
+      "subtopic": "Classifying and organising data: tallies and frequency tables",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "2",
+      "topic": "DATA HANDLING",
+      "subtopic": "Representing, interpreting and analysing: multiple bar graphs, line and broken-line graphs, scatter plots",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "2",
+      "topic": "PROBABILITY",
+      "subtopic": "Compound events: tree diagrams and two-way tables",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "3",
+      "topic": "FINANCE",
+      "subtopic": "Cost price and selling price: production/manufacturing cost, appropriate selling price, percentage profit",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "3",
+      "topic": "FINANCE",
+      "subtopic": "Break-even analysis: break-even values from formulae and graphs",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "3",
+      "topic": "FINANCE",
+      "subtopic": "Interest, loans and banking (calculate without formulae): loans, investments, bank accounts; savings, cheque/current, fixed deposit, credit and debit accounts",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "3",
+      "topic": "MAPS, PLANS & OTHER REPRESENTATIONS",
+      "subtopic": "Models: packaging using actual cans and a range of boxes",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 11,
+      "term": "4",
+      "topic": "MAPS, PLANS & OTHER REPRESENTATIONS",
+      "subtopic": "Assembling: following instructions (plugs, plastic models, flat-pack furniture, cell phones, electrical appliances, children's toys)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Financial documents: tax documents (tax rate tables, IRP5, employee income tax), loan documents (statements, changing loan agreements)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Taxation: personal income tax, taxable and non-taxable income, rebates, UIF (maximum amount), VAT (15%)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Income, expenditure, profit and loss (large organisations, fundraising): two-year comparisons; projected vs actual budgets",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Cost price and selling price; percentage profit; break-even values from formulae and graphs",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "DATA HANDLING",
+      "subtopic": "Developing questions on national and global issues; developing and using collection instruments (interviews, questionnaires, recording sheets)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "DATA HANDLING",
+      "subtopic": "Classifying and organising: numerical and categorical data, class intervals, tallies, frequency tables",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "DATA HANDLING",
+      "subtopic": "Summarising: quartiles, inter-quartile range, percentiles; measures of central tendency and spread",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "DATA HANDLING",
+      "subtopic": "Representing, interpreting, analysing: pie charts, histograms, bar graphs, line and broken-line graphs, scatter plots, box-and-whisker plots",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "PROBABILITY",
+      "subtopic": "Probability of simple events (dice, coin games, national lotteries, gambling, insurance risk assessment)",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "PROBABILITY",
+      "subtopic": "Relative frequency and theoretical probability",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "1",
+      "topic": "FINANCE",
+      "subtopic": "Interest and banking: hire purchase, residual/balloon payments, loans; interest rate, interest, repayments",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "2",
+      "topic": "MEASUREMENT",
+      "subtopic": "Conversions: factors and tables; metric to imperial and back; °C to °F and back",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "2",
+      "topic": "MEASUREMENT",
+      "subtopic": "Time: transport timetables (bus, train, taxi), production schedules (e.g. building a house), tides",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "2",
+      "topic": "MEASUREMENT",
+      "subtopic": "Perimeter and area; length, distance and time; cost calculations may apply",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "2",
+      "topic": "MEASUREMENT",
+      "subtopic": "BMI: formula (kg/m²) and interpreting charts",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths_literacy",
+      "subject": "Mathematical Literacy",
+      "grade": 12,
+      "term": "2",
+      "topic": "MAPS, PLANS & OTHER REPRESENTATIONS OF THE PHYSICAL WORLD",
+      "subtopic": "Maps: grid references, compass directions, slope on maps",
+      "source": "lessons/curriculum/CAPS/mathematical_literacy/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Algebraic expressions",
+      "subtopic": "Rational and irrational real numbers",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Algebraic expressions",
+      "subtopic": "Determine between which two integers a given simple surd lies",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Algebraic expressions",
+      "subtopic": "Round real numbers to an appropriate degree of accuracy",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Algebraic expressions",
+      "subtopic": "Multiplication of a binomial by a trinomial",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Algebraic expressions",
+      "subtopic": "Factorisation: trinomials, grouping in pairs, sum and difference of two cubes",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Algebraic expressions",
+      "subtopic": "Simplify, add and subtract algebraic fractions using factorisation (denominators up to sum/difference of cubes)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Exponents, equations and inequalities",
+      "subtopic": "Solve quadratic equations by factorisation",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Exponents, equations and inequalities",
+      "subtopic": "Literal equations (changing the subject of a formula)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Define sin, cos and tan in right-angled triangles",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Extend definitions of sin, cos and tan to 0°–360°",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Reciprocal ratios cosec, sec and cot (examined in Grade 10 only)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Special angle values (0°, 30°, 45°, 60°, 90°) without a calculator",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Two-dimensional problems involving right-angled triangles",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Simple trigonometric equations for angles 0°–90°",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Numerical values of ratios for angles 0°–360° from diagrams",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Euclidean Geometry",
+      "subtopic": "Revise lines, angles and triangles; similarity and congruence of triangles",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Euclidean Geometry",
+      "subtopic": "Investigate the line segment joining the midpoints of two sides of a triangle",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Analytical Geometry",
+      "subtopic": "Gradient of a line segment; parallel and perpendicular lines",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Analytical Geometry",
+      "subtopic": "Represent quadrilaterals and other figures on the Cartesian plane",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Concept of a function; representations via tables, graphs, words and formulae",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Point-by-point plotting of y=x², y=1/x and y=bˣ (b>0, b≠1): shape, domain, range, asymptotes, symmetry, turning points, intercepts",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Effect of a and q on y=a·f(x)+q for f(x)=x, x², 1/x, bˣ",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Point-by-point plotting of y=sinθ, y=cosθ, y=tanθ for θ∈[0°,360°]",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Sketch graphs, find equations of given graphs, interpret graphs",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Measures of central tendency in ungrouped data: mean, median, mode",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Dispersion: range, percentiles, quartiles, inter-quartile and semi-inter-quartile range",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Analyse and comment on context using statistical summaries and graphs",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Histogram",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Probability models: relative frequency vs theoretical probability",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Venn diagrams for two events; addition rule P(A or B)=P(A)+P(B)−P(A and B)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Mutually exclusive and complementary events",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 10,
+      "term": "3",
+      "topic": "Finance and growth",
+      "subtopic": "Implications of fluctuating foreign exchange rates",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "1",
+      "topic": "Exponents and surds",
+      "subtopic": "Add, subtract, multiply and divide simple surds",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "1",
+      "topic": "Exponents and surds",
+      "subtopic": "Solve simple equations involving surds",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Euclidean Geometry",
+      "subtopic": "Accept as axiom: a tangent to a circle is perpendicular to the radius at the point of contact",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Euclidean Geometry",
+      "subtopic": "Prove: two tangents from the same external point are equal; tangent-chord angle equals the angle in the alternate segment",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Euclidean Geometry",
+      "subtopic": "Use the theorems and their converses to solve riders",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Analytical Geometry",
+      "subtopic": "Revise distance, gradient (parallel and perpendicular lines) and midpoint",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Analytical Geometry",
+      "subtopic": "Equation of a line through two points; through one point parallel or perpendicular to a given line",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Analytical Geometry",
+      "subtopic": "Inclination of a line, m = tanθ (0° ≤ θ ≤ 180°)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Effect of parameters a, q and p on y=a(x+p)²+q, y=a/(x+p)+q, y=a·b^(x+p)+q (b>0, b≠1)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Average gradient between two points; intuitive gradient of a curve at a point",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "2",
+      "topic": "Functions (including trigonometric functions)",
+      "subtopic": "Point-by-point plotting of y=sinθ, y=cosθ, y=tanθ for θ∈[−360°,360°]",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Revise measures of central tendency and dispersion (ungrouped and grouped data)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Revise five number summary and box-and-whisker diagram",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Revise histograms",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Frequency polygons",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Ogives (cumulative frequency curves)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Symmetric and skewed data",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Identification of outliers",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Revise probability models: relative frequency vs theoretical probability",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Dependent and independent events; product rule for independent events",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Venn diagrams for any three events in a sample space",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Tree diagrams for consecutive or simultaneous events (not necessarily independent)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Probability",
+      "subtopic": "Venn diagrams, tree diagrams and contingency tables for real-life problems",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Finance, growth and decay",
+      "subtopic": "Revise simple and compound growth formulae (interest, hire purchase, inflation, population growth)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Finance, growth and decay",
+      "subtopic": "Implications of fluctuating foreign exchange rates",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 11,
+      "term": "3",
+      "topic": "Finance, growth and decay",
+      "subtopic": "Different periods of compounding; nominal and effective interest rates",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "1",
+      "topic": "Number patterns, sequences and series",
+      "subtopic": "Revise number patterns with a constant second difference (quadratic general term)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "1",
+      "topic": "Functions: Formal definition, inverses, exponential and logarithmic",
+      "subtopic": "Definition of a function",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "1",
+      "topic": "Trigonometry",
+      "subtopic": "Revise proofs of the sine, cosine and area rules",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Euclidean Geometry",
+      "subtopic": "Revise necessary and sufficient conditions for polygons to be similar",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Euclidean Geometry",
+      "subtopic": "Prove: equiangular triangles are similar",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Analytical Geometry",
+      "subtopic": "Revise: equation of a line through two points; through one point parallel/perpendicular to a given line; inclination of a line (m=tanθ, 0°≤θ≤180°)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Differential Calculus, including polynomials",
+      "subtopic": "Factorise third-degree polynomials; remainder and factor theorems (degree ≤ 3, no proofs)",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Differential Calculus, including polynomials",
+      "subtopic": "Intuitive understanding of the limit concept",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Differential Calculus, including polynomials",
+      "subtopic": "Equations of tangents to graphs of functions",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Differential Calculus, including polynomials",
+      "subtopic": "Second derivative and concavity",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "2",
+      "topic": "Differential Calculus, including polynomials",
+      "subtopic": "Practical optimisation and rates of change, including calculus of motion",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "3",
+      "topic": "Statistics",
+      "subtopic": "Revise: histograms, frequency polygons, ogives, variance and standard deviation (ungrouped), symmetric and skewed data, outliers",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "3",
+      "topic": "Counting and probability",
+      "subtopic": "Revise: addition rule, mutually exclusive events, complementary rule, independent events and the product rule",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "3",
+      "topic": "Counting and probability",
+      "subtopic": "Venn diagrams up to three events; tree diagrams; two-way contingency tables",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.maths",
+      "subject": "Maths",
+      "grade": 12,
+      "term": "3",
+      "topic": "Counting and probability",
+      "subtopic": "Probability problems using counting techniques",
+      "source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Transverse pulses on a string, spring",
+      "subtopic": "Pulse, transverse pulse and amplitude",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Transverse waves",
+      "subtopic": "Transverse wave; wavelength, frequency, period, amplitude, crest, trough",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Transverse waves",
+      "subtopic": "Points in phase and out of phase",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Longitudinal waves",
+      "subtopic": "Longitudinal wave in a spring; compression and rarefaction",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Longitudinal waves",
+      "subtopic": "Differentiate longitudinal vs transverse waves; v = fλ problems",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Sound",
+      "subtopic": "Sound as a longitudinal wave; wave speed vs properties of the medium",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Sound",
+      "subtopic": "Echoes; v = fλ problems including sonar, bats, dolphins",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Sound",
+      "subtopic": "Pitch vs frequency; loudness vs amplitude and ear sensitivity; quality vs waveform",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Sound",
+      "subtopic": "Ultrasound (20–100 kHz); ultrasound imaging and medical uses",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Electromagnetic radiation",
+      "subtopic": "Wave model vs particle model of electromagnetic radiation",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Electromagnetic radiation",
+      "subtopic": "EM spectrum ordered by frequency/wavelength; a use per radiation type",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "WAVES, SOUND AND LIGHT: Electromagnetic radiation",
+      "subtopic": "Penetrating ability vs energy; dangers of gamma rays, X-rays and UV",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "ELECTRICITY AND MAGNETISM: Electrostatics",
+      "subtopic": "Positive and negative charge; neutral vs charged objects",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "ELECTRICITY AND MAGNETISM: Electrostatics",
+      "subtopic": "Tribo-electric charging of insulators",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "ELECTRICITY AND MAGNETISM: Electric circuits",
+      "subtopic": "Current I = Q/Δt; the coulomb; conventional current direction",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "ELECTRICITY AND MAGNETISM: Electric circuits",
+      "subtopic": "Connecting and reading an ammeter and a voltmeter",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "1",
+      "topic": "ELECTRICITY AND MAGNETISM: Electric circuits",
+      "subtopic": "Resistance: definition, microscopic description; effect of temperature, length, thickness",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "ELECTRICITY AND MAGNETISM: Electric circuits",
+      "subtopic": "Energy transformations in a battery and resistors (why a battery goes flat)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: The atom",
+      "subtopic": "Atomic structure: nucleus and surrounding electrons",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: The atom",
+      "subtopic": "Atomic number, protons, electrons, neutrons, mass number; ion charges",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: The atom",
+      "subtopic": "Isotopes; relative atomic mass from isotope percentages",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: The atom",
+      "subtopic": "Element notation (A over Z next to symbol)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: The atom",
+      "subtopic": "Aufbau diagrams and sp notation up to Z = 20",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: The atom",
+      "subtopic": "Atomic orbitals and their energies",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: Periodic table",
+      "subtopic": "Names and formulae using the cation/anion table",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: Periodic table",
+      "subtopic": "Metals, non-metals, metalloids; electrical/thermal conductors, semiconductors, insulators; magnetic classification",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: Periodic table",
+      "subtopic": "Periodicity Li→Ar: atomic radius, ionisation energy, electron affinity, electronegativity",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: Periodic table",
+      "subtopic": "Chemical properties and reactivity trends of groups 1, 2, 17 and 18",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: Chemical bonding",
+      "subtopic": "Chemical bond; Lewis dot diagrams of elements",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "MATTER AND MATERIAL: Chemical bonding",
+      "subtopic": "Relative molecular and formula mass calculations",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Physical and chemical change",
+      "subtopic": "Physical change vs chemical change, with examples",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Representing chemical change",
+      "subtopic": "Word equations ↔ chemical equations; phase indicators (s), (aq), (l), (g)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Representing chemical change",
+      "subtopic": "Balancing chemical equations; conservation of atoms and mass; law of constant composition",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "The mole, Avogadro's number, molar mass",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Avogadro's law; molar gas volume at STP",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Volume relationships in balanced gas equations",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Concentration c = n/V (mol·dm⁻³)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Percentage composition; empirical formula from percentage composition",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Water of crystallisation (e.g. CuSO4·5H2O)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "3",
+      "topic": "MECHANICS: Vectors and scalars",
+      "subtopic": "Physical quantities; vector vs scalar",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "3",
+      "topic": "MECHANICS: Vectors and scalars",
+      "subtopic": "Resultant: tail-to-head method and by calculation (max four force vectors, 1D)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "3",
+      "topic": "MECHANICS: Instantaneous speed and velocity and the equations of motion",
+      "subtopic": "Instantaneous velocity and instantaneous speed",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "3",
+      "topic": "MECHANICS: Energy",
+      "subtopic": "Kinetic energy Ek = ½mv²",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "4",
+      "topic": "MECHANICS: Energy",
+      "subtopic": "Law of conservation of energy; principle of conservation of mechanical energy",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "term": "4",
+      "topic": "MECHANICS: Energy",
+      "subtopic": "Apply conservation of mechanical energy: drops, vertical throws, pendulum, roller coasters, inclined planes",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "MECHANICS: Vectors in two dimensions",
+      "subtopic": "Sketch Rx and Ry; magnitude via Pythagoras; direction via trig ratios",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "MECHANICS: Vectors in two dimensions",
+      "subtopic": "Graphical methods: tail-to-head, tail-to-tail (parallelogram); closed vector diagrams",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "MECHANICS: Vectors in two dimensions",
+      "subtopic": "Resolve a vector into components Rx = Rcosθ, Ry = Rsinθ",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "MECHANICS: Newton’s laws",
+      "subtopic": "Normal force; static and kinetic friction (fs max = μsN, fk = μkN)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "MECHANICS: Newton’s laws",
+      "subtopic": "Newton's first law; inertia (seatbelt discussion)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "MECHANICS: Newton’s laws",
+      "subtopic": "Newton's third law; properties of action-reaction pairs",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "MECHANICS: Newton’s Universal Law",
+      "subtopic": "Newton's law of universal gravitation F = Gm1m2/d²",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "1",
+      "topic": "ELECTRICITY & MAGNETISM: Electrostatics",
+      "subtopic": "Electric field magnitude E = F/Q",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "ELECTRICITY & MAGNETISM: Electromagnetism",
+      "subtopic": "Right Hand Rule and field lines: straight wire, single loop, solenoid; environmental impact of overhead cables",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "ELECTRICITY & MAGNETISM: Electromagnetism",
+      "subtopic": "Magnetic flux Φ = BAcosθ",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "ELECTRICITY & MAGNETISM: Electromagnetism",
+      "subtopic": "Faraday's law; direction of induced current (magnet into/out of a solenoid)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "ELECTRICITY & MAGNETISM: Electric circuits",
+      "subtopic": "Ohm's law; ohmic vs non-ohmic conductors",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "ELECTRICITY & MAGNETISM: Electric circuits",
+      "subtopic": "Electrical energy; the kilowatt-hour; cost of electricity usage",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Atomic combinations",
+      "subtopic": "Chemical bond; Lewis diagrams; valence electrons",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Atomic combinations",
+      "subtopic": "Why two H atoms bond and He does not; potential energy vs internuclear distance",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Atomic combinations",
+      "subtopic": "Molecular shapes: linear, angular, pyramidal, tetrahedral",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Atomic combinations",
+      "subtopic": "Bonding pairs vs lone pairs; dative covalent bond",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Atomic combinations",
+      "subtopic": "Electronegativity; non-polar vs polar covalent bonds; partial charges; ΔEN scale up to ionic",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Atomic combinations",
+      "subtopic": "Polar bonds vs polar molecules (role of molecular shape)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Atomic combinations",
+      "subtopic": "Bond energy and bond length; strength vs atom size and number of bonds",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Intermolecular forces",
+      "subtopic": "Intermolecular vs interatomic (intramolecular) forces",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "2",
+      "topic": "MATTER & MATERIAL: Intermolecular forces",
+      "subtopic": "Van der Waals forces: London (induced dipole), dipole-dipole, dipole-induced dipole; hydrogen bonding",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Mole as SI unit; Avogadro's number; molar mass; Avogadro's law; VM = 22,4 dm³·mol⁻¹ at STP",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Percentage composition; empirical and molecular formulae",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Percentage purity (e.g. CaCO3 in impure seashells)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+      "subtopic": "Stoichiometry of explosion reactions and airbag (sodium azide) reactions",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Energy and change",
+      "subtopic": "Heat of reaction ΔH; exothermic and endothermic reactions and the sign of ΔH",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Energy and change",
+      "subtopic": "Activation energy; activated complex",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Energy and change",
+      "subtopic": "Potential energy vs course-of-reaction graphs, catalysed and uncatalysed",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Type of reactions",
+      "subtopic": "Names and formulae of common acids: hydrochloric, nitric, sulphuric, ethanoic (acetic)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Type of reactions",
+      "subtopic": "Names and formulae of common bases: ammonia, sodium carbonate, sodium hydrogen carbonate, sodium hydroxide, potassium hydroxide",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Arrhenius and Brønsted-Lowry definitions; conjugate acid-base pairs",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Amphiprotic substances (ampholytes) with equations",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Dissolution of acids and bases in water",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Acid-base indicators: litmus, methyl orange, phenolphthalein, bromothymol blue",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "MATTER & MATERIAL: Ideal gas",
+      "subtopic": "Molecular motion; collisions; distribution of speeds; 'average speed'",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "MATTER & MATERIAL: Ideal gas",
+      "subtopic": "Ideal gas vs real gas; conditions approaching ideal behaviour",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "MATTER & MATERIAL: Ideal gas",
+      "subtopic": "Boyle's law: practical, tables of results, graphs, proportionality and equation",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "3",
+      "topic": "MATTER & MATERIAL: Ideal gas",
+      "subtopic": "Temperature as average kinetic energy; pressure as molecular collisions with container walls",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "4",
+      "topic": "CHEMICAL CHANGE: Types of reaction",
+      "subtopic": "Oxidation numbers and assignment rules (H2O, CH4, CO2, H2O2, HOCl)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "4",
+      "topic": "CHEMICAL CHANGE: Types of reaction",
+      "subtopic": "Oxidation, reduction, oxidising agent, reducing agent",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 11,
+      "term": "4",
+      "topic": "CHEMICAL CHANGE: Types of reaction",
+      "subtopic": "Balance redox equations using half-reactions and the table of standard reduction potentials",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MECHANICS: Momentum & impulse",
+      "subtopic": "Momentum p = mv; vector nature and vector diagrams",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MECHANICS: Momentum & impulse",
+      "subtopic": "Newton's second law in momentum form Fnet = Δp/Δt",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MECHANICS: Momentum & impulse",
+      "subtopic": "Impulse; impulse-momentum theorem FnetΔt = mΔv (1D); safety applications",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MECHANICS: Momentum & impulse",
+      "subtopic": "Collisions of two objects in one dimension; elastic vs inelastic by calculation",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MECHANICS: Vertical projectile motion",
+      "subtopic": "Projectiles; equations of motion for position, velocity and displacement",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MECHANICS: Vertical projectile motion",
+      "subtopic": "x-t, v-t and a-t graphs: free fall, thrown up, thrown down, bouncing objects",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MATTER & MATERIALS: Organic molecules",
+      "subtopic": "Definitions: organic molecule, functional group, hydrocarbon, homologous series, saturated, unsaturated, structural isomer",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MATTER & MATERIALS: Organic molecules",
+      "subtopic": "Condensed, structural and molecular formulae (max 8 C, one functional group): alkanes, alkenes, alkynes, alcohols, haloalkanes, carboxylic acids, aldehydes, ketones, esters",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MATTER & MATERIALS: Organic molecules",
+      "subtopic": "Physical properties (boiling/melting point, vapour pressure) vs IMF strength, functional group, chain length, branching",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MATTER & MATERIALS: Organic molecules",
+      "subtopic": "Combustion of alkanes in excess oxygen; alkanes as fuels",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "1",
+      "topic": "MATTER & MATERIALS: Organic molecules",
+      "subtopic": "Classify and write equations for addition (alkenes), elimination (dehydrohalogenation, cracking, dehydration of alcohols) and substitution (hydrolysis of haloalkanes, halogenation of alkanes) reactions",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "MECHANICS: Work, energy, and power",
+      "subtopic": "Work done on an object; net work; force and free-body diagrams; positive vs negative net work",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "MECHANICS: Work, energy, and power",
+      "subtopic": "Work-energy theorem on horizontal, vertical and inclined planes",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "MECHANICS: Work, energy, and power",
+      "subtopic": "Wnc = ΔEk + ΔEp problems",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "MECHANICS: Work, energy, and power",
+      "subtopic": "Power; Pave = Fvave at constant speed; minimum motor power (e.g. borehole pumping)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "WAVES, SOUND & LIGHT: Doppler Effect",
+      "subtopic": "Doppler effect with sound and ultrasound; pitch change; medical applications (blood flow, foetal heartbeat)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "WAVES, SOUND & LIGHT: Doppler Effect",
+      "subtopic": "Red shifts; Doppler evidence for the expanding universe",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Rate and extent of reaction",
+      "subtopic": "Reaction rate: definition and calculation from data",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Rate and extent of reaction",
+      "subtopic": "Factors affecting rate; collision theory explanation",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Rate and extent of reaction",
+      "subtopic": "Experimental techniques for measuring rate (interpret tables and graphs)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Rate and extent of reaction",
+      "subtopic": "Positive catalysts; molecular energy distribution graphs (catalyst, temperature, concentration)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Chemical equilibrium",
+      "subtopic": "Open and closed systems; reversible reactions; dynamic equilibrium",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Chemical equilibrium",
+      "subtopic": "Factors influencing equilibrium position; Le Chatelier's principle",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Arrhenius and Lowry-Brønsted definitions",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Strong vs weak, concentrated vs dilute acids and bases; conjugate pairs",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Salt hydrolysis and approximate pH",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "pH scale; pH of strong acids and bases; Kw and auto-ionisation of water",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "2",
+      "topic": "CHEMICAL CHANGE: Acids and bases",
+      "subtopic": "Ka and Kb of strong vs weak acids/bases; comparison by pH, conductivity and reaction rate",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "ELECTRICITY & MAGNETISM: Electric circuits",
+      "subtopic": "Current, voltage, resistance in series/parallel networks (max four resistors)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "ELECTRICITY & MAGNETISM: Electrodynamics",
+      "subtopic": "Generators: energy conversion, electromagnetic induction, AC vs DC generators, components",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "ELECTRICITY & MAGNETISM: Electrodynamics",
+      "subtopic": "Motors: motor effect, components, uses",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "ELECTRICITY & MAGNETISM: Electrodynamics",
+      "subtopic": "Advantages of AC over DC; voltage-time and current-time graphs for AC",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "ELECTRICITY & MAGNETISM: Electrodynamics",
+      "subtopic": "rms values: Irms = Imax/√2, Vrms = Vmax/√2; average power (purely resistive circuits)",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "MATTER & MATERIALS: Optical phenomena and properties of materials",
+      "subtopic": "Atomic spectra via energy transitions; absorption vs emission spectra",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Electrochemical reactions",
+      "subtopic": "Oxidation and reduction (electron transfer, oxidation numbers); oxidising/reducing agents; anode, cathode, electrolyte",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Electrochemical reactions",
+      "subtopic": "Standard electrode potentials; standard hydrogen electrode as reference",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Electrochemical reactions",
+      "subtopic": "Electrolytic cells: ion movement, electron flow, half-reactions, overall reaction",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
+    },
+    {
+      "type": "lesson.physical_sciences",
+      "subject": "Physical Sciences",
+      "grade": 12,
+      "term": "3",
+      "topic": "CHEMICAL CHANGE: Electrochemical reactions",
+      "subtopic": "Electrolytic applications: decomposition of CuCl2, electroplating, refining of copper, electrolysis of concentrated NaCl",
+      "source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json"
     }
   ]
 }
