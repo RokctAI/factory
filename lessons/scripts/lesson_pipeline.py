@@ -78,7 +78,7 @@ VALID_TERMS = {"1", "2", "3", "4", "unknown"}
 #                    method only, no first-teaching build-up
 #   mcq.json         2-5 exit-check questions (flat list, not per-subtopic)
 #   manim_scene.py   optional single scene
-# No reel, no Mandy, no comprehension_check, no subtopics segmentation.
+# No reel, no assistant Q&A, no comprehension_check, no subtopics segmentation.
 # Where a syllabus lesson already teaches the content, the skill definition
 # file records it in covered_by (list of {grade, topic, subtopic}) - deep
 # review defers to that lesson in the Library instead of re-teaching, which
@@ -129,14 +129,14 @@ CONTENT_FILES = {
     "mcq_data_path": "mcq.json",
     "comprehension_check_path": "comprehension_check.json",
     "reel_brief_path": "reel_clip.json",
-    "mandy_transcript_path": "mandy_qa_transcript.md",
+    "assistant_qa_transcript_path": "assistant_qa_transcript.md",
 }
 
 # §4's Prompt Template item 5 is "Nervous student Mandy audio script (if
 # needed)" — optional by spec, but when produced it must be tracked on the
 # card like every other content item.
 OPTIONAL_CONTENT_FILES = {
-    "mandy_nervous_script_path": "mandy_nervous_script.md",
+    "assistant_nervous_script_path": "assistant_nervous_script.md",
 }
 
 # Review format for category: skill cards (see the Skills convention above).
@@ -501,8 +501,8 @@ subtopics_path:
 mcq_data_path:
 comprehension_check_path:
 reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
+assistant_qa_transcript_path:
+assistant_nervous_script_path:
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
@@ -803,9 +803,9 @@ Produce:
 2. Manim Python file — whiteboard style, step by step
 3. Subtopic markers with timestamps
 4. MCQ questions per subtopic (3 to 5, predefined answers)
-5. Nervous student Mandy audio script (if needed)
+5. Nervous-student assistant audio script (if needed; Mandy or Bianca - the lesson's assigned assistant)
 6. TikTok clip script — 60 seconds from best moment
-7. Mandy Q&A transcript for post-session
+7. Assistant Q&A transcript for post-session
 Also produce comprehension check questions (item 5 of the canonical output
 list in agent/replay/docs/supacharge-tech.md §4 "How A Lesson Is Created").
 
@@ -876,9 +876,9 @@ Write the files into {lesson_dir}/ exactly as follows:
 - {lesson_dir}/comprehension_check.json — {{"questions": [{{"id": "cc1",
   "question": "...", "expected_answer": "..."}}, ...]}} — end-of-lesson
   comprehension check.
-- {lesson_dir}/mandy_nervous_script.md — only if needed: short reassurance
-  script Mandy can speak to a nervous student for this subtopic. If you
-  create this file, you MUST also set the card's mandy_nervous_script_path
+- {lesson_dir}/assistant_nervous_script.md — only if needed: short reassurance
+  script the lesson's assistant (Mandy or Bianca) can speak to a nervous student for this subtopic. If you
+  create this file, you MUST also set the card's assistant_nervous_script_path
   field to its path; if you do not create it, leave the field empty.
 - {lesson_dir}/reel_clip.json — the 60-second TikTok clip script, JSON only,
   schema: {{"element_type": "lesson_reel", "lesson_id": "{card_id}",
@@ -888,14 +888,14 @@ Write the files into {lesson_dir}/ exactly as follows:
   "duration_seconds": 60, "guardrail_applied": "{get_field(card, 'guardrail')}"}}.
   Pick the single best moment of the lesson, same hook discipline as the
   factory's book reel briefs.
-- {lesson_dir}/mandy_qa_transcript.md — Mandy post-session Q&A transcript:
-  likely student questions on this subtopic with Mandy's answers.
+- {lesson_dir}/assistant_qa_transcript.md — assistant post-session Q&A transcript:
+  likely student questions on this subtopic with the assistant's answers.
 
 Then update the job card {card_file}:
 - fill lesson_name (short human title) and lesson_path ({lesson_dir}),
 - fill script_path, manim_path, subtopics_path, mcq_data_path,
-  comprehension_check_path, reel_brief_path, mandy_transcript_path (and
-  mandy_nervous_script_path if produced) with the paths above,
+  comprehension_check_path, reel_brief_path, assistant_qa_transcript_path (and
+  assistant_nervous_script_path if produced) with the paths above,
 - write a 'concept: |' block summarising the teaching approach (angle,
   pacing, where the example problem lands),
 - set status to 'concept_generated'.
@@ -1890,9 +1890,9 @@ def run_checks(card, card_file):
                 errors.append(f"reel_clip.json missing {key}")
 
     # Mandy post-session Q&A transcript.
-    mandy = paths["mandy_transcript_path"].read_text(encoding="utf-8")
+    mandy = paths["assistant_qa_transcript_path"].read_text(encoding="utf-8")
     if len(mandy.split()) < 50:
-        errors.append("mandy_qa_transcript.md too short to be a usable Q&A transcript")
+        errors.append("assistant_qa_transcript.md too short to be a usable Q&A transcript")
 
     # Skills schema consistency (see the Skills convention at the top of
     # this file): a skill card must carry its stable ref, a non-skill card

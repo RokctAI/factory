@@ -34,8 +34,8 @@ subtopics_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factor
 mcq_data_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/mcq.json
 comprehension_check_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/comprehension_check.json
 reel_brief_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/reel_clip.json
-mandy_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/mandy_qa_transcript.md
-mandy_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/mandy_nervous_script.md
+assistant_qa_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/assistant_qa_transcript.md
+assistant_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_factoring_method_31d165/assistant_nervous_script.md
 status: produced
 created: 2026-07-14
 last_updated: 2026-07-17 00:30:18

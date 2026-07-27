@@ -60,8 +60,8 @@ subtopics_path:
 mcq_data_path:
 comprehension_check_path:
 reel_brief_path:
-mandy_transcript_path:
-mandy_nervous_script_path:
+assistant_qa_transcript_path:
+assistant_nervous_script_path:
 status:
 created:
 last_updated:

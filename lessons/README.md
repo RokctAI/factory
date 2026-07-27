@@ -59,10 +59,10 @@ does not exist yet and is a separate future brief.
 - `<subject>/<grade>/<term>/<card_id>/` (e.g.
   `maths/grade11/term1/..._31d165/`) — one directory per lesson: `script.md`,
   `manim_scene.py`, `subtopics.json`, `mcq.json`,
-  `comprehension_check.json`, `mandy_nervous_script.md` (optional — but
+  `comprehension_check.json`, `assistant_nervous_script.md` (optional — but
   when produced it must be referenced by the card's
-  `mandy_nervous_script_path` field; Level 3 fails untracked content),
-  `reel_clip.json`, `mandy_qa_transcript.md`.
+  `assistant_nervous_script_path` field; Level 3 fails untracked content),
+  `reel_clip.json`, `assistant_qa_transcript.md`.
 - Level 3 also verifies content programmatically wherever it is computable
   — MCQ answer keys (quadratic roots/factoring/expansion/solution counts,
   pure-arithmetic values) and every fully-numeric worked-arithmetic

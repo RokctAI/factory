@@ -278,12 +278,12 @@ MAX_BREAK_QUESTIONS = 4  # client caps at 4 so a break stays a break
 
 
 def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
-    """Student questions from mandy_qa_transcript.md, for the break board.
+    """Student questions from assistant_qa_transcript.md, for the break board.
 
     Emitted INLINE on break_start (not into a bank): the client's
     BreakQuestion model has no id field, and these are single-use display
     prompts rather than scored items. Only the question is carried — the
-    board shows it while Mandy speaks the answer from the audio, so
+    board shows it while the assistant speaks the answer from the audio, so
     ask/answer seconds stay at the client's defaults unless the bridge audio
     gives us real ones."""
     questions = []
@@ -308,7 +308,7 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
     profile at 0, subtopic_start/subtopic_end per subtopic (end carries the
     subtopic's MCQ ids as `exercise`), a break_start at the subtopic
     boundary nearest the audio midpoint (the bridge between the two tutors'
-    parts — Mandy bridges, then the second tutor takes over; the duo comes
+    parts — the assistant bridges, then the second tutor takes over; the duo comes
     from roster.json), then — when the lesson ships a comprehension check —
     a comprehension_check event at lesson end, signoff last. All times
     clamped to the audio length."""
@@ -352,7 +352,7 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
         if break_after_ref is not None and sub.get("ref") == break_after_ref:
             tracks.append({"time": round(end, 2), "type": "break_start",
                            "duration_seconds": BREAK_DURATION_SECONDS,
-                           "bridge": "mandy",
+                           "bridge": "assistant",  # resolved to the lesson's assigned assistant (Mandy/Bianca) at production
                            "next_tutor": second_tutor["id"],
                            **({"questions": break_questions} if break_questions else {})})
     cc_ids = [q["id"] for q in comprehension.get("questions", []) if q.get("id")]
@@ -524,11 +524,11 @@ def main():
     else:
         print(f"[tutors] first={first_tutor['id']} — no roster pair resolved; single-tutor manifest")
 
-    transcript_file = lesson_path / "mandy_qa_transcript.md"
+    transcript_file = lesson_path / "assistant_qa_transcript.md"
     break_questions = (extract_break_questions(transcript_file.read_text("utf-8"))
                        if second_tutor and transcript_file.exists() else [])
     if break_questions:
-        print(f"[break] {len(break_questions)} question(s) from mandy_qa_transcript.md")
+        print(f"[break] {len(break_questions)} question(s) from assistant_qa_transcript.md")
 
     tracks = build_tracks(subtopics, mcq, comprehension, first_tutor,
                           second_tutor, subtopic_scale, audio_seconds,
