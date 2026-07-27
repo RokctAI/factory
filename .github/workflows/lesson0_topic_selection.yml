@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'lessons/curriculum/*.json'
+      - 'lessons/curriculum/CAPS/**/*.json'
     branches:
       - main
   workflow_dispatch:
