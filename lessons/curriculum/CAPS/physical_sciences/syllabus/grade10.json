@@ -10,51 +10,318 @@
     {
       "term": 1,
       "topics": [
-        "WAVES, SOUND AND LIGHT: Transverse pulses on a string, spring",
-        "WAVES, SOUND AND LIGHT: Transverse waves",
-        "WAVES, SOUND AND LIGHT: Longitudinal waves",
-        "WAVES, SOUND AND LIGHT: Sound",
-        "WAVES, SOUND AND LIGHT: Electromagnetic radiation",
-        "ELECTRICITY AND MAGNETISM: Electrostatics",
-        "ELECTRICITY AND MAGNETISM: Electric circuits",
-        "CONSOLIDATION OF TERM 1, CONTROL TEST"
+        {
+          "name": "WAVES, SOUND AND LIGHT: Transverse pulses on a string, spring",
+          "subtopics": [
+            "Pulse, transverse pulse and amplitude",
+            "Principle of superposition; constructive and destructive interference of pulses"
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Transverse waves",
+          "subtopics": [
+            "Transverse wave; wavelength, frequency, period, amplitude, crest, trough",
+            "Points in phase and out of phase",
+            "f = 1/T and the wave equation v = fλ in problems"
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Longitudinal waves",
+          "subtopics": [
+            "Longitudinal wave in a spring; compression and rarefaction",
+            "Wavelength, amplitude, period and frequency of longitudinal waves",
+            "Differentiate longitudinal vs transverse waves; v = fλ problems"
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Sound",
+          "subtopics": [
+            "Sound as a longitudinal wave; wave speed vs properties of the medium",
+            "Echoes; v = fλ problems including sonar, bats, dolphins",
+            "Pitch vs frequency; loudness vs amplitude and ear sensitivity; quality vs waveform",
+            "Ultrasound (20–100 kHz); ultrasound imaging and medical uses"
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Electromagnetic radiation",
+          "subtopics": [
+            "Wave model vs particle model of electromagnetic radiation",
+            "Source and propagation of EM waves; c = 3×10⁸ m·s⁻¹",
+            "EM spectrum ordered by frequency/wavelength; a use per radiation type",
+            "c = fλ calculations",
+            "Penetrating ability vs energy; dangers of gamma rays, X-rays and UV",
+            "Photon; photon energy E = hf = hc/λ"
+          ]
+        },
+        {
+          "name": "ELECTRICITY AND MAGNETISM: Electrostatics",
+          "subtopics": [
+            "Positive and negative charge; neutral vs charged objects",
+            "Tribo-electric charging of insulators",
+            "SI unit of charge; conservation of charge, Q = (Q1+Q2)/2 for identical charges",
+            "Charge quantization Q = nq",
+            "Like charges repel, opposite attract; polarization of insulators"
+          ]
+        },
+        {
+          "name": "ELECTRICITY AND MAGNETISM: Electric circuits",
+          "subtopics": [
+            "Potential difference V = W/Q; emf and terminal potential difference",
+            "Current I = Q/Δt; the coulomb; conventional current direction",
+            "Connecting and reading an ammeter and a voltmeter",
+            "Resistance: definition, microscopic description; effect of temperature, length, thickness"
+          ]
+        },
+        {
+          "name": "CONSOLIDATION OF TERM 1, CONTROL TEST"
+        }
+      ],
+      "sba": [
+        "Formal practical (SBA option): constructive and destructive interference (ripple tank)",
+        "Formal practical (SBA option): speed of sound in air OR sound characteristics with function generator and oscilloscope",
+        "Control test"
+      ],
+      "control_test_scope": [
+        "Transverse pulses on a string, spring",
+        "Transverse waves",
+        "Longitudinal waves",
+        "Electromagnetic radiation",
+        "Electrostatics",
+        "Electric circuits"
       ]
     },
     {
       "term": 2,
       "topics": [
-        "CONTROL TEST: Discussion and remedial work",
-        "ELECTRICITY AND MAGNETISM: Electric circuits",
-        "MATTER AND MATERIAL: States of matter and the kinetic molecular theory",
-        "MATTER AND MATERIAL: The atom",
-        "MATTER AND MATERIAL: Periodic table",
-        "MATTER AND MATERIAL: Chemical bonding",
-        "CHEMICAL CHANGE: Physical and chemical change",
-        "CHEMICAL CHANGE: Representing chemical change",
-        "CHEMICAL CHANGE: Quantitative aspects of chemical change",
-        "CONSOLIDATION, CONTROL TEST"
+        {
+          "name": "CONTROL TEST: Discussion and remedial work"
+        },
+        {
+          "name": "ELECTRICITY AND MAGNETISM: Electric circuits",
+          "subtopics": [
+            "Energy transformations in a battery and resistors (why a battery goes flat)",
+            "Series circuits: same current, potential-difference dividers, Rs = R1 + R2 + …",
+            "Parallel circuits: same potential difference, current dividers, 1/Rp = 1/R1 + 1/R2 + …"
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: States of matter and the kinetic molecular theory",
+          "subtopics": [
+            "Particle nature of matter; diffusion and Brownian motion",
+            "Material properties: strength, brittle/malleable/ductile, density, melting and boiling points",
+            "Mixture, pure substance, element, compound",
+            "Three states of matter; freezing, melting and boiling points",
+            "Heating and cooling curves; identify state at a given temperature",
+            "Changes of state: melting, evaporation, freezing, sublimation, condensation",
+            "Solid, liquid, gas in terms of the Kinetic Molecular Theory"
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: The atom",
+          "subtopics": [
+            "Atomic structure: nucleus and surrounding electrons",
+            "Atomic number, protons, electrons, neutrons, mass number; ion charges",
+            "Isotopes; relative atomic mass from isotope percentages",
+            "Element notation (A over Z next to symbol)",
+            "Aufbau diagrams and sp notation up to Z = 20",
+            "Atomic orbitals and their energies"
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: Periodic table",
+          "subtopics": [
+            "Names and formulae using the cation/anion table",
+            "Metals, non-metals, metalloids; electrical/thermal conductors, semiconductors, insulators; magnetic classification",
+            "Periodic table organisation by atomic number; group and period numbers; position vs electronic structure",
+            "Periodicity Li→Ar: atomic radius, ionisation energy, electron affinity, electronegativity",
+            "Chemical properties and reactivity trends of groups 1, 2, 17 and 18",
+            "Positions of metals, non-metals and transition metals"
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: Chemical bonding",
+          "subtopics": [
+            "Chemical bond; Lewis dot diagrams of elements",
+            "Covalent bonding: molecules, Lewis diagrams (H2, F2, Cl2, O2, N2, HF, HCl, CH4, NH3, H2O), names and formulae",
+            "Ionic bonding: formula-unit, cations and anions, Lewis diagrams (NaCl, KCl, KBr, CaCl2, MgBr2), predicting ions from the periodic table, naming",
+            "Metallic bonding",
+            "Relative molecular and formula mass calculations"
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Physical and chemical change",
+          "subtopics": [
+            "Physical change vs chemical change, with examples"
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Representing chemical change",
+          "subtopics": [
+            "Word equations ↔ chemical equations; phase indicators (s), (aq), (l), (g)",
+            "Balancing chemical equations; conservation of atoms and mass; law of constant composition"
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+          "subtopics": [
+            "The mole, Avogadro's number, molar mass",
+            "n = m/M calculations",
+            "Avogadro's law; molar gas volume at STP",
+            "Volume relationships in balanced gas equations"
+          ]
+        },
+        {
+          "name": "CONSOLIDATION, CONTROL TEST"
+        }
+      ],
+      "sba": [
+        "Formal practical (SBA): electric circuits",
+        "Formal practical (SBA): heating and cooling curve of water",
+        "Control test"
+      ],
+      "control_test_scope": [
+        "Electric circuits",
+        "Matter and classification",
+        "States of matter and the Kinetic Molecular Theory",
+        "The atom",
+        "The periodic table",
+        "Chemical bonding",
+        "Energy",
+        "Physical and chemical change",
+        "Representing chemical change",
+        "Quantitative aspects of chemical change"
       ]
     },
     {
       "term": 3,
       "topics": [
-        "CONTROL TEST: Discussion and remedial work",
-        "CHEMICAL CHANGE: Quantitative aspects of chemical change",
-        "MECHANICS: Vectors and scalars",
-        "MECHANICS: Motion in one dimension",
-        "MECHANICS: Instantaneous speed and velocity and the equations of motion",
-        "MECHANICS: Energy",
-        "CONSOLIDATION, CONTROL TEST"
+        {
+          "name": "CONTROL TEST: Discussion and remedial work"
+        },
+        {
+          "name": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+          "subtopics": [
+            "Concentration c = n/V (mol·dm⁻³)",
+            "Percentage composition; empirical formula from percentage composition",
+            "Water of crystallisation (e.g. CuSO4·5H2O)",
+            "Stoichiometric calculations from balanced equations (concentration, mass, moles, particles, volume)",
+            "Theoretical and percentage yield"
+          ]
+        },
+        {
+          "name": "MECHANICS: Vectors and scalars",
+          "subtopics": [
+            "Physical quantities; vector vs scalar",
+            "Graphical representation; equality of vectors, negative vectors, addition in one dimension",
+            "Resultant: tail-to-head method and by calculation (max four force vectors, 1D)"
+          ]
+        },
+        {
+          "name": "MECHANICS: Motion in one dimension",
+          "subtopics": [
+            "Frame of reference; position relative to a reference point",
+            "Distance vs displacement",
+            "Average speed and average velocity",
+            "Acceleration a = Δv/Δt; positive/negative acceleration vs deceleration"
+          ]
+        },
+        {
+          "name": "MECHANICS: Instantaneous speed and velocity and the equations of motion",
+          "subtopics": [
+            "Instantaneous velocity and instantaneous speed",
+            "Uniform velocity vs uniformly accelerated motion",
+            "Position-time, velocity-time and acceleration-time graphs: gradients, tangents, areas",
+            "Equations of motion in the horizontal plane; vehicle safety and stopping distance"
+          ]
+        },
+        {
+          "name": "MECHANICS: Energy",
+          "subtopics": [
+            "Gravitational potential energy Ep = mgh",
+            "Kinetic energy Ek = ½mv²"
+          ]
+        },
+        {
+          "name": "CONSOLIDATION, CONTROL TEST"
+        }
+      ],
+      "sba": [
+        "Formal practical (SBA): water of crystallisation of CuSO4",
+        "Formal practical (SBA): position/velocity/acceleration-time graphs for a moving trolley",
+        "Control test"
+      ],
+      "control_test_scope": [
+        "Quantitative aspects of chemical change",
+        "Vectors and scalars",
+        "Motion in one dimension",
+        "Instantaneous speed and velocity",
+        "Energy"
       ]
     },
     {
       "term": 4,
       "topics": [
-        "SEPTEMBER CONTROL TEST: Discussion and remedial work",
-        "MECHANICS: Energy",
-        "CONSOLIDATION AND REVISION",
-        "FINAL EXAMINATION (P1: 2 hrs, P2: 2 hrs)"
+        {
+          "name": "SEPTEMBER CONTROL TEST: Discussion and remedial work"
+        },
+        {
+          "name": "MECHANICS: Energy",
+          "subtopics": [
+            "Mechanical energy EM = Ek + Ep",
+            "Law of conservation of energy; principle of conservation of mechanical energy",
+            "Apply conservation of mechanical energy: drops, vertical throws, pendulum, roller coasters, inclined planes"
+          ]
+        },
+        {
+          "name": "CONSOLIDATION AND REVISION"
+        },
+        {
+          "name": "FINAL EXAMINATION (P1: 2 hrs, P2: 2 hrs)"
+        }
+      ],
+      "sba": [
+        "Final examination"
       ]
     }
+  ],
+  "exam_structure": {
+    "paper1": {
+      "marks": 100,
+      "hours": 2,
+      "focus": "Physics",
+      "topics": [
+        "Transverse pulses",
+        "Transverse waves",
+        "Longitudinal waves",
+        "Sound",
+        "Electromagnetic radiation",
+        "Electrostatics",
+        "Electric circuits",
+        "Vectors and scalars",
+        "Motion in one dimension",
+        "Instantaneous speed and velocity and the equations of motion",
+        "Energy"
+      ]
+    },
+    "paper2": {
+      "marks": 100,
+      "hours": 2,
+      "focus": "Chemistry",
+      "topics": [
+        "Matter and classification",
+        "States of matter and the kinetic molecular theory",
+        "The atom",
+        "The periodic table",
+        "Chemical bonding",
+        "Physical and chemical change",
+        "Representing chemical change",
+        "Quantitative aspects of chemical change"
+      ]
+    }
+  },
+  "sba_guidelines": [
+    "Learners do TWO experiments (ONE Chemistry, ONE Physics) for SBA",
+    "Term 1 OR Term 2: choose ONE experiment, record in Term 2",
+    "Term 3: choose ONE experiment, record in Term 3"
   ]
 }
