@@ -5,5 +5,49 @@
   "grade": 10,
   "topic": "Skills",
   "example_problem": "Factorise fully: 6x^2 - 7x - 3; x^3 + 8; and 2ax + 2ay - bx - by (grouping in pairs).",
-  "prior_knowledge": "Products of binomials; common factors"
+  "prior_knowledge": "Products of binomials; common factors",
+  "importance": {
+    "summary": "Feeds the Algebra section every year (30/100 Gr 10, 45/150 Gr 11, 25/150 Gr 12 on Paper 1) AND Gr 12 Differential Calculus (35/150), where the factor theorem is applied to cubics.",
+    "required_by_topics": 2,
+    "required_by": [
+      {
+        "grade": 11,
+        "topic": "Equations and inequalities"
+      },
+      {
+        "grade": 12,
+        "topic": "Differential Calculus, including polynomials"
+      }
+    ],
+    "exam_weight": [
+      {
+        "grade": 10,
+        "paper": "paper1",
+        "section": "Algebra",
+        "marks": 30,
+        "paper_total": 100
+      },
+      {
+        "grade": 11,
+        "paper": "paper1",
+        "section": "Algebraic expressions, equations and inequalities",
+        "marks": 45,
+        "paper_total": 150
+      },
+      {
+        "grade": 12,
+        "paper": "paper1",
+        "section": "Algebraic expressions, equations and inequalities",
+        "marks": 25,
+        "paper_total": 150
+      },
+      {
+        "grade": 12,
+        "paper": "paper1",
+        "section": "Differential Calculus",
+        "marks": 35,
+        "paper_total": 150
+      }
+    ]
+  }
 }

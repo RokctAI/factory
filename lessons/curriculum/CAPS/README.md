@@ -19,7 +19,12 @@ papers, exam guidelines, ...) can live alongside `syllabus/` later.
 Skills — editorial prerequisite-knowledge units (`skill_ref`, name, example problem, prior
 knowledge) — live at `{subject}/skills/{grade}/{skillname}.json`; syllabus topics link them with an
 optional `requires_skills: [<skill_ref>]` field, and `lesson_pipeline.py skills-index` validates
-that every link resolves.
+that every link resolves. Each skill also carries an `importance` block telling the student why it
+matters: `summary` (authored, grounded in the transcribed exam structures), `required_by` /
+`required_by_topics` (computed from the requires_skills links — regenerate when links change), and
+`exam_weight` (hard section marks, present only where the ATP prints per-section marks: Maths, PS
+gr12, Geography mapwork/Q1; qualitative-only for Accounting/Economics/ML whose ATPs give paper
+structure without per-topic marks — no invented numbers).
 
 ```
 CAPS/

@@ -5,5 +5,35 @@
   "grade": 10,
   "topic": "Skills",
   "example_problem": "Classify displacement, speed, force, energy and velocity as vectors or scalars; then find the resultant of forces of 30 N east and 50 N west acting on the same object.",
-  "prior_knowledge": "Physical quantities and SI units"
+  "prior_knowledge": "Physical quantities and SI units",
+  "importance": {
+    "summary": "Foundation of Mechanics (65/150, Gr 12 Paper 1) and Electricity & Magnetism (55/150) - resultants and field/force directions are vector work throughout.",
+    "required_by_topics": 2,
+    "required_by": [
+      {
+        "grade": 11,
+        "topic": "ELECTRICITY & MAGNETISM: Electrostatics"
+      },
+      {
+        "grade": 11,
+        "topic": "MECHANICS: Vectors in two dimensions"
+      }
+    ],
+    "exam_weight": [
+      {
+        "grade": 12,
+        "paper": "paper1",
+        "section": "Mechanics",
+        "marks": 65,
+        "paper_total": 150
+      },
+      {
+        "grade": 12,
+        "paper": "paper1",
+        "section": "Electricity and magnetism",
+        "marks": 55,
+        "paper_total": 150
+      }
+    ]
+  }
 }

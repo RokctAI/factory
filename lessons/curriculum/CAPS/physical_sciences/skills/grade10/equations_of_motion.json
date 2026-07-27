@@ -5,5 +5,36 @@
   "grade": 10,
   "topic": "Skills",
   "example_problem": "A car accelerates uniformly from 10 m/s to 25 m/s over 300 m. Choose the correct equation of motion, calculate the acceleration, and then the time taken.",
-  "prior_knowledge": "Average velocity and acceleration definitions"
+  "prior_knowledge": "Average velocity and acceleration definitions",
+  "importance": {
+    "summary": "Mechanics is the biggest Gr 12 Paper 1 section (65/150); momentum & impulse, vertical projectile motion and work-energy-power all build directly on these equations.",
+    "required_by_topics": 4,
+    "required_by": [
+      {
+        "grade": 11,
+        "topic": "MECHANICS: Newton’s laws"
+      },
+      {
+        "grade": 12,
+        "topic": "MECHANICS: Momentum & impulse"
+      },
+      {
+        "grade": 12,
+        "topic": "MECHANICS: Vertical projectile motion"
+      },
+      {
+        "grade": 12,
+        "topic": "MECHANICS: Work, energy, and power"
+      }
+    ],
+    "exam_weight": [
+      {
+        "grade": 12,
+        "paper": "paper1",
+        "section": "Mechanics",
+        "marks": 65,
+        "paper_total": 150
+      }
+    ]
+  }
 }

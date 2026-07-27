@@ -5,5 +5,42 @@
   "grade": 10,
   "topic": "Skills",
   "example_problem": "Without a calculator, evaluate sin 60 x cos 30 - tan 45, and solve for x in a right-angled triangle where the hypotenuse is 13 and the side opposite x is 5.",
-  "prior_knowledge": "Right-angled triangles and the theorem of Pythagoras"
+  "prior_knowledge": "Right-angled triangles and the theorem of Pythagoras",
+  "importance": {
+    "summary": "Gateway to Trigonometry - the biggest Paper 2 section: 40/100 in the Gr 10 final, 50/150 in Gr 11 and 40/150 in Gr 12.",
+    "required_by_topics": 2,
+    "required_by": [
+      {
+        "grade": 11,
+        "topic": "Trigonometry (reduction formulae, trig equations & general solutions)"
+      },
+      {
+        "grade": 12,
+        "topic": "Trigonometry"
+      }
+    ],
+    "exam_weight": [
+      {
+        "grade": 10,
+        "paper": "paper2",
+        "section": "Trigonometry",
+        "marks": 40,
+        "paper_total": 100
+      },
+      {
+        "grade": 11,
+        "paper": "paper2",
+        "section": "Trigonometry",
+        "marks": 50,
+        "paper_total": 150
+      },
+      {
+        "grade": 12,
+        "paper": "paper2",
+        "section": "Trigonometry",
+        "marks": 40,
+        "paper_total": 150
+      }
+    ]
+  }
 }
