@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-27 07:14 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-27 15:10 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (6)
 
@@ -27,40 +27,40 @@
 
 ## Cards by status and subject
 
-| Subject | concept_generated | pending_concept_approval | failed | total |
-|---|---|---|---|---|
-| Accounting |  | 3 |  | 3 |
-| Economics | 3 |  |  | 4 |
-| Geography | 3 |  | 1 | 4 |
-| Mathematical Literacy | 2 | 1 |  | 3 |
-| Maths | 3 | 2 |  | 7 |
-| Physical Sciences | 3 |  |  | 4 |
-| **All** | **14** | **6** | **1** | **25** |
+| Subject | theme_generated | concept_generated | pending_concept_approval | failed | total |
+|---|---|---|---|---|---|
+| Accounting | 4 |  | 3 |  | 7 |
+| Economics | 5 | 3 |  |  | 9 |
+| Geography | 2 | 3 |  | 1 | 6 |
+| Mathematical Literacy | 3 | 2 | 1 |  | 6 |
+| Maths | 3 | 3 | 2 |  | 10 |
+| Physical Sciences | 5 | 3 |  |  | 9 |
+| **All** | **22** | **14** | **6** | **1** | **47** |
 
 ## Syllabus backlog (topics not yet opened as cards)
 
 | Subject | Grade | Opened | Remaining |
 |---|---|---|---|
-| Accounting | 10 | 0 | 52 |
+| Accounting | 10 | 4 | 48 |
 | Accounting | 11 | 0 | 37 |
 | Accounting | 12 | 0 | 35 |
-| Economics | 10 | 0 | 36 |
-| Economics | 11 | 0 | 36 |
+| Economics | 10 | 3 | 33 |
+| Economics | 11 | 2 | 34 |
 | Economics | 12 | 0 | 40 |
-| Geography | 10 | 0 | 52 |
+| Geography | 10 | 2 | 50 |
 | Geography | 11 | 0 | 60 |
 | Geography | 12 | 2 | 57 |
-| Mathematical Literacy | 10 | 0 | 32 |
+| Mathematical Literacy | 10 | 3 | 29 |
 | Mathematical Literacy | 11 | 0 | 28 |
 | Mathematical Literacy | 12 | 0 | 25 |
-| Maths | 10 | 0 | 54 |
+| Maths | 10 | 3 | 51 |
 | Maths | 11 | 0 | 47 |
 | Maths | 12 | 0 | 41 |
-| Physical Sciences | 10 | 0 | 87 |
+| Physical Sciences | 10 | 5 | 82 |
 | Physical Sciences | 11 | 0 | 64 |
 | Physical Sciences | 12 | 0 | 56 |
 
-Syllabus rows total: 841; opened: 2; remaining: 839.
+Syllabus rows total: 841; opened: 24; remaining: 817.
 
 ## Evaluated (Level 4 complete, awaiting Level 6): 0
 
