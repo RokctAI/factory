@@ -388,6 +388,9 @@ def cmd_seed(args):
         print(f"Error: syllabus directory {CAPS_DIR} not found.")
         return 1
     entries = [e for e in load_seed_entries() if e.get("type") == args.type]
+    if getattr(args, "category", None):
+        entries = [e for e in entries
+                   if str(e.get("category", "")).strip().lower() == args.category.lower()]
     if not entries:
         print(f"No syllabus entries for type {args.type}.")
         return 0
@@ -2453,9 +2456,12 @@ def main():
     parser = argparse.ArgumentParser(description="Lesson pipeline helpers (Levels 0-4).")
     sub = parser.add_subparsers(dest="command")
 
-    p = sub.add_parser("seed", help="Level 0: create lesson job cards from the CAPS seed list")
+    p = sub.add_parser("seed", help="Level 0: create lesson job cards from the CAPS syllabus")
     p.add_argument("--type", required=True, help="Lesson type, e.g. lesson.maths")
     p.add_argument("--limit", type=int, default=1, help="Max cards to create this run")
+    p.add_argument("--category", default=None,
+                   help="Only seed rows of this category (e.g. 'skill' - skill rows "
+                        "load after topic rows, so opening skills needs this filter)")
 
     p = sub.add_parser("prompt", help="Print the agent prompt for a level (3 = script expansion)")
     p.add_argument("--file", required=True)
