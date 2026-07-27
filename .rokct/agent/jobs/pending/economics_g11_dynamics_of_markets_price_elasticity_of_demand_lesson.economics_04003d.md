@@ -25,7 +25,7 @@ idea_status: approved
 concept: |
   The lesson leverages Bra Sipho's simplifier persona to anchor price elasticity of demand in the relatable reality of a taxi fare increase before introducing any formal economics terms. It slowly reveals the theory, ensuring definitions and the Law of Demand are solidly grasped. The mathematical formula is introduced intuitively ("quantity is always on top" as the reaction to the price "cause"). The example problem from the card is worked out fully, step-by-step, including percentage change calculations, formula substitution, and interpretation of the result as unitary elasticity. Finally, elasticity categories are explained to give meaning to the calculated figure.
 concept_status:
-rules_status: failed
+rules_status: passed
 lesson_name: Price elasticity of demand
 lesson_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d
 script_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/script.md
@@ -39,12 +39,12 @@ assistant_nervous_script_path: lessons/economics/grade11/term2/economics_g11_dyn
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
-status: concept_generated
+status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-27 20:10:02
+last_updated: 2026-07-27 20:34:25
 session_id: 
 session_started: 
-attempts: 2
+attempts: 3
 last_error:
 loop_iterations: 0
 max_iterations: 10
