@@ -78,11 +78,20 @@ a leaked "CAPS TOPICS" row label removed, exam-paper mark-breakdown tables strip
 topic lists, and a "easurement" OCR artifact removed.
 
 A second hand-transcription pass then enriched every file with subtopics, prior knowledge, SBA
-tasks and exam structure (see Layout above for the schema). Deliberately NOT transcribed:
-week-level spans/hours (the ATP grids carry them, but column boundaries are ambiguous in
-extraction — re-derive from the source PDFs if pacing-by-week is ever needed), Physical Sciences'
-requisite-pre-knowledge rows (week-granular and repetitive in that ATP; other subjects' per-topic
-rows ARE transcribed), and resources/informal-assessment rows (teaching aids, not syllabus).
+tasks and exam structure (see Layout above for the schema). A third pass added **week spans**:
+topics carry `weeks: [ints]` extracted from the ATP grids' WEEK-header columns (pdfplumber column
+mapping + a hand-verified override for every case the mechanical pass got wrong — substring
+collisions like "Tropical cyclones" inside "extra tropical cyclones", forward-fill bleed into
+exam-table cells, the source's "ELECTRICTY" typo, duplicate topic names). 318 of 321 topics are
+week-placed; 3 are genuinely ungridded in the source (Geography gr10 exam prep/final, gr12 final
+NSC block) and carry no weeks. Overlapping spans are faithful: where the ATP merges a block of
+weeks across consecutive topics without per-topic boundaries (Accounting gr10 T1 bookkeeping
+phases), each topic carries the shared block. Combined with `school_calendar/{year}.json`, weeks
+resolve to real dates for any future scheduler. Deliberately NOT transcribed: per-week HOURS
+(Physical Sciences prints them; add if a scheduler ever needs sub-week resolution), Physical
+Sciences' requisite-pre-knowledge rows (week-granular and repetitive in that ATP; other subjects'
+per-topic rows ARE transcribed), and resources/informal-assessment rows (teaching aids, not
+syllabus).
 
 Semantics to know when consuming these lists:
 - **Assessment/revision entries are kept deliberately** ("CONTROL TEST", "REVISION & ASSESSMENT",
