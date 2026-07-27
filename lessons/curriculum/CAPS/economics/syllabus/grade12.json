@@ -10,43 +10,225 @@
     {
       "term": 1,
       "topics": [
-        "CIRCULAR FLOW",
-        "BUSINESS CYCLES",
-        "PUBLIC SECTOR",
-        "INTERNATIONAL TRADE (FOREIGN EXCHANGE MARKETS)",
-        "REVISION",
-        "ASSESSMENT"
+        {
+          "name": "CIRCULAR FLOW",
+          "subtopics": [
+            "Open vs closed economy; role players; injections and leakages; economy in equilibrium",
+            "Autonomous consumption; MPC/MPS; the four-sector model",
+            "National accounts aggregates and conversions",
+            "The multiplier"
+          ],
+          "prior_knowledge": "Factors of production, production process, roles of participants in the economy"
+        },
+        {
+          "name": "BUSINESS CYCLES",
+          "subtopics": [
+            "Composition and features; explanation/causes; types of business cycles",
+            "Government policy: monetary and fiscal policy",
+            "The new economic paradigm (smoothing of cycles); features underpinning forecasting"
+          ],
+          "prior_knowledge": "National accounts (GDP/GDI/GDE); monetary policy (SARB, interest rates, cash reserves, open-market transactions, moral suasion); fiscal policy"
+        },
+        {
+          "name": "PUBLIC SECTOR",
+          "subtopics": [
+            "Composition and necessity of the public sector; problems of provisioning; objectives",
+            "Budgets; fiscal policy including the Laffer curve; public sector failure"
+          ],
+          "prior_knowledge": "Circular flow, participants in an economy, government structures, fiscal policy"
+        },
+        {
+          "name": "INTERNATIONAL TRADE (FOREIGN EXCHANGE MARKETS)",
+          "subtopics": [
+            "Main reasons for international trade; absolute and comparative advantage",
+            "Balance of payments; the IMF; correcting surpluses and deficits (disequilibria)",
+            "Foreign exchange markets and the establishment of exchange rates"
+          ],
+          "prior_knowledge": "Open-economy circular flow, markets, price formation and market dynamics"
+        },
+        {
+          "name": "REVISION"
+        },
+        {
+          "name": "ASSESSMENT"
+        }
+      ],
+      "sba": [
+        "Task 1: Assignment (50 marks)",
+        "Task 2: Controlled test (100 marks, 1.5 hours; term 1 content)"
       ]
     },
     {
       "term": 2,
       "topics": [
-        "DYNAMICS OF MARKETS: PERFECT MARKETS",
-        "DYNAMICS OF MARKETS: IMPERFECT MARKETS",
-        "DYNAMICS OF MARKETS: MARKET FAILURES",
-        "INTERNATIONAL TRADE POLICIES (PROTECTIONISM & FREE TRADE)",
-        "ECONOMIC GROWTH AND DEVELOPMENT"
+        {
+          "name": "DYNAMICS OF MARKETS: PERFECT MARKETS",
+          "subtopics": [
+            "Perfect competition; the industry vs the individual business",
+            "Market structure; output, profits and losses",
+            "Competition policies"
+          ],
+          "prior_knowledge": "Price formation: demand and supply, their laws, cost and revenue analysis, price elasticity of demand"
+        },
+        {
+          "name": "DYNAMICS OF MARKETS: IMPERFECT MARKETS",
+          "subtopics": [
+            "Monopolies, duopolies, oligopolies, monopolistic competition",
+            "Market structures of imperfect competition"
+          ],
+          "prior_knowledge": "The market; cost and revenue analysis; price elasticity of demand theory"
+        },
+        {
+          "name": "DYNAMICS OF MARKETS: MARKET FAILURES",
+          "subtopics": [
+            "Concept and causes of market failure; misallocation of resources",
+            "Consequences of market failures",
+            "Cost-benefit analysis (conserving vs using resources; public vs private expenditure)"
+          ],
+          "prior_knowledge": "The market, competition, PPC (efficiencies and inefficiencies), public sector intervention"
+        },
+        {
+          "name": "INTERNATIONAL TRADE POLICIES (PROTECTIONISM & FREE TRADE)",
+          "subtopics": [
+            "Protection and free trade; globalisation; major protocols",
+            "Export promotion; import substitution; arguments for and against free trade; desirable policy mix",
+            "Trade liberalisation and the WTO; forms of economic integration"
+          ],
+          "prior_knowledge": "Economic systems, four-sector model, north/south divide (Gr 11), absolute and comparative advantage, AU/SADC/NEPAD"
+        },
+        {
+          "name": "ECONOMIC GROWTH AND DEVELOPMENT",
+          "subtopics": [
+            "Economic growth vs economic development",
+            "Demand-side and supply-side approaches; evaluation of the approaches",
+            "SA endeavours; the north/south divide"
+          ],
+          "prior_knowledge": "Wealth, scarcity, means of production, income inequality, growth and development, unemployment; monetary and fiscal policy; globalisation"
+        }
+      ],
+      "sba": [
+        "Task 3: Research project",
+        "Task 4: Controlled test (150 marks, 2 hours; terms 1-2) OR June examination (150 x 2 papers = 300 marks, 2 hours each)"
       ]
     },
     {
       "term": 3,
       "topics": [
-        "ECONOMIC GROWTH AND DEVELOPMENT",
-        "GROWTH & DEV: INDUSTRIAL DEVELOPMENT",
-        "ECONOMIC AND SOCIAL INDICATORS",
-        "ECONOMIC ISSUES OF THE DAY: INFLATION",
-        "ECONOMIC ISSUES OF THE DAY: TOURISM",
-        "ECONOMIC ISSUES OF THE DAY: ENVIRONMENTAL SUSTAINABILITY",
-        "TRIAL EXAMINATION"
+        {
+          "name": "ECONOMIC GROWTH AND DEVELOPMENT",
+          "subtopics": [
+            "Economic growth vs economic development",
+            "Demand-side and supply-side approaches; evaluation",
+            "SA endeavours; the north/south divide"
+          ]
+        },
+        {
+          "name": "GROWTH & DEV: INDUSTRIAL DEVELOPMENT",
+          "subtopics": [
+            "Industrial development; regional development",
+            "SA endeavours and the appropriateness of SA strategies"
+          ],
+          "prior_knowledge": "SA regional landscape; SA's role and economic importance in Africa; AU and SADC"
+        },
+        {
+          "name": "ECONOMIC AND SOCIAL INDICATORS",
+          "subtopics": [
+            "Performance of the economy; economic indicators; money supply and interest rates",
+            "Social indicators and international comparisons",
+            "Globalisation: IMF and World Bank"
+          ],
+          "prior_knowledge": "Growth and development strategies and comparisons; money supply; money and banking; interest rates; globalisation"
+        },
+        {
+          "name": "ECONOMIC ISSUES OF THE DAY: INFLATION",
+          "subtopics": [
+            "Inflation concept, types, causes and consequences",
+            "The inflation problem in SA and measures to combat inflation"
+          ],
+          "prior_knowledge": "Price formation (laws of demand/supply, AD/AS shifts, Phillips curve); monetary and fiscal policy; consumer vs producer inflation"
+        },
+        {
+          "name": "ECONOMIC ISSUES OF THE DAY: TOURISM",
+          "subtopics": [
+            "Tourism concept; reasons for growth; effects and benefits",
+            "SA tourism profile (incl. IKS); policy suggestions"
+          ],
+          "prior_knowledge": "Growth and development, unemployment, poverty, population and labour force; IKS (Gr 11)"
+        },
+        {
+          "name": "ECONOMIC ISSUES OF THE DAY: ENVIRONMENTAL SUSTAINABILITY",
+          "subtopics": [
+            "Environmental sustainability; the state of the environment",
+            "Measures to ensure sustainability; international measures and agreements (incl. recent ones)"
+          ],
+          "prior_knowledge": "Basic economic problem; human rights; economic redress (Gr 11); production possibilities; public sector involvement"
+        },
+        {
+          "name": "TRIAL EXAMINATION"
+        }
+      ],
+      "sba": [
+        "Task 5: Case study (50 marks)",
+        "Task 6: Trial examination (Paper 1 and Paper 2, 150 marks, 2 hours each, on different days)"
       ]
     },
     {
       "term": 4,
       "topics": [
-        "REVISION: MACRO-ECONOMICS & ECONOMIC PURSUITS (PAPER 1 SCOPE)",
-        "REVISION: MICRO-ECONOMICS & CONTEMPORARY ECONOMIC ISSUES (PAPER 2 SCOPE)",
-        "FINAL EXAMINATION"
+        {
+          "name": "REVISION: MACRO-ECONOMICS & ECONOMIC PURSUITS (PAPER 1 SCOPE)"
+        },
+        {
+          "name": "REVISION: MICRO-ECONOMICS & CONTEMPORARY ECONOMIC ISSUES (PAPER 2 SCOPE)"
+        },
+        {
+          "name": "FINAL EXAMINATION"
+        }
+      ],
+      "sba": [
+        "Final examination: Paper 1 and Paper 2 (150 marks, 2 hours each)"
       ]
     }
-  ]
+  ],
+  "exam_structure": {
+    "paper1": {
+      "marks": 150,
+      "hours": 2,
+      "main_topics": {
+        "Macro-economics": [
+          "Circular flow",
+          "Business cycles",
+          "Public sector",
+          "Foreign exchange markets"
+        ],
+        "Economic pursuits": [
+          "Protectionism and free trade",
+          "Economic growth and development",
+          "Growth & development: industrial development",
+          "Economic and social performance indicators"
+        ]
+      },
+      "format": "Section A compulsory (Q1); Section B answer 2 of Q2-4; Section C choose 1 of Q5-6"
+    },
+    "paper2": {
+      "marks": 150,
+      "hours": 2,
+      "main_topics": {
+        "Micro-economics": [
+          "Perfect markets",
+          "Imperfect markets",
+          "Market failure"
+        ],
+        "Contemporary economic issues": [
+          "Inflation",
+          "Tourism",
+          "Environmental sustainability"
+        ]
+      },
+      "format": "Section A compulsory (Q1); Section B answer 2 of Q2-4; Section C choose 1 of Q5-6"
+    },
+    "notes": [
+      "Cognitive levels: lower order 30%, middle order 40%, higher order 30%"
+    ]
+  }
 }

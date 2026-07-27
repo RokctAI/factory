@@ -10,37 +10,185 @@
     {
       "term": 1,
       "topics": [
-        "ECONOMICS: BASIC CONCEPTS & BASIC ECONOMIC PROBLEM",
-        "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
-        "BUSINESS CYCLES",
-        "REVISION & ASSESSMENT"
+        {
+          "name": "ECONOMICS: BASIC CONCEPTS & BASIC ECONOMIC PROBLEM",
+          "subtopics": [
+            "Elements, branches and methods of Economics; Economics among the sciences",
+            "The scarcity problem; the basic processes (production, exchange, consumption)",
+            "Promotion or violation of human rights and the environment"
+          ],
+          "prior_knowledge": "Grade 7-8 economics concepts: wants, needs, production process, exchange, consumption"
+        },
+        {
+          "name": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
+          "subtopics": [
+            "Circular flow diagram; participants in an economy; closed vs open economy",
+            "Markets; flows of the variables; leakages and injections",
+            "GDP and GNI"
+          ],
+          "prior_knowledge": "Needs and wants, factors of production, production and consumption, choice and decision-making, savings, markets"
+        },
+        {
+          "name": "BUSINESS CYCLES",
+          "subtopics": [
+            "The phenomenon of business cycles; indicators",
+            "SA business cycles; time series composition; cyclical patterns",
+            "Exogenous and endogenous reasons; effects of business cycles"
+          ],
+          "prior_knowledge": "Roles of participants in the economy, production and consumption, markets, economic growth, the scarcity problem"
+        },
+        {
+          "name": "REVISION & ASSESSMENT"
+        }
+      ],
+      "sba": [
+        "Task 1: Assignment (50 marks)",
+        "Task 2: Controlled test 1 (100 marks, 1.5 hours)"
       ]
     },
     {
       "term": 2,
       "topics": [
-        "DYNAMICS OF THE MARKET",
-        "PUBLIC SECTOR INTERVENTION",
-        "PRODUCTION POSSIBILITY CURVE",
-        "REVISION & ASSESSMENT"
+        {
+          "name": "DYNAMICS OF THE MARKET",
+          "subtopics": [
+            "Value, price and utility",
+            "Perfect and imperfect markets; world markets (the effects of electronics)",
+            "Supply and demand; price formation; functions of markets"
+          ],
+          "prior_knowledge": "Markets, demand and supply forces, drawing graphs from tables, laws of demand and supply, shifts, market equilibrium"
+        },
+        {
+          "name": "PUBLIC SECTOR INTERVENTION",
+          "subtopics": [
+            "Methods of involvement: indirect taxes, subsidies, welfare",
+            "Maximum and minimum prices; production; minimum wages"
+          ],
+          "prior_knowledge": "Roles of government, government revenue, the national budget, public goods"
+        },
+        {
+          "name": "PRODUCTION POSSIBILITY CURVE",
+          "subtopics": [
+            "Phenomenon, choice and scarcity",
+            "PPC determined by internal and external factors",
+            "Consequences of inefficiencies"
+          ],
+          "prior_knowledge": "Graphing; factors of production; consumption vs production; economic efficiency"
+        },
+        {
+          "name": "REVISION & ASSESSMENT"
+        }
+      ],
+      "sba": [
+        "Task 3: Project (50 marks)",
+        "Task 4: June examination (150 x 2 papers = 300 marks, 2 hours each)"
       ]
     },
     {
       "term": 3,
       "topics": [
-        "GROWTH, DEVELOPMENT AND GLOBALISATION",
-        "POPULATION AND LABOUR FORCE",
-        "LABOUR RELATIONS",
-        "REVISION & ASSESSMENT"
+        {
+          "name": "GROWTH, DEVELOPMENT AND GLOBALISATION",
+          "subtopics": [
+            "Early economic development and emergence of trade: self-sufficiency, agriculture, barter, emergence of money",
+            "Evolution of markets: surplus production, trade and transport, specialisation of labour, mercantile/commercial law and business forms, technological progress, money and saving",
+            "Governments and market regulation: state involvement in trade, taxation, financing infrastructure investment",
+            "Industrial development: manufacturing, technological progress, mobilisation of energy, mechanisation"
+          ],
+          "prior_knowledge": "Standard of living (Gr 8), markets in general, demand and supply, industry, economic development"
+        },
+        {
+          "name": "POPULATION AND LABOUR FORCE",
+          "subtopics": [
+            "Population size and growth; natural growth rate; demographic cycle; projected growth and migration",
+            "The SA labour force: age distribution, numbers, unemployment, geographic distribution",
+            "Demand and supply for labour and their interaction in the labour market"
+          ],
+          "prior_knowledge": "Inequality and poverty, education and skills, sustainable job opportunities, unemployment"
+        },
+        {
+          "name": "LABOUR RELATIONS",
+          "subtopics": [
+            "Labour Relations Act: self-government, majorification, consultation",
+            "Labour rights and conventions: BCEA, LRA, COIDA",
+            "Collective bargaining: bargaining councils, labour unions, CCMA (conciliation, arbitration, mediation), workplace forums, labour courts"
+          ],
+          "prior_knowledge": "Labour as a factor of production, households as owners of factors, government role in economic activity, trade unions"
+        },
+        {
+          "name": "REVISION & ASSESSMENT"
+        }
+      ],
+      "sba": [
+        "Task 5: Case study (50 marks)",
+        "Task 6: Controlled test 3 (100 marks, 1.5 hours)"
       ]
     },
     {
       "term": 4,
       "topics": [
-        "UNEMPLOYMENT",
-        "ECONOMIC REDRESS",
-        "FINAL EXAMINATION"
+        {
+          "name": "UNEMPLOYMENT",
+          "subtopics": [
+            "Nature of unemployment: numbers, unemployment rate, characteristics of SA unemployment",
+            "Causes and consequences of unemployment",
+            "Approaches to solve unemployment: growth of production, public works programmes, unemployment insurance"
+          ],
+          "prior_knowledge": "Unemployment, labour as a factor of production, economically active population, income inequality, discrimination"
+        },
+        {
+          "name": "ECONOMIC REDRESS",
+          "subtopics": [
+            "Economically marginalised groups",
+            "Redress and reconstruction: factors of production",
+            "Democratisation of economic procedures: labour legislation, public hearings, NEDLAC, self-regulating bodies, macro-economic adaptations (performance, employment, income inequality, poverty, stability)"
+          ],
+          "prior_knowledge": "Factors of production; influence of the national budget (Gr 8); standard of living (Gr 8)"
+        },
+        {
+          "name": "FINAL EXAMINATION"
+        }
+      ],
+      "sba": [
+        "Final examination: Paper 1 and Paper 2 (150 marks, 2 hours each)"
       ]
     }
-  ]
+  ],
+  "exam_structure": {
+    "paper1": {
+      "marks": 150,
+      "hours": 2,
+      "main_topics": {
+        "Macroeconomics": [
+          "Basic concepts",
+          "Basic economic problem",
+          "Circular flow & quantitative elements",
+          "Business cycles"
+        ],
+        "Economic pursuits": [
+          "Economic growth, development and globalisation",
+          "Population & labour force"
+        ]
+      }
+    },
+    "paper2": {
+      "marks": 150,
+      "hours": 2,
+      "main_topics": {
+        "Microeconomics": [
+          "Dynamics of markets",
+          "Public sector intervention",
+          "Production possibility curve"
+        ],
+        "Contemporary economic issues": [
+          "Labour relations",
+          "Unemployment",
+          "Economic redress"
+        ]
+      }
+    },
+    "notes": [
+      "Cognitive levels: lower order 30%, middle order 40%, higher order 30%"
+    ]
+  }
 }
