@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-07-27 05:59 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-07-27 07:14 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (6)
 
@@ -41,26 +41,26 @@
 
 | Subject | Grade | Opened | Remaining |
 |---|---|---|---|
-| Accounting | 10 | 0 | 48 |
+| Accounting | 10 | 0 | 52 |
 | Accounting | 11 | 0 | 37 |
 | Accounting | 12 | 0 | 35 |
-| Economics | 10 | 0 | 33 |
-| Economics | 11 | 0 | 34 |
+| Economics | 10 | 0 | 36 |
+| Economics | 11 | 0 | 36 |
 | Economics | 12 | 0 | 40 |
-| Geography | 10 | 0 | 50 |
+| Geography | 10 | 0 | 52 |
 | Geography | 11 | 0 | 60 |
 | Geography | 12 | 2 | 57 |
-| Mathematical Literacy | 10 | 0 | 29 |
+| Mathematical Literacy | 10 | 0 | 32 |
 | Mathematical Literacy | 11 | 0 | 28 |
 | Mathematical Literacy | 12 | 0 | 25 |
-| Maths | 10 | 0 | 51 |
+| Maths | 10 | 0 | 54 |
 | Maths | 11 | 0 | 47 |
 | Maths | 12 | 0 | 41 |
-| Physical Sciences | 10 | 0 | 82 |
+| Physical Sciences | 10 | 0 | 87 |
 | Physical Sciences | 11 | 0 | 64 |
 | Physical Sciences | 12 | 0 | 56 |
 
-Syllabus rows total: 819; opened: 2; remaining: 817.
+Syllabus rows total: 841; opened: 2; remaining: 839.
 
 ## Evaluated (Level 4 complete, awaiting Level 6): 0
 
