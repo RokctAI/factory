@@ -40,9 +40,10 @@ RUNNING_DIR = Path(".rokct/agent/jobs/running")
 DONE_DIR = Path(".rokct/agent/jobs/done")
 # Topic source of truth: the curated DBE ATP syllabus files. caps_seed.json
 # is retired - load_seed_entries() flattens these directly, plus the
-# hand-curated skill rows (not derivable from ATPs) in skills_seed.json.
+# hand-curated skill definition files (not derivable from ATPs) under
+# CAPS/{subject}/skills/{grade}/{skillname}.json. Syllabus topics link
+# skills via an optional requires_skills: [<skill_ref>] field.
 CAPS_DIR = Path("lessons/curriculum/CAPS")
-SKILLS_SEED_PATH = Path("lessons/curriculum/skills_seed.json")
 
 CAPS_TYPE_BY_FOLDER = {
     "maths": "lesson.maths",
@@ -84,10 +85,11 @@ VALID_TERMS = {"1", "2", "3", "4", "unknown"}
 #                            skill first?" suggestion)
 # Content lives at lessons/<subject>/grade<g>/skills/<id>/ — grade-scoped
 # (CAPS assesses the same skill at different depths per grade) but with no
-# false term claim. `lesson_pipeline.py skills-index` validates the graph
-# and generates lessons/skills_index.json for the app side.
+# false term claim. Skill DEFINITIONS live at
+# lessons/curriculum/CAPS/{subject}/skills/{grade}/{skillname}.json;
+# `lesson_pipeline.py skills-index` validates the graph (the generated
+# lessons/skills_index.json artifact is retired).
 CATEGORY_SKILL = "skill"
-SKILLS_INDEX_PATH = Path("lessons/skills_index.json")
 
 # §4 asks for "15 minutes teaching"; at a spoken pace that is well over a
 # thousand words, but scripts interleave whiteboard beats, so 900 is the
@@ -239,11 +241,27 @@ def find_duplicate_card(subject, grade, topic, subtopic):
 
 # --- Level 0: seed job cards from the CAPS syllabus files ---
 
+def load_caps_skills():
+    """Skill definition files: CAPS/{subject}/skills/{grade}/{skillname}.json
+    -> {skill_ref: definition dict}. Skills are editorial (prerequisite
+    knowledge units), not derivable from the ATPs, so each is its own
+    hand-written file."""
+    skills = {}
+    for folder, lesson_type in sorted(CAPS_TYPE_BY_FOLDER.items()):
+        for sf in sorted((CAPS_DIR / folder / "skills").glob("grade*/*.json")):
+            data = json.loads(sf.read_text(encoding="utf-8"))
+            data["type"] = lesson_type
+            data["source"] = sf.as_posix()
+            skills[data["skill_ref"]] = data
+    return skills
+
+
 def load_seed_entries():
     """Flatten lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json into
-    seed-shaped rows (one per teachable subtopic), then append the curated
-    skill rows from skills_seed.json. Topics matching NON_LESSON_TOPIC_RE or
-    carrying no subtopics are pacing entries, never lesson rows."""
+    seed-shaped rows (one per teachable subtopic), then append the skill
+    definitions from CAPS/{subject}/skills/. Topics matching
+    NON_LESSON_TOPIC_RE or carrying no subtopics are pacing entries, never
+    lesson rows. Topic-level requires_skills links pass through to rows."""
     entries = []
     for folder, lesson_type in sorted(CAPS_TYPE_BY_FOLDER.items()):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
@@ -265,10 +283,24 @@ def load_seed_entries():
                         }
                         if topic.get("prior_knowledge"):
                             row["prior_knowledge"] = topic["prior_knowledge"]
+                        if topic.get("requires_skills"):
+                            row["requires_skills"] = list(topic["requires_skills"])
                         entries.append(row)
-    if SKILLS_SEED_PATH.exists():
-        skills = json.loads(SKILLS_SEED_PATH.read_text(encoding="utf-8"))
-        entries.extend(skills.get("entries", []))
+    for ref, sk in sorted(load_caps_skills().items()):
+        row = {
+            "type": sk["type"],
+            "subject": sk["subject"],
+            "grade": sk["grade"],
+            "topic": sk.get("topic", "Skills"),
+            "subtopic": sk.get("name", ref),
+            "category": CATEGORY_SKILL,
+            "skill_ref": ref,
+            "source": sk["source"],
+        }
+        for field in ("example_problem", "prior_knowledge", "tutor", "tutor_style"):
+            if sk.get(field):
+                row[field] = sk[field]
+        entries.append(row)
     return entries
 
 
@@ -1305,83 +1337,66 @@ def _all_lesson_cards():
                     yield f, c
 
 
-def load_skills():
-    """(skill_ref -> skill card info, error list) over every category: skill
-    card in pending/running/done."""
-    skills, errors = {}, []
-    for path, c in _all_lesson_cards():
-        if get_field(c, "category") != CATEGORY_SKILL:
-            continue
-        ref = get_field(c, "skill_ref")
-        if not ref:
-            errors.append(f"{path.name}: category is skill but skill_ref is empty")
-            continue
-        if ref in skills:
-            errors.append(
-                f"skill_ref '{ref}' is defined by both "
-                f"{skills[ref]['card_file']} and {path.name}")
-            continue
-        skills[ref] = {
-            "card_id": get_field(c, "id"),
-            "card_file": str(path).replace("\\", "/"),
-            "subject": get_field(c, "subject"),
-            "grade": int(get_field(c, "grade") or 0),
-            "topic": get_field(c, "topic"),
-            "subtopic": get_field(c, "subtopic"),
-            "lesson_name": get_field(c, "lesson_name"),
-            "lesson_path": get_field(c, "lesson_path"),
-            "status": get_field(c, "status").split()[0] if get_field(c, "status") else "",
-            "required_by": [],
-        }
-    return skills, errors
-
 
 def parse_requires_skills(card):
     return [r.strip() for r in get_field(card, "requires_skills").split(",") if r.strip()]
 
 
 def cmd_skills_index(args):
-    """Validate the skills graph and regenerate lessons/skills_index.json.
+    """Validate the skills graph against the CAPS skill definition files.
+    (The generated lessons/skills_index.json artifact is retired - the app
+    side is being rebuilt on the CAPS files directly.)
 
     Validation (exit 1 on any violation):
-    - every category: skill card has a unique, non-empty skill_ref
-    - every requires_skills entry on any card resolves to a defined skill
-    - a skill card does not require itself
-    The generated index is the app-side contract: skill_ref ->
-    {card_id, subject, grade, topic, subtopic, lesson_name, lesson_path,
-    status, required_by[]}.
+    - every CAPS skill file has a unique, non-empty skill_ref
+    - every requires_skills entry - on syllabus topics AND on job cards -
+      resolves to a defined skill
+    - every category: skill job card's skill_ref is a defined skill
+    - a skill does not require itself
     """
-    skills, errors = load_skills()
-    for path, c in _all_lesson_cards():
-        card_id = get_field(c, "id")
-        for ref in parse_requires_skills(c):
-            if ref not in skills:
-                errors.append(f"{path.name}: requires_skills '{ref}' does not match any skill card")
-            elif skills[ref]["card_id"] == card_id:
-                errors.append(f"{path.name}: card requires itself ({ref})")
+    errors = []
+    defined = {}
+    for folder in sorted(CAPS_TYPE_BY_FOLDER):
+        for sf in sorted((CAPS_DIR / folder / "skills").glob("grade*/*.json")):
+            data = json.loads(sf.read_text(encoding="utf-8"))
+            ref = str(data.get("skill_ref", "")).strip()
+            if not ref:
+                errors.append(f"{sf}: skill file missing skill_ref")
+            elif ref in defined:
+                errors.append(f"{sf}: duplicate skill_ref '{ref}' (also in {defined[ref]})")
             else:
-                skills[ref]["required_by"].append(card_id)
+                defined[ref] = sf.as_posix()
+                if data.get("requires_skills") and ref in data["requires_skills"]:
+                    errors.append(f"{sf}: skill requires itself ({ref})")
+
+    edges = 0
+    for folder in sorted(CAPS_TYPE_BY_FOLDER):
+        for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
+            data = json.loads(gf.read_text(encoding="utf-8"))
+            for term in data.get("terms", []):
+                for topic in term.get("topics", []):
+                    for ref in topic.get("requires_skills", []) or []:
+                        edges += 1
+                        if ref not in defined:
+                            errors.append(
+                                f"{gf}: topic '{topic['name']}' requires_skills "
+                                f"'{ref}' does not match any skill file")
+
+    for path, c in _all_lesson_cards():
+        if get_field(c, "category") == CATEGORY_SKILL:
+            ref = get_field(c, "skill_ref")
+            if ref and ref not in defined:
+                errors.append(f"{path.name}: skill card's skill_ref '{ref}' has no CAPS skill file")
+        for ref in parse_requires_skills(c):
+            edges += 1
+            if ref not in defined:
+                errors.append(f"{path.name}: requires_skills '{ref}' does not match any skill file")
+
     if errors:
         for e in errors:
             print(f"FAIL: {e}")
         return 1
-    index = {
-        "_comment": [
-            "GENERATED by lesson_pipeline.py skills-index — do not hand-edit.",
-            "App-side contract for library-only skill lessons: a skill lesson",
-            "is a full lesson (same seven content items) that never gets a",
-            "live broadcast slot; it lives in the Library on demand. Cards",
-            "reference skills via requires_skills: <skill_ref> — the app uses",
-            "this for pre-session assessment skill-check tagging and the",
-            "non-forcing 'review this skill first?' attendance suggestion.",
-        ],
-        "generated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "skills": skills,
-    }
-    SKILLS_INDEX_PATH.write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
-    print(f"skills_index: {len(skills)} skill(s), "
-          f"{sum(len(s['required_by']) for s in skills.values())} requirement edge(s) "
-          f"-> {SKILLS_INDEX_PATH}")
+    print(f"skills: {len(defined)} defined, {edges} requirement edge(s), graph OK")
     return 0
 
 
@@ -1745,12 +1760,11 @@ def run_checks(card, card_file):
         errors.append(f"skill_ref '{skill_ref}' set but category is not 'skill'")
     reqs = parse_requires_skills(card)
     if reqs:
-        skills, skill_errors = load_skills()
-        errors.extend(skill_errors)
+        defined = load_caps_skills()
         for ref in reqs:
-            if ref not in skills:
-                errors.append(f"requires_skills '{ref}' does not match any skill card")
-            elif skills[ref]["card_id"] == get_field(card, "id"):
+            if ref not in defined:
+                errors.append(f"requires_skills '{ref}' does not match any skill definition file")
+            elif ref == skill_ref:
                 errors.append(f"card requires itself ({ref})")
 
     # Linked past-paper worked examples: if this lesson has been linked to a

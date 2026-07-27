@@ -2,7 +2,7 @@
 
 `lessons/curriculum/caps_seed.json` was an interim, hand-written stand-in and has been deleted. The
 pipeline now reads this folder directly: `lesson_pipeline.py load_seed_entries()` flattens these files
-(plus the hand-curated skill rows in `../skills_seed.json`, which aren't derivable from ATPs) into the
+(plus the hand-curated skill definitions in `{subject}/skills/{grade}/{skillname}.json`, which aren't derivable from ATPs) into the
 topic rows Level 0 and the dashboard consume. Data here is sourced directly from the Department of
 Basic Education's real 2023/24 Annual Teaching Plans (ATPs) — the actual government syllabus
 documents, not a hand-picked subset.
@@ -15,6 +15,11 @@ a spiral curriculum) but each grade's term-by-term content and placement genuine
 maps 1:1 to a single source PDF via its `source_url`, so one grade can be reviewed/regenerated without
 touching its siblings. The subject folder is the top split so other per-subject curriculum data (past
 papers, exam guidelines, ...) can live alongside `syllabus/` later.
+
+Skills — editorial prerequisite-knowledge units (`skill_ref`, name, example problem, prior
+knowledge) — live at `{subject}/skills/{grade}/{skillname}.json`; syllabus topics link them with an
+optional `requires_skills: [<skill_ref>]` field, and `lesson_pipeline.py skills-index` validates
+that every link resolves.
 
 ```
 CAPS/

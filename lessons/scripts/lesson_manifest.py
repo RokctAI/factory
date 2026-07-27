@@ -382,7 +382,7 @@ def main():
     subject = get_field(card, "subject")
     grade = int(get_field(card, "grade") or 0)
     topic = get_field(card, "topic")
-    tutor = get_field(card, "tutor") or "grandmaster"  # opaque tutor id
+    tutor = get_field(card, "tutor") or "tutor_001"  # opaque tutor id
     lesson_path = repo / get_field(card, "lesson_path")
 
     subtopics = json.loads((lesson_path / "subtopics.json").read_text("utf-8"))

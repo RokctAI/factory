@@ -2,34 +2,37 @@
   "_comment": [
     "Subject -> tutor duo mapping (Expert + Simplifier per supacharge-characters.md).",
     "Same duo spans ALL grades in a subject by default (explicit product decision).",
-    "To attach a different/additional duo to a subject later, change the slugs",
+    "Values are PERMANENT opaque tutor ids (tutor_XXX) and double as the persona",
+    "directory names (lessons/tutors/<id>/) - display names live inside each",
+    "tutor.md and are freely renamable without touching folders or this file.",
+    "To attach a different/additional duo to a subject later, change the ids",
     "here and add persona cards - tutors are not hardcoded to one subject.",
     "PROVISIONAL characters are flagged in their cards; confirm before launch."
   ],
   "subjects": {
     "maths": {
-      "expert": "grandmaster",
-      "simplifier": "big_john"
+      "expert": "tutor_001",
+      "simplifier": "tutor_002"
     },
     "physical_sciences": {
-      "expert": "ms_dlamini",
-      "simplifier": "vusi_khumalo"
+      "expert": "tutor_003",
+      "simplifier": "tutor_004"
     },
     "accounting": {
-      "expert": "prof_mokoena",
-      "simplifier": "grace_naidoo"
+      "expert": "tutor_005",
+      "simplifier": "tutor_006"
     },
     "economics": {
-      "expert": "nomsa_mahlangu",
-      "simplifier": "sipho_dube"
+      "expert": "tutor_007",
+      "simplifier": "tutor_008"
     },
     "geography": {
-      "expert": "kagiso_molefe",
-      "simplifier": "themba_nkosi"
+      "expert": "tutor_009",
+      "simplifier": "tutor_010"
     },
     "maths_literacy": {
-      "expert": "priya_pillay",
-      "simplifier": "joe_september"
+      "expert": "tutor_011",
+      "simplifier": "tutor_012"
     }
   }
 }

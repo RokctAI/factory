@@ -14,7 +14,7 @@ does not exist yet and is a separate future brief.
 
 | Level | Workflow | Trigger | What happens | Status after |
 |---|---|---|---|---|
-| 0 | `lesson0_topic_selection.yml` | hourly / syllabus push | Creates job cards from `lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json` (+ `skills_seed.json`) when pending count per type is low | `theme_generated` |
+| 0 | `lesson0_topic_selection.yml` | hourly / syllabus push | Creates job cards from `lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json` (+ `CAPS/{subject}/skills/`) when pending count per type is low | `theme_generated` |
 | 1 | `lesson1_plan_generation.yml` | hourly / card push | Groq captures tutor persona, example problem, prior knowledge, lesson angle; card is born/planned with `idea_status: approved` | `pending_approval` |
 | — | ~~human gate 1~~ | — | **Retired for lesson cards (owner decision, 2026-07-17)** — lesson ideas flow straight to Level 2. Book/film types keep their gate. | — |
 | 2 | `lesson2_concept_expansion.yml` | card push | Jules generates all §4 content items into `lessons/drafts/<id>/` and opens a PR | `concept_expanding` |
@@ -33,9 +33,13 @@ does not exist yet and is a separate future brief.
   teachable subtopic; revision/exam/assessment topics never become lesson
   rows. See `curriculum/CAPS/README.md` for the schema and curation notes.
   (Replaces the retired hand-written `curriculum/caps_seed.json`.)
-- `curriculum/skills_seed.json` — the hand-curated skill rows
-  (`category: skill`, stable `skill_ref`, term-independent) that are not
-  derivable from the ATP documents; appended to the same load.
+- `curriculum/CAPS/{subject}/skills/{grade}/{skillname}.json` — hand-curated
+  skill definitions (`skill_ref`, name, example problem, prior knowledge):
+  term-independent prerequisite-knowledge units that are not derivable from
+  the ATP documents; appended to the same load as `category: skill` rows.
+  Syllabus topics link them via `requires_skills: [<skill_ref>]`;
+  `lesson_pipeline.py skills-index` validates the graph (the generated
+  `lessons/skills_index.json` artifact is retired).
 - `scripts/atp_drift_check.py` — re-verifies every syllabus term against
   each CAPS file's recorded `source_url` (the DBE reissues ATPs yearly and
   placements can shift between editions). Run it when a new school year's
