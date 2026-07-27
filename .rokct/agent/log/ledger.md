@@ -125,3 +125,4 @@
 | echoes_in_the_night_0247a7 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30223108835 | — | 2026-07-26 22:26 |
 | beyond_the_silence_197d40 | mystery | Beyond the Silence | pending_approval | groq | GROQ-30225221766 | — | 2026-07-26 23:25 |
 | shores_of_memories_e73f6e | romance | Shores of Memories | pending_approval | groq | GROQ-30228933289 | — | 2026-07-27 01:05 |
+| economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | concept_generated | system | SYS-LESSON-RULES-30301398258 | — | 2026-07-27 20:10 |
