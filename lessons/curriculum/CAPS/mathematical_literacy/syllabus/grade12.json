@@ -10,35 +10,135 @@
     {
       "term": 1,
       "topics": [
-        "FINANCE",
-        "DATA HANDLING",
-        "PROBABILITY",
-        "FINANCE"
+        {
+          "name": "FINANCE",
+          "subtopics": [
+            "Financial documents: tax documents (tax rate tables, IRP5, employee income tax), loan documents (statements, changing loan agreements)",
+            "Taxation: personal income tax, taxable and non-taxable income, rebates, UIF (maximum amount), VAT (15%)",
+            "Tariff systems (compare 2 or more): electricity, telephone, municipal, bank, transport - via tables, graphs and formulae",
+            "Income, expenditure, profit and loss (large organisations, fundraising): two-year comparisons; projected vs actual budgets",
+            "Cost price and selling price; percentage profit; break-even values from formulae and graphs"
+          ]
+        },
+        {
+          "name": "DATA HANDLING",
+          "subtopics": [
+            "Developing questions on national and global issues; developing and using collection instruments (interviews, questionnaires, recording sheets)",
+            "Classifying and organising: numerical and categorical data, class intervals, tallies, frequency tables",
+            "Summarising: quartiles, inter-quartile range, percentiles; measures of central tendency and spread",
+            "Representing, interpreting, analysing: pie charts, histograms, bar graphs, line and broken-line graphs, scatter plots, box-and-whisker plots"
+          ]
+        },
+        {
+          "name": "PROBABILITY",
+          "subtopics": [
+            "Probability of simple events (dice, coin games, national lotteries, gambling, insurance risk assessment)",
+            "Relative frequency and theoretical probability",
+            "Compound events: tree diagrams and two-way tables"
+          ]
+        },
+        {
+          "name": "FINANCE",
+          "subtopics": [
+            "Interest and banking: hire purchase, residual/balloon payments, loans; interest rate, interest, repayments",
+            "Banking: investments and insurance plans (interest, interest rate, charges, monthly payments)",
+            "Inflation: buying power and prices over time; interpret and analyse graphs",
+            "Exchange rates: currency relationships and buying power"
+          ]
+        }
+      ],
+      "sba": [
+        "Investigation",
+        "Controlled test"
       ]
     },
     {
       "term": 2,
       "topics": [
-        "MEASUREMENT",
-        "MAPS, PLANS & OTHER REPRESENTATIONS OF THE PHYSICAL WORLD",
-        "REVISION",
-        "INTERNAL EXAMINATIONS"
+        {
+          "name": "MEASUREMENT",
+          "subtopics": [
+            "Conversions: factors and tables; metric to imperial and back; °C to °F and back",
+            "Time: transport timetables (bus, train, taxi), production schedules (e.g. building a house), tides",
+            "Perimeter and area; length, distance and time; cost calculations may apply",
+            "Volume and surface area; rates (speed, costing); mass/weight",
+            "BMI: formula (kg/m²) and interpreting charts"
+          ]
+        },
+        {
+          "name": "MAPS, PLANS & OTHER REPRESENTATIONS OF THE PHYSICAL WORLD",
+          "subtopics": [
+            "Scale (ratio and bar): actual lengths and distances from scale; determining a scale for drawings and models",
+            "Maps: grid references, compass directions, slope on maps"
+          ]
+        },
+        {
+          "name": "REVISION"
+        },
+        {
+          "name": "INTERNAL EXAMINATIONS"
+        }
+      ],
+      "sba": [
+        "Assignment",
+        "Mid-year examinations (two papers, 100 marks, 2 hours each)"
       ]
     },
     {
       "term": 3,
       "topics": [
-        "MAPS, PLANS & OTHER REPRESENTATIONS OF THE PHYSICAL WORLD",
-        "REVISION",
-        "PREPARATORY EXAMINATIONS"
+        {
+          "name": "MAPS, PLANS & OTHER REPRESENTATIONS OF THE PHYSICAL WORLD",
+          "subtopics": [
+            "Plans: assembly diagrams and instruction manuals; plan symbols, notation and terminology; actual dimensions from a given scale; choosing a suitable scale; drawing 2D floor and elevation plans",
+            "Models: packaging problems, 3D scale models, 2D pictures; item arrangement and material-quantity estimates"
+          ]
+        },
+        {
+          "name": "REVISION"
+        },
+        {
+          "name": "PREPARATORY EXAMINATIONS"
+        }
+      ],
+      "sba": [
+        "Controlled test",
+        "Preparatory examination (two papers, 150 marks, 3 hours each)"
       ]
     },
     {
       "term": 4,
       "topics": [
-        "REVISION",
-        "FINAL EXAMINATION"
+        {
+          "name": "REVISION",
+          "subtopics": [
+            "Finance; data handling; measurements; maps and plans; probability"
+          ]
+        },
+        {
+          "name": "FINAL EXAMINATION"
+        }
+      ],
+      "sba": [
+        "No SBA task for term 4 (final NSC examination)"
       ]
     }
+  ],
+  "exam_structure": {
+    "paper1": {
+      "marks": 150,
+      "hours": 3,
+      "format": "Q1: 20% at level 1; Q2: Finance; Q3: Data handling; Q4-5: integration of finance, data handling and probability"
+    },
+    "paper2": {
+      "marks": 150,
+      "hours": 3,
+      "format": "Q1: 20% at level 1; Q2: Maps and plans; Q3: Measurements; Q4-5: integration of maps & plans, measurements and probability"
+    }
+  },
+  "notes": [
+    "CAPS p.15: concepts must not be taught in the absence of contexts - learners must meet them in realistic scenarios",
+    "Requisite pre-knowledge across all terms: Grade 11 content",
+    "Term 1 lists FINANCE twice deliberately: documents/taxation/tariffs early in the term, interest/banking/inflation/exchange rates at the end"
   ]
 }

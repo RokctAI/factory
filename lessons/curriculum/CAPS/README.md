@@ -25,7 +25,16 @@ CAPS/
 ```
 
 Each file: `{subject, grade, curriculum, atp_edition, source_verified, source_url, parse_status,
-terms: [{term, topics: [...]}]}` — topics are the ordered CAPS topic sequence for that term.
+terms: [...], exam_structure, ...}`. Each term is `{term, topics: [{name, subtopics?,
+prior_knowledge?}], sba?, theme?, control_test_scope?}` — `name` is the ordered CAPS topic,
+`subtopics` the topic's content breakdown from the ATP's concepts/skills rows, `prior_knowledge`
+the ATP's requisite-pre-knowledge note where the source gives one per topic. `sba` lists the term's
+formal assessment tasks (with marks/timing where stated). `theme` appears where the ATP names the
+term (Geography gr11/12). Physical Sciences additionally carries `control_test_scope` per term and
+grade-level `sba_guidelines`. `exam_structure` captures the final-exam paper composition
+(marks/hours and section weights or question formats) as printed in each ATP. Mathematical
+Literacy files carry `notes` (e.g. the CAPS teach-in-context rule; gr12's deliberate double-FINANCE
+term). Revision/exam topics carry no subtopics.
 
 ## Source documents (real, verified 2026-07-26)
 
@@ -46,6 +55,13 @@ got wrong and fixed: a missing Accounting G10 Term 1, truncated cells ("Revision
 of", "Subtropical anticyclones and" → full phrases), merged week cells split apart (Physical Sciences),
 a leaked "CAPS TOPICS" row label removed, exam-paper mark-breakdown tables stripped out of Term 4
 topic lists, and a "easurement" OCR artifact removed.
+
+A second hand-transcription pass then enriched every file with subtopics, prior knowledge, SBA
+tasks and exam structure (see Layout above for the schema). Deliberately NOT transcribed:
+week-level spans/hours (the ATP grids carry them, but column boundaries are ambiguous in
+extraction — re-derive from the source PDFs if pacing-by-week is ever needed), Physical Sciences'
+requisite-pre-knowledge rows (week-granular and repetitive in that ATP; other subjects' per-topic
+rows ARE transcribed), and resources/informal-assessment rows (teaching aids, not syllabus).
 
 Semantics to know when consuming these lists:
 - **Assessment/revision entries are kept deliberately** ("CONTROL TEST", "REVISION & ASSESSMENT",
