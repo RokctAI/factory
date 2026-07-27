@@ -297,7 +297,8 @@ def load_seed_entries():
             "skill_ref": ref,
             "source": sk["source"],
         }
-        for field in ("example_problem", "prior_knowledge", "tutor", "tutor_style"):
+        for field in ("example_problem", "prior_knowledge", "tutor", "tutor_style",
+                       "requires_skills"):
             if sk.get(field):
                 row[field] = sk[field]
         entries.append(row)
@@ -1370,6 +1371,14 @@ def cmd_skills_index(args):
                     errors.append(f"{sf}: skill requires itself ({ref})")
 
     edges = 0
+    # skill -> skill prerequisites must resolve too
+    for folder in sorted(CAPS_TYPE_BY_FOLDER):
+        for sf in sorted((CAPS_DIR / folder / "skills").glob("grade*/*.json")):
+            data = json.loads(sf.read_text(encoding="utf-8"))
+            for ref in data.get("requires_skills", []) or []:
+                edges += 1
+                if ref not in defined:
+                    errors.append(f"{sf}: requires_skills '{ref}' does not match any skill file")
     for folder in sorted(CAPS_TYPE_BY_FOLDER):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
             data = json.loads(gf.read_text(encoding="utf-8"))
