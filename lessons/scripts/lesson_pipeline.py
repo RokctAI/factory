@@ -68,10 +68,23 @@ NON_LESSON_TOPIC_RE = re.compile(
 VALID_TERMS = {"1", "2", "3", "4", "unknown"}
 
 # --- Skills convention ---
-# A skill lesson is structurally identical to any other lesson (same seven
-# content items, same pipeline levels, same gates). The only distinction is
-# scheduling: a skill lesson never gets a live broadcast slot — it lives in
-# the Library as always-available on-demand content. Schema:
+# A skill is NOT taught like a lesson (owner decision, 2026-07-27). A lesson
+# teaches for the first time: 15-minute arc, seven content items, broadcast-
+# schedulable. A skill REFRESHES prerequisite knowledge for a student about
+# to start a lesson that requires it, so its content is the review format:
+#   diagnostic.json  1-2 skip-ahead check questions (nail them -> go
+#                    straight into the lesson)
+#   script.md        compressed method recap, SKILL_SCRIPT_MIN/MAX_WORDS -
+#                    method only, no first-teaching build-up
+#   mcq.json         2-5 exit-check questions (flat list, not per-subtopic)
+#   manim_scene.py   optional single scene
+# No reel, no Mandy, no comprehension_check, no subtopics segmentation.
+# Where a syllabus lesson already teaches the content, the skill definition
+# file records it in covered_by (list of {grade, topic, subtopic}) - deep
+# review defers to that lesson in the Library instead of re-teaching, which
+# also makes per-grade "advanced variant" skills unnecessary: extra depth is
+# expressed as a LATER skill in the requires_skills chain, not a variant.
+# Skills stay library-only: never a live broadcast slot. Schema:
 #   category: skill          on the skill lesson's card (absent = standard,
 #                            broadcast-schedulable lesson)
 #   skill_ref: <subject>.<slug>   stable reference id on the skill card,
@@ -125,6 +138,22 @@ CONTENT_FILES = {
 OPTIONAL_CONTENT_FILES = {
     "mandy_nervous_script_path": "mandy_nervous_script.md",
 }
+
+# Review format for category: skill cards (see the Skills convention above).
+SKILL_CONTENT_FILES = {
+    "script_path": "script.md",              # method recap
+    "diagnostic_path": "diagnostic.json",    # skip-ahead check
+    "mcq_data_path": "mcq.json",             # exit check
+}
+SKILL_OPTIONAL_CONTENT_FILES = {
+    "manim_path": "manim_scene.py",
+}
+# A recap is 2-5 minutes spoken: enough to restate the method and walk the
+# worked examples, short enough that it stays a refresher. The MAX is as
+# deliberate as the MIN - a skill drifting toward lesson length is being
+# authored wrong.
+SKILL_SCRIPT_MIN_WORDS = 250
+SKILL_SCRIPT_MAX_WORDS = 700
 
 
 # --- card field helpers (same conventions as the protocol's job_manager) ---
@@ -1371,7 +1400,8 @@ def cmd_skills_index(args):
                     errors.append(f"{sf}: skill requires itself ({ref})")
 
     edges = 0
-    # skill -> skill prerequisites must resolve too
+    # skill -> skill prerequisites must resolve, and covered_by pointers must
+    # name a real syllabus topic/subtopic (deep review defers to that lesson).
     for folder in sorted(CAPS_TYPE_BY_FOLDER):
         for sf in sorted((CAPS_DIR / folder / "skills").glob("grade*/*.json")):
             data = json.loads(sf.read_text(encoding="utf-8"))
@@ -1379,6 +1409,22 @@ def cmd_skills_index(args):
                 edges += 1
                 if ref not in defined:
                     errors.append(f"{sf}: requires_skills '{ref}' does not match any skill file")
+            for ptr in data.get("covered_by", []) or []:
+                gf = CAPS_DIR / folder / "syllabus" / f"grade{ptr.get('grade')}.json"
+                if not gf.exists():
+                    errors.append(f"{sf}: covered_by names missing syllabus file {gf}")
+                    continue
+                syl = json.loads(gf.read_text(encoding="utf-8"))
+                # A topic name can recur across terms (e.g. PS gr10
+                # "Quantitative aspects of chemical change" in T2 and T3) -
+                # the pointer resolves if ANY occurrence carries the subtopic.
+                hits = [topic for term in syl.get("terms", [])
+                        for topic in term.get("topics", [])
+                        if topic["name"] == ptr.get("topic")]
+                if not hits:
+                    errors.append(f"{sf}: covered_by topic not in grade{ptr.get('grade')} syllabus: {ptr.get('topic')!r}")
+                elif not any(ptr.get("subtopic") in (h.get("subtopics") or []) for h in hits):
+                    errors.append(f"{sf}: covered_by subtopic not under that topic: {ptr.get('subtopic')!r}")
     for folder in sorted(CAPS_TYPE_BY_FOLDER):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
             data = json.loads(gf.read_text(encoding="utf-8"))
@@ -1589,6 +1635,89 @@ def verify_no_session_framing(script):
     return errors
 
 
+def _check_flat_mcqs(data, label, lo, hi, errors):
+    """Shape-check a flat question list {questions: [...]} against
+    McqQuestion.fromJson: id, question, options[], correct_index in range."""
+    if data is None:
+        return
+    questions = data.get("questions", [])
+    if not lo <= len(questions) <= hi:
+        errors.append(f"{label}: {len(questions)} questions (must be {lo}-{hi})")
+    seen = set()
+    for q in questions:
+        qid = q.get("id")
+        if not qid or qid in seen:
+            errors.append(f"{label}: missing or duplicate question id: {qid}")
+        seen.add(qid)
+        if not q.get("question"):
+            errors.append(f"{label} {qid}: empty question text")
+        opts = q.get("options", [])
+        if len(opts) < 2:
+            errors.append(f"{label} {qid}: fewer than 2 options")
+        ci = q.get("correct_index")
+        if not isinstance(ci, int) or not 0 <= ci < max(len(opts), 1):
+            errors.append(f"{label} {qid}: correct_index missing or out of range")
+
+
+def _run_skill_checks(card, base, warnings):
+    """Review-format checks for category: skill cards (see the Skills
+    convention): diagnostic + compressed recap + exit check, bounded length,
+    and none of the lesson-only content items."""
+    errors = []
+
+    paths = {}
+    for field, default_name in SKILL_CONTENT_FILES.items():
+        p = get_field(card, field)
+        target = Path(p) if p else base / default_name
+        if not target.exists():
+            errors.append(f"skill review item missing: {field} ({target})")
+            continue
+        paths[field] = target
+
+    # Optional single scene: tracked when produced, produced only when tracked.
+    for field, default_name in SKILL_OPTIONAL_CONTENT_FILES.items():
+        p = get_field(card, field)
+        on_disk = base / default_name
+        if p and not Path(p).exists():
+            errors.append(f"{field} points at a missing file: {p}")
+        elif not p and on_disk.exists():
+            errors.append(f"{on_disk} exists but the card's {field} field is empty")
+        elif p:
+            manim = Path(p).read_text(encoding="utf-8")
+            if "class" not in manim or "Scene" not in manim:
+                errors.append("manim_scene.py does not define a Manim Scene class")
+
+    # Lesson-only items are format violations on a skill.
+    for field, name in CONTENT_FILES.items():
+        if field in SKILL_CONTENT_FILES or field in SKILL_OPTIONAL_CONTENT_FILES:
+            continue
+        if get_field(card, field) or (base / name).exists():
+            errors.append(
+                f"{name} does not belong on a skill - skills use the review "
+                "format (diagnostic + recap + exit check), not the lesson form")
+
+    if errors:
+        return (errors, warnings)
+
+    script = paths["script_path"].read_text(encoding="utf-8")
+    words = len(script.split())
+    if words < SKILL_SCRIPT_MIN_WORDS:
+        errors.append(
+            f"skill recap too short ({words} words, minimum {SKILL_SCRIPT_MIN_WORDS})")
+    if words > SKILL_SCRIPT_MAX_WORDS:
+        errors.append(
+            f"skill recap too long ({words} words, maximum {SKILL_SCRIPT_MAX_WORDS}) - "
+            "a skill drifting toward lesson length is being authored wrong; "
+            "deep teaching belongs to the covered_by lesson")
+    errors.extend(verify_no_session_framing(script))
+
+    _check_flat_mcqs(_load_json(paths["diagnostic_path"], errors, "diagnostic"),
+                     "diagnostic", 1, 2, errors)
+    _check_flat_mcqs(_load_json(paths["mcq_data_path"], errors, "exit check"),
+                     "exit check", 2, 5, errors)
+    return (errors, warnings)
+
+
 def run_checks(card, card_file):
     """Structural + pedagogical sanity checks for Level 3.
 
@@ -1604,6 +1733,10 @@ def run_checks(card, card_file):
     base = Path(lesson_path)
     if not base.exists():
         return ([f"lesson content directory missing: {lesson_path}"], warnings)
+
+    # Skills use the review format, not the seven-item lesson form.
+    if get_field(card, "category") == CATEGORY_SKILL:
+        return _run_skill_checks(card, base, warnings)
 
     paths = {}
     for field in CONTENT_FILES:

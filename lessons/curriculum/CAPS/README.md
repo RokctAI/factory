@@ -19,7 +19,17 @@ papers, exam guidelines, ...) can live alongside `syllabus/` later.
 Skills — editorial prerequisite-knowledge units (`skill_ref`, name, example problem, prior
 knowledge) — live at `{subject}/skills/{grade}/{skillname}.json`; syllabus topics link them with an
 optional `requires_skills: [<skill_ref>]` field, and `lesson_pipeline.py skills-index` validates
-that every link resolves. Each skill also carries an `importance` block telling the student why it
+that every link resolves. **A skill is not taught like a lesson** (owner decision, 2026-07-27): a
+lesson teaches for the first time (15-minute arc, seven content items); a skill *refreshes* — its
+content is the review format (1-2 diagnostic questions to skip ahead, a 250-700-word method recap,
+a 2-5-question exit check, optionally one Manim scene; no reel/Mandy/subtopic segmentation), which
+Level 3 enforces per `category: skill`. Where a syllabus subtopic already teaches the content, the
+skill's `covered_by` (list of `{grade, topic, subtopic}`, validated) records it — deep review
+defers to that lesson in the Library instead of duplicating it, and cross-grade rewatching (a Gr 12
+student reopening the Gr 11 lesson) resolves through the same pointer. Extra depth is a *later
+skill in the requires_skills chain*, not a per-grade variant. 21 of the 24 skills are covered by a
+real lesson subtopic; 3 (gradient calculation, graphing from tables, substitution in formulae) are
+authored-review-only because no syllabus lesson teaches them. Each skill also carries an `importance` block telling the student why it
 matters: `summary` (authored, grounded in the transcribed exam structures), `required_by` /
 `required_by_topics` (computed from the requires_skills links — regenerate when links change), and
 `exam_weight` (hard section marks, present only where the ATP prints per-section marks: Maths, PS
