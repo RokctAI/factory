@@ -1,10 +1,11 @@
-# Real DBE syllabus (ATP) data — replaces `caps_seed.json` as source of truth
+# Real DBE syllabus (ATP) data — THE source of truth (caps_seed.json is retired)
 
-`lessons/curriculum/caps_seed.json` was always an interim, hand-written stand-in — its own header
-comment says so: "No machine-readable CAPS pacing data exists in the workspace yet... this file is the
-interim source of truth." This folder is that machine-readable replacement, sourced directly from the
-Department of Basic Education's real 2023/24 Annual Teaching Plans (ATPs) — the actual government
-syllabus documents, not a hand-picked subset.
+`lessons/curriculum/caps_seed.json` was an interim, hand-written stand-in and has been deleted. The
+pipeline now reads this folder directly: `lesson_pipeline.py load_seed_entries()` flattens these files
+(plus the hand-curated skill rows in `../skills_seed.json`, which aren't derivable from ATPs) into the
+topic rows Level 0 and the dashboard consume. Data here is sourced directly from the Department of
+Basic Education's real 2023/24 Annual Teaching Plans (ATPs) — the actual government syllabus
+documents, not a hand-picked subset.
 
 ## Layout
 
@@ -44,8 +45,8 @@ subject/grade PDFs (6 subjects × grades 10-12) were live and fetched successful
 **Found and fixed one real bug while doing this**: `caps_seed.json`'s `_sources.documents` block had the
 Physical Sciences Grade 11 and Grade 12 URLs swapped — the "Grade 11" link actually served the Grade 12
 ATP and vice versa. Confirmed by reading each PDF's own header (`ANNUAL TEACHING PLANS: PHYSICAL
-SCIENCES: GRADE N`), not by assumption. Fixed here; `caps_seed.json`'s `_sources` block should be
-corrected too if it's kept around.
+SCIENCES: GRADE N`), not by assumption. Fixed here (and moot for `caps_seed.json`, which has since
+been retired and deleted).
 
 ## Curation status: every term list hand-verified against the source text
 

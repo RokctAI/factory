@@ -38,7 +38,26 @@ from pathlib import Path
 PENDING_DIR = Path(".rokct/agent/jobs/pending")
 RUNNING_DIR = Path(".rokct/agent/jobs/running")
 DONE_DIR = Path(".rokct/agent/jobs/done")
-SEED_PATH = Path("lessons/curriculum/caps_seed.json")
+# Topic source of truth: the curated DBE ATP syllabus files. caps_seed.json
+# is retired - load_seed_entries() flattens these directly, plus the
+# hand-curated skill rows (not derivable from ATPs) in skills_seed.json.
+CAPS_DIR = Path("lessons/curriculum/CAPS")
+SKILLS_SEED_PATH = Path("lessons/curriculum/skills_seed.json")
+
+CAPS_TYPE_BY_FOLDER = {
+    "maths": "lesson.maths",
+    "mathematical_literacy": "lesson.maths_literacy",
+    "physical_sciences": "lesson.physical_sciences",
+    "economics": "lesson.economics",
+    "geography": "lesson.geography",
+    "accounting": "lesson.accounting",
+}
+
+# ATP topics that are pacing entries, not teachable lesson content.
+NON_LESSON_TOPIC_RE = re.compile(
+    r"(?i)revision|revise|examination|exam\b|control test|controlled test|"
+    r"consolidation|assessment|remediation|discussion|admin\b|prior knowledge"
+)
 
 # CAPS school terms. "unknown" is for topics that could not be verified
 # against a real CAPS/ATP source — never guess a term. Term-independent
@@ -218,26 +237,118 @@ def find_duplicate_card(subject, grade, topic, subtopic):
     return None
 
 
-# --- Level 0: seed job cards from the CAPS curriculum list ---
+# --- Level 0: seed job cards from the CAPS syllabus files ---
+
+def load_seed_entries():
+    """Flatten lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json into
+    seed-shaped rows (one per teachable subtopic), then append the curated
+    skill rows from skills_seed.json. Topics matching NON_LESSON_TOPIC_RE or
+    carrying no subtopics are pacing entries, never lesson rows."""
+    entries = []
+    for folder, lesson_type in sorted(CAPS_TYPE_BY_FOLDER.items()):
+        for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
+            data = json.loads(gf.read_text(encoding="utf-8"))
+            for term in data.get("terms", []):
+                for topic in term.get("topics", []):
+                    subs = topic.get("subtopics") or []
+                    if not subs or NON_LESSON_TOPIC_RE.search(topic["name"]):
+                        continue
+                    for sub in subs:
+                        row = {
+                            "type": lesson_type,
+                            "subject": data["subject"],
+                            "grade": data["grade"],
+                            "term": str(term["term"]),
+                            "topic": topic["name"],
+                            "subtopic": sub,
+                            "source": gf.as_posix(),
+                        }
+                        if topic.get("prior_knowledge"):
+                            row["prior_knowledge"] = topic["prior_knowledge"]
+                        entries.append(row)
+    if SKILLS_SEED_PATH.exists():
+        skills = json.loads(SKILLS_SEED_PATH.read_text(encoding="utf-8"))
+        entries.extend(skills.get("entries", []))
+    return entries
+
+
+def _stem(w):
+    # Light suffix stripping so "completing"/"complete", "equations"/
+    # "equation" compare equal in the semantic duplicate guard.
+    for suf in ("ing", "es", "ed"):
+        if w.endswith(suf) and len(w) - len(suf) >= 3:
+            w = w[: -len(suf)]
+            break
+    if w.endswith("s") and len(w) > 3:
+        w = w[:-1]
+    if w.endswith("e") and len(w) > 4:
+        w = w[:-1]
+    return w
+
+
+_TOKEN_STOPWORDS = {
+    "the", "a", "an", "of", "and", "or", "to", "in", "on", "for", "with",
+    "using", "use", "incl", "including", "etc", "vs", "via", "per", "by",
+}
+
+
+def _content_tokens(*parts):
+    text = " ".join(str(p) for p in parts).lower()
+    return {
+        _stem(t)
+        for t in re.findall(r"[a-z]+", text)
+        if len(t) > 2 and t not in _TOKEN_STOPWORDS
+    }
+
+
+def _fuzzy_covered(entry, card_tokens):
+    """True when an existing card's (topic + subtopic) content words overlap
+    this entry's enough to call it the same lesson. Cards opened from the
+    retired hand-written seed word topics differently from the ATP text, so
+    the exact-tuple check alone would re-open them."""
+    key = (entry["type"], str(entry["grade"]))
+    toks = _content_tokens(entry["topic"], entry["subtopic"])
+    if not toks:
+        return False
+    for old in card_tokens.get(key, []):
+        inter = len(toks & old)
+        union = len(toks | old)
+        smaller = min(len(toks), len(old))
+        if union and inter / union >= 0.5:
+            return True
+        if smaller and inter / smaller >= 0.7:
+            return True
+    return False
+
 
 def cmd_seed(args):
-    if not SEED_PATH.exists():
-        print(f"Error: seed file {SEED_PATH} not found.")
+    if not CAPS_DIR.exists():
+        print(f"Error: syllabus directory {CAPS_DIR} not found.")
         return 1
-    seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
-    entries = [e for e in seed.get("entries", []) if e.get("type") == args.type]
+    entries = [e for e in load_seed_entries() if e.get("type") == args.type]
     if not entries:
-        print(f"No seed entries for type {args.type}.")
+        print(f"No syllabus entries for type {args.type}.")
         return 0
 
     PENDING_DIR.mkdir(parents=True, exist_ok=True)
     existing = set()
+    card_tokens = {}
     for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
         if d.exists():
             for f in d.glob("*.md"):
                 m = re.search(r"_([0-9a-f]{6})\.md$", f.name)
                 if m:
                     existing.add(m.group(1))
+                if f.name.startswith("template"):
+                    continue
+                card = read_card(f)
+                ctype = get_field(card, "type")
+                if ctype.startswith("lesson."):
+                    card_tokens.setdefault(
+                        (ctype, get_field(card, "grade").strip()), []
+                    ).append(
+                        _content_tokens(get_field(card, "topic"), get_field(card, "subtopic"))
+                    )
 
     created = 0
     for entry in entries:
@@ -245,6 +356,12 @@ def cmd_seed(args):
             break
         h = entry_hash(entry)
         if h in existing:
+            continue
+        if _fuzzy_covered(entry, card_tokens):
+            print(
+                f"SEMANTIC DUPLICATE SKIPPED: ({entry['subject']}, grade {entry['grade']}, "
+                f"{entry['topic']}, {entry['subtopic']}) overlaps an existing card"
+            )
             continue
         # Structural duplicate check on the (subject, grade, topic, subtopic)
         # tuple — the hash above only dedups identical seed rows; this catches
@@ -2016,9 +2133,10 @@ def _load_all_cards():
 
 
 def cmd_dashboard(args):
-    """Regenerate lessons/DASHBOARD.md from the actual job cards and seed."""
+    """Regenerate lessons/DASHBOARD.md from the actual job cards and the
+    CAPS syllabus backlog."""
     cards = _load_all_cards()
-    seed = json.loads(SEED_PATH.read_text(encoding="utf-8")) if SEED_PATH.exists() else {"entries": []}
+    seed_entries = load_seed_entries() if CAPS_DIR.exists() else []
     seeded_hashes = set()
     for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
         if d.exists():
@@ -2101,22 +2219,22 @@ def cmd_dashboard(args):
     lines.append("| " + " | ".join(totals) + " |")
     lines.append("")
 
-    # 4. Seed backlog per subject/grade.
+    # 4. Syllabus backlog per subject/grade.
     from collections import Counter
     seed_total = Counter()
     seed_used = Counter()
-    for e in seed.get("entries", []):
+    for e in seed_entries:
         key = (e["subject"], str(e["grade"]))
         seed_total[key] += 1
         if entry_hash(e) in seeded_hashes:
             seed_used[key] += 1
-    lines += ["## Seed backlog (topics not yet opened as cards)", ""]
+    lines += ["## Syllabus backlog (topics not yet opened as cards)", ""]
     lines.append("| Subject | Grade | Opened | Remaining |")
     lines.append("|---|---|---|---|")
     for key in sorted(seed_total):
         s, g = key
         lines.append(f"| {s} | {g} | {seed_used[key]} | {seed_total[key] - seed_used[key]} |")
-    lines.append(f"\nSeed rows total: {sum(seed_total.values())}; opened: "
+    lines.append(f"\nSyllabus rows total: {sum(seed_total.values())}; opened: "
                  f"{sum(seed_used.values())}; remaining: "
                  f"{sum(seed_total.values()) - sum(seed_used.values())}.")
     lines.append("")

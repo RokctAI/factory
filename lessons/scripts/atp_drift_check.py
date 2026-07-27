@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
 # Licensed under the MIT License.
 # Copyright 2026 RokctAI
-"""Verify caps_seed.json term placements against the DBE ATP source PDFs.
+"""Verify the CAPS syllabus files' term placements against the DBE ATP PDFs.
 
 The DBE reissues Annual Teaching Plans every school year, and a topic's term
 placement can shift between editions. This maintenance tool re-verifies the
-seed's `term` column against the ATP documents recorded in the seed file's
-`_sources` map:
+term data in lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json against
+the ATP document each file records in its own `source_url`:
 
     pip install pypdf requests
     python lessons/scripts/atp_drift_check.py            # verify all
     python lessons/scripts/atp_drift_check.py --subject "Maths" --grade 11
     python lessons/scripts/atp_drift_check.py --sources-dir <dir-of-pdfs>
 
-For each seed entry it reports:
+For each syllabus row (via lesson_pipeline.load_seed_entries) it reports:
     CONFIRMED   the topic's words appear in the stated term's section
     DRIFT       the topic's words appear only in a DIFFERENT term's section
-                (exit code 1 — update the seed or the source URL)
+                (exit code 1 — update the CAPS file or its source_url)
     UNVERIFIED  the extractor could not locate the topic in any term
                 (PDF text extraction is imperfect; check by hand)
 
-It never rewrites the seed — term data is only ever changed by a human
-looking at the actual document, matching the project's no-guessed-terms rule.
-When the DBE publishes a new ATP edition, update the URLs in `_sources`
-(and `atp_edition`) and re-run.
+It never rewrites the syllabus files — term data is only ever changed by a
+human looking at the actual document, matching the project's no-guessed-terms
+rule. When the DBE publishes a new ATP edition, update each file's
+`source_url`/`atp_edition` and re-run.
 """
 
 import argparse
@@ -34,7 +34,8 @@ import sys
 import urllib.request
 from pathlib import Path
 
-SEED_PATH = Path("lessons/curriculum/caps_seed.json")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lesson_pipeline import CAPS_DIR, CAPS_TYPE_BY_FOLDER, load_seed_entries
 
 STOPWORDS = {
     "and", "the", "of", "in", "for", "with", "other", "basic", "grade",
@@ -91,19 +92,23 @@ def terms_containing(words, buckets):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="ATP term drift check for caps_seed.json")
+    parser = argparse.ArgumentParser(description="ATP term drift check for the CAPS syllabus files")
     parser.add_argument("--subject", help="Only check this subject")
     parser.add_argument("--grade", help="Only check this grade")
     parser.add_argument("--sources-dir", help="Read '<Subject> Grade <n>.pdf' files from this directory instead of downloading")
     args = parser.parse_args()
 
-    seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
-    sources = seed.get("_sources", {}).get("documents", {})
+    sources, edition = {}, "?"
+    for folder in sorted(CAPS_TYPE_BY_FOLDER):
+        for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
+            data = json.loads(gf.read_text(encoding="utf-8"))
+            sources[f"{data['subject']} Grade {data['grade']}"] = data.get("source_url", "")
+            edition = data.get("atp_edition", edition)
     if not sources:
-        print("Error: no _sources.documents map in the seed file.")
+        print(f"Error: no syllabus files found under {CAPS_DIR}.")
         return 2
 
-    entries = seed["entries"]
+    entries = load_seed_entries()
     if args.subject:
         entries = [e for e in entries if e["subject"].lower() == args.subject.lower()]
     if args.grade:
@@ -164,7 +169,7 @@ def main():
 
     print(f"\nchecked {confirmed + drift + unverified} entries: "
           f"{confirmed} confirmed, {drift} drift, {unverified} unverified "
-          f"(ATP edition {seed.get('_sources', {}).get('atp_edition', '?')})")
+          f"(ATP edition {edition})")
     return 1 if drift else 0
 
 

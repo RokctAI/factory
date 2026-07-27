@@ -14,7 +14,7 @@ does not exist yet and is a separate future brief.
 
 | Level | Workflow | Trigger | What happens | Status after |
 |---|---|---|---|---|
-| 0 | `lesson0_topic_selection.yml` | hourly / seed push | Creates job cards from `lessons/curriculum/caps_seed.json` when pending count per type is low | `theme_generated` |
+| 0 | `lesson0_topic_selection.yml` | hourly / syllabus push | Creates job cards from `lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json` (+ `skills_seed.json`) when pending count per type is low | `theme_generated` |
 | 1 | `lesson1_plan_generation.yml` | hourly / card push | Groq captures tutor persona, example problem, prior knowledge, lesson angle; card is born/planned with `idea_status: approved` | `pending_approval` |
 | — | ~~human gate 1~~ | — | **Retired for lesson cards (owner decision, 2026-07-17)** — lesson ideas flow straight to Level 2. Book/film types keep their gate. | — |
 | 2 | `lesson2_concept_expansion.yml` | card push | Jules generates all §4 content items into `lessons/drafts/<id>/` and opens a PR | `concept_expanding` |
@@ -25,19 +25,23 @@ does not exist yet and is a separate future brief.
 
 ## Layout
 
-- `curriculum/caps_seed.json` — CAPS-aligned topic list covering Grades
-  10–12 across all six subjects (interim source of truth until a real CAPS
-  pacing source exists). Every entry carries a `term` (CAPS school term
-  1–4, verified against the DBE 2023/24 Annual Teaching Plans; `all` =
-  skills integrated across terms, e.g. Geography mapwork; `unknown` = no
-  verifiable ATP placement — never guess). The `_sources` map records the
-  exact education.gov.za ATP document each subject-grade was verified
-  against, plus the ATP edition and verification date.
-- `scripts/atp_drift_check.py` — re-verifies every seed term against the
-  recorded ATP sources (the DBE reissues ATPs yearly and placements can
-  shift between editions). Run it when a new school year's ATPs publish:
-  update the `_sources` URLs/edition, run the check, and fix any DRIFT
-  rows by hand — the script reports, it never rewrites.
+- `curriculum/CAPS/{subject}/syllabus/{grade}.json` — the source of truth:
+  curated DBE ATP syllabus data (topics, subtopics, prior knowledge, SBA,
+  exam structure) per subject and grade, each file recording the exact
+  education.gov.za document it came from (`source_url`, `atp_edition`).
+  `lesson_pipeline.py load_seed_entries()` flattens these into one row per
+  teachable subtopic; revision/exam/assessment topics never become lesson
+  rows. See `curriculum/CAPS/README.md` for the schema and curation notes.
+  (Replaces the retired hand-written `curriculum/caps_seed.json`.)
+- `curriculum/skills_seed.json` — the hand-curated skill rows
+  (`category: skill`, stable `skill_ref`, term-independent) that are not
+  derivable from the ATP documents; appended to the same load.
+- `scripts/atp_drift_check.py` — re-verifies every syllabus term against
+  each CAPS file's recorded `source_url` (the DBE reissues ATPs yearly and
+  placements can shift between editions). Run it when a new school year's
+  ATPs publish: update `source_url`/`atp_edition` in the CAPS files, run
+  the check, and fix any DRIFT rows by hand — the script reports, it never
+  rewrites.
 - `scripts/lesson_pipeline.py` — seeding, prompt construction (§4 Prompt
   Template verbatim), plan capture, Level 3/4 checks. Seeding refuses
   structural duplicates: an existing pending/running/done card with the same

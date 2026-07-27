@@ -1,0 +1,37 @@
+{
+  "_comment": [
+    "Skill lesson rows (category: skill) - the one part of the retired",
+    "caps_seed.json that is NOT derivable from the DBE ATP documents:",
+    "skills are term-independent, carry a stable skill_ref, and are chosen",
+    "editorially (see the Skills convention in lesson_pipeline.py).",
+    "Topic rows live in lessons/curriculum/CAPS/{subject}/syllabus/ and are",
+    "loaded directly by lesson_pipeline.py load_seed_entries(); this file is",
+    "appended to that same load."
+  ],
+  "entries": [
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "topic": "Geographical Skills and Techniques",
+      "subtopic": "Gradient calculation",
+      "example_problem": "Calculate the average gradient between trig beacon 251 (1 200 m) and a spot height of 900 m that are 4,5 km apart on a 1:50 000 topographic map.",
+      "prior_knowledge": "Student can read contour lines and convert between map units",
+      "tutor": "tutor_009",
+      "category": "skill",
+      "skill_ref": "geography.gradient_calculation",
+      "tutor_style": "formal"
+    },
+    {
+      "type": "lesson.geography",
+      "subject": "Geography",
+      "grade": 12,
+      "topic": "Geographical Skills and Techniques",
+      "subtopic": "Map scale and distance",
+      "example_problem": "The distance between two points on a 1:50 000 topographic map is 8,6 cm. Calculate the real distance in kilometres.",
+      "prior_knowledge": "Student knows ratio scale and metric unit conversions",
+      "category": "skill",
+      "skill_ref": "geography.map_scale_and_distance"
+    }
+  ]
+}
