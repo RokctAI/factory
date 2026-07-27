@@ -1,0 +1,29 @@
+{
+  "subject": "Geography",
+  "grade": 12,
+  "curriculum": "CAPS",
+  "portal": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx",
+  "portal_coverage": "NSC sessions November + May/June, 2008 to present",
+  "verified": "2026-07-27",
+  "sessions": [
+    {
+      "session": "November 2024 NSC",
+      "session_page": "https://www.education.gov.za/2024NSCNovemberpastpapers.aspx",
+      "papers": [
+        {
+          "paper": 1,
+          "language": "English",
+          "question_paper_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=Hc8_CaQJpd4%3d",
+          "memo_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=ZKd8Wo9VYr0%3d"
+        },
+        {
+          "paper": 2,
+          "language": "English",
+          "question_paper_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=LrQ39-VlNh4%3d",
+          "memo_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=2qulvYkBv6k%3d"
+        }
+      ]
+    }
+  ],
+  "note": "Index of real DBE sources; PDF ingestion + question-to-subtopic linking is the past-papers pipeline task (docs/past-papers-linking-brief.md, past_papers.py). This is also the honest source for pre-filling example_problem on topic rows. Only Gr 12 papers are published nationally; Gr 10-11 papers are provincial."
+}

@@ -97,6 +97,30 @@ Semantics to know when consuming these lists:
 - Topic-name casing follows each source document (some ATPs write topics in ALL CAPS, some in sentence
   case) — normalized only where the source itself was inconsistent about the same word.
 
+## Gap status (closed 2026-07-27; what remains is deliberate)
+
+The full document hierarchy now lives here, per subject:
+
+| Layer | Path | Status |
+|---|---|---|
+| **Curriculum** (CAPS policy statement, gr10-12) | `{subject}/curriculum/caps_gr10-12.md` + `.json` | Ingested: full decoded text with pdf/printed page markers + TOC metadata. The ATPs' "PAGE NO. IN CAPS" references resolve against printed pages (verified: ML p49 = topic Finance). Decoded from cid-only fonts via /MTnn glyph names; maths symbols beyond Latin-1 may be imperfect - source PDF is authoritative. |
+| **Syllabus** (ATP pacing) | `{subject}/syllabus/{grade}.json` | Curated + enriched (subtopics, prior knowledge, SBA, exam structure, skills links). |
+| **Skills** (prerequisite units) | `{subject}/skills/{grade}/{skillname}.json` | 24 defined, importance + covered_by, review-format convention enforced. |
+| **Exam guidelines** (gr12) | `{subject}/exam_guidelines/grade12_2021.md` + `.json` | Ingested: full text of the 2021 national edition (latest on the DBE index) - the document the ATPs' exam notes defer to. |
+| **Past papers** | `{subject}/past_papers/index.json` | Real DBE sources indexed (Nov 2024 NSC P1/P2 + memos per subject; portal covers 2008-present). PDF ingestion + question-to-subtopic linking is the past-papers pipeline task (`docs/past-papers-linking-brief.md`) - and the honest source for pre-filling `example_problem`. |
+| **School calendar** | `school_calendar/2026.json` | Official 2026 term dates (gov.za, verified) - maps ATP term numbers to real dates. Reissued annually. |
+
+Still open, deliberately:
+- **Grades 8-9 / more subjects** - a product-scope decision, not a data task: Senior Phase has a
+  different subject set (EMS, Natural Sciences, Social Sciences) that doesn't map 1:1 onto the six.
+  Decide the product serves those grades first; then this same ingestion method applies.
+- **Week-level ATP spans/hours** - transcription deliberately skipped (ambiguous column boundaries);
+  re-derive from source PDFs if week-pacing is ever needed.
+- **Edition freshness** (checked 2026-07-27): education.gov.za's national ATP index still serves the
+  2023/24 edition these files were built from. Newer 2025/2026 ATPs circulate provincially (e.g. KZN)
+  and via aggregators - if provincial alignment matters, ingest that province's edition and run
+  `atp_drift_check.py`. Exam guidelines: 2021 is the latest national edition.
+
 ## Re-verifying / re-generating
 
 The DBE reissues ATPs yearly and term placement can shift between editions. To regenerate against a new
