@@ -1,0 +1,60 @@
+{
+  "tutor": "tutor_012",
+  "_comment": [
+    "VIDEO generation (TikTok, adverts). This is a MOTION brief, not",
+    "a face description: the face comes from the still render, which",
+    "is why still.json is generated first. Re-describing the face in",
+    "text is exactly how identity drifts between clips.",
+    "Built from PERSONALITY + GENDER only - NOTHING here is derived from the",
+    "tutor's display name, because names are placeholders that will be",
+    "replaced. When renaming this tutor, pick a name that fits THIS file, not",
+    "the reverse. Gender and register are copied from tutor.md's documented",
+    "'Voice characteristics' section."
+  ],
+  "subject_context": {
+    "subject": "Mathematical Literacy",
+    "role": "simplifier"
+  },
+  "reference_image": {
+    "required": true,
+    "source": "appearance/still.json -> the approved headshot or classroom render for this tutor",
+    "role": "first frame and identity reference",
+    "why": "text alone produces a different person every run; the reference locks the face. Do not go the other way and pull a still out of a clip - video frames are soft, motion-blurred and compressed."
+  },
+  "identity_lock": [
+    "salt-and-pepper moustache",
+    "flat cap",
+    "till slip in hand",
+    "crooked-tooth grin"
+  ],
+  "_identity_lock_note": "if the model supports text guidance alongside the reference, restate ONLY these - they are what the audience recognises",
+  "performance": {
+    "energy": "corner-shop familiarity - practical, patient, funny",
+    "spoken_register": "unhurried, warm conversational",
+    "body": "holds the slip up at eye level, taps it with a finger, shrugs amiably; leans on the counter",
+    "expression": "amused and kind, mid-chuckle, the face of a man who has explained this at a shop counter a hundred times"
+  },
+  "camera": {
+    "camera": "24-30fps, 50mm equivalent, static or slow push-in",
+    "framing": "9:16 vertical for TikTok - head and shoulders in the top two thirds, room for captions below",
+    "continuity": "same wardrobe, same accessories and same hairstyle across a campaign; regenerate from continuity_anchors rather than re-describing from scratch"
+  },
+  "duration_seconds": 8,
+  "audio": {
+    "dialogue": "supplied separately from this tutor's own scripts (greetings/, signoffs/, samples.json)",
+    "note": "lip-sync to supplied audio where the model supports it; never let the model invent speech for a tutor"
+  },
+  "shots": [
+    {
+      "id": "tutor_012_ad_hook",
+      "purpose": "TikTok / advert hook, talking to camera",
+      "prompt": "Vertical 9:16 talking-to-camera clip. A 45-52 year old Coloured South African male teacher, average height, slightly soft build, comfortable and unhurried, friendly lived-in face, laugh lines everywhere, twinkling light-brown eyes, tan skin with warm undertone, greying moustache and short stubble, slightly crooked front tooth. Hair: short salt-and-pepper hair, receding a little, combed simply. Wearing plain button-up shirt (checked or pale blue) with the sleeves rolled, a knitted vest in cooler shots, comfortable trousers. Energy: corner-shop familiarity - practical, patient, funny. Delivery matches the voice: unhurried, warm conversational. holds the slip up at eye level, taps it with a finger, shrugs amiably; leans on the counter Background: shop counter or kitchen table, till slips and small change, shelves warmly out of focus, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+    },
+    {
+      "id": "tutor_012_teaching_broll",
+      "purpose": "background b-roll, not looking at camera",
+      "prompt": "The person from the reference image teaching in shop counter or kitchen table, till slips and small change, shelves warmly out of focus. holds the slip up at eye level, taps it with a finger, shrugs amiably; leans on the counter Not looking at camera. Documentary feel, natural light, static camera or slow push-in, 8 seconds."
+    }
+  ],
+  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, generic stock-photo smile"
+}

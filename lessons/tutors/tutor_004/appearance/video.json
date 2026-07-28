@@ -1,0 +1,60 @@
+{
+  "tutor": "tutor_004",
+  "_comment": [
+    "VIDEO generation (TikTok, adverts). This is a MOTION brief, not",
+    "a face description: the face comes from the still render, which",
+    "is why still.json is generated first. Re-describing the face in",
+    "text is exactly how identity drifts between clips.",
+    "Built from PERSONALITY + GENDER only - NOTHING here is derived from the",
+    "tutor's display name, because names are placeholders that will be",
+    "replaced. When renaming this tutor, pick a name that fits THIS file, not",
+    "the reverse. Gender and register are copied from tutor.md's documented",
+    "'Voice characteristics' section."
+  ],
+  "subject_context": {
+    "subject": "Physical Sciences",
+    "role": "simplifier"
+  },
+  "reference_image": {
+    "required": true,
+    "source": "appearance/still.json -> the approved headshot or classroom render for this tutor",
+    "role": "first frame and identity reference",
+    "why": "text alone produces a different person every run; the reference locks the face. Do not go the other way and pull a still out of a clip - video frames are soft, motion-blurred and compressed."
+  },
+  "identity_lock": [
+    "salt-and-pepper stubble",
+    "weathered working hands",
+    "faded blue overalls",
+    "sun-creased eyes"
+  ],
+  "_identity_lock_note": "if the model supports text guidance alongside the reference, restate ONLY these - they are what the audience recognises",
+  "performance": {
+    "energy": "easy backyard warmth, unhurried, physical",
+    "spoken_register": "relaxed, warm conversational, everyday words",
+    "body": "crouches or leans over the object he is explaining, one hand demonstrating the motion; rarely stands formally",
+    "expression": "delighted mischief - the look of a man about to show you something obvious you never noticed"
+  },
+  "camera": {
+    "camera": "24-30fps, 50mm equivalent, static or slow push-in",
+    "framing": "9:16 vertical for TikTok - head and shoulders in the top two thirds, room for captions below",
+    "continuity": "same wardrobe, same accessories and same hairstyle across a campaign; regenerate from continuity_anchors rather than re-describing from scratch"
+  },
+  "duration_seconds": 8,
+  "audio": {
+    "dialogue": "supplied separately from this tutor's own scripts (greetings/, signoffs/, samples.json)",
+    "note": "lip-sync to supplied audio where the model supports it; never let the model invent speech for a tutor"
+  },
+  "shots": [
+    {
+      "id": "tutor_004_ad_hook",
+      "purpose": "TikTok / advert hook, talking to camera",
+      "prompt": "Vertical 9:16 talking-to-camera clip. A 48-55 year old Black South African male teacher, stocky and solid, thick shoulders, work-worn hands with visible callouses and short square nails, broad open face, wide easy grin with laugh lines around dark brown eyes, weathered mid-brown skin with sun texture on the forehead and cheekbones, greying stubble. Hair: short natural hair going grey at the sides, slight thinning at the crown. Wearing faded blue work overalls with the top unbuttoned to the waist and sleeves tied off, plain t-shirt underneath, scuffed work boots. Energy: easy backyard warmth, unhurried, physical. Delivery matches the voice: relaxed, warm conversational, everyday words. crouches or leans over the object he is explaining, one hand demonstrating the motion; rarely stands formally Background: sunlit backyard or workshop, a wheelbarrow and tools in frame, corrugated fence, dust in the light, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+    },
+    {
+      "id": "tutor_004_teaching_broll",
+      "purpose": "background b-roll, not looking at camera",
+      "prompt": "The person from the reference image teaching in sunlit backyard or workshop, a wheelbarrow and tools in frame, corrugated fence, dust in the light. crouches or leans over the object he is explaining, one hand demonstrating the motion; rarely stands formally Not looking at camera. Documentary feel, natural light, static camera or slow push-in, 8 seconds."
+    }
+  ],
+  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, generic stock-photo smile"
+}

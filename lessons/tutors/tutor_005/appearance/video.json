@@ -1,0 +1,60 @@
+{
+  "tutor": "tutor_005",
+  "_comment": [
+    "VIDEO generation (TikTok, adverts). This is a MOTION brief, not",
+    "a face description: the face comes from the still render, which",
+    "is why still.json is generated first. Re-describing the face in",
+    "text is exactly how identity drifts between clips.",
+    "Built from PERSONALITY + GENDER only - NOTHING here is derived from the",
+    "tutor's display name, because names are placeholders that will be",
+    "replaced. When renaming this tutor, pick a name that fits THIS file, not",
+    "the reverse. Gender and register are copied from tutor.md's documented",
+    "'Voice characteristics' section."
+  ],
+  "subject_context": {
+    "subject": "Accounting",
+    "role": "expert"
+  },
+  "reference_image": {
+    "required": true,
+    "source": "appearance/still.json -> the approved headshot or classroom render for this tutor",
+    "role": "first frame and identity reference",
+    "why": "text alone produces a different person every run; the reference locks the face. Do not go the other way and pull a still out of a clip - video frames are soft, motion-blurred and compressed."
+  },
+  "identity_lock": [
+    "silver combed-back hair",
+    "trimmed silver moustache",
+    "tortoiseshell half-moon glasses",
+    "fountain pen in the shirt pocket"
+  ],
+  "_identity_lock_note": "if the model supports text guidance alongside the reference, restate ONLY these - they are what the audience recognises",
+  "performance": {
+    "energy": "old-school academic gravity, unhurried certainty",
+    "spoken_register": "professorial, deliberate, pauses before totals land",
+    "body": "stands still with one hand behind his back, the other posting figures; taps the column total once when it balances",
+    "expression": "dry, exacting, quietly pleased when the books balance; a raised eyebrow instead of a reprimand"
+  },
+  "camera": {
+    "camera": "24-30fps, 50mm equivalent, static or slow push-in",
+    "framing": "9:16 vertical for TikTok - head and shoulders in the top two thirds, room for captions below",
+    "continuity": "same wardrobe, same accessories and same hairstyle across a campaign; regenerate from continuity_anchors rather than re-describing from scratch"
+  },
+  "duration_seconds": 8,
+  "audio": {
+    "dialogue": "supplied separately from this tutor's own scripts (greetings/, signoffs/, samples.json)",
+    "note": "lip-sync to supplied audio where the model supports it; never let the model invent speech for a tutor"
+  },
+  "shots": [
+    {
+      "id": "tutor_005_ad_hook",
+      "purpose": "TikTok / advert hook, talking to camera",
+      "prompt": "Vertical 9:16 talking-to-camera clip. A 58-65 year old Indian South African male teacher, medium height, slim and neat, precise economical movement, narrow face with a long straight nose, dark alert eyes behind spectacles, closely trimmed silver moustache, olive-brown skin with fine lines at the eyes, slightly hollow cheeks. Hair: thick silver-white hair combed back from a defined side parting. Wearing fine-knit V-neck cardigan (charcoal or bottle green) over a pale shirt and knitted tie, pressed grey trousers. Energy: old-school academic gravity, unhurried certainty. Delivery matches the voice: professorial, deliberate, pauses before totals land. stands still with one hand behind his back, the other posting figures; taps the column total once when it balances Background: wood-panelled classroom, ruled ledger columns drawn precisely on the board, desk lamp, ordered stacks of paper, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+    },
+    {
+      "id": "tutor_005_teaching_broll",
+      "purpose": "background b-roll, not looking at camera",
+      "prompt": "The person from the reference image teaching in wood-panelled classroom, ruled ledger columns drawn precisely on the board, desk lamp, ordered stacks of paper. stands still with one hand behind his back, the other posting figures; taps the column total once when it balances Not looking at camera. Documentary feel, natural light, static camera or slow push-in, 8 seconds."
+    }
+  ],
+  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, generic stock-photo smile"
+}

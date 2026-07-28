@@ -1,12 +1,14 @@
 {
   "tutor": "tutor_011",
   "_comment": [
-    "Visual identity for image/video generation (headshots, classroom",
-    "stills, TikTok and ads). Built from PERSONALITY + GENDER only -",
-    "NOTHING here is derived from the tutor's display name, because",
-    "names are placeholders that will be replaced. When renaming this",
-    "tutor, pick a name that fits THIS file, not the reverse.",
-    "Gender and register are copied from tutor.md's documented",
+    "STILL image generation (profile headshots, classroom stills).",
+    "Hand this whole file to the image model, or paste one of the",
+    "strings under 'prompts'. GENERATE THIS FIRST: the chosen render",
+    "is the reference image that video.json requires.",
+    "Built from PERSONALITY + GENDER only - NOTHING here is derived from the",
+    "tutor's display name, because names are placeholders that will be",
+    "replaced. When renaming this tutor, pick a name that fits THIS file, not",
+    "the reverse. Gender and register are copied from tutor.md's documented",
     "'Voice characteristics' section."
   ],
   "subject_context": {
@@ -52,10 +54,10 @@
   "_continuity_note": "the features that MUST survive every regeneration - if these read the same, the audience accepts it as the same person",
   "prompts": {
     "headshot": "Editorial headshot of a 42-48 year old Indian South African female teacher. oval face with a softly pointed chin, warm dark brown eyes with long lashes behind slim glasses, olive-brown skin with golden undertone, gentle smile lines, small gold nose stud. Hair: dark hair with a few silver strands, shoulder-length, pulled into a low neat bun with a centre parting. Wearing tailored blouse in teal or dusty rose under a fitted cardigan or neat blazer, dark straight-leg trousers, low heels. slim rimless glasses. Expression: patient professional warmth, an encouraging nod, the look of someone who expects you to manage this. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred classroom background. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
-    "classroom": "A 42-48 year old Indian South African female teacher mid-lesson in a South African school. petite and neat, poised, controlled precise gestures. oval face with a softly pointed chin, warm dark brown eyes with long lashes behind slim glasses, olive-brown skin with golden undertone, gentle smile lines, small gold nose stud. Hair: dark hair with a few silver strands, shoulder-length, pulled into a low neat bun with a centre parting. Wearing tailored blouse in teal or dusty rose under a fitted cardigan or neat blazer, dark straight-leg trousers, low heels. Holding/using: slim rimless glasses, large-display desk calculator. Posture: stands beside the document, highlighter poised, drawing the eye to one line at a time; small deliberate gestures. Expression: patient professional warmth, an encouraging nod, the look of someone who expects you to manage this. Setting: bright practical classroom, an enlarged bill or plan pinned to the board, calculator and papers neatly arranged. practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent. full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
-    "video_vertical": "Vertical 9:16 talking-to-camera clip. A 42-48 year old Indian South African female teacher, petite and neat, poised, controlled precise gestures, oval face with a softly pointed chin, warm dark brown eyes with long lashes behind slim glasses, olive-brown skin with golden undertone, gentle smile lines, small gold nose stud. Hair: dark hair with a few silver strands, shoulder-length, pulled into a low neat bun with a centre parting. Wearing tailored blouse in teal or dusty rose under a fitted cardigan or neat blazer, dark straight-leg trousers, low heels. Energy: calm competence - makes real paperwork feel handleable. Delivery matches the voice: professional-warm, clear and methodical. stands beside the document, highlighter poised, drawing the eye to one line at a time; small deliberate gestures Background: bright practical classroom, an enlarged bill or plan pinned to the board, calculator and papers neatly arranged, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+    "classroom": "A 42-48 year old Indian South African female teacher mid-lesson in a South African school. petite and neat, poised, controlled precise gestures. oval face with a softly pointed chin, warm dark brown eyes with long lashes behind slim glasses, olive-brown skin with golden undertone, gentle smile lines, small gold nose stud. Hair: dark hair with a few silver strands, shoulder-length, pulled into a low neat bun with a centre parting. Wearing tailored blouse in teal or dusty rose under a fitted cardigan or neat blazer, dark straight-leg trousers, low heels. Holding/using: slim rimless glasses, large-display desk calculator. Posture: stands beside the document, highlighter poised, drawing the eye to one line at a time; small deliberate gestures. Expression: patient professional warmth, an encouraging nod, the look of someone who expects you to manage this. Setting: bright practical classroom, an enlarged bill or plan pinned to the board, calculator and papers neatly arranged. practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent. full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
   },
   "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, generic stock-photo smile",
+  "_negative_note": "the cinematic terms are deliberate - image models drift toward a film-still look (grade, motion blur, flare) and then the render stops reading as a photograph",
   "technical": {
     "headshot": {
       "camera": "full-frame mirrorless, 85mm f/1.8",
@@ -74,11 +76,6 @@
         "16:9",
         "4:5"
       ]
-    },
-    "video": {
-      "camera": "24-30fps, 50mm equivalent, static or slow push-in",
-      "framing": "9:16 vertical for TikTok - head and shoulders in the top two thirds, room for captions below",
-      "continuity": "same wardrobe, same accessories and same hairstyle across a campaign; regenerate from continuity_anchors rather than re-describing from scratch"
     }
   }
 }

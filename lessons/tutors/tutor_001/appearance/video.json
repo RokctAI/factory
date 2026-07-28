@@ -1,0 +1,60 @@
+{
+  "tutor": "tutor_001",
+  "_comment": [
+    "VIDEO generation (TikTok, adverts). This is a MOTION brief, not",
+    "a face description: the face comes from the still render, which",
+    "is why still.json is generated first. Re-describing the face in",
+    "text is exactly how identity drifts between clips.",
+    "Built from PERSONALITY + GENDER only - NOTHING here is derived from the",
+    "tutor's display name, because names are placeholders that will be",
+    "replaced. When renaming this tutor, pick a name that fits THIS file, not",
+    "the reverse. Gender and register are copied from tutor.md's documented",
+    "'Voice characteristics' section."
+  ],
+  "subject_context": {
+    "subject": "Maths",
+    "role": "expert"
+  },
+  "reference_image": {
+    "required": true,
+    "source": "appearance/still.json -> the approved headshot or classroom render for this tutor",
+    "role": "first frame and identity reference",
+    "why": "text alone produces a different person every run; the reference locks the face. Do not go the other way and pull a still out of a clip - video frames are soft, motion-blurred and compressed."
+  },
+  "identity_lock": [
+    "grey close-crop with receding temples",
+    "thin gold-wire round glasses",
+    "short white-grey beard",
+    "chalk dust on the right cuff"
+  ],
+  "_identity_lock_note": "if the model supports text guidance alongside the reference, restate ONLY these - they are what the audience recognises",
+  "performance": {
+    "energy": "contained authority - the room quiets without him raising his voice",
+    "spoken_register": "formal, low and warm, unhurried but brisk; no filler",
+    "body": "stands square and still, weight even, chin slightly lifted; gestures only to point at a step on the board",
+    "expression": "composed, attentive, the faint approval of a teacher watching a student get it right; smiles rarely and briefly"
+  },
+  "camera": {
+    "camera": "24-30fps, 50mm equivalent, static or slow push-in",
+    "framing": "9:16 vertical for TikTok - head and shoulders in the top two thirds, room for captions below",
+    "continuity": "same wardrobe, same accessories and same hairstyle across a campaign; regenerate from continuity_anchors rather than re-describing from scratch"
+  },
+  "duration_seconds": 8,
+  "audio": {
+    "dialogue": "supplied separately from this tutor's own scripts (greetings/, signoffs/, samples.json)",
+    "note": "lip-sync to supplied audio where the model supports it; never let the model invent speech for a tutor"
+  },
+  "shots": [
+    {
+      "id": "tutor_001_ad_hook",
+      "purpose": "TikTok / advert hook, talking to camera",
+      "prompt": "Vertical 9:16 talking-to-camera clip. A 52-58 year old Black South African male teacher, tall and lean, straight-backed, long hands, long oval face, high cheekbones, deep-set dark brown eyes, defined jaw, deep nasolabial lines from decades of speaking, warm deep-brown skin with even undertone. Hair: close-cropped hair receding at the temples, uniformly grey-white; neatly trimmed short beard, salt-heavy with a darker moustache. Wearing charcoal or navy three-piece suit worn without the jacket while teaching: crisp white shirt, buttoned waistcoat, dark tie held by a plain clip, sleeves precisely folded to mid-forearm. Energy: contained authority - the room quiets without him raising his voice. Delivery matches the voice: formal, low and warm, unhurried but brisk; no filler. stands square and still, weight even, chin slightly lifted; gestures only to point at a step on the board Background: ordered classroom, board filled with neatly aligned algebra in straight lines, desks in rows, late-afternoon light, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+    },
+    {
+      "id": "tutor_001_teaching_broll",
+      "purpose": "background b-roll, not looking at camera",
+      "prompt": "The person from the reference image teaching in ordered classroom, board filled with neatly aligned algebra in straight lines, desks in rows, late-afternoon light. stands square and still, weight even, chin slightly lifted; gestures only to point at a step on the board Not looking at camera. Documentary feel, natural light, static camera or slow push-in, 8 seconds."
+    }
+  ],
+  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, generic stock-photo smile"
+}
