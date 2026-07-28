@@ -537,6 +537,22 @@ max_iterations: 10
 
 
 # --- tutor persona cards ---
+#
+# GREETING / SIGN-OFF CONVENTION (owner decisions 2026-07-28)
+# Each tutor owns 3 greeting and 3 sign-off variants; every lesson card is
+# ASSIGNED one of each (see assign_tutor_variant) so separately recorded
+# audio still plays as one continuous session.
+# The variants are LESSON-AGNOSTIC by rule - any lesson of that tutor's
+# subject must be able to use any variant unchanged. Therefore a variant
+# carries NO:
+#   * tutor name, real name or title - the assistant introduces the tutor
+#     by name, so a greeting that self-introduces would say it twice (and
+#     display names are freely renamable behind the opaque tutor ids);
+#   * reference to another tutor;
+#   * topic, prop, example or grade specific to one lesson.
+# What a variant DOES carry: that tutor's voice, and subject-level flavour
+# only (a tutor's subject never changes).
+
 
 def load_roster():
     path = TUTORS_DIR / "roster.json"
