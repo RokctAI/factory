@@ -1,0 +1,83 @@
+{
+  "tutor": "tutor_002",
+  "_comment": [
+    "Visual identity for image/video generation (headshots, classroom",
+    "stills, TikTok and ads). Built from PERSONALITY + GENDER only -",
+    "NOTHING here is derived from the tutor's display name, because",
+    "names are placeholders that will be replaced. When renaming this",
+    "tutor, pick a name that fits THIS file, not the reverse.",
+    "Gender and register are copied from tutor.md's documented",
+    "'Voice characteristics' section."
+  ],
+  "subject_context": {
+    "subject": "Maths",
+    "role": "simplifier"
+  },
+  "identity": {
+    "gender": "male",
+    "age_range": "40-46",
+    "nationality": "South African",
+    "heritage": "Coloured South African (Cape)",
+    "_heritage_note": "a deliberate casting choice for a representative South African line-up; not inferred from any name",
+    "build": "big-framed and heavyset, broad shoulders, thick forearms, comfortable in his size"
+  },
+  "face": "round full face, wide smile with a slight gap in the upper teeth, laugh lines fanning from bright hazel-brown eyes, medium-tan skin with warm golden undertone, faint stubble shadow",
+  "hair": "shaved close to the scalp, neat hairline; short moustache",
+  "wardrobe": {
+    "teaching": "short-sleeve checked shirt (blue and white, or maroon) worn open over a plain t-shirt, dark chinos, comfortable leather shoes",
+    "alternates": [
+      "plain navy golf shirt",
+      "grey hoodie for casual clips"
+    ]
+  },
+  "accessories": [
+    "thick-rimmed reading glasses pushed up on the forehead",
+    "well-used whiteboard marker",
+    "beaded leather wristband"
+  ],
+  "presence": {
+    "posture": "leans in toward the student, forearms on the desk or one hand on the board rail; talks with open palms",
+    "default_expression": "broad encouraging grin, eyebrows raised in invitation; the face of someone who has never made a learner feel stupid",
+    "energy": "relaxed and generous, unhurried - lowers the room's anxiety",
+    "spoken_register": "warm conversational, unhurried, repeats for emphasis"
+  },
+  "environment": "informal classroom corner, one big example written large and loose on the board, a couple of pulled-up chairs",
+  "continuity_anchors": [
+    "shaved head",
+    "gap-toothed wide smile",
+    "thick forearms, sleeves pushed up",
+    "checked short-sleeve shirt"
+  ],
+  "_continuity_note": "the features that MUST survive every regeneration - if these read the same, the audience accepts it as the same person",
+  "prompts": {
+    "headshot": "Editorial headshot of a 40-46 year old Coloured South African (Cape) male teacher. round full face, wide smile with a slight gap in the upper teeth, laugh lines fanning from bright hazel-brown eyes, medium-tan skin with warm golden undertone, faint stubble shadow. Hair: shaved close to the scalp, neat hairline; short moustache. Wearing short-sleeve checked shirt (blue and white, or maroon) worn open over a plain t-shirt, dark chinos, comfortable leather shoes. thick-rimmed reading glasses pushed up on the forehead. Expression: broad encouraging grin, eyebrows raised in invitation; the face of someone who has never made a learner feel stupid. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred classroom background. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
+    "classroom": "A 40-46 year old Coloured South African (Cape) male teacher mid-lesson in a South African school. big-framed and heavyset, broad shoulders, thick forearms, comfortable in his size. round full face, wide smile with a slight gap in the upper teeth, laugh lines fanning from bright hazel-brown eyes, medium-tan skin with warm golden undertone, faint stubble shadow. Hair: shaved close to the scalp, neat hairline; short moustache. Wearing short-sleeve checked shirt (blue and white, or maroon) worn open over a plain t-shirt, dark chinos, comfortable leather shoes. Holding/using: thick-rimmed reading glasses pushed up on the forehead, well-used whiteboard marker. Posture: leans in toward the student, forearms on the desk or one hand on the board rail; talks with open palms. Expression: broad encouraging grin, eyebrows raised in invitation; the face of someone who has never made a learner feel stupid. Setting: informal classroom corner, one big example written large and loose on the board, a couple of pulled-up chairs. practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent. full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
+    "video_vertical": "Vertical 9:16 talking-to-camera clip. A 40-46 year old Coloured South African (Cape) male teacher, big-framed and heavyset, broad shoulders, thick forearms, comfortable in his size, round full face, wide smile with a slight gap in the upper teeth, laugh lines fanning from bright hazel-brown eyes, medium-tan skin with warm golden undertone, faint stubble shadow. Hair: shaved close to the scalp, neat hairline; short moustache. Wearing short-sleeve checked shirt (blue and white, or maroon) worn open over a plain t-shirt, dark chinos, comfortable leather shoes. Energy: relaxed and generous, unhurried - lowers the room's anxiety. Delivery matches the voice: warm conversational, unhurried, repeats for emphasis. leans in toward the student, forearms on the desk or one hand on the board rail; talks with open palms Background: informal classroom corner, one big example written large and loose on the board, a couple of pulled-up chairs, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+  },
+  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, generic stock-photo smile",
+  "technical": {
+    "headshot": {
+      "camera": "full-frame mirrorless, 85mm f/1.8",
+      "lighting": "large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred classroom background",
+      "framing": "chest-up, eyes on the upper third, slight three-quarter turn",
+      "aspect_ratios": [
+        "1:1 (profile avatar)",
+        "4:5 (card)"
+      ]
+    },
+    "classroom": {
+      "camera": "full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up",
+      "lighting": "practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent",
+      "framing": "waist-up with the board visible over the shoulder, or wider three-quarter with the tutor mid-gesture",
+      "aspect_ratios": [
+        "16:9",
+        "4:5"
+      ]
+    },
+    "video": {
+      "camera": "24-30fps, 50mm equivalent, static or slow push-in",
+      "framing": "9:16 vertical for TikTok - head and shoulders in the top two thirds, room for captions below",
+      "continuity": "same wardrobe, same accessories and same hairstyle across a campaign; regenerate from continuity_anchors rather than re-describing from scratch"
+    }
+  }
+}

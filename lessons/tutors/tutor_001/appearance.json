@@ -1,0 +1,84 @@
+{
+  "tutor": "tutor_001",
+  "_comment": [
+    "Visual identity for image/video generation (headshots, classroom",
+    "stills, TikTok and ads). Built from PERSONALITY + GENDER only -",
+    "NOTHING here is derived from the tutor's display name, because",
+    "names are placeholders that will be replaced. When renaming this",
+    "tutor, pick a name that fits THIS file, not the reverse.",
+    "Gender and register are copied from tutor.md's documented",
+    "'Voice characteristics' section."
+  ],
+  "subject_context": {
+    "subject": "Maths",
+    "role": "expert"
+  },
+  "identity": {
+    "gender": "male",
+    "age_range": "52-58",
+    "nationality": "South African",
+    "heritage": "Black South African",
+    "_heritage_note": "a deliberate casting choice for a representative South African line-up; not inferred from any name",
+    "build": "tall and lean, straight-backed, long hands"
+  },
+  "face": "long oval face, high cheekbones, deep-set dark brown eyes, defined jaw, deep nasolabial lines from decades of speaking, warm deep-brown skin with even undertone",
+  "hair": "close-cropped hair receding at the temples, uniformly grey-white; neatly trimmed short beard, salt-heavy with a darker moustache",
+  "wardrobe": {
+    "teaching": "charcoal or navy three-piece suit worn without the jacket while teaching: crisp white shirt, buttoned waistcoat, dark tie held by a plain clip, sleeves precisely folded to mid-forearm",
+    "alternates": [
+      "grey waistcoat over pale blue shirt, no tie",
+      "full charcoal suit with jacket for headshots"
+    ]
+  },
+  "accessories": [
+    "thin gold-wire round spectacles",
+    "steel wristwatch worn face-in",
+    "single stick of white chalk",
+    "leather-cornered notebook"
+  ],
+  "presence": {
+    "posture": "stands square and still, weight even, chin slightly lifted; gestures only to point at a step on the board",
+    "default_expression": "composed, attentive, the faint approval of a teacher watching a student get it right; smiles rarely and briefly",
+    "energy": "contained authority - the room quiets without him raising his voice",
+    "spoken_register": "formal, low and warm, unhurried but brisk; no filler"
+  },
+  "environment": "ordered classroom, board filled with neatly aligned algebra in straight lines, desks in rows, late-afternoon light",
+  "continuity_anchors": [
+    "grey close-crop with receding temples",
+    "thin gold-wire round glasses",
+    "short white-grey beard",
+    "chalk dust on the right cuff"
+  ],
+  "_continuity_note": "the features that MUST survive every regeneration - if these read the same, the audience accepts it as the same person",
+  "prompts": {
+    "headshot": "Editorial headshot of a 52-58 year old Black South African male teacher. long oval face, high cheekbones, deep-set dark brown eyes, defined jaw, deep nasolabial lines from decades of speaking, warm deep-brown skin with even undertone. Hair: close-cropped hair receding at the temples, uniformly grey-white; neatly trimmed short beard, salt-heavy with a darker moustache. Wearing charcoal or navy three-piece suit worn without the jacket while teaching: crisp white shirt, buttoned waistcoat, dark tie held by a plain clip, sleeves precisely folded to mid-forearm. thin gold-wire round spectacles. Expression: composed, attentive, the faint approval of a teacher watching a student get it right; smiles rarely and briefly. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred classroom background. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
+    "classroom": "A 52-58 year old Black South African male teacher mid-lesson in a South African school. tall and lean, straight-backed, long hands. long oval face, high cheekbones, deep-set dark brown eyes, defined jaw, deep nasolabial lines from decades of speaking, warm deep-brown skin with even undertone. Hair: close-cropped hair receding at the temples, uniformly grey-white; neatly trimmed short beard, salt-heavy with a darker moustache. Wearing charcoal or navy three-piece suit worn without the jacket while teaching: crisp white shirt, buttoned waistcoat, dark tie held by a plain clip, sleeves precisely folded to mid-forearm. Holding/using: thin gold-wire round spectacles, steel wristwatch worn face-in. Posture: stands square and still, weight even, chin slightly lifted; gestures only to point at a step on the board. Expression: composed, attentive, the faint approval of a teacher watching a student get it right; smiles rarely and briefly. Setting: ordered classroom, board filled with neatly aligned algebra in straight lines, desks in rows, late-afternoon light. practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent. full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
+    "video_vertical": "Vertical 9:16 talking-to-camera clip. A 52-58 year old Black South African male teacher, tall and lean, straight-backed, long hands, long oval face, high cheekbones, deep-set dark brown eyes, defined jaw, deep nasolabial lines from decades of speaking, warm deep-brown skin with even undertone. Hair: close-cropped hair receding at the temples, uniformly grey-white; neatly trimmed short beard, salt-heavy with a darker moustache. Wearing charcoal or navy three-piece suit worn without the jacket while teaching: crisp white shirt, buttoned waistcoat, dark tie held by a plain clip, sleeves precisely folded to mid-forearm. Energy: contained authority - the room quiets without him raising his voice. Delivery matches the voice: formal, low and warm, unhurried but brisk; no filler. stands square and still, weight even, chin slightly lifted; gestures only to point at a step on the board Background: ordered classroom, board filled with neatly aligned algebra in straight lines, desks in rows, late-afternoon light, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+  },
+  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, generic stock-photo smile",
+  "technical": {
+    "headshot": {
+      "camera": "full-frame mirrorless, 85mm f/1.8",
+      "lighting": "large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred classroom background",
+      "framing": "chest-up, eyes on the upper third, slight three-quarter turn",
+      "aspect_ratios": [
+        "1:1 (profile avatar)",
+        "4:5 (card)"
+      ]
+    },
+    "classroom": {
+      "camera": "full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up",
+      "lighting": "practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent",
+      "framing": "waist-up with the board visible over the shoulder, or wider three-quarter with the tutor mid-gesture",
+      "aspect_ratios": [
+        "16:9",
+        "4:5"
+      ]
+    },
+    "video": {
+      "camera": "24-30fps, 50mm equivalent, static or slow push-in",
+      "framing": "9:16 vertical for TikTok - head and shoulders in the top two thirds, room for captions below",
+      "continuity": "same wardrobe, same accessories and same hairstyle across a campaign; regenerate from continuity_anchors rather than re-describing from scratch"
+    }
+  }
+}
