@@ -578,8 +578,15 @@ max_iterations: 10
 #   assistant intro (names the tutor) -> GREETING (pool, topic-blind)
 #   -> INTRO (per lesson, topic-aware) -> TEACHING (script.md)
 #   -> [assistant five-minute warning; sometimes an ACKNOWLEDGEMENT from the
-#      pool, after which the tutor teaches on to the end] -> SIGN-OFF (pool)
-# The duo splits this across the break: expert before, simplifier after.
+#      pool, after which the tutor teaches on to the end]
+#   -> [FIRST TUTOR ONLY: the Q&A duet - assistant_qa_transcript.md, where
+#      the assistant puts the session's questions to the tutor and the tutor
+#      answers. The tutor CANNOT sign off before it (owner, 2026-07-28)]
+#   -> SIGN-OFF (pool)
+# The duo splits this across the break: expert before, simplifier after -
+# so the Q&A belongs to the EXPERT's card and never the simplifier's.
+# assistant_nervous_script.md sits outside this timeline entirely: it is
+# played conditionally by the app when a student needs it, not in sequence.
 # The sign-off is ALWAYS the normal one - an interruption never lands there
 # (owner correction, 2026-07-28). See assign_ack_variant for the frequency
 # and the never-both-tutors rule.
@@ -1035,8 +1042,17 @@ Write the files into {lesson_dir}/ exactly as follows:
   "duration_seconds": 60, "guardrail_applied": "{get_field(card, 'guardrail')}"}}.
   Pick the single best moment of the lesson, same hook discipline as the
   factory's book reel briefs.
-- {lesson_dir}/assistant_qa_transcript.md — assistant post-session Q&A transcript:
-  likely student questions on this subtopic with the assistant's answers.
+- {lesson_dir}/assistant_qa_transcript.md — the Q&A DUET, and only for the
+  FIRST tutor of a session (the subject's expert; the simplifier's card must
+  not have one). Two voices, alternating, marked exactly '**Assistant:**'
+  and '**Tutor:**': the assistant puts the questions students would have
+  asked on this topic, the tutor answers them in the same voice as the
+  lesson. It plays after the teaching and BEFORE the tutor's sign-off — the
+  tutor cannot leave with questions outstanding.
+  Both parts are recorded separately, so: no display names anywhere (use
+  the {{tutor}} placeholder if the assistant must address the tutor — names
+  are renamable and this audio is not re-cut when they change), no
+  greetings, no sign-off, and no duration talk. 3 to 5 exchanges.
 
 Then update the job card {card_file}:
 - fill lesson_name (short human title) and lesson_path ({lesson_dir}),
@@ -1906,8 +1922,23 @@ def run_checks(card, card_file):
     if ack and not (TUTORS_DIR / ack).exists():
         errors.append(f"ack_ref points at a missing tutor asset: {ack}")
 
+    # The Q&A duet belongs to the FIRST tutor of the session only (owner,
+    # 2026-07-28) — the expert teaches before the break and answers the
+    # session's questions before signing off; the simplifier follows the
+    # break and has none.
+    first_tutor = is_expert_tutor(get_field(card, "type"),
+                                  get_field(card, "subject"),
+                                  get_field(card, "tutor"))
+    required = dict(CONTENT_FILES)
+    if not first_tutor:
+        required.pop("assistant_qa_transcript_path", None)
+        if get_field(card, "assistant_qa_transcript_path"):
+            errors.append("assistant_qa_transcript_path is set on a "
+                          "second-tutor card: the Q&A belongs to the first "
+                          "tutor of the session only")
+
     paths = {}
-    for field in CONTENT_FILES:
+    for field in required:
         p = get_field(card, field)
         if not p:
             errors.append(f"card field {field} is empty")
