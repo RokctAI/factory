@@ -123,6 +123,12 @@ TUTOR_BIG_JOHN = "Big John — simplistic, lower grade logic"
 TUTORS_DIR = Path("lessons/tutors")
 
 CONTENT_FILES = {
+    # The tutor's topic intro, recorded as its own segment (owner decision
+    # 2026-07-28). A GREETING is persona-only and topic-blind; the INTRO is
+    # the same tutor saying what today's lesson is about. Separate files
+    # because they are separate recordings: the greeting is assigned per
+    # lesson from the tutor's fixed pool, the intro is authored per lesson.
+    "intro_path": "intro.md",
     "script_path": "script.md",
     "manim_path": "manim_scene.py",
     "subtopics_path": "subtopics.json",
@@ -452,10 +458,14 @@ def cmd_seed(args):
         # Lessons get an assigned greeting/sign-off variant; skills are
         # reviews (no session framing), so their refs stay empty.
         if category == CATEGORY_SKILL:
-            greeting_ref = signoff_ref = ""
+            greeting_ref = signoff_ref = ack_ref = ""
         else:
             greeting_ref = assign_tutor_variant(tutor_id, "greetings", h)
             signoff_ref = assign_tutor_variant(tutor_id, "signoffs", h)
+            ack_ref = assign_ack_variant(
+                tutor_id, h,
+                is_expert_tutor(entry.get("type", ""),
+                                entry.get("subject", ""), tutor_id))
         if category == CATEGORY_SKILL:
             # Skills are term-independent; a term on a skill row is a
             # contradiction, and a skill without a stable ref is unlinkable.
@@ -493,6 +503,7 @@ tutor: {tutor_id}
 tutor_style: {tutor_style}
 greeting_ref: {greeting_ref}
 signoff_ref: {signoff_ref}
+ack_ref: {ack_ref}
 example_problem: {entry.get('example_problem', '')}
 prior_knowledge: {entry.get('prior_knowledge', '')}
 metarules: .rokct/types/{entry['type']}/metarules
@@ -549,9 +560,37 @@ max_iterations: 10
 #     by name, so a greeting that self-introduces would say it twice (and
 #     display names are freely renamable behind the opaque tutor ids);
 #   * reference to another tutor;
-#   * topic, prop, example or grade specific to one lesson.
+#   * topic, prop, example or grade specific to one lesson;
+#   * presumption of the lesson TYPE - no "before you calculate", no
+#     ledger columns, no map, no weather. Every subject has theory topics
+#     with none of those, and a variant must survive landing on one.
 # What a variant DOES carry: that tutor's voice, and subject-level flavour
 # only (a tutor's subject never changes).
+#
+# A GREETING IS NOT AN INTRODUCTION (owner, 2026-07-28). The greeting is
+# arrival framing - how this tutor works, nothing about today. Saying what
+# today's lesson covers is the INTRO, a separate per-lesson recording
+# (intro.md). Never preview content in a variant: the assignment is
+# deterministic, but a variant must still read correctly in front of any
+# lesson of that subject, as if it had been picked at random.
+#
+# ONE TUTOR'S TURN IN A SESSION, in order:
+#   assistant intro (names the tutor) -> GREETING (pool, topic-blind)
+#   -> INTRO (per lesson, topic-aware) -> TEACHING (script.md)
+#   -> [assistant five-minute warning; sometimes an ACKNOWLEDGEMENT from the
+#      pool, after which the tutor teaches on to the end] -> SIGN-OFF (pool)
+# The duo splits this across the break: expert before, simplifier after.
+# The sign-off is ALWAYS the normal one - an interruption never lands there
+# (owner correction, 2026-07-28). See assign_ack_variant for the frequency
+# and the never-both-tutors rule.
+#
+# HOW AN INTERRUPTION IS ASSEMBLED (owner, 2026-07-28): the tutor track is
+# never recorded with silence for the assistant to speak into. The player
+# PAUSES the tutor audio, plays the assistant clip in full, plays the
+# acknowledgement if this lesson has one, then RESUMES the tutor track from
+# the same instant. So a tutor recording is always one continuous take, and
+# an assistant clip's duration costs nothing but a pause - which is also
+# why nothing in the lesson script may react to the clock.
 
 
 def load_roster():
@@ -588,6 +627,44 @@ def load_tutor_variants(slug, kind):
         return []
     return [p.read_text(encoding="utf-8").strip()
             for p in sorted(d.glob("*.md"))]
+
+
+def is_expert_tutor(type_str, subject, tutor_id):
+    """True when this tutor is the EXPERT half of the subject's duo (the one
+    who teaches before the break). Roster lookup by opaque id, never by name
+    or style."""
+    entry = load_roster().get("subjects", {}).get(
+        roster_key_for(type_str, subject), {})
+    return bool(tutor_id) and entry.get("expert") == tutor_id
+
+
+# Roughly one lesson in four has a tutor answer the clock out loud - often
+# enough to feel like a real room, rare enough that it never becomes a tic.
+ACK_ONE_IN = 4
+
+
+def assign_ack_variant(tutor_id, h, is_expert):
+    """The tutor's reply to the assistant's FIVE-MINUTE WARNING, or '' when
+    this tutor doesn't answer it in this lesson (owner decision 2026-07-28).
+
+    The assistant calls the time in every lesson; the tutor only sometimes
+    says something back, then teaches on to the end and closes with the
+    NORMAL sign-off - an interruption never lands at the sign-off.
+
+    Two structural constraints:
+      * RARE - about one lesson in ACK_ONE_IN;
+      * NEVER BOTH TUTORS of the same lesson. A lesson is taught by the
+        subject's duo (expert before the break, simplifier after) and both
+        cards share one entry_hash, so the same hash also decides WHICH of
+        the two answers - the other stays silent by construction.
+    Only the five-minute warning is ever answered; halfway and wrap-up stay
+    the assistant's alone."""
+    n = int(h, 16)
+    if (n // 13) % ACK_ONE_IN != 0:
+        return ""
+    if bool((n // 17) % 2) != is_expert:
+        return ""
+    return assign_tutor_variant(tutor_id, "acknowledgements", h)
 
 
 def assign_tutor_variant(tutor_id, kind, h):
@@ -856,20 +933,32 @@ Follow the lesson idea already approved on the job card {card_file} (idea
 block) and the metarules under {get_field(card, 'metarules') or '.rokct/types/' + get_field(card, 'type') + '/metarules'}/.
 
 Write the files into {lesson_dir}/ exactly as follows:
+- {lesson_dir}/intro.md — the tutor's spoken topic intro, 2-4 sentences in
+  that tutor's register, framing what today's topic is and why it matters.
+  This is a SEPARATE RECORDING from the script and from the greeting, and
+  it is the only one of the three that knows the topic. It plays while the
+  player shows the topic full-screen; the whiteboard starts afterwards (the
+  scene's opening wait beat below times this — the two must match). No
+  greeting, no self-introduction: the assistant has already named the tutor
+  and the tutor's own greeting has already played.
+
 - {lesson_dir}/script.md — the lesson script in the tutor's voice, with a
-  '## Subtopic: <title>' heading per subtopic. OPEN with a spoken topic
-  intro (2-4 sentences framing what today's topic is and why it matters,
-  in the tutor's register) BEFORE any board work is referenced — the
-  player shows the topic full-screen while this intro plays, and the
-  whiteboard only starts afterwards (the scene's opening wait beat below
-  is what times this; the two must match). TEACHING CONTENT ONLY.
+  '## Subtopic: <title>' heading per subtopic. Opens straight into the
+  first subtopic — the framing lives in intro.md above. TEACHING CONTENT
+  ONLY.
 
   Greeting, handover, sign-off and timekeeping content ALREADY EXISTS as
   separate assets and is spoken from them, never from your script:
     * tutor greetings/sign-offs — lessons/tutors/<slug>/greetings/ and
-      .../signoffs/ (3 in-voice variants each, for every tutor); the card's
+      .../signoffs/ (in-voice variants for every tutor); the card's
       greeting_ref/signoff_ref fields name the ONE assigned variant this
-      lesson opens and closes with (assigned at seed time, hash-derived)
+      lesson opens and closes with (assigned at seed time, hash-derived).
+      A greeting NEVER mentions the topic — that is intro.md's whole job
+    * the tutor's reply to the assistant's five-minute warning —
+      lessons/tutors/<slug>/acknowledgements/, named by the card's ack_ref
+      when this lesson has one (usually empty). The teaching continues
+      normally afterwards, so your script must not react to the clock and
+      must not trail off: write it as if the warning never came
     * host intro/handover/sign-off/timekeeping —
       lessons/assistants/mandy/ and lessons/assistants/bianca/
   So the script must contain:
@@ -882,11 +971,24 @@ Write the files into {lesson_dir}/ exactly as follows:
       narration is spoken verbatim by TTS, so a stage direction is read
       aloud to the student. Parentheses carrying maths are fine.
   Topic framing IS wanted: "Today we'll be learning about X" is teaching.
-  Question lead-ins ARE teaching flow: at the end of each subtopic that has
-  MCQs, include one brief, natural lead-in in the tutor's own register
-  (e.g. "Pause here and try a few quick questions on this before we
-  continue") — the audio is continuous and the player pauses at the
-  exercise moment, so bake in no dead air and write no [pause] directions.
+
+  NEVER LEAVE DEAD AIR FOR ANOTHER SPEAKER. Your recording is continuous;
+  when the assistant speaks over a lesson (the five-minute warning, an
+  exercise break) the player PAUSES the tutor track for exactly as long as
+  the assistant's clip runs and then resumes it — it does not play your
+  silence underneath. So: no gaps left for anyone, no [pause] directions,
+  and no reacting to a clock your script cannot see. Write it as one
+  uninterrupted lesson.
+
+  Question lead-ins ARE teaching flow, and the tutor DOES know the
+  questions: you are authoring mcq.json in the same pass, so at the end of
+  each subtopic that has MCQs write one brief lead-in in the tutor's own
+  register that points at what is actually being asked ("Two of these next
+  ones are about the sign — watch it carefully"). What the tutor must NEVER
+  state or imply is HOW LONG the student gets: no seconds, no "quickly",
+  no "you've got a minute". The timer is the player's business
+  (time_limit_seconds in mcq.json), and a spoken duration would contradict
+  it the moment either changes.
   These rules are enforced at Level 3 by structural pattern checks (not a
   keyword list): a script that breaks them fails the gate.
 - {lesson_dir}/manim_scene.py — Manim Community Python file, whiteboard
@@ -1797,6 +1899,12 @@ def run_checks(card, card_file):
                           f"assigned tutor variant)")
         elif not (TUTORS_DIR / ref).exists():
             errors.append(f"{field} points at a missing tutor asset: {ref}")
+    # ack_ref is deliberately OPTIONAL — empty means this tutor doesn't answer
+    # the five-minute call in this lesson (most lessons, and always the other
+    # half of the duo). Set-but-dangling is still a broken session.
+    ack = get_field(card, "ack_ref")
+    if ack and not (TUTORS_DIR / ack).exists():
+        errors.append(f"ack_ref points at a missing tutor asset: {ack}")
 
     paths = {}
     for field in CONTENT_FILES:
