@@ -1044,15 +1044,26 @@ Write the files into {lesson_dir}/ exactly as follows:
   factory's book reel briefs.
 - {lesson_dir}/assistant_qa_transcript.md — the Q&A DUET, and only for the
   FIRST tutor of a session (the subject's expert; the simplifier's card must
-  not have one). Two voices, alternating, marked exactly '**Assistant:**'
-  and '**Tutor:**': the assistant puts the questions students would have
-  asked on this topic, the tutor answers them in the same voice as the
-  lesson. It plays after the teaching and BEFORE the tutor's sign-off — the
-  tutor cannot leave with questions outstanding.
+  not have one). It plays after the teaching and BEFORE the tutor's
+  sign-off — the tutor cannot leave with questions outstanding.
+  3 to 5 exchanges, each shaped exactly like this:
+
+      ### subtopic_2 — Timing differences
+      **Assistant:** Why do outstanding cheques still matter if everyone
+      pays by EFT now?
+      **Tutor:** <the answer, in the same voice as the lesson>
+
+  The '### <ref> — <title>' line names the part of the lesson the question
+  belongs to; ref and title must match subtopics.json exactly, because the
+  player DISPLAYS that on screen while the assistant reads the question —
+  which is why the spoken question can stay short.
+  The assistant's question is at most {QA_QUESTION_MAX_WORDS} words: one
+  crisp question, not a student's rambling story. Put the context on the
+  screen line, never in the speech. The tutor's answer carries the weight.
   Both parts are recorded separately, so: no display names anywhere (use
   the {{tutor}} placeholder if the assistant must address the tutor — names
   are renamable and this audio is not re-cut when they change), no
-  greetings, no sign-off, and no duration talk. 3 to 5 exchanges.
+  greetings, no sign-off, and no duration talk.
 
 Then update the job card {card_file}:
 - fill lesson_name (short human title) and lesson_path ({lesson_dir}),
@@ -1801,6 +1812,56 @@ def verify_no_session_framing(script):
     return errors
 
 
+# The assistant READS the question aloud while the player shows the subtopic
+# it belongs to, so the spoken line stays short and the context lives on the
+# screen (owner, 2026-07-28: the first produced transcripts had 60-word
+# student monologues in the assistant's mouth).
+QA_QUESTION_MAX_WORDS = 25
+QA_MIN_EXCHANGES = 3
+QA_MAX_EXCHANGES = 5
+QA_HEADING_RE = re.compile(r"^###\s+(\S+)\s+—\s+(.+?)\s*$", re.MULTILINE)
+
+
+def _check_qa_transcript(path, sub_refs, errors, warnings):
+    """The Q&A duet: '### <subtopic_ref> — <title>' then one '**Assistant:**'
+    question and one '**Tutor:**' answer per exchange."""
+    text = path.read_text(encoding="utf-8")
+    heads = QA_HEADING_RE.findall(text)
+    asks = re.findall(r"^\*\*Assistant:\*\*\s*(.+?)(?=^\*\*|\Z)",
+                      text, re.MULTILINE | re.DOTALL)
+    answers = re.findall(r"^\*\*Tutor:\*\*", text, re.MULTILINE)
+    if not heads:
+        errors.append("assistant_qa_transcript.md has no '### <subtopic_ref> "
+                      "— <title>' heading; the player needs it to show which "
+                      "part of the lesson each question belongs to")
+    if not (QA_MIN_EXCHANGES <= len(asks) <= QA_MAX_EXCHANGES):
+        errors.append(f"assistant_qa_transcript.md has {len(asks)} assistant "
+                      f"question(s); expected {QA_MIN_EXCHANGES}-{QA_MAX_EXCHANGES}")
+    if len(asks) != len(answers):
+        errors.append(f"assistant_qa_transcript.md: {len(asks)} question(s) "
+                      f"but {len(answers)} tutor answer(s) — each question "
+                      "must be answered")
+    if heads and len(heads) != len(asks):
+        errors.append("assistant_qa_transcript.md: every exchange needs its "
+                      "own subtopic heading")
+    for ref, _title in heads:
+        if sub_refs and ref not in sub_refs:
+            errors.append(f"assistant_qa_transcript.md references unknown "
+                          f"subtopic {ref!r}")
+    for q in asks:
+        n = len(q.split())
+        if n > QA_QUESTION_MAX_WORDS:
+            errors.append(f"assistant_qa_transcript.md: spoken question is "
+                          f"{n} words (max {QA_QUESTION_MAX_WORDS}) — put the "
+                          f"context on the subtopic heading, not in the "
+                          f"speech: {' '.join(q.split()[:8])}...")
+    if re.search(r"^\*\*Student:\*\*", text, re.MULTILINE):
+        errors.append("assistant_qa_transcript.md has a '**Student:**' turn — "
+                      "the duet is assistant-asks/tutor-answers; the student "
+                      "is the audience, not a recorded voice")
+    return errors
+
+
 def _check_flat_mcqs(data, label, lo, hi, errors):
     """Shape-check a flat question list {questions: [...]} against
     McqQuestion.fromJson: id, question, options[], correct_index in range."""
@@ -2010,6 +2071,13 @@ def run_checks(card, card_file):
             errors.append("subtopics.json has duplicate refs")
         if entries and not (600 <= prev_end <= 1500):
             warnings.append(f"total lesson duration {prev_end:.0f}s is far from the 15-minute target")
+
+    # The Q&A duet (first tutor only — the field is absent on the other card).
+    if "assistant_qa_transcript_path" in paths:
+        _check_qa_transcript(
+            paths["assistant_qa_transcript_path"],
+            {s.get("ref") for s in (subs or {}).get("subtopics", [])},
+            errors, warnings)
 
     # MCQ batches: 3-5 predefined-answer questions per subtopic, shaped for
     # McqQuestion.fromJson.
