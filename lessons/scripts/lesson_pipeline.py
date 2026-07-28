@@ -1060,6 +1060,13 @@ Write the files into {lesson_dir}/ exactly as follows:
   The assistant's question is at most {QA_QUESTION_MAX_WORDS} words: one
   crisp question, not a student's rambling story. Put the context on the
   screen line, never in the speech. The tutor's answer carries the weight.
+  ANSWERS ARE SPOKEN ONLY — there is no animation in the Q&A (owner,
+  2026-07-28): the question card stays on screen and the student listens.
+  So every answer must be complete in words alone: no board work, no "let
+  me show you", no reference to anything being drawn. If a question cannot
+  be answered without drawing, it is not a Q&A question — that is teaching,
+  and it belongs in the lesson script or in a skill instead. Choose a
+  different question.
   Both parts are recorded separately, so: no display names anywhere (use
   the {{tutor}} placeholder if the assistant must address the tutor — names
   are renamable and this audio is not re-cut when they change), no
