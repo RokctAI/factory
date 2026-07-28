@@ -1046,6 +1046,10 @@ Write the files into {lesson_dir}/ exactly as follows:
   FIRST tutor of a session (the subject's expert; the simplifier's card must
   not have one). It plays after the teaching and BEFORE the tutor's
   sign-off — the tutor cannot leave with questions outstanding.
+  The assistant raises questions that COME UP A LOT at this point in the
+  topic. Never write it as though a student asked during this session: the
+  session is one-way, nobody can ask, and the shipped player carries the
+  same honesty rule (BreakQuestion in lms_sdk).
   3 to 5 exchanges, each shaped exactly like this:
 
       ### subtopic_2 — Timing differences
@@ -1060,13 +1064,16 @@ Write the files into {lesson_dir}/ exactly as follows:
   The assistant's question is at most {QA_QUESTION_MAX_WORDS} words: one
   crisp question, not a student's rambling story. Put the context on the
   screen line, never in the speech. The tutor's answer carries the weight.
-  ANSWERS ARE SPOKEN ONLY — there is no animation in the Q&A (owner,
-  2026-07-28): the question card stays on screen and the student listens.
-  So every answer must be complete in words alone: no board work, no "let
-  me show you", no reference to anything being drawn. If a question cannot
-  be answered without drawing, it is not a Q&A question — that is teaching,
-  and it belongs in the lesson script or in a skill instead. Choose a
-  different question.
+  CHOOSE ONLY QUESTIONS THAT DO NOT NEED TO BE SEEN (owner, 2026-07-28).
+  There is no animation in the Q&A: the question stays on the board and the
+  student listens. Screening test before you write an exchange — if
+  answering it properly would need the student to WATCH something being
+  worked out, do not use that question at all. That is teaching, it costs
+  session time, and it belongs in the lesson script or in a skill.
+  Good Q&A shapes: why does this rule hold, when does it not apply, what
+  changes if a condition flips, what do students most often confuse this
+  with. Bad Q&A shapes: "work this one out", "show me how you'd do X".
+  So no board work, no "let me show you", no reference to anything drawn.
   Both parts are recorded separately, so: no display names anywhere (use
   the {{tutor}} placeholder if the assistant must address the tutor — names
   are renamable and this audio is not re-cut when they change), no
