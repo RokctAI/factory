@@ -449,6 +449,13 @@ def cmd_seed(args):
         # legacy 'Name — style' label; either resolves to the id + style via
         # the subject's roster duo, never by re-deriving a slug from a name.
         tutor_id, tutor_style = resolve_seed_tutor(entry)
+        # Lessons get an assigned greeting/sign-off variant; skills are
+        # reviews (no session framing), so their refs stay empty.
+        if category == CATEGORY_SKILL:
+            greeting_ref = signoff_ref = ""
+        else:
+            greeting_ref = assign_tutor_variant(tutor_id, "greetings", h)
+            signoff_ref = assign_tutor_variant(tutor_id, "signoffs", h)
         if category == CATEGORY_SKILL:
             # Skills are term-independent; a term on a skill row is a
             # contradiction, and a skill without a stable ref is unlinkable.
@@ -484,6 +491,8 @@ topic: {entry['topic']}
 subtopic: {entry['subtopic']}
 tutor: {tutor_id}
 tutor_style: {tutor_style}
+greeting_ref: {greeting_ref}
+signoff_ref: {signoff_ref}
 example_problem: {entry.get('example_problem', '')}
 prior_knowledge: {entry.get('prior_knowledge', '')}
 metarules: .rokct/types/{entry['type']}/metarules
@@ -563,6 +572,24 @@ def load_tutor_variants(slug, kind):
         return []
     return [p.read_text(encoding="utf-8").strip()
             for p in sorted(d.glob("*.md"))]
+
+
+def assign_tutor_variant(tutor_id, kind, h):
+    """Deterministically assign one of a tutor's greeting/sign-off variants
+    to a lesson (owner decision 2026-07-28: every lesson carries an ASSIGNED
+    greeting_ref + signoff_ref so the separate audio files still flow as one
+    session). Derived from the entry hash so re-seeding never reshuffles
+    assignments; greeting and sign-off use different derivations so a lesson
+    doesn't always pair variant N with variant N. Returns a ref relative to
+    lessons/tutors/, e.g. 'tutor_001/greetings/02.md', or '' if the tutor
+    has no variants."""
+    d = tutor_asset_dir(tutor_id, kind)
+    files = sorted(d.glob("*.md")) if d.is_dir() else []
+    if not files:
+        return ""
+    n = int(h, 16)
+    idx = n % len(files) if kind == "greetings" else (n // 7) % len(files)
+    return f"{tutor_id}/{kind}/{files[idx].name}"
 
 
 def roster_key_for(type_str, subject):
@@ -824,7 +851,9 @@ Write the files into {lesson_dir}/ exactly as follows:
   Greeting, handover, sign-off and timekeeping content ALREADY EXISTS as
   separate assets and is spoken from them, never from your script:
     * tutor greetings/sign-offs — lessons/tutors/<slug>/greetings/ and
-      .../signoffs/ (3 in-voice variants each, for every tutor)
+      .../signoffs/ (3 in-voice variants each, for every tutor); the card's
+      greeting_ref/signoff_ref fields name the ONE assigned variant this
+      lesson opens and closes with (assigned at seed time, hash-derived)
     * host intro/handover/sign-off/timekeeping —
       lessons/assistants/mandy/ and lessons/assistants/bianca/
   So the script must contain:
@@ -1740,6 +1769,18 @@ def run_checks(card, card_file):
     # Skills use the review format, not the seven-item lesson form.
     if get_field(card, "category") == CATEGORY_SKILL:
         return _run_skill_checks(card, base, warnings)
+
+    # Every lesson must carry an assigned greeting + sign-off variant of its
+    # tutor (owner decision 2026-07-28) and the ref must resolve on disk —
+    # the assembler concatenates greeting audio + lesson audio + sign-off
+    # audio, so a dangling ref is a broken session, not a cosmetic gap.
+    for field in ("greeting_ref", "signoff_ref"):
+        ref = get_field(card, field)
+        if not ref:
+            errors.append(f"card field {field} is empty (lessons require an "
+                          f"assigned tutor variant)")
+        elif not (TUTORS_DIR / ref).exists():
+            errors.append(f"{field} points at a missing tutor asset: {ref}")
 
     paths = {}
     for field in CONTENT_FILES:
