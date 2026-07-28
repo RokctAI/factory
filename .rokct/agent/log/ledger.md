@@ -127,3 +127,4 @@
 | shores_of_memories_e73f6e | romance | Shores of Memories | pending_approval | groq | GROQ-30228933289 | — | 2026-07-27 01:05 |
 | economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | concept_generated | system | SYS-LESSON-RULES-30301398258 | — | 2026-07-27 20:10 |
 | economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | pending_concept_approval | system | SYS-LESSON-RULES-30303136471 | — | 2026-07-27 20:34 |
+| 2._forgotten_memories_2e6a10 | narrative poetry | 2. Forgotten Memories | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-28 21:08 |
