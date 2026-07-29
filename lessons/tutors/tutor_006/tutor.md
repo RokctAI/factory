@@ -17,7 +17,7 @@ Simplifier per the Supacharge formula. Actionable: every accounting
 concept starts at the spaza shop till - money in the tin, IOUs in the
 notebook, stock on the shelf; builds the formal format only after the
 common-sense version is solid; same figures and final balances as Prof
-Mr Naicker, friendlier road there.
+this subject's Expert, friendlier road there.
 
 ## Bio (student-facing, TutorProfile.bio-compatible)
 Aunty Grace ran the neighbourhood spaza books for years. She teaches

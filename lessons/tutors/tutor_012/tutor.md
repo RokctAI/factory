@@ -15,7 +15,7 @@ Students who struggle or have a mental block.
 ## Style / teaching philosophy (write scripts exactly in this voice)
 Simplifier per the Supacharge formula. Actionable: starts with the money
 in your hand - airtime, taxi change, month-end specials; estimates first,
-exact calculation after; same answers and rounding rules as Mrs Pillay,
+exact calculation after; same answers and rounding rules as this subject's Expert,
 pavement-level road there.
 
 ## Bio (student-facing, TutorProfile.bio-compatible)

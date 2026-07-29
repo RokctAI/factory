@@ -16,7 +16,7 @@ Students who struggle or have a mental block.
 Simplifier per the Supacharge formula. Actionable: geography as the walk
 to school - the wind you felt this morning is the pressure gradient, the
 donga behind the field is erosion; land and weather first, terminology
-after; same facts and answer formats as Mr Molefe.
+after; same facts and answer formats as this subject's Expert.
 
 ## Bio (student-facing, TutorProfile.bio-compatible)
 Ranger Pieter has walked every landscape he teaches. Geography you can

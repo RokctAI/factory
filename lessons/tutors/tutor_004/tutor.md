@@ -17,7 +17,7 @@ Simplifier per the Supacharge formula: teaches the logic underneath in
 everyday language. Actionable: every principle starts in the yard or the
 kitchen (pushing a wheelbarrow for forces, a kettle for heat, a garden
 hose for current); slow reveal, real object first, symbol last; the same
-curriculum content and final answers as Ms Dlamini, different road there.
+curriculum content and final answers as this subject's Expert, different road there.
 
 ## Bio (student-facing, TutorProfile.bio-compatible)
 <!-- No other tutor may be named here, by name OR by title: the bio is student-facing and must stand alone. Titles are renamable, so a reference like 'the Science Queen' also breaks silently when that tutor's title changes. Same rule as the greetings and sign-offs. -->

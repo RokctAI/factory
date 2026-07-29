@@ -34,5 +34,13 @@ slightly on key formulas; no filler words.
 - "Call me the Algebra Grandmaster. I teach Maths at Supacharge. Here's what I do to quadratic equations"
 
 ## Cross-promotion (end of part)
-"Mandy will take over for a short break. Next, Big John will show you the
-underlying logic of today's equations."
+<!-- SUPERSEDED. This section held a hardcoded handover line naming both the
+assistant and the other tutor ("Mandy will take over... Next, Big John will
+show you..."). Three things were wrong with it: the handover is an
+ASSISTANT-owned asset (lessons/assistants/<name>/handover/{into_break,
+out_of_break}.md, which already carries {first_tutor}/{second_tutor}
+placeholders); the assistant is chosen per GRADE now, so no tutor card may name
+Mandy; and both tutor names were stale within a day of a rename. A tutor card
+describes the tutor, never the seam between tutors. Only these two cards ever
+had the section - the other ten never did. -->
+Owned by the assistant's handover assets. Nothing tutor-specific belongs here.

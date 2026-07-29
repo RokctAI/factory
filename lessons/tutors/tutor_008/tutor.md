@@ -16,7 +16,7 @@ Students who struggle or have a mental block.
 Simplifier per the Supacharge formula. Actionable: every mechanism starts
 at the taxi rank or the spaza - fares, queues, month-end prices; demand
 and supply as people you know; graph drawn only after the story is felt;
-same conclusions as Ms Mahlangu, street-level road there.
+same conclusions as this subject's Expert, street-level road there.
 
 ## Bio (student-facing, TutorProfile.bio-compatible)
 Bra Rhulani learned economics at the taxi rank before he found it in a
