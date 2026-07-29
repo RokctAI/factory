@@ -18,10 +18,17 @@ a waist-up studio portrait; if a crop looks wrong, move focus_y rather than
 re-generating the image. Portrait framing is deliberate, not centred: the
 face sits high in a card (rule of thirds) and near-centred in an avatar.
 
+Runs are idempotent: a subject is skipped when its source image, its crop
+settings and the rendition spec are all unchanged since the last run and the
+output files are still on disk. Re-running costs nothing, so CI can call it
+on every push; replacing a portrait, editing crop.json or changing
+RENDITIONS re-renders exactly the subjects affected.
+
 Usage:
   python lessons/scripts/tutor_images.py            # everyone with a source
   python lessons/scripts/tutor_images.py tutor_001  # one subject
   python lessons/scripts/tutor_images.py --check    # report, write nothing
+  python lessons/scripts/tutor_images.py --force    # re-render regardless
 """
 import hashlib
 import json
@@ -99,7 +106,31 @@ def crop_box(src_w, src_h, aspect, focus_x, focus_y, focus_at, zoom,
     return (round(left), round(top), round(left + box_w), round(top + box_h))
 
 
-def process(appearance: Path, check_only=False):
+def recipe_of(src: Path, cfg: dict):
+    """What the renders depend on: the source bytes, the crop settings and
+    the rendition spec. Any of them changing invalidates the output; none of
+    them changing means there is nothing to do."""
+    h = hashlib.sha1(src.read_bytes()).hexdigest()[:12]
+    spec = json.dumps({"crop": cfg, "renditions": RENDITIONS}, sort_keys=True)
+    return h, hashlib.sha1(spec.encode()).hexdigest()[:12]
+
+
+def is_current(out_dir: Path, src_sha1, recipe_sha1):
+    """True when the last run used the same source AND the same recipe, and
+    every file it claims to have written is still there."""
+    man = out_dir / "manifest.json"
+    if not man.exists():
+        return False
+    try:
+        prev = json.loads(man.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return False
+    if prev.get("source_sha1") != src_sha1 or prev.get("recipe_sha1") != recipe_sha1:
+        return False
+    return all((out_dir / f"{name}.png").exists() for name in RENDITIONS)
+
+
+def process(appearance: Path, check_only=False, force=False):
     src = find_source(appearance)
     subject = appearance.parent.name
     if src is None:
@@ -107,6 +138,10 @@ def process(appearance: Path, check_only=False):
 
     cfg = load_crop(appearance)
     out_dir = appearance / "renders"
+    src_sha1, recipe_sha1 = recipe_of(src, cfg)
+    if not force and is_current(out_dir, src_sha1, recipe_sha1):
+        return {"subject": subject, "status": "up to date", "source": src.name}
+
     img = Image.open(src)
     img = img.convert("RGB")
     w, h = img.size
@@ -121,12 +156,12 @@ def process(appearance: Path, check_only=False):
                 out_dir / f"{name}.png", "PNG", optimize=True)
         results[name] = {"size": [tw, th], "source_box": list(box)}
 
-    digest = hashlib.sha1(src.read_bytes()).hexdigest()[:12]
     manifest = {
         "subject": subject,
         "source": src.name,
         "source_size": [w, h],
-        "source_sha1": digest,
+        "source_sha1": src_sha1,
+        "recipe_sha1": recipe_sha1,
         "crop": cfg,
         "renditions": results,
         "_comment": [
@@ -146,6 +181,7 @@ def process(appearance: Path, check_only=False):
 
 def main(argv):
     check = "--check" in argv
+    force = "--force" in argv
     wanted = [a for a in argv if not a.startswith("--")]
     rows = []
     for root in SUBJECT_DIRS:
@@ -156,7 +192,7 @@ def main(argv):
                 continue
             appearance = sub / "appearance"
             if appearance.is_dir():
-                rows.append(process(appearance, check))
+                rows.append(process(appearance, check, force))
     if not rows:
         print("No appearance directories found.")
         return 1
@@ -169,7 +205,9 @@ def main(argv):
                   f"{', '.join(r['renditions'])}")
         else:
             print(f"{r['subject']:<12} {r['status']}")
-    print(f"\n{done}/{len(rows)} subject(s) rendered"
+    skipped = sum(1 for r in rows if r["status"] == "up to date")
+    print(f"\n{done} rendered, {skipped} already up to date, "
+          f"{len(rows) - done - skipped} without a source"
           f"{' (check only, nothing written)' if check else ''}.")
     return 0
 
