@@ -1,0 +1,63 @@
+{
+  "assistant": "thandi",
+  "_comment": [
+    "STILL image generation (profile avatar, chat header, session bubble).",
+    "GENERATE THIS FIRST: the chosen render is the reference image that",
+    "video.json requires, and the source tutor_images.py crops from.",
+    "Built from PERSONALITY + GENDER only - NOTHING here is derived from the",
+    "assistant's display name, because names are placeholders that can be",
+    "replaced. When renaming, pick a name that fits THIS file, not the reverse."
+  ],
+  "role": "session assistant - welcomes the class, runs timekeeping, hosts the break Q&A and answers in private chat. Deliberately NOT styled as a teacher: no board, no chalk, no formal wear.",
+  "identity": {
+    "gender": "female",
+    "age_range": "23-28",
+    "nationality": "South African",
+    "heritage": "Indian South African",
+    "_heritage_note": "a deliberate casting choice so the three hosts are visibly different people; not inferred from any name",
+    "build": "average height, calm and still in the way she holds herself"
+  },
+  "face": "oval face with soft features, large dark brown eyes with long lashes, straight nose, full lips, warm light-brown skin with a golden undertone, a small beauty spot at the right jawline",
+  "hair": "long straight dark brown hair, usually loose with one side tucked behind the ear, sometimes a low ponytail; no fringe",
+  "wardrobe": {
+    "default": "simple long-sleeve top in dusty pink, teal or charcoal, sleeves pushed up; sometimes a light open overshirt; nothing corporate, nothing branded",
+    "alternates": [
+      "soft cream knit jumper",
+      "plain charcoal t-shirt"
+    ]
+  },
+  "accessories": [
+    "small gold nose stud",
+    "thin gold chain necklace",
+    "plain slim watch"
+  ],
+  "presence": {
+    "pose": "sits or stands relaxed, leaning very slightly forward as if paying close attention; hands often resting one over the other, gesturing small when she speaks",
+    "default_expression": "calm and encouraging, a small closed-mouth smile - the face of someone who is not going to rush you",
+    "energy": "steady and reassuring; the host who makes a nervous student feel it is fine to ask",
+    "spoken_register": "clear, unhurried South African English, gently warm; never bubbly, never formal"
+  },
+  "continuity_anchors": [
+    "long straight dark hair tucked behind one ear",
+    "small gold nose stud",
+    "beauty spot at the right jawline",
+    "thin gold chain necklace"
+  ],
+  "_continuity_note": "the features that MUST survive every regeneration - if these read the same, the audience accepts it as the same person",
+  "prompts": {
+    "headshot": "Editorial headshot of a 23-28 year old Indian South African woman, a friendly session host (not a teacher). oval face with soft features, large dark brown eyes with long lashes, straight nose, full lips, warm light-brown skin with a golden undertone, a small beauty spot at the right jawline. Hair: long straight dark brown hair, usually loose with one side tucked behind the ear, sometimes a low ponytail; no fringe. Wearing simple long-sleeve top in dusty pink, teal or charcoal, sleeves pushed up; sometimes a light open overshirt; nothing corporate, nothing branded. small gold nose stud. Expression: calm and encouraging, a small closed-mouth smile - the face of someone who is not going to rush you. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred warm interior background. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+  },
+  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, corporate stock-photo headset, call-centre imagery, generic stock-photo smile",
+  "_negative_note": "the stock-photo and call-centre terms are deliberate: prompts for a 'host' drift toward headset-wearing support-agent imagery, which is the wrong register",
+  "technical": {
+    "headshot": {
+      "camera": "full-frame mirrorless, 85mm f/1.8",
+      "lighting": "large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred warm interior background",
+      "framing": "chest-up, eyes on the upper third, slight three-quarter turn",
+      "aspect_ratios": [
+        "1:1 (profile avatar)",
+        "4:5 (card)"
+      ]
+    }
+  }
+}

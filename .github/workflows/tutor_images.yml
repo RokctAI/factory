@@ -42,7 +42,11 @@ jobs:
           if [ -n "$(git status --porcelain lessons/tutors lessons/assistants)" ]; then
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git add lessons/tutors/*/appearance/renders lessons/assistants/*/appearance/renders
+            # -A over the two trees, not a renders/* glob: before any
+            # assistant has a portrait that glob matches nothing and git
+            # exits 128. The script only ever writes under appearance/
+            # renders/, so this stages exactly the same files.
+            git add -A lessons/tutors lessons/assistants
             git commit -m "🤖 [CI] Tutor images: derived app renditions from source portraits [skip ci]"
             git push
           else
