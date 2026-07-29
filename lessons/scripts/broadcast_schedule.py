@@ -1,33 +1,37 @@
 # -*- coding: utf-8 -*-
 """Generate and PROVE the weekly live-broadcast grid.
 
-WHEN (owner, 2026-07-29): nobody attends extra classes in the morning - they
-are at school. Weekday evenings only, and the weekend starts at midday. Each
-session is followed by a gap so the platform looks like it is doing
-housekeeping between classes, so a slot is a 90-minute cycle around a
-60-minute session.
+THE MODEL (owner, 2026-07-29). A student picks the slot they normally attend
+and keeps it - same time every evening, like catching the same bus. If they
+miss it, THE SAME LESSON comes round again later that evening. So:
 
-THE RULE: at any moment each grade has exactly one session on air, and the
-three grades are on three different subjects. That satisfies every identity
-constraint at once - no duo live twice (different subjects), no assistant
-live twice (different grades, #35), no student clash (their grade has one
-session per slot).
+    one lesson : one day : three airings (17:00, 18:30, 20:00)
 
-THE ONE EXCEPTION, and it is free capacity rather than a compromise: a student
-holds Maths OR Mathematical Literacy, never both (#29). So those two subjects
-can air SIMULTANEOUSLY for the same grade and no student can ever be in both.
-Pairing them recovers a whole subject's worth of slots, which is what makes
-2 lessons x 2 repeats fit at all. The cost is that the grade's assistant is on
-air twice in a paired slot - invisible to any individual student, and
-plausible because the assistant is an AI host, not a human teacher.
+If Maths is Monday, then Monday is Maths at 17:00, 18:30 and 20:00 for that
+grade - the same lesson three times, not three different subjects. The three
+airings are the three buses, not three lessons.
 
-VOLUME: 6 subjects x 2 lessons/week x 2 repeats = 24 airings per grade, but
-the maths pair shares slots, so 20 SLOTS per grade against 22 available.
-A student takes 5 subjects (one maths track), so their week is 10 live
-sessions with a choice of two times for each.
+WHEN: weekday evenings only - nobody attends extra classes in the morning,
+they are at school. Each session is 60 minutes with a 30-minute gap after it
+so the platform visibly does housekeeping between classes.
+
+WHAT FALLS OUT: a grade has 5 weekday lesson-days, and there are exactly 5
+units to place - because Maths and Mathematical Literacy share a day and a
+slot. No student holds both (#29), so nobody can clash, and pairing them is
+what makes all six subjects fit into five days. One live lesson per subject
+per week, and a student attends one session per weekday evening at their
+chosen time.
+
+Saturday (from midday) and Sunday evening carry NO regular lesson: they are
+the catch-up, revision and holiday-programme window. Saturday could host a
+second lesson-day for two subjects later - noted, not assumed.
+
+Every identity constraint holds: no duo is live twice (the three grades are
+on three different subjects in any slot), no assistant is live twice
+(different grades), no student can clash (their grade has one subject on air,
+and the maths pair is two subjects no student holds together).
 
 Run:  python lessons/scripts/broadcast_schedule.py
-      python lessons/scripts/broadcast_schedule.py --ceiling
 """
 import json
 import sys
@@ -38,26 +42,19 @@ ROSTER = LESSONS / "tutors" / "roster.json"
 OUT = LESSONS / "schedule" / "weekly_grid.json"
 
 SESSION_MINUTES = 60
-GAP_MINUTES = 30          # visible housekeeping between sessions
+GAP_MINUTES = 30
 
-# Weekday evenings only; the weekend opens at midday because students are
-# free. Sunday keeps a single evening slot - the rest of Sunday stays clear
-# for catch-up and the holiday programme.
-DAY_SLOTS = {
-    "Mon": ["17:00", "18:30", "20:00"],
-    "Tue": ["17:00", "18:30", "20:00"],
-    "Wed": ["17:00", "18:30", "20:00"],
-    "Thu": ["17:00", "18:30", "20:00"],
-    "Fri": ["17:00", "18:30", "20:00"],
+# The three buses. Every lesson airs at all three, on its own day.
+BUS_TIMES = ["17:00", "18:30", "20:00"]
+LESSON_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+
+# Reserved: no regular lesson airs here. Catch-up, revision, holidays.
+RESERVED_SLOTS = {
     "Sat": ["12:00", "13:30", "15:00", "16:30", "18:00", "19:30"],
     "Sun": ["18:00"],
 }
 
 GRADES = [10, 11, 12]
-LESSONS_PER_WEEK = 2
-REPEATS_PER_LESSON = 2
-
-# The two maths tracks share a slot; every other subject needs its own.
 MATHS_PAIR = ["maths", "maths_literacy"]
 
 
@@ -65,145 +62,120 @@ def load_duos():
     return json.loads(ROSTER.read_text(encoding="utf-8"))["subjects"]
 
 
-def timeline():
-    """Every slot of the week in order: (index, day, time)."""
-    out = []
-    for day, times in DAY_SLOTS.items():
-        for t in times:
-            out.append((len(out), day, t))
-    return out
-
-
 def units(subjects):
-    """What competes for a slot: the maths pair counts as ONE unit because it
-    occupies one slot, the other subjects one unit each."""
-    singles = [s for s in subjects if s not in MATHS_PAIR]
-    return [list(MATHS_PAIR)] + [[s] for s in singles]
+    """What occupies a lesson-day. The maths pair is ONE unit: both tracks air
+    together, in the same slots, because no student holds both."""
+    singles = sorted(s for s in subjects if s not in MATHS_PAIR)
+    return [sorted(MATHS_PAIR)] + [[s] for s in singles]
 
 
 def build(duos, subjects):
-    slots = timeline()
     unit_list = units(subjects)
-    n_units = len(unit_list)
-    airings_per_unit = LESSONS_PER_WEEK * REPEATS_PER_LESSON
-    needed = n_units * airings_per_unit
-    if needed > len(slots):
-        raise SystemExit(f"{needed} slots needed per grade, {len(slots)} exist")
-
+    if len(unit_list) != len(LESSON_DAYS):
+        raise SystemExit(f"{len(unit_list)} units but {len(LESSON_DAYS)} "
+                         f"lesson-days: every unit needs exactly one day")
     airings = []
-    for grade_idx, grade in enumerate(GRADES):
-        # Count each unit's appearances so far, to number lesson and repeat.
-        seen = {u: 0 for u in range(n_units)}
-        for slot_idx, day, time in slots[:needed]:
-            unit = (slot_idx + grade_idx) % n_units
-            n = seen[unit]
-            seen[unit] += 1
-            lesson_no = n // REPEATS_PER_LESSON + 1
-            repeat_no = n % REPEATS_PER_LESSON + 1
-            for subject in unit_list[unit]:
-                airings.append({
-                    "day": day, "slot": slot_idx, "time": time,
-                    "subject": subject, "grade": grade,
-                    "lesson": lesson_no, "repeat": repeat_no,
-                    "paired_track": len(unit_list[unit]) > 1,
-                    "expert": duos[subject]["expert"],
-                    "simplifier": duos[subject]["simplifier"],
-                })
-    return airings, len(slots), needed
+    for day_idx, day in enumerate(LESSON_DAYS):
+        for grade_idx, grade in enumerate(GRADES):
+            unit = unit_list[(day_idx + grade_idx) % len(unit_list)]
+            for bus_no, time in enumerate(BUS_TIMES, start=1):
+                for subject in unit:
+                    airings.append({
+                        "day": day, "time": time, "bus": bus_no,
+                        "subject": subject, "grade": grade, "lesson": 1,
+                        "paired_track": len(unit) > 1,
+                        "expert": duos[subject]["expert"],
+                        "simplifier": duos[subject]["simplifier"],
+                    })
+    return airings, unit_list
 
 
 def check_duo_conflicts(airings):
-    """A subject - therefore its duo - at most once per slot."""
-    seen, clashes = {}, []
+    """A subject - therefore its duo - at most once in any (day, time)."""
+    seen, bad = {}, []
     for a in airings:
-        key = (a["slot"], a["subject"])
+        key = (a["day"], a["time"], a["subject"])
         if key in seen:
-            clashes.append(f"{a['day']} {a['time']} {a['subject']}: "
-                           f"G{seen[key]} and G{a['grade']}")
+            bad.append(f"{a['day']} {a['time']} {a['subject']}: "
+                       f"G{seen[key]} and G{a['grade']}")
         seen[key] = a["grade"]
-    return clashes
+    return bad
 
 
 def check_grade_slots(airings):
-    """A grade may hold ONE session per slot, or exactly two when they are the
-    two maths tracks (the documented exception). Anything else means the
-    grade's assistant is in rooms she has no business being in."""
+    """A grade has ONE subject on air per slot, or exactly the two maths
+    tracks. Anything else puts the grade's assistant in the wrong room."""
     per, bad = {}, []
     for a in airings:
-        per.setdefault((a["slot"], a["grade"]), []).append(a["subject"])
-    for (slot, grade), subs in per.items():
+        per.setdefault((a["day"], a["time"], a["grade"]), []).append(a["subject"])
+    for (day, time, grade), subs in per.items():
         if len(subs) == 1:
             continue
         if sorted(subs) != sorted(MATHS_PAIR):
-            bad.append(f"slot {slot} G{grade}: {subs}")
+            bad.append(f"{day} {time} G{grade}: {subs}")
     return bad
 
 
-def check_student_clashes(airings):
-    """No student may face two of their own subjects at once. A grade's only
-    doubling is maths + maths literacy, which no student holds together."""
-    per, bad = {}, []
+def check_one_day_per_subject(airings):
+    """THE PROMISE THE MODEL MAKES: a grade's lesson in a subject lives on ONE
+    day, airing at all three bus times. If a subject were spread over two
+    days, 'the slot you normally attend' would stop meaning anything."""
+    days, times, bad = {}, {}, []
     for a in airings:
-        per.setdefault((a["slot"], a["grade"]), []).append(a["subject"])
-    for (slot, grade), subs in per.items():
-        attendable = [s for s in subs if s not in MATHS_PAIR]
-        # One maths track is attendable by any given student, plus any
-        # non-maths subject in the same slot would be a real clash.
-        if len(attendable) > 1 or (attendable and any(s in MATHS_PAIR for s in subs)):
-            bad.append(f"slot {slot} G{grade}: {subs}")
+        key = (a["grade"], a["subject"])
+        days.setdefault(key, set()).add(a["day"])
+        times.setdefault(key, set()).add(a["time"])
+    for key, d in sorted(days.items()):
+        if len(d) != 1:
+            bad.append(f"G{key[0]} {key[1]} spread over {sorted(d)}")
+        if times[key] != set(BUS_TIMES):
+            bad.append(f"G{key[0]} {key[1]} misses a bus: {sorted(times[key])}")
     return bad
 
 
-def check_coverage(airings, subjects):
-    problems = []
-    for subject in subjects:
-        for grade in GRADES:
-            for lesson in range(1, LESSONS_PER_WEEK + 1):
-                n = sum(1 for a in airings if a["subject"] == subject
-                        and a["grade"] == grade and a["lesson"] == lesson)
-                if n != REPEATS_PER_LESSON:
-                    problems.append(f"{subject} G{grade} L{lesson}: {n} "
-                                    f"(expected {REPEATS_PER_LESSON})")
-    return problems
+def check_student_load(airings):
+    """A student takes one maths track plus the four others: they should have
+    exactly one attendable session per weekday evening, at whichever bus time
+    they choose."""
+    bad = []
+    for grade in GRADES:
+        for track in MATHS_PAIR:
+            basket = {track} | {a["subject"] for a in airings
+                                if a["subject"] not in MATHS_PAIR}
+            for time in BUS_TIMES:
+                for day in LESSON_DAYS:
+                    mine = {a["subject"] for a in airings
+                            if a["grade"] == grade and a["day"] == day
+                            and a["time"] == time and a["subject"] in basket}
+                    if len(mine) > 1:
+                        bad.append(f"G{grade}/{track} {day} {time}: {mine}")
+    return bad
 
 
 def main(argv):
     duos = load_duos()
     subjects = sorted(duos)
-    airings, total_slots, used = build(duos, subjects)
+    airings, unit_list = build(duos, subjects)
 
-    duo_clashes = check_duo_conflicts(airings)
-    grade_bad = check_grade_slots(airings)
-    student_bad = check_student_clashes(airings)
-    coverage = check_coverage(airings, subjects)
+    checks = (("duo double-bookings", check_duo_conflicts(airings)),
+              ("illegal grade doublings", check_grade_slots(airings)),
+              ("subjects not on a single day", check_one_day_per_subject(airings)),
+              ("student clashes", check_student_load(airings)))
 
-    print(f"{len(airings)} airings/week | {used} of {total_slots} slots used "
-          f"per grade ({total_slots - used} spare)")
+    print(f"{len(airings)} airings/week | {len(LESSON_DAYS)} lesson-days x "
+          f"{len(BUS_TIMES)} buses, {len(GRADES)} grades")
     print(f"Session {SESSION_MINUTES} min + {GAP_MINUTES} min housekeeping gap")
-    print(f"Volume: {LESSONS_PER_WEEK} lesson(s)/subject/week x "
-          f"{REPEATS_PER_LESSON} repeats; a student takes 5 subjects -> "
-          f"{5 * LESSONS_PER_WEEK} live sessions/week")
-    for label, errs in (("duo double-bookings", duo_clashes),
-                        ("illegal grade doublings", grade_bad),
-                        ("student clashes", student_bad),
-                        ("coverage problems", coverage)):
+    print(f"Units placed: {len(unit_list)} "
+          f"({'+'.join(unit_list[0])} share a day) -> one live lesson per "
+          f"subject per week")
+    print("A student attends ONE session per weekday evening, at the bus time "
+          "they choose.")
+    for label, errs in checks:
         print(f"{label}: {len(errs)}")
         for e in errs[:4]:
             print("   ", e)
 
-    if "--ceiling" in argv:
-        per_grade_capacity = total_slots
-        print(f"\nA grade has {per_grade_capacity} slots/week. One unit "
-              f"(subject, or the maths pair) costs "
-              f"{LESSONS_PER_WEEK * REPEATS_PER_LESSON}.")
-        print(f"So a grade supports "
-              f"{per_grade_capacity // (LESSONS_PER_WEEK * REPEATS_PER_LESSON)} "
-              f"units; we use {len(units(subjects))}.")
-        print("Adding a grade adds a concurrent stream, not hours: it needs "
-              "one more distinct subject per slot.")
-        return 0
-
-    if duo_clashes or grade_bad or student_bad or coverage:
+    if any(errs for _, errs in checks):
         print("\nNOT WRITTEN - the grid fails its own constraints.")
         return 1
 
@@ -211,33 +183,32 @@ def main(argv):
         "_comment": [
             "Weekly live-broadcast grid. Generated by",
             "lessons/scripts/broadcast_schedule.py - do not hand-edit.",
-            "Weekday evenings only (students are at school by day); weekend",
-            "opens at midday; one Sunday evening slot. Each slot is a",
-            "90-minute cycle: a 60-minute session plus a visible",
-            "housekeeping gap.",
-            "THE RULE: one session per grade per slot, three grades on three",
-            "different subjects - so no duo and no assistant is ever live",
-            "twice and no student can clash.",
-            "THE EXCEPTION: maths and maths literacy air in the SAME slot for",
-            "a grade. No student holds both (#29), so nobody can clash, and",
-            "pairing them recovers a subject's worth of slots - which is what",
-            "makes 2 lessons x 2 repeats fit. The grade's assistant is on air",
-            "twice in those slots: invisible to any one student, and",
-            "plausible because she is an AI host, not a human teacher.",
+            "ONE LESSON : ONE DAY : THREE AIRINGS. A student picks the bus",
+            "time they normally attend and keeps it; if they miss it the SAME",
+            "lesson comes round again later that evening. The three airings",
+            "are three buses, not three lessons.",
+            "Weekday evenings only - students are at school by day. Each slot",
+            "is a 60-minute session plus a 30-minute housekeeping gap.",
+            "Maths and Maths Literacy share a day and a slot: no student holds",
+            "both (#29), so nobody clashes, and pairing them is what fits six",
+            "subjects into five evenings.",
+            "Saturday and Sunday evening carry no regular lesson - catch-up,",
+            "revision and the holiday programme live there.",
         ],
         "session_minutes": SESSION_MINUTES,
         "gap_minutes": GAP_MINUTES,
-        "day_slots": DAY_SLOTS,
+        "bus_times": BUS_TIMES,
+        "lesson_days": LESSON_DAYS,
+        "reserved_slots": RESERVED_SLOTS,
         "grades": GRADES,
-        "lessons_per_week_per_grade_subject": LESSONS_PER_WEEK,
-        "repeats_per_lesson": REPEATS_PER_LESSON,
         "paired_tracks": MATHS_PAIR,
-        "slots_used_per_grade": used,
-        "slots_available_per_grade": total_slots,
-        "student_live_sessions_per_week": 5 * LESSONS_PER_WEEK,
+        "lessons_per_subject_per_week": 1,
+        "airings_per_lesson": len(BUS_TIMES),
+        "student_live_sessions_per_week": len(LESSON_DAYS),
         "verified": {"duo_double_bookings": 0, "illegal_grade_doublings": 0,
-                     "student_clashes": 0, "coverage_problems": 0},
-        "airings": sorted(airings, key=lambda a: (a["slot"], a["grade"],
+                     "subjects_split_across_days": 0, "student_clashes": 0},
+        "airings": sorted(airings, key=lambda a: (LESSON_DAYS.index(a["day"]),
+                                                  a["bus"], a["grade"],
                                                   a["subject"])),
     }
     OUT.parent.mkdir(exist_ok=True)
