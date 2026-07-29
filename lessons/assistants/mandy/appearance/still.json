@@ -1,0 +1,79 @@
+{
+  "assistant": "mandy",
+  "_comment": [
+    "STILL image generation (profile avatar, session host card).",
+    "GENERATE THIS FIRST: the chosen render is the reference image that",
+    "video.json requires.",
+    "Built from PERSONALITY + GENDER only - NOTHING is derived from the",
+    "display name, because names are placeholders. Assistants are NORMAL",
+    "PEOPLE, deliberately not classic secretaries: no headset, no blazer,",
+    "no reception desk, no name badge (owner, 2026-07-28).",
+    "Per supacharge-characters.md 3, Bianca is not a different character -",
+    "same role and scripts as Mandy, only a different face and voice - so",
+    "these two files differ in the person and in nothing else."
+  ],
+  "role": "platform host, timekeeper and private support assistant - runs the live session, bridges the break, answers questions in the chat",
+  "identity": {
+    "gender": "female",
+    "age_range": "24-29",
+    "nationality": "South African",
+    "heritage": "Black South African",
+    "_heritage_note": "a deliberate casting choice so the two hosts are visibly different people; not inferred from any name",
+    "build": "average height, relaxed easy posture, unstudied"
+  },
+  "face": "round-oval face with full cheeks, warm dark brown eyes, broad genuine smile with slightly uneven front teeth, smooth deep-brown skin with warm undertone, a small mole below the left cheekbone",
+  "hair": "shoulder-length box braids, usually half-up in a loose bun with strands escaping at the temples",
+  "wardrobe": {
+    "default": "plain crew-neck top in mustard, rust or olive, sometimes an open denim shirt over it; nothing corporate, nothing branded",
+    "alternates": [
+      "soft knit jumper in oatmeal",
+      "simple black t-shirt"
+    ]
+  },
+  "accessories": [
+    "small gold hoop earrings",
+    "thin beaded bracelet",
+    "simple watch with a fabric strap"
+  ],
+  "presence": {
+    "pose": "stands or sits relaxed, shoulders loose, head tilted slightly as if listening; one hand gesturing small and close to the body",
+    "default_expression": "warm, attentive, mid-listening rather than mid-presenting - the face of someone who has just been asked a question and is about to answer it kindly",
+    "energy": "approachable and unhurried; the person who makes a nervous student feel it is fine to ask",
+    "spoken_register": "warm, clear, conversational; friendly without being bubbly"
+  },
+  "continuity_anchors": [
+    "shoulder-length box braids, half-up loose bun",
+    "small gold hoop earrings",
+    "small mole below the left cheekbone",
+    "plain crew-neck top in a warm colour"
+  ],
+  "_continuity_note": "the features that MUST survive every regeneration - if these read the same, the audience accepts it as the same person",
+  "prompts": {
+    "headshot": "Studio headshot of a 24-29 year old Black South African woman, an ordinary friendly person in her twenties. round-oval face with full cheeks, warm dark brown eyes, broad genuine smile with slightly uneven front teeth, smooth deep-brown skin with warm undertone, a small mole below the left cheekbone. Hair: shoulder-length box braids, usually half-up in a loose bun with strands escaping at the temples. Wearing plain crew-neck top in mustard, rust or olive, sometimes an open denim shirt over it; nothing corporate, nothing branded. small gold hoop earrings. Expression: warm, attentive, mid-listening rather than mid-presenting - the face of someone who has just been asked a question and is about to answer it kindly. chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, soft fill, subtle hair light, seamless warm neutral grey studio backdrop. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, eyes alive and focused ON the lens rather than through it, moist eye surface with a bright asymmetric catchlight from the key light and a weaker one from the fill, visible iris striations and limbal ring, individual lower lashes, faint pink at the inner corner and a visible tear line, slight crinkle of the muscle at the outer corners, shallow depth of field.",
+    "studio": "Studio portrait of a 24-29 year old Black South African woman, waist-up, an ordinary friendly person in her twenties - casual everyday clothing. average height, relaxed easy posture, unstudied. round-oval face with full cheeks, warm dark brown eyes, broad genuine smile with slightly uneven front teeth, smooth deep-brown skin with warm undertone, a small mole below the left cheekbone. Hair: shoulder-length box braids, usually half-up in a loose bun with strands escaping at the temples. Wearing plain crew-neck top in mustard, rust or olive, sometimes an open denim shirt over it; nothing corporate, nothing branded. small gold hoop earrings. Hands empty and relaxed. Posture: stands or sits relaxed, shoulders loose, head tilted slightly as if listening; one hand gesturing small and close to the body. Expression: warm, attentive, mid-listening rather than mid-presenting - the face of someone who has just been asked a question and is about to answer it kindly. Plain empty seamless warm neutral grey studio backdrop, evenly lit, bare from edge to edge. two-light studio set: softbox key at 45 degrees, soft fill opposite, gentle rim light off the backdrop. full-frame, 50mm f/2, waist-up. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, eyes alive and focused ON the lens rather than through it, moist eye surface with a bright asymmetric catchlight from the key light and a weaker one from the fill, visible iris striations and limbal ring, individual lower lashes, faint pink at the inner corner and a visible tear line, slight crinkle of the muscle at the outer corners, shallow depth of field."
+  },
+  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, call-centre headset, telephone headset, earpiece, corporate receptionist, secretary, reception desk, office cubicle, business suit, severe tight bun, name badge, lanyard, clipboard, stock-photo customer-service pose, hands clasped in front like a hostess, air-hostess styling, generic stock-photo smile, classroom, chalkboard, school desks",
+  "_negative_note": "the secretary terms are deliberate: asked for a friendly assistant, models default to a headset, a blazer and a reception desk",
+  "technical": {
+    "headshot": {
+      "camera": "full-frame mirrorless, 85mm f/1.8",
+      "lighting": "large softbox key at 45 degrees, soft fill, subtle hair light, seamless warm neutral grey studio backdrop",
+      "framing": "chest-up, slight three-quarter turn, eyes to camera",
+      "aspect_ratios": [
+        "1:1 (profile avatar)",
+        "4:5 (card)"
+      ]
+    },
+    "studio": {
+      "camera": "full-frame, 50mm f/2, waist-up",
+      "lighting": "two-light studio set: softbox key at 45 degrees, soft fill opposite, gentle rim light off the backdrop",
+      "framing": "waist-up, clean space beside the head for overlaid text",
+      "backdrop": "seamless warm neutral grey paper, evenly lit",
+      "aspect_ratios": [
+        "4:5 (card)",
+        "9:16 (vertical)",
+        "16:9 (web hero)"
+      ]
+    }
+  }
+}

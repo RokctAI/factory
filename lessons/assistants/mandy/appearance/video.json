@@ -1,0 +1,56 @@
+{
+  "assistant": "mandy",
+  "_comment": [
+    "VIDEO generation. A MOTION brief, not a face description: the face",
+    "comes from the still render, which is why still.json is generated",
+    "first. Re-describing the face in text is how identity drifts.",
+    "Built from PERSONALITY + GENDER only - NOTHING is derived from the",
+    "display name, because names are placeholders. Assistants are NORMAL",
+    "PEOPLE, deliberately not classic secretaries: no headset, no blazer,",
+    "no reception desk, no name badge (owner, 2026-07-28).",
+    "Per supacharge-characters.md 3, Bianca is not a different character -",
+    "same role and scripts as Mandy, only a different face and voice - so",
+    "these two files differ in the person and in nothing else."
+  ],
+  "reference_image": {
+    "required": true,
+    "source": "appearance/still.json -> the approved headshot or studio render",
+    "role": "first frame and identity reference",
+    "why": "text alone produces a different person every run; the reference locks the face. Never pull a still out of a clip - video frames are motion-blurred and compressed."
+  },
+  "identity_lock": [
+    "shoulder-length box braids, half-up loose bun",
+    "small gold hoop earrings",
+    "small mole below the left cheekbone",
+    "plain crew-neck top in a warm colour"
+  ],
+  "performance": {
+    "energy": "approachable and unhurried; the person who makes a nervous student feel it is fine to ask",
+    "spoken_register": "warm, clear, conversational; friendly without being bubbly",
+    "body": "stands or sits relaxed, shoulders loose, head tilted slightly as if listening; one hand gesturing small and close to the body",
+    "expression": "warm, attentive, mid-listening rather than mid-presenting - the face of someone who has just been asked a question and is about to answer it kindly"
+  },
+  "camera": {
+    "camera": "24-30fps, 50mm equivalent, static or very slow push-in",
+    "framing": "9:16 vertical - head and shoulders in the upper two thirds, room for captions below",
+    "continuity": "same wardrobe, same hair, same jewellery across a session; regenerate from continuity_anchors rather than re-describing from scratch"
+  },
+  "duration_seconds": 8,
+  "audio": {
+    "dialogue": "supplied separately from this assistant's own assets (intro/, handover/, signoff/, timekeeping/)",
+    "note": "lip-sync to supplied audio where the model supports it; never let the model invent speech for a host"
+  },
+  "shots": [
+    {
+      "id": "mandy_session_intro",
+      "purpose": "session opening, to camera",
+      "prompt": "Vertical 9:16 talking-to-camera clip. A 24-29 year old Black South African woman, average height, relaxed easy posture, unstudied, round-oval face with full cheeks, warm dark brown eyes, broad genuine smile with slightly uneven front teeth, smooth deep-brown skin with warm undertone, a small mole below the left cheekbone. Hair: shoulder-length box braids, usually half-up in a loose bun with strands escaping at the temples. Wearing plain crew-neck top in mustard, rust or olive, sometimes an open denim shirt over it; nothing corporate, nothing branded. Energy: approachable and unhurried; the person who makes a nervous student feel it is fine to ask. Delivery: warm, clear, conversational; friendly without being bubbly. stands or sits relaxed, shoulders loose, head tilted slightly as if listening; one hand gesturing small and close to the body. Background: the same plain seamless studio backdrop as the reference still, bare and evenly lit. Head and shoulders in the upper two thirds, clear space below for captions. Natural micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, eyes alive and focused ON the lens rather than through it, moist eye surface with a bright asymmetric catchlight from the key light and a weaker one from the fill, visible iris striations and limbal ring, individual lower lashes, faint pink at the inner corner and a visible tear line, slight crinkle of the muscle at the outer corners, shallow depth of field."
+    },
+    {
+      "id": "mandy_listening",
+      "purpose": "break/chat b-roll, not to camera",
+      "prompt": "The person from the reference image in the same studio, stands or sits relaxed, shoulders loose, head tilted slightly as if listening; one hand gesturing small and close to the body, listening and nodding slightly, then glancing to lens. Natural light quality, static camera or slow push-in, 8 seconds."
+    }
+  ],
+  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, call-centre headset, telephone headset, earpiece, corporate receptionist, secretary, reception desk, office cubicle, business suit, severe tight bun, name badge, lanyard, clipboard, stock-photo customer-service pose, hands clasped in front like a hostess, air-hostess styling, generic stock-photo smile, classroom, chalkboard, school desks"
+}
