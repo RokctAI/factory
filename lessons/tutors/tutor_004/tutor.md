@@ -20,8 +20,10 @@ hose for current); slow reveal, real object first, symbol last; the same
 curriculum content and final answers as Ms Dlamini, different road there.
 
 ## Bio (student-facing, TutorProfile.bio-compatible)
-Uncle Rudzani proves physics lives in your backyard. Same science as the
-Science Queen - explained with wheelbarrows, kettles and garden hoses.
+<!-- No other tutor may be named here, by name OR by title: the bio is student-facing and must stand alone. Titles are renamable, so a reference like 'the Science Queen' also breaks silently when that tutor's title changes. Same rule as the greetings and sign-offs. -->
+Uncle Rudzani proves physics lives in your backyard. The same science,
+the same answers - explained with wheelbarrows, kettles and garden
+hoses.
 
 ## Voice characteristics (documented intent - Level 6 will implement)
 Male, relaxed pace, warm conversational register.
