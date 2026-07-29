@@ -20,6 +20,7 @@
     "age_range": "32-38",
     "nationality": "South African",
     "heritage": "Black South African",
+    "language_group": "isiNdebele (Ndebele)",
     "_heritage_note": "a deliberate casting choice for a representative South African line-up; not inferred from any name",
     "build": "slim and athletic, sharp upright carriage, quick precise movement"
   },
@@ -82,5 +83,6 @@
   },
   "_prop_rule": "PORTRAITS SHOW NO HELD OBJECTS. The first accessory is always a WORN item, because that is what the headshot and studio prompts render; hands are the least reliable thing an image model draws and an object in them compounds it. Objects this subject teaches with stay listed for environment shots, where a surface can hold them.",
   "_anchor_rule": "Anchors describe what is WORN or physically true of this person - never something held. An anchor is the strongest signal in this file, so a held object here puts it back in the hands whatever the prompt says.",
-  "_hands_rule": "No held objects in any portrait prompt. The original generator inserted accessory #2 into a 'Holding one simple item' sentence regardless of whether it could be held, which is how a beaded wristband, a bangle, a watch and a pencil behind the ear all ended up 'held'. Objects belong in environment shots, on a surface."
+  "_hands_rule": "No held objects in any portrait prompt. The original generator inserted accessory #2 into a 'Holding one simple item' sentence regardless of whether it could be held, which is how a beaded wristband, a bangle, a watch and a pencil behind the ear all ended up 'held'. Objects belong in environment shots, on a surface.",
+  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe."
 }

@@ -20,6 +20,7 @@
     "age_range": "35-42",
     "nationality": "South African",
     "heritage": "White South African",
+    "language_group": "Afrikaans-speaking Afrikaner",
     "_heritage_note": "a deliberate casting choice for a representative South African line-up; not inferred from any name",
     "build": "rangy and fit, sun-toughened, easy athletic stance"
   },
@@ -81,5 +82,6 @@
       ]
     }
   },
-  "_hands_rule": "No held objects in any portrait prompt. The original generator inserted accessory #2 into a 'Holding one simple item' sentence regardless of whether it could be held, which is how a beaded wristband, a bangle, a watch and a pencil behind the ear all ended up 'held'. Objects belong in environment shots, on a surface."
+  "_hands_rule": "No held objects in any portrait prompt. The original generator inserted accessory #2 into a 'Holding one simple item' sentence regardless of whether it could be held, which is how a beaded wristband, a bangle, a watch and a pencil behind the ear all ended up 'held'. Objects belong in environment shots, on a surface.",
+  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe."
 }
