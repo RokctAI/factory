@@ -1,7 +1,7 @@
 {
   "tutor": "tutor_009",
   "_comment": [
-    "STILL image generation (profile headshots, classroom stills).",
+    "STILL image generation (studio headshots and portraits).",
     "Hand this whole file to the image model, or paste one of the",
     "strings under 'prompts'. GENERATE THIS FIRST: the chosen render",
     "is the reference image that video.json requires.",
@@ -44,7 +44,8 @@
     "energy": "documentary calm - authoritative without volume",
     "spoken_register": "formal, steady documentary pace"
   },
-  "environment": "classroom wall of maps and aerial photographs, contour map spread on the bench, daylight from the side",
+  "_environment_reference": "classroom wall of maps and aerial photographs, contour map spread on the bench, daylight from the side",
+  "_environment_note": "NOT used for platform imagery - tutors are shot in studio. Owner, 2026-07-28: the student left the teachers in the classroom, so the platform does not show one. Kept only as character reference if a composite is ever wanted.",
   "continuity_anchors": [
     "rectangular dark-framed glasses",
     "greying short beard",
@@ -53,28 +54,30 @@
   ],
   "_continuity_note": "the features that MUST survive every regeneration - if these read the same, the audience accepts it as the same person",
   "prompts": {
-    "headshot": "Editorial headshot of a 44-52 year old Black South African male teacher. square face with a broad forehead, calm observant dark eyes behind rectangular glasses, neat short beard fully greying at the chin, medium-deep brown skin, faint frown line between the brows. Hair: short neat natural hair, greying at the temples. Wearing olive or brown jacket with elbow patches over a checked shirt, corduroy trousers, sturdy shoes. rectangular dark-framed glasses. Expression: thoughtful and precise, the settled focus of someone reading landscape like text. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred classroom background. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
-    "classroom": "A 44-52 year old Black South African male teacher mid-lesson in a South African school. medium-tall, solid and composed, unhurried movement. square face with a broad forehead, calm observant dark eyes behind rectangular glasses, neat short beard fully greying at the chin, medium-deep brown skin, faint frown line between the brows. Hair: short neat natural hair, greying at the temples. Wearing olive or brown jacket with elbow patches over a checked shirt, corduroy trousers, sturdy shoes. Holding/using: rectangular dark-framed glasses, rolled 1:50 000 topographic map. Posture: stands beside the map, tracing a contour with the ruler; measured turns, deliberate pauses. Expression: thoughtful and precise, the settled focus of someone reading landscape like text. Setting: classroom wall of maps and aerial photographs, contour map spread on the bench, daylight from the side. BOARD: the board is mostly wiped clean and shows a few clean contour lines, no lettering - nothing else written anywhere on it, no dense columns of equations, no filler handwriting; the board sits behind the focal plane and is slightly soft. practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent. full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+    "headshot": "Editorial headshot of a 44-52 year old Black South African male teacher. square face with a broad forehead, calm observant dark eyes behind rectangular glasses, neat short beard fully greying at the chin, medium-deep brown skin, faint frown line between the brows. Hair: short neat natural hair, greying at the temples. Wearing olive or brown jacket with elbow patches over a checked shirt, corduroy trousers, sturdy shoes. rectangular dark-framed glasses. Expression: thoughtful and precise, the settled focus of someone reading landscape like text. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, seamless warm neutral grey studio backdrop. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field.",
+    "studio": "Studio portrait of a 44-52 year old Black South African male teacher, waist-up. medium-tall, solid and composed, unhurried movement. square face with a broad forehead, calm observant dark eyes behind rectangular glasses, neat short beard fully greying at the chin, medium-deep brown skin, faint frown line between the brows. Hair: short neat natural hair, greying at the temples. Wearing olive or brown jacket with elbow patches over a checked shirt, corduroy trousers, sturdy shoes. rectangular dark-framed glasses. Holding at most one simple item: steel ruler and divider. Posture: stands beside the map, tracing a contour with the ruler; measured turns, deliberate pauses. Expression: thoughtful and precise, the settled focus of someone reading landscape like text. Plain seamless studio backdrop in warm neutral grey, no props, no furniture, no classroom, no chalkboard, nothing written anywhere in frame. two-light studio set: large softbox key at 45 degrees, soft fill opposite, gentle rim light to lift the shoulders off the backdrop. full-frame, 50mm f/2, waist-up. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
   },
-  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, American classroom props, chalkboard gibberish, unreadable equations, board crowded with writing, invented mathematical notation, holding two pieces of chalk, duplicated props, generic stock-photo smile",
+  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, classroom, school desks, chalkboard, whiteboard, notice boards, posters, any writing or notation in frame, invented mathematical notation, holding two pieces of chalk, duplicated props, set dressing, generic stock-photo smile",
   "_negative_note": "the cinematic terms are deliberate - image models drift toward a film-still look (grade, motion blur, flare) and then the render stops reading as a photograph",
   "technical": {
     "headshot": {
       "camera": "full-frame mirrorless, 85mm f/1.8",
-      "lighting": "large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred classroom background",
+      "lighting": "large softbox key at 45 degrees, subtle hair light, seamless warm neutral grey studio backdrop",
       "framing": "chest-up, eyes on the upper third, slight three-quarter turn",
       "aspect_ratios": [
         "1:1 (profile avatar)",
         "4:5 (card)"
       ]
     },
-    "classroom": {
-      "camera": "full-frame, 35mm f/2.8 for context or 50mm f/2 for waist-up",
-      "lighting": "practical daylight from classroom windows plus soft fill; avoid flat overhead fluorescent",
-      "framing": "waist-up with the board visible over the shoulder, or wider three-quarter with the tutor mid-gesture",
+    "studio": {
+      "camera": "full-frame, 50mm f/2, waist-up",
+      "lighting": "two-light studio set: large softbox key at 45 degrees, soft fill opposite, gentle rim light to lift the shoulders off the backdrop",
+      "framing": "waist-up, centred or slightly off-centre with clean space beside the head for overlaid text",
+      "backdrop": "seamless warm neutral grey paper, evenly lit, no props, no furniture, no set dressing",
       "aspect_ratios": [
-        "16:9",
-        "4:5"
+        "4:5 (card)",
+        "16:9 (web hero)",
+        "9:16 (vertical)"
       ]
     }
   }
