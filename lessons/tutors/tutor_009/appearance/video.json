@@ -22,12 +22,11 @@
     "why": "text alone produces a different person every run; the reference locks the face. Do not go the other way and pull a still out of a clip - video frames are soft, motion-blurred and compressed."
   },
   "identity_lock": [
-    "rectangular dark-framed glasses",
+    "elbow-patch tweed jacket",
     "greying short beard",
-    "rolled topographic map",
-    "elbow-patch jacket"
+    "closely cropped hair, greying at the temples"
   ],
-  "_identity_lock_note": "if the model supports text guidance alongside the reference, restate ONLY these - they are what the audience recognises",
+  "_identity_lock_note": "COPIED from still.json continuity_anchors - never edited here. The face lives in the reference image and its description lives in still.json; duplicating either is how this file went stale while still.json was corrected repeatedly.",
   "performance": {
     "energy": "documentary calm - authoritative without volume",
     "spoken_register": "formal, steady documentary pace",
@@ -48,13 +47,14 @@
     {
       "id": "tutor_009_ad_hook",
       "purpose": "TikTok / advert hook, talking to camera",
-      "prompt": "Vertical 9:16 talking-to-camera clip. A 44-52 year old Black South African male teacher, medium-tall, solid and composed, unhurried movement, square face with a broad forehead, calm observant dark eyes behind rectangular glasses, neat short beard fully greying at the chin, medium-deep brown skin, faint frown line between the brows. Hair: short neat natural hair, greying at the temples. Wearing olive or brown jacket with elbow patches over a checked shirt, corduroy trousers, sturdy shoes. Energy: documentary calm - authoritative without volume. Delivery matches the voice: formal, steady documentary pace. stands composed and still, hands loose at his sides, head slightly tilted in thought. Background: the same plain seamless studio backdrop as the reference still, bare and evenly lit. Head and shoulders in the upper two thirds, clear space below for captions. Natural micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, eyes alive and focused ON the lens rather than through it, moist eye surface with a bright asymmetric catchlight from the key light and a weaker one from the fill, visible iris striations and limbal ring, individual lower lashes, faint pink at the inner corner and a visible tear line, slight crinkle of the muscle at the outer corners, shallow depth of field."
+      "prompt": "Vertical 9:16 talking-to-camera clip. THE PERSON FROM THE REFERENCE IMAGE - do not restyle the face, hair, clothing or age. Energy: documentary calm - authoritative without volume Delivery: formal, steady documentary pace stands beside the map, tracing a contour with the ruler; measured turns, deliberate pauses Background: , softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, real-photography look, 8 seconds."
     },
     {
       "id": "tutor_009_teaching_broll",
       "purpose": "background b-roll, not looking at camera",
-      "prompt": "The person from the reference image in the same studio, stands beside the map, tracing a contour with the ruler; measured turns, deliberate pauses Not looking at camera, listening then glancing to lens. Natural light quality, static camera or slow push-in, 8 seconds."
+      "prompt": "THE PERSON FROM THE REFERENCE IMAGE teaching in . stands beside the map, tracing a contour with the ruler; measured turns, deliberate pauses Not looking at camera. Documentary feel, natural light, static camera or slow push-in, real-photography look, 8 seconds."
     }
   ],
-  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, mismatched gaze direction, classroom, school desks, chalkboard, whiteboard, notice boards, posters, any writing or notation in frame, invented mathematical notation, holding two pieces of chalk, duplicated props, set dressing, generic stock-photo smile"
+  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, mismatched gaze direction, classroom, school desks, chalkboard, whiteboard, notice boards, posters, any writing or notation in frame, invented mathematical notation, holding two pieces of chalk, duplicated props, set dressing, generic stock-photo smile",
+  "_no_face_description": "This file must NEVER describe the face, hair, wardrobe or age. That belongs to still.json and to the reference render. Re-describing it here is how identity drifts between clips, and how this file fell behind every correction made to still.json."
 }

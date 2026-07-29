@@ -25,9 +25,9 @@
     "sharp line-up fade",
     "bucket hat or flat-brim cap",
     "hands mid-gesture",
-    "layered street wardrobe"
+    "nceka-print shirt in magenta, yellow and green"
   ],
-  "_identity_lock_note": "if the model supports text guidance alongside the reference, restate ONLY these - they are what the audience recognises",
+  "_identity_lock_note": "COPIED from still.json continuity_anchors - never edited here. The face lives in the reference image and its description lives in still.json; duplicating either is how this file went stale while still.json was corrected repeatedly.",
   "performance": {
     "energy": "taxi-rank storyteller - fast, funny, completely at ease",
     "spoken_register": "easy storytelling pace, streetwise warmth",
@@ -48,13 +48,14 @@
     {
       "id": "tutor_008_ad_hook",
       "purpose": "TikTok / advert hook, talking to camera",
-      "prompt": "Vertical 9:16 talking-to-camera clip. A 27-33 year old Black South African male teacher, lean and wiry, loose-limbed, constantly in motion, angular face with a strong jaw, expressive raised brows, bright quick eyes, medium-brown skin with warm undertone, thin chinstrap beard and moustache. Hair: short fade with a sharp line-up, small twists on top. Wearing bomber jacket or work jacket over a graphic tee, tapered chinos or jeans, clean white sneakers. Energy: taxi-rank storyteller - fast, funny, completely at ease. Delivery matches the voice: easy storytelling pace, streetwise warmth. stands easy and mobile, weight shifted to one side, one hand half-raised mid-point. Background: the same plain seamless studio backdrop as the reference still, bare and evenly lit. Head and shoulders in the upper two thirds, clear space below for captions. Natural micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, eyes alive and focused ON the lens rather than through it, moist eye surface with a bright asymmetric catchlight from the key light and a weaker one from the fill, visible iris striations and limbal ring, individual lower lashes, faint pink at the inner corner and a visible tear line, slight crinkle of the muscle at the outer corners, shallow depth of field."
+      "prompt": "Vertical 9:16 talking-to-camera clip. THE PERSON FROM THE REFERENCE IMAGE - do not restyle the face, hair, clothing or age. Energy: taxi-rank storyteller - fast, funny, completely at ease Delivery: easy storytelling pace, streetwise warmth never still - counts on his fingers, sketches a curve in the air, steps toward the camera to make a point Background: , softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, real-photography look, 8 seconds."
     },
     {
       "id": "tutor_008_teaching_broll",
       "purpose": "background b-roll, not looking at camera",
-      "prompt": "The person from the reference image in the same studio, never still - counts on his fingers, sketches a curve in the air, steps toward the camera to make a point Not looking at camera, listening then glancing to lens. Natural light quality, static camera or slow push-in, 8 seconds."
+      "prompt": "THE PERSON FROM THE REFERENCE IMAGE teaching in . never still - counts on his fingers, sketches a curve in the air, steps toward the camera to make a point Not looking at camera. Documentary feel, natural light, static camera or slow push-in, real-photography look, 8 seconds."
     }
   ],
-  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, mismatched gaze direction, classroom, school desks, chalkboard, whiteboard, notice boards, posters, any writing or notation in frame, invented mathematical notation, holding two pieces of chalk, duplicated props, set dressing, generic stock-photo smile"
+  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, mismatched gaze direction, classroom, school desks, chalkboard, whiteboard, notice boards, posters, any writing or notation in frame, invented mathematical notation, holding two pieces of chalk, duplicated props, set dressing, generic stock-photo smile",
+  "_no_face_description": "This file must NEVER describe the face, hair, wardrobe or age. That belongs to still.json and to the reference render. Re-describing it here is how identity drifts between clips, and how this file fell behind every correction made to still.json."
 }
