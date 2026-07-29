@@ -15,8 +15,10 @@ functional equivalents — same script formulas, second name.
 - `intro/` — session opening (`new`, `returning` student variants)
 - `handover/` — the break bridge (`into_break`, `out_of_break` toward the
   second tutor)
-- `signoff/` — session end + office hours (`session_end`,
-  `office_hours_open`, `office_hours_close`)
+- `signoff/` — session end (`session_end`, `recording_stopped` — the beat
+  that marks where the recording is cut). Office hours were removed from the
+  product (replaced by the in-session MCQs, owner 2026-07-29); the
+  `office_hours_open`/`close` assets went with them.
 - `timekeeping/` — time-check callouts (`halfway`, `five_min_warning`,
   `wrap_up`)
 
