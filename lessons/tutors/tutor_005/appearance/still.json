@@ -35,7 +35,6 @@
   },
   "accessories": [
     "tortoiseshell half-moon reading glasses worn low",
-    "hardcover ledger with a ribbon marker",
     "leather-strap dress watch"
   ],
   "presence": {
@@ -82,5 +81,9 @@
     }
   },
   "_matches_render": "Adjusted to match the APPROVED render in renders/ (owner, 2026-07-29): no fountain pen, no ledger in hand, no visible watch. Describe the man in the picture, not the one first imagined - otherwise the next regeneration disagrees with the image already shipped.",
-  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe."
+  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe.",
+  "objects": [
+    "hardcover ledger with a ribbon marker"
+  ],
+  "_accessories_vs_objects": "accessories = WORN ONLY, and portrait prompts may use them freely. objects = things this tutor teaches with; they belong in environment/classroom shots resting on a surface, and must NEVER enter a headshot or studio prompt. The two were one list, which is why held props kept reappearing: any template reaching into it could pull out a cash tin or a phone."
 }

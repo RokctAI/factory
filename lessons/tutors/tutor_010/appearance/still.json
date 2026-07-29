@@ -35,9 +35,7 @@
   },
   "accessories": [
     "wide-brim bush hat",
-    "binoculars on a worn strap",
-    "compass",
-    "battered field notebook with a pencil stub"
+    "binoculars on a worn strap"
   ],
   "presence": {
     "posture": "one boot up on a rock, arm resting on the knee, pointing out to the horizon; crouches to pick up soil and crumble it",
@@ -83,5 +81,10 @@
     }
   },
   "_hands_rule": "No held objects in any portrait prompt. The original generator inserted accessory #2 into a 'Holding one simple item' sentence regardless of whether it could be held, which is how a beaded wristband, a bangle, a watch and a pencil behind the ear all ended up 'held'. Objects belong in environment shots, on a surface.",
-  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe."
+  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe.",
+  "objects": [
+    "compass",
+    "battered field notebook with a pencil stub"
+  ],
+  "_accessories_vs_objects": "accessories = WORN ONLY, and portrait prompts may use them freely. objects = things this tutor teaches with; they belong in environment/classroom shots resting on a surface, and must NEVER enter a headshot or studio prompt. The two were one list, which is why held props kept reappearing: any template reaching into it could pull out a cash tin or a phone."
 }

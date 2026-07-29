@@ -34,9 +34,7 @@
     ]
   },
   "accessories": [
-    "thin gold bangles",
-    "large-display desk calculator",
-    "highlighter and a real household document - a till slip, municipal bill or building plan"
+    "thin gold bangles"
   ],
   "presence": {
     "posture": "stands beside the document, highlighter poised, drawing the eye to one line at a time; small deliberate gestures",
@@ -83,5 +81,10 @@
   "_anchor_rule": "Anchors describe what is WORN or physically true of this person - never something held. An anchor is the strongest signal in this file, so a held object here puts it back in the hands whatever the prompt says.",
   "_no_glasses": "Owner 2026-07-29: no eyewear on this tutor. Five of twelve wore glasses, which flattened the line-up. The first accessory and the anchor were REPLACED rather than deleted - an empty slot lets the model invent something different every run.",
   "_hands_rule": "No held objects in any portrait prompt. The original generator inserted accessory #2 into a 'Holding one simple item' sentence regardless of whether it could be held, which is how a beaded wristband, a bangle, a watch and a pencil behind the ear all ended up 'held'. Objects belong in environment shots, on a surface.",
-  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe."
+  "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe.",
+  "objects": [
+    "large-display desk calculator",
+    "a municipal bill and a highlighter"
+  ],
+  "_accessories_vs_objects": "accessories = WORN ONLY, and portrait prompts may use them freely. objects = things this tutor teaches with; they belong in environment/classroom shots resting on a surface, and must NEVER enter a headshot or studio prompt. The two were one list, which is why held props kept reappearing: any template reaching into it could pull out a cash tin or a phone."
 }

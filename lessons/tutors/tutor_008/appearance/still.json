@@ -35,9 +35,7 @@
   },
   "accessories": [
     "bucket hat",
-    "thin chain",
-    "phone in hand as a prop",
-    "coins or a folded note when he talks price"
+    "thin chain"
   ],
   "presence": {
     "posture": "never still - counts on his fingers, sketches a curve in the air, steps toward the camera to make a point",
@@ -84,5 +82,10 @@
   },
   "_hands_rule": "No held objects in any portrait prompt. The original generator inserted accessory #2 into a 'Holding one simple item' sentence regardless of whether it could be held, which is how a beaded wristband, a bangle, a watch and a pencil behind the ear all ended up 'held'. Objects belong in environment shots, on a surface.",
   "_language_group_note": "The cultural/language group this character belongs to. Recorded explicitly because it was previously only inferable from the surname, so a rename could change it silently. It does NOT alter the face - heritage drives appearance; language_group drives naming, and any traditional dress named in wardrobe.",
-  "_dress_note": "Traditional Tsonga fabric by owner request, named specifically: NCEKA (plural minceka), the bright printed cloth of Tsonga/Shangaan dress. Men drape it over one shoulder traditionally and, as modern daywear, have it tailored into a shirt - which is why it works on a teacher every day rather than reading as costume. Naming the real fabric and its real palette is what separates this from generic 'African print', the mistake this file already made once with tutor_006's shweshwe."
+  "_dress_note": "Traditional Tsonga fabric by owner request, named specifically: NCEKA (plural minceka), the bright printed cloth of Tsonga/Shangaan dress. Men drape it over one shoulder traditionally and, as modern daywear, have it tailored into a shirt - which is why it works on a teacher every day rather than reading as costume. Naming the real fabric and its real palette is what separates this from generic 'African print', the mistake this file already made once with tutor_006's shweshwe.",
+  "objects": [
+    "a phone on the table",
+    "a folded banknote"
+  ],
+  "_accessories_vs_objects": "accessories = WORN ONLY, and portrait prompts may use them freely. objects = things this tutor teaches with; they belong in environment/classroom shots resting on a surface, and must NEVER enter a headshot or studio prompt. The two were one list, which is why held props kept reappearing: any template reaching into it could pull out a cash tin or a phone."
 }
