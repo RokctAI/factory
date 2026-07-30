@@ -38,6 +38,11 @@ same mistakes:
 - **Name real places and objects** - a South African kitchen, a school jersey,
   a minibus taxi - never generic "African" scenery. Specificity is what keeps
   it from becoming pastiche.
+- **A device rests on something named.** "Propped-up" describes the result,
+  not the support, and the model answers it with a phone standing upright on
+  nothing. Say what it leans against - a stack of exercise books, a small
+  folding stand - and say it is touching them. Same reason every screen is
+  angled away: state the physical fact, not the intention.
 - **Nobody lounging.** Learners are shown upright and purposeful - at a
   table, book open, pen in hand. No lying on beds, no slouching, no
   night-time bedrooms, no idle scrolling. This is a study product: the
