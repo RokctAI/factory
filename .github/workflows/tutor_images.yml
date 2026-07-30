@@ -13,8 +13,13 @@ on:
     paths:
       - 'lessons/tutors/*/appearance/**'
       - 'lessons/assistants/*/appearance/**'
+      # Whatever the image model hands you - Gemini returns .jpg or
+      # .png depending on the export. All four are accepted by
+      # tutor_images.py's RASTER list.
       - 'lessons/onboarding/*/*.png'
       - 'lessons/onboarding/*/*.jpg'
+      - 'lessons/onboarding/*/*.jpeg'
+      - 'lessons/onboarding/*/*.webp'
       - '!lessons/tutors/*/appearance/renders/**'
       - '!lessons/assistants/*/appearance/renders/**'
       - '!lessons/onboarding/*/renders/**'
