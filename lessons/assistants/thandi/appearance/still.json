@@ -13,12 +13,13 @@
     "gender": "female",
     "age_range": "23-28",
     "nationality": "South African",
-    "heritage": "Indian South African",
-    "_heritage_note": "a deliberate casting choice so the three hosts are visibly different people; not inferred from any name",
+    "heritage": "Black South African",
+    "language_group": "isiXhosa (Xhosa)",
+    "_heritage_note": "Corrected 2026-07-30: she was cast Indian South African while carrying an isiXhosa name. The name is canonical (the app was fixed TO Thandi from this roster) and no portrait existed yet, so the appearance changed. Xhosa specifically: it is the second-largest language group in the country and was absent from all fifteen personas.",
     "build": "average height, calm and still in the way she holds herself"
   },
-  "face": "oval face with soft features, large dark brown eyes with long lashes, straight nose, full lips, warm light-brown skin with a golden undertone, a small beauty spot at the right jawline",
-  "hair": "long straight dark brown hair, usually loose with one side tucked behind the ear, sometimes a low ponytail; no fringe",
+  "face": "oval face with soft features, large dark brown eyes with long lashes, broad nose with a rounded tip, full lips, deep brown skin with a warm undertone, a small beauty spot at the right jawline",
+  "hair": "short tapered natural hair, dense and neatly shaped, a little longer on top; no braids, no weave - deliberately different from the other two hosts",
   "wardrobe": {
     "default": "simple long-sleeve top in dusty pink, teal or charcoal, sleeves pushed up; sometimes a light open overshirt; nothing corporate, nothing branded",
     "alternates": [
@@ -27,7 +28,7 @@
     ]
   },
   "accessories": [
-    "small gold nose stud",
+    "small gold stud earrings",
     "thin gold chain necklace",
     "plain slim watch"
   ],
@@ -38,14 +39,14 @@
     "spoken_register": "clear, unhurried South African English, gently warm; never bubbly, never formal"
   },
   "continuity_anchors": [
-    "long straight dark hair tucked behind one ear",
-    "small gold nose stud",
+    "short tapered natural hair",
+    "small gold stud earrings",
     "beauty spot at the right jawline",
     "thin gold chain necklace"
   ],
   "_continuity_note": "the features that MUST survive every regeneration - if these read the same, the audience accepts it as the same person",
   "prompts": {
-    "headshot": "Editorial headshot of a 23-28 year old Indian South African woman, a friendly session host (not a teacher). oval face with soft features, large dark brown eyes with long lashes, straight nose, full lips, warm light-brown skin with a golden undertone, a small beauty spot at the right jawline. Hair: long straight dark brown hair, usually loose with one side tucked behind the ear, sometimes a low ponytail; no fringe. Wearing simple long-sleeve top in dusty pink, teal or charcoal, sleeves pushed up; sometimes a light open overshirt; nothing corporate, nothing branded. small gold nose stud. Expression: calm and encouraging, a small closed-mouth smile - the face of someone who is not going to rush you. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred warm interior background. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+    "headshot": "Editorial headshot of a 23-28 year old Black South African woman, a friendly session host (not a teacher). oval face with soft features, large dark brown eyes with long lashes, broad nose with a rounded tip, full lips, deep brown skin with a warm undertone, a small beauty spot at the right jawline. Hair: short tapered natural hair, dense and neatly shaped, a little longer on top; no braids, no weave - deliberately different from the other two hosts. Wearing simple long-sleeve top in dusty pink, teal or charcoal, sleeves pushed up; sometimes a light open overshirt; nothing corporate, nothing branded. small gold stud earrings. Expression: calm and encouraging, a small closed-mouth smile - the face of someone who is not going to rush you. Chest-up, slight three-quarter turn, eyes to camera. large softbox key at 45 degrees, subtle hair light, grey seamless or softly blurred warm interior background. full-frame mirrorless, 85mm f/1.8. photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
   },
   "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, corporate stock-photo headset, call-centre imagery, generic stock-photo smile",
   "_negative_note": "the stock-photo and call-centre terms are deliberate: prompts for a 'host' drift toward headset-wearing support-agent imagery, which is the wrong register",
@@ -59,5 +60,6 @@
         "4:5 (card)"
       ]
     }
-  }
+  },
+  "_distinct_from_other_hosts": "Bianca: shoulder-length dark curls, freckling, silver studs. Mandy: box braids in a half-up bun, gold hoops. Thandi: short tapered natural, gold studs. A student meets only their own grade's host, but the three appear together on the team screen - they must read as three different people."
 }
