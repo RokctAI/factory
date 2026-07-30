@@ -38,6 +38,12 @@ same mistakes:
 - **Name real places and objects** - a South African kitchen, a school jersey,
   a minibus taxi - never generic "African" scenery. Specificity is what keeps
   it from becoming pastiche.
+- **No two slides in a branch may photograph the same moment.** Differ on at
+  least two of: setting, time of day, camera position, and how many people are
+  in frame. Slides 01 and 03 first came back as the same picture - same boy,
+  same table, same window - because the prompts differed only in lighting and
+  in an idea ("going back over an earlier lesson"). A model cannot render
+  "earlier". Make the difference photographable, or it will not exist.
 - **A device rests on something named.** "Propped-up" describes the result,
   not the support, and the model answers it with a phone standing upright on
   nothing. Say what it leans against - a stack of exercise books, a small

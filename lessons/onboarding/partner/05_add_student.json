@@ -8,8 +8,8 @@
   "audience": "a parent or guardian setting up for a learner",
   "headline_in_app": "Who are you setting this up for?",
   "caption_in_app": "Partner branch: the parent names the learner they will be accountable for (LMS Partner Link).",
-  "intent": "naming the child this account is for",
-  "prompt": "A single photograph, one continuous scene, filling the whole frame. A South African parent and their teenager sitting together at a table, the parent turned toward the child and listening while the child talks. A phone face-down on the table between them. Evening light. The image is about the pair, not the device: two people agreeing to something together. photorealistic documentary photograph, natural available light, real skin texture, candid and unposed, shot on a full-frame camera, 35mm, f/2.8, true-to-life colour.",
+  "intent": "naming the learner this account is for - the pair deciding together, outdoors, before anything is set up",
+  "prompt": "A single photograph, one continuous scene, filling the whole frame. A South African parent and their teenager standing together in the front yard in warm late-afternoon light, just home from school - the teenager still has a school bag over one shoulder, uniform shirt untucked. They are turned toward each other mid-conversation, the parent listening. A modest house and a low garden wall behind them. No phone, no tablet in frame. Two people agreeing on something together.",
   "negative_prompt": "any text, letters, numbers, words, signage, logos, watermarks, user-interface elements, phone screens showing apps, charts or graphs, cartoon, illustration, 3d render, cgi, airbrushed skin, plastic sheen, cinematic colour grade, film still look, motion blur, lens flare, extra fingers, malformed hands, distorted faces, stock-photo smiles, American classrooms, generic 'African' styling, collage, multiple panels, split screen, side-by-side frames, contact sheet, grid of images, storyboard, several phone mockups, device frames, app screenshots, before-and-after, picture-in-picture, borders, margins, framed print",
   "_pipeline_only": {
     "_note": "NOT model input - read by the render script and the app.",
@@ -25,5 +25,6 @@
       "slide_1080x1920": "9:16 full-bleed phone slide",
       "card_1080x1350": "4:5 crop for a smaller surface"
     }
-  }
+  },
+  "_distinct_from_siblings": "Rewritten 2026-07-30: this was a parent-and-teenager pair at a table in the evening, which is exactly what partner/01 already is. Moved outdoors to late afternoon with the school bag still on, so the two slides no longer photograph the same moment. Audited against every other slide in the branch on setting, time, camera and cast."
 }
