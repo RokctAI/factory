@@ -38,6 +38,11 @@ same mistakes:
 - **Name real places and objects** - a South African kitchen, a school jersey,
   a minibus taxi - never generic "African" scenery. Specificity is what keeps
   it from becoming pastiche.
+- **Nobody lounging.** Learners are shown upright and purposeful - at a
+  table, book open, pen in hand. No lying on beds, no slouching, no
+  night-time bedrooms, no idle scrolling. This is a study product: the
+  posture in the picture is the habit being taught, and slide three is
+  reached before the student has watched a single lesson.
 - **Photograph, not film still**: no cinematic grade, no motion blur, no flare.
 
 ## One thing to fix elsewhere
