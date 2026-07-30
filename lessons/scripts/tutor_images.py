@@ -75,6 +75,19 @@ ONBOARDING_CROP = {"focus_x": 0.5, "focus_y": 0.45, "face_height": None,
                    "zoom": 1.0}
 ONBOARDING_DIR = LESSONS / "onboarding"
 
+# The generator signs its work. A Gemini render carries a four-point sparkle
+# which, measured on a real 768x1376 source, sits at roughly 83-87% across and
+# 90-93% DOWN - inset from the corner, not in it. So the cheap cut is the
+# bottom: trimming past ~90% of the height removes it, where excluding it from
+# the right would cost 17% of the width.
+#
+# The trim is applied BEFORE cropping, so the rendition is computed against the
+# clean region - which is what makes the crop appear to zoom in slightly rather
+# than leaving the mark near an edge. Override per slide by putting
+# "watermark_trim": {"bottom": 0.0, "right": 0.0} in the slide JSON's
+# _pipeline_only block; zeros disable it for a source with no mark.
+WATERMARK_TRIM = {"bottom": 0.12, "right": 0.0}
+
 
 def find_source(appearance: Path):
     """The portrait to derive from: source.* by convention, else the largest
@@ -208,6 +221,21 @@ def process_onboarding(check_only=False):
             if src is None:
                 continue
             img = Image.open(src).convert("RGB")
+            # Trim the generator's watermark off before anything else, so every
+            # rendition is derived from the clean region.
+            trim = dict(WATERMARK_TRIM)
+            try:
+                cfg = json.loads(spec.read_text(encoding="utf-8"))
+                trim.update((cfg.get("_pipeline_only") or {})
+                            .get("watermark_trim") or {})
+            except (ValueError, OSError):
+                pass
+            full_w, full_h = img.size
+            safe = (0, 0,
+                    round(full_w * (1 - trim.get("right", 0))),
+                    round(full_h * (1 - trim.get("bottom", 0))))
+            if safe[2] < full_w or safe[3] < full_h:
+                img = img.crop(safe)
             w, h = img.size
             out_dir = branch / "renders" / spec.stem
             results = {}
@@ -223,7 +251,9 @@ def process_onboarding(check_only=False):
             if not check_only:
                 (out_dir / "manifest.json").write_text(json.dumps({
                     "slide": spec.stem, "branch": branch.name,
-                    "source": src.name, "source_size": [w, h],
+                    "source": src.name, "source_size": [full_w, full_h],
+                    "watermark_trim": trim,
+                    "clean_region": list(safe),
                     "source_sha1": hashlib.sha1(src.read_bytes()).hexdigest()[:12],
                     "renditions": results,
                     "_comment": [
@@ -234,7 +264,7 @@ def process_onboarding(check_only=False):
                 }, indent=2) + "\n", encoding="utf-8")
             rows.append({"subject": f"{branch.name}/{spec.stem}",
                          "status": "ok", "source": src.name,
-                         "source_size": [w, h],
+                         "source_size": [full_w, full_h],
                          "renditions": list(results)})
     return rows
 

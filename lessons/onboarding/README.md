@@ -46,10 +46,15 @@ same mistakes:
   the only representation. A learner opening the app should be able to find
   themselves in the carousel.
 
-- **Watch for the generator's own watermark.** Gemini renders can carry a
-  sparkle mark, usually bottom-right. It survives cropping into the 9:16 slide,
-  so a marked source has to be regenerated - check the corners before saving a
-  keeper.
+- **The generator's watermark is trimmed for you.** A Gemini render carries a
+  four-point sparkle which, measured on a real 768x1376 source, sits at about
+  83-87% across and 90-93% DOWN - inset from the corner, not in it. The render
+  script trims the bottom 12% BEFORE cropping, so every rendition comes from the
+  clean region and the framing tightens slightly instead of keeping a mark near
+  the edge. Trimming the bottom is the cheap cut; excluding it from the right
+  would cost 17% of the width. A marked source no longer needs regenerating.
+  Override per slide with `"watermark_trim": {"bottom": 0, "right": 0}` in the
+  slide's `_pipeline_only` block - zeros disable it for a clean source.
 - **No two slides in a branch may photograph the same moment.** Differ on at
   least two of: setting, time of day, camera position, and how many people are
   in frame. Slides 01 and 03 first came back as the same picture - same boy,
