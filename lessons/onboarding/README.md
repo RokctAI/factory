@@ -55,6 +55,17 @@ same mistakes:
   would cost 17% of the width. A marked source no longer needs regenerating.
   Override per slide with `"watermark_trim": {"bottom": 0, "right": 0}` in the
   slide's `_pipeline_only` block - zeros disable it for a clean source.
+- **Say what the subject is WEARING.** Slide 03 asked for an over-the-shoulder
+  view and named "a school shirt on a hook" as set dressing - so the model hung
+  the shirt on the hook and rendered the boy bare-backed. Set dressing is not
+  clothing. This matters most on rear and close views, where the camera points
+  at exactly the part a model will leave undressed if unspecified.
+
+- **Generate each slide in a FRESH model session.** Slides 03 and 04 came back
+  as the same boy in the same bedroom at the same desk with the same shirt on
+  the same hook, because the image model carried the previous scene over as
+  context. 04's own prompt asks for a different learner in a different place.
+  One slide per session, or the carousel becomes one photo shoot.
 - **No two slides in a branch may photograph the same moment.** Differ on at
   least two of: setting, time of day, camera position, and how many people are
   in frame. Slides 01 and 03 first came back as the same picture - same boy,
