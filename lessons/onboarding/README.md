@@ -38,6 +38,18 @@ same mistakes:
 - **Name real places and objects** - a South African kitchen, a school jersey,
   a minibus taxi - never generic "African" scenery. Specificity is what keeps
   it from becoming pastiche.
+- **Cast every slide explicitly.** "A South African teenager" is not casting -
+  the model defaults, and the first six slides all came back Black and male.
+  Name the population group and the gender in the prompt. The set is spread
+  Black 4 / Coloured 3 / Indian 3 / White 2 across the twelve, with a mix of
+  mothers and fathers: majority representation is correct, it just cannot be
+  the only representation. A learner opening the app should be able to find
+  themselves in the carousel.
+
+- **Watch for the generator's own watermark.** Gemini renders can carry a
+  sparkle mark, usually bottom-right. It survives cropping into the 9:16 slide,
+  so a marked source has to be regenerated - check the corners before saving a
+  keeper.
 - **No two slides in a branch may photograph the same moment.** Differ on at
   least two of: setting, time of day, camera position, and how many people are
   in frame. Slides 01 and 03 first came back as the same picture - same boy,
