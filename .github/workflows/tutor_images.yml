@@ -13,8 +13,11 @@ on:
     paths:
       - 'lessons/tutors/*/appearance/**'
       - 'lessons/assistants/*/appearance/**'
+      - 'lessons/onboarding/*/*.png'
+      - 'lessons/onboarding/*/*.jpg'
       - '!lessons/tutors/*/appearance/renders/**'
       - '!lessons/assistants/*/appearance/renders/**'
+      - '!lessons/onboarding/*/renders/**'
       - 'lessons/scripts/tutor_images.py'
     branches:
       - main
@@ -39,14 +42,14 @@ jobs:
 
       - name: Commit renditions
         run: |
-          if [ -n "$(git status --porcelain lessons/tutors lessons/assistants)" ]; then
+          if [ -n "$(git status --porcelain lessons/tutors lessons/assistants lessons/onboarding)" ]; then
             git config --global user.name "github-actions[bot]"
             git config --global user.email "github-actions[bot]@users.noreply.github.com"
             # -A over the two trees, not a renders/* glob: before any
             # assistant has a portrait that glob matches nothing and git
             # exits 128. The script only ever writes under appearance/
             # renders/, so this stages exactly the same files.
-            git add -A lessons/tutors lessons/assistants
+            git add -A lessons/tutors lessons/assistants lessons/onboarding
             git commit -m "🤖 [CI] Tutor images: derived app renditions from source portraits [skip ci]"
             git push
           else
