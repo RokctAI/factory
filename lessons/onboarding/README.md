@@ -49,6 +49,18 @@ same mistakes:
   nothing. Say what it leans against - a stack of exercise books, a small
   folding stand - and say it is touching them. Same reason every screen is
   angled away: state the physical fact, not the intention.
+- **Name the setting on every slide, especially a tight crop.** Slide 02 asked
+  for a "close three-quarter view" and never said where - so the model chose,
+  and an unspecified teenager with a phone became a teenager sitting on a bed.
+  A tight crop shows less, which means the little that IS visible carries all
+  the placing.
+
+- **Decide whether the carousel follows ONE student.** Nothing in these prompts
+  asks for continuity of person, so slides 01 and 02 came back as two different
+  boys. Three different learners is a legitimate choice; the same learner
+  across three slides is a stronger one, and it needs either a shared physical
+  description in each prompt or the approved slide-01 render used as a
+  reference image.
 - **Nobody lounging.** Learners are shown upright and purposeful - at a
   table, book open, pen in hand. No lying on beds, no slouching, no
   night-time bedrooms, no idle scrolling. This is a study product: the
