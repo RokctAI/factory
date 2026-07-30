@@ -66,6 +66,13 @@ same mistakes:
   the same hook, because the image model carried the previous scene over as
   context. 04's own prompt asks for a different learner in a different place.
   One slide per session, or the carousel becomes one photo shoot.
+- **A person and their house travel together.** A different learner means a
+  different home. Slides 03 and 04 came back as two different-looking boys - the
+  hair did not even match - in the SAME bedroom, at the same desk, under the
+  same shelf, with the same shirt on the same hook. Either it is one child and
+  everything about them matches, or it is a different child in a different
+  place. Every slide now names a home no other slide uses, checked
+  programmatically: no setting is shared by two different people.
 - **No two slides in a branch may photograph the same moment.** Differ on at
   least two of: setting, time of day, camera position, and how many people are
   in frame. Slides 01 and 03 first came back as the same picture - same boy,
