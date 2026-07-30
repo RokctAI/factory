@@ -15,8 +15,8 @@
     "why": "text alone produces a different person every run; the reference locks the face. Never pull a still out of a clip - video frames are soft, motion-blurred and compressed."
   },
   "identity_lock": [
-    "long straight dark hair tucked behind one ear",
-    "small gold nose stud",
+    "short tapered natural hair",
+    "small gold stud earrings",
     "beauty spot at the right jawline",
     "thin gold chain necklace"
   ],
@@ -38,10 +38,12 @@
   },
   "shots": [
     {
-      "id": "thandi_welcome",
-      "purpose": "session welcome / advert, talking to camera",
-      "prompt": "Vertical 9:16 talking-to-camera clip. The person from the reference image, a session host welcoming a class. Energy: steady and reassuring; the host who makes a nervous student feel it is fine to ask. Delivery: clear, unhurried South African English, gently warm; never bubbly, never formal. sits or stands relaxed, leaning very slightly forward as if paying close attention; hands often resting one over the other, gesturing small when she speaks Background: a warm ordinary interior, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, catchlights in the eyes, shallow depth of field."
+      "id": "thandi_session_intro",
+      "purpose": "session opening, to camera",
+      "prompt": "Vertical 9:16 talking-to-camera clip. THE PERSON FROM THE REFERENCE IMAGE - do not restyle the face, hair, clothing or age. Energy: steady and reassuring; the host who makes a nervous student feel it is fine to ask Delivery: clear, unhurried South African English, gently warm; never bubbly, never formal Plain studio backdrop, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, real-photography look, 8 seconds."
     }
   ],
-  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, corporate stock-photo headset, call-centre imagery, generic stock-photo smile"
+  "negative_prompt": "face drifting from the reference image, changing age, changing skin tone, changing hairline, morphing wardrobe, warping hands, extra fingers, jittering eyes, lip-sync mismatch, whip pans, orbiting camera, speed ramps, slow motion, cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, corporate stock-photo headset, call-centre imagery, generic stock-photo smile",
+  "_identity_lock_note": "COPIED from still.json continuity_anchors - never edited here. The face lives in the reference render; duplicating its description is how the two files drift apart.",
+  "_no_face_description": "This file must NEVER describe the face, hair, wardrobe or age - that belongs to still.json and the reference render."
 }

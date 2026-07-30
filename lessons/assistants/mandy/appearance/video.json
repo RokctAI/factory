@@ -21,8 +21,8 @@
   "identity_lock": [
     "shoulder-length box braids, half-up loose bun",
     "small gold hoop earrings",
-    "small mole below the left cheekbone",
-    "plain crew-neck top in a warm colour"
+    "gap between the upper front teeth",
+    "small mole high on the right cheek"
   ],
   "performance": {
     "energy": "approachable and unhurried; the person who makes a nervous student feel it is fine to ask",
@@ -44,13 +44,10 @@
     {
       "id": "mandy_session_intro",
       "purpose": "session opening, to camera",
-      "prompt": "Vertical 9:16 talking-to-camera clip. A 24-29 year old Black South African woman, average height, relaxed easy posture, unstudied, round-oval face with full cheeks, warm dark brown eyes, broad genuine smile with slightly uneven front teeth, smooth deep-brown skin with warm undertone, a small mole below the left cheekbone. Hair: shoulder-length box braids, usually half-up in a loose bun with strands escaping at the temples. Wearing plain crew-neck top in mustard, rust or olive, sometimes an open denim shirt over it; nothing corporate, nothing branded. Energy: approachable and unhurried; the person who makes a nervous student feel it is fine to ask. Delivery: warm, clear, conversational; friendly without being bubbly. stands or sits relaxed, shoulders loose, head tilted slightly as if listening; one hand gesturing small and close to the body. Background: the same plain seamless studio backdrop as the reference still, bare and evenly lit. Head and shoulders in the upper two thirds, clear space below for captions. Natural micro-movement, photorealistic editorial portrait photography, natural skin texture with visible pores and fine lines, subtle asymmetry, no beauty retouching, no plastic smoothing, true-to-life skin undertones, eyes alive and focused ON the lens rather than through it, moist eye surface with a bright asymmetric catchlight from the key light and a weaker one from the fill, visible iris striations and limbal ring, individual lower lashes, faint pink at the inner corner and a visible tear line, slight crinkle of the muscle at the outer corners, shallow depth of field."
-    },
-    {
-      "id": "mandy_listening",
-      "purpose": "break/chat b-roll, not to camera",
-      "prompt": "The person from the reference image in the same studio, stands or sits relaxed, shoulders loose, head tilted slightly as if listening; one hand gesturing small and close to the body, listening and nodding slightly, then glancing to lens. Natural light quality, static camera or slow push-in, 8 seconds."
+      "prompt": "Vertical 9:16 talking-to-camera clip. THE PERSON FROM THE REFERENCE IMAGE - do not restyle the face, hair, clothing or age. Energy: approachable and unhurried; the person who makes a nervous student feel it is fine to ask Delivery: warm, clear, conversational; friendly without being bubbly Plain studio backdrop, softly out of focus. Head and shoulders in the upper two thirds, clear space below for captions. Natural handheld micro-movement, real-photography look, 8 seconds."
     }
   ],
-  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, call-centre headset, telephone headset, earpiece, corporate receptionist, secretary, reception desk, office cubicle, business suit, severe tight bun, name badge, lanyard, clipboard, stock-photo customer-service pose, hands clasped in front like a hostess, air-hostess styling, generic stock-photo smile, classroom, chalkboard, school desks"
+  "negative_prompt": "cartoon, illustration, 3d render, cgi, airbrushed skin, waxy skin, plastic sheen, over-saturated colours, HDR halos, extra fingers, malformed hands, distorted ears, text, watermark, logo, subtitles, teeth artefacts, dead eyes, glassy doll eyes, vacant thousand-yard stare, identical catchlights in both eyes, flat matte irises, eyes looking through the camera, call-centre headset, telephone headset, earpiece, corporate receptionist, secretary, reception desk, office cubicle, business suit, severe tight bun, name badge, lanyard, clipboard, stock-photo customer-service pose, hands clasped in front like a hostess, air-hostess styling, generic stock-photo smile, classroom, chalkboard, school desks",
+  "_identity_lock_note": "COPIED from still.json continuity_anchors - never edited here. The face lives in the reference render; duplicating its description is how the two files drift apart.",
+  "_no_face_description": "This file must NEVER describe the face, hair, wardrobe or age - that belongs to still.json and the reference render."
 }
