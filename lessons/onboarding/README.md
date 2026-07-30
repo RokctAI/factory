@@ -1,0 +1,48 @@
+# Onboarding slide imagery
+
+One JSON per onboarding slide, per branch. Hand the `prompt` field to an image
+model; `negative_prompt` and `framing` apply to every slide in the folder.
+
+    students/   the learner is setting up their own account
+    partner/    a parent or guardian is setting it up for a learner
+
+## Where the slides come from
+
+The shipped flow, not invented:
+`Users/onboarding/dart/lib/src/common/presentation/pages/intro/intro_page.dart`
+- welcome carousel: "Live classes, every day", "Know where you stand",
+  "Your library stays yours"
+- role choice: "Who is setting this up?"
+- grade capture: student branch only (a host-supplied slide)
+- done: "You're all set!"
+
+`headline_in_app` and `caption_in_app` are the copy that sits ON the image.
+That is why every prompt leaves the top third quiet and forbids text in the
+image itself.
+
+## Two branches, same three promises
+
+A learner is being told what their week will look like; a parent is being told
+what they will be able to see and what they are paying for. Same platform,
+different reader - so the same headline gets a different photograph.
+
+## Rules every prompt follows
+
+Carried over from the tutor appearance work, because the same model makes the
+same mistakes:
+
+- **No text, numbers, UI or logos in the image.** Models cannot write, and the
+  slide's own copy sits on top. Every phone screen in these prompts is angled
+  away or face-down for that reason.
+- **No held props unless named singly.** Hands are where image models fail.
+- **Name real places and objects** - a South African kitchen, a school jersey,
+  a minibus taxi - never generic "African" scenery. Specificity is what keeps
+  it from becoming pastiche.
+- **Photograph, not film still**: no cinematic grade, no motion blur, no flare.
+
+## One thing to fix elsewhere
+
+`intro_page.dart`'s first slide caption still reads "Follow Grandmaster and Big
+John" - names the roster no longer uses. The `caption_in_app` fields here carry
+the corrected wording ("the subject's expert and simplifier"); the app copy
+needs the same edit.

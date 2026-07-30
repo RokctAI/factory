@@ -1,0 +1,32 @@
+{
+  "slide": "welcome_1_live_classes",
+  "order": 1,
+  "branch": "students",
+  "_comment": [
+    "Image prompt for one onboarding slide. Hand the 'prompt'",
+    "string to the image model; 'negative_prompt' and 'framing'",
+    "apply to every slide in this folder.",
+    "Slides come from the shipped flow in onboarding_sdk's",
+    "intro_page.dart - headline and caption_in_app are the copy",
+    "that sits ON the image, so the image must leave room for it",
+    "and must contain no text of its own."
+  ],
+  "audience": "the learner setting up their own account",
+  "headline_in_app": "Live classes, every day",
+  "caption_in_app": "Follow the subject's expert and simplifier through CAPS-aligned lessons - live, then yours to rewatch.",
+  "intent": "the learner joining a live class from home, in the evening",
+  "prompt": "A South African teenager, about 16, sitting at a kitchen or dining table at home in the early evening, watching a live lesson on a propped-up phone or tablet - the screen turned away from camera so nothing on it is readable. Exercise book open, pen resting on the page. Warm indoor lamp light, curtains drawn on a dark window behind. Absorbed, leaning slightly forward, not smiling for the camera. An ordinary lived-in South African home, not a studio set. photorealistic documentary photograph, natural available light, real skin texture, candid and unposed, shot on a full-frame camera, 35mm, f/2.8, true-to-life colour.",
+  "negative_prompt": "any text, letters, numbers, words, signage, logos, watermarks, user-interface elements, phone screens showing apps, charts or graphs, cartoon, illustration, 3d render, cgi, airbrushed skin, plastic sheen, cinematic colour grade, film still look, motion blur, lens flare, extra fingers, malformed hands, distorted faces, stock-photo smiles, American classrooms, generic 'African' styling",
+  "framing": {
+    "aspect_ratios": [
+      "9:16 (phone slide, full bleed)",
+      "4:5 (card)"
+    ],
+    "composition": "subject in the lower two thirds, calm uncluttered space in the upper third where the slide's headline and caption sit - the image must never compete with the copy",
+    "safe_area": "keep the top 28% and bottom 18% visually quiet: the headline sits above, the button below"
+  },
+  "renditions_wanted": {
+    "slide_1080x1920": "9:16 full-bleed phone slide",
+    "card_1080x1350": "4:5 crop for a card or a smaller surface"
+  }
+}
