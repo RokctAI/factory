@@ -133,3 +133,4 @@
 | 4._whispers_of_wilderness_08f40f | poetry | 4. Whispers of Wilderness | pending_approval | groq | GROQ-30595121807 | — | 2026-07-31 01:00 |
 | 1._cosmic_dreams_95b9f6 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-30605171521 | — | 2026-07-31 04:50 |
 | 3._echoes_of_silence_3f10c6 | poetry | 3. Echoes of Silence | pending_approval | groq | GROQ-30615507456 | — | 2026-07-31 08:13 |
+| 1._cosmic_dreams_400c48 | poetry collection | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-01 20:52 |
