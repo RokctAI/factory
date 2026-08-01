@@ -136,3 +136,4 @@
 | 1._cosmic_dreams_400c48 | poetry collection | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-01 20:52 |
 | forgotten_cities_38b131 | poetry | Forgotten Cities | pending_approval | groq | GROQ-30718668744 | — | 2026-08-01 21:13 |
 | echoes_in_the_night_511617 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30720863112 | — | 2026-08-01 22:17 |
+| beyond_the_starlight_d5a400 | poetry | Beyond the Starlight | pending_approval | groq | GROQ-30723255608 | — | 2026-08-01 23:24 |
