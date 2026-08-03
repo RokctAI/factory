@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the 'mirror' between the debtors and creditors systems: what stays the same, and what reverses?",
+      "expected_answer": "The architecture is identical: personal accounts per name posted daily, a control account fed by monthly journal totals, and the lock that the list of personal balances must equal control. What reverses is the direction of the debt and therefore every side: debtors are assets growing on the debit side (they owe us); creditors are liabilities growing on the credit side (we owe them), with returns reversing each system's directions."
+    },
+    {
+      "id": "cc2",
+      "question": "Why does the Creditors Journal have no cost of sales column, when the Debtors Journal needed one?",
+      "expected_answer": "The two-truths pair belongs to selling: goods leave at cost while the customer owes selling price, so both must be recorded. Buying is one truth — the shelf loads at the cost actually owed. Returns to suppliers likewise move goods at cost only, so no cost-of-sales adjustment ever arises on the creditors side."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the three-document match and what each mismatch protects the business against.",
+      "expected_answer": "Before recording or paying, the order (what we asked for), the delivery note (what actually arrived, checked and signed) and the invoice (what the supplier claims) must tell one story. An invoice with no matching order catches unauthorised purchases; an invoice billing more than was delivered catches paying for goods never received — mismatches become debit-note queries, not payments."
+    }
+  ]
+}
