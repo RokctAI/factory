@@ -20,7 +20,9 @@ used its questions; lesson → which real papers back its examples).
    and usable (Testpapers, SA Exam Papers, WCED ePortal — verify current terms of use/robots.txt before
    scraping any of them, same diligence already applied to the Musina tender scraper). Store the source
    papers (PDF or extracted text) somewhere sensible — check if `lessons/curriculum/` or a new
-   `lessons/past_papers/` directory fits the existing structure better.
+   `lessons/past_papers/` directory fits the existing structure better. *(Resolved: the store lives at
+   `lessons/curriculum/CAPS/past_papers/` — originally `lessons/past_papers/`, moved under its
+   curriculum family 2026-08-03.)*
 2. **Question extraction + topic matching**: parse each paper into individual questions, then match each
    question to the closest existing lesson topic/subtopic in `caps_seed.json`'s subject/grade/topic
    taxonomy — this is a real content-understanding task, likely needing an AI pass (Groq/Jules, same
