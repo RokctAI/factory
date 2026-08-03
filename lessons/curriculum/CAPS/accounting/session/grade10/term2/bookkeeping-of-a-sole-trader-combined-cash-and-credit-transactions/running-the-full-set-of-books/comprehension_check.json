@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the routing system: the two questions that send any transaction to its journal, and why receipts from debtors and payments to creditors never touch the Sales or Trading Stock columns.",
+      "expected_answer": "Ask whether money moved and in which direction; if no money moved, ask what happened (goods on trust out/in, goods back, or an exception for the GJ). Receipts from debtors settle a debt whose sale was already recorded in the DJ, so they strike Bank and Debtors Control only; payments to creditors settle purchases already recorded in the CJ, so they strike Bank and Creditors Control only."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the three layers of proof that closed the combined month, and what each layer can catch that the others cannot.",
+      "expected_answer": "Each journal cross-casts before posting (catching errors inside a journal); both control accounts are compared with their lists (catching detail-versus-summary errors per street); and the trial balance levels at R32 500 (catching arithmetic double-entry failures across the whole ledger). Wrong-account-right-side errors escape the trial balance but can surface in the reconciliations, and vice versa."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, describe the owner's Friday walk and how each stop pairs a physical check with a record.",
+      "expected_answer": "Till counted against the day's analysis column, then banked intact; shelf sample counted against the Trading Stock balance's claim; debtors list read for limits and ageing debts; supplier statements agreed to their pages with payments scheduled on terms. Every stop tests reality against a record — control is only possible because the books exist."
+    }
+  ]
+}
