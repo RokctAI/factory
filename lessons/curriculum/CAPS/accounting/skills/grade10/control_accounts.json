@@ -30,5 +30,82 @@
       "topic": "BOOKKEEPING OF THE SOLE TRADER: COMBINED CASH AND CREDIT TRANSACTIONS",
       "subtopic": "Analyse control accounts (debtors and creditors); accounting-equation analysis"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Debtors Control opens at R15 400 (debit). Post: DJ total R48 200, receipts from debtors R31 500, debtors allowances R2 300, bad debts R900. The closing balance is:",
+      "options": [
+        "R28 900 debit",
+        "R34 700 debit",
+        "R63 600 debit",
+        "R27 100 credit"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "At month end, the Debtors Control balance must agree with:",
+      "options": [
+        "The total of the list of individual debtors' balances from the Debtors Ledger",
+        "The total of the Cash Receipts Journal",
+        "The Bank account balance",
+        "The Creditors Control balance"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A control account is a one-account summary of a whole group of people the business deals with. The Debtors Control account in the general ledger carries the totals for all debtors as a group, while each debtor's personal detail lives in a separate book, the Debtors Ledger. The rule that runs everything: whatever is posted to the personal accounts in detail must be posted to the control account in total - journal totals only, never individual invoices.\n\nDebtors are an asset, so the account grows on the debit side and shrinks on the credit side. For every entry, ask one question: did this event make debtors owe us more, or less? Credit sales (the Debtors Journal total) make debtors owe more - debit the control account. Everything that reduces the debt goes on the credit side: payments received from debtors (the debtors column of the Cash Receipts Journal), goods returned or allowances granted (the Debtors Allowances Journal), and bad debts written off. A bad debt is credited even though no money arrives - the business stops counting an amount it will never collect, and the contra account is Bad Debts, an expense.\n\nBalance the account like any ledger account: total both sides, insert the balancing figure as \"Balance c/d\", and bring it down. A debit balance states what all debtors together still owe.\n\nThe pay-off is the built-in check. At month end, list every individual debtor's balance from the Debtors Ledger and add the list. That total must equal the control account balance - two independent routes built from the same transactions. If they differ, an error exists somewhere: an invoice missed in a journal total, a receipt posted twice, a casting error. The disagreement does not name the error; it proves one exists and tells you to hunt.\n\nThe Creditors Control account is the mirror image. Creditors are a liability, so the balance sits on the credit side: credit purchases make the business owe more (credit the account); payments to creditors and returns to suppliers make it owe less (debit the account). Its balance must agree with the list of creditors' balances from the Creditors Ledger. Master the debtors version, flip every side, and creditors comes free.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Why are individual invoices never posted to the Debtors Control account?",
+      "options": [
+        "The control account receives journal totals only; detail belongs in the personal accounts",
+        "Invoices are not valid source documents",
+        "Individual invoices are posted at year end only",
+        "Invoices belong in the Creditors Ledger"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "A bad debt of R900 is written off. The entry in Debtors Control is:",
+      "options": [
+        "Credit R900, contra account Bad Debts - debtors owe less even though no cash arrived",
+        "Debit R900, contra account Bank",
+        "Credit R900, contra account Sales",
+        "No entry - bad debts bypass the control account"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "The control balance is R28 900 but the debtors list totals R29 800. This tells the bookkeeper:",
+      "options": [
+        "An error exists somewhere between the detail and summary records and must be traced",
+        "The business lost R900",
+        "The difference must be written off as a bad debt",
+        "Small differences are acceptable"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "In the Creditors Control account, a payment to a supplier is posted as:",
+      "options": [
+        "A debit, because the liability decreases",
+        "A credit, because payments increase the liability",
+        "A debit to Debtors Control",
+        "No entry"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

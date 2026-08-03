@@ -42,5 +42,70 @@
       "topic": "MECHANICS: Vectors and scalars",
       "subtopic": "Physical quantities; vector vs scalar"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Which classification is correct?",
+      "options": [
+        "Vectors: displacement, force, velocity; scalars: speed, energy",
+        "Vectors: speed, energy; scalars: displacement, force, velocity",
+        "All five are vectors",
+        "All five are scalars"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "Forces of 30 N east and 50 N west act on the same object. The resultant is:",
+      "options": [
+        "20 N west",
+        "80 N west",
+        "20 N east",
+        "80 N east"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Physics measures with two kinds of quantities. A scalar is complete with a magnitude and unit alone: mass, time, temperature, distance, speed, energy. A vector needs a magnitude AND a direction to mean anything: force, displacement, velocity, acceleration - a 30 N push east is an entirely different event from 30 N west. The test that never fails: does a direction make sense and is it NEEDED to complete the meaning? Never classify by how \"powerful\" a quantity sounds - energy has no direction, and 500 J northward is nonsense.\n\nThe famous pairs. Distance (scalar) counts every metre of the path; displacement (vector) compares only finish to start. One full 400 m track lap: distance 400 m, displacement zero. Speed (scalar) is how fast; velocity (vector) is speed with its direction - so that lap's average speed is 5 m/s while its average velocity is zero, because displacement was zero. The scalar tells how much moving happened; the vector tells the net effect.\n\nVectors demand their own arithmetic because directions can cancel. Adding along a line uses a sign convention: choose a positive direction, declare it, and stick to it. With east positive, 30 N east is +30 and 50 N west is −50. Add: +30 + (−50) = −20 - and translate the sign back: 20 N WEST. The resultant is the single vector with the same effect as all the originals together. The scalar reflex answer, 80 N, ignores that the forces fought: 30 N of the westward force was cancelled, and only 20 N survives. State every vector answer with magnitude AND direction - a bare number is half an answer.\n\nSanity checks: the resultant points with the larger force, and opposing magnitudes subtract. Special cases as landmarks: same direction - magnitudes add (the only case where the scalar reflex is right); equal and opposite - resultant zero, the equilibrium behind Newton's first law. The method scales to any number of forces on a line: declare positive, convert each to a signed number, add, translate back. Grade 11 extends this to two dimensions and components; the direction test and the sign convention travel with you all the way to matric.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "An athlete completes one full 400 m lap in 80 s. Average speed and average velocity are:",
+      "options": [
+        "5 m/s and zero - displacement is zero",
+        "Both 5 m/s",
+        "Zero and 5 m/s",
+        "Both zero"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "With east chosen positive, 30 N east and 50 N west become:",
+      "options": [
+        "+30 and −50",
+        "+30 and +50",
+        "−30 and +50",
+        "−30 and −50"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "In which single case does adding magnitudes directly give the correct resultant?",
+      "options": [
+        "When all vectors point in the same direction",
+        "Whenever forces are large",
+        "When the object is stationary",
+        "Never"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

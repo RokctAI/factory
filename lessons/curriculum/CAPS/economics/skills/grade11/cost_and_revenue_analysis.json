@@ -26,5 +26,70 @@
       "topic": "DYNAMICS OF MARKETS: EFFECTS OF COSTS AND REVENUE",
       "subtopic": "Short-run costs: total, average and marginal; cost schedules and curves"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Total cost is R60 at 3 units and R76 at 4 units. The marginal cost of the fourth unit is:",
+      "options": [
+        "R16",
+        "R19",
+        "R76",
+        "R4"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "A price-taking firm sells at R30. The next unit has marginal cost R38. The firm should:",
+      "options": [
+        "Refuse the unit - it would reduce profit by R8",
+        "Produce it - revenue always helps",
+        "Produce it only if average cost is below R30",
+        "Halve its output"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Cost and revenue analysis turns a plain output-and-total-cost table into a production decision. Start with the cost side. Total cost at zero output is the fixed cost - rent and insurance are owed even when nothing is produced - and it hides inside every later total; the growing remainder is variable cost.\n\nTwo derived measures, two different verbs. Average cost = total cost DIVIDED by output: the cost per unit so far. It falls at first as the fixed cost spreads over more units, bottoms out, then rises as capacity strains - the U-shape. Marginal cost = the SUBTRACTION of neighbouring totals: what the last unit alone added. Marginal cost typically dips and then climbs steeply. Divide for average, subtract for marginal - mixing the verbs is the classic error.\n\nThe revenue side is simple for a price taker. At a market price of R30: total revenue climbs by R30 per unit; average revenue equals the price (revenue per unit sold can only be the selling price); and marginal revenue - the extra revenue from one more unit - is also R30 every time, because selling more does not move the market price. Graphed, that flat line at the price is the firm's demand line, the signature of perfect competition.\n\nThe decision rule: profit is maximised at the output where marginal revenue equals marginal cost - produce every unit whose MR is at least its MC, and refuse the first unit whose MC overtakes MR. Reason unit by unit: a unit bringing R30 at a marginal cost of R26 adds R4 of profit - produce it; a unit costing R38 against R30 destroys R8 - refuse it, even if the firm remains profitable overall. \"Still profitable\" is not the test; \"is the NEXT unit profitable\" is.\n\nVerify from both sides: the last unit produced must add profit (MC below MR) and the next one must subtract it (MC above MR). If time allows, confirm with the brute-force profit column - total revenue minus total cost at each output - which must peak at the same output the marginal rule selected. Two independent methods agreeing is proof, not luck. In Grade 12, perfect and imperfect market questions interrogate exactly this table - only the shape of the revenue side changes.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Average cost is calculated by, and marginal cost by:",
+      "options": [
+        "Dividing total cost by output; subtracting neighbouring total costs",
+        "Subtracting neighbouring totals; dividing by output",
+        "Both by dividing",
+        "Both by subtracting"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "For a price-taking firm, marginal revenue is constant because:",
+      "options": [
+        "Each extra unit sells at the unchanged market price",
+        "Costs are constant",
+        "The firm advertises",
+        "Output is limited"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Profit at 5 units is R48; producing a 6th unit (MC R38, MR R30) gives R40. The profit-maximising output is:",
+      "options": [
+        "5 units - the sixth unit destroys R8 of profit",
+        "6 units - profit is still positive",
+        "4 units - always stop before the peak",
+        "Cannot be determined"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

@@ -46,5 +46,82 @@
       "topic": "Consolidation of Grade 8 and 9 map skills",
       "subtopic": "Scale and measuring distance (line and ratio scales); coordinates to locate features"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Two points are 8,6 cm apart on a 1:50 000 map. The real distance is:",
+      "options": [
+        "4,3 km",
+        "43 km",
+        "0,43 km",
+        "8,6 km"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "On a 1:50 000 sheet, one centimetre of map represents:",
+      "options": [
+        "500 m of ground",
+        "50 m of ground",
+        "5 km of ground",
+        "50 km of ground"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "The ratio scale 1:50 000 means one unit of any length on the map represents 50 000 of the same units on the ground. It is unitless - measure in centimetres and multiply by 50 000, and the answer is in centimetres of real ground. Feel the size: 50 000 cm is 500 m, so every map centimetre is half a kilometre; two centimetres, one kilometre.\n\nThe standard calculation, four lines. One: measure (or receive) the map distance - point-centre to point-centre, to the nearest millimetre; at this scale each millimetre of sloppiness is 50 m of ground. Two: multiply by the scale factor - 8,6 cm × 50 000 = 430 000 cm. Three: walk the metric ladder - divide by 100 for metres (4 300 m), divide by 1 000 for kilometres (4,3 km). Four: state the answer WITH its unit, in the unit the question demands. The ladder chant: centi to metres, divide by a hundred; metres to kays, divide by a thousand.\n\nCurved distances - a winding road or river - defeat a rigid ruler: lay a string or paper-strip edge along the bends, mark the end, straighten it against the ruler, and read the total map distance; the arithmetic afterwards is identical. Memos accept a small range on curved measurements, so press the string into every bend rather than cutting corners.\n\nDifferent scale, same machine: on a 1:10 000 orthophoto, multiply by 10 000 instead - 8,6 cm is only 0,86 km. Never assume the scale; read it off the sheet, especially when a question moves between the topographic map and the orthophoto. And remember which is the LARGER scale: 1:10 000, because one ten-thousandth is the bigger fraction - larger scale, smaller area, more detail. The reverse question runs the machine backwards: real distance to map distance means convert to centimetres, then DIVIDE by the scale factor - 4,3 km = 430 000 cm ÷ 50 000 = 8,6 cm.\n\nThe sense check that saves matrics: about 10 cm on a 1:50 000 sheet is 5 km. If 8,6 cm produces 43 km or 0,43 km, a decimal slipped on the ladder. Convert, then ask whether you could walk the answer in an afternoon.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "The metric ladder from centimetres to kilometres runs:",
+      "options": [
+        "÷100 to metres, then ÷1 000 to kilometres",
+        "÷1 000 then ÷100",
+        "×100 then ×1 000",
+        "÷10 then ÷100"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "To measure distance along a winding river on the map, you should:",
+      "options": [
+        "Lay string or a paper strip along the bends, straighten it, and read against a ruler",
+        "Measure the straight line between endpoints",
+        "Count contour crossings",
+        "Estimate by eye"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Which map has the larger scale, and what does that mean?",
+      "options": [
+        "1:10 000 - a bigger fraction, showing a smaller area in more detail",
+        "1:50 000 - because 50 000 is bigger",
+        "Both scales are equal",
+        "1:50 000 - it covers more ground"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "The real distance is 4,3 km. On a 1:50 000 map the points are apart by:",
+      "options": [
+        "8,6 cm - convert to 430 000 cm and divide by 50 000",
+        "4,3 cm",
+        "86 cm",
+        "0,86 cm"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

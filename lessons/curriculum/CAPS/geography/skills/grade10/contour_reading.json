@@ -56,5 +56,82 @@
       "topic": "Consolidation of Grade 8 and 9 map skills",
       "subtopic": "1:50 000 topographic maps: natural and constructed features, height clues, contour patterns (river valleys, hills, mountains, ridges, spurs)"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Contour lines drawn very close together indicate:",
+      "options": [
+        "A steep slope - the fixed height gain happens over a short horizontal distance",
+        "A gentle slope",
+        "A flat plain",
+        "A river mouth"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "In a river valley, the V-shaped bends in the contour lines point:",
+      "options": [
+        "Uphill, toward the higher ground upstream",
+        "Downhill, with the flow",
+        "Always due north",
+        "Toward the nearest road"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A contour line joins all points of equal height above sea level - walk along one and you neither climb nor descend. On a 1:50 000 topographic sheet the contour interval is typically 20 m: each line is 20 m higher or lower than its neighbours. Check the interval in the key before anything else. Three rules police every map: contours never cross (a point cannot have two heights), never simply end (they close into loops or run off the sheet), and every fourth or fifth line is a thicker, labelled index contour - your anchor for counting. A point between the 820 and 840 lines lies between those heights; a spot height (a dot with a number, like 913) pins a summit's exact altitude, which contours alone cannot give.\n\nSpacing is gradient. Between neighbouring contours the land always rises the fixed interval; what varies is the horizontal distance walked to gain it. Lines far apart: the rise is spread over a long walk - gentle. Lines crowded: the same rise over a short distance - steep. Lines almost touching: a cliff. Even spacing means a uniform slope; wide-at-top, close-at-bottom is concave; close-at-top, wide-at-bottom is convex. To justify \"steepest slope\" in an exam, quote the evidence: the contours are closest together here, so the land rises 20 m over the shortest horizontal distance.\n\nValleys and spurs are the classic confusion pair, both showing bent contours. A valley's contours bend in a V pointing UPHILL, toward the upstream high ground - the line must detour up the low ground to keep its height - and a river often runs through it. A spur is high ground jutting between valleys: its bulge points DOWNHILL and never carries a river. When in doubt, read the heights on either side and ask which way is up. Confirm any river's direction two ways: the Vs point upstream, and the contour values crossing the river must decrease downstream - water never flows uphill.\n\nOther signatures: closed rings with rising values - a hill; a stretched high band - a ridge; the dip between two summits - a saddle; almost no contours - a plain. Method for any question: read the interval, find the index contours, identify features by pattern, confirm with the printed heights, and answer by quoting spacing and values as evidence.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Why can two contour lines never cross?",
+      "options": [
+        "A single point cannot have two different heights",
+        "It would make the map untidy",
+        "Rivers would have nowhere to flow",
+        "Printers cannot draw crossings"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Contours crossing a river read 840, 820, 800 in the direction you trace it. You are tracing:",
+      "options": [
+        "Downstream - heights must decrease in the direction of flow",
+        "Upstream",
+        "Along a ridge",
+        "It cannot be determined"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "A bulge of contours pointing downhill, with no river, is a:",
+      "options": [
+        "Spur - high ground jutting out between valleys",
+        "Valley",
+        "Saddle",
+        "Cliff"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "What extra information does a spot height give that contours cannot?",
+      "options": [
+        "The exact altitude of a point, not just a between-lines range",
+        "The gradient of the slope",
+        "The direction of drainage",
+        "The contour interval"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

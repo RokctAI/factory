@@ -38,5 +38,70 @@
       "topic": "INTERNAL CONTROL, ETHICS, GAAP",
       "subtopic": "GAAP principles: historical cost, prudence, materiality, business entity rule, going concern, matching"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Land bought for R500 000 in 2019 is now worth R900 000 but still shown at R500 000. The GAAP principle applied is:",
+      "options": [
+        "Historical cost",
+        "Prudence",
+        "Going concern",
+        "Materiality"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "The owner pays their home electricity from the business bank account and it is recorded as Drawings. The principle applied is:",
+      "options": [
+        "Business entity rule",
+        "Matching",
+        "Materiality",
+        "Historical cost"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "GAAP - Generally Accepted Accounting Practice - is the shared rulebook that makes financial statements trustworthy and comparable. Grade 10 needs six principles, and exams almost never ask for definitions: they give a scenario and ask which principle is applied. So learn each rule with its tell-tale sign.\n\nHistorical cost: assets are recorded at their original, verifiable purchase price, not today's estimated value. The purchase price is a fact backed by a source document; market value is a shifting opinion. Sign: an asset \"now worth more\" but \"still shown at\" what it cost.\n\nPrudence: never overstate good news, never understate bad news - anticipate possible losses, never record profits before they are certain. Writing off doubtful debts and valuing damaged stock at the lower figure are prudence at work. Sign: a cautious choice made under uncertainty. Do not confuse it with historical cost: historical cost sticks to an original price; prudence picks the careful estimate when the outcome is uncertain.\n\nMateriality: information is material if leaving it out or misstating it would change a reader's decision. A R45 stapler that lasts years is simply expensed - too small to matter - while a delivery vehicle is a fixed asset tracked separately. Sign: a decision turning on whether an amount is big enough to matter.\n\nBusiness entity rule: the business and its owner are separate in the books. The owner's personal spending from business funds is Drawings, never a business expense; the owner's private car and house never appear among business assets. Sign: any brush between the owner's personal affairs and the business records - \"the owner took\", \"for personal use\".\n\nGoing concern: the books assume the business will keep operating into the foreseeable future - which justifies recording assets at cost for continued use and spreading costs over future years. Sign: statements prepared \"assuming the business will continue\".\n\nMatching: incomes and expenses belong to the period in which they occur, so a period's expenses are matched against that period's income for a fair profit. Insurance paid in advance is split between years; wages owed at year end are accrued into the year they were worked. Sign: amounts shifted between periods - prepaid, accrued, \"belongs to this year\".\n\nExam method: underline the action taken, then ask what the accountant is refusing to do or insisting on doing. The refusal points straight at the principle.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "A business writes down damaged stock to below cost while ignoring a rumoured increase in its land's value. The principle is:",
+      "options": [
+        "Prudence - anticipate losses, never anticipate profits",
+        "Historical cost",
+        "Materiality",
+        "Matching"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Insurance of R12 000 paid in March for 12 months, with a June year end, is split so only four months count as this year's expense. The principle is:",
+      "options": [
+        "Matching",
+        "Going concern",
+        "Business entity rule",
+        "Prudence"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "What single question best identifies the principle in any scenario?",
+      "options": [
+        "What is the accountant refusing to do, or insisting on doing?",
+        "How large is the business?",
+        "Which journal was used?",
+        "Who audited the statements?"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

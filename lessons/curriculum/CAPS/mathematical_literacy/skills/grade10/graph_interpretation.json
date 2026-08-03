@@ -22,5 +22,70 @@
       "topic": "PATTERNS RELATIONSHIPS & REPRESENTATIONS",
       "subtopic": "Interpreting tables and graphs: zero, minimum, maximum and missing values; write a story from a graph and draw a graph from a story"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Option A: R2,00 per kWh, no fixed charge. Option B: R150 fixed + R1,50 per kWh. For 450 kWh, which is cheaper?",
+      "options": [
+        "Option B at R825, beating Option A's R900 by R75",
+        "Option A at R900",
+        "Both cost the same",
+        "Option B at R675"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "A cost line starts at R150 on the vertical axis. That intercept represents:",
+      "options": [
+        "The fixed charge, paid even at zero usage",
+        "The price per unit",
+        "The break-even point",
+        "The maximum monthly cost"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A cost line on a money graph tells you a tariff's whole structure in two readings. The vertical intercept - where the line starts at zero usage - is the FIXED CHARGE: an option with no fixed charge starts at the origin; an option with a R150 monthly fee starts at R150. The gradient - how fast the line climbs - is the PRICE PER UNIT: a line rising R2,00 for every kilowatt-hour is steeper than one rising R1,50, because each unit costs more. Steeper always means more expensive per unit. You can measure a gradient off any line: pick two easy points, divide the rise in rand by the run in units.\n\nWhere two options' lines cross is the BREAK-EVEN point: the usage at which both cost exactly the same. Read it by tracing down to the usage axis and across to the cost axis, then verify by calculation - both tariffs computed at that usage must give the same rand amount. With Option A at R2,00 per kWh and Option B at R150 plus R1,50 per kWh, break-even is 300 kWh, where both cost R600.\n\nBreak-even splits the graph into decision zones. Left of the crossing (low usage), the no-fixed-charge option's line runs lower: light users should not pay an entrance fee for a per-unit discount they barely use. Right of the crossing (high usage), the fixed-charge option dips underneath: the 50c saving on every unit eventually outweighs the R150 fee. At any usage, the LOWEST line at that point is the cheapest option - run a finger up from the usage value and the first line struck wins.\n\nFor a specific comparison, always finish with the arithmetic and state the difference: at 450 kWh, Option A costs 450 × R2,00 = R900; Option B costs R150 + 450 × R1,50 = R825; B is cheaper by R75. Comparison answers earn full marks when they show both totals and the saving, not just the winner's name. Close with a sense check: heavy users benefiting from cheap units, and zero usage costing R0 on one option but R150 on the other, both match what the tariffs say in words.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "On a tariff graph, the gradient of a cost line represents:",
+      "options": [
+        "The price per unit - how much the bill climbs per extra unit used",
+        "The fixed monthly charge",
+        "The total bill",
+        "The number of units used"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "At the break-even usage:",
+      "options": [
+        "Both options cost exactly the same",
+        "The cheaper option is always the steeper line",
+        "Usage is zero",
+        "The fixed charges are equal"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "For any usage level, the cheapest option is found by:",
+      "options": [
+        "Reading which line is lowest at that usage",
+        "Choosing the line with the higher intercept",
+        "Always choosing the steeper line",
+        "Averaging the two lines"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

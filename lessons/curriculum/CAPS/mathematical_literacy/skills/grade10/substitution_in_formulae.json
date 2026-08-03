@@ -15,5 +15,70 @@
         "topic": "MEASUREMENTS"
       }
     ]
-  }
+  },
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Using cost = R450 + R12,50 × km, a 340 km trip costs:",
+      "options": [
+        "R4 700",
+        "R157 250",
+        "R4 250",
+        "R462,50"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "With the same formula, how many kilometres does R1 200 buy?",
+      "options": [
+        "60 km",
+        "96 km",
+        "132 km",
+        "48 km"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A formula is a machine: numbers in, answer out. Read it as a story before calculating. In cost = R450 + R12,50 × km, the R450 stands alone - the fixed charge, owed before any driving; the R12,50 is glued to the kilometres - the rate, growing with usage. Fixed plus rate-times-usage is the skeleton of tariffs, contracts, call-out fees and deliveries alike.\n\nForward substitution: the input is known, the output wanted. Write the formula, then the substitution line - both usually earn their own marks - then compute respecting the order of operations: multiplication BEFORE addition, always. For 340 km: 12,50 × 340 = 4 250 first, then + 450 gives R4 700. Adding first (450 + 12,50, then × 340) produces the R157 250 disaster - a hire bill that buys the car. Sense-check the size and state the unit.\n\nReverse substitution: the output is known, the input wanted. Substitute what you know, then unwind with inverse operations in reverse order - like taking off shoes before socks. The money logic gives the order for free: the budget pays the fixed fee at the door first, and only the remainder buys usage. R1 200 = 450 + 12,50 × km: subtract the fixed charge (1 200 − 450 = 750 left for driving), then divide by the rate (750 ÷ 12,50 = 60 km). The classic error divides the whole budget by the rate (1 200 ÷ 12,50 = 96 km, wrong) - the R450 never bought a single kilometre and must be peeled off first.\n\nReverse answers come with a free proof: run the machine forwards with your answer. 450 + 12,50 × 60 = 1 200 - exactly the budget, so 60 km is verified, not hoped.\n\nThe six steps for any formula: write it down unchanged; identify the known and wanted variables; substitute, converting units first if the formula's units differ from the question's; compute forwards with the order of operations, or unwind backwards fixed-part-first; state the answer with its unit; verify - sense-check the size, and substitute reverse answers back. The exam prints the formula for you; careful feeding and patient unwinding are the whole skill.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "In cost = R450 + R12,50 × km, which must be computed first when substituting km = 340?",
+      "options": [
+        "The multiplication 12,50 × 340",
+        "The addition 450 + 12,50",
+        "The division 450 ÷ 12,50",
+        "Order does not matter"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "In the reverse question, why is dividing the whole R1 200 by R12,50 wrong?",
+      "options": [
+        "R450 of the budget pays the fixed fee and buys no distance - remove it before dividing",
+        "The division is computed incorrectly",
+        "R12,50 must be doubled first",
+        "It gives the correct answer"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "How is a reverse answer of 60 km verified?",
+      "options": [
+        "Substitute forwards: 450 + 12,50 × 60 must return R1 200",
+        "Divide 60 by 12,50",
+        "Check 60 is less than 340",
+        "It cannot be verified"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ]
 }

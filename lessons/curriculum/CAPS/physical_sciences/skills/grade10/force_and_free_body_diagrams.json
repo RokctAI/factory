@@ -35,5 +35,82 @@
       "topic": "MECHANICS: Newton’s laws",
       "subtopic": "Force diagrams and free-body diagrams; resolving weight on an inclined plane"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "A 5 kg box is pulled at constant velocity across a rough floor by a rope at 30° above the horizontal. The forces on the box are:",
+      "options": [
+        "Weight, normal force, applied force along the rope, friction backward",
+        "Weight, normal force, and a forward force of motion",
+        "Applied force and friction only",
+        "Weight and the applied force only"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "In that situation, the normal force is:",
+      "options": [
+        "Less than the weight - the rope's vertical component helps lift the box",
+        "Equal to the weight, always",
+        "Greater than the weight",
+        "Zero at constant velocity"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A force is a push or pull - an interaction between two objects - so every force on a diagram must have another object responsible for it. If you cannot name the object doing the pushing, the force does not exist. There is no \"force of motion\": motion needs no force to continue, only to CHANGE (Newton's first law).\n\nHunt forces systematically. Gravity first, always present: the weight w = mg, straight down (a 5 kg box weighs 5 × 9,8 = 49 N; mass in kilograms is a scalar and never changes, weight in newtons is a force). Then every touching object: a surface gives a normal force N perpendicular to itself, and friction f if rough; a rope gives tension along the rope; a hand gives an applied force. For a box pulled at constant velocity across a rough floor by a rope at 30° above the horizontal, the cast is exactly four: weight down, normal force up, applied force along the rope at the marked 30°, friction backward - because friction always opposes the sliding (or attempted sliding), not automatically the applied force.\n\nA FREE-body diagram strips the scenery: the object becomes a dot, and only labelled force arrows remain, each starting on the dot, each with an arrowhead, angles marked. No floor, no rope, no velocity arrows - a velocity arrow drawn as a force costs marks.\n\nThe phrase \"constant velocity\" is physics in disguise: zero net force, everything balances, and the diagram becomes equations. A slanted force does two jobs at once, split into components: the rope pulls forward with F cos 30° and lifts with F sin 30°. Horizontal balance: F cos 30° = f. Vertical balance: N + F sin 30° = w - three players, not two. So the normal force is LESS than the weight here: the rope carries part of the load, and the floor pushes less. \"N always equals w\" is memorisation, not reading - N is whatever the vertical balance demands, case by case (push down on a box and N exceeds w). Since friction later scales with N, pulling at an upward angle genuinely makes dragging easier.\n\nMethod: isolate ONE object; hunt gravity then touches; draw the dot and labelled arrows; read the motion state (balanced, or net force with the acceleration); write the balances direction by direction.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Why is there no forward 'force of motion' on the moving box?",
+      "options": [
+        "Motion needs no force to continue - only changes of motion need force",
+        "The rope replaces it",
+        "It exists but is too small to draw",
+        "Friction cancels it exactly"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "'Constant velocity' lets you write down that:",
+      "options": [
+        "The forces balance in every direction - net force is zero",
+        "The applied force is largest",
+        "Friction is zero",
+        "The box is slowing down"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Friction on an object always points:",
+      "options": [
+        "Against the sliding (or attempted sliding) between the surfaces",
+        "Opposite to the applied force in all cases",
+        "Downhill",
+        "Toward the heavier object"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "In a free-body diagram, the object is drawn as:",
+      "options": [
+        "A dot with all labelled force arrows starting from it",
+        "A detailed sketch with the floor and rope",
+        "A velocity arrow",
+        "A circle containing the mass"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

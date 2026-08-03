@@ -43,5 +43,70 @@
       "topic": "MECHANICS: Instantaneous speed and velocity and the equations of motion",
       "subtopic": "Equations of motion in the horizontal plane; vehicle safety and stopping distance"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "A car accelerates uniformly from 10 m/s to 25 m/s over 300 m. Its acceleration is:",
+      "options": [
+        "0,875 m/s² in the direction of motion",
+        "1,04 m/s²",
+        "8,75 m/s²",
+        "0,05 m/s²"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "A problem gives vi, vf and Δx and asks for a. Which equation fits immediately?",
+      "options": [
+        "vf² = vi² + 2aΔx - the one with no time in it",
+        "vf = vi + aΔt",
+        "Δx = viΔt + ½aΔt²",
+        "Δx = (vi + vf)/2 × Δt"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "The equations of motion describe straight-line movement with UNIFORM (constant) acceleration - the word \"uniformly\" in a problem is your licence to use them at all. Five quantities star in every problem: initial velocity vi, final velocity vf, acceleration a, time Δt, and displacement Δx.\n\nFour equations, each missing exactly one quantity: vf = vi + aΔt (no displacement); Δx = viΔt + ½aΔt² (no final velocity); vf² = vi² + 2aΔx (no time); Δx = (vi + vf)/2 × Δt (no acceleration - the average-velocity equation). That missing character is the whole secret of choosing. Every problem gives three quantities and wants a fourth; the fifth - neither given nor wanted - is absent, and the right equation is the one that EXCLUDES it. Never grab the first equation you remember: match the hole to the absent quantity.\n\nMethod: first list Given, Wanted and Absent formally, converting units as you list - km/h becomes m/s by dividing by 3,6 (90 km/h = 25 m/s), and skipping this poisons every later step. Then choose by the absent character, substitute with units, solve, and state vector answers with a direction.\n\nWorked: a car accelerates uniformly from 10 m/s to 25 m/s over 300 m. Given vi, vf, Δx; wanted a; absent: time - so vf² = vi² + 2aΔx. Substitute: 625 = 100 + 600a (write the squares out immediately - 25² is 625, not 25). Solve: a = 525/600 = 0,875 m/s² in the direction of motion. For the time: vf = vi + aΔt gives 15 = 0,875Δt, so Δt = 17,14 s.\n\nVerify by a second road wherever possible: Δx = (vi + vf)/2 × Δt uses only ORIGINAL data - the average of 10 and 25 is 17,5, and 300 ÷ 17,5 = 17,14 s again. Two independent routes agreeing proves both answers; a wrong acceleration could not have hidden. Final habits: sense-check size and sign (a braking car has negative a in your chosen positive direction - keep vector signs consistent), and remember these same equations return in matric as vertical projectile motion with a = 9,8 m/s² downward.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "The equations of motion may only be used when:",
+      "options": [
+        "The acceleration is uniform (constant)",
+        "The object starts from rest",
+        "The velocity is constant",
+        "The motion is circular"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "90 km/h converted for use in the equations is:",
+      "options": [
+        "25 m/s (divide by 3,6)",
+        "90 m/s",
+        "324 m/s",
+        "9 m/s"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Why is checking the time with Δx = (vi + vf)/2 × Δt such a strong verification?",
+      "options": [
+        "It uses only original given data, so an error in the calculated acceleration cannot hide",
+        "It is the shortest equation",
+        "It avoids velocity",
+        "It always gives a rounder number"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

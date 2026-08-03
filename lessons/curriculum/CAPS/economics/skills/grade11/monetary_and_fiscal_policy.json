@@ -39,5 +39,70 @@
       "topic": "PUBLIC SECTOR",
       "subtopic": "Budgets; fiscal policy including the Laffer curve; public sector failure"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Inflation is above the 3-6% target band. The SARB's most likely response is to:",
+      "options": [
+        "Raise the repo rate",
+        "Lower the repo rate",
+        "Increase government spending",
+        "Reduce VAT"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "'The Minister of Finance raises the repo rate.' What is wrong with this statement?",
+      "options": [
+        "The repo rate is controlled by the SARB, not the minister",
+        "The repo rate cannot change",
+        "Only Parliament sets rates",
+        "Nothing - it is correct"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Two policies steer the economy, driven by two different hands. Monetary policy belongs to the South African Reserve Bank - independent of government, mandated to protect the currency's value, in practice keeping inflation inside the 3 to 6 percent target band. Its headline instrument is the repo rate. Fiscal policy belongs to the government, announced by the Minister of Finance in the Budget; its instruments are government spending and taxation. The test for any instrument: whose hand is on it? Reserve Bank - monetary. The Budget - fiscal.\n\nThe repo rate is what commercial banks pay to borrow from the SARB, and its effects travel a chain. Repo up: banks' funding costs rise; banks raise their prime lending rate; home loans, car finance and credit become dearer; households and firms cut back on borrowing and spending; total demand slows, and with less money chasing goods, the pressure on prices eases. That is contractionary monetary policy. The honest trade-off: the same medicine cools growth and can cost jobs in the short run. The reverse - cutting the repo rate - cheapens credit and stimulates spending: expansionary.\n\nFiscal policy fights inflation from the demand side too: restrain government spending (fewer projects, tighter budgets) and/or raise taxes (less disposable income, dearer spending) - both contractionary. In a recession, the gears reverse: more spending and tax cuts pump demand in - expansionary. Classify any move by asking whether it puts spending power into the economy (expansionary) or withdraws it (contractionary).\n\nThe comparison exams love: monetary policy is fast but blunt - the Monetary Policy Committee meets every two months, and the repo rate hits every borrower in the country indiscriminately. Fiscal policy is slower - the Budget is annual and political - but can be aimed at specific sectors, taxes or programmes. The two work best pulling together: if the SARB tightens while government spends freely, the policies fight each other and the SARB must tighten harder.\n\nAnswer method: name the problem (inflation or recession), name the driver, name the instrument, state the direction and classification, then walk the transmission chain step by step to prices. Wrong-hand statements - a minister moving the repo rate - are themselves the error to spot.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Which chain correctly orders the transmission of a repo rate increase?",
+      "options": [
+        "Repo up → prime up → loans dearer → spending slows → price pressure eases",
+        "Repo up → taxes up → spending up → inflation up",
+        "Repo up → prime down → borrowing rises → inflation falls",
+        "Repo up → exports rise → inflation falls"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "A VAT increase is classified as:",
+      "options": [
+        "Contractionary fiscal policy - it withdraws spending power",
+        "Expansionary fiscal policy",
+        "Contractionary monetary policy",
+        "Expansionary monetary policy"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Monetary policy versus fiscal policy is best summarised as:",
+      "options": [
+        "Fast but blunt versus slower but targeted",
+        "Targeted versus blunt",
+        "Annual versus two-monthly",
+        "Both identical in speed and reach"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

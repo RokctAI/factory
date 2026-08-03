@@ -56,5 +56,82 @@
       "topic": "Algebraic expressions",
       "subtopic": "Factorisation: trinomials, grouping in pairs, sum and difference of two cubes"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Factorised fully, 6x² − 7x − 3 equals:",
+      "options": [
+        "(2x − 3)(3x + 1)",
+        "(2x + 3)(3x − 1)",
+        "(6x − 1)(x + 3)",
+        "(3x − 3)(2x + 1)"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "Factorised fully, x³ + 8 equals:",
+      "options": [
+        "(x + 2)(x² − 2x + 4)",
+        "(x + 2)(x² + 2x + 4)",
+        "(x − 2)(x² + 2x + 4)",
+        "(x + 2)³"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Factorising reverses expanding: it breaks an expression into the brackets whose product it is. Run the same decision tree every time. First, always: take out any common factor across all terms. Then count the terms - the count picks the tool. Two terms: difference of squares, or sum/difference of cubes. Three terms: the trinomial method. Four terms: grouping in pairs. Finally, check every bracket in your answer for further factorising - \"fully\" is a contract.\n\nTrinomials ax² + bx + c: hunt two numbers whose product is a × c and whose sum is b. For 6x² − 7x − 3: product 6 × (−3) = −18, sum −7. Read the signs first - negative product means opposite signs; negative sum means the bigger number is negative. The pair is −9 and +2. Split the middle term: 6x² − 9x + 2x − 3; group in pairs: 3x(2x − 3) + 1(2x − 3); the matching brackets are the built-in check - if they differ, the split or a sign is wrong. Factor the bracket out: (2x − 3)(3x + 1).\n\nCubes: recognise perfect cubes (1, 8, 27, 64, 125, 216; x³; y⁶). The identities share one pattern - a short bracket of the two cube roots, and a long bracket built square-the-first, multiply-the-pair, square-the-last - with signs by SOAP: Same as the original, Opposite for the middle term, Always Positive last. So x³ + 8 = (x + 2)(x² − 2x + 4). The middle term is a × b (2x), not a square (never 4x), and the long bracket NEVER factorises further - stopping there is correct.\n\nGrouping in pairs, for four terms: 2ax + 2ay − bx − by. Pair as they stand, factor each pair - and when a pair leads with a minus, take out a NEGATIVE factor so the bracket's signs flip into a match: 2a(x + y) − b(x + y). Then factor out the common bracket: (x + y)(2a − b). If pairs share nothing, rearrange kin together first.\n\nVerify everything the same way: expand your answer and confirm the original returns. Thirty seconds, and the answer is proven rather than hoped.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "For 6x² − 7x − 3, the split numbers must satisfy:",
+      "options": [
+        "Product −18 and sum −7",
+        "Product −3 and sum −7",
+        "Product 18 and sum 7",
+        "Product −21 and sum −3"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "In SOAP for the cubes identities, the letters give:",
+      "options": [
+        "Same, Opposite, Always Positive - the three signs",
+        "Square, Order, Add, Product",
+        "Sum Of All Powers",
+        "Simplify, Organise, Apply, Prove"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Grouping −bx − by requires factoring out:",
+      "options": [
+        "−b, leaving (x + y)",
+        "+b, leaving (x + y)",
+        "−x, leaving (b + y)",
+        "+b, leaving (−x + y)"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "The reliable check for any factorisation is:",
+      "options": [
+        "Expand the answer and confirm the original expression returns",
+        "Substitute x = 0 only",
+        "Compare bracket lengths",
+        "Repeat the factorisation"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }
