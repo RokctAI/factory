@@ -1,0 +1,352 @@
+{
+  "subject": "Physical Sciences",
+  "grade": 10,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade10.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.520%20ATP%202023-24%20Gr%2010%20Phys%20Sci%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "scope_deltas": "SAG-stated content-scope differences vs the CAPS/DBE prescription are recorded in scope_deltas.json in this folder (hand-maintained, SAG-transcribed only; an empty ledger means 'not yet transcribed', never 'no differences').",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "WAVES, SOUND AND LIGHT: Transverse pulses on a string, spring",
+          "subtopics": [
+            "Pulse, transverse pulse and amplitude",
+            "Principle of superposition; constructive and destructive interference of pulses"
+          ],
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Transverse waves",
+          "subtopics": [
+            "Transverse wave; wavelength, frequency, period, amplitude, crest, trough",
+            "Points in phase and out of phase",
+            "f = 1/T and the wave equation v = fλ in problems"
+          ],
+          "weeks": [
+            2
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Longitudinal waves",
+          "subtopics": [
+            "Longitudinal wave in a spring; compression and rarefaction",
+            "Wavelength, amplitude, period and frequency of longitudinal waves",
+            "Differentiate longitudinal vs transverse waves; v = fλ problems"
+          ],
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Sound",
+          "subtopics": [
+            "Sound as a longitudinal wave; wave speed vs properties of the medium",
+            "Echoes; v = fλ problems including sonar, bats, dolphins",
+            "Pitch vs frequency; loudness vs amplitude and ear sensitivity; quality vs waveform",
+            "Ultrasound (20–100 kHz); ultrasound imaging and medical uses"
+          ],
+          "weeks": [
+            4
+          ]
+        },
+        {
+          "name": "WAVES, SOUND AND LIGHT: Electromagnetic radiation",
+          "subtopics": [
+            "Wave model vs particle model of electromagnetic radiation",
+            "Source and propagation of EM waves; c = 3×10⁸ m·s⁻¹",
+            "EM spectrum ordered by frequency/wavelength; a use per radiation type",
+            "c = fλ calculations",
+            "Penetrating ability vs energy; dangers of gamma rays, X-rays and UV",
+            "Photon; photon energy E = hf = hc/λ"
+          ],
+          "weeks": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "ELECTRICITY AND MAGNETISM: Electrostatics",
+          "subtopics": [
+            "Positive and negative charge; neutral vs charged objects",
+            "Tribo-electric charging of insulators",
+            "SI unit of charge; conservation of charge, Q = (Q1+Q2)/2 for identical charges",
+            "Charge quantization Q = nq",
+            "Like charges repel, opposite attract; polarization of insulators"
+          ],
+          "weeks": [
+            7,
+            8
+          ]
+        },
+        {
+          "name": "ELECTRICITY AND MAGNETISM: Electric circuits",
+          "subtopics": [
+            "Potential difference V = W/Q; emf and terminal potential difference",
+            "Current I = Q/Δt; the coulomb; conventional current direction",
+            "Connecting and reading an ammeter and a voltmeter",
+            "Resistance: definition, microscopic description; effect of temperature, length, thickness"
+          ],
+          "weeks": [
+            9
+          ]
+        },
+        {
+          "name": "CONSOLIDATION OF TERM 1, CONTROL TEST",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "CONTROL TEST: Discussion and remedial work",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "ELECTRICITY AND MAGNETISM: Electric circuits",
+          "subtopics": [
+            "Energy transformations in a battery and resistors (why a battery goes flat)",
+            "Series circuits: same current, potential-difference dividers, Rs = R1 + R2 + …",
+            "Parallel circuits: same potential difference, current dividers, 1/Rp = 1/R1 + 1/R2 + …"
+          ],
+          "weeks": [
+            2
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: States of matter and the kinetic molecular theory",
+          "subtopics": [
+            "Particle nature of matter; diffusion and Brownian motion",
+            "Material properties: strength, brittle/malleable/ductile, density, melting and boiling points",
+            "Mixture, pure substance, element, compound",
+            "Three states of matter; freezing, melting and boiling points",
+            "Heating and cooling curves; identify state at a given temperature",
+            "Changes of state: melting, evaporation, freezing, sublimation, condensation",
+            "Solid, liquid, gas in terms of the Kinetic Molecular Theory"
+          ],
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: The atom",
+          "subtopics": [
+            "Atomic structure: nucleus and surrounding electrons",
+            "Atomic number, protons, electrons, neutrons, mass number; ion charges",
+            "Isotopes; relative atomic mass from isotope percentages",
+            "Element notation (A over Z next to symbol)",
+            "Aufbau diagrams and sp notation up to Z = 20",
+            "Atomic orbitals and their energies"
+          ],
+          "weeks": [
+            5
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: Periodic table",
+          "subtopics": [
+            "Names and formulae using the cation/anion table",
+            "Metals, non-metals, metalloids; electrical/thermal conductors, semiconductors, insulators; magnetic classification",
+            "Periodic table organisation by atomic number; group and period numbers; position vs electronic structure",
+            "Periodicity Li→Ar: atomic radius, ionisation energy, electron affinity, electronegativity",
+            "Chemical properties and reactivity trends of groups 1, 2, 17 and 18",
+            "Positions of metals, non-metals and transition metals"
+          ],
+          "weeks": [
+            6
+          ]
+        },
+        {
+          "name": "MATTER AND MATERIAL: Chemical bonding",
+          "subtopics": [
+            "Chemical bond; Lewis dot diagrams of elements",
+            "Covalent bonding: molecules, Lewis diagrams (H2, F2, Cl2, O2, N2, HF, HCl, CH4, NH3, H2O), names and formulae",
+            "Ionic bonding: formula-unit, cations and anions, Lewis diagrams (NaCl, KCl, KBr, CaCl2, MgBr2), predicting ions from the periodic table, naming",
+            "Metallic bonding",
+            "Relative molecular and formula mass calculations"
+          ],
+          "weeks": [
+            7,
+            8
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Physical and chemical change",
+          "subtopics": [
+            "Physical change vs chemical change, with examples"
+          ],
+          "weeks": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Representing chemical change",
+          "subtopics": [
+            "Word equations ↔ chemical equations; phase indicators (s), (aq), (l), (g)",
+            "Balancing chemical equations; conservation of atoms and mass; law of constant composition"
+          ],
+          "weeks": [
+            9
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+          "subtopics": [
+            "The mole, Avogadro's number, molar mass",
+            "n = m/M calculations",
+            "Avogadro's law; molar gas volume at STP",
+            "Volume relationships in balanced gas equations"
+          ],
+          "weeks": [
+            10
+          ]
+        },
+        {
+          "name": "CONSOLIDATION, CONTROL TEST",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "CONTROL TEST: Discussion and remedial work",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+          "subtopics": [
+            "Concentration c = n/V (mol·dm⁻³)",
+            "Percentage composition; empirical formula from percentage composition",
+            "Water of crystallisation (e.g. CuSO4·5H2O)",
+            "Stoichiometric calculations from balanced equations (concentration, mass, moles, particles, volume)",
+            "Theoretical and percentage yield"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "MECHANICS: Vectors and scalars",
+          "subtopics": [
+            "Physical quantities; vector vs scalar",
+            "Graphical representation; equality of vectors, negative vectors, addition in one dimension",
+            "Resultant: tail-to-head method and by calculation (max four force vectors, 1D)"
+          ],
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "MECHANICS: Motion in one dimension",
+          "subtopics": [
+            "Frame of reference; position relative to a reference point",
+            "Distance vs displacement",
+            "Average speed and average velocity",
+            "Acceleration a = Δv/Δt; positive/negative acceleration vs deceleration"
+          ],
+          "weeks": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "MECHANICS: Instantaneous speed and velocity and the equations of motion",
+          "subtopics": [
+            "Instantaneous velocity and instantaneous speed",
+            "Uniform velocity vs uniformly accelerated motion",
+            "Position-time, velocity-time and acceleration-time graphs: gradients, tangents, areas",
+            "Equations of motion in the horizontal plane; vehicle safety and stopping distance"
+          ],
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "MECHANICS: Energy",
+          "subtopics": [
+            "Gravitational potential energy Ep = mgh",
+            "Kinetic energy Ek = ½mv²"
+          ],
+          "weeks": [
+            10
+          ]
+        },
+        {
+          "name": "CONSOLIDATION, CONTROL TEST",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "SEPTEMBER CONTROL TEST: Discussion and remedial work",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "MECHANICS: Energy",
+          "subtopics": [
+            "Mechanical energy EM = Ek + Ep",
+            "Law of conservation of energy; principle of conservation of mechanical energy",
+            "Apply conservation of mechanical energy: drops, vertical throws, pendulum, roller coasters, inclined planes"
+          ],
+          "weeks": [
+            2
+          ]
+        },
+        {
+          "name": "CONSOLIDATION AND REVISION",
+          "weeks": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "FINAL EXAMINATION (P1: 2 hrs, P2: 2 hrs)",
+          "weeks": [
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

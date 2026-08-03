@@ -1,0 +1,307 @@
+{
+  "subject": "Physical Sciences",
+  "grade": 11,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=6y_u-yjj97c%3D&tabid=3205&portalid=0&mid=10755",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "scope_deltas": "SAG-stated content-scope differences vs the CAPS/DBE prescription are recorded in scope_deltas.json in this folder (hand-maintained, SAG-transcribed only; an empty ledger means 'not yet transcribed', never 'no differences').",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "MECHANICS: Vectors in two dimensions",
+          "subtopics": [
+            "Resultant of up to four vectors on a Cartesian plane (component method)",
+            "Sketch Rx and Ry; magnitude via Pythagoras; direction via trig ratios",
+            "Graphical methods: tail-to-head, tail-to-tail (parallelogram); closed vector diagrams",
+            "Resolve a vector into components Rx = Rcosθ, Ry = Rsinθ"
+          ],
+          "requires_skills": [
+            "physical_sciences.vectors_and_scalars"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "MECHANICS: Newton’s laws",
+          "subtopics": [
+            "Normal force; static and kinetic friction (fs max = μsN, fk = μkN)",
+            "Force diagrams and free-body diagrams; resolving weight on an inclined plane",
+            "Newton's first law; inertia (seatbelt discussion)",
+            "Newton's second law Fnet = ma: equilibrium and non-equilibrium problems (horizontal, incline, vertical/lifts/rockets)",
+            "Two-body systems joined by light inextensible strings (flat plane, incline, pulley combinations)",
+            "Newton's third law; properties of action-reaction pairs"
+          ],
+          "requires_skills": [
+            "physical_sciences.equations_of_motion",
+            "physical_sciences.force_and_free_body_diagrams"
+          ],
+          "weeks": [
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "MECHANICS: Newton’s Universal Law",
+          "subtopics": [
+            "Newton's law of universal gravitation F = Gm1m2/d²",
+            "Acceleration due to gravity g = GM/r² on Earth and other planets",
+            "Weight vs mass; w = mg on other planets; weightlessness"
+          ],
+          "weeks": [
+            7
+          ]
+        },
+        {
+          "name": "ELECTRICITY & MAGNETISM: Electrostatics",
+          "subtopics": [
+            "Coulomb's law in one dimension (up to three charges)",
+            "Coulomb's law in two dimensions (three charges, right-angled formation)",
+            "Electric field concept; field patterns: point charge, two point charges, charged sphere",
+            "Electric field magnitude E = F/Q",
+            "Field at a point due to multiple charges, E = kQ/r² (up to three charges in a line)"
+          ],
+          "requires_skills": [
+            "physical_sciences.vectors_and_scalars"
+          ],
+          "weeks": [
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "name": "CONTROL TEST",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "MARCH CONTROL TEST: Discussion and remedial work",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "ELECTRICITY & MAGNETISM: Electromagnetism",
+          "subtopics": [
+            "Right Hand Rule and field lines: straight wire, single loop, solenoid; environmental impact of overhead cables",
+            "Magnetic flux Φ = BAcosθ",
+            "Faraday's law; direction of induced current (magnet into/out of a solenoid)",
+            "Induced emf and current: ε = −NΔΦ/Δt calculations"
+          ],
+          "weeks": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "ELECTRICITY & MAGNETISM: Electric circuits",
+          "subtopics": [
+            "Ohm's law; ohmic vs non-ohmic conductors",
+            "R = V/I for series and/or parallel circuits (max four resistors)",
+            "Power: P = W/Δt; W = VIΔt = I²RΔt = V²Δt/R; P = VI = I²R = V²/R",
+            "Electrical energy; the kilowatt-hour; cost of electricity usage"
+          ],
+          "weeks": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "MATTER & MATERIAL: Atomic combinations",
+          "subtopics": [
+            "Chemical bond; Lewis diagrams; valence electrons",
+            "Why two H atoms bond and He does not; potential energy vs internuclear distance",
+            "Covalent bond and molecule; Lewis diagrams including multiple bonds (N2, O2, HCN)",
+            "Molecular shapes: linear, angular, pyramidal, tetrahedral",
+            "Bonding pairs vs lone pairs; dative covalent bond",
+            "Electronegativity; non-polar vs polar covalent bonds; partial charges; ΔEN scale up to ionic",
+            "Polar bonds vs polar molecules (role of molecular shape)",
+            "Bond energy and bond length; strength vs atom size and number of bonds"
+          ],
+          "weeks": [
+            7,
+            8
+          ]
+        },
+        {
+          "name": "MATTER & MATERIAL: Intermolecular forces",
+          "subtopics": [
+            "Intermolecular vs interatomic (intramolecular) forces",
+            "Van der Waals forces: London (induced dipole), dipole-dipole, dipole-induced dipole; hydrogen bonding",
+            "Ion-dipole forces",
+            "Intermolecular forces vs molecular mass; effects on boiling point, melting point, vapour pressure, solubility"
+          ],
+          "requires_skills": [
+            "physical_sciences.mole_concept"
+          ],
+          "weeks": [
+            9,
+            10
+          ]
+        },
+        {
+          "name": "CONTROL TEST",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "JUNE CONTROL TEST: Discussion and remedial work",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+          "subtopics": [
+            "Mole as SI unit; Avogadro's number; molar mass; Avogadro's law; VM = 22,4 dm³·mol⁻¹ at STP",
+            "Calculations with n = m/M, n = V/VM, n = N/NA; gas volume relationships",
+            "Concentration c = n/V",
+            "Percentage composition; empirical and molecular formulae",
+            "Stoichiometric calculations including limiting reagents; percentage yield",
+            "Percentage purity (e.g. CaCO3 in impure seashells)",
+            "Stoichiometry of explosion reactions and airbag (sodium azide) reactions"
+          ],
+          "requires_skills": [
+            "physical_sciences.formulae_and_balanced_equations",
+            "physical_sciences.mole_concept"
+          ],
+          "weeks": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Energy and change",
+          "subtopics": [
+            "Heat of reaction ΔH; exothermic and endothermic reactions and the sign of ΔH",
+            "Activation energy; activated complex",
+            "Potential energy vs course-of-reaction graphs, catalysed and uncatalysed"
+          ],
+          "requires_skills": [
+            "physical_sciences.formulae_and_balanced_equations"
+          ],
+          "weeks": [
+            6
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Type of reactions",
+          "subtopics": [
+            "Names and formulae of common acids: hydrochloric, nitric, sulphuric, ethanoic (acetic)",
+            "Names and formulae of common bases: ammonia, sodium carbonate, sodium hydrogen carbonate, sodium hydroxide, potassium hydroxide"
+          ],
+          "weeks": [
+            7
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Acids and bases",
+          "subtopics": [
+            "Arrhenius and Brønsted-Lowry definitions; conjugate acid-base pairs",
+            "Amphiprotic substances (ampholytes) with equations",
+            "Dissolution of acids and bases in water",
+            "Reactions of acids with metal hydroxides, metal oxides and metal carbonates",
+            "Acid-base indicators: litmus, methyl orange, phenolphthalein, bromothymol blue"
+          ],
+          "requires_skills": [
+            "physical_sciences.formulae_and_balanced_equations"
+          ],
+          "weeks": [
+            8
+          ]
+        },
+        {
+          "name": "MATTER & MATERIAL: Ideal gas",
+          "subtopics": [
+            "Molecular motion; collisions; distribution of speeds; 'average speed'",
+            "Ideal gas vs real gas; conditions approaching ideal behaviour",
+            "Boyle's law: practical, tables of results, graphs, proportionality and equation",
+            "Temperature as average kinetic energy; pressure as molecular collisions with container walls"
+          ],
+          "weeks": [
+            9,
+            10
+          ]
+        },
+        {
+          "name": "CONTROL TEST",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "SEPTEMBER CONTROL TEST: Discussion and remedial work",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Types of reaction",
+          "subtopics": [
+            "Acid-base reactions: choose acid and base to prepare a given salt; neutralisation equations",
+            "Oxidation numbers and assignment rules (H2O, CH4, CO2, H2O2, HOCl)",
+            "Redox reactions as electron transfer and oxidation-number change",
+            "Oxidation, reduction, oxidising agent, reducing agent",
+            "Balance redox equations using half-reactions and the table of standard reduction potentials"
+          ],
+          "weeks": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "CONSOLIDATION AND REVISION",
+          "weeks": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "FINAL EXAMINATION (P1: 2 hrs, P2: 2 hrs)",
+          "weeks": [
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

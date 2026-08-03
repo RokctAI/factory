@@ -1,0 +1,243 @@
+{
+  "subject": "Economics",
+  "grade": 11,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/economics/syllabus/grade11.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=BjrxUz7iUNo%3D&tabid=3205&portalid=0&mid=10752",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "scope_deltas": "SAG-stated content-scope differences vs the CAPS/DBE prescription are recorded in scope_deltas.json in this folder (hand-maintained, SAG-transcribed only; an empty ledger means 'not yet transcribed', never 'no differences').",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "FACTORS OF PRODUCTION",
+          "subtopics": [
+            "Factors of production and their remuneration",
+            "Local economic planning; accessibility of marginalised groups; community participation; empowerment and procurement"
+          ],
+          "prior_knowledge": "Production processes; remuneration; redress methods",
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS: ECONOMIC GOODS AND SERVICES",
+          "subtopics": [
+            "Final consumption expenditure by households (C) and government (G)",
+            "Gross fixed capital formation (I): definition, composition, importance",
+            "Main aggregates: GVA, GNE, GNI"
+          ],
+          "prior_knowledge": "National accounts (GDP, GDI, GDE; constant vs current); circular flow; participants; factor and product markets; leakages and injections",
+          "requires_skills": [
+            "economics.circular_flow_basics"
+          ],
+          "weeks": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "ECONOMIC SYSTEMS: MIXED ECONOMY",
+          "subtopics": [
+            "Free market (capitalism), centrally planned (socialism/command/communism), dualistic/mixed economy with South Africa as example"
+          ],
+          "prior_knowledge": "Economic questions, means of production, markets, political systems",
+          "weeks": [
+            6,
+            7
+          ]
+        },
+        {
+          "name": "ECONOMIC STRUCTURE OF SOUTH AFRICA",
+          "subtopics": [
+            "Sectors of the economy: primary, secondary, tertiary",
+            "SA's infrastructure; service provisioning and access to economic opportunity"
+          ],
+          "prior_knowledge": "Factors of production, basic processes, growth and development",
+          "weeks": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION & ASSESSMENT",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "DYNAMICS OF THE MARKET: RELATIONSHIP BETWEEN MARKETS",
+          "subtopics": [
+            "Relative prices; demand/supply relationships: substitutes and complements (with graphs)",
+            "Relationships between product and factor markets",
+            "Market structure: the four basic models, characteristics and differences, classification into perfect and imperfect markets"
+          ],
+          "prior_knowledge": "Markets, market forces, laws of demand and supply, shifts, market equilibrium",
+          "requires_skills": [
+            "economics.demand_and_supply"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "DYNAMICS OF MARKETS: EFFECTS OF COSTS AND REVENUE",
+          "subtopics": [
+            "Objectives of businesses",
+            "Short-run costs: total, average and marginal; cost schedules and curves",
+            "Long-run costs; revenue calculations and changes; profits and losses",
+            "Application of cost and revenue analysis to production and factor pricing (with graphs)"
+          ],
+          "prior_knowledge": "Production costs, cost and revenue concepts, plotting graphs, averages, marginal concepts, profit and loss",
+          "requires_skills": [
+            "economics.graphing_from_tables"
+          ],
+          "weeks": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "DYNAMICS OF MARKETS: PRICE ELASTICITY",
+          "subtopics": [
+            "Price elasticity of demand: explanation, calculation, graphs",
+            "Price elasticity of supply: explanation, calculation, graphs",
+            "Factors determining the elasticity of demand"
+          ],
+          "prior_knowledge": "Needs and wants, consumption, maximum satisfaction, price and value, demand and supply, income, substitutes and complements",
+          "weeks": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION & ASSESSMENT",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "ECONOMIC GROWTH",
+          "subtopics": [
+            "Wealth creation and patterns of distribution: income and wealth distribution; how much inequality?",
+            "The Gini coefficient and the Lorenz curve",
+            "Redistribution methods",
+            "Economic growth: meaning, importance, methods, constraints, SA's recent growth experience",
+            "Standard of living"
+          ],
+          "prior_knowledge": "Economic redress, scarcity problem, needs and wants, production process, growth and development",
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "ECONOMIC DEVELOPMENT",
+          "subtopics": [
+            "Measuring levels of development; methods of development",
+            "Common characteristics of developing countries: low standard of living, low productivity, high population growth and dependency burdens, high unemployment, primary-sector dependence, deficient infrastructure",
+            "Developing strategies; South African endeavours; Indigenous Knowledge Systems (IKS)"
+          ],
+          "prior_knowledge": "Inequality and poverty, education and skills, sustainable job opportunities, unemployment",
+          "weeks": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "MONEY AND BANKING",
+          "subtopics": [
+            "Money: technical functions, modern money, money-associated instruments, the monetary system, the value of money and its stabilisation",
+            "Banking: basic principles of credit creation, interest rates, micro-lending",
+            "Central banking: basic functions, monetary policy",
+            "Bank failures and their consequences"
+          ],
+          "prior_knowledge": "Evolution of markets, money instruments, history of money and banking, savings",
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION & ASSESSMENT",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "GLOBALISATION",
+          "subtopics": [
+            "Meaning, causes and consequences",
+            "The north/south divide"
+          ],
+          "prior_knowledge": "Poverty, scarcity, business cycles, market forces, SA growth and development history, economic redress",
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "ENVIRONMENTAL DETERIORATION",
+          "subtopics": [
+            "The environmental problem; protecting the environment",
+            "Approaches to sustainability; the global and local impact on South Africa"
+          ],
+          "prior_knowledge": "Scarcity problem (human rights and environment), economic redress (natural resources), international trade, population size",
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "REVISION & ASSESSMENT",
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "FINAL EXAMINATION",
+          "weeks": [
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

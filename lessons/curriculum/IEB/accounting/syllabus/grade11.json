@@ -1,0 +1,223 @@
+{
+  "subject": "Accounting",
+  "grade": 11,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/accounting/syllabus/grade11.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=qxPOjU7FXcA%3D&tabid=3205&portalid=0&mid=10752",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "scope_deltas": "SAG-stated content-scope differences vs the CAPS/DBE prescription are recorded in scope_deltas.json in this folder (hand-maintained, SAG-transcribed only; an empty ledger means 'not yet transcribed', never 'no differences').",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "RECONCILIATION",
+          "subtopics": [
+            "Bank reconciliation: reconcile bank statements with cash journals; stop/debit orders, EFTs, bank charges, interest, corrections; outstanding deposits and EFTs",
+            "Creditors reconciliation: reconcile creditors' monthly statements with the creditors ledger; outstanding invoices, credit notes, payments, unrecorded discounts, corrections",
+            "Integrate ethics and internal control; apply GAAP"
+          ],
+          "prior_knowledge": "Gr 10: cash journals and bank-account posting; creditors (CJ, CAJ, creditors control and ledger); control-account vs list reconciliations",
+          "requires_skills": [
+            "accounting.control_accounts"
+          ],
+          "weeks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "FIXED ASSETS",
+          "subtopics": [
+            "Need for and compilation of a fixed/tangible asset register",
+            "Record acquisition of fixed assets",
+            "Depreciation: straight-line and diminishing balance; fully depreciated assets",
+            "Disposal of fixed assets (cash, credit, trade-in, donated, owner's drawings) at beginning/during/end of the year",
+            "Ethics and internal control over movement and use of fixed assets"
+          ],
+          "prior_knowledge": "Gr 10 transactions for acquiring fixed assets and depreciation calculations",
+          "weeks": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "FINANCIAL ACCOUNTING OF PARTNERSHIPS: ADJUSTMENTS, LEDGER, ACCOUNTING EQUATION, FINAL ACCOUNTS",
+          "subtopics": [
+            "Partnership concepts: capital and current accounts, interest on capital, salaries and bonuses to partners, distribution of profits/losses",
+            "IFRS and GAAP principles (historical cost, prudence, materiality, business entity, going concern, matching)",
+            "Partnership accounting cycle: documents, journals, ledgers, trial balance, final accounts; accounting-equation analysis",
+            "Year-end adjustments (revision) plus new: provision for bad debts, capitalised interest on loan",
+            "Partnership-agreement adjustments; trading, profit and loss, and appropriation accounts",
+            "Reversal of accruals, deferred income and prepayments at the start of the next period"
+          ],
+          "prior_knowledge": "Partnerships as a form of ownership; Gr 10 accounting cycle, year-end adjustments and final accounts",
+          "requires_skills": [
+            "accounting.accounting_cycle",
+            "accounting.double_entry"
+          ],
+          "weeks": [
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "name": "REVISION CONTROL TEST REMEDIATION",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "PARTNERSHIPS: FINANCIAL STATEMENTS AND NOTES",
+          "subtopics": [
+            "Statement of comprehensive income, statement of financial position and notes",
+            "Apply IFRS and GAAP principles"
+          ],
+          "prior_knowledge": "Gr 10 IFRS/GAAP principles, year-end adjustments, accounting cycle, reversals",
+          "requires_skills": [
+            "accounting.gaap_principles"
+          ],
+          "weeks": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "PARTNERSHIPS: ANALYSIS AND INTERPRETATION OF FINANCIAL STATEMENTS",
+          "subtopics": [
+            "Revise profitability (gross/net profit and operating indicators), liquidity (current and acid-test) and solvency indicators",
+            "Introduce stock turnover rate, stock holding period, average debtors' collection period, average creditors' payment period",
+            "Introduce risk/gearing (debt-equity ratio) and return on (average) partners' equity"
+          ],
+          "prior_knowledge": "Gr 10 financial indicators; percentage and ratio arithmetic",
+          "weeks": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION CONTROL TEST REMEDIATION",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "BUDGETING: BASIC CONCEPTS, CASH BUDGETS (DEBTORS’ COLLECTION AND CREDITORS’ PAYMENTS) AND PROJECTED STATEMENT OF COMPREHENSIVE INCOME (INCOME STATEMENT)",
+          "subtopics": [
+            "Differentiate a cash budget from a projected income statement",
+            "Prepare and present a projected income statement (projected revenue and expenditure)",
+            "Prepare and present a cash budget for sole traders: projected receipts and payments, debtors' collection and creditors' payment schedules",
+            "Ethics, internal control and internal audit relating to budgeting and projections"
+          ],
+          "prior_knowledge": "Gr 10 budget concepts and basic calculations; statement of comprehensive income; CRJ and CPJ",
+          "weeks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "INVENTORY SYSTEMS",
+          "subtopics": [
+            "Perpetual vs periodic stock systems: differences, advantages, disadvantages",
+            "Cost of sales: perpetual (trading stock account and/or % mark-up) and periodic (opening stock, purchases, returns, carriage/customs, closing stock and/or mark-up)",
+            "Gross profit using sales, cost of sales and/or mark-up",
+            "Ethics, internal control and internal audit relating to stock"
+          ],
+          "prior_knowledge": "Gr 10 perpetual-system content: trading stock, mark-up calculations, cost of sales, gross profit",
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "COST ACCOUNTING (MANUFACTURING): LEDGER ACCOUNTS AND CALCULATIONS",
+          "subtopics": [
+            "Variable costs (direct material, direct labour, selling and distribution) and fixed costs (factory overheads, administration)",
+            "Unit cost and total cost of production; break-even point via contribution per unit",
+            "Stock ledger accounts: raw materials, work-in-progress, finished goods, consumable stores",
+            "Cost accounts: DMC, DLC, FOHC, administration, selling and distribution; related nominal accounts",
+            "Ethics, internal control and internal audit in a manufacturing environment"
+          ],
+          "prior_knowledge": "Gr 10 cost concepts and basic cost calculations",
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION CONTROL TEST REMEDIATION",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "VALUE ADDED TAX (VAT)",
+          "subtopics": [
+            "Need, purpose and principles of VAT; invoice or receipt base",
+            "VAT-able items, current (standard) rate, zero-rated and VAT-exempted items",
+            "Calculations: add VAT to cost-plus-mark-up; VAT from inclusive and exclusive amounts",
+            "Effect of bad debts, discounts and goods returned on VAT",
+            "VAT ethics and fraud; internal audit and control over VAT collection and payment to SARS"
+          ],
+          "prior_knowledge": "General knowledge about tax and VAT",
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "REVISION AND EXAMINATION PREPARATION",
+          "weeks": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "FINAL EXAM (TWO PAPERS)",
+          "weeks": [
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

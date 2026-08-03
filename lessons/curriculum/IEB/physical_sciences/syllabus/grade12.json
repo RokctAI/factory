@@ -1,0 +1,276 @@
+{
+  "subject": "Physical Sciences",
+  "grade": 12,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade12.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=HofhdeKXMCM%3D&tabid=3205&portalid=0&mid=10752",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "scope_deltas": "SAG-stated content-scope differences vs the CAPS/DBE prescription are recorded in scope_deltas.json in this folder (hand-maintained, SAG-transcribed only; an empty ledger means 'not yet transcribed', never 'no differences').",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "MECHANICS: Momentum & impulse",
+          "subtopics": [
+            "Momentum p = mv; vector nature and vector diagrams",
+            "Newton's second law in momentum form Fnet = Δp/Δt",
+            "Change in momentum under a resultant force",
+            "Impulse; impulse-momentum theorem FnetΔt = mΔv (1D); safety applications",
+            "Conservation of linear momentum; isolated systems, internal and external forces",
+            "Collisions of two objects in one dimension; elastic vs inelastic by calculation"
+          ],
+          "requires_skills": [
+            "physical_sciences.equations_of_motion"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "MECHANICS: Vertical projectile motion",
+          "subtopics": [
+            "Projectiles; equations of motion for position, velocity and displacement",
+            "x-t, v-t and a-t graphs: free fall, thrown up, thrown down, bouncing objects",
+            "Equations for position and velocity vs time matching the graphs",
+            "Read position, displacement, velocity, acceleration off graphs; describe the motion"
+          ],
+          "requires_skills": [
+            "physical_sciences.equations_of_motion"
+          ],
+          "weeks": [
+            4,
+            5
+          ]
+        },
+        {
+          "name": "MATTER & MATERIALS: Organic molecules",
+          "subtopics": [
+            "Definitions: organic molecule, functional group, hydrocarbon, homologous series, saturated, unsaturated, structural isomer",
+            "Condensed, structural and molecular formulae (max 8 C, one functional group): alkanes, alkenes, alkynes, alcohols, haloalkanes, carboxylic acids, aldehydes, ketones, esters",
+            "IUPAC naming (max three alkyl substituents; max two functional groups for haloalkanes)",
+            "Saturated/unsaturated compounds; chain, positional and functional isomers",
+            "Physical properties (boiling/melting point, vapour pressure) vs IMF strength, functional group, chain length, branching",
+            "Combustion of alkanes in excess oxygen; alkanes as fuels",
+            "Esterification: equation, reaction conditions, IUPAC names of reactants and products",
+            "Classify and write equations for addition (alkenes), elimination (dehydrohalogenation, cracking, dehydration of alcohols) and substitution (hydrolysis of haloalkanes, halogenation of alkanes) reactions"
+          ],
+          "weeks": [
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "CONSOLIDATION OF TERM 1, CONTROL TEST",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "MECHANICS: Work, energy, and power",
+          "subtopics": [
+            "Work done on an object; net work; force and free-body diagrams; positive vs negative net work",
+            "Work-energy theorem on horizontal, vertical and inclined planes",
+            "Conservative and non-conservative forces; conservation of mechanical energy",
+            "Wnc = ΔEk + ΔEp problems",
+            "Power; Pave = Fvave at constant speed; minimum motor power (e.g. borehole pumping)"
+          ],
+          "requires_skills": [
+            "physical_sciences.equations_of_motion",
+            "physical_sciences.force_and_free_body_diagrams"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "WAVES, SOUND & LIGHT: Doppler Effect",
+          "subtopics": [
+            "Doppler effect with sound and ultrasound; pitch change; medical applications (blood flow, foetal heartbeat)",
+            "fL = (v±vL)/(v±vs)·fs problems with moving source or listener",
+            "Red shifts; Doppler evidence for the expanding universe"
+          ],
+          "weeks": [
+            4,
+            5
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Rate and extent of reaction",
+          "subtopics": [
+            "Reaction rate: definition and calculation from data",
+            "Factors affecting rate; collision theory explanation",
+            "Experimental techniques for measuring rate (interpret tables and graphs)",
+            "Positive catalysts; molecular energy distribution graphs (catalyst, temperature, concentration)"
+          ],
+          "requires_skills": [
+            "physical_sciences.formulae_and_balanced_equations"
+          ],
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Chemical equilibrium",
+          "subtopics": [
+            "Open and closed systems; reversible reactions; dynamic equilibrium",
+            "Factors influencing equilibrium position; Le Chatelier's principle",
+            "Interpret equilibrium graphs",
+            "Equilibrium constant Kc: expression, calculations, significance of high/low values"
+          ],
+          "requires_skills": [
+            "physical_sciences.formulae_and_balanced_equations"
+          ],
+          "weeks": [
+            7,
+            8
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Acids and bases",
+          "subtopics": [
+            "Arrhenius and Lowry-Brønsted definitions",
+            "Strong vs weak, concentrated vs dilute acids and bases; conjugate pairs",
+            "Neutralisation reactions; titration calculations; indicator choice",
+            "Salt hydrolysis and approximate pH",
+            "pH scale; pH of strong acids and bases; Kw and auto-ionisation of water",
+            "Ka and Kb of strong vs weak acids/bases; comparison by pH, conductivity and reaction rate"
+          ],
+          "requires_skills": [
+            "physical_sciences.formulae_and_balanced_equations",
+            "physical_sciences.mole_concept"
+          ],
+          "weeks": [
+            9,
+            10
+          ]
+        },
+        {
+          "name": "JUNE EXAMINATION OR CONTROL TEST",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "CONTROL TEST: Discussion, corrections, remedial work",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "ELECTRICITY & MAGNETISM: Electric circuits",
+          "subtopics": [
+            "Current, voltage, resistance in series/parallel networks (max four resistors)",
+            "Internal resistance; ε = IRext + Ir",
+            "Circuit problems combining internal resistance with series/parallel arrangements"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "ELECTRICITY & MAGNETISM: Electrodynamics",
+          "subtopics": [
+            "Generators: energy conversion, electromagnetic induction, AC vs DC generators, components",
+            "Motors: motor effect, components, uses",
+            "Advantages of AC over DC; voltage-time and current-time graphs for AC",
+            "rms values: Irms = Imax/√2, Vrms = Vmax/√2; average power (purely resistive circuits)"
+          ],
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "MATTER & MATERIALS: Optical phenomena and properties of materials",
+          "subtopics": [
+            "Photoelectric effect and its significance; threshold frequency f0; work function W0",
+            "Photoelectric equation E = W0 + Kmax (E = hf, W0 = hf0, Kmax = ½mv²max)",
+            "Effect of intensity and frequency; particle nature of light",
+            "Atomic spectra via energy transitions; absorption vs emission spectra"
+          ],
+          "weeks": [
+            5
+          ]
+        },
+        {
+          "name": "CHEMICAL CHANGE: Electrochemical reactions",
+          "subtopics": [
+            "Oxidation and reduction (electron transfer, oxidation numbers); oxidising/reducing agents; anode, cathode, electrolyte",
+            "Galvanic cells: salt bridge, ion movement, electron flow, half-reactions, overall reaction, cell notation, emf calculation, 'flat' cell at equilibrium",
+            "Standard electrode potentials; standard hydrogen electrode as reference",
+            "Electrolytic cells: ion movement, electron flow, half-reactions, overall reaction",
+            "Electrolytic applications: decomposition of CuCl2, electroplating, refining of copper, electrolysis of concentrated NaCl"
+          ],
+          "weeks": [
+            6,
+            7
+          ]
+        },
+        {
+          "name": "TRIAL EXAMINATION (P1: 3 hrs, P2: 3 hrs)",
+          "weeks": [
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "TRIAL EXAM: Discussion",
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "CONSOLIDATION AND REVISION",
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "FINAL EXAMINATION (P1: 3 hrs, P2: 3 hrs)",
+          "weeks": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}
