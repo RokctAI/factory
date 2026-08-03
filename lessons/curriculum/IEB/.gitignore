@@ -1,0 +1,6 @@
+# Copyrighted source PDFs (SAGs, IEB papers) are fetched on demand by
+# scripts/fetch_ieb_sources.py, never committed — the same policy as
+# ../CAPS/past_papers/. sources_manifest.json (URL + sha256 provenance)
+# IS committed; extracted/curated .md and .json carry everything consumers
+# need.
+*.pdf

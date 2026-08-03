@@ -1,0 +1,13 @@
+{
+  "skill_ref": "accounting.accounting_cycle",
+  "name": "The accounting cycle",
+  "subject": "Accounting",
+  "grade": 10,
+  "curriculum": "IEB",
+  "inherits_from": "lessons/curriculum/CAPS/accounting/skills/grade10/accounting_cycle.json",
+  "inheritance": "full — the skill's teaching content (example_problem, diagnostic, recap, exit check, covered_by, requires chain) is curriculum-neutral and maintained once, in the CAPS file. skill_ref is kept identical so requires_skills links in the IEB syllabus files resolve against the same skill.",
+  "overrides_pending": [
+    "importance.exam_weight — the CAPS block cites DBE paper sections/marks, which do not describe IEB papers; re-derive from the IEB SAG exam structure once ingested. Until then consumers must not show DBE marks in an IEB context."
+  ],
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py"
+}
