@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why the owner's R2 000 withdrawal is recorded as drawings and not as an expense, and what goes wrong at year end if the distinction is ignored.",
+      "expected_answer": "The test is whether the business received value: for wages, rent and stock it did; for the owner's personal transfer it received nothing — the owner withdrew part of their own equity. Drawings never enter the profit calculation; they reduce capital directly. Buried in expenses, drawings understate the business's true profit and misrepresent performance to anyone reading the books."
+    },
+    {
+      "id": "cc2",
+      "question": "Under the perpetual inventory system, where does a cash purchase of trading stock go in the CPJ, and why is there no Purchases account?",
+      "expected_answer": "Into the Trading Stock column — the asset account is loaded directly at cost, because the perpetual system updates the stock account at every transaction. A separate Purchases account belongs to the periodic system; under perpetual recording the shelf account itself carries every in and out, so 'Purchases' does not exist."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the imprest system's built-in control: the standing balance test and how the month-end restoration amount is determined.",
+      "expected_answer": "The float is fixed (e.g. R500); every payment is exchanged for a signed, numbered voucher, so at any moment cash plus vouchers must equal the imprest amount — a shortfall announces itself immediately. At month end the vouchers are totalled (e.g. R360) and the float is restored by exactly that voucher total from the bank via the CPJ, returning the tin to R500."
+    }
+  ]
+}
