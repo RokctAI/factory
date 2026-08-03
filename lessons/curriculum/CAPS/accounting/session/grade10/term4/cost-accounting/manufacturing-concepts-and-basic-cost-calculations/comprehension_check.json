@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the two sortings every production cost undergoes, with an example carrying both labels.",
+      "expected_answer": "Sorting one asks WHERE the cost attaches: traceable to one specific unit — direct (fabric, machinist's per-shirt wage); serving production in general — indirect, gathered as factory overheads (thread, supervisor, workshop rent, machine depreciation). Selling costs live outside the factory fence entirely. Sorting two asks HOW the cost behaves with volume: variable costs scale in total but stay constant per unit (fabric R40/shirt); fixed costs stand still in total but fall per unit as output rises (rent R3 000 regardless). Every cost carries both labels: fabric is direct and variable; rent is overhead and fixed; the supervisor is indirect labour and fixed."
+    },
+    {
+      "id": "cc2",
+      "question": "Build the month's cost statement for the shirt workshop and state what the unit cost is FOR.",
+      "expected_answer": "Direct materials 400 × R40 = R16 000; direct labour 400 × R25 = R10 000; PRIME COST R26 000. Plus factory overheads (rent R3 000, supervisor R2 000, electricity R600, thread and needles R400) R6 000: TOTAL COST OF PRODUCTION R32 000. Over 400 units: UNIT COST R80. The unit cost is the floor under the price — selling at R100 clears R20 a shirt; selling below R80 funds a loss on every sale. Work-in-progress (half-sewn shirts) sits between raw materials and finished goods, its cost held in the factory until completion."
+    },
+    {
+      "id": "cc3",
+      "question": "Run the what-if at 500 shirts and at 200 shirts, and explain both unit-cost movements.",
+      "expected_answer": "At 500: variables scale — materials R20 000 + labour R12 500 = prime R32 500; fixed overheads stand at R6 000; total R38 500; unit cost R77. At 200: prime R13 000; overheads still R6 000; total R19 000; unit cost R95. The variable share stays R65 per shirt in every case; only the fixed spread moves — R12 each at 500, R15 at 400, R30 at 200. Producing more thins the fixed slice (the logic of scale); quiet months thicken it, which is why they hurt more than they seem. The marker's trap is scaling fixed costs with volume, which contradicts their definition."
+    }
+  ]
+}
