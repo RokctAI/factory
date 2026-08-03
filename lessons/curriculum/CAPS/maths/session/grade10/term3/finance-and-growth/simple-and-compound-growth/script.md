@@ -12,6 +12,8 @@ The two formulae encode two different agreements about where the interest lives.
 
 State the distinction in one sentence, because examiners award it: simple interest is calculated on the principal only; compound interest is calculated on the principal plus accumulated interest — interest on interest.
 
+Pause here — questions on this section are coming to you now. They test the cast and the distinction you have just heard: answer with the definitions, precisely as stated.
+
 ## Subtopic: Simple Growth — Executing A = P(1 + in)
 
 The case study, simple version. R5 000 invested at 8 percent per annum simple interest for 3 years. Find A.
@@ -26,6 +28,8 @@ Multiply: 5 000 times 1,24 is 6 200. The accumulated amount is R6 200 — and th
 
 Decompose the answer to verify it: the interest earned is 6 200 minus 5 000 — R1 200 over three years, which is R400 per year, which is exactly 8 percent of R5 000. Every year paid the same R400, calculated on the original principal, untouched by the growing balance. That constant annual payment is the fingerprint of simple growth — linear growth, the same increment every period. When your simple-interest answer does not decompose into equal annual payments on P, the substitution was wrong. Verify this way every time; it costs twenty seconds.
 
+Stop for this section's questions now. They ask you to run the layout and to read the bracket — execute exactly as demonstrated, and let the equal annual payments confirm your answer.
+
 ## Subtopic: Compound Growth — Executing A = P(1 + i)ⁿ
 
 Same data, compound version: R5 000 at 8 percent per annum compounded annually, for 3 years.
@@ -38,7 +42,7 @@ Compute the factor: 1,08 squared is 1,1664; times 1,08 again is 1,259712. Then A
 
 Now the comparison the examiner is really testing. Simple: R6 200. Compound: R6 298,56. The gap is R98,56 — and you must be able to say precisely where it comes from. Year one is identical in both schemes: 8 percent of 5 000, R400. But in year two, compound pays 8 percent of 5 400 — R432 — while simple still pays R400: the extra R32 is interest earned BY year one's interest. Year three compounds again: 8 percent of 5 832 is R466,56, another R66,56 ahead of simple's R400. Thirty-two plus 66,56 is the R98,56. Interest on interest — quantified, not just named. An answer that can point to the R32 and the R66,56 is a distinction answer.
 
-The questions on this section will hand you the same comparison with different numbers — walk the same road: both formulae, both answers, and the gap explained by where the interest was calculated.
+Pause now for this section's questions — they hand you this same comparison in different clothes. Walk the same road: both formulae, both answers, and the gap explained by where the interest was calculated.
 
 ## Subtopic: Choosing the Formula and Working Backwards
 
@@ -49,6 +53,8 @@ Two applications, executed. Hire purchase: a television priced at R8 000, bought
 Now the reverse gear, because examiners run this formula backwards. What principal must be invested today at 6 percent compound interest to reach R10 000 in 4 years? The unknown is P. Write the formula, substitute what is known: 10 000 equals P times 1,06 to the power 4. The factor: 1,06 to the fourth is 1,262477. Isolate P by dividing both sides: P equals 10 000 over 1,262477, which is R7 920,94. Verify by running forwards: 7 920,94 times 1,262477 returns 10 000, to the cent. A reverse answer verified forwards is unassailable.
 
 The method, compressed for the examination. One: classify the scenario — simple or compound — and quote the matching formula. Two: list P, i as a decimal, n. Three: substitute visibly. Four: bracket first, exponent before multiplication, full decimals to the end. Five: answer in rands, two decimals, units stated. Six: verify — decompose simple answers into equal annual payments; check compound answers year by year or run reverse answers forwards. The distinction-level takeaway: the bracket is a growth factor, and compound growth applies that factor to its own output — once you read the formulae as factors rather than recipes, every variation in Grade 11 and 12 finance, from depreciation to timelines, is the same two moves.
+
+The final questions of this part are in front of you now. Classification first, then execution: quote the formula the scenario demands, substitute visibly, and verify the way I have shown you.
 
 # Part 2 — Simplifier
 
@@ -64,6 +70,8 @@ Picture two. A woman in your neighbourhood owns one taxi. The taxi earns money. 
 
 Hold both pictures. The weekend wage is simple growth: the extra money never joins the team; every payment is calculated on the original deal. The taxi fleet is compound growth: every bit of growth joins the team and starts working. Same start, very different futures — and everything in this lesson is just these two pictures with numbers attached.
 
+Quick check before we carry on — a few questions on the pictures are coming to you right now. No formulas needed yet: for each situation, just decide whether the money is earning a wage or buying taxis.
+
 ## Subtopic: The Same R5 000, Built Year by Year
 
 Now the case study from the first part — R5 000 at 8 percent for 3 years — but no formulas yet. Just honest arithmetic, one year at a time.
@@ -76,6 +84,8 @@ Put the two finals side by side: R6 200 the wage way, R6 298,56 the taxi way. Th
 
 Only NOW, the formulas — because they are just this arithmetic in a hurry. The wage way, three equal payments of i times P, is A equals P times one plus i n. The taxi way, multiplying by 1,08 three times over, is A equals P times one plus i to the power n. If you ever blank on which formula is which in a test, you can rebuild either one, year by year, exactly as we just did — slower, but bulletproof. The formula is a shortcut for arithmetic you can already do. That is worth celebrating: you just did compound interest BY HAND.
 
+Your questions for this part are up now. Rebuild the years in each one exactly the way we just did — balance, 8 percent of it, add it on — and watch the right answer assemble itself.
+
 ## Subtopic: Which Deal Is in Front of You?
 
 Last skill: recognising which picture a question is showing you — because the question will never say "use the taxi way".
@@ -86,4 +96,4 @@ Try the reflex on three quick ones. "A loan at 12 percent per annum simple inter
 
 And keep the one honest warning: the taxi deal is wonderful when the money is YOURS — savings, investments — and heavy when the money is OWED, because debts can compound too. Same mathematics, both directions.
 
-You now own both pictures, both formulas, and — most importantly — the year-by-year arithmetic underneath them that no test can take away from you. Small win banked. The practice questions are yours.
+You now own both pictures, both formulas, and — most importantly — the year-by-year arithmetic underneath them that no test can take away from you. And here come the last questions of the lesson, right now: listen for each deal's shape, match it to its picture, and bank the win. You have earned it.
