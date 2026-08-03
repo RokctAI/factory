@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between the Analysis of Receipts column and the Bank column, and describe a day on which they would not show identical line entries.",
+      "expected_answer": "The analysis column records each amount as it is received during the day; the Bank column records what is deposited, when it is deposited. On a busy day with several receipts banked together — e.g. five till collections banked as one deposit — five analysis amounts become a single Bank figure, so the columns differ line by line while agreeing in total."
+    },
+    {
+      "id": "cc2",
+      "question": "Goods are sold for cash at a mark-up of 25% on cost. Show how the cost of sales is calculated for sales of R1 500, why dividing (not subtracting 25%) is correct, and which columns the two figures occupy.",
+      "expected_answer": "Cost = selling price ÷ 1,25 = R1 500 ÷ 1,25 = R1 200; check forwards: 1 200 × 1,25 = 1 500. Subtracting 25% off the selling price (R1 125) is wrong because the mark-up was calculated ON COST, not on selling price. R1 500 goes to Analysis/Bank and Sales; R1 200 goes to the Cost of Sales column on the same line."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the cross-cast (month-end handshake), state which column stands outside it and why, and what a failed cross-cast tells the bookkeeper.",
+      "expected_answer": "The Bank column total must equal Sales total plus Sundry accounts total, because every banked rand must be explained by a lane. Cost of Sales stands outside — it records stock leaving at cost, not money received. A failed cross-cast proves an error inside the journal (an amount banked but unexplained, or explained but not banked), and the difference is the amount to hunt — before anything is posted to the ledger."
+    }
+  ]
+}
