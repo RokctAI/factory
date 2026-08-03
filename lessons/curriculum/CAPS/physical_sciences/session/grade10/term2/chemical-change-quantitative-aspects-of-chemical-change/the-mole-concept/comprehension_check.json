@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why chemists need the mole at all — what problem does counting in bulk units solve?",
+      "expected_answer": "Reactions happen particle by particle, but particles are far too small to count or weigh individually. The mole is a bulk counting unit (like a dozen) sized so that one mole's mass in grams equals the relative molecular mass — letting chemists count particles by weighing grams on an ordinary balance."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the 'mole map' and how it organises every conversion in this topic. Trace the full journey of the 8,8 g CO2 problem on it.",
+      "expected_answer": "Moles sit at the centre with three roads: mass (×M out, ÷M in), particles (×NA out, ÷NA in), and gas volume at STP (×22,4 out, ÷22,4 in). The problem entered from mass (8,8 ÷ 44 = 0,2 mol), then exited along the particle road (0,2 × 6,02×10²³ = 1,204×10²³ molecules) and the volume road (0,2 × 22,4 = 4,48 dm³)."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain why the 22,4 dm³ molar volume applies to any gas — but only under specific conditions.",
+      "expected_answer": "Avogadro's law says equal volumes of gases at the same temperature and pressure hold equal numbers of molecules, so one mole of any gas fills the same volume regardless of identity. That shared volume is 22,4 dm³ only at STP (273 K, 101,3 kPa); at other temperatures or pressures the volume changes, and 22,4 may not be used."
+    }
+  ]
+}

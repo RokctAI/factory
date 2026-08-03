@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the test you use to classify any quantity as a vector or a scalar, and apply it to energy and to force.",
+      "expected_answer": "Ask whether a direction is needed to complete the quantity's meaning. Energy: '500 joules in which direction?' is meaningless — no direction needed, so scalar. Force: a 30 N push east differs completely from 30 N west — direction essential, so vector."
+    },
+    {
+      "id": "cc2",
+      "question": "A runner completes one full lap of a 400 m track. Explain why distance and displacement give different answers, and what each quantity is measuring.",
+      "expected_answer": "Distance (scalar) counts every metre of the path travelled: 400 m. Displacement (vector) compares only the final position to the start: since they coincide, displacement is zero. The scalar measures how much moving happened; the vector measures the net change in position."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the sign-convention method for finding the resultant of forces on a line, and explain physically why 30 N east and 50 N west give 20 N west rather than 80 N.",
+      "expected_answer": "Choose a positive direction (e.g. east), rewrite each force as a signed number (+30, −50), add algebraically (−20), and translate back (20 N west). Physically, the opposing forces cancel each other up to 30 N, leaving only 20 N of unbalanced westward force; adding magnitudes to get 80 N ignores that the forces work against each other."
+    }
+  ]
+}

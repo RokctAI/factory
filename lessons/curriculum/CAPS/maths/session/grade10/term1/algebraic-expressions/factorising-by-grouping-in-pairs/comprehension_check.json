@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why factoring +b instead of −b from the pair −bx − by makes the grouping fail, and how the negative factor fixes it.",
+      "expected_answer": "Taking out +b leaves (−x − y), which cannot match the first pair's bracket (x + y), so no common bracket exists and the method stalls. Dividing by −b flips both signs inside, leaving (x + y) — dividing by a negative reverses signs — so the brackets match and the common bracket can be factored out."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe what to do when the terms of a four-term expression refuse to group in their given order, and why this is allowed.",
+      "expected_answer": "Rearrange the terms so that terms sharing factors (kin) sit together — e.g. reunite the a-terms and the b-terms — then pair and group normally. Addition is commutative, so reordering terms changes nothing about the expression's value."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain how the matching-brackets checkpoint works as a self-check, and what the final verification of a grouping answer looks like.",
+      "expected_answer": "The method only succeeds if both pairs, after factoring, contain the identical bracket; a mismatch flags an earlier error (usually a sign) before a wrong answer can be written. The final check is expansion: multiplying the two answer brackets must return all four original terms with their original signs."
+    }
+  ]
+}

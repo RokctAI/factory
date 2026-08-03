@@ -1,0 +1,184 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Cast of Symbols and the Four Equations",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The equations of motion may only be used when:",
+          "options": [
+            "The acceleration is uniform (constant)",
+            "The object moves in a circle",
+            "The velocity is constant",
+            "The object starts from rest"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Which quantity is missing from the equation $v_f^2 = v_i^2 + 2a\\Delta x$?",
+          "options": [
+            "Time ($\\Delta t$)",
+            "Displacement ($\\Delta x$)",
+            "Acceleration ($a$)",
+            "Final velocity ($v_f$)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The 'absent character' rule for choosing an equation says:",
+          "options": [
+            "Pick the equation that excludes the quantity which is neither given nor wanted",
+            "Pick the equation with the most symbols",
+            "Pick the equation you remember best",
+            "Always start with equation one"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Choosing the Equation and Finding the Acceleration",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "For the car problem (vi = 10 m/s, vf = 25 m/s, Δx = 300 m, find a), the absent quantity is:",
+          "options": [
+            "Time — so use $v_f^2 = v_i^2 + 2a\\Delta x$",
+            "Displacement — so use $v_f = v_i + a\\Delta t$",
+            "Acceleration — so use equation four",
+            "Initial velocity — so use equation two"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Substituting into $v_f^2 = v_i^2 + 2a\\Delta x$ gives 625 = 100 + 600a. The acceleration is:",
+          "options": [
+            "0,875 m/s² in the direction of motion",
+            "1,04 m/s²",
+            "8,75 m/s²",
+            "0,58 m/s²"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why must the direction be stated with the acceleration answer?",
+          "options": [
+            "Acceleration is a vector quantity",
+            "It makes the answer longer",
+            "Direction only matters for velocity",
+            "It is optional decoration"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding the Time — Two Roads to One Answer",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Using $v_f = v_i + a\\Delta t$ with a = 0,875 m/s², the time taken is:",
+          "options": [
+            "17,14 s",
+            "15,00 s",
+            "12,25 s",
+            "28,57 s"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The check via $\\Delta x = \\frac{(v_i + v_f)}{2}\\Delta t$ uses the average velocity, which is:",
+          "options": [
+            "17,5 m/s",
+            "35 m/s",
+            "15 m/s",
+            "12,5 m/s"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Why is the second road (equation four) such a strong check on the first?",
+          "options": [
+            "It uses only original given data, so an error in the calculated acceleration could not hide",
+            "It is easier to compute",
+            "It always gives a slightly different answer",
+            "It avoids using velocity"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Full Method, the Classic Traps, and Where This Leads",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A car travels at 90 km/h. Before using the equations of motion, this must become:",
+          "options": [
+            "25 m/s (divide by 3,6)",
+            "90 m/s",
+            "324 m/s (multiply by 3,6)",
+            "9 m/s"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "In $v_f^2 = v_i^2 + 2a\\Delta x$, a common error is:",
+          "options": [
+            "Forgetting to square the velocities — writing 25 instead of 625",
+            "Including time",
+            "Using displacement twice",
+            "Dividing by two"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "If the car had been braking, the acceleration in your equations would be:",
+          "options": [
+            "Negative (opposite to the chosen positive direction of motion)",
+            "Zero",
+            "Positive and larger",
+            "Ignored"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "In Grade 12, these same equations reappear in vertical projectile motion, where the constant acceleration is:",
+          "options": [
+            "Gravitational acceleration, 9,8 m/s² downward",
+            "The speed of the projectile",
+            "Zero at the top of the flight",
+            "Different for heavy and light objects"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

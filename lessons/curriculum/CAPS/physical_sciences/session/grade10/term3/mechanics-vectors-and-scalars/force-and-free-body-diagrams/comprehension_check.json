@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the rule 'every force needs a responsible object' and how it eliminates the phantom 'force of motion'.",
+      "expected_answer": "A force is an interaction, so each arrow must name the object doing the pushing or pulling (Earth → weight, floor → normal, rope → applied, rough surface → friction). Motion itself is not an object and exerts nothing; a moving box needs no forward force to keep moving — only changes in motion require force."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is the normal force not equal to the weight in this problem? Explain by reading the vertical balance of the diagram.",
+      "expected_answer": "Vertically, three forces act: N up, weight (49 N) down, and the rope's upward component F sin 30°. At constant velocity these balance: N + F sin 30° = w, so N = 49 − F sin 30°, which is less than the weight because the rope carries part of the load. The normal force must always be read from the balance, never assumed equal to weight."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe in your own words what the phrase 'constant velocity' allows you to write down mathematically, and why the examiner includes it.",
+      "expected_answer": "Constant velocity means zero acceleration, so by Newton's first law the net force is zero — forces balance in every direction. This licenses the equations F cos 30° = f (horizontal) and N + F sin 30° = w (vertical). The phrase is the examiner's way of telling you the diagram can be turned into balance equations."
+    }
+  ]
+}
