@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain in your own words why the Debtors Control account receives journal totals rather than individual transactions, and what would go wrong if it received both.",
+      "expected_answer": "The control account is a summary of the group of debtors; the detail lives in the personal accounts of the Debtors Ledger. If individual entries were also posted to the control account they would be counted twice, the balance would be inflated, and the agreement check against the debtors list would fail."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the month-end check that the Debtors Control account makes possible, and explain what a disagreement does — and does not — tell you.",
+      "expected_answer": "The control account balance is compared with the total of the list of individual debtors' balances from the Debtors Ledger; they must be equal. A disagreement proves an error exists somewhere in the detail or summary records, but it does not identify the specific error — the bookkeeper must trace it."
+    },
+    {
+      "id": "cc3",
+      "question": "For any transaction involving debtors, what single question should you ask to decide whether to debit or credit the Debtors Control account? Apply it to a bad debt written off.",
+      "expected_answer": "Ask: does this make debtors owe the business more or less? More means debit, less means credit. Writing off a bad debt removes an amount debtors owe, so debtors owe less and the control account is credited, with Bad Debts (expense) as the contra account."
+    }
+  ]
+}
