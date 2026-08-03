@@ -1,0 +1,310 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Ledger's Architecture",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The general ledger differs from the journals in that it answers:",
+          "options": [
+            "'What is the total story of each item?' — one account per item, all movements gathered",
+            "'What happened this month, in date order?'",
+            "'Which documents are missing?'",
+            "'What is the profit for the year?' directly"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Which accounts belong to the NOMINAL section?",
+          "options": [
+            "Bank, Equipment, Capital",
+            "Sales, Cost of Sales, Wages, Rent Income — the incomes and expenses that measure the period",
+            "Trading Stock and Drawings",
+            "Only Capital and Drawings"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Folio references exist so that:",
+          "options": [
+            "Pages look complete",
+            "The bookkeeper can count postings",
+            "Any amount can be traced from document to journal to ledger and back",
+            "The trial balance balances"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Posting the Cash Receipts Journal",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The CRJ's Bank column total of R56 900 posts as:",
+          "options": [
+            "A debit to Bank — the asset grew",
+            "A credit to Bank",
+            "A debit to Sales",
+            "A credit to Capital"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The Cost of Sales total of R3 600 posts:",
+          "options": [
+            "Once, as a debit to Cost of Sales",
+            "Once, as a credit to Trading Stock",
+            "Twice: debit Cost of Sales AND credit Trading Stock",
+            "Twice: debit Bank AND credit Sales"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Checking the CRJ's full posting: debits are Bank 56 900 + Cost of Sales 3 600 = 60 500. The matching credits are:",
+          "options": [
+            "Sales 4 500 + Capital 50 000 + Rent Income 2 400 + Trading Stock 3 600 = 60 500",
+            "Sales 4 500 + Capital 50 000 = 54 500",
+            "Capital 50 000 + Trading Stock 3 600 = 53 600",
+            "Sales 4 500 only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Posting the CPJ and Balancing the Accounts",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "After posting both journals, the Bank account shows debit 56 900 and credit 22 500. Its balance b/d is:",
+          "options": [
+            "R34 400 debit — the business has money",
+            "R34 400 credit",
+            "R79 400 debit",
+            "R22 500 credit"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Trading Stock shows debit 8 000 and credit 3 600. The balance means:",
+          "options": [
+            "R11 600 of stock was sold",
+            "R4 400 of goods sit on the shelf, at cost",
+            "R4 400 is owed to suppliers",
+            "The account must be closed off"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Why are the nominal accounts NOT balanced month to month?",
+          "options": [
+            "They never contain amounts",
+            "They are balanced daily instead",
+            "Their totals are secret",
+            "They accumulate to measure the period and close into the final accounts at year end"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Drawings of R2 000 is posted as a debit because:",
+          "options": [
+            "It is an expense of the business",
+            "It reduces the owner's equity — the reduction side of an equity account",
+            "All sundry items are debits",
+            "The bank requires it"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Trial Balance — Proving the Month",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Thabo's trial balance columns each total:",
+          "options": [
+            "R56 900",
+            "R60 500",
+            "R79 400",
+            "R34 400"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Rent of R3 500 posted to Repairs (correct side). The trial balance will:",
+          "options": [
+            "Fail by R3 500",
+            "Fail by R7 000",
+            "Still balance — it tests arithmetic equality, not correct classification",
+            "Fail by R3 500 ÷ 9"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A trial balance difference divisible by 9 suggests:",
+          "options": [
+            "Transposed digits — e.g. 3 500 written as 5 300",
+            "A posting made once instead of twice",
+            "An amount on the wrong side",
+            "A missing transaction"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Filing Cabinet",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the picture, the journals are the sorting room and the ledger is:",
+          "options": [
+            "The filing cabinet — one drawer per thing, each with a left and right page",
+            "The shredder",
+            "The bank vault",
+            "The shop counter"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The reference codes (CRJ 1, CPJ 1) beside every amount are:",
+          "options": [
+            "Decorations required by the format",
+            "Return tickets — each amount can be traced back to its diary page",
+            "The prices of the goods",
+            "Security passwords"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Which drawers grow on the LEFT page?",
+          "options": [
+            "Owing drawers and the owner's stake",
+            "Earning drawers like Sales",
+            "Money, possessions and spending drawers — assets and expenses",
+            "All drawers grow on the left"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "One Month Comes Home",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "'How much money do we have?' is answered by:",
+          "options": [
+            "Re-reading both diaries line by line",
+            "Opening the Bank drawer: 56 900 left, 22 500 right — R34 400 on hand",
+            "Adding all the drawers together",
+            "Waiting for the year-end statements"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The R50 000 the owner deposited goes to:",
+          "options": [
+            "The right page of the Capital drawer — the owner's stake grew",
+            "The left page of Capital",
+            "The Sales drawer",
+            "The Drawings drawer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The Stock drawer after the month (8 000 in, 3 600 out) tells Thabo:",
+          "options": [
+            "He owes R4 400",
+            "He sold R8 000 of goods",
+            "The drawer is empty",
+            "Goods costing R4 400 should be standing on his shelf"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Weigh-In",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The weigh-in levels because:",
+          "options": [
+            "Every amount ever posted went to two drawers — a left and a right, always equal",
+            "The bookkeeper rounds the totals",
+            "Debits are always larger",
+            "The scales are adjusted until level"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Level scales CANNOT see:",
+          "options": [
+            "An amount posted only once",
+            "Filing errors (right side, wrong drawer) and transactions that never arrived at all",
+            "An amount on the wrong side",
+            "Transposed digits"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The scales are off and the gap halves neatly. The whisper is:",
+          "options": [
+            "Two digits swapped places",
+            "A transaction is missing",
+            "An amount sits on the wrong side — it doubles its error",
+            "The float was not restored"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}
