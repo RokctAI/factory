@@ -1,0 +1,322 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Cast of Symbols and the Two Kinds of Growth",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "An interest rate of 8% per annum enters either growth formula as:",
+          "options": [
+            "$8$",
+            "$0{,}08$",
+            "$0{,}8$",
+            "$1{,}08$ substituted directly for $i$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The essential difference between simple and compound growth is that:",
+          "options": [
+            "Simple growth uses a higher rate",
+            "Compound growth only applies to banks",
+            "Simple interest is calculated on the principal only; compound interest is calculated on principal plus accumulated interest",
+            "Simple growth runs for fewer years"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "In $A = P(1 + i)^n$, why is the bracket raised to the power $n$?",
+          "options": [
+            "To make the calculation harder",
+            "Because the growth factor is applied once per period, each time to an already-grown amount",
+            "Because $n$ is always larger than $i$",
+            "It is a printing convention with no meaning"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Simple Growth — Executing A = P(1 + in)",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "R5 000 at 8% per annum simple interest for 3 years accumulates to:",
+          "options": [
+            "$R6\\,200$",
+            "$R6\\,298{,}56$",
+            "$R1\\,200$",
+            "$R6\\,000$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Inside the bracket of $A = 5\\,000(1 + 0{,}08 \\times 3)$, the correct computation order gives:",
+          "options": [
+            "$1{,}08 \\times 3 = 3{,}24$",
+            "$0{,}08 \\times 3 = 0{,}24$, then $1 + 0{,}24 = 1{,}24$",
+            "$1 + 0{,}08 = 1{,}08$, then nothing further",
+            "$3 + 0{,}08 = 3{,}08$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The fingerprint that verifies a simple-interest answer is:",
+          "options": [
+            "The interest decomposes into equal annual payments calculated on the original principal",
+            "The answer is always a round number",
+            "The interest grows each year",
+            "The bracket equals exactly 1"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Compound Growth — Executing A = P(1 + i)ⁿ",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "R5 000 at 8% per annum compounded annually for 3 years accumulates to:",
+          "options": [
+            "$R6\\,200$",
+            "$R6\\,240$",
+            "$R6\\,298{,}56$",
+            "$R6\\,300$ exactly"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Writing $A = 5\\,000(1 + 0{,}08 \\times 3)$ in a question that says 'compounded annually' is wrong because:",
+          "options": [
+            "The principal is in the wrong place",
+            "It is the simple formula — under compounding, $n$ must be an exponent: $5\\,000(1{,}08)^3$",
+            "The rate should be 8, not 0,08",
+            "Nothing is wrong — the two forms are equivalent"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The R98,56 gap between the compound and simple answers comes from:",
+          "options": [
+            "Rounding the growth factor too early",
+            "The bank's fees",
+            "A higher rate in the compound case",
+            "Interest earned by earlier interest: R32 extra in year two and R66,56 extra in year three"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "When should the growth factor 1,259712 be rounded?",
+          "options": [
+            "Only at the final answer, to two decimals for money",
+            "Immediately, to 1,26",
+            "After each multiplication",
+            "Rounding is never allowed in finance"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Choosing the Formula and Working Backwards",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "By the CAPS convention, hire purchase is calculated with:",
+          "options": [
+            "Simple interest — $A = P(1 + in)$",
+            "Compound interest — $A = P(1 + i)^n$",
+            "Either formula, at the shop's choice",
+            "No interest at all"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A TV costs R8 000 on hire purchase over 2 years at 12% p.a. simple interest. The total paid and monthly instalment are:",
+          "options": [
+            "$R9\\,920$ total; $R413{,}33$ per month",
+            "$R9\\,600$ total; $R400$ per month",
+            "$R10\\,035{,}20$ total; $R418{,}13$ per month",
+            "$R8\\,960$ total; $R373{,}33$ per month"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "What principal must be invested at 6% compound interest to reach R10 000 in 4 years?",
+          "options": [
+            "$P = 10\\,000 \\times 1{,}06^4 \\approx R12\\,624{,}77$",
+            "$P = 10\\,000 \\div 1{,}06^4 \\approx R7\\,920{,}94$",
+            "$P = 10\\,000 \\div (1 + 0{,}06 \\times 4) = R8\\,064{,}52$",
+            "$P = 10\\,000 - 4 \\times 600 = R7\\,600$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which scenario list correctly pairs with COMPOUND growth?",
+          "options": [
+            "Hire purchase and monthly instalments",
+            "Inflation, savings compounded annually, population growth",
+            "Any question containing the word 'interest'",
+            "Only questions about banks"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Pictures — the Wage and the Taxi",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the two pictures, the weekend wage stands for simple growth because:",
+          "options": [
+            "The payment is calculated on the same original deal every time and never changes",
+            "Wages are always small",
+            "The wage is paid weekly instead of yearly",
+            "The wage grows every Saturday"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The taxi owner's money grows faster and faster because:",
+          "options": [
+            "Taxis get cheaper every year",
+            "She works longer hours each year",
+            "The earnings are saved and start earning too — growth joins the team and works",
+            "The government subsidises taxis"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Which everyday situation matches the TAXI picture?",
+          "options": [
+            "A fixed R400 pocket-money payment every month",
+            "A savings account where each year's interest is added to the balance",
+            "Paying the same taxi fare every morning",
+            "A shop marking one price down once"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Same R5 000, Built Year by Year",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Built year by year at 8% compound, R5 000 becomes:",
+          "options": [
+            "$5\\,000 \\to 5\\,400 \\to 5\\,832 \\to 6\\,298{,}56$",
+            "$5\\,000 \\to 5\\,400 \\to 5\\,800 \\to 6\\,200$",
+            "$5\\,000 \\to 5\\,440 \\to 5\\,880 \\to 6\\,320$",
+            "$5\\,000 \\to 5\\,080 \\to 5\\,160 \\to 5\\,240$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In year two of the compound build, the interest is R432 rather than R400 because:",
+          "options": [
+            "The bank raised the rate",
+            "8% is now calculated on R5 400 — last year's R400 has joined the balance and earns too",
+            "An extra month was counted",
+            "R432 is a rounding error"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "If you forget which formula is which in a test, the year-by-year build is valuable because:",
+          "options": [
+            "It is faster than the formula",
+            "It impresses the marker",
+            "It only works for 3-year questions",
+            "It reconstructs either answer from arithmetic you can always do — the formula is just this build in a hurry"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Which Deal Is in Front of You?",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'A fridge bought on hire purchase over 30 months' is which deal?",
+          "options": [
+            "The wage deal — simple interest on the original price",
+            "The taxi deal — compound growth",
+            "Neither — hire purchase has no interest",
+            "Both formulas apply equally"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Why is inflation a taxi-deal (compound) situation?",
+          "options": [
+            "Because prices only rise in taxi fares",
+            "Because inflation is set by banks",
+            "Because each year's price rise happens on top of last year's already-risen prices",
+            "Because inflation uses a different rate every year"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The honest warning about compound growth is that:",
+          "options": [
+            "It stops working after ten years",
+            "It works both ways — wonderful for savings you own, heavy for debts you owe",
+            "It only benefits the bank",
+            "It is illegal for loans"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

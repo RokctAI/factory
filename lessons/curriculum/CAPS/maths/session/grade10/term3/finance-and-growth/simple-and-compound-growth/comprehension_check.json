@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain in your own words why compound growth overtakes simple growth even though both use the same interest rate, using the year-by-year numbers from the R5 000 example.",
+      "expected_answer": "Simple interest is calculated on the original R5 000 every year — R400 each year, three equal payments. Compound interest adds each year's interest to the balance, so year two pays 8% of R5 400 (R432) and year three pays 8% of R5 832 (R466,56). The extra R32 and R66,56 are interest earned by earlier interest, producing the R98,56 gap."
+    },
+    {
+      "id": "cc2",
+      "question": "A question mentions 'hire purchase' and another mentions 'compounded annually'. How do you decide which formula each one needs, and why must the interest rate be converted before substituting?",
+      "expected_answer": "Hire purchase uses simple interest by the CAPS convention, so A = P(1 + in); 'compounded annually' (like inflation, savings, population growth) uses A = P(1 + i)ⁿ. The rate must enter as a decimal (8% → 0,08) because the formulae treat i as a fraction of the principal — substituting 8 instead of 0,08 inflates the growth a hundredfold."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe two different ways to check a compound growth answer without simply redoing the same calculation.",
+      "expected_answer": "Rebuild it year by year: grow the balance by the rate one year at a time (5 000 → 5 400 → 5 832 → 6 298,56) and confirm the final amount. Or, for a reverse question where P was found, run the formula forwards with the answer and confirm it returns the target amount. Simple answers can also be decomposed into equal annual payments on the principal."
+    }
+  ]
+}

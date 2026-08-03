@@ -1,0 +1,21 @@
+**Thandi:** Before you go — a few questions came in from the class. The big one: both deals used the same 8 percent, so why does compound end up with more money? Some of us feel like the rate should be the whole story.
+
+**Tutor:** An excellent instinct to challenge, because the rate is only half the story — the other half is what the rate is charged ON. Under simple interest, the base never moves: every year the 8 percent is calculated on the original five thousand rand, so every year pays exactly four hundred rand, no matter how large the balance has grown. Under compound interest, each year's interest joins the balance, so the base itself grows: the second year charges 8 percent on five thousand four hundred, the third on five thousand eight hundred and thirty-two. Same rate, bigger base each year, bigger payment each year. The gap of ninety-eight rand fifty-six is entirely the earnings of earlier interest. So when you compare deals, never stop at the rate — always ask what the rate is applied to.
+
+***
+
+**Thandi:** A lot of us lost marks in the practice run for substituting 8 instead of 0,08. Why is the formula so fussy about that, and is there a habit that stops the mistake?
+
+**Tutor:** The formula is fussy because the symbol i means a fraction of the principal, not a number of percentage points. Eight percent means eight parts in every hundred — eight hundredths — which is nought comma nought eight. Substitute 8 and the formula reads it as eight hundred percent growth per year: your five thousand rand would claim to become one hundred and twenty-five thousand in three years, which no bank on Earth is offering. The habit that ends the error: the moment you read the rate in the question, before touching anything else, write the conversion as its own line — i equals eight over one hundred equals nought comma nought eight — and substitute only from that line. One written line, and the hundred-times error becomes impossible. A sensibility check backs it up: a growth factor for one year should be a number just above one, like one comma nought eight. If your bracket says nine, the rate went in wrong.
+
+***
+
+**Thandi:** Here's one I was asked twice during the break: hire purchase feels like borrowing from the shop, and borrowing feels like the compound story. Why does hire purchase use SIMPLE interest?
+
+**Tutor:** Because of how the agreement itself is written, and the syllabus follows the agreement. In a hire-purchase contract, the shop calculates the interest once, up front, on the full original price — twelve percent per year, times the number of years, all charged on the price tag — and then simply divides the grand total into equal monthly instalments. The interest never gets added to a growing balance, so there is nothing for next year's interest to be charged on: the base stays frozen at the original price. That is precisely the simple-interest shape. So the rule to carry into the examination: the words hire purchase, or the words simple interest, commit you to the bracket formula, and the words compound, compounded annually, inflation or population commit you to the power formula. The question's own vocabulary makes the choice for you.
+
+***
+
+**Thandi:** Last one, and it's the one I'd ask myself: if compound grows faster, why would anyone ever choose the simple deal? Is compound just always better?
+
+**Tutor:** Better depends entirely on which side of the money you stand. When the money is yours — savings, an investment — compounding is your friend: your interest earns interest, and time multiplies the effect. When the money is owed — a loan, a debt left unpaid — compounding works against you with the same power, because the amount you owe becomes the base for the next round of interest. That is why an unpaid debt can swell so frighteningly fast. And the same logic explains inflation: prices compound upward, which is why the fares and bread prices your grandparents remember sound impossibly small. So the mature answer is: compound growth is not good or bad — it is powerful, in whichever direction it points. Learn to recognise which direction it points at you, and you will make better money decisions for the rest of your life.
