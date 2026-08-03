@@ -1,0 +1,21 @@
+**Thandi:** Questions from the class before we close! First up: we already computed gross and net profit in the final accounts. Why build a whole second document saying the same thing?
+
+**Tutor:** Same figures, different reader. The final accounts live INSIDE the ledger — they speak fluent double entry, debits meeting credits, and they exist to close the books formally. But the owner's mother, the bank's loan officer, a buyer weighing an offer — none of them read ledger. The statement translates the ledger's conclusion into a page any literate reader can follow: a story in prescribed order, subtotals as resting points, every line named in plain words. And the prescription matters as much as the translation: because EVERY business tells its year in the same order, a banker can lay three shops' statements side by side and compare floor by floor. The final accounts close the year for the bookkeeper; the statement opens it to the world. One computes; the other communicates — and Accounting needs both done properly.
+
+***
+
+**Thandi:** Next: why does interest get exiled below operating profit? It's a real cost the business really pays — why isn't it just another expense in the list?
+
+**Tutor:** Because it answers a different question than the other expenses do. Wages, telephone, insurance — those are the costs of RUNNING THE SHOP, and any owner of that shop would face them. Interest is the cost of HOW THIS OWNER FINANCED the shop — a shop with the identical counters and customers but no loan would pay every operating expense and zero interest. Mix them and the operating profit stops measuring the machine; it starts measuring the machine plus the owner's borrowing choices, and comparisons collapse — you could not tell a badly run debt-free shop from a well-run indebted one. Quarantining the financing gives every reader two clean readings: how good is the business (operating profit), and can it afford its debts (operating profit against interest). The bank especially reads that second gap — R9 100 covering R1 200 — before lending another rand.
+
+***
+
+**Thandi:** This one from the back row: the statement shows net profit of R7 900 — but the bank balance grew by a completely different amount this year. Is one of them wrong?
+
+**Tutor:** Neither — they measure different things, and feeling that difference is real accounting maturity. Profit is EARNING: incomes matched against expenses for the year, cash or no cash. The bank measures CASH MOVEMENT: money in minus money out, earning or no earning. They diverge at every corner we studied: the tenant's owed month is in profit but not yet in the bank; the depreciation is in profit but took no cash this year; the capitalised interest cut profit without touching the account; and things that move cash — the owner's drawings, repaying loan capital, buying equipment — never touch profit at all. A business can be profitable and cash-starved, or cash-rich while quietly making losses. That is why the year needs BOTH statements — the earning story and, in later grades, a formal cash story too. When the two numbers differ, the difference is not an error; it is information.
+
+***
+
+**Thandi:** Last one: if I blank on the format in the exam, what's the recovery move?
+
+**Tutor:** Rebuild it from the story — the format IS the story, formalised. Ask the shopkeeper's questions aloud in your head, in order: what did I sell, what did those goods cost — rule off: gross profit. What else did the premises earn, what did running cost me, item by item — rule off: operating profit. What did borrowed money cost — rule off: net profit for the year. Three questions, three rulings; the layers cannot come out in the wrong order because the story cannot be told backwards — you cannot pay the telephone before you have sold anything. Then dress it: full heading with FOR THE YEAR ENDED, brackets on everything subtracted, workings beside every adjusted figure. And check one placement before handing in — interest below the operating block. A learner who reconstructs from the story drops at most a line; a learner who memorised a shape and lost it drops the page. Understand the plot, and the format is always recoverable.
