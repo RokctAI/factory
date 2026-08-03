@@ -144,3 +144,4 @@
 | forgotten_cities_6861a0 | poetry | Forgotten Cities | pending_approval | groq | GROQ-30769685343 | — | 2026-08-02 22:15 |
 | whispers_of_the_forest_4556d0 | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30772202487 | — | 2026-08-02 23:25 |
 | starlight_serenades_682613 | poetry | Starlight Serenades | pending_approval | groq | GROQ-30775826163 | — | 2026-08-03 01:01 |
+| shores_of_memories_3e4e06 | poetry | Shores of Memories | pending_approval | groq | GROQ-30785668358 | — | 2026-08-03 04:54 |
