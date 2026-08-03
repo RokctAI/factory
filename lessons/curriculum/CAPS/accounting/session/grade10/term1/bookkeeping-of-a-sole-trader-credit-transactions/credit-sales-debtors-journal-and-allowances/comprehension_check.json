@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the two destinations every Debtors Journal entry must reach, and why they run on different timing.",
+      "expected_answer": "Each credit sale posts daily to the debtor's personal account in the Debtors Ledger — the customer's balance must be current whenever they ask — while the column totals post monthly to the general ledger (debit Debtors Control, credit Sales; debit Cost of Sales, credit Trading Stock). Detail daily for currency, summary monthly for efficiency."
+    },
+    {
+      "id": "cc2",
+      "question": "A customer returns undamaged goods; another keeps damaged goods for a price reduction. Contrast the DAJ entries, and state the rule that decides whether the cost column writes.",
+      "expected_answer": "Both events enter the Debtors Allowances column and credit the debtor (a credit note is issued). Only the RETURN also writes the cost column: the goods physically return to stock, so Trading Stock is debited and Cost of Sales credited at cost. For the allowance no goods move, so no stock entry exists. Rule: follow the goods, not the money."
+    },
+    {
+      "id": "cc3",
+      "question": "Why is Debtors Allowances kept as its own account instead of debiting Sales directly, and what month-end check ties the two ledgers together?",
+      "expected_answer": "Management needs gross sales and the amount coming back as separate signals — rising allowances reveal quality or description problems that netting into Sales would hide. Month end, the list of personal debtor balances is totalled and must equal the Debtors Control balance (R3 850 in the example); any difference marks a posting error to hunt immediately."
+    }
+  ]
+}
