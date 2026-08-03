@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the two-by-two grid of timing adjustments and the two questions that classify any straddling amount.",
+      "expected_answer": "The grid crosses expense-or-income with cash-before-or-after the use/earning. Ask: does the amount belong to this year or next (the using/earning question), and has the cash moved yet? Used but unpaid = accrued expense; paid but unused = prepaid expense; earned but uncollected = accrued income; collected but unearned = income received in advance. The fix is always to place the amount in the year the using or earning happened, with the balance sheet holding the loose end — every adjustment being an income-statement correction paired with a balance-sheet creation."
+    },
+    {
+      "id": "cc2",
+      "question": "Work the four worked cases: telephone (11 months paid, R100/month), insurance (R1 200 paid 1 September), rent behind (11 of 12 months received) and rent ahead (13 months received), giving each corrected statement figure and balance-sheet item.",
+      "expected_answer": "Telephone: debit Telephone R100 to the true R1 200; credit Accrued Expenses, a current liability. Insurance: only six months (Sep–Feb) were used, so credit Insurance R600 leaving R600 as the expense; debit Prepaid Expenses, a current asset of R600. Rent behind: credit Rent Income R500 to the earned R6 000; debit Accrued Income, a current asset. Rent ahead: debit Rent Income R500 down to the earned R6 000; credit Income Received in Advance, a current liability — money held but occupation not yet delivered."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain interest capitalised on the R10 000 loan at 12%, why it is easily missed, and the double error missing it causes.",
+      "expected_answer": "The year's interest of R1 200 was not paid in cash; the bank added it to the loan. The adjustment debits Interest on Loan (expense) R1 200 and credits the Loan, which rises to R11 200 — 'capitalised' meaning added to the capital amount owed. It is easily missed because no cash moved — no receipt, no CPJ entry — only the loan statement grows. Missing it understates BOTH the year's expense (overstating profit) and the liability (overstating the business's position), a double misstatement from one omission."
+    }
+  ]
+}
