@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why a 15% discount followed by adding 15% VAT does not return the price to its original value.",
+      "expected_answer": "The two percentages act on different bases: the discount removes 15% of R850 (R127,50), but the VAT adds 15% of the smaller discounted price R722,50 (R108,38). Equal rates on unequal amounts give unequal money, so the final price R830,88 sits below the original — an overall 2,25% decrease."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the multiplier method for chained percentage changes and how it produces the single overall percentage change in one step.",
+      "expected_answer": "Convert each change to a multiplier (decrease: 1 minus the decimal, increase: 1 plus it), then multiply the multipliers: 0,85 × 1,15 = 0,9775. Reading the combined multiplier against 1 gives the overall change — 0,9775 means the final value is 97,75% of the original, a 2,25% decrease."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain how to find a price before VAT when given the VAT-inclusive price, and why subtracting 15% gives the wrong answer.",
+      "expected_answer": "The inclusive price equals the exclusive price multiplied by 1,15, so undo it by dividing by 1,15. Subtracting 15% takes 15% of the final (larger) price, but the VAT actually charged was 15% of the smaller pre-VAT price — removing the wrong amount leaves you below the true pre-VAT figure."
+    }
+  ]
+}

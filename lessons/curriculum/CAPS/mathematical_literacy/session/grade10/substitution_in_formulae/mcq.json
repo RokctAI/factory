@@ -1,0 +1,196 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Reading a Formula Like a Sentence",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In cost = R450 + R12,50 × km, the R450 represents:",
+          "options": [
+            "The fixed charge, owed regardless of distance",
+            "The cost per kilometre",
+            "The maximum cost",
+            "A discount"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The R12,50 in the formula is:",
+          "options": [
+            "The rate — the amount each kilometre adds to the bill",
+            "A once-off fee",
+            "The VAT",
+            "The number of kilometres"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "In this formula, cost is called the DEPENDENT variable because:",
+          "options": [
+            "The cost depends on the distance driven",
+            "The distance depends on the cost",
+            "It never changes",
+            "It appears on the right-hand side"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Forward Substitution — Pricing the 340 km Trip",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The cost of a 340 km trip is:",
+          "options": [
+            "R4 700",
+            "R4 250",
+            "R157 250",
+            "R462,50"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A learner computes (450 + 12,50) × 340 = R157 250. What went wrong?",
+          "options": [
+            "Order of operations — multiplication must happen before addition",
+            "The wrong formula was used",
+            "The distance was wrong",
+            "Nothing — this is correct"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why should the formula and the substitution line be written out before calculating?",
+          "options": [
+            "Each written line typically earns its own mark and lets the marker follow your method",
+            "It slows you down helpfully",
+            "It is required by the calculator",
+            "It replaces the final answer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Which sense check confirms R4 700 is plausible for the 340 km trip?",
+          "options": [
+            "The driving charge (R4 250) should far exceed the fixed fee (R450) on a long trip — and it does",
+            "The answer should be less than R450",
+            "The answer should equal 340 × 450",
+            "No check is possible"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Reverse Substitution — How Far Does R1 200 Go?",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "With a budget of R1 200, the first step after substituting is:",
+          "options": [
+            "Subtract the R450 fixed charge from both sides, leaving R750 for driving",
+            "Divide R1 200 by R12,50 immediately",
+            "Multiply R1 200 by 12,50",
+            "Add R450 to R1 200"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "R1 200 buys a trip of:",
+          "options": [
+            "60 km",
+            "96 km",
+            "132 km",
+            "48 km"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Dividing the whole R1 200 by R12,50 gives 96 km. Why is this wrong?",
+          "options": [
+            "R450 of the budget pays the fixed fee and never buys kilometres — it must be removed first",
+            "The division was computed incorrectly",
+            "96 km is actually correct",
+            "The rate should be R450"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "How is the answer of 60 km verified?",
+          "options": [
+            "Substitute forwards: 450 + 12,50 × 60 = R1 200, exactly the budget",
+            "Divide 60 by 12,50",
+            "Check that 60 is less than 340",
+            "Multiply 60 by 450"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The General Method, the Classic Traps, and Where This Skill Lives",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The correct unwinding order for reverse substitution in a fixed-plus-rate formula is:",
+          "options": [
+            "Subtract the fixed part first, then divide by the rate",
+            "Divide by the rate first, then subtract the fixed part",
+            "Multiply by the rate, then add the fixed part",
+            "Any order gives the same answer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A formula requires kilometres but the question gives 4 500 metres. You should:",
+          "options": [
+            "Convert to 4,5 km before substituting",
+            "Substitute 4 500 directly",
+            "Multiply the answer by 1 000 afterwards",
+            "Ignore the units"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "When should rounding happen in a multi-step substitution?",
+          "options": [
+            "Only at the final answer — carry full values through the working",
+            "After every step",
+            "Before substituting",
+            "Never, even at the end"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}
