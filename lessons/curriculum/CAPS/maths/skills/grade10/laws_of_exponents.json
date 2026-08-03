@@ -45,5 +45,82 @@
       "topic": "Exponents, equations and inequalities",
       "subtopic": "Use exponent laws to simplify expressions and solve equations (rational exponents)"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Simplified fully, (2x³y)² × 4x⁻² ÷ (8xy²) equals:",
+      "options": [
+        "2x³",
+        "2x³y",
+        "16x³",
+        "2x⁴"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "The solution of 3^(x+1) = 27 is:",
+      "options": [
+        "x = 2",
+        "x = 3",
+        "x = 8",
+        "x = 26"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "An exponent counts repeated multiplication, and every law follows from that. Multiplying powers of the same base: ADD the exponents (x³ × x² = x⁵ - five x's strung together). Dividing: SUBTRACT (x⁵ ÷ x² = x³ - two x's cancel). A power on a power: MULTIPLY ((x³)² = x⁶). A bracket raised to a power gives that power to EVERY factor inside: (2xy)² = 4x²y² - the coefficient is squared too; leaving the 2 unsquared is the most common bracket error. Two consequences complete the kit: anything nonzero to the power zero is 1 (because x³ ÷ x³ is both 1 and x⁰), and a negative exponent means reciprocal - x⁻² = 1/x² - a POSITION instruction (move across the fraction line), never a negative number: 4x⁻² is 4/x², not −4x².\n\nSimplifying strategy: clear bracket powers first, then gather like bases and handle each base on its own - numbers with numbers, x's with x's, y's with y's; the laws never combine different bases (x² × y³ is not (xy)⁵). Worked: (2x³y)² × 4x⁻² ÷ (8xy²). Bracket first: 4x⁶y². Multiply by 4x⁻²: coefficients 16, x-exponents 6 + (−2) = 4, giving 16x⁴y². Divide by 8xy²: coefficients 16 ÷ 8 = 2; x: 4 − 1 = 3; y: 2 − 2 = 0, so the y's vanish. Answer: 2x³. Check with a quick substitution (x = 1, y = 1 in original and answer; x = 2 if time allows, since 1 hides exponent slips).\n\nExponential equations put the unknown in the exponent, and one move solves them: make the bases match. If two powers of the same positive base (not 1) are equal, their exponents must be equal. 3^(x+1) = 27: rewrite 27 as 3³, so x + 1 = 3 and x = 2. The same move handles the variations: right side 1 means 3⁰ (x = −1); right side 1/27 means 3⁻³ (x = −4). Do not divide both sides by 3 hoping to peel the exponent - by the subtraction law that only lowers it by one. Match the bases, equate the exponents, solve, substitute back to confirm.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "(2x³y)² expands to:",
+      "options": [
+        "4x⁶y²",
+        "2x⁶y²",
+        "4x⁵y²",
+        "4x⁹y²"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "4x⁻² written with positive exponents is:",
+      "options": [
+        "4/x²",
+        "−4x²",
+        "1/(4x²)",
+        "−4/x²"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "The key move for solving 3^(x+1) = 27 is:",
+      "options": [
+        "Rewrite 27 as 3³ so both sides share a base, then equate exponents",
+        "Divide both sides by 3",
+        "Multiply the exponent by 3",
+        "Take half of 27"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "y² divided by y² in a simplification gives:",
+      "options": [
+        "y⁰ = 1 - the y's vanish from the answer",
+        "y⁴",
+        "y⁻²",
+        "0"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

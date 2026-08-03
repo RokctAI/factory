@@ -39,5 +39,70 @@
       "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
       "subtopic": "The mole, Avogadro's number, molar mass"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "The number of moles in 8,8 g of CO₂ (M = 44 g/mol) is:",
+      "options": [
+        "0,2 mol",
+        "5 mol",
+        "2 mol",
+        "0,5 mol"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "The volume that 0,2 mol of a gas occupies at STP is:",
+      "options": [
+        "4,48 dm³",
+        "22,4 dm³",
+        "8,8 dm³",
+        "112 dm³"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Atoms are too small to count or weigh individually, yet reactions happen particle by particle - so chemistry counts in bulk, like eggs in dozens. One mole is 6,02 × 10²³ particles (Avogadro's number), sized so that one mole of a substance has a mass in grams equal to its relative molecular mass. That gram-mass of one mole is the molar mass M, in g/mol. Compute M from the formula, respecting subscripts: CO₂ is 12 + 2(16) = 44 g/mol - counting the doubled oxygen once (getting 28) is the classic wreck.\n\nThe central formula: n = m/M - moles equal the mass you have divided by the mass of one mole's worth. For 8,8 g of CO₂: n = 8,8/44 = 0,2 mol. Sense-check every division: 8,8 g is exactly one-fifth of 44 g, so one-fifth of a mole is right; 5 mol would imply 220 g.\n\nFrom moles, two more roads open. Particles: N = n × Avogadro's number - 0,2 × 6,02 × 10²³ = 1,204 × 10²³ molecules; particle counts should be enormous, so a tiny answer means you divided when you should have multiplied. Gas volume: Avogadro's law says equal volumes of ANY gases at the same temperature and pressure hold equal numbers of molecules, so at STP (273 K, 101,3 kPa) one mole of any gas fills 22,4 dm³. V = n × 22,4 gives 0,2 × 22,4 = 4,48 dm³. The 22,4 shortcut is licensed ONLY for gases at STP - never liquids, solids, or other conditions.\n\nOrganise everything as the mole map: moles n at the centre, three roads out - to mass (× M), to particles (× 6,02 × 10²³), to gas volume at STP (× 22,4) - and the same roads inward by dividing. Every problem is a journey: travel IN from whatever the question gives (divide), then OUT along whichever road it wants (multiply). The 8,8 g problem entered from mass (÷44), and exited along both the particle road and the volume road.\n\nUnits discipline: mass in grams before n = m/M (convert kilograms first), volumes in dm³ (1 dm³ = 1 litre = 1 000 cm³ - convert once, at the end). Next term the balanced equation's coefficients become mole ratios, and this map powers all of stoichiometry.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "The molar mass of CO₂ is 44 g/mol because:",
+      "options": [
+        "12 + 16 + 16 - the subscript doubles the oxygen",
+        "12 + 16 = 28",
+        "44 is carbon's mass number",
+        "16 + 16 + 16 = 48, rounded down"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "On the mole map, travelling INWARD to moles always means:",
+      "options": [
+        "Dividing - by M, by Avogadro's number, or by 22,4",
+        "Multiplying",
+        "Adding the constants",
+        "Using n = m × M"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "The 22,4 dm³ molar volume may be used:",
+      "options": [
+        "Only for gases at STP",
+        "For any substance at any temperature",
+        "For liquids and gases",
+        "Only for CO₂"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

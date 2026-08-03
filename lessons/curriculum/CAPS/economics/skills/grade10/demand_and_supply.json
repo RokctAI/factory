@@ -34,5 +34,70 @@
       "topic": "DYNAMICS OF THE MARKET",
       "subtopic": "Supply and demand; price formation; functions of markets"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "A drought halves the maize harvest while consumer income is unchanged. On the market diagram:",
+      "options": [
+        "The supply curve shifts left; the new equilibrium has a higher price and smaller quantity",
+        "The demand curve shifts right; price falls",
+        "Both curves shift left; price is unchanged",
+        "There is a movement along the supply curve only"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "The price of a good itself rises and buyers purchase less. This appears on the diagram as:",
+      "options": [
+        "A movement along the same demand curve",
+        "A leftward shift of the demand curve",
+        "A rightward shift of the demand curve",
+        "A shift of the supply curve"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Demand is the quantity buyers are willing AND able to buy at each price; supply is what producers are willing and able to offer. The law of demand: price up, quantity demanded down - so the demand curve slopes downward. The law of supply: price up, quantity supplied up, because price is the producer's reward - so the supply curve slopes upward. Convention: price on the vertical axis, quantity on the horizontal.\n\nThe distinction that decides marks: movement along a curve versus a shift of the whole curve. Ask one question - did the good's OWN price cause the change? If yes, slide along the existing curve (a change in quantity demanded or supplied). If anything else changed, the whole curve shifts. Demand shifters: income, tastes, prices of substitutes and complements, population. Supply shifters: input costs, technology, taxes and subsidies, number of producers, and natural conditions like weather.\n\nWhere the curves cross is equilibrium: quantity demanded equals quantity supplied and the market clears. No other price can last. Above equilibrium, supply outruns demand - a surplus - and unsold stock pushes the price down. Below equilibrium, demand outruns supply - a shortage - and competing buyers bid the price up. The market settles at equilibrium through these forces alone; nobody sets the price.\n\nWorked diagnosis - the drought question. A drought halves the maize harvest; consumer income is unchanged. Which side is hit? The farms: supply. Did the maize price cause it? No, weather did: shift the whole supply curve, leftward, because less is offered at every price. Demand stays put - income is unchanged. At the old price there is now a shortage; buyers bid the price up; as it rises, some buyers cut back (a movement along the demand curve) until the shortage disappears. New equilibrium: higher price, smaller quantity traded.\n\nAnswer method: labelled axes, both curves, original equilibrium marked with dotted lines, the shifted curve with an arrow, new equilibrium read off, then two sentences explaining the shortage or surplus that moved the price. The diagram shows what happened; the words earn the reasoning marks.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Which single question separates a shift of a curve from a movement along it?",
+      "options": [
+        "Did the good's own price cause the change?",
+        "Did the quantity change?",
+        "Did the government intervene?",
+        "Is the good a necessity?"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "A price above equilibrium cannot last because:",
+      "options": [
+        "A surplus forms and unsold stock pushes sellers to cut the price",
+        "A shortage forms and buyers bid the price up",
+        "The demand curve shifts right",
+        "The government always corrects it"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "After the drought shifts supply left, buyers reducing purchases as the price rises is shown as:",
+      "options": [
+        "A movement along the demand curve",
+        "A leftward shift of the demand curve",
+        "A rightward shift of supply",
+        "A new demand curve"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

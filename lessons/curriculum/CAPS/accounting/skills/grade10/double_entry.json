@@ -26,5 +26,70 @@
       "topic": "BOOKKEEPING OF A SOLE TRADER: CASH TRANSACTIONS (CRJ, CPJ, PCJ, GENERAL LEDGER, TRIAL BALANCE, ACCOUNTING EQUATION)",
       "subtopic": "Accounting cycle on the perpetual inventory system: source documents, journals (CRJ, CPJ, PCJ), double-entry principle in the ledger"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "A business buys trading stock on credit for R12 000. The effect on A = O + L is:",
+      "options": [
+        "A increases R12 000 and L increases R12 000",
+        "A increases R12 000 and O increases R12 000",
+        "A decreases R12 000 and L decreases R12 000",
+        "No effect on the equation"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "The business pays a creditor R5 000. The double entry is:",
+      "options": [
+        "Debit Creditors Control R5 000; credit Bank R5 000",
+        "Debit Bank R5 000; credit Creditors Control R5 000",
+        "Debit Creditors Control R5 000; credit Capital R5 000",
+        "Debit Bank R5 000; credit Drawings R5 000"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Everything a business owns was funded by somebody: either the owner or an outsider. What it owns are assets (A); the owner's funding is owner's equity (O); outsiders' funding is liabilities (L). That fact is the accounting equation, A = O + L, and it must hold after every single transaction. If it stops balancing, an error was made.\n\nThe equation connects to the ledger through the sides: assets increase on the debit side; owner's equity and liabilities increase on the credit side; decreases go on the opposite side in each case. The double-entry principle then says every transaction affects at least two accounts, with total debits equal to total credits - which is exactly what keeps the equation in balance.\n\nAnalyse any transaction in five steps. One: name the two accounts affected. Two: classify each as asset, owner's equity or liability. Three: decide whether each increases or decreases. Four: apply the sides - asset up means debit; O or L up means credit; decreases reverse. Five: confirm the equation still balances.\n\nRun the classic set. Owner deposits R100 000 capital: Bank (asset) up - debit; Capital (equity) up - credit; both sides of the equation rise R100 000. Buy equipment for R30 000 cash: Equipment up - debit; Bank down - credit; an asset swap, net effect on A is zero, but both entries are still recorded. Buy stock on credit for R12 000: Trading Stock up - debit; Creditors Control (liability) up - credit; A and L rise together. Pay a creditor R5 000: Creditors Control down - debit; Bank down - credit; A and L fall together. Every case: one debit, one credit, equation intact.\n\nIncomes and expenses are not a fourth element - they are movements inside owner's equity. Income increases O, so it is recorded on the credit side; expenses decrease O, so they are debited. Paid wages R2 000: debit Wages (O down via an expense), credit Bank (asset down).\n\nFinal habit: debit does not mean good or bad - debit and credit are just the left and right sides, and the business's point of view is the only one recorded. Analyse with the five steps every time and no transaction can surprise you.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Buying equipment for cash has no net effect on the equation, yet two entries are still needed because:",
+      "options": [
+        "Two real movements happened - Equipment increased and Bank decreased - and both must be recorded",
+        "The equation only balances at year end",
+        "One entry would be enough if amounts are equal",
+        "Equipment purchases are recorded only in the journal"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Why is Capital credited when the owner deposits money?",
+      "options": [
+        "Owner's equity increases on the credit side - the business now owes its funding to the owner",
+        "Credits always mean money coming in",
+        "Capital is an asset of the business",
+        "The bank requires it"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Wages of R2 000 are paid. The correct analysis is:",
+      "options": [
+        "Debit Wages, credit Bank - O decreases via the expense and A decreases",
+        "Debit Bank, credit Wages - A increases",
+        "Debit Wages, credit Capital - no equation effect",
+        "Debit Capital, credit Bank - L decreases"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

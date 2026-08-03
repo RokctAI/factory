@@ -26,5 +26,82 @@
       "topic": "NUMBERS AND CALCULATIONS WITH NUMBERS",
       "subtopic": "Rounding (to decimal places, nearest whole, up or down); ratios; rates (meaning, types, calculations); direct and inverse proportion; percentages incl. increase and decrease"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "A jacket priced at R850 is discounted by 15%, then 15% VAT is added to the discounted price. The final price is:",
+      "options": [
+        "R830,88",
+        "R850,00",
+        "R873,13",
+        "R722,50"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "A price of R830,88 INCLUDES 15% VAT. The price before VAT is found by:",
+      "options": [
+        "Dividing R830,88 by 1,15",
+        "Multiplying R830,88 by 0,85",
+        "Subtracting R124,63",
+        "Multiplying by 1,15"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A percentage is a fraction out of 100: 15% is 0,15. Percentage OF an amount: multiply - 15% of R850 is 0,15 × 850 = R127,50.\n\nThe upgrade that handles everything else is the single multiplier. A decrease of 15% leaves 85% of the amount: multiply by 0,85 in one step. An increase of 15% gives 115%: multiply by 1,15. Decrease: one MINUS the decimal; increase: one PLUS the decimal. The multiplier is not a trick - \"take off 15%\" and \"keep 85%\" are the same sentence.\n\nChained changes multiply, and each step acts on the RESULT of the previous step, never on the original. The jacket: R850 × 0,85 = R722,50 after the discount; then VAT on the discounted price: R722,50 × 1,15 = R830,88 (rounded to the cent). The famous trap: minus 15% then plus 15% does NOT return to R850. The discount removed 15% of R850 (R127,50), but the VAT added back 15% of the smaller R722,50 (R108,38) - equal rates on unequal bases are unequal amounts of money. Down-then-up by the same rate always lands slightly below the start.\n\nThe combined effect of a chain is the product of the multipliers: 0,85 × 1,15 = 0,9775, meaning the final price is 97,75% of the original - an overall 2,25% DECREASE, in one multiplication. Confirm with the direct formula for percentage change: change ÷ ORIGINAL × 100. The original is always the denominator - the reference point is where you started - so (850 − 830,88) ÷ 850 × 100 = 2,25%.\n\nReverse percentages undo a change. A price tag of R830,88 INCLUDING 15% VAT: the tag equals the pre-VAT price times 1,15, so divide - 830,88 ÷ 1,15 = R722,50. Subtracting 15% instead is wrong because it takes 15% of the larger final price, not of the smaller base the VAT was actually charged on. To undo any multiplier, divide by it.\n\nThe five moves: percentage of - decimal times amount; increase or decrease - one multiplier; chains - multiply the multipliers, each on the previous result; percentage change - difference over original times 100; reverse - divide by the multiplier. Every VAT, discount, interest, inflation and tariff question is one of these five.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "The single multiplier for a 15% decrease is:",
+      "options": [
+        "0,85",
+        "1,15",
+        "0,15",
+        "0,015"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Why do −15% then +15% not cancel out?",
+      "options": [
+        "The increase acts on a smaller base than the decrease removed from",
+        "VAT is calculated by SARS differently",
+        "They do cancel",
+        "Because of rounding only"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "In the percentage change formula, the denominator is always:",
+      "options": [
+        "The original value",
+        "The new value",
+        "The larger value",
+        "100"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "A combined multiplier of 0,9775 across a chain of changes means:",
+      "options": [
+        "An overall decrease of 2,25%",
+        "An overall increase of 2,25%",
+        "An overall decrease of 97,75%",
+        "No net change"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

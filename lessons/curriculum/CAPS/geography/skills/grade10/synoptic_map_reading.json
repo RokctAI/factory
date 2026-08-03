@@ -50,5 +50,70 @@
       "topic": "Reading and interpreting synoptic weather maps",
       "subtopic": "Precipitation types on station models; reading and interpreting a selection of synoptic weather maps"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "A station model shows temperature 18 °C and dew point 16 °C. The small gap tells you:",
+      "options": [
+        "The air is nearly saturated - humid, with cloud or rain close at hand",
+        "The air is very dry",
+        "Frost is certain tonight",
+        "The station is at high altitude"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "A wind shaft flies into the station circle from the north-west with two full feathers. The wind is:",
+      "options": [
+        "North-westerly at 20 knots",
+        "South-easterly at 20 knots",
+        "North-westerly at 2 knots",
+        "Blowing toward the north-west at 10 knots"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A synoptic chart is a snapshot of the atmosphere at one moment. Isobars join places of equal pressure (in hPa) and work like contour lines for the atmosphere: around an H (high) pressure rises to the centre, around an L (low) it falls. The weather logic: in a high, air sinks, warms and dries - clear, settled weather; in a low, air rises, cools and condenses - cloud and rain. Sink = clear, rise = rain. Closely packed isobars mean a steep pressure gradient and strong winds.\n\nEach station circle compresses a full report. The circle's shading gives cloud cover in eighths (oktas) - six-eighths shaded means three-quarters of the sky is cloudy. Top-left of the circle: air temperature. Below it: dew point - the temperature at which the air would saturate. Never read the dew point alone; read the GAP between it and the air temperature. A small gap (18 °C against 16 °C) means the air needs to cool only slightly to condense - humid, cloud and rain nearby. A wide gap means dry air. Wind is a shaft with feathers: the shaft flies INTO the circle from the direction the wind comes FROM (winds are always named for their origin), and feathers count speed - a full feather 10 knots, a half feather 5.\n\nSouth Africa's weather-maker is the cold front - a bold line of triangles, the triangles pointing in the direction of movement, sweeping from south-west to north-east ahead of a low passing south of the country. Confirm a front with evidence on both sides. Ahead of it: warm, humid north-westerly flow with thickening cloud - the classic pre-frontal station. At the line: dense cold air wedges under the warm air and forces it violently upward, building cumulonimbus and the heaviest weather. Behind it: temperature drops sharply, the wind swings from north-westerly to south-westerly, pressure rises as the next high builds in, and showery weather clears. Cold, showery, clearing - the post-frontal trio. The NW-to-SW wind swing is often the single clearest sign a front has passed a station.\n\nMethod: find the pressure cells, read isobar spacing for wind, decode the station models, locate fronts by symbol and confirm with the air masses on either side - then answer in observations, quoting the numbers and directions.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Why does a high-pressure cell generally bring clear weather?",
+      "options": [
+        "Sinking air warms and dries as it descends",
+        "Rising air cools and condenses",
+        "Highs contain no wind",
+        "Highs only occur in summer"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Behind a South African cold front, the weather is typically:",
+      "options": [
+        "Colder, south-westerly winds, rising pressure, showers then clearing",
+        "Warmer, north-westerly winds, falling pressure",
+        "Calm, humid and misty",
+        "Unchanged"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "On the chart, a cold front is drawn as:",
+      "options": [
+        "A line with triangles pointing in its direction of movement",
+        "A line with semicircles",
+        "A double dashed line",
+        "A row of crosses"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

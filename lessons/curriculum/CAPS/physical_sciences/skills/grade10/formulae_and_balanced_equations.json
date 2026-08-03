@@ -51,5 +51,82 @@
       "topic": "CHEMICAL CHANGE: Representing chemical change",
       "subtopic": "Balancing chemical equations; conservation of atoms and mass; law of constant composition"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "The formula for iron(III) oxide is:",
+      "options": [
+        "Fe₂O₃",
+        "FeO",
+        "Fe₃O₂",
+        "FeO₃"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "Balanced, the combustion of propane is:",
+      "options": [
+        "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O",
+        "C₃H₈ + O₂ → 3CO₂ + 4H₂O",
+        "C₃H₈ + 7O₂ → 3CO₂ + 4H₂O",
+        "C₃H₈ + 5O₂ → CO₂ + H₂O"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Formula writing is charge arithmetic: an ionic compound must be electrically neutral, so the formula states the ratio of ions whose charges cancel to zero. Harvest charges from the periodic table and ion table: group 1 metals 1+, group 2 metals 2+, halogens 1−, group 16 nonmetals 2−. Calcium chloride: Ca²⁺ needs two Cl⁻ - CaCl₂. The crossover shortcut swaps each charge's size onto the other ion as a subscript, but always simplify afterwards (Mg²⁺ with O²⁻ crosses to Mg₂O₂, which reduces to MgO) and never write a subscript of 1.\n\nPolyatomic ions are charged teams from the data sheet: ammonium NH₄⁺ (the rare positive one), sulphate SO₄²⁻ - the \"-ate\" ending signals oxygen aboard, unlike sulphide S²⁻. When a team takes a subscript, brackets are compulsory: ammonium sulphate is (NH₄)₂SO₄ - two nitrogens and eight hydrogens; without brackets the count collapses. Transition metals carry their charge in the name's Roman numeral: iron(III) means Fe³⁺, so iron(III) oxide balances 3+ against 2− at the lowest common multiple of six - Fe₂O₃ - while iron(II) oxide is the different compound FeO. Audit every formula: total plus must equal total minus.\n\nBalancing enforces the law of conservation of mass: atoms are rearranged in reactions, never created or destroyed, so every element's count must match across the arrow. The one commandment: change only COEFFICIENTS, the multipliers in front of whole formulas - never subscripts, which define identity (edit H₂O to H₂O₂ and water has become peroxide; the equation now lies about the reaction).\n\nFor combustion, balance in the order carbon, hydrogen, oxygen - oxygen last because it appears in both products and stands alone as O₂, so one final coefficient settles it. Propane: C₃H₈ + O₂ → CO₂ + H₂O. Carbon: 3CO₂. Hydrogen: 4H₂O. Oxygen demanded on the right: 6 + 4 = 10 atoms, supplied in pairs: 5O₂. Balanced: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. If a half-coefficient appears (ethane needs 7/2 O₂), double every coefficient; final answers use the smallest whole-number set.\n\nNever skip the closing audit - count each element aloud on both sides: C 3=3, H 8=8, O 10=10. Next step in the syllabus, those coefficients become mole ratios, so an unbalanced equation poisons every calculation built on it.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Why must (NH₄)₂SO₄ keep its brackets?",
+      "options": [
+        "The subscript 2 must multiply the whole ammonium team - 2 N and 8 H",
+        "All nitrogen compounds take brackets",
+        "Sulphate demands them",
+        "For neatness only"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Why is 'balancing' an equation by changing H₂O to H₂O₂ illegal?",
+      "options": [
+        "Subscripts define identity - that edit turns water into hydrogen peroxide",
+        "Because 2 is already used",
+        "It is legal for oxygen only",
+        "Peroxide is unstable"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "In combustion equations, oxygen is balanced last because:",
+      "options": [
+        "It appears in both products and stands alone as O₂, so its count depends on the other coefficients",
+        "It is the lightest element",
+        "O₂ cannot take a coefficient",
+        "Tradition"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "The audit of C₃H₈ + 5O₂ → 3CO₂ + 4H₂O checks oxygen as:",
+      "options": [
+        "Left 10, right 6 + 4 = 10 - balanced",
+        "Left 5, right 7",
+        "Left 2, right 3",
+        "Left 10, right 12"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

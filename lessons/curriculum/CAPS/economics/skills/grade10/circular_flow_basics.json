@@ -34,5 +34,70 @@
       "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
       "subtopic": "Circular flow diagram; participants in an economy; closed vs open economy"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Which list gives the three leakages of an open economy's circular flow?",
+      "options": [
+        "Savings, taxes, imports",
+        "Investment, government spending, exports",
+        "Savings, exports, taxes",
+        "Wages, rent, interest"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "A South African firm ships wine to Britain. In the circular flow this is:",
+      "options": [
+        "An injection - foreign money flows into South African firms",
+        "A leakage - the wine leaves the country",
+        "Neither - foreign trade is outside the model",
+        "A leakage - local wine supply falls"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "The circular flow maps how money and resources move between an economy's participants. Households own the factors of production - natural resources, labour, capital, entrepreneurship - and supply them to firms through the factor market. Firms pay factor incomes in return: rent, wages, interest and profit. Households then spend that income buying goods and services from firms through the goods market, and the circle turns. Every real flow (factors, goods) has a money flow (income, spending) travelling in the opposite direction.\n\nMoney escapes the spending stream through leakages and returns through injections, and each pair travels through the same door. Door one, the financial sector: households save part of their income - a leakage - but banks lend those savings to firms, which buy machinery and buildings - investment, an injection. Door two, the government: taxes drain spending power from households and firms - a leakage - while government spending on salaries, grants, roads and services pumps it back - an injection. Door three, the foreign sector: paying for imports sends money out of the country - a leakage - while export earnings bring foreign money in - an injection. Adding the foreign sector is what turns a closed economy into an open one, which is what South Africa is.\n\nThe three leakages are savings, taxes and imports; the three injections are investment, government spending and exports. Classify any transaction by following the money's direction, not the goods: money leaving the domestic spending stream is a leakage; money entering it is an injection. Buying an imported television is a leakage even though the television arrives, because the payment leaves.\n\nThe comparison between totals decides the economy's direction. If leakages exceed injections, less money returns to firms each round: production, income and employment shrink. If injections exceed leakages, the flow expands. When they are equal, the economy is in equilibrium. And resist the trap of calling leakages \"bad\" - savings finance tomorrow's investment; leakage and injection describe direction of flow, not virtue.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Households supply factors of production to firms and receive in return:",
+      "options": [
+        "Factor incomes - rent, wages, interest and profit",
+        "Goods and services",
+        "Taxes",
+        "Imports"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Through which door do savings re-enter the circular flow?",
+      "options": [
+        "The financial sector - banks lend savings to firms, which spend them as investment",
+        "The government, as taxes",
+        "The foreign sector, as exports",
+        "They cannot re-enter"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "If total leakages exceed total injections, the economy will:",
+      "options": [
+        "Contract - less money returns to firms each round",
+        "Expand",
+        "Stay in equilibrium",
+        "Automatically export more"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

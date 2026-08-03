@@ -36,5 +36,70 @@
         "paper_total": 150
       }
     ]
-  }
+  },
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Trig beacon 251 stands at 1 200 m and a spot height at 900 m; the points are 4,5 km apart. The average gradient is:",
+      "options": [
+        "1 : 15",
+        "1 : 66,7",
+        "15 : 1",
+        "1 : 150"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "Which slope is steeper?",
+      "options": [
+        "1 : 15",
+        "1 : 50",
+        "1 : 150",
+        "They are equally steep"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "Gradient turns the contour-spacing impression of steepness into an exact number. The formula: gradient = vertical interval ÷ horizontal equivalent (VI over HE, rise over run), expressed as a ratio 1 : x, meaning the land rises 1 m vertically for every x metres travelled horizontally. Interpretation rule that catches many candidates: the LARGER the number after the colon, the GENTLER the slope - 1 : 15 is far steeper than 1 : 150, because the metre of climb is diluted over more walking.\n\nHarvest the two ingredients from the map. VI is the height difference: higher point minus lower point, taken from the best height sources available - trig beacons and spot heights give exact surveyed values, contours give ranges. HE is the horizontal distance between the points; if not given, measure the map distance and convert with the scale (on 1:50 000, centimetres × 50 000, then down the unit ladder). The non-negotiable step: both ingredients must be in the SAME units before dividing - convert kilometres to metres. Mixed units are the deadliest error in this calculation.\n\nWorked example, exam layout. Beacon at 1 200 m, spot height at 900 m, 4,5 km apart. Line one, formula: gradient = VI ÷ HE. Line two, substitution in matching units: 300 m ÷ 4 500 m. Line three, simplify by dividing both by the numerator: 4 500 ÷ 300 = 15. Line four, answer in ratio form: 1 : 15 - and only this form collects the final mark; a decimal or unsimplified fraction usually does not. Add one interpretation sentence: the land rises 1 m for every 15 m travelled - noticeably steep, too steep for a railway.\n\nIt is an AVERAGE gradient because the real land may dip and climb between the points; the ratio smears the total rise evenly over the total distance - a straight-line summary of a possibly bumpy reality.\n\nThree closing checks: sense (is the steepness plausible for land - a wild x signals a unit slip), reverse arithmetic (15 × 300 = 4 500), and order (the vertical 1 leads the ratio; for ordinary land x should exceed 1, since you walk further than you climb).",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Why must 4,5 km become 4 500 m before dividing?",
+      "options": [
+        "The ratio only has meaning when VI and HE are in the same units",
+        "Kilometres are not allowed in Geography",
+        "It makes the numbers bigger",
+        "No conversion is needed"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "A learner reports the answer as 15 : 1. The error is:",
+      "options": [
+        "An inverted ratio - the vertical 1 m of climb must lead",
+        "A rounding error",
+        "A measurement error",
+        "None - it is equivalent"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Why is the result called an AVERAGE gradient?",
+      "options": [
+        "The total rise is spread evenly over the total distance, ignoring dips and climbs between the points",
+        "Several learners' answers are averaged",
+        "The heights are approximate",
+        "The map scale is an average"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ]
 }

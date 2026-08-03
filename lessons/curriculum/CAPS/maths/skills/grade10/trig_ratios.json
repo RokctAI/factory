@@ -49,5 +49,82 @@
       "topic": "Trigonometry",
       "subtopic": "Define sin, cos and tan in right-angled triangles"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Without a calculator, sin 60° × cos 30° − tan 45° equals:",
+      "options": [
+        "−1/4",
+        "1/4",
+        "0",
+        "−3/4"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "In a right-angled triangle the hypotenuse is 13 and the side opposite angle x is 5. Then x equals:",
+      "options": [
+        "sin⁻¹(5/13) ≈ 22,6°",
+        "cos⁻¹(5/13)",
+        "tan⁻¹(5/13)",
+        "sin(5/13)"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "In a right-angled triangle, pick an acute angle and the sides take names relative to IT: the hypotenuse (longest, opposite the right angle - never changes), the opposite (facing your angle), and the adjacent (the angle's other arm). The ratios: sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent - SOH CAH TOA. These ratios are properties of the angle, not the triangle: similar triangles keep them identical at any size, which is why sin 30° is a fixed number of the universe. Label AFTER choosing your angle - switch to the other acute angle and opposite and adjacent swap places.\n\nThe special-angle values come from two rebuildable triangles, not memory. Halve an equilateral triangle of side 2: hypotenuse 2, base 1, height √3 - giving sin 60° = √3/2, cos 60° = 1/2, tan 60° = √3, and from the top angle sin 30° = 1/2, cos 30° = √3/2, tan 30° = 1/√3. A right-angled isosceles triangle with legs 1 has hypotenuse √2: sin 45° = cos 45° = 1/√2, tan 45° = 1. Evaluate exactly, keeping surds: sin 60° × cos 30° = (√3/2)(√3/2) = 3/4; minus tan 45° = 1 gives −1/4. Exact fractions, never rounded decimals, when the question says no calculator.\n\nChoosing the ratio is the real skill: mark the angle, label the three sides relative to it, circle the two sides that are known or wanted, and pick the ratio whose letters match - opposite and hypotenuse: sine; adjacent and hypotenuse: cosine; opposite and adjacent: tangent.\n\nFinding an angle runs the machine in reverse. Hypotenuse 13, opposite 5: sin x = 5/13, so x = sin⁻¹(5/13) ≈ 22,6° (shift-sin on the calculator, in DEGREE mode - check for the D; radian mode turns sin 30° into −0,988 and poisons everything). Direction decides the button: angle known, side wanted - plain function; sides known, angle wanted - inverse. Sense-check: 5/13 is less than 1/2 and sin 30° = 1/2, so the angle must be under 30° - and in the 5-12-13 triangle the other acute angle, sin⁻¹(12/13) ≈ 67,4°, completes 90° exactly.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Which side of a right-angled triangle never changes its label?",
+      "options": [
+        "The hypotenuse - always opposite the right angle",
+        "The opposite side",
+        "The adjacent side",
+        "The shortest side"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "sin 60° equals:",
+      "options": [
+        "√3/2",
+        "1/2",
+        "1/√2",
+        "√3"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "You know the opposite (5) and adjacent (12) sides and want the angle. Use:",
+      "options": [
+        "tan⁻¹(5/12)",
+        "sin⁻¹(5/12)",
+        "cos⁻¹(5/12)",
+        "tan(5/12)"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_4",
+      "prompt": "A calculator giving sin 30° = −0,988 most likely means:",
+      "options": [
+        "It is in radian mode instead of degree mode",
+        "sin 30° is genuinely negative",
+        "The battery is flat",
+        "The angle is too small"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

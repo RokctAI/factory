@@ -38,5 +38,70 @@
       "topic": "BOOKKEEPING OF A SOLE TRADER: CASH TRANSACTIONS (CRJ, CPJ, PCJ, GENERAL LEDGER, TRIAL BALANCE, ACCOUNTING EQUATION)",
       "subtopic": "Accounting cycle on the perpetual inventory system: source documents, journals (CRJ, CPJ, PCJ), double-entry principle in the ledger"
     }
+  ],
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "Which sequence shows the accounting cycle in the correct order?",
+      "options": [
+        "Source documents, journals, ledger, trial balance, final accounts, financial statements",
+        "Journals, source documents, trial balance, ledger, financial statements, final accounts",
+        "Source documents, ledger, journals, final accounts, trial balance, financial statements",
+        "Trial balance, journals, source documents, ledger, financial statements, final accounts"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "A trial balance balances, but R500 for Telephone was posted to Repairs (correct side). What does this show?",
+      "options": [
+        "The trial balance checks arithmetic equality, not perfect accuracy",
+        "The trial balance will not balance until the error is fixed",
+        "A balancing trial balance proves the books are perfect",
+        "The error is corrected automatically in the final accounts"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "The accounting cycle is the fixed route every transaction travels: source documents, journals, posting to the ledger, trial balance, final accounts, financial statements. The order is not decoration - each stage runs on the output of the one before it, which is why no stage can be skipped or swapped.\n\nSource documents come first because accounting records nothing without evidence: a till slip, an invoice, a bank statement proves the date, amount and parties. The journals - books of first entry - then sort transactions into daily lists by type: cash in through the Cash Receipts Journal, cash out through the Cash Payments Journal, credit sales and purchases through their own journals. Sorting first means only column totals move on, not hundreds of individual entries.\n\nPosting transfers those journal totals into the general ledger, where information is reorganised by account instead of by date. Every posting follows double entry - each amount debits one account and credits another - and each account is then balanced, giving one clean figure per item: total sales, cash on hand, amounts owed.\n\nThe trial balance lists every ledger balance in a debit or credit column. Because double entry forces every debit to have an equal credit, the two columns must agree. If they do not, an error exists in the recording or posting. Note the limit: a balancing trial balance proves arithmetic equality only - an amount posted to the wrong account on the correct side still balances.\n\nAt year end, the final accounts calculate profit inside the ledger: Sales and Cost of Sales close off to the Trading account, which produces gross profit; gross profit and all other incomes and expenses close off to the Profit and Loss account, which produces net profit; net profit transfers to Capital, because profit belongs to the owner. Finally, the financial statements report the results: the Statement of Comprehensive Income shows incomes, expenses and profit for the period; the Statement of Financial Position shows assets, equity and liabilities on the closing date.\n\nThe stages run on different clocks: documents and journals daily, posting and the trial balance monthly, final accounts and statements yearly - then the whole route repeats for the next period, which is why it is called a cycle. Quick self-test: for any stage, name what it receives from the previous stage and what it hands to the next. If you can do that for all six, you own the cycle.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Why must the journals be completed before the ledger is posted?",
+      "options": [
+        "The ledger is posted from journal column totals - without them there is nothing to post",
+        "The ledger and journals are the same book",
+        "The trial balance must be drawn up first",
+        "Source documents are filed inside the ledger"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "In the final accounts, gross profit is calculated in the Trading account and then transferred to:",
+      "options": [
+        "The Profit and Loss account",
+        "The Bank account",
+        "The Capital account directly",
+        "The trial balance"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "Which stages of the cycle typically happen monthly?",
+      "options": [
+        "Posting journal totals to the ledger and preparing the trial balance",
+        "Writing source documents",
+        "Preparing financial statements",
+        "Transferring net profit to Capital"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
   ]
 }

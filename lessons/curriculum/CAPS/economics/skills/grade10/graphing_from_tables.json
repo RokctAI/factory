@@ -19,5 +19,70 @@
         "topic": "DYNAMICS OF MARKETS: EFFECTS OF COSTS AND REVENUE"
       }
     ]
-  }
+  },
+  "diagnostic": [
+    {
+      "id": "diag_1",
+      "prompt": "At R8 a schedule shows quantity demanded 40 and quantity supplied 80. The excess supply is:",
+      "options": [
+        "40 units",
+        "80 units",
+        "120 units",
+        "8 units"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "diag_2",
+      "prompt": "On an economics graph, price and quantity are placed:",
+      "options": [
+        "Price on the vertical axis, quantity on the horizontal",
+        "Quantity on the vertical axis, price on the horizontal",
+        "Both on the horizontal axis",
+        "Whichever is larger goes vertical"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ],
+  "recap": "A demand and supply schedule is a table listing, for each price, the quantity buyers would demand and the quantity sellers would supply. Turning it into a graph makes it an answer machine - but only if it is built properly.\n\nRead the table before drawing. The demand column should fall as price rises (law of demand - a downward curve coming) and the supply column should rise (law of supply - upward curve). Spot the row where the two columns are equal: that row is the equilibrium, and your curves must cross exactly there. Note the ranges of price and quantity - they decide your axis scales.\n\nBuild the axes by convention: price on the vertical axis, quantity on the horizontal - always, even though it feels backwards. Choose even scales, where equal distances mean equal amounts; an uneven scale bends the curves and corrupts every reading afterwards. Label both axes with units and give the graph a heading - markers award these directly.\n\nPlot one point per table row: go up to the price, across to the quantity, mark. Join the demand points into a smooth curve labelled D, and the supply points into S on the same axes. Their intersection is the equilibrium: read its price and quantity off the axes with dotted lines and label the point E. Confirm against the table - the crossing must land on the row where the columns match; if it does not, a point is misplotted or a scale is uneven.\n\nReading gaps is the exam skill. For excess supply at a given price: run a horizontal line at that price; where it cuts the demand curve, read quantity demanded; where it cuts the supply curve, read quantity supplied; subtract. Both readings must come from the same price - the commonest error is mixing prices. A price above equilibrium always shows supply exceeding demand (a surplus, pushing price down); below equilibrium, demand exceeds supply (a shortage, pulling price up).\n\nVerification habit: every point checked against its row, slopes matching the laws, intersection matching the equal row, and any surplus or shortage computed as a subtraction of two same-price readings.",
+  "exit_check": [
+    {
+      "id": "exit_1",
+      "prompt": "Your curves cross at a price where the table's two columns are NOT equal. This means:",
+      "options": [
+        "A point is misplotted or a scale is uneven - recheck against the table",
+        "The market has two equilibria",
+        "The table is wrong",
+        "Equilibrium moved while drawing"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_2",
+      "prompt": "Why must an axis use even steps?",
+      "options": [
+        "Uneven steps bend the curves and make every reading unreliable",
+        "Even steps use less paper",
+        "It only matters for the supply curve",
+        "Markers do not check scales"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    },
+    {
+      "id": "exit_3",
+      "prompt": "The most common error when reading excess supply off a graph is:",
+      "options": [
+        "Taking the two quantity readings at different prices",
+        "Using dotted lines",
+        "Labelling the curves",
+        "Starting from the vertical axis"
+      ],
+      "correct_index": 0,
+      "time_limit_seconds": 30
+    }
+  ]
 }
