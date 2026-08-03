@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why the cost of sales total from the CRJ posts twice, and how this pair keeps the perpetual system truthful in the ledger.",
+      "expected_answer": "The R3 600 debits Cost of Sales (the expense measuring what the sold goods had cost) and credits Trading Stock (the shelf gave up goods at cost). Without the pair, either the expense would be missing from the profit story or the stock account would still claim goods that have already been sold — the double posting keeps both the performance measure and the asset record honest."
+    },
+    {
+      "id": "cc2",
+      "question": "State precisely what a balancing trial balance proves and two kinds of error it cannot detect.",
+      "expected_answer": "It proves arithmetic equality — every debit posted found an equal credit and the casting is consistent. It cannot detect an amount posted to the wrong account on the correct side (e.g. rent posted to Repairs), nor a transaction omitted entirely from the journals, since both halves are equally missing."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the three diagnostic questions to ask when a trial balance does NOT balance, and what each fingerprint suggests.",
+      "expected_answer": "Is the difference equal to one of the amounts? — a posting made once instead of twice. Is it divisible by two? — an amount posted to the wrong side, doubling its effect. Is it divisible by nine? — transposed digits (e.g. 3 500 written as 5 300). Read the gap before re-adding anything."
+    }
+  ]
+}
