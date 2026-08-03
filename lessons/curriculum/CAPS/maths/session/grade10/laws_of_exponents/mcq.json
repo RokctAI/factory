@@ -1,0 +1,220 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Laws — and Why They Are True",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "$x^3 \\times x^2$ simplifies to:",
+          "options": [
+            "$x^5$",
+            "$x^6$",
+            "$x^9$",
+            "$2x^5$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "$(x^3)^2$ simplifies to:",
+          "options": [
+            "$x^6$",
+            "$x^5$",
+            "$x^9$",
+            "$2x^3$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why does $x^0 = 1$ (for nonzero $x$)?",
+          "options": [
+            "Because $x^3 \\div x^3$ equals both 1 and $x^{3-3} = x^0$",
+            "Because zero of anything is nothing",
+            "It is an unexplained convention",
+            "Because $x^0$ means $x \\times 0$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "A negative exponent like $x^{-2}$ means:",
+          "options": [
+            "The reciprocal: $\\frac{1}{x^2}$",
+            "A negative number: $-x^2$",
+            "Zero",
+            "$x^2 - 2$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Simplifying the Expression — Brackets First",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "$(2x^3y)^2$ expands to:",
+          "options": [
+            "$4x^6y^2$",
+            "$2x^6y^2$",
+            "$4x^5y^2$",
+            "$4x^9y^2$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Multiplying $4x^6y^2$ by $4x^{-2}$ gives:",
+          "options": [
+            "$16x^4y^2$",
+            "$16x^8y^2$",
+            "$8x^4y^2$",
+            "$16x^{-12}y^2$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The fully simplified value of $\\frac{(2x^3y)^2 \\times 4x^{-2}}{8xy^2}$ is:",
+          "options": [
+            "$2x^3$",
+            "$2x^3y$",
+            "$16x^3$",
+            "$2x^4$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "In the final division, what happens to the $y$ terms ($y^2$ over $y^2$)?",
+          "options": [
+            "They give $y^0 = 1$ and vanish from the answer",
+            "They double to $y^4$",
+            "They become $y^{-2}$",
+            "They remain as $y^2$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Solving Three to the x Plus One Equals Twenty-Seven",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The key move for solving $3^{x+1} = 27$ is:",
+          "options": [
+            "Rewrite 27 as $3^3$ so both sides share the same base",
+            "Divide both sides by 3",
+            "Multiply the exponent by 3",
+            "Take half of 27"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The solution of $3^{x+1} = 27$ is:",
+          "options": [
+            "$x = 2$",
+            "$x = 3$",
+            "$x = 8$",
+            "$x = 26$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "If instead $3^{x+1} = \\frac{1}{27}$, the solution becomes:",
+          "options": [
+            "$x = -4$, since $\\frac{1}{27} = 3^{-3}$",
+            "$x = 4$",
+            "$x = -2$",
+            "No solution exists"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Why may we equate exponents once the bases match?",
+          "options": [
+            "Equal powers of the same positive base (≠ 1) force the exponents to be equal",
+            "It is a shortcut that sometimes fails",
+            "Because exponents are always small numbers",
+            "Because both sides were divided by the base"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Error Museum — and the Full Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A learner writes $(2x^3y)^2 = 2x^6y^2$. The error is:",
+          "options": [
+            "The coefficient 2 must also be squared to give 4",
+            "The $x$ exponent should be 5",
+            "The $y$ should disappear",
+            "There is no error"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Why is $x^2 \\times y^3$ NOT equal to $(xy)^5$?",
+          "options": [
+            "Exponent laws only combine powers of the SAME base",
+            "Because 2 + 3 is not 5",
+            "It is equal — both are $(xy)^5$",
+            "Because $y$ is always larger than $x$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "$4x^{-2}$ written with positive exponents is:",
+          "options": [
+            "$\\frac{4}{x^2}$",
+            "$-4x^2$",
+            "$\\frac{1}{4x^2}$",
+            "$-\\frac{4}{x^2}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which quick check helps confirm a simplification is correct?",
+          "options": [
+            "Substitute simple values (like x = 1, y = 1) into the original and the answer, and compare",
+            "Count the number of symbols in the answer",
+            "Redo the question in pen",
+            "Check that the answer contains no exponents"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

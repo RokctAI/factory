@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the decision tree you should run through before choosing a factorisation technique, and why the common-factor check must come first.",
+      "expected_answer": "First check for a common factor across all terms and remove it; then count the remaining terms — two suggests squares/cubes identities, three suggests the product-and-sum trinomial method, four suggests grouping in pairs; finally check every bracket for further factorisation. The common factor comes first because leaving it in makes the later patterns harder to see and costs the 'fully factorised' requirement."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the SOAP mnemonic for the sum and difference of cubes, and apply it to explain each sign in the factorisation of x³ + 8.",
+      "expected_answer": "SOAP gives the signs: Same (first bracket matches the original sign — plus, so x + 2), Opposite (middle term of the second bracket takes the opposite sign — minus 2x), Always Positive (last term positive — plus 4). Hence x³ + 8 = (x + 2)(x² − 2x + 4)."
+    },
+    {
+      "id": "cc3",
+      "question": "In grouping in pairs, why must −b (not +b) be factored from −bx − by, and how do mismatched brackets act as a self-check?",
+      "expected_answer": "Factoring out −b leaves (x + y), matching the first group's bracket; taking +b instead leaves (−x − y), which does not match, and the common-bracket step fails. Mismatched brackets therefore signal an error — usually a sign error in the common factor — before a wrong answer can be written."
+    }
+  ]
+}

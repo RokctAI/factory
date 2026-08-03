@@ -1,0 +1,208 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Three Ratios and SOH CAH TOA",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In a right-angled triangle, $\\sin\\theta$ is defined as:",
+          "options": [
+            "$\\frac{\\text{opposite}}{\\text{hypotenuse}}$",
+            "$\\frac{\\text{adjacent}}{\\text{hypotenuse}}$",
+            "$\\frac{\\text{opposite}}{\\text{adjacent}}$",
+            "$\\frac{\\text{hypotenuse}}{\\text{opposite}}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Which side of a right-angled triangle NEVER changes its label, regardless of which acute angle you choose?",
+          "options": [
+            "The hypotenuse — always opposite the right angle",
+            "The opposite side",
+            "The adjacent side",
+            "The shortest side"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why is $\\sin 30°$ the same number in every right-angled triangle containing a 30° angle?",
+          "options": [
+            "Similar triangles keep side ratios identical regardless of the triangle's size",
+            "Because calculators are standardised",
+            "It is only the same for triangles of equal area",
+            "It is a coincidence of the number 30"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Special Angles — Values Without a Calculator",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "From the halved equilateral triangle, $\\sin 60°$ equals:",
+          "options": [
+            "$\\frac{\\sqrt{3}}{2}$",
+            "$\\frac{1}{2}$",
+            "$\\frac{1}{\\sqrt{2}}$",
+            "$\\sqrt{3}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "$\\tan 45°$ equals:",
+          "options": [
+            "$1$",
+            "$\\frac{1}{\\sqrt{2}}$",
+            "$\\sqrt{2}$",
+            "$\\frac{1}{2}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "$\\sin 60° \\times \\cos 30°$ equals:",
+          "options": [
+            "$\\frac{3}{4}$",
+            "$\\frac{\\sqrt{3}}{2}$",
+            "$\\frac{1}{2}$",
+            "$\\frac{\\sqrt{6}}{4}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The full expression $\\sin 60° \\times \\cos 30° - \\tan 45°$ evaluates to:",
+          "options": [
+            "$-\\frac{1}{4}$",
+            "$\\frac{1}{4}$",
+            "$0$",
+            "$-\\frac{3}{4}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding the Angle — the Inverse Move",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Hypotenuse 13, side opposite x is 5. The correct ratio equation is:",
+          "options": [
+            "$\\sin x = \\frac{5}{13}$",
+            "$\\cos x = \\frac{5}{13}$",
+            "$\\tan x = \\frac{5}{13}$",
+            "$\\sin x = \\frac{13}{5}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "To find the angle from $\\sin x = \\frac{5}{13}$, you use:",
+          "options": [
+            "The inverse sine: $x = \\sin^{-1}\\left(\\frac{5}{13}\\right) \\approx 22{,}6°$",
+            "Ordinary sine of both sides",
+            "Pythagoras",
+            "Division by 13"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Which sense check supports $x \\approx 22{,}6°$?",
+          "options": [
+            "$\\frac{5}{13}$ is less than $\\frac{1}{2}$, and $\\sin 30° = \\frac{1}{2}$, so the angle must be below 30°",
+            "All angles in trigonometry are below 30°",
+            "13 − 5 = 8, so the angle is under 10°",
+            "The angle must equal half the hypotenuse"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The third side of the 5-13 triangle is 12. The other acute angle is approximately:",
+          "options": [
+            "$67{,}4°$, since the two acute angles must sum to $90°$",
+            "$45°$",
+            "$22{,}6°$",
+            "$90°$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Choosing the Right Ratio — and the Complete Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Known: opposite = 5 and adjacent = 12. Which ratio finds the angle?",
+          "options": [
+            "Tangent: $\\tan x = \\frac{5}{12}$",
+            "Sine: $\\sin x = \\frac{5}{12}$",
+            "Cosine: $\\cos x = \\frac{5}{12}$",
+            "None — Pythagoras is needed first"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Your calculator says $\\sin 30° = -0{,}988$. The most likely cause is:",
+          "options": [
+            "The calculator is in radian mode instead of degree mode",
+            "Sine of 30° is genuinely negative",
+            "A flat battery",
+            "The angle is too small for the calculator"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Why must you label opposite and adjacent only AFTER choosing which angle you are working with?",
+          "options": [
+            "The two labels swap places when you switch to the other acute angle",
+            "The hypotenuse changes with the angle",
+            "Labels are optional in trigonometry",
+            "The right angle moves"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "When do you use the INVERSE trig function?",
+          "options": [
+            "When the ratio of sides is known and the angle is wanted",
+            "When the angle is known and a side is wanted",
+            "In every trigonometry question",
+            "Only for the 45° triangle"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}
