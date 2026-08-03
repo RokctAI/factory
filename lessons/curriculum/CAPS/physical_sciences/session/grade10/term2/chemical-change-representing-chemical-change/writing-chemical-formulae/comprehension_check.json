@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why every ionic formula must be electrically neutral, and show how this principle generates both CaCl2 and Fe2O3.",
+      "expected_answer": "Ionic compounds carry no overall charge, so the positive and negative ion charges must sum to zero. Ca²⁺ needs two Cl⁻ (+2 against 2 × −1), giving CaCl2. Fe³⁺ against O²⁻ needs the lowest common multiple of 6: two Fe (+6) and three O (−6), giving Fe2O3."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the bracket rule for polyatomic ions and what goes wrong, atom-count-wise, if the brackets are left out of ammonium sulphate.",
+      "expected_answer": "When a polyatomic ion takes a subscript, the whole ion is wrapped in brackets so the subscript multiplies the entire team: (NH4)2 means 2 N and 8 H. Without brackets, NH42SO4 reads as 42 hydrogens, and NH8SO4 destroys the ammonium ion's identity — the atom bookkeeping fails either way."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain what the Roman numeral in a compound's name instructs you to do, and why the crossover method must always be followed by a simplify-and-audit step.",
+      "expected_answer": "The Roman numeral states the charge on a multi-valent metal ion — iron(III) means use Fe³⁺ — because transition metals form more than one ion. The crossover mechanically swaps charge sizes into subscripts, but it can produce unsimplified ratios (Mg2O2 instead of MgO), so the subscripts must be reduced and the final formula audited: total positive charge must exactly cancel total negative."
+    }
+  ]
+}
