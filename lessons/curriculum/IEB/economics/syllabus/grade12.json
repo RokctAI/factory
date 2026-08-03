@@ -1,0 +1,295 @@
+{
+  "subject": "Economics",
+  "grade": 12,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/economics/syllabus/grade12.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.230%20ATP%202023-24%20Gr%2012%20Eco%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "CIRCULAR FLOW",
+          "subtopics": [
+            "Open vs closed economy; role players; injections and leakages; economy in equilibrium",
+            "Autonomous consumption; MPC/MPS; the four-sector model",
+            "National accounts aggregates and conversions",
+            "The multiplier"
+          ],
+          "prior_knowledge": "Factors of production, production process, roles of participants in the economy",
+          "requires_skills": [
+            "economics.circular_flow_basics"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "BUSINESS CYCLES",
+          "subtopics": [
+            "Composition and features; explanation/causes; types of business cycles",
+            "Government policy: monetary and fiscal policy",
+            "The new economic paradigm (smoothing of cycles); features underpinning forecasting"
+          ],
+          "prior_knowledge": "National accounts (GDP/GDI/GDE); monetary policy (SARB, interest rates, cash reserves, open-market transactions, moral suasion); fiscal policy",
+          "requires_skills": [
+            "economics.monetary_and_fiscal_policy"
+          ],
+          "weeks": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "PUBLIC SECTOR",
+          "subtopics": [
+            "Composition and necessity of the public sector; problems of provisioning; objectives",
+            "Budgets; fiscal policy including the Laffer curve; public sector failure"
+          ],
+          "prior_knowledge": "Circular flow, participants in an economy, government structures, fiscal policy",
+          "requires_skills": [
+            "economics.circular_flow_basics"
+          ],
+          "weeks": [
+            6,
+            7
+          ]
+        },
+        {
+          "name": "INTERNATIONAL TRADE (FOREIGN EXCHANGE MARKETS)",
+          "subtopics": [
+            "Main reasons for international trade; absolute and comparative advantage",
+            "Balance of payments; the IMF; correcting surpluses and deficits (disequilibria)",
+            "Foreign exchange markets and the establishment of exchange rates"
+          ],
+          "prior_knowledge": "Open-economy circular flow, markets, price formation and market dynamics",
+          "requires_skills": [
+            "economics.circular_flow_basics"
+          ],
+          "weeks": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION",
+          "weeks": [
+            10
+          ]
+        },
+        {
+          "name": "ASSESSMENT",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "DYNAMICS OF MARKETS: PERFECT MARKETS",
+          "subtopics": [
+            "Perfect competition; the industry vs the individual business",
+            "Market structure; output, profits and losses",
+            "Competition policies"
+          ],
+          "prior_knowledge": "Price formation: demand and supply, their laws, cost and revenue analysis, price elasticity of demand",
+          "requires_skills": [
+            "economics.cost_and_revenue_analysis",
+            "economics.demand_and_supply"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "DYNAMICS OF MARKETS: IMPERFECT MARKETS",
+          "subtopics": [
+            "Monopolies, duopolies, oligopolies, monopolistic competition",
+            "Market structures of imperfect competition"
+          ],
+          "prior_knowledge": "The market; cost and revenue analysis; price elasticity of demand theory",
+          "requires_skills": [
+            "economics.cost_and_revenue_analysis"
+          ],
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "DYNAMICS OF MARKETS: MARKET FAILURES",
+          "subtopics": [
+            "Concept and causes of market failure; misallocation of resources",
+            "Consequences of market failures",
+            "Cost-benefit analysis (conserving vs using resources; public vs private expenditure)"
+          ],
+          "prior_knowledge": "The market, competition, PPC (efficiencies and inefficiencies), public sector intervention",
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "INTERNATIONAL TRADE POLICIES (PROTECTIONISM & FREE TRADE)",
+          "subtopics": [
+            "Protection and free trade; globalisation; major protocols",
+            "Export promotion; import substitution; arguments for and against free trade; desirable policy mix",
+            "Trade liberalisation and the WTO; forms of economic integration"
+          ],
+          "prior_knowledge": "Economic systems, four-sector model, north/south divide (Gr 11), absolute and comparative advantage, AU/SADC/NEPAD",
+          "weeks": [
+            7,
+            8
+          ]
+        },
+        {
+          "name": "ECONOMIC GROWTH AND DEVELOPMENT",
+          "subtopics": [
+            "Economic growth vs economic development",
+            "Demand-side and supply-side approaches; evaluation of the approaches",
+            "SA endeavours; the north/south divide"
+          ],
+          "prior_knowledge": "Wealth, scarcity, means of production, income inequality, growth and development, unemployment; monetary and fiscal policy; globalisation",
+          "requires_skills": [
+            "economics.monetary_and_fiscal_policy"
+          ],
+          "weeks": [
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "ECONOMIC GROWTH AND DEVELOPMENT",
+          "subtopics": [
+            "Economic growth vs economic development",
+            "Demand-side and supply-side approaches; evaluation",
+            "SA endeavours; the north/south divide"
+          ],
+          "requires_skills": [
+            "economics.monetary_and_fiscal_policy"
+          ],
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "GROWTH & DEV: INDUSTRIAL DEVELOPMENT",
+          "subtopics": [
+            "Industrial development; regional development",
+            "SA endeavours and the appropriateness of SA strategies"
+          ],
+          "prior_knowledge": "SA regional landscape; SA's role and economic importance in Africa; AU and SADC",
+          "weeks": [
+            2
+          ]
+        },
+        {
+          "name": "ECONOMIC AND SOCIAL INDICATORS",
+          "subtopics": [
+            "Performance of the economy; economic indicators; money supply and interest rates",
+            "Social indicators and international comparisons",
+            "Globalisation: IMF and World Bank"
+          ],
+          "prior_knowledge": "Growth and development strategies and comparisons; money supply; money and banking; interest rates; globalisation",
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "ECONOMIC ISSUES OF THE DAY: INFLATION",
+          "subtopics": [
+            "Inflation concept, types, causes and consequences",
+            "The inflation problem in SA and measures to combat inflation"
+          ],
+          "prior_knowledge": "Price formation (laws of demand/supply, AD/AS shifts, Phillips curve); monetary and fiscal policy; consumer vs producer inflation",
+          "requires_skills": [
+            "economics.demand_and_supply",
+            "economics.monetary_and_fiscal_policy"
+          ],
+          "weeks": [
+            4
+          ]
+        },
+        {
+          "name": "ECONOMIC ISSUES OF THE DAY: TOURISM",
+          "subtopics": [
+            "Tourism concept; reasons for growth; effects and benefits",
+            "SA tourism profile (incl. IKS); policy suggestions"
+          ],
+          "prior_knowledge": "Growth and development, unemployment, poverty, population and labour force; IKS (Gr 11)",
+          "weeks": [
+            5
+          ]
+        },
+        {
+          "name": "ECONOMIC ISSUES OF THE DAY: ENVIRONMENTAL SUSTAINABILITY",
+          "subtopics": [
+            "Environmental sustainability; the state of the environment",
+            "Measures to ensure sustainability; international measures and agreements (incl. recent ones)"
+          ],
+          "prior_knowledge": "Basic economic problem; human rights; economic redress (Gr 11); production possibilities; public sector involvement",
+          "weeks": [
+            6,
+            7
+          ]
+        },
+        {
+          "name": "TRIAL EXAMINATION",
+          "weeks": [
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "REVISION: MACRO-ECONOMICS & ECONOMIC PURSUITS (PAPER 1 SCOPE)",
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "REVISION: MICRO-ECONOMICS & CONTEMPORARY ECONOMIC ISSUES (PAPER 2 SCOPE)",
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "FINAL EXAMINATION",
+          "weeks": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

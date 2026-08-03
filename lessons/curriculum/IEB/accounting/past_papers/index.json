@@ -1,0 +1,21 @@
+{
+  "subject": "Accounting",
+  "grade": 12,
+  "curriculum": "IEB",
+  "portal": "https://www.ieb.co.za/assessment/high-schools/national-senior-certificate/nsc-past-papers",
+  "library": {
+    "url": "https://docs.ieb.co.za",
+    "access": "Guest credentials published by the IEB itself on its FAQ (guest@ieb.co.za / guest) — intentionally provided public access, analogous to the DBE's public download links.",
+    "folders": [
+      "NSC Public Resources > NSC Examination Papers",
+      "NSC Public Resources > NSC Marking Guidelines"
+    ]
+  },
+  "portal_coverage": "Previous 5 years of IEB NSC papers + marking guidelines; earlier years by email request to the IEB.",
+  "grades_note": "The IEB nationally examines Grade 12 (NSC) only. Grade 10-11 assessment at IEB schools is school-set per the SAGs, so no national Gr 10/11 papers exist to index (the CAPS tree's Gr 11 papers are DBE/provincial, a different examining body).",
+  "verified": null,
+  "source_status": "urls_recorded_not_verified: this build environment's network policy blocks ieb.co.za (proxy CONNECT 403, checked 2026-08-03). Run lessons/curriculum/IEB/scripts/fetch_ieb_sources.py from a network-enabled machine to verify the portal and populate sessions[].",
+  "terms_note": "(c) IEB; not reproducible for commercial gain - see lessons/curriculum/IEB/SOURCES.md before ingesting PDFs or embedding questions.",
+  "sessions": [],
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py"
+}

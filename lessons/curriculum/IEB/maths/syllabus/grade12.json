@@ -1,0 +1,203 @@
+{
+  "subject": "Maths",
+  "grade": 12,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/maths/syllabus/grade12.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=_kS5tgxXQ0I%3D&tabid=3205&portalid=0&mid=10755",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "Number patterns, sequences and series",
+          "subtopics": [
+            "Revise number patterns with a constant second difference (quadratic general term)",
+            "Arithmetic and geometric sequences and series",
+            "Sigma notation",
+            "Derive and apply sum formulae for arithmetic and geometric series, including the sum to infinity of a convergent geometric series (−1<r<1)"
+          ],
+          "weeks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Functions: Formal definition, inverses, exponential and logarithmic",
+          "subtopics": [
+            "Definition of a function",
+            "Inverse of a function; restricting the domain to obtain a one-to-one function",
+            "Determine and sketch inverses of y=ax+q, y=ax², y=bˣ (b>0, b≠1)",
+            "Graph characteristics: domain and range, intercepts, turning points, minima/maxima, asymptotes, shape and symmetry, average gradient, increasing/decreasing intervals",
+            "Revise the exponential function and exponential laws",
+            "Definition of a logarithm: y=log_b x ⇔ x=bʸ (b>0, b≠1)",
+            "Graph of y=log_b x for 0<b<1 and b>1"
+          ],
+          "weeks": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "Trigonometry",
+          "subtopics": [
+            "Compound angle identities: sin(α±β), cos(α±β)",
+            "Double angle identities: sin2α, the three forms of cos2α",
+            "Revise proofs of the sine, cosine and area rules",
+            "Solve problems in two and three dimensions using the sine, cosine and area rules"
+          ],
+          "requires_skills": [
+            "maths.trig_ratios"
+          ],
+          "weeks": [
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "Euclidean Geometry",
+          "subtopics": [
+            "Revise necessary and sufficient conditions for polygons to be similar",
+            "Prove: a line parallel to one side of a triangle divides the other two sides proportionally (Mid-point Theorem as special case of the converse)",
+            "Prove: equiangular triangles are similar",
+            "Prove: triangles with sides in proportion are similar",
+            "Prove: the Pythagorean Theorem by similar triangles"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Analytical Geometry",
+          "subtopics": [
+            "Revise: equation of a line through two points; through one point parallel/perpendicular to a given line; inclination of a line (m=tanθ, 0°≤θ≤180°)",
+            "Equation of a circle (x−a)²+(y−b)²=r²",
+            "Equation of a tangent to a given circle"
+          ],
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Differential Calculus, including polynomials",
+          "subtopics": [
+            "Factorise third-degree polynomials; remainder and factor theorems (degree ≤ 3, no proofs)",
+            "Intuitive understanding of the limit concept",
+            "Derivative from first principles for f(x)=ax²+bx+c, ax³, a/x and constants",
+            "Differentiation rules: d/dx(axⁿ)=anxⁿ⁻¹; sum/difference and constant-multiple rules",
+            "Equations of tangents to graphs of functions",
+            "Second derivative and concavity",
+            "Sketch cubic polynomial graphs: stationary points, points of inflection, x-intercepts (factor theorem)",
+            "Practical optimisation and rates of change, including calculus of motion"
+          ],
+          "requires_skills": [
+            "maths.factorisation_techniques"
+          ],
+          "weeks": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "Finance, growth and decay (continuation)",
+          "subtopics": [
+            "Revise simple and compound growth and decay formulae A=P(1±in), A=P(1±i)ⁿ (incl. straight-line and reducing-balance depreciation)",
+            "Present value and future value annuities",
+            "Use logarithms to calculate n (the time period)",
+            "Critically analyse investment and loan options (including pyramid schemes)"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "Statistics",
+          "subtopics": [
+            "Revise: histograms, frequency polygons, ogives, variance and standard deviation (ungrouped), symmetric and skewed data, outliers",
+            "Bivariate data: scatterplots, least squares regression line, correlation; interpolation, extrapolation, skewness commentary"
+          ],
+          "weeks": [
+            4,
+            5
+          ]
+        },
+        {
+          "name": "Counting and probability",
+          "subtopics": [
+            "Revise: addition rule, mutually exclusive events, complementary rule, independent events and the product rule",
+            "Venn diagrams up to three events; tree diagrams; two-way contingency tables",
+            "Fundamental counting principle",
+            "Probability problems using counting techniques"
+          ],
+          "weeks": [
+            6,
+            7
+          ]
+        },
+        {
+          "name": "Revision",
+          "weeks": [
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "Revision",
+          "weeks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Final examination",
+          "weeks": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "subject": "Maths",
+  "grade": 10,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/maths/syllabus/grade10.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.580%20ATP%202023-24%20Gr%2010%20Maths%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "Algebraic expressions",
+          "subtopics": [
+            "Rational and irrational real numbers",
+            "Determine between which two integers a given simple surd lies",
+            "Round real numbers to an appropriate degree of accuracy",
+            "Multiplication of a binomial by a trinomial",
+            "Factorisation: trinomials, grouping in pairs, sum and difference of two cubes",
+            "Simplify, add and subtract algebraic fractions using factorisation (denominators up to sum/difference of cubes)"
+          ],
+          "weeks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Exponents, equations and inequalities",
+          "subtopics": [
+            "Revise Grade 9 laws of exponents (including negative and zero exponents)",
+            "Use exponent laws to simplify expressions and solve equations (rational exponents)",
+            "Revise solution of linear equations",
+            "Solve quadratic equations by factorisation",
+            "Solve simultaneous linear equations in two unknowns",
+            "Word problems: linear, quadratic or simultaneous linear equations",
+            "Literal equations (changing the subject of a formula)",
+            "Linear inequalities with graphical solutions; interval notation"
+          ],
+          "weeks": [
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "name": "Trigonometry",
+          "subtopics": [
+            "Define sin, cos and tan in right-angled triangles",
+            "Extend definitions of sin, cos and tan to 0°–360°",
+            "Reciprocal ratios cosec, sec and cot (examined in Grade 10 only)",
+            "Special angle values (0°, 30°, 45°, 60°, 90°) without a calculator",
+            "Two-dimensional problems involving right-angled triangles",
+            "Simple trigonometric equations for angles 0°–90°",
+            "Numerical values of ratios for angles 0°–360° from diagrams"
+          ],
+          "weeks": [
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "Euclidean Geometry",
+          "subtopics": [
+            "Revise lines, angles and triangles; similarity and congruence of triangles",
+            "Special quadrilaterals (kite, parallelogram, rectangle, rhombus, square, trapezium): investigate, conjecture and prove properties of sides, angles, diagonals, areas",
+            "Investigate the line segment joining the midpoints of two sides of a triangle",
+            "Solve problems and prove riders using parallel lines, triangles, quadrilaterals and the midpoint theorem"
+          ],
+          "weeks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Analytical Geometry",
+          "subtopics": [
+            "Distance between two points",
+            "Gradient of a line segment; parallel and perpendicular lines",
+            "Coordinates of the midpoint of a line segment",
+            "Represent quadrilaterals and other figures on the Cartesian plane"
+          ],
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "Functions (including trigonometric functions)",
+          "subtopics": [
+            "Concept of a function; representations via tables, graphs, words and formulae",
+            "Point-by-point plotting of y=x², y=1/x and y=bˣ (b>0, b≠1): shape, domain, range, asymptotes, symmetry, turning points, intercepts",
+            "Effect of a and q on y=a·f(x)+q for f(x)=x, x², 1/x, bˣ",
+            "Point-by-point plotting of y=sinθ, y=cosθ, y=tanθ for θ∈[0°,360°]",
+            "Effect of a and q on y=a·sinθ+q, y=a·cosθ+q, y=a·tanθ+q",
+            "Sketch graphs, find equations of given graphs, interpret graphs"
+          ],
+          "weeks": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "Trigonometry (2D)",
+          "subtopics": [
+            "Solve two-dimensional problems involving right-angled triangles"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Statistics",
+          "subtopics": [
+            "Measures of central tendency in ungrouped data: mean, median, mode",
+            "Measures of central tendency in grouped data: mean estimate, modal interval, median interval",
+            "Dispersion: range, percentiles, quartiles, inter-quartile and semi-inter-quartile range",
+            "Five number summary and box-and-whisker diagram",
+            "Analyse and comment on context using statistical summaries and graphs",
+            "Histogram"
+          ],
+          "weeks": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "name": "Probability",
+          "subtopics": [
+            "Probability models: relative frequency vs theoretical probability",
+            "Venn diagrams for two events; addition rule P(A or B)=P(A)+P(B)−P(A and B)",
+            "Mutually exclusive and complementary events"
+          ],
+          "weeks": [
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "name": "Finance and growth",
+          "subtopics": [
+            "Simple and compound growth formulae A=P(1+in) and A=P(1+i)ⁿ (interest, hire purchase, inflation, population growth)",
+            "Implications of fluctuating foreign exchange rates"
+          ],
+          "weeks": [
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "Measurement",
+          "subtopics": [
+            "Revise volume and surface area of right prisms and cylinders",
+            "Effect on volume and surface area of multiplying any dimension by a constant factor k",
+            "Volume and surface area of spheres, right pyramids, right cones and combinations of these objects"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Number patterns",
+          "subtopics": [
+            "Investigate linear number patterns (constant difference between consecutive terms); general term"
+          ],
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "Revise Algebra",
+          "weeks": [
+            4
+          ]
+        },
+        {
+          "name": "Revise Trigonometry & Geometry",
+          "weeks": [
+            5
+          ]
+        },
+        {
+          "name": "Revise functions",
+          "weeks": [
+            6
+          ]
+        },
+        {
+          "name": "Examination",
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        }
+      ]
+    }
+  ]
+}

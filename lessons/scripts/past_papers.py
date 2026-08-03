@@ -11,7 +11,7 @@ Subcommands:
           matching against real lesson cards; honest 'unmatched' allowed).
   link    apply matches: write worked-example question.md + manim_scene.py
           into the lesson dir, record `past_paper_examples` on the card, and
-          update lessons/past_papers/links.json (paper->lessons + lesson->papers).
+          update lessons/curriculum/CAPS/past_papers/links.json (paper->lessons + lesson->papers).
   lookup  query the index in either direction.
   verify  the payoff of the link: for a lesson's linked questions, recompute
           the checkable memo answers and confirm the linked subtopic actually
@@ -32,7 +32,7 @@ import json
 import re
 from pathlib import Path
 
-PP_ROOT = Path("lessons/past_papers")
+PP_ROOT = Path("lessons/curriculum/CAPS/past_papers")
 LINKS_PATH = PP_ROOT / "links.json"
 JOBS = [Path(".rokct/agent/jobs/done"), Path(".rokct/agent/jobs/pending")]
 

@@ -1,0 +1,219 @@
+{
+  "subject": "Accounting",
+  "grade": 12,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/accounting/syllabus/grade12.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.150%20ATP%202023-24%20Gr%2012%20Acc%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "COMPANIES: UNIQUE TRANSACTIONS (Close corporations: Not assessed)",
+          "subtopics": [
+            "Company concepts: public vs private companies, Companies Act 71 of 2008, registration/MOI, income tax and provisional tax, dividends, shares, earnings, shareholders, limited liability, separation of ownership and control, directors, auditors, retained income, authorised vs issued share capital, JSE",
+            "IFRS and GAAP; specific GAAP principles",
+            "Company accounting cycle: journals, ledger accounts, trial balance",
+            "Transactions: share issues at issue price (no par value), share buy-backs, loans with capitalised interest, income tax, dividends, directors' fees, audit fees"
+          ],
+          "prior_knowledge": "Companies Act 71 of 2008 basics; shares and JSE trading procedures; MOI",
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "COMPANIES: FINAL ACCOUNTS, FINANCIAL STATEMENTS Statement of comprehensive income, statement of financial position, cash flow statement and audit report",
+          "subtopics": [
+            "Year-end adjustments including provision for bad debts, income tax adjustments, declaration and payment of dividends",
+            "Final accounts: trading, profit and loss, appropriation; reversal of accruals/deferrals/prepayments",
+            "Financial statements and notes: income statement, balance sheet, cash flow statement",
+            "Effect of all company transactions on the accounting equation",
+            "Fixed-asset reporting and control, ethics, internal audit, corporate governance, roles of shareholders and directors, share-price manipulation"
+          ],
+          "prior_knowledge": "Gr 10-11 year-end adjustments, final accounts and financial statements; purpose of the cash flow statement; King Code III basics; SAICA/SAIPA codes of conduct",
+          "weeks": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "COMPANIES: ANALYSIS AND INTERPRETATION",
+          "subtopics": [
+            "Revise Gr 11 indicators: profitability, liquidity (incl. stock turnover/holding, debtors' collection, creditors' payment periods), solvency, debt-equity",
+            "Introduce: return on shareholders' equity (ROSHE), return on total capital employed (ROTCE), net asset value per share (NAV), dividends per share (DPS), earnings per share (EPS), dividend pay-out rate",
+            "Analysis of published financial statements and annual reports: directors' report, independent auditor's report, abridged statements, governance information"
+          ],
+          "prior_knowledge": "Gr 10-11 financial indicators; JSE trading and share-price determination vs NAV",
+          "weeks": [
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "name": "ASSESSMENT: CONTROLLED TEST",
+          "weeks": [
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "INVENTORY VALUATION",
+          "subtopics": [
+            "Validation, valuation and calculation under perpetual and periodic systems: specific identification, FIFO, weighted average",
+            "GAAP principles, ethics, internal audit and control for inventories"
+          ],
+          "prior_knowledge": "Gr 11 inventory management; related financial indicators; Gr 10-11 GAAP and ethics",
+          "requires_skills": [
+            "accounting.gaap_principles"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "FIXED ASSETS, INTERNAL CONTROL",
+          "subtopics": [
+            "Interpretation and reporting on movement of assets: age, replacement rate, lifespan",
+            "Internal audit processes: gathering audit evidence, sampling techniques, internal audit reports, accountable management of resources",
+            "Difference between the roles of internal and external auditors"
+          ],
+          "prior_knowledge": "Gr 11 fixed assets; background on audit processes",
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "COST ACCOUNTING",
+          "subtopics": [
+            "Concepts unique to a manufacturing business",
+            "Production cost statement with notes; abridged income statement with administration and selling/distribution notes",
+            "Calculations: gross profit on finished goods sold, variable and fixed costs, unit cost, break-even point, total production cost",
+            "Manufacturing ethics: product quality and age, raw materials, local products, price fixing, theft, fraud",
+            "Internal audit and control in manufacturing"
+          ],
+          "prior_knowledge": "Gr 10-11 manufacturing content, accounts and calculations",
+          "weeks": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "RECONCILIATIONS",
+          "subtopics": [
+            "Analyse and interpret bank, debtors' and creditors' reconciliations",
+            "Reconcile creditors' statements with creditors-ledger accounts; debtors/creditors lists with control accounts",
+            "Analyse and interpret debtors' age analysis",
+            "Analyse and interpret bank statements and bank reconciliation statements",
+            "Ethics, internal audit and control: payment periods, interest, credit rating, fraud"
+          ],
+          "prior_knowledge": "Gr 10-11 reconciliations; ethics and internal control over cash, debtors and creditors",
+          "requires_skills": [
+            "accounting.control_accounts"
+          ],
+          "weeks": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "ASSESSMENT: CONTROLLED TEST/JUNE EXAMINATION",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "VAT",
+          "subtopics": [
+            "VAT calculations (Gr 11 revision)",
+            "Calculate the amount payable to or receivable from SARS",
+            "VAT control ledger account as an additional calculation method",
+            "Ethics, internal audit and control"
+          ],
+          "prior_knowledge": "Gr 10-11 VAT content, ethics and internal control concepts",
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Budgeting",
+          "subtopics": [
+            "Projected income statement with projected revenue and expenditure (Gr 11 content); differences vs cash budgets",
+            "Analysis, interpretation and comparison of projected income statements for sole traders or companies",
+            "Analysis, interpretation and comparison of cash budgets (receipts, payments, debtors' collection, creditors' payments, cash balances)",
+            "Budgeted vs actual figures; ethics, internal audit and control"
+          ],
+          "prior_knowledge": "Gr 10 budgets and projections; budgeted vs actual figures as planning/forecasting tools",
+          "weeks": [
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "Revision",
+          "weeks": [
+            7,
+            8
+          ]
+        },
+        {
+          "name": "TRIAL EXAMINATION (Two papers on two different days)",
+          "weeks": [
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "Revision of ALL CAPS topics",
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "FINAL NCS EXAM (TWO PAPERS on different days)",
+          "weeks": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "subject": "Maths",
+  "grade": 11,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/maths/syllabus/grade11.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.590%20ATP%202023-24%20Gr%2011%20Maths%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "Exponents and surds",
+          "subtopics": [
+            "Laws of exponents for rational exponents x^(p/q) = qth root of x^p (x>0, q>0); simplify and solve equations",
+            "Add, subtract, multiply and divide simple surds",
+            "Solve simple equations involving surds"
+          ],
+          "requires_skills": [
+            "maths.laws_of_exponents"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Equations and inequalities",
+          "subtopics": [
+            "Complete the square",
+            "Solve quadratic equations by factorisation and by the quadratic formula",
+            "Quadratic inequalities in one unknown (interpret solutions graphically)",
+            "Equations in two unknowns: one linear, one quadratic",
+            "Nature of roots"
+          ],
+          "requires_skills": [
+            "maths.factorisation_techniques"
+          ],
+          "weeks": [
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "Trigonometry (reduction formulae, trig equations & general solutions)",
+          "subtopics": [
+            "Derive and use identities tanθ = sinθ/cosθ and sin²θ + cos²θ = 1",
+            "Derive and use reduction formulae: (90°±θ), (180°±θ), (360°±θ), (−θ)",
+            "Determine for which values of a variable an identity holds",
+            "General solutions of trigonometric equations; solutions in specific intervals"
+          ],
+          "requires_skills": [
+            "maths.trig_ratios"
+          ],
+          "weeks": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "Euclidean Geometry",
+          "subtopics": [
+            "Accept as axiom: a tangent to a circle is perpendicular to the radius at the point of contact",
+            "Prove circle theorems: line from centre perpendicular to chord bisects it; line from centre to chord midpoint is perpendicular; perpendicular bisector of a chord passes through the centre",
+            "Prove: angle at centre is double the angle at the circumference; angles subtended by a chord on the same side are equal; opposite angles of a cyclic quadrilateral are supplementary",
+            "Prove: two tangents from the same external point are equal; tangent-chord angle equals the angle in the alternate segment",
+            "Use the theorems and their converses to solve riders"
+          ],
+          "weeks": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Analytical Geometry",
+          "subtopics": [
+            "Revise distance, gradient (parallel and perpendicular lines) and midpoint",
+            "Equation of a line through two points; through one point parallel or perpendicular to a given line",
+            "Inclination of a line, m = tanθ (0° ≤ θ ≤ 180°)"
+          ],
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "Functions (including trigonometric functions)",
+          "subtopics": [
+            "Effect of parameters a, q and p on y=a(x+p)²+q, y=a/(x+p)+q, y=a·b^(x+p)+q (b>0, b≠1)",
+            "Average gradient between two points; intuitive gradient of a curve at a point",
+            "Point-by-point plotting of y=sinθ, y=cosθ, y=tanθ for θ∈[−360°,360°]",
+            "Effect of k on y=sin(kx), y=cos(kx), y=tan(kx)",
+            "Effect of p on y=sin(x+p), y=cos(x+p), y=tan(x+p)",
+            "Sketch y=a·sin k(x+p), y=a·cos k(x+p), y=a·tan k(x+p) (at most two parameters at a time)"
+          ],
+          "weeks": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "Trigonometry (sine, cosine and area rules)",
+          "subtopics": [
+            "Prove and apply the sine, cosine and area rules",
+            "Solve problems in two dimensions using the sine, cosine and area rules"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "Statistics",
+          "subtopics": [
+            "Revise measures of central tendency and dispersion (ungrouped and grouped data)",
+            "Revise five number summary and box-and-whisker diagram",
+            "Revise histograms",
+            "Frequency polygons",
+            "Ogives (cumulative frequency curves)",
+            "Variance and standard deviation of ungrouped data",
+            "Symmetric and skewed data",
+            "Identification of outliers"
+          ],
+          "weeks": [
+            4,
+            5
+          ]
+        },
+        {
+          "name": "Probability",
+          "subtopics": [
+            "Revise probability models: relative frequency vs theoretical probability",
+            "Venn diagrams; addition rule; mutually exclusive and complementary events",
+            "Dependent and independent events; product rule for independent events",
+            "Venn diagrams for any three events in a sample space",
+            "Tree diagrams for consecutive or simultaneous events (not necessarily independent)",
+            "Venn diagrams, tree diagrams and contingency tables for real-life problems"
+          ],
+          "weeks": [
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "name": "Finance, growth and decay",
+          "subtopics": [
+            "Revise simple and compound growth formulae (interest, hire purchase, inflation, population growth)",
+            "Implications of fluctuating foreign exchange rates",
+            "Simple and compound decay formulae A=P(1−in), A=P(1−i)ⁿ (straight-line and reducing-balance depreciation)",
+            "Different periods of compounding; nominal and effective interest rates"
+          ],
+          "weeks": [
+            9,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "Number patterns",
+          "subtopics": [
+            "Investigate quadratic number patterns (constant second difference); general term"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "Revision of measurement",
+          "subtopics": [
+            "Volume and surface area of right prisms and cylinders",
+            "Effect on volume and surface area of multiplying any dimension by a constant factor k",
+            "Volume and surface area of spheres, right prisms, right cones and combinations"
+          ],
+          "weeks": [
+            4
+          ]
+        },
+        {
+          "name": "Revision of Algebra",
+          "weeks": [
+            5
+          ]
+        },
+        {
+          "name": "Revision of Trigonometry",
+          "weeks": [
+            6
+          ]
+        },
+        {
+          "name": "Examination",
+          "weeks": [
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

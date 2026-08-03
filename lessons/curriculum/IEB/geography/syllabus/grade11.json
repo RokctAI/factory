@@ -1,0 +1,299 @@
+{
+  "subject": "Geography",
+  "grade": 11,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/geography/syllabus/grade11.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.390%20ATP%202023-24%20Gr%2011%20Geo%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "theme": "The Atmosphere",
+      "topics": [
+        {
+          "name": "Earth’s energy balance",
+          "subtopics": [
+            "Consolidation of Grade 10 climatology; unequal heating of the atmosphere (latitudinal and seasonal)",
+            "Significance of the earth's axis and revolution around the sun",
+            "Transfer of energy and the energy balance",
+            "Mapwork: aerial photographs/orthophotos, 1:50 000 referencing, 16 cardinal points"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Global air circulation",
+          "subtopics": [
+            "Global air circulation as a response to unequal heating; world pressure belts; tri-cellular circulation",
+            "Relationships between air temperature, air pressure and wind",
+            "Pressure gradient, Coriolis force and geostrophic flow; westerlies, tropical and polar easterlies",
+            "Air-mass characteristics; regional and local winds; monsoons and Föhn winds"
+          ],
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Africa’s weather and climate",
+          "subtopics": [
+            "Subsidence and convergence linked to rainfall",
+            "The role of oceans in climate control in Africa",
+            "El Niño and La Niña (basic knowledge, not for examination)",
+            "Reading and interpreting synoptic weather maps; GIS and remote sensing applied to climatology"
+          ],
+          "requires_skills": [
+            "geography.synoptic_map_reading"
+          ],
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "Droughts and desertification",
+          "subtopics": [
+            "Causes of droughts; causes of desertification",
+            "Effects of droughts and desertification on people and the environment",
+            "Management strategies (case studies)",
+            "Mapwork/GIS: drought-prone area maps, desertification infographics, spatial objects and scales"
+          ],
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "Consolidation and assessment",
+          "weeks": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "theme": "Geomorphology",
+      "topics": [
+        {
+          "name": "Horizontally layered rocks",
+          "subtopics": [
+            "Hilly landscapes and basaltic plateaux: characteristics and processes",
+            "Scarp retreat and back wasting",
+            "Canyon and Karoo landscapes",
+            "Mapwork: map scale, contours and landforms, cross-sections, vertical exaggeration, gradient"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Inclined/tilted rock strata",
+          "subtopics": [
+            "Scarp and dip slopes; cuesta, homoclinal ridge, hogsback, cuesta basin and cuesta dome",
+            "Mapwork: contours, cross-sections, vertical exaggeration, gradient"
+          ],
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "Massive igneous rocks",
+          "subtopics": [
+            "Identification of batholiths, laccoliths, lopoliths, dykes and sills",
+            "Granite domes and tors: characteristics and processes",
+            "Mapwork: gradient, intervisibility, vertical exaggeration"
+          ],
+          "weeks": [
+            4,
+            5
+          ]
+        },
+        {
+          "name": "Slopes",
+          "subtopics": [
+            "Overview of SA topography; types of slopes",
+            "Slope elements: crest, cliff (scarp/free face), talus (debris/scree), pediment",
+            "Characteristics of slope elements; the concept of slope retreat",
+            "GIS: spatial and spectral resolution; line, point, area and attribute data; raster vs vector"
+          ],
+          "weeks": [
+            6,
+            7
+          ]
+        },
+        {
+          "name": "Mass movement",
+          "subtopics": [
+            "Concept and kinds of mass movement: soil creep, solifluction, landslides, rock falls, mud flows, slumps",
+            "Impact on people and the environment",
+            "Prevention/minimisation strategies with South African case studies"
+          ],
+          "weeks": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "Consolidation, revision and assessment",
+          "weeks": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "theme": "Development",
+      "topics": [
+        {
+          "name": "Development",
+          "subtopics": [
+            "Terminology and the concept of development",
+            "Developed vs developing; MEDCs, LEDCs and industrial countries",
+            "Mapwork: locating exact position (degrees, minutes, seconds)"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Framework for development",
+          "subtopics": [
+            "Economic, social, sustainable, appropriate-scale and spatial aspects of development",
+            "Indicators: GNP, GDP, HDI, Gini coefficient, life expectancy, infant mortality",
+            "Local, regional and global examples of development differences"
+          ],
+          "weeks": [
+            3,
+            4
+          ]
+        },
+        {
+          "name": "Trade and development",
+          "subtopics": [
+            "International trade and world markets; commodities traded; terms of trade",
+            "Types of trading relationships",
+            "Globalisation and its impact on development",
+            "Export-led development, critically examined with world examples"
+          ],
+          "weeks": [
+            5,
+            6
+          ]
+        },
+        {
+          "name": "Development issues and challenges",
+          "subtopics": [
+            "Factors affecting development: access to resources, energy, history, trade imbalances, population growth, education and training, natural-resource limits, environmental degradation (complex, interrelated)",
+            "Community-based development; rural and urban approaches (case studies)",
+            "The effect of development on the environment"
+          ],
+          "requires_skills": [
+            "geography.map_scale_and_distance"
+          ],
+          "weeks": [
+            7
+          ]
+        },
+        {
+          "name": "Role of development aid",
+          "subtopics": [
+            "Concept of development aid and development co-operation",
+            "Types of aid: technical, conditional, humanitarian",
+            "Impact of aid on development (positive and negative case studies)"
+          ],
+          "requires_skills": [
+            "geography.map_scale_and_distance"
+          ],
+          "weeks": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "Consolidation of assessment",
+          "weeks": [
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "theme": "Resources and Sustainability",
+      "topics": [
+        {
+          "name": "Soil and soil erosion",
+          "subtopics": [
+            "Causes of soil erosion: human, animal, physical; past and present",
+            "Evidence of soil erosion in South Africa; effects on people and the environment",
+            "Management strategies to prevent and control soil erosion",
+            "GIS: spatially referenced data; spatial and spectral resolution; line/point/area data"
+          ],
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "Conventional energy sources",
+          "subtopics": [
+            "Thermal and hydro-energy production in South Africa (maps and graphs)",
+            "Thermal electricity generation using coal: principles and processes",
+            "Impact of coal mining and thermal power stations: advantages and disadvantages",
+            "SA's potential to meet long-term energy needs conventionally; nuclear energy case study"
+          ],
+          "weeks": [
+            2,
+            3
+          ]
+        },
+        {
+          "name": "Non-conventional energy sources",
+          "subtopics": [
+            "Solar energy: SA and world examples",
+            "Wind energy: SA and world examples",
+            "The future of non-conventional energy in SA; effects on economy and environment"
+          ],
+          "weeks": [
+            4
+          ]
+        },
+        {
+          "name": "Energy management in South Africa",
+          "subtopics": [
+            "Energy management towards greener economies and sustainable lifestyles: responsibilities of government, businesses and individuals"
+          ],
+          "weeks": [
+            5
+          ]
+        },
+        {
+          "name": "Revision (all content)",
+          "weeks": [
+            6
+          ]
+        },
+        {
+          "name": "November examination",
+          "weeks": [
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

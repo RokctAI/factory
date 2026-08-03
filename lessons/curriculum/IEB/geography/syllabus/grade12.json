@@ -1,0 +1,246 @@
+{
+  "subject": "Geography",
+  "grade": 12,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/geography/syllabus/grade12.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.400%20ATP%202023-24%20Gr%2012%20Geo%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "theme": "Climate and weather",
+      "topics": [
+        {
+          "name": "Mid-latitude cyclones (frontal depression, extra tropical cyclones)",
+          "subtopics": [
+            "Consolidation of Grade 11 global air circulation",
+            "General characteristics; areas of formation; conditions necessary for formation",
+            "Stages of development; cross-section; weather of cold, warm and occluded fronts",
+            "Impact on human activities and the environment; precautionary and management strategies",
+            "Synoptic maps and satellite images: stages of development, influence of the South Indian and South Atlantic highs, weather symbols and prediction",
+            "Mapwork/GIS: alphanumeric and grid references; coordinates and fixing position"
+          ],
+          "requires_skills": [
+            "geography.synoptic_map_reading"
+          ],
+          "weeks": [
+            1,
+            2
+          ]
+        },
+        {
+          "name": "Tropical cyclones",
+          "subtopics": [
+            "General characteristics; areas of formation and regional names; formation factors; stages of development",
+            "Associated weather patterns; cross-section interpretation",
+            "Impact on the environment and human activities; precautionary and management strategies",
+            "Identification on synoptic maps and satellite images; case study of ONE recent tropical cyclone affecting southern Africa",
+            "Mapwork/GIS: contours and height, compass direction, true bearing; satellite imagery and resolution"
+          ],
+          "requires_skills": [
+            "geography.contour_reading",
+            "geography.synoptic_map_reading"
+          ],
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "Subtropical anticyclones and associated weather conditions",
+          "subtopics": [
+            "The three high-pressure cells affecting SA: South Atlantic, South Indian, Kalahari — location, identification, characteristics",
+            "Influence of anticyclones on SA weather and climate (plateau, inversion layer, ocean currents, ridging), summer and winter positions",
+            "Travelling/moving disturbances: moisture front and line thunderstorms, coastal low pressure, SA berg winds; resultant weather and impact-reduction strategies",
+            "Reading anticyclonic circulation and disturbances on synoptic maps and satellite images",
+            "Mapwork/GIS: magnetic declination and bearing; comparing map scales; data layering and buffering"
+          ],
+          "requires_skills": [
+            "geography.map_scale_and_distance",
+            "geography.synoptic_map_reading"
+          ],
+          "weeks": [
+            4,
+            5
+          ]
+        },
+        {
+          "name": "Valley climates",
+          "subtopics": [
+            "Slope aspect: definition; effect on temperature distribution in a valley",
+            "Anabatic and katabatic winds, inversions, thermal belt, frost pockets, radiation fog",
+            "Influence on human activities: settlement and farming"
+          ],
+          "weeks": [
+            6
+          ]
+        },
+        {
+          "name": "Urban climates",
+          "subtopics": [
+            "Reasons for differences between rural and urban climates",
+            "Urban heat islands: definition, causes, effects, reduction strategies",
+            "Pollution domes: definition, causes, effects, reduction strategies"
+          ],
+          "weeks": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "theme": "Settlement geography",
+      "topics": [
+        {
+          "name": "Fluvial processes",
+          "subtopics": [
+            "River rejuvenation: definition, reasons, features (knickpoint, terraces, valley-in-a-valley, incised/entrenched meanders), significance",
+            "River capture (stream piracy): concepts, features (captor, captured and misfit streams, elbow of capture, wind gap), impacts and implications for human activity",
+            "Mapwork: identifying river-capture features; calculating gradient"
+          ],
+          "requires_skills": [
+            "geography.gradient_calculation"
+          ],
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "Fluvial processes & catchment and river management",
+          "subtopics": [
+            "Superimposed and antecedent drainage patterns",
+            "River management: causes of poor management; importance of drainage basins and catchment areas",
+            "Human impact: river pollution (eutrophication), overgrazing, deforestation, settlement",
+            "Management strategies; case study of one SA catchment management strategy",
+            "GIS: data standardisation, sharing, security; government and private-sector applications; developing a 'paper GIS'"
+          ],
+          "weeks": [
+            2
+          ]
+        },
+        {
+          "name": "Study of settlements and rural settlements",
+          "subtopics": [
+            "Settlement, site and situation; rural vs urban settlements",
+            "Classification by size and complexity, pattern, function",
+            "Rural settlements: site/situation effects, patterns with advantages/disadvantages, functions, shapes (round, linear, T-shaped, crossroad), land use (farming, forestry, conservation)"
+          ],
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "Rural settlement issues",
+          "subtopics": [
+            "Rural-urban migration: push and pull factors; rural depopulation — causes, consequences, strategies, case study",
+            "Social justice issues: access to natural and human-made resources, limited investment, lack of infrastructure",
+            "Land reform: land tenure, redistribution, restitution",
+            "GIS: thematic data layering, manipulation and analysis; area and distance calculation"
+          ],
+          "weeks": [
+            4
+          ]
+        },
+        {
+          "name": "Urban settlements",
+          "subtopics": [
+            "Origin and development of urban settlement; urbanisation of the world population",
+            "Concepts: urbanisation, urban growth, urban expansion, urban sprawl, rate and level of urbanisation, counter-urbanisation",
+            "Site and situation; functional classification: central places, trade and transport towns (break-of-bulk, junction, gateway, gap), specialised towns",
+            "GIS: buffering, querying, data integration, statistical analysis"
+          ],
+          "weeks": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "theme": "Economic geography of South Africa",
+      "topics": [
+        {
+          "name": "Structure of the economy",
+          "subtopics": [
+            "Economic sectors: primary, secondary, tertiary, quaternary",
+            "Sector contributions to GNP and GDP; employment by sector",
+            "Use and interpretation of statistical and graphical information"
+          ],
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "Agriculture",
+          "subtopics": [
+            "Contribution of agriculture to the SA economy; small-scale vs large-scale farming",
+            "Main products for home and export markets",
+            "Maize case study: production areas, favouring/hindering factors, economic contribution",
+            "Food security: definitions, importance, influencing factors, improvement strategies, case studies"
+          ],
+          "weeks": [
+            2
+          ]
+        },
+        {
+          "name": "Mining",
+          "subtopics": [
+            "Contribution and significance of mining to SA's development",
+            "Platinum case study: location, favouring/hindering factors, economic contribution",
+            "Mapwork: identifying mining activity; grid referencing, map codes and symbols"
+          ],
+          "weeks": [
+            3
+          ]
+        },
+        {
+          "name": "Secondary and tertiary sectors",
+          "subtopics": [
+            "Contribution of the secondary sector",
+            "Types of industries: heavy/light, raw-material vs market orientated, footloose, ubiquitous, bridge (break-of-bulk)",
+            "Factors influencing industrial development: raw materials, labour, water, energy, transport, political intervention, competition, trade",
+            "Factors hindering industrial development (incl. over-concentration and pollution)"
+          ],
+          "weeks": [
+            4
+          ]
+        },
+        {
+          "name": "SA industrial regions",
+          "subtopics": [
+            "Four core regions: Gauteng (PWV), Durban-Pinetown, Port Elizabeth-Uitenhage, South-Western Cape",
+            "Prescribed regions (Gauteng PWV and Port Elizabeth-Uitenhage): location factors, main activities, success factors and hindrances, economic and social impacts, case studies"
+          ],
+          "weeks": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "Revision: Climate and weather, Geomorphology",
+          "weeks": [
+            1
+          ]
+        },
+        {
+          "name": "Revision: Settlement geography, Economic geography of SA, Map work skills and techniques",
+          "weeks": [
+            2
+          ]
+        },
+        {
+          "name": "FINAL NSC EXAMINATION"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "subject": "Economics",
+  "grade": 10,
+  "curriculum": "IEB",
+  "content_basis": "CAPS",
+  "caps_source": "lessons/curriculum/CAPS/economics/syllabus/grade10.json",
+  "caps_atp_edition": "2023/24",
+  "caps_source_url": "https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.210%20ATP%202023-24%20Gr%2010%20Eco%20final.pdf",
+  "parse_status": "derived_from_caps",
+  "generated_by": "lessons/curriculum/IEB/scripts/build_from_caps.py",
+  "pacing_note": "The IEB publishes no ATP equivalent; term placement and week spans are the DBE ATP pacing carried over as a default. IEB schools set their own pacing — treat weeks as advisory.",
+  "assessment_note": "DBE SBA programmes, control-test scopes and exam structures are deliberately stripped: IEB assessment is specified by the IEB Subject Assessment Guidelines (see ../exam_guidelines/), which have not been ingested yet. Do not fall back to the CAPS exam_structure for IEB papers.",
+  "terms": [
+    {
+      "term": 1,
+      "topics": [
+        {
+          "name": "ECONOMICS: BASIC CONCEPTS & BASIC ECONOMIC PROBLEM",
+          "subtopics": [
+            "Elements, branches and methods of Economics; Economics among the sciences",
+            "The scarcity problem; the basic processes (production, exchange, consumption)",
+            "Promotion or violation of human rights and the environment"
+          ],
+          "prior_knowledge": "Grade 7-8 economics concepts: wants, needs, production process, exchange, consumption",
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
+          "subtopics": [
+            "Circular flow diagram; participants in an economy; closed vs open economy",
+            "Markets; flows of the variables; leakages and injections",
+            "GDP and GNI"
+          ],
+          "prior_knowledge": "Needs and wants, factors of production, production and consumption, choice and decision-making, savings, markets",
+          "weeks": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "BUSINESS CYCLES",
+          "subtopics": [
+            "The phenomenon of business cycles; indicators",
+            "SA business cycles; time series composition; cyclical patterns",
+            "Exogenous and endogenous reasons; effects of business cycles"
+          ],
+          "prior_knowledge": "Roles of participants in the economy, production and consumption, markets, economic growth, the scarcity problem",
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION & ASSESSMENT",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 2,
+      "topics": [
+        {
+          "name": "DYNAMICS OF THE MARKET",
+          "subtopics": [
+            "Value, price and utility",
+            "Perfect and imperfect markets; world markets (the effects of electronics)",
+            "Supply and demand; price formation; functions of markets"
+          ],
+          "prior_knowledge": "Markets, demand and supply forces, drawing graphs from tables, laws of demand and supply, shifts, market equilibrium",
+          "requires_skills": [
+            "economics.demand_and_supply",
+            "economics.graphing_from_tables"
+          ],
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "PUBLIC SECTOR INTERVENTION",
+          "subtopics": [
+            "Methods of involvement: indirect taxes, subsidies, welfare",
+            "Maximum and minimum prices; production; minimum wages"
+          ],
+          "prior_knowledge": "Roles of government, government revenue, the national budget, public goods",
+          "weeks": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "PRODUCTION POSSIBILITY CURVE",
+          "subtopics": [
+            "Phenomenon, choice and scarcity",
+            "PPC determined by internal and external factors",
+            "Consequences of inefficiencies"
+          ],
+          "prior_knowledge": "Graphing; factors of production; consumption vs production; economic efficiency",
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION & ASSESSMENT",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 3,
+      "topics": [
+        {
+          "name": "GROWTH, DEVELOPMENT AND GLOBALISATION",
+          "subtopics": [
+            "Early economic development and emergence of trade: self-sufficiency, agriculture, barter, emergence of money",
+            "Evolution of markets: surplus production, trade and transport, specialisation of labour, mercantile/commercial law and business forms, technological progress, money and saving",
+            "Governments and market regulation: state involvement in trade, taxation, financing infrastructure investment",
+            "Industrial development: manufacturing, technological progress, mobilisation of energy, mechanisation"
+          ],
+          "prior_knowledge": "Standard of living (Gr 8), markets in general, demand and supply, industry, economic development",
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "POPULATION AND LABOUR FORCE",
+          "subtopics": [
+            "Population size and growth; natural growth rate; demographic cycle; projected growth and migration",
+            "The SA labour force: age distribution, numbers, unemployment, geographic distribution",
+            "Demand and supply for labour and their interaction in the labour market"
+          ],
+          "prior_knowledge": "Inequality and poverty, education and skills, sustainable job opportunities, unemployment",
+          "weeks": [
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "name": "LABOUR RELATIONS",
+          "subtopics": [
+            "Labour Relations Act: self-government, majorification, consultation",
+            "Labour rights and conventions: BCEA, LRA, COIDA",
+            "Collective bargaining: bargaining councils, labour unions, CCMA (conciliation, arbitration, mediation), workplace forums, labour courts"
+          ],
+          "prior_knowledge": "Labour as a factor of production, households as owners of factors, government role in economic activity, trade unions",
+          "weeks": [
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "name": "REVISION & ASSESSMENT",
+          "weeks": [
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "term": 4,
+      "topics": [
+        {
+          "name": "UNEMPLOYMENT",
+          "subtopics": [
+            "Nature of unemployment: numbers, unemployment rate, characteristics of SA unemployment",
+            "Causes and consequences of unemployment",
+            "Approaches to solve unemployment: growth of production, public works programmes, unemployment insurance"
+          ],
+          "prior_knowledge": "Unemployment, labour as a factor of production, economically active population, income inequality, discrimination",
+          "weeks": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "ECONOMIC REDRESS",
+          "subtopics": [
+            "Economically marginalised groups",
+            "Redress and reconstruction: factors of production",
+            "Democratisation of economic procedures: labour legislation, public hearings, NEDLAC, self-regulating bodies, macro-economic adaptations (performance, employment, income inequality, poverty, stability)"
+          ],
+          "prior_knowledge": "Factors of production; influence of the national budget (Gr 8); standard of living (Gr 8)",
+          "weeks": [
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "name": "FINAL EXAMINATION",
+          "weeks": [
+            8,
+            9,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}
