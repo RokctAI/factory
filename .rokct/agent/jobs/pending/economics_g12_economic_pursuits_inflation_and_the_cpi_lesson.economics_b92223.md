@@ -26,7 +26,7 @@ idea_status: approved
 concept: |
   The teaching approach uses Bra Sipho's streetwise register to map the abstract concept of inflation and CPI to the everyday reality of a taxi rank and a spaza shop. The pace is steady and narrative-led, allowing students to feel the impact of price changes before defining them. The example problem (calculating inflation from CPI) lands as 'The Math on the Streets', where the abstract formula is grounded as the percentage change in the cost of living.
 concept_status:
-rules_status:
+rules_status: failed
 lesson_name: Inflation and the CPI
 lesson_path: lessons/economics/grade12/term3/economics_g12_economic_pursuits_inflation_and_the_cpi_b92223
 script_path: lessons/economics/grade12/term3/economics_g12_economic_pursuits_inflation_and_the_cpi_b92223/script.md
@@ -42,7 +42,7 @@ crosscheck_status:
 crosscheck_notes:
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-17 06:42:19
+last_updated: 2026-08-03 10:26:00
 session_id: 
 session_started: 
 attempts: 2
