@@ -1,0 +1,29 @@
+{
+  "subject": "Economics",
+  "curriculum": "IEB",
+  "document_family": "IEB Subject Assessment Guidelines (SAG)",
+  "role": "The SAG is the IEB counterpart of the DBE's Grade 12 Examination Guidelines plus the ATP's programme-of-assessment prescriptions in one document: per subject it fixes the NSC examination structure (papers, marks, durations, cognitive-level spread) and the Grades 10-12 school-based assessment requirements for IEB schools.",
+  "portal": "https://www.ieb.co.za/assessment/high-schools/national-senior-certificate/nsc-subject-assessment-guidelines",
+  "edition_model": "SAGs are reissued per examination year. The edition current when this index was authored targets the 2026 examination year (the Mathematics SAG's 2026 edition was updated August 2025); always take the newest edition for the exam year being taught.",
+  "documents": [
+    {
+      "id": "ieb_sag_economics_2026",
+      "title": "Economics - IEB Subject Assessment Guidelines, 2026 examination year",
+      "url": null,
+      "url_note": "Per-document download URLs on ieb.co.za sit behind a bot-blocking front end and could not be captured in this environment; fill in via a browser session on the portal page, then run ieb_sources.py verify.",
+      "fetch_path": "lessons/curriculum/IEB/economics/exam_guidelines/sag_2026.pdf",
+      "status": "pending_fetch",
+      "last_verified": null
+    }
+  ],
+  "ingestion": {
+    "status": "pending_fetch",
+    "targets": [
+      "grade12_2026.json",
+      "grade12_2026.md"
+    ],
+    "method": "Mirror the CAPS exam_guidelines ingestion: full decoded text as .md with page markers, plus a structured .json carrying document metadata and the exam_structure (papers, marks, durations, section weights) exactly as printed in the SAG. No numbers may be transcribed from third-party re-uploads (Studocu/Scribd) - only from the fetched official PDF."
+  },
+  "verified": "2026-08-03",
+  "verification_note": "Portal locations confirmed via web search on 2026-08-03. Direct fetch verification is pending: ieb.co.za answers 403 to non-browser clients, and the sandbox this index was authored in additionally has no egress to ieb.co.za. Run IEB/scripts/ieb_sources.py verify from a normal network to stamp per-URL verification, and capture document URLs in a browser session (see IEB/scripts/README.md)."
+}

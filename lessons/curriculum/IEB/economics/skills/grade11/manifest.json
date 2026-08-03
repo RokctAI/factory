@@ -1,0 +1,22 @@
+{
+  "subject": "Economics",
+  "grade": 11,
+  "curriculum": "IEB",
+  "basis": "IEB NSC examinations assess the same CAPS FET content as the national stream, so the prerequisite-knowledge skills defined in the CAPS tree transfer as-is: same skill, same content, same review format. Skill content is referenced, not duplicated - the CAPS file is the single source of truth for each skill's diagnostics, recap and exit check.",
+  "caveat": "Each CAPS skill's importance.exam_weight block is derived from DBE ATP paper structures and does NOT transfer: IEB paper section weights come from the subject SAG and are pending SAG ingestion (../../exam_guidelines/sag_index.json). Until then, treat exam-weight claims as DBE-stream-only when serving IEB students.",
+  "skills": [
+    {
+      "skill_ref": "economics.cost_and_revenue_analysis",
+      "name": "Cost and revenue analysis",
+      "caps_path": "lessons/curriculum/CAPS/economics/skills/grade11/cost_and_revenue_analysis.json",
+      "transfers": true
+    },
+    {
+      "skill_ref": "economics.monetary_and_fiscal_policy",
+      "name": "Monetary and fiscal policy basics",
+      "caps_path": "lessons/curriculum/CAPS/economics/skills/grade11/monetary_and_fiscal_policy.json",
+      "transfers": true
+    }
+  ],
+  "verified": "2026-08-03"
+}

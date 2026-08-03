@@ -1,0 +1,5 @@
+# Copyrighted IEB source PDFs (SAGs, past papers) are fetched on demand via
+# scripts/ieb_sources.py fetch, never committed — same rule as
+# ../CAPS/past_papers/.gitignore. Index JSONs carry everything the pipeline
+# needs; IEB terms prohibit redistribution (see README.md terms audit).
+*.pdf

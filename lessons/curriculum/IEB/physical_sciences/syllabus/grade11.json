@@ -1,0 +1,26 @@
+{
+  "subject": "Physical Sciences",
+  "grade": 11,
+  "curriculum": "IEB",
+  "content_authority": "CAPS",
+  "caps_syllabus": "lessons/curriculum/CAPS/physical_sciences/syllabus/grade11.json",
+  "pacing": {
+    "model": "school_determined",
+    "note": "The IEB publishes no ATP equivalent: term-by-term pacing is set by each member school within the CAPS scope. The referenced CAPS file's topic list is the content universe; its DBE week placements and SBA task list do NOT bind IEB schools - the SAG's programme of assessment does (see ../exam_guidelines/sag_index.json)."
+  },
+  "scope_deltas": {
+    "status": "pending_sag_transcription",
+    "items": [],
+    "rule": "Record here only differences the official SAG itself states relative to the CAPS/DBE prescription (paper composition, topics assessed differently, optional content). Transcribe from the fetched SAG PDF only; an empty list means 'not yet transcribed', never 'no differences'."
+  },
+  "sources": [
+    {
+      "id": "sag_portal",
+      "title": "IEB NSC Subject Assessment Guidelines portal",
+      "url": "https://www.ieb.co.za/assessment/high-schools/national-senior-certificate/nsc-subject-assessment-guidelines",
+      "last_verified": null
+    }
+  ],
+  "parse_status": "sources_indexed",
+  "verified": "2026-08-03"
+}

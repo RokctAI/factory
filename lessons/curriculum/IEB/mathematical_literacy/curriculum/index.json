@@ -1,0 +1,22 @@
+{
+  "subject": "Mathematical Literacy",
+  "curriculum": "IEB",
+  "content_authority": "CAPS",
+  "statement": "The IEB (Independent Examinations Board) is an independent, Umalusi-accredited assessment body, not a curriculum author: its NSC examinations assess the same national CAPS FET (Grades 10-12) curriculum the DBE stream uses. The curriculum text for the IEB stream is therefore the CAPS policy statement already ingested in the CAPS tree - duplicated nowhere, referenced below. What is IEB-specific is the assessment layer (Subject Assessment Guidelines, examination structure, school-based assessment requirements), which lives in ../exam_guidelines/.",
+  "caps_reference": {
+    "markdown": "lessons/curriculum/CAPS/mathematical_literacy/curriculum/caps_gr10-12.md",
+    "json": "lessons/curriculum/CAPS/mathematical_literacy/curriculum/caps_gr10-12.json"
+  },
+  "ieb_overlay": "lessons/curriculum/IEB/mathematical_literacy/exam_guidelines/sag_index.json",
+  "sources": [
+    {
+      "id": "ieb_nsc_page",
+      "title": "IEB - National Senior Certificate",
+      "url": "https://www.ieb.co.za/assessment/high-schools/national-senior-certificate",
+      "role": "States that IEB NSC examinations are based on the CAPS curriculum.",
+      "last_verified": null
+    }
+  ],
+  "verified": "2026-08-03",
+  "verification_note": "Portal locations confirmed via web search on 2026-08-03. Direct fetch verification is pending: ieb.co.za answers 403 to non-browser clients, and the sandbox this index was authored in additionally has no egress to ieb.co.za. Run IEB/scripts/ieb_sources.py verify from a normal network to stamp per-URL verification, and capture document URLs in a browser session (see IEB/scripts/README.md)."
+}

@@ -117,6 +117,7 @@ The full document hierarchy now lives here, per subject:
 | **Skills** (prerequisite units) | `{subject}/skills/{grade}/{skillname}.json` | 24 defined, importance + covered_by, review-format convention enforced. |
 | **Exam guidelines** (gr12) | `{subject}/exam_guidelines/grade12_2021.md` + `.json` | Ingested: full text of the 2021 national edition (latest on the DBE index) - the document the ATPs' exam notes defer to. |
 | **Past papers** | `{subject}/past_papers/index.json` | Real DBE sources indexed (Nov 2024 NSC P1/P2 + memos per subject; portal covers 2008-present). PDF ingestion + question-to-subtopic linking is the past-papers pipeline task (`docs/past-papers-linking-brief.md`) - and the honest source for pre-filling `example_problem`. |
+| **Past-paper store** (fetched papers + linking index) | `past_papers/` (this folder) | The working store `past_papers.py` operates on: per-paper `paper.json` extractions, `links.json` (paper<->lesson bidirectional index), `SOURCES.md` terms audit. Moved here from `lessons/past_papers/` 2026-08-03 so everything CAPS-sourced lives under `CAPS/` (the IEB tree keeps its own store). |
 | **School calendar** | `school_calendar/2026.json` | Official 2026 term dates (gov.za, verified) - maps ATP term numbers to real dates. Reissued annually. |
 
 Still open, deliberately:

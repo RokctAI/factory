@@ -1,0 +1,11 @@
+{
+  "subject": "Maths",
+  "curriculum": "IEB",
+  "portal": "https://www.ieb.co.za/assessment/high-schools/national-senior-certificate/nsc-past-papers",
+  "portal_coverage": "IEB publishes NSC question papers for roughly the five most recent examination years as a free study aid; older papers are supplied on request via NSCexampapers@ieb.co.za. Most marking guidelines (memos) are not published publicly - a structural difference from the DBE portal that the question-linking pipeline must plan around (memo-method matching needs the marking guideline).",
+  "grade_scope": "IEB NSC papers are Grade 12 externally-examined papers only; Grades 10-11 assessment is school-internal under the SAG programme of assessment, so no official IEB Grade 10-11 papers exist to index.",
+  "sessions": [],
+  "note": "Index of real IEB sources, same contract as the CAPS per-subject past_papers/index.json. sessions[] is empty because per-paper download URLs on ieb.co.za could not be captured from this environment (bot-blocking front end + no egress); populate via a browser session on the portal page, then run IEB/scripts/ieb_sources.py verify/fetch. PDF ingestion and question-to-lesson linking then follow the CAPS pipeline pattern - in IEB/scripts, not lessons/scripts (lessons/scripts/past_papers.py stays CAPS/DBE-only).",
+  "verified": "2026-08-03",
+  "verification_note": "Portal locations confirmed via web search on 2026-08-03. Direct fetch verification is pending: ieb.co.za answers 403 to non-browser clients, and the sandbox this index was authored in additionally has no egress to ieb.co.za. Run IEB/scripts/ieb_sources.py verify from a normal network to stamp per-URL verification, and capture document URLs in a browser session (see IEB/scripts/README.md)."
+}

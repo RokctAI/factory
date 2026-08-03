@@ -1,0 +1,40 @@
+{
+  "subject": "Physical Sciences",
+  "grade": 10,
+  "curriculum": "IEB",
+  "basis": "IEB NSC examinations assess the same CAPS FET content as the national stream, so the prerequisite-knowledge skills defined in the CAPS tree transfer as-is: same skill, same content, same review format. Skill content is referenced, not duplicated - the CAPS file is the single source of truth for each skill's diagnostics, recap and exit check.",
+  "caveat": "Each CAPS skill's importance.exam_weight block is derived from DBE ATP paper structures and does NOT transfer: IEB paper section weights come from the subject SAG and are pending SAG ingestion (../../exam_guidelines/sag_index.json). Until then, treat exam-weight claims as DBE-stream-only when serving IEB students.",
+  "skills": [
+    {
+      "skill_ref": "physical_sciences.equations_of_motion",
+      "name": "Equations of motion",
+      "caps_path": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/equations_of_motion.json",
+      "transfers": true
+    },
+    {
+      "skill_ref": "physical_sciences.force_and_free_body_diagrams",
+      "name": "Force diagrams and free-body diagrams",
+      "caps_path": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/force_and_free_body_diagrams.json",
+      "transfers": true
+    },
+    {
+      "skill_ref": "physical_sciences.formulae_and_balanced_equations",
+      "name": "Writing formulae and balancing equations",
+      "caps_path": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/formulae_and_balanced_equations.json",
+      "transfers": true
+    },
+    {
+      "skill_ref": "physical_sciences.mole_concept",
+      "name": "The mole concept",
+      "caps_path": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/mole_concept.json",
+      "transfers": true
+    },
+    {
+      "skill_ref": "physical_sciences.vectors_and_scalars",
+      "name": "Vectors and scalars",
+      "caps_path": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/vectors_and_scalars.json",
+      "transfers": true
+    }
+  ],
+  "verified": "2026-08-03"
+}
