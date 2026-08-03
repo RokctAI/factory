@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why depreciation exists (two GAAP principles), the three figures it creates, and the annual double entry.",
+      "expected_answer": "Matching spreads the asset's cost as an expense across the years it earns income; prudence forbids carrying an ageing asset at its purchase price. The three figures: cost price (anchored permanently by historical cost — the asset account never moves), accumulated depreciation (a negative asset gathering all value written off), and carrying value (cost minus accumulated). The annual entry debits Depreciation as an expense and credits Accumulated Depreciation on the asset — never the asset account itself."
+    },
+    {
+      "id": "cc2",
+      "question": "Compare the bakkie's first three years on both methods (R120 000, 20% p.a.), and explain why each method is honest for its kind of asset.",
+      "expected_answer": "Straight-line (20% on cost): R24 000 every year; carrying value falls R96 000 → R72 000 → R48 000 in equal steps, consuming the cost in five years — honest for assets serving evenly, like equipment and furniture. Diminishing balance (20% on carrying value): R24 000, then R19 200 (20% of R96 000), then R15 360 (20% of R76 800); carrying value R96 000 → R76 800 → R61 440, approaching zero without arriving — honest for vehicles and machines that give their hardest years first. The trap is later-year bases: straight-line always slices cost; diminishing balance slices what remains."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the asset register: what a page carries, its control relationship with the ledger, and how a mid-year addition is treated.",
+      "expected_answer": "Each asset has its own page: description and identifying details, purchase date and cost, method and rate, then year by year the annual depreciation, accumulated total and carrying value. The ledger holds only class totals; the register holds each asset, and register totals must agree with ledger balances — the same summary-and-detail control as debtors control and its list, exposing missing assets on inspection and informing replace-or-repair decisions. An addition during the year is depreciated pro rata from its purchase month: the R18 000 machine bought 1 September at 10% straight-line earns R1 800 × 6/12 = R900 in its first year, leaving a carrying value of R17 100."
+    }
+  ]
+}
