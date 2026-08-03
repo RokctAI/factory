@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why an even scale on each axis is essential, and what goes wrong with readings taken from an unevenly scaled graph.",
+      "expected_answer": "An even scale means equal distances represent equal amounts, so the curves keep their true shape and positions. With uneven scales the curves bend artificially, the intersection lands in the wrong place, and any surplus or shortage read off the graph is distorted."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the checking routine that confirms your graph agrees with the table, and what it tells you if the curves cross at a price where the columns differ.",
+      "expected_answer": "Verify each plotted point against its table row, confirm demand slopes down and supply slopes up, and confirm the intersection matches the row where quantity demanded equals quantity supplied (R6, 60 units). If the intersection falls elsewhere, a point was plotted incorrectly and each point must be rechecked."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain the method for reading excess supply at a given price, and why both readings must be taken at the same price.",
+      "expected_answer": "Draw a horizontal line at the given price; where it cuts the demand curve read quantity demanded, where it cuts the supply curve read quantity supplied, then subtract. Both readings must be at the same price because a surplus is the gap between what sellers offer and buyers want at that single price — mixing prices compares quantities from different market situations."
+    }
+  ]
+}

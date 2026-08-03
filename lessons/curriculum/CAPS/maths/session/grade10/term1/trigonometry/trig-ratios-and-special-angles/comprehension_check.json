@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why the trigonometric ratios are properties of the angle rather than of any particular triangle, and why this matters.",
+      "expected_answer": "Similar triangles have identical side ratios: any right-angled triangle containing angle θ has the same opposite/hypotenuse ratio, however large the triangle. This constancy makes sin θ a universal fixed value, allowing tables, calculators, and computing unreachable distances from known angles."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how to reconstruct the special-angle values for 30°, 45° and 60° from the two special triangles instead of memorising them.",
+      "expected_answer": "Halve an equilateral triangle of side 2: the half has hypotenuse 2, base 1 and height √3, giving the 30° and 60° ratios (e.g. sin 60° = √3/2, cos 60° = 1/2). For 45°, use a right-angled isosceles triangle with legs 1 and hypotenuse √2, giving sin 45° = cos 45° = 1/√2 and tan 45° = 1."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain the difference between sine and inverse sine, and how you decide which one a question needs.",
+      "expected_answer": "Sine takes an angle and returns the ratio of opposite to hypotenuse; inverse sine takes that ratio and returns the angle. Decide by what is unknown: if a side is wanted from a known angle, use the plain function; if the angle is wanted from known sides, use the inverse."
+    }
+  ]
+}

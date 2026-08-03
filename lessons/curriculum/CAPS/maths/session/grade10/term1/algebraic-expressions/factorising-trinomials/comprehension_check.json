@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how expanding (x + 2)(x + 4) reveals the product-and-sum rule used to factorise trinomials.",
+      "expected_answer": "Expanding shows the constant term (8) comes from multiplying the two numbers and the middle coefficient (6) from adding them. Factorising reverses this: for x² + bx + c, hunt two numbers with product c and sum b; for ax² + bx + c the product target becomes a × c."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how reading the SIGNS of the target product and sum narrows the search before any factor pairs are tested, using −18 and −7 as the example.",
+      "expected_answer": "A negative product means the numbers have opposite signs; a negative sum means the larger number carries the minus. So for product −18 and sum −7, you only test factor pairs of 18 whose difference is 7, with the bigger number negative — leading directly to −9 and +2."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain why matching brackets in the grouping step act as a built-in error detector.",
+      "expected_answer": "Splitting the middle term with the correct pair guarantees both groups share the same binomial factor. If the brackets differ, the split numbers or a sign must be wrong, so the mismatch flags the error before a wrong answer is written — you go back and re-check rather than continuing."
+    }
+  ]
+}

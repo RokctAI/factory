@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain from first principles — without just quoting the rule — why closely spaced contour lines must mean a steep slope.",
+      "expected_answer": "Between neighbouring contours the land always rises by the fixed interval (20 m on this map). What changes is the horizontal distance over which that rise happens. Close spacing means the 20 m is gained over a short horizontal distance — a large rise relative to run, which is exactly what a steep gradient is."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe two independent checks you can use to confirm the direction a river flows on a contour map.",
+      "expected_answer": "First, the V rule: contour Vs point uphill/upstream, so the river flows out of the open end of the Vs. Second, read the values of the contours the river crosses — they must decrease in the direction of flow, since water cannot flow uphill. If both checks agree, the direction is confirmed."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain how you would distinguish a valley from a spur, and why this confusion is so common.",
+      "expected_answer": "Both features show bending contours, which is why they are confused. In a valley the bend (V) points toward higher ground and the feature is low ground, often holding a river. In a spur the bulge points toward lower ground and the feature is high ground jutting out between valleys, never carrying a river. The decisive test is reading the heights on either side to establish which way is uphill."
+    }
+  ]
+}

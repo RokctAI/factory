@@ -1,0 +1,196 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Meeting the Graph — Axes, Lines and the Story They Tell",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "What should you always read FIRST on any graph?",
+          "options": [
+            "The axes — their titles, units and scale",
+            "The steepest line",
+            "The intersection point",
+            "The colours of the lines"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Option B's line starts at R150 on the vertical axis. This intercept represents:",
+          "options": [
+            "The price per unit",
+            "The fixed monthly charge paid even at zero usage",
+            "The break-even point",
+            "The maximum monthly cost"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why does Option A's line start at the origin?",
+          "options": [
+            "Because Option A has no fixed charge — zero usage costs zero rand",
+            "Because all graphs must start at zero",
+            "Because Option A is cheaper overall",
+            "Because the scale begins at zero"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Gradient — What \"Steeper\" Means in Rands",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In this tariff graph, the gradient of each line represents:",
+          "options": [
+            "The fixed monthly charge",
+            "The price per kilowatt-hour — how much cost rises per extra unit",
+            "The total monthly bill",
+            "The number of appliances used"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Option A's line is steeper than Option B's because:",
+          "options": [
+            "A charges R2,00 per unit while B charges only R1,50 per unit",
+            "A has a bigger fixed charge",
+            "A is drawn first",
+            "B has a bigger fixed charge"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "On Option A's line the cost climbs from R200 at 100 kWh to R400 at 200 kWh. The gradient is:",
+          "options": [
+            "R2,00 per kWh — a rise of R200 over 100 units",
+            "R200 per kWh",
+            "R0,50 per kWh",
+            "R4,00 per kWh"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Break-Even Point",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The break-even point on this graph is at:",
+          "options": [
+            "300 kWh, where both options cost R600",
+            "150 kWh, where both options cost R300",
+            "450 kWh, where both options cost R825",
+            "0 kWh, where both options cost R150"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "How is the break-even reading verified by calculation?",
+          "options": [
+            "300 × R2,00 = R600 for A, and R150 + 300 × R1,50 = R600 for B — both equal",
+            "R150 + R2,00 = R152 for both",
+            "600 ÷ 2 = 300 for both",
+            "It cannot be verified without the municipality's data"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "For usage BELOW 300 kWh, which option is cheaper and why?",
+          "options": [
+            "Option A — its line runs below B's, since light users avoid the R150 fixed charge",
+            "Option B — cheaper units always win",
+            "Both cost the same at all usages below 300",
+            "Option B — the fixed charge is refunded"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "What does the break-even point mean for a decision-maker?",
+          "options": [
+            "The usage at which both options cost the same — the point of indifference between them",
+            "The cheapest possible bill",
+            "The maximum usage allowed",
+            "The point where electricity becomes free"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Answering the 450 kWh Question — and the Exam Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "At 450 kWh, the costs are:",
+          "options": [
+            "A: R900; B: R825 — Option B is cheaper by R75",
+            "A: R825; B: R900 — Option A is cheaper by R75",
+            "Both cost R900",
+            "A: R900; B: R675"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Without calculating, how does zone logic answer the 450 kWh question?",
+          "options": [
+            "450 lies to the right of the 300 kWh break-even, and beyond break-even the fixed-charge option (B) is cheaper",
+            "450 is a big number, so the steeper line wins",
+            "The question cannot be answered without calculation",
+            "450 lies left of break-even, so A wins"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Why should a comparison answer state the rand difference, not just the winner?",
+          "options": [
+            "Full marks for comparisons require showing both values and the saving (R75)",
+            "Because the difference changes the winner",
+            "It is optional decoration",
+            "To make the answer longer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which sense-check confirms the overall picture?",
+          "options": [
+            "Heavy users benefiting from the fixed-charge option makes sense, since cheap units reward bulk usage",
+            "Electricity should always get cheaper as you use more",
+            "The lines should never cross on a real graph",
+            "Zero usage should cost the same on both options"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

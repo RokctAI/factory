@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how the SOAP mnemonic generates the signs for both the sum and the difference of cubes, using x³ + 8 and x³ − 27 as examples.",
+      "expected_answer": "SOAP = Same, Opposite, Always Positive. First bracket takes the same sign as the original (x + 2 for the sum; x − 3 for the difference); the second bracket's middle term takes the opposite sign (−2x for the sum; +3x for the difference); the last term is always positive (+4; +9). Terms are always square-multiply-square; only the signs change."
+    },
+    {
+      "id": "cc2",
+      "question": "Why does the quadratic factor of a cubes factorisation never factorise further, and why does knowing this matter for 'factorise fully' questions?",
+      "expected_answer": "For x² − 2x + 4, no real pair multiplies to 4 and sums to −2 (the discriminant is negative) — and this holds for every cubes quadratic factor. Knowing it matters because 'fully factorised' includes stopping correctly: hunting nonexistent factors wastes time and inventing them loses marks."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how you would verify a cubes factorisation by expansion, and what specifically must happen for the check to pass.",
+      "expected_answer": "Multiply the linear bracket through the quadratic one and collect terms: the four middle products must cancel in pairs (−2x² with +2x², +4x with −4x for x³ + 8), leaving exactly the original two terms. If anything survives besides the two cubes, a sign or term in the second bracket is wrong."
+    }
+  ]
+}

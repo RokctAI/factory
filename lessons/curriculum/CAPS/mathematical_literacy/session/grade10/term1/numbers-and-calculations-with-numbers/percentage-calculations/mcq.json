@@ -1,0 +1,208 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What a Percentage Really Is — and the Decimal Trick",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "15% of R850 is:",
+          "options": [
+            "R127,50",
+            "R12,75",
+            "R85,00",
+            "R150,00"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The single multiplier for a 15% DECREASE is:",
+          "options": [
+            "0,15",
+            "0,85",
+            "1,15",
+            "0,015"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The single multiplier for a 15% INCREASE is:",
+          "options": [
+            "1,15",
+            "0,85",
+            "1,5",
+            "0,115"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Why is the multiplier method preferred over 'find the percentage, then add or subtract'?",
+          "options": [
+            "It captures the whole change in one multiplication and handles chained changes cleanly",
+            "It avoids using a calculator",
+            "It always rounds better",
+            "It is the only method markers accept"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Discount Step, Then the VAT Step",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "After the 15% discount, the jacket's price is:",
+          "options": [
+            "R722,50",
+            "R735,00",
+            "R127,50",
+            "R850,00"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The VAT step must be applied to:",
+          "options": [
+            "The discounted price of R722,50 — each step works on the previous result",
+            "The original R850",
+            "The discount amount of R127,50",
+            "Half of the original price"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The final price of the jacket, after discount then VAT, is:",
+          "options": [
+            "R830,88",
+            "R850,00",
+            "R873,13",
+            "R722,50"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Why do the −15% and +15% NOT cancel out?",
+          "options": [
+            "The VAT acted on the smaller discounted price, so it added back less than the discount removed",
+            "Because VAT is calculated differently by SARS",
+            "They do cancel — the final price is R850",
+            "Because the discount was applied second"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Single Percentage Change — One Multiplier for the Whole Journey",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The combined multiplier for the whole journey (×0,85 then ×1,15) is:",
+          "options": [
+            "0,9775",
+            "1,0000",
+            "0,7225",
+            "1,3225"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "A combined multiplier of 0,9775 means the overall change is:",
+          "options": [
+            "A 2,25% decrease",
+            "A 97,75% decrease",
+            "A 2,25% increase",
+            "No change"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "In the percentage change formula, the denominator is always:",
+          "options": [
+            "The original value — the reference point where you started",
+            "The new value",
+            "The larger of the two values",
+            "100"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Reverse Percentages — and the Full Toolkit",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A price of R830,88 INCLUDES 15% VAT. The price before VAT is found by:",
+          "options": [
+            "Dividing R830,88 by 1,15",
+            "Multiplying R830,88 by 0,85",
+            "Subtracting R124,63",
+            "Multiplying R830,88 by 1,15"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Why is 'subtract 15%' (×0,85) WRONG for removing VAT from a VAT-inclusive price?",
+          "options": [
+            "The VAT was calculated on the before-VAT price, so 15% of the final price is the wrong amount to remove",
+            "Because VAT is actually 14%",
+            "It is correct — both methods agree",
+            "Because you should subtract 30% instead"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "To undo any percentage multiplier, you:",
+          "options": [
+            "Divide by that multiplier",
+            "Multiply by the same multiplier again",
+            "Subtract the multiplier from 1",
+            "Multiply by 100"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "R830,88 ÷ 1,15 returns approximately R722,50. What does this confirm?",
+          "options": [
+            "The reverse calculation recovers the discounted pre-VAT price — the whole chain is consistent",
+            "The discount was 20%",
+            "The original price was R722,50",
+            "VAT was never charged"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

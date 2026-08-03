@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the 'absent character' method for choosing an equation of motion, and why it beats trying equations at random.",
+      "expected_answer": "Every problem involves five quantities; three are given, one is wanted, and one is neither — the absent one. Each of the four equations excludes exactly one quantity, so the equation that excludes the absent quantity contains everything you have and everything you need. Random trying wastes time and often leads to equations needing unknown values."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how solving for the time by two different equations verified the whole solution, and why the second road was chosen deliberately.",
+      "expected_answer": "Road one used the calculated acceleration (vf = vi + aΔt → 17,14 s); road two used only original data (Δx = average velocity × Δt → 17,14 s). Because road two never touched the calculated acceleration, agreement between the roads confirms both the time and the earlier acceleration; a wrong acceleration would have made the answers differ."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, list the data-handling habits that must happen BEFORE substituting into any equation, and what goes wrong when each is skipped.",
+      "expected_answer": "Confirm uniform acceleration (the equations are invalid otherwise); list given, wanted and absent quantities (prevents wrong equation choice); convert units at this stage, e.g. km/h ÷ 3,6 to m/s (prevents inflated answers); choose a positive direction and keep vector signs consistent (prevents sign errors with deceleration)."
+    }
+  ]
+}

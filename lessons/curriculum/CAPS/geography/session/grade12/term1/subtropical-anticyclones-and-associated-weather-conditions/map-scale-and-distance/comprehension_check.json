@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain in your own words what the ratio 1:50 000 means and why it works with any unit of measurement.",
+      "expected_answer": "One unit of distance on the map represents 50 000 of the same units on the ground. Because it is a pure ratio with no units attached, measuring in centimetres, millimetres or anything else works — multiply the map measurement by 50 000 and the answer is in that same unit."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the complete method for converting 8,6 cm on a 1:50 000 map into kilometres, and the sense check you run on the final answer.",
+      "expected_answer": "Multiply 8,6 by 50 000 to get 430 000 cm; divide by 100 to get 4 300 m; divide by 1 000 to get 4,3 km; state the unit. Sense check: on this scale roughly 10 cm is 5 km, so 8,6 cm giving just under 5 km is plausible — an answer of 43 km or 0,43 km would signal a slipped decimal."
+    },
+    {
+      "id": "cc3",
+      "question": "How would your method change when measuring the distance along a winding river, and when working on a 1:10 000 orthophoto map?",
+      "expected_answer": "For a winding feature, replace the ruler with string or a paper strip laid along the bends, straighten it, and read the total map distance — the arithmetic afterwards is unchanged. On a 1:10 000 map, the only change is the multiplier: multiply by 10 000 instead of 50 000, so the same map measurement represents far less ground."
+    }
+  ]
+}

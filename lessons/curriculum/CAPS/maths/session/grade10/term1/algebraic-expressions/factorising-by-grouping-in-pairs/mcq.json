@@ -1,0 +1,184 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Why Four Terms Demand a Different Tool",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Which term count summons grouping in pairs?",
+          "options": [
+            "Four terms",
+            "Two terms",
+            "Three terms",
+            "Any odd number of terms"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "$2ax + 2ay - bx - by$ has no overall common factor, yet grouping still works because:",
+          "options": [
+            "Factors exist that are common to PAIRS of terms — 2a in the first pair, b in the second",
+            "Four-term expressions always factorise",
+            "The letters are in alphabetical order",
+            "The coefficient 2 divides everything"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The grouping plan in one sentence is:",
+          "options": [
+            "Pair up, factor each pair, factor out the common bracket",
+            "Square each term, then add",
+            "Split the middle term, then use SOAP",
+            "Divide every term by the first term"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Factoring Each Pair — and the Negative Factor Trap",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Factoring $2a$ from the pair $2ax + 2ay$ leaves:",
+          "options": [
+            "$(x + y)$",
+            "$(2x + 2y)$",
+            "$(ax + ay)$",
+            "$(x - y)$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For the pair $-bx - by$, the correct factor to take out is:",
+          "options": [
+            "$-b$, leaving $(x + y)$ — the negative flips the signs inside to match",
+            "$+b$, leaving $(-x - y)$",
+            "$-x$, leaving $(b + y)$",
+            "$b$, leaving $(x + y)$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The rule for pairs that BEGIN with a minus sign is:",
+          "options": [
+            "Factor out a negative common factor so the bracket matches the other pair's",
+            "Swap the pair with the first one",
+            "Ignore the minus until the end",
+            "Multiply the whole expression by −1 first"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Common Bracket — Finishing the Factorisation",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "From $2a(x + y) - b(x + y)$, the finished factorisation is:",
+          "options": [
+            "$(x + y)(2a - b)$",
+            "$(x + y)(2a + b)$",
+            "$(2a - b)$ alone",
+            "$2a - b(x + y)$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "What do MISMATCHED brackets after factoring the pairs signal?",
+          "options": [
+            "An error or wrong turn — usually a positive factor where a negative belonged; never force them together",
+            "The answer is the two different brackets multiplied",
+            "The expression is prime",
+            "The brackets should be added"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The terms of $2ax - by - bx + 2ay$ refuse to group as given. The cure is:",
+          "options": [
+            "Rearrange so kin sit together: $2ax + 2ay - bx - by$, then group",
+            "Declare it unfactorisable",
+            "Change the signs of the middle terms",
+            "Use the cubes identity instead"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Expanding $(x + y)(2a - b)$ returns:",
+          "options": [
+            "$2ax - bx + 2ay - by$ — all four original terms with correct signs",
+            "$2ax + bx + 2ay + by$",
+            "$2ax - by$ only",
+            "$2a x y - b x y$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Full Method, the Checks, and Where Grouping Hides",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "In the bonus example $3pq + 6p - q - 2$, the second pair $(-q - 2)$ is handled by factoring out:",
+          "options": [
+            "$-1$, leaving $(q + 2)$ to match the first pair's bracket",
+            "$+1$, leaving $(-q - 2)$",
+            "$q$, leaving $(-1 - 2)$",
+            "$-2$, leaving $(q + 1)$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Stopping at $2a(x + y) - b(x + y)$ costs marks because:",
+          "options": [
+            "It is only partially factorised — the common bracket must still be taken out",
+            "The brackets are wrong",
+            "The signs are wrong",
+            "Nothing is wrong — this is the final answer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Where does grouping hide inside the trinomial method?",
+          "options": [
+            "After splitting the middle term, the four resulting terms are finished by grouping in pairs",
+            "In finding the two magic numbers",
+            "In the quadratic formula",
+            "It does not — they are unrelated"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}
