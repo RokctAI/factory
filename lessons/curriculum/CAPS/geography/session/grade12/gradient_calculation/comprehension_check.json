@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why the vertical interval and horizontal equivalent must be in the same units before dividing, and what happens to the answer if they are not.",
+      "expected_answer": "A ratio compares two quantities of the same kind; dividing metres by kilometres produces a number 1 000 times too large or small with no physical meaning. In our example, using 4,5 instead of 4 500 gives 1 : 66,7-style nonsense instead of the true 1 : 15."
+    },
+    {
+      "id": "cc2",
+      "question": "A gradient of 1 : 15 and a gradient of 1 : 150 — which is steeper and why? Explain the interpretation rule in your own words.",
+      "expected_answer": "1 : 15 is steeper. The number after the colon is the horizontal distance over which you gain 1 metre of height; gaining a metre every 15 m of walking is a much sharper climb than gaining it every 150 m. The larger the second number, the gentler the slope."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the full exam layout for a gradient answer and the three verification checks you run before moving on.",
+      "expected_answer": "Layout: state the formula (VI/HE), substitute with both values in the same unit (300 m / 4 500 m), simplify by dividing both by the numerator, and give the answer as 1 : 15, ideally with a one-sentence interpretation. Checks: sense (is the steepness plausible), reverse arithmetic (15 × 300 = 4 500), and units (both in metres before dividing)."
+    }
+  ]
+}

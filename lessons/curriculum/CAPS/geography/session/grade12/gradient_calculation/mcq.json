@@ -1,0 +1,208 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What Gradient Means",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The formula for average gradient is:",
+          "options": [
+            "Horizontal equivalent ÷ vertical interval",
+            "Vertical interval ÷ horizontal equivalent",
+            "Vertical interval × horizontal equivalent",
+            "Map distance × scale"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A gradient of 1 : 5 means:",
+          "options": [
+            "The land rises 5 m for every 1 m travelled horizontally",
+            "The land rises 1 m for every 5 m travelled horizontally",
+            "The slope covers 5 km",
+            "The land is almost flat"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Which slope is STEEPER?",
+          "options": [
+            "1 : 150",
+            "1 : 50",
+            "1 : 15",
+            "They are all equally steep"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Extracting VI and HE from the Map",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The vertical interval between trig beacon 251 (1 200 m) and the spot height (900 m) is:",
+          "options": [
+            "2 100 m",
+            "300 m",
+            "1 200 m",
+            "900 m"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Two points measure 9 cm apart on a 1:50 000 map. The real horizontal distance is:",
+          "options": [
+            "4,5 km",
+            "45 km",
+            "450 m",
+            "9 km"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why must the horizontal equivalent of 4,5 km be converted to 4 500 m before dividing?",
+          "options": [
+            "Because kilometres are not allowed in geography",
+            "Because the VI and HE must be in the same units for the ratio to have meaning",
+            "Because the memo prefers big numbers",
+            "No conversion is needed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Which two map symbols provided the exact heights for this calculation?",
+          "options": [
+            "A trig beacon and a spot height",
+            "Two contour lines",
+            "A bench mark and a river",
+            "Two index contours"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Calculation — Laid Out for Marks",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Simplifying 300 m ÷ 4 500 m to the form 1 : x gives:",
+          "options": [
+            "1 : 20",
+            "1 : 15",
+            "1 : 12",
+            "15 : 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Why does an answer left as '300/4 500' or '0,067' typically lose the final mark?",
+          "options": [
+            "The memo requires the answer in the ratio form 1 : x",
+            "The values are wrong",
+            "Fractions are banned in Geography",
+            "The calculation should use kilometres"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The correct interpretation of 1 : 15 is:",
+          "options": [
+            "The land rises 1 m vertically for every 15 m travelled horizontally",
+            "The land rises 15 m for every 1 m travelled",
+            "The route is 15 km long",
+            "The slope is unclimbable"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Why is the answer called an AVERAGE gradient?",
+          "options": [
+            "Because it is calculated from average heights",
+            "Because the real land may dip and climb between the points; the ratio smears the total rise evenly over the total distance",
+            "Because several learners' answers are averaged",
+            "Because the map scale is approximate"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Verification, Traps and the Full Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A learner divides 300 m by 4,5 and reports 1 : 66,7. What went wrong?",
+          "options": [
+            "Nothing — the answer is correct",
+            "Mixed units: the 4,5 was kilometres and should have been converted to 4 500 m",
+            "The heights were subtracted wrongly",
+            "The formula was inverted"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A learner reports the answer as 15 : 1. What error is this?",
+          "options": [
+            "An inverted ratio — the vertical '1 metre of climb' must lead the ratio",
+            "A rounding error",
+            "A measurement error",
+            "It is equivalent and equally correct"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Which quick reverse-check confirms the simplification 1 : 15?",
+          "options": [
+            "15 × 300 = 4 500, matching the HE",
+            "300 + 15 = 315",
+            "4 500 − 300 = 4 200",
+            "15 ÷ 300 = 0,05"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Why does a 2 mm measuring error matter on a 1:50 000 map?",
+          "options": [
+            "It represents 100 m of real ground, distorting the HE and the final ratio",
+            "It changes the vertical interval",
+            "It does not matter at all",
+            "It moves the trig beacon"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}
