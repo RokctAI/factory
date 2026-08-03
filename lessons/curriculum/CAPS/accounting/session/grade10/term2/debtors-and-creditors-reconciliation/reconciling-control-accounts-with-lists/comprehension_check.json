@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the three error families in a reconciliation and how each one decides WHICH record gets corrected.",
+      "expected_answer": "An error in a journal TOTAL (undercast, overcast, total posted wrongly) corrupts the control account while the pages stay right — correct the control. An error in POSTING TO A PAGE (wrong person, transposed amount, line never posted) corrupts the list while control stays right — correct the list. An error in the ORIGINAL LINE, made before totalling, flows into both records and must be corrected in both. The classification question is always: where did the error physically happen — the totals' journey or the pages' journey?"
+    },
+    {
+      "id": "cc2",
+      "question": "Walk through the debtors reconciliation at Thabo's Trading: both starting figures, the four findings with their treatments, and the meeting point.",
+      "expected_answer": "Control started at R7 440, the list at R7 130. The DJ undercast of R200 was a totals-side error: debit control, moving it to R7 640. The unposted R140 bad debt was totals-side: credit control, to R7 500. The unposted R550 Osman invoice was pages-side: add R550 to the list, to R7 680. The Peters transposition (R350 posted as R530) was pages-side: reduce the list by R180, to R7 500. Both records, independently corrected, meet at R7 500 — the true figure, which neither original number contained."
+    },
+    {
+      "id": "cc3",
+      "question": "Why must corrections on the creditors side be re-derived from first principles rather than copied from the debtors treatment, and what extra external check does the creditors side carry?",
+      "expected_answer": "Creditors balances sit on the credit side, so the direction of every correction flips: an overcast CPJ creditors column means too large a DEBIT to control, understating the credit balance, so the fix is a credit — reasoning that only emerges if each correction is derived in the mirror, not transplanted. The extra check is the supplier's monthly statement — their record of our account — reconciled against their personal account in our books, with differences explained by timing (payments in transit, invoices not yet received) or error on either side."
+    }
+  ]
+}
