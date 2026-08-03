@@ -146,3 +146,4 @@
 | starlight_serenades_682613 | poetry | Starlight Serenades | pending_approval | groq | GROQ-30775826163 | — | 2026-08-03 01:01 |
 | shores_of_memories_3e4e06 | poetry | Shores of Memories | pending_approval | groq | GROQ-30785668358 | — | 2026-08-03 04:54 |
 | economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_generated | system | SYS-LESSON-RULES-30805534441 | — | 2026-08-03 10:26 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_generated | system | SYS-LESSON-RULES-30810174016 | — | 2026-08-03 11:36 |
