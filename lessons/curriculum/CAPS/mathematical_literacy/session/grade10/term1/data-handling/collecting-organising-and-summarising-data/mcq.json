@@ -1,0 +1,228 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Data Cycle and the Question Worth Asking",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Which of these is the correct order of the data cycle?",
+          "options": ["Collect, pose a question, summarise, organise, report", "Pose a question, collect, organise and classify, summarise and represent, analyse, report", "Summarise, collect, pose a question, report, organise", "Organise, collect, analyse, pose a question, report"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A patient's waiting time of 47,5 minutes is an example of which type of data?",
+          "options": ["Categorical data", "Discrete numerical data", "Continuous numerical data", "Secondary categorical data"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The class uses the clinic's own register instead of standing at the door with a clipboard. This makes the data:",
+          "options": ["secondary data, because they were recorded by someone else for another purpose", "primary data, because the class is using them for its own question", "categorical data, because a register contains names", "biased data, because registers are never accurate"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Which choice would have introduced the most serious bias into the clinic study?",
+          "options": ["Recording times to the nearest minute", "Recording only the patients who arrived at eight o'clock, or only those who complained", "Recording fifteen patients spread across the morning", "Using the register rather than asking patients to estimate"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Tallies, Frequency Tables and Class Intervals",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In the class's frequency table, the interval 30 to 59 minutes has a frequency of:",
+          "options": ["3", "5", "8", "15"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Why are intervals of \"0 to 30\" and \"30 to 60\" unacceptable?",
+          "options": ["Because the intervals are too wide", "Because they overlap, so a wait of exactly 30 minutes belongs in two rows", "Because intervals must always start at 1", "Because continuous data may not be grouped at all"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "What check should be done on every frequency table before it is used?",
+          "options": ["That the frequencies add up to the number of values collected", "That every interval has at least one value in it", "That the largest frequency appears in the first row", "That the intervals are listed from largest to smallest"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "What is lost when continuous data are grouped into class intervals?",
+          "options": ["Nothing — the table contains all the original information", "The total number of values", "The individual values themselves, so exact figures such as three waits of 45 minutes can no longer be read off", "The unit of measurement"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Mean, Median, Mode and Range",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The fifteen waiting times total 825 minutes. What is the mean?",
+          "options": ["45 minutes", "55 minutes", "60 minutes", "82,5 minutes"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For the fifteen ordered values, which position holds the median, and what is it?",
+          "options": ["Position 7,5; median 42,5 minutes", "Position 8; median 45 minutes", "Position 8; median 55 minutes", "Position 15; median 140 minutes"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The range of the waiting times is:",
+          "options": ["120 minutes", "45 minutes", "55 minutes", "140 minutes"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Which measure of centre can be used for categorical data such as the reason for a clinic visit?",
+          "options": ["The mean", "The median", "The range", "The mode"],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Which Summary Answers Which Question",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Why is the mean of 55 minutes higher than the median of 45 minutes?",
+          "options": ["Because the mode is also 45", "Because three patients waited 90, 120 and 140 minutes, and those outliers pull the mean upward", "Because the median was calculated from unordered data", "Because 15 is an odd number of values"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The provincial office wants to know the total nursing time consumed by the morning. Which summary rebuilds that total?",
+          "options": ["The mean, because mean × number of patients gives back 825 minutes", "The median, because it is the typical wait", "The mode, because it is the most common wait", "The range, because it covers all the values"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "What is the stated weakness of the range?",
+          "options": ["It cannot be calculated for continuous data", "It always equals the mean minus the median", "It is computed from only two values, so a single unusual case can distort it", "It ignores the largest value in the data set"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which conclusion best matches the clinic's data?",
+          "options": ["Every patient waits about an hour, so the queue should be shortened across the board", "The typical wait is 45 minutes; the real problem is a long tail of very long waits", "The clinic is fast, since the mode is only 45 minutes", "Nothing can be concluded, because the mean and median disagree"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Asking a Question the Numbers Can Answer",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Why is \"Do we spend too much on airtime?\" a poor question to investigate?",
+          "options": ["Because airtime spending is categorical data", "Because \"too much\" cannot be measured, so no number could settle it", "Because it asks about a household rather than a school", "Because it needs a tally table"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Which of these can NOT be added together?",
+          "options": ["Rands spent on data by each person", "Minutes waited by each patient", "Learners counted in each class", "The networks people use, such as Telkom and Vodacom"],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "\"Don't you agree the queue is terrible?\" is a poor survey question because it:",
+          "options": ["leans towards the answer it wants, instead of asking neutrally", "produces continuous data instead of discrete data", "cannot be tallied", "requires secondary data"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Sorting the Washing",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "What is the first thing to do with a jumbled list of values?",
+          "options": ["Calculate the average", "Put them in order from smallest to largest", "Draw a graph", "Round them all to the nearest ten"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In a tally, why is every fifth stroke drawn across the four before it?",
+          "options": ["To show that value is the mode", "To mark the end of a class interval", "So the marks count themselves in fives and are easy to total", "To indicate an outlier"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The five piles of clinic waits contain 3, 8, 1, 1 and 2 patients. What does adding them confirm?",
+          "options": ["That the mode is in the second pile", "That the intervals do not overlap", "That the range is 120 minutes", "That all 15 patients have been counted once, with none lost or double-counted"],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Middle, the Most, the Average and the Stretch",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The Simplifier calls the mean the \"sharing-out number\". For the clinic data that number is:",
+          "options": ["55 minutes", "45 minutes", "825 minutes", "120 minutes"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "If there had been an EVEN number of patients, how would the middle value be found?",
+          "options": ["Take the larger of the two middle values", "Take the two middle values and split the difference between them", "Use the mode instead", "The median cannot be found for an even number of values"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which everyday comparison does the Simplifier use for the mean being dragged upward?",
+          "options": ["A taxi that is always full", "One uncle with a big salary lifting the \"average income\" of a struggling family", "A tally that has been counted twice", "A washing basket that never empties"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "What does the Simplifier say a complete answer must include, beyond the number itself?",
+          "options": ["A second calculation using a different method", "A graph of the data", "The unit, and a plain sentence about what should actually be done", "The raw data listed in full"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

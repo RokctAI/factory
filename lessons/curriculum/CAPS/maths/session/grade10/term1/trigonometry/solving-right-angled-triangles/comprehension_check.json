@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the routine for choosing a trigonometric ratio, and explain how the position of the unknown decides whether you multiply or divide. Illustrate with the 20 m ladder at 35° and the mast cable anchored 15 m away at 40°.",
+      "expected_answer": "Choose the acute angle first, then label the sides relative to it: the hypotenuse faces the right angle and never changes, the opposite faces your chosen angle, and the adjacent is the remaining arm. Identify only two sides — the one you know and the one you want — and let that pair name the ratio: opposite with hypotenuse is sine, adjacent with hypotenuse is cosine, opposite with adjacent is tangent. For the ladder, the wall height is opposite and the 20 m ladder is the hypotenuse, so sin 35° = h ÷ 20; the unknown is in the numerator, so multiply: h = 20 sin 35° = 11,47 m. For the cable, 15 m is adjacent and the cable is the unknown hypotenuse, so cos 40° = 15 ÷ x; the unknown is in the denominator, so divide: x = 15 ÷ cos 40° = 19,58 m. Multiplying there would give 11,49 m, which is impossible because the hypotenuse must exceed the 15 m adjacent side."
+    },
+    {
+      "id": "cc2",
+      "question": "Define the angles of elevation and depression, explain why they are equal between two observers, and use this to find how far a boat lies from the foot of a 40 m cliff when the angle of depression to it is 25°.",
+      "expected_answer": "Both are measured from the horizontal, never from the vertical. The angle of elevation is between the horizontal and the line of sight when looking up at an object; the angle of depression is between the horizontal and the line of sight when looking down at it. The horizontal at the observer's eye and the horizontal at the object are parallel lines cut by the line of sight, so the angle of depression from the top equals the angle of elevation from the bottom — they are alternate angles. For the cliff, work at the boat, where the angle of elevation is also 25°: the 40 m cliff is opposite and the sea distance is adjacent, so tan 25° = 40 ÷ d. The unknown is in the denominator, so d = 40 ÷ tan 25° = 85,78 m. Placing the 25° inside the triangle at the cliff-top vertex is the classic error — the interior angle there is its complement, 65°."
+    },
+    {
+      "id": "cc3",
+      "question": "A clinic ramp rises 800 mm over a horizontal run of 5 m. Solve the triangle completely and state the working disciplines that protect accuracy marks.",
+      "expected_answer": "First put everything in one unit system: 800 mm = 0,8 m. Relative to the ramp's angle at the bottom, the rise is opposite and the run is adjacent, so tan θ = 0,8 ÷ 5 = 0,16, and θ = tan⁻¹ 0,16 = 9,09°. The two acute angles of a right-angled triangle sum to 90°, so the other angle is 90° − 9,09° = 80,91°. The ramp surface follows from Pythagoras: √(0,8² + 5²) = √25,64 = 5,06 m. Three disciplines protect the marks: convert units before any ratio is used; prefer Pythagoras over a rounded trigonometric value when three sides are in play, because it is exact and inherits no rounding error; and keep full calculator accuracy throughout, rounding only the final answer. A fourth is checking that the calculator is in degree mode before trusting any digit."
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-Welcome, student. Today we learn the two forces that set every price you have ever paid: demand and supply. By the end of this lesson you will state both laws, draw the market diagram, shift the correct curve when conditions change, and find the new equilibrium. Our case study is painfully South African: what happens to the price of maize meal after a drought.
+# Part 1 — Expert
+
+Today we learn the two forces that set every price you have ever paid: demand and supply. By the end of this session you will state both laws, draw the market diagram, shift the correct curve when conditions change, and find the new equilibrium. Our case study is painfully South African: what happens to the price of maize meal after a drought.
 
 ## Subtopic: The Law of Demand
 
@@ -14,6 +16,8 @@ But if something other than the price changes — consumer income rises, the pri
 
 In our drought story, note carefully: consumer income is unchanged. The question tells us so. That is a signal that the demand curve will stay exactly where it is. Hold that thought.
 
+Pause here — this section's questions are with you now: the law of demand, and the along-the-curve against whole-curve-shift distinction. Own price moves you along; anything else shifts.
+
 ## Subtopic: The Law of Supply
 
 Now the other side of the market: the sellers. Supply is the quantity of a good that producers are willing and able to offer for sale at each price.
@@ -26,6 +30,8 @@ Now our drought. The question says the drought halves the maize harvest. Ask the
 
 That is the complete diagnosis: demand curve untouched, supply curve shifted left. Half the marks in a market-dynamics question sit in exactly this reasoning.
 
+Stop for this section's questions now — the law of supply, the shift factors, and the two diagnostic questions applied to the drought.
+
 ## Subtopic: Equilibrium — Where the Market Settles
 
 Put the two curves on one set of axes and they cross. That crossing point is the market equilibrium, and it is the most important point in microeconomics.
@@ -37,6 +43,8 @@ Why does the market settle there and nowhere else? Test the two alternatives. Su
 Now suppose the price sits below equilibrium. Buyers rush in, but sellers offer little. Quantity demanded exceeds quantity supplied: a shortage. Empty shelves, queues — and buyers willing to pay more bid the price up. The price rises toward equilibrium.
 
 So from above, price falls; from below, price rises. Equilibrium is the only resting place — like a marble rolling to the bottom of a bowl. No official sets this price; the pushing and pulling of surplus and shortage does the work. That is what economists mean by price formation through market forces.
+
+The questions on this section are in front of you now — surplus, shortage, and why equilibrium is the only resting place. Argue from the pushing and pulling.
 
 ## Subtopic: The Drought Diagram — Working the Full Example
 
@@ -54,6 +62,42 @@ Step five: read off the new equilibrium. S1 crosses D at a new point: the new eq
 
 Step six: tell the story in words, because the diagram alone is only half the answer. At the old price, the halved harvest leaves quantity demanded exceeding quantity supplied — a shortage. Buyers compete for scarce maize meal and bid the price up. As the price rises, two things happen at once: some buyers reduce purchases — a movement along the demand curve — and farmers stretch to supply what they can — a movement along the new supply curve S1. The price keeps rising until the shortage disappears at the new, higher equilibrium price P1, with less maize traded than before.
 
-Verify with common sense, your final self-check: a drought making maize meal scarcer and more expensive matches exactly what South Africans see at the shops in drought years. When your diagram, your words and reality all agree, you have the full method. Practise it until the six steps run automatically.
+Verify with common sense, your final self-check: a drought making maize meal scarcer and more expensive matches exactly what South Africans see at the shops in drought years. When your diagram, your words and reality all agree, you have the full method — and this part's questions are with you now: the six steps, run on the drought and on fresh shocks.
 
-Class is dismissed.
+# Part 2 — Simplifier
+
+Now the same two forces from the taxi rank on a hot afternoon — because demand and supply aren't textbook inventions; they're the oldest argument on any street: buyers wanting it cheap, sellers wanting it dear, and the price where the argument ends.
+
+## Subtopic: The Cooler Box of Cold Drinks
+
+A vendor works the rank with a cooler box of cold drinks on a blazing day. Watch the buyers first. At R20 a can, a few desperate people buy. Drop to R15 — more hands go up. At R10 — half the queue wants one. That's the whole law of demand: the cheaper it gets, the more people buy — not because anyone read a textbook, but because each person quietly weighs the price against their pocket. And mark the vendor's word: WANTING a cold drink isn't demand. The schoolboy with empty pockets wants one badly — the market can't hear him. Demand is wanting WITH money ready: willing AND able.
+
+Now the seller's side. At R10 a can, the vendor brings one small cooler — barely worth the carrying. At R15, two coolers. At R20 — he phones his cousin to bring stock, because now every can pays well. That's the law of supply: the better the price, the more sellers bring. Price is the reward, and rewards pull effort.
+
+So buyers lean one way — cheaper, more of us buy — and sellers lean the other — dearer, more we bring. Two laws, leaning against each other. Something has to give: that's the next part of the story.
+
+Quick check before we carry on — questions on the cooler box are coming to you right now: both laws from the rank, and the willing-AND-able rule.
+
+## Subtopic: Where the Argument Ends
+
+So where does the price land? Watch the rank sort itself out — no committee, no announcement.
+
+Say the vendor tries R20. He's brought lots of stock — the price excited him — but buyers hang back. By mid-afternoon, unsold cans swim in melted ice. What does any vendor do with stock going warm? Drops the price. R18... R16... the pile shrinks faster as he drops.
+
+Now flip it: he tries R8. The cans vanish in twenty minutes — a queue still waiting, cooler empty. Tomorrow, does he price at R8 again? Never — people were fighting for them; they'd have paid more. Up goes the price.
+
+Somewhere between the melting pile and the fighting queue there's a price where the day works perfectly: the last can sells to the last willing buyer — nothing left over, nobody turned away. That's equilibrium — the resting place. Priced too high, the leftover stock pushes the price down; too low, the queue pulls it up. The market finds the level like water finds its own — and NOBODY set it. That's the deepest idea in the lesson: the price you paid this morning was set by millions of small arguments ending, not by anyone in charge.
+
+Your questions for this part are up now: too high, too low, and the resting place — tell each story with the pile and the queue.
+
+## Subtopic: The Drought at the Rank
+
+Last piece: what happens when the world changes — the drought, told at street level.
+
+The drought halves the maize harvest. First question, always: WHOSE side of the market got hit — buyers or sellers? The buyers' pockets didn't change; the FARMS were struck. Sellers' side. Second question: did the maize PRICE cause this? No — the sky did. So this isn't sliding along any curve; the whole selling side has changed: at every price you can name, there's simply less maize to offer. The supply curve packs up and moves left.
+
+Now play it forward at the shops. At the old price, the bags run out — the queue is longer than the stock: shortage. Buyers who need maize bid against each other — the price climbs. And as it climbs, two things happen at once, both worth watching: some families switch to bread or buy smaller bags — buyers sliding along their unchanged demand curve — and farmers scrape every last hectare to market — sellers stretching along their new, meaner curve. The climb stops where the shrunken supply meets the trimmed demand: a new resting place — higher price, less maize traded. Which is exactly what your family sees at the shop in a drought year. The diagram just draws what the street already knows.
+
+And the exam's whole trick, one more time: whose side, and did the own price do it? Answer those two, shift or slide correctly, and every market question opens.
+
+And here come the last questions of the lesson, right now: fresh shocks — a fertiliser price hike, a taste craze, a new competitor — diagnosed with the two questions and played to their new resting place.

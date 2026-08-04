@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define GDP with every working phrase explained, and show how the bread chain avoids double counting.",
+      "expected_answer": "GDP is the total market value of all final goods and services produced within a country's borders in a given period (usually a year). Market value: prices let unlike outputs be added. Final goods: sold to the end user — intermediate goods are excluded because their value is already inside the final price. Within the borders: geography decides, not nationality. Given period: a flow per year. The bread chain: wheat R4, flour R7, loaf R18 — adding all sales gives R29 but only R18 of value exists; count the final R18 once, or equivalently each stage's value added (4 + 3 + 11 = 18)."
+    },
+    {
+      "id": "cc2",
+      "question": "Define GNI, state the bridge from GDP, and read the gap for South Africa and Lesotho.",
+      "expected_answer": "GNI is the total income earned by a country's permanent residents' factors of production in a period, wherever the production happened — WHO earned, against GDP's WHERE produced. Bridge: GDP minus factor incomes produced here but paid to foreign owners, plus factor incomes residents earn abroad. South Africa: substantial foreign ownership means more factor income leaves than arrives, so GNI runs below GDP — the machine on our soil produces more than residents keep. Lesotho: many citizens work abroad and remit wages, so GNI can exceed GDP — its people earn more than its territory produces. The gap describes each economy's structure."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain per capita correction and the four limitations of GDP as a welfare measure.",
+      "expected_answer": "Per capita GDP divides output by population for a per-person comparison, and year-to-year comparisons must also strip out inflation. Limits: (1) distribution — the average is silent on who holds the income; (2) unpaid and informal work — caregiving, subsistence production and much township trade are real but uncounted, understating economies like South Africa's; (3) well-being — the count sees production, not health, safety or education quality; (4) the environment — the timber sold counts while the forest lost appears nowhere, and rebuilding after disasters can even raise GDP. The measure is a speedometer, not a report card."
+    }
+  ]
+}

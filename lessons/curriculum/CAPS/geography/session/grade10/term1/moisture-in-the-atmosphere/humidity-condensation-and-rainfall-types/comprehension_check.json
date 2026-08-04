@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Air at 20 °C holds 8,5 g/m³ of water vapour and could hold a maximum of 17 g/m³ at that temperature. Calculate its relative humidity, then explain what happens to that relative humidity if the air is cooled to 10 °C without any water being added, and define the dew point.",
+      "expected_answer": "Relative humidity is the vapour present divided by the maximum the air could hold at that temperature, times 100: 8,5 ÷ 17 × 100 = 50 per cent. Warm air can hold more water vapour than cold air, so cooling the parcel to 10 °C reduces the maximum it can hold to about 8,5 g/m³. The vapour content has not changed, but the capacity has fallen to meet it, so relative humidity becomes 8,5 ÷ 8,5 × 100 = 100 per cent and the air is saturated. Nothing was added; the container simply shrank. The dew point is exactly that temperature — the temperature to which air must be cooled for it to become saturated. Because it is set by the amount of vapour present, it is really a moisture measurement expressed as a temperature, and its usefulness lies in comparing it with the air temperature: a small gap means humid air with condensation imminent, a large gap means dry air."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why a rising parcel of air cools, and calculate the height of the condensation level for air with a surface temperature of 25 °C and a surface dew point of 15 °C. Say what this height means for the appearance of cumulus clouds.",
+      "expected_answer": "As a parcel rises, the atmospheric pressure around it falls, so the parcel expands. Expansion uses energy and the parcel cools even though no heat has been removed — this is adiabatic cooling. While the air remains unsaturated it cools at the dry adiabatic lapse rate of 1 °C per 100 metres. The parcel here must cool from 25 °C to its dew point of 15 °C, a fall of 10 °C, which at 1 °C per 100 metres requires 1 000 metres of ascent. The condensation level therefore lies at 1 000 metres above the surface, and that is where the cloud base forms. Once saturated, further ascent releases latent heat, so the parcel cools more slowly at the saturated adiabatic lapse rate of about 0,5 °C per 100 metres. Because every parcel in the same air mass reaches saturation at the same height, all the cumulus clouds over that area have flat bottoms at one common level."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare relief, convectional and frontal rainfall by their lifting mechanisms, and give a South African region and season for each.",
+      "expected_answer": "All three require air to rise, cool adiabatically, reach dew point and condense; they differ only in what forces the ascent. Relief or orographic rainfall occurs when moist air moving inland from the sea is forced up over a mountain barrier, raining on the windward slope and leaving a dry rain shadow on the leeward side where the descending air is compressed and warms — the eastern slopes of the Drakensberg receive this from moist Indian Ocean air, and the Little Karoo lies in the rain shadow of the Cape mountains. Convectional rainfall occurs when intense surface heating drives strong thermals upward, building cumulonimbus that break as short, heavy, localised late-afternoon thunderstorms with lightning and hail — this is the summer rainfall of the Highveld, over Gauteng, the Free State and Mpumalanga. Frontal or cyclonic rainfall occurs where a mass of dense cold air wedges beneath warm moist air and lifts it along the frontal surface; cold fronts lift steeply and give a narrow band of heavy showers with a sharp temperature drop behind. South Africa's clearest case is the Western Cape's winter rainfall, delivered by cold fronts sweeping in from the south-west across the Atlantic between roughly May and August."
+    }
+  ]
+}

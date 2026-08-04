@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Simplify x² − 9 over x² + 7x + 12, stating the restrictions, and explain why terms may never be cancelled while factors may.",
+      "expected_answer": "Factorise both lines first: the numerator is a difference of two squares, (x − 3)(x + 3); the denominator is a trinomial, (x + 3)(x + 4), since 3 and 4 multiply to 12 and add to 7. The bracket (x + 3) is a factor of the whole numerator and the whole denominator, so it divides out, leaving (x − 3) over (x + 4). The restrictions come from the original denominator: x ≠ −3 and x ≠ −4. Factors may be cancelled because the expression is multiplied by them, so dividing top and bottom by the same non-zero quantity leaves the value unchanged; terms are added or subtracted, so removing one changes the value. Substituting x = 1 proves it: the original gives −8 over 20 = −2/5, the correct answer gives −2/5, but cancelling the x² terms would give −9 over 19."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the full procedure for 3 over (x − 3) minus 2 over (x² − 9), and describe the sign error that costs learners the most marks in subtraction questions.",
+      "expected_answer": "Factorise the denominators first: x² − 9 = (x − 3)(x + 3), so the lowest common denominator is (x − 3)(x + 3) — each distinct factor taken once, not the product of the two original denominators. Multiply the first fraction's numerator and denominator by (x + 3), giving 3x + 9; the second fraction already sits over the LCD with numerator 2. Combining gives 3x + 9 − 2 = 3x + 7, so the answer is (3x + 7) over (x − 3)(x + 3), with x ≠ 3 and x ≠ −3. The classic sign error appears when the numerator being subtracted has more than one term: subtracting (x − 3) means subtracting both terms, giving −x + 3, but learners write −x − 3. Bracketing the numerator before distributing the minus prevents it entirely."
+    },
+    {
+      "id": "cc3",
+      "question": "Why must restrictions be read from the original denominators rather than the simplified answer, and how do restrictions work in a division question?",
+      "expected_answer": "A value is banned the moment it would make any original denominator zero, because at that value the expression written in the question is undefined. Cancelling a factor tidies the expression but cannot retrospectively make a forbidden value legal, so a factor that disappears still leaves its restriction behind — in x² − 9 over x² + 7x + 12 the answer (x − 3) over (x + 4) appears to forbid only −4, yet −3 remains banned. In a division question every denominator that ever existed contributes a restriction, and so does the numerator of the divisor, because dividing by a fraction that equals zero is still dividing by zero. For x² − 4 over (x + 3) divided by (x + 2) over x² − 9, that gives x ≠ −3, x ≠ 3 and x ≠ −2. Stating restrictions is worth its own mark on most memoranda."
+    }
+  ]
+}

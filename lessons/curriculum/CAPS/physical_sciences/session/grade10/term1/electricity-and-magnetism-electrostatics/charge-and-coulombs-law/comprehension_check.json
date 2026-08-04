@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain charging by friction and charging by induction, in each case stating clearly which particles move and what sign of charge results.",
+      "expected_answer": "In both processes only electrons move; protons are bound in nuclei and never transfer, so every explanation must be written in terms of electrons gained or lost. Charging by friction acts on insulators: rubbing two different materials together transfers electrons from the material that holds them less strongly to the one that holds them more strongly, so the electron-gaining object becomes negative and the electron-losing object becomes equally positive. Charging by induction acts on conductors and requires no contact: a charged rod brought near a neutral metal sphere repels or attracts the sphere's free electrons, polarising it; earthing the far side lets the repelled electrons flow away; removing the earth first and then the rod leaves the sphere with an overall charge of the opposite sign to the rod. Contact charging, by comparison, leaves both objects with the same sign."
+    },
+    {
+      "id": "cc2",
+      "question": "Two identical conducting spheres carry +5 nC and −3 nC. They are touched together and separated. Calculate the final charge on each sphere and the number of electrons transferred, and state how conservation of charge is confirmed.",
+      "expected_answer": "For identical spheres in contact the total charge is shared equally: Q = (Q₁ + Q₂) ÷ 2. Substituting with signs, Q = (+5 + (−3)) ÷ 2 = (+2) ÷ 2 = +1 nC on each sphere. Conservation is confirmed by adding the final charges: +1 nC plus +1 nC gives +2 nC, exactly the total before contact. Sphere A changed from +5 nC to +1 nC, so it gained 4 nC = 4 × 10⁻⁹ C of negative charge. The number of electrons is n = Q ÷ q = (4 × 10⁻⁹) ÷ (1,6 × 10⁻¹⁹) = 2,5 × 10¹⁰ electrons, transferred from sphere B to sphere A. Adding the magnitudes instead of the signed charges would give +4 nC on each, which creates charge from nothing and is therefore wrong."
+    },
+    {
+      "id": "cc3",
+      "question": "State Coulomb's law, calculate the force between charges of +3 × 10⁻⁶ C and −4 × 10⁻⁶ C placed 0,30 m apart, and explain what happens to that force if the separation is doubled.",
+      "expected_answer": "Coulomb's law states that the electrostatic force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them: F = kQ₁Q₂ ÷ r², with k = 9 × 10⁹ N·m²·C⁻². Substituting magnitudes only, F = (9 × 10⁹)(3 × 10⁻⁶)(4 × 10⁻⁶) ÷ (0,30)² = 0,108 ÷ 0,09 = 1,2 N. Because the charges are unlike, the force is one of attraction — the direction is stated in words rather than obtained by substituting the signs. Doubling the separation to 0,60 m squares to 0,36, giving F = 0,108 ÷ 0,36 = 0,3 N, which is one quarter of the original force. This is the inverse square relationship: the force falls off as the square of the distance, so tripling the separation would reduce it to one ninth."
+    }
+  ]
+}

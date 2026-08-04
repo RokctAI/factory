@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Two Records, Two Kinds of Error",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The Debtors Control account and the list of debtors are built from:",
+          "options": [
+            "Journal column totals (control) and the personal accounts posted daily (list)",
+            "The same postings, copied twice",
+            "The trial balance and the bank statement",
+            "The personal accounts (control) and journal totals (list)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A journal column undercast corrupts:",
+          "options": [
+            "The list only, because pages are posted daily",
+            "The control account only — the pages were posted from correct individual lines",
+            "Both records equally",
+            "Neither record"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "An error made in the ORIGINAL journal line, before totalling:",
+          "options": [
+            "Affects only the control account",
+            "Affects only the list",
+            "Flows into BOTH records and must be corrected in both",
+            "Cancels itself out at month end"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "When control and list disagree, the correct starting attitude is:",
+          "options": [
+            "Trust the control account and adjust the list toward it",
+            "Trust the list and adjust the control toward it",
+            "Split the difference between them",
+            "Trust neither — either record can carry the error; only the evidence decides"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "A Worked Reconciliation — the Debtors Side",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The DJ sales column was undercast by R200. The treatment is:",
+          "options": [
+            "Debit Debtors Control R200 — the totals' journey shorted control; the pages are right",
+            "Add R200 to the list",
+            "Credit Debtors Control R200",
+            "Correct both records by R100 each"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A bad debt of R140 was posted to the debtor's page but never to control. Control must be:",
+          "options": [
+            "Debited R140",
+            "Credited R140 — it still carries a debt the pages have already written off",
+            "Left alone; the list must drop R140",
+            "Credited R280"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The invoice to T. Osman (R550) reached the journal and control but never his page. The fix:",
+          "options": [
+            "Debit control R550",
+            "Credit control R550",
+            "Add R550 to Osman's balance on the LIST — the pages' journey is the one holed",
+            "Remove R550 from the list"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "After all four corrections, control (from R7 440) and list (from R7 130) both end at:",
+          "options": [
+            "R7 440 — the control was right all along",
+            "R7 130 — the list was right all along",
+            "R7 310 — the average of the two",
+            "R7 500 — a figure neither original record contained"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Creditors Mirror and the Supplier's Statement",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The CPJ's creditors column was overcast by R90. The effect on Creditors Control was:",
+          "options": [
+            "Too large a DEBIT — control's credit balance is understated by R90",
+            "Too large a credit — control is overstated",
+            "No effect; the CPJ never posts to control",
+            "The list was overstated by R90"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The correction for that overcast payments column is:",
+          "options": [
+            "Debit Creditors Control R90",
+            "Deduct R90 from the creditors list",
+            "Credit Creditors Control R90 — reversing the excess debit restores the balance to R5 330",
+            "Credit Bank R90"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "An invoice from B. Bell for R330 was never posted to her page. The treatment:",
+          "options": [
+            "Credit control R330",
+            "Add R330 to the creditors LIST, bringing it to R5 330",
+            "Debit control R330",
+            "Ignore it until the supplier complains"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A supplier's monthly statement is reconciled against:",
+          "options": [
+            "The trial balance",
+            "The Debtors Control account",
+            "The bank statement",
+            "That supplier's personal account in OUR books — differences explained by timing or error"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Method, Compressed — and Why It Matters",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The classification question asked of EVERY finding is:",
+          "options": [
+            "Where did the error physically happen — totals journey, pages journey, or original line?",
+            "How large is the error?",
+            "Who made the error?",
+            "Which month did the error occur in?"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "If the two corrected statements do NOT end on the same figure:",
+          "options": [
+            "Use the control figure for the trial balance",
+            "A finding was misclassified or an arithmetic slip made — re-examine before moving on",
+            "Average the two endings",
+            "Carry the difference to a suspense account permanently"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A difference divisible by nine suggests:",
+          "options": [
+            "An unposted item",
+            "An amount on the wrong side",
+            "A transposition of digits somewhere in the records",
+            "A casting error of exactly R9"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Monthly reconciliation matters because:",
+          "options": [
+            "It replaces the trial balance",
+            "It guarantees no errors will ever be made",
+            "It is required before any sale may be recorded",
+            "It catches inevitable errors while documents are fresh — internal control made routine"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Witnesses, Different Stories",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The control line says R7 440; the pages say R7 130. The difference proves:",
+          "options": [
+            "At least one error exists — but not WHERE it sits",
+            "The control account is wrong",
+            "The list is wrong",
+            "Exactly one error of R310 exists"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The detective's first discipline is:",
+          "options": [
+            "Always trust the bigger number",
+            "Do not pick a favourite witness — either road can carry a pothole",
+            "Always trust the control account",
+            "Adjust whichever record is easier to change"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The case ends when:",
+          "options": [
+            "One witness surrenders to the other",
+            "The difference is written off",
+            "BOTH stories, corrected independently, tell the same truth — the meeting point",
+            "The month is closed with a note about the difference"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Four Potholes, Each on Its Own Road",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The DJ column added up R200 short. Which road is holed?",
+          "options": [
+            "The totals road — the line is R200 too small; patch the line up R200",
+            "The daily road — the pages missed it",
+            "Both roads equally",
+            "Neither — the money was never real"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The R140 write-off reached the customer's page but never the control totals, so:",
+          "options": [
+            "The pages must say goodbye again",
+            "The line comes down R140 — it still thinks the money is coming",
+            "The list comes down R140",
+            "Both records drop R140"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Mrs Peters's page reads R530 for a R350 purchase — digits danced on the page only. The patch:",
+          "options": [
+            "Line down R180",
+            "Line up R180",
+            "Pages down R180 — only her page exaggerates; the line was fed correct totals",
+            "Pages up R180"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "After the patching, the truth of R7 500 appeared:",
+          "options": [
+            "Because the control account was believed",
+            "Because the difference was split fairly",
+            "In the original list all along",
+            "Where the two independently corrected records MET — a number neither original answer contained"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Meeting in the Middle",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The reconciliation must end in ONE number because:",
+          "options": [
+            "The business acts on it tomorrow — trial balance, statements, credit decisions",
+            "Two numbers take too long to write",
+            "The auditor only reads one line",
+            "The bank requires a single figure by law"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The quiet lesson under the loud one: monthly reconciliation gives mistakes:",
+          "options": [
+            "No chance of ever happening",
+            "A one-month lifespan — caught by routine, not by luck or complaint",
+            "A one-year lifespan until the audit",
+            "A permanent home in a suspense account"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "On the creditors mirror, the safe working habit is:",
+          "options": [
+            "Copy each debtors fix across to save time",
+            "Skip the creditors side; it always matches",
+            "Re-derive every correction's direction from the mirror's point of view — never transplant",
+            "Adjust only the list, since suppliers keep the control"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The supplier's statement arriving each month is best described as:",
+          "options": [
+            "A replacement for our creditors list",
+            "A bill that must be paid in full immediately",
+            "Proof that our books are wrong",
+            "A third, outside-built record of the relationship, compared item by item against our pages"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

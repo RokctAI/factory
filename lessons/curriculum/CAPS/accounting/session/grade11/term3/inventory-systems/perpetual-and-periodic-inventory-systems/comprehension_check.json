@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Contrast how the perpetual and periodic systems record purchases and sales, and state where the Trading Stock account stands during the year in each.",
+      "expected_answer": "Perpetual: purchases are debited to Trading Stock as an asset, and every sale triggers two entries — selling price to Debtors/Bank and Sales, plus the cost of those goods out of Trading Stock into Cost of Sales — so the account claims at any moment what should be on the shelf, testable against a physical count. Periodic: purchases are debited to a Purchases account (expense-type), sales record the selling price only with no cost entry, and Trading Stock sits untouched at its opening balance all year; cost of sales is computed only at period end from the formula after a physical count. In short, perpetual records cost at every movement; periodic records purchases and works cost of sales out backwards."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate cost of sales and gross profit under the periodic system from: opening stock R80 000, purchases R520 000, carriage on purchases R18 000, purchases returns R12 000, drawings of stock R6 000, closing stock R95 000, sales R700 000 — and explain the treatment of the two carriage types.",
+      "expected_answer": "Goods available for sale = 80 000 + 520 000 + 18 000 − 12 000 − 6 000 = R600 000. Cost of sales = 600 000 − 95 000 = R505 000. Gross profit = 700 000 − 505 000 = R195 000. Carriage on purchases (freight inward) is included because it is part of the cost of getting the stock onto the shelf; carriage outward — delivering to customers — is a selling expense and stays out of the calculation. Drawings of stock are subtracted because the goods left the pile without being sold. Note that any stock lost to theft or breakage is buried inside the R505 000, since the formula assumes everything not counted was sold."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare the two systems' advantages and disadvantages, advise which suits which business, and explain how overstating closing stock distorts profit.",
+      "expected_answer": "Perpetual: stock known at any moment, informed re-ordering, gross profit reportable without a count, and — decisively — losses identified and sized as a trading stock deficit when the count is compared to the account; but administratively heavy, needing a cost record for every movement. Periodic: simple and cheap, suiting small businesses with numerous low-value items; but no stock figure between counts, no interim gross profit, and no control, since losses vanish into cost of sales. Advice: high-value identifiable goods (vehicles, appliances, jewellery) demand perpetual; low-value high-volume goods once argued for periodic, but modern point-of-sale systems post cost automatically, so perpetual is now practical for supermarkets too. Overstating closing stock reduces cost of sales, so gross and net profit rise — flattering the results, misleading owners and lenders, and pushing the loss into the next year, which is why counts are done by people independent of the storeroom."
+    }
+  ]
+}

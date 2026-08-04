@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Run the administrator's month from gross to net, naming each deduction, its basis and its destination, and state the total cost of employing her.",
+      "expected_answer": "Gross R8 800. PAYE R1 100 (SARS tables, to SARS); pension R660 (7,5% of gross, to the pension fund); UIF R88 (1%, to the Unemployment Insurance Fund); medical aid R450 (fixed share, to the scheme); union R60 (fixed subscription, to the union). Total deductions R2 358; net R6 442. The employer adds contributions of R1 286 (pension R660 rand-for-rand, UIF R88, medical R450, SDL R88), so the total cost of employing her is gross plus contributions: R10 086."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the double entry for a month's salaries: what is debited, what is credited, and how the deductions and contributions are eventually settled.",
+      "expected_answer": "Debit Salaries with the full GROSS — the expense of employing. Credit Bank (via the CPJ) with only the NET paid to the employee. Each deduction withheld is credited to a creditor — SARS, the pension fund, the UIF, the medical scheme, the union — because it is owed to that destination. Employer contributions are debited to their own expense accounts (Pension/UIF/Medical Contributions, SDL) and credited to the same creditors. In the following days the CPJ settles each creditor — e.g. one payment to the pension fund carrying both R660 halves — debiting the creditor and crediting Bank."
+    },
+    {
+      "id": "cc3",
+      "question": "Discuss the four ethical matters the syllabus attaches to payroll, each with its harm.",
+      "expected_answer": "The written contract: all pay and deductions must rest on a signed agreement — deducting the unagreed or paying below the signed rate breaks an agreement, not just arithmetic. Nepotism: appointing or advancing family over better candidates — its payroll signature is a name earning outside the scale; it costs competence and destroys the scale's motivating power. Payment in line with responsibilities: equal work deserves equal pay on the same scale — books can balance while recording injustice. The trade union: the workers' collective negotiating voice, funded by the deducted subscription; the employer must deduct faithfully, pay over promptly and respect the union's role."
+    }
+  ]
+}

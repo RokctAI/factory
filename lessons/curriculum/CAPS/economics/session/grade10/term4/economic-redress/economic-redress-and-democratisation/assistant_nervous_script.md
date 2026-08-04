@@ -1,0 +1,7 @@
+Hey, it's Thandi — last topic of Grade 10 Economics, and it's the one people argue about at family lunches, which can make it feel risky to write about. Here's the good news: the exam isn't asking for your politics. It's asking for mechanisms, structure and both ledgers.
+
+Structure first, because it's generous: redress organises itself around the four factors you learned in the very first lesson of the year. Land — restitution, redistribution, tenure. Labour — employment equity and skills training. Capital — ownership, procurement, access to finance. Entrepreneurship — support to start and survive. Four factors, four programmes. Say what was denied, name the instrument, and add the support it needs to actually work. That last bit — "a title deed without seed money is a field, not a farm" — is what turns a listing answer into a good one.
+
+Then the decision side: who sits at the table. Labour law gives workers a seat; public hearings give communities one; NEDLAC seats four constituencies — government, business, labour, community — before laws go to Parliament; and professions regulate themselves inside the law. Four channels, easy to list.
+
+And the judging rule, which never changes all year: BOTH columns. Real gains — services, housing, schooling, grants, a professional class that didn't exist. Real shortfalls — unemployment, inequality, slow land reform, benefits pooling narrowly. Write both, with mechanisms, and you're writing like an economist rather than a supporter. You've got this — and that's Grade 10 Economics finished.
