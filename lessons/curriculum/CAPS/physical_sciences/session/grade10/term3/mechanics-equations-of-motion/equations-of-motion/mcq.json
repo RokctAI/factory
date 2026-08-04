@@ -8,36 +8,36 @@
           "id": "subtopic_1_q1",
           "question": "The equations of motion may only be used when:",
           "options": [
-            "The acceleration is uniform (constant)",
             "The object moves in a circle",
+            "The acceleration is uniform (constant)",
             "The velocity is constant",
             "The object starts from rest"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_1_q2",
           "question": "Which quantity is missing from the equation $v_f^2 = v_i^2 + 2a\\Delta x$?",
           "options": [
-            "Time ($\\Delta t$)",
             "Displacement ($\\Delta x$)",
             "Acceleration ($a$)",
+            "Time ($\\Delta t$)",
             "Final velocity ($v_f$)"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_1_q3",
           "question": "The 'absent character' rule for choosing an equation says:",
           "options": [
-            "Pick the equation that excludes the quantity which is neither given nor wanted",
             "Pick the equation with the most symbols",
             "Pick the equation you remember best",
-            "Always start with equation one"
+            "Always start with equation one",
+            "Pick the equation that excludes the quantity which is neither given nor wanted"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         }
       ]
@@ -50,24 +50,24 @@
           "id": "subtopic_2_q1",
           "question": "For the car problem (vi = 10 m/s, vf = 25 m/s, Δx = 300 m, find a), the absent quantity is:",
           "options": [
-            "Time — so use $v_f^2 = v_i^2 + 2a\\Delta x$",
             "Displacement — so use $v_f = v_i + a\\Delta t$",
+            "Time — so use $v_f^2 = v_i^2 + 2a\\Delta x$",
             "Acceleration — so use equation four",
             "Initial velocity — so use equation two"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_2_q2",
           "question": "Substituting into $v_f^2 = v_i^2 + 2a\\Delta x$ gives 625 = 100 + 600a. The acceleration is:",
           "options": [
-            "0,875 m/s² in the direction of motion",
             "1,04 m/s²",
             "8,75 m/s²",
+            "0,875 m/s² in the direction of motion",
             "0,58 m/s²"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
@@ -92,36 +92,36 @@
           "id": "subtopic_3_q1",
           "question": "Using $v_f = v_i + a\\Delta t$ with a = 0,875 m/s², the time taken is:",
           "options": [
-            "17,14 s",
             "15,00 s",
             "12,25 s",
-            "28,57 s"
+            "28,57 s",
+            "17,14 s"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_3_q2",
           "question": "The check via $\\Delta x = \\frac{(v_i + v_f)}{2}\\Delta t$ uses the average velocity, which is:",
           "options": [
-            "17,5 m/s",
             "35 m/s",
+            "17,5 m/s",
             "15 m/s",
             "12,5 m/s"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_3_q3",
           "question": "Why is the second road (equation four) such a strong check on the first?",
           "options": [
-            "It uses only original given data, so an error in the calculated acceleration could not hide",
             "It is easier to compute",
+            "It uses only original given data, so an error in the calculated acceleration could not hide",
             "It always gives a slightly different answer",
             "It avoids using velocity"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         }
       ]
@@ -134,48 +134,210 @@
           "id": "subtopic_4_q1",
           "question": "A car travels at 90 km/h. Before using the equations of motion, this must become:",
           "options": [
-            "25 m/s (divide by 3,6)",
             "90 m/s",
             "324 m/s (multiply by 3,6)",
-            "9 m/s"
+            "9 m/s",
+            "25 m/s (divide by 3,6)"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_4_q2",
           "question": "In $v_f^2 = v_i^2 + 2a\\Delta x$, a common error is:",
           "options": [
-            "Forgetting to square the velocities — writing 25 instead of 625",
             "Including time",
+            "Forgetting to square the velocities — writing 25 instead of 625",
             "Using displacement twice",
             "Dividing by two"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_4_q3",
           "question": "If the car had been braking, the acceleration in your equations would be:",
           "options": [
-            "Negative (opposite to the chosen positive direction of motion)",
             "Zero",
             "Positive and larger",
+            "Negative (opposite to the chosen positive direction of motion)",
             "Ignored"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_4_q4",
           "question": "In Grade 12, these same equations reappear in vertical projectile motion, where the constant acceleration is:",
           "options": [
-            "Gravitational acceleration, 9,8 m/s² downward",
             "The speed of the projectile",
             "Zero at the top of the flight",
-            "Different for heavy and light objects"
+            "Different for heavy and light objects",
+            "Gravitational acceleration, 9,8 m/s² downward"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Five Facts About Any Trip",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The five facts that describe any straight-line trip are:",
+          "options": [
+            "Distance, mass, time, speed and force",
+            "Starting speed, final speed, acceleration, time and displacement",
+            "Speed, velocity, distance, displacement and direction",
+            "Time, fuel, distance, mass and acceleration"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The word 'uniformly' in a question is important because:",
+          "options": [
+            "It means the car is travelling on a straight road",
+            "It means the speed never changes",
+            "It tells you the distance is exact",
+            "It is your permission to use the equations at all — the acceleration must be steady"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "An acceleration of 0,875 m/s² means, in plain words:",
+          "options": [
+            "The car travels 0,875 metres each second",
+            "The car gains 0,875 metres per second of extra speed in each second",
+            "The car takes 0,875 seconds to stop",
+            "The car's speed is 0,875 of its top speed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Which equation has NO acceleration in it?",
+          "options": [
+            "Final speed equals starting speed plus acceleration times time",
+            "Final speed squared equals starting speed squared plus two times acceleration times distance",
+            "Distance equals the average of the two speeds times the time",
+            "Distance equals starting speed times time plus half the acceleration times time squared"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The One Fact You Don't Need",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the car problem, which fact does nobody mention and nobody ask for?",
+          "options": [
+            "The distance",
+            "The starting speed",
+            "The time",
+            "The final speed"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "After substituting, 625 = 100 + 600 × acceleration. The next step is:",
+          "options": [
+            "Subtract 100 from both sides, then divide by 600",
+            "Divide 625 by 100",
+            "Add 100 to both sides",
+            "Multiply both sides by 600"
           ],
           "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Why does 0,875 m/s² pass the sense check while 87 m/s² would not?",
+          "options": [
+            "Because answers must be less than 1",
+            "Because 87 is not a round number",
+            "Because the distance was 300 m",
+            "Because gaining just under a metre per second of speed each second is an ordinary pull-away"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The plain-language choosing rule is:",
+          "options": [
+            "Use the equation with the most given values in it",
+            "Find the fact nobody mentioned, then take the equation that leaves it out",
+            "Always use the shortest equation",
+            "Try each equation until one works"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Checking the Fare Two Ways",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The car goes smoothly from 10 m/s to 25 m/s, so its average speed for the trip is:",
+          "options": [
+            "12,5 m/s",
+            "17,5 m/s",
+            "35 m/s",
+            "15 m/s"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Using 300 m = 17,5 m/s × time, the time taken is:",
+          "options": [
+            "30 s",
+            "5,25 s",
+            "1,75 s",
+            "17,14 s"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Why is the change-counting comparison a good description of the two roads?",
+          "options": [
+            "Two independent counts that agree are worth far more than one confident count",
+            "Because money and motion use the same formula",
+            "Because you should always divide twice",
+            "Because the second road is quicker"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Ninety kilometres per hour is 90 000 metres in 3 600 seconds, which is:",
+          "options": [
+            "9 m/s",
+            "324 m/s",
+            "25 m/s — which is why you divide km/h by 3,6",
+            "90 m/s"
+          ],
+          "correct_index": 2,
           "time_limit_seconds": 45
         }
       ]
