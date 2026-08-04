@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the midpoint theorem in full, list the conditions that must hold before you may quote it, and use it on triangle PQR where PQ = 16 cm, QR = 24 cm and PR = 20 cm, with S the midpoint of PQ and T the midpoint of PR.",
+      "expected_answer": "The midpoint theorem: the segment joining the midpoints of two sides of a triangle is parallel to the third side and equal to half of that third side. The conditions: the two points must genuinely be midpoints, they must lie on two different sides of the same triangle, and the conclusions apply to the third side — the one the midpoints do not lie on. Applied to triangle PQR: ST is parallel to QR, and ST is half of 24 cm, so ST = 12 cm. Also PS = 8 cm and PT = 10 cm, since S and T halve PQ and PR. The perimeter of triangle PST is therefore 8 + 12 + 10 = 30 cm, exactly half the perimeter of triangle PQR, which is 16 + 24 + 20 = 60 cm."
+    },
+    {
+      "id": "cc2",
+      "question": "Prove the midpoint theorem for triangle ABC, where D and E are the midpoints of AB and AC, giving a reason for every statement.",
+      "expected_answer": "Construction: produce DE to F so that DE = EF, and join FC. In triangles ADE and CFE: AE = EC (E is the midpoint of AC); DE = EF (construction); angle AED = angle CEF (vertically opposite angles). Therefore triangle ADE is congruent to triangle CFE (side-angle-side). Hence AD = CF and angle ADE = angle CFE (corresponding parts of congruent triangles). Since angles ADE and CFE are alternate angles on line DF, AD is parallel to CF, so DB is parallel to FC. Also AD = DB (D is the midpoint of AB), so DB = FC. Quadrilateral DBCF therefore has one pair of opposite sides equal and parallel, which makes DBCF a parallelogram. Consequently DF is parallel to BC and DF = BC. Since DE is half of DF by construction, DE is parallel to BC and DE = half of BC."
+    },
+    {
+      "id": "cc3",
+      "question": "Distinguish the midpoint theorem from its converse, giving the reason you would quote for each, and name three errors that cost marks in midpoint-theorem riders.",
+      "expected_answer": "The theorem is given two midpoints on two different sides and concludes that the joining segment is parallel to the third side and half its length; the reason written is 'midpoint theorem'. The converse is given one midpoint plus a line through it parallel to a second side, and concludes that this line bisects the third side — delivering a second midpoint; the reason written is 'line through midpoint parallel to second side'. Three common errors: doubling instead of halving, since the joining segment is always the shorter one; quoting the theorem when only one midpoint is given and no parallel line is stated, so the hypothesis is not satisfied; and treating a point as a midpoint because it looks like the middle of the segment in the sketch, when a diagram is a guide and never evidence. A fourth is writing a true statement with no reason beside it, which earns nothing."
+    }
+  ]
+}
