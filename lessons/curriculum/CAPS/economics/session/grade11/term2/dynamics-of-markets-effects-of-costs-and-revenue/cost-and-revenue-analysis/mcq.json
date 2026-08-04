@@ -86,12 +86,12 @@
           "id": "subtopic_2_q3",
           "question": "Why is marginal revenue constant at R30 for this firm?",
           "options": [
-            "Because each extra unit sells at the unchanged market price of R30",
             "Because costs are constant",
             "Because the firm advertises heavily",
-            "Because output never exceeds six units"
+            "Because output never exceeds six units",
+            "Because each extra unit sells at the unchanged market price of R30"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         }
       ]
@@ -117,11 +117,11 @@
           "question": "The economist's rule for the profit-maximising output is to produce:",
           "options": [
             "Until total cost equals total revenue",
-            "Until marginal revenue equals marginal cost, stopping before MC exceeds MR",
             "As many units as capacity allows",
+            "Until marginal revenue equals marginal cost, stopping before MC exceeds MR",
             "Where average cost is at its minimum"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
@@ -158,37 +158,199 @@
           "id": "subtopic_4_q1",
           "question": "How do you verify the profit-maximising output 'from both sides'?",
           "options": [
-            "Check the last produced unit adds profit (MC below MR) and the next unit would subtract profit (MC above MR)",
             "Compute average cost twice",
             "Compare total cost at zero and six units",
+            "Check the last produced unit adds profit (MC below MR) and the next unit would subtract profit (MC above MR)",
             "Draw the demand curve for the industry"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_4_q2",
           "question": "On the graph, the profit-maximising output is found where:",
           "options": [
-            "The marginal cost curve crosses the flat marginal revenue line from below",
             "Average cost is highest",
             "Total revenue crosses total cost",
-            "The two axes meet"
+            "The two axes meet",
+            "The marginal cost curve crosses the flat marginal revenue line from below"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_4_q3",
           "question": "Which pair of verbs matches the two derived measures?",
           "options": [
-            "Average: subtract; Marginal: divide",
             "Average: divide; Marginal: subtract neighbouring totals",
+            "Average: subtract; Marginal: divide",
             "Both: divide by output",
             "Both: subtract fixed cost"
           ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Costs That Sleep and Costs That Work",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "At the vetkoek stand, which of these is a cost that 'sleeps' — owed even on a day with no sales?",
+          "options": [
+            "The flour and oil",
+            "The table hire, gas bottle and licence for the spot",
+            "The cousin paid to help on a busy morning",
+            "The mince for the filling"
+          ],
           "correct_index": 1,
           "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "'What did the LAST one cost me?' is answered by:",
+          "options": [
+            "Subtracting this row's total cost from the row before it",
+            "Dividing total cost by output",
+            "Adding fixed and variable cost",
+            "Dividing fixed cost by output"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Total cost is R76 at 4 units and R102 at 5 units. What did the fifth unit cost on its own?",
+          "options": [
+            "R20,40",
+            "R102",
+            "R26",
+            "R19"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Why does the average cost per unit drop as the first few units are made?",
+          "options": [
+            "Because variable costs disappear",
+            "Because the selling price rises",
+            "Because workers speed up",
+            "Because the sleeping R20 is split between more and more units, so each carries a smaller slice"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Thirty Rand a Plate, Every Single Plate",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The stand cannot charge R40 or need to charge R20 — the market pays R30. This makes it:",
+          "options": [
+            "A monopoly",
+            "A price taker",
+            "A price maker",
+            "A loss-maker"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Total revenue at 5 plates, at R30 a plate, is:",
+          "options": [
+            "R150",
+            "R120",
+            "R180",
+            "R30"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Why is average revenue R30 at every output level?",
+          "options": [
+            "Because costs are also flat",
+            "Because the stand sells exactly five plates",
+            "Because the money per plate can only be the price charged per plate",
+            "Because R30 is the average of all prices at the rank"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Pictured on a graph with plates along the bottom and rands up the side, marginal revenue for this stand is:",
+          "options": [
+            "A line sloping downwards",
+            "A curve shaped like a tick",
+            "A line sloping upwards",
+            "A flat line lying level at the R30 mark"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Is the Next One Worth Making?",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Plate five brings in R30 and costs R26. The stand should:",
+          "options": [
+            "Make it — it still adds R4",
+            "Refuse it — the cost is too close to the price",
+            "Stop at four plates",
+            "Raise the price to R38"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Plate six brings in R30 and costs R38. Making it would:",
+          "options": [
+            "Add R8 to profit",
+            "Leave profit unchanged",
+            "Take R8 out of the stand's pocket",
+            "Double total revenue"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "At six plates the stand still earns R40 of profit. Why is six still the wrong answer?",
+          "options": [
+            "Because R40 is a loss",
+            "Because six plates cannot be sold",
+            "Because fixed costs rise at six plates",
+            "Because five plates earn R48 — the right question is whether the NEXT one pays, not whether the day is profitable"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Described in words, the marginal cost line in this table:",
+          "options": [
+            "Runs flat at R30 throughout",
+            "Drops from R18 to R10 by the third plate, then swings sharply up through R16, R26 and R38 — a lopsided tick",
+            "Rises in equal steps of R30",
+            "Slopes steadily downwards"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
         }
       ]
     }
