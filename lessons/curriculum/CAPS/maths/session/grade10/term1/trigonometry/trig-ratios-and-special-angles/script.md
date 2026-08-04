@@ -1,4 +1,6 @@
-Welcome, student. Today we open the gateway to the largest section of Paper 2: trigonometry. Two exam tasks will carry the whole lesson. First, without a calculator, evaluate sine sixty degrees times cosine thirty degrees, minus tangent forty-five degrees. Second, solve for the angle x in a right-angled triangle whose hypotenuse is thirteen and whose side opposite x is five. Ratios, special angles, and the inverse move — the complete starter kit.
+# Part 1 — Expert
+
+This session builds the gateway to the largest section of Paper 2: trigonometry. Two exam tasks carry the whole lesson. First, without a calculator, evaluate sine sixty degrees times cosine thirty degrees, minus tangent forty-five degrees. Second, solve for the angle x in a right-angled triangle whose hypotenuse is thirteen and whose side opposite x is five. Ratios, special angles, and the inverse move — the complete starter kit.
 
 ## Subtopic: The Three Ratios and SOH CAH TOA
 
@@ -9,6 +11,8 @@ Now the definitions, the heart of all trigonometry. Sine of theta equals opposit
 But why do these ratios deserve names at all? Here is the deep fact: in any right-angled triangle with the same angle theta, these ratios come out IDENTICAL, no matter how large or small the triangle is. Double every side and the ratio five over thirteen is ten over twenty-six — unchanged. Similar triangles guarantee it. So sine of thirty degrees is a fixed number of the universe, not a property of one drawing. That constancy is what lets your calculator store the values, and what lets engineers, surveyors and astronomers compute unreachable distances from a known angle.
 
 One discipline before we move: the labels opposite and adjacent belong to the ANGLE, not to the triangle. Switch your attention to the other acute angle and the opposite and adjacent sides swap places. Always re-label after choosing your angle — mislabeling is the root of most trig errors in Grade 10.
+
+This section's questions are with you now: the three definitions stated exactly, the hypotenuse identified independently of any angle, and the reason a ratio belongs to the angle rather than to one particular drawing.
 
 ## Subtopic: The Special Angles — Values Without a Calculator
 
@@ -24,6 +28,8 @@ The expression: three quarters minus one, which is minus one quarter.
 
 Two habits shown there worth naming. Surds multiplied cleanly — root three times root three is exactly three, no decimals, no rounding. And a negative final answer left proudly as a fraction: minus one quarter. Exam answers without calculators are exact answers; decimals are the enemy of exactness.
 
+Work this section's questions before continuing — the two special triangles rebuilt from scratch, the six values read off them, and the product of sine sixty and cosine thirty carried through in exact form.
+
 ## Subtopic: Finding the Angle — the Inverse Move
 
 Now the triangle problem: hypotenuse thirteen, the side opposite our unknown angle x is five. Find x.
@@ -37,6 +43,8 @@ Step three: x equals inverse sine of five over thirteen. Calculator — in DEGRE
 Step four: verify with sense checks, two of them. First: five over thirteen is a smallish ratio — less than half — and sine thirty is exactly a half, so our angle should be smaller than thirty degrees. Twenty-two comma six: consistent. Second: this is the famous five, twelve, thirteen triangle — twelve squared plus five squared is one hundred and sixty-nine, thirteen squared. The third side is twelve, so the other acute angle should be inverse sine of twelve over thirteen, about sixty-seven comma four degrees — and indeed twenty-two comma six plus sixty-seven comma four is ninety. The triangle closes perfectly.
 
 Understand the inverse as a question-flip. Sine answers: "given the angle, what is the ratio?" Inverse sine answers: "given the ratio, what was the angle?" Same relationship, opposite direction — like the reverse substitution you have met elsewhere in mathematics: same machine, driven backwards.
+
+The questions for this section are in front of you now: the correct ratio selected from the given sides, the inverse applied in the right direction, and both sense checks used to defend the answer.
 
 ## Subtopic: Choosing the Right Ratio — and the Complete Method
 
