@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 4 Ω resistor and an 8 Ω resistor are connected in series across a 12 V battery. Calculate the total resistance, the current, and the potential difference across each resistor, and state the two rules that govern a series circuit.",
+      "expected_answer": "Resistances in series add: Rs = R1 + R2 = 4 Ω + 8 Ω = 12 Ω. Ohm's law gives the current: I = V/R = 12 V ÷ 12 Ω = 1 A, and because there is only one path this same 1 A flows through both resistors. The potential differences follow from V = IR: V1 = 1 A × 4 Ω = 4 V and V2 = 1 A × 8 Ω = 8 V, and 4 V + 8 V = 12 V, the full emf. The two rules are: the current is the same everywhere in a series circuit, and the potential differences add up to the emf, divided in proportion to the resistances."
+    },
+    {
+      "id": "cc2",
+      "question": "The same 4 Ω and 8 Ω resistors are now connected in parallel across the same 12 V battery. Calculate the total resistance, the branch currents and the total current, and explain why the total resistance is smaller than either resistor.",
+      "expected_answer": "The reciprocals add: 1/Rp = 1/4 + 1/8 = 2/8 + 1/8 = 3/8, so Rp = 8/3 = 2,67 Ω — remembering to invert the fraction at the end. Both branches lie between the same two junctions, so each has the full 12 V across it: I1 = 12 V ÷ 4 Ω = 3 A and I2 = 12 V ÷ 8 Ω = 1,5 A. The branch currents add to the total: 3 A + 1,5 A = 4,5 A, which also equals 12 V ÷ 2,67 Ω. The total is smaller than either resistor because each extra branch gives the charge another route, so the combination opposes flow less than any single path — the parallel total is always below the smallest branch resistance."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the plugs and lights in a South African home are wired in parallel rather than in series, and describe the consequence of that choice when many appliances are switched on at once.",
+      "expected_answer": "In parallel every appliance sits on its own branch between the same two supply points, so each one receives the full 230 V supply regardless of what else is switched on, and each can be switched independently — breaking one branch leaves the others working, whereas in series one break or one blown globe would stop everything and every appliance would receive only a share of the voltage. The consequence is that each appliance switched on is an extra parallel path, so the total resistance of the house circuit falls and the total current drawn rises. That is why an overloaded multiplug overheats and why the circuit breaker in the distribution board trips — it is protecting the wiring from the current that parallel wiring allows to build up. Wall switches and circuit breakers are deliberately placed in series, because there a single break must stop everything."
+    }
+  ]
+}

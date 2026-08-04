@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What a Circuit Actually Moves — Charge, Energy and Resistance",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Which statement defines potential difference correctly?",
+          "options": [
+            "The rate of flow of charge past a point",
+            "The work done per unit charge, V = W/Q, measured in joules per coulomb",
+            "The opposition a conductor offers to charge flow",
+            "The total charge stored in a battery"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A potential difference of 12 V across a resistor means that:",
+          "options": [
+            "12 coulombs pass through it every second",
+            "the resistor has a resistance of 12 Ω",
+            "every coulomb of charge passing through it transfers 12 joules of energy",
+            "12 joules of charge are destroyed in the resistor"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "How must an ammeter and a voltmeter be connected?",
+          "options": [
+            "Ammeter in series (low resistance); voltmeter in parallel with the component (high resistance)",
+            "Both in series with the component",
+            "Ammeter in parallel (high resistance); voltmeter in series (low resistance)",
+            "Both in parallel with the battery"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Why does a battery go flat even though the charge circulating in the circuit is never used up?",
+          "options": [
+            "The coulombs slowly leak out of the wires",
+            "Resistance destroys charge as heat",
+            "The current gradually turns into voltage",
+            "The chemical potential energy that lifts each coulomb's energy is finite; the energy is spent in the resistors as heat and light"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Ohm's Law and the Series Circuit — One Path, Shared Current",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "A 4 Ω and an 8 Ω resistor are connected in series to a 12 V battery. What is the total resistance and the current?",
+          "options": [
+            "2,67 Ω and 4,5 A",
+            "12 Ω and 1 A",
+            "12 Ω and 12 A",
+            "32 Ω and 0,375 A"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In that series circuit, the potential differences across the 4 Ω and 8 Ω resistors are:",
+          "options": [
+            "6 V and 6 V",
+            "12 V and 12 V",
+            "4 V and 8 V",
+            "8 V and 4 V"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The current in a series circuit is:",
+          "options": [
+            "the same at every point, because there is only one path for charge",
+            "shared between the resistors in proportion to their resistance",
+            "largest just after the battery and smallest just before it",
+            "used up as it passes through each resistor"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Adding a third resistor in series to an existing series circuit will:",
+          "options": [
+            "raise the current everywhere",
+            "leave the current unchanged",
+            "raise the total resistance and lower the current everywhere",
+            "lower the total resistance below the smallest resistor"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Parallel Circuit — Shared Potential Difference, Divided Current",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The 4 Ω and 8 Ω resistors are now connected in parallel across the same 12 V battery. The total resistance is:",
+          "options": [
+            "12 Ω",
+            "0,375 Ω",
+            "6 Ω",
+            "2,67 Ω"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The currents in the 4 Ω and 8 Ω branches, and the total current, are:",
+          "options": [
+            "3 A, 1,5 A and 4,5 A",
+            "1,5 A, 3 A and 4,5 A",
+            "1 A, 1 A and 2 A",
+            "0,5 A, 0,25 A and 0,75 A"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The potential difference across each of two resistors connected in parallel across a 12 V battery is:",
+          "options": [
+            "12 V across each, because both branches lie between the same two junctions",
+            "6 V across each, because the 12 V is shared equally",
+            "8 V and 4 V, split in proportion to the resistances",
+            "0 V, because the branches cancel"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Why is the total resistance of a parallel combination always less than the smallest branch resistance?",
+          "options": [
+            "Because the reciprocals cancel out",
+            "Because the branches share the current so each one heats less",
+            "Because each extra branch gives the charge another path to flow through, so the combination opposes flow less than any single path",
+            "Because the potential difference is divided between the branches"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Series Against Parallel — the Rules, the Traps and the Wiring in Your Walls",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A learner calculates 1/Rp = 3/8 and writes the answer as 0,375 Ω. What went wrong?",
+          "options": [
+            "Nothing — 0.375 Ω is correct",
+            "The reciprocals should have been multiplied",
+            "The 12 V should have been divided by 8 first",
+            "The answer 3/8 is the reciprocal of the resistance; it must be inverted to give 8/3 = 2,67 Ω"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Which pairing of rules is correct?",
+          "options": [
+            "Series: same current, potential differences add, resistances add. Parallel: same potential difference, currents add, reciprocals add",
+            "Series: same potential difference, currents add. Parallel: same current, potential differences add",
+            "Series: reciprocals add. Parallel: resistances add",
+            "Both patterns share the current equally between components"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Household plugs and lights are wired in parallel mainly because:",
+          "options": [
+            "parallel wiring uses less copper",
+            "each appliance receives the full supply voltage, and switching one off leaves the others working",
+            "parallel wiring draws less total current",
+            "parallel wiring prevents the circuit breaker from ever tripping"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Switching on more appliances in a home has what effect on the circuit as a whole?",
+          "options": [
+            "The total resistance rises and the total current falls",
+            "Neither the total resistance nor the current changes",
+            "The total resistance falls and the total current rises, which is why an overloaded multiplug overheats and a breaker trips",
+            "Each appliance receives a smaller share of the 230 V"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "One Road Through Town",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the one-road picture, what does the battery actually hand out?",
+          "options": [
+            "New taxis, which are used up along the route",
+            "A full load of energy to every bit of charge that passes through it",
+            "Resistance, which slows the traffic",
+            "Extra roads for the traffic to use"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "On a single road with a 4 Ω rough patch and an 8 Ω rough patch, the traffic flow is:",
+          "options": [
+            "the same at every point on the route",
+            "biggest at the smooth patch and smallest at the rough patch",
+            "halved by each rough patch",
+            "zero after the second patch"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "On that single road with 12 volts driving it, the energy split across the two patches is:",
+          "options": [
+            "12 V at each patch",
+            "6 V and 6 V",
+            "4 V at the 4 Ω patch and 8 V at the 8 Ω patch, adding back to 12 V",
+            "8 V at the 4 Ω patch and 4 V at the 8 Ω patch"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two Roads, Two Queues",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "When the road splits into a 4 Ω route and an 8 Ω route between the same two corners, the voltage drop on each route is:",
+          "options": [
+            "the full 12 V on both routes",
+            "6 V on each route",
+            "8 V on one and 4 V on the other",
+            "It depends on how many taxis choose each route"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "How does the traffic split between the two routes?",
+          "options": [
+            "Equally, 2,25 A each",
+            "3 A on the 4 Ω route and 1,5 A on the 8 Ω route — the easier road is the busier one",
+            "1,5 A on the 4 Ω route and 3 A on the 8 Ω route",
+            "All of it takes the 8 Ω route"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The 'upside-down sum' for the two roads gives three-eighths. What must you do next?",
+          "options": [
+            "Multiply by 12 to get the resistance",
+            "Nothing — 3/8 Ω is the combined roughness",
+            "Flip it back the right way up: 8/3, which is 2,67 Ω",
+            "Add it to the 4 Ω and 8 Ω"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A learner's parallel total comes out bigger than the smallest branch. What is the surest diagnosis?",
+          "options": [
+            "The battery voltage was wrong",
+            "The branches must have been in series after all",
+            "The current was calculated before the resistance",
+            "The fraction was never flipped back the right way up"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Why Your House Is Wired the Clever Way",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "What would go wrong if a house were wired as one single loop?",
+          "options": [
+            "Every appliance would draw too much current",
+            "Appliances would share the voltage so all run weakly, and switching one off — or one globe blowing — would kill everything",
+            "The total resistance would drop dangerously low",
+            "The lights would each get the full 230 V but the plugs would not"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Which components in a home are deliberately connected in series?",
+          "options": [
+            "The plug points and the lights",
+            "The geyser and the fridge",
+            "The wall switch and the circuit breaker with the circuit they control",
+            "Nothing in a house is ever in series"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The same 4 Ω and 8 Ω resistors on the same 12 V battery gave 1 A in series and 4,5 A in parallel. The lesson is that:",
+          "options": [
+            "resistors behave differently when they are warm",
+            "the battery is stronger in parallel circuits",
+            "current always increases with time",
+            "the connection pattern, not the components, decides the total resistance and therefore the current"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}
