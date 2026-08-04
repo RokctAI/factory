@@ -32,12 +32,12 @@
           "id": "subtopic_1_q3",
           "question": "Closely packed isobars on a synoptic chart indicate:",
           "options": [
-            "Strong winds due to a steep pressure gradient",
             "Calm conditions",
             "Heavy rainfall",
-            "High temperatures"
+            "High temperatures",
+            "Strong winds due to a steep pressure gradient"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         }
       ]
@@ -63,11 +63,11 @@
           "question": "Air temperature 18 °C, dew point 16 °C. What does the small gap tell you?",
           "options": [
             "The air is very dry",
-            "The air is nearly saturated — humid, with condensation or rain close at hand",
             "Frost is likely tonight",
-            "The station is at high altitude"
+            "The station is at high altitude",
+            "The air is nearly saturated — humid, with condensation or rain close at hand"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
@@ -75,11 +75,11 @@
           "question": "A wind shaft flying into the circle from the north-west with two full feathers represents:",
           "options": [
             "A south-easterly wind at 2 knots",
-            "A north-westerly wind at 20 knots",
             "A north-westerly wind at 2 knots",
+            "A north-westerly wind at 20 knots",
             "A wind blowing toward the north-west at 10 knots"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
@@ -104,12 +104,12 @@
           "id": "subtopic_3_q1",
           "question": "On a synoptic chart a cold front is drawn as a line with:",
           "options": [
-            "Semicircles pointing backwards",
             "Triangles pointing in the direction the front is moving",
+            "Semicircles pointing backwards",
             "Crosses along its length",
             "A double dashed line"
           ],
-          "correct_index": 1,
+          "correct_index": 0,
           "time_limit_seconds": 30
         },
         {
@@ -117,11 +117,11 @@
           "question": "South African cold fronts typically approach from the:",
           "options": [
             "North-east",
-            "South-west",
             "North",
+            "South-west",
             "East"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
@@ -141,11 +141,11 @@
           "question": "Which station-model reading is the classic PRE-frontal picture ahead of a South African cold front?",
           "options": [
             "Cold south-westerly wind with clearing skies",
-            "Warm, humid north-westerly flow with thickening cloud",
             "Calm easterly wind with frost",
-            "Dry air with a 20-degree dew point gap"
+            "Dry air with a 20-degree dew point gap",
+            "Warm, humid north-westerly flow with thickening cloud"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 45
         }
       ]
@@ -183,23 +183,185 @@
           "question": "After the front passes, atmospheric pressure at the station:",
           "options": [
             "Keeps falling",
-            "Rises as the low moves away and the next high builds in",
             "Stays exactly constant",
+            "Rises as the low moves away and the next high builds in",
             "Oscillates wildly for days"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_4_q4",
           "question": "The lesson's exam method insists that answers be given 'in observations, not vibes'. This means:",
           "options": [
-            "Quoting the numbers, naming the wind directions, citing the symbols as evidence",
             "Writing longer paragraphs",
             "Describing how the weather feels emotionally",
-            "Avoiding all numbers in your answer"
+            "Avoiding all numbers in your answer",
+            "Quoting the numbers, naming the wind directions, citing the symbols as evidence"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Highs, Lows and Which Way the Air Is Going",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In a high-pressure cell the air is:",
+          "options": [
+            "Rising and cooling",
+            "Standing completely still",
+            "Blowing straight upward",
+            "Sinking, being squashed and warming"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In the kettle comparison, why is the steam invisible right at the spout and visible a few centimetres higher?",
+          "options": [
+            "It has risen and cooled, so its moisture condenses into visible cloud",
+            "The spout blocks the light",
+            "The kettle is dirty",
+            "It has sunk and warmed"
           ],
           "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Isobars squeezed close together mean:",
+          "options": [
+            "A steep pressure landscape, so the air runs down it fast — strong wind",
+            "A gentle breeze",
+            "Rain is guaranteed",
+            "The chart is wrong"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Which two-word pairs summarise the pressure cells correctly?",
+          "options": [
+            "Sink, rain; rise, clear",
+            "Sink, wind; rise, calm",
+            "Sink, clear; rise, rain",
+            "Sink, cold; rise, hot"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Little Circle That Holds a Whole Weather Report",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "If the sky is cut into eight slices and six of them hold cloud, the station circle is:",
+          "options": [
+            "Left empty",
+            "Shaded two-eighths",
+            "Shaded six-eighths",
+            "Drawn with a cross"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "A cold cooldrink bottle 'sweats' on a summer day because:",
+          "options": [
+            "The bottle leaks",
+            "The air touching the cold glass is cooled to its dew point and gives up its moisture",
+            "The drink is fizzy",
+            "The glass is warmer than the air"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Temperature 25 °C with a dew point of 5 °C describes air that is:",
+          "options": [
+            "Nearly saturated, with rain likely",
+            "About to produce mist",
+            "Very dry — it must cool 20 degrees before anything condenses",
+            "Colder than the ground"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A shaft with two full feathers flying in from the north-west tells you:",
+          "options": [
+            "The wind blows toward the north-west at 2 knots",
+            "A northerly wind at 10 knots",
+            "The station recorded 2 mm of rain",
+            "A north-westerly wind at 20 knots, about 37 km/h"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Before, During and After the Cold Front",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Why does the cold air slide UNDER the warm air at a front?",
+          "options": [
+            "Because cold air is heavier than warm air",
+            "Because warm air is heavier",
+            "Because the ground pushes it down",
+            "Because the wind changes direction"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "In the 'three witnesses' test, a station reporting a south-westerly wind tells you:",
+          "options": [
+            "The front has already passed",
+            "The front is still on its way",
+            "There is no front nearby",
+            "The front is directly overhead"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which set of readings says 'the front is still coming'?",
+          "options": [
+            "8 °C, south-westerly wind, pressure rising",
+            "Clear sky, easterly wind, pressure steady",
+            "Cold and showery with clearing skies",
+            "18 °C, north-westerly wind, thickening cloud, pressure falling"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "After a front sweeps the Cape, when does the same cold air usually reach Bloemfontein and Gauteng?",
+          "options": [
+            "At the same moment",
+            "A day or two later, as a cold snap",
+            "Never — fronts stop at the coast",
+            "A week earlier"
+          ],
+          "correct_index": 1,
           "time_limit_seconds": 30
         }
       ]
