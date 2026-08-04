@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between a number scale and a bar scale, and say why a builder trusts the bar scale on a photocopied plan.",
+      "expected_answer": "A number scale is a ratio such as 1 : 50, meaning one unit on the drawing represents fifty of the same units in reality, so on a 1 : 50 plan 1 cm stands for 50 cm, or 0,5 m; the units must be identical on both sides of the ratio. A bar scale is a small ruler printed on the drawing itself, divided into segments each labelled with the real distance it represents — on this plan each 2 cm segment stands for 1 m, which is the same relationship as 1 : 50. The ratio is only a promise about the page at its original size, so photocopying at 80 percent or viewing on a phone quietly makes it false. The bar scale is printed on the page and shrinks or stretches with it, so it remains true at any size, which is why builders measure against the bar and treat the ratio as a label."
+    },
+    {
+      "id": "cc2",
+      "question": "A bedroom measures 8,4 cm by 6,0 cm on a 1 : 50 plan. Find its real dimensions and work out the cost of carpet at R189,00/m² and skirting at R42,00/m, allowing for a 0,9 m doorway.",
+      "expected_answer": "Going from plan to reality you multiply by the scale: 8,4 × 50 = 420 cm = 4,20 m, and 6,0 × 50 = 300 cm = 3,00 m, with the unit written on every line. Carpet covers the floor, so it needs AREA: 4,20 × 3,00 = 12,6 m², and 12,6 × R189,00 = R2 381,40. Skirting runs around the edge of the floor, so it needs PERIMETER, not area: 2 × (4,20 + 3,00) = 14,4 m. No skirting crosses the doorway, so subtract 0,9 m to get 13,5 m, and 13,5 × R42,00 = R567,00. Choosing area for the carpet and perimeter for the skirting is the decision the marks are really testing."
+    },
+    {
+      "id": "cc3",
+      "question": "State what a floor plan shows that an elevation cannot, and what an elevation shows that a floor plan cannot. Then use both to find the wall area of the new room.",
+      "expected_answer": "A floor plan is the view from directly above with the roof lifted off, so it shows layout: the arrangement of rooms, floor areas, wall thicknesses, the position of doors and windows along a wall, and how spaces connect. An elevation is a straight-on view of one side with no perspective, so it shows heights: wall height, the shape and slope of the roof, how far above the floor a window sits, steps and gutters. Neither drawing is complete alone, and combining them is what a full question asks. The floor plan gives the perimeter, 2 × (4,20 + 3,00) = 14,4 m, and the elevation gives the wall height, 2,4 m, so the wall surface is 14,4 × 2,4 = 34,56 m². Subtracting the door (0,9 × 2,1 = 1,89 m²) and the window (1,2 × 1,2 = 1,44 m²) leaves 31,23 m² of wall to be plastered or painted."
+    }
+  ]
+}

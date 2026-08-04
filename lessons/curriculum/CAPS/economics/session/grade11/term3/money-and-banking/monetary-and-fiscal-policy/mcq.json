@@ -21,11 +21,11 @@
           "question": "The SARB's inflation target band is:",
           "options": [
             "0% to 3%",
-            "3% to 6%",
             "6% to 9%",
-            "2% exactly"
+            "2% exactly",
+            "3% to 6%"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 30
         },
         {
@@ -44,12 +44,12 @@
           "id": "subtopic_1_q4",
           "question": "A policy that deliberately slows down spending in the economy is called:",
           "options": [
-            "Expansionary",
             "Contractionary",
+            "Expansionary",
             "Distributive",
             "Neutral"
           ],
-          "correct_index": 1,
+          "correct_index": 0,
           "time_limit_seconds": 30
         }
       ]
@@ -74,12 +74,12 @@
           "id": "subtopic_2_q2",
           "question": "With inflation above the target band, the SARB is most likely to:",
           "options": [
-            "Raise the repo rate",
             "Lower the repo rate",
             "Increase government spending",
+            "Raise the repo rate",
             "Reduce VAT"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
@@ -99,11 +99,11 @@
           "question": "What honest trade-off comes with raising the repo rate to fight inflation?",
           "options": [
             "It weakens the SARB's independence",
-            "It cools growth and can cost jobs in the short run",
             "It automatically raises government debt",
-            "There is no trade-off"
+            "There is no trade-off",
+            "It cools growth and can cost jobs in the short run"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 30
         }
       ]
@@ -129,23 +129,23 @@
           "question": "To fight inflation using fiscal policy, the government would:",
           "options": [
             "Increase spending and cut taxes",
-            "Reduce spending growth and/or raise taxes",
             "Lower the repo rate",
-            "Print more money"
+            "Print more money",
+            "Reduce spending growth and/or raise taxes"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_3_q3",
           "question": "'The Minister of Finance raises the repo rate to fight inflation.' What is wrong with this statement?",
           "options": [
-            "The repo rate cannot fight inflation",
             "The repo rate is controlled by the SARB, not the minister",
+            "The repo rate cannot fight inflation",
             "Inflation is fought only with taxes",
             "Nothing — the statement is correct"
           ],
-          "correct_index": 1,
+          "correct_index": 0,
           "time_limit_seconds": 45
         },
         {
@@ -153,11 +153,11 @@
           "question": "In a recession, expansionary fiscal policy would involve:",
           "options": [
             "Higher taxes and lower spending",
-            "Increased government spending and/or tax cuts",
             "Raising the repo rate",
+            "Increased government spending and/or tax cuts",
             "Reducing social grants"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 30
         }
       ]
@@ -183,11 +183,11 @@
           "question": "Who feels a repo rate increase first?",
           "options": [
             "Exporters",
-            "Borrowers — households with home loans and indebted firms",
             "People with no debt",
+            "Borrowers — households with home loans and indebted firms",
             "Foreign tourists"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
@@ -195,11 +195,173 @@
           "question": "What happens if the SARB tightens while the government spends freely?",
           "options": [
             "Inflation falls twice as fast",
-            "The policies work against each other, and the SARB may need to tighten even harder",
             "The repo rate stops working entirely",
-            "The budget automatically balances"
+            "The budget automatically balances",
+            "The policies work against each other, and the SARB may need to tighten even harder"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Drivers, Two Different Steering Wheels",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Using the 'whose hand is on it?' test, a rise in VAT is:",
+          "options": [
+            "Monetary policy, because it affects prices",
+            "Fiscal policy — VAT belongs to the Budget, and the Budget is the Minister's",
+            "Neither, because VAT is collected by shops",
+            "Monetary policy, because the SARB approves it"
           ],
           "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In the balloon picture, which move lets air OUT of the economy?",
+          "options": [
+            "Cutting income tax",
+            "Increasing social grants",
+            "Raising taxes and cutting government spending",
+            "Lowering the repo rate"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Why does it matter that the Reserve Bank is independent?",
+          "options": [
+            "It can make an unpopular decision without waiting for political approval",
+            "It means the Bank pays no taxes",
+            "It means the Bank sets the Budget",
+            "It allows the Bank to print unlimited money"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The Reserve Bank's job, put simply, is to look after:",
+          "options": [
+            "The government's spending plans",
+            "The profits of the commercial banks",
+            "The number of people employed by the state",
+            "What your money is worth — keeping inflation inside the 3% to 6% band"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "How One Number in Pretoria Reaches Your Street",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The repo rate is the rate charged when:",
+          "options": [
+            "You borrow from your bank for a car",
+            "A shop offers a store card",
+            "The Reserve Bank lends to the commercial banks",
+            "The government borrows abroad"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Told as a story, which order is correct?",
+          "options": [
+            "Repo up, prime up, loans dearer, spending pulls in, price rises slow down",
+            "Repo up, taxes up, spending up, inflation up",
+            "Repo up, prime down, borrowing rises, inflation falls",
+            "Repo up, grants up, spending falls, prices fall"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Why does a family's bond repayment rise after a repo increase?",
+          "options": [
+            "The government adds a levy to home loans",
+            "The bank's own borrowing costs more, so it raises the prime lending rate it charges customers",
+            "House prices rise automatically",
+            "The SARB collects the extra directly"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "What is the honest cost of using the repo rate to cool inflation?",
+          "options": [
+            "There is no cost — it only affects banks",
+            "It weakens the rand permanently",
+            "It automatically raises taxes",
+            "Growth slows and some jobs are lost in the short run, and borrowers feel it before anyone else"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Budget's Two Taps — Fast Tool, Slow Tool",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The Minister of Finance's two taps are:",
+          "options": [
+            "The repo rate and the prime rate",
+            "Government spending and taxation",
+            "Imports and exports",
+            "Wages and profits"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "'The Minister of Finance raises the repo rate to fight inflation.' What is wrong?",
+          "options": [
+            "Nothing — the statement is correct",
+            "Inflation cannot be fought with interest rates",
+            "The wrong hand is on the lever: the repo rate belongs to the Reserve Bank",
+            "Only VAT can fight inflation"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which sentence captures the fast-versus-aimed comparison?",
+          "options": [
+            "Both tools are equally fast and equally aimed",
+            "Fiscal policy is fast and blunt; monetary policy is slow and aimed",
+            "Only fiscal policy can fight inflation",
+            "Monetary policy is fast but blunt — it hits every borrower; fiscal policy is slower but can be aimed at a tax, a programme or a province"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "If the Reserve Bank tightens while government keeps spending freely:",
+          "options": [
+            "The two work against each other, and the Bank usually has to tighten harder",
+            "Inflation falls twice as fast",
+            "The repo rate stops working",
+            "The Budget balances automatically"
+          ],
+          "correct_index": 0,
           "time_limit_seconds": 45
         }
       ]

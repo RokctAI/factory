@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Scale from 0 to 1 and Three Ways to Say It",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Every probability must lie:",
+          "options": [
+            "Between 0 and 1 inclusive",
+            "Between 0 and 100 inclusive",
+            "Between −1 and 1",
+            "Above 0,5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The jar holds 12 red, 8 green and 5 yellow sweets. P(red) as a decimal is:",
+          "options": [
+            "0,12",
+            "0,25",
+            "0,48",
+            "0,52"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The SAMPLE SPACE of an activity is:",
+          "options": [
+            "The result you are hoping for",
+            "The complete list of possible outcomes",
+            "The number of trials carried out",
+            "The most likely outcome"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "P(not red) from the same jar is quickest to find by:",
+          "options": [
+            "Counting green and yellow one by one",
+            "Dividing 12 by 13",
+            "Multiplying 0,48 by 2",
+            "Taking 1 − 0,48 = 0,52, because an event and its complement add to 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Theoretical Probability and Relative Frequency",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "128 of 200 counted taxis head for town. This 0,64 is an example of:",
+          "options": [
+            "Relative frequency, worked out from what actually happened",
+            "Theoretical probability, worked out by reasoning",
+            "A complementary event",
+            "An impossible event"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Theoretical probability can only be used when:",
+          "options": [
+            "At least 200 trials have been recorded",
+            "The event has already happened",
+            "All outcomes are equally likely",
+            "The answer is a whole percentage"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "28 heads in 50 tosses gives a relative frequency of 0,56. This shows that:",
+          "options": [
+            "The coin is loaded",
+            "The theoretical probability must be 0,56",
+            "Probability does not work on coins",
+            "Small samples wander; larger samples settle towards the theoretical 0,5"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "After three heads in a row, the probability of heads on the next toss is:",
+          "options": [
+            "Less than 0,5, because tails is due",
+            "0,5, because each toss is independent and the coin has no memory",
+            "0,125",
+            "More than 0,5, because heads is running hot"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Two-Way Tables — Probability from Real Data",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Of 200 patients, 120 came by taxi. P(taxi) is:",
+          "options": [
+            "0,60",
+            "0,37",
+            "0,40",
+            "0,62"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "74 patients were both under 30 AND came by taxi. P(under 30 and taxi) is:",
+          "options": [
+            "74 out of 120 = 0,617",
+            "74 out of 200 = 0,37",
+            "74 out of 80 = 0,925",
+            "120 out of 200 = 0,60"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "\"Of the patients under 30, what proportion came by taxi?\" uses which denominator?",
+          "options": [
+            "200, the grand total",
+            "80, the number aged 30 and over",
+            "120, the number of under-30s",
+            "74, the cell value"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "What should you check before using any two-way table?",
+          "options": [
+            "That the rows are in alphabetical order",
+            "That every cell is larger than 10",
+            "That percentages have been given",
+            "That the row and column totals add to the grand total"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Tree Diagrams and Fair Games",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Tossing two coins gives how many equally likely outcomes?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "6"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The rule for finding the probability of a two-stage path on a tree is to:",
+          "options": [
+            "Multiply along the branches",
+            "Add along the branches",
+            "Subtract the smaller from the larger",
+            "Divide the first stage by the second"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "At R5,00 a play with a R15,00 prize for two heads, over 100 plays the stall:",
+          "options": [
+            "Breaks even exactly",
+            "Loses R125,00",
+            "Loses R375,00",
+            "Keeps R125,00 — R500,00 in against R375,00 out"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The prize that would make the two-coin game fair is:",
+          "options": [
+            "R15,00",
+            "R20,00",
+            "R25,00",
+            "R10,00"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "From Never to Always — Where Your Words Sit",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "An answer of 1,4 for a probability tells you that:",
+          "options": [
+            "The event is very likely indeed",
+            "You have made a mistake, because nothing exceeds 1",
+            "The answer should be written as 140%",
+            "The event is certain"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "12 out of 25 written as a percentage is:",
+          "options": [
+            "12%",
+            "25%",
+            "52%",
+            "48%"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Which word signals that you should reach for the complement?",
+          "options": [
+            "\"Not\" or \"at least one\"",
+            "\"Both\"",
+            "\"Exactly\"",
+            "\"Total\""
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Counting Instead of Guessing",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Why can the taxi question NOT be answered by theory alone?",
+          "options": [
+            "Because taxis are too numerous to count",
+            "Because the destinations are not equally likely, so the answer has to be observed",
+            "Because theory only works on coins and dice",
+            "Because 200 is too small a sample"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Of the 80 patients aged 30 and over, 46 came by taxi. That proportion is about:",
+          "options": [
+            "37%",
+            "62%",
+            "57%",
+            "60%"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The question to ask before writing any probability fraction is:",
+          "options": [
+            "\"Out of whom?\"",
+            "\"Is it a percentage?\"",
+            "\"How many trials?\"",
+            "\"Which is bigger?\""
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "\"The more you try, the closer the counting gets to the thinking\" describes:",
+          "options": [
+            "The complement rule",
+            "The idea that trees replace tables",
+            "Relative frequency approaching theoretical probability as trials increase",
+            "The gambler's belief that results even out"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Is the Game Fair?",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Why must HT and TH be listed separately?",
+          "options": [
+            "Because the tree has an odd number of branches",
+            "Because heads is more likely than tails",
+            "Because the prize differs for each",
+            "Because they are different coins, so they are two different ways the toss can turn out"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The probability of one head and one tail (in any order) is:",
+          "options": [
+            "0,5, because two of the four outcomes give it",
+            "0,25",
+            "0,333",
+            "0,75"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "A FAIR game is one in which:",
+          "options": [
+            "Everyone gets a prize eventually",
+            "Money in equals money out in the long run, so neither side expects to gain",
+            "The stall makes only a small profit",
+            "The rules are clearly displayed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The three questions to ask of any game of chance are:",
+          "options": [
+            "Who runs it, where is it, and how long does it take",
+            "How many players, how many prizes, and how big is the queue",
+            "What does it cost, what fraction win, and what is the prize",
+            "Is it legal, is it popular, and is it fun"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

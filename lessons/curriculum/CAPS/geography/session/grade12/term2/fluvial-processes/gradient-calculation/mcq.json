@@ -86,12 +86,12 @@
           "id": "subtopic_2_q4",
           "question": "Which two map symbols provided the exact heights for this calculation?",
           "options": [
-            "A trig beacon and a spot height",
             "Two contour lines",
             "A bench mark and a river",
-            "Two index contours"
+            "Two index contours",
+            "A trig beacon and a spot height"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         }
       ]
@@ -116,12 +116,12 @@
           "id": "subtopic_3_q2",
           "question": "Why does an answer left as '300/4 500' or '0,067' typically lose the final mark?",
           "options": [
-            "The memo requires the answer in the ratio form 1 : x",
             "The values are wrong",
             "Fractions are banned in Geography",
-            "The calculation should use kilometres"
+            "The calculation should use kilometres",
+            "The memo requires the answer in the ratio form 1 : x"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         },
         {
@@ -170,12 +170,12 @@
           "id": "subtopic_4_q2",
           "question": "A learner reports the answer as 15 : 1. What error is this?",
           "options": [
-            "An inverted ratio — the vertical '1 metre of climb' must lead the ratio",
             "A rounding error",
             "A measurement error",
+            "An inverted ratio — the vertical '1 metre of climb' must lead the ratio",
             "It is equivalent and equally correct"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
@@ -194,13 +194,175 @@
           "id": "subtopic_4_q4",
           "question": "Why does a 2 mm measuring error matter on a 1:50 000 map?",
           "options": [
-            "It represents 100 m of real ground, distorting the HE and the final ratio",
             "It changes the vertical interval",
+            "It represents 100 m of real ground, distorting the HE and the final ratio",
             "It does not matter at all",
             "It moves the trig beacon"
           ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Ramp and the Staircase",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The stairs and the parking ramp both reach the same floor. What makes the ramp gentler?",
+          "options": [
+            "It lifts you a smaller height",
+            "You travel much further along for the same height gained",
+            "It is made of concrete",
+            "Ramps have no gradient"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The sugar-in-the-jug picture — one spoon in a cup tastes sweeter than one spoon in a two-litre jug — explains why:",
+          "options": [
+            "1 : 150 is gentler than 1 : 15, because the same 1 m of climb is spread over more walking",
+            "1 : 150 is steeper than 1 : 15",
+            "Gradients must always be written as decimals",
+            "Sugar affects map reading"
+          ],
           "correct_index": 0,
           "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "In the plain-language version, the 'up' number and the 'along' number are properly called:",
+          "options": [
+            "Contour interval and map distance",
+            "Altitude and latitude",
+            "The vertical interval and the horizontal equivalent",
+            "Rise and scale factor"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "A slope written as 1 : 20 is saying:",
+          "options": [
+            "You walk 20 m along for every 1 m you climb",
+            "You climb 20 m for every 1 m you walk",
+            "The slope is 20 km long",
+            "The slope rises 20% of the time"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two Numbers Off the Map, Both Speaking Metres",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "A small triangle printed with a station number and a height beside it is:",
+          "options": [
+            "A spot height",
+            "A trig beacon, a surveyed point whose height is exact",
+            "A bench mark on a road",
+            "An index contour"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Beacon 251 stands at 1 200 m and the spot height at 900 m. The 'up' number is found by:",
+          "options": [
+            "Adding them: 2 100 m",
+            "Averaging them: 1 050 m",
+            "Taking the lower from the higher: 300 m",
+            "Multiplying by the scale"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Dividing 300 m by 4,5 km is compared in the lesson to:",
+          "options": [
+            "Working out a price by dividing rands by cents — the answer is out by a thousand and means nothing",
+            "Buying airtime with a bank card",
+            "Adding two heights together",
+            "Measuring a road with string"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Measuring 9 cm between the two points on a 1:50 000 sheet gives the 'along' number as:",
+          "options": [
+            "450 m",
+            "45 000 m",
+            "9 000 m",
+            "4 500 m, after multiplying by 50 000 and stepping down from centimetres"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Share It Out, Then Say It in One Line",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Sharing 4 500 m of walking among 300 m of climbing is like asking:",
+          "options": [
+            "How many R300 vouchers R4 500 buys — the answer is 15",
+            "How much R4 500 grows in a year",
+            "How many metres are in a kilometre",
+            "How steep a staircase is in degrees"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Handing in '0,067' instead of '1 : 15' is compared in the lesson to:",
+          "options": [
+            "Paying with foreign money",
+            "Handing over a fifty-rand note torn in half — the value is there but nobody will take it",
+            "Writing in pencil",
+            "Rounding too early"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which sentence correctly explains what 1 : 15 feels like on the ground?",
+          "options": [
+            "It is nearly flat — a railway would run on it easily",
+            "It rises 15 m for every metre walked, so it is a cliff",
+            "It rises 1 m for every 15 m travelled — properly steep, and gentler than about 1 : 50 is what a railway needs",
+            "It cannot be walked at all"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "If subtracting the heights the wrong way round gives you a negative number, you should:",
+          "options": [
+            "Report the gradient as negative",
+            "Start the whole question again",
+            "Take the size of the difference — steepness does not depend on which point you stand at",
+            "Swap the ratio to 15 : 1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
         }
       ]
     }

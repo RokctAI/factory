@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "An American recipe says to bake at 350 °F. Convert this to degrees Celsius, showing every step, and explain why the order of the steps matters and what oven setting should actually be used.",
+      "expected_answer": "To convert Fahrenheit to Celsius, subtract 32 first, then multiply by 5 and divide by 9. So 350 − 32 = 318; 318 × 5 = 1 590; 1 590 ÷ 9 = 176,67 °C. The order matters because the two scales do not start at the same place — water freezes at 0 °C but at 32 °F — so the 32 must be removed before the scales are stretched by the 5-ninths factor; doing the multiplication first gives a badly wrong answer. In practice an oven dial does not offer 176,67 °C, so the sensible instruction is to set the oven to 180 °C, the nearest available setting. Answering in a sentence with the unit — \"the oven should be set to about 180 °C\" — is what completes the question."
+    },
+    {
+      "id": "cc2",
+      "question": "A wall of 54 m² needs two coats of paint. The label reads: 5 ℓ covers 20 m². Paint is sold in 5 ℓ tins at R429 and 20 ℓ drums at R1 549. Work out what the painter should buy and what it will cost, showing the reasoning.",
+      "expected_answer": "First find the unit rate: 20 m² ÷ 5 ℓ = 4 m² per litre. Then find the total area to cover: 54 m² × 2 coats = 108 m². Paint required = 108 ÷ 4 = 27 ℓ. Because the shop sells only 5 ℓ tins and 20 ℓ drums, the painter must buy at least 30 ℓ. One 20 ℓ drum plus two 5 ℓ tins costs R1 549 + (2 × R429) = R1 549 + R858 = R2 407, while six 5 ℓ tins cost 6 × R429 = R2 574. The painter should buy one 20 ℓ drum and two 5 ℓ tins, at a cost of R2 407, which is R167 cheaper than buying six tins for the same 30 litres."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the direction rule for conversions, both within the metric system and between metric and imperial units, and describe two habits that protect marks in measurement questions.",
+      "expected_answer": "The direction rule rests on the size of the units: converting to a smaller unit gives a larger number, so you multiply, and converting to a larger unit gives a smaller number, so you divide. Within the metric system this means 2,4 km × 1 000 = 2 400 m, and 750 g ÷ 1 000 = 0,75 kg. Between systems the same reasoning applies: a kilogram is heavier than a pound, so 50 kg × 2,2 = 110 pounds, while a bag labelled 33 pounds is 33 ÷ 2,2 = 15 kg. The first mark-protecting habit is to convert before calculating and never during, so that a room given as 4,2 m by 340 cm becomes 4,2 m by 3,4 m before anything is multiplied. The second is to keep the unit attached at every line of working and to sense-check the answer against a real-world anchor, because a marker can credit a correctly converted value only when the unit is visible, and an answer such as a 700 kg person signals an arithmetic slip before it is written down."
+    }
+  ]
+}

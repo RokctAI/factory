@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A plumber charges a R350 call-out fee plus R280 per hour. Identify the independent and dependent variables, write the formula, and calculate the cost of a job that takes 4 hours. Then explain how you know the relationship is linear.",
+      "expected_answer": "The independent variable is the number of hours worked, because that is what is chosen; the dependent variable is the cost of the job, because it follows from the hours. The formula is: Cost in rand = 350 + 280 × number of hours. Substituting 4 hours gives 350 + 280 × 4 = 350 + 1 120 = R1 470, so a four-hour job costs R1 470. The relationship is linear because the difference between consecutive costs is constant: R630, R910, R1 190, R1 470 rise by R280 every time, which is the hourly rate, and a constant difference always produces a straight-line graph that starts above zero at the R350 call-out fee."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how you would decide whether a table of values shows inverse proportion or a constant ratio, using the bakkie-hire and stokvel examples, and describe the shape of each graph.",
+      "expected_answer": "Test the table in a fixed order. For inverse proportion, multiply each input by its output: with R1 800 bakkie hire, 1 × 1 800, 2 × 900, 3 × 600 and 4 × 450 all give R1 800, so the product is constant and the relationship is inverse proportion — cost per person = 1 800 ÷ number of people. For a constant ratio, divide each value by the one before it: R2 160 ÷ R2 000 = 1,08 and R2 332,80 ÷ R2 160 = 1,08, so each year the balance is multiplied by 1,08. The inverse-proportion graph is a curve falling steeply and then flattening, approaching but never touching the axes; the constant-ratio graph is a curve that rises slowly at first and then more and more steeply, which is why savings left untouched grow fastest in the later years."
+    },
+    {
+      "id": "cc3",
+      "question": "A municipality charges R145,00 per month plus R21,50 per kilolitre of water. A household receives a bill of R790,00. Show how to find the water used, state the answer properly, and explain the common error learners make.",
+      "expected_answer": "Work backwards through the rule in reverse order. First subtract the fixed basic charge: R790,00 − R145,00 = R645,00, which is the amount that actually paid for water. Then divide by the rate: R645,00 ÷ R21,50 = 30. Check by substituting forwards: 145 + 21,50 × 30 = 145 + 645 = R790,00, which matches the bill. The answer must be written as a sentence with its unit: the household used 30 kilolitres of water that month. The common error is dividing the whole R790,00 by R21,50, which gives about 36,7 kℓ; that is wrong because it treats the R145,00 basic charge as if it bought water, when it pays for the connection, meter and infrastructure regardless of use."
+    }
+  ]
+}

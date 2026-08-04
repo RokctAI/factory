@@ -8,12 +8,12 @@
           "id": "subtopic_1_q1",
           "question": "15% of R850 is:",
           "options": [
-            "R127,50",
             "R12,75",
             "R85,00",
+            "R127,50",
             "R150,00"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
@@ -32,24 +32,24 @@
           "id": "subtopic_1_q3",
           "question": "The single multiplier for a 15% INCREASE is:",
           "options": [
-            "1,15",
             "0,85",
             "1,5",
+            "1,15",
             "0,115"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_1_q4",
           "question": "Why is the multiplier method preferred over 'find the percentage, then add or subtract'?",
           "options": [
-            "It captures the whole change in one multiplication and handles chained changes cleanly",
             "It avoids using a calculator",
             "It always rounds better",
-            "It is the only method markers accept"
+            "It is the only method markers accept",
+            "It captures the whole change in one multiplication and handles chained changes cleanly"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         }
       ]
@@ -62,36 +62,36 @@
           "id": "subtopic_2_q1",
           "question": "After the 15% discount, the jacket's price is:",
           "options": [
-            "R722,50",
             "R735,00",
+            "R722,50",
             "R127,50",
             "R850,00"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_2_q2",
           "question": "The VAT step must be applied to:",
           "options": [
-            "The discounted price of R722,50 — each step works on the previous result",
             "The original R850",
             "The discount amount of R127,50",
+            "The discounted price of R722,50 — each step works on the previous result",
             "Half of the original price"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_2_q3",
           "question": "The final price of the jacket, after discount then VAT, is:",
           "options": [
-            "R830,88",
             "R850,00",
             "R873,13",
-            "R722,50"
+            "R722,50",
+            "R830,88"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
@@ -116,12 +116,12 @@
           "id": "subtopic_3_q1",
           "question": "The combined multiplier for the whole journey (×0,85 then ×1,15) is:",
           "options": [
-            "0,9775",
             "1,0000",
             "0,7225",
+            "0,9775",
             "1,3225"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
@@ -140,12 +140,12 @@
           "id": "subtopic_3_q3",
           "question": "In the percentage change formula, the denominator is always:",
           "options": [
-            "The original value — the reference point where you started",
             "The new value",
+            "The original value — the reference point where you started",
             "The larger of the two values",
             "100"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 30
         }
       ]
@@ -170,37 +170,199 @@
           "id": "subtopic_4_q2",
           "question": "Why is 'subtract 15%' (×0,85) WRONG for removing VAT from a VAT-inclusive price?",
           "options": [
-            "The VAT was calculated on the before-VAT price, so 15% of the final price is the wrong amount to remove",
             "Because VAT is actually 14%",
+            "The VAT was calculated on the before-VAT price, so 15% of the final price is the wrong amount to remove",
             "It is correct — both methods agree",
             "Because you should subtract 30% instead"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_4_q3",
           "question": "To undo any percentage multiplier, you:",
           "options": [
-            "Divide by that multiplier",
             "Multiply by the same multiplier again",
             "Subtract the multiplier from 1",
+            "Divide by that multiplier",
             "Multiply by 100"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_4_q4",
           "question": "R830,88 ÷ 1,15 returns approximately R722,50. What does this confirm?",
           "options": [
-            "The reverse calculation recovers the discounted pre-VAT price — the whole chain is consistent",
             "The discount was 20%",
             "The original price was R722,50",
-            "VAT was never charged"
+            "VAT was never charged",
+            "The reverse calculation recovers the discounted pre-VAT price — the whole chain is consistent"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Taking Off and Putting On — the One-Button Way",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A shop takes 15% off a price. What percentage of the price is still on the plate?",
+          "options": [
+            "115%",
+            "15%",
+            "85%",
+            "0,15%"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "R850 × 0,85 = R722,50. What does the 0,85 stand for?",
+          "options": [
+            "The R127,50 that came off",
+            "The 85% that is left after 15% comes off",
+            "The VAT rate",
+            "The number of items bought"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A R100 airtime voucher carries a 10% bonus. The one-step calculation is:",
+          "options": [
+            "R100 × 0,10",
+            "R100 × 0,90",
+            "R100 ÷ 1,10",
+            "R100 × 1,10"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Which pair of one-step multipliers matches 'a 15% decrease' and 'a 15% increase'?",
+          "options": [
+            "0,85 and 1,15",
+            "0,15 and 1,15",
+            "1,15 and 0,85",
+            "0,85 and 1,85"
           ],
           "correct_index": 0,
           "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two Fifteens That Refuse to Cancel",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "15% of R850 is R127,50. How much is 15% of R722,50?",
+          "options": [
+            "R127,50",
+            "R108,38",
+            "R95,00",
+            "R135,50"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Why does the jacket end at R830,88 instead of back at R850?",
+          "options": [
+            "The shop rounded the cents down",
+            "VAT in South Africa is only 14%",
+            "The discount was charged twice",
+            "The VAT was worked out on the smaller R722,50, so it added back R19,13 less than the discount removed"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "0,85 × 1,15 = 0,9775. In plain words, the final price is:",
+          "options": [
+            "97,75% MORE than the original",
+            "97,75% of the original — so 2,25% cheaper",
+            "2,25% of the original",
+            "0,9775% of the original"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The jacket dropped R19,13 in total. To turn that into a percentage you divide it by:",
+          "options": [
+            "R830,88, the final price",
+            "R850, the price you started at",
+            "R722,50, the discounted price",
+            "R108,38, the VAT"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Winding the Till Backwards",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "A till slip reads R830,88 including 15% VAT. To find the price before VAT you:",
+          "options": [
+            "Multiply R830,88 by 0,85",
+            "Divide R830,88 by 1,15",
+            "Subtract R15 from R830,88",
+            "Multiply R830,88 by 1,15"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Taking 15% off R830,88 gives R706,25. Why is that the wrong pre-VAT price?",
+          "options": [
+            "It removes 15% of the bigger final price, which is more VAT than was ever charged on the smaller one",
+            "It removes too little money",
+            "The arithmetic was done incorrectly",
+            "It is actually correct"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The VAT got onto the price by multiplying. It comes off again by:",
+          "options": [
+            "Multiplying by the same number again",
+            "Adding the same number",
+            "Dividing by that same number",
+            "Subtracting the number from 1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "R722,50 + R108,38 = R830,88. What are those two amounts?",
+          "options": [
+            "The price before VAT and the VAT charged on it",
+            "The original price and the discount",
+            "The discount and the VAT",
+            "The final price and the change owed"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
         }
       ]
     }

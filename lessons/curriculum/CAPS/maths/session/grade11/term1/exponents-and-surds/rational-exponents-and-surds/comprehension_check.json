@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what x^(p/q) means, state the conditions attached to it, and use the meaning to evaluate 16^(3/4) and 27^(−2/3) without a calculator.",
+      "expected_answer": "x^(p/q) means the q-th root of x^p, equivalently the q-th root of x raised to the power p: the denominator of the exponent gives the root index and the numerator gives the power. CAPS attaches the conditions x > 0 and q > 0, because roots of negative numbers with even indices are non-real and the exponent laws only remain reliable for a positive base. For 16^(3/4), write 16 as 2⁴, so (2⁴)^(3/4) = 2³ = 8; the root route agrees, since the fourth root of 16 is 2 and 2³ = 8. For 27^(−2/3), the negative exponent means the reciprocal, so it equals 1 ÷ 27^(2/3); since 27 = 3³, 27^(2/3) = 3² = 9, giving 1/9. Note that the negative sign inverts the value — it never makes the answer negative."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve 3^(2x) − 10·3^x + 9 = 0 in full, explaining why the substitution works and what must be done with any negative value the substitution produces.",
+      "expected_answer": "The key observation is that 3^(2x) = (3^x)², so the equation is quadratic in the quantity 3^x. Let k = 3^x; the equation becomes k² − 10k + 9 = 0, which factorises to (k − 1)(k − 9) = 0, giving k = 1 or k = 9. Substituting back, 3^x = 1 gives x = 0 because any non-zero base to the power zero equals one, and 3^x = 9 = 3² gives x = 2. The substitution is legal because it is only a renaming of a repeated expression, and equating exponents at the end is legal because an exponential function with base 3 takes each positive value exactly once. If a substitution ever yields a negative value of k, it must be rejected in writing, since 3^x is positive for every real x and no real solution exists for that branch."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve √(x + 7) = x − 5 completely, and explain why every surd equation requires a check while a linear equation does not.",
+      "expected_answer": "Squaring both sides gives x + 7 = x² − 10x + 25, so x² − 11x + 18 = 0, which factorises to (x − 2)(x − 9) = 0, giving x = 2 or x = 9. Both must now be tested in the original equation. At x = 2 the left side is √9 = 3 while the right side is 2 − 5 = −3; the square root symbol denotes the non-negative root, so this value fails and is rejected. At x = 9 the left side is √16 = 4 and the right side is 9 − 5 = 4, so x = 9 is the only solution. The check is compulsory because squaring is not a reversible step: it destroys sign information, so the squared equation is satisfied by values that the original refuses. Linear operations such as adding a number to both sides or multiplying by a non-zero constant are reversible and can never introduce a false solution, which is why no check is needed there."
+    }
+  ]
+}

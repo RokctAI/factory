@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between theoretical probability and relative frequency, using the sweet jar and the taxi count as examples. Then explain why 28 heads in 50 coin tosses does not prove the coin is unfair.",
+      "expected_answer": "Theoretical probability is worked out by reasoning before anything happens: it is favourable outcomes divided by total possible outcomes, and it assumes all outcomes are equally likely — so for the jar of 12 red, 8 green and 5 yellow sweets, the probability of yellow is 5 out of 25, which is 0,2 or 20%. Relative frequency, or experimental probability, is worked out afterwards from what actually happened: the number of times the event occurred divided by the number of trials — 128 of 200 taxis heading for town gives 128 ÷ 200 = 0,64 or 64%. Relative frequency is the only method available when outcomes are not equally likely, as with the taxis. Getting 28 heads in 50 tosses is a relative frequency of 0,56 rather than the theoretical 0,5, but small samples wander; as the number of trials increases, the relative frequency tends towards the theoretical probability, so 5 000 tosses would sit far closer to 0,5."
+    },
+    {
+      "id": "cc2",
+      "question": "A clinic surveyed 200 patients: of the 120 under 30, 74 came by taxi; of the 80 aged 30 and over, 46 came by taxi. Calculate the probability that a random patient came by taxi, and compare taxi use between the two age groups. Explain what changes in the calculation.",
+      "expected_answer": "First check the table's margins: 46 + 74 = 120 and 34 + 46 = 80, while the column totals 80 who walked and 120 by taxi also reach the grand total of 200. The probability that a randomly chosen patient came by taxi uses the whole group as the denominator: 120 out of 200 = 0,6, or 60%. Comparing the age groups narrows the group, so the denominator changes: of the under-30s, 74 out of 120 = 0,617, about 61,7%, while of those 30 and over, 46 out of 80 = 0,575, or 57,5%. The younger patients are somewhat more likely to travel by taxi, but the difference is modest and a full answer states both figures. The examinable discipline is to ask what the whole group is before writing the denominator — 'out of all patients' means 200, 'out of the under-30s' means 120."
+    },
+    {
+      "id": "cc3",
+      "question": "A stall charges R5,00 to play a two-coin game and pays R15,00 for two heads. Build the sample space, decide whether the game is fair, and work out the prize that would make it fair.",
+      "expected_answer": "The sample space has four equally likely outcomes — HH, HT, TH and TT — and HT and TH must be counted separately, because the first and second coins are different coins even when the result looks the same. So the probability of two heads is 1 out of 4, which is 0,25 or 25%, and the same answer follows by multiplying along the tree's branches: 0,5 × 0,5 = 0,25. Over 100 plays the stall collects 100 × R5,00 = R500,00 and expects 25 winners, paying out 25 × R15,00 = R375,00, so it keeps R125,00 per 100 plays. The game is therefore unfair to the player — not because anything is hidden, but because the prize is too small for the odds. A fair game is one where money in equals money out in the long run, so the R500,00 must be shared among the 25 expected winners: 500 ÷ 25 = R20,00 would make the game fair."
+    }
+  ]
+}

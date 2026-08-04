@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A rectangular yard measures 12,5 m by 8 m and has a 3 m gate in its boundary. Fencing costs R289 per metre. Calculate the cost of the fencing, and explain why the perimeter itself is not the length ordered.",
+      "expected_answer": "The perimeter is P = 2 × (length + breadth) = 2 × (12,5 + 8) = 2 × 20,5 = 41 m. The gate occupies 3 m of that boundary and is bought separately, so the fencing required is 41 − 3 = 38 m. The cost is 38 × R289 = R10 982, so the fencing for the yard will cost R10 982. The perimeter is not the length ordered because perimeter measures the whole outline of the shape, while the fence is only the part of that outline that must actually be closed by fencing material. Ordering the full 41 m would waste 3 m at R289 per metre, which is R867 spent on fencing that would have to stand where the gate must open."
+    },
+    {
+      "id": "cc2",
+      "question": "A room measures 4,2 m by 3,6 m with walls 2,5 m high. It has one door of 0,9 m by 2,0 m and one window of 1,5 m by 1,2 m, and needs two coats of paint covering 8 m² per litre. Paint is sold in 5 ℓ tins at R525. Work out how many tins are needed and what they cost.",
+      "expected_answer": "Total wall area is the floor perimeter multiplied by the wall height: 2 × (4,2 + 3,6) = 15,6 m, and 15,6 × 2,5 = 39 m². The door area is 0,9 × 2,0 = 1,8 m² and the window area is 1,5 × 1,2 = 1,8 m², so 3,6 m² is subtracted, leaving a paintable area of 39 − 3,6 = 35,4 m². Two coats double the covering required: 35,4 × 2 = 70,8 m². At 8 m² per litre the paint needed is 70,8 ÷ 8 = 8,85 ℓ. Since paint is sold only in 5 ℓ tins, two tins must be bought, giving 10 ℓ at a cost of 2 × R525 = R1 050. So the owner must buy two 5 ℓ tins of paint, costing R1 050, with a little left over for touch-ups."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the difference between perimeter, area and the costing step that follows, and describe the rounding rules a materials calculation must obey.",
+      "expected_answer": "Perimeter is the distance around the outside of a shape and is measured in length units such as metres; it is what you buy for fencing, skirting or edging. Area is the amount of flat surface a shape covers and is measured in square units; it is what you buy for paint, tiles, paving and grass. The costing step converts an area or a length into money by way of a coverage rate — square metres per litre or per box — a wastage allowance of about 10% for materials that are cut and broken, and the packaging the shop actually sells. Rounding must obey the context rather than ordinary convention: round only at the end of each independent calculation, and round UP whenever running short would stop the job, so 8,85 ℓ of paint becomes two 5 ℓ tins and 11,55 boxes of tiles becomes 12 boxes. Money rounds to cents, and the answer should be written as a sentence naming the quantity to buy and its cost."
+    }
+  ]
+}

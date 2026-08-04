@@ -21,11 +21,11 @@
           "question": "On our map the contour interval is 20 m. A point lies between the 820 m and 840 m contour lines. Its height is:",
           "options": [
             "Exactly 830 m",
-            "Between 820 m and 840 m",
             "Exactly 820 m",
-            "Above 840 m"
+            "Above 840 m",
+            "Between 820 m and 840 m"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 30
         },
         {
@@ -33,11 +33,11 @@
           "question": "Why can two contour lines never cross each other?",
           "options": [
             "It would make the map untidy",
-            "A single point cannot have two different heights at once",
             "Rivers would have nowhere to flow",
+            "A single point cannot have two different heights at once",
             "The printer cannot draw crossings"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
@@ -59,51 +59,51 @@
       "title": "Spacing Is Gradient — Steep and Gentle Slopes",
       "questions": [
         {
-          "id": "subtopic_2_q1",
-          "question": "Contour lines drawn very close together indicate:",
-          "options": [
-            "A gentle slope",
-            "A steep slope",
-            "A flat plain",
-            "A river mouth"
-          ],
-          "correct_index": 1,
-          "time_limit_seconds": 30
-        },
-        {
           "id": "subtopic_2_q2",
           "question": "WHY does close spacing mean a steep slope?",
           "options": [
             "Because more lines mean more height in total",
-            "Because the fixed 20 m rise happens over a shorter horizontal distance",
             "Because steep land erodes contour lines closer",
-            "Because mapmakers draw steep areas darker"
+            "Because mapmakers draw steep areas darker",
+            "Because the fixed 20 m rise happens over a shorter horizontal distance"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_2_q3",
-          "question": "Contours widely spaced at the top of a slope and tightly packed at the bottom indicate:",
+          "question": "Contours widely spaced at the TOP of a slope and tightly packed at the BOTTOM indicate:",
           "options": [
             "A concave slope",
-            "A convex slope",
             "A uniform slope",
+            "A convex slope — gentle at the top, steepening below, with a blind spot from the summit",
             "A waterfall"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_2_q4",
+          "question": "On which slope can a person standing at the summit see the entire slope down to its foot?",
+          "options": [
+            "A convex slope",
+            "A concave slope — steep at the top, easing towards the bottom",
+            "Neither, on any slope",
+            "Only on a cliff"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q5",
           "question": "The best exam justification for 'this is the steepest slope' is:",
           "options": [
             "'It looks steepest to me'",
-            "'The contour lines are closest together here, so the land rises 20 m over the shortest horizontal distance'",
             "'It is near the spot height'",
-            "'The river flows past it'"
+            "'The river flows past it'",
+            "'The contour lines are closest together here, so the land rises 20 m over the shortest horizontal distance'"
           ],
-          "correct_index": 1,
+          "correct_index": 3,
           "time_limit_seconds": 30
         }
       ]
@@ -117,11 +117,11 @@
           "question": "In a river valley, the V-shaped bends in the contour lines point:",
           "options": [
             "Downhill, in the direction of flow",
-            "Uphill, toward the higher ground upstream",
             "Always due north",
+            "Uphill, toward the higher ground upstream",
             "Toward the nearest road"
           ],
-          "correct_index": 1,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
@@ -140,12 +140,12 @@
           "id": "subtopic_3_q3",
           "question": "How do you tell a spur from a valley on a contour map?",
           "options": [
-            "A spur's contours bulge downhill away from the summit and never carry a river; a valley's V points uphill and often holds a river",
             "A spur has closer contours than a valley",
+            "A spur's contours bulge downhill away from the summit and never carry a river; a valley's V points uphill and often holds a river",
             "Spurs only occur on plains",
             "They cannot be distinguished"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         }
       ]
@@ -158,12 +158,12 @@
           "id": "subtopic_4_q1",
           "question": "Closed, roughly circular contours with values rising toward the centre represent:",
           "options": [
-            "A valley",
             "A round hill",
+            "A valley",
             "A cliff",
             "A saddle"
           ],
-          "correct_index": 1,
+          "correct_index": 0,
           "time_limit_seconds": 30
         },
         {
@@ -201,6 +201,168 @@
           ],
           "correct_index": 0,
           "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Walking the Hill — What the Lines Really Are",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Walking along a footpath that follows a contour line, you would:",
+          "options": [
+            "Climb steadily",
+            "Descend steadily",
+            "Stay at exactly the same height the whole way",
+            "Cross the river twice"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "On this map, the height difference between one contour line and the next is:",
+          "options": [
+            "20 metres",
+            "1 metre",
+            "913 metres",
+            "It changes across the map"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Why can a contour line never simply stop in the middle of the map?",
+          "options": [
+            "A level path around a hill must return to where it started, or run off the edge of the sheet",
+            "The ink would run out",
+            "Because rivers block it",
+            "It can stop, at a cliff"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The rings tell you the summit is above 900 m; the dot marked 913 tells you:",
+          "options": [
+            "The height of the nearest town",
+            "The exact height of that one spot — 913 metres",
+            "The depth of the valley",
+            "How many contour lines there are"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Squeezed Lines, Sore Legs",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the shopping-centre comparison, contour lines spread far apart are like:",
+          "options": [
+            "The staircase",
+            "The lift",
+            "The escalator handrail",
+            "The long, lazy ramp"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Two contour lines look as if they are touching. This means:",
+          "options": [
+            "A cliff — 20 m of height gained with almost no horizontal distance",
+            "The map has a printing mistake",
+            "A river runs between them",
+            "The land is flat there"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "You leave the summit on sharply falling ground and it flattens out towards the bottom. The contour lines are:",
+          "options": [
+            "Evenly spaced all the way",
+            "Crowded near the top and spread out lower down — a concave slope",
+            "Spread out near the top and crowded near the bottom",
+            "Missing entirely"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Why can you not see the foot of a convex slope from its summit?",
+          "options": [
+            "Cloud always covers it",
+            "Convex slopes are always longer",
+            "The bulge of the gentler upper slope hides the steeper ground below",
+            "Because the contour lines are too close"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Finding the River Without Looking for Blue",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "A contour line meeting a valley detours up the valley and back out again because:",
+          "options": [
+            "It must stay at the same height, and the valley floor is lower",
+            "Rivers push contour lines aside",
+            "Mapmakers prefer curved lines",
+            "It is avoiding the spot height"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The pointed end of the V in a valley's contours points towards:",
+          "options": [
+            "The high ground the stream comes from",
+            "The sea",
+            "The nearest town",
+            "The lowest point on the map"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "A bend in the contours points AWAY from the higher numbers. The feature is:",
+          "options": [
+            "A valley",
+            "A cliff",
+            "A spur",
+            "A saddle"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "What is the most reliable way to settle whether a bend is a valley or a spur?",
+          "options": [
+            "Read the contour values on either side to find which way is uphill",
+            "Guess from the shape of the bend",
+            "Check whether the bend is drawn in bold",
+            "Measure the length of the bend"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
         }
       ]
     }

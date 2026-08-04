@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the assumptions made about the string and the pulley in a connected-bodies problem, and explain what physical fact each assumption gives you.",
+      "expected_answer": "The string is assumed inextensible, which means it cannot stretch, so the two bodies move together and their accelerations have the same magnitude — though not necessarily the same direction, since over a pulley one body may accelerate downward while the other accelerates horizontally. The string is assumed light, meaning its mass is negligible, so it needs no net force of its own to accelerate and the tension is the same at both ends. The pulley is assumed frictionless and light, so it changes only the direction of the tension and not its magnitude. A further fact worth stating is that a string can only pull, never push, so the tension arrow on each body is drawn along the string and away from that body. Finally, the tension is an internal force of the two-body system while the applied force, friction and the weights are external, which is why the tension cancels when the two bodies are treated as one."
+    },
+    {
+      "id": "cc2",
+      "question": "Two crates, 8 kg in front and 2 kg behind, are joined by a light string on a rough floor with μk = 0,2 and pulled by a 50 N horizontal force. Calculate the acceleration and the tension, showing formula, substitution and answer with units.",
+      "expected_answer": "Step one, treat the crates as one body of 10 kg. The total normal force equals the total weight: N = 10 × 9,8 = 98 N, so the total friction is fk = μkN = 0,2 × 98 = 19,6 N backward. Applying Fnet = ma to the system: 50 − 19,6 = 10a, so 30,4 = 10a and a = 3,04 m·s⁻² in the direction of the applied force. Step two, take the 2 kg crate alone, which has only the tension forward and its own friction backward. Its normal force is 2 × 9,8 = 19,6 N, so its friction is 0,2 × 19,6 = 3,92 N. Applying T − f = ma: T − 3,92 = 2 × 3,04 = 6,08, giving T = 10,0 N. Checking on the 8 kg crate: its friction is 0,2 × 78,4 = 15,68 N, and 50 − 10 − 15,68 = 24,32 N, which equals 8 × 3,04 = 24,32 N, so the answer is consistent."
+    },
+    {
+      "id": "cc3",
+      "question": "A 4 kg block on a table (μk = 0,25) is connected by a light string over a frictionless pulley at the table edge to a 6 kg mass hanging freely. Find the acceleration and tension, and explain why the tension is not equal to the hanging weight.",
+      "expected_answer": "The driving external force is the hanging weight: w = mg = 6 × 9,8 = 58,8 N. The opposing external force is friction on the block: N on the block is 4 × 9,8 = 39,2 N, so fk = 0,25 × 39,2 = 9,8 N. The block's own weight and normal force are perpendicular to its motion and cancel, so they are excluded. System equation: Fnet = (total mass)a, so 58,8 − 9,8 = 10a, giving 49 = 10a and a = 4,9 m·s⁻². Taking the hanging mass alone with downward positive: mg − T = ma, so 58,8 − T = 6 × 4,9 = 29,4, giving T = 29,4 N. The tension must be less than the 58,8 N weight because the hanging mass is accelerating downward, which requires a downward net force; if the tension equalled the weight the net force would be zero and the mass would not accelerate at all. Tension equals the full hanging weight only in the special case of zero acceleration."
+    }
+  ]
+}
