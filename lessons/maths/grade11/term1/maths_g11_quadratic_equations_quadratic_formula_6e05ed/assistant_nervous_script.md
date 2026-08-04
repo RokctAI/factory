@@ -1,3 +1,0 @@
-Hey there. I know the quadratic formula looks like a total monster the first time you see it. All those letters, the square root, that weird plus-minus sign... it's a lot! I remember staring at it in Grade 11 and thinking, 'No way am I going to remember this.'
-
-But here's a secret: it's actually just a recipe. You don't have to invent anything. You just find your 'a', 'b', and 'c' from the equation, and plug them into their exact spots. That's it! Take it one step at a time. Do the bit under the square root first—the discriminant—and just breathe. You've got this. We'll practice it together until it feels like second nature.
