@@ -154,3 +154,4 @@
 | whispers_of_the_forest_4bb3fe | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30886427200 | — | 2026-08-04 07:05 |
 | shores_of_memories_c714cb | poetry | Shores of Memories | pending_approval | groq | GROQ-30899152593 | — | 2026-08-04 10:05 |
 | 2._forgotten_libraries_cab1d2 | short story anthology | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-04 21:12 |
+| forgotten_cities_275055 | poetry | Forgotten Cities | pending_approval | groq | GROQ-30956781250 | — | 2026-08-04 22:33 |
