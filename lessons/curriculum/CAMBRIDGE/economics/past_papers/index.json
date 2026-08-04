@@ -1,0 +1,28 @@
+{
+  "subject": "Economics",
+  "curriculum": "CAMBRIDGE",
+  "index_kind": "access_and_policy_record",
+  "why_not_a_link_index": "The CAPS and IEB trees index public past-paper download URLs because the DBE and the IEB publish papers openly. Cambridge does neither: there is no public past-paper download on Cambridge's own site, and Cambridge refuses permission for electronic reproduction of past-paper questions in any format. Recording third-party aggregator URLs instead would mean sourcing from unauthorised redistributors - excluded by SOURCES.md - so this file carries no paper URLs by design, not by omission.",
+  "access": {
+    "public_download": false,
+    "route": "Cambridge School Support Hub (login). Teacher accounts are created by the school's Support Hub coordinator, so access presupposes being a registered Cambridge centre.",
+    "available_to_this_project": "no_unless_a_registered_centre_account_is_provided"
+  },
+  "use_policy": {
+    "reference": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+    "summary": "Electronic reproduction of past-paper questions, mark schemes and examiner reports is prohibited without written permission from Cambridge - including non-commercial use, and including publication on a school's own website or intranet.",
+    "worked_example_pipeline": "blocked_pending_written_permission"
+  },
+  "aggregators_excluded": {
+    "rule": "Sites that redistribute Cambridge past papers (papacambridge, gceguide, dynamicpapers, savemyexams, physicsandmathstutor and similar) are NOT recorded here and must not be used as sources. No evidence was found that any is authorised by Cambridge, and Cambridge's own help material cites misuse of its material online - including resale - as the reason it refuses web publication.",
+    "recorded_urls": []
+  },
+  "sessions": [],
+  "sessions_note": "Intentionally empty and expected to STAY empty unless a written permission grant is obtained and recorded in SOURCES.md. This is a legal blocker, not a fetch backlog.",
+  "if_permission_is_granted": [
+    "Record the written grant (scope, date, signatory, expiry) in SOURCES.md before anything else.",
+    "Re-read RIGHTS.json and narrow the gate to exactly what the grant covers - never wider.",
+    "Only then design an ingestion path; it must live in CAMBRIDGE/scripts, not lessons/scripts."
+  ],
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

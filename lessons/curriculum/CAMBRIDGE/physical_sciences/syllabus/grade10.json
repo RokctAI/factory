@@ -1,0 +1,50 @@
+{
+  "subject": "Physical Sciences",
+  "grade": 10,
+  "curriculum": "CAMBRIDGE",
+  "grade_alignment": {
+    "status": "REPOSITORY CONVENTION - not a Cambridge statement",
+    "resolves_to": {
+      "stage": "cambridge_upper_secondary",
+      "qualification": "Cambridge IGCSE",
+      "course_year": 1
+    },
+    "detail": "Cambridge does not number school years the way this tree's grade contract does; placement is a decision each school makes. See lessons/curriculum/CAMBRIDGE/stage_alignment.json for the default pathway, the alternatives, and the unresolved A2 year.",
+    "alignment_document": "lessons/curriculum/CAMBRIDGE/stage_alignment.json"
+  },
+  "equivalence": "composite",
+  "qualifications": [
+    {
+      "qualification": "Cambridge IGCSE",
+      "title": "Physics",
+      "syllabus_code": "0625",
+      "course_year": 1,
+      "component_of_pair": "physics",
+      "syllabus_documents": [
+        {
+          "edition": "2023-2025",
+          "url": "https://www.cambridgeinternational.org/images/595430-2023-2025-syllabus.pdf",
+          "url_status": "observed_in_search_not_fetched",
+          "status": "superseded_do_not_ingest",
+          "edition_note": "Recorded for traceability only - this cycle has ended. A 2026-2028 cycle was indicated during research but not confirmed; find the live edition from the landing page before ingesting."
+        }
+      ],
+      "verification": "corroborated"
+    },
+    {
+      "qualification": "Cambridge IGCSE",
+      "title": "Chemistry",
+      "syllabus_code": "0620",
+      "course_year": 1,
+      "component_of_pair": "chemistry",
+      "syllabus_documents": [],
+      "verification": "corroborated"
+    }
+  ],
+  "content_status": "pending_syllabus_ingestion: topic and subtopic content for this grade comes from the Cambridge syllabus document(s) listed above, which have not been fetched (Cambridge hosts blocked from this build environment). No topics are listed because none have been read from source - an empty list here means 'not yet ingested', never 'this grade has no content'.",
+  "topics": [],
+  "composite_note": "South Africa's 'Physical Sciences' is a single subject combining Physics and Chemistry with no Biology. Cambridge HAS carried exactly that combination - IGCSE Physical Science 0652, whose content is Chemistry sections plus Physics sections and nothing else - but it is being WITHDRAWN, with November 2026 as its final examination series. After that, no single Cambridge qualification matches the South African combination: the multi-science awards (0653 Combined, 0654 Co-ordinated Double) all include Biology, and at AS & A Level there is no combined science option at all. The primary mapping is therefore the Physics + Chemistry PAIR taken as two separate subjects - the only mapping that survives the withdrawal and the only one available at Advanced level.",
+  "caps_relationship": "None. Cambridge authors its own curriculum; CAPS topic lists are NOT a valid fallback for this file.",
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

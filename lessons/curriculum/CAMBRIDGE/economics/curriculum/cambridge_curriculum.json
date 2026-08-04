@@ -1,0 +1,47 @@
+{
+  "subject": "Economics",
+  "curriculum": "CAMBRIDGE",
+  "curriculum_authority": "Cambridge International Education (Cambridge Assessment International Education, part of Cambridge University Press & Assessment) authors its own syllabuses. Unlike the IEB tree - which assesses the DBE's CAPS curriculum and therefore references CAPS content - the Cambridge content authority is the per-subject Cambridge SYLLABUS DOCUMENT itself. No content in this tree may be derived from, or defaulted to, the CAPS or IEB trees.",
+  "scope": "Global. Cambridge qualifications are taught in schools worldwide and are not tied to any one country's national curriculum or school calendar.",
+  "equivalence_to_repo_subject": "direct",
+  "equivalence_note": "Direct subject-name correspondence. A new Cambridge IGCSE and O Level Economics 0455 syllabus began teaching in the 2025-26 academic year, so edition selection matters more than usual here.",
+  "qualifications": [
+    {
+      "stage": "cambridge_upper_secondary",
+      "qualification": "Cambridge IGCSE",
+      "title": "Economics",
+      "syllabus_code": "0455",
+      "landing_page": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-economics-0455/",
+      "landing_page_status": "observed_in_search_not_fetched",
+      "verification": "corroborated",
+      "source_urls": [
+        "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-economics-0455/",
+        "https://www.cambridgeinternational.org/Images/697154-2026-syllabus.pdf"
+      ]
+    },
+    {
+      "stage": "cambridge_advanced",
+      "qualification": "Cambridge International AS & A Level",
+      "title": "Economics",
+      "syllabus_code": "9708",
+      "landing_page": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-economics-9708/",
+      "landing_page_status": "observed_in_search_not_fetched",
+      "verification": "corroborated",
+      "source_urls": [
+        "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-economics-9708/",
+        "https://www.cambridgeinternational.org/Images/697423-2026-2028-syllabus.pdf"
+      ]
+    }
+  ],
+  "adjacent_not_mapped": [
+    {
+      "title": "Cambridge O Level Economics",
+      "code": "2281",
+      "why_not_mapped": "The O Level route rather than IGCSE.",
+      "verification": "single_source"
+    }
+  ],
+  "content_status": "pending_syllabus_ingestion: the syllabus documents that carry the actual curriculum content have not been fetched from this environment (Cambridge hosts are blocked by egress policy). Aims, content lists and assessment objectives come from those documents and are deliberately absent rather than guessed.",
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

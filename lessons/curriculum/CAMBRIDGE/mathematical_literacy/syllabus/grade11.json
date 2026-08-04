@@ -1,0 +1,38 @@
+{
+  "subject": "Mathematical Literacy",
+  "grade": 11,
+  "curriculum": "CAMBRIDGE",
+  "grade_alignment": {
+    "status": "REPOSITORY CONVENTION - not a Cambridge statement",
+    "resolves_to": {
+      "stage": "cambridge_upper_secondary",
+      "qualification": "Cambridge IGCSE",
+      "course_year": 2,
+      "note": "IGCSE examination normally sat at the end of this year."
+    },
+    "detail": "Cambridge does not number school years the way this tree's grade contract does; placement is a decision each school makes. See lessons/curriculum/CAMBRIDGE/stage_alignment.json for the default pathway, the alternatives, and the unresolved A2 year.",
+    "alignment_document": "lessons/curriculum/CAMBRIDGE/stage_alignment.json"
+  },
+  "equivalence": "none",
+  "qualifications": [],
+  "content_status": "no_equivalent_qualification",
+  "equivalence_note": "Mathematical Literacy is a South-Africa-specific NSC subject - numeracy applied to real-life contexts, taken INSTEAD of academic Mathematics. Cambridge International publishes no equivalent. Its entire Upper Secondary maths suite (0580, 0980, 0607, 0606, 0444, 4024, 4037) is academic mathematics; the Core tiers of 0580 and 0607 are grade-capped tiers of the same academic syllabus rather than a different subject in kind; and Functional Skills Mathematics, the UK numeracy-in-context qualification, is not a Cambridge International product. This folder exists so that tooling walking curriculum/{CAPS,IEB,CAMBRIDGE}/{subject} finds a uniform layout, and it records the absence explicitly rather than silently omitting the subject or forcing a false match.",
+  "consumer_rule": "A Cambridge stream must NOT serve Mathematical Literacy by falling back to the CAPS or IEB tree, and must not substitute 0580 Core or 0607 Core: those are academic mathematics, and the substitution would misrepresent both qualifications to the student. Serve academic Mathematics, or serve nothing and say why.",
+  "adjacent_not_mapped": [
+    {
+      "title": "Cambridge IGCSE Mathematics (Core tier)",
+      "code": "0580",
+      "why_not_mapped": "A grade-capped tier of academic mathematics sharing content with Extended - a difficulty tier, not a subject of a different kind.",
+      "verification": "corroborated"
+    },
+    {
+      "title": "Cambridge IGCSE International Mathematics (Core tier)",
+      "code": "0607",
+      "why_not_mapped": "Closest in spirit, since it adds modelling and real-life contexts, but still a full academic maths syllabus that feeds AS Level, and itself tiered.",
+      "verification": "corroborated"
+    }
+  ],
+  "caps_relationship": "None. Cambridge authors its own curriculum; CAPS topic lists are NOT a valid fallback for this file.",
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

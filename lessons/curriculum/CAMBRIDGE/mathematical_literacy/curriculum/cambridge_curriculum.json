@@ -1,0 +1,27 @@
+{
+  "subject": "Mathematical Literacy",
+  "curriculum": "CAMBRIDGE",
+  "curriculum_authority": "Cambridge International Education (Cambridge Assessment International Education, part of Cambridge University Press & Assessment) authors its own syllabuses. Unlike the IEB tree - which assesses the DBE's CAPS curriculum and therefore references CAPS content - the Cambridge content authority is the per-subject Cambridge SYLLABUS DOCUMENT itself. No content in this tree may be derived from, or defaulted to, the CAPS or IEB trees.",
+  "scope": "Global. Cambridge qualifications are taught in schools worldwide and are not tied to any one country's national curriculum or school calendar.",
+  "equivalence_to_repo_subject": "none",
+  "equivalence_note": "Mathematical Literacy is a South-Africa-specific NSC subject - numeracy applied to real-life contexts, taken INSTEAD of academic Mathematics. Cambridge International publishes no equivalent. Its entire Upper Secondary maths suite (0580, 0980, 0607, 0606, 0444, 4024, 4037) is academic mathematics; the Core tiers of 0580 and 0607 are grade-capped tiers of the same academic syllabus rather than a different subject in kind; and Functional Skills Mathematics, the UK numeracy-in-context qualification, is not a Cambridge International product. This folder exists so that tooling walking curriculum/{CAPS,IEB,CAMBRIDGE}/{subject} finds a uniform layout, and it records the absence explicitly rather than silently omitting the subject or forcing a false match.",
+  "qualifications": [],
+  "adjacent_not_mapped": [
+    {
+      "title": "Cambridge IGCSE Mathematics (Core tier)",
+      "code": "0580",
+      "why_not_mapped": "A grade-capped tier of academic mathematics sharing content with Extended - a difficulty tier, not a subject of a different kind.",
+      "verification": "corroborated"
+    },
+    {
+      "title": "Cambridge IGCSE International Mathematics (Core tier)",
+      "code": "0607",
+      "why_not_mapped": "Closest in spirit, since it adds modelling and real-life contexts, but still a full academic maths syllabus that feeds AS Level, and itself tiered.",
+      "verification": "corroborated"
+    }
+  ],
+  "consumer_rule": "A Cambridge stream must NOT serve Mathematical Literacy by falling back to the CAPS or IEB tree, and must not substitute 0580 Core or 0607 Core: those are academic mathematics, and the substitution would misrepresent both qualifications to the student. Serve academic Mathematics, or serve nothing and say why.",
+  "content_status": "pending_syllabus_ingestion: the syllabus documents that carry the actual curriculum content have not been fetched from this environment (Cambridge hosts are blocked by egress policy). Aims, content lists and assessment objectives come from those documents and are deliberately absent rather than guessed.",
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

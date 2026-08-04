@@ -1,0 +1,65 @@
+{
+  "subject": "Mathematics",
+  "curriculum": "CAMBRIDGE",
+  "curriculum_authority": "Cambridge International Education (Cambridge Assessment International Education, part of Cambridge University Press & Assessment) authors its own syllabuses. Unlike the IEB tree - which assesses the DBE's CAPS curriculum and therefore references CAPS content - the Cambridge content authority is the per-subject Cambridge SYLLABUS DOCUMENT itself. No content in this tree may be derived from, or defaulted to, the CAPS or IEB trees.",
+  "scope": "Global. Cambridge qualifications are taught in schools worldwide and are not tied to any one country's national curriculum or school calendar.",
+  "equivalence_to_repo_subject": "direct",
+  "equivalence_note": "Cambridge IGCSE Mathematics and AS & A Level Mathematics correspond directly to this repository's academic 'maths' subject. Two structural differences from CAPS have no analogue and must not be flattened away: the IGCSE Core/Extended tier split, with different papers and capped grade ranges, and the AS/A Level component-choice model, where a candidate's papers depend on which applied components the school enters.",
+  "qualifications": [
+    {
+      "stage": "cambridge_upper_secondary",
+      "qualification": "Cambridge IGCSE",
+      "title": "Mathematics",
+      "syllabus_code": "0580",
+      "landing_page": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-0580/",
+      "landing_page_status": "observed_in_search_not_fetched",
+      "verification": "corroborated",
+      "source_urls": [
+        "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-mathematics-0580/",
+        "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf"
+      ]
+    },
+    {
+      "stage": "cambridge_advanced",
+      "qualification": "Cambridge International AS & A Level",
+      "title": "Mathematics",
+      "syllabus_code": "9709",
+      "landing_page": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-mathematics-9709/",
+      "landing_page_status": "observed_in_search_not_fetched",
+      "verification": "corroborated",
+      "source_urls": [
+        "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-mathematics-9709/",
+        "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf"
+      ]
+    }
+  ],
+  "adjacent_not_mapped": [
+    {
+      "title": "Cambridge IGCSE International Mathematics",
+      "code": "0607",
+      "why_not_mapped": "A distinct IGCSE maths syllabus - tiered Core/Extended like 0580, but requiring a graphic display calculator and adding investigation and modelling papers. A legitimate alternative for a Cambridge stream, but a different qualification, so not the default mapping.",
+      "verification": "corroborated"
+    },
+    {
+      "title": "Cambridge IGCSE Mathematics - Additional",
+      "code": "0606",
+      "why_not_mapped": "A separate advanced IGCSE subject carrying calculus, taken alongside rather than instead of 0580. Recorded because a Cambridge stream serving strong candidates may need it. Its 2025-2027 edition removed indices and surds as assumed knowledge, added coordinate geometry of the circle and introduced a non-calculator paper.",
+      "verification": "corroborated"
+    },
+    {
+      "title": "Cambridge O Level Mathematics (Syllabus D)",
+      "code": "4024",
+      "why_not_mapped": "The O Level route rather than IGCSE, offered where a centre runs O Level. The same reasoning applies to O Level Additional Mathematics 4037.",
+      "verification": "corroborated"
+    },
+    {
+      "title": "Cambridge International AS & A Level Mathematics - Further",
+      "code": "9231",
+      "why_not_mapped": "A separate advanced qualification for candidates already taking 9709. Structure not researched.",
+      "verification": "corroborated"
+    }
+  ],
+  "content_status": "pending_syllabus_ingestion: the syllabus documents that carry the actual curriculum content have not been fetched from this environment (Cambridge hosts are blocked by egress policy). Aims, content lists and assessment objectives come from those documents and are deliberately absent rather than guessed.",
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}
