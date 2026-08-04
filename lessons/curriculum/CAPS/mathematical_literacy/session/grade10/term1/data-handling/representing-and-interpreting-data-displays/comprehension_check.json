@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between a bar graph and a histogram, using the transport survey (300 learners) and the data-spend survey (60 learners) as your examples. State one reading you can take from each.",
+      "expected_answer": "A bar graph displays categorical data — labels such as walk, taxi, bus and car — so the bars are drawn with gaps between them and their order may be rearranged without changing the meaning. In the transport survey the bars stand at 90, 135, 45 and 30, totalling 300 learners; the tallest bar names the modal category, taxi, and 135 out of 300 is 45 percent of the learners. A histogram displays continuous numerical data grouped into class intervals, so the bars touch and the order is fixed, because the horizontal axis is a number line. In the data-spend survey the frequencies are 8, 15, 21, 10 and 6, totalling 60 learners; the tallest bar identifies the modal class, R100 up to R150 — a class, not a single value, because the individual amounts are lost once the data are grouped. The quickest test is to look at the horizontal axis: labels mean gaps, numbers in order mean the bars touch."
+    },
+    {
+      "id": "cc2",
+      "question": "A household's monthly income of R12 000 is shown on a pie chart. Transport occupies a sector of 54 degrees. Calculate the rand amount spent on transport, show how the angle for food at 30 percent is obtained, and state two limitations of pie charts.",
+      "expected_answer": "Transport: the sector is 54 out of 360 degrees, and 54 ÷ 360 = 0,15, so transport takes 15 percent of the income. Fifteen percent of R12 000 = 0,15 × R12 000 = R1 800. Food: a full revolution is 360 degrees and the whole is 100 percent, so every 1 percent is 3,6 degrees; 30 × 3,6 = 108 degrees. The angles of all sectors must total exactly 360 degrees, and the percentages must total 100 — both are compulsory checks. First limitation: a pie chart shows proportions only, so unless the total of R12 000 is written somewhere on the display no sector can be converted into rands. Second limitation: two pie charts cannot be compared directly unless their totals are equal — a 30 percent food slice of R12 000 is R3 600 while a 30 percent food slice of R6 000 is only R1 800, yet the two slices look identical."
+    },
+    {
+      "id": "cc3",
+      "question": "A newspaper redraws the May and June electricity figures (420 and 480 units) on a vertical axis starting at 400, under the headline \"Winter electricity use quadruples\". Explain what is wrong, calculate the honest figure, and describe how a full answer to a \"criticise this graph\" question should be structured.",
+      "expected_answer": "The vertical axis has been truncated — it begins at 400 instead of 0 — so only the part of each bar above 400 is visible. June shows 80 units above the axis against May's 20, making June's bar appear four times as tall when the quantities differ by far less. The honest figure: the increase is 480 − 420 = 60 units, and 60 ÷ 420 = 0,1428…, which is about a 14,3 percent increase, not a quadrupling. A full answer follows three moves: identify the feature (the truncated vertical axis), explain the distortion it creates for the reader (it exaggerates the difference between the bars), and supply the correct number (an increase of about 14,3 percent). The same three moves apply to other tricks — unevenly spaced axes, three-dimensional tilted pie charts, pictograms scaled in both height and width, a conveniently chosen time window, or percentages quoted without the total."
+    }
+  ]
+}

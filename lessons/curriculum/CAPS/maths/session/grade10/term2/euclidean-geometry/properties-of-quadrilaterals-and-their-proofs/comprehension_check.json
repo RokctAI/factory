@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Prove that the opposite sides of a parallelogram are equal, giving a reason for every statement, and explain why drawing the diagonal is the standard opening move.",
+      "expected_answer": "In parallelogram ABCD, draw diagonal AC, forming triangles ABC and CDA. Angle BAC = angle DCA (alternate angles, AB ∥ DC). Angle BCA = angle DAC (alternate angles, AD ∥ BC). AC = CA (common side). Two angles and a corresponding side are therefore equal, so triangle ABC ≡ triangle CDA (angle-angle-side). Corresponding parts of congruent triangles are equal, so AB = CD and BC = DA, and angle B = angle D follows from the same congruence. The diagonal is the standard opening because congruence is a tool for triangles, not quadrilaterals: drawing it converts a claim about a four-sided figure into a claim about two triangles, where the parallel-line angle facts and a shared side immediately supply the congruence."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish a property from a condition, list the five conditions for a parallelogram, and state the conditions that upgrade a parallelogram to a rectangle or a rhombus.",
+      "expected_answer": "A property states what a parallelogram HAS once you know it is one; a condition states what is ENOUGH to conclude a figure IS one. The direction matters because a property may never be quoted about a figure whose parallelogram status has not yet been established. The five conditions: both pairs of opposite sides parallel (the definition); both pairs of opposite sides equal; both pairs of opposite angles equal; the diagonals bisect each other; and one pair of opposite sides both equal AND parallel — the last being the most useful in examinations, though both facts about that pair are required. A parallelogram becomes a rectangle if it has one interior angle of 90°, or if its diagonals are equal. It becomes a rhombus if two adjacent sides are equal, or its diagonals are perpendicular, or its diagonals bisect the interior angles. A parallelogram with equal diagonals meeting at right angles is a square."
+    },
+    {
+      "id": "cc3",
+      "question": "ABCD is a parallelogram with diagonals meeting at O. Points E and F lie on AC with AE = CF. Prove that BEDF is a parallelogram, and describe the strategy that produced the proof.",
+      "expected_answer": "The diagonals of BEDF are BD and EF, and both pass through O, so the condition to aim at is 'diagonals bisect each other'. AO = OC and BO = OD (diagonals of parallelogram ABCD bisect each other). AE = CF (given). Since E lies between A and O and F between O and C, EO = AO − AE and OF = OC − CF; equal quantities subtracted from equal quantities leave equal quantities, so EO = OF. The diagonals EF and BD of BEDF therefore bisect each other at O, so BEDF is a parallelogram. The strategy is to read the target first and choose the condition you will prove, then gather only the facts that condition requires — working forwards from everything known instead fills a page and earns few marks. Every statement must carry its reason, and nothing may be read off the sketch."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how an electromagnetic wave is produced and why it needs no medium, then list the electromagnetic spectrum in order of increasing frequency.",
+      "expected_answer": "An electromagnetic wave is produced by an accelerating electric charge. The changing electric field of that charge creates a changing magnetic field, which in turn creates a changing electric field further out, so the two fields regenerate each other outward through space. Because the fields sustain one another, no material medium is required, which is why light crosses the vacuum between the sun and the Earth while sound cannot cross a vacuum at all. The fields oscillate at right angles to each other and to the direction of travel, so electromagnetic radiation is transverse. In order of increasing frequency and decreasing wavelength the spectrum runs: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays. In a vacuum every one of them travels at 3 × 10⁸ m·s⁻¹."
+    },
+    {
+      "id": "cc2",
+      "question": "Ultraviolet radiation has a wavelength of 250 nm. Calculate its frequency and the energy of one of its photons, showing formula, substitution and answer with units. Take c = 3 × 10⁸ m·s⁻¹ and h = 6,63 × 10⁻³⁴ J·s.",
+      "expected_answer": "Convert the wavelength first: 250 nm = 250 × 10⁻⁹ m = 2,5 × 10⁻⁷ m. Frequency: from c = fλ, f = c ÷ λ = (3 × 10⁸) ÷ (2,5 × 10⁻⁷) = 1,2 × 10¹⁵ Hz. Photon energy: E = hf = (6,63 × 10⁻³⁴)(1,2 × 10¹⁵) = 7,96 × 10⁻¹⁹ J. The same answer follows from E = hc/λ. The two conditions for full marks are that the prefix is converted to metres before substitution, and that the energy is quoted in joules, not hertz. By comparison a 100 MHz radio photon has energy E = (6,63 × 10⁻³⁴)(1 × 10⁸) = 6,63 × 10⁻²⁶ J, about twelve million times smaller — which is why ultraviolet damages skin and radio waves do not."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain what is meant by the dual nature of electromagnetic radiation, and account for the fact that penetrating ability and danger increase from radio waves to gamma rays.",
+      "expected_answer": "Dual nature means electromagnetic radiation behaves as a wave in some situations and as a stream of particles in others, and both models are needed. The wave model — oscillating electric and magnetic fields — accounts for reflection, refraction, diffraction and interference. The particle model treats the radiation as photons, discrete packets of energy given by E = hf, and accounts for emission and absorption in fixed amounts and for the ejection of electrons from a metal surface by ultraviolet but not by red light. Because E = hf, photon energy rises directly with frequency, so moving along the spectrum from radio waves to gamma rays each photon carries progressively more energy. More energetic photons penetrate further into matter and, from ultraviolet onwards, carry enough energy to strip electrons off atoms — that is, they are ionising. Ionisation damages living cells, which is why ultraviolet causes sunburn and skin cancer, why X-ray work requires lead shielding, and why gamma rays, the most penetrating of all, are used deliberately to kill cancer cells."
+    }
+  ]
+}
