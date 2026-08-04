@@ -22,7 +22,7 @@ A RATE compares quantities of DIFFERENT kinds, and unlike a ratio it keeps its u
 
 A UNIT RATE is a rate expressed for exactly one of the second quantity, and it is obtained by dividing.
 
-Worked example one, fuel consumption. A bakkie travels 480 km on 40 litres of petrol. Consumption equals distance divided by fuel: 480 divided by 40 gives 12 km per litre. Now the rate does real work — the driver plans a 300 km trip, so fuel needed is 300 divided by 12, which is 25 litres; at R23,40 per litre the trip costs 25 times R23,40, which is R585,00.
+Worked example one, fuel consumption. A bakkie travels 480 km on 40 litres of petrol: consumption equals distance divided by fuel, so 480 divided by 40 gives 12 km per litre. Now the rate does real work — for a 300 km trip the fuel needed is 300 divided by 12, which is 25 litres; at R23,40 per litre the trip costs R585,00.
 
 Worked example two, speed, and the trap hidden inside it. A taxi covers 63 km in 45 minutes. Speed equals distance divided by time — but the answer is wanted in kilometres per HOUR, so the time must be in hours first. 45 minutes is 45 over 60 of an hour, which is 0,75 of an hour. Speed equals 63 divided by 0,75, which is 84 km per hour. A candidate who divides 63 by 45 gets 1,4 and writes "1,4 km/h", which is a taxi being overtaken by a walking pensioner. Units first, then arithmetic.
 
@@ -38,9 +38,9 @@ A bakery sells 6 loaves for R114,00. Divide to get the constant: 114 divided by 
 
 Two quantities are in INDIRECT PROPORTION — also called inverse proportion — when multiplying one DIVIDES the other by the same factor. More of this means less of that, and the test is that MULTIPLYING the pair always gives the same constant.
 
-Four painters take 15 days to paint a school block. Multiply the pair: 4 times 15 equals 60 painter-days — that is the fixed size of the job. With 6 painters, the days needed are 60 divided by 6, which is 10 days. Notice the shape of the answer: the painters went up by a factor of one and a half, and the days came down by a factor of one and a half.
+Four painters take 15 days to paint a school block. Multiply the pair: 4 times 15 equals 60 painter-days — the fixed size of the job. With 6 painters, the days needed are 60 divided by 6, which is 10 days. The painters went up by a factor of one and a half; the days came down by the same factor.
 
-A second inverse case, straight out of a school trip. A bus is hired for a fixed R900. Shared among 15 learners, each pays 900 divided by 15, which is R60,00. Shared among 20, each pays 900 divided by 20, which is R45,00. Multiply each pair: 15 times 60 is 900, and 20 times 45 is 900 — the constant confirms the relationship is inverse.
+A second inverse case: a bus hired for a fixed R900. Shared among 15 learners, each pays 900 divided by 15, which is R60,00; shared among 20, each pays R45,00. Multiply each pair — 15 times 60 is 900, and 20 times 45 is 900 — and the constant confirms the relationship is inverse.
 
 Deciding which one you are looking at is worth marks on its own. Ask what happens to the second quantity when the first increases. Up together — divide to find the constant. One up while the other goes down — multiply to find the constant.
 
@@ -48,7 +48,7 @@ This section's questions are ready for you — identify the type of proportion f
 
 ## Subtopic: Best Buy — Making the Comparison Fair
 
-Two bags of maize meal sit on the shelf. A 2,5 kg bag costs R42,99. A 10 kg bag costs R159,99. The big bag has the bigger price tag, and the small bag has the smaller one — and neither of those facts answers the question, because the bags hold different amounts. The only honest comparison is a UNIT RATE: the price of ONE kilogram in each case.
+Two bags of maize meal sit on the shelf. A 2,5 kg bag costs R42,99; a 10 kg bag costs R159,99. Neither price tag answers the question, because the bags hold different amounts. The only honest comparison is a UNIT RATE: the price of ONE kilogram in each case.
 
 Small bag: R42,99 divided by 2,5 kg. That is R17,196 per kilogram, which rounds to R17,20 per kg. Big bag: R159,99 divided by 10 kg, which is R15,999 per kilogram, or R16,00 per kg. The 10 kg bag costs about R1,20 less per kilogram, so it is the better buy — and buying 10 kg in the big bag rather than four small bags saves roughly R12,00.
 
@@ -64,11 +64,11 @@ Now the same three ideas from the kitchen table — dividing food fairly, knowin
 
 ## Subtopic: Cutting the Loaf Into Shares
 
-Picture a loaf of bread and three cousins who did not do equal work. One swept, one washed, one just carried a bucket once. Nobody wants equal slices; they want fair slices. So they agree: five slices' worth to the first, three to the second, two to the third.
+Picture a loaf of bread and three cousins who did not do equal work — one swept, one washed, one carried a bucket once. Nobody wants equal slices; they want fair slices. So they agree: five slices' worth to the first, three to the second, two to the third.
 
-Count the slices you would need altogether: five plus three plus two is ten. Now cut the loaf into ten equal slices — and the trick of the whole topic is right there. Whatever you are sharing, cut it into the TOTAL number of parts first, then hand out the parts.
+Count the slices altogether: five plus three plus two is ten. Now cut the loaf into ten equal slices — and the trick of the whole topic is right there. Cut into the TOTAL number of parts first, then hand out the parts.
 
-Money works the same way. The car wash made R2 400 that Saturday. Ten parts, so one part is R2 400 shared into ten equal piles — R240 a pile. Now deal them out: five piles is R1 200, three piles is R720, two piles is R480. Add the three amounts back up and you should land exactly on R2 400 — R1 200 plus R720 is R1 920, plus R480 is R2 400. That check takes five seconds and it has saved more marks than any other habit in this topic.
+Money works the same way. The car wash made R2 400 that Saturday. Ten parts, so one part is R2 400 shared into ten equal piles — R240 a pile. Deal them out: five piles is R1 200, three piles is R720, two piles is R480. Add them back up — R1 200 plus R720 is R1 920, plus R480 is R2 400, exactly. That check has saved more marks than any other habit in this topic.
 
 One warning from the kitchen: you cannot compare a cup to a bucket until they sit in the same container. If a recipe says 250 grams of butter to one kilogram of flour, do not write 250 to 1. Turn the kilogram into 1 000 grams first, and the comparison reads 250 to 1 000 — one to four, one part butter for every four parts flour.
 
@@ -76,11 +76,9 @@ That way of comparing — same kind of thing, same unit, written with a colon �
 
 ## Subtopic: What One Costs, What One Does
 
-Now the second idea, and it is the one your granny uses in every shop without ever calling it mathematics. She wants to know: what does ONE cost?
+Now the second idea — the one your granny uses in every shop without calling it mathematics. She wants to know: what does ONE cost? That little word "per" means "for every one". Rands per kilogram. Kilometres per litre. Rands per hour. And you get to "one" by dividing.
 
-That little word "per" means "for every one". Rands per kilogram. Kilometres per litre. Rands per hour. And you get to "one" by dividing.
-
-The bakkie went 480 kilometres and drank 40 litres. Cut the kilometres into 40 equal shares — one for each litre — and each litre carried the bakkie 12 kilometres. Now you know the bakkie. Planning 300 kilometres? That is 300 divided by 12, which is 25 litres in the tank. At R23,40 a litre, that is 25 lots of R23,40 — R585,00 for the trip. You just budgeted a journey with one division and one multiplication.
+The bakkie went 480 kilometres and drank 40 litres. Cut the kilometres into 40 equal shares — one for each litre — and each litre carried the bakkie 12 kilometres. Planning 300 kilometres? That is 300 divided by 12, which is 25 litres in the tank. At R23,40 a litre, that is 25 lots of R23,40 — R585,00 for the trip. You just budgeted a journey with one division and one multiplication.
 
 Careful with time, because minutes love to trip people. A taxi does 63 kilometres in 45 minutes, and someone asks for the speed in kilometres per HOUR. You cannot divide by 45, because 45 is minutes and the answer must be per hour. Forty-five minutes is three-quarters of an hour — 0,75. So 63 divided by 0,75 gives 84 kilometres per hour. Sensible for a taxi. Whenever the answer says "per hour", get your time into hours before you press divide.
 
@@ -94,7 +92,7 @@ Two shapes of relationship, and everyday life shows you both before breakfast.
 
 The first shape: more bread, more money. Six loaves cost R114,00, so one loaf costs R114 shared into six — R19,00. Eleven loaves then cost eleven lots of R19,00, which is R209,00. Up together, in step. Go down to one first, then up to what you need — that path never fails, and your paper calls this DIRECT proportion.
 
-The second shape is the opposite, and it feels wrong until you picture it. Four painters take 15 days to finish a school block. Bring in more painters and the job takes FEWER days. So how many days for six painters? Ask how big the job really is: 4 painters for 15 days is 60 painter-days of work. Six painters chew through it in 60 divided by 6 — 10 days. More hands, fewer days: that is INDIRECT proportion, and you find its constant by MULTIPLYING the pair instead of dividing.
+The second shape is the opposite. Four painters take 15 days to finish a school block; bring in more painters and the job takes FEWER days. How many days for six? Ask how big the job really is: 4 painters for 15 days is 60 painter-days of work. Six painters chew through it in 60 divided by 6 — 10 days. More hands, fewer days: that is INDIRECT proportion, and you find its constant by MULTIPLYING the pair instead of dividing.
 
 You have lived the money version. A bus costs R900 whether it is full or half-empty. Fifteen learners going means R900 split fifteen ways — R60 each. Twenty going means R45 each. More people, smaller share. Every stokvel, every taxi, every group gift works on this rule.
 

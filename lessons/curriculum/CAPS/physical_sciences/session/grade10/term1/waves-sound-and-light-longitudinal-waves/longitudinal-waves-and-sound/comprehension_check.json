@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Distinguish a longitudinal wave from a transverse wave, define compression and rarefaction, and explain how wavelength is measured on a longitudinal wave.",
+      "expected_answer": "In a longitudinal wave the particles of the medium vibrate parallel to the direction in which the wave travels, whereas in a transverse wave they vibrate perpendicular to it. A compression is a region where the particles are crowded closer together, so the pressure and density are higher than normal. A rarefaction is a region where the particles are spread further apart, so the pressure and density are lower than normal. The wavelength is the distance between two successive compressions, or equally between two successive rarefactions — that is, between two successive points in phase — and it is measured in metres. Both f = 1/T and v = fλ apply exactly as they do for transverse waves."
+    },
+    {
+      "id": "cc2",
+      "question": "A trawler off Saldanha Bay sends a sonar pulse vertically downward and receives the echo 0,4 s later. The speed of sound in seawater is 1 500 m·s⁻¹. Calculate the depth, and explain why sound cannot be used this way in a vacuum.",
+      "expected_answer": "The sound travels down to the sea floor and back, so the distance to the floor is half the total path. Formula: d = (v × Δt) ÷ 2. Substitution: d = (1 500 × 0,4) ÷ 2 = 600 ÷ 2. Answer: d = 300 m. Forgetting the division by two would double the answer to 600 m, which is the commonest error in echo problems. Sound cannot be used in a vacuum because sound is a longitudinal wave that travels as compressions and rarefactions of a material medium; with no particles present there is nothing to compress, so no wave is transmitted at all — which is why a bell inside an evacuated jar cannot be heard."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how pitch, loudness and quality of a sound are each determined, and state two uses of ultrasound with a reason for each.",
+      "expected_answer": "Pitch is determined by frequency: a higher frequency produces a higher-pitched note. Loudness is determined by amplitude: a larger amplitude means the source pushed the medium harder, so more energy reaches the ear; loudness also depends on the ear's own sensitivity, which is greatest in the middle of the audible range. Quality, or timbre, is determined by the waveform — the shape of the wave produced by the mix of fainter higher frequencies added to the main one — which is why a guitar and a marimba playing the same note sound different. Two uses of ultrasound: sonar and echolocation, where a pulse is emitted and the return time of the echo gives the distance to the sea floor, a shoal of fish or an insect; and medical imaging, such as a prenatal scan, where different tissues reflect the pulses differently and the echoes are turned into an image — chosen over X-rays because ultrasound is not ionising radiation and so does not damage cells."
+    }
+  ]
+}

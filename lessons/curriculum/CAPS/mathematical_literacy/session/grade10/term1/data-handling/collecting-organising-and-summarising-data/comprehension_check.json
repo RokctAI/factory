@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the stages of the data cycle in order, and explain what makes \"How many minutes does a patient wait between arriving and being seen by a nurse on a weekday morning?\" a better research question than \"Is the clinic slow?\"",
+      "expected_answer": "The data cycle runs: pose a question; collect the data; organise and classify it; summarise and represent it; analyse and interpret it; and report an answer. \"Is the clinic slow?\" cannot be answered because \"slow\" is not measurable and no one could say what evidence would settle it. The second question names exactly what is being measured (the gap between arriving and being seen), the unit of measurement (minutes), the population (patients), and the time frame (a weekday morning), so two different people collecting data would collect the same thing. It also protects against bias, because it fixes the conditions in advance instead of letting the collector choose convenient cases. A well-posed question is what makes every later stage of the cycle possible."
+    },
+    {
+      "id": "cc2",
+      "question": "The fifteen ordered waiting times, in minutes, are 20, 25, 25, 30, 35, 40, 45, 45, 45, 50, 55, 60, 90, 120 and 140. Calculate the mean, median, mode and range, showing your working, and explain why the mean and median differ.",
+      "expected_answer": "Mean: the fifteen times total 825 minutes, and 825 ÷ 15 = 55 minutes. Median: with 15 values the middle position is (15 + 1) ÷ 2 = position 8, and the eighth value in the ordered list is 45 minutes. Mode: 45 appears three times, more than any other value, so the mode is 45 minutes. Range: 140 − 20 = 120 minutes. The mean is ten minutes higher than the median because three patients waited 90, 120 and 140 minutes; those outliers add a large amount to the total and therefore lift the mean, while the median only depends on which value sits in the eighth position and is barely affected. Every answer must carry its unit — 55 minutes, not 55."
+    },
+    {
+      "id": "cc3",
+      "question": "The sister-in-charge must decide between an extra chair in the waiting room and an extra nurse for the morning shift. Using the four summary values, write the report the class should give her and justify which summary you relied on.",
+      "expected_answer": "The report should say: on a Tuesday morning the median wait was 45 minutes, the mean was 55 minutes, the most common wait was 45 minutes, and waits ranged from 20 to 140 minutes. The median is the summary to quote for what a typical patient experiences, because the three very long waits of 90, 120 and 140 minutes pull the mean above what most patients actually experienced. The range of 120 minutes shows the real problem is unpredictability — a long tail of a few very long waits rather than a uniformly slow queue. The recommendation therefore favours the extra nurse rather than the extra chair, because a chair makes waiting more comfortable while extra nursing capacity shortens the long waits that produce the tail. A full answer states the numbers with their units, names which summary was used and why, and ends with a recommendation the sister can act on."
+    }
+  ]
+}
