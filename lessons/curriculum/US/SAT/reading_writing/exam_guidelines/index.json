@@ -1,0 +1,55 @@
+{
+  "section": "Reading and Writing",
+  "slug": "reading_writing",
+  "framework": "SAT Suite of Assessments",
+  "curriculum": "SAT",
+  "source_page": "https://satsuite.collegeboard.org/",
+  "rights": {
+    "rights_holder": "College Board",
+    "gate": "blocked_pending_written_permission",
+    "gate_meaning": "Reproduction requires express written permission from the rights holder. Nothing beyond facts, links and metadata may be ingested. This is the IEB/Cambridge-equivalent gate.",
+    "attribution_notice": "SAT®, PSAT/NMSQT® and PSAT® are registered trademarks of College Board. Used here nominatively; College Board neither sponsors nor endorses this material. PSAT/NMSQT is a registered trademark of College Board and the National Merit Scholarship Corporation.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md",
+    "ai_use": "expressly_prohibited",
+    "blocked_note": "Nothing from this rights holder may be transcribed into this subtree, or passed to a model, until written permission is obtained. Structure, links and metadata only."
+  },
+  "published_format": {
+    "delivery": "digital, section-adaptive",
+    "sections": 2,
+    "adaptive_design": "Each section is split into two separately timed modules; performance on module 1 determines the difficulty mix of module 2.",
+    "reading_writing": {
+      "questions": 54,
+      "minutes": 64,
+      "modules": 2,
+      "per_module": {
+        "questions": 27,
+        "minutes": 32
+      }
+    },
+    "math": {
+      "questions": 44,
+      "minutes": 70,
+      "modules": 2,
+      "per_module": {
+        "questions": 22,
+        "minutes": 35
+      },
+      "calculator": "permitted throughout"
+    },
+    "totals": {
+      "questions": 98,
+      "minutes": 134
+    },
+    "confidence": "corroborated across multiple secondary sources in August 2026; NOT yet confirmed against College Board's own published specification, which this environment could not reach. Verify at satsuite.collegeboard.org before any student-facing use."
+  },
+  "published_format_basis": "Recorded as factual reporting about the test's shape - how many questions, how long, how the adaptive modules work - which College Board itself publishes and which is not creative expression. It is NOT reproduced test content. The figures were corroborated across multiple secondary sources in August 2026 but NOT confirmed against College Board's own specification, which this environment could not reach; the confidence field says so and must be resolved before any student-facing use.",
+  "scoring": {
+    "status": "not_recorded",
+    "note": "Score scales and concordance tables are College Board content; not recorded pending permission."
+  },
+  "documents": [],
+  "status": "format_recorded_content_gated",
+  "unblock_via": "https://privacy.collegeboard.org/copyright-trademark/request-form",
+  "maintained_by": "hand-owned: seeded once by build_us_tree.py, then mutated only by fetch_us_sources.py or a curation pass - never regenerated."
+}

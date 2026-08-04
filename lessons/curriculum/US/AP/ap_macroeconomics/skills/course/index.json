@@ -1,0 +1,21 @@
+{
+  "course": "AP Macroeconomics",
+  "slug": "ap_macroeconomics",
+  "framework": "Advanced Placement Program",
+  "curriculum": "AP",
+  "rights": {
+    "rights_holder": "College Board",
+    "gate": "blocked_pending_written_permission",
+    "gate_meaning": "Reproduction requires express written permission from the rights holder. Nothing beyond facts, links and metadata may be ingested. This is the IEB/Cambridge-equivalent gate.",
+    "attribution_notice": "AP® and Advanced Placement® are registered trademarks of College Board. Used here nominatively; College Board neither sponsors nor endorses this material.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md",
+    "ai_use": "expressly_prohibited",
+    "blocked_note": "Nothing from this rights holder may be transcribed into this subtree, or passed to a model, until written permission is obtained. Structure, links and metadata only."
+  },
+  "skills": [],
+  "status": "blocked_pending_written_permission",
+  "partition_note": "skills/course/ rather than skills/{grade}/ for the same reason the syllabus is one file: AP courses are not grade-scoped.",
+  "contract": "AP course skills/practices are named and defined in the CED, which is gated. Prerequisite skills that are NOT College Board content - e.g. the algebra a student needs before Calculus AB - may be authored here without waiting on permission, provided they are written from general mathematical knowledge and not transcribed from a CED.",
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}

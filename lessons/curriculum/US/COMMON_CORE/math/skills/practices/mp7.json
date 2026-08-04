@@ -1,0 +1,28 @@
+{
+  "skill_ref": "ccss.math.practice.mp7",
+  "name": "Look for and make use of structure",
+  "code": "CCSS.MATH.PRACTICE.MP7",
+  "subject": "Mathematics",
+  "framework": "Common Core State Standards",
+  "curriculum": "COMMON_CORE",
+  "scope": "K-12",
+  "scope_note": "A cross-grade practice standard, not a grade-scoped prerequisite. It lives in skills/practices/ rather than skills/{grade}/ because the CCSS state it identically at every grade - copying it into thirteen grade folders would be duplication, not fidelity.",
+  "rights": {
+    "rights_holder": "National Governors Association Center for Best Practices (NGA Center) and Council of Chief State School Officers (CCSSO)",
+    "gate": "attribution_required",
+    "gate_meaning": "Reuse is licensed, but a specific notice/citation MUST accompany any publication or public display. Shipping without the notice breaches the licence.",
+    "attribution_notice": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md"
+  },
+  "teaching_content": {
+    "status": "pending_authoring",
+    "contract": "A skill refreshes rather than teaches: 1-2 diagnostic questions to skip ahead, a 250-700 word method recap, a 2-5 question exit check, optionally one Manim scene - the same contract the CAPS skills follow (see lessons/curriculum/CAPS/README.md). Authoring these is editorial work that is deliberately not attempted here: this commit builds the curriculum layer only."
+  },
+  "importance": {
+    "summary": "Practice standards carry no marks of their own - there is no CCSS examination. Their weight is that state assessments built on the CCSS assess them through the content standards.",
+    "exam_weight": null,
+    "exam_weight_note": "Deliberately null. Common Core sets no papers, so there are no section marks to cite. Any weighting would have to come from a specific state assessment programme, which is a separate source."
+  },
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}

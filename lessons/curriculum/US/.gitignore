@@ -1,0 +1,14 @@
+# Source documents (CCSS PDFs, NGSS standards, and — once permission exists —
+# any College Board material) are fetched on demand by
+# scripts/fetch_us_sources.py and never committed. Same policy as
+# ../CAPS/past_papers/ and ../IEB/.
+#
+# sources_manifest.json (URL + sha256 provenance) IS committed; the curated
+# .md and .json extractions carry everything consumers need.
+#
+# Note that audit_tree.py fails the build if a *.pdf is committed anyway, and
+# separately fails if a sources_manifest.json appears under a framework whose
+# rights gate is still closed.
+*.pdf
+source/
+__pycache__/

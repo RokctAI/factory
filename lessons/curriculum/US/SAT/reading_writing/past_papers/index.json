@@ -1,0 +1,25 @@
+{
+  "section": "Reading and Writing",
+  "slug": "reading_writing",
+  "framework": "SAT Suite of Assessments",
+  "curriculum": "SAT",
+  "analogue_note": "The SAT's past-paper analogue is the released full-length practice tests plus the SAT Suite Question Bank, rather than a yearly sat paper - College Board does not release live forms the way the DBE releases NSC papers.",
+  "portal": "https://satsuite.collegeboard.org/",
+  "status": "blocked_pending_written_permission",
+  "status_detail": "College Board licenses the Question Bank and released questions for classroom teaching and internal reporting only, revocably, and forbids uploading, posting online, caching, reproducing, modifying, displaying, editing, altering or enhancing them without express written permission. The Official SAT Practice Test may be used by a student in a non-commercial educational setting but explicitly NOT in a test prep course. Add the generative-AI refusal and there is no route by which this repository may ingest SAT questions today.",
+  "rights": {
+    "rights_holder": "College Board",
+    "gate": "blocked_pending_written_permission",
+    "gate_meaning": "Reproduction requires express written permission from the rights holder. Nothing beyond facts, links and metadata may be ingested. This is the IEB/Cambridge-equivalent gate.",
+    "attribution_notice": "SAT®, PSAT/NMSQT® and PSAT® are registered trademarks of College Board. Used here nominatively; College Board neither sponsors nor endorses this material. PSAT/NMSQT is a registered trademark of College Board and the National Merit Scholarship Corporation.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md",
+    "ai_use": "expressly_prohibited",
+    "blocked_note": "Nothing from this rights holder may be transcribed into this subtree, or passed to a model, until written permission is obtained. Structure, links and metadata only."
+  },
+  "sessions": [],
+  "sessions_contract": "Once unblocked: {\"session\": \"Official Practice Test N\", \"papers\": [{\"section\": ..., \"question_paper_url\": ..., \"answer_explanations_url\": ...}]}. MUST stay empty while the gate is closed - audit_tree.py enforces this.",
+  "captured_links": [],
+  "unblock_via": "https://privacy.collegeboard.org/copyright-trademark/request-form",
+  "maintained_by": "hand-owned: seeded once by build_us_tree.py, then mutated only by fetch_us_sources.py or a curation pass - never regenerated."
+}

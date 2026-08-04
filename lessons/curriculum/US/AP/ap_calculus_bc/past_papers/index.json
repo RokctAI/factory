@@ -1,0 +1,25 @@
+{
+  "course": "AP Calculus BC",
+  "slug": "ap_calculus_bc",
+  "framework": "Advanced Placement Program",
+  "curriculum": "AP",
+  "portal": "https://apcentral.collegeboard.org/courses/past-exam-questions",
+  "portal_coverage": "The College Board publishes released free-response questions with scoring guidelines, sample responses and scoring distributions for recent years; older sets are restricted to the secure teacher site. Recorded from search results, not verified first-hand.",
+  "status": "blocked_pending_written_permission",
+  "status_detail": "This is the hard gate. College Board terms permit a teacher to download released questions and copy them for their own students in a classroom; they forbid posting them online or redistributing them electronically for any reason, forbid commercial use, and expressly refuse permission for the content to be used with generative AI or to train AI. Embedding an AP question as a worked example in this product would breach all four. Do not fetch, do not transcribe, do not pass to a model.",
+  "rights": {
+    "rights_holder": "College Board",
+    "gate": "blocked_pending_written_permission",
+    "gate_meaning": "Reproduction requires express written permission from the rights holder. Nothing beyond facts, links and metadata may be ingested. This is the IEB/Cambridge-equivalent gate.",
+    "attribution_notice": "AP® and Advanced Placement® are registered trademarks of College Board. Used here nominatively; College Board neither sponsors nor endorses this material.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md",
+    "ai_use": "expressly_prohibited",
+    "blocked_note": "Nothing from this rights holder may be transcribed into this subtree, or passed to a model, until written permission is obtained. Structure, links and metadata only."
+  },
+  "sessions": [],
+  "sessions_contract": "Same shape as the CAPS/IEB per-subject index once unblocked: {\"session\": \"2025 AP Exam\", \"papers\": [{\"section\": \"free-response\", \"question_paper_url\": ..., \"scoring_guidelines_url\": ...}]}. Left empty and MUST stay empty until permission is granted - audit_tree.py fails the build if it is populated while the gate is closed.",
+  "captured_links": [],
+  "unblock_via": "https://privacy.collegeboard.org/copyright-trademark/request-form",
+  "maintained_by": "hand-owned: seeded once by build_us_tree.py, then mutated only by fetch_us_sources.py or a curation pass - never regenerated."
+}

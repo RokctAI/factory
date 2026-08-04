@@ -1,0 +1,50 @@
+{
+  "subject": "Science",
+  "grade": "6-8",
+  "framework": "Next Generation Science Standards",
+  "curriculum": "NGSS",
+  "code_prefix": "MS",
+  "organising_unit": "performance expectation",
+  "grade_axis_note": "A band file, because NGSS states these performance expectations for the band and leaves the course sequence inside it to states and districts.",
+  "rights": {
+    "rights_holder": "NGSS Lead States (developed via Achieve); trademark transferred from Achieve to WestEd in May 2020; the published standards volume is copyright National Academies Press",
+    "gate": "owner_decision_required",
+    "gate_meaning": "The licence does not clearly cover this repository's intended use (for-profit / commercial product). Indexing and internal analysis are fine; an owner decision is required before framework content ships to students.",
+    "attribution_notice": "NGSS Lead States. 2013. Next Generation Science Standards: For States, By States. Washington, DC: The National Academies Press.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md",
+    "trademark_gate": "Separate and firm regardless of the commercial question: the product must not put 'NGSS' or 'Next Generation Science Standards' in a product/feature title, must not use the logo, and must not imply WestEd endorsement. Describing content as 'aligned to the NGSS' in body text is nominative use and is the intended pattern."
+  },
+  "dci_domains_available": [
+    {
+      "code": "PS",
+      "name": "Physical Science"
+    },
+    {
+      "code": "LS",
+      "name": "Life Science"
+    },
+    {
+      "code": "ESS",
+      "name": "Earth and Space Science"
+    },
+    {
+      "code": "ETS",
+      "name": "Engineering, Technology, and Applications of Science"
+    }
+  ],
+  "performance_expectations": [],
+  "content_status": {
+    "status": "pending_source_ingest",
+    "reason": "Which DCIs a grade actually carries, and the performance expectations themselves, are transcribed only from the fetched official standards - not from memory and not from a third-party re-host. The domain list above is the set NGSS draws from, not a claim about this grade's coverage.",
+    "rule": "An empty list here means 'not yet transcribed from the official source', never 'the framework has none'. Consumers must treat a pending layer as absent rather than as an empty curriculum."
+  },
+  "pe_contract": "Each entry: {code, statement, sep, dci, ccc, clarification_statement, assessment_boundary} - the last two reproduced verbatim from the standard, because an NGSS assessment boundary changes what may be taught and must not be paraphrased.",
+  "pacing": {
+    "status": "not_applicable",
+    "note": "NGSS prescribes no pacing; sequencing is a state/district decision."
+  },
+  "source_url": "https://www.nextgenscience.org/standards",
+  "parse_status": "architecture_recorded_pending_source_ingest",
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}

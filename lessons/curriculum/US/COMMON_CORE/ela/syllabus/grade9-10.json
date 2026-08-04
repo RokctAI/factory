@@ -1,0 +1,76 @@
+{
+  "subject": "English Language Arts and Literacy",
+  "grade": "9-10",
+  "framework": "Common Core State Standards",
+  "curriculum": "COMMON_CORE",
+  "organising_unit": "strand",
+  "grade_axis_note": "A band file, because the CCSS themselves state these standards for the band rather than per grade.",
+  "rights": {
+    "rights_holder": "National Governors Association Center for Best Practices (NGA Center) and Council of Chief State School Officers (CCSSO)",
+    "gate": "attribution_required",
+    "gate_meaning": "Reuse is licensed, but a specific notice/citation MUST accompany any publication or public display. Shipping without the notice breaches the licence.",
+    "attribution_notice": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md"
+  },
+  "strands": [
+    {
+      "code": "RL",
+      "name": "Reading: Literature",
+      "standards": []
+    },
+    {
+      "code": "RI",
+      "name": "Reading: Informational Text",
+      "standards": []
+    },
+    {
+      "code": "W",
+      "name": "Writing",
+      "standards": []
+    },
+    {
+      "code": "SL",
+      "name": "Speaking and Listening",
+      "standards": []
+    },
+    {
+      "code": "L",
+      "name": "Language",
+      "standards": []
+    },
+    {
+      "code": "RH",
+      "name": "Reading in History/Social Studies (literacy strand)",
+      "standards": []
+    },
+    {
+      "code": "RST",
+      "name": "Reading in Science and Technical Subjects (literacy strand)",
+      "standards": []
+    },
+    {
+      "code": "WHST",
+      "name": "Writing in History/Social Studies, Science and Technical Subjects (literacy strand)",
+      "standards": []
+    }
+  ],
+  "anchors_apply": [
+    "reading",
+    "writing",
+    "speaking_listening",
+    "language"
+  ],
+  "content_status": {
+    "status": "pending_source_ingest",
+    "reason": "Strand set per grade is recorded (the framework's architecture); standard text is transcribed only from the fetched official PDF.",
+    "rule": "An empty list here means 'not yet transcribed from the official source', never 'the framework has none'. Consumers must treat a pending layer as absent rather than as an empty curriculum."
+  },
+  "pacing": {
+    "status": "not_applicable",
+    "note": "See the mathematics syllabus files - CCSS prescribes no pacing."
+  },
+  "source_url": "https://corestandards.org/wp-content/uploads/2023/09/ELA_Standards1.pdf",
+  "parse_status": "architecture_recorded_pending_source_ingest",
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}

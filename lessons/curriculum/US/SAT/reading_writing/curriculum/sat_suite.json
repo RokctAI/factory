@@ -1,0 +1,50 @@
+{
+  "section": "Reading and Writing",
+  "slug": "reading_writing",
+  "framework": "SAT Suite of Assessments",
+  "curriculum": "SAT",
+  "rights": {
+    "rights_holder": "College Board",
+    "gate": "blocked_pending_written_permission",
+    "gate_meaning": "Reproduction requires express written permission from the rights holder. Nothing beyond facts, links and metadata may be ingested. This is the IEB/Cambridge-equivalent gate.",
+    "attribution_notice": "SAT®, PSAT/NMSQT® and PSAT® are registered trademarks of College Board. Used here nominatively; College Board neither sponsors nor endorses this material. PSAT/NMSQT is a registered trademark of College Board and the National Merit Scholarship Corporation.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md",
+    "ai_use": "expressly_prohibited",
+    "blocked_note": "Nothing from this rights holder may be transcribed into this subtree, or passed to a model, until written permission is obtained. Structure, links and metadata only."
+  },
+  "role": "The SAT Suite has no curriculum in the CAPS sense - it does not tell a school what to teach. What it publishes is an assessment specification: the content domains each section reports on, and the skill/knowledge testing points inside them. That specification is the nearest analogue and is what this layer would hold.",
+  "content_domains": [
+    "Information and Ideas",
+    "Craft and Structure",
+    "Expression of Ideas",
+    "Standard English Conventions"
+  ],
+  "content_domains_note": "Domain NAMES are the test's public reporting structure - facts about how scores are broken out, not reproduced test content. The skill/knowledge testing points beneath each domain are College Board content and are gated.",
+  "suite": [
+    {
+      "grade_band": "8-9",
+      "assessment": "PSAT 8/9"
+    },
+    {
+      "grade_band": "10",
+      "assessment": "PSAT 10 and PSAT/NMSQT (PSAT/NMSQT is also taken in grade 11)"
+    },
+    {
+      "grade_band": "11-12",
+      "assessment": "SAT"
+    }
+  ],
+  "suite_note": "The Suite is vertically scaled: the same content domains run across PSAT 8/9, PSAT 10, PSAT/NMSQT and the SAT, with difficulty rather than domain set changing by band. That is why the grade axis here is the Suite's own band structure.",
+  "detail": {
+    "status": "blocked_pending_written_permission",
+    "testing_points": [],
+    "reason": "See lessons/curriculum/US/RIGHTS.json - same College Board policy as AP.",
+    "unblock_via": "https://privacy.collegeboard.org/copyright-trademark/request-form"
+  },
+  "source": {
+    "site": "https://satsuite.collegeboard.org/",
+    "status": "urls_recorded_not_verified"
+  },
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}
