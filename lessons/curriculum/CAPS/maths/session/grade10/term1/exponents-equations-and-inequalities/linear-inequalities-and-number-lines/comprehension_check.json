@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve −2x > 6, explain why the inequality sign reverses, and show how to check the answer.",
+      "expected_answer": "Dividing both sides by −2 gives x < −3, with the sign reversed. The reversal happens because multiplying or dividing by a negative reflects both sides through zero, and reflection reverses order: 5 > 3, yet −5 < −3, exactly as owing R500 is a worse position than owing R300. To check, take any value the answer allows, such as x = −4, and substitute it into the ORIGINAL: −2 × −4 = 8, and 8 > 6, so the answer holds. Testing the unflipped version exposes it — with x > −3, the value x = 0 should work, but −2 × 0 = 0, which is not greater than 6. An alternative that avoids the flip entirely is to move the variable to the side where its coefficient is positive: −2x > 6 becomes −6 > 2x, then −3 > x, which reads as x < −3."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve −3 < 2x + 1 ≤ 7 and present the answer in words, as a number-line sketch and in interval notation, explaining each convention.",
+      "expected_answer": "Apply every operation to all three parts. Subtracting 1 from each gives −4 < 2x ≤ 6; dividing each by 2, a positive number, gives −2 < x ≤ 3, with no reversal. In words, x is greater than −2 and less than or equal to 3. On the number line, draw an open (hollow) dot at −2 because that boundary is excluded by the strict inequality, a solid dot at 3 because 'less than or equal to' includes it, and shade only the segment between them — there is no arrow, since the answer is bounded on both sides. In interval notation the answer is (−2 ; 3]: a round bracket excludes its endpoint and a square bracket includes it, mirroring the hollow and solid dots, and the smaller value is always written on the left. The common error is operating on only two of the three parts, which lets the middle drift out of step with the ends."
+    },
+    {
+      "id": "cc3",
+      "question": "A Mthatha stallholder pays R120 to rent a table for the day and sells vetkoek at R12 each. Set up and solve an inequality for making a profit of at least R300, and explain how the wording and the context shape the final answer.",
+      "expected_answer": "Let n be the number of vetkoek sold. Profit is income minus costs, 12n − 120, and 'at least R300' translates to greater than or equal to, so 12n − 120 ≥ 300. Adding 120 gives 12n ≥ 420, and dividing by 12 — a positive number, so no reversal — gives n ≥ 35. Because she cannot sell part of a vetkoek, n must be a whole number, and the answer is stated in the language of the problem: she must sell at least 35 vetkoek. The boundary check confirms the wording: 35 × R12 = R420, less the R120 table, is exactly R300, so 35 itself satisfies 'at least' and its dot on the number line is filled in. Had the question said 'more than R300 profit', 35 would be excluded and the answer would be at least 36 — one word changes the dot and the answer."
+    }
+  ]
+}
