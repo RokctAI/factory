@@ -1,0 +1,64 @@
+{
+  "subject": "Mathematics",
+  "grade": "2",
+  "framework": "Common Core State Standards",
+  "curriculum": "COMMON_CORE",
+  "organising_unit": "domain",
+  "grade_axis_note": null,
+  "rights": {
+    "rights_holder": "National Governors Association Center for Best Practices (NGA Center) and Council of Chief State School Officers (CCSSO)",
+    "gate": "attribution_required",
+    "gate_meaning": "Reuse is licensed, but a specific notice/citation MUST accompany any publication or public display. Shipping without the notice breaches the licence.",
+    "attribution_notice": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md"
+  },
+  "domains": [
+    {
+      "code": "OA",
+      "name": "Operations and Algebraic Thinking",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "NBT",
+      "name": "Number and Operations in Base Ten",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "MD",
+      "name": "Measurement and Data",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "G",
+      "name": "Geometry",
+      "clusters": [],
+      "standards": []
+    }
+  ],
+  "practices_apply": [
+    "MP1",
+    "MP2",
+    "MP3",
+    "MP4",
+    "MP5",
+    "MP6",
+    "MP7",
+    "MP8"
+  ],
+  "content_status": {
+    "status": "pending_source_ingest",
+    "reason": "Domain names and the grade's domain set are recorded (the framework's architecture); cluster headings and standard text are transcribed only from the fetched official PDF.",
+    "rule": "An empty list here means 'not yet transcribed from the official source', never 'the framework has none'. Consumers must treat a pending layer as absent rather than as an empty curriculum."
+  },
+  "pacing": {
+    "status": "not_applicable",
+    "note": "Common Core prescribes no pacing. There is no CCSS equivalent of a DBE Annual Teaching Plan - term and week placement is a state, district or school decision, so no `terms` array is emitted. A scheduler wanting US pacing must source a district scope-and-sequence, which is a different document with its own rights position."
+  },
+  "source_url": "https://corestandards.org/wp-content/uploads/2023/09/Math_Standards1.pdf",
+  "parse_status": "architecture_recorded_pending_source_ingest",
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}

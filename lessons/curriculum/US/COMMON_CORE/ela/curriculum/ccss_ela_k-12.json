@@ -1,0 +1,116 @@
+{
+  "subject": "English Language Arts and Literacy",
+  "framework": "Common Core State Standards",
+  "framework_type": "content_standards",
+  "document": "Common Core State Standards for English Language Arts & Literacy in History/Social Studies, Science, and Technical Subjects",
+  "jurisdiction": "United States - adopted state by state; not a federal curriculum",
+  "grade_span": "K-12",
+  "rights": {
+    "rights_holder": "National Governors Association Center for Best Practices (NGA Center) and Council of Chief State School Officers (CCSSO)",
+    "gate": "attribution_required",
+    "gate_meaning": "Reuse is licensed, but a specific notice/citation MUST accompany any publication or public display. Shipping without the notice breaches the licence.",
+    "attribution_notice": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md"
+  },
+  "architecture": {
+    "anchor_standards": [
+      {
+        "strand": "reading",
+        "title": "College and Career Readiness Anchor Standards for Reading",
+        "count": 10
+      },
+      {
+        "strand": "writing",
+        "title": "College and Career Readiness Anchor Standards for Writing",
+        "count": 10
+      },
+      {
+        "strand": "speaking_listening",
+        "title": "College and Career Readiness Anchor Standards for Speaking and Listening",
+        "count": 6
+      },
+      {
+        "strand": "language",
+        "title": "College and Career Readiness Anchor Standards for Language",
+        "count": 6
+      }
+    ],
+    "anchor_note": "The College and Career Readiness anchor standards are the cross-grade backbone: each grade-specific standard is a grade-appropriate articulation of one anchor. Modelled once, in ../skills/practices/.",
+    "strands_k5": [
+      {
+        "code": "RL",
+        "name": "Reading: Literature"
+      },
+      {
+        "code": "RI",
+        "name": "Reading: Informational Text"
+      },
+      {
+        "code": "RF",
+        "name": "Reading: Foundational Skills"
+      },
+      {
+        "code": "W",
+        "name": "Writing"
+      },
+      {
+        "code": "SL",
+        "name": "Speaking and Listening"
+      },
+      {
+        "code": "L",
+        "name": "Language"
+      }
+    ],
+    "strands_6_12": [
+      {
+        "code": "RL",
+        "name": "Reading: Literature"
+      },
+      {
+        "code": "RI",
+        "name": "Reading: Informational Text"
+      },
+      {
+        "code": "W",
+        "name": "Writing"
+      },
+      {
+        "code": "SL",
+        "name": "Speaking and Listening"
+      },
+      {
+        "code": "L",
+        "name": "Language"
+      },
+      {
+        "code": "RH",
+        "name": "Reading in History/Social Studies (literacy strand)"
+      },
+      {
+        "code": "RST",
+        "name": "Reading in Science and Technical Subjects (literacy strand)"
+      },
+      {
+        "code": "WHST",
+        "name": "Writing in History/Social Studies, Science and Technical Subjects (literacy strand)"
+      }
+    ],
+    "strand_notes": "Reading: Foundational Skills (RF) exists only in K-5. The literacy strands RH, RST and WHST exist only in 6-12 and are addressed to history/social-studies, science and technical teachers rather than to the ELA teacher.",
+    "identifier_grammar": "CCSS.ELA-LITERACY.<strand><grade>.<number>, e.g. CCSS.ELA-LITERACY.RL.4.3; grade bands appear as written, e.g. CCSS.ELA-LITERACY.RI.9-10.1; literacy strands carry their own prefix, e.g. CCSS.ELA-LITERACY.RST.6-8.3."
+  },
+  "source": {
+    "site": "https://corestandards.org/",
+    "pdf": "https://corestandards.org/wp-content/uploads/2023/09/ELA_Standards1.pdf",
+    "ccsso_mirror_pdf": "https://learning.ccsso.org/wp-content/uploads/2022/11/ADA-Compliant-ELA-Standards.pdf",
+    "status": "urls_recorded_not_verified",
+    "fetch_with": "lessons/curriculum/US/scripts/fetch_us_sources.py"
+  },
+  "full_text": {
+    "status": "pending_source_ingest",
+    "reason": "The standards PDF has not been fetched: this environment's egress policy blocks corestandards.org. Once fetched, curate as ccss_ela_k-12.md beside this file.",
+    "rule": "An empty list here means 'not yet transcribed from the official source', never 'the framework has none'. Consumers must treat a pending layer as absent rather than as an empty curriculum."
+  },
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}

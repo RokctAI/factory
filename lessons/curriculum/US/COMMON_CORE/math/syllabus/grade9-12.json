@@ -1,0 +1,76 @@
+{
+  "subject": "Mathematics",
+  "grade": "9-12",
+  "framework": "Common Core State Standards",
+  "curriculum": "COMMON_CORE",
+  "organising_unit": "conceptual category",
+  "grade_axis_note": "CCSS high school mathematics is organised by conceptual category across grades 9-12, not grade by grade. One file covers the whole high school span because splitting it into grade9..grade12 would invent a sequencing decision the standards leave to states and districts.",
+  "rights": {
+    "rights_holder": "National Governors Association Center for Best Practices (NGA Center) and Council of Chief State School Officers (CCSSO)",
+    "gate": "attribution_required",
+    "gate_meaning": "Reuse is licensed, but a specific notice/citation MUST accompany any publication or public display. Shipping without the notice breaches the licence.",
+    "attribution_notice": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+    "policy_of_record": "lessons/curriculum/US/RIGHTS.json",
+    "audit": "lessons/curriculum/US/SOURCES.md"
+  },
+  "domains": [
+    {
+      "code": "N",
+      "name": "Number and Quantity",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "A",
+      "name": "Algebra",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "F",
+      "name": "Functions",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "G",
+      "name": "Geometry",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "S",
+      "name": "Statistics and Probability",
+      "clusters": [],
+      "standards": []
+    },
+    {
+      "code": "M",
+      "name": "Modelling (a Modeling category marked by a star on standards in other categories, with no standards of its own)",
+      "clusters": [],
+      "standards": []
+    }
+  ],
+  "practices_apply": [
+    "MP1",
+    "MP2",
+    "MP3",
+    "MP4",
+    "MP5",
+    "MP6",
+    "MP7",
+    "MP8"
+  ],
+  "content_status": {
+    "status": "pending_source_ingest",
+    "reason": "Domain names and the grade's domain set are recorded (the framework's architecture); cluster headings and standard text are transcribed only from the fetched official PDF.",
+    "rule": "An empty list here means 'not yet transcribed from the official source', never 'the framework has none'. Consumers must treat a pending layer as absent rather than as an empty curriculum."
+  },
+  "pacing": {
+    "status": "not_applicable",
+    "note": "Common Core prescribes no pacing. There is no CCSS equivalent of a DBE Annual Teaching Plan - term and week placement is a state, district or school decision, so no `terms` array is emitted. A scheduler wanting US pacing must source a district scope-and-sequence, which is a different document with its own rights position."
+  },
+  "source_url": "https://corestandards.org/wp-content/uploads/2023/09/Math_Standards1.pdf",
+  "parse_status": "architecture_recorded_pending_source_ingest",
+  "generated_by": "lessons/curriculum/US/scripts/build_us_tree.py"
+}

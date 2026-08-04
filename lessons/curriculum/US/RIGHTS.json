@@ -1,0 +1,156 @@
+{
+  "policy_of_record": "Rights posture for every framework under lessons/curriculum/US. This file is the machine-readable half of SOURCES.md: scripts/audit_tree.py reads it and FAILS the build if content lands under a path whose gate is not cleared. Editing a gate here is a rights decision, not a code change - it needs the owner, and the evidence in SOURCES.md must be updated in the same commit.",
+  "policy_version": "1.0",
+  "checked": "2026-08-04",
+  "verification_method": "web_search_only",
+  "verification_caveat": "This build environment's egress policy blocks corestandards.org, nextgenscience.org, collegeboard.org and apcentral.collegeboard.org (proxy answered 403 to CONNECT for all four), and the server-side fetch tool was refused (HTTP 403) by every host tried, including a neutral control. So NO terms page below was read first-hand from this environment; every quote is from a search-indexed copy of the rights holder's own page. Re-run scripts/fetch_us_sources.py probe from a network-enabled machine to read robots.txt and each terms page first-hand, then set verification_method to 'first_hand' and record the date. Treat the gates below as the conservative reading until that happens - a gate may only be loosened on first-hand evidence.",
+  "gate_levels": {
+    "none": "No rights gate. Use freely within the recorded licence.",
+    "attribution_required": "Reuse is licensed, but a specific notice/citation MUST accompany any publication or public display. Shipping without the notice breaches the licence.",
+    "owner_decision_required": "The licence does not clearly cover this repository's intended use (for-profit / commercial product). Indexing and internal analysis are fine; an owner decision is required before framework content ships to students.",
+    "blocked_pending_written_permission": "Reproduction requires express written permission from the rights holder. Nothing beyond facts, links and metadata may be ingested. This is the IEB/Cambridge-equivalent gate."
+  },
+  "frameworks": {
+    "COMMON_CORE": {
+      "name": "Common Core State Standards (Mathematics, English Language Arts & Literacy)",
+      "rights_holder": "National Governors Association Center for Best Practices (NGA Center) and Council of Chief State School Officers (CCSSO)",
+      "is_public_domain": false,
+      "public_domain_note": "Explicitly NOT public domain, and NOT a state-by-state open licence. The standards are copyrighted by NGA Center/CCSSO and released under their own written 'public licence'. State adoption does not put them in the public domain - it only exempts adopting states from the licence's attribution provision. The task brief's hypothesis ('state-adopted, not one exam board's copyrighted product') is half right: there is no exam board, but there is a single private rights holder pair.",
+      "license_name": "Common Core State Standards Public License (NGA Center / CCSSO)",
+      "license_quote": "NGA Center and CCSSO hereby grant a limited, non-exclusive, royalty-free license to copy, publish, distribute, and display the Common Core State Standards for purposes that support the Common Core State Standards Initiative. These uses may involve the Common Core State Standards as a whole or selected excerpts or portions.",
+      "license_conditions": [
+        "NGA Center/CCSSO shall be acknowledged as the sole owners and developers of the Common Core State Standards, and no claims to the contrary shall be made.",
+        "Any publication or public display shall include the required copyright notice (see attribution_notice).",
+        "States and territories of the United States, and the District of Columbia, that have adopted the Common Core State Standards in whole are exempt from the attribution provision of the licence.",
+        "The licence extends to the Common Core State Standards only and NOT to the examples embedded in them: some examples are public-domain material and others required NGA Center/CCSSO to obtain permission from a third-party copyright holder."
+      ],
+      "attribution_notice": "© Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.",
+      "commercial_reproduction": "permitted_within_license_purpose",
+      "commercial_reproduction_detail": "The licence carries NO non-commercial clause - unlike the IEB's 'may not be reproduced for commercial gain'. What it carries instead is a PURPOSE limitation: 'for purposes that support the Common Core State Standards Initiative'. Teaching CCSS-aligned lessons to students sits inside that purpose on any ordinary reading. Reselling the standards as a product, or using them to argue against the Initiative, would not.",
+      "ai_use": "not_addressed_by_license",
+      "gate": "attribution_required",
+      "gated_paths": [],
+      "must_carry_notice_paths": ["COMMON_CORE/**"],
+      "excluded_sources": [
+        "thecorestandards.org - an UNOFFICIAL mirror. CCSSO has publicly demanded it be taken offline citing copyright infringement; it was created without CCSSO/NGA permission or knowledge. Its /public-license/ page reproduces the real licence text accurately, which is exactly why it is dangerous: it looks authoritative and ranks well. Do not cite it, do not fetch from it. Primary source is corestandards.org (CCSSO-maintained) and CCSSO's own learning.ccsso.org.",
+        "Scribd / course-notes re-uploads of the standards PDFs - unverifiable fidelity, same exclusion rule the IEB audit applied to Studocu/Scribd SAG re-uploads."
+      ],
+      "primary_sources": {
+        "site": "https://corestandards.org/",
+        "math_pdf": "https://corestandards.org/wp-content/uploads/2023/09/Math_Standards1.pdf",
+        "ela_pdf": "https://corestandards.org/wp-content/uploads/2023/09/ELA_Standards1.pdf",
+        "ccsso_mirror_math_pdf": "https://learning.ccsso.org/wp-content/uploads/2022/11/ADA-Compliant-Math-Standards.pdf",
+        "ccsso_mirror_ela_pdf": "https://learning.ccsso.org/wp-content/uploads/2022/11/ADA-Compliant-ELA-Standards.pdf",
+        "mirror_note": "learning.ccsso.org is CCSSO's own domain, so it is a primary source, not a third-party mirror. Search results in August 2026 indicated corestandards.org was serving a reduced site during technical work, with CCSSO hosting the documents; verify which host is current at fetch time and record the one actually used."
+      },
+      "verdict": "USABLE. No permission gate. Attribution is a hard obligation, not a courtesy: every publication or public display of CCSS-derived material must carry attribution_notice verbatim, and must not imply we own or co-developed the standards. Do not reproduce the embedded examples - the licence does not cover them."
+    },
+    "NGSS": {
+      "name": "Next Generation Science Standards",
+      "rights_holder": "NGSS Lead States (developed via Achieve); trademark transferred from Achieve to WestEd in May 2020; the published standards volume is copyright National Academies Press",
+      "is_public_domain": false,
+      "license_name": "NGSS Trademarks and Copyright statement (WestEd, on behalf of the Lead States and Partners)",
+      "license_quote": "The K-12 academic standards may be copied, reproduced, altered, adapted, edited, deleted and rearranged by states, districts, schools, teachers and non-profit education entities as they see fit and without permission.",
+      "license_conditions": [
+        "The permission-free reuse grant is written as an ENUMERATED list of actors: states, districts, schools, teachers and non-profit education entities. A for-profit product is not named in that list.",
+        "'Next Generation Science Standards' and the NGSS logo are registered trademarks of WestEd. Third parties shall not use the NGSS logo without WestEd's express written consent.",
+        "Third parties shall not use the NGSS trademarks within the main title of any third-party product, service or publication, nor combine them with another trademark or design, nor use them in a manner suggesting third-party ownership.",
+        "WestEd reserves the right to request samples of materials incorporating the NGSS marks and to insist that non-conforming materials be altered."
+      ],
+      "attribution_notice": "NGSS Lead States. 2013. Next Generation Science Standards: For States, By States. Washington, DC: The National Academies Press.",
+      "commercial_reproduction": "unresolved_for_for_profit",
+      "commercial_reproduction_detail": "This is the subtle one and it must not be waved through. The reuse grant is broad in VERBS (copy, reproduce, alter, adapt, edit, delete, rearrange) but narrow in SUBJECTS - it enumerates non-profit actors. If this repository ships a commercial product, we are not inside the enumerated list, and the grant's 'without permission' does not plainly reach us. That is a genuine open question, not a settled permission. It is NOT the same as the College Board's explicit prohibition, and NOT the same as the IEB's explicit non-commercial clause - it is silence about our case, which is why it needs a decision rather than an assumption in either direction.",
+      "ai_use": "not_addressed_by_license",
+      "gate": "owner_decision_required",
+      "gated_paths": [],
+      "must_carry_notice_paths": ["NGSS/**"],
+      "trademark_gate": "Separate and firm regardless of the commercial question: the product must not put 'NGSS' or 'Next Generation Science Standards' in a product/feature title, must not use the logo, and must not imply WestEd endorsement. Describing content as 'aligned to the NGSS' in body text is nominative use and is the intended pattern.",
+      "excluded_sources": [
+        "Third-party re-hosts of the NGSS PDFs (university course sites, OER aggregators, test-prep vendors) - fine for orientation, never for transcription or provenance hashes."
+      ],
+      "primary_sources": {
+        "site": "https://www.nextgenscience.org/",
+        "standards": "https://www.nextgenscience.org/standards",
+        "trademarks_and_copyright": "https://www.nextgenscience.org/ngss-trademarks-and-copyright/ngss-trademarks-and-copyright",
+        "steward": "https://ngs.wested.org/",
+        "publisher": "https://nap.nationalacademies.org/catalog/18290/next-generation-science-standards-for-states-by-states"
+      },
+      "verdict": "USABLE FOR NOW, WITH AN OPEN COMMERCIAL QUESTION. Ingest, index and align freely; carry the citation. Before NGSS-derived content ships inside a paid product, get the owner to either confirm non-profit/educational framing or obtain written confirmation from WestEd. Trademark rules apply immediately and unconditionally."
+    },
+    "AP": {
+      "name": "Advanced Placement Program",
+      "rights_holder": "College Board",
+      "is_public_domain": false,
+      "license_name": "College Board Terms of Use / Copyright and Trademark policy",
+      "license_quote": "No copyrighted material or College Board content may be performed, distributed, downloaded, uploaded, modified, reused, reproduced, reposted, retransmitted, disseminated, sold, published, broadcast or circulated without express written permission from the College Board.",
+      "license_conditions": [
+        "College Board Services are provided solely for non-commercial use - they may not be used to make money or as part of any test prep or other business.",
+        "Released past exam materials may be downloaded by teachers and copied for use with their own students in a classroom setting only.",
+        "Past exam materials may not be posted on school or personal websites, nor electronically redistributed for any reason.",
+        "AI: College Board does not grant permission for its copyrighted content, including practice test questions, to be used in conjunction with generative AI or similar technologies, and does not permit training any AI system or application on College Board content.",
+        "Permission must be requested through the College Board Copyright and Trademark Permission Request Form."
+      ],
+      "attribution_notice": "AP® and Advanced Placement® are registered trademarks of College Board. Used here nominatively; College Board neither sponsors nor endorses this material.",
+      "commercial_reproduction": "requires_written_permission",
+      "ai_use": "expressly_prohibited",
+      "ai_use_detail": "This is the decisive clause for this repository and it is STRICTER than the IEB's. The IEB bars reproduction for commercial gain but says nothing about AI. The College Board bars both commercial use AND any use of its content in conjunction with generative AI, AND training AI on its content. This repository is an AI lesson factory: feeding an AP question, scoring guideline or Course and Exam Description into a generation pipeline is squarely the prohibited act, even for a non-commercial internal build. Permission must cover the AI use specifically - a generic reproduction permission would not.",
+      "gate": "blocked_pending_written_permission",
+      "gated_paths": ["AP/**/past_papers/**", "AP/**/curriculum/**", "AP/**/exam_guidelines/**", "AP/**/syllabus/**"],
+      "gate_allows": "Facts, links, metadata, our own authored structural description, and this rights record. NOT: question text, scoring guidelines, Course and Exam Description prose, unit/topic lists transcribed from a CED, or any of the above passed to a model.",
+      "must_carry_notice_paths": ["AP/**"],
+      "excluded_sources": [
+        "uworld.com, edisonos.com, research.com, sparkl.me and similar CED summarisers - third-party reproductions of College Board content. Same exclusion as Studocu/Scribd in the IEB audit: useful only to locate official documents, never as a content source. Transcribing an AP unit list from one of these launders a prohibited reproduction and must not be done.",
+        "Course-notes sites hosting scanned AP exams (studocu, scribd, coursehero, clacenter) - unauthorised redistributions of material the College Board restricts to classroom copying."
+      ],
+      "primary_sources": {
+        "site": "https://apcentral.collegeboard.org/",
+        "past_exam_questions": "https://apcentral.collegeboard.org/courses/past-exam-questions",
+        "terms": "https://www.collegeboard.org/terms/terms-of-use",
+        "copyright_guidelines": "https://privacy.collegeboard.org/copyright-trademark/guidelines",
+        "permission_request_form": "https://privacy.collegeboard.org/copyright-trademark/request-form",
+        "permission_request_instructions": "https://privacy.collegeboard.org/copyright-trademark/request-instructions"
+      },
+      "verdict": "GATED - the IEB/Cambridge-equivalent gate, and then some. Nothing from the College Board may be ingested, transcribed or fed to a model until written permission is obtained that explicitly covers (a) reproduction, (b) commercial use if the product is paid, and (c) use with generative AI. Until then this subtree carries structure, links and rights metadata only."
+    },
+    "SAT": {
+      "name": "SAT Suite of Assessments (SAT, PSAT/NMSQT, PSAT 10, PSAT 8/9)",
+      "rights_holder": "College Board",
+      "is_public_domain": false,
+      "same_policy_as": "AP",
+      "same_policy_note": "CONFIRMED, NOT ASSUMED - and deliberately not re-audited from scratch. The AP audit above was run against College Board's organisation-level Terms of Use and its single Copyright and Trademark policy, both of which are published per-organisation rather than per-programme: the terms are hosted at collegeboard.org/terms/terms-of-use and the copyright guidance at privacy.collegeboard.org/copyright-trademark/, neither scoped to a programme. The same audit pass surfaced SAT-specific applications of that one policy - reproduction of The Official SAT Study Guide and The Official SAT Teacher's Guide is not allowed in any manner; The Official SAT Practice Test may be used by students in a non-commercial educational setting but NOT in a test prep course; and the SAT Suite Question Bank and released questions are licensed non-exclusively, limitedly and revocably for classroom teaching and internal reporting only, with no uploading, posting online, caching, reproduction, modification, display, editing, altering or enhancing without express written permission. The generative-AI prohibition is written against 'College Board's copyrighted content, including practice test questions' - it is not AP-scoped either. One rights holder, one policy, one gate.",
+      "license_quote": "College Board grants a non-exclusive, limited and revocable license to use the SAT Suite Question Bank and any other released questions for the purpose of classroom teaching and internal reporting only. You cannot upload or post online, cache, reproduce, modify, display, edit, alter or enhance any portion of the SAT Suite Question Bank questions and answers unless you have express written permission from College Board.",
+      "license_conditions": [
+        "Reproduction of material from The Official SAT Study Guide or The Official SAT Teacher's Guide is not permitted in any manner.",
+        "The Official SAT Practice Test may be used by students in a non-commercial educational setting, but not in a test prep course.",
+        "Released questions are licensed for classroom teaching and internal reporting only; the licence is revocable.",
+        "The generative-AI prohibition and the AI-training prohibition apply to College Board copyrighted content generally, including practice test questions."
+      ],
+      "attribution_notice": "SAT®, PSAT/NMSQT® and PSAT® are registered trademarks of College Board. Used here nominatively; College Board neither sponsors nor endorses this material. PSAT/NMSQT is a registered trademark of College Board and the National Merit Scholarship Corporation.",
+      "commercial_reproduction": "requires_written_permission",
+      "ai_use": "expressly_prohibited",
+      "gate": "blocked_pending_written_permission",
+      "gated_paths": ["SAT/**/past_papers/**", "SAT/**/curriculum/**", "SAT/**/exam_guidelines/**", "SAT/**/syllabus/**"],
+      "gate_allows": "Same as AP: facts, links, metadata, our own authored structural description. The published test FORMAT (section count, question counts, timings, adaptive module design) is factual reporting about the test rather than reproduction of its content, and is recorded as such with its source - but no question text, no answer explanations, no Question Bank items, and nothing from the Official SAT Study Guide.",
+      "must_carry_notice_paths": ["SAT/**"],
+      "excluded_sources": [
+        "Test-prep vendor blogs (galvanizetestprep, testprepkart, edisonos, oneprep, catalysttestprep, makon.ai, ttprep, testprepscout) - used ONLY to corroborate the published test format, which College Board itself publishes; never as a source of question content, and never for provenance.",
+        "Any site hosting leaked or scanned SAT forms."
+      ],
+      "primary_sources": {
+        "site": "https://satsuite.collegeboard.org/",
+        "terms": "https://www.collegeboard.org/terms/terms-of-use",
+        "copyright_guidelines": "https://privacy.collegeboard.org/copyright-trademark/guidelines",
+        "permission_request_form": "https://privacy.collegeboard.org/copyright-trademark/request-form"
+      },
+      "verdict": "GATED - identical gate to AP, under the same College Board policy, confirmed rather than assumed. A single permission request should cover both programmes; do not treat an AP permission as covering SAT or vice versa unless the granted permission says so."
+    }
+  },
+  "summary_for_owner": {
+    "need_commercial_reproduction_permission_gate_like_IEB_cambridge": ["AP", "SAT"],
+    "stricter_than_IEB": ["AP", "SAT"],
+    "stricter_than_IEB_reason": "The IEB bars commercial reproduction only. The College Board bars commercial use, bars redistribution of released exams outside classroom copying, AND expressly refuses permission for its content to be used with generative AI or to train AI systems - which is the specific thing this repository's pipeline does.",
+    "no_permission_gate_but_hard_attribution_obligation": ["COMMON_CORE"],
+    "needs_an_owner_decision_short_of_a_permission_gate": ["NGSS"],
+    "one_line": "AP and SAT are gated exactly like IEB/Cambridge and additionally carry an explicit anti-AI clause; Common Core is open under a purpose-limited licence with a mandatory verbatim copyright notice; NGSS is open to non-profit actors by name, which leaves for-profit use an open question plus a firm trademark rule."
+  }
+}

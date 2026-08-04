@@ -1,0 +1,27 @@
+{
+  "subject": "English Language Arts and Literacy",
+  "framework": "Common Core State Standards",
+  "curriculum": "COMMON_CORE",
+  "applicability": "no_examining_body",
+  "explanation": "Common Core is a content-standards framework, not an examining body. It publishes no examination guideline, sets no papers and awards no certificate, so there is no CCSS counterpart to a DBE Examination Guideline or an IEB SAG. This folder is kept - rather than omitted like past_papers/ - because the assessment layer for CCSS does exist, it just belongs to somebody else: the state assessment programmes built on the standards.",
+  "assessment_is_downstream": {
+    "note": "Each adopting state assesses the CCSS through its own programme, historically via the two federally-funded consortia and increasingly via state-specific tests. Each has its own rights holder and its own terms - none of which are covered by the CCSS public licence. Audit any such programme separately before ingesting.",
+    "known_programmes": [
+      {
+        "name": "Smarter Balanced Assessment Consortium",
+        "rights_note": "separate rights holder - not covered by the CCSS public licence"
+      },
+      {
+        "name": "PARCC (legacy; succeeded by state programmes and vendor successors)",
+        "rights_note": "separate rights holder"
+      },
+      {
+        "name": "State-specific assessments in states that left the consortia",
+        "rights_note": "separate rights holder per state"
+      }
+    ],
+    "status": "not_audited"
+  },
+  "documents": [],
+  "maintained_by": "hand-owned: seeded once by build_us_tree.py and never regenerated. Record any assessment-programme audit here."
+}
