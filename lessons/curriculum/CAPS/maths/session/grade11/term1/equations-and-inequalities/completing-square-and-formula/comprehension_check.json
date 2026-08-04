@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve x² + 6x + 2 = 0 by completing the square, showing every step, and explain how the same manipulation gives the turning point of y = x² + 6x + 2.",
+      "expected_answer": "Move the constant across: x² + 6x = −2. The number that completes the square is the square of half the coefficient of x, so half of 6 is 3 and 3² = 9; this must be added to both sides to keep the equation balanced, giving x² + 6x + 9 = 7. The left side is now a perfect square, so (x + 3)² = 7. Taking the square root of both sides introduces a plus-or-minus, since both √7 and −√7 square to 7: x + 3 = ±√7, so x = −3 ± √7, that is x = −3 + √7 or x = −3 − √7. For the graph, the same completion is done by adding and subtracting 9 inside the expression: x² + 6x + 2 = (x + 3)² − 9 + 2 = (x + 3)² − 7, which is the form a(x + p)² + q, so the turning point is (−3, −7) and the axis of symmetry is x = −3."
+    },
+    {
+      "id": "cc2",
+      "question": "Derive the quadratic formula from ax² + bx + c = 0 by completing the square, and identify the two structural features of the result that learners most often get wrong.",
+      "expected_answer": "Divide every term by a (legal since a ≠ 0): x² + (b/a)x + c/a = 0. Move the constant: x² + (b/a)x = −c/a. Half of b/a is b/(2a), and its square is b²/(4a²), so add that to both sides. The left becomes the perfect square (x + b/2a)², and the right becomes b²/(4a²) − c/a, which over the common denominator 4a² is (b² − 4ac)/(4a²). Taking the square root of both sides gives x + b/(2a) = ±√(b² − 4ac)/(2a), since √(4a²) = 2a. Subtracting b/(2a) and combining over the common denominator gives x = [−b ± √(b² − 4ac)]/(2a). The first feature learners get wrong is the fraction bar: 2a divides the entire numerator, including the −b, not just the root. The second is the sign of b: when b is negative, −b becomes positive and b² is positive, so both signs must be handled carefully at substitution."
+    },
+    {
+      "id": "cc3",
+      "question": "For 3x² − 7x + 1 = 0, give both the exact solution and the solution correct to two decimal places, and explain how a learner should decide between factorising, completing the square and the formula.",
+      "expected_answer": "With a = 3, b = −7 and c = 1, the discriminant is (−7)² − 4(3)(1) = 49 − 12 = 37, so x = (7 ± √37)/6, which is the exact answer and is what a question asking for simplest surd form requires. Since √37 ≈ 6.083, the two roots are (7 + 6.083)/6 ≈ 2.18 and (7 − 6.083)/6 ≈ 0.15, correct to two decimal places; rounding must be done only at this final step, because rounding √37 earlier changes the second decimal. On choosing a method: factorise first whenever the discriminant is a perfect square, because it is the fastest and gives exact answers; use the quadratic formula whenever the discriminant is not a perfect square, because it always works; and use completing the square when the question explicitly demands it or when the turning point of the parabola is required, since that method delivers the form a(x + p)² + q directly."
+    }
+  ]
+}

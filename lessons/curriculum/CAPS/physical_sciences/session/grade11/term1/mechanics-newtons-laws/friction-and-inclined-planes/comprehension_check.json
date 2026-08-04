@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Distinguish static from kinetic friction, give the formula for each, and explain what is wrong with writing \"friction = μsN\" for a crate that is being pushed but is not moving.",
+      "expected_answer": "Static friction acts on a stationary object and opposes the tendency to move; it is self-adjusting, taking whatever value is needed to balance the applied force, up to a maximum given by fs(max) = μsN. Kinetic friction acts on an object that is already sliding, opposes the motion, and does not adjust: fk = μkN. For any pair of surfaces μs is greater than μk, which is why an object is harder to start moving than to keep moving. Writing friction = μsN for a crate that is not moving is wrong because μsN is only the MAXIMUM the static friction can reach; if a 50 kg crate with μs = 0,4 has a maximum of 196 N but is pushed with only 150 N, the actual friction is exactly 150 N and the net force is zero. Only once the applied force exceeds 196 N does the crate move and friction switch to the kinetic value, 0,3 × 490 = 147 N."
+    },
+    {
+      "id": "cc2",
+      "question": "A 20 kg crate rests on a ramp inclined at 30°, with μs = 0,55 and μk = 0,25. Show whether it slides, and if it does, calculate its acceleration. Show formula, substitution and answer with units.",
+      "expected_answer": "First the weight: w = mg = 20 × 9,8 = 196 N. Resolve it along the rotated axes. Parallel to the slope: Fg∥ = mg sinθ = 196 × sin30° = 196 × 0,5 = 98 N down the slope. Perpendicular to the slope: Fg⊥ = mg cosθ = 196 × cos30° = 196 × 0,866 = 169,7 N, so N = 169,7 N. Test for slipping: fs(max) = μsN = 0,55 × 169,7 = 93,3 N. Since the 98 N pulling it down the slope exceeds the 93,3 N of available grip, the crate slides. Now kinetic friction acts up the slope: fk = μkN = 0,25 × 169,7 = 42,4 N. Taking down the slope as positive, Fnet = 98 − 42,4 = 55,6 N, so a = Fnet ÷ m = 55,6 ÷ 20 = 2,78 m·s⁻² down the incline. The same conclusion follows from the shortcut tanθ > μs, since tan30° = 0,577 exceeds 0,55."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the normal force is not always equal to the weight, giving two different situations in which it is not, and describe how friction's direction is decided.",
+      "expected_answer": "The normal force is whatever the surface must supply perpendicular to itself to prevent the object sinking into it, so it equals the weight only in the special case of a level surface with no other vertical forces. First exception: a force applied at an angle on a level surface. A 100 N rope pulling at 30° above the horizontal on a 50 kg crate has a 50 N upward component, so N = 490 − 50 = 440 N; pushing at 30° below the horizontal instead gives N = 490 + 50 = 540 N. Second exception: an inclined plane, where only the perpendicular component of the weight presses into the surface, so N = mg cosθ, always less than mg and smaller the steeper the slope. Friction's direction is set entirely by the motion or the tendency to move: it acts parallel to the surface and opposite to that motion. So a crate sliding down a ramp has friction up the slope, while the same crate dragged up the ramp has friction down the slope; the magnitude, μkN, is unchanged by the reversal."
+    }
+  ]
+}

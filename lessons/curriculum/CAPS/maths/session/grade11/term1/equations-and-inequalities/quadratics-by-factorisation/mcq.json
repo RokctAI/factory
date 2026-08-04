@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Standard Form and the Zero-Product Principle",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The zero-product principle says that if A × B = 0, then:",
+          "options": [
+            "A = 0 or B = 0",
+            "A = 0 and B = 0",
+            "A + B = 0",
+            "A = B"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Why can you not solve (x − 2)(x + 5) = 8 by writing x − 2 = 8?",
+          "options": [
+            "Because 8 is even",
+            "Because the brackets must first be swapped around",
+            "Because a product equal to a non-zero number can be split in infinitely many ways, so no bracket is forced to any value",
+            "Because x − 2 is smaller than x + 5"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Solve (x − 2)(x + 5) = 8.",
+          "options": [
+            "x = 2 or x = −5",
+            "x = 10 or x = 3",
+            "x = 8 or x = −8",
+            "x = −6 or x = 3"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Solving x² = 3x by dividing both sides by x is wrong because:",
+          "options": [
+            "It loses the solution x = 0, and x might be zero — you may never divide by a variable",
+            "It gives a negative answer",
+            "Division is not allowed in equations",
+            "It changes 3x into 3x²"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Factorising Every Shape a Quadratic Takes",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Solve 2x² − 8x = 0.",
+          "options": [
+            "x = 4 only",
+            "x = 0 or x = 4",
+            "x = 0 or x = −4",
+            "x = 2 or x = 8"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "3x² − 5x − 2 = 0 factorises to:",
+          "options": [
+            "(3x − 1)(x + 2) = 0",
+            "(x − 3)(3x + 2) = 0",
+            "(3x + 1)(x − 2) = 0",
+            "(3x − 2)(x + 1) = 0"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "When splitting the middle term of 3x² − 5x − 2, the two numbers you need multiply to −6 and add to −5. They are:",
+          "options": [
+            "−3 and 2",
+            "6 and −1",
+            "−2 and 3",
+            "−6 and 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Solve 9x² = 16.",
+          "options": [
+            "x = 4/3 or x = −4/3",
+            "x = 4/3 only",
+            "x = 16/9",
+            "x = 3/4 or x = −3/4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Equations with Fractions — and the Restriction Rule",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "For 4/x + 4/(x + 2) = 3, the restrictions are:",
+          "options": [
+            "x ≠ 3",
+            "x ≠ 0 and x ≠ −2",
+            "x ≠ 0 and x ≠ 2",
+            "x ≠ 4"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Solve x + 6/x = 5.",
+          "options": [
+            "x = 6 or x = 1",
+            "x = 0 or x = 5",
+            "x = 2 or x = 3",
+            "x = −2 or x = −3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Clearing 4/x + 4/(x + 2) = 3 gives the standard form:",
+          "options": [
+            "3x² + 2x − 8 = 0",
+            "3x² − 2x + 8 = 0",
+            "x² − 2x − 8 = 0",
+            "3x² − 2x − 8 = 0"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The most common arithmetic slip when clearing fractions is:",
+          "options": [
+            "Forgetting to multiply the constant term on the other side by the LCD as well",
+            "Multiplying the numerators only",
+            "Factorising too early",
+            "Writing the restrictions down"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Substitution, and One Linear with One Quadratic",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "In (x² − 3x)² − 2(x² − 3x) − 8 = 0, letting k = x² − 3x gives:",
+          "options": [
+            "k² − 2k − 8 = 0, with k = 4 or k = −2",
+            "k² − 2k − 8 = 0, with k = 8 or k = −1",
+            "k − 2k − 8 = 0, with k = −8",
+            "k² + 2k + 8 = 0, with no real k"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The full solution set of (x² − 3x)² − 2(x² − 3x) − 8 = 0 is:",
+          "options": [
+            "x = 4 and x = −2",
+            "x = −1, 1, 2 and 4",
+            "x = 4 and x = −1 only",
+            "x = 1 and x = 2 only"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "For the pair x + y = 5 and x² + y² = 17, which equation should you rearrange first, and why?",
+          "options": [
+            "The quadratic one, because it has more information",
+            "Either one — it makes no difference to the difficulty",
+            "The linear one, because it gives a clean expression with no squares in it",
+            "Neither; you should add the two equations"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The solutions of x + y = 5 and x² + y² = 17 are correctly written as:",
+          "options": [
+            "x = 1 or 4, and y = 1 or 4, in any combination",
+            "x = 1 and y = 1, or x = 4 and y = 4",
+            "x = 5 and y = 17",
+            "(x = 1, y = 4) or (x = 4, y = 1)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Zero Is the Only Number That Talks",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the stall analogy, two friends' earnings multiply to zero. You can conclude:",
+          "options": [
+            "At least one of them sold nothing",
+            "Both of them sold nothing",
+            "They each earned the same",
+            "Nothing at all"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "If their earnings multiply to R800 instead, you can conclude:",
+          "options": [
+            "Each earned R400",
+            "Nothing about either amount on its own — many splits give R800",
+            "One earned R800 and the other R1",
+            "One of them earned nothing"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Dividing x² = 3x by x is compared to:",
+          "options": [
+            "Paying with the wrong currency",
+            "Cutting slices of different sizes",
+            "Removing a suspect from the line-up before anyone is questioned",
+            "Adding apples to oranges"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The correct treatment of x² = 3x is:",
+          "options": [
+            "Divide by x, then add zero as a second answer",
+            "Take the square root of both sides",
+            "Write x = 3 and state that x ≠ 0",
+            "Write x² − 3x = 0, factorise to x(x − 3) = 0, so x = 0 or x = 3"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Clear the Fractions Before You Fight",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Multiplying an equation by the lowest common denominator means multiplying:",
+          "options": [
+            "Every term on both sides, including any plain number",
+            "Only the terms that are fractions",
+            "Only the left-hand side",
+            "Only the numerators"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Checking x = 2 in x + 6/x = 5 gives:",
+          "options": [
+            "2 + 6 = 8, so it fails",
+            "2 + 3 = 5, so it works",
+            "2 + 12 = 14, so it fails",
+            "2 + 6/5, which is not 5"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Banned values should be written down:",
+          "options": [
+            "Only if the final answers look strange",
+            "Never — they are not marked",
+            "Before the algebra begins, straight from the original denominators",
+            "After the answers, from the simplified equation"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A solution that appears on the banned list must be:",
+          "options": [
+            "Kept, since it came from correct factorising",
+            "Rounded off instead",
+            "Replaced by its negative",
+            "Crossed out with a stated reason, which itself earns a mark"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Nicknames, and Keeping the Pairs Together",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Handing in the k values instead of the x values is compared to:",
+          "options": [
+            "Giving someone a shopping list instead of the groceries",
+            "Paying with foreign currency",
+            "Cutting the slices different sizes",
+            "Removing a suspect from the line-up"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "After finding k = 4 from the nickname, the next step is to solve:",
+          "options": [
+            "x = 4",
+            "x² − 3x − 4 = 0",
+            "x² − 3x + 4 = 0",
+            "x² = 4"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Once you have x = 1 and x = 4, the partners y are found by substituting into:",
+          "options": [
+            "Whichever equation you prefer",
+            "The quadratic equation, since it is more accurate",
+            "The simple linear fact, because it is quicker and safer",
+            "Neither — the partners are simply the other x value"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Writing 'x = 1 or 4 and y = 1 or 4' as a final answer is wrong because:",
+          "options": [
+            "The values are not in ascending order",
+            "y should be found first",
+            "Fractions were not cleared",
+            "It claims four combinations, and only two of them actually satisfy both equations"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

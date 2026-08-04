@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the graph of y = 6/x fully — branches, asymptotes, domain, range — and explain why it can never have a y-intercept.",
+      "expected_answer": "The graph consists of two separate branches. One lies in the first quadrant, high up close to the y-axis on the left and sweeping down to flatten out toward the x-axis on the right. The other is its point-reflection through the origin, lying in the third quadrant. The asymptotes are the vertical line x = 0 and the horizontal line y = 0, and the curve approaches both without ever touching them. The domain is all real x except x = 0, because division by zero is undefined; the range is all real y except y = 0, because 6 divided by any number can never equal zero. It has no y-intercept because finding one would require substituting x = 0, which the domain forbids — so a learner who calculates a y-intercept for a hyperbola has broken the restriction. The graph also has two axes of symmetry, y = x and y = −x. If a were negative, as in y = −6/x, the branches would sit in the second and fourth quadrants instead."
+    },
+    {
+      "id": "cc2",
+      "question": "Sketch y = 6/x − 2 in words, giving asymptotes, intercepts, domain and range, and explain how the shift creates an x-intercept that y = 6/x did not have.",
+      "expected_answer": "The vertical asymptote stays at x = 0, since the shift is vertical and the division by x is untouched. The horizontal asymptote moves to y = −2, because q shifts the whole graph down two units and carries its asymptote with it. Domain: all real x except 0. Range: all real y except −2. There is no y-intercept. The x-intercept: set y = 0, so 6/x = 2, giving 6 = 2x and x = 3, the point (3; 0). The original y = 6/x had no x-intercept because 6/x never equals zero; shifting the graph down two units drags the right-hand branch through the x-axis, creating a crossing at x = 3. Useful points: (1; 4) and (−1; −8). The right branch descends steeply from the first quadrant, passes through (1; 4), crosses at (3; 0) and flattens just above y = −2; the left branch lies just below y = −2 far to the left and plunges downward through (−1; −8) as x approaches zero."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare y = 2ˣ with y = x², then sketch y = 2ˣ − 4 in words with all its features.",
+      "expected_answer": "In y = x² the variable is in the base, so the graph is a parabola: it has a turning point at the origin, is symmetrical about the y-axis, and its range is y ≥ 0. In y = 2ˣ the variable is in the exponent, so the graph is exponential: it has no turning point and no symmetry, it increases continuously from left to right, it passes through (0; 1) because any base to the power 0 is 1, and its range is y > 0 strictly, since 2 to any power is positive but never zero — the x-axis is a horizontal asymptote approached only on the left. For y = 2ˣ − 4: the asymptote is y = −4; the y-intercept is 2⁰ − 4 = −3, the point (0; −3); the x-intercept comes from 2ˣ = 4, so x = 2, the point (2; 0); the domain is all real x and the range is y > −4. The curve enters from the far left just above the dashed line y = −4, rises slowly through (0; −3), crosses the x-axis at (2; 0), and climbs steeply — at x = 4 it reaches 12."
+    }
+  ]
+}

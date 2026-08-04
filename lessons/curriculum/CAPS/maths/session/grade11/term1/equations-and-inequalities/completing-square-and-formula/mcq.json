@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Building a Perfect Square from an Incomplete One",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The number that completes the square for x² + 6x is:",
+          "options": [
+            "3",
+            "9",
+            "12",
+            "36"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Completing the square on x² − 10x gives:",
+          "options": [
+            "(x − 5)²",
+            "(x − 10)²",
+            "(x + 5)²",
+            "(x − 25)²"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Solving x² + 6x + 2 = 0 by completing the square gives:",
+          "options": [
+            "x = 3 ± √7",
+            "x = −3 ± √11",
+            "x = −3 ± √7",
+            "x = −3 + √7 only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "x² + 6x + 2 written in the form (x + p)² + q is:",
+          "options": [
+            "(x + 3)² + 11",
+            "(x + 6)² − 34",
+            "(x + 3)² + 7",
+            "(x + 3)² − 7"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Completing the Square when a Is Not One",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "To solve 2x² − 8x + 5 = 0 by completing the square, the first step is to:",
+          "options": [
+            "Divide every term by 2",
+            "Subtract 8x from both sides",
+            "Take the square root of both sides",
+            "Divide every term by x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Solving 2x² − 8x + 5 = 0 by completing the square gives:",
+          "options": [
+            "x = 2 ± √6",
+            "x = 2 ± (√6)/2",
+            "x = 4 ± (√6)/2",
+            "x = −2 ± (√6)/2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Written in the form a(x + p)² + q, the expression 2x² − 8x + 5 becomes:",
+          "options": [
+            "2(x − 2)² + 5",
+            "2(x − 2)² + 1",
+            "2(x − 2)² − 3",
+            "(x − 2)² − 3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The classic error when factoring a out of the first two terms is:",
+          "options": [
+            "Dividing the constant term by a as well",
+            "Halving the coefficient of x twice",
+            "Moving the constant to the wrong side",
+            "Failing to multiply a by the constant produced inside the bracket"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Deriving the Quadratic Formula",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The quadratic formula is derived by:",
+          "options": [
+            "Factorising the general quadratic",
+            "Substituting x = 0 into ax² + bx + c",
+            "Completing the square on ax² + bx + c = 0",
+            "Guessing and checking with whole numbers"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "After dividing by a and shifting the constant, completing the square requires adding:",
+          "options": [
+            "b/(2a)",
+            "b²/(4a²)",
+            "b²/(2a)",
+            "b² − 4ac"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The quadratic formula reads:",
+          "options": [
+            "x = −b ± √(b² − 4ac)/2a, with 2a dividing only the root",
+            "x = b ± √(b² − 4ac), all over 2a",
+            "x = −b ± √(b² + 4ac), all over 2a",
+            "x = −b ± √(b² − 4ac), all over 2a"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "In the derivation, the right-hand side becomes (b² − 4ac)/(4a²) because:",
+          "options": [
+            "b²/(4a²) and −c/a are combined over the common denominator 4a²",
+            "The discriminant is defined that way",
+            "4a² is the square root of 2a",
+            "c/a is always negative"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Using the Formula — Exact Values and Rounding",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "For 3x² − 7x + 1 = 0, the values of a, b and c are:",
+          "options": [
+            "a = 3, b = 7, c = 1",
+            "a = 3, b = −7, c = 1",
+            "a = 3, b = −7, c = −1",
+            "a = −3, b = 7, c = 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The exact solution of 3x² − 7x + 1 = 0 is:",
+          "options": [
+            "x = (−7 ± √37)/6",
+            "x = (7 ± √61)/6",
+            "x = (7 ± √37)/6",
+            "x = (7 ± √37)/3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Correct to two decimal places, those solutions are:",
+          "options": [
+            "2.17 and 0.17",
+            "2.18 and 0.17",
+            "1.18 and 0.15",
+            "2.18 and 0.15"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "For −2x² + 5x + 3 = 0 the discriminant is 49, which tells you that:",
+          "options": [
+            "The expression would have factorised, so factorising would have been quicker",
+            "There are no real solutions",
+            "The roots are irrational",
+            "The equation cannot be solved by formula"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Paving the Corner of the Yard",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the paving picture, the missing corner tile for x² + 6x measures:",
+          "options": [
+            "6 by 6",
+            "3 by 3",
+            "x by 3",
+            "x by x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Adding the corner tile to one side of an equation means you must:",
+          "options": [
+            "Subtract it from the other side",
+            "Halve the other side",
+            "Add the same amount to the other side, so the two sides stay equal",
+            "Do nothing to the other side"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "(x + 3)² = 7 leads to:",
+          "options": [
+            "x + 3 = 7, so x = 4",
+            "x + 3 = √7 only",
+            "x = 3 ± √7",
+            "x + 3 = ±√7, so x = −3 ± √7"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "If the equation begins with 2x² instead of x², the paving picture works again once you:",
+          "options": [
+            "Divide every term by 2 first",
+            "Double the corner tile",
+            "Take the square root of 2",
+            "Ignore the 2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Recipe Someone Already Cooked",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The quadratic formula is described as:",
+          "options": [
+            "A different method with no connection to completing the square",
+            "Completing the square done once, in general, so nobody has to repeat it",
+            "A rule that works only when the quadratic factorises",
+            "A way of guessing the roots quickly"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "'All over 2a' means that 2a divides:",
+          "options": [
+            "Only the square root",
+            "Only the −b",
+            "Everything on the top, including the −b",
+            "The whole equation before you start"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "When b = −7, the values of −b and b² are:",
+          "options": [
+            "−b = −7 and b² = −49",
+            "−b = 7 and b² = −49",
+            "−b = −7 and b² = 49",
+            "−b = 7 and b² = 49"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A perfect square appearing under the root sign is a hint that:",
+          "options": [
+            "The equation could have been factorised",
+            "You made an arithmetic error",
+            "There are no real roots",
+            "The answer must be irrational"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Exact or Rounded — Say Which",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'Leave your answer in simplest surd form' means:",
+          "options": [
+            "Round to two decimal places",
+            "Keep the root sign in the answer — do not use the calculator to decimalise it",
+            "Give the answer as a percentage",
+            "Give only the positive root"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Rounding √37 to 6 before dividing by 6 produces:",
+          "options": [
+            "The same answer, so it is harmless",
+            "A more accurate answer",
+            "2.17 instead of 2.18 — a wrong second decimal and a lost mark",
+            "An answer that is exact"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which method should you choose when a question asks for the turning point of a parabola?",
+          "options": [
+            "Factorising",
+            "The quadratic formula",
+            "Substituting x = 0",
+            "Completing the square, since it hands you the turning point directly"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Rounding is compared to sealing an envelope because:",
+          "options": [
+            "It should be the last thing you do, once everything is inside",
+            "It keeps the answer private",
+            "It can be done at any stage",
+            "It makes the answer exact"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

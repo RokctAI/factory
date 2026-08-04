@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Newton's first law, define inertia, and use both to explain fully why a seatbelt and a headrest reduce injury in a collision.",
+      "expected_answer": "Newton's first law states that an object continues in a state of rest, or of uniform velocity in a straight line, unless it is acted upon by a net or unbalanced force. Inertia is the tendency of an object to resist a change in its state of rest or uniform motion, and mass is the measure of inertia — a loaded vehicle is harder to start and stop than an empty one. When a vehicle brakes hard, the road exerts a backward net force on the vehicle through the tyres and the vehicle slows, but no such force acts on the passenger, who therefore continues forward at the original velocity. The seatbelt supplies exactly that missing backward force to the body, so passenger and vehicle change velocity together. In a rear-end collision the seat pushes the torso forward while the head, with no force acting on it, is left behind; the headrest supplies the forward force on the head, which is why it prevents whiplash."
+    },
+    {
+      "id": "cc2",
+      "question": "A 70 kg learner stands on a bathroom scale in a lift. Calculate the scale reading when the lift is (a) at rest, (b) accelerating upward at 2 m·s⁻², and (c) in free fall after the cable breaks. Explain what these readings say about mass and weight.",
+      "expected_answer": "Draw the free-body diagram: weight w = mg = 70 × 9,8 = 686 N downward, and normal force N upward. Take upward as positive and apply Fnet = ma. (a) At rest, a = 0, so N − 686 = 0 and N = 686 N — the scale reads the true weight. (b) Accelerating upward at 2 m·s⁻²: N − 686 = 70 × 2, so N = 686 + 140 = 826 N. (c) In free fall a = 9,8 m·s⁻² downward, so N − 686 = 70 × (−9,8) and N = 0 N. The readings change but the learner's mass stays 70 kg and the true weight stays 686 N throughout; what changes is the normal force, which is the apparent weight. Weightlessness in free fall or in orbit is therefore the absence of a supporting force, not the absence of gravity."
+    },
+    {
+      "id": "cc3",
+      "question": "State Newton's third law, list the properties of an action-reaction pair, and explain why the weight of a book on a table and the normal force on that book are NOT such a pair.",
+      "expected_answer": "Newton's third law states that when object A exerts a force on object B, object B simultaneously exerts a force on object A that is equal in magnitude and opposite in direction. A genuine action-reaction pair is equal in magnitude, opposite in direction, acts on two different objects, is of the same type of force, and acts simultaneously. The book's weight and the normal force are equal and opposite, but they both act on the same object — the book — and they are different types of force, one gravitational and one contact, so they fail two of the tests. The correct partner of the book's weight, which is the Earth pulling the book down, is the book pulling the Earth upward with an equal force. The correct partner of the table's normal force on the book is the book pushing down on the table. Because the two members of a pair always act on different bodies, they never appear in the same net-force equation and therefore never cancel each other."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+Hey, it's Bianca — I know what happened. You opened the vectors page, saw arrows at strange angles with sines and cosines hanging off them, and your brain quietly closed the book. That is a completely normal reaction, and it is also a false alarm. This topic has exactly three moves, and you already do all three in ordinary life.
+
+Move one: split. Any arrow that does not point straight along a road gets sorted into a sideways part and an up-or-down part, the way you sort mixed coins into piles. Move two: add. Sideways with sideways, up with up, never mixed. Move three: rebuild. Two arrows at right angles become one, with Pythagoras for the size and inverse tangent for the direction. Split, add, rebuild. Say it three times and you own the method.
+
+The sine-or-cosine panic is the thing that eats the most marks, so kill it with a drawing instead of a memory. Every single time, sketch the little right-angled triangle with the force as the slanted side and mark the angle the question actually gave you. The side lying next to that angle takes cosine. The side across from it takes sine. Never memorise "horizontal is cosine" — it is only true when the angle is measured from the horizontal, and examiners love giving you the angle from the vertical instead.
+
+The habit that protects your marks is boringly small: before you press a single button, check that your calculator says DEG, and write a sign convention at the top of your page — east and north positive, west and south negative. Then write a two-column table, x on the left, y on the right, one row per force, and fill in a zero for the forces that lie flat along an axis. Those zeros feel silly. They are worth marks, because they prove you resolved every vector instead of forgetting one.
+
+And finish properly. A vector answer is a size AND a direction. "235,7 newtons" is half an answer; "235,7 newtons at 65 comma 8 degrees north of east" is the whole one. Write the direction in the same language the question used, and you have banked everything on offer.
+
+Split, add, rebuild — three moves, a table, and a calculator in degrees. This is one of the most predictable question types in the whole paper, which means it is also one of the easiest places to pick up full marks. You've got this!
