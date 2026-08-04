@@ -1,0 +1,38 @@
+{
+  "subject": "Mathematics",
+  "grade": 12,
+  "curriculum": "CAMBRIDGE",
+  "grade_alignment": {
+    "status": "REPOSITORY CONVENTION - not a Cambridge statement",
+    "resolves_to": {
+      "stage": "cambridge_advanced",
+      "qualification": "Cambridge International AS Level",
+      "course_year": 1
+    },
+    "detail": "Cambridge does not number school years the way this tree's grade contract does; placement is a decision each school makes. See lessons/curriculum/CAMBRIDGE/stage_alignment.json for the default pathway, the alternatives, and the unresolved A2 year.",
+    "alignment_document": "lessons/curriculum/CAMBRIDGE/stage_alignment.json"
+  },
+  "equivalence": "direct",
+  "qualifications": [
+    {
+      "qualification": "Cambridge International AS & A Level",
+      "title": "Mathematics",
+      "syllabus_code": "9709",
+      "course_year": 1,
+      "syllabus_documents": [
+        {
+          "edition": "2026-2027",
+          "url": "https://www.cambridgeinternational.org/Images/697427-2026-2027-syllabus.pdf",
+          "url_status": "observed_in_search_not_fetched",
+          "status": "pending_fetch"
+        }
+      ],
+      "verification": "corroborated"
+    }
+  ],
+  "content_status": "pending_syllabus_ingestion: topic and subtopic content for this grade comes from the Cambridge syllabus document(s) listed above, which have not been fetched (Cambridge hosts blocked from this build environment). No topics are listed because none have been read from source - an empty list here means 'not yet ingested', never 'this grade has no content'.",
+  "topics": [],
+  "caps_relationship": "None. Cambridge authors its own curriculum; CAPS topic lists are NOT a valid fallback for this file.",
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

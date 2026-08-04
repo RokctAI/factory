@@ -1,0 +1,74 @@
+{
+  "curriculum": "CAMBRIDGE",
+  "purpose": "Resolves this repository's grade10/grade11/grade12 tree contract against Cambridge International's own stages. Read this before trusting any grade number in the CAMBRIDGE tree.",
+  "problem": "Cambridge is a global curriculum author using its own stages (Cambridge Primary, Cambridge Lower Secondary, Cambridge Upper Secondary = IGCSE/O Level, Cambridge Advanced = AS & A Level), not national grade numbers. This repository's tree contract is grade10/grade11/grade12, the South African FET phase used by the CAPS and IEB trees.",
+  "convention_status": "REPOSITORY CONVENTION, not a Cambridge statement. Every syllabus file repeats this caveat.",
+  "default_pathway": {
+    "id": "igcse_then_as",
+    "grade10": {
+      "stage": "cambridge_upper_secondary",
+      "qualification": "Cambridge IGCSE",
+      "course_year": 1
+    },
+    "grade11": {
+      "stage": "cambridge_upper_secondary",
+      "qualification": "Cambridge IGCSE",
+      "course_year": 2,
+      "note": "IGCSE examination normally sat at the end of this year."
+    },
+    "grade12": {
+      "stage": "cambridge_advanced",
+      "qualification": "Cambridge International AS Level",
+      "course_year": 1
+    }
+  },
+  "alternative_pathways": [
+    {
+      "id": "early_igcse_then_a_level",
+      "description": "IGCSE taught across Grades 9-10, AS in Grade 11, A Level (A2) in Grade 12. Common where a school starts Cambridge earlier.",
+      "grade10": "Cambridge IGCSE course year 2",
+      "grade11": "Cambridge International AS Level",
+      "grade12": "Cambridge International A Level (A2)"
+    },
+    {
+      "id": "single_year_igcse",
+      "description": "IGCSE completed in one year, which Cambridge states happens in some countries. Collapses the grade10/grade11 span of the default pathway.",
+      "note": "Recorded because Cambridge documents it, not because it is common in the South African schools this repo currently serves."
+    }
+  ],
+  "unresolved": "A full Cambridge International A Level is a two-year course of which AS is year one, so a school on the default pathway completes A2 in a thirteenth year, which has no grade12-keyed slot in this contract. A Level must NOT be silently folded into grade12. Any product serving Cambridge A Level students has to decide how to represent that year; this tree does not invent one.",
+  "stages": [
+    {
+      "id": "cambridge_upper_secondary",
+      "name": "Cambridge Upper Secondary",
+      "qualifications": [
+        "Cambridge IGCSE",
+        "Cambridge O Level"
+      ],
+      "typical_ages": "14-16 (guidance only)",
+      "typical_course_length_years": "2, though 1 in some countries",
+      "verification": "corroborated",
+      "source_urls": [
+        "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/",
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/203476052-How-long-do-Cambridge-IGCSEs-take-to-complete"
+      ]
+    },
+    {
+      "id": "cambridge_advanced",
+      "name": "Cambridge Advanced",
+      "qualifications": [
+        "Cambridge International AS Level",
+        "Cambridge International A Level"
+      ],
+      "typical_ages": "16-19 (guidance only)",
+      "typical_course_length_years": "AS 1 year; full A Level 2 years",
+      "verification": "corroborated",
+      "source_urls": [
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/203476082-How-long-do-Cambridge-International-A-and-AS-Levels-take-to-complete",
+        "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-advanced/cambridge-international-as-and-a-levels/subjects/"
+      ]
+    }
+  ],
+  "verification": "corroborated",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

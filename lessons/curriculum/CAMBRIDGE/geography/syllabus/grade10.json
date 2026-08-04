@@ -1,0 +1,46 @@
+{
+  "subject": "Geography",
+  "grade": 10,
+  "curriculum": "CAMBRIDGE",
+  "grade_alignment": {
+    "status": "REPOSITORY CONVENTION - not a Cambridge statement",
+    "resolves_to": {
+      "stage": "cambridge_upper_secondary",
+      "qualification": "Cambridge IGCSE",
+      "course_year": 1
+    },
+    "detail": "Cambridge does not number school years the way this tree's grade contract does; placement is a decision each school makes. See lessons/curriculum/CAMBRIDGE/stage_alignment.json for the default pathway, the alternatives, and the unresolved A2 year.",
+    "alignment_document": "lessons/curriculum/CAMBRIDGE/stage_alignment.json"
+  },
+  "equivalence": "direct",
+  "qualifications": [
+    {
+      "qualification": "Cambridge IGCSE",
+      "title": "Geography",
+      "syllabus_code": "0460",
+      "course_year": 1,
+      "syllabus_documents": [
+        {
+          "edition": "2027-2029",
+          "url": "https://www.cambridgeinternational.org/Images/718150-2027-2029-syllabus.pdf",
+          "url_status": "observed_in_search_not_fetched",
+          "status": "pending_fetch",
+          "edition_note": "The forthcoming cycle. Ingest alongside the current one so a stream can be pinned to a student's examination year."
+        },
+        {
+          "edition": "2025-2026",
+          "url": "https://www.cambridgeinternational.org/Images/664610-2025-2026-syllabus.pdf",
+          "url_status": "observed_in_search_not_fetched",
+          "status": "pending_fetch",
+          "edition_note": "DISCREPANCY to resolve on fetch: search results titled this document both '2025-27' and '2025-2026', and the filename says 2025-2026. Since a separate 2027-2029 edition exists, 2025-2026 is the coherent reading - but trust the fetched PDF's own cover page, not either label here."
+        }
+      ],
+      "verification": "corroborated"
+    }
+  ],
+  "content_status": "pending_syllabus_ingestion: topic and subtopic content for this grade comes from the Cambridge syllabus document(s) listed above, which have not been fetched (Cambridge hosts blocked from this build environment). No topics are listed because none have been read from source - an empty list here means 'not yet ingested', never 'this grade has no content'.",
+  "topics": [],
+  "caps_relationship": "None. Cambridge authors its own curriculum; CAPS topic lists are NOT a valid fallback for this file.",
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

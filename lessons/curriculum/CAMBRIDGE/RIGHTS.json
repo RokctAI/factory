@@ -1,0 +1,168 @@
+{
+  "policy_of_record": "Rights posture for everything under lessons/curriculum/CAMBRIDGE. This file is the machine-readable half of SOURCES.md: scripts/audit_tree.py reads it and FAILS the build if gated material lands in the tree. Loosening a gate here is a rights decision, not a code change - it needs the owner, a written permission grant recorded in SOURCES.md in the same commit, and first-hand evidence. A gate may never be loosened on an assumption.",
+  "policy_version": "1.0",
+  "curriculum": "CAMBRIDGE",
+  "checked": "2026-08-04",
+  "rights_holder": "Cambridge University Press & Assessment / Cambridge Assessment International Education (UCLES)",
+  "headline": "Access is open; reproduction is not. Cambridge publishes question papers, mark schemes, examiner reports and specimen materials openly on its own website, so obtaining them is easy - and separately, explicitly, refuses permission for electronic publication of that material in any format. Do not read the ease of access as permission.",
+  "verification_method": "web_search_only",
+  "verification_caveat": "Cambridge hosts (cambridgeinternational.org, cambridge.org, help.cambridgeinternational.org) are blocked by this build environment's egress policy (proxy CONNECT 403, checked 2026-08-04), and no page fetch of any host succeeded, so EVERY fact below was established from search-indexed copies of Cambridge's own pages - titles, indexed URLs and snippet extracts - not by first-hand fetch. Quoted wording is snippet-reconstructed and must be re-pulled from the live page before being relied on in a legal context. URLs are recorded ONLY where the URL itself appeared in a search result with its subject attribution; URLs that would merely follow an observed naming pattern are left null. Run scripts/fetch_cambridge_sources.py from a network-enabled machine to confirm everything first-hand.",
+  "gate_levels": {
+    "none": "No rights gate. Use freely within the recorded licence.",
+    "attribution_required": "Reuse is licensed, but a specific notice/citation MUST accompany any publication or public display.",
+    "owner_decision_required": "The licence does not clearly cover this repository's intended use (for-profit / commercial product). Indexing and internal analysis are fine; an owner decision is required before the content ships to students.",
+    "blocked_pending_written_permission": "Reproduction requires express written permission from the rights holder. Nothing beyond facts, links and metadata may be ingested."
+  },
+  "gate_vocabulary_note": "Deliberately identical to the gate_levels in lessons/curriculum/US/RIGHTS.json. The unit differs: the US tree gates whole FRAMEWORKS because each has its own rights holder, whereas Cambridge is a single rights holder whose gate differs by DOCUMENT CLASS - syllabuses and assessment materials are governed by different permissions. Same vocabulary, different key, so cross-tree tooling still reads both.",
+  "document_classes": {
+    "past_papers": {
+      "public_access": true,
+      "public_access_detail": "Question papers, mark schemes, examiner reports and specimen materials are published as open PDFs under cambridgeinternational.org/Images/ and linked from each subject's own past-papers page. No login is required. This CORRECTS an assumption made earlier while building this tree, that Cambridge papers were login-gated: they are not, and the distinction matters because the real constraint is rights, not access.",
+      "public_access_verification": "corroborated_by_indexed_urls_and_help_centre_not_fetch_proven",
+      "school_support_hub": "A login-gated superset for registered Cambridge schools - teacher accounts are created by the school's Support Hub coordinator, and access is explicitly not open to individuals or third-party organisations. It adds schemes of work, community resources and coordinator tooling. Materials older than about five years are withdrawn from it, partly because third-party copyright permissions inside papers are cleared for five years only.",
+      "reproduce_electronically": "prohibited",
+      "publish_on_website_or_intranet": "prohibited",
+      "use_in_classroom": "permitted_but_narrowly",
+      "use_in_classroom_detail": "Cambridge permits teachers AT CAMBRIDGE SCHOOLS to download and print past papers for use with their own students. That is a print-and-use permission, not a re-hosting one; it does not extend to non-Cambridge schools, tutors, individuals or third-party organisations, and the same source states the materials cannot be used for publication or resale without prior approval.",
+      "rule": "Cambridge does not grant permission for the use of complete examination papers, nor for electronic publication in any format of questions from past examination papers, nor for the reproduction of mark schemes, examiners' reports or questions set in multiple-choice form. Its refusal to permit publication on any website or school intranet is stated categorically - note that this reaches a school's OWN intranet, so there is no internal-network carve-out. The stated reason is loss of control over material once it is online, including incidents of Cambridge material being sold online.",
+      "commercial_or_not": "The prohibition is not conditioned on commercial use: non-commercial electronic republication is refused on the same terms. This is stricter than the IEB position recorded in ../IEB/SOURCES.md, where the restriction is on commercial gain and personal study use is permitted.",
+      "permission_route": "A written application - a .docx form requiring a hand-written signature and photocopies of the material - is the only documented route, answered within about three weeks of a complete form. Note that the same document describing the process also states the blanket refusal above, so the process itself cannot grant electronic publication of paper questions. No paid or commercial licensing tier was found; treat that as absence of evidence rather than evidence of absence.",
+      "source_urls": [
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/115004418469-How-do-I-apply-for-permission-to-use-Cambridge-copyrighted-material",
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/203544371-Can-I-reproduce-Cambridge-past-examination-papers-on-the-school-s-website-my-website",
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/115004333125-Can-I-reproduce-Cambridge-past-examination-papers-for-use-in-the-classroom-with-my-students",
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/115004448905-Where-can-I-find-past-papers-mark-schemes-and-resources-for-our-exams",
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/28848818110098-Why-can-t-I-access-older-past-papers"
+      ],
+      "verification": "corroborated",
+      "gate": "blocked_pending_written_permission",
+      "gate_rationale": "Cambridge states it does not grant permission for electronic publication, in any format, of past-paper questions, mark schemes, examiners' reports or multiple-choice questions, and refuses publication on any website or intranet. The refusal is not conditioned on commercial use, so no reading of our use clears it. Only a written permission grant can, and the same document that describes the permission process states the blanket refusal - so assume refusal until a grant exists on file."
+    },
+    "mark_schemes_examiner_reports": {
+      "public_access": true,
+      "reproduce_electronically": "prohibited",
+      "rule": "Named explicitly alongside past-paper questions in Cambridge's refusal of electronic publication, notwithstanding that Cambridge publishes them openly itself.",
+      "source_urls": [
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/115004418469-How-do-I-apply-for-permission-to-use-Cambridge-copyrighted-material"
+      ],
+      "verification": "corroborated",
+      "gate": "blocked_pending_written_permission",
+      "gate_rationale": "Cambridge states it does not grant permission for electronic publication, in any format, of past-paper questions, mark schemes, examiners' reports or multiple-choice questions, and refuses publication on any website or intranet. The refusal is not conditioned on commercial use, so no reading of our use clears it. Only a written permission grant can, and the same document that describes the permission process states the blanket refusal - so assume refusal until a grant exists on file."
+    },
+    "syllabuses": {
+      "public_access": true,
+      "access_route": "Published openly on cambridgeinternational.org, no login.",
+      "reproduce_electronically": "restricted",
+      "rule": "Cambridge syllabus PDFs carry their own copyright block granting REGISTERED CENTRES permission to copy material from the booklet for their own INTERNAL use, with third-party-acknowledged material excluded even internally. That is an affirmative grant on the face of the document, and it is materially more permissive than the past-paper position, which carries no such grant and is expressly refused for electronic publication.",
+      "do_not_over_read": "The grant runs to registered centres for internal use. No statement was found granting general redistribution, mirroring or re-hosting of syllabus PDFs, and no Cambridge International document was found under any open licence. Whether 'copy for internal use' extends to electronic internal distribution such as a VLE is genuinely unresolved: the wording is medium-neutral, but the adjacent third-party carve-out says 'photocopy', which arguably implies print.",
+      "practical_reading": "Ingesting a public syllabus to derive structure - topic lists, assessment structure, learning objectives - for internal curriculum mapping is the intended use of a published syllabus, and is the basis on which this tree proceeds. Reproducing substantial syllabus prose verbatim in a shipped product is a separate question needing its own permission check.",
+      "source_urls": [
+        "https://www.cambridgeinternational.org/Images/662466-2025-2027-syllabus.pdf",
+        "https://www.cambridgeinternational.org/Images/664572-2025-2027-syllabus.pdf",
+        "https://www.cambridgeinternational.org/Images/636122-2024-2025-syllabus.pdf"
+      ],
+      "verification": "corroborated",
+      "gate": "owner_decision_required",
+      "gate_rationale": "Cambridge grants registered centres permission to copy syllabus material for their own internal use. A commercial product built by a third party is not a registered centre using material internally, so the grant does not plainly reach this repository's shipping use. That is the licence not clearly covering our case - an owner decision - rather than a prohibition. Ingesting the public syllabus to derive structure for internal curriculum mapping sits inside the ordinary purpose of a published syllabus and is what this tree does."
+    },
+    "specimen_materials": {
+      "public_access": true,
+      "gate": "blocked_pending_written_permission",
+      "gate_rationale": "Specimen papers and specimen mark schemes are assessment materials of the same kind as live past papers, published by Cambridge alongside them. Cambridge's refusal names 'questions from past examination papers' and mark schemes; whether specimen material is read as inside that phrase was NOT established. Gated conservatively at the same level as past papers, because the conservative reading is the safe one and loosening a gate requires first-hand evidence, never an assumption.",
+      "verification": "gate_is_a_conservative_inference_not_a_found_rule",
+      "source_urls": [
+        "https://help.cambridgeinternational.org/hc/en-gb/articles/115004418469-How-do-I-apply-for-permission-to-use-Cambridge-copyrighted-material"
+      ]
+    }
+  },
+  "text_and_data_mining": {
+    "summary": "Cambridge's copyright page carries an explicit text-and-data-mining clause: non-commercial TDM over content to which you have LAWFUL ACCESS is permitted, subject to linking to the underlying content, with local copies deleted when the non-commercial project ends and results publishable only where no Cambridge content is made available commercially. Cambridge expressly reserves its rights and opts OUT of granting commercial TDM rights.",
+    "consequence": "Directly material to any AI or education product built on this tree. A commercial product derived from mined Cambridge content sits outside the granted permission. The non-commercial permission is also conditioned on lawful access - satisfied for the public syllabus PDFs, not satisfied for anything obtained from an unauthorised mirror.",
+    "machine_readable_policy": "https://www.cambridge.org/core/tdm/tdm-policy.json",
+    "scope_caveat": "The clause sits on cambridge.org and scopes itself to 'Cambridge.org website pages'. Whether it governs cambridgeinternational.org is an open question - see _open_questions.cie_site_terms_scope.",
+    "source_urls": [
+      "https://www.cambridge.org/legal/copyright",
+      "https://www.cambridge.org/core/open-research/text-and-data-mining"
+    ],
+    "verification": "corroborated",
+    "gate": "owner_decision_required",
+    "ai_use": "Cambridge expressly reserves commercial text-and-data-mining rights and opts out of granting them, permitting non-commercial TDM only, over content to which you have lawful access, with local copies deleted at project end. Its parent has separately adopted an OPT-IN posture for licensing author content to generative-AI companies and has publicly opposed a copyright exception with opt-out. This repository is a pipeline that feeds curriculum material to a model, so this clause is not a footnote - it is arguably the most product-relevant rule here, and it points the same way as the College Board's explicit anti-AI clause recorded in ../US/RIGHTS.json: a generic reproduction permission would not cover AI use. Any permission sought from Cambridge should name the AI use explicitly."
+  },
+  "third_party_material_inside_papers": {
+    "finding": "Published Cambridge past papers are already PARTIALLY REDACTED documents. Where Cambridge could not clear third-party copyright - poems, prose passages - the material is removed from the published paper, with only the first and last lines plus a reference printed, and acknowledgements published separately in per-series Copyright Acknowledgement Booklets. Third-party permissions are typically cleared for five years, which is part of why older materials are withdrawn.",
+    "consequence": "A 'complete' paper obtained from an aggregator - one that still contains the unredacted passage - is by construction carrying material Cambridge itself could not license. Using such a copy creates infringement exposure against the third-party rights holder that is separate from, and additional to, Cambridge's own copyright.",
+    "source_urls": [
+      "https://help.cambridgeinternational.org/hc/en-gb/articles/20292507319954-Why-have-poems-passages-been-removed-from-some-Past-Papers",
+      "https://www.cambridgeinternational.org/privacy-and-legal/copyright-acknowledgement-booklets/"
+    ],
+    "verification": "corroborated"
+  },
+  "excluded_sources": {
+    "rule": "All third-party redistributors of Cambridge material are excluded as sources. None claims Cambridge authorisation; at least two affirmatively disclaim any affiliation; and the licence such a site would need is one Cambridge's own permissions policy says it does not issue. Cambridge cites misuse of its material online, including resale, as its reason for refusing web publication. Since Cambridge publishes the same documents itself, there is no scenario in which an aggregator is the correct source.",
+    "examples_excluded": [
+      "papacambridge",
+      "gceguide",
+      "dynamicpapers",
+      "xtremepapers",
+      "savemyexams",
+      "physicsandmathstutor",
+      "cienotes",
+      "exam-mate",
+      "rovepapers",
+      "cambridgepapers",
+      "studocu",
+      "scribd"
+    ],
+    "note": "Aggregators also re-scrape each other - papers served by one carrying another's watermark were observed during research - so provenance through them is unreliable even setting rights aside.",
+    "verification": "corroborated"
+  },
+  "prohibited_in_this_tree": {
+    "rule": "No file in the CAMBRIDGE tree may contain past-paper question text, mark-scheme or memo answers, or examiner-report text, and no URL in it may point at an unauthorised redistributor. audit_tree.py enforces this mechanically so the prohibition survives edits by people who never read the policy.",
+    "enforced_by": "lessons/curriculum/CAMBRIDGE/scripts/audit_tree.py"
+  },
+  "pipeline_consequences": [
+    {
+      "pipeline": "past-paper worked examples - the CAPS/DBE pattern in lessons/scripts/past_papers.py",
+      "status": "NOT AVAILABLE for Cambridge",
+      "reason": "That pipeline embeds real past-paper question text, memo working and answers into lesson content. For Cambridge that is exactly the electronic reproduction Cambridge refuses - and the refusal is not conditioned on commercial use, so no reading of our use clears it. Ease of access is irrelevant: the papers are openly downloadable and still may not be reproduced."
+    },
+    {
+      "pipeline": "syllabus ingestion - the CAPS ATP / IEB SAG pattern",
+      "status": "AVAILABLE, with a shipping gate",
+      "reason": "Syllabus PDFs are public and ingesting them to derive structure for internal curriculum mapping is the ordinary use of a published syllabus. Shipping substantial syllabus prose in a commercial product is a separate question carrying an owner_decision_required gate."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "robots_txt",
+      "question": "What do cambridgeinternational.org/robots.txt and its sitemap say, and do they carry AI-crawler directives (GPTBot, ClaudeBot, CCBot, Google-Extended)?",
+      "status": "UNVERIFIED - the single largest evidentiary gap. Targeted searches returned nothing describing the file. Cambridge's corporate posture on AI is restrictive (opt-in author licensing for generative-AI training; opposition to a copyright exception with opt-out), but inferring robots directives from press statements would be a guess.",
+      "resolve_with": "scripts/fetch_cambridge_sources.py probe reads robots.txt first-hand. Do this BEFORE any bulk fetching."
+    },
+    {
+      "id": "cie_site_terms_scope",
+      "question": "Does cambridge.org/legal/copyright, including its text-and-data-mining clause, govern cambridgeinternational.org, or does Cambridge International's own /privacy-and-legal/terms-and-conditions/ diverge?",
+      "status": "UNVERIFIED - the copyright page scopes itself to 'Cambridge.org website pages'. Cambridge International maintains a separate terms page that could not be read.",
+      "resolve_with": "Read https://www.cambridgeinternational.org/privacy-and-legal/terms-and-conditions/ first-hand and reconcile it against RIGHTS.json."
+    },
+    {
+      "id": "public_paper_retention",
+      "question": "How many examination series does the PUBLIC subject past-papers page retain?",
+      "status": "UNVERIFIED - a five-year limit is documented for the School Support Hub specifically, driven partly by third-party permissions being cleared for five years. Whether the same window governs the public pages is plausible but unstated.",
+      "resolve_with": "Observe a subject past-papers page directly."
+    },
+    {
+      "id": "quote_fidelity",
+      "question": "Is the policy wording recorded in content_use recorded verbatim?",
+      "status": "UNVERIFIED - all of it is snippet-reconstructed, and sentence subjects drift between 'Cambridge' and 'we' across renderings. The SUBSTANCE of each rule was corroborated across three or four independent searches; the exact wording was not, so nothing here is presented as a quotation.",
+      "resolve_with": "Re-pull each passage from the live help-centre article before quoting it anywhere that matters."
+    }
+  ],
+  "summary_for_owner": [
+    "SYLLABUSES (the content layer this tree is built on): public, and ingesting them to derive curriculum structure is ordinary use. Gate is owner_decision_required only for SHIPPING substantial syllabus prose in a commercial product - not for the mapping work itself.",
+    "PAST PAPERS, MARK SCHEMES, EXAMINER REPORTS: blocked. Openly downloadable, but electronic reproduction is refused outright, commercial or not. The CAPS/DBE worked-example pipeline therefore has NO Cambridge equivalent and must not be pointed at Cambridge material.",
+    "AI/TDM: commercial text-and-data-mining rights are expressly reserved. If permission is ever sought, it must name the generative-AI use specifically - a reproduction permission alone would not cover what this repository does.",
+    "Stricter than the IEB (which bars reproduction for commercial gain but permits personal study use) and in the same bracket as the College Board's AP/SAT gate in the US tree."
+  ],
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

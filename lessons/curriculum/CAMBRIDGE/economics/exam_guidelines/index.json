@@ -1,0 +1,70 @@
+{
+  "subject": "Economics",
+  "curriculum": "CAMBRIDGE",
+  "role": "Cambridge has no standalone 'examination guidelines' document of the DBE kind. The examinable scope, assessment objectives, paper structure, durations, marks and weightings are printed INSIDE each Cambridge syllabus document, supplemented by specimen papers and (for teachers) examiner reports. This index records where those live for this subject.",
+  "assessment_documents": [
+    {
+      "kind": "syllabus (contains the assessment specification)",
+      "public": true,
+      "status": "pending_fetch",
+      "per_qualification": [
+        {
+          "syllabus_code": "0455",
+          "qualification": "Cambridge IGCSE",
+          "landing_page": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-economics-0455/",
+          "syllabus_documents": [
+            {
+              "edition": "2026",
+              "url": "https://www.cambridgeinternational.org/Images/697154-2026-syllabus.pdf",
+              "url_status": "observed_in_search_not_fetched",
+              "status": "pending_fetch"
+            }
+          ]
+        },
+        {
+          "syllabus_code": "9708",
+          "qualification": "Cambridge International AS & A Level",
+          "landing_page": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level-economics-9708/",
+          "syllabus_documents": [
+            {
+              "edition": "2026-2028",
+              "url": "https://www.cambridgeinternational.org/Images/697423-2026-2028-syllabus.pdf",
+              "url_status": "observed_in_search_not_fetched",
+              "status": "pending_fetch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "specimen / sample assessment materials",
+      "public": "unconfirmed",
+      "status": "pending_first_hand_check",
+      "note": "Cambridge publishes specimen papers for new syllabus editions. Whether they sit on the public subject page or only behind the School Support Hub login was NOT established from this environment - check on the first network-enabled visit. If they are login-gated they fall under the same reproduction prohibition as past papers."
+    },
+    {
+      "kind": "examiner reports",
+      "public": false,
+      "status": "not_obtainable_here",
+      "note": "School Support Hub only (registered centres), and named explicitly in Cambridge's refusal of electronic reproduction. Do not ingest."
+    }
+  ],
+  "assessment_structure": {
+    "status": "pending_syllabus_ingestion",
+    "rule": "Paper counts, durations, marks, tier splits (IGCSE core/extended) and assessment-objective weightings must be transcribed from the fetched official syllabus PDF only - never from a third-party summary or an aggregator site, and never carried over from the CAPS or IEB exam structures."
+  },
+  "exam_series": {
+    "series": [
+      "June",
+      "November",
+      "March (India only)"
+    ],
+    "verification": "single_source",
+    "source_urls": [
+      "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-advanced/cambridge-international-as-and-a-levels/subjects/"
+    ],
+    "note": "Stated for AS & A Level on the observed subject-list page. Whether all three series apply to every IGCSE subject here is NOT established - confirm per subject from the official syllabus before any scheduler relies on it."
+  },
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

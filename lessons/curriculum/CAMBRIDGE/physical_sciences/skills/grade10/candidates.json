@@ -1,0 +1,53 @@
+{
+  "subject": "Physical Sciences",
+  "grade": 10,
+  "curriculum": "CAMBRIDGE",
+  "kind": "transfer_candidate_register",
+  "basis": "Prerequisite-skill units that ALREADY EXIST in this repository's CAPS tree and are plausibly curriculum-neutral (e.g. laws of exponents, the mole concept, double entry). They are listed as CANDIDATES for a Cambridge stream so the curation pass has a work-list - NOT as confirmed transfers.",
+  "rules": [
+    "transfers is null (unknown) until the Cambridge syllabus for this subject/stage has been ingested and shown to require the skill. It may never be set true by assumption.",
+    "A CAPS skill's importance.exam_weight (DBE paper section marks) and covered_by (pointers into CAPS lessons) NEVER transfer - they describe a different qualification's papers and a different curriculum's lessons.",
+    "Cambridge may require prerequisite skills that CAPS does not define at all. This register is a starting point, not a ceiling: new Cambridge-specific skills get authored here after syllabus ingestion.",
+    "Skill teaching content is not duplicated. A confirmed transfer references the CAPS definition; a Cambridge-specific skill is authored as its own file in this folder."
+  ],
+  "status": "pending_syllabus_ingestion",
+  "candidates": [
+    {
+      "skill_ref": "physical_sciences.equations_of_motion",
+      "name": "Equations of motion",
+      "caps_definition": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/equations_of_motion.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    },
+    {
+      "skill_ref": "physical_sciences.force_and_free_body_diagrams",
+      "name": "Force diagrams and free-body diagrams",
+      "caps_definition": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/force_and_free_body_diagrams.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    },
+    {
+      "skill_ref": "physical_sciences.formulae_and_balanced_equations",
+      "name": "Writing formulae and balancing equations",
+      "caps_definition": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/formulae_and_balanced_equations.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    },
+    {
+      "skill_ref": "physical_sciences.mole_concept",
+      "name": "The mole concept",
+      "caps_definition": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/mole_concept.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    },
+    {
+      "skill_ref": "physical_sciences.vectors_and_scalars",
+      "name": "Vectors and scalars",
+      "caps_definition": "lessons/curriculum/CAPS/physical_sciences/skills/grade10/vectors_and_scalars.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    }
+  ],
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

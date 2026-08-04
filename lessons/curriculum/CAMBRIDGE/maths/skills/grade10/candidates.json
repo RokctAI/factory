@@ -1,0 +1,39 @@
+{
+  "subject": "Mathematics",
+  "grade": 10,
+  "curriculum": "CAMBRIDGE",
+  "kind": "transfer_candidate_register",
+  "basis": "Prerequisite-skill units that ALREADY EXIST in this repository's CAPS tree and are plausibly curriculum-neutral (e.g. laws of exponents, the mole concept, double entry). They are listed as CANDIDATES for a Cambridge stream so the curation pass has a work-list - NOT as confirmed transfers.",
+  "rules": [
+    "transfers is null (unknown) until the Cambridge syllabus for this subject/stage has been ingested and shown to require the skill. It may never be set true by assumption.",
+    "A CAPS skill's importance.exam_weight (DBE paper section marks) and covered_by (pointers into CAPS lessons) NEVER transfer - they describe a different qualification's papers and a different curriculum's lessons.",
+    "Cambridge may require prerequisite skills that CAPS does not define at all. This register is a starting point, not a ceiling: new Cambridge-specific skills get authored here after syllabus ingestion.",
+    "Skill teaching content is not duplicated. A confirmed transfer references the CAPS definition; a Cambridge-specific skill is authored as its own file in this folder."
+  ],
+  "status": "pending_syllabus_ingestion",
+  "candidates": [
+    {
+      "skill_ref": "maths.factorisation_techniques",
+      "name": "Factorisation techniques",
+      "caps_definition": "lessons/curriculum/CAPS/maths/skills/grade10/factorisation_techniques.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    },
+    {
+      "skill_ref": "maths.laws_of_exponents",
+      "name": "Laws of exponents",
+      "caps_definition": "lessons/curriculum/CAPS/maths/skills/grade10/laws_of_exponents.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    },
+    {
+      "skill_ref": "maths.trig_ratios",
+      "name": "Trigonometric ratios and special angles",
+      "caps_definition": "lessons/curriculum/CAPS/maths/skills/grade10/trig_ratios.json",
+      "transfers": null,
+      "transfer_assessment": "pending_syllabus_ingestion"
+    }
+  ],
+  "rights": "lessons/curriculum/CAMBRIDGE/RIGHTS.json",
+  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+}

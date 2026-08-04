@@ -1,0 +1,13 @@
+# Cambridge source documents (syllabus PDFs, and anything ever obtained from
+# the School Support Hub) are fetched on demand by
+# scripts/fetch_cambridge_sources.py and are NEVER committed.
+#
+# This is stricter than the CAPS/IEB rule and deliberately so: Cambridge
+# refuses permission for electronic reproduction of past-paper questions,
+# mark schemes and examiner reports in any format, and its syllabus copying
+# permission runs to registered centres for internal use only - neither
+# covers redistribution via this repository. sources_manifest.json (URL +
+# sha256 provenance) IS committed; it records what was read without
+# republishing it.
+*.pdf
+source/
