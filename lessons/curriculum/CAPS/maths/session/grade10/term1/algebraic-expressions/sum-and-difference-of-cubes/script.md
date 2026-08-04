@@ -1,4 +1,6 @@
-Welcome, student. Today we master a factorisation identity that looks intimidating and becomes, with one mnemonic, completely mechanical: the sum and difference of two cubes. Our exam problem: factorise fully x cubed plus eight. Two innocent terms — and a technique that CAPS examiners test every single year, precisely because so few learners own it properly.
+# Part 1 — Expert
+
+This session builds one factorisation identity from first sight to finished answer: the sum and difference of two cubes — intimidating on the page, completely mechanical once a single mnemonic is in place. The exam problem that organises the work is: factorise fully x cubed plus eight. Two innocent terms — and a technique that CAPS examiners test every single year, precisely because so few learners own it properly.
 
 ## Subtopic: Recognising a Cube When You See One
 
@@ -11,6 +13,8 @@ Variables cube too: x cubed is obviously a cube; but so is y to the six — it i
 So x cubed plus eight passes the test twice: x cubed is x, cubed; eight is two, cubed. A sum of two cubes: a cubed plus b cubed, with a equal to x and b equal to two. Identifying a and b EXPLICITLY, in writing, is the professional's first move — every later step just reads off those two letters.
 
 Why does this need its own identity at all? Try the tools you already have. A common factor? X cubed and eight share nothing. Difference of squares? This is a SUM, and neither term is a square anyway. The trinomial method? Only two terms. Every familiar door is locked — the cubes identity is the key cut precisely for this lock.
+
+The questions for this section are with you now: the six perfect cubes recognised on sight, a and b named for a given expression, and the reason the common-factor, squares and trinomial methods cannot open it.
 
 ## Subtopic: The Identity and the SOAP Mnemonic
 
@@ -25,6 +29,8 @@ And the signs obey one mnemonic: SOAP. Same — Opposite — Always Positive. Th
 Run SOAP on the sum: a cubed PLUS b cubed. Same: a plus b. Opposite: minus a b. Always positive: plus b squared. Exactly the identity. Run it on the difference: a cubed MINUS b cubed. Same: a minus b. Opposite: PLUS a b. Always positive: plus b squared. Both identities, one mnemonic, zero memory strain.
 
 Where do these identities come from? Do not take them on faith — multiply one out and own it. Expand a plus b times a squared minus a b plus b squared. Distribute the a: a cubed minus a squared b plus a b squared. Distribute the b: plus a squared b minus a b squared plus b cubed. Now watch the middle collapse: minus a squared b cancels plus a squared b; plus a b squared cancels minus a b squared. Survivors: a cubed plus b cubed. The identity is not magic — it is engineered so the middle terms annihilate each other.
+
+Pause for this section's questions before the worked example proceeds: both identities stated in full, SOAP applied sign by sign to each of them, and the expansion that forces the middle terms to cancel.
 
 ## Subtopic: Factorising x Cubed Plus Eight
 
@@ -44,6 +50,8 @@ Step five — and this is where marks quietly die — ask whether the second bra
 
 One more common wreck to avoid: the middle term of the second bracket is a times b — two x — not two a b, and not b squared. Learners who write minus four x have squared the two instead of multiplying two by x. The pattern is square, MULTIPLY, square — the middle is a product, not a square.
 
+This section's questions are in front of you now — attend to the assembled factorisation, the middle term as a product rather than a square, and the decision to leave the quadratic bracket exactly as it stands.
+
 ## Subtopic: The Difference Twin and the Full Method
 
 The difference of cubes runs on the same rails. Factorise x cubed minus twenty-seven. Recognise: twenty-seven is three cubed — a is x, b is three. SOAP: same sign — x minus three. Opposite — plus three x. Always positive — plus nine. Result: the quantity x minus three, times the quantity x squared plus three x plus nine.
@@ -56,4 +64,50 @@ The complete method, six steps. One: common factor first. Two: confirm both term
 
 Where this identity travels: Grade 11 uses it inside algebraic fractions, where cancelling a cubes factorisation simplifies monsters. Matric's factor theorem hands you one factor of a cubic polynomial and expects you to finish the factorisation — the quadratic factor pattern you practised today is exactly what emerges. Six perfect cubes memorised, one mnemonic, one collapsing expansion: that is the entire technique. Own it tonight; it earns for three years.
 
-Class is dismissed.
+The last questions of this part are with you now: the difference twin executed cleanly, the common factor taken out before the identity is applied, and the exponent checked so that a squares question is never answered with the cubes method.
+
+# Part 2 — Simplifier
+
+Now the same two brackets from a spaza shop storeroom — stock cubes, crates, and one bar of soap that keeps every sign in line.
+
+## Subtopic: Cubes Are Just Boxes You Can Stack
+
+Forget the word "cube" for a moment and picture packing. A cube number is what fills a perfect box — same length, same width, same height. Two along, two back, two high: eight stock cubes, so eight is a cube. Three by three by three gives twenty-seven; four by four by four, sixty-four; five, one hundred and twenty-five; six, two hundred and sixteen. And one lonely cube in an empty crate: one. That whole list — one, eight, twenty-seven, sixty-four, one hundred and twenty-five, two hundred and sixteen — is the vocabulary, learned the way you know taxi fares: instantly, without deciding to think.
+
+Letters stack the same way. X cubed — x³ — is x times x times x: a box x wide, x deep and x high. Y to the six — y⁶ — is a cube too, because y squared taken three times over gives y to the six, so the block being stacked was y squared.
+
+So the first job here is a spotting job, and spotting needs no cleverness, only that list. Given exactly two terms with a plus or a minus between them, ask of each one: is it something, boxed? X cubed plus eight — x³ + 8 — passes twice, since x cubed is x, boxed, and eight is two, boxed. Say the names out loud, "x and two" — they are the only ingredients the answer will ever need.
+
+And notice what fails here, so you stop spending exam minutes on it: no common factor to pull out, no difference of squares (that needs a minus and two squares), no middle term to split. Every tool you already own bounces off — which is not a dead end but a signpost reading "cubes this way".
+
+Take the questions waiting for you here — they are pure spotting: is it a cube, and what is it a cube of? Get those right and nothing later can hide from you.
+
+## Subtopic: Three Signs, One Bar of Soap
+
+Good news nobody tells you early enough: every cubes answer has the same shape — one short bracket and one long bracket. The short one holds your two names, x and two. The long one holds three pieces built from those same names in a fixed order: square the first, multiply the two together, square the last. Square, times, square — giving x squared, then two x, then four. The skeleton exists before you have thought about a single sign.
+
+Now the signs, and here the soap arrives. SOAP: Same, Opposite, Always Positive. Same — the short bracket copies the sign standing in the question. Opposite — the middle piece flips it. Always Positive — the last piece is plus, always, no exceptions.
+
+Run it on x cubed plus eight. Plus in the question, so plus in the short bracket: x plus two. The opposite of plus is minus: minus two x. Always positive: plus four. The answer is the quantity x plus two, times the quantity x squared minus two x plus four — (x + 2)(x² − 2x + 4).
+
+That shape has a formal name, worth owning now that you can build it: the sum of two cubes — a cubed plus b cubed equals a plus b, times a squared minus a b plus b squared.
+
+Why does it work? Multiply the brackets and watch the money go round. The x gives x cubed, minus two x squared, plus four x. The two gives plus two x squared, minus four x, plus eight. Minus two x squared and plus two x squared cancel — paid out and paid straight back; four x and minus four x do the same. What survives is x cubed plus eight, exactly what you started with.
+
+One trap catches even careful learners: the middle piece is two x, not four x. Square, TIMES, square — the middle is the names multiplied, never the two squared.
+
+Your questions for this section are ready — try them saying the three signs out loud as you go, and enjoy how little there really is to remember.
+
+## Subtopic: The Curtain, the Twin and Knowing When to Stop
+
+Three last things, and this topic is finished for good.
+
+The twin: a minus in the question changes only the signs. Take x cubed minus twenty-seven — x³ − 27. Names: x, and three, since twenty-seven is three boxed. Same: x minus three. Opposite: plus three x. Always positive: plus nine. The answer is x minus three, times x squared plus three x plus nine — (x − 3)(x² + 3x + 9).
+
+The curtain: examiners hide cubes behind a common factor, the way a plastic wrapper hides the six bottles inside it. Two x cubed minus fifty-four — 2x³ − 54 — looks broken, since neither two nor fifty-four is a cube. So take the wrapper off. Both terms share two, giving two, times x cubed minus twenty-seven — and the cube is standing right there. Finish with SOAP: two, times x minus three, times x squared plus three x plus nine. Rule zero of all factorising: common factor first, pattern second.
+
+And knowing when to stop, which is where careful learners quietly lose marks. Leave the long bracket alone. Learners see x squared plus three x plus nine, recognise a trinomial, and hunt for two numbers multiplying to nine and adding to three. One and nine give ten; three and three give six. There is no such pair, and there never is — the long bracket does not break apart at this level. Hunting for it is waiting at a stop for a taxi on a route that does not exist. "Fully factorised" includes stopping in the right place.
+
+One last sorting rule, because squares and cubes wear similar clothes: read the exponent first. X squared minus nine is squares — x minus three and x plus three, both short, both finished. X cubed minus twenty-seven is cubes — one short bracket and one long one, and the long one stays. Squared calls squares; cubed calls cubes.
+
+And here come the last questions of the lesson: the curtain, the twin, and the full stop. Answer these and this identity belongs to you for three years of examinations.
