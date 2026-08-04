@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what the parameters $a$ and $d$ represent in an arithmetic sequence.",
+      "expected_answer": "$a$ represents the first term of the sequence, and $d$ represents the constant difference between consecutive terms."
+    },
+    {
+      "id": "cc2",
+      "question": "What is the general formula for the $n$-th term of an arithmetic sequence?",
+      "expected_answer": "The formula is $T_n = a + (n - 1)d$."
+    },
+    {
+      "id": "cc3",
+      "question": "If you are solving for $n$ and get a negative number or a fraction, what should you conclude?",
+      "expected_answer": "It means you have either made a calculation error, or the given value is not an actual term in the sequence, because $n$ must always be a positive integer."
+    }
+  ]
+}

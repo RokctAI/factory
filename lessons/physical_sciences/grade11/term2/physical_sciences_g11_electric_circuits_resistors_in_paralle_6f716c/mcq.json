@@ -1,0 +1,172 @@
+{
+  "subtopics": [
+    {
+      "ref": "intro_parallel_circuits",
+      "title": "Introduction to Parallel Circuits",
+      "questions": [
+        {
+          "id": "intro_parallel_circuits_q1",
+          "question": "In a parallel circuit, what happens to the total resistance when you add an extra resistor in parallel?",
+          "options": [
+            "It decreases.",
+            "It increases.",
+            "It stays exactly the same.",
+            "It becomes zero."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "intro_parallel_circuits_q2",
+          "question": "Which of the following remains constant across all branches in a parallel circuit?",
+          "options": [
+            "Potential difference (voltage)",
+            "Current",
+            "Resistance",
+            "Power"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "intro_parallel_circuits_q3",
+          "question": "A circuit has two resistors in parallel: 4 Ω and 6 Ω. What can you definitively say about the total equivalent resistance without calculating it exactly?",
+          "options": [
+            "It must be less than 4 Ω.",
+            "It must be between 4 Ω and 6 Ω.",
+            "It must be exactly 10 Ω.",
+            "It must be greater than 6 Ω."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "parallel_resistance_formula",
+      "title": "The Parallel Resistance Formula",
+      "questions": [
+        {
+          "id": "parallel_resistance_formula_q1",
+          "question": "Which of the following is the correct formula to calculate total resistance (Rp) for three resistors in parallel?",
+          "options": [
+            "1/Rp = 1/R1 + 1/R2 + 1/R3",
+            "Rp = R1 + R2 + R3",
+            "Rp = 1/R1 + 1/R2 + 1/R3",
+            "1/Rp = R1 + R2 + R3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "parallel_resistance_formula_q2",
+          "question": "If you calculate 1/Rp = 0.5 Ω⁻¹, what is the total parallel resistance Rp?",
+          "options": [
+            "2 Ω",
+            "0.5 Ω",
+            "1 Ω",
+            "5 Ω"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "parallel_resistance_formula_q3",
+          "question": "Why is it important to write down the formula exactly as it appears on the data sheet before substituting?",
+          "options": [
+            "To secure the formula mark before making any algebraic manipulation errors.",
+            "Because the values might change if you write it differently.",
+            "So that the total resistance is always a whole number.",
+            "It is not important; you can skip straight to the answer."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "worked_example_resistance",
+      "title": "Worked Example - Total Resistance",
+      "questions": [
+        {
+          "id": "worked_example_resistance_q1",
+          "question": "Three resistors of 4 Ω, 4 Ω, and 2 Ω are connected in parallel. Calculate the total equivalent resistance.",
+          "options": [
+            "1 Ω",
+            "10 Ω",
+            "0.25 Ω",
+            "2 Ω"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "worked_example_resistance_q2",
+          "question": "Two resistors of 10 Ω and 10 Ω are in parallel. What is the total equivalent resistance?",
+          "options": [
+            "5 Ω",
+            "20 Ω",
+            "10 Ω",
+            "0.2 Ω"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "worked_example_resistance_q3",
+          "question": "A student calculates 1/Rp = 1/3 + 1/6 and gets 3/6. They write 'Total resistance = 0.5 Ω'. What was their mistake?",
+          "options": [
+            "They forgot to invert 1/Rp to find Rp.",
+            "They added the denominators incorrectly.",
+            "They should have used the formula Rp = R1 + R2.",
+            "They forgot to write the unit."
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "worked_example_current",
+      "title": "Worked Example - Total Current",
+      "questions": [
+        {
+          "id": "worked_example_current_q1",
+          "question": "If a parallel circuit has a total resistance of 2 Ω and is connected to a 10 V battery, what is the total current?",
+          "options": [
+            "5 A",
+            "20 A",
+            "0.2 A",
+            "12 A"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "worked_example_current_q2",
+          "question": "Which formula should you use to find the total current if you have the total resistance and the battery voltage?",
+          "options": [
+            "R = V / I",
+            "V = I + R",
+            "I = R / V",
+            "P = VI"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "worked_example_current_q3",
+          "question": "A student calculates total current as 4, but forgets the unit. What is the correct SI unit for current?",
+          "options": [
+            "Amperes (A)",
+            "Volts (V)",
+            "Ohms (Ω)",
+            "Watts (W)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

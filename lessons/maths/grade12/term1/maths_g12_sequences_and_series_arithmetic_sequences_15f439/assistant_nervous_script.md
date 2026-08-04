@@ -1,0 +1,3 @@
+Hey! I know Mr Zulu—the Grandmaster—can be a bit intense, especially when he starts throwing formulas and 'marks' at you. But don't stress! The main thing he wants you to remember is that arithmetic sequences are just number patterns where you keep adding or subtracting the exact same number every time.
+
+That fancy formula, $T_n = a + (n - 1)d$, is literally just a shortcut. Instead of writing out the pattern forever to find the 20th term, you just plug in your first term ($a$), your common difference ($d$), and the position you want ($n$). You've got this! Just take it one step at a time, write down your formula first, and double-check your calculating. Let's do a few practice questions together to make sure it sticks.
