@@ -58,4 +58,54 @@ The complete method: label relative to your angle; choose by SOH CAH TOA; write 
 
 Where this gateway leads: Grade 11 pushes these ratios beyond ninety degrees, onto the Cartesian plane, into reduction formulae and general solutions; matric brings the sine, cosine and area rules for any triangle, plus three-dimensional problems — fifty marks of Paper 2 in Grade 11, forty in matric. Every one of those questions begins with what you did today: three ratios, two special triangles, one routine. Practise until SOH CAH TOA stops being a phrase and becomes a reflex.
 
-Class is dismissed.
+The final questions of this part are with you now — the choosing routine run from the first step, the three museum errors recognised on sight, and the decision between a plain ratio and its inverse properly justified.
+
+# Part 2 — Simplifier
+
+Now the same three ratios from a ladder leaning against a wall — one triangle, and side names that change depending on where you are standing.
+
+## Subtopic: Where You Stand Decides the Names
+
+Picture a ladder leaning against the wall of a house. Ladder, wall and ground make a triangle, and the corner where wall meets ground is the square corner. Three sides, three jobs.
+
+The ladder is the long slanted one, lying straight across from the square corner. That is the hypotenuse, and it is the easy one: it never changes its name, because it is tied to the right angle, not to you.
+
+The other two names depend on where you stand. Stand at the foot of the ladder and use the angle between ladder and ground. From down there the wall faces you across the triangle — that is the opposite — while the ground runs away under your feet as the arm of your angle — that is the adjacent. Now climb up and use the angle at the top between ladder and wall instead. Suddenly the ground faces you, so the ground becomes the opposite and the wall becomes the adjacent. Nothing about the triangle moved; only your viewpoint did. Hence the golden habit: angle first, names second.
+
+With the sides named, the three ratios are just three ways of pairing two of them. Opposite over hypotenuse is sine. Adjacent over hypotenuse is cosine. Opposite over adjacent is tangent. First letters strung together: SOH CAH TOA.
+
+And here is what makes the whole subject work. Lean a short ladder and a long ladder against the wall at exactly the same slant. The long one reaches higher, but the ratio of wall-height to ladder-length is identical for both. It works like the price of mielie meal per kilogram: the five-kilogram bag and the ten-kilogram bag hold different amounts, but the price per kilogram is the same number. Double every side and five over thirteen becomes ten over twenty-six, which is the same value. That is why sine of sixty degrees is one fixed number in the universe, not a fact about somebody's drawing.
+
+Your questions for this section are with you now — take them slowly, and for each one ask where you are standing before naming a single side.
+
+## Subtopic: Two Triangles You Can Rebuild Anywhere
+
+Papers say "without a calculator" for thirty, forty-five and sixty degrees. That sounds like memory work. It is not: it is two shapes you can rebuild any time your memory goes blank.
+
+Shape one: a triangular paving slab with all three sides two metres, so all three corners are sixty degrees. Cut it straight down the middle from the top corner. The base splits into one and one, the top corner splits into thirty and thirty, and the cut is the height. Pythagoras: the slant is two, the half-base is one, so the height squared is four minus one, which is three, and the height is root three.
+
+Stand at the sixty-degree corner of that half-slab. Facing you is the cut, root three; beside you is the half-base, one; the slant is two. So sine sixty is root three over two, cosine sixty is one half, and tangent sixty is root three. Move to the thirty-degree corner at the top and the two short sides swap jobs: sine thirty is one half, cosine thirty is root three over two, tangent thirty is one over root three.
+
+Shape two: a square floor tile of side one, cut corner to corner. That gives a square corner and two forty-five-degree corners, short sides one and one, and a diagonal of root two. So sine forty-five and cosine forty-five are both one over root two, and tangent forty-five is one over one — exactly one.
+
+Two shapes, six values, nothing memorised. Now the exam expression: sine sixty times cosine thirty, minus tangent forty-five. Sine sixty is root three over two; cosine thirty is also root three over two. Multiply: root three times root three is three, two times two is four — three quarters. Tangent forty-five is one. Three quarters minus one is minus one quarter.
+
+Leave it exactly like that. When a paper says no calculator, it is asking for exact answers, so a fraction is a finished answer — turning it into a decimal loses the mark you just earned.
+
+Here are your questions for this section — rebuild the two shapes as you answer, and notice how soon the values start arriving without the rebuild.
+
+## Subtopic: Forward Gear, Reverse Gear
+
+One last idea, and it unlocks half the exam questions.
+
+Think of sine as a bakkie in forward gear: feed an angle in, a ratio comes out. Inverse sine is the same bakkie in reverse: feed a ratio in, the angle comes out. Same machine, opposite direction — and on the calculator it is shift, then sine.
+
+Try it on our ladder. The ladder is thirteen metres long and its top touches the wall five metres up. What angle does it make with the ground? Stand at the foot: the wall is opposite, five; the ladder is the hypotenuse, thirteen. Opposite and hypotenuse means sine, so sine of the angle is five over thirteen. That gives the ratio and hides the angle, so reverse gear: the angle is inverse sine of five over thirteen — twenty-two comma six degrees.
+
+Check it twice, because a checked answer is a defended answer. First: five over thirteen is a bit under a half, and sine thirty is exactly a half, so the angle must be under thirty degrees. Twenty-two comma six sits comfortably below. Second: this is the famous five, twelve, thirteen triangle, so the ladder's foot stands twelve metres from the wall, and the angle at the top must be inverse sine of twelve over thirteen, about sixty-seven comma four degrees. Twenty-two comma six plus sixty-seven comma four is exactly ninety. The triangle closes, so the answer stands.
+
+The routine, in the order you use it: mark your angle, name the three sides from there, pick out the two sides the question actually mentions, and let the letters choose the ratio. Then ask what you are hunting — a side with the angle known means forward gear; an angle with two sides known means reverse gear.
+
+Two warnings. The names swap the moment you switch angles, so never carry old labels into a new part of a question. And if your calculator claims sine thirty is minus nought comma nine eight eight, it is not broken — it is in radian mode, so find the little D on the screen and change it back. You already know sine thirty is nought comma five, so make the calculator prove itself to you before you trust it with anything.
+
+Last questions of the lesson coming up now — forward gear, reverse gear, and the choosing routine. Land these and the biggest section of Paper 2 has just become your friendliest one.

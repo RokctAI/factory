@@ -8,48 +8,48 @@
           "id": "subtopic_1_q1",
           "question": "The weight of the 5 kg box (using g = 9,8 m/s²) is:",
           "options": [
-            "49 N downward",
             "5 N downward",
             "9,8 N downward",
+            "49 N downward",
             "49 kg downward"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_1_q2",
           "question": "What is the difference between mass and weight?",
           "options": [
-            "Mass is the amount of matter (a scalar); weight is the gravitational force on it (a vector)",
             "They are two names for the same thing",
+            "Mass is the amount of matter (a scalar); weight is the gravitational force on it (a vector)",
             "Weight is measured in kilograms",
             "Mass changes on the Moon; weight does not"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_1_q3",
           "question": "The test for whether a force belongs on the diagram is:",
           "options": [
-            "Can you name the object responsible for the push or pull?",
             "Does the object move in that direction?",
             "Is the force bigger than 1 newton?",
-            "Is the force horizontal or vertical?"
+            "Is the force horizontal or vertical?",
+            "Can you name the object responsible for the push or pull?"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_1_q4",
           "question": "Which of the following is NOT a real force on the sliding box?",
           "options": [
-            "A forward 'force of motion' keeping it moving",
             "The normal force from the floor",
+            "A forward 'force of motion' keeping it moving",
             "The weight from the Earth",
             "Friction from the rough floor"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 30
         }
       ]
@@ -62,36 +62,36 @@
           "id": "subtopic_2_q1",
           "question": "In a free-body diagram, the object is represented as:",
           "options": [
-            "A single dot with all force arrows starting from it",
             "A detailed sketch including the floor and rope",
+            "A single dot with all force arrows starting from it",
             "A circle containing the force values",
             "An arrow showing its velocity"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_2_q2",
           "question": "The applied force arrow for our box must be drawn:",
           "options": [
-            "At 30° above the horizontal, with the angle clearly marked",
             "Straight up",
             "Horizontally forward",
+            "At 30° above the horizontal, with the angle clearly marked",
             "At 30° below the horizontal"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_2_q3",
           "question": "Friction on the forward-sliding box is drawn:",
           "options": [
-            "Horizontally backward, opposing the sliding",
             "Vertically downward",
             "In the same direction as the pull",
-            "At 30° below the horizontal"
+            "At 30° below the horizontal",
+            "Horizontally backward, opposing the sliding"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 30
         },
         {
@@ -116,36 +116,36 @@
           "id": "subtopic_3_q1",
           "question": "'Constant velocity' tells you that:",
           "options": [
-            "The net force on the box is zero — all forces balance (Newton's first law)",
             "The applied force is the largest force",
+            "The net force on the box is zero — all forces balance (Newton's first law)",
             "Friction is zero",
             "The box is accelerating slowly"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_3_q2",
           "question": "The horizontal balance for the box reads:",
           "options": [
-            "$F_{applied}\\cos 30° = f$",
             "$F_{applied} = f$",
             "$F_{applied}\\sin 30° = f$",
+            "$F_{applied}\\cos 30° = f$",
             "$N = w$"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_3_q3",
           "question": "Why is the normal force LESS than 49 N in this problem?",
           "options": [
-            "The rope's vertical component ($F_{applied}\\sin 30°$) helps lift the box, so the floor pushes less",
             "The box is moving, which always reduces the normal force",
             "Friction cancels part of the weight",
-            "It is not less — N always equals w"
+            "It is not less — N always equals w",
+            "The rope's vertical component ($F_{applied}\\sin 30°$) helps lift the box, so the floor pushes less"
           ],
-          "correct_index": 0,
+          "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
@@ -170,37 +170,199 @@
           "id": "subtopic_4_q1",
           "question": "The systematic hunt for forces on an object starts with:",
           "options": [
-            "Gravity (always present), then every object touching the body",
             "The fastest-moving object nearby",
             "Friction",
+            "Gravity (always present), then every object touching the body",
             "The applied force"
           ],
-          "correct_index": 0,
+          "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_4_q2",
           "question": "Friction always opposes:",
           "options": [
-            "The relative sliding between the surfaces",
             "The applied force, whatever its direction",
+            "The relative sliding between the surfaces",
             "The weight",
             "The normal force"
           ],
-          "correct_index": 0,
+          "correct_index": 1,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_4_q3",
           "question": "A free-body diagram must show forces:",
           "options": [
-            "Acting ON the chosen object only — one object per diagram",
             "Exerted BY the object on its surroundings",
             "On every object in the problem at once",
+            "Acting ON the chosen object only — one object per diagram",
             "Only the two largest forces"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Who Is Actually Pulling on the Box?",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Dragging a gas bottle across a yard, which four objects act on it?",
+          "options": [
+            "The Earth, the ground, the rope and the rough surface",
+            "The Earth, the air, the sun and the rope",
+            "The rope only",
+            "The Earth and the person's momentum"
           ],
           "correct_index": 0,
           "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Weight equals mass times gravitational acceleration. For the 5 kg box that is:",
+          "options": [
+            "5 N",
+            "49 N, straight down",
+            "9,8 N",
+            "4,9 N"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Which statement about mass and weight is correct?",
+          "options": [
+            "Both are measured in newtons",
+            "Both would be unchanged on the Moon",
+            "Mass stays 5 kg on the Moon; the weight becomes smaller because the Moon pulls more gently",
+            "Weight stays 49 N on the Moon; the mass becomes smaller"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Why is there no 'force of moving forward' on the sliding box?",
+          "options": [
+            "Because it is too small to matter",
+            "Because it acts only at high speed",
+            "Because friction already cancels it",
+            "Because no object supplies it — moving is something the box does, not something done to it"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "A Dot and Four Arrows",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "What is thrown away when a force diagram becomes a free-body diagram?",
+          "options": [
+            "The force arrows",
+            "The scenery — floor, rope and box outline — leaving a dot and the arrows",
+            "The labels on the arrows",
+            "The angles"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Said out loud, the four arrows leaving the dot are:",
+          "options": [
+            "Up, up, left and right",
+            "Down, up, backwards and downwards",
+            "Down for weight, up for the normal force, slanted forward and up for the rope, backwards for friction",
+            "Only the rope and the weight"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "An arrow without an arrowhead is a problem because:",
+          "options": [
+            "It has not shown a direction, which is half of what a force is",
+            "It looks untidy",
+            "It makes the diagram too long",
+            "Arrowheads are optional"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Which one belongs on the free-body diagram?",
+          "options": [
+            "The floor, sketched under the dot",
+            "The rope, drawn up to a hand",
+            "An arrow showing how fast the box is moving",
+            "A labelled arrow for the normal force, starting at the dot"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Why the Slant Helps — and What \"Constant Speed\" Is Telling You",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'Constant speed in a straight line' is the examiner telling you that:",
+          "options": [
+            "The rope is the strongest force",
+            "Forward and backward effects are equal, and up and down effects are equal — nothing is winning",
+            "Friction has stopped acting",
+            "The box is about to stop"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Pulling a wheeled suitcase by its handle does two jobs at once. In physics those two jobs are called:",
+          "options": [
+            "Two separate forces from two ropes",
+            "Weight and normal force",
+            "The horizontal component and the vertical component of one force",
+            "Friction and tension"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The up-and-down balance for the box, in words, is:",
+          "options": [
+            "The floor's push plus the rope's upward part equals the weight",
+            "The floor's push equals the weight, always",
+            "The weight plus the rope's upward part equals the floor's push",
+            "The friction equals the weight"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Why is dragging a heavy bag by a strap slanted up over your shoulder easier than dragging it flat?",
+          "options": [
+            "The bag loses mass when lifted",
+            "Straps are stronger than hands",
+            "Friction disappears when the bag is tilted",
+            "The upward pull lightens the floor's push, and less normal force means less friction"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
         }
       ]
     }
