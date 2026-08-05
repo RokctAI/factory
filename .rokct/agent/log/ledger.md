@@ -156,3 +156,4 @@
 | 2._forgotten_libraries_cab1d2 | short story anthology | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-04 21:12 |
 | forgotten_cities_275055 | poetry | Forgotten Cities | pending_approval | groq | GROQ-30956781250 | — | 2026-08-04 22:33 |
 | echoes_in_the_night_1631d9 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30964616381 | — | 2026-08-05 00:52 |
+| whispers_of_the_forest_3c93a1 | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30975516688 | — | 2026-08-05 04:34 |
