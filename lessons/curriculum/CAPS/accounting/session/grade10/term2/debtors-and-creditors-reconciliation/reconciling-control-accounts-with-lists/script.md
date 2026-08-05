@@ -72,7 +72,7 @@ The investigation turns up four potholes. For each, ask the only question that m
 
 Pothole one: the sales column in the Debtors Journal was added up R200 short. The pages never saw this — they were posted from the correct lines before the bad total was struck. The totals road is holed: the LINE is R200 too small. Patch the line: up R200.
 
-Pothole two: Naidoo-style bad news — a R140 write-off recorded on the customer's page, but the entry never made it into the control totals. The page already said goodbye; the line still thinks the money is coming. Totals road again: line down R140. The line now reads R7 500.
+Pothole two: Naidoo-style bad news — a R140 write-off recorded on the customer's page, but the entry never made it into the control totals. The page has already written the debt off; the line still thinks the money is coming. Totals road again: line down R140. The line now reads R7 500.
 
 Pothole three: an invoice for R550 to Mr Osman went into the journal — so the line knows about it — but nobody carried it to his page. The daily road is holed: the pages are R550 light. Patch the pages: Osman up R550.
 

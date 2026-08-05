@@ -6,7 +6,7 @@ Today we step back from individual entries and look at the whole machine: the ac
 
 Before we list stages, let us think about the problem the cycle solves. Imagine a sole trader — let us call her T. Mokoena, who runs Mokoena Traders. During June she sells stock for cash, buys stock from suppliers, pays wages, and receives money from debtors. By the end of the month there are dozens of transactions. If she simply kept a shoebox of slips, she could never answer the two questions every owner asks: did I make a profit, and what is my business worth?
 
-The accounting cycle is the fixed route every transaction travels, from the moment it happens to the moment it appears in the financial statements. You already know pieces of this route from Grade 8 and 9: you have written up source documents and entered basic journals. What is new in Grade 10 is seeing the pieces as one connected sequence, and knowing what each stage hands over to the next.
+The accounting cycle is the fixed route every transaction travels, from the moment it happens to the moment it appears in the financial statements. You already know pieces of this route from Grade 8 and 9: you have written up source documents and entered basic journals. What is new in Grade 10 is seeing the pieces as one connected sequence, and knowing what each stage passes on to the next.
 
 Here is the sequence you must memorise, because every reporting question in Paper 1 walks this exact path: first, source documents. Second, journals. Third, posting to the ledger. Fourth, the trial balance. Fifth, the final accounts. Sixth, the financial statements.
 
@@ -58,9 +58,9 @@ What does stage six produce? Answers. Did Mokoena Traders make a profit in June'
 
 Now let us verify our understanding by running the whole June story through the cycle in one breath. A cash sale happens: the till slip is the source document. The slip's amount is entered in the CRJ. At month end the CRJ totals are posted to Bank and Sales in the ledger. The ledger balances are listed in the trial balance, which must balance. At year end, Sales flows into the Trading account and profit is determined in the final accounts. Finally, that profit appears in the financial statements the owner reads.
 
-Test yourself with this check: for any stage, can you name what it receives from the previous stage and what it hands to the next? If you can do that for all six, you own this cycle — and you own the spine of every Accounting paper you will ever write.
+Test yourself with this check: for any stage, can you name what it receives from the previous stage and what it passes on to the next? If you can do that for all six, you own this cycle — and you own the spine of every Accounting paper you will ever write.
 
-The final questions of this part are with you now: run the receives-and-hands-over check on each stage, exactly as demonstrated.
+The final questions of this part are with you now: run the receives-and-passes-on check on each stage, exactly as demonstrated.
 
 # Part 2 — Simplifier
 

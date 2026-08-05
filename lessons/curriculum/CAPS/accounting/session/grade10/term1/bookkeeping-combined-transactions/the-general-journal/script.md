@@ -68,7 +68,7 @@ Quick check before we carry on — questions on the notebook's job are coming to
 
 ## Subtopic: Three Stories the Big Diaries Can't Tell
 
-Story one: the goodbye. Mrs Jacobs's R900 is gone — accept it. Her page cannot keep claiming an asset the shop will never touch; that would be the books lying kindly to themselves. So: her page goes down by R900, the street's summary line goes down by R900 — and the loss lands where losses live: an expense called Bad Debts. The narration says it plainly: "debt written off as irrecoverable." No cash moved anywhere — an asset was buried, and the funeral was recorded. That refusal to flatter yourself is the prudence principle you met in GAAP, working a real shift.
+Story one: the write-off. Mrs Jacobs's R900 is gone — accept it. Her page cannot keep claiming an asset the shop will never touch; that would be the books lying kindly to themselves. So: her page goes down by R900, the street's summary line goes down by R900 — and the loss lands where losses live: an expense called Bad Debts. The narration says it plainly: "debt written off as irrecoverable." No cash moved anywhere — an asset was buried, and the funeral was recorded. That refusal to flatter yourself is the prudence principle you met in GAAP, working a real shift.
 
 Story two: the owner shops at his own shelf. Thabo takes home goods that cost R350 — supper, not sales. The shelf lost R350 of stock; and who received it? Not the business — Thabo the man. You know this move from the money version: drawings. Only the currency changed — he drew goods instead of rands. And catch the detail: R350 at COST, never at the marked-up price, because nothing was SOLD — there is no profit in carrying your own groceries home.
 

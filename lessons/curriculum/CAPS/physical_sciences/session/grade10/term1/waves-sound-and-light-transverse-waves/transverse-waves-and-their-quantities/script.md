@@ -100,7 +100,7 @@ Your questions on measuring are up now: rest line to hump-top for the amplitude,
 
 ## Subtopic: One Sum That Does Everything
 
-Here is the only real calculation in the topic, built from the rope rather than handed to you.
+Here is the only real calculation in the topic, built from the rope rather than given to you ready-made.
 
 In one second, your hand sends off a certain number of humps — call it the frequency. Each hump is a certain length — call it the wavelength. So how far has the front of the wave travelled in that one second? Number of humps, times the length of each hump. That distance in one second IS the speed. And that is the whole wave equation: v equals f lambda — wave speed is frequency times wavelength. It is just counting humps and multiplying by their length.
 

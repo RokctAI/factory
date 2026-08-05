@@ -80,7 +80,7 @@ Now run June down the control line, asking the only question that matters at eve
 
 The street already owed us R15 400 when June opened — last month's unpaid pages, brought down on the debit side, because money owed TO us is an asset. Then the month's credit sales: R48 200 of goods went out on trust — the street owes us more. More means debit: R48 200 in.
 
-Then the reducers, one by one. Customers paid in R31 500 — the street owes us less: credit. Goods worth R2 300 came back through returns and allowances — less again: credit. And one sad goodbye: R900 written off as a bad debt, because that customer is gone — the street owes us less, even though not a cent arrived: credit.
+Then the reducers, one by one. Customers paid in R31 500 — the street owes us less: credit. Goods worth R2 300 came back through returns and allowances — less again: credit. And one sad exit: R900 written off as a bad debt, because that customer is gone — the street owes us less, even though not a cent arrived: credit.
 
 Close the month: the debit side carried R63 600; the reducers total R34 700. The line settles at R28 900, debit side — the street, all together, owes the shop R28 900 as July begins. One line, one number, the owner's question answered before it is asked.
 
