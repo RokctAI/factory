@@ -13,48 +13,35 @@ alongside the extracted `paperN.json` (the old `*.pdf` ignore rule is retired).
 
 ## NEXT BATCH — needs manual fetch
 
-### 1. Geography P2 November 2024 — re-download needed
+### 1. Mathematical Literacy P1 November 2024 ADDENDUM PDF
 
-The 2026-08-06 upload's Geography P2 files were duplicates of Accounting P2
-(question paper and memo both) — supplied file was a duplicate of Accounting
-P2 — re-download needed. The mis-supplied PDFs have been removed from
-`geography/grade12/2024/`; the real Geography P2 (Rural & Urban Settlements /
-Economic Geography) is still absent from the repo.
-
-| Done | Paper | Question paper URL | Memo URL |
-|:---:|---|---|---|
-| [ ] | Geography P2 (Nov 2024) | <https://www.education.gov.za/LinkClick.aspx?fileticket=LrQ39-VlNh4%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=2qulvYkBv6k%3d> |
-
-Note: verify page 1 of both downloads reads "GEOGRAPHY P2" before supplying —
-the previous upload delivered Accounting P2 content under these names.
-
-### 2. Mathematical Literacy P1 + P2 November 2024 ADDENDUM PDFs
-
-The addenda (Annexures A–C per paper) are separate DBE files, not part of the
-question-paper PDFs already supplied. Several transcribed answers depend on
-their tables/maps (P1: income-tax table, retailer price graphs, budget pie
-charts; P2: campsite aerial view, trail-run map/elevation profile, Australia
-trip map). Annexure-dependent values in
-`mathematical_literacy/grade12/2024/paper[12].json` were reconstructed from
-memo working and flagged `[ANNEXURE ... - not in repo]`; supplying the addenda
-allows verbatim verification.
-
-Web search (2026-08-06) exposes the official file names — "Mathematical
-Literacy P1 Addendum Nov 2024 (Eng)" and "Mathematical Literacy P2 Addendum
-Nov 2024 (Eng)" — but no direct education.gov.za fileticket URLs, so the
-page-level link is recorded:
+The addendum (Annexures A–C) is a separate DBE file, not part of the
+question-paper PDF already supplied. Several transcribed P1 answers depend on
+its tables/graphs (income-tax table, retailer price graphs, budget pie
+charts). Annexure-dependent values in
+`mathematical_literacy/grade12/2024/paper1.json` were reconstructed from
+memo working and flagged `[ANNEXURE ... - not in repo]`; supplying the
+addendum allows verbatim verification.
 
 | Done | File | Where to fetch |
 |:---:|---|---|
 | [ ] | Mathematical Literacy P1 Addendum (Eng) | DBE session page: <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx> |
-| [ ] | Mathematical Literacy P2 Addendum (Eng) | DBE session page: <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx> |
+| [x] | Mathematical Literacy P2 Addendum (Eng) — supplied by owner upload 2026-08-06 batch 2 (see Done) | — |
 
-Known mirrors (for cross-checking, prefer the DBE originals):
+Known mirror (for cross-checking, prefer the DBE original):
 <https://www.theanswer.co.za/wp-content/uploads/2024/11/NSC-2024-Gr-12-Maths-Lit-P1-Addendum.pdf>,
-<https://www.theanswer.co.za/wp-content/uploads/2024/11/NSC-2024-Gr-12-Maths-Lit-P2-Addendum.pdf>,
 and WCED ePortal (search "Mathematical Literacy addendum Nov 2024").
 
-### 3. November 2025 session
+Heads-up for the download (the mirror naming is misleading, not your fault):
+the batch-2 file named `NSC-2024-Gr-12-Maths-Lit-P2-Addendum.pdf` turned out
+to be the FULL P2 question paper (13 pp) with the 4-page addendum appended —
+17 pages total. That was perfectly usable (we split off pages 14–17), so if
+the P1 "addendum" download is also ~18 pages instead of ~5, don't worry:
+send it anyway and we'll extract the addendum pages. The true DBE addendum
+is a short standalone file whose cover reads "MATHEMATICAL LITERACY P1 /
+ADDENDUM / NOVEMBER 2024".
+
+### 2. November 2025 session
 
 The owner upload of 2026-08-06 contained November 2024 papers only — no
 November 2025 (or May/June 2025) papers. The DBE has published the November
@@ -71,9 +58,10 @@ mirror rows here.
 ## Done
 
 All November 2024 papers below were supplied by owner upload 2026-08-06 and
-transcribed to `paperN.json` on 2026-08-06 (except Geography P2 — see NEXT
-BATCH above). All are English-language, November 2024 NSC, Grade 12, from the
-session page <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx>.
+transcribed to `paperN.json` on 2026-08-06, except Geography P2 (supplied by
+owner upload 2026-08-06 batch 2; transcription pending). All are
+English-language, November 2024 NSC, Grade 12, from the session page
+<https://www.education.gov.za/2024NSCNovemberpastpapers.aspx>.
 
 ### Mathematics
 
@@ -88,6 +76,7 @@ session page <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx>.
 |:---:|---|---|---|
 | [x] | Mathematical Literacy P1 | <https://www.education.gov.za/LinkClick.aspx?fileticket=r3H6xWQUYXg%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=AY2Qj8huxtE%3d> |
 | [x] | Mathematical Literacy P2 | <https://www.education.gov.za/LinkClick.aspx?fileticket=1EZXhzf3-sI%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=xrUiB59LW4E%3d> |
+| [x] | Mathematical Literacy P2 Addendum — supplied by owner upload 2026-08-06 batch 2. The supplied file (`NSC-2024-Gr-12-Maths-Lit-P2-Addendum.pdf`, theanswer.co.za mirror) was the full QP (pp 1–13) + addendum (pp 14–17) combined; the 4-page addendum (Annexures A–C: campsite, trail-run map/elevation, Australia trip map) was extracted verbatim to `mathematical_literacy/grade12/2024/paper2_addendum.pdf`. | (mirror, see NEXT BATCH) | — |
 
 ### Physical Sciences
 
@@ -115,9 +104,10 @@ session page <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx>.
 | Done | Paper | Question paper URL | Memo URL |
 |:---:|---|---|---|
 | [x] | Geography P1 | <https://www.education.gov.za/LinkClick.aspx?fileticket=Hc8_CaQJpd4%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ZKd8Wo9VYr0%3d> |
+| [x] | Geography P2 — supplied by owner upload 2026-08-06 batch 2; verified across multiple pages (QP 18 pp: Economic Geography + Map Interpretation; marking guidelines 15 pp). Tracked at `geography/grade12/2024/paper2.pdf` + `paper2_memo.pdf`; transcription to `paper2.json` pending. | <https://www.education.gov.za/LinkClick.aspx?fileticket=LrQ39-VlNh4%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=2qulvYkBv6k%3d> |
 
-(Geography P2 rows moved to NEXT BATCH — the supplied files were Accounting
-P2 duplicates.)
+(The first 2026-08-06 upload's Geography P2 files were Accounting P2
+duplicates; the batch-2 re-download above fixed this.)
 
 ## How to extend this queue
 
