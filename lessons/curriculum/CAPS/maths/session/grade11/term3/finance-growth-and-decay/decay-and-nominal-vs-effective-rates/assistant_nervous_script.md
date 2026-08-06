@@ -1,0 +1,9 @@
+Hey, it's Bianca — if the words nominal and effective made your eyes glaze over, or if the four formulae are swimming together, let me shrink this topic to its true size: it is two formulae you already know from grade ten, with one sign flipped, plus one honesty calculation.
+
+Growth formulae: one plus. Decay formulae: one minus. Simple keeps i n together inside the bracket — same slice of the ORIGINAL every year, a ruler running straight down to zero. Compound raises the bracket to a power — a photocopy of a photocopy, each year taking its percentage of the CURRENT value, fading forever but never reaching blank. Underline the keyword in the question — straight-line or reducing balance — and the formula chooses itself.
+
+Compounding periods are just a clock conversion, and the rule never varies: divide the yearly rate by the number of paydays per year, and count time in paydays. Monthly means rate over twelve and months; half-yearly means rate over two and half-years. Write that conversion line before the formula, every time, and the most common error in the whole paper cannot touch you.
+
+Nominal versus effective sounds grand but it is one move: send one rand through the machine for a full year and read what it became. At 9 percent monthly, one rand becomes 1,0938 — so the honest yearly rate is 9,38. That is all effective means: the till slip instead of the window sticker. And when banks compete, convert every offer to its till slip first; the sentence comparing the two effective rates IS the answer.
+
+Timelines with rate changes are segments in a chain — each with its own rate and clock, each feeding its answer to the next, rounding only at the very end. Draw the line, mark the events, multiply through. Flip the sign, convert the clock, trust the till slip. That is the entire topic. You've got this!

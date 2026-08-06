@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Prove the sine rule, starting from the area rule, and state exactly what information a question must supply before the sine rule can be used.",
+      "expected_answer": "The area of triangle ABC can be written three ways, depending on which angle is treated as included: ½bc·sinA, ½ac·sinB and ½ab·sinC. All three measure the same triangle, so they are equal: ½bc·sinA = ½ac·sinB = ½ab·sinC. Dividing every part of this line by ½abc cancels two letters from each fraction, leaving sinA/a = sinB/b = sinC/c, which is the sine rule; it may equally be written a/sinA = b/sinB = c/sinC. To use it, a question must supply at least one complete opposite pair — a side together with the angle facing it — plus one further side or angle. Two known angles effectively supply the third for free, since the angles of a triangle sum to 180°, so two angles and any side is always enough."
+    },
+    {
+      "id": "cc2",
+      "question": "In triangle ABC, a = 10 cm, b = 7 cm and A = 42°. Find angle B, and explain why 180° minus your calculator answer must be tested and what would happen if it survived the test.",
+      "expected_answer": "By the sine rule with the sines on top, sinB/b = sinA/a, so sinB = 7·sin42°/10 = 7 × 0,6691 ÷ 10 = 0,4684. Inverse sine gives B = 27,93°, so B ≈ 27,9°. But sine is positive in both the first and second quadrants, so 180° − 27,93° = 152,07° has exactly the same sine and is a second candidate for B. Testing it against the angle sum: 152,07° + 42° = 194,07° already exceeds 180°, so no triangle can contain both angles and the obtuse candidate is rejected, with that reason stated. If the obtuse candidate had survived — that is, if it plus the given angle still summed to less than 180° — then two different triangles would satisfy the given information, and a complete answer would present both solutions."
+    },
+    {
+      "id": "cc3",
+      "question": "In triangle ABC, A = 52°, B = 63° and c = 15 cm. Calculate the area of the triangle, explaining the purpose of each step in the chain.",
+      "expected_answer": "The area rule needs two sides and the included angle, but only one side is known, so the route must first build a second side. Step one uses the angle sum: C = 180° − 52° − 63° = 65°, which completes the opposite pair c with C and switches on the sine rule. Step two finds a side: a = c·sinA/sinC = 15 × sin52° ÷ sin65° = 15 × 0,7880 ÷ 0,9063 ≈ 13,04 cm. Step three applies the area rule: sides a and c meet at vertex B, so B = 63° is the included angle, and Area = ½ × 13,04 × 15 × sin63° = 97,8 × 0,8910 ≈ 87,15 cm². Each step exists to pay the next formula's entry price: the free angle completes the pair, the sine rule builds the missing side, and the area rule closes the problem, with the answer in square units."
+    }
+  ]
+}

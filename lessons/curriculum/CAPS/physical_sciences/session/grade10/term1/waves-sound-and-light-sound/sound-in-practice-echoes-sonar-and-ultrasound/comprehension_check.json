@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 500 Hz sound passes from air (340 m·s⁻¹) into water (1 500 m·s⁻¹). Calculate the wavelength in each medium and explain which quantity stays constant and why.",
+      "expected_answer": "In air: λ = v ÷ f = 340 ÷ 500 = 0,68 m. In water: λ = 1 500 ÷ 500 = 3 m. The frequency stays constant at 500 Hz, because every compression arriving at the boundary enters the water — compressions cannot pile up or be created at the surface, so the rate in equals the rate on. Since v = fλ and f is fixed while the speed rises from 340 to 1 500 m·s⁻¹, the wavelength must stretch in the same proportion, from 0,68 m to 3 m. When sound changes medium: frequency unchanged, speed and wavelength change together."
+    },
+    {
+      "id": "cc2",
+      "question": "A ship's 30 kHz sonar pulse in seawater (1 500 m·s⁻¹) returns after 1,6 s. Calculate the depth of the seabed and the wavelength of the pulse, and explain why only one of these calculations involves a factor of two.",
+      "expected_answer": "Depth: the pulse travels down and back, so d = (v × Δt) ÷ 2 = (1 500 × 1,6) ÷ 2 = 2 400 ÷ 2 = 1 200 m. Wavelength: convert 30 kHz to 30 000 Hz, then λ = v ÷ f = 1 500 ÷ 30 000 = 0,05 m. The factor of two belongs only to the depth calculation, because it concerns the journey: the measured time covers a round trip, twice the depth. The wavelength is a property of the wave's shape, given directly by the wave equation, and is the same whether the pulse is outbound or returning — no halving applies."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why bats use ultrasound rather than audible squeaks for hunting, and give two reasons why hospitals use ultrasound rather than X-rays for prenatal imaging.",
+      "expected_answer": "A wave only reflects usefully off objects about the size of its wavelength or larger; smaller objects are simply flowed around. A bat calling at, say, 68 kHz produces wavelengths of 340 ÷ 68 000 = 0,005 m — about moth-sized — so its pulses reflect strongly off insects and return usable echoes. An audible squeak would have a wavelength of tens of centimetres, which would bend around a moth and return almost nothing, however loud the squeak. Hospitals use ultrasound because, first, it is a mechanical pressure wave and not ionising radiation — unlike X-rays it cannot strip electrons from atoms or damage cells, so a developing baby can be scanned safely and repeatedly; and second, its very short wavelengths in tissue reflect at boundaries between tissues, letting the scanner time each echo, convert it to a depth using the halved round trip, and assemble a detailed image of soft structures that X-rays show poorly."
+    }
+  ]
+}

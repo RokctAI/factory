@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Forty learners' travel times are grouped as: 0–10 min (6), 10–20 (10), 20–30 (14), 30–40 (7), 40–50 (3). Calculate the estimated mean and identify the modal class and the median class, explaining why the mean can only be estimated.",
+      "expected_answer": "The frequencies total 6 + 10 + 14 + 7 + 3 = 40, matching the number of learners. Grouping hides the individual values, so each learner is assumed to sit at their class midpoint — the fairest neutral guess — which is why the result is an estimate, not an exact mean. The midpoints are 5, 15, 25, 35 and 45, and the products with frequency are 30, 150, 350, 245 and 135, summing to 910. The estimated mean is 910 ÷ 40 = 22,75 minutes. The modal class is the one with the highest frequency: 20 to 30 minutes, with 14 learners. For the median class, the middle of 40 values lies between the 20th and 21st values; the cumulative counts are 6, then 16, then 30, so both the 20th and 21st values fall in the 20-to-30 class, making it the median class."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe exactly how to construct the ogive for this data — the points, the starting point, and the shape — and explain why cumulative frequencies must be plotted at upper class boundaries.",
+      "expected_answer": "First build the cumulative frequency column: 6, 16, 30, 37, 40, with the final value equal to n = 40 as a check. Each cumulative frequency is plotted at the upper boundary of its class: (10; 6), (20; 16), (30; 30), (40; 37), (50; 40). The curve starts at (0; 0), the lower boundary of the first class with zero accumulated, because nothing has been counted before the data begins. The points are joined with one smooth curve, giving the characteristic lazy-S shape: climbing slowly through the sparse early classes, steeply through the crowded 20-to-30 class, and flattening as the data runs out. Cumulative values belong at upper boundaries because a running total is only complete at the end of its class — 16 is the number of learners below 20 minutes, not below 15 or 10 — and the curve can never slope downward, since a running total cannot shrink."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the ogive, estimate the median, the quartiles and the interquartile range, and explain how to estimate how many learners travel more than 35 minutes.",
+      "expected_answer": "Position questions start on the vertical axis. The median sits at position n/2 = 20: reading across from 20 to the curve and down gives approximately 23 minutes. The lower quartile sits at n/4 = 10, reading approximately 14 minutes; the upper quartile sits at 3n/4 = 30, and since the cumulative count reaches 30 exactly at the boundary, Q3 is approximately 30 minutes. The interquartile range is therefore about 30 − 14 = 16 minutes — the span of the middle half of the learners. For the more-than question the direction reverses because a value is given: go up from 35 minutes on the horizontal axis to the curve and read across, giving roughly 33 or 34 learners below 35 minutes; subtracting from 40 shows about 6 learners travel more than 35 minutes. All readings are estimates, since the raw values are sealed inside classes, so answers are reported with 'approximately' and the construction lines are left visible on the graph."
+    }
+  ]
+}

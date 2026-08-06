@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A television is advertised at R6 899 including VAT at 15%. Calculate the price excluding VAT and the VAT amount, and explain why subtracting 15% of R6 899 gives the wrong answer.",
+      "expected_answer": "The advertised price includes VAT, so it represents 115% of the price before tax. Dividing by 1,15 recovers the exclusive price: 6 899 ÷ 1,15 = R5 999,13. The VAT amount is the difference: 6 899 − 5 999,13 = R899,87, which can be checked as 15% of 5 999,13. Subtracting 15% of R6 899 is wrong because that takes fifteen percent of the larger, already-taxed figure: 6 899 × 0,15 = R1 034,85, giving R5 864,15 — too low. Percentage increases and decreases are not symmetrical: adding 15% and then removing 15% does not return to the original, because the two percentages are taken of different numbers."
+    },
+    {
+      "id": "cc2",
+      "question": "A worker earns a gross salary of R8 400 a month, with UIF and other deductions of R516. Explain how the UIF contribution works on both sides of the employment relationship, and calculate the worker's net pay.",
+      "expected_answer": "UIF is a contribution of 1% of gross earnings, taken twice: the worker's 1% — 8 400 × 0,01 = R84 — is deducted from the payslip, and the employer pays a matching R84 to the fund out of the business's own money, on top of the salary. The fund therefore receives R168 a month, although only R84 ever appears on the payslip. The contribution is calculated on gross earnings before other deductions, and the fund exists to pay a temporary income during retrenchment, maternity leave or illness. Net pay is gross minus all deductions: 8 400 − 84 − 516 = R7 800."
+    },
+    {
+      "id": "cc3",
+      "question": "Two cellphone options are offered: Option A at R99 per month plus R0,75 per minute, and Option B with no monthly charge at R1,45 per minute. Compare the options for a user who talks 100 minutes a month and for one who talks 200 minutes, find the usage at which the options cost the same, and give advice in words.",
+      "expected_answer": "Write each option as a formula: A costs 99 + 0,75 × minutes and B costs 1,45 × minutes. At 100 minutes, A costs 99 + 75 = R174 and B costs R145, so B is cheaper by R29. At 200 minutes, A costs 99 + 150 = R249 and B costs R290, so A is cheaper by R41. The options cost the same where 99 + 0,75m = 1,45m, so 99 = 0,70m and m = 141,43 minutes — about 141 minutes. The advice: a light caller below about 141 minutes a month should choose Option B, because paying no monthly charge outweighs the expensive minutes; a heavy caller above 141 minutes should choose Option A, because the R99 charge buys cheap minutes; at the crossing point itself the two options tie. On a graph the crossing appears where the two cost lines intersect."
+    }
+  ]
+}

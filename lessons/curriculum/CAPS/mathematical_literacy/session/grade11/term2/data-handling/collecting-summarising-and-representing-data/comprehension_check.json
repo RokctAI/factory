@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A class wants to know the average weekly airtime-and-data spending of the 1 240 learners at their school, and proposes to survey 60 of their grade 11 friends at break. Identify the population, the sample, the bias in the plan, and describe a better sampling method.",
+      "expected_answer": "The population is all 1 240 learners at the school, because that is the group the question is about. The sample is the 60 learners actually surveyed. The plan is biased because friends of grade 11 learners over-represent seniors, who generally carry more pocket money than juniors, so the sample would overstate the school's true average spending — the tilt has a known direction, which is what makes it bias rather than mere chance. A better method gives every learner an equal chance of selection: draw 60 names at random from the full school register, or take every twentieth name on the alphabetical list. Such a random sample is representative — a miniature of the whole school across grades, sexes and pocket-money levels — and its results can fairly stand for the population."
+    },
+    {
+      "id": "cc2",
+      "question": "Nine learners spend the following rand amounts weekly, already sorted: 20, 25, 25, 30, 35, 40, 45, 50, 90. Calculate the mean, median, mode and range, and explain which average best represents a typical learner and why.",
+      "expected_answer": "The mean is the total divided by the count: the values sum to 360, so 360 ÷ 9 = R40. The median is the middle of the sorted list — the fifth value, R35, with four values below and four above. The mode is the most frequent value, R25, which appears twice. The range is the largest minus the smallest: 90 − 20 = R70. The median best represents a typical learner, because the dataset contains an outlier: the R90 spender. The mean adds every rand, so the outlier drags it up to R40 — above what seven of the nine learners actually spend — while the median depends only on position and is unaffected by how extreme the largest value is. Removing the R90 drops the mean to 270 ÷ 8 = R33,75 but barely moves the median, which shows the median's stability."
+    },
+    {
+      "id": "cc3",
+      "question": "A bar graph compares two tuck-shop options: voucher sales of R36 000 for option one and R40 000 for option two, drawn with a vertical axis starting at R35 000. Explain how the graph misleads, and describe how the same data should be presented honestly.",
+      "expected_answer": "The numbers are true but the impression is false. Because the vertical axis starts at R35 000 rather than zero, option one's bar rises only 1 000 above the axis start while option two's rises 5 000, so option two appears about five times bigger when the real difference is R4 000 — roughly eleven percent more, since 4 000 ÷ 36 000 ≈ 0,11. The graph exaggerates by truncating the axis. An honest presentation starts the vertical axis at zero with equal, evenly spaced intervals, so the bars' heights are proportional to the actual values and the visual ratio matches the numerical ratio; alternatively, the values can simply be quoted in a sentence — R36 000 against R40 000, a difference of R4 000. The general defence when reading any graph is to read the scale and quote the numbers off the axes against the picture before trusting the impression the picture creates."
+    }
+  ]
+}

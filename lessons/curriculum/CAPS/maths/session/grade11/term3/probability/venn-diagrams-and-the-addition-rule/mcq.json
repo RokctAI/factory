@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Two Models — Relative Frequency and Theoretical Probability",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The theoretical probability model may only be used when:",
+          "options": [
+            "The experiment has been repeated many times",
+            "All outcomes of the experiment are equally likely",
+            "The probability is bigger than a half",
+            "The event involves dice specifically"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A taxi association logs 500 trips; 60 arrive late. The relative frequency of lateness is:",
+          "options": [
+            "0,60",
+            "0,88",
+            "0,12",
+            "0,05"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "As the number of trials grows, the relative frequency of an event:",
+          "options": [
+            "Settles toward the true probability",
+            "Always increases toward 1",
+            "Becomes more jumpy",
+            "Equals the theoretical probability exactly after 100 trials"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "For predicting whether it rains tomorrow, the appropriate model is:",
+          "options": [
+            "Theoretical, because rain either happens or it does not — fifty-fifty",
+            "Neither — rain has no probability",
+            "Theoretical, because weather is symmetric over the year",
+            "Relative frequency, because the outcomes are not equally likely and data must be used"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Venn Diagrams and the Addition Rule",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "When filling in a Venn diagram, you should always start with:",
+          "options": [
+            "The largest circle",
+            "The region outside both circles",
+            "The intersection — the overlap",
+            "The circle mentioned first in the question"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "With 70 music streamers, 50 gamers and 30 doing both among 120 learners, the number doing NEITHER is:",
+          "options": [
+            "30",
+            "0",
+            "50",
+            "20"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The addition rule states P(A or B) equals:",
+          "options": [
+            "P(A) + P(B)",
+            "P(A) + P(B) − P(A and B)",
+            "P(A) × P(B)",
+            "P(A) − P(B) + P(A and B)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The subtraction in the addition rule exists because:",
+          "options": [
+            "Probabilities must always be reduced to lowest terms",
+            "The sample space must be excluded",
+            "The or-event is always smaller than either event",
+            "The overlap is counted once in each circle, so adding the circles counts it twice"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Mutually Exclusive and Complementary Events",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Events A and B are mutually exclusive exactly when:",
+          "options": [
+            "P(A and B) = 0 — they cannot happen together",
+            "P(A) + P(B) = 1",
+            "P(A) = P(B)",
+            "A and B are independent"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For complementary events, which TWO conditions must both hold?",
+          "options": [
+            "Equal probabilities, and both bigger than zero",
+            "No overlap, and together they fill the whole sample space",
+            "No overlap, and each has probability one half",
+            "They fill the sample space, and they are independent"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "On one die roll, 'multiple of 4' and 'odd' are mutually exclusive but NOT complementary because:",
+          "options": [
+            "They overlap at the outcome 4",
+            "Their probabilities are equal",
+            "The outcomes 2 and 6 belong to neither event, so the two do not fill the sample space",
+            "A die cannot show a multiple of 4"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The complement shortcut says P(at least one late taxi this week) equals:",
+          "options": [
+            "P(exactly one late taxi)",
+            "P(no late taxis) − 1",
+            "The sum of the probabilities of every possible number of late taxis",
+            "1 − P(no late taxis at all)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Independent Events and the Product Rule",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Events A and B are independent exactly when:",
+          "options": [
+            "P(A and B) = 0",
+            "P(A and B) = P(A) × P(B)",
+            "P(A or B) = P(A) + P(B)",
+            "A and B share at least one outcome"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Drawing two cards WITHOUT replacement gives dependent events because:",
+          "options": [
+            "Cards are not symmetric objects",
+            "The pack was shuffled before the first draw",
+            "The first draw changes the composition of the pack for the second",
+            "Two draws always give dependent events, even with replacement"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "In the school data, P(music) × P(gaming) ≈ 0,243 while P(both) = 0,25. The conclusion is:",
+          "options": [
+            "The events are not independent, because the product test demands exact equality",
+            "The events are independent, because the numbers are close",
+            "The events are mutually exclusive",
+            "The test is inconclusive without more learners"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Two mutually exclusive events with nonzero probabilities can never be independent because:",
+          "options": [
+            "Their circles overlap too much",
+            "Exclusive events always have equal probabilities",
+            "Independence requires the events to fill the sample space",
+            "If one happens, the other's probability crashes to zero — maximal influence, not none"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Guessing from Symmetry or Counting the Tally",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The friend claiming fifty-fifty for buttered bread misuses the theoretical model because:",
+          "options": [
+            "Bread has more than two sides",
+            "The two outcomes are not equally likely — the slice is lopsided",
+            "Probability cannot be applied to food",
+            "The sample space is infinite"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "From 100 drops with 63 landing butter-down, the relative frequency estimate is:",
+          "options": [
+            "0,50",
+            "0,37",
+            "0,63",
+            "63"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The tally is described as 'jumpy at first, honest in the long run' because:",
+          "options": [
+            "Relative frequency wobbles over few trials but settles near the truth over many",
+            "Early trials are usually recorded wrongly",
+            "Probability changes as the experiment continues",
+            "Long experiments always give exactly the theoretical value"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Which situation belongs to the THEORETICAL model's home ground?",
+          "options": [
+            "Whether a soccer team wins its next match",
+            "Whether a taxi arrives late tomorrow",
+            "Whether it rains on Saturday",
+            "Drawing a card from a well-shuffled standard pack"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two WhatsApp Groups and the Double-Counted Friends",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Adding the music group's 70 to the gaming group's 50 fails as a headcount because:",
+          "options": [
+            "Some learners belong to no group",
+            "The 30 people in both groups are counted twice",
+            "Groups cannot be added in probability",
+            "The school roll was counted in a different year"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The honest headcount of learners in at least one group is:",
+          "options": [
+            "120",
+            "50",
+            "90",
+            "30"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The minus term in the addition rule exists purely to:",
+          "options": [
+            "Cancel the double-counting of the overlap",
+            "Make the probability smaller than 1",
+            "Remove the people outside both circles",
+            "Convert counts into percentages"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The addition rule may drop its minus term only when:",
+          "options": [
+            "The two events are independent",
+            "The sample space is larger than 100",
+            "One event lies completely inside the other",
+            "The events share no outcomes at all — mutually exclusive"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Coin Has No Memory",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "After five heads in a row, the probability of heads on the sixth flip is:",
+          "options": [
+            "Less than a half — tails is now due",
+            "More than a half — the coin is on a streak",
+            "Exactly a half — the coin has no memory",
+            "Impossible to say"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The feeling that tails is 'owed' after a run of heads is called:",
+          "options": [
+            "The addition rule",
+            "The gambler's fallacy",
+            "Complementary reasoning",
+            "The law of large numbers"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "For independent events, P(heads then heads) = ½ × ½ because:",
+          "options": [
+            "Multiplication always gives smaller answers",
+            "The events are mutually exclusive",
+            "The two flips share the same sample space",
+            "Half the futures have heads first, and of those, half have heads again"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The product-rule 'lie detector' declares two data events dependent when:",
+          "options": [
+            "The product of their probabilities differs from their actual and-probability",
+            "The product of their probabilities is less than a half",
+            "Their circles overlap on the Venn diagram",
+            "Their probabilities are unequal"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Coulomb's law in words, then calculate the force between charges of +2 μC and −3 μC held 10 cm apart, stating clearly whether it is attractive or repulsive and why.",
+      "expected_answer": "Coulomb's law states that the magnitude of the electrostatic force between two point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them: F = kQ₁Q₂/r², with k = 9 × 10⁹ N·m²·C⁻². Convert first: 2 μC = 2 × 10⁻⁶ C, 3 μC = 3 × 10⁻⁶ C, 10 cm = 0,1 m. Substitute magnitudes only: F = 9 × 10⁹ × 2 × 10⁻⁶ × 3 × 10⁻⁶ ÷ (0,1)² = 0,054 ÷ 0,01 = 5,4 N. Because the charges have unlike signs, the force is attractive — each charge is pulled toward the other. The signs are never substituted into the formula; they are used only to decide the direction of the force."
+    },
+    {
+      "id": "cc2",
+      "question": "Charge A (+2 μC), charge B (+1 μC) and charge C (−3 μC) lie on a straight line, with B 0,3 m to the right of A and C 0,2 m to the right of B. Calculate the net force on B, showing the direction reasoning for each pair.",
+      "expected_answer": "Treat each neighbour separately. Force of A on B: both charges are positive, so B is repelled, pushed to the right away from A. Magnitude: F = 9 × 10⁹ × 2 × 10⁻⁶ × 1 × 10⁻⁶ ÷ (0,3)² = 0,018 ÷ 0,09 = 0,2 N. Force of C on B: the charges are unlike, so B is attracted, pulled to the right toward C. Magnitude: F = 9 × 10⁹ × 1 × 10⁻⁶ × 3 × 10⁻⁶ ÷ (0,2)² = 0,027 ÷ 0,04 = 0,675 N. Both forces point right, so taking right as positive the net force is 0,2 + 0,675 = 0,875 N to the right. Each pair uses its own separation — 0,3 m for A and B, 0,2 m for C and B — and the directions are decided by attraction and repulsion before any addition."
+    },
+    {
+      "id": "cc3",
+      "question": "Two identical conducting spheres carrying +6 μC and −2 μC are 0,1 m apart. Calculate the force between them before they touch, the charge on each after they touch and are separated to the same distance, and the new force. Comment on what changed.",
+      "expected_answer": "Before touching: F = 9 × 10⁹ × 6 × 10⁻⁶ × 2 × 10⁻⁶ ÷ (0,1)² = 0,108 ÷ 0,01 = 10,8 N, attractive because the charges are unlike. When identical spheres touch, the total charge is shared equally, and charges add algebraically with their signs: +6 + (−2) = +4 μC in total, so each sphere carries +2 μC afterwards. New force: F = 9 × 10⁹ × 2 × 10⁻⁶ × 2 × 10⁻⁶ ÷ (0,1)² = 0,036 ÷ 0,01 = 3,6 N, now repulsive because both spheres are positive. Touching changed both the magnitude of the force, from 10,8 N to 3,6 N, and its nature, from attraction to repulsion. The two final charges add back to the original total of +4 μC, which is the check that charge was conserved."
+    }
+  ]
+}

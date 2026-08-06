@@ -1,0 +1,346 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Wave Equation Working for Sound",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In v = fλ applied to sound, the speed v is fixed by the:",
+          "options": [
+            "Source of the sound",
+            "Medium the sound travels through",
+            "Loudness of the sound",
+            "Wavelength alone"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A loudspeaker produces 500 Hz sound in air at 340 m·s⁻¹. The wavelength is:",
+          "options": [
+            "1,47 m",
+            "170 000 m",
+            "0,68 m — λ = v ÷ f = 340 ÷ 500",
+            "6,8 m"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "When a 500 Hz sound passes from air into water, the quantity that stays the same is the:",
+          "options": [
+            "Wavelength",
+            "Speed",
+            "Amplitude",
+            "Frequency — the compressions arrive and enter at the same rate, so speed and wavelength change together"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "That 500 Hz sound in water at 1 500 m·s⁻¹ has a wavelength of:",
+          "options": [
+            "3 m — λ = 1 500 ÷ 500",
+            "0,33 m",
+            "0,68 m",
+            "750 000 m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Sonar — Timing Plus the Wave Equation",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "A sonar echo returns after 1,6 s through seawater at 1 500 m·s⁻¹. The depth is:",
+          "options": [
+            "2 400 m",
+            "1 200 m — d = (v × Δt) ÷ 2 = (1 500 × 1,6) ÷ 2",
+            "937,5 m",
+            "4 800 m"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The 30 kHz sonar pulse in seawater at 1 500 m·s⁻¹ has a wavelength of:",
+          "options": [
+            "50 m",
+            "0,5 m",
+            "0,05 m — first convert 30 kHz to 30 000 Hz, then λ = 1 500 ÷ 30 000",
+            "0,025 m — the wavelength must also be halved"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The factor of two in sonar problems applies to:",
+          "options": [
+            "The depth calculation only — the pulse makes a round trip; the wavelength calculation never halves anything",
+            "Both the depth and the wavelength calculations",
+            "The wavelength calculation only",
+            "Neither calculation"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Sonar uses high frequencies like 30 kHz rather than 300 Hz because:",
+          "options": [
+            "High frequencies travel faster in water",
+            "High frequencies are louder",
+            "Low frequencies cannot travel in water",
+            "High frequency means short wavelength, and short wavelengths reflect crisply off small objects instead of washing past them"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Bats and Dolphins — Nature's Sonar",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Ultrasound is sound with a frequency:",
+          "options": [
+            "Below 20 Hz",
+            "Above about 20 000 Hz — beyond human hearing; the syllabus band runs 20 kHz to 100 kHz",
+            "Between 20 Hz and 20 000 Hz",
+            "Of exactly 340 Hz"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "A bat calls at 68 kHz in air at 340 m·s⁻¹. The wavelength of its call is:",
+          "options": [
+            "5 m",
+            "0,5 m",
+            "0,005 m — 340 ÷ 68 000, about the size of a moth",
+            "200 m"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "A moth is 1,7 m from a bat. The bat hears its echo after:",
+          "options": [
+            "0,01 s — the round trip is 3,4 m, and 3,4 ÷ 340 = 0,01",
+            "0,005 s",
+            "0,02 s",
+            "1,7 s"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A dolphin clicking at 75 kHz in seawater at 1 500 m·s⁻¹ produces wavelengths of:",
+          "options": [
+            "0,2 m",
+            "2 m",
+            "0,002 m",
+            "0,02 m — 1 500 ÷ 75 000, fine enough to pick out a single fish"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Ear's Limits, and Ultrasound in Medicine",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The human ear is most sensitive:",
+          "options": [
+            "At exactly 20 Hz",
+            "In the middle of its range, around speech frequencies — sounds near the extremes need larger amplitude to seem equally loud",
+            "At the very top of its range, near 20 kHz",
+            "Equally across all frequencies"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "An ultrasound scanner builds its image by:",
+          "options": [
+            "Passing sound straight through the body onto a film",
+            "Measuring the body's temperature",
+            "Timing the echoes reflected at boundaries between different tissues and converting each time to a depth",
+            "Detecting sounds the organs make themselves"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "An echo from a tissue boundary 0,06 m deep, with sound at 1 500 m·s⁻¹ in the body, returns after:",
+          "options": [
+            "0,000 08 s — t = (2 × 0,06) ÷ 1 500",
+            "0,000 04 s",
+            "0,08 s",
+            "0,000 8 s"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Ultrasound is chosen over X-rays for prenatal scans because ultrasound:",
+          "options": [
+            "Gives sharper pictures in every situation",
+            "Is cheaper to generate",
+            "Travels faster than X-rays",
+            "Is a mechanical pressure wave, not ionising radiation, so it does not damage cells"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Counting the Storm",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Thunder arrives 3 s after the lightning flash. The storm is about:",
+          "options": [
+            "510 m away — halve the trip",
+            "1 020 m away — 340 × 3, with NO halving, because the sound made a one-way trip",
+            "3 000 m away",
+            "113 m away"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The question that decides whether to halve a sound calculation is:",
+          "options": [
+            "Was the sound loud?",
+            "Was the frequency high?",
+            "Did the sound return to where it started? Round trip — halve; one-way — do not",
+            "Was the medium water?"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Louder thunder crosses town:",
+          "options": [
+            "At the same 340 m·s⁻¹ — speed belongs to the air, not the source",
+            "Faster than soft thunder",
+            "Slower than soft thunder",
+            "Instantly"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Shopping With Five-Millimetre Waves",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "A wave reflects usefully off an object when the object is:",
+          "options": [
+            "Much smaller than the wavelength",
+            "Moving toward the wave",
+            "Perfectly smooth",
+            "About the size of the wavelength or bigger — long waves flow around small objects like swells around a jetty pole"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Bats squeak at very high frequencies because:",
+          "options": [
+            "High pitch scares the moths into flight",
+            "Higher frequency means shorter wavelength, and only moth-sized waves bounce off moths",
+            "High frequencies are louder in air",
+            "Low frequencies would use too much energy"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A bat hears its squeak return after 0,01 s. With sound at 340 m·s⁻¹, the moth is:",
+          "options": [
+            "3,4 m ahead",
+            "0,34 m ahead",
+            "1,7 m ahead — the 3,4 m round trip, halved",
+            "6,8 m ahead"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Seeing With Echoes",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "An ultrasound scanner is like a torch because it:",
+          "options": [
+            "Bounces waves off things and builds a picture from what comes back — but its waves are sound, not light",
+            "Uses a bright bulb",
+            "Warms the body as it scans",
+            "Only works in the dark"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Echoes form inside the body wherever the pulse:",
+          "options": [
+            "Speeds up",
+            "Gets louder",
+            "Crosses a boundary between different tissues — part of the pulse reflects back at each one",
+            "Runs out of energy"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Besides imaging, focused ultrasound is used to:",
+          "options": [
+            "Sterilise operating theatres with radiation",
+            "Break kidney stones into fragments the body can pass — pressure waves doing surgery with no cut",
+            "Replace hearing aids",
+            "Generate electricity in hospitals"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Show that the sequence 3; 8; 15; 24; 35 is quadratic, and build its general term using the difference-table facts, verifying the result on a term not used in the construction.",
+      "expected_answer": "First differences: 5; 7; 9; 11 — not constant, so the pattern is not linear. Second differences: 2; 2; 2 — constant, which is the fingerprint of a quadratic pattern Tn = an² + bn + c. The three facts: the second difference equals 2a, so 2a = 2 and a = 1. The first first-difference equals 3a + b, so 3 + b = 5 and b = 2. The first term equals a + b + c, so 1 + 2 + c = 3 and c = 0. Hence Tn = n² + 2n. Verification on unused terms: T4 = 16 + 8 = 24 and T5 = 25 + 10 = 35, both matching the sequence. The order matters — a from the second difference, then b from the first gap (which contains a), then c from the first term (which contains both) — and the formula should always be tested on at least one term that played no part in building it."
+    },
+    {
+      "id": "cc2",
+      "question": "For Tn = n² + 2n, determine which term equals 120, and show whether 200 is a term of the pattern, explaining the role of the discriminant and the restrictions on n.",
+      "expected_answer": "Backward questions set the general term equal to the value. For 120: n² + 2n − 120 = 0 factorises to (n + 12)(n − 10) = 0, giving n = 10 or n = −12. Positions must be positive whole numbers, so n = −12 is rejected with that written reason; the tenth term is 120. For 200: n² + 2n − 200 = 0 has discriminant b² − 4ac = 4 + 800 = 804, which is not a perfect square, so the roots are irrational and no natural number n satisfies the equation — 200 is not a term of the pattern. The full chain of conditions for membership is: the equation must have real roots, the relevant root must be rational (perfect-square discriminant), it must be a whole number, and it must be positive. A pattern only lands where its steps land, so values between consecutive terms — like 200, or 20 between 15 and 24 — are simply never visited."
+    },
+    {
+      "id": "cc3",
+      "question": "A builder's tile decks use 3, 8, 15 and 24 tiles for figures 1 to 4. Give the general term by the structural route, find the tiles in figure 20 and the figure using 224 tiles, and explain why doing both the difference route and the structural route is good practice.",
+      "expected_answer": "Structurally, figure n is a rectangle of n rows by n + 2 columns — figure 1 is 1 × 3, figure 2 is 2 × 4, figure 3 is 3 × 5 — so Tn = n(n + 2) = n² + 2n, which agrees with the difference-table construction. Forward: figure 20 uses T20 = 400 + 40 = 440 tiles. Backward: n² + 2n − 224 = 0 factorises to (n + 16)(n − 14) = 0, so n = 14 (rejecting −16 since figure numbers are positive); figure 14 uses exactly 224 tiles. Doing both routes is good practice because they are independent: the difference table is the guaranteed fallback that works on any quadratic picture, while the structural reading is faster and shows insight, and two independent routes agreeing on one formula is the strongest verification available — disagreement signals a miscounted figure, the commonest error in context questions. Answers should be phrased in the story's language, with units: 440 tiles, figure 14, and the formula checked against figures 1 and 2 by substitution."
+    }
+  ]
+}

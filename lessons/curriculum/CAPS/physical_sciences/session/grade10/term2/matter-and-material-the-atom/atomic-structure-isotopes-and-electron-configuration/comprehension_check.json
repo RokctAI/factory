@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the sodium atom written as sodium twenty-three with atomic number 11, state the number of protons, neutrons and electrons, and then do the same for the sodium ion Na plus. Explain why forming an ion never changes the element.",
+      "expected_answer": "The atomic number Z is 11, so the atom has 11 protons. Neutrons equal A minus Z: 23 minus 11 = 12 neutrons. The neutral atom has 11 electrons to balance the 11 protons. The ion Na plus has lost one electron: still 11 protons and 12 neutrons, but only 10 electrons, giving a net charge of plus one. Forming an ion never changes the element because ions are made by gaining or losing electrons only; the proton count — the element's identity — is fixed in the nucleus, and ordinary chemistry cannot change the nucleus."
+    },
+    {
+      "id": "cc2",
+      "question": "Define isotopes, and calculate the relative atomic mass of chlorine given 75% chlorine-35 and 25% chlorine-37. Explain why the answer is not 36.",
+      "expected_answer": "Isotopes are atoms of the same element — the same atomic number and number of protons — with different numbers of neutrons and therefore different mass numbers. Chlorine-35 has 17 protons and 18 neutrons; chlorine-37 has 17 protons and 20 neutrons. Relative atomic mass is the weighted average of the isotope masses by abundance: (0,75 × 35) + (0,25 × 37) = 26,25 + 9,25 = 35,5. It is not 36 because the isotopes are not equally abundant — the simple halfway point would assume a fifty-fifty split. The lighter isotope makes up three-quarters of the atoms, so the average is pulled toward 35. Isotopes are chemically identical because they carry the same electron arrangement."
+    },
+    {
+      "id": "cc3",
+      "question": "State the rules used to fill orbitals with electrons, give the sp notation for chlorine (Z = 17) and calcium (Z = 20), and describe the check that confirms a configuration is complete.",
+      "expected_answer": "Electrons fill orbitals from the lowest energy upward (the Aufbau or building-up principle) in the order 1s, 2s, 2p, 3s, 3p, 4s — with 4s filling before 3d. Each orbital holds at most two electrons, and a pair must have opposite spins, drawn as one arrow up and one arrow down. Within a set of equal-energy p orbitals, electrons occupy the orbitals singly before any pairing (Hund's rule). Chlorine: 1s² 2s² 2p⁶ 3s² 3p⁵. Calcium: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s². The check: add the superscripts — they must equal the atomic number. For chlorine, 2 + 2 + 6 + 2 + 5 = 17; for calcium, 2 + 2 + 6 + 2 + 6 + 2 = 20."
+    }
+  ]
+}

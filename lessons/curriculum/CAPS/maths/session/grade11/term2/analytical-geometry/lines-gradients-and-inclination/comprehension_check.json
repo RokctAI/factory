@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For A(−2; 3) and B(4; −5), calculate the distance AB, the midpoint of AB, and the gradient of AB, stating what each formula is really doing.",
+      "expected_answer": "Distance: the horizontal gap is 4 − (−2) = 6 and the vertical gap is −5 − 3 = −8 (size 8); these are the legs of a right-angled triangle whose hypotenuse is AB, so AB = √(6² + 8²) = √100 = 10 — the distance formula is Pythagoras in coordinates. Midpoint: average each coordinate, ((−2 + 4)/2; (3 + (−5))/2) = (1; −1) — both coordinates must be averaged. Gradient: change in y over change in x, keeping the same subtraction order top and bottom: (−5 − 3)/(4 − (−2)) = −8/6 = −4/3 — the line falls from left to right, consistent with the negative sign."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the equation of the line through (2; −1) perpendicular to y = 2x + 3, and explain the perpendicular gradient rule including its exception.",
+      "expected_answer": "Perpendicular gradients multiply to −1, so the required gradient is the given gradient flipped and sign-switched: from 2 to −1/2 (check: 2 × (−1/2) = −1). Substitute the point into y = mx + c: −1 = (−1/2)(2) + c, so −1 = −1 + c, giving c = 0. The line is y = −1/2 x. The flip-and-switch rule is a quarter-turn rotation of the gradient triangle: run and rise swap, and the direction of climb reverses. The exception is the horizontal-vertical pair: a horizontal line has gradient 0 and a vertical line has no gradient, so the product test cannot be written for them — their perpendicularity is quoted geometrically instead."
+    },
+    {
+      "id": "cc3",
+      "question": "Define the inclination of a line, and find it for lines with gradient 1 and gradient −4/3, explaining why the calculator's raw answer is unacceptable in the second case.",
+      "expected_answer": "The inclination θ is the angle a line makes with the positive x-axis, measured anticlockwise, with 0° ≤ θ < 180°, and it satisfies m = tan θ. For m = 1: θ = tan⁻¹(1) = 45°, acute because the line rises. For m = −4/3 the line falls, so θ must be obtuse (tangent is negative between 90° and 180°). Work with the size: tan⁻¹(4/3) = 53,13° is the reference angle, so θ = 180° − 53,13° = 126,87°. Typing −4/3 into inverse tan returns −53,13°, an angle swept clockwise below the axis; it describes the same line direction (differing by tangent's period of 180°) but lies outside the definition's range, so it earns no marks as an inclination."
+    }
+  ]
+}

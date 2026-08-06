@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A flat-pack bookshelf kit lists 16 cam locks, 16 cam bolts, 8 dowels and 12 screws, but the box contains only 14 cam locks. Each of the 4 shelves needs 4 cam locks. Explain the purpose of the parts audit, state what is missing, and say what the shortage stops.",
+      "expected_answer": "The parts audit — counting every component against the parts list before building — exists because a missing part found before step 1 is a phone call to the store, while the same part discovered at step 9 costs the whole afternoon and possibly a partial dismantling. Here the audit finds 14 cam locks against a required 16, so 2 cam locks are missing. Since each shelf needs 4 locks, three shelves can be fully locked while the fourth must wait for the missing pair. The kit carries no spares — 16 locks for exactly 16 lockings — so the shortage genuinely stops the fourth shelf rather than merely reducing a reserve. A full answer gives both the missing count and the consequence in a sentence."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the correct wiring of a South African three-pin plug, and explain why a plug with the brown and blue wires swapped is dangerous even though the appliance still works.",
+      "expected_answer": "The colour code is fixed: the brown core connects to the LIVE terminal on the right, the blue core to the NEUTRAL terminal on the left, and the green-and-yellow core to the EARTH terminal at the top — the tallest pin. The cord grip must clamp the thick outer sheath, never the thin cores, which it would slice. With brown and blue swapped, the appliance still works — the circuit is complete either way, so the kettle boils and everything appears fine. The danger is that the appliance's switch is now interrupting the neutral wire instead of the live wire: switching off stops the flow, but the element remains connected to the live side and stays energised even when the appliance is 'off'. The fault is invisible in normal use and is only found by checking the colours against the code before closing the cover — which is why correct function is never proof of correct assembly."
+    },
+    {
+      "id": "cc3",
+      "question": "A bookshelf costs R1 899 with delivery at R250. The store's assembly service costs R320; a handyman charges R150 per half hour and quotes two half-hours; self-assembly is free but step 7 requires two people, and a cracked side panel would cost R380 to replace. Compare the three options and give a defensible recommendation.",
+      "expected_answer": "Self-assembly: 1 899 + 250 = R2 149. Handyman: 1 899 + 250 + 2 × 150 = R2 449. Store assembly: 1 899 + 250 + 320 = R2 469. Self-assembly is cheapest, saving R320 against the store and R300 against the handyman. The recommendation must engage the risk the question plants: step 7 needs four hands, and a failed attempt risks a R380 side panel — more than the saving. So either choice is defensible if reasoned: a household with two capable people available should self-assemble and bank the R320, since the kit includes the only tool needed; a person building alone should pay for assembly, because R320 of insurance against a R380 failure plus a fortnight's wait is rational. A bare choice without numbers earns little — the expected answer is the comparison table plus a recommendation whose reason uses the amounts."
+    }
+  ]
+}

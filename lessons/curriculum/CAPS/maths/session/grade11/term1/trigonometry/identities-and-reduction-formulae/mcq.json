@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Two Identities Every Proof Leans On",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Using the definitions sinθ = y/r and cosθ = x/r, dividing sine by cosine gives:",
+          "options": [
+            "y/x, which is tanθ",
+            "x/y, which is 1/tanθ",
+            "y²/x², which is tan²θ",
+            "r²/xy"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The identity sin²θ + cos²θ = 1 comes from dividing which statement by r²?",
+          "options": [
+            "x + y = r",
+            "x² + y² = r²",
+            "y² − x² = r²",
+            "x² · y² = r²"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "(1 − sin²θ) · tanθ simplifies to:",
+          "options": [
+            "sinθ",
+            "cos²θ",
+            "sinθ · cosθ",
+            "tanθ"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "tanθ does not exist where:",
+          "options": [
+            "sinθ = 0",
+            "θ is obtuse",
+            "θ is negative",
+            "cosθ = 0, i.e. at θ = 90° + k·180°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Signs in the Four Quadrants — the CAST Rule",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In the third quadrant, which ratio is positive?",
+          "options": [
+            "Sine",
+            "Cosine",
+            "Tangent",
+            "All three"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "If sinθ = 3/5 and θ is obtuse, then cosθ equals:",
+          "options": [
+            "−4/5",
+            "4/5",
+            "−3/4",
+            "3/4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "With sinθ = 3/5 and θ obtuse, tanθ equals:",
+          "options": [
+            "3/4",
+            "−3/4",
+            "−4/3",
+            "4/3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Why does tangent come out positive in the third quadrant?",
+          "options": [
+            "Because tangent is always positive",
+            "Because r is negative there",
+            "Because y is positive there",
+            "Because both x and y are negative, and their quotient is positive"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Reduction Formulae — One Eighty, Three Sixty and the Minus",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "cos 120°, written by reduction, equals:",
+          "options": [
+            "cos 60° = 1/2",
+            "−sin 60°",
+            "−cos 60° = −1/2",
+            "sin 30°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "sin 210° equals:",
+          "options": [
+            "−1/2",
+            "1/2",
+            "−√3/2",
+            "√3/2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "tan 300° equals:",
+          "options": [
+            "√3",
+            "−√3",
+            "1/√3",
+            "−1/√3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "sin 150° × tan 225° equals:",
+          "options": [
+            "−1/2",
+            "−1",
+            "1",
+            "1/2"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Co-functions, Simplifying Chains and Where an Identity Breaks",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "cos(90° + x) equals:",
+          "options": [
+            "sin x",
+            "−sin x",
+            "cos x",
+            "−cos x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The chain [sin(180°+x) · cos(360°−x) · tan(−x)] ÷ [cos(90°−x) · sin(90°+x)] simplifies to:",
+          "options": [
+            "−tan x",
+            "sin x",
+            "tan x",
+            "cos²x"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The identity sinx/(1+cosx) + (1+cosx)/sinx = 2/sinx fails only where:",
+          "options": [
+            "x is obtuse",
+            "cos x = 0",
+            "x = 90° + k·360°",
+            "x is a multiple of 180°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which angles swap sine and cosine rather than only changing sign?",
+          "options": [
+            "90° ± θ",
+            "180° ± θ",
+            "360° ± θ",
+            "−θ"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Spoke and the Shadow",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the wheel picture, sine of the angle is:",
+          "options": [
+            "The east-west share of the spoke",
+            "The length of the spoke",
+            "The north-south share of the spoke",
+            "The area swept by the spoke"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "At 120° the cosine is negative because:",
+          "options": [
+            "The spoke's tip is west of centre, so its east-west share is negative",
+            "The spoke has turned more than 90°, which always makes everything negative",
+            "The spoke gets shorter past 90°",
+            "Sine and cosine must have opposite signs"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Tangent fails to exist at 90° because:",
+          "options": [
+            "The north-south share is zero there",
+            "The spoke leaves the wheel",
+            "Sine equals cosine there",
+            "The east-west share is zero there, and dividing by zero is forbidden"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Four Neighbourhoods, One Rule",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Reading the wheel from the fourth quarter, the CAST letters stand for:",
+          "options": [
+            "Cosine, All, Sine, Tangent — the only positive ratio in each quarter",
+            "Circle, Angle, Spoke, Turn",
+            "The order in which ratios are calculated",
+            "Cosine, Angle, Sine, Theta"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In the sketch method for sinθ = 3/5 with θ obtuse, the tip of the spoke sits at:",
+          "options": [
+            "3 north, 4 east",
+            "4 north, 3 west",
+            "3 north, 4 west",
+            "3 south, 4 west"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The main advantage of the sketch over a calculator here is:",
+          "options": [
+            "It is faster to type",
+            "It gives exact fractions with correct signs, no rounding",
+            "It works only for acute angles",
+            "It avoids Pythagoras"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Folding the Angle Back Home",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The home angle of 210° is:",
+          "options": [
+            "60°",
+            "210°",
+            "150°",
+            "30°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The three-step recipe for reducing any angle is:",
+          "options": [
+            "Sign, then size, then quadrant",
+            "Home angle, then quadrant sign, then write sign before the acute ratio",
+            "Calculator, then rounding, then sign",
+            "Swap sine and cosine, then fold"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "tan 225° by the recipe equals:",
+          "options": [
+            "−1",
+            "√3",
+            "1",
+            "−√3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "What is special about 90° compared with 180° and 360° in reduction work?",
+          "options": [
+            "90° changes only the sign",
+            "90° makes every ratio positive",
+            "90° cannot be used in reductions",
+            "90° swaps sine and cosine, then the quarter sets the sign"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

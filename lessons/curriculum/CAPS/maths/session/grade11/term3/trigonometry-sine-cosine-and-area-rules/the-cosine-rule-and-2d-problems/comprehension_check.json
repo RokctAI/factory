@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Prove the cosine rule a² = b² + c² − 2bc·cosA, and explain why it can be described as Pythagoras generalised to every triangle.",
+      "expected_answer": "In triangle ABC, drop a perpendicular from C onto AB, meeting it at D. In right-angled triangle ACD, the height CD = b·sinA and the base AD = b·cosA, so the remaining piece DB = c − b·cosA. Applying Pythagoras in right-angled triangle CDB: a² = CD² + DB² = b²sin²A + (c − b·cosA)² = b²sin²A + c² − 2bc·cosA + b²cos²A. The two b² terms group as b²(sin²A + cos²A), and since sin²A + cos²A = 1, this is simply b². Hence a² = b² + c² − 2bc·cosA. When A = 90°, cosA = 0, the correction term vanishes and the rule becomes a² = b² + c², which is Pythagoras. So the cosine rule is Pythagoras plus a correction term −2bc·cosA that measures how far the angle strays from 90°: for acute A the term subtracts, making a shorter, and for obtuse A the cosine is negative so the term adds, making a longer."
+    },
+    {
+      "id": "cc2",
+      "question": "In triangle PQR, p = 6 cm, r = 9 cm and the included angle Q = 110°. Calculate q, and explain the sign behaviour that catches many learners in this calculation.",
+      "expected_answer": "By the cosine rule, q² = p² + r² − 2pr·cosQ = 36 + 81 − 2 × 6 × 9 × cos110°. Since 110° lies in the second quadrant, cos110° is negative: −0,3420. The correction term is therefore −108 × (−0,3420) = +36,94, so q² = 117 + 36,94 = 153,94 and q = 12,41 cm. The catch is the double negative: the formula's minus sign meets the negative cosine of an obtuse angle, and the correction adds rather than subtracts. Geometrically this must happen — an angle wider than 90° pushes the far side longer than the Pythagoras value, which here would be √117 ≈ 10,8 cm, and indeed 12,41 is longer. If an obtuse-angle answer comes out shorter than the Pythagoras value, a sign was mishandled; typing the whole right-hand side into the calculator in one go, with brackets around the cosine, avoids the error."
+    },
+    {
+      "id": "cc3",
+      "question": "Two boats leave harbour H at the same time; one sails 4 km to P and the other 6 km to Q, with angle PHQ = 70°. Find the distance PQ and the angle at P, justifying the choice of rule at each step.",
+      "expected_answer": "In triangle HPQ two sides and the included angle are known — no side comes with its opposite angle — so only the cosine rule can start: PQ² = 4² + 6² − 2 × 4 × 6 × cos70° = 52 − 48 × 0,3420 = 52 − 16,42 = 35,58, so PQ = 5,97 km. For the angle at P, all three sides are now known, and the cosine rule in angle form is the safe choice because the angle at P could conceivably be obtuse, and inverse cosine distinguishes acute from obtuse by the sign of the fraction, with no 180°-minus ambiguity. cosP = (4² + 35,58 − 6²) ÷ (2 × 4 × 5,97) = 15,58 ÷ 47,76 = 0,3262, giving P ≈ 70,96°, which is acute. The angle at Q then follows from the angle sum: about 180° − 70° − 71° = 39°. Throughout, the unrounded value of PQ is kept on the calculator and only the reported answers are rounded."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Newton's law of universal gravitation in words, write the equation, and explain why the gravitational force between two learners in a classroom is unnoticeable while the force between a learner and the Earth is not.",
+      "expected_answer": "Newton's law of universal gravitation states that every particle in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centres. The equation is F = Gm₁m₂/d², where G = 6,67 × 10⁻¹¹ N·m²·kg⁻². For two learners of 60 kg and 80 kg sitting 1 m apart, F = 6,67 × 10⁻¹¹ × 60 × 80 ÷ 1² ≈ 3,2 × 10⁻⁷ N, which is far too small to feel because G is so tiny and ordinary masses are so small. When one of the objects is the Earth, its mass of 5,98 × 10²⁴ kg makes the product of the masses enormous, and the force on a 70 kg learner becomes about 686 N — exactly the learner's weight. Gravity is therefore only noticeable when at least one of the masses is planetary in size."
+    },
+    {
+      "id": "cc2",
+      "question": "Starting from the universal law, derive the expression g = GM/r², explain the significance of the object's mass cancelling, and use the expression to calculate g on the Moon (M = 7,35 × 10²² kg, r = 1,74 × 10⁶ m).",
+      "expected_answer": "The gravitational force on an object of mass m at the surface of a planet of mass M and radius r is F = GMm/r². This force is the object's weight, w = mg. Setting mg = GMm/r² and cancelling m gives g = GM/r². Because the object's own mass cancels, the acceleration does not depend on the falling object at all — every object at the same location falls with the same acceleration, which is why a hammer and a feather dropped on the airless Moon land together. Heavier objects experience a proportionally larger force but also have proportionally more inertia, and the two effects cancel exactly. For the Moon: g = 6,67 × 10⁻¹¹ × 7,35 × 10²² ÷ (1,74 × 10⁶)² = 4,90 × 10¹² ÷ 3,03 × 10¹² ≈ 1,62 m·s⁻², about one sixth of the Earth's 9,8 m·s⁻²."
+    },
+    {
+      "id": "cc3",
+      "question": "Distinguish carefully between mass and weight, calculate the weight of a 70 kg astronaut on Earth and on the Moon, and explain fully why astronauts on the space station experience weightlessness even though gravity there is nearly as strong as at the surface.",
+      "expected_answer": "Mass is the amount of matter in an object, a scalar measured in kilograms, and it is the same everywhere in the universe. Weight is the gravitational force on that matter, a vector measured in newtons, calculated as w = mg, and it changes whenever the local value of g changes. On Earth the astronaut's weight is w = 70 × 9,8 = 686 N; on the Moon, where g = 1,62 m·s⁻², it is w = 70 × 1,62 = 113,4 N. The mass remains 70 kg in both places. On the space station, g is still almost 9 m·s⁻², so gravity has not switched off; instead, the station and everyone inside it are in continuous free fall around the Earth — falling towards the planet while moving sideways fast enough to keep missing it. Because everything falls together, no floor or seat pushes up on the astronauts. The sensation of weight comes entirely from a supporting force, so with no support force acting they feel weightless. Weightlessness is therefore the condition of free fall, not the absence of gravity."
+    }
+  ]
+}
