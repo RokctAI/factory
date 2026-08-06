@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using the potential energy versus internuclear distance graph, explain why two hydrogen atoms form a bond while two helium atoms do not, and define bond length and bond energy in terms of the graph.",
+      "expected_answer": "As two hydrogen atoms approach, each nucleus attracts the other atom's electron, and by sharing the two electrons both atoms effectively fill their outer shells; the potential energy therefore decreases as they come together. The energy reaches a minimum at the separation where the attraction is balanced by the repulsion between the two positive nuclei — pushing closer makes the energy rise steeply. The distance at this energy minimum is the bond length, and the depth of the minimum — the energy released on forming the bond, equal to the energy needed to break it — is the bond energy. Two helium atoms each already have a filled shell of two electrons, so sharing lowers no energy: their curve has no significant minimum, no valley to settle into, and hence no bond forms. Bonding happens because it lowers energy, not for any other reason."
+    },
+    {
+      "id": "cc2",
+      "question": "Predict and explain the shapes and approximate bond angles of methane, ammonia and water, given that each central atom is surrounded by four electron pairs.",
+      "expected_answer": "Electron pairs around a central atom repel one another and arrange themselves as far apart as possible; four pairs adopt the tetrahedral arrangement with angles of 109,5°. In methane all four pairs are bonding pairs, so the molecule is tetrahedral with angles of 109,5°. In ammonia one of the four pairs is a lone pair; since shapes are named by the positions of atoms only, the visible shape is a trigonal pyramid, and because the lone pair sits closer to the nitrogen and repels more strongly than bonding pairs, the H–N–H angle is squeezed to about 107°. In water two of the four pairs are lone pairs, leaving an angular or bent molecule, with the two lone pairs squeezing the H–O–H angle further to about 104,5°. The sequence shows the same tetrahedral electron arrangement throughout, with the visible shape and angle changing only because lone pairs replace bonding pairs and repel harder."
+    },
+    {
+      "id": "cc3",
+      "question": "Using electronegativity values (H 2,1; O 3,5; C 2,5; Cl 3,0; Na 0,9), classify the bonds H–Cl, Cl–Cl and Na–Cl, and then explain why carbon dioxide is a non-polar molecule while water is polar, despite both containing polar bonds.",
+      "expected_answer": "Electronegativity measures an atom's tendency to attract the shared electron pair. Cl–Cl: difference 0, so the pair is shared equally and the bond is non-polar covalent. H–Cl: difference 3,0 − 2,1 = 0,9, so the pair sits closer to chlorine, which becomes δ− while hydrogen becomes δ+; a polar covalent bond. Na–Cl: difference 3,0 − 0,9 = 2,1, large enough that the electron transfers essentially completely, forming ions; an ionic bond. Bond character slides continuously from equal sharing through unequal sharing to transfer as the difference grows. For molecules, polarity requires both polar bonds and a shape that does not cancel them. Carbon dioxide is linear: its two equal C=O bond dipoles point in exactly opposite directions and cancel, so the molecule is non-polar. Water is angular: its two O–H dipoles both lean toward the oxygen side and add, leaving the oxygen end δ− and the hydrogen side δ+, so water is a polar molecule."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what the limit of (x² − 9)/(x − 3) as x approaches 3 means, evaluate it, and state precisely why writing f(3) = 6 would be wrong while the limit statement is right.",
+      "expected_answer": "Substituting x = 3 gives 0/0, so the function is undefined at 3 — its graph is the line y = x + 3 with a hole at (3; 6). The limit asks what the outputs approach as x gets arbitrarily close to 3 from either side: at 2,9 and 3,01 the outputs are 5,9 and 6,01, crowding in on 6. Algebraically, x² − 9 factorises to (x − 3)(x + 3); for every x except 3 the factor x − 3 cancels, leaving x + 3, which approaches 6. So the limit as x approaches 3 is 6. Writing f(3) = 6 is false because 3 is not in the domain — the function has no value there; the limit statement is true because it describes the approach, not arrival. The limit reports on the neighbourhood of the point, which is fully defined, and this distinction is exactly the situation on which the derivative's definition is built."
+    },
+    {
+      "id": "cc2",
+      "question": "Differentiate f(x) = x² from first principles, stating the definition, showing every algebraic step, and explaining why dividing by h and later letting h approach zero is not division by zero.",
+      "expected_answer": "The definition: f′(x) is the limit as h approaches 0 of [f(x + h) − f(x)]/h. For f(x) = x²: f(x + h) = (x + h)² = x² + 2xh + h². Subtracting f(x) leaves 2xh + h². Dividing by h gives 2x + h, and letting h approach 0 gives f′(x) = 2x. The division is legal because throughout the limit process h is a small non-zero number — the limit means h approaches zero but never equals it, and dividing by a non-zero number is ordinary algebra. Only after the division is complete do we evaluate the simplified expression 2x + h at the approach, which needs no division at all. The h must always cancel because the subtraction f(x + h) − f(x) always leaves h as a common factor; if it does not cancel, there is an algebra error upstream. The result 2x is a gradient formula: gradient 2 at x = 1, 10 at x = 5, −6 at x = −3."
+    },
+    {
+      "id": "cc3",
+      "question": "Differentiate f(x) = 1/x from first principles, identify the step where most errors occur, and explain how the sign of the answer can be checked against the shape of the graph.",
+      "expected_answer": "The difference quotient is [1/(x + h) − 1/x]/h. Combine the two fractions over the common denominator x(x + h): the numerator becomes x − (x + h) = −h, so the quotient is −h/[h·x(x + h)]. Cancelling h gives −1/[x(x + h)], and letting h approach 0 gives f′(x) = −1/x². The error-prone step is the subtraction: the numerators must be adjusted for the common denominator, and the whole quantity (x + h) must be subtracted with its bracket — x − (x + h) is −h, not h; dropping the bracket loses the minus sign that belongs in the final answer. The sign check: the graph of y = 1/x is a hyperbola that falls from left to right on each branch, so its gradient must be negative at every point of its domain, and −1/x² is indeed negative for all non-zero x. Agreement between the algebra and the picture confirms the result."
+    }
+  ]
+}

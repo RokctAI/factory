@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the power rule and its companion rules, and differentiate y = 3x⁴ − 2x + 5, y = √x, and y = (2x³ − x)/x², explaining the rewriting needed before the rule can apply.",
+      "expected_answer": "The power rule: the derivative of x^n is n·x^(n−1) — the exponent falls forward as a multiplier and the power steps down by one — valid for all real exponents. Companions: a constant multiple stays as a multiplier of the derivative, a sum is differentiated term by term, and a lone constant differentiates to zero. For y = 3x⁴ − 2x + 5: dy/dx = 12x³ − 2. For y = √x: rewrite as x^(1/2), so dy/dx = (1/2)x^(−1/2) = 1/(2√x). For y = (2x³ − x)/x²: the rule reads only powers of x, so first split the quotient term by term into 2x − 1/x = 2x − x^(−1); then dy/dx = 2 + x^(−2). The rewriting is essential because there is no quotient rule in this course; every quotient must be split or simplified, and negative exponents step down to MORE negative values — from −1 to −2."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the equation of the tangent to f(x) = x³ − 3x² + 2 at x = 1, then find the x values where the tangent to the same curve has gradient 9. Describe the general routine.",
+      "expected_answer": "The routine has four ingredients: point, derivative, gradient, line. Point: f(1) = 1 − 3 + 2 = 0, so the tangent touches at (1; 0). Derivative: f′(x) = 3x² − 6x. Gradient: f′(1) = 3 − 6 = −3. Line: y − 0 = −3(x − 1), so y = −3x + 3. For gradient 9, set the derivative equal to 9: 3x² − 6x = 9, so x² − 2x − 3 = 0, factorising to (x − 3)(x + 1) = 0, giving x = 3 or x = −1 — two points, one on each rising arm of the cubic, where the tangent has that slope. The key discipline is feeding the right machine: heights come from the original function, slopes from the derivative; and phrases like 'parallel to the x axis' translate to gradient zero, while 'parallel to a given line' means the tangent shares that line's gradient."
+    },
+    {
+      "id": "cc3",
+      "question": "Sketch-analyse f(x) = x³ − 6x² + 9x: find and classify its stationary points, its intercepts, its intervals of increase and decrease, and its point of inflection, noting the consistency check between the algebra and the calculus.",
+      "expected_answer": "f′(x) = 3x² − 12x + 9 = 3(x − 1)(x − 3), zero at x = 1 and x = 3. Heights from f: f(1) = 4 and f(3) = 0, so stationary points are (1; 4) and (3; 0). Classification: f″(x) = 6x − 12 is negative at x = 1 (local maximum) and positive at x = 3 (local minimum); equivalently the sign of f′ is positive, negative, positive across the roots, so f increases for x < 1, decreases for 1 < x < 3, and increases for x > 3. Intercepts: f(0) = 0, and f(x) = x(x − 3)², giving roots x = 0 (single, graph crosses) and x = 3 (double, graph touches and turns). The consistency check: the double root at 3 and the local minimum at (3; 0) are the same geometric event — the graph touching the axis — so algebra and calculus confirm each other. The inflection point is where f″ = 0: x = 2, height f(2) = 2, midway between the turning points, where concavity flips from down to up."
+    }
+  ]
+}

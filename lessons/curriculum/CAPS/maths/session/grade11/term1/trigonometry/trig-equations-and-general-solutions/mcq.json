@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Why One Equation Has Infinitely Many Answers",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "For sin x = 0,5, the calculator's 30° is incomplete because:",
+          "options": [
+            "The calculator rounds badly",
+            "Sine is positive in two quadrants and repeats every 360°, so there are infinitely many solutions",
+            "30° is a reference angle, which is never a solution",
+            "Sine equations always have exactly two answers"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The second solution of sin x = 0,5 in the first turn is:",
+          "options": [
+            "330°",
+            "210°",
+            "150°",
+            "60°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why is sin 390° also equal to 0,5?",
+          "options": [
+            "Because 390° is obtuse",
+            "Because 390° = 360° + 30°, a full turn past 30°, and sine repeats every full turn",
+            "Because sine increases forever",
+            "Because 390° reduces to 150°"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The reference angle of an equation like sin x = −0,6 is found from:",
+          "options": [
+            "The positive value 0,6, ignoring the sign",
+            "The value −0,6 typed straight in",
+            "The quadrant diagram alone",
+            "Halving the given value"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The General Solution for Sine and Cosine",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The general solution of cos x = 0,5 is:",
+          "options": [
+            "x = 60° + k·180°",
+            "x = 60° + k·360° only",
+            "x = 120° + k·360° or x = 240° + k·360°",
+            "x = ±60° + k·360°, k an integer"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For sin x = −0,6 (reference angle 36,87°), the two families are:",
+          "options": [
+            "x = 216,87° + k·360° or x = 323,13° + k·360°",
+            "x = 36,87° + k·360° or x = 143,13° + k·360°",
+            "x = −36,87° + k·360° only",
+            "x = 126,87° + k·360° or x = 216,87° + k·360°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Typing inverse sine of −0,6 directly into the calculator is risky because:",
+          "options": [
+            "The calculator cannot handle negatives",
+            "It returns −36,87°, so sign work gets double-counted when quadrant rules are added on top",
+            "It returns an angle in radians",
+            "It returns 216,87°, skipping a family"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Before finding any reference angle for 2 sin x + 1,2 = 0, you must first:",
+          "options": [
+            "Sketch the graph",
+            "Choose quadrants",
+            "Isolate the ratio: sin x = −0,6",
+            "Multiply both sides by 2"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Tangent, and Equations That Need Tidying First",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The period used in the general solution for tangent is:",
+          "options": [
+            "360°",
+            "90°",
+            "270°",
+            "180°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The general solution of tan x = 1 is:",
+          "options": [
+            "x = 45° + k·180°",
+            "x = 45° + k·360° or x = 225° + k·360°, which is a different set",
+            "x = 45° only",
+            "x = 135° + k·180°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Dividing sin x = cos x by cos x is safe because:",
+          "options": [
+            "Cosine is never zero",
+            "If cos x were 0, sin x would be ±1 and the equation would read ±1 = 0, impossible — so no solution is lost",
+            "Division is always allowed in equations",
+            "Tangent is defined everywhere"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "For tan x = −2,5 with reference angle 68,2°, the general solution is:",
+          "options": [
+            "x = 68,2° + k·180°",
+            "x = 248,2° + k·360°",
+            "x = 111,8° + k·180°",
+            "x = −68,2° + k·360°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Specific Intervals and the Hidden Quadratic",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The solutions of sin x = 0,5 in [−360°; 360°] are:",
+          "options": [
+            "30° and 150° only",
+            "−330°, −210°, 30° and 150°",
+            "−30°, 30°, 150° and 210°",
+            "30°, 150°, 390° and 510°"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Substituting s = sin x in 2sin²x − sin x − 1 = 0 gives factors:",
+          "options": [
+            "(2s − 1)(s + 1)",
+            "(s − 1)(s + 1)",
+            "(2s + 1)(s − 1)",
+            "(2s − 1)(s − 1)"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "On [0°; 360°], the full solution of 2sin²x − sin x − 1 = 0 is:",
+          "options": [
+            "90°, 210° and 330°",
+            "30°, 150° and 270°",
+            "90° and 270°",
+            "210° and 330° only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "If a substitution yields cos x = 1,3 you must:",
+          "options": [
+            "Take the reference angle of 1,3",
+            "Subtract 1 to bring it into range",
+            "Use the tangent period instead",
+            "Reject it in writing — cosine never leaves the range −1 to 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Taxi on a Loop",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the taxi picture, the integer k in a general solution counts:",
+          "options": [
+            "How many full loops you fast-forward or rewind from one sighting",
+            "The number of solutions",
+            "The size of the reference angle",
+            "The number of quadrants"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Tangent's loop is only 180° because:",
+          "options": [
+            "Tangent is negative in two quadrants",
+            "Half a turn flips the sign of both shares, top and bottom, leaving the fraction unchanged",
+            "Tangent is undefined at 90°",
+            "Its graph has asymptotes"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The calculator's single answer to a trig equation is like:",
+          "options": [
+            "The taxi's full timetable",
+            "The length of the loop",
+            "One sighting of the taxi — the timetable still has to be written",
+            "The fare for one trip"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two Doors Into the Hall",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The big wheel passes the same height twice per turn because:",
+          "options": [
+            "The wheel speeds up on the way down",
+            "It crosses that height once going up and once coming down",
+            "The wheel has two seats",
+            "Sine and cosine are different functions"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Cosine's general solution compresses to ±α + k·360° because its two doors:",
+          "options": [
+            "Are in the same quadrant",
+            "Are 180° apart",
+            "Do not exist for negative values",
+            "Sit symmetrically at the positive angle and its negative twin"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "For sin x = 1, the general solution has only one family because:",
+          "options": [
+            "At the peak of the wheel the way up and the way down meet — the two doors become one",
+            "One is always a special number",
+            "The calculator only gives one answer",
+            "Sine is positive there"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "For sin x = −0,6, the size of the angle comes from the calculator and the placing comes from:",
+          "options": [
+            "The calculator as well",
+            "Rounding",
+            "The wheel — third and fourth quarters, where the seat is below the axle",
+            "The interval given"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Harvesting the Stretch You Were Given",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "To collect solutions inside an interval, you:",
+          "options": [
+            "Solve the equation again for each quadrant",
+            "Substitute small integer values of k into each family and keep results inside the interval",
+            "Use only k = 0",
+            "Divide the interval by the period"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Sine crosses a middle height like 0,5 twice per loop; over [−360°; 360°] you should expect:",
+          "options": [
+            "Two solutions",
+            "Three solutions",
+            "Eight solutions",
+            "Four solutions"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The nickname move turns 2sin²x − sin x − 1 = 0 into:",
+          "options": [
+            "2s² − s − 1 = 0, an ordinary quadratic in s",
+            "A linear equation",
+            "An identity to prove",
+            "2s − s − 1 = 0"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Why can sin x never equal 2?",
+          "options": [
+            "Because 2 is an even number",
+            "Because the interval excludes it",
+            "Because the seat on the wheel cannot be further from the axle than the wheel is wide — sine stays between −1 and 1",
+            "Because the reference angle of 2 is too big"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

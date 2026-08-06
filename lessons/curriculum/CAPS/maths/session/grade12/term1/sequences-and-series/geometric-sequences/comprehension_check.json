@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a geometric sequence, state what values the common ratio r may and may not take, and use the definition to classify each of 80; 40; 20; 10 and 3; −6; 12; −24 and 1; 2; 4; 6.",
+      "expected_answer": "A geometric sequence is one in which each term is the previous term multiplied by a fixed number, the common ratio r, found by dividing any term by the term before it. The ratio may be any real number except zero — it may be a fraction, producing decay, or negative, producing alternating signs — and no term may be zero, since division by zero would make the ratio test meaningless. For 80; 40; 20; 10 every quotient is 1/2, so it is geometric with r = 1/2. For 3; −6; 12; −24 every quotient is −2, so it is geometric with r = −2, the signs alternating. For 1; 2; 4; 6 the first quotients are 2 but 6 ÷ 4 = 1,5, so the ratio is not constant and the sequence is not geometric — which shows why the quotient must be checked along the whole list, not once."
+    },
+    {
+      "id": "cc2",
+      "question": "Given that T_2 = 6 and T_5 = 48 for a geometric sequence, find r and a, write the general term, and verify it. Explain why the equations are divided rather than subtracted.",
+      "expected_answer": "Writing the terms through the general term: a·r = 6 and a·r⁴ = 48. Dividing the second equation by the first cancels a and gives r³ = 8, so r = 2; substituting back gives a = 3. The general term is T_n = 3·2^(n−1), and checking against the other given term, T_5 = 3·2⁴ = 3 × 16 = 48, which agrees. Division is used because in a geometric sequence the first term is multiplied by powers of r, and division is the operation that cancels a multiplied quantity — just as subtraction cancels the added a in the arithmetic case. The leftover equation has meaning: from position two to position five is three steps, and r³ = 8 says three multiplications grew the value eightfold, so the exponent always equals the number of position steps between the two given terms."
+    },
+    {
+      "id": "cc3",
+      "question": "The terms x; x + 6; x + 9 are consecutive terms of a geometric sequence. Find x, list the terms, give the common ratio, and explain the identity used and why the final substitution matters.",
+      "expected_answer": "For three consecutive geometric terms the middle term squared equals the product of its neighbours, because the ratio between the first pair equals the ratio between the second pair and cross-multiplying gives that identity. So (x + 6)² = x(x + 9), which expands to x² + 12x + 36 = x² + 9x; the x² terms cancel, leaving 3x = −36, so x = −12. Substituting back gives the terms −12; −6; −3, and dividing neighbours gives −6 ÷ −12 = 1/2 and −3 ÷ −6 = 1/2, so the common ratio is 1/2. The substitution matters because it converts an algebraic answer into a verified sequence: it confirms the ratio really is constant, shows that an all-negative geometric sequence is legitimate, and would expose any sign error made while expanding the brackets."
+    }
+  ]
+}

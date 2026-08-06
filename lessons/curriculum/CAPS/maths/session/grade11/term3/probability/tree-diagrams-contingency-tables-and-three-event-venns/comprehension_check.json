@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "In a survey of 150 learners: 5 play all three of soccer, netball and athletics; 10 play soccer and netball only; 15 play soccer and athletics only; 8 play netball and athletics only; 30 play soccer only; 22 netball only; 25 athletics only. Complete the Venn diagram, find how many play no sport, and calculate P(exactly one code) and P(at least two codes). Explain the reading rule for 'and' versus 'only'.",
+      "expected_answer": "Fill from the centre outwards: 5 in the centre; the exactly-two regions take 10, 15 and 8 directly, because 'only' marks them as clean region counts; the single-code regions take 30, 22 and 25. The regions placed sum to 30 + 22 + 25 + 10 + 15 + 8 + 5 = 115, so 150 − 115 = 35 learners play no sport. P(exactly one) = (30 + 22 + 25)/150 = 77/150. P(at least two) = (10 + 15 + 8 + 5)/150 = 38/150 = 19/75. The reading rule: a clue containing 'only' or 'but not' names one region exactly and goes straight in; a bare 'and' clue — such as '15 play soccer and athletics' — counts everyone in both codes including the all-three centre, so the exactly-two region would receive 15 − 5 = 10. The audit is to sum all eight regions and confirm the population total of 150."
+    },
+    {
+      "id": "cc2",
+      "question": "A packet holds 3 red and 2 blue sweets; two are drawn without replacement. Build the tree diagram, find P(two red), P(one of each colour) and P(two blue), and state the audit that verifies the tree.",
+      "expected_answer": "Stage one: red with probability 3/5, blue with 2/5. Stage two is conditioned on the history because the packet has changed: after a red, 2 red and 2 blue remain, giving branches 2/4 and 2/4; after a blue, 3 red and 1 blue remain, giving 3/4 and 1/4. Multiply along paths: P(red then red) = 3/5 × 2/4 = 6/20 = 3/10. P(one of each) adds the two qualifying paths: red-blue is 3/5 × 2/4 = 6/20 and blue-red is 2/5 × 3/4 = 6/20, together 12/20 = 3/5. P(two blue) = 2/5 × 1/4 = 2/20 = 1/10. The audit: the four path products, 6/20 + 6/20 + 6/20 + 2/20, total 20/20 = 1 exactly, because the paths list every possible future; a total different from 1 means a branch probability is wrong. A second check is that the branches leaving any node sum to 1."
+    },
+    {
+      "id": "cc3",
+      "question": "A contingency table classifies 200 learners: 30 boys walk and 50 ride taxis; 45 girls walk and 75 ride taxis. Test whether gender and transport are independent, giving both the product-rule proof and the row-percentage explanation, and state what a proper conclusion looks like.",
+      "expected_answer": "Margins first: 80 boys, 120 girls; 75 walkers, 125 taxi riders; grand total 200. Product test on the boy-walk cell: P(boy) = 80/200 = 0,4 and P(walk) = 75/200 = 0,375, so the product is 0,4 × 0,375 = 0,15; the actual cell probability is 30/200 = 0,15. The two are exactly equal, so the events are independent — and in a two-by-two table one passing cell forces all cells to pass, because the margins lock the remaining cells by subtraction. The row-percentage explanation: 30 of 80 boys walk, which is 37,5%, and 45 of 120 girls walk, also 37,5% — the rows tell the same story, so knowing gender gives no information about transport. A proper conclusion is a written sentence quoting both compared numbers: since P(boy and walk) = 0,15 equals P(boy) × P(walk) = 0,15, gender and transport are independent. If the data tilted to 40 boys and 35 girls walking, the rates would split to 50% versus about 29%, the test would fail (0,2 ≠ 0,15), and the verdict would be dependent."
+    }
+  ]
+}

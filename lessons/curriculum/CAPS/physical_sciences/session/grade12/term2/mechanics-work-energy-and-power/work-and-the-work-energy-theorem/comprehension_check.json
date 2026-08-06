@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define work done by a force, and use the definition to explain why, for a crate dragged across a level floor, the applied force does positive work, friction does negative work, and the normal force and weight do zero work.",
+      "expected_answer": "The work done on an object by a force is the product of the magnitude of the force, the magnitude of the displacement, and the cosine of the angle between the force and the displacement: W = FΔx cos θ. Work is a scalar measured in joules. The applied force points along the displacement, so θ = 0° and cos θ = 1, giving positive work — energy is transferred into the crate's motion. Friction acts opposite to the displacement, so θ = 180° and cos θ = −1, giving negative work — energy is drained from the motion and converted to heat. The normal force and the weight both act perpendicular to the horizontal displacement, so θ = 90° and cos θ = 0: they do zero work regardless of their size, because no part of the motion happens along their directions and they transfer no energy to or from the crate."
+    },
+    {
+      "id": "cc2",
+      "question": "State the work-energy theorem. A 1 000 kg car travelling at 20 m·s⁻¹ brakes to rest in 50 m on a level road. Use the theorem to calculate the average frictional force, and explain why doubling the speed would quadruple the stopping distance for the same force.",
+      "expected_answer": "The work-energy theorem states that the net work done on an object equals the change in the object's kinetic energy: Wnet = ΔEk = ½mvf² − ½mvi². For the braking car: ΔEk = 0 − ½ × 1 000 × 20² = −200 000 J. The only horizontal force is friction acting opposite to the motion over 50 m, so Wnet = −F × 50 = −200 000 J, giving F = 4 000 N. Kinetic energy depends on the square of the speed, so at 40 m·s⁻¹ the car carries ½ × 1 000 × 40² = 800 000 J — four times as much. With the same friction force, the stopping distance is ΔEk ÷ F = 800 000 ÷ 4 000 = 200 m, four times the original 50 m. Doubling speed quadruples the energy that must be removed, and since work is force times distance, the same force needs four times the distance to remove it."
+    },
+    {
+      "id": "cc3",
+      "question": "A 20 kg crate is pulled 4 m up a ramp inclined at 30° at constant velocity, against friction of 30 N, by a force parallel to the slope. Calculate the work done by each force acting on the crate, verify that the net work is consistent with the work-energy theorem, and show that gravity's work equals −mgh for the vertical height gained.",
+      "expected_answer": "The weight component along the slope is mg sin 30° = 20 × 9,8 × 0,5 = 98 N down the slope. Constant velocity means zero net force, so the applied force is 98 + 30 = 128 N up the slope. Work done over 4 m: applied force W = 128 × 4 = +512 J; gravity W = −98 × 4 = −392 J (its along-slope component opposes the motion); friction W = −30 × 4 = −120 J; normal force W = 0 (perpendicular to the motion). Net work = 512 − 392 − 120 = 0 J. This is consistent with the work-energy theorem: constant velocity means the kinetic energy does not change, ΔEk = 0, so the net work must be zero. Gravity check: the vertical height gained is h = 4 × sin 30° = 2 m, and −mgh = −20 × 9,8 × 2 = −392 J, exactly the value calculated along the slope — gravity's work depends only on vertical height, not on path length, and the 392 J appears as gained gravitational potential energy."
+    }
+  ]
+}

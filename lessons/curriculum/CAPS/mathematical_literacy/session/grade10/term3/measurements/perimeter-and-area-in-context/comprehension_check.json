@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to decide between perimeter and area for a question, and compute both for the 12 m by 8 m plot, including the fencing adjustment for the 1,5 m gate.",
+      "expected_answer": "Edge jobs (fencing, edging) use perimeter; covering jobs (paving, planting) use area. Perimeter: 2 × (12 + 8) = 40 m; fencing needed is 40 − 1,5 = 38,5 m because no fence crosses the gate. Area: 12 × 8 = 96 m²."
+    },
+    {
+      "id": "cc2",
+      "question": "For the semicircular bed of radius 2 m (pi = 3,142), find the area and the perimeter, and explain why the perimeter is not simply half the circumference.",
+      "expected_answer": "Area: half of 3,142 × 2² = half of 12,568 = 6,28 m². Perimeter: half the circumference (6,284 m) plus the straight diameter edge (4 m) = 10,28 m. Cutting the circle creates a new straight edge; perimeter is the complete boundary, so the diameter must be added — area gains no new surface, so it just takes the fraction."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the pipeline from 38,5 m of fencing to a final cost, given 10 m rolls at R350, and justify the rounding direction.",
+      "expected_answer": "Divide 38,5 by 10 to get 3,85 rolls; round UP to 4 because 3 rolls (30 m) would leave the fence unfinished — materials buy the smallest whole quantity that completes the job; then 4 × R350 = R1 400."
+    }
+  ]
+}

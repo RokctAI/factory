@@ -1,0 +1,21 @@
+**Thandi:** Time for the questions that come up a lot with this one! First: the question says the rate is 8 percent, so why is the answer R240 and not 8 percent?
+
+**Tutor:** Because the question asked for the interest, and interest is always money, never a percentage. Read the two words as two different objects. The rate — 8 percent per year — is just a price tag: it tells you how fast money will grow, but on its own it has paid nobody anything. The interest is the event: the actual rand amount that appears when the rate acts on the principal. Eight percent of R3 000 is R240, so R240 is the interest. Here is the self-check that catches the error every time: look at the unit your answer is wearing. If the question asks for interest and your answer has a percent symbol, or it asks for a rate and your answer has a rand sign, you have answered the wrong question — swap tools and redo it. In marking memos those units are not decoration; an interest answer of 240 without the rand sign can drop a mark, and 240 percent is simply wrong.
+
+***
+
+**Thandi:** Next one: in year two of the savings question, why is the interest suddenly R259,20? The rate never changed from 8 percent.
+
+**Tutor:** The rate stayed still but the balance moved, and interest is calculated on the balance as it stands at the start of that year. Year one: 8 percent of R3 000 gives R240, and Thabo leaves it in the account, so the account enters year two holding R3 240. Year two: 8 percent of R3 240 gives R259,20 — bigger, because last year's R240 is now itself earning. That extra R19,20 is precisely 8 percent of R240, the interest earned by the interest. The discipline that protects you in the exam is to write the opening balance before computing each year: year one opens at R3 000, year two opens at R3 240. The moment you catch yourself taking 8 percent of the original deposit twice, you know you have drifted. And when the question says the saver withdraws the interest each year, the balance resets to R3 000 every January, and each year's interest is a flat R240 — read carefully which story you are in, because both appear in papers.
+
+***
+
+**Thandi:** Third one, and it is the money question: the mashonisa's 30 sounds close to the bank's 20 — why is the loan eighteen times more expensive?
+
+**Tutor:** Because the two numbers are speeds measured over different distances. The bank's 20 percent runs per YEAR: on R3 000, that is R600 of interest for twelve whole months. The mashonisa's 30 percent runs per MONTH: on the same R3 000, that is R900 every single month — more in one month than the bank wants for a year. To compare them honestly, stretch both onto the same time period. Thirty percent per month, charged simply for twelve months, is 360 percent per year. Divide 360 by 20 and you get the eighteen. The disguise works because our eyes compare the 30 with the 20 and skip the small words after them. So build the habit of reading a rate as one object with two parts — number AND period — the way you would never read a speed limit as just 60 without asking whether it is kilometres per hour. Every wrong option in these questions is manufactured from someone comparing bare numbers across different periods.
+
+***
+
+**Thandi:** Last one: when a question gives the interest and asks me to find the rate, what exactly do I divide by what?
+
+**Tutor:** Interest divided by principal, times 100 — and the whole trap lives in choosing the principal correctly. The rate describes what the lender charged on the amount originally borrowed, so the original amount is the only honest denominator. Take the example: R450 of interest on a R3 000 loan over a year. Divide 450 by 3 000 to get 0,15, multiply by 100, and the rate is 15 percent per year. The tempting error is dividing by the total repaid, R3 450, which gives about 13 percent — wrong, because the R450 was never charged on R3 450; the rate acted before the repayment existed. Then finish with two checks. State the period: 15 percent per year, since the interest accrued over one year. And verify forwards: 15 percent of R3 000 should rebuild the R450 — 0,15 times 3 000 is indeed 450. Backwards answer, forwards check: the same proving habit you use everywhere else in Finance.

@@ -1,0 +1,9 @@
+Hey, it's Bianca — atomic combinations feels like a topic made of vocabulary: Lewis diagrams, dative bonds, tetrahedral, electronegativity, delta this and delta that. Take heart, because behind the vocabulary sit exactly three pictures, and every question in the topic is one of them.
+
+Picture one: the energy valley. Atoms bond when sharing electrons lets their energy roll downhill. The settling distance at the valley floor is the bond length; the depth of the valley is the bond energy. Deeper valley, stronger bond, and whatever shortens a bond deepens the valley — that is why triple bonds are shorter and stronger than singles, and why big atoms make long, weak bonds.
+
+Picture two: the balloons. Electron pairs around a central atom shove each other as far apart as they can. Count ALL the pairs from your Lewis diagram — bonding pairs and lone pairs — spread them out, and then name only the atoms you can see. Four pairs with no lone pairs is tetrahedral methane; one lone pair leaves the ammonia pyramid; two leave bent water. Lone pairs shove slightly harder, so the angles shrink down the sequence: 109,5 then about 107 then about 104,5. If you remember the balloons, you cannot draw a wrong shape.
+
+Picture three: the tug-of-war. Every bond is a contest for the shared pair, and the data sheet gives each atom's pulling score. Equal scores, fair sharing, non-polar. Different scores, unfair sharing — the stronger atom goes delta minus. A gap of around 2 or more, and it is not sharing anymore, it is taking: ionic. Then one final check for the whole molecule: does the SHAPE cancel the pulls? Straight carbon dioxide cancels and is non-polar; bent water does not cancel, and is polar. Bonds first, shape second, always both.
+
+Valley, balloons, tug-of-war. Three pictures, and the vocabulary is just their names. You've got this!

@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Idea of a Limit",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Substituting x = 3 into (x² − 9)/(x − 3) gives:",
+          "options": [
+            "6",
+            "0/0, which is undefined",
+            "0",
+            "9"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The limit of (x² − 9)/(x − 3) as x approaches 3 is:",
+          "options": [
+            "6",
+            "3",
+            "0",
+            "It does not exist"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The limit of (x² − 4)/(x − 2) as x approaches 2 is:",
+          "options": [
+            "0",
+            "2",
+            "4",
+            "Undefined"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The graph of (x² − 9)/(x − 3) is:",
+          "options": [
+            "A parabola through the origin",
+            "A hyperbola with asymptote x = 3",
+            "The line y = x − 3",
+            "The line y = x + 3 with a hole at (3; 6)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Average Gradient and the Shrinking Interval",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "On f(x) = x², the average gradient between x = 1 and x = 3 is:",
+          "options": [
+            "2",
+            "8",
+            "4",
+            "3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "As the interval from x = 1 shrinks, the average gradients 3; 2,5; 2,1; 2,01 approach:",
+          "options": [
+            "2",
+            "0",
+            "1",
+            "2,5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "A secant becomes a tangent when:",
+          "options": [
+            "The curve is a straight line",
+            "The second point slides into the first — the limiting position",
+            "The two points are far apart",
+            "The gradient is zero"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The gradient of a curve at a point is defined as:",
+          "options": [
+            "The average gradient over the whole curve",
+            "The y value at that point",
+            "Rise over run between the intercepts",
+            "The gradient of the tangent at that point"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Differentiation from First Principles",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The first-principles definition of the derivative is the limit as h approaches 0 of:",
+          "options": [
+            "[f(x + h) + f(x)] ÷ h",
+            "[f(x + h) − f(x)] ÷ h",
+            "f(x + h) − f(x)",
+            "f(x) ÷ h"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For f(x) = x², the difference f(x + h) − f(x) simplifies to:",
+          "options": [
+            "h²",
+            "2xh",
+            "2xh + h²",
+            "x² + h²"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "From first principles, the derivative of f(x) = x² is:",
+          "options": [
+            "2x",
+            "x",
+            "2x + h",
+            "x²/2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "From first principles, the derivative of a constant function f(x) = c is:",
+          "options": [
+            "c",
+            "1",
+            "x",
+            "0"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "First Principles on a x Squared and One Over x, and the Notation",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "From first principles, the derivative of f(x) = 3x² is:",
+          "options": [
+            "3x",
+            "6x",
+            "9x",
+            "6x + 3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "In differentiating f(x) = ax² + b from first principles, the constant b:",
+          "options": [
+            "Multiplies the answer",
+            "Becomes bx",
+            "Cancels in the subtraction and vanishes",
+            "Makes the limit undefined"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "From first principles, the derivative of f(x) = 1/x is:",
+          "options": [
+            "−1/x²",
+            "1/x²",
+            "−1/x",
+            "ln x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which list contains ONLY notations for the derivative of y = f(x)?",
+          "options": [
+            "f′(x); y²; dx",
+            "dy/dx; f(x); Σy",
+            "f′(x); √y; D_x",
+            "f′(x); dy/dx; D_x[y]"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Pothole in the Graph",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The limit of a function at a pothole is:",
+          "options": [
+            "The value the neighbouring outputs point at",
+            "Always zero",
+            "The value of the function at the hole",
+            "Undefined whenever the function is"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Getting 0/0 from substitution signals that you should:",
+          "options": [
+            "Conclude the limit is zero",
+            "Conclude the limit does not exist",
+            "Factorise, cancel the common factor, and substitute again",
+            "Multiply top and bottom by x"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Near the hole at x = 3, cancelling (x − 3) is legal because:",
+          "options": [
+            "Zero divided by zero is one",
+            "Near 3, x − 3 is a small non-zero number",
+            "The function is continuous there",
+            "Limits ignore the denominator"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "If substituting the approach value gives an ordinary number, that number is:",
+          "options": [
+            "Only an estimate of the limit",
+            "The average gradient",
+            "Meaningless without factorising",
+            "The limit itself"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Speedometer Question",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "160 km in 2 hours is an average speed of 80 km/h. The speedometer at one moment:",
+          "options": [
+            "Must read 80",
+            "Must read above 80",
+            "May read something different — average and instantaneous differ",
+            "Reads zero"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Instantaneous speed is defined as:",
+          "options": [
+            "The limit of average speeds as the time interval shrinks to nothing",
+            "Distance divided by total time",
+            "The longest average speed",
+            "The speed at the end of the trip"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "On a curve, the object that pivots into the tangent is:",
+          "options": [
+            "The asymptote",
+            "The axis of symmetry",
+            "The normal",
+            "The secant through two points"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "On y = x² at x = 1, the shrinking-interval averages settle on:",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "2,5"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Recipe Called First Principles",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The four steps of the recipe, in order, are:",
+          "options": [
+            "Write f(x + h); subtract f(x); divide by h and cancel; let h be zero",
+            "Divide by h; subtract; expand; substitute",
+            "Let h be zero; expand; subtract; divide",
+            "Factorise; substitute; expand; cancel"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "If the h refuses to cancel in step three:",
+          "options": [
+            "The function has no derivative",
+            "The answer is zero",
+            "There is an algebra error earlier in the working",
+            "You must divide by h²"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The derivative 2x of f(x) = x² is best described as:",
+          "options": [
+            "The gradient at x = 2 only",
+            "The y-intercept of the parabola",
+            "A number, the same at every point",
+            "A formula giving the gradient at every point at once"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The derivative of the straight line f(x) = ax + b from the recipe is:",
+          "options": [
+            "b",
+            "a",
+            "ax",
+            "0"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Avogadro's law and explain, using the emptiness of gases, why one mole of any gas occupies 22,4 dm³ at STP regardless of its molar mass.",
+      "expected_answer": "Equal volumes of gases at the same temperature and pressure contain equal numbers of molecules. A gas is almost entirely empty space, so the volume is set by the spacing between molecules — fixed by temperature and pressure — not by molecular size or mass. At STP (0 °C / 273 K and 101,3 kPa) that spacing gives 22,4 dm³ per mole for every gas, whether hydrogen at 2 g/mol or CO₂ at 44 g/mol."
+    },
+    {
+      "id": "cc2",
+      "question": "Walk through the 10 g CaCO₃ + excess HCl problem, explaining the role of the word 'excess' and where the 22,4 enters the calculation.",
+      "expected_answer": "Excess means more than enough acid, so all the CaCO₃ reacts and the calculation is based on it. Legs: 10 g ÷ 100 g/mol = 0,1 mol CaCO₃; ratio 1 : 1 gives 0,1 mol CO₂; V = n × Vm = 0,1 × 22,4 = 2,24 dm³ at STP. The 22,4 enters only at the last leg, converting the product's moles to volume; by mass instead it would be 0,1 × 44 = 4,4 g."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain why total gas volume is not conserved in N₂ + 3H₂ → 2NH₃ although mass is, and when the volume-ratio shortcut may be used.",
+      "expected_answer": "Four reactant molecules become two product molecules; since equal counts at shared conditions fill equal volumes, 40 dm³ shrinks to 20 dm³ while the 34 g of mass balances exactly — volume follows molecule count, mass follows atoms. The shortcut (coefficients read as volumes) may be used only when all the substances compared are gases at the same temperature and pressure — not necessarily STP, since the shared crate size cancels from the ratio."
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Spotting the Constant Difference",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The constant difference of the sequence 5; 8; 11; 14 is:",
+          "options": [
+            "5",
+            "3",
+            "8",
+            "2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "For the sequence 20; 17; 14 the constant difference d is:",
+          "options": [
+            "3",
+            "17",
+            "$-3$, computed as term after minus term before",
+            "$-20$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why is 2; 4; 8 NOT a linear pattern?",
+          "options": [
+            "Its gaps are 2 then 4 — not constant; it multiplies instead of adding",
+            "Because it starts at 2",
+            "Because it only has three terms",
+            "It is linear, with d = 2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "How many gap-checks does a four-term sequence need before you may declare it linear?",
+          "options": [
+            "One",
+            "Two",
+            "Four",
+            "Three — every gap must agree"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Building the General Term",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The general term of 5; 8; 11; 14 is:",
+          "options": [
+            "$T_n = 5n + 3$",
+            "$T_n = 3n + 5$",
+            "$T_n = 3n + 2$",
+            "$T_n = 2n + 3$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In $T_n = dn + c$, the correction c equals:",
+          "options": [
+            "$T_1 - d$",
+            "$T_1 + d$",
+            "$d - T_1$",
+            "$T_1$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The general term of the falling pattern 20; 17; 14 is:",
+          "options": [
+            "$T_n = 3n + 17$",
+            "$T_n = -3n + 20$",
+            "$T_n = -3n + 23$",
+            "$T_n = 20n - 3$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Why is this topic called LINEAR patterns?",
+          "options": [
+            "Because the terms are written in a line",
+            "Because every term is positive",
+            "Because the differences form a pattern of their own",
+            "Plotting position against term value gives points on a straight line with gradient d"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Forwards to Term Fifty, Backwards to Position n",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "For $T_n = 3n + 2$, the fiftieth term is:",
+          "options": [
+            "$150$",
+            "$152$",
+            "$155$",
+            "$148$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Which term of the sequence equals 92? Solving $3n + 2 = 92$ gives:",
+          "options": [
+            "$n = 92$",
+            "$n = 28$",
+            "$n = 30$ — the thirtieth term",
+            "$n = 32$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Testing whether 100 is a term: $3n + 2 = 100$ gives $n = \\frac{98}{3}$. The conclusion is:",
+          "options": [
+            "100 is not a term, because n is not a natural number",
+            "100 is the 33rd term",
+            "The algebra went wrong somewhere",
+            "100 is a term between positions 32 and 33"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A backwards question ('which term equals ...?') is solved by:",
+          "options": [
+            "Substituting the position into $T_n$",
+            "Listing terms until the value appears",
+            "Doubling the forward answer",
+            "Setting $T_n$ equal to the given value and solving the linear equation for n"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Patterns in Disguise — Matchsticks, Tables and Tariffs",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Matchstick squares in a row use 4; 7; 10 matches. The general term is:",
+          "options": [
+            "$T_n = 4n$",
+            "$T_n = 3n + 1$",
+            "$T_n = 4n - 1$",
+            "$T_n = 3n + 4$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Why does each new square add only 3 matches instead of 4?",
+          "options": [
+            "The figures get smaller",
+            "Matches are counted in pairs",
+            "It shares one wall with its neighbour",
+            "The first square used one match too many"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Square tables seat 4; 6; 8 as they are pushed together ($T_n = 2n + 2$). How many tables seat 40 guests?",
+          "options": [
+            "19",
+            "20",
+            "18",
+            "21"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "A driver charges R30 flat plus R12 per kilometre. The cost pattern for n kilometres is:",
+          "options": [
+            "$30n + 12$",
+            "$42n$",
+            "$12n - 30$",
+            "$12n + 30$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Taxi Fare That Climbs in Equal Steps",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Zone fares are R12; R19; R26. The 'heartbeat' (constant difference) is:",
+          "options": [
+            "R12",
+            "R7",
+            "R5",
+            "R6"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "If a fourth zone cost R35, what would that mean?",
+          "options": [
+            "The pattern continues perfectly",
+            "d would become negative",
+            "The gap would be 9, breaking the constant difference — no linear tools apply",
+            "The first term changes"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A data bundle drains by the same amount each day. Its daily-balance pattern has:",
+          "options": [
+            "A negative constant difference — linear, falling",
+            "No difference",
+            "A positive constant difference",
+            "A changing difference"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Times Table Wearing a Jacket",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Fares 12; 19; 26 climb by 7. The 'jacket' on the seven times table is:",
+          "options": [
+            "7",
+            "12",
+            "19",
+            "5, since $12 - 7 = 5$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The fare formula is $7n + 5$. A fifteen-zone trip costs:",
+          "options": [
+            "R105",
+            "R110",
+            "R115",
+            "R100"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A passenger paid R61. Solving $7n + 5 = 61$ gives the number of zones as:",
+          "options": [
+            "9",
+            "7",
+            "8",
+            "$8{,}7$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Before trusting a newly built formula you should:",
+          "options": [
+            "Test it against a term you already know",
+            "Round its coefficients",
+            "Rebuild it a second time",
+            "Substitute n = 0"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Is Ninety on the Price List?",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Could a trip cost exactly R90? $7n + 5 = 90$ gives $n = \\frac{85}{7}$. Verdict:",
+          "options": [
+            "Yes — the twelfth trip costs R90",
+            "Yes — round n to 12",
+            "The equation was set up wrongly",
+            "No — n is not a natural number, so 90 is not a term"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "R61 gave $n = 8$ exactly. That whole number means:",
+          "options": [
+            "61 IS a term — the eighth one",
+            "61 is not a term",
+            "The pattern must be re-checked",
+            "d must equal 8"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Step one of the closing checklist for any pattern question is:",
+          "options": [
+            "Write $T_n = dn + c$ immediately",
+            "Extract at least three terms and check every gap",
+            "Substitute n = 50",
+            "Draw the graph"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A membership question ('is 90 a term?') is answered by:",
+          "options": [
+            "Substitution of n = 90",
+            "Listing the first ninety terms",
+            "Solving for n, then judging whether n is a natural number, and stating the reason",
+            "Checking whether 90 is divisible by d"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

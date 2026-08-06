@@ -1,0 +1,346 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Current — Charge on the Move",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Electric current is defined as:",
+          "options": [
+            "The energy carried by a circuit",
+            "The rate of flow of charge — I = Q ÷ Δt, in coulombs per second",
+            "The number of electrons stored in a battery",
+            "The force between two charges"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "30 C of charge passes through a bulb in 10 s. The current is:",
+          "options": [
+            "300 A",
+            "0,33 A",
+            "3 A — I = 30 ÷ 10",
+            "10 A"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A charger delivers 0,5 A for 2 minutes. The charge moved is:",
+          "options": [
+            "1 C",
+            "10 C",
+            "240 C",
+            "60 C — Q = I × Δt = 0,5 × 120, after converting minutes to seconds"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Conventional current is taken to flow:",
+          "options": [
+            "From the positive terminal through the external circuit to the negative terminal — while electrons drift the opposite way",
+            "From negative to positive through the external circuit",
+            "In whichever direction the electrons move",
+            "Only inside the battery"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Potential Difference, Emf and the Volt",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Potential difference is defined as the:",
+          "options": [
+            "Charge stored per second",
+            "Current through a resistor",
+            "Work done per unit charge — V = W ÷ Q, in joules per coulomb",
+            "Resistance of a battery"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "24 J of work moves 8 C of charge through a resistor. The potential difference across it is:",
+          "options": [
+            "192 V",
+            "3 V — V = 24 ÷ 8",
+            "0,33 V",
+            "16 V"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "A 12 V battery pushes 5 C of charge around a circuit. The energy transferred is:",
+          "options": [
+            "2,4 J",
+            "17 J",
+            "5 J",
+            "60 J — W = V × Q = 12 × 5"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The emf of a battery is the voltmeter reading across its terminals when:",
+          "options": [
+            "No current flows — the open-circuit reading; under load the terminal pd is slightly less, because of internal resistance",
+            "The maximum current flows",
+            "The battery is flat",
+            "The battery is connected to a motor"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Ammeters and Voltmeters — Reading the Circuit",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "An ammeter is connected:",
+          "options": [
+            "In parallel, across the battery",
+            "In parallel, across the bulb",
+            "Anywhere convenient",
+            "In series, so that the charge it counts actually passes through it"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "An ideal ammeter has:",
+          "options": [
+            "Very high resistance",
+            "Very low resistance — so that inserting it barely changes the current it measures",
+            "Exactly one ohm of resistance",
+            "No need for any connection rules"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "A voltmeter is connected in parallel across a component because it:",
+          "options": [
+            "Needs the full current through itself",
+            "Must heat up to work",
+            "Compares the energy per coulomb on the two sides of the component — and its very high resistance keeps it from stealing current",
+            "Is cheaper to wire that way"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Wiring an ammeter in parallel across a battery is dangerous because its near-zero resistance:",
+          "options": [
+            "Invites a huge current through the meter — a short circuit",
+            "Blocks all current in the circuit",
+            "Reverses the current direction",
+            "Doubles the battery's emf"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Resistance — the Friction of the Wire",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Microscopically, resistance arises because moving electrons:",
+          "options": [
+            "Repel each other out of the wire",
+            "Are too heavy to move quickly",
+            "Get absorbed by the battery",
+            "Repeatedly collide with the vibrating ions of the metal lattice, transferring energy that appears as heat"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Doubling the length of a wire, everything else unchanged:",
+          "options": [
+            "Halves its resistance",
+            "Doubles its resistance — more lattice to cross means more collisions",
+            "Leaves the resistance unchanged",
+            "Doubles the current automatically"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Making a wire thicker:",
+          "options": [
+            "Increases its resistance",
+            "Increases its temperature",
+            "Decreases its resistance — a larger cross-sectional area offers more lanes for the flow",
+            "Has no effect on resistance"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "As a metallic conductor heats up, its resistance:",
+          "options": [
+            "Increases — hotter ions vibrate more violently, so electrons collide more often",
+            "Decreases",
+            "Stays exactly the same",
+            "Drops to zero"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Water Pump on the Roof",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the water-feature picture, the battery is the pump because it:",
+          "options": [
+            "Consumes the water",
+            "Gives every litre — every coulomb — a parcel of energy before sending it around",
+            "Makes the water flow downhill",
+            "Stores the water permanently"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "A battery goes flat because:",
+          "options": [
+            "Its chemical energy is used up — the charge itself is never consumed",
+            "All its charge has been used up",
+            "The electrons in it wear out",
+            "The current leaks out of the wires"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A 9 V battery reads 8,5 V across its terminals while driving a motor. This shows:",
+          "options": [
+            "The battery is broken",
+            "The voltmeter is faulty",
+            "The motor has stolen 0,5 V of charge",
+            "Terminal pd under load is less than the emf — some energy is spent inside the battery itself"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Counting Heads at the Gate",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the stadium picture, current corresponds to:",
+          "options": [
+            "The number of supporters inside the stadium",
+            "How fast one supporter walks",
+            "The number of supporters passing through the gate every second",
+            "The price of each ticket"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The current on the far side of a bulb, compared with the near side, is:",
+          "options": [
+            "The same — charge is not used up; the bulb takes only the energy the charge carries",
+            "Smaller, because the bulb consumes current",
+            "Larger, because the bulb pushes it on",
+            "Zero"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "In a metal wire, the particles that actually drift along are:",
+          "options": [
+            "Positive ions moving from positive to negative",
+            "Electrons, drifting from negative to positive — opposite to the conventional current arrow",
+            "Protons moving from negative to positive",
+            "Neutrons"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Narrow Corridor",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The corridor picture says a wire's resistance is highest when the wire is:",
+          "options": [
+            "Short, thick and cool",
+            "Short, thin and cool",
+            "Long, thick and hot",
+            "Long, thin and hot"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Kettle elements are made of nichrome rather than copper because nichrome:",
+          "options": [
+            "Resists strongly, deliberately converting electrical energy to heat",
+            "Carries current with almost no resistance",
+            "Is a magnetic material",
+            "Never gets hot"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Heating a wire raises its resistance because:",
+          "options": [
+            "The wire gets longer and thinner only",
+            "The electrons evaporate",
+            "The lattice ions vibrate harder, so the electrons collide with them more often",
+            "The current changes direction"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

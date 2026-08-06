@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Sketch-describe the graph of y = 2ˣ: state the key point it passes through, its asymptote, its domain and range, and explain how the graph of y = (½)ˣ relates to it.",
+      "expected_answer": "y = 2ˣ passes through (0; 1) because any base to the power 0 is 1, and it rises from left to right since each step right multiplies the output by 2. Its outputs are always positive, so the range is y > 0, while the domain is all real x. As x runs to the left the outputs halve repeatedly, shrinking towards zero without reaching it, so the x-axis, y = 0, is a horizontal asymptote. The graph of y = (½)ˣ is the same curve falling instead of rising — it is the reflection of y = 2ˣ in the y-axis, because (½)ˣ equals 2 to the power −x. Both graphs share the point (0; 1), the asymptote y = 0, the domain of all real x and the range y > 0."
+    },
+    {
+      "id": "cc2",
+      "question": "State the definition of a logarithm, use it to evaluate log₂ 8, log₂ 1 and log₂ 0,125, and explain why log₂ of a negative number does not exist.",
+      "expected_answer": "The definition: y = log_b x means exactly x = bʸ, where b > 0 and b ≠ 1 — a logarithm is the exponent to which the base must be raised to produce x. log₂ 8 asks 2 to the what gives 8; since 2³ = 8, the answer is 3. log₂ 1 asks 2 to the what gives 1; since 2⁰ = 1, the answer is 0, and the log of 1 is 0 in every base. log₂ 0,125 asks 2 to the what gives one eighth; since 2⁻³ = 0,125, the answer is −3, showing logs of fractions between 0 and 1 are negative. log₂ of a negative number does not exist because 2 raised to any exponent is positive — repeated doubling or halving of a positive number can never produce zero or a negative — so the log's domain is strictly x > 0."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve 5 · 2ˣ = 80 and 3ˣ = 20 (correct to two decimals), showing the method for each, and explain the relationship between y = 3ˣ and y = log₃ x.",
+      "expected_answer": "For 5 · 2ˣ = 80, first isolate the power: 2ˣ = 16. Since 16 is 2⁴, matching exponents gives x = 4, with no calculator needed. For 3ˣ = 20 no common base exists, so the definition of the log gives the exact answer x = log₃ 20, computed by change of base as log 20 divided by log 3, which is 2,73 correct to two decimals. The size check confirms it: 3² = 9 and 3³ = 27, and 20 lies between them, so x had to lie between 2 and 3. y = log₃ x is the inverse of y = 3ˣ: swapping x and y in y = 3ˣ gives x = 3ʸ, and rewriting by the log definition gives y = log₃ x. Their graphs are reflections of each other in the line y = x, with domain and range traded."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "4 g of hydrogen and 40 g of oxygen react according to 2H₂ + O₂ → 2H₂O. Identify the limiting reagent with a ratio test, calculate the mass of water formed and the mass of the excess reactant left over, and verify your answer with conservation of mass.",
+      "expected_answer": "Convert both to moles: hydrogen n = 4 ÷ 2 = 2 mol; oxygen n = 40 ÷ 32 = 1,25 mol. Ratio test: the equation needs 1 mol of oxygen for every 2 mol of hydrogen, so 2 mol of hydrogen demands 1 mol of oxygen; 1,25 mol is available, which is more than enough, so hydrogen is the limiting reagent and oxygen is in excess. Water formed from the limiting reagent: hydrogen to water is 2 : 2, so 2 mol of water forms, with mass 2 × 18 = 36 g. Oxygen left over: 1,25 − 1 = 0,25 mol, with mass 0,25 × 32 = 8 g. Conservation check: reactants in were 4 + 40 = 44 g; out are 36 g of water plus 8 g of unreacted oxygen, also 44 g. The smaller mole count (oxygen) was not the limiting reagent — only the ratio test decides."
+    },
+    {
+      "id": "cc2",
+      "question": "A 10 g sample of crushed seashell reacts with excess hydrochloric acid: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. The carbon dioxide collected is 1,792 dm³ at STP. Calculate the percentage purity of the calcium carbonate, and explain why the acid must be in excess.",
+      "expected_answer": "Moles of gas: n = V ÷ Vₘ = 1,792 ÷ 22,4 = 0,08 mol of CO₂. The mole ratio of CaCO₃ to CO₂ is 1 : 1, so the sample contained 0,08 mol of calcium carbonate. Mass: 0,08 × 100 = 8 g. Percentage purity = mass of pure substance ÷ mass of sample × 100 = 8 ÷ 10 × 100 = 80 %. The acid must be in excess so that every scrap of genuine calcium carbonate reacts and is counted through the gas it releases; if the acid ran out first, some carbonate would remain unreacted and the calculated purity would be falsely low. The impurities do not react with the acid, which is why they never enter the calculation."
+    },
+    {
+      "id": "cc3",
+      "question": "In a car airbag, sodium azide decomposes according to 2NaN₃ → 2Na + 3N₂. Calculate the volume of nitrogen gas at STP produced by 130 g of sodium azide, and explain what makes this reaction suitable for an airbag and how it relates to what a chemist calls an explosion.",
+      "expected_answer": "Molar mass of NaN₃: 23 + (3 × 14) = 65 g·mol⁻¹, so n = 130 ÷ 65 = 2 mol of azide. The ratio of azide to nitrogen is 2 : 3, so 2 mol of azide produces 3 mol of nitrogen. Volume at STP: 3 × 22,4 = 67,2 dm³. The reaction suits an airbag because it is extremely fast, it converts a small solid pellet into a very large volume of gas, and the gas produced is nitrogen, which is inert — neither flammable nor toxic. An explosion, to a chemist, is exactly this: the violent, rapid production of a large volume of gas from a small volume of solid or liquid. The airbag performs the same chemistry as an explosive but catches the expanding gas in a bag to cushion the occupant."
+    }
+  ]
+}

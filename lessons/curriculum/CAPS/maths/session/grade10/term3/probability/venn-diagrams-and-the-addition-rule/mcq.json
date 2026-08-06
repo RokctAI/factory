@@ -1,0 +1,346 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Two Events in One Picture",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "When filling a two-event Venn diagram, the region to fill FIRST is:",
+          "options": [
+            "The 'neither' region outside the circles",
+            "The overlap — because each event's total already includes it",
+            "The larger circle",
+            "Any region; order does not matter"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "In the survey (40 learners; 22 soccer, 15 chess, 9 both), the soccer-ONLY region holds:",
+          "options": [
+            "$22$ learners",
+            "$9$ learners",
+            "$22 - 9 = 13$ learners",
+            "$22 - 15 = 7$ learners"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The 'neither' region of that diagram holds:",
+          "options": [
+            "$40 - (13 + 9 + 6) = 12$ learners",
+            "$40 - 22 = 18$ learners",
+            "$0$ learners",
+            "$40 - 37 = 3$ learners"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The final check on any completed Venn diagram is that:",
+          "options": [
+            "The two circles are the same size",
+            "The overlap is the smallest number",
+            "Each circle totals the sample space",
+            "All four regions together total the sample space — here 13 + 9 + 6 + 12 = 40"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Addition Rule",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The addition rule states:",
+          "options": [
+            "$P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$",
+            "$P(A \\text{ or } B) = P(A) + P(B)$ always",
+            "$P(A \\text{ or } B) = P(A) \\times P(B)$",
+            "$P(A \\text{ or } B) = 1 - P(A) - P(B)$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For the survey, $P(\\text{soccer or chess})$ equals:",
+          "options": [
+            "$\\dfrac{37}{40}$",
+            "$\\dfrac{22}{40} + \\dfrac{15}{40} - \\dfrac{9}{40} = \\dfrac{28}{40} = \\dfrac{7}{10}$",
+            "$\\dfrac{9}{40}$",
+            "$\\dfrac{22}{40}$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The subtracted term in the addition rule removes:",
+          "options": [
+            "The learners who play neither game",
+            "The smaller event",
+            "The overlap, which the addition of the two whole events counted twice",
+            "Rounding error"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Given $P(A) = 0{,}45$, $P(B) = 0{,}3$ and $P(A \\text{ or } B) = 0{,}6$, then $P(A \\text{ and } B)$ is:",
+          "options": [
+            "$0{,}75$",
+            "$0{,}3$",
+            "$0{,}6$",
+            "$0{,}45 + 0{,}3 - 0{,}6 = 0{,}15$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Mutually Exclusive Events",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Two events are mutually exclusive when:",
+          "options": [
+            "They have the same probability",
+            "One of them is certain",
+            "They cover the whole sample space",
+            "They share no outcomes — they cannot both happen on the same trial"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "On a Venn diagram, mutually exclusive events appear as:",
+          "options": [
+            "Two circles with no overlapping region",
+            "One circle inside the other",
+            "Two identical circles",
+            "A single circle"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "On one die roll, A = 'less than 3' and B = 'at least 5'. $P(A \\text{ or } B)$ is:",
+          "options": [
+            "$\\dfrac{2}{6} \\times \\dfrac{2}{6} = \\dfrac{1}{9}$",
+            "$\\dfrac{4}{6} - \\dfrac{2}{6} = \\dfrac{1}{3}$",
+            "$\\dfrac{2}{6} + \\dfrac{2}{6} = \\dfrac{2}{3}$, since the events share no outcome",
+            "$1$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Dropping the subtraction for events that DO overlap is dangerous because the answer:",
+          "options": [
+            "Is inflated by the double-counted overlap — and can even exceed 1",
+            "Becomes negative",
+            "Becomes exactly zero",
+            "Loses its units"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Complementary Events and Full Machinery Problems",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Complementary events are events that are:",
+          "options": [
+            "Mutually exclusive only",
+            "Mutually exclusive AND exhaustive — no overlap, and together they cover the whole sample space",
+            "Equally likely",
+            "Impossible together and both rare"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "'Less than 3' and 'at least 5' on a die are mutually exclusive but NOT complementary because:",
+          "options": [
+            "Their probabilities differ",
+            "They overlap on the number 4",
+            "Dice cannot have complementary events",
+            "The outcomes 3 and 4 belong to neither event, so the pair fails to cover the sample space"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "For the survey, $P(\\text{neither})$ computed via the complement of 'soccer or chess' is:",
+          "options": [
+            "$1 - \\dfrac{7}{10} = \\dfrac{3}{10}$, matching the 12 out of 40 in the outside region",
+            "$\\dfrac{7}{10}$",
+            "$1 - \\dfrac{9}{40}$",
+            "$\\dfrac{12}{28}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The probability that a surveyed learner plays EXACTLY ONE of the two games is:",
+          "options": [
+            "$\\dfrac{28}{40}$",
+            "$\\dfrac{9}{40}$",
+            "$\\dfrac{13 + 6}{40} = \\dfrac{19}{40}$ — the overlap is excluded",
+            "$\\dfrac{22}{40}$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Hoops on the Playground",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the playground picture, a learner who plays both games stands:",
+          "options": [
+            "With one foot in each separate hoop",
+            "In the lens where the two hoops overlap — inside both at once",
+            "Outside the rectangle",
+            "In whichever hoop they joined first"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The both-players walk to the overlap FIRST because:",
+          "options": [
+            "The overlap is the biggest region",
+            "They are the best players",
+            "The outside grass must be filled last",
+            "Each club's total already includes them, so the 'only' regions can only be found by subtracting them out"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A learner standing inside the rectangle but outside both hoops represents:",
+          "options": [
+            "An error in the diagram",
+            "A learner in both clubs",
+            "A class member who plays neither game — still part of the sample space",
+            "Someone not in the class"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Why We Subtract the Overlap",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Adding the clipboards (22 + 15 = 37) disagrees with the 28 learners standing in hoops because:",
+          "options": [
+            "The nine both-players are written on both clipboards, so their bodies were counted twice",
+            "Some learners left the playground",
+            "The clipboards were miscounted",
+            "Chess players refuse to stand in hoops"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The one-sentence version of the addition rule is:",
+          "options": [
+            "Add the clubs, then double the shared members",
+            "Subtract the clubs from the class",
+            "Add the two clubs, then subtract the shared members once, because the addition greeted them twice",
+            "Multiply the clubs and divide by the class"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A computed 'P(A or B)' greater than 1 is a warning that:",
+          "options": [
+            "The sample space is too small",
+            "The events were complementary",
+            "Probabilities should have been multiplied",
+            "An overlap was double-counted — the subtraction was skipped on overlapping events"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Never Together, and Covering Everything",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Hoops pulled completely apart, with some learners still on the outside grass, model events that are:",
+          "options": [
+            "Complementary",
+            "Mutually exclusive but not complementary",
+            "Overlapping",
+            "Exhaustive but not exclusive"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The 'outside-grass test' says events are COMPLEMENTARY only when:",
+          "options": [
+            "The grass region is the largest",
+            "Both hoops are the same size",
+            "Nobody stands outside and nobody stands in an overlap — a perfect two-way split of everyone",
+            "At least one learner stands outside"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "With $P(A) = 0{,}4$ and $P(B) = 0{,}35$ mutually exclusive, $P(\\text{neither } A \\text{ nor } B)$ is:",
+          "options": [
+            "$1 - (0{,}4 + 0{,}35) = 0{,}25$",
+            "$0{,}75$",
+            "$0{,}4 \\times 0{,}35 = 0{,}14$",
+            "$0{,}35$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

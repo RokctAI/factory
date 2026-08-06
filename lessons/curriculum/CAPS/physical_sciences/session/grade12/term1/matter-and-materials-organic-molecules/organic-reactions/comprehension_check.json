@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write and balance the equation for the complete combustion of propane in excess oxygen, stating the balancing order used. Then give the reactants, catalyst, conditions and products for the esterification that forms ethyl ethanoate, and state the naming rule for esters.",
+      "expected_answer": "Complete combustion: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. Balancing order: carbons first (3 CO₂), hydrogens second (4 H₂O), oxygens last (3×2 + 4 = 10 oxygen atoms, so 5 O₂). In excess oxygen the only products are carbon dioxide and water, and the large energy release is why alkanes are used as fuels. Esterification: ethanoic acid + ethanol ⇌ ethyl ethanoate + water, with concentrated sulfuric acid as catalyst and gentle heating. The acid loses the OH of its carboxyl group and the alcohol loses the H of its hydroxyl group; together these form the water molecule. Naming rule: the alcohol contributes the first part of the name ending in -yl, the acid contributes the second part ending in -oate (ethanol + ethanoic acid → ethyl ethanoate; methanol + butanoic acid → methyl butanoate)."
+    },
+    {
+      "id": "cc2",
+      "question": "HBr is added to propene. Name the reaction type, describe what happens to the double bond, name the major and minor products, and state and apply the rule that determines the major product. Give also the laboratory test that distinguishes an alkene from an alkane.",
+      "expected_answer": "This is an addition reaction (hydrohalogenation). One bond of the carbon-carbon double bond opens and the H and Br add to the two carbons that shared it, so the unsaturated alkene becomes a saturated haloalkane — two reactants become one product. The rule for the major product: the incoming hydrogen atom attaches to the double-bond carbon that already carries the greater number of hydrogen atoms. In propene, carbon 1 carries two hydrogens and carbon 2 carries one; the H therefore joins carbon 1 and the Br joins carbon 2, so the major product is 2-bromopropane and the minor product is 1-bromopropane. Test for unsaturation: add bromine water — an alkene decolourises the red-brown bromine rapidly (addition), while an alkane decolourises it only very slowly and only in light (substitution)."
+    },
+    {
+      "id": "cc3",
+      "question": "2-bromobutane reacts with sodium hydroxide. Explain how the reaction conditions determine whether the product is butan-2-ol or but-2-ene, name the reaction type in each case, and state the rule that makes but-2-ene the major elimination product rather than but-1-ene.",
+      "expected_answer": "With DILUTE sodium hydroxide in aqueous solution under mild warming, substitution (hydrolysis) occurs: the OH⁻ replaces the Br in the same position, giving butan-2-ol (plus sodium bromide) — saturation is unchanged. With CONCENTRATED sodium hydroxide dissolved in ethanol at high temperature, elimination (dehydrohalogenation) occurs: the Br leaves carbon 2 and a hydrogen is removed from a neighbouring carbon, forming a carbon-carbon double bond — one molecule becomes an alkene plus the eliminated pieces. The major product rule: the hydrogen is removed from the neighbouring carbon bearing the FEWER hydrogen atoms. Carbon 3 (two hydrogens) loses its H rather than carbon 1 (three hydrogens), so the double bond forms between carbons 2 and 3, giving but-2-ene — the more substituted, more stable alkene — as the major product, with but-1-ene as the minor product. Summary of the condition passwords: dilute, aqueous, mild — substitution to the alcohol; concentrated, ethanolic, hot — elimination to the alkene."
+    }
+  ]
+}

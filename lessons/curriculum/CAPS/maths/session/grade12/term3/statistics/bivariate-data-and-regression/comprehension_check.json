@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define bivariate data, describe how a scatterplot is constructed, and name and explain the three judgements made when reading one, using the hours-studied and marks data as the example.",
+      "expected_answer": "Bivariate data is paired data: two measurements taken on the same individual and kept attached, such as each learner's hours studied paired with the mark achieved. A scatterplot places the explanatory variable — the suspected driver, hours studied — on the horizontal axis and the response variable — the mark — on the vertical axis, with one unjoined dot per individual. The three judgements are direction (the dots climb to the right, so the association is positive), form (the dots follow a straight-line lane rather than a curve, so it is linear) and strength (the dots are tightly packed along the lane, so it is strong). The plot is also scanned for outliers — a dot far from the lane, such as 6 hours paired with 30 percent, would need investigation before fitting any line."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what the least squares regression line minimises, state the line for the study data (ŷ = 46 + 4,57x), interpret a and b in context, and state the property involving the mean point.",
+      "expected_answer": "Each dot's residual is its vertical miss from a candidate line — actual y minus predicted y. The least squares line minimises the sum of the SQUARES of these residuals; squaring prevents positive and negative misses cancelling and punishes large misses most heavily. For the data, the calculator gives ŷ = 46 + 4,57x. The gradient b = 4,57 means each additional hour of study predicts a rise of about 4,57 percentage points in the mark; the intercept a = 46 is the predicted mark for zero hours of study, sensible here since zero lies just outside the observed range starting at 1 hour. The least squares line always passes through the mean point (x̄; ȳ) — here (3,5; 62) — which doubles as a check: 46 + 4,57 × 3,5 lands on 62."
+    },
+    {
+      "id": "cc3",
+      "question": "For the study data r = 0,997. Interpret this value, state the cautions attached to r, and explain — with the 4,5 hour and 15 hour predictions — the difference between interpolation and extrapolation.",
+      "expected_answer": "r = 0,997 is a very strong positive linear correlation: hours and marks rise together, with the dots hugging the line almost perfectly. Cautions: r measures linear association only, so a curved relationship can score near zero and the scatterplot must be inspected first; r is unitless and unchanged by unit conversion; and correlation never proves causation — strongly correlated variables may both be driven by a third factor, like ice cream sales and drownings both driven by summer. Predicting at 4,5 hours is interpolation, inside the observed range of 1 to 6 hours: ŷ = 46 + 4,57 × 4,5 ≈ 66,57, so about 67 percent, and trustworthy. Predicting at 15 hours is extrapolation: the arithmetic gives about 114,55 percent, which must be rejected — the line was only verified inside the data range, and a mark above 100 percent is impossible, so the prediction is invalid and saying so is the correct answer."
+    }
+  ]
+}

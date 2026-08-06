@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the boundary convention for class intervals, using a learner who travels exactly 20 minutes, and describe the check that confirms a frequency table is complete.",
+      "expected_answer": "Each interval includes its lower boundary and excludes its upper one, so exactly 20 minutes belongs to the 20-to-below-30 class, not 10-to-below-20 — every value gets exactly one home. The check: add all the frequencies (3 + 8 + 11 + 5 + 3 = 30) and confirm the total equals the number of raw data values; a mismatch means a value was dropped or double-counted."
+    },
+    {
+      "id": "cc2",
+      "question": "State two ways a histogram differs from a bar graph, and explain why the histogram's bars must touch.",
+      "expected_answer": "A histogram displays grouped continuous data on an unbroken measurement scale, with bars standing on their class intervals and touching; a bar graph displays separate categories with gaps between bars. The bars touch because the data is continuous — values flow without gaps (19,9 minutes runs into 20), so neighbouring classes share a boundary; gaps would falsely suggest missing values between classes."
+    },
+    {
+      "id": "cc3",
+      "question": "For the travel-time data (frequencies 3, 8, 11, 5, 3), give the modal class, median class and estimated mean, and write a one-sentence shape comment in context.",
+      "expected_answer": "Modal class: 20 to below 30 (tallest bar, frequency 11). Median class: cumulative counts 3, 11, 22 place the 15th and 16th values in 20 to below 30. Estimated mean: (15 + 120 + 275 + 175 + 135) ÷ 30 = 720 ÷ 30 = 24 minutes. Shape: the distribution is skewed to the right — most learners have short-to-moderate commutes while a small group travels much longer."
+    }
+  ]
+}

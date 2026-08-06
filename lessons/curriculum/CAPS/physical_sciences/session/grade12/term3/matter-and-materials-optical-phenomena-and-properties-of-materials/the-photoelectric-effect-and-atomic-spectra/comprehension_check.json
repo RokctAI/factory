@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the photoelectric effect, threshold frequency and work function, state the relationship between the last two, and explain why the photoelectric effect is regarded as evidence for the particle nature of light.",
+      "expected_answer": "The photoelectric effect is the process whereby electrons are ejected from a metal surface when light of suitable frequency shines on it. The threshold frequency f₀ is the minimum frequency of light that can eject electrons from a particular metal; the work function W₀ is the minimum energy needed to eject an electron from that metal's surface, and W₀ = hf₀. The effect supports the particle nature of light because the observations contradict the wave model: emission is instantaneous even in very dim light, no emission occurs below the threshold frequency no matter how intense the light, and the maximum kinetic energy of ejected electrons increases with frequency but is unaffected by intensity. These facts are explained only if light energy arrives in discrete packets (photons) of energy E = hf, with one photon absorbed by one electron — electrons cannot accumulate energy from several insufficient photons."
+    },
+    {
+      "id": "cc2",
+      "question": "Light of wavelength 500 nm falls on a caesium surface with work function 3,36 × 10⁻¹⁹ J. (h = 6,63 × 10⁻³⁴ J·s; c = 3 × 10⁸ m·s⁻¹.) Determine whether electrons are ejected, and if so calculate the maximum kinetic energy of the photoelectrons and the threshold frequency of caesium.",
+      "expected_answer": "Frequency: f = c ÷ λ = (3 × 10⁸) ÷ (500 × 10⁻⁹) = 6,0 × 10¹⁴ Hz. Photon energy: E = hf = 6,63 × 10⁻³⁴ × 6,0 × 10¹⁴ = 3,978 × 10⁻¹⁹ J. Since 3,978 × 10⁻¹⁹ J is greater than the work function 3,36 × 10⁻¹⁹ J, electrons are ejected. Maximum kinetic energy: Ek(max) = E − W₀ = 3,978 × 10⁻¹⁹ − 3,36 × 10⁻¹⁹ = 6,18 × 10⁻²⁰ J. Threshold frequency: f₀ = W₀ ÷ h = 3,36 × 10⁻¹⁹ ÷ 6,63 × 10⁻³⁴ = 5,07 × 10¹⁴ Hz; any light below this frequency ejects no electrons from caesium regardless of its intensity."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how atomic emission and absorption spectra are formed, why the lines of the two spectra for the same element coincide, and what the existence of line spectra reveals about energy levels in atoms.",
+      "expected_answer": "Electrons in an atom occupy only specific, fixed energy levels. An emission spectrum forms when electrons in an excited (hot) gas drop from higher to lower levels: each downward transition emits a photon whose energy equals the difference between the levels (E = hf = E₂ − E₁), producing bright, sharp lines at specific frequencies on a dark background. An absorption spectrum forms when white light (all frequencies) passes through a cool gas: the atoms absorb only those photons whose energies exactly match upward transitions between their levels, leaving dark lines in the otherwise continuous spectrum. The lines coincide because both spectra involve transitions between the same set of energy levels of that element — the same energy differences, hence the same frequencies, appear bright in emission and dark in absorption. The existence of sharp lines rather than a continuous band shows that atomic energy levels are quantised: electrons can only possess certain discrete energies, and each element's unique set of levels gives it a unique spectral fingerprint, which allows elements to be identified in stars."
+    }
+  ]
+}

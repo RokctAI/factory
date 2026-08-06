@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Use the kinetic model of gases to explain what pressure and temperature are at the molecular level, and explain why real gases deviate from ideal behaviour at high pressure and at low temperature.",
+      "expected_answer": "A gas consists of particles in continuous rapid random motion, far apart, with negligible forces between them and elastic collisions. Pressure is the combined effect of billions of molecular collisions with the container walls — each impact gives a tiny push, and the total rate of impacts over the wall area is the measured pressure. Temperature measures the average kinetic energy of the particles: heating makes the whole distribution of molecular speeds shift toward higher speeds. An ideal gas assumes the molecules have zero volume and no intermolecular forces. At high pressure the molecules are squeezed so close together that their own volume becomes significant compared with the space between them, breaking the first assumption. At low temperature the molecules move slowly enough for the weak attractive forces to act, breaking the second; pushed far enough the gas condenses to a liquid. Real gases behave most ideally at low pressure and high temperature, and the closest-to-ideal gases are helium and hydrogen."
+    },
+    {
+      "id": "cc2",
+      "question": "State Boyle's law with its conditions. A fixed amount of gas occupies 2 dm³ at 100 kPa; it is compressed to 0,5 dm³ at constant temperature. Calculate the new pressure, explain the result using molecular collisions, and describe the graph that proves the inverse proportionality from experimental data.",
+      "expected_answer": "Boyle's law: the pressure of a fixed amount of gas at constant temperature is inversely proportional to its volume, so pV is constant and p₁V₁ = p₂V₂. Substituting: 100 × 2 = p₂ × 0,5, so p₂ = 400 kPa. Molecular explanation: compressing the same number of molecules into a quarter of the space means each molecule reaches a wall four times as often, so the collision rate with the walls — the pressure — increases fourfold. Graphs: p against V is a falling hyperbola that never touches the axes; the proof of inverse proportionality is the graph of p against 1/V, which is a straight line through the origin; and pV plotted against p is a horizontal line showing the constant product."
+    },
+    {
+      "id": "cc3",
+      "question": "A gas occupies 3 dm³ at 27 °C and 100 kPa. Calculate its volume at 127 °C and 150 kPa using the general gas equation. Then use the ideal gas law to calculate the pressure exerted by 2 mol of gas at 300 K in a 50 dm³ vessel, stating the unit conversions required.",
+      "expected_answer": "Convert temperatures to kelvin first: 27 + 273 = 300 K and 127 + 273 = 400 K. General gas equation: p₁V₁/T₁ = p₂V₂/T₂, so (100 × 3)/300 = (150 × V₂)/400. The left side equals 1, so 150V₂ = 400 and V₂ = 2,67 dm³. For the ideal gas law pV = nRT with R = 8,31 J·K⁻¹·mol⁻¹, pressure must be in pascals, volume in cubic metres and temperature in kelvin, so 50 dm³ = 0,05 m³. Then p = nRT/V = (2 × 8,31 × 300)/0,05 = 4 986/0,05 = 99 720 Pa, which is about 99,7 kPa — close to atmospheric pressure, a sensible everyday value. The general gas equation compares one parcel of gas across two states; the ideal gas law connects a single state to the amount of gas in moles."
+    }
+  ]
+}

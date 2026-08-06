@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the three-leg journey of a stoichiometric calculation using the 50 g CaCO₃ problem, and why grams may never cross the equation directly.",
+      "expected_answer": "Leg one: grams to moles — 50 g ÷ 100 g/mol = 0,5 mol CaCO₃. Leg two: cross the equation with the mole ratio — 1 : 1, so 0,5 mol CaO. Leg three: moles back to grams — 0,5 × 56 = 28 g. Grams cannot cross directly because coefficients are a mole ratio, and equal mole counts of different substances have different masses (100 g vs 56 g per mole here)."
+    },
+    {
+      "id": "cc2",
+      "question": "Define theoretical yield, actual yield and percentage yield, and calculate the yield when 25,2 g of CaO is collected against a 28 g prediction.",
+      "expected_answer": "Theoretical yield is the maximum mass the balanced equation allows (28 g — a ceiling); actual yield is the mass really collected (25,2 g); percentage yield = actual ÷ theoretical × 100 = 25,2/28 × 100 = 90%. Yields fall short because of incomplete reaction, losses in transfer and side reactions; a yield above 100% signals a wet or contaminated product or inverted fraction, never an overachieving reaction."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain how conservation of mass provides a free check on the CaCO₃ decomposition even though the CO₂ escapes unweighed.",
+      "expected_answer": "The equation prices the escaped gas: 0,5 mol CO₂ × 44 g/mol = 22 g. Products total 28 + 22 = 50 g, exactly the reactant mass, because atoms are rearranged, never created or destroyed. If product masses in a decomposition don't add up to the starting mass, the error is in the arithmetic; in a sealed container the balance reading would not change at all."
+    }
+  ]
+}

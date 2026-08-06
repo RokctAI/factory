@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Starting from the definitions sinθ = y/r, cosθ = x/r and tanθ = y/x, derive both identities tanθ = sinθ/cosθ and sin²θ + cos²θ = 1, and state where the first one is undefined.",
+      "expected_answer": "For the quotient identity, divide sine by cosine: (y/r) ÷ (x/r) = y/x, which is exactly tanθ, so tanθ = sinθ/cosθ. This holds only where cosθ ≠ 0, i.e. tanθ is undefined at θ = 90° + k·180° for integer k, because those angles put the point on the y-axis where x = 0 and y/x would divide by zero. For the square identity, the point (x; y) at distance r from the origin satisfies Pythagoras: x² + y² = r². Dividing every term by r² gives x²/r² + y²/r² = 1, and since x/r = cosθ and y/r = sinθ, this reads cos²θ + sin²θ = 1. The square identity holds for every angle without exception because r is never zero."
+    },
+    {
+      "id": "cc2",
+      "question": "Given that sinθ = 3/5 and θ is obtuse, use a sketch — not a calculator — to find cosθ and tanθ, explaining how each sign is decided.",
+      "expected_answer": "Obtuse means 90° < θ < 180°, so the terminal arm lies in the second quadrant. Since sinθ = y/r = 3/5, take y = 3 and r = 5 (r is always positive). Pythagoras gives x² = r² − y² = 25 − 9 = 16, so x = 4 in size; but in the second quadrant x-coordinates are negative, so x = −4. Reading from the sketch: cosθ = x/r = −4/5 and tanθ = y/x = 3/(−4) = −3/4. The signs are decided purely by the quadrant: sine is positive there (y > 0) as given, while cosine and tangent are negative because x < 0. The sketch gives exact fractions with correct signs, which the calculator's inverse-sine route does not, since the calculator returns the acute reference angle instead of the obtuse one."
+    },
+    {
+      "id": "cc3",
+      "question": "Simplify [sin(180° + x) · cos(360° − x) · tan(−x)] ÷ [cos(90° − x) · sin(90° + x)] to a single ratio, showing the reduction of each factor.",
+      "expected_answer": "Reduce factor by factor. sin(180° + x) is third quadrant where sine is negative, so it equals −sin x. cos(360° − x) is fourth quadrant where cosine is positive, so it equals cos x. tan(−x) is fourth quadrant where tangent is negative, so it equals −tan x. The numerator is (−sin x)(cos x)(−tan x); the two minus signs cancel, giving sin x · cos x · tan x, and writing tan x as sin x/cos x cancels the cosine, leaving sin²x. In the denominator, the 90° angles swap the functions: cos(90° − x) = sin x, and sin(90° + x) = cos x (positive because 90° + x is second quadrant where sine is positive). So the denominator is sin x · cos x. Dividing: sin²x ÷ (sin x · cos x) = sin x/cos x = tan x."
+    }
+  ]
+}

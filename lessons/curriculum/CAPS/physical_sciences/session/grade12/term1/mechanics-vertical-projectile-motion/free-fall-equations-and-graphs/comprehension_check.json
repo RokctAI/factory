@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A ball is thrown vertically upward at 19,6 m·s⁻¹. Taking upward as positive, calculate the time to reach maximum height, the maximum height, and the velocity with which it returns to the thrower's hand. State the ball's acceleration at the highest point.",
+      "expected_answer": "Take upward as positive, so a = −9,8 m·s⁻². At the top vf = 0. Using vf = vi + at: 0 = 19,6 − 9,8t, so t = 2 s. Maximum height from vf² = vi² + 2aΔy: 0 = 19,6² − 2 × 9,8 × Δy, so Δy = 384,16 ÷ 19,6 = 19,6 m. By symmetry the downward trip mirrors the upward one: the ball returns to the hand after a further 2 s (total flight 4 s) moving at 19,6 m·s⁻¹ downward — the same speed it left with, opposite in direction. At the highest point the velocity is zero but the acceleration is still 9,8 m·s⁻² downward, because the gravitational force acts throughout the flight; the ball is momentarily at rest yet still accelerating."
+    },
+    {
+      "id": "cc2",
+      "question": "Sketch and describe the position-time, velocity-time and acceleration-time graphs for a ball thrown vertically upward and caught at the same height, taking upward as positive. Explain how the three graphs are connected through gradients.",
+      "expected_answer": "Position-time: a parabola starting at zero, rising with decreasing steepness to a maximum at half the flight time, then falling with increasing steepness back to zero; it shows height against time, not the ball's path. Velocity-time: a straight line starting at +19,6 (or the throwing speed), with constant gradient −9,8, crossing zero at the moment of maximum height and reaching the negative of the throwing speed at the catch. Acceleration-time: a horizontal line at −9,8 m·s⁻² for the whole flight. The connections: the gradient of the position-time graph at any instant equals the velocity at that instant — steep at first, zero at the top (horizontal tangent), steep and negative at the end — which forces the position graph to curve since the velocity changes continuously. The gradient of the velocity-time graph equals the acceleration; because that line is straight, the gradient is the constant −9,8, which is exactly the flat acceleration graph. The area between the velocity-time graph and the time axis gives displacement: two equal triangles, one positive and one negative, summing to zero for a ball caught at the throwing height."
+    },
+    {
+      "id": "cc3",
+      "question": "A ball is dropped, bounces twice, and is caught. With downward taken as positive, describe its velocity-time graph in detail, and explain why each straight segment has the same gradient while each bounce peak is smaller than the last.",
+      "expected_answer": "The graph starts at zero and rises as a straight line with gradient +9,8 as the falling ball speeds up, reaching its maximum positive value at the first floor strike. During the brief contact the graph jumps almost vertically from a positive value to a smaller negative value: the velocity reverses direction (the ball now moves upward, negative with this convention) and loses magnitude because kinetic energy is transferred to sound, heat and deformation in the bounce. The line then rises with the same gradient +9,8, crossing the time axis at the top of the bounce — where the ball is momentarily at rest in mid-air — and continuing positive as the ball falls again, producing a sawtooth of parallel straight segments with each tooth shorter than the previous one. The segments are parallel because between bounces the ball is a projectile: the only force acting is gravity, so the acceleration is always 9,8 m·s⁻² downward and every segment must have that same gradient. The peaks shrink because each bounce is inelastic — the ball leaves the floor slower than it arrived — so each successive flight starts with less speed and reaches a lower height."
+    }
+  ]
+}

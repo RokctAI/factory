@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate the variance and standard deviation of the dataset 4, 6, 7, 9, 14, showing all five steps, and explain why the deviations must be squared rather than simply averaged.",
+      "expected_answer": "Step one: the mean is (4 + 6 + 7 + 9 + 14) ÷ 5 = 40 ÷ 5 = 8. Step two: the deviations from the mean are −4, −2, −1, 1 and 6. These always sum to zero, because the mean is the balance point of the data — values below it exactly cancel values above — so averaging the signed deviations gives zero for every dataset and says nothing about spread. Step three: squaring kills the signs and weights large strays more heavily: 16, 4, 1, 1, 36. Step four: the variance is the average of the squares, 58 ÷ 5 = 11,6. Step five: the standard deviation is the square root, √11,6 ≈ 3,41. The root is taken because variance sits in squared units, which have no physical meaning; the standard deviation of 3,41 is back in the units of the data and reads as the typical distance of a value from the mean of 8."
+    },
+    {
+      "id": "cc2",
+      "question": "For the marks 44, 48, 50, 52, 53, 55, 56, 58, 60, 84, give the five number summary, state whether the data is skewed and justify with two different pieces of evidence.",
+      "expected_answer": "Sorted, the minimum is 44 and the maximum 84. The median of ten values is the average of the fifth and sixth: (53 + 55) ÷ 2 = 54. The lower quartile is the median of the bottom five values (44, 48, 50, 52, 53), which is 50; the upper quartile is the median of the top five (55, 56, 58, 60, 84), which is 58. The five number summary is 44; 50; 54; 58; 84. The data is positively skewed (skewed to the right). Evidence one: the mean is 560 ÷ 10 = 56, which exceeds the median of 54 — the mean chases the tail, and here it is dragged right by the extreme value 84. Evidence two: the box-and-whisker shows a short left whisker (50 − 44 = 6) against a very long right whisker (84 − 58 = 26), so the right tail stretches far further than the left."
+    },
+    {
+      "id": "cc3",
+      "question": "Apply the outlier rule to the mark 84, and explain what the outlier does to the mean and standard deviation, and which measures should therefore be reported.",
+      "expected_answer": "The quartiles are Q1 = 50 and Q3 = 58, so the IQR is 8 and 1,5 × IQR = 12. The fences are 50 − 12 = 38 and 58 + 12 = 70. Since 84 > 70, the upper fence, 84 is an outlier by rule, and the conclusion is written as that inequality. Its effect on the fragile measures is dramatic: with 84 included the mean is 56 and the standard deviation about 10,4; with it removed the mean of the remaining nine values drops to about 52,9 and the standard deviation collapses to about 4,7 — a single value more than doubled the apparent spread and lifted the centre, because squaring makes distant values dominate the sum. The median barely moves and the IQR not at all, since they only count positions. Therefore, with an outlier present, the robust pair — median and interquartile range — should be reported as the summary measures, with a stated reason: the mean and standard deviation would be distorted by the outlier. The value itself is investigated, not automatically deleted."
+    }
+  ]
+}

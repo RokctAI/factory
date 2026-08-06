@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve 2 sin x + 1,2 = 0 in general, explaining the roles of the calculator and the quadrant diagram, and why the minus sign must not be typed into the calculator.",
+      "expected_answer": "Isolate first: sin x = −0,6. The reference angle comes from the positive value: inverse sine of 0,6 gives 36,87°. The value is negative and sine is negative in the third and fourth quadrants, so the anchors are 180° + 36,87° = 216,87° and 360° − 36,87° = 323,13°. General solution: x = 216,87° + k·360° or x = 323,13° + k·360°, k an integer. The calculator's only job is to find the size of the reference angle from the positive value; the quadrants place it. Typing −0,6 in gives −36,87°, an angle the calculator has already placed in the fourth quadrant — bolting quadrant rules onto that double-counts the sign and produces wrong anchors."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve 2 sin²x − sin x − 1 = 0 for x in [0°; 360°], showing the substitution, the factorisation, and why one of the resulting equations gives only one solution in the interval.",
+      "expected_answer": "Let s = sin x, so the equation becomes 2s² − s − 1 = 0, which factorises as (2s + 1)(s − 1) = 0, giving s = −1/2 or s = 1. For sin x = −1/2: reference angle 30°, sine negative in the third and fourth quadrants, so x = 180° + 30° = 210° or x = 360° − 30° = 330°. For sin x = 1: this is a boundary value at the top of the wheel, where the ascending and descending crossings coincide, so there is a single solution x = 90° in the interval — no second-quadrant partner exists because 180° − 90° = 90° is the same angle. Full solution: x = 90°, 210° or 330°. Any substitution value outside [−1; 1] would have to be rejected in writing, since sine never leaves that range."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the general solution for tangent uses a period of 180° while sine and cosine use 360°, and give all solutions of tan x = 1 in [0°; 360°].",
+      "expected_answer": "The reduction formula for 180° + θ keeps tangent unchanged: sin(180° + θ) = −sinθ and cos(180° + θ) = −cosθ, so their quotient tan(180° + θ) = (−sinθ)/(−cosθ) = tanθ — both sign flips cancel. Tangent therefore repeats every half turn, and one family x = α + k·180° captures every solution. Sine and cosine individually change sign after 180°, so they only return to the same value after a full 360°, needing two families per turn. For tan x = 1 the reference angle is 45°, so x = 45° + k·180°; in [0°; 360°] the values are 45° (k = 0) and 225° (k = 1). Writing 45° + k·360° and 225° + k·360° describes the same set but as two families — correct, just less compact."
+    }
+  ]
+}

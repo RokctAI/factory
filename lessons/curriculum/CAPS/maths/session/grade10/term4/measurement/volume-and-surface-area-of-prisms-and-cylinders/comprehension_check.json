@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why volume = base area × height works for every right prism and cylinder, and how you identify the 'base' when the solid is lying on its side.",
+      "expected_answer": "A right prism or cylinder is a stack of identical layers: one layer's area times the number of layers (the height) gives the volume. The base is the repeated face — the one that appears twice — and the height is the perpendicular distance between those two identical faces, whatever direction that runs."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how the net of a cylinder produces the surface area formula 2πr² + 2πrh, and how the formula changes for an open cylinder.",
+      "expected_answer": "The net is two circles (πr² each) plus the curved wall rolled flat into a rectangle whose height is h and whose width is the circumference 2πr, giving area 2πrh. Total: 2πr² + 2πrh. With no lid one circle drops: πr² + 2πrh; open both ends leaves only 2πrh."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, state the difference between volume and surface area, including their units and one exam trap for each.",
+      "expected_answer": "Volume fills the solid — cubic units (cm³), converted to litres by dividing by 1000; a trap is forgetting the half in a triangular base. Surface area wraps the outside — square units (cm²); a trap is counting faces the story removed (no lid, open pipe) or using the diameter as the radius."
+    }
+  ]
+}

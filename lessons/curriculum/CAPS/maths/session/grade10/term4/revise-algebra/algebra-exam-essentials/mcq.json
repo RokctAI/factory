@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Factorising Decision Tree",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The FIRST question of the factorising decision tree is always:",
+          "options": [
+            "Is it a trinomial?",
+            "Is there a common factor?",
+            "Is it a difference of squares?",
+            "Can I group in pairs?"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Fully factorised, $3x^2 - 12$ equals:",
+          "options": [
+            "$3(x-2)(x+2)$",
+            "$(3x-6)(x+2)$",
+            "$3(x^2-4)$",
+            "$(x-2)(x+2)$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "$x^2 - 5x - 14$ factorises as:",
+          "options": [
+            "$(x-2)(x+7)$",
+            "$(x-14)(x+1)$",
+            "$(x-7)(x+2)$",
+            "$(x+7)(x+2)$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Which statement about squares is correct?",
+          "options": [
+            "Both $x^2-4$ and $x^2+4$ factorise",
+            "Neither factorises",
+            "$x^2+4$ factorises as $(x+2)^2$",
+            "$x^2-4$ factorises; $x^2+4$ does not, at this level"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Every Equation Type on One Page",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Solving $5x - 7 = 2x + 8$ gives:",
+          "options": [
+            "$x = 5$",
+            "$x = 3$",
+            "$x = -5$",
+            "$x = \\frac{15}{7}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The solutions of $x^2 = 5x + 6$ are:",
+          "options": [
+            "$x = 6$ only",
+            "$x = 6$ or $x = -1$",
+            "$x = -6$ or $x = 1$",
+            "$x = 2$ or $x = 3$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why is dividing both sides of $x^2 = 5x$ by x forbidden?",
+          "options": [
+            "Division is never allowed in equations",
+            "Because x might be negative",
+            "It silently discards the solution $x = 0$",
+            "It creates a fraction"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "For $5 \\cdot 2^x = 40$, the correct first move is:",
+          "options": [
+            "Rewrite as $10^x = 40$",
+            "Take the square root of both sides",
+            "Subtract 5 from both sides",
+            "Divide by 5 to isolate $2^x = 8$, then match bases"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Inequalities — the Flip and the Number Line",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Solving $-2x + 6 > 12$ gives:",
+          "options": [
+            "$x > -3$",
+            "$x < -3$",
+            "$x > 3$",
+            "$x < 3$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The inequality sign flips when you:",
+          "options": [
+            "Multiply or divide both sides by a negative number",
+            "Add a negative number to both sides",
+            "Subtract anything from both sides",
+            "Swap x to the other side"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Solving $-3 \\le 2x + 1 < 7$ gives:",
+          "options": [
+            "$-1 \\le x < 4$",
+            "$-4 \\le x < 6$",
+            "$-2 \\le x < 3$",
+            "$-2 < x \\le 3$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "On a number line for $-2 \\le x < 3$, the dots are:",
+          "options": [
+            "Open at $-2$, filled at 3",
+            "Both open",
+            "Both filled",
+            "Filled at $-2$ (included), open at 3 (excluded)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Exponents and the Integrated Question",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "$\\frac{6x^5}{2x^2}$ simplifies to:",
+          "options": [
+            "$4x^3$",
+            "$3x^3$",
+            "$3x^{2{,}5}$",
+            "$4x^{2{,}5}$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "$(2x^3)^2$ equals:",
+          "options": [
+            "$2x^6$",
+            "$4x^5$",
+            "$4x^6$",
+            "$2x^9$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "$x^3 + x^4$ equals:",
+          "options": [
+            "Exactly $x^3 + x^4$ — no exponent law applies to sums",
+            "$x^7$",
+            "$x^{12}$",
+            "$2x^7$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Solving $2^{x+1} = 16$ gives:",
+          "options": [
+            "$x = 8$",
+            "$x = 4$",
+            "$x = 15$",
+            "$x = 3$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Four Drawers in One Toolbox",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A question contains an inequality sign. Which 'drawer' opens?",
+          "options": [
+            "Factorising",
+            "Inequalities — linear-equation tools plus the flip warning",
+            "Exponent laws",
+            "Quadratic equations"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Why does the factorising drawer list 'common factor' before 'difference of squares'?",
+          "options": [
+            "Alphabetical order",
+            "Common factors are worth more marks",
+            "Extracting the common factor often reveals the squares pattern hiding underneath",
+            "The order does not matter"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The word 'factorise' in a question tells you to:",
+          "options": [
+            "Rewrite the expression as things multiplied",
+            "Solve for x",
+            "Draw a number line",
+            "Add the like terms"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Solving Equations Like Untying Knots",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The zero-product idea says two factors multiply to zero only when:",
+          "options": [
+            "Both are negative",
+            "Both equal zero simultaneously",
+            "They are equal to each other",
+            "At least one of the factors is itself zero"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Why must a quadratic have zero on one side BEFORE factorising to solve?",
+          "options": [
+            "Only zero has the product power — factors multiplying to 12 tell you nothing certain",
+            "Zero makes the arithmetic shorter",
+            "It is only a marking convention",
+            "Because quadratics have no solutions otherwise"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "In the balanced-scale picture of equations, every move must:",
+          "options": [
+            "Start with division",
+            "Be applied to both sides",
+            "Remove a term completely",
+            "Keep all numbers positive"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "$2^x = 8$ is solved by:",
+          "options": [
+            "Dividing both sides by 2 to get $x = 4$",
+            "Squaring both sides",
+            "Writing $8 = 2^3$, so same base forces $x = 3$",
+            "Subtracting 2 from both sides"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Final Sweep — Traps and the Last Check",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "$\\frac{x^2 - 9}{x + 3}$ simplifies legally to:",
+          "options": [
+            "$x - 3$ (with $x \\neq -3$), after factorising the top",
+            "$x - 9$, by cancelling the x's",
+            "$x + 3$",
+            "It cannot be simplified"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "What may be cancelled in an algebraic fraction?",
+          "options": [
+            "Any matching terms top and bottom",
+            "The x with the highest power",
+            "Only whole factors of the entire numerator and entire denominator",
+            "Only numbers, never letters"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The free 'last check' after solving any equation is to:",
+          "options": [
+            "Rewrite the question neatly",
+            "Redo the whole solution",
+            "Compare with a classmate",
+            "Substitute the answer back and confirm both sides balance"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "After dividing an inequality by a negative, the quick confirmation is:",
+          "options": [
+            "Divide by the negative a second time",
+            "Test one value from your answer interval in the ORIGINAL inequality",
+            "Flip the sign back if the answer looks odd",
+            "Assume the flip was right"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

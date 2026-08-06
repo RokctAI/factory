@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define emf and internal resistance, state the relationship ε = IRext + Ir in words, and explain why a voltmeter across a battery reads the full emf only when the switch is open.",
+      "expected_answer": "The emf (ε) is the total energy the battery transfers to each coulomb of charge passing through it, measured in volts. Internal resistance (r) is the resistance of the materials inside the battery itself, which behaves like a small resistor in series with the external circuit. The relationship ε = IRext + Ir says the emf is shared between the external circuit (IRext, the terminal voltage) and the inside of the battery (Ir, the 'lost volts', which become heat inside the cell). When the switch is open no current flows, so the lost volts Ir are zero and the terminal voltage equals the full emf — the voltmeter reads ε. As soon as current flows, Ir is no longer zero and the voltmeter reading drops below the emf by exactly Ir."
+    },
+    {
+      "id": "cc2",
+      "question": "A battery of emf 24 V and internal resistance 1 Ω is connected to a 5 Ω resistor in series with a parallel combination of a 6 Ω and a 3 Ω resistor. Calculate the main current, the terminal voltage, and the current through each parallel branch, showing the checks that confirm the answers.",
+      "expected_answer": "Parallel combination: (6 × 3) ÷ (6 + 3) = 2 Ω, which is smaller than the smallest branch (3 Ω) as required. External resistance: 5 + 2 = 7 Ω; total resistance including internal: 7 + 1 = 8 Ω. Main current: I = ε ÷ Rtotal = 24 ÷ 8 = 3 A. Terminal voltage: V = ε − Ir = 24 − (3 × 1) = 21 V. Voltage across the 5 Ω resistor: 3 × 5 = 15 V, leaving 21 − 15 = 6 V across the parallel pair (parallel branches share the same voltage). Branch currents: 6 ÷ 6 = 1 A through the 6 Ω resistor and 6 ÷ 3 = 2 A through the 3 Ω resistor. Check: 1 + 2 = 3 A equals the main current, and 15 V + 6 V + 3 V (internal) = 24 V equals the emf."
+    },
+    {
+      "id": "cc3",
+      "question": "A car's headlights dim momentarily when the starter motor is switched on. Explain this observation step by step using internal resistance, and explain how a graph of terminal voltage against current lets you measure a battery's emf and internal resistance.",
+      "expected_answer": "The starter motor is a very low-resistance device connected in parallel with the headlights. Adding this parallel branch decreases the total external resistance, so the total current drawn from the battery rises sharply. The lost volts inside the battery, Ir, increase in proportion to the current, so the terminal voltage V = ε − Ir drops. The headlights are connected across the terminals, so they receive a smaller voltage and dim until the starter motor stops drawing its large current. On a graph of terminal voltage (vertical) against current (horizontal), the equation V = ε − Ir is a straight line: the intercept on the voltage axis (where I = 0) gives the emf, and the gradient of the line is −r, so the magnitude of the gradient gives the internal resistance in ohms. The intercept on the current axis gives the maximum (short-circuit) current, ε ÷ r."
+    }
+  ]
+}

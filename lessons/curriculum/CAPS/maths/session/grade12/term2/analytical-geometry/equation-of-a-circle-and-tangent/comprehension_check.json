@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how the equation (x − a)² + (y − b)² = r² arises from the distance formula, read off the centre and radius of (x − 3)² + (y + 2)² = 25, and show how substitution decides whether the point (6; 2) lies on, inside or outside the circle.",
+      "expected_answer": "A circle is the set of points at distance exactly r from the centre (a; b). The distance from (x; y) to (a; b) is the square root of (x − a)² + (y − b)², and setting this equal to r and squaring both sides gives the circle equation. For (x − 3)² + (y + 2)² = 25, the centre is found by asking what makes each bracket zero: x = 3 and y = −2, so the centre is (3; −2) — the signs flip because the equation records subtraction of the centre coordinates. The radius is the square root of 25, which is 5, not 25. Substituting (6; 2): (6 − 3)² + (2 + 2)² = 9 + 16 = 25, exactly r², so the point lies on the circle; a total below 25 would mean inside, above 25 outside."
+    },
+    {
+      "id": "cc2",
+      "question": "Use completing the square to find the centre and radius of the circle x² + y² − 6x + 4y − 12 = 0, explaining the balancing rule and one way to check the result.",
+      "expected_answer": "Group and move the constant: x² − 6x + y² + 4y = 12. Complete each square: half of −6 is −3, squared is 9, so x² − 6x = (x − 3)² − 9; half of 4 is 2, squared is 4, so y² + 4y = (y + 2)² − 4. The equation becomes (x − 3)² + (y + 2)² = 12 + 9 + 4 = 25, so the centre is (3; −2) and the radius is 5. The balancing rule: each completed bracket smuggles in an extra number — the 9 and the 4 — which must be added to the other side, otherwise the radius silently changes. Checks: expand the completed form back and match the original term by term, or substitute a known point such as (6; 2) into both forms and confirm both balance."
+    },
+    {
+      "id": "cc3",
+      "question": "State the relationship between a radius and a tangent at the point of tangency, and use it to find the equation of the tangent to (x − 3)² + (y + 2)² = 25 at the point (6; 2), including the final check.",
+      "expected_answer": "The radius drawn to the point of tangency is perpendicular to the tangent, so their gradients multiply to −1. Routine: first confirm (6; 2) lies on the circle — 9 + 16 = 25, it does. The radius gradient from the centre (3; −2) to (6; 2) is (2 − (−2))/(6 − 3) = 4/3. The tangent gradient is the negative reciprocal, −3/4. The tangent is the line through (6; 2) with that gradient: y − 2 = −3/4(x − 6), which simplifies to y = −3/4 x + 13/2. Check by substituting the touching point: −3/4 × 6 = −4,5, and −4,5 + 6,5 = 2, matching the point's y coordinate, so the equation is certified."
+    }
+  ]
+}

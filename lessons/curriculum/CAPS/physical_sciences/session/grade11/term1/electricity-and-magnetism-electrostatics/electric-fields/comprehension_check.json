@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define an electric field and electric field strength, state the convention that fixes the direction of a field, and list the rules that field lines obey, illustrating with the pattern around a single negative point charge.",
+      "expected_answer": "An electric field is a region of space in which an electric charge experiences a force. Electric field strength at a point is the force per unit positive charge placed at that point, E = F/q, measured in newtons per coulomb. The direction of the field at a point is by convention the direction of the force that a positive test charge would experience there — away from positive charges and toward negative charges. Field lines start on positive charge and end on negative charge; they never cross, because a point cannot have two field directions; the arrows show the direction a positive test charge would be pushed; and the closer the lines, the stronger the field. Around a single negative point charge the lines point radially inward from all directions, crowding together near the charge where the field is strongest and spreading out with distance as the field weakens with the inverse square."
+    },
+    {
+      "id": "cc2",
+      "question": "A charge of +2 × 10⁻⁶ C placed at point P experiences a force of 0,008 N east. Calculate the field at P. Then calculate the field 0,3 m from a +5 μC point charge, and explain why a different formula is needed for each part.",
+      "expected_answer": "At P the charge is feeling the field, so use the definition: E = F/q = 0,008 ÷ (2 × 10⁻⁶) = 4 000 N·C⁻¹, directed east, the direction of the force on the positive charge. For the second part the charge is creating the field and the distance is known, so use E = kQ/r² = 9 × 10⁹ × 5 × 10⁻⁶ ÷ (0,3)² = 45 000 ÷ 0,09 = 5 × 10⁵ N·C⁻¹, directed away from the charge because it is positive. The first formula is the definition of field strength and applies when the force on a test charge at the point is known; the second comes from substituting Coulomb's law into that definition, whereupon the test charge cancels, and it applies when the source charge and the distance from it are known. The q in E = F/q is always the charge feeling the force, never the source."
+    },
+    {
+      "id": "cc3",
+      "question": "A charge of +2 μC is at A and a charge of −3 μC is at B, 0,4 m away. Calculate the net electric field at the midpoint P, and explain why the field between two like charges would behave differently, including where it could be zero.",
+      "expected_answer": "P is 0,2 m from each charge. Contribution from A: E = 9 × 10⁹ × 2 × 10⁻⁶ ÷ (0,2)² = 4,5 × 10⁵ N·C⁻¹, pointing away from A, that is from A toward B. Contribution from B: E = 9 × 10⁹ × 3 × 10⁻⁶ ÷ (0,2)² = 6,75 × 10⁵ N·C⁻¹, pointing toward B because B is negative — again from A toward B. The contributions cooperate, so the net field is 4,5 × 10⁵ + 6,75 × 10⁵ = 1,125 × 10⁶ N·C⁻¹ directed from A toward B. Between unlike charges the contributions always point the same way and add. Between two like charges the contributions point in opposite directions and fight, so the net field passes through zero at some point between them — exactly halfway if the charges are equal, and closer to the weaker charge if they are not, since the smaller charge needs a shorter distance for its inverse-square contribution to match the stronger one."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the general scaling rules when every dimension of a solid is multiplied by k, and explain WHY the powers are 2 and 3 using the brick-counting picture.",
+      "expected_answer": "Lengths scale by k, surface area by k², volume by k³. A double-size brick needs 2 × 2 × 2 = 8 originals — one factor of k per direction of space. Faces are flat patches with two directions, so areas collect two copies of k; solids have three directions, so volumes collect three."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why doubling a cylinder's radius quadruples its volume while doubling its height only doubles it.",
+      "expected_answer": "k multiplies the volume once for every appearance of the scaled dimension in the formula V = πr²h. The height appears once, giving factor k = 2. The radius is squared — it appears twice — so scaling it by 2 delivers 2² = 4."
+    },
+    {
+      "id": "cc3",
+      "question": "A solid's volume becomes 27 times larger under an enlargement. Describe the full method for finding how its surface area changed, including the sense checks.",
+      "expected_answer": "Extract k first: k³ = 27, so k = ∛27 = 3. Then surface area multiplies by k² = 9. Never jump from the volume multiplier straight to the area multiplier. Checks: k > 1 for an enlargement, and the volume multiplier (27) must exceed the area multiplier (9)."
+    }
+  ]
+}

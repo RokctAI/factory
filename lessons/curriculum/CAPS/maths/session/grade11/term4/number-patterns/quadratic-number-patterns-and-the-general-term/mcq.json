@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "First and Second Differences — the Diagnosis",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A number pattern is quadratic exactly when:",
+          "options": [
+            "Its first differences are constant",
+            "Its second differences are constant",
+            "Its terms are all perfect squares",
+            "Its terms keep increasing"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "For 3; 8; 15; 24; 35, the first differences are:",
+          "options": [
+            "2; 2; 2; 2",
+            "3; 5; 7; 9",
+            "5; 7; 9; 11",
+            "5; 12; 19; 26"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The constant second difference of a quadratic pattern equals:",
+          "options": [
+            "2a — twice the coefficient of n²",
+            "a — the coefficient of n² itself",
+            "a + b + c",
+            "3a + b"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "A second difference of −4 would tell you that:",
+          "options": [
+            "The pattern is linear after all",
+            "b equals −4",
+            "The first term is negative",
+            "a = −2, and the pattern eventually turns downward"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Building the General Term",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The three facts that pin down a, b and c are:",
+          "options": [
+            "The last term, the sum of terms, and the product of terms",
+            "2a = second difference; 3a + b = first first-difference; a + b + c = T1",
+            "a = T1; b = T2; c = T3",
+            "The mean, median and mode of the sequence"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For 3; 8; 15; 24; 35, the general term is:",
+          "options": [
+            "Tn = n² + 2",
+            "Tn = 2n² + n",
+            "Tn = n² + 2n",
+            "Tn = n² + 3n − 1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "For the dipping sequence 6; 3; 2; 3; 6, the general term works out to:",
+          "options": [
+            "Tn = n² − 6n + 11",
+            "Tn = n² + 6n − 11",
+            "Tn = 2n² − 6n + 10",
+            "Tn = n² − 3n + 8"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "After building Tn, you should test it on:",
+          "options": [
+            "The first term only",
+            "No terms — the method guarantees it",
+            "A term of a different sequence",
+            "A term you did NOT use in the building"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Using the General Term in Both Directions",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "For Tn = n² + 2n, the fiftieth term is:",
+          "options": [
+            "2 600",
+            "2 500",
+            "1 300",
+            "5 200"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Solving n² + 2n = 120 gives n = 10 or n = −12. The correct conclusion is:",
+          "options": [
+            "Both the tenth term and the minus-twelfth term equal 120",
+            "The tenth term is 120; n = −12 is rejected because positions are positive whole numbers",
+            "No term equals 120",
+            "The twelfth term is 120"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "200 is not a term of Tn = n² + 2n because:",
+          "options": [
+            "200 is an even number",
+            "The pattern stops before 200",
+            "The discriminant of n² + 2n − 200 = 0 is 804, not a perfect square, so no natural n exists",
+            "200 is smaller than the fiftieth term"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "When a is negative, the pattern has:",
+          "options": [
+            "No differences at all",
+            "A constant first difference",
+            "A smallest term at position 1",
+            "A largest term at the turning point, after which it descends"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Patterns in Context — Tiles, Stacks and Real Counts",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The structural route reads Tn = n(n + 2) for the tile decks because figure n is:",
+          "options": [
+            "A rectangle of n rows by n + 2 columns",
+            "A triangle with n + 2 rows",
+            "A square of side n + 2",
+            "Two squares of side n"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Figure 20 of the tile pattern uses:",
+          "options": [
+            "400 tiles",
+            "440 tiles",
+            "420 tiles",
+            "484 tiles"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The figure using exactly 224 tiles is found from n² + 2n − 224 = 0, giving:",
+          "options": [
+            "Figure 16",
+            "Figure 28",
+            "Figure 14, with n = −16 rejected",
+            "No figure at all"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "A quick protection against a wrong formula in context questions is to:",
+          "options": [
+            "Round every answer to the nearest ten",
+            "Use the difference table twice",
+            "Assume the first figure uses one tile",
+            "Substitute back and confirm the formula reproduces figures 1 and 2 exactly"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Fingerprint at the Second Layer",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the staircase picture, quadratic growth feels like:",
+          "options": [
+            "Every step taller than the last, but always by the same extra amount",
+            "Every step the same height",
+            "Steps that shrink as you climb",
+            "A ramp with no steps"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The steady second-layer number measures the pattern by giving:",
+          "options": [
+            "The first term of the sequence",
+            "Double the coefficient of n²",
+            "The number of terms",
+            "The value of c"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A steady second difference of 6 means the pattern is built on:",
+          "options": [
+            "6n²",
+            "n² + 6",
+            "3n²",
+            "2n² + 3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Fingerprinting from only three terms is unsafe because:",
+          "options": [
+            "Three terms take too long to difference",
+            "The second difference of three terms is always zero",
+            "Patterns never have exactly three terms",
+            "Three terms cannot commit a pattern — the steadiness must show itself more than once"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Three Screws Fix the Machine",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The correct order for finding the three coefficients is:",
+          "options": [
+            "c, then b, then a",
+            "Any order works equally well",
+            "a from the second difference, then b from the first gap, then c from the first term",
+            "b first, because it is in the middle"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "b cannot be found before a because:",
+          "options": [
+            "a appears inside the equation 3a + b = first gap",
+            "b is always negative",
+            "The first gap depends on c",
+            "b equals the second difference"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "If the assembled machine fails its test on an unseen term, the first suspect is:",
+          "options": [
+            "a, because it was found first",
+            "The sequence itself, which must be wrong",
+            "The unseen term",
+            "c, because it absorbs arithmetic slips"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The dipping sequence 6; 3; 2; 3; 6 mirrors itself because:",
+          "options": [
+            "Its differences were computed backwards",
+            "It is a parabola sampled at whole numbers, symmetric about its lowest point at position 3",
+            "All quadratic patterns repeat every five terms",
+            "The coefficient b is negative"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Driving the Machine Forwards and in Reverse",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Driving forward means:",
+          "options": [
+            "Feeding a position into Tn to receive the term's value",
+            "Solving a quadratic equation for n",
+            "Listing every term up to the one wanted",
+            "Differencing the sequence again"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Driving in reverse — from a value to its position — requires:",
+          "options": [
+            "Dividing the value by the second difference",
+            "Reading the difference table backwards",
+            "Setting Tn equal to the value and solving the quadratic equation",
+            "Subtracting the first term from the value"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The seat picture — seat 10 exists, seat minus 12 does not — reminds you to:",
+          "options": [
+            "Round negative answers up to zero",
+            "Reject non-natural solutions for n, with a written reason",
+            "Count seats from the back of the taxi",
+            "Double-check the positive answer only"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The staircase 'never touches 20' between 15 and 24 illustrates that:",
+          "options": [
+            "The pattern was built incorrectly",
+            "Every whole number eventually appears in a pattern",
+            "Patterns skip only odd numbers",
+            "A pattern only lands where its steps land — some values are simply never visited"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A bedroom on a 1 : 100 floor plan measures 35 mm by 30 mm, with a 9 mm door gap. Convert the measurements to real sizes, and explain the difference between measuring inside wall faces and outside wall faces.",
+      "expected_answer": "At 1 : 100, every plan millimetre represents 100 real millimetres, so the room is 3 500 mm by 3 000 mm — 3,5 m by 3,0 m — and the door gap is 900 mm, the standard door width. The working should show plan measurement, scale and real measurement together: 35 mm × 100 = 3 500 mm = 3,5 m. Measuring between inside wall faces gives the usable room size — the floor to tile, the space furniture occupies — while measuring outside face to outside face gives the building's footprint, walls included; the difference between the two is the wall thickness. The paper may ask for either, so the answer should state which lines were measured."
+    },
+    {
+      "id": "cc2",
+      "question": "The bedroom is 3,5 m by 3,0 m with walls 2,6 m high, a 0,9 m by 2,0 m door and a 1,5 m by 1,2 m window. Flooring comes in boxes covering 2,2 m² at R379 with 10% cutting waste; skirting comes in 3 m lengths at R89; paint covers 8 m² per litre, two coats, in 5 ℓ tins at R465. Cost the room's materials.",
+      "expected_answer": "Flooring: the floor is 3,5 × 3,0 = 10,5 m²; with 10% waste, 10,5 × 1,10 = 11,55 m²; 11,55 ÷ 2,2 = 5,25 boxes, rounded up to 6 boxes at 6 × 379 = R2 274. Skirting: the perimeter is 2 × (3,5 + 3,0) = 13 m, minus the 0,9 m doorway leaves 12,1 m; 12,1 ÷ 3 = 4,03 lengths, so 5 lengths must be bought — R445 — since skirting is sold in whole 3 m lengths and 4 would leave a shortfall. Paint: wall area is perimeter times height, 13 × 2,6 = 33,8 m², minus the door (1,8 m²) and window (1,8 m²) leaves 30,2 m²; two coats doubles it to 60,4 m²; at 8 m² per litre that is 7,55 ℓ, so two 5 ℓ tins at R930. Total materials: 2 274 + 445 + 930 = R3 649 before labour. Everything sold in wholes is rounded up, with the reason stated."
+    },
+    {
+      "id": "cc3",
+      "question": "Cans of diameter 7 cm and height 11 cm are packed upright into a carton 42 cm by 28 cm by 22 cm. Calculate how many cans fit, the percentage of the carton that is air, and explain why dividing the carton's volume by a can's volume gives the wrong count.",
+      "expected_answer": "Count per dimension, rounding down each division: along the 42 cm length, 42 ÷ 7 = 6 cans; across the 28 cm width, 28 ÷ 7 = 4 cans, so one layer holds 24; the 22 cm height stacks 22 ÷ 11 = 2 layers, so the carton holds 48 cans. The carton's volume is 42 × 28 × 22 = 25 872 cm³; each can holds π × 3,5² × 11 ≈ 3,14 × 12,25 × 11 = 423,12 cm³, so 48 cans occupy about 20 309,76 cm³. The air is 25 872 − 20 309,76 = 5 562,24 cm³, which is 5 562,24 ÷ 25 872 ≈ 21,5% of the carton — the unavoidable waste of packing circles into rectangles. Dividing volume by volume gives 25 872 ÷ 423,12 ≈ 61, which is wrong because it imagines the cans melted and poured: rigid cylinders cannot fill the corner gaps between circles or split between layers, so the true count comes from the three floored divisions multiplied, and the volume quotient is only an unreachable upper limit."
+    }
+  ]
+}

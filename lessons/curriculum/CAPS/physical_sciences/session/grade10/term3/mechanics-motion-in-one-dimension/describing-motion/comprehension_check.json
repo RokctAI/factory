@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what a frame of reference is and why declaring one in the first line of a solution matters, using the walker problem's signs as your example.",
+      "expected_answer": "A frame of reference is a reference point (zero) plus a chosen positive direction. Declaring it (start = 0, east positive) gives every sign a fixed meaning: +40 m after the east leg, sliding back to +10 m after the west leg. Without the declaration — or if the frame is switched midway — the signs contradict each other and the solution cannot be followed or marked."
+    },
+    {
+      "id": "cc2",
+      "question": "For the 40 m east then 30 m west walk in 50 s, calculate all four quantities and explain why the speed and velocity differ by a factor of seven.",
+      "expected_answer": "Distance = 40 + 30 = 70 m (path length, scalar). Displacement = +40 − 30 = 10 m east (endpoints only, vector). Average speed = 70/50 = 1,4 m/s. Average velocity = 10/50 = 0,2 m/s east. They differ because most of the walking undid earlier progress — speed credits every metre of ground, velocity only the net change of position."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain how a lap runner can have an average speed of 5 m/s and an average velocity of zero, and why both numbers are honest.",
+      "expected_answer": "A 400 m lap in 80 s covers 400 m of ground (speed = 400/80 = 5 m/s) but ends at the starting point, so the change in position is zero and average velocity = 0/80 = 0. Speed answers 'how fast was ground covered' and keeps the effort; velocity answers 'how fast did position change, net' and keeps the outcome. They are different questions about the same run, so both answers are correct."
+    }
+  ]
+}

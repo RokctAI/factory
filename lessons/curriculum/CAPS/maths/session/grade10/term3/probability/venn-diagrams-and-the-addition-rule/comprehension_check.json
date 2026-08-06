@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the survey of 40 learners (22 soccer, 15 chess, 9 both), describe how to fill the Venn diagram and give all four region counts with the check.",
+      "expected_answer": "Fill the overlap first with 9, because each sport's total includes the both-players. Then soccer-only = 22 − 9 = 13, chess-only = 15 − 9 = 6, and neither = 40 − (13 + 9 + 6) = 12. Check: 13 + 9 + 6 + 12 = 40, so every learner is placed exactly once."
+    },
+    {
+      "id": "cc2",
+      "question": "State the addition rule, explain why the subtraction is needed, and use the rule to find P(soccer or chess) for the survey.",
+      "expected_answer": "P(A or B) = P(A) + P(B) − P(A and B). Adding the two whole events counts the overlap twice — both-players appear in each event's total — so the overlap is subtracted once. P(soccer or chess) = 22/40 + 15/40 − 9/40 = 28/40 = 7/10, confirmed by the regions 13 + 9 + 6 = 28 out of 40."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the difference between mutually exclusive and complementary events, with a die example of events that are exclusive but not complementary.",
+      "expected_answer": "Mutually exclusive events share no outcomes — they cannot both happen — so P(A and B) = 0 and P(A or B) = P(A) + P(B). Complementary events are mutually exclusive AND exhaustive: together they cover the whole sample space, so their probabilities total 1. 'Less than 3' and 'at least 5' on a die are exclusive (no shared outcome) but not complementary, because the outcomes 3 and 4 belong to neither event."
+    }
+  ]
+}

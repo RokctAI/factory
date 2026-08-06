@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the four compound-angle identities for sine and cosine, describe the two patterns that generate them, and give a numerical check that shows sin(α + β) is not sin α + sin β.",
+      "expected_answer": "sin(α + β) = sin α cos β + cos α sin β; sin(α − β) = sin α cos β − cos α sin β; cos(α + β) = cos α cos β − sin α sin β; cos(α − β) = cos α cos β + sin α sin β. The sine pattern mixes the functions — sine cos then cos sine — and the middle sign copies the bracket's sign; the cosine pattern pairs the functions — cos cos then sine sine — and the middle sign flips the bracket's sign. Numerical check: sin 90° = 1 exactly, but sin 60° + sin 30° ≈ 0,87 + 0,5 = 1,37, so distributing sine over the sum fails, while the true expansion sin 60° cos 30° + cos 60° sin 30° = ¾ + ¼ = 1 succeeds."
+    },
+    {
+      "id": "cc2",
+      "question": "Use a compound-angle identity to find cos 15° in exact surd form, and then evaluate sin 40° cos 10° − cos 40° sin 10° by recognising it as a compressed expansion.",
+      "expected_answer": "Write 15° = 45° − 30°, so cos 15° = cos 45° cos 30° + sin 45° sin 30°. Substituting the special values: (√2/2)(√3/2) + (√2/2)(½) = √6/4 + √2/4 = (√6 + √2)/4, which is approximately 0,97 but must be left in surd form for exactness. For the second expression, it matches the expansion of sine of a difference: sin α cos β − cos α sin β = sin(α − β) with α = 40° and β = 10°, so it equals sin 30° = ½. Running the identities in reverse — compressing a four-term expression into a single sine or cosine of one angle — is as important as expanding."
+    },
+    {
+      "id": "cc3",
+      "question": "Given sin α = 3/5 with 90° < α < 180°, find sin 2α and cos 2α, justifying the sign of cos α; then solve cos 2x + sin x = 0 for x in [0°; 360°].",
+      "expected_answer": "From sin² α + cos² α = 1, cos² α = 16/25, so cos α = ±4/5; since α is in the second quadrant, where cosine is negative, cos α = −4/5. Then sin 2α = 2 sin α cos α = 2(3/5)(−4/5) = −24/25, and cos 2α = 1 − 2 sin² α = 1 − 18/25 = 7/25. For the equation, rewrite cos 2x as 1 − 2 sin² x to match the sine term: 1 − 2 sin² x + sin x = 0, i.e. 2 sin² x − sin x − 1 = 0, which factorises as (2 sin x + 1)(sin x − 1) = 0. So sin x = 1, giving x = 90°, or sin x = −½, which is negative in quadrants three and four with reference angle 30°, giving x = 210° and x = 330°. The solutions are 90°, 210° and 330°, and substituting 210° back confirms cos 420° + sin 210° = ½ − ½ = 0."
+    }
+  ]
+}

@@ -68,9 +68,9 @@ Quick check before we carry on — papers are coming to you right now: two quest
 
 Now watch the sorted month flow home and prove itself — the part of bookkeeping that feels, honestly, like magic the first time it works.
 
-The pages tell their small stories. Dube's page: bought 3 000, returned 500, paid 2 000 — owes R500, and she could phone right now and get that answer in five seconds. Metro's page: delivered 10 000, took back 800, received 6 000 — the shop owes him R3 200. Naidoo's page: opened at 300, closed at nothing, with the goodbye written in the odd-jobs book.
+The pages tell their small stories. Dube's page: bought 3 000, returned 500, paid 2 000 — owes R500, and she could phone right now and get that answer in five seconds. Metro's page: delivered 10 000, took back 800, received 6 000 — the shop owes him R3 200. Naidoo's page: opened at 300, closed at nothing, with the write-off entered in the odd-jobs book.
 
-The drawers tell the big ones. The Bank drawer: 28 000 in, 11 000 out — R17 000 sitting ready. The stock drawer: loaded with 10 000, gave up 7 200 to sales at cost, took 400 back from Dube, sent 800 back to Metro — R2 400 of goods that SHOULD be on the shelf, checkable any evening Thabo cares to count. Sales drawer: R9 000 earned. And the costs of the month lined up beside it: 6 800 of goods, 3 500 of roof, 1 500 of hands, 300 of goodbye.
+The drawers tell the big ones. The Bank drawer: 28 000 in, 11 000 out — R17 000 sitting ready. The stock drawer: loaded with 10 000, gave up 7 200 to sales at cost, took 400 back from Dube, sent 800 back to Metro — R2 400 of goods that SHOULD be on the shelf, checkable any evening Thabo cares to count. Sales drawer: R9 000 earned. And the costs of the month lined up beside it: 6 800 of goods, 3 500 of roof, 1 500 of hands, 300 of bad debt.
 
 Then the weigh-in. All the left-side balances: 32 500. All the right-side balances: 32 500. Level — and think what that levelness certifies: eleven events, six doors, two ledgers of pages, one cabinet of drawers, and not one rand lost or invented anywhere along the way. Both streets counted and agreeing with their lines. That is not luck; that is the system you spent a term building, running whole for the first time.
 
@@ -80,7 +80,7 @@ Your questions for this part are up now: read the pages and drawers, find the ba
 
 Last picture: what all this bookkeeping is FOR. Every Friday at closing, Thabo does a ten-minute walk with the books open — and the month we just ran gives him every stop on the route.
 
-Stop one, the till: count the cash against today's analysis column. Agree? Bank it, intact, tonight. Stop two, the shelf: pick five items, count them, check against what the stock drawer claims. The drawer says R2 400 of goods; the shelf must back it up. Stop three, the names: run a finger down the debtors list — who is near their limit, whose debt is getting old? Dube at R500, fine; had Naidoo's R300 been chased in week one, maybe the goodbye never happens. Stop four, the suppliers: Metro's statement against Metro's page — R3 200, both books, agreed; payment scheduled for the terms date, not before, not after.
+Stop one, the till: count the cash against today's analysis column. Agree? Bank it, intact, tonight. Stop two, the shelf: pick five items, count them, check against what the stock drawer claims. The drawer says R2 400 of goods; the shelf must back it up. Stop three, the names: run a finger down the debtors list — who is near their limit, whose debt is getting old? Dube at R500, fine; had Naidoo's R300 been chased in week one, maybe the write-off never happens. Stop four, the suppliers: Metro's statement against Metro's page — R3 200, both books, agreed; payment scheduled for the terms date, not before, not after.
 
 Ten minutes, four stops — and notice what makes the walk possible at all: the books. Without them, Friday's questions have no answers to check AGAINST. Records first, control second, trust throughout — the shop watches over itself, and the owner sleeps.
 

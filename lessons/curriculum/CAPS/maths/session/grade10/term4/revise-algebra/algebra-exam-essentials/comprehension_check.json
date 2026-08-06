@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the factorising decision tree in order and explain why the order matters, using 3x² − 12 as the example.",
+      "expected_answer": "Common factor first, then difference of squares, then trinomial, then grouping/cubes. Order matters because each step simplifies what remains: extracting the 3 from 3x² − 12 reveals x² − 4, a difference of squares, giving 3(x − 2)(x + 2). Skipping the common factor hides the pattern and leaves the answer incomplete."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the correct method for solving x² = 5x, and explain exactly what goes wrong when a learner divides both sides by x.",
+      "expected_answer": "Bring everything to one side: x² − 5x = 0; factorise: x(x − 5) = 0; zero-product rule gives x = 0 or x = 5. Dividing by x assumes x ≠ 0 and silently discards the solution x = 0, leaving only x = 5 — half the answer. Never divide by the variable; factor it out."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the inequality sign flips when multiplying or dividing by a negative number, and how to verify a solved inequality.",
+      "expected_answer": "Multiplying by a negative mirrors the number line, so order reverses: 3 < 5 but −3 > −5. Hence −2x > 6 becomes x < −3. Verify by testing a value from the answer interval in the original inequality (e.g. x = −4: −2(−4) + 6 = 14 > 12, true)."
+    }
+  ]
+}

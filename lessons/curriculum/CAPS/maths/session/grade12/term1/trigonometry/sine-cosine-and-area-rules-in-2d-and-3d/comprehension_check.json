@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the sine rule, the cosine rule and the area rule, and describe the data stocktake that decides which rule a question requires.",
+      "expected_answer": "The sine rule: a/sin A = b/sin B = c/sin C, connecting each side to its opposite angle. The cosine rule: a² = b² + c² − 2bc cos A, connecting three sides and the angle included between two of them; rearranged, cos A = (b² + c² − a²)/2bc finds an angle from three sides. The area rule: area = ½ab sin C, using two sides and the included angle, with no height needed. The stocktake: if the question supplies a complete pair — a side together with its opposite angle — plus one more piece, the sine rule applies. If there is no complete pair but two sides and the included angle, or all three sides, the cosine rule applies. If area is asked with two sides and the included angle, the area rule applies. Harvesting the third angle by subtracting from 180° often completes a pair cheaply."
+    },
+    {
+      "id": "cc2",
+      "question": "In triangle ABC, A = 40°, B = 60° and a = 10. Find b and explain the size check. Then, for a triangle with sides 7 and 9 and included angle 60°, find the third side and the area, and explain how the cosine rule relates to Pythagoras.",
+      "expected_answer": "By the sine rule, b = 10 sin 60°/sin 40° ≈ 13,47. The size check: since 60° > 40° and bigger angles face longer sides, b had to exceed 10, which it does. For the second triangle, the third side squared is 7² + 9² − 2(7)(9) cos 60° = 130 − 63 = 67, so the side is √67 ≈ 8,19. The area is ½ × 7 × 9 × sin 60° ≈ 27,28 square units. The cosine rule is Pythagoras with a correction term: at 90° the cosine is zero and the rule collapses to a² = b² + c²; an acute included angle subtracts length because its cosine is positive, and an obtuse angle adds length because its cosine is negative."
+    },
+    {
+      "id": "cc3",
+      "question": "A vertical tower stands at A. Ground points B and C are 100 m apart, with angle ABC = 70° and angle ACB = 50°; from B the angle of elevation of the tower's top is 25°. Find the height of the tower, explaining the two-triangle strategy.",
+      "expected_answer": "The problem splits into a horizontal ground triangle ABC and a vertical right-angled triangle containing the tower, sharing the bridge side AB. Solve the data-rich ground triangle first: its third angle at A is 180° − 70° − 50° = 60°, and AB faces the 50° angle at C, so by the sine rule AB = 100 sin 50°/sin 60° ≈ 88,46 m. Then carry AB into the vertical triangle, which is right-angled because the tower meets the horizontal ground at 90°: the height is opposite the 25° elevation angle with AB adjacent, so height = 88,46 × tan 25° ≈ 41,25 m. The strategy is always to identify the shared side, solve the triangle where the given data lives, and only then transfer the shared side into the triangle holding the answer."
+    }
+  ]
+}

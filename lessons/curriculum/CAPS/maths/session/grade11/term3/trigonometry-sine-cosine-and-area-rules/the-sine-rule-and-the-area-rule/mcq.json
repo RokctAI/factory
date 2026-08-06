@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Labelling Triangles and the Area Rule",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In triangle ABC, side a is always:",
+          "options": [
+            "The longest side",
+            "Opposite angle A",
+            "Adjacent to angle A",
+            "The base of the triangle"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The area rule ½ab·sinC requires C to be:",
+          "options": [
+            "The largest angle of the triangle",
+            "A right angle",
+            "The angle included between sides a and b",
+            "Opposite the longest side"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "In triangle PQR, PQ = 7 cm, QR = 9 cm and angle Q = 50°. The area is:",
+          "options": [
+            "48,25 cm²",
+            "31,50 cm²",
+            "40,50 cm²",
+            "24,13 cm²"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "In the proof of the area rule, the perpendicular height dropped onto side b equals:",
+          "options": [
+            "a·sinC",
+            "b·sinC",
+            "a·cosC",
+            "c·sinB"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Proving and Using the Sine Rule",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The sine rule is proved by:",
+          "options": [
+            "Applying Pythagoras to two right-angled triangles",
+            "Squaring both sides of the area rule",
+            "Setting the three versions of the area rule equal and dividing by ½abc",
+            "Substituting sinA = cosB into the area rule"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "To use the sine rule you must know at least:",
+          "options": [
+            "One side and its opposite angle, plus one more piece of information",
+            "All three sides",
+            "Two sides and the included angle",
+            "Any two angles only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "When the unknown is a SIDE, the sine rule is best written with:",
+          "options": [
+            "The sines on top",
+            "The sides on top",
+            "Both sides squared",
+            "The angles in radians"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "In triangle ABC, A = 40°, B = 65° and b = 12 cm. Side a equals:",
+          "options": [
+            "16,92 cm",
+            "10,88 cm",
+            "7,71 cm",
+            "8,51 cm"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding Angles with the Sine Rule",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "In triangle ABC, a = 10, b = 7 and A = 42°. Then sinB equals:",
+          "options": [
+            "0,4684",
+            "0,9558",
+            "0,6691",
+            "0,7000"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "With sinB = 0,4684, angle B to one decimal place is:",
+          "options": [
+            "62,1°",
+            "27,9°",
+            "0,5°",
+            "46,8°"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "A second candidate angle always exists when using inverse sine because:",
+          "options": [
+            "The calculator works in radians by default",
+            "Sine is negative in the second quadrant",
+            "Cosine of the angle could also be positive",
+            "Sine is positive in both the first and second quadrants, so 180° minus the answer has the same sine"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Here the candidate B = 152,07° is rejected because:",
+          "options": [
+            "It is bigger than angle A",
+            "Inverse sine can never give an obtuse angle",
+            "152,07° + 42° already exceeds 180°, so no triangle can contain both angles",
+            "Sine of 152,07° is negative"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Multi-Step Problems — Chaining the Two Rules",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "In triangle ABC with A = 52° and B = 63°, angle C equals:",
+          "options": [
+            "115°",
+            "75°",
+            "65°",
+            "55°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The area rule could not be used immediately in this problem because:",
+          "options": [
+            "Only one side was known, and the rule needs two sides with the included angle",
+            "The triangle had no right angle",
+            "The angles did not add up to 180°",
+            "The included angle was obtuse"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "With c = 15 cm and C = 65°, the sine rule gives side a as 15·sin52°/sin65°, which equals:",
+          "options": [
+            "11,82 cm",
+            "17,25 cm",
+            "9,54 cm",
+            "13,04 cm"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "For the final area step using sides a and c, the included angle is B because:",
+          "options": [
+            "B is the largest of the three angles",
+            "Sides a and c meet at vertex B",
+            "B was given in the question",
+            "The rule always uses the middle letter"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Squashed Gate",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the security-gate picture, sine of the included angle plays the role of:",
+          "options": [
+            "The length of the longer arm",
+            "The perimeter of the cell",
+            "The squash factor that scales the area",
+            "The number of cells in the gate"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The trapped area is at its maximum when the two arms stand at:",
+          "options": [
+            "90°, where sine equals 1",
+            "180°, where the arms lie flat",
+            "45°, halfway open",
+            "60°, where sine equals a half"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "At an included angle of 0° or 180° the formula gives zero area because:",
+          "options": [
+            "The sides shrink to zero length",
+            "The calculator cannot evaluate those angles",
+            "The triangle becomes a circle",
+            "The arms lie flat and no triangle remains — sine of those angles is 0"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Using an angle that is NOT between the two given sides is compared to:",
+          "options": [
+            "Painting the gate instead of opening it",
+            "Measuring the squash of a different cell of the gate",
+            "Oiling the wrong hinge",
+            "Counting the arms instead of the cells"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Fair Trade at the Triangle Market",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The market picture of the sine rule says every triangle keeps one fixed:",
+          "options": [
+            "Perimeter for all three sides",
+            "Height from every vertex",
+            "Sum of the sides",
+            "Exchange rate — side over sine of its opposite angle is the same all around"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Before the sine rule can be used, the rate must be fixed by:",
+          "options": [
+            "One complete pair — a side together with its opposite angle",
+            "Knowing all three angles",
+            "Measuring the longest side",
+            "Two sides and the included angle"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The writing-down trick recommended for the sine rule is:",
+          "options": [
+            "Always write the sides on top no matter what",
+            "Always convert angles to radians first",
+            "Put the unknown quantity on top of the fraction",
+            "Cross-multiply before substituting values"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The 'second suspect' when finding an angle from its sine is:",
+          "options": [
+            "The complement, 90° minus the calculator's answer",
+            "180° minus the calculator's answer, which has the same sine",
+            "The negative of the calculator's answer",
+            "360° minus the calculator's answer"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Planning the Route Before You Drive",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Multi-step problems should be planned:",
+          "options": [
+            "By calculating every possible value and choosing later",
+            "Starting from the area formula and guessing",
+            "Only after finding all three sides",
+            "Backwards from what the final formula needs, before any calculation"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The 'free angle' in a triangle problem comes from:",
+          "options": [
+            "The angle sum — the three angles always total 180°",
+            "The sine rule applied twice",
+            "Measuring the sketch with a protractor",
+            "Assuming the triangle is isosceles"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "In the worked route, the sine rule was needed before the area rule because:",
+          "options": [
+            "The sine rule is always used first in every problem",
+            "The area rule only works with whole numbers",
+            "The area rule needed a second side that was not yet known",
+            "The triangle was right-angled"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "You should re-sketch and re-label the triangle even when a diagram is given because:",
+          "options": [
+            "Examiners award marks for neat diagrams",
+            "Your own small-letter-opposite-capital labels make the formulae safe to apply",
+            "The given diagram is usually drawn wrongly",
+            "It uses up spare examination time"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

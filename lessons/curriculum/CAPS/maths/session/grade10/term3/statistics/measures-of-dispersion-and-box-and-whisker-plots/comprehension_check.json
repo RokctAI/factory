@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the sales data 4, 7, 8, 10, 12, 13, 15, 17, 18, 20, 25, find the median, both quartiles, the range, the IQR and the semi-IQR, showing how the halves are formed.",
+      "expected_answer": "Median = 13 (sixth of eleven values; it joins neither half). Lower half 4, 7, 8, 10, 12 gives Q1 = 8; upper half 15, 17, 18, 20, 25 gives Q3 = 18. Range = 25 − 4 = 21; IQR = 18 − 8 = 10; semi-IQR = 5."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the IQR is described as outlier-resistant while the range is not.",
+      "expected_answer": "The range uses only the minimum and maximum, so a single extreme value changes it drastically. The IQR measures the width of the middle 50% of the data, between Q1 and Q3; extreme values lie outside those fences and cannot stretch it, so it reflects the spread of ordinary values."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how to draw the box-and-whisker diagram for the summary 4; 8; 13; 18; 25, and state the rule used to interpret the length of any section.",
+      "expected_answer": "On a number line, draw a box from Q1 = 8 to Q3 = 18 with a vertical line at the median 13, then whiskers from the box to the minimum 4 and maximum 25. Each of the four sections holds about a quarter of the data, so a long section means that quarter is spread over a wide range of values (not that it contains more data); the longer upper whisker here shows the top quarter is more spread out — a slight right skew."
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Angles of Elevation and Depression",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The angle of elevation is measured between:",
+          "options": [
+            "The vertical object and the line of sight",
+            "The ground and the top of the object",
+            "The horizontal through the observer's eye and the upward line of sight",
+            "Any two sides of the triangle"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The angle of depression from a cliff top to a boat equals the angle of elevation from the boat to the cliff top because:",
+          "options": [
+            "The two horizontals are parallel and the line of sight makes equal alternate angles with them",
+            "Both angles add up to 90°",
+            "The triangle is isosceles",
+            "The boat and the cliff are the same height"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Which situation describes an angle of DEPRESSION?",
+          "options": [
+            "A learner looking up at a flagpole",
+            "A boat spotting a lighthouse lamp above",
+            "A kite flyer watching the kite climb",
+            "A lifeguard on a tower looking down at a swimmer"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Three-Step Method — Sketch, Label, Choose the Ratio",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Standing 40 m from a flagpole with elevation 32° to the top, the correct ratio for the height is:",
+          "options": [
+            "$\\sin 32° = \\dfrac{h}{40}$",
+            "$\\tan 32° = \\dfrac{h}{40}$ — opposite over adjacent",
+            "$\\cos 32° = \\dfrac{h}{40}$",
+            "$\\tan 32° = \\dfrac{40}{h}$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The height of that flagpole, $h = 40\\tan 32°$, is:",
+          "options": [
+            "$25{,}0$ m",
+            "$21{,}2$ m",
+            "$64{,}0$ m",
+            "$33{,}9$ m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Before computing $40\\tan 32°$, the calculator must be in degree mode because:",
+          "options": [
+            "Degree mode makes the calculator faster",
+            "Radian mode cannot compute tangent",
+            "In the wrong mode the ratio value itself is wrong, so every answer after it is wrong",
+            "Degree mode rounds automatically"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding an Angle and Finding a Distance",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "A 5 m ladder has its foot 2 m from a wall. The angle with the ground satisfies $\\cos\\theta = \\dfrac{2}{5}$, so $\\theta$ is:",
+          "options": [
+            "$23{,}6°$",
+            "$21{,}8°$",
+            "$68{,}2°$",
+            "$66{,}4°$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "From a 30 m cliff the angle of depression to a boat is 25°. The boat's distance from the base is:",
+          "options": [
+            "$30 \\times \\tan 25° \\approx 14{,}0$ m",
+            "$\\dfrac{30}{\\tan 25°} \\approx 64{,}3$ m",
+            "$\\dfrac{30}{\\sin 25°} \\approx 71{,}0$ m",
+            "$30 \\times \\cos 25° \\approx 27{,}2$ m"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "To find an unknown ANGLE when two sides are known, you must:",
+          "options": [
+            "Use the inverse trig function of the ratio, e.g. $\\theta = \\cos^{-1}(0{,}4)$",
+            "Divide the larger side by the smaller",
+            "Multiply the ratio by 90",
+            "Subtract the ratio from 1"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A vertical pole casts a 12 m shadow when the sun's elevation is 55°. The pole's height is:",
+          "options": [
+            "$12 \\div \\tan 55° \\approx 8{,}4$ m",
+            "$12 \\times \\sin 55° \\approx 9{,}8$ m",
+            "$12 \\times \\tan 55° \\approx 17{,}1$ m",
+            "$12 \\times \\cos 55° \\approx 6{,}9$ m"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Two Triangles, One Height",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "In a two-observation problem the key strategy is:",
+          "options": [
+            "Average the two angles and use one triangle",
+            "Write the shared height from each triangle and equate the two expressions",
+            "Use the larger angle only",
+            "Add the two distances first"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "With elevation 38° from A, 50° from B, and B being 20 m closer, the distance $d$ from B to the base satisfies:",
+          "options": [
+            "$d = \\dfrac{20\\tan 38°}{\\tan 50° - \\tan 38°} \\approx 38{,}1$ m",
+            "$d = 20(\\tan 50° - \\tan 38°) \\approx 8{,}2$ m",
+            "$d = \\dfrac{20}{\\tan 50° + \\tan 38°} \\approx 10{,}1$ m",
+            "$d = 20\\tan 50° \\approx 23{,}8$ m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Using $d \\approx 38{,}1$ m and $h = d\\tan 50°$, the tower's height is about:",
+          "options": [
+            "$29{,}8$ m",
+            "$38{,}1$ m",
+            "$52{,}6$ m",
+            "$45{,}4$ m"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Looking Up, Looking Down — Everything Starts Level",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Every elevation or depression angle is measured starting from:",
+          "options": [
+            "The vertical wall or pole",
+            "The line of sight",
+            "The level horizontal line through the observer's eye",
+            "The hypotenuse"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "A kite flies on 50 m of taut string at an elevation of 40°. Its height is:",
+          "options": [
+            "$50\\sin 40° \\approx 32{,}1$ m",
+            "$50\\cos 40° \\approx 38{,}3$ m",
+            "$50\\tan 40° \\approx 42{,}0$ m",
+            "$\\dfrac{50}{\\sin 40°} \\approx 77{,}8$ m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "You look down at a taxi from a balcony at 35° below your level line. The taxi driver looking up at you sees an elevation of:",
+          "options": [
+            "$55°$",
+            "$35°$ — the same angle, by alternate angles between parallel level lines",
+            "$70°$",
+            "It cannot be found without the height"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "One Triangle at a Time",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Standing inside the marked angle, the side straight across the triangle from you is the:",
+          "options": [
+            "Hypotenuse",
+            "Adjacent side",
+            "Base",
+            "Opposite side"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In SOH CAH TOA, the TOA part means:",
+          "options": [
+            "Tangent equals opposite over adjacent",
+            "Tangent equals opposite over hypotenuse",
+            "The triangle has one right angle",
+            "Tangent equals adjacent over opposite"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "If the flagpole observation changes to an elevation of 35° from the same 40 m, the height becomes $40\\tan 35°$, which is about:",
+          "options": [
+            "$22{,}9$ m",
+            "$57{,}1$ m",
+            "$28{,}0$ m",
+            "$32{,}8$ m"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Reading the Story Into a Sketch",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The very first move on any worded 2D trig problem is to:",
+          "options": [
+            "Press the tan key",
+            "Draw the sketch — vertical object, horizontal ground, line of sight",
+            "Round all the numbers",
+            "Find the hypotenuse"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "In these problems the right angle is found:",
+          "options": [
+            "At the observer's eye",
+            "At the top of the object",
+            "Where the vertical object meets the horizontal ground",
+            "In the middle of the line of sight"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The phrase 'from the top of a cliff, the angle of depression to a boat is 25°' tells you to draw the 25°:",
+          "options": [
+            "Below a level line drawn through the cliff-top observer",
+            "Between the cliff face and the sea",
+            "At the boat, above the line of sight",
+            "Inside the cliff, at its base"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

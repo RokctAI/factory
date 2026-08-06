@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A bedroom on a 1 : 100 floor plan measures 45 mm by 30 mm, with a quarter-circle arc at a 9 mm gap in one wall. Interpret the symbols, calculate the real dimensions and floor area, and determine how a real 2 m cupboard would appear on the plan.",
+      "expected_answer": "The paired thick lines are walls, with the gap between them showing wall thickness; the 9 mm gap with a quarter-circle arc is a doorway, the arc showing the direction and sweep of the door's swing — real width 9 × 100 = 900 mm. Real room dimensions: 45 × 100 = 4 500 mm = 4,5 m and 30 × 100 = 3 000 mm = 3,0 m, giving a floor area of 4,5 × 3,0 = 13,5 m². The sanity check confirms plausibility, since rooms come out between about 2 and 8 metres. Reversing the scale, a 2 m cupboard is 2 000 ÷ 100 = 20 mm on the plan — which allows furniture placement to be tested with a pencil, including keeping the door's swing arc clear."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what floor plans and elevation plans each show, describe the method for matching elevations to a floor plan including the mirror trap, and show how the two kinds of drawing combine to give a window's glass area of 1,6 m width and 1,5 m height.",
+      "expected_answer": "A floor plan is the bird's-eye view of one storey with the roof lifted off: it fixes room layout, wall lengths and thicknesses, door positions and swings, and window positions, but contains no heights. Elevations view each outside face horizontally — the north elevation shows the wall facing north — revealing wall and roof heights, window and door heights, and roof shape. To match elevations: use the north arrow, list the openings the floor plan places on each face, then compare counts and arrangements with each candidate elevation. The mirror trap: viewed from outside, a wall's features appear reversed relative to reading the plan from inside — like a friend's raised right hand facing your left — so anchor features to compass directions, which never flip, rather than to left and right, which do. Combining drawings: the plan supplies the window's width, 1 600 mm, the elevation its height, 1 500 mm, so the glass area is 1,6 × 1,5 = 2,4 m² — obtainable from neither drawing alone. Any question about clearance under a ceiling belongs to the vertical drawings, since the floor plan is silent about up."
+    },
+    {
+      "id": "cc3",
+      "question": "A carton measures 30 cm by 24 cm by 20 cm and juice boxes are 6 cm by 4 cm by 10 cm. A 4,5 m by 3 m floor is tiled with 300 mm tiles sold in boxes of 12, and its walls (2,4 m high, one 0,8 m by 2 m door, one 1,6 m by 1,5 m window) get two coats of paint covering 8 m² per litre. Calculate the packing number, the tile boxes and the paint, stating the rounding rules.",
+      "expected_answer": "Packing, axis by axis with boxes upright: 30 ÷ 6 = 5 along the length, 24 ÷ 4 = 6 across, so 30 per layer; height 20 ÷ 10 = 2 layers; total 60 boxes. Volume check: 14 400 ÷ 240 = 60, confirming a perfect fit — but the count, not the volume, is the method, because only whole boxes fit along each axis and leftover slices hold nothing. Tiles: floor area 4,5 × 3 = 13,5 m²; each tile covers 0,3 × 0,3 = 0,09 m²; 13,5 ÷ 0,09 = 150 tiles; plus 10 percent for cutting and breakage = 165; boxes: 165 ÷ 12 = 13,75, so buy 14 boxes, rounding up because boxes are sold whole. Paint: wall area = perimeter 2 × (4,5 + 3) = 15 m × 2,4 m = 36 m²; subtract the door 0,8 × 2 = 1,6 m² and window 1,6 × 1,5 = 2,4 m², leaving 32 m²; two coats double it to 64 m²; 64 ÷ 8 = 8 litres. The governing rule throughout: buying quantities always round up to whole sellable units, since a small surplus is cheap and a shortfall means an unfinished job."
+    }
+  ]
+}

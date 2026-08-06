@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For y = 2(x − 1)² − 8, find the turning point, axis of symmetry, both intercept sets and the range, and state the symmetry check that audits the x-intercepts.",
+      "expected_answer": "Turning point: the bracket is zero at x = 1, where y = −8, so the minimum turning point is (1; −8), with axis of symmetry x = 1 (a = 2 is positive, so the parabola opens upwards). y-intercept: substitute x = 0, giving 2(1) − 8 = −6, the point (0; −6). x-intercepts: set y = 0, so 2(x − 1)² = 8, (x − 1)² = 4, x − 1 = ±2, giving x = 3 and x = −1. Range: y ≥ −8, including the equals sign because the graph genuinely reaches its minimum; the domain is all real x. Symmetry check: the x-intercepts must average to the axis, and (3 + (−1))/2 = 1 confirms it — if the average missed the axis, one intercept would be wrong."
+    },
+    {
+      "id": "cc2",
+      "question": "For y = 3/(x − 2) + 1, state both asymptotes, calculate both intercepts, give the domain and range, and describe where the two branches lie.",
+      "expected_answer": "Vertical asymptote: x = 2, where the denominator would be zero. Horizontal asymptote: y = 1, since the fraction 3/(x − 2) can never itself be zero. y-intercept: x = 0 gives 3/(−2) + 1 = −1,5 + 1 = −0,5. x-intercept: 3/(x − 2) + 1 = 0 gives 3/(x − 2) = −1, so x − 2 = −3 and x = −1. Domain: all real x except x = 2; range: all real y except y = 1 — both must state their exceptions. Since a = 3 is positive, the branches occupy the top-right and bottom-left corners of the asymptote cross; both intercepts lie on the bottom-left branch, consistent with that placement."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain what the average gradient of a curve between two points is, compute it for f(x) = x² between x = 1 and x = 3, and use the shrinking-interval table to identify the gradient of the curve at x = 1.",
+      "expected_answer": "The average gradient between two points on a curve is the gradient of the straight line joining them: the change in y divided by the change in x. For f(x) = x²: f(1) = 1 and f(3) = 9, so the average gradient is (9 − 1)/(3 − 1) = 8/2 = 4. Shrinking the interval with the left point fixed at x = 1: to x = 2, (4 − 1)/1 = 3; to x = 1,5, (2,25 − 1)/0,5 = 2,5; to x = 1,1, (1,21 − 1)/0,1 = 2,1. The averages approach 2, so the gradient of the curve at x = 1 is 2 — defined as the limit of average gradients over ever-smaller intervals. The distinction to preserve: 'between two points' is a direct two-point calculation, while 'at a point' means this limiting process, which grade twelve formalises as the derivative."
+    }
+  ]
+}

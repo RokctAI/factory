@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Prove that the line drawn from the centre of a circle perpendicular to a chord bisects the chord, and state the other two members of this theorem family.",
+      "expected_answer": "Let O be the centre, AB the chord, and M the foot of the perpendicular from O to AB. In triangles OMA and OMB: OA = OB because both are radii; OM is common; the angles OMA and OMB are both 90° by construction. By the right angle, hypotenuse, side congruency condition, triangle OMA is congruent to triangle OMB, so AM = MB — the chord is bisected. The two related results: the line from the centre to the midpoint of a chord is perpendicular to the chord (the converse), and the perpendicular bisector of any chord passes through the centre — which is why bisecting two chords locates the centre of a circle."
+    },
+    {
+      "id": "cc2",
+      "question": "A chord of length 16 cm lies in a circle of radius 10 cm. Calculate the distance from the centre to the chord, naming the theorem that justifies your triangle.",
+      "expected_answer": "The perpendicular from the centre to the chord bisects it (line from centre perpendicular to chord), so the half-chord is 8 cm. The radius to an endpoint of the chord (10 cm), the half-chord (8 cm) and the distance d from the centre form a right-angled triangle with the radius as hypotenuse. By Pythagoras: d² = 10² − 8² = 100 − 64 = 36, so d = 6 cm. The standard error is using the full chord of 16 in the triangle; the theorem guarantees the right angle sits at the chord's midpoint, so only the half-chord belongs in the calculation."
+    },
+    {
+      "id": "cc3",
+      "question": "O is the centre of a circle through A, B and C, with angle AOB = 100° on the minor arc AB and C on the major arc. BC is a diameter. Find angle ACB, the base angles of triangle AOB, and angle ABC, giving a reason for every statement.",
+      "expected_answer": "Angle ACB = 50°, reason: the angle at the centre is twice the angle at the circumference on the same arc, so 100° ÷ 2 = 50°. In triangle AOB, OA = OB, reason: radii; therefore the base angles at A and B are equal, reason: base angles of an isosceles triangle. They sum with 100° to 180°, reason: angle sum of a triangle, so each base angle = (180° − 100°) ÷ 2 = 40°. Since BC is a diameter, angle BAC = 90°, reason: angle in a semicircle. In triangle ABC the angles sum to 180°, so angle ABC = 180° − 90° − 50° = 40°, reason: angle sum of a triangle. Every line carries its reason because CAPS marking awards the statement and reason together."
+    }
+  ]
+}

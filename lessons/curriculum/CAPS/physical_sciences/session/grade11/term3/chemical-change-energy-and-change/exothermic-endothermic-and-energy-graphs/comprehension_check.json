@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the two rules about bond breaking and bond forming, define the heat of reaction ΔH, and explain why ΔH is negative for an exothermic reaction even though the surroundings get hotter.",
+      "expected_answer": "Breaking a chemical bond always absorbs energy, because work must be done to pull attracted particles apart; forming a chemical bond always releases energy. The heat of reaction ΔH is the difference between the potential energy of the products and the potential energy of the reactants — ΔH = E(products) − E(reactants) — measured in kilojoules or kilojoules per mole. In an exothermic reaction the energy released by forming the new bonds exceeds the energy absorbed breaking the old ones, so the surplus leaves the system as heat and the products end at lower potential energy than the reactants. The sign of ΔH describes the system, the chemicals themselves, not the surroundings: the chemicals end up with less stored energy, so the subtraction gives a negative number, even though the surroundings gain that energy and warm up."
+    },
+    {
+      "id": "cc2",
+      "question": "Define activation energy and the activated complex, and use them to explain why methane only burns once ignited, and why the flame then sustains itself.",
+      "expected_answer": "The activation energy is the minimum energy that colliding particles need in order to react — on the potential energy graph it is the climb from the reactants' level to the peak. The activated complex is the unstable transition state of maximum potential energy at that peak, in which old bonds are partly broken and new bonds partly formed; it exists only for the instant of a collision and falls apart either into products or back into reactants. Methane and oxygen do not react at room temperature because almost no collisions carry enough energy to cover this entry fee, despite combustion being strongly exothermic. The igniter or match supplies the activation energy for a small number of molecules; their reaction releases much more energy than was invested, and that released energy supplies the activation energy for neighbouring molecules. The reaction therefore funds its own continuation, which is why one match sustains a whole fire."
+    },
+    {
+      "id": "cc3",
+      "question": "A potential energy graph shows reactants at 50 kJ, a peak at 120 kJ and products at 20 kJ. Calculate the forward activation energy, ΔH for the forward reaction, and the activation energy of the reverse reaction. Then state exactly what changes and what stays the same when a catalyst is added.",
+      "expected_answer": "Forward activation energy: peak minus reactant level = 120 − 50 = 70 kJ. ΔH: product level minus reactant level = 20 − 50 = −30 kJ, so the forward reaction is exothermic. Reverse activation energy: peak minus product level = 120 − 20 = 100 kJ, and the reverse reaction has ΔH = +30 kJ; the two activation energies differ by exactly the magnitude of ΔH. A catalyst provides an alternative pathway with a lower activation energy, so on the graph only the peak drops — for example from 120 kJ to 90 kJ, cutting the forward climb from 70 kJ to 40 kJ and lowering the reverse climb by the same amount. The reactant and product levels do not move, so ΔH is completely unchanged: the catalysed reaction is faster but releases exactly the same total energy, and the catalyst itself is unchanged when the reaction ends."
+    }
+  ]
+}

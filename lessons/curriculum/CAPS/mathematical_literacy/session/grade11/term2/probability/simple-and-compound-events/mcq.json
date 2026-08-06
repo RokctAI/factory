@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Scale from Impossible to Certain",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The probability scale runs from:",
+          "options": [
+            "0 for impossible to 1 for certain, with nothing beyond either end",
+            "1 to 100",
+            "−1 to 1",
+            "0 to 10"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A spinner with eight equal sectors, one marked WIN, gives a winning probability of:",
+          "options": [
+            "0,8",
+            "One eighth — 0,125, or 12,5%",
+            "One half",
+            "8%"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "An 'event' differs from an 'outcome' because an event:",
+          "options": [
+            "Is always less likely",
+            "Only applies to coins",
+            "Is the collection of outcomes you care about — 'even' bundles 2, 4 and 6",
+            "Cannot be given a probability"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "If the spinner wins with probability one eighth, it loses with probability:",
+          "options": [
+            "One eighth",
+            "Zero",
+            "One",
+            "Seven eighths — the two must total exactly 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Watching versus Calculating: Relative Frequency",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The taxi arrived full on 12 of 40 mornings. The relative frequency of a full taxi is:",
+          "options": [
+            "12 ÷ 40 = 0,3",
+            "40 ÷ 12",
+            "12%",
+            "0,12"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Taxis, weather and load shedding need relative frequency rather than theoretical probability because:",
+          "options": [
+            "Their probabilities are always 0,5",
+            "They have no symmetry to consult — their chances must be estimated by watching",
+            "They cannot be observed",
+            "Theoretical probability only works for large numbers"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Seven heads in ten tosses of a fair coin means:",
+          "options": [
+            "The coin is definitely crooked",
+            "The theoretical probability has changed to 0,7",
+            "Nothing alarming — small samples wobble; a thousand tosses at that rate would be evidence",
+            "The next three tosses must be tails"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "A coin tossed 200 times gives 92 heads. The full-marks comparison says:",
+          "options": [
+            "Theoretical 0,46; relative frequency 0,5",
+            "The coin is unfair because 92 is not 100",
+            "Both numbers are 0,5",
+            "Theoretical 0,5, relative frequency 0,46 — close together, so the coin behaves fairly over a decent test"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Tree Diagrams: Chance in Two Steps",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Tossing a coin twice produces the equally likely combined outcomes:",
+          "options": [
+            "Heads-heads, heads-tails, tails-heads, tails-tails — four routes",
+            "Heads-heads, heads-tails, tails-tails — three routes",
+            "Two heads or two tails only",
+            "Six routes"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The probability of exactly one head in two tosses is:",
+          "options": [
+            "One quarter",
+            "A half — the two routes heads-tails and tails-heads",
+            "Three quarters",
+            "One eighth"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The rule for combining probabilities along a tree's branches is:",
+          "options": [
+            "Add along the route",
+            "Subtract the smaller from the larger",
+            "Multiply along the route — a half times a half gives each coin path a quarter",
+            "Take the larger branch only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "If the tuck shop runs out of pies with probability 0,2 each day, independently, then pies available two days running has probability:",
+          "options": [
+            "0,4",
+            "0,2",
+            "0,96",
+            "0,8 × 0,8 = 0,64"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Two-Way Tables: Chance in a Grid",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "With 28 learner-taxi, 42 learner-foot, 20 adult-taxi and 30 adult-foot, the totals are:",
+          "options": [
+            "70 learners, 50 adults, 48 by taxi, 72 on foot, 120 in all",
+            "60 learners, 60 adults, 50 by taxi, 70 on foot",
+            "70 learners, 50 adults, 50 by taxi, 70 on foot",
+            "48 learners, 72 adults, 70 by taxi, 50 on foot"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The probability that a random visitor is an adult who came by taxi is:",
+          "options": [
+            "20 over 50",
+            "The single cell 20 over the grand total 120 — one sixth",
+            "48 over 120",
+            "50 over 120"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "'Given that a visitor is a learner, the chance they came by taxi' is:",
+          "options": [
+            "28 over 120",
+            "70 over 120",
+            "28 over 70 = 0,4 — the words shrink the world to the 70 learners",
+            "48 over 70"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Choosing the denominator in a two-way-table question depends on:",
+          "options": [
+            "Always using the grand total",
+            "Always using the largest total",
+            "The size of the cell",
+            "The wording — grand total for 'a random visitor', a row or column total when the question says 'given' or 'of the learners'"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "How Sure Is Sure",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "One half, 0,5 and 50% are:",
+          "options": [
+            "The same chance in three languages — fraction, decimal and percent",
+            "Three different probabilities",
+            "Only valid for coins",
+            "Increasingly likely versions of the same event"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Picking a red sweet blind from a packet of 3 red and 9 green has probability:",
+          "options": [
+            "3 out of 9",
+            "3 out of 12 — a quarter",
+            "9 out of 12",
+            "A half"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "An answer of 1,2 for a probability is:",
+          "options": [
+            "A very likely event",
+            "Acceptable if the working is shown",
+            "Broken — nothing is more certain than certain, so no probability exceeds 1",
+            "A rounding issue"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Taxi You Watched for Forty Mornings",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The taxi's chance had to be watched rather than calculated because:",
+          "options": [
+            "There is no rulebook of symmetry for taxis — real-world chances are measured by counting",
+            "Taxis are always late",
+            "The counting was easier than the formula",
+            "Coins are more reliable than timetables"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Forty mornings of watching beats four mornings because:",
+          "options": [
+            "Forty is a rounder number",
+            "The longer you watch, the closer the count creeps to the truth",
+            "Four mornings would give probability zero",
+            "The taxi changes route after four days"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Nomsa's estimate of 0,3 for a full taxi means roughly:",
+          "options": [
+            "The taxi is full every third week",
+            "Three taxis in ten are full right now",
+            "A thirty percent risk of standing at a full taxi's door on any school morning",
+            "The taxi holds 30 passengers"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Branches and Grids: Handling Two Things at Once",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The tree diagram exists mainly to:",
+          "options": [
+            "Put every path in front of your eyes, catching the route head-counters forget — like tails-heads",
+            "Make the page look organised",
+            "Replace multiplication",
+            "Handle crowds with two labels"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The picture for a crowd where each person carries two labels is:",
+          "options": [
+            "A tree diagram",
+            "The two-way grid, with cells and totals that must add up",
+            "A broken-line graph",
+            "A tally chart"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "When rows and columns of the grid refuse to add to their totals:",
+          "options": [
+            "The grand total should be changed",
+            "The question is faulty",
+            "A cell is wrong, and finding it before answering is free",
+            "The denominators must be swapped"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Seeing 'given that' or 'of the learners' in a question means:",
+          "options": [
+            "Use the grand total of 120",
+            "Multiply along the branches",
+            "Add the row and column totals",
+            "The denominator stops being 120 and becomes the named group's total"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

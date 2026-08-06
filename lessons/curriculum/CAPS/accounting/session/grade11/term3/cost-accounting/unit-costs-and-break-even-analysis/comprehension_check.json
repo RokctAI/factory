@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using Kagiso Footwear's budget — selling price R95, variable costs R48 per pair, fixed costs R658 000, planned output 24 000 pairs — build the four-line contribution statement and explain why contribution is not profit.",
+      "expected_answer": "Sales: 24 000 pairs at R95 — R2 280 000. Less total variable costs: 24 000 at R48 — R1 152 000, made up of direct materials R23, direct labour R17 and selling and distribution R8 per pair. Total contribution: R1 128 000, checkable as 24 000 times the R47 contribution per unit. Less fixed costs of R658 000 — factory overheads R400 000 plus administration R258 000. Budgeted profit: R470 000. Contribution is not profit because each pair's R47 must first pay toward the pile of fixed costs, which exists regardless of output; until total contribution covers R658 000 the business is still in loss, and only after that point does each pair's R47 fall through as pure profit. Variable costs are constant per unit but grow in total with output; fixed costs are constant in total but shrink per unit as volume spreads them — which is why a full unit cost is only true at the output it was computed for."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate Kagiso's break-even point in units and in rand, interpret it against the plan, and state the rounding rule with its reason.",
+      "expected_answer": "Break-even units: total fixed costs over contribution per unit — R658 000 over R47 — 14 000 pairs. Break-even value: 14 000 at R95 — R1 330 000. Check: revenue R1 330 000 less variable costs of R672 000 gives contribution of exactly R658 000, equal to fixed costs, so profit is zero. Interpretation: the survival line sits at 58,3 percent of the planned 24 000 pairs, so the budget carries a healthy margin of safety of 10 000 pairs — 41,7 percent — and those pairs beyond break-even deliver R47 each, producing the budgeted profit of R470 000. Rounding: when the division is not exact, always round UP — at R658 100 of fixed costs the division gives 14 002 comma 1, and at 14 002 pairs a sliver of loss remains, so break-even is only reached at 14 003. Break-even is a threshold: the pile is either buried or it is not."
+    },
+    {
+      "id": "cc3",
+      "question": "Test three changes on the break-even point — price cut to R89, materials up R3 per pair, fixed costs up R47 000 — and name the model's assumptions.",
+      "expected_answer": "Price cut to R89: contribution falls to R41, and R658 000 over R41 gives 16 048 comma 8, so break-even rises to 16 049 pairs — a R6 cut moves the line by more than two thousand pairs because price cuts attack contribution directly. Materials up R3: variable cost R51, contribution R44, break-even R658 000 over R44 — 14 954 comma 5, so 14 955 pairs. Fixed costs up R47 000: the pile becomes R705 000 over the unchanged R47 — exactly 15 000 pairs. The two routes differ: variable increases shrink each unit's contribution; fixed increases grow the pile to be buried — either way the margin of safety thins, and the tool prices each decision before it is signed. Assumptions: selling price and unit variable cost constant at any volume, fixed costs that never step, and everything made is sold — approximately true near the planned range, weaker far outside it, where fixed costs step, bulk discounts bend variable costs, and prices may need to fall to sell extreme volumes."
+    }
+  ]
+}

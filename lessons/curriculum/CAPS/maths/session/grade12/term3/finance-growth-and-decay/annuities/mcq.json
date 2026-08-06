@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Future Value — Saving a Stream of Payments",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In the future value derivation, the FINAL payment is worth:",
+          "options": [
+            "x(1 + i)ⁿ",
+            "x(1 + i)^(n−1)",
+            "x, since it earns nothing",
+            "x(1 + i)"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The payments form a geometric series with ratio:",
+          "options": [
+            "1 + i",
+            "i",
+            "x",
+            "(1 + i)ⁿ"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "R1 000 monthly for 60 months at 0,5% per month accumulates to about:",
+          "options": [
+            "R60 000,00",
+            "R63 500,00",
+            "R75 200,00",
+            "R69 770,03"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Of that total, the interest earned by the stream is about:",
+          "options": [
+            "R6 000",
+            "R9 770",
+            "R3 490",
+            "R12 000"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Present Value — the Mathematics of Loans",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The present value of a loan's payment stream equals:",
+          "options": [
+            "The sum of all payments at face value",
+            "The final payment grown to today",
+            "The sum of all future payments discounted to today",
+            "The interest portion only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A payment x arriving in k months is worth how much today?",
+          "options": [
+            "x(1 + i)^k",
+            "x ÷ (1 + i)^k",
+            "x − ki",
+            "x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "R250 000 borrowed at 1% per month over 60 months costs monthly:",
+          "options": [
+            "R4 166,67",
+            "R5 000,00",
+            "R6 250,00",
+            "R5 561,11"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The total interest paid over that loan is roughly:",
+          "options": [
+            "R83 667",
+            "R33 667",
+            "R133 667",
+            "R250 000"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Sinking Funds — Saving for the Machine's Funeral",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The replacement machine's future cost is priced using:",
+          "options": [
+            "The fund's interest rate",
+            "The inflation rate on equipment prices",
+            "The depreciation rate",
+            "The repo rate"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The sinking fund's target equals:",
+          "options": [
+            "The new machine's future cost plus scrap value",
+            "The old machine's original price",
+            "Future replacement cost minus the old machine's scrap value",
+            "500 000 rand exactly"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "In the worked case, the target 447 260,13 with factor 73,4769 gives a monthly payment of about:",
+          "options": [
+            "R6 087,09",
+            "R7 454,34",
+            "R5 561,11",
+            "R4 472,60"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The three rates in a sinking fund question:",
+          "options": [
+            "Must be averaged before use",
+            "Are always equal",
+            "Are added together",
+            "Each do a separate job in a separate lane"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Outstanding Balance and What a Loan Really Costs",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The outstanding balance on a loan at any moment equals:",
+          "options": [
+            "The original loan minus payments made",
+            "The present value of the remaining payments",
+            "The future value of payments made",
+            "The remaining payments at face value"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "After 24 of 60 payments on the R250 000 loan, the balance is about:",
+          "options": [
+            "R100 000",
+            "R150 000",
+            "R167 431",
+            "R116 569"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "In month one, the R5 561,11 instalment reduces the debt by only:",
+          "options": [
+            "R3 061,11, after covering R2 500 interest",
+            "R5 561,11 in full",
+            "R2 500,00",
+            "R1 000,00"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Early overpayments shorten a loan dramatically because:",
+          "options": [
+            "Banks waive fees for them",
+            "They earn bonus interest",
+            "The instalment decreases automatically",
+            "They cut the balance when interest charges on it are largest"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Sixty Envelopes on the Table",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The last envelope, dropped on the final day, is worth:",
+          "options": [
+            "R1 000 times 1,005",
+            "Exactly R1 000",
+            "R1 000 times 1,005 to the sixtieth",
+            "Nothing yet"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The first envelope earns interest for:",
+          "options": [
+            "60 months",
+            "12 months",
+            "59 months",
+            "1 month"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The envelope values in a row form:",
+          "options": [
+            "A geometric series with ratio 1,005",
+            "An arithmetic series with difference 5",
+            "A constant list",
+            "A quadratic pattern"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "If every envelope is dropped at month START instead of month end:",
+          "options": [
+            "Nothing changes",
+            "The last envelope earns nothing",
+            "The total halves",
+            "Every envelope earns one extra month"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Furniture Shop's Fair Price",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "R500 arriving one year from now is worth, today:",
+          "options": [
+            "More than R500",
+            "Exactly R500",
+            "Less than R500 — its shrunken value",
+            "R500 plus interest"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The fair cash price of a credit deal equals:",
+          "options": [
+            "All payments, each discounted to today, added up",
+            "The sum of the payments at face value",
+            "The deposit only",
+            "The first payment times n"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The verb that signals a PRESENT value question is:",
+          "options": [
+            "Save",
+            "Owe or borrow",
+            "Accumulate",
+            "Deposit"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The gap between a credit stream's total and the cash lump is:",
+          "options": [
+            "A rounding error",
+            "The deposit",
+            "Value-added tax",
+            "The fee for impatience — the cost of credit"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Debt That Shrinks From the Wrong End",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In the tank picture, the interest pouring in each month is calculated on:",
+          "options": [
+            "The original loan amount",
+            "The monthly instalment",
+            "Whatever is currently in the tank",
+            "The final balance"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Debt shrinks slowly at first because:",
+          "options": [
+            "A full tank generates the most interest, absorbing most of each instalment",
+            "Instalments start small",
+            "Banks delay processing",
+            "The rate rises over time"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "A settlement figure is computed as:",
+          "options": [
+            "Original loan minus total paid",
+            "Remaining instalments at face value",
+            "Half the remaining instalments",
+            "The today-value of the not-yet-made payments"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "When comparing two loan offers you should compare:",
+          "options": [
+            "Instalments only",
+            "The full stream totals against the loan amount",
+            "The banks' slogans",
+            "The first month's interest only"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

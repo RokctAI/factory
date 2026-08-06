@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain E_p = mgh as a 'lifting bill', and use it to calculate the energy gained by the 2 kg brick lifted to the 5 m platform.",
+      "expected_answer": "m × g is the object's weight — the force gravity exerts (2 × 9,8 = 19,6 N) — and weight times the vertical height lifted is the work done against gravity, banked as potential energy. E_p = 2 × 9,8 × 5 = 98 J. The unit check confirms it: kg × m/s² = N, and N × m = J."
+    },
+    {
+      "id": "cc2",
+      "question": "Two observers with different reference levels assign the same brick different potential energies. Explain why both are correct and what all observers must agree on.",
+      "expected_answer": "Height is measured from a freely chosen zero: from the ground h = 5 gives 98 J; from a basement 3 m lower h = 8 gives 156,8 J. Both are correct relative to their declared zero because no experiment measures absolute E_p — nature only cashes in differences. Both compute the same 98 J released when the brick falls to the ground, since the zero subtracts out of every difference. The one forbidden move is mixing two reference levels in one problem."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain why a zigzag staircase and a straight ladder bank the same energy in a carried brick, and name the exam trap this defeats.",
+      "expected_answer": "E_p depends only on final vertical height, not the path — gravity pulls vertically, so it charges only for vertical metres; horizontal wandering adds nothing to the brick's stored energy (the carrier's extra effort goes to muscles and heat, not the brick). This defeats the ramp trap: for a trolley pushed 10 m up a ramp rising 3 m, h = 3 m, and the 10 m is a distractor."
+    }
+  ]
+}

@@ -66,7 +66,7 @@ Now the same tax from the till slip in your hand — because you have been payin
 
 Buy anything at a supermarket and look at the bottom of the slip. There is a line marked VAT. You paid it. You did not choose to, and nobody asked you — and yet that line is one of the biggest sources of money the government has, paying for clinics, roads and schools.
 
-Here is the part that surprises people: the shop did not keep that money. The shop is a COLLECTOR, not an owner. It takes the VAT from you at the till, holds it, and hands it to SARS. Businesses collect; consumers pay. That single sentence explains everything else in this lesson.
+Here is the part that surprises people: the shop did not keep that money. The shop is a COLLECTOR, not an owner. It takes the VAT from you at the till, holds it, and passes it on to SARS. Businesses collect; consumers pay. That single sentence explains everything else in this lesson.
 
 And the collecting happens in a clever chain. Think of bread. The miller sells flour to the bakery and adds VAT. The bakery sells bread to the shop and adds VAT — but it first claims BACK the VAT it paid the miller, so it only hands over the tax on the bit of value IT added by baking. The shop does the same when it sells to you. Every business in the chain pays tax on its own slice, nobody pays twice, and when you add up all the slices, SARS ends up with exactly the tax on what YOU finally paid. That is why they call it value added tax: each business is taxed only on the value it added.
 

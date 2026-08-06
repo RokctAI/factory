@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A patient weighs 82 kg and his height is recorded as 168 cm. Calculate his BMI, name his category, and explain both the unit error that produces 0,003 and one limitation of BMI as a health measure.",
+      "expected_answer": "Height must first be converted to metres: 168 cm = 1,68 m. BMI is mass divided by height squared: 1,68 × 1,68 = 2,8224, and 82 ÷ 2,8224 = 29,1 to one decimal place. Against the adult categories — below 18,5 underweight, 18,5 to 24,9 healthy, 25 to 29,9 overweight, 30 and above obese — a BMI of 29,1 falls in the overweight category, near its upper edge. Using centimetres instead of metres gives 82 ÷ 28 224 = 0,003, an impossible human value, because squaring amplifies the unit error ten-thousand-fold; adult BMIs live roughly between 15 and 45, so any answer outside that range signals a unit mistake. A limitation: BMI reads only mass and height, so it cannot distinguish muscle from fat — a muscular athlete can register overweight while carrying little fat — which is why BMI is a screening tool, not a diagnosis, and adult categories are never applied to children."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what it means for a six-month-old girl weighing 7,3 kg to plot on the 50th percentile of her growth chart, and why a baby steady on the 15th percentile may be healthier than one who falls from the 50th to the 15th over successive visits.",
+      "expected_answer": "A percentile positions a child among 100 peers of the same age and sex: on the 50th percentile, the girl sits exactly at the middle — half of six-month-old girls weigh less than 7,3 kg and half weigh more. A baby steady on the 15th percentile is one of the smaller babies, but healthy babies stand at every position in the line; if she tracks along her own curve visit after visit, feeds well and develops normally, she is simply a small, thriving child. The concern is the direction of travel, not the position: a baby who falls from the 50th to the 15th percentile has drifted backwards past a third of her peers, meaning her growth has slowed, and she is referred even though the 15th percentile alone is acceptable. One plotted point is a photograph; the sequence of points across visits is the story the chart is designed to tell."
+    },
+    {
+      "id": "cc3",
+      "question": "A child of 18 kg is prescribed paracetamol syrup at 15 mg per kilogram per dose, three doses per day. The syrup contains 120 mg per 5 ml and the bottle holds 100 ml. Calculate the dose in mg and ml, the daily syrup total, and how long the bottle lasts, explaining the rounding rule for doses.",
+      "expected_answer": "Dose in milligrams: 15 × 18 = 270 mg. The syrup carries 120 ÷ 5 = 24 mg per millilitre, so the dose in syrup is 270 ÷ 24 = 11,25 ml, measured with a marked syringe rather than a kitchen spoon. Daily total: 11,25 × 3 = 33,75 ml, carrying 3 × 270 = 810 mg, within the safe daily limit for an 18 kg child. Doses per bottle: 100 ÷ 11,25 = 8,88, which rounds DOWN to 8 full doses, because the 10 ml remaining after eight doses is less than a full 11,25 ml dose and would under-treat the child. Dosage rounding is the opposite of shopping rounding: both bend toward safety, but safety here means never serving a short dose and never doubling a dose after a missed one. Eight doses at three per day is two full days plus two doses of the third day, so the family must plan the next bottle or follow-up visit before the third day ends."
+    }
+  ]
+}

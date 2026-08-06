@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "In a school of 120 grade elevens, 70 stream music, 50 play online games and 30 do both. Draw up the four Venn regions, find the probability that a randomly chosen learner does at least one of the two, and verify your answer with the addition rule.",
+      "expected_answer": "Fill in the overlap first: 30 learners do both. Subtract outward: music only is 70 − 30 = 40; gaming only is 50 − 30 = 20. The three inner regions hold 40 + 30 + 20 = 90 learners, so the outside region — neither — holds 120 − 90 = 30. Every learner lies in exactly one region, and the audit 40 + 30 + 20 + 30 = 120 confirms the diagram. P(at least one) is the three inner regions: 90/120 = 0,75. The addition rule verifies it: P(music or gaming) = P(music) + P(gaming) − P(both) = 70/120 + 50/120 − 30/120 = 90/120 = 0,75. The subtraction exists because the 30 learners in the overlap are counted once in each circle; without it, 70 + 50 = 120 would falsely make the or-event a certainty."
+    },
+    {
+      "id": "cc2",
+      "question": "Define mutually exclusive events and complementary events, and use the single die roll events 'multiple of 4' and 'odd' to show that mutually exclusive events need not be complementary.",
+      "expected_answer": "Events are mutually exclusive when they cannot happen together — P(A and B) = 0, non-overlapping circles — and then the addition rule simplifies to P(A or B) = P(A) + P(B). Events are complementary when two conditions both hold: they are mutually exclusive AND together they exhaust the sample space, so their probabilities total 1 and P(not A) = 1 − P(A). On one die roll, 'multiple of 4' contains only the outcome 4, and 'odd' contains 1, 3 and 5. They share no outcomes, so they are mutually exclusive, and P(either) = 1/6 + 3/6 = 4/6 = 2/3. But the outcomes 2 and 6 belong to neither event, so the two events do not fill the sample space and their probabilities total 2/3, not 1 — they are not complementary. Complementary events are always mutually exclusive, but the converse fails; both conditions must be checked before claiming complementarity."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the school data, test whether streaming music and gaming are independent events, state the conclusion properly, and explain why mutually exclusive events with nonzero probabilities can never be independent.",
+      "expected_answer": "The product test: events are independent exactly when P(A and B) = P(A) × P(B). Here P(music) = 70/120 = 7/12 and P(gaming) = 50/120 = 5/12, so the product is 35/144 ≈ 0,243. The actual and-probability is P(both) = 30/120 = 0,25, which as a fraction is 36/144. Since 36/144 ≠ 35/144, the equation fails, and the events are not independent — gamers stream slightly more than independence would predict. The conclusion must quote both numbers: since P(both) = 0,25 differs from the product 0,243, the events are dependent; the test demands exact equality, not nearness. Mutually exclusive events with nonzero probabilities can never be independent because exclusivity is maximal influence: if one event occurs, the other's probability collapses to zero, whereas independence requires the occurrence of one to leave the other's probability unchanged. Algebraically, P(A and B) = 0 but P(A) × P(B) > 0, so the product test fails automatically."
+    }
+  ]
+}

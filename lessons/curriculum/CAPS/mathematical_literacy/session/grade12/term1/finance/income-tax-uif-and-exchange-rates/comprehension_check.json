@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Zanele's taxable income is R342 000 for the 2023/24 tax year. Using the table entry 'R42 678 + 26% of taxable income above R237 100' and the primary rebate of R17 235, calculate her annual tax and monthly PAYE, and explain the error of charging 26% on the full R342 000.",
+      "expected_answer": "The slice above the band's floor is 342 000 − 237 100 = R104 900. Tax on the slice: 104 900 × 0,26 = R27 274,00. Adding the pre-calculated tax on the first band gives 42 678 + 27 274 = R69 952,00 before rebates. Subtracting the primary rebate: 69 952 − 17 235 = R52 717,00 per year. Monthly PAYE: 52 717 ÷ 12 = R4 393,08 to the nearest cent. Charging 26% on the whole R342 000 gives R88 920, which is wrong because income below R237 100 is taxed at 18% — that tax, R42 678, is already printed in the table — and only the slice above the line pays 26%. Brackets tax slices, never whole salaries."
+    },
+    {
+      "id": "cc2",
+      "question": "Zanele earns a gross salary of R28 500 per month and the UIF ceiling is R17 712. Calculate her UIF contribution and her net pay after PAYE of R4 393,08, then express total deductions as a percentage of gross salary and interpret the result.",
+      "expected_answer": "Because R28 500 exceeds the ceiling, UIF is calculated on R17 712 only: 17 712 × 0,01 = R177,12, not 1% of 28 500. Net pay is gross minus PAYE minus UIF: 28 500 − 4 393,08 − 177,12 = R23 929,80. Total deductions are 4 393,08 + 177,12 = R4 570,20, and as a percentage of gross: 4 570,20 ÷ 28 500 × 100 = 16,04%. The interpretation: roughly one rand in every six of Zanele's salary is deducted before it reaches her bank account, with the employer's matching 1% UIF paid on top of her salary and therefore never shown as a deduction on her payslip."
+    },
+    {
+      "id": "cc3",
+      "question": "The exchange rate moves from R18,50 to R19,20 per US dollar. Convert 450 dollars to rands at the old rate, convert R5 000 to dollars at the old rate, and calculate the new rand price of a laptop costing 899 dollars. State whether the rand strengthened or weakened and what this means for buying power.",
+      "expected_answer": "At R18,50 per dollar: 450 dollars become 450 × 18,50 = R8 325,00 — multiply, because each dollar is worth many rands. R5 000 becomes 5 000 ÷ 18,50 = 270,27 dollars — divide, because each dollar costs R18,50. The sanity check holds in both cases: the rand figure is the bigger number. The laptop at the new rate costs 899 × 19,20 = R17 260,80, up from 899 × 18,50 = R16 631,50, an increase of R629,30. Because a dollar now costs more rand, the rand has weakened, or depreciated. This reduces South Africans' buying power: imported goods, fuel and overseas travel become more expensive, while exporters receive more rands for the same dollar earnings."
+    }
+  ]
+}

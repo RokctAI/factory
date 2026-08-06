@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Cosine Rule and Where It Comes From",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In a² = b² + c² − 2bc·cosA, the side a and the angle A are always:",
+          "options": [
+            "Adjacent to each other",
+            "Both the largest in the triangle",
+            "Opposite each other",
+            "Equal in value"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "In the proof of the cosine rule, the two b² terms merge into one because:",
+          "options": [
+            "sin²A + cos²A = 1",
+            "The triangle is isosceles",
+            "tanA = sinA/cosA",
+            "b² cancels with c²"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "When angle A = 90°, the cosine rule reduces to:",
+          "options": [
+            "The sine rule",
+            "The area rule",
+            "a² = b² − c²",
+            "Pythagoras: a² = b² + c²"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "In the proof, after dropping the perpendicular from C onto AB at D, the length DB equals:",
+          "options": [
+            "b·cosA",
+            "c − b·cosA",
+            "b·sinA",
+            "c + b·cosA"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Finding a Side — Two Sides and the Included Angle",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In triangle ABC with b = 8 cm, c = 5 cm and A = 60°, side a equals:",
+          "options": [
+            "49 cm",
+            "9,4 cm",
+            "7 cm",
+            "11,4 cm"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For an included angle of 110°, the correction term −2pr·cosQ becomes positive because:",
+          "options": [
+            "The sides are multiplied twice",
+            "Cosine of an obtuse angle is negative, and the two minus signs make a plus",
+            "The formula changes for obtuse angles",
+            "110° is measured clockwise"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "With p = 6, r = 9 and Q = 110°, side q correct to two decimals is:",
+          "options": [
+            "12,41 cm",
+            "8,95 cm",
+            "10,82 cm",
+            "153,94 cm"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "An obtuse-angle answer that comes out SHORTER than the right-angle version signals:",
+          "options": [
+            "The triangle is impossible",
+            "The sine rule should have been used",
+            "The answer must be doubled",
+            "A sign was mishandled — a wider angle must push the far side longer"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding an Angle — Three Sides, No Angle",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "In cosA = (b² + c² − a²)/2bc, the side that gets subtracted on top is:",
+          "options": [
+            "The shortest side",
+            "Either of the sides next to angle A",
+            "The side opposite the angle being found",
+            "Always the side called c"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For sides 5, 7 and 10 cm, the largest angle is found opposite the 10 because:",
+          "options": [
+            "10 is an even number",
+            "The largest angle always faces the longest side",
+            "The angle opposite 10 is always 90°",
+            "The cosine rule only works on the longest side"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "For sides 5, 7 and 10, cosθ = −26/70 gives θ equal to:",
+          "options": [
+            "111,8°",
+            "68,2°",
+            "21,8°",
+            "158,2°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Inverse cosine has no 'second suspect' at 180° minus the answer because:",
+          "options": [
+            "Cosine repeats every 90°",
+            "The calculator automatically tests both options",
+            "Obtuse angles cannot appear in triangles",
+            "cos(180° − θ) has the opposite sign, not the same value"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Two-Dimensional Problems — Harbours, Bearings and Shared Sides",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Boats sail 4 km and 6 km from harbour H with 70° between their courses. The distance between them is:",
+          "options": [
+            "35,58 km",
+            "5,97 km",
+            "7,21 km",
+            "4,69 km"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The cosine rule was chosen for the first calculation because triangle HPQ offered:",
+          "options": [
+            "Two sides and the included angle — no complete opposite pair existed",
+            "Three known angles",
+            "A right angle at the harbour",
+            "Two complete opposite pairs"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "For the angle at P, the cosine rule was preferred over the sine rule because:",
+          "options": [
+            "The sine rule cannot find angles at all",
+            "The cosine rule is quicker to type",
+            "The angle might have been obtuse, and inverse cosine settles that without ambiguity",
+            "The sine rule only works in right-angled triangles"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "With angle H = 70° and angle P ≈ 71°, angle Q must be about:",
+          "options": [
+            "141°",
+            "51°",
+            "70°",
+            "39°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Pythagoras with an Attitude Adjustment",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the two-friends picture, the final distance apart depends on the paths and on:",
+          "options": [
+            "The walking speed of each friend",
+            "The angle at the corner where the paths begin",
+            "The direction of north",
+            "The height of the field"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "A corner tighter than 90° means the friends end up:",
+          "options": [
+            "Closer than the square-corner answer — the correction subtracts",
+            "Further than the square-corner answer",
+            "Exactly the Pythagoras distance apart",
+            "At the same point"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "At exactly 90°, the correction term vanishes because:",
+          "options": [
+            "The two paths are equal",
+            "The product 2bc becomes zero",
+            "Cosine of 90° is zero",
+            "Sine of 90° is zero"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The recommended calculator habit for the cosine rule is:",
+          "options": [
+            "Round the cosine to one decimal before multiplying",
+            "Compute the correction term separately and subtract it by hand",
+            "Convert the angle to radians first",
+            "Type the whole right-hand side in one go and press equals once"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Toolbox Question",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The first question to ask before choosing a rule is:",
+          "options": [
+            "What do I hold in this triangle?",
+            "What does the final answer look like?",
+            "Which rule has the shortest formula?",
+            "Is the triangle drawn to scale?"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Holding two sides and the angle squeezed between them, the only rule that fits is:",
+          "options": [
+            "The sine rule",
+            "The cosine rule",
+            "The area rule",
+            "Pythagoras"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Inverse sine is called the witness who cannot tell twins apart because:",
+          "options": [
+            "It only works for angles below 45°",
+            "It gives a different answer each time",
+            "An acute angle and its 180°-minus partner have identical sines",
+            "It confuses sine with cosine"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Writing the inventory sentence — 'two sides and the included angle are known, so the cosine rule applies' — is recommended because it:",
+          "options": [
+            "Fills space in the answer book",
+            "Is required by the calculator",
+            "Replaces the need for a sketch",
+            "Earns the method mark and stops the wrong formula before it starts"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "One Story, Two Triangles",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In a two-triangle problem, the bridge is:",
+          "options": [
+            "The longest side of the diagram",
+            "The side the two triangles share",
+            "The angle at the top of the sketch",
+            "The line of sight to the horizon"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The correct order of work is:",
+          "options": [
+            "Solve both triangles simultaneously with one equation",
+            "Guess the shared side and check at the end",
+            "Solve the triangle where enough is known, find the shared side, then carry it into the second triangle",
+            "Always work in the triangle containing the unknown first"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Crossing the bridge with a ROUNDED value is dangerous because:",
+          "options": [
+            "The rounding error poisons every number in the second triangle",
+            "Rounded values cannot be squared",
+            "The calculator rejects rounded input",
+            "The second triangle becomes obtuse"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Before computing anything in a two-triangle question, you should:",
+          "options": [
+            "Erase the given diagram and start again",
+            "Convert all lengths to metres",
+            "Find every angle in both triangles",
+            "Circle the shared side and note which triangle gives it and which needs it"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Ohm's law with its condition, and explain, with reference to the current-versus-voltage graphs, why a standard resistor is ohmic while a light bulb filament is not.",
+      "expected_answer": "Ohm's law states that the current through a conductor is directly proportional to the potential difference across it, provided the temperature remains constant; in symbols R = V/I. For an ohmic conductor such as a standard resistor at constant temperature, the graph of current against voltage is a straight line through the origin — doubling the voltage doubles the current, so the ratio V/I, the resistance, stays constant. A light bulb filament is non-ohmic: as the voltage and current increase the filament's temperature rises enormously, and resistance increases with temperature, so each additional volt drives less additional current and the current-versus-voltage graph flattens into a curve. The filament does not disprove Ohm's law; it fails the law's constant-temperature condition, which is exactly the condition the law states."
+    },
+    {
+      "id": "cc2",
+      "question": "A 12 V battery with negligible internal resistance is connected to a 2 Ω resistor in series with a parallel combination of 6 Ω and 3 Ω. Calculate the total resistance, the battery current, the potential difference across the parallel pair, and the current in each branch, showing the checks that confirm the answers.",
+      "expected_answer": "First collapse the parallel pair: R = (6 × 3) ÷ (6 + 3) = 18 ÷ 9 = 2 Ω. Total resistance: 2 + 2 = 4 Ω. Battery current: I = V/R = 12 ÷ 4 = 3 A, which flows through the series 2 Ω resistor. Voltage across the series resistor: V = IR = 3 × 2 = 6 V, so the parallel pair receives 12 − 6 = 6 V, and both branches have this same 6 V across them because parallel branches share potential difference. Branch currents: through the 6 Ω, I = 6 ÷ 6 = 1 A; through the 3 Ω, I = 6 ÷ 3 = 2 A — the smaller resistance carries the larger current. Checks: the branch currents add to 1 + 2 = 3 A, matching the arriving current, and the voltages around the loop add to 6 + 6 = 12 V, matching the battery. The parallel combination, 2 Ω, is smaller than the smallest branch, as it must be."
+    },
+    {
+      "id": "cc3",
+      "question": "Write down the three formulas for electrical power, verify for the circuit above that the power delivered by the battery equals the sum of the powers in the three resistors, and calculate the daily cost of a 3 kW geyser heating for 4 hours at R2,50 per kWh.",
+      "expected_answer": "Power can be calculated as P = VI, P = I²R or P = V²/R, choosing whichever formula matches the known quantities. Battery power: P = VI = 12 × 3 = 36 W. Series 2 Ω resistor: P = I²R = 3² × 2 = 18 W. The 6 Ω branch: P = V²/R = 6² ÷ 6 = 6 W. The 3 Ω branch: P = 6² ÷ 3 = 12 W. Sum: 18 + 6 + 12 = 36 W, equal to the battery's output, so all the energy is accounted for. For the geyser: energy in kilowatt-hours equals power in kilowatts multiplied by time in hours, so 3 kW × 4 h = 12 kWh per day. Cost: 12 × R2,50 = R30 per day, roughly R900 per month, which is why the geyser dominates a household bill. The kilowatt-hour is a unit of energy — the energy used by a 1 kW appliance in one hour — while the kilowatt measures the rate of energy use."
+    }
+  ]
+}

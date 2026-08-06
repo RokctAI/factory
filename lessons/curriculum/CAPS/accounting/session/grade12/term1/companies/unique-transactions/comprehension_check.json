@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Thabiso Ltd has 500 000 shares in issue that raised R2 000 000. It issues 300 000 new shares at R6,00 each, and later buys back 50 000 shares at R7,00 each. Record both transactions and state the closing number of shares and the closing balance of ordinary share capital.",
+      "expected_answer": "The issue: 300 000 shares at R6,00 raises R1 800 000 — debit Bank, credit Ordinary Share Capital R1 800 000, the full issue price, because no par value shares have no separate premium. Share capital is now R3 800 000 for 800 000 shares, an average issue price of R4,75. The buy-back: the company pays 50 000 times R7,00, which is R350 000 — credit Bank. Ordinary Share Capital is debited with the average issue price of the shares bought back, 50 000 times R4,75, which is R237 500, and Retained Income is debited with the excess of R112 500, because the amount paid above the average is a distribution of past profits. Closing position: 750 000 shares in issue and ordinary share capital of R3 800 000 less R237 500, which is R3 562 500. The bought-back shares are cancelled and receive no future dividends."
+    },
+    {
+      "id": "cc2",
+      "question": "Thabiso Ltd paid provisional tax of R170 000 and R180 000 during the year. Net profit before tax is R1 400 000 and the tax rate is 27 percent. It also paid an interim dividend of 25 cents per share on 800 000 shares and declared a final dividend of 40 cents per share on 750 000 shares. Show the year-end position with SARS and the total dividends for the year.",
+      "expected_answer": "Income tax for the year is 27 percent of R1 400 000, which is R378 000 — debit Income Tax, credit SARS Income Tax. Provisional payments were R170 000 plus R180 000, R350 000 in total, debited to the SARS account as they were paid. The account therefore closes with a credit balance of R378 000 less R350 000, which is R28 000 — a current liability, SARS income tax, still owing. Had payments exceeded the assessment, the balance would be a current asset, a refund due. Dividends: the interim dividend is 800 000 times 25 cents, R200 000, declared and paid during the year; the final dividend is 750 000 times 40 cents, R300 000, declared on the last day and unpaid, so it appears as Shareholders for Dividends under current liabilities. Total dividends for the year are R500 000, and each is computed on the shares in issue on its own declaration date — the buy-back reduced the count before the final dividend."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the separation of ownership and control in a company, and show how limited liability, the independent auditor, directors' fees and dividends each connect to that separation.",
+      "expected_answer": "Shareholders own the company and vote at the annual general meeting, but they elect directors to control and manage it — so the people spending the money are not the people who own it. Limited liability is what makes that arrangement attractive to owners: a shareholder risks only what was paid for the shares, so strangers are willing to fund a business they will never manage. The independent auditor exists because of the same separation: since directors manage other people's money, the shareholders appoint an auditor who examines the records and reports to the shareholders — not to the directors — on whether the statements fairly present the position; independence is essential, or the check is worthless. Directors' fees are payment for the WORK of managing, an operating expense deducted before net profit. Dividends are the reward of OWNERSHIP, an appropriation of profit after tax, declared at the directors' discretion in cents per share — no shareholder can demand one. A person who is both director and shareholder is paid through both doors, and keeping fees apart from dividends is exactly the distinction the examination tests."
+    }
+  ]
+}

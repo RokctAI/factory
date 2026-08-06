@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define electric current and potential difference with their equations and units. Then calculate: (a) the current when 30 C passes a point in 10 s; (b) the potential difference when 24 J of work moves 8 C through a resistor.",
+      "expected_answer": "Electric current is the rate of flow of charge: I = Q ÷ Δt, measured in amperes, where one ampere is one coulomb passing a point per second. Potential difference is the work done per unit charge between two points: V = W ÷ Q, measured in volts, where one volt is one joule per coulomb. (a) I = Q ÷ Δt = 30 ÷ 10 = 3 A. (b) V = W ÷ Q = 24 ÷ 8 = 3 V. Conventional current is taken to flow from the positive terminal through the external circuit to the negative terminal, although the electrons in a metal drift the opposite way."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish emf from terminal potential difference, and state how an ammeter and a voltmeter must each be connected, with the resistance each should have and the reason.",
+      "expected_answer": "The emf is the voltmeter reading across a battery's terminals when no current flows — the open-circuit reading, the total energy the battery's chemical reactions supply per coulomb. The terminal potential difference is the reading across the same terminals while the battery delivers current, and it is slightly less than the emf because some energy is used inside the battery against its internal resistance. An ammeter measures current through a point, so it is connected in series so the charge it counts passes through it, and it must have a very low resistance so that inserting it barely changes the current. A voltmeter measures the potential difference between two points, so it is connected in parallel across the component, and it must have a very high resistance so that it draws almost no current through itself."
+    },
+    {
+      "id": "cc3",
+      "question": "Give the microscopic description of resistance, and state and explain the effect of length, thickness and temperature on the resistance of a metallic conductor.",
+      "expected_answer": "Resistance is a material's opposition to the flow of charge, measured in ohms. Microscopically, the free electrons moving through a metal repeatedly collide with the vibrating positive ions of the lattice; each collision transfers energy from the electrons to the lattice, which appears as heat — this is why conductors warm up when current flows. Length: a longer wire has more lattice to cross, so more collisions occur and resistance increases in proportion to length. Thickness: a thicker wire has a greater cross-sectional area, offering more parallel paths for the flow, so resistance decreases as thickness increases. Temperature: heating a metal makes its ions vibrate more violently, so electrons collide more often and resistance increases with temperature. In short: longer — more resistance; thicker — less; hotter — more."
+    }
+  ]
+}

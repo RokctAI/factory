@@ -1,0 +1,9 @@
+Hey, it's Bianca — slopes week, and I know it looks like a strange double bill: half ancient rock, half satellite pixels. Relax. The rock half is one diagram, and the digital half is one story, and you can carry both in your head by tonight.
+
+The diagram is the four-part hillside, and the chant locks it in: crest convex, cliff vertical, talus straight, pediment concave. Give each a job — scalp, factory, rubble chute, apron — and the labels can never scramble. Two details are worth extra marks on their own: the cliff is called the free face because whatever breaks off it falls away at once, and the talus is straight because loose rock always settles at its angle of repose, about 25 to 35 degrees, same as a pile of builder's sand.
+
+The process question is the walking hill: the cliff sheds rock and steps backward, the chute follows, the apron grows, and the profile keeps its exact shape the whole way — parallel retreat. Give it long enough and the aprons merge into the pediplain with koppies left standing. If the question asks for evaluation, remember the choosing rule: deep soil and wet climates make slopes decline and round; caprock and semi-arid climates — ours — make them retreat and stay sharp.
+
+For the GIS half, don't learn terms in a list; learn the one story: satellite image in — spatial resolution is pixel size, spectral is the extra invisible bands that show sick veld. Elevation grid in — that is raster, and it prints a steepness map at a button-press. Farms, roads and boreholes in — that is vector: areas, lines, points, each with its attribute table. Overlay the layers and out comes the too-steep-to-plough map. Tell that story in the exam and every GIS mark falls out of it naturally.
+
+One chant, one walking hill, one data story. That is the whole week's work. You've got this!

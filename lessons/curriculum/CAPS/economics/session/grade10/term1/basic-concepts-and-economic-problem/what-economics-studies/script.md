@@ -1,6 +1,6 @@
 # Part 1 — Expert
 
-Welcome to the discipline itself. Before supply curves and business cycles, Economics must be defined: what it studies, how it is organised into branches, what methods it uses, and where it stands among the sciences. Examiners open Paper 1 with exactly these foundations, and candidates who can define precisely — in the syllabus's own terms — collect the opening marks that set a paper's tone. Today: the elements of economics, its branches, its methods, and its scientific character.
+The discipline itself comes first. Before supply curves and business cycles, Economics must be defined: what it studies, how it is organised into branches, what methods it uses, and where it stands among the sciences. Examiners open Paper 1 with exactly these foundations, and candidates who can define precisely — in the syllabus's own terms — collect the opening marks that set a paper's tone. Today: the elements of economics, its branches, its methods, and its scientific character.
 
 ## Subtopic: The Elements — What Economics Is Made Of
 
@@ -88,4 +88,4 @@ And the honest difference from physics: water never DECIDES to boil differently 
 
 That's your subject: the science of not-enough, run on people. Everything this year — markets, cycles, flows, wages — is that one problem, studied with that one method.
 
-And here come the last questions of the lesson, right now: run the loop on a street observation, deploy ceteris paribus properly, and say — in your own words — why a science of people must stay humble. Welcome to Economics.
+And here come the last questions of the lesson, right now: run the loop on a street observation, deploy ceteris paribus properly, and say — in your own words — why a science of people must stay humble. That is Economics.

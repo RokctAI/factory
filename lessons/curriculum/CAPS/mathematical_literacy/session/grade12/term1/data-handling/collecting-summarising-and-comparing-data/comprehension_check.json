@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "The rural school's travel times in minutes are 5, 10, 10, 15, 20, 25, 30, 35, 40, 45 and 60. Calculate the mean, median, mode, range, quartiles and interquartile range, and explain why the mean and median differ.",
+      "expected_answer": "The data is already ordered. The mean is the sum divided by the count: 295 ÷ 11 = 26,8 minutes to one decimal place. The median is the sixth of eleven ordered values: 25 minutes. The mode is 10 minutes, the only value appearing twice. The range is 60 − 5 = 55 minutes. Q1 is the median of the bottom five values (5, 10, 10, 15, 20): 10 minutes. Q3 is the median of the top five values (30, 35, 40, 45, 60): 40 minutes. The IQR is 40 − 10 = 30 minutes. The mean exceeds the median because the single 60-minute journey pulls the mean upward — every value votes with its full size in the mean — while the median, found by counting to the middle position, is unaffected by how extreme the largest value is."
+    },
+    {
+      "id": "cc2",
+      "question": "The urban school's ordered times are 5, 5, 10, 10, 15, 15, 20, 20, 25, 30 and 35. Write down the five-number summaries for both schools, and compare the two box-and-whisker plots in context, making at least three distinct comparison statements.",
+      "expected_answer": "Urban: median is the sixth value, 15; Q1 is the median of the bottom five, 10; Q3 is the median of the top five, 25; so the five-number summary is 5, 10, 15, 25, 35, with IQR 15. Rural: 5, 10, 25, 40, 60, with IQR 30. Comparisons in context: first, the rural median of 25 minutes is ten minutes higher than the urban median of 15, so the typical rural learner travels longer each morning. Second, the rural IQR of 30 is double the urban IQR of 15, so rural journey times are far more spread out and less predictable. Third, since rural Q3 is 40, a quarter of rural learners travel 40 minutes or more, while the urban maximum is only 35 — the longest urban journey is shorter than what a quarter of rural learners face daily. The plots show position and spread only; they say nothing about how many learners were surveyed."
+    },
+    {
+      "id": "cc3",
+      "question": "A survey on the new taxi rank asks: 'Do you agree that our wonderful new taxi rank has improved travel times?' and is given only to commuters at the rank on Monday morning. Identify two sources of bias, state the direction of each, and rewrite the question neutrally.",
+      "expected_answer": "First, the question is a leading question: the phrase 'our wonderful new taxi rank' and the agree-framing push respondents toward agreement, so satisfaction will be overstated. Second, the sample is biased by location and time: surveying only people at the rank on Monday morning over-represents current taxi users and misses shift workers and, most importantly, people who stopped using taxis because the service did not suit them — again inflating the apparent improvement. No calculation can repair biased data afterwards; the mean of a biased data set is a precise summary of the bias. A neutral version balances the options and drops the loaded language: 'Since the new taxi rank opened, has your travel time become shorter, longer, or stayed the same?' — ideally given to a random sample of the whole commuting population, not only those found at the rank."
+    }
+  ]
+}

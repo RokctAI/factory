@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to choose an acid and a base to prepare a given salt, then write balanced equations for the preparation of potassium nitrate, copper sulphate (from an oxide) and calcium chloride (from a carbonate).",
+      "expected_answer": "The salt's positive ion comes from the base and its negative ion from the acid, so read the name apart: the metal chooses the base (a hydroxide, oxide or carbonate of that metal) and the anion chooses the acid — chloride from hydrochloric, nitrate from nitric, sulphate from sulphuric, ethanoate from ethanoic. Potassium nitrate: KOH + HNO₃ → KNO₃ + H₂O. Copper sulphate: CuO + H₂SO₄ → CuSO₄ + H₂O. Calcium chloride: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ — the carbonate version adds carbon dioxide to the usual salt and water. Balancing follows the ion charges: the 2+ calcium ion needs two 1− chlorides, so CaCl₂ requires two HCl."
+    },
+    {
+      "id": "cc2",
+      "question": "State the rules for assigning oxidation numbers, then assign them to every atom in H₂O, CH₄, CO₂, H₂O₂ and HOCl, pointing out any exceptions used.",
+      "expected_answer": "Rules: a free element is 0; a simple ion equals its charge; fluorine in compounds is −1; hydrogen in compounds is +1 except −1 in metal hydrides; oxygen in compounds is −2 except −1 in peroxides; and the numbers must sum to zero in a neutral compound or to the charge of an ion. H₂O: H = +1, O = −2 (2 × +1 − 2 = 0). CH₄: H = +1, so C = −4. CO₂: O = −2, so C = +4 — the same element runs from −4 to +4. H₂O₂: H = +1, so each O must be −1; the usual −2 would give a total of −2, which is impossible for a neutral molecule — this is the peroxide exception, forced by the sum rule. HOCl: H = +1, O = −2, so Cl = +1 — a positive halogen, because it is bonded next to the more electronegative oxygen."
+    },
+    {
+      "id": "cc3",
+      "question": "Define oxidation, reduction, oxidising agent and reducing agent. Then balance the reaction between aluminium metal and copper(II) ions using half-reactions, identify each agent, and verify the final equation's atom and charge balance.",
+      "expected_answer": "Oxidation is the loss of electrons (oxidation number increases); reduction is the gain of electrons (oxidation number decreases) — OIL RIG. The oxidising agent causes oxidation in its partner by taking electrons and is itself reduced; the reducing agent donates electrons and is itself oxidised. Half-reactions: the table gives reductions, so reverse aluminium's line since it donates: Al → Al³⁺ + 3e⁻; copper stays as a reduction: Cu²⁺ + 2e⁻ → Cu. Match the electrons with the lowest common multiple, six: 2Al → 2Al³⁺ + 6e⁻ and 3Cu²⁺ + 6e⁻ → 3Cu. Adding and cancelling the electrons: 2Al + 3Cu²⁺ → 2Al³⁺ + 3Cu. Aluminium is oxidised (0 to +3) and is the reducing agent; the copper ion is reduced (+2 to 0) and is the oxidising agent. Audit: 2 Al and 3 Cu on each side; charge +6 on the left (3 × 2+) and +6 on the right (2 × 3+); no loose electrons remain."
+    }
+  ]
+}

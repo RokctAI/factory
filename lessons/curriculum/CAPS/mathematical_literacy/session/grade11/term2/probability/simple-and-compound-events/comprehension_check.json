@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A coin is tossed 200 times and lands heads 92 times. State the theoretical probability of heads and the relative frequency observed, explain the difference between the two ideas, and say what the comparison suggests about the coin.",
+      "expected_answer": "The theoretical probability of heads is a half — 0,5 — calculated before any tossing from the symmetry of the coin: two equally likely faces share the certainty. The relative frequency is what was actually observed: 92 ÷ 200 = 0,46. The difference is that theoretical probability is calculated from the structure of the situation and never changes, while relative frequency is measured by counting trials and wobbles from sample to sample, settling toward the true probability as the number of trials grows. Here 0,46 sits close to 0,5, and 200 tosses is a reasonably long test, so the comparison suggests the coin behaves fairly — the gap is the ordinary wobble of a finite sample, not evidence of a crooked coin."
+    },
+    {
+      "id": "cc2",
+      "question": "A fete game tosses a coin twice and pays a sweet for two heads. Draw up the tree of outcomes in words, and find the probability of winning, of exactly one head, and of at least one head — showing the complement shortcut for the last.",
+      "expected_answer": "The first toss branches into heads and tails, each with probability a half; each branch splits again for the second toss, giving four equally likely routes: heads-heads, heads-tails, tails-heads and tails-tails, each with probability a half times a half — a quarter. Winning is the single route heads-heads: probability one quarter. Exactly one head covers two routes, heads-tails and tails-heads — the second being the one head-counters forget — so two quarters: a half. At least one head covers three routes, giving three quarters by addition; the complement shortcut instead notes that the only failure is no heads at all — tails-tails, probability one quarter — so the answer is 1 minus one quarter, again three quarters. The check: winning, exactly one head and no heads sum to one quarter plus a half plus a quarter, exactly 1."
+    },
+    {
+      "id": "cc3",
+      "question": "A survey of 120 fete visitors found 28 learners who came by taxi, 42 learners on foot, 20 adults by taxi and 30 adults on foot. Complete the totals, then find the probability that a random visitor is a learner, that a random visitor is an adult who came by taxi, and that a visitor came by taxi given that they are a learner — explaining the choice of denominator each time.",
+      "expected_answer": "Row totals: learners 28 + 42 = 70, adults 20 + 30 = 50. Column totals: taxi 28 + 20 = 48, foot 42 + 30 = 72. Grand total 120, and every row and column adds to its total. The probability that a random visitor is a learner uses the grand total, because all 120 visitors are candidates: 70 ÷ 120 = seven twelfths, about 0,58. The probability that a random visitor is an adult who came by taxi is the single cell over the grand total, since the visitor is drawn from the whole gate: 20 ÷ 120 = one sixth. The conditional question — taxi given learner — shrinks the world: 'given that they are a learner' removes the 50 adults, leaving 70 candidates, of whom 28 came by taxi: 28 ÷ 70 = 0,4. The denominator is always the group still possible after the given information: the grand total for an unrestricted visitor, the row total once the wording restricts to learners."
+    }
+  ]
+}

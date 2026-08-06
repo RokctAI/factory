@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Concentration — Moles per Cubic Decimetre",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The formula for concentration, read as a sentence, is:",
+          "options": [
+            "Concentration equals the moles of solute divided by the volume of solution in dm³",
+            "Concentration equals the mass divided by the molar mass",
+            "Concentration equals the volume divided by the moles",
+            "Concentration equals the grams dissolved per litre, no conversion needed"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "500 cm³ of solution, expressed in the units the formula c = n/V requires, is:",
+          "options": [
+            "500 dm³",
+            "5 dm³",
+            "0,5 dm³",
+            "0,05 dm³"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "8 g of NaOH (M = 40 g/mol) in 0,5 dm³ of solution gives a concentration of:",
+          "options": [
+            "16 mol·dm⁻³",
+            "0,4 mol·dm⁻³",
+            "0,1 mol·dm⁻³",
+            "4 mol·dm⁻³"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Why must the 8 g of NaOH become 0,2 mol before dividing by the volume?",
+          "options": [
+            "Because grams are too small to divide",
+            "Because the volume is also in grams",
+            "Because moles make the number bigger",
+            "Because concentration counts dissolved particles in moles, not their mass in grams"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Percentage Composition — the Compound's Mass Recipe",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The percentage by mass of an element in a compound equals:",
+          "options": [
+            "The number of atoms of that element times 100",
+            "The atomic mass of the element divided by 100",
+            "The mass of that element in one mole of compound, divided by the molar mass, times 100",
+            "The molar mass divided by the element's mass, times 100"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In water, H₂O (M = 18 g/mol), the percentage of hydrogen by mass is:",
+          "options": [
+            "11,1%",
+            "5,6%",
+            "50%",
+            "88,9%"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "In CO₂, the oxygen contributes 32 g per mole and not 16 g because:",
+          "options": [
+            "Oxygen is heavier in gases",
+            "The subscript 2 means two oxygen atoms are counted",
+            "Carbon donates mass to oxygen",
+            "The 16 must be doubled only at STP"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "A learner's percentages for a compound total 92%. This means:",
+          "options": [
+            "The remaining 8% is always water",
+            "The compound is 92% pure",
+            "Nothing — totals below 100% are normal",
+            "An arithmetic error was made — the elements' percentages must total 100%"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Empirical Formula — the Recipe Recovered from Percentages",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Assuming a 100 g sample when given percentages is allowed because:",
+          "options": [
+            "A ratio is unchanged by sample size, and 100 g turns each percentage directly into a mass",
+            "All laboratory samples weigh 100 g",
+            "Percentages only work for exactly 100 g",
+            "It rounds the answer to whole numbers"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For 40,0% C, 6,7% H, 53,3% O, the mole values before simplifying are:",
+          "options": [
+            "C: 40,0; H: 6,7; O: 53,3",
+            "C: 4,8; H: 0,4; O: 8,5",
+            "C: 3,33; H: 6,7; O: 3,33",
+            "C: 3,33; H: 3,33; O: 6,7"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "After dividing each mole value by the smallest, the ratio C : H : O = 1 : 2 : 1 gives the empirical formula:",
+          "options": [
+            "C₂HO",
+            "CH₂O",
+            "C₂H₄O₂",
+            "CHO₂"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "If dividing by the smallest leaves a ratio of 1 : 1,5, the correct move is:",
+          "options": [
+            "Round 1,5 down to 1",
+            "Round 1,5 up to 2",
+            "Start the calculation again",
+            "Multiply both numbers by 2 to get 2 : 3"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Water of Crystallisation, the Full Method and the Traps",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "In CuSO₄·5H₂O, the '5H₂O' means:",
+          "options": [
+            "The crystals are dissolved in five litres of water",
+            "Five water molecules are locked into the crystal with every CuSO₄ unit",
+            "The compound is 5% water",
+            "Water must be added five times during preparation"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Using M(CuSO₄) = 159,5 g/mol and 5 × 18 = 90 g of water, the percentage of water in CuSO₄·5H₂O is:",
+          "options": [
+            "56,4%",
+            "18,0%",
+            "36,1%",
+            "9,0%"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A concentration calculated with the volume left in cm³ instead of dm³ comes out:",
+          "options": [
+            "One thousand times too small",
+            "One thousand times too big",
+            "Ten times too small",
+            "Unchanged — the units cancel"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Why can mass percentages never be read directly as atom ratios?",
+          "options": [
+            "Percentages are always rounded",
+            "Mass ratios only work for gases",
+            "The laboratory cannot measure mass accurately",
+            "Atoms have different masses, so equal masses contain different numbers of atoms — only moles count atoms"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "How Strong Is the Cooldrink",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the cooldrink picture, a 'strong' solution is one with:",
+          "options": [
+            "A bigger jug",
+            "More total liquid",
+            "More moles of solute packed into each cubic decimetre",
+            "A higher temperature"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "One mole of NaOH weighs 40 g because:",
+          "options": [
+            "Sodium 23 plus oxygen 16 plus hydrogen 1 add to 40",
+            "All bases weigh 40 g per mole",
+            "40 is the atomic number of NaOH",
+            "The balance rounds to the nearest ten"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Two jugs hold the same total dissolved substance, but jug B is twice the volume of jug A. Then:",
+          "options": [
+            "Both jugs have the same concentration",
+            "Jug B has twice the concentration of jug A",
+            "The concentrations cannot be compared",
+            "Jug B has half the concentration of jug A"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The answer 0,4 mol·dm⁻³ means, in plain words:",
+          "options": [
+            "The solution weighs 0,4 grams per litre",
+            "Every full litre of this solution holds 0,4 moles of dissolved NaOH",
+            "The jug is 0,4 litres in size",
+            "0,4% of the solution is NaOH"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Reading the Recipe Backwards",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The empirical formula problem is like reading a recipe backwards because:",
+          "options": [
+            "You start from the finished compound's percentages and recover the atom ratio",
+            "You must cook the compound first",
+            "The formula is written right to left",
+            "Percentages are always written in reverse order"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Masses are converted to moles before simplifying the ratio because:",
+          "options": [
+            "Moles are easier to divide",
+            "Grams cannot be written in a formula",
+            "A formula counts atoms, and moles count atoms while grams weigh them",
+            "The calculator requires moles"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The simplifying step of the method is: divide every mole value by:",
+          "options": [
+            "One hundred",
+            "The largest mole value",
+            "The molar mass",
+            "The smallest mole value"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "For the compound with C : H : O moles of 3,33 : 6,7 : 3,33, the empirical formula is:",
+          "options": [
+            "C₃H₆O₃",
+            "CH₂O",
+            "C₂HO₂",
+            "CHO"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Water Hiding in Dry Crystals",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "When blue copper sulfate crystals are heated gently:",
+          "options": [
+            "They melt into a blue liquid",
+            "They turn white, lose mass, and give off their water of crystallisation",
+            "They gain mass from the air",
+            "Nothing happens because they are dry"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The molar mass of the whole crystal CuSO₄·5H₂O used in the calculation is:",
+          "options": [
+            "159,5 g/mol",
+            "90 g/mol",
+            "177,5 g/mol",
+            "249,5 g/mol"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The mass lost on heating agrees with the calculated 36,1%. This agreement shows that:",
+          "options": [
+            "A formula makes a prediction that a laboratory balance can confirm",
+            "The balance was faulty",
+            "Water always makes up a third of any crystal",
+            "Heating creates new mass"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The two habits that protect every calculation in this lesson are:",
+          "options": [
+            "Round early, and ignore small subscripts",
+            "Moles before anything, and treat every subscript as a multiplication instruction",
+            "Always assume STP, and work in kilograms",
+            "Memorise all formulas, and skip the sense-check"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

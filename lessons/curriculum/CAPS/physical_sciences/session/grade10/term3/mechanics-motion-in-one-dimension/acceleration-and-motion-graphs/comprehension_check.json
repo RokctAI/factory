@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate the acceleration in each of the car's three phases and explain what the sign of each answer means in the declared frame.",
+      "expected_answer": "Phase 1: a = Δv/Δt = (20 − 0)/10 = 2 m/s² in the direction of motion — velocity grows 2 m/s each second. Phase 2: Δv = 0, so a = 0 — constant velocity, motion without change. Phase 3: (0 − 20)/5 = −4 m/s² — with the direction of motion positive, the negative sign means the acceleration opposes the velocity, removing 4 m/s of speed each second."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the two 'payments' of a velocity-time graph and use them to recover the car's total displacement of 550 m.",
+      "expected_answer": "Gradient gives acceleration (rise over run = Δv/Δt); area between graph and time axis gives displacement (velocity × time computed piece by piece). Areas: speeding-up triangle ½ × 10 × 20 = 100 m; cruise rectangle 20 × 20 = 400 m; braking triangle ½ × 5 × 20 = 50 m; total 100 + 400 + 50 = 550 m — a two-part exam answer read entirely off one picture."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain the commonest graph-reading error in this topic and the axis-checking habit that prevents it.",
+      "expected_answer": "Reading a velocity-time graph as if it were position-time: a rising line means speeding up (not moving away) and a falling line means slowing down (not coming back) — the braking car's falling ramp still covers 50 forward metres. Prevention: check the vertical axis label first and say what zero height means there — on velocity-time, a line ON the axis is rest, a horizontal line above it is steady motion, and the object only moves backwards if the graph crosses below the axis."
+    }
+  ]
+}

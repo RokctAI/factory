@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the terms functional group, homologous series and structural isomer, and use butane and 2-methylpropane to illustrate the third definition.",
+      "expected_answer": "A functional group is a bond, an atom or a group of atoms that determines the physical and chemical properties of a group of organic compounds — for example the carbon-carbon double bond in alkenes or the hydroxyl (OH) group in alcohols. A homologous series is a series of organic compounds that can be described by the same general formula, in which each member differs from the previous one by a CH₂ unit — the alkanes CnH2n+2 are one such series. Structural isomers are molecules with the same molecular formula but different structural formulae. Butane and 2-methylpropane are both C₄H₁₀, but butane has an unbranched chain of four carbons while 2-methylpropane has a three-carbon chain with a methyl group bonded to the middle carbon; since the same atoms are bonded in a different arrangement, they are structural isomers — specifically chain isomers — and they are different compounds with different names and different boiling points."
+    },
+    {
+      "id": "cc2",
+      "question": "A compound has a five-carbon chain with a double bond between carbon 1 and carbon 2 and a methyl group on carbon 4 (counting from the double-bond end). Give its IUPAC name, justify the numbering direction, and explain why numbering from the other end would be wrong.",
+      "expected_answer": "The name is 4-methylpent-1-ene. The longest chain containing the functional group has five carbons, so the root is pent; the double bond makes it an alkene, suffix -ene. The chain must be numbered from the end that gives the functional group — the double bond — the lowest possible number: from the near end the double bond starts at carbon 1 and the methyl falls on carbon 4, giving locants 1 and 4. Numbering from the far end would put the methyl on carbon 2 but the double bond at carbon 4, giving pent-4-ene numbering. That is wrong because the functional group always takes priority over substituents in numbering; substituents only decide the direction when there is no functional group or when the functional group's position is tied from both ends. The position quoted for a double bond is always the first (lower-numbered) carbon of the pair it joins."
+    },
+    {
+      "id": "cc3",
+      "question": "Propanal and propanone both have the molecular formula C₃H₆O. Describe the structure of each in words, name the type of isomerism, and explain why a molecular formula alone can never identify an organic compound.",
+      "expected_answer": "Propanal is an aldehyde: a chain of three carbons in which the end carbon (carbon 1) carries the carbonyl group — a carbon double-bonded to an oxygen — and is also bonded to a hydrogen; the other two carbons carry their full complement of hydrogens. Propanone is a ketone: a chain of three carbons in which the middle carbon carries the carbonyl group and is bonded to a carbon on each side, with each end carbon carrying three hydrogens. They are functional isomers: compounds with the same molecular formula that belong to different homologous series. This shows why a molecular formula can never identify an organic compound on its own — it only counts atoms, saying nothing about which atom is bonded to which. Since properties are determined by structure, and especially by the functional group, two compounds sharing C₃H₆O can have different families, names, boiling points and reactions. Only a structural (or condensed) formula, which records the bonding arrangement, pins down the actual compound."
+    }
+  ]
+}

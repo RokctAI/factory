@@ -1,0 +1,334 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Language of Probability",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "For one roll of an ordinary six-sided die, the sample space S is:",
+          "options": [
+            "The set $\\{1; 2; 3; 4; 5; 6\\}$, with $n(S) = 6$",
+            "The number that actually lands",
+            "The set of even numbers only",
+            "Any number from 0 to 6"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "An event with probability 1 is:",
+          "options": [
+            "Impossible",
+            "As likely as not",
+            "Certain to happen",
+            "Only slightly likely"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A learner's working produces a probability of $1{,}4$. The correct conclusion is:",
+          "options": [
+            "The event is very likely",
+            "The answer should be rounded to 1",
+            "The event happens 1,4 times per trial",
+            "The calculation is wrong — every probability lies between 0 and 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Theoretical Probability",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The theoretical probability formula $P(E) = \\dfrac{n(E)}{n(S)}$ may only be used when:",
+          "options": [
+            "The sample space is small",
+            "All outcomes in the sample space are equally likely",
+            "The experiment has been repeated many times",
+            "The event has more than one outcome"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The probability of rolling a number greater than 4 on a fair die is:",
+          "options": [
+            "$\\dfrac{1}{2}$",
+            "$\\dfrac{1}{6}$",
+            "$\\dfrac{2}{6} = \\dfrac{1}{3}$",
+            "$\\dfrac{3}{6}$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "A bag holds 5 red, 3 blue and 2 green counters. $P(\\text{blue})$ is:",
+          "options": [
+            "$\\dfrac{1}{3}$ — one colour out of three",
+            "$\\dfrac{3}{5}$",
+            "$\\dfrac{1}{10}$",
+            "$\\dfrac{3}{10}$ — three blue counters out of ten counters"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "From the same bag, $P(\\text{red or green})$ is:",
+          "options": [
+            "$\\dfrac{7}{10}$ — 5 reds plus 2 greens out of 10",
+            "$\\dfrac{2}{10}$",
+            "$\\dfrac{5}{10}$",
+            "$\\dfrac{2}{3}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Relative Frequency",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "A bottle top lands cap-up 120 times in 200 flips. The relative frequency of cap-up is:",
+          "options": [
+            "$120$",
+            "$\\dfrac{120}{200} = 0{,}6$",
+            "$\\dfrac{200}{120} \\approx 1{,}67$",
+            "$0{,}5$ — two outcomes are always equally likely"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Relative frequency must be used for the bottle top because:",
+          "options": [
+            "Bottle tops have more than two outcomes",
+            "The formula $\\dfrac{n(E)}{n(S)}$ gives a number above 1 here",
+            "Its outcomes are not equally likely, so theoretical counting does not apply",
+            "Experiments are always more accurate than theory"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "A fair coin shows 27 heads in 50 flips (relative frequency 0,54). The best conclusion is:",
+          "options": [
+            "The coin is biased toward heads",
+            "The theoretical probability of heads is now 0,54",
+            "The experiment was performed incorrectly",
+            "Normal small-sample variation — with more flips the relative frequency should settle near 0,5"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "As the number of trials grows very large, the relative frequency of an event:",
+          "options": [
+            "Settles ever closer to the true (theoretical) probability",
+            "Swings more and more wildly",
+            "Always becomes exactly 0,5",
+            "Becomes greater than 1"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Complementary Events",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The complement of the event 'rolling a 6' on a die is:",
+          "options": [
+            "Rolling another 6",
+            "Rolling a 1",
+            "Rolling a 1, 2, 3, 4 or 5",
+            "Not rolling at all"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "If the probability of rain tomorrow is 0,3, the probability of NO rain is:",
+          "options": [
+            "$0{,}3$",
+            "$1 - 0{,}3 = 0{,}7$",
+            "$0{,}5$ — rain either comes or not",
+            "It cannot be found from the given information"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "$P(A) + P(\\text{not } A) = 1$ holds because A and its complement are:",
+          "options": [
+            "Equally likely",
+            "Both certain",
+            "Independent of each other",
+            "Mutually exclusive AND exhaustive — they cannot both happen, but one must"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "For the bag of 5 red, 3 blue and 2 green counters, $P(\\text{not green})$ is:",
+          "options": [
+            "$1 - \\dfrac{2}{10} = \\dfrac{4}{5}$",
+            "$\\dfrac{2}{10}$",
+            "$\\dfrac{1}{2}$",
+            "$\\dfrac{3}{10}$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "A Scale From Impossible to Certain",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the washing line from 0 to 1, the event 'a fair die shows an even number' pegs at:",
+          "options": [
+            "The left pole — impossible",
+            "The right pole — certain",
+            "The exact middle, 0,5",
+            "Just left of the right pole"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The event 'a die shows 7' pegs at 0 because:",
+          "options": [
+            "Sevens are rare",
+            "The sample space contains no 7 — the event is impossible",
+            "Seven is an odd number",
+            "The die must be rolled twice to reach 7"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The washing line works as an error detector because:",
+          "options": [
+            "It converts fractions to decimals",
+            "It shows which events are most common",
+            "It orders events alphabetically",
+            "No valid probability can peg left of 0 or right of 1, so answers outside that range are wrong"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Counting Your Way to a Probability",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The two questions of the counting engine are:",
+          "options": [
+            "How many could happen, and how many of those make the event — then divide",
+            "How many trials, and how long they took",
+            "What is the biggest and smallest outcome",
+            "What colour, and what size"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "For the packet of 10 sweets with 5 red, 3 blue and 2 green, the trap answer 'a third for blue' fails because:",
+          "options": [
+            "Blue sweets are smaller",
+            "The correct answer is a half",
+            "The equal candidates are the 10 sweets, not the 3 colours — each red has its own chance",
+            "Green must be excluded first"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The probability of drawing red or green from that packet is:",
+          "options": [
+            "$\\dfrac{2}{3}$",
+            "$\\dfrac{7}{10}$",
+            "$\\dfrac{5}{10}$",
+            "$\\dfrac{2}{10}$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Try It a Hundred Times",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Five flips of a bottle top give 4 cap-ups. Treating 0,8 as the true probability is unwise because:",
+          "options": [
+            "0,8 is too close to 1",
+            "Bottle tops change shape as they are flipped",
+            "The relative frequency should be multiplied by 2",
+            "Five trials is far too small a sample — short runs wobble; the estimate needs many more flips"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Which object REQUIRES the experience engine (relative frequency) rather than counting?",
+          "options": [
+            "A fair six-sided die",
+            "A shuffled pack of cards",
+            "A lopsided drawing pin landing point-up or point-down",
+            "A shaken bag of identical counters"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "A coin shows 1 400 heads in 2 000 flips (relative frequency 0,7). The reasonable verdict is:",
+          "options": [
+            "The coin is very likely biased — a large sample should not sit that far from 0,5",
+            "Normal wobble; flip five more times",
+            "The theoretical probability of heads was always 0,7",
+            "Heads is simply luckier than tails"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

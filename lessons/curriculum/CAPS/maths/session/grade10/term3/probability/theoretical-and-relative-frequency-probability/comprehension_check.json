@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define sample space and event using one roll of a die, and explain why every probability must lie between 0 and 1.",
+      "expected_answer": "The sample space S is the set of all possible outcomes — {1; 2; 3; 4; 5; 6}, n(S) = 6; an event is the subset of outcomes you care about, e.g. 'even' = {2; 4; 6}, n(E) = 3. Probability 0 means impossible and 1 means certain; an event can happen no less often than never and no more often than always, so any answer outside 0 to 1 signals a calculation error."
+    },
+    {
+      "id": "cc2",
+      "question": "A bag holds 5 red, 3 blue and 2 green counters. Find P(blue) and P(not green), and explain the counting principle that prevents the answer 'one third for blue'.",
+      "expected_answer": "P(blue) = 3/10 because the ten counters are the equally likely outcomes and three are blue; P(not green) = 1 − 2/10 = 8/10 = 4/5, confirmed by the 8 non-green counters. Counting must be of individual equally likely things (counters), not of types (colours) — colours are only equally likely if their counts are equal."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain when relative frequency must be used instead of theoretical probability, using the bottle top flipped 200 times with 120 cap-ups, and state what happens to relative frequency as trials increase.",
+      "expected_answer": "Theoretical probability requires equally likely outcomes, which the asymmetrical bottle top cannot offer, so its probability must be estimated from data: relative frequency = 120/200 = 0,6. As the number of trials grows, the relative frequency settles — small samples wobble, large samples steady near the true tendency — so more trials give a more trustworthy estimate, and for fair objects the value drifts toward the theoretical probability."
+    }
+  ]
+}

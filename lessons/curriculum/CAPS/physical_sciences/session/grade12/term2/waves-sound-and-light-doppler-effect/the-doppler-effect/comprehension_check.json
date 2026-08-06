@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the Doppler effect and use a wavefront explanation to account for the pitch change heard as an ambulance approaches and then passes a stationary listener, making clear what changes and what stays constant.",
+      "expected_answer": "The Doppler effect is the change in frequency of the sound detected by a listener because the sound source and the listener have different velocities relative to the medium of sound propagation. A moving siren emits each successive wavefront from a position slightly ahead of the previous one, so ahead of the source the wavefronts are bunched together (shorter wavelength) and behind it they are stretched apart (longer wavelength). The speed of sound is a property of the medium and stays constant, and the source's own frequency never changes; since v = fλ with v fixed, a shorter wavelength ahead means a higher detected frequency and a longer wavelength behind means a lower one. The listener therefore hears a higher pitch while the ambulance approaches and a lower pitch once it has passed and is receding. The increase in loudness as it approaches is a separate effect of decreasing distance (amplitude), not part of the Doppler effect."
+    },
+    {
+      "id": "cc2",
+      "question": "A train approaches a stationary listener and its 800 Hz hooter is heard as 850 Hz. Take the speed of sound as 340 m·s⁻¹. Show how you know the train is approaching, calculate its speed, and state what frequency the driver of the train hears.",
+      "expected_answer": "The detected frequency (850 Hz) is higher than the source frequency (800 Hz), and a higher detected frequency means source and listener are moving toward each other; since the listener is stationary, the train must be approaching. Using fL = v ÷ (v − vs) × fs with the minus sign in the denominator for an approaching source: 850 = (340 ÷ (340 − vs)) × 800. Then 340 − vs = 340 × 800 ÷ 850 = 320, so vs = 20 m·s⁻¹. The driver moves with the source — there is no relative motion between driver and hooter — so the driver hears the unshifted source frequency of 800 Hz throughout."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the Doppler effect is used, first, to measure blood flow speed with ultrasound in medicine, and second, to provide evidence for the expanding universe through red shifts.",
+      "expected_answer": "Medicine: ultrasound (sound with frequency above the audible range) is beamed into the body and reflects off moving blood cells. Because the cells are moving, the reflected sound returns with a Doppler-shifted frequency — the cell first acts as a moving receiver of the sound and then as a moving source when re-emitting it, so the echo is shifted — and the size of the frequency shift measures the speed of the blood flow. Blood forced through a narrowed artery must flow faster, producing a larger shift, so constrictions can be detected non-invasively; the same principle detects the moving wall of a foetal heart, letting the machine render the heartbeat audible. Astronomy: every element absorbs and emits light at a fixed pattern of spectral-line frequencies. In the light of distant galaxies, these recognisable patterns appear shifted as a whole toward lower frequencies — the red end of the spectrum. A red shift indicates that the light source is receding. Since the light of almost all distant galaxies is red-shifted, and more distant galaxies show larger red shifts, galaxies are receding from us and from each other in every direction: evidence that the universe is expanding, with every observer in every galaxy seeing the same pattern."
+    }
+  ]
+}

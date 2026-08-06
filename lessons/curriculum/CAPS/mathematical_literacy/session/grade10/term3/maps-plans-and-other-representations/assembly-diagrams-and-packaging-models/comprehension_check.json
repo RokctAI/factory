@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the quantity chain on the bookshelf parts list and use it to answer: how many complete brackets can be fixed with 14 screws, and how many screws are missing?",
+      "expected_answer": "Four shelves at 2 brackets each need 8 brackets; 8 brackets at 2 screws each need 16 screws — the list interlocks. With 14 screws, 14 ÷ 2 = 7 complete brackets, one short of the 8 needed; 16 − 14 = 2 screws are missing."
+    },
+    {
+      "id": "cc2",
+      "question": "Show how to find the capacity of the 36 × 30 × 24 cm crate for cans 6 cm across and 12 cm tall, and explain why dividing volumes would give the wrong answer.",
+      "expected_answer": "Dimension by dimension: 36 ÷ 6 = 6 along, 30 ÷ 6 = 5 across, so 30 per layer; 24 ÷ 12 = 2 layers; capacity 60 cans. Volume division overcounts because round cans leave unusable air in the square corners — remainders in each direction fit nothing, so packing always rounds down."
+    },
+    {
+      "id": "cc3",
+      "question": "The small crate is R4,50 for 20 cans; the large is R9,60 for 60. Compare them per can AND for a 25-can job, and explain why the winners differ.",
+      "expected_answer": "Per can: 22,5 cents versus 16 cents — the large crate wins. For 25 cans: one large crate costs R9,60; two small crates cost R9,00 — the small option wins by 60 cents. The large crate's advantage sits in capacity the 25-can job never uses; cheapest per unit and cheapest for the job are different questions."
+    }
+  ]
+}

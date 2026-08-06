@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A delivery bakkie costs R240 000 and depreciates at 15% per annum. Calculate its value after 4 years under straight-line depreciation and under reducing-balance depreciation, and explain the structural difference between the two models, including their long-run behaviour.",
+      "expected_answer": "Straight-line uses A = P(1 − in): in = 0,15 × 4 = 0,6, so A = 240 000 × 0,4 = R96 000. The same fixed slice — 15% of the original R240 000, which is R36 000 — is removed every year. Reducing balance uses A = P(1 − i)ⁿ: A = 240 000 × 0,85⁴ = 240 000 × 0,52200625 = R125 281,50. Here each year removes 15% of the CURRENT value, so the rand amount lost shrinks annually — about R36 000 in year one but only about R22 000 in year four — which is why reducing balance leaves nearly R30 000 more value at the same rate. Long-run behaviour differs structurally: the straight line marches to zero and reaches it after 1 ÷ 0,15 ≈ 6⅔ years, while reducing balance multiplies by 0,85 each year and therefore shrinks forever without ever reaching zero."
+    },
+    {
+      "id": "cc2",
+      "question": "R10 000 is invested for 2 years at 9% per annum compounded monthly. Calculate the accumulated amount, compare it with annual compounding at the same nominal rate, and explain why more frequent compounding pays more.",
+      "expected_answer": "Convert to the compounding clock first: the monthly rate is 0,09 ÷ 12 = 0,0075 and the number of periods is 2 × 12 = 24. Then A = 10 000 × 1,0075²⁴ = 10 000 × 1,19641 ≈ R11 964,14. At 9% compounded annually, A = 10 000 × 1,09² = R11 881,00, so monthly compounding pays about R83 more over the two years. The reason is timing: each month's interest joins the principal immediately and starts earning interest itself — January's interest is at work from February — instead of waiting until year-end. Interest earning interest sooner is the essence of compounding, so at the same quoted rate, more frequent compounding always accumulates more, though each additional step of frequency adds less than the previous one. The critical discipline is never to mix clocks: the rate per period and the number of periods must both refer to the same compounding period."
+    },
+    {
+      "id": "cc3",
+      "question": "Define nominal and effective interest rates, derive the effective rate of 9% per annum compounded monthly, and use effective rates to decide between Bank A at 9,4% compounded annually and Bank B at 9,3% compounded quarterly.",
+      "expected_answer": "The nominal rate is the advertised annual headline, meaningless without its compounding frequency; the effective rate is the single once-a-year rate that would produce the same growth — what money actually grows by in one year. The link is 1 + i_eff = (1 + i_nom/m)^m. For 9% compounded monthly: one rand becomes 1,0075¹² = 1,09381 in a year, so the effective rate is about 9,38% — above the nominal, as it always is when compounding happens more than once a year. For the duel: Bank A compounds annually, so its effective rate equals its nominal 9,4%. Bank B: 1 + 0,093/4 = 1,02325, and 1,02325⁴ = 1,09629, an effective rate of about 9,63%. Since 9,63% exceeds 9,4%, Bank B is the better investment despite the lower headline — the quarterly compounding more than makes up the sticker gap. The comparison sentence quoting both effective rates is the required conclusion, because nominal headlines with different frequencies can never be compared directly."
+    }
+  ]
+}

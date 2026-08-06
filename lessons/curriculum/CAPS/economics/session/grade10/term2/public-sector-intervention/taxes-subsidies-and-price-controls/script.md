@@ -14,7 +14,7 @@ Pause here — this section's questions are with you now: the reasons for interv
 
 ## Subtopic: Taxes and Subsidies on the Diagram
 
-An indirect tax works through the SUPPLY curve. The tax is a cost sellers must hand to the state per unit — so at every quantity, sellers now need a higher price to offer what they offered before. The supply curve shifts LEFTWARD (equivalently, upward by the tax). Consequences at the new crossing: equilibrium price HIGHER, equilibrium quantity LOWER. Note the sharing: price typically rises by LESS than the full tax — sellers absorb part, buyers pay part; the burden splits between them. For a sin tax, the fall in quantity IS the objective: fewer cigarettes smoked. For VAT on essentials, the same mechanism is why zero-rating exists — bread and maize meal are spared to protect poor households.
+An indirect tax works through the SUPPLY curve. The tax is a cost sellers must pay over to the state per unit — so at every quantity, sellers now need a higher price to offer what they offered before. The supply curve shifts LEFTWARD (equivalently, upward by the tax). Consequences at the new crossing: equilibrium price HIGHER, equilibrium quantity LOWER. Note the sharing: price typically rises by LESS than the full tax — sellers absorb part, buyers pay part; the burden splits between them. For a sin tax, the fall in quantity IS the objective: fewer cigarettes smoked. For VAT on essentials, the same mechanism is why zero-rating exists — bread and maize meal are spared to protect poor households.
 
 A subsidy mirrors it exactly. The state pays sellers per unit, lowering their effective cost — supply shifts RIGHTWARD: equilibrium price LOWER, quantity HIGHER. Commuters ride subsidised buses cheaply and more of them ride; supported farmers plant more and food is cheaper than it would be. The costs, stated honestly: subsidies must be funded from taxation elsewhere — opportunity cost returns; and both instruments can misfire — a tax set too high breeds smuggling and illicit trade; a subsidy captured by producers may fatten margins instead of cutting prices.
 
@@ -64,7 +64,7 @@ The CEILING: the state pushes the price DOWN below where the market would rest �
 
 The FLOOR: the state holds the price UP above the resting point — say, to guarantee farmers a decent maize price. Farmers cheer and plant everything; but buyers at that dear price buy less. Much offered, little taken: the silos overflow. And the price can't fall to clear them — illegal again. So the state itself must buy the mountain, store it, ship it abroad, or watch it spoil — and the bill lands on the budget. A floor makes PILES.
 
-One memory trick holds it all: the ceiling is pushed down low (below the resting point) — and low ceilings leave people queueing outside; the floor is raised up high (above the resting point) — and high floors leave stock piled on top. Queues under ceilings; piles on floors.
+One memory trick holds it all: the ceiling is pushed down low, below the resting point — and low ceilings leave people queueing outside; the floor is raised up high, above the resting point — and high floors leave stock piled on top. Queues under ceilings; piles on floors.
 
 Your questions for this part are up now: ceiling or floor, queue or pile — and the shadow market's address.
 
