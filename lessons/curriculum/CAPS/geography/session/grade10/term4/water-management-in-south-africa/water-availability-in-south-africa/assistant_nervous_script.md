@@ -1,4 +1,4 @@
-If this topic feels like a flood of river names and rainfall figures, stand still for a second — the whole thing hangs on two numbers, one direction, and one sentence, and everything else grows from those.
+Hey, it's Thandi — if this topic feels like a flood of river names and rainfall figures, stand still for a second — the whole thing hangs on two numbers, one direction, and one sentence, and everything else grows from those.
 
 The two numbers: 465 and 9. South Africa gets about 465 millimetres of rain a year against the world's 860 — barely more than half. And only about 9 per cent of that rain ever reaches a river. Quote those two and any examiner knows you own the topic.
 

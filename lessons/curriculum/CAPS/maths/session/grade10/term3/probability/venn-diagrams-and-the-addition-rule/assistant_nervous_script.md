@@ -1,4 +1,4 @@
-If circles, lenses and rules with subtractions are knotting together right now, take a breath — you already stood on every piece of this ground in the playground picture.
+Hey, it's Thandi — if circles, lenses and rules with subtractions are knotting together right now, take a breath — you already stood on every piece of this ground in the playground picture.
 
 A Venn diagram is only a map of where people stand when two yes-no questions are asked: four patches of ground — only A, only B, both, neither. And the entire filling method is one habit: the overlap first, then subtract outward, then check that the four patches total the whole class. Overlap, subtract, total. Three beats.
 

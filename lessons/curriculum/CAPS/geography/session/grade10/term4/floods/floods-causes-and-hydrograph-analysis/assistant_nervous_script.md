@@ -1,4 +1,4 @@
-If the hydrograph looks like the scariest graph of the year, hold on — this whole topic is one kitchen experiment, one wave with five labels, and three questions. That is genuinely all of it.
+Hey, it's Thandi — if the hydrograph looks like the scariest graph of the year, hold on — this whole topic is one kitchen experiment, one wave with five labels, and three questions. That is genuinely all of it.
 
 The experiment: pour water on a sponge, then on a sheet of corrugated iron. The sponge drinks it and leaks a slow trickle for ages — that is a healthy, vegetated catchment. The iron sheds everything instantly — that is rock, baked ground, saturated soil, and above all the paved city. Every cause of flooding, physical or human, is just something that turns sponge into iron: thunderstorm intensity, steep slopes, a full sponge from last week's rain, cut trees, drained wetlands, tar and rooftops.
 

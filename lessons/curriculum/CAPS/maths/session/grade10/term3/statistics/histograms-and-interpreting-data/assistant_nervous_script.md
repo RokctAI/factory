@@ -1,4 +1,4 @@
-If frequency tables and skylines are swirling together right now, hold on — this topic is one straight road, walked one step at a time.
+Hey, it's Thandi — if frequency tables and skylines are swirling together right now, hold on — this topic is one straight road, walked one step at a time.
 
 Look at what you actually did: you sorted slips of paper into buckets, stood the buckets up as towers, and then said three sentences about the shape. Sorting, stacking, describing. There is no step in this lesson you have not done in real life with laundry or groceries.
 

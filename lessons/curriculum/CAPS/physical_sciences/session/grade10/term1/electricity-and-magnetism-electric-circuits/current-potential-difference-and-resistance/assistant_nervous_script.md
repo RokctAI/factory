@@ -1,4 +1,4 @@
-If current, potential difference, emf and resistance are blurring into one grey cloud of electricity words, take a slow breath — this topic is four ideas, and you already own a picture for each one.
+Hey, it's Thandi — if current, potential difference, emf and resistance are blurring into one grey cloud of electricity words, take a slow breath — this topic is four ideas, and you already own a picture for each one.
 
 Current is counting at a gate: how many coulombs pass per second. That is the whole definition — I equals Q over delta t — and one ampere is just one coulomb per second. Thirty coulombs in ten seconds? Three amps. Done.
 

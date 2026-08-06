@@ -1,4 +1,4 @@
-If protons, neutrons, isotopes, orbitals and that strange 35,5 are swirling together right now, breathe — this topic is three counting jobs, and you can already count.
+Hey, it's Thandi — if protons, neutrons, isotopes, orbitals and that strange 35,5 are swirling together right now, breathe — this topic is three counting jobs, and you can already count.
 
 Job one: read the label. Every atom comes with two numbers. The bottom one, Z, counts protons — that is the element's identity, full stop. The top one, A, counts protons plus neutrons. So neutrons are just A minus Z, and electrons equal protons unless the atom carries a charge. A two-plus charge means two electrons LOST; a minus means one gained. The nucleus never changes — ions are always an electron story.
 

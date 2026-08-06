@@ -1,4 +1,4 @@
-If this topic feels like a government report you have to swallow whole, breathe — it is really four small stories, and each one carries its own numbers with it.
+Hey, it's Thandi — if this topic feels like a government report you have to swallow whole, breathe — it is really four small stories, and each one carries its own numbers with it.
 
 Story one, the promise: Section 27 of the constitution, right of access to sufficient water. The policy number: 6 000 litres free per poor household per month — 25 litres per person per day for a household of eight, within 200 metres of home. And the clever pricing: rising block tariffs, where the first block is free and heavy users pay steeply — the pool subsidising the standpipe. One section, three numbers, one phrase.
 

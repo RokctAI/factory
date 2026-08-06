@@ -1,4 +1,4 @@
-If this topic feels like a blur of billions and percentages, breathe — population growth is one shape, two calculations, one comparison and one list, and you can carry all of it into the exam in your head.
+Hey, it's Thandi — if this topic feels like a blur of billions and percentages, breathe — population growth is one shape, two calculations, one comparison and one list, and you can carry all of it into the exam in your head.
 
 The shape first: the J-curve. Flat for ten thousand years, then a bend around 1800, then almost straight up. One billion by 1804, eight billion by 2022. And the cause is a single sentence that answers half the questions in this section: death rates fell while birth rates stayed high. Not more babies — fewer funerals. Say that sentence and the explosion is explained.
 

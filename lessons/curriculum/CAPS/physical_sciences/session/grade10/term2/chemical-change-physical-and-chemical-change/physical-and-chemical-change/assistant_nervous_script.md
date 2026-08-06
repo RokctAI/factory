@@ -1,4 +1,4 @@
-If physical versus chemical feels like a list of fifty examples to memorise, put the list down — this entire topic is one question asked over and over.
+Hey, it's Thandi — if physical versus chemical feels like a list of fifty examples to memorise, put the list down — this entire topic is one question asked over and over.
 
 The question: is there a new substance? That is it. Ice melts — still water — physical. Wood burns — ash and gases, wood gone forever — chemical. Every example in every exam is just that question wearing a disguise. You never memorise the fifty examples; you interrogate each one fresh.
 

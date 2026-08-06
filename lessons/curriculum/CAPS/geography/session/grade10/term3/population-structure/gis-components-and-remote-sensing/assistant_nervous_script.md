@@ -1,4 +1,4 @@
-If GIS feels like a computer-science topic that wandered into geography, relax — you already use a GIS every time you search for the nearest chips on your phone, and the exam only wants three things: a definition, a list of five, and one big idea.
+Hey, it's Thandi — if GIS feels like a computer-science topic that wandered into geography, relax — you already use a GIS every time you search for the nearest chips on your phone, and the exam only wants three things: a definition, a list of five, and one big idea.
 
 The definition, in one breath: a GIS is a computerised system that captures, stores, analyses and displays geographically referenced information. Four verbs and one adjective. Practise saying it until the four verbs come out in order, because markers tick each one.
 

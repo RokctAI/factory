@@ -1,4 +1,4 @@
-If quartiles and whiskers are blurring together right now, slow down — this topic has fewer moving parts than it pretends to.
+Hey, it's Thandi — if quartiles and whiskers are blurring together right now, slow down — this topic has fewer moving parts than it pretends to.
 
 Everything you did was folding. Fold the ordered line once: the median. Fold each half: the two quartiles. That is all a five-number summary is — the two ends plus your three folds. And the box plot is just those five landmarks drawn on a number line: box between the folds, line at the middle, whiskers to the ends.
 

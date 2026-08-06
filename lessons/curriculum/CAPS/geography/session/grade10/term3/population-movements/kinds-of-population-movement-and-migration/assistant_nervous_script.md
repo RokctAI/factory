@@ -1,4 +1,4 @@
-If migration feels like a dictionary attack — emigrant, immigrant, refugee, oscillating, internally displaced — slow down: this whole topic is two questions, one rope, and four boxes. Nothing more.
+Hey, it's Thandi — if migration feels like a dictionary attack — emigrant, immigrant, refugee, oscillating, internally displaced — slow down: this whole topic is two questions, one rope, and four boxes. Nothing more.
 
 The two questions sort every single term. Did the person cross a border? Inside the country: internal. Across a border: international — and that one traveller is an emigrant to the country left and an immigrant to the country entered. Did the person choose? Yes: voluntary. No — war, persecution, disaster: forced, which is where refugee, asylum seeker and internally displaced person live. Any classification question in the paper is those two questions in disguise.
 

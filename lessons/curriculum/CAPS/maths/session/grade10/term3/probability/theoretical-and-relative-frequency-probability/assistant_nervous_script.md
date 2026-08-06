@@ -1,4 +1,4 @@
-If probability feels like a topic where answers appear out of thin air, breathe — you have just seen that every answer came from plain counting or plain dividing. Nothing else happened in this whole lesson.
+Hey, it's Thandi — if probability feels like a topic where answers appear out of thin air, breathe — you have just seen that every answer came from plain counting or plain dividing. Nothing else happened in this whole lesson.
 
 Keep the washing line hanging in your mind: impossible at 0, certain at 1, everything else pegged between. It is your error alarm forever — any answer below 0 or above 1 is the maths telling you to go back, and that check costs nothing.
 

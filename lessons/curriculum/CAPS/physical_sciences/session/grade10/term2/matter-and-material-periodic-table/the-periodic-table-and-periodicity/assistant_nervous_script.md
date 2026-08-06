@@ -1,4 +1,4 @@
-If the periodic table looks like a hundred boxes of random facts waiting to be memorised, put the highlighter down and breathe — this topic is one map and one tug-of-war, and you never memorise what you can read off.
+Hey, it's Thandi — if the periodic table looks like a hundred boxes of random facts waiting to be memorised, put the highlighter down and breathe — this topic is one map and one tug-of-war, and you never memorise what you can read off.
 
 The map first. Elements are numbered by protons, in strict order. The row tells you how many electron floors the atom has. The column tells you how many electrons live on the top floor — and the top floor is the only part other atoms ever meet, which is why a column is a family with shared behaviour. Address in, chemistry out.
 

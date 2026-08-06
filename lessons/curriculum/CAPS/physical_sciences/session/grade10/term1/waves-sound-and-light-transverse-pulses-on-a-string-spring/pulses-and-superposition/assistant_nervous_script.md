@@ -1,4 +1,4 @@
-If pulses, superposition and interference sound like three separate mountains, breathe out — this whole topic is one flick of a rope and one piece of adding.
+Hey, it's Thandi — if pulses, superposition and interference sound like three separate mountains, breathe out — this whole topic is one flick of a rope and one piece of adding.
 
 Here is the shape of it. A pulse is a single bump travelling along a rope. The rope itself goes nowhere: each piece bobs up and down while the bump and its energy run past. That is the first idea, and it is one sentence: energy travels, the medium stays.
 
