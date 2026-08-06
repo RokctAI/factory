@@ -40,3 +40,6 @@ worked-example use with attribution. The scanned PDFs have no text layer;
 question and memo text was extracted by reading the rendered pages (recorded
 in `maths/grade11/2018/paper.json`), not by OCR, so every field is
 human/vision-verified against the official document.
+
+Catalogued DBE papers not yet fetched (education.gov.za egress-blocked in the
+work environment) are queued for manual browser download in `FETCH_QUEUE.md`.
