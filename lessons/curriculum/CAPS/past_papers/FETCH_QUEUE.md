@@ -59,8 +59,8 @@ Batch 3 (owner upload 2026-08-06) supplied THREE of the 2025 documents
 (`2025NovemberExamPapers.aspx` HTML). Every remaining document's direct
 fileticket URL was harvested from that saved page, so the old
 click-the-page shopping list is retired: every row below is now
-[direct PDF — click and save] (prefix the path with
-`https://www.education.gov.za`). Labels on the page are per-subject
+[direct PDF — click and save] with a full absolute URL — just click the
+link. Labels on the page are per-subject
 modules ("Paper 1 (English)", "Memo 1 (Afrikaans and English)", etc.).
 Note: the 2025 page lists NO separate Mathematical Literacy addenda — if
 the annexures turn out to be bundled in the QPs, nothing else to fetch.
@@ -85,32 +85,32 @@ Still to fetch — English QPs and bilingual memos (skip Afrikaans-only QPs
 and answerbooks; all URLs harvested 2026-08-06 from the owner-supplied
 session-page HTML):
 
-| Done | Document | Direct URL path |
+| Done | Document | Direct URL |
 |:---:|---|---|
-| [ ] | Mathematics P1 Eng QP | `/LinkClick.aspx?fileticket=JM4biRg1OIk%3d&tabid=5742&portalid=0&mid=14845` |
-| [ ] | Mathematics P2 Eng QP | `/LinkClick.aspx?fileticket=8t-92qfBEV0%3d&tabid=5742&portalid=0&mid=14845` |
-| [ ] | Mathematical Literacy P1 Eng QP | `/LinkClick.aspx?fileticket=0fZnlOqdEo0%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Mathematical Literacy P1 Memo (Afr & Eng) | `/LinkClick.aspx?fileticket=yfBLrkeMk2o%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Mathematical Literacy P2 Eng QP | `/LinkClick.aspx?fileticket=SlY1pYy3GT4%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Mathematical Literacy P2 Memo (Afr & Eng) | `/LinkClick.aspx?fileticket=anKb8eamj_M%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Physical Sciences P1 Eng QP (DBE original of the mirror above) | `/LinkClick.aspx?fileticket=oWZB83JVXE0%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Physical Sciences P1 Memo (Eng & Afr) | `/LinkClick.aspx?fileticket=OpuzjBocaqw%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Physical Sciences P2 Eng QP | `/LinkClick.aspx?fileticket=hF7ax9AbzOw%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Physical Sciences P2 Memo (Eng & Afr) | `/LinkClick.aspx?fileticket=xvxkhSquue4%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Accounting P1 Eng QP | `/LinkClick.aspx?fileticket=fjsgFDpa8wg%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P1 Memo (Eng) | `/LinkClick.aspx?fileticket=oZyi7eQjyEo%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P1 Answer Book (Eng) | `/LinkClick.aspx?fileticket=1WvL2tbx12Y%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P2 Eng QP | `/LinkClick.aspx?fileticket=3BYl4uHjIyA%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P2 Memo (Eng) | `/LinkClick.aspx?fileticket=xBkE4RhcBtc%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P2 Answerbook (Eng) | `/LinkClick.aspx?fileticket=t08Pta3AYdE%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Economics P1 Eng QP | `/LinkClick.aspx?fileticket=ctIxKzDjX7o%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Economics P1 Memo (Eng) | `/LinkClick.aspx?fileticket=0Nt-PqRAEpI%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Economics P2 Eng QP | `/LinkClick.aspx?fileticket=Bi6CsZZVPzo%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Economics P2 Memo (Eng) | `/LinkClick.aspx?fileticket=iIiF0mlTUsU%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Geography P1 Eng QP | `/LinkClick.aspx?fileticket=-yt9PT3ew3w%3d&tabid=5742&portalid=0&mid=14839` |
-| [ ] | Geography P1 Memo (Eng) | `/LinkClick.aspx?fileticket=3m3EI20-OFE%3d&tabid=5742&portalid=0&mid=14839` |
-| [ ] | Geography P2 Eng QP | `/LinkClick.aspx?fileticket=q-0mpNmbw9Q%3d&tabid=5742&portalid=0&mid=14839` |
-| [ ] | Geography P2 Memo (Eng) | `/LinkClick.aspx?fileticket=V40npxGuaQY%3d&tabid=5742&portalid=0&mid=14839` |
+| [ ] | Mathematics P1 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=JM4biRg1OIk%3d&tabid=5742&portalid=0&mid=14845> |
+| [ ] | Mathematics P2 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=8t-92qfBEV0%3d&tabid=5742&portalid=0&mid=14845> |
+| [ ] | Mathematical Literacy P1 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=0fZnlOqdEo0%3d&tabid=5742&portalid=0&mid=14844> |
+| [ ] | Mathematical Literacy P1 Memo (Afr & Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=yfBLrkeMk2o%3d&tabid=5742&portalid=0&mid=14844> |
+| [ ] | Mathematical Literacy P2 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=SlY1pYy3GT4%3d&tabid=5742&portalid=0&mid=14844> |
+| [ ] | Mathematical Literacy P2 Memo (Afr & Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=anKb8eamj_M%3d&tabid=5742&portalid=0&mid=14844> |
+| [ ] | Physical Sciences P1 Eng QP (DBE original of the mirror above) | <https://www.education.gov.za/LinkClick.aspx?fileticket=oWZB83JVXE0%3d&tabid=5742&portalid=0&mid=14848> |
+| [ ] | Physical Sciences P1 Memo (Eng & Afr) | <https://www.education.gov.za/LinkClick.aspx?fileticket=OpuzjBocaqw%3d&tabid=5742&portalid=0&mid=14848> |
+| [ ] | Physical Sciences P2 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=hF7ax9AbzOw%3d&tabid=5742&portalid=0&mid=14848> |
+| [ ] | Physical Sciences P2 Memo (Eng & Afr) | <https://www.education.gov.za/LinkClick.aspx?fileticket=xvxkhSquue4%3d&tabid=5742&portalid=0&mid=14848> |
+| [ ] | Accounting P1 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=fjsgFDpa8wg%3d&tabid=5742&portalid=0&mid=14825> |
+| [ ] | Accounting P1 Memo (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=oZyi7eQjyEo%3d&tabid=5742&portalid=0&mid=14825> |
+| [ ] | Accounting P1 Answer Book (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=1WvL2tbx12Y%3d&tabid=5742&portalid=0&mid=14825> |
+| [ ] | Accounting P2 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=3BYl4uHjIyA%3d&tabid=5742&portalid=0&mid=14825> |
+| [ ] | Accounting P2 Memo (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=xBkE4RhcBtc%3d&tabid=5742&portalid=0&mid=14825> |
+| [ ] | Accounting P2 Answerbook (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=t08Pta3AYdE%3d&tabid=5742&portalid=0&mid=14825> |
+| [ ] | Economics P1 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=ctIxKzDjX7o%3d&tabid=5742&portalid=0&mid=14836> |
+| [ ] | Economics P1 Memo (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=0Nt-PqRAEpI%3d&tabid=5742&portalid=0&mid=14836> |
+| [ ] | Economics P2 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=Bi6CsZZVPzo%3d&tabid=5742&portalid=0&mid=14836> |
+| [ ] | Economics P2 Memo (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=iIiF0mlTUsU%3d&tabid=5742&portalid=0&mid=14836> |
+| [ ] | Geography P1 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=-yt9PT3ew3w%3d&tabid=5742&portalid=0&mid=14839> |
+| [ ] | Geography P1 Memo (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=3m3EI20-OFE%3d&tabid=5742&portalid=0&mid=14839> |
+| [ ] | Geography P2 Eng QP | <https://www.education.gov.za/LinkClick.aspx?fileticket=q-0mpNmbw9Q%3d&tabid=5742&portalid=0&mid=14839> |
+| [ ] | Geography P2 Memo (Eng) | <https://www.education.gov.za/LinkClick.aspx?fileticket=V40npxGuaQY%3d&tabid=5742&portalid=0&mid=14839> |
 
 ## Done
 
