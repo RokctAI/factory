@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A fair die is rolled once. State the sample space, calculate the probability of rolling an even number and the probability of not rolling a six, and explain the condition under which the counting method for probability is valid.",
+      "expected_answer": "The sample space is the six faces: 1, 2, 3, 4, 5 and 6. The event 'even number' contains 2, 4 and 6, so its probability is 3 out of 6, which is one half, or 0,5. The probability of not rolling a six uses the complement rule: probabilities across the sample space add to 1, so it is 1 minus one sixth, which is five sixths, about 0,83. The counting method — favourable outcomes divided by total outcomes — is valid only when all outcomes are equally likely, which is what 'fair die' guarantees; a loaded die breaks the method, and observed relative frequencies would then be needed instead."
+    },
+    {
+      "id": "cc2",
+      "question": "A coin is tossed 100 times and shows 58 heads. Calculate the relative frequency of heads, compare it with the theoretical probability, and explain what happens to relative frequency as the number of trials becomes very large. Give one example of a probability that can only be found by relative frequency.",
+      "expected_answer": "Relative frequency is occurrences divided by trials: 58 ÷ 100 = 0,58. The theoretical probability for a fair coin is 0,5, from two equally likely faces. The two disagree because chance is variable over short runs, but as the number of trials grows very large the relative frequency drifts toward the theoretical value — after thousands of tosses the proportion of heads settles very close to 0,5. This long-run settling is why casinos and insurers can rely on probability while a single player cannot. An example needing relative frequency: the probability that a taxi on a route arrives late (say 12 late trips out of 40 gives 0,3), because no equally-likely symmetry argument exists for taxis — only observation can supply the number. Insurance risk assessment works the same way, from claim records."
+    },
+    {
+      "id": "cc3",
+      "question": "In Durban the probability of morning rain is 0,3. When it rains, the probability of the taxi being late is 0,6; when dry, it is 0,2. Use a tree diagram to find the probability of rain and a late taxi, and the probability of being late at all. State the check that confirms the tree is complete. Then, for a two-way table where 16 of 40 minibuses failed a roadworthy test out of 100 vehicles with 28 total failures, explain why 'the probability a minibus failed' is 0,4 and not 0,16.",
+      "expected_answer": "The first fork is rain 0,3 and dry 0,7. From each, the taxi forks into late and on time: late-given-rain 0,6, late-given-dry 0,2. Multiplying along branches answers AND: rain and late is 0,3 × 0,6 = 0,18. Adding between paths answers OR: late at all is rain-and-late plus dry-and-late, 0,18 + 0,7 × 0,2 = 0,18 + 0,14 = 0,32. The completeness check: all four endpoints, 0,18 + 0,12 + 0,14 + 0,56, must add to exactly 1, because the tree contains every possible morning. For the table: 'of the minibuses' shrinks the pool to the 40 minibuses, so the probability a minibus failed is 16 ÷ 40 = 0,4. The value 16 ÷ 100 = 0,16 answers a different question — the probability that a vehicle chosen from all 100 is a failed minibus. The denominator must always come from the group named in the question's words."
+    }
+  ]
+}

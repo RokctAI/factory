@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Language of Chance",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The sample space for rolling one die is:",
+          "options": [
+            "The number 6 only",
+            "The even numbers 2, 4, 6",
+            "The six faces 1 to 6",
+            "Any number from 0 to 6"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A probability of 0 means the event is:",
+          "options": [
+            "Certain",
+            "Impossible",
+            "Unlikely but possible",
+            "As likely as not"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The probability of rolling an even number on a fair die is:",
+          "options": [
+            "One half",
+            "One sixth",
+            "One third",
+            "Two thirds"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The probability of NOT rolling a six is:",
+          "options": [
+            "One sixth",
+            "Zero",
+            "One half",
+            "Five sixths"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Theoretical Probability and Relative Frequency",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "58 heads in 100 tosses gives a relative frequency of:",
+          "options": [
+            "0,5",
+            "0,58",
+            "58",
+            "0,42"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Theoretical probability differs from relative frequency because it:",
+          "options": [
+            "Requires at least 100 trials",
+            "Is always larger",
+            "Comes from reasoning about the experiment, not from trials",
+            "Only applies to coins"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "As the number of trials grows very large, relative frequency:",
+          "options": [
+            "Drifts toward the theoretical probability",
+            "Becomes exactly 0,5",
+            "Becomes more lumpy",
+            "Stops changing after 100 trials"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The probability that a taxi runs late must come from relative frequency because:",
+          "options": [
+            "Taxis are always equally likely to be late or on time",
+            "The sample space is too small",
+            "Theoretical probability only works for transport",
+            "No equally-likely symmetry argument exists for taxis"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Lottery and Other Long Shots",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The probability that one board matches all six lottery numbers is about:",
+          "options": [
+            "One in twenty million",
+            "One in fifty-two",
+            "One in six",
+            "One in twenty thousand"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "A winner appears almost every few weeks because:",
+          "options": [
+            "The draw favours loyal players",
+            "The jackpot probability rises each week",
+            "Millions of boards are sold for each draw",
+            "The balls are drawn until someone wins"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "In the long run, games of chance always favour:",
+          "options": [
+            "Players who play every week",
+            "The operator of the game",
+            "Players who pick their own numbers",
+            "Nobody — they break even"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Insurance premiums for young drivers are higher because:",
+          "options": [
+            "Young drivers earn less",
+            "The law requires it",
+            "Insurers prefer older clients",
+            "Claim records show young drivers claim more often"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Compound Events: Tree Diagrams and Two-Way Tables",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "On a tree diagram, the rule is:",
+          "options": [
+            "Add along branches, multiply between paths",
+            "Multiply along branches, add between paths",
+            "Multiply everything",
+            "Add everything"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "With rain at 0,3 and late-given-rain at 0,6, the probability of rain and late is:",
+          "options": [
+            "0,9",
+            "0,3",
+            "0,18",
+            "0,5"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The probability Sipho is late at all, adding the paths 0,18 and 0,14, is:",
+          "options": [
+            "0,32",
+            "0,68",
+            "0,04",
+            "0,52"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Of the 40 minibuses tested, 16 failed, so the probability that a randomly chosen minibus failed is:",
+          "options": [
+            "0,16",
+            "0,28",
+            "0,72",
+            "0,4"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "A Scale from Impossible to Certain",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the ruler of chance, a fair coin's heads sits at:",
+          "options": [
+            "0",
+            "0,5",
+            "1",
+            "0,17"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "If the chance of rain is 0,3, the chance of staying dry is:",
+          "options": [
+            "0,3",
+            "0,5",
+            "1,3",
+            "0,7"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Counting favourable outcomes over total outcomes only works when:",
+          "options": [
+            "All outcomes are equally likely",
+            "There are exactly six outcomes",
+            "The event is certain",
+            "The experiment is repeated 100 times"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Why the Lotto Is Not a Retirement Plan",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The stadium picture translates one in twenty million into:",
+          "options": [
+            "One winner in every stadium",
+            "Two hundred and twenty full stadiums per winner",
+            "One winner per soccer season",
+            "Ninety thousand winners a year"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The average lotto ticket returns in prize money:",
+          "options": [
+            "Slightly more than its price",
+            "Exactly its price",
+            "Less than half its price",
+            "Nothing at all"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The gambler and the insured differ because:",
+          "options": [
+            "One pays small to chase a big gain, the other pays small to cancel a big loss",
+            "The insured faces better odds",
+            "Only the gambler uses probability",
+            "Insurance always pays out eventually"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Seeing a lotto winner on television proves:",
+          "options": [
+            "The game is winnable with strategy",
+            "Your own chance has improved",
+            "Winners are chosen fairly among loyal players",
+            "Only that millions of losing tickets were also sold"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Two Steps of Chance",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Multiplying along a tree's path answers questions containing the word:",
+          "options": [
+            "OR",
+            "NOT",
+            "AND",
+            "GIVEN"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "All the endpoint probabilities of a complete tree must add to:",
+          "options": [
+            "Exactly 1",
+            "Less than 1",
+            "The number of branches",
+            "0,5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "In the vehicle table, the words 'of the minibuses' change the denominator from:",
+          "options": [
+            "28 to 16",
+            "100 to 40",
+            "100 to 28",
+            "40 to 100"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The two branches at any single fork of a tree must:",
+          "options": [
+            "Multiply to 1",
+            "Be equal",
+            "Both exceed 0,5",
+            "Add to 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

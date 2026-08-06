@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A prepaid electricity tariff charges R2,20 per kWh for the first 100 kWh, R2,60 per kWh from 101 to 400 kWh, and R2,95 per kWh from 401 to 650 kWh. Calculate the cost of 380 kWh, and explain why multiplying 380 by R2,60 gives the wrong answer.",
+      "expected_answer": "Consumption fills the blocks in order. The first 100 kWh fall in block one: 100 × R2,20 = R220,00. The remaining 380 − 100 = 280 kWh fall in block two: 280 × R2,60 = R728,00. Block three is not reached. The total is 220 + 728 = R948,00. Multiplying all 380 units by R2,60 gives R988,00, which is R40,00 too much, because a block's rate applies only to the units inside that block — the first 100 units keep block one's cheaper price of R2,20 even though total consumption reached into block two."
+    },
+    {
+      "id": "cc2",
+      "question": "A water tariff supplies the first 6 kl free, charges R18,50 per kl from 6 to 15 kl, and R26,40 per kl from 15 to 30 kl. Calculate the amount payable for 22 kl including VAT at 15%, showing how many kilolitres are charged in each block.",
+      "expected_answer": "The first 6 kl are free. The middle block runs from 6 to 15 kl, a capacity of 15 − 6 = 9 kl, all of which is used: 9 × R18,50 = R166,50. The remaining 22 − 15 = 7 kl fall in the top block: 7 × R26,40 = R184,80. The check is that 6 + 9 + 7 = 22 kl, matching the meter. The consumption subtotal is 166,50 + 184,80 = R351,30. VAT is applied once, on the subtotal: 351,30 × 0,15 = R52,70 to the nearest cent. The amount payable is 351,30 + 52,70 = R404,00. The free block carries no VAT because its charge is zero."
+    },
+    {
+      "id": "cc3",
+      "question": "A household can use the prepaid rising block tariff or a conventional option costing R220,00 fixed per month plus a flat R2,05 per kWh. Compare the two options at 380 kWh and at 600 kWh, and advise which option suits which kind of household, referring to the idea of a break-even point.",
+      "expected_answer": "At 380 kWh: prepaid costs R948,00 (100 × 2,20 + 280 × 2,60), while conventional costs 380 × 2,05 = R779,00 plus R220,00, giving R999,00 — prepaid is cheaper by R51,00. At 600 kWh: prepaid costs 220 + 300 × 2,60 + 200 × 2,95 = 220 + 780 + 590 = R1 590,00, while conventional costs 600 × 2,05 = R1 230,00 plus R220,00, giving R1 450,00 — conventional is cheaper by R140,00. The advice depends on consumption: low users should stay on prepaid because the fixed charge spread over few units makes conventional expensive, while heavy users should choose conventional because the flat rate avoids the expensive upper blocks. Between 380 and 600 kWh lies the break-even consumption, where both options cost the same; on a graph of cost against consumption it is the point where the two cost lines cross, with prepaid lying lower below the crossing and conventional lower above it."
+    }
+  ]
+}

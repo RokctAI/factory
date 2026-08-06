@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A bakkie bought for R250 000 is worth R128 000 after 3 years of reducing-balance depreciation. Find the annual depreciation rate, explaining why the division must precede the root and how to sense-check the answer.",
+      "expected_answer": "Set up the compound decay formula: 128 000 = 250 000(1 − i)³. Divide first: (1 − i)³ = 128 000/250 000 = 0,512 — a pure ratio meaning 51,2% of the value survived in total; the root must act on this repeated factor, not on the raw prices, because the factor is what was multiplied three times. Take the cube root: 1 − i = 0,8 (exactly, since 0,8³ = 0,512), so i = 0,2 and the depreciation rate is 20% per annum. Sense checks: in a decay question the total ratio and the yearly factor must both lie between 0 and 1 — a value above one signals an inverted fraction; and the final answer must be stated as a percentage, since a rate was asked for. The growth twin is identical with the factor above one: R10 000 growing to R13 604,89 in 4 years gives (1 + i)⁴ = 1,360489, fourth root 1,08, so 8% per annum."
+    },
+    {
+      "id": "cc2",
+      "question": "How long does money take to double at 9% p.a. compounded annually? Solve with logarithms, and explain both the change-of-base step and why the decimal answer must be interpreted against the crediting schedule.",
+      "expected_answer": "Doubling means (1,09)ⁿ = 2. The unknown is in the exponent, so no root can extract it; the logarithm — which counts how many multiplications by the base reach the target — is the inverse needed: n = log base 1,09 of 2. By change of base, n = log 2 ÷ log 1,09 ≈ 8,04 years (any log base, same base top and bottom). But with annual compounding, interest is credited only at year ends: after 8 years the factor is 1,09⁸ ≈ 1,9926, not yet doubled, and after 9 years it is about 2,1719. So the balance first exceeds double at the end of year 9 — the decimal 8,04 says the crossing happens during the ninth year, and the crediting schedule rounds it up to the ninth year-end. With monthly compounding the same logic rounds n up to the next month. The identical calculation gives price-doubling under inflation: at 6%, log 2 ÷ log 1,06 ≈ 11,9 years."
+    },
+    {
+      "id": "cc3",
+      "question": "R10 000 is deposited at 8% p.a. compounded annually; R5 000 is added at the end of year 2; at the end of year 3 the rate changes to 9%. Find the value at the end of year 5 by two methods and state the timeline rules that keep such calculations correct.",
+      "expected_answer": "Balance-walking method: 10 000 × 1,08² = 11 664 at year 2; add 5 000 to get 16 664; grow one more year at 8%: 16 664 × 1,08 = 17 997,12 at year 3; grow two years at 9%: 17 997,12 × 1,09² = 17 997,12 × 1,1881 = R21 382,38. Separate-deposits method: 10 000 × 1,08³ × 1,09² + 5 000 × 1,08 × 1,09² = 14 966,64 + 6 415,74 = R21 382,38 — identical by the distributive law. The rules: every amount grows through every period between its arrival and the target date (the R5 000 earns year 3 at 8% plus years 4 and 5 at 9%); a rate change cuts the timeline into regimes, and the change at the END of year 3 means year 3 itself still runs at 8%; amounts crossing a boundary carry their accumulated value across and then grow under the new factor — rates are never averaged and the principal never restarts; withdrawals would subtract at their date and stop growing."
+    }
+  ]
+}

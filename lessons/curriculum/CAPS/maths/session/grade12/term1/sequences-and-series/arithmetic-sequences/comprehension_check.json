@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define an arithmetic sequence, derive the general term T_n = a + (n − 1)d by examining the structure of the first few terms, and explain why the formula contains n − 1 rather than n.",
+      "expected_answer": "An arithmetic sequence is one in which the difference between consecutive terms is constant; that difference d is found as any term minus the term before it, and it may be negative for a decreasing sequence. Writing out the structure: T_1 = a with no d added, T_2 = a + d with one d, T_3 = a + 2d with two d's, so by position n exactly n − 1 copies of d have been added, giving T_n = a + (n − 1)d. The formula uses n − 1 because the first term is a starting point and carries no jump — the number of additions of d always trails the position by one. A reliable check is to test the derived formula against a visible term: for 3; 7; 11; 15 the formula T_n = 4n − 1 gives T_4 = 15, matching the listed sequence."
+    },
+    {
+      "id": "cc2",
+      "question": "For the sequence 3; 7; 11; 15; ..., determine whether 99 and 130 are terms of the sequence, showing all reasoning and stating the conclusion for each number.",
+      "expected_answer": "The general term is T_n = 3 + (n − 1)·4 = 4n − 1. For 99: set 4n − 1 = 99, so 4n = 100 and n = 25; since 25 is a natural number, 99 is a term, namely the 25th term. For 130: set 4n − 1 = 130, so 4n = 131 and n = 32,75; a position in a sequence must be a natural number, and since 32,75 is not, 130 is not a term of the sequence. In fact term 32 is 127 and term 33 is 131, so the sequence jumps over 130. The conclusion must be stated in words — n not a natural number means the value does not appear — and rounding n off would wrongly identify 130 with the term 131."
+    },
+    {
+      "id": "cc3",
+      "question": "The terms x + 1; 2x − 3; x + 9 are consecutive terms of an arithmetic sequence. Find x, list the three terms, and explain both the property used and the check that confirms the answer.",
+      "expected_answer": "In an arithmetic sequence consecutive gaps are equal, so the second term minus the first equals the third term minus the second: (2x − 3) − (x + 1) = (x + 9) − (2x − 3). The left side simplifies to x − 4 and the right side to −x + 12. Setting x − 4 = −x + 12 gives 2x = 16, so x = 8. Substituting back, the terms are 9; 13; 17, which have a common difference of 4 in both gaps, confirming the sequence is genuinely arithmetic. The property used is the equal-gap definition of an arithmetic sequence, and the check is the substitution: solving for x is incomplete until the actual terms are listed and their gaps verified, since a sign slip when subtracting a bracket — for example forgetting that minus (x + 1) is −x − 1 — is the most common error in this question type."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Rates of Change and Motion",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "If s(t) is distance, then velocity and acceleration are:",
+          "options": [
+            "s′(t) and s″(t)",
+            "s(t) and s′(t)",
+            "s″(t) and s′(t)",
+            "The integrals of s(t)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "For s(t) = 2t³ − 9t² + 12t, the particle is momentarily at rest at:",
+          "options": [
+            "t = 0 only",
+            "t = 1 and t = 2",
+            "t = 1,5 only",
+            "t = 3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The particle's initial velocity (at t = 0) is:",
+          "options": [
+            "0 m/s",
+            "6 m/s",
+            "12 m/s",
+            "−18 m/s"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "A velocity of −3 m/s means:",
+          "options": [
+            "Speed −3 m/s",
+            "The object is at rest",
+            "The object is decelerating",
+            "Speed 3 m/s, direction reversed"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Optimisation Recipe",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The constraint in an optimisation problem is used to:",
+          "options": [
+            "Check the second derivative",
+            "Eliminate all variables but one before differentiating",
+            "Set the derivative to zero",
+            "Find the y intercept"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "With 120 m of fence against a wall, the area formula in the width x is:",
+          "options": [
+            "A = x(120 − x)",
+            "A = 2x(120 − 2x)",
+            "A = x(120 − 2x)",
+            "A = x²(120 − x)"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Setting A′(x) = 120 − 4x to zero gives dimensions:",
+          "options": [
+            "Width 30 m, length 60 m",
+            "Width 60 m, length 30 m",
+            "Width 40 m, length 40 m",
+            "Width 20 m, length 80 m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The candidate x = 30 is confirmed a maximum because:",
+          "options": [
+            "It is the largest allowed x",
+            "A(30) is positive",
+            "The constraint says so",
+            "A″(x) = −4 is negative — the area parabola frowns"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Boxes, Volumes and Minimum Material",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "For the open box with square base x and volume 500 cm³, the height is:",
+          "options": [
+            "h = 500 − x²",
+            "h = 500/x²",
+            "h = x²/500",
+            "h = 500x²"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "After substitution, the surface to minimise is:",
+          "options": [
+            "S = x² + 500/x",
+            "S = 4x² + 2000/x",
+            "S = x² + 2000/x",
+            "S = x² + 2000x"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The derivative of 2000/x is:",
+          "options": [
+            "−2000/x²",
+            "2000/x²",
+            "2000 ln x",
+            "−2000/x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Solving S′(x) = 0 gives the minimising dimensions:",
+          "options": [
+            "x = 5, h = 20",
+            "x = 20, h = 1,25",
+            "x = 100, h = 0,05",
+            "x = 10, h = 5"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Interpreting the Answer — Domains, Endpoints and Sense",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A candidate width of −30 m is rejected because:",
+          "options": [
+            "It fails the second derivative test",
+            "It lies outside the sensible domain — lengths must be positive",
+            "It makes the derivative undefined",
+            "Negative numbers cannot be squared"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "In the vetkoek profit model, the derivative is zero at n ≈ 1,84 and n ≈ 8,16. Profit is maximised at:",
+          "options": [
+            "n ≈ 1,84, the smaller root",
+            "Both roots equally",
+            "n ≈ 8,16, where the second derivative is negative",
+            "n = 5, the average"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "On a closed range of allowed values, the best value may occur:",
+          "options": [
+            "At an endpoint, with no zero derivative there",
+            "Only where the derivative is zero",
+            "Only at the midpoint",
+            "Outside the range"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "After finding the optimal x, the number you report is:",
+          "options": [
+            "Always x itself",
+            "Always the optimised quantity",
+            "Always both",
+            "Whatever the question actually asked for"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Dashboard and the Handbrake",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the dashboard picture, the speedometer shows:",
+          "options": [
+            "Position",
+            "The derivative of position",
+            "The derivative of speed",
+            "The odometer reading"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The phrase momentarily at rest translates to:",
+          "options": [
+            "Acceleration equals zero",
+            "Position equals zero",
+            "Velocity equals zero",
+            "Speed is negative"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Between its two handbrake moments (t = 1 and t = 2), the bakkie is:",
+          "options": [
+            "Reversing — velocity negative",
+            "Parked",
+            "Moving forward",
+            "Accelerating forward"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The push in your back when the driver floors it corresponds to:",
+          "options": [
+            "Velocity",
+            "Position",
+            "Distance",
+            "Acceleration"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Biggest Kraal on a Fixed Roll of Fence",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Why do both extreme designs — sliver and deep strip — hold almost nothing?",
+          "options": [
+            "The fence is too short in both",
+            "One dimension shrinks toward zero in each case",
+            "The wall is too long",
+            "The derivative is positive there"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The wall matters in the setup because:",
+          "options": [
+            "It blocks the sun",
+            "It doubles the area",
+            "It provides one side free, changing the constraint to 2 widths plus 1 front",
+            "It makes the kraal a square"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The best design sits where:",
+          "options": [
+            "The slope of the area graph is zero",
+            "The area graph is steepest",
+            "The width equals the front",
+            "The fence runs out"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A quick sense check on x = 30 is:",
+          "options": [
+            "Divide 120 by 30",
+            "Square the area",
+            "Check the wall's length",
+            "Try widths 29 and 31 and watch the area dip"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Cheapest Tin That Holds Enough",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The tin problem differs from the kraal problem because:",
+          "options": [
+            "It has no constraint",
+            "It needs no derivative",
+            "Space is fixed and material is minimised, not the reverse",
+            "It is two-dimensional"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The holding requirement forces the height to be:",
+          "options": [
+            "500/x²",
+            "x²/500",
+            "500x",
+            "Independent of x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The tug of war balanced at the optimum is between:",
+          "options": [
+            "Height and volume",
+            "Base cost and wall cost",
+            "Width and length",
+            "Volume and price"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The winning tin (x = 10, h = 5) is shaped:",
+          "options": [
+            "Tall and thin",
+            "A perfect cube",
+            "Flat like a tray",
+            "Squat — half as tall as it is wide"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

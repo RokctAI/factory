@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Derive the formula S_n = n/2 (a + l) for an arithmetic series by the fold-and-pair method, and use it (or its 2a form) to compute the sum of the first 40 terms of 5 + 8 + 11 + ...",
+      "expected_answer": "Write the sum forwards, S_n = a + (a + d) + ... + l, and backwards, S_n = l + (l − d) + ... + a, then add the two rows column by column. Each column totals a + l, since moving one position forward in the first row adds d while moving one position along the reversed row subtracts d, so the changes cancel. With n columns, 2S_n = n(a + l), giving S_n = n/2 (a + l); substituting l = a + (n − 1)d gives the working form S_n = n/2 (2a + (n − 1)d). For 5 + 8 + 11 + ... with a = 5, d = 3, n = 40: S_40 = 40/2 × (2×5 + 39×3) = 20 × (10 + 117) = 20 × 127 = 2540."
+    },
+    {
+      "id": "cc2",
+      "question": "Derive the geometric sum formula S_n = a(1 − r^n)/(1 − r), state why r = 1 must be excluded, and evaluate the sum of the first ten terms of 3 + 6 + 12 + ...",
+      "expected_answer": "Let S_n = a + ar + ar² + ... + ar^(n−1). Multiplying the whole line by r gives rS_n = ar + ar² + ... + ar^n, the same list shifted one place along. Subtracting, all shared middle terms cancel, leaving S_n − rS_n = a − ar^n, so S_n(1 − r) = a(1 − r^n) and S_n = a(1 − r^n)/(1 − r). The value r = 1 must be excluded because the division by 1 − r would be division by zero; when r = 1 every term equals a and the sum is simply n·a. For 3 + 6 + 12 + ... with a = 3 and r = 2, the twin form gives S_10 = 3(2^10 − 1)/(2 − 1) = 3 × 1023 = 3069."
+    },
+    {
+      "id": "cc3",
+      "question": "State the condition for an infinite geometric series to converge and explain where it comes from; then find the sum to infinity of 8 + 4 + 2 + ... and express 0,555... as a common fraction using the same idea.",
+      "expected_answer": "An infinite geometric series converges only when −1 < r < 1 (with r ≠ 0). The condition comes from the finite sum S_n = a(1 − r^n)/(1 − r): when the ratio lies strictly between −1 and 1, the term r^n shrinks toward zero as n grows, so the running totals approach the fixed value S_∞ = a/(1 − r); if r is 1 or larger in size the terms do not shrink and the totals either run away or oscillate without settling. For 8 + 4 + 2 + ... , a = 8 and r = 1/2, so S_∞ = 8/(1 − 1/2) = 16, matching the running totals 8; 12; 14; 15; 15,5 creeping toward 16. The decimal 0,555... is the series 5/10 + 5/100 + 5/1000 + ... with a = 5/10 and r = 1/10, so S_∞ = (5/10)/(9/10) = 5/9 — the recurring decimal is exactly that fraction."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "On a 1 : 2 000 000 road map, the N3 from Johannesburg to Durban measures 28,5 cm, and Bloemfontein lies about 300 km from Pretoria by road. Calculate the real N3 distance and the map distance for Bloemfontein-Pretoria, showing the unit chain and the sense test for each.",
+      "expected_answer": "First price one centimetre: 2 000 000 cm = 20 km, so every centimetre represents 20 km. N3: 28,5 × 20 = 570 km; with the full chain, 28,5 × 2 000 000 = 57 000 000 cm ÷ 100 000 = 570 km. Sense test: paper to ground must grow, and 570 km agrees closely with the signposted 568 km — map measurement is honest estimation within a small range. Bloemfontein-Pretoria: ground to paper must shrink, so divide: 300 ÷ 20 = 15 cm, about a hand-span on the page. If the answer had come out in thousands of centimetres, the operations were swapped — multiplication used where division was needed — which the sense test catches: paper-to-ground answers are big, ground-to-paper answers are small."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to determine the scale of an unlabelled drawing, using a 9 cm drawing of a 4,5 m bakkie, and how to choose a suitable scale for a model of a 30 m hall that must fit an 80 cm display board, defending the choice against rivals.",
+      "expected_answer": "Determining a scale is one fraction: drawn length over real length in the same units, simplified to 1 : n. Convert first — 4,5 m = 450 cm — then scale = 9 : 450 = 1 : 50, meaning every centimetre of drawing represents 50 cm of real bakkie. Choosing a scale reverses the logic: the hall is 3 000 cm and the space 80 cm, so the minimum shrinking is 3 000 ÷ 80 = 37,5 — any scale from about 1 : 38 fits. Choose a round workable number beyond the minimum: 1 : 50 gives 3 000 ÷ 50 = 60 cm, which fits the board with room for labelling. Defend against rivals: 1 : 20 gives 150 cm, which does not fit; 1 : 200 gives 15 cm, which fits but wastes the board and hides detail. The principle: a suitable scale makes the drawing as large as the space allows while remaining easy to calculate with, and the fit must be shown with a checking line, since the memo rewards the checked reasoning rather than a bare number."
+    },
+    {
+      "id": "cc3",
+      "question": "A Drakensberg map has a contour interval of 20 m. Path A crosses five contour lines over a map length of 4 cm at 1 : 50 000; Path B gains the same height over 500 m of ground. Calculate both gradients, state which path is steeper and why, and estimate the walking time for a 6 km path at 4 km/h.",
+      "expected_answer": "Rise for both paths: five contour crossings × 20 m = 100 m. Path A's horizontal distance: 4 cm × 50 000 = 200 000 cm = 2 000 m, so gradient = 100 : 2 000 = 1 : 20 — one metre climbed for every twenty metres travelled. Path B: 100 : 500 = 1 : 5 — one metre climbed every five metres. Path B is steeper: the smaller second number means the same climb is packed into less horizontal distance, like a ladder standing nearly upright, whereas 1 : 20 spreads the metre over twenty steps. This matches the visual rule that contours crowded close together mean steep ground. Walking time: 6 km ÷ 4 km/h = 1,5 hours = 90 minutes, with extra allowed for rest stops and for any sections where the contours bunch, since steep gradients slow the pace below the flat-ground average."
+    }
+  ]
+}

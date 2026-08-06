@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define impulse, state the impulse-momentum theorem, and use them to calculate the average net force on a 0,16 kg cricket ball that arrives at 30 m·s⁻¹ and is driven straight back at 40 m·s⁻¹ during a contact of 0,01 s. Then explain why a fielder pulls the hands back when catching the same ball.",
+      "expected_answer": "Impulse is the product of the net force and the time for which it acts, FnetΔt, measured in newton seconds. The impulse-momentum theorem states that the impulse on an object equals its change in momentum: FnetΔt = mΔv. Take the direction back toward the bowler as positive, so vi = −30 m·s⁻¹ and vf = +40 m·s⁻¹. Δp = m(vf − vi) = 0,16 × (40 − (−30)) = 0,16 × 70 = 11,2 kg·m·s⁻¹ toward the bowler. Fnet = Δp ÷ Δt = 11,2 ÷ 0,01 = 1 120 N toward the bowler. The fielder cannot change the ball's change in momentum, which is fixed by its mass and speed; by pulling the hands back the fielder increases the time Δt over which the momentum falls to zero, and since Fnet = Δp ÷ Δt, a longer time means a smaller average force on the hands."
+    },
+    {
+      "id": "cc2",
+      "question": "State the principle of conservation of linear momentum, explain what makes a system isolated and why internal forces cannot change the total momentum, and calculate the recoil velocity of a 4 kg rifle that fires a 0,02 kg bullet at 400 m·s⁻¹ from rest.",
+      "expected_answer": "The principle states that the total linear momentum of an isolated system remains constant in magnitude and direction. An isolated (closed) system is one on which no net external force acts. During firing, the rifle and bullet exert forces only on each other; by Newton's third law these internal forces are equal in magnitude and opposite in direction, so any momentum one object gains the other loses, leaving the total unchanged — only an external force could alter it. Take the bullet's direction as positive. Total momentum before firing is zero, so total momentum after must also be zero: 0 = (0,02 × 400) + (4 × v), so 4v = −8 and v = −2 m·s⁻¹. The rifle recoils at 2 m·s⁻¹ opposite to the bullet's motion. The momenta are equal and opposite (8 kg·m·s⁻¹ each) even though the velocities differ enormously, because the masses differ by a factor of 200."
+    },
+    {
+      "id": "cc3",
+      "question": "A 1 000 kg car travelling at 15 m·s⁻¹ collides with a stationary 1 500 kg bakkie and the vehicles lock together. Calculate their common velocity after the collision, and show by calculation whether the collision is elastic or inelastic, stating what happened to any missing energy.",
+      "expected_answer": "Take the car's initial direction as positive. Conservation of momentum: total momentum before = total momentum after, so (1 000 × 15) + (1 500 × 0) = (1 000 + 1 500) × v, giving 15 000 = 2 500v and v = 6 m·s⁻¹ in the car's original direction. Kinetic energy before: ½ × 1 000 × 15² = 112 500 J. Kinetic energy after: ½ × 2 500 × 6² = 45 000 J. Since 45 000 J is less than 112 500 J, kinetic energy was not conserved — 67 500 J was transferred to heat, sound and permanent deformation of the vehicles — so the collision is inelastic. Momentum, however, was conserved throughout, because in the brief moment of impact the forces between the vehicles are internal to the system and external forces such as friction deliver negligible impulse. An elastic collision would require the total kinetic energy after to equal the total before, which a coupling collision can never achieve."
+    }
+  ]
+}

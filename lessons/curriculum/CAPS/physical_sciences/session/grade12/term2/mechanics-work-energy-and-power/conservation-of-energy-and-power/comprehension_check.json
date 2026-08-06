@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a conservative and a non-conservative force, give an example of each, and state the principle of conservation of mechanical energy together with the condition under which it holds.",
+      "expected_answer": "A conservative force is a force for which the work done in moving an object between two points is independent of the path taken — the gravitational force is the standard example: its work depends only on the change in height, and energy it removes on the way up is fully returned on the way down. A non-conservative force is one whose work depends on the path taken — friction is the standard example: it charges for every metre travelled, does negative work on both legs of a round trip, and converts mechanical energy irreversibly into heat (air resistance and applied forces are also non-conservative). The principle of conservation of mechanical energy states that the total mechanical energy — the sum of kinetic and gravitational potential energy — of an object remains constant, provided that only conservative forces act on it, i.e. in the absence of friction, air resistance or any other external force. When a non-conservative force acts, mechanical energy changes by exactly the work that force does: Wnc = ΔEk + ΔEp."
+    },
+    {
+      "id": "cc2",
+      "question": "A 2 kg box is released from rest at the top of a rough 4 m ramp whose top is 2,5 m above the ground, and reaches the bottom at 5 m·s⁻¹. Calculate the work done by friction and the magnitude of the friction force, and explain why the 4 m and not the 2,5 m is used in the second step.",
+      "expected_answer": "Take the ground as the reference level. Initial energies: Ek = 0, Ep = mgh = 2 × 9,8 × 2,5 = 49 J. Final energies: Ek = ½ × 2 × 5² = 25 J, Ep = 0. ΔEk = 25 − 0 = +25 J; ΔEp = 0 − 49 = −49 J. Wnc = ΔEk + ΔEp = 25 − 49 = −24 J: friction removed 24 J of mechanical energy and converted it to heat. Friction acts along the surface, opposite to the motion, over the full 4 m of ramp, so Wfriction = −f × 4 = −24 J, giving f = 6 N. The 4 m is used because friction's work depends on the path length actually travelled along the surface; the 2,5 m vertical height belongs only to gravity, whose work (−49 J on the way down would be +49 J; here Ep fell by 49 J) depends only on the change in height, not the path. Confusing the two distances is the standard error in this question type."
+    },
+    {
+      "id": "cc3",
+      "question": "Define power and the watt. A pump raises 120 kg of water per minute from a borehole 30 m deep at constant speed. Calculate the minimum power of the pump, explain why it is a minimum, and show how P = Fv gives the same answer if the water rises at constant speed.",
+      "expected_answer": "Power is the rate at which work is done (or energy is transferred): P = W ÷ Δt. One watt is one joule of work done per second. Work done against gravity per minute: W = mgh = 120 × 9,8 × 30 = 35 280 J. Minimum power: P = 35 280 ÷ 60 = 588 W. It is a minimum because the calculation prices only the lifting of the water at constant speed: a real pump must additionally do work against friction in the pipe, give the water kinetic energy as it moves, and cover the motor's own inefficiencies, so the actual power required is greater than 588 W. Via P = Fv: at constant speed the pump's force equals the weight of the water column being lifted. In one minute, 120 kg rises 30 m, so the speed is 30 ÷ 60 = 0,5 m·s⁻¹, and the force on the 120 kg being moved is F = mg = 120 × 9,8 = 1 176 N. P = Fv = 1 176 × 0,5 = 588 W — the same answer, since P = Fv is just work (force times distance) divided by time."
+    }
+  ]
+}

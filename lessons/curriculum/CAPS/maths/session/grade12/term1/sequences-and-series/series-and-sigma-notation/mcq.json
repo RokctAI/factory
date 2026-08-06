@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Sigma Notation — Reading and Writing the Instruction",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The sum from k = 1 to 5 of (2k + 1) equals:",
+          "options": [
+            "25",
+            "35",
+            "30",
+            "11"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "How many terms are in the sum from k = 3 to k = 20?",
+          "options": [
+            "17",
+            "20",
+            "18",
+            "23"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Changing the counter letter from k to i in a sigma expression:",
+          "options": [
+            "Leaves the value unchanged",
+            "Changes the number of terms",
+            "Changes the value of each term",
+            "Is not allowed"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The series 4 + 7 + 10 + ... + 61 written in sigma notation is:",
+          "options": [
+            "Sum from k = 1 to 61 of (3k + 1)",
+            "Sum from k = 1 to 19 of (4k + 3)",
+            "Sum from k = 0 to 20 of (3k + 4) — twenty-one terms",
+            "Sum from k = 1 to 20 of (3k + 1)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Arithmetic Sum — Folding the List in Half",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In the fold-and-pair proof, every column of the two rows adds to:",
+          "options": [
+            "2a",
+            "n(a + l)",
+            "a + l",
+            "a + d"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For 5 + 8 + 11 + ..., the sum of the first 40 terms is:",
+          "options": [
+            "2540",
+            "2440",
+            "2740",
+            "1270"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "You should use the form S_n = n/2 (a + l) when:",
+          "options": [
+            "The common difference d is known but l is not",
+            "The last term l is known",
+            "The series is geometric",
+            "n is even"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Solving how many terms of 2 + 5 + 8 + ... give 155 produces n = 10 and a negative root. The negative root is:",
+          "options": [
+            "The number of terms counted backwards",
+            "Kept as a second answer",
+            "Proof the question is impossible",
+            "Rejected, because a count of terms must be a positive natural number"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Geometric Sum and Its Collapsing Proof",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The proof of the geometric sum formula begins by:",
+          "options": [
+            "Multiplying the whole sum by r and subtracting",
+            "Writing the sum backwards and adding",
+            "Differentiating the sum",
+            "Substituting n = 1"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For 3 + 6 + 12 + ..., the sum of the first ten terms is:",
+          "options": [
+            "3072",
+            "3069",
+            "1536",
+            "6138"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "How many terms of 1 + 2 + 4 + ... add to 255?",
+          "options": [
+            "7",
+            "9",
+            "8",
+            "255"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The geometric sum formula excludes r = 1 because:",
+          "options": [
+            "A ratio of one makes the terms negative",
+            "The series would then converge",
+            "One is not a valid ratio",
+            "The denominator 1 − r would be zero; with r = 1 the sum is simply n × a"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Sum to Infinity — When Forever Adds Up",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "An infinite geometric series converges when:",
+          "options": [
+            "r > 1",
+            "−1 < r < 1, r ≠ 0",
+            "r is positive",
+            "a is small"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The sum to infinity of 8 + 4 + 2 + 1 + ... is:",
+          "options": [
+            "15",
+            "17",
+            "16",
+            "Infinite"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The series with ratio 2x − 1 converges for:",
+          "options": [
+            "0 < x < 1, excluding x = 1/2",
+            "−1 < x < 1",
+            "x > 1",
+            "All real x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "As an infinite geometric series, 0,555... equals:",
+          "options": [
+            "5/10",
+            "11/20",
+            "5/11",
+            "5/9"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Instruction on the Crate",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the crate picture, the number on TOP of the sigma is:",
+          "options": [
+            "Where the counting stops",
+            "Where the counting starts",
+            "The number of crates",
+            "The value of every item"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Counting oranges from the third to the twentieth in a row touches:",
+          "options": [
+            "17 oranges",
+            "18 oranges",
+            "20 oranges",
+            "23 oranges"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "After the crate is packed, the counter letter k:",
+          "options": [
+            "Becomes the answer",
+            "Must equal the number of terms",
+            "Does not appear in the answer at all",
+            "Is added to the total"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The items packed by the instruction, sum from k = 1 to 5 of (2k + 1), are:",
+          "options": [
+            "1, 2, 3, 4, 5",
+            "2, 4, 6, 8, 10",
+            "3, 5, 7, 9",
+            "3, 5, 7, 9, 11"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Gauss Folds the Queue",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Folding 1 to 100 pairs 1 with 100 and 2 with 99. Each pair totals:",
+          "options": [
+            "100",
+            "101",
+            "99",
+            "50"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The numbers 1 to 100 form how many such pairs?",
+          "options": [
+            "100",
+            "25",
+            "50",
+            "101"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The brick stack with rows 5, 8, 11, ... for 40 rows holds:",
+          "options": [
+            "2540 bricks",
+            "2410 bricks",
+            "5080 bricks",
+            "1270 bricks"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The envelope question gives n = 10 or a negative root. The full answer is:",
+          "options": [
+            "Both values of n",
+            "n = 10, stating the negative root is rejected because envelopes cannot be negative",
+            "The negative root, since money decreases",
+            "n = 10, with no comment needed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Half the Oranges, Forever",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Takings of 8, 4, 2, 1, ... oranges from a 16-orange bag total:",
+          "options": [
+            "Slightly more than 16",
+            "Exactly 15",
+            "Exactly 16",
+            "No fixed total"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The total settles at a finite value because:",
+          "options": [
+            "The bag is eventually empty after finitely many takings",
+            "Oranges cannot be split",
+            "The ratio is negative",
+            "Each taking shrinks by the same fraction, so the leftover vanishes"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "If the ratio were 1 or bigger, the infinite sum would:",
+          "options": [
+            "Grow without limit — no final number exists",
+            "Equal a over 1 minus r",
+            "Equal zero",
+            "Alternate between two values in every case"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The repeating decimal 0,555... is the fraction:",
+          "options": [
+            "5/10",
+            "5/9",
+            "1/2",
+            "5/99"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

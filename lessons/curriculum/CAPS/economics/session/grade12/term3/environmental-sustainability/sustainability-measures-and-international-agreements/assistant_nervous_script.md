@@ -1,0 +1,9 @@
+Hey, it's Mandy — this topic looks like it wants you to be a scientist, a lawyer and a diplomat at once, and that's exactly the panic to drop. It is one economics idea wearing four outfits: the price tag is missing, so put it back.
+
+Start every answer at the river. A factory dumps upstream, the village pays downstream, and the cost appears in nobody's books — that's an externality. The river has no owner to send the bill — that's the commons. Nobody hires the clean-up truck because everyone waits for the neighbour to pay — that's free riding. Three failures, one river, and the definition mark is next door: sustainable development meets today's needs without robbing future generations of theirs. Learn that Brundtland sentence word for word; it opens every essay.
+
+Then the fixes are just four price tags, and you already know their examples. The rule: standards, licences, impact assessments. The tax: our carbon tax since 2019, the plastic-bag levy — and the magic sentence, the tax polices itself, because every ton not emitted is money kept. The reward: solar rebates, renewable subsidies. The owner: community conservancies — the springbok that pays school fees gets guarded. Rule, tax, reward, owner. Four fingers, four marks.
+
+Treaties feel like a history test, so hang them on one story: Montreal fixed the ozone — proof cooperation works. Rio wrote the constitution. Kyoto bound only the rich and taught its lesson. Paris got everyone in, voluntarily — strength and weakness in the same word, and saying both IS the evaluation. Then two recents: the loss and damage fund, and our own 8,5-billion-dollar just transition deal. Just means workers retrained and towns not abandoned.
+
+One river, one definition, four tags, one treaty story. That's the whole final topic of the syllabus. You've got this!

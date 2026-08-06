@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Derive the future value formula F = x[(1 + i)ⁿ − 1]/i for an ordinary annuity, and apply it to R1 000 deposited at the end of every month for 5 years at 6% p.a. compounded monthly, separating the deposits from the interest earned.",
+      "expected_answer": "With payments of x at the end of each period and valuation at the last payment, the final payment earns nothing (worth x), the previous one earns one period (x(1 + i)), and so on back to the first payment, worth x(1 + i)^(n−1). The values form a geometric series with first term x, ratio 1 + i and n terms, so by the geometric sum formula F = x[(1 + i)ⁿ − 1]/[(1 + i) − 1] = x[(1 + i)ⁿ − 1]/i. For the application: the monthly rate is 0,06/12 = 0,005 and n = 60, so F = 1 000 × (1,005⁶⁰ − 1)/0,005; since 1,005⁶⁰ ≈ 1,34885, the factor is about 69,77 and F ≈ R69 770,03. The sixty deposits supplied R60 000, so about R9 770,03 is compound interest earned by the stream — most of it by the earliest deposits, which grew longest. The formula assumes end-of-period payments valued at the last payment; any other timing shifts the exponents."
+    },
+    {
+      "id": "cc2",
+      "question": "A car loan of R250 000 at 12% p.a. compounded monthly runs for 5 years. Find the monthly instalment from the present value formula, the total paid, and the cost of credit; then find the outstanding balance after 24 payments and explain why so much remains.",
+      "expected_answer": "Fairness requires the loan to equal the present value of all payments: P = x[1 − (1 + i)⁻ⁿ]/i with i = 0,01 and n = 60. Rearranged, x = Pi/[1 − (1,01)⁻⁶⁰]; since 1,01⁶⁰ ≈ 1,8167, the denominator is 1 − 0,5504 = 0,4496, giving x = 2 500/0,4496 ≈ R5 561,11 per month. Sixty payments total about R333 667, so the cost of credit is roughly R83 667 above the R250 000 borrowed. The outstanding balance after 24 payments is the present value of the 36 remaining payments: 5 561,11 × [1 − 1,01⁻³⁶]/0,01 ≈ 5 561,11 × 30,1075 ≈ R167 431 — about two thirds of the loan, even though some R133 467 has been paid. The reason is amortisation: each instalment first covers interest on the current balance (R2 500 in month one), and only the remainder (R3 061,11) reduces debt, so early payments do the least demolition and the balance falls slowly at first."
+    },
+    {
+      "id": "cc3",
+      "question": "A machine costing R500 000 must be replaced in 5 years. Equipment prices inflate at 6% p.a.; the old machine depreciates at 15% p.a. on reducing balance; the sinking fund earns 8% p.a. compounded monthly. Find the required monthly payment, explaining the role of each of the three rates.",
+      "expected_answer": "Three rates do three separate jobs. Inflation prices the replacement: 500 000 × 1,06⁵ ≈ R669 112,79 (annual compounding, exponent 5). Depreciation prices the scrap value of the old machine: 500 000 × 0,85⁵ ≈ R221 852,66 (reducing balance, minus sign in the bracket). These meet in one subtraction: the fund's target is the shortfall, 669 112,79 − 221 852,66 = R447 260,13. The fund's own rate then grows the payments: monthly rate 0,08/12 with n = 60, and setting the future value formula equal to the target gives x × [(1 + 0,08/12)⁶⁰ − 1]/(0,08/12) = 447 260,13. The annuity factor is about 73,4769, so x ≈ 447 260,13/73,4769 ≈ R6 087,09 per month. The common errors are lane contamination — using the fund's monthly rate on the inflation or depreciation lanes, using 60 as the exponent there, or saving toward the full future price while forgetting the scrap sale reduces the target."
+    }
+  ]
+}
