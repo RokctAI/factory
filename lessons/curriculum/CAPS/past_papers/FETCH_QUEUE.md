@@ -25,10 +25,11 @@ addendum allows verbatim verification.
 
 | Done | File | Where to fetch |
 |:---:|---|---|
-| [ ] | Mathematical Literacy P1 Addendum (Eng) | DBE session page: <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx> |
+| [ ] | Mathematical Literacy P1 Addendum (Eng) | DBE session page [webpage — click the link labelled "Mathematical Literacy P1 Nov 2024 Addendum Eng"]: <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx> |
 | [x] | Mathematical Literacy P2 Addendum (Eng) — supplied by owner upload 2026-08-06 batch 2 (see Done) | — |
 
-Known mirror (for cross-checking, prefer the DBE original):
+Known mirror (for cross-checking, prefer the DBE original)
+[direct PDF — click and save]:
 <https://www.theanswer.co.za/wp-content/uploads/2024/11/NSC-2024-Gr-12-Maths-Lit-P1-Addendum.pdf>,
 and WCED ePortal (search "Mathematical Literacy addendum Nov 2024").
 
@@ -45,15 +46,68 @@ ADDENDUM / NOVEMBER 2024".
 
 The owner upload of 2026-08-06 contained November 2024 papers only — no
 November 2025 (or May/June 2025) papers. The DBE has published the November
-2025 NSC papers here (page-level link; direct fileticket URLs not yet
-recorded):
+2025 NSC papers here — **[webpage — see shopping list below]**:
 
 - <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx>
 
-To pull: P1/P2 question papers + memos (English) for Mathematics,
-Mathematical Literacy, Physical Sciences, Accounting, Economics and
-Geography, then add the sessions to the per-subject `index.json` files and
-mirror rows here.
+Once fetched, the papers get added to the per-subject `index.json` files and
+mirrored as rows here.
+
+#### Shopping list — exactly what to click on that page
+
+The DBE session pages list one link per document, labelled like the 2024
+page did: "Mathematics P1 Nov 2024 Eng", "Mathematics P1 Nov 2024 MG
+Afr & Eng", etc. On the 2025 page the labels should read the same with
+"Nov 2025". Click and save each of these 26 links (tick as you go):
+
+- [ ] Mathematics P1 Nov 2025 Eng
+- [ ] Mathematics P1 Nov 2025 MG (memo — may say "MG Afr & Eng"; that
+  bilingual file is fine)
+- [ ] Mathematics P2 Nov 2025 Eng
+- [ ] Mathematics P2 Nov 2025 MG
+- [ ] Mathematical Literacy P1 Nov 2025 Eng
+- [ ] Mathematical Literacy P1 Nov 2025 MG
+- [ ] Mathematical Literacy P2 Nov 2025 Eng
+- [ ] Mathematical Literacy P2 Nov 2025 MG
+- [ ] Mathematical Literacy P1 Nov 2025 Addendum (Eng) — if listed; it may
+  be bundled inside the P1 paper PDF instead, send whatever you get
+- [ ] Mathematical Literacy P2 Nov 2025 Addendum (Eng) — same note as P1
+- [ ] Physical Sciences P1 Nov 2025 Eng
+- [ ] Physical Sciences P1 Nov 2025 MG
+- [ ] Physical Sciences P2 Nov 2025 Eng
+- [ ] Physical Sciences P2 Nov 2025 MG
+- [ ] Accounting P1 Nov 2025 Eng
+- [ ] Accounting P1 Nov 2025 MG
+- [ ] Accounting P2 Nov 2025 Eng
+- [ ] Accounting P2 Nov 2025 MG
+- [ ] Economics P1 Nov 2025 Eng
+- [ ] Economics P1 Nov 2025 MG
+- [ ] Economics P2 Nov 2025 Eng
+- [ ] Economics P2 Nov 2025 MG
+- [ ] Geography P1 Nov 2025 Eng
+- [ ] Geography P1 Nov 2025 MG
+- [ ] Geography P2 Nov 2025 Eng
+- [ ] Geography P2 Nov 2025 MG
+
+What to SKIP on that page:
+
+- Skip Afrikaans-only question papers (labels ending "Afr" with no "Eng") —
+  we only need the English QPs. Bilingual memos ("MG Afr & Eng") are fine.
+- Skip every other subject (Life Sciences, Business Studies, languages,
+  etc.) — only the six subjects above.
+
+Direct 2025 links already surfaced by web search 2026-08-06 (these download
+straight away — no page navigation needed):
+
+| Done | Document | Direct URL |
+|:---:|---|---|
+| [ ] | Mathematics P1 Nov 2025 MG (bilingual; title verified in search result) [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=lMX4KlIrUCs%3D&tabid=5742&portalid=0&mid=14845> |
+| [ ] | Mathematics P2 Nov 2025 — exact label unverified (surfaced in a search for the Nov 2025 Maths P2; same DBE tab as the row above; likely the MG — check the cover page after download) [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=0Hh6qly8lfU%3D&tabid=5742&portalid=0&mid=14845> |
+| [ ] | Physical Sciences P1 Nov 2025 Eng QP (stanmorephysics.com mirror — prefer the DBE original from the page above) [direct PDF — click and save] | <https://stanmorephysics.com/wp-content/uploads/2025/11/NSC-Physical-Sciences-Grade-12-November-2025-P1-only.pdf> |
+
+No other direct 2025 fileticket URLs appeared in search results (checked
+Mathematical Literacy, Physical Sciences, Accounting, Economics, Geography);
+those must come from the session page via the shopping list.
 
 ## Done
 
@@ -128,6 +182,13 @@ verbatim from each artefact's own metadata (`source_url` /
 `paper_download_url` / `memo_download_url`); none are fabricated. All
 documents are © Department of Basic Education.
 
+Link-type audit 2026-08-06: every URL in this section was checked against
+the two direct-download patterns (`LinkClick.aspx?fileticket=...` and plain
+`.../*.pdf` paths — both download the file immediately, no page to navigate).
+All 34 rows are direct downloads, so each row is tagged
+"[direct PDF — click and save]": open the link, the PDF downloads, save it.
+No webpage-only links in this section.
+
 ### CAPS policy statements, FET Grades 10-12
 
 One PDF per subject ("Curriculum and Assessment Policy Statement, FET
@@ -135,12 +196,12 @@ Grades 10-12"), extracted to `<subject>/curriculum/caps_gr10-12.json`.
 
 | Done | Subject | Source URL |
 |:---:|---|---|
-| [ ] | Accounting | <https://www.education.gov.za/LinkClick.aspx?fileticket=IIU4LUlZBFM%3d&tabid=570&portalid=0&mid=1558> |
-| [ ] | Economics | <https://www.education.gov.za/LinkClick.aspx?fileticket=Lv-97xKN0eM%3d&tabid=570&portalid=0&mid=1558> |
-| [ ] | Geography | <https://www.education.gov.za/LinkClick.aspx?fileticket=sdwEoyM0nY0%3d&tabid=570&portalid=0&mid=1558> |
-| [ ] | Mathematical Literacy | <https://www.education.gov.za/LinkClick.aspx?fileticket=q8-SkGy43rw%3d&tabid=570&portalid=0&mid=1558> |
-| [ ] | Mathematics | <https://www.education.gov.za/LinkClick.aspx?fileticket=uXLZcIa67rE%3d&tabid=570&portalid=0&mid=1558> |
-| [ ] | Physical Sciences | <https://www.education.gov.za/LinkClick.aspx?fileticket=uVcOcx728Y8%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Accounting [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=IIU4LUlZBFM%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Economics [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=Lv-97xKN0eM%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Geography [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=sdwEoyM0nY0%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Mathematical Literacy [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=q8-SkGy43rw%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Mathematics [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=uXLZcIa67rE%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Physical Sciences [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=uVcOcx728Y8%3d&tabid=570&portalid=0&mid=1558> |
 
 ### Annual Teaching Plans, 2023/24 edition
 
@@ -149,24 +210,24 @@ One PDF per subject per grade, extracted to `<subject>/syllabus/<grade>.json`
 
 | Done | Subject / grade | Source URL |
 |:---:|---|---|
-| [ ] | Accounting Gr 10 | <https://www.education.gov.za/LinkClick.aspx?fileticket=xMiwoYjt1vw%3D&tabid=3205&portalid=0&mid=10736> |
-| [ ] | Accounting Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=qxPOjU7FXcA%3D&tabid=3205&portalid=0&mid=10752> |
-| [ ] | Accounting Gr 12 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.150%20ATP%202023-24%20Gr%2012%20Acc%20final.pdf> |
-| [ ] | Economics Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.210%20ATP%202023-24%20Gr%2010%20Eco%20final.pdf> |
-| [ ] | Economics Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=BjrxUz7iUNo%3D&tabid=3205&portalid=0&mid=10752> |
-| [ ] | Economics Gr 12 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.230%20ATP%202023-24%20Gr%2012%20Eco%20final.pdf> |
-| [ ] | Geography Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.380%20ATP%202023-24%20Gr%2010%20Geo%20final.pdf> |
-| [ ] | Geography Gr 11 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.390%20ATP%202023-24%20Gr%2011%20Geo%20final.pdf> |
-| [ ] | Geography Gr 12 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.400%20ATP%202023-24%20Gr%2012%20Geo%20final.pdf> |
-| [ ] | Mathematical Literacy Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.020%20ATP%202023-24%20Gr%2010%20Maths%20Lit%20final.pdf> |
-| [ ] | Mathematical Literacy Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=EqZ41-tXhWA%3D&tabid=3205&portalid=0&mid=10752> |
-| [ ] | Mathematical Literacy Gr 12 | <https://www.education.gov.za/LinkClick.aspx?fileticket=X4ZvlGUQ0vY%3D&tabid=3205&portalid=0&mid=10755> |
-| [ ] | Mathematics Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.580%20ATP%202023-24%20Gr%2010%20Maths%20final.pdf> |
-| [ ] | Mathematics Gr 11 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.590%20ATP%202023-24%20Gr%2011%20Maths%20final.pdf> |
-| [ ] | Mathematics Gr 12 | <https://www.education.gov.za/LinkClick.aspx?fileticket=_kS5tgxXQ0I%3D&tabid=3205&portalid=0&mid=10755> |
-| [ ] | Physical Sciences Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.520%20ATP%202023-24%20Gr%2010%20Phys%20Sci%20final.pdf> |
-| [ ] | Physical Sciences Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=6y_u-yjj97c%3D&tabid=3205&portalid=0&mid=10755> |
-| [ ] | Physical Sciences Gr 12 | <https://www.education.gov.za/LinkClick.aspx?fileticket=HofhdeKXMCM%3D&tabid=3205&portalid=0&mid=10752> |
+| [ ] | Accounting Gr 10 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=xMiwoYjt1vw%3D&tabid=3205&portalid=0&mid=10736> |
+| [ ] | Accounting Gr 11 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=qxPOjU7FXcA%3D&tabid=3205&portalid=0&mid=10752> |
+| [ ] | Accounting Gr 12 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.150%20ATP%202023-24%20Gr%2012%20Acc%20final.pdf> |
+| [ ] | Economics Gr 10 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.210%20ATP%202023-24%20Gr%2010%20Eco%20final.pdf> |
+| [ ] | Economics Gr 11 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=BjrxUz7iUNo%3D&tabid=3205&portalid=0&mid=10752> |
+| [ ] | Economics Gr 12 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.230%20ATP%202023-24%20Gr%2012%20Eco%20final.pdf> |
+| [ ] | Geography Gr 10 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.380%20ATP%202023-24%20Gr%2010%20Geo%20final.pdf> |
+| [ ] | Geography Gr 11 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.390%20ATP%202023-24%20Gr%2011%20Geo%20final.pdf> |
+| [ ] | Geography Gr 12 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.400%20ATP%202023-24%20Gr%2012%20Geo%20final.pdf> |
+| [ ] | Mathematical Literacy Gr 10 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.020%20ATP%202023-24%20Gr%2010%20Maths%20Lit%20final.pdf> |
+| [ ] | Mathematical Literacy Gr 11 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=EqZ41-tXhWA%3D&tabid=3205&portalid=0&mid=10752> |
+| [ ] | Mathematical Literacy Gr 12 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=X4ZvlGUQ0vY%3D&tabid=3205&portalid=0&mid=10755> |
+| [ ] | Mathematics Gr 10 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.580%20ATP%202023-24%20Gr%2010%20Maths%20final.pdf> |
+| [ ] | Mathematics Gr 11 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.590%20ATP%202023-24%20Gr%2011%20Maths%20final.pdf> |
+| [ ] | Mathematics Gr 12 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=_kS5tgxXQ0I%3D&tabid=3205&portalid=0&mid=10755> |
+| [ ] | Physical Sciences Gr 10 [direct PDF — click and save] | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.520%20ATP%202023-24%20Gr%2010%20Phys%20Sci%20final.pdf> |
+| [ ] | Physical Sciences Gr 11 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=6y_u-yjj97c%3D&tabid=3205&portalid=0&mid=10755> |
+| [ ] | Physical Sciences Gr 12 [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=HofhdeKXMCM%3D&tabid=3205&portalid=0&mid=10752> |
 
 ### Grade 12 Examination Guidelines, 2021 edition
 
@@ -176,12 +237,12 @@ One PDF per subject, extracted to
 
 | Done | Subject | Source URL |
 |:---:|---|---|
-| [ ] | Accounting | <https://www.education.gov.za/LinkClick.aspx?fileticket=Wrz2RY6cOEY%3d&tabid=2720&portalid=0&mid=9677> |
-| [ ] | Economics | <https://www.education.gov.za/LinkClick.aspx?fileticket=4EZMm9gdCdA%3d&tabid=2720&portalid=0&mid=9690> |
-| [ ] | Geography | <https://www.education.gov.za/LinkClick.aspx?fileticket=ZL0-Tn1aRmA%3d&tabid=2720&portalid=0&mid=9693> |
-| [ ] | Mathematical Literacy | <https://www.education.gov.za/LinkClick.aspx?fileticket=eW-HTUSjqck%3d&tabid=2720&portalid=0&mid=9705> |
-| [ ] | Mathematics | <https://www.education.gov.za/LinkClick.aspx?fileticket=gtM--fFe--Q%3d&tabid=2720&portalid=0&mid=9706> |
-| [ ] | Physical Sciences | <https://www.education.gov.za/LinkClick.aspx?fileticket=7rRU21y6sgg%3d&tabid=2720&portalid=0&mid=9709> |
+| [ ] | Accounting [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=Wrz2RY6cOEY%3d&tabid=2720&portalid=0&mid=9677> |
+| [ ] | Economics [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=4EZMm9gdCdA%3d&tabid=2720&portalid=0&mid=9690> |
+| [ ] | Geography [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=ZL0-Tn1aRmA%3d&tabid=2720&portalid=0&mid=9693> |
+| [ ] | Mathematical Literacy [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=eW-HTUSjqck%3d&tabid=2720&portalid=0&mid=9705> |
+| [ ] | Mathematics [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=gtM--fFe--Q%3d&tabid=2720&portalid=0&mid=9706> |
+| [ ] | Physical Sciences [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=7rRU21y6sgg%3d&tabid=2720&portalid=0&mid=9709> |
 
 ### Past papers transcribed before the PDF-tracking policy
 
@@ -192,10 +253,10 @@ papers are NOT listed here — their PDFs are already tracked next to their
 
 | Done | Paper (extracted to) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Mathematics Gr 11 P1 Nov 2017 (`past_papers/maths/grade11/2017/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
-| [ ] | Mathematics Gr 11 P1 Nov 2018 (`past_papers/maths/grade11/2018/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
-| [ ] | Physical Sciences Gr 11 P1 Nov 2018 (`past_papers/physical_sciences/grade11/2018/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
-| [ ] | Geography Gr 12 P2 Nov 2018 (`past_papers/geography/grade12/2018/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> | <https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> |
+| [ ] | Mathematics Gr 11 P1 Nov 2017 (`past_papers/maths/grade11/2017/paper.json`) [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
+| [ ] | Mathematics Gr 11 P1 Nov 2018 (`past_papers/maths/grade11/2018/paper.json`) [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
+| [ ] | Physical Sciences Gr 11 P1 Nov 2018 (`past_papers/physical_sciences/grade11/2018/paper.json`) [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
+| [ ] | Geography Gr 12 P2 Nov 2018 (`past_papers/geography/grade12/2018/paper.json`) [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> | <https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> |
 
 ### Not a PDF (no refetch)
 
