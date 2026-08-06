@@ -23,6 +23,26 @@
           "memo_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=xrUiB59LW4E%3d"
         }
       ]
+    },
+    {
+      "session": "November 2025 NSC",
+      "session_page": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx",
+      "papers": [
+        {
+          "paper": 1,
+          "language": "English",
+          "question_paper_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=0fZnlOqdEo0%3d&tabid=5742&portalid=0&mid=14844",
+          "memo_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=yfBLrkeMk2o%3d&tabid=5742&portalid=0&mid=14844",
+          "notes": "QP (Eng, scanned, 13 pp, cover/mid/late pages render-verified, TOTAL 150) and marking guidelines (bilingual Afr & Eng, 23 pp, cover/mid/late pages verified) supplied by owner upload 2026-08-06 batch 5, tracked at past_papers/mathematical_literacy/grade12/2025/paper1.pdf + paper1_memo.pdf. QP+memo pair complete. NOTE: unlike Nov 2024 there is no separate addendum — the QP references Annexures in a 17-page SPECIAL ANSWER BOOK (e.g. 'ANNEXURE B in the ANSWER BOOK', p 13), which was NOT supplied and has no separate listing beyond the session page; annexure-dependent questions cannot be fully transcribed until the answer book is supplied (see past_papers/FETCH_QUEUE.md)."
+        },
+        {
+          "paper": 2,
+          "language": "English",
+          "question_paper_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=SlY1pYy3GT4%3d&tabid=5742&portalid=0&mid=14844",
+          "memo_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=anKb8eamj_M%3d&tabid=5742&portalid=0&mid=14844",
+          "notes": "QP (Eng, scanned, 15 pp, cover/mid/late pages render-verified, TOTAL 150) and marking guidelines (bilingual Afr & Eng, 15 pp, cover/mid/late pages verified) supplied by owner upload 2026-08-06 batch 5, tracked at past_papers/mathematical_literacy/grade12/2025/paper2.pdf + paper2_memo.pdf. QP+memo pair complete. Same answer-book caveat as P1: Annexures A-D live in the 17-page SPECIAL ANSWER BOOK (e.g. 'ANNEXURE D in the ANSWER BOOK', p 14), not supplied."
+        }
+      ]
     }
   ],
   "note": "Index of real DBE sources; PDF ingestion + question-to-subtopic linking is the past-papers pipeline task (docs/past-papers-linking-brief.md, past_papers.py). This is also the honest source for pre-filling example_problem on topic rows. Only Gr 12 papers are published nationally; Gr 10-11 papers are provincial."
