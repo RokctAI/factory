@@ -12,9 +12,12 @@
     "words) is transcribed verbatim inside the text of the FIRST sub-question of each",
     "block, prefixed 'CONTEXT for ...'. Later sub-questions carry a short pointer.",
     "ANNEXURE NOTE: The paper references an ADDENDUM with ANNEXURES A-C (tax table,",
-    "store/employee graphs, Indian Union budget pie charts). The addendum PDF is NOT",
-    "in this directory; annexure descriptions below are reconstructed from the values",
-    "the marking guidelines use, and are marked [ANNEXURE ... - not in repo]."
+    "store/employee graphs, Indian Union budget pie charts). The 4-page addendum is",
+    "committed as paper1_addendum.pdf (image-only scan, read rendered page by page",
+    "2026-08-06). All annexure-dependent values below were verified against the",
+    "actual annexures; bracketed [ANNEXURE ...] descriptions transcribe what each",
+    "annexure shows. No reconstructed values needed correcting - the tax bracket,",
+    "rebate, graph readings and pie-chart percentages all match the printed pages."
   ],
   "paper_id": "dbe_mathlit_g12_p1_2024_nov",
   "source": "Department of Basic Education",
@@ -23,7 +26,7 @@
   "memo_download_url": null,
   "paper_file": "paper1.pdf",
   "memo_file": "paper1_memo.pdf",
-  "_note_binaries": "Both scanned PDFs are committed in this directory (paper1.pdf = question paper, paper1_memo.pdf = bilingual marking guidelines). The addendum (3 annexures) and the loose ANSWER SHEET are not in the repo.",
+  "_note_binaries": "All three scanned PDFs are committed in this directory (paper1.pdf = question paper, paper1_memo.pdf = bilingual marking guidelines, paper1_addendum.pdf = 4-page addendum with Annexures A-C). The loose ANSWER SHEET is not in the repo.",
   "copyright": "© Department of Basic Education, 2024. Reproduced for educational use with attribution.",
   "subject": "Mathematical Literacy",
   "grade": 12,
@@ -225,7 +228,7 @@
     },
     {
       "ref": "Q2.3.1",
-      "text": "CONTEXT for 2.3 (Q2.3.1-2.3.2): Miecke is 45 years old and earns a monthly taxable income of R39 275,85 in the 2023/2024 tax year. She does not belong to a medical aid. ANNEXURE A shows the annual tax table for individuals for the 2023/2024 tax year. [ANNEXURE A - not in repo. From the memo it is the SARS 2023/2024 individual income tax table; the bracket used (labelled C) is: taxable income R370 501-R512 800, tax = R77 362 + 31% of taxable income above R370 500; primary rebate R17 235.] Use ANNEXURE A and the information above to answer the questions that follow. QUESTION: Identify the tax bracket that Miecke will use to calculate her income tax payable.",
+      "text": "CONTEXT for 2.3 (Q2.3.1-2.3.2): Miecke is 45 years old and earns a monthly taxable income of R39 275,85 in the 2023/2024 tax year. She does not belong to a medical aid. ANNEXURE A shows the annual tax table for individuals for the 2023/2024 tax year. [ANNEXURE A: QUESTION 2.3 - TAX RATES FROM 1 MARCH 2023 TO 29 FEBRUARY 2024. Table with columns Tax Bracket | Taxable income (R) | Tax rates (R): A: 1-237 100, 18% of taxable income; B: 237 101-370 500, 42 678 + 26% of taxable income above 237 100; C: 370 501-512 800, 77 362 + 31% of taxable income above 370 500; D: 512 801-673 000, 121 475 + 36% of taxable income above 512 800; E: 673 001-857 900, 179 147 + 39% of taxable income above 673 000; F: 857 901-1 817 000, 251 258 + 41% of taxable income above 857 900; G: 1 817 001 and above, 644 489 + 45% of taxable income above 1 817 000. TAX REBATES 2023/2024: Primary R17 235; Secondary (person 65 and older) R9 444; Tertiary (person 75 and older) R3 145. TAX THRESHOLDS 2023/2024: Under 65 R95 750; 65 and older R148 217; 75 and older R165 689. 2023/2024 MEDICAL CREDITS - MONTHLY CONTRIBUTION: taxpayer or dependant who is a member of a medical aid R364; taxpayer and one dependant R728; each additional dependant R246. Adapted from www.sars.gov.za.] Use ANNEXURE A and the information above to answer the questions that follow. QUESTION: Identify the tax bracket that Miecke will use to calculate her income tax payable.",
       "marks": 3,
       "topic": "Finance (income tax brackets)",
       "solution_method": "annualise_income_and_identify_tax_bracket",
@@ -245,13 +248,13 @@
     },
     {
       "ref": "Q3.1.1",
-      "text": "CONTEXT for 3.1 (Q3.1.1-3.1.4): ANNEXURE B shows two graphs. GRAPH 1 shows the trends in the total number of Shoprite and Pick n Pay stores for the period 2014 to 2023. GRAPH 2 shows the trends in the total number of employees in these two stores for the period 2005 to 2023. [ANNEXURE B - not in repo. Values the memo reads off: in 2023 Shoprite had 3 543 stores and 153 726 employees; Pick n Pay had 2 204 stores and 90 000 employees; the first decrease in Pick n Pay employees was in 2015; in 3 of the 10 years shown (2014-2023) the number of Shoprite stores was fewer than 2 000.] Use ANNEXURE B and the information above to answer the questions that follow. QUESTION: Identify the year in which there was a decrease in the number of employees in the Pick n Pay stores for the first time.",
+      "text": "CONTEXT for 3.1 (Q3.1.1-3.1.4): ANNEXURE B shows two graphs. GRAPH 1 shows the trends in the total number of Shoprite and Pick n Pay stores for the period 2014 to 2023. GRAPH 2 shows the trends in the total number of employees in these two stores for the period 2005 to 2023. [ANNEXURE B: QUESTION 3.1 - two line graphs, adapted from www.theoutlier.co.za. GRAPH 1: TRENDS IN THE TOTAL NUMBER OF STORES - total number of stores (0-4 000) vs year, every year 2014-2023 labelled. Shoprite (solid line): starts at 1 581 in 2014, rises to about 1 800 (2015) and just below 2 000 (2016), jumps above 2 000 in 2017 to about 2 400, stays roughly level around 2 400-2 500 through 2020, then climbs through about 2 550 (2021) and 3 050 (2022) to 3 543 in 2023. Pick n Pay (dashed line): starts at 1 128 in 2014 and rises steadily every year to 2 204 in 2023, so Shoprite had fewer than 2 000 stores in 3 of the 10 years shown (2014-2016). GRAPH 2: TRENDS IN THE TOTAL NUMBER OF EMPLOYEES - total number of employees (gridlines 50 000, 100 000, 150 000) vs year, axis labelled only at 2005, 2014 and 2023. Shoprite (solid line): rises from about 60 000 in 2005 to about 147 000, dips slightly around 2021, ending at 153 726 in 2023. Pick n Pay (dashed line): rises gently from about 60 000 in 2005 to about 73 000 in 2014, decreases for the first time in 2015 (dropping to about 70 000), then rises again to plateau at 90 000 in 2023.] Use ANNEXURE B and the information above to answer the questions that follow. QUESTION: Identify the year in which there was a decrease in the number of employees in the Pick n Pay stores for the first time.",
       "marks": 2,
       "topic": "Data Handling (interpreting line graphs)",
       "solution_method": "read_trend_from_line_graph",
       "memo_answer": "2015",
       "memo_working": "2RT correct year",
-      "checkable": false
+      "checkable": true
     },
     {
       "ref": "Q3.1.2",
@@ -428,7 +431,7 @@
     },
     {
       "ref": "Q5.1.1",
-      "text": "CONTEXT for 5.1 (Q5.1.1-5.1.5): The pie charts on ANNEXURE C show the Indian Union budgets for income and expenditure for 2023/2024. Some values have been omitted. The currency used in India is the rupee. India also has different denominations for the larger currency amounts. NOTE: 100 000 rupees = 1 lakh; 100 lakhs = 1 crore. [ANNEXURE C - not in repo. From the memo: total budget 45,03 lakh crore. Income pie chart percentages: borrowing 34%; corporation tax 15%; income tax 15%; customs 4%; GST omitted (= 17%); non-debt capital receipts 2%; plus two further sources of 7% and 6%. Expenditure pie chart includes: defence 8%; interest payments 20%.] Use ANNEXURE C and the information above to answer the questions that follow. QUESTION: Choose the correct word from those given in brackets. Write down only the word next to the question number (5.1.1). A budget is a (deficit/surplus/balanced) budget when the income is less than the expenditure.",
+      "text": "CONTEXT for 5.1 (Q5.1.1-5.1.5): The pie charts on ANNEXURE C show the Indian Union budgets for income and expenditure for 2023/2024. Some values have been omitted. The currency used in India is the rupee. India also has different denominations for the larger currency amounts. NOTE: 100 000 rupees = 1 lakh; 100 lakhs = 1 crore. [ANNEXURE C: QUESTION 5.1 - two pie charts, adapted from https://www.equentis.com. LEFT: 'Indian Union Budget Income Sources in 2023-2024 (45,03 lakh crores)' with slices: Borrowings 34%; Corporation tax 15%; Income tax 15%; Excise duties 7%; Non-tax receipts 6%; Customs 4%; Non-debt capital receipts 2%; GST ... (percentage omitted).  RIGHT: 'Indian Union Budget 2023-2024 Expenditure (45,03 lakh crores)' with slices: Interest payments 20%; State shares of taxes 18%; Central sector schemes 17%; Centrally sponsored schemes 9%; Finance commission and others 9%; Defence 8%; Other expenditure 8%; Subsidies 7%; Pensions 4%.] Use ANNEXURE C and the information above to answer the questions that follow. QUESTION: Choose the correct word from those given in brackets. Write down only the word next to the question number (5.1.1). A budget is a (deficit/surplus/balanced) budget when the income is less than the expenditure.",
       "marks": 2,
       "topic": "Finance (budget terminology)",
       "solution_method": "budget_terminology_choice",

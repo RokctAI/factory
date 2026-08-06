@@ -42,7 +42,10 @@ stores/employees graphs, Annexure C Indian Union budget pie charts — all
 page-verified). Pages 15–18 were extracted verbatim to
 `mathematical_literacy/grade12/2024/paper1_addendum.pdf`, enabling verbatim
 verification of the `[ANNEXURE ...]`-flagged values in `paper1.json`
-(follow-up task, not yet done).
+(verification DONE 2026-08-06: all reconstructed values matched the printed
+annexures — no corrections needed; `[ANNEXURE ... - not in repo]` flags
+replaced with verbatim annexure descriptions and Q3.1.1 flipped back to
+checkable).
 
 ### 2. November 2025 session
 
@@ -121,7 +124,7 @@ English-language, November 2024 NSC, Grade 12, from the session page
 |:---:|---|---|---|
 | [x] | Mathematical Literacy P1 | <https://www.education.gov.za/LinkClick.aspx?fileticket=r3H6xWQUYXg%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=AY2Qj8huxtE%3d> |
 | [x] | Mathematical Literacy P2 | <https://www.education.gov.za/LinkClick.aspx?fileticket=1EZXhzf3-sI%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=xrUiB59LW4E%3d> |
-| [x] | Mathematical Literacy P1 Addendum — supplied by owner upload 2026-08-06 batch 3. The supplied file (`NSC-2024-Gr-12-Maths-Lit-P1-Addendum.pdf`, theanswer.co.za mirror, 18 pp) was the full QP (pp 1–13) + answer sheet (p 14) + addendum (pp 15–18: Annexures A tax tables, B retailer graphs, C budget pie charts); the 4-page addendum was extracted verbatim to `mathematical_literacy/grade12/2024/paper1_addendum.pdf`. Verbatim re-verification of the `[ANNEXURE ...]`-flagged values in `paper1.json` is a follow-up. | (mirror, see NEXT BATCH) | — |
+| [x] | Mathematical Literacy P1 Addendum — supplied by owner upload 2026-08-06 batch 3. The supplied file (`NSC-2024-Gr-12-Maths-Lit-P1-Addendum.pdf`, theanswer.co.za mirror, 18 pp) was the full QP (pp 1–13) + answer sheet (p 14) + addendum (pp 15–18: Annexures A tax tables, B retailer graphs, C budget pie charts); the 4-page addendum was extracted verbatim to `mathematical_literacy/grade12/2024/paper1_addendum.pdf`. Verbatim re-verification of the `[ANNEXURE ...]`-flagged values in `paper1.json` completed 2026-08-06 — all values matched, no corrections needed. | (mirror, see NEXT BATCH) | — |
 | [x] | Mathematical Literacy P2 Addendum — supplied by owner upload 2026-08-06 batch 2. The supplied file (`NSC-2024-Gr-12-Maths-Lit-P2-Addendum.pdf`, theanswer.co.za mirror) was the full QP (pp 1–13) + addendum (pp 14–17) combined; the 4-page addendum (Annexures A–C: campsite, trail-run map/elevation, Australia trip map) was extracted verbatim to `mathematical_literacy/grade12/2024/paper2_addendum.pdf`. | (mirror, see NEXT BATCH) | — |
 
 ### Physical Sciences
