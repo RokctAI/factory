@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the data set 12; 45; 52; 58; 61; 64; 68; 72; 75; 94, show by calculation that 12 is an outlier.",
+      "expected_answer": "Q₁ = 52 and Q₃ = 72, so IQR = 20. Lower fence: Q₁ − 1,5 × IQR = 52 − 30 = 22. Since 12 < 22, the value 12 lies below the lower fence and is an outlier. The calculation of the fence, not just the visual judgement, earns the mark."
+    },
+    {
+      "id": "cc2",
+      "question": "The circle x² + y² − 6x + 4y − 12 = 0 passes through (7; 1). Find the equation of the tangent at that point, explaining each step.",
+      "expected_answer": "Completing the square: (x − 3)² + (y + 2)² = 25, centre (3; −2), radius 5. Radius gradient to (7; 1): (1 − (−2)) ÷ (7 − 3) = 3/4. Tangent ⊥ radius, so tangent gradient = −4/3. Equation: y − 1 = −4/3(x − 7), i.e. y = −4/3 x + 31/3."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the choice of cos 2x identity when proving sin 2x ÷ (1 − cos 2x) = cos x ÷ sin x, and complete the proof.",
+      "expected_answer": "Choose cos 2x = 1 − 2sin²x because the ones cancel: 1 − cos 2x = 2sin²x. Numerator: sin 2x = 2 sin x cos x. So LHS = (2 sin x cos x) ÷ (2 sin² x) = cos x ÷ sin x = RHS. The face of cos 2x is chosen to make the surrounding terms cancel."
+    }
+  ]
+}

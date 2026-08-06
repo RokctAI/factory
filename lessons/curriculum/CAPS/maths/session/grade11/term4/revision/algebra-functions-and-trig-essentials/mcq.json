@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Quadratic Equations and the Discriminant",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The solutions of $x^2 - 5x + 6 = 0$ are:",
+          "options": [
+            "$x = 2$ or $x = 3$",
+            "$x = -2$ or $x = -3$",
+            "$x = 1$ or $x = 6$",
+            "$x = 5$ or $x = 6$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "For $x^2 - 4x - 3 = 0$, the discriminant is 28. The roots are:",
+          "options": [
+            "Non-real",
+            "Two real, irrational roots: $2 \\pm \\sqrt{7}$",
+            "One repeated root",
+            "Two rational roots"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The solution of $x^2 - x - 6 < 0$ is:",
+          "options": [
+            "$x < -2$ or $x > 3$",
+            "$x < 3$",
+            "$-2 < x < 3$ — the parabola dips below the axis between its roots",
+            "$x > -2$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Squaring $\\sqrt{x+7} = x - 5$ gives $x = 9$ or $x = 2$. The valid solution set is:",
+          "options": [
+            "Both $x = 9$ and $x = 2$",
+            "$x = 2$ only",
+            "Neither",
+            "$x = 9$ only — $x = 2$ fails the check since $\\sqrt{9} \\neq -3$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Functions — Parabola, Hyperbola, Exponential",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The turning point of $y = 2(x-1)^2 - 8$ is:",
+          "options": [
+            "$(-1; -8)$",
+            "$(1; -8)$",
+            "$(1; 8)$",
+            "$(2; -8)$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The x-intercepts of $y = 2(x-1)^2 - 8$ are:",
+          "options": [
+            "$x = 1$ and $x = -8$",
+            "$x = 2$ and $x = -2$",
+            "$x = 3$ and $x = -1$",
+            "$x = 4$ and $x = 0$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The asymptotes of $y = \\frac{3}{x-2} + 1$ are:",
+          "options": [
+            "$x = 2$ and $y = 1$",
+            "$x = -2$ and $y = 1$",
+            "$x = 3$ and $y = 2$",
+            "$x = 1$ and $y = 2$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The range of $y = 2 \\cdot 3^x + 1$ is:",
+          "options": [
+            "All real y",
+            "$y \\ge 3$",
+            "$y > 0$",
+            "$y > 1$ — the graph lives above its asymptote $y = 1$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Trig Identities, Reduction and General Solutions",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "$\\cos(180° + x)$ reduces to:",
+          "options": [
+            "$-\\cos x$ — quadrant three, where only tangent is positive",
+            "$\\cos x$",
+            "$\\sin x$",
+            "$-\\sin x$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "$\\sin 150°$ equals:",
+          "options": [
+            "$-\\frac{1}{2}$",
+            "$\\frac{1}{2}$ — quadrant two keeps sine positive, reference angle $30°$",
+            "$\\frac{\\sqrt{3}}{2}$",
+            "$-\\frac{\\sqrt{3}}{2}$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The general solution of $\\sin x = \\frac{1}{2}$ is:",
+          "options": [
+            "$x = 30° + k \\cdot 360°$ only",
+            "$x = 30° + k \\cdot 180°$",
+            "$x = 30° + k \\cdot 360°$ or $x = 150° + k \\cdot 360°$, $k \\in \\mathbb{Z}$",
+            "$x = 150° + k \\cdot 360°$ only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The two identities that power proof questions are:",
+          "options": [
+            "$\\sin x = \\cos x$ and $\\tan x = 1$",
+            "The sine rule and the cosine rule",
+            "CAST and the reduction formulae",
+            "$\\tan x = \\frac{\\sin x}{\\cos x}$ and $\\sin^2 x + \\cos^2 x = 1$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Trig Graphs and the Triangle Rules",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The period of $y = \\sin 2x$ is:",
+          "options": [
+            "$180°$ — the 2 doubles the speed and halves the period",
+            "$360°$",
+            "$720°$",
+            "$90°$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The sine rule can be used the moment you have:",
+          "options": [
+            "Any three measurements",
+            "A matching pair — a side together with its opposite angle",
+            "Two sides and the included angle",
+            "A right angle"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Sides 7 and 9 embrace an included angle of $50°$. The third side is closest to:",
+          "options": [
+            "$11{,}4$",
+            "$5{,}2$",
+            "$7{,}0$ — from $a^2 = 49 + 81 - 126\\cos 50°$",
+            "$16{,}0$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The area rule, area $= \\frac{1}{2}ab\\sin C$, requires C to be:",
+          "options": [
+            "The largest angle",
+            "A right angle",
+            "Any angle of the triangle",
+            "The angle INCLUDED between sides a and b"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Delta as the Warning Light",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A negative discriminant tells you:",
+          "options": [
+            "The parabola floats clear of the axis — no real roots",
+            "The roots are rational",
+            "There is one repeated root",
+            "The equation was copied wrong"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "A nature-of-roots question is answered by:",
+          "options": [
+            "Solving the equation fully",
+            "Computing and reading $\\Delta = b^2 - 4ac$ — no solving needed",
+            "Sketching an accurate graph",
+            "Completing the square twice"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The mandatory final step of every surd equation is:",
+          "options": [
+            "Rounding to two decimals",
+            "Squaring the answer",
+            "Substituting each candidate into the ORIGINAL equation and rejecting ghosts",
+            "Writing the discriminant"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Graphs as Machines with Dials",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the dials picture, $+p$ inside the bracket slides the graph:",
+          "options": [
+            "Left — the sideways dial wears a flipped label",
+            "Right",
+            "Up",
+            "Down"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "For the hyperbola, the dials p and q move:",
+          "options": [
+            "The branches only",
+            "The cross of asymptotes — and the branches follow",
+            "The y-intercept only",
+            "Nothing; hyperbolas cannot shift"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "An exponential graph with its 'floor' (asymptote) at $y = 1$ has range:",
+          "options": [
+            "$y \\ge 1$",
+            "All real y",
+            "$y > 1$",
+            "$y < 1$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Reading the equation from a drawn graph starts with:",
+          "options": [
+            "Computing the discriminant",
+            "Choosing three random points",
+            "Measuring the axis scale",
+            "Locating the anchor — turning point, asymptote cross, floor or wave start"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "One Circle, Every Triangle — and the Final Sweep",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In the circle picture, $\\sin(180° - x) = \\sin x$ because both angles:",
+          "options": [
+            "Land at the same height on the circle",
+            "Cast the same shadow",
+            "Are in the same quadrant",
+            "Are complementary"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Given two sides and the angle between them, the tool for the third side is:",
+          "options": [
+            "The sine rule",
+            "The cosine rule — Pythagoras plus its correction term",
+            "The area rule",
+            "CAST"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Solving $\\cos x = -\\frac{1}{2}$ generally gives:",
+          "options": [
+            "$x = 120° + k \\cdot 360°$ only",
+            "$x = 60° + k \\cdot 360°$",
+            "$x = \\pm 120° + k \\cdot 360°$, $k \\in \\mathbb{Z}$",
+            "$x = 120° + k \\cdot 180°$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A quick audit of a computed triangle side is to check that:",
+          "options": [
+            "It is a whole number",
+            "It is shorter than both given sides",
+            "It equals the average of the other sides",
+            "The longer side sits opposite the bigger angle"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the 'minimum test' strategy for proving quadrilaterals, with the tests for a parallelogram and the upgrades to rectangle and rhombus.",
+      "expected_answer": "Prove only the cheapest defining property; the family tree (inheritance) supplies the rest. Parallelogram: one pair of opposite sides equal AND parallel, or diagonals bisecting each other. Upgrade a proven parallelogram to a rectangle with one right angle (or equal diagonals); to a rhombus with one pair of adjacent equal sides. Proving more wastes time and earns nothing extra."
+    },
+    {
+      "id": "cc2",
+      "question": "For A(1; 2) and B(7; 10), find the distance, midpoint and gradient of AB, and state the gradient of a line perpendicular to AB.",
+      "expected_answer": "Differences: 6 and 8. Distance = √(36 + 64) = √100 = 10. Midpoint = (4; 6) by averaging. Gradient = 8/6 = 4/3. Perpendicular gradient: flip and negate, −3/4, since (4/3) × (−3/4) = −1."
+    },
+    {
+      "id": "cc3",
+      "question": "In a class of 40, 25 take Maths, 18 take Science and 10 take both. Use the addition rule to find how many take at least one subject and how many take neither, and explain why plain addition fails.",
+      "expected_answer": "Plain addition (25 + 18 = 43) counts the 10 both-subject learners twice — impossible in a class of 40. Correct: 25 + 18 − 10 = 33 take at least one, so 40 − 33 = 7 take neither. The rule P(A or B) = P(A) + P(B) − P(A and B) subtracts the overlap exactly once."
+    }
+  ]
+}

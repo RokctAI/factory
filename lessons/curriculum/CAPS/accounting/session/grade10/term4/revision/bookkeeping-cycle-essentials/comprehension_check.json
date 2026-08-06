@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Record the month's eight transactions in the correct journals with their source documents.",
+      "expected_answer": "Capital deposit R10 000 — CRJ, receipt. Cash sales R6 900 with cost of sales R4 600 — CRJ, cash register tape (perpetual system records both). Credit sale to Mrs Dube R2 400, cost R1 600 — Debtors Journal, duplicate invoice. Cash stock R5 000, rent R1 500, wages R800 — CPJ, EFT records. Credit purchase R3 000 — Creditors Journal, original invoice. Return by Mrs Dube R300, cost R200 — Debtors Allowances Journal, credit note. Payment from Mrs Dube R1 000 — CRJ, receipt. Payment to wholesaler R2 000 — CPJ. Choice is driven by two facts: cash or credit, and the direction of the value."
+    },
+    {
+      "id": "cc2",
+      "question": "Balance the ledger and prove the month with a trial balance, stating what its agreement does and does not prove.",
+      "expected_answer": "Bank R8 600 debit (17 900 in, 9 300 out); trading stock R2 000 debit (5 000 + 3 000 + 200 − 4 600 − 1 600); debtors control R1 100 debit (2 400 − 300 − 1 000); creditors control R1 000 credit (3 000 − 2 000); sales R9 000 credit (6 900 + 2 400 − 300); cost of sales R6 000 debit (4 600 + 1 600 − 200); rent R1 500 and wages R800 debit; capital R10 000 credit. Trial balance: R20 000 debits equal R20 000 credits. Agreement proves every debit had an equal credit; it cannot detect posting to the wrong account or a transaction omitted entirely on both sides."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the control-account agreement check and match typical errors to the record each disturbs.",
+      "expected_answer": "The control account is built from journal totals; the individual debtors ledger accounts are built from individual postings — two independent counts of the same debt. Month-end the list of individual balances must equal the control balance: both read R1 100 (2 400 − 300 − 1 000), and the creditors mirror both read R1 000. A receipt posted to the wrong customer's page disturbs the list only; a miscast journal column disturbs the control only; an invoice never posted to an individual account leaves the list short. The disagreement's pattern points to the error's hiding place — two independent records facing each other monthly is internal control in miniature."
+    }
+  ]
+}

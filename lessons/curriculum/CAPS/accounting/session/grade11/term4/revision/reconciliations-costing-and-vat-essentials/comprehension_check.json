@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Perform the bank and creditors reconciliations, showing both records meeting.",
+      "expected_answer": "Bank: update the books first — ledger 10 940 less bank charges 150, less debit order 450, plus interest 60 = true balance R10 400. Reconciliation statement: bank statement 9 800 plus outstanding deposit 3 200 less outstanding payments 2 600 = R10 400 — agreement proved. Creditors: our ledger 6 600 plus the supplier's unrecorded-by-us invoice 950 = 7 550; supplier's statement 8 750 less our payment in transit 1 200 = 7 550. Timing differences reconcile; errors are corrected in whichever record is wrong; pay the meeting point, never the shouted balance."
+    },
+    {
+      "id": "cc2",
+      "question": "Compute break-even, prove the profit at 620 units both ways, and show the effect of a price cut.",
+      "expected_answer": "Contribution = selling price 25 − variable cost 10 = R15 per unit. Break-even = fixed costs 7 500 / 15 = 500 units. At 620 units: 120 units past break-even × 15 = R1 800; long way: sales 15 500 − variable 6 200 = contribution 9 300 − fixed 7 500 = R1 800. Price cut to R22: contribution falls to R12, break-even rises to 7 500 / 12 = 625 units — a lower price demands more volume before any profit. Decisions rest on cost behaviour: fixed costs stand still, variable costs travel with units, and only contribution pays the fixed costs and then the owner."
+    },
+    {
+      "id": "cc3",
+      "question": "Calculate periodic cost of sales, September's budgeted collections, and the VAT return — with the trust-money principle.",
+      "expected_answer": "Periodic: opening stock 12 000 + purchases 40 000 + carriage on purchases 3 000 − closing stock 15 000 = cost of sales R40 000; the method cannot separate sold from stolen. Collections: 40% of September's credit sales 30 000 = 12 000, plus 55% of August's 28 000 = 15 400, total R27 400; 5% is written off, so budgeted receipts are always below budgeted sales. VAT: inside an inclusive 4 600 sits 4 600 × 15/115 = R600 (exclusive 4 000); return: output 9 000 − input 6 300 = R2 700 payable. That 2 700 is trust money collected for SARS — every input claim must rest on a valid tax invoice for a business purpose."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A cylindrical tank has radius 0,7 m and height 1,5 m. Using 3,142 for pi, calculate its capacity in litres, showing the full-marks four-line shape and naming the trap if a diameter of 1,4 m had been given instead. Then state the perimeter and area of an 8 m by 5 m garden and explain why the units differ.",
+      "expected_answer": "Four lines: radius stated (0,7 m — if given the 1,4 m diameter, halve it first, since substituting the diameter quadruples the answer because the error is squared); substitution shown — V = 3,142 × 0,7² × 1,5 = 3,142 × 0,49 × 1,5; result 2,309 m³ to three decimals; conversion 2,309 × 1 000 ≈ 2 309 litres, since one cubic metre is 1 000 litres. Garden: perimeter 2 × (8 + 5) = 26 m — a distance around, in metres; area 8 × 5 = 40 m² — a surface covered, in square metres. Edging and covering are different jobs, so their units carry different dimensions."
+    },
+    {
+      "id": "cc2",
+      "question": "On a 1 : 50 000 map a road measures 12 cm, and a 180 km trip is driven at an average 90 km/h with half an hour of stops, aiming to arrive at 09:30. Calculate the road's real length via the unit ladder, the departure line worked backwards, and the trip's fuel cost at 8 litres per 100 km and R23,50 per litre.",
+      "expected_answer": "Scale: 12 × 50 000 = 600 000 cm — still centimetres; ÷ 100 gives 6 000 m; ÷ 1 000 gives 6 km. Driving time: 180 ÷ 90 = 2 hours exactly. Reverse timeline: 09:30 minus 2 hours of driving is 07:30, minus the half hour of stops gives a departure of 07:00, each subtraction earning its own mark. Fuel: 180 ÷ 100 × 8 = 14,4 litres; cost 14,4 × 23,50 = R338,40 — the small Finance calculation Paper 2 permits where it links to travel."
+    },
+    {
+      "id": "cc3",
+      "question": "The forecast gives a 30% chance of rain on the wedding day, and rain fell on that weekend in 4 of the last 20 years. Express the forecast in all three notations with its complement, explain what 30% does not mean, compare the experimental probability with the forecast, and show what a full-marks answer on hiring the R850 gazebo contains.",
+      "expected_answer": "Three dialects: 30% = 30/100 = 3/10 as a fraction, 0,3 as a decimal; the complement — no rain — is 70%, because the two outcomes share the whole 1. It does NOT mean rain for 30% of the day or over 30% of the district; it means that on days like this, rain has historically arrived about 3 times in 10. Experimental probability from the family's data: 4 ÷ 20 = 0,2 = 20%, close to the modelled forecast; more years of data would make the experimental figure steadier. The gazebo answer earns marks for the argument, not the choice: either decision is acceptable if it weighs the R850 cost against the consequence of being wrong — 70% suggests the money may be wasted, 30% risks 120 soaked guests — and states the choice with its numerical reason."
+    }
+  ]
+}

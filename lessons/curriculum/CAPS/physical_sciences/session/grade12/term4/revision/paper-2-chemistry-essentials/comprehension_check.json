@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Propene reacts with HBr. Name the reaction type, state the rule that decides the major product, and name both possible products with their status.",
+      "expected_answer": "Addition (hydrohalogenation) — the double bond opens. Rule: the hydrogen attaches preferentially to the carbon that already holds more hydrogens, so the bromine lands on the more substituted carbon. Major product: 2-bromopropane; minor product: 1-bromopropane."
+    },
+    {
+      "id": "cc2",
+      "question": "H₂ + I₂ ⇌ 2HI starts with 1,0 mol of each gas in a 2 dm³ vessel; 0,2 mol H₂ remains at equilibrium. Show the RICE reasoning and calculate Kc.",
+      "expected_answer": "Change: 0,8 mol H₂ reacted, so 0,8 mol I₂ reacted and 1,6 mol HI formed (1:1:2 ratio). Equilibrium moles: 0,2; 0,2; 1,6. Divide by 2 dm³ for concentrations: 0,1; 0,1; 0,8 mol·dm⁻³. Kc = [HI]²/([H₂][I₂]) = 0,8²/(0,1 × 0,1) = 0,64/0,01 = 64. The division by volume before substituting is the commonly forfeited step."
+    },
+    {
+      "id": "cc3",
+      "question": "For the standard Zn-Cu galvanic cell, identify the anode with a reason, calculate the emf, and state what its sign tells you.",
+      "expected_answer": "Zinc is the stronger reducing agent (lower on the reduction list), so zinc is oxidised — zinc is the anode; copper is the cathode where reduction occurs. E°cell = E°cathode − E°anode = 0,34 − (−0,76) = 1,10 V. The positive emf shows the reaction is spontaneous under standard conditions; electrons flow from zinc to copper in the external circuit."
+    }
+  ]
+}

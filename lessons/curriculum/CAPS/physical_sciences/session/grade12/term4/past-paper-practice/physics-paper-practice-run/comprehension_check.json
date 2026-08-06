@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the 8 kg block pulled up the 30° incline by 80 N against 10 N of friction, reconstruct the marked solution for the acceleration.",
+      "expected_answer": "Weight component along slope: mg sin θ = 8 × 9,8 × 0,5 = 39,2 N down the slope. Take up the slope as positive: Fnet = 80 − 39,2 − 10 = 30,8 N. Newton's second law: a = Fnet/m = 30,8/8 = 3,85 m·s⁻² up the slope. Marks: each opposing force subtracted, formula, substitution, answer with unit and direction."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how the trolley collision (5 kg at 4 m·s⁻¹ coupling with a stationary 3 kg) is shown to be inelastic, and why a bare conclusion earns nothing.",
+      "expected_answer": "Momentum: v = 20/8 = 2,5 m·s⁻¹. Kinetic energy before: ½ × 5 × 16 = 40 J; after: ½ × 8 × 2,5² = 25 J. Kinetic energy decreased, so the collision is inelastic. The classification mark is paid for a conclusion drawn FROM the two calculated energies — stating 'inelastic' without the comparison shows no evidence and earns no mark."
+    },
+    {
+      "id": "cc3",
+      "question": "In the photoelectric walk, state the two audit checks and what error each one catches.",
+      "expected_answer": "First: the wavelength must be converted to metres (400 nm = 4 × 10⁻⁷ m) before substituting into E = hc/λ — catching the unit-conversion slip. Second: Ek(max) = E − W₀ must come out positive (4,97 − 3,68 = 1,29 × 10⁻¹⁹ J); a negative result means the light is below threshold and no emission occurs, so quoting a negative kinetic energy signals a physics error."
+    }
+  ]
+}

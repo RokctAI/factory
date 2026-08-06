@@ -1,0 +1,91 @@
+# Part 1 — Expert
+
+This session is the second revision sweep for the year's examination — terms three and four gathered into the four essay-bearing structures: growth, inequality and redistribution; development and the developing world; globalisation and the North/South divide; and the environment as the market's great blind spot. These are the topics where the paper stops asking for definitions and starts asking for arguments, so every section closes its loop: mechanism, evidence, evaluation.
+
+## Subtopic: Growth, Inequality and Redistribution
+
+ECONOMIC GROWTH is the increase in a country's REAL production — real GDP — from one period to the next: real, because inflation must be stripped out before any rise counts, and per capita, because a population growing faster than production means shrinking shares. South Africa's record is the topic's standing example: growth has run slow for over a decade, often below population growth — so average income per person has stagnated, and every constraint question begins there.
+
+Inequality gets measured before it gets argued. The LORENZ CURVE, described for the ear: line up the whole population from poorest to richest along the bottom; measure the share of total income they have collected up the side. Perfect equality draws a straight diagonal — twenty percent of people holding twenty percent of income all the way up. Reality sags below the diagonal, and the deeper the sag, the worse the inequality. The GINI COEFFICIENT turns the sag into one number between zero — perfect equality — and one — one person holding everything. South Africa's Gini, around nought comma six five, is among the highest ever recorded: our sag is the world's deepest, the fact that anchors every redistribution essay.
+
+REDISTRIBUTION runs through instruments you must list with mechanisms. PROGRESSIVE TAXATION: higher incomes surrender higher percentages, funding the rest. SOCIAL GRANTS: pensions, child support and disability payments reaching millions of households — the country's most direct poverty instrument. FREE BASIC SERVICES: water, electricity and sanitation allocations to poor households. The MINIMUM WAGE lifting the floor under work. LAND REFORM and EMPOWERMENT policy redistributing productive assets. Each instrument invites its evaluation: grants relieve poverty now but need a growing tax base; the wage floor helps those employed; asset redress works only with support attached.
+
+And the constraints on growth complete the structure: unreliable electricity, a skills shortage beside mass unemployment, low savings and investment, crime and policy uncertainty, and rising public debt whose interest bill crowds out other spending. The mature sentence: redistribution needs growth to fund it, and growth needs redistribution to widen it — a pot that must grow while the shares move.
+
+Pause here — this section's questions are with you now: real per capita growth defined, the Lorenz curve narrated and the Gini placed, instruments matched to mechanisms, and constraints named with consequences.
+
+## Subtopic: Development and the Developing World
+
+Growth counts what an economy produces; DEVELOPMENT asks how its people live. Development is the broader process — rising incomes TOGETHER WITH better health, education, freedom and opportunity — and the distinction is examinable both ways: growth without development, where GDP rises while lives stagnate, and development priorities beyond GDP. The HUMAN DEVELOPMENT INDEX operationalises the difference by combining three dimensions: life expectancy, education, and income per person — so a country can outrank a richer one by keeping its people healthier and better schooled.
+
+DEVELOPING COUNTRIES share characteristics the syllabus wants as a portrait: low income per capita; high population growth with young populations; high unemployment and underemployment; heavy dependence on PRIMARY production — crops and minerals — for exports; DUALISM, modern cities beside subsistence countryside; and shortfalls in infrastructure, health and education — thin human capital. South Africa fits the portrait in parts — dualism, unemployment, primary exports — while breaking it in others — deep financial markets, strong universities — which is exactly the kind of both-ways evidence essays reward.
+
+DEVELOPMENT STRATEGIES divide into families: growth-first strategies betting that a larger pot eventually reaches everyone; redistribution-with-growth insisting the reaching be engineered; basic-needs strategies putting water, food, health and schooling first; and export-led strategies growing through world markets. South Africa's own succession of plans tells the story: the RDP putting basic needs first; GEAR tightening for stability and growth; AsgiSA targeting constraints; and the NATIONAL DEVELOPMENT PLAN, the current framework, aiming at poverty and inequality through infrastructure, education and employment. The evaluation the paper wants: plans have been strong on diagnosis and weak on implementation — the gap between paper and ground is the recurring South African finding.
+
+INDIGENOUS KNOWLEDGE SYSTEMS close the topic: development from within — local knowledge of crops, medicine, grazing rotation and community organisation — which cuts costs, fits local conditions, and carries ownership that imported blueprints lack. Development done TO people fails; development done WITH them compounds.
+
+The questions for this section are with you now: growth separated from development through the HDI, the portrait of a developing country drawn and tested against South Africa, the strategy families ordered, and the plans named in sequence.
+
+## Subtopic: Globalisation and the North/South Divide
+
+GLOBALISATION is the deepening interconnection of the world's economies — goods, money, people and ideas crossing borders until national economies function as parts of one system. Its causes come in two families, and essays want both. TECHNOLOGY made it possible: the shipping container collapsing transport costs; undersea cables and the internet making information instant; computing coordinating production across continents — enabling the GLOBAL VALUE CHAIN, production sliced into stages placed wherever each is cheapest. POLICY made it permitted: tariffs negotiated down over decades into the World Trade Organisation; exchange controls relaxed so finance flows; closed economies — China, the former Soviet bloc, South Africa after 1994 — rejoining world markets.
+
+The consequences form a two-sided scorecard. Gains: specialisation and cheaper goods for consumers everywhere; foreign investment building world-scale industries — South Africa's motor industry supporting over one hundred thousand jobs; technology spreading faster; hundreds of millions lifted from poverty through export-led growth. Losses: import competition destroying local industries — our clothing and textile towns lost tens of thousands of jobs when cheap imports arrived; CONTAGION, as in 2008, when a foreign financial collapse threw South Africans out of work within a year; mobile capital outbargaining immobile workers and taxable bases; and gains shared unevenly between and within countries. The verdict formula: globalisation grows the total while moving the shares — so policy must capture gains and cushion losses.
+
+The NORTH/SOUTH DIVIDE is the deep structure: the developed North holding most income, research and finance; the developing South holding most people and most poverty — economic shorthand, not strict geography. Know the mechanisms that sustain it: the TERMS OF TRADE treadmill — exporting raw materials whose prices swing and sag while importing manufactured goods; DEBT in foreign currency, so world interest rates squeeze Southern budgets; and VOICE — the rules written in institutions where votes tilt North, with tariffs historically higher on processed goods than raw, discouraging Southern industrialisation. And know the counterforces: Asia's rise, BRICS pressing for Southern voice with South Africa a member, and the African Continental Free Trade Area building the South's own market. South Africa lives on both sides: Northern-grade finance in Sandton, Southern-style raw exports in the trade accounts.
+
+Stop for this section's questions now — both cause families, the scorecard argued with South African evidence, the three divide mechanisms, and one counterforce each.
+
+## Subtopic: Market Failure and the Environment
+
+The environment is where the market's bookkeeping fails, and the failure has names. An EXTERNALITY is a cost or benefit landing on someone outside the transaction: the factory sells to its customer, but the smoke lands on the village — a cost priced at zero by the market, so the product is too cheap and society gets too much of it. PUBLIC GOODS and COMMON RESOURCES extend the failure: clean air excludes nobody, so nobody pays; the shared river, the common grazing, the open fishery belong to everyone — and what belongs to everyone is cared for by no one, each user taking one more unit because the loss is shared. Unpriced and unowned, nature gets overused: the market failure at the heart of every environmental question.
+
+The POLICY TOOLBOX answers failure by failure. COMMAND AND CONTROL: laws, standards, protected areas, environmental impact assessments — direct, enforceable, but blunt and costly to police. MARKET INSTRUMENTS put the missing price back: taxes on pollution — South Africa's CARBON TAX is the standing example — make the polluter pay the social cost; tradeable permits cap total pollution and let firms trade the shares, so reductions happen where they are cheapest; subsidies reward clean choices. PROPERTY RIGHTS and community management give the commons an owner with reason to conserve. Education and international agreements complete the set, because pollution ignores borders.
+
+SUSTAINABILITY is the topic's organising idea: meeting the needs of the present WITHOUT compromising the ability of future generations to meet their own — in one image, living off nature's INTEREST without eating the CAPITAL. Three legs must hold together — economic, social and environmental — and a strategy that sacrifices any leg falls.
+
+South Africa's stake is concrete: a water-scarce country warming faster than the world average; droughts and floods already striking farming and infrastructure; an economy built on coal — most of our electricity — facing a world that taxes carbon at its borders; acid mine drainage poisoning water long after the mines closed; and communities whose livelihoods depend directly on soil, rain and fisheries. The closing argument: green transition is not a luxury against growth — it is the condition for exports, water and food to survive the century.
+
+The final questions of this part are with you now: the externality mechanism run to too cheap, too much; the commons explained; each tool matched to the failure it fixes; and sustainability defined with its three legs.
+
+# Part 2 — Simplifier
+
+Now the same four structures carried by things you can see: a pot on a fire, a queue of one hundred, a phone in a pocket, and a bag of seed mealies.
+
+## Subtopic: The Pot and the Queue of One Hundred
+
+Picture the economy as one pot of food on one fire. GROWTH means the pot gets bigger — more in it this year than last, honestly measured: skim off the froth of rising prices first, and check whether the family around the pot grew faster than the pot did. A pot two percent bigger feeding a family two percent larger has grown nobody's plate — that is our country's last decade in one sentence.
+
+Now the sharing. Line up one hundred people from emptiest plate to fullest, and walk down the queue adding up what they hold. In a perfectly equal country, halfway down the queue you would have counted half the food. In ours, you can walk past sixty people and still have counted barely a tenth of it, while the last few in the queue hold half the pot between them. That walk is the Lorenz curve, done on foot — and the number that scores the walk, between zero for perfect equality and one for one-person-takes-all, sits near nought comma six five here: about the deepest sag ever measured anywhere.
+
+So the country moves food along the queue, and you must know the five spoons: taxes that take a bigger scoop from fuller plates; grants that land directly on the emptiest ones — the child support and pension money that millions of households cook with; free basic water and electricity; a floor under wages; and moving the pots and fields themselves — land and ownership reform. Each spoon works, and each has a handle: grants need a growing pot to fund them; the wage floor reaches only those with work; a field without tools feeds nobody yet.
+
+The closing truth holds both hands: a bigger pot with fixed shares leaves the queue hungry; moved shares from a shrinking pot run out. Grow it AND share it — any essay arguing only one is half an essay.
+
+Quick check before we carry on — questions on this section are with you right now: the froth skimmed, the family counted, the walk down the queue, and five spoons with their handles.
+
+## Subtopic: Taller or Better — and the One-World Shop
+
+A learner can grow taller without growing stronger, wiser or healthier. Countries are the same. Growth is the height — the pot getting bigger. DEVELOPMENT is the whole report card: are people living longer, learning more, choosing more freely? The world's report card, the Human Development Index, grades exactly three subjects — health, schooling, income — which is why a middle-income country that keeps its people healthy can outrank a richer one that does not.
+
+What does the developing side of the world look like? Six signs, visible on one walk: thin incomes; many children and young faces everywhere; hands without work; wealth dug or grown rather than made — ores and crops sold raw; a modern city skyline visible from a subsistence village — two economies in one view; and the clinic, school and taps too few, too far. Our country shows several signs and breaks others, and saying BOTH is what honest evaluation sounds like.
+
+How do countries develop? Some bet on the pot: grow first, share later. Some engineer the sharing into the growing. Some start with the basics — water, food, clinics, schools — because a sick, unschooled nation cannot grow anything. Some sell their way up through exports. South Africa has tried the sequence in initials — RDP for basics, GEAR for stability, AsgiSA for bottlenecks, NDP for the long map — and the honest verdict repeats: excellent diagnosis, thin delivery. And one more source of development walks on its own feet: what communities already know — which crops survive which soil, which plants heal, how commons get shared — knowledge that costs little, fits perfectly and belongs to the people using it.
+
+Then the one-world shop. The phone in your pocket touched six countries before it touched you — design, chip, screen, cobalt, assembly, cable — that is globalisation, made possible by containers and cables and made permitted by trade deals. The shop gives with both hands: cheap goods, car-plant jobs, millions out of poverty. And it takes: sewing machines silenced by cheap imports, a foreign crisis costing local jobs within a year. One more map fact: the shop's profitable counters — roasting, branding, finishing — stand mostly in the world's North, while the South grows beans for cents. The way up is to finish what we dig and grow — and Africa's new free trade area is that idea written as policy.
+
+Take this section's questions now — height against report card, six signs on one walk, the initials in order, and the one-world shop giving and taking with South African evidence.
+
+## Subtopic: The Smoke, the River and the Seed Mealies
+
+Three small stories carry the whole environmental topic.
+
+Story one: the smoke nobody pays for. A factory makes bricks, sells them, and the smoke drifts onto a village that was never part of the deal — washing dirtied, chests tightened, and not one cent of it on the factory's books. Because the smoke is free to the factory, the bricks are priced too cheap, and the world orders too many of them. The fix is bookkeeping justice: make the polluter pay — a tax per ton of smoke, the way our carbon tax charges the biggest emitters — and suddenly clean methods stop being expensive by comparison. Price the smoke, and the market that caused the problem starts solving it.
+
+Story two: the river nobody owns. Everyone's cattle drink there; everyone's nets fish there; so everyone takes one more, because the loss is shared with the whole village while the gain is private. One more each, every day — and the river empties. What belongs to everyone is cared for by no one. The fixes all do the same thing differently: give the river a guardian — rules with teeth, a community trust that owns and manages it, or permits that cap the total catch and make each share tradable, so the river's limits finally appear in everyone's arithmetic.
+
+Story three: the seed mealies. A hungry season tempts a family to cook the bag kept for planting. Eat it, and next year has no harvest at all. Sustainability is the refusal to eat the seed: live off what the land can regrow — the interest — and never off the stock that does the regrowing — the capital. A country runs the same pantry: fish caught faster than they breed, water pumped faster than rain refills it, coal burned into a warming sky — all seed mealies in the pot. And our pantry is exposed: a dry country getting drier, farms swinging between drought and flood, an economy powered mostly by coal while the world starts taxing carbon at its borders.
+
+Hold the three stories and you hold the topic: price the smoke, guard the river, save the seed. The economy is not the enemy of the environment — it is the pantry's only cook, and it must learn the difference between dinner and seed.
+
+And here come the last questions of the lesson, right now: each story matched to its failure and its fix, sustainability said in one sentence, and the three-legged stool standing. Argue with mechanisms, close with evaluation — that is the whole examiner's wishlist, and after this year, it is simply how you think.

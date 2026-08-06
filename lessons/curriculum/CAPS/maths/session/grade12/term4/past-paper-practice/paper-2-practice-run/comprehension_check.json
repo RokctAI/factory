@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "In the analytical triangle A(−2; 5), B(6; 1), C(4; −3), prove angle ABC = 90° and explain why the midpoint of AC is equidistant from all three vertices.",
+      "expected_answer": "m(AB) = (1−5)/(6+2) = −½ and m(BC) = (−3−1)/(4−6) = 2; product = −1, so AB ⊥ BC and angle ABC = 90°. Since angle B = 90°, AC subtends a right angle at B, so AC is a diameter of the circle through A, B, C (converse of angle in semicircle); its midpoint M(1; 1) is therefore the centre, equidistant from A, B and C."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the length of the tangent from (9; 8) to the circle (x−3)² + (y+2)² = 25, naming the theorem that justifies the method.",
+      "expected_answer": "Distance from (9; 8) to centre (3; −2) squared: 6² + 10² = 136. The tangent is perpendicular to the radius at the point of contact, so tangent² = 136 − 25 = 111, giving tangent length √111 ≈ 10,54."
+    },
+    {
+      "id": "cc3",
+      "question": "In the rider, angle TAB = 40° and angle SAC = 65°. Give the sizes of angles ACB, ABC and BAC, each with its accepted reason.",
+      "expected_answer": "Angle ACB = 40° (tan chord theorem, alternate segment to angle TAB). Angle ABC = 65° (tan chord theorem on the other side, alternate segment to angle SAC). Angle BAC = 180° − 40° − 65° = 75° (angle sum in triangle); check: 40 + 65 + 75 = 180."
+    }
+  ]
+}

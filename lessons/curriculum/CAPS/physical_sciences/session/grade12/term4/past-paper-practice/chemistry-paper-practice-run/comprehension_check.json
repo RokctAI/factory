@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 2,5 g impure CaCO₃ sample releases 0,448 dm³ of CO₂ at STP with excess HCl. Reconstruct the signpost chain to the percentage purity.",
+      "expected_answer": "n(CO₂) = 0,448/22,4 = 0,02 mol. Balanced equation gives a 1:1 ratio, so n(CaCO₃) = 0,02 mol. M(CaCO₃) = 40 + 12 + 48 = 100 g·mol⁻¹, so m = 0,02 × 100 = 2 g. Purity = 2/2,5 × 100 = 80%. Audit: purity must lie between 0 and 100%."
+    },
+    {
+      "id": "cc2",
+      "question": "For 2SO₂ + O₂ ⇌ 2SO₃ (0,4 mol and 0,3 mol sealed in 2 dm³; 0,2 mol SO₃ at equilibrium), show the RICE reasoning, the compulsory division, and Kc.",
+      "expected_answer": "Change: 0,2 mol SO₂ consumed (2:2) and 0,1 mol O₂ (2:1). Equilibrium moles: SO₂ 0,2; O₂ 0,2; SO₃ 0,2. Divide by 2 dm³: all concentrations 0,1 mol·dm⁻³ — the compulsory line before the constant. Kc = [SO₃]²/([SO₂]²[O₂]) = 0,01/0,001 = 10, no units. Kc of 10 means the equilibrium leans toward products."
+    },
+    {
+      "id": "cc3",
+      "question": "In the Zn-Ag galvanic cell, identify the anode with its reason, calculate the emf, and state the salt bridge's function.",
+      "expected_answer": "Zinc has the lower reduction potential (−0,76 V), so it is the stronger reducing agent, is oxidised, and is the anode; silver is the cathode. E°cell = E°cathode − E°anode = 0,80 − (−0,76) = 1,56 V — positive, so the reaction is spontaneous. The salt bridge completes the circuit by allowing ion migration, maintaining electrical neutrality in both half-cell solutions."
+    }
+  ]
+}

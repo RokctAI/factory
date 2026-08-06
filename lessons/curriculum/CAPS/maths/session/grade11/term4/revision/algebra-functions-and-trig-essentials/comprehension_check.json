@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve √(x+7) = x − 5 completely, including the checking step, and explain why the check is compulsory.",
+      "expected_answer": "Squaring gives x + 7 = x² − 10x + 25, so x² − 11x + 18 = 0, giving x = 9 or x = 2. Check in the original: x = 9 gives √16 = 4 = 9 − 5, valid; x = 2 gives √9 = 3 but 2 − 5 = −3, invalid. Squaring is not reversible and manufactures ghost solutions, so substitution back into the original equation is part of the method, and x = 9 is the only solution."
+    },
+    {
+      "id": "cc2",
+      "question": "For y = 2(x−1)² − 8, state the turning point, both intercept types, and explain how the a, p, q 'dials' produce the sketch without solving from scratch.",
+      "expected_answer": "Turning point (1; −8) — p flips sign, q does not. Y-intercept: x = 0 gives 2(1) − 8 = −6. X-intercepts: (x−1)² = 4 so x = 3 or x = −1. The dials: a = 2 doubles the steepness of the basic bowl y = x², the (x−1) slides it right 1, the −8 drops it 8 — so the anchor (turning point) is read directly and the intercepts anchor the sketch."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain when to use the sine rule versus the cosine rule, and verify the choice on a triangle with sides 7 and 9 and included angle 50°.",
+      "expected_answer": "Sine rule needs a matching pair (a side with its opposite angle). Cosine rule handles two sides with the included angle, or three sides. With sides 7 and 9 gripping 50° there is no matching pair, so cosine rule: a² = 49 + 81 − 2(7)(9)cos50° ≈ 49,01, a ≈ 7,0. The area, if asked, is ½(7)(9)sin50° ≈ 24,13 square units."
+    }
+  ]
+}
