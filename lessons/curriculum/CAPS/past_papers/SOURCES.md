@@ -70,3 +70,21 @@ All documents © Department of Basic Education / Government Printing Works,
 reproduced for educational use with attribution. Every batch-3 PDF was
 identity-verified by reading multiple pages (cover + middle + late), never
 trusted by filename.
+
+## Batch 4 (owner upload 2026-08-06)
+
+- **DBE (education.gov.za)** — CAPS FET policy statement, Mathematical
+  Literacy Grades 10-12 (134 pp, multi-page verified), tracked at
+  `../mathematical_literacy/curriculum/caps_gr10-12.pdf` next to its
+  extraction. This closes the last open CAPS-policy row in
+  `FETCH_QUEUE.md`.
+- The batch's other five files were all duplicates of already-tracked
+  material (four legacy QPs byte-identical to the batch-3 copies, plus a
+  re-download of the 2024 ML P1 addendum mirror file) — inventoried in
+  `FETCH_QUEUE.md`, nothing committed twice, nothing deleted from the
+  upload.
+- **ecexams.co.za** (Eastern Cape DoE) — identified by web search as an
+  official provincial mirror hosting direct memo PDFs for the legacy
+  Grade 11 Nov 2018 papers (URL recorded in `FETCH_QUEUE.md`); the site is
+  egress-blocked from this environment (CONNECT 403), so nothing was
+  fetched from it.
