@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "R8 000 is invested for 3 years at 7,5% per year. Calculate the final amount under simple interest and under yearly compound interest, and explain why the compound answer is bigger.",
+      "expected_answer": "Simple interest works on the original principal only: one year's interest is 8 000 × 0,075 = R600,00, three years give 600 × 3 = R1 800,00, and the investment ends at 8 000 + 1 800 = R9 800,00. Compound interest works on the current balance each year: 8 000 × 1,075 = R8 600,00 after year one, 8 600 × 1,075 = R9 245,00 after year two, and 9 245 × 1,075 = R9 938,38 after year three. Compound ends R138,38 ahead because from year two onwards the interest already earned starts earning its own interest — the base being multiplied grows every year, while simple interest keeps multiplying the same original R8 000. The gap widens every further year the money is left in."
+    },
+    {
+      "id": "cc2",
+      "question": "A statement opens at R1 240,75 and shows a salary credit of R3 850,00, a debit order of R450,00, a cash withdrawal of R500,00, an ATM fee of R9,00 and an admin fee of R6,50. Calculate the closing balance and the total fees, and state the check that proves a closing balance is correct.",
+      "expected_answer": "The closing balance is the opening balance plus all credits minus all debits: 1 240,75 + 3 850,00 − 450,00 − 500,00 − 9,00 − 6,50 = R4 125,25. The fees are the two charges that bought nothing: 9,00 + 6,50 = R15,50 for the month, which is R186,00 over a year. The check is the closing-balance equation itself: opening balance plus total credits minus total debits must land exactly on the printed closing balance, to the cent. Rebuilding it line by line proves the bank's arithmetic and exposes any missing value the question asks for. The R9,00 arose from drawing cash at another bank's ATM, which is why using your own bank's machine is the standard fee-saving advice."
+    },
+    {
+      "id": "cc3",
+      "question": "Bread costs R19,50 and inflation runs at 6% per year. Calculate the price after two years, explain what happens to the buying power of a R100 note over that time, and explain why a 4% salary increase during 6% inflation is really a decrease.",
+      "expected_answer": "Inflation compounds on the new price each year: 19,50 × 1,06 = R20,67 after one year, and 20,67 × 1,06 = R21,91 after two years. The R100 note's number never changes, but its buying power shrinks: today it buys five loaves at R19,50, while at R21,91 it buys only four — the same note commands less bread, which is exactly what losing buying power means. A salary of R9 000 raised by 4% becomes R9 360, but matching 6% inflation required 9 000 × 1,06 = R9 540, so the earner is R180 a month short of last year's buying power. Any increase below the inflation rate is a decrease in real terms: the number on the payslip rises while what it can buy falls."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Choosing the Rule",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In triangle ABC, side a lies:",
+          "options": [
+            "Opposite angle A",
+            "Adjacent to angle A",
+            "Between angles B and A",
+            "Opposite angle C"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The sine rule states:",
+          "options": [
+            "a² = b² + c² − 2bc cos A",
+            "a/sin A = b/sin B = c/sin C",
+            "a sin A = b sin B",
+            "sin A + sin B + sin C = 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Given two sides and the INCLUDED angle, the third side comes from:",
+          "options": [
+            "The sine rule",
+            "The area rule",
+            "The cosine rule",
+            "Pythagoras directly"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The area rule, area = ½ab sin C, requires:",
+          "options": [
+            "The base and perpendicular height",
+            "All three sides",
+            "Two angles and one side",
+            "Two sides and the included angle"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Sine Rule at Work",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In triangle ABC, A = 40°, B = 60°, a = 10. Then b equals:",
+          "options": [
+            "10 sin 40°/sin 60°",
+            "10 sin 60° × sin 40°",
+            "10 cos 60°/cos 40°",
+            "10 sin 60°/sin 40°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "That value of b, correct to two decimals, is:",
+          "options": [
+            "13,47",
+            "7,42",
+            "11,31",
+            "15,32"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Before calculating, b had to come out bigger than 10 because:",
+          "options": [
+            "The sine rule always enlarges sides",
+            "60° is larger than 40°, and bigger angles face longer sides",
+            "b is always the longest side",
+            "Sine of 60° is greater than 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "With A = 40° and B = 60°, angle C is:",
+          "options": [
+            "100°",
+            "90°",
+            "80°",
+            "120°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Cosine Rule at Work",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Sides 7 and 9 with included angle 60°. The third side squared equals:",
+          "options": [
+            "130 + 63 = 193",
+            "49 + 81 = 130",
+            "126 − 63 = 63",
+            "130 − 63 = 67"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "At an included angle of exactly 90°, the cosine rule becomes:",
+          "options": [
+            "The sine rule",
+            "Pythagoras, because cos 90° = 0",
+            "The area rule",
+            "Undefined"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Sides 5, 7 and 8; the cosine of the angle opposite the 5 is:",
+          "options": [
+            "88/112 = 11/14",
+            "25/112",
+            "112/88",
+            "64/88"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A negative value of cos A from the rearranged cosine rule means:",
+          "options": [
+            "A calculation error was made",
+            "The triangle does not exist",
+            "Angle A is obtuse",
+            "Angle A is acute"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Two-Triangle Strategy in Three Dimensions",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Every 3D trigonometry problem should be seen as:",
+          "options": [
+            "One triangle with four vertices",
+            "Two flat triangles sharing an edge",
+            "A single right-angled triangle",
+            "A circle and a triangle"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "In the tower problem, the ground triangle's third angle at A is:",
+          "options": [
+            "70°",
+            "50°",
+            "90°",
+            "60°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The bridge side AB = 100 sin 50°/sin 60° is approximately:",
+          "options": [
+            "88,46 m",
+            "76,60 m",
+            "94,52 m",
+            "115,47 m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "With elevation 25° at B, the tower height is:",
+          "options": [
+            "AB × sin 25° ≈ 37,38 m",
+            "AB ÷ tan 25° ≈ 189,69 m",
+            "AB × tan 25° ≈ 41,25 m",
+            "AB × cos 25° ≈ 80,17 m"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Which Tool Comes Out of the Box",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The sine rule needs, at minimum:",
+          "options": [
+            "All three sides",
+            "A complete side-opposite-angle pair plus one more piece",
+            "Two sides and the included angle",
+            "Three angles"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The wedge tool — two sides with the clamped angle — is the picture for:",
+          "options": [
+            "The sine rule",
+            "The tangent ratio",
+            "Pythagoras",
+            "The cosine rule"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The most common zero in this topic comes from:",
+          "options": [
+            "Dividing a side by the sine of the wrong angle",
+            "Rounding to two decimals",
+            "Using degrees instead of radians",
+            "Forgetting the area rule"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The area rule is like a paint estimate because it needs:",
+          "options": [
+            "The perpendicular height",
+            "The perimeter",
+            "No height at all — just two sides and the clamped angle",
+            "All three angles"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "A Field You Cannot Walk Across",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Fences 7 and 9 opening at 60°. The unreachable side is:",
+          "options": [
+            "√130 ≈ 11,40 units",
+            "√67 ≈ 8,19 units",
+            "√193 ≈ 13,89 units",
+            "16 units"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "If the corner opened at exactly 90°, the far side would be:",
+          "options": [
+            "√67",
+            "√63",
+            "16",
+            "√130"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A corner wider than 90° makes the correction term:",
+          "options": [
+            "Vanish",
+            "Negative in effect, shortening the far side",
+            "Add on, stretching the far side",
+            "Equal to the area"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The marsh area, ½ × 7 × 9 × sin 60°, is approximately:",
+          "options": [
+            "27,28 square units",
+            "31,50 square units",
+            "54,56 square units",
+            "15,75 square units"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Flagpole and Its Two Triangles",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In the open-book picture, the spine is:",
+          "options": [
+            "The height of the flagpole",
+            "The 100 m distance between the friends",
+            "The angle of elevation",
+            "The side shared by the lying and standing triangles"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Which page must be solved FIRST?",
+          "options": [
+            "The standing page, because it holds the height",
+            "The page where the given data lives",
+            "Either — the order never matters",
+            "The page with the right angle"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "In the lying page, AB faces the 50° angle, so AB equals:",
+          "options": [
+            "100 sin 50°/sin 60°",
+            "100 sin 60°/sin 50°",
+            "100 tan 50°",
+            "100 cos 50°/cos 60°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The flagpole height, from base 88,46 m and elevation 25°, is about:",
+          "options": [
+            "37,38 m",
+            "88,46 m",
+            "41,25 m",
+            "21,25 m"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

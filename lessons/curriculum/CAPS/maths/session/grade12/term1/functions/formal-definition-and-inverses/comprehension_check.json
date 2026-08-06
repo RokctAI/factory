@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the formal definition of a function, explain the difference between the vertical line test and the horizontal line test, and explain why y = x² is a function while y² = x is not.",
+      "expected_answer": "A function is a relation in which every input in the domain is paired with exactly one output. The vertical line test checks whether a graph is a function: a vertical line represents one input, so if any vertical line cuts the graph more than once, some input has two outputs and the relation is not a function. The horizontal line test checks whether the inverse will be a function: a horizontal line represents one output, so if it cuts the original graph more than once, two inputs share an output and the reversed pairings will give one input two answers. y = x² is a function because every input gives exactly one output — both 3 and −3 give 9, but many-to-one is allowed. y² = x is not a function because the input 9 produces two outputs, 3 and −3, and one-to-many is forbidden."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the inverse of y = 3x − 6 by the swap-and-solve method, describe the relationship between the two graphs, and state what happens to the domain and range under inversion.",
+      "expected_answer": "Swap x and y to get x = 3y − 6, then solve for y: 3y = x + 6, so y = (x + 6)/3, which simplifies to y = x/3 + 2. The check: the original sends 2 to 0, and the inverse sends 0 to 2, so the pairing reverses correctly. Graphically the inverse is the reflection of the original in the line y = x — every point (a; b) on the original becomes (b; a) on the inverse, so the x-intercept of the original becomes the y-intercept of the inverse. The domain and range trade places: whatever inputs the original accepted become the outputs of the inverse and vice versa, and the gradient of the inverse line is the reciprocal of the original gradient, one third instead of 3."
+    },
+    {
+      "id": "cc3",
+      "question": "The function y = 2x² is given with domain x ≤ 0. Explain why the domain restriction is necessary, find the inverse, and justify the sign chosen for the square root.",
+      "expected_answer": "Unrestricted, y = 2x² is many-to-one — for example 2 and −2 both give 8 — so its inverse relation y = ±√(x/2) gives two outputs for one input and is not a function; it fails the horizontal line test. Restricting to x ≤ 0 keeps only the left arm, which is one-to-one. Swapping gives x = 2y², so y² = x/2 and y = ±√(x/2); the sign is decided by the fact that the domain of the original becomes the range of the inverse. Since the original only accepted inputs x ≤ 0, the inverse may only produce outputs y ≤ 0, forcing the negative root: y = −√(x/2). Check with a pairing: the original sends −2 to 8, and −√(8/2) = −√4 = −2, so the inverse returns the original input correctly."
+    }
+  ]
+}

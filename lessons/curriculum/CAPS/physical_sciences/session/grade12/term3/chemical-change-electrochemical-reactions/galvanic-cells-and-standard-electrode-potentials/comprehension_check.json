@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define oxidation, reduction, oxidising agent, reducing agent, anode and cathode, and apply all six terms to the reaction between zinc metal and copper(II) ions in a galvanic cell.",
+      "expected_answer": "Oxidation is the loss of electrons; reduction is the gain of electrons. The oxidising agent is the substance that causes oxidation in another substance by accepting its electrons, and is itself reduced; the reducing agent donates electrons to another substance and is itself oxidised. The anode is the electrode where oxidation occurs; the cathode is the electrode where reduction occurs. In the zinc-copper cell: zinc atoms lose two electrons each (Zn → Zn²⁺ + 2e⁻), so zinc is oxidised and is the reducing agent, and the zinc electrode is the anode (the negative electrode of the galvanic cell). Copper(II) ions gain those electrons (Cu²⁺ + 2e⁻ → Cu), so Cu²⁺ is reduced and is the oxidising agent, and the copper electrode is the cathode (positive electrode). Electrons flow through the external circuit from the zinc anode to the copper cathode."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the two functions of the salt bridge in a galvanic cell, describe what would happen if it were removed, and state how current is carried in the different parts of the complete circuit.",
+      "expected_answer": "The salt bridge (1) completes the circuit between the two half-cells and (2) maintains electrical neutrality in both half-cells: as positive ions accumulate in the anode beaker (Zn²⁺ entering solution), negative ions from the bridge migrate toward the anode compartment to neutralise the excess, while positive ions from the bridge migrate toward the cathode compartment to replace the consumed Cu²⁺ ions. If the salt bridge were removed, positive charge would build up in the anode beaker and negative charge in the cathode beaker; this charge imbalance would oppose further electron flow and the cell would stop working — the voltmeter reading drops to zero immediately. In the complete circuit, current is carried by electrons in the external wire (from anode to cathode) and by the movement of ions in the electrolyte solutions and the salt bridge."
+    },
+    {
+      "id": "cc3",
+      "question": "Using standard electrode potentials (Zn²⁺/Zn = −0,76 V; Cu²⁺/Cu = +0,34 V), write the cell notation for the zinc-copper cell, calculate its emf under standard conditions, state what the standard conditions and the reference electrode are, and explain why a battery eventually goes 'flat'.",
+      "expected_answer": "Cell notation (anode left, cathode right, single lines for phase boundaries, double line for the salt bridge): Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s). The copper half-cell has the higher electrode potential, so it is the cathode and zinc is the anode. E°cell = E°cathode − E°anode = +0,34 − (−0,76) = 1,10 V; the positive emf confirms the reaction is spontaneous. Standard conditions: solution concentrations of 1 mol·dm⁻³, temperature 25 °C, and gases at standard pressure; all potentials are measured relative to the standard hydrogen electrode, which is assigned exactly 0 V. A battery goes flat because as the cell operates the reactant concentrations decrease and the cell reaction approaches equilibrium; at equilibrium the forward and reverse rates are equal, there is no net tendency to transfer electrons, and the emf is zero — the chemicals are not used up or leaked, the reaction has simply reached equilibrium."
+    }
+  ]
+}

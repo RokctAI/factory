@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Bivariate Data and the Scatterplot",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Bivariate data consists of:",
+          "options": [
+            "Two separate unrelated lists",
+            "Two measurements paired per individual",
+            "One measurement taken twice",
+            "Data with two outliers"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "On a scatterplot, the explanatory variable goes:",
+          "options": [
+            "On the horizontal axis",
+            "On the vertical axis",
+            "On whichever axis has more space",
+            "In the legend"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The three judgements when reading a scatterplot are:",
+          "options": [
+            "Mean, median, mode",
+            "Slope, intercept, residual",
+            "Direction, form, strength",
+            "Domain, range, asymptote"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "A learner who studied 6 hours but scored 30, far from the lane of the other dots, is:",
+          "options": [
+            "The response variable",
+            "The intercept",
+            "Impossible data",
+            "An outlier, to investigate before fitting a line"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Least Squares Regression Line",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The least squares regression line minimises:",
+          "options": [
+            "The sum of the squared vertical residuals",
+            "The sum of the residuals",
+            "The number of outliers",
+            "The distance to the origin"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For the study data, the regression line is:",
+          "options": [
+            "ŷ = 4,57 + 46x",
+            "ŷ = 46 + 4,57x",
+            "ŷ = 62 + 3,5x",
+            "ŷ = 50 + 6x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "In context, b = 4,57 means:",
+          "options": [
+            "The lowest mark is 4,57 percent",
+            "Marks rise 4,57 points per learner",
+            "4,57 hours of study guarantees a pass",
+            "Each extra hour of study predicts about 4,57 more percentage points"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The least squares line ALWAYS passes through:",
+          "options": [
+            "The origin",
+            "The first data point",
+            "The point (x̄; ȳ)",
+            "The largest data point"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Correlation Coefficient r",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The correlation coefficient r always lies:",
+          "options": [
+            "Between 0 and 1",
+            "Between −1 and 1",
+            "Between −100 and 100",
+            "Above 0,5"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "r = 0,997 for the study data describes:",
+          "options": [
+            "A weak positive correlation",
+            "A very strong negative correlation",
+            "No correlation",
+            "A very strong positive linear correlation"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Dots lying on a perfect CURVE can give r near zero because:",
+          "options": [
+            "r measures linear association only",
+            "Curves have no direction",
+            "r ignores negative values",
+            "The calculator rounds r"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Ice cream sales and drownings correlate strongly because:",
+          "options": [
+            "Ice cream causes drowning",
+            "Drownings drive ice cream sales",
+            "A third factor, summer, drives both",
+            "The correlation is a calculation error"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Prediction, Interpolation and Extrapolation",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Predicting the mark for 4,5 hours of study, ŷ = 46 + 4,57 × 4,5, gives about:",
+          "options": [
+            "62 percent",
+            "67 percent",
+            "72 percent",
+            "51 percent"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "That prediction is trustworthy because 4,5 hours:",
+          "options": [
+            "Is a whole number of half hours",
+            "Is close to the mean mark",
+            "Makes the residual zero",
+            "Lies inside the observed range of 1 to 6 hours"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Predicting for 15 hours gives about 114,55 percent. The correct response is:",
+          "options": [
+            "Round it down to 100 percent",
+            "Accept it — the calculator is reliable",
+            "Reject it: extrapolation far outside the data, and marks cannot exceed 100",
+            "Average it with the intercept"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Prediction outside the observed data range is called:",
+          "options": [
+            "Extrapolation",
+            "Interpolation",
+            "Regression",
+            "Correlation"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Numbers Per Person",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Tearing the two columns apart destroys the data's story because:",
+          "options": [
+            "The numbers change value",
+            "The pairing per person carries the information",
+            "The mean of each column changes",
+            "Scatterplots need three columns"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Dots on a scatterplot are never joined because:",
+          "options": [
+            "Joining is reserved for histograms",
+            "Lines may only be drawn by calculator",
+            "Each dot is a separate individual, not a journey",
+            "The dots are too far apart"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "In the hours-and-marks study, the suspected driver plotted across is:",
+          "options": [
+            "The mark achieved",
+            "The learner's name",
+            "The class average",
+            "Hours studied"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The three quick judgements of the photo are:",
+          "options": [
+            "Lean, lane and tightness",
+            "Height, width and depth",
+            "Mean, spread and outliers",
+            "Slope, intercept and r"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Line That Owes the Least",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the broomstick picture, a residual is:",
+          "options": [
+            "The length of the broomstick",
+            "The vertical gap between a dot and the stick",
+            "The distance between two dots",
+            "The angle of the stick"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Complaints are SQUARED before totalling so that:",
+          "options": [
+            "The total is always even",
+            "The stick passes through the origin",
+            "Up and down misses cannot cancel, and big misses cost most",
+            "The calculator can store them"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "In ŷ = 46 + 4,57x, the street meaning of 4,57 is:",
+          "options": [
+            "The price of an hour of study, in percentage points",
+            "The mark for zero hours",
+            "The number of learners",
+            "The tightness of the cloud"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The see-saw balance point the stick must pass through is:",
+          "options": [
+            "(1; 50)",
+            "(6; 74)",
+            "(0; 46)",
+            "(3,5; 62)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "How Tight Is the Queue",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In the tightness score r, the SIGN reports:",
+          "options": [
+            "The number of outliers",
+            "The lean — uphill or downhill",
+            "How tight the queue is",
+            "The size of the sample"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "An r near zero on a clearly curved cloud means:",
+          "options": [
+            "The variables are unrelated",
+            "The data was entered wrongly",
+            "r missed the association because it only understands straight lanes",
+            "The curve is an illusion"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The correct sentence for a strong r is:",
+          "options": [
+            "The variables are strongly associated",
+            "The first variable causes the second",
+            "The second variable causes the first",
+            "The relationship is proven"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Jumping the fence — predicting at 15 hours from data covering 1 to 6 — is:",
+          "options": [
+            "Interpolation, fully reliable",
+            "Correlation",
+            "A residual",
+            "Extrapolation, to be flagged as unreliable"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

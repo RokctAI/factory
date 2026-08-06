@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the energy conversion and working principle of an AC generator, name its main components, and explain what single change of components converts it into a DC generator and why that change works.",
+      "expected_answer": "An AC generator converts mechanical energy to electrical energy using electromagnetic induction: as the coil (armature) rotates in the magnetic field between the magnet poles, the magnetic flux through the coil changes continuously, inducing an emf. Main components: a rotating coil, permanent magnets providing the field, two slip rings connected to the ends of the coil, and carbon brushes pressing on the rings to connect the rotating coil to the external circuit. Each side of the coil moves up through the field for half a turn and down for the other half, so the induced emf reverses direction every half rotation — the output is alternating current. Replacing the two slip rings with a single split-ring commutator produces a DC generator: the two half-rings swap contact with the brushes at exactly the instant the coil's emf reverses, cancelling each reversal so the external current always flows in the same direction (though it still pulses between zero and maximum)."
+    },
+    {
+      "id": "cc2",
+      "question": "State the motor effect, explain step by step why the coil of a DC motor rotates continuously rather than rocking back and forth, and give the energy conversion involved.",
+      "expected_answer": "The motor effect: a current-carrying conductor in a magnetic field experiences a force. In the motor's coil, current flows in opposite directions along the two long sides, so the field forces one side up and the other side down; these two opposite forces on a pivoted coil produce rotation. Left uncorrected, after half a turn the same forces would push the coil backwards, so it would rock and stop. The split-ring commutator prevents this by reversing the current through the coil every half revolution, exactly as the coil passes the vertical; the forces on each side reverse too, so the turning force always acts in the same rotational direction and the coil spins continuously. A motor converts electrical energy to mechanical energy — the reverse of a generator."
+    },
+    {
+      "id": "cc3",
+      "question": "The South African mains supply is 220 V AC. Explain what the 220 V represents, calculate the maximum voltage, and find the rms current and average power for a heater of resistance 44 Ω on this supply. Finally, give the argument for why power is transmitted at high voltage.",
+      "expected_answer": "The 220 V is the rms (root mean square) voltage: the equivalent DC voltage that would deliver the same energy to a resistor as the alternating supply. The maximum voltage is Vmax = Vrms × √2 = 220 × √2 ≈ 311,13 V, so the mains actually swings between about +311 V and −311 V. For the heater: Irms = Vrms ÷ R = 220 ÷ 44 = 5 A, and average power Pave = Vrms × Irms = 220 × 5 = 1 100 W (equivalently I²rms × R = 25 × 44 = 1 100 W). High-voltage transmission: the power wasted as heat in transmission cables is I²R. Transmitting a given amount of power at high voltage requires a proportionally smaller current, and since losses depend on the square of the current, ten times the voltage means one hundred times less heat loss. Transformers, which only work with alternating current, make this stepping up and down of voltage possible — the key advantage of AC."
+    }
+  ]
+}

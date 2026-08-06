@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the fundamental counting principle, apply it to 4 shirts, 3 trousers and 2 pairs of shoes, and explain when counts are added rather than multiplied.",
+      "expected_answer": "The fundamental counting principle: if one task can be done in m ways and, for each of those, a second task can be done in n ways, the two tasks together can be done in m × n ways, and the multiplication chains through any number of decisions. For the wardrobe: 4 × 3 × 2 = 24 complete outfits, because every shirt pairs with every trouser and every such pair with every pair of shoes. The working method is slots: one dash per decision in order, the number of available options above each, multiplied along. Counts are added only across mutually exclusive alternatives — either-or scenarios that cannot both happen, such as a tuck shop lunch or a lunchbox — while sequential decisions that happen together always multiply."
+    },
+    {
+      "id": "cc2",
+      "question": "Six learners line up for a photo. Count the arrangements when: (a) there are no restrictions; (b) two particular friends must stand together; (c) the same two friends may not stand together. Name the strategy used in each case.",
+      "expected_answer": "(a) Free arrangement: 6 distinct people fill slots with shrinking options, 6 × 5 × 4 × 3 × 2 × 1 = 6! = 720. (b) Glue strategy: tie the two friends into one unit, giving 5 units which arrange in 5! = 120 ways; the pair can swap inside the unit in 2 ways, so 5! × 2 = 240. The times 2 counts the interior of the glued unit and is the most commonly forgotten factor. (c) Complement strategy: not-together equals total minus together, 720 − 240 = 480. The three standard moves are: fill forced positions first, glue for must-be-together, and count the complement for must-be-apart."
+    },
+    {
+      "id": "cc3",
+      "question": "A 4-digit PIN uses digits 0 to 9. Count the PINs with repetition allowed and with all digits different, then find the probability that a randomly generated PIN has all different digits, and the probability that a random arrangement of the word MATHS starts with M.",
+      "expected_answer": "With repetition allowed, each of the four slots has 10 options: 10⁴ = 10 000 PINs. With all digits different, the options shrink per slot: 10 × 9 × 8 × 7 = 5 040. Since a random PIN makes all 10 000 outcomes equally likely, the probability of all-different digits is 5 040/10 000 = 0,504 — slightly better than half. For MATHS: the five distinct letters arrange in 5! = 120 ways; arrangements starting with M force the first slot (1 way) leaving 4! = 24 for the rest, so the probability is 24/120 = 0,2, which matches the direct view that the first letter is one fair choice among five equally likely letters. The routine is always favourable count over total count, with both counts made under the same rules."
+    }
+  ]
+}
