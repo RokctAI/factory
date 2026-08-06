@@ -6,12 +6,12 @@
       "questions": [
         {
           "id": "subtopic_1_q1",
-          "question": "In a right-angled triangle, $\\sin\\theta$ is defined as:",
+          "question": "In a right-angled triangle, sin θ is defined as:",
           "options": [
-            "$\\frac{\\text{adjacent}}{\\text{hypotenuse}}$",
-            "$\\frac{\\text{opposite}}{\\text{hypotenuse}}$",
-            "$\\frac{\\text{opposite}}{\\text{adjacent}}$",
-            "$\\frac{\\text{hypotenuse}}{\\text{opposite}}$"
+            "adjacent/hypotenuse",
+            "opposite/hypotenuse",
+            "opposite/adjacent",
+            "hypotenuse/opposite"
           ],
           "correct_index": 1,
           "time_limit_seconds": 30
@@ -30,7 +30,7 @@
         },
         {
           "id": "subtopic_1_q3",
-          "question": "Why is $\\sin 30°$ the same number in every right-angled triangle containing a 30° angle?",
+          "question": "Why is sin 30° the same number in every right-angled triangle containing a 30° angle?",
           "options": [
             "Similar triangles keep side ratios identical regardless of the triangle's size",
             "Because calculators are standardised",
@@ -48,48 +48,48 @@
       "questions": [
         {
           "id": "subtopic_2_q1",
-          "question": "From the halved equilateral triangle, $\\sin 60°$ equals:",
+          "question": "From the halved equilateral triangle, sin 60° equals:",
           "options": [
-            "$\\frac{1}{2}$",
-            "$\\frac{1}{\\sqrt{2}}$",
-            "$\\frac{\\sqrt{3}}{2}$",
-            "$\\sqrt{3}$"
+            "1/2",
+            "1/√2",
+            "√3/2",
+            "√3"
           ],
           "correct_index": 2,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_2_q2",
-          "question": "$\\tan 45°$ equals:",
+          "question": "tan 45° equals:",
           "options": [
-            "$1$",
-            "$\\frac{1}{\\sqrt{2}}$",
-            "$\\sqrt{2}$",
-            "$\\frac{1}{2}$"
+            "1",
+            "1/√2",
+            "√2",
+            "1/2"
           ],
           "correct_index": 0,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_2_q3",
-          "question": "$\\sin 60° \\times \\cos 30°$ equals:",
+          "question": "sin 60° × cos 30° equals:",
           "options": [
-            "$\\frac{\\sqrt{3}}{2}$",
-            "$\\frac{1}{2}$",
-            "$\\frac{\\sqrt{6}}{4}$",
-            "$\\frac{3}{4}$"
+            "√3/2",
+            "1/2",
+            "√6/4",
+            "3/4"
           ],
           "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_2_q4",
-          "question": "The full expression $\\sin 60° \\times \\cos 30° - \\tan 45°$ evaluates to:",
+          "question": "The full expression sin 60° × cos 30° − tan 45° evaluates to:",
           "options": [
-            "$\\frac{1}{4}$",
-            "$-\\frac{1}{4}$",
-            "$0$",
-            "$-\\frac{3}{4}$"
+            "1/4",
+            "−1/4",
+            "0",
+            "−3/4"
           ],
           "correct_index": 1,
           "time_limit_seconds": 45
@@ -104,20 +104,20 @@
           "id": "subtopic_3_q1",
           "question": "Hypotenuse 13, side opposite x is 5. The correct ratio equation is:",
           "options": [
-            "$\\cos x = \\frac{5}{13}$",
-            "$\\tan x = \\frac{5}{13}$",
-            "$\\sin x = \\frac{13}{5}$",
-            "$\\sin x = \\frac{5}{13}$"
+            "cos x = 5/13",
+            "tan x = 5/13",
+            "sin x = 13/5",
+            "sin x = 5/13"
           ],
           "correct_index": 3,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_3_q2",
-          "question": "To find the angle from $\\sin x = \\frac{5}{13}$, you use:",
+          "question": "To find the angle from sin x = 5/13, you use:",
           "options": [
             "Ordinary sine of both sides",
-            "The inverse sine: $x = \\sin^{-1}\\left(\\frac{5}{13}\\right) \\approx 22{,}6°$",
+            "The inverse sine: x = sin⁻¹(5/13) ≈ 22,6°",
             "Pythagoras",
             "Division by 13"
           ],
@@ -126,11 +126,11 @@
         },
         {
           "id": "subtopic_3_q3",
-          "question": "Which sense check supports $x \\approx 22{,}6°$?",
+          "question": "Which sense check supports x ≈ 22,6°?",
           "options": [
             "All angles in trigonometry are below 30°",
             "13 − 5 = 8, so the angle is under 10°",
-            "$\\frac{5}{13}$ is less than $\\frac{1}{2}$, and $\\sin 30° = \\frac{1}{2}$, so the angle must be below 30°",
+            "5/13 is less than 1/2, and sin 30° = 1/2, so the angle must be below 30°",
             "The angle must equal half the hypotenuse"
           ],
           "correct_index": 2,
@@ -140,10 +140,10 @@
           "id": "subtopic_3_q4",
           "question": "The third side of the 5-13 triangle is 12. The other acute angle is approximately:",
           "options": [
-            "$67{,}4°$, since the two acute angles must sum to $90°$",
-            "$45°$",
-            "$22{,}6°$",
-            "$90°$"
+            "67,4°, since the two acute angles must sum to 90°",
+            "45°",
+            "22,6°",
+            "90°"
           ],
           "correct_index": 0,
           "time_limit_seconds": 45
@@ -158,9 +158,9 @@
           "id": "subtopic_4_q1",
           "question": "Known: opposite = 5 and adjacent = 12. Which ratio finds the angle?",
           "options": [
-            "Sine: $\\sin x = \\frac{5}{12}$",
-            "Cosine: $\\cos x = \\frac{5}{12}$",
-            "Tangent: $\\tan x = \\frac{5}{12}$",
+            "Sine: sin x = 5/12",
+            "Cosine: cos x = 5/12",
+            "Tangent: tan x = 5/12",
             "None — Pythagoras is needed first"
           ],
           "correct_index": 2,
@@ -168,7 +168,7 @@
         },
         {
           "id": "subtopic_4_q2",
-          "question": "Your calculator says $\\sin 30° = -0{,}988$. The most likely cause is:",
+          "question": "Your calculator says sin 30° = −0,988. The most likely cause is:",
           "options": [
             "Sine of 30° is genuinely negative",
             "A flat battery",
@@ -246,7 +246,7 @@
         },
         {
           "id": "subtopic_5_q4",
-          "question": "A long ladder and a short ladder lean at the same slant. Why is $\\sin\\theta$ the same for both?",
+          "question": "A long ladder and a short ladder lean at the same slant. Why is sin θ the same for both?",
           "options": [
             "Because both ladders touch the same wall",
             "Because a ratio compares sides, so 5 over 13 and 10 over 26 are the same value",
@@ -267,20 +267,20 @@
           "question": "Cutting the 2-metre equilateral slab down the middle gives a height of:",
           "options": [
             "2",
-            "$\\sqrt{3}$",
+            "√3",
             "1",
-            "$\\sqrt{2}$"
+            "√2"
           ],
           "correct_index": 1,
           "time_limit_seconds": 45
         },
         {
           "id": "subtopic_6_q2",
-          "question": "Read from that half-slab, $\\cos 60°$ equals:",
+          "question": "Read from that half-slab, cos 60° equals:",
           "options": [
-            "$\\sqrt{3}$",
-            "$\\frac{\\sqrt{3}}{2}$",
-            "$\\frac{1}{2}$",
+            "√3",
+            "√3/2",
+            "1/2",
             "1"
           ],
           "correct_index": 2,
@@ -288,24 +288,24 @@
         },
         {
           "id": "subtopic_6_q3",
-          "question": "The square tile of side 1, cut corner to corner, gives $\\tan 45°$ =",
+          "question": "The square tile of side 1, cut corner to corner, gives tan 45° =",
           "options": [
             "1",
-            "$\\sqrt{2}$",
-            "$\\frac{1}{\\sqrt{2}}$",
-            "$\\frac{1}{2}$"
+            "√2",
+            "1/√2",
+            "1/2"
           ],
           "correct_index": 0,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_6_q4",
-          "question": "$\\sin 60° \\times \\cos 30° - \\tan 45°$ evaluates to:",
+          "question": "sin 60° × cos 30° − tan 45° evaluates to:",
           "options": [
-            "$\\frac{3}{4}$",
-            "$0$",
-            "$-\\frac{3}{4}$",
-            "$-\\frac{1}{4}$"
+            "3/4",
+            "0",
+            "−3/4",
+            "−1/4"
           ],
           "correct_index": 3,
           "time_limit_seconds": 45
@@ -320,10 +320,10 @@
           "id": "subtopic_7_q1",
           "question": "A 13 m ladder touches the wall 5 m up. The equation for the angle at the ground is:",
           "options": [
-            "$\\cos x = \\frac{5}{13}$",
-            "$\\tan x = \\frac{5}{13}$",
-            "$\\sin x = \\frac{5}{13}$",
-            "$\\sin x = \\frac{13}{5}$"
+            "cos x = 5/13",
+            "tan x = 5/13",
+            "sin x = 5/13",
+            "sin x = 13/5"
           ],
           "correct_index": 2,
           "time_limit_seconds": 45
@@ -354,7 +354,7 @@
         },
         {
           "id": "subtopic_7_q4",
-          "question": "Your calculator returns $\\sin 30° = -0{,}988$. What do you fix?",
+          "question": "Your calculator returns sin 30° = −0,988. What do you fix?",
           "options": [
             "Switch it from radian mode back to degree mode and look for the D on the screen",
             "Nothing — that value is correct",
