@@ -1194,6 +1194,161 @@
       },
       "unmatched": [],
       "notes": "2024 P1 carries the 30-mark mapwork section (Q3); skills/*.json links are single-file skill lessons, not folders. gradient_calculation.json (linked from 2018 P2) has no matching 2024 question."
+    },
+    "dbe_geography_g12_p2_2024_nov": {
+      "source": "Department of Basic Education",
+      "source_url": "https://www.education.gov.za/2024NSCNovemberpastpapers.aspx",
+      "subject": "Geography",
+      "grade": 12,
+      "paper": "P2",
+      "session": "November 2024",
+      "link_style": "lesson_folders",
+      "matches": {
+        "Q1.1": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/study-of-settlements-and-rural-settlements"
+          ],
+          "confidence": "high"
+        },
+        "Q1.1.7": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/rural-settlement-issues"
+          ],
+          "confidence": "high"
+        },
+        "Q1.1.8": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/rural-settlement-issues"
+          ],
+          "confidence": "high"
+        },
+        "Q1.2": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements"
+          ],
+          "confidence": "high"
+        },
+        "Q1.3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/rural-settlement-issues"
+          ],
+          "confidence": "high"
+        },
+        "Q1.4": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements"
+          ],
+          "confidence": "high"
+        },
+        "Q1.5": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements"
+          ],
+          "confidence": "high"
+        },
+        "Q2.1": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term3/agriculture"
+          ],
+          "confidence": "high"
+        },
+        "Q2.2": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term3/sa-industrial-regions"
+          ],
+          "confidence": "high"
+        },
+        "Q2.3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term3/mining"
+          ],
+          "confidence": "high"
+        },
+        "Q2.4": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term3/sa-industrial-regions"
+          ],
+          "confidence": "high"
+        },
+        "Q2.5": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term3/structure-of-the-economy"
+          ],
+          "confidence": "high",
+          "note": "Informal sector falls under structure of the economy in the CAPS Economic Geography topic."
+        },
+        "Q3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term4/past-paper-practice"
+          ],
+          "confidence": "high",
+          "note": "Whole mapwork section (Bloemfontein-Noord 2926AA)."
+        },
+        "Q3.1.1": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade10/term1/consolidation-of-grade-8-and-9-map-skills",
+            "lessons/curriculum/CAPS/geography/skills/grade12/map_scale_and_distance.json"
+          ],
+          "confidence": "high"
+        },
+        "Q3.1.2": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade10/term1/consolidation-of-grade-8-and-9-map-skills",
+            "lessons/curriculum/CAPS/geography/skills/grade12/map_scale_and_distance.json"
+          ],
+          "confidence": "high"
+        },
+        "Q3.1.3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade10/term1/consolidation-of-grade-8-and-9-map-skills"
+          ],
+          "confidence": "high"
+        },
+        "Q3.1.4": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade10/term1/consolidation-of-grade-8-and-9-map-skills"
+          ],
+          "confidence": "high"
+        },
+        "Q3.1.5": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/skills/grade12/gradient_calculation.json"
+          ],
+          "confidence": "high"
+        },
+        "Q3.1.6": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/skills/grade12/gradient_calculation.json"
+          ],
+          "confidence": "high"
+        },
+        "Q3.2.1": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/study-of-settlements-and-rural-settlements"
+          ],
+          "confidence": "high"
+        },
+        "Q3.2.2": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements"
+          ],
+          "confidence": "high"
+        },
+        "Q3.2.3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements"
+          ],
+          "confidence": "high"
+        },
+        "Q3.2.4": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term3/agriculture"
+          ],
+          "confidence": "high"
+        }
+      },
+      "unmatched": [],
+      "notes": "2024 P2 carries the 30-mark mapwork section (Q3, Bloemfontein-Noord 2926AA); skills/*.json links are single-file skill lessons, not folders. GIS sub-questions (Q3.3) have no dedicated folder and are covered by the whole-section Q3 link."
     }
   },
   "lessons": {
@@ -1599,6 +1754,98 @@
       {
         "paper_id": "dbe_geography_g12_p1_2024_nov",
         "question": "Q3"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term2/study-of-settlements-and-rural-settlements": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q1.1"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.2.1"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term2/rural-settlement-issues": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q1.1.7"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q1.1.8"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q1.3"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q1.2"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q1.4"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q1.5"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.2.2"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.2.3"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term3/agriculture": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q2.1"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.2.4"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term3/sa-industrial-regions": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q2.2"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q2.4"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term3/mining": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q2.3"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term3/structure-of-the-economy": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q2.5"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/skills/grade12/gradient_calculation.json": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.5"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.6"
       }
     ],
     "lessons/curriculum/CAPS/geography/session/grade10/term1/consolidation-of-grade-8-and-9-map-skills": [
@@ -1617,12 +1864,36 @@
       {
         "paper_id": "dbe_geography_g12_p1_2024_nov",
         "question": "Q3.1.4"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.1"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.2"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.3"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.4"
       }
     ],
     "lessons/curriculum/CAPS/geography/skills/grade12/map_scale_and_distance.json": [
       {
         "paper_id": "dbe_geography_g12_p1_2024_nov",
         "question": "Q3.1.5"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.1"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2024_nov",
+        "question": "Q3.1.2"
       }
     ],
     "lessons/curriculum/CAPS/geography/skills/grade10/contour_reading.json": [

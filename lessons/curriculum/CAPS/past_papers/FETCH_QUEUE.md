@@ -112,8 +112,8 @@ those must come from the session page via the shopping list.
 ## Done
 
 All November 2024 papers below were supplied by owner upload 2026-08-06 and
-transcribed to `paperN.json` on 2026-08-06, except Geography P2 (supplied by
-owner upload 2026-08-06 batch 2; transcription pending). All are
+transcribed to `paperN.json` on 2026-08-06 (Geography P2 was supplied by
+owner upload 2026-08-06 batch 2 and transcribed the same day). All are
 English-language, November 2024 NSC, Grade 12, from the session page
 <https://www.education.gov.za/2024NSCNovemberpastpapers.aspx>.
 
@@ -158,7 +158,7 @@ English-language, November 2024 NSC, Grade 12, from the session page
 | Done | Paper | Question paper URL | Memo URL |
 |:---:|---|---|---|
 | [x] | Geography P1 | <https://www.education.gov.za/LinkClick.aspx?fileticket=Hc8_CaQJpd4%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ZKd8Wo9VYr0%3d> |
-| [x] | Geography P2 — supplied by owner upload 2026-08-06 batch 2; verified across multiple pages (QP 18 pp: Economic Geography + Map Interpretation; marking guidelines 15 pp). Tracked at `geography/grade12/2024/paper2.pdf` + `paper2_memo.pdf`; transcription to `paper2.json` pending. | <https://www.education.gov.za/LinkClick.aspx?fileticket=LrQ39-VlNh4%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=2qulvYkBv6k%3d> |
+| [x] | Geography P2 — supplied by owner upload 2026-08-06 batch 2; verified across multiple pages (QP 18 pp: Economic Geography + Map Interpretation; marking guidelines 15 pp). Tracked at `geography/grade12/2024/paper2.pdf` + `paper2_memo.pdf`; transcribed to `paper2.json` 2026-08-06 (81 entries, 150 marks reconciled, links.json extended). | <https://www.education.gov.za/LinkClick.aspx?fileticket=LrQ39-VlNh4%3d> | <https://www.education.gov.za/LinkClick.aspx?fileticket=2qulvYkBv6k%3d> |
 
 (The first 2026-08-06 upload's Geography P2 files were Accounting P2
 duplicates; the batch-2 re-download above fixed this.)

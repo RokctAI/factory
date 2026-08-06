@@ -13,9 +13,12 @@
     "block, prefixed 'CONTEXT for ...'. Later sub-questions carry a short pointer.",
     "ANNEXURE NOTE: The paper references an ADDENDUM with ANNEXURES A-C (campsite",
     "aerial view, Leopard Trail Run map + elevation map, Australia map/trip plan).",
-    "The addendum PDF is NOT in this directory; annexure descriptions below are",
-    "reconstructed from the values the marking guidelines use, and are marked",
-    "[ANNEXURE ... - not in repo]."
+    "The 4-page addendum is committed as paper2_addendum.pdf (image-only scan,",
+    "read rendered page by page 2026-08-06). All annexure-dependent values below",
+    "were verified against the actual annexures; bracketed [ANNEXURE ...]",
+    "descriptions transcribe what each annexure shows. One reconstruction was",
+    "corrected: Annexure A lists campsites 7 and 8 as '4 - 6' camper RANGES",
+    "(max 6 each, which is what the memo's 118 sum uses), not flat values of 6."
   ],
   "paper_id": "dbe_mathlit_g12_p2_2024_nov",
   "source": "Department of Basic Education",
@@ -24,7 +27,7 @@
   "memo_download_url": null,
   "paper_file": "paper2.pdf",
   "memo_file": "paper2_memo.pdf",
-  "_note_binaries": "Both scanned PDFs are committed in this directory (paper2.pdf = question paper, paper2_memo.pdf = bilingual marking guidelines). The addendum (3 annexures) is not in the repo.",
+  "_note_binaries": "All three scanned PDFs are committed in this directory (paper2.pdf = question paper, paper2_memo.pdf = bilingual marking guidelines, paper2_addendum.pdf = 4-page addendum with Annexures A-C).",
   "copyright": "© Department of Basic Education, 2024. Reproduced for educational use with attribution.",
   "subject": "Mathematical Literacy",
   "grade": 12,
@@ -156,7 +159,7 @@
     },
     {
       "ref": "Q2.1.1",
-      "text": "CONTEXT for 2.1 (Q2.1.1-2.1.6): John and five other family members decided to participate in the Baviaanskloof Leopard Trail Run. They decided to camp at the Baviaanskloof Uitspan camping site. ANNEXURE A shows an aerial view of Baviaanskloof Uitspan with campsites and the number of campers allowed. Some campsites have one hut and others have more than one hut, labelled A, B and C. [ANNEXURE A - not in repo. From the memo: the campsites allow 6, 15, 4, 15, 4, 4, 5, 15, 8, 10, 6, 6 and 20 campers (13 values, total 118); there are 13 huts of which 3 accommodate exactly 6 campers; campsite 2 is near the dam and accommodates a maximum of 19 campers; the dam lies south-west of campsite 8.] Use ANNEXURE A and the information above to answer the questions that follow. QUESTION: Explain what is meant by aerial view.",
+      "text": "CONTEXT for 2.1 (Q2.1.1-2.1.6): John and five other family members decided to participate in the Baviaanskloof Leopard Trail Run. They decided to camp at the Baviaanskloof Uitspan camping site. ANNEXURE A shows an aerial view of Baviaanskloof Uitspan with campsites and the number of campers allowed. Some campsites have one hut and others have more than one hut, labelled A, B and C. [ANNEXURE A: AERIAL VIEW OF BAVIAANSKLOOF UITSPAN WITH CAMPSITES AND NUMBER OF CAMPERS - aerial photograph with a north arrow, numbered circles 1-9 marking the campsites, the Dam (immediately beside campsites 2 and 9), the Ablution facilities in the middle of campsites 3-6, the Main house (south-east) and the Houtkloof mountains (north-west). Inset table 'Number of campers': Campsite 1: 6; Campsite 2A: 15, 2B: 4; Campsite 3A: 15, 3B: 4, 3C: 4; Campsite 4: 5; Campsite 5A: 15, 5B: 8; Campsite 6: 10; Campsite 7: 4-6; Campsite 8: 4-6; Campsite 9: 20 (13 hut rows; maximum total 118). NOTE: The bigger the hut, the more expensive it is. Adapted from baviaansuitspan.co.za/page/baviaanskloof-camping.] Use ANNEXURE A and the information above to answer the questions that follow. QUESTION: Explain what is meant by aerial view.",
       "marks": 2,
       "topic": "Maps and Plans (views)",
       "solution_method": "define_aerial_view",
@@ -182,7 +185,8 @@
       "solution_method": "compass_direction_from_map",
       "memo_answer": "South West / SW",
       "memo_working": "2A compass direction",
-      "checkable": false
+      "memo_note": "Verified against Annexure A: with the north arrow upright, the dam lies below-left (south-west) of campsite 8.",
+      "checkable": true
     },
     {
       "ref": "Q2.1.4",
@@ -192,7 +196,8 @@
       "solution_method": "identify_site_from_description",
       "memo_answer": "2",
       "memo_working": "2O identifying correct site",
-      "checkable": false
+      "memo_note": "Verified against Annexure A: campsite 2 is beside the dam and its huts 2A (15) + 2B (4) accommodate a maximum of 19 campers.",
+      "checkable": true
     },
     {
       "ref": "Q2.1.5",
@@ -202,7 +207,7 @@
       "solution_method": "probability_as_percentage",
       "memo_answer": "23,076923% (≈ 23,08%)",
       "memo_working": "P = 3/13 x 100% (1A correct numerator, 1A correct denominator) = 23,076923% (1CA simplification). NPR",
-      "memo_note": "Family is 6 people (John + five others); 3 of the 13 huts accommodate exactly 6 campers.",
+      "memo_note": "Family is 6 people (John + five others); per Annexure A, 3 of the 13 huts can accommodate exactly 6 campers (hut 1: 6; huts 7 and 8: 4-6 each).",
       "checkable": true
     },
     {
@@ -238,13 +243,14 @@
     },
     {
       "ref": "Q2.2.1",
-      "text": "CONTEXT for 2.2 (Q2.2.1-2.2.5): The Leopard Trail Run is a two-day event, run on the outskirts of the camp, starting and ending at the Cedar Falls Home Base. ANNEXURE B shows the map as well as the elevation map of the Leopard Trail Run in the Baviaanskloof situated close to Willowmore. Visitors to the Baviaanskloof can also do a four-day hike, starting at the Cedar Falls Home Base. NOTE: Day 1 of the trail run is Days 3 and 4 of the hike. Day 2 of the trail run is Days 1 and 2 of the hike. Trail (path through the natural landscape). [Adapted from gobaviaans.co.za] [ANNEXURE B - not in repo. From the memo: Gabriel's Pools is passed on Day 2 of the run; the route 'run 5,5 km along Rhebok Valley, continue down to the Reflection Pools, then return to home base' matches option D (Day 2, Part 2); the highest point above sea level on Day 2 is reached at 12,5 km; the elevation at the 17,5 km mark on Day 2 is 1 050 m and at the end of the trail 900 m; the 8-18 km section on Day 1 is a continuous downhill.] Use ANNEXURE B and the information above to answer the questions that follow. QUESTION: Write down the day during the run when you would pass Gabriel's Pools.",
+      "text": "CONTEXT for 2.2 (Q2.2.1-2.2.5): The Leopard Trail Run is a two-day event, run on the outskirts of the camp, starting and ending at the Cedar Falls Home Base. ANNEXURE B shows the map as well as the elevation map of the Leopard Trail Run in the Baviaanskloof situated close to Willowmore. Visitors to the Baviaanskloof can also do a four-day hike, starting at the Cedar Falls Home Base. NOTE: Day 1 of the trail run is Days 3 and 4 of the hike. Day 2 of the trail run is Days 1 and 2 of the hike. Trail (path through the natural landscape). [Adapted from gobaviaans.co.za] [ANNEXURE B: QUESTION 2.2 - MAP AND ELEVATION MAP OF THE LEOPARD TRAIL RUN. Top panel, MAP OF THE LEOPARD TRAIL RUN ROUTE (adapted from gobaviaans.co.za/project/leopardtrailrun): two loops joined at the Cedar Falls Home Base. Western loop labelled Day 2 with Rhebok Valley, Gabriel's Pools and Reflection Pools; eastern loop labelled Day 1 with Birdsong Valley, Fond Farewell, The Cauldron, Honeybush Hill and Inconvenient Truth. Bottom panel, ELEVATION MAP OF THE LEOPARD TRAIL RUN ROUTE (height above sea level vs distance). TRAIL RUN - DAY 1: axis labels 721 m, 1 000 m and 1 183 m; distance gridlines 5, 10, 15, 20, 25 and 30,5 km; twin peaks near 1 183 m around 5-8 km, a long descent from about 8 km (with a small bump at about 15 km) to a low section around 20 km, a second peak near 25 km, ending at 861 m at 30,5 km. TRAIL RUN - DAY 2: axis labels 864 m, 900 m, 975 m, 1 050 m and 1 173 m; distance gridlines 2,5 to 21,9 km; highest point (about 1 173 m) at the 12,5 km mark, a later peak at about the 17,5 km mark on the 1 050 m gridline, dropping to about 900 m at the end of the trail (21,9 km).] Use ANNEXURE B and the information above to answer the questions that follow. QUESTION: Write down the day during the run when you would pass Gabriel's Pools.",
       "marks": 2,
       "topic": "Maps and Plans (route maps)",
       "solution_method": "read_feature_from_map",
       "memo_answer": "Day 2",
       "memo_working": "2A correct description",
-      "checkable": false
+      "memo_note": "Verified against Annexure B: Gabriel's Pools lies on the western (Day 2) loop.",
+      "checkable": true
     },
     {
       "ref": "Q2.2.2",
@@ -254,7 +260,8 @@
       "solution_method": "match_route_description",
       "memo_answer": "D",
       "memo_working": "2RT correct option",
-      "checkable": false
+      "memo_note": "Verified against Annexure B: Rhebok Valley and the Reflection Pools are on the Day 2 loop, and the return to home base is its second part (Part 2).",
+      "checkable": true
     },
     {
       "ref": "Q2.2.3",
@@ -264,7 +271,8 @@
       "solution_method": "read_value_from_elevation_map",
       "memo_answer": "12,5 km",
       "memo_working": "2RT correct distance",
-      "checkable": false
+      "memo_note": "Verified against Annexure B: the Day 2 elevation profile peaks at about 1 173 m exactly at the 12,5 km gridline.",
+      "checkable": true
     },
     {
       "ref": "Q2.2.4",
@@ -274,6 +282,7 @@
       "solution_method": "interpret_elevation_profile",
       "memo_answer": "The part shows a continuous downward slope, it is downhill. OR That part does not have many uphills.",
       "memo_working": "2O correct explanation",
+      "memo_note": "Annexure B's Day 1 profile shows a long descent from about 8 km to about 18 km with only one small bump at about 15 km - consistent with the memo's 'does not have many uphills' alternative.",
       "checkable": false
     },
     {
@@ -439,13 +448,14 @@
     },
     {
       "ref": "Q5.1.1",
-      "text": "CONTEXT for 5.1 (Q5.1.1-5.1.5): Chris and Boipelo are planning a year-long trip, mostly along the A1 motorway, around Australia. It is the world's longest continuous road of 14 655 km that passes through every state and connects seven of its eight capitals. ANNEXURE C is a map of Australia and the distances and driving times between the major cities and the states or territories. Next to it is the plan of their trip. [ANNEXURE C - not in repo. From the memo: the distance between Adelaide and Melbourne is 738 km; the trip plan places them in Western Australia during Aug, Sep, Oct and Nov, and in Tasmania during February; the legs between successive capitals other than Perth-Adelaide are 738, 1 062, 922, 1 705, 2 850, 1 871 and 2 811 km; Brisbane to Cairns is 1 705 km in 20 h 40 min.] Use ANNEXURE C and the information above to answer the questions that follow. QUESTION: Write down the names of the cities where the distance between them is 738 km.",
+      "text": "CONTEXT for 5.1 (Q5.1.1-5.1.5): Chris and Boipelo are planning a year-long trip, mostly along the A1 motorway, around Australia. It is the world's longest continuous road of 14 655 km that passes through every state and connects seven of its eight capitals. ANNEXURE C is a map of Australia and the distances and driving times between the major cities and the states or territories. Next to it is the plan of their trip. [ANNEXURE C: QUESTION 5 - two panels. Left panel, MAP OF AUSTRALIA SHOWING THE A1 MOTORWAY, DISTANCES, DRIVING TIMES AND STATES OR TERRITORIES (adapted from www.wilmap.com.au): the A1 ring route with cities (dots) Perth, Broome, Darwin, Cairns, Brisbane, Sydney, Melbourne, Adelaide and Hobart, and states (triangles) Western Australia, Northern Territory, Queensland, New South Wales, Victoria, South Australia and Tasmania. Distances and driving times per leg: Melbourne-Adelaide 738 km, 9 h 6 min; Sydney-Melbourne 1 062 km, 13 h 40 min; Brisbane-Sydney 922 km, 10 h 30 min; Cairns-Brisbane 1 705 km, 20 h 40 min; Darwin-Cairns 2 850 km, 33 h 55 min; Broome-Darwin 1 871 km, 21 h 13 min; Perth-Broome 2 811 km, 30 hours. Also marked: PERTH TO ADELAIDE 29 hours (no distance given) and the through-centre road DARWIN TO ADELAIDE 3 027 km, 35 hours. Right panel, PLANNED TRIP ALONG THE A1 MOTORWAY AND OTHER ROADS: an outline map of Australia with monthly arrows JAN through DEC around the coast - JAN up the east coast, FEB in Tasmania, MAR-APR back up the east coast, MAY-JUN across the north via Queensland/Northern Territory, JUL at the top of Western Australia, AUG, SEP, OCT and NOV down and around Western Australia, DEC returning east along the south coast.] Use ANNEXURE C and the information above to answer the questions that follow. QUESTION: Write down the names of the cities where the distance between them is 738 km.",
       "marks": 2,
       "topic": "Maps and Plans (distance tables/maps)",
       "solution_method": "read_distance_from_map",
       "memo_answer": "Adelaide and Melbourne",
       "memo_working": "1RT 1st city, 1RT 2nd city",
-      "checkable": false
+      "memo_note": "Verified against Annexure C: the 738 km (9 h 6 min) leg is marked between Melbourne and Adelaide.",
+      "checkable": true
     },
     {
       "ref": "Q5.1.2",
@@ -455,7 +465,8 @@
       "solution_method": "read_schedule_from_plan",
       "memo_answer": "Aug, Sep, Oct, Nov",
       "memo_working": "1RT first correct month, 1RT second correct month, 1RT ALL correct months",
-      "checkable": false
+      "memo_note": "Verified against Annexure C's planned-trip panel: the AUG, SEP, OCT and NOV arrows all lie in Western Australia.",
+      "checkable": true
     },
     {
       "ref": "Q5.1.3",
@@ -475,7 +486,8 @@
       "solution_method": "read_schedule_from_plan",
       "memo_answer": "Tasmania",
       "memo_working": "2RT correct state",
-      "checkable": false
+      "memo_note": "Verified against Annexure C's planned-trip panel: the FEB arrow is on Tasmania.",
+      "checkable": true
     },
     {
       "ref": "Q5.1.5",
