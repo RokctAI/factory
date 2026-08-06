@@ -30,12 +30,24 @@ jobs:
         with:
           fetch-depth: 2
 
+      # Team data (tutor persona cards, assistant assets, rosters) lives in
+      # the agent repo under lms/team/ — checked out here so persona checks
+      # (R4 etc.) still run cross-repo via TEAM_ROOT. Public repo: no token
+      # needed for a read-only checkout.
+      - name: Check out team data (RokctAI/agent)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          path: .agent-checkout
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Check lessons for compliance
+        env:
+          TEAM_ROOT: .agent-checkout/lms/team
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manual dispatch: full-tree compliance baseline."
@@ -47,8 +59,7 @@ jobs:
                     '.rokct/agent/jobs/**/*.md' \
                     'lessons/**/script.md' \
                     'lessons/**/animations.json' \
-                    'lessons/**/manifest.json' \
-                    'lessons/tutors/**/tutor.md' || true)
+                    'lessons/**/manifest.json' || true)
           EXISTING=""
           for F in $FILES; do
             [ -f "$F" ] && EXISTING="$EXISTING $F"

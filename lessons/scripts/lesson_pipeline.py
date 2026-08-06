@@ -30,6 +30,7 @@ belongs to a future brief; lesson cards stop at status: evaluated.
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 from datetime import datetime
@@ -120,7 +121,20 @@ TUTOR_BIG_JOHN = "Big John — simplistic, lower grade logic"
 # NOTE: the cards deliberately live under lessons/, NOT .rokct/ — CI
 # automation blanket-adds/commits .rokct/ from stale checkouts and silently
 # deleted the cards twice when they lived at .rokct/tutors/.
-TUTORS_DIR = Path("lessons/tutors")
+#
+# CROSS-REPO: the team data (tutor persona cards, assistant assets, rosters)
+# now lives in the RokctAI/agent repo under lms/team/. Set TEAM_ROOT to that
+# directory in a checkout (e.g. TEAM_ROOT=.agent-checkout/lms/team) and the
+# tutors/assistants resolve to $TEAM_ROOT/tutors/CAPS and
+# $TEAM_ROOT/assistants/CAPS. When TEAM_ROOT is unset we fall back to the
+# old in-repo layout so nothing breaks for anyone still running it.
+_TEAM_ROOT = os.environ.get("TEAM_ROOT", "").strip()
+if _TEAM_ROOT:
+    TUTORS_DIR = Path(_TEAM_ROOT) / "tutors" / "CAPS"
+    ASSISTANTS_DIR = Path(_TEAM_ROOT) / "assistants" / "CAPS"
+else:
+    TUTORS_DIR = Path("lessons/tutors")
+    ASSISTANTS_DIR = Path("lessons/assistants")
 
 CONTENT_FILES = {
     # The tutor's topic intro, recorded as its own segment (owner decision
@@ -1779,7 +1793,7 @@ def speaker_names():
             real = get_field(text, "real_name")
             if real:
                 names.add(real.strip())
-    assistants = Path("lessons/assistants")
+    assistants = ASSISTANTS_DIR
     if assistants.is_dir():
         names.update(d.name.capitalize() for d in assistants.iterdir() if d.is_dir())
     else:

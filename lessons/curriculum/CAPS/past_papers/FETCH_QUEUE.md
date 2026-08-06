@@ -126,3 +126,89 @@ not indexed yet. To extend this queue, add their sessions/papers to the
 per-subject `index.json` files
 (`lessons/curriculum/CAPS/<subject>/past_papers/index.json`) and mirror the
 new entries here as additional table rows.
+
+## REFERENCE DOCUMENTS — refetch for the archive
+
+Audit 2026-08-06: earlier work sessions fetched the source PDFs below,
+extracted them to the JSON/Markdown artefacts in this tree, and then discarded
+the PDFs (the pre-2026-08-06 ignore rule), so the repo holds extractions with
+no source of record. Every source document is listed here with its recorded
+URL so the PDFs can be refetched into the tracked archive. URLs are copied
+verbatim from each artefact's own metadata (`source_url` /
+`paper_download_url` / `memo_download_url`); none are fabricated. All
+documents are © Department of Basic Education.
+
+### CAPS policy statements, FET Grades 10-12
+
+One PDF per subject ("Curriculum and Assessment Policy Statement, FET
+Grades 10-12"), extracted to `<subject>/curriculum/caps_gr10-12.json`.
+
+| Done | Subject | Source URL |
+|:---:|---|---|
+| [ ] | Accounting | <https://www.education.gov.za/LinkClick.aspx?fileticket=IIU4LUlZBFM%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Economics | <https://www.education.gov.za/LinkClick.aspx?fileticket=Lv-97xKN0eM%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Geography | <https://www.education.gov.za/LinkClick.aspx?fileticket=sdwEoyM0nY0%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Mathematical Literacy | <https://www.education.gov.za/LinkClick.aspx?fileticket=q8-SkGy43rw%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Mathematics | <https://www.education.gov.za/LinkClick.aspx?fileticket=uXLZcIa67rE%3d&tabid=570&portalid=0&mid=1558> |
+| [ ] | Physical Sciences | <https://www.education.gov.za/LinkClick.aspx?fileticket=uVcOcx728Y8%3d&tabid=570&portalid=0&mid=1558> |
+
+### Annual Teaching Plans, 2023/24 edition
+
+One PDF per subject per grade, extracted to `<subject>/syllabus/<grade>.json`
+(all `source_verified: 2026-07-26`, `atp_edition: 2023/24`).
+
+| Done | Subject / grade | Source URL |
+|:---:|---|---|
+| [ ] | Accounting Gr 10 | <https://www.education.gov.za/LinkClick.aspx?fileticket=xMiwoYjt1vw%3D&tabid=3205&portalid=0&mid=10736> |
+| [ ] | Accounting Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=qxPOjU7FXcA%3D&tabid=3205&portalid=0&mid=10752> |
+| [ ] | Accounting Gr 12 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.150%20ATP%202023-24%20Gr%2012%20Acc%20final.pdf> |
+| [ ] | Economics Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.210%20ATP%202023-24%20Gr%2010%20Eco%20final.pdf> |
+| [ ] | Economics Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=BjrxUz7iUNo%3D&tabid=3205&portalid=0&mid=10752> |
+| [ ] | Economics Gr 12 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.230%20ATP%202023-24%20Gr%2012%20Eco%20final.pdf> |
+| [ ] | Geography Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.380%20ATP%202023-24%20Gr%2010%20Geo%20final.pdf> |
+| [ ] | Geography Gr 11 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.390%20ATP%202023-24%20Gr%2011%20Geo%20final.pdf> |
+| [ ] | Geography Gr 12 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2012/1.400%20ATP%202023-24%20Gr%2012%20Geo%20final.pdf> |
+| [ ] | Mathematical Literacy Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.020%20ATP%202023-24%20Gr%2010%20Maths%20Lit%20final.pdf> |
+| [ ] | Mathematical Literacy Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=EqZ41-tXhWA%3D&tabid=3205&portalid=0&mid=10752> |
+| [ ] | Mathematical Literacy Gr 12 | <https://www.education.gov.za/LinkClick.aspx?fileticket=X4ZvlGUQ0vY%3D&tabid=3205&portalid=0&mid=10755> |
+| [ ] | Mathematics Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.580%20ATP%202023-24%20Gr%2010%20Maths%20final.pdf> |
+| [ ] | Mathematics Gr 11 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2011/1.590%20ATP%202023-24%20Gr%2011%20Maths%20final.pdf> |
+| [ ] | Mathematics Gr 12 | <https://www.education.gov.za/LinkClick.aspx?fileticket=_kS5tgxXQ0I%3D&tabid=3205&portalid=0&mid=10755> |
+| [ ] | Physical Sciences Gr 10 | <https://www.education.gov.za/Portals/0/Documents/Recovery%20plan%20page/2023%20ATPs/FET%20Content%20Subjects/Grade%2010/1.520%20ATP%202023-24%20Gr%2010%20Phys%20Sci%20final.pdf> |
+| [ ] | Physical Sciences Gr 11 | <https://www.education.gov.za/LinkClick.aspx?fileticket=6y_u-yjj97c%3D&tabid=3205&portalid=0&mid=10755> |
+| [ ] | Physical Sciences Gr 12 | <https://www.education.gov.za/LinkClick.aspx?fileticket=HofhdeKXMCM%3D&tabid=3205&portalid=0&mid=10752> |
+
+### Grade 12 Examination Guidelines, 2021 edition
+
+One PDF per subject, extracted to
+`<subject>/exam_guidelines/grade12_2021.json` + `grade12_2021.md`
+(all fetched 2026-07-27).
+
+| Done | Subject | Source URL |
+|:---:|---|---|
+| [ ] | Accounting | <https://www.education.gov.za/LinkClick.aspx?fileticket=Wrz2RY6cOEY%3d&tabid=2720&portalid=0&mid=9677> |
+| [ ] | Economics | <https://www.education.gov.za/LinkClick.aspx?fileticket=4EZMm9gdCdA%3d&tabid=2720&portalid=0&mid=9690> |
+| [ ] | Geography | <https://www.education.gov.za/LinkClick.aspx?fileticket=ZL0-Tn1aRmA%3d&tabid=2720&portalid=0&mid=9693> |
+| [ ] | Mathematical Literacy | <https://www.education.gov.za/LinkClick.aspx?fileticket=eW-HTUSjqck%3d&tabid=2720&portalid=0&mid=9705> |
+| [ ] | Mathematics | <https://www.education.gov.za/LinkClick.aspx?fileticket=gtM--fFe--Q%3d&tabid=2720&portalid=0&mid=9706> |
+| [ ] | Physical Sciences | <https://www.education.gov.za/LinkClick.aspx?fileticket=7rRU21y6sgg%3d&tabid=2720&portalid=0&mid=9709> |
+
+### Past papers transcribed before the PDF-tracking policy
+
+These were fetched, extracted to the listed `paper.json`, and discarded under
+the old ignore rule; the PDFs are absent from the repo. (The November 2024
+papers are NOT listed here — their PDFs are already tracked next to their
+`paperN.json` files, no refetch needed.)
+
+| Done | Paper (extracted to) | Question paper URL | Memo URL |
+|:---:|---|---|---|
+| [ ] | Mathematics Gr 11 P1 Nov 2017 (`past_papers/maths/grade11/2017/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
+| [ ] | Mathematics Gr 11 P1 Nov 2018 (`past_papers/maths/grade11/2018/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
+| [ ] | Physical Sciences Gr 11 P1 Nov 2018 (`past_papers/physical_sciences/grade11/2018/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
+| [ ] | Geography Gr 12 P2 Nov 2018 (`past_papers/geography/grade12/2018/paper.json`) | <https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> | <https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> |
+
+### Not a PDF (no refetch)
+
+`school_calendar/2026.json` records its source as the web page
+<https://www.gov.za/about-sa/school-calendar> — an HTML source, not a
+discarded PDF, so it is excluded from the refetch list.
