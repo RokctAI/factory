@@ -1,4 +1,4 @@
-If covalent, ionic and metallic are blurring into one soup of bond words, take a breath — this whole topic is one goal and three ways of reaching it.
+Hey, it's Thandi — if covalent, ionic and metallic are blurring into one soup of bond words, take a breath — this whole topic is one goal and three ways of reaching it.
 
 The goal: every atom wants a full outer shelf of electrons, like the noble gases who need nothing. That is the only reason any bond forms. Keep that sentence and every diagram in the topic makes sense.
 

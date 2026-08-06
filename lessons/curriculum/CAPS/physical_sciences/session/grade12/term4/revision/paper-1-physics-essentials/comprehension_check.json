@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 0,5 kg ball strikes a wall at 10 m·s⁻¹ and rebounds at 8 m·s⁻¹, with a contact time of 0,1 s. Show how the sign convention leads to the net force on the ball.",
+      "expected_answer": "Declare towards the wall as positive: vi = +10 m·s⁻¹, vf = −8 m·s⁻¹. Δp = m(vf − vi) = 0,5 × (−8 − 10) = −9 kg·m·s⁻¹. Fnet = Δp/Δt = −9/0,1 = −90 N, i.e. 90 N directed away from the wall. Without the declared convention the rebound velocity's negative sign — and the answer's direction — is lost."
+    },
+    {
+      "id": "cc2",
+      "question": "A battery of emf 18 V and internal resistance 0,5 Ω drives a 2 Ω resistor in series with two 4 Ω resistors in parallel. Outline the outside-in routine and give the main current and terminal voltage.",
+      "expected_answer": "Collapse the network: 4 Ω parallel pair gives 16/8 = 2 Ω; external resistance 2 + 2 = 4 Ω; total including internal resistance 4,5 Ω. Main current I = 18/4,5 = 4 A. Terminal voltage = emf − Ir = 18 − 4 × 0,5 = 16 V. Audit: series resistor takes 8 V, parallel pair 8 V, branch currents 2 A + 2 A = 4 A, matching the main current."
+    },
+    {
+      "id": "cc3",
+      "question": "In the photoelectric effect, explain the separate effects of increasing intensity and increasing frequency, using E = hf = W₀ + Ek(max).",
+      "expected_answer": "Frequency sets each photon's energy (E = hf): raising frequency raises Ek(max) = hf − W₀, so each ejected electron leaves with more energy; below threshold frequency no electrons are ejected at all. Intensity sets the number of photons per second: raising it ejects more electrons per second but leaves Ek(max) unchanged, since intensity does not appear in the equation. The effect demonstrates the particle nature of light."
+    }
+  ]
+}

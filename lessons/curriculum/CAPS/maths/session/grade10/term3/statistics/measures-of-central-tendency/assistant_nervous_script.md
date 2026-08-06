@@ -1,4 +1,4 @@
-If the words mean, median and mode are swimming into each other right now, pause and breathe — this topic is far kinder than it first sounds.
+Hey, it's Thandi — if the words mean, median and mode are swimming into each other right now, pause and breathe — this topic is far kinder than it first sounds.
 
 Keep the three pictures, and you keep everything. The mean is the POT: pour every value in, share it out equally. The median is the LINE: sort everyone, point at the middle person. The mode is the SHOW OF HANDS: the value that appears most. Every question in this whole topic is one of those three pictures in formal clothes.
 

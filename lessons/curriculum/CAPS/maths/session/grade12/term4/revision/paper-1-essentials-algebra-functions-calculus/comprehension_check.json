@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve √(x+5) = x − 1 and explain why the check against the original equation is compulsory.",
+      "expected_answer": "Squaring gives x + 5 = x² − 2x + 1, so x² − 3x − 4 = 0, giving x = 4 or x = −1. Checking: x = 4 gives √9 = 3 = 4 − 1, valid; x = −1 gives √4 = 2 but −1 − 1 = −2, rejected since a square root is never negative. Squaring introduces candidate solutions that the original equation must vet, so the check carries a mark."
+    },
+    {
+      "id": "cc2",
+      "question": "For the series 128 + 64 + 32 + …, state why the sum to infinity exists, calculate it, and find the smallest n for which Sₙ exceeds 255.",
+      "expected_answer": "a = 128, r = ½, and since −1 < r < 1 the series converges. S∞ = 128 ÷ (1 − ½) = 256. Sₙ = 256(1 − (½)ⁿ) > 255 forces (½)ⁿ < 1/256 = (½)⁸, so n > 8; the smallest n is 9 (S₉ = 255,5)."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the full anatomy of f(x) = x³ − 6x² + 9x as an exam answer: intercepts, turning points and inflection point.",
+      "expected_answer": "f(x) = x(x − 3)², so x-intercepts at 0 and 3, with the double root at 3 touching the axis. f′(x) = 3x² − 12x + 9 = 0 gives x = 1 and x = 3: local maximum (1; 4), local minimum (3; 0). The inflection point is at x = 2, y = 2, midway between the turning points."
+    }
+  ]
+}

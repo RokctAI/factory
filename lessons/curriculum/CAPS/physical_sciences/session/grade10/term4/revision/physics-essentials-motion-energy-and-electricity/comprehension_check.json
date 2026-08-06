@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A car accelerates from rest at 2 m·s⁻² for 5 s. Calculate its final velocity and displacement, then verify the displacement using the velocity-time graph.",
+      "expected_answer": "v = u + at = 0 + 2 × 5 = 10 m·s⁻¹. Δx = ut + ½at² = 0 + ½ × 2 × 25 = 25 m. On the velocity-time graph the motion is a straight line from 0 to 10 m·s⁻¹ over 5 s; the area under it is a triangle: ½ × 5 × 10 = 25 m — the same answer by a second route, which confirms the calculation."
+    },
+    {
+      "id": "cc2",
+      "question": "A 3 kg ball is dropped from 10 m (ignore air resistance, g = 9,8 m·s⁻²). Use the energy ledger to find its mechanical energy at the top, its kinetic energy halfway down, and its speed at the ground — and explain why a heavier ball would land at the same speed.",
+      "expected_answer": "At the top: Ep = mgh = 3 × 9,8 × 10 = 294 J, Ek = 0, so EM = 294 J, constant for the whole fall. At 5 m: Ep = 147 J, so Ek = 294 − 147 = 147 J. At the ground: Ek = 294 J, so ½ × 3 × v² = 294 gives v² = 196 and v = 14 m·s⁻¹. Setting ½mv² = mgh, the mass cancels: v² = 2gh — the landing speed is independent of mass, so any mass dropped from 10 m lands at 14 m·s⁻¹."
+    },
+    {
+      "id": "cc3",
+      "question": "A 4 Ω and an 8 Ω resistor are connected to a 12 V battery, first in series and then in parallel. Calculate every current and potential difference in both patterns and state the audit check for each.",
+      "expected_answer": "Series: R = 4 + 8 = 12 Ω, I = 12 ÷ 12 = 1 A everywhere; potential differences 1 × 4 = 4 V and 1 × 8 = 8 V; audit: 4 + 8 = 12 V, the emf. Parallel: each branch has the full 12 V; branch currents 12 ÷ 4 = 3 A and 12 ÷ 8 = 1,5 A; total 4,5 A; effective resistance 12 ÷ 4,5 = 2,67 Ω, smaller than the smallest branch; audit: branch currents sum to the battery current."
+    }
+  ]
+}

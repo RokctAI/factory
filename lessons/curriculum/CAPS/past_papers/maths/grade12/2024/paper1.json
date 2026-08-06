@@ -1,0 +1,522 @@
+{
+  "_comment": [
+    "DBE Grade 12 Mathematics P1, November 2024. Question paper is a scanned",
+    "PDF (no text layer): question wording transcribed by reading the rendered",
+    "pages. Memo answers/working come from the marking guidelines' real text",
+    "layer (pdftotext), cross-checked against recomputation. The memo is",
+    "bilingual (Eng/Afr); only the English content is transcribed here.",
+    "solution_method is the method the MEMO uses to solve each question.",
+    "memo_answer is the memo's final answer; memo_working summarises the",
+    "memo's primary method (alternative memo methods noted in memo_note).",
+    "Figures are described in bracketed [Figure: ...] notes inside text."
+  ],
+  "paper_id": "dbe_maths_g12_p1_2024_nov",
+  "source": "Department of Basic Education",
+  "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations.aspx",
+  "paper_file": "paper1.pdf",
+  "memo_file": "paper1_memo.pdf",
+  "copyright": "© Department of Basic Education, 2024. Reproduced for educational use with attribution.",
+  "subject": "Maths",
+  "grade": 12,
+  "paper": "P1",
+  "session": "November 2024",
+  "language": "English",
+  "total_marks": 150,
+  "questions": [
+    {
+      "ref": "Q1.1.1",
+      "text": "Solve for x:  x(x - 3) = 0",
+      "marks": 2,
+      "topic": "Equations and Inequalities",
+      "solution_method": "zero_product_property",
+      "memo_answer": "x = 0 or x = 3",
+      "memo_working": "x(x-3)=0 -> x=0 or x=3",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.1.2",
+      "text": "Solve for x:  2x^2 + 1 = 4x  (correct to TWO decimal places)",
+      "marks": 4,
+      "topic": "Equations and Inequalities",
+      "solution_method": "quadratic_formula",
+      "memo_answer": "x = 1,71 or x = 0,29",
+      "memo_working": "Standard form 2x^2 - 4x + 1 = 0; x = (-(-4) ± sqrt((-4)^2 - 4(2)(1)))/(2(2)); x = 1,71 or x = 0,29. Answer only: 4/4",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.1.3",
+      "text": "Solve for x:  x^2 - 2x - 3 > 0",
+      "marks": 4,
+      "topic": "Equations and Inequalities",
+      "solution_method": "quadratic_inequality",
+      "memo_answer": "x < -1 or x > 3  OR  x ∈ (-∞ ; -1) ∪ (3 ; ∞)",
+      "memo_working": "(x-3)(x+1) > 0; critical values x = 3 or x = -1; sign analysis -> x < -1 or x > 3. Answer only: 3/4",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.1.4",
+      "text": "Solve for x:  2^(2x) - 2^(x+2) - 32 = 0",
+      "marks": 5,
+      "topic": "Equations and Inequalities",
+      "solution_method": "exponential_equation_substitution",
+      "memo_answer": "x = 3",
+      "memo_working": "2^(2x) - 2^2·2^x - 32 = 0; (2^x - 8)(2^x + 4) = 0; 2^x = 8 or 2^x = -4 (no solution); 2^x = 2^3 -> x = 3",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.1.5",
+      "text": "Solve for x:  sqrt(-2x + 4) - x = 2",
+      "marks": 4,
+      "topic": "Equations and Inequalities",
+      "solution_method": "surd_equation_squaring",
+      "memo_answer": "x = 0 (x = -6 rejected)",
+      "memo_working": "sqrt(-2x+4) = 2 + x; square both sides: -2x + 4 = 4 + 4x + x^2; x^2 + 6x = 0; x(x+6) = 0; x = 0 or x = -6 (rejected on checking)",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.2",
+      "text": "Solve for x and y simultaneously:  2x + y = 3  and  y^2 + xy = 2",
+      "marks": 5,
+      "topic": "Equations and Inequalities",
+      "solution_method": "simultaneous_substitution",
+      "memo_answer": "x = 7/2 or x = 1; y = -4 or y = 1",
+      "memo_working": "y = 3 - 2x; substitute into (2): (3-2x)^2 + (3-2x)x = 2; 2x^2 - 9x + 7 = 0; (2x-7)(x-1) = 0; x = 7/2 or x = 1; y = -4 or y = 1",
+      "memo_note": "Alternative memo method solves for y first: y^2 + 3y - 4 = 0 giving y = -4 or y = 1.",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.3",
+      "text": "Consider the product (1 + 1/2)(1 + 1/3)(1 + 1/4)... Each factor in the product is of the form (1 + 1/n) for n >= 2. Determine ALL the values of n for which the product will be an integer value.",
+      "marks": 3,
+      "topic": "Equations and Inequalities",
+      "solution_method": "telescoping_product",
+      "memo_answer": "n ∈ {3; 5; 7; ...}; n must be an odd number, greater than 2",
+      "memo_working": "Product = (3/2)(4/3)(5/4)...((n+1)/n) = (n+1)/2. Integer when n+1 is divisible by 2, i.e. n odd, n > 2.",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.1.1",
+      "text": "The first term of an arithmetic series is 7. The common difference of this series is 5 and the series contains 20 terms. Calculate the sum of this series.",
+      "marks": 2,
+      "topic": "Number Patterns, Sequences and Series",
+      "solution_method": "arithmetic_series_sum",
+      "memo_answer": "S20 = 1 090",
+      "memo_working": "Sn = n/2[2a + (n-1)d]; S20 = 20/2[2(7) + (20-1)(5)] = 1 090",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.1.2",
+      "text": "The original arithmetic series is extended to 75 terms. The sum of these 75 terms is 14 400. Using sigma notation, write down an equation for the sum of the terms added to the original series.",
+      "marks": 4,
+      "topic": "Number Patterns, Sequences and Series",
+      "solution_method": "sigma_notation",
+      "memo_answer": "Sum from n=21 to 75 of (5n + 2) = 13 310",
+      "memo_working": "Tn = 7 + (n-1)(5) = 5n + 2; S75 - S20 = 14 400 - 1 090 = 13 310; therefore Σ_{n=21}^{75} (5n + 2) = 13 310",
+      "memo_note": "Alternative memo answer: Σ_{n=1}^{55} (5n + 102) = 13 310, using Tn = 102 + 5n for the added terms.",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.2.1",
+      "text": "The sequence of the first differences of a quadratic pattern is: 1 ; 3 ; 5 ; ... If T99 of this quadratic pattern is 9 632, calculate the value of T98.",
+      "marks": 3,
+      "topic": "Number Patterns, Sequences and Series",
+      "solution_method": "first_differences",
+      "memo_answer": "T98 = 9 437",
+      "memo_working": "First differences: Tn = 2n - 1; 98th first difference = 2(98) - 1 = 195; T98 = 9 632 - 195 = 9 437",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.2.2",
+      "text": "If it is further given that the third term of the quadratic pattern is 32, determine the general term, Tn, of the quadratic pattern.",
+      "marks": 5,
+      "topic": "Number Patterns, Sequences and Series",
+      "solution_method": "quadratic_pattern_general_term",
+      "memo_answer": "Tn = n^2 - 2n + 29",
+      "memo_working": "Pattern 28 ; 29 ; 32 with first differences 1 ; 3 ; 5 ; 7 and second difference 2. 2a = 2 -> a = 1; 3a + b = 1 -> b = -2; T3 = 9a + 3b + c = 32 -> c = 29 (or 1 - 2 + c = 28 -> c = 29). Tn = n^2 - 2n + 29",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.1",
+      "text": "A circle with radius 6 cm is drawn. A second, smaller circle is drawn through the centre of the first circle and also touches the first circle internally, as shown in the diagram. A third, smaller circle is drawn through the centre of the second circle and touches the second circle internally. The process of drawing circles continues and forms a geometric pattern. [Figure: three nested circles, each smaller circle passing through the centre of the previous circle and touching it internally at the top.] Write down the radius of the 3rd circle.",
+      "marks": 2,
+      "topic": "Number Patterns, Sequences and Series",
+      "solution_method": "geometric_sequence_term",
+      "memo_answer": "1,5 cm",
+      "memo_working": "2nd circle: 6/2 = 3 cm; 3rd circle: 3/2 = 1,5 cm  (or 6(1/2)^2 = 1,5)",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.2",
+      "text": "Calculate the sum of the areas of the first 10 circles.",
+      "marks": 4,
+      "topic": "Number Patterns, Sequences and Series",
+      "solution_method": "geometric_series_sum",
+      "memo_answer": "S10 = 150,80",
+      "memo_working": "Areas: 36π ; 9π ; 9π/4 ; ... with a = 36π, r = 1/4; S10 = 36π((1/4)^10 - 1)/(1/4 - 1) = 150,80",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.3",
+      "text": "Which circle has a diameter of 3/128 cm?",
+      "marks": 4,
+      "topic": "Number Patterns, Sequences and Series",
+      "solution_method": "geometric_sequence_solve_n",
+      "memo_answer": "n = 10 (the 10th circle)",
+      "memo_working": "radius = (1/2)(3/128) = 3/256; 3/256 = 6(1/2)^(n-1); (1/512) = (1/2)^(n-1); (1/2)^9 = (1/2)^(n-1); n - 1 = 9; n = 10",
+      "memo_note": "Alternative memo method works with diameters 12 ; 6 ; 3 ; ... and 3/128 = 12(1/2)^(n-1).",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.1",
+      "text": "Given: f(x) = a^x - 1 for a > 0. B(2 ; -5/9) is a point on f. Calculate the value of a.",
+      "marks": 2,
+      "topic": "Functions",
+      "solution_method": "substitute_point_solve_parameter",
+      "memo_answer": "a = 2/3",
+      "memo_working": "-5/9 = a^2 - 1; a^2 = 4/9; a = 2/3",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.2",
+      "text": "Write down the range of f.",
+      "marks": 1,
+      "topic": "Functions",
+      "solution_method": "range_of_exponential",
+      "memo_answer": "y > -1  OR  y ∈ (-1 ; ∞)",
+      "memo_working": "Horizontal asymptote y = -1; exponential part positive, so y > -1",
+      "checkable": false
+    },
+    {
+      "ref": "Q4.3",
+      "text": "Sketch the graph of f. Clearly show the intercepts with the axes and asymptotes, if any.",
+      "marks": 3,
+      "topic": "Functions",
+      "solution_method": "sketch_exponential_graph",
+      "memo_answer": "Decreasing exponential through (0 ; 0) with horizontal asymptote y = -1",
+      "memo_working": "Memo sketch awards: intercept (0 ; 0); asymptote y = -1; decreasing shape",
+      "checkable": false
+    },
+    {
+      "ref": "Q4.4",
+      "text": "It is further given that C is a point on f at y = 19/8. Determine the coordinates of C', the image of C, when C is reflected about the line y = x.",
+      "marks": 3,
+      "topic": "Functions",
+      "solution_method": "solve_exponential_then_reflect",
+      "memo_answer": "C'(19/8 ; -3)",
+      "memo_working": "19/8 = (2/3)^x - 1; (2/3)^x = 27/8; (3/2)^3 = (3/2)^(-x); x = -3; C(-3 ; 19/8); reflection about y = x gives C'(19/8 ; -3)",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.1",
+      "text": "Sketched below is the graph of f(x) = a/(x + p) + q having the domain (-∞ ; 1) ∪ (1 ; ∞). The graph of f cuts the y-axis at (0 ; 1). A line of symmetry of f is given by g(x) = x - 3. [Figure: hyperbola with vertical asymptote x = 1 (dotted) and a horizontal asymptote below the x-axis (dotted); left branch passes through (0 ; 1); increasing line g crosses both asymptotes.] Write down the value of p.",
+      "marks": 1,
+      "topic": "Functions",
+      "solution_method": "read_asymptote_from_domain",
+      "memo_answer": "p = -1",
+      "memo_working": "Vertical asymptote x = 1 (from the domain), so p = -1",
+      "checkable": false
+    },
+    {
+      "ref": "Q5.2",
+      "text": "Determine the equation of the horizontal asymptote of f.",
+      "marks": 2,
+      "topic": "Functions",
+      "solution_method": "symmetry_line_through_asymptote_intersection",
+      "memo_answer": "y = -2",
+      "memo_working": "Axis of symmetry passes through the point of intersection of the asymptotes: y = g(1) = 1 - 3 = -2. Answer only: 2/2",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.3",
+      "text": "Calculate the value of a.",
+      "marks": 2,
+      "topic": "Functions",
+      "solution_method": "substitute_point_solve_parameter",
+      "memo_answer": "a = -3",
+      "memo_working": "Substitute (0 ; 1): 1 = a/(0 - 1) - 2; 3 = a/(-1); a = -3",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.4",
+      "text": "For which values of x is f(x) >= 0?",
+      "marks": 3,
+      "topic": "Functions",
+      "solution_method": "hyperbola_inequality",
+      "memo_answer": "x ∈ [-1/2 ; 1)  OR  -1/2 <= x < 1",
+      "memo_working": "x-intercept: -3/(x-1) - 2 = 0; -3 = 2x - 2; x = -1/2; f >= 0 between the x-intercept and the vertical asymptote",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.5",
+      "text": "Graph f undergoes a transformation to h where: (a) the domain and range of h are the same as that of f; (b) h'(x), the derivative of h, is negative on its domain. Describe a possible transformation that f could have undergone to result in h.",
+      "marks": 2,
+      "topic": "Functions",
+      "solution_method": "describe_transformation",
+      "memo_answer": "f is reflected in the y-axis, then translated 2 units to the right",
+      "memo_working": "Any one of: reflection in y-axis then translation 2 units right; reflection in x-axis then translation 4 units down; reflection about the line x = 1; reflection about the line y = -2",
+      "checkable": false
+    },
+    {
+      "ref": "Q6.1",
+      "text": "In the diagram below, the graphs of f(x) = -x^2 + 4x + 5 and g, a straight line, are drawn. C(3 ; 8) is a point of intersection of f and g. EH is drawn parallel to the y-axis, with E a point on f and H a point on g. [Figure: concave-down parabola f with x-intercepts A (negative) and D (positive), turning point B, y-intercept 5; increasing line g through A and C(3 ; 8); vertical dashed segment EH between the curves left of C.] Calculate the coordinates of B, the turning point of f.",
+      "marks": 3,
+      "topic": "Functions",
+      "solution_method": "turning_point_formula",
+      "memo_answer": "B(2 ; 9)",
+      "memo_working": "x = -4/(2(-1)) = 2 (or f'(x) = -2x + 4 = 0 -> x = 2); y = -(2)^2 + 4(2) + 5 = 9",
+      "checkable": true
+    },
+    {
+      "ref": "Q6.2",
+      "text": "Show that the equation of the line through A and C is given by g(x) = 2x + 2.",
+      "marks": 3,
+      "topic": "Functions",
+      "solution_method": "straight_line_through_two_points",
+      "memo_answer": "g(x) = 2x + 2",
+      "memo_working": "x^2 - 4x - 5 = 0; (x-5)(x+1) = 0; A(-1 ; 0); m = (8-0)/(3+1) = 2; y - 0 = 2(x + 1); y = 2x + 2",
+      "checkable": true
+    },
+    {
+      "ref": "Q6.3",
+      "text": "Calculate the maximum length of EH for f > g.",
+      "marks": 4,
+      "topic": "Functions",
+      "solution_method": "maximise_vertical_distance",
+      "memo_answer": "Maximum length of EH = 4",
+      "memo_working": "EH = -x^2 + 4x + 5 - (2x + 2) = -x^2 + 2x + 3; max at -2x + 2 = 0 -> x = 1; EH = -(1)^2 + 2(1) + 3 = 4. Answer only: 1/4",
+      "checkable": true
+    },
+    {
+      "ref": "Q6.4",
+      "text": "Given: k(x) = f(x + m) = -x^2 - 2mx - m^2 + 4x + 4m + 5. Determine the value of m such that g is a tangent to k.",
+      "marks": 5,
+      "topic": "Functions",
+      "solution_method": "tangency_condition_derivative",
+      "memo_answer": "m = -2",
+      "memo_working": "k'(x) = -2x - 2m + 4 = 2 (gradient of g); x = 1 - m; set k(1-m) = g(1-m): -(1-m)^2 - 2m(1-m) - m^2 + 4(1-m) + 4m + 5 = 2(1-m) + 2; -2m - 4 = 0; m = -2. Answer only: 0/5",
+      "memo_note": "Alternative memo methods: (1) equate k and g, set discriminant of x^2 + (2m-2)x + m^2 - 4m - 3 = 0 to zero -> 8m + 16 = 0 -> m = -2; (2) f'(x) = 2 at x = 1, point (1 ; 8), horizontal translation 2 units right -> m = -2.",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.1",
+      "text": "Mary's grandparents deposited R5 000 into a savings account on the day that she was born. The account pays interest at a rate of 6,8% p.a., compounded quarterly. Calculate the accumulated amount in this account on Mary's 16th birthday.",
+      "marks": 3,
+      "topic": "Finance, Growth and Decay",
+      "solution_method": "compound_interest",
+      "memo_answer": "R14 706,56",
+      "memo_working": "A = P(1 + i)^n = 5 000(1 + 6,8/400)^64 = R14 706,56",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.2",
+      "text": "After 4 years, the value of a printer was half of its original value. Determine the rate at which the value of the printer depreciated over this period, if depreciation was calculated according to a straight-line method.",
+      "marks": 2,
+      "topic": "Finance, Growth and Decay",
+      "solution_method": "straight_line_depreciation",
+      "memo_answer": "r = 12,5%",
+      "memo_working": "A = P(1 - in); (1/2)P = P(1 - 4i); i = 1/8; r = 12,5%  (or r = 50%/4 = 12,5%)",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.3.1",
+      "text": "Tshepo was granted a loan of R100 000 on 1 March 2022 at an interest rate of 13,5% p.a., compounded monthly. Tshepo agreed to repay the loan over 5 years in monthly instalments of R2 300,98, starting on 1 April 2022. Calculate the total interest that he will pay over the 5 years.",
+      "marks": 2,
+      "topic": "Finance, Growth and Decay",
+      "solution_method": "total_interest_on_annuity",
+      "memo_answer": "R38 058,80",
+      "memo_working": "Total paid: 2 300,98 × 60 = R138 058,80; interest: 138 058,80 - 100 000 = R38 058,80",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.3.2",
+      "text": "Tshepo paid R22 300,98 (his monthly instalment and an additional R20 000) on 1 March 2024 into the loan account. He continues to pay the original monthly instalment thereafter. How many months earlier will Tshepo repay the loan?",
+      "marks": 7,
+      "topic": "Finance, Growth and Decay",
+      "solution_method": "annuity_outstanding_balance_solve_n",
+      "memo_answer": "12 months earlier",
+      "memo_working": "Balance after 2 years (36 payments left): P = 2 300,98[1 - (1 + 13,5/1200)^(-36)]/(13,5/1200) = R67 804,94; after extra payment: 67 804,94 - 20 000 = R47 804,94; solve 47 804,94 = 2 300,98[1 - 1,01125^(-n)]/0,01125; 0,766 = 1,01125^(-n); n = 23,83, so 24 payments needed instead of 36 -> 12 months earlier",
+      "memo_note": "Alternative memo methods use A - F (outstanding balance R67 805,20) or set the whole loan equal to the present values of the payments; all give 12 months earlier.",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.1.1",
+      "text": "Determine:  d/dx [3x - 5x^2]",
+      "marks": 2,
+      "topic": "Differential Calculus",
+      "solution_method": "power_rule",
+      "memo_answer": "3 - 10x",
+      "memo_working": "d/dx[3x - 5x^2] = 3 - 10x",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.1.2",
+      "text": "Determine g'(x) if g(x) = 2/x^2 - cuberoot(x^7)",
+      "marks": 4,
+      "topic": "Differential Calculus",
+      "solution_method": "power_rule_negative_fractional_exponents",
+      "memo_answer": "g'(x) = -4x^(-3) - (7/3)x^(4/3)",
+      "memo_working": "g(x) = 2x^(-2) - x^(7/3); g'(x) = -4x^(-3) - (7/3)x^(4/3)",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.2",
+      "text": "Determine the equation of the tangent to f(x) = x^3 - 4x^2 + 2x + 3 at x = 2.",
+      "marks": 3,
+      "topic": "Differential Calculus",
+      "solution_method": "tangent_line_at_point",
+      "memo_answer": "y = -2x + 3",
+      "memo_working": "f'(x) = 3x^2 - 8x + 2; m = f'(2) = -2; y = f(2) = -1; y + 1 = -2(x - 2); y = -2x + 3",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.3.1",
+      "text": "Given: f(x) = -6x^2. Determine f'(x) from first principles.",
+      "marks": 5,
+      "topic": "Differential Calculus",
+      "solution_method": "first_principles",
+      "memo_answer": "f'(x) = -12x",
+      "memo_working": "f'(x) = lim_{h->0} [f(x+h) - f(x)]/h = lim_{h->0} [-6(x+h)^2 + 6x^2]/h = lim_{h->0} (-12xh - 6h^2)/h = lim_{h->0} (-12x - 6h) = -12x",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.3.2",
+      "text": "Write down how you will restrict the domain of f such that f^(-1), the inverse of f, is a function.",
+      "marks": 1,
+      "topic": "Functions",
+      "solution_method": "restrict_domain_for_inverse",
+      "memo_answer": "x >= 0  OR  x <= 0",
+      "memo_working": "Either restriction is accepted",
+      "checkable": false
+    },
+    {
+      "ref": "Q8.3.3",
+      "text": "Determine the equation of f^(-1) for f^(-1)(x) <= 0. Write your answer in the form y = ...",
+      "marks": 3,
+      "topic": "Functions",
+      "solution_method": "inverse_of_parabola",
+      "memo_answer": "y = -sqrt(-x/6), x <= 0",
+      "memo_working": "y = -6x^2; swap x and y: x = -6y^2; y^2 = -x/6; y = ±sqrt(-x/6); take y = -sqrt(-x/6) for x <= 0",
+      "checkable": true
+    },
+    {
+      "ref": "Q9.1",
+      "text": "A(1 ; 9) and B(5/2 ; 8) are the turning points of graph f below. C(0 ; 7) is the y-intercept of f. [Figure: cubic curve f rising steeply from below the x-axis on the left, through C(0 ; 7), local maximum at A(1 ; 9), local minimum at B(5/2 ; 8), then increasing.] For which values of x is f decreasing?",
+      "marks": 2,
+      "topic": "Differential Calculus",
+      "solution_method": "decreasing_between_turning_points",
+      "memo_answer": "1 < x < 5/2",
+      "memo_working": "f decreases between the local maximum and local minimum",
+      "checkable": false
+    },
+    {
+      "ref": "Q9.2",
+      "text": "Write down the x-intercepts of f', the derivative of f.",
+      "marks": 2,
+      "topic": "Differential Calculus",
+      "solution_method": "derivative_zero_at_turning_points",
+      "memo_answer": "(1 ; 0) and (5/2 ; 0)",
+      "memo_working": "f'(x) = 0 at the turning points: x = 1 and x = 5/2",
+      "checkable": false
+    },
+    {
+      "ref": "Q9.3",
+      "text": "For which values of x will f be concave up?",
+      "marks": 2,
+      "topic": "Differential Calculus",
+      "solution_method": "concavity_from_inflection_point",
+      "memo_answer": "Concave up for x > 7/4",
+      "memo_working": "Point of inflection midway between turning points: (5/2 + 1)/2 = 7/4; concave up for x > 7/4",
+      "checkable": true
+    },
+    {
+      "ref": "Q9.4",
+      "text": "Determine the value of k for which y = f(x) + k will have THREE positive x-intercepts.",
+      "marks": 2,
+      "topic": "Differential Calculus",
+      "solution_method": "vertical_shift_root_analysis",
+      "memo_answer": "-9 < k < -8",
+      "memo_working": "The x-axis must lie strictly between the local minimum value 8 and local maximum value 9 after shifting: -9 < k < -8",
+      "checkable": false
+    },
+    {
+      "ref": "Q10.1",
+      "text": "A cyclist rode from town P and stopped at town T. The speed (in km/h) at which this cyclist rode, is represented by the equation s'(t) = -3t^2 + 18t. NOTE: Speed is the rate of change in distance with respect to time. Calculate the maximum speed that the cyclist reached on this ride.",
+      "marks": 3,
+      "topic": "Differential Calculus",
+      "solution_method": "optimisation_set_derivative_zero",
+      "memo_answer": "27 km/h",
+      "memo_working": "-6t + 18 = 0; t = 3; s'(3) = -3(3)^2 + 18(3) = 27",
+      "checkable": true
+    },
+    {
+      "ref": "Q10.2",
+      "text": "Calculate the distance between town P and town T.",
+      "marks": 5,
+      "topic": "Differential Calculus",
+      "solution_method": "antiderivative_of_rate",
+      "memo_answer": "108 km",
+      "memo_working": "-3t^2 + 18t = 0; -3t(t - 6) = 0; t = 0 or t = 6; s(t) = at^3 + bt^2 with s'(t) = 3at^2 + 2bt: 3a = -3, 2b = 18 -> a = -1, b = 9; s(t) = -t^3 + 9t^2; s(6) = -(6)^3 + 9(6)^2 = 108",
+      "checkable": true
+    },
+    {
+      "ref": "Q11.1",
+      "text": "A certain number of learners are sitting for examinations in Mathematics, Tourism and Geography. All these learners sit for at least one of these examinations. The total number of learners who sit for Mathematics (M), is 22. The total number of learners sitting for Tourism (T), is 16. The total number of learners sitting for Geography (G), is 18. 5 learners sit for Mathematics and Tourism, but not Geography. 4 learners sit for Mathematics and Geography, but not Tourism. 3 learners sit for Tourism and Geography, but not Mathematics. 6 learners sit for only Tourism. Draw a Venn diagram to represent ALL the learners sitting for these examinations.",
+      "marks": 3,
+      "topic": "Probability",
+      "solution_method": "venn_diagram_three_events",
+      "memo_answer": "Venn diagram with: M only = 11, M∩T only = 5, T only = 6, M∩T∩G = 2, M∩G only = 4, T∩G only = 3, G only = 9 (total 40)",
+      "memo_working": "All three: 16 - 6 - 5 - 3 = 2; M only: 22 - 5 - 2 - 4 = 11; G only: 18 - 4 - 2 - 3 = 9",
+      "checkable": true
+    },
+    {
+      "ref": "Q11.2",
+      "text": "Calculate the probability that a learner, chosen at random, will sit for examinations in at least TWO of the subjects.",
+      "marks": 2,
+      "topic": "Probability",
+      "solution_method": "probability_from_venn",
+      "memo_answer": "P(at least two subjects) = 14/40 = 7/20 = 0,35",
+      "memo_working": "P = (4 + 2 + 5 + 3)/40 = 14/40 = 0,35",
+      "checkable": true
+    },
+    {
+      "ref": "Q11.3",
+      "text": "Determine if the events: sitting for examinations in Mathematics and sitting for examinations in Tourism are independent. Support your answer with the necessary calculations.",
+      "marks": 4,
+      "topic": "Probability",
+      "solution_method": "independence_test",
+      "memo_answer": "Events M and T are not independent",
+      "memo_working": "P(M) × P(T) = (22/40)(16/40) = 11/50 = 0,22; P(M and T) = 7/40 = 0,175; P(M) × P(T) ≠ P(M and T), so not independent",
+      "checkable": true
+    },
+    {
+      "ref": "Q12.1",
+      "text": "A company generates a 4-character code using the 26 letters of the alphabet and the 10 digits, from 0 to 9. The code is in the form: letter digit letter digit. Determine how many different codes can be formed if letters and digits may be repeated.",
+      "marks": 2,
+      "topic": "Counting and Probability",
+      "solution_method": "fundamental_counting_principle",
+      "memo_answer": "67 600",
+      "memo_working": "26 × 10 × 26 × 10 = 67 600",
+      "checkable": true
+    },
+    {
+      "ref": "Q12.2",
+      "text": "Determine how many different codes can be formed if: the letters D, F, I, Q, U and V may NOT be used; the code may NOT start with a W or a Z; letters or digits may NOT be repeated; the code ends with an odd digit.",
+      "marks": 4,
+      "topic": "Counting and Probability",
+      "solution_method": "fundamental_counting_principle_with_restrictions",
+      "memo_answer": "15 390",
+      "memo_working": "18 × 9 × 19 × 5 = 15 390",
+      "checkable": true
+    },
+    {
+      "ref": "Q12.3",
+      "text": "The company wishes to increase the number of 4-character codes formed in QUESTION 12.2 by allowing the letters D, F, I, Q, U and V to be used. Calculate the percentage increase in the number of different codes that can now be formed.",
+      "marks": 2,
+      "topic": "Counting and Probability",
+      "solution_method": "percentage_increase",
+      "memo_answer": "75,44%",
+      "memo_working": "24 × 9 × 25 × 5 = 27 000; (27 000 - 15 390)/15 390 × 100 = 75,44%",
+      "checkable": true
+    }
+  ]
+}

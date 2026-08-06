@@ -1,0 +1,7 @@
+Hey, it's Mandy — Paper 2 has a reputation, mostly because of that geometry rider at the end. Let me shrink the whole paper down to its true size.
+
+Four territories. Statistics, twenty marks: your calculator does the heavy lifting — mean, standard deviation, the five-number summary — and your job is the sentence with units and the outlier fence shown. Analytical geometry, forty: FOUR formulas, all printed on the sheet, plus one circle trick — complete the square, read the centre, and remember tangent meets radius at ninety degrees. Trigonometry, fifty: the compound angles are printed on the sheet too; you bring the special values, the quadrant signs, and the reflex that says general solution first, interval second. Euclidean geometry, forty: a short list of theorems, each with its memo wording, and the pincer method — givens whisper forwards, the target whispers backwards, and the proof is where they meet.
+
+Notice what is NOT on that list: nothing unseen, nothing unpractised, nothing beyond you.
+
+So the plan is simple. Calculator in degree mode, always. Reasons word-perfect — drill them like vocabulary, because that is what they are. Every diagram labelled with every given before any working starts. Exact values kept exact, rounding saved for the final line. And when a rider digs in its heels, a margin mark and a calm walk to the next twenty routine marks. You have done every one of these methods before, for marks, this very year. You've got this!

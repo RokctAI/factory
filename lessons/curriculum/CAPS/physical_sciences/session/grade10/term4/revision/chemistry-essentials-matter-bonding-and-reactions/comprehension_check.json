@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what isotopes are using chlorine-35 and chlorine-37, and show how the relative atomic mass of 35,5 arises from their natural abundances of roughly 75% and 25%.",
+      "expected_answer": "Isotopes are atoms of the same element (same number of protons, so same atomic number and chemistry) with different numbers of neutrons. Chlorine-35 has 17 protons and 18 neutrons; chlorine-37 has 17 protons and 20 neutrons. The relative atomic mass is the weighted average of the isotope masses: 0,75 × 35 + 0,25 × 37 = 26,25 + 9,25 = 35,5 — which is why the periodic table shows a non-whole number for chlorine."
+    },
+    {
+      "id": "cc2",
+      "question": "Balance the equation for methane burning in oxygen, state the one rule that may never be broken while balancing, and run the closing atom audit.",
+      "expected_answer": "CH₄ + 2O₂ → CO₂ + 2H₂O. The unbreakable rule: only coefficients may be changed, never subscripts — changing a subscript changes the identity of the substance (H₂O to H₂O₂ turns water into hydrogen peroxide). Audit: carbon 1 = 1; hydrogen 4 = 4; oxygen 2 × 2 = 4 on the left and 2 + 2 = 4 on the right. Mass is conserved because atoms are only rearranged, never created or destroyed."
+    },
+    {
+      "id": "cc3",
+      "question": "Convert 25 g of CaCO₃ to moles, calculate the concentration when 0,2 mol of a salt is dissolved to make 500 cm³ of solution, and state the gas volume of 0,5 mol at STP.",
+      "expected_answer": "M(CaCO₃) = 40 + 12 + 3 × 16 = 100 g·mol⁻¹, so n = 25 ÷ 100 = 0,25 mol. For the solution, first convert the volume: 500 cm³ = 0,5 dm³; then c = n ÷ V = 0,2 ÷ 0,5 = 0,4 mol·dm⁻³. At STP one mole of any gas occupies 22,4 dm³, so 0,5 mol occupies 0,5 × 22,4 = 11,2 dm³. Every conversion passes through moles — the central currency."
+    }
+  ]
+}

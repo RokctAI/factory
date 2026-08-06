@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Convert 8 g of NaOH to moles, then to a concentration when dissolved to make 500 cm³ of solution, and state the volume of gas that the same number of moles would occupy at STP. Name the discipline these three conversions share.",
+      "expected_answer": "M(NaOH) = 23 + 16 + 1 = 40 g·mol⁻¹, so n = 8 ÷ 40 = 0,2 mol. Convert the volume first: 500 cm³ = 0,5 dm³; c = 0,2 ÷ 0,5 = 0,4 mol·dm⁻³. At STP, 0,2 mol of any gas occupies 0,2 × 22,4 = 4,48 dm³. The shared discipline is the mole hub: convert into moles first, do the chemistry in moles, convert out last — grams, solution volumes and gas volumes never exchange directly."
+    },
+    {
+      "id": "cc2",
+      "question": "For 2H₂ + O₂ → 2H₂O with 3 mol of hydrogen and 2 mol of oxygen, identify the limiting reagent by the demand-versus-supply check, calculate the mass of water formed, and find the percentage yield if only 40,5 g is collected.",
+      "expected_answer": "Demand check: 3 mol H₂ at the 2 : 1 ratio demands 1,5 mol O₂; 2 mol is available, so oxygen is in excess and hydrogen is limiting. All downstream amounts follow the limiting reagent: 3 mol H₂ gives 3 mol H₂O (2 : 2 ratio) = 3 × 18 = 54 g theoretical. Percentage yield = actual ÷ theoretical × 100 = 40,5 ÷ 54 × 100 = 75%. The excess 0,5 mol of oxygen remains unreacted."
+    },
+    {
+      "id": "cc3",
+      "question": "20 cm³ of 0,1 mol·dm⁻³ NaOH exactly neutralises 25 cm³ of HCl. Calculate the acid's concentration, and explain how and why the working would change if the acid were H₂SO₄.",
+      "expected_answer": "n(NaOH) = cV = 0,1 × 0,020 = 0,002 mol. HCl + NaOH → NaCl + H₂O is 1 : 1, so n(HCl) = 0,002 mol; c = 0,002 ÷ 0,025 = 0,08 mol·dm⁻³. For sulphuric acid the equation is H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O — the diprotic acid supplies two protons, so the ratio is 1 acid : 2 base, and n(H₂SO₄) = 0,002 ÷ 2 = 0,001 mol, giving c = 0,001 ÷ 0,025 = 0,04 mol·dm⁻³. Skipping the ratio step is the most commonly harvested titration mark."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Question One — Statistics and the Box and Whisker",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "For the ten marks with sum 601, the mean is:",
+          "options": [
+            "60,1",
+            "62,5",
+            "59,9",
+            "61,0"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The median of the ten ordered marks (fifth value 61, sixth value 64) is:",
+          "options": [
+            "61",
+            "64",
+            "62,5",
+            "60,1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why does spotting the outlier 'by eye' earn nothing in this question?",
+          "options": [
+            "Outliers may never be identified",
+            "The memo pays for the fence calculation: Q_1 − 1,5 × IQR = 22, then the verdict",
+            "The eye is usually wrong",
+            "Only the examiner may identify outliers"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "How many of the ten marks lie within one standard deviation of the mean (39,6 to 80,6)?",
+          "options": [
+            "10",
+            "6",
+            "7",
+            "8"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Question Two — Regression and the Fenced Prediction",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The least squares line for temperature vs cans sold is:",
+          "options": [
+            "ŷ = 5,43 − 1,15x",
+            "ŷ = −5,43 + 1,15x",
+            "ŷ = 1,15 − 5,43x",
+            "ŷ = −1,15 + 5,43x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "r = 0,999 earns its second mark through:",
+          "options": [
+            "Rounding it to 1",
+            "Squaring it",
+            "The sentence: very strong positive linear correlation",
+            "Plotting it on the scatter diagram"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The prediction at 25 °C is trustworthy because:",
+          "options": [
+            "25 lies inside the observed range 15 to 30 — interpolation",
+            "The calculator computed it",
+            "r is positive",
+            "Sales are always predictable"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "A valid criticism of predicting at 40 °C is:",
+          "options": [
+            "The line's gradient is too small",
+            "Forty is not a whole number of cans",
+            "The correlation is too strong to trust",
+            "It is extrapolation far outside the data range, where linearity is unverified"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Question Three — the Analytical Triangle",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "With A(−2; 5) and B(6; 1), the gradient of AB is:",
+          "options": [
+            "2",
+            "−2",
+            "−1/2",
+            "1/2"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Angle ABC is proved to be 90° by showing:",
+          "options": [
+            "m_AB × m_BC = −1/2 × 2 = −1",
+            "AB = BC",
+            "The triangle looks right-angled on the sketch",
+            "m_AB + m_BC = 3/2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "M(1; 1), the midpoint of AC, is equidistant from A, B and C because:",
+          "options": [
+            "All midpoints are equidistant from the vertices",
+            "Angle B = 90° makes AC a diameter, so M is the centre of the circle through A, B, C",
+            "The triangle is equilateral",
+            "M lies on AB"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "With gradient −1/2, the angle of inclination of AB is:",
+          "options": [
+            "−26,57°",
+            "26,57°",
+            "63,43°",
+            "153,43° — add 180° to the calculator's negative angle"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Question Four — the Circle and Its Tangent",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Completing the square on x² + y² − 6x + 4y − 12 = 0 gives centre and radius:",
+          "options": [
+            "Centre (3; −2), radius 5",
+            "Centre (−3; 2), radius 5",
+            "Centre (3; −2), radius 25",
+            "Centre (6; −4), radius 12"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The point (7; 1) lies on the circle because:",
+          "options": [
+            "It is close to the centre",
+            "4² + 3² = 25 = r² in the centre form",
+            "Its coordinates are positive",
+            "The tangent passes through it"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The tangent at (7; 1) has gradient −4/3 because:",
+          "options": [
+            "All tangents have negative gradients",
+            "It is parallel to the radius",
+            "The radius gradient is 3/4 and tangent ⊥ radius",
+            "It passes through the centre"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The tangent length from (9; 8), with distance-to-centre squared 136, is:",
+          "options": [
+            "√136",
+            "11",
+            "√161",
+            "√(136 − 25) = √111 ≈ 10,54"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Question Five — Identities and General Solutions",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "cos 75° in simplest surd form is:",
+          "options": [
+            "(√6 − √2)/4",
+            "(√6 + √2)/4",
+            "(√3 − √2)/2",
+            "0,2588"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In the identity proof, 1 − cos 2x is replaced by 2sin² x using the face:",
+          "options": [
+            "cos 2x = cos² x − sin² x",
+            "cos 2x = 1 − 2sin² x",
+            "cos 2x = 2cos² x − 1",
+            "sin 2x = 2 sin x cos x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The general solution of cos x = −1/2 is:",
+          "options": [
+            "x = 60° + k · 360°",
+            "x = 120° + k · 180°",
+            "x = ± 120° + k · 360°, k ∈ ℤ",
+            "x = 120° only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "With sin x = 3/5, x acute, the pair (sin 2x; cos 2x) is:",
+          "options": [
+            "(6/5; 4/5)",
+            "(12/25; 16/25)",
+            "(7/25; 24/25)",
+            "(24/25; 7/25)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Question Six — Triangles in Two and Three Dimensions",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In triangle PQR (p = 12, P = 64°, Q = 52°), side q is found by:",
+          "options": [
+            "The sine rule: q = 12 sin 52°/(sin 64°) ≈ 10,52",
+            "The cosine rule",
+            "The area rule",
+            "Pythagoras"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Sides 7 and 9 enclosing 60° give a third side of:",
+          "options": [
+            "√130 ≈ 11,40",
+            "√67 ≈ 8,19",
+            "16",
+            "√193 ≈ 13,89"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The area of that triangle is:",
+          "options": [
+            "63 square units",
+            "31,5 square units",
+            "½(7)(9) sin 60° ≈ 27,28 square units",
+            "½(7)(9) cos 60° = 15,75 square units"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The tower height, 45 m from the base with elevation angle 38°, is:",
+          "options": [
+            "45 sin 38° ≈ 27,70 m",
+            "45 ÷ tan 38° ≈ 57,60 m",
+            "45 cos 38° ≈ 35,46 m",
+            "45 tan 38° ≈ 35,16 m"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Question Seven — the Euclidean Rider",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Angle TAB (tangent to chord AB) is 40°, so angle ACB equals:",
+          "options": [
+            "40° — tan chord theorem",
+            "80° — angle at centre",
+            "50° — angles in a semicircle",
+            "140° — opposite angles of cyclic quad"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "With angle ACB = 40° and angle ABC = 65°, angle BAC equals:",
+          "options": [
+            "105°",
+            "85°",
+            "75° — angle sum in triangle",
+            "65°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The tan-chord proof begins with the construction:",
+          "options": [
+            "Bisect the chord AB",
+            "Draw the diameter from the point of contact and join it to B",
+            "Draw a second tangent",
+            "Drop a perpendicular from B to the tangent"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A correct geometry statement WITHOUT its accepted reason:",
+          "options": [
+            "Earns the full mark anyway",
+            "Earns a bonus for brevity",
+            "Is penalised only in the proof question",
+            "Loses the reason's mark — statement and reason are paid as a pair"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

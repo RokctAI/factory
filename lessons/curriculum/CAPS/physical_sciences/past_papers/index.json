@@ -23,6 +23,19 @@
           "memo_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=8rVrLl89rfM%3d"
         }
       ]
+    },
+    {
+      "session": "November 2025 NSC",
+      "session_page": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx",
+      "papers": [
+        {
+          "paper": 1,
+          "language": "English",
+          "question_paper_url": "https://stanmorephysics.com/wp-content/uploads/2025/11/NSC-Physical-Sciences-Grade-12-November-2025-P1-only.pdf",
+          "memo_url": null,
+          "notes": "QP supplied by owner upload 2026-08-06 batch 3 (stanmorephysics.com mirror, watermarked; DBE original preferred when fetched) and tracked at past_papers/physical_sciences/grade12/2025/paper1.pdf. Memo not yet supplied; DBE fileticket URLs for this session not yet catalogued (see past_papers/FETCH_QUEUE.md shopping list)."
+        }
+      ]
     }
   ],
   "note": "Index of real DBE sources; PDF ingestion + question-to-subtopic linking is the past-papers pipeline task (docs/past-papers-linking-brief.md, past_papers.py). This is also the honest source for pre-filling example_problem on topic rows. Only Gr 12 papers are published nationally; Gr 10-11 papers are provincial."

@@ -1,4 +1,4 @@
-If this topic feels like a spreadsheet attacked a graph, take a breath — population indicators and pyramids reduce to five numbers and three shapes, and every exam question is built from those eight pieces.
+Hey, it's Thandi — if this topic feels like a spreadsheet attacked a graph, take a breath — population indicators and pyramids reduce to five numbers and three shapes, and every exam question is built from those eight pieces.
 
 The five numbers, in plain words. Birth rate: births per thousand people per year. Death rate: deaths per thousand. Birth minus death gives natural increase — the growth speed before migration. Fertility rate: children per woman in a lifetime, and the only threshold you must memorise is 2,1, replacement level. Infant mortality: babies per thousand births who die before turning one. Life expectancy: years a newborn can expect. Say each one WITH its unit and the definition marks are yours.
 

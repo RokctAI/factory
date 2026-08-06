@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A household uses 420 kWh on a tariff of R2,00 for the first 350 kWh and R2,50 above that. Calculate the bill including VAT, and explain the block-splitting rule. Then show why an inclusive till total of R287,50 must be divided by 1,15 rather than reduced by 15 percent to recover the exclusive price.",
+      "expected_answer": "Split the consumption across the blocks: 350 × R2,00 = R700,00 and the remaining 70 units at R2,50 = R175,00, subtotal R875,00; VAT at 15% gives 875 × 1,15 = R1 006,25. The block boundary protects the first 350 units — charging all 420 at R2,50 is the classic error, because a rising block tariff is a staircase, not a single switch. For VAT backwards: an inclusive total was built as exclusive × 1,15, so dividing R287,50 by 1,15 returns exactly R250,00. Taking 15% OF R287,50 (R43,13) and subtracting gives R244,37, which is too low, because the VAT actually charged was 15% of the smaller exclusive price (R37,50), not of the inclusive total."
+    },
+    {
+      "id": "cc2",
+      "question": "Thabo's annual taxable income is R310 000. His bracket reads 'R42 678 + 26% of the amount above R237 100' and the primary rebate is R17 235. Calculate his monthly tax, naming each step, and state the step most often forgotten. Then compare R5 000 invested for two years at 6% simple against 6% compound, explaining the gap.",
+      "expected_answer": "Tax route: excess = 310 000 − 237 100 = R72 900; 26% of the excess = R18 954,00; plus the base R42 678 gives R61 632,00; minus the rebate R17 235 leaves annual tax of R44 397,00; divided by 12 gives R3 699,75 per month. The rebate subtraction is the most commonly forgotten step, and applying 26% to the whole income instead of the excess is the most common error. Interest: simple pays 5 000 × 0,06 = R300 each year on the original deposit — R5 600,00 after two years. Compound: 5 000 × 1,06 = R5 300,00 after year one, then 5 300 × 1,06 = R5 618,00. The R18,00 gap is year two's interest earned on year one's interest, and it widens every additional year."
+    },
+    {
+      "id": "cc3",
+      "question": "Five test marks are 62, 58, 71, 65 and 24. Calculate the mean and median, explain which average honestly represents the learner and why, and describe two ways a graph can mislead together with the check that exposes each.",
+      "expected_answer": "Mean: sum 280 ÷ 5 = 56,0. Median: arrange as 24, 58, 62, 65, 71; the middle of five values is the third, so 62. The 24 is an outlier — removing it lifts the mean of the rest to 64,0, showing the single mark dragged the mean down about eight points while the median never moved, since the median depends only on position. For outlier-carrying data the median represents typical performance; a full answer names the average, names the outlier and states its direction of pull. Misleading graphs: an axis starting above zero (at 45, say) makes a rise from 50 to 55 look like a doubling — exposed by checking where the axis starts, the thumb test; a biased sample, like surveying only car owners about taxi fares, cannot represent the target population — exposed by asking who was surveyed. A tilted 3-D pie exaggerating a front slice is also acceptable, exposed by comparing slice angles to the stated percentages."
+    }
+  ]
+}

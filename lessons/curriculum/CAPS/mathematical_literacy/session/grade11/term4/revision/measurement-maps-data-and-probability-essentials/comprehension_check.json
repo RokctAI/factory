@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A lounge floor measures 4,8 m by 3,5 m. Tiles come in boxes covering 1,5 m² at R189 per box. Show the full costing, including why the rounding must go up.",
+      "expected_answer": "Area: 4,8 × 3,5 = 16,8 m². Boxes: 16,8 ÷ 1,5 = 11,2, rounded UP to 12 because part-boxes cannot be bought and 11 boxes would leave floor untiled. Cost: 12 × 189 = R2 268. Rounding to the nearest (11) fails the job; materials always round up to whole purchasable units."
+    },
+    {
+      "id": "cc2",
+      "question": "A builder's plan is drawn at 1 : 50. A wall measures 90 mm on the plan, and a real cupboard is 1,8 m wide. Convert both, and state the sanity check that catches direction errors.",
+      "expected_answer": "Paper to real: 90 mm × 50 = 4 500 mm = 4,5 m. Real to paper: 1 800 mm ÷ 50 = 36 mm. Multiply to grow paper into reality, divide to shrink reality onto paper. The check: the real length must always be the bigger number — a 'real wall' smaller than its drawing signals the wrong direction."
+    },
+    {
+      "id": "cc3",
+      "question": "In a class of 60, 36 learners ride taxis and 20 of those are girls. P(rain tomorrow) is 0,3 and P(taxi late, given rain) is 0,6. Compute P(taxi), P(girl and taxi) and P(rain and late), naming the tool used for each.",
+      "expected_answer": "P(taxi) = 36/60 = 0,6, read from the two-way table's margin. P(girl and taxi) = 20/60 = 1/3, the inner cell over the grand total. P(rain and late) = 0,3 × 0,6 = 0,18, multiplying along the tree diagram's branches — tables handle 'and' within one group; trees handle events in sequence."
+    }
+  ]
+}

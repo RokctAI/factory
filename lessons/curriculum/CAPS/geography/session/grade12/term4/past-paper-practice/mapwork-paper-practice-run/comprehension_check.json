@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Reproduce the full working for the November 2018 average gradient question between contour O at 820 metres and the trigonometrical station at P, and state the memo's accepted range.",
+      "expected_answer": "Vertical interval: 1057,9 metres minus 820 metres equals 237,9 metres. Horizontal equivalent: 3,9 centimetres measured on the map, at 1:50 000 each centimetre is 500 metres, so 1 950 metres. Gradient equals vertical interval over horizontal equivalent: 237,9 over 1 950, which simplifies to 1 in 8,2. The memo accepted measurements from 3,8 to 4 centimetres and final answers from 1:7,9 to 1:8,4, with marks awarded stepwise for the vertical interval, the measurement, the horizontal equivalent, the substitution and the final ratio."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the low-lying point M beside the river is a frost hazard on clear, calm winter nights, and where farming and settlement prefer to sit instead.",
+      "expected_answer": "On clear, calm winter nights the slopes lose heat rapidly by radiation, and the cooled dense air drains downslope as katabatic wind, ponding on the valley floor. A temperature inversion forms with warmer air lying above the cold pool, so the floor at M becomes a frost pocket where frost damages crops. Orchards and settlement prefer the thermal belt partway up the slope, above the cold pool but below the exposed crest, and in the Southern Hemisphere the north-oriented slope is favoured because it receives more direct sunlight."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the Pietermaritzburg map as your example, distinguish spatial data from attribute data, and describe one planning use of buffering.",
+      "expected_answer": "Spatial data records where features are located, such as the line of the Msunduzi River, the point of the trigonometrical station or the polygon of an erf. Attribute data describes those located features, such as the station's height of 1 057,9 metres or a road's surface type. Buffering draws a zone of stated width around a feature and tests what falls inside it: for example, buffering the Msunduzi River by 100 metres identifies housing at flood risk, or buffering a school by 500 metres tests walking-distance access."
+    }
+  ]
+}

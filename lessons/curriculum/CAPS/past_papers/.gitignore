@@ -1,4 +1,3 @@
-# Copyrighted source PDFs are fetched on demand (see SOURCES.md / paper.json
-# *_download_url), never committed. Extracted paper.json carries everything
-# the pipeline needs.
-*.pdf
+# Policy change 2026-08-06 (owner decision): source PDFs supplied by the owner
+# are now TRACKED in this repo alongside the extracted paper.json.
+# (Previous rule ignored *.pdf; see SOURCES.md for provenance.)

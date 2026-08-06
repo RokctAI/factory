@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Ayanda's gross salary is R9 800, with UIF at 1%, pension at 7,5% and tax of R1 176. Show the full path to her net salary and explain what UIF buys her.",
+      "expected_answer": "UIF: 0,01 × 9 800 = R98; pension: 0,075 × 9 800 = R735; net: 9 800 − 98 − 735 − 1 176 = R7 791. UIF is unemployment insurance — the employer matches her R98, and if she loses her job the fund pays out because these contributions were made."
+    },
+    {
+      "id": "cc2",
+      "question": "Electricity costs R1,80 per unit for the first 100 units and R2,60 per unit thereafter. Show why 240 units cost R544 and why multiplying 240 by a single rate fails.",
+      "expected_answer": "First block: 100 × 1,80 = R180. Remaining units: 240 − 100 = 140, costing 140 × 2,60 = R364. Total: 180 + 364 = R544. A single rate fails because the price changes at the step — 240 × 1,80 = R432 undercharges and 240 × 2,60 = R624 overcharges; the usage must be split into blocks, each priced at its own rate."
+    },
+    {
+      "id": "cc3",
+      "question": "Lwazi's stall has fixed costs of R1 500; each vetkoek costs R14 to make and sells for R26. Find the break-even point, verify it, and state what sales above and below it mean.",
+      "expected_answer": "Contribution per sale: 26 − 14 = R12. Break-even: 1 500 ÷ 12 = 125 vetkoek. Check: income 125 × 26 = R3 250; total cost 1 500 + 125 × 14 = R3 250 — equal, so nothing is lost or gained. Sales above 125 each add R12 profit; below 125 the month ends in a loss."
+    }
+  ]
+}

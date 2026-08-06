@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe Paper 2's fixed architecture — topic weightings, question order, where Finance is allowed — and explain why units and conversions carry so many of its marks, giving two examples of mark-bearing conversions from the practice run.",
+      "expected_answer": "Paper 2 carries 150 marks in four or five questions: Question 1 is about 30 marks at Level 1 only from Measurement and Maps and Plans; Question 2 is Maps and Plans; Question 3 is Measurement; Questions 4 and 5 integrate them, where unfamiliar contexts may appear and where small Finance calculations are allowed when directly linked to measurement or maps — costing fuel, paint or tiles. Weighting is roughly Measurement 55%, Maps and Plans 40%, Probability 5%; the taxonomy split matches Paper 1 at about 30-30-20-20. Nearly every chain crosses a conversion, and the memo places a mark directly on the crossing: examples include 5,68 hours converted through times-60 to about 5 hours 41 minutes rather than the false 5 hours 68 minutes, and the tank's 1,901 m³ crossed via times-1 000 into about 1 901 litres — a correct number left in the wrong unit forfeits the answer mark."
+    },
+    {
+      "id": "cc2",
+      "question": "Work the classroom painting chain in full — 8 m by 6 m room, 3 m high, one 0,8 m by 2,1 m door, four 1,2 m by 1,5 m windows, two coats, 9 m² per litre, 5-litre tins at R649,00 — and state where the memo's round-up mark sits and why.",
+      "expected_answer": "Wall area: perimeter 2 × (8 + 6) = 28 m, times height 3 = 84 m². Openings: door 0,8 × 2,1 = 1,68 m²; windows 4 × 1,2 × 1,5 = 7,2 m²; paintable area 84 − 1,68 − 7,2 = 75,12 m². Two coats: 150,24 m². Litres: 150,24 ÷ 9 = 16,69. Tins: 16,69 ÷ 5 = 3,34, so FOUR tins — rounded up, never to the nearest, because 3 tins leaves wall unpainted and 3,34 tins cannot be bought. Cost: 4 × R649,00 = R2 596,00, compared to the budget in a sentence containing both numbers. The round-up mark sits on the word up with its reason: purchases round to whole sellable units before the price multiplies."
+    },
+    {
+      "id": "cc3",
+      "question": "For the tank (radius 0,55 m, height 2 m, pi as 3,142), the crate (boxes 15 × 10 × 20 cm into 60 × 40 × 60 cm) and the raffle (5 of 250 tickets), give each answer with its method, name the diameter trap, and explain why axis counting beats volume division for the crate.",
+      "expected_answer": "Tank: V = 3,142 × 0,55² × 2 — in stages 0,3025, then 0,950 46, then 1,901 m³ — times 1 000 gives about 1 901 litres. The trap: if the question supplies the diameter 1,1 m, it must be halved first; substituting the diameter quadruples the answer because the doubling is squared, and the memo's first mark sits on the halving. Crate: axis by axis, 60 ÷ 15 = 4, 40 ÷ 10 = 4, 60 ÷ 20 = 3, so 4 × 4 × 3 = 48 boxes; the volume check 144 000 ÷ 3 000 = 48 confirms a perfect fit, but counting is the method because only whole boxes ship — volume division is merely a ceiling and can overpromise when an axis leaves a leftover slice. Raffle: 5/250 = 1/50 = 0,02 = 2%; the complement, not winning, is 49/50 = 0,98; and while five tickets in this raffle multiply the chance by five, each new raffle starts fresh — past losses change nothing."
+    }
+  ]
+}

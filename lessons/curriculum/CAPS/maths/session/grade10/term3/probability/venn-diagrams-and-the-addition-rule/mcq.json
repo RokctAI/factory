@@ -20,10 +20,10 @@
           "id": "subtopic_1_q2",
           "question": "In the survey (40 learners; 22 soccer, 15 chess, 9 both), the soccer-ONLY region holds:",
           "options": [
-            "$22$ learners",
-            "$9$ learners",
-            "$22 - 9 = 13$ learners",
-            "$22 - 15 = 7$ learners"
+            "22 learners",
+            "9 learners",
+            "22 − 9 = 13 learners",
+            "22 − 15 = 7 learners"
           ],
           "correct_index": 2,
           "time_limit_seconds": 45
@@ -32,10 +32,10 @@
           "id": "subtopic_1_q3",
           "question": "The 'neither' region of that diagram holds:",
           "options": [
-            "$40 - (13 + 9 + 6) = 12$ learners",
-            "$40 - 22 = 18$ learners",
-            "$0$ learners",
-            "$40 - 37 = 3$ learners"
+            "40 − (13 + 9 + 6) = 12 learners",
+            "40 − 22 = 18 learners",
+            "0 learners",
+            "40 − 37 = 3 learners"
           ],
           "correct_index": 0,
           "time_limit_seconds": 45
@@ -62,22 +62,22 @@
           "id": "subtopic_2_q1",
           "question": "The addition rule states:",
           "options": [
-            "$P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$",
-            "$P(A \\text{ or } B) = P(A) + P(B)$ always",
-            "$P(A \\text{ or } B) = P(A) \\times P(B)$",
-            "$P(A \\text{ or } B) = 1 - P(A) - P(B)$"
+            "P(A or B) = P(A) + P(B) − P(A and B)",
+            "P(A or B) = P(A) + P(B) always",
+            "P(A or B) = P(A) × P(B)",
+            "P(A or B) = 1 − P(A) − P(B)"
           ],
           "correct_index": 0,
           "time_limit_seconds": 30
         },
         {
           "id": "subtopic_2_q2",
-          "question": "For the survey, $P(\\text{soccer or chess})$ equals:",
+          "question": "For the survey, P(soccer or chess) equals:",
           "options": [
-            "$\\dfrac{37}{40}$",
-            "$\\dfrac{22}{40} + \\dfrac{15}{40} - \\dfrac{9}{40} = \\dfrac{28}{40} = \\dfrac{7}{10}$",
-            "$\\dfrac{9}{40}$",
-            "$\\dfrac{22}{40}$"
+            "37/40",
+            "22/40 + 15/40 − 9/40 = 28/40 = 7/10",
+            "9/40",
+            "22/40"
           ],
           "correct_index": 1,
           "time_limit_seconds": 45
@@ -96,12 +96,12 @@
         },
         {
           "id": "subtopic_2_q4",
-          "question": "Given $P(A) = 0{,}45$, $P(B) = 0{,}3$ and $P(A \\text{ or } B) = 0{,}6$, then $P(A \\text{ and } B)$ is:",
+          "question": "Given P(A) = 0,45, P(B) = 0,3 and P(A or B) = 0,6, then P(A and B) is:",
           "options": [
-            "$0{,}75$",
-            "$0{,}3$",
-            "$0{,}6$",
-            "$0{,}45 + 0{,}3 - 0{,}6 = 0{,}15$"
+            "0,75",
+            "0,3",
+            "0,6",
+            "0,45 + 0,3 − 0,6 = 0,15"
           ],
           "correct_index": 3,
           "time_limit_seconds": 45
@@ -138,12 +138,12 @@
         },
         {
           "id": "subtopic_3_q3",
-          "question": "On one die roll, A = 'less than 3' and B = 'at least 5'. $P(A \\text{ or } B)$ is:",
+          "question": "On one die roll, A = 'less than 3' and B = 'at least 5'. P(A or B) is:",
           "options": [
-            "$\\dfrac{2}{6} \\times \\dfrac{2}{6} = \\dfrac{1}{9}$",
-            "$\\dfrac{4}{6} - \\dfrac{2}{6} = \\dfrac{1}{3}$",
-            "$\\dfrac{2}{6} + \\dfrac{2}{6} = \\dfrac{2}{3}$, since the events share no outcome",
-            "$1$"
+            "2/6 × 2/6 = 1/9",
+            "4/6 − 2/6 = 1/3",
+            "2/6 + 2/6 = 2/3, since the events share no outcome",
+            "1"
           ],
           "correct_index": 2,
           "time_limit_seconds": 45
@@ -192,12 +192,12 @@
         },
         {
           "id": "subtopic_4_q3",
-          "question": "For the survey, $P(\\text{neither})$ computed via the complement of 'soccer or chess' is:",
+          "question": "For the survey, P(neither) computed via the complement of 'soccer or chess' is:",
           "options": [
-            "$1 - \\dfrac{7}{10} = \\dfrac{3}{10}$, matching the 12 out of 40 in the outside region",
-            "$\\dfrac{7}{10}$",
-            "$1 - \\dfrac{9}{40}$",
-            "$\\dfrac{12}{28}$"
+            "1 − 7/10 = 3/10, matching the 12 out of 40 in the outside region",
+            "7/10",
+            "1 − 9/40",
+            "12/28"
           ],
           "correct_index": 0,
           "time_limit_seconds": 45
@@ -206,10 +206,10 @@
           "id": "subtopic_4_q4",
           "question": "The probability that a surveyed learner plays EXACTLY ONE of the two games is:",
           "options": [
-            "$\\dfrac{28}{40}$",
-            "$\\dfrac{9}{40}$",
-            "$\\dfrac{13 + 6}{40} = \\dfrac{19}{40}$ — the overlap is excluded",
-            "$\\dfrac{22}{40}$"
+            "28/40",
+            "9/40",
+            "(13 + 6)/40 = 19/40 — the overlap is excluded",
+            "22/40"
           ],
           "correct_index": 2,
           "time_limit_seconds": 45
@@ -330,12 +330,12 @@
         },
         {
           "id": "subtopic_7_q3",
-          "question": "With $P(A) = 0{,}4$ and $P(B) = 0{,}35$ mutually exclusive, $P(\\text{neither } A \\text{ nor } B)$ is:",
+          "question": "With P(A) = 0,4 and P(B) = 0,35 mutually exclusive, P(neither A nor B) is:",
           "options": [
-            "$1 - (0{,}4 + 0{,}35) = 0{,}25$",
-            "$0{,}75$",
-            "$0{,}4 \\times 0{,}35 = 0{,}14$",
-            "$0{,}35$"
+            "1 − (0,4 + 0,35) = 0,25",
+            "0,75",
+            "0,4 × 0,35 = 0,14",
+            "0,35"
           ],
           "correct_index": 0,
           "time_limit_seconds": 45

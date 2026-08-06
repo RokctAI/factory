@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "The Khumalos' garden is 8,5 m by 6 m. Fencing costs R85 per metre and paving costs R120 per square metre. Explain which measurement each purchase needs and calculate the fencing cost.",
+      "expected_answer": "Fencing runs along the edge, so it needs the perimeter: 2 × (8,5 + 6) = 29 m, costing 29 × 85 = R2 465. Paving covers the surface, so it needs the area: 8,5 × 6 = 51 m². The word 'around' signals perimeter; 'cover' signals area — using area to buy fencing is the classic error."
+    },
+    {
+      "id": "cc2",
+      "question": "A wall measures 45 mm on a 1 : 100 floor plan, and a route measures 6 cm on a 1 : 50 000 map. Show how to find both real lengths, including the unit conversions.",
+      "expected_answer": "Plan: 45 mm × 100 = 4 500 mm = 4,5 m. Map: 6 cm × 50 000 = 300 000 cm = 3 km. The mechanism is measure on paper, multiply by the scale factor, then convert the large raw number into sensible units — both the multiplication and the conversion earn marks."
+    },
+    {
+      "id": "cc3",
+      "question": "Five households use 12, 15, 15, 18, 20 buckets daily. A sixth reports 60. Compute the original mean, median, mode and range, and explain which measure best describes a typical household once the 60 joins.",
+      "expected_answer": "Mean: 80 ÷ 5 = 16; median: 15 (middle of the ordered list); mode: 15; range: 20 − 12 = 8. With the outlier 60, the mean is dragged sharply upward while the median barely moves, so the median best describes a typical household — outliers distort the mean but not the middle of the queue."
+    }
+  ]
+}

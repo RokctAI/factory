@@ -1,4 +1,4 @@
-If your page is a tangle of triangles and half-remembered ratios right now, breathe — you are closer than it feels.
+Hey, it's Thandi — if your page is a tangle of triangles and half-remembered ratios right now, breathe — you are closer than it feels.
 
 Notice what actually happened in this lesson: every single problem, from the flagpole to the tower, was the SAME three moves. Sketch the picture. Label the sides from the angle. Let the two sides in the story choose the ratio. The stories change costume — cliffs, kites, ladders — but underneath there is one machine, and you have now watched it run six times.
 

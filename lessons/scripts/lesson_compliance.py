@@ -37,12 +37,22 @@ Usage:
 Exit 0 = compliant; 1 = one or more violations (printed, grouped by rule).
 """
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from lesson_pipeline import verify_no_session_framing  # R2 + R3 detector
+
+# CROSS-REPO: tutor persona cards moved to the RokctAI/agent repo (lms/team/).
+# When TEAM_ROOT points at that directory in a checkout, persona cards are
+# discovered at $TEAM_ROOT/tutors/CAPS/*/tutor.md; otherwise we fall back to
+# the legacy in-repo lessons/tutors/ layout (graceful degrade: with neither
+# present, persona checks simply find nothing to check).
+_TEAM_ROOT = os.environ.get("TEAM_ROOT", "").strip()
+PERSONA_TUTORS_DIR = (Path(_TEAM_ROOT) / "tutors" / "CAPS" if _TEAM_ROOT
+                      else Path("lessons/tutors"))
 
 # R1: the real render vocabulary. whiteboard_canvas.dart draws
 # text/dot/circle/line/rect; the player handles camera_move/band_start (camera)
@@ -170,7 +180,7 @@ def discover():
     manifests = sorted(Path("lessons").rglob("manifest.json"))
     job_cards = [p for p in sorted(Path(".rokct/agent/jobs").rglob("*.md"))
                  if "template" not in p.name]
-    persona = sorted(Path("lessons/tutors").glob("*/tutor.md"))
+    persona = sorted(PERSONA_TUTORS_DIR.glob("*/tutor.md"))
     return scripts, list(dict.fromkeys(animations)), manifests, job_cards, persona
 
 
@@ -190,7 +200,7 @@ def run(paths):
             violations += check_manifest(p); checked["manifest"] += 1
         elif p.match(".rokct/agent/jobs/*/*.md") and "template" not in name:
             violations += check_job_card(p); checked["job_card"] += 1
-        elif p.parent.parent.name == "tutors" and name == "tutor.md":
+        elif name == "tutor.md" and "tutors" in p.parts:
             violations += check_persona_card(p); checked["persona"] += 1
     return violations, checked
 

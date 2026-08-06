@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "In the four-mark question 'solve 3x² − 5x − 1 = 0 correct to two decimal places', name where each of the four marks is paid.",
+      "expected_answer": "One mark for substitution into the quadratic formula; one for the discriminant 25 + 12 = 37; one for each rounded root, x ≈ 1,85 and x ≈ −0,18, paid only at two-decimal accuracy with rounding done once at the end."
+    },
+    {
+      "id": "cc2",
+      "question": "Walk the mark-by-mark solution of the five-mark first-principles question for f(x) = 3x² − 2.",
+      "expected_answer": "Mark 1: definition with limit symbol, f′(x) = lim(h→0) [f(x+h) − f(x)]/h. Mark 2: f(x+h) = 3x² + 6xh + 3h² − 2. Mark 3: difference = 6xh + 3h². Mark 4: divide by h to get 6x + 3h. Mark 5: take the limit, f′(x) = 6x, with the limit symbol retained on every line until it is used."
+    },
+    {
+      "id": "cc3",
+      "question": "For the loan question (R900 000, 10,5% p.a. compounded monthly, 240 payments), state the formula used, the values of i and n, and the resulting payment and total interest.",
+      "expected_answer": "Present value annuity: P = x[1 − (1+i)⁻ⁿ]/i with i = 0,105 ÷ 12 = 0,00875 and n = 240. Solving for x gives about R8 985,42 per month. Total repaid ≈ 240 × 8 985,42 ≈ R2 156 500, so interest ≈ R1,26 million — more than the amount borrowed."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to build the general term of 5; 8; 11; 14; ..., how to test it, and how to decide whether 100 belongs to the pattern.",
+      "expected_answer": "The constant difference 3 becomes the coefficient of n; testing n = 1 forces the constant: Tn = 3n + 2. Test on an unused term (n = 4 gives 14, correct). For 100: solve 3n + 2 = 100, giving n = 98/3, not a natural number, so 100 is not in the pattern — the position n must be a natural number."
+    },
+    {
+      "id": "cc2",
+      "question": "R2 000 is invested at 8% for 5 years. Compare the simple and compound outcomes and explain why they differ.",
+      "expected_answer": "Simple: A = 2000(1 + 0,08×5) = R2 800 — interest is computed on the original amount only, the same R160 each year. Compound: A = 2000(1,08)^5 ≈ R2 938,66 — each year's interest joins the total and itself earns interest, so the compound (snowball) result beats the simple (ladder) result, and the gap grows with time."
+    },
+    {
+      "id": "cc3",
+      "question": "State the scale-factor law and use it to explain why doubling only the radius of a cylinder multiplies the volume by 4, not 8.",
+      "expected_answer": "Scaling all lengths by k multiplies lengths by k, areas by k², volumes by k³. But when only one length changes, count its appearances in the formula: V = πr²h has r squared and h unchanged, so doubling r alone contributes 2² = 4. The factor 8 would need all three dimensions doubled."
+    }
+  ]
+}

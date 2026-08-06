@@ -1,0 +1,542 @@
+{
+  "_comment": [
+    "DBE Grade 12 Mathematics P2, November 2024. Question paper is a scanned",
+    "PDF (no text layer): question wording transcribed by reading the rendered",
+    "pages. Memo answers/working come from the marking guidelines' real text",
+    "layer (pdftotext), cross-checked against recomputation. The memo is",
+    "bilingual (Eng/Afr); only the English content is transcribed here.",
+    "solution_method is the method the MEMO uses to solve each question.",
+    "memo_answer is the memo's final answer; memo_working summarises the",
+    "memo's primary method (alternative memo methods noted in memo_note).",
+    "Figures are described in bracketed [Figure: ...] notes inside text.",
+    "Geometry reasons are given in the memo's English wording."
+  ],
+  "paper_id": "dbe_maths_g12_p2_2024_nov",
+  "source": "Department of Basic Education",
+  "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations.aspx",
+  "paper_file": "paper2.pdf",
+  "memo_file": "paper2_memo.pdf",
+  "copyright": "© Department of Basic Education, 2024. Reproduced for educational use with attribution.",
+  "subject": "Maths",
+  "grade": 12,
+  "paper": "P2",
+  "session": "November 2024",
+  "language": "English",
+  "total_marks": 150,
+  "questions": [
+    {
+      "ref": "Q1.1",
+      "text": "At the beginning of a season, the coach of a junior boys' rugby team recorded the weight (in kg) of the 15 players in his team and the number of push-ups that each player was able to do in one minute. The data is represented in the table and scatter plot below. The least squares regression line for the data is drawn. Weight (in kg) (x): 34, 32, 40, 27, 33, 28, 27, 55, 39, 44, 30, 57, 28, 32, 31. Number of push-ups per minute (y): 26, 21, 6, 20, 16, 26, 23, 7, 18, 14, 17, 8, 28, 25, 20. [Figure: scatter plot of push-ups per minute vs weight in kg with a decreasing least squares regression line drawn through the points.] Determine the equation of the least squares regression line for the data.",
+      "marks": 3,
+      "topic": "Statistics",
+      "solution_method": "least_squares_regression_calculator",
+      "memo_answer": "ŷ = 39,46 - 0,59x",
+      "memo_working": "a = 39,456001... ; b = -0,590018... ; ŷ = 39,46 - 0,59x. Correct answer only: full marks",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.2",
+      "text": "Write down the correlation coefficient.",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "correlation_coefficient_calculator",
+      "memo_answer": "r = -0,8",
+      "memo_working": "r = -0,8",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.3",
+      "text": "The coach uses the least squares regression line to set the target for the minimum number of push-ups by each team member according to their weight. Predict the number of push-ups that a member of the team, who weighs 29 kg, should do to meet the target.",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "regression_prediction",
+      "memo_answer": "y = 22,35",
+      "memo_working": "y = 39,46 - 0,59(29) = 22,35",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.4",
+      "text": "Write down the mean number of push-ups for the given data.",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "mean_calculator",
+      "memo_answer": "ȳ = 18,33",
+      "memo_working": "ȳ = 18,33",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.5",
+      "text": "The players trained hard during the season. At the end of the season, the coach reported that each player was able to do 5 more push-ups per minute than they did at the beginning of the season. How does the increase in the number of push-ups influence the standard deviation of the data?",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "effect_of_constant_shift_on_spread",
+      "memo_answer": "No influence; the standard deviation stays the same",
+      "memo_working": "Adding a constant to every data value does not change the spread",
+      "checkable": false
+    },
+    {
+      "ref": "Q1.6",
+      "text": "At the beginning of the season, the coach used the least squares regression line as the minimum target for a player to aim for. Determine the maximum possible increase in the number of push-ups that a team member must obtain to reach the minimum target.",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "residual_from_regression_line",
+      "memo_answer": "An increase of 10 push-ups",
+      "memo_working": "6 is the furthest y-value below the least squares regression line; an increase of 10 push-ups will get that team member to (40 ; 16), the minimum number of push-ups for a player weighing 40 kg",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.1",
+      "text": "The cumulative frequency graph (ogive) shows the time taken (in minutes) for 60 employees to travel to work each morning. [Figure: ogive from (0 ; 0) rising in an S-shape through approximately (20 ; 5), (40 ; 13), (60 ; 26), (80 ; 42), (100 ; 57) and levelling off at (120 ; 60); time axis 0-140 minutes, cumulative frequency axis 0-65.] Estimate the median travel time.",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "median_from_ogive",
+      "memo_answer": "Median = 65",
+      "memo_working": "Read off at cumulative frequency 30: 65 minutes",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.2",
+      "text": "Estimate the lower quartile.",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "quartile_from_ogive",
+      "memo_answer": "Q1 = 44",
+      "memo_working": "Read off at cumulative frequency 15: 44 minutes",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.3",
+      "text": "Estimate the interquartile range.",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "interquartile_range",
+      "memo_answer": "IQR = 40",
+      "memo_working": "Q3 = 84; IQR = 84 - 44 = 40",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.4",
+      "text": "The minimum and maximum times taken for an employee to travel to work are 5 and 120 minutes respectively. On the scaled line in the ANSWER BOOK, draw a box and whisker diagram to indicate the distribution of the data as represented in the ogive above.",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "box_and_whisker_diagram",
+      "memo_answer": "Box and whisker diagram with five-number summary 5 ; 44 ; 65 ; 84 ; 120",
+      "memo_working": "Box from 44 to 84 with median at 65; whiskers ending at 5 and 120",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.5",
+      "text": "The company manager decided that all employees who travel for an hour or more will be allowed to work from home for part of the day. What percentage of the employees will be allowed to work from home for part of the day?",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "percentage_from_ogive",
+      "memo_answer": "56,67% (using 34 employees) OR 58,33% (using 35 employees)",
+      "memo_working": "Number of employees who travel 60 minutes or more = 60 - 26 = 34 (or 35); 34/60 × 100 = 56,67% (or 35/60 × 100 = 58,33%)",
+      "memo_note": "The memo accepts either reading of the ogive (34 or 35 employees).",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.6",
+      "text": "Employees work 8 hours in a normal working day. The manager decided on the following rule for time to work from home: an employee is allowed to work half an hour from home for each time interval of 20 minutes, or part thereof, above an hour taken to travel to work. On a certain day, an employee takes 110 minutes to travel to work. Calculate the number of minutes that this employee will be allowed to work from home on this day.",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "interpret_interval_rule",
+      "memo_answer": "90 minutes (1,5 hours)",
+      "memo_working": "110 - 60 = 50 minutes above an hour -> 3 intervals of 20 minutes or part thereof; 3 × 30 minutes = 90 minutes",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.1",
+      "text": "In the diagram below, triangle ACD has vertices A, D(3 ; -9) and C(-9 ; 0), where A is a point in the second quadrant. B(-1 ; k) lies on side DC. [Figure: triangle with A above the x-axis in the second quadrant, C(-9 ; 0) on the x-axis, D(3 ; -9) below the x-axis; B(-1 ; k) marked on line DC between C and D.] Calculate the gradient of DC.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "gradient_formula",
+      "memo_answer": "m_DC = -3/4",
+      "memo_working": "m_DC = (-9 - 0)/(3 - (-9)) = -3/4",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.2",
+      "text": "Determine the equation of DC in the form y = mx + c.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "equation_of_line",
+      "memo_answer": "y = -3/4 x - 27/4",
+      "memo_working": "0 = -3/4(-9) + c -> c = -27/4; y = -3/4 x - 27/4",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.3",
+      "text": "Show that k = -6.",
+      "marks": 1,
+      "topic": "Analytical Geometry",
+      "solution_method": "substitute_point_in_line",
+      "memo_answer": "k = -6",
+      "memo_working": "k = -3/4(-1) - 27/4 = 3/4 - 27/4 = -6",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.4",
+      "text": "Calculate the length of DC.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "distance_formula",
+      "memo_answer": "DC = 15 units",
+      "memo_working": "DC = sqrt((3 + 9)^2 + (-9 - 0)^2) = 15",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.5",
+      "text": "Calculate the ratio of DB/DC.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "distance_ratio",
+      "memo_answer": "DB/DC = 1/3",
+      "memo_working": "DB = sqrt((3 - (-1))^2 + (-9 - (-6))^2) = 5; DB/DC = 5/15 = 1/3",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.6",
+      "text": "If M is a point on AD such that AC || MB, calculate the ratio of Area triangle MBD / Area triangle ACD.",
+      "marks": 4,
+      "topic": "Analytical Geometry",
+      "solution_method": "area_ratio_with_proportionality",
+      "memo_answer": "Area ΔMBD / Area ΔACD = 1/9",
+      "memo_working": "DM/DA = DB/DC = 1/3 (prop theorem, MB || AC); Area ΔMBD / Area ΔACD = [½(DM)(DB)sin D] / [½(DA)(DC)sin D] = (1/3)(1/3) = 1/9",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.7",
+      "text": "If it is further given that the gradient of AD is -4 and the length of AD is sqrt(612) units, calculate the coordinates of A.",
+      "marks": 6,
+      "topic": "Analytical Geometry",
+      "solution_method": "line_and_distance_equations",
+      "memo_answer": "A(-3 ; 15)",
+      "memo_working": "Equation AD: -9 = -4(3) + c -> c = 3, y = -4x + 3; (x - 3)^2 + (y + 9)^2 = 612; substitute: (x - 3)^2 + (-4x + 12)^2 = 612; 17x^2 - 102x - 459 = 0; x^2 - 6x - 27 = 0; (x - 9)(x + 3) = 0; x = -3 (x = 9 not applicable, A in second quadrant); y = -4(-3) + 3 = 15; A(-3 ; 15)",
+      "memo_note": "Alternative memo method: y-intercept N(0 ; 3) of AD, ND = 3√17 = ½AD, so N is the midpoint of AD, giving A(-3 ; 15).",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.1",
+      "text": "In the diagram, M(1 ; 3) is the centre of the circle. The circle cuts the x-axis at N. ST is a tangent to the circle at P(3 ; 9). R(d ; 1), with d > 0, and L lie on the circle. O and V are the x-intercepts of PL and RL respectively. [Figure: circle centred at M(1 ; 3) passing through P(3 ; 9) at the top right, R(d ; 1) on the right, L at the bottom left near the y-axis; tangent line S-T touching at P; chords PL and RL drawn, crossing the x-axis at O (the origin) and V; N on the x-axis to the right of V.] Write down the coordinates of L.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "diametrically_opposite_point",
+      "memo_answer": "L(-1 ; -3)",
+      "memo_working": "L is diametrically opposite P through M: x = -1, y = -3",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.2",
+      "text": "Determine the equation of tangent ST to the circle at P.",
+      "marks": 4,
+      "topic": "Analytical Geometry",
+      "solution_method": "tangent_perpendicular_to_radius",
+      "memo_answer": "y = -1/3 x + 10",
+      "memo_working": "m_MP = (9 - 3)/(3 - 1) = 3; m_ST = -1/3 (tangent ⊥ radius); 9 = -1/3(3) + c -> c = 10; y = -1/3 x + 10",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.3",
+      "text": "Show that the equation of the circle with centre M is x^2 + y^2 - 2x - 6y - 30 = 0.",
+      "marks": 4,
+      "topic": "Analytical Geometry",
+      "solution_method": "circle_equation_expand",
+      "memo_answer": "x^2 + y^2 - 2x - 6y - 30 = 0",
+      "memo_working": "(x - 1)^2 + (y - 3)^2 = r^2; r^2 = (3 - 1)^2 + (9 - 3)^2 = 40; expand: x^2 - 2x + 1 + y^2 - 6y + 9 = 40; x^2 + y^2 - 2x - 6y - 30 = 0",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.4",
+      "text": "Show that d = 7.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "substitute_point_in_circle",
+      "memo_answer": "d = 7",
+      "memo_working": "d^2 + (1)^2 - 2d - 6(1) - 30 = 0; d^2 - 2d - 35 = 0; (d - 7)(d + 5) = 0; d = 7 (d = -5 rejected since d > 0)",
+      "memo_note": "Alternative memo methods: (d - 1)^2 + (1 - 3)^2 = 40, or use angle PRL = 90° (angle in semi-circle) with gradients.",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.5",
+      "text": "Calculate the size of L̂ (the angle at L between LP and LR).",
+      "marks": 5,
+      "topic": "Analytical Geometry",
+      "solution_method": "inclination_angles",
+      "memo_answer": "L̂ = 45°",
+      "memo_working": "m_PO = 3, tan(POV) = 3 -> POV = 71,565...°; m_RL = (1 - (-3))/(7 - (-1)) = 1/2, tan(RVN) = 1/2 -> RVN = 26,565...°; L̂ = 71,565...° - 26,565...° = 45° (exterior angle of triangle)",
+      "memo_note": "Alternative memo methods: right angle at R (angle in semi-circle) with PR = 4√5, PL = 4√10, RL = 4√5 and a trig ratio; or the cosine rule giving cos L = √2/2.",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.6",
+      "text": "TR is a tangent to the circle at R. Prove that PT ⊥ RT.",
+      "marks": 3,
+      "topic": "Analytical Geometry",
+      "solution_method": "perpendicular_gradients",
+      "memo_answer": "m_RT × m_PT = -1, therefore PT ⊥ RT",
+      "memo_working": "m_RM = (1 - 3)/(7 - 1) = -1/3; m_RT = 3 (tangent ⊥ radius); m_PT = -1/3; m_RT × m_PT = -1; PT ⊥ RT",
+      "memo_note": "Alternative memo methods: PT || MR with MRT = 90° and co-interior angles; or tan-chord theorem with TP = TR giving PTR = 90°.",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.1.1",
+      "text": "In the diagram, line OP is given with P(-3 ; -4). KÔP = A. [Figure: Cartesian plane with K on the positive x-axis; ray OP into the third quadrant to P(-3 ; -4); reflex-style angle A marked at O from OK anticlockwise round to OP.] Determine, without using a calculator, the value of cos A.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "trig_ratios_from_point",
+      "memo_answer": "cos A = -3/5",
+      "memo_working": "r = 5; cos A = x/r = -3/5",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.1.2",
+      "text": "Determine, without using a calculator, the value of cos 2A.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "double_angle_formula",
+      "memo_answer": "cos 2A = -7/25",
+      "memo_working": "cos 2A = 2cos^2 A - 1 = 2(-3/5)^2 - 1 = -7/25",
+      "memo_note": "Memo also accepts cos^2 A - sin^2 A or 1 - 2sin^2 A forms.",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.1.3",
+      "text": "Determine, without using a calculator, the value of sin(A - B), if it is further given that sin B = 4/5 and 90° < B < 360°.",
+      "marks": 4,
+      "topic": "Trigonometry",
+      "solution_method": "compound_angle_formula",
+      "memo_answer": "sin(A - B) = 24/25",
+      "memo_working": "B in second quadrant (sin B > 0): cos B = -3/5 [memo sketch: point (x ; 4) with x = -3]; sin(A - B) = sin A cos B - cos A sin B = (-4/5)(-3/5) - (-3/5)(4/5) = 12/25 + 12/25 = 24/25",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.2",
+      "text": "If cos α = p, express the following expression in terms of p:  [cos(α/2 - 45°) sin(α/2 - 45°)] / 2",
+      "marks": 4,
+      "topic": "Trigonometry",
+      "solution_method": "double_angle_and_cofunction",
+      "memo_answer": "-p/4  OR  -1/4 p",
+      "memo_working": "Multiply by 2/2: = [2cos(α/2 - 45°) sin(α/2 - 45°)]/(2·2) = sin(α - 90°)/4 = -cos α / 4 = -p/4",
+      "memo_note": "Alternative memo method expands both factors with compound angles and special angles, reaching -cos α / 4.",
+      "checkable": true
+    },
+    {
+      "ref": "Q6.1.1",
+      "text": "Given the identity: cos(x - y) = cos x cos y + sin x sin y. Use the compound angle identity given above to derive a formula for cos(x + y).",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "derive_compound_angle",
+      "memo_answer": "cos(x + y) = cos x cos y - sin x sin y",
+      "memo_working": "cos(x + y) = cos(x - (-y)) = cos x cos(-y) + sin x sin(-y) = cos x cos y - sin x sin y",
+      "checkable": false
+    },
+    {
+      "ref": "Q6.1.2",
+      "text": "Hence, or otherwise, show that: [cos(90° - x)cos y + sin(-y)cos(180° + x)] / [cos x cos(360° + y) + sin(360° - x)sin y] = tan(x + y)",
+      "marks": 6,
+      "topic": "Trigonometry",
+      "solution_method": "reduction_formulae_identity",
+      "memo_answer": "LHS = tan(x + y) = RHS",
+      "memo_working": "cos(90° - x) = sin x; sin(-y) = -sin y; cos(180° + x) = -cos x; cos(360° + y) = cos y; sin(360° - x) = -sin x; LHS = [sin x cos y + cos x sin y]/[cos x cos y - sin x sin y] = sin(x + y)/cos(x + y) = tan(x + y)",
+      "checkable": false
+    },
+    {
+      "ref": "Q6.2",
+      "text": "Given: f(x) = sqrt(6sin^2 x - 11cos(90° + x) + 7). Solve for x in the interval x ∈ (0° ; 360°) if f(x) = 2.",
+      "marks": 6,
+      "topic": "Trigonometry",
+      "solution_method": "trig_quadratic_equation",
+      "memo_answer": "x = 199,47° or x = 340,53°",
+      "memo_working": "Square both sides: 6sin^2 x - 11cos(90° + x) + 7 = 4; cos(90° + x) = -sin x; 6sin^2 x + 11sin x + 3 = 0; (3sin x + 1)(2sin x + 3) = 0; sin x = -1/3 (sin x = -3/2 no solution); ref angle = 19,47°; x = 199,47° or x = 340,53°",
+      "checkable": true
+    },
+    {
+      "ref": "Q6.3.1",
+      "text": "Consider the function: g(x) = (4 - 8sin^2 x)/3. Calculate the maximum value of g.",
+      "marks": 3,
+      "topic": "Trigonometry",
+      "solution_method": "double_angle_max_value",
+      "memo_answer": "Maximum value of g(x) = 4/3",
+      "memo_working": "g(x) = 4(1 - 2sin^2 x)/3 = 4cos 2x / 3; maximum of cos 2x is 1, so maximum of g is 4/3",
+      "memo_note": "Alternative memo method: 4 - 8sin^2 x is a maximum when sin^2 x is a minimum (0), giving 4/3.",
+      "checkable": true
+    },
+    {
+      "ref": "Q6.3.2",
+      "text": "Write down the smallest possible value of x for which g will have a maximum value in the interval x ∈ (0° ; 360°].",
+      "marks": 1,
+      "topic": "Trigonometry",
+      "solution_method": "solve_for_max_position",
+      "memo_answer": "x = 180°",
+      "memo_working": "cos 2x = 1 at 2x = 360° -> x = 180° (0° excluded from the interval)",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.1",
+      "text": "In the diagram below, the graph of f(x) = tan x is drawn for the interval x ∈ [-180° ; 180°]. [Figure: standard tan graph with vertical asymptotes (dashed) at x = -90° and x = 90°, passing through (-180° ; 0), (0 ; 0) and (180° ; 0); y-axis marked from -3 to 3.] Write down the equation of the asymptote of f in the interval x ∈ [0° ; 180°].",
+      "marks": 1,
+      "topic": "Trigonometry",
+      "solution_method": "asymptote_of_tan",
+      "memo_answer": "x = 90°",
+      "memo_working": "x = 90°",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.2",
+      "text": "Write down the values of x in the interval x ∈ [-180° ; 0°] for which f(x) <= 0.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "read_sign_from_graph",
+      "memo_answer": "x = -180° or x ∈ (-90° ; 0°]  (i.e. x = -180° or -90° < x <= 0°)",
+      "memo_working": "tan x <= 0 at x = -180° and on (-90° ; 0°]",
+      "checkable": false
+    },
+    {
+      "ref": "Q7.3.1",
+      "text": "Given: g(x) = cos 2x + 1. Write down the period of g.",
+      "marks": 1,
+      "topic": "Trigonometry",
+      "solution_method": "period_of_cosine",
+      "memo_answer": "180°",
+      "memo_working": "Period = 360°/2 = 180°",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.3.2",
+      "text": "On the grid given in the ANSWER BOOK, draw the graph of g(x) = cos 2x + 1 for the interval x ∈ [-180° ; 180°]. Clearly show the intercepts with the axes as well as the coordinates of the turning points.",
+      "marks": 3,
+      "topic": "Trigonometry",
+      "solution_method": "sketch_trig_graph",
+      "memo_answer": "Cosine curve between y = 0 and y = 2: maxima at (-180° ; 2), (0 ; 2), (180° ; 2); minima on the x-axis at x = -90° and x = 90°",
+      "memo_working": "Memo sketch awards: turning points on x-axis at x = -90° and 90°; correct shape; turning point on y-axis at (0 ; 2)",
+      "checkable": false
+    },
+    {
+      "ref": "Q7.4",
+      "text": "Use the graphs to determine the general solution of 2cos^3 x - sin x = 0.",
+      "marks": 4,
+      "topic": "Trigonometry",
+      "solution_method": "graphical_intersection_general_solution",
+      "memo_answer": "x = 45° + k.180°, k ∈ Z",
+      "memo_working": "2cos^3 x = sin x; divide by cos x: 2cos^2 x = tan x; 2cos^2 x - 1 = tan x - 1; cos 2x + 1 = tan x, i.e. g(x) = f(x); graphs intersect at x = 45°; general solution x = 45° + k.180°, k ∈ Z",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.1",
+      "text": "In the diagram, C is the foot of a vertical building and D is the top of the same building. The height of the building, CD, is 16 m. Two observers are standing 19 m apart at points A and B, where A, B and C lie in the same horizontal plane. A painter is working at point E on the building. The angle of elevation of D from A is 46,85°. DÊB = 122° and BĈA = 105,61°. [Figure: vertical building with D at top, E below D on the wall, C at the foot; horizontal triangle with A and B on the ground 19 m apart; DA and EB drawn; angle 122° at E between ED and EB; angle 46,85° at A; angle 105,61° at C.] Calculate the length of AC, the distance between the observer at A and the foot of the building.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "right_triangle_trig_ratio",
+      "memo_answer": "AC = 15 m",
+      "memo_working": "tan(DAC) = DC/AC; AC = 16/tan 46,85° = 15 m",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.2",
+      "text": "Calculate how far the painter at E is from the top of the building.",
+      "marks": 7,
+      "topic": "Trigonometry",
+      "solution_method": "cosine_rule_then_right_triangle",
+      "memo_answer": "DE = 10,81 m",
+      "memo_working": "Cosine rule in ABC: 19^2 = x^2 + 15^2 - 2x(15)cos 105,61° (x = BC); x^2 + 8,07x - 136 = 0; x = (-8,07 + sqrt(8,07^2 - 4(1)(-136)))/2 = 8,30 m (negative root rejected); BÊC = 180° - 122° = 58° (or EB̂C = 32°); EC = 8,3/tan 58° = 5,19 m; DE = 16 - 5,19 = 10,81 m",
+      "memo_note": "Alternative memo method finds BC with the sine rule (CBA = 49,5°, BAC = 24,89°, BC = 8,3 m), then proceeds identically.",
+      "checkable": true
+    },
+    {
+      "ref": "Q9.1",
+      "text": "In the diagram, ABCD is a cyclic quadrilateral. BC is produced to E. AC is drawn. Â1 = ½B̂, Â2 = 46° and Ĉ1 = 86°. [Figure: circle through A (top), D (left), C (bottom) and B (right); BC extended beyond C to E outside the circle; at A the angle is split as 1 (towards D) and 2 = 46° (towards B, i.e. DÂC region marked 46°); at C the angles are marked 1 (= 86°, between DC produced side towards E), 2 and 3.] Provide reasons for your statements. Calculate, with a reason, the value of Â1.",
+      "marks": 2,
+      "topic": "Euclidean Geometry",
+      "solution_method": "cyclic_quad_exterior_angle",
+      "memo_answer": "Â1 = 40°",
+      "memo_working": "Exterior angle of a cyclic quadrilateral: DĈE = Â (whole) = 86°; so Â1 = 86° - 46° = 40°. Memo statement: Â1 = 40° [ext. angle of a cyclic quad]",
+      "checkable": true
+    },
+    {
+      "ref": "Q9.2",
+      "text": "Hence, prove that AD = DC.",
+      "marks": 4,
+      "topic": "Euclidean Geometry",
+      "solution_method": "cyclic_quad_angles_isosceles",
+      "memo_answer": "AD = DC",
+      "memo_working": "B̂ = 80° [Â1 = ½B̂]; D̂ = 100° [opp angles of cyclic quad]; Ĉ2 = 40° [sum of angles in triangle ADC]; Ĉ2 = Â1 = 40°; AD = DC [sides opp equal angles]",
+      "memo_note": "Alternative memo routes use the exterior angle of a triangle (AĈE = Â2 + B̂) or angles on a straight line at C.",
+      "checkable": true
+    },
+    {
+      "ref": "Q10.1",
+      "text": "In the diagram, triangle RST is drawn. Line AB intersects RS and RT at A and B respectively such that AB || ST. [Figure: triangle RST with apex R; horizontal line AB inside the triangle parallel to base ST, A on RS and B on RT; arrows mark AB || ST.] Prove the theorem which states that a line drawn parallel to one side of a triangle divides the other two sides proportionally, i.e. RA/AS = RB/BT.",
+      "marks": 6,
+      "topic": "Euclidean Geometry",
+      "solution_method": "proportionality_theorem_proof",
+      "memo_answer": "RA/AS = RB/BT",
+      "memo_working": "Construction: join SB and TA; draw h1 from B ⊥ AR and h2 from A ⊥ RB. area ΔRAB/area ΔASB = (½RA·h1)/(½AS·h1) = RA/AS; area ΔRAB/area ΔABT = (½RB·h2)/(½BT·h2) = RB/BT; area ΔASB = area ΔABT [same base AB, same height, AB || ST]; therefore RA/AS = RB/BT",
+      "checkable": false
+    },
+    {
+      "ref": "Q10.2.1",
+      "text": "In the diagram, O is the centre of the circle. Triangle PWS is drawn with P, W and S on the circle. OR ⊥ PS. PRS is produced to T. SW and OT intersect at V. OV : OT = 1 : 4. [Figure: circle centred O with P at top, S at upper right, W at bottom; R on chord PS with a right-angle mark (OR ⊥ PS); line P-R-S extended to T outside the circle on the right; SW and OT crossing at V inside the circle.] Prove, with reasons, that OR : WS = 1 : 2.",
+      "marks": 5,
+      "topic": "Euclidean Geometry",
+      "solution_method": "midpoint_theorem",
+      "memo_answer": "OR : WS = 1 : 2",
+      "memo_working": "PR = RS [line from centre ⊥ to chord]; PO = OW [radii]; OR = ½WS [midpoint theorem]; therefore OR : WS = 1 : 2",
+      "memo_note": "Alternative memo routes: PŜW = 90° (angle in semi-circle) so RO || SW, then the proportion theorem; or similar triangles ΔPRO ||| ΔPSW with PW = 2PO.",
+      "checkable": false
+    },
+    {
+      "ref": "Q10.2.2",
+      "text": "Calculate the length of PT if ST = 15 units.",
+      "marks": 4,
+      "topic": "Euclidean Geometry",
+      "solution_method": "proportion_theorem_calculation",
+      "memo_answer": "PT = 25 units",
+      "memo_working": "OV/VT = RS/ST = 1/3 [prop theorem; RO || SW]; RS/15 = 1/3 -> RS = 5; PR = RS = 5 [line from centre ⊥ to chord]; PT = PR + RS + ST = 5 + 5 + 15 = 25 units",
+      "checkable": true
+    },
+    {
+      "ref": "Q11.1",
+      "text": "In the diagram, A, B, G and F lie on the larger circle. A smaller circle is drawn to touch the larger circle internally at A. EA is a common tangent to both circles. EBCF is a tangent to the smaller circle at C. AC is produced to G. AF cuts the smaller circle at D. AB, CD and GF are drawn. [Figure: two circles touching internally at A (top); E outside to the lower left on tangent EA; line E-B-C-F tangent to the smaller circle at C, with B on the larger circle between E and C, F on the larger circle beyond C; G at the bottom of the larger circle on AC produced; D on AF inside the smaller circle; angles at A numbered 1, 2, 3; at B numbered 1, 2; at C numbered 1, 2, 3, 4; at D numbered 1, 2; at F numbered 1, 2.] If EÂG = x, determine with reasons, FOUR other angles that are equal to x.",
+      "marks": 6,
+      "topic": "Euclidean Geometry",
+      "solution_method": "tan_chord_theorem_angle_chase",
+      "memo_answer": "D̂1 = x, Ĉ1 = x, Ĉ4 = x and AF̂G = x",
+      "memo_working": "D̂1 = EÂG = x [tan-chord theorem]; Ĉ1 = D̂1 = x [tan-chord theorem]; Ĉ4 = Ĉ1 = x [vert opp angles]; AF̂G = EÂG = x [tan-chord theorem]",
+      "memo_note": "Alternative memo route starts with EA = EC [tangents from common point] and Ĉ1 = EÂG [angles opp equal sides].",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.2",
+      "text": "Prove that AG.AD = AC.AF",
+      "marks": 4,
+      "topic": "Euclidean Geometry",
+      "solution_method": "parallel_lines_proportion",
+      "memo_answer": "AG.AD = AC.AF",
+      "memo_working": "D̂1 = AF̂G = x, so DC || FG [corresp angles equal]; AG/AC = AF/AD [prop theorem; DC || FG]; therefore AG.AD = AC.AF",
+      "memo_note": "Alternative memo route: ΔACD ||| ΔAGF (common Â3, AF̂G = D̂1 = x) giving AC/AG = AD/AF.",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.3",
+      "text": "Prove that triangle AGF ||| triangle ABC",
+      "marks": 4,
+      "topic": "Euclidean Geometry",
+      "solution_method": "similar_triangles_AAA",
+      "memo_answer": "ΔAGF ||| ΔABC",
+      "memo_working": "In ΔAGF and ΔABC: Ĝ = B̂2 [angles in the same segment]; AF̂G = Ĉ1 = x [proved in 11.1]; Â3 = Â2 [sum of angles in triangle]; therefore ΔAGF ||| ΔABC [AAA]",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.4",
+      "text": "Prove that GF^2 = BC.FC.AF / AD",
+      "marks": 6,
+      "topic": "Euclidean Geometry",
+      "solution_method": "combine_similar_triangles",
+      "memo_answer": "GF^2 = BC.FC.AF / AD",
+      "memo_working": "GF/BC = AF/AC [ΔAGF ||| ΔABC], so GF = BC.AF/AC; ΔACD ||| ΔFGC, so AC/GF = AD/FC, giving AC = AD.FG/FC; substitute: GF = BC.AF.FC/(AD.FG); therefore GF^2 = BC.FC.AF/AD",
+      "memo_note": "Alternative memo route multiplies GF = AF.BC/AC and GF = AF.CD/AD, then uses ΔFCD ||| ΔFAC to replace FC = CD.AF/AC.",
+      "checkable": false
+    }
+  ]
+}

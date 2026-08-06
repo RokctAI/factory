@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the fixed architecture of Paper 1 — questions, mark weightings and taxonomy split — and explain how a mark allocation of two, four or six marks should change what a candidate writes.",
+      "expected_answer": "Paper 1 carries 150 marks in four or five questions: Question 1 is about 30 marks at Level 1 only, mixed short items from Finance and Data Handling; Question 2 is Finance; Question 3 is Data Handling; Questions 4 and 5 integrate the topics, and only there may unfamiliar contexts appear. Weighting is roughly Finance 60%, Data 35%, Probability 5% woven through; taxonomy is about 30% knowing, 30% routine procedures, 20% multi-step, 20% reasoning. Allocations are instructions: two marks means one calculation plus an answer, still with the working line written; four marks means a chain with a hidden middle step such as a conversion or subtotal; six marks means a staged build — like the water bill's free block, two charged blocks, subtotal, VAT, final answer — where each stage carries its own mark and consistent accuracy keeps later stages paying after an earlier slip carried forward correctly."
+    },
+    {
+      "id": "cc2",
+      "question": "The Dlamini household used 22 kl on a tariff of first 6 kl free, 7–15 kl at R18,00 and 16–30 kl at R26,00. Mrs Mokoena invested R12 000,00 at 8,5% compounded annually for three years. Work both six- and four-mark chains in full, naming the classic error in each.",
+      "expected_answer": "Water: block one, 6 kl at R0,00 — written down, because it proves the block logic; block two, 9 kl (7 to 15) × R18,00 = R162,00; block three, 22 − 15 = 7 kl × R26,00 = R182,00; subtotal R344,00; VAT: 344 × 1,15 = R395,60. Classic error: charging all 22 kl at R26,00 because 22 falls in the third block's range — the tariff is a staircase and consumption splits across blocks. Deposit: year one 12 000 × 1,085 = R13 020,00; year two 13 020 × 1,085 = R14 126,70; year three 14 126,70 × 1,085 = R15 327,47; interest earned 15 327,47 − 12 000 = R3 327,47. Classic error: applying 8,5% to the original deposit each year — that is simple interest, R3 060,00 over the term; compound wins by R267,47 because from year two the interest is calculated on a balance already containing interest."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the twelve arranged marks 38, 42, 47, 51, 54, 56, 60, 63, 67, 71, 76, 83, give the mean, median, quartiles and IQR; the probability that a randomly chosen learner scored below 50%; and the selling price needed for the class to clear R650,00 profit on 170 packets that cost R1 300,00 in total, explaining the rounding.",
+      "expected_answer": "Mean: sum 708 ÷ 12 = 59,0. Median: even count, so average the sixth and seventh values — (56 + 60) ÷ 2 = 58,0. Q1: average of third and fourth — (47 + 51) ÷ 2 = 49,0; Q3: average of ninth and tenth — (67 + 71) ÷ 2 = 69,0; IQR = 69 − 49 = 20; range 83 − 38 = 45. Probability below 50%: three marks (38, 42, 47) qualify, so 3/12 = 1/4 = 0,25 = 25%, any notation unless one is demanded. Price: 170 × price − 1 300 = 650, so price = 1 950 ÷ 170 = 11,4706..., rounded UP to R11,48 — rounding down to R11,47 banks 170 × 11,47 = R1 949,90, ten cents short of the R1 950,00 needed, so the context forces the round-up."
+    }
+  ]
+}
