@@ -43,3 +43,30 @@ human/vision-verified against the official document.
 
 Catalogued DBE papers not yet fetched (education.gov.za egress-blocked in the
 work environment) are queued for manual browser download in `FETCH_QUEUE.md`.
+
+## Batch 3 (owner upload 2026-08-06) — additional sources used
+
+- **theanswer.co.za mirror** — `NSC-2024-Gr-12-Maths-Lit-P1-Addendum.pdf`
+  (full Nov 2024 ML P1 QP + answer sheet + addendum; pp 15–18 extracted to
+  `mathematical_literacy/grade12/2024/paper1_addendum.pdf`). Same mirror
+  batch 2 used for the P2 addendum; owner-downloaded, not scraped.
+- **stanmorephysics.com mirror** — Nov 2025 Physical Sciences P1 Eng QP
+  (`physical_sciences/grade12/2025/paper1.pdf`, watermarked). Owner-
+  downloaded; to be replaced with the DBE original
+  (`fileticket=oWZB83JVXE0`) when fetched.
+- **DBE (education.gov.za)** — Nov 2025 Mathematics P1/P2 marking
+  guidelines (`maths/grade12/2025/paper1_memo.pdf`, `paper2_memo.pdf`);
+  legacy QPs re-fetched for the archive (`maths/grade11/2017/paper1.pdf`,
+  `maths/grade11/2018/paper1.pdf`,
+  `physical_sciences/grade11/2018/paper1.pdf`,
+  `geography/grade12/2018/paper2.pdf`); 2023/24 ATPs, 2021 Grade 12 exam
+  guidelines and five CAPS FET policy statements (tracked next to their
+  extractions — see FETCH_QUEUE.md REFERENCE section for exact paths).
+- **gov.za / Government Gazette** — school-calendar gazettes tracked as
+  `../school_calendar/2026.pdf` and `2027.pdf`; 2027 term dates extracted
+  to `../school_calendar/2027.json`.
+
+All documents © Department of Basic Education / Government Printing Works,
+reproduced for educational use with attribution. Every batch-3 PDF was
+identity-verified by reading multiple pages (cover + middle + late), never
+trusted by filename.
