@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the full recipe for building the general term of a linear pattern, and the verification step that protects it.",
+      "expected_answer": "Check every gap gives the same constant difference d (term after minus term before). Write Tn = dn + c where the correction c = T1 − d, because dn has already taken one step of size d at position one. Verify by substituting a known position (especially n = 1) and confirming the formula reproduces that term."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the three question types powered by a general term — forwards, backwards, and membership — using Tn = 3n + 2 as the example.",
+      "expected_answer": "Forwards: substitute a position, T50 = 3(50) + 2 = 152. Backwards: set Tn equal to a value and solve, 3n + 2 = 92 gives n = 30, so 92 is the 30th term. Membership: solve the same way and judge n — 3n + 2 = 100 gives n = 98/3, not a natural number, proving 100 is not a term."
+    },
+    {
+      "id": "cc3",
+      "question": "In story or picture problems (matchsticks, tables, tariffs), what do d and the correction represent physically, and what is the classic counting trap?",
+      "expected_answer": "d is what each new step genuinely adds (3 matches per new square, the per-kilometre rate); the correction is the fixed part (the extra match of the first square, the flat call-out fee). The trap is shared parts — a shared matchstick wall or swallowed seats — so count at least three figures and check the formula reproduces figure one."
+    }
+  ]
+}

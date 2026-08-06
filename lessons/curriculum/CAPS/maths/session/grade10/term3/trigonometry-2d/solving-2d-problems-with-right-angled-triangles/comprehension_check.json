@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between an angle of elevation and an angle of depression, and state the fact that links a depression angle at a cliff top to an angle inside the ground triangle.",
+      "expected_answer": "Both are measured from the horizontal line through the observer's eye: elevation is the tilt upward to an object above, depression is the tilt downward to an object below. Because the observer's horizontal and the ground are parallel lines cut by the line of sight, the angle of depression from the top equals the angle of elevation from the object below (alternate angles), so the depression angle can be marked inside the ground triangle."
+    },
+    {
+      "id": "cc2",
+      "question": "A learner stands 40 m from a flagpole and measures an elevation of 32° to the top. Describe the three-step method and give the height.",
+      "expected_answer": "Sketch the vertical pole, horizontal ground and line of sight with the right angle at the base; label from the 32° angle — the pole is opposite (h), the 40 m is adjacent; the pair opposite-and-adjacent selects tangent, so tan 32° = h/40 and h = 40 tan 32° ≈ 25,0 m, with the calculator in degree mode and the unit stated."
+    },
+    {
+      "id": "cc3",
+      "question": "In the two-observation tower problem (38° from A, 50° from B, B being 20 m nearer), what is the key strategy, and how do you verify the final height?",
+      "expected_answer": "Both triangles share the same height, so write h twice — h = d tan 50° from B and h = (d + 20) tan 38° from A — equate the expressions, factor out d to get d = 20 tan 38° / (tan 50° − tan 38°) ≈ 38,1 m, then h ≈ 45,4 m. Verify by substituting d into the triangle not used for the answer and confirming both triangles give the same height."
+    }
+  ]
+}

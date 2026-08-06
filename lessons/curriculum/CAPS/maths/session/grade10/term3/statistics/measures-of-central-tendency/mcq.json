@@ -1,0 +1,334 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Mean, Median and Mode for Ungrouped Data",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "For the homework times 12, 14, 15, 15, 18, 21, 23, 25, 28 (sum 171), the mean is:",
+          "options": [
+            "$18$ minutes",
+            "$19$ minutes",
+            "$15$ minutes",
+            "$21$ minutes"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The median of those nine ordered values is:",
+          "options": [
+            "$19$ — the mean of all values",
+            "$15$ — the most frequent value",
+            "$18$ — the fifth value, with four below and four above",
+            "$20$ — halfway between 12 and 28"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Before finding a median you must always:",
+          "options": [
+            "Order the data from smallest to largest",
+            "Remove the largest value",
+            "Compute the mean first",
+            "Round every value"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The mode of the dataset is 15 because:",
+          "options": [
+            "It is the smallest value",
+            "It is closest to the mean",
+            "It sits in the middle of the list",
+            "It appears more often than any other value"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Outliers and Choosing the Right Measure",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Adding the outlier 120 to the nine times changes the mean to:",
+          "options": [
+            "$\\dfrac{291}{10} = 29{,}1$ minutes",
+            "$\\dfrac{291}{9} \\approx 32{,}3$ minutes",
+            "$19{,}5$ minutes",
+            "The mean is unchanged"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "With ten values, the median becomes:",
+          "options": [
+            "$18$ — still the fifth value",
+            "$21$ — the sixth value",
+            "$29{,}1$ — equal to the mean",
+            "$\\dfrac{18 + 21}{2} = 19{,}5$ — the mean of the two middle values"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "For suburb house prices that include one 20-million-rand mansion, the best measure of the typical price is:",
+          "options": [
+            "The mean, because it uses every value",
+            "The median, because it is not affected by the extreme value that drags the mean upward",
+            "The mode, because prices repeat often",
+            "The range"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "A shoe-shop manager ordering stock cares most about the:",
+          "options": [
+            "Mean shoe size",
+            "Median shoe size",
+            "Mode — the size most customers actually wear",
+            "Sum of all sizes"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Grouped Data and the Estimated Mean",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The midpoint of the class interval from 30 up to below 40 is:",
+          "options": [
+            "$30$",
+            "$40$",
+            "$34{,}5$",
+            "$35$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For the 40 test marks with frequencies 4, 6, 11, 12, 7 and midpoints 35, 45, 55, 65, 75, the estimated mean is:",
+          "options": [
+            "$\\dfrac{2\\,320}{40} = 58$ percent",
+            "$\\dfrac{275}{5} = 55$ percent",
+            "$\\dfrac{2\\,320}{5} = 464$ percent",
+            "$60$ percent — the middle midpoint plus 5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The grouped mean is only an ESTIMATE because:",
+          "options": [
+            "Division always introduces error",
+            "The table hides the exact values, so each learner is assumed to sit at the interval midpoint",
+            "Frequencies are rounded",
+            "Percentages cannot have exact means"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Modal Interval, Median Interval and Reading the Table",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "With frequencies 4, 6, 11, 12, 7, the modal interval is:",
+          "options": [
+            "$12$",
+            "$50$ up to below $60$",
+            "$60$ up to below $70$ — the class with the highest frequency",
+            "$70$ up to below $80$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The cumulative frequencies run 4, 10, 21, 33, 40. The 20th and 21st values, and hence the median interval, lie in:",
+          "options": [
+            "$40$ up to below $50$",
+            "$50$ up to below $60$ — the running total passes from 10 to 21 there",
+            "$60$ up to below $70$",
+            "$30$ up to below $40$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The estimated mean of 58 lies below the modal interval because:",
+          "options": [
+            "The low-mark tail of the data drags the mean down while the mode ignores it",
+            "The mean is always smaller than the mode",
+            "The midpoints were rounded down",
+            "The table was misread"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "A learner answers 'the modal interval is 12'. The error is:",
+          "options": [
+            "The largest frequency is actually 11",
+            "The mode of grouped data must be a midpoint",
+            "There is no error",
+            "12 is the frequency; the answer must name the interval, 60 up to below 70"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Three Ways to Say Typical",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the three pictures, the MEAN is the:",
+          "options": [
+            "Middle person in the ordered line",
+            "Value with the most hands raised",
+            "Pot — pour every value together and share it out equally",
+            "Largest value in the pot"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The median is found by:",
+          "options": [
+            "Ordering the values and taking the middle position",
+            "Sharing the total equally",
+            "Counting repeats",
+            "Halving the largest value"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The measure that only ever uses counting — never adding or dividing — is the:",
+          "options": [
+            "Mean",
+            "Median",
+            "Range",
+            "Mode"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "When One Number Lies",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "When the 120-minute learner joins, the median barely moves because:",
+          "options": [
+            "The median only depends on the middle POSITION of the ordered line, not on how extreme the end values are",
+            "120 is close to the median",
+            "The median is recalculated with the outlier removed",
+            "Medians never change"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "After the outlier joins, nine of the ten learners sit below the new mean of 29,1. This shows that:",
+          "options": [
+            "The mean is now more accurate",
+            "An outlier can drag the mean until it describes almost nobody",
+            "The data was ordered incorrectly",
+            "The mode should have increased too"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The one-sentence justification an examiner rewards is:",
+          "options": [
+            "'The median, because it is the easiest to calculate'",
+            "'The mean, because it is the most famous measure'",
+            "'The median, because the data contains an outlier which distorts the mean'",
+            "'The mode, because the data are numbers'"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Grouped Data Without Fear",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Everyone in a bucket is treated as sitting at its midpoint because:",
+          "options": [
+            "The midpoint is always the mode",
+            "Midpoints are easier to multiply",
+            "The highest value would overestimate",
+            "The exact values are hidden, and the middle is the fairest balanced guess"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Counting through buckets of 4, 6, 11, 12 and 7 learners, the 20th and 21st learners in mark order stand in:",
+          "options": [
+            "The forties bucket",
+            "The sixties bucket",
+            "The fifties bucket — the running count reaches 10, then 21",
+            "The seventies bucket"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The modal interval is found by pointing at:",
+          "options": [
+            "The bucket with the most learners in it",
+            "The bucket containing the mean",
+            "The last bucket",
+            "The bucket with the widest interval"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

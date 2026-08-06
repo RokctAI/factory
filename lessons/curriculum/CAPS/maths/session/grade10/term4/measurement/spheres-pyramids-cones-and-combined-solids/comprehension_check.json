@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between the perpendicular height and the slant height of a cone, which formula each belongs to, and how to convert between them.",
+      "expected_answer": "Perpendicular height h runs inside the cone from apex straight down to the centre of the base — it belongs to volume, V = ⅓πr²h. Slant height s runs along the sloping outside from apex to rim — it belongs to surface area, curved part πrs. They form a right-angled triangle with the radius: s² = h² + r², so Pythagoras converts one to the other."
+    },
+    {
+      "id": "cc2",
+      "question": "A hemisphere is cut from a sphere of radius r. Explain why its volume is exactly half the sphere's but its closed surface area is more than half.",
+      "expected_answer": "Volume halves cleanly (½ × 4/3πr³ = 2/3πr³) because the inside space just splits. But the cut exposes a new flat circle of area πr², so the closed hemisphere's surface is half the skin (2πr²) plus πr² = 3πr² — more than half of 4πr². Whether the circle counts depends on the story: exposed yes, attached (like a dome on a building) no."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the method for the volume and the surface area of a combined solid such as a cone glued on a hemisphere, and why the two quantities are treated differently.",
+      "expected_answer": "Volume: simply add the parts (96π + 144π = 240π) — inside space survives the join. Surface area: list every face of each solid, cross out the pair of faces buried where they touch (the cone's base circle and the hemisphere's flat circle), and add the survivors (60π + 72π = 132π). Surface area bills only exposed faces, so the join removes one face from each solid."
+    }
+  ]
+}

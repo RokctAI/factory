@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using the fee R2,00 plus R1,00 per R100 or part thereof, calculate the ATM fee for withdrawals of R500 and R250, explaining the difference in how the hundreds are counted.",
+      "expected_answer": "R500 contains five full hundreds: fee is 2 + 5 × 1 = R7,00. R250 touches three hundreds because the partial third hundred counts in full ('part thereof' rounds up): fee is 2 + 3 × 1 = R5,00, not R4,50."
+    },
+    {
+      "id": "cc2",
+      "question": "Amahle makes four R500 ATM withdrawals in a month. Compare her total cost on EasySave (R6,50 admin plus fees) with the R55 Bundle and give a recommendation with the margin.",
+      "expected_answer": "EasySave: 4 × R7,00 = R28,00 plus R6,50 admin = R34,50. Bundle: R55,00. EasySave is cheaper by R20,50 for this month, so she should choose EasySave — but the advice flips in heavy months, e.g. twelve R1 000 withdrawals cost R150,50 versus R55."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the graph of the two accounts' monthly cost against number of R500 withdrawals, and explain what the crossing point means.",
+      "expected_answer": "The Bundle is a horizontal line at R55; EasySave starts at R6,50 (admin fee with zero withdrawals) and rises R7 per withdrawal. The rising line passes the flat one between six withdrawals (R48,50) and seven (R55,50). The crossing is the break-even: left of it the pay-per-use account is cheaper, right of it the flat-fee account is cheaper."
+    }
+  ]
+}

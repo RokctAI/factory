@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Walk through the concentration calculation for 8 g of NaOH in 500 cm³ of solution, naming both conversions that must happen before the final division.",
+      "expected_answer": "Grams must become moles: M(NaOH) = 23 + 16 + 1 = 40 g/mol, so n = 8/40 = 0,2 mol. Cubic centimetres must become cubic decimetres: 500/1000 = 0,5 dm³. Then c = n/V = 0,2/0,5 = 0,4 mol·dm⁻³. Skipping either conversion wrecks the answer — dividing grams directly, or leaving the volume in cm³, gives a result a thousand times too small."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the four steps of the empirical formula method for 40,0% C, 6,7% H and 53,3% O, and why moles must appear in the middle of it.",
+      "expected_answer": "Assume 100 g so percentages become masses (40,0 g C; 6,7 g H; 53,3 g O); convert each mass to moles by dividing by atomic mass (3,33; 6,7; 3,33) because formulas count atoms and only moles count atoms; divide by the smallest (giving 1 : 2 : 1); write the simplest whole-number ratio as CH₂O. If the ratio contains a fraction like 1,5, multiply the whole ratio up rather than rounding."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain what water of crystallisation is and how the 36,1% figure for CuSO₄·5H₂O could be checked in a laboratory.",
+      "expected_answer": "Water of crystallisation is water locked into a crystal structure in a fixed ratio — five H₂O per CuSO₄ unit. Calculation: M(CuSO₄) = 159,5; five waters = 90; total 249,5 g/mol; water's share = 90/249,5 × 100 = 36,1%. Check: weigh the blue crystals, heat gently until they turn white, weigh again — the mass loss should be 36,1% of the original, confirming the formula's prediction."
+    }
+  ]
+}

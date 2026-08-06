@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the dataset 12, 14, 15, 15, 18, 21, 23, 25, 28, state the mean, median and mode, and explain why they can legitimately differ.",
+      "expected_answer": "Mean = 171 ÷ 9 = 19; median = 18 (the fifth value of the ordered nine); mode = 15 (appears twice). They differ because each answers a different question — equal share-out, middle position, most frequent value — and a lopsided dataset pulls those answers apart."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe what happens to the mean and to the median when the outlier 120 joins the dataset, and state which measure should then be reported and why.",
+      "expected_answer": "The mean jumps from 19 to 291 ÷ 10 = 29,1 — dragged above nine of the ten values because the mean feels every value. The median moves only from 18 to (18 + 21) ÷ 2 = 19,5 because it depends on position, not size. Report the median, because it is resistant to the outlier that distorts the mean."
+    },
+    {
+      "id": "cc3",
+      "question": "For the grouped table with frequencies 4, 6, 11, 12, 7 on the intervals 30-40 up to 70-80, explain how the estimated mean, modal interval and median interval are found, and give all three.",
+      "expected_answer": "Estimated mean: use midpoints 35, 45, 55, 65, 75, multiply by frequencies (140 + 270 + 605 + 780 + 525 = 2 320) and divide by 40, giving 58 — an estimate because each learner is assumed to sit at the midpoint. Modal interval: the class with the highest frequency (12), so 60 up to below 70. Median interval: cumulative frequencies 4, 10, 21 show the 20th and 21st values fall in 50 up to below 60."
+    }
+  ]
+}

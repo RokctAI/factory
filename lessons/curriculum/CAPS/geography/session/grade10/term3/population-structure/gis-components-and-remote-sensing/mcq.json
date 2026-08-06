@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What a GIS Is — Layers of Information",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A Geographical Information System is best defined as:",
+          "options": [
+            "A satellite that photographs the earth",
+            "A paper atlas stored in a library",
+            "A computerised system that captures, stores, analyses and displays geographically referenced information",
+            "A GPS receiver in a car"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A spreadsheet of clinic names becomes geographical information when:",
+          "options": [
+            "Each clinic carries coordinates tying it to a position on the earth's surface",
+            "It is printed in colour",
+            "It is sorted alphabetically",
+            "It is emailed to a planner"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Overlay analysis means:",
+          "options": [
+            "Printing a map on transparent paper",
+            "Stacking georeferenced layers so questions can be answered by combining them — such as finding dense settlement far from clinics",
+            "Tracing a map by hand",
+            "Deleting old layers from the database"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "For a school stored in a GIS, its position is the spatial data, while its name, learner numbers and language of instruction are:",
+          "options": [
+            "Metadata errors",
+            "A separate layer",
+            "Raster data",
+            "Attribute data linked to the feature"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Five Components of a GIS",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The five components of a GIS are:",
+          "options": [
+            "Hardware, software, data, people and procedures",
+            "Satellites, aircraft, drones, balloons and towers",
+            "Maps, globes, atlases, photographs and charts",
+            "Keyboards, screens, printers, mice and cables"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Data is called the most important and most expensive component because:",
+          "options": [
+            "Computers cannot store very much of it",
+            "It must be bought from other countries",
+            "Without accurate, up-to-date georeferenced data, even the best hardware and software produce misleading results",
+            "It is protected by copyright"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The procedures component of a GIS covers:",
+          "options": [
+            "The electrical wiring of the computers",
+            "The rules for checking data, updating layers and verifying accuracy",
+            "The satellites that capture images",
+            "The printing of final maps"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Census results from Statistics South Africa enter GIS work as:",
+          "options": [
+            "Software used to draw maps",
+            "Hardware for the counting teams",
+            "A procedure for training operators",
+            "Data feeding the layers used for planning"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Remote Sensing — Information Without Contact",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Remote sensing is:",
+          "options": [
+            "Measuring rainfall with gauges on the ground",
+            "Gathering information about the earth's surface from a distance, without physical contact, using sensors on satellites or aircraft",
+            "Interviewing people by telephone",
+            "Using a compass to find direction"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Sensors can reveal things invisible to the human eye because they:",
+          "options": [
+            "Zoom in more than any camera",
+            "Fly closer to the ground",
+            "Read wavelengths such as infrared, in which stressed crops and soil moisture show up",
+            "Photograph only at night"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Compared with aerial photographs, satellite images:",
+          "options": [
+            "Cover far larger areas and revisit the same spot on a fixed cycle, building a time series",
+            "Show finer detail over smaller areas",
+            "Are always free of cloud problems",
+            "Are taken from a lower altitude"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A key limitation of remote sensing for population studies is that it:",
+          "options": [
+            "Cannot photograph cities",
+            "Only works in the southern hemisphere",
+            "Cannot detect change over time",
+            "Counts roofs, not names — it cannot ask who lives in a dwelling, so the ground census remains essential"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Satellites, Aerial Photographs and Population Work",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Satellite images help planners serve informal settlements by:",
+          "options": [
+            "Recording residents' names and ages",
+            "Replacing the need for water and clinics",
+            "Showing new roof clusters appearing between censuses, which become a GIS layer overlaid with service layers",
+            "Predicting the weather for the settlement"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Before a census, Statistics South Africa uses aerial and satellite imagery to:",
+          "options": [
+            "Divide the country into small counting areas so no dwelling is missed",
+            "Count the population automatically from space",
+            "Estimate incomes from roof sizes",
+            "Replace enumerators with drones"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "During the April 2022 KwaZulu-Natal floods, before-and-after satellite images were valuable because they:",
+          "options": [
+            "Stopped the rain from falling",
+            "Identified destroyed neighbourhoods and cut roads while the ground was still impassable",
+            "Rebuilt the damaged bridges",
+            "Warned residents a year in advance"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "South Africa's national space agency, which receives satellite data at Hartebeesthoek, is:",
+          "options": [
+            "NASA",
+            "ESA",
+            "SAWS",
+            "SANSA"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Smartphone Map You Already Use",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the pizza-search example, the analysis step of the GIS definition is performed when:",
+          "options": [
+            "The screen lights up",
+            "The phone connects to the internet",
+            "The application works out the nearest pizza place and the streets connecting it to you",
+            "The pizza is ordered"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In the smartphone example, the people component of the GIS is:",
+          "options": [
+            "The user asking the question and choosing the answer",
+            "The phone's battery",
+            "The red pins on the map",
+            "The satellite overhead"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Tapping a pin to open a shop's name, menu and rating demonstrates:",
+          "options": [
+            "Overlay analysis of two layers",
+            "The link between spatial data — the position — and attribute data — the description",
+            "Remote sensing from orbit",
+            "The hardware component"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "A Lasagne of Maps",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the transparent-sheets picture, one sheet showing only rivers represents:",
+          "options": [
+            "The attribute table",
+            "The hardware of the GIS",
+            "A single thematic layer, georeferenced to the same ground as the other sheets",
+            "A satellite image"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Stacking the density, clinic and road sheets reveals an underserved community because:",
+          "options": [
+            "The sheets change colour when stacked",
+            "Rivers always flow past clinics",
+            "Each sheet answers the question on its own",
+            "Dense population shading appears where the clinic layer shows nothing — a combination no single sheet could show"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A five-year-old clinic layer is dangerous in a GIS because:",
+          "options": [
+            "The analysis will look convincing while recommending decisions based on outdated reality",
+            "Old layers take up too much memory",
+            "The computer refuses to load old data",
+            "Clinics cannot be mapped after five years"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Eye in the Sky and the Census",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Lining up satellite images of the same place over months and years allows analysts to:",
+          "options": [
+            "Hear sounds from the ground",
+            "Detect change — a shrinking dam, a creeping city edge, a changing coastline",
+            "Measure the temperature of the sensor",
+            "Remove clouds from the sky"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "South Africa's 1 to 10 000 orthophoto maps are built from:",
+          "options": [
+            "Hand-drawn sketches",
+            "Weather radar",
+            "Corrected aerial photographs taken from aircraft, detailed enough to show single houses",
+            "Images from deep-space telescopes"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Healthy crops can be told apart from struggling crops across a whole province because:",
+          "options": [
+            "Farmers paint healthy fields",
+            "Satellites fly lower over farmland",
+            "Struggling crops grow taller",
+            "Healthy plants reflect strongly in infrared, which sensors read but eyes cannot"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The lesson's closing point about the satellite and the census enumerator is that:",
+          "options": [
+            "The satellite sees everywhere but the person at the door asks everything — each needs the other",
+            "Satellites will soon replace the census entirely",
+            "Enumerators no longer use maps",
+            "The census only counts urban areas"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

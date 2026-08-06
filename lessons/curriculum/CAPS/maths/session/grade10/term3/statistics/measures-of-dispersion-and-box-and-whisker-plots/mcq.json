@@ -1,0 +1,334 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Range and Why Spread Matters",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Datasets A (45, 48, 50, 52, 55) and B (20, 35, 50, 65, 80) both have mean 50. Their ranges are:",
+          "options": [
+            "A: 10; B: 60",
+            "A: 50; B: 50",
+            "A: 5; B: 12",
+            "A: 55; B: 80"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The main weakness of the range is that it:",
+          "options": [
+            "Requires the data to be ordered twice",
+            "Cannot be computed for even datasets",
+            "Uses only the two extreme values, so one outlier distorts it completely",
+            "Is always larger than the mean"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A complete statistical summary of a dataset should report:",
+          "options": [
+            "The mean only",
+            "The maximum only",
+            "Two centres",
+            "A measure of centre AND a measure of spread"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Quartiles and the Interquartile Range",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "For the ordered sales data 4, 7, 8, 10, 12, 13, 15, 17, 18, 20, 25, the median is:",
+          "options": [
+            "$12$",
+            "$13$ — the sixth of eleven values",
+            "$14$ — the mean of 13 and 15",
+            "$15$"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The lower and upper quartiles of that data are:",
+          "options": [
+            "$Q_1 = 7$; $Q_3 = 20$",
+            "$Q_1 = 10$; $Q_3 = 17$",
+            "$Q_1 = 8$; $Q_3 = 18$ — the medians of the lower and upper halves",
+            "$Q_1 = 4$; $Q_3 = 25$"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The interquartile range and semi-interquartile range are:",
+          "options": [
+            "IQR $= 21$; semi-IQR $= 10{,}5$",
+            "IQR $= 5$; semi-IQR $= 2{,}5$",
+            "IQR $= 13$; semi-IQR $= 6{,}5$",
+            "IQR $= 18 - 8 = 10$; semi-IQR $= 5$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The IQR is preferred over the range when outliers are present because the IQR:",
+          "options": [
+            "Measures the spread of the middle half, which extreme values cannot touch",
+            "Is always smaller",
+            "Uses every value in the dataset",
+            "Ignores the median"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Five-Number Summary and the Box-and-Whisker Diagram",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The five-number summary of the sales data is:",
+          "options": [
+            "$4;\\ 8;\\ 13;\\ 18;\\ 25$",
+            "$4;\\ 10;\\ 13;\\ 17;\\ 25$",
+            "$8;\\ 13;\\ 18$",
+            "$4;\\ 13;\\ 25$"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "In a box-and-whisker diagram, the box itself runs:",
+          "options": [
+            "From the minimum to the maximum",
+            "From $Q_1$ to $Q_3$, with a line inside at the median",
+            "From the median to the maximum",
+            "From zero to the mean"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Each of the four sections of a box plot (two whiskers, two box halves) contains:",
+          "options": [
+            "An amount of data proportional to its length",
+            "The outliers only",
+            "About a quarter of the data, regardless of the section's length",
+            "Half of the data"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A very LONG whisker means that quarter of the data is:",
+          "options": [
+            "Larger in count than the other quarters",
+            "Full of errors",
+            "Closest to the median",
+            "Spread over a wide stretch of values"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Percentiles, Skew and Comparing Two Box Plots",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The upper quartile is the same value as the:",
+          "options": [
+            "50th percentile",
+            "25th percentile",
+            "90th percentile",
+            "75th percentile"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A box plot with the median close to $Q_1$ and a long upper whisker shows data that is:",
+          "options": [
+            "Skewed to the right (positively skewed) — bunched low with a tail of large values",
+            "Perfectly symmetrical",
+            "Skewed to the left",
+            "Bimodal"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Class A: median 60, IQR 12. Class B: median 55, IQR 30. The correct two-sentence comparison is:",
+          "options": [
+            "A scored lower and was less consistent",
+            "A typically scored higher, and A was more consistent because its middle half is less spread out",
+            "B typically scored higher, and B was more consistent",
+            "They performed identically"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Scoring at the 90th percentile of a test means:",
+          "options": [
+            "You scored 90 percent on the paper",
+            "You beat 10 percent of the candidates",
+            "About 90 percent of candidates scored below your mark",
+            "Your mark was 90 minus the median"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Same Average, Different Story",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Two taxi routes both average 30 minutes, but route one's trips span 28-32 minutes and route two's span 15-45. The averages hide:",
+          "options": [
+            "The number of taxis",
+            "The spread — route two's trips wander far more from the centre",
+            "The cost of each trip",
+            "The median"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The ranges of the two routes are:",
+          "options": [
+            "Route one: 4 minutes; route two: 30 minutes",
+            "Both 30 minutes",
+            "Route one: 32; route two: 45",
+            "Route one: 30; route two: 4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "In everyday terms, a small spread in trip times means the service is:",
+          "options": [
+            "Cheaper",
+            "Faster on average",
+            "Rarely full",
+            "Reliable — you can predict your arrival time"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Folding the Line in Half, Then in Half Again",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the folding picture, the quartiles are found by taking:",
+          "options": [
+            "Every third person in the line",
+            "The two people at the ends",
+            "The middle of the whole line, then the middle of each half",
+            "The mean of each half"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "With eleven values, the person holding the median:",
+          "options": [
+            "Joins the lower half",
+            "Belongs to neither half — the middle value is the fence, not a resident",
+            "Joins the upper half",
+            "Is counted in both halves"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The wild days of 4 and 25 sandwiches cannot stretch the IQR because:",
+          "options": [
+            "The IQR is measured between the two quartile fences, and extremes sit outside them",
+            "They are removed before calculating",
+            "The IQR uses only the median",
+            "They cancel each other out"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Drawing the Box in Words",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "For summary 4; 8; 13; 18; 25, the box's two walls stand at:",
+          "options": [
+            "$4$ and $25$",
+            "$13$ and $18$",
+            "$4$ and $13$",
+            "$8$ and $18$"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "'Long never means many' is a reminder that a long section of a box plot holds:",
+          "options": [
+            "More data points than a short section",
+            "The outliers",
+            "The same quarter of the data, spread over a wider stretch of values",
+            "The mean"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "When comparing two box plots, a full-marks comparison must mention:",
+          "options": [
+            "The centres (medians) AND the spreads (box lengths or IQRs)",
+            "Only which median is higher",
+            "Only the longest whisker",
+            "The colours of the boxes"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

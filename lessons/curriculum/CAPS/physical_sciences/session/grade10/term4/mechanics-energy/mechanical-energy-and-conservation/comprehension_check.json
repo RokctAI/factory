@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the law of conservation of energy and the principle of conservation of mechanical energy, and explain the difference between them.",
+      "expected_answer": "The law: energy cannot be created or destroyed, only transferred from one object to another or converted from one form to another — it holds universally. The principle: in the absence of friction and air resistance, the mechanical energy (Ek + Ep) of an object moving in the Earth's gravitational field is constant. The principle is a conditional special case; with friction, mechanical energy decreases (transferred to heat and sound) while total energy is still conserved."
+    },
+    {
+      "id": "cc2",
+      "question": "For the 2 kg ball dropped from 20 m, describe the energy ledger at the top, at 10 m and just before the ground, and show how the speeds at 10 m and at the ground follow from it.",
+      "expected_answer": "Top: Ep = 2 × 9,8 × 20 = 392 J, Ek = 0, EM = 392 J. At 10 m: Ep = 196 J, so Ek = 392 − 196 = 196 J; ½(2)v² = 196 gives v² = 196, v = 14 m/s. At the ground: Ep = 0, Ek = 392 J; ½(2)v² = 392 gives v² = 392, v = 19,80 m/s. The total 392 J is unchanged at every position."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the landing speed of a freely falling object does not depend on its mass, and why this can fail in everyday life.",
+      "expected_answer": "Setting ½mv² = mgh, the mass appears on both sides and cancels, leaving v² = 2gh — the speed depends only on g and the drop height. A heavier object has more energy but needs proportionally more energy for the same speed. In everyday life air resistance (a dissipative force) breaks the condition for conservation of mechanical energy, so light, high-drag objects like feathers fall slower."
+    }
+  ]
+}

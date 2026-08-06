@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the roles of a and q across all five Grade 10 function families, naming the feature that 'rides the elevator' in each family.",
+      "expected_answer": "a stretches the basic shape vertically (amplitude for trig waves) and flips it when negative; q slides the whole graph up or down. The feature sitting at q: the parabola's turning point (for y = ax² + q), the hyperbola's and exponential's horizontal asymptote, and the trig graph's midline. Max = midline + amplitude, min = midline − amplitude."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the algebraic method for finding where y = x² − 9 and y = x − 3 intersect, and give both points.",
+      "expected_answer": "Set the formulas equal: x² − 9 = x − 3; bring to one side: x² − x − 6 = 0; factorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2; substitute back into the line for y: (3; 0) and (−2; −5). Intersection questions are quadratic equations in graph clothing."
+    },
+    {
+      "id": "cc3",
+      "question": "For y = 2^x + 1 and y = 6/x + 1, state the asymptotes and ranges, and explain why the graphs can never touch those lines.",
+      "expected_answer": "Exponential: horizontal asymptote y = 1, range y > 1, because 2^x is always positive and never reaches zero. Hyperbola: vertical asymptote x = 0 (division by zero impossible) and horizontal asymptote y = 1, since 6/x shrinks toward zero but never equals it; domain x ≠ 0, range y ≠ 1. Asymptotes are drawn first, as dotted lines."
+    }
+  ]
+}

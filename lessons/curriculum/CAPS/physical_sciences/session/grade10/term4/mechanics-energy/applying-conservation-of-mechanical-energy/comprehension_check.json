@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Work the roller-coaster problem in full: a 200 kg car crests a 25 m hill at 3 m/s with no friction. Show the energy account at the top and find the speed at the bottom.",
+      "expected_answer": "Top: Ek = ½ × 200 × 3² = 900 J; Ep = 200 × 9,8 × 25 = 49 000 J; EM = 49 900 J. Bottom (reference level): Ep = 0, so ½ × 200 × v² = 49 900, giving 100v² = 49 900, v² = 499, v = 22,34 m/s. The commonest error is dropping the initial 900 J because the car was already moving at the crest."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what 'the path can be ignored' means in conservation-of-mechanical-energy problems, and why it holds only without friction.",
+      "expected_answer": "Only the object's speed and height above the reference point matter; the length, steepness and shape of the track do not affect the final speed — a steep and a gentle ramp with the same 5 m drop both give v = √(2 × 9,8 × 5) = 9,90 m/s from rest. The shape only changes how long the conversion takes. With friction the claim fails, because a longer path means more rubbing and a larger loss of mechanical energy to heat."
+    },
+    {
+      "id": "cc3",
+      "question": "A pendulum bob is released from rest 0,2 m above its lowest point. Give its speed at the bottom, the height it reaches on the far side, and what changes when air resistance is included.",
+      "expected_answer": "Speed at bottom: v = √(2 × 9,8 × 0,2) = √3,92 = 1,98 m/s (mass cancels). Far side: it rises to exactly 0,2 m — the same height, since mechanical energy is conserved and there is no energy for more. With air resistance, mechanical energy leaks to heat on every pass, so each swing rises a little lower and the pendulum eventually stops; total energy is still conserved."
+    }
+  ]
+}
