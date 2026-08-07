@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A sheet's margin note reads: mean magnetic declination 18°19' west of true north in 2014, mean annual change 5' westward. Show the full calculation of the declination for 2025.",
+      "expected_answer": "Difference in years: 2025 minus 2014 gives 11 years. Total change: 11 × 5 = 55 minutes westward. Because the declination is west of true north and the change is westward, the angle grows, so add: 18°19' plus 55' gives 18°74', and since 60 minutes carry into one degree this becomes 19°14'. The magnetic declination for 2025 is 19°14' west of true north."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the iron rule of the map area calculation, and apply it to a feature measuring 3,5 cm by 1,8 cm on a 1:10 000 orthophoto.",
+      "expected_answer": "Convert each measured distance to real ground units first, and only then multiply — linear scale factors cannot convert square centimetres afterwards. Length: 3,5 cm at 1:10 000 is 35 000 cm, which is 350 m. Breadth: 1,8 cm is 18 000 cm, which is 180 m. Area: 350 × 180 = 63 000, so the feature covers 63 000 m²."
+    },
+    {
+      "id": "cc3",
+      "question": "Distinguish magnetic declination from magnetic bearing, and state how the two combine when walking a direction taken off the map.",
+      "expected_answer": "Magnetic declination is the angle between true north and magnetic north — a property of the place and year, printed and updated from the sheet's margin note. A magnetic bearing is a direction to a destination measured clockwise from magnetic north. To walk a direction taken off the map, first read the true bearing, then add the magnetic declination — since South Africa's declination lies west of true north — giving magnetic bearing equals true bearing plus declination."
+    }
+  ]
+}

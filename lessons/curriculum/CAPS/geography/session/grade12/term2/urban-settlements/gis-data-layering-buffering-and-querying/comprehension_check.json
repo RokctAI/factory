@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a Geographical Information System, and use the example of a number printed on a main road to explain the difference between spatial data and attribute data.",
+      "expected_answer": "A GIS is a computerised system that captures, stores, manipulates, analyses and displays spatially referenced information. The drawn line of the road is spatial data because it records the feature's position and shape; the route number printed on the road is attribute data because it is information attached to the feature, describing it rather than locating it."
+    },
+    {
+      "id": "cc2",
+      "question": "A town keeps a strip of open land empty between new houses and an area of sinkholes. Name the GIS technique involved, define it, and give the evidence you would quote from the map.",
+      "expected_answer": "The technique is buffering: drawing a zone of chosen width around a feature so that the area inside the zone is treated differently from the area outside it. Here the buffer is a no-build zone around dangerous ground, and the supporting evidence on the map is the hazard itself — the sinkholes and subsiding ground (or similar hazards such as a floodplain or protected woodland) that development must be kept away from."
+    },
+    {
+      "id": "cc3",
+      "question": "Two photographs of the same area are printed; photograph A looks blocky and blurred. Explain what this tells you about its pixels and resolution, and state how manipulating the scale of an unclear orthophoto area makes it easier to read.",
+      "expected_answer": "Photograph A has fewer pixels: each pixel is larger, so edges smear, detail is lost and the resolution — the clarity of the image — is low. To make an unclear orthophoto area easier to read you enlarge the scale (zoom in), so the same ground occupies more of the image and the detail becomes visible."
+    }
+  ]
+}

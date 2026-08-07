@@ -1728,11 +1728,12 @@
         },
         "Q3.1.2": {
           "lesson_folders": [
+            "lessons/curriculum/CAPS/mathematical_literacy/session/grade11/term1/patterns-and-relationships/number-patterns-and-growing-patterns",
             "lessons/curriculum/CAPS/mathematical_literacy/session/grade11/term1/patterns-and-relationships",
             "lessons/curriculum/CAPS/mathematical_literacy/session/grade10/term1/patterns-relationships-representations"
           ],
-          "confidence": "low",
-          "note": "Triangular number pattern: no grade12 lesson covers number patterns; nearest lower-grade lessons."
+          "confidence": "high",
+          "note": "Triangular number pattern (stacked rows): dedicated number-patterns lesson; number patterns are taught in grades 10-11 in CAPS, not grade 12."
         },
         "Q3.1.3": {
           "lesson_folders": [
@@ -2814,6 +2815,21 @@
           ],
           "confidence": "high"
         },
+        "Q2.3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/fluvial-processes/meanders-oxbow-lakes-and-longitudinal-profiles"
+          ],
+          "confidence": "high",
+          "note": "Longitudinal profiles (graded/ungraded, base levels)."
+        },
+        "Q2.4": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/fluvial-processes/meanders-oxbow-lakes-and-longitudinal-profiles",
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/fluvial-processes/river-rejuvenation-and-river-capture"
+          ],
+          "confidence": "high",
+          "note": "Meanders, slip-off/undercut slopes, oxbow-lake paragraph; Q2.4.3 (incised meanders) stays with the rejuvenation lesson."
+        },
         "Q2.4.3": {
           "lesson_folders": [
             "lessons/curriculum/CAPS/geography/session/grade12/term2/fluvial-processes/river-rejuvenation-and-river-capture"
@@ -2869,13 +2885,17 @@
             "lessons/curriculum/CAPS/geography/session/grade12/term1/urban-climates/urban-heat-islands-and-pollution-domes"
           ],
           "confidence": "high"
+        },
+        "Q3.3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements/gis-data-layering-buffering-and-querying"
+          ],
+          "confidence": "high",
+          "note": "GIS: attribute vs spatial data, feature types, data manipulation, resolution."
         }
       },
-      "unmatched": [
-        "Q2.3",
-        "Q3.3"
-      ],
-      "notes": "Q2.3-Q2.4 (meanders/oxbow lakes, longitudinal profiles) only partially covered by the river-rejuvenation lesson; Q3.3 (GIS) has no dedicated lesson — coverage gaps. Skills/*.json links are single-file skill lessons, not folders."
+      "unmatched": [],
+      "notes": "Q2.3-Q2.4 (meanders/oxbow lakes, longitudinal profiles) covered by the meanders-oxbow-lakes-and-longitudinal-profiles lesson; Q3.3 (GIS) covered by the gis-data-layering-buffering-and-querying lesson. Skills/*.json links are single-file skill lessons, not folders."
     },
     "dbe_geography_g12_p2_2025_nov": {
       "source": "Department of Basic Education",
@@ -2997,6 +3017,20 @@
           "confidence": "high",
           "note": "Whole mapwork section (eMALAHLENI/WITBANK)."
         },
+        "Q3.1.2": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term1/subtropical-anticyclones-and-associated-weather-conditions/magnetic-declination-and-area-calculation"
+          ],
+          "confidence": "high",
+          "note": "Area calculation: convert each side with the scale, then multiply."
+        },
+        "Q3.1.4": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term1/subtropical-anticyclones-and-associated-weather-conditions/magnetic-declination-and-area-calculation"
+          ],
+          "confidence": "high",
+          "note": "Magnetic declination updated by mean annual change."
+        },
         "Q3.2.3": {
           "lesson_folders": [
             "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements/urbanisation-hierarchy-and-land-use-zones"
@@ -3020,14 +3054,17 @@
             "lessons/curriculum/CAPS/geography/session/grade12/term3/mining/mining-and-the-platinum-case-study"
           ],
           "confidence": "high"
+        },
+        "Q3.3": {
+          "lesson_folders": [
+            "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements/gis-data-layering-buffering-and-querying"
+          ],
+          "confidence": "high",
+          "note": "GIS: data layering, layer naming/redraw, buffering."
         }
       },
-      "unmatched": [
-        "Q3.1.2",
-        "Q3.1.4",
-        "Q3.3"
-      ],
-      "notes": "Q3.1.2 (area calculation) and Q3.1.4 (magnetic declination) have no matching skill files (only gradient + scale/distance exist); Q3.3 (GIS) has no dedicated lesson — coverage gaps. Skills/*.json links are single-file skill lessons, not folders."
+      "unmatched": [],
+      "notes": "Q3.1.2 (area calculation) and Q3.1.4 (magnetic declination) covered by the magnetic-declination-and-area-calculation lesson; Q3.3 (GIS) covered by the gis-data-layering-buffering-and-querying lesson. Skills/*.json links are single-file skill lessons, not folders."
     }
   },
   "lessons": {
@@ -5226,6 +5263,10 @@
       },
       {
         "paper_id": "dbe_geography_g12_p1_2025_nov",
+        "question": "Q2.4"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p1_2025_nov",
         "question": "Q2.4.3"
       }
     ],
@@ -5367,6 +5408,42 @@
       {
         "paper_id": "dbe_geography_g12_p2_2025_nov",
         "question": "Q2.4"
+      }
+    ],
+    "lessons/curriculum/CAPS/mathematical_literacy/session/grade11/term1/patterns-and-relationships/number-patterns-and-growing-patterns": [
+      {
+        "paper_id": "dbe_mathlit_g12_p2_2025_nov",
+        "question": "Q3.1.2"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term2/fluvial-processes/meanders-oxbow-lakes-and-longitudinal-profiles": [
+      {
+        "paper_id": "dbe_geography_g12_p1_2025_nov",
+        "question": "Q2.3"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p1_2025_nov",
+        "question": "Q2.4"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term2/urban-settlements/gis-data-layering-buffering-and-querying": [
+      {
+        "paper_id": "dbe_geography_g12_p1_2025_nov",
+        "question": "Q3.3"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2025_nov",
+        "question": "Q3.3"
+      }
+    ],
+    "lessons/curriculum/CAPS/geography/session/grade12/term1/subtropical-anticyclones-and-associated-weather-conditions/magnetic-declination-and-area-calculation": [
+      {
+        "paper_id": "dbe_geography_g12_p2_2025_nov",
+        "question": "Q3.1.2"
+      },
+      {
+        "paper_id": "dbe_geography_g12_p2_2025_nov",
+        "question": "Q3.1.4"
       }
     ]
   },

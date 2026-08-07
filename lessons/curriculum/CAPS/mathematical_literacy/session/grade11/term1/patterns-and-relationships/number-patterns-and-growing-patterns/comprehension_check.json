@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the three families of number patterns used in Mathematical Literacy and give the test that identifies each.",
+      "expected_answer": "Constant difference patterns add the same amount each step — identified by subtracting consecutive terms and finding equal gaps. Constant ratio patterns multiply by the same factor each step — identified by dividing each term by the one before and finding the same answer. Growing-step patterns, like the triangular numbers 1; 3; 6; 10, have gaps that themselves grow by a rule — identified when the difference row is not constant but forms its own simple pattern, such as 2; 3; 4; 5."
+    },
+    {
+      "id": "cc2",
+      "question": "A courier charges R13 for the first kilometre and R7 for each kilometre after that. Describe the pattern rule in words and find the cost of seven kilometres, showing the extension.",
+      "expected_answer": "The rule: each extra kilometre adds R7 to the cost, a constant difference pattern starting at R13. Extending term by term: 13; 20; 27; 34; 41; 48; 55 — so seven kilometres cost R55, answered with the rand sign because the exam expects answers in the story's units."
+    },
+    {
+      "id": "cc3",
+      "question": "A decoration is built from seven rows of circles: one circle in the first row and one more circle in each successive row. Show a safe method for finding the total number of circles, and a check.",
+      "expected_answer": "Build a running-total table: after row one, 1; row two, 1 plus 2 gives 3; then 6; 10; 15; 21; and after row seven, 28 — the decoration uses 28 circles. Check by pairing: 1 plus 7, 2 plus 6 and 3 plus 5 give three pairs of 8, which is 24, plus the middle 4 gives 28. Both roads agree, and the answer states the unit: 28 circles, the whole stack rather than the 7 circles of the last row."
+    }
+  ]
+}
