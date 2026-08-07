@@ -45,7 +45,9 @@ verification of the `[ANNEXURE ...]`-flagged values in `paper1.json`
 (verification DONE 2026-08-06: all reconstructed values matched the printed
 annexures — no corrections needed; `[ANNEXURE ... - not in repo]` flags
 replaced with verbatim annexure descriptions and Q3.1.1 flipped back to
-checkable).
+checkable). Batch 4 (2026-08-06) re-supplied the same 18-pp mirror file
+(`NSC-2024-Gr-12-Maths-Lit-P1-Addendum (1).pdf`, browser re-download,
+md5 `b03a0c0…`, pp 1/15 re-verified) — duplicate, no action needed.
 
 ### 2. November 2025 session
 
@@ -57,11 +59,16 @@ Batch 3 (owner upload 2026-08-06) supplied THREE of the 2025 documents
 (`2025NovemberExamPapers.aspx` HTML). Every remaining document's direct
 fileticket URL was harvested from that saved page, so the old
 click-the-page shopping list is retired: every row below is now
-[direct PDF — click and save] (prefix the path with
-`https://www.education.gov.za`). Labels on the page are per-subject
+[direct PDF — click and save] with a full absolute URL — just click the
+link. Labels on the page are per-subject
 modules ("Paper 1 (English)", "Memo 1 (Afrikaans and English)", etc.).
 Note: the 2025 page lists NO separate Mathematical Literacy addenda — if
 the annexures turn out to be bundled in the QPs, nothing else to fetch.
+RESOLVED batch 5 (2026-08-06): the annexures are NOT in the QPs — both 2025
+ML QPs reference their annexures inside a 17-page SPECIAL ANSWER BOOK
+(P1 p 13 'ANNEXURE B in the ANSWER BOOK'; P2 p 14 'ANNEXURE D in the ANSWER
+BOOK'), so the two ML answer books DO still need fetching — new rows at the
+bottom of the table below.
 
 Already supplied (owner upload 2026-08-06 batch 3), tracked in this tree
 and indexed in the subject `index.json` files:
@@ -72,36 +79,54 @@ and indexed in the subject `index.json` files:
 | [x] | Mathematics P2 Nov 2025 MG (bilingual Afr & Eng, 26 pp; cover verified — settles the previously unverified fileticket=0Hh6qly8lfU, which the session page labels "Memo 2 (Afrikaans & English)") | `maths/grade12/2025/paper2_memo.pdf` |
 | [x] | Physical Sciences P1 Nov 2025 Eng QP (16 pp + 3 data sheets = 19 pp; cover/mid/data-sheet pages verified; stanmorephysics.com mirror watermark — replace with the DBE original `fileticket=oWZB83JVXE0` when convenient) | `physical_sciences/grade12/2025/paper1.pdf` |
 
+Batch 4 (owner upload 2026-08-06, `FETCH_QUEUE4.zip`) contained NONE of
+the November 2025 documents — it carried the Mathematical Literacy CAPS
+policy (now ticked in the REFERENCE section below), re-downloads of four
+legacy QPs (byte-identical to the already-tracked files; the memos those
+rows need did not arrive) and a re-download of the 2024 ML P1 addendum
+mirror file already processed in batch 3. Every row below stays open.
+
+Batch 5 (owner upload 2026-08-06, `FETCH_QUEUE5.zip`, 25 PDFs) supplied
+ALL 24 open November 2025 rows below — every file verified on cover +
+middle + late pages (the four scanned QPs — Maths P1/P2, Maths Lit P1/P2 —
+by rendered-page reading), no md5 collisions with tracked files except the
+deliberate Physical Sciences P1 QP replacement and the one duplicate noted
+in the REFERENCE section (Maths Lit CAPS policy, byte-identical
+re-supply). All 24 are now tracked in `<subject>/grade12/2025/` and
+indexed in the six subject `index.json` files.
+
 Still to fetch — English QPs and bilingual memos (skip Afrikaans-only QPs
 and answerbooks; all URLs harvested 2026-08-06 from the owner-supplied
 session-page HTML):
 
-| Done | Document | Direct URL path |
+| Done | Document | Direct URL |
 |:---:|---|---|
-| [ ] | Mathematics P1 Eng QP | `/LinkClick.aspx?fileticket=JM4biRg1OIk%3d&tabid=5742&portalid=0&mid=14845` |
-| [ ] | Mathematics P2 Eng QP | `/LinkClick.aspx?fileticket=8t-92qfBEV0%3d&tabid=5742&portalid=0&mid=14845` |
-| [ ] | Mathematical Literacy P1 Eng QP | `/LinkClick.aspx?fileticket=0fZnlOqdEo0%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Mathematical Literacy P1 Memo (Afr & Eng) | `/LinkClick.aspx?fileticket=yfBLrkeMk2o%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Mathematical Literacy P2 Eng QP | `/LinkClick.aspx?fileticket=SlY1pYy3GT4%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Mathematical Literacy P2 Memo (Afr & Eng) | `/LinkClick.aspx?fileticket=anKb8eamj_M%3d&tabid=5742&portalid=0&mid=14844` |
-| [ ] | Physical Sciences P1 Eng QP (DBE original of the mirror above) | `/LinkClick.aspx?fileticket=oWZB83JVXE0%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Physical Sciences P1 Memo (Eng & Afr) | `/LinkClick.aspx?fileticket=OpuzjBocaqw%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Physical Sciences P2 Eng QP | `/LinkClick.aspx?fileticket=hF7ax9AbzOw%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Physical Sciences P2 Memo (Eng & Afr) | `/LinkClick.aspx?fileticket=xvxkhSquue4%3d&tabid=5742&portalid=0&mid=14848` |
-| [ ] | Accounting P1 Eng QP | `/LinkClick.aspx?fileticket=fjsgFDpa8wg%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P1 Memo (Eng) | `/LinkClick.aspx?fileticket=oZyi7eQjyEo%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P1 Answer Book (Eng) | `/LinkClick.aspx?fileticket=1WvL2tbx12Y%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P2 Eng QP | `/LinkClick.aspx?fileticket=3BYl4uHjIyA%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P2 Memo (Eng) | `/LinkClick.aspx?fileticket=xBkE4RhcBtc%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Accounting P2 Answerbook (Eng) | `/LinkClick.aspx?fileticket=t08Pta3AYdE%3d&tabid=5742&portalid=0&mid=14825` |
-| [ ] | Economics P1 Eng QP | `/LinkClick.aspx?fileticket=ctIxKzDjX7o%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Economics P1 Memo (Eng) | `/LinkClick.aspx?fileticket=0Nt-PqRAEpI%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Economics P2 Eng QP | `/LinkClick.aspx?fileticket=Bi6CsZZVPzo%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Economics P2 Memo (Eng) | `/LinkClick.aspx?fileticket=iIiF0mlTUsU%3d&tabid=5742&portalid=0&mid=14836` |
-| [ ] | Geography P1 Eng QP | `/LinkClick.aspx?fileticket=-yt9PT3ew3w%3d&tabid=5742&portalid=0&mid=14839` |
-| [ ] | Geography P1 Memo (Eng) | `/LinkClick.aspx?fileticket=3m3EI20-OFE%3d&tabid=5742&portalid=0&mid=14839` |
-| [ ] | Geography P2 Eng QP | `/LinkClick.aspx?fileticket=q-0mpNmbw9Q%3d&tabid=5742&portalid=0&mid=14839` |
-| [ ] | Geography P2 Memo (Eng) | `/LinkClick.aspx?fileticket=V40npxGuaQY%3d&tabid=5742&portalid=0&mid=14839` |
+| [x] | Mathematics P1 Eng QP — supplied by owner upload 2026-08-06 batch 5 (scanned, 12 pp = 11 QP pages + information sheet; cover/mid/info-sheet render-verified), tracked at `maths/grade12/2025/paper1.pdf`; transcribed to `paper1.json` 2026-08-06 (49 questions, 150 marks reconciled, links.json extended) | <https://www.education.gov.za/LinkClick.aspx?fileticket=JM4biRg1OIk%3d&tabid=5742&portalid=0&mid=14845> |
+| [x] | Mathematics P2 Eng QP — supplied by owner upload 2026-08-06 batch 5 (scanned, 15 pp = 14 QP pages + information sheet; render-verified), tracked at `maths/grade12/2025/paper2.pdf`; transcribed to `paper2.json` 2026-08-06 (54 questions, 150 marks reconciled, links.json extended) | <https://www.education.gov.za/LinkClick.aspx?fileticket=8t-92qfBEV0%3d&tabid=5742&portalid=0&mid=14845> |
+| [x] | Mathematical Literacy P1 Eng QP — supplied by owner upload 2026-08-06 batch 5 (scanned, 13 pp, TOTAL 150, render-verified; annexures NOT included — they sit in the un-supplied 17-pp Special Answer Book, see new rows below), tracked at `mathematical_literacy/grade12/2025/paper1.pdf`; transcribed to `paper1.json` 2026-08-06 (51 questions, 150 marks reconciled, links.json extended; annexure-dependent items reconstructed from memo and flagged pending the Special Answer Book) | <https://www.education.gov.za/LinkClick.aspx?fileticket=0fZnlOqdEo0%3d&tabid=5742&portalid=0&mid=14844> |
+| [x] | Mathematical Literacy P1 Memo (Afr & Eng) — supplied by owner upload 2026-08-06 batch 5 (bilingual, 23 pp, cover/mid/late verified), tracked at `mathematical_literacy/grade12/2025/paper1_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=yfBLrkeMk2o%3d&tabid=5742&portalid=0&mid=14844> |
+| [x] | Mathematical Literacy P2 Eng QP — supplied by owner upload 2026-08-06 batch 5 (scanned, 15 pp, TOTAL 150, render-verified; same answer-book annexure caveat as P1), tracked at `mathematical_literacy/grade12/2025/paper2.pdf`; transcribed to `paper2.json` 2026-08-06 (49 questions, 150 marks reconciled, links.json extended; annexure-dependent items reconstructed from memo and flagged pending the Special Answer Book) | <https://www.education.gov.za/LinkClick.aspx?fileticket=SlY1pYy3GT4%3d&tabid=5742&portalid=0&mid=14844> |
+| [x] | Mathematical Literacy P2 Memo (Afr & Eng) — supplied by owner upload 2026-08-06 batch 5 (bilingual, 15 pp, cover/mid/late verified), tracked at `mathematical_literacy/grade12/2025/paper2_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=anKb8eamj_M%3d&tabid=5742&portalid=0&mid=14844> |
+| [x] | Physical Sciences P1 Eng QP (DBE original of the mirror above) — supplied by owner upload 2026-08-06 batch 5 (19 pp = 16 pages + 3 data sheets, real text layer, no watermark; p 8 content matches the mirror page-for-page). REPLACED the batch-3 stanmorephysics mirror (old md5 `69a101e…`, new md5 `27a7d9c…`) at `physical_sciences/grade12/2025/paper1.pdf`; transcribed to `paper1.json` 2026-08-06 (55 questions, 150 marks reconciled, links.json extended) | <https://www.education.gov.za/LinkClick.aspx?fileticket=oWZB83JVXE0%3d&tabid=5742&portalid=0&mid=14848> |
+| [x] | Physical Sciences P1 Memo (Eng & Afr) — supplied by owner upload 2026-08-06 batch 5 (bilingual, 20 pp, cover/mid/late verified), tracked at `physical_sciences/grade12/2025/paper1_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=OpuzjBocaqw%3d&tabid=5742&portalid=0&mid=14848> |
+| [x] | Physical Sciences P2 Eng QP — supplied by owner upload 2026-08-06 batch 5 (20 pp = 16 pages + 4 data sheets, cover/mid/data-sheet verified), tracked at `physical_sciences/grade12/2025/paper2.pdf`; transcribed to `paper2.json` 2026-08-06 (68 questions, 150 marks reconciled, links.json extended; memo Kc inconsistency at Q6.2.3 flagged in-file) | <https://www.education.gov.za/LinkClick.aspx?fileticket=hF7ax9AbzOw%3d&tabid=5742&portalid=0&mid=14848> |
+| [x] | Physical Sciences P2 Memo (Eng & Afr) — supplied by owner upload 2026-08-06 batch 5 (bilingual, 22 pp, cover/mid/late verified), tracked at `physical_sciences/grade12/2025/paper2_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=xvxkhSquue4%3d&tabid=5742&portalid=0&mid=14848> |
+| [x] | Accounting P1 Eng QP — supplied by owner upload 2026-08-06 batch 5 (16 pp = 15 pages + formula sheet, cover/mid/late verified), tracked at `accounting/grade12/2025/paper1.pdf`; transcribed to `paper1.json` 2026-08-06 (28 questions, 150 marks reconciled, links.json extended) | <https://www.education.gov.za/LinkClick.aspx?fileticket=fjsgFDpa8wg%3d&tabid=5742&portalid=0&mid=14825> |
+| [x] | Accounting P1 Memo (Eng) — supplied by owner upload 2026-08-06 batch 5 (13 pp, cover/mid/late verified), tracked at `accounting/grade12/2025/paper1_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=oZyi7eQjyEo%3d&tabid=5742&portalid=0&mid=14825> |
+| [x] | Accounting P1 Answer Book (Eng) — supplied by owner upload 2026-08-06 batch 5 (11 pp Special Answer Book, cover/mid/late verified), tracked at `accounting/grade12/2025/paper1_answer_book.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=1WvL2tbx12Y%3d&tabid=5742&portalid=0&mid=14825> |
+| [x] | Accounting P2 Eng QP — supplied by owner upload 2026-08-06 batch 5 (16 pp = 15 pages + formula sheet, cover/mid/late verified), tracked at `accounting/grade12/2025/paper2.pdf`; transcribed to `paper2.json` 2026-08-06 (35 questions, 150 marks reconciled, links.json extended; paper-vs-memo bonus-date conflict and stockholding anomaly flagged in-file) | <https://www.education.gov.za/LinkClick.aspx?fileticket=3BYl4uHjIyA%3d&tabid=5742&portalid=0&mid=14825> |
+| [x] | Accounting P2 Memo (Eng) — supplied by owner upload 2026-08-06 batch 5 (13 pp, cover/mid/late verified), tracked at `accounting/grade12/2025/paper2_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=xBkE4RhcBtc%3d&tabid=5742&portalid=0&mid=14825> |
+| [x] | Accounting P2 Answerbook (Eng) — supplied by owner upload 2026-08-06 batch 5 (11 pp Special Answer Book, cover/mid/late verified), tracked at `accounting/grade12/2025/paper2_answer_book.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=t08Pta3AYdE%3d&tabid=5742&portalid=0&mid=14825> |
+| [x] | Economics P1 Eng QP — supplied by owner upload 2026-08-06 batch 5 (12 pp, cover/mid/late verified), tracked at `economics/grade12/2025/paper1.pdf`; transcribed to `paper1.json` 2026-08-06 (66 entries, 230 transcribed marks answered out of 150 reconciled, links.json extended; misprints flagged in-file) | <https://www.education.gov.za/LinkClick.aspx?fileticket=ctIxKzDjX7o%3d&tabid=5742&portalid=0&mid=14836> |
+| [x] | Economics P1 Memo (Eng) — supplied by owner upload 2026-08-06 batch 5 (22 pp, cover/mid/late verified), tracked at `economics/grade12/2025/paper1_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=0Nt-PqRAEpI%3d&tabid=5742&portalid=0&mid=14836> |
+| [x] | Economics P2 Eng QP — supplied by owner upload 2026-08-06 batch 5 (12 pp, cover/mid/late verified), tracked at `economics/grade12/2025/paper2.pdf`; transcribed to `paper2.json` 2026-08-06 (66 entries, 230 transcribed marks answered out of 150 reconciled, links.json extended; misprints flagged in-file) | <https://www.education.gov.za/LinkClick.aspx?fileticket=Bi6CsZZVPzo%3d&tabid=5742&portalid=0&mid=14836> |
+| [x] | Economics P2 Memo (Eng) — supplied by owner upload 2026-08-06 batch 5 (23 pp, cover/mid/late verified), tracked at `economics/grade12/2025/paper2_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=iIiF0mlTUsU%3d&tabid=5742&portalid=0&mid=14836> |
+| [x] | Geography P1 Eng QP — supplied by owner upload 2026-08-06 batch 5 (18 pp, cover/mid/late verified), tracked at `geography/grade12/2025/paper1.pdf`; transcribed to `paper1.json` 2026-08-06 (81 questions, 150 marks reconciled, STELLENBOSCH mapwork, links.json extended) | <https://www.education.gov.za/LinkClick.aspx?fileticket=-yt9PT3ew3w%3d&tabid=5742&portalid=0&mid=14839> |
+| [x] | Geography P1 Memo (Eng) — supplied by owner upload 2026-08-06 batch 5 (12 pp, cover/mid/late verified), tracked at `geography/grade12/2025/paper1_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=3m3EI20-OFE%3d&tabid=5742&portalid=0&mid=14839> |
+| [x] | Geography P2 Eng QP — supplied by owner upload 2026-08-06 batch 5 (20 pp: Economic Geography + Map Interpretation/GIS, cover/mid/late verified), tracked at `geography/grade12/2025/paper2.pdf`; transcribed to `paper2.json` 2026-08-06 (80 questions, 150 marks reconciled, eMALAHLENI (WITBANK) mapwork, links.json extended) | <https://www.education.gov.za/LinkClick.aspx?fileticket=q-0mpNmbw9Q%3d&tabid=5742&portalid=0&mid=14839> |
+| [x] | Geography P2 Memo (Eng) — supplied by owner upload 2026-08-06 batch 5 (13 pp, cover/mid/late verified), tracked at `geography/grade12/2025/paper2_memo.pdf` | <https://www.education.gov.za/LinkClick.aspx?fileticket=V40npxGuaQY%3d&tabid=5742&portalid=0&mid=14839> |
+| [ ] | Mathematical Literacy P1 Answer Book (Eng) — NEW ROW batch 5: the 2025 ML annexures live in this 17-pp Special Answer Book (QP p 13 references 'ANNEXURE B in the ANSWER BOOK'), needed for annexure-dependent transcription; direct fileticket not yet harvested — fetch from the session page (label "Answer Book 1 (English)" in the Mathematical Literacy module) | <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx> |
+| [ ] | Mathematical Literacy P2 Answer Book (Eng) — NEW ROW batch 5: same as above for P2 (17-pp Special Answer Book holding Annexures A–D; QP p 14 references 'ANNEXURE D in the ANSWER BOOK') | <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx> |
 
 ## Done
 
@@ -207,7 +232,7 @@ Grades 10-12"), extracted to `<subject>/curriculum/caps_gr10-12.json`.
 | [x] | Accounting — supplied by owner upload 2026-08-06 batch 3, tracked at `../accounting/curriculum/caps_gr10-12.pdf` (multi-page verified) | <https://www.education.gov.za/LinkClick.aspx?fileticket=IIU4LUlZBFM%3d&tabid=570&portalid=0&mid=1558> |
 | [x] | Economics — supplied by owner upload 2026-08-06 batch 3, tracked at `../economics/curriculum/caps_gr10-12.pdf` (multi-page verified) | <https://www.education.gov.za/LinkClick.aspx?fileticket=Lv-97xKN0eM%3d&tabid=570&portalid=0&mid=1558> |
 | [x] | Geography — supplied by owner upload 2026-08-06 batch 3, tracked at `../geography/curriculum/caps_gr10-12.pdf` (multi-page verified) | <https://www.education.gov.za/LinkClick.aspx?fileticket=sdwEoyM0nY0%3d&tabid=570&portalid=0&mid=1558> |
-| [ ] | Mathematical Literacy — NOT in batch 3 (the only reference doc missing from the 2026-08-06 batch-3 upload; the other five CAPS policies arrived) [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=q8-SkGy43rw%3d&tabid=570&portalid=0&mid=1558> |
+| [x] | Mathematical Literacy — supplied by owner upload 2026-08-06 batch 4, tracked at `../mathematical_literacy/curriculum/caps_gr10-12.pdf` (134 pp; cover "MATHEMATICAL LITERACY ... Curriculum and Assessment Policy Statement, Further Education and Training Phase Grades 10-12", pp 3/60/130 verified — DBE contact page, banking/loans content, models taxonomy). Batch 5 (2026-08-06) re-supplied the same file (`CAPS FET _ MATHEMATICAL LITERACY _ GR 10-12 _ Web_DDA9.pdf`, byte-identical md5 `a492e3f…` to the tracked copy) — duplicate, no action needed | <https://www.education.gov.za/LinkClick.aspx?fileticket=q8-SkGy43rw%3d&tabid=570&portalid=0&mid=1558> |
 | [x] | Mathematics — supplied by owner upload 2026-08-06 batch 3, tracked at `../maths/curriculum/caps_gr10-12.pdf` (multi-page verified) | <https://www.education.gov.za/LinkClick.aspx?fileticket=uXLZcIa67rE%3d&tabid=570&portalid=0&mid=1558> |
 | [x] | Physical Sciences — supplied by owner upload 2026-08-06 batch 3, tracked at `../physical_sciences/curriculum/caps_gr10-12.pdf` (multi-page verified) | <https://www.education.gov.za/LinkClick.aspx?fileticket=uVcOcx728Y8%3d&tabid=570&portalid=0&mid=1558> |
 
@@ -261,10 +286,10 @@ papers are NOT listed here — their PDFs are already tracked next to their
 
 | Done | Paper (extracted to) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Mathematics Gr 11 P1 Nov 2017 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2017/paper1.pdf` (7 pp scan, cover/mid/late pages verified; matches the paper.json). MEMO not in batch — memo URL still open [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
-| [ ] | Mathematics Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2018/paper1.pdf` (16 pp scan: Eng pp 1-8 + Afr pp 9-16, verified). MEMO not in batch — memo URL still open [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
-| [ ] | Physical Sciences Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `physical_sciences/grade11/2018/paper1.pdf` (15 pp + 2 data sheets, verified). MEMO not in batch — memo URL still open [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
-| [ ] | Geography Gr 12 P2 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `geography/grade12/2018/paper2.pdf` (15 pp mapwork paper, 75 marks, verified). MEMO not in batch — memo URL still open [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> | <https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> |
+| [ ] | Mathematics Gr 11 P1 Nov 2017 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2017/paper1.pdf` (7 pp scan, cover/mid/late pages verified; matches the paper.json). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2017 Eng.pdf`, byte-identical md5 `80f35be…` to the tracked QP) — the memo URL at right, labelled "Memo 1 (Afrikaans and English)" on Grade11Exams.aspx, is what still needs downloading [direct PDF — click and save]. Mirror search 2026-08-06: no direct link found on acceptable hosts (WCED ePortal excluded per SOURCES.md robots block; Scribd/Studypool are viewer pages, not PDFs) | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
+| [ ] | Mathematics Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2018/paper1.pdf` (16 pp scan: Eng pp 1-8 + Afr pp 9-16, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `5d85abb…` to the tracked QP). ALTERNATIVE direct memo PDF found by web search 2026-08-06 on the Eastern Cape DoE exam site (URL observed verbatim in search results; ecexams.co.za is egress-blocked here so unfetched-but-real) [direct PDF — click and save]: <https://www.ecexams.co.za/2018_November_Gr_11_Exams/Mathematics%20P1%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf> — or use the DBE memo URL at right | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
+| [ ] | Physical Sciences Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `physical_sciences/grade11/2018/paper1.pdf` (15 pp + 2 data sheets, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Physical Sciences P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `84a2fb6…` to the tracked QP). Mirror search 2026-08-06: no direct link found — the same ecexams.co.za directory that holds the Maths Gr 11 Nov 2018 memo (`https://www.ecexams.co.za/2018_November_Gr_11_Exams/`) very likely holds it too, link label best guess "Physical Sciences P1 Grade 11 Nov 2018 Memo Eng & Afr.pdf" (NOT verified — site egress-blocked here); otherwise use the DBE memo URL at right [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
+| [ ] | Geography Gr 12 P2 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `geography/grade12/2018/paper2.pdf` (15 pp mapwork paper, 75 marks, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Geography P2 Nov 2018 Eng.pdf`, byte-identical md5 `553fb16…` to the tracked QP). Mirror search 2026-08-06: no direct link found on acceptable hosts — the DBE file is named "Geography P2 Nov 2018 FINAL Memo Eng.pdf" (per Yumpu/Scribd viewer copies); WCED ePortal hosts it at page <https://wcedeportal.co.za/eresource/115736> (link label "NSC NOV 2018 Geography Paper 2 MEMO") but WCED is excluded per SOURCES.md robots block, so use the DBE memo URL at right [direct PDF — click and save] | <https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> | <https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> |
 
 ### School calendars
 

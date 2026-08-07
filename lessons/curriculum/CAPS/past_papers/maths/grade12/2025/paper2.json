@@ -1,0 +1,580 @@
+{
+  "_comment": [
+    "DBE Grade 12 Mathematics P2, November 2025. Question paper is a scanned",
+    "PDF (no text layer): question wording transcribed by reading the rendered",
+    "pages. Memo answers/working come from the marking guidelines' real text",
+    "layer (pdftotext), cross-checked against recomputation. The memo is",
+    "bilingual (Eng/Afr); only the English content is transcribed here.",
+    "solution_method is the method the MEMO uses to solve each question.",
+    "memo_answer is the memo's final answer; memo_working summarises the",
+    "memo's primary method (alternative memo methods noted in memo_note).",
+    "Figures are described in bracketed [Figure: ...] notes inside text."
+  ],
+  "paper_id": "dbe_maths_g12_p2_2025_nov",
+  "source": "Department of Basic Education",
+  "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations.aspx",
+  "paper_file": "paper2.pdf",
+  "memo_file": "paper2_memo.pdf",
+  "copyright": "© Department of Basic Education, 2025. Reproduced for educational use with attribution.",
+  "subject": "Maths",
+  "grade": 12,
+  "paper": "P2",
+  "session": "November 2025",
+  "language": "English",
+  "total_marks": 150,
+  "questions": [
+    {
+      "ref": "Q1.1",
+      "text": "There were 11 cars of the same model for sale at a car dealership. The age (in years) of each car and its corresponding selling price (in rands) is provided in the table below. Age of car (in years): 2, 3, 3, 4, 4, 4, 6, 6, 7, 7, 8. Selling price of car (in rand): 293 000, 265 000, 256 000, 219 000, 241 000, 246 000, 226 000, 176 000, 154 000, 180 000, 148 000. Determine the equation of the least squares regression line.",
+      "marks": 3,
+      "topic": "Statistics",
+      "solution_method": "least_squares_regression_calculator",
+      "memo_answer": "ŷ = 331 397,20 - 22 988,32x",
+      "memo_working": "a = 331 397,20; b = -22 988,32; ŷ = 331 397,20 - 22 988,32x",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.2",
+      "text": "Predict the selling price of a similar car at this car dealership that is 5 years old.",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "regression_prediction",
+      "memo_answer": "R216 455,60",
+      "memo_working": "ŷ = 331 397,20 - 22 988,32(5) = 216 455,60",
+      "memo_note": "Alternative memo answer: ŷ = 216 455,61 (calculator) earns both marks.",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.3",
+      "text": "Use the correlation coefficient to show whether the prediction made in QUESTION 1.2 is valid or not.",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "correlation_coefficient_interpretation",
+      "memo_answer": "r = -0,95 (strong correlation), therefore the prediction will be valid",
+      "memo_working": "The strong correlation (r = -0,95) suggests that the data points lie close to the regression line; therefore the prediction will be valid",
+      "checkable": true
+    },
+    {
+      "ref": "Q1.4",
+      "text": "Use the answer to QUESTION 1.1 to write down the estimated average yearly decrease in the selling price of these 11 cars.",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "interpret_regression_gradient",
+      "memo_answer": "R22 988,32 (average decrease per year)",
+      "memo_working": "The average decrease per year is R22 988,32 (the magnitude of the gradient b)",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.1.1",
+      "text": "The cumulative frequency table below shows the amount of time that people spent on a particular website on a certain day. [Table: TIME, t (IN MINUTES) with CUMULATIVE FREQUENCY: 0 < t ≤ 20 -> 16; 0 < t ≤ 40 -> 40; 0 < t ≤ 60 -> 59; 0 < t ≤ 80 -> 67; 0 < t ≤ 100 -> 70.] How many people visited this website on that day?",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "read_cumulative_total",
+      "memo_answer": "70",
+      "memo_working": "Final cumulative frequency = 70",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.1.2",
+      "text": "How many people spent more than 40 and up to 80 minutes on the website?",
+      "marks": 2,
+      "topic": "Statistics",
+      "solution_method": "cumulative_frequency_difference",
+      "memo_answer": "27",
+      "memo_working": "Number of people = 67 - 40 = 27",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.1.3",
+      "text": "Draw a histogram to represent the information provided in the cumulative frequency table.",
+      "marks": 3,
+      "topic": "Statistics",
+      "solution_method": "histogram_from_cumulative_frequencies",
+      "memo_answer": "Histogram with class frequencies 16 ; 24 ; 19 ; 8 ; 3 for the intervals (0;20], (20;40], (40;60], (60;80], (80;100]",
+      "memo_working": "Frequencies from differences of cumulative frequencies: 16, 40-16=24, 59-40=19, 67-59=8, 70-67=3. Memo awards: two frequencies correct; all frequencies correct; no gaps between bars",
+      "checkable": true
+    },
+    {
+      "ref": "Q2.1.4",
+      "text": "Comment on the skewness of the data.",
+      "marks": 1,
+      "topic": "Statistics",
+      "solution_method": "describe_skewness",
+      "memo_answer": "Skewed to the right OR positively skewed",
+      "memo_working": "The histogram tails off to the right",
+      "checkable": false
+    },
+    {
+      "ref": "Q2.2",
+      "text": "There are 9 players in a basketball team. The coach calculated that on average, each player scored 12 points during a game. The points scored by 8 of the 9 players from the team is given below: 11, 14, 19, 20, 8, 10, 2, 14. How many players' points score was outside ONE standard deviation of the mean points score?",
+      "marks": 5,
+      "topic": "Statistics",
+      "solution_method": "find_missing_value_then_standard_deviation_interval",
+      "memo_answer": "3 players",
+      "memo_working": "(11+14+19+20+8+10+2+14+x)/9 = 12 -> x + 98 = 108 -> x = 10 (the 9th player scored 10 points); σ = 5,23 (5,22812...); (x̄ - σ ; x̄ + σ) = (6,77 ; 17,23); 3 players' points (19 ; 20 ; 2) were outside one standard deviation of the mean",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.1",
+      "text": "In the diagram, P(-1 ; 8), Q(-4 ; -6) and R(12 ; 2) are the vertices of ΔPQR. The angle of inclination of QR is θ. [Figure: triangle PQR with P above the x-axis left of the y-axis, Q in the third quadrant, R in the first quadrant; θ marked at the x-axis where QR crosses it.] Calculate the length of QR. Leave your answer in simplified surd form.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "distance_formula",
+      "memo_answer": "QR = √320 = 8√5 units",
+      "memo_working": "QR = sqrt((-4 - 12)^2 + (-6 - 2)^2) = √320 = 8√5",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.2",
+      "text": "Calculate the gradient of QR.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "gradient_formula",
+      "memo_answer": "m_QR = 1/2",
+      "memo_working": "m_QR = (-6 - 2)/(-4 - 12) = 1/2",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.3",
+      "text": "Calculate the size of θ.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "inclination_from_gradient",
+      "memo_answer": "θ = 26,57°",
+      "memo_working": "tan θ = m_QR = 1/2; θ = 26,57°",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.4",
+      "text": "Determine the equation of QR.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "line_equation_point_gradient",
+      "memo_answer": "y = (1/2)x - 4",
+      "memo_working": "-6 = (1/2)(-4) + c -> c = -4 (or y - 2 = (1/2)(x - 12)); y = (1/2)x - 4",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.5",
+      "text": "PQRS, in that order, is a parallelogram. Write down the coordinates of S.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "parallelogram_translation",
+      "memo_answer": "S(15 ; 16)",
+      "memo_working": "Q -> R: (x ; y) -> (x + 16 ; y + 8); apply to P(-1 ; 8): S(15 ; 16)",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.6",
+      "text": "T is a point on QR such that PT ⊥ QR. Calculate the coordinates of T.",
+      "marks": 5,
+      "topic": "Analytical Geometry",
+      "solution_method": "foot_of_perpendicular_intersection",
+      "memo_answer": "T(4 ; -2)",
+      "memo_working": "m_PT = -2; equation of PT through P(-1 ; 8): y = -2x + 6; intersect with y = (1/2)x - 4: -2x + 6 = (1/2)x - 4; 5x = 20; x = 4; y = (1/2)(4) - 4 = -2; T(4 ; -2)",
+      "memo_note": "Alternative memo method: PQ = PR = √205, so ΔPQR is isosceles and the perpendicular height bisects the base QR; T is the midpoint of QR = (4 ; -2).",
+      "checkable": true
+    },
+    {
+      "ref": "Q3.7",
+      "text": "Calculate the area of parallelogram PQRS.",
+      "marks": 3,
+      "topic": "Analytical Geometry",
+      "solution_method": "base_times_height",
+      "memo_answer": "200 units^2",
+      "memo_working": "PT = sqrt((4 - (-1))^2 + (-2 - 8)^2) = √125 = 5√5 = 11,18 units; area PQRS = QR·PT = (8√5)(5√5) = 200 units^2",
+      "memo_note": "Alternative memo method: area ΔPQR = (1/2)(8√5)(5√5) = 100 units^2; area PQRS = 2 × 100 = 200 units^2.",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.1",
+      "text": "In the diagram, M(p ; q) is the centre of the circle that intersects the x-axis at A and B. C is a point such that the line drawn from M to C is parallel to the y-axis and intersects the x-axis at D. MC intersects the circle at E(-6 ; -1). Tangents drawn from C touch the circle at A and B. AD = (q - 1) units. [Figure: circle with centre M(p ; q) above the x-axis, cutting the x-axis at A and B (both left of O); vertical line MDC through D on the x-axis meeting the circle again at E just below the x-axis and ending at C below E; tangent lines CA and CB.] Write down the value of p.",
+      "marks": 1,
+      "topic": "Analytical Geometry",
+      "solution_method": "read_coordinate_from_vertical_line",
+      "memo_answer": "p = -6",
+      "memo_working": "MC is vertical through E(-6 ; -1), so p = -6",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.2",
+      "text": "Show that q = 4.",
+      "marks": 4,
+      "topic": "Analytical Geometry",
+      "solution_method": "pythagoras_with_radius",
+      "memo_answer": "q = 4",
+      "memo_working": "MD̂B = 90° (MC || y-axis); AM = ME = q + 1 (radii); MD = q; Pythagoras: AM^2 = AD^2 + MD^2; (q + 1)^2 = (q - 1)^2 + q^2; q^2 + 2q + 1 = q^2 - 2q + 1 + q^2; q^2 - 4q = 0; q(q - 4) = 0; q ≠ 0, so q = 4",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.3",
+      "text": "Determine the equation of the circle in the form (x - a)^2 + (y - b)^2 = r^2.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "circle_equation_centre_radius",
+      "memo_answer": "(x + 6)^2 + (y - 4)^2 = 25",
+      "memo_working": "AM = 5 units (radius q + 1 = 5); (x + 6)^2 + (y - 4)^2 = 25",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.4",
+      "text": "If the circle is translated 2 units to the left, determine the minimum distance between the circle and the y-axis.",
+      "marks": 1,
+      "topic": "Analytical Geometry",
+      "solution_method": "distance_centre_to_axis_minus_radius",
+      "memo_answer": "3 units",
+      "memo_working": "New centre (-8 ; 4); distance to y-axis 8 minus radius 5 = 3 units",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.5",
+      "text": "Calculate the coordinates of A and B.",
+      "marks": 3,
+      "topic": "Analytical Geometry",
+      "solution_method": "substitute_y_zero_into_circle",
+      "memo_answer": "A(-9 ; 0) and B(-3 ; 0)",
+      "memo_working": "(x + 6)^2 + (0 - 4)^2 = 25; (x + 6)^2 = 9; x + 6 = ±3; x = -3 or x = -9; A(-9 ; 0), B(-3 ; 0)",
+      "memo_note": "Alternative memo methods: expand to x^2 + 12x + 27 = 0, (x + 3)(x + 9) = 0; or DB = AD = 3 (line from centre ⊥ to chord) with D(-6 ; 0).",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.6",
+      "text": "Determine the equation of tangent BC.",
+      "marks": 4,
+      "topic": "Analytical Geometry",
+      "solution_method": "tangent_perpendicular_to_radius",
+      "memo_answer": "y = (3/4)x + 9/4",
+      "memo_working": "m_MB = (4 - 0)/(-6 - (-3)) = -4/3; m_BC = 3/4; through B(-3 ; 0): 0 = (3/4)(-3) + c -> c = 9/4; y = (3/4)x + 9/4",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.7",
+      "text": "Write down the coordinates of C.",
+      "marks": 2,
+      "topic": "Analytical Geometry",
+      "solution_method": "substitute_x_into_tangent",
+      "memo_answer": "C(-6 ; -9/4)",
+      "memo_working": "C lies on the vertical line x = -6; y = (3/4)(-6) + 9/4 = -9/4; C(-6 ; -9/4)",
+      "checkable": true
+    },
+    {
+      "ref": "Q4.8",
+      "text": "Calculate the size of AĈB.",
+      "marks": 4,
+      "topic": "Analytical Geometry",
+      "solution_method": "angle_between_lines_from_gradients",
+      "memo_answer": "AĈB = 106,26°",
+      "memo_working": "tan β = 3/4 (inclination of CB); m_AC = -3/4; tan α = -3/4 -> α = 180° - 36,87° = 143,13°; AĈB = 143,13° - 36,87° = 106,26°",
+      "memo_note": "Alternative memo methods: (1) tan MÂB = 4/3 -> MÂB = 53,13°, AM̂D = 36,87°, MÂC = 90° (tangent ⊥ radius), AĈM = 53,13°, AĈB = 106,26° (property of kite); (2) tan AĈD = 3/(9/4) = 4/3 -> AĈD = 53,13°, AĈB = 106,26°; (3) cosine rule with AC = BC = 15/4 and AB = 6: cos AĈB = -0,28 -> 106,26°; (4) AMBC cyclic quad, MĈB = 53,13° (angles in same segment), AĈB = 106,26°.",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.1.1",
+      "text": "It is given that tan 50° = k. Express EACH of the following in terms of k:  cos 40°",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "right_triangle_co_function",
+      "memo_answer": "cos 40° = k/sqrt(k^2 + 1)",
+      "memo_working": "Right triangle with tan 50° = k/1; hypotenuse r = sqrt(k^2 + 1) (Pythagoras); cos 40° = sin 50° = k/sqrt(k^2 + 1)",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.1.2",
+      "text": "Express in terms of k:  (2 sin 25°.cos 25°)/(-2 + 4 sin^2 25°)",
+      "marks": 5,
+      "topic": "Trigonometry",
+      "solution_method": "double_angle_identities",
+      "memo_answer": "-(1/2)k",
+      "memo_working": "Numerator = sin 50°; denominator = -2(1 - 2 sin^2 25°) = -2 cos 50°; expression = sin 50°/(-2 cos 50°) = -(1/2)tan 50° = -(1/2)k",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.1.3",
+      "text": "Express in terms of k:  sin 10°",
+      "marks": 4,
+      "topic": "Trigonometry",
+      "solution_method": "compound_angle_expansion",
+      "memo_answer": "sin 10° = (k^2 - 1)/(k^2 + 1)",
+      "memo_working": "sin 10° = sin(50° - 40°) = sin 50° cos 40° - cos 50° sin 40° = (k/sqrt(k^2+1))(k/sqrt(k^2+1)) - (1/sqrt(k^2+1))(1/sqrt(k^2+1)) = (k^2 - 1)/(k^2 + 1)",
+      "memo_note": "Alternative memo methods: sin 10° = cos 80° = 2 cos^2 40° - 1 = 2k^2/(k^2+1) - 1 = (k^2-1)/(k^2+1); or sin 10° = sin(60° - 50°) = (√3 - k)/(2sqrt(k^2+1)).",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.2.1",
+      "text": "Given: (sin(540° + x).cos(90° + x))/sin(-x). Simplify the expression above fully to a single trigonometric ratio.",
+      "marks": 4,
+      "topic": "Trigonometry",
+      "solution_method": "reduction_formulae",
+      "memo_answer": "-sin x",
+      "memo_working": "sin(540° + x) = -sin x; cos(90° + x) = -sin x; sin(-x) = -sin x; expression = (-sin x)(-sin x)/(-sin x) = -sin x",
+      "checkable": true
+    },
+    {
+      "ref": "Q5.2.2",
+      "text": "Hence, determine the values of x in the interval x ∈ [0° ; 360°] for which sqrt( (sin(540° + x).cos(90° + x))/sin(-x) ) will be real.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "non_negative_condition",
+      "memo_answer": "x ∈ (180° ; 360°)  OR  180° < x < 360°",
+      "memo_working": "Need -sin x ≥ 0, i.e. sin x ≤ 0 (excluding the zero denominator): 180° < x < 360°",
+      "checkable": false
+    },
+    {
+      "ref": "Q6.1",
+      "text": "Prove that: [tan(180° - x)](1 - cos^2 x) + cos^2 x = ((sin x - cos x)(1 + sin x.cos x))/(-cos x)",
+      "marks": 6,
+      "topic": "Trigonometry",
+      "solution_method": "identity_proof_difference_of_cubes",
+      "memo_answer": "LHS = RHS (identity proved)",
+      "memo_working": "LHS = (-tan x)(sin^2 x) + cos^2 x = -(sin x/cos x)(sin^2 x) + cos^2 x = -sin^3 x/cos x + cos^2 x = (sin^3 x - cos^3 x)/(-cos x) = (sin x - cos x)(sin^2 x + sin x.cos x + cos^2 x)/(-cos x) = (sin x - cos x)(1 + sin x.cos x)/(-cos x) = RHS",
+      "memo_note": "Alternative memo method works from RHS: expand (sin x - cos x)(cos^2 x + sin^2 x + sin x.cos x), simplify to (sin^3 x - cos^3 x)/(-cos x), split the fraction and use quotient and square identities to reach LHS.",
+      "checkable": false
+    },
+    {
+      "ref": "Q6.2",
+      "text": "It is given that sin^2 x ; cos^2 x and (1/2) sin 2x are the first three terms of an arithmetic sequence. The constant difference of the arithmetic sequence is NOT zero. Determine the general solution for x.",
+      "marks": 7,
+      "topic": "Trigonometry",
+      "solution_method": "arithmetic_condition_trig_equation",
+      "memo_answer": "x = 116,57° + k.180°, k ∈ Z (x = 45° + k.180° gives constant difference zero, excluded)",
+      "memo_working": "cos^2 x - sin^2 x = (1/2)sin 2x - cos^2 x; (1/2)(2 sin x cos x) = sin x cos x; 2cos^2 x - sin x cos x - sin^2 x = 0; (2cos x + sin x)(cos x - sin x) = 0; tan x = -2 or tan x = 1; ref angle 63,43° or 45°; x = 116,57° + k.180° or x = 45° + k.180°, k ∈ Z; since the constant difference is NOT zero, x = 116,57° + k.180°",
+      "memo_note": "The memo shows x ≠ 45° + k.180° (rejected because the difference would be zero); final answer x = 116,57° + k.180°, k ∈ Z. An alternative memo factorisation groups (cos x - sin x)(cos x + sin x) + cos x(cos x - sin x) = 0.",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.1",
+      "text": "In the diagram, the graph of f(x) = cos 2x is drawn for x ∈ [-135° ; 135°]. [Figure: cosine curve with maximum (0 ; 1), zeros at ±45° and minima at ±90°, drawn from -135° to 135°.] Write down the period of f.",
+      "marks": 1,
+      "topic": "Trigonometry",
+      "solution_method": "period_of_cos_bx",
+      "memo_answer": "180°",
+      "memo_working": "Period = 360°/2 = 180°",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.2",
+      "text": "On the set of axes provided in the ANSWER BOOK, draw the graph of g(x) = tan 2x - 1 for x ∈ [-135° ; 135°].",
+      "marks": 3,
+      "topic": "Trigonometry",
+      "solution_method": "sketch_tan_graph",
+      "memo_answer": "tan graph with period 90° shifted 1 unit down: vertical asymptotes at x = ±45° and x = ±135°; y-intercept (0 ; -1); x-intercepts at x = -67,5°, 22,5° and 112,5°",
+      "memo_working": "Memo sketch awards: asymptotes; shape; intercepts with axes. Key points: y-intercept (0 ; -1); x-intercepts where tan 2x = 1 (x = 22,5°, 112,5°, -67,5°); vertical asymptotes where 2x = ±90° + k.180° (x = ±45°, ±135°)",
+      "checkable": false
+    },
+    {
+      "ref": "Q7.3",
+      "text": "Graph f is translated 45° to the left to form graph h. Determine the equation of h in its simplest form.",
+      "marks": 1,
+      "topic": "Trigonometry",
+      "solution_method": "horizontal_translation_co_function",
+      "memo_answer": "h(x) = -sin 2x",
+      "memo_working": "h(x) = cos 2(x + 45°) = cos(2x + 90°) = -sin 2x",
+      "checkable": true
+    },
+    {
+      "ref": "Q7.4",
+      "text": "Write down the range of h.",
+      "marks": 1,
+      "topic": "Trigonometry",
+      "solution_method": "range_of_sinusoid",
+      "memo_answer": "y ∈ [-1 ; 1]  OR  -1 ≤ y ≤ 1",
+      "memo_working": "Amplitude 1 about y = 0",
+      "checkable": false
+    },
+    {
+      "ref": "Q7.5",
+      "text": "Determine the values of x for which (1 - tan 2x)(cos 2x) ≥ 0 in the interval x ∈ [0° ; 135°].",
+      "marks": 4,
+      "topic": "Trigonometry",
+      "solution_method": "sign_analysis_using_graphs",
+      "memo_answer": "x ∈ [0° ; 22,5°] ∪ [112,5° ; 135°)  OR  0° ≤ x ≤ 22,5° or 112,5° ≤ x < 135°",
+      "memo_working": "tan 2x - 1 = 0 at x = 22,5°; rewrite: -(tan 2x - 1)(cos 2x) ≥ 0, i.e. (tan 2x - 1)(cos 2x) ≤ 0; reading from the graphs of g and f: x ∈ [0° ; 22,5°] ∪ [112,5° ; 135°)",
+      "checkable": false
+    },
+    {
+      "ref": "Q8.1",
+      "text": "As part of a school project, learners are required to design a portable stage for a puppet show, as shown in the diagram below. The design must fulfil the following requirements: BKLC is a horizontal base having KB̂C = 104° and BK̂C = 52,6°; The rectangular backdrop, ABCD, is vertical to the horizontal base and must have an area of 648 cm^2; The sides of ABCD must be in the ratio AB : BC = 1 : 2; The stage must be partly enclosed with triangular sides ABK and DCL. [Figure: 3-D drawing of vertical rectangle ABCD (A top-left, D top-right, B bottom-left, C bottom-right) standing on shaded horizontal quadrilateral base BKLC, with K front-left and L front-right; angle at B is 104° and angle at K is 52,6°; diagonal KC drawn on the base.] Show that AB = 18 cm.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "area_ratio_equation",
+      "memo_answer": "AB = 18 cm",
+      "memo_working": "Area of ABCD = BC × AB; 648 = 2AB × AB; AB^2 = 324; AB = 18 cm",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.2",
+      "text": "Calculate the length of AC.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "pythagoras",
+      "memo_answer": "AC = √1620 = 18√5 = 40,25 cm",
+      "memo_working": "AC^2 = AB^2 + BC^2 = 18^2 + 36^2 (Pythagoras); AC = √1620 = 18√5 = 40,25 cm",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.3",
+      "text": "Calculate the length of diagonal KC.",
+      "marks": 2,
+      "topic": "Trigonometry",
+      "solution_method": "sine_rule",
+      "memo_answer": "KC = 43,97 cm",
+      "memo_working": "KC/sin KB̂C = BC/sin BK̂C; KC/sin 104° = 36/sin 52,6°; KC = 36 sin 104°/sin 52,6° = 43,97 cm",
+      "checkable": true
+    },
+    {
+      "ref": "Q8.4",
+      "text": "If AB = BK, calculate the size of KÂC.",
+      "marks": 4,
+      "topic": "Trigonometry",
+      "solution_method": "cosine_rule_in_3d",
+      "memo_answer": "KÂC = 80,60°",
+      "memo_working": "AK^2 = AB^2 + BK^2 = 18^2 + 18^2 (Pythagoras); AK = √648 = 18√2 = 25,46 cm; cosine rule: KC^2 = AK^2 + AC^2 - 2.AK.AC cos KÂC; (43,97)^2 = (18√2)^2 + (18√5)^2 - 2(18√2)(18√5)cos KÂC; cos KÂC = 0,16...; KÂC = 80,60°",
+      "checkable": true
+    },
+    {
+      "ref": "Q9.1",
+      "text": "In the diagram, O is the centre of the circle. K, T and P lie on the circle. [Figure: circle with centre O; K at the top, T lower left and P lower right on the circle; chords KT and KP and radii OT and OP drawn.] Use the diagram above to prove the theorem which states that the angle subtended by a chord (or arc) at the centre of the circle is equal to twice the angle subtended by the same chord (or arc) at the circumference, that is prove that TÔP = 2 TK̂P.",
+      "marks": 5,
+      "topic": "Euclidean Geometry",
+      "solution_method": "central_angle_theorem_proof",
+      "memo_answer": "TÔP = 2 TK̂P",
+      "memo_working": "Construction: draw KO produced. Ô1 = K̂1 + T̂ (ext angle of Δ); but K̂1 = T̂ (angles opp equal sides, radii); so Ô1 = 2K̂1. Similarly Ô2 = K̂2 + P̂ (ext angle of Δ) and K̂2 = P̂, so Ô2 = 2K̂2. Ô1 + Ô2 = 2K̂1 + 2K̂2 = 2(K̂1 + K̂2); therefore TÔP = 2 TK̂P",
+      "memo_note": "Alternative memo proof (for the reflex case): draw KO; use isosceles triangles and angle sums, then TÔP = 360° - (KÔT + KÔP) = 2K̂1 + 2K̂2 (angles around a point).",
+      "checkable": false
+    },
+    {
+      "ref": "Q9.2.1",
+      "text": "In the diagram, O is the centre of the circle. POF is the diameter of the circle and MF is a tangent to the circle at F. OM cuts the circle at L. P̂ = 32°. [Figure: circle with centre O; diameter from P at the top to F at the bottom; PL chord to lower-left point L; OM drawn from O through L to external point M at bottom-left; MF tangent along the bottom; angles at O labelled 1 (above OM) and 2 (below OM); angle at P is 32°.] Calculate, with reasons, the size of: Ô2",
+      "marks": 2,
+      "topic": "Euclidean Geometry",
+      "solution_method": "central_angle_twice_inscribed",
+      "memo_answer": "Ô2 = 64°",
+      "memo_working": "Ô2 = 2 × 32° = 64° (angle at centre = 2 × angle at circumference)",
+      "memo_note": "Alternative memo method: PL̂O = P̂ = 32° (angles opp equal radii); Ô2 = 64° (ext angle of Δ).",
+      "checkable": true
+    },
+    {
+      "ref": "Q9.2.2",
+      "text": "Calculate, with reasons, the size of: M̂",
+      "marks": 3,
+      "topic": "Euclidean Geometry",
+      "solution_method": "tangent_perpendicular_diameter_triangle_sum",
+      "memo_answer": "M̂ = 26°",
+      "memo_working": "PF̂M = 90° (tangent ⊥ diameter); M̂ = 180° - 90° - 64° = 26° (sum of angles of Δ)",
+      "checkable": true
+    },
+    {
+      "ref": "Q10.1",
+      "text": "In the diagram, PQRS is a cyclic quadrilateral. T is a point on the circle such that QT is perpendicular to SR at V. PT and ST are drawn. Q̂2 = 35° and R̂ = Ŝ1. [Figure: circle through P (upper left), Q (top), R (right) and S (left); chord SR extended through V where QT crosses it at right angles; T at the bottom of the circle; angles numbered at P (1, 2), Q (1, 2), V (1, 2, 3, 4), S (1, 2), T (1, 2); Q̂2 = 35° marked.] Calculate, with reasons, the size of QT̂S.",
+      "marks": 3,
+      "topic": "Euclidean Geometry",
+      "solution_method": "triangle_sum_same_segment",
+      "memo_answer": "QT̂S = 55°",
+      "memo_working": "R̂ = 55° (sum of angles in ΔQVR with V̂ = 90° and Q̂2 = 35°); QT̂S = R̂ = 55° (angles in the same segment)",
+      "memo_note": "Alternative memo method: Ŝ2 = 35° (angles in the same segment), then QT̂S = 55° (sum of angles in Δ).",
+      "checkable": true
+    },
+    {
+      "ref": "Q10.2",
+      "text": "Prove that PQ || SR.",
+      "marks": 3,
+      "topic": "Euclidean Geometry",
+      "solution_method": "co_interior_angles_supplementary",
+      "memo_answer": "PQ || SR",
+      "memo_working": "SP̂Q = 125° (opp angles of cyclic quad, R̂ = 55°); Ŝ1 = R̂ = 55° (given); SP̂Q + Ŝ1 = 180°; PQ || SR (co-interior angles supplementary)",
+      "memo_note": "Alternative memo method: Ŝ1 = R̂ = 55° (given); PQ̂R = 125° (opp angles of cyclic quad); Q̂1 = 125° - 35° = 90°; Q̂1 + V̂1 = 180°; PQ || SR (co-interior angles supplementary).",
+      "checkable": false
+    },
+    {
+      "ref": "Q10.3",
+      "text": "Prove that PT is a diameter of the circle.",
+      "marks": 2,
+      "topic": "Euclidean Geometry",
+      "solution_method": "converse_angle_in_semicircle",
+      "memo_answer": "PT is a diameter",
+      "memo_working": "Q̂1 = 90° (co-interior angles; PQ || SR); PT is a diameter (converse angle in semi-circle: chord subtends 90°)",
+      "memo_note": "Alternative memo method: Ŝ2 = 35° (ext angle of ΔSVT or angle sum); PŜT = 90°; PT is a diameter (converse angle in semi-circle).",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.1.1",
+      "text": "In the diagram, ΔABC is drawn. BA is produced to E. F and D are points on BC such that AD || EF. AC and EF intersect at G. CF/FB = 2/5 and CG/GA = 3/2. [Figure: triangle ABC with B top right and C at the bottom; E to the left of A on BA produced; D on BC between A's foot and B; EF drawn from E crossing AC at G to F on BC below D; AD || EF marked with arrows.] Calculate, with reasons, the value of: FD/CF",
+      "marks": 2,
+      "topic": "Euclidean Geometry",
+      "solution_method": "proportionality_theorem",
+      "memo_answer": "FD/CF = 2/3",
+      "memo_working": "FD/CF = GA/CG (prop theorem; AD || EF / line || one side of Δ); FD/CF = 2/3",
+      "checkable": true
+    },
+    {
+      "ref": "Q11.1.2",
+      "text": "Calculate, with reasons, the value of: BA/EA",
+      "marks": 4,
+      "topic": "Euclidean Geometry",
+      "solution_method": "proportionality_theorem_combined_ratios",
+      "memo_answer": "BA/EA = 11/4",
+      "memo_working": "Let CF = 2x, FB = 5x; FD = (2/3)(2x) = (4/3)x; BA/EA = BD/FD (prop theorem; AD || EF); BD = 5x - (4/3)x = (11/3)x; BA/EA = (11/3)x ÷ (4/3)x = 11/4",
+      "checkable": true
+    },
+    {
+      "ref": "Q11.1.3",
+      "text": "Calculate, with reasons, the value of: Area of ΔGCF / Area of GFDA",
+      "marks": 4,
+      "topic": "Euclidean Geometry",
+      "solution_method": "area_ratio_sine_formula",
+      "memo_answer": "Area ΔGCF / Area GFDA = 9/16",
+      "memo_working": "Area GFDA = Area ΔCDA - Area ΔGCF; with GC = 3k, CA = 5k, CF = 3p, CD = 5p: ratio = (1/2)(3k)(3p)sin Ĉ / [(1/2)(5k)(5p)sin Ĉ - (1/2)(3k)(3p)sin Ĉ] = 9kp/(25kp - 9kp) = 9/16",
+      "checkable": true
+    },
+    {
+      "ref": "Q11.2.1",
+      "text": "In the diagram, WVZR is a cyclic quadrilateral. RZ is produced to Q. A tangent is drawn from Q to touch the circle at S. WV is produced to E, a point on ZQ. RW produced meets ZV produced in P. PQ || WE. RS and ZS are drawn. [Figure: circle through W (top), V (left, inside chord region), Z (lower left) and R (right); P above left outside the circle at the meet of RW and ZV produced; Q bottom left outside the circle; E on ZQ; S at the bottom of the circle with tangent QS; angles numbered at P, W, V, Z, R, S and Q.] Prove, with reasons, that: PR = PW.QR/QE",
+      "marks": 2,
+      "topic": "Euclidean Geometry",
+      "solution_method": "proportionality_theorem",
+      "memo_answer": "PR = PW.QR/QE",
+      "memo_working": "QE/QR = PW/PR (prop theorem; PQ || WE / line || one side of Δ); therefore PR = PW.QR/QE",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.2.2",
+      "text": "Prove, with reasons, that: If ΔPQZ ||| ΔRQP, then PQ^2 = RQ.QZ",
+      "marks": 1,
+      "topic": "Euclidean Geometry",
+      "solution_method": "similar_triangles_ratio",
+      "memo_answer": "PQ^2 = RQ.QZ",
+      "memo_working": "PQ/RQ = QZ/QP (ΔPQZ ||| ΔRQP); PQ^2 = RQ.QZ",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.2.3",
+      "text": "Prove, with reasons, that: ΔQSZ ||| ΔQRS",
+      "marks": 3,
+      "topic": "Euclidean Geometry",
+      "solution_method": "similar_triangles_aaa",
+      "memo_answer": "ΔQSZ ||| ΔQRS",
+      "memo_working": "In ΔQSZ and ΔQRS: Q̂2 = Q̂2 (common angle); Ŝ1 = R̂2 (tan chord theorem); Ẑ1 = QŜR (3rd angle of Δ); therefore ΔQSZ ||| ΔQRS (AAA)",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.2.4",
+      "text": "Prove, with reasons, that: PQ = QS",
+      "marks": 3,
+      "topic": "Euclidean Geometry",
+      "solution_method": "combine_similarity_results",
+      "memo_answer": "PQ = QS",
+      "memo_working": "QS/QR = QZ/QS (ΔQSZ ||| ΔQRS); QS^2 = QZ.QR; but PQ^2 = RQ.QZ (proved in 11.2.2); therefore PQ = QS",
+      "checkable": false
+    },
+    {
+      "ref": "Q11.2.5",
+      "text": "Prove, with reasons, that: PW = QE.PZ/sqrt(QR.QZ)",
+      "marks": 4,
+      "topic": "Euclidean Geometry",
+      "solution_method": "combine_similar_triangles",
+      "memo_answer": "PW = QE.PZ/sqrt(QR.QZ)",
+      "memo_working": "PQ/RQ = PZ/PR (ΔPQZ ||| ΔRQP); PR = QR.PZ/PQ; but PR = PW.QR/QE (proved in 11.2.1); PW.QR/QE = QR.PZ/PQ; PW = QE.PZ/PQ; but PQ^2 = RQ.QZ (proved in 11.2.2), so PQ = sqrt(RQ.QZ); therefore PW = QE.PZ/sqrt(QR.QZ)",
+      "checkable": false
+    }
+  ]
+}
