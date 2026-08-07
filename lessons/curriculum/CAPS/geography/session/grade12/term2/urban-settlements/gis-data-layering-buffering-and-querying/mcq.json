@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What a GIS Is and the Two Kinds of Data",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A Geographical Information System is a computerised system that does five things with spatially referenced data:",
+          "options": [
+            "Captures, stores, manipulates, analyses and displays it",
+            "Prints, laminates, folds, files and posts it",
+            "Measures, weighs, counts, sorts and deletes it",
+            "Draws, colours, labels, frames and hangs it"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The route number printed on a main road on the topographic map is an example of:",
+          "options": [
+            "Spatial data",
+            "Vector data",
+            "Attribute data — a fact attached to the feature, not its position",
+            "Raster data"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A natural line feature on a topographic map is:",
+          "options": [
+            "A trig beacon",
+            "A river",
+            "A road",
+            "A dam"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Which statement about vector and raster data is correct?",
+          "options": [
+            "Raster builds features from points, lines and polygons",
+            "Vector and raster are two names for the same thing",
+            "Vector images are always photographs",
+            "Vector builds crisp shapes from points, lines and polygons; raster builds the scene from a grid of cells"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Data Layering — The Transparency Stack",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Data layering is best defined as:",
+          "options": [
+            "Printing a map on several sheets of paper",
+            "Storing different kinds of information in separate layers that can be placed on top of one another",
+            "Colouring features by height",
+            "Saving a backup copy of the map"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A layer showing only rivers, dams and pans should be named the:",
+          "options": [
+            "Contour layer",
+            "Cadastral layer",
+            "Drainage layer",
+            "Transport layer"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why can separate GIS layers be combined without features shifting position?",
+          "options": [
+            "All layers are georeferenced to the same coordinates",
+            "The computer stretches each layer to fit",
+            "Features are redrawn by hand each time",
+            "Only one layer may be viewed at a time"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "When an exam question asks you to redraw and combine given layer sketches into one frame, the key rule is:",
+          "options": [
+            "Enlarge every feature so it is easier to see",
+            "Leave out features that overlap",
+            "Rearrange features to avoid overlaps",
+            "Copy every feature in its original position, overlapping where the originals overlap"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Buffering, Querying and Data Integration",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Buffering is:",
+          "options": [
+            "Deleting features from a layer",
+            "Converting raster data to vector data",
+            "Drawing a zone of chosen width around a feature so the inside is treated differently from the outside",
+            "Zooming in on an unclear image"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Open land is kept empty between a town and an area of sinkholes and subsiding ground. The GIS term for this planning measure is:",
+          "options": [
+            "Resolution",
+            "Buffering — a no-build zone around the hazard",
+            "Data sharing",
+            "Statistical analysis"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Asking the system to show every clinic within ten kilometres of the taxi rank is an example of:",
+          "options": [
+            "Querying",
+            "Digitising",
+            "Layering",
+            "Georeferencing"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Data integration must happen before querying can work because:",
+          "options": [
+            "Queries only run on paper maps",
+            "Integration deletes old data",
+            "Queries need the printer switched on",
+            "Data from different sources must first be brought into one system on the same grid so layers can be searched together"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Resolution, Data Manipulation and the Way GIS Is Examined",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The clarity of an image, set by the size and number of its pixels, is called:",
+          "options": [
+            "Buffering",
+            "Data integration",
+            "Resolution",
+            "Data sharing"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Of two photographs of the same area, the one with FEWER pixels will look:",
+          "options": [
+            "Blurrier, because each pixel is larger and detail is lost",
+            "Sharper, because pixels are spread out",
+            "Identical to the other photograph",
+            "Darker but equally sharp"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "An area on the orthophoto is unclear. Using data manipulation, how would you manipulate the scale to make the image clearer?",
+          "options": [
+            "Make the scale smaller to show more ground",
+            "Make the scale larger — zoom in so the same ground fills more of the image",
+            "Convert the image to a table",
+            "Remove the drainage layer"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The GIS block in the mapwork question typically mixes which three question types?",
+          "options": [
+            "Essay, poem and letter",
+            "Gradient, cross-section and area calculations",
+            "Drawing contours, colouring layers and naming oceans",
+            "Vocabulary multiple choice, application to the mapped area, and a practical layer redraw"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Burger That Explains the Whole System",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The burger comparison teaches that a GIS keeps information:",
+          "options": [
+            "In separate layers made independently but viewed stacked together",
+            "In one flat drawing that cannot be split",
+            "Only as photographs",
+            "On paper only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Your friend's position on the field is to spatial data what their name and phone number are to:",
+          "options": [
+            "Raster data",
+            "A buffer",
+            "Attribute data",
+            "A query"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Zoom deep into a phone photo and it crumbles into little blocks. This shows that photographs are stored as:",
+          "options": [
+            "Vector outlines",
+            "Raster data built from grid cells",
+            "Attribute tables",
+            "Buffer zones"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Chalk Circle Around the Beehive",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The chalk circle drawn around the beehive so nobody plays inside it works exactly like a GIS:",
+          "options": [
+            "Query",
+            "Pixel",
+            "Layer name",
+            "Buffer — a zone with an edge that lets the inside be treated differently"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "An exam map shows a strip of empty land between houses and a river. The best explanation is:",
+          "options": [
+            "The mapmaker forgot to draw that strip",
+            "A buffer keeps development out of the flood-prone strip",
+            "The land is too expensive",
+            "The printer ran out of ink"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Typing a song name into a music app and letting it fetch every matching track is the everyday version of:",
+          "options": [
+            "A query searching a database for features that satisfy a condition",
+            "Buffering the playlist",
+            "Lowering the resolution",
+            "Printing a layer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Before any searching can work, the town's property lists, photos and measurements must first be:",
+          "options": [
+            "Printed and filed",
+            "Deleted and re-typed",
+            "Integrated into one system on the same coordinate grid",
+            "Converted to paper maps"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Pixels, Zooming In and Free Marks",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "A zoomed-in photo of the scoreboard turns into fuzzy blocks because:",
+          "options": [
+            "The scoreboard moved during the photo",
+            "The image holds too few pixels for that much zoom — low resolution",
+            "The phone added a filter",
+            "Scoreboards cannot be photographed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The memorandum's expected answer for making an unclear orthophoto area easier to read is:",
+          "options": [
+            "Print it in colour",
+            "Add more layers",
+            "Look at it from further away",
+            "Enlarge the scale — zoom in"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which set pairs each GIS idea with its everyday picture correctly?",
+          "options": [
+            "Layers — burger; buffer — chalk circle; query — music-app search; resolution — pixel sharpness",
+            "Layers — chalk circle; buffer — burger; query — pixel; resolution — search",
+            "Layers — pixels; buffer — search; query — burger; resolution — chalk circle",
+            "Layers — search; buffer — pixels; query — chalk circle; resolution — burger"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The GIS block at the end of the mapwork paper is worth roughly:",
+          "options": [
+            "One mark",
+            "Fifty marks",
+            "Seven marks, mostly definitions and short applications",
+            "No marks — it is optional"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}
