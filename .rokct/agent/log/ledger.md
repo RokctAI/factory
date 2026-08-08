@@ -168,3 +168,4 @@
 | 2._forgotten_memories_fa00bb | narrative poetry | 2. Forgotten Memories | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-08 20:29 |
 | garden_of_starlight_2bbe8c | celestial | Garden of Starlight | pending_approval | groq | GROQ-31277987775 | — | 2026-08-08 20:53 |
 | echoes_in_the_abyss_ea0585 | emotional | Echoes in the Abyss | pending_approval | groq | GROQ-31280323669 | — | 2026-08-08 21:52 |
+| fractured_time_b549a2 | philosophical | Fractured Time | pending_approval | groq | GROQ-31282696085 | — | 2026-08-08 22:53 |
