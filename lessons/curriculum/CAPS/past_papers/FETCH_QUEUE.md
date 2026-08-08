@@ -128,6 +128,90 @@ session-page HTML):
 | [ ] | Mathematical Literacy P1 Answer Book (Eng) — NEW ROW batch 5: the 2025 ML annexures live in this 17-pp Special Answer Book (QP p 13 references 'ANNEXURE B in the ANSWER BOOK'), needed for annexure-dependent transcription; direct fileticket not yet harvested — fetch from the session page (label "Answer Book 1 (English)" in the Mathematical Literacy module). Direct-PDF search 2026-08-07 (Ray reports the link at right is an htm landing page, not a PDF — correct, it is the session page): NO direct-PDF alternative found — no Nov 2025 ML Answer Book file was sighted verbatim on any sanctioned mirror (theanswer.co.za, stanmorephysics.com, ecexams.co.za; all three egress-blocked here, searched via web-result snippets only; WCED hosts answer books but stays excluded per SOURCES.md). The htm session page remains the path — on it, click "Answer Book 1 (English)" under Mathematical Literacy; the click itself yields the direct LinkClick.aspx PDF download | <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx> |
 | [ ] | Mathematical Literacy P2 Answer Book (Eng) — NEW ROW batch 5: same as above for P2 (17-pp Special Answer Book holding Annexures A–D; QP p 14 references 'ANNEXURE D in the ANSWER BOOK'). Direct-PDF search 2026-08-07: same result as the P1 row — NO direct-PDF alternative sighted on sanctioned mirrors; the htm session page remains the path (click "Answer Book 2 (English)" under Mathematical Literacy) | <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx> |
 
+## GRADE 10 PAPERS — needs manual fetch
+
+Grade 10 papers are provincial, not national (per the standing note in every
+subject `index.json`: "Only Gr 12 papers are published nationally; Gr 10-11
+papers are provincial"), and NO Grade 10 paper URL exists anywhere in this
+repo — neither `links.json` nor the subject `index.json` files carry one — so
+no direct PDF URL below can be derived from repo evidence. Per the
+no-fabrication rule, none is guessed: every URL cell reads "URL needed —
+manual fetch". Likely fetch paths, both PATTERN-DERIVED from URLs already in
+this file (verify on open, NOT sighted):
+
+- **ecexams.co.za** (Eastern Cape DoE, the provincial mirror already used for
+  the Gr 11 memo leads above) publishes per-session directory index pages
+  named `<year>_November_Gr_<grade>_Exams.htm` — the Gr 11 indexes
+  <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm> and
+  <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> were sighted
+  verbatim, implying Gr 10 analogues
+  <https://www.ecexams.co.za/2017_November_Gr_10_Exams.htm> and
+  <https://www.ecexams.co.za/2018_November_Gr_10_Exams.htm>. Open the index,
+  click through to each paper/memo, and record the real URLs back into the
+  rows below.
+- **DBE portal navigation** — `links.json` records the Gr 11 session page
+  `Grade11Exams.aspx`; check the NSC Examinations portal for a Grade 10
+  sibling page rather than guessing its URL.
+
+Years follow the legacy Gr 11 convention above (November 2017 + November
+2018); subjects and per-subject P1/P2 rows follow the existing grade
+sections. Every row unchecked.
+
+### Mathematics
+
+| Done | Paper | Question paper URL | Memo URL |
+|:---:|---|---|---|
+| [ ] | Mathematics P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Mathematics P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Mathematics P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Mathematics P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+
+### Mathematical Literacy
+
+| Done | Paper | Question paper URL | Memo URL |
+|:---:|---|---|---|
+| [ ] | Mathematical Literacy P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Mathematical Literacy P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Mathematical Literacy P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Mathematical Literacy P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+
+### Physical Sciences
+
+| Done | Paper | Question paper URL | Memo URL |
+|:---:|---|---|---|
+| [ ] | Physical Sciences P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Physical Sciences P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Physical Sciences P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Physical Sciences P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+
+### Accounting
+
+| Done | Paper | Question paper URL | Memo URL |
+|:---:|---|---|---|
+| [ ] | Accounting (Nov 2017 — single paper in this era) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Accounting (Nov 2018 — single paper in this era) | URL needed — manual fetch | URL needed — manual fetch |
+
+### Economics
+
+| Done | Paper | Question paper URL | Memo URL |
+|:---:|---|---|---|
+| [ ] | Economics P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Economics P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Economics P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Economics P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+
+### Geography
+
+| Done | Paper | Question paper URL | Memo URL |
+|:---:|---|---|---|
+| [ ] | Geography P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Geography P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Geography P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [ ] | Geography P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+
+When a row's real URLs are recorded, also add the session/paper to the
+subject `index.json` per "How to extend this queue" below.
+
 ## Done
 
 All November 2024 papers below were supplied by owner upload 2026-08-06 and
@@ -286,7 +370,7 @@ papers are NOT listed here — their PDFs are already tracked next to their
 
 | Done | Paper (extracted to) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Mathematics Gr 11 P1 Nov 2017 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2017/paper1.pdf` (7 pp scan, cover/mid/late pages verified; matches the paper.json). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2017 Eng.pdf`, byte-identical md5 `80f35be…` to the tracked QP) — the memo URL at right, labelled "Memo 1 (Afrikaans and English)" on Grade11Exams.aspx, is what still needs downloading [direct PDF — click and save]. Mirror search 2026-08-06: no direct link found on acceptable hosts (WCED ePortal excluded per SOURCES.md robots block; Scribd/Studypool are viewer pages, not PDFs). Direct-link search 2026-08-07: two ecexams.co.za leads (host still egress-blocked here — CONNECT 403 re-verified 2026-08-07, so neither could be fetched): (a) the 2017 Gr 11 directory exists — index page <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm>, sibling file sighted VERBATIM in search results: <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P2%20Memo.pdf> — so the P1 analogue <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P1%20Memo.pdf> is a candidate — verify on open (pattern-guess from the sighted P2 sibling, NOT itself sighted); if it 404s, open the .htm index and click the Maths P1 memo link. (b) sighted VERBATIM but UNVERIFIED (host blocked): stanmorephysics combined QP+memo <https://stanmorephysics.com/wp-content/uploads/2020/07/Mathematics-P1-Nov-2017-and-memo.pdf> — CAUTION: grade not confirmable from snippets (may be the Gr 12 NSC Nov 2017 paper, not Gr 11) — check the cover on open before trusting it | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
+| [ ] | Mathematics Gr 11 P1 Nov 2017 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2017/paper1.pdf` (7 pp scan, cover/mid/late pages verified; matches the paper.json). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2017 Eng.pdf`, byte-identical md5 `80f35be…` to the tracked QP) — the memo URL at right, labelled "Memo 1 (Afrikaans and English)" on Grade11Exams.aspx, is what still needs downloading [direct PDF — click and save]. Mirror search 2026-08-06: no direct link found on acceptable hosts (WCED ePortal excluded per SOURCES.md robots block; Scribd/Studypool are viewer pages, not PDFs). Direct-link search 2026-08-07: two ecexams.co.za leads (host still egress-blocked here — CONNECT 403 re-verified 2026-08-07, so neither could be fetched): (a) the 2017 Gr 11 directory exists — index page <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm>, sibling file sighted VERBATIM in search results: <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P2%20Memo.pdf> — the P1 analogue <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P1%20Memo.pdf> was pattern-guessed from that sibling and is now DEAD: 404/not-found confirmed by Ray's manual fetch 2026-08-08 — do not retry it. URL needed — manual fetch via the ecexams index page <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm> (this index page WAS sighted verbatim): open it and click the Maths P1 memo link if one is listed. SIBLING-PATTERN CAUTION (2026-08-08): the sighted P2 URL above shares the same short-name `Maths PN Memo.pdf` pattern as the dead P1 guess — treat it as suspect until actually opened; the ecexams URLs that ARE corroborated elsewhere in this file (2018 Gr 11 and 2019 Gr 11 directories, rows below) all use the long DBE filenames (e.g. `Mathematics P2 Grade 11 Nov 2018 Memo Eng & Afr.pdf`), so the 2017 short names may simply not be what the index links. No replacement URL is recorded because no 2017 Gr 11 filename pattern is confirmed working anywhere in this repo — derive the real one from the .htm index. No other row in this file uses the `2017_November_Gr_11_Exams/` pattern. (b) sighted VERBATIM but UNVERIFIED (host blocked): stanmorephysics combined QP+memo <https://stanmorephysics.com/wp-content/uploads/2020/07/Mathematics-P1-Nov-2017-and-memo.pdf> — CAUTION: grade not confirmable from snippets (may be the Gr 12 NSC Nov 2017 paper, not Gr 11) — check the cover on open before trusting it | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
 | [ ] | Mathematics Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2018/paper1.pdf` (16 pp scan: Eng pp 1-8 + Afr pp 9-16, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `5d85abb…` to the tracked QP). ALTERNATIVE direct memo PDF found by web search 2026-08-06 on the Eastern Cape DoE exam site (URL observed verbatim in search results; ecexams.co.za is egress-blocked here so unfetched-but-real) [direct PDF — click and save]: <https://www.ecexams.co.za/2018_November_Gr_11_Exams/Mathematics%20P1%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf> — or use the DBE memo URL at right. Link-type check 2026-08-07 (Ray reports the remaining links resolve to htm): the ecexams URL above IS a direct `.pdf` static-file path — the site's `.htm` pages are only its directory indexes; the host is still egress-blocked here (CONNECT 403 re-verified 2026-08-07) so it could not be fetched, but the sibling P2 memo in the same directory was sighted VERBATIM in search results 2026-08-07 (<https://www.ecexams.co.za/2018_November_Gr_11_Exams/Mathematics%20P2%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf>), corroborating directory and filename pattern. If the P1 link misbehaves in a browser (the raw `&` in the filename can trip some link handlers), open the index <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> and click "Mathematics P1 Grade 11 Nov 2018 Memo Eng & Afr" | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
 | [ ] | Physical Sciences Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `physical_sciences/grade11/2018/paper1.pdf` (15 pp + 2 data sheets, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Physical Sciences P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `84a2fb6…` to the tracked QP). Mirror search 2026-08-06: no direct link found — the same ecexams.co.za directory that holds the Maths Gr 11 Nov 2018 memo (`https://www.ecexams.co.za/2018_November_Gr_11_Exams/`) very likely holds it too, link label best guess "Physical Sciences P1 Grade 11 Nov 2018 Memo Eng & Afr.pdf" (NOT verified — site egress-blocked here); otherwise use the DBE memo URL at right [direct PDF — click and save]. Direct-link search 2026-08-07: still no verbatim sighting of the 2018 P1 file itself, but the filename pattern is now corroborated by a VERBATIM-sighted 2019 sibling (<https://ecexams.co.za/2019_November_Gr_11_Exams/Physical%20Sciences%20P2%20Grade%2011%20Nov%202019%20Memo%20Eng%20&%20Afr.pdf>), upgrading the best-guess URL to candidate — verify on open: <https://www.ecexams.co.za/2018_November_Gr_11_Exams/Physical%20Sciences%20P1%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf> (pattern-guess, NOT sighted; ecexams still CONNECT 403 here 2026-08-07). If it 404s, open the index <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> and click the Physical Sciences P1 memo link | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
 | [ ] | Geography Gr 12 P2 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `geography/grade12/2018/paper2.pdf` (15 pp mapwork paper, 75 marks, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Geography P2 Nov 2018 Eng.pdf`, byte-identical md5 `553fb16…` to the tracked QP). Mirror search 2026-08-06: no direct link found on acceptable hosts — the DBE file is named "Geography P2 Nov 2018 FINAL Memo Eng.pdf" (per Yumpu/Scribd viewer copies); WCED ePortal hosts it at page <https://wcedeportal.co.za/eresource/115736> (link label "NSC NOV 2018 Geography Paper 2 MEMO") but WCED is excluded per SOURCES.md robots block, so use the DBE memo URL at right [direct PDF — click and save]. Direct-link search 2026-08-07: still no direct PDF sighted verbatim on sanctioned hosts (stanmorephysics's Geography Gr 12 mirror files only go back to Nov 2022). ecexams.co.za's Gr 12 NSC Nov 2018 index page DOES exist (sighted verbatim: <https://www.ecexams.co.za/2018_November_NSC_Exams.htm>) and by the site's convention (directory named after the index page + DBE original filename) would hold the memo at candidate — verify on open: <https://www.ecexams.co.za/2018_November_NSC_Exams/Geography%20P2%20Nov%202018%20FINAL%20Memo%20Eng.pdf> (pattern-guess, NOT sighted; ecexams egress-blocked here, CONNECT 403 re-verified 2026-08-07); if it 404s, open the .htm index and click the Geography P2 memo link — otherwise the DBE memo URL at right remains primary | <https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> | <https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> |

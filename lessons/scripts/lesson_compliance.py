@@ -31,10 +31,20 @@ warn. Rules, all previously enforced ad hoc and now gated in one place:
      key. This is the exact contract bug that shipped silently before (the app
      loads only `primitives`); this is its regression gate.
 
+Knowledge-bite checks (W1-W3) are ADVISORY ONLY — printed as warnings and
+never counted toward the exit code (a bite warning cannot fail the build):
+
+  W1 every bite directory under knowledge_bites/<grade>/<lesson>/<bite>/
+     carries a question.md;
+  W2 question.md carries a source attribution (past-paper reference — the
+     merged bites use a `**Source:** ...` line);
+  W3 question.md states the marks (the merged bites use `## Question (N marks)`).
+
 Usage:
   python lessons/scripts/lesson_compliance.py --all        # full-tree baseline
   python lessons/scripts/lesson_compliance.py <files...>    # CI changed-files
 Exit 0 = compliant; 1 = one or more violations (printed, grouped by rule).
+Warnings (W1-W3) are printed but never change the exit code.
 """
 import json
 import os
@@ -163,6 +173,34 @@ def check_manifest(path):
     return out
 
 
+# --- W1 + W2 + W3: knowledge bites (advisory warnings, never failures) ---
+
+# Lenient by design: the merged bites write "**Source:** Department of Basic
+# Education — Grade 11 Maths P1, November 2017, question Q1.1.1." and
+# "## Question (2 marks)"; any mention of "source" / "N mark(s)" satisfies
+# these, so only a bite genuinely missing the element warns.
+BITE_SOURCE_RE = re.compile(r"\bsource\b", re.IGNORECASE)
+BITE_MARKS_RE = re.compile(r"\b\d+\s*marks?\b", re.IGNORECASE)
+
+
+def check_bite_question(path):
+    text = Path(path).read_text(encoding="utf-8")
+    out = []
+    if not BITE_SOURCE_RE.search(text):
+        out.append(("W2", f"{path}: no source attribution (past-paper "
+                          "reference) found"))
+    if not BITE_MARKS_RE.search(text):
+        out.append(("W3", f"{path}: marks not stated"))
+    return out
+
+
+def check_bite_dir(path):
+    q = Path(path) / "question.md"
+    if not q.is_file():
+        return [("W1", f"{path}: bite directory has no question.md")]
+    return check_bite_question(q)
+
+
 RULE_TITLES = {
     "R1": "Primitive vocabulary (real whiteboard set only)",
     "R2": "No greeting/self-intro/sign-off in script text",
@@ -171,9 +209,16 @@ RULE_TITLES = {
     "R5": "Camera events inline in primitives (not a sibling key)",
 }
 
+WARN_TITLES = {
+    "W1": "Knowledge bite carries a question.md",
+    "W2": "Bite question.md carries a source attribution (paper reference)",
+    "W3": "Bite question.md states the marks",
+}
+
 
 def discover():
-    """(scripts, animations, manifests, job_cards, persona_cards) in the tree."""
+    """(scripts, animations, manifests, job_cards, persona_cards, bite_dirs)
+    in the tree."""
     scripts = sorted(Path("lessons").rglob("script.md"))
     animations = sorted(Path("lessons").rglob("animations.json")) + \
         sorted(Path(".").glob("**/animations.json"))
@@ -181,14 +226,24 @@ def discover():
     job_cards = [p for p in sorted(Path(".rokct/agent/jobs").rglob("*.md"))
                  if "template" not in p.name]
     persona = sorted(PERSONA_TUTORS_DIR.glob("*/tutor.md"))
-    return scripts, list(dict.fromkeys(animations)), manifests, job_cards, persona
+    bites = [p for p in sorted(Path("lessons").rglob("knowledge_bites/*/*/*"))
+             if p.is_dir()]
+    return (scripts, list(dict.fromkeys(animations)), manifests, job_cards,
+            persona, bites)
 
 
 def run(paths):
     violations = []
-    checked = {"script": 0, "animations": 0, "manifest": 0, "job_card": 0, "persona": 0}
+    warnings = []
+    checked = {"script": 0, "animations": 0, "manifest": 0, "job_card": 0,
+               "persona": 0, "bite": 0}
     for p in paths:
         p = Path(p)
+        # Bite DIRECTORIES (from --all discovery): W1 + content warnings.
+        if p.is_dir():
+            if len(p.parts) >= 4 and p.parts[-4] == "knowledge_bites":
+                warnings += check_bite_dir(p); checked["bite"] += 1
+            continue
         if not p.is_file():
             continue
         name = p.name
@@ -202,7 +257,10 @@ def run(paths):
             violations += check_job_card(p); checked["job_card"] += 1
         elif name == "tutor.md" and "tutors" in p.parts:
             violations += check_persona_card(p); checked["persona"] += 1
-    return violations, checked
+        elif name == "question.md" and "knowledge_bites" in p.parts:
+            # CI changed-files mode: bite question.md passed directly.
+            warnings += check_bite_question(p); checked["bite"] += 1
+    return violations, warnings, checked
 
 
 def main():
@@ -211,12 +269,13 @@ def main():
         print(__doc__)
         return 2
     if args == ["--all"]:
-        scripts, animations, manifests, job_cards, persona = discover()
-        paths = [*scripts, *animations, *manifests, *job_cards, *persona]
+        scripts, animations, manifests, job_cards, persona, bites = discover()
+        paths = [*scripts, *animations, *manifests, *job_cards, *persona,
+                 *bites]
     else:
         paths = args
 
-    violations, checked = run(paths)
+    violations, warnings, checked = run(paths)
     print("Lesson compliance —",
           ", ".join(f"{k}:{v}" for k, v in checked.items() if v))
     by_rule = {}
@@ -226,6 +285,19 @@ def main():
         msgs = by_rule.get(rule, [])
         if msgs:
             print(f"\n[{rule}] {RULE_TITLES[rule]} — {len(msgs)} violation(s):")
+            for m in msgs[:40]:
+                print(f"   {m}")
+            if len(msgs) > 40:
+                print(f"   ... and {len(msgs) - 40} more")
+    # W1-W3: advisory only — printed, never counted toward the exit code.
+    by_warn = {}
+    for rule, msg in warnings:
+        by_warn.setdefault(rule, []).append(msg)
+    for rule in ("W1", "W2", "W3"):
+        msgs = by_warn.get(rule, [])
+        if msgs:
+            print(f"\n[{rule}] {WARN_TITLES[rule]} — {len(msgs)} warning(s), "
+                  "advisory only (does not fail the build):")
             for m in msgs[:40]:
                 print(f"   {m}")
             if len(msgs) > 40:
