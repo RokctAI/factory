@@ -165,3 +165,4 @@
 | whispers_of_the_forest_b5bbdf | poetry | Whispers of the Forest | pending_approval | groq | GROQ-31154652902 | — | 2026-08-07 06:38 |
 | starlight_serenades_c7bc7b | poetry | Starlight Serenades | pending_approval | groq | GROQ-31162130549 | — | 2026-08-07 08:33 |
 | shores_of_memories_73f109 | poetry | Shores of Memories | pending_approval | groq | GROQ-31169838416 | — | 2026-08-07 10:23 |
+| 2._forgotten_memories_fa00bb | narrative poetry | 2. Forgotten Memories | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-08 20:29 |
