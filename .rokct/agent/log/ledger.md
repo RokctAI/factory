@@ -174,3 +174,4 @@
 | 5._midnight_miracles_953a32 | magical realism anthology | 5. Midnight Miracles | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-09 20:32 |
 | echoes_of_memories_cc4b12 | nostalgia | Echoes of Memories | pending_approval | groq | GROQ-31335585107 | — | 2026-08-09 20:58 |
 | blossoming_chaos_0ca661 | surrealism | Blossoming Chaos | pending_approval | groq | GROQ-31338047341 | — | 2026-08-09 21:55 |
+| whispers_in_the_night_53798e | mystery | Whispers in the Night | pending_approval | groq | GROQ-31340588444 | — | 2026-08-09 22:55 |
