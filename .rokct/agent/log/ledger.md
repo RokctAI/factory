@@ -171,3 +171,4 @@
 | fractured_time_b549a2 | philosophical | Fractured Time | pending_approval | groq | GROQ-31282696085 | — | 2026-08-08 22:53 |
 | whispers_of_forgotten_memories_75fdbe | nostalgic | Whispers of Forgotten Memories | pending_approval | groq | GROQ-31284845186 | — | 2026-08-08 23:50 |
 | shattered_mirrors_72c1d2 | psychological | Shattered Mirrors | pending_approval | groq | GROQ-31290570619 | — | 2026-08-09 02:33 |
+| 5._midnight_miracles_953a32 | magical realism anthology | 5. Midnight Miracles | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-09 20:32 |
