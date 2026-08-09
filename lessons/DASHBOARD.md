@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-08-08 20:45 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-08-09 20:49 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (7)
 
@@ -71,7 +71,7 @@ Syllabus rows total: 841; opened: 24; remaining: 817.
 
 | Window | Groq calls | Groq tokens | Jules sessions |
 |---|---|---|---|
-| Last 24 h | 2 | 380 | 0 |
-| All time | 47 | 28598 | 24 |
+| Last 24 h | 2 | 240 | 0 |
+| All time | 49 | 28838 | 24 |
 
 Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
