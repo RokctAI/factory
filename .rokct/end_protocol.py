@@ -59,6 +59,13 @@ def main():
         shutil.rmtree(skills_dir)
         print("[end] Deleted skills/ (unconditional cleanup)")
 
+    # compose.py's wrapper fetches this into .rokct/ at runtime and deletes it
+    # in its finally block; clean up any copy a crashed run left behind.
+    installer_base = ROKCT_DIR / "sdk_installer_base.py"
+    if installer_base.is_file():
+        installer_base.unlink()
+        print("[end] Deleted sdk_installer_base.py (transient compose runtime fetch)")
+
     workflows_dir = ROKCT_DIR / "workflows"
     if workflows_dir.is_dir():
         for f in workflows_dir.iterdir():
@@ -68,7 +75,10 @@ def main():
         print("[end] Cleaned workflows/ (kept init_protocol.md)")
 
     for item_path in ROKCT_DIR.iterdir():
-        if item_path.name in ("active_session.txt", "initiate.py"):
+        # install_state.json now lives at .rokct/cache/install_state.json
+        # (cache/ is keep-whitelisted below); a legacy copy at .rokct/'s own
+        # root is kept explicitly until the composer migrates it there.
+        if item_path.name in ("active_session.txt", "initiate.py", "install_state.json"):
             print(f"[end] Kept {item_path.name} (protocol tool)")
             continue
         if item_path.name == ".sync_ready":
