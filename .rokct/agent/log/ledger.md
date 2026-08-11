@@ -185,3 +185,4 @@
 | 4._midnight_whispers_d24943 | noir poetry | 4. Midnight Whispers | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-11 20:42 |
 | 4._midnight_miracles_a50c10 | fantasy | 4. Midnight Miracles | pending_approval | groq | GROQ-31536557094 | — | 2026-08-11 21:10 |
 | 1._cosmic_dreams_99d638 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-31541147572 | — | 2026-08-11 22:09 |
+| 5._whispers_in_the_attic_6484f9 | mystery | 5. Whispers in the Attic | pending_approval | groq | GROQ-31545293993 | — | 2026-08-11 23:08 |
