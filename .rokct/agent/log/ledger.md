@@ -182,3 +182,4 @@
 | fractured_light_9484b6 | poetry | Fractured Light | pending_approval | groq | GROQ-31440719875 | — | 2026-08-10 23:02 |
 | whispers_in_the_night_0bf485 | poetry | Whispers in the Night | pending_approval | groq | GROQ-31444192923 | — | 2026-08-10 23:56 |
 | the_weight_of_wings_7062bb | poetry | The Weight of Wings | pending_approval | groq | GROQ-31452669299 | — | 2026-08-11 02:32 |
+| 4._midnight_whispers_d24943 | noir poetry | 4. Midnight Whispers | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-11 20:42 |
