@@ -190,3 +190,4 @@
 | 2._forgotten_libraries_0d9be5 | short story | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-12 20:43 |
 | echoes_in_the_night_35a198 | poetry | Echoes in the Night | pending_approval | groq | GROQ-31641172771 | — | 2026-08-12 21:13 |
 | beyond_the_starlight_e090ca | poetry | Beyond the Starlight | pending_approval | groq | GROQ-31645588555 | — | 2026-08-12 22:07 |
+| forgotten_cities_b6355a | poetry | Forgotten Cities | pending_approval | groq | GROQ-31649668219 | — | 2026-08-12 23:24 |
