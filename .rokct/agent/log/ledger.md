@@ -188,3 +188,4 @@
 | 5._whispers_in_the_attic_6484f9 | mystery | 5. Whispers in the Attic | pending_approval | groq | GROQ-31545293993 | — | 2026-08-11 23:08 |
 | 3._starlight_serenades_bc5714 | poetry | 3. Starlight Serenades | pending_approval | groq | GROQ-31548850495 | — | 2026-08-12 00:04 |
 | 2._forgotten_libraries_0d9be5 | short story | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-12 20:43 |
+| echoes_in_the_night_35a198 | poetry | Echoes in the Night | pending_approval | groq | GROQ-31641172771 | — | 2026-08-12 21:13 |
