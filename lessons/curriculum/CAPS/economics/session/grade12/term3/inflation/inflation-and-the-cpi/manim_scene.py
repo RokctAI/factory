@@ -254,7 +254,7 @@ class InflationAndTheCPISession(MovingCameraScene):
         self.play(Write(b8_l1))
         self.play(Write(b8_l2))
         self.wait(2.5)
-        b8_l3 = MathTex(r"\text{R}4\,000 \to 100; \quad \frac{4\,480}{4\,000} \times 100 = 112").scale(1.05).shift(band_shift(8) + DOWN * 0.2)
+        b8_l3 = MathTex(r"\text{R}4\,000 \to 100; \quad \frac{4\,480}{4\,000} \times 100 = 112").scale(0.97).shift(band_shift(8) + DOWN * 0.2)
         self.play(Write(b8_l3))
         self.wait(2.5)
         b8_l4 = MathTex(r"112 \to 118{,}7: \;\; \frac{6{,}7}{112} \times 100 \approx 6\%").scale(1.05).shift(band_shift(8) + DOWN * 1.3)

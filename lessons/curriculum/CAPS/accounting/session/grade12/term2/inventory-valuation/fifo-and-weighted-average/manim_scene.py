@@ -109,7 +109,7 @@ class FifoAndWeightedAverageSession(MovingCameraScene):
         b3_title = Tex("Weighted average: pool everything").scale(1.15).shift(band_shift(3) + UP * 2.2)
         self.play(Write(b3_title))
         self.wait(1.5)
-        b3_l1 = MathTex(r"\frac{R56\,200}{1\,000 \text{ units}} = R56{,}20 \text{ per unit}").scale(1.1).shift(band_shift(3) + UP * 1.0)
+        b3_l1 = MathTex(r"\frac{R56\,200}{1\,000 \text{ units}} = R56{,}20 \text{ per unit}").scale(1.0).shift(band_shift(3) + UP * 1.0)
         self.play(Write(b3_l1))
         self.wait(2.5)
         b3_l2 = Tex(r"Closing stock: 250 @ R56,20 $=$ R14\,050").scale(1.05).shift(band_shift(3) + UP * 0.0)

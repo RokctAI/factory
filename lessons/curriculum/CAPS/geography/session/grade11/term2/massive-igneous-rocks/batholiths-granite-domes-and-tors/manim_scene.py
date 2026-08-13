@@ -202,7 +202,7 @@ class BatholithsDomesTorsSession(MovingCameraScene):
             Rectangle(width=1.3, height=1.0, color=GREY).shift(LEFT * 2.9 + DOWN * 0.2),
         ).shift(band_shift(6))
         self.play(Create(blocks[0]), Create(blocks[1]), Create(blocks[2]), Create(blocks[3]))
-        j_lab = Tex("joints divide granite like brickwork").scale(0.85).shift(band_shift(6) + LEFT * 3.5 + DOWN * 1.2)
+        j_lab = Tex("joints: natural brickwork").scale(0.85).shift(band_shift(6) + LEFT * 3.5 + DOWN * 1.2)
         self.play(Write(j_lab))
         self.wait(2)
         # corestones: circles inside blocks

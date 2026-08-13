@@ -39,7 +39,7 @@ class UnemploymentSession(MovingCameraScene):
         self.play(Write(b0wrong))
         self.play(Create(strike(b0wrong)))
         self.wait(1.5)
-        b0c = MathTex(r"\text{Rate} = \frac{\text{unemployed}}{\text{labour force}} \times 100").scale(1.05).shift(DOWN * 1.8)
+        b0c = MathTex(r"\text{Rate} = \frac{\text{unemployed}}{\text{labour force}} \times 100").scale(0.96).shift(DOWN * 1.8)
         self.play(Write(b0c))
         self.play(Create(SurroundingRectangle(b0c, color=GREEN)))
         self.wait(3)

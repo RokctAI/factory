@@ -55,7 +55,7 @@ class SustainabilityMeasuresAgreementsSession(MovingCameraScene):
         self.play(Write(b1_title))
         self.wait(1.5)
         b1_l1 = Tex("1. EXTERNALITIES: costs land outside the deal").scale(1.0).shift(band_shift(1) + UP * 1.5)
-        b1_l2 = MathTex(r"\text{private cost} < \text{social cost} \Rightarrow \text{too cheap}").scale(1.0).shift(band_shift(1) + UP * 0.7)
+        b1_l2 = MathTex(r"\text{private cost} < \text{social cost} \Rightarrow \text{too cheap}").scale(0.87).shift(band_shift(1) + UP * 0.7)
         self.play(Write(b1_l1))
         self.play(Write(b1_l2))
         self.wait(2.5)

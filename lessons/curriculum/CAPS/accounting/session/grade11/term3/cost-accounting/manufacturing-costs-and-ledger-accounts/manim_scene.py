@@ -92,7 +92,7 @@ class ManufacturingCostsSession(MovingCameraScene):
         c3 = Tex("Finished goods").scale(0.95).shift(band_shift(2) + UP * 1.2 + RIGHT * 3.7)
         self.play(Write(c1), Write(c2), Write(c3))
         self.wait(2)
-        d1 = Tex("leather, soles,\\\\thread — untouched").scale(0.8).shift(band_shift(2) + UP * 0.0 + LEFT * 3.7)
+        d1 = Tex("leather, soles,\\\\thread").scale(0.8).shift(band_shift(2) + UP * 0.0 + LEFT * 3.7)
         d2 = Tex("half-made pairs,\\\\value mid-process").scale(0.8).shift(band_shift(2) + UP * 0.0)
         d3 = Tex("completed pairs\\\\awaiting sale").scale(0.8).shift(band_shift(2) + UP * 0.0 + RIGHT * 3.7)
         self.play(Write(d1))

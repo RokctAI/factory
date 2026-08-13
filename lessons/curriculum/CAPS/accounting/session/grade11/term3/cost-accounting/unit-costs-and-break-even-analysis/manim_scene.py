@@ -125,7 +125,7 @@ class BreakEvenAnalysisSession(MovingCameraScene):
         b4_t = Tex("Break-even: contribution buries fixed cost").scale(1.1).shift(band_shift(4) + UP * 2.2)
         self.play(Write(b4_t))
         self.wait(2)
-        b4_f = MathTex(r"\text{BE units} = \frac{\text{total fixed costs}}{\text{contribution per unit}}").scale(1.05).shift(band_shift(4) + UP * 1.0)
+        b4_f = MathTex(r"\text{BE units} = \frac{\text{fixed costs}}{\text{contribution per unit}}").scale(0.9).shift(band_shift(4) + UP * 1.0)
         self.play(Write(b4_f))
         self.wait(2.5)
         b4_l1 = Tex("R658 000 $\\div$ R47 $=$ 14 000 pairs").scale(1.1).shift(band_shift(4) + DOWN * 0.2)

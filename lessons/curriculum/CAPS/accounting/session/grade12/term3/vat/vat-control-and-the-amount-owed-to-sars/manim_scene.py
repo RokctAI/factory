@@ -204,7 +204,7 @@ class VatControlAndSarsSession(MovingCameraScene):
         b6_l4 = Tex(r"Check: value added R14\,000; $15\% = $ R2\,100").scale(0.95).shift(band_shift(6) + DOWN * 1.4)
         self.play(Write(b6_l4))
         self.wait(2.5)
-        b6_l5 = Tex(r"Nudges: returns $\downarrow$, drawings $\uparrow$, bad debts $\downarrow$").scale(1.0).shift(band_shift(6) + DOWN * 2.3)
+        b6_l5 = Tex(r"Nudges: returns down, drawings up, bad debts down").scale(1.0).shift(band_shift(6) + DOWN * 2.3)
         b6_l6 = Tex("Big fridge month: the slate points back at SARS").scale(0.95).shift(band_shift(6) + DOWN * 3.1)
         self.play(Write(b6_l5))
         self.wait(2.5)

@@ -60,7 +60,7 @@ class TourismSouthAfricanEconomySession(MovingCameraScene):
         self.wait(1.5)
         dom = Arrow(band_shift(1) + LEFT * 5.2 + UP * 0.7, band_shift(1) + LEFT * 1.6 + UP * 0.7,
                     buff=0, stroke_width=4, color=YELLOW)
-        dom_lab = Tex("Domestic: inside — no new money").scale(0.9).shift(band_shift(1) + LEFT * 3.4 + UP * 0.2)
+        dom_lab = Tex("Domestic: inside — no new money").scale(0.84).shift(band_shift(1) + LEFT * 3.4 + UP * 0.2)
         self.play(Create(dom), Write(dom_lab))
         self.wait(2)
         inb = Arrow(band_shift(1) + RIGHT * 4.8 + DOWN * 0.6, band_shift(1) + LEFT * 3.6 + DOWN * 0.6,

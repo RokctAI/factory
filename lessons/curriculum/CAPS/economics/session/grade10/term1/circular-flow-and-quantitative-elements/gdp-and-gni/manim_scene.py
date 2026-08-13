@@ -160,7 +160,7 @@ class GdpAndGniSession(MovingCameraScene):
         b5t = Tex("Per capita — and the honest limits").scale(1.15).shift(band_shift(5) + UP * 2.2)
         self.play(Write(b5t))
         self.wait(1.5)
-        b5a = MathTex(r"\text{GDP per capita} = \frac{\text{GDP}}{\text{population}}").scale(1.1).shift(band_shift(5) + UP * 1.0)
+        b5a = MathTex(r"\text{GDP per capita} = \frac{\text{GDP}}{\text{population}}").scale(1.05).shift(band_shift(5) + UP * 1.0)
         self.play(Write(b5a))
         self.play(Create(SurroundingRectangle(b5a, color=GREEN)))
         self.wait(2.5)

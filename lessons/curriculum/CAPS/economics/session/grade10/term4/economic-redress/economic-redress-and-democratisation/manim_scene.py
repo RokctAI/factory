@@ -34,7 +34,7 @@ class EconomicRedressDemocratisationSession(MovingCameraScene):
         self.play(Write(b0a))
         self.play(Write(b0a2))
         self.wait(2)
-        b0b = Tex("Black South Africans $\\cdot$ women $\\cdot$ rural communities").scale(1.0).shift(DOWN * 0.4)
+        b0b = Tex("Black South Africans $\\cdot$ women $\\cdot$ rural communities").scale(0.91).shift(DOWN * 0.4)
         b0c = Tex("people with disabilities $\\cdot$ youth").scale(1.0).shift(DOWN * 1.1)
         self.play(Write(b0b))
         self.wait(2)

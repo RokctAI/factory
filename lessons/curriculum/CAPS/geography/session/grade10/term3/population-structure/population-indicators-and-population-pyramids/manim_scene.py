@@ -167,7 +167,7 @@ class PopulationPyramidsSession(MovingCameraScene):
         self.play(Write(h3))
         self.play(Write(h3b))
         self.wait(2)
-        dr = MathTex(r"\text{Dep. ratio} = \frac{(0\text{--}14) + (65+)}{15\text{--}64} \times 100").scale(1.0).shift(band_shift(5) + DOWN * 2.4)
+        dr = MathTex(r"\text{Dep. ratio} = \frac{(0\text{--}14) + (65+)}{15\text{--}64} \times 100").scale(0.94).shift(band_shift(5) + DOWN * 2.4)
         self.play(Write(dr))
         self.play(Create(SurroundingRectangle(dr, color=GREEN)))
         self.wait(2.5)

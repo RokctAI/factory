@@ -32,7 +32,7 @@ class Grade10HumanRevisionSession(MovingCameraScene):
         self.wait(1.5)
         self.play(Write(d2))
         self.wait(2)
-        d3 = MathTex(r"\frac{2\,000\,000}{40\,000 \text{ km}^2} = 50 \text{ per km}^2").scale(1.05).shift(DOWN * 1.0)
+        d3 = MathTex(r"\frac{2\,000\,000}{40\,000 \text{ km}^2} = 50 \text{ per km}^2").scale(0.99).shift(DOWN * 1.0)
         self.play(Write(d3))
         self.play(Create(SurroundingRectangle(d3, color=GREEN)))
         self.wait(2.5)

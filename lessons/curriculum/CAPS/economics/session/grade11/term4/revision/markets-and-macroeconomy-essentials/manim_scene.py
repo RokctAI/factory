@@ -246,7 +246,7 @@ class MarketsAndMacroeconomyEssentialsSession(MovingCameraScene):
         self.play(Write(mon))
         self.play(Write(fis))
         self.wait(2)
-        chain7 = Tex(r"Repo up $\Rightarrow$ prime up $\Rightarrow$ borrowing falls").scale(1.0).shift(band_shift(7) + UP * 0.3)
+        chain7 = Tex(r"Repo up $\Rightarrow$ prime up $\Rightarrow$ borrowing falls").scale(0.93).shift(band_shift(7) + UP * 0.3)
         chain7b = Tex(r"$\Rightarrow$ demand cools $\Rightarrow$ inflation eases").scale(1.0).shift(band_shift(7) + DOWN * 0.5)
         self.play(Write(chain7))
         self.wait(2)

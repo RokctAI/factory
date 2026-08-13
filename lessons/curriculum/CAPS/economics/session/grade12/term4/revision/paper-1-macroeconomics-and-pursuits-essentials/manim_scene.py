@@ -201,7 +201,7 @@ class PaperOneMacroEssentialsSession(MovingCameraScene):
         for m in (b5_l1, b5_l2, b5_l3, b5_l4):
             self.play(Write(m))
             self.wait(1.6)
-        b5_l5 = MathTex(r"\text{Terms of trade} = \frac{\text{export price index}}{\text{import price index}} \times 100").scale(0.95).shift(band_shift(5) + DOWN * 3.1)
+        b5_l5 = MathTex(r"\text{Terms of trade} = \frac{\text{export index}}{\text{import index}} \times 100").scale(0.81).shift(band_shift(5) + DOWN * 3.1)
         self.play(Write(b5_l5))
         self.play(Create(SurroundingRectangle(b5_l5, color=GREEN)))
         self.wait(3)

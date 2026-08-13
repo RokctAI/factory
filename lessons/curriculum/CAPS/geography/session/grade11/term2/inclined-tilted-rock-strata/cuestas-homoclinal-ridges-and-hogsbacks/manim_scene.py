@@ -213,7 +213,7 @@ class CuestasHomoclinalHogsbacksSession(MovingCameraScene):
         b7_title = Tex("Cross-sections and the human map").scale(1.15).shift(band_shift(7) + UP * 2.2)
         self.play(Write(b7_title))
         self.wait(1.5)
-        b7_l1 = MathTex(r"\text{VE} = \frac{1/10\,000}{1/50\,000} = \frac{50\,000}{10\,000}").scale(1.05).shift(band_shift(7) + UP * 1.1)
+        b7_l1 = MathTex(r"\text{VE} = \frac{1/10\,000}{1/50\,000} = \frac{50\,000}{10\,000}").scale(0.99).shift(band_shift(7) + UP * 1.1)
         self.play(Write(b7_l1))
         self.wait(2.5)
         b7_l2 = MathTex(r"= 5 \text{ times}").scale(1.1).shift(band_shift(7) + UP * 0.1)

@@ -77,7 +77,7 @@ class FinancialIndicatorsSession(MovingCameraScene):
         b2_l1 = MathTex(r"\text{Avg stock} = \frac{194\,800 + 185\,200}{2} = 190\,000").scale(1.0).shift(band_shift(2) + UP * 1.0)
         self.play(Write(b2_l1))
         self.wait(2.5)
-        b2_l2 = MathTex(r"\text{Turnover: } \frac{1\,640\,000}{190\,000} = 8{,}6 \text{ times}").scale(1.0).shift(band_shift(2) + DOWN * 0.2)
+        b2_l2 = MathTex(r"\text{Turnover: } \frac{1\,640\,000}{190\,000} = 8{,}6 \text{ times}").scale(0.95).shift(band_shift(2) + DOWN * 0.2)
         self.play(Write(b2_l2))
         self.wait(2.5)
         b2_l3 = Tex(r"Holding period: $\times$ 365 = 42,3 days").scale(1.05).shift(band_shift(2) + DOWN * 1.3)

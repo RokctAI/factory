@@ -199,7 +199,7 @@ class YearEndAndControlsEssentialsSession(MovingCameraScene):
         b7_l2 = Tex("+ Overheads 2 000 = total R12 000").scale(1.05).shift(band_shift(7) + UP * 0.3)
         self.play(Write(b7_l2))
         self.wait(2)
-        b7_l3 = MathTex(r"\frac{12\,000}{1\,000} = R12 \text{ each; sell R15} \Rightarrow R3").scale(1.0).shift(band_shift(7) + DOWN * 0.7)
+        b7_l3 = MathTex(r"\frac{12\,000}{1\,000} = R12 \text{ each; sell R15} \Rightarrow R3").scale(0.89).shift(band_shift(7) + DOWN * 0.7)
         self.play(Write(b7_l3))
         self.play(Create(SurroundingRectangle(b7_l3, color=GREEN)))
         self.wait(2.5)

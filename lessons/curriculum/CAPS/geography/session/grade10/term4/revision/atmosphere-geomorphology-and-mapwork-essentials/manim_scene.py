@@ -220,7 +220,7 @@ class Grade10PhysicalRevisionSession(MovingCameraScene):
         b8_title = Tex("Gradient, worked in full").scale(1.15).shift(band_shift(8) + UP * 2.2)
         self.play(Write(b8_title))
         self.wait(1.5)
-        c1 = MathTex(r"\text{gradient} = \frac{\text{vertical rise}}{\text{horizontal distance}}").scale(1.0).shift(band_shift(8) + UP * 1.1)
+        c1 = MathTex(r"\text{gradient} = \frac{\text{vertical rise}}{\text{horizontal distance}}").scale(0.89).shift(band_shift(8) + UP * 1.1)
         self.play(Write(c1))
         self.wait(2)
         c2 = MathTex(r"= \frac{200 \text{ m}}{4\,000 \text{ m}}").scale(1.05).shift(band_shift(8) + UP * 0.0)

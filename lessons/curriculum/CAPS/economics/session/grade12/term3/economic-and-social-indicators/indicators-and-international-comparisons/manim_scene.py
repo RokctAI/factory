@@ -102,7 +102,7 @@ class IndicatorsInternationalComparisonsSession(MovingCameraScene):
         b3_l1 = MathTex(r"\text{Real interest} = \text{nominal} - \text{inflation}").scale(1.05).shift(band_shift(3) + UP * 1.5)
         self.play(Write(b3_l1))
         self.wait(2)
-        b3_l2 = MathTex(r"\text{Terms of trade} = \frac{\text{export prices}}{\text{import prices}} \times 100").scale(1.05).shift(band_shift(3) + UP * 0.3)
+        b3_l2 = MathTex(r"\text{Terms of trade} = \frac{\text{export } P}{\text{import } P} \times 100").scale(0.9).shift(band_shift(3) + UP * 0.3)
         self.play(Write(b3_l2))
         self.play(Create(SurroundingRectangle(b3_l2, color=GREEN)))
         self.wait(2.5)
