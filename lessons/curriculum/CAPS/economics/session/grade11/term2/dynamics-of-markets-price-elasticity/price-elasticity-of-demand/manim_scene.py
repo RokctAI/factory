@@ -1,0 +1,268 @@
+from manim import *
+
+# Band-layout whiteboard scene for the session duo "Price Elasticity of
+# Demand" (Grade 11, Term 2). One band per teaching step; the camera moves
+# down and nothing is removed. Exporter-safe mobjects only; demand-curve
+# sketches are hand-built from Arrows and Lines. Band time apportioned to
+# subtopics.json (235/235/230/240/195/195/210 of 1540 s).
+
+BAND = config.frame_height
+
+
+def band_shift(k):
+    return DOWN * BAND * k
+
+
+def strike(m):
+    return Line(m.get_corner(DL) + 0.08 * DL, m.get_corner(UR) + 0.08 * UR,
+                color=RED, stroke_width=6)
+
+
+class PriceElasticityOfDemandSession(MovingCameraScene):
+    def next_band(self, k):
+        self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
+
+    def construct(self):
+        # Intro beat: topic held full-screen while intro.md audio plays.
+        self.wait(14)
+
+        # ============ Part 1 — Expert ============
+        # --- Band 0 (subtopic_1): the formula ---
+        title = Tex("Price Elasticity of Demand").scale(1.3).to_edge(UP)
+        self.play(Write(title))
+        self.wait(2)
+        f1 = MathTex(r"PED = \frac{\%\ \Delta\ \text{quantity}}{\%\ \Delta\ \text{price}}").scale(0.95).shift(UP * 0.9)
+        self.play(Write(f1))
+        self.play(Create(SurroundingRectangle(f1, color=GREEN)))
+        self.wait(2.5)
+        f2 = MathTex(r"\%\ \text{change} = \frac{\text{change}}{\text{original}} \times 100").scale(1.02).shift(DOWN * 0.8)
+        self.play(Write(f2))
+        self.wait(2)
+        f3 = Tex("Original value on the bottom — always").scale(1.1).shift(DOWN * 2.0)
+        self.play(Write(f3))
+        self.wait(3)
+
+        # --- Band 1 (subtopic_1): taxi fare worked example ---
+        self.next_band(1)
+        b1_title = Tex(r"Taxi fare: R20 $\to$ R24, riders 1000 $\to$ 950").scale(1.05).shift(band_shift(1) + UP * 2.3)
+        self.play(Write(b1_title))
+        self.wait(2)
+        t1 = MathTex(r"\%\ \Delta P = \tfrac{4}{20} \times 100 = 20\%").scale(1.1).shift(band_shift(1) + UP * 1.2)
+        t2 = MathTex(r"\%\ \Delta Q = \tfrac{50}{1000} \times 100 = 5\%").scale(1.1).shift(band_shift(1) + UP * 0.2)
+        t3 = MathTex(r"PED = \tfrac{5}{20} = 0{,}25").scale(1.15).shift(band_shift(1) + DOWN * 0.8)
+        self.play(Write(t1))
+        self.wait(2.5)
+        self.play(Write(t2))
+        self.wait(2.5)
+        self.play(Write(t3))
+        self.play(Create(SurroundingRectangle(t3, color=GREEN)))
+        self.wait(2)
+        t4 = Tex(r"Strictly $-0{,}25$: state the absolute value").scale(1.0).shift(band_shift(1) + DOWN * 1.8)
+        self.play(Write(t4))
+        self.wait(2)
+        t5 = Tex("Big price push, small response").scale(1.0).shift(band_shift(1) + DOWN * 2.7)
+        self.play(Write(t5))
+        self.wait(3)
+
+        # --- Band 2 (subtopic_1): chocolate example for contrast ---
+        self.next_band(2)
+        b2_title = Tex(r"Chocolate: R25 $\to$ R30, sales 400 $\to$ 280").scale(1.05).shift(band_shift(2) + UP * 2.3)
+        self.play(Write(b2_title))
+        self.wait(2)
+        c1 = MathTex(r"\%\ \Delta P = \tfrac{5}{25} \times 100 = 20\%").scale(1.1).shift(band_shift(2) + UP * 1.2)
+        c2 = MathTex(r"\%\ \Delta Q = \tfrac{120}{400} \times 100 = 30\%").scale(1.1).shift(band_shift(2) + UP * 0.2)
+        c3 = MathTex(r"PED = \tfrac{30}{20} = 1{,}5").scale(1.15).shift(band_shift(2) + DOWN * 0.8)
+        self.play(Write(c1))
+        self.wait(2.5)
+        self.play(Write(c2))
+        self.wait(2.5)
+        self.play(Write(c3))
+        self.play(Create(SurroundingRectangle(c3, color=GREEN)))
+        self.wait(2)
+        c4 = Tex(r"Same push, triple the flight: $0{,}25$ vs $1{,}5$").scale(1.0).shift(band_shift(2) + DOWN * 1.9)
+        self.play(Write(c4))
+        self.wait(3)
+
+        # --- Band 3 (subtopic_2): the five zones, steep vs flat sketch ---
+        self.next_band(3)
+        b3_title = Tex("Reading the number: five zones").scale(1.15).shift(band_shift(3) + UP * 2.5)
+        self.play(Write(b3_title))
+        self.wait(1.5)
+        z1 = Tex(r"$>1$ elastic; $<1$ inelastic; $=1$ unitary").scale(1.05).shift(band_shift(3) + UP * 1.6)
+        self.play(Write(z1))
+        self.wait(2.5)
+        org = band_shift(3) + LEFT * 4.4 + DOWN * 2.6
+        ax_y = Arrow(org, org + UP * 3.4, buff=0)
+        ax_x = Arrow(org, org + RIGHT * 6.4, buff=0)
+        ylab = Tex("P").scale(0.85).move_to(org + UP * 3.4 + RIGHT * 0.4)
+        xlab = Tex("Q").scale(0.85).move_to(org + RIGHT * 6.4 + UP * 0.35)
+        self.play(Create(ax_y), Create(ax_x), Write(ylab), Write(xlab))
+        self.wait(1.5)
+        steep = Line(org + RIGHT * 1.6 + UP * 3.0, org + RIGHT * 2.8 + UP * 0.4, stroke_width=5)
+        steep_lab = Tex("steep: inelastic").scale(0.75).move_to(org + RIGHT * 2.0 + UP * 0.35)
+        self.play(Create(steep), Write(steep_lab))
+        self.wait(2)
+        flat = Line(org + RIGHT * 1.0 + UP * 2.4, org + RIGHT * 6.0 + UP * 1.2, stroke_width=5, color=BLUE)
+        flat_lab = Tex("flat: elastic").scale(0.75).move_to(org + RIGHT * 5.6 + UP * 1.8)
+        self.play(Create(flat), Write(flat_lab))
+        self.wait(2.5)
+        note = Tex("Small price step, long quantity stride").scale(0.9).shift(band_shift(3) + RIGHT * 3.4 + DOWN * 2.9)
+        self.play(Write(note))
+        self.wait(3)
+
+        # --- Band 4 (subtopic_2): the two extremes + slope warning ---
+        self.next_band(4)
+        b4_title = Tex("The two textbook extremes").scale(1.15).shift(band_shift(4) + UP * 2.5)
+        self.play(Write(b4_title))
+        self.wait(1.5)
+        org4 = band_shift(4) + LEFT * 4.4 + DOWN * 1.6
+        ay = Arrow(org4, org4 + UP * 3.2, buff=0)
+        ax = Arrow(org4, org4 + RIGHT * 6.4, buff=0)
+        ylab4 = Tex("P").scale(0.85).move_to(org4 + UP * 3.2 + RIGHT * 0.4)
+        xlab4 = Tex("Q").scale(0.85).move_to(org4 + RIGHT * 6.4 + UP * 0.35)
+        self.play(Create(ay), Create(ax), Write(ylab4), Write(xlab4))
+        self.wait(1.5)
+        vline = Line(org4 + RIGHT * 2.2, org4 + RIGHT * 2.2 + UP * 2.9, stroke_width=5)
+        vlab = Tex(r"vertical: $PED = 0$").scale(0.75).move_to(org4 + RIGHT * 3.9 + UP * 2.7)
+        self.play(Create(vline), Write(vlab))
+        self.wait(2)
+        hline = Line(org4 + UP * 1.6 + RIGHT * 0.2, org4 + UP * 1.6 + RIGHT * 6.0, stroke_width=5, color=BLUE)
+        hlab = Tex(r"horizontal: $PED = \infty$").scale(0.75).move_to(org4 + RIGHT * 4.6 + UP * 1.15)
+        self.play(Create(hline), Write(hlab))
+        self.wait(2.5)
+        warn = Tex(r"``This curve is elastic'' — from shape alone").scale(0.95).shift(band_shift(4) + DOWN * 2.2)
+        self.play(Write(warn))
+        self.play(Create(strike(warn)))
+        self.wait(1.5)
+        warn2 = Tex("Elasticity changes along a straight curve — calculate").scale(0.9).shift(band_shift(4) + DOWN * 3.0)
+        self.play(Write(warn2))
+        self.wait(3)
+
+        # --- Band 5 (subtopic_3): the determinants ---
+        self.next_band(5)
+        b5_title = Tex("What makes demand elastic or inelastic?").scale(1.1).shift(band_shift(5) + UP * 2.3)
+        self.play(Write(b5_title))
+        self.wait(1.5)
+        d1 = Tex("1. Substitutes — the mightiest determinant").scale(1.0).shift(band_shift(5) + UP * 1.4)
+        d2 = Tex("2. Necessity (inelastic) vs luxury (elastic)").scale(1.0).shift(band_shift(5) + UP * 0.55)
+        d3 = Tex("3. Share of income: matches vs rent").scale(1.0).shift(band_shift(5) + DOWN * 0.3)
+        d4 = Tex("4. Time: elasticity grows with time to adjust").scale(1.0).shift(band_shift(5) + DOWN * 1.15)
+        d5 = Tex("5. Habit and addiction: sin taxes rely on it").scale(1.0).shift(band_shift(5) + DOWN * 2.0)
+        for m in (d1, d2, d3, d4, d5):
+            self.play(Write(m))
+            self.wait(1.8)
+        d6 = Tex("Narrower definition, more substitutes, more elastic").scale(0.9).shift(band_shift(5) + DOWN * 2.9)
+        self.play(Write(d6))
+        self.wait(3)
+
+        # --- Band 6 (subtopic_4): elasticity and total revenue — taxi ---
+        self.next_band(6)
+        b6_title = Tex(r"Total revenue $=$ price $\times$ quantity").scale(1.15).shift(band_shift(6) + UP * 2.3)
+        self.play(Write(b6_title))
+        self.wait(1.5)
+        v1 = MathTex(r"\text{Before: } 20 \times 1000 = \text{R}20\,000").scale(1.05).shift(band_shift(6) + UP * 1.2)
+        v2 = MathTex(r"\text{After: } 24 \times 950 = \text{R}22\,800").scale(1.05).shift(band_shift(6) + UP * 0.2)
+        self.play(Write(v1))
+        self.wait(2.5)
+        self.play(Write(v2))
+        self.wait(2.5)
+        v3 = Tex(r"Revenue UP R2\,800: inelastic demand").scale(1.05).shift(band_shift(6) + DOWN * 0.8)
+        self.play(Write(v3))
+        self.play(Create(SurroundingRectangle(v3, color=GREEN)))
+        self.wait(2)
+        v4 = Tex("Riders who stay outweigh the few who leave").scale(0.95).shift(band_shift(6) + DOWN * 1.8)
+        self.play(Write(v4))
+        self.wait(3)
+
+        # --- Band 7 (subtopic_4): chocolate revenue + the rulebook ---
+        self.next_band(7)
+        b7_title = Tex("The chocolate, and the rulebook").scale(1.15).shift(band_shift(7) + UP * 2.3)
+        self.play(Write(b7_title))
+        self.wait(1.5)
+        k1 = MathTex(r"25 \times 400 = 10\,000; \quad 30 \times 280 = 8\,400").scale(1.0).shift(band_shift(7) + UP * 1.3)
+        self.play(Write(k1))
+        self.wait(2.5)
+        k2 = Tex(r"Revenue DOWN R1\,600: elastic demand").scale(1.0).shift(band_shift(7) + UP * 0.4)
+        self.play(Write(k2))
+        self.wait(2)
+        k3 = Tex(r"Inelastic: price and revenue move TOGETHER").scale(0.95).shift(band_shift(7) + DOWN * 0.5)
+        k4 = Tex(r"Elastic: they move OPPOSITE — cut price to grow").scale(0.95).shift(band_shift(7) + DOWN * 1.35)
+        k5 = Tex(r"Unitary: revenue stands still at its peak").scale(0.95).shift(band_shift(7) + DOWN * 2.2)
+        self.play(Write(k3))
+        self.wait(2)
+        self.play(Write(k4))
+        self.wait(2)
+        self.play(Write(k5))
+        self.play(Create(SurroundingRectangle(VGroup(k3, k4, k5), color=GREEN)))
+        self.wait(2)
+        k6 = Tex("Caution: revenue is not profit").scale(0.95).shift(band_shift(7) + DOWN * 3.0)
+        self.play(Write(k6))
+        self.wait(3)
+
+        # ============ Part 2 — Simplifier ============
+        # --- Band 8 (subtopic_5): the shrug test ---
+        self.next_band(8)
+        b8_title = Tex("The shrug test: watch behaviour, not ouch").scale(1.1).shift(band_shift(8) + UP * 2.3)
+        self.play(Write(b8_title))
+        self.wait(2)
+        g0 = Tex(r"Elasticity asks: does the price rise hurt?").scale(1.0).shift(band_shift(8) + UP * 1.4)
+        self.play(Write(g0))
+        self.play(Create(strike(g0)))
+        self.wait(1.5)
+        g1 = Tex("It asks: what do buyers DO?").scale(1.05).shift(band_shift(8) + UP * 0.5)
+        self.play(Write(g1))
+        self.wait(2)
+        g2 = Tex("Bread: big ouch, tiny change — a PLANK").scale(1.0).shift(band_shift(8) + DOWN * 0.4)
+        g3 = Tex("Fizzy drinks: hands drift away — a RUBBER BAND").scale(1.0).shift(band_shift(8) + DOWN * 1.3)
+        self.play(Write(g2))
+        self.wait(2)
+        self.play(Write(g3))
+        self.wait(2)
+        g4 = MathTex(r"\tfrac{5}{20} = 0{,}25 \text{ (plank)}, \; \tfrac{30}{20} = 1{,}5 \text{ (band)}").scale(0.9).shift(band_shift(8) + DOWN * 2.3)
+        self.play(Write(g4))
+        self.play(Create(SurroundingRectangle(g4, color=GREEN)))
+        self.wait(3)
+
+        # --- Band 9 (subtopic_6): the four everyday questions ---
+        self.next_band(9)
+        b9_title = Tex("Four questions call it before the calculator").scale(1.05).shift(band_shift(9) + UP * 2.3)
+        self.play(Write(b9_title))
+        self.wait(2)
+        h1 = Tex("1. Is there an escape route? (substitutes)").scale(1.0).shift(band_shift(9) + UP * 1.4)
+        h2 = Tex("2. Need or nice-to-have?").scale(1.0).shift(band_shift(9) + UP * 0.55)
+        h3 = Tex("3. How big a bite of the budget?").scale(1.0).shift(band_shift(9) + DOWN * 0.3)
+        h4 = Tex("4. How much time have buyers had?").scale(1.0).shift(band_shift(9) + DOWN * 1.15)
+        for m in (h1, h2, h3, h4):
+            self.play(Write(m))
+            self.wait(1.8)
+        h5 = Tex("Habits hold people: cigarettes stay planks").scale(1.0).shift(band_shift(9) + DOWN * 2.05)
+        self.play(Write(h5))
+        self.wait(2)
+        h6 = Tex("Answer essays in because-sentences").scale(1.0).shift(band_shift(9) + DOWN * 2.9)
+        self.play(Write(h6))
+        self.wait(3)
+
+        # --- Band 10 (subtopic_7): Mama Dee's dilemma ---
+        self.next_band(10)
+        b10_title = Tex("Mama Dee's tuck shop, one week").scale(1.15).shift(band_shift(10) + UP * 2.3)
+        self.play(Write(b10_title))
+        self.wait(2)
+        j1 = Tex(r"Monday: airtime up 10\% — a plank, till total RISES").scale(0.95).shift(band_shift(10) + UP * 1.4)
+        self.play(Write(j1))
+        self.wait(2.5)
+        j2 = MathTex(r"\text{Chocolate: } 25 \times 400 = 10\,000").scale(1.0).shift(band_shift(10) + UP * 0.5)
+        j3 = MathTex(r"30 \times 280 = 8\,400 \;\Rightarrow\; \text{R}1\,600 \text{ lost}").scale(1.0).shift(band_shift(10) + DOWN * 0.4)
+        self.play(Write(j2))
+        self.wait(2)
+        self.play(Write(j3))
+        self.wait(2)
+        j4 = Tex("Plank: push price up. Rubber band: pull price down.").scale(0.95).shift(band_shift(10) + DOWN * 1.4)
+        self.play(Write(j4))
+        self.play(Create(SurroundingRectangle(j4, color=GREEN)))
+        self.wait(2)
+        j5 = Tex("Treasury taxes planks; VAT stays off brown bread").scale(0.95).shift(band_shift(10) + DOWN * 2.3)
+        self.play(Write(j5))
+        self.wait(2)
+        j6 = Tex("The till total is revenue, not profit").scale(0.95).shift(band_shift(10) + DOWN * 3.0)
+        self.play(Write(j6))
+        self.wait(4)
