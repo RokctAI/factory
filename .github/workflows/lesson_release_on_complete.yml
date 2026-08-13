@@ -1,0 +1,130 @@
+name: Lesson Release on Folder Complete
+
+# The session-tree release path: a lesson under
+# lessons/curriculum/CAPS/<subject>/session/... releases automatically once
+# its package is complete (9 content files in this repo + audio.mp3 at the
+# same relative path under the audio root in the agent checkout) and passes
+# compliance. No job cards, no manual approval step — the folder is the
+# contract. The card-tree lessons keep their Level 6 batch path
+# (lesson6_production.yml) untouched; this path is additive.
+#
+# Releases are created on RokctAI/agent (the shipped-content home, decision
+# log #50) via MONOREPO_PAT — the same cross-repo token every other factory
+# workflow uses for agent access. Asset URLs are private; only the backend
+# fetches release assets (decision #8), so that is fine.
+#
+# Triggers: pushes that complete a package in this repo, a daily sweep for
+# audio dropped in the agent repo (agent pushes cannot trigger factory
+# workflows), and manual dispatch for a filtered/forced run.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lessons/curriculum/**'
+  schedule:
+    - cron: '0 3 * * *'   # daily 03:00 UTC — picks up agent-side audio drops
+  workflow_dispatch:
+    inputs:
+      folder_filter:
+        description: 'Only release packages whose path contains this substring (e.g. maths). Empty = all.'
+        default: ''
+      max_releases:
+        description: 'Max lessons to release this run'
+        default: '5'
+      audio_root:
+        description: 'Audio root inside the agent checkout (relative path holding the mirrored session tree)'
+        default: 'agent/lms/lessons/CAPS'
+      dry_run:
+        description: 'Scan and report only; create no releases'
+        type: boolean
+        default: false
+
+# One run at a time: overlapping scans must not race each other into
+# double-releasing (the tag-exists check is the second guard).
+concurrency:
+  group: lesson-release-on-complete
+  cancel-in-progress: false
+
+env:
+  FOLDER_FILTER: ${{ github.event.inputs.folder_filter || '' }}
+  MAX_RELEASES: ${{ github.event.inputs.max_releases || '5' }}
+  AUDIO_ROOT: ${{ github.event.inputs.audio_root || 'agent/lms/lessons/CAPS' }}
+  DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+
+jobs:
+  release_complete_lessons:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # commit the ledger rows back to this repo
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Initiate Protocol
+        run: |
+          if [ -f ".rokct/initiate.py" ]; then
+            python .rokct/initiate.py
+          else
+            curl -sSL https://raw.githubusercontent.com/RokctAI/The-Rokct-Protocol/main/profiles/web/initiate.py -o initiate_temp.py
+            python initiate_temp.py
+            rm initiate_temp.py
+          fi
+
+      # The agent repo supplies the tutor roster (TEAM_ROOT), the ReplaySDK
+      # manifest validator, and the audio root the lessons' audio.mp3 files
+      # are dropped in. Private repo: MONOREPO_PAT, same as agent_checks.yml.
+      - name: Check out RokctAI/agent
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: agent
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install system + Python dependencies
+        run: |
+          # Manim needs cairo/pango headers; NO texlive (exporter shims Tex).
+          # ffmpeg supplies ffprobe for measuring the pre-placed audio.
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config ffmpeg
+          pip install manim requests python-dotenv
+
+      - name: Release complete lessons
+        id: release
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}   # releases land on RokctAI/agent
+          TEAM_ROOT: agent/lms/team
+        run: |
+          DRY_FLAG=""
+          [ "$DRY_RUN" = "true" ] && DRY_FLAG="--dry-run"
+          python lessons/scripts/release_on_complete.py \
+            --filter "$FOLDER_FILTER" \
+            --max-releases "$MAX_RELEASES" \
+            --audio-root "$AUDIO_ROOT" \
+            $DRY_FLAG
+
+      - name: Commit release ledger
+        if: env.DRY_RUN != 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet .rokct/agent/log/ledger.md; then
+            echo "Nothing released; no ledger change to commit."
+            exit 0
+          fi
+          git add .rokct/agent/log/ledger.md
+          IDS="${{ steps.release.outputs.released_ids }}"
+          git commit -m "🤖 [CI] Release on complete: ${IDS:-session lessons} [skip ci]"
+          for i in 1 2 3; do
+            git push origin main && break
+            git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+            sleep $((RANDOM % 3 + 1))
+          done
