@@ -192,3 +192,4 @@
 | beyond_the_starlight_e090ca | poetry | Beyond the Starlight | pending_approval | groq | GROQ-31645588555 | — | 2026-08-12 22:07 |
 | forgotten_cities_b6355a | poetry | Forgotten Cities | pending_approval | groq | GROQ-31649668219 | — | 2026-08-12 23:24 |
 | whispers_of_the_forest_9a936f | poetry | Whispers of the Forest | pending_approval | groq | GROQ-31653123017 | — | 2026-08-13 01:35 |
+| shores_of_memories_eec36c | poetry | Shores of Memories | pending_approval | groq | GROQ-31662773235 | — | 2026-08-13 03:23 |
