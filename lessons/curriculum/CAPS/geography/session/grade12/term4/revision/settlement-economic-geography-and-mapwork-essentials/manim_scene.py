@@ -166,8 +166,8 @@ class SettlementEconomyMapworkEssentialsSession(MovingCameraScene):
         self.play(Write(b6_t))
         self.wait(1.5)
         b6_l1 = MathTex(r"\text{Distance: cm} \times 0{,}5\ \text{km on } 1{:}50\,000").scale(1.0).shift(band_shift(6) + UP * 1.1)
-        b6_l2 = MathTex(r"\text{Gradient} = \frac{\text{VI}}{\text{HE}} \Rightarrow 1:\text{something}").scale(1.0).shift(band_shift(6) + UP * 0.1)
-        b6_l3 = MathTex(r"\text{VE} = \frac{\text{vertical scale}}{\text{horizontal scale}} \Rightarrow \text{times}").scale(1.0).shift(band_shift(6) + DOWN * 1.0)
+        b6_l2 = MathTex(r"\text{Gradient} = \frac{\text{VI}}{\text{HE}} \Rightarrow 1:\text{something}").scale(0.83).shift(band_shift(6) + UP * 0.1)
+        b6_l3 = MathTex(r"\text{VE} = \frac{\text{vertical scale}}{\text{horizontal scale}}").scale(0.9).shift(band_shift(6) + DOWN * 1.0)
         b6_l4 = MathTex(r"\text{Declination: change} \times \text{years, then apply}").scale(1.0).shift(band_shift(6) + DOWN * 2.0)
         b6_l5 = MathTex(r"\text{Area} = \text{real length} \times \text{real breadth (km}^2)").scale(1.0).shift(band_shift(6) + DOWN * 2.9)
         for m in (b6_l1, b6_l2, b6_l3, b6_l4, b6_l5):

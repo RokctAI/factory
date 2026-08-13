@@ -143,7 +143,7 @@ class ClimateGeomorphologyEssentialsSession(MovingCameraScene):
         self.play(Write(b4_l4))
         self.play(Create(SurroundingRectangle(b4_l4, color=GREEN)))
         self.wait(2)
-        b4_l5 = MathTex(r"\text{Density} = \frac{\text{total stream length}}{\text{basin area}}").scale(1.0).shift(band_shift(4) + DOWN * 2.1)
+        b4_l5 = MathTex(r"\text{Density} = \frac{\text{total stream length}}{\text{basin area}}").scale(0.93).shift(band_shift(4) + DOWN * 2.1)
         self.play(Write(b4_l5))
         self.wait(1.8)
         b4_l6 = Tex(r"Two firsts make a second; two seconds a third").scale(0.9).shift(band_shift(4) + DOWN * 3.0)

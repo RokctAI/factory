@@ -170,7 +170,7 @@ class SoilErosionSouthAfricaSession(MovingCameraScene):
         self.play(Write(b5_p1))
         self.play(Write(b5_e1))
         self.wait(2)
-        b5_p2 = Tex(r"livelihoods collapse,\\ migration to towns").scale(0.85).shift(band_shift(5) + DOWN * 0.8 + LEFT * 3.2)
+        b5_p2 = Tex(r"livelihoods collapse,\\ people leave").scale(0.85).shift(band_shift(5) + DOWN * 0.8 + LEFT * 3.2)
         b5_e2 = Tex(r"floods sharpen,\\ dry flows weaken").scale(0.85).shift(band_shift(5) + DOWN * 0.8 + RIGHT * 3.2)
         self.play(Write(b5_p2))
         self.play(Write(b5_e2))

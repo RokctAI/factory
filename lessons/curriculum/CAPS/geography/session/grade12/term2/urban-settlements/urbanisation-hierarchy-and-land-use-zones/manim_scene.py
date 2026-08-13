@@ -37,7 +37,7 @@ class UrbanisationLandUseSession(MovingCameraScene):
         title = Tex("From First Villages to an Urban World").scale(1.25).to_edge(UP)
         self.play(Write(title))
         self.wait(2)
-        r1 = MathTex(r"\text{surplus} + \text{specialisation} + \text{exchange} = \text{a town}").scale(1.0).shift(UP * 1.0)
+        r1 = MathTex(r"\text{surplus} + \text{specialisation} + \text{exchange} = \text{a town}").scale(0.85).shift(UP * 1.0)
         self.play(Write(r1))
         self.play(Create(SurroundingRectangle(r1, color=GREEN)))
         self.wait(2.5)

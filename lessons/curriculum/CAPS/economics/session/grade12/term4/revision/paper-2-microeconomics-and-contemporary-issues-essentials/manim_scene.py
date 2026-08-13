@@ -23,7 +23,7 @@ def axes(origin, w, h, xlab, ylab):
     xa = Arrow(origin, origin + RIGHT * w, buff=0, stroke_width=3)
     ya = Arrow(origin, origin + UP * h, buff=0, stroke_width=3)
     xl = Tex(xlab).scale(0.9).next_to(origin + RIGHT * w, DOWN, buff=0.2)
-    yl = Tex(ylab).scale(0.9).next_to(origin + UP * h, LEFT, buff=0.2)
+    yl = Tex(ylab).scale(0.9).next_to(origin + UP * h, RIGHT, buff=0.15)
     return VGroup(xa, ya, xl, yl)
 
 
@@ -120,7 +120,7 @@ class PaperTwoMicroEssentialsSession(MovingCameraScene):
         b3_title = Tex("Oligopoly: the kinked demand curve").scale(1.1).shift(band_shift(3) + UP * 2.6)
         self.play(Write(b3_title))
         self.wait(1.5)
-        o = band_shift(3) + LEFT * 5.4 + DOWN * 2.2
+        o = band_shift(3) + LEFT * 4.8 + DOWN * 2.2
         ax = axes(o, 5.4, 4.2, "Q", "P")
         self.play(Create(ax))
         upper = chain(o, [(0.5, 3.6), (2.5, 2.4)], color=BLUE)

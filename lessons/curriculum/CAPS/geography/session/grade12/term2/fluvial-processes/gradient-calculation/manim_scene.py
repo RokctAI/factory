@@ -264,7 +264,7 @@ class GradientCalculationSession(MovingCameraScene):
         z1 = Tex(r"R4 500 buys how many R300 vouchers? 15").scale(1.0).shift(band_shift(10) + UP * 1.2)
         self.play(Write(z1))
         self.wait(2)
-        z2 = MathTex(r"\text{Gradient} = \frac{300 \text{ m}}{4\,500 \text{ m}} = \frac{1}{15}").scale(1.1).shift(band_shift(10) + UP * 0.1)
+        z2 = MathTex(r"\text{Gradient} = \frac{300 \text{ m}}{4\,500 \text{ m}} = \frac{1}{15}").scale(0.96).shift(band_shift(10) + UP * 0.1)
         self.play(Write(z2))
         self.wait(2.5)
         z3 = MathTex(r"\text{Gradient} = 1 : 15").scale(1.2).shift(band_shift(10) + DOWN * 1.0)

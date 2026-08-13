@@ -171,7 +171,7 @@ class EnergyManagementGreenerEconomySession(MovingCameraScene):
         b6_l1 = Tex(r"Geyser $\approx 40\%$ of the bill — the ladder:").scale(1.0).shift(band_shift(6) + UP * 1.2)
         self.play(Write(b6_l1))
         self.wait(2)
-        b6_l2 = Tex(r"60 $^\circ$C $\Rightarrow$ blanket $\Rightarrow$ timer $\Rightarrow$ solar/heat pump").scale(0.95).shift(band_shift(6) + UP * 0.4)
+        b6_l2 = Tex(r"60 $^\circ$C $\to$ blanket $\to$ timer $\to$ solar/heat pump").scale(0.95).shift(band_shift(6) + UP * 0.4)
         self.play(Write(b6_l2))
         self.play(Create(SurroundingRectangle(b6_l2, color=GREEN)))
         self.wait(2.5)

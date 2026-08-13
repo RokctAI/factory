@@ -19,7 +19,7 @@ class WaterAvailabilitySession(MovingCameraScene):
         self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
 
     def construct(self):
-        self.wait(14)
+        self.wait(11)
 
         # ============ Part 1 — Expert ============
         # --- Band 0 (subtopic_1): the master statistics ---

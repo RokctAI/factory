@@ -132,10 +132,10 @@ class MidLatitudeCyclonesSession(MovingCameraScene):
         self.wait(2.5)
         # Cold front surface: steep slope on the left (trailing edge).
         cf1 = Line(band_shift(3) + DOWN * 1.8 + LEFT * 3.4, band_shift(3) + DOWN * 0.2 + LEFT * 4.2, color=BLUE)
-        cf_lab = Tex(r"cold front $\approx$ 1 in 50:\\ warm air thrown up").scale(0.8).shift(band_shift(3) + UP * 0.6 + LEFT * 3.8)
+        cf_lab = Tex(r"cold front 1:50\\ hurls air up").scale(0.83).shift(band_shift(3) + UP * 0.6 + LEFT * 3.8)
         self.play(Create(cf1), Write(cf_lab))
         self.wait(2)
-        cf_cloud = Tex(r"cumulonimbus: short violent\\ showers, thunder, hail").scale(0.8).shift(band_shift(3) + DOWN * 2.7 + LEFT * 3.2)
+        cf_cloud = Tex(r"cumulonimbus:\\ thunder, hail").scale(0.85).shift(band_shift(3) + DOWN * 2.7 + LEFT * 3.2)
         self.play(Write(cf_cloud))
         self.wait(2)
         ws2_lab = Tex("warm sector: mild, humid, overcast").scale(0.8).shift(band_shift(3) + DOWN * 1.3 + LEFT * 0.6)

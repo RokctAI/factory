@@ -54,7 +54,7 @@ class DrainageBasinsManagementSession(MovingCameraScene):
         self.play(Write(fold_lab))
         self.wait(2)
         river = Arrow(UP * 0.1, DOWN * 2.4, buff=0, color=BLUE)
-        riv_lab = Tex(r"river cuts down, keeps its course").scale(0.85).shift(DOWN * 0.1 + LEFT * 4.2)
+        riv_lab = Tex(r"river keeps\\ its course").scale(0.85).shift(DOWN * 0.1 + LEFT * 4.2)
         self.play(Create(river), Write(riv_lab))
         self.wait(2)
         sup = Tex(r"SUPERIMPOSED: printed from above (Gouritz)").scale(0.95).shift(UP * 2.0)

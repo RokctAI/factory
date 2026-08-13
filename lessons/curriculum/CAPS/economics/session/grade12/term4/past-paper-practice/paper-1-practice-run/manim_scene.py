@@ -23,7 +23,7 @@ def axes(origin, w, h, xlab, ylab):
     xa = Arrow(origin, origin + RIGHT * w, buff=0, stroke_width=3)
     ya = Arrow(origin, origin + UP * h, buff=0, stroke_width=3)
     xl = Tex(xlab).scale(0.9).next_to(origin + RIGHT * w, DOWN, buff=0.2)
-    yl = Tex(ylab).scale(0.9).next_to(origin + UP * h, LEFT, buff=0.2)
+    yl = Tex(ylab).scale(0.9).next_to(origin + UP * h, RIGHT, buff=0.15)
     return VGroup(xa, ya, xl, yl)
 
 

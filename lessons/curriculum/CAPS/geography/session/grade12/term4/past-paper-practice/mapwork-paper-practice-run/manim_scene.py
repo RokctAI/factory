@@ -137,7 +137,7 @@ class MapworkPaperPracticeSession(MovingCameraScene):
         b5_t = Tex("Q2.3: vertical exaggeration").scale(1.2).shift(band_shift(5) + UP * 2.2)
         self.play(Write(b5_t))
         self.wait(1.5)
-        b5_f = MathTex(r"\text{VE} = \frac{\text{vertical scale}}{\text{horizontal scale}}").scale(1.1).shift(band_shift(5) + UP * 1.1)
+        b5_f = MathTex(r"\text{VE} = \frac{\text{vertical scale}}{\text{horizontal scale}}").scale(1.02).shift(band_shift(5) + UP * 1.1)
         self.play(Write(b5_f)); self.wait(2)
         b5_l1 = MathTex(r"= \frac{1/10\,000}{1/50\,000}").scale(1.1).shift(band_shift(5) + UP * 0.0)
         self.play(Write(b5_l1)); self.wait(2)

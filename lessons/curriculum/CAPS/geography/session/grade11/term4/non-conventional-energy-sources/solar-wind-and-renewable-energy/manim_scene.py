@@ -145,7 +145,7 @@ class SolarWindRenewableEnergySession(MovingCameraScene):
         bl3 = Line(band_shift(4) + DOWN * 0.2 + LEFT * 3.6, band_shift(4) + DOWN * 0.7 + LEFT * 4.8)
         self.play(Create(t_tower), Create(hub))
         self.play(Create(bl1), Create(bl2), Create(bl3))
-        t_lab = Tex(r"towers past 100 m;\\ blades $>$ rugby field").scale(0.8).shift(band_shift(4) + DOWN * 3.2 + LEFT * 3.6)
+        t_lab = Tex(r"towers past 100 m;\\ huge blades").scale(0.85).shift(band_shift(4) + DOWN * 3.2 + LEFT * 3.6)
         self.play(Write(t_lab))
         self.wait(2)
         b4_l1 = Tex(r"air $\Rightarrow$ blades $\Rightarrow$ shaft $\Rightarrow$ generator").scale(1.0).shift(band_shift(4) + UP * 0.9 + RIGHT * 1.8)

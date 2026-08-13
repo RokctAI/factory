@@ -142,7 +142,7 @@ class TropicalCyclonesSession(MovingCameraScene):
         self.play(Create(band_l), Create(band_r))
         self.play(Write(bands_lab))
         self.wait(2)
-        loop = Tex(r"Condensation $\Rightarrow$ latent heat $\Rightarrow$ deeper low").scale(0.95).shift(band_shift(3) + DOWN * 3.3)
+        loop = Tex(r"Condensation $\Rightarrow$ latent heat $\Rightarrow$ deeper low").scale(0.88).shift(band_shift(3) + DOWN * 3.3)
         self.play(Write(loop))
         self.wait(3)
 

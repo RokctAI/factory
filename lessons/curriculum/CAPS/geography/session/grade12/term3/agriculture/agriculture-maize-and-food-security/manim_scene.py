@@ -233,7 +233,7 @@ class AgricultureMaizeFoodSecuritySession(MovingCameraScene):
         self.wait(2)
         fence = Line(band_shift(10) + UP * 1.5, band_shift(10) + DOWN * 1.6, color=YELLOW, stroke_width=4)
         self.play(Create(fence))
-        b10_l = Tex(r"3000 ha, tractors,\\hired hands, bank loan").scale(0.95).shift(band_shift(10) + UP * 0.7 + LEFT * 3.0)
+        b10_l = Tex(r"3000 ha, tractors,\\ bank loan").scale(0.85).shift(band_shift(10) + UP * 0.7 + LEFT * 3.0)
         b10_r = Tex(r"2 ha communal plot,\\family pot, no loan").scale(0.95).shift(band_shift(10) + UP * 0.7 + RIGHT * 3.0)
         self.play(Write(b10_l)); self.wait(2)
         self.play(Write(b10_r)); self.wait(2)
