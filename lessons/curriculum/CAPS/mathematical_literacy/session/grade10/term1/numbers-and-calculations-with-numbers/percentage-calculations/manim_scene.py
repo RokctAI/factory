@@ -140,7 +140,7 @@ class PercentageCalculationsSession(MovingCameraScene):
         b5_t = Tex("Percentage change: the direct formula").scale(1.1).shift(band_shift(5) + UP * 2.2)
         self.play(Write(b5_t))
         self.wait(1.5)
-        b5_l1 = MathTex(r"\%\text{ change} = \frac{\text{change}}{\text{ORIGINAL}} \times 100").scale(1.1).shift(band_shift(5) + UP * 1.0)
+        b5_l1 = MathTex(r"\%\text{ change} = \frac{\text{change}}{\text{ORIGINAL}} \times 100").scale(0.97).shift(band_shift(5) + UP * 1.0)
         self.play(Write(b5_l1))
         self.wait(2.5)
         b5_l2 = MathTex(r"850 - 830{,}875 = 19{,}125").scale(1.05).shift(band_shift(5) + UP * 0.0)

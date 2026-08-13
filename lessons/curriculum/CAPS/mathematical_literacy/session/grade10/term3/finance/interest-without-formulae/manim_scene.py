@@ -233,7 +233,7 @@ class InterestWithoutFormulaeSession(MovingCameraScene):
         b10_t = Tex("Which loan hurts less?").scale(1.2).shift(band_shift(10) + UP * 2.2)
         self.play(Write(b10_t))
         self.wait(2)
-        b10_l1 = Tex("Bank: 20\\% PER YEAR \\quad Mashonisa: 30\\% PER MONTH").scale(0.95).shift(band_shift(10) + UP * 1.1)
+        b10_l1 = Tex("Bank: 20\\% PER YEAR \\quad Mashonisa: 30\\% PER MONTH").scale(0.88).shift(band_shift(10) + UP * 1.1)
         self.play(Write(b10_l1))
         self.wait(2.5)
         b10_l2 = Tex("Bank's rent for a YEAR: R600").scale(1.05).shift(band_shift(10) + UP * 0.2)

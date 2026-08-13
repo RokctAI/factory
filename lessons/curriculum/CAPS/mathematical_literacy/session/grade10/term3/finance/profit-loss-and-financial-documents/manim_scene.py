@@ -98,7 +98,7 @@ class ProfitLossFinancialDocumentsSession(MovingCameraScene):
         b3_t = Tex("The invoice: check the multiplication").scale(1.15).shift(band_shift(3) + UP * 2.2)
         self.play(Write(b3_t))
         self.wait(1.5)
-        b3_l1 = MathTex(r"\text{Qty } 150 \times \text{R}6{,}00 = \text{R}900{,}00 \; \checkmark").scale(1.05).shift(band_shift(3) + UP * 1.1)
+        b3_l1 = MathTex(r"\text{Qty } 150 \times \text{R}6{,}00 = \text{R}900{,}00 \; \checkmark").scale(0.98).shift(band_shift(3) + UP * 1.1)
         self.play(Write(b3_l1))
         self.wait(2.5)
         b3_l2 = Tex("Invoice: a promise to pay (due in 30 days)").scale(1.0).shift(band_shift(3) + UP * 0.2)

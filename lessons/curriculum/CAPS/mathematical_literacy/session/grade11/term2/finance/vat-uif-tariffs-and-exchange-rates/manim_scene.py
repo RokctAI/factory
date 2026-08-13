@@ -114,7 +114,7 @@ class VatUifTariffsExchangeSession(MovingCameraScene):
         b4_l3 = Tex("Toward rands: multiply. Toward the foreign unit: divide.").scale(0.95).shift(band_shift(4) + DOWN * 0.8)
         self.play(Write(b4_l3)); self.wait(2.5)
         b4_l4 = Tex(r"R18,50 $\to$ R19,20 per dollar: the rand WEAKENED").scale(0.95).shift(band_shift(4) + DOWN * 1.8)
-        b4_l5 = MathTex(r"\pounds 400: \; 400 \times 23{,}40 = R9\,360; \;\; \text{at } 24{,}10 = R9\,640").scale(0.9).shift(band_shift(4) + DOWN * 2.7)
+        b4_l5 = MathTex(r"\pounds 400: \; 400 \times 23{,}40 = R9\,360; \;\; \text{at } 24{,}10 = R9\,640").scale(0.87).shift(band_shift(4) + DOWN * 2.7)
         self.play(Write(b4_l4)); self.wait(2)
         self.play(Write(b4_l5)); self.wait(2.5)
 

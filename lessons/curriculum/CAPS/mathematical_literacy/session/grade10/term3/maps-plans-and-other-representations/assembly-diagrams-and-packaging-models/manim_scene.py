@@ -151,7 +151,7 @@ class AssemblyDiagramsPackagingSession(MovingCameraScene):
         self.play(Write(b5_t))
         self.wait(1.5)
         b5_l1 = MathTex(r"36 \div 6 = 6, \quad 30 \div 6 = 5, \quad 6 \times 5 = 30").scale(1.0).shift(band_shift(5) + UP * 1.1)
-        b5_l2 = MathTex(r"\text{Height: } 24 \div 12 = 2 \text{ layers} \Rightarrow 60 \text{ cans}").scale(1.0).shift(band_shift(5) + UP * 0.2)
+        b5_l2 = MathTex(r"\text{Height: } 24 \div 12 = 2 \text{ layers} \Rightarrow 60 \text{ cans}").scale(0.84).shift(band_shift(5) + UP * 0.2)
         self.play(Write(b5_l1))
         self.wait(2.5)
         self.play(Write(b5_l2))

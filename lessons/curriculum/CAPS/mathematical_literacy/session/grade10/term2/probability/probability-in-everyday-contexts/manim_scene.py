@@ -278,7 +278,7 @@ class ProbabilityEverydayContextsSession(MovingCameraScene):
         self.play(Write(b9_l3))
         self.play(Write(b9_l4))
         self.wait(2.5)
-        b9_l5 = Tex("Narrowed group? New denominator: $\\tfrac{74}{120}$ vs $\\tfrac{46}{80}$").scale(0.95).shift(band_shift(9) + DOWN * 2.4)
+        b9_l5 = Tex("Narrowed group? New denominator: $\\tfrac{74}{120}$ vs $\\tfrac{46}{80}$").scale(0.85).shift(band_shift(9) + DOWN * 2.4)
         self.play(Write(b9_l5))
         self.play(Create(SurroundingRectangle(b9_l5, color=GREEN)))
         self.wait(3)

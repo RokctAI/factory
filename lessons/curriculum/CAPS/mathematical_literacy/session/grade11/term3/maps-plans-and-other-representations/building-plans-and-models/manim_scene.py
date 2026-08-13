@@ -35,7 +35,7 @@ class BuildingPlansAndModelsSession(MovingCameraScene):
         b0_l1 = Tex("Floor plan: the view from above, roof off").scale(1.1).shift(UP * 1.1)
         b0_l2 = Tex("Door: gap in the wall + quarter-circle swing").scale(1.1).shift(UP * 0.2)
         b0_l3 = Tex("Window: thin triple line in the wall").scale(1.1).shift(DOWN * 0.7)
-        b0_l4 = MathTex(r"\text{Scale } 1:100 \;\Rightarrow\; 1\text{ mm} = 100\text{ mm real}").scale(1.1).shift(DOWN * 1.7)
+        b0_l4 = MathTex(r"\text{Scale } 1:100 \;\Rightarrow\; 1\text{ mm} = 100\text{ mm real}").scale(0.9).shift(DOWN * 1.7)
         self.play(Write(b0_l1)); self.wait(2)
         self.play(Write(b0_l2)); self.wait(2)
         self.play(Write(b0_l3)); self.wait(2)

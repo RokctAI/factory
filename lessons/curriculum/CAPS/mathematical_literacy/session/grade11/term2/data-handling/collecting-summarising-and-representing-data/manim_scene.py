@@ -113,7 +113,7 @@ class CollectingSummarisingDataSession(MovingCameraScene):
         self.play(Write(b4_l3))
         self.play(Create(SurroundingRectangle(b4_l3, color=GREEN)))
         self.wait(2.5)
-        b4_l4 = MathTex(r"\text{Backwards: mean } 40 \Rightarrow \text{total } 9 \times 40 = 360").scale(1.0).shift(band_shift(4) + DOWN * 1.8)
+        b4_l4 = MathTex(r"\text{Backwards: mean } 40 \Rightarrow \text{total } 9 \times 40 = 360").scale(0.9).shift(band_shift(4) + DOWN * 1.8)
         self.play(Write(b4_l4)); self.wait(2.5)
 
         # --- Band 5 (subtopic_4): the three graphs ---
@@ -186,7 +186,7 @@ class CollectingSummarisingDataSession(MovingCameraScene):
         b9_title = Tex("Share-out, queue, favourite").scale(1.2).shift(band_shift(9) + UP * 2.2)
         self.play(Write(b9_title))
         self.wait(2.5)
-        b9_l1 = MathTex(r"\text{Mean } 360 \div 9 = 40; \;\; \text{median } 35; \;\; \text{mode } 25").scale(0.95).shift(band_shift(9) + UP * 1.2)
+        b9_l1 = MathTex(r"\text{Mean } 360 \div 9 = 40; \;\; \text{median } 35; \;\; \text{mode } 25").scale(0.88).shift(band_shift(9) + UP * 1.2)
         self.play(Write(b9_l1)); self.wait(3)
         b9_l2 = Tex("The mean shook hands with the R90; the median never met it").scale(0.9).shift(band_shift(9) + UP * 0.2)
         self.play(Write(b9_l2)); self.wait(3)
