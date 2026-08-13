@@ -26,13 +26,31 @@ jobs:
         run: |
           TYPES=("book.poetry" "book.fiction" "book.short_story" "book.children" "film.documentary")
 
+          # Collect existing theme names from pending cards (excluding lessons and
+          # templates) so the model is told not to regenerate them. Numbering
+          # prefixes ("1. "), quotes and newlines are stripped because the list is
+          # embedded in a single-line JSON prompt downstream.
+          EXISTING_THEMES=$(for f in .rokct/agent/jobs/pending/*.md; do
+            [ -f "$f" ] || continue
+            [[ "$f" == *template* ]] && continue
+            grep -qE '^type:[[:space:]]*lesson\.' "$f" && continue
+            grep -m1 '^theme:' "$f" | sed -E 's/^theme:[[:space:]]*//; s/^[0-9]+\.[[:space:]]*//' | tr -d '"' | tr -d '\r'
+          done | grep -v '^[[:space:]]*$' | sort -u | paste -sd ',' - | sed 's/,/, /g')
+
           for TYPE in "${TYPES[@]}"; do
             # Count only ACTIVE cards for this type — exclude stalled so they
             # don't inflate the queue and prevent new theme generation.
+            # Cards store free-form types ("poetry", "narrative poetry",
+            # "short story") — never the "book.poetry" form — so match the bare
+            # suffix of $TYPE against the card's type: field, allowing space or
+            # underscore (short_story vs "short story").
+            BARE_TYPE="${TYPE#*.}"
+            TYPE_PATTERN="${BARE_TYPE//_/[ _]}"
             PENDING_COUNT=0
-            for f in .rokct/agent/jobs/pending/*_${TYPE}_*.md; do
+            for f in .rokct/agent/jobs/pending/*.md; do
               [ -f "$f" ] || continue
               [[ "$f" == *template* ]] && continue
+              grep -qiE "^type:.*${TYPE_PATTERN}" "$f" || continue
               grep -qE '^status:[[:space:]]*stalled' "$f" && continue
               PENDING_COUNT=$((PENDING_COUNT + 1))
             done
@@ -43,6 +61,9 @@ jobs:
 
               # Update prompt card to focus on this type
               PROMPT="Generate 5 new unique themes for $TYPE. Return only the list in the format: theme | type"
+              if [ -n "$EXISTING_THEMES" ]; then
+                PROMPT="$PROMPT. Do not reuse, rephrase, or closely resemble any of these existing themes: $EXISTING_THEMES."
+              fi
               jq --arg p "$PROMPT" '.prompt = $p | .immediate = "true"' .rokct/agent/prompts/in_progress/level0_theme_discovery.json > tmp.json && mv tmp.json .rokct/agent/prompts/in_progress/level0_theme_discovery.json
 
               git config --global user.name "github-actions[bot]"
