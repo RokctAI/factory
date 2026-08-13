@@ -49,7 +49,7 @@ class DopplerEffectSession(MovingCameraScene):
         arr = Arrow(c0 + RIGHT * 0.4, c0 + RIGHT * 1.6, buff=0, color=YELLOW)
         self.play(Create(arr))
         lab_ahead = Tex("bunched: higher $f$").scale(0.85).shift(c0 + RIGHT * 3.6 + UP * 0.6)
-        lab_behind = Tex("stretched: lower $f$").scale(0.85).shift(c0 + LEFT * 4.4 + UP * 0.6)
+        lab_behind = Tex("stretched: lower $f$").scale(0.85).shift(c0 + LEFT * 3.9 + UP * 0.6)
         self.play(Write(lab_ahead))
         self.wait(1.5)
         self.play(Write(lab_behind))
