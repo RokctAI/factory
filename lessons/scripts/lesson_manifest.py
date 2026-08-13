@@ -274,6 +274,41 @@ def resolve_tutor_pair(card_text, tutor_ref):
     return identity(first_slug), identity(second_slug)
 
 
+def align_animations(anim, anim_path, audio_seconds):
+    """Scale an exported animation timeline to the real audio length, fold
+    camera events inline, write `anim_path`, and return
+    (anim, anim_scale, camera_count). Shared by the job-card path (main)
+    and the session-tree release path (release_on_complete.py).
+
+    CAMERA CONTRACT FIX (production bug): the exporter emitted camera pans
+    as a sibling top-level "camera" array, but the app (ReplayLessonEngine)
+    loads ONLY decoded["primitives"] and detects camera events by primitive
+    type (camera_move/band_start) INSIDE that list — so every camera event
+    was dropped on load and the band camera never panned in the app. Fold
+    the camera events into the primitives stream as inline camera_move
+    events (the shape the player actually reads) and drop the dead sibling
+    array. duration_ms matches the scene's 0.8s pan; the player defaults to
+    800ms if absent anyway."""
+    manim_duration = anim.get("duration_seconds") or 1.0
+    anim_scale = audio_seconds / manim_duration
+    for p in anim["primitives"]:
+        p["time"] = round(p["time"] * anim_scale, 2)
+    for ev in anim.get("camera", []):
+        ev["time"] = round(ev["time"] * anim_scale, 2)
+    anim["duration_seconds"] = round(audio_seconds, 2)
+    camera_events = anim.pop("camera", [])
+    for ev in camera_events:
+        anim["primitives"].append({
+            "primitive": "camera_move",
+            "time": ev["time"],
+            "target": ev["target"],
+            "duration_ms": 800,
+        })
+    anim["primitives"].sort(key=lambda p: p["time"])
+    Path(anim_path).write_text(json.dumps(anim, indent=2), encoding="utf-8")
+    return anim, anim_scale, len(camera_events)
+
+
 MAX_BREAK_QUESTIONS = 4  # client caps at 4 so a break stays a break
 
 
@@ -464,39 +499,13 @@ def main():
     from manim_exporter import export_scene
     anim_path = out_dir / "animations.json"
     anim = export_scene(str(lesson_path / "manim_scene.py"), str(anim_path))
-    manim_duration = anim["duration_seconds"] or 1.0
 
     # --- 7. align timestamps to the real audio ---
     intended = subtopics["subtopics"][-1]["end_seconds"] if subtopics["subtopics"] else audio_seconds
     subtopic_scale = audio_seconds / intended if intended else 1.0
-    anim_scale = audio_seconds / manim_duration
-    for p in anim["primitives"]:
-        p["time"] = round(p["time"] * anim_scale, 2)
-    for ev in anim.get("camera", []):
-        ev["time"] = round(ev["time"] * anim_scale, 2)
-    anim["duration_seconds"] = round(audio_seconds, 2)
-
-    # CAMERA CONTRACT FIX (production bug): the exporter emitted camera pans
-    # as a sibling top-level "camera" array, but the app
-    # (ReplayLessonEngine) loads ONLY decoded["primitives"] and detects
-    # camera events by primitive type (camera_move/band_start) INSIDE that
-    # list — so every camera event was dropped on load and the band camera
-    # never panned in the app. Fold the camera events into the primitives
-    # stream as inline camera_move events (the shape the player actually
-    # reads) and drop the dead sibling array. duration_ms matches the
-    # scene's 0.8s pan; the player defaults to 800ms if absent anyway.
-    camera_events = anim.pop("camera", [])
-    for ev in camera_events:
-        anim["primitives"].append({
-            "primitive": "camera_move",
-            "time": ev["time"],
-            "target": ev["target"],
-            "duration_ms": 800,
-        })
-    anim["primitives"].sort(key=lambda p: p["time"])
-    anim_path.write_text(json.dumps(anim, indent=2), encoding="utf-8")
+    anim, anim_scale, camera_count = align_animations(anim, anim_path, audio_seconds)
     print(f"[align] subtopic x{subtopic_scale:.3f}  animation x{anim_scale:.3f}  "
-          f"camera_move inlined x{len(camera_events)}")
+          f"camera_move inlined x{camera_count}")
 
     # TOPIC-DISPLAY TIMING: the player shows the topic full-screen while the
     # tutor speaks the intro, until board work begins. That duration is
