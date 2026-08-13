@@ -211,7 +211,7 @@ class CodeOfEthicsSession(MovingCameraScene):
         b8_l1 = Tex("Trains hardest -- leadership").scale(1.0).shift(band_shift(8) + UP * 1.2 + LEFT * 3.0)
         b8_l2 = Tex("On time, every time -- discipline").scale(1.0).shift(band_shift(8) + UP * 0.4 + LEFT * 3.0)
         b8_l3 = Tex("Open selections -- transparency").scale(1.0).shift(band_shift(8) + DOWN * 0.4 + LEFT * 3.0)
-        b8_l4 = Tex("Takes the blame -- accountability").scale(1.0).shift(band_shift(8) + DOWN * 1.2 + LEFT * 3.0)
+        b8_l4 = Tex("Takes the blame -- accountability").scale(0.95).shift(band_shift(8) + DOWN * 1.2 + LEFT * 3.0)
         b8_r1 = Tex("Equal chances -- fairness").scale(1.0).shift(band_shift(8) + UP * 1.2 + RIGHT * 3.3)
         b8_r2 = Tex("Never cheats -- sustainability").scale(1.0).shift(band_shift(8) + UP * 0.4 + RIGHT * 3.3)
         b8_r3 = Tex("Minds the kit -- responsible").scale(1.0).shift(band_shift(8) + DOWN * 0.4 + RIGHT * 3.3)

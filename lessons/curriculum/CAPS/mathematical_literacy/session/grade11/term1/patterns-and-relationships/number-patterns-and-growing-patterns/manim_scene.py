@@ -117,7 +117,7 @@ class NumberPatternsSession(MovingCameraScene):
         b5_l2 = Tex(r"Doubling will never stay polite").scale(1.05).shift(band_shift(5) + UP * 0.2)
         self.play(Write(b5_l1)); self.wait(2.5)
         self.play(Write(b5_l2)); self.wait(2.5)
-        b5_l3 = MathTex(r"5 \to 80 \text{ in four doublings}; \; \to 1\,280 \text{ in four more}").scale(0.95).shift(band_shift(5) + DOWN * 0.8)
+        b5_l3 = MathTex(r"5 \to 80 \text{ in four doublings}; \; \to 1\,280 \text{ in four more}").scale(0.91).shift(band_shift(5) + DOWN * 0.8)
         self.play(Write(b5_l3)); self.wait(2.5)
         b5_l4 = Tex(r"The ratio pattern wins EVENTUALLY — say ``eventually''").scale(0.95).shift(band_shift(5) + DOWN * 1.8)
         self.play(Write(b5_l4)); self.wait(3)

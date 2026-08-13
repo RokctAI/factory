@@ -227,7 +227,7 @@ class PostingAndTrialBalanceSession(MovingCameraScene):
         b10_l1 = Tex("Lefts: 34 400 + 4 400 + 6 000 + 2 000").scale(1.0).shift(band_shift(10) + UP * 1.3)
         b10_l2 = Tex("+ 3 600 + 3 000 + 3 500 = 56 900").scale(1.0).shift(band_shift(10) + UP * 0.5)
         self.play(Write(b10_l1)); self.play(Write(b10_l2)); self.wait(2.5)
-        b10_l3 = MathTex(r"\text{Rights: } 50\,000 + 4\,500 + 2\,400 = 56\,900\ \checkmark").scale(0.95).shift(band_shift(10) + DOWN * 0.4)
+        b10_l3 = MathTex(r"\text{Rights: } 50\,000 + 4\,500 + 2\,400 = 56\,900\ \checkmark").scale(0.88).shift(band_shift(10) + DOWN * 0.4)
         self.play(Write(b10_l3))
         self.play(Create(SurroundingRectangle(b10_l3, color=GREEN)))
         self.wait(2.5)

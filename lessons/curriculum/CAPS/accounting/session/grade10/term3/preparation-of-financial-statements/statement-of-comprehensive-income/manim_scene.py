@@ -157,7 +157,7 @@ class ComprehensiveIncomeSession(MovingCameraScene):
         self.play(Write(b5_l1))
         self.play(Write(b5_l2))
         self.wait(2.5)
-        b5_l3 = MathTex(r"\text{Bank: } 9\,100 \div 1\,200 \approx 7 \text{ times covered}").scale(1.0).shift(band_shift(5) + DOWN * 0.7)
+        b5_l3 = MathTex(r"\text{Bank: } 9\,100 \div 1\,200 \approx 7 \text{ times covered}").scale(0.92).shift(band_shift(5) + DOWN * 0.7)
         self.play(Write(b5_l3))
         self.wait(2.5)
         b5_l4 = Tex("Accountant: every line traces to an adjusted").scale(1.0).shift(band_shift(5) + DOWN * 1.7)

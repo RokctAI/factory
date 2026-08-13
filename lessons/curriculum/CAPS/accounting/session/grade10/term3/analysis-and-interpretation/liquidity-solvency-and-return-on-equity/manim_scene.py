@@ -62,7 +62,7 @@ class LiquiditySolvencyReturnSession(MovingCameraScene):
         self.play(Create(SurroundingRectangle(b1_l2, color=GREEN)))
         self.wait(2.5)
         b1_l3 = Tex("Norms (guides, not laws):").scale(1.05).shift(band_shift(1) + DOWN * 0.8)
-        b1_l4 = MathTex(r"\text{current } \approx 2:1, \quad \text{acid test } \approx 1:1").scale(1.05).shift(band_shift(1) + DOWN * 1.6)
+        b1_l4 = MathTex(r"\text{current } \approx 2:1, \quad \text{acid test } \approx 1:1").scale(0.95).shift(band_shift(1) + DOWN * 1.6)
         self.play(Write(b1_l3))
         self.play(Write(b1_l4))
         self.wait(2.5)

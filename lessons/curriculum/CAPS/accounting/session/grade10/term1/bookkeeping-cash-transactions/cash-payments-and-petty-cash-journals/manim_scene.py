@@ -96,7 +96,7 @@ class CashPaymentsAndPettyCashSession(MovingCameraScene):
         b3_t = Tex("Asset, expense — or drawings?").scale(1.2).shift(band_shift(3) + UP * 2.4)
         self.play(Write(b3_t)); self.wait(1.5)
         b3_l1 = Tex("20th: display fridge R6 000, EFT 104").scale(1.05).shift(band_shift(3) + UP * 1.3)
-        b3_l2 = Tex("Kept for years $\\Rightarrow$ ASSET: Sundries, Equipment").scale(1.0).shift(band_shift(3) + UP * 0.5)
+        b3_l2 = Tex("Kept for years $\\Rightarrow$ ASSET: Sundries, Equipment").scale(0.95).shift(band_shift(3) + UP * 0.5)
         self.play(Write(b3_l1)); self.wait(2)
         self.play(Write(b3_l2)); self.wait(2)
         b3_l3 = Tex("25th: owner takes R2 000, EFT 105").scale(1.05).shift(band_shift(3) + DOWN * 0.4)

@@ -114,7 +114,7 @@ class BookkeepingCycleSession(MovingCameraScene):
         b3_l4 = MathTex(r"\text{Creditors: } 3\,000 - 2\,000 = 1\,000 \text{ Cr}").scale(0.95).shift(band_shift(3) + DOWN * 1.2)
         self.play(Write(b3_l4))
         self.wait(2.5)
-        b3_l5 = MathTex(r"\text{Sales } 9\,000 \text{ Cr}; \;\; \text{Cost of sales } 6\,000 \text{ Dr}").scale(0.95).shift(band_shift(3) + DOWN * 2.0)
+        b3_l5 = MathTex(r"\text{Sales } 9\,000 \text{ Cr}; \;\; \text{Cost of sales } 6\,000 \text{ Dr}").scale(0.85).shift(band_shift(3) + DOWN * 2.0)
         self.play(Write(b3_l5))
         self.wait(3)
 

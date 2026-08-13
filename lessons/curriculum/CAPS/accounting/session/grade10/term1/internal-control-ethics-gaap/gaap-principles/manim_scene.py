@@ -232,7 +232,7 @@ class GaapPrinciplesSession(MovingCameraScene):
         b9_title = Tex("Six principles, six familiar faces").scale(1.2).shift(band_shift(9) + UP * 2.2)
         self.play(Write(b9_title))
         self.wait(2)
-        b9_l1 = Tex("Grandfather: what he PAID -- cost").scale(1.0).shift(band_shift(9) + UP * 1.2 + LEFT * 3.0)
+        b9_l1 = Tex("Grandfather: what he PAID -- cost").scale(0.95).shift(band_shift(9) + UP * 1.2 + LEFT * 3.0)
         b9_l2 = Tex("Grandmother: no early").scale(1.0).shift(band_shift(9) + UP * 0.5 + LEFT * 3.0)
         b9_l3 = Tex("chickens -- prudence").scale(1.0).shift(band_shift(9) + DOWN * 0.2 + LEFT * 3.0)
         b9_l4 = Tex("Uncle: size decides the").scale(1.0).shift(band_shift(9) + DOWN * 0.9 + LEFT * 3.0)

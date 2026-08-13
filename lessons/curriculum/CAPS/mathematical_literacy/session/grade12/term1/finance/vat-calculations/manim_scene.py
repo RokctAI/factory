@@ -36,7 +36,7 @@ class VatCalculationsSession(MovingCameraScene):
         b0_l1 = Tex("Indirect tax: 15\\%, collected inside the price").scale(1.0).shift(UP * 1.1)
         b0_l2 = Tex("Excl.\\ VAT: before tax — quotes, wholesale").scale(1.0).shift(UP * 0.2)
         b0_l3 = Tex("Incl.\\ VAT: tax inside — shelves, till slips").scale(1.0).shift(DOWN * 0.7)
-        b0_l4 = MathTex(r"\text{Exclusive} = 100\% \;\Rightarrow\; \text{Inclusive} = 115\%").scale(1.0).shift(DOWN * 1.7)
+        b0_l4 = MathTex(r"\text{Exclusive} = 100\% \;\Rightarrow\; \text{Inclusive} = 115\%").scale(0.91).shift(DOWN * 1.7)
         b0_l5 = MathTex(r"\times 1,15 \text{ forward}; \quad \div 1,15 \text{ back}").scale(1.05).shift(DOWN * 2.6)
         self.play(Write(b0_l1)); self.wait(2)
         self.play(Write(b0_l2)); self.wait(2)

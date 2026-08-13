@@ -164,7 +164,7 @@ class LinesGradientsInclinationSession(MovingCameraScene):
         b6_l2 = Tex("Rise over run is opposite over adjacent").scale(1.0).shift(band_shift(6) + UP * 0.2)
         self.play(Write(b6_l2))
         self.wait(2)
-        b6_l3 = MathTex(r"m = 1: \theta = 45^\circ \quad m = 2: \theta = 63{,}43^\circ").scale(1.0).shift(band_shift(6) + DOWN * 0.8)
+        b6_l3 = MathTex(r"m = 1: \theta = 45^\circ \quad m = 2: \theta = 63{,}43^\circ").scale(0.95).shift(band_shift(6) + DOWN * 0.8)
         self.play(Write(b6_l3))
         self.wait(2.5)
         b6_l4 = Tex("Rising line: acute angle, calculator answers directly").scale(0.95).shift(band_shift(6) + DOWN * 1.8)
