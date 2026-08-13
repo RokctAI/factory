@@ -30,12 +30,22 @@ jobs:
           # templates) so the model is told not to regenerate them. Numbering
           # prefixes ("1. "), quotes and newlines are stripped because the list is
           # embedded in a single-line JSON prompt downstream.
-          EXISTING_THEMES=$(for f in .rokct/agent/jobs/pending/*.md; do
-            [ -f "$f" ] || continue
-            [[ "$f" == *template* ]] && continue
-            grep -qE '^type:[[:space:]]*lesson\.' "$f" && continue
-            grep -m1 '^theme:' "$f" | sed -E 's/^theme:[[:space:]]*//; s/^[0-9]+\.[[:space:]]*//' | tr -d '"' | tr -d '\r'
-          done | grep -v '^[[:space:]]*$' | sort -u | paste -sd ',' - | sed 's/,/, /g')
+          # The seed list in .rokct/config/classifications/factory_themes.txt is
+          # unioned in so the exclusion still applies when the pending queue is
+          # empty (e.g. right after cards are archived) — otherwise the static
+          # low-temperature prompt regenerates the same clichés.
+          SEED_THEMES_FILE=".rokct/config/classifications/factory_themes.txt"
+          EXISTING_THEMES=$({
+            for f in .rokct/agent/jobs/pending/*.md; do
+              [ -f "$f" ] || continue
+              [[ "$f" == *template* ]] && continue
+              grep -qE '^type:[[:space:]]*lesson\.' "$f" && continue
+              grep -m1 '^theme:' "$f" | sed -E 's/^theme:[[:space:]]*//; s/^[0-9]+\.[[:space:]]*//' | tr -d '"' | tr -d '\r'
+            done
+            if [ -s "$SEED_THEMES_FILE" ]; then
+              sed -E 's/^[0-9]+\.[[:space:]]*//' "$SEED_THEMES_FILE" | tr -d '"' | tr -d '\r'
+            fi
+          } | grep -v '^[[:space:]]*$' | sort -u | paste -sd ',' - | sed 's/,/, /g')
 
           for TYPE in "${TYPES[@]}"; do
             # Count only ACTIVE cards for this type — exclude stalled so they
