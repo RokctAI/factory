@@ -127,7 +127,7 @@ class ScaleFactorKSession(MovingCameraScene):
 
         # --- Band 5 (subtopic_3): the full pattern and the 10 percent trap
         self.next_band(5)
-        b5_l1 = MathTex(r"\text{lengths} \times k, \;\; \text{areas} \times k^2, \;\; \text{volumes} \times k^3").scale(1.05).shift(band_shift(5) + UP * 2.0)
+        b5_l1 = MathTex(r"\text{lengths} \times k, \;\; \text{areas} \times k^2, \;\; \text{volumes} \times k^3").scale(0.85).shift(band_shift(5) + UP * 2.0)
         self.play(Write(b5_l1))
         self.play(Create(SurroundingRectangle(b5_l1, color=GREEN)))
         self.wait(3)
