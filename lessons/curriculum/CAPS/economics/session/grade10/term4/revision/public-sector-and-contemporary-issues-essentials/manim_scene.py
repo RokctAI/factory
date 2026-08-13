@@ -1,0 +1,298 @@
+from manim import *
+
+# Band-layout whiteboard scene for the revision duo "Public Sector and
+# Contemporary Issues Essentials" (Part 1 — Expert subtopics 1-4,
+# Part 2 — Simplifier subtopics 5-7). Diagrams hand-built from exporter-safe
+# primitives (axes = Arrows, curves = Line chains). Add-only lifecycle.
+# Subtopic durations: 240/230/240/250/195/195/210 of 1560 s.
+
+BAND = config.frame_height
+
+
+def band_shift(k):
+    return DOWN * BAND * k
+
+
+def strike(m):
+    return Line(m.get_corner(DL) + 0.08 * DL, m.get_corner(UR) + 0.08 * UR,
+                color=RED, stroke_width=6)
+
+
+class PublicSectorContemporaryRevisionSession(MovingCameraScene):
+    def next_band(self, k):
+        self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
+
+    def construct(self):
+        self.wait(14)
+
+        # ===================== Part 1 — Expert =====================
+        # --- Band 0 (subtopic_1): taxes and subsidies ---
+        title = Tex("Revision: Public Sector and Contemporary Issues").scale(1.1).to_edge(UP)
+        self.play(Write(title))
+        self.wait(2)
+        b0a = Tex("Tax on a product: supply shifts LEFT —").scale(1.05).shift(UP * 1.2)
+        b0a2 = Tex("higher price, smaller quantity, burden shared").scale(1.05).shift(UP * 0.5)
+        self.play(Write(b0a))
+        self.play(Write(b0a2))
+        self.wait(2.5)
+        b0b = Tex("Subsidy is the mirror: supply RIGHT —").scale(1.05).shift(DOWN * 0.5)
+        b0b2 = Tex("price falls, quantity rises").scale(1.05).shift(DOWN * 1.2)
+        self.play(Write(b0b))
+        self.play(Write(b0b2))
+        self.wait(2.5)
+        b0c = Tex("Brown bread, maize meal: zero-rated;").scale(1.0).shift(DOWN * 2.1)
+        b0c2 = Tex("other goods carry the full 15\\% VAT").scale(1.0).shift(DOWN * 2.8)
+        self.play(Write(b0c))
+        self.play(Write(b0c2))
+        self.wait(3)
+
+        # --- Band 1 (subtopic_1): the ceiling makes a shortage ---
+        self.next_band(1)
+        b1t = Tex("Maximum price (ceiling): below equilibrium").scale(1.1).shift(band_shift(1) + UP * 2.2)
+        self.play(Write(b1t))
+        self.wait(2)
+        O1 = band_shift(1) + DOWN * 2.6 + LEFT * 4.6
+
+        def P1(x, y):
+            return O1 + RIGHT * x + UP * y
+
+        ax1x = Arrow(P1(0, 0), P1(7.0, 0), buff=0, stroke_width=3)
+        ax1y = Arrow(P1(0, 0), P1(0, 4.4), buff=0, stroke_width=3)
+        l1x = Tex("Q").scale(0.8).move_to(P1(6.8, -0.4))
+        l1y = Tex("P").scale(0.8).move_to(P1(-0.5, 4.1))
+        self.play(Create(ax1x), Create(ax1y), Write(l1x), Write(l1y))
+        dem1 = VGroup(
+            Line(P1(0.7, 3.8), P1(3.0, 2.0), color=ORANGE, stroke_width=5),
+            Line(P1(3.0, 2.0), P1(5.6, 0.5), color=ORANGE, stroke_width=5),
+        )
+        sup1 = VGroup(
+            Line(P1(0.7, 0.5), P1(3.0, 2.0), color=BLUE, stroke_width=5),
+            Line(P1(3.0, 2.0), P1(5.6, 3.8), color=BLUE, stroke_width=5),
+        )
+        td1 = Tex("D", color=ORANGE).scale(0.9).move_to(P1(6.0, 0.9))
+        ts1 = Tex("S", color=BLUE).scale(0.9).move_to(P1(6.0, 3.6))
+        self.play(Create(dem1[0]), Create(dem1[1]), Write(td1))
+        self.play(Create(sup1[0]), Create(sup1[1]), Write(ts1))
+        e1 = Dot(P1(3.0, 2.0), color=GREEN)
+        self.play(FadeIn(e1))
+        self.wait(2)
+        ceil = Line(P1(0, 1.1), P1(6.4, 1.1), color=RED, stroke_width=5)
+        t_ceil = Tex("ceiling", color=RED).scale(0.75).move_to(P1(-0.9, 1.1))
+        self.play(Create(ceil), Write(t_ceil))
+        qs = Dot(P1(1.7, 1.1), color=BLUE)
+        qd = Dot(P1(4.6, 1.1), color=ORANGE)
+        self.play(FadeIn(qs), FadeIn(qd))
+        short_ar = Arrow(P1(1.9, 0.6), P1(4.4, 0.6), buff=0, color=RED)
+        t_short = Tex("shortage: queues, black market", color=RED).scale(0.75).move_to(P1(3.9, 4.3))
+        self.play(Create(short_ar), Write(t_short))
+        self.wait(3)
+
+        # --- Band 2 (subtopic_1): the floor makes a surplus ---
+        self.next_band(2)
+        b2t = Tex("Minimum price (floor): above equilibrium").scale(1.1).shift(band_shift(2) + UP * 2.2)
+        self.play(Write(b2t))
+        self.wait(2)
+        b2a = Tex("At the floor: supplied $>$ demanded — SURPLUS").scale(1.05).shift(band_shift(2) + UP * 1.1)
+        self.play(Write(b2a))
+        self.wait(2)
+        b2b = Tex("State must buy up, store or export the pile").scale(1.0).shift(band_shift(2) + UP * 0.3)
+        self.play(Write(b2b))
+        self.wait(2)
+        b2c = Tex("Minimum wage: a floor in the labour market").scale(1.05).shift(band_shift(2) + DOWN * 0.7)
+        self.play(Write(b2c))
+        self.wait(2)
+        b2d = Tex("Higher pay for those employed — but demand").scale(1.0).shift(band_shift(2) + DOWN * 1.5)
+        b2d2 = Tex("for labour can fall: argue BOTH sides").scale(1.0).shift(band_shift(2) + DOWN * 2.2)
+        self.play(Write(b2d))
+        self.play(Write(b2d2))
+        self.play(Create(SurroundingRectangle(b2d2, color=GREEN)))
+        self.wait(3)
+
+        # --- Band 3 (subtopic_2): barter to industry in five stages ---
+        self.next_band(3)
+        b3t = Tex("From barter to industry — five stages").scale(1.15).shift(band_shift(3) + UP * 2.2)
+        self.play(Write(b3t))
+        self.wait(2)
+        s3a = Tex("Self-sufficiency").scale(0.85).shift(band_shift(3) + UP * 1.2 + LEFT * 4.6)
+        s3b = Tex("Surplus + barter").scale(0.85).shift(band_shift(3) + UP * 1.2)
+        s3c = Tex("Money").scale(0.85).shift(band_shift(3) + UP * 1.2 + RIGHT * 3.6)
+        a3a = Arrow(s3a.get_right(), s3b.get_left(), buff=0.15)
+        a3b = Arrow(s3b.get_right(), s3c.get_left(), buff=0.15)
+        self.play(Write(s3a))
+        self.play(Create(a3a), Write(s3b))
+        self.play(Create(a3b), Write(s3c))
+        s3d = Tex("Government enters").scale(0.85).shift(band_shift(3) + UP * 0.3 + LEFT * 3.0)
+        s3e = Tex("Industry").scale(0.85).shift(band_shift(3) + UP * 0.3 + RIGHT * 2.2)
+        a3c = Arrow(s3d.get_right(), s3e.get_left(), buff=0.15)
+        self.play(Write(s3d))
+        self.play(Create(a3c), Write(s3e))
+        self.wait(2)
+        b3a = Tex("Barter's brake: the double coincidence of wants").scale(1.0).shift(band_shift(3) + DOWN * 0.7)
+        self.play(Write(b3a))
+        self.wait(2)
+        b3b = Tex("Money's jobs: medium of exchange, unit of").scale(1.0).shift(band_shift(3) + DOWN * 1.5)
+        b3b2 = Tex("account, store of value, deferred payment").scale(1.0).shift(band_shift(3) + DOWN * 2.2)
+        self.play(Write(b3b))
+        self.play(Write(b3b2))
+        self.play(Create(SurroundingRectangle(VGroup(b3b, b3b2), color=GREEN)))
+        self.wait(2)
+        b3c = Tex("SA: diamonds and gold pull industry inland").scale(0.95).shift(band_shift(3) + DOWN * 3.1)
+        self.play(Write(b3c))
+        self.wait(3)
+
+        # --- Band 4 (subtopic_3): who counts, and derived demand ---
+        self.next_band(4)
+        b4t = Tex("Population and the labour market").scale(1.2).shift(band_shift(4) + UP * 2.2)
+        self.play(Write(b4t))
+        self.wait(2)
+        b4a = Tex("Working age 15--64; labour force $=$ employed").scale(1.0).shift(band_shift(4) + UP * 1.1)
+        b4a2 = Tex("$+$ actively seeking; learners, homemakers out").scale(1.0).shift(band_shift(4) + UP * 0.4)
+        self.play(Write(b4a))
+        self.play(Write(b4a2))
+        self.wait(2.5)
+        b4b = Tex("Demand for labour is DERIVED —").scale(1.05).shift(band_shift(4) + DOWN * 0.5)
+        b4b2 = Tex("hiring follows demand for the product").scale(1.05).shift(band_shift(4) + DOWN * 1.2)
+        self.play(Write(b4b))
+        self.play(Write(b4b2))
+        self.play(Create(SurroundingRectangle(b4b2, color=GREEN)))
+        self.wait(2)
+        b4c = Tex("Scarce skills: high wages; unskilled: queues").scale(1.0).shift(band_shift(4) + DOWN * 2.2)
+        self.play(Write(b4c))
+        self.wait(3)
+
+        # --- Band 5 (subtopic_3): the three Acts and the ladder ---
+        self.next_band(5)
+        b5t = Tex("Three Acts, and the dispute ladder").scale(1.15).shift(band_shift(5) + UP * 2.2)
+        self.play(Write(b5t))
+        self.wait(2)
+        b5a = Tex("BCEA: the floor — hours, leave, notice").scale(1.0).shift(band_shift(5) + UP * 1.1)
+        self.play(Write(b5a))
+        self.wait(2)
+        b5b = Tex("LRA: unions, bargaining, protected strikes").scale(1.0).shift(band_shift(5) + UP * 0.3)
+        self.play(Write(b5b))
+        self.wait(2)
+        b5c = Tex("EEA: no unfair discrimination; redress hiring").scale(1.0).shift(band_shift(5) + DOWN * 0.5)
+        self.play(Write(b5c))
+        self.wait(2)
+        b5d = Tex("Ladder: conciliation $\\rightarrow$ arbitration $\\rightarrow$ Labour Court").scale(1.0).shift(band_shift(5) + DOWN * 1.5)
+        self.play(Write(b5d))
+        self.play(Create(SurroundingRectangle(b5d, color=GREEN)))
+        self.wait(2)
+        b5e = Tex("Procedure followed $=$ protected strike").scale(1.0).shift(band_shift(5) + DOWN * 2.5)
+        self.play(Write(b5e))
+        self.wait(3)
+
+        # --- Band 6 (subtopic_4): unemployment compressed ---
+        self.next_band(6)
+        b6t = Tex("Unemployment — the skeleton").scale(1.2).shift(band_shift(6) + UP * 2.2)
+        self.play(Write(b6t))
+        self.wait(2)
+        b6wrong = Tex("Rate $=$ unemployed $\\div$ population").scale(1.0).shift(band_shift(6) + UP * 1.2)
+        self.play(Write(b6wrong))
+        self.play(Create(strike(b6wrong)))
+        b6a = Tex("Rate $=$ unemployed $\\div$ LABOUR FORCE").scale(1.05).shift(band_shift(6) + UP * 0.4)
+        self.play(Write(b6a))
+        self.play(Create(SurroundingRectangle(b6a, color=GREEN)))
+        self.wait(2)
+        b6b = Tex("Frictional: between jobs — information").scale(0.95).shift(band_shift(6) + DOWN * 0.4)
+        b6c = Tex("Structural: mismatch, SA's dominant — training").scale(0.95).shift(band_shift(6) + DOWN * 1.1)
+        b6d = Tex("Cyclical: downswing — demand; seasonal; technological").scale(0.9).shift(band_shift(6) + DOWN * 1.8)
+        self.play(Write(b6b))
+        self.wait(2)
+        self.play(Write(b6c))
+        self.wait(2)
+        self.play(Write(b6d))
+        self.wait(2)
+        b6e = Tex("Each type names its own cure").scale(1.05).shift(band_shift(6) + DOWN * 2.8)
+        self.play(Write(b6e))
+        self.wait(3)
+
+        # --- Band 7 (subtopic_4): redress by factor, and the table ---
+        self.next_band(7)
+        b7t = Tex("Redress through the four factors").scale(1.2).shift(band_shift(7) + UP * 2.2)
+        self.play(Write(b7t))
+        self.wait(2)
+        b7a = Tex("Land: restitution, redistribution, tenure").scale(1.0).shift(band_shift(7) + UP * 1.1)
+        b7b = Tex("Labour: equity $+$ skills; Capital: ownership,").scale(1.0).shift(band_shift(7) + UP * 0.3)
+        b7b2 = Tex("procurement, finance; Entrepreneurship: support").scale(1.0).shift(band_shift(7) + DOWN * 0.4)
+        self.play(Write(b7a))
+        self.wait(2)
+        self.play(Write(b7b))
+        self.play(Write(b7b2))
+        self.wait(2.5)
+        b7c = Tex("Instrument $+$ support, or it is not a livelihood").scale(1.0).shift(band_shift(7) + DOWN * 1.4)
+        self.play(Write(b7c))
+        self.play(Create(SurroundingRectangle(b7c, color=GREEN)))
+        self.wait(2)
+        b7d = Tex("NEDLAC: government, business, labour, community").scale(0.95).shift(band_shift(7) + DOWN * 2.4)
+        self.play(Write(b7d))
+        self.wait(3)
+
+        # ===================== Part 2 — Simplifier =====================
+        # --- Band 8 (subtopic_5): referees, ceilings and floors ---
+        self.next_band(8)
+        b8t = Tex("Referees, ceilings and floors").scale(1.2).shift(band_shift(8) + UP * 2.2)
+        self.play(Write(b8t))
+        self.wait(2)
+        b8a = Tex("Dearer on purpose: tax it (sugary drinks)").scale(1.0).shift(band_shift(8) + UP * 1.1)
+        b8b = Tex("Cheaper on purpose: subsidise, zero-rate VAT").scale(1.0).shift(band_shift(8) + UP * 0.3)
+        self.play(Write(b8a))
+        self.wait(2)
+        self.play(Write(b8b))
+        self.wait(2)
+        b8c = Tex("Ceilings make QUEUES — and a back door").scale(1.05).shift(band_shift(8) + DOWN * 0.6)
+        b8d = Tex("Floors make PILES — someone must buy them").scale(1.05).shift(band_shift(8) + DOWN * 1.4)
+        self.play(Write(b8c))
+        self.wait(2)
+        self.play(Write(b8d))
+        self.play(Create(SurroundingRectangle(VGroup(b8c, b8d), color=GREEN)))
+        self.wait(2)
+        b8e = Tex("Minimum wage: both honest halves, always").scale(1.0).shift(band_shift(8) + DOWN * 2.4)
+        self.play(Write(b8e))
+        self.wait(3)
+
+        # --- Band 9 (subtopic_6): swapping goats to swiping cards ---
+        self.next_band(9)
+        b9t = Tex("From swapping goats to swiping cards").scale(1.15).shift(band_shift(9) + UP * 2.2)
+        self.play(Write(b9t))
+        self.wait(2)
+        b9a = Tex("The wasted morning: he has fish,").scale(1.0).shift(band_shift(9) + UP * 1.1)
+        b9a2 = Tex("but wants a goat — not your maize").scale(1.0).shift(band_shift(9) + UP * 0.4)
+        self.play(Write(b9a))
+        self.play(Write(b9a2))
+        self.wait(2.5)
+        b9b = Tex("Money's four jobs: go-between, measuring stick,").scale(0.95).shift(band_shift(9) + DOWN * 0.5)
+        b9b2 = Tex("storage jar, promise-keeper").scale(0.95).shift(band_shift(9) + DOWN * 1.2)
+        self.play(Write(b9b))
+        self.play(Write(b9b2))
+        self.play(Create(SurroundingRectangle(VGroup(b9b, b9b2), color=GREEN)))
+        self.wait(2.5)
+        b9c = Tex("Then the chief: guard coins, enforce promises, tax, build").scale(0.9).shift(band_shift(9) + DOWN * 2.1)
+        self.play(Write(b9c))
+        self.wait(2)
+        b9d = Tex("Then the machines: factories, towns, mines").scale(0.95).shift(band_shift(9) + DOWN * 2.9)
+        self.play(Write(b9d))
+        self.wait(3)
+
+        # --- Band 10 (subtopic_7): the gate, the team, the starting line ---
+        self.next_band(10)
+        b10t = Tex("The gate, the team and the starting line").scale(1.15).shift(band_shift(10) + UP * 2.2)
+        self.play(Write(b10t))
+        self.wait(2)
+        b10a = Tex("Team: 15--64, working or genuinely looking").scale(1.0).shift(band_shift(10) + UP * 1.1)
+        self.play(Write(b10a))
+        self.wait(2)
+        b10b = Tex("Rules: a floor under every job, one voice").scale(1.0).shift(band_shift(10) + UP * 0.3)
+        b10b2 = Tex("in a union, a ladder instead of a war").scale(1.0).shift(band_shift(10) + DOWN * 0.4)
+        self.play(Write(b10b))
+        self.play(Write(b10b2))
+        self.wait(2.5)
+        b10c = Tex("Five in the queue: between jobs, mismatched,").scale(0.95).shift(band_shift(10) + DOWN * 1.3)
+        b10c2 = Tex("retrenched, seasonal, replaced by a machine").scale(0.95).shift(band_shift(10) + DOWN * 2.0)
+        self.play(Write(b10c))
+        self.play(Write(b10c2))
+        self.wait(2.5)
+        b10d = Tex("Redress: each instrument needs its partner").scale(1.0).shift(band_shift(10) + DOWN * 2.9)
+        self.play(Write(b10d))
+        self.play(Create(SurroundingRectangle(b10d, color=GREEN)))
+        self.wait(4)
