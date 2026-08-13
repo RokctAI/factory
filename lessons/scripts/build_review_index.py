@@ -88,27 +88,52 @@ def parse_int(value, default=None):
         return default
 
 
+def load_regen_state() -> dict:
+    """Per-lesson regeneration state written by regen_denied.py; absent -> {}."""
+    state_path = REVIEWS_DIR / "regen_state.json"
+    if state_path.is_file():
+        try:
+            data = json.loads(state_path.read_text(encoding="utf-8"))
+            if isinstance(data, dict) and isinstance(data.get("lessons"), dict):
+                return data["lessons"]
+        except (json.JSONDecodeError, OSError) as exc:
+            print(f"warning: could not read {state_path}: {exc}", file=sys.stderr)
+    return {}
+
+
+REGEN_STATE = load_regen_state()
+
+
 def load_review(lesson_id: str) -> dict:
     """Merge review state from lessons/reviews/<id>.json; absent -> pending."""
+    review = {"status": "pending", "reason": None, "reviewed_at": None}
     review_path = REVIEWS_DIR / f"{lesson_id}.json"
     if review_path.is_file():
         try:
             data = json.loads(review_path.read_text(encoding="utf-8"))
             status = data.get("status")
             if status in ("approved", "denied"):
-                return {
+                review = {
                     "status": status,
                     "reason": data.get("reason"),
                     "reviewed_at": data.get("reviewed_at"),
                 }
-            print(
-                f"warning: {review_path} has invalid status {status!r}; "
-                "treating as pending",
-                file=sys.stderr,
-            )
+            else:
+                print(
+                    f"warning: {review_path} has invalid status {status!r}; "
+                    "treating as pending",
+                    file=sys.stderr,
+                )
         except (json.JSONDecodeError, OSError) as exc:
             print(f"warning: could not read {review_path}: {exc}", file=sys.stderr)
-    return {"status": "pending", "reason": None, "reviewed_at": None}
+    regen = REGEN_STATE.get(lesson_id)
+    if regen:
+        review["regen"] = {
+            "attempts": regen.get("attempts"),
+            "parked": bool(regen.get("parked")),
+            "queued_at": regen.get("last_queued_at"),
+        }
+    return review
 
 
 def scan_session_lessons() -> list:
