@@ -44,6 +44,17 @@ def mangle(clean: str) -> str:
     return "".join(out)
 
 
+def mangle_latin1(clean: str) -> str:
+    """The other mis-decode seen in the wild: UTF-8 bytes read as latin-1.
+
+    Unlike cp1252, latin-1 maps every 0x80-0x9F byte to the C1 control of
+    the same value, so e.g. an em-dash (E2 80 94) becomes a-circumflex +
+    U+0080 + U+0094 with no euro sign in sight.  The checker must catch
+    this rendering too.
+    """
+    return clean.encode("utf-8").decode("latin-1")
+
+
 # Verbatim lines (or their load-bearing fragments) from the ten curriculum
 # files that the old bare-substring signatures false-positived on.
 LEGIT_DBE_LINES = [
@@ -103,6 +114,21 @@ class SignatureTests(unittest.TestCase):
                 self.assertIsNotNone(
                     check_mojibake.MOJIBAKE_RE.search(mangled),
                     f"missed real mojibake: {mangled!r}",
+                )
+
+    def test_latin1_mangled_mojibake_still_fails(self):
+        # A latin-1 mis-read renders 0x80-0x9F continuation bytes as C1
+        # controls rather than cp1252 punctuation; both renderings must trip
+        # the checker.  "École" is the sharpest case: latin-1 gives A-tilde
+        # + U+0089, which the old bare-substring signatures caught and a
+        # cp1252-only residue table would miss.
+        for clean in MOJIBAKE_SOURCES + ["École", "em—dash", "CO₂"]:
+            mangled = mangle_latin1(clean)
+            with self.subTest(mangled=mangled):
+                self.assertNotEqual(clean, mangled)
+                self.assertIsNotNone(
+                    check_mojibake.MOJIBAKE_RE.search(mangled),
+                    f"missed latin-1-rendered mojibake: {mangled!r}",
                 )
 
     def test_mangled_dbe_notation_still_fails(self):
