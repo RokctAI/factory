@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how a difference table decides whether a number pattern is linear or quadratic, and apply the test to 3; 7; 11; 15 and to 6; 15; 28; 45, stating the general-term shape each pattern takes.",
+      "expected_answer": "Subtract neighbouring terms in order to form the first differences; if these are constant the pattern is linear with general term shape T_n = dn + c. If the first differences are not constant, subtract them again to form the second differences; if these are constant the pattern is quadratic with shape T_n = an^2 + bn + c. For 3; 7; 11; 15 the first differences are 4; 4; 4, so the pattern is linear and T_n = 4n − 1. For 6; 15; 28; 45 the first differences are 9; 13; 17 and the second differences are 4; 4, so the pattern is quadratic; at least four terms are needed so the second level shows two gaps to compare rather than a single number."
+    },
+    {
+      "id": "cc2",
+      "question": "Derive the general term of the quadratic pattern 6; 15; 28; 45 using the three standard equations, and verify the result on a listed term and on term fifty.",
+      "expected_answer": "The three equations are: second difference = 2a, first of the first differences T_2 − T_1 = 3a + b, and T_1 = a + b + c. Here the second difference is 4, so a = 2; the first gap is 9, so 3(2) + b = 9 and b = 3; the first term is 6, so 2 + 3 + c = 6 and c = 1, giving T_n = 2n^2 + 3n + 1. Checking a visible term certifies the formula: T_3 = 2(9) + 9 + 1 = 28, matching the list. The formula then reaches any position directly: T_50 = 2(2500) + 150 + 1 = 5 151."
+    },
+    {
+      "id": "cc3",
+      "question": "For the pattern T_n = 2n^2 + 3n + 1, determine which term equals 190 and whether 300 is a term, showing the reasoning that leads to each conclusion.",
+      "expected_answer": "Set 2n^2 + 3n + 1 = 190, so 2n^2 + 3n − 189 = 0, which factorises as (2n + 21)(n − 9) = 0, giving n = 9 or n = −10,5; a position must be a natural number, so 190 is the ninth term, confirmed by T_9 = 162 + 27 + 1 = 190. For 300, set 2n^2 + 3n + 1 = 300, so 2n^2 + 3n − 299 = 0; the discriminant is 9 + 2392 = 2401 with square root 49, so n = (−3 + 49)/4 = 11,5, which is not a natural number, and the negative root is also rejected. The conclusion must be stated in words: since n is not a natural number, 300 is not a term — indeed T_11 = 276 and T_12 = 325, so the pattern jumps over 300, and rounding n off would wrongly identify 300 with 325."
+    }
+  ]
+}
