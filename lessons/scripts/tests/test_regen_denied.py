@@ -3,10 +3,11 @@
 # Copyright 2026 RokctAI
 """Unit tests for lessons/scripts/regen_denied.py (stdlib unittest).
 
-Covers the post-PR-#86 data shape: lessons/review_index.json lists session
-packages only, so a denied pipeline lesson is recognised by its job card in
-.rokct/agent/jobs/ (its review file is named after the job-card id), not by
-a "source": "pipeline" index entry.
+Covers the post-junior-tree-retirement data shape (2026-08): the pipeline
+requeue branch is gone — lessons/review_index.json lists session packages
+only, and a denied lesson is regenerated via a session brief in
+lessons/reviews/regen/. A stray index entry claiming source "pipeline" is
+warned about and skipped, never queued.
 
 Run from the repo root:
     python3 -m unittest discover -s lessons/scripts/tests -v
@@ -30,29 +31,9 @@ PATCHED_GLOBALS = (
     "REGEN_DIR",
     "STATE_PATH",
     "INDEX_PATH",
-    "JOBS_ROOT",
 )
 
-PIPELINE_ID = "maths_g11_quadratic_equations_factoring_method_31d165"
 SESSION_ID = "session_maths_g11_t1_quadratic-equations_factoring-method"
-
-CARD_TEMPLATE = """\
----
-id: {lesson_id}
-theme: Maths Grade 11: Quadratic equations - Factoring method
-type: lesson.maths
-subject: Maths
-grade: 11
-term: 1
-topic: Quadratic equations
-subtopic: Factoring method
-status: done
-concept_status: approved
-created: 2026-07-27
-last_updated: 2026-07-27
-attempts: 0
----
-"""
 
 SESSION_ENTRY = {
     "id": SESSION_ID,
@@ -86,11 +67,8 @@ class RegenDeniedTests(unittest.TestCase):
         regen_denied.REGEN_DIR = regen_denied.REVIEWS_DIR / "regen"
         regen_denied.STATE_PATH = regen_denied.REVIEWS_DIR / "regen_state.json"
         regen_denied.INDEX_PATH = root / "lessons" / "review_index.json"
-        regen_denied.JOBS_ROOT = root / ".rokct" / "agent" / "jobs"
         regen_denied.REVIEWS_DIR.mkdir(parents=True)
-        for queue in regen_denied.JOB_QUEUES:
-            (regen_denied.JOBS_ROOT / queue).mkdir(parents=True)
-        self.write_index([])  # post-#86 default: no pipeline entries
+        self.write_index([SESSION_ENTRY])
 
     def _restore_globals(self):
         for name, value in self._saved.items():
@@ -110,13 +88,6 @@ class RegenDeniedTests(unittest.TestCase):
             + "\n",
             encoding="utf-8",
         )
-
-    def write_card(self, queue, lesson_id):
-        path = regen_denied.JOBS_ROOT / queue / f"{lesson_id[:-7]}_card.md"
-        path.write_text(
-            CARD_TEMPLATE.format(lesson_id=lesson_id), encoding="utf-8"
-        )
-        return path
 
     def write_review(self, lesson_id, status, reason=None,
                      reviewed_at="2026-08-14T08:00:00Z"):
@@ -146,73 +117,9 @@ class RegenDeniedTests(unittest.TestCase):
             regen_denied.STATE_PATH.read_text(encoding="utf-8")
         )["lessons"]
 
-    # --- pipeline lessons (post-#86: identified by job card, not index) -----
-
-    def test_denied_pipeline_lesson_requeues_card(self):
-        card_path = self.write_card("done", PIPELINE_ID)
-        self.write_review(PIPELINE_ID, "denied", reason="Part 2 too shallow")
-        out, err = self.run_main()
-
-        self.assertFalse(card_path.is_file())  # moved out of done/
-        pending = regen_denied.JOBS_ROOT / "pending" / card_path.name
-        self.assertTrue(pending.is_file())
-        card = pending.read_text(encoding="utf-8")
-        self.assertEqual(
-            regen_denied.get_field(card, "status"), regen_denied.REENTRY_STATUS
-        )
-        self.assertEqual(regen_denied.get_field(card, "concept_status"), "pending")
-        self.assertIn("review_feedback: |", card)
-        self.assertIn("Part 2 too shallow", card)
-        self.assertIn("attempt 1 of 2", card)
-        self.assertIn(f"queued pipeline regen: {PIPELINE_ID}", out)
-        self.assertNotIn("warning", err)
-        state = self.read_state()
-        self.assertEqual(state[PIPELINE_ID]["attempts"], 1)
-        self.assertFalse(state[PIPELINE_ID]["parked"])
-
-    def test_denied_pipeline_card_already_pending_stays_pending(self):
-        card_path = self.write_card("pending", PIPELINE_ID)
-        self.write_review(PIPELINE_ID, "denied", reason="Wrong worked example")
-        self.run_main()
-        card = card_path.read_text(encoding="utf-8")
-        self.assertEqual(
-            regen_denied.get_field(card, "status"), regen_denied.REENTRY_STATUS
-        )
-        self.assertIn("Wrong worked example", card)
-
-    def test_repeat_denials_bound_attempts_then_park(self):
-        card_path = self.write_card("done", PIPELINE_ID)
-        self.write_review(PIPELINE_ID, "denied", reason="First denial",
-                          reviewed_at="2026-08-14T08:00:00Z")
-        self.run_main()
-        self.write_review(PIPELINE_ID, "denied", reason="Second denial",
-                          reviewed_at="2026-08-14T09:00:00Z")
-        self.run_main()
-        self.assertEqual(self.read_state()[PIPELINE_ID]["attempts"], 2)
-
-        # Third denial exceeds MAX_ATTEMPTS: parked, card left untouched.
-        pending = regen_denied.JOBS_ROOT / "pending" / card_path.name
-        before = pending.read_text(encoding="utf-8")
-        self.write_review(PIPELINE_ID, "denied", reason="Third denial",
-                          reviewed_at="2026-08-14T10:00:00Z")
-        out, _ = self.run_main()
-        self.assertIn("parked", out)
-        self.assertTrue(self.read_state()[PIPELINE_ID]["parked"])
-        self.assertEqual(pending.read_text(encoding="utf-8"), before)
-
-    def test_rerun_on_same_denial_is_noop(self):
-        self.write_card("done", PIPELINE_ID)
-        self.write_review(PIPELINE_ID, "denied", reason="Needs rework")
-        self.run_main()
-        state_before = self.read_state()
-        out, _ = self.run_main()
-        self.assertIn("regen_state.json unchanged", out)
-        self.assertEqual(self.read_state(), state_before)
-
-    # --- session lessons (indexed) keep their brief-queue behaviour ---------
+    # --- session lessons: brief-queue behaviour -----------------------------
 
     def test_denied_session_lesson_writes_brief(self):
-        self.write_index([SESSION_ENTRY])
         self.write_review(SESSION_ID, "denied", reason="Intro too abstract")
         out, err = self.run_main()
         brief_path = regen_denied.REGEN_DIR / f"{SESSION_ID}.md"
@@ -225,7 +132,6 @@ class RegenDeniedTests(unittest.TestCase):
         self.assertEqual(self.read_state()[SESSION_ID]["attempts"], 1)
 
     def test_approved_review_clears_state_and_brief(self):
-        self.write_index([SESSION_ENTRY])
         self.write_review(SESSION_ID, "denied", reason="Fix the MCQ key",
                           reviewed_at="2026-08-14T08:00:00Z")
         self.run_main()
@@ -237,12 +143,57 @@ class RegenDeniedTests(unittest.TestCase):
             (regen_denied.REGEN_DIR / f"{SESSION_ID}.md").is_file()
         )
 
+    def test_repeat_denials_bound_attempts_then_park(self):
+        self.write_review(SESSION_ID, "denied", reason="First denial",
+                          reviewed_at="2026-08-14T08:00:00Z")
+        self.run_main()
+        self.write_review(SESSION_ID, "denied", reason="Second denial",
+                          reviewed_at="2026-08-14T09:00:00Z")
+        self.run_main()
+        self.assertEqual(self.read_state()[SESSION_ID]["attempts"], 2)
+
+        # Third denial exceeds MAX_ATTEMPTS: parked, brief removed, nothing
+        # queued.
+        self.write_review(SESSION_ID, "denied", reason="Third denial",
+                          reviewed_at="2026-08-14T10:00:00Z")
+        out, _ = self.run_main()
+        self.assertIn("parked", out)
+        self.assertTrue(self.read_state()[SESSION_ID]["parked"])
+        self.assertFalse(
+            (regen_denied.REGEN_DIR / f"{SESSION_ID}.md").is_file()
+        )
+
+    def test_rerun_on_same_denial_is_noop(self):
+        self.write_review(SESSION_ID, "denied", reason="Needs rework")
+        self.run_main()
+        state_before = self.read_state()
+        out, _ = self.run_main()
+        self.assertIn("regen_state.json unchanged", out)
+        self.assertEqual(self.read_state(), state_before)
+
+    # --- retired pipeline path: warn and skip, never queue ------------------
+
+    def test_pipeline_source_entry_warns_and_skips(self):
+        pipeline_id = "maths_g11_quadratic_equations_factoring_method_31d165"
+        self.write_index([
+            SESSION_ENTRY,
+            {**SESSION_ENTRY, "id": pipeline_id, "source": "pipeline"},
+        ])
+        self.write_review(pipeline_id, "denied", reason="Denied")
+        out, err = self.run_main()
+        self.assertIn("source 'pipeline'", err)
+        self.assertIn("retired", err)
+        self.assertIn("regen_state.json unchanged", out)
+        self.assertFalse(
+            (regen_denied.REGEN_DIR / f"{pipeline_id}.md").is_file()
+        )
+
     # --- unknown lessons: warn, queue nothing, keep state retryable ---------
 
-    def test_denied_lesson_without_card_or_index_entry_not_queued(self):
+    def test_denied_lesson_without_index_entry_not_queued(self):
         self.write_review("ghost_lesson_000000", "denied", reason="Denied")
         out, err = self.run_main()
-        self.assertIn("no job card or session index entry", err)
+        self.assertIn("not in review_index.json", err)
         self.assertIn("regen_state.json unchanged", out)
         self.assertFalse(regen_denied.STATE_PATH.is_file() and
                          self.read_state())

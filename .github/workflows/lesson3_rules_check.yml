@@ -73,14 +73,13 @@ jobs:
           if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
             FILES=$(ls .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
           else
-            FILES=$(ls .rokct/agent/jobs/pending/*.md 2>/dev/null | grep -v 'template' || true)
+            # Scan only touched cards. (Until 2026-08 a merged Jules PR could
+            # touch only lesson content under the junior tree
+            # lessons/<subject>/<grade>/..., which widened the scan to every
+            # pending card; that tree is retired and deleted, so the widening
+            # trigger is gone.)
             CHANGED=$(git diff --name-only HEAD~1 HEAD || true)
-            # A merged Jules PR may only touch lesson content under
-            # lessons/<subject>/<grade>/...; if so, still scan all lesson
-            # cards for one awaiting checks.
-            if ! echo "$CHANGED" | grep -qE 'lessons/[a-z_]+/grade[0-9]+/'; then
-              FILES=$(echo "$CHANGED" | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template' || true)
-            fi
+            FILES=$(echo "$CHANGED" | grep '.rokct/agent/jobs/pending/.*.md' | grep -v 'template' || true)
           fi
 
           for FILE in $FILES; do

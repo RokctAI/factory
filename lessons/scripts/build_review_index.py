@@ -8,10 +8,11 @@ Scans one lesson population:
    lessons/curriculum/CAPS/{subject}/session/grade{g}/term{t}/{topic-slug}/{subtopic-slug}/
    id: session_{subject}_g{grade}_t{term}_{topic-slug}_{subtopic-slug}
 
-Pipeline lessons (the junior tree at lessons/{subject}/grade{g}/..., driven by
-job cards in .rokct/agent/jobs/) are deliberately NOT indexed: every pipeline
-lesson has a senior CAPS session equivalent that is already indexed, so listing
-both would put duplicate lessons in front of reviewers.
+Pipeline lessons were deliberately never indexed alongside session lessons
+(every one had a senior CAPS session equivalent, so listing both would have
+put duplicate lessons in front of reviewers); their tree — the retired
+junior layout at lessons/{subject}/grade{g}/... — was deleted in 2026-08,
+so session packages are now the only lesson population that exists.
 
 Review state is merged from lessons/reviews/<id>.json (absent file means
 status "pending"). Output is deterministic (lessons sorted by id); the file
