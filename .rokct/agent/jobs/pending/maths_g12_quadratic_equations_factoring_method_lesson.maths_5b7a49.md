@@ -15,6 +15,9 @@ topic: Quadratic Equations
 subtopic: Factoring method
 tutor: tutor_001
 tutor_style: formal
+greeting_ref: tutor_001/greetings/02.md
+signoff_ref: tutor_001/signoffs/01.md
+ack_ref: tutor_001/acknowledgements/01.md
 example_problem: 2x²+5x+3=0
 prior_knowledge: Student knows multiplication, basic algebra
 metarules: .rokct/types/lesson.maths/metarules
@@ -29,6 +32,7 @@ concept_status:
 rules_status: passed
 lesson_name: Quadratic Equations - Factoring Method
 lesson_path: lessons/maths/grade12/term_unknown/maths_g12_quadratic_equations_factoring_method_5b7a49
+intro_path: lessons/maths/grade12/term_unknown/maths_g12_quadratic_equations_factoring_method_5b7a49/intro.md
 script_path: lessons/maths/grade12/term_unknown/maths_g12_quadratic_equations_factoring_method_5b7a49/script.md
 manim_path: lessons/maths/grade12/term_unknown/maths_g12_quadratic_equations_factoring_method_5b7a49/manim_scene.py
 subtopics_path: lessons/maths/grade12/term_unknown/maths_g12_quadratic_equations_factoring_method_5b7a49/subtopics.json
@@ -39,10 +43,10 @@ assistant_qa_transcript_path: lessons/maths/grade12/term_unknown/maths_g12_quadr
 assistant_nervous_script_path: lessons/maths/grade12/term_unknown/maths_g12_quadratic_equations_factoring_method_5b7a49/assistant_nervous_script.md
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-17 06:02:38
+last_updated: 2026-08-14 00:04:39
 session_id: 
 session_started: 
-attempts: 3
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10

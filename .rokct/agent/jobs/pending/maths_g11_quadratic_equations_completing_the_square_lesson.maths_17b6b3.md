@@ -15,6 +15,9 @@ topic: Quadratic Equations
 subtopic: Completing the square
 tutor: tutor_001
 tutor_style: formal
+greeting_ref: tutor_001/greetings/04.md
+signoff_ref: tutor_001/signoffs/03.md
+ack_ref: 
 example_problem: x²+6x+2=0
 prior_knowledge: Student can expand brackets and factorise perfect squares
 metarules: .rokct/types/lesson.maths/metarules
@@ -28,6 +31,7 @@ concept_status:
 rules_status: passed
 lesson_name: Completing the Square
 lesson_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3
+intro_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/intro.md
 script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/script.md
 manim_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/manim_scene.py
 subtopics_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/subtopics.json
@@ -38,14 +42,14 @@ assistant_qa_transcript_path: lessons/maths/grade11/term1/maths_g11_quadratic_eq
 assistant_nervous_script_path: lessons/maths/grade11/term1/maths_g11_quadratic_equations_completing_the_square_17b6b3/assistant_nervous_script.md
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-13
-last_updated: 2026-07-17 02:02:55
+last_updated: 2026-08-14 00:04:39
 session_id: 
 session_started: 
-attempts: 3
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10
-expansion_requested: 1
+expansion_requested:
 crosscheck_status: passed
 crosscheck_notes: |
   [2026-07-17 02:02] Independent AI review (fresh Groq/llama call, not the generating agent): PASS

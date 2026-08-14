@@ -14,7 +14,10 @@ term: 2
 topic: Dynamics of Markets
 subtopic: Price elasticity of demand
 tutor: tutor_008
-tutor_style: simplistic, lower grade logic
+tutor_style: plain-language, intuition-first
+greeting_ref: tutor_008/greetings/06.md
+signoff_ref: tutor_008/signoffs/03.md
+ack_ref: 
 example_problem: The price of a product rises from R10 to R12 and quantity demanded falls from 100 to 80 units. Calculate the price elasticity of demand and classify it.
 prior_knowledge: Student knows demand and supply and percentage change calculations
 metarules: .rokct/types/lesson.economics/metarules
@@ -28,23 +31,24 @@ concept_status:
 rules_status: passed
 lesson_name: Price elasticity of demand
 lesson_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d
+intro_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/intro.md
 script_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/script.md
 manim_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/manim_scene.py
 subtopics_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/subtopics.json
 mcq_data_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/mcq.json
 comprehension_check_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/comprehension_check.json
 reel_brief_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/reel_clip.json
-assistant_qa_transcript_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/assistant_qa_transcript.md
+assistant_qa_transcript_path: 
 assistant_nervous_script_path: lessons/economics/grade11/term2/economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d/assistant_nervous_script.md
 expansion_requested:
 crosscheck_status:
 crosscheck_notes:
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-27 20:34:25
+last_updated: 2026-08-14 00:27:05
 session_id: 
 session_started: 
-attempts: 3
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10

@@ -14,7 +14,10 @@ term: 3
 topic: Cost Accounting
 subtopic: Break-even analysis
 tutor: tutor_006
-tutor_style: simplistic, lower grade logic
+tutor_style: plain-language, intuition-first
+greeting_ref: tutor_006/greetings/04.md
+signoff_ref: tutor_006/signoffs/01.md
+ack_ref: 
 example_problem: A manufacturer has fixed costs of R60 000 per month. The selling price is R50 per unit and the variable cost is R30 per unit. Calculate the break-even point in units.
 prior_knowledge: Student knows fixed vs variable costs
 metarules: .rokct/types/lesson.accounting/metarules
@@ -28,25 +31,26 @@ concept_status:
 rules_status: passed
 lesson_name: Break-even analysis
 lesson_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83
+intro_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/intro.md
 script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/script.md
 manim_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/manim_scene.py
 subtopics_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/subtopics.json
 mcq_data_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/mcq.json
 comprehension_check_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/comprehension_check.json
 reel_brief_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/reel_clip.json
-assistant_qa_transcript_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/assistant_qa_transcript.md
+assistant_qa_transcript_path: 
 assistant_nervous_script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/assistant_nervous_script.md
-expansion_requested: 1
+expansion_requested:
 crosscheck_status: passed
 crosscheck_notes: |
   [2026-07-17 09:56] Independent AI review (fresh Groq/llama call, not the generating agent): PASS
   - no issues found
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-17 09:56:06
+last_updated: 2026-08-14 00:27:04
 session_id: 
 session_started: 
-attempts: 3
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10

@@ -15,6 +15,9 @@ topic: Reconciliations
 subtopic: Bank reconciliation statement
 tutor: tutor_005
 tutor_style: formal
+greeting_ref: tutor_005/greetings/03.md
+signoff_ref: tutor_005/signoffs/02.md
+ack_ref: 
 example_problem: The bank statement shows a favourable balance of R5 320. Outstanding deposit: R2 100. Outstanding cheques: no. 411 for R1 480 and no. 415 for R650. Prepare the bank reconciliation statement to find the bank account balance.
 prior_knowledge: Student knows the bank account in the general ledger and debit/credit conventions
 metarules: .rokct/types/lesson.accounting/metarules
@@ -28,6 +31,7 @@ concept_status:
 rules_status: passed
 lesson_name: Bank Reconciliation Statement
 lesson_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e
+intro_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/intro.md
 script_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/script.md
 manim_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/manim_scene.py
 subtopics_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/subtopics.json
@@ -38,14 +42,14 @@ assistant_qa_transcript_path: lessons/accounting/grade11/term1/accounting_g11_re
 assistant_nervous_script_path: lessons/accounting/grade11/term1/accounting_g11_reconciliations_bank_reconciliation_statement_ba219e/assistant_nervous_script.md
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-18 21:53:16
+last_updated: 2026-08-14 00:06:24
 session_id: 
 session_started: 
-attempts: 3
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10
-expansion_requested: 1
+expansion_requested:
 crosscheck_status: passed
 crosscheck_notes: |
   [2026-07-18 21:53] Independent AI review (fresh Groq/llama call, not the generating agent): PASS
