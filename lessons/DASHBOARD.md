@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-08-14 08:58 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-08-14 11:07 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (0)
 
@@ -16,11 +16,11 @@ No stalled, failed or blocked cards.
 |---|---|---|---|
 | Accounting | 4 |  | 4 |
 | Economics | 5 |  | 6 |
-| Geography | 2 | 1 | 3 |
+| Geography | 3 | 1 | 4 |
 | Mathematical Literacy | 3 |  | 3 |
 | Maths | 5 |  | 7 |
 | Physical Sciences | 5 |  | 6 |
-| **All** | **24** | **1** | **29** |
+| **All** | **25** | **1** | **30** |
 
 ## Pairs (1)
 
@@ -36,7 +36,7 @@ No stalled, failed or blocked cards.
 | Economics | 10 | 3 | 33 |
 | Economics | 11 | 2 | 34 |
 | Economics | 12 | 0 | 40 |
-| Geography | 10 | 2 | 50 |
+| Geography | 10 | 3 | 49 |
 | Geography | 11 | 0 | 60 |
 | Geography | 12 | 1 | 58 |
 | Mathematical Literacy | 10 | 3 | 29 |
@@ -49,7 +49,7 @@ No stalled, failed or blocked cards.
 | Physical Sciences | 11 | 0 | 64 |
 | Physical Sciences | 12 | 0 | 56 |
 
-Syllabus rows total: 841; opened: 24; remaining: 817.
+Syllabus rows total: 841; opened: 25; remaining: 816.
 
 ## Evaluated (Level 4 complete, awaiting Level 6): 0
 
