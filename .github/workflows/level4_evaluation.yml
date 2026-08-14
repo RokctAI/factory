@@ -64,17 +64,20 @@ jobs:
         if: steps.claim_locks.outputs.card_files != ''
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          CARD_FILES: ${{ steps.claim_locks.outputs.card_files }}
         run: |
           python .rokct/skills/agent_delegation/scripts/call_jules.py create \
             --repo "sources/github/RokctAI/factory" \
-            --prompt "TASK: Weekend Evaluation Session. Audit these files: ${{ steps.claim_locks.outputs.card_files }}. Perform a backward audit (Line -> Stanza -> Poem -> Book -> World). Score each element (0-10) and suggest improvements where score < 8." \
+            --prompt "TASK: Weekend Evaluation Session. Audit these files: $CARD_FILES. Perform a backward audit (Line -> Stanza -> Poem -> Book -> World). Score each element (0-10) and suggest improvements where score < 8." \
             --title "Weekend Evaluation Session" \
             --automation-mode "AUTO_CREATE_PR"
 
       - name: Increment Loop Counter
         if: success() && steps.claim_locks.outputs.card_files != ''
+        env:
+          CARD_FILES: ${{ steps.claim_locks.outputs.card_files }}
         run: |
-          for FILE in ${{ steps.claim_locks.outputs.card_files }}; do
+          for FILE in $CARD_FILES; do
             CURRENT=$(grep '^loop_iterations:' "$FILE" | cut -d':' -f2 | xargs)
             NEW=$((CURRENT + 1))
             sed -i "s/^loop_iterations: .*/loop_iterations: $NEW/" "$FILE"
@@ -82,8 +85,10 @@ jobs:
 
       - name: Handle Failure
         if: failure() && steps.claim_locks.outputs.card_files != ''
+        env:
+          CARD_FILES: ${{ steps.claim_locks.outputs.card_files }}
         run: |
-          for FILE in ${{ steps.claim_locks.outputs.card_files }}; do
+          for FILE in $CARD_FILES; do
             ATTEMPTS=$(grep '^attempts:' "$FILE" | cut -d':' -f2 | xargs)
             NEW_ATTEMPTS=$((ATTEMPTS + 1))
             sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$FILE"
@@ -99,8 +104,10 @@ jobs:
 
       - name: Release Job Locks
         if: always() && steps.claim_locks.outputs.card_files != ''
+        env:
+          CARD_FILES: ${{ steps.claim_locks.outputs.card_files }}
         run: |
-          for FILE in ${{ steps.claim_locks.outputs.card_files }}; do
+          for FILE in $CARD_FILES; do
             if [ -f "$FILE" ]; then
               python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
             fi

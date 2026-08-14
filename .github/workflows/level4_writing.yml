@@ -53,8 +53,9 @@ jobs:
 
       - name: Check Loop Safety
         if: steps.claim_lock.outputs.card_file != ''
+        env:
+          CARD_FILE: ${{ steps.claim_lock.outputs.card_file }}
         run: |
-          CARD_FILE="${{ steps.claim_lock.outputs.card_file }}"
           ITERATIONS=$(grep '^loop_iterations:' "$CARD_FILE" | cut -d':' -f2 | xargs)
           MAX=$(grep '^max_iterations:' "$CARD_FILE" | cut -d':' -f2 | xargs)
           if [ "$ITERATIONS" -ge "$MAX" ]; then
@@ -70,25 +71,28 @@ jobs:
         if: steps.claim_lock.outputs.card_file != '' && steps.safety_check.outputs.stalled != 'true'
         env:
           JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+          CARD_FILE: ${{ steps.claim_lock.outputs.card_file }}
         run: |
           python .rokct/skills/agent_delegation/scripts/call_jules.py create \
             --repo "sources/github/RokctAI/factory" \
-            --prompt "TASK: Daily Writing Session for ${{ steps.claim_lock.outputs.card_file }}. Generate the next chapter or poem based on the world rules and metarules. Ensure consistency and emotional resonance." \
+            --prompt "TASK: Daily Writing Session for $CARD_FILE. Generate the next chapter or poem based on the world rules and metarules. Ensure consistency and emotional resonance." \
             --title "Daily Writing Session" \
             --automation-mode "AUTO_CREATE_PR"
 
       - name: Increment Loop Counter
         if: success() && steps.claim_lock.outputs.card_file != '' && steps.safety_check.outputs.stalled != 'true'
+        env:
+          CARD_FILE: ${{ steps.claim_lock.outputs.card_file }}
         run: |
-          CARD_FILE="${{ steps.claim_lock.outputs.card_file }}"
           CURRENT=$(grep '^loop_iterations:' "$CARD_FILE" | cut -d':' -f2 | xargs)
           NEW=$((CURRENT + 1))
           sed -i "s/^loop_iterations: .*/loop_iterations: $NEW/" "$CARD_FILE"
 
       - name: Handle Failure
         if: failure() && steps.claim_lock.outputs.card_file != ''
+        env:
+          CARD_FILE: ${{ steps.claim_lock.outputs.card_file }}
         run: |
-          CARD_FILE="${{ steps.claim_lock.outputs.card_file }}"
           ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" | cut -d':' -f2 | xargs)
           NEW_ATTEMPTS=$((ATTEMPTS + 1))
           sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$CARD_FILE"
@@ -108,9 +112,11 @@ jobs:
 
       - name: Release Job Lock
         if: always() && steps.claim_lock.outputs.card_file != ''
+        env:
+          CARD_FILE: ${{ steps.claim_lock.outputs.card_file }}
         run: |
-          if [ -f "${{ steps.claim_lock.outputs.card_file }}" ]; then
+          if [ -f "$CARD_FILE" ]; then
             python .rokct/skills/agent_delegation/scripts/lock_job.py \
-              --file "${{ steps.claim_lock.outputs.card_file }}" \
+              --file "$CARD_FILE" \
               --action release
           fi
