@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-08-14 00:15 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-08-14 00:27 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (7)
 
@@ -14,14 +14,9 @@
 | `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | review content accuracy (`concept_status: approved`) |
 | `maths_g12_quadratic_equations_factoring_method_5b7a49` | Maths G12 | review content accuracy (`concept_status: approved`) |
 
-## Needs intervention (4)
+## Needs intervention (0)
 
-| Card | Subject | Why |
-|---|---|---|
-| `accounting_g11_cost_accounting_break_even_analysis_ad0b83` | Accounting G11 | attempts 3; script expansion pass used |
-| `accounting_g11_value_added_tax_vat_calculations_09d287` | Accounting G11 | attempts 3; script expansion pass used |
-| `economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d` | Economics G11 | attempts 3 |
-| `mathematical_literacy_g12_finance_vat_calculations_655ffb` | Mathematical Literacy G12 | attempts 3 |
+No stalled, failed or blocked cards.
 
 ## Cards by status and subject
 

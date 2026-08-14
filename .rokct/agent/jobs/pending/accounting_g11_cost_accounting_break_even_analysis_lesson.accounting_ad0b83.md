@@ -40,17 +40,17 @@ comprehension_check_path: lessons/accounting/grade11/term3/accounting_g11_cost_a
 reel_brief_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/reel_clip.json
 assistant_qa_transcript_path: 
 assistant_nervous_script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/assistant_nervous_script.md
-expansion_requested: 1
+expansion_requested:
 crosscheck_status: passed
 crosscheck_notes: |
   [2026-07-17 09:56] Independent AI review (fresh Groq/llama call, not the generating agent): PASS
   - no issues found
 status: pending_concept_approval # next step is rules_generating
 created: 2026-07-14
-last_updated: 2026-07-17 09:56:06
+last_updated: 2026-08-14 00:27:04
 session_id: 
 session_started: 
-attempts: 3
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10
