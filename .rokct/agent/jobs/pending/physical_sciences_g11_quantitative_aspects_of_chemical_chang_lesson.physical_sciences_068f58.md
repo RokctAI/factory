@@ -28,7 +28,7 @@ concept: |
   Example Problem: The combustion of methane (8g) in excess oxygen is solved completely in the script, emphasising exact exam technique (formula first, explicit substitution, SI unit) to secure full marks.
   Mandy support: Addresses common learner mistakes directly (like multiplying molar mass by balancing coefficients).
 concept_status:
-rules_status:
+rules_status: failed
 lesson_name: Stoichiometric calculations
 lesson_path: lessons/physical_sciences/grade11/term3/physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58
 script_path: lessons/physical_sciences/grade11/term3/physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58/script.md
@@ -41,7 +41,7 @@ assistant_qa_transcript_path: lessons/physical_sciences/grade11/term3/physical_s
 assistant_nervous_script_path: lessons/physical_sciences/grade11/term3/physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58/assistant_nervous_script.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-17 07:00:29
+last_updated: 2026-08-14 08:55:35
 session_id: 
 session_started: 
 attempts: 2
