@@ -73,12 +73,16 @@ For a session whose lesson card lists `requires_skills`:
 
 ## Current real data (migrated from `term: "all"`)
 
-- `geography.gradient_calculation` → card `…gradient_ca_dc21d0` (**evaluated**, full
-  content at `lessons/geography/grade12/skills/…dc21d0/`), required by the G12
-  Geomorphology *River profiles and rejuvenation* lesson (river gradient computation is
-  part of profile analysis).
-- `geography.map_scale_and_distance` → card `…map_scale_a_eb274e` (pending approval, no
-  content yet).
+- `geography.gradient_calculation` → card `…gradient_ca_dc21d0` (**evaluated**; its
+  pipeline content lived in the junior tree, deleted with that tree's retirement in
+  2026-08 — the skill is covered by
+  `lessons/curriculum/CAPS/geography/skills/grade12/gradient_calculation.json` and the
+  session lesson `…/geography/session/grade12/term2/fluvial-processes/gradient-calculation/`),
+  required by the G12 Geomorphology *River profiles and rejuvenation* lesson (river
+  gradient computation is part of profile analysis).
+- `geography.map_scale_and_distance` → card `…map_scale_a_eb274e` (card retired with the
+  junior tree, 2026-08; covered by
+  `lessons/curriculum/CAPS/geography/skills/grade12/map_scale_and_distance.json`).
 
 ## Validation surface (factory side, already wired)
 

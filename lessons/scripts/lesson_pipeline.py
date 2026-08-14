@@ -287,18 +287,27 @@ def normalize_term(value):
 
 
 def content_dir(subject, grade, term, card_id, category=""):
-    """Grouped lesson content location.
+    """RETIRED (2026-08): the grouped pipeline output tree
+    lessons/<subject>/grade<g>/{term<t>|skills}/<card_id>/ (the "junior"
+    tree) was deleted — every lesson it held has a senior equivalent in the
+    CAPS session tree (lessons/curriculum/CAPS/<subject>/session/...), which
+    is authored by direct in-context sessions, not by job-card prompts.
 
-    Standard lessons: lessons/<subject>/grade<g>/term<t>/<id>.
-    Skill lessons (category: skill): lessons/<subject>/grade<g>/skills/<id> —
-    still grade-scoped (CAPS assesses a skill at each grade's depth) but
-    without a term segment, because skills are term-independent by design.
+    This function is kept (rather than deleted) so any code path that would
+    have written lesson content into the retired layout fails loudly here,
+    at the point the path would be minted, instead of silently recreating
+    the tree. Working a card-driven lesson again requires deliberately
+    choosing a new output convention first.
     """
-    if category == CATEGORY_SKILL:
-        return f"lessons/{slugify(subject)}/grade{int(grade)}/skills/{card_id}"
-    term = normalize_term(term)
-    term_dir = f"term{term}" if term.isdigit() else f"term_{term}"
-    return f"lessons/{slugify(subject)}/grade{int(grade)}/{term_dir}/{card_id}"
+    raise SystemExit(
+        "lesson_pipeline.content_dir: the junior lesson tree "
+        "(lessons/<subject>/grade<g>/...) was retired and deleted in 2026-08; "
+        "card-driven lesson output has no target layout any more. Lesson "
+        "content is authored directly in the CAPS session tree "
+        "(lessons/curriculum/CAPS/<subject>/session/...). "
+        f"Refusing to mint a path for card {card_id!r} "
+        f"({subject} grade {grade} term {term} category {category or 'lesson'})."
+    )
 
 
 def find_duplicate_card(subject, grade, topic, subtopic, tutor=None):
@@ -1272,7 +1281,8 @@ Write the files into {lesson_dir}/ exactly as follows:
   viewport moves to clean space. Size content large and legible for a
   phone framed full-screen (scale >= 1.1 even for tiny expressions like
   "2 x 2 = ?"; at most ~5 short lines per band). See the two reference
-  scenes under lessons/maths/grade11/term1/*/manim_scene.py.
+  scenes under lessons/curriculum/CAPS/maths/session/grade11/term1/
+  equations-and-inequalities/*/manim_scene.py.
 - {lesson_dir}/subtopics.json — {{"subtopics": [{{"ref": "subtopic_1",
   "title": "...", "start_seconds": 0, "end_seconds": 210}}, ...]}} — refs
   sequential, times in seconds, contiguous, total close to 900 (15 minutes).

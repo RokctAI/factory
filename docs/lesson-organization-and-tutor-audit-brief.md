@@ -36,7 +36,10 @@
    `unknown` rather than a guessed value if you can't verify), and the Level 0/1/2 flow so it gets carried
    through to the finished lesson the same way `subject`/`grade` already are.
 
-4. **Lessons are not grouped into folders — flat `lessons/drafts/<id>/` for everything.** Reorganize into
+4. **Lessons are not grouped into folders — flat `lessons/drafts/<id>/` for everything.**
+   *(Historical note, 2026-08: the grouped tree this item introduced — the "junior"
+   pipeline-output layout — was later retired and deleted; lesson content now lives in the
+   CAPS session tree under `lessons/curriculum/CAPS/<subject>/session/...`.)* Reorganize into
    `lessons/<subject>/<grade>/<term>/<id>/` (e.g. `lessons/maths/grade11/term2/quadratic_equations_factoring_method_31d165/`)
    instead of the current flat `lessons/drafts/<id>/`. This needs to happen consistently across: where
    Level 2 (Jules) writes new content, where the job card's `lesson_path`/`script_path`/etc. fields point,

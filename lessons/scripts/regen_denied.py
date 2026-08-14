@@ -3,24 +3,20 @@
 
 Scans lessons/reviews/*.json (the review-state files written by the
 Supacharge admin review endpoint) and, for each denial, re-enters the lesson
-into generation with the reviewer's feedback attached:
+into generation with the reviewer's feedback attached.
 
-1. Pipeline lessons (source "pipeline" in lessons/review_index.json): the
-   job card in .rokct/agent/jobs/{pending,running,done}/ is moved back to
-   pending/, its status is reset to the direct-authoring re-entry state
-   (concept_generated — the state Level 3 already uses for "fix the content
-   and push again"), concept_status is reset to pending so the human
-   concept-approval gate re-arms, and the denial reason is written into a
-   review_feedback frontmatter field. The card is the generation brief, so
-   the feedback rides into the next authoring pass.
+All indexed lessons are session lessons (source "session" —
+folder-is-the-contract packages authored by direct in-context sessions; no
+automated generator exists): a regeneration brief is written to
+lessons/reviews/regen/<lesson_id>.md with the denial reason, the package
+path, and the authoring contract. That directory is the work queue an
+authoring session consumes; the brief is deleted by the commit that rewrites
+the package (or cleared here on approval).
 
-2. Session lessons (source "session" — folder-is-the-contract packages
-   authored by direct in-context sessions; no automated generator exists):
-   a regeneration brief is written to lessons/reviews/regen/<lesson_id>.md
-   with the denial reason, the package path, and the authoring contract.
-   That directory is the work queue an authoring session consumes; the
-   brief is deleted by the commit that rewrites the package (or cleared
-   here on approval).
+(The former pipeline branch — re-queueing a job card for source "pipeline"
+lessons — was removed in 2026-08 with the retirement and deletion of the
+junior lesson tree; review_index.json has been session-only since the
+index stopped listing pipeline lessons.)
 
 Idempotency and bounded retries via lessons/reviews/regen_state.json:
 a given denial (lesson_id + reviewed_at) queues exactly once — re-running
@@ -39,24 +35,13 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
-from lesson_pipeline import get_field, set_block_field, set_field  # card helpers
-
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REVIEWS_DIR = REPO_ROOT / "lessons" / "reviews"
 REGEN_DIR = REVIEWS_DIR / "regen"
 STATE_PATH = REVIEWS_DIR / "regen_state.json"
 INDEX_PATH = REPO_ROOT / "lessons" / "review_index.json"
-JOBS_ROOT = REPO_ROOT / ".rokct" / "agent" / "jobs"
 
-JOB_QUEUES = ("pending", "running", "done")
 MAX_ATTEMPTS = 2
-
-# Re-entry state for a denied pipeline lesson: content exists but must be
-# reworked by direct authoring, then re-gated (Level 3 -> concept approval ->
-# Level 4 -> Level 6). Direct frontmatter write: update_status.py is
-# provisioned at CI runtime only, and regeneration is an out-of-band reset.
-REENTRY_STATUS = "concept_generated"
 
 BRIEF_TEMPLATE = """\
 # Regeneration brief — {lesson_id}
@@ -143,44 +128,6 @@ def load_reviews() -> list:
     return reviews
 
 
-def find_card(lesson_id: str) -> Path | None:
-    for queue in JOB_QUEUES:
-        queue_dir = JOBS_ROOT / queue
-        if not queue_dir.is_dir():
-            continue
-        for card_path in sorted(queue_dir.glob("*.md")):
-            if card_path.name.startswith("template"):
-                continue
-            if get_field(card_path.read_text(encoding="utf-8"), "id") == lesson_id:
-                return card_path
-    return None
-
-
-def requeue_pipeline(lesson_id: str, review: dict, attempt: int) -> bool:
-    """Move the job card back to pending/ with reset status + review feedback."""
-    card_path = find_card(lesson_id)
-    if card_path is None:
-        print(f"warning: no job card found for {lesson_id}; not queued", file=sys.stderr)
-        return False
-    pending_path = JOBS_ROOT / "pending" / card_path.name
-    if card_path != pending_path:
-        card_path.rename(pending_path)
-    card = pending_path.read_text(encoding="utf-8")
-    card = set_field(card, "status", REENTRY_STATUS)
-    card = set_field(card, "concept_status", "pending")
-    card = set_block_field(
-        card,
-        "review_feedback",
-        f"Denied by {review.get('reviewed_by') or 'unknown'} on "
-        f"{review.get('reviewed_at') or 'unknown'} (regeneration attempt "
-        f"{attempt} of {MAX_ATTEMPTS}): {review.get('reason') or 'no reason given'}",
-    )
-    card = set_field(card, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-    pending_path.write_text(card, encoding="utf-8")
-    print(f"queued pipeline regen: {lesson_id} (attempt {attempt}) -> {pending_path.relative_to(REPO_ROOT)}")
-    return True
-
-
 def write_brief(lesson_id: str, entry: dict, review: dict, attempt: int) -> None:
     REGEN_DIR.mkdir(parents=True, exist_ok=True)
     reason = (review.get("reason") or "no reason given").strip()
@@ -251,11 +198,18 @@ def main() -> int:
         if lesson is None:
             print(f"warning: {lesson_id} not in review_index.json; not queued", file=sys.stderr)
             continue
-        if lesson["source"] == "pipeline":
-            if not requeue_pipeline(lesson_id, review, attempt):
-                continue  # card missing — leave state untouched so we retry
-        else:
-            write_brief(lesson_id, lesson, review, attempt)
+        if lesson.get("source") == "pipeline":
+            # Defensive: the index has been session-only since the junior
+            # lesson tree was retired (2026-08); a pipeline entry here means
+            # the index and this script have drifted apart.
+            print(
+                f"warning: {lesson_id} has source 'pipeline' — the pipeline "
+                "regeneration path was retired with the junior lesson tree; "
+                "not queued",
+                file=sys.stderr,
+            )
+            continue
+        write_brief(lesson_id, lesson, review, attempt)
         tracked[lesson_id] = {
             "attempts": attempt,
             "last_reviewed_at": reviewed_at,

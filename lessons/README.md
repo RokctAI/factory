@@ -56,13 +56,14 @@ does not exist yet and is a separate future brief.
   subtopics → Big John; abstraction-heavy ones → Grandmaster) and records a
   `Tutor choice:` line in the idea block. Seed rows may pin `tutor`
   explicitly.
-- `<subject>/<grade>/<term>/<card_id>/` (e.g.
-  `maths/grade11/term1/..._31d165/`) — one directory per lesson: `script.md`,
-  `manim_scene.py`, `subtopics.json`, `mcq.json`,
-  `comprehension_check.json`, `assistant_nervous_script.md` (optional — but
-  when produced it must be referenced by the card's
-  `assistant_nervous_script_path` field; Level 3 fails untracked content),
-  `reel_clip.json`, `assistant_qa_transcript.md`.
+- Lesson content output — **retired layout deleted (2026-08)**: pipeline
+  lessons used to land in `<subject>/<grade>/<term>/<card_id>/` (the
+  "junior" tree). Every lesson it held has a senior equivalent in the CAPS
+  session tree (`curriculum/CAPS/<subject>/session/...`), which is where
+  lesson content is authored now (directly by in-context sessions), so the
+  junior tree was deleted and `content_dir()` in
+  `scripts/lesson_pipeline.py` hard-fails rather than mint a path in the
+  retired layout.
 - Level 3 also verifies content programmatically wherever it is computable
   — MCQ answer keys (quadratic roots/factoring/expansion/solution counts,
   pure-arithmetic values) and every fully-numeric worked-arithmetic
