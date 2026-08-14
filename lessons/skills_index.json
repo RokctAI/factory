@@ -1,0 +1,2737 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-14T18:40:54Z",
+  "skills": {
+    "accounting.accounting_cycle": {
+      "card_id": "accounting.accounting_cycle",
+      "subject": "Accounting",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Accounting cycle on the perpetual inventory system: source documents, journals (CRJ, CPJ, PCJ), double-entry principle in the ledger",
+      "lesson_name": "The accounting cycle",
+      "status": "evaluated",
+      "name": "The accounting cycle",
+      "example_problem": "Arrange in order and explain: source documents, journals, posting to the ledger, trial balance, final accounts, financial statements - and state what each stage produces for a sole trader's June transactions.",
+      "prior_knowledge": "Gr 8-9 bookkeeping: source documents and basic journal entries",
+      "importance": {
+        "summary": "The spine of Paper 1 (Financial reporting and evaluation, 150 marks, every grade): journals -> ledger -> trial balance -> statements is the sequence every reporting question walks.",
+        "required_by_topics": 5,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "BOOKKEEPING OF A SOLE TRADER (COMBINED CASH AND CREDIT TRANSACTIONS)"
+          },
+          {
+            "grade": 10,
+            "topic": "PREPARATION OF FINANCIAL STATEMENTS"
+          },
+          {
+            "grade": 10,
+            "topic": "YEAR-END ACCOUNTING PROCEDURES, PRE- AND POST- ADJUSTMENT TRIAL BALANCE, FINAL ACCOUNTS"
+          },
+          {
+            "grade": 10,
+            "topic": "YEAR-END ACCOUNTING PROCEDURES, PRE- AND POST-ADJUSTMENT TRIAL BALANCE, FINAL ACCOUNTS"
+          },
+          {
+            "grade": 11,
+            "topic": "FINANCIAL ACCOUNTING OF PARTNERSHIPS: ADJUSTMENTS, LEDGER, ACCOUNTING EQUATION, FINAL ACCOUNTS"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "BOOKKEEPING OF A SOLE TRADER: CASH TRANSACTIONS (CRJ, CPJ, PCJ, GENERAL LEDGER, TRIAL BALANCE, ACCOUNTING EQUATION)",
+          "subtopic": "Accounting cycle on the perpetual inventory system: source documents, journals (CRJ, CPJ, PCJ), double-entry principle in the ledger"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Which sequence shows the accounting cycle in the correct order?",
+          "options": [
+            "Source documents, journals, ledger, trial balance, final accounts, financial statements",
+            "Journals, source documents, trial balance, ledger, financial statements, final accounts",
+            "Source documents, ledger, journals, final accounts, trial balance, financial statements",
+            "Trial balance, journals, source documents, ledger, financial statements, final accounts"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "A trial balance balances, but R500 for Telephone was posted to Repairs (correct side). What does this show?",
+          "options": [
+            "The trial balance checks arithmetic equality, not perfect accuracy",
+            "The trial balance will not balance until the error is fixed",
+            "A balancing trial balance proves the books are perfect",
+            "The error is corrected automatically in the final accounts"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "The accounting cycle is the fixed route every transaction travels: source documents, journals, posting to the ledger, trial balance, final accounts, financial statements. The order is not decoration - each stage runs on the output of the one before it, which is why no stage can be skipped or swapped.\n\nSource documents come first because accounting records nothing without evidence: a till slip, an invoice, a bank statement proves the date, amount and parties. The journals - books of first entry - then sort transactions into daily lists by type: cash in through the Cash Receipts Journal, cash out through the Cash Payments Journal, credit sales and purchases through their own journals. Sorting first means only column totals move on, not hundreds of individual entries.\n\nPosting transfers those journal totals into the general ledger, where information is reorganised by account instead of by date. Every posting follows double entry - each amount debits one account and credits another - and each account is then balanced, giving one clean figure per item: total sales, cash on hand, amounts owed.\n\nThe trial balance lists every ledger balance in a debit or credit column. Because double entry forces every debit to have an equal credit, the two columns must agree. If they do not, an error exists in the recording or posting. Note the limit: a balancing trial balance proves arithmetic equality only - an amount posted to the wrong account on the correct side still balances.\n\nAt year end, the final accounts calculate profit inside the ledger: Sales and Cost of Sales close off to the Trading account, which produces gross profit; gross profit and all other incomes and expenses close off to the Profit and Loss account, which produces net profit; net profit transfers to Capital, because profit belongs to the owner. Finally, the financial statements report the results: the Statement of Comprehensive Income shows incomes, expenses and profit for the period; the Statement of Financial Position shows assets, equity and liabilities on the closing date.\n\nThe stages run on different clocks: documents and journals daily, posting and the trial balance monthly, final accounts and statements yearly - then the whole route repeats for the next period, which is why it is called a cycle. Quick self-test: for any stage, name what it receives from the previous stage and what it hands to the next. If you can do that for all six, you own the cycle.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Why must the journals be completed before the ledger is posted?",
+          "options": [
+            "The ledger is posted from journal column totals - without them there is nothing to post",
+            "The ledger and journals are the same book",
+            "The trial balance must be drawn up first",
+            "Source documents are filed inside the ledger"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "In the final accounts, gross profit is calculated in the Trading account and then transferred to:",
+          "options": [
+            "The Profit and Loss account",
+            "The Bank account",
+            "The Capital account directly",
+            "The trial balance"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Which stages of the cycle typically happen monthly?",
+          "options": [
+            "Posting journal totals to the ledger and preparing the trial balance",
+            "Writing source documents",
+            "Preparing financial statements",
+            "Transferring net profit to Capital"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "accounting.control_accounts": {
+      "card_id": "accounting.control_accounts",
+      "subject": "Accounting",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Analyse control accounts (debtors and creditors); accounting-equation analysis",
+      "lesson_name": "Debtors and creditors control accounts",
+      "status": "evaluated",
+      "name": "Debtors and creditors control accounts",
+      "example_problem": "Post totals from the DJ (R48 200), CRJ debtors column (R31 500), DAJ (R2 300) and a bad debt of R900 to the Debtors Control account, balance it, and explain what the balance must agree with.",
+      "prior_knowledge": "Subsidiary journals and posting to the general ledger",
+      "importance": {
+        "summary": "Reconciliation topics appear in every grade (Gr 10 T2, Gr 11 T1, Gr 12 T2) and feed Paper 2's internal-control discipline (150 marks) as well as Paper 1 debtors/creditors work.",
+        "required_by_topics": 3,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "DEBTORS AND CREDITORS RECONCILIATION"
+          },
+          {
+            "grade": 11,
+            "topic": "RECONCILIATION"
+          },
+          {
+            "grade": 12,
+            "topic": "RECONCILIATIONS"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "BOOKKEEPING OF THE SOLE TRADER: COMBINED CASH AND CREDIT TRANSACTIONS",
+          "subtopic": "Analyse control accounts (debtors and creditors); accounting-equation analysis"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Debtors Control opens at R15 400 (debit). Post: DJ total R48 200, receipts from debtors R31 500, debtors allowances R2 300, bad debts R900. The closing balance is:",
+          "options": [
+            "R28 900 debit",
+            "R34 700 debit",
+            "R63 600 debit",
+            "R27 100 credit"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "At month end, the Debtors Control balance must agree with:",
+          "options": [
+            "The total of the list of individual debtors' balances from the Debtors Ledger",
+            "The total of the Cash Receipts Journal",
+            "The Bank account balance",
+            "The Creditors Control balance"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A control account is a one-account summary of a whole group of people the business deals with. The Debtors Control account in the general ledger carries the totals for all debtors as a group, while each debtor's personal detail lives in a separate book, the Debtors Ledger. The rule that runs everything: whatever is posted to the personal accounts in detail must be posted to the control account in total - journal totals only, never individual invoices.\n\nDebtors are an asset, so the account grows on the debit side and shrinks on the credit side. For every entry, ask one question: did this event make debtors owe us more, or less? Credit sales (the Debtors Journal total) make debtors owe more - debit the control account. Everything that reduces the debt goes on the credit side: payments received from debtors (the debtors column of the Cash Receipts Journal), goods returned or allowances granted (the Debtors Allowances Journal), and bad debts written off. A bad debt is credited even though no money arrives - the business stops counting an amount it will never collect, and the contra account is Bad Debts, an expense.\n\nBalance the account like any ledger account: total both sides, insert the balancing figure as \"Balance c/d\", and bring it down. A debit balance states what all debtors together still owe.\n\nThe pay-off is the built-in check. At month end, list every individual debtor's balance from the Debtors Ledger and add the list. That total must equal the control account balance - two independent routes built from the same transactions. If they differ, an error exists somewhere: an invoice missed in a journal total, a receipt posted twice, a casting error. The disagreement does not name the error; it proves one exists and tells you to hunt.\n\nThe Creditors Control account is the mirror image. Creditors are a liability, so the balance sits on the credit side: credit purchases make the business owe more (credit the account); payments to creditors and returns to suppliers make it owe less (debit the account). Its balance must agree with the list of creditors' balances from the Creditors Ledger. Master the debtors version, flip every side, and creditors comes free.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Why are individual invoices never posted to the Debtors Control account?",
+          "options": [
+            "The control account receives journal totals only; detail belongs in the personal accounts",
+            "Invoices are not valid source documents",
+            "Individual invoices are posted at year end only",
+            "Invoices belong in the Creditors Ledger"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "A bad debt of R900 is written off. The entry in Debtors Control is:",
+          "options": [
+            "Credit R900, contra account Bad Debts - debtors owe less even though no cash arrived",
+            "Debit R900, contra account Bank",
+            "Credit R900, contra account Sales",
+            "No entry - bad debts bypass the control account"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "The control balance is R28 900 but the debtors list totals R29 800. This tells the bookkeeper:",
+          "options": [
+            "An error exists somewhere between the detail and summary records and must be traced",
+            "The business lost R900",
+            "The difference must be written off as a bad debt",
+            "Small differences are acceptable"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "In the Creditors Control account, a payment to a supplier is posted as:",
+          "options": [
+            "A debit, because the liability decreases",
+            "A credit, because payments increase the liability",
+            "A debit to Debtors Control",
+            "No entry"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "accounting.double_entry": {
+      "card_id": "accounting.double_entry",
+      "subject": "Accounting",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Accounting cycle on the perpetual inventory system: source documents, journals (CRJ, CPJ, PCJ), double-entry principle in the ledger",
+      "lesson_name": "Double-entry principle and the accounting equation",
+      "status": "evaluated",
+      "name": "Double-entry principle and the accounting equation",
+      "example_problem": "Show the effect of each transaction on A = O + L: (a) owner deposits R100 000 as capital; (b) buys equipment for R30 000 cash; (c) buys trading stock on credit for R12 000; (d) pays a creditor R5 000.",
+      "prior_knowledge": "Gr 8-9: debit and credit sides of an account",
+      "importance": {
+        "summary": "Every recording question in both papers stands on it: no double-entry, no journals, ledgers or statements. Foundation for Gr 10 bookkeeping through Gr 12 company accounts.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "BOOKKEEPING OF A SOLE TRADER (COMBINED CASH AND CREDIT TRANSACTIONS)"
+          },
+          {
+            "grade": 11,
+            "topic": "FINANCIAL ACCOUNTING OF PARTNERSHIPS: ADJUSTMENTS, LEDGER, ACCOUNTING EQUATION, FINAL ACCOUNTS"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "BOOKKEEPING OF A SOLE TRADER: CASH TRANSACTIONS (CRJ, CPJ, PCJ, GENERAL LEDGER, TRIAL BALANCE, ACCOUNTING EQUATION)",
+          "subtopic": "Accounting cycle on the perpetual inventory system: source documents, journals (CRJ, CPJ, PCJ), double-entry principle in the ledger"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "A business buys trading stock on credit for R12 000. The effect on A = O + L is:",
+          "options": [
+            "A increases R12 000 and L increases R12 000",
+            "A increases R12 000 and O increases R12 000",
+            "A decreases R12 000 and L decreases R12 000",
+            "No effect on the equation"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "The business pays a creditor R5 000. The double entry is:",
+          "options": [
+            "Debit Creditors Control R5 000; credit Bank R5 000",
+            "Debit Bank R5 000; credit Creditors Control R5 000",
+            "Debit Creditors Control R5 000; credit Capital R5 000",
+            "Debit Bank R5 000; credit Drawings R5 000"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Everything a business owns was funded by somebody: either the owner or an outsider. What it owns are assets (A); the owner's funding is owner's equity (O); outsiders' funding is liabilities (L). That fact is the accounting equation, A = O + L, and it must hold after every single transaction. If it stops balancing, an error was made.\n\nThe equation connects to the ledger through the sides: assets increase on the debit side; owner's equity and liabilities increase on the credit side; decreases go on the opposite side in each case. The double-entry principle then says every transaction affects at least two accounts, with total debits equal to total credits - which is exactly what keeps the equation in balance.\n\nAnalyse any transaction in five steps. One: name the two accounts affected. Two: classify each as asset, owner's equity or liability. Three: decide whether each increases or decreases. Four: apply the sides - asset up means debit; O or L up means credit; decreases reverse. Five: confirm the equation still balances.\n\nRun the classic set. Owner deposits R100 000 capital: Bank (asset) up - debit; Capital (equity) up - credit; both sides of the equation rise R100 000. Buy equipment for R30 000 cash: Equipment up - debit; Bank down - credit; an asset swap, net effect on A is zero, but both entries are still recorded. Buy stock on credit for R12 000: Trading Stock up - debit; Creditors Control (liability) up - credit; A and L rise together. Pay a creditor R5 000: Creditors Control down - debit; Bank down - credit; A and L fall together. Every case: one debit, one credit, equation intact.\n\nIncomes and expenses are not a fourth element - they are movements inside owner's equity. Income increases O, so it is recorded on the credit side; expenses decrease O, so they are debited. Paid wages R2 000: debit Wages (O down via an expense), credit Bank (asset down).\n\nFinal habit: debit does not mean good or bad - debit and credit are just the left and right sides, and the business's point of view is the only one recorded. Analyse with the five steps every time and no transaction can surprise you.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Buying equipment for cash has no net effect on the equation, yet two entries are still needed because:",
+          "options": [
+            "Two real movements happened - Equipment increased and Bank decreased - and both must be recorded",
+            "The equation only balances at year end",
+            "One entry would be enough if amounts are equal",
+            "Equipment purchases are recorded only in the journal"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Why is Capital credited when the owner deposits money?",
+          "options": [
+            "Owner's equity increases on the credit side - the business now owes its funding to the owner",
+            "Credits always mean money coming in",
+            "Capital is an asset of the business",
+            "The bank requires it"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Wages of R2 000 are paid. The correct analysis is:",
+          "options": [
+            "Debit Wages, credit Bank - O decreases via the expense and A decreases",
+            "Debit Bank, credit Wages - A increases",
+            "Debit Wages, credit Capital - no equation effect",
+            "Debit Capital, credit Bank - L decreases"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "accounting.gaap_principles": {
+      "card_id": "accounting.gaap_principles",
+      "subject": "Accounting",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "GAAP principles: historical cost, prudence, materiality, business entity rule, going concern, matching",
+      "lesson_name": "GAAP principles",
+      "status": "evaluated",
+      "name": "GAAP principles",
+      "example_problem": "A business bought land for R500 000 in 2019; it is now worth R900 000 but is still shown at R500 000. Name and explain the GAAP principle applied, then match four more scenarios to prudence, materiality, business entity and going concern.",
+      "prior_knowledge": "Basic accounting concepts: assets, liabilities, income, expenses",
+      "importance": {
+        "summary": "Applied in every financial-reporting answer on Paper 1 (150 marks) - statements questions expect entries justified by principle (prudence, matching, going concern...).",
+        "required_by_topics": 5,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "PREPARATION OF FINANCIAL STATEMENTS"
+          },
+          {
+            "grade": 10,
+            "topic": "YEAR-END ACCOUNTING PROCEDURES, PRE- AND POST- ADJUSTMENT TRIAL BALANCE, FINAL ACCOUNTS"
+          },
+          {
+            "grade": 10,
+            "topic": "YEAR-END ACCOUNTING PROCEDURES, PRE- AND POST-ADJUSTMENT TRIAL BALANCE, FINAL ACCOUNTS"
+          },
+          {
+            "grade": 11,
+            "topic": "PARTNERSHIPS: FINANCIAL STATEMENTS AND NOTES"
+          },
+          {
+            "grade": 12,
+            "topic": "INVENTORY VALUATION"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "INTERNAL CONTROL, ETHICS, GAAP",
+          "subtopic": "GAAP principles: historical cost, prudence, materiality, business entity rule, going concern, matching"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Land bought for R500 000 in 2019 is now worth R900 000 but still shown at R500 000. The GAAP principle applied is:",
+          "options": [
+            "Historical cost",
+            "Prudence",
+            "Going concern",
+            "Materiality"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "The owner pays their home electricity from the business bank account and it is recorded as Drawings. The principle applied is:",
+          "options": [
+            "Business entity rule",
+            "Matching",
+            "Materiality",
+            "Historical cost"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "GAAP - Generally Accepted Accounting Practice - is the shared rulebook that makes financial statements trustworthy and comparable. Grade 10 needs six principles, and exams almost never ask for definitions: they give a scenario and ask which principle is applied. So learn each rule with its tell-tale sign.\n\nHistorical cost: assets are recorded at their original, verifiable purchase price, not today's estimated value. The purchase price is a fact backed by a source document; market value is a shifting opinion. Sign: an asset \"now worth more\" but \"still shown at\" what it cost.\n\nPrudence: never overstate good news, never understate bad news - anticipate possible losses, never record profits before they are certain. Writing off doubtful debts and valuing damaged stock at the lower figure are prudence at work. Sign: a cautious choice made under uncertainty. Do not confuse it with historical cost: historical cost sticks to an original price; prudence picks the careful estimate when the outcome is uncertain.\n\nMateriality: information is material if leaving it out or misstating it would change a reader's decision. A R45 stapler that lasts years is simply expensed - too small to matter - while a delivery vehicle is a fixed asset tracked separately. Sign: a decision turning on whether an amount is big enough to matter.\n\nBusiness entity rule: the business and its owner are separate in the books. The owner's personal spending from business funds is Drawings, never a business expense; the owner's private car and house never appear among business assets. Sign: any brush between the owner's personal affairs and the business records - \"the owner took\", \"for personal use\".\n\nGoing concern: the books assume the business will keep operating into the foreseeable future - which justifies recording assets at cost for continued use and spreading costs over future years. Sign: statements prepared \"assuming the business will continue\".\n\nMatching: incomes and expenses belong to the period in which they occur, so a period's expenses are matched against that period's income for a fair profit. Insurance paid in advance is split between years; wages owed at year end are accrued into the year they were worked. Sign: amounts shifted between periods - prepaid, accrued, \"belongs to this year\".\n\nExam method: underline the action taken, then ask what the accountant is refusing to do or insisting on doing. The refusal points straight at the principle.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "A business writes down damaged stock to below cost while ignoring a rumoured increase in its land's value. The principle is:",
+          "options": [
+            "Prudence - anticipate losses, never anticipate profits",
+            "Historical cost",
+            "Materiality",
+            "Matching"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Insurance of R12 000 paid in March for 12 months, with a June year end, is split so only four months count as this year's expense. The principle is:",
+          "options": [
+            "Matching",
+            "Going concern",
+            "Business entity rule",
+            "Prudence"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "What single question best identifies the principle in any scenario?",
+          "options": [
+            "What is the accountant refusing to do, or insisting on doing?",
+            "How large is the business?",
+            "Which journal was used?",
+            "Who audited the statements?"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "economics.circular_flow_basics": {
+      "card_id": "economics.circular_flow_basics",
+      "subject": "Economics",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Circular flow diagram; participants in an economy; closed vs open economy",
+      "lesson_name": "Circular flow: participants, leakages and injections",
+      "status": "evaluated",
+      "name": "Circular flow: participants, leakages and injections",
+      "example_problem": "Draw the circular flow for an open economy with households, firms, government and the foreign sector; classify savings, taxes, imports as leakages and investment, government spending, exports as injections.",
+      "prior_knowledge": "Factors of production and their owners",
+      "importance": {
+        "summary": "Macro-economics - a main topic of Paper 1 (150 marks) - opens with it: circular flow, public sector and foreign-exchange questions all presuppose participants, leakages and injections.",
+        "required_by_topics": 4,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS: ECONOMIC GOODS AND SERVICES"
+          },
+          {
+            "grade": 12,
+            "topic": "CIRCULAR FLOW"
+          },
+          {
+            "grade": 12,
+            "topic": "INTERNATIONAL TRADE (FOREIGN EXCHANGE MARKETS)"
+          },
+          {
+            "grade": 12,
+            "topic": "PUBLIC SECTOR"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "CIRCULAR FLOW AND QUANTITATIVE ELEMENTS",
+          "subtopic": "Circular flow diagram; participants in an economy; closed vs open economy"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Which list gives the three leakages of an open economy's circular flow?",
+          "options": [
+            "Savings, taxes, imports",
+            "Investment, government spending, exports",
+            "Savings, exports, taxes",
+            "Wages, rent, interest"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "A South African firm ships wine to Britain. In the circular flow this is:",
+          "options": [
+            "An injection - foreign money flows into South African firms",
+            "A leakage - the wine leaves the country",
+            "Neither - foreign trade is outside the model",
+            "A leakage - local wine supply falls"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "The circular flow maps how money and resources move between an economy's participants. Households own the factors of production - natural resources, labour, capital, entrepreneurship - and supply them to firms through the factor market. Firms pay factor incomes in return: rent, wages, interest and profit. Households then spend that income buying goods and services from firms through the goods market, and the circle turns. Every real flow (factors, goods) has a money flow (income, spending) travelling in the opposite direction.\n\nMoney escapes the spending stream through leakages and returns through injections, and each pair travels through the same door. Door one, the financial sector: households save part of their income - a leakage - but banks lend those savings to firms, which buy machinery and buildings - investment, an injection. Door two, the government: taxes drain spending power from households and firms - a leakage - while government spending on salaries, grants, roads and services pumps it back - an injection. Door three, the foreign sector: paying for imports sends money out of the country - a leakage - while export earnings bring foreign money in - an injection. Adding the foreign sector is what turns a closed economy into an open one, which is what South Africa is.\n\nThe three leakages are savings, taxes and imports; the three injections are investment, government spending and exports. Classify any transaction by following the money's direction, not the goods: money leaving the domestic spending stream is a leakage; money entering it is an injection. Buying an imported television is a leakage even though the television arrives, because the payment leaves.\n\nThe comparison between totals decides the economy's direction. If leakages exceed injections, less money returns to firms each round: production, income and employment shrink. If injections exceed leakages, the flow expands. When they are equal, the economy is in equilibrium. And resist the trap of calling leakages \"bad\" - savings finance tomorrow's investment; leakage and injection describe direction of flow, not virtue.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Households supply factors of production to firms and receive in return:",
+          "options": [
+            "Factor incomes - rent, wages, interest and profit",
+            "Goods and services",
+            "Taxes",
+            "Imports"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Through which door do savings re-enter the circular flow?",
+          "options": [
+            "The financial sector - banks lend savings to firms, which spend them as investment",
+            "The government, as taxes",
+            "The foreign sector, as exports",
+            "They cannot re-enter"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "If total leakages exceed total injections, the economy will:",
+          "options": [
+            "Contract - less money returns to firms each round",
+            "Expand",
+            "Stay in equilibrium",
+            "Automatically export more"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "economics.cost_and_revenue_analysis": {
+      "card_id": "economics.cost_and_revenue_analysis",
+      "subject": "Economics",
+      "grade": 11,
+      "topic": "Skills",
+      "subtopic": "Short-run costs: total, average and marginal; cost schedules and curves",
+      "lesson_name": "Cost and revenue analysis",
+      "status": "evaluated",
+      "name": "Cost and revenue analysis",
+      "example_problem": "From a table of output 0-6 units with total cost, derive average and marginal cost; given a market price of R30, derive total/average/marginal revenue and find the profit-maximising output.",
+      "prior_knowledge": "Averages and differences from tables; production concepts",
+      "importance": {
+        "summary": "The working method of Gr 12 Paper 2's market-structure questions (perfect and imperfect markets): output, profit and loss answers are cost/revenue calculations.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 12,
+            "topic": "DYNAMICS OF MARKETS: IMPERFECT MARKETS"
+          },
+          {
+            "grade": 12,
+            "topic": "DYNAMICS OF MARKETS: PERFECT MARKETS"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 11,
+          "topic": "DYNAMICS OF MARKETS: EFFECTS OF COSTS AND REVENUE",
+          "subtopic": "Short-run costs: total, average and marginal; cost schedules and curves"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Total cost is R60 at 3 units and R76 at 4 units. The marginal cost of the fourth unit is:",
+          "options": [
+            "R16",
+            "R19",
+            "R76",
+            "R4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "A price-taking firm sells at R30. The next unit has marginal cost R38. The firm should:",
+          "options": [
+            "Refuse the unit - it would reduce profit by R8",
+            "Produce it - revenue always helps",
+            "Produce it only if average cost is below R30",
+            "Halve its output"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Cost and revenue analysis turns a plain output-and-total-cost table into a production decision. Start with the cost side. Total cost at zero output is the fixed cost - rent and insurance are owed even when nothing is produced - and it hides inside every later total; the growing remainder is variable cost.\n\nTwo derived measures, two different verbs. Average cost = total cost DIVIDED by output: the cost per unit so far. It falls at first as the fixed cost spreads over more units, bottoms out, then rises as capacity strains - the U-shape. Marginal cost = the SUBTRACTION of neighbouring totals: what the last unit alone added. Marginal cost typically dips and then climbs steeply. Divide for average, subtract for marginal - mixing the verbs is the classic error.\n\nThe revenue side is simple for a price taker. At a market price of R30: total revenue climbs by R30 per unit; average revenue equals the price (revenue per unit sold can only be the selling price); and marginal revenue - the extra revenue from one more unit - is also R30 every time, because selling more does not move the market price. Graphed, that flat line at the price is the firm's demand line, the signature of perfect competition.\n\nThe decision rule: profit is maximised at the output where marginal revenue equals marginal cost - produce every unit whose MR is at least its MC, and refuse the first unit whose MC overtakes MR. Reason unit by unit: a unit bringing R30 at a marginal cost of R26 adds R4 of profit - produce it; a unit costing R38 against R30 destroys R8 - refuse it, even if the firm remains profitable overall. \"Still profitable\" is not the test; \"is the NEXT unit profitable\" is.\n\nVerify from both sides: the last unit produced must add profit (MC below MR) and the next one must subtract it (MC above MR). If time allows, confirm with the brute-force profit column - total revenue minus total cost at each output - which must peak at the same output the marginal rule selected. Two independent methods agreeing is proof, not luck. In Grade 12, perfect and imperfect market questions interrogate exactly this table - only the shape of the revenue side changes.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Average cost is calculated by, and marginal cost by:",
+          "options": [
+            "Dividing total cost by output; subtracting neighbouring total costs",
+            "Subtracting neighbouring totals; dividing by output",
+            "Both by dividing",
+            "Both by subtracting"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "For a price-taking firm, marginal revenue is constant because:",
+          "options": [
+            "Each extra unit sells at the unchanged market price",
+            "Costs are constant",
+            "The firm advertises",
+            "Output is limited"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Profit at 5 units is R48; producing a 6th unit (MC R38, MR R30) gives R40. The profit-maximising output is:",
+          "options": [
+            "5 units - the sixth unit destroys R8 of profit",
+            "6 units - profit is still positive",
+            "4 units - always stop before the peak",
+            "Cannot be determined"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "economics.demand_and_supply": {
+      "card_id": "economics.demand_and_supply",
+      "subject": "Economics",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Supply and demand; price formation; functions of markets",
+      "lesson_name": "Demand and supply: laws, shifts and equilibrium",
+      "status": "evaluated",
+      "name": "Demand and supply: laws, shifts and equilibrium",
+      "example_problem": "The price of maize meal rises after a drought halves the harvest while consumer income is unchanged. Draw the demand/supply diagram, show which curve shifts, and identify the new equilibrium price and quantity.",
+      "prior_knowledge": "Needs and wants; markets as meeting places of buyers and sellers",
+      "importance": {
+        "summary": "Micro-economics - a main topic of Paper 2 (150 marks) - is built on it: perfect/imperfect markets, market failures and price elasticity all start from demand-supply reasoning; inflation questions on the contemporary side use it too.",
+        "required_by_topics": 4,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "DYNAMICS OF THE MARKET"
+          },
+          {
+            "grade": 11,
+            "topic": "DYNAMICS OF THE MARKET: RELATIONSHIP BETWEEN MARKETS"
+          },
+          {
+            "grade": 12,
+            "topic": "DYNAMICS OF MARKETS: PERFECT MARKETS"
+          },
+          {
+            "grade": 12,
+            "topic": "ECONOMIC ISSUES OF THE DAY: INFLATION"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "DYNAMICS OF THE MARKET",
+          "subtopic": "Supply and demand; price formation; functions of markets"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "A drought halves the maize harvest while consumer income is unchanged. On the market diagram:",
+          "options": [
+            "The supply curve shifts left; the new equilibrium has a higher price and smaller quantity",
+            "The demand curve shifts right; price falls",
+            "Both curves shift left; price is unchanged",
+            "There is a movement along the supply curve only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "The price of a good itself rises and buyers purchase less. This appears on the diagram as:",
+          "options": [
+            "A movement along the same demand curve",
+            "A leftward shift of the demand curve",
+            "A rightward shift of the demand curve",
+            "A shift of the supply curve"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Demand is the quantity buyers are willing AND able to buy at each price; supply is what producers are willing and able to offer. The law of demand: price up, quantity demanded down - so the demand curve slopes downward. The law of supply: price up, quantity supplied up, because price is the producer's reward - so the supply curve slopes upward. Convention: price on the vertical axis, quantity on the horizontal.\n\nThe distinction that decides marks: movement along a curve versus a shift of the whole curve. Ask one question - did the good's OWN price cause the change? If yes, slide along the existing curve (a change in quantity demanded or supplied). If anything else changed, the whole curve shifts. Demand shifters: income, tastes, prices of substitutes and complements, population. Supply shifters: input costs, technology, taxes and subsidies, number of producers, and natural conditions like weather.\n\nWhere the curves cross is equilibrium: quantity demanded equals quantity supplied and the market clears. No other price can last. Above equilibrium, supply outruns demand - a surplus - and unsold stock pushes the price down. Below equilibrium, demand outruns supply - a shortage - and competing buyers bid the price up. The market settles at equilibrium through these forces alone; nobody sets the price.\n\nWorked diagnosis - the drought question. A drought halves the maize harvest; consumer income is unchanged. Which side is hit? The farms: supply. Did the maize price cause it? No, weather did: shift the whole supply curve, leftward, because less is offered at every price. Demand stays put - income is unchanged. At the old price there is now a shortage; buyers bid the price up; as it rises, some buyers cut back (a movement along the demand curve) until the shortage disappears. New equilibrium: higher price, smaller quantity traded.\n\nAnswer method: labelled axes, both curves, original equilibrium marked with dotted lines, the shifted curve with an arrow, new equilibrium read off, then two sentences explaining the shortage or surplus that moved the price. The diagram shows what happened; the words earn the reasoning marks.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Which single question separates a shift of a curve from a movement along it?",
+          "options": [
+            "Did the good's own price cause the change?",
+            "Did the quantity change?",
+            "Did the government intervene?",
+            "Is the good a necessity?"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "A price above equilibrium cannot last because:",
+          "options": [
+            "A surplus forms and unsold stock pushes sellers to cut the price",
+            "A shortage forms and buyers bid the price up",
+            "The demand curve shifts right",
+            "The government always corrects it"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "After the drought shifts supply left, buyers reducing purchases as the price rises is shown as:",
+          "options": [
+            "A movement along the demand curve",
+            "A leftward shift of the demand curve",
+            "A rightward shift of supply",
+            "A new demand curve"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "economics.graphing_from_tables": {
+      "card_id": "economics.graphing_from_tables",
+      "subject": "Economics",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "",
+      "lesson_name": "Drawing and reading economics graphs from tables",
+      "status": "evaluated",
+      "name": "Drawing and reading economics graphs from tables",
+      "example_problem": "Given a table of price (R2-R10) against quantity demanded and quantity supplied, plot both curves on one set of axes, label the equilibrium, and read off the excess supply at R8.",
+      "prior_knowledge": "Plotting points on axes; reading values off a graph",
+      "importance": {
+        "summary": "Market and cost/revenue questions across both papers expect drawn and read graphs; the data-response format makes graph handling a mark-earner in every section.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "DYNAMICS OF THE MARKET"
+          },
+          {
+            "grade": 11,
+            "topic": "DYNAMICS OF MARKETS: EFFECTS OF COSTS AND REVENUE"
+          }
+        ]
+      },
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "At R8 a schedule shows quantity demanded 40 and quantity supplied 80. The excess supply is:",
+          "options": [
+            "40 units",
+            "80 units",
+            "120 units",
+            "8 units"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "On an economics graph, price and quantity are placed:",
+          "options": [
+            "Price on the vertical axis, quantity on the horizontal",
+            "Quantity on the vertical axis, price on the horizontal",
+            "Both on the horizontal axis",
+            "Whichever is larger goes vertical"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A demand and supply schedule is a table listing, for each price, the quantity buyers would demand and the quantity sellers would supply. Turning it into a graph makes it an answer machine - but only if it is built properly.\n\nRead the table before drawing. The demand column should fall as price rises (law of demand - a downward curve coming) and the supply column should rise (law of supply - upward curve). Spot the row where the two columns are equal: that row is the equilibrium, and your curves must cross exactly there. Note the ranges of price and quantity - they decide your axis scales.\n\nBuild the axes by convention: price on the vertical axis, quantity on the horizontal - always, even though it feels backwards. Choose even scales, where equal distances mean equal amounts; an uneven scale bends the curves and corrupts every reading afterwards. Label both axes with units and give the graph a heading - markers award these directly.\n\nPlot one point per table row: go up to the price, across to the quantity, mark. Join the demand points into a smooth curve labelled D, and the supply points into S on the same axes. Their intersection is the equilibrium: read its price and quantity off the axes with dotted lines and label the point E. Confirm against the table - the crossing must land on the row where the columns match; if it does not, a point is misplotted or a scale is uneven.\n\nReading gaps is the exam skill. For excess supply at a given price: run a horizontal line at that price; where it cuts the demand curve, read quantity demanded; where it cuts the supply curve, read quantity supplied; subtract. Both readings must come from the same price - the commonest error is mixing prices. A price above equilibrium always shows supply exceeding demand (a surplus, pushing price down); below equilibrium, demand exceeds supply (a shortage, pulling price up).\n\nVerification habit: every point checked against its row, slopes matching the laws, intersection matching the equal row, and any surplus or shortage computed as a subtraction of two same-price readings.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Your curves cross at a price where the table's two columns are NOT equal. This means:",
+          "options": [
+            "A point is misplotted or a scale is uneven - recheck against the table",
+            "The market has two equilibria",
+            "The table is wrong",
+            "Equilibrium moved while drawing"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Why must an axis use even steps?",
+          "options": [
+            "Uneven steps bend the curves and make every reading unreliable",
+            "Even steps use less paper",
+            "It only matters for the supply curve",
+            "Markers do not check scales"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "The most common error when reading excess supply off a graph is:",
+          "options": [
+            "Taking the two quantity readings at different prices",
+            "Using dotted lines",
+            "Labelling the curves",
+            "Starting from the vertical axis"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "economics.monetary_and_fiscal_policy": {
+      "card_id": "economics.monetary_and_fiscal_policy",
+      "subject": "Economics",
+      "grade": 11,
+      "topic": "Skills",
+      "subtopic": "Central banking: basic functions, monetary policy",
+      "lesson_name": "Monetary and fiscal policy basics",
+      "status": "evaluated",
+      "name": "Monetary and fiscal policy basics",
+      "example_problem": "Inflation is above the target band. State the instrument the SARB is most likely to use and its transmission to spending; contrast with two fiscal-policy instruments the finance minister controls, and classify each as expansionary or contractionary.",
+      "prior_knowledge": "Role of the SARB; the national budget (government spending and taxes)",
+      "importance": {
+        "summary": "Recurs across both papers: business cycles and growth (Paper 1 macro/pursuits) and inflation (Paper 2 contemporary issues) are all answered through policy instruments.",
+        "required_by_topics": 4,
+        "required_by": [
+          {
+            "grade": 12,
+            "topic": "BUSINESS CYCLES"
+          },
+          {
+            "grade": 12,
+            "topic": "ECONOMIC GROWTH AND DEVELOPMENT"
+          },
+          {
+            "grade": 12,
+            "topic": "ECONOMIC GROWTH AND DEVELOPMENT"
+          },
+          {
+            "grade": 12,
+            "topic": "ECONOMIC ISSUES OF THE DAY: INFLATION"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 11,
+          "topic": "MONEY AND BANKING",
+          "subtopic": "Central banking: basic functions, monetary policy"
+        },
+        {
+          "grade": 12,
+          "topic": "PUBLIC SECTOR",
+          "subtopic": "Budgets; fiscal policy including the Laffer curve; public sector failure"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Inflation is above the 3-6% target band. The SARB's most likely response is to:",
+          "options": [
+            "Raise the repo rate",
+            "Lower the repo rate",
+            "Increase government spending",
+            "Reduce VAT"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "'The Minister of Finance raises the repo rate.' What is wrong with this statement?",
+          "options": [
+            "The repo rate is controlled by the SARB, not the minister",
+            "The repo rate cannot change",
+            "Only Parliament sets rates",
+            "Nothing - it is correct"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Two policies steer the economy, driven by two different hands. Monetary policy belongs to the South African Reserve Bank - independent of government, mandated to protect the currency's value, in practice keeping inflation inside the 3 to 6 percent target band. Its headline instrument is the repo rate. Fiscal policy belongs to the government, announced by the Minister of Finance in the Budget; its instruments are government spending and taxation. The test for any instrument: whose hand is on it? Reserve Bank - monetary. The Budget - fiscal.\n\nThe repo rate is what commercial banks pay to borrow from the SARB, and its effects travel a chain. Repo up: banks' funding costs rise; banks raise their prime lending rate; home loans, car finance and credit become dearer; households and firms cut back on borrowing and spending; total demand slows, and with less money chasing goods, the pressure on prices eases. That is contractionary monetary policy. The honest trade-off: the same medicine cools growth and can cost jobs in the short run. The reverse - cutting the repo rate - cheapens credit and stimulates spending: expansionary.\n\nFiscal policy fights inflation from the demand side too: restrain government spending (fewer projects, tighter budgets) and/or raise taxes (less disposable income, dearer spending) - both contractionary. In a recession, the gears reverse: more spending and tax cuts pump demand in - expansionary. Classify any move by asking whether it puts spending power into the economy (expansionary) or withdraws it (contractionary).\n\nThe comparison exams love: monetary policy is fast but blunt - the Monetary Policy Committee meets every two months, and the repo rate hits every borrower in the country indiscriminately. Fiscal policy is slower - the Budget is annual and political - but can be aimed at specific sectors, taxes or programmes. The two work best pulling together: if the SARB tightens while government spends freely, the policies fight each other and the SARB must tighten harder.\n\nAnswer method: name the problem (inflation or recession), name the driver, name the instrument, state the direction and classification, then walk the transmission chain step by step to prices. Wrong-hand statements - a minister moving the repo rate - are themselves the error to spot.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Which chain correctly orders the transmission of a repo rate increase?",
+          "options": [
+            "Repo up → prime up → loans dearer → spending slows → price pressure eases",
+            "Repo up → taxes up → spending up → inflation up",
+            "Repo up → prime down → borrowing rises → inflation falls",
+            "Repo up → exports rise → inflation falls"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "A VAT increase is classified as:",
+          "options": [
+            "Contractionary fiscal policy - it withdraws spending power",
+            "Expansionary fiscal policy",
+            "Contractionary monetary policy",
+            "Expansionary monetary policy"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Monetary policy versus fiscal policy is best summarised as:",
+          "options": [
+            "Fast but blunt versus slower but targeted",
+            "Targeted versus blunt",
+            "Annual versus two-monthly",
+            "Both identical in speed and reach"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "geography.contour_reading": {
+      "card_id": "geography.contour_reading",
+      "subject": "Geography",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "1:50 000 topographic maps: natural and constructed features, height clues, contour patterns (river valleys, hills, mountains, ridges, spurs)",
+      "lesson_name": "Reading contour lines",
+      "status": "evaluated",
+      "name": "Reading contour lines",
+      "example_problem": "On a 1:50 000 extract with a 20 m contour interval, identify the river valley, the steepest slope and the spot height, and explain how contour spacing shows gradient.",
+      "prior_knowledge": "Map symbols and height representation from Gr 8-9 mapwork",
+      "importance": {
+        "summary": "Mapwork is Question 3 on BOTH Geography papers, every year: 30/150 per paper in Gr 11 and Gr 12 (map skills & calculations 10, map interpretation 12, GIS 8) - contour reading is the entry point.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 12,
+            "topic": "Tropical cyclones"
+          },
+          {
+            "grade": 12,
+            "skill": "geography.gradient_calculation"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 11,
+            "paper": "paper1",
+            "section": "Mapwork (Q3)",
+            "marks": 30,
+            "paper_total": 150
+          },
+          {
+            "grade": 11,
+            "paper": "paper2",
+            "section": "Mapwork (Q3)",
+            "marks": 30,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Mapwork (Q3)",
+            "marks": 30,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper2",
+            "section": "Mapwork (Q3)",
+            "marks": 30,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "Consolidation of Grade 8 and 9 map skills",
+          "subtopic": "1:50 000 topographic maps: natural and constructed features, height clues, contour patterns (river valleys, hills, mountains, ridges, spurs)"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Contour lines drawn very close together indicate:",
+          "options": [
+            "A steep slope - the fixed height gain happens over a short horizontal distance",
+            "A gentle slope",
+            "A flat plain",
+            "A river mouth"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "In a river valley, the V-shaped bends in the contour lines point:",
+          "options": [
+            "Uphill, toward the higher ground upstream",
+            "Downhill, with the flow",
+            "Always due north",
+            "Toward the nearest road"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A contour line joins all points of equal height above sea level - walk along one and you neither climb nor descend. On a 1:50 000 topographic sheet the contour interval is typically 20 m: each line is 20 m higher or lower than its neighbours. Check the interval in the key before anything else. Three rules police every map: contours never cross (a point cannot have two heights), never simply end (they close into loops or run off the sheet), and every fourth or fifth line is a thicker, labelled index contour - your anchor for counting. A point between the 820 and 840 lines lies between those heights; a spot height (a dot with a number, like 913) pins a summit's exact altitude, which contours alone cannot give.\n\nSpacing is gradient. Between neighbouring contours the land always rises the fixed interval; what varies is the horizontal distance walked to gain it. Lines far apart: the rise is spread over a long walk - gentle. Lines crowded: the same rise over a short distance - steep. Lines almost touching: a cliff. Even spacing means a uniform slope; wide-at-top, close-at-bottom is concave; close-at-top, wide-at-bottom is convex. To justify \"steepest slope\" in an exam, quote the evidence: the contours are closest together here, so the land rises 20 m over the shortest horizontal distance.\n\nValleys and spurs are the classic confusion pair, both showing bent contours. A valley's contours bend in a V pointing UPHILL, toward the upstream high ground - the line must detour up the low ground to keep its height - and a river often runs through it. A spur is high ground jutting between valleys: its bulge points DOWNHILL and never carries a river. When in doubt, read the heights on either side and ask which way is up. Confirm any river's direction two ways: the Vs point upstream, and the contour values crossing the river must decrease downstream - water never flows uphill.\n\nOther signatures: closed rings with rising values - a hill; a stretched high band - a ridge; the dip between two summits - a saddle; almost no contours - a plain. Method for any question: read the interval, find the index contours, identify features by pattern, confirm with the printed heights, and answer by quoting spacing and values as evidence.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Why can two contour lines never cross?",
+          "options": [
+            "A single point cannot have two different heights",
+            "It would make the map untidy",
+            "Rivers would have nowhere to flow",
+            "Printers cannot draw crossings"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Contours crossing a river read 840, 820, 800 in the direction you trace it. You are tracing:",
+          "options": [
+            "Downstream - heights must decrease in the direction of flow",
+            "Upstream",
+            "Along a ridge",
+            "It cannot be determined"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "A bulge of contours pointing downhill, with no river, is a:",
+          "options": [
+            "Spur - high ground jutting out between valleys",
+            "Valley",
+            "Saddle",
+            "Cliff"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "What extra information does a spot height give that contours cannot?",
+          "options": [
+            "The exact altitude of a point, not just a between-lines range",
+            "The gradient of the slope",
+            "The direction of drainage",
+            "The contour interval"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "geography.gradient_calculation": {
+      "card_id": "geography.gradient_calculation",
+      "subject": "Geography",
+      "grade": 12,
+      "topic": "Geographical Skills and Techniques",
+      "subtopic": "",
+      "lesson_name": "Gradient calculation",
+      "status": "evaluated",
+      "name": "Gradient calculation",
+      "example_problem": "Calculate the average gradient between trig beacon 251 (1 200 m) and a spot height of 900 m that are 4,5 km apart on a 1:50 000 topographic map.",
+      "prior_knowledge": "Student can read contour lines and convert between map units",
+      "tutor": "tutor_009",
+      "tutor_style": "formal",
+      "requires_skills": [
+        "geography.contour_reading"
+      ],
+      "importance": {
+        "summary": "A named mapwork calculation: part of Question 3's map skills and calculations (10 of the 30 mapwork marks on each paper) and required for fluvial/geomorphology cross-section work.",
+        "required_by_topics": 1,
+        "required_by": [
+          {
+            "grade": 12,
+            "topic": "Fluvial processes"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Mapwork (Q3) - map skills and calculations",
+            "marks": 10,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper2",
+            "section": "Mapwork (Q3) - map skills and calculations",
+            "marks": 10,
+            "paper_total": 150
+          }
+        ]
+      },
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Trig beacon 251 stands at 1 200 m and a spot height at 900 m; the points are 4,5 km apart. The average gradient is:",
+          "options": [
+            "1 : 15",
+            "1 : 66,7",
+            "15 : 1",
+            "1 : 150"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "Which slope is steeper?",
+          "options": [
+            "1 : 15",
+            "1 : 50",
+            "1 : 150",
+            "They are equally steep"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Gradient turns the contour-spacing impression of steepness into an exact number. The formula: gradient = vertical interval ÷ horizontal equivalent (VI over HE, rise over run), expressed as a ratio 1 : x, meaning the land rises 1 m vertically for every x metres travelled horizontally. Interpretation rule that catches many candidates: the LARGER the number after the colon, the GENTLER the slope - 1 : 15 is far steeper than 1 : 150, because the metre of climb is diluted over more walking.\n\nHarvest the two ingredients from the map. VI is the height difference: higher point minus lower point, taken from the best height sources available - trig beacons and spot heights give exact surveyed values, contours give ranges. HE is the horizontal distance between the points; if not given, measure the map distance and convert with the scale (on 1:50 000, centimetres × 50 000, then down the unit ladder). The non-negotiable step: both ingredients must be in the SAME units before dividing - convert kilometres to metres. Mixed units are the deadliest error in this calculation.\n\nWorked example, exam layout. Beacon at 1 200 m, spot height at 900 m, 4,5 km apart. Line one, formula: gradient = VI ÷ HE. Line two, substitution in matching units: 300 m ÷ 4 500 m. Line three, simplify by dividing both by the numerator: 4 500 ÷ 300 = 15. Line four, answer in ratio form: 1 : 15 - and only this form collects the final mark; a decimal or unsimplified fraction usually does not. Add one interpretation sentence: the land rises 1 m for every 15 m travelled - noticeably steep, too steep for a railway.\n\nIt is an AVERAGE gradient because the real land may dip and climb between the points; the ratio smears the total rise evenly over the total distance - a straight-line summary of a possibly bumpy reality.\n\nThree closing checks: sense (is the steepness plausible for land - a wild x signals a unit slip), reverse arithmetic (15 × 300 = 4 500), and order (the vertical 1 leads the ratio; for ordinary land x should exceed 1, since you walk further than you climb).",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Why must 4,5 km become 4 500 m before dividing?",
+          "options": [
+            "The ratio only has meaning when VI and HE are in the same units",
+            "Kilometres are not allowed in Geography",
+            "It makes the numbers bigger",
+            "No conversion is needed"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "A learner reports the answer as 15 : 1. The error is:",
+          "options": [
+            "An inverted ratio - the vertical 1 m of climb must lead",
+            "A rounding error",
+            "A measurement error",
+            "None - it is equivalent"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Why is the result called an AVERAGE gradient?",
+          "options": [
+            "The total rise is spread evenly over the total distance, ignoring dips and climbs between the points",
+            "Several learners' answers are averaged",
+            "The heights are approximate",
+            "The map scale is an average"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "geography.map_scale_and_distance": {
+      "card_id": "geography.map_scale_and_distance",
+      "subject": "Geography",
+      "grade": 12,
+      "topic": "Geographical Skills and Techniques",
+      "subtopic": "Scale and measuring distance (line and ratio scales); coordinates to locate features",
+      "lesson_name": "Map scale and distance",
+      "status": "evaluated",
+      "name": "Map scale and distance",
+      "example_problem": "The distance between two points on a 1:50 000 topographic map is 8,6 cm. Calculate the real distance in kilometres.",
+      "prior_knowledge": "Student knows ratio scale and metric unit conversions",
+      "importance": {
+        "summary": "Scale and distance calculations sit inside Mapwork Question 3 on BOTH papers (30/150 each, Gr 11 and Gr 12 - calculations are 10 of those 30 marks) and inside development and climate topics' integrated mapwork.",
+        "required_by_topics": 3,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "Development issues and challenges"
+          },
+          {
+            "grade": 11,
+            "topic": "Role of development aid"
+          },
+          {
+            "grade": 12,
+            "topic": "Subtropical anticyclones and associated weather conditions"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 11,
+            "paper": "paper1",
+            "section": "Mapwork (Q3) - map skills and calculations",
+            "marks": 10,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Mapwork (Q3) - map skills and calculations",
+            "marks": 10,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "Consolidation of Grade 8 and 9 map skills",
+          "subtopic": "Scale and measuring distance (line and ratio scales); coordinates to locate features"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Two points are 8,6 cm apart on a 1:50 000 map. The real distance is:",
+          "options": [
+            "4,3 km",
+            "43 km",
+            "0,43 km",
+            "8,6 km"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "On a 1:50 000 sheet, one centimetre of map represents:",
+          "options": [
+            "500 m of ground",
+            "50 m of ground",
+            "5 km of ground",
+            "50 km of ground"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "The ratio scale 1:50 000 means one unit of any length on the map represents 50 000 of the same units on the ground. It is unitless - measure in centimetres and multiply by 50 000, and the answer is in centimetres of real ground. Feel the size: 50 000 cm is 500 m, so every map centimetre is half a kilometre; two centimetres, one kilometre.\n\nThe standard calculation, four lines. One: measure (or receive) the map distance - point-centre to point-centre, to the nearest millimetre; at this scale each millimetre of sloppiness is 50 m of ground. Two: multiply by the scale factor - 8,6 cm × 50 000 = 430 000 cm. Three: walk the metric ladder - divide by 100 for metres (4 300 m), divide by 1 000 for kilometres (4,3 km). Four: state the answer WITH its unit, in the unit the question demands. The ladder chant: centi to metres, divide by a hundred; metres to kays, divide by a thousand.\n\nCurved distances - a winding road or river - defeat a rigid ruler: lay a string or paper-strip edge along the bends, mark the end, straighten it against the ruler, and read the total map distance; the arithmetic afterwards is identical. Memos accept a small range on curved measurements, so press the string into every bend rather than cutting corners.\n\nDifferent scale, same machine: on a 1:10 000 orthophoto, multiply by 10 000 instead - 8,6 cm is only 0,86 km. Never assume the scale; read it off the sheet, especially when a question moves between the topographic map and the orthophoto. And remember which is the LARGER scale: 1:10 000, because one ten-thousandth is the bigger fraction - larger scale, smaller area, more detail. The reverse question runs the machine backwards: real distance to map distance means convert to centimetres, then DIVIDE by the scale factor - 4,3 km = 430 000 cm ÷ 50 000 = 8,6 cm.\n\nThe sense check that saves matrics: about 10 cm on a 1:50 000 sheet is 5 km. If 8,6 cm produces 43 km or 0,43 km, a decimal slipped on the ladder. Convert, then ask whether you could walk the answer in an afternoon.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "The metric ladder from centimetres to kilometres runs:",
+          "options": [
+            "÷100 to metres, then ÷1 000 to kilometres",
+            "÷1 000 then ÷100",
+            "×100 then ×1 000",
+            "÷10 then ÷100"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "To measure distance along a winding river on the map, you should:",
+          "options": [
+            "Lay string or a paper strip along the bends, straighten it, and read against a ruler",
+            "Measure the straight line between endpoints",
+            "Count contour crossings",
+            "Estimate by eye"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Which map has the larger scale, and what does that mean?",
+          "options": [
+            "1:10 000 - a bigger fraction, showing a smaller area in more detail",
+            "1:50 000 - because 50 000 is bigger",
+            "Both scales are equal",
+            "1:50 000 - it covers more ground"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "The real distance is 4,3 km. On a 1:50 000 map the points are apart by:",
+          "options": [
+            "8,6 cm - convert to 430 000 cm and divide by 50 000",
+            "4,3 cm",
+            "86 cm",
+            "0,86 cm"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "geography.synoptic_map_reading": {
+      "card_id": "geography.synoptic_map_reading",
+      "subject": "Geography",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Precipitation types on station models; reading and interpreting a selection of synoptic weather maps",
+      "lesson_name": "Reading synoptic weather maps",
+      "status": "evaluated",
+      "name": "Reading synoptic weather maps",
+      "example_problem": "From a station model showing 18 °C, dew point 16 °C, 6/8 cloud cover and a NW wind at 20 knots, decode each element, then locate the cold front on the synoptic chart and describe the weather behind it.",
+      "prior_knowledge": "Weather elements; weather maps seen in news media",
+      "importance": {
+        "summary": "Climate & Weather is Question 1 of Paper 1 (60/150) in Gr 12, and The Atmosphere is Q1 (60/150) in Gr 11 - synoptic-chart interpretation is how those questions are asked; it also feeds mapwork interpretation (12/30).",
+        "required_by_topics": 4,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "Africa’s weather and climate"
+          },
+          {
+            "grade": 12,
+            "topic": "Mid-latitude cyclones (frontal depression, extra tropical cyclones)"
+          },
+          {
+            "grade": 12,
+            "topic": "Subtropical anticyclones and associated weather conditions"
+          },
+          {
+            "grade": 12,
+            "topic": "Tropical cyclones"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 11,
+            "paper": "paper1",
+            "section": "The Atmosphere (Q1)",
+            "marks": 60,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Climate and weather (Q1)",
+            "marks": 60,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "Reading and interpreting synoptic weather maps",
+          "subtopic": "Precipitation types on station models; reading and interpreting a selection of synoptic weather maps"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "A station model shows temperature 18 °C and dew point 16 °C. The small gap tells you:",
+          "options": [
+            "The air is nearly saturated - humid, with cloud or rain close at hand",
+            "The air is very dry",
+            "Frost is certain tonight",
+            "The station is at high altitude"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "A wind shaft flies into the station circle from the north-west with two full feathers. The wind is:",
+          "options": [
+            "North-westerly at 20 knots",
+            "South-easterly at 20 knots",
+            "North-westerly at 2 knots",
+            "Blowing toward the north-west at 10 knots"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A synoptic chart is a snapshot of the atmosphere at one moment. Isobars join places of equal pressure (in hPa) and work like contour lines for the atmosphere: around an H (high) pressure rises to the centre, around an L (low) it falls. The weather logic: in a high, air sinks, warms and dries - clear, settled weather; in a low, air rises, cools and condenses - cloud and rain. Sink = clear, rise = rain. Closely packed isobars mean a steep pressure gradient and strong winds.\n\nEach station circle compresses a full report. The circle's shading gives cloud cover in eighths (oktas) - six-eighths shaded means three-quarters of the sky is cloudy. Top-left of the circle: air temperature. Below it: dew point - the temperature at which the air would saturate. Never read the dew point alone; read the GAP between it and the air temperature. A small gap (18 °C against 16 °C) means the air needs to cool only slightly to condense - humid, cloud and rain nearby. A wide gap means dry air. Wind is a shaft with feathers: the shaft flies INTO the circle from the direction the wind comes FROM (winds are always named for their origin), and feathers count speed - a full feather 10 knots, a half feather 5.\n\nSouth Africa's weather-maker is the cold front - a bold line of triangles, the triangles pointing in the direction of movement, sweeping from south-west to north-east ahead of a low passing south of the country. Confirm a front with evidence on both sides. Ahead of it: warm, humid north-westerly flow with thickening cloud - the classic pre-frontal station. At the line: dense cold air wedges under the warm air and forces it violently upward, building cumulonimbus and the heaviest weather. Behind it: temperature drops sharply, the wind swings from north-westerly to south-westerly, pressure rises as the next high builds in, and showery weather clears. Cold, showery, clearing - the post-frontal trio. The NW-to-SW wind swing is often the single clearest sign a front has passed a station.\n\nMethod: find the pressure cells, read isobar spacing for wind, decode the station models, locate fronts by symbol and confirm with the air masses on either side - then answer in observations, quoting the numbers and directions.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Why does a high-pressure cell generally bring clear weather?",
+          "options": [
+            "Sinking air warms and dries as it descends",
+            "Rising air cools and condenses",
+            "Highs contain no wind",
+            "Highs only occur in summer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Behind a South African cold front, the weather is typically:",
+          "options": [
+            "Colder, south-westerly winds, rising pressure, showers then clearing",
+            "Warmer, north-westerly winds, falling pressure",
+            "Calm, humid and misty",
+            "Unchanged"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "On the chart, a cold front is drawn as:",
+          "options": [
+            "A line with triangles pointing in its direction of movement",
+            "A line with semicircles",
+            "A double dashed line",
+            "A row of crosses"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "maths.factorisation_techniques": {
+      "card_id": "maths.factorisation_techniques",
+      "subject": "Maths",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Factorisation: trinomials, grouping in pairs, sum and difference of two cubes",
+      "lesson_name": "Factorisation techniques",
+      "status": "evaluated",
+      "name": "Factorisation techniques",
+      "example_problem": "Factorise fully: 6x^2 - 7x - 3; x^3 + 8; and 2ax + 2ay - bx - by (grouping in pairs).",
+      "prior_knowledge": "Products of binomials; common factors",
+      "importance": {
+        "summary": "Feeds the Algebra section every year (30/100 Gr 10, 45/150 Gr 11, 25/150 Gr 12 on Paper 1) AND Gr 12 Differential Calculus (35/150), where the factor theorem is applied to cubics.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "Equations and inequalities"
+          },
+          {
+            "grade": 12,
+            "topic": "Differential Calculus, including polynomials"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 10,
+            "paper": "paper1",
+            "section": "Algebra",
+            "marks": 30,
+            "paper_total": 100
+          },
+          {
+            "grade": 11,
+            "paper": "paper1",
+            "section": "Algebraic expressions, equations and inequalities",
+            "marks": 45,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Algebraic expressions, equations and inequalities",
+            "marks": 25,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Differential Calculus",
+            "marks": 35,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "Algebraic expressions",
+          "subtopic": "Factorisation: trinomials, grouping in pairs, sum and difference of two cubes"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Factorised fully, 6x² − 7x − 3 equals:",
+          "options": [
+            "(2x − 3)(3x + 1)",
+            "(2x + 3)(3x − 1)",
+            "(6x − 1)(x + 3)",
+            "(3x − 3)(2x + 1)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "Factorised fully, x³ + 8 equals:",
+          "options": [
+            "(x + 2)(x² − 2x + 4)",
+            "(x + 2)(x² + 2x + 4)",
+            "(x − 2)(x² + 2x + 4)",
+            "(x + 2)³"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Factorising reverses expanding: it breaks an expression into the brackets whose product it is. Run the same decision tree every time. First, always: take out any common factor across all terms. Then count the terms - the count picks the tool. Two terms: difference of squares, or sum/difference of cubes. Three terms: the trinomial method. Four terms: grouping in pairs. Finally, check every bracket in your answer for further factorising - \"fully\" is a contract.\n\nTrinomials ax² + bx + c: hunt two numbers whose product is a × c and whose sum is b. For 6x² − 7x − 3: product 6 × (−3) = −18, sum −7. Read the signs first - negative product means opposite signs; negative sum means the bigger number is negative. The pair is −9 and +2. Split the middle term: 6x² − 9x + 2x − 3; group in pairs: 3x(2x − 3) + 1(2x − 3); the matching brackets are the built-in check - if they differ, the split or a sign is wrong. Factor the bracket out: (2x − 3)(3x + 1).\n\nCubes: recognise perfect cubes (1, 8, 27, 64, 125, 216; x³; y⁶). The identities share one pattern - a short bracket of the two cube roots, and a long bracket built square-the-first, multiply-the-pair, square-the-last - with signs by SOAP: Same as the original, Opposite for the middle term, Always Positive last. So x³ + 8 = (x + 2)(x² − 2x + 4). The middle term is a × b (2x), not a square (never 4x), and the long bracket NEVER factorises further - stopping there is correct.\n\nGrouping in pairs, for four terms: 2ax + 2ay − bx − by. Pair as they stand, factor each pair - and when a pair leads with a minus, take out a NEGATIVE factor so the bracket's signs flip into a match: 2a(x + y) − b(x + y). Then factor out the common bracket: (x + y)(2a − b). If pairs share nothing, rearrange kin together first.\n\nVerify everything the same way: expand your answer and confirm the original returns. Thirty seconds, and the answer is proven rather than hoped.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "For 6x² − 7x − 3, the split numbers must satisfy:",
+          "options": [
+            "Product −18 and sum −7",
+            "Product −3 and sum −7",
+            "Product 18 and sum 7",
+            "Product −21 and sum −3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "In SOAP for the cubes identities, the letters give:",
+          "options": [
+            "Same, Opposite, Always Positive - the three signs",
+            "Square, Order, Add, Product",
+            "Sum Of All Powers",
+            "Simplify, Organise, Apply, Prove"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Grouping −bx − by requires factoring out:",
+          "options": [
+            "−b, leaving (x + y)",
+            "+b, leaving (x + y)",
+            "−x, leaving (b + y)",
+            "+b, leaving (−x + y)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "The reliable check for any factorisation is:",
+          "options": [
+            "Expand the answer and confirm the original expression returns",
+            "Substitute x = 0 only",
+            "Compare bracket lengths",
+            "Repeat the factorisation"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "maths.laws_of_exponents": {
+      "card_id": "maths.laws_of_exponents",
+      "subject": "Maths",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Use exponent laws to simplify expressions and solve equations (rational exponents)",
+      "lesson_name": "Laws of exponents",
+      "status": "evaluated",
+      "name": "Laws of exponents",
+      "example_problem": "Simplify (2x^3y)^2 x 4x^-2 / (8xy^2) and solve 3^(x+1) = 27.",
+      "prior_knowledge": "Gr 9 exponent laws for integer exponents",
+      "importance": {
+        "summary": "Part of the Algebra section on every Paper 1: 30/100 in Gr 10, 45/150 in Gr 11, 25/150 in Gr 12 - and assumed inside functions and finance work.",
+        "required_by_topics": 1,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "Exponents and surds"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 10,
+            "paper": "paper1",
+            "section": "Algebra",
+            "marks": 30,
+            "paper_total": 100
+          },
+          {
+            "grade": 11,
+            "paper": "paper1",
+            "section": "Algebraic expressions, equations and inequalities",
+            "marks": 45,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Algebraic expressions, equations and inequalities",
+            "marks": 25,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "Exponents, equations and inequalities",
+          "subtopic": "Use exponent laws to simplify expressions and solve equations (rational exponents)"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Simplified fully, (2x³y)² × 4x⁻² ÷ (8xy²) equals:",
+          "options": [
+            "2x³",
+            "2x³y",
+            "16x³",
+            "2x⁴"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "The solution of 3^(x+1) = 27 is:",
+          "options": [
+            "x = 2",
+            "x = 3",
+            "x = 8",
+            "x = 26"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "An exponent counts repeated multiplication, and every law follows from that. Multiplying powers of the same base: ADD the exponents (x³ × x² = x⁵ - five x's strung together). Dividing: SUBTRACT (x⁵ ÷ x² = x³ - two x's cancel). A power on a power: MULTIPLY ((x³)² = x⁶). A bracket raised to a power gives that power to EVERY factor inside: (2xy)² = 4x²y² - the coefficient is squared too; leaving the 2 unsquared is the most common bracket error. Two consequences complete the kit: anything nonzero to the power zero is 1 (because x³ ÷ x³ is both 1 and x⁰), and a negative exponent means reciprocal - x⁻² = 1/x² - a POSITION instruction (move across the fraction line), never a negative number: 4x⁻² is 4/x², not −4x².\n\nSimplifying strategy: clear bracket powers first, then gather like bases and handle each base on its own - numbers with numbers, x's with x's, y's with y's; the laws never combine different bases (x² × y³ is not (xy)⁵). Worked: (2x³y)² × 4x⁻² ÷ (8xy²). Bracket first: 4x⁶y². Multiply by 4x⁻²: coefficients 16, x-exponents 6 + (−2) = 4, giving 16x⁴y². Divide by 8xy²: coefficients 16 ÷ 8 = 2; x: 4 − 1 = 3; y: 2 − 2 = 0, so the y's vanish. Answer: 2x³. Check with a quick substitution (x = 1, y = 1 in original and answer; x = 2 if time allows, since 1 hides exponent slips).\n\nExponential equations put the unknown in the exponent, and one move solves them: make the bases match. If two powers of the same positive base (not 1) are equal, their exponents must be equal. 3^(x+1) = 27: rewrite 27 as 3³, so x + 1 = 3 and x = 2. The same move handles the variations: right side 1 means 3⁰ (x = −1); right side 1/27 means 3⁻³ (x = −4). Do not divide both sides by 3 hoping to peel the exponent - by the subtraction law that only lowers it by one. Match the bases, equate the exponents, solve, substitute back to confirm.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "(2x³y)² expands to:",
+          "options": [
+            "4x⁶y²",
+            "2x⁶y²",
+            "4x⁵y²",
+            "4x⁹y²"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "4x⁻² written with positive exponents is:",
+          "options": [
+            "4/x²",
+            "−4x²",
+            "1/(4x²)",
+            "−4/x²"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "The key move for solving 3^(x+1) = 27 is:",
+          "options": [
+            "Rewrite 27 as 3³ so both sides share a base, then equate exponents",
+            "Divide both sides by 3",
+            "Multiply the exponent by 3",
+            "Take half of 27"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "y² divided by y² in a simplification gives:",
+          "options": [
+            "y⁰ = 1 - the y's vanish from the answer",
+            "y⁴",
+            "y⁻²",
+            "0"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "maths.trig_ratios": {
+      "card_id": "maths.trig_ratios",
+      "subject": "Maths",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Define sin, cos and tan in right-angled triangles",
+      "lesson_name": "Trigonometric ratios and special angles",
+      "status": "evaluated",
+      "name": "Trigonometric ratios and special angles",
+      "example_problem": "Without a calculator, evaluate sin 60 x cos 30 - tan 45, and solve for x in a right-angled triangle where the hypotenuse is 13 and the side opposite x is 5.",
+      "prior_knowledge": "Right-angled triangles and the theorem of Pythagoras",
+      "importance": {
+        "summary": "Gateway to Trigonometry - the biggest Paper 2 section: 40/100 in the Gr 10 final, 50/150 in Gr 11 and 40/150 in Gr 12.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "Trigonometry (reduction formulae, trig equations & general solutions)"
+          },
+          {
+            "grade": 12,
+            "topic": "Trigonometry"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 10,
+            "paper": "paper2",
+            "section": "Trigonometry",
+            "marks": 40,
+            "paper_total": 100
+          },
+          {
+            "grade": 11,
+            "paper": "paper2",
+            "section": "Trigonometry",
+            "marks": 50,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper2",
+            "section": "Trigonometry",
+            "marks": 40,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "Trigonometry",
+          "subtopic": "Define sin, cos and tan in right-angled triangles"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Without a calculator, sin 60° × cos 30° − tan 45° equals:",
+          "options": [
+            "−1/4",
+            "1/4",
+            "0",
+            "−3/4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "In a right-angled triangle the hypotenuse is 13 and the side opposite angle x is 5. Then x equals:",
+          "options": [
+            "sin⁻¹(5/13) ≈ 22,6°",
+            "cos⁻¹(5/13)",
+            "tan⁻¹(5/13)",
+            "sin(5/13)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "In a right-angled triangle, pick an acute angle and the sides take names relative to IT: the hypotenuse (longest, opposite the right angle - never changes), the opposite (facing your angle), and the adjacent (the angle's other arm). The ratios: sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent - SOH CAH TOA. These ratios are properties of the angle, not the triangle: similar triangles keep them identical at any size, which is why sin 30° is a fixed number of the universe. Label AFTER choosing your angle - switch to the other acute angle and opposite and adjacent swap places.\n\nThe special-angle values come from two rebuildable triangles, not memory. Halve an equilateral triangle of side 2: hypotenuse 2, base 1, height √3 - giving sin 60° = √3/2, cos 60° = 1/2, tan 60° = √3, and from the top angle sin 30° = 1/2, cos 30° = √3/2, tan 30° = 1/√3. A right-angled isosceles triangle with legs 1 has hypotenuse √2: sin 45° = cos 45° = 1/√2, tan 45° = 1. Evaluate exactly, keeping surds: sin 60° × cos 30° = (√3/2)(√3/2) = 3/4; minus tan 45° = 1 gives −1/4. Exact fractions, never rounded decimals, when the question says no calculator.\n\nChoosing the ratio is the real skill: mark the angle, label the three sides relative to it, circle the two sides that are known or wanted, and pick the ratio whose letters match - opposite and hypotenuse: sine; adjacent and hypotenuse: cosine; opposite and adjacent: tangent.\n\nFinding an angle runs the machine in reverse. Hypotenuse 13, opposite 5: sin x = 5/13, so x = sin⁻¹(5/13) ≈ 22,6° (shift-sin on the calculator, in DEGREE mode - check for the D; radian mode turns sin 30° into −0,988 and poisons everything). Direction decides the button: angle known, side wanted - plain function; sides known, angle wanted - inverse. Sense-check: 5/13 is less than 1/2 and sin 30° = 1/2, so the angle must be under 30° - and in the 5-12-13 triangle the other acute angle, sin⁻¹(12/13) ≈ 67,4°, completes 90° exactly.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Which side of a right-angled triangle never changes its label?",
+          "options": [
+            "The hypotenuse - always opposite the right angle",
+            "The opposite side",
+            "The adjacent side",
+            "The shortest side"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "sin 60° equals:",
+          "options": [
+            "√3/2",
+            "1/2",
+            "1/√2",
+            "√3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "You know the opposite (5) and adjacent (12) sides and want the angle. Use:",
+          "options": [
+            "tan⁻¹(5/12)",
+            "sin⁻¹(5/12)",
+            "cos⁻¹(5/12)",
+            "tan(5/12)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "A calculator giving sin 30° = −0,988 most likely means:",
+          "options": [
+            "It is in radian mode instead of degree mode",
+            "sin 30° is genuinely negative",
+            "The battery is flat",
+            "The angle is too small"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "maths_literacy.graph_interpretation": {
+      "card_id": "maths_literacy.graph_interpretation",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Interpreting tables and graphs: zero, minimum, maximum and missing values; write a story from a graph and draw a graph from a story",
+      "lesson_name": "Reading and interpreting graphs",
+      "status": "evaluated",
+      "name": "Reading and interpreting graphs",
+      "example_problem": "From a line graph of two electricity tariff options, read the break-even usage, state which option is cheaper for 450 kWh, and describe what the steeper gradient means in rands per kWh.",
+      "prior_knowledge": "Axes, scales and plotting points",
+      "importance": {
+        "summary": "Tariff-comparison and break-even questions in Finance (Q2, Paper 1) and the integration questions (Q4-5 on both papers) are asked through graphs.",
+        "required_by_topics": 1,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "MEASUREMENTS"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "PATTERNS RELATIONSHIPS & REPRESENTATIONS",
+          "subtopic": "Interpreting tables and graphs: zero, minimum, maximum and missing values; write a story from a graph and draw a graph from a story"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Option A: R2,00 per kWh, no fixed charge. Option B: R150 fixed + R1,50 per kWh. For 450 kWh, which is cheaper?",
+          "options": [
+            "Option B at R825, beating Option A's R900 by R75",
+            "Option A at R900",
+            "Both cost the same",
+            "Option B at R675"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "A cost line starts at R150 on the vertical axis. That intercept represents:",
+          "options": [
+            "The fixed charge, paid even at zero usage",
+            "The price per unit",
+            "The break-even point",
+            "The maximum monthly cost"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A cost line on a money graph tells you a tariff's whole structure in two readings. The vertical intercept - where the line starts at zero usage - is the FIXED CHARGE: an option with no fixed charge starts at the origin; an option with a R150 monthly fee starts at R150. The gradient - how fast the line climbs - is the PRICE PER UNIT: a line rising R2,00 for every kilowatt-hour is steeper than one rising R1,50, because each unit costs more. Steeper always means more expensive per unit. You can measure a gradient off any line: pick two easy points, divide the rise in rand by the run in units.\n\nWhere two options' lines cross is the BREAK-EVEN point: the usage at which both cost exactly the same. Read it by tracing down to the usage axis and across to the cost axis, then verify by calculation - both tariffs computed at that usage must give the same rand amount. With Option A at R2,00 per kWh and Option B at R150 plus R1,50 per kWh, break-even is 300 kWh, where both cost R600.\n\nBreak-even splits the graph into decision zones. Left of the crossing (low usage), the no-fixed-charge option's line runs lower: light users should not pay an entrance fee for a per-unit discount they barely use. Right of the crossing (high usage), the fixed-charge option dips underneath: the 50c saving on every unit eventually outweighs the R150 fee. At any usage, the LOWEST line at that point is the cheapest option - run a finger up from the usage value and the first line struck wins.\n\nFor a specific comparison, always finish with the arithmetic and state the difference: at 450 kWh, Option A costs 450 × R2,00 = R900; Option B costs R150 + 450 × R1,50 = R825; B is cheaper by R75. Comparison answers earn full marks when they show both totals and the saving, not just the winner's name. Close with a sense check: heavy users benefiting from cheap units, and zero usage costing R0 on one option but R150 on the other, both match what the tariffs say in words.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "On a tariff graph, the gradient of a cost line represents:",
+          "options": [
+            "The price per unit - how much the bill climbs per extra unit used",
+            "The fixed monthly charge",
+            "The total bill",
+            "The number of units used"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "At the break-even usage:",
+          "options": [
+            "Both options cost exactly the same",
+            "The cheaper option is always the steeper line",
+            "Usage is zero",
+            "The fixed charges are equal"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "For any usage level, the cheapest option is found by:",
+          "options": [
+            "Reading which line is lowest at that usage",
+            "Choosing the line with the higher intercept",
+            "Always choosing the steeper line",
+            "Averaging the two lines"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "maths_literacy.percentage_calculations": {
+      "card_id": "maths_literacy.percentage_calculations",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Rounding (to decimal places, nearest whole, up or down); ratios; rates (meaning, types, calculations); direct and inverse proportion; percentages incl. increase and decrease",
+      "lesson_name": "Percentage calculations",
+      "status": "evaluated",
+      "name": "Percentage calculations",
+      "example_problem": "A jacket priced at R850 is discounted by 15%, then 15% VAT is added to the discounted price. Calculate the final price, and the single percentage change from the original price.",
+      "prior_knowledge": "Fractions and decimals; multiplication and division",
+      "importance": {
+        "summary": "Finance is Question 2 on every Paper 1 (Gr 10 75 marks -> Gr 11 100 -> Gr 12 150), and percentages run through VAT, interest, inflation and tariff work; Q1's 20% level-1 marks lean on it too.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "FINANCE"
+          },
+          {
+            "grade": 10,
+            "topic": "FINANCE"
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "NUMBERS AND CALCULATIONS WITH NUMBERS",
+          "subtopic": "Rounding (to decimal places, nearest whole, up or down); ratios; rates (meaning, types, calculations); direct and inverse proportion; percentages incl. increase and decrease"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "A jacket priced at R850 is discounted by 15%, then 15% VAT is added to the discounted price. The final price is:",
+          "options": [
+            "R830,88",
+            "R850,00",
+            "R873,13",
+            "R722,50"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "A price of R830,88 INCLUDES 15% VAT. The price before VAT is found by:",
+          "options": [
+            "Dividing R830,88 by 1,15",
+            "Multiplying R830,88 by 0,85",
+            "Subtracting R124,63",
+            "Multiplying by 1,15"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A percentage is a fraction out of 100: 15% is 0,15. Percentage OF an amount: multiply - 15% of R850 is 0,15 × 850 = R127,50.\n\nThe upgrade that handles everything else is the single multiplier. A decrease of 15% leaves 85% of the amount: multiply by 0,85 in one step. An increase of 15% gives 115%: multiply by 1,15. Decrease: one MINUS the decimal; increase: one PLUS the decimal. The multiplier is not a trick - \"take off 15%\" and \"keep 85%\" are the same sentence.\n\nChained changes multiply, and each step acts on the RESULT of the previous step, never on the original. The jacket: R850 × 0,85 = R722,50 after the discount; then VAT on the discounted price: R722,50 × 1,15 = R830,88 (rounded to the cent). The famous trap: minus 15% then plus 15% does NOT return to R850. The discount removed 15% of R850 (R127,50), but the VAT added back 15% of the smaller R722,50 (R108,38) - equal rates on unequal bases are unequal amounts of money. Down-then-up by the same rate always lands slightly below the start.\n\nThe combined effect of a chain is the product of the multipliers: 0,85 × 1,15 = 0,9775, meaning the final price is 97,75% of the original - an overall 2,25% DECREASE, in one multiplication. Confirm with the direct formula for percentage change: change ÷ ORIGINAL × 100. The original is always the denominator - the reference point is where you started - so (850 − 830,88) ÷ 850 × 100 = 2,25%.\n\nReverse percentages undo a change. A price tag of R830,88 INCLUDING 15% VAT: the tag equals the pre-VAT price times 1,15, so divide - 830,88 ÷ 1,15 = R722,50. Subtracting 15% instead is wrong because it takes 15% of the larger final price, not of the smaller base the VAT was actually charged on. To undo any multiplier, divide by it.\n\nThe five moves: percentage of - decimal times amount; increase or decrease - one multiplier; chains - multiply the multipliers, each on the previous result; percentage change - difference over original times 100; reverse - divide by the multiplier. Every VAT, discount, interest, inflation and tariff question is one of these five.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "The single multiplier for a 15% decrease is:",
+          "options": [
+            "0,85",
+            "1,15",
+            "0,15",
+            "0,015"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Why do −15% then +15% not cancel out?",
+          "options": [
+            "The increase acts on a smaller base than the decrease removed from",
+            "VAT is calculated by SARS differently",
+            "They do cancel",
+            "Because of rounding only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "In the percentage change formula, the denominator is always:",
+          "options": [
+            "The original value",
+            "The new value",
+            "The larger value",
+            "100"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "A combined multiplier of 0,9775 across a chain of changes means:",
+          "options": [
+            "An overall decrease of 2,25%",
+            "An overall increase of 2,25%",
+            "An overall decrease of 97,75%",
+            "No net change"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "maths_literacy.substitution_in_formulae": {
+      "card_id": "maths_literacy.substitution_in_formulae",
+      "subject": "Mathematical Literacy",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "",
+      "lesson_name": "Substitution into formulae",
+      "status": "evaluated",
+      "name": "Substitution into formulae",
+      "example_problem": "Using cost = R450 + R12,50 x km, calculate the cost of a 340 km trip; then find how many kilometres R1 200 buys.",
+      "prior_knowledge": "Order of operations; inverse operations",
+      "importance": {
+        "summary": "Measurement is Question 3 on every Paper 2, and tariff/cost formulas in Finance (Q2, Paper 1) are substitution work - it earns marks on both papers every year.",
+        "required_by_topics": 1,
+        "required_by": [
+          {
+            "grade": 10,
+            "topic": "MEASUREMENTS"
+          }
+        ]
+      },
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Using cost = R450 + R12,50 × km, a 340 km trip costs:",
+          "options": [
+            "R4 700",
+            "R157 250",
+            "R4 250",
+            "R462,50"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "With the same formula, how many kilometres does R1 200 buy?",
+          "options": [
+            "60 km",
+            "96 km",
+            "132 km",
+            "48 km"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A formula is a machine: numbers in, answer out. Read it as a story before calculating. In cost = R450 + R12,50 × km, the R450 stands alone - the fixed charge, owed before any driving; the R12,50 is glued to the kilometres - the rate, growing with usage. Fixed plus rate-times-usage is the skeleton of tariffs, contracts, call-out fees and deliveries alike.\n\nForward substitution: the input is known, the output wanted. Write the formula, then the substitution line - both usually earn their own marks - then compute respecting the order of operations: multiplication BEFORE addition, always. For 340 km: 12,50 × 340 = 4 250 first, then + 450 gives R4 700. Adding first (450 + 12,50, then × 340) produces the R157 250 disaster - a hire bill that buys the car. Sense-check the size and state the unit.\n\nReverse substitution: the output is known, the input wanted. Substitute what you know, then unwind with inverse operations in reverse order - like taking off shoes before socks. The money logic gives the order for free: the budget pays the fixed fee at the door first, and only the remainder buys usage. R1 200 = 450 + 12,50 × km: subtract the fixed charge (1 200 − 450 = 750 left for driving), then divide by the rate (750 ÷ 12,50 = 60 km). The classic error divides the whole budget by the rate (1 200 ÷ 12,50 = 96 km, wrong) - the R450 never bought a single kilometre and must be peeled off first.\n\nReverse answers come with a free proof: run the machine forwards with your answer. 450 + 12,50 × 60 = 1 200 - exactly the budget, so 60 km is verified, not hoped.\n\nThe six steps for any formula: write it down unchanged; identify the known and wanted variables; substitute, converting units first if the formula's units differ from the question's; compute forwards with the order of operations, or unwind backwards fixed-part-first; state the answer with its unit; verify - sense-check the size, and substitute reverse answers back. The exam prints the formula for you; careful feeding and patient unwinding are the whole skill.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "In cost = R450 + R12,50 × km, which must be computed first when substituting km = 340?",
+          "options": [
+            "The multiplication 12,50 × 340",
+            "The addition 450 + 12,50",
+            "The division 450 ÷ 12,50",
+            "Order does not matter"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "In the reverse question, why is dividing the whole R1 200 by R12,50 wrong?",
+          "options": [
+            "R450 of the budget pays the fixed fee and buys no distance - remove it before dividing",
+            "The division is computed incorrectly",
+            "R12,50 must be doubled first",
+            "It gives the correct answer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "How is a reverse answer of 60 km verified?",
+          "options": [
+            "Substitute forwards: 450 + 12,50 × 60 must return R1 200",
+            "Divide 60 by 12,50",
+            "Check 60 is less than 340",
+            "It cannot be verified"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "physical_sciences.equations_of_motion": {
+      "card_id": "physical_sciences.equations_of_motion",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Equations of motion in the horizontal plane; vehicle safety and stopping distance",
+      "lesson_name": "Equations of motion",
+      "status": "evaluated",
+      "name": "Equations of motion",
+      "example_problem": "A car accelerates uniformly from 10 m/s to 25 m/s over 300 m. Choose the correct equation of motion, calculate the acceleration, and then the time taken.",
+      "prior_knowledge": "Average velocity and acceleration definitions",
+      "importance": {
+        "summary": "Mechanics is the biggest Gr 12 Paper 1 section (65/150); momentum & impulse, vertical projectile motion and work-energy-power all build directly on these equations.",
+        "required_by_topics": 4,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "MECHANICS: Newton’s laws"
+          },
+          {
+            "grade": 12,
+            "topic": "MECHANICS: Momentum & impulse"
+          },
+          {
+            "grade": 12,
+            "topic": "MECHANICS: Vertical projectile motion"
+          },
+          {
+            "grade": 12,
+            "topic": "MECHANICS: Work, energy, and power"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Mechanics",
+            "marks": 65,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "MECHANICS: Instantaneous speed and velocity and the equations of motion",
+          "subtopic": "Equations of motion in the horizontal plane; vehicle safety and stopping distance"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "A car accelerates uniformly from 10 m/s to 25 m/s over 300 m. Its acceleration is:",
+          "options": [
+            "0,875 m/s² in the direction of motion",
+            "1,04 m/s²",
+            "8,75 m/s²",
+            "0,05 m/s²"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "A problem gives vi, vf and Δx and asks for a. Which equation fits immediately?",
+          "options": [
+            "vf² = vi² + 2aΔx - the one with no time in it",
+            "vf = vi + aΔt",
+            "Δx = viΔt + ½aΔt²",
+            "Δx = (vi + vf)/2 × Δt"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "The equations of motion describe straight-line movement with UNIFORM (constant) acceleration - the word \"uniformly\" in a problem is your licence to use them at all. Five quantities star in every problem: initial velocity vi, final velocity vf, acceleration a, time Δt, and displacement Δx.\n\nFour equations, each missing exactly one quantity: vf = vi + aΔt (no displacement); Δx = viΔt + ½aΔt² (no final velocity); vf² = vi² + 2aΔx (no time); Δx = (vi + vf)/2 × Δt (no acceleration - the average-velocity equation). That missing character is the whole secret of choosing. Every problem gives three quantities and wants a fourth; the fifth - neither given nor wanted - is absent, and the right equation is the one that EXCLUDES it. Never grab the first equation you remember: match the hole to the absent quantity.\n\nMethod: first list Given, Wanted and Absent formally, converting units as you list - km/h becomes m/s by dividing by 3,6 (90 km/h = 25 m/s), and skipping this poisons every later step. Then choose by the absent character, substitute with units, solve, and state vector answers with a direction.\n\nWorked: a car accelerates uniformly from 10 m/s to 25 m/s over 300 m. Given vi, vf, Δx; wanted a; absent: time - so vf² = vi² + 2aΔx. Substitute: 625 = 100 + 600a (write the squares out immediately - 25² is 625, not 25). Solve: a = 525/600 = 0,875 m/s² in the direction of motion. For the time: vf = vi + aΔt gives 15 = 0,875Δt, so Δt = 17,14 s.\n\nVerify by a second road wherever possible: Δx = (vi + vf)/2 × Δt uses only ORIGINAL data - the average of 10 and 25 is 17,5, and 300 ÷ 17,5 = 17,14 s again. Two independent routes agreeing proves both answers; a wrong acceleration could not have hidden. Final habits: sense-check size and sign (a braking car has negative a in your chosen positive direction - keep vector signs consistent), and remember these same equations return in matric as vertical projectile motion with a = 9,8 m/s² downward.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "The equations of motion may only be used when:",
+          "options": [
+            "The acceleration is uniform (constant)",
+            "The object starts from rest",
+            "The velocity is constant",
+            "The motion is circular"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "90 km/h converted for use in the equations is:",
+          "options": [
+            "25 m/s (divide by 3,6)",
+            "90 m/s",
+            "324 m/s",
+            "9 m/s"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Why is checking the time with Δx = (vi + vf)/2 × Δt such a strong verification?",
+          "options": [
+            "It uses only original given data, so an error in the calculated acceleration cannot hide",
+            "It is the shortest equation",
+            "It avoids velocity",
+            "It always gives a rounder number"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "physical_sciences.force_and_free_body_diagrams": {
+      "card_id": "physical_sciences.force_and_free_body_diagrams",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Force diagrams and free-body diagrams; resolving weight on an inclined plane",
+      "lesson_name": "Force diagrams and free-body diagrams",
+      "status": "evaluated",
+      "name": "Force diagrams and free-body diagrams",
+      "example_problem": "A 5 kg box is pulled at constant velocity across a rough floor by a rope at 30 degrees. Draw the free-body diagram naming weight, normal force, applied force and friction.",
+      "prior_knowledge": "Types of forces; vectors and scalars",
+      "importance": {
+        "summary": "The working tool of the Mechanics section (65/150 of the Gr 12 Paper 1): Newton's laws and work-energy questions start with a correct free-body diagram.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "MECHANICS: Newton’s laws"
+          },
+          {
+            "grade": 12,
+            "topic": "MECHANICS: Work, energy, and power"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Mechanics",
+            "marks": 65,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 11,
+          "topic": "MECHANICS: Newton’s laws",
+          "subtopic": "Force diagrams and free-body diagrams; resolving weight on an inclined plane"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "A 5 kg box is pulled at constant velocity across a rough floor by a rope at 30° above the horizontal. The forces on the box are:",
+          "options": [
+            "Weight, normal force, applied force along the rope, friction backward",
+            "Weight, normal force, and a forward force of motion",
+            "Applied force and friction only",
+            "Weight and the applied force only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "In that situation, the normal force is:",
+          "options": [
+            "Less than the weight - the rope's vertical component helps lift the box",
+            "Equal to the weight, always",
+            "Greater than the weight",
+            "Zero at constant velocity"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "A force is a push or pull - an interaction between two objects - so every force on a diagram must have another object responsible for it. If you cannot name the object doing the pushing, the force does not exist. There is no \"force of motion\": motion needs no force to continue, only to CHANGE (Newton's first law).\n\nHunt forces systematically. Gravity first, always present: the weight w = mg, straight down (a 5 kg box weighs 5 × 9,8 = 49 N; mass in kilograms is a scalar and never changes, weight in newtons is a force). Then every touching object: a surface gives a normal force N perpendicular to itself, and friction f if rough; a rope gives tension along the rope; a hand gives an applied force. For a box pulled at constant velocity across a rough floor by a rope at 30° above the horizontal, the cast is exactly four: weight down, normal force up, applied force along the rope at the marked 30°, friction backward - because friction always opposes the sliding (or attempted sliding), not automatically the applied force.\n\nA FREE-body diagram strips the scenery: the object becomes a dot, and only labelled force arrows remain, each starting on the dot, each with an arrowhead, angles marked. No floor, no rope, no velocity arrows - a velocity arrow drawn as a force costs marks.\n\nThe phrase \"constant velocity\" is physics in disguise: zero net force, everything balances, and the diagram becomes equations. A slanted force does two jobs at once, split into components: the rope pulls forward with F cos 30° and lifts with F sin 30°. Horizontal balance: F cos 30° = f. Vertical balance: N + F sin 30° = w - three players, not two. So the normal force is LESS than the weight here: the rope carries part of the load, and the floor pushes less. \"N always equals w\" is memorisation, not reading - N is whatever the vertical balance demands, case by case (push down on a box and N exceeds w). Since friction later scales with N, pulling at an upward angle genuinely makes dragging easier.\n\nMethod: isolate ONE object; hunt gravity then touches; draw the dot and labelled arrows; read the motion state (balanced, or net force with the acceleration); write the balances direction by direction.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Why is there no forward 'force of motion' on the moving box?",
+          "options": [
+            "Motion needs no force to continue - only changes of motion need force",
+            "The rope replaces it",
+            "It exists but is too small to draw",
+            "Friction cancels it exactly"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "'Constant velocity' lets you write down that:",
+          "options": [
+            "The forces balance in every direction - net force is zero",
+            "The applied force is largest",
+            "Friction is zero",
+            "The box is slowing down"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "Friction on an object always points:",
+          "options": [
+            "Against the sliding (or attempted sliding) between the surfaces",
+            "Opposite to the applied force in all cases",
+            "Downhill",
+            "Toward the heavier object"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "In a free-body diagram, the object is drawn as:",
+          "options": [
+            "A dot with all labelled force arrows starting from it",
+            "A detailed sketch with the floor and rope",
+            "A velocity arrow",
+            "A circle containing the mass"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "physical_sciences.formulae_and_balanced_equations": {
+      "card_id": "physical_sciences.formulae_and_balanced_equations",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Balancing chemical equations; conservation of atoms and mass; law of constant composition",
+      "lesson_name": "Writing formulae and balancing equations",
+      "status": "evaluated",
+      "name": "Writing formulae and balancing equations",
+      "example_problem": "Write formulae for calcium chloride, ammonium sulphate and iron(III) oxide, then balance: C3H8 + O2 -> CO2 + H2O.",
+      "prior_knowledge": "The periodic table; valency; cation and anion table",
+      "importance": {
+        "summary": "Underpins the entire Chemical Change section - 92/150 of the Gr 12 Paper 2, the single largest block in Physical Sciences - and every chemistry topic from Gr 11 term 3 onward.",
+        "required_by_topics": 6,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "CHEMICAL CHANGE: Acids and bases"
+          },
+          {
+            "grade": 11,
+            "topic": "CHEMICAL CHANGE: Energy and change"
+          },
+          {
+            "grade": 11,
+            "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change"
+          },
+          {
+            "grade": 12,
+            "topic": "CHEMICAL CHANGE: Acids and bases"
+          },
+          {
+            "grade": 12,
+            "topic": "CHEMICAL CHANGE: Chemical equilibrium"
+          },
+          {
+            "grade": 12,
+            "topic": "CHEMICAL CHANGE: Rate and extent of reaction"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 12,
+            "paper": "paper2",
+            "section": "Chemical change",
+            "marks": 92,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "CHEMICAL CHANGE: Representing chemical change",
+          "subtopic": "Balancing chemical equations; conservation of atoms and mass; law of constant composition"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "The formula for iron(III) oxide is:",
+          "options": [
+            "Fe₂O₃",
+            "FeO",
+            "Fe₃O₂",
+            "FeO₃"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "Balanced, the combustion of propane is:",
+          "options": [
+            "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O",
+            "C₃H₈ + O₂ → 3CO₂ + 4H₂O",
+            "C₃H₈ + 7O₂ → 3CO₂ + 4H₂O",
+            "C₃H₈ + 5O₂ → CO₂ + H₂O"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Formula writing is charge arithmetic: an ionic compound must be electrically neutral, so the formula states the ratio of ions whose charges cancel to zero. Harvest charges from the periodic table and ion table: group 1 metals 1+, group 2 metals 2+, halogens 1−, group 16 nonmetals 2−. Calcium chloride: Ca²⁺ needs two Cl⁻ - CaCl₂. The crossover shortcut swaps each charge's size onto the other ion as a subscript, but always simplify afterwards (Mg²⁺ with O²⁻ crosses to Mg₂O₂, which reduces to MgO) and never write a subscript of 1.\n\nPolyatomic ions are charged teams from the data sheet: ammonium NH₄⁺ (the rare positive one), sulphate SO₄²⁻ - the \"-ate\" ending signals oxygen aboard, unlike sulphide S²⁻. When a team takes a subscript, brackets are compulsory: ammonium sulphate is (NH₄)₂SO₄ - two nitrogens and eight hydrogens; without brackets the count collapses. Transition metals carry their charge in the name's Roman numeral: iron(III) means Fe³⁺, so iron(III) oxide balances 3+ against 2− at the lowest common multiple of six - Fe₂O₃ - while iron(II) oxide is the different compound FeO. Audit every formula: total plus must equal total minus.\n\nBalancing enforces the law of conservation of mass: atoms are rearranged in reactions, never created or destroyed, so every element's count must match across the arrow. The one commandment: change only COEFFICIENTS, the multipliers in front of whole formulas - never subscripts, which define identity (edit H₂O to H₂O₂ and water has become peroxide; the equation now lies about the reaction).\n\nFor combustion, balance in the order carbon, hydrogen, oxygen - oxygen last because it appears in both products and stands alone as O₂, so one final coefficient settles it. Propane: C₃H₈ + O₂ → CO₂ + H₂O. Carbon: 3CO₂. Hydrogen: 4H₂O. Oxygen demanded on the right: 6 + 4 = 10 atoms, supplied in pairs: 5O₂. Balanced: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. If a half-coefficient appears (ethane needs 7/2 O₂), double every coefficient; final answers use the smallest whole-number set.\n\nNever skip the closing audit - count each element aloud on both sides: C 3=3, H 8=8, O 10=10. Next step in the syllabus, those coefficients become mole ratios, so an unbalanced equation poisons every calculation built on it.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "Why must (NH₄)₂SO₄ keep its brackets?",
+          "options": [
+            "The subscript 2 must multiply the whole ammonium team - 2 N and 8 H",
+            "All nitrogen compounds take brackets",
+            "Sulphate demands them",
+            "For neatness only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "Why is 'balancing' an equation by changing H₂O to H₂O₂ illegal?",
+          "options": [
+            "Subscripts define identity - that edit turns water into hydrogen peroxide",
+            "Because 2 is already used",
+            "It is legal for oxygen only",
+            "Peroxide is unstable"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "In combustion equations, oxygen is balanced last because:",
+          "options": [
+            "It appears in both products and stands alone as O₂, so its count depends on the other coefficients",
+            "It is the lightest element",
+            "O₂ cannot take a coefficient",
+            "Tradition"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_4",
+          "prompt": "The audit of C₃H₈ + 5O₂ → 3CO₂ + 4H₂O checks oxygen as:",
+          "options": [
+            "Left 10, right 6 + 4 = 10 - balanced",
+            "Left 5, right 7",
+            "Left 2, right 3",
+            "Left 10, right 12"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "physical_sciences.mole_concept": {
+      "card_id": "physical_sciences.mole_concept",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "The mole, Avogadro's number, molar mass",
+      "lesson_name": "The mole concept",
+      "status": "evaluated",
+      "name": "The mole concept",
+      "example_problem": "Calculate the number of moles in 8,8 g of CO2, the number of molecules that represents, and the volume it occupies at STP.",
+      "prior_knowledge": "Relative atomic and molecular mass; formulae writing",
+      "importance": {
+        "summary": "Stoichiometry runs through the Chemical Change section (92/150 of the Gr 12 Paper 2) and is explicitly carried into the Gr 12 exam as 'stoichiometry, application only (Gr 11)'.",
+        "required_by_topics": 3,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change"
+          },
+          {
+            "grade": 11,
+            "topic": "MATTER & MATERIAL: Intermolecular forces"
+          },
+          {
+            "grade": 12,
+            "topic": "CHEMICAL CHANGE: Acids and bases"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 12,
+            "paper": "paper2",
+            "section": "Chemical change",
+            "marks": 92,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "CHEMICAL CHANGE: Quantitative aspects of chemical change",
+          "subtopic": "The mole, Avogadro's number, molar mass"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "The number of moles in 8,8 g of CO₂ (M = 44 g/mol) is:",
+          "options": [
+            "0,2 mol",
+            "5 mol",
+            "2 mol",
+            "0,5 mol"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "The volume that 0,2 mol of a gas occupies at STP is:",
+          "options": [
+            "4,48 dm³",
+            "22,4 dm³",
+            "8,8 dm³",
+            "112 dm³"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Atoms are too small to count or weigh individually, yet reactions happen particle by particle - so chemistry counts in bulk, like eggs in dozens. One mole is 6,02 × 10²³ particles (Avogadro's number), sized so that one mole of a substance has a mass in grams equal to its relative molecular mass. That gram-mass of one mole is the molar mass M, in g/mol. Compute M from the formula, respecting subscripts: CO₂ is 12 + 2(16) = 44 g/mol - counting the doubled oxygen once (getting 28) is the classic wreck.\n\nThe central formula: n = m/M - moles equal the mass you have divided by the mass of one mole's worth. For 8,8 g of CO₂: n = 8,8/44 = 0,2 mol. Sense-check every division: 8,8 g is exactly one-fifth of 44 g, so one-fifth of a mole is right; 5 mol would imply 220 g.\n\nFrom moles, two more roads open. Particles: N = n × Avogadro's number - 0,2 × 6,02 × 10²³ = 1,204 × 10²³ molecules; particle counts should be enormous, so a tiny answer means you divided when you should have multiplied. Gas volume: Avogadro's law says equal volumes of ANY gases at the same temperature and pressure hold equal numbers of molecules, so at STP (273 K, 101,3 kPa) one mole of any gas fills 22,4 dm³. V = n × 22,4 gives 0,2 × 22,4 = 4,48 dm³. The 22,4 shortcut is licensed ONLY for gases at STP - never liquids, solids, or other conditions.\n\nOrganise everything as the mole map: moles n at the centre, three roads out - to mass (× M), to particles (× 6,02 × 10²³), to gas volume at STP (× 22,4) - and the same roads inward by dividing. Every problem is a journey: travel IN from whatever the question gives (divide), then OUT along whichever road it wants (multiply). The 8,8 g problem entered from mass (÷44), and exited along both the particle road and the volume road.\n\nUnits discipline: mass in grams before n = m/M (convert kilograms first), volumes in dm³ (1 dm³ = 1 litre = 1 000 cm³ - convert once, at the end). Next term the balanced equation's coefficients become mole ratios, and this map powers all of stoichiometry.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "The molar mass of CO₂ is 44 g/mol because:",
+          "options": [
+            "12 + 16 + 16 - the subscript doubles the oxygen",
+            "12 + 16 = 28",
+            "44 is carbon's mass number",
+            "16 + 16 + 16 = 48, rounded down"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "On the mole map, travelling INWARD to moles always means:",
+          "options": [
+            "Dividing - by M, by Avogadro's number, or by 22,4",
+            "Multiplying",
+            "Adding the constants",
+            "Using n = m × M"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "The 22,4 dm³ molar volume may be used:",
+          "options": [
+            "Only for gases at STP",
+            "For any substance at any temperature",
+            "For liquids and gases",
+            "Only for CO₂"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    "physical_sciences.vectors_and_scalars": {
+      "card_id": "physical_sciences.vectors_and_scalars",
+      "subject": "Physical Sciences",
+      "grade": 10,
+      "topic": "Skills",
+      "subtopic": "Physical quantities; vector vs scalar",
+      "lesson_name": "Vectors and scalars",
+      "status": "evaluated",
+      "name": "Vectors and scalars",
+      "example_problem": "Classify displacement, speed, force, energy and velocity as vectors or scalars; then find the resultant of forces of 30 N east and 50 N west acting on the same object.",
+      "prior_knowledge": "Physical quantities and SI units",
+      "importance": {
+        "summary": "Foundation of Mechanics (65/150, Gr 12 Paper 1) and Electricity & Magnetism (55/150) - resultants and field/force directions are vector work throughout.",
+        "required_by_topics": 2,
+        "required_by": [
+          {
+            "grade": 11,
+            "topic": "ELECTRICITY & MAGNETISM: Electrostatics"
+          },
+          {
+            "grade": 11,
+            "topic": "MECHANICS: Vectors in two dimensions"
+          }
+        ],
+        "exam_weight": [
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Mechanics",
+            "marks": 65,
+            "paper_total": 150
+          },
+          {
+            "grade": 12,
+            "paper": "paper1",
+            "section": "Electricity and magnetism",
+            "marks": 55,
+            "paper_total": 150
+          }
+        ]
+      },
+      "covered_by": [
+        {
+          "grade": 10,
+          "topic": "MECHANICS: Vectors and scalars",
+          "subtopic": "Physical quantities; vector vs scalar"
+        }
+      ],
+      "diagnostic": [
+        {
+          "id": "diag_1",
+          "prompt": "Which classification is correct?",
+          "options": [
+            "Vectors: displacement, force, velocity; scalars: speed, energy",
+            "Vectors: speed, energy; scalars: displacement, force, velocity",
+            "All five are vectors",
+            "All five are scalars"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "diag_2",
+          "prompt": "Forces of 30 N east and 50 N west act on the same object. The resultant is:",
+          "options": [
+            "20 N west",
+            "80 N west",
+            "20 N east",
+            "80 N east"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ],
+      "recap": "Physics measures with two kinds of quantities. A scalar is complete with a magnitude and unit alone: mass, time, temperature, distance, speed, energy. A vector needs a magnitude AND a direction to mean anything: force, displacement, velocity, acceleration - a 30 N push east is an entirely different event from 30 N west. The test that never fails: does a direction make sense and is it NEEDED to complete the meaning? Never classify by how \"powerful\" a quantity sounds - energy has no direction, and 500 J northward is nonsense.\n\nThe famous pairs. Distance (scalar) counts every metre of the path; displacement (vector) compares only finish to start. One full 400 m track lap: distance 400 m, displacement zero. Speed (scalar) is how fast; velocity (vector) is speed with its direction - so that lap's average speed is 5 m/s while its average velocity is zero, because displacement was zero. The scalar tells how much moving happened; the vector tells the net effect.\n\nVectors demand their own arithmetic because directions can cancel. Adding along a line uses a sign convention: choose a positive direction, declare it, and stick to it. With east positive, 30 N east is +30 and 50 N west is −50. Add: +30 + (−50) = −20 - and translate the sign back: 20 N WEST. The resultant is the single vector with the same effect as all the originals together. The scalar reflex answer, 80 N, ignores that the forces fought: 30 N of the westward force was cancelled, and only 20 N survives. State every vector answer with magnitude AND direction - a bare number is half an answer.\n\nSanity checks: the resultant points with the larger force, and opposing magnitudes subtract. Special cases as landmarks: same direction - magnitudes add (the only case where the scalar reflex is right); equal and opposite - resultant zero, the equilibrium behind Newton's first law. The method scales to any number of forces on a line: declare positive, convert each to a signed number, add, translate back. Grade 11 extends this to two dimensions and components; the direction test and the sign convention travel with you all the way to matric.",
+      "exit_check": [
+        {
+          "id": "exit_1",
+          "prompt": "An athlete completes one full 400 m lap in 80 s. Average speed and average velocity are:",
+          "options": [
+            "5 m/s and zero - displacement is zero",
+            "Both 5 m/s",
+            "Zero and 5 m/s",
+            "Both zero"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_2",
+          "prompt": "With east chosen positive, 30 N east and 50 N west become:",
+          "options": [
+            "+30 and −50",
+            "+30 and +50",
+            "−30 and +50",
+            "−30 and −50"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "exit_3",
+          "prompt": "In which single case does adding magnitudes directly give the correct resultant?",
+          "options": [
+            "When all vectors point in the same direction",
+            "Whenever forces are large",
+            "When the object is stationary",
+            "Never"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  }
+}

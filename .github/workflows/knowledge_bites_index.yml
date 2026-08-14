@@ -22,6 +22,8 @@ on:
       - 'lessons/**'
       - '!lessons/knowledge_bites_index.json'
       - '!lessons/review_index.json'
+      - '!lessons/practice_bank.json'
+      - '!lessons/skills_index.json'
   workflow_dispatch:
 
 permissions:

@@ -18,6 +18,9 @@ on:
       - 'lessons/**'
       - '.rokct/agent/jobs/**'
       - '!lessons/review_index.json'
+      - '!lessons/knowledge_bites_index.json'
+      - '!lessons/practice_bank.json'
+      - '!lessons/skills_index.json'
   workflow_dispatch:
 
 permissions:
