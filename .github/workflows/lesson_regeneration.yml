@@ -1,0 +1,50 @@
+name: Lesson Regeneration
+
+# Re-enters denied lessons into generation. Runs whenever a review-state file
+# changes on main (the Supacharge admin review endpoint writes them via the
+# Contents API): lessons/scripts/regen_denied.py re-queues the job card
+# (pipeline lessons) or writes a regen brief under lessons/reviews/regen/
+# (session lessons), bounded by lessons/reviews/regen_state.json.
+#
+# Loop guards (both, for safety):
+#   1. The trigger excludes lessons/reviews/regen_state.json, so the bot
+#      commit this workflow makes does not re-trigger it.
+#   2. The script only rewrites state when a new denial/approval actually
+#      changed it, and the commit step is a no-op on no diff.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lessons/reviews/*.json'
+      - '!lessons/reviews/regen_state.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lesson-regeneration
+  cancel-in-progress: false
+
+jobs:
+  queue_regeneration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Queue regeneration for denied reviews
+        run: python3 lessons/scripts/regen_denied.py
+
+      - name: Commit queue changes if any
+        run: |
+          git add lessons/reviews/regen_state.json lessons/reviews/regen .rokct/agent/jobs
+          if git diff --cached --quiet; then
+            echo "no regeneration changes; nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "[CI] Queue lesson regeneration for denied reviews"
+          git push
