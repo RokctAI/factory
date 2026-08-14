@@ -2181,10 +2181,12 @@ def run_checks(card, card_file):
             if not reel.get(key):
                 errors.append(f"reel_clip.json missing {key}")
 
-    # Mandy post-session Q&A transcript.
-    mandy = paths["assistant_qa_transcript_path"].read_text(encoding="utf-8")
-    if len(mandy.split()) < 50:
-        errors.append("assistant_qa_transcript.md too short to be a usable Q&A transcript")
+    # Mandy post-session Q&A transcript (first tutor only — the field is
+    # absent on the second-tutor card by the roster rules above).
+    if "assistant_qa_transcript_path" in paths:
+        mandy = paths["assistant_qa_transcript_path"].read_text(encoding="utf-8")
+        if len(mandy.split()) < 50:
+            errors.append("assistant_qa_transcript.md too short to be a usable Q&A transcript")
 
     # Skills schema consistency (see the Skills convention at the top of
     # this file): a skill card must carry its stable ref, a non-skill card
