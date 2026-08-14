@@ -153,6 +153,10 @@ def lesson_identity(folder, root):
         "term": re.sub(r"\D", "", term_part) or term_part,
         "topic": display(topic_slug),
         "subtopic": display(subtopic_slug),
+        # The knowledge-bite join key (decision #52): the leaf directory
+        # name IS the session-tree lesson slug the bites index is keyed by
+        # — carried verbatim, never re-derived from a display name.
+        "lesson_slug": subtopic_slug,
         "id": lesson_id,
         "tag": f"lesson-{lesson_id}",
     }
@@ -415,6 +419,12 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
         "subject": ident["subject"],
         "grade": ident["grade"],
         "topic": ident["topic"],
+        # Explicit #52 join key (see lesson_manifest's module docstring):
+        # the app's knowledge-bite offer prefers this over re-deriving a
+        # slug from subtopic/topic display names. Already-published
+        # releases lack it (tags are idempotent-skipped); the app's
+        # derived-key fallback covers those until re-released.
+        "lesson_slug": ident["lesson_slug"],
         "lesson_number": 1,
         "door_close_seconds": lm.DOOR_CLOSE_SECONDS,
         "scheduled_at": datetime.now(timezone.utc)

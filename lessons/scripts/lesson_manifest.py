@@ -17,6 +17,21 @@ assets[], tracks[{time,type,...}]). Track event types (profile,
 subtopic_start, subtopic_end, stretch_break, signoff) are the vocabulary in
 supacharge-product.md's manifest sample and replay AudioSync's doc comment.
 
+`lesson_slug` (2026-08) is the knowledge-bite join key (decision #52): the
+session-tree lesson slug — the name of the lesson's leaf directory under
+lessons/curriculum/CAPS/<subject>/session/<grade>/<term>/<topic>/ — which is
+also the key of lessons/knowledge_bites_index.json. The consumer (lms_sdk's
+end-of-lesson knowledge-bite offer, agent PR #79) prefers this explicit
+field outright and only falls back to RE-DERIVING the slug from the display
+names the manifest carries (its `lessonSlugFromName` over subtopic, then
+topic) when the field is absent. TRANSITION NOTE: manifests published
+before this field existed (GitHub Releases on the agent repo; the release
+path idempotent-skips existing tags) do not carry it — the consumer's
+derived-key fallback covers them until they are regenerated/re-released,
+after which the fallback can retire. lesson_slug_from_name() below must
+stay in lockstep with the Dart derivation so the explicit field never
+changes an existing join.
+
 Audio backend (--audio-backend):
   vibevoice : real VibeVoice-1.5B TTS. Requires a CUDA GPU — see the Level 6
               feasibility note; standard GH runners have none, so this runs
@@ -51,6 +66,19 @@ QA_WINDOW_SECONDS = 120
 def get_field(content, field):
     m = re.search(rf"^{field}:[ \t]*(.*)", content, re.MULTILINE)
     return m.group(1).split("#")[0].strip() if m else ""
+
+
+def lesson_slug_from_name(name):
+    """Session-tree lesson slug from a display name — the exact mirror of
+    lms_sdk's `lessonSlugFromName` (agent PR #79), which is itself how the
+    content tree slugs its directories: lowercase, every run of
+    non-alphanumeric characters collapsed to ONE hyphen, leading/trailing
+    hyphens stripped ("Lines, gradients and inclination" ->
+    "lines-gradients-and-inclination"). The manifest's `lesson_slug` is
+    computed with this so it equals what the consumer's derived-key
+    fallback would produce from the same name — the explicit field wins
+    outright on the app side but never changes the value of the join."""
+    return re.sub(r"[^a-z0-9]+", "-", str(name).lower()).strip("-")
 
 
 def strip_script_to_narration(script_md):
@@ -417,6 +445,7 @@ def main():
     subject = get_field(card, "subject")
     grade = int(get_field(card, "grade") or 0)
     topic = get_field(card, "topic")
+    subtopic = get_field(card, "subtopic")
     tutor = get_field(card, "tutor") or "tutor_001"  # opaque tutor id
     lesson_path = repo / get_field(card, "lesson_path")
 
@@ -569,6 +598,13 @@ def main():
         "subject": subject,
         "grade": grade,
         "topic": topic,
+        # Knowledge-bite join key (decision #52; see module docstring): the
+        # session-tree lesson slug. Derived from the card's subtopic — the
+        # leaf-lesson granularity bites are keyed by — falling back to the
+        # topic for legacy cards without one; SAME candidate order as the
+        # consumer's own derivation, so the explicit field always equals
+        # the best key it could have derived.
+        "lesson_slug": lesson_slug_from_name(subtopic or topic),
         "lesson_number": args.lesson_number,
         "door_close_seconds": DOOR_CLOSE_SECONDS,
         # Real scheduler overwrites this when the lesson is calendared
