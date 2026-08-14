@@ -36,19 +36,29 @@ jobs:
           ref: main
 
       - name: Append to Ledger
+        env:
+          CARD_ID: ${{ inputs.id }}
+          CARD_TYPE: ${{ inputs.type }}
+          CARD_THEME: ${{ inputs.theme }}
+          CARD_STATUS: ${{ inputs.status }}
+          CARD_AGENT: ${{ inputs.agent }}
+          CARD_SESSION: ${{ inputs.session }}
+          CARD_PR: ${{ inputs.pr }}
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M")
-          PR_VALUE="${{ inputs.pr }}"
+          PR_VALUE="$CARD_PR"
           if [ -z "$PR_VALUE" ]; then PR_VALUE="—"; fi
 
-          echo "| ${{ inputs.id }} | ${{ inputs.type }} | ${{ inputs.theme }} | ${{ inputs.status }} | ${{ inputs.agent }} | ${{ inputs.session }} | $PR_VALUE | $TIMESTAMP |" >> .rokct/agent/log/ledger.md
+          echo "| $CARD_ID | $CARD_TYPE | $CARD_THEME | $CARD_STATUS | $CARD_AGENT | $CARD_SESSION | $PR_VALUE | $TIMESTAMP |" >> .rokct/agent/log/ledger.md
 
       - name: Commit Ledger Update
+        env:
+          CARD_ID: ${{ inputs.id }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .rokct/agent/log/ledger.md
-          git commit -m "chore: update ledger for ${{ inputs.id }} [skip ci]" || exit 0
+          git commit -m "chore: update ledger for $CARD_ID [skip ci]" || exit 0
           for i in 1 2 3; do
             git push origin main && break
             git pull --rebase origin main || { git rebase --abort; exit 1; }

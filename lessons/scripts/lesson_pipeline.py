@@ -231,6 +231,42 @@ def entry_hash(entry):
     return hashlib.sha256(key.encode("utf-8")).hexdigest()[:6]
 
 
+# --- paired dual-tutor lessons (docs/paired-dual-tutor-lessons-design.md) ---
+#
+# A seed row carrying tutors: ["expert", "simplifier"] expands into TWO job
+# cards sharing pair_id (= the base entry hash) with pair_role primary /
+# secondary. Option B: the secondary NEVER regenerates the Manim scene — its
+# Level 2 pass receives the primary's manim_scene.py byte-identical, writes
+# its own intro/script/reel in the simplifier's voice, keeps the primary's
+# subtopic refs/titles (own timings), and copies mcq.json +
+# comprehension_check.json unchanged. Level 3 hard-fails a drifted pair
+# (scene hash, example_problem, MCQ ids/correct answers). The primary is
+# always the subject's EXPERT in v1; pair_id never reaches the app — the
+# app joins the two sessions on topic metadata + different tutor.
+
+PAIR_ROLES = ("primary", "secondary")
+# v1 contract: the expert generates the scene, the simplifier reuses it.
+PAIR_TUTOR_ROLES = ("expert", "simplifier")
+
+
+def pair_member_hash(entry, role, tutor_id):
+    """Card hash for one member of a paired seed row. The primary keeps the
+    base entry hash (so backlog accounting still counts the row as opened);
+    the secondary's hash is salted with its role + tutor id so the two cards
+    get distinct ids/filenames while sharing pair_id = the base hash."""
+    if role == "primary":
+        return entry_hash(entry)
+    key = (f"{entry['type']}|{entry['subject']}|{entry['grade']}|"
+           f"{entry['topic']}|{entry['subtopic']}|{role}|{tutor_id}")
+    return hashlib.sha256(key.encode("utf-8")).hexdigest()[:6]
+
+
+def _subtopic_name(sub):
+    """Syllabus subtopic entries are plain strings, or objects
+    {"name": ..., "tutors": [...]} when a single subtopic is paired."""
+    return sub.get("name", "") if isinstance(sub, dict) else sub
+
+
 def guardrail_for_grade(grade):
     grade = int(grade)
     if grade <= 3:
@@ -260,10 +296,17 @@ def content_dir(subject, grade, term, card_id, category=""):
     return f"lessons/{slugify(subject)}/grade{int(grade)}/{term_dir}/{card_id}"
 
 
-def find_duplicate_card(subject, grade, topic, subtopic):
+def find_duplicate_card(subject, grade, topic, subtopic, tutor=None):
     """Structural duplicate check: an existing card (pending/running/done)
     with the same (subject, grade, topic, subtopic) tuple, regardless of how
-    its theme string is worded. Returns the matching card path or None."""
+    its theme string is worded. Returns the matching card path or None.
+
+    `tutor` (opaque id) makes the check tutor-aware and is passed ONLY when
+    seeding a member of a paired row: the pair's two cards intentionally
+    share the tuple, so a card carrying a DIFFERENT tutor id is the pair
+    sibling, not a duplicate. A tuple match with the same tutor — or with no
+    tutor recorded yet (a legacy unpaired card Level 1 has not assigned) —
+    still blocks. Callers seeding normal rows omit it: behaviour unchanged."""
     def norm(s):
         return re.sub(r"\s+", " ", str(s)).strip().lower()
 
@@ -284,6 +327,10 @@ def find_duplicate_card(subject, grade, topic, subtopic):
                 norm(get_field(card, "subtopic")),
             )
             if existing == target:
+                if tutor is not None:
+                    card_tutor = get_field(card, "tutor")
+                    if card_tutor and card_tutor != tutor:
+                        continue  # pair sibling, not a duplicate
                 return f
     return None
 
@@ -310,7 +357,13 @@ def load_seed_entries():
     seed-shaped rows (one per teachable subtopic), then append the skill
     definitions from CAPS/{subject}/skills/. Topics matching
     NON_LESSON_TOPIC_RE or carrying no subtopics are pacing entries, never
-    lesson rows. Topic-level requires_skills links pass through to rows."""
+    lesson rows. Topic-level requires_skills links pass through to rows.
+
+    Paired dual-tutor rows: a `tutors` field passes through like
+    prior_knowledge. Topic-level `tutors` applies to every subtopic of that
+    topic; a single subtopic pairs alone by using the object form
+    {"name": <subtopic>, "tutors": ["expert", "simplifier"]} (plain-string
+    subtopics stay exactly as before)."""
     entries = []
     for folder, lesson_type in sorted(CAPS_TYPE_BY_FOLDER.items()):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
@@ -327,13 +380,17 @@ def load_seed_entries():
                             "grade": data["grade"],
                             "term": str(term["term"]),
                             "topic": topic["name"],
-                            "subtopic": sub,
+                            "subtopic": _subtopic_name(sub),
                             "source": gf.as_posix(),
                         }
                         if topic.get("prior_knowledge"):
                             row["prior_knowledge"] = topic["prior_knowledge"]
                         if topic.get("requires_skills"):
                             row["requires_skills"] = list(topic["requires_skills"])
+                        tutors = (sub.get("tutors") if isinstance(sub, dict)
+                                  else None) or topic.get("tutors")
+                        if tutors:
+                            row["tutors"] = list(tutors)
                         entries.append(row)
     for ref, sk in sorted(load_caps_skills().items()):
         row = {
@@ -383,16 +440,23 @@ def _content_tokens(*parts):
     }
 
 
-def _fuzzy_covered(entry, card_tokens):
+def _fuzzy_covered(entry, card_tokens, tutor=None):
     """True when an existing card's (topic + subtopic) content words overlap
     this entry's enough to call it the same lesson. Cards opened from the
     retired hand-written seed word topics differently from the ATP text, so
-    the exact-tuple check alone would re-open them."""
+    the exact-tuple check alone would re-open them.
+
+    `tutor` (opaque id) is passed ONLY when seeding a member of a paired row:
+    the pair sibling overlaps 100% by construction, so an existing card with
+    a DIFFERENT tutor id is exempt. Same tutor — or no tutor recorded yet —
+    still covers. Normal rows omit it: behaviour unchanged."""
     key = (entry["type"], str(entry["grade"]))
     toks = _content_tokens(entry["topic"], entry["subtopic"])
     if not toks:
         return False
-    for old in card_tokens.get(key, []):
+    for old, old_tutor in card_tokens.get(key, []):
+        if tutor is not None and old_tutor and old_tutor != tutor:
+            continue  # pair sibling territory, not coverage
         inter = len(toks & old)
         union = len(toks | old)
         smaller = min(len(toks), len(old))
@@ -418,6 +482,7 @@ def cmd_seed(args):
     PENDING_DIR.mkdir(parents=True, exist_ok=True)
     existing = set()
     card_tokens = {}
+    pair_roles = {}
     for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
         if d.exists():
             for f in d.glob("*.md"):
@@ -427,18 +492,26 @@ def cmd_seed(args):
                 if f.name.startswith("template"):
                     continue
                 card = read_card(f)
+                pid = get_field(card, "pair_id")
+                if pid:
+                    pair_roles.setdefault(pid, set()).add(
+                        get_field(card, "pair_role"))
                 ctype = get_field(card, "type")
                 if ctype.startswith("lesson."):
                     card_tokens.setdefault(
                         (ctype, get_field(card, "grade").strip()), []
-                    ).append(
-                        _content_tokens(get_field(card, "topic"), get_field(card, "subtopic"))
-                    )
+                    ).append((
+                        _content_tokens(get_field(card, "topic"), get_field(card, "subtopic")),
+                        get_field(card, "tutor"),
+                    ))
 
     created = 0
     for entry in entries:
         if created >= args.limit:
             break
+        if entry.get("tutors"):
+            created += _seed_pair_row(entry, existing, card_tokens, pair_roles)
+            continue
         h = entry_hash(entry)
         if h in existing:
             continue
@@ -494,8 +567,27 @@ def cmd_seed(args):
             term = normalize_term(entry.get("term"))
             if term == "unknown" and str(entry.get("term", "")).strip().lower() not in ("", "unknown"):
                 print(f"WARN: seed entry has invalid term {entry.get('term')!r}; recording 'unknown'")
-        now = datetime.now()
-        card = f"""<!-- CARD RULES
+        card = _render_seed_card(entry, card_id, theme, term, category,
+                                 skill_ref, requires_skills, tutor_id,
+                                 tutor_style, greeting_ref, signoff_ref,
+                                 ack_ref)
+        filename = f"{slug}_{entry['type']}_{h}.md"
+        write_card(PENDING_DIR / filename, card)
+        print(f"Created lesson job card: {filename}")
+        existing.add(h)
+        created += 1
+
+    print(f"Seeded {created} lesson card(s) for {args.type}.")
+    return 0
+
+
+def _render_seed_card(entry, card_id, theme, term, category, skill_ref,
+                      requires_skills, tutor_id, tutor_style, greeting_ref,
+                      signoff_ref, ack_ref, pair_id="", pair_role=""):
+    """The Level 0 job-card template. pair_id/pair_role are empty on every
+    card except the two members of a paired dual-tutor row."""
+    now = datetime.now()
+    return f"""<!-- CARD RULES
      This card is the source of truth for this job.
      Status field controls pipeline progression.
      All status changes must go through update_status.py.
@@ -515,6 +607,8 @@ topic: {entry['topic']}
 subtopic: {entry['subtopic']}
 tutor: {tutor_id}
 tutor_style: {tutor_style}
+pair_id: {pair_id}
+pair_role: {pair_role}
 greeting_ref: {greeting_ref}
 signoff_ref: {signoff_ref}
 ack_ref: {ack_ref}
@@ -551,14 +645,95 @@ loop_iterations: 0
 max_iterations: 10
 ---
 """
+
+
+def _seed_pair_row(entry, existing, card_tokens, pair_roles):
+    """Expand one paired seed row (tutors: ["expert", "simplifier"]) into two
+    job cards sharing pair_id, and return how many cards were created.
+
+    v1 contract (docs/paired-dual-tutor-lessons-design.md): the primary is
+    ALWAYS the subject's expert — the scene author — and the secondary the
+    simplifier; a row ordering them any other way is rejected, never
+    reinterpreted. Both cards use the SHARED base hash for greeting/sign-off/
+    acknowledgement assignment so the never-both-tutors ack rule keeps
+    holding across the pair. Re-running seed fills in a missing member
+    without ever duplicating the other."""
+    label = (f"({entry['subject']}, grade {entry['grade']}, "
+             f"{entry['topic']}, {entry['subtopic']})")
+    tutors = [str(t).strip().lower() for t in entry.get("tutors", [])]
+    if tutors != list(PAIR_TUTOR_ROLES):
+        print(f"ERROR: paired seed row {label} must carry tutors: "
+              f"{list(PAIR_TUTOR_ROLES)} exactly (the expert is always the "
+              f"primary in v1); got {entry.get('tutors')!r}")
+        return 0
+    if str(entry.get("category", "")).strip().lower() == CATEGORY_SKILL:
+        print(f"ERROR: paired seed row {label} is a skill — pairs are "
+              "standard lessons only")
+        return 0
+
+    # Both members already on disk (pair_roles is scanned from the existing
+    # cards' pair_id/pair_role fields) -> nothing to seed. This must
+    # short-circuit BEFORE roster resolution so a re-run without TEAM_ROOT
+    # (e.g. CI) stays silent instead of erroring on an unresolvable roster
+    # it does not need.
+    pair_id = entry_hash(entry)
+    if set(PAIR_ROLES) <= pair_roles.get(pair_id, set()):
+        return 0
+
+    roster_entry = load_roster().get("subjects", {}).get(
+        roster_key_for(entry.get("type", ""), entry.get("subject", "")), {})
+    members = []
+    for role, roster_role in zip(PAIR_ROLES, PAIR_TUTOR_ROLES):
+        tid = roster_entry.get(roster_role, "")
+        ptext = load_tutor_card(tid) if tid else ""
+        if not (tid and ptext):
+            print(f"ERROR: paired seed row {label}: cannot resolve the "
+                  f"subject's {roster_role} from the tutor roster "
+                  f"({TUTORS_DIR}/roster.json — is TEAM_ROOT set?); a pair "
+                  "is never seeded with an unresolved tutor")
+            return 0
+        members.append((role, tid, persona_style_tag(ptext)))
+
+    term = normalize_term(entry.get("term"))
+    if term == "unknown" and str(entry.get("term", "")).strip().lower() not in ("", "unknown"):
+        print(f"WARN: seed entry has invalid term {entry.get('term')!r}; recording 'unknown'")
+    slug = slugify(f"{entry['subject']}_g{entry['grade']}_{entry['topic']}_{entry['subtopic']}")[:60]
+    theme = f"{entry['subject']} Grade {entry['grade']}: {entry['topic']} - {entry['subtopic']}"
+
+    created = 0
+    for role, tutor_id, tutor_style in members:
+        h = pair_member_hash(entry, role, tutor_id)
+        if h in existing:
+            continue
+        # The duplicate guards run tutor-aware for pair members only: the
+        # sibling shares the tuple/tokens by construction and must not block.
+        if _fuzzy_covered(entry, card_tokens, tutor=tutor_id):
+            print(f"SEMANTIC DUPLICATE SKIPPED: {label} [{role}] overlaps an "
+                  "existing card with this tutor")
+            continue
+        dup = find_duplicate_card(entry["subject"], entry["grade"],
+                                  entry["topic"], entry["subtopic"],
+                                  tutor=tutor_id)
+        if dup:
+            print(f"DUPLICATE SKIPPED: {label} [{role}] already has card {dup.name}")
+            continue
+        # Variant assignment uses the SHARED pair hash: assign_ack_variant's
+        # which-of-the-duo derivation only coordinates when both cards feed
+        # it the same hash.
+        greeting_ref = assign_tutor_variant(tutor_id, "greetings", pair_id)
+        signoff_ref = assign_tutor_variant(tutor_id, "signoffs", pair_id)
+        ack_ref = assign_ack_variant(tutor_id, pair_id, role == "primary")
+        card_id = f"{slug}_{h}"
+        card = _render_seed_card(entry, card_id, theme, term, "", "",
+                                 entry.get("requires_skills", []), tutor_id,
+                                 tutor_style, greeting_ref, signoff_ref,
+                                 ack_ref, pair_id=pair_id, pair_role=role)
         filename = f"{slug}_{entry['type']}_{h}.md"
         write_card(PENDING_DIR / filename, card)
-        print(f"Created lesson job card: {filename}")
+        print(f"Created lesson job card: {filename} (pair {pair_id}, {role})")
         existing.add(h)
         created += 1
-
-    print(f"Seeded {created} lesson card(s) for {args.type}.")
-    return 0
+    return created
 
 
 # --- tutor persona cards ---
@@ -890,6 +1065,61 @@ LESSON_ANGLE:
 <3-6 lines: how this 15-minute lesson should unfold for this tutor persona — hook, teaching beats, where the example problem lands>"""
 
 
+class PairNotReadyError(RuntimeError):
+    """A paired secondary card's Level 2 pass was requested before its
+    primary's content exists — the sequencing rule, not a soft warning."""
+
+
+def find_pair_member(pair_id, role):
+    """(path, card text) of the pair member holding `role`, or (None, '')."""
+    if not pair_id:
+        return None, ""
+    for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
+        if not d.exists():
+            continue
+        for f in sorted(d.glob("*.md")):
+            if f.name.startswith("template"):
+                continue
+            c = f.read_text(encoding="utf-8")
+            if (get_field(c, "type").startswith("lesson.")
+                    and get_field(c, "pair_id") == pair_id
+                    and get_field(c, "pair_role") == role):
+                return f, c
+    return None, ""
+
+
+def pair_ready(card):
+    """(ok, message) — whether lesson2 may run this card. Non-secondary
+    cards are always ready; a pair_role: secondary card is ready only once
+    its primary's card shows a lesson_path with manim_scene.py present
+    (i.e. the primary's concept PR is merged), because the secondary's
+    Level 2 pass copies that scene byte-identical instead of regenerating."""
+    if get_field(card, "pair_role") != "secondary":
+        return True, "not a paired secondary card"
+    pair_id = get_field(card, "pair_id")
+    if not pair_id:
+        return False, "pair_role is secondary but pair_id is empty"
+    primary_file, primary = find_pair_member(pair_id, "primary")
+    if primary_file is None:
+        return False, f"no primary card found for pair {pair_id}"
+    lesson_path = get_field(primary, "lesson_path")
+    if not lesson_path:
+        return False, (f"primary {primary_file.name} has no lesson_path yet "
+                       "— its concept PR has not merged")
+    scene = Path(lesson_path) / "manim_scene.py"
+    if not scene.exists():
+        return False, f"primary scene not on disk yet: {scene}"
+    return True, f"primary scene present: {scene}"
+
+
+def cmd_pair_ready(args):
+    """Exit 0 when lesson2 may run this card, 1 when a paired secondary must
+    keep waiting for its primary's scene."""
+    ok, msg = pair_ready(read_card(args.file))
+    print(("READY: " if ok else "NOT READY: ") + msg)
+    return 0 if ok else 1
+
+
 def build_level2_prompt(card, card_file):
     """The Jules content-generation prompt.
 
@@ -897,7 +1127,14 @@ def build_level2_prompt(card, card_file):
     agent/replay/docs/supacharge-tech.md §4, verbatim, filled with this card's
     values — plus comprehension check questions, which §4's canonical
     "How A Lesson Is Created" output list includes.
+
+    A paired secondary card gets the Option B variant prompt instead: the
+    primary's scene is fixed content to copy, never to regenerate. Raises
+    PairNotReadyError when the primary's content is not merged yet — the
+    lesson2 sequencing rule is enforced here, not just in the workflow.
     """
+    if get_field(card, "pair_role") == "secondary":
+        return build_level2_secondary_prompt(card, card_file)
     card_id = get_field(card, "id")
     subject = get_field(card, "subject")
     grade = get_field(card, "grade")
@@ -1104,12 +1341,176 @@ Then update the job card {card_file}:
 Do not modify any other job card, and do not touch books/ or film/."""
 
 
+def build_level2_secondary_prompt(card, card_file):
+    """Option B content generation for a paired SECONDARY card
+    (docs/paired-dual-tutor-lessons-design.md): the primary's manim_scene.py
+    is embedded as fixed copy-verbatim content, mcq.json and
+    comprehension_check.json are copied byte-identical, subtopic refs/titles
+    are the primary's (own timings), and only intro/script/reel are authored
+    — in the secondary persona. No assistant_qa_transcript.md: the Q&A duet
+    belongs to the expert's (primary) card.
+
+    Raises PairNotReadyError when any required primary artifact is missing."""
+    ok, msg = pair_ready(card)
+    if not ok:
+        raise PairNotReadyError(
+            f"secondary card {get_field(card, 'id')} cannot run Level 2 yet: {msg}")
+    _, primary = find_pair_member(get_field(card, "pair_id"), "primary")
+    primary_dir = get_field(primary, "lesson_path")
+    scene_path = Path(primary_dir) / "manim_scene.py"
+    scene_text = scene_path.read_text(encoding="utf-8")
+
+    missing = [str(Path(primary_dir) / n)
+               for n in ("subtopics.json", "mcq.json", "comprehension_check.json")
+               if not (Path(primary_dir) / n).exists()]
+    if missing:
+        raise PairNotReadyError(
+            f"secondary card {get_field(card, 'id')} cannot run Level 2 yet: "
+            f"primary content incomplete — missing {', '.join(missing)}")
+    try:
+        primary_subs = json.loads(
+            (Path(primary_dir) / "subtopics.json").read_text(encoding="utf-8"))
+    except ValueError as e:
+        raise PairNotReadyError(
+            f"primary subtopics.json unparseable ({e}) — fix the primary first")
+    ref_lines = "\n".join(
+        f"  - {s.get('ref')}: {s.get('title')}"
+        for s in primary_subs.get("subtopics", []))
+
+    card_id = get_field(card, "id")
+    subject = get_field(card, "subject")
+    grade = get_field(card, "grade")
+    term = get_field(card, "term") or "unknown"
+    topic = get_field(card, "topic")
+    subtopic = get_field(card, "subtopic")
+    tutor = get_field(card, "tutor")
+    # The example problem is written ONCE and shared by contract — the
+    # primary's value is authoritative for both cards.
+    example = get_field(primary, "example_problem") or get_field(card, "example_problem")
+    prior = get_field(card, "prior_knowledge")
+    lesson_dir = content_dir(subject, grade, get_field(card, "term"), card_id,
+                             get_field(card, "category"))
+
+    slug, persona_card = match_persona(subject_duo(card), tutor)
+    persona_block = ""
+    if persona_card:
+        persona_block = f"""
+TUTOR PERSONA CARD (lessons/tutors/{slug}/tutor.md) — every tutor-voiced item
+(intro, script, reel clip) must be written in exactly this established
+character; do not re-derive or soften the voice:
+--- persona card start ---
+{persona_card.strip()}
+--- persona card end ---
+"""
+
+    return f"""TASK: Generate the SECOND voice of a paired Supacharge lesson.
+
+This card is the pair_role: secondary member of a dual-tutor pair. The
+primary (expert) lesson already exists and is the structural source of
+truth: same learning objectives, same example problem, same animations,
+same questions with the same answers. You author ONLY the simplifier-voiced
+audio artifacts around that fixed structure. Do not regenerate, rebalance
+or "improve" any of the fixed content — Level 3 hard-fails the pair on any
+drift.
+
+Subject: [{subject}]
+Grade: [{grade}]
+Term: [{term}]
+Topic: [{topic}]
+Subtopic: [{subtopic}]
+Example problem: [{example}]
+Tutor: [{tutor}]
+Prior knowledge: [{prior}]
+{persona_block}
+FIXED CONTENT — copy, never edit:
+
+1. {lesson_dir}/manim_scene.py — write the file below BYTE-IDENTICAL (the
+   pacing difference comes free at Level 6, which rescales the same
+   primitives to this tutor's slower audio; the visuals must not fork):
+--- primary scene start ({scene_path}) ---
+{scene_text}
+--- primary scene end ---
+
+2. {lesson_dir}/mcq.json — copy {primary_dir}/mcq.json byte-identical.
+   Same questions, same options, same correct answers — the "same answers"
+   requirement is structural, not re-generated.
+
+3. {lesson_dir}/comprehension_check.json — copy
+   {primary_dir}/comprehension_check.json byte-identical.
+
+CONTENT TO AUTHOR — in this tutor's own voice:
+
+4. {lesson_dir}/subtopics.json — the SAME refs and titles as the primary,
+   in the same order (identical objectives), with YOUR OWN timings sized to
+   this tutor's pacing: {{"subtopics": [{{"ref": ..., "title": ...,
+   "start_seconds": ..., "end_seconds": ...}}]}} — contiguous, starting at
+   0, total close to 900 seconds. The primary's refs and titles are:
+{ref_lines}
+
+5. {lesson_dir}/intro.md — the tutor's spoken topic intro, 2-4 sentences in
+   this tutor's register, framing what today's topic is and why it matters.
+   No greeting, no self-introduction: the assistant has already named the
+   tutor and the tutor's own greeting has already played.
+
+6. {lesson_dir}/script.md — the lesson script in this tutor's voice, with a
+   '## Subtopic: <title>' heading per subtopic using EXACTLY the titles
+   above, teaching the same objectives and the same example problem
+   [{example}] with the same mathematics and the same final answers — but
+   built this tutor's way (concrete pictures and everyday anchors before
+   symbols). It narrates the SAME whiteboard animation, so the teaching
+   beats must follow the scene's board steps in order. TEACHING CONTENT
+   ONLY, opening straight into the first subtopic. The same hard rules as
+   every lesson script apply (Level 3 enforces them structurally):
+   * NO greeting, welcome, or self-introduction of any wording;
+   * NO naming any tutor or host, NO platform mentions, NO handoffs,
+     goodbyes or sign-offs (greeting/sign-off audio already exists as
+     assigned tutor assets on this card);
+   * NO bracketed/parenthetical stage directions or physical-action
+     description — TTS reads narration verbatim (parentheses carrying
+     maths are fine);
+   * NO dead air, [pause] directions, or reacting to the clock; write one
+     uninterrupted lesson;
+   * question lead-ins at MCQ subtopic ends ARE wanted, in this tutor's
+     register, pointing at what the copied questions actually ask — but
+     NEVER state or imply how long the student gets.
+
+7. {lesson_dir}/reel_clip.json — the 60-second TikTok clip script, JSON
+   only, same schema as every lesson reel: {{"element_type": "lesson_reel",
+   "lesson_id": "{card_id}", "lesson_title": "...", "hook_text": "...",
+   "hook_source_file": "script.md", "clip_script": "...", "visual_style":
+   "...", "mood": "...", "pacing": "...", "call_to_action": "...",
+   "platform": "tiktok", "duration_seconds": 60, "guardrail_applied":
+   "{get_field(card, 'guardrail')}"}}. Pick this script's own best moment.
+
+DO NOT create {lesson_dir}/assistant_qa_transcript.md. The Q&A duet belongs
+to the FIRST tutor of the session (the expert — the primary card); the
+simplifier's card never has one. Leave the card's
+assistant_qa_transcript_path field empty.
+
+Then update the job card {card_file}:
+- fill lesson_name (short human title) and lesson_path ({lesson_dir}),
+- fill script_path, manim_path, subtopics_path, mcq_data_path,
+  comprehension_check_path, reel_brief_path with the paths above (leave
+  assistant_qa_transcript_path empty),
+- set example_problem to exactly [{example}] if it differs — the pair
+  shares one example problem by contract,
+- write a 'concept: |' block summarising how this voice teaches the shared
+  structure (angle, pacing, where the example problem lands),
+- set status to 'concept_generated'.
+Do not modify the primary's lesson files or card, any other job card, or
+books/ or film/."""
+
+
 def cmd_prompt(args):
     card = read_card(args.file)
     if args.level == 1:
         print(build_level1_prompt(card))
     elif args.level == 2:
-        print(build_level2_prompt(card, args.file.replace("\\", "/")))
+        try:
+            print(build_level2_prompt(card, args.file.replace("\\", "/")))
+        except PairNotReadyError as e:
+            print(f"Error: {e}")
+            return 1
     elif args.level == 3:
         print(build_expansion_prompt(card, args.file.replace("\\", "/")))
     else:
@@ -1628,7 +2029,9 @@ def cmd_skills_index(args):
                         if topic["name"] == ptr.get("topic")]
                 if not hits:
                     errors.append(f"{sf}: covered_by topic not in grade{ptr.get('grade')} syllabus: {ptr.get('topic')!r}")
-                elif not any(ptr.get("subtopic") in (h.get("subtopics") or []) for h in hits):
+                elif not any(ptr.get("subtopic") in
+                             [_subtopic_name(s) for s in (h.get("subtopics") or [])]
+                             for h in hits):
                     errors.append(f"{sf}: covered_by subtopic not under that topic: {ptr.get('subtopic')!r}")
     for folder in sorted(CAPS_TYPE_BY_FOLDER):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
@@ -1973,6 +2376,92 @@ def _run_skill_checks(card, base, warnings):
     return (errors, warnings)
 
 
+def _mcq_key_signature(mcq):
+    """The parts of an MCQ set the pairing contract fixes: every question's
+    (subtopic ref, id, correct_index), in order. Wording/options may not
+    drift either (the files are copied byte-identical), but ids + correct
+    answers are the §4 'same answers' requirement, checked explicitly."""
+    return [(b.get("ref"), q.get("id"), q.get("correct_index"))
+            for b in mcq.get("subtopics", [])
+            for q in b.get("questions", [])]
+
+
+def pair_checks(card):
+    """Level 3 pairing gate (docs/paired-dual-tutor-lessons-design.md §2).
+
+    Every card gets its pair fields validated; a pair_role: secondary card
+    is additionally checked against its primary: Manim scene byte-identical
+    (sha256), example_problem identical, MCQ ids and correct answers
+    identical. A drifted pair member hard-fails, never advances."""
+    errors = []
+    pair_id = get_field(card, "pair_id")
+    pair_role = get_field(card, "pair_role")
+    if pair_role and pair_role not in PAIR_ROLES:
+        errors.append(f"pair_role must be one of {list(PAIR_ROLES)}, got {pair_role!r}")
+        return errors
+    if pair_role and not pair_id:
+        errors.append(f"pair_role is {pair_role} but pair_id is empty")
+        return errors
+    if pair_id and not pair_role:
+        errors.append(f"pair_id {pair_id} set but pair_role is empty")
+        return errors
+    if pair_role != "secondary":
+        return errors
+
+    primary_file, primary = find_pair_member(pair_id, "primary")
+    if primary_file is None:
+        errors.append(f"pair {pair_id}: no primary card exists for this secondary")
+        return errors
+
+    # Scene reuse is the whole point of Option B: byte-identical, verified
+    # by hash, never by trusting the copy instruction.
+    primary_dir = get_field(primary, "lesson_path")
+    own_scene = get_field(card, "manim_path")
+    primary_scene = Path(primary_dir) / "manim_scene.py" if primary_dir else None
+    if primary_scene is None or not primary_scene.exists():
+        errors.append(f"pair {pair_id}: primary {primary_file.name} has no "
+                      "manim_scene.py on disk — the secondary cannot have "
+                      "been generated from it")
+    elif own_scene and Path(own_scene).exists():
+        own_sha = hashlib.sha256(Path(own_scene).read_bytes()).hexdigest()
+        prim_sha = hashlib.sha256(primary_scene.read_bytes()).hexdigest()
+        if own_sha != prim_sha:
+            errors.append(
+                f"pair {pair_id}: manim_scene.py differs from the primary's "
+                f"(sha256 {own_sha[:12]}… vs {prim_sha[:12]}…) — the secondary "
+                "reuses the primary's scene byte-identical, never a fork")
+    # (a missing secondary scene is reported by the standard content checks)
+
+    if get_field(card, "example_problem").strip() != get_field(primary, "example_problem").strip():
+        errors.append(
+            f"pair {pair_id}: example_problem differs from primary "
+            f"{primary_file.name} — the pair shares one example problem by contract")
+
+    own_mcq_path = get_field(card, "mcq_data_path")
+    prim_mcq_path = get_field(primary, "mcq_data_path")
+    if own_mcq_path and prim_mcq_path and Path(own_mcq_path).exists() and Path(prim_mcq_path).exists():
+        own_mcq = _load_json(own_mcq_path, errors, "pair mcq (secondary)")
+        prim_mcq = _load_json(prim_mcq_path, errors, "pair mcq (primary)")
+        if own_mcq is not None and prim_mcq is not None:
+            own_sig = _mcq_key_signature(own_mcq)
+            prim_sig = _mcq_key_signature(prim_mcq)
+            if own_sig != prim_sig:
+                diffs = [f"{a} != {b}" for a, b in zip(own_sig, prim_sig) if a != b]
+                if len(own_sig) != len(prim_sig):
+                    diffs.append(f"{len(own_sig)} vs {len(prim_sig)} questions")
+                errors.append(
+                    f"pair {pair_id}: MCQ ids/correct answers differ from the "
+                    f"primary's ({'; '.join(diffs[:4])}) — same questions, same "
+                    "answers is structural for a pair")
+    elif prim_mcq_path and not own_mcq_path:
+        pass  # secondary's missing mcq field is reported by the standard checks
+    elif not prim_mcq_path:
+        errors.append(f"pair {pair_id}: primary {primary_file.name} has no "
+                      "mcq_data_path to compare against")
+
+    return errors
+
+
 def run_checks(card, card_file):
     """Structural + pedagogical sanity checks for Level 3.
 
@@ -1988,6 +2477,10 @@ def run_checks(card, card_file):
     base = Path(lesson_path)
     if not base.exists():
         return ([f"lesson content directory missing: {lesson_path}"], warnings)
+
+    # Paired dual-tutor cards: validate the pair fields and, on a secondary,
+    # the no-drift contract against its primary (hard errors).
+    errors.extend(pair_checks(card))
 
     # Skills use the review format, not the seven-item lesson form.
     if get_field(card, "category") == CATEGORY_SKILL:
@@ -2581,6 +3074,8 @@ def _load_all_cards():
                 "attempts": int(get_field(c, "attempts") or 0),
                 "max_iterations": int(get_field(c, "max_iterations") or 10),
                 "expansion": get_field(c, "expansion_requested"),
+                "pair_id": get_field(c, "pair_id"),
+                "pair_role": get_field(c, "pair_role"),
             })
     return cards
 
@@ -2672,6 +3167,26 @@ def cmd_dashboard(args):
     lines.append("| " + " | ".join(totals) + " |")
     lines.append("")
 
+    # 3b. Paired dual-tutor cards, one line per pair (both members' state
+    # at a glance — a secondary waits for its primary by design).
+    pairs = {}
+    for c in cards:
+        if c["pair_id"]:
+            pairs.setdefault(c["pair_id"], {})[c["pair_role"] or "?"] = c
+    lines += [f"## Pairs ({len(pairs)})", ""]
+    if pairs:
+        for pid in sorted(pairs):
+            members = pairs[pid]
+            parts = []
+            for role in PAIR_ROLES:
+                m = members.get(role)
+                parts.append(f"{role} `{m['id']}` ({m['status']})" if m
+                             else f"{role} **MISSING**")
+            lines.append(f"- pair `{pid}`: " + " / ".join(parts))
+    else:
+        lines.append("No paired dual-tutor cards yet.")
+    lines.append("")
+
     # 4. Syllabus backlog per subject/grade.
     from collections import Counter
     seed_total = Counter()
@@ -2761,6 +3276,9 @@ def main():
     p.add_argument("--file", required=True)
     p.add_argument("--level", type=int, required=True, choices=[1, 2, 3])
 
+    p = sub.add_parser("pair-ready", help="Exit 0 when lesson2 may run this card; 1 while a paired secondary waits for its primary's scene")
+    p.add_argument("--file", required=True)
+
     p = sub.add_parser("mark-expansion", help="Record the single permitted script-expansion pass")
     p.add_argument("--file", required=True)
 
@@ -2800,6 +3318,7 @@ def main():
     handlers = {
         "seed": cmd_seed,
         "prompt": cmd_prompt,
+        "pair-ready": cmd_pair_ready,
         "plan": cmd_plan,
         "check": cmd_check,
         "evaluate": cmd_evaluate,

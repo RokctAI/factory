@@ -2,19 +2,16 @@
 """Build lessons/review_index.json — the machine-readable lesson index for the
 Supacharge in-app lesson review flow.
 
-Scans two lesson populations:
+Scans one lesson population:
 
 1. Session packages:
    lessons/curriculum/CAPS/{subject}/session/grade{g}/term{t}/{topic-slug}/{subtopic-slug}/
    id: session_{subject}_g{grade}_t{term}_{topic-slug}_{subtopic-slug}
 
-2. Pipeline lessons:
-   lessons/{subject}/grade{g}/{term}/{card_id}/ driven by job cards in
-   .rokct/agent/jobs/{pending,running,done}/. Only lesson directories that
-   exist on disk are indexed (a queued card with no generated content has
-   nothing to review yet). id: the job-card id verbatim.
-   Done cards whose frontmatter carries manifest_url / audio_url /
-   animation_url (GitHub Release assets) are marked produced=true.
+Pipeline lessons (the junior tree at lessons/{subject}/grade{g}/..., driven by
+job cards in .rokct/agent/jobs/) are deliberately NOT indexed: every pipeline
+lesson has a senior CAPS session equivalent that is already indexed, so listing
+both would put duplicate lessons in front of reviewers.
 
 Review state is merged from lessons/reviews/<id>.json (absent file means
 status "pending"). Output is deterministic (lessons sorted by id); the file
@@ -27,52 +24,14 @@ Stdlib only — no third-party dependencies.
 from __future__ import annotations
 
 import json
-import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
-JOBS_ROOT = REPO_ROOT / ".rokct" / "agent" / "jobs"
 REVIEWS_DIR = REPO_ROOT / "lessons" / "reviews"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "review_index.json"
-
-JOB_QUEUES = ("pending", "running", "done")
-
-FRONTMATTER_KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$")
-
-
-def parse_frontmatter(path: Path) -> dict:
-    """Parse simple scalar key: value pairs from a job card's YAML frontmatter.
-
-    Tiny stdlib parser: reads the block between the first pair of '---' lines
-    (ignoring any leading HTML comment), takes zero-indent 'key: value' lines,
-    and skips block-scalar bodies (indented continuation lines).
-    """
-    fields: dict = {}
-    in_frontmatter = False
-    try:
-        text = path.read_text(encoding="utf-8")
-    except OSError:
-        return fields
-    for line in text.splitlines():
-        if line.strip() == "---":
-            if in_frontmatter:
-                break
-            in_frontmatter = True
-            continue
-        if not in_frontmatter:
-            continue
-        if line[:1] in (" ", "\t"):
-            continue  # block-scalar continuation / nested value
-        match = FRONTMATTER_KEY_RE.match(line)
-        if match:
-            value = match.group(2).strip()
-            if value in ("|", ">", "|-", ">-"):
-                value = ""  # block scalar marker; body not needed here
-            fields[match.group(1)] = value
-    return fields
 
 
 def slug_to_display(slug: str) -> str:
@@ -88,27 +47,52 @@ def parse_int(value, default=None):
         return default
 
 
+def load_regen_state() -> dict:
+    """Per-lesson regeneration state written by regen_denied.py; absent -> {}."""
+    state_path = REVIEWS_DIR / "regen_state.json"
+    if state_path.is_file():
+        try:
+            data = json.loads(state_path.read_text(encoding="utf-8"))
+            if isinstance(data, dict) and isinstance(data.get("lessons"), dict):
+                return data["lessons"]
+        except (json.JSONDecodeError, OSError) as exc:
+            print(f"warning: could not read {state_path}: {exc}", file=sys.stderr)
+    return {}
+
+
+REGEN_STATE = load_regen_state()
+
+
 def load_review(lesson_id: str) -> dict:
     """Merge review state from lessons/reviews/<id>.json; absent -> pending."""
+    review = {"status": "pending", "reason": None, "reviewed_at": None}
     review_path = REVIEWS_DIR / f"{lesson_id}.json"
     if review_path.is_file():
         try:
             data = json.loads(review_path.read_text(encoding="utf-8"))
             status = data.get("status")
             if status in ("approved", "denied"):
-                return {
+                review = {
                     "status": status,
                     "reason": data.get("reason"),
                     "reviewed_at": data.get("reviewed_at"),
                 }
-            print(
-                f"warning: {review_path} has invalid status {status!r}; "
-                "treating as pending",
-                file=sys.stderr,
-            )
+            else:
+                print(
+                    f"warning: {review_path} has invalid status {status!r}; "
+                    "treating as pending",
+                    file=sys.stderr,
+                )
         except (json.JSONDecodeError, OSError) as exc:
             print(f"warning: could not read {review_path}: {exc}", file=sys.stderr)
-    return {"status": "pending", "reason": None, "reviewed_at": None}
+    regen = REGEN_STATE.get(lesson_id)
+    if regen:
+        review["regen"] = {
+            "attempts": regen.get("attempts"),
+            "parked": bool(regen.get("parked")),
+            "queued_at": regen.get("last_queued_at"),
+        }
+    return review
 
 
 def scan_session_lessons() -> list:
@@ -161,68 +145,8 @@ def scan_session_lessons() -> list:
     return lessons
 
 
-def scan_pipeline_lessons() -> list:
-    """Scan pipeline lessons via job cards in .rokct/agent/jobs/{pending,running,done}.
-
-    A card is indexed when its lesson directory exists on disk. produced=true
-    only when the card carries GitHub Release asset URLs.
-    """
-    lessons = []
-    seen = set()
-    for queue in JOB_QUEUES:
-        queue_dir = JOBS_ROOT / queue
-        if not queue_dir.is_dir():
-            continue
-        for card_path in sorted(queue_dir.glob("*.md")):
-            card = parse_frontmatter(card_path)
-            card_id = card.get("id")
-            if not card_id or card_id in seen:
-                continue
-            lesson_path = card.get("lesson_path", "")
-            if not lesson_path or not (REPO_ROOT / lesson_path).is_dir():
-                continue  # no generated content on disk yet — nothing to review
-            seen.add(card_id)
-
-            manifest_url = card.get("manifest_url") or None
-            audio_url = card.get("audio_url") or None
-            animations_url = card.get("animation_url") or None
-            produced = bool(manifest_url and audio_url and animations_url)
-            assets = (
-                {
-                    "manifest_url": manifest_url,
-                    "audio_url": audio_url,
-                    "animations_url": animations_url,
-                }
-                if produced
-                else None
-            )
-
-            # subject as slug (directory form), consistent with session lessons
-            path_parts = Path(lesson_path).parts
-            subject = path_parts[1] if len(path_parts) > 1 else (
-                card.get("subject", "").lower().replace(" ", "_")
-            )
-
-            lessons.append(
-                {
-                    "id": card_id,
-                    "source": "pipeline",
-                    "subject": subject,
-                    "grade": parse_int(card.get("grade")),
-                    "term": parse_int(card.get("term")),
-                    "topic": card.get("topic") or None,
-                    "subtopic": card.get("subtopic") or None,
-                    "package_path": lesson_path,
-                    "produced": produced,
-                    "assets": assets,
-                    "review": load_review(card_id),
-                }
-            )
-    return lessons
-
-
 def build_index() -> dict:
-    lessons = scan_session_lessons() + scan_pipeline_lessons()
+    lessons = scan_session_lessons()
     lessons.sort(key=lambda lesson: lesson["id"])
     return {
         "version": 1,

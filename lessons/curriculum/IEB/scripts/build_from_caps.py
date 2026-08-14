@@ -77,10 +77,29 @@ DBE_ONLY_TOP_KEYS = ("sba_weighting", "sba_guidelines", "exam_structure")
 DBE_ONLY_TERM_KEYS = ("sba", "control_test_scope")
 
 
+def _subtopic_name(sub):
+    """CAPS subtopic entries are plain strings, or objects carrying
+    factory-pipeline directives (e.g. {"name": ..., "tutors": [...]}).
+    Those directives steer lesson generation, not curriculum content, so
+    only the name string carries into the derived IEB tree (mirrors
+    _subtopic_name in lessons/scripts/lesson_pipeline.py — tutors and any
+    other non-name keys are stripped)."""
+    return sub.get("name", "") if isinstance(sub, dict) else sub
+
+
 def derive_syllabus(caps_doc):
     terms = []
     for t in caps_doc["terms"]:
         nt = {k: v for k, v in t.items() if k not in DBE_ONLY_TERM_KEYS}
+        if nt.get("topics"):
+            topics = []
+            for topic in nt["topics"]:
+                ntopic = dict(topic)
+                if ntopic.get("subtopics"):
+                    ntopic["subtopics"] = [_subtopic_name(s)
+                                           for s in ntopic["subtopics"]]
+                topics.append(ntopic)
+            nt["topics"] = topics
         terms.append(nt)
     out = {
         "subject": caps_doc["subject"],
