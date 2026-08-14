@@ -36,6 +36,18 @@ jobs:
             rm initiate_temp.py
           fi
 
+      # The agent repo supplies the tutor roster + persona cards (TEAM_ROOT)
+      # that lesson_pipeline.py check resolves tutors against — without it the
+      # roster is unresolvable and every card mis-checks (e.g. expert-tutor
+      # cards false-fail the second-tutor Q&A rule). Private repo:
+      # MONOREPO_PAT, same as lesson_release_on_complete.yml/agent_checks.yml.
+      - name: Check out RokctAI/agent
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: agent
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -51,6 +63,7 @@ jobs:
           # crosscheck (the only groq call here) is retired and the Jules
           # expansion pass was already retired, so this step makes no AI call.
           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+          TEAM_ROOT: agent/lms/team   # tutor roster/persona cards (agent repo checkout above)
         run: |
           # Diagnostic: run-step logs are admin-only, so on any unexpected
           # failure persist the failing command and line into the repo.

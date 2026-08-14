@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Difference Table Verdict",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A number pattern has a constant second difference. The pattern is:",
+          "options": [
+            "Linear",
+            "Geometric",
+            "Quadratic",
+            "Exponential"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The first differences of 6; 15; 28; 45 are:",
+          "options": [
+            "9; 13; 17",
+            "9; 12; 17",
+            "6; 9; 13",
+            "4; 4; 4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The second difference of 6; 15; 28; 45 is:",
+          "options": [
+            "2",
+            "4",
+            "9",
+            "13"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The pattern 3; 7; 11; 15 has a constant first difference of 4. Its general term is:",
+          "options": [
+            "T_n = 3n + 4",
+            "T_n = 4n + 3",
+            "T_n = 3n − 1",
+            "T_n = 4n − 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Three Equations Recover a, b and c",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In T_n = an^2 + bn + c, the constant second difference equals:",
+          "options": [
+            "a",
+            "2a",
+            "b",
+            "a + b"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In T_n = an^2 + bn + c, the first of the first differences, T_2 − T_1, equals:",
+          "options": [
+            "a + b",
+            "2a",
+            "4a + 2b",
+            "3a + b"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The general term of 6; 15; 28; 45 is:",
+          "options": [
+            "T_n = 2n^2 + 3n + 1",
+            "T_n = 2n^2 + n + 3",
+            "T_n = 3n^2 + 2n + 1",
+            "T_n = 4n^2 − n + 3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "For T_n = 2n^2 + 3n + 1, the value of T_50 is:",
+          "options": [
+            "5 051",
+            "5 100",
+            "5 151",
+            "5 201"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Which Position Holds a Given Value",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Which term of T_n = 2n^2 + 3n + 1 equals 190?",
+          "options": [
+            "Term 9",
+            "Term 10",
+            "Term 11",
+            "Term 12"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Solving 2n^2 + 3n − 189 = 0 gives n = 9 or n = −10,5. The value −10,5 is rejected because:",
+          "options": [
+            "It is too small to matter",
+            "The formula only works for even n",
+            "A position in a pattern must be a natural number",
+            "Negative answers are always wrong in algebra"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Setting 2n^2 + 3n + 1 = 300 gives n = 11,5. The correct conclusion is:",
+          "options": [
+            "300 is term 11 of the pattern",
+            "300 is term 12 of the pattern",
+            "300 appears halfway between the patterns",
+            "Since n is not a natural number, 300 is not a term of the pattern"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "For this pattern T_11 = 276 and T_12 = 325. The number 300:",
+          "options": [
+            "Is term 11,5 of the pattern",
+            "Falls between terms 11 and 12 without ever appearing",
+            "Equals term 12",
+            "Must be rounded up to 325"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Hidden Unknowns and the Smallest Term",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The pattern x; 13; 30; 53 is quadratic with a constant second difference of 6. Then x equals:",
+          "options": [
+            "6",
+            "4",
+            "3",
+            "2"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The general term of 2; 13; 30; 53 is:",
+          "options": [
+            "T_n = 2n^2 + 3n − 3",
+            "T_n = 3n^2 + 2n − 3",
+            "T_n = 3n^2 − 2n + 1",
+            "T_n = 6n^2 − 5n + 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The pattern T_n = n^2 − 12n + 40 reaches its smallest value at position:",
+          "options": [
+            "n = 4",
+            "n = 5",
+            "n = 6",
+            "n = 12"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The smallest value of the pattern T_n = n^2 − 12n + 40 is:",
+          "options": [
+            "4",
+            "5",
+            "8",
+            "40"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Stacks Where the Gaps Grow",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The can stacks 1; 3; 6; 10 have first differences:",
+          "options": [
+            "2; 3; 4",
+            "1; 2; 3",
+            "3; 3; 4",
+            "2; 4; 6"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The second difference of 1; 3; 6; 10 is:",
+          "options": [
+            "3",
+            "4",
+            "2",
+            "1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The next term of 1; 3; 6; 10 is:",
+          "options": [
+            "14",
+            "15",
+            "16",
+            "20"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The gaps of a quadratic pattern:",
+          "options": [
+            "Stay exactly the same size",
+            "Are always equal to 2",
+            "Grow or shrink by the same amount each time",
+            "Change with no rule at all"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Three Facts Build the Whole Formula",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "For the patio pattern 5; 12; 23; 38 the second difference is 4, so a equals:",
+          "options": [
+            "4",
+            "8",
+            "2",
+            "1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "With a = 2 and first gap 7, solving 3a + b = 7 gives b equal to:",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "With a = 2, b = 1 and first term 5, solving a + b + c = 5 gives c equal to:",
+          "options": [
+            "5",
+            "3",
+            "1",
+            "2"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "For T_n = 2n^2 + n + 2, design twenty uses T_20 stones, which is:",
+          "options": [
+            "822",
+            "842",
+            "802",
+            "820"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Which Stack Holds 212 Stones",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Which design of T_n = 2n^2 + n + 2 uses exactly 212 stones?",
+          "options": [
+            "Design 9",
+            "Design 10",
+            "Design 11",
+            "Design 12"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Stack 13 holds 91 cans and stack 14 holds 105 cans. A display of exactly 100 cans:",
+          "options": [
+            "Is impossible — the stacks jump from 91 straight to 105",
+            "Is stack 13, rounded up",
+            "Is stack 14, rounded down",
+            "Is stack 13,5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Solving n(n + 1)/2 = 120 for the can stacks gives:",
+          "options": [
+            "n = 12, so 120 is the twelfth stack",
+            "No natural-number solution",
+            "n = 15, so 120 is the fifteenth stack",
+            "n = 16, so 120 is the sixteenth stack"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A solved position n names a real term of a pattern only if n is:",
+          "options": [
+            "Any real number",
+            "Positive or negative",
+            "A fraction in simplest form",
+            "A natural number"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}
