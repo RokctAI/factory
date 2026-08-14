@@ -193,3 +193,4 @@
 | forgotten_cities_b6355a | poetry | Forgotten Cities | pending_approval | groq | GROQ-31649668219 | — | 2026-08-12 23:24 |
 | whispers_of_the_forest_9a936f | poetry | Whispers of the Forest | pending_approval | groq | GROQ-31653123017 | — | 2026-08-13 01:35 |
 | shores_of_memories_eec36c | poetry | Shores of Memories | pending_approval | groq | GROQ-31662773235 | — | 2026-08-13 03:23 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_generated | system | SYS-LESSON-RULES-31785757552 | — | 2026-08-14 08:53 |

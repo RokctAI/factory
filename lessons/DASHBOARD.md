@@ -1,43 +1,26 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-08-14 07:34 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-08-14 08:58 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
-## Waiting on you (7)
+## Waiting on you (0)
 
-| Card | Subject | Action |
-|---|---|---|
-| `accounting_g11_cost_accounting_break_even_analysis_ad0b83` | Accounting G11 | review content accuracy (`concept_status: approved`) |
-| `accounting_g11_reconciliations_bank_reconciliation_statement_ba219e` | Accounting G11 | review content accuracy (`concept_status: approved`) |
-| `accounting_g11_value_added_tax_vat_calculations_09d287` | Accounting G11 | review content accuracy (`concept_status: approved`) |
-| `economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d` | Economics G11 | review content accuracy (`concept_status: approved`) |
-| `mathematical_literacy_g12_finance_vat_calculations_655ffb` | Mathematical Literacy G12 | review content accuracy (`concept_status: approved`) |
-| `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | review content accuracy (`concept_status: approved`) |
-| `maths_g12_quadratic_equations_factoring_method_5b7a49` | Maths G12 | review content accuracy (`concept_status: approved`) |
+Nothing — the pipeline is not blocked on a human gate.
 
-## Needs intervention (8)
+## Needs intervention (0)
 
-| Card | Subject | Why |
-|---|---|---|
-| `accounting_g11_cost_accounting_break_even_analysis_ad0b83` | Accounting G11 | attempts 3; script expansion pass used |
-| `accounting_g11_reconciliations_bank_reconciliation_statement_ba219e` | Accounting G11 | attempts 3; script expansion pass used |
-| `accounting_g11_value_added_tax_vat_calculations_09d287` | Accounting G11 | attempts 3; script expansion pass used |
-| `economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d` | Economics G11 | attempts 3 |
-| `mathematical_literacy_g12_finance_vat_calculations_655ffb` | Mathematical Literacy G12 | attempts 3 |
-| `maths_g11_quadratic_equations_completing_the_square_17b6b3` | Maths G11 | attempts 3; script expansion pass used |
-| `maths_g12_quadratic_equations_factoring_method_5b7a49` | Maths G12 | attempts 3 |
-| `maths_g12_sequences_and_series_arithmetic_sequences_15f439` | Maths G12 | script expansion pass used |
+No stalled, failed or blocked cards.
 
 ## Cards by status and subject
 
-| Subject | theme_generated | concept_generated | pending_concept_approval | failed | total |
-|---|---|---|---|---|---|
-| Accounting | 4 |  | 3 |  | 7 |
-| Economics | 5 | 2 | 1 |  | 9 |
-| Geography | 2 | 3 |  | 1 | 6 |
-| Mathematical Literacy | 3 | 2 | 1 |  | 6 |
-| Maths | 5 | 3 | 2 |  | 12 |
-| Physical Sciences | 5 | 3 |  |  | 9 |
-| **All** | **24** | **13** | **7** | **1** | **49** |
+| Subject | theme_generated | failed | total |
+|---|---|---|---|
+| Accounting | 4 |  | 4 |
+| Economics | 5 |  | 6 |
+| Geography | 2 | 1 | 3 |
+| Mathematical Literacy | 3 |  | 3 |
+| Maths | 5 |  | 7 |
+| Physical Sciences | 5 |  | 6 |
+| **All** | **24** | **1** | **29** |
 
 ## Pairs (1)
 
@@ -55,7 +38,7 @@
 | Economics | 12 | 0 | 40 |
 | Geography | 10 | 2 | 50 |
 | Geography | 11 | 0 | 60 |
-| Geography | 12 | 2 | 57 |
+| Geography | 12 | 1 | 58 |
 | Mathematical Literacy | 10 | 3 | 29 |
 | Mathematical Literacy | 11 | 0 | 28 |
 | Mathematical Literacy | 12 | 0 | 25 |
@@ -66,7 +49,7 @@
 | Physical Sciences | 11 | 0 | 64 |
 | Physical Sciences | 12 | 0 | 56 |
 
-Syllabus rows total: 841; opened: 25; remaining: 816.
+Syllabus rows total: 841; opened: 24; remaining: 817.
 
 ## Evaluated (Level 4 complete, awaiting Level 6): 0
 
@@ -79,3 +62,20 @@ Syllabus rows total: 841; opened: 25; remaining: 816.
 | All time | 55 | 29824 | 24 |
 
 Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
+
+## Cost / rate-limits
+
+### By API / model
+
+| API | Model | Calls | Prompt tok | Completion tok | Total tok | Retries | 429 hits | Failed |
+|---|---|---|---|---|---|---|---|---|
+| groq | `llama-3.3-70b-versatile` | 55 | 24009 | 5815 | 29824 | 0 | 0 | 0 |
+| jules | `-` | 24 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+Pricing not configured — set the API_PRICE_TABLE environment variable to the path of a JSON price table to enable cost estimates. Token quantities only; no cost numbers are shown.
+
+### By run (last 0 of 0 tagged runs)
+
+| Run | Calls | Total tok | Retries | 429 hits | Failed |
+|---|---|---|---|---|---|
+| _untagged (legacy records)_ | 79 | 29824 | 0 | 0 | 0 |

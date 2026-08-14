@@ -99,10 +99,12 @@ jobs:
 
       - name: Release Job Lock (if exists)
         if: always() && steps.publish_task.outputs.card_file != ''
+        env:
+          CARD_FILE: ${{ steps.publish_task.outputs.card_file }}
         run: |
-          if [ -f "${{ steps.publish_task.outputs.card_file }}" ]; then
+          if [ -f "$CARD_FILE" ]; then
             python .rokct/skills/agent_delegation/scripts/lock_job.py \
-              --file "${{ steps.publish_task.outputs.card_file }}" \
+              --file "$CARD_FILE" \
               --action release
           fi
 
