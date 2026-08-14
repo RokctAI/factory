@@ -43,6 +43,11 @@ import wave
 from datetime import datetime, timezone
 from pathlib import Path
 
+_SCRIPTS_DIR = str(Path(__file__).resolve().parent)
+if _SCRIPTS_DIR not in sys.path:
+    sys.path.insert(0, _SCRIPTS_DIR)
+import assistant_registry  # assistant name<->opaque-id mapping (both team layouts)
+
 DOOR_CLOSE_SECONDS = 300  # supacharge-product.md late-door policy
 PASS_THRESHOLD = 0.80     # per subtopic_end in the product-doc manifest sample
 QA_WINDOW_SECONDS = 120
@@ -335,7 +340,8 @@ def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
 
 def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                  scale, audio_seconds, topic, topic_display_seconds,
-                 split_ref=None, break_questions=None, segment_bounds=None):
+                 split_ref=None, break_questions=None, segment_bounds=None,
+                 grade=0):
     """Manifest track events from subtopics.json, scaled to real audio.
 
     topic_display at 0 (full-screen topic while the tutor speaks the intro —
@@ -366,6 +372,11 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
     if second_tutor and split_ref:
         refs = [s.get("ref") for s in subs]
         break_after_ref = refs[refs.index(split_ref) - 1]
+    # Opaque id of the grade's host for the break_start event. `bridge`
+    # keeps its current value untouched (deployed consumers parse a NAME
+    # there — replaysdk-spec contract); the id travels in the new sibling
+    # `bridge_id`, omitted when the grade resolves no host.
+    bridge_id = assistant_registry.assistant_for_grade(grade)
     last_end = 0.0
     for i, sub in enumerate(subs):
         # EXACT boundaries when per-subtopic segments were measured; the
@@ -388,6 +399,7 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
             tracks.append({"time": round(end, 2), "type": "break_start",
                            "duration_seconds": BREAK_DURATION_SECONDS,
                            "bridge": "assistant",  # resolved to the lesson's assigned assistant (Mandy/Bianca) at production
+                           **({"bridge_id": bridge_id} if bridge_id else {}),
                            "next_tutor": second_tutor["id"],
                            **({"questions": break_questions} if break_questions else {})})
     cc_ids = [q["id"] for q in comprehension.get("questions", []) if q.get("id")]
@@ -545,7 +557,8 @@ def main():
                           split_ref=split_ref, break_questions=break_questions,
                           segment_bounds=(segment_bounds
                                           if len(segment_bounds) == len(subtopics.get("subtopics", []))
-                                          else None))
+                                          else None),
+                          grade=grade)
 
     # Manifest-level question bank: subtopic_end `exercise` entries are IDs
     # the app resolves against this map (lms_sdk McqQuestion.fromJson reads

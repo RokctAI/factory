@@ -36,6 +36,11 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+_SCRIPTS_DIR = str(Path(__file__).resolve().parent)
+if _SCRIPTS_DIR not in sys.path:
+    sys.path.insert(0, _SCRIPTS_DIR)
+import assistant_registry  # assistant name<->opaque-id mapping (both team layouts)
+
 PENDING_DIR = Path(".rokct/agent/jobs/pending")
 RUNNING_DIR = Path(".rokct/agent/jobs/running")
 DONE_DIR = Path(".rokct/agent/jobs/done")
@@ -1793,11 +1798,11 @@ def speaker_names():
             real = get_field(text, "real_name")
             if real:
                 names.add(real.strip())
-    assistants = ASSISTANTS_DIR
-    if assistants.is_dir():
-        names.update(d.name.capitalize() for d in assistants.iterdir() if d.is_dir())
-    else:
-        names.update(("Mandy", "Bianca"))
+    # Assistant host display names come from the registry (roster-backed,
+    # name-keyed OR opaque-id layout, embedded fallback covering all three
+    # hosts) — never from the directory basenames, which under the opaque-id
+    # layout are assistant_<n>, not names.
+    names.update(assistant_registry.all_display_names())
     _SPEAKER_NAMES_CACHE = {n for n in names if len(n) > 2}
     return _SPEAKER_NAMES_CACHE
 
