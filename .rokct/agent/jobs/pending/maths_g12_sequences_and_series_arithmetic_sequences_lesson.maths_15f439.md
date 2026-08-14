@@ -15,6 +15,9 @@ topic: Sequences and Series
 subtopic: Arithmetic sequences
 tutor: tutor_001
 tutor_style: formal
+greeting_ref: tutor_001/greetings/02.md
+signoff_ref: tutor_001/signoffs/01.md
+ack_ref: 
 example_problem: Find the 20th term of 3; 7; 11; ...
 prior_knowledge: Student knows Grade 11 number patterns and linear expressions
 metarules: .rokct/types/lesson.maths/metarules
@@ -28,9 +31,10 @@ concept: |
   Example placement: Formula first, immediately applied to the example problem (finding 20th term of 3; 7; 11; ...).
   Structural Approach: Introduce variables ($a$, $d$, $n$, $T_n$), define general formula, execute example step-by-step to earn method/accuracy marks, conclude with a distinction-level insight on solving for any unknown given the other three.
 concept_status:
-rules_status: failed
+rules_status: passed
 lesson_name: Arithmetic Sequences
 lesson_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439
+intro_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/intro.md
 script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/script.md
 manim_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/manim_scene.py
 subtopics_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/subtopics.json
@@ -41,12 +45,12 @@ assistant_qa_transcript_path: lessons/maths/grade12/term1/maths_g12_sequences_an
 assistant_nervous_script_path: lessons/maths/grade12/term1/maths_g12_sequences_and_series_arithmetic_sequences_15f439/assistant_nervous_script.md
 status: concept_generated
 created: 2026-07-14
-last_updated: 2026-07-17 09:47:00
+last_updated: 2026-08-14 00:04:39
 session_id: 
 session_started: 
-attempts: 2
+attempts: 0
 last_error:
 loop_iterations: 0
 max_iterations: 10
-expansion_requested: 1
+expansion_requested:
 ---

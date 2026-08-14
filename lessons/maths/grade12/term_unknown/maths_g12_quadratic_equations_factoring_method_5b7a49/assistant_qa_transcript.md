@@ -1,17 +1,25 @@
-# Mandy Q&A Transcript: Factoring Method
+# Post-Session Q&A
 
-**Student:** Why do we even need the AC method? Can't I just guess the brackets?
+### subtopic_2 — The AC Method for Non-Monic Quadratics
 
-**Mandy:** Great question! If the number in front of x² (the 'a' value) is just 1, you can totally just guess the numbers that multiply to 'c' and add to 'b'. But when 'a' is a number like 2 or 3—what Mr Zulu calls a non-monic quadratic—guessing gets really messy and you can easily make a mistake. The AC method gives us a guaranteed, step-by-step way to find the exact right numbers every single time without guessing!
+**Assistant:** First from the pre-exam pile: why use the AC method at all — can the brackets not simply be guessed?
 
-**Student:** What if I can't find two numbers that multiply to 'ac' and add to 'b'? Does that mean I'm doing it wrong?
+**Tutor:** When the leading coefficient is 1, inspection is acceptable: two numbers multiplying to c and summing to b present themselves quickly. But our equation is 2x² + 5x + 3 = 0 — non-monic — and guesswork there is a mark-losing strategy: the factors of a and of c interact, the candidate trials combinations under time pressure, and sign errors multiply. The AC method replaces guessing with procedure: compute ac = 6, find the pair multiplying to 6 and summing to 5 — that is 2 and 3 — and split the middle term. Every step is checkable and every step is markable. In an examination, a deterministic method beats an inspired guess on every paper I have marked.
 
-**Mandy:** Not necessarily! If you’ve carefully checked all the factor pairs of 'ac' and none of them add up to 'b', it actually means the quadratic equation cannot be factorised using whole numbers. When that happens, you get to use another awesome tool called the Quadratic Formula, which always works. But in these specific exercises, they are designed to be factorised, so double-check your signs (positives and negatives) if you get stuck!
+### subtopic_2 — The AC Method for Non-Monic Quadratics
 
-**Student:** I did the grouping part, but my two brackets are different. One is (x - 2) and the other is (2 - x). Did I mess up?
+**Assistant:** And if no pair multiplies to ac and adds to b — does that mean the working is wrong?
 
-**Mandy:** Oh, that's a classic trick! You are actually super close. Notice how the signs are just backwards? (x - 2) has a positive x and negative 2, while (2 - x) has a negative x and positive 2. When this happens, you just need to factor out a negative 1 from the second group. It will flip the signs inside the bracket, and boom, they will match perfectly!
+**Tutor:** Not necessarily — it may mean the quadratic does not factorise over the integers, and that is information, not failure. First, audit the signs: a negative c means the pair differs in sign, and most 'missing pairs' are sign errors. If the audit is clean and no integer pair exists, the equation is telling you to change instrument — the quadratic formula solves every quadratic, factorable or not. In the examination, read the instruction: 'solve by factorisation' guarantees a factorable equation, so a missing pair there means recheck your arithmetic. An unrestricted 'solve, correct to two decimal places' is the examiner announcing in advance that factors will not come — go directly to the formula.
 
-**Student:** Why do we set the equation to zero at the beginning?
+### subtopic_3 — Factorisation by Grouping
 
-**Mandy:** We set it to zero so we can use the Zero Product Property at the very end. Think about it: if I tell you two secret numbers multiply to give zero (A × B = 0), you know for a fact that at least one of those secret numbers HAS to be zero. There is no other way to multiply and get zero! If the equation equaled something else, like 10, there would be infinite possibilities (2×5, 1×10, 0.5×20...), and we wouldn't be able to solve for x so easily.
+**Assistant:** Students often finish grouping with brackets like (x − 2) and (2 − x) that refuse to match. What went wrong?
+
+**Tutor:** Nothing fatal — the candidate is one factor away from full marks. Observe the structure: (2 − x) is precisely −1 times (x − 2). The remedy is to extract that −1 from the second group, which reverses the signs inside the bracket and produces the common factor the grouping requires. This is why I insist the middle term be split with signs written deliberately: grouping is sign-sensitive, and the marker follows your signs line by line. When the brackets disagree only by order, factor out the negative, state it as its own line — that line is where the method mark lives — and the factorisation completes itself.
+
+### subtopic_4 — The Zero Product Property
+
+**Assistant:** Last one: why must the equation equal zero before factorising? Learners ask why we cannot factor at equals ten.
+
+**Tutor:** Because the entire method rests on one theorem: if a product of factors equals zero, then at least one factor is itself zero. Zero is unique in this — no other number grants it. If (2x + 3)(x + 1) = 10, nothing follows about either bracket: 2 times 5, 4 times 2.5, endless combinations produce 10. But (2x + 3)(x + 1) = 0 forces 2x + 3 = 0 or x + 1 = 0, and the roots x = −3/2 and x = −1 fall out immediately. Hence the standard form discipline: move every term to one side, equate to zero, then factorise. Skip it and the factorisation, however elegant, proves nothing the memorandum can pay for.

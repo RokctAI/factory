@@ -14,7 +14,10 @@ term: 3
 topic: Cost Accounting
 subtopic: Break-even analysis
 tutor: tutor_006
-tutor_style: simplistic, lower grade logic
+tutor_style: plain-language, intuition-first
+greeting_ref: tutor_006/greetings/04.md
+signoff_ref: tutor_006/signoffs/01.md
+ack_ref: 
 example_problem: A manufacturer has fixed costs of R60 000 per month. The selling price is R50 per unit and the variable cost is R30 per unit. Calculate the break-even point in units.
 prior_knowledge: Student knows fixed vs variable costs
 metarules: .rokct/types/lesson.accounting/metarules
@@ -28,13 +31,14 @@ concept_status:
 rules_status: passed
 lesson_name: Break-even analysis
 lesson_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83
+intro_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/intro.md
 script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/script.md
 manim_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/manim_scene.py
 subtopics_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/subtopics.json
 mcq_data_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/mcq.json
 comprehension_check_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/comprehension_check.json
 reel_brief_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/reel_clip.json
-assistant_qa_transcript_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/assistant_qa_transcript.md
+assistant_qa_transcript_path: 
 assistant_nervous_script_path: lessons/accounting/grade11/term3/accounting_g11_cost_accounting_break_even_analysis_ad0b83/assistant_nervous_script.md
 expansion_requested: 1
 crosscheck_status: passed

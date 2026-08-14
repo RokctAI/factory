@@ -14,7 +14,10 @@ term: 4
 topic: Value Added Tax
 subtopic: VAT calculations
 tutor: tutor_006
-tutor_style: simplistic, lower grade logic
+tutor_style: plain-language, intuition-first
+greeting_ref: tutor_006/greetings/04.md
+signoff_ref: tutor_006/signoffs/01.md
+ack_ref: 
 example_problem: An item is marked R2 875 including VAT at 15%. Calculate the VAT amount and the price excluding VAT.
 prior_knowledge: Student knows percentages and the concept of VAT
 metarules: .rokct/types/lesson.accounting/metarules
@@ -30,13 +33,14 @@ concept_status:
 rules_status: passed
 lesson_name: VAT Calculations (115% Rule)
 lesson_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287
+intro_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/intro.md
 script_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/script.md
 manim_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/manim_scene.py
 subtopics_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/subtopics.json
 mcq_data_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/mcq.json
 comprehension_check_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/comprehension_check.json
 reel_brief_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/reel_clip.json
-assistant_qa_transcript_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/assistant_qa_transcript.md
+assistant_qa_transcript_path: 
 assistant_nervous_script_path: lessons/accounting/grade11/term4/accounting_g11_value_added_tax_vat_calculations_09d287/assistant_nervous_script.md
 expansion_requested: 1
 crosscheck_status: passed

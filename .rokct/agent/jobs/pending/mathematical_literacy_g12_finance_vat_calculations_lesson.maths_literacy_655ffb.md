@@ -14,7 +14,10 @@ term: 1
 topic: Finance
 subtopic: VAT calculations
 tutor: tutor_012
-tutor_style: simplistic, lower grade logic
+tutor_style: plain-language, intuition-first
+greeting_ref: tutor_012/greetings/04.md
+signoff_ref: tutor_012/signoffs/01.md
+ack_ref: 
 example_problem: A television is priced at R6 899 including VAT at 15%. Calculate the price excluding VAT and the VAT amount.
 prior_knowledge: Student knows percentages and can rearrange a simple formula
 metarules: .rokct/types/lesson.maths_literacy/metarules
@@ -30,13 +33,14 @@ concept_status:
 rules_status: passed
 lesson_name: VAT Calculations
 lesson_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb
+intro_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/intro.md
 script_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/script.md
 manim_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/manim_scene.py
 subtopics_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/subtopics.json
 mcq_data_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/mcq.json
 comprehension_check_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/comprehension_check.json
 reel_brief_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/reel_clip.json
-assistant_qa_transcript_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/assistant_qa_transcript.md
+assistant_qa_transcript_path: 
 assistant_nervous_script_path: lessons/mathematical_literacy/grade12/term1/mathematical_literacy_g12_finance_vat_calculations_655ffb/assistant_nervous_script.md
 expansion_requested:
 crosscheck_status: passed
