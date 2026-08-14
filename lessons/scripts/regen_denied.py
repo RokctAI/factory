@@ -5,8 +5,11 @@ Scans lessons/reviews/*.json (the review-state files written by the
 Supacharge admin review endpoint) and, for each denial, re-enters the lesson
 into generation with the reviewer's feedback attached:
 
-1. Pipeline lessons (source "pipeline" in lessons/review_index.json): the
-   job card in .rokct/agent/jobs/{pending,running,done}/ is moved back to
+1. Pipeline lessons (job-card lessons — their review file is named after the
+   job-card id verbatim): since PR #86 the review index lists session packages
+   only, so a pipeline lesson is recognised by its job card in
+   .rokct/agent/jobs/{pending,running,done}/, not by an index "source" field.
+   The card is moved back to
    pending/, its status is reset to the direct-authoring re-entry state
    (concept_generated — the state Level 3 already uses for "fix the content
    and push again"), concept_status is reset to pending so the human
@@ -14,7 +17,7 @@ into generation with the reviewer's feedback attached:
    review_feedback frontmatter field. The card is the generation brief, so
    the feedback rides into the next authoring pass.
 
-2. Session lessons (source "session" — folder-is-the-contract packages
+2. Session lessons (in lessons/review_index.json — folder-is-the-contract packages
    authored by direct in-context sessions; no automated generator exists):
    a regeneration brief is written to lessons/reviews/regen/<lesson_id>.md
    with the denial reason, the package path, and the authoring contract.
@@ -156,12 +159,8 @@ def find_card(lesson_id: str) -> Path | None:
     return None
 
 
-def requeue_pipeline(lesson_id: str, review: dict, attempt: int) -> bool:
+def requeue_pipeline(lesson_id: str, review: dict, attempt: int, card_path: Path) -> None:
     """Move the job card back to pending/ with reset status + review feedback."""
-    card_path = find_card(lesson_id)
-    if card_path is None:
-        print(f"warning: no job card found for {lesson_id}; not queued", file=sys.stderr)
-        return False
     pending_path = JOBS_ROOT / "pending" / card_path.name
     if card_path != pending_path:
         card_path.rename(pending_path)
@@ -178,7 +177,6 @@ def requeue_pipeline(lesson_id: str, review: dict, attempt: int) -> bool:
     card = set_field(card, "last_updated", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     pending_path.write_text(card, encoding="utf-8")
     print(f"queued pipeline regen: {lesson_id} (attempt {attempt}) -> {pending_path.relative_to(REPO_ROOT)}")
-    return True
 
 
 def write_brief(lesson_id: str, entry: dict, review: dict, attempt: int) -> None:
@@ -247,15 +245,21 @@ def main() -> int:
             )
             continue
 
+        # Pipeline lessons are no longer listed in review_index.json (PR #86
+        # removed them — the index holds session packages only), so a pipeline
+        # denial is recognised by its job card, not by an index entry.
+        card_path = find_card(lesson_id)
         lesson = index_lessons.get(lesson_id)
-        if lesson is None:
-            print(f"warning: {lesson_id} not in review_index.json; not queued", file=sys.stderr)
-            continue
-        if lesson["source"] == "pipeline":
-            if not requeue_pipeline(lesson_id, review, attempt):
-                continue  # card missing — leave state untouched so we retry
-        else:
+        if card_path is not None:
+            requeue_pipeline(lesson_id, review, attempt, card_path)
+        elif lesson is not None and lesson.get("source") != "pipeline":
             write_brief(lesson_id, lesson, review, attempt)
+        else:
+            # No card and no session index entry (or an index entry claiming
+            # "pipeline" whose card is gone) — leave state untouched so a
+            # later run retries once the lesson reappears.
+            print(f"warning: no job card or session index entry for {lesson_id}; not queued", file=sys.stderr)
+            continue
         tracked[lesson_id] = {
             "attempts": attempt,
             "last_reviewed_at": reviewed_at,
