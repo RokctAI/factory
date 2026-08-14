@@ -97,21 +97,25 @@ jobs:
 
       - name: Release Job Lock
         if: success() && steps.delegate_task.outputs.card_file != ''
+        env:
+          CARD_FILE: ${{ steps.delegate_task.outputs.card_file }}
         run: |
           python .rokct/skills/agent_delegation/scripts/lock_job.py \
-            --file "${{ steps.delegate_task.outputs.card_file }}" \
+            --file "$CARD_FILE" \
             --action release
 
       - name: Handle Failure
         if: failure() && steps.delegate_task.outputs.card_file != ''
+        env:
+          CARD_FILE: ${{ steps.delegate_task.outputs.card_file }}
+          CARD_ID: ${{ steps.delegate_task.outputs.card_id }}
         run: |
-          CARD_FILE="${{ steps.delegate_task.outputs.card_file }}"
           ATTEMPTS=$(grep '^attempts:' "$CARD_FILE" | cut -d':' -f2 | xargs)
           NEW_ATTEMPTS=$((ATTEMPTS + 1))
           sed -i "s/^attempts: .*/attempts: $NEW_ATTEMPTS/" "$CARD_FILE"
           sed -i "s/^last_error: .*/last_error: ${{ github.run_id }} failed at $(date -u)/" "$CARD_FILE"
 
-          echo "[$(date -u +'%Y-%m-%d %H:%M:%S')] ${{ steps.delegate_task.outputs.card_id }} | Level 2 | ${{ github.run_id }} | Agent call failed" >> .rokct/agent/log/errors.log
+          echo "[$(date -u +'%Y-%m-%d %H:%M:%S')] $CARD_ID | Level 2 | ${{ github.run_id }} | Agent call failed" >> .rokct/agent/log/errors.log
 
           if [ "$NEW_ATTEMPTS" -ge 3 ]; then
             echo "3 attempts failed. Marking as stalled."
@@ -128,7 +132,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add "$CARD_FILE" .rokct/agent/log/errors.log
-          git commit -m "fail: recorded error for ${{ steps.delegate_task.outputs.card_id }} [skip ci]"
+          git commit -m "fail: recorded error for $CARD_ID [skip ci]"
           git push origin main
 
   update_ledger:

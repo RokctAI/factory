@@ -120,6 +120,8 @@ jobs:
 
       - name: Commit release ledger
         if: env.DRY_RUN != 'true'
+        env:
+          RELEASED_IDS: ${{ steps.release.outputs.released_ids }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -128,7 +130,7 @@ jobs:
             exit 0
           fi
           git add .rokct/agent/log/ledger.md
-          IDS="${{ steps.release.outputs.released_ids }}"
+          IDS="$RELEASED_IDS"
           git commit -m "🤖 [CI] Release on complete: ${IDS:-session lessons} [skip ci]"
           for i in 1 2 3; do
             git push origin main && break
