@@ -15,7 +15,7 @@ topic: Quantitative Aspects of Chemical Change
 subtopic: Stoichiometric calculations
 tutor: tutor_003
 tutor_style: formal
-example_problem: Calculate the mass of COâ‚‚ produced when 8 g of CHâ‚„ burns completely in excess oxygen.
+example_problem: Calculate the mass of CO₂ produced when 8 g of CH₄ burns completely in excess oxygen.
 prior_knowledge: Student can balance chemical equations and knows the mole concept
 metarules: .rokct/types/lesson.physical_sciences/metarules
 guardrail: age_13_17
