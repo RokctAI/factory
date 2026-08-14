@@ -89,6 +89,18 @@ jobs:
               if [ "$IDEA_STATUS" != "approved" ]; then continue; fi
               if [ "$STATUS" != "pending_approval" ]; then continue; fi
 
+              # Paired dual-tutor sequencing (Option B scene reuse): a
+              # pair_role: secondary card waits until its primary's card
+              # shows a lesson_path with manim_scene.py present — the
+              # secondary's Level 2 prompt copies that scene verbatim.
+              # (Job is if: false; the guard is recorded here so any future
+              # re-enable inherits it. build_level2_prompt enforces the same
+              # rule as a hard error regardless.)
+              if ! python lessons/scripts/lesson_pipeline.py pair-ready --file "$FILE"; then
+                echo "Paired secondary $FILE is waiting for its primary's scene. Skipping."
+                continue
+              fi
+
               # Claim Job Lock
               if ! python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action claim --agent "jules" --session "JS-LESSON-$GITHUB_RUN_ID"; then
                 echo "Card $FILE is locked by another session. Skipping."
