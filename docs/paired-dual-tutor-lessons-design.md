@@ -86,9 +86,11 @@ release) with ONE sequencing rule:
 
 ## 3. Visibility
 
-- Ledger rows and the dashboard show `pair_id` for pair members; the
-  dashboard groups a matched set on one line ("pair <id>: primary produced /
-  secondary concept_expanding").
+- The dashboard groups a matched set on one line ("pair <id>: primary
+  produced / secondary concept_expanding"). The ledger is unchanged — no
+  pair column; a pair member is visible there through its card id, whose
+  hash is the shared `pair_id` (primary) or the role-salted variant
+  (secondary). (Documented default #4.)
 
 ## 4. App side — CONFIRMED, no follow-up needed
 

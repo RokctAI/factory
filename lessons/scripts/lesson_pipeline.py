@@ -482,6 +482,7 @@ def cmd_seed(args):
     PENDING_DIR.mkdir(parents=True, exist_ok=True)
     existing = set()
     card_tokens = {}
+    pair_roles = {}
     for d in (PENDING_DIR, RUNNING_DIR, DONE_DIR):
         if d.exists():
             for f in d.glob("*.md"):
@@ -491,6 +492,10 @@ def cmd_seed(args):
                 if f.name.startswith("template"):
                     continue
                 card = read_card(f)
+                pid = get_field(card, "pair_id")
+                if pid:
+                    pair_roles.setdefault(pid, set()).add(
+                        get_field(card, "pair_role"))
                 ctype = get_field(card, "type")
                 if ctype.startswith("lesson."):
                     card_tokens.setdefault(
@@ -505,7 +510,7 @@ def cmd_seed(args):
         if created >= args.limit:
             break
         if entry.get("tutors"):
-            created += _seed_pair_row(entry, existing, card_tokens)
+            created += _seed_pair_row(entry, existing, card_tokens, pair_roles)
             continue
         h = entry_hash(entry)
         if h in existing:
@@ -642,7 +647,7 @@ max_iterations: 10
 """
 
 
-def _seed_pair_row(entry, existing, card_tokens):
+def _seed_pair_row(entry, existing, card_tokens, pair_roles):
     """Expand one paired seed row (tutors: ["expert", "simplifier"]) into two
     job cards sharing pair_id, and return how many cards were created.
 
@@ -666,6 +671,15 @@ def _seed_pair_row(entry, existing, card_tokens):
               "standard lessons only")
         return 0
 
+    # Both members already on disk (pair_roles is scanned from the existing
+    # cards' pair_id/pair_role fields) -> nothing to seed. This must
+    # short-circuit BEFORE roster resolution so a re-run without TEAM_ROOT
+    # (e.g. CI) stays silent instead of erroring on an unresolvable roster
+    # it does not need.
+    pair_id = entry_hash(entry)
+    if set(PAIR_ROLES) <= pair_roles.get(pair_id, set()):
+        return 0
+
     roster_entry = load_roster().get("subjects", {}).get(
         roster_key_for(entry.get("type", ""), entry.get("subject", "")), {})
     members = []
@@ -680,7 +694,6 @@ def _seed_pair_row(entry, existing, card_tokens):
             return 0
         members.append((role, tid, persona_style_tag(ptext)))
 
-    pair_id = entry_hash(entry)
     term = normalize_term(entry.get("term"))
     if term == "unknown" and str(entry.get("term", "")).strip().lower() not in ("", "unknown"):
         print(f"WARN: seed entry has invalid term {entry.get('term')!r}; recording 'unknown'")
