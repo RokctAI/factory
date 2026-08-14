@@ -3007,8 +3007,11 @@ def cmd_crosscheck(args):
         response = Path(args.ai_response_file).read_text(encoding="utf-8")
     else:
         import subprocess
+        # Routed through the logged wrapper: 429s are retried with backoff
+        # and recorded (with run/job identity) in api_usage.jsonl.
         proc = subprocess.run(
-            [sys.executable, ".rokct/skills/agent_delegation/scripts/call_groq.py",
+            [sys.executable, "lessons/scripts/api_call_logged.py",
+             "--api", "groq", "--job-id", get_field(card, "id") or "",
              "groq", "--prompt", prompt],
             capture_output=True, text=True, encoding="utf-8", errors="replace",
         )
@@ -3251,6 +3254,15 @@ def cmd_dashboard(args):
         lines.append("No usage recorded yet — the log starts with the first "
                      "Groq/Jules call after the delegate's usage logging deployed.")
     lines.append("")
+
+    # 6b. Cost / rate-limit visibility (scale-hardening brief section 3),
+    # rendered by the standalone module. Prices come ONLY from the
+    # API_PRICE_TABLE env config — nothing is hardcoded here.
+    try:
+        import api_cost_report
+        lines += api_cost_report.render_dashboard_section(usage_path)
+    except Exception as e:  # never let reporting break the dashboard
+        lines += ["## Cost / rate-limits", "", f"Section unavailable: {e}", ""]
 
     out = "\n".join(lines)
     DASHBOARD_PATH.write_text(out, encoding="utf-8")

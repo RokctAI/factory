@@ -80,7 +80,9 @@ jobs:
             echo "🚀 Requesting Ideas from Groq for $ID..."
 
             PROMPT="Generate 5 unique one-line book ideas for the theme '$THEME' and type '$TYPE'. Return only the ideas."
-            RESPONSE=$(python .rokct/skills/agent_delegation/scripts/call_groq.py groq --prompt "$PROMPT")
+            # Logged wrapper: retries 429s with backoff and records
+            # rate-limit events + run/job identity in api_usage.jsonl.
+            RESPONSE=$(python lessons/scripts/api_call_logged.py --api groq --job-id "$ID" groq --prompt "$PROMPT")
 
             if [ -n "$RESPONSE" ]; then
               echo "✅ Groq responded. Updating card..."
@@ -89,6 +91,7 @@ jobs:
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
               git add "$FILE" .rokct/agent/log/transitions.log
+              git add .rokct/agent/log/api_usage.jsonl 2>/dev/null || true
               git commit -m "🤖 [CI] Level 1: Idea Expansion for $ID [skip ci]"
               git push origin main
 
