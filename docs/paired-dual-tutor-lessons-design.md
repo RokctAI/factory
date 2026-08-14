@@ -1,12 +1,16 @@
-# Paired Dual-Tutor Lessons — Design (queued, not yet implemented)
+# Paired Dual-Tutor Lessons — Design
 
-> Status: DESIGN — queued behind the in-flight batch work. Defines the pairing
-> mechanism supacharge-tech.md §4 promises ("Grandmaster and Big John cover
-> identical learning objectives with the same example problem, sharing base
-> Manim animations but different styling/pacing/audio"). Nothing in the
-> current pipeline pairs two cards today; this document is the ground truth
-> for the implementation pass. The point-2 decision below was reported to the
-> owner before broad implementation.
+> Status: IMPLEMENTED (2026-08-14) in lessons/scripts/lesson_pipeline.py —
+> paired seeding (`tutors` on syllabus rows), the lesson2 secondary skip
+> (`pair-ready` + a hard error in the Level 2 prompt builder), the Level 3
+> pairing checks, and dashboard pair grouping. Defines the pairing mechanism
+> supacharge-tech.md §4 promises ("Grandmaster and Big John cover identical
+> learning objectives with the same example problem, sharing base Manim
+> animations but different styling/pacing/audio"). This document remains the
+> ground truth for the mechanism; the "Documented defaults" section at the
+> end records the decisions this doc was silent on (all correctable). The
+> point-2 decision below was reported to the owner before broad
+> implementation.
 
 ## Decision on point 2: REUSE the scene, don't regenerate (Option B)
 
@@ -101,3 +105,25 @@ already carry the join.
 - Retrofitting existing single-tutor lessons into pairs (a pair starts from a
   paired seed row).
 - Persona style tokens in the player (Level 6/app concern, separate work).
+
+## Documented defaults (implementation decisions this doc was silent on — all correctable)
+
+1. Paired seed rows live as a `tutors` field on syllabus topic/subtopic
+   entries (caps_seed.json is retired). Topic-level `tutors` pairs every
+   subtopic of the topic; a single subtopic pairs alone via the object form
+   `{"name": <subtopic>, "tutors": ["expert", "simplifier"]}`.
+2. Card B's hash is salted with the role/tutor; pair_id stays the shared
+   base hash; dup guards become tutor-aware for pair rows only.
+3. Secondary's full content set: intro.md + reel_clip.json in secondary
+   voice; comprehension_check.json copied like mcq; no Q&A transcript on
+   secondary.
+4. Ledger untouched; pair visibility via card id + dashboard grouping.
+5. lesson2 skip enforced in `build_level2_prompt` (hard error) + a
+   `pair-ready` CLI subcommand (exit 0/1); mirrored in the dormant
+   lesson2_concept_expansion workflow.
+6. Primary is always the expert in v1; seeds ordering it otherwise are
+   rejected.
+7. Crosscheck (Level 3.5) runs unchanged on the secondary.
+8. Pairs are card-pipeline-only for now (no session-tree interaction); the
+   session tree's `# Part 2` two-tutor split is a DIFFERENT mechanism — do
+   not conflate.
