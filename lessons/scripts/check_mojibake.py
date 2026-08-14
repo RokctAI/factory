@@ -3,9 +3,17 @@
 cards or lesson content.
 
 Signatures (the visible residue of UTF-8 bytes read as cp1252/latin-1):
-  U+00E2 U+20AC (a-circumflex + euro sign) — the E2 80 xx punctuation family
-  (em-dash, curly quotes, ellipsis); U+00C2 (stray C2 prefix, typically
-  before NBSP); U+00C3 (C3 prefix, accented letters double-decoded).
+  a mangled lead byte — U+00E2 (from E2, the punctuation/euro family),
+  U+00C2 (stray C2) or U+00C3 (C3, double-decoded accented letters) — but
+  ONLY when immediately followed by the cp1252 rendering of a UTF-8
+  continuation byte (0x80-0xBF), because that pairing is what an actual
+  mangled multi-byte sequence produces (e.g. E2 80 94 -> a-circumflex +
+  euro + right-double-quote for an em-dash; C2 A0 -> A-circumflex + NBSP;
+  C3 A9 -> A-tilde + copyright sign for e-acute).  A bare U+00C2 followed
+  by ordinary ASCII is NOT mojibake: DBE maths papers legitimately write
+  angle notation with a precomposed A-circumflex (U+00C2 then "1", as in
+  "angle A1 = 40 deg", or between plain capitals as in "K^AC"), and blunt
+  substring matching false-positived on every such line.
   Spelled as escapes below so this file never trips its own check.
 
 Corrupted cards must never advance a pipeline level and corrupted lesson
@@ -22,10 +30,33 @@ reads BOM-less UTF-8 as cp1252 — read with an explicit encoding
 Exit 0 = clean; exit 1 = mojibake found (file, line number and the offending
 line are printed for every hit).
 """
+import re
 import sys
 from pathlib import Path
 
-SIGNATURES = ("â€", "Â", "Ã")
+
+def _cp1252_residue():
+    """Characters a UTF-8 continuation byte (0x80-0xBF) turns into when the
+    file is mis-read as cp1252.  The five bytes cp1252 leaves undefined
+    (81, 8D, 8F, 90, 9D) pass through as C1 controls in practice."""
+    chars = []
+    for b in range(0x80, 0xC0):
+        try:
+            chars.append(bytes([b]).decode("cp1252"))
+        except UnicodeDecodeError:
+            chars.append(chr(b))
+    return "".join(chars)
+
+
+# A mangled lead byte (U+00E2 from E2, U+00C2 from C2, U+00C3 from C3) is
+# only mojibake when the very next character is the cp1252 rendering of a
+# continuation byte.  This covers the whole E2 80 xx punctuation family and
+# the E2 82 AC euro sign (U+20AC, byte 0x80, is itself in the residue set),
+# while a precomposed A-circumflex followed by plain ASCII — legitimate DBE
+# angle notation — passes.
+MOJIBAKE_RE = re.compile(
+    "[\u00e2\u00c2\u00c3][{}]".format(re.escape(_cp1252_residue()))
+)
 SCAN_GLOBS = (".rokct/agent/jobs/**/*.md", "lessons/**/*")
 # Binary/asset formats that legitimately contain arbitrary bytes.
 SKIP_SUFFIXES = {".pdf", ".mp3", ".wav", ".png", ".jpg", ".jpeg", ".zip", ".pyc"}
@@ -45,7 +76,7 @@ def check_file(path):
         return [(0, "<file is not valid UTF-8>")]
     hits = []
     for n, line in enumerate(text.splitlines(), 1):
-        if any(sig in line for sig in SIGNATURES):
+        if MOJIBAKE_RE.search(line):
             hits.append((n, line.strip()))
     return hits
 
