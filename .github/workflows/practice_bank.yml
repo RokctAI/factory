@@ -1,0 +1,68 @@
+name: Practice Bank
+
+# Rebuilds lessons/practice_bank.json — the pre-authored practice item bank
+# behind the Supacharge adaptive practice queue (product log #42 item 2).
+# The file is POSTed to the rlms backend's publish_practice_bank endpoint
+# and selected server-side by practice_rules, so it must never go stale
+# relative to the session lesson tree's mcq.json files. Runs whenever
+# session lesson content changes on main. Mirrors knowledge_bites_index.yml.
+#
+# Loop guard: the trigger paths cover only the session lesson tree and the
+# build script — the generated lessons/practice_bank.json sits outside
+# them, so this workflow's own bot commit never re-triggers it. The build
+# script additionally only rewrites the file when content other than
+# generated_at changed, and the commit step is a no-op on no diff.
+#
+# The publish step needs the RLMS_SITE_URL / RLMS_API_KEY / RLMS_API_SECRET
+# repository secrets (a System-Manager API token on the rlms site). Until
+# they are configured the step skips cleanly and the workflow only keeps
+# the committed bank fresh.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lessons/curriculum/CAPS/*/session/**'
+      - 'lessons/scripts/build_practice_bank.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: practice-bank
+  cancel-in-progress: false
+
+jobs:
+  build_bank:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build practice bank
+        run: python3 lessons/scripts/build_practice_bank.py
+
+      - name: Commit bank if changed
+        run: |
+          if git diff --quiet -- lessons/practice_bank.json; then
+            echo "practice_bank.json unchanged; nothing to commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add lessons/practice_bank.json
+            git commit -m "[CI] Rebuild practice bank"
+            git push
+          fi
+
+      - name: Publish to rlms backend
+        env:
+          RLMS_SITE_URL: ${{ secrets.RLMS_SITE_URL }}
+          RLMS_API_KEY: ${{ secrets.RLMS_API_KEY }}
+          RLMS_API_SECRET: ${{ secrets.RLMS_API_SECRET }}
+        run: |
+          if [ -z "$RLMS_SITE_URL" ]; then
+            echo "RLMS_SITE_URL secret not configured; skipping backend publish"
+            exit 0
+          fi
+          python3 lessons/scripts/build_practice_bank.py --publish
