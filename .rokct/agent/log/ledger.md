@@ -196,3 +196,4 @@
 | economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_generated | system | SYS-LESSON-RULES-31785757552 | — | 2026-08-14 08:53 |
 | physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58 | lesson.physical_sciences | Physical Sciences Grade 11: Quantitative Aspects of Chemical Change - Stoichiometric calculations | concept_generated | system | SYS-LESSON-RULES-31785910537 | — | 2026-08-14 08:55 |
 | velvet_hour_50e53e | poetry | Velvet Hour | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-14 20:30 |
+| phantom_bloom_4a964e | poetry | Phantom Bloom | pending_approval | groq | GROQ-31839798578 | — | 2026-08-14 20:51 |
