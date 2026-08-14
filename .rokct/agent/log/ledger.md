@@ -198,3 +198,4 @@
 | velvet_hour_50e53e | poetry | Velvet Hour | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-14 20:30 |
 | phantom_bloom_4a964e | poetry | Phantom Bloom | pending_approval | groq | GROQ-31839798578 | — | 2026-08-14 20:51 |
 | ember_atlas_4eec13 | poetry | Ember Atlas | pending_approval | groq | GROQ-31843775984 | — | 2026-08-14 21:45 |
+| cartography_of_the_soul_2b5b02 | poetry | Cartography of the Soul | pending_approval | groq | GROQ-31847808216 | — | 2026-08-14 22:45 |
