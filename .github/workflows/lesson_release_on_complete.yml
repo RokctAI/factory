@@ -13,9 +13,11 @@ name: Lesson Release on Folder Complete
 # workflow uses for agent access. Asset URLs are private; only the backend
 # fetches release assets (decision #8), so that is fine.
 #
-# Triggers: pushes that complete a package in this repo, a daily sweep for
-# audio dropped in the agent repo (agent pushes cannot trigger factory
-# workflows), and manual dispatch for a filtered/forced run.
+# Triggers: pushes that complete a package in this repo, an instant
+# repository_dispatch fired by the agent repo's notify_factory_audio_release
+# workflow when audio.mp3 lands under its lms/lessons/CAPS tree, a daily
+# sweep as the fallback for any drop the dispatch misses, and manual
+# dispatch for a filtered/forced run.
 
 on:
   push:
@@ -23,8 +25,10 @@ on:
       - main
     paths:
       - 'lessons/curriculum/**'
+  repository_dispatch:
+    types: [caps-audio-release]   # instant pickup of agent-side audio drops
   schedule:
-    - cron: '0 3 * * *'   # daily 03:00 UTC — picks up agent-side audio drops
+    - cron: '0 3 * * *'   # daily 03:00 UTC — fallback sweep for audio drops
   workflow_dispatch:
     inputs:
       folder_filter:
@@ -55,7 +59,10 @@ env:
 
 jobs:
   release_complete_lessons:
-    if: github.actor != 'github-actions[bot]'
+    # The actor guard stops the ledger-commit push from re-triggering the
+    # push path. A repository_dispatch always runs: it is fired by the agent
+    # notifier via MONOREPO_PAT, whatever account that token belongs to.
+    if: github.event_name == 'repository_dispatch' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write        # commit the ledger rows back to this repo
