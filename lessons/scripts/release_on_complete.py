@@ -73,6 +73,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+import assistant_registry
 import check_mojibake
 import lesson_compliance
 import lesson_manifest as lm
@@ -269,20 +270,30 @@ SPEAKER_RE = re.compile(r"^\*\*([A-Z][\w ]*):\*\*\s*(.+?)\s*$")
 
 
 def extract_session_break_questions(transcript_md, limit=lm.MAX_BREAK_QUESTIONS):
-    """Student questions for the break board. Session transcripts name the
-    assistant (e.g. **Thandi:**) instead of the card format's **Student:**,
-    so try the card extractor first, then fall back to the named non-Tutor
-    speaker's turns, reduced to their question sentences (the board shows
-    the question while the answer is spoken from the audio)."""
+    """Student questions for the break board. Session transcripts label the
+    turns with the assistant's DISPLAY NAME (e.g. **Thandi:**) instead of
+    the card format's **Student:** — transcripts carry names, never opaque
+    ids, and the known names come from assistant_registry (roster-backed,
+    either team layout). Try the card extractor first, then the turns of a
+    registry-known assistant, then any non-Tutor speaker's turns (compat
+    for a transcript naming a host the roster no longer lists), reduced to
+    their question sentences (the board shows the question while the answer
+    is spoken from the audio)."""
     questions = lm.extract_break_questions(transcript_md, limit)
     if questions:
         return questions
-    out = []
+    assistant_labels = {n.lower()
+                        for n in assistant_registry.all_display_names()}
+    turns = []
     for line in transcript_md.splitlines():
         m = SPEAKER_RE.match(line.strip())
         if not m or m.group(1).strip().lower() == "tutor":
             continue
-        text = re.sub(r"[*_`]", "", m.group(2)).strip()
+        turns.append((m.group(1).strip().lower(), m.group(2)))
+    named = [t for t in turns if t[0] in assistant_labels]
+    out = []
+    for _speaker, raw in (named or turns):
+        text = re.sub(r"[*_`]", "", raw).strip()
         sentences = re.findall(r"[^.?!]*\?", text)
         q = " ".join(s.strip() for s in sentences).strip() or text
         if q:
@@ -406,7 +417,8 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
     tracks = lm.build_tracks(
         subtopics, mcq, comprehension, first, second, scale, audio_seconds,
         ident["topic"], topic_display_seconds, split_ref=split_ref,
-        break_questions=break_questions, segment_bounds=segment_bounds)
+        break_questions=break_questions, segment_bounds=segment_bounds,
+        grade=ident["grade"])
 
     questions = {q["id"]: q for b in mcq.get("subtopics", [])
                  for q in b.get("questions", []) if q.get("id")}

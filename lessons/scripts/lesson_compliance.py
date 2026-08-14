@@ -20,12 +20,13 @@ warn. Rules, all previously enforced ad hoc and now gated in one place:
      card `tutor`, manifest profile.tutor / second_tutor.id / next_tutor) must
      match ^tutor_\\d+$: a permanent opaque id, never a name/slug. Catches any
      regression to name-derived ids.
-     SCOPE NOTE: assistants (Mandy/Bianca) have NOT yet been migrated to
-     opaque ids (that is a pending follow-up, parallel to the tutor id work),
-     and manifest `bridge` still carries the host NAME per the current
-     replaysdk-spec contract. R4 therefore gates TUTOR id fields only today;
-     enforcing ^assistant_\\d+$ now would block the established contract.
-     Extend ASSISTANT_ID_RE enforcement once assistants get opaque ids.
+     Assistants have opaque ids too (assistant_001 Thandi / assistant_002
+     Bianca / assistant_003 Mandy — the name<->id mapping lives in
+     assistant_registry.py, roster-backed under TEAM_ROOT with an embedded
+     fallback). Manifest `bridge` still carries a NAME per the replaysdk-spec
+     contract (deployed consumers parse it), so R4 gates it as a recognized
+     assistant alias; the opaque id travels in the sibling `bridge_id`
+     field, gated with ASSISTANT_ID_RE.
   R5 CAMERA EVENTS INLINE — camera_move/band_start events must live INSIDE the
      animations.json `primitives` array, never a sibling top-level `camera`
      key. This is the exact contract bug that shipped silently before (the app
@@ -53,6 +54,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+import assistant_registry  # assistant name<->opaque-id mapping (both team layouts)
 from lesson_pipeline import verify_no_session_framing  # R2 + R3 detector
 
 # CROSS-REPO: tutor persona cards moved to the RokctAI/agent repo (lms/team/).
@@ -73,7 +75,8 @@ ALLOWED_PRIMITIVES = {
 }
 CAMERA_TYPES = {"camera_move", "band_start"}
 
-# R4: opaque id shapes.
+# R4: opaque id shapes. ASSISTANT_ID_RE gates manifest bridge_id (active
+# since the assistant opaque-id migration; see assistant_registry.py).
 TUTOR_ID_RE = re.compile(r"^tutor_\d+$")
 ASSISTANT_ID_RE = re.compile(r"^assistant_\d+$")
 # Manifest fields that carry a tutor id.
@@ -170,6 +173,27 @@ def check_manifest(path):
             if v and not TUTOR_ID_RE.match(str(v)):
                 out.append(("R4", f"{path}: track {tr.get('type')}.{f} {v!r} "
                                   "is not an opaque tutor id"))
+        # Assistant identity on break_start (and any track carrying it):
+        # bridge_id must be an opaque assistant id; bridge stays a NAME by
+        # contract but must be a recognized alias (display name / slug /
+        # assistant_gNN — see assistant_registry), or the pre-production
+        # placeholder "assistant". When both are present they must agree.
+        bid = tr.get("bridge_id")
+        if bid and not ASSISTANT_ID_RE.match(str(bid)):
+            out.append(("R4", f"{path}: track {tr.get('type')}.bridge_id "
+                              f"{bid!r} is not an opaque assistant id "
+                              "(^assistant_<n>$)"))
+        br = tr.get("bridge")
+        if br and str(br) != "assistant":
+            cid = assistant_registry.canonical_id(str(br))
+            if cid is None:
+                out.append(("R4", f"{path}: track {tr.get('type')}.bridge "
+                                  f"{br!r} is not a recognized assistant "
+                                  "alias (name/slug/assistant_gNN)"))
+            elif bid and ASSISTANT_ID_RE.match(str(bid)) and cid != str(bid):
+                out.append(("R4", f"{path}: track {tr.get('type')} bridge "
+                                  f"{br!r} resolves to {cid} but bridge_id "
+                                  f"is {bid!r}"))
     return out
 
 
@@ -205,7 +229,7 @@ RULE_TITLES = {
     "R1": "Primitive vocabulary (real whiteboard set only)",
     "R2": "No greeting/self-intro/sign-off in script text",
     "R3": "No bracketed stage directions in script text",
-    "R4": "Opaque tutor identity ids only (^tutor_<n>$)",
+    "R4": "Opaque identity ids only (^tutor_<n>$ / ^assistant_<n>$)",
     "R5": "Camera events inline in primitives (not a sibling key)",
 }
 
