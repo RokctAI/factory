@@ -1,0 +1,83 @@
+name: "Film: Proposal Generation"
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'film/**'
+  pull_request:
+    paths:
+      - 'film/**'
+      - '.github/workflows/film_proposal.yml'
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Single film project to generate (default: all projects with a 00_index.md)'
+        required: false
+
+jobs:
+  generate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Initiate Protocol
+        run: |
+          if [ -f ".rokct/initiate.py" ]; then
+            echo "🚀 Running local initiate.py..."
+            python .rokct/initiate.py
+          else
+            echo "🌐 Fetching web initiate.py from remote protocol..."
+            curl -sSL https://raw.githubusercontent.com/RokctAI/The-Rokct-Protocol/main/profiles/web/initiate.py -o initiate_temp.py
+            python initiate_temp.py
+            rm initiate_temp.py
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install python-docx
+
+      - name: Generate proposals
+        run: |
+          set -e
+          GEN=".rokct/skills/.rok/film_proposal/scripts/generate_proposal.py"
+          if [ ! -f "$GEN" ]; then
+            echo "❌ Generator not provisioned at $GEN (initiate.py should have fetched it from The-Rokct-Protocol)."
+            exit 1
+          fi
+          PROJECT="${{ github.event.inputs.project }}"
+          if [ -n "$PROJECT" ]; then
+            python3 "$GEN" "$PROJECT"
+          else
+            for dir in film/*/; do
+              project=$(basename "$dir")
+              if [ -f "film/$project/00_index.md" ]; then
+                echo "=== Generating proposal for $project ==="
+                python3 "$GEN" "$project"
+              fi
+            done
+          fi
+
+      # PR runs are verify-only: the job fails above if generation errors.
+      # The regenerated .docx is byte-unstable run to run (zip timestamps),
+      # so it is only committed on push-to-main runs, where a film/** change
+      # legitimately changed the proposal inputs.
+      - name: Commit regenerated proposals
+        if: github.event_name == 'push'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add film/*/proposal.docx
+          if git diff --staged --quiet; then
+            echo "No proposal changes to commit."
+          else
+            git commit -m "🤖 [CI] Regenerate film proposals [skip ci]"
+            git push origin main
+          fi
