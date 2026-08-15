@@ -40,9 +40,50 @@ jobs:
       - name: Update Dashboard
         run: python .rokct/skills/agent_delegation/scripts/update_dashboard.py
 
-      - name: Privacy Sync
+      # EMAIL_ENCRYPTION_KEY resolution: the repo secret wins when it is set.
+      # Otherwise fall back to the org convention of fetching the Occultation
+      # secrets repo's .env/production.env at run time via MONOREPO_PAT — the
+      # same pattern as The-Rokct-Protocol workflows/.rok/play-deploy.yml
+      # (resolve-package job). The value is masked before any use, is parsed
+      # outside the workspace (Commit Updates runs `git add .`, so nothing
+      # fetched may land in the repo tree), and the fetched file is deleted
+      # in-step. The key never appears in logs or in command arguments.
+      - name: Resolve EMAIL_ENCRYPTION_KEY
         env:
           EMAIL_ENCRYPTION_KEY: ${{ secrets.EMAIL_ENCRYPTION_KEY }}
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -n "$EMAIL_ENCRYPTION_KEY" ]; then
+            KEY="$EMAIL_ENCRYPTION_KEY"
+            echo "::add-mask::$KEY"
+            echo "🔑 Using EMAIL_ENCRYPTION_KEY repo secret (skipping Occultation fetch)."
+          else
+            if [ -z "$GH_TOKEN" ]; then
+              echo "::error::EMAIL_ENCRYPTION_KEY secret is empty and MONOREPO_PAT is not available, so .env/production.env cannot be fetched from RokctAI/Occultation. Set one of the two secrets on this repo."
+              exit 1
+            fi
+            ENV_FILE="$RUNNER_TEMP/production.env"
+            if ! gh api "repos/RokctAI/Occultation/contents/.env/production.env" -H "Accept: application/vnd.github.v3.raw" > "$ENV_FILE"; then
+              rm -f "$ENV_FILE"
+              echo "::error::Failed to fetch .env/production.env from RokctAI/Occultation (MONOREPO_PAT expired or missing repo access?)."
+              exit 1
+            fi
+            # Tolerate an optional `export ` prefix and surrounding quotes.
+            LINE=$(grep -E '^[[:space:]]*(export[[:space:]]+)?EMAIL_ENCRYPTION_KEY=' "$ENV_FILE" | head -n 1 | tr -d '\r')
+            rm -f "$ENV_FILE"
+            KEY=$(printf '%s' "$LINE" | cut -d= -f2- | sed -e "s/^[[:space:]]*//" -e "s/[[:space:]]*\$//" -e "s/^[\"']//" -e "s/[\"']\$//")
+            if [ -z "$KEY" ]; then
+              echo "::error::EMAIL_ENCRYPTION_KEY is not set in Occultation .env/production.env. Add it there, or set the EMAIL_ENCRYPTION_KEY secret on this repo."
+              exit 1
+            fi
+            echo "::add-mask::$KEY"
+            echo "✅ Resolved EMAIL_ENCRYPTION_KEY from Occultation production.env."
+          fi
+          echo "EMAIL_ENCRYPTION_KEY=$KEY" >> "$GITHUB_ENV"
+
+      - name: Privacy Sync
+        env:
+          EMAIL_ENCRYPTION_KEY: ${{ env.EMAIL_ENCRYPTION_KEY }}
         run: python .rokct/skills/agent_delegation/scripts/privacy_sync.py
 
       - name: Commit Updates
