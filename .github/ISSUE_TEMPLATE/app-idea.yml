@@ -1,0 +1,54 @@
+name: App Idea
+description: Propose a standalone app. Label the issue `approved` to spawn its repo.
+title: "[app] "
+labels: ["app-idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fields below are parsed by `.github/workflows/app_spawn.yml`. Keep the headings intact.
+
+  - type: input
+    id: app_name
+    attributes:
+      label: App name
+      description: Repository slug. Lowercase letters, digits and hyphens only (2-64 chars).
+      placeholder: receipt-splitter
+    validations:
+      required: true
+
+  - type: input
+    id: description
+    attributes:
+      label: One-line description
+      description: Becomes the new repository's description.
+      placeholder: Splits a photographed till slip between people.
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why this is worth building, who it is for, what "done" looks like. Copied verbatim into the new repo's docs/spec.md — write it for the agent that will build it.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: visibility
+    attributes:
+      label: Visibility
+      options:
+        - private
+        - public
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: owner
+    attributes:
+      label: Target owner
+      description: GitHub user or org for the new repo. Leave blank to use the `FACTORY_TARGET_OWNER` variable.
+    validations:
+      required: false

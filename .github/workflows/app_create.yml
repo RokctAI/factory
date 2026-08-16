@@ -1,0 +1,127 @@
+name: App Create (reusable)
+
+# Creates a standalone app repo, seeds it from templates/app, pushes main and
+# opens its "Build v0" issue. Reusable so the label front-end
+# (app_spawn.yml) is not the only way in — a merged PR adding an app folder
+# can call this the same way. Nothing here reads issue state; everything it
+# needs arrives as an input.
+#
+# MONOREPO_PAT is the cross-repo credential the rest of the factory already
+# uses (sync_workspace.yml, lesson_release_on_complete.yml). Creating repos
+# needs more than pushing to them: classic `repo` scope, or a fine-grained
+# token with Administration: write on the target owner.
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      description:
+        required: true
+        type: string
+      visibility:
+        required: true
+        type: string
+      owner:
+        required: true
+        type: string
+      spec:
+        required: false
+        type: string
+        default: ''
+      source_issue:
+        required: false
+        type: string
+        default: ''
+    secrets:
+      MONOREPO_PAT:
+        required: true
+    outputs:
+      repo_url:
+        value: ${{ jobs.create.outputs.repo_url }}
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    outputs:
+      repo_url: ${{ steps.create_repo.outputs.repo_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Fail here with the scope named, not later with a bare 404 from the
+      # creation call. A classic PAT advertises its scopes in a response
+      # header; a fine-grained one does not, so that case is only warned on.
+      - name: Check token can create repositories
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if ! scopes=$(gh api -i /user 2>/dev/null | tr -d '\r' | grep -i '^x-oauth-scopes:'); then
+            echo "::error::MONOREPO_PAT is not a usable GitHub token (GET /user failed)."
+            exit 1
+          fi
+          scopes="${scopes#*: }"
+          if [ -z "$scopes" ]; then
+            echo "Fine-grained token detected; it needs Administration: write on ${{ inputs.owner }}."
+          elif ! echo "$scopes" | grep -qw 'repo'; then
+            echo "::error::MONOREPO_PAT cannot create repositories. It has scopes [$scopes]; it needs classic \`repo\` scope, or replace it with a fine-grained token holding Administration: write on ${{ inputs.owner }}."
+            exit 1
+          fi
+
+      - name: Create repository
+        id: create_repo
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          TARGET: ${{ inputs.owner }}/${{ inputs.name }}
+        run: |
+          if ! gh repo create "$TARGET" \
+                --"${{ inputs.visibility }}" \
+                --description "${{ inputs.description }}" 2>create.err; then
+            cat create.err
+            echo "::error::Could not create $TARGET. If this is a permissions failure, MONOREPO_PAT needs classic \`repo\` scope, or fine-grained Administration: write on ${{ inputs.owner }}."
+            exit 1
+          fi
+          echo "repo_url=https://github.com/$TARGET" >> "$GITHUB_OUTPUT"
+
+      - name: Seed scaffold
+        env:
+          APP_SPEC: ${{ inputs.spec }}
+        run: |
+          printf '%s\n' "$APP_SPEC" > spec.txt
+          python3 .github/scripts/seed_app_repo.py \
+            --template templates/app \
+            --dest seed \
+            --name "${{ inputs.name }}" \
+            --description "${{ inputs.description }}" \
+            --spec-file spec.txt \
+            --owner "${{ inputs.owner }}" \
+            --visibility "${{ inputs.visibility }}" \
+            --issue "${{ inputs.source_issue }}"
+
+      - name: Push main
+        working-directory: seed
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          TARGET: ${{ inputs.owner }}/${{ inputs.name }}
+        run: |
+          git init -q -b main
+          git config user.name "rokct-bot"
+          git config user.email "rokct-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "chore: seed ${{ inputs.name }} from factory scaffold [skip ci]"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${TARGET}.git"
+          git push -q origin main
+
+      - name: Open Build v0 issue
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          TARGET: ${{ inputs.owner }}/${{ inputs.name }}
+        run: |
+          gh issue create --repo "$TARGET" \
+            --title "Build v0" \
+            --body "$(printf '%s\n' \
+              "The brief is in [docs/spec.md](../blob/main/docs/spec.md); how to work on this repo is in [AGENTS.md](../blob/main/AGENTS.md)." \
+              "" \
+              "Run \`bash .rokct/bootstrap.sh\` first, then ship a v0 a person can run." \
+              "" \
+              "Spawned from ${{ inputs.source_issue }}.")"

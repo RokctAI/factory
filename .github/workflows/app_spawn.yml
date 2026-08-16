@@ -1,0 +1,125 @@
+name: App Spawn
+
+# Ray's acceptance gate for app ideas. Ideas are proposed conversationally and
+# filed as issues with the `app-idea` label (see .github/ISSUE_TEMPLATE/
+# app-idea.yml). Applying `approved` to one spawns its repo — nothing else
+# does. Idea generation is deliberately not automated; only the build-out is.
+#
+# See docs/app-factory.md for the labels, the FACTORY_TARGET_OWNER variable
+# and the token scope MONOREPO_PAT needs.
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  parse:
+    if: github.event.label.name == 'approved' && contains(github.event.issue.labels.*.name, 'app-idea')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    outputs:
+      name: ${{ steps.fields.outputs.name }}
+      description: ${{ steps.fields.outputs.description }}
+      visibility: ${{ steps.fields.outputs.visibility }}
+      owner: ${{ steps.fields.outputs.owner }}
+      spec: ${{ steps.fields.outputs.spec }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse issue form
+        id: fields
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          DEFAULT_OWNER: ${{ vars.FACTORY_TARGET_OWNER || 'rokctai' }}
+        run: |
+          printf '%s\n' "$ISSUE_BODY" > issue_body.md
+          python3 .github/scripts/parse_app_idea.py \
+            --body-file issue_body.md \
+            --default-owner "$DEFAULT_OWNER" 2> parse.err || {
+              { echo "reason<<EOF"; cat parse.err; echo "EOF"; } >> "$GITHUB_OUTPUT"
+              cat parse.err
+              exit 1
+            }
+
+      # A repo that already exists is somebody's work in progress. Say so and
+      # stop; never push into it.
+      - name: Guard against double-spawn
+        id: guard
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          TARGET: ${{ steps.fields.outputs.owner }}/${{ steps.fields.outputs.name }}
+        run: |
+          if gh api "repos/$TARGET" >/dev/null 2>&1; then
+            echo "reason=**${TARGET}** already exists — refusing to overwrite it. Rename the app or delete the existing repo, then re-apply \`approved\`." >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          echo "Target $TARGET is free."
+
+      - name: Report failure on the issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REASON: ${{ steps.guard.outputs.reason || steps.fields.outputs.reason }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --body "$(printf '%s\n\n%s\n' \
+              "❌ App spawn did not run." \
+              "${REASON:-See the workflow run for details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}}")"
+          gh issue edit ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --remove-label approved
+
+  create:
+    needs: parse
+    uses: ./.github/workflows/app_create.yml
+    with:
+      name: ${{ needs.parse.outputs.name }}
+      description: ${{ needs.parse.outputs.description }}
+      visibility: ${{ needs.parse.outputs.visibility }}
+      owner: ${{ needs.parse.outputs.owner }}
+      spec: ${{ needs.parse.outputs.spec }}
+      source_issue: ${{ github.event.issue.html_url }}
+    secrets:
+      MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+
+  announce:
+    needs: [parse, create]
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Comment and close
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_URL: ${{ needs.create.outputs.repo_url }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --body "$(printf '%s\n\n%s\n' \
+              "🏗 Spawned **${{ needs.parse.outputs.owner }}/${{ needs.parse.outputs.name }}** → ${REPO_URL}" \
+              "The brief is in \`docs/spec.md\` and a **Build v0** issue is open there.")"
+          gh issue close ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --reason completed
+
+  # Creation failed after parsing passed (token scope, name taken upstream,
+  # push rejected). Leave the issue open and say where to look.
+  report_create_failure:
+    needs: [parse, create]
+    if: failure() && needs.parse.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Comment on the issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --body "❌ Repo creation failed for **${{ needs.parse.outputs.owner }}/${{ needs.parse.outputs.name }}**. Run log: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          gh issue edit ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
+            --remove-label approved
