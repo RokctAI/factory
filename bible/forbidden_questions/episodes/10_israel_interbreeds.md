@@ -98,5 +98,5 @@ Israel did not fall away from God in a single dramatic moment. The compromise wa
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 08_canaan_curse.md | 10_lost_ten_tribes.md | 09_gods_glory_departs.md | 14_milk_and_honey.md*

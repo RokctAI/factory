@@ -113,5 +113,5 @@ Modern Jewish identity traces to two tribes. Ten are missing. They are somewhere
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 09_israel_interbreeds.md | 11_abrahams_eastern_sons.md | 12_palestinians_and_canaanites.md*

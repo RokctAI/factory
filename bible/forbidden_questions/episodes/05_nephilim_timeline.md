@@ -94,5 +94,5 @@ The Nephilim were not a Genesis 6 footnote. They were a continuous presence runn
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 04_cain_and_nod.md | 06_watchers.md | 06_naamah_and_the_ark.md | 07_canaan_curse.md | 09_israel_interbreeds.md*
