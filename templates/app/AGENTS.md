@@ -37,6 +37,48 @@ repo: it installs the `.rok` skill and the Protocol workflows, and it writes
 to read. Run `bootstrap.sh` in a normal session, not under CI — `initiate.py`
 skips installing the session workflows whenever `CI` is set.
 
+## The SDK fleet
+
+Only relevant if `docs/spec.md` puts this app on the fleet's stack (Flutter
+client + Frappe backend). If you pick a different stack, skip this section and
+delete `.relation`.
+
+Rokct apps are thin shells: an app's `lib/` is regenerated on every compose
+from the SDKs listed in its root `composer.json`. The SDKs live in multi-SDK
+monorepos under `RokctAI` — one directory per SDK, each with `dart/`,
+`frappe/` and `nextjs/` subdirectories.
+
+- **The backend is the single source of truth.** `frappe/` defines the schema
+  (DocTypes) and the server-side business rules; the `dart/` and `nextjs/`
+  clients mirror it. A client never invents a field the backend does not have.
+- **`dart/manifest.json` is authoritative** for an SDK's version and for what
+  it installs into the host app. The version in `pubspec.yaml` is often stale.
+- **Feature SDKs never import each other** (ADR-005). The only package one may
+  import directly is `base_sdk`; anything else goes through an interface the
+  consumer declares and an adapter this app wires up.
+- **Composing an SDK is two edits, not one.** Adding it to this repo's
+  `composer.json` is not enough — CI overwrites that file from the template in
+  the Protocol repo (`core/utils/flutter/composer/<app_type>.json`).
+
+Read these before writing any SDK-facing code. Do not work from the summary
+above; it will drift, and these will not:
+
+1. `SDK_README.md` at the root of `RokctAI/agent` — the Dart authoring
+   contract: DDD layout, manifest and import rules, offline doctrine, ADR-005.
+2. `SDK_ECOSYSTEM.md` at the root of `RokctAI/The-Rokct-Protocol` — the map:
+   which repos exist, the manifest key table, and the composer templates in
+   `core/utils/flutter/composer/`, which are the working index of which SDK
+   lives in which repo.
+
+`.relation` in this repo's root declares which SDK repos this app consumes. It
+ships empty. Add one entry per repo you take a dependency on, in the shape
+`RokctAI/agent` uses in its own `.relation`:
+
+```json
+{ "git": "https://github.com/RokctAI/<repo>", "dart": "../<repo>/<sdk>/dart",
+  "frappe": "../<repo>/<sdk>/frappe", "public": false, "ref": "main" }
+```
+
 ## How to work
 
 - Pick the stack yourself unless `docs/spec.md` names one. Justify it in

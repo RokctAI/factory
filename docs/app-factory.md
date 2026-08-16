@@ -137,10 +137,40 @@ with `{{TOKEN}}` placeholders substituted by
 
 Contents: `README.md`, `AGENTS.md` (the agent's build brief), `.gitignore`
 (stored as `gitignore` so it does not act on the factory's own tree),
-`docs/spec.md` (the accepted brief, verbatim) and a `.rokct/` bootstrap —
-`bootstrap.sh`, which fetches `initiate.py` from `RokctAI/The-Rokct-Protocol`
-and runs it. The protocol is fetched rather than vendored so spawned repos
-never ship a stale copy.
+`.relation`, `docs/spec.md` (the accepted brief, verbatim) and a `.rokct/`
+bootstrap — `bootstrap.sh`, which fetches `initiate.py` from
+`RokctAI/The-Rokct-Protocol` and runs it. The protocol is fetched rather than
+vendored so spawned repos never ship a stale copy.
+
+Dotfiles other than `.gitignore` ship with their dot intact — `seed_app_repo.py`
+walks the template with `os.walk`, which does not skip them, and `app_create.yml`
+stages the seeded tree with `git add -A`, which does not either. Only
+`.gitignore` needs the `gitignore` → `.gitignore` rename, because a live
+`.gitignore` inside `templates/app/` would act on the factory's own tree.
+
+### `.relation` — declaring which SDKs the app consumes
+
+`.relation` is the fleet's convention for declaring which sibling repos a repo
+depends on: a JSON array of `{git, dart, frappe, public, ref}` entries, one per
+repo, specified in `SDK_ECOSYSTEM.md` in `RokctAI/The-Rokct-Protocol` and used
+for real in `RokctAI/agent`'s root `.relation`. The scaffold ships it as an
+empty array — a new app consumes nothing yet — and `AGENTS.md` carries the entry
+shape plus a short orientation on how the SDK fleet works, pointing at the two
+fleet documents that hold the real contract (`SDK_README.md` in `RokctAI/agent`)
+and the working SDK-to-repo index (the composer templates under
+`core/utils/flutter/composer/` in the Protocol repo).
+
+The index is deliberately **not** copied into the scaffold. A duplicate list in
+every spawned repo goes stale the moment an SDK moves, and the fleet docs are
+one `gh` call away.
+
+Nothing parses `.relation` today: no script or workflow in `control`, `agent`,
+`factory` or `the-rokct-protocol` reads it. It is documentation by convention,
+addressed to the agent that wakes up in the new repo. Two neighbouring
+conventions it is easy to confuse it with — neither belongs in an app repo:
+`.repo` (in `control`) lists the *apps* that sit on top of that backend, one
+`https://…/<repo>.git (branch)` per line; `.private_repo` names the single private
+companion repo whose code is merged into the working tree and git-excluded.
 
 ### Why the scaffold ships no `.workspace_config.json`
 
