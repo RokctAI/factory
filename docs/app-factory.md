@@ -95,11 +95,41 @@ with `{{TOKEN}}` placeholders substituted by
 Contents: `README.md`, `AGENTS.md` (the agent's build brief), `.gitignore`
 (stored as `gitignore` so it does not act on the factory's own tree),
 `docs/spec.md` (the accepted brief, verbatim) and a `.rokct/` bootstrap —
-a seeded `.workspace_config.json` plus `bootstrap.sh`, which fetches
-`initiate.py` from `RokctAI/The-Rokct-Protocol` and installs the protocol.
-The protocol is fetched rather than vendored so spawned repos never ship a
-stale copy, and the config is pre-seeded so `initiate.py` never stops in a
-non-interactive shell to ask which workspace the repo belongs to.
+`bootstrap.sh`, which fetches `initiate.py` from `RokctAI/The-Rokct-Protocol`
+and runs it, plus a standalone `.workspace_config.json`. The protocol is
+fetched rather than vendored so spawned repos never ship a stale copy.
+
+### Why the scaffold pre-writes `.workspace_config.json`
+
+`profiles/local/initiate.py` is the protocol's entry point for an empty repo:
+it is self-contained, fetching everything it needs from the protocol repo at a
+commit it pins itself. It runs unattended but for a single prompt. At
+`initiate.py:464` it branches on the git origin — a `RokctAI/*` origin
+auto-routes working files to the org workspace; **any other origin falls
+through to `input()` at `:468`**, asking for a parent repo. That prompt has no
+`CI` guard, unlike the rest of the script, so a spawned repo — owned by
+`RendaniSinyage`, not the org — dies there with `EOFError` on any unattended
+run.
+
+The script only reaches that prompt when `.rokct/.workspace_config.json` is
+missing (`:455`). So the scaffold ships one, with `parent_repo` **empty**. Both
+places the protocol reads that key treat empty as standalone —
+`initiate.py:500` (`not config_data.get("parent_repo")`) and
+`sync_workspace.py:183` (`if not parent_repo: return True`) — so the repo
+bootstraps as its own workspace and syncs nowhere. An earlier draft of this
+scaffold seeded `RokctAI/occultation` instead, which is the org's secrets repo
+and never a sane sync target for an app.
+
+Two caveats worth knowing:
+
+- The durable fix is upstream: CI-guard the prompt at `the-rokct-protocol`
+  `profiles/local/initiate.py:468` (an env var or `--yes` flag selecting
+  standalone without asking). A separate PR is being opened for that; once it
+  lands the pre-written config is belt-and-braces rather than load-bearing.
+- `initiate.py` skips deploying `sync_workspace.yml` and `maintenance.yml`
+  when `CI` is set (`:439`, `:486`, `:500`), so a bootstrap run inside a
+  workflow installs `.rokct/` only. Run `bootstrap.sh` from an agent or
+  developer session — which is what the **Build v0** issue asks for.
 
 ## Reusing the creation step
 

@@ -28,8 +28,12 @@ bash .rokct/bootstrap.sh
 
 That fetches `initiate.py` from `RokctAI/The-Rokct-Protocol` and runs it,
 installing skills, session workflows and `sync_workspace` into `.rokct/`.
-Working files sync back to the parent workspace already named in
-`.rokct/.workspace_config.json`.
+
+This repo is **standalone**: `.rokct/.workspace_config.json` ships with an
+empty `parent_repo`, so working files (`memory.md`, `decision_log.md`,
+`project_map.md`) stay here and sync to no parent workspace. Run
+`bootstrap.sh` in a normal session, not under CI — `initiate.py` skips
+installing the session workflows whenever `CI` is set.
 
 ## How to work
 
