@@ -200,3 +200,4 @@
 | ember_atlas_4eec13 | poetry | Ember Atlas | pending_approval | groq | GROQ-31843775984 | — | 2026-08-14 21:45 |
 | cartography_of_the_soul_2b5b02 | poetry | Cartography of the Soul | pending_approval | groq | GROQ-31847808216 | — | 2026-08-14 22:45 |
 | aural_tapestry_04acc6 | poetry | Aural Tapestry | pending_approval | groq | GROQ-31851300017 | — | 2026-08-14 23:43 |
+| memory_keepers_dc5fec | science fiction | Memory Keepers | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-16 20:21 |
