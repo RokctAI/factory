@@ -92,5 +92,5 @@ Lucifer did not sneak into Eden. He used something that already belonged there. 
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 01_gap_theory.md | 02_two_creations.md | 08_gods_glory_departs.md | 13_third_temple.md*

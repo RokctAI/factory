@@ -124,5 +124,5 @@ The Third Temple is coming. Scripture is clear. What is less discussed is that t
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 03_lucifer_in_eden.md | 09_gods_glory_departs.md | 12_palestinians_canaanites.md | 14_milk_and_honey.md*

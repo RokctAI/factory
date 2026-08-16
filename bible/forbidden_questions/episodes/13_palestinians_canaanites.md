@@ -109,5 +109,5 @@ The news covers this conflict as if it began in 1948 or 1967. The Bible locates 
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 08_canaan_curse.md | 11_lost_ten_tribes.md | 10_israel_interbreeds.md | 14_milk_and_honey.md | 13_third_temple.md*

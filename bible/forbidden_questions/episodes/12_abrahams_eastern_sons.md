@@ -123,5 +123,5 @@ Abraham didn't just father the Jewish and Arab people. He fathered the east. His
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 11_lost_ten_tribes.md | 12_palestinians_and_canaanites.md*

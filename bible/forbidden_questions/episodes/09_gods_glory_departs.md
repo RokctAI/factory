@@ -117,5 +117,5 @@ God did not abandon the temple suddenly or in anger. He left the way a grieved p
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 03_lucifer_in_eden.md | 13_third_temple.md | 14_milk_and_honey.md*

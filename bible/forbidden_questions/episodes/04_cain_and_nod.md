@@ -95,5 +95,5 @@ Cain's story is not a simple family tragedy. He left a protected Adamic zone and
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 02_two_creations.md | 05_nephilim_timeline.md | 06_watchers.md | 06_naamah_and_the_ark.md*
