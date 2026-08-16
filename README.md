@@ -3,17 +3,16 @@
 An autonomous publishing factory that generates, evaluates, improves, and publishes books across multiple genres.
 
 ## 🚀 Factory Status Dashboard
-*Last Updated: 2026-04-29 12:00*
+*Last Updated: 2026-08-16 01:23*
 
 | Genre | Total Jobs | New (7d) | Published | Health |
 | :--- | :--- | :--- | :--- | :--- |
-| 🎭 **Poetry** | 0 | 0 | 0 | 🟡 |
+| 🎭 **Poetry** | 5 | 5 | 0 | 🟡 |
 | 📚 **Fiction** | 0 | 0 | 0 | 🟡 |
 | 📖 **Short Story** | 0 | 0 | 0 | 🟡 |
 | 👶 **Children** | 0 | 0 | 0 | 🟡 |
 
-**Overall Progress**: `0.0%` Published | `+0` New Jobs This Week
-
+**Overall Progress**: `0.0%` Published | `+5` New Jobs This Week
 ## 🏗 Pipeline Levels
 
 - **Level 0: Theme Generation** (Fully Automated) - Discovers new themes.
