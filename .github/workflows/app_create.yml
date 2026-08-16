@@ -11,6 +11,10 @@ name: App Create (reusable)
 # repo-level FACTORY_PAT secret overrides it. Creating repos needs more than
 # pushing to them: classic `repo` scope, or a fine-grained token whose
 # resource owner IS the target owner (see docs/app-factory.md).
+#
+# The `owner` input is canonicalised here rather than trusted, so a caller
+# that is not app_spawn.yml cannot hand us `rokctai` and silently lose the
+# protocol bootstrap. See .github/scripts/owners.py.
 
 on:
   workflow_call:
@@ -50,6 +54,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # GitHub logins are case-insensitive; initiate.py's `RokctAI/` origin
+      # test is not. Resolve the spelling once, then use it everywhere below.
+      - name: Resolve owner
+        id: owner
+        env:
+          RAW_OWNER: ${{ inputs.owner }}
+        run: |
+          owner=$(python3 .github/scripts/owners.py "$RAW_OWNER")
+          echo "owner=$owner" >> "$GITHUB_OUTPUT"
+          echo "Target owner resolved to $owner (given: $RAW_OWNER)."
+
       # Fail here with the scope named, not later with a bare 404 from the
       # creation call. A classic PAT advertises its scopes in a response
       # header; a fine-grained one does not, so that case is only warned on.
@@ -63,9 +78,9 @@ jobs:
           fi
           scopes="${scopes#*: }"
           if [ -z "$scopes" ]; then
-            echo "Fine-grained token detected; its resource owner must be ${{ inputs.owner }}, with Administration: write."
+            echo "Fine-grained token detected; its resource owner must be ${{ steps.owner.outputs.owner }}, with Administration: write."
           elif ! echo "$scopes" | grep -qw 'repo'; then
-            echo "::error::The factory PAT cannot create repositories. It has scopes [$scopes]; it needs classic \`repo\` scope, or a fine-grained token whose resource owner is ${{ inputs.owner }} with Administration: write. See docs/app-factory.md."
+            echo "::error::The factory PAT cannot create repositories. It has scopes [$scopes]; it needs classic \`repo\` scope, or a fine-grained token whose resource owner is ${{ steps.owner.outputs.owner }} with Administration: write. See docs/app-factory.md."
             exit 1
           fi
 
@@ -73,13 +88,13 @@ jobs:
         id: create_repo
         env:
           GH_TOKEN: ${{ secrets.FACTORY_PAT }}
-          TARGET: ${{ inputs.owner }}/${{ inputs.name }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
         run: |
           if ! gh repo create "$TARGET" \
                 --"${{ inputs.visibility }}" \
                 --description "${{ inputs.description }}" 2>create.err; then
             cat create.err
-            echo "::error::Could not create $TARGET. If this is a permissions failure, the factory PAT needs classic \`repo\` scope, or must be a fine-grained token whose resource owner is ${{ inputs.owner }} with Administration: write. See docs/app-factory.md."
+            echo "::error::Could not create $TARGET. If this is a permissions failure, the factory PAT needs classic \`repo\` scope, or must be a fine-grained token whose resource owner is ${{ steps.owner.outputs.owner }} with Administration: write. See docs/app-factory.md."
             exit 1
           fi
           echo "repo_url=https://github.com/$TARGET" >> "$GITHUB_OUTPUT"
@@ -95,7 +110,7 @@ jobs:
             --name "${{ inputs.name }}" \
             --description "${{ inputs.description }}" \
             --spec-file spec.txt \
-            --owner "${{ inputs.owner }}" \
+            --owner "${{ steps.owner.outputs.owner }}" \
             --visibility "${{ inputs.visibility }}" \
             --issue "${{ inputs.source_issue }}"
 
@@ -103,7 +118,7 @@ jobs:
         working-directory: seed
         env:
           GH_TOKEN: ${{ secrets.FACTORY_PAT }}
-          TARGET: ${{ inputs.owner }}/${{ inputs.name }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
         run: |
           git init -q -b main
           git config user.name "rokct-bot"
@@ -116,7 +131,7 @@ jobs:
       - name: Open Build v0 issue
         env:
           GH_TOKEN: ${{ secrets.FACTORY_PAT }}
-          TARGET: ${{ inputs.owner }}/${{ inputs.name }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
         run: |
           gh issue create --repo "$TARGET" \
             --title "Build v0" \

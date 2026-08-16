@@ -42,14 +42,27 @@ without `app-idea` is ignored.
   issue form's *Target owner* field overrides it per-idea, and setting the
   variable overrides the default for every idea.
 
-  **The casing is load-bearing.** `initiate.py` decides whether a repo is an
-  org repo by testing the literal substring `RokctAI/` against the git origin
-  URL — case-sensitively, in three places (`:356` for the `.rok` skill,
-  `:370` for the Protocol workflows, `:484` for the workspace route). GitHub
-  itself is case-insensitive about owners, so `gh repo create rokctai/foo`
-  lands in the same org — but the remote the spawn writes is the string it was
-  given, and a lowercase `rokctai/foo` origin fails all three tests. Spell it
-  `RokctAI`, in the variable and in any per-issue override.
+  **The casing is load-bearing, and the factory normalises it for you.**
+  `initiate.py` decides whether a repo is an org repo by testing the literal
+  substring `RokctAI/` against the git origin URL — case-sensitively, in three
+  places (`:356` for the `.rok` skill, `:370` for the Protocol workflows,
+  `:484` for the workspace route). GitHub itself is case-insensitive about
+  owners, so `gh repo create rokctai/foo` lands in the same org and reports
+  success — but a lowercase `rokctai/foo` origin fails all three tests, and
+  nothing errors when it does. The damage is silent, so it is fixed before it
+  can happen: every owner the factory resolves — the variable, the issue
+  form's *Target owner* field, and `app_create.yml`'s `owner` input for
+  callers that bypass the form — goes through
+  [`.github/scripts/owners.py`](../.github/scripts/owners.py), which maps any
+  casing of a **known** owner to its canonical spelling.
+
+  Owners that are *not* known pass through byte-for-byte, casing intact:
+  personal accounts and third-party orgs have no canonical form to impose, and
+  lower-casing them would be the same silent breakage pointing the other way.
+  So `rokctai`, `ROKCTAI` and `RokctAI` all resolve to `RokctAI`, while
+  `RendaniSinyage` stays exactly as typed. Adding another org whose casing
+  matters is one more entry in that module's `KNOWN_OWNERS`. Covered by
+  `.github/scripts/tests/test_owner_casing.py`.
 
 - **`secrets.MONOREPO_PAT`** — the existing cross-repo token, used by default.
   With `RokctAI` as the target owner this is the expected credential: it is

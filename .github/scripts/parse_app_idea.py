@@ -6,15 +6,20 @@ submitter left empty render as `_No response_`. Anything the parser cannot
 resolve is a hard error: a half-parsed brief would seed a repo the agent
 cannot build from.
 
-Usage: parse_app_idea.py --body-file <path> [--default-owner RokctAI]
+Usage: parse_app_idea.py --body-file <path> [--default-owner <login>]
 Writes `key=value` lines to $GITHUB_OUTPUT when set, otherwise to stdout.
 Multi-line values use the heredoc form so `spec` survives intact.
+
+The resolved owner goes through owners.canonical(), because `initiate.py`
+gates the protocol bootstrap on a case-sensitive `RokctAI/` — see owners.py.
 """
 import argparse
 import os
 import re
 import sys
 import uuid
+
+import owners
 
 SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,62}[a-z0-9]$")
 HEADING_RE = re.compile(r"^###[ \t]+(.+?)[ \t]*$")
@@ -75,8 +80,12 @@ def validate(fields, default_owner):
         # Default rather than fail: a missing dropdown is a form drift
         # problem, and private is the safe side of it.
         fields["visibility"] = "private"
+    # Canonicalise before validating: `rokctai` and `ROKCTAI` reach the same
+    # org on GitHub but only `RokctAI` survives initiate.py's origin test.
+    # An owner we do not know keeps its casing exactly.
+    fields["owner"] = owners.canonical(fields["owner"])
     if not fields["owner"]:
-        fields["owner"] = default_owner
+        fields["owner"] = owners.canonical(default_owner) or owners.DEFAULT_OWNER
     elif not re.match(r"^[A-Za-z0-9][A-Za-z0-9-]{0,38}$", fields["owner"]):
         errors.append(f"**Target owner** `{fields['owner']}` is not a valid GitHub login.")
     return errors
@@ -94,7 +103,9 @@ def emit(fields, handle):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--body-file", required=True)
-    ap.add_argument("--default-owner", default="RokctAI")
+    # Blank is normal: app_spawn.yml passes vars.FACTORY_TARGET_OWNER straight
+    # through, and that variable is usually unset.
+    ap.add_argument("--default-owner", default="")
     args = ap.parse_args()
 
     with open(args.body_file, "r", encoding="utf-8") as f:

@@ -49,6 +49,6 @@ body:
     id: owner
     attributes:
       label: Target owner
-      description: GitHub user or org for the new repo. Leave blank to use the `FACTORY_TARGET_OWNER` variable (defaults to `RokctAI`). Case-sensitive — spell the org `RokctAI`, or the protocol bootstrap treats the repo as non-org.
+      description: GitHub user or org for the new repo. Leave blank to use the `FACTORY_TARGET_OWNER` variable (defaults to `RokctAI`). Any casing of `RokctAI` is accepted and normalised for you; other owners are taken exactly as you spell them, so match the account's own casing.
     validations:
       required: false
