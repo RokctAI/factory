@@ -105,4 +105,4 @@ The flood is usually taught as God's reset button. It was — but the reset was 
 ---
 
 *Series: Hidden Architecture of Scripture*
-*Cross-reference files: 04_cain_and_nod.md | 05_nephilim_timeline.md | 06_watchers.md | 07_canaan_curse.md*
+*Cross-reference files: 04_cain_and_nod.md | 05_nephilim_timeline.md | 06_sons_of_god.md | 07_canaan_curse.md*
