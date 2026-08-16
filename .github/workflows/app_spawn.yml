@@ -5,8 +5,10 @@ name: App Spawn
 # app-idea.yml). Applying `approved` to one spawns its repo — nothing else
 # does. Idea generation is deliberately not automated; only the build-out is.
 #
-# See docs/app-factory.md for the labels, the FACTORY_TARGET_OWNER variable
-# and the token scope MONOREPO_PAT needs.
+# New repos land under vars.FACTORY_TARGET_OWNER, which defaults to Ray's
+# personal account; promotion to the org is a later, manual transfer. See
+# docs/app-factory.md for the labels, the variable, and which token can
+# create repos where.
 
 on:
   issues:
@@ -31,7 +33,7 @@ jobs:
         id: fields
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-          DEFAULT_OWNER: ${{ vars.FACTORY_TARGET_OWNER || 'rokctai' }}
+          DEFAULT_OWNER: ${{ vars.FACTORY_TARGET_OWNER || 'RendaniSinyage' }}
         run: |
           printf '%s\n' "$ISSUE_BODY" > issue_body.md
           python3 .github/scripts/parse_app_idea.py \
@@ -47,7 +49,7 @@ jobs:
       - name: Guard against double-spawn
         id: guard
         env:
-          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.FACTORY_PAT || secrets.MONOREPO_PAT }}
           TARGET: ${{ steps.fields.outputs.owner }}/${{ steps.fields.outputs.name }}
         run: |
           if gh api "repos/$TARGET" >/dev/null 2>&1; then
@@ -81,8 +83,12 @@ jobs:
       owner: ${{ needs.parse.outputs.owner }}
       spec: ${{ needs.parse.outputs.spec }}
       source_issue: ${{ github.event.issue.html_url }}
+    # Actions cannot resolve a secret by a name held in a variable, so the
+    # override is a second optional secret rather than an indirection: set
+    # FACTORY_PAT when the target owner needs a different token from the one
+    # the monorepo workflows use, otherwise MONOREPO_PAT is it.
     secrets:
-      MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+      FACTORY_PAT: ${{ secrets.FACTORY_PAT || secrets.MONOREPO_PAT }}
 
   announce:
     needs: [parse, create]

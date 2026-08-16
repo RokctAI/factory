@@ -49,6 +49,6 @@ body:
     id: owner
     attributes:
       label: Target owner
-      description: GitHub user or org for the new repo. Leave blank to use the `FACTORY_TARGET_OWNER` variable.
+      description: GitHub user or org for the new repo. Leave blank to use the `FACTORY_TARGET_OWNER` variable (defaults to the personal account).
     validations:
       required: false

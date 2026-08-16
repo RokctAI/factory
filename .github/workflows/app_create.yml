@@ -6,10 +6,11 @@ name: App Create (reusable)
 # can call this the same way. Nothing here reads issue state; everything it
 # needs arrives as an input.
 #
-# MONOREPO_PAT is the cross-repo credential the rest of the factory already
-# uses (sync_workspace.yml, lesson_release_on_complete.yml). Creating repos
-# needs more than pushing to them: classic `repo` scope, or a fine-grained
-# token with Administration: write on the target owner.
+# FACTORY_PAT is whatever token the caller resolved — MONOREPO_PAT, the
+# cross-repo credential the rest of the factory already uses, unless a
+# repo-level FACTORY_PAT secret overrides it. Creating repos needs more than
+# pushing to them: classic `repo` scope, or a fine-grained token whose
+# resource owner IS the target owner (see docs/app-factory.md).
 
 on:
   workflow_call:
@@ -35,7 +36,7 @@ on:
         type: string
         default: ''
     secrets:
-      MONOREPO_PAT:
+      FACTORY_PAT:
         required: true
     outputs:
       repo_url:
@@ -54,31 +55,31 @@ jobs:
       # header; a fine-grained one does not, so that case is only warned on.
       - name: Check token can create repositories
         env:
-          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
         run: |
           if ! scopes=$(gh api -i /user 2>/dev/null | tr -d '\r' | grep -i '^x-oauth-scopes:'); then
-            echo "::error::MONOREPO_PAT is not a usable GitHub token (GET /user failed)."
+            echo "::error::The factory PAT is not a usable GitHub token (GET /user failed). Check FACTORY_PAT, or MONOREPO_PAT if FACTORY_PAT is unset."
             exit 1
           fi
           scopes="${scopes#*: }"
           if [ -z "$scopes" ]; then
-            echo "Fine-grained token detected; it needs Administration: write on ${{ inputs.owner }}."
+            echo "Fine-grained token detected; its resource owner must be ${{ inputs.owner }}, with Administration: write."
           elif ! echo "$scopes" | grep -qw 'repo'; then
-            echo "::error::MONOREPO_PAT cannot create repositories. It has scopes [$scopes]; it needs classic \`repo\` scope, or replace it with a fine-grained token holding Administration: write on ${{ inputs.owner }}."
+            echo "::error::The factory PAT cannot create repositories. It has scopes [$scopes]; it needs classic \`repo\` scope, or a fine-grained token whose resource owner is ${{ inputs.owner }} with Administration: write. See docs/app-factory.md."
             exit 1
           fi
 
       - name: Create repository
         id: create_repo
         env:
-          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
           TARGET: ${{ inputs.owner }}/${{ inputs.name }}
         run: |
           if ! gh repo create "$TARGET" \
                 --"${{ inputs.visibility }}" \
                 --description "${{ inputs.description }}" 2>create.err; then
             cat create.err
-            echo "::error::Could not create $TARGET. If this is a permissions failure, MONOREPO_PAT needs classic \`repo\` scope, or fine-grained Administration: write on ${{ inputs.owner }}."
+            echo "::error::Could not create $TARGET. If this is a permissions failure, the factory PAT needs classic \`repo\` scope, or must be a fine-grained token whose resource owner is ${{ inputs.owner }} with Administration: write. See docs/app-factory.md."
             exit 1
           fi
           echo "repo_url=https://github.com/$TARGET" >> "$GITHUB_OUTPUT"
@@ -101,7 +102,7 @@ jobs:
       - name: Push main
         working-directory: seed
         env:
-          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
           TARGET: ${{ inputs.owner }}/${{ inputs.name }}
         run: |
           git init -q -b main
@@ -114,7 +115,7 @@ jobs:
 
       - name: Open Build v0 issue
         env:
-          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
           TARGET: ${{ inputs.owner }}/${{ inputs.name }}
         run: |
           gh issue create --repo "$TARGET" \
