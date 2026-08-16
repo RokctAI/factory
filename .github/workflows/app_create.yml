@@ -15,6 +15,11 @@ name: App Create (reusable)
 # The `owner` input is canonicalised here rather than trusted, so a caller
 # that is not app_spawn.yml cannot hand us `rokctai` and silently lose the
 # protocol bootstrap. See .github/scripts/owners.py.
+#
+# The final step hands the new repo to the fleet's roadmap module so the
+# factory's own machinery can pick it up. It is optional and advisory: by the
+# time it runs the repo exists and Build v0 is open, so it never fails the
+# job. Unset RLMS_SITE_URL and it skips.
 
 on:
   workflow_call:
@@ -42,6 +47,15 @@ on:
     secrets:
       FACTORY_PAT:
         required: true
+      # Optional, and optional all the way down: the roadmap hand-off is the
+      # last step and skips itself when RLMS_SITE_URL is empty. A caller that
+      # passes none of these still spawns a complete repo.
+      RLMS_SITE_URL:
+        required: false
+      RLMS_API_KEY:
+        required: false
+      RLMS_API_SECRET:
+        required: false
     outputs:
       repo_url:
         value: ${{ jobs.create.outputs.repo_url }}
@@ -141,3 +155,24 @@ jobs:
               "Run \`bash .rokct/bootstrap.sh\` first, then ship a v0 a person can run." \
               "" \
               "Spawned from ${{ inputs.source_issue }}.")"
+
+      # The other half of the loop: the repo now exists on GitHub, so tell the
+      # roadmap module about it and let the fleet's own scheduling pick it up.
+      # `continue-on-error` is belt to the script's braces — register_roadmap.py
+      # already swallows every failure and exits 0, but a spawn that has
+      # already produced a repo and an issue must not go red for a backend
+      # that was slow, unconfigured, or having a bad day.
+      - name: Register with the roadmap
+        continue-on-error: true
+        env:
+          RLMS_SITE_URL: ${{ secrets.RLMS_SITE_URL }}
+          RLMS_API_KEY: ${{ secrets.RLMS_API_KEY }}
+          RLMS_API_SECRET: ${{ secrets.RLMS_API_SECRET }}
+          APP_NAME: ${{ inputs.name }}
+          APP_DESCRIPTION: ${{ inputs.description }}
+          REPO_URL: ${{ steps.create_repo.outputs.repo_url }}
+        run: |
+          python3 .github/scripts/register_roadmap.py \
+            --title "$APP_NAME" \
+            --repo-url "$REPO_URL" \
+            --description "$APP_DESCRIPTION"

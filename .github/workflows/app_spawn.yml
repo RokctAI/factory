@@ -92,8 +92,15 @@ jobs:
     # override is a second optional secret rather than an indirection: set
     # FACTORY_PAT when the target owner needs a different token from the one
     # the monorepo workflows use, otherwise MONOREPO_PAT is it.
+    #
+    # The RLMS_* trio is the roadmap hand-off, and is optional: unset, they
+    # arrive empty and app_create.yml's last step skips itself. They are the
+    # same three secrets skills_index.yml already uses against that site.
     secrets:
       FACTORY_PAT: ${{ secrets.FACTORY_PAT || secrets.MONOREPO_PAT }}
+      RLMS_SITE_URL: ${{ secrets.RLMS_SITE_URL }}
+      RLMS_API_KEY: ${{ secrets.RLMS_API_KEY }}
+      RLMS_API_SECRET: ${{ secrets.RLMS_API_SECRET }}
 
   announce:
     needs: [parse, create]

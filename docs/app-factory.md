@@ -18,7 +18,11 @@ How an app idea becomes a repository an AI agent can start building in.
 4. **Seed** — `app_create.yml` creates the repo, seeds it from
    `templates/app/`, pushes `main`, and opens a **Build v0** issue in the new
    repo pointing at `docs/spec.md`.
-5. **Close** — the originating issue gets a comment with the new repo URL and
+5. **Register** — `app_create.yml`'s last step tells the fleet's roadmap
+   module the new repo exists, so the factory's own machinery picks it up
+   without anybody typing it in. Optional, and never fatal — see
+   [Registering with the roadmap](#registering-with-the-roadmap).
+6. **Close** — the originating issue gets a comment with the new repo URL and
    is closed.
 
 If parsing fails, the slug is invalid or the repo already exists, the
@@ -74,6 +78,12 @@ without `app-idea` is ignored.
   `FACTORY_PAT_SECRET_NAME`-style indirection. It exists for the case where
   `MONOREPO_PAT` can push but not create — nothing about the `RokctAI` default
   requires it.
+- **`secrets.RLMS_SITE_URL`, `secrets.RLMS_API_KEY`, `secrets.RLMS_API_SECRET`**
+  — **optional.** The rlms Frappe site and its API token, used only by the
+  roadmap registration step. These are the same three secrets
+  `skills_index.yml` already uses against that site, so on this repo they are
+  most likely set already. Leave `RLMS_SITE_URL` unset and the step skips
+  itself; nothing else in the spawn touches them.
 
 ### Which token creates a repo where
 
@@ -98,6 +108,67 @@ So:
 
 `app_create.yml` checks the token up front and fails with the required scope
 named, rather than letting a bare 404 surface from the creation call.
+
+## Registering with the roadmap
+
+Creating the repo is only half the loop. The fleet already has a roadmap
+module on the rlms Frappe site — it is what schedules work onto repos — so the
+last step of `app_create.yml` hands the new repo to it via
+[`.github/scripts/register_roadmap.py`](../.github/scripts/register_roadmap.py),
+and a spawned app appears on the roadmap without anybody re-typing it.
+
+It `POST`s a `Roadmap` document to Frappe's generic resource API,
+`POST /api/resource/Roadmap`, authenticating with `Authorization: token
+<key>:<secret>` — the same shape `lessons/scripts/build_skills_index.py` uses
+against the same site. The document is four fields:
+
+| Field | Value |
+| :--- | :--- |
+| `title` | the app name (reqd, and the doctype's autoname source, so it is the document name too) |
+| `source_repository` | the new repo's URL (reqd) |
+| `status` | **`Idea Passed`** (reqd) |
+| `description` | the one-line description from the issue form, omitted when blank |
+
+**Why `Idea Passed`.** The doctype's status options are `Ideas`, `Idea
+Passed`, `Bugs`, `Doing`, `Done` and `Archived`. A just-spawned repo is an
+idea that cleared Ray's `approved` gate and now has a repo and an open
+`Build v0` — but that nothing has started building yet. `Ideas` would file it
+back into the unvetted pile it just came out of, and `Doing` would claim work
+is in flight when the issue is still unassigned. `Idea Passed` is exactly
+"approved, not started", which is what the `approved` label means here. Pass
+`--status` to the script to choose another; it validates the value against the
+doctype's options rather than letting the site reject it.
+
+**The real work happens on the other side.** Inserting a `Roadmap` fires the
+doctype's `after_save`, which enqueues `discover_roadmap_context` to read the
+repo and fill in its description and classifications. So this step's job is
+just to open the door.
+
+**No Jules key travels from the factory.** The doctype has an optional
+per-roadmap `jules_api_key`, and the step deliberately does not send it. Both
+consumers — the roadmap `tasks.py` and `roadmap_feature.py` — fall back to the
+`Roadmap Settings` single whenever the per-roadmap field is empty, so the key
+stays on the site that uses it and never has to exist as a factory secret.
+Set it once in **Roadmap Settings** on the site.
+
+**It cannot fail a spawn.** By the time this runs, the repo exists, `main` is
+pushed and `Build v0` is open — a Frappe outage must not turn that into a red
+workflow. So the script swallows every failure, exits 0 either way, and the
+step carries `continue-on-error: true` on top of that. What it does instead is
+say so, loudly, as a GitHub annotation on the run:
+
+| Situation | What you see |
+| :--- | :--- |
+| `RLMS_SITE_URL` unset | a notice that the registration was skipped; nothing posted |
+| site URL set, key or secret missing | a **warning** naming the missing secret and saying the repo was not registered |
+| site returns 4xx/5xx | a **warning** with the status code and the site's error text |
+| site unreachable or slow | a **warning** with the connection error |
+
+In every one of those cases the repo and its `Build v0` issue are already
+there and untouched; add the `Roadmap` by hand, or fix the secret and create
+it on the site. Covered by
+`.github/scripts/tests/test_register_roadmap.py`, which fakes the HTTP layer
+and never makes a real call.
 
 ## Why the org, not a personal account
 
