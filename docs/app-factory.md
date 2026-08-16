@@ -139,17 +139,15 @@ is in flight when the issue is still unassigned. `Idea Passed` is exactly
 `--status` to the script to choose another; it validates the value against the
 doctype's options rather than letting the site reject it.
 
-**The real work happens on the other side.** Inserting a `Roadmap` fires the
-doctype's `after_save`, which enqueues `discover_roadmap_context` to read the
-repo and fill in its description and classifications. So this step's job is
-just to open the door.
+**The real work happens on the other side.** Inserting the `Roadmap` is the
+hand-off. The site then fills the document out in the background, from the
+repo's own GitHub metadata rather than from anything the factory sends. So
+this step's job is just to open the door.
 
-**No Jules key travels from the factory.** The doctype has an optional
-per-roadmap `jules_api_key`, and the step deliberately does not send it. Both
-consumers — the roadmap `tasks.py` and `roadmap_feature.py` — fall back to the
-`Roadmap Settings` single whenever the per-roadmap field is empty, so the key
-stays on the site that uses it and never has to exist as a factory secret.
-Set it once in **Roadmap Settings** on the site.
+**No AI key travels from the factory.** The doctype has an optional
+per-roadmap `jules_api_key`, and the step deliberately does not send it.
+Nothing on that path calls an AI service on any key, so no AI key has to
+exist as a factory secret.
 
 **It cannot fail a spawn.** By the time this runs, the repo exists, `main` is
 pushed and `Build v0` is open — a Frappe outage must not turn that into a red

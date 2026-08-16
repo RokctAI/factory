@@ -10,15 +10,14 @@ turn a repo that was created successfully into a red workflow.
 
 What the other side does with it: `Roadmap` is an ordinary DocType, so it is
 created through Frappe's generic resource API (`POST /api/resource/Roadmap`).
-Inserting one fires `after_save`, which enqueues `discover_roadmap_context` to
-read the repo and fill in its description and classifications. So the useful
-half of this hand-off happens on the site, in the background, after we hang up.
+Inserting one is the whole hand-off: the site fills the document out in the
+background afterwards, from what GitHub already knows about the repo. So the
+useful half of this hand-off happens on the site, after we hang up.
 
 Deliberately **not** sent: `jules_api_key`. The doctype accepts a per-roadmap
-key, but both consumers — `roadmap/tasks.py` and `roadmap_feature.py` — fall
-back to the `Roadmap Settings` single when the field is empty. Leaving it out
-means the key lives only on the site that uses it, and never has to exist as a
-factory secret at all.
+key, but nothing on that path calls an AI service on any key, so there is
+nothing here for the factory to supply. Leaving it out means no AI key has to
+exist as a factory secret at all.
 
 Usage:
     register_roadmap.py --title <app> --repo-url <url> [--description <text>]
