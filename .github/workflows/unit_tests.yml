@@ -1,14 +1,17 @@
 name: Unit tests
 
-# Stdlib unittest suite for the pipeline helper modules
-# (lessons/scripts/tests/). No third-party deps.
+# Stdlib unittest suites for the pipeline helper modules
+# (lessons/scripts/tests/) and the workflow helper scripts
+# (.github/scripts/tests/). No third-party deps.
 on:
   push:
     paths:
       - 'lessons/scripts/**'
+      - '.github/scripts/**'
   pull_request:
     paths:
       - 'lessons/scripts/**'
+      - '.github/scripts/**'
   workflow_dispatch:
 
 jobs:
@@ -22,5 +25,8 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run unittest suite
+      - name: Run unittest suite (lessons/scripts)
         run: python3 -m unittest discover -s lessons/scripts/tests -v
+
+      - name: Run unittest suite (.github/scripts)
+        run: python3 -m unittest discover -s .github/scripts/tests -v

@@ -101,5 +101,5 @@ The Watchers didn't stumble into a bad decision. They made a calculated choice â
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 02_two_creations.md | 04_cain_and_nod.md | 05_nephilim_timeline.md | 06_naamah_and_the_ark.md*

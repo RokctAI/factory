@@ -107,5 +107,5 @@ God made a promise about a land. He described what it would become. The path to 
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 08_canaan_curse.md | 09_gods_glory_departs.md | 13_third_temple.md | 10_israel_interbreeds.md*

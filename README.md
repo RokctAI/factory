@@ -40,6 +40,7 @@ An autonomous publishing factory that generates, evaluates, improves, and publis
 - `.github/workflows/`: Functional automation pipelines for each level.
 - `books/drafts/`: In-progress book projects.
 - `books/published/`: Completed and published books.
+- `templates/app/`: Scaffold for spawned app repos — see [docs/app-factory.md](docs/app-factory.md).
 
 ## 🤖 Jules Sessions
 

@@ -96,5 +96,5 @@ Before Adam was placed in the garden, earth was already populated with a differe
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 01_gap_theory.md | 03_lucifer_in_eden.md | 04_cain_and_nod.md*

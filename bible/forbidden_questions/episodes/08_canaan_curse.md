@@ -112,5 +112,5 @@ The command to destroy the Canaanites is one of the hardest passages in the Bibl
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 07_naamah_and_the_ark.md | 05_nephilim_timeline.md | 09_israel_interbreeds.md | 10_lost_ten_tribes.md | 14_milk_and_honey.md*

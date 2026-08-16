@@ -68,5 +68,5 @@ The earth had a history before Genesis 1:2. Lucifer ruled, rebelled, was cast do
 
 ---
 
-*Series: Hidden Architecture of Scripture*
+*Series: Forbidden Questions*
 *Cross-reference files: 02_two_creations.md | 03_lucifer_in_eden.md | 04_cain_and_nod.md*

@@ -1,4 +1,4 @@
-# Hidden Architecture of Scripture — Series Index
+# Forbidden Questions — Series Index
 
 ## Series Overview
 A deep-read Bible series exploring the questions, gaps, and connections most teachers skip over. Each episode draws from the original Hebrew text, cross-referenced sources, and honest engagement with what the Bible actually says versus how it is commonly read.
