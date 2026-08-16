@@ -203,3 +203,4 @@
 | memory_keepers_dc5fec | science fiction | Memory Keepers | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-16 20:21 |
 | beyond_the_event_horizon_649e62 | space opera | Beyond the Event Horizon | pending_approval | groq | GROQ-31971363584 | — | 2026-08-16 20:43 |
 | the_shadow_weaver_a12b03 | paranormal thriller | The Shadow Weaver | pending_approval | groq | GROQ-31974147405 | — | 2026-08-16 21:40 |
+| the_lost_city_archives_e969b0 | historical mystery | The Lost City Archives | pending_approval | groq | GROQ-31977084810 | — | 2026-08-16 22:43 |
