@@ -29,11 +29,13 @@ bash .rokct/bootstrap.sh
 That fetches `initiate.py` from `RokctAI/The-Rokct-Protocol` and runs it,
 installing skills, session workflows and `sync_workspace` into `.rokct/`.
 
-This repo is **standalone**: `.rokct/.workspace_config.json` ships with an
-empty `parent_repo`, so working files (`memory.md`, `decision_log.md`,
-`project_map.md`) stay here and sync to no parent workspace. Run
-`bootstrap.sh` in a normal session, not under CI — `initiate.py` skips
-installing the session workflows whenever `CI` is set.
+Because this repo lives under `RokctAI`, `initiate.py` treats it as an org
+repo: it installs the `.rok` skill and the Protocol workflows, and it writes
+`.rokct/.workspace_config.json` itself, pointing `parent_repo` at
+`RokctAI/occultation` — so working files (`memory.md`, `decision_log.md`,
+`project_map.md`) sync to the org workspace. Nothing is pre-committed for it
+to read. Run `bootstrap.sh` in a normal session, not under CI — `initiate.py`
+skips installing the session workflows whenever `CI` is set.
 
 ## How to work
 

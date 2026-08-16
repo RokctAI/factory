@@ -3,17 +3,14 @@
 # commit. The protocol is fetched rather than vendored so a spawned repo never
 # ships a stale copy of it.
 #
-# Why .workspace_config.json is committed empty rather than absent:
-# profiles/local/initiate.py auto-routes RokctAI/* repos to the org workspace,
-# and for every other origin it falls through to an interactive input() asking
-# for a parent repo. That prompt has no CI guard, so in a spawned repo — owned
-# by a person, not the org — an unattended run dies with EOFError. The script
-# only reaches the prompt when .rokct/.workspace_config.json is missing, so the
-# scaffold ships one with an empty parent_repo. Both places the protocol reads
-# that key treat empty as standalone (initiate.py's `not
-# config_data.get("parent_repo")` branch, and sync_workspace.py's `if not
-# parent_repo: return`), so the repo bootstraps as its own workspace and syncs
-# nowhere. See docs/app-factory.md in the factory for the upstream fix.
+# No .workspace_config.json ships with this scaffold: initiate.py derives one.
+# It reads the git origin URL and, on seeing the literal substring `RokctAI/`,
+# routes working files to RokctAI/occultation without prompting. Spawned repos
+# are created under RokctAI, so that branch is the one taken and the prompt is
+# never reached. Do not re-point origin at a non-RokctAI fork before running
+# this — that origin falls through to an interactive input() with no CI guard,
+# which dies with EOFError on any unattended run, and it also strips the .rok
+# skill. See docs/app-factory.md in the factory.
 set -euo pipefail
 
 mkdir -p .rokct

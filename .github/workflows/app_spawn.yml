@@ -5,10 +5,12 @@ name: App Spawn
 # app-idea.yml). Applying `approved` to one spawns its repo — nothing else
 # does. Idea generation is deliberately not automated; only the build-out is.
 #
-# New repos land under vars.FACTORY_TARGET_OWNER, which defaults to Ray's
-# personal account; promotion to the org is a later, manual transfer. See
-# docs/app-factory.md for the labels, the variable, and which token can
-# create repos where.
+# New repos land under vars.FACTORY_TARGET_OWNER, which defaults to the
+# `RokctAI` org so the protocol bootstrap gives them the full treatment;
+# promoting one out later is GitHub's native transfer. The casing of that
+# default is load-bearing — initiate.py gates on the literal substring
+# `RokctAI/` in the git origin URL. See docs/app-factory.md for the labels,
+# the variable, and which token can create repos where.
 
 on:
   issues:
@@ -33,7 +35,7 @@ jobs:
         id: fields
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-          DEFAULT_OWNER: ${{ vars.FACTORY_TARGET_OWNER || 'RendaniSinyage' }}
+          DEFAULT_OWNER: ${{ vars.FACTORY_TARGET_OWNER || 'RokctAI' }}
         run: |
           printf '%s\n' "$ISSUE_BODY" > issue_body.md
           python3 .github/scripts/parse_app_idea.py \

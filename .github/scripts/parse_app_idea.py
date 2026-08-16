@@ -6,7 +6,7 @@ submitter left empty render as `_No response_`. Anything the parser cannot
 resolve is a hard error: a half-parsed brief would seed a repo the agent
 cannot build from.
 
-Usage: parse_app_idea.py --body-file <path> [--default-owner RendaniSinyage]
+Usage: parse_app_idea.py --body-file <path> [--default-owner RokctAI]
 Writes `key=value` lines to $GITHUB_OUTPUT when set, otherwise to stdout.
 Multi-line values use the heredoc form so `spec` survives intact.
 """
@@ -94,7 +94,7 @@ def emit(fields, handle):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--body-file", required=True)
-    ap.add_argument("--default-owner", default="RendaniSinyage")
+    ap.add_argument("--default-owner", default="RokctAI")
     args = ap.parse_args()
 
     with open(args.body_file, "r", encoding="utf-8") as f:
