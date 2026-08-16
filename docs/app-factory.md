@@ -155,12 +155,13 @@ depends on: a JSON array of `{git, dart, frappe, public, ref}` entries, one per
 repo, specified in `SDK_ECOSYSTEM.md` in `RokctAI/The-Rokct-Protocol` and used
 for real in `RokctAI/agent`'s root `.relation`. The scaffold ships it as an
 empty array — a new app consumes nothing yet — and `AGENTS.md` carries the entry
-shape plus a short orientation on how the SDK fleet works, pointing at the two
-fleet documents that hold the real contract (`SDK_README.md` in `RokctAI/agent`)
-and the working SDK-to-repo index (the composer templates under
-`core/utils/flutter/composer/` in the Protocol repo).
+shape plus a short orientation on how the SDK fleet works, pointing at the
+fleet documents that hold the real contract: the generated SDK census in
+`SDK_ECOSYSTEM.md` (which SDK lives in which repo) and its reverse index
+`SDK_CONSUMERS.md`, both in the Protocol repo, plus `SDK_README.md` in
+`RokctAI/agent` for the per-SDK authoring contract.
 
-The index is deliberately **not** copied into the scaffold. A duplicate list in
+The census is deliberately **not** copied into the scaffold. A duplicate list in
 every spawned repo goes stale the moment an SDK moves, and the fleet docs are
 one `gh` call away.
 
