@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-08-16 23:31 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-08-17 01:52 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (0)
 
@@ -58,8 +58,8 @@ Syllabus rows total: 841; opened: 25; remaining: 816.
 
 | Window | Groq calls | Groq tokens | Jules sessions |
 |---|---|---|---|
-| Last 24 h | 5 | 1603 | 0 |
-| All time | 66 | 32877 | 24 |
+| Last 24 h | 6 | 1849 | 0 |
+| All time | 67 | 33123 | 24 |
 
 Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min, **100k tokens/day**; Jules free: **15 tasks/day** (Google AI Pro: 100/day). A lesson consumes ~2 Groq calls (~4-5k tokens) and 1-2 Jules sessions.
 
@@ -69,15 +69,16 @@ Documented limits — Groq free tier: 30 req/min, 1 000 req/day, 12k tokens/min,
 
 | API | Model | Calls | Prompt tok | Completion tok | Total tok | Retries | 429 hits | Failed |
 |---|---|---|---|---|---|---|---|---|
-| groq | `llama-3.3-70b-versatile` | 66 | 25289 | 7588 | 32877 | 0 | 0 | 0 |
+| groq | `llama-3.3-70b-versatile` | 67 | 25353 | 7770 | 33123 | 0 | 0 | 0 |
 | jules | `-` | 24 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 Pricing not configured — set the API_PRICE_TABLE environment variable to the path of a JSON price table to enable cost estimates. Token quantities only; no cost numbers are shown.
 
-### By run (last 7 of 7 tagged runs)
+### By run (last 8 of 8 tagged runs)
 
 | Run | Calls | Total tok | Retries | 429 hits | Failed |
 |---|---|---|---|---|---|
+| 31979746301 | 1 | 246 | 0 | 0 | 0 |
 | 31977084810 | 1 | 310 | 0 | 0 | 0 |
 | 31974147405 | 1 | 271 | 0 | 0 | 0 |
 | 31971363584 | 1 | 254 | 0 | 0 | 0 |
