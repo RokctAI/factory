@@ -81,10 +81,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "practice_bank.json"
 
-# The rlms whitelisted-method alias for api.practice.publish_practice_bank
-# (see agent lms/frappe/manifest.json; app_name is `paas` in production —
-# the same base BackendSkillLessonSource uses client-side).
-PUBLISH_METHOD = "/api/method/paas.api.lms.publish_practice_bank"
+# All calls ride the single gateway endpoint; the prefix-free `cmd` below
+# addresses the rlms whitelisted-method alias
+# `{app_name}.api.lms.publish_practice_bank` (see agent
+# lms/frappe/manifest.json) whatever the composed app is named.
+GATEWAY_PATH = "/api/v1/method/rokct.platform.api"
+PUBLISH_CMD = "api.lms.publish_practice_bank"
 
 
 def parse_int(value, default=None):
@@ -211,12 +213,18 @@ def publish(bank: dict) -> int:
         )
         return 1
     source = f"factory@{os.environ.get('GITHUB_SHA', 'local')[:12]}"
-    payload = json.dumps(
-        {"bank_json": json.dumps(bank, ensure_ascii=False), "source": source}
+    body = json.dumps(
+        {
+            "cmd": PUBLISH_CMD,
+            "payload": {
+                "bank_json": json.dumps(bank, ensure_ascii=False),
+                "source": source,
+            },
+        }
     ).encode("utf-8")
     req = urllib.request.Request(
-        site_url + PUBLISH_METHOD,
-        data=payload,
+        site_url + GATEWAY_PATH,
+        data=body,
         headers={
             "Content-Type": "application/json",
             "Authorization": f"token {api_key}:{api_secret}",
