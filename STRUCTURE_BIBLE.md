@@ -31,7 +31,7 @@ A deep-read Bible series exploring the questions, gaps, and connections most tea
 | 03 | 03_lucifer_in_eden.md | Lucifer's prior access to the garden | ✅ Ready |
 | 04 | 04_cain_and_nod.md | Cain's fear, the land of Nod, and a self-corrupting bloodline | ✅ Ready |
 | 05 | 05_nephilim_timeline.md | The Nephilim were already there — Genesis is not linear | ✅ Ready |
-| 06 | 06_watchers.md | The sons of God and the daughters of men | ✅ Ready |
+| 06 | 06_sons_of_god.md | The sons of God and the daughters of men | ✅ Ready |
 | 07 | 07_naamah_and_the_ark.md | How Cain's bloodline survived the flood | ✅ Ready |
 | 08 | 08_canaan_curse.md | Why God commanded total destruction of the Canaanites | ✅ Ready |
 | 09 | 09_gods_glory_departs.md | When darkness is invited in — Ezekiel 8-11 | ✅ Ready |
@@ -329,7 +329,7 @@ TO BUILD
 
 ## Cross-references
 - episodes/05_nephilim_timeline.md
-- episodes/06_watchers.md
+- episodes/06_sons_of_god.md
 - episodes/08_canaan_curse.md
 
 ## Build Priority
@@ -390,7 +390,7 @@ high
 TO BUILD
 
 ## Cross-references
-- episodes/06_watchers.md
+- episodes/06_sons_of_god.md
 
 ## Build Priority
 high
@@ -528,7 +528,7 @@ Exploration of the 'Seed' motif starting from the Protoevangelium in Genesis 3:1
 
 ## Episodes That Reference This
 - episodes/03_lucifer_in_eden.md
-- episodes/06_watchers.md
+- episodes/06_sons_of_god.md
 - episodes/07_naamah_and_the_ark.md
 
 ## Build Priority
@@ -704,7 +704,7 @@ The water thread that opened in Genesis 1:2 closes here. The prison that was bui
 
 ## Cross-References
 - `episodes/01_gap_theory.md` — the war that made the containment necessary
-- `episodes/06_watchers.md` — the second wave of fallen beings, some imprisoned in the same abyss
+- `episodes/06_sons_of_god.md` — the second wave of fallen beings, some imprisoned in the same abyss
 - `characters/lucifer.md` — the being cast to earth before the water sealed things
 - `deep-dives/the_legal_framework.md` — the rules governing what can and cannot be released
 - `episodes/14_third_temple.md` — the abyss opening in Revelation connects to end times temple events
@@ -1097,7 +1097,7 @@ Cain's story is not a simple family tragedy. He left a protected Adamic zone and
 ---
 
 *Series: Forbidden Questions*
-*Cross-reference files: 02_two_creations.md | 05_nephilim_timeline.md | 06_watchers.md | 06_naamah_and_the_ark.md*
+*Cross-reference files: 02_two_creations.md | 05_nephilim_timeline.md | 06_sons_of_god.md | 06_naamah_and_the_ark.md*
 
 ```
 
@@ -1200,13 +1200,13 @@ The Nephilim were not a Genesis 6 footnote. They were a continuous presence runn
 ---
 
 *Series: Forbidden Questions*
-*Cross-reference files: 04_cain_and_nod.md | 06_watchers.md | 06_naamah_and_the_ark.md | 07_canaan_curse.md | 09_israel_interbreeds.md*
+*Cross-reference files: 04_cain_and_nod.md | 06_sons_of_god.md | 06_naamah_and_the_ark.md | 07_canaan_curse.md | 09_israel_interbreeds.md*
 
 ```
 
-#### File: `forbidden_questions/episodes/06_watchers.md`
+#### File: `forbidden_questions/episodes/06_sons_of_god.md`
 ```markdown
-# The Watchers — Sons of God and the Daughters of Men
+# Sons of God — The Daughters of Men and the Nephilim
 
 ## Core Argument
 Genesis 6:1-4 is not a strange myth inserted into scripture. It is a precise record of a second angelic incursion — this time not war but infiltration through reproduction. The beings involved recognized something in human women that resonated with their own nature, and the knowledge they transferred accelerated human corruption in ways that made the flood a necessity.
@@ -1423,7 +1423,7 @@ The flood is usually taught as God's reset button. It was — but the reset was 
 ---
 
 *Series: Forbidden Questions*
-*Cross-reference files: 04_cain_and_nod.md | 05_nephilim_timeline.md | 06_watchers.md | 07_canaan_curse.md*
+*Cross-reference files: 04_cain_and_nod.md | 05_nephilim_timeline.md | 06_sons_of_god.md | 07_canaan_curse.md*
 
 ```
 

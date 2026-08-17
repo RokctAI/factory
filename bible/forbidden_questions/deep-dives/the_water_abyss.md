@@ -164,7 +164,7 @@ The water thread that opened in Genesis 1:2 closes here. The prison that was bui
 
 ## Cross-References
 - `episodes/01_gap_theory.md` — the war that made the containment necessary
-- `episodes/06_watchers.md` — the second wave of fallen beings, some imprisoned in the same abyss
+- `episodes/06_sons_of_god.md` — the second wave of fallen beings, some imprisoned in the same abyss
 - `characters/lucifer.md` — the being cast to earth before the water sealed things
 - `deep-dives/the_legal_framework.md` — the rules governing what can and cannot be released
 - `episodes/14_third_temple.md` — the abyss opening in Revelation connects to end times temple events

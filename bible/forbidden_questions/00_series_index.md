@@ -18,7 +18,7 @@ A deep-read Bible series exploring the questions, gaps, and connections most tea
 | 03 | 03_lucifer_in_eden.md | Lucifer's prior access to the garden | ✅ Ready |
 | 04 | 04_cain_and_nod.md | Cain's fear, the land of Nod, and a self-corrupting bloodline | ✅ Ready |
 | 05 | 05_nephilim_timeline.md | The Nephilim were already there — Genesis is not linear | ✅ Ready |
-| 06 | 06_watchers.md | The sons of God and the daughters of men | ✅ Ready |
+| 06 | 06_sons_of_god.md | The sons of God and the daughters of men | ✅ Ready |
 | 07 | 07_naamah_and_the_ark.md | How Cain's bloodline survived the flood | ✅ Ready |
 | 08 | 08_canaan_curse.md | Why God commanded total destruction of the Canaanites | ✅ Ready |
 | 09 | 09_gods_glory_departs.md | When darkness is invited in — Ezekiel 8-11 | ✅ Ready |

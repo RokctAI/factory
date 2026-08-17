@@ -1,4 +1,4 @@
-# The Watchers — Sons of God and the Daughters of Men
+# Sons of God — The Daughters of Men and the Nephilim
 
 ## Core Argument
 Genesis 6:1-4 is not a strange myth inserted into scripture. It is a precise record of a second angelic incursion — this time not war but infiltration through reproduction. The beings involved recognized something in human women that resonated with their own nature, and the knowledge they transferred accelerated human corruption in ways that made the flood a necessity.
