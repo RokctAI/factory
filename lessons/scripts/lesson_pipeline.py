@@ -2285,18 +2285,35 @@ def verify_no_session_framing(script):
 QA_QUESTION_MAX_WORDS = 25
 QA_MIN_EXCHANGES = 3
 QA_MAX_EXCHANGES = 5
+# Session-format transcripts (asks labeled with the assistant's display
+# name) have no on-screen subtopic heading, so the spoken turn itself
+# carries the class context and gets a wider cap: measured over the 366
+# shipped session transcripts, the longest ask is 59 words.
+QA_SESSION_QUESTION_MAX_WORDS = 60
 QA_HEADING_RE = re.compile(r"^###\s+(\S+)\s+—\s+(.+?)\s*$", re.MULTILINE)
 
 
 def _check_qa_transcript(path, sub_refs, errors, warnings):
-    """The Q&A duet: '### <subtopic_ref> — <title>' then one '**Assistant:**'
-    question and one '**Tutor:**' answer per exchange."""
+    """The Q&A duet, in either accepted format:
+
+    - card/authoring format: '### <subtopic_ref> — <title>' then one
+      '**Assistant:**' question and one '**Tutor:**' answer per exchange;
+    - session format (the shipped session transcripts): asks labeled with
+      the assistant's DISPLAY NAME from assistant_registry (**Thandi:** /
+      **Bianca:** / **Mandy:**), '**Tutor:**' answers, exchanges separated
+      by '***', no subtopic headings.
+    """
     text = path.read_text(encoding="utf-8")
     heads = QA_HEADING_RE.findall(text)
-    asks = re.findall(r"^\*\*Assistant:\*\*\s*(.+?)(?=^\*\*|\Z)",
+    ask_label_re = "|".join(
+        [re.escape(n) for n in sorted(assistant_registry.all_display_names())]
+        + ["Assistant"])
+    asks = re.findall(rf"^\*\*({ask_label_re}):\*\*\s*(.+?)(?=^\*\*|\Z)",
                       text, re.MULTILINE | re.DOTALL)
     answers = re.findall(r"^\*\*Tutor:\*\*", text, re.MULTILINE)
-    if not heads:
+    # Display-name asks mark the session format, which carries no headings.
+    session_format = any(label != "Assistant" for label, _q in asks)
+    if not heads and not session_format:
         errors.append("assistant_qa_transcript.md has no '### <subtopic_ref> "
                       "— <title>' heading; the player needs it to show which "
                       "part of the lesson each question belongs to")
@@ -2314,11 +2331,13 @@ def _check_qa_transcript(path, sub_refs, errors, warnings):
         if sub_refs and ref not in sub_refs:
             errors.append(f"assistant_qa_transcript.md references unknown "
                           f"subtopic {ref!r}")
-    for q in asks:
+    for label, q in asks:
+        cap = (QA_QUESTION_MAX_WORDS if label == "Assistant"
+               else QA_SESSION_QUESTION_MAX_WORDS)
         n = len(q.split())
-        if n > QA_QUESTION_MAX_WORDS:
+        if n > cap:
             errors.append(f"assistant_qa_transcript.md: spoken question is "
-                          f"{n} words (max {QA_QUESTION_MAX_WORDS}) — put the "
+                          f"{n} words (max {cap}) — put the "
                           f"context on the subtopic heading, not in the "
                           f"speech: {' '.join(q.split()[:8])}...")
     if re.search(r"^\*\*Student:\*\*", text, re.MULTILINE):

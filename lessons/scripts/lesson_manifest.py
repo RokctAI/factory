@@ -365,8 +365,23 @@ def align_animations(anim, anim_path, audio_seconds):
 MAX_BREAK_QUESTIONS = 4  # client caps at 4 so a break stays a break
 
 
+def qa_ask_labels():
+    """Lowercased asker labels accepted in assistant_qa_transcript.md: the
+    card/authoring-format labels (**Student:** / **Assistant:**) plus the
+    assistant DISPLAY NAMES from assistant_registry (session format, e.g.
+    **Thandi:** — roster-backed, either team layout). Answers are **Tutor:**
+    lines and exchanges are separated by `***` in both formats."""
+    labels = {"student", "assistant"}
+    labels.update(n.lower() for n in assistant_registry.all_display_names())
+    return labels
+
+
 def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
-    """Student questions from assistant_qa_transcript.md, for the break board.
+    """Assistant questions from assistant_qa_transcript.md, for the break
+    board. Asks are lines labeled with any qa_ask_labels() speaker; the
+    **Tutor:** answers are never carried. Session-format turns (display-name
+    labels) open with class framing, so they are reduced to their question
+    sentences, matching release_on_complete's session extraction.
 
     Emitted INLINE on break_start (not into a bank): the client's
     BreakQuestion model has no id field, and these are single-use display
@@ -374,11 +389,16 @@ def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
     board shows it while the assistant speaks the answer from the audio, so
     ask/answer seconds stay at the client's defaults unless the bridge audio
     gives us real ones."""
+    labels = qa_ask_labels()
     questions = []
     for line in transcript_md.splitlines():
-        m = re.match(r"^\*\*Student:\*\*\s*(.+?)\s*$", line.strip())
-        if m:
-            text = re.sub(r"[*_`]", "", m.group(1)).strip()
+        m = re.match(r"^\*\*([^*:]+):\*\*\s*(.+?)\s*$", line.strip())
+        if m and m.group(1).strip().lower() in labels:
+            speaker = m.group(1).strip().lower()
+            text = re.sub(r"[*_`]", "", m.group(2)).strip()
+            if speaker not in ("student", "assistant"):
+                sentences = re.findall(r"[^.?!]*\?", text)
+                text = " ".join(s.strip() for s in sentences).strip() or text
             if text:
                 questions.append({"question": text})
         if len(questions) >= limit:
