@@ -294,11 +294,12 @@ def extract_session_break_questions(transcript_md, limit=lm.MAX_BREAK_QUESTIONS)
     turns with the assistant's DISPLAY NAME (e.g. **Thandi:**) instead of
     the card format's **Student:** — transcripts carry names, never opaque
     ids, and the known names come from assistant_registry (roster-backed,
-    either team layout). Try the card extractor first, then the turns of a
-    registry-known assistant, then any non-Tutor speaker's turns (compat
-    for a transcript naming a host the roster no longer lists), reduced to
-    their question sentences (the board shows the question while the answer
-    is spoken from the audio)."""
+    either team layout). The shared extractor (lm.extract_break_questions)
+    accepts both the card labels and the registry display names; this
+    wrapper adds one compat fallback — any non-Tutor speaker's turns, for a
+    transcript naming a host the roster no longer lists — reduced to their
+    question sentences (the board shows the question while the answer is
+    spoken from the audio)."""
     questions = lm.extract_break_questions(transcript_md, limit)
     if questions:
         return questions
