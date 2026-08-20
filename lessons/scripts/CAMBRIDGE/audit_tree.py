@@ -52,7 +52,7 @@ this script exists rather than relying on build_cambridge_tree.py --check alone.
                   into Cambridge syllabus files, which would be a different
                   curriculum's data wearing a Cambridge label.
 
-  python3 lessons/curriculum/CAMBRIDGE/scripts/audit_tree.py
+  python3 lessons/scripts/CAMBRIDGE/audit_tree.py
 """
 import importlib.util
 import json
@@ -60,8 +60,8 @@ import re
 import sys
 from pathlib import Path
 
-CAMBRIDGE = Path(__file__).resolve().parent.parent
-REPO_ROOT = CAMBRIDGE.parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
+CAMBRIDGE = REPO_ROOT / "lessons" / "curriculum" / "CAMBRIDGE"
 CAPS_ROOT = CAMBRIDGE.parent / "CAPS"
 REGISTRY = Path(__file__).with_name("subject_registry.json")
 

@@ -53,8 +53,8 @@ exam_guidelines/sag_2026.md); the generator never touches files it does
 not own.
 
 Usage:
-  python3 lessons/curriculum/IEB/scripts/build_from_caps.py            # write
-  python3 lessons/curriculum/IEB/scripts/build_from_caps.py --check    # drift
+  python3 lessons/scripts/IEB/build_from_caps.py            # write
+  python3 lessons/scripts/IEB/build_from_caps.py --check    # drift
                                           check: exit 1 if a committed file
                                           differs from regeneration (run after
                                           editing the CAPS tree)
@@ -84,7 +84,7 @@ SUBJECTS = {
 
 GRADES = (10, 11, 12)
 
-GENERATED_BY = "lessons/curriculum/IEB/scripts/build_from_caps.py"
+GENERATED_BY = "lessons/scripts/IEB/build_from_caps.py"
 
 SAG_PAGE = ("https://www.ieb.co.za/assessment/high-schools/"
             "national-senior-certificate/nsc-subject-assessment-guidelines")
@@ -179,7 +179,7 @@ def derive_curriculum(slug, display):
                 "for each examination year."),
             "source_page": SAG_PAGE,
             "status": "pending_fetch",
-            "fetch_with": "lessons/curriculum/IEB/scripts/fetch_ieb_sources.py",
+            "fetch_with": "lessons/scripts/IEB/fetch_ieb_sources.py",
         },
         "generated_by": GENERATED_BY,
     }

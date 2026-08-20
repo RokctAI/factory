@@ -1,7 +1,7 @@
 # CAMBRIDGE scripts — registry, generator, audit, fetch
 
-Self-contained on purpose: `lessons/scripts/` is the CAPS/DBE pipeline and
-stays that way, exactly as `../../IEB/scripts/` and `../../US/scripts/` do.
+Self-contained on purpose: the top-level files in `lessons/scripts/` are the
+CAPS/DBE pipeline and stay that way, exactly as `../IEB/` and `../US/` do.
 All run from the repository root.
 
 ## The architecture in one line
@@ -80,12 +80,13 @@ feature. `fetch-syllabuses --force` re-downloads an existing *permitted* file �
 it is not a rights override, and there is deliberately no flag that is.
 
 Run `probe` before anything else: `robots.txt` for cambridgeinternational.org
-is the largest open evidentiary gap in `../SOURCES.md`.
+is the largest open evidentiary gap in `../../curriculum/CAMBRIDGE/SOURCES.md`.
 
 ## Later steps that belong here
 
 Syllabus ingestion (decoded text + structured extraction into
 `{subject}/exam_guidelines/`) and any Cambridge question-linking work follow the
-CAPS pattern but are implemented **here**, not in `lessons/scripts/`. Note that
+CAPS pattern but are implemented **here**, not in the top-level CAPS scripts
+of `lessons/scripts/`. Note that
 for Cambridge the past-paper half of that pattern is blocked outright — see
-`../RIGHTS.json` before writing a line of it.
+`../../curriculum/CAMBRIDGE/RIGHTS.json` before writing a line of it.

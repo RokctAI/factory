@@ -41,8 +41,8 @@ This is the contract keeper. It runs nine checks:
   9. No copyrighted source PDFs committed.
 
 Usage:
-    python3 lessons/curriculum/US/scripts/audit_tree.py
-    python3 lessons/curriculum/US/scripts/audit_tree.py --verbose
+    python3 lessons/scripts/US/audit_tree.py
+    python3 lessons/scripts/US/audit_tree.py --verbose
 """
 
 import argparse
@@ -56,8 +56,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import us_spec as S  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-US_ROOT = os.path.dirname(HERE)
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(US_ROOT)))
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
+US_ROOT = os.path.join(REPO_ROOT, "lessons", "curriculum", "US")
 
 FAILURES = []
 NOTES = []

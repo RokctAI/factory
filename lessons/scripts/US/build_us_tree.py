@@ -40,8 +40,8 @@ able to clobber them. This script writes a hand-owned file only if it does not
 already exist, and `--check` deliberately does not compare them.
 
 Usage:
-    python3 lessons/curriculum/US/scripts/build_us_tree.py
-    python3 lessons/curriculum/US/scripts/build_us_tree.py --check
+    python3 lessons/scripts/US/build_us_tree.py
+    python3 lessons/scripts/US/build_us_tree.py --check
 """
 
 import argparse
@@ -53,9 +53,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import us_spec as S  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-US_ROOT = os.path.dirname(HERE)
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(US_ROOT)))
-GENERATOR = "lessons/curriculum/US/scripts/build_us_tree.py"
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
+US_ROOT = os.path.join(REPO_ROOT, "lessons", "curriculum", "US")
+GENERATOR = "lessons/scripts/US/build_us_tree.py"
 
 _written = []
 _skipped_handowned = []
@@ -189,7 +189,7 @@ def build_common_core(rights, check):
             "pdf": src["math_pdf"],
             "ccsso_mirror_pdf": src["ccsso_mirror_math_pdf"],
             "status": "urls_recorded_not_verified",
-            "fetch_with": "lessons/curriculum/US/scripts/fetch_us_sources.py",
+            "fetch_with": "lessons/scripts/US/fetch_us_sources.py",
         },
         "full_text": pending(
             "The standards PDF has not been fetched: this environment's egress "
@@ -241,7 +241,7 @@ def build_common_core(rights, check):
             "pdf": src["ela_pdf"],
             "ccsso_mirror_pdf": src["ccsso_mirror_ela_pdf"],
             "status": "urls_recorded_not_verified",
-            "fetch_with": "lessons/curriculum/US/scripts/fetch_us_sources.py",
+            "fetch_with": "lessons/scripts/US/fetch_us_sources.py",
         },
         "full_text": pending(
             "The standards PDF has not been fetched: this environment's egress "
@@ -534,7 +534,7 @@ def build_ngss(rights, check):
             "standards": src["standards"],
             "publisher": src["publisher"],
             "status": "urls_recorded_not_verified",
-            "fetch_with": "lessons/curriculum/US/scripts/fetch_us_sources.py",
+            "fetch_with": "lessons/scripts/US/fetch_us_sources.py",
         },
         "full_text": pending(
             "nextgenscience.org is blocked by this environment's egress policy. "

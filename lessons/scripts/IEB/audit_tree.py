@@ -40,7 +40,7 @@ One command validates the whole tree; exit 1 on any failure. Two halves:
 
 Run after any hand edit to the tree, and in CI next to build_from_caps.py:
 
-  python3 lessons/curriculum/IEB/scripts/audit_tree.py
+  python3 lessons/scripts/IEB/audit_tree.py
 """
 import importlib.util
 import json
@@ -48,8 +48,8 @@ import sys
 import urllib.parse
 from pathlib import Path
 
-IEB_ROOT = Path(__file__).resolve().parent.parent          # lessons/curriculum/IEB
-REPO_ROOT = IEB_ROOT.parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
+IEB_ROOT = REPO_ROOT / "lessons" / "curriculum" / "IEB"
 CAPS_ROOT = IEB_ROOT.parent / "CAPS"
 
 LAYERS = ("curriculum", "exam_guidelines", "syllabus", "skills", "past_papers")

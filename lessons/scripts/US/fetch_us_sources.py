@@ -45,9 +45,9 @@ Subcommands:
                           edition changes
 
 Usage:
-    python3 lessons/curriculum/US/scripts/fetch_us_sources.py probe
-    python3 lessons/curriculum/US/scripts/fetch_us_sources.py fetch COMMON_CORE
-    python3 lessons/curriculum/US/scripts/fetch_us_sources.py verify NGSS
+    python3 lessons/scripts/US/fetch_us_sources.py probe
+    python3 lessons/scripts/US/fetch_us_sources.py fetch COMMON_CORE
+    python3 lessons/scripts/US/fetch_us_sources.py verify NGSS
 """
 
 import argparse
@@ -62,7 +62,8 @@ import urllib.request
 import urllib.robotparser
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-US_ROOT = os.path.dirname(HERE)
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
+US_ROOT = os.path.join(REPO_ROOT, "lessons", "curriculum", "US")
 
 CONTACT = "curriculum-bot (RokctAI factory; contact: repository owner)"
 USER_AGENT = "RokctAI-curriculum-bot/1.0 (+educational curriculum indexing; {})".format(CONTACT)

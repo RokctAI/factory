@@ -1,8 +1,8 @@
 # IEB scripts — self-contained sourcing + generation + audit
 
-These scripts are deliberately separate from `lessons/scripts/` (owner
-instruction: the CAPS pipeline scripts are read-only reference for the
-method; IEB sourcing lives here). All run from the repository root.
+These scripts are deliberately separate from the top-level CAPS pipeline
+scripts in `lessons/scripts/` (owner instruction: the CAPS pipeline scripts
+are read-only reference for the method; IEB sourcing lives here). All run from the repository root.
 
 Ownership map (enforced across the three scripts):
 
@@ -38,12 +38,12 @@ that every cross-tree pointer resolves. Run it after any hand edit.
 ## `fetch_ieb_sources.py`
 
 The fetch-and-record step of the CAPS ingestion method, pointed at
-ieb.co.za: `probe` (robots + terms first — see `../SOURCES.md`),
+ieb.co.za: `probe` (robots + terms first — see `../../curriculum/IEB/SOURCES.md`),
 `fetch-sags`, `fetch-papers`, `register` (for browser-downloaded files when
 bot protection blocks scripted fetches; keeps real URL + sha256 provenance),
 `verify` (re-hash, and `--refetch` to detect upstream edition changes).
 Needs a network-enabled machine — the usual build environment blocks
-ieb.co.za (details in `../README.md`). Stdlib only; polite (honest UA,
+ieb.co.za (details in `../../curriculum/IEB/README.md`). Stdlib only; polite (honest UA,
 robots respected, 2s spacing, backoff). The client identifies itself and
 gives a contact route; it does not spoof a browser — if the IEB's front end
 refuses it, the answer is a manual browser session, not evasion.
@@ -73,7 +73,7 @@ normal browser:
    `register` the files. When a marking guideline isn't downloadable, omit
    `memo_url` rather than pointing at a third-party re-upload.
 3. Run `verify`, then `audit_tree.py`, and commit the index changes (never
-   the PDFs — `../.gitignore` blocks them; IEB terms: attributed,
+   the PDFs — `../../curriculum/IEB/.gitignore` blocks them; IEB terms: attributed,
    non-commercial internal use, no redistribution).
 
 ## Curation after fetching
@@ -90,10 +90,10 @@ fetched official PDF.
 
 IEB past-paper extraction (`paper.json`) and question-to-lesson linking —
 follow `docs/past-papers-linking-brief.md` and `lessons/scripts/
-past_papers.py` as the pattern, but implement here (`lessons/scripts/`
-stays CAPS/DBE-only). Plan for the memo gap recorded in each past-papers
+past_papers.py` as the pattern, but implement here (the top level of
+`lessons/scripts/` stays CAPS/DBE-only). Plan for the memo gap recorded in each past-papers
 index: marking-guideline availability is unresolved on secondary evidence,
 and memo-method matching needs the marking guideline — order it via
 NSCexampapers@ieb.co.za or record that paper index-only. Before any IEB
 question ships inside the product, clear the commercial-use flag in
-`../SOURCES.md`.
+`../../curriculum/IEB/SOURCES.md`.

@@ -51,14 +51,14 @@ metadata. Consumers must treat `pending_fetch` layers as absent.
 ## Regenerating / completing
 
 ```
-python3 lessons/curriculum/IEB/scripts/build_from_caps.py          # regenerate derived layers
-python3 lessons/curriculum/IEB/scripts/build_from_caps.py --check  # drift check after CAPS edits
-python3 lessons/curriculum/IEB/scripts/audit_tree.py               # full structural audit (offline, CI-able):
+python3 lessons/scripts/IEB/build_from_caps.py          # regenerate derived layers
+python3 lessons/scripts/IEB/build_from_caps.py --check  # drift check after CAPS edits
+python3 lessons/scripts/IEB/audit_tree.py               # full structural audit (offline, CI-able):
                                                                    #   drift + orphans + hand-owned contracts
                                                                    #   + skills two-way sync + pointer resolution
-python3 lessons/curriculum/IEB/scripts/fetch_ieb_sources.py probe  # from a network-enabled machine
-python3 lessons/curriculum/IEB/scripts/fetch_ieb_sources.py fetch-sags
-python3 lessons/curriculum/IEB/scripts/fetch_ieb_sources.py fetch-papers
+python3 lessons/scripts/IEB/fetch_ieb_sources.py probe  # from a network-enabled machine
+python3 lessons/scripts/IEB/fetch_ieb_sources.py fetch-sags
+python3 lessons/scripts/IEB/fetch_ieb_sources.py fetch-papers
 ```
 
 Ownership rule the scripts enforce between them: `build_from_caps.py` owns
@@ -77,5 +77,5 @@ extraction, then fill each subject's `syllabus/scope_deltas.json` and add
 IEB exam-weight overlays for the skills layer. No numbers may be
 transcribed from third-party SAG re-uploads (Studocu/Scribd) — only from
 the fetched official PDF.
-The scripts live here (not in `lessons/scripts/`) by owner instruction —
-the CAPS pipeline scripts are read-only reference for the method.
+The scripts live in `lessons/scripts/IEB/` (separate from the top-level
+CAPS pipeline scripts, which are read-only reference for the method).

@@ -1,8 +1,8 @@
 # US scripts — spec-driven generation, enforced rights, honest sourcing
 
-Deliberately separate from `lessons/scripts/` (owner instruction: the CAPS
-pipeline scripts are read-only reference for the method; US sourcing lives
-here). All run from the repository root. Stdlib only, no dependencies.
+Deliberately separate from the top-level CAPS pipeline scripts in
+`lessons/scripts/` (owner instruction: the CAPS pipeline scripts are
+read-only reference for the method; US sourcing lives here). All run from the repository root. Stdlib only, no dependencies.
 
 Ownership map, enforced across the four files:
 
@@ -21,15 +21,15 @@ Ownership map, enforced across the four files:
 
 ## `build_us_tree.py`
 
-Generates every derivable layer from `us_spec.py` + `../RIGHTS.json`.
+Generates every derivable layer from `us_spec.py` + `../../curriculum/US/RIGHTS.json`.
 Deterministic — `--check` verifies committed files against a regeneration and
 exits 1 on drift. Run it after editing the spec or the rights policy (the
 rights block is embedded in every generated file, so a gate change propagates
 through a rebuild).
 
 ```
-python3 lessons/curriculum/US/scripts/build_us_tree.py
-python3 lessons/curriculum/US/scripts/build_us_tree.py --check
+python3 lessons/scripts/US/build_us_tree.py
+python3 lessons/scripts/US/build_us_tree.py --check
 ```
 
 ## `audit_tree.py`
@@ -47,7 +47,7 @@ Offline, CI-able, exit 1 on failure — the contract keeper. Nine checks:
    its `gated_paths` must be empty, and no `sources_manifest.json` may exist.
    This is the check that matters: it turns a rights decision into something
    CI enforces rather than something a future contributor has to remember.
-5. **Excluded sources** — fails if any file cites a domain `../SOURCES.md`
+5. **Excluded sources** — fails if any file cites a domain `../../curriculum/US/SOURCES.md`
    excluded (the unofficial Common Core mirror, CED summarisers, question
    re-uploads). `RIGHTS.json`, `SOURCES.md` and `README.md` are exempt,
    because naming an excluded source is what those files are *for*.
@@ -61,7 +61,7 @@ Offline, CI-able, exit 1 on failure — the contract keeper. Nine checks:
 9. No copyrighted PDFs committed.
 
 ```
-python3 lessons/curriculum/US/scripts/audit_tree.py --verbose
+python3 lessons/scripts/US/audit_tree.py --verbose
 ```
 
 Verified to actually fire: populating `sessions[]` in an AP past-papers index
@@ -76,7 +76,7 @@ spoof a browser — if a front end refuses this client, the answer is a manual
 browser session and `register`, not evasion.
 
 **The important behaviour is the refusal.** Every subcommand reads
-`../RIGHTS.json` first, and a framework gated
+`../../curriculum/US/RIGHTS.json` first, and a framework gated
 `blocked_pending_written_permission` is refused outright with an explanation
 and the permission-request URL. There is deliberately **no `--force`**:
 clearing a gate is an edit to `RIGHTS.json` by the owner, backed by a recorded
@@ -89,7 +89,7 @@ register <fw> <file> --url   record a browser download with real URL + sha256
 verify [fw] [--refetch]      re-hash; --refetch detects upstream edition changes
 ```
 
-`probe` is the missing piece of the audit: `../SOURCES.md` is currently
+`probe` is the missing piece of the audit: `../../curriculum/US/SOURCES.md` is currently
 search-sourced because this environment cannot reach any of the four sites.
 Run `probe` from a network-enabled machine, fold the findings in, and set
 `RIGHTS.json.verification_method` to `first_hand` with the date.

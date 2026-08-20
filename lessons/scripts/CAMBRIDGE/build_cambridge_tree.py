@@ -59,8 +59,8 @@ Generated at tree root:
                             curriculum/*/RIGHTS.json across every tree.
 
 Usage:
-  python3 lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py            # write
-  python3 lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py --check    # drift gate
+  python3 lessons/scripts/CAMBRIDGE/build_cambridge_tree.py            # write
+  python3 lessons/scripts/CAMBRIDGE/build_cambridge_tree.py --check    # drift gate
 
 Run from the repository root. Deterministic: same registry -> byte-identical
 tree, so any tree diff traces to a registry change or a generator change.
@@ -73,7 +73,7 @@ from pathlib import Path
 CAMBRIDGE = Path("lessons/curriculum/CAMBRIDGE")
 CAPS = Path("lessons/curriculum/CAPS")
 REGISTRY_PATH = Path(__file__).with_name("subject_registry.json")
-GENERATED_BY = "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+GENERATED_BY = "lessons/scripts/CAMBRIDGE/build_cambridge_tree.py"
 GRADES = (10, 11, 12)
 
 POLICY_REF = "lessons/curriculum/CAMBRIDGE/RIGHTS.json"
