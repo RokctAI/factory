@@ -77,8 +77,8 @@ IDEMPOTENT: a package whose release tag already exists on the release repo
 is skipped, so re-runs and overlapping triggers never double-publish.
 
 Usage:
-  python lessons/scripts/release_on_complete.py --dry-run       # scan only
-  python lessons/scripts/release_on_complete.py --max-releases 5
+  python lessons/scripts/CAPS/release_on_complete.py --dry-run       # scan only
+  python lessons/scripts/CAPS/release_on_complete.py --max-releases 5
 Exit 0 = clean (including nothing to do); 1 = at least one attempted
 release failed (compliance, assembly, or publish error).
 """

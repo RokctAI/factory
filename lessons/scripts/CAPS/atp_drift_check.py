@@ -29,9 +29,9 @@ term data in lessons/curriculum/CAPS/{subject}/syllabus/{grade}.json against
 the ATP document each file records in its own `source_url`:
 
     pip install pypdf requests
-    python lessons/scripts/atp_drift_check.py            # verify all
-    python lessons/scripts/atp_drift_check.py --subject "Maths" --grade 11
-    python lessons/scripts/atp_drift_check.py --sources-dir <dir-of-pdfs>
+    python lessons/scripts/CAPS/atp_drift_check.py            # verify all
+    python lessons/scripts/CAPS/atp_drift_check.py --subject "Maths" --grade 11
+    python lessons/scripts/CAPS/atp_drift_check.py --sources-dir <dir-of-pdfs>
 
 For each syllabus row (via lesson_pipeline.load_seed_entries) it reports:
     CONFIRMED   the topic's words appear in the stated term's section

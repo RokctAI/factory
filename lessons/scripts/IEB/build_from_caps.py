@@ -102,7 +102,7 @@ def _subtopic_name(sub):
     factory-pipeline directives (e.g. {"name": ..., "tutors": [...]}).
     Those directives steer lesson generation, not curriculum content, so
     only the name string carries into the derived IEB tree (mirrors
-    _subtopic_name in lessons/scripts/lesson_pipeline.py — tutors and any
+    _subtopic_name in lessons/scripts/CAPS/lesson_pipeline.py — tutors and any
     other non-name keys are stripped)."""
     return sub.get("name", "") if isinstance(sub, dict) else sub
 

@@ -55,7 +55,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 REVIEWS_DIR = REPO_ROOT / "lessons" / "reviews"
 REGEN_DIR = REVIEWS_DIR / "regen"
 STATE_PATH = REVIEWS_DIR / "regen_state.json"
@@ -87,7 +87,7 @@ audio root for release).
 - Compliance: no greetings/self-intros/sign-offs (R2) and no bracketed stage
   directions (R3) in script text. Validate before committing:
 
-      python3 lessons/scripts/lesson_compliance.py <changed files>
+      python3 lessons/scripts/CAPS/lesson_compliance.py <changed files>
 
 Delete this brief in the same commit that rewrites the package.
 """

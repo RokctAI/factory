@@ -1,7 +1,7 @@
 # CAMBRIDGE scripts — registry, generator, audit, fetch
 
-Self-contained on purpose: the top-level files in `lessons/scripts/` are the
-CAPS/DBE pipeline and stay that way, exactly as `../IEB/` and `../US/` do.
+Self-contained on purpose: `../CAPS/` is the CAPS/DBE pipeline and stays
+that way, exactly as `../IEB/` and `../US/` do.
 All run from the repository root.
 
 ## The architecture in one line
@@ -86,7 +86,7 @@ is the largest open evidentiary gap in `../../curriculum/CAMBRIDGE/SOURCES.md`.
 
 Syllabus ingestion (decoded text + structured extraction into
 `{subject}/exam_guidelines/`) and any Cambridge question-linking work follow the
-CAPS pattern but are implemented **here**, not in the top-level CAPS scripts
-of `lessons/scripts/`. Note that
+CAPS pattern but are implemented **here**, not in the CAPS scripts in
+`lessons/scripts/CAPS/`. Note that
 for Cambridge the past-paper half of that pattern is blocked outright — see
 `../../curriculum/CAMBRIDGE/RIGHTS.json` before writing a line of it.

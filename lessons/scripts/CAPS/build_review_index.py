@@ -49,7 +49,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 REVIEWS_DIR = REPO_ROOT / "lessons" / "reviews"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "review_index.json"

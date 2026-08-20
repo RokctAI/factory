@@ -77,5 +77,6 @@ extraction, then fill each subject's `syllabus/scope_deltas.json` and add
 IEB exam-weight overlays for the skills layer. No numbers may be
 transcribed from third-party SAG re-uploads (Studocu/Scribd) — only from
 the fetched official PDF.
-The scripts live in `lessons/scripts/IEB/` (separate from the top-level
-CAPS pipeline scripts, which are read-only reference for the method).
+The scripts live in `lessons/scripts/IEB/` (separate from the CAPS
+pipeline scripts in `lessons/scripts/CAPS/`, which are read-only
+reference for the method).

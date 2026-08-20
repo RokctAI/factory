@@ -112,7 +112,7 @@ jobs:
         run: |
           DRY_FLAG=""
           [ "$DRY_RUN" = "true" ] && DRY_FLAG="--dry-run"
-          python lessons/scripts/release_on_complete.py \
+          python lessons/scripts/CAPS/release_on_complete.py \
             --filter "$FOLDER_FILTER" \
             --max-releases "$MAX_RELEASES" \
             --audio-root "$AUDIO_ROOT" \

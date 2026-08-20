@@ -89,7 +89,7 @@ AGGREGATOR_SIGNALS = (
     "scribd", "studypool", "xtremepapers", "smartedu", "revisionworld",
 )
 
-# Field names the CAPS past-paper pipeline writes (lessons/scripts/past_papers.py
+# Field names the CAPS past-paper pipeline writes (lessons/scripts/CAPS/past_papers.py
 # and its paper.json extractions). If any of these appear in the Cambridge
 # tree, someone has started ingesting exam-paper content here.
 PAST_PAPER_CONTENT_FIELDS = (

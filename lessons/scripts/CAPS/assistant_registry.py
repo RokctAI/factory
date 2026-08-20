@@ -48,7 +48,7 @@ Accepted aliases everywhere an identity is looked up: the canonical id
 itself, the slug, the display name (case-insensitive), and the retired
 grade-keyed assistant_g10/g11/g12 ids.
 
-Dependency-free (stdlib only), like the other lessons/scripts modules.
+Dependency-free (stdlib only), like the other lessons/scripts/CAPS modules.
 """
 import json
 import os

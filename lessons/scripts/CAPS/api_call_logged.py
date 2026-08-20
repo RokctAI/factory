@@ -35,7 +35,7 @@ factory-side wrapper adds that visibility WITHOUT touching the Protocol repo:
     passing all remaining arguments through and echoing stdout/stderr, so
     `RESPONSE=$(python .rokct/skills/.../call_groq.py groq --prompt ...)`
     becomes
-    `RESPONSE=$(python lessons/scripts/api_call_logged.py --api groq
+    `RESPONSE=$(python lessons/scripts/CAPS/api_call_logged.py --api groq
                 --job-id "$ID" groq --prompt ...)`;
   - on failure that looks like HTTP 429 / rate limiting it appends a
     {"kind": "rate_limit", "status": 429, "retry_after": ..., "attempt": N,

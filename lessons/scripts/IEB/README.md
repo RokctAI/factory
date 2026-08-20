@@ -1,8 +1,8 @@
 # IEB scripts — self-contained sourcing + generation + audit
 
-These scripts are deliberately separate from the top-level CAPS pipeline
-scripts in `lessons/scripts/` (owner instruction: the CAPS pipeline scripts
-are read-only reference for the method; IEB sourcing lives here). All run from the repository root.
+These scripts are deliberately separate from the CAPS pipeline scripts in
+`lessons/scripts/CAPS/` (owner instruction: the CAPS pipeline scripts are
+read-only reference for the method; IEB sourcing lives here). All run from the repository root.
 
 Ownership map (enforced across the three scripts):
 
@@ -89,9 +89,9 @@ fetched official PDF.
 ## Later pipeline steps that belong here
 
 IEB past-paper extraction (`paper.json`) and question-to-lesson linking —
-follow `docs/past-papers-linking-brief.md` and `lessons/scripts/
-past_papers.py` as the pattern, but implement here (the top level of
-`lessons/scripts/` stays CAPS/DBE-only). Plan for the memo gap recorded in each past-papers
+follow `docs/past-papers-linking-brief.md` and `lessons/scripts/CAPS/
+past_papers.py` as the pattern, but implement here (`lessons/scripts/CAPS/`
+stays CAPS/DBE-only). Plan for the memo gap recorded in each past-papers
 index: marking-guideline availability is unresolved on secondary evidence,
 and memo-method matching needs the marking guideline — order it via
 NSCexampapers@ieb.co.za or record that paper index-only. Before any IEB

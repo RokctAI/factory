@@ -21,7 +21,7 @@
 
 # Licensed under the MIT License.
 # Copyright 2026 RokctAI
-"""Unit tests for lessons/scripts/api_call_logged.py (stdlib unittest).
+"""Unit tests for lessons/scripts/CAPS/api_call_logged.py (stdlib unittest).
 
 The delegate HTTP layer is mocked with a fake delegate script that fails
 with a 429-style error N times (tracked in a state file) before succeeding
@@ -29,7 +29,7 @@ and appending a usage record — mirroring what the pin-fetched
 delegate_to_agent.py does on a real call.
 
 Run from the repo root:
-    python3 -m unittest discover -s lessons/scripts/tests -v
+    python3 -m unittest discover -s lessons/scripts/CAPS/tests -v
 """
 
 import contextlib

@@ -26,7 +26,7 @@
 Implements the reporting half of docs/lesson-pipeline-scale-hardening-brief.md
 section 3 ("Cost / rate-limit visibility"): aggregate the per-call usage
 records the shared delegate already writes — plus the rate-limit / retry
-events written by lessons/scripts/api_call_logged.py — into a queryable
+events written by lessons/scripts/CAPS/api_call_logged.py — into a queryable
 markdown section for lessons/DASHBOARD.md.
 
 Record shapes handled (all JSONL, one object per line; unknown or malformed
@@ -65,7 +65,7 @@ When API_PRICE_TABLE is unset (or unreadable) the report shows raw token
 quantities with an explicit "pricing not configured" note and NO cost
 numbers.
 
-CLI: python3 lessons/scripts/api_cost_report.py [--log PATH]
+CLI: python3 lessons/scripts/CAPS/api_cost_report.py [--log PATH]
 prints the markdown section to stdout.
 """
 

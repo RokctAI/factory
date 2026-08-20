@@ -20,7 +20,7 @@
 
 from manim import *
 
-# BAND LAYOUT (see lessons/scripts/manim_exporter.py): content is laid out in
+# BAND LAYOUT (see lessons/scripts/CAPS/manim_exporter.py): content is laid out in
 # sequential vertical bands along a long virtual canvas — one band per teaching
 # step, each one frame-height tall. Nothing is ever faded out or overwritten;
 # at each step the camera moves down to clean space and earlier work stays on

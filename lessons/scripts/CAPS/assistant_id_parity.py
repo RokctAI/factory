@@ -42,7 +42,7 @@ layout (assistant_001..003 + v2 roster) — verifies:
       `bridge_id` emits the same canonical id either way.
 
 Usage:
-  python3 lessons/scripts/assistant_id_parity.py \
+  python3 lessons/scripts/CAPS/assistant_id_parity.py \
       --old-root <team_root_v1> --new-root <team_root_v2> \
       [--baseline-ref origin/main] [--manifest-sample 25]
 

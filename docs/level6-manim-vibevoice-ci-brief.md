@@ -34,7 +34,7 @@ cards, the ledger, `Initiate Protocol`) that:
    transitions currently work, vs. purely time-based — your call, justify it).
 2. For each `evaluated` card not yet processed through Level 6 (needs a new status value, e.g.
    `produced`/`published` — extend the state machine per the existing convention in
-   `lessons/scripts/lesson_pipeline.py`'s `ALLOWED_TRANSITIONS`), runs Manim on `manim_scene.py` to produce
+   `lessons/scripts/CAPS/lesson_pipeline.py`'s `ALLOWED_TRANSITIONS`), runs Manim on `manim_scene.py` to produce
    JSON, runs VibeVoice on `script.md` to produce audio, aligns timestamps, assembles the manifest.
 3. Commits/uploads the output somewhere real apps can actually fetch it from (determine what that
    location should be — check how `replay_sdk`'s asset store currently expects to find manifests/audio,

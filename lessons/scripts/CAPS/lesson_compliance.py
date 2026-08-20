@@ -62,8 +62,8 @@ never counted toward the exit code (a bite warning cannot fail the build):
   W3 question.md states the marks (the merged bites use `## Question (N marks)`).
 
 Usage:
-  python lessons/scripts/lesson_compliance.py --all        # full-tree baseline
-  python lessons/scripts/lesson_compliance.py <files...>    # CI changed-files
+  python lessons/scripts/CAPS/lesson_compliance.py --all        # full-tree baseline
+  python lessons/scripts/CAPS/lesson_compliance.py <files...>    # CI changed-files
 Exit 0 = compliant; 1 = one or more violations (printed, grouped by rule).
 Warnings (W1-W3) are printed but never change the exit code.
 """

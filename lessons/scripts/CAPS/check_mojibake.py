@@ -39,8 +39,8 @@ Signatures (the visible residue of UTF-8 bytes read as cp1252/latin-1):
 
 Corrupted cards must never advance a pipeline level and corrupted lesson
 files must never reach a release, so this check runs in TWO layers:
-  - locally (fail fast before a push):  python lessons/scripts/check_mojibake.py <files>
-    or a full-tree scan:                python lessons/scripts/check_mojibake.py --all
+  - locally (fail fast before a push):  python lessons/scripts/CAPS/check_mojibake.py <files>
+    or a full-tree scan:                python lessons/scripts/CAPS/check_mojibake.py --all
   - in CI (the enforcement layer):      .github/workflows/mojibake_check.yml
     runs it against every pushed change under .rokct/agent/jobs/ and lessons/.
 

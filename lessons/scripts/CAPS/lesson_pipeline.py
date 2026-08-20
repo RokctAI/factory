@@ -3066,7 +3066,7 @@ def cmd_crosscheck(args):
         # Routed through the logged wrapper: 429s are retried with backoff
         # and recorded (with run/job identity) in api_usage.jsonl.
         proc = subprocess.run(
-            [sys.executable, "lessons/scripts/api_call_logged.py",
+            [sys.executable, "lessons/scripts/CAPS/api_call_logged.py",
              "--api", "groq", "--job-id", get_field(card, "id") or "",
              "groq", "--prompt", prompt],
             capture_output=True, text=True, encoding="utf-8", errors="replace",

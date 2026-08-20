@@ -18,7 +18,7 @@
    step isn't actually running/being respected.
 
 2. **No structural duplicate-prevention on `(subject, grade, topic, subtopic)`.** The only dedup mechanism
-   found (`is_duplicate_theme` in `lessons/scripts/lesson_pipeline.py` or wherever it now lives — confirm
+   found (`is_duplicate_theme` in `lessons/scripts/CAPS/lesson_pipeline.py` or wherever it now lives — confirm
    current location) does fuzzy string-matching against the human-readable `theme` field, not a direct
    check against the structural `subject`/`grade`/`topic`/`subtopic` fields. This happens to have avoided
    duplicates so far by luck of the seed list being manually curated, but isn't a real guarantee once more

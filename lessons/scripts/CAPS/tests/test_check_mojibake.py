@@ -21,7 +21,7 @@
 
 # Licensed under the MIT License.
 # Copyright 2026 RokctAI
-"""Unit tests for lessons/scripts/check_mojibake.py (stdlib unittest).
+"""Unit tests for lessons/scripts/CAPS/check_mojibake.py (stdlib unittest).
 
 Two directions are proven:
   1. Legitimate DBE (South African curriculum) angle notation — a
@@ -35,7 +35,7 @@ Two directions are proven:
      encode the corruption mechanism rather than hand-picked strings.
 
 Run from the repo root:
-    python3 -m unittest discover -s lessons/scripts/tests -v
+    python3 -m unittest discover -s lessons/scripts/CAPS/tests -v
 """
 
 import sys
@@ -189,7 +189,7 @@ class CheckFileTests(unittest.TestCase):
             self.assertEqual(check_mojibake.check_file(p), [(0, "<file is not valid UTF-8>")])
 
     def test_repo_curriculum_files_previously_flagged_now_pass(self):
-        repo_root = Path(__file__).resolve().parents[3]
+        repo_root = Path(__file__).resolve().parents[4]
         previously_flagged = [
             "lessons/curriculum/CAPS/maths/knowledge_bites/grade11/"
             "cyclic-quadrilaterals-and-tangents/dbe-maths-g12-p2-2024-nov-q9-1/question.md",

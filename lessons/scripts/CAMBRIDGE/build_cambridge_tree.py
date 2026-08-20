@@ -142,7 +142,7 @@ def build_rights(reg):
         "pipeline_consequences": [
             {
                 "pipeline": ("past-paper worked examples - the CAPS/DBE pattern in "
-                             "lessons/scripts/past_papers.py"),
+                             "lessons/scripts/CAPS/past_papers.py"),
                 "status": "NOT AVAILABLE for Cambridge",
                 "reason": (
                     "That pipeline embeds real past-paper question text, memo working "
@@ -476,7 +476,7 @@ def build_past_papers(slug, subject, reg):
         "if_permission_is_granted": [
             "Record the written grant (scope, date, signatory, expiry) in SOURCES.md before anything else.",
             "Re-read RIGHTS.json and narrow the gate to exactly what the grant covers - never wider.",
-            "Only then design an ingestion path; it must live in CAMBRIDGE/scripts, not lessons/scripts.",
+            "Only then design an ingestion path; it must live in lessons/scripts/CAMBRIDGE, not lessons/scripts/CAPS.",
         ],
         "generated_by": GENERATED_BY,
     }

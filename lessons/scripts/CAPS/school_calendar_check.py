@@ -28,8 +28,8 @@ annually). This tool keeps the repo's calendar files current so downstream
 consumers - the app backend fetches the raw JSON from this repo and adjusts
 schedules - never run a year on stale dates.
 
-    python lessons/scripts/school_calendar_check.py            # check + report
-    python lessons/scripts/school_calendar_check.py --write    # also write next
+    python lessons/scripts/CAPS/school_calendar_check.py            # check + report
+    python lessons/scripts/CAPS/school_calendar_check.py --write    # also write next
                                                                # year's file if
                                                                # extractable
 

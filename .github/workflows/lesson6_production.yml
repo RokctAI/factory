@@ -10,7 +10,7 @@ name: Lesson 6 - Production (Manim JSON + Audio + Manifest)
 # idle almost all the time. A weekly batch job — the same mechanism as every
 # other level here — does the bounded work and stops. See
 # docs/level6-manim-ci-production-brief.md and the feasibility note in
-# lessons/scripts/README-level6.md.
+# lessons/scripts/CAPS/README-level6.md.
 #
 # RUNNER FEASIBILITY (measured, not assumed)
 # - Manim JSON export: CPU-only and light. The exporter shims Tex/MathTex to
@@ -168,7 +168,7 @@ jobs:
             # and every file in its lesson directory for encoding mojibake
             # before any asset is built or published.
             LESSON_PATH=$(grep '^lesson_path:' "$FILE" | cut -d':' -f2- | xargs)
-            if ! python lessons/scripts/check_mojibake.py "$FILE" $(find "$LESSON_PATH" -type f 2>/dev/null); then
+            if ! python lessons/scripts/CAPS/check_mojibake.py "$FILE" $(find "$LESSON_PATH" -type f 2>/dev/null); then
               echo "❌ Mojibake found in $ID card/content — refusing to produce."
               log_report "FAIL $ID: mojibake in card or lesson content (release blocked)"
               python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
@@ -185,7 +185,7 @@ jobs:
             OUT=".rokct/tmp/level6/$ID"
             rm -rf "$OUT"; mkdir -p "$OUT"
 
-            if ! ASM_OUT=$(python lessons/scripts/lesson_manifest.py --card "$FILE" --out-dir "$OUT" --audio-backend "$AUDIO_BACKEND" 2>&1); then
+            if ! ASM_OUT=$(python lessons/scripts/CAPS/lesson_manifest.py --card "$FILE" --out-dir "$OUT" --audio-backend "$AUDIO_BACKEND" 2>&1); then
               echo "❌ Assembly failed for $ID"
               echo "$ASM_OUT" | tail -20
               log_report "FAIL $ID: assembly: $(echo "$ASM_OUT" | tail -3 | tr '\n' ' ')"
@@ -223,7 +223,7 @@ jobs:
               "$OUT/manifest.json" "$OUT/audio.mp3" "$OUT/animations.json"
 
             BASE="https://github.com/$REPO/releases/download/$TAG"
-            python lessons/scripts/record_production.py \
+            python lessons/scripts/CAPS/record_production.py \
               --card "$FILE" --out-dir "$OUT" --base-url "$BASE"
 
             if [ "$REPRODUCE" != "1" ]; then

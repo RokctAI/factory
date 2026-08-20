@@ -36,7 +36,7 @@ and must not be collapsed.
 Consequences worth stating plainly:
 
 - **The CAPS/DBE past-paper worked-example pipeline has no Cambridge
-  equivalent.** `lessons/scripts/past_papers.py` works by embedding real
+  equivalent.** `lessons/scripts/CAPS/past_papers.py` works by embedding real
   question text, memo working and answers into lesson content. For Cambridge
   that is exactly the electronic reproduction Cambridge refuses. It must not be
   pointed at Cambridge material without a written grant on file.

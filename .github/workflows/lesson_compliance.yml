@@ -2,7 +2,7 @@ name: Lesson Compliance
 
 # Central enforcement gate for the content standards established this cycle.
 # FAILS the build (does not warn) on any violation. The same checker runs
-# locally (lessons/scripts/lesson_compliance.py, fail fast before a push);
+# locally (lessons/scripts/CAPS/lesson_compliance.py, fail fast before a push);
 # local checks can be skipped, CI can't. Rules (see the checker's docstring):
 #   R1 primitive vocabulary is the real whiteboard set (not stale spec vocab)
 #   R2 no greeting/self-intro/sign-off in script text
@@ -51,7 +51,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manual dispatch: full-tree compliance baseline."
-            python3 lessons/scripts/lesson_compliance.py --all
+            python3 lessons/scripts/CAPS/lesson_compliance.py --all
             exit $?
           fi
           # Only the checkable artefact kinds the checker recognises.
@@ -69,4 +69,4 @@ jobs:
             exit 0
           fi
           echo "Checking:$EXISTING"
-          python3 lessons/scripts/lesson_compliance.py $EXISTING
+          python3 lessons/scripts/CAPS/lesson_compliance.py $EXISTING

@@ -21,10 +21,10 @@
 
 # Licensed under the MIT License.
 # Copyright 2026 RokctAI
-"""Unit tests for lessons/scripts/api_cost_report.py (stdlib unittest).
+"""Unit tests for lessons/scripts/CAPS/api_cost_report.py (stdlib unittest).
 
 Run from the repo root:
-    python3 -m unittest discover -s lessons/scripts/tests -v
+    python3 -m unittest discover -s lessons/scripts/CAPS/tests -v
 """
 
 import json

@@ -31,7 +31,7 @@ presented as verified.
 
 The IEB's **non-commercial reproduction clause** is the one material
 difference from the DBE audit. Before the past-papers pipeline
-(`lessons/scripts/past_papers.py`) is ever pointed at IEB papers — i.e.
+(`lessons/scripts/CAPS/past_papers.py`) is ever pointed at IEB papers — i.e.
 before IEB questions are embedded as worked examples in a product —
 obtain written permission from the IEB or confirm the intended use is
 non-commercial. Indexing, internal analysis and linking are not affected.

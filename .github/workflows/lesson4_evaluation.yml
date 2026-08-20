@@ -67,7 +67,7 @@ jobs:
             fi
 
             echo "🏁 Running Level 4 evaluation for $ID..."
-            if python lessons/scripts/lesson_pipeline.py evaluate --file "$FILE"; then
+            if python lessons/scripts/CAPS/lesson_pipeline.py evaluate --file "$FILE"; then
               python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status evaluated --agent system
               python .rokct/skills/agent_delegation/scripts/lock_job.py --file "$FILE" --action release
 

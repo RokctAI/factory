@@ -77,7 +77,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "practice_bank.json"
 

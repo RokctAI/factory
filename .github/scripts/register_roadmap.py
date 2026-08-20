@@ -24,7 +24,7 @@ Usage:
                         [--status <option>] [--timeout <seconds>]
 
 Credentials come from the environment, the same three the rest of this repo
-already uses against this site (see lessons/scripts/build_skills_index.py):
+already uses against this site (see lessons/scripts/CAPS/build_skills_index.py):
 RLMS_SITE_URL, RLMS_API_KEY, RLMS_API_SECRET. With RLMS_SITE_URL unset the
 whole step is a clean no-op — the roadmap hand-off is optional.
 

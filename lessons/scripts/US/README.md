@@ -1,7 +1,7 @@
 # US scripts — spec-driven generation, enforced rights, honest sourcing
 
-Deliberately separate from the top-level CAPS pipeline scripts in
-`lessons/scripts/` (owner instruction: the CAPS pipeline scripts are
+Deliberately separate from the CAPS pipeline scripts in
+`lessons/scripts/CAPS/` (owner instruction: the CAPS pipeline scripts are
 read-only reference for the method; US sourcing lives here). All run from the repository root. Stdlib only, no dependencies.
 
 Ownership map, enforced across the four files:

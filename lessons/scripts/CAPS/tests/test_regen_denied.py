@@ -21,7 +21,7 @@
 
 # Licensed under the MIT License.
 # Copyright 2026 RokctAI
-"""Unit tests for lessons/scripts/regen_denied.py (stdlib unittest).
+"""Unit tests for lessons/scripts/CAPS/regen_denied.py (stdlib unittest).
 
 Covers the post-junior-tree-retirement data shape (2026-08): the pipeline
 requeue branch is gone — lessons/review_index.json lists session packages
@@ -30,7 +30,7 @@ lessons/reviews/regen/. A stray index entry claiming source "pipeline" is
 warned about and skipped, never queued.
 
 Run from the repo root:
-    python3 -m unittest discover -s lessons/scripts/tests -v
+    python3 -m unittest discover -s lessons/scripts/CAPS/tests -v
 """
 
 import io

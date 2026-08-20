@@ -148,8 +148,9 @@ Ownership rule the scripts enforce between them, inherited from the IEB tree:
 seeded once and never regenerated, so a rebuild can never clobber recorded
 provenance or a rights decision.
 
-Scripts live in `lessons/scripts/US/` (separate from the top-level CAPS
-pipeline scripts, which are read-only reference for the method).
+Scripts live in `lessons/scripts/US/` (separate from the CAPS pipeline
+scripts in `lessons/scripts/CAPS/`, which are read-only reference for
+the method).
 
 ## What happens next
 
