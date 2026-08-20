@@ -45,8 +45,9 @@ gates:
   a gate. The trademark rules apply immediately regardless.
 
 `RIGHTS.json` is the machine-readable version of all of this, and
-`scripts/audit_tree.py` **enforces** it: the build fails if gated content is
-ever ingested, and `scripts/fetch_us_sources.py` refuses to fetch from a
+`lessons/scripts/US/audit_tree.py` **enforces** it: the build fails if gated
+content is ever ingested, and `lessons/scripts/US/fetch_us_sources.py`
+refuses to fetch from a
 gated rights holder at all (there is deliberately no `--force`).
 
 ## Layout
@@ -59,7 +60,7 @@ applies, `past_papers/`.
 US/
   RIGHTS.json          policy of record (machine-readable, CI-enforced)
   SOURCES.md           terms-of-use audit, one row per source
-  scripts/             build + audit + fetch (this tree's own, per owner rule)
+  scripts -> lessons/scripts/US/   build + audit + fetch (this tree's own)
   COMMON_CORE/{math,ela}/
   NGSS/science/
   AP/{16 courses}/
@@ -134,10 +135,10 @@ hosting the documents.
 ## Running it
 
 ```
-python3 lessons/curriculum/US/scripts/build_us_tree.py           # regenerate derived layers
-python3 lessons/curriculum/US/scripts/build_us_tree.py --check   # drift check
-python3 lessons/curriculum/US/scripts/audit_tree.py --verbose    # full audit (offline, CI-able, exit 1 on failure)
-python3 lessons/curriculum/US/scripts/fetch_us_sources.py probe  # from a network-enabled machine
+python3 lessons/scripts/US/build_us_tree.py           # regenerate derived layers
+python3 lessons/scripts/US/build_us_tree.py --check   # drift check
+python3 lessons/scripts/US/audit_tree.py --verbose    # full audit (offline, CI-able, exit 1 on failure)
+python3 lessons/scripts/US/fetch_us_sources.py probe  # from a network-enabled machine
 ```
 
 Ownership rule the scripts enforce between them, inherited from the IEB tree:
@@ -147,8 +148,9 @@ Ownership rule the scripts enforce between them, inherited from the IEB tree:
 seeded once and never regenerated, so a rebuild can never clobber recorded
 provenance or a rights decision.
 
-Scripts live here rather than in `lessons/scripts/` by owner instruction —
-the CAPS pipeline scripts are read-only reference for the method.
+Scripts live in `lessons/scripts/US/` (separate from the CAPS pipeline
+scripts in `lessons/scripts/CAPS/`, which are read-only reference for
+the method).
 
 ## What happens next
 

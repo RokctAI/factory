@@ -26,7 +26,7 @@ on:
       - main
     paths:
       - 'lessons/curriculum/CAPS/*/skills/**'
-      - 'lessons/scripts/build_skills_index.py'
+      - 'lessons/scripts/CAPS/build_skills_index.py'
   workflow_dispatch:
 
 permissions:
@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build skills index
-        run: python3 lessons/scripts/build_skills_index.py
+        run: python3 lessons/scripts/CAPS/build_skills_index.py
 
       - name: Commit index if changed
         run: |
@@ -67,4 +67,4 @@ jobs:
             echo "RLMS_SITE_URL secret not configured; skipping backend publish"
             exit 0
           fi
-          python3 lessons/scripts/build_skills_index.py --publish
+          python3 lessons/scripts/CAPS/build_skills_index.py --publish

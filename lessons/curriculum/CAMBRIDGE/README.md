@@ -12,7 +12,8 @@ That last point drives the single most important structural decision here:
 > DBE's CAPS curriculum, so its content layer legitimately *references* CAPS.
 > Cambridge does not. Its content authority is the per-subject **Cambridge
 > syllabus document**, and no file in this tree may derive content from, or
-> fall back to, the CAPS or IEB trees. `scripts/audit_tree.py` enforces this:
+> fall back to, the CAPS or IEB trees. `lessons/scripts/CAMBRIDGE/audit_tree.py`
+enforces this:
 > it fails the build if a Cambridge syllabus file's topic list turns out to be
 > a subset of the CAPS topic list for the same subject and grade.
 
@@ -35,7 +36,7 @@ and must not be collapsed.
 Consequences worth stating plainly:
 
 - **The CAPS/DBE past-paper worked-example pipeline has no Cambridge
-  equivalent.** `lessons/scripts/past_papers.py` works by embedding real
+  equivalent.** `lessons/scripts/CAPS/past_papers.py` works by embedding real
   question text, memo working and answers into lesson content. For Cambridge
   that is exactly the electronic reproduction Cambridge refuses. It must not be
   pointed at Cambridge material without a written grant on file.
@@ -60,7 +61,7 @@ CAMBRIDGE/
   RIGHTS.json           policy of record (machine-readable, CI-enforced)
   SOURCES.md            terms-of-use audit + evidence trail
   stage_alignment.json  Cambridge stage <-> repo grade convention
-  scripts/
+  scripts -> lessons/scripts/CAMBRIDGE/   (this tree's scripts)
     subject_registry.json      the verified-facts store — the ONLY place a
                                Cambridge fact is introduced by hand
     build_cambridge_tree.py    materialises the tree from the registry
@@ -152,10 +153,10 @@ lets `--check` be a **total** drift gate — every JSON file in the tree is
 generated, so any hand edit anywhere in it is caught.
 
 ```
-python3 lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py          # regenerate
-python3 lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py --check  # drift gate
-python3 lessons/curriculum/CAMBRIDGE/scripts/audit_tree.py                    # full audit (CI-able)
-python3 lessons/curriculum/CAMBRIDGE/scripts/fetch_cambridge_sources.py probe # network-enabled machine
+python3 lessons/scripts/CAMBRIDGE/build_cambridge_tree.py          # regenerate
+python3 lessons/scripts/CAMBRIDGE/build_cambridge_tree.py --check  # drift gate
+python3 lessons/scripts/CAMBRIDGE/audit_tree.py                    # full audit (CI-able)
+python3 lessons/scripts/CAMBRIDGE/fetch_cambridge_sources.py probe # network-enabled machine
 ```
 
 Run `probe` **first**: `robots.txt` for cambridgeinternational.org is the

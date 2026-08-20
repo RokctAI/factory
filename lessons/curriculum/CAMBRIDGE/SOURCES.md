@@ -116,7 +116,7 @@ Two decisions are needed, and they are different in kind:
 
 1. **Assessment materials are blocked, not merely gated.** The
    CAPS/DBE past-paper worked-example pipeline
-   (`lessons/scripts/past_papers.py`) has **no Cambridge equivalent** and must
+   (`lessons/scripts/CAPS/past_papers.py`) has **no Cambridge equivalent** and must
    not be pointed at Cambridge material. Only a written permission grant from
    Cambridge can change that — and the same Cambridge document that describes
    the permission process also states the blanket refusal, so assume refusal

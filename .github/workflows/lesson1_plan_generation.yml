@@ -99,7 +99,7 @@ jobs:
 
             echo "🚀 Requesting Lesson Plan from Groq for $ID..."
 
-            if ! PROMPT=$(python lessons/scripts/lesson_pipeline.py prompt --file "$FILE" --level 1 2>&1); then
+            if ! PROMPT=$(python lessons/scripts/CAPS/lesson_pipeline.py prompt --file "$FILE" --level 1 2>&1); then
               echo "❌ Prompt construction failed:"
               echo "$PROMPT"
               exit 1
@@ -112,7 +112,7 @@ jobs:
               exit 1
             fi
 
-            if ! python lessons/scripts/lesson_pipeline.py plan --file "$FILE" --content "$RESPONSE"; then
+            if ! python lessons/scripts/CAPS/lesson_pipeline.py plan --file "$FILE" --content "$RESPONSE"; then
               echo "❌ Plan parse failed. Raw Groq response follows:"
               echo "$RESPONSE" | head -30
               exit 1

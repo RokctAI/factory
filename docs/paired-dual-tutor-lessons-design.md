@@ -1,6 +1,6 @@
 # Paired Dual-Tutor Lessons — Design
 
-> Status: IMPLEMENTED (2026-08-14) in lessons/scripts/lesson_pipeline.py —
+> Status: IMPLEMENTED (2026-08-14) in lessons/scripts/CAPS/lesson_pipeline.py —
 > paired seeding (`tutors` on syllabus rows), the lesson2 secondary skip
 > (`pair-ready` + a hard error in the Level 2 prompt builder), the Level 3
 > pairing checks, and dashboard pair grouping. Defines the pairing mechanism

@@ -27,7 +27,7 @@ jobs:
         id: check
         run: |
           set +e
-          python lessons/scripts/school_calendar_check.py --write
+          python lessons/scripts/CAPS/school_calendar_check.py --write
           code=$?
           set -e
           if [ "$code" = "1" ]; then

@@ -20,7 +20,7 @@
 
 from manim import *
 
-# Band-layout whiteboard scene (see lessons/scripts/manim_exporter.py): one
+# Band-layout whiteboard scene (see lessons/scripts/CAPS/manim_exporter.py): one
 # band per teaching beat, camera moves down to fresh space, nothing removed.
 # Write-only reveals on single-string Tex/MathTex keep the export clean. Bands
 # cover all seven subtopics (Part 1 — Expert: 1-4; Part 2 — Simplifier: 5-7),

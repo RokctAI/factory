@@ -110,7 +110,7 @@ jobs:
 
             echo "🔍 Running Level 3 checks for $ID..."
             RC=0
-            CHECK_OUT=$(python lessons/scripts/lesson_pipeline.py check --file "$FILE" 2>&1) || RC=$?
+            CHECK_OUT=$(python lessons/scripts/CAPS/lesson_pipeline.py check --file "$FILE" 2>&1) || RC=$?
             echo "$CHECK_OUT"
             if [ "$RC" -eq 0 ]; then
               # Level 3.5 independent Groq/llama crosscheck RETIRED (owner

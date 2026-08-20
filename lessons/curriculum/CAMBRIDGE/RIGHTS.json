@@ -118,11 +118,11 @@
   },
   "prohibited_in_this_tree": {
     "rule": "No file in the CAMBRIDGE tree may contain past-paper question text, mark-scheme or memo answers, or examiner-report text, and no URL in it may point at an unauthorised redistributor. audit_tree.py enforces this mechanically so the prohibition survives edits by people who never read the policy.",
-    "enforced_by": "lessons/curriculum/CAMBRIDGE/scripts/audit_tree.py"
+    "enforced_by": "lessons/scripts/CAMBRIDGE/audit_tree.py"
   },
   "pipeline_consequences": [
     {
-      "pipeline": "past-paper worked examples - the CAPS/DBE pattern in lessons/scripts/past_papers.py",
+      "pipeline": "past-paper worked examples - the CAPS/DBE pattern in lessons/scripts/CAPS/past_papers.py",
       "status": "NOT AVAILABLE for Cambridge",
       "reason": "That pipeline embeds real past-paper question text, memo working and answers into lesson content. For Cambridge that is exactly the electronic reproduction Cambridge refuses - and the refusal is not conditioned on commercial use, so no reading of our use clears it. Ease of access is irrelevant: the papers are openly downloadable and still may not be reproduced."
     },
@@ -164,5 +164,5 @@
     "AI/TDM: commercial text-and-data-mining rights are expressly reserved. If permission is ever sought, it must name the generative-AI use specifically - a reproduction permission alone would not cover what this repository does.",
     "Stricter than the IEB (which bars reproduction for commercial gain but permits personal study use) and in the same bracket as the College Board's AP/SAT gate in the US tree."
   ],
-  "generated_by": "lessons/curriculum/CAMBRIDGE/scripts/build_cambridge_tree.py"
+  "generated_by": "lessons/scripts/CAMBRIDGE/build_cambridge_tree.py"
 }

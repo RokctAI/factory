@@ -119,7 +119,7 @@ and a spawned app appears on the roadmap without anybody re-typing it.
 
 It `POST`s a `Roadmap` document to Frappe's generic resource API,
 `POST /api/resource/Roadmap`, authenticating with `Authorization: token
-<key>:<secret>` — the same shape `lessons/scripts/build_skills_index.py` uses
+<key>:<secret>` — the same shape `lessons/scripts/CAPS/build_skills_index.py` uses
 against the same site. The document is four fields:
 
 | Field | Value |

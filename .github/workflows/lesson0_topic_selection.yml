@@ -36,7 +36,7 @@ jobs:
 
       - name: Regenerate Dashboard
         run: |
-          python lessons/scripts/lesson_pipeline.py dashboard
+          python lessons/scripts/CAPS/lesson_pipeline.py dashboard
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           # The '*Generated <timestamp> UTC ...*' header changes every run, so
@@ -67,7 +67,7 @@ jobs:
 
             if [ "$PENDING_COUNT" -lt 3 ]; then
               echo "🚀 Seeding next $TYPE topic from the CAPS curriculum list..."
-              python lessons/scripts/lesson_pipeline.py seed --type "$TYPE" --limit 1
+              python lessons/scripts/CAPS/lesson_pipeline.py seed --type "$TYPE" --limit 1
 
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"

@@ -21,7 +21,7 @@
 from manim import *
 
 # Band-layout whiteboard scene (see AUTHORING conventions in
-# lessons/scripts/manim_exporter.py): sequential vertical bands, one per
+# lessons/scripts/CAPS/manim_exporter.py): sequential vertical bands, one per
 # teaching beat, camera moves down between bands, nothing is ever removed.
 # Only exporter-supported mobjects (Tex/MathTex/Line/Arrow/Dot/Circle/
 # Rectangle) are used; every line of working is a single-string MathTex

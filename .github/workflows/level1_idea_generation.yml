@@ -82,7 +82,7 @@ jobs:
             PROMPT="Generate 5 unique one-line book ideas for the theme '$THEME' and type '$TYPE'. Return only the ideas."
             # Logged wrapper: retries 429s with backoff and records
             # rate-limit events + run/job identity in api_usage.jsonl.
-            RESPONSE=$(python lessons/scripts/api_call_logged.py --api groq --job-id "$ID" groq --prompt "$PROMPT")
+            RESPONSE=$(python lessons/scripts/CAPS/api_call_logged.py --api groq --job-id "$ID" groq --prompt "$PROMPT")
 
             if [ -n "$RESPONSE" ]; then
               echo "✅ Groq responded. Updating card..."

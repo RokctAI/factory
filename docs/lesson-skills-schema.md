@@ -31,7 +31,7 @@ grade — a G12 gradient question expects more than G10) but carry no false term
 
 ## `lessons/skills_index.json` — the lookup the app reads
 
-Generated (never hand-edited) by `python lessons/scripts/lesson_pipeline.py skills-index`,
+Generated (never hand-edited) by `python lessons/scripts/CAPS/lesson_pipeline.py skills-index`,
 which **fails (exit 1)** if: a `category: skill` card lacks a `skill_ref`, a `skill_ref`
 is defined twice, any `requires_skills` entry doesn't resolve, or a card requires itself.
 

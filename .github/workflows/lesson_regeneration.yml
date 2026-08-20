@@ -2,7 +2,7 @@ name: Lesson Regeneration
 
 # Re-enters denied lessons into generation. Runs whenever a review-state file
 # changes on main (the Supacharge admin review endpoint writes them via the
-# Contents API): lessons/scripts/regen_denied.py re-queues the job card
+# Contents API): lessons/scripts/CAPS/regen_denied.py re-queues the job card
 # (pipeline lessons) or writes a regen brief under lessons/reviews/regen/
 # (session lessons), bounded by lessons/reviews/regen_state.json.
 #
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Queue regeneration for denied reviews
-        run: python3 lessons/scripts/regen_denied.py
+        run: python3 lessons/scripts/CAPS/regen_denied.py
 
       - name: Commit queue changes if any
         run: |

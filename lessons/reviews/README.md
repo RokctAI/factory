@@ -10,9 +10,9 @@ session packages use `session_{subject}_g{grade}_t{term}_{topic-slug}_{subtopic-
 - **Written by** the Supacharge admin review endpoint via the GitHub Contents
   API when Ray approves or denies a lesson in the app.
 - **Consumed by** the review-index build
-  (`lessons/scripts/build_review_index.py`, run by
+  (`lessons/scripts/CAPS/build_review_index.py`, run by
   `.github/workflows/review_index.yml`) to fill each lesson's `review` block,
-  and by the regeneration consumer (`lessons/scripts/regen_denied.py`, run by
+  and by the regeneration consumer (`lessons/scripts/CAPS/regen_denied.py`, run by
   `.github/workflows/lesson_regeneration.yml`) which re-queues denied lessons.
 
 A lesson with no file here is **pending** review.

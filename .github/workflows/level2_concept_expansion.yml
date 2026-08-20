@@ -75,7 +75,7 @@ jobs:
 
               # Logged wrapper: retries 429s with backoff and records
               # rate-limit events + run/job identity in api_usage.jsonl.
-              RESULT=$(python lessons/scripts/api_call_logged.py --api jules --job-id "$ID" create \
+              RESULT=$(python lessons/scripts/CAPS/api_call_logged.py --api jules --job-id "$ID" create \
                 --repo "sources/github/RokctAI/factory" \
                 --prompt "TASK: Develop a full concept for the book '$ID' (Type: $TYPE, Theme: $THEME). Include angle, emotional world, target feeling, and structural approach. Reference metarules for $TYPE. Update the card $FILE and set status to 'concept_expanding'." \
                 --title "Level 2: Concept Expansion - $ID" \
