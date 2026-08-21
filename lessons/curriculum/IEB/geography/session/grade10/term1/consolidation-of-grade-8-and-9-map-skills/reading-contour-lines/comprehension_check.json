@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Derive, rather than quote, the rule that connects contour spacing to slope steepness, using the 20 m interval of this map in your reasoning.",
+      "expected_answer": "The climb between any two neighbouring contours is locked at the interval — 20 m on this sheet — so the rise never varies. The only variable is the horizontal distance walked while gaining that 20 m: the run. Widely spaced lines mean the 20 m is spread over a long run, a small rise-to-run ratio and gentle ground; tightly spaced lines mean the same 20 m over a short run, a large rise-to-run ratio and steep ground. Since gradient is rise measured against run and the rise is fixed, the spacing of the lines is a direct picture of the gradient."
+    },
+    {
+      "id": "cc2",
+      "question": "A learner has found a chain of V-shaped kinks in the contours but no blue line is printed. Explain how they can establish both that a river is present and which way it flows.",
+      "expected_answer": "Repeated V-kinks passing through successive contours are the signature of a valley cut by flowing water: each contour, forced to hold its height, must detour up the valley side, cross where the ground regains its level, and return — drawing a V whose tip points uphill, towards the source. So the presence of a consistent chain of Vs indicates the drainage line even without blue printing, and the tips give the upstream direction: water leaves through the open mouths of the Vs. The independent check is to read the values of the contours crossed along the channel — they must decrease downstream, for example 320, 300, 280, because water cannot flow uphill. When the V-directions and the falling values agree, both the river and its flow direction are confirmed."
+    },
+    {
+      "id": "cc3",
+      "question": "Write a model mapwork answer identifying the steepest slope on this extract, and explain what makes its structure worth full credit.",
+      "expected_answer": "Model answer: the steepest slope lies on the eastern flank of the hill crowned by spot height 347, where the 260 to 320 contour lines crowd into their narrowest band on the sheet — the land rises 60 metres over the shortest horizontal distance on the extract. The structure earns full credit because it makes three moves: it names the location precisely using a map reference point, it quotes the map evidence by citing the specific contour values and their spacing, and it interprets that evidence by stating what the spacing means in terms of rise over run. An identification without quoted evidence is only a claim; the evidence and interpretation are what show the reading was reasoned from the map rather than guessed."
+    }
+  ]
+}

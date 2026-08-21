@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what the ratio scale 1:50 000 means, and name the two other forms in which scale appears on a topographic sheet.",
+      "expected_answer": "One unit of length on the map represents fifty thousand of the same units on the ground — one centimetre of paper is 50 000 cm, or 500 m, of real ground, whatever unit is used, because the ratio is unit-free. Scale also appears as a word scale (a sentence such as 'one centimetre represents half a kilometre') and as a linear scale bar printed along the bottom margin, used for stepping off distances without arithmetic."
+    },
+    {
+      "id": "cc2",
+      "question": "The distance between two points on a 1:50 000 map is 7,4 cm. Calculate the real distance in kilometres, showing the full layout of working.",
+      "expected_answer": "Formula: real distance = map distance × 50 000. Substitute: 7,4 cm × 50 000 = 370 000 cm. Convert down the unit ladder: 370 000 ÷ 100 = 3 700 m; 3 700 ÷ 1 000 = 3,7 km. Answer: 3,7 kilometres, with the unit stated. Check via the shortcut: on 1:50 000 each centimetre is half a kilometre, and half of 7,4 is 3,7."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how to measure a curved route on a map, and give the sense check you would apply to the final answer.",
+      "expected_answer": "Lay string or the edge of a paper strip along the route, following every bend segment by segment, mark the end, then straighten it against a ruler to read the total map distance; the calculation then proceeds normally — multiply by the scale factor and walk the unit ladder. Sense check: a hand-span of about 10 cm on a 1:50 000 sheet is roughly 5 km, about an hour's walk, so compare the answer against the span and against whether a person could plausibly walk it — a result ten times too large or small reveals a slipped decimal."
+    }
+  ]
+}

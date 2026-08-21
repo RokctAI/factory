@@ -1,0 +1,7 @@
+Hi, Mandy here — shake the tension out. Urban climates feels like two topics and a graph, but it is really one sentence you already believe: cities are built out of the warm-wall stuff, and they cannot sweat.
+
+Hold three pictures and the whole section falls in line. Picture one: the storage heater. Dark tar and brick charge up all day and glow all night — that is the heat island, strongest at night, strongest in winter, peaking over the city centre, dipping over every park. Picture two: the reversal list. Every cause has a matching fix — dark surfaces get painted light, the sweatless city gets its trees and ponds back, the little heaters get insulated and bussed, the canyons get built for breeze. Cause, fix, mechanism, example: that is the essay. Picture three: the pot lid. On still winter nights the inversion presses down, the smoke flattens under it, and the city wears its brown dome until the wind stretches it into a plume.
+
+Tonight, one task: sketch the temperature profile across a city from farm to CBD and back, and mark the park dips. Then write the five causes down the left of a page and their five fixes down the right, and draw the arrows between them. Fifteen minutes, and both big questions in this topic are pre-answered.
+
+You have felt every fact in this lesson with your own hands on a warm wall. Now go match causes to fixes in the practice questions — they are waiting.

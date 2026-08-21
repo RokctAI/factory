@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What Gradient Means",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The formula for average gradient is:",
+          "options": [
+            "Horizontal equivalent divided by vertical interval",
+            "Vertical interval divided by horizontal equivalent",
+            "Vertical interval multiplied by horizontal equivalent",
+            "Contour interval divided by map scale"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A gradient of 1 : 4 means that:",
+          "options": [
+            "The land rises 4 metres for every 1 metre travelled horizontally",
+            "The slope covers 4 kilometres in total",
+            "The land rises 1 metre for every 4 metres travelled horizontally",
+            "The contours are 4 metres apart"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Comparing 1 : 20 with 1 : 200, the correct statement is:",
+          "options": [
+            "1 : 20 is steeper, because the metre of climb is packed into a shorter horizontal distance",
+            "1 : 200 is steeper, because 200 is the bigger number",
+            "They are equally steep",
+            "Neither can be compared without the map scale"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Extracting VI and HE from the Map",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "On a topographic map, a small triangle with a station number marks:",
+          "options": [
+            "A spot height",
+            "A borehole",
+            "A contour crossing",
+            "A trig beacon with a surveyed, exact altitude"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "With beacon 89 at 1 350 m and a spot height at 1 100 m, the vertical interval is:",
+          "options": [
+            "2 450 metres",
+            "250 metres, found by subtracting the lower height from the higher",
+            "1 350 metres",
+            "25 metres"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "A measured map distance of 10 cm on a 1:50 000 sheet converts to a ground distance of:",
+          "options": [
+            "50 kilometres",
+            "500 metres",
+            "5 kilometres — 10 times 50 000 gives 500 000 cm, which is 5 000 m",
+            "10 kilometres"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Before dividing VI by HE, you must first:",
+          "options": [
+            "Express both values in the same unit, normally metres",
+            "Round both values to the nearest hundred",
+            "Convert both values to centimetres",
+            "Halve the horizontal equivalent"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Calculation — Laid Out for Marks",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The four written lines of a full gradient answer are:",
+          "options": [
+            "Scale, distance, bearing, answer",
+            "Sketch, shading, labels, answer",
+            "Question number, date, formula, answer",
+            "Formula, substitution with units, simplification, answer as 1 : x"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Simplifying 250 over 5 000 to the form 1 : x gives:",
+          "options": [
+            "1 : 25",
+            "1 : 20, because 250 goes into 5 000 twenty times",
+            "1 : 50",
+            "1 : 200"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Presenting the final answer as 0,05 instead of 1 : 20 usually:",
+          "options": [
+            "Earns full marks anyway",
+            "Earns a bonus mark for extra precision",
+            "Forfeits the answer mark, because the ratio form 1 : x is the required presentation",
+            "Is required when the distance was measured"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The answer is called an AVERAGE gradient because:",
+          "options": [
+            "The total rise is spread evenly over the total distance, ignoring dips and climbs along the way",
+            "Several learners' answers are averaged together",
+            "The two heights are averaged before subtracting",
+            "The map scale is an average of many surveys"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Verification, Traps and the Full Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The reverse-arithmetic check for the answer 1 : 20 is:",
+          "options": [
+            "20 divided by 250 returns 5 000",
+            "250 minus 20 returns 230",
+            "250 times 20 returns 5 000, confirming the simplification",
+            "5 000 times 20 returns 250"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Dividing 250 metres by 5 instead of 5 000 is the trap of:",
+          "options": [
+            "Inverting the ratio",
+            "Mixed units — the 5 was kilometres and was never converted to metres",
+            "Subtracting heights in the wrong order",
+            "Misreading the trig beacon number"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Writing the answer as 20 : 1 is wrong because:",
+          "options": [
+            "Ratios may never contain the number 20",
+            "The colon should be a decimal point",
+            "The answer must always be rounded first",
+            "The '1' in the ratio belongs to the vertical climb, not the horizontal distance"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "At 1:50 000, a measuring error of 2 millimetres on the map equals a ground error of:",
+          "options": [
+            "100 metres, which is why you measure to the nearest half millimetre",
+            "10 metres",
+            "1 kilometre",
+            "2 metres"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Ramp and the Staircase",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A clinic's staircase and its wheelchair ramp both reach the same door. They differ in:",
+          "options": [
+            "The height they climb",
+            "The direction of the climb",
+            "The horizontal distance travelled while climbing the same height",
+            "The number of people they can carry"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The single question you ask a slope to find its gradient is:",
+          "options": [
+            "For every metre I go up, how many metres do I go along?",
+            "How many contour lines does it cross?",
+            "How long does it take to walk?",
+            "How high is the highest point?"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "In the teaspoon-of-concentrate picture, pouring the same teaspoon into a bigger jug stands for:",
+          "options": [
+            "Adding more vertical interval",
+            "Spreading one metre of climb across a longer walk, making the slope gentler",
+            "Increasing the map scale",
+            "Making the slope steeper"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The formal names for the 'up' number and the 'along' number are:",
+          "options": [
+            "Contour interval and map distance",
+            "Altitude and bearing",
+            "Relief and scale",
+            "Vertical interval and horizontal equivalent"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two Numbers Off the Map, Both Speaking Metres",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The climb between beacon 89 at 1 350 m and the spot height at 1 100 m is found by:",
+          "options": [
+            "Adding the two heights",
+            "Averaging the two heights",
+            "Taking the low height away from the high one: 1 350 minus 1 100 gives 250 metres",
+            "Multiplying the heights by the scale"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Un-shrinking 10 cm of paper distance on a 1:50 000 map means:",
+          "options": [
+            "Multiplying by 50 000 to get 500 000 cm, then converting to 5 000 m",
+            "Dividing 10 by 50 000",
+            "Adding 50 000 to 10",
+            "Multiplying by 100 to get 1 000 cm"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Dividing metres of climb by kilometres of distance is compared in the lesson to:",
+          "options": [
+            "Weighing water with a ruler",
+            "Reading a map upside down",
+            "Adding apples to apples",
+            "Working out a price by dividing rands by cents — the answer is a thousand times out"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Before dividing, 5 kilometres must be written as:",
+          "options": [
+            "500 metres",
+            "5 000 metres, so that both numbers speak metres",
+            "50 000 metres",
+            "0,5 metres"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Share It Out, Then Say It in One Line",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Sharing 5 000 among 250 is compared to:",
+          "options": [
+            "Counting how many R250 concert tickets a R5 000 prize will buy — the answer is 20",
+            "Splitting a bill between two friends",
+            "Converting rands into dollars",
+            "Estimating a taxi fare from the distance"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Handing in the answer as 0,05 or as 250 over 5 000 is compared to:",
+          "options": [
+            "Paying with a foreign banknote",
+            "Handing in an empty page",
+            "Paying at a till with a jar of loose five-cent pieces — the value is there but the form is not accepted",
+            "Writing the answer in pencil"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "A slope of 1 : 20 in everyday terms is:",
+          "options": [
+            "So gentle you would never notice it",
+            "Impossible to walk on",
+            "Exactly flat",
+            "Genuinely steep — a minibus changes down and a railway would not be built on it"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "If the height subtraction comes out negative, you should:",
+          "options": [
+            "Start the whole calculation again from the map",
+            "Keep only the size of the difference, because steepness is the same uphill and downhill",
+            "Report the gradient as a negative ratio",
+            "Swap the vertical and horizontal numbers"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

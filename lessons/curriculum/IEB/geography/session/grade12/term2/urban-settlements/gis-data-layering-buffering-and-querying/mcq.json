@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What a GIS Is and the Two Kinds of Data",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The five verbs that define a GIS are:",
+          "options": [
+            "Draw, print, copy, fold, share",
+            "Capture, store, manipulate, analyse, display",
+            "Measure, mark, name, count, colour",
+            "Scan, save, send, sort, shred"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A road drawn on a map versus the route number printed on it illustrates:",
+          "options": [
+            "Vector versus raster data",
+            "Point versus area features",
+            "Spatial data (the drawing) versus attribute data (the label)",
+            "High versus low resolution"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A natural line feature and a constructed line feature would be, respectively:",
+          "options": [
+            "A river and a railway",
+            "A dam and a beacon",
+            "A contour and an orchard",
+            "A borehole and an urban block"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Raster data differs from vector data in that raster:",
+          "options": [
+            "Stores only property boundaries",
+            "Cannot be georeferenced",
+            "Uses points, lines and polygons",
+            "Builds the scene from a grid of equal cells, like the pixels of a photograph"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Data Layering — The Transparency Stack",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Data layering means:",
+          "options": [
+            "Storing different themes of information in separate, stackable, georeferenced layers",
+            "Printing a map on several sheets of paper",
+            "Colouring a map by altitude",
+            "Filing maps by date"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A layer containing every river, pan and reservoir should be named the:",
+          "options": [
+            "Cadastral layer",
+            "Drainage layer",
+            "Transport layer",
+            "Vegetation layer"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Layers align perfectly when stacked because:",
+          "options": [
+            "They are printed at different scales",
+            "They are drawn by the same cartographer",
+            "All layers are georeferenced to the same coordinate system",
+            "Each layer contains the same features"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "When combining given layer sketches into one frame, the governing rule is:",
+          "options": [
+            "Enlarge every feature slightly for clarity",
+            "Draw the layers side by side",
+            "Leave out overlapping features",
+            "Every feature keeps its own position, overlapping where the originals overlap"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Buffering, Querying and Data Integration",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "A buffer around a line feature such as a stream or power line takes the shape of:",
+          "options": [
+            "A corridor of chosen width along the feature",
+            "A circle centred on the feature",
+            "A grid of square cells",
+            "A single point"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "A strip of deliberately empty land between houses and a floodplain is best explained as:",
+          "options": [
+            "A surveying error",
+            "A buffer keeping development out of flood danger",
+            "Land too expensive to build on",
+            "A future sports field"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The request 'show every open erf larger than 400 square metres within 2 km of a taxi route' is an example of:",
+          "options": [
+            "Buffering",
+            "Digitising",
+            "A query — fetching every feature that satisfies stated conditions",
+            "Reprojection"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Data integration must happen before querying because:",
+          "options": [
+            "Queries only work on paper maps",
+            "Integration deletes unnecessary data",
+            "Buffers cannot cross layer boundaries",
+            "Data from different sources must first sit in one system on one coordinate grid so the layers can talk"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Resolution, Data Manipulation and Answering GIS Questions",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Of two images of the same scene, the one with fewer pixels will be:",
+          "options": [
+            "Blurrier, because each pixel is larger and the resolution lower",
+            "Sharper, because it stores less clutter",
+            "Identical in clarity",
+            "Darker in colour"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "To make an unclear area of an orthophoto more readable, the standard scale manipulation is to:",
+          "options": [
+            "Reduce the scale to show more ground",
+            "Enlarge the scale — zoom in — so the same ground occupies more image",
+            "Convert the image to vector format",
+            "Rotate the image ninety degrees"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Besides scale changes, data manipulation also includes:",
+          "options": [
+            "Deleting the attribute table",
+            "Painting layers different colours by hand",
+            "Converting between data formats and reprojecting data onto another coordinate system",
+            "Printing the map at higher quality"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The three recurring GIS question types are:",
+          "options": [
+            "Essay, poem, and letter",
+            "Calculation, translation, and drawing to scale",
+            "True-false, matching, and sorting",
+            "Vocabulary definitions, application to the mapped area, and the practical layer redraw"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Burger That Explains the Whole System",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The burger explains layering because:",
+          "options": [
+            "Its layers are made separately but consumed together, aligned in one stack",
+            "It contains exactly five ingredients",
+            "It must be eaten quickly",
+            "Its bun hides the contents"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In the friend sentence, 'where she is standing' versus 'her name and number' separates:",
+          "options": [
+            "Vector from raster",
+            "Spatial data from attribute data",
+            "Points from polygons",
+            "Resolution from scale"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "'Drawings stay sharp when you zoom; photos eventually turn to blocks' contrasts:",
+          "options": [
+            "Attribute and spatial data",
+            "Buffering and querying",
+            "Vector data with raster data",
+            "Maps with globes"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Chalk Circle Around the Beehive",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The chalk circle around the beehive is a buffer because it:",
+          "options": [
+            "Removes the danger entirely",
+            "Marks the tree for felling",
+            "Decorates the schoolyard",
+            "Gives the danger a measured edge so the inside can be treated differently from the outside"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "A cleared corridor beneath a high-voltage power line is:",
+          "options": [
+            "A line-feature buffer keeping buildings out of the servitude",
+            "A query result",
+            "A raster cell boundary",
+            "An attribute label"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Typing a song title into a music app parallels a GIS query because:",
+          "options": [
+            "Both draw circles around features",
+            "Both ask a database to fetch every item matching stated conditions",
+            "Both work without any stored data",
+            "Both change the image resolution"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The 'unglamorous step' that must precede searching is:",
+          "options": [
+            "Printing the map",
+            "Deleting old records",
+            "Integration — loading all sources into one system on one grid",
+            "Colour-coding the layers"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Pixels, Zooming In and Free Marks",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The photographed bird dissolving into fuzzy squares when zoomed demonstrates:",
+          "options": [
+            "Vector data corruption",
+            "A buffering error",
+            "Attribute data loss",
+            "Low resolution — too few pixels, each one large"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The professional reason sentence for the blurrier of two photographs is:",
+          "options": [
+            "It is less clear because its pixels are larger and its resolution lower",
+            "It is less clear because it was taken at night",
+            "It is less clear because it is a vector image",
+            "It is less clear because the printer failed"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The six-idea story of the lesson runs:",
+          "options": [
+            "Contours, bearings, gradients, scales, symbols, grids",
+            "Layers, spatial-plus-attribute data, vector and raster, buffers, queries, integration",
+            "Push, pull, site, situation, pattern, function",
+            "Capture, flood, erode, deposit, meander, rejuvenate"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The clinic in the running example is finally placed by:",
+          "options": [
+            "The loudest voice at the council meeting",
+            "Choosing the cheapest plot available",
+            "Stacked layers, exclusion buffers and a query returning flat, dry, reachable, unclaimed land",
+            "Guesswork refined by trial and error"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

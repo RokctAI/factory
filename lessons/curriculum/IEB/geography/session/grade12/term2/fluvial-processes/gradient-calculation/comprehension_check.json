@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define average gradient, state its formula, and explain the interpretation rule for comparing two ratios such as 1 : 20 and 1 : 200.",
+      "expected_answer": "Average gradient is the ratio between the vertical interval — the height gained between two points — and the horizontal equivalent — the horizontal distance over which that height is gained: gradient equals VI divided by HE, expressed in the form 1 : x, meaning 1 metre of rise for every x metres travelled horizontally. The interpretation rule: the bigger the number after the colon, the gentler the slope, because the single metre of climb is spread over a longer horizontal distance — so 1 : 20 is much steeper than 1 : 200."
+    },
+    {
+      "id": "cc2",
+      "question": "Show the full four-line calculation for the gradient between trig beacon 89 at 1 350 m and a spot height of 1 100 m that lie 5 km apart, and interpret the answer.",
+      "expected_answer": "VI = 1 350 − 1 100 = 250 m; HE = 5 km = 5 000 m. Line one: gradient = VI / HE. Line two: gradient = 250 m / 5 000 m. Line three: divide top and bottom by 250 to get 1 / 20. Line four: gradient = 1 : 20. Interpretation: the land rises 1 metre for every 20 metres travelled horizontally — a genuinely steep slope that heavy vehicles labour on and a railway (which needs gentler than about 1 : 50) could not follow."
+    },
+    {
+      "id": "cc3",
+      "question": "List the three verification checks for a gradient answer and any three traps that commonly produce wrong answers.",
+      "expected_answer": "Checks: a sense check that the ratio suits the terrain (an x of 0,02 or 20 000 signals a unit error); a reverse-arithmetic check (250 × 20 = 5 000 confirms the simplification); and a unit check that both VI and HE were in metres when divided. Traps: mixed units (dividing by 5 instead of 5 000); inverting the ratio (writing 20 : 1, when the '1' must belong to the vertical climb); carrying a negative from subtracting heights in the wrong order instead of taking the positive difference; and sloppy measurement, since 2 mm on a 1:50 000 map is 100 m of ground."
+    }
+  ]
+}
