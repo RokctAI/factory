@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what the limit of (x² − 16)/(x − 4) as x approaches 4 means, evaluate it, and state precisely why writing f(4) = 8 would be wrong while the limit statement is right.",
+      "expected_answer": "Substituting x = 4 gives 0/0, so the function is undefined at 4 — its graph is the line y = x + 4 with a hole at (4; 8). The limit asks what the outputs approach as x gets arbitrarily close to 4 from both sides: at 3,9 and 4,01 the outputs are 7,9 and 8,01, squeezing in on 8. Algebraically, x² − 16 factorises as (x − 4)(x + 4); for every x except 4 the factor x − 4 cancels, leaving x + 4, which approaches 8. So the limit as x approaches 4 is 8. Writing f(4) = 8 is false because 4 is not in the domain — the function has no value there; the limit statement is true because it describes approach, not arrival. The limit is a report about the neighbourhood of the point, which is fully defined, and the derivative's definition is built on exactly this situation."
+    },
+    {
+      "id": "cc2",
+      "question": "Differentiate f(x) = x² from first principles, stating the definition, showing every algebraic step, and explaining why dividing by h and then letting h approach zero is not division by zero.",
+      "expected_answer": "The definition: f′(x) is the limit as h approaches 0 of [f(x + h) − f(x)]/h. For f(x) = x²: f(x + h) = (x + h)² = x² + 2xh + h². Subtracting f(x) leaves 2xh + h². Dividing by h gives 2x + h, and letting h approach 0 gives f′(x) = 2x. The division is legitimate because during the whole limit process h is a small non-zero number — approaching zero means never equalling it, and dividing by a non-zero number is ordinary algebra. Only after the division is finished do we evaluate the simplified expression 2x + h under the limit, which requires no division at all. The h must always cancel because the subtraction f(x + h) − f(x) always leaves h as a common factor; an h that refuses to cancel signals an expansion error earlier. The answer 2x is a gradient formula: gradient 4 at x = 2, 12 at x = 6, −8 at x = −4."
+    },
+    {
+      "id": "cc3",
+      "question": "Differentiate f(x) = 1/x from first principles, identify the step where most errors happen, and explain how the sign of the answer can be checked against the shape of the graph.",
+      "expected_answer": "The difference quotient is [1/(x + h) − 1/x]/h. Combine the fractions over the common denominator x(x + h): the numerator becomes x − (x + h) = −h, so the quotient is −h/[h·x(x + h)]. Cancelling h leaves −1/[x(x + h)], and letting h approach 0 gives f′(x) = −1/x². The error-prone step is the subtraction: each numerator must be adjusted for the common denominator, and the whole quantity (x + h) must be subtracted inside its bracket — x − (x + h) equals −h, not h; dropping the bracket destroys the minus sign that belongs in the final answer. Sign check: y = 1/x is a hyperbola falling from left to right on each branch, so its gradient must be negative throughout its domain, and −1/x² is negative for every non-zero x. When the algebra and the picture agree, the result is confirmed."
+    }
+  ]
+}

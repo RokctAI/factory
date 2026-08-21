@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Bivariate Data and the Scatterplot",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Bivariate data means:",
+          "options": [
+            "Two numbers per individual, kept paired",
+            "Two separate unrelated lists",
+            "Data measured twice for accuracy",
+            "Data with two outliers"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "On a scatterplot, the explanatory variable goes:",
+          "options": [
+            "On the vertical axis",
+            "On the horizontal axis",
+            "On whichever axis is longer",
+            "In the legend"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The three judgements when reading a scatterplot are:",
+          "options": [
+            "Mean, median, mode",
+            "Slope, intercept, residual",
+            "Direction, form, strength",
+            "Range, quartiles, outliers"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "A learner who completed 7 papers but scored 35 would be:",
+          "options": [
+            "The response variable",
+            "The mean point",
+            "An interpolation",
+            "An outlier demanding investigation"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Least Squares Regression Line",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The least squares line minimises:",
+          "options": [
+            "The sum of the squared vertical misses",
+            "The sum of the raw misses",
+            "The number of dots below the line",
+            "The horizontal distances"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For the practice-paper data the regression line is:",
+          "options": [
+            "y hat = 3,83 + 40,77x",
+            "y hat = 40,77 + 3,83x",
+            "y hat = 58 + 4,5x",
+            "y hat = 40,77 − 3,83x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The gradient b = 3,83 means each extra practice paper:",
+          "options": [
+            "Guarantees a pass",
+            "Adds exactly 3,83 papers",
+            "Raises the predicted mark by about 3,83 percentage points",
+            "Raises every learner's mark by 3,83"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The least squares line ALWAYS passes through:",
+          "options": [
+            "The origin",
+            "The first data point",
+            "The steepest dot",
+            "The mean point (x bar; y bar)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Correlation Coefficient r",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The correlation coefficient r always lies:",
+          "options": [
+            "Between −1 and 1",
+            "Between 0 and 1",
+            "Between 0 and 100",
+            "Above 1 for strong data"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For the practice-paper data, r = 0,99 is described as:",
+          "options": [
+            "Weak and negative",
+            "Moderate and positive",
+            "Very strong, positive, linear",
+            "Perfect causation"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Dots lying on a perfect CURVE can give r near zero because r measures:",
+          "options": [
+            "Curved association only",
+            "Linear association only",
+            "The number of outliers",
+            "The size of the data set"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Shoe size correlates strongly with reading level in children because:",
+          "options": [
+            "Big feet improve reading",
+            "Reading stretches feet",
+            "The correlation is a coincidence",
+            "Age drives both variables"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Prediction, Interpolation and Extrapolation",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Predicting at 5,5 papers (inside the range 2 to 7) is called:",
+          "options": [
+            "Interpolation",
+            "Extrapolation",
+            "Correlation",
+            "Regression to the mean"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The predicted mark for 5,5 papers is about:",
+          "options": [
+            "58 percent",
+            "62 percent",
+            "68 percent",
+            "72 percent"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Predicting at 20 papers gives about 117 percent, which must be:",
+          "options": [
+            "Rounded down to 100",
+            "Averaged with the intercept",
+            "Rejected — extrapolation beyond the data produced an impossible mark",
+            "Accepted since the arithmetic is correct"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Extrapolation is unreliable because:",
+          "options": [
+            "Calculators lose accuracy far from zero",
+            "r changes outside the range",
+            "The intercept moves",
+            "The line's straightness was only verified inside the observed range"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Numbers Per Person",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Scrambling one column of paired data:",
+          "options": [
+            "Destroys the story though every number survives",
+            "Changes nothing since the numbers survive",
+            "Improves the correlation",
+            "Removes the outliers"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "On the pinboard picture, dots are never joined because:",
+          "options": [
+            "Joining is too slow",
+            "Each dot is a separate person, not a journey",
+            "The line must be straight",
+            "The calculator joins them"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The suspected driver goes across; the outcome goes:",
+          "options": [
+            "Across as well",
+            "In the heading",
+            "Up the vertical axis",
+            "Wherever it fits"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The three quick judgements on the photo are:",
+          "options": [
+            "Colour, size, shape",
+            "Mean, spread, outliers",
+            "Axis, scale, units",
+            "Lean, lane and tightness"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Line That Owes the Least",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the ruler picture, each dot's invoice is:",
+          "options": [
+            "Its vertical gap to the ruler — the residual",
+            "Its distance to the origin",
+            "Its horizontal gap to the ruler",
+            "Its distance to the nearest dot"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The invoices are SQUARED so that:",
+          "options": [
+            "The total is always small",
+            "Above and below misses cannot cancel, and big misses cost most",
+            "The units become marks",
+            "Negative marks are possible"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "In y hat = 40,77 + 3,83x, the street meaning of b is:",
+          "options": [
+            "The mark for zero papers",
+            "The mean of the marks",
+            "The price of one practice paper, paid in marks",
+            "The number of learners"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Checking 40,77 + 3,83 × 4,5 = 58 confirms:",
+          "options": [
+            "The data has no outliers",
+            "r equals 0,99",
+            "The intercept is meaningful",
+            "The line balances through the mean point"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "How Tight Is the Queue",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In r, the sign gives the lean and the size gives:",
+          "options": [
+            "How tightly the dots follow the lane",
+            "The gradient of the line",
+            "The number of dots",
+            "The units of measurement"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "A full report of r = 0,99 for this data says:",
+          "options": [
+            "r is large",
+            "Very strong positive linear correlation between papers and marks",
+            "The line is correct",
+            "Practice causes marks"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Strong correlation between two variables licenses the sentence:",
+          "options": [
+            "One variable causes the other",
+            "The variables are unrelated",
+            "The variables are strongly associated",
+            "The data must be linear"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Jumping the fence — predicting at 20 papers — is called:",
+          "options": [
+            "Interpolation",
+            "Correlation",
+            "Regression",
+            "Extrapolation, and it must be flagged as unreliable"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

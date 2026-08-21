@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the formal definition of a function, explain the vertical line test as its graphical form, and explain why many-to-one rules pass the definition while one-to-many rules fail, with an example of each.",
+      "expected_answer": "A function is a relation in which every input in the domain is paired with exactly one output — one in, one out, without exception. Graphically each input is the position of a vertical line, so the vertical line test sweeps vertical lines across the picture: if any vertical line meets the graph more than once, some input has two outputs and the relation is not a function. The definition constrains outputs per input, not inputs per output, so many-to-one is legal: y = x² sends both 4 and −4 to 16 and is still a function, since each individual input yields only one result. One-to-many fails: y² = x gives the single input 16 the two outputs 4 and −4, offering a choice the definition forbids — a sideways parabola that a vertical line cuts twice. That asymmetry is what later determines whether an inverse can be a function."
+    },
+    {
+      "id": "cc2",
+      "question": "Build the inverse of y = 3x − 5 by the swap-and-solve routine, verify it with a pairing, and describe the reflection picture and the swapping of domain and range that accompany every inverse.",
+      "expected_answer": "Swap x and y to get x = 3y − 5, then solve for y: 3y = x + 5, so the inverse is y = (x + 5)/3. Verification: the original sends 2 to 1, so the inverse must send 1 back to 2, and (1 + 5)/3 = 2, confirming the algebra; any pairing that fails to reverse exposes a slip. Geometrically, inverting swaps each point's coordinates — (2; 1) becomes (1; 2) — and swapping coordinates reflects a point across the line y = x, so the inverse's graph is the original's mirror image in that forty-five degree diagonal, with intercepts trading roles: the x intercept of the original becomes the y intercept of the inverse. Domain and range also trade places: the original's inputs become the inverse's outputs and vice versa. The notation f⁻¹ is a label for the reversed function, not an exponent — f⁻¹(x) does not mean 1/f(x)."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the inverse of y = 3x² (unrestricted) is not a function, describe the horizontal line test, and find the inverse when the domain is restricted to x ≤ 0, justifying the choice of sign.",
+      "expected_answer": "Unrestricted, y = 3x² is many-to-one — inputs 2 and −2 both give 12 — so the reversed rule cannot decide which input to return: swapping gives x = 3y², so y = ±√(x/3), and the plus-or-minus means one input receives two outputs, failing the definition of a function. The horizontal line test screens the original: if some horizontal line crosses the graph more than once, two inputs share an output and the inverse will not be a function; only one-to-one originals invert cleanly. Restricting to x ≤ 0 keeps only the left arm, making the function one-to-one. The original's domain becomes the inverse's range, so the inverse's outputs must be zero or negative, which selects the negative root: f⁻¹(x) = −√(x/3). Verification by pairing: the original sends −2 to 12, and −√(12/3) = −√4 = −2, so the pairing reverses correctly."
+    }
+  ]
+}

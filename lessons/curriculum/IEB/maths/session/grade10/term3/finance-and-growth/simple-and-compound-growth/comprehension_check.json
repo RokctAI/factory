@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using the year-by-year numbers from the R4 000 example, explain why compound growth pulls ahead of simple growth even though both deals use the same 7% rate.",
+      "expected_answer": "Simple interest is worked out on the original R4 000 every year — R280 each year, three equal payments, ending at R4 840. Compound interest folds each year's interest into the balance, so year two pays 7% of R4 280 (R299,60) and year three pays 7% of R4 579,60 (R320,57). The extra R19,60 and R40,57 are interest earned by earlier interest, which is exactly the R60,17 gap to R4 900,17."
+    },
+    {
+      "id": "cc2",
+      "question": "One question mentions 'hire purchase' and another says 'compounded annually'. How do you choose the formula for each, and why must the rate be converted to a decimal before substituting?",
+      "expected_answer": "Hire purchase uses simple interest by the standing convention for this topic, so A = P(1 + in); 'compounded annually' — like inflation, savings and population growth — uses A = P(1 + i)ⁿ. The rate must enter as a decimal (7% → 0,07) because i means a fraction of the principal per period; substituting 7 instead of 0,07 makes every answer wrong by a factor of one hundred."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe two different ways to check a compound-growth answer without repeating the identical calculation.",
+      "expected_answer": "Rebuild it year by year: grow the balance by the rate one year at a time (4 000 → 4 280 → 4 579,60 → 4 900,17) and confirm the final amount. Or, for a reverse question where P was found, run the formula forwards with your answer and confirm it returns the target amount (6 910,70 × 1,157625 = 8 000). Simple answers can also be decomposed into equal annual payments on the principal."
+    }
+  ]
+}

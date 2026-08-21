@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the 'upstairs/downstairs' rule using the ladder (sin 50° = h/15) and the guy wire (cos 55° = 20/w), and name the sense check that catches a flipped fraction.",
+      "expected_answer": "Ladder: unknown on top, so multiply — h = 15 sin 50° = 11,49 m. Wire: unknown underneath, so divide the known side by the ratio — w = 20 ÷ cos 55° = 34,87 m. Sense check: the hypotenuse must be the longest side; multiplying by mistake gives 11,47 m, shorter than the 20 m it must exceed, which exposes the error immediately."
+    },
+    {
+      "id": "cc2",
+      "question": "For the East London ramp (rise 1,2 m, run 4 m), solve the whole triangle and state the two disciplines involved.",
+      "expected_answer": "Angle: tan θ = 1,2/4 = 0,3, so θ = tan⁻¹(0,3) = 16,70°. Third angle: 90° − 16,70° = 73,30° (acute angles of a right triangle sum to 90°). Ramp surface by Pythagoras: √(1,44 + 16) = 4,18 m. Disciplines: use Pythagoras rather than rounded trig values when three sides are in play, and keep full calculator accuracy until the final rounding."
+    },
+    {
+      "id": "cc3",
+      "question": "Define angle of elevation and angle of depression, state the alternate-angle fact that links them, and show how each appears in the water-tower and lighthouse problems.",
+      "expected_answer": "Both are measured from the HORIZONTAL: elevation looking up, depression looking down. Because the two horizontals are parallel, the depression from the top equals the elevation from the bottom (alternate angles). Tower: rise = 30 tan 58° = 48,01 m, plus the 1,5 m eye height gives 49,51 m — the observer height must be added back. Lighthouse: move to the ship, use 20° as an elevation: distance = 60 ÷ tan 20° = 164,85 m."
+    }
+  ]
+}

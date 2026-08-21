@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Build the general term for 6; 10; 14; 18, then run both exam directions: term forty, and whether 136 belongs to the pattern.",
+      "expected_answer": "The constant difference 4 is the coefficient, and testing n = 1 shows 4 + 2 = 6, so Tn = 4n + 2, verified on an unused term. Forwards: T40 = 4(40) + 2 = 162. Backwards: 4n + 2 = 136 gives n = 33,5, not a natural number, so 136 is not in the pattern — the fractional position is itself the proof and must be stated."
+    },
+    {
+      "id": "cc2",
+      "question": "Contrast simple and compound growth on R3 000 at 7% for 4 years, and explain how hire purchase and inflation reuse the two formulas.",
+      "expected_answer": "Simple: A = P(1 + in) = 3000(1,28) = R3 840 — the same R210 of interest each year, charged on the original deposit. Compound: A = P(1 + i)^n = 3000(1,07)⁴ ≈ R3 932,39 — interest earns interest, so the snowball pulls ahead and the gap widens yearly. Hire purchase is simple interest on the balance after the deposit for the whole term (R8 000 system: deposit 800, balance 7200 grows to 8640, R360 per month over 24 months). Inflation is the compound formula applied to prices: R250 at 5% for two years is 250(1,05)² ≈ R275,63."
+    },
+    {
+      "id": "cc3",
+      "question": "State the scale-factor law, explain the partial-scaling rule with a cylinder's radius, and give the two catalogue rules for heights and the one-third.",
+      "expected_answer": "Lengths multiply by k, areas by k², volumes by k³ — one factor of k per dimension, so doubling every side gives 8 times the volume. Partial scaling counts appearances: doubling only a cylinder's radius quadruples the volume because r appears squared in πr²h while h is unchanged. Catalogue rules: perpendicular height belongs in volume formulas and slant height on surfaces (cone slant by Pythagoras), and the one-third factor belongs only to cones and pyramids — prisms and cylinders are full strength."
+    }
+  ]
+}

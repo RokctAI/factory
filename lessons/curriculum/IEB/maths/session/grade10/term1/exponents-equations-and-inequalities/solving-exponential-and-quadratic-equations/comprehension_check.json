@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why standard form must come before factorising a quadratic, using (x + 2)(x − 5) = 8 as your example.",
+      "expected_answer": "The zero-product law works for zero only — a product equal to 8 says nothing about either bracket, so setting brackets equal to 8 is meaningless. Expand: x² − 3x − 10 = 8; drive everything across: x² − 3x − 18 = 0; factorise: (x − 6)(x + 3) = 0, giving x = 6 or x = −3. Only when one side reads zero do the brackets speak."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve x² = 7x correctly, and explain what the common wrong method loses and why.",
+      "expected_answer": "Correct: x² − 7x = 0, so x(x − 7) = 0, giving x = 0 or x = 7. The wrong method divides both sides by x to get x = 7 only; dividing by x assumes x ≠ 0, discarding the genuine root x = 0 (which satisfies 0 = 0). Rule: never divide an equation by an expression containing the unknown — factorise instead."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve 2^x + 2^(x+2) = 40 and 4^x = 32, naming the key move in each.",
+      "expected_answer": "First: extract the common power — 2^x(1 + 4) = 40, so 2^x = 8 = 2³ and x = 3 (common-factor move). Second: rewrite both sides on one base — 4^x = (2²)^x = 2^(2x) and 32 = 2⁵, so 2x = 5 and x = 5/2 (same-base move; exponents may only be equated once the bases match, and exact fractional answers stand)."
+    }
+  ]
+}

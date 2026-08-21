@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Laws — and Why They Are True",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "x⁴ × x² simplifies to:",
+          "options": [
+            "x⁸",
+            "x⁶ — same base multiplied, add the exponents",
+            "x²",
+            "2x⁶"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Why does anything nonzero to the power zero equal one?",
+          "options": [
+            "It is an unexplained convention",
+            "Because zero times anything is zero",
+            "Because x⁴/x⁴ is both 1 (a thing divided by itself) and x⁰ (by the subtraction law) — two names for one value",
+            "Because calculators say so"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A negative exponent, such as x⁻³, means:",
+          "options": [
+            "The reciprocal — 1/x³; it is an address, not a sign",
+            "−x³",
+            "−3x",
+            "x³ with the answer made negative"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "(3x)² equals:",
+          "options": [
+            "3x²",
+            "6x²",
+            "9x — the x escapes",
+            "9x² — every factor inside the bracket takes the power"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Simplifying the Expression — Brackets First",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "(3xy²)² expands to:",
+          "options": [
+            "9x²y⁴ — square the 3, square the x, and double y's counter to 4",
+            "3x²y⁴",
+            "9xy⁴",
+            "6x²y⁴"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Gathering 9x²y⁴ × 2x⁻³ gives:",
+          "options": [
+            "18x⁵y⁴",
+            "18x⁻¹y⁴ — coefficients multiply, x-exponents add: 2 + (−3) = −1",
+            "11x⁻¹y⁴",
+            "18x⁻⁶y⁴"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "In the final division, y⁴ over y⁴ disappears because:",
+          "options": [
+            "y is assumed to be zero",
+            "The y's were cancelled illegally",
+            "4 − 4 = 0, and y⁰ = 1",
+            "y⁴ − y⁴ = 0"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The polished final answer for the whole expression is:",
+          "options": [
+            "3x²",
+            "−3x²",
+            "3x⁻² left as is",
+            "3/x² — the negative exponent is moved downstairs for the final form"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Solving Three to the x Plus One Equals Twenty-Seven",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The central move for solving 3^(x+1) = 27 is:",
+          "options": [
+            "Dividing both sides by 3",
+            "Writing both sides as powers of the same base: 3^(x+1) = 3³",
+            "Taking the square root of both sides",
+            "Multiplying the base by the exponent"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Why may the exponents be equated once the bases match?",
+          "options": [
+            "Because equal powers of the same positive base (not 1) can only come from equal exponents",
+            "Because exponents are always equal",
+            "It is an approximation that usually works",
+            "Because 27 is odd"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "If the right side were 1/9 instead of 27, the equation 3^(x+1) = 1/9 gives:",
+          "options": [
+            "x = 3",
+            "x = −1",
+            "x = −3, since 1/9 = 3⁻² so x + 1 = −2",
+            "No solution"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "'Dividing both sides by 3 to peel off the exponent' is wrong because:",
+          "options": [
+            "Division is never allowed in equations",
+            "3 is a prime number",
+            "It changes the base to 9",
+            "Dividing by 3 only lowers the exponent by one — it does not free the exponent, and writing x + 1 = 9 breaks the mathematics"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Error Museum — and the Full Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Writing (3xy²)² as 3x²y⁴ commits which museum error?",
+          "options": [
+            "The coefficient dodged the bracket's power — the 3 must become 9",
+            "Adding exponents across different bases",
+            "Misreading a negative exponent",
+            "Multiplying the base by the exponent"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "x² × y³ does NOT equal xy⁵ because:",
+          "options": [
+            "The exponents should be multiplied instead",
+            "The laws compress only powers of the SAME base — x's and y's live in separate piles",
+            "y³ is larger than x²",
+            "It does equal xy⁵"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "2x⁻³ written correctly with a positive exponent is:",
+          "options": [
+            "−2x³",
+            "−2/x³",
+            "2/x³ — only the x³ moves downstairs; the 2 stays where it is",
+            "1/(2x³)"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The absurdity that convicts 'multiply the base by the exponent' is:",
+          "options": [
+            "2⁰ would equal 2",
+            "x² would equal x",
+            "10¹ would equal 1",
+            "3³ would equal 9 instead of 27"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Exponents Just Count How Many Times",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the counting picture, x⁴ × x² = x⁶ because:",
+          "options": [
+            "Four x's and two x's pushed together make one pile of six",
+            "4 × 2 = 8, rounded down",
+            "The values 4 and 2 are multiplied",
+            "Six is the biggest allowed exponent"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "x² divided by x⁵ leaves 1/x³ because:",
+          "options": [
+            "The x's turn negative",
+            "Two cancel above and three remain standing below — which is also x⁻³ by the subtracting rule",
+            "5 − 2 = 3 so the answer is x³",
+            "Division always gives 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The minus in a negative exponent is best read as:",
+          "options": [
+            "A sign that makes the value negative",
+            "A subtraction waiting to happen",
+            "An address — it sends the power to the other side of the fraction line",
+            "A typographical error"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Everyone in the Taxi Pays the Fare",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The taxi-fare rule for (3xy²)² says:",
+          "options": [
+            "Only the letters pay the fare",
+            "Every passenger inside the bracket — the 3, the x, and the y² — gets squared; nobody rides free",
+            "Only the first passenger pays",
+            "The fare is optional for coefficients"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "'Sorting the washing' during simplification means:",
+          "options": [
+            "Alphabetising the final answer",
+            "Removing all coefficients",
+            "Expanding every bracket fully first",
+            "Working numbers with numbers, x's with x's, y's with y's — separate piles, one law per line"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The quick number check at x = 1, y = 1 gave 3 for the original and 3 for the answer. This shows:",
+          "options": [
+            "The identity is fully proven for all x and y",
+            "The check was unnecessary",
+            "The simplification survives its first test — one substitution catches nearly every slip cheaply",
+            "x must equal 1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Speak Both Sides in the Same Language",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'Translating' 27 in the equation 3^(x+1) = 27 means:",
+          "options": [
+            "Rewriting 27 as 3³ so both sides speak powers of three",
+            "Dividing 27 by 3",
+            "Rounding 27 to 30",
+            "Swapping the sides of the equation"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Solving 2^(x+1) = 32 by the same move gives:",
+          "options": [
+            "x = 5",
+            "x = 4, since 32 = 2⁵ so x + 1 = 5",
+            "x = 16",
+            "x = 31"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "If the right side is 1, the translation is:",
+          "options": [
+            "1 cannot be written as a power of 3",
+            "1 = 3¹",
+            "1 = 3⁰, so the whole exponent equals zero",
+            "1 = 3⁻¹"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Rewriting 3^(x+1) as 3(x + 1) is forbidden because:",
+          "options": [
+            "The bracket is in the wrong place",
+            "It only works for even exponents",
+            "The 3 should be on the right side",
+            "The counter counts multiplications of 3 by itself — it never multiplies the 3; otherwise 3³ would be 9, not 27"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

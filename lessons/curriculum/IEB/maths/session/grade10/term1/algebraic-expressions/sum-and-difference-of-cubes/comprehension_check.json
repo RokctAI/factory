@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using x³ + 8 and x³ − 64 as your examples, explain how the SOAP mnemonic assigns all three signs of a cubes factorisation.",
+      "expected_answer": "SOAP = Same, Opposite, Always Positive. The short bracket copies the question's sign (x + 2 for the sum; x − 4 for the difference); the long bracket's middle term takes the opposite sign (−2x for the sum; +4x for the difference); the final term is always positive (+4; +16). The terms themselves are fixed — square, multiply, square — only the signs change between the two identities."
+    },
+    {
+      "id": "cc2",
+      "question": "A classmate factorises 5x³ − 40 by trying the cubes identity directly and gets stuck. Describe the correct procedure and the general rule it illustrates.",
+      "expected_answer": "Take out the common factor first: 5x³ − 40 = 5(x³ − 8). The bracket is now a difference of cubes, giving 5(x − 2)(x² − 2x + 4). The rule: every factorisation opens with the common factor; cubes are often hidden behind one, and the constant factor stays in the final answer."
+    },
+    {
+      "id": "cc3",
+      "question": "Why does the quadratic bracket of a cubes factorisation never factorise further, and how would you prove your final answer is correct?",
+      "expected_answer": "For x² − 2x + 4 no real pair multiplies to 4 and sums to −2 (and the same failure occurs for every cubes quadratic factor), so it is irreducible at this level — stopping there is part of 'factorise fully'. Prove the answer by expanding: the four middle products must cancel in pairs, leaving exactly the original two terms; any leftover term signals a wrong sign or term."
+    }
+  ]
+}

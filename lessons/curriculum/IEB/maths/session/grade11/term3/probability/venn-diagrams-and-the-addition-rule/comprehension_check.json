@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "In a grade of 150 learners, 75 watch cricket, 60 watch rugby and 25 watch both. Draw the Venn diagram, find how many watch neither sport, calculate P(cricket or rugby), and state the addition rule, explaining why its minus term is necessary.",
+      "expected_answer": "Fill the overlap first: 25 watch both. Subtract outwards: cricket only is 75 − 25 = 50; rugby only is 60 − 25 = 35. The inner regions hold 50 + 25 + 35 = 110, so 150 − 110 = 40 learners watch neither. P(cricket or rugby) = 110/150 = 11/15. The addition rule: P(A or B) = P(A) + P(B) − P(A and B); in these numbers 75/150 + 60/150 − 25/150 = 110/150. The minus term is necessary because adding the two circles counts the overlap twice — the 25 learners in both circles appear once in each — so the double-count must be subtracted exactly once. Without it, 75 + 60 = 135 would overstate the or-count."
+    },
+    {
+      "id": "cc2",
+      "question": "Define mutually exclusive events and complementary events, illustrate both with the single die-roll events 'six' and 'less than three', and explain why mutually exclusive events are not automatically complementary.",
+      "expected_answer": "Mutually exclusive events cannot occur together: P(A and B) = 0, and the addition rule then simplifies to P(A or B) = P(A) + P(B). Complementary events are mutually exclusive AND together exhaust the sample space, so P(not A) = 1 − P(A) and the two probabilities total 1. The events 'six' and 'less than three' share no outcomes, so they are mutually exclusive, and P(six or less than three) = 1/6 + 2/6 = 1/2. They are not complementary, because the outcomes 3, 4 and 5 belong to neither event — the pair leaves part of the sample space uncovered and their probabilities total 1/2, not 1. Complementary therefore requires two checks, not one: no overlap, and nothing left outside. Every complementary pair is mutually exclusive, but a mutually exclusive pair is only complementary if it also fills the whole sample space."
+    },
+    {
+      "id": "cc3",
+      "question": "State the product rule for independence and use it to test whether watching cricket and watching rugby are independent in the 150-learner data. Then explain why two mutually exclusive events with nonzero probabilities can never be independent.",
+      "expected_answer": "The product rule: A and B are independent exactly when P(A and B) = P(A) × P(B). Test: P(cricket) = 75/150 = 0,5 and P(rugby) = 60/150 = 0,4, so the product is 0,5 × 0,4 = 0,2. The actual P(both) = 25/150 ≈ 0,167. Since 0,167 ≠ 0,2, the events are dependent — the overlap is smaller than independence would predict, so the audiences lean apart. The conclusion must be written with both numbers in it, and the test demands exact equality, not nearness. Mutually exclusive events with nonzero probabilities can never be independent because exclusivity is maximum influence: if one event occurs, the other's probability collapses to zero, whereas independence requires the occurrence of one to leave the other's probability unchanged. Formally, P(A and B) = 0 while P(A) × P(B) > 0, so the product test fails automatically."
+    }
+  ]
+}

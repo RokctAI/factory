@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the survey of 50 learners (24 netball, 18 tennis, 10 both), explain why the Venn diagram must be filled overlap-first, and give the four region values.",
+      "expected_answer": "The totals 24 and 18 each already include the 10 both-players, so the overlap must be placed first and then subtracted outward: overlap 10, netball-only 24 − 10 = 14, tennis-only 18 − 10 = 8, and neither 50 − (14 + 10 + 8) = 18. The audit 14 + 10 + 8 + 18 = 50 confirms every learner is placed exactly once."
+    },
+    {
+      "id": "cc2",
+      "question": "State the addition rule and explain, using the survey numbers, exactly what the subtraction removes.",
+      "expected_answer": "P(A or B) = P(A) + P(B) − P(A and B). Adding 24/50 and 18/50 counts the 10 lens learners twice — once in each register — so their probability 10/50 is subtracted once: 24/50 + 18/50 − 10/50 = 32/50 = 0,64. The subtraction removes the double-counted overlap, and skipping it can even push an answer past 1."
+    },
+    {
+      "id": "cc3",
+      "question": "Distinguish mutually exclusive events from complementary events, with one example of each from the lesson.",
+      "expected_answer": "Mutually exclusive events share no outcomes — they cannot happen together (e.g. drawing a card below 3 and a card above 8 from the 1-to-10 box) — but they may leave outcomes uncovered. Complementary events are mutually exclusive AND exhaustive: together they cover the whole sample space, so their probabilities total 1 (e.g. even and odd, or an event and its 'not', like rain and no rain). The card pair is exclusive but not complementary because cards 3 to 8 belong to neither."
+    }
+  ]
+}

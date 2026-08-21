@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write down the four growth and decay formulae, state the sequence type behind simple and compound interest, and evaluate R20 000 invested at 7% per annum compounded annually for 6 years.",
+      "expected_answer": "Simple growth: A = P(1 + in). Compound growth: A = P(1 + i)^n. Simple decay: A = P(1 − in). Compound (reducing balance) decay: A = P(1 − i)^n, with P the start value, A the end value, i the rate per period as a decimal and n the number of periods. Simple interest adds the same rand amount each period — an arithmetic sequence — while compound interest multiplies by the same factor each period — a geometric sequence with ratio 1 + i. For the investment: A = 20 000 × 1,07⁶ = 20 000 × 1,500730 = R30 014,61. The disciplines: match i and n to the compounding period (monthly compounding divides the annual rate by 12 and counts months) and keep full calculator accuracy until the final rounding."
+    },
+    {
+      "id": "cc2",
+      "question": "A delivery van bought for R320 000 is worth R135 000 after 3 years on reducing balance. Find the annual depreciation rate, and state the two checks that protect this kind of calculation.",
+      "expected_answer": "Set up 135 000 = 320 000(1 − i)³. Divide first: (1 − i)³ = 135 000/320 000 = 0,421875. Cube root: 1 − i = 0,75 (since 0,75³ = 0,421875), so i = 0,25 — the van depreciates at 25% per annum. Check one: always divide end by start before rooting, because the root undoes the repeated multiplication and must act on the total factor, not the raw price. Check two: sense-check the side of one — a decay factor must land below one (growth above one); a decay root above one means the fraction was inverted. State the final answer as a percentage."
+    },
+    {
+      "id": "cc3",
+      "question": "How long does R4 000 take to double at 7,5% per annum compounded annually? Show the logarithm step, explain the rounding, and give the value at the end of year 6 for this scenario: R12 000 deposited at 7% p.a. compounded annually, R6 000 added at the end of year 3, and the rate changing to 8% at the end of year 4.",
+      "expected_answer": "Doubling: 1,075^n = 2, so n = log 2/log 1,075 = 0,30103/0,031408 ≈ 9,58 years. Interest lands only at year ends: 1,075⁹ ≈ 1,9172 (not yet double) and 1,075¹⁰ ≈ 2,0610, so the balance first exceeds double at the END of year 10 — round to the crediting schedule, not the nearest number. Timeline: 12 000 × 1,07³ = 14 700,52; plus the deposit gives 20 700,52 at time three; times 1,07 gives 22 149,55 at time four; times 1,08² = 1,1664 gives R25 835,24 at the end of year 6. Every amount grows through every period it is present, and amounts crossing a rate change carry their accumulated value into the new regime."
+    }
+  ]
+}

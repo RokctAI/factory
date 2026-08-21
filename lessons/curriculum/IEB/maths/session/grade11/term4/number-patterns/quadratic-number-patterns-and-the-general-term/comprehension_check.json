@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Show that the sequence 4; 10; 18; 28; 40 is quadratic, and build its general term using the difference-table facts, verifying the result on a term not used in the construction.",
+      "expected_answer": "First differences: 6; 8; 10; 12 — not constant, so the pattern is not linear. Second differences: 2; 2; 2 — constant, the signature of a quadratic pattern Tn = an² + bn + c. The three facts: the second difference equals 2a, so 2a = 2 and a = 1. The first first-difference equals 3a + b, so 3 + b = 6 and b = 3. The first term equals a + b + c, so 1 + 3 + c = 4 and c = 0. Hence Tn = n² + 3n. Verification on unused terms: T4 = 16 + 12 = 28 and T5 = 25 + 15 = 40, both matching the sequence. The order matters — a from the second difference, then b from the first gap (which contains a), then c from the first term (which contains both) — and the finished formula must always be tested on at least one term that played no part in building it."
+    },
+    {
+      "id": "cc2",
+      "question": "For Tn = n² + 3n, determine which term equals 130, and show whether 150 is a term of the pattern, explaining the role of the discriminant and the restrictions on n.",
+      "expected_answer": "Backward questions set the general term equal to the value. For 130: n² + 3n − 130 = 0 factorises to (n + 13)(n − 10) = 0, giving n = 10 or n = −13. Positions must be positive whole numbers, so n = −13 is rejected with that written reason; the tenth term is 130. For 150: n² + 3n − 150 = 0 has discriminant b² − 4ac = 9 + 600 = 609, which is not a perfect square, so the roots are irrational and no natural number n satisfies the equation — 150 is not a term of the pattern. The full chain of conditions for membership is: the equation must have real roots, the relevant root must be rational (perfect-square discriminant), it must be a whole number, and it must be positive. A pattern only lands where its steps land, so values between consecutive terms — like 150, or 22 between 18 and 28 — are simply never visited."
+    },
+    {
+      "id": "cc3",
+      "question": "A landscaper's brick pads use 4, 10, 18 and 28 bricks for pads 1 to 4. Give the general term by the structural route, find the bricks in pad 20 and the pad using 154 bricks, and explain why doing both the difference route and the structural route is good practice.",
+      "expected_answer": "Structurally, pad n is a rectangle of n rows by n + 3 columns — pad 1 is 1 × 4, pad 2 is 2 × 5, pad 3 is 3 × 6 — so Tn = n(n + 3) = n² + 3n, agreeing with the difference-table construction. Forward: pad 20 uses T20 = 400 + 60 = 460 bricks. Backward: n² + 3n − 154 = 0 factorises to (n + 14)(n − 11) = 0, so n = 11 (rejecting −14 since pad numbers are positive); pad 11 uses exactly 154 bricks. Doing both routes is good practice because they are independent: the difference table is the guaranteed fallback that works on any quadratic picture, while the structural reading is faster and shows insight, and two independent routes agreeing on one formula is the strongest verification available — disagreement signals a miscounted figure, the commonest error in context questions. Answers should be phrased in the story's language, with units: 460 bricks, pad 11, and the formula checked against pads 1 and 2 by substitution."
+    }
+  ]
+}

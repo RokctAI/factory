@@ -1,0 +1,9 @@
+Hey, it's Bianca — trig with big angles looks like a wall of formulae, but let me tell you a secret: the whole lesson is one picture. A wheel, one painted arm, and two shadows. The east-west shadow is cosine, the north-south shadow is sine, and tangent is just one shadow divided by the other. Every rule tonight falls out of that picture, so if you remember the wheel, you cannot actually forget the rules.
+
+The signs? They are compass directions, nothing more. Arm pointing west means cosine negative. Arm pointing south means sine negative. Say CAST to yourself and plant the letters around the wheel starting bottom-right: C, A, S, T. In each quarter the letter names the only ratio that stays positive there. That one word replaces half the formula sheet.
+
+The two identities are old friends in new clothes. Tangent equals sine over cosine — that is just the definitions divided. Sine squared plus cosine squared equals one — that is Pythagoras on an arm of length one. You have known Pythagoras since primary school; nobody needs to fear their own old friend.
+
+Reductions feel like the scary part, so here is the three-step recipe that never fails. One: find the home angle — the acute gap between the arm and the horizontal. Two: name the quarter and its CAST letter. Three: write the sign first, then the home angle. Cosine of one fifty? Home angle thirty, second quarter, cosine negative there: minus cos thirty. Ten seconds, done. The only oddball is ninety degrees — it swaps sine and cosine before signing. Horizontal folds keep the function; the vertical one swaps it.
+
+Tonight, do just this: draw the wheel three times from memory, letters and all. That drawing is the entire topic in one sketch, and tomorrow's questions will feel like reading answers off your own picture. Now go tackle the practice questions — the wheel is on your side!

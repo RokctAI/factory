@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A chord lies 8 units from the centre of a circle of radius 17. Find the chord's length, naming the theorem and the hidden triangle that make the calculation work.",
+      "expected_answer": "The perpendicular from the centre bisects the chord, creating a right-angled triangle with the radius 17 as hypotenuse and 8 as one leg. Half-chord = √(17² − 8²) = √225 = 15, so the chord is 30. Every chord-distance question hides this Pythagoras triangle."
+    },
+    {
+      "id": "cc2",
+      "question": "Compute the standard deviation of 3; 5; 9; 11; 12, and explain why the deviations must be squared before averaging.",
+      "expected_answer": "Mean = 8. Deviations: −5, −3, 1, 3, 4 — these sum to zero, because the mean is exactly where deviations cancel; averaging them raw would always give 0. Square them: 25, 9, 1, 9, 16; average = 60/5 = 12 (the variance); root gives σ = √12 ≈ 3,46."
+    },
+    {
+      "id": "cc3",
+      "question": "An R120 000 bakkie depreciates at 20% p.a. Compare its value after 3 years under straight-line and reducing-balance depreciation, and explain why the results differ.",
+      "expected_answer": "Straight-line: 120 000(1 − 0,20×3) = 120 000(0,4) = R48 000 — the same 20% of the original price is lost each year. Reducing balance: 120 000(0,8)³ = R61 440 — each year loses 20% of the remaining value, so losses shrink as the value shrinks. Reducing balance keeps R13 440 more; the wording of the question chooses the formula."
+    }
+  ]
+}

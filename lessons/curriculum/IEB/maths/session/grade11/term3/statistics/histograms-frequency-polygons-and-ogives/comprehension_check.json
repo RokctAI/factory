@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Fifty learners' daily study times are grouped as: [0;15) 4 learners, [15;30) 9, [30;45) 17, [45;60) 12, [60;75) 8. Verify the table, name the modal class, calculate the estimated mean, and explain why it is only an estimate.",
+      "expected_answer": "Verify by totalling the frequencies: 4 + 9 + 17 + 12 + 8 = 50, matching the number of learners. The modal class is [30;45), the class with the highest frequency (17). Estimated mean: assume every learner sits at the class midpoint — midpoints 7,5; 22,5; 37,5; 52,5; 67,5. Products: 4 × 7,5 = 30; 9 × 22,5 = 202,5; 17 × 37,5 = 637,5; 12 × 52,5 = 630; 8 × 67,5 = 540. Sum = 2 040, and 2 040 ÷ 50 = 40,8 minutes. It is an estimate because grouping destroys the individual values: a learner in [30;45) might study 31 or 44 minutes, but the calculation stands everyone at the midpoint, so the answer is the best available approximation, not the true mean."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how to construct the ogive for the study-time data: the cumulative frequency column, where each point is plotted and why, the extra starting point, and two features of the finished curve's shape.",
+      "expected_answer": "Cumulative column: 4, then 4 + 9 = 13, then 13 + 17 = 30, then 30 + 12 = 42, then 42 + 8 = 50; the final value must equal n = 50 as a built-in check. Each cumulative frequency is plotted at the UPPER boundary of its class — (15; 4), (30; 13), (45; 30), (60; 42), (75; 50) — because each running total is only complete at the end of its class: 13 counts the learners below 30 minutes, not below 15 or 22,5. The curve starts at (0; 0), the lower boundary of the first class with zero accumulated, since nothing has accumulated before the first class. Joined smoothly, the curve is a lazy-S: it is steepest where the histogram is tallest (the crowded [30;45) class makes the running total sprint) and flatter where classes are sparse; and it can never slope downward, because a running total only ever adds — a dip means a subtraction error."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the ogive of the 50 study times, explain how to read the median, both quartiles, the interquartile range and the 90th percentile, and how to answer 'how many learners study more than 55 minutes'. Why must every answer say 'approximately'?",
+      "expected_answer": "Every position question is the two-step move: across from the position on the vertical axis to the curve, then down to the value. Median at position n/2 = 25: approximately 41 minutes, consistent with the cumulative column since 13 lie below 30 and 30 below 45, placing the 25th learner inside [30;45). Lower quartile at position n/4 = 12,5: approximately 29 minutes. Upper quartile at 3n/4 = 37,5: approximately 54 minutes. Interquartile range ≈ 54 − 29 = 25 minutes — the span of the middle half of the learners. The 90th percentile sits at position 0,9 × 50 = 45: approximately 66 minutes. For 'more than 55 minutes', reverse the move: up from 55 on the horizontal axis to the curve reads about 38 learners below 55, so 50 − 38 ≈ 12 learners exceed 55 minutes. Every reading must say 'approximately' because the raw values are sealed inside their classes — the ogive delivers estimates — and the construction lines should stay on the graph to show the across-and-down working."
+    }
+  ]
+}

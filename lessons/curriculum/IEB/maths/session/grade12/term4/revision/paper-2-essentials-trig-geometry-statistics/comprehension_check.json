@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the scores 15; 42; 47; 53; 57; 60; 64; 69; 74; 89, give the five-number summary and determine by calculation whether 15 is an outlier.",
+      "expected_answer": "Minimum 15, Q1 = 47, median = (57+60)/2 = 58,5, Q3 = 69, maximum 89. IQR = 69 − 47 = 22; lower fence = 47 − 1,5 × 22 = 14. Since 15 > 14, the minimum lies above the fence and 15 is NOT an outlier — the fence calculation, not visual suspicion, decides."
+    },
+    {
+      "id": "cc2",
+      "question": "Prove the identity sin 2x/(1 + cos 2x) = tan x, naming the face of cos 2x you choose and why.",
+      "expected_answer": "Choose cos 2x = 2cos²x − 1 because it kills the 1 in the denominator: 1 + cos 2x = 2cos²x. Numerator: sin 2x = 2 sin x cos x. LHS = (2 sin x cos x)/(2cos²x) = sin x/cos x = tan x = RHS. Work from one side only; the face choice is the examined skill."
+    },
+    {
+      "id": "cc3",
+      "question": "A triangle has sides 6 and 10 enclosing an angle of 120°. Calculate the third side exactly and the area, and explain why the third side comes out exact.",
+      "expected_answer": "Cosine rule: c² = 36 + 100 − 2(6)(10)cos 120° = 136 − 120(−½) = 136 + 60 = 196, so c = 14 exactly — cos 120° is the special value −½, so no decimals enter. Area = ½(6)(10)sin 120° = 30(√3/2) = 15√3 ≈ 25,98 square units."
+    }
+  ]
+}

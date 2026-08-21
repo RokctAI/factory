@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For y = 2(x + 3)² − 8, state the turning point, axis of symmetry, both intercept sets, domain and range — and describe the balancing check that audits the x-intercepts.",
+      "expected_answer": "Turning point (−3; −8), a minimum since a = 2 > 0; axis of symmetry x = −3. y-intercept: substitute x = 0, giving 2(9) − 8 = 10. x-intercepts: 2(x + 3)² = 8, so (x + 3)² = 4, x + 3 = ±2, giving x = −1 and x = −5. Domain: all real x. Range: y ≥ −8, including the minimum because the parabola genuinely reaches its turning point. The balancing check: x-intercepts always sit symmetrically about the axis, so they must average to it — (−1 + (−5))/2 = −3 confirms the axis; if the average misses the axis, a sign error has crept in."
+    },
+    {
+      "id": "cc2",
+      "question": "For y = 4/(x + 1) − 2 and y = 4 · 2^(x−1) − 8, give each graph's asymptote(s), intercepts, and range, and explain the touch-versus-approach distinction that decides where equals signs belong.",
+      "expected_answer": "Hyperbola: vertical asymptote x = −1 (denominator zero forbidden), horizontal asymptote y = −2 (the fraction never equals zero); y-intercept 4/1 − 2 = 2; x-intercept from 4/(x + 1) = 2, so x = 1; domain all real x except −1, range all real y except −2. Exponential: single horizontal asymptote y = −8 (no vertical asymptote — domain is all real x); y-intercept 4(1/2) − 8 = −6; x-intercept from 2^(x−1) = 2, so x = 2; range y > −8 strictly. Distinction: a parabola touches its turning point, so its range includes the extreme (y ≥ …); hyperbola and exponential only approach their asymptotes, so their ranges use strict exclusions — approaching is not arriving."
+    },
+    {
+      "id": "cc3",
+      "question": "On y = x², compute the average gradient from x = 2 to x = 4, then describe the shrinking-interval table anchored at x = 2 and what its limit means.",
+      "expected_answer": "Average gradient = (16 − 4)/(4 − 2) = 12/2 = 6 — the gradient of the straight line (taut string) joining the two points on the curve. Anchoring at x = 2 and shrinking: to x = 3 gives (9 − 4)/1 = 5; to x = 2,5 gives (6,25 − 4)/0,5 = 4,5; to x = 2,1 gives (4,41 − 4)/0,1 = 4,1. The averages converge on 4, which is the gradient of the curve itself at the instant x = 2 — the limit grade twelve will name the derivative. Discipline: 'between two points' means the direct string calculation; 'at a point' means this limit, and the two must never be confused."
+    }
+  ]
+}

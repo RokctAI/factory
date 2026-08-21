@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Solving Like an Equation — With One Exception",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Solving 5x − 2 ≤ 13 gives:",
+          "options": [
+            "x ≤ 3, with the sign unchanged since we divided by a positive",
+            "x ≥ 3",
+            "x < 3",
+            "x ≤ 15"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The ONE operation that reverses an inequality sign is:",
+          "options": [
+            "Adding a negative number to both sides",
+            "Multiplying or dividing both sides by a NEGATIVE number",
+            "Subtracting the same quantity from both sides",
+            "Dividing both sides by a large positive number"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Solving −3x > 12 correctly gives:",
+          "options": [
+            "x > −4",
+            "x > 4",
+            "x < −4, because dividing by −3 flips the sign",
+            "x < 4"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "How does testing x = 0 expose the WRONG answer 'x > −4' for −3x > 12?",
+          "options": [
+            "Zero makes both sides equal",
+            "Zero is not allowed in inequalities",
+            "Zero satisfies the original inequality",
+            "x = 0 fits the claimed answer, but −3(0) = 0 is NOT greater than 12 — the claim fails its own inequality"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Number Line and Interval Notation",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "A SOLID dot on a number-line sketch means:",
+          "options": [
+            "The boundary is included — the sign carries the bar (≤ or ≥)",
+            "The boundary is excluded",
+            "The number is negative",
+            "The shading changes direction there"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In interval notation, x ≤ 3 is written as:",
+          "options": [
+            "[3 ; ∞)",
+            "(−∞ ; 3] — round at infinity, square at the included 3",
+            "(−∞ ; 3)",
+            "[−∞ ; 3]"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why does infinity ALWAYS take a round bracket?",
+          "options": [
+            "Round brackets are the default",
+            "Infinity is negative",
+            "Infinity can never be reached, so it can never be included as an endpoint",
+            "Square brackets are reserved for zero"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "If the question restricts x to INTEGERS with x ≤ 3, the number-line answer becomes:",
+          "options": [
+            "A continuous shaded stretch",
+            "A single dot at 3",
+            "An empty line",
+            "Separate dots at 3, 2, 1, 0, −1, ... — no continuous shading"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Compound Inequalities — Trapped Between Two Fences",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The golden rule for solving −5 ≤ 3x + 1 < 10 is:",
+          "options": [
+            "Perform every operation on all THREE parts simultaneously",
+            "Solve the left half first, then guess the right",
+            "Ignore the middle part",
+            "Work only with the outer numbers"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The solution of −5 ≤ 3x + 1 < 10 is:",
+          "options": [
+            "−2 < x < 3",
+            "−2 ≤ x < 3 — minus two included, three excluded",
+            "−2 ≤ x ≤ 3",
+            "−6 ≤ x < 9"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "On the number line, −2 ≤ x < 3 is drawn as:",
+          "options": [
+            "Two arrows pointing outwards",
+            "Hollow dots at both ends",
+            "A solid dot at −2, a hollow dot at 3, and shading only between them — no arrows",
+            "A solid dot at 3 with shading to the right"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "If a compound inequality is divided through by a NEGATIVE number:",
+          "options": [
+            "Only the left sign flips",
+            "Nothing changes",
+            "The middle part is discarded",
+            "BOTH signs reverse, and the statement is rewritten with the smaller value on the left"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Word Problems, Integers, and the Trap Museum",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The stallholder pays R150 for her stand and sells vetkoek at R15 each. 'Profit of at least R450' translates to:",
+          "options": [
+            "15n − 150 ≥ 450",
+            "15n + 150 ≥ 450",
+            "15n − 150 > 450",
+            "150n − 15 ≥ 450"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The solution n ≥ 40 is checked at the boundary by:",
+          "options": [
+            "Substituting n = 0",
+            "40 × 15 = 600, minus the R150 fee, leaves exactly R450 — 'at least' is satisfied by 40 itself",
+            "Rounding 40 up to 41",
+            "Doubling the fee"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Which phrase means STRICTLY greater than?",
+          "options": [
+            "At least",
+            "No less than",
+            "Exceeds",
+            "Maximum"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The trap-museum exhibit called the 'phantom flip' is:",
+          "options": [
+            "Flipping the sign twice when dividing by a negative",
+            "Forgetting the dot entirely",
+            "Shading both sides of the boundary",
+            "Reversing the sign merely because a negative number was ADDED or subtracted — where no flip belongs"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Debt Turns Everything Upside Down",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "R400 beats R250 in your pocket, but owing R400 is worse than owing R250. This explains why:",
+          "options": [
+            "Multiplying both sides of an inequality by a negative must flip the sign — amounts dragged into debt reverse their order",
+            "Debt makes all inequalities false",
+            "Bigger numbers always win",
+            "Addition flips inequality signs"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In symbols, the debt picture says:",
+          "options": [
+            "−400 > −250",
+            "400 > 250 but −400 < −250",
+            "400 < 250",
+            "−400 = −250"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The ten-second defence against flip errors is:",
+          "options": [
+            "Memorising the rule harder",
+            "Avoiding negative numbers entirely",
+            "Testing one value from your answer in the ORIGINAL inequality — it must satisfy it",
+            "Asking a friend"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Dots, Shading, and the Word \"Or\"",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "'Sixteen and older admitted' versus 'older than sixteen': the sixteen-year-old at the gate:",
+          "options": [
+            "Walks in under the first sign but stays outside under the second — the boundary's fate hangs on one word",
+            "Is refused by both",
+            "Is admitted by both",
+            "Must wait a year either way"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In interval notation, the square bracket plays the same role as:",
+          "options": [
+            "The arrowhead",
+            "The shading",
+            "The hollow dot",
+            "The filled dot — the boundary is admitted"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The ordering rule for writing an interval is:",
+          "options": [
+            "The smaller number stands first, matching the number line's own direction",
+            "The larger number stands first",
+            "Order does not matter",
+            "Positive numbers always come first"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Between Two Fences, and the Vetkoek Test",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'At least fourteen but under nineteen' puts the two gates at:",
+          "options": [
+            "14 excluded, 19 included",
+            "14 included (solid dot), 19 excluded (hollow dot)",
+            "Both included",
+            "Both excluded"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Solving −5 ≤ 3x + 1 < 10 'like serving all three plates together' means:",
+          "options": [
+            "Solving two separate equations",
+            "Working left to right one part at a time",
+            "Subtracting 1 from all three parts, then dividing all three by 3, landing on −2 ≤ x < 3",
+            "Multiplying the outer parts only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Why is the dot at n = 40 filled in the vetkoek answer?",
+          "options": [
+            "Because 40 is an even number",
+            "Because dots at multiples of ten are always filled",
+            "Because the shading needs an endpoint",
+            "Because the fortieth vetkoek lands the profit at exactly R450, and 'at least' includes hitting the target exactly"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The full-marks final line of a context question speaks:",
+          "options": [
+            "The story's language — 'she must sell at least forty vetkoek', not just 'n ≥ 40'",
+            "Pure symbols only",
+            "Interval notation only",
+            "Whatever is fastest to write"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

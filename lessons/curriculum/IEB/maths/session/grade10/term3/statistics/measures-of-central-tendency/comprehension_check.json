@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using the reading-time data, explain how one outlier of 130 minutes affects the mean and the median differently, and which measure you would then report.",
+      "expected_answer": "The mean feels every value: the sum jumps from 180 to 310, so the mean leaps from 20 to 31 minutes, leaving nine of the ten learners below the 'typical' value. The median only responds to position: with ten ordered values it moves from 19 to (19 + 22)/2 = 20,5 — barely a flicker, because the outlier is just one more body at the end of the queue. Report the median, because the data contains an outlier which distorts the mean."
+    },
+    {
+      "id": "cc2",
+      "question": "For the grouped table of fifty marks, explain why the mean can only be estimated and show how the estimate of 65 percent is built.",
+      "expected_answer": "Grouping destroys the individual marks — fourteen learners sit somewhere in 70–80 but nobody knows where — so each learner is treated as sitting at the interval midpoint (45, 55, 65, 75, 85). Multiply midpoints by frequencies: 270 + 660 + 845 + 1 050 + 425 = 3 250, then divide by 50 to get an estimated mean of 65 percent. The word 'estimated' is essential because the midpoint assumption is a fair guess, not a fact."
+    },
+    {
+      "id": "cc3",
+      "question": "State the modal interval and median interval of the grouped data, and comment on why the estimated mean disagrees with the modal interval.",
+      "expected_answer": "The modal interval is 70 to below 80 (highest frequency, 14) — the answer is the interval, not the 14. Cumulative frequencies 6, 18, 31 place the 25th and 26th values in the third class, so the median interval is 60 to below 70. The estimated mean of 65 sits below the modal class because the tail of weaker marks in the forties and fifties drags the mean down."
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Language of Probability",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "For one spin of a fair spinner with eight equal sectors numbered 1 to 8, the sample space S has:",
+          "options": [
+            "n(S) = 8",
+            "n(S) = 1",
+            "n(S) = 2, spin or no spin",
+            "n(S) = 36"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The event 'landing on a multiple of three' on the 1-to-8 spinner contains:",
+          "options": [
+            "3, 6 and 9",
+            "3 and 6, so n(E) = 2",
+            "only 3",
+            "1, 3, 5 and 7"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A learner's calculation produces a probability of 1,3. What does the 0-to-1 scale say?",
+          "options": [
+            "The event is more than certain",
+            "The answer is fine if converted to 130%",
+            "The answer is wrong — no probability can exceed 1, so the calculation contains an error",
+            "The answer should be rounded down to 1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Theoretical Probability",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "On the fair 1-to-8 spinner, P(multiple of three) is:",
+          "options": [
+            "2/8 = 1/4",
+            "3/8",
+            "1/3",
+            "2/3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A bag holds 4 yellow, 5 purple and 3 orange marbles. P(purple) is:",
+          "options": [
+            "1/3, since purple is one of three colours",
+            "5/7",
+            "5/12",
+            "1/2"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "From the same bag, P(yellow or orange) is:",
+          "options": [
+            "2/3, two colours out of three",
+            "(4 + 3)/12 = 7/12",
+            "4/12 × 3/12",
+            "12/7"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Why is the denominator for the marble bag 12 and never 3?",
+          "options": [
+            "Because 12 is divisible by 3",
+            "Because the equally likely outcomes are the individual marbles, not the colours",
+            "Because probabilities must have even denominators",
+            "Because three colours would make the fraction improper"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Relative Frequency",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "A drawing pin is tossed 250 times and lands point-up 90 times. The relative frequency of point-up is:",
+          "options": [
+            "90/250 = 0,36",
+            "250/90 ≈ 2,78",
+            "90/100 = 0,9",
+            "0,5, because there are two outcomes"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Why can the drawing pin's probability not be found theoretically?",
+          "options": [
+            "Drawing pins are too small to count",
+            "Its lopsided shape means point-up and point-down are not equally likely, so counting outcomes proves nothing",
+            "The sample space is infinite",
+            "Theoretical probability only works for numbers, not objects"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "As the number of trials grows from 10 to 250 to 2 500, the relative frequency:",
+          "options": [
+            "swings more and more wildly",
+            "always increases",
+            "settles toward a steady value — the estimate becomes more trustworthy",
+            "must reach exactly 0,5"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A fair coin shows 33 heads in 60 tosses (0,55). A second coin shows 70% heads over 3 000 tosses. The correct judgement is:",
+          "options": [
+            "Both coins are biased",
+            "Both results are normal wobble",
+            "The first coin is biased; the second is fine",
+            "The first is normal small-sample wobble; the second is strong evidence of a weighted coin"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Complementary Events",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "On the 1-to-8 spinner, P(not landing on 8) is:",
+          "options": [
+            "1/8",
+            "1 − 1/8 = 7/8",
+            "8/9",
+            "0, since 8 is on the spinner"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A forecast gives a 0,25 chance of rain tomorrow. The chance of a dry day is:",
+          "options": [
+            "0,25",
+            "0,5",
+            "1 − 0,25 = 0,75",
+            "impossible to say without data"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "P(A) + P(not A) = 1 because A and its complement are:",
+          "options": [
+            "mutually exclusive and exhaustive — they can never both occur, yet one of them must",
+            "independent events",
+            "equally likely",
+            "both certain"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "From the bag of 4 yellow, 5 purple and 3 orange marbles, P(not orange) computed two ways gives:",
+          "options": [
+            "1 − 3/12 = 3/4, confirmed by the 9 non-orange marbles out of 12",
+            "1 − 3/12 = 1/4",
+            "3/12 both ways",
+            "1 − 9/12 = 1/4, confirmed by the 3 orange marbles"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "A Scale From Impossible to Certain",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the volume-slider picture of probability, 'the spinner shows a 9' sits:",
+          "options": [
+            "at full volume — certain",
+            "hard against mute — probability 0, impossible",
+            "exactly in the middle",
+            "just left of full"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Which event belongs exactly at the centre of the slider, at 0,5?",
+          "options": [
+            "The sun rising tomorrow",
+            "Snow in Durban in January",
+            "A tossed coin landing heads",
+            "The spinner showing a number below nine"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The slider acts as an error alarm because:",
+          "options": [
+            "it converts fractions to percentages",
+            "it shows which events are most common",
+            "sliders are used in real laboratories",
+            "no event can sit left of 0 or right of 1, so any calculated value outside that range must be a mistake"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Counting Your Way to a Probability",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Twelve fruit gums: 4 yellow, 5 purple, 3 orange. Eyes shut, packet shaken — the chance of grabbing a purple one is:",
+          "options": [
+            "5/12",
+            "1/3, one colour in three",
+            "5/7",
+            "1/5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The two questions that solve every fair-object problem are:",
+          "options": [
+            "How heavy is each object, and how many are there?",
+            "How many could you grab, and how many of those would make you happy?",
+            "How many colours are there, and which is brightest?",
+            "How many trials were run, and how many succeeded?"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The 'count things, not types' warning means:",
+          "options": [
+            "always count the colours first",
+            "types matter more than totals",
+            "the equal candidates are the individual gums — purple holds 5 tickets in the draw, orange only 3 — so the denominator is 12",
+            "the denominator is the number of groups listed"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Try It a Hundred Times",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "After 250 tosses of the drawing pin, 90 land point-up. Experience estimates P(point-up) as:",
+          "options": [
+            "0,5, because there are two ways to land",
+            "90/250 = 0,36",
+            "160/250 = 0,64",
+            "exactly 1/3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Five tosses showing 3 point-ups is called 'a rumour, not evidence' because:",
+          "options": [
+            "tiny samples wobble far from the true tendency — only large tallies settle near it",
+            "five is an odd number",
+            "drawing pins behave differently in small groups",
+            "the first tosses of any experiment never count"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which pairing of object and engine is correct?",
+          "options": [
+            "Fair spinner: tally 250 spins; drawing pin: count sectors",
+            "Both objects: always run experiments",
+            "Fair spinner: count and divide; drawing pin: gather data and divide occurrences by attempts",
+            "Both objects: count and divide"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

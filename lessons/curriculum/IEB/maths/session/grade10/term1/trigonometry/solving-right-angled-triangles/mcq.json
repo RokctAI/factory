@@ -1,0 +1,346 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Choosing the Ratio, and Finding a Side on Top",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Which side of a right-angled triangle NEVER changes its name when you switch angles?",
+          "options": [
+            "The hypotenuse — it always faces the right angle",
+            "The opposite",
+            "The adjacent",
+            "The shortest side"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A 15 m ladder leans at 50° to the ground. The height it reaches uses which ratio?",
+          "options": [
+            "Cosine — ladder and ground",
+            "Sine — the height is opposite the angle and the ladder is the hypotenuse",
+            "Tangent — height and ladder",
+            "Pythagoras only"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The ladder height works out to 15 × sin 50° = 11,49 m. Which sense check confirms it?",
+          "options": [
+            "11,49 is an odd-looking number, so it must be right",
+            "The answer matches the ladder's length",
+            "sin 50° is greater than 1",
+            "At 45° the ladder would reach about 10,6 m; 50° is steeper, so slightly higher is correct — and the answer stays below the 15 m hypotenuse"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Why can the OPPOSITE side never exceed the hypotenuse?",
+          "options": [
+            "Because triangles are always small",
+            "Because the opposite is always horizontal",
+            "Because sine of any acute angle is less than 1, and opposite = hypotenuse × sine",
+            "It can exceed it in obtuse triangles"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "When the Unknown Sits Underneath",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "For the guy wire: cos 55° = 20/wire. Freeing the unknown requires:",
+          "options": [
+            "Dividing the known side by the ratio: wire = 20 ÷ cos 55°",
+            "Multiplying: wire = 20 × cos 55°",
+            "Subtracting cos 55° from 20",
+            "Using sine instead"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A learner computes the wire as 20 × cos 55° = 11,47 m. What convicts this instantly?",
+          "options": [
+            "The decimals look wrong",
+            "The hypotenuse must be the LONGEST side, yet 11,47 is shorter than the 20 m it must exceed",
+            "cos 55° should have been sin 55°",
+            "Nothing — the answer is fine"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The rule for the unknown's position is:",
+          "options": [
+            "Always divide, whatever the layout",
+            "Always multiply, whatever the layout",
+            "Unknown on top: divide; unknown underneath: multiply",
+            "Unknown on top: multiply; unknown underneath: divide the known side by the ratio"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding Angles, and Solving the Whole Triangle",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The ramp rises 1,2 m over a 4 m run. Its angle comes from:",
+          "options": [
+            "sin⁻¹ of 4/1,2",
+            "tan⁻¹ of 0,3 — inverse tangent of rise over run — giving 16,70°",
+            "cos⁻¹ of 0,3",
+            "tan of 0,3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The triangle's third angle is found by:",
+          "options": [
+            "90° − 16,70° = 73,30°, since the two acute angles of a right triangle sum to 90°",
+            "180° − 16,70°",
+            "Doubling 16,70°",
+            "Another inverse tangent"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The ramp surface (the third side) is best computed by:",
+          "options": [
+            "1,2 × tan 16,70°",
+            "4 × sin 73,30° using the rounded angle",
+            "Pythagoras: √(1,44 + 16) = 4,18 m — exact, with no inherited rounding error",
+            "Estimating from the sketch"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Why must full calculator accuracy be kept until the final line?",
+          "options": [
+            "Because examiners forbid rounding entirely",
+            "Because calculators cannot store rounded numbers",
+            "Because decimals are always exact",
+            "Because rounding an intermediate value (like the angle to 17°) visibly shifts every later answer"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Angles of Elevation and Depression",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Both elevation and depression are ALWAYS measured from:",
+          "options": [
+            "The horizontal — never from the vertical",
+            "The vertical wall or tower",
+            "The line of sight",
+            "The ground only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The angle of depression from a lighthouse top equals the angle of elevation from the ship because:",
+          "options": [
+            "The angles are vertically opposite",
+            "The two horizontals are parallel, making them alternate angles",
+            "Both are complements of 90°",
+            "The sea is flat only near lighthouses"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The water tower: 30 m away, eyes 1,5 m up, elevation 58°. The tower's height is:",
+          "options": [
+            "30 × tan 58° = 48,01 m exactly",
+            "30 × sin 58° + 1,5",
+            "30 × tan 58° + 1,5 = 49,51 m — the eye height is added back",
+            "30 ÷ tan 58° + 1,5"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "From a 60 m lighthouse, depression 20° to a ship. The ship's distance from the base is:",
+          "options": [
+            "60 × tan 20° = 21,84 m",
+            "60 × sin 20°",
+            "60 × cos 20°",
+            "60 ÷ tan 20° = 164,85 m — the unknown adjacent sits underneath, so divide"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Naming the Sides from Where You Stand",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the yard picture, choosing your angle FIRST matters because:",
+          "options": [
+            "Opposite and adjacent swap places when you move to the other corner — labels written before choosing are unreliable",
+            "The hypotenuse changes name as you move",
+            "The diagonal gets longer as you walk",
+            "It is only a style preference"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The whole ratio decision uses:",
+          "options": [
+            "All three sides at once",
+            "Only two sides — the one you know and the one you want; the rest is noise",
+            "The perimeter",
+            "The area of the triangle"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Opposite paired with adjacent calls which ratio?",
+          "options": [
+            "Sine",
+            "Cosine",
+            "Tangent",
+            "Pythagoras"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Upstairs You Multiply, Downstairs You Divide",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The airtime picture: one voucher costs R30, so twelve cost 12 × 30; twelve cost R360, so one costs 360 ÷ 12. The lesson for trig is:",
+          "options": [
+            "The missing number decides whether you multiply or divide — same relationship, opposite moves",
+            "Always multiply with money",
+            "Vouchers and triangles are unrelated",
+            "Division is only for prices"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In cos 55° = 20/wire, the unknown is 'downstairs', so:",
+          "options": [
+            "wire = 20 × cos 55°",
+            "wire = 20 ÷ cos 55° = 34,87 m",
+            "wire = cos 55° ÷ 20",
+            "wire = 55 ÷ 20"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The free safety net after solving for a hypotenuse is:",
+          "options": [
+            "Checking the answer is a whole number",
+            "Recomputing with sine instead",
+            "Checking the angle is less than 45°",
+            "Confirming the hypotenuse is the biggest number in the triangle — if not, the fraction was flipped"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Looking Up and Looking Down",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "When a depression angle confuses you, the rescue move is:",
+          "options": [
+            "Walk yourself to the bottom of the picture and use the same number as an ELEVATION — alternate angles guarantee they match",
+            "Subtract it from 180°",
+            "Measure from the vertical instead",
+            "Ignore it and use Pythagoras"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The learner's triangle at the water tower starts at:",
+          "options": [
+            "The ground",
+            "The top of the tower",
+            "Her EYES — so the 1,5 m below the triangle must be added back at the end",
+            "The base of the tower"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The question to ask at the end of every elevation problem is:",
+          "options": [
+            "Is the answer bigger than 100 m?",
+            "Did my triangle start at ground level, or above it?",
+            "Is the angle acute?",
+            "Did I use all three sides?"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The Port Shepstone result — 164,85 m across open water, measured from the tower — illustrates:",
+          "options": [
+            "That lighthouses must be exactly 60 m tall",
+            "That depression angles are usually 20°",
+            "That ships stay close to shore",
+            "The whole point of trigonometry: measuring distances you cannot physically reach"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

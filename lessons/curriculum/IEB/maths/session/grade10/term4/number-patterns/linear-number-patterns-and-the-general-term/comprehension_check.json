@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Set out the complete recipe for building the general term of a linear pattern, including the check that protects it.",
+      "expected_answer": "Subtract every gap (later term minus earlier term) and confirm the same constant difference d each time. Write Tn = dn + c with the adjustment c = T1 − d, because dn already delivers one full step of d at position one. Then verify by substituting a position you did not use in the construction (n = 1 or n = 3) and confirming the formula returns the known term."
+    },
+    {
+      "id": "cc2",
+      "question": "Using Tn = 5n − 1, explain the forward, backward and membership question types and how each is solved.",
+      "expected_answer": "Forward: substitute the position, T60 = 5(60) − 1 = 299. Backward: set the formula equal to the value and solve, 5n − 1 = 124 gives n = 25, so 124 is the twenty-fifth term. Membership: solve the same equation and judge n — 5n − 1 = 163 gives n = 164/5, not a natural number, which proves 163 is never a term of the sequence."
+    },
+    {
+      "id": "cc3",
+      "question": "In diagram and story problems (matchstick triangles, joined tables, call-out fees), what do d and the adjustment represent, and what counting trap must be avoided?",
+      "expected_answer": "d is what each new step genuinely contributes (two matches per new triangle because a side is shared, the per-hour or per-kilogram rate); the adjustment is the fixed portion (the extra match completing figure one, the flat call-out fee). The trap is shared parts — shared sides and swallowed seats — so count at least three figures carefully and confirm the formula reproduces figure one."
+    }
+  ]
+}

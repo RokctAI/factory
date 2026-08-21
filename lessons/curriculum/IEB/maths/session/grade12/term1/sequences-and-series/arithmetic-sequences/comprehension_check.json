@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define an arithmetic sequence, build the general term T_n = a + (n − 1)d from the structure of the first few terms, and explain why the formula carries n − 1 rather than n.",
+      "expected_answer": "An arithmetic sequence is one whose consecutive terms differ by the same fixed number; that common difference d is any term minus its predecessor, and a negative d simply marks a decreasing sequence. Building the term structure: T_1 = a with no d yet, T_2 = a + d with one copy of d, T_3 = a + 2d with two copies, so position n has accumulated exactly n − 1 copies of d, giving T_n = a + (n − 1)d. The n − 1 appears because the first term is the starting point and carries no jump — the number of additions of d always runs one behind the position. A sound habit is to certify the derived formula against a term you can see: for 4; 11; 18; 25 the formula T_n = 7n − 3 returns T_4 = 25, which matches the list."
+    },
+    {
+      "id": "cc2",
+      "question": "For the sequence 4; 11; 18; 25; ..., determine with full reasoning whether 88 and 150 are terms of the sequence, and state the conclusion for each value.",
+      "expected_answer": "The general term is T_n = 4 + (n − 1)·7 = 7n − 3. For 88: setting 7n − 3 = 88 gives 7n = 91 and n = 13; since 13 is a natural number, 88 is the thirteenth term. For 150: setting 7n − 3 = 150 gives 7n = 153 and n = 153/7 ≈ 21,857, which is not a natural number, so 150 is not a term. Indeed T_21 = 144 and T_22 = 151, so the sequence steps over 150 without landing on it. The conclusion must be written as a sentence — n is not a natural number, therefore the value does not appear — and rounding n up to 22 would wrongly equate 150 with 151."
+    },
+    {
+      "id": "cc3",
+      "question": "The terms x + 3; 2x + 1; 4x − 5 are consecutive terms of an arithmetic sequence. Find x, list the terms, and explain both the property used and the check that certifies the answer.",
+      "expected_answer": "Consecutive gaps in an arithmetic sequence are equal, so the middle term minus the first equals the last term minus the middle: (2x + 1) − (x + 3) = (4x − 5) − (2x + 1). The left side simplifies to x − 2 and the right side to 2x − 6. Setting x − 2 = 2x − 6 gives x = 4. Substituting back, the terms are 7; 9; 11 with a common difference of 2 in both gaps, confirming a genuine arithmetic sequence. The property used is the equal-gap definition, and the check is the substitution: the solution is incomplete until the actual terms are listed and their gaps verified, because a dropped sign when subtracting a bracket — minus (x + 3) must become −x − 3 — is the most common error in this question type."
+    }
+  ]
+}

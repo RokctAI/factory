@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Prove that the opposite sides of a parallelogram are equal, giving a reason for every statement, and explain why drawing the diagonal is the standard opening move.",
+      "expected_answer": "In parallelogram WXYZ, draw diagonal WY, forming triangles WXY and YZW. Angle XWY = angle ZYW (alternate angles, WX ∥ ZY). Angle XYW = angle ZWY (alternate angles, WZ ∥ XY). WY = YW (common side). Two angles and a corresponding side are equal, so triangle WXY ≡ triangle YZW (angle-angle-side). Corresponding parts of congruent triangles are equal, so WX = YZ and XY = ZW; the equality of the opposite angles at X and Z follows from the same congruence. The diagonal is the standard opening because congruence is a tool for triangles, not quadrilaterals: the cut converts a claim about a four-sided figure into a claim about two triangles, where the alternate-angle facts from the parallel sides and the shared diagonal immediately supply the congruence."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish a property from a condition, list the five conditions for a parallelogram, and state the conditions that upgrade a parallelogram to a rectangle or a rhombus.",
+      "expected_answer": "A property states what a parallelogram HAS once its identity is established; a condition states what is ENOUGH to conclude that a figure IS a parallelogram. The direction matters because no property may be quoted about a figure until it has been proved to be a parallelogram. The five conditions: both pairs of opposite sides parallel (the definition); both pairs of opposite sides equal; both pairs of opposite angles equal; the diagonals bisect each other; and one pair of opposite sides both equal AND parallel — the most useful in practice, though both facts about that one pair are required. A parallelogram becomes a rectangle if it has one interior angle of 90°, or if its diagonals are equal. It becomes a rhombus if two adjacent sides are equal, or its diagonals are perpendicular, or its diagonals bisect the interior angles. A parallelogram with equal diagonals meeting at right angles is a square."
+    },
+    {
+      "id": "cc3",
+      "question": "PQRS is a parallelogram with diagonals meeting at T. Points G and H lie on QS with QG = SH. Prove that PGRH is a parallelogram, and describe the strategy that produced the proof.",
+      "expected_answer": "The diagonals of PGRH are PR and GH, and both pass through T, so the condition to aim at is 'the diagonals bisect each other'. QT = TS and PT = TR (diagonals of parallelogram PQRS bisect each other). QG = SH (given). Since G lies between Q and T, and H between T and S, GT = QT − QG and TH = TS − SH; equal lengths subtracted from equal lengths leave equal lengths, so GT = TH. Both diagonals of PGRH are therefore bisected at T (GT = TH and PT = TR), so PGRH is a parallelogram. The strategy: read the target first and choose the condition to aim at, then assemble only the facts that condition needs — working forwards from everything known fills a page and earns little. Every statement must carry its reason, and nothing may be read off the sketch."
+    }
+  ]
+}

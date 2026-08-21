@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the sorted marks 38, 42, 45, 47, 49, 51, 52, 54, 56, 86: construct the five number summary, describe the box-and-whisker diagram it produces, and compare the range with the interquartile range as measures of spread.",
+      "expected_answer": "Minimum 38 and maximum 86. The median of ten values lies between the fifth and sixth: (49 + 51)/2 = 50. The lower quartile is the median of the bottom five (38, 42, 45, 47, 49), which is 45; the upper quartile is the median of the top five (51, 52, 54, 56, 86), which is 54. Summary: 38; 45; 50; 54; 86. The box plot shows a box from 45 to 54 with the median bar at 50, a short left whisker to 38 (7 marks) and a long right whisker to 86 (32 marks). Range = 86 − 38 = 48, but it is controlled entirely by the two extreme values, so one unusual mark owns it. IQR = 54 − 45 = 9, the width of the middle half, unaffected by the extremes — a far more stable description of spread for this data, whose long right whisker already hints at an outlier."
+    },
+    {
+      "id": "cc2",
+      "question": "Five hockey matches produced 3, 5, 8, 10 and 14 goals. Work through the five-step recipe for variance and standard deviation, explaining why the deviations cannot simply be averaged and why the final square root is taken.",
+      "expected_answer": "Step one: mean = 40 ÷ 5 = 8. Step two: deviations −5, −3, 0, 2, 6. These sum to zero — data below the mean exactly balances data above, because the mean is the balance point — so averaging raw deviations always gives zero and says nothing about spread. Step three: square the deviations: 25, 9, 0, 4, 36; squaring makes every term positive so nothing cancels, and punishes large strays more than small ones. Step four: average the squares: 74 ÷ 5 = 14,8 — the variance. Step five: square root: √14,8 ≈ 3,85 — the standard deviation. The root is taken because the variance's units are squared (goals squared), which is meaningless on a scoreboard; the standard deviation returns to the data's own units and reads as the typical distance of a match from the mean of 8 — here nearly four goals."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the marks data (Q1 = 45, Q3 = 54, mean 52, median 50): test whether 86 is an outlier using the fence rule, state what the mean-median comparison says about skewness, and explain which measures should be reported when the outlier is present.",
+      "expected_answer": "IQR = 54 − 45 = 9, and 1,5 × 9 = 13,5. Lower fence: 45 − 13,5 = 31,5; upper fence: 54 + 13,5 = 67,5. Since 86 > 67,5, the value 86 is an outlier — the conclusion must be written as that inequality. Skewness: the mean (52) sits above the median (50) because the long right tail drags the mean towards it — the mean chases the tail — so the data is positively skewed, confirmed by the right whisker of 32 marks against the left's 7. Reporting: mean and standard deviation are fragile — including 86 lifts the mean from about 48,2 to 52 and more than doubles the standard deviation from about 5,5 to about 12,5 — while the median barely moves and the IQR not at all, because quartiles are robust. With the outlier present, report the robust pair, median and interquartile range, and justify the choice in a sentence: the outlier would distort the mean and standard deviation."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using the juice-kiosk data, show how the quartiles are found and state the five-number summary.",
+      "expected_answer": "Order the eleven values: 3, 5, 8, 10, 12, 13, 18, 21, 24, 26, 33. The median is the sixth value, 13. Q1 is the median of the lower five (3, 5, 8, 10, 12), which is 8; Q3 is the median of the upper five (18, 21, 24, 26, 33), which is 24 — with an odd count the median joins neither half. Five-number summary: 3, 8, 13, 24, 33."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the IQR of 16 is trusted more than the range of 30 when the data contains extreme days.",
+      "expected_answer": "The range (33 − 3 = 30) uses only the two most extreme values, so a single freak day owns it completely. The IQR (24 − 8 = 16) measures the width of the middle half of the days, between the quartile fences — the extreme days at 3 and 33 sit outside the fences and cannot stretch it. The IQR is the outlier-resistant range."
+    },
+    {
+      "id": "cc3",
+      "question": "State the quarter-per-section rule and use it to explain the difference between the left whisker (3 to 8) and the right whisker (24 to 33).",
+      "expected_answer": "Each of the four sections of a box plot — left whisker, each half of the box, right whisker — holds one quarter of the data, regardless of its length. The left whisker packs a quarter of the days into five units, so quiet days are tightly bunched and alike; the right whisker spreads the same quarter over nine units, so busy days vary widely. Long means spread, never many — and the longer right side shows the data is skewed to the right."
+    }
+  ]
+}

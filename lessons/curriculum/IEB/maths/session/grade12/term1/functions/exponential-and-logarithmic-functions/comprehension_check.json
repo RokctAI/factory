@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the key features of y = bˣ for b > 1 and for 0 < b < 1 — anchor point, sign of outputs, asymptote, domain and range — and explain why the falling graph is a reflection of the rising one.",
+      "expected_answer": "For any legal base (b positive, b not 1), y = bˣ passes through (0; 1) because b⁰ = 1; its outputs are strictly positive, since no exponent can make a positive base zero or negative; and the x axis, y = 0, is a horizontal asymptote, approached as x runs toward the side where the outputs shrink. The domain is all real x and the range is y > 0. For b > 1 the graph climbs — each step right multiplies by b — while for 0 < b < 1 it falls, each step right multiplying by a fraction. The falling graph is the rising one reflected in the y axis because (1/b)ˣ = b to the power −x: for example one third to the x equals 3 to the minus x, so the base one third curve is the base 3 curve with x reversed. The exponent laws travel with the function: multiply same bases by adding exponents, divide by subtracting, and raise a power to a power by multiplying."
+    },
+    {
+      "id": "cc2",
+      "question": "State the definition of the logarithm, use it to evaluate log base 3 of 81, log base 3 of 1, and log base 3 of one twenty-seventh, and explain why the log of zero or of a negative number does not exist.",
+      "expected_answer": "The statement y = log base b of x means exactly x = bʸ — the logarithm is the exponent to which the base must be raised to produce the input, so every log statement is an exponential statement in a different costume. Log base 3 of 81 asks 3 to the what gives 81; since 3⁴ = 81, the answer is 4. Log base 3 of 1 asks 3 to the what gives 1; the answer is 0, and log of 1 is 0 in every base. Log base 3 of 1/27 asks 3 to the what gives 1/27; since 3⁻³ = 1/27, the answer is −3, showing logs of fractions between 0 and 1 are negative. The base must be positive and not 1, and the input must be strictly positive: b to any power is always positive, so no exponent can produce zero or a negative number — asking for log base 3 of −9 asks 3 to the what gives −9, and no exponent answers, so the expression does not exist."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve 4 × 3ˣ = 108 and 2ˣ = 11 (to two decimals), explaining when a shared base suffices and when the logarithm is required, and state the relationship between y = 2ˣ and y = log base 2 of x with its graphical meaning.",
+      "expected_answer": "For 4 × 3ˣ = 108, first isolate the power: 3ˣ = 27, and since 27 = 3³, matching bases gives x = 3 with no calculator — the shared-base route works whenever both sides can be written over one base. For 2ˣ = 11 no shared base exists, so the definition rewrites the equation in log costume: x = log base 2 of 11, evaluated as log 11 divided by log 2 ≈ 3,46. A size estimate guards the answer: 2³ = 8 and 2⁴ = 16, so x had to lie between 3 and 4, and 3,46 does. The two functions are inverses: swapping x and y in y = 2ˣ gives x = 2ʸ, and since the unknown y sits in an exponent, the definition rewrites it as y = log base 2 of x. Graphically the two curves are mirror twins across the line y = x — the exponential's anchor (0; 1) reflects to the log's (1; 0), its floor y = 0 tips up into the log's wall x = 0, and domain and range trade places."
+    }
+  ]
+}

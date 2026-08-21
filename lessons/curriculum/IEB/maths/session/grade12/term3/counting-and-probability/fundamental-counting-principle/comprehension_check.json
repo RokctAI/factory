@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the fundamental counting principle, apply it to a cupboard of 5 shirts, 2 pairs of jeans and 3 caps, and explain when counts are added rather than multiplied.",
+      "expected_answer": "The fundamental counting principle: if a first task can be done in m ways and, for each of those, a second task can be done in n ways, the two tasks together can be done in m × n ways, and the multiplication chains through any number of decisions. For the cupboard: 5 × 2 × 3 = 30 complete outfits, because every shirt pairs with either pair of jeans and every such pair with each of the three caps. The working method is the slot diagram: one dash per decision in order, the number of surviving options above each, multiplied along. Counts are added only across mutually exclusive alternatives — either-or worlds that cannot both happen, such as a canteen combo or a lunchbox from home — while sequential decisions that happen together always multiply."
+    },
+    {
+      "id": "cc2",
+      "question": "Five debaters sit in a row for a photo. Count the arrangements when: (a) there are no restrictions; (b) the two cousins must sit together; (c) the same two cousins may not sit together. Name the strategy used in each case.",
+      "expected_answer": "(a) Free arrangement: 5 distinct people fill slots with shrinking options, 5 × 4 × 3 × 2 × 1 = 5! = 120. (b) Glue strategy: bind the two cousins into one unit, giving 4 units which arrange in 4! = 24 ways; the cousins can swap inside the unit in 2 ways, so 4! × 2 = 48. The times 2 counts the interior of the glued unit and is the factor most often left out. (c) Complement strategy: not-together equals total minus together, 120 − 48 = 72. The three standard moves are: fill forced positions first, glue for must-be-together, and count the complement for must-be-apart."
+    },
+    {
+      "id": "cc3",
+      "question": "A 5-digit unlock code uses digits 0 to 9. Count the codes with repetition allowed and with all digits different, then find the probability that a randomly generated code has all different digits, and the probability that a random arrangement of the word STAR begins with S.",
+      "expected_answer": "With repetition allowed, each of the five slots has 10 options: 10⁵ = 100 000 codes. With all digits different, the options shrink per slot: 10 × 9 × 8 × 7 × 6 = 30 240. Since a random code makes all 100 000 outcomes equally likely, the probability of all-different digits is 30 240/100 000 = 0,3024 — just under a third. For STAR: the four distinct letters arrange in 4! = 24 ways; arrangements beginning with S force the first slot (1 way) leaving 3! = 6 for the rest, so the probability is 6/24 = 0,25, which matches the direct view that the first letter is one fair choice among four equally likely letters. The routine is always favourable count over total count, with both counts made under the same rules."
+    }
+  ]
+}

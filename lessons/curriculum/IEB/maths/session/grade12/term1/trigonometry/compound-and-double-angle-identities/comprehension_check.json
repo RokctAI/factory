@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the four compound-angle identities, describe the two patterns that organise them, and demonstrate with a numerical example why sine may never be distributed across a bracket.",
+      "expected_answer": "The identities: sin(α + β) = sin α cos β + cos α sin β; sin(α − β) = sin α cos β − cos α sin β; cos(α + β) = cos α cos β − sin α sin β; cos(α − β) = cos α cos β + sin α sin β. The organising patterns: for sine the functions mix (sin cos, cos sin) and the middle sign copies the bracket's sign; for cosine the functions travel in matched pairs (cos cos, sin sin) and the sign flips — plus inside becomes minus outside. Distribution fails because angles combine by rotation, not addition of effects: sin 90° = 1 exactly, but sin 45° + sin 45° ≈ 0,71 + 0,71 = 1,41, an overshoot of about forty percent. The parent identity is cos(α − β), derived from the distance formula on the unit circle, with the other three obtained by substituting −β or using co-functions."
+    },
+    {
+      "id": "cc2",
+      "question": "Using the compound identities, find sine 15° in exact surd form, explain why cos 75° gives the same surd, and show how to collapse cos 50° cos 20° + sin 50° sin 20° without a calculator.",
+      "expected_answer": "Write 15° = 45° − 30°, so sin 15° = sin 45° cos 30° − cos 45° sin 30° = (√2/2)(√3/2) − (√2/2)(1/2) = √6/4 − √2/4 = (√6 − √2)/4, approximately 0,26; the exact surd is required, and only the identity produces it. cos 75° gives the same value because 75° and 15° are complementary, and the cosine of an angle equals the sine of its complement — expanding cos(45° + 30°) = cos 45° cos 30° − sin 45° sin 30° lands on the identical surd. For the reverse skill: cos 50° cos 20° + sin 50° sin 20° matches the pattern cos cos plus sin sin, which is the expansion of cos of a difference, so it equals cos(50° − 20°) = cos 30° = √3/2. Compressing an expansion into a single function is worth as much as expanding."
+    },
+    {
+      "id": "cc3",
+      "question": "Given cos α = −5/13 with 90° < α < 180°, find sin 2α and cos 2α with full quadrant reasoning, and then solve cos 2x + 3 sin x − 2 = 0 for x in [0°; 360°], explaining the choice of face for cos 2x.",
+      "expected_answer": "From sin²α = 1 − 25/169 = 144/169, sin α = ±12/13, and in the second quadrant sine is positive, so sin α = 12/13. Then sin 2α = 2(12/13)(−5/13) = −120/169, and using the face needing only cosine, cos 2α = 2(25/169) − 1 = −119/169. Both values lie legally in [−1; 1], and with both negative, 2α sits in the third quadrant — consistent with α slightly over 90° doubling to slightly over 180°. For the equation, the other term is a sine, so cos 2x wears 1 − 2 sin²x: 1 − 2 sin²x + 3 sin x − 2 = 0 tidies to 2 sin²x − 3 sin x + 1 = 0, factorising as (2 sin x − 1)(sin x − 1) = 0. So sin x = 1/2, giving x = 30° or 150° (quadrants one and two, reference 30°), or sin x = 1, giving x = 90°. The three solutions are 30°, 90° and 150°, and substituting one back — at 150°, cos 300° = 1/2 and 3 sin 150° = 3/2, summing with −2 to zero — certifies the work."
+    }
+  ]
+}

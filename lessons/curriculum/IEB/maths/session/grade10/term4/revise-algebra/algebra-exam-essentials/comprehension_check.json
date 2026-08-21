@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the factorising order and explain why the common factor must come first, using 5x² − 45.",
+      "expected_answer": "Common factor, then difference of squares, then trinomial, then grouping or cubes. Extracting the common factor first simplifies the leftover bracket and often exposes a pattern that was invisible before: 5x² − 45 = 5(x² − 9), and only after the 5 is out does the difference of squares appear, giving 5(x − 3)(x + 3). The expand-back check confirms any factorisation."
+    },
+    {
+      "id": "cc2",
+      "question": "Name the three equation species with their strategies, and identify the forbidden move in each of the quadratic and exponential cases.",
+      "expected_answer": "Linear: gather x on one side, numbers on the other. Quadratic: everything to one side with zero on the other, factorise, set each factor to zero and keep both answers — forbidden move: dividing by the variable, which discards a solution such as x = 0 in x² = 7x. Exponential: force both sides onto the same base and equate exponents — forbidden move: merging a coefficient into the base, since 3 × 5^x is not 15^x; divide the coefficient away first."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the inequality sign flips under negative multiplication or division, and show the flip in −3x + 4 > 19.",
+      "expected_answer": "Multiplying by a negative mirrors the number line, so every order relationship reverses: 2 < 6 but −2 > −6. The flip is forced by that mirror, not a convention. In −3x + 4 > 19: subtract 4 to get −3x > 15, then divide by −3 and flip, giving x < −5. Audit with a value: x = −6 gives 18 + 4 = 22 > 19, true."
+    }
+  ]
+}

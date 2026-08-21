@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Labelling Triangles and the Area Rule",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In the standard labelling of triangle ABC, small letter a names:",
+          "options": [
+            "The side opposite angle A",
+            "The angle at vertex A",
+            "The longest side",
+            "The side between A and B"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "In Area = ½ab·sin C, the angle C must be:",
+          "options": [
+            "The largest angle of the triangle",
+            "The included angle — wedged between sides a and b",
+            "Any angle of the triangle",
+            "A right angle"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The area rule is derived by:",
+          "options": [
+            "Doubling the triangle into a rectangle",
+            "Applying Pythagoras to the longest side",
+            "Dropping a perpendicular so the height becomes a·sin C inside ½ × base × height",
+            "Halving the perimeter"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "With PQ = 6 cm, QR = 11 cm and angle Q = 40°, the area of triangle PQR is:",
+          "options": [
+            "42,42 cm²",
+            "33 cm²",
+            "66 cm²",
+            "½ × 6 × 11 × sin 40° ≈ 21,21 cm²"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Proving and Using the Sine Rule",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The sine rule is proved by:",
+          "options": [
+            "Setting the three versions of the area rule equal and dividing by ½abc",
+            "Applying the cosine rule three times",
+            "Dropping three perpendiculars simultaneously",
+            "Assuming the triangle is isosceles"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The sine rule needs, at minimum:",
+          "options": [
+            "All three sides",
+            "One complete opposite pair — a side with its facing angle — plus one more piece",
+            "Two sides and the included angle",
+            "A right angle somewhere"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "With A = 35°, B = 70° and b = 14 cm, side a equals:",
+          "options": [
+            "14 × sin 70° ÷ sin 35° ≈ 22,93 cm",
+            "14 × sin 35° ≈ 8,03 cm",
+            "14 × sin 35° ÷ sin 70° ≈ 8,55 cm",
+            "14 ÷ sin 35° ≈ 24,41 cm"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The 'unknown on top' habit means:",
+          "options": [
+            "Always writing the largest side first",
+            "Putting the answer in the numerator of the final fraction is wrong",
+            "Writing angles above sides in every fraction",
+            "Choosing the version of the rule that seats the unknown in the numerator, so the last line is a multiplication"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding Angles with the Sine Rule",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "With a = 12, b = 8 and A = 48°, sin B equals:",
+          "options": [
+            "8 × sin 48° ÷ 12 ≈ 0,4954",
+            "12 × sin 48° ÷ 8 ≈ 1,1147",
+            "sin 48° ÷ 8 ≈ 0,0929",
+            "8 ÷ 12 ≈ 0,6667"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The calculator's inverse sine only ever returns:",
+          "options": [
+            "An obtuse angle",
+            "An acute angle — even though a second-quadrant angle shares the same sine",
+            "The largest possible angle",
+            "An angle in radians"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The second candidate for angle B, at 180° − 29,70° = 150,30°, is rejected because:",
+          "options": [
+            "Its sine differs from 0,4954",
+            "It is not a whole number",
+            "150,30° + 48° already exceeds 180°, so no triangle can hold it",
+            "Obtuse angles never occur in triangles"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The habit demanded after every inverse-sine result is:",
+          "options": [
+            "Rounding it to the nearest degree",
+            "Doubling it and checking against 360°",
+            "Taking its cosine as a cross-check",
+            "Computing 180° minus the angle, testing it against the angle sum, and recording the verdict"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Multi-Step Problems — Chaining the Two Rules",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Given A = 44°, B = 58° and c = 20 cm, the area rule cannot fire immediately because:",
+          "options": [
+            "Only one side is known — the rule's price is two sides plus the included angle",
+            "The triangle is obtuse",
+            "The angle sum is incomplete",
+            "The sine rule must always run twice first"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The first step of the chain, angle C, comes free from:",
+          "options": [
+            "The cosine rule",
+            "180° − 44° − 58° = 78° — the angle sum of a triangle",
+            "The exterior-angle theorem",
+            "Measuring the sketch"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Side a is then built as:",
+          "options": [
+            "20 × sin 78° ÷ sin 44° ≈ 28,16 cm",
+            "20 × sin 58° ÷ sin 78° ≈ 17,34 cm",
+            "20 × sin 44° ÷ sin 78° ≈ 14,20 cm",
+            "20 ÷ sin 44° ≈ 28,79 cm"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The final area line uses angle B = 58° because:",
+          "options": [
+            "B is the smallest angle",
+            "B was given first in the question",
+            "58° has the largest sine of the three angles",
+            "Sides a and c meet at vertex B — read off the sketch, so B is the included angle"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Squashed Gate",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the gate picture, sine of the included angle plays the role of:",
+          "options": [
+            "The squash factor — 1 at 90°, shrinking towards 0 as the gate folds flat",
+            "The length of the longer arm",
+            "The perimeter of the cell",
+            "The number of cells in the gate"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "At exactly 90°, the area rule gives:",
+          "options": [
+            "Zero area",
+            "The maximum area, since sin 90° = 1 — and the formula reduces to ½ × base × height",
+            "An undefined value",
+            "Twice the true area"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "At 0° or 180°, the triangle's area is:",
+          "options": [
+            "Half the product of the arms",
+            "Equal to the perimeter",
+            "Zero — the arms lie flat and sine reads 0",
+            "Negative"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The one fatal error with the area rule is:",
+          "options": [
+            "Using centimetres instead of metres",
+            "Halving before multiplying",
+            "Using sine instead of cosine",
+            "Grabbing an angle that is not wedged between the two given sides"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Fair Trade at the Triangle Market",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The trade agreement every triangle honours is:",
+          "options": [
+            "The bigger the angle, the longer the side facing it",
+            "All sides trade at different rates",
+            "The shortest side faces the largest angle",
+            "Equal sides face unequal angles"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The market's fixed exchange rate is set by:",
+          "options": [
+            "The triangle's perimeter",
+            "One complete pair — a known side over the sine of its facing angle, here 14 over sin 70°",
+            "The average of all three sides",
+            "The included angle"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Once the rate is fixed, side a is bought as:",
+          "options": [
+            "The rate divided by sin 35°",
+            "sin 70° times the rate",
+            "sin 35° — its own facing angle — times the rate, giving 8,55",
+            "14 minus the rate"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The 'second suspect' hiding behind every inverse sine is:",
+          "options": [
+            "The reciprocal of the sine",
+            "The angle's complement at 90° minus the answer",
+            "The negative of the angle",
+            "The angle at 180° minus the answer, wearing the same sine"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Planning the Route Before You Drive",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Multi-step planning starts by:",
+          "options": [
+            "Taking stock — known sides, known angles, complete pairs, and what the destination formula needs",
+            "Computing every possible sine",
+            "Guessing the final answer's size",
+            "Choosing the rule with the shortest name"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The area rule's fixed fare is:",
+          "options": [
+            "One side and two angles",
+            "Two sides plus the angle wedged between them",
+            "Three angles",
+            "The perpendicular height only"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The route in the worked example ran:",
+          "options": [
+            "Area rule first, then two sine rules",
+            "Cosine rule, then area rule",
+            "Free third angle (78°), sine rule for the second side (14,20), area rule to finish (120,45 cm²)",
+            "Three applications of the sine rule"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Stating which rule is used and why, at every step, matters because:",
+          "options": [
+            "It lengthens the answer to look thorough",
+            "It is required only for the cosine rule",
+            "It replaces the need for a sketch",
+            "The written reason earns its own credit and forces the entitlement check"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

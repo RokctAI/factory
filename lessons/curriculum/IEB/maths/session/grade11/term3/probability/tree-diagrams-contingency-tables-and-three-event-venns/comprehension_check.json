@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "In a survey of 120 learners: 4 do all three of choir, drama and chess; 12 do choir and drama only; 9 do choir and chess only; 7 do drama and chess only; 25 do choir only; 18 drama only; 20 chess only. Complete the Venn diagram, find how many do no activity, and calculate P(exactly one activity) and P(at least two activities). Explain the reading rule for 'and' versus 'only'.",
+      "expected_answer": "Fill from the centre outwards: 4 in the centre; the exactly-two regions take 12, 9 and 7 directly, because 'only' marks them as clean region counts; the single-activity regions take 25, 18 and 20. The placed regions sum to 25 + 18 + 20 + 12 + 9 + 7 + 4 = 95, so 120 − 95 = 25 learners do no activity. P(exactly one) = (25 + 18 + 20)/120 = 63/120 = 21/40. P(at least two) = (12 + 9 + 7 + 4)/120 = 32/120 = 4/15. The reading rule: a clue containing 'only' or 'but not' names one region exactly and goes straight in; a bare 'and' clue — such as '12 do choir and drama' — counts everyone in both activities including the all-three centre, so the exactly-two region would receive 12 − 4 = 8. The audit is to sum all eight regions and confirm the population total of 120."
+    },
+    {
+      "id": "cc2",
+      "question": "A packet holds 4 orange and 2 mint sweets; two are drawn without replacement. Build the tree diagram, find P(two orange), P(one of each flavour) and P(two mint), and state the audit that confirms the tree is correct.",
+      "expected_answer": "Stage one: P(orange) = 4/6, P(mint) = 2/6. Stage two is conditional on the first draw because the packet remembers: after an orange, 3 orange and 2 mint remain, giving branches 3/5 and 2/5; after a mint, 4 orange and 1 mint remain, giving branches 4/5 and 1/5. Multiply along paths: P(orange then orange) = 4/6 × 3/5 = 12/30 = 2/5. P(one of each) adds the two qualifying paths: orange-then-mint 4/6 × 2/5 = 8/30 and mint-then-orange 2/6 × 4/5 = 8/30, together 16/30 = 8/15. P(mint then mint) = 2/6 × 1/5 = 2/30 = 1/15. The audit: the four path products 12/30 + 8/30 + 8/30 + 2/30 must total exactly 1 — they give 30/30 — because the paths list every possible future. If the products miss 1, some branch probability is wrong."
+    },
+    {
+      "id": "cc3",
+      "question": "A school of 160 learners is classified by gender and transport: 24 boys cycle and 36 walk; 40 girls cycle and 60 walk. Draw up the contingency table with margins, calculate P(boy who cycles), and test with justification whether gender and transport are independent. What single change of numbers would make them dependent?",
+      "expected_answer": "Margins: 60 boys, 100 girls; 64 cyclists, 96 walkers; grand total 160. P(boy who cycles) = 24/160 = 0,15. Product test: P(boy) = 60/160 = 0,375 and P(cycles) = 64/160 = 0,4, so P(boy) × P(cycles) = 0,375 × 0,4 = 0,15, which equals the actual cell probability of 0,15 — the events are independent, and in a two-by-two table one passing cell means the two characteristics are independent throughout. The same verdict shows in the rows: 24/60 = 40% of boys cycle and 40/100 = 40% of girls cycle — identical rates, so gender carries no information about transport. Tilting the data — for example 30 boys cycling and 34 girls — splits the rates to 50% versus 34%; the cell probability becomes 30/160 = 0,1875 against the expected 0,15, the product test fails, and transport then depends on gender. The full answer always ends with a sentence quoting both compared numbers."
+    }
+  ]
+}

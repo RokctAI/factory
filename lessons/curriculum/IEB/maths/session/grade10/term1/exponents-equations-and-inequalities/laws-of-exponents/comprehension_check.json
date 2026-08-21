@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Simplify (3xy²)² × 2x⁻³ ÷ 6xy⁴ step by step, naming the law used at each move.",
+      "expected_answer": "Bracket first (power to every factor; power-on-power multiplies): (3xy²)² = 9x²y⁴. Gather the numerator (same base multiplied adds exponents): 9x²y⁴ × 2x⁻³ = 18x⁻¹y⁴. Divide base by base (subtract exponents): 18/6 = 3; x: −1 − 1 = −2; y: 4 − 4 = 0 so y⁰ = 1. Result 3x⁻², written finally as 3/x² since a negative exponent is a reciprocal."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why x⁰ = 1 and why x⁻³ = 1/x³, deriving both from the division law rather than quoting them.",
+      "expected_answer": "x⁴/x⁴ equals 1 because anything nonzero divided by itself is 1, and by the subtraction law it also equals x⁰ — so x⁰ = 1. x²/x⁵ equals x⁻³ by subtraction, but direct cancelling leaves 1/x³ (two cancel, three remain below) — so x⁻³ = 1/x³. The negative exponent is an address (move across the fraction line), never a negative sign."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve 3^(x+1) = 27, then state how the method adapts when the right side is 81, 1, and 1/9, and why 'dividing by 3' is not a valid alternative.",
+      "expected_answer": "27 = 3³, so x + 1 = 3 and x = 2 (check: 3³ = 27). For 81 = 3⁴: x = 3. For 1 = 3⁰: x = −1. For 1/9 = 3⁻²: x = −3. The method is always: one shared base, then equate whole exponents. Dividing by 3 merely lowers the exponent by one (3^x = 9 remains to solve); writing x + 1 = 9 is a breakdown of the laws, not a shortcut."
+    }
+  ]
+}

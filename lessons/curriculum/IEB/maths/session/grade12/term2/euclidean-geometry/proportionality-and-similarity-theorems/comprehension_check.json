@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the proportionality theorem and prove it for triangle ABC with D on AB, E on AC and DE parallel to BC, naming the construction and the reason at each step.",
+      "expected_answer": "Theorem: a line drawn parallel to one side of a triangle, cutting the other two sides, divides those sides proportionally — with DE parallel to BC, AD/DB = AE/EC. Proof: construct CD and BE. Triangles ADE and BDE share the height from E perpendicular to line AB, so area ADE / area BDE = AD/DB (triangles with equal heights have areas in the ratio of their bases). Triangles ADE and CED share the height from D perpendicular to line AC, so area ADE / area CED = AE/EC. Triangles BDE and CED have equal areas: they stand on the same base DE and their apexes B and C lie on a line parallel to DE, so their heights on that base are equal. The two ratios share the numerator (area ADE) and have equal denominators, hence AD/DB = AE/EC. The converse also holds — a line dividing two sides of a triangle proportionally is parallel to the third side — and the grade-ten midpoint theorem is the 1:1 special case."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what similarity of triangles means, why equal angles alone are sufficient for triangles, and why the letter order in a similarity statement carries the mathematics. Illustrate with triangle ABC similar to triangle DEF.",
+      "expected_answer": "Two triangles are similar when they have the same shape: all matching angles equal and all matching sides in one common ratio. For polygons in general the conditions are independent — two rectangles of different proportions have equal angles without proportional sides — but for triangles each condition forces the other, so proving two pairs of angles equal (the third pair follows from the angle sum) suffices for similarity. The proof transplants the smaller triangle into the larger: mark H on AB with AH = DE and K on AC with AK = DF; triangle AHK is congruent to DEF by side-angle-side; then angle AHK = angle E = angle B, corresponding angles, so HK is parallel to BC, and the proportionality theorem delivers AH/AB = AK/AC, i.e. DE/AB = DF/AC; repeating from another vertex aligns all three ratios. The order in 'triangle ABC similar to triangle DEF' records the pairing A–D, B–E, C–F of equal angles, and every valid ratio reads off it: AB/DE = BC/EF = AC/DF. Scrambled letters assert pairings of angles that are not equal, so the ratios they generate are wrong."
+    },
+    {
+      "id": "cc3",
+      "question": "Prove the Theorem of Pythagoras using similar triangles: in triangle ABC right-angled at A, with altitude AD drawn to the hypotenuse BC, show that AB² + AC² = BC², and state the companion altitude relation with a numeric example.",
+      "expected_answer": "Triangle ABD and triangle CBA are equiangular: each contains a right angle (at D and at A) and they share the angle at B, so the third angles match and the triangles are similar. From the ordered similarity, AB/CB = BD/BA; cross-multiplying gives AB² = BD × BC. On the other side, triangle ACD and triangle BCA share the angle at C and each contains a right angle, so they are similar and AC² = CD × CB. Adding: AB² + AC² = BD × BC + CD × BC = BC(BD + DC), and since D lies on BC, BD + DC = BC, so AB² + AC² = BC². Each leg squared equals the hypotenuse times that leg's projection onto it, and the companion relation AD² = BD × DC measures the altitude — for example, BD = 9 and DC = 16 give AD² = 144, so AD = 12."
+    }
+  ]
+}

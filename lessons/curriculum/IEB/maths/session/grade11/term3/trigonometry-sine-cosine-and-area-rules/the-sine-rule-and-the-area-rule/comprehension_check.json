@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the triangle-labelling convention, derive the area rule from ½ × base × height, and use it to find the area of triangle PQR where PQ = 6 cm, QR = 11 cm and angle Q = 40°.",
+      "expected_answer": "Convention: in triangle ABC the capitals A, B, C name the angles and the small letters a, b, c name the sides, with each small letter facing its capital — a opposite A, b opposite B, c opposite C. Derivation: drop a perpendicular from B onto side b; in the right-angled triangle at vertex C the hypotenuse is a, so the height h = a·sin C. Substituting into area = ½ × base × height gives area = ½ b(a·sin C) = ½ab·sin C — two sides times the sine of the INCLUDED angle, with the equivalent versions ½bc·sin A and ½ac·sin B. Application: PQ and QR meet at Q, so Q = 40° is included and the rule applies directly: area = ½ × 6 × 11 × sin 40° = 33 × 0,6428 ≈ 21,21 cm². The unit must be squared, and the included-angle check — the given angle sits between the two given sides — must precede the calculation."
+    },
+    {
+      "id": "cc2",
+      "question": "Prove the sine rule from the area rule, and use it to find side a in triangle ABC where A = 35°, B = 70° and b = 14 cm. Why is the 'unknown on top' form recommended?",
+      "expected_answer": "Proof: the three versions of the area rule measure the same triangle, so ½bc·sin A = ½ac·sin B = ½ab·sin C. Dividing every part by ½abc cancels the shared factors, leaving sin A/a = sin B/b = sin C/c — the sine rule — which can be flipped to a/sin A = b/sin B = c/sin C. Application: the complete pair is b = 14 with B = 70°. Writing the flipped form with the unknown on top: a/sin 35° = 14/sin 70°, so a = 14 × sin 35° ÷ sin 70° = 14 × 0,5736 ÷ 0,9397 ≈ 8,55 cm. The unknown-on-top form is recommended because the final line becomes a single multiplication rather than an algebraic rearrangement, which removes the most common manipulation error; and the full calculator values should be held unrounded until the final line, since early rounding shifts the answer and costs accuracy marks."
+    },
+    {
+      "id": "cc3",
+      "question": "In triangle ABC, a = 12 cm, b = 8 cm and A = 48°. Find angle B, explaining the 'second suspect' check. Then outline the route for finding the area of a triangle where A = 44°, B = 58° and c = 20 cm.",
+      "expected_answer": "sin B/b = sin A/a gives sin B = 8 × sin 48° ÷ 12 = 0,4954, so B = 29,7°. The calculator's inverse sine only returns acute angles, but sine is also positive in the second quadrant, so the second suspect is 180° − 29,7° = 150,3°, which has the same sine. Test it against the angle sum: 150,3° + 48° > 180°, so no triangle can hold it — rejected, with the reason written down. (When the obtuse candidate does survive, two triangles fit the data and both must be presented.) Then C = 180° − 48° − 29,7° = 102,3°. Route for the area problem: the area rule needs two sides and the included angle, but only c = 20 is known, so first claim the free third angle C = 180° − 44° − 58° = 78°; then the sine rule builds a = 20 × sin 44° ÷ sin 78° ≈ 14,20 cm; finally sides a and c meet at vertex B, so B = 58° is the included angle and area = ½ × 14,20 × 20 × sin 58° ≈ 120,45 cm² — the free angle first, the missing side second, the area rule last."
+    }
+  ]
+}

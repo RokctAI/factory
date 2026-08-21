@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve −3x > 12, explain WHY the sign flips using the debt picture, and show how one test value defends the answer.",
+      "expected_answer": "Divide by −3 and flip: x < −4. Reason: multiplying/dividing by a negative drags amounts through zero into 'debt' — 400 > 250 but −400 < −250 — so order reverses. Defence: x = −5 gives −3(−5) = 15 > 12 (works); the unflipped claim x > −4 admits x = 0, but −3(0) = 0 is not > 12, so it fails."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve the compound inequality −5 ≤ 3x + 1 < 10, and present the answer as a number-line description and in interval notation.",
+      "expected_answer": "Operate on all three parts: subtract 1 (−6 ≤ 3x < 9), divide by 3 (−2 ≤ x < 3). Number line: solid dot at −2 (included, bar), hollow dot at 3 (excluded, strict), shading only between, no arrows. Interval notation: [−2 ; 3) — square bracket at −2, round at 3, smaller value on the left."
+    },
+    {
+      "id": "cc3",
+      "question": "Translate and solve: a stallholder pays R150 for her stand, sells vetkoek at R15 each, and wants a profit of at least R450. State the final answer in context and justify the boundary dot.",
+      "expected_answer": "Profit: 15n − 150 ≥ 450, so 15n ≥ 600 and n ≥ 40. In context, n is a whole number: she must sell at least forty vetkoek. Boundary check: 40 × 15 = 600, minus 150 gives exactly R450, so 'at least' is met by 40 itself — the dot at 40 is solid/filled."
+    }
+  ]
+}

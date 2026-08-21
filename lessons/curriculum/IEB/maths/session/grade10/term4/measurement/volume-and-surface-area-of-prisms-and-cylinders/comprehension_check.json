@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the single volume law for right prisms and cylinders, and explain with the layer picture why it works.",
+      "expected_answer": "Volume equals the area of the base times the perpendicular height. The solid is a stack of identical thin layers shaped like the base: each layer contributes the same floor area and the height counts the layers, so multiplying one layer's area by the number of layers gives the space inside. The height is the perpendicular distance between the two identical faces, whatever the solid's orientation."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how the net of a cylinder produces the surface area formula, using the tin with radius 4 cm and height 15 cm.",
+      "expected_answer": "The net has two circles of area πr² = 16π each, plus the curved wall which unrolls into a rectangle of height 15 and width equal to the circumference 2πr = 8π, giving 2πrh = 120π. Total: 32π + 120π = 152π cm², about 477,52 cm². The wrapper image — the label slides off flat and wraps once around the rim — regenerates 2πrh whenever needed."
+    },
+    {
+      "id": "cc3",
+      "question": "List the main housekeeping errors in measurement questions and the habits that prevent each one.",
+      "expected_answer": "Using a diameter as a radius — halve the diameter before squaring. Rounding pi mid-working — keep the exact pi form until the final line. Wrong units — cubic units for filling (volume), square units for wrapping (surface area), and divide cm³ by 1000 for litres. Mixed units — convert everything to one unit before multiplying. Dropping the half in a triangular base, and counting faces an open solid does not have — let the story choose the faces."
+    }
+  ]
+}

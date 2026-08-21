@@ -1,0 +1,346 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Two Events in One Picture",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In the survey of 50 learners (24 netball, 18 tennis, 10 both), which region of the Venn diagram must be filled FIRST?",
+          "options": [
+            "The netball-only region",
+            "The overlap, with 10 — because the totals 24 and 18 both already include those learners",
+            "The neither region",
+            "Whichever region is largest"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "With the overlap holding 10, the netball-only and tennis-only regions hold:",
+          "options": [
+            "24 and 18",
+            "34 and 28",
+            "24 − 10 = 14 and 18 − 10 = 8",
+            "10 and 10"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "How many of the 50 learners play neither sport?",
+          "options": [
+            "50 − (14 + 10 + 8) = 18",
+            "50 − 24 − 18 = 8",
+            "50 − 42 = 8",
+            "0 — everyone plays something"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The audit that certifies a completed two-event Venn diagram is:",
+          "options": [
+            "the two circles are the same size",
+            "the overlap is the smallest number",
+            "each circle totals more than the overlap",
+            "all four regions together total the sample space: 14 + 10 + 8 + 18 = 50"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Addition Rule",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The addition rule states that P(A or B) equals:",
+          "options": [
+            "P(A) + P(B)",
+            "P(A) + P(B) − P(A and B)",
+            "P(A) × P(B)",
+            "P(A) − P(B) + P(A and B)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For the survey, P(netball or tennis) is:",
+          "options": [
+            "24/50 + 18/50 = 42/50",
+            "10/50",
+            "24/50 + 18/50 − 10/50 = 32/50 = 0,64",
+            "32/42"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The subtraction in the addition rule exists because:",
+          "options": [
+            "probabilities must always be made smaller",
+            "adding whole circles counts the overlap twice, so it must be removed once",
+            "the sample space is finite",
+            "OR means only one of the events may happen"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Given P(A) = 0,5, P(B) = 0,35 and P(A or B) = 0,7, then P(A and B) is:",
+          "options": [
+            "0,85",
+            "0,2",
+            "0,35",
+            "0,85 − 0,7 = 0,15"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Mutually Exclusive Events",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Two events are mutually exclusive when:",
+          "options": [
+            "they share no outcomes — they can never happen together",
+            "they have the same probability",
+            "together they cover the whole sample space",
+            "one always causes the other"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "On a Venn diagram, mutually exclusive events appear as:",
+          "options": [
+            "two circles with a large overlap",
+            "one circle inside the other",
+            "two separated circles — the intersection region does not exist",
+            "a single circle"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "A card is drawn from a box of cards numbered 1 to 10. P(below 3 or above 8) is:",
+          "options": [
+            "2/10 + 2/10 = 4/10 = 2/5, since the events are mutually exclusive",
+            "2/10 × 2/10 = 4/100",
+            "2/10 + 2/10 − 2/10 = 2/10",
+            "1, because every card is either below 3 or above 8"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Why must you justify mutual exclusivity before using P(A or B) = P(A) + P(B)?",
+          "options": [
+            "Because the short rule always gives smaller answers",
+            "Because markers prefer longer solutions",
+            "Because the short rule is only for spinners and cards",
+            "Because on overlapping events the short rule double-counts the overlap and can even push an answer past 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Complementary Events and Full Machinery Problems",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Complementary events are events that are:",
+          "options": [
+            "mutually exclusive AND exhaustive — no overlap, and together they cover the whole sample space",
+            "merely mutually exclusive",
+            "any two events whose probabilities add to less than 1",
+            "events with equal probabilities"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The card events 'below 3' and 'above 8' are mutually exclusive but NOT complementary because:",
+          "options": [
+            "their probabilities differ",
+            "the cards 3 to 8 belong to neither event, so the pair fails to cover the sample space",
+            "they overlap on the number 3",
+            "complementary events must involve coins"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "For the survey, P(neither sport) computed two ways gives:",
+          "options": [
+            "18/50 = 0,36 directly, and 1 − 0,64 = 0,36 by the complement — both agree",
+            "18/50 = 0,36 and 1 − 0,36 = 0,64 — they disagree",
+            "8/50 both ways",
+            "0,64 both ways"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "P(exactly one of the two sports) uses which regions?",
+          "options": [
+            "All four regions",
+            "The overlap only: 10/50",
+            "Netball-only plus tennis-only: (14 + 8)/50 = 22/50 — the overlap is excluded",
+            "Both full circles: 42/50"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Ropes in the School Hall",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the hall, a learner who plays both netball and tennis stands:",
+          "options": [
+            "with one foot in each ring",
+            "in the lens where the two ropes cross — inside both rings at once",
+            "outside both ropes",
+            "wherever there is space"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Why do the ten both-players walk to the lens FIRST when staging the survey?",
+          "options": [
+            "Because they are hiding inside both team totals — placing them first lets each remaining count be found by subtraction",
+            "Because the lens is in the middle of the hall",
+            "Because both-players are the sportiest",
+            "Because the lens is the largest region"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A learner standing inside the taped rectangle but outside both ropes represents:",
+          "options": [
+            "an error in the diagram",
+            "a learner who plays both sports",
+            "a learner outside the sample space",
+            "a learner in the grade who plays neither sport"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Why We Subtract the Overlap",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The registers say 24 netball and 18 tennis, yet only 32 learners stand inside rope. The 10 phantoms exist because:",
+          "options": [
+            "some learners left the hall",
+            "the lens learners appear on BOTH registers — adding registers counts memberships, not people",
+            "the registers were out of date",
+            "netball players were counted at double weight"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The one-move repair for the double-count is:",
+          "options": [
+            "divide the total by two",
+            "remove the lens learners from both registers",
+            "subtract the overlap once: 42 − 10 = 32",
+            "add the neither group: 42 + 18"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "If skipping the subtraction pushes a 'probability' beyond 1, that signals:",
+          "options": [
+            "a very likely event",
+            "the sample space was too small",
+            "the answer should be rounded down to 1",
+            "an overlap was double-counted — the addition rule's built-in alarm has gone off"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Never Together, and Covering Everything",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Rope rings pulled completely apart, sharing no floor, picture events that are:",
+          "options": [
+            "mutually exclusive — 'both' is not a place that exists",
+            "complementary in every case",
+            "independent",
+            "certain"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The open-floor test says complementary events require:",
+          "options": [
+            "some learners left standing on open floor",
+            "no overlap AND no open floor — everyone stands in exactly one of the two regions",
+            "two rings of equal size",
+            "at least one learner in the lens"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "'Below 3' and 'above 8' on the 1-to-10 card box are exclusive but not complementary because:",
+          "options": [
+            "their probabilities are unequal",
+            "no card can be both, but complementary pairs must involve exactly two cards",
+            "the cards 3 to 8 are left standing on the open floor — the pair leaves leftovers",
+            "the events overlap on 8"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

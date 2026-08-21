@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Venn Diagrams with Three Events",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Three overlapping circles inside a rectangle divide the sample space into:",
+          "options": [
+            "Six regions",
+            "Three regions",
+            "Eight regions",
+            "Twelve regions"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "If a question says '12 do choir AND drama' (no 'only'), the exactly-two region gets:",
+          "options": [
+            "12 minus the centre count, because the and-count includes those doing all three",
+            "12, straight in",
+            "12 plus the centre count",
+            "Double the centre count"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "In the survey of 120 learners, the number doing NO activity is:",
+          "options": [
+            "35",
+            "25",
+            "95",
+            "63"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "P(a random learner does at least two activities) equals:",
+          "options": [
+            "63/120",
+            "4/120",
+            "32/120 = 4/15",
+            "50/120"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Tree Diagrams — Events in Sequence",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Drawing without replacement means the second-stage branches must:",
+          "options": [
+            "Copy the first-stage probabilities exactly",
+            "Always be equal to a half",
+            "Keep the original denominator of 6",
+            "Be conditioned on the branch you sit on — the remaining sweets have changed"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "With 4 orange and 2 mint sweets drawn without replacement, P(orange then orange) is:",
+          "options": [
+            "4/9",
+            "2/5",
+            "1/3",
+            "16/36"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "P(one sweet of each flavour) is found by:",
+          "options": [
+            "Adding the two qualifying paths: 8/30 + 8/30 = 8/15",
+            "Multiplying the two qualifying paths together",
+            "Taking 1 minus P(orange then orange)",
+            "Averaging P(orange) and P(mint)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The audit for any completed tree diagram is:",
+          "options": [
+            "Every branch must equal a half",
+            "All path products must sum to exactly 1",
+            "The number of paths must equal the number of sweets",
+            "The longest path must be the most likely"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Contingency Tables and Testing Independence",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "In the 160-learner table, P(a random learner is a boy who cycles) is:",
+          "options": [
+            "24/60",
+            "24/64",
+            "24/160 = 0,15",
+            "60/160"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Marginal probabilities such as P(cycles) are read from:",
+          "options": [
+            "The row and column totals in the margins",
+            "The centre cell of the table",
+            "The smallest cell in the column",
+            "The grand total divided by four"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Gender and transport are independent in the original table because:",
+          "options": [
+            "Boys and girls have equal totals",
+            "More learners walk than cycle",
+            "The table has two rows and two columns",
+            "P(boy) × P(cycles) = 0,375 × 0,4 = 0,15, exactly matching the cell probability"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Another sign of that independence inside the numbers is:",
+          "options": [
+            "The grand total is exactly 160",
+            "The cycling rate is 40% among boys AND 40% among girls — the rows tell one story",
+            "The margins are all even numbers",
+            "Walkers outnumber cyclists in both rows"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Choosing the Tool and Mixing the Rules",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Sequence language — 'first', 'then', 'without replacement' — calls for:",
+          "options": [
+            "A contingency table",
+            "A three-circle Venn diagram",
+            "A tree diagram",
+            "The complement rule only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A population classified by two characteristics — like gender and transport — calls for:",
+          "options": [
+            "A contingency table with margins",
+            "A tree diagram with four branches",
+            "A single circle",
+            "An ogive"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Wind has probability 0,4; the team wins with 0,35 if windy and 0,7 if calm. P(win) is:",
+          "options": [
+            "0,14",
+            "0,42",
+            "1,05",
+            "0,56"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "That weather calculation uses the tree rules:",
+          "options": [
+            "Multiply along each path, then add the paths where the team wins",
+            "Add along each path, then multiply the paths",
+            "Multiply all four given numbers",
+            "Subtract the smaller path from the larger"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Eight Rooms, Filled from the Middle",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the house picture, the middle room is filled first because:",
+          "options": [
+            "It is the biggest room in the house",
+            "Its number is the only one that always arrives clean, needing no interpretation",
+            "The stoep outside depends on it directly",
+            "The heroes arrive earliest"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The word that decides whether to subtract the middle room from a shared-room count is:",
+          "options": [
+            "'And' on its own",
+            "'Neither'",
+            "'At least'",
+            "'Only' or 'but not'"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The 25 learners on the stoep represent:",
+          "options": [
+            "Those who do no activity at all",
+            "Those who do all three activities",
+            "The chess-only members",
+            "Those who do exactly one activity"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "'Exactly one activity' is answered by pointing at:",
+          "options": [
+            "The middle room only",
+            "The three loyal single-activity rooms: 63 of 120",
+            "Every room including the stoep",
+            "The three shared rooms"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Sweet Packet Remembers",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "'The packet remembers' means:",
+          "options": [
+            "The sweets are drawn in flavour order",
+            "Orange sweets are stickier than mint",
+            "The first draw has no effect on the second",
+            "Each draw changes the world the next draw faces — the events are dependent"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Following one path of the tree — orange THEN orange — is:",
+          "options": [
+            "An and-story, so the probabilities multiply",
+            "An or-story, so the probabilities add",
+            "A complement, so subtract from 1",
+            "Independent, so the branches are equal"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "After a mint sweet is eaten first, the second draw's branches are:",
+          "options": [
+            "3/5 orange and 2/5 mint",
+            "4/5 orange and 1/5 mint",
+            "2/3 orange and 1/3 mint",
+            "1/5 orange and 4/5 mint"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The 'receipt' at the end of every tree question is:",
+          "options": [
+            "Counting that the tree has exactly four branches",
+            "Checking the first-stage probabilities are equal",
+            "Adding all path products and confirming they total exactly 1",
+            "Multiplying all path products together"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Register at the School Gate",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In the register picture, independence between gender and transport means:",
+          "options": [
+            "The rows tell the same story — cycling rates match across genders",
+            "Boys and girls are equal in number",
+            "Every cell of the table is equal",
+            "Nobody cycles to school"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "In the original register, the cycling rate among boys is 24 out of 60, which is:",
+          "options": [
+            "24%",
+            "15%",
+            "37,5%",
+            "40%"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "In the tilted data — 30 of 60 boys cycling against 34 of 100 girls — the verdict becomes:",
+          "options": [
+            "Independent, because the cycle total is still 64",
+            "Dependent: the rows split apart, 50% against 34%, and the product test fails",
+            "Mutually exclusive",
+            "Impossible to judge from a table"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A complete answer to a table independence question ends with:",
+          "options": [
+            "The grand total, circled",
+            "A redrawn version of the table",
+            "A written sentence giving the verdict with both compared numbers in it",
+            "The percentages only, no conclusion"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

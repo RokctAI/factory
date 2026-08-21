@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the cancelling law, and use x = 1 to show why striking the x² terms out of (x² − 25)/(x² + 8x + 15) destroys the expression, while cancelling (x + 5) after factorising does not.",
+      "expected_answer": "Only a factor of the whole numerator and whole denominator may cancel; terms (parts joined by + or −) may not. At x = 1 the original equals −24/24 = −1. Striking the x² terms gives a different value, so it changed the expression. Factorised, (x − 5)(x + 5)/((x + 3)(x + 5)) → (x − 5)/(x + 3), which at x = 1 gives −4/4 = −1 — the same value, so the cancellation was lawful."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the LCD of 4/(x − 2) − 3/(x² − 4) is (x − 2)(x + 2) and not the product of the two denominators, then complete the subtraction.",
+      "expected_answer": "Factorise first: x² − 4 = (x − 2)(x + 2). The LCD takes each DISTINCT factor once, so it is (x − 2)(x + 2); multiplying the original denominators would duplicate (x − 2) needlessly. Rewrite: (4(x + 2) − 3)/((x − 2)(x + 2)) = (4x + 5)/((x − 2)(x + 2)), which is final since the numerator does not factorise."
+    },
+    {
+      "id": "cc3",
+      "question": "For the division (x² − 1)/(x + 4) ÷ (x + 1)/(x² − 16), give the simplified answer and ALL restrictions, explaining where each restriction comes from.",
+      "expected_answer": "Invert and multiply, factorise, cancel (x + 1) and (x + 4): answer (x − 1)(x − 4). Restrictions come from every denominator that ever existed — x ≠ −4 (first denominator) and x ≠ ±4 (the divisor's denominator x² − 16) — plus the divisor's numerator, x ≠ −1, because dividing by a zero fraction is dividing by zero. Restrictions are read before cancelling and survive it."
+    }
+  ]
+}

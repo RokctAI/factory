@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Recognising a Cube When You See One",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Which list contains ONLY perfect cubes?",
+          "options": [
+            "9, 16, 25, 36",
+            "1, 27, 64, 216",
+            "8, 16, 24, 32",
+            "3, 9, 27, 81"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "In x³ + 8 written as a³ + b³, what are a and b?",
+          "options": [
+            "a = x³, b = 8",
+            "a = x, b = 8",
+            "a = 3, b = 2",
+            "a = x, b = 2"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why do the common-factor, difference-of-squares and trinomial methods all fail on x³ + 8?",
+          "options": [
+            "The terms share only 1, the expression is a SUM of non-squares, and there is no middle term — only the cubes identity fits",
+            "They fail only because 8 is even",
+            "They do not fail — squares would work",
+            "Because x could be negative"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Which expression is ALSO a perfect cube?",
+          "options": [
+            "y⁴",
+            "y⁹, since it equals (y³)³",
+            "3y³ + 1",
+            "y²"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Identity and the SOAP Mnemonic",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In SOAP, the three letters that control the signs stand for:",
+          "options": [
+            "Square, Opposite, Add, Prove",
+            "Sum Of All Products",
+            "Same, Opposite, Always Positive",
+            "Simplify, Order, Apply, Present"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The three TERMS of the long bracket are built in the fixed order:",
+          "options": [
+            "Cube the first, halve the middle, cube the last",
+            "Square the first, multiply the pair, square the last",
+            "Multiply the pair, square the first, square the last",
+            "Double the first, multiply the pair, double the last"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "When (a + b)(a² − ab + b²) is expanded, why does only a³ + b³ remain?",
+          "options": [
+            "The expansion is defined that way by convention",
+            "All six products are equal",
+            "The b³ term is discarded",
+            "−a²b cancels +a²b and +ab² cancels −ab² — the interior terms wipe each other out"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Factorising x Cubed Plus Eight",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The full factorisation of x³ + 8 is:",
+          "options": [
+            "(x + 2)(x² − 2x + 4)",
+            "(x − 2)(x² + 2x + 4)",
+            "(x + 2)(x² + 2x + 4)",
+            "(x + 2)(x + 2)(x + 2)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "A learner writes the long bracket of x³ + 8 as x² − 4x + 4. What went wrong?",
+          "options": [
+            "Nothing — that bracket is correct",
+            "The middle term is a × b = 2x; the learner squared the 2 instead of multiplying it by x",
+            "The last term should be 8",
+            "The first term should be x³"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Why does x² − 2x + 4 stay exactly as it is in the final answer?",
+          "options": [
+            "Because it equals (x − 2)²",
+            "Because it cancels against the short bracket",
+            "No pair of numbers has product 4 and sum −2 — the quadratic factor of a cubes identity never factorises at this level",
+            "Because examiners do not read that far"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Difference Twin and the Full Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "x³ − 64 factorises as:",
+          "options": [
+            "(x − 4)(x² − 4x + 16)",
+            "(x − 4)³",
+            "(x + 4)(x² − 4x − 16)",
+            "(x − 4)(x² + 4x + 16)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "To factorise 5x³ − 40 fully, the correct FIRST move is:",
+          "options": [
+            "Take out the common factor 5, revealing 5(x³ − 8), then apply the cubes identity",
+            "Apply the cubes identity directly to 5x³ and 40",
+            "Divide both terms by x³",
+            "Split the middle term"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "How do the shapes of the answers to x² − 16 and x³ − 64 differ?",
+          "options": [
+            "They factorise identically",
+            "Squares give two linear brackets; cubes give one linear and one quadratic bracket, and the quadratic stays",
+            "Cubes give three linear brackets",
+            "Squares give a quadratic bracket that stays"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "What check should close every cubes factorisation?",
+          "options": [
+            "Substitute x = 1 into the answer only",
+            "Compare the answer with the squares identity",
+            "Expand the brackets and confirm the middle terms cancel back to the original two terms",
+            "No check is needed — identities cannot go wrong"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Cubes Are Just Boxes You Can Stack",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Which number does NOT belong on the list of six perfect cubes?",
+          "options": [
+            "27",
+            "125",
+            "216",
+            "144"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Why is y⁹ a perfect cube?",
+          "options": [
+            "Because y³ stacked three times over builds it — the block being cubed is y³",
+            "Because 9 is an odd number",
+            "Because y⁹ equals 9y",
+            "Because every power of y is a cube"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Two terms joined by a plus, no common factor, no squares anywhere. What is the signal?",
+          "options": [
+            "The expression cannot be factorised at all",
+            "Use the difference of squares anyway",
+            "Test whether each term is something cubed — this is cubes-identity territory",
+            "Split the middle term"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "In x³ + 8, the two 'names' that build the entire answer are:",
+          "options": [
+            "x and 2",
+            "x³ and 8",
+            "3 and 2",
+            "x and 8"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Three Signs, One Bar of Soap",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The skeleton of the LONG bracket is built by:",
+          "options": [
+            "Squaring the first name, multiplying the two names, squaring the last name",
+            "Cubing both names again",
+            "Adding the two names three times",
+            "Doubling each name and adding 1"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "SOAP assigns the three signs as:",
+          "options": [
+            "Opposite, Same, Always Negative",
+            "Same, Opposite, Always Positive",
+            "Same, Same, Opposite",
+            "Opposite, Opposite, Always Positive"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Multiplying (x + 2)(x² − 2x + 4) back out leaves only x³ + 8 because:",
+          "options": [
+            "The brackets are identical",
+            "x is assumed to equal 2",
+            "−2x² cancels +2x², and +4x cancels −4x — the four middle products settle in pairs",
+            "The middle products are simply left out"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The middle term of the long bracket for x³ + 8 is −2x and NOT −4x because:",
+          "options": [
+            "The middle position multiplies the two names (x × 2); it never squares the second one",
+            "4x would make the bracket too long",
+            "2x is always the middle term of every factorisation",
+            "The sign rule forbids 4x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Curtain, the Twin and Knowing When to Stop",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Running SOAP on x³ − 64 gives:",
+          "options": [
+            "(x − 4)(x² − 4x + 16)",
+            "(x + 4)(x² + 4x + 16)",
+            "(x − 4)³",
+            "(x − 4)(x² + 4x + 16)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "'Pulling the curtain' on 5x³ − 40 means:",
+          "options": [
+            "Dividing both terms by x",
+            "Taking out the common factor 5 to reveal 5(x³ − 8)",
+            "Squaring both terms first",
+            "Ignoring the 40"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Why must x² + 4x + 16 be left exactly as it stands?",
+          "options": [
+            "Because it equals (x + 4)²",
+            "Because the short bracket absorbs it",
+            "No pair of numbers multiplies to 16 and adds to 4 — the long bracket never breaks at this level",
+            "Because the question ran out of marks"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "What tells you to reach for the squares method instead of the cubes method?",
+          "options": [
+            "The exponent — 'squared' calls squares, 'cubed' calls cubes",
+            "Whether the numbers are big or small",
+            "Whether the first term contains x",
+            "The sign between the terms only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

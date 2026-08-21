@@ -1,0 +1,322 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Cast of Symbols and the Two Kinds of Growth",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "An interest rate of 7% per annum enters either growth formula as:",
+          "options": [
+            "7",
+            "0,7",
+            "0,07",
+            "1,7 substituted directly for i"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The one-sentence difference between simple and compound growth is that:",
+          "options": [
+            "Compound growth always uses a bigger rate",
+            "Simple interest is calculated on the principal alone; compound interest is calculated on the principal plus all accumulated interest",
+            "Simple growth only applies to loans",
+            "Compound growth runs for more years"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "In A = P(1 + i)^n, the bracket carries the power n because:",
+          "options": [
+            "The growth factor is applied once per period, each time to a balance that has already grown",
+            "n is always the largest number in the question",
+            "Powers make the answer bigger, which banks prefer",
+            "It is a typesetting habit with no meaning"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Simple Growth — Executing A = P(1 + in)",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "R4 000 at 7% per annum simple interest for 3 years accumulates to:",
+          "options": [
+            "R4 900,17",
+            "R4 840",
+            "R840",
+            "R4 210"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Inside the bracket of A = 4 000(1 + 0,07 × 3), the correct order of operations gives:",
+          "options": [
+            "1 + 0,07 = 1,07, then stop",
+            "1,07 × 3 = 3,21",
+            "3 + 0,07 = 3,07",
+            "0,07 × 3 = 0,21, then 1 + 0,21 = 1,21"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The check that confirms a simple-interest answer is:",
+          "options": [
+            "The interest breaks into equal annual payments, each exactly the rate applied to the original principal",
+            "The final amount is a round number",
+            "The interest grows larger every year",
+            "The bracket works out to exactly 1"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Compound Growth — Executing A = P(1 + i)ⁿ",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "R4 000 at 7% per annum compounded annually for 3 years accumulates to:",
+          "options": [
+            "R4 840",
+            "R4 920 exactly",
+            "R4 900,17",
+            "R4 494,40"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Writing A = 4 000(1 + 0,07 × 3) in a question that says 'compounded annually' is wrong because:",
+          "options": [
+            "The principal belongs outside the bracket",
+            "It is the simple formula — under compounding, n must be an exponent: 4 000(1,07)³",
+            "The rate should have been 7, not 0,07",
+            "Nothing is wrong — both forms give the same answer"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The R60,17 gap between the compound and simple answers is explained by:",
+          "options": [
+            "Rounding the growth factor too early",
+            "Interest earned by earlier interest: R19,60 extra in year two and R40,57 extra in year three",
+            "Bank charges on the simple account",
+            "A slightly higher rate in the compound case"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "When should the growth factor 1,225043 be rounded?",
+          "options": [
+            "Immediately, to 1,23",
+            "After every multiplication",
+            "Never — rounding is forbidden in finance",
+            "Only at the final answer, to two decimals for money"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Choosing the Formula and Working Backwards",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "By the standing convention for this topic, hire purchase is calculated with:",
+          "options": [
+            "Compound interest — A = P(1 + i)^n",
+            "Simple interest — A = P(1 + in)",
+            "Whichever formula the shop prefers",
+            "No interest at all"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A laptop costs R12 000 on hire purchase over 3 years at 10% p.a. simple interest. The total paid and monthly instalment are:",
+          "options": [
+            "R15 600 total; R433,33 per month",
+            "R13 200 total; R366,67 per month",
+            "R15 972 total; R443,67 per month",
+            "R14 400 total; R400 per month"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "What principal must be deposited at 5% compound interest to reach R8 000 in 3 years?",
+          "options": [
+            "P = 8 000 × 1,05³ ≈ R9 261",
+            "P = 8 000 ÷ (1 + 0,05 × 3) ≈ R6 956,52",
+            "P = 8 000 ÷ 1,05³ ≈ R6 910,70",
+            "P = 8 000 − 3 × 400 = R6 800"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which list correctly pairs scenarios with COMPOUND growth?",
+          "options": [
+            "Hire purchase and equal monthly instalments",
+            "Any question that mentions a percentage",
+            "Inflation, savings compounded annually, population growth",
+            "Only questions set inside a bank"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Pictures — the Bicycle and the Hens",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the two pictures, the bicycle rental stands for simple growth because:",
+          "options": [
+            "Bicycles lose value over time",
+            "The payment is calculated on the same original arrangement every time and never changes",
+            "Rent is paid monthly instead of yearly",
+            "The rent increases every month"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The aunt's flock of hens grows faster and faster because:",
+          "options": [
+            "Hens lay more eggs in summer",
+            "She buys new hens with her salary",
+            "Some eggs hatch into new hens that also lay — the growth itself starts producing",
+            "The eggs get bigger every year"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Which everyday situation matches the HEN-COOP picture?",
+          "options": [
+            "A flat R280 rental arriving every month",
+            "Paying the same bus fare every morning",
+            "A savings account where each year's interest is added to the balance and then earns too",
+            "A once-off discount on one price"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Same R4 000, Built Year by Year",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Built year by year at 7% compound, R4 000 becomes:",
+          "options": [
+            "4 000 → 4 280 → 4 579,60 → 4 900,17",
+            "4 000 → 4 280 → 4 560 → 4 840",
+            "4 000 → 4 300 → 4 620 → 4 960",
+            "4 000 → 4 070 → 4 140 → 4 210"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In year two of the compound build, the interest is R299,60 rather than R280 because:",
+          "options": [
+            "The rate rose to 7,49%",
+            "7% is now calculated on R4 280 — last year's R280 has joined the balance and earns too",
+            "A thirteenth month was counted",
+            "R299,60 is a rounding error"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "If both formulas desert you in a test, the year-by-year build is valuable because:",
+          "options": [
+            "It is quicker than the formula",
+            "It only works when n is 3",
+            "It reconstructs either answer from arithmetic you can always do — a formula is just this build in a hurry",
+            "Markers award bonus marks for long methods"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Which Deal Is in Front of You?",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'A stove bought on hire purchase over 24 months' is which deal?",
+          "options": [
+            "The hen-coop deal — compound growth",
+            "Neither — hire purchase carries no interest",
+            "Both formulas apply equally",
+            "The bicycle deal — simple interest on the original price"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Why is inflation a hen-coop (compound) situation?",
+          "options": [
+            "Because each year's price rise lands on top of prices that had already risen",
+            "Because inflation only affects food prices",
+            "Because the government sets a new rate each year",
+            "Because prices never come down"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The honest warning about compound growth is that:",
+          "options": [
+            "It stops after five years",
+            "It works both ways — a gift for savings you own, a burden for debts you owe",
+            "It only ever benefits the bank",
+            "It is not allowed on loans"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

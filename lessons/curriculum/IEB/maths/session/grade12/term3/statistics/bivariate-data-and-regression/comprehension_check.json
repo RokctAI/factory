@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what bivariate data is, how a scatterplot displays it, and the three judgements made when reading one, using the practice-paper data as your example.",
+      "expected_answer": "Bivariate data is paired data — two measurements per individual kept attached, such as each learner's practice papers completed paired with the mark achieved (2 with 49, up to 7 with 68). Shuffling one column destroys the information even though the numbers survive, because the pairing carries the story. The scatterplot puts the explanatory variable (papers, the suspected driver) on the horizontal axis and the response variable (mark) on the vertical, one dot per individual, dots never joined. Reading it means judging direction (dots climbing right = positive association, falling = negative), form (straight lane or curve) and strength (tightly packed or loosely scattered), plus scanning for outliers — like a learner with 7 papers and 35 percent — which must be investigated before fitting any line. This data is strong, positive and linear."
+    },
+    {
+      "id": "cc2",
+      "question": "Define the least squares regression line, give its equation for the practice-paper data, interpret a and b in context, and state and verify the mean-point property.",
+      "expected_answer": "Each candidate line leaves every dot a vertical miss — the residual, actual y minus predicted y. The least squares regression line minimises the sum of the SQUARES of these misses; squaring stops positive and negative misses cancelling and punishes large misses hardest. By calculator, y hat = 40,77 + 3,83x. The gradient b = 3,83 means each additional practice paper raises the predicted mark by about 3,83 percentage points; the intercept a = 40,77 is the predicted mark for zero papers — meaningful here because zero papers lies just outside the observed range, though in many data sets the intercept is only the line's anchor. The line always passes through the mean point (x bar; y bar) = (4,5; 58): check 40,77 + 3,83 × 4,5 = 58, which doubles as a free check of the calculator work."
+    },
+    {
+      "id": "cc3",
+      "question": "For the practice-paper data, r = 0,99. Interpret this value fully, state the three cautions attached to r, and use the regression line to discuss predictions at 5,5 papers and at 20 papers.",
+      "expected_answer": "r = 0,99 is a very strong positive linear correlation: the sign gives the uphill direction and the size, close to 1, says the dots hug the line almost in single file — always report direction and strength in words, in context. Cautions: r measures only LINEAR association (a perfect curve can score near zero, so inspect the scatterplot first); r has no units and is unchanged by unit conversions; and correlation is not causation — shoe size and reading level correlate strongly in children because age drives both, so strong r licenses 'strongly associated', never 'one causes the other'. Prediction at 5,5 papers is interpolation, inside the observed range 2 to 7: y hat = 40,77 + 3,83 × 5,5 ≈ 62 percent, trustworthy. At 20 papers the line gives about 117 percent — extrapolation far outside the range, where straightness was never verified, and an impossible mark above 100: flag it as unreliable and reject it."
+    }
+  ]
+}

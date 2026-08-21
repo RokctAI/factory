@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why (x + 1)(x − 4) = 6 may not be solved by setting each bracket equal to 6, then solve the equation correctly, showing all steps.",
+      "expected_answer": "The zero-product principle — if A × B = 0 then A = 0 or B = 0 — holds only for zero, because zero is the only number a product cannot reach without one factor being zero. A product equal to 6 constrains neither factor: 6 = 1 × 6 = 3 × 2 = 12 × ½ and so on, so x + 1 = 6 is an illegal step. Correctly: expand to x² − 3x − 4 = 6, bring to standard form x² − 3x − 10 = 0, factorise to (x − 5)(x + 2) = 0, and set each bracket to zero: x = 5 or x = −2. Both check in the original: (6)(1) = 6 and (−1)(−6) = 6."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve 2/x + 2/(x + 3) = 1, stating the restrictions first and explaining why they must be stated, and verify both solutions.",
+      "expected_answer": "Restrictions: x ≠ 0 and x ≠ −3, because those values make a denominator zero and division by zero is undefined — any such value produced later must be rejected, which is why the list is written before the algebra. Multiply every term, including the 1 on the right, by the LCD x(x + 3): 2(x + 3) + 2x = x(x + 3), so 2x + 6 + 2x = x² + 3x, giving 4x + 6 = x² + 3x and standard form x² − x − 6 = 0. Factorise: (x − 3)(x + 2) = 0, so x = 3 or x = −2; neither is restricted. Verify x = 3: 2/3 + 2/6 = 2/3 + 1/3 = 1. Verify x = −2: 2/(−2) + 2/1 = −1 + 2 = 1. Both stand."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve x + y = 7 and x² + y² = 25 simultaneously, explaining which equation you rearrange and why, and why the answers must be presented as ordered pairs.",
+      "expected_answer": "Rearrange the linear equation, because it yields a clean square-free expression: y = 7 − x. Substitute into the quadratic: x² + (7 − x)² = 25, so x² + 49 − 14x + x² = 25, giving 2x² − 14x + 24 = 0 and, after dividing by the constant 2, x² − 7x + 12 = 0, which factorises to (x − 3)(x − 4) = 0, so x = 3 or x = 4. Substitute each back into the linear equation to find its partner: x = 3 gives y = 4; x = 4 gives y = 3. The solutions are the ordered pairs (3; 4) and (4; 3). Pairs are required because the pairing itself is part of the answer: a loose list 'x = 3 or 4, y = 3 or 4' claims four combinations, and (3; 3) and (4; 4) do not satisfy x + y = 7."
+    }
+  ]
+}
