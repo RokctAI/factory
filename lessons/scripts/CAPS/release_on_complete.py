@@ -429,6 +429,12 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
     break_questions = (extract_session_break_questions(
         (folder / "assistant_qa_transcript.md").read_text("utf-8"))
         if second else [])
+    # Standing-clip plan (decisions #7/#9/#38/#39/#40): the session tree has
+    # no job card, so greeting/sign-off/acknowledgement variants derive
+    # deterministically from the session id — same assigners, same
+    # never-reshuffled/never-both-tutors rules as the card path.
+    standing_clips = lm.resolve_standing_clips(
+        ident["id"], first, second, ident["grade"])
 
     intended = subs[-1]["end_seconds"] if subs else audio_seconds
     scale = audio_seconds / intended if intended else 1.0
@@ -439,7 +445,8 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
         subtopics, mcq, comprehension, first, second, scale, audio_seconds,
         ident["topic"], topic_display_seconds, split_ref=split_ref,
         break_questions=break_questions, segment_bounds=segment_bounds,
-        grade=ident["grade"])
+        grade=ident["grade"], standing_clips=standing_clips)
+    clip_table = lm.collect_clip_table(tracks)
 
     questions = {q["id"]: q for b in mcq.get("subtopics", [])
                  for q in b.get("questions", []) if q.get("id")}
@@ -471,6 +478,10 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
         "assets": ["animations.json"],
         **({"second_tutor": second} if second else {}),
         "tracks": tracks,
+        # Standing-clip table (see lesson_manifest.collect_clip_table):
+        # text-first refs into the app-bundled team layout; entries gain an
+        # `audio` field once the standing-clip recording session happens.
+        **({"clips": clip_table} if clip_table else {}),
         **({"questions": questions} if questions else {}),
         **({"comprehension_check": cc_bank} if cc_bank else {}),
     }

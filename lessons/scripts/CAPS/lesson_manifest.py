@@ -36,6 +36,13 @@ door_close_seconds, scheduled_at, audio{lesson,format,duration_seconds},
 assets[], tracks[{time,type,...}]). Track event types (profile,
 subtopic_start, subtopic_end, stretch_break, signoff) are the vocabulary in
 supacharge-product.md's manifest sample and replay AudioSync's doc comment.
+The standing-clip events layered on top of that vocabulary
+(assistant_opening, handover, assistant_interjection, assistant_signoff,
+recording_stopped, plus `clip`/`clips` refs on profile/signoff/break_start
+and the manifest-level `clips` table) are additive: the client's TrackEvent
+keeps type as a plain string and the raw map, so a player that predates an
+event type simply never dispatches it. See build_tracks and
+resolve_standing_clips for the contract (decisions #7/#9/#38/#39/#40).
 
 `lesson_slug` (2026-08) is the knowledge-bite join key (decision #52): the
 session-tree lesson slug — the name of the lesson's leaf directory under
@@ -364,6 +371,95 @@ def align_animations(anim, anim_path, audio_seconds):
 
 MAX_BREAK_QUESTIONS = 4  # client caps at 4 so a break stays a break
 
+# The assistant's opening block (decision #39): the first five minutes of
+# every session belong to the grade's host — greeting, introduction, handover
+# to the tutor — and never exceed them. Same five minutes as the late-door
+# policy (DOOR_CLOSE_SECONDS) and the backend's ASSISTANT_OPENING_MINUTES.
+ASSISTANT_OPENING_SECONDS = 300
+# The assistant calls the time five minutes before the end of a tutor's
+# block (decision #38); the tutor sometimes acknowledges and teaches on.
+FIVE_MIN_WARNING_SECONDS = 300
+
+
+def _clipless(ref):
+    """Standing-clip ref from a card-style variant ref: the manifest carries
+    extensionless refs ('tutor_001/greetings/02'), the authored script is
+    that ref plus .md."""
+    ref = (ref or "").strip()
+    return ref[:-3] if ref.endswith(".md") else ref
+
+
+def resolve_standing_clips(session_key, first_tutor, second_tutor, grade,
+                           greeting_ref="", signoff_ref="", ack_ref=None):
+    """The lesson's standing-clip assignment — which app-bundled clips the
+    manifest's framing events name (decisions #7/#9/#38/#39/#40).
+
+    A standing clip is recorded ONCE per character, never per lesson: tutor
+    greetings/signoffs/acknowledgements under the team root's tutors/CAPS/,
+    the assistant's intro/handover/timekeeping/signoff set under
+    assistants/CAPS/. Refs are extensionless and team-layout-relative
+    ('tutor_001/greetings/02', 'assistant_003/timekeeping/halfway'); the
+    speaker prefix says which team subtree the script lives in.
+
+    The card path passes the card's assigned greeting_ref/signoff_ref/ack_ref
+    (written by Level 0 from the entry hash). The session-tree release path
+    has no card, so missing refs are re-derived deterministically from
+    `session_key` through lesson_pipeline's own variant assigners — the same
+    never-reshuffled, RARE-ack, never-both-tutors rules. Returns a dict of
+    refs ('' where nothing resolves — the emitter then omits that field, the
+    text-first contract the qa_break events already follow), plus the
+    grade's assistant id (None when the grade has no host)."""
+    import hashlib
+    plan = {"assistant": assistant_registry.assistant_for_grade(grade),
+            "greeting": _clipless(greeting_ref),
+            "signoff": _clipless(signoff_ref),
+            "ack_first": "", "ack_second": ""}
+    h = hashlib.sha256(str(session_key).encode("utf-8")).hexdigest()
+    need_derive = (not plan["greeting"] or not plan["signoff"]
+                   or ack_ref is None)
+    if need_derive:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from lesson_pipeline import assign_ack_variant, assign_tutor_variant
+        if not plan["greeting"]:
+            plan["greeting"] = _clipless(
+                assign_tutor_variant(first_tutor["id"], "greetings", h))
+        if not plan["signoff"]:
+            plan["signoff"] = _clipless(
+                assign_tutor_variant(first_tutor["id"], "signoffs", h))
+    if ack_ref is not None:
+        # The card already decided the ack (its hash, its tutor). The other
+        # tutor stays silent by construction — never both (decision #38).
+        plan["ack_first"] = _clipless(ack_ref)
+    else:
+        plan["ack_first"] = _clipless(
+            assign_ack_variant(first_tutor["id"], h, True))
+        if second_tutor:
+            plan["ack_second"] = _clipless(
+                assign_ack_variant(second_tutor["id"], h, False))
+    return plan
+
+
+def collect_clip_table(tracks):
+    """The manifest's standing-clip table: every clip ref the track events
+    name, mapped to where its authored script lives in the app-bundled team
+    layout (tutors/CAPS/... for tutor_* refs, assistants/CAPS/... for
+    assistant_* refs). The clips ship text-first — each entry gains an
+    `audio` field once the one-time standing-clip recording session happens
+    (decision #9; blocked on the voice-engine call), with no change to the
+    event vocabulary."""
+    table = {}
+    for ev in tracks:
+        refs = [ev.get("clip"), ev.get("ack_clip")]
+        refs.extend((ev.get("clips") or {}).values())
+        for ref in refs:
+            if not ref or ref in table:
+                continue
+            speaker = ref.split("/", 1)[0]
+            root = "tutors" if speaker.startswith("tutor_") else "assistants"
+            table[ref] = {"speaker": speaker,
+                          "script": f"{root}/CAPS/{ref}.md"}
+    return table
+
 
 def qa_ask_labels():
     """Lowercased asker labels accepted in assistant_qa_transcript.md: the
@@ -409,7 +505,7 @@ def extract_break_questions(transcript_md, limit=MAX_BREAK_QUESTIONS):
 def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                  scale, audio_seconds, topic, topic_display_seconds,
                  split_ref=None, break_questions=None, segment_bounds=None,
-                 grade=0):
+                 grade=0, standing_clips=None):
     """Manifest track events from subtopics.json, scaled to real audio.
 
     topic_display at 0 (full-screen topic while the tutor speaks the intro —
@@ -420,17 +516,67 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
     parts — the assistant bridges, then the second tutor takes over; the duo comes
     from roster.json), then — when the lesson ships a comprehension check —
     a comprehension_check event at lesson end, signoff last. All times
-    clamped to the audio length."""
+    clamped to the audio length.
+
+    STANDING-CLIP EVENTS (decisions #7/#9/#38/#39/#40, via
+    resolve_standing_clips): the lesson audio is teaching content only, so
+    every piece of framing is an event naming an app-bundled standing clip.
+    The player never carves timeline for a clip — it PAUSES the lesson
+    track, plays the clip in full, then RESUMES, so clip copy can change
+    length without re-cutting lesson audio. With a `standing_clips` plan:
+
+      assistant_opening (0)    the grade's host opens the session — greeting,
+                               introduction, handover, inside five minutes;
+                               `clips` offers intro/new and intro/returning
+                               and the APP picks the variant (it knows the
+                               attendance history — decision #39).
+      handover (0)             the host hands the floor to the tutor; the
+                               whiteboard stays held until this fires.
+      profile/signoff          gain `clip` — the tutor's ASSIGNED greeting /
+                               sign-off variant. `audio` keeps its deployed
+                               value untouched (same sibling-field pattern
+                               as break_start's bridge/bridge_id).
+      assistant_interjection   the host calls the time over the tutor:
+                               five_min_warning near each block's end (the
+                               only call a tutor ever answers — `ack_clip`,
+                               about one lesson in four, never both tutors),
+                               halfway at the midpoint of a single-voice
+                               lesson (a two-part lesson's break already
+                               marks its middle), wrap_up at lesson end.
+      break_start              gains `clips` (handover/into_break,
+                               handover/out_of_break) — the host's bridge
+                               lines around the mid-session break.
+      assistant_signoff (end)  the host closes the session (signoff/
+                               session_end), mirroring the opening.
+      recording_stopped (end)  the host's recording-stop beat (decision
+                               #40): tells live students office hours are
+                               about to disappear and gives the assembler
+                               an unambiguous cut point.
+
+    Events fall back to their clipless shape wherever a ref (or the grade's
+    host) does not resolve — the same text-first tolerance the qa_break
+    contract ships with."""
     mcq_by_ref = {b["ref"]: [q["id"] for q in b.get("questions", [])]
                   for b in mcq.get("subtopics", [])}
     cap = float(int(round(audio_seconds)))  # matches manifest audio duration
 
-    tracks = [
-        {"time": 0, "type": "topic_display", "topic": topic,
-         "duration_seconds": round(topic_display_seconds, 2)},
-        {"time": 0, "type": "profile", "tutor": first_tutor["id"],
-         "audio": "audio.mp3"},
-    ]
+    clips = standing_clips or {}
+    host = clips.get("assistant")
+
+    tracks = []
+    if host:
+        tracks.append({
+            "time": 0, "type": "assistant_opening", "assistant": host,
+            "duration_seconds": ASSISTANT_OPENING_SECONDS,
+            "clips": {"new": f"{host}/intro/new",
+                      "returning": f"{host}/intro/returning"}})
+        tracks.append({"time": 0, "type": "handover",
+                       "from": host, "to": first_tutor["id"]})
+    tracks.append({"time": 0, "type": "topic_display", "topic": topic,
+                   "duration_seconds": round(topic_display_seconds, 2)})
+    tracks.append({"time": 0, "type": "profile", "tutor": first_tutor["id"],
+                   "audio": "audio.mp3",
+                   **({"clip": clips["greeting"]} if clips.get("greeting") else {})})
     subs = subtopics.get("subtopics", [])
     # The bridge sits exactly where the card says the second tutor takes
     # over: the END of the subtopic immediately before `split_ref`. It is
@@ -445,6 +591,7 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
     # there — replaysdk-spec contract); the id travels in the new sibling
     # `bridge_id`, omitted when the grade resolves no host.
     bridge_id = assistant_registry.assistant_for_grade(grade)
+    break_time = None
     last_end = 0.0
     for i, sub in enumerate(subs):
         # EXACT boundaries when per-subtopic segments were measured; the
@@ -464,18 +611,69 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                        "exercise": mcq_by_ref.get(sub["ref"], []),
                        "pass_threshold": PASS_THRESHOLD})
         if break_after_ref is not None and sub.get("ref") == break_after_ref:
-            tracks.append({"time": round(end, 2), "type": "break_start",
+            break_time = round(end, 2)
+            tracks.append({"time": break_time, "type": "break_start",
                            "duration_seconds": BREAK_DURATION_SECONDS,
                            "bridge": "assistant",  # resolved to the lesson's assigned assistant (Mandy/Bianca) at production
                            **({"bridge_id": bridge_id} if bridge_id else {}),
                            "next_tutor": second_tutor["id"],
+                           # The host's bridge lines around the break —
+                           # standing handover clips, spoken into and out of
+                           # the mid-session tutor swap (decision #9).
+                           **({"clips": {"into_break": f"{host}/handover/into_break",
+                                         "out_of_break": f"{host}/handover/out_of_break"}}
+                              if host else {}),
                            **({"questions": break_questions} if break_questions else {})})
+    if host:
+        # Timekeeping interjections (decision #38): the host calls the time
+        # over the tutor; the player pauses, plays the clip, resumes, so a
+        # call sits AT its timeline instant and costs no lesson audio. The
+        # five-minute warning lands near the end of each tutor's block and
+        # is the only call a tutor ever answers — `ack_clip` on about one
+        # block in four, never both blocks of one lesson (the shared-hash
+        # rule in resolve_standing_clips). A two-part lesson's break already
+        # marks its middle, so `halfway` is emitted for single-voice lessons
+        # only. `wrap_up` closes the teaching at lesson end, ahead of the
+        # sign-off — equal-time events play in track order.
+        blocks = ([(0.0, break_time, clips.get("ack_first"), first_tutor),
+                   (break_time, last_end, clips.get("ack_second"), second_tutor)]
+                  if break_time is not None else
+                  [(0.0, last_end, clips.get("ack_first"), first_tutor)])
+        for block_start, block_end, ack, tutor in blocks:
+            warn_at = round(max(block_start,
+                                block_end - FIVE_MIN_WARNING_SECONDS), 2)
+            tracks.append({"time": warn_at, "type": "assistant_interjection",
+                           "assistant": host, "kind": "five_min_warning",
+                           "clip": f"{host}/timekeeping/five_min_warning",
+                           **({"ack_clip": ack, "ack_tutor": tutor["id"]}
+                              if ack and tutor else {})})
+        if break_time is None:
+            tracks.append({"time": round(min(last_end, cap) / 2, 2),
+                           "type": "assistant_interjection", "assistant": host,
+                           "kind": "halfway",
+                           "clip": f"{host}/timekeeping/halfway"})
+        tracks.append({"time": round(last_end, 2),
+                       "type": "assistant_interjection", "assistant": host,
+                       "kind": "wrap_up",
+                       "clip": f"{host}/timekeeping/wrap_up"})
     cc_ids = [q["id"] for q in comprehension.get("questions", []) if q.get("id")]
     if cc_ids:
         tracks.append({"time": round(last_end, 2), "type": "comprehension_check",
                        "questions": cc_ids, "qa_window": QA_WINDOW_SECONDS})
     tracks.append({"time": round(last_end, 2), "type": "signoff",
-                   "tutor": first_tutor["id"], "audio": "audio.mp3"})
+                   "tutor": first_tutor["id"], "audio": "audio.mp3",
+                   **({"clip": clips["signoff"]} if clips.get("signoff") else {})})
+    if host:
+        # The host closes the session, mirroring the opening, then marks the
+        # recording cut (decision #40): office hours are live-only, so the
+        # recording_stopped beat is both the live students' heads-up and the
+        # assembler's unambiguous cut point.
+        tracks.append({"time": round(last_end, 2), "type": "assistant_signoff",
+                       "assistant": host,
+                       "clip": f"{host}/signoff/session_end"})
+        tracks.append({"time": round(last_end, 2), "type": "recording_stopped",
+                       "assistant": host,
+                       "clip": f"{host}/signoff/recording_stopped"})
     tracks.sort(key=lambda t: t["time"])
     return tracks
 
@@ -620,6 +818,27 @@ def main():
     if break_questions:
         print(f"[break] {len(break_questions)} question(s) from assistant_qa_transcript.md")
 
+    # Standing-clip plan: the card's assigned variant refs when it carries
+    # them (Level 0 wrote them from the entry hash); a legacy card without
+    # the fields gets the same deterministic derivation the release path
+    # uses. An `ack_ref:` line that is PRESENT but empty is a decision (this
+    # lesson's tutors stay silent at the five-minute warning), not a gap —
+    # only a card predating the field falls back to derivation.
+    standing_clips = resolve_standing_clips(
+        card_id, first_tutor, second_tutor, grade,
+        greeting_ref=get_field(card, "greeting_ref"),
+        signoff_ref=get_field(card, "signoff_ref"),
+        ack_ref=(get_field(card, "ack_ref")
+                 if re.search(r"^ack_ref:", card, re.MULTILINE) else None))
+    if standing_clips["assistant"]:
+        print(f"[clips] host={standing_clips['assistant']} "
+              f"greeting={standing_clips['greeting'] or '-'} "
+              f"signoff={standing_clips['signoff'] or '-'} "
+              f"ack={standing_clips['ack_first'] or standing_clips['ack_second'] or '-'}")
+    else:
+        print(f"[clips] no host resolves for grade {grade!r} — "
+              "assistant events suppressed")
+
     tracks = build_tracks(subtopics, mcq, comprehension, first_tutor,
                           second_tutor, subtopic_scale, audio_seconds,
                           topic, topic_display_seconds,
@@ -627,7 +846,7 @@ def main():
                           segment_bounds=(segment_bounds
                                           if len(segment_bounds) == len(subtopics.get("subtopics", []))
                                           else None),
-                          grade=grade)
+                          grade=grade, standing_clips=standing_clips)
 
     # Manifest-level question bank: subtopic_end `exercise` entries are IDs
     # the app resolves against this map (lms_sdk McqQuestion.fromJson reads
@@ -643,6 +862,8 @@ def main():
     # The comprehension_check track event at lesson end carries the ids;
     # this bank carries the full questions (id/question/expected_answer).
     cc_bank = {q["id"]: q for q in comprehension.get("questions", []) if q.get("id")}
+
+    clip_table = collect_clip_table(tracks)
 
     # --- manifest (ReplayManifest.fromJson contract) ---
     manifest = {
@@ -675,6 +896,11 @@ def main():
         # sourced from roster.json's paired-duo mapping, not a card field.
         **({"second_tutor": second_tutor} if second_tutor else {}),
         "tracks": tracks,
+        # Standing-clip table: every clip ref the tracks name, resolved to
+        # its authored script in the app-bundled team layout. Text-first —
+        # entries gain an `audio` field once the one-time standing-clip
+        # recording session happens (decision #9).
+        **({"clips": clip_table} if clip_table else {}),
         **({"questions": questions} if questions else {}),
         **({"comprehension_check": cc_bank} if cc_bank else {}),
     }
