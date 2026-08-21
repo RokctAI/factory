@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the three idealising assumptions of connected-body problems — inextensible string, light string, frictionless light pulley — and explain the physical consequence each one buys, plus the one thing a string can never do.",
+      "expected_answer": "An inextensible string cannot stretch, so the connected bodies move together and their accelerations have the same magnitude — though not necessarily the same direction, since around a pulley one body may accelerate vertically while the other accelerates along a surface. A light (massless) string needs no net force to accelerate itself, so the tension is the same at both ends; a massive rope would have different tensions along its length. A frictionless, light pulley changes only the direction of the tension, never its magnitude, so the pull on the surface-body equals the pull on the hanging body. Finally, a string can only pull, never push: on every free-body diagram the tension arrow points along the string, away from the body, toward the pulley or partner. The tension is an internal force of the two-body system, while applied forces, friction and weights are external — the distinction that makes the system method work."
+    },
+    {
+      "id": "cc2",
+      "question": "Two trolleys of 6 kg and 4 kg, joined by a light cord, are pulled along a floor (μk = 0,15) by a 40 N horizontal force on the leading trolley. Use the two-step method to find the acceleration and the cord tension, showing formula, substitution and answer, and verify the tension using the leading trolley.",
+      "expected_answer": "Step one, the whole system: total mass 10 kg, total weight 98 N, so total friction = μkN = 0,15 × 98 = 14,7 N backward. Fnet = 40 − 14,7 = 25,3 N, so a = 25,3 ÷ 10 = 2,53 m·s⁻² forward — the internal tensions cancel and never enter this equation. Step two, the trailing 4 kg trolley alone: its own normal force is 39,2 N, so its own friction is 0,15 × 39,2 = 5,88 N. Then T − 5,88 = 4 × 2,53 = 10,12, giving T = 16,0 N. Verification on the 6 kg leader: its friction is 0,15 × 58,8 = 8,82 N, so Fnet = 40 − 16,0 − 8,82 = 15,18 N, and m × a = 6 × 2,53 = 15,18 N — consistent. The key discipline: each single-body equation may contain only that body's own friction, never the pair's total."
+    },
+    {
+      "id": "cc3",
+      "question": "A 3 kg block on a bench (μk = 0,2) is connected by a light string over a frictionless pulley to a hanging 5 kg mass. Find the acceleration and the tension, and explain carefully why the tension must be less than the hanging weight while the system accelerates.",
+      "expected_answer": "System step, taking the direction of motion as positive: the driving force is the hanging weight 5 × 9,8 = 49 N; the opposing force is friction on the block, 0,2 × 29,4 = 5,88 N (the block's weight and normal force are perpendicular to its motion and cancel). Fnet = 49 − 5,88 = 43,12 N over the total 8 kg gives a = 5,39 m·s⁻². Single-body step on the hanging mass, downward positive: mg − T = ma, so 49 − T = 5 × 5,39 = 26,95, giving T = 22,05 N. The tension must be below the 49 N hanging weight because the mass accelerates downward: that requires a net downward force, so the upward tension must fall short of the downward weight. If the tension equalled the full weight the net force would be zero and the mass would hang in equilibrium or move at constant velocity — the string carries the full weight only when nothing accelerates."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "H₂ + Br₂ ⇌ 2HBr: 0,8 mol of each gas is sealed in a 4 dm³ vessel and 0,2 mol H₂ remains at equilibrium. Run the RICE reasoning, the compulsory division, and Kc.",
+      "expected_answer": "Reacted: 0,8 − 0,2 = 0,6 mol H₂, so 0,6 mol Br₂, forming 1,2 mol HBr (1:1:2). Divide by 4 dm³: [H₂] = 0,05; [Br₂] = 0,05; [HBr] = 0,3 mol·dm⁻³ — the compulsory line before the constant. Kc = (0,3)²/(0,05 × 0,05) = 0,09/0,0025 = 36, no units. A large Kc means the equilibrium lies well towards products."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish strong from concentrated for acids, and use the pH machinery on 0,001 mol·dm⁻³ HCl and 0,001 mol·dm⁻³ NaOH.",
+      "expected_answer": "Strong is about the FRACTION ionised (complete ionisation); concentrated is about the AMOUNT dissolved — a dilute strong acid is entirely possible. HCl is strong, so [H₃O⁺] = 10⁻³ and pH = −log 10⁻³ = 3. For NaOH, [OH⁻] = 10⁻³, so with Kw = 10⁻¹⁴, [H₃O⁺] = 10⁻¹¹ and pH = 11."
+    },
+    {
+      "id": "cc3",
+      "question": "For the magnesium-copper galvanic cell, identify the anode with a reason, calculate the emf, and state the rule that holds in both electrochemical cells.",
+      "expected_answer": "Magnesium has the lower reduction potential (−2,36 V), so it is the stronger reducing agent, is oxidised, and is the anode; copper is the cathode. E°cell = E°cathode − E°anode = 0,34 − (−2,36) = 2,70 V — positive, so the reaction is spontaneous. In both galvanic and electrolytic cells, oxidation happens at the anode and reduction at the cathode; only the energy direction changes."
+    }
+  ]
+}

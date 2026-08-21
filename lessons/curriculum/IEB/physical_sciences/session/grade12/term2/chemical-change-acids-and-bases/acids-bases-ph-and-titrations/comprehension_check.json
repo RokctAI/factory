@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the Lowry-Brønsted definitions of an acid and a base. For the reaction of nitric acid with water, identify both conjugate acid-base pairs, and explain what makes water an ampholyte, naming one other ampholyte.",
+      "expected_answer": "A Lowry-Brønsted acid is a proton donor; a base is a proton acceptor (a proton being a hydrogen ion, H⁺). In HNO₃ + H₂O → NO₃⁻ + H₃O⁺: nitric acid donates a proton, so HNO₃ (acid) and NO₃⁻ (its conjugate base) form one pair — they differ by exactly one proton. Water accepts the proton, so H₂O (base) and H₃O⁺ (its conjugate acid) form the second pair. Water is an ampholyte because it can act as either an acid or a base depending on its partner: it accepts a proton from nitric acid, but donates a proton to ammonia (forming NH₄⁺ and OH⁻). Other ampholytes include the hydrogen carbonate ion (HCO₃⁻) and the hydrogen sulfate ion (HSO₄⁻)."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish between a strong acid and a concentrated acid, giving one example of a dilute strong acid and one of a concentrated weak acid. Then calculate the pH of (a) 0,005 mol·dm⁻³ sulfuric acid (assume complete ionisation of both protons) and (b) 0,01 mol·dm⁻³ potassium hydroxide (Kw = 1,0 × 10⁻¹⁴), and explain why 0,001 mol·dm⁻³ ethanoic acid has a pH above 3.",
+      "expected_answer": "Strength describes the fraction ionised: a strong acid ionises completely in water, a weak acid only partially, in equilibrium (quantified by Ka). Concentration describes the amount dissolved per volume (mol·dm⁻³), regardless of ionisation. Examples: pool-test drops with a trace of fully ionised hydrochloric acid are a dilute strong acid; double-strength vinegar (ethanoic acid) is a concentrated weak acid. (a) Sulfuric acid is diprotic: [H₃O⁺] = 2 × 0,005 = 0,01 = 10⁻² mol·dm⁻³, so pH = −log(10⁻²) = 2. (b) [OH⁻] = 0,01 = 10⁻²; [H₃O⁺] = Kw/[OH⁻] = 10⁻¹⁴/10⁻² = 10⁻¹², so pH = 12. Ethanoic acid at 0,001 mol·dm⁻³ is weak: only a small fraction of molecules ionise, so [H₃O⁺] is well below 0,001 and the pH lands around 3,9 — higher (closer to neutral) than the pH 3 a strong acid of the same concentration would give."
+    },
+    {
+      "id": "cc3",
+      "question": "In a titration, 30 cm³ of potassium hydroxide solution is exactly neutralised by 15 cm³ of nitric acid of concentration 0,2 mol·dm⁻³. Calculate the concentration of the potassium hydroxide. Then explain, using hydrolysis, why phenolphthalein suits a weak-acid/strong-base titration while methyl orange suits a strong-acid/weak-base one.",
+      "expected_answer": "Moles of nitric acid = c × V = 0,2 × 0,015 dm³ = 0,003 mol. The equation HNO₃ + KOH → KNO₃ + H₂O is 1:1, so moles of KOH = 0,003 mol. Concentration of KOH = 0,003 ÷ 0,030 dm³ = 0,1 mol·dm⁻³ (volumes converted to dm³ first). Indicator choice: the salt present at equivalence sets the pH there, and the indicator must change colour at that pH. In a weak-acid/strong-base titration the salt (e.g. sodium ethanoate) hydrolyses basic — the ethanoate ion accepts protons from water, releasing hydroxide — so equivalence lies above 7, and phenolphthalein, which changes from colourless to pink in that range, signals at the right moment. In a strong-acid/weak-base titration the salt (e.g. ammonium chloride) hydrolyses acidic — the ammonium ion donates protons to water — so equivalence lies below 7, matching methyl orange's colour-change range. In short: the strong parent decides the salt's pH, and the indicator must flip at the equivalence pH."
+    }
+  ]
+}

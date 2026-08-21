@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Use the polarity of the water molecule to explain how water dissolves magnesium chloride, and write the dissolution equation with phase labels and a charge audit.",
+      "expected_answer": "Water is polar: the oxygen side is slightly negative and the hydrogen side slightly positive. Oxygen faces attract the positive magnesium ions and hydrogen faces attract the negative chloride ions, levering ions off the ionic lattice; each freed ion is surrounded by water molecules (hydration). Equation: MgCl₂(s) → Mg²⁺(aq) + 2Cl⁻(aq). Atoms balance, and the charge audit gives (+2) + 2(−1) = 0, matching the neutral solid."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the conductivity tester, and use salt water and sugar water to explain what a bright bulb, a dark bulb and the brightness itself each tell you.",
+      "expected_answer": "Two electrodes stand in the solution, wired through a battery to a bulb; the bulb glows if charge can cross the liquid. Salt water glows because dissociation fills it with mobile ions (an electrolyte); sugar water stays dark because sugar dissolves as whole neutral molecules (a non-electrolyte). Brightness tracks the concentration of ions. A dark bulb proves only that nothing charged is dissolved — not that nothing dissolved — so conductivity is not a general measure of solubility."
+    },
+    {
+      "id": "cc3",
+      "question": "An unlabelled clear solution gives no fizz with dilute nitric acid and a white precipitate with silver nitrate. Name the ion, justify the acid step, and state the expected results for bromide, iodide, sulfate and carbonate samples.",
+      "expected_answer": "The ion is chloride (white AgCl; no fizz rules out carbonate). The acid goes in first because carbonate is an impostor — silver carbonate and barium carbonate are also white and insoluble — and nitric acid destroys carbonate with effervescence (CO₂), so any later precipitate is genuine. Bromide: cream AgBr with silver nitrate. Iodide: yellow AgI. Sulfate: white BaSO₄ with barium nitrate that persists in the acid. Carbonate: fizzes with acid; with barium nitrate alone it gives white BaCO₃ that dissolves in acid with effervescence."
+    }
+  ]
+}

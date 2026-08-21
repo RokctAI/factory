@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Walk through the concentration calculation for 10,6 g of Na2CO3 in 200 cm³ of solution, naming both conversions that must happen before the final division.",
+      "expected_answer": "Grams must become moles: M(Na2CO3) = 46 + 12 + 48 = 106 g/mol, so n = 10,6/106 = 0,1 mol. Cubic centimetres must become cubic decimetres: 200/1000 = 0,2 dm³. Then c = n/V = 0,1/0,2 = 0,5 mol·dm⁻³. Skipping either conversion wrecks the answer — dividing grams directly, or leaving the volume in cm³, gives a result a thousand times too small."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the four steps of the empirical formula method for 52,2% C, 13,0% H and 34,8% O, and why moles must appear in the middle of it.",
+      "expected_answer": "Assume 100 g so percentages become masses (52,2 g C; 13,0 g H; 34,8 g O); convert each mass to moles by dividing by atomic mass (4,35; 13,0; 2,175) because formulas count atoms and only moles count atoms; divide by the smallest (giving 2 : 6 : 1); write the simplest whole-number ratio as C2H6O. If the ratio contains a fraction like 1,5, multiply the whole ratio up rather than rounding."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain what water of crystallisation is and how the 62,9% figure for Na2CO3·10H2O could be checked in a laboratory.",
+      "expected_answer": "Water of crystallisation is water locked into a crystal structure in a fixed ratio — ten H2O per Na2CO3 unit. Calculation: M(Na2CO3) = 106; ten waters = 180; total 286 g/mol; water's share = 180/286 × 100 = 62,9%. Check: weigh the crystals, warm them until they crumble to white powder, weigh again — the mass loss should be 62,9% of the original, confirming the formula's prediction."
+    }
+  ]
+}

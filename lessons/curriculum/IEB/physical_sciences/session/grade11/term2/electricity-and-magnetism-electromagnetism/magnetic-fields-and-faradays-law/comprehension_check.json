@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the magnetic field patterns of a straight current-carrying wire, a single loop and a solenoid, and explain how the Right Hand Rule gives the field direction in each case.",
+      "expected_answer": "A straight current-carrying wire is surrounded by concentric circular field lines centred on the wire, spaced more closely near the wire where the field is stronger. Gripping the wire with the right hand, thumb pointing along the conventional current, the curled fingers give the direction of the circles. For a single loop, the same grip applied around each piece of wire shows all the circular fields threading the centre of the loop in the same sense, so the field passes straight through the middle and one face of the loop behaves as a north pole, the other as a south pole. A solenoid is many loops wound side by side: their fields reinforce to give a strong, nearly uniform field along the axis inside, while outside the field has the shape of a bar magnet's. For the solenoid, curling the right-hand fingers with the current in the windings makes the thumb point to the north pole end. An iron core strengthens the field greatly, and because the magnetism switches off with the current, electromagnets serve in scrapyard cranes, relays and electric bells."
+    },
+    {
+      "id": "cc2",
+      "question": "Define magnetic flux, explain the role of the angle in Φ = BAcosθ, and calculate the flux through a 0,02 m² coil in a 0,6 T field when the field lies along the normal and when the normal makes 60° with the field.",
+      "expected_answer": "Magnetic flux is the product of the magnetic flux density and the area of the surface, multiplied by the cosine of the angle between the field and the normal to the surface: Φ = BAcosθ, measured in weber, where one weber equals one tesla times one square metre. The angle θ is always taken between the field and the normal — the line perpendicular to the surface — never the surface itself. With the field along the normal, θ = 0°, cosθ = 1 and the flux is a maximum: Φ = 0,6 × 0,02 × 1 = 0,012 Wb. With the normal at 60° to the field, Φ = 0,6 × 0,02 × cos60° = 0,6 × 0,02 × 0,5 = 0,006 Wb — half the flux from orientation alone. With the field lying in the plane of the coil, θ = 90°, cosθ = 0 and the flux is zero. This sensitivity to orientation is the working principle of a generator: rotating a coil in a steady field changes the flux through it continuously."
+    },
+    {
+      "id": "cc3",
+      "question": "State Faraday's law, then calculate the emf induced in a 150-turn coil of area 0,04 m², field along the normal, when the field grows from 0,1 T to 0,5 T in 0,4 s. If the circuit's total resistance is 2,4 Ω, find the current, and explain how the direction of the induced current is determined when a north pole approaches a solenoid.",
+      "expected_answer": "Faraday's law states that the magnitude of the induced emf across a conductor is directly proportional to the rate of change of the magnetic flux through the conductor, ε = −NΔΦ/Δt. Initial flux: 0,1 × 0,04 = 0,004 Wb. Final flux: 0,5 × 0,04 = 0,02 Wb. Change in flux: 0,02 − 0,004 = 0,016 Wb. Magnitude of the emf: 150 × 0,016 ÷ 0,4 = 6 V. Current: I = ε/R = 6 ÷ 2,4 = 2,5 A. The direction of the induced current always opposes the change causing it — the meaning of the minus sign, and a direct consequence of energy conservation. When a north pole approaches the face of a solenoid, the induced current flows so that the near face becomes a north pole, repelling the approaching magnet; when the magnet is withdrawn, the current reverses so the face becomes a south pole, attracting it. The right-hand solenoid grip then converts the required pole into a current direction in the windings."
+    }
+  ]
+}

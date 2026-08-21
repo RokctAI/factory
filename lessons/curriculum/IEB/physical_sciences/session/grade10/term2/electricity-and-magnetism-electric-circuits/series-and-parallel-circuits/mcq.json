@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "What a Circuit Actually Moves — Charge, Energy and Resistance",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Current is defined as:",
+          "options": [
+            "The energy carried by a charge",
+            "The rate of flow of charge — I equals Q over delta t",
+            "The opposition to charge flow",
+            "The number of electrons in a wire"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A potential difference of 18 volts across a resistor means:",
+          "options": [
+            "Eighteen coulombs pass every second",
+            "The resistor holds eighteen ohms",
+            "Every coulomb passing through hands over eighteen joules",
+            "Eighteen electrons are used up per second"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A battery goes flat because:",
+          "options": [
+            "Its charge is used up by the resistors",
+            "The electrons leak out of the wires",
+            "The current escapes at the junctions",
+            "Its store of chemical energy is spent — the charge itself circulates forever"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The instrument rules are:",
+          "options": [
+            "Ammeter in series with low resistance; voltmeter in parallel with high resistance",
+            "Ammeter in parallel with high resistance; voltmeter in series with low resistance",
+            "Both instruments in series",
+            "Both instruments in parallel"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Ohm's Law and the Series Circuit — One Path, Shared Current",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Ohm's law states:",
+          "options": [
+            "V equals I over R",
+            "R equals V times I",
+            "V equals I times R — potential difference equals current times resistance",
+            "I equals V times R"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In a series circuit the current is the same everywhere because:",
+          "options": [
+            "The battery pushes equally in both directions",
+            "There is one path only — charge cannot pile up or leak away",
+            "The resistors share it equally",
+            "Electrons move faster through bigger resistors"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "For the 18-volt battery with 3 ohms and 6 ohms in series, the total resistance and current are:",
+          "options": [
+            "2 ohms and 9 amperes",
+            "18 ohms and 1 ampere",
+            "3 ohms and 6 amperes",
+            "9 ohms and 2 amperes"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The series potential differences split as 6 volts and 12 volts because:",
+          "options": [
+            "A series circuit divides volts in proportion to resistance — twice the ohms, twice the volts",
+            "The battery splits its emf equally",
+            "The bigger resistor always takes exactly 12 volts",
+            "Volts are the same across every series resistor"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Parallel Circuit — Shared Potential Difference, Divided Current",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "In parallel, the potential difference across each branch is:",
+          "options": [
+            "Divided in proportion to resistance",
+            "The full 18 volts on every branch — both branches span the same pair of junctions",
+            "Nine volts each",
+            "Larger across the larger resistor"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The reciprocal sum one over 3 plus one over 6 gives one half. The parallel resistance is:",
+          "options": [
+            "One half of an ohm",
+            "Three ohms",
+            "Two ohms — the reciprocal must be inverted",
+            "Nine ohms"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The parallel total of 2 ohms is smaller than either resistor because:",
+          "options": [
+            "The formula always halves the smallest resistor",
+            "Parallel resistors heat up less",
+            "The battery works harder in parallel",
+            "A second path gives charge somewhere else to go — the combination opposes flow less than either branch alone"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The branch currents are 6 amperes and 3 amperes, confirming that a parallel circuit:",
+          "options": [
+            "Divides current inversely with resistance — the smaller resistance takes the larger current, and the branches sum to 9 amperes",
+            "Sends equal current down every branch",
+            "Sends more current through the larger resistance",
+            "Uses up current at the junctions"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Series Against Parallel — the Rules, the Traps and the Wiring in Your Walls",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Same battery, same resistors, yet parallel carries four and a half times the series current because:",
+          "options": [
+            "Parallel batteries are stronger",
+            "The connection pattern sets the total resistance — 2 ohms against 9 ohms",
+            "Parallel wires are shorter",
+            "Series circuits leak charge"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The memory fix for the swapped-rule trap is:",
+          "options": [
+            "Volts are always the same everywhere",
+            "Current is always divided everywhere",
+            "Same PATH means same CURRENT; same PAIR OF JUNCTIONS means same VOLTS",
+            "The bigger resistor always wins"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Household appliances are wired in parallel so that:",
+          "options": [
+            "The wiring uses less copper",
+            "The total resistance stays high",
+            "The breaker never trips",
+            "Each receives the full 230 volts and switching one off leaves the others running"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "An overloaded multiplug becomes dangerous because each added appliance:",
+          "options": [
+            "Opens another parallel branch — total resistance falls and total current climbs",
+            "Raises the total resistance",
+            "Lowers the supply voltage",
+            "Reverses the current direction"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "One Road Through Town",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the taxi picture, volts measure:",
+          "options": [
+            "How many taxis leave the rank per minute",
+            "The energy loaded into every taxi — eighteen joules per coulomb",
+            "The number of rough patches",
+            "The speed limit on the route"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "On the single road, counting taxis at the start, middle and end gives:",
+          "options": [
+            "Fewer taxis after each rough patch",
+            "More taxis near the rank",
+            "The same number per minute everywhere — taxis are not fuel",
+            "No taxis beyond the first patch"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The rougher 6-ohm patch takes 12 of the 18 volts because:",
+          "options": [
+            "The energy split follows the roughness — double the ohms, double the slice",
+            "The first patch always takes less",
+            "Volts divide equally on one road",
+            "The battery favours the far patch"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two Roads, Two Queues",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "With two roads between the same corners, each route drops:",
+          "options": [
+            "Nine volts each — the eighteen shared",
+            "The full eighteen volts — every taxi leaves full and arrives empty",
+            "Volts in proportion to its roughness",
+            "Nothing until the roads rejoin"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The traffic splits as 6 amps and 3 amps because:",
+          "options": [
+            "The battery sends taxis alternately",
+            "Both roads carry equal traffic",
+            "The easy road is the busy one — current divides inversely with roughness",
+            "The rougher road attracts more taxis"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A third plus a sixth gives a half. The whole system's roughness is:",
+          "options": [
+            "Half an ohm",
+            "Four and a half ohms",
+            "Nine ohms",
+            "Two ohms — the upside-down answer flipped back the right way up"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "If your final parallel resistance comes out bigger than the smallest road:",
+          "options": [
+            "You forgot to flip the fraction back",
+            "The circuit must be broken",
+            "The battery is too strong",
+            "That is normal for parallel"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Why Your House Is Wired the Clever Way",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "A house wired in series would mean:",
+          "options": [
+            "Every appliance gets the full voltage",
+            "Shared-out voltage, nothing at full strength, and one blown globe darkening the whole house",
+            "Lower electricity bills",
+            "No need for a distribution board"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The price of parallel wiring is that every appliance switched on:",
+          "options": [
+            "Dims all the others",
+            "Raises the total resistance",
+            "Opens another branch — total resistance falls and the total current climbs toward the trip switch's limit",
+            "Steals voltage from the lights"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The wall switch sits in series with its light because:",
+          "options": [
+            "There you want one break to stop everything",
+            "Series wiring is cheaper everywhere",
+            "Switches cannot be wired in parallel",
+            "The light needs less voltage than the plugs"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why E p = mgh is described as 'the lifting bill, itemised', and calculate the bill for the 4 kg tin hoisted 3 m.",
+      "expected_answer": "m × g is the object's weight — the force gravity exerts, which the lifter must overcome — and multiplying by h charges that force over every metre of vertical lift, giving the work done against gravity. For the tin: weight = 4 × 9,8 = 39,2 N; bill = 39,2 × 3 = 117,6 J of gravitational potential energy."
+    },
+    {
+      "id": "cc2",
+      "question": "Two observers — one at ground level, one in a cellar 2 m lower — disagree about the tin's potential energy on the 3 m platform. Explain both numbers and why physics is untroubled by the disagreement.",
+      "expected_answer": "From the ground, h = 3 m so E p = 117,6 J; from the cellar, h = 5 m so E p = 196 J. Both are correct relative to their own declared zero. Nature only cashes in differences: a fall to the ground releases 117,6 − 0 = 117,6 J for one observer and 196 − 78,4 = 117,6 J for the other. The zero is bookkeeping; the difference is physics."
+    },
+    {
+      "id": "cc3",
+      "question": "Show two roads to the further energy gain when the tin moves from the 3 m platform to the 10 m platform, and state the principle their agreement demonstrates.",
+      "expected_answer": "Road one: total at top minus total below = 4 × 9,8 × 10 − 117,6 = 392 − 117,6 = 274,4 J. Road two: weight times the height difference = 39,2 × 7 = 274,4 J. Their agreement shows that a change in potential energy depends only on the change in height, not on the absolute heights or the reference level."
+    }
+  ]
+}

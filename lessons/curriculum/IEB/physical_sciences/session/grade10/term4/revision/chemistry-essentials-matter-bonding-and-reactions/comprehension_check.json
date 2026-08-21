@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write the electron configuration of aluminium and phosphorus in s p notation, state each element's number of valence electrons, and use the periodic table's group logic to explain why elements in one column share a chemistry.",
+      "expected_answer": "Aluminium (13): 1s² 2s² 2p⁶ 3s² 3p¹ — three valence electrons. Phosphorus (15): 1s² 2s² 2p⁶ 3s² 3p³ — five valence electrons. Columns (groups) collect elements with the same number of valence electrons, and since valence electrons do all the chemistry, group members bond and react in the same way (group 1 alkali metals, group 17 halogens, group 18 noble gases with full shells and almost no reactions)."
+    },
+    {
+      "id": "cc2",
+      "question": "Balance the equation for propane burning in oxygen, audit it element by element, and state the law that guarantees balancing is possible.",
+      "expected_answer": "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. Audit: carbon 3 = 3; hydrogen 8 = 8; oxygen 10 (5 × 2) = 10 (3 × 2 + 4 × 1). The law of conservation of mass: atoms are never created or destroyed in a reaction, only rearranged, so the same atoms must appear on both sides. Only coefficients may be adjusted — subscripts are the substance's identity."
+    },
+    {
+      "id": "cc3",
+      "question": "A learner dissolves 53 g of sodium carbonate (Na₂CO₃, M = 106 g/mol) and makes the solution up to 250 cm³. Calculate the concentration, naming the two traps this question sets.",
+      "expected_answer": "n = m/M = 53/106 = 0,5 mol. Convert volume first: 250 cm³ = 0,25 dm³ (trap one: using cm³ directly in c = n/V). c = n/V = 0,5/0,25 = 2 mol·dm⁻³. Trap two: mixing currencies — never feed grams into mole formulas or ratios; convert into moles first (the exchange discipline), do the chemistry, convert out last."
+    }
+  ]
+}

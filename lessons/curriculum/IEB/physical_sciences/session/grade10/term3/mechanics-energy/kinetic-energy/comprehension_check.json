@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate the kinetic energy of the 800 kg bakkie at 15 m/s, naming the order of operations that protects against the commonest error.",
+      "expected_answer": "Square the velocity first, as its own line: v² = 225. Then E_k = ½ × 800 × 225 = 400 × 225 = 90 000 J (90 kJ). The separate squaring line prevents the forgotten-square error, which would give ½ × 800 × 15 = 6 000 J — fifteen times too small. Unit check: kg·m²/s² = J."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why kinetic energy is a scalar that can never be negative, even though velocity is a vector.",
+      "expected_answer": "The velocity enters the formula squared, and squaring erases the sign/direction: +15 and −15 both square to 225, so northbound and southbound bakkies carry identical energy. Physically, energy measures capacity to do work, and damage has no compass. Since mass is positive and v² ≥ 0, E_k ≥ 0, with zero (rest) as the floor — no direction is ever attached to an energy answer."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain the road-safety meaning of the square in ½mv², using the 15 m/s versus 30 m/s comparison.",
+      "expected_answer": "Doubling speed from 15 to 30 m/s raises the energy from 90 000 J to 360 000 J — four times, because 2² = 4 (tripling gives nine times). All that energy must be dissipated to stop: with the same braking force, roughly four times the braking distance; in a crash, four times the destruction to absorb. Energy also piles up top-heavily: 100→120 km/h adds more energy than 0→60 km/h. Speed limits reflect this quadratic arithmetic."
+    }
+  ]
+}

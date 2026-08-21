@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Coulomb's law in full, calculate the force between +3 μC and −5 μC held 15 cm apart showing formula, substitution and answer, and explain the rule about signs in the substitution.",
+      "expected_answer": "Coulomb's law: the magnitude of the electrostatic force between two point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them, F = kQ₁Q₂/r² with k = 9 × 10⁹ N·m²·C⁻². Convert first: 3 μC = 3 × 10⁻⁶ C, 5 μC = 5 × 10⁻⁶ C, 15 cm = 0,15 m. Substitution: F = (9 × 10⁹ × 3 × 10⁻⁶ × 5 × 10⁻⁶) ÷ 0,15² = 0,135 ÷ 0,0225 = 6,0 N. Since the charges are unlike, the force is attractive. The signs of the charges are never substituted into the formula: only magnitudes enter, and the signs answer the separate question of whether the force attracts (unlike signs) or repels (like signs), stated in words with the final answer. Substituting signed values produces a negative force that is then misread, which is why the magnitudes-only discipline exists."
+    },
+    {
+      "id": "cc2",
+      "question": "Charges A (+3 μC), B (−2 μC) and C (+4 μC) lie on a straight line, with B 0,2 m right of A and C 0,3 m right of B. Determine the net force on B, showing each pairwise calculation, the direction reasoning and the final vector sum.",
+      "expected_answer": "Treat each pair separately. Force of A on B: unlike charges, so B is attracted LEFT toward A; magnitude = (9 × 10⁹ × 3 × 10⁻⁶ × 2 × 10⁻⁶) ÷ 0,2² = 0,054 ÷ 0,04 = 1,35 N. Force of C on B: unlike charges, so B is attracted RIGHT toward C; magnitude = (9 × 10⁹ × 2 × 10⁻⁶ × 4 × 10⁻⁶) ÷ 0,3² = 0,072 ÷ 0,09 = 0,8 N. The two arrows oppose each other, so subtract: 1,35 − 0,8 = 0,55 N, directed left, toward A. Key disciplines: each pair keeps its own separation (0,2 m for A-B, 0,3 m for C-B; the 0,5 m from A to C appears nowhere), and the arrows must be drawn from attraction/repulsion reasoning before any addition, since they decide whether magnitudes add or subtract."
+    },
+    {
+      "id": "cc3",
+      "question": "Identical conducting spheres P (+8 μC) and T (−4 μC) are 0,2 m apart. Calculate the force before they touch, the charge on each after touching, and the force after they are returned to their positions — then list the five traps of this topic.",
+      "expected_answer": "Before: F = (9 × 10⁹ × 8 × 10⁻⁶ × 4 × 10⁻⁶) ÷ 0,2² = 0,288 ÷ 0,04 = 7,2 N, attractive since the charges are unlike. On contact, identical spheres share the signed total equally: +8 + (−4) = +4 μC, so each carries +2 μC afterwards. After: F = (9 × 10⁹ × 2 × 10⁻⁶ × 2 × 10⁻⁶) ÷ 0,04 = 0,036 ÷ 0,04 = 0,9 N, now repulsive because both spheres are positive — the touch changed both the magnitude and the nature of the force. The five traps: (1) units — microcoulombs to ×10⁻⁶ and all distances to metres before squaring; (2) signs — magnitudes only in the formula, direction reasoned separately; (3) the distance is centre-to-centre; (4) inverse-square ratios — halving r quadruples F, doubling both charges quadruples F; (5) equal sharing on contact requires the spheres to be identical."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 250 Hz sound crosses from air (340 m·s⁻¹) into water (1 500 m·s⁻¹). State which of frequency, speed and wavelength change, calculate the wavelength in each medium, and explain why the frequency behaves as it does.",
+      "expected_answer": "The frequency stays at 250 Hz; the speed and the wavelength both change. In air: λ = v ÷ f = 340 ÷ 250 = 1,36 m. In water: λ = 1 500 ÷ 250 = 6 m. The frequency cannot change at the boundary because every compression that arrives at the surface passes into the water — 250 compressions arrive per second, so 250 continue per second; the source alone sets that count. The medium owns the speed, so the speed jumps in water, and the wavelength stretches to match so that v = fλ still holds: frequency stays, speed and wavelength change together."
+    },
+    {
+      "id": "cc2",
+      "question": "A survey ship sends a 25 kHz sonar pulse into seawater (1 500 m·s⁻¹) and receives the echo after 1,2 s. Calculate the depth and the wavelength of the pulse, and explain why only one of the two calculations contains a factor of two.",
+      "expected_answer": "Depth: d = (v × Δt) ÷ 2 = (1 500 × 1,2) ÷ 2 = 1 800 ÷ 2 = 900 m. Wavelength: convert 25 kHz to 25 000 Hz; λ = v ÷ f = 1 500 ÷ 25 000 = 0,06 m. The factor of two appears only in the depth calculation because the measured 1,2 s covers the pulse's journey down to the seabed and back up — a round trip of twice the depth. The wavelength calculation uses the wave equation, which relates speed, frequency and wavelength and has nothing to do with travel time, so no halving belongs there. Halving is for round trips, never for wavelengths."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why a bat hunts with an 85 kHz call rather than an audible one, showing the wavelength calculation, and give the reason ultrasound rather than X-rays is used to scan an unborn baby.",
+      "expected_answer": "A wave only reflects usefully off objects about its own wavelength or larger. At 85 kHz in air, λ = v ÷ f = 340 ÷ 85 000 = 0,004 m — four millimetres, about moth-size — so the call bounces sharply off a moth and returns a strong echo. An audible call near speaking pitch would have a wavelength of roughly a metre, which would flow around the moth like a swell around a jetty pole and return almost nothing; the moth would be undetectable. Hospitals use ultrasound for pregnancy scans because ultrasound is a mechanical pressure wave, not ionising radiation: X-rays carry enough energy per photon to strip electrons from atoms and damage cells, while ultrasound cannot, so the developing baby can be imaged safely and repeatedly."
+    }
+  ]
+}

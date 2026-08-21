@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Convert 14 g of KOH to moles, then to a concentration when dissolved to make 500 cm³ of solution, and state the volume of gas that the same number of moles would occupy at STP. Name the discipline these three conversions share.",
+      "expected_answer": "M(KOH) = 39 + 16 + 1 = 56 g·mol⁻¹, so n = 14 ÷ 56 = 0,25 mol. Convert the volume first: 500 cm³ = 0,5 dm³; c = 0,25 ÷ 0,5 = 0,5 mol·dm⁻³. At STP, 0,25 mol of any gas occupies 0,25 × 22,4 = 5,6 dm³. The shared discipline is the mole hub: convert into moles first, do the chemistry in moles, convert out last — grams, solution volumes and gas volumes never exchange directly."
+    },
+    {
+      "id": "cc2",
+      "question": "For N₂ + 3H₂ → 2NH₃ with 2 mol of nitrogen and 4,5 mol of hydrogen, identify the limiting reagent by the demand-versus-supply check, calculate the mass of ammonia formed, and find the percentage yield if only 40,8 g is collected.",
+      "expected_answer": "Demand check: 2 mol N₂ at the 1 : 3 ratio demands 6 mol H₂; only 4,5 mol is available, so hydrogen is limiting and nitrogen is in excess. All downstream amounts follow the limiting reagent: 4,5 mol H₂ gives 4,5 × 2 ÷ 3 = 3 mol NH₃ = 3 × 17 = 51 g theoretical. Percentage yield = actual ÷ theoretical × 100 = 40,8 ÷ 51 × 100 = 80%. The excess 0,5 mol of nitrogen remains unreacted."
+    },
+    {
+      "id": "cc3",
+      "question": "25 cm³ of 0,2 mol·dm⁻³ KOH exactly neutralises 20 cm³ of HNO₃. Calculate the acid's concentration, and explain how and why the working would change if the acid were H₂SO₄.",
+      "expected_answer": "n(KOH) = cV = 0,2 × 0,025 = 0,005 mol. HNO₃ + KOH → KNO₃ + H₂O is 1 : 1, so n(HNO₃) = 0,005 mol; c = 0,005 ÷ 0,020 = 0,25 mol·dm⁻³. For sulphuric acid the equation is H₂SO₄ + 2KOH → K₂SO₄ + 2H₂O — the diprotic acid supplies two protons, so the ratio is 1 acid : 2 base, and n(H₂SO₄) = 0,005 ÷ 2 = 0,0025 mol, giving c = 0,0025 ÷ 0,020 = 0,125 mol·dm⁻³. Skipping the ratio step is the most expensive titration error there is."
+    }
+  ]
+}

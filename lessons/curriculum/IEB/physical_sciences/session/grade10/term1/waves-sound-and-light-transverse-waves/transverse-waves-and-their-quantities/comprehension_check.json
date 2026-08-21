@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define amplitude and wavelength, giving the symbol and SI unit of each, and explain the mistake made by a student who measures amplitude from a crest to a trough.",
+      "expected_answer": "Amplitude, symbol A, is the maximum displacement of a particle of the medium from its equilibrium (rest) position; its SI unit is the metre. Wavelength, symbol λ (lambda), is the distance between two successive points in phase — for example crest to the very next crest; its SI unit is also the metre. Measuring from a crest to a trough gives the distance from maximum positive to maximum negative displacement, which is two amplitudes, double the true value. If a crest is 8 cm above the rest line and the trough 8 cm below, the amplitude is 8 cm (0,08 m), not 16 cm. Amplitude must always be measured from the rest line to the point of maximum displacement."
+    },
+    {
+      "id": "cc2",
+      "question": "A ripple tank vibrator runs at 25 Hz producing ripples 2 cm apart, and harbour swells travel at 2,4 m·s⁻¹ with a period of 0,8 s. Calculate the speed of the ripples and the wavelength of the swells, showing the three-line layout both times.",
+      "expected_answer": "Ripples: formula v = fλ; convert 2 cm to 0,02 m; substitution v = (25)(0,02); answer v = 0,5 m·s⁻¹. Swells: first find the frequency, f = 1/T = 1 ÷ 0,8 = 1,25 Hz; then rearrange the wave equation, λ = v ÷ f; substitution λ = 2,4 ÷ 1,25; answer λ = 1,92 m. Each solution shows formula, substitution with converted SI units, and the answer with its unit — the layout that earns every available mark."
+    },
+    {
+      "id": "cc3",
+      "question": "A displacement-versus-position graph and a displacement-versus-time graph of the same wave look identical. Explain what the repeating interval on each graph represents, and why turning up the source's frequency does not make the wave travel faster.",
+      "expected_answer": "A displacement-versus-position graph is a snapshot of the whole medium at one instant, so the distance after which the curve repeats is the wavelength. A displacement-versus-time graph follows one particle as it oscillates, so the interval after which the curve repeats is the period. The horizontal axis label must be read before measuring anything. Increasing the source's frequency does not change the speed because wave speed is a property of the medium — the tension of the rope or the depth of the water — not of the source. When the frequency rises, the speed stays fixed and the wavelength shortens in exact proportion, so that v = fλ still balances: the source sets the frequency, the medium sets the speed, and the wavelength adjusts."
+    }
+  ]
+}

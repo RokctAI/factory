@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the rule 'every force needs a responsible object' and how it removes the phantom 'force of motion' from the diagram.",
+      "expected_answer": "A force is an interaction, so every arrow must name the object exerting it: Earth → weight, floor → normal force, strap → applied force, rough surface → friction. Motion is not an object and exerts nothing; a moving box needs no forward force to keep moving — only changes in motion require a net force."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is the normal force less than the weight of 78,4 N in this problem? Answer by reading the vertical balance of the diagram.",
+      "expected_answer": "Three vertical forces act: N up, the 78,4 N weight down, and the strap's upward component F sin 25°. At constant velocity they balance: N + F sin 25° = w, so N = 78,4 − F sin 25°, which is less than the weight because the strap carries part of the load. The normal force must always be read from the balance, never assumed equal to the weight."
+    },
+    {
+      "id": "cc3",
+      "question": "What does the phrase 'constant velocity' let you write down mathematically, and why is it included in the question?",
+      "expected_answer": "Constant velocity means zero acceleration, so by Newton's first law the net force is zero and the forces balance in every direction. That licenses F cos 25° = f horizontally and N + F sin 25° = w vertically. The phrase is the question's way of saying the diagram may be converted into balance equations."
+    }
+  ]
+}

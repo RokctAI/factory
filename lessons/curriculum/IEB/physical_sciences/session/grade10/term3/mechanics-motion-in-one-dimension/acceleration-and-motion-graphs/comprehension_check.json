@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate the acceleration in each of the bus's three phases and explain what the sign of each answer means in the declared frame.",
+      "expected_answer": "Phase 1: a = Δv/Δt = (15 − 0)/6 = 2,5 m/s² in the direction of motion — velocity grows 2,5 m/s each second. Phase 2: Δv = 0, so a = 0 — constant velocity, motion without change. Phase 3: (0 − 15)/10 = −1,5 m/s² — with the direction of motion positive, the negative sign means the acceleration opposes the velocity, removing 1,5 m/s of speed each second."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the two 'payments' of a velocity-time graph and use them to recover the bus's total displacement of 570 m.",
+      "expected_answer": "Gradient gives acceleration (rise over run = Δv/Δt); area between graph and time axis gives displacement (velocity × time computed piece by piece). Areas: pull-away triangle ½ × 6 × 15 = 45 m; cruise rectangle 30 × 15 = 450 m; braking triangle ½ × 10 × 15 = 75 m; total 45 + 450 + 75 = 570 m — a two-part answer read entirely off one picture."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain the commonest graph-reading error in this topic and the axis-checking habit that prevents it.",
+      "expected_answer": "Reading a velocity-time graph as if it were position-time: a rising line means speeding up (not moving away) and a falling line means slowing down (not coming back) — the braking bus's falling ramp still covers 75 forward metres. Prevention: check the vertical axis label first and say what zero height means there — on velocity-time, a line ON the axis is rest, a horizontal line above it is steady motion, and the object only moves backwards if the graph crosses below the axis."
+    }
+  ]
+}

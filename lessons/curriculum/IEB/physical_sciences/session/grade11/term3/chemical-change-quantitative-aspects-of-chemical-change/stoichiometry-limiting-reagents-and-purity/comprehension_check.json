@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "14 g of nitrogen and 2,4 g of hydrogen react according to N₂ + 3H₂ → 2NH₃. Identify the limiting reagent with a ratio test, calculate the mass of ammonia formed and the mass of the excess reactant left over, and confirm your answer with conservation of mass.",
+      "expected_answer": "Convert both to moles: nitrogen n = 14 ÷ 28 = 0,5 mol; hydrogen n = 2,4 ÷ 2 = 1,2 mol. Ratio test: the equation needs 3 mol of hydrogen per mole of nitrogen, so 0,5 mol of nitrogen demands 1,5 mol of hydrogen; only 1,2 mol is available, so hydrogen is the limiting reagent and nitrogen is in excess — even though nitrogen has the smaller mole count. Ammonia from the limiting reagent: hydrogen to ammonia is 3 : 2, so 1,2 × 2/3 = 0,8 mol of NH₃, with mass 0,8 × 17 = 13,6 g. Nitrogen used: 1,2 ÷ 3 = 0,4 mol, so 0,5 − 0,4 = 0,1 mol is left over, with mass 0,1 × 28 = 2,8 g. Conservation check: in, 14 + 2,4 = 16,4 g; out, 13,6 g of ammonia plus 2,8 g of unreacted nitrogen = 16,4 g. Only the ratio test — never the smaller mole count — identifies the limiting reagent."
+    },
+    {
+      "id": "cc2",
+      "question": "A 20 g sample of crushed rock reacts with excess sulphuric acid: MgCO₃ + H₂SO₄ → MgSO₄ + H₂O + CO₂. The carbon dioxide collected is 4,48 dm³ at STP. Calculate the percentage purity of the magnesium carbonate, and explain why the acid must be in excess.",
+      "expected_answer": "Moles of gas: n = V ÷ Vₘ = 4,48 ÷ 22,4 = 0,2 mol of CO₂. The mole ratio of MgCO₃ to CO₂ is 1 : 1, so the sample contained 0,2 mol of magnesium carbonate. Mass: 0,2 × 84 = 16,8 g. Percentage purity = mass of pure substance ÷ mass of sample × 100 = 16,8 ÷ 20 × 100 = 84 %. The acid must be in excess so that every grain of genuine carbonate reacts and is counted through the gas it releases; if the acid ran out first, unreacted carbonate would go unmeasured and the purity would come out falsely low. The impurities never enter the calculation because they do not react with the acid at all."
+    },
+    {
+      "id": "cc3",
+      "question": "In a car airbag, sodium azide decomposes according to 2NaN₃ → 2Na + 3N₂. Calculate the volume of nitrogen at STP produced by 97,5 g of sodium azide, and explain why this reaction suits an airbag and how it relates to the chemist's definition of an explosion.",
+      "expected_answer": "Molar mass of NaN₃: 23 + (3 × 14) = 65 g·mol⁻¹, so n = 97,5 ÷ 65 = 1,5 mol of azide. The azide-to-nitrogen ratio is 2 : 3, so 1,5 × 3/2 = 2,25 mol of nitrogen forms. Volume at STP: 2,25 × 22,4 = 50,4 dm³. The reaction suits an airbag because it is extremely fast, converts a small solid pellet into a very large gas volume, and delivers nitrogen — an inert gas, neither flammable nor toxic. A chemist defines an explosion as exactly this: violent, rapid production of a large gas volume from a small volume of solid or liquid. The airbag runs the same chemistry as an explosive charge but catches the expanding gas in a nylon bag to cushion the occupant; engineers size the pellet by running the calculation in reverse from the required bag volume."
+    }
+  ]
+}

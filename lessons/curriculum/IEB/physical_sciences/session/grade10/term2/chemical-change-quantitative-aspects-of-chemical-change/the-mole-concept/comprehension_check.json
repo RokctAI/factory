@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what a mole is, why Avogadro's number has the size it has, and how the periodic table lets weighing stand in for counting.",
+      "expected_answer": "A mole is a fixed counting unit: six comma zero two times ten to the twenty-three particles, Avogadro's number — a bag size for particles, the way a tray holds thirty eggs. Its awkward size was chosen deliberately so that one mole of a substance weighs, in grams, exactly the relative atomic or molecular mass the periodic table prints: a mole of carbon weighs twelve grams, a mole of hydrogen atoms one gram. That gram-mass of one mole is the molar mass M, in grams per mole. Because every mole of a substance has a known mass, a balance becomes a counting machine: weigh a sample, divide by the molar mass, and n equals m over M returns the number of moles — the count of bags — without ever counting a single particle."
+    },
+    {
+      "id": "cc2",
+      "question": "8,8 grams of propane, C3H8, leaks from a camping canister. Calculate the number of moles, the number of molecules, and the volume at STP, showing the sense-checks along the way.",
+      "expected_answer": "Molar mass first, subscript by subscript: three carbons at twelve grams per mole is thirty-six, plus eight hydrogens at one gram per mole is eight, giving M equal to forty-four grams per mole — never thirteen, which comes from skimming the subscripts. Moles: n equals m over M — 8,8 divided by 44 equals 0,2 moles; sense-check: 8,8 is exactly one fifth of 44, so a fifth of a mole is right, whereas 5 moles would weigh two hundred and twenty grams. Molecules: N equals n times Avogadro's number — 0,2 times 6,02 times ten to the twenty-three equals 1,204 times ten to the twenty-three molecules; travelling out to particles you multiply, so the answer must be enormous. Volume: V equals n times V m — 0,2 times 22,4 equals 4,48 cubic decimetres, which is 4,48 litres at STP — zero degrees Celsius, 273 kelvin, and 101,3 kilopascals — and the 22,4 is licensed only because the question specifies STP."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the mole map and its direction rule, and state the four commonest errors it protects you from.",
+      "expected_answer": "The mole map places moles, n, at the centre with three roads leading out: to mass via the molar mass M, to particle count via Avogadro's number, and to gas volume at STP via 22,4 cubic decimetres per mole. The direction rule: travelling out of the centre you multiply by the road's conversion factor; travelling in to moles you divide by it — in, divide; out, multiply. Every problem is one trip: enter from the given quantity, stand at the centre in moles, exit along the road the question asks for. The four errors it prevents: one, dividing by Avogadro's number when travelling outward to particles instead of multiplying; two, molar masses computed with skimmed subscripts — forty-four for propane, not thirteen; three, using 22,4 for a gas not at STP, or for a liquid or solid at all; four, unit chaos — kilograms fed into a grams formula, or cubic centimetres confused with cubic decimetres, when one thousand cubic centimetres make one cubic decimetre, which is one litre."
+    }
+  ]
+}

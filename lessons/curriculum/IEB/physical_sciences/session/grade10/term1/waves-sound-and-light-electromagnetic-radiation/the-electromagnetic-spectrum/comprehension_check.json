@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe what an electromagnetic wave is made of, explain why it needs no medium, and list the seven bands of the spectrum in order of increasing frequency.",
+      "expected_answer": "An electromagnetic wave is produced by an accelerating electric charge and consists of an oscillating electric field and an oscillating magnetic field, perpendicular to each other and both perpendicular to the direction of travel — making the radiation transverse. It needs no medium because the changing electric field generates a changing magnetic field and vice versa: the two fields regenerate each other and so sustain the wave through empty space, which is why sunlight crosses the vacuum between the sun and Earth while sound cannot cross a vacuum at all. In order of increasing frequency (decreasing wavelength): radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays. All seven travel at the same speed in a vacuum, c = 3 × 10⁸ m·s⁻¹."
+    },
+    {
+      "id": "cc2",
+      "question": "Ultraviolet light has a wavelength of 300 nm. Calculate its frequency and the energy of one photon (h = 6,63 × 10⁻³⁴ J·s), and compare that photon with one from a 150 MHz radio transmitter.",
+      "expected_answer": "Convert first: 300 nm = 3 × 10⁻⁷ m. Frequency: f = c ÷ λ = (3 × 10⁸) ÷ (3 × 10⁻⁷) = 1 × 10¹⁵ Hz. Photon energy: E = hf = (6,63 × 10⁻³⁴)(1 × 10¹⁵) = 6,63 × 10⁻¹⁹ J. For the radio wave: 150 MHz = 1,5 × 10⁸ Hz, so E = hf = (6,63 × 10⁻³⁴)(1,5 × 10⁸) = 9,95 × 10⁻²⁶ J. The ultraviolet photon carries nearly seven million times more energy than the radio photon, although both waves travel at exactly the same speed in a vacuum — the difference between the bands is photon energy, never speed."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain what ionising radiation is, name the ionising bands, and use photon energy to justify one use and one danger each for ultraviolet and for gamma rays.",
+      "expected_answer": "Ionising radiation is radiation whose photons carry enough energy to strip electrons from atoms, damaging the molecules — including DNA — of living cells. The ionising bands are ultraviolet, X-rays and gamma rays, the three highest-frequency members of the spectrum. Ultraviolet: its energetic photons kill microorganisms, so it is used to sterilise water and instruments (and it triggers vitamin D production in skin); the same photon energy damages skin cells, causing sunburn and, with long exposure, skin cancer and cataracts. Gamma rays: the most energetic and penetrating band, so a beam can reach deep tumours and kill cancer cells in radiotherapy, and it sterilises sealed medical equipment; that same penetrating, ionising power makes gamma rays destructive to healthy cells, causing severe cell damage and radiation sickness at high doses."
+    }
+  ]
+}

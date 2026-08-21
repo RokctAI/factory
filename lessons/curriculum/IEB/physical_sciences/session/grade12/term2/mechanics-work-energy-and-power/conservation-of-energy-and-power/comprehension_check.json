@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a conservative force and a non-conservative force, give one example of each, and state the principle of conservation of mechanical energy together with the conditions under which it holds.",
+      "expected_answer": "A conservative force is a force for which the work done in moving an object between two points is independent of the path taken — the gravitational force is the standard example: its work depends only on the height difference, and whatever it charges on the way up it repays in full on the way down. A non-conservative force is one whose work depends on the path taken — friction is the standard example: it charges for every metre travelled and never repays, converting the energy to heat; air resistance, applied forces and tension are also treated as non-conservative. The principle of conservation of mechanical energy: in the absence of air resistance or any external force — that is, when only conservative forces act — the total mechanical energy (the sum of kinetic and gravitational potential energy) of an object remains constant, so Ek + Ep at one point equals Ek + Ep at any other point."
+    },
+    {
+      "id": "cc2",
+      "question": "A 40 kg child starts from rest at the top of a slide 2,5 m high and reaches the bottom at 5 m·s⁻¹. Use Wnc = ΔEk + ΔEp to find the work done by friction, and explain how comparing her arrival speed with the frictionless prediction confirms the sign of your answer.",
+      "expected_answer": "Take the bottom of the slide as the reference level. Initial: Ek = 0, Ep = 40 × 9,8 × 2,5 = 980 J. Final: Ek = ½ × 40 × 5² = 500 J, Ep = 0. ΔEk = +500 J and ΔEp = −980 J, so Wnc = 500 − 980 = −480 J: friction drained 480 J from the ride and converted it to heat on the slide surface. Frictionless check: mgh = ½mv² gives v = √(2 × 9,8 × 2,5) = √49 = 7 m·s⁻¹. She actually arrives at only 5 m·s⁻¹, slower than the frictionless prediction, which confirms that energy left the system and that Wnc must be negative — the sign and the story agree."
+    },
+    {
+      "id": "cc3",
+      "question": "A 3 kg box is released from rest at the top of a rough 5 m ramp whose top is 2 m above the ground and arrives at the bottom at 4 m·s⁻¹. Calculate the friction force, explaining carefully which distance is used for friction and which for gravity. Then calculate the work a winch must do to haul the box back up at constant speed.",
+      "expected_answer": "Reference level at the ground. Initial: Ek = 0, Ep = 3 × 9,8 × 2 = 58,8 J. Final: Ek = ½ × 3 × 4² = 24 J, Ep = 0. Wnc = ΔEk + ΔEp = 24 − 58,8 = −34,8 J. Friction acts along the full 5 m of ramp surface, opposite to the motion, so −f × 5 = −34,8, giving f = 6,96 N. The 5 m path length is used for friction because friction charges per metre travelled along the surface; the 2 m vertical height is used for gravitational potential energy because gravity's work depends only on height. Hauling back up at constant speed: ΔEk = 0, ΔEp = +58,8 J, and friction still does −34,8 J along the path, so the winch must supply 58,8 + 34,8 = 93,6 J of positive work."
+    }
+  ]
+}

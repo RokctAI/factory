@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the rules for combining resistors in series and in parallel, including which quantity is common to the components in each case. Then calculate the total resistance of a network consisting of a 12 Ω and a 6 Ω resistor in parallel, connected in series with a 5 Ω resistor, and state the sanity check that applies to the parallel step.",
+      "expected_answer": "Series: the same current passes through each resistor, the voltages add, and resistances add directly (R = R₁ + R₂ + ...); adding a series resistor increases the total. Parallel: each branch has the same voltage across it, branch currents add, and resistances combine by reciprocals (1/R = 1/R₁ + 1/R₂), with product-over-sum for a pair; adding a parallel branch decreases the total. Calculation: 12 // 6 = (12 × 6)/(12 + 6) = 72/18 = 4 Ω; then 4 + 5 = 9 Ω total. Sanity check: a parallel combination must be smaller than its smallest branch — 4 Ω < 6 Ω, so the step is consistent."
+    },
+    {
+      "id": "cc2",
+      "question": "Define emf, terminal voltage and lost volts, and give the energy-budget equation that links them. For a cell of emf 9 V and internal resistance 0,5 Ω driving a 4 Ω resistor, calculate the current, the terminal voltage and the lost volts, and explain what a voltmeter across the terminals reads when the switch is open.",
+      "expected_answer": "The emf (ε) is the total energy the battery gives each coulomb of charge, readable only when no current flows. The terminal voltage is the potential difference across the battery's terminals while current flows (V = I·R external). The lost volts are the potential difference across the internal resistance (I·r), converted to heat inside the cell. Budget: ε = I·R external + I·r. Calculation: total resistance = 4 + 0,5 = 4,5 Ω; I = 9/4,5 = 2 A; terminal voltage = 2 × 4 = 8 V; lost volts = 2 × 0,5 = 1 V; check 8 + 1 = 9 V = ε. With the switch open no current flows, so the lost volts are zero and the voltmeter reads the full emf, 9 V."
+    },
+    {
+      "id": "cc3",
+      "question": "An 18 V battery with internal resistance 1 Ω feeds a 2 Ω resistor in series with a parallel pair of 10 Ω and 15 Ω. Run the full routine: equivalent external resistance, main current, terminal voltage, voltage across the parallel pair, both branch currents with a junction check, and the power dissipated in the 2 Ω resistor and inside the battery. Also explain why connecting further lamps in parallel would dim the ones already connected.",
+      "expected_answer": "Parallel pair: (10 × 15)/(10 + 15) = 150/25 = 6 Ω; external resistance = 2 + 6 = 8 Ω; total = 8 + 1 = 9 Ω; main current I = 18/9 = 2 A. Terminal voltage = 18 − (2)(1) = 16 V. The 2 Ω resistor takes 2 × 2 = 4 V, leaving 12 V across the parallel pair. Branch currents: 12/10 = 1,2 A and 12/15 = 0,8 A; junction check 1,2 + 0,8 = 2 A, matching the main current. Power: 2 Ω resistor P = I²R = (2)²(2) = 8 W; inside the battery P = I²r = (2)²(1) = 4 W. Extra parallel lamps: external resistance falls, total current rises, lost volts I·r rise, terminal voltage drops — so every lamp connected across the terminals receives less voltage and dims. (Four links in that order.)"
+    }
+  ]
+}
