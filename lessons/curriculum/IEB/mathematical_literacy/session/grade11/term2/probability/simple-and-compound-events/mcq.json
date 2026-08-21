@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Scale from Impossible to Certain",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The probability scale runs from:",
+          "options": [
+            "0 for impossible to 1 for certain, with nothing beyond either end",
+            "1 to 100",
+            "−1 to 1",
+            "0 to 10"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A wheel with ten equal sectors, one marked WIN, gives a winning probability of:",
+          "options": [
+            "0,9",
+            "One tenth — 0,1, or 10%",
+            "One half",
+            "10"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "An 'event' differs from an 'outcome' because an event:",
+          "options": [
+            "Is always less likely",
+            "Only applies to coins",
+            "Is the set of outcomes you care about — 'greater than four' bundles 5 and 6",
+            "Cannot be given a probability"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "If the wheel wins with probability one tenth, it loses with probability:",
+          "options": [
+            "One tenth",
+            "Zero",
+            "One",
+            "Nine tenths — the two must total exactly 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Watching versus Calculating: Relative Frequency",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The minibus arrived full on 18 of 50 mornings. The relative frequency of a full minibus is:",
+          "options": [
+            "18 ÷ 50 = 0,36",
+            "50 ÷ 18",
+            "18%",
+            "0,18"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Minibuses, weather and power cuts need relative frequency rather than theoretical probability because:",
+          "options": [
+            "Their probabilities are always 0,5",
+            "They own no symmetry — their chances must be estimated by watching",
+            "They cannot be observed",
+            "Theoretical probability only works for large numbers"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Eight heads in ten flips of a fair coin means:",
+          "options": [
+            "The coin is definitely loaded",
+            "The theoretical probability has changed to 0,8",
+            "Nothing alarming — tiny samples wobble; a thousand flips at that rate would be evidence",
+            "The next flips must be tails"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "A coin flipped 250 times gives 110 heads. The full-marks comparison says:",
+          "options": [
+            "Theoretical 0,44; relative frequency 0,5",
+            "The coin is unfair because 110 is not 125",
+            "Both numbers are 0,5",
+            "Theoretical 0,5, relative frequency 0,44 — close together, so the coin behaves fairly over a respectable test"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Tree Diagrams: Chance in Two Steps",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Tossing a coin twice produces the equally likely combined outcomes:",
+          "options": [
+            "Heads-heads, heads-tails, tails-heads, tails-tails — four journeys",
+            "Heads-heads, heads-tails, tails-tails — three journeys",
+            "Two heads or two tails only",
+            "Six journeys"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The probability of exactly one tail in two tosses is:",
+          "options": [
+            "One quarter",
+            "A half — the two journeys heads-tails and tails-heads",
+            "Three quarters",
+            "One eighth"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The rule for combining probabilities along a tree's branches is:",
+          "options": [
+            "Add along the journey",
+            "Subtract the smaller from the larger",
+            "Multiply along the journey — a half times a half gives each coin path a quarter",
+            "Take the larger branch only"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "If the food stand runs out of boerewors rolls with probability 0,1 each day, independently, then rolls available two days running has probability:",
+          "options": [
+            "0,2",
+            "0,1",
+            "0,99",
+            "0,9 × 0,9 = 0,81"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Two-Way Tables: Chance in a Grid",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "With 36 learner-minibus, 54 learner-walk, 24 adult-minibus and 36 adult-walk, the totals are:",
+          "options": [
+            "90 learners, 60 adults, 60 by minibus, 90 walked, 150 in all",
+            "80 learners, 70 adults, 70 by minibus, 80 walked",
+            "90 learners, 60 adults, 70 by minibus, 80 walked",
+            "60 learners, 90 adults, 90 by minibus, 60 walked"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The probability that a random visitor is an adult who came by minibus is:",
+          "options": [
+            "24 over 60",
+            "The single cell 24 over the grand total 150 — 0,16",
+            "60 over 150",
+            "24 over 90"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "'Given that a visitor is a learner, the chance they came by minibus' is:",
+          "options": [
+            "36 over 150",
+            "90 over 150",
+            "36 over 90 = 0,4 — the words shrink the world to the 90 learners",
+            "60 over 90"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Choosing the denominator in a two-way-table question depends on:",
+          "options": [
+            "Always using the grand total",
+            "Always using the largest total",
+            "The size of the cell",
+            "The wording — grand total for 'a random visitor', a row or column total when the question says 'given' or 'of the learners'"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "How Sure Is Sure",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "One half, 0,5 and 50% are:",
+          "options": [
+            "The same chance in three languages — fraction, decimal and percent",
+            "Three different probabilities",
+            "Only valid for coins",
+            "Increasingly likely versions of the same event"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Drawing a red sweet blind from a bag of 4 red and 16 green has probability:",
+          "options": [
+            "4 out of 16",
+            "4 out of 20 — one fifth",
+            "16 out of 20",
+            "A half"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "An answer of 1,3 for a probability is:",
+          "options": [
+            "A very likely event",
+            "Acceptable if the working is shown",
+            "Broken — nothing outranks certainty, so no probability exceeds 1",
+            "A rounding issue"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Minibus You Watched for Fifty Mornings",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The minibus's chance had to be watched rather than calculated because:",
+          "options": [
+            "There is no rulebook of symmetry for minibuses — real-world chances are measured by counting",
+            "Minibuses are always late",
+            "Counting was easier than the formula",
+            "Coins are more reliable than timetables"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Fifty mornings of watching beats five mornings because:",
+          "options": [
+            "Fifty is a rounder number",
+            "The longer you watch, the closer the count creeps to the truth",
+            "Five mornings would give probability zero",
+            "The minibus changes route after five days"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Karabo's estimate of 0,36 for a full minibus means roughly:",
+          "options": [
+            "The minibus is full every third week",
+            "Thirty-six minibuses run the route",
+            "A thirty-six percent risk of watching a full minibus drive past on any school morning",
+            "The minibus holds 36 passengers"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Branches and Grids: Handling Two Things at Once",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The tree diagram exists mainly to:",
+          "options": [
+            "Lay every journey in front of your eyes, catching the route head-jugglers lose — like tails-heads",
+            "Make the page look organised",
+            "Replace multiplication",
+            "Handle crowds with two labels"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The picture for a crowd where each person wears two labels is:",
+          "options": [
+            "A tree diagram",
+            "The two-way grid, with cells and totals that must agree",
+            "A broken-line graph",
+            "A tally chart"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "When rows and columns of the grid refuse to add to their totals:",
+          "options": [
+            "The grand total should be changed",
+            "The question is faulty",
+            "A cell is lying, and catching it before answering costs nothing",
+            "The denominators must be swapped"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Seeing 'given that' or 'of the learners' in a question means:",
+          "options": [
+            "Use the grand total of 150",
+            "Multiply along the branches",
+            "Add the row and column totals",
+            "The denominator stops being 150 and becomes the named group's total"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

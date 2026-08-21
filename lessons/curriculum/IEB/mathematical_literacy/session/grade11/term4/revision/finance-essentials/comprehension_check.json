@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Naledi's gross salary is R11 200, with UIF at 1%, pension at 7,5% and tax of R1 498. Show the full path to her net salary and explain what UIF buys her.",
+      "expected_answer": "UIF: 0,01 × 11 200 = R112; pension: 0,075 × 11 200 = R840; net: 11 200 − 112 − 840 − 1 498 = R8 750. UIF is unemployment insurance — the employer matches her R112, and if she loses her job the fund pays out because these contributions were made."
+    },
+    {
+      "id": "cc2",
+      "question": "Electricity costs R1,95 per unit for the first 150 units and R2,85 per unit thereafter. Show why 260 units cost R606 and why multiplying 260 by a single rate fails.",
+      "expected_answer": "First block: 150 × 1,95 = R292,50. Remaining units: 260 − 150 = 110, costing 110 × 2,85 = R313,50. Total: 292,50 + 313,50 = R606. A single rate fails because the price changes at the step — 260 × 1,95 = R507 undercharges and 260 × 2,85 = R741 overcharges; the usage must be split into blocks, each priced at its own rate."
+    },
+    {
+      "id": "cc3",
+      "question": "Sipho's stand has fixed costs of R1 800; each boerewors roll costs R16 to make and sells for R31. Find the break-even point, verify it, and state what sales above and below it mean.",
+      "expected_answer": "Contribution per sale: 31 − 16 = R15. Break-even: 1 800 ÷ 15 = 120 rolls. Check: income 120 × 31 = R3 720; total cost 1 800 + 120 × 16 = R3 720 — equal, so nothing is lost or gained. Sales above 120 each add R15 profit; below 120 the month ends in a loss."
+    }
+  ]
+}

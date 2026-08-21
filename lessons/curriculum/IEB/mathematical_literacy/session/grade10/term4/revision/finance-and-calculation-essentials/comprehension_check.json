@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A heater's shelf price of R391 includes VAT at 15%. Explain how to find the price before VAT and the VAT amount, and why subtracting 15% of R391 gives the wrong answer.",
+      "expected_answer": "The tag is 115% of the true price, so divide by 1,15: 391 ÷ 1,15 = R340 before VAT, making the VAT R51. Subtracting 15% of 391 (R58,65) is wrong because it takes 15% of the 115% figure, not of the original 100%. The reverse check proves it: 340 × 1,15 = 391 exactly."
+    },
+    {
+      "id": "cc2",
+      "question": "Karabo's household has income R7 900 and expenses R7 050 (rent R2 800, food R1 500, transport R950, electricity R700, school R1 100). Food rises by 10%. Show whether the budget still balances and state which expense types should be targeted if cuts are needed.",
+      "expected_answer": "Current surplus: 7 900 − 7 050 = R850. Food rises by 0,10 × 1 500 = R150, so expenses become R7 200 and the surplus falls to R700 — still a surplus, so the budget survives. If cuts were needed, target variable expenses (food, electricity), because fixed expenses like rent cannot be changed month to month."
+    },
+    {
+      "id": "cc3",
+      "question": "A withdrawal costs a fixed R3 plus 1,5% of the amount, and prepaid electricity costs a R60 fixed charge plus R2,20 per unit. Explain the structure these share and how it appears on a cost graph.",
+      "expected_answer": "Both are fixed part plus variable part: cost = fixed amount + rate × usage. Withdrawing R400 costs 3 + 0,015 × 400 = R9; using 250 units costs 60 + 2,20 × 250 = R610. On a graph, the fixed part is the starting value on the vertical axis (the line starts at R60, not nought) and the rate is the slope; where two such lines cross, the two options cost the same."
+    }
+  ]
+}

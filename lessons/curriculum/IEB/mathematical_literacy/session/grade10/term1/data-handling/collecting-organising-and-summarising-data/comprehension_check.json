@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the stages of the data cycle in order, and explain what makes \"How many minutes does a commuter stand in the queue between joining it and boarding a taxi on a weekday morning?\" a better research question than \"Is the queue bad?\"",
+      "expected_answer": "The data cycle runs: pose a question; collect the data; organise and classify it; summarise and represent it; analyse and interpret it; and report an answer. \"Is the queue bad?\" cannot be answered because \"bad\" is not measurable and no evidence could settle it. The second question names exactly what is measured (the gap between joining the queue and boarding), the unit (minutes), the population (commuters), and the time frame (a weekday morning), so two different people collecting data would collect the same thing. It also protects against bias, because it fixes the conditions in advance instead of letting the collector choose convenient cases. A well-posed question is what makes every later stage of the cycle possible."
+    },
+    {
+      "id": "cc2",
+      "question": "The fifteen ordered queueing times, in minutes, are 6, 12, 15, 18, 20, 24, 28, 30, 30, 30, 45, 54, 60, 72 and 96. Calculate the mean, median, mode and range, showing your working, and explain why the mean and median differ.",
+      "expected_answer": "Mean: the fifteen times total 540 minutes, and 540 ÷ 15 = 36 minutes. Median: with 15 values the middle position is (15 + 1) ÷ 2 = position 8, and the eighth value in the ordered list is 30 minutes. Mode: 30 appears three times, more than any other value, so the mode is 30 minutes. Range: 96 − 6 = 90 minutes. The mean is six minutes higher than the median because three commuters waited 60, 72 and 96 minutes; those outliers add a large amount to the total and so lift the mean, while the median depends only on which value sits in the eighth position and is barely affected. Every answer must carry its unit — 36 minutes, not 36."
+    },
+    {
+      "id": "cc3",
+      "question": "The taxi association must decide between an extra peak-hour taxi and a second loading bay. Using the four summary values, write the report the class should give the marshal and justify which summary you relied on.",
+      "expected_answer": "The report should say: on a Thursday morning the median queue time was 30 minutes, the mean was 36 minutes, the most common wait was 30 minutes, and waits ran from 6 to 96 minutes. The median is the summary to quote for what a typical commuter experiences, because the three very long waits of 60, 72 and 96 minutes pull the mean above what most commuters actually stood. The range of 90 minutes shows the real problem is unpredictability — a long tail of a few very long waits rather than a uniformly slow queue. The recommendation therefore favours the extra taxi placed in the slot where the long waits pile up, because a loading bay reorganises the queue while extra capacity shortens the waits that create the tail. A full answer states the numbers with their units, names which summary was used and why, and ends with a recommendation the marshal can act on."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between theoretical probability and relative frequency, using the sweet jar and the taxi count as examples. Then explain why 27 heads in 60 coin tosses does not prove the coin is unfair.",
+      "expected_answer": "Theoretical probability is reasoned out before anything happens: favourable outcomes divided by total possible outcomes, assuming all outcomes are equally likely — so for the jar of 14 blue, 10 white and 16 pink sweets, the probability of pink is 16 out of 40, which is 0,4 or 40%. Relative frequency, or experimental probability, is measured afterwards from what actually happened: the number of times the event occurred divided by the number of trials — 93 of 150 taxis heading for town gives 93 ÷ 150 = 0,62 or 62%. Relative frequency is the only method available when outcomes are not equally likely, as with the taxis. Getting 27 heads in 60 tosses is a relative frequency of 0,45 rather than the theoretical 0,5, but small samples wander; as the number of trials increases, the relative frequency tends towards the theoretical probability, so 6 000 tosses would sit very close to 0,5. Nothing about the coin is proved wrong by one short run."
+    },
+    {
+      "id": "cc2",
+      "question": "A teacher surveyed 160 learners: of the 100 under 16, 64 come by taxi; of the 60 aged 16 and over, 32 come by taxi. Calculate the probability that a random learner comes by taxi, and compare taxi use between the two age groups. Explain what changes in the calculation.",
+      "expected_answer": "First check the table's margins: 36 + 64 = 100 and 28 + 32 = 60, while the column totals of 64 walkers and 96 taxi users also reach the grand total of 160. The probability that a randomly chosen learner comes by taxi uses the whole group as the denominator: 96 out of 160 = 0,6, or 60%. Comparing the age groups narrows the group, so the denominator changes with it: of the under-16s, 64 out of 100 = 0,64, or 64%, while of those 16 and over, 32 out of 60 = 0,533, about 53,3%. The younger learners are noticeably more likely to travel by taxi, and a full answer states both figures side by side. The discipline being examined is to identify the whole group before writing the denominator — 'out of all learners' means 160, 'out of the under-16s' means 100."
+    },
+    {
+      "id": "cc3",
+      "question": "A stall charges R4,00 to play a two-coin game and pays R12,00 for two tails. Build the sample space, decide whether the game is fair, and work out the prize that would make it fair.",
+      "expected_answer": "The sample space has four equally likely outcomes — HH, HT, TH and TT — and HT and TH must be counted separately, because the first and second coins are different objects even when the result looks the same. The probability of two tails is therefore 1 out of 4, which is 0,25 or 25%, and the same answer follows by multiplying along the tree's branches: 0,5 × 0,5 = 0,25. Over 100 turns the stall collects 100 × R4,00 = R400,00 and expects 25 winners, paying out 25 × R12,00 = R300,00, so it keeps R100,00 per 100 turns. The game is unfair to the player — not because anything is hidden, but because the prize is too small for the odds. A fair game is one where money in equals money out in the long run, so the R400,00 must be shared among the 25 expected winners: 400 ÷ 25 = R16,00 would make the game fair; any prize below R16,00 profits the stall and any prize above it loses money."
+    }
+  ]
+}

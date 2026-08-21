@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A rectangular garden is 14 m by 9 m, with a 2 m gate. Wire mesh costs R749,00 per 25 m roll and poles stand every 2 m at R72,00 each. Work out the total cost of materials, and explain the rounding decision you made.",
+      "expected_answer": "Perimeter = 2 × (14 + 9) = 2 × 23 = 46 m, and the substitution line should be written out because it carries its own mark. Subtracting the 2 m gate leaves 44 m of mesh needed, and 44 ÷ 25 = 1,76 rolls. Materials must always be rounded UP, because a fraction short is a hole in the fence, so 2 rolls are bought at 2 × R749,00 = R1 498,00, leaving 6 m unused. Poles every 2 m around a closed 46 m boundary give 46 ÷ 2 = 23 poles, because a boundary that closes on itself needs exactly as many poles as gaps; at R72,00 each that is R1 656,00. The total cost of materials is R1 498,00 + R1 656,00 = R3 154,00."
+    },
+    {
+      "id": "cc2",
+      "question": "A room measures 4,0 m by 3,6 m with walls 2,6 m high, one door 0,9 m by 2,1 m and one window 1,4 m by 1,2 m. Explain how the floor area and the wall area are found differently, and calculate the paint needed for two coats at 8 m² per litre.",
+      "expected_answer": "The floor is a single rectangle, so its area is length × breadth = 4,0 × 3,6 = 14,4 m². The walls are not the floor: wall area is the room's perimeter multiplied by the wall height, so 2 × (4,0 + 3,6) = 15,2 m of perimeter, times 2,6 m of height, gives 39,52 m². Openings are not painted, so subtract the door (0,9 × 2,1 = 1,89 m²) and the window (1,4 × 1,2 = 1,68 m²), leaving 35,95 m² of paintable wall. Two coats doubles the surface to 71,90 m², and at 8 m² per litre that is 71,90 ÷ 8 = 8,99 litres, so two 5-litre tins must be bought — rounding up, because paint is sold in whole tins and coming home short means a second trip and a wall in two shades."
+    },
+    {
+      "id": "cc3",
+      "question": "A cylindrical tank is 1,2 m in diameter and 1,8 m high and a household of four uses 340 ℓ a day. Find how long a full tank lasts, and explain why this answer is rounded down while the paint and tiles were rounded up.",
+      "expected_answer": "The diameter must first be halved to give a radius of 0,6 m — the most forgotten step in the topic, and skipping it makes the answer four times too large. Substituting into volume = π × radius² × height gives 3,142 × 0,6² × 1,8 = 3,142 × 0,36 × 1,8 = 2,036 m³, and since 1 m³ holds 1 000 litres, the tank holds 2 036 ℓ. Dividing by the daily use, 2 036 ÷ 340 = 5,99, so the tank lasts 5 complete days — even at 5,99 the answer rounds DOWN, because the sixth day runs dry a few litres before it ends. Supply questions ask how many WHOLE days are covered, so parts of a day do not count, whereas materials such as paint and tiles round UP because you must have enough to finish the job. A full answer states this in a sentence: a full 2 036 ℓ tank supplies the household of four for 5 complete days."
+    }
+  ]
+}

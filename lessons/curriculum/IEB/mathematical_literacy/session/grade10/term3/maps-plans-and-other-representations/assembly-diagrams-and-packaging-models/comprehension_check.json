@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the quantity chain on the cabinet parts list and use it to answer: how many complete brackets can be fixed with 21 screws, and how many screws are missing?",
+      "expected_answer": "Three shelves at 2 brackets each need 6 brackets; 6 brackets at 4 screws each need 24 screws — the list interlocks. With 21 screws, 21 ÷ 4 = 5 complete brackets (1 screw left over), one short of the 6 needed; 24 − 21 = 3 screws are missing."
+    },
+    {
+      "id": "cc2",
+      "question": "Show how to find the capacity of the 40 × 32 × 20 cm box for jars 8 cm across and 10 cm tall, and explain why dividing volumes would give the wrong answer.",
+      "expected_answer": "Dimension by dimension: 40 ÷ 8 = 5 along, 32 ÷ 8 = 4 across, so 20 per layer; 20 ÷ 10 = 2 layers; capacity 40 jars. Volume division overcounts because round jars leave unusable air in the square corners — remainders in each direction fit nothing, so packing always rounds down."
+    },
+    {
+      "id": "cc3",
+      "question": "The small box is R6,00 for 12 jars; the large is R14,00 for 40. Compare them per jar AND for a 15-jar job, and explain why the winners differ.",
+      "expected_answer": "Per jar: 50 cents versus 35 cents — the large box wins. For 15 jars: one large box costs R14,00; two small boxes cost R12,00 — the small option wins by R2,00. The large box's advantage sits in capacity the 15-jar job never uses; cheapest per unit and cheapest for the job are different questions."
+    }
+  ]
+}

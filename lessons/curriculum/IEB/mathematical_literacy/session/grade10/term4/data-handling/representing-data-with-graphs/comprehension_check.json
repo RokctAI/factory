@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to choose between a bar graph, a histogram and a line graph for a new dataset, giving the test applied to the horizontal axis.",
+      "expected_answer": "Ask what the horizontal axis carries. Named separate groups (pie types, provinces) take a bar graph with gaps — nothing exists between categories. Numerical intervals tiling a continuous number line (marks 0–9, 10–19) take a histogram with touching bars. A quantity measured repeatedly over time takes a line or broken-line graph with points joined in time order."
+    },
+    {
+      "id": "cc2",
+      "question": "Chicken holds 40% of the pies pie chart. Calculate its slice angle, and the number of chicken pies if 150 pies are sold in the same proportions, naming the 'whole' used in each calculation.",
+      "expected_answer": "Angle: the whole is the 360-degree circle, so 0,40 × 360 = 144 degrees. Amount: the whole is the 150 pies, so 0,40 × 150 = 60 chicken pies. Same fraction, two different wholes; shares must total 100% and angles 360 degrees as a check."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the takings data (340, 430, 120, 450, 490), give the three-layer interpretation: facts, trend, and a supported reason for the exception.",
+      "expected_answer": "Facts: lowest R120 on Wednesday, highest R490 on Friday, range R370, total R1 830. Trend: rising across the week — Friday is R150 above Monday. Exception with reason: Wednesday breaks the trend; a plausible, data-supported reason is a power cut leaving the warmers cold, so no hot pies could be sold."
+    }
+  ]
+}

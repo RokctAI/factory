@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to compute the percentage change in electricity usage from May (500 units) to June (575 units), including why the denominator must be May's value.",
+      "expected_answer": "Change over original times 100: (575 − 500) ÷ 500 × 100 = 15%. The denominator is the original because change is measured from where you started; dividing by the new 575 gives about 13,0%, which answers a different question. The doubling test confirms it: 100 to 200 must be a 100% change, and only the original as denominator produces that."
+    },
+    {
+      "id": "cc2",
+      "question": "Using the water data (25 kl before, 18 kl after, R35 per kl, repair fee R580), decide whether the repair was worth it, showing the full decision chain.",
+      "expected_answer": "Saving: 7 kl per month, worth 7 × 35 = R245 monthly. Two months save R490 (short of R580); three months save R735, passing the fee — so it pays for itself in month three, then saves R2 940 a year. Verdict: yes, worth it, because the fee is recovered within three months and everything after is pure saving."
+    },
+    {
+      "id": "cc3",
+      "question": "A bar graph compares 320 against 575 units with its vertical axis starting at 300. Explain the misleading impression, the mechanism, and the honest comparison.",
+      "expected_answer": "The axis cut at 300 leaves bars of 20 and 275, making June look nearly fourteen times January. The mechanism: only the portions above 300 are drawn, so the picture shows differences, not amounts — the data is true but the scale misleads. Honestly, 575 versus 320 is less than double; the fix is an axis starting at nought."
+    }
+  ]
+}

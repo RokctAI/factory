@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Reading a Formula Like a Sentence",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In cost = R380 + R9,50 × km, the R380 represents:",
+          "options": [
+            "The rate per kilometre",
+            "The fixed charge, owed regardless of distance",
+            "The petrol price",
+            "The number of kilometres"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The R9,50 in the formula is:",
+          "options": [
+            "The rate — the amount each kilometre adds to the bill",
+            "The deposit",
+            "A once-off admin fee",
+            "The total cost"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "In this formula, cost is called the DEPENDENT variable because:",
+          "options": [
+            "It is the biggest number",
+            "It never changes",
+            "The cost depends on the distance driven",
+            "It is written first"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Forward Substitution — Pricing the 260 km Trip",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The cost of a 260 km trip is:",
+          "options": [
+            "R2 470",
+            "R101 270",
+            "R2 850",
+            "R380"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A student computes (380 + 9,50) × 260 = R101 270. What went wrong?",
+          "options": [
+            "The calculator was broken",
+            "Order of operations — multiplication must happen before addition",
+            "The kilometres were wrong",
+            "Nothing — the answer is correct"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Why should the formula and the substitution line be set out before calculating?",
+          "options": [
+            "Each line typically earns its own mark and lets the marker follow your method",
+            "It makes the page look full",
+            "It is faster",
+            "Formulae expire otherwise"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Which sense check confirms R2 850 is plausible for the 260 km trip?",
+          "options": [
+            "It is a round number",
+            "It is bigger than R380",
+            "It equals 260 × 9,50",
+            "The driving charge (R2 470) should far exceed the fixed fee (R380) on a long trip — and it does"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Reverse Substitution — How Far Does R1 900 Go?",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "With a budget of R1 900, the first step after substituting is:",
+          "options": [
+            "Subtract the R380 fixed charge from both sides, leaving R1 520 for driving",
+            "Divide R1 900 by R9,50",
+            "Multiply R1 900 by R9,50",
+            "Add the R380 to the budget"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "R1 900 buys a trip of:",
+          "options": [
+            "200 km",
+            "160 km",
+            "40 km",
+            "190 km"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Dividing the whole R1 900 by R9,50 gives 200 km. Why is this wrong?",
+          "options": [
+            "The division was miscalculated",
+            "200 km is too short",
+            "R380 of the budget pays the fixed fee and never buys kilometres — it must be removed first",
+            "The rate should be doubled"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "How is the answer of 160 km verified?",
+          "options": [
+            "By rounding it to 200",
+            "By dividing it by 9,50",
+            "By asking a friend",
+            "Substitute forwards: 380 + 9,50 × 160 = R1 900, exactly the budget"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The General Method, the Classic Traps, and Where This Skill Lives",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The correct unwinding order for reverse substitution in a fixed-plus-rate formula is:",
+          "options": [
+            "Divide by the rate first, then subtract the fixed part",
+            "Subtract the fixed part first, then divide by the rate",
+            "Multiply, then add",
+            "Round, then divide"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A formula requires kilometres but the question gives 3 500 metres. You should:",
+          "options": [
+            "Convert to 3,5 km before substituting",
+            "Substitute 3 500 directly",
+            "Ignore the units",
+            "Multiply by 1 000"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "When should rounding happen in a multi-step substitution?",
+          "options": [
+            "After every step",
+            "Never",
+            "Only at the final answer — carry full values through the working",
+            "Before substituting"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Gate Fee and the Meter",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the soccer-match comparison, the R380 hire charge plays the part of:",
+          "options": [
+            "The pie money",
+            "The gate fee paid once at the entrance",
+            "The half-time snack",
+            "The ticket refund"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Which clue in the formula tells you R9,50 is the repeating charge?",
+          "options": [
+            "It is the smaller number",
+            "It comes second",
+            "It is multiplied by the kilometres, so it is charged once for every kilometre",
+            "It has a comma in it"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Which everyday bill has the SAME skeleton as this formula?",
+          "options": [
+            "A plumber's call-out fee plus an hourly rate",
+            "A once-off school donation",
+            "A free sample",
+            "A lottery ticket"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Why are the kilometres called the independent variable?",
+          "options": [
+            "They are measured in metres",
+            "They are always bigger than the cost",
+            "They never change",
+            "You choose them freely, and the cost answers back"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Running the Machine Forwards — and the R101 270 Disaster",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "260 kilometres at R9,50 each comes to:",
+          "options": [
+            "R2 470",
+            "R2 340",
+            "R1 300",
+            "R2 850"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In plain words, what does adding R380 to R9,50 BEFORE multiplying actually do?",
+          "options": [
+            "It discounts the trip",
+            "It charges the R380 gate fee once for every one of the 260 kilometres",
+            "It doubles the rate",
+            "Nothing — addition is harmless"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "260 × R380 = R98 800. What is this amount in the wrong answer of R101 270?",
+          "options": [
+            "The petrol cost",
+            "The true driving charge",
+            "The phantom gate fees that were never charged",
+            "The deposit"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "What makes R2 850 a believable bakkie-hire bill?",
+          "options": [
+            "It ends in a zero",
+            "It is less than R1 000",
+            "It equals the fixed fee",
+            "Most of it is driving (R2 470) with a small admin charge on top"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Running It Backwards — R1 900 in Your Pocket",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Out of a R1 900 budget, how much can actually turn into kilometres?",
+          "options": [
+            "R1 520",
+            "R1 900",
+            "R380",
+            "R950"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The wrong answer of 200 km is exactly 40 km too far. Where do those 40 km come from?",
+          "options": [
+            "A calculator slip",
+            "R380 divided by R9,50 — the fixed fee spent as if it bought driving",
+            "The trip being measured twice",
+            "Rounding errors"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Why is 'shoes off before socks' a good picture for reverse substitution?",
+          "options": [
+            "Both involve feet",
+            "Shoes are like formulas",
+            "You undo the steps in the opposite order from how they were done",
+            "Socks are optional"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Running 160 km back through the formula gives 380 + 9,50 × 160 = R1 900. This shows that:",
+          "options": [
+            "The formula is broken",
+            "The budget was too small",
+            "The trip should be shorter",
+            "The answer lands exactly on the budget given, so it is proven correct"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

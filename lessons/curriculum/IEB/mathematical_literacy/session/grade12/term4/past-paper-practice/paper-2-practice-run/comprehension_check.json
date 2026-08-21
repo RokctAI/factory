@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how the measurement practice paper is built — topic shares, question order, where Finance is allowed — and explain why units and conversions carry so many of its marks, giving two examples of mark-bearing conversions from the practice run.",
+      "expected_answer": "The practice paper carries 150 marks in five questions: Question One is 30 marks of short knowing-type items from Measurement and Maps and Plans; Question Two is Maps and Plans; Question Three is Measurement; Questions Four and Five mix them, hold the less familiar contexts, and allow small Finance calculations when directly linked to measurement or maps — costing fuel, paint or tiles. Measurement takes the largest share, Maps and Plans most of the rest, Probability a small handful; the difficulty spread matches the Finance practice paper — a third recall, a third routine, the rest reasoning. Nearly every chain crosses a conversion, and the marking plan places a mark directly on the crossing: examples include 3,1 hours converted through times-60 to 3 hours 6 minutes rather than the false 3 hours 10 minutes, and the drum's 0,452 m³ crossed via times-1 000 into about 452 litres — a correct number left in the wrong unit forfeits the answer mark."
+    },
+    {
+      "id": "cc2",
+      "question": "Work the youth centre painting chain in full — 10 m by 7 m room, 3 m high, two 0,9 m by 2,0 m doors, six 1,5 m by 1,0 m windows, two coats, 8 m² per litre, 10-litre tins at R899,00 against a R2 500,00 budget — and state where the round-up mark sits and why.",
+      "expected_answer": "Wall area: perimeter 2 × (10 + 7) = 34 m, times height 3 = 102 m². Openings: doors 2 × 0,9 × 2,0 = 3,6 m²; windows 6 × 1,5 × 1,0 = 9 m²; paintable area 102 − 3,6 − 9 = 89,4 m². Two coats: 178,8 m². Litres: 178,8 ÷ 8 = 22,35. Tins: 22,35 ÷ 10 = 2,235, so THREE tins — rounded up, never to the nearest, because 2 tins leaves wall unpainted and 2,235 tins cannot be bought. Cost: 3 × R899,00 = R2 697,00, compared to the R2 500,00 budget in a sentence containing both numbers: the budget falls R197,00 short. The round-up mark sits on the word up with its reason: purchases round to whole sellable units before the price multiplies."
+    },
+    {
+      "id": "cc3",
+      "question": "For the drum (radius 0,4 m, height 0,9 m, pi as 3,142), the crate (boxes 25 × 20 × 10 cm into 100 × 60 × 50 cm) and the raffle (6 of 240 tickets), give each answer with its method, name the diameter trap, and explain why axis counting beats volume division for the crate.",
+      "expected_answer": "Drum: V = 3,142 × 0,4² × 0,9 — in stages 0,16, then 0,502 72, then 0,452 m³ — times 1 000 gives about 452 litres. The trap: if the question supplies the diameter 0,8 m, it must be halved first; substituting the diameter quadruples the answer because the doubling is squared, and the marking plan's first mark sits on the halving. Crate: axis by axis, 100 ÷ 25 = 4, 60 ÷ 20 = 3, 50 ÷ 10 = 5, so 4 × 3 × 5 = 60 boxes; the volume check 300 000 ÷ 5 000 = 60 confirms a perfect fit, but counting is the method because only whole boxes ship — volume division is merely a ceiling and can overpromise when an axis leaves a leftover slice. Raffle: 6/240 = 1/40 = 0,025 = 2,5%; the complement, not winning, is 39/40 = 0,975; and while six tickets in this raffle multiply the chance by six, each new raffle starts fresh — past losses change nothing."
+    }
+  ]
+}

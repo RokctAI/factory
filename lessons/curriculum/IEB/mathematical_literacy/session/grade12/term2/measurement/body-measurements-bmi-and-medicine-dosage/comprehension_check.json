@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A patient weighs 95 kg and his height is recorded as 175 cm. Calculate his BMI, name his category, and explain both the unit error that produces 0,003 and one limitation of BMI as a health measure.",
+      "expected_answer": "Height must first be converted to metres: 175 cm = 1,75 m. BMI is mass divided by height squared: 1,75 × 1,75 = 3,0625, and 95 ÷ 3,0625 = 31,0 to one decimal place. Against the adult categories — below 18,5 underweight, 18,5 to 24,9 healthy, 25 to 29,9 overweight, 30 and above obese — a BMI of 31,0 falls in the obese category, just past its lower edge. Using centimetres instead of metres gives 95 ÷ 30 625 = 0,003, an impossible human value, because squaring amplifies the unit error ten-thousand-fold; adult BMIs live roughly between 15 and 45, so any answer outside that range signals a unit mistake. A limitation: BMI reads only mass and height, so it cannot distinguish muscle from fat — a muscular athlete can register obese while carrying little fat — which is why BMI is a screening tool, not a diagnosis, and adult categories are never applied to children."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what it means for a nine-month-old boy weighing 8,9 kg to plot on the 50th percentile of his growth chart, and why a baby steady on the 15th percentile may be healthier than one who falls from the 85th to the 50th over successive visits.",
+      "expected_answer": "A percentile positions a child among 100 peers of the same age and sex: on the 50th percentile, the boy sits exactly at the middle — half of nine-month-old boys weigh less than 8,9 kg and half weigh more. A baby steady on the 15th percentile is one of the smaller babies, but healthy babies stand at every position in the line; if he tracks along his own curve visit after visit, feeds well and develops normally, he is simply a small, thriving child. The concern is the direction of travel, not the position: a baby who falls from the 85th to the 50th percentile has drifted backwards past a third of his peers, meaning his growth has slowed, and he is referred even though the 50th percentile alone is a perfectly acceptable address. One plotted point is a photograph; the sequence of points across visits is the story the chart is designed to tell."
+    },
+    {
+      "id": "cc3",
+      "question": "A child of 16 kg is prescribed ibuprofen syrup at 10 mg per kilogram per dose, three doses per day. The syrup contains 100 mg per 5 ml and the bottle holds 150 ml. Calculate the dose in mg and ml, the daily syrup total, and how long the bottle lasts, explaining the rounding rule for doses.",
+      "expected_answer": "Dose in milligrams: 10 × 16 = 160 mg. The syrup carries 100 ÷ 5 = 20 mg per millilitre, so the dose in syrup is 160 ÷ 20 = 8 ml, measured with a marked syringe rather than a kitchen spoon. Daily total: 8 × 3 = 24 ml, carrying 3 × 160 = 480 mg, within the safe daily limit for a 16 kg child. Doses per bottle: 150 ÷ 8 = 18,75, which rounds DOWN to 18 full doses, because the 6 ml remaining after eighteen doses is less than a full 8 ml dose and would under-treat the child. Dosage rounding is the opposite of shopping rounding: both bend toward safety, but safety here means never serving a short dose and never doubling a dose after a missed one. Eighteen doses at three per day is exactly six full days, so the family must plan the next bottle or follow-up visit before the sixth day ends."
+    }
+  ]
+}

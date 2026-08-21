@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "An electrician quotes R9 600 excluding VAT for rewiring a kitchen. Calculate the VAT and the total amount the customer must pay, and explain why the customer, not the electrician, ultimately carries the VAT.",
+      "expected_answer": "VAT is 15% of the exclusive quote: 9 600 × 0,15 = R1 440,00. The amount payable is 9 600 + 1 440 = R11 040,00, or in one step 9 600 × 1,15 = R11 040,00. The electrician is a registered vendor, which makes her a collector of the tax: she keeps R9 600 for the work and pays the R1 440 over to SARS, less any VAT she paid on her own materials. The tax is carried by the final consumer — the customer — because there is nobody further down the chain to whom the customer can pass the cost."
+    },
+    {
+      "id": "cc2",
+      "question": "A school tracksuit costs R391,00 VAT inclusive. Show why taking 15% off gives the wrong pre-VAT price, calculate the correct pre-VAT price and the VAT inside the price, and describe the check that proves the answer.",
+      "expected_answer": "Taking 15% of R391,00 gives R58,65, and 391 − 58,65 = R332,35, which is wrong because the 15% was originally charged on the smaller pre-VAT price, not on R391 — slicing the bigger number removes too much. The inclusive price is 115% of the original, so the correct method is to divide by 1,15: 391 ÷ 1,15 = R340,00, the pre-VAT price. The VAT inside is 391 − 340 = R51,00, which can also be found directly as 391 × 15 ÷ 115 = R51,00. The check runs the answer forwards: 340 × 1,15 = 391,00, reproducing the shelf price exactly, which certifies the answer."
+    },
+    {
+      "id": "cc3",
+      "question": "A till slip shows zero-rated goods of R214,60 and standard-rated goods of R356,50 including VAT. Calculate the total for the trolley and the VAT actually paid, and explain why the 15/115 fraction may not be applied to the whole total. Name four zero-rated items.",
+      "expected_answer": "The trolley total is 214,60 + 356,50 = R571,10. VAT lives only in the standard-rated pile: 356,50 × 15 ÷ 115 = R46,50. Applying 15/115 to the full R571,10 would give R74,49, which invents tax on the zero-rated goods — those items are taxed at 0% by law, so their prices contain no VAT at all, and the fraction may only touch money that actually includes VAT. Zero-rated items include any four of: brown bread, maize meal, samp, rice, dried beans, lentils, milk, eggs, fresh fruit, fresh vegetables, tinned pilchards, cooking oil. By contrast, white bread, frozen chips and prepared foods are standard-rated, which is why sorting the slip into its two piles must come before any percentage calculation."
+    }
+  ]
+}

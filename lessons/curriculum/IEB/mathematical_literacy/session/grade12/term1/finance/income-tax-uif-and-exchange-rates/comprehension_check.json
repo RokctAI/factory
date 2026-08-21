@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Karabo's taxable income is R324 000 for the 2023/24 tax year. Using the table entry 'R42 678 + 26% of taxable income above R237 100' and the primary rebate of R17 235, calculate his annual tax and monthly PAYE, and explain the error of charging 26% on the full R324 000.",
+      "expected_answer": "The slice above the band's floor is 324 000 − 237 100 = R86 900. Tax on the slice: 86 900 × 0,26 = R22 594,00. Adding the pre-calculated tax on the first band gives 42 678 + 22 594 = R65 272,00 before rebates. Subtracting the primary rebate: 65 272 − 17 235 = R48 037,00 per year. Monthly PAYE: 48 037 ÷ 12 = R4 003,08 to the nearest cent. Charging 26% on the whole R324 000 gives R84 240, which is wrong because income below R237 100 is taxed at 18% — that tax, R42 678, is already printed in the table — and only the slice above the line pays 26%. Brackets tax slices, never whole salaries."
+    },
+    {
+      "id": "cc2",
+      "question": "Karabo earns a gross salary of R27 000 per month and the UIF ceiling is R17 712. Calculate his UIF contribution and his net pay after PAYE of R4 003,08, then express total deductions as a percentage of gross salary and interpret the result.",
+      "expected_answer": "Because R27 000 exceeds the ceiling, UIF is calculated on R17 712 only: 17 712 × 0,01 = R177,12, not 1% of 27 000. Net pay is gross minus PAYE minus UIF: 27 000 − 4 003,08 − 177,12 = R22 819,80. Total deductions are 4 003,08 + 177,12 = R4 180,20, and as a percentage of gross: 4 180,20 ÷ 27 000 × 100 = 15,48%. The interpretation: roughly fifteen rand in every hundred of Karabo's salary is deducted before it reaches his bank account, with the employer's matching 1% UIF paid on top of his salary and therefore never shown as a deduction on his payslip."
+    },
+    {
+      "id": "cc3",
+      "question": "The exchange rate moves from R20,40 to R21,10 per euro. Convert 380 euros to rands at the old rate, convert R6 500 to euros at the old rate, and calculate the new rand price of a camera costing 749 euros. State whether the rand strengthened or weakened and what this means for buying power.",
+      "expected_answer": "At R20,40 per euro: 380 euros become 380 × 20,40 = R7 752,00 — multiply, because each euro is worth many rands. R6 500 becomes 6 500 ÷ 20,40 = 318,63 euros — divide, because each euro costs R20,40. The sanity check holds in both cases: the rand figure is the bigger number. The camera at the new rate costs 749 × 21,10 = R15 803,90, up from 749 × 20,40 = R15 279,60, an increase of R524,30. Because a euro now costs more rand, the rand has weakened, or depreciated. This reduces South Africans' buying power: imported goods, fuel and overseas travel become more expensive, while exporters receive more rands for the same euro earnings."
+    }
+  ]
+}

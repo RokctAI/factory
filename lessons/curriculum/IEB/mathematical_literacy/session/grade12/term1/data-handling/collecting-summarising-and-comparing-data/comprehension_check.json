@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Ntabeni Clinic's waiting times in minutes are 20, 30, 30, 45, 50, 60, 70, 85, 90, 100 and 120. Calculate the mean, median, mode, range, quartiles and interquartile range, and explain why the mean and median differ.",
+      "expected_answer": "The data is already ordered. The mean is the sum divided by the count: 700 ÷ 11 = 63,6 minutes to one decimal place. The median is the sixth of eleven ordered values: 60 minutes. The mode is 30 minutes, the only value appearing twice. The range is 120 − 20 = 100 minutes. Q1 is the median of the bottom five values (20, 30, 30, 45, 50): 30 minutes. Q3 is the median of the top five values (70, 85, 90, 100, 120): 90 minutes. The IQR is 90 − 30 = 60 minutes. The mean exceeds the median because the single 120-minute wait pulls the mean upward — every value votes with its full size in the mean — while the median, found by counting to the middle position, is unaffected by how extreme the largest value is."
+    },
+    {
+      "id": "cc2",
+      "question": "Umbilo Clinic's ordered waiting times are 15, 15, 20, 25, 30, 35, 40, 40, 45, 50 and 55. Write down the five-number summaries for both clinics, and compare the two box-and-whisker plots in context, making at least three distinct comparison statements.",
+      "expected_answer": "Umbilo: the median is the sixth value, 35; Q1 is the median of the bottom five, 20; Q3 is the median of the top five, 45; so the five-number summary is 15, 20, 35, 45, 55, with IQR 25. Ntabeni: 20, 30, 60, 90, 120, with IQR 60. Comparisons in context: first, the Ntabeni median of 60 minutes is twenty-five minutes higher than the Umbilo median of 35, so the typical rural patient waits longer to be seen. Second, the Ntabeni IQR of 60 is more than double the Umbilo IQR of 25, so rural waiting times are far more spread out and less predictable. Third, since Ntabeni's Q3 is 90, a quarter of its patients wait 90 minutes or more, while the longest Umbilo wait is only 55 minutes — shorter than what a quarter of rural patients face on an ordinary day. The plots show position and spread only; they say nothing about how many patients were recorded."
+    },
+    {
+      "id": "cc3",
+      "question": "A survey about a new mobile clinic asks: 'Do you agree that our caring new mobile clinic has cut your waiting time?' and is handed out only to people queueing at the mobile clinic on pension payout day. Identify two sources of bias, state the direction of each, and rewrite the question neutrally.",
+      "expected_answer": "First, the question is a leading question: the phrase 'our caring new mobile clinic' and the agree-framing push respondents toward agreement, so satisfaction will be overstated. Second, the sample is biased by place and day: surveying only people already queueing at the mobile clinic on pension payout day over-represents its current users and one specific group of visitors, and completely misses the people who stopped attending because the service did not help them — again inflating the apparent improvement. No calculation can repair biased data afterwards; the mean of a biased data set is a precise summary of the bias. A neutral version balances the options and drops the loaded language: 'Since the mobile clinic began visiting, has your waiting time become shorter, longer, or stayed the same?' — ideally put to a random sample of the whole community the clinic serves, not only those found in its queue."
+    }
+  ]
+}

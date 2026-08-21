@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between forward and reverse substitution using the bakkie-hire formula, and how you recognise which one a question is asking for.",
+      "expected_answer": "Forward substitution: the input (kilometres) is known and slots into the right-hand side; compute directly to find the cost. Reverse: the output (cost) is known, so after substituting it on the left, the unknown must be dug out using inverse operations. Recognise the direction by asking which variable the question gives and which it wants."
+    },
+    {
+      "id": "cc2",
+      "question": "Why must the fixed charge be subtracted before dividing by the rate in the reverse question? Explain in money language, not just algebra.",
+      "expected_answer": "The R1 900 budget first pays the R380 fixed fee, which buys no distance at all; only the remaining R1 520 purchases kilometres. Dividing the whole budget by R9,50 pretends all R1 900 bought driving, giving an inflated 200 km instead of the true 160 km."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how you would verify each type of answer — the R2 850 forward answer and the 160 km reverse answer.",
+      "expected_answer": "For the forward answer, sense-check the size (the distance charge should dominate on a long trip) and confirm units. For the reverse answer, substitute 160 back into the formula: 380 + 9,50 × 160 = 1 900, which matches the budget exactly — the machine run forwards proves the backwards answer."
+    }
+  ]
+}

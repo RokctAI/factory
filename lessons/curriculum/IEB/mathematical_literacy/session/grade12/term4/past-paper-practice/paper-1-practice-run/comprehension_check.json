@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how the practice paper is built — questions, warm-up floor and difficulty spread — and explain how a mark allocation of two, four or six marks should change what a candidate writes.",
+      "expected_answer": "The practice paper carries 150 marks in five questions: Question One is 30 marks of short single-step items from Finance and Data Handling — a deliberate warm-up floor; Question Two is Finance; Question Three is Data Handling; Questions Four and Five mix the families, and that is where the less familiar contexts sit. The difficulty is spread deliberately: about a third quick recall, a third routine procedure, and the rest multi-step and reasoning work. Allocations are instructions: two marks means one calculation plus an answer, still with the working line written; four marks means a chain with a hidden middle step such as a conversion or subtotal; six marks means a staged build — like the electricity bill's three blocks, subtotal, VAT and final answer — where each stage carries its own mark and follow-through keeps later stages paying after an earlier slip carried forward correctly."
+    },
+    {
+      "id": "cc2",
+      "question": "The Nkosi household used 460 kWh on a tariff of first 100 kWh at R1,80, 101–400 at R2,40 and above 400 at R3,10. Mr Cele invested R9 500,00 at 7,2% compounded annually for three years. Work both the six- and four-mark chains in full, naming the classic error in each.",
+      "expected_answer": "Electricity: block one, 100 × R1,80 = R180,00; block two, 300 units (101 to 400) × R2,40 = R720,00; block three, 460 − 400 = 60 units × R3,10 = R186,00; subtotal R1 086,00; VAT: 1 086 × 1,15 = R1 248,90. Classic error: charging all 460 units at R3,10 because 460 falls in the top block's range — that invents R1 426,00; the tariff is a staircase and consumption splits across blocks. Deposit: year one 9 500 × 1,072 = R10 184,00; year two 10 184 × 1,072 = R10 917,25; year three the full balance × 1,072 = R11 703,29; interest earned 11 703,29 − 9 500 = R2 203,29. Classic error: applying 7,2% to the original deposit each year — that is simple interest, R2 052,00 over the term; compound wins by R151,29 because from year two the interest is calculated on a balance already containing interest."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the ten arranged marks 41, 44, 49, 53, 57, 61, 64, 68, 74, 79, give the mean, median, quartiles and IQR; the probability that a randomly chosen learner scored below 50%; and the selling price needed for the group to clear R950,00 profit on 120 cans that cost R1 080,00 in total, explaining the rounding.",
+      "expected_answer": "Mean: sum 590 ÷ 10 = 59,0. Median: even count, so average the fifth and sixth values — (57 + 61) ÷ 2 = 59,0. Q1: middle of the lower five values — the third, 49; Q3: middle of the upper five — the eighth, 68; IQR = 68 − 49 = 19; range 79 − 41 = 38. Probability below 50%: three marks (41, 44, 49) qualify, so 3/10 = 0,3 = 30%, any notation unless one is demanded. Price: 120 × price − 1 080 = 950, so price = 2 030 ÷ 120 = 16,9166..., rounded UP to R16,92 — rounding down to R16,91 banks 120 × 16,91 = R2 029,20, eighty cents short of the R2 030,00 needed, so the context forces the round-up."
+    }
+  ]
+}
