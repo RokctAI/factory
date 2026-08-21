@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Air at 25 °C holds 11,5 g/m³ of water vapour against a maximum capacity of 23 g/m³. Calculate its relative humidity, then explain what happens as the parcel cools to about 13 °C without any moisture being added.",
+      "expected_answer": "Relative humidity is the vapour present divided by the maximum capacity at that temperature, times 100: 11,5 over 23 gives 0,5, so relative humidity is 50 per cent. As the parcel cools, its capacity shrinks because cold air can carry less vapour than warm air. At about 13 °C the capacity has fallen to roughly 11,5 g/m³ — equal to the moisture actually present — so relative humidity reaches 100 per cent and the air is saturated. No water was added; the capacity collapsed around an unchanged moisture load. That temperature, 13 °C for this parcel, is its dew point: any further cooling forces condensation, provided condensation nuclei are available."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain adiabatic cooling, and calculate the condensation level for air with a surface temperature of 28 °C and a dew point of 16 °C. Why do all the cumulus clouds in one air mass share the same flat base height?",
+      "expected_answer": "A parcel forced upward moves into lower pressure, so it expands, and expansion itself lowers its temperature without any heat being removed — adiabatic cooling. Unsaturated air cools at the dry adiabatic lapse rate of 1 °C per 100 m; once saturated it cools more slowly, at about 0,5 °C per 100 m, because condensation releases latent heat. The parcel must cool from 28 °C to its dew point of 16 °C — a fall of 12 degrees — and at 1 °C per 100 m that requires 1 200 m of ascent. The condensation level, and therefore the cloud base, is 1 200 m above the surface. Every rising parcel within the same air mass carries the same temperature and dew point, so each one saturates at the same altitude — which is why the whole fleet of cumulus clouds floats on one shared flat base."
+    },
+    {
+      "id": "cc3",
+      "question": "All rain forms through the same four steps. Explain what distinguishes relief, convectional and frontal rainfall, and pair each type with a South African region and season.",
+      "expected_answer": "The shared recipe is lift, adiabatic cooling, saturation at the dew point, and condensation followed by precipitation; the three types differ only in the lifting mechanism. Relief rainfall is lifted by a landform: moist maritime air forced up a mountain barrier rains on the windward slope and leaves a dry rain shadow to leeward — moist Indian Ocean air against the Drakensberg's eastern slopes, or sea air over the Outeniqua range keeping George and Knysna green while the Klein Karoo behind stays dry; it operates whenever moist onshore flow meets the mountains. Convectional rainfall is lifted by heating: the summer sun superheats the interior plateau, thermals hoist the air, and cumulonimbus breaks in short, violent, localised late-afternoon thunderstorms — the summer rain of the Highveld, Free State, Gauteng and Mpumalanga. Frontal rainfall is lifted by collision: dense cold air wedges under warm moist air along a front — the Western Cape's winter rain, brought by cold fronts arriving from the south-west between about May and August. A complete answer names the mechanism first, then the region and season as separate facts, and never classifies a type by how heavy the rain is."
+    }
+  ]
+}

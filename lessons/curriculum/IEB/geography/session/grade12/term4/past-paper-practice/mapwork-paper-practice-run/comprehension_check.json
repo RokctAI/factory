@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Reproduce the full working for the practice gradient question between point A on the 1 260-metre contour and the trigonometrical beacon at B, and state the accepted tolerance in this session's marking.",
+      "expected_answer": "Vertical interval: 1 512,6 metres minus 1 260 metres equals 252,6 metres. Horizontal equivalent: 4,2 centimetres measured on the map, at 1:50 000 each centimetre is 500 metres, so 2 100 metres. Gradient equals vertical interval over horizontal equivalent: 252,6 over 2 100, which simplifies to 1 in 8,3. The session's marking accepts measurements from 4,1 to 4,3 centimetres and final answers from 1:8,1 to 1:8,5, with the five marks awarded stepwise for the vertical interval, the measurement, the horizontal equivalent, the substitution and the final ratio."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the vegetable farm at M beside the Doringspruit is a frost hazard on clear, calm winter nights, and where farming and settlement prefer to sit instead.",
+      "expected_answer": "On clear, calm winter nights the valley slopes lose heat rapidly by radiation, and the chilled dense air drains downslope as katabatic wind, ponding on the valley floor. A small temperature inversion forms with milder air resting above the cold pool, so the floor at M becomes a frost pocket where frost kills seedlings. Farming and settlement prefer the thermal belt partway up the slope, above the cold pool but below the exposed crest, and in the Southern Hemisphere the north-facing slope is favoured because it receives more direct midday sun."
+    },
+    {
+      "id": "cc3",
+      "question": "Using the Kransfontein practice map as your example, distinguish spatial data from attribute data, and describe one planning use of buffering.",
+      "expected_answer": "Spatial data records where features are located, such as the line of the Doringspruit, the point of the trigonometrical beacon or the polygon of an erf. Attribute data describes those located features, such as the beacon's height of 1 512,6 metres, a road's surface or a stand's zoning. Buffering draws a zone of stated width around a feature and tests what falls inside it: buffering the Doringspruit by 100 metres identifies housing at flood risk, or buffering the school by 500 metres tests walking-distance access."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define magnetic declination, and name the three facts supplied by the declination note in a topographic sheet's margin.",
+      "expected_answer": "Magnetic declination is the angle between true north (the direction to the geographic North Pole, to which the map is drawn) and magnetic north (the direction the compass needle points), expressed in South Africa as degrees and minutes west of true north. The margin note supplies the mean magnetic declination as measured in a stated year, the mean annual change, and the direction of that change — westward in the standard South African case."
+    },
+    {
+      "id": "cc2",
+      "question": "A sheet states a mean magnetic declination of 17°53' west of true north for 2018, with a mean annual change of 4' westward. Calculate the declination for 2026, showing every step.",
+      "expected_answer": "Year difference: 2026 − 2018 = 8 years. Total change: 8 × 4' = 32' westward. Because the declination is west and the drift is westward, the angle widens, so add: 17°53' + 32' = 17°85'. Carry sixty minutes into one degree: 85' = 1°25', so the answer is 18°25' west of true north. The direction phrase is part of the answer."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the iron rule of the map area calculation, and apply it to a block measuring 4,2 cm by 2,5 cm on a 1:10 000 orthophoto.",
+      "expected_answer": "Each measured distance must be converted to real ground units before multiplying — multiplying map centimetres and converting afterwards fails because a linear scale factor does not apply to areas. Length: 4,2 cm × 10 000 = 42 000 cm = 420 m. Breadth: 2,5 cm × 10 000 = 25 000 cm = 250 m. Area = 420 × 250 = 105 000 square metres, with the squared unit stated in the answer."
+    }
+  ]
+}

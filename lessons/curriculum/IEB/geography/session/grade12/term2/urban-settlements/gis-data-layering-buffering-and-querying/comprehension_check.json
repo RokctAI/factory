@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a GIS using its five verbs, and distinguish spatial from attribute data with the road example.",
+      "expected_answer": "A Geographical Information System is a computerised system that captures, stores, manipulates, analyses and displays spatially referenced information — information tied to a position on the Earth's surface. Spatial data is the position and shape of a feature — the drawn line of a road, the outline of a reservoir. Attribute data is the information attached to that feature — the road's route number, the reservoir's capacity. The road drawn on the map is spatial; the number printed on it is attribute: the drawing is the where, the label is the what."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain data layering and buffering, and give one practical use of each from the clinic-siting example.",
+      "expected_answer": "Data layering stores different themes — drainage, transport, contours, cadastral boundaries, land use — in separate layers georeferenced to the same coordinate system, so they stack in perfect alignment and can be viewed in any combination; the planner pulls only the transport, contour and drainage layers to study clinic sites without clutter. Buffering draws a zone of chosen width around a feature so the inside is treated differently from the outside — a circle around a point, a corridor along a line, a band around an area; the planner buffers the stream at one hundred metres to exclude flood-prone ground, and keeps buildings out of the power-line servitude with a corridor buffer."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain what a query does and why data integration must come first, and state how low resolution shows itself in an image and how scale manipulation fixes an unclear orthophoto.",
+      "expected_answer": "A query asks the database to fetch every feature satisfying stated conditions — for example, every open erf larger than 400 square metres within two kilometres of a taxi route — searching spatial and attribute data together. Integration must come first because data from different sources (property register, satellite imagery, census tables) must be loaded into one system on one coordinate grid before layers can be searched and compared. Low resolution shows as blur: few, large pixels smear edges and drown small features — the image with fewer pixels is the less clear one. To make an unclear orthophoto area readable, manipulate the scale by enlarging it — zooming in — so the same ground occupies more of the image and detail opens up."
+    }
+  ]
+}
