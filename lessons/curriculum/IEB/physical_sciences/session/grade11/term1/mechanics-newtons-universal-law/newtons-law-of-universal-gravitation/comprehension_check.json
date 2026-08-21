@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Newton's law of universal gravitation in full, and discuss the three properties of the gravitational force that carry theory marks, illustrating the third-law property with the Earth-person pair.",
+      "expected_answer": "Every particle in the universe attracts every other particle with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centres: F = Gm₁m₂/d², with G = 6,67 × 10⁻¹¹ N·m²·kg⁻². Three properties: the force is always attractive — gravity never repels; the two bodies exert forces on each other that are equal in magnitude and opposite in direction, a perfect Newton's third law pair regardless of how different the masses are — the Earth pulls a 60 kg person down with 588 N and the person pulls the Earth up with exactly 588 N, the Earth merely responding with an immeasurably small acceleration because of its enormous mass; and the distance d is measured between the centres of the bodies, not their surfaces, which matters enormously for planets, where the surface already sits one full radius from the centre."
+    },
+    {
+      "id": "cc2",
+      "question": "Derive g = GM/r² from the universal law and the definition of weight, explain the physical meaning of the cancellation, and use the formula to compute g for Venus (M = 4,87 × 10²⁴ kg, r = 6,05 × 10⁶ m) and for a satellite two Earth radii above Earth's surface.",
+      "expected_answer": "The gravitational force on a mass m at the surface of a planet of mass M and radius r is GMm/r², and this force is the object's weight mg. Setting mg = GMm/r², the object's own mass m cancels, leaving g = GM/r². The cancellation means the gravitational acceleration at a location depends only on the planet's mass and the distance from its centre — every object there falls with the same acceleration, because heavier objects are pulled harder in exactly the proportion that they resist acceleration more. For Venus: g = (6,67 × 10⁻¹¹ × 4,87 × 10²⁴) ÷ (6,05 × 10⁶)² ≈ 8,87 m·s⁻². For the satellite: two Earth radii above the surface is three radii from the centre, so g = 9,8 ÷ 3² = 9,8 ÷ 9 ≈ 1,09 m·s⁻² — the inverse square applied to the centre-to-centre distance."
+    },
+    {
+      "id": "cc3",
+      "question": "Distinguish mass from weight using a 60 kg astronaut on Earth, the Moon (g = 1,62 m·s⁻²) and Venus (g = 8,87 m·s⁻²), then explain what weightlessness in orbit really is and why 'there is no gravity in space' is false.",
+      "expected_answer": "Mass is the amount of matter in a body, measured in kilograms, and is the same everywhere: the astronaut is 60 kg in all three places. Weight is the gravitational force on that matter, w = mg, measured in newtons, and varies with the local g: on Earth 60 × 9,8 = 588 N; on the Moon 60 × 1,62 = 97,2 N; on Venus 60 × 8,87 ≈ 532 N. At orbital height, a few hundred kilometres up, g is still nearly 9 m·s⁻², so gravity has certainly not vanished — the claim of no gravity in space is false. Astronauts float because the station and everything in it are in continuous free fall around the Earth: falling toward the planet while moving sideways fast enough that the surface keeps curving away. In free fall there is no supporting force — no floor pressing on feet — and since the sensation of weight is exactly that support force, its absence is experienced as weightlessness. Weightlessness is free fall under gravity, not the absence of gravity; a snapped lift cable or the top of a trampoline bounce produces the same state briefly."
+    }
+  ]
+}

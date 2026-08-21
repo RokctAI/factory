@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the structure and operation of an AC generator: name the principle, the energy conversion, the function of the slip rings and brushes, and explain why the output alternates. Then state the single hardware change that produces DC instead, and how it works.",
+      "expected_answer": "Principle: electromagnetic induction — an emf is induced when the magnetic flux through the coil changes. Energy conversion: mechanical to electrical; the work done turning the coil against magnetic forces becomes electrical energy. A rectangular coil (armature) rotates between shaped magnet poles; each coil end is fixed to its own complete slip ring rotating with the coil, and stationary carbon brushes press on the rings, connecting the spinning coil to the external circuit while allowing free rotation. The output alternates because each side of the coil sweeps upward through the field for half a revolution and downward for the next half, so the induced emf reverses every half turn. Replacing the two slip rings with a split-ring commutator (one ring cut into two halves) gives DC: the halves swap brushes at exactly the instant the coil's emf reverses, cancelling the reversal so the external current always flows the same way — pulsing in magnitude but unidirectional."
+    },
+    {
+      "id": "cc2",
+      "question": "State the motor effect and explain how it turns a current-carrying coil, why the rotation would stall after half a turn, and how the commutator fixes this. Then explain the sense in which a motor and a generator are the same machine, with the electric vehicle as an example.",
+      "expected_answer": "The motor effect: a current-carrying conductor in a magnetic field experiences a force. The coil's two long sides carry current in opposite directions, so the field forces one side up and the other down; the pair of opposite forces on the pivoted coil produces a turning effect. After half a turn the same forces would act to swing the coil backwards, so it would rock to a halt near the vertical. The split-ring commutator reverses the current through the coil every half revolution, timed to the coil passing vertical; reversed current means reversed forces, so the push always favours the same rotational direction and the coil spins continuously. Motor and generator are the same device run in opposite energy directions: drive the shaft and electrical energy comes out (generator); feed in electrical energy and rotation comes out (motor). An electric vehicle uses both in one machine — the battery drives the coil when accelerating, and under regenerative braking the turning wheels spin the coil, which pumps energy back into the battery."
+    },
+    {
+      "id": "cc3",
+      "question": "Argue why national grids use AC (two linked points required), define the rms value of an alternating voltage, and calculate for a 55 Ω element on the 220 V, 50 Hz mains: the rms current, the average power, the peak voltage, the peak current and the instantaneous power at the crest of the cycle.",
+      "expected_answer": "AC argument: (1) transformers, which work only on changing current, step AC voltage up and down cheaply and efficiently; (2) transmission losses are P = I²R, depending on the square of the current — transmitting a fixed power at very high voltage means a small current, so the squared term makes losses tiny; the grid steps up for transmission and down again for use, which was historically impossible with DC. The rms value is the equivalent steady DC value that delivers the same average power to a resistor; for sine waves V rms = V max/√2 and I rms = I max/√2. Calculations: I rms = 220/55 = 4 A; average power = V rms × I rms = 220 × 4 = 880 W; V max = 220 × √2 = 311,13 V; I max = 4 × √2 = 5,66 A; instantaneous peak power = V max × I max = 311,13 × 5,66 ≈ 1760 W, which is double the average power."
+    }
+  ]
+}

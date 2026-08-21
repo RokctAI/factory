@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A ball is thrown vertically upward at 14 m/s. Ignoring air resistance, use energy conservation to find its maximum height, and state the symmetry between the upward and downward journeys.",
+      "expected_answer": "Take the hand as reference: E p1 = 0, E k1 = ½m(14)² = 98m. At the peak E k2 = 0, E p2 = mgh. So 98m = m(9,8)h; the mass cancels, giving h = 98/9,8 = 10 m. Symmetry: without air resistance the journeys are mirror images — the speed at any height going up equals the speed at that height coming down, and the ball returns to the hand at 14 m/s."
+    },
+    {
+      "id": "cc2",
+      "question": "A 500 kg roller-coaster car crosses a 20 m crest at 4 m/s. Ignoring friction, find its speed at the bottom, and name the classic trap in this problem.",
+      "expected_answer": "At the crest: E k1 = ½ × 500 × 16 = 4 000 J; E p1 = 500 × 9,8 × 20 = 98 000 J; total 102 000 J. At the bottom (reference level) all of it is kinetic: 250v² = 102 000, so v² = 408 and v = 20,20 m/s. Trap: forgetting the 4 000 J because the car 'was basically at rest' — that gives v² = 392 and a plausible-looking wrong answer of 19,80 m/s. When an object starts in motion, E k1 is not zero."
+    },
+    {
+      "id": "cc3",
+      "question": "Two frictionless slides — one steep, one long and gentle — both drop 3,2 m. Compare the riders' arrival speeds and times, state the path-independence principle, and explain what changes when friction is present.",
+      "expected_answer": "Both riders arrive at the same speed: v² = 2 × 9,8 × 3,2 = 62,72, so v = 7,92 m/s; the steep-slide rider merely arrives sooner. Principle: the path can be ignored — only height above the reference and speed matter to the energy ledger, never track length, angle or shape. With friction, mechanical energy is no longer conserved: the equality E k1 + E p1 = E k2 + E p2 becomes false, arrival speed is lower, and at Grade 10 you state that mechanical energy decreased and transferred to heat rather than calculating the loss."
+    }
+  ]
+}

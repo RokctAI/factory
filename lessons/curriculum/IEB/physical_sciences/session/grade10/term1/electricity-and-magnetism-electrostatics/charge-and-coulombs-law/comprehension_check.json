@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the principles of conservation and quantisation of charge, and use Q = nq to find the charge on an object that has lost 2,5 × 10¹¹ electrons.",
+      "expected_answer": "Conservation of charge: charge cannot be created or destroyed, only transferred from one object to another, so in an isolated system the total charge before an interaction equals the total after. Quantisation of charge: charge exists only in whole-number multiples of the fundamental charge, the magnitude of the charge on one electron, e = 1,6 × 10⁻¹⁹ C — never in fractions of it, because only whole electrons can be transferred. Calculation: Q = nq = (2,5 × 10¹¹)(1,6 × 10⁻¹⁹) = 4 × 10⁻⁸ C. The sign is positive, because losing electrons leaves the object with a surplus of protons."
+    },
+    {
+      "id": "cc2",
+      "question": "Identical conducting spheres P (−5 nC) and R (+1 nC) are touched together and separated. Find the final charge on each sphere and the number of electrons transferred, and name the two conditions the sharing rule requires.",
+      "expected_answer": "Final charge: Q = (Q₁ + Q₂) ÷ 2 = ((−5) + (+1)) ÷ 2 = −4 ÷ 2 = −2 nC on each sphere; conservation checks out because −2 plus −2 equals the original total of −4 nC. Sphere P went from −5 nC to −2 nC, giving up 3 nC = 3 × 10⁻⁹ C of negative charge, so n = Q ÷ q = (3 × 10⁻⁹) ÷ (1,6 × 10⁻¹⁹) = 1,875 × 10¹⁰ electrons moved from P to R. The rule requires that the spheres be identical, and that the original charges be added with their signs — adding bare magnitudes would create charge from nowhere and violate conservation."
+    },
+    {
+      "id": "cc3",
+      "question": "State Coulomb's law, calculate the force between charges of +2 × 10⁻⁶ C and −6 × 10⁻⁶ C placed 0,20 m apart, and explain what happens to the force when the distance is doubled.",
+      "expected_answer": "Coulomb's law: the electrostatic force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them — F = kQ₁Q₂ ÷ r², with k = 9 × 10⁹ N·m²·C⁻² and r in metres. Substituting magnitudes: F = (9 × 10⁹)(2 × 10⁻⁶)(6 × 10⁻⁶) ÷ (0,20)² = 0,108 ÷ 0,04 = 2,7 N. Because the charges are unlike, the force is attractive — the sign of the answer is stated in words, not taken from the formula. Doubling the distance to 0,40 m squares into the denominator: F = 0,108 ÷ 0,16 = 0,675 N, a quarter of the original force. The inverse square means doubling the separation always cuts the force to a quarter, and tripling it to a ninth."
+    }
+  ]
+}

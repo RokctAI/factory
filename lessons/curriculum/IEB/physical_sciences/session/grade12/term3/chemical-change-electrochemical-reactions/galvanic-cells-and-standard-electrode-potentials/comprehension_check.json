@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define oxidation, reduction, oxidising agent and reducing agent. Then, for the reaction between zinc metal and copper(II) ions, identify which species is oxidised, which is reduced, and name the two agents.",
+      "expected_answer": "Oxidation is the loss of electrons; reduction is the gain of electrons (OIL RIG). The oxidising agent causes oxidation of the other substance by accepting its electrons and is itself reduced; the reducing agent donates electrons to the other substance and is itself oxidised. In Zn + Cu²⁺: zinc loses two electrons (Zn → Zn²⁺ + 2e⁻) and is oxidised, so zinc is the reducing agent; the copper ion gains those electrons (Cu²⁺ + 2e⁻ → Cu) and is reduced, so Cu²⁺ is the oxidising agent. Zinc's oxidation number climbs from 0 to +2, confirming oxidation; copper's falls from +2 to 0, confirming reduction."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the construction and operation of the zinc-copper galvanic cell: the electrodes and their polarities, the direction of electron flow, the visible changes at each electrode and in the solution, and the two functions of the salt bridge with an account of the ion movement inside it.",
+      "expected_answer": "Construction: a zinc strip in zinc sulfate solution (one half-cell) and a copper strip in copper sulfate solution (the other), the metals joined by a wire through a voltmeter and the solutions joined by a salt bridge of, for example, potassium nitrate. Zinc is oxidised (Zn → Zn²⁺ + 2e⁻), so zinc is the anode and, in a galvanic cell, the negative electrode; copper is the cathode and positive electrode, where Cu²⁺ + 2e⁻ → Cu. Electrons flow through the external wire from zinc to copper. Observations: the zinc electrode loses mass; the copper electrode gains mass as copper plates on; the blue colour of the copper sulfate solution fades as Cu²⁺ ions are consumed. Salt bridge functions: it completes the circuit and maintains electrical neutrality in both half-cells — negative ions migrate from the bridge into the anode beaker to balance the accumulating Zn²⁺, while positive ions migrate into the cathode beaker to replace the Cu²⁺ being removed. Without it the reading drops to zero at once."
+    },
+    {
+      "id": "cc3",
+      "question": "State the reference electrode of the potential table and its assigned value, then calculate the emf of (a) the zinc-copper cell (E° Zn = −0,76 V; E° Cu = +0,34 V) and (b) the aluminium-silver cell (E° Al = −1,66 V; E° Ag = +0,80 V), identifying anode and cathode in each. Explain what a positive emf confirms and what it means when a battery goes flat.",
+      "expected_answer": "The reference is the standard hydrogen electrode, defined as exactly 0 V under standard conditions (1 mol·dm⁻³, 25 °C, gases at standard pressure). Using E°cell = E°cathode − E°anode: (a) copper (+0,34 V) is higher, so copper is the cathode and zinc the anode; E°cell = 0,34 − (−0,76) = 1,10 V. (b) Silver (+0,80 V) is the cathode and aluminium (−1,66 V) the anode; E°cell = 0,80 − (−1,66) = 2,46 V. A positive emf confirms the reaction is spontaneous as written; a negative answer means anode and cathode have been swapped. A flat battery is one whose reaction has reached equilibrium — forward and reverse rates equal, no net push on electrons, emf zero; nothing has leaked, the chemistry has simply finished."
+    }
+  ]
+}

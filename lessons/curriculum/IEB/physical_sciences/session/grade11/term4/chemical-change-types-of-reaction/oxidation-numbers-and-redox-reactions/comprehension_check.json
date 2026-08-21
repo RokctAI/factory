@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to choose an acid and a base to prepare a given salt, then write balanced equations for the preparation of potassium sulphate (from a hydroxide), magnesium nitrate (from an oxide) and sodium chloride (from a carbonate).",
+      "expected_answer": "The salt's positive ion comes from the base and its negative ion from the acid, so read the name apart: the metal chooses the base (a hydroxide, oxide or carbonate of that metal) and the anion chooses the acid — chloride from hydrochloric, nitrate from nitric, sulphate from sulphuric, ethanoate from ethanoic. Potassium sulphate: 2KOH + H₂SO₄ → K₂SO₄ + 2H₂O — the diprotic acid needs two hydroxides. Magnesium nitrate: MgO + 2HNO₃ → Mg(NO₃)₂ + H₂O — the 2+ magnesium ion needs two 1− nitrates, so two HNO₃ deliver them. Sodium chloride: Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂ — the carbonate version adds carbon dioxide to the usual salt and water. In every case the salt's formula is written first from the ion charges, and the coefficients follow."
+    },
+    {
+      "id": "cc2",
+      "question": "State the rules for assigning oxidation numbers, then assign them to every atom in NH₃, H₂S, SO₂, SO₄²⁻, Na₂O₂ and KMnO₄, pointing out any exceptions used.",
+      "expected_answer": "Rules: a free element is 0; a simple ion equals its charge; fluorine in compounds is −1; hydrogen in compounds is +1 except −1 in metal hydrides; oxygen in compounds is −2 except −1 in peroxides; and the numbers must sum to zero in a neutral compound or to the charge of an ion. NH₃: H = +1, so N = −3. H₂S: H = +1, so S = −2. SO₂: O = −2, so S = +4. SO₄²⁻: four oxygens give −8 and the total must be −2, so S = +6 — sulphur runs from −2 to +6 across these species. Na₂O₂: Na = +1, so each O must be −1; the usual −2 would give a total of −2 for a neutral compound, which is impossible — the peroxide exception, forced by the sum rule. KMnO₄: K = +1, four oxygens give −8, so Mn = +7."
+    },
+    {
+      "id": "cc3",
+      "question": "Define oxidation, reduction, oxidising agent and reducing agent. Then balance the reaction between magnesium metal and iron(III) ions using half-reactions, identify each agent, and verify the final equation's atom and charge balance.",
+      "expected_answer": "Oxidation is the loss of electrons (oxidation number increases); reduction is the gain of electrons (oxidation number decreases) — OIL RIG. The oxidising agent causes oxidation in its partner by taking electrons and is itself reduced; the reducing agent donates electrons and is itself oxidised. Half-reactions: the table gives reductions, so reverse magnesium's line since it donates: Mg → Mg²⁺ + 2e⁻; iron stays as a reduction: Fe³⁺ + 3e⁻ → Fe. Match the electrons with the lowest common multiple, six: 3Mg → 3Mg²⁺ + 6e⁻ and 2Fe³⁺ + 6e⁻ → 2Fe. Adding and cancelling the electrons: 3Mg + 2Fe³⁺ → 3Mg²⁺ + 2Fe. Magnesium is oxidised (0 to +2) and is the reducing agent; the iron(III) ion is reduced (+3 to 0) and is the oxidising agent. Audit: 3 Mg and 2 Fe on each side; charge +6 on the left (2 × 3+) and +6 on the right (3 × 2+); no loose electrons remain."
+    }
+  ]
+}

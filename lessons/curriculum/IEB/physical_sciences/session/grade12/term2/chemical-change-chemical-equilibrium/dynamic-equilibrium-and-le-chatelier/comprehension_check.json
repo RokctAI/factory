@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define chemical equilibrium, explain why it is described as DYNAMIC, and explain why it can only be established in a closed system. Also state why 'constant concentrations' does not mean 'equal concentrations'.",
+      "expected_answer": "Chemical equilibrium is the state of a reversible reaction, in a closed system, in which the rate of the forward reaction equals the rate of the reverse reaction, so that the concentrations of reactants and products remain constant. It is dynamic because both the forward and reverse reactions continue at particle level every instant — molecules are converting in both directions — while the macroscopic totals stand still; the reaction has not stopped. It requires a closed system (energy may be exchanged but not matter) because if any product escaped, the reverse reaction would be deprived of its ingredients and the two rates could never become and remain equal. Constant does not mean equal: an equilibrium mixture may contain far more reactant than product or vice versa; the defining requirement is only that no concentration is changing with time."
+    },
+    {
+      "id": "cc2",
+      "question": "For the exothermic equilibrium 2SO₂(g) + O₂(g) ⇌ 2SO₃(g), use Le Chatelier's principle to predict and explain the effect on the yield of SO₃ of (a) raising the temperature, (b) increasing the pressure, and (c) adding a catalyst. State which of these changes alters Kc.",
+      "expected_answer": "(a) The forward reaction is exothermic, so heat can be treated as a product. Raising the temperature adds heat; the system opposes this by favouring the direction that absorbs heat — the endothermic reverse reaction — so SO₃ decomposes and the yield falls. (b) There are three gas moles on the left and two on the right. Increasing the pressure (smaller volume) crowds the gas; the system opposes the crowding by favouring the side with fewer gas moles — the forward reaction — so the equilibrium shifts toward SO₃ and the yield rises. (c) A catalyst speeds the forward and reverse reactions equally, so the equilibrium position and yield are unchanged; the system merely reaches equilibrium sooner. Only the temperature change alters Kc — for this exothermic reaction, raising the temperature decreases Kc; concentration, pressure and catalyst changes leave Kc untouched."
+    },
+    {
+      "id": "cc3",
+      "question": "Hydrogen and iodine react: H₂(g) + I₂(g) ⇌ 2HI(g). Exactly 2,0 mol of H₂ and 2,0 mol of I₂ are sealed into a 4 dm³ vessel; at equilibrium the vessel contains 3,0 mol of HI. Calculate Kc, showing the moles table and the conversion to concentrations, and interpret the value you obtain.",
+      "expected_answer": "Moles table: forming 3,0 mol HI consumes 1,5 mol H₂ and 1,5 mol I₂ (ratio 2 HI from 1 H₂ + 1 I₂). At equilibrium: H₂ = 2,0 − 1,5 = 0,5 mol; I₂ = 0,5 mol; HI = 3,0 mol. Convert to concentrations by dividing by the 4 dm³ volume: [H₂] = 0,125; [I₂] = 0,125; [HI] = 0,75 mol·dm⁻³. Expression: Kc = [HI]² / ([H₂][I₂]) = 0,75² / (0,125 × 0,125) = 0,5625 / 0,015625 = 36. Interpretation: Kc is well above one, so the equilibrium lies strongly toward the product side — at this temperature the mixture is dominated by HI. The value holds only at this temperature: temperature is the only factor that can change Kc."
+    }
+  ]
+}

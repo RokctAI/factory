@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 0,4 kg ball strikes a wall at 12 m·s⁻¹ and rebounds at 9 m·s⁻¹, in contact for 0,05 s. Show the sign discipline that leads to the net force on the ball.",
+      "expected_answer": "Take towards the wall as positive. Δp = m(v_f − v_i) = 0,4 × (−9 − 12) = −8,4 kg·m·s⁻¹ — the rebound velocity enters as negative. F_net = Δp/Δt = −8,4/0,05 = −168 N, reported as 168 N directed away from the wall. Declaring the positive direction before substituting is what protects the signs."
+    },
+    {
+      "id": "cc2",
+      "question": "A 2 kg box slides from rest down a rough ramp of height 4 m and arrives at 7 m·s⁻¹. Close the energy budget and interpret the sign of the friction work.",
+      "expected_answer": "Potential energy surrendered: 2 × 9,8 × 4 = 78,4 J. Kinetic energy gained: ½ × 2 × 49 = 49 J. Friction work = 49 − 78,4 = −29,4 J. It is negative, as friction work must be — 29,4 J left the budget as heat, which is why the box arrives slower than a frictionless slide would allow."
+    },
+    {
+      "id": "cc3",
+      "question": "A 12 V battery with internal resistance 0,5 Ω drives a 1,5 Ω resistor in series with two parallel 4 Ω resistors. Walk the circuit outside-in to the branch currents and the audit.",
+      "expected_answer": "Parallel pair: 16/8 = 2 Ω; external = 1,5 + 2 = 3,5 Ω; total = 4 Ω. Current: 12/4 = 3 A. Terminal voltage: 12 − 3 × 0,5 = 10,5 V. The 1,5 Ω resistor takes 4,5 V, leaving 6 V across the pair, so each 4 Ω branch carries 1,5 A. Audit: 1,5 + 1,5 = 3 A, the main current — the books balance."
+    }
+  ]
+}

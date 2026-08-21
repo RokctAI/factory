@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the electric field and the direction convention for field lines, state the four rules field lines obey, and describe the standard patterns for a single positive charge, two unlike charges and two like positive charges.",
+      "expected_answer": "An electric field is a region of space in which an electric charge experiences a force; every charge creates one around itself whether or not another charge is present. The direction of the field at a point is the direction of the force a positive test charge would experience there — so fields point away from positive charges and toward negative charges. The four rules: field lines start on positive charge and end on negative charge; they never cross, since a point cannot have two directions of force; the arrows show the direction a positive test charge would be pushed; and closer spacing means a stronger field, so patterns crowd near charges and thin with distance. Patterns: a single positive charge radiates straight lines outward (a single negative charge shows the same lines pointing inward); two unlike charges show lines leaving the positive and curving around to enter the negative in a dense connecting bundle; two like positive charges show lines bending away from each other with a dead spot between them where the field is zero. A charged conducting sphere's external field looks exactly like a point charge at its centre."
+    },
+    {
+      "id": "cc2",
+      "question": "A charge of +4 × 10⁻⁶ C at point P experiences 0,02 N north. Calculate the field at P; then find the force that field exerts on an electron and explain the direction. Finally, calculate the field 0,2 m from a +8 μC point charge, and state which formula belongs to which situation.",
+      "expected_answer": "Field from force: E = F ÷ q = 0,02 ÷ (4 × 10⁻⁶) = 5 000 N·C⁻¹ north, the force direction on the positive test charge. Force on an electron in that field: F = Eq = 5 000 × 1,6 × 10⁻¹⁹ = 8 × 10⁻¹⁶ N, directed south — against the field — because the electron is negative and the map is drawn for positive probes. Field of the point source: E = kQ/r² = (9 × 10⁹ × 8 × 10⁻⁶) ÷ 0,2² = 72 000 ÷ 0,04 = 1,8 × 10⁶ N·C⁻¹, directed away from the charge since the source is positive. Division of labour: E = F/q applies where a force on a visiting (test) charge is known or wanted — q is always the charge feeling the force, never the creator; E = kQ/r² applies at a known distance from a known source, and the test charge has cancelled out of it, which is why the field belongs to the location and not the visitor."
+    },
+    {
+      "id": "cc3",
+      "question": "Charges of +4 μC (at A) and −6 μC (at B) are 0,6 m apart. Determine the net field at the midpoint P, then explain why the contributions cooperate here, and where the net field would be zero if both charges were positive instead.",
+      "expected_answer": "Each source is handled separately at its own distance of 0,3 m. From A: E = (9 × 10⁹ × 4 × 10⁻⁶) ÷ 0,3² = 36 000 ÷ 0,09 = 4 × 10⁵ N·C⁻¹, directed away from A (A is positive), i.e. from A toward B. From B: E = (9 × 10⁹ × 6 × 10⁻⁶) ÷ 0,09 = 6 × 10⁵ N·C⁻¹, directed toward B (B is negative), which at P is also from A toward B. The arrows agree, so add: net field = 1 × 10⁶ N·C⁻¹ directed from A toward B. They cooperate because between unlike charges the push away from the positive and the pull toward the negative point the same way — the reason the field between unlike charges is strong. If both charges were positive, the two contributions between them would oppose, and the net field would be zero at the point where the magnitudes match: at the exact midpoint for equal charges, or shifted toward the weaker charge for unequal ones, since only closer to the weaker source can its smaller field match the stronger one's."
+    }
+  ]
+}

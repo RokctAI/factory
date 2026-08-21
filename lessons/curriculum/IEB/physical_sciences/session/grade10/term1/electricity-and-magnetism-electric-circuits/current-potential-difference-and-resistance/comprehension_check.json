@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define electric current and potential difference with their units, and calculate the current when 40 C passes a point in 8 s, and the pd when 36 J moves 6 C through a resistor.",
+      "expected_answer": "Electric current is the rate of flow of charge — the charge passing a point per unit time, I = Q ÷ Δt, measured in amperes, where one ampere is one coulomb per second. Potential difference between two points is the work done per unit charge — the energy transferred per coulomb moving between the points, V = W ÷ Q, measured in volts, where one volt is one joule per coulomb. Calculations: I = 40 ÷ 8 = 5 A; V = 36 ÷ 6 = 6 V. Conventional current flows from the positive terminal through the external circuit to the negative terminal, while the electrons in the metal drift the opposite way; and current is never used up — the same current flows on both sides of a component, which takes only the energy the charge carries."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish emf from terminal potential difference, and explain how an ammeter and a voltmeter must each be connected, including the resistance each should have and why.",
+      "expected_answer": "The emf is the voltmeter reading across a battery when no current flows — the open-circuit reading, the full energy per coulomb supplied by the chemical reactions. The terminal potential difference is the reading across the same terminals while the battery delivers current, and it is always slightly less than the emf because the battery's internal resistance uses up some energy as charge passes through the battery itself — a 12 V battery may read 11,4 V while driving headlights. An ammeter measures current, a flow through a point, so it is connected in series and must have a very low (ideally zero) resistance so that inserting it barely changes the current. A voltmeter measures the energy difference between two points, so it is connected in parallel across the component and must have a very high (ideally infinite) resistance so that it steals almost no current through its side path. Swapped, a series voltmeter throttles the circuit and a parallel ammeter causes a short circuit."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the microscopic origin of resistance, and use that picture to predict how length, thickness and temperature each affect the resistance of a metallic conductor.",
+      "expected_answer": "In a metal, free electrons driven by a potential difference repeatedly collide with the fixed, vibrating positive ions of the lattice. Each collision transfers energy from the electrons to the lattice, which appears as heat — this opposition to flow is resistance, measured in ohms. From the collision picture: a longer wire presents more lattice to cross, so more collisions occur and resistance increases in proportion to length — doubling the length doubles the resistance. A thicker wire offers a greater cross-sectional area, more parallel lanes for the same flow, so resistance decreases as thickness increases. A hotter wire has ions vibrating more violently, so electrons collide more often and resistance increases with temperature — a glowing filament resists far more than the same filament cold. Long, thin and hot gives maximum resistance; short, thick and cool gives minimum."
+    }
+  ]
+}

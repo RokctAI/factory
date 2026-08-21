@@ -1,0 +1,9 @@
+Hey, it's Bianca — atomic combinations can feel like a vocabulary test in disguise: Lewis diagrams, dative bonds, tetrahedral, electronegativity, delta plus, delta minus. Deep breath. Underneath all those words sit exactly three pictures, and every single question in the topic is one of the three.
+
+Picture one: the energy hollow. Atoms bond when sharing electrons lets their energy roll downhill. The settling distance at the bottom is the bond length; the depth of the hollow is the bond energy. A deeper hollow means a stronger bond, and whatever pulls atoms closer digs the hollow deeper — which is why triple bonds are shorter and stronger than singles, and why big atoms make long, weak bonds.
+
+Picture two: the balloons. Electron pairs around a central atom shove each other as far apart as geometry allows. Count ALL the pairs from your Lewis diagram — bonding pairs and lone pairs alike — spread them out, then name only the atoms you can see. Four pairs with no lone pairs is tetrahedral methane; one lone pair leaves ammonia's pyramid; two leave bent water. Lone pairs shove a little harder, so the angles tighten down the sequence: 109,5, then about 107, then about 104,5. Trust the balloons and you cannot draw a wrong shape.
+
+Picture three: the tug-of-war. Every bond is a contest for the shared pair, and your data sheet publishes every atom's pulling score. Equal scores: fair sharing, non-polar. Different scores: unfair sharing, with the stronger puller going delta minus. A gap of about 2 or more: no longer sharing but taking — ionic. Then run one final check on the whole molecule: does the SHAPE cancel the pulls? Straight carbon dioxide cancels and is non-polar; bent water does not cancel, and is polar. Bonds first, shape second — always both.
+
+Hollow, balloons, tug-of-war. Three pictures; the vocabulary is just their name tags. Now go try the practice questions and watch the words fall into place. You've got this!

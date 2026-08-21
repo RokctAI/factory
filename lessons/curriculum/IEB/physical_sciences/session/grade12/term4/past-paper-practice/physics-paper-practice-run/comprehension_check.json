@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 6 kg block on a 30° incline is pulled up the slope by 70 N against 8,6 N of kinetic friction. Rebuild the full chain to the acceleration, including the audit.",
+      "expected_answer": "Weight component along the slope: mg sin θ = 6 × 9,8 × 0,5 = 29,4 N down the slope. Taking up the slope as positive: F_net = 70 − 29,4 − 8,6 = 32 N. a = F_net/m = 32/6 = 5,33 m·s⁻² up the slope. Audit: positive in the chosen direction and smaller than the frictionless value — sensible."
+    },
+    {
+      "id": "cc2",
+      "question": "A 4 kg trolley at 3 m·s⁻¹ couples with a stationary 2 kg trolley. Show the shared velocity, decide elastic or inelastic by calculation, and give the impulse on the 2 kg trolley.",
+      "expected_answer": "Momentum before: 4 × 3 = 12 kg·m·s⁻¹; shared velocity = 12/6 = 2 m·s⁻¹. KE before: ½ × 4 × 9 = 18 J; after: ½ × 6 × 4 = 12 J — kinetic energy decreased, so the collision is inelastic. Impulse on B = Δp = 2 × 2 − 0 = 4 N·s; trolley A loses the same 4 kg·m·s⁻¹, equal and opposite."
+    },
+    {
+      "id": "cc3",
+      "question": "A 24 V battery with internal resistance 2 Ω feeds a 4 Ω resistor in series with two parallel 12 Ω resistors. Reconstruct the outside-in walk to the branch currents and the audit.",
+      "expected_answer": "Parallel pair: 144/24 = 6 Ω; external = 4 + 6 = 10 Ω; total = 10 + 2 = 12 Ω. Main current: 24/12 = 2 A. Terminal voltage: 24 − 2 × 2 = 20 V. The 4 Ω resistor takes 8 V, leaving 12 V across the pair, so each 12 Ω branch carries 1 A. Audit: 1 + 1 = 2 A, the main current — the books balance."
+    }
+  ]
+}

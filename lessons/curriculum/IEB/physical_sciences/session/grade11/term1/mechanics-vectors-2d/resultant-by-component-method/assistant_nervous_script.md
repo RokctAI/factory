@@ -1,0 +1,11 @@
+Hey, it's Bianca — I can guess exactly what happened. You saw arrows leaning at odd angles with sines and cosines dangling off them, and something in your head said "not today". Completely normal reaction. Also completely unnecessary, because this whole topic is three moves you already perform in real life.
+
+Move one: split. Any arrow that refuses to lie along an axis gets sorted into a sideways part and an up-down part, the way you sort a handful of mixed coins into piles. Move two: add. Sideways with sideways, upward with upward, never across. Move three: rebuild. Two perpendicular arrows become one — Pythagoras gives the size, the inverse tangent gives the direction. Split, add, rebuild. Say it out loud three times and the topic is half yours.
+
+The sine-versus-cosine panic steals more marks than anything else, so replace the panic with a picture. Every single time, sketch the little right-angled triangle with the vector as the slanted side, and mark the angle the question actually gave you — not the one you assumed. The side hugging that angle takes cosine. The side facing it takes sine. Never trust "horizontal is always cosine" — it only works when the angle is measured from the horizontal, and questions love handing you the angle from the vertical instead.
+
+Then two small habits that quietly bank marks. Before touching a single button, check the calculator display says DEG. And write your sign convention at the top of the page — east and north positive, west and south negative — then build a two-column table, x on the left, y on the right, one row per force, with a zero written in for every force lying flat on an axis. Those zeros look silly. They are proof you resolved everything, and proof earns marks.
+
+Finish like a physicist: a vector answer is a size AND a direction. "284,2 newtons" is half an answer. "284,2 newtons at 73,7 degrees north of east" is the whole thing, stated in the same language the question used.
+
+Split, add, rebuild — a table, a triangle, and a calculator in degrees. This question type is one of the most predictable in the subject, which makes it one of the easiest places to collect full marks. Go show it who's boss — the practice questions are ready for you. You've got this!

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the normal force, and calculate it for a 40 kg box on a level floor in three cases: no other vertical forces, a rope pulling with 80 N at 25° above the horizontal, and the same rope pushing at 25° below the horizontal. Explain why this calculation matters for friction.",
+      "expected_answer": "The normal force N is the force a surface exerts on an object in contact with it, directed perpendicular to the surface. With no other vertical forces, the vertical direction balances and N = mg = 40 × 9,8 = 392 N. With the rope pulling at 25° above the horizontal, its upward component 80 sin25° = 33,8 N helps support the box, so N = mg − F sinθ = 392 − 33,8 = 358,2 N. With the rope angled 25° below the horizontal, the component presses the box into the floor, so N = 392 + 33,8 = 425,8 N. The value matters because both kinds of friction are computed from N (f = μN): an error in the normal force contaminates every friction value and hence the net force and acceleration that follow, which is why questions deliberately include slanted ropes."
+    },
+    {
+      "id": "cc2",
+      "question": "A 60 kg crate stands on a level floor with μs = 0,5 and μk = 0,35. Determine what happens, and the friction force acting, when it is pushed horizontally with 250 N and then with 320 N, showing formula, substitution and answer, including the acceleration in the second case.",
+      "expected_answer": "Normal force: N = mg = 60 × 9,8 = 588 N. Maximum static friction: fs max = μs N = 0,5 × 588 = 294 N. With a 250 N push: 250 is less than 294, so the crate does not move; static friction self-adjusts to exactly 250 N and the net force is zero — writing 294 N here is the classic error. With a 320 N push: 320 exceeds 294, so the crate slides and kinetic friction applies: fk = μk N = 0,35 × 588 = 205,8 N. Net force: Fnet = 320 − 205,8 = 114,2 N. Acceleration: a = Fnet ÷ m = 114,2 ÷ 60 = 1,9 m·s⁻² in the direction of the push. The test-before-you-choose step — comparing the applied force with fs max — decides which friction formula applies."
+    },
+    {
+      "id": "cc3",
+      "question": "A 15 kg toolbox rests on a 35° ramp with μs = 0,6 and μk = 0,25. Show whether it slides on its own, find its acceleration if it does, find the force needed to drag it up the ramp at constant velocity, and state the mass-free slipping shortcut.",
+      "expected_answer": "Weight: w = 15 × 9,8 = 147 N. Components: parallel = 147 sin35° = 84,3 N down the slope; perpendicular = 147 cos35° = 120,4 N, so N = 120,4 N (less than the weight). Grip ceiling: fs max = 0,6 × 120,4 = 72,2 N. Since the 84,3 N downhill pull exceeds 72,2 N, the toolbox slides. Kinetic friction: fk = 0,25 × 120,4 = 30,1 N up the slope. Net force: 84,3 − 30,1 = 54,2 N, so a = 54,2 ÷ 15 = 3,61 m·s⁻² down the incline. Dragged up at constant velocity the net force is zero and friction reverses to act down the slope, so T = 84,3 + 30,1 = 114,4 N up the slope — friction changed direction, not magnitude. Shortcut: on the point of slipping mg sinθ = μs mg cosθ, the mass cancels, and slipping occurs when tanθ exceeds μs; here tan35° = 0,700 exceeds 0,6, so any mass slides."
+    }
+  ]
+}

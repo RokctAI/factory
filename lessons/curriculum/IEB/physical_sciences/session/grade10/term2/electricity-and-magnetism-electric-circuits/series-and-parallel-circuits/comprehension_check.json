@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define current, potential difference and resistance with their formulas, trace the energy path through a circuit, and state the two instrument rules.",
+      "expected_answer": "Current, I, is the rate of flow of charge: I equals Q over delta t, measured in amperes, where one ampere is one coulomb passing a point per second; conventional current runs from positive to negative around the external circuit. Potential difference, V, is the work done per unit charge: V equals W over Q, in joules per coulomb, which are volts — 18 volts across a resistor means every coulomb hands over 18 joules. Resistance, R, in ohms, is a conductor's opposition to charge flow, caused by drifting electrons colliding with the vibrating lattice; it grows with length and temperature and shrinks with thickness. The energy path: chemical potential energy in the cell becomes electrical energy carried by the moving charge, then heat and light in the resistors — the charge circulates unchanged while the energy is spent, which is why batteries go flat. Instruments: an ammeter connects in series with very low resistance so the measured charge flows through it; a voltmeter connects in parallel across a component with very high resistance so it diverts almost no current."
+    },
+    {
+      "id": "cc2",
+      "question": "For an 18-volt battery with a 3-ohm and a 6-ohm resistor, calculate every quantity in the series arrangement and in the parallel arrangement, showing the checks.",
+      "expected_answer": "Series: one loop, so resistances add — R equals 3 plus 6, which is 9 ohms. Current: I equals V over R — 18 over 9 — 2 amperes, the same through both resistors. Potential differences: V one equals 2 times 3 — 6 volts; V two equals 2 times 6 — 12 volts; check: 6 plus 12 equals the full 18-volt emf, and the volts divide in proportion to resistance. Parallel: both branches span the same junctions, so each carries the full 18 volts. Total resistance by reciprocals: one over 3 plus one over 6 equals one half, and inverting gives 2 ohms — smaller than the smallest branch, as parallel totals must be. Total current: 18 over 2 — 9 amperes. Branch currents: 18 over 3 — 6 amperes — and 18 over 6 — 3 amperes; check: 6 plus 3 equals the 9-ampere total, with the smaller resistance carrying the larger current."
+    },
+    {
+      "id": "cc3",
+      "question": "Recite the series and parallel rule sets without mixing them, and use them to explain why houses are wired in parallel and what danger that choice creates.",
+      "expected_answer": "Series: the current is the same everywhere because there is one path; potential differences add up to the emf; resistances add; the total resistance exceeds any single resistor; one break stops everything. Parallel: the potential difference is the same across every branch because all branches span the same pair of junctions; branch currents add to the total; reciprocals of resistance add, and the inverted total is smaller than the smallest branch; one break leaves the other branches working. The memory anchor: same path, same current; same pair of junctions, same volts. Houses use parallel so every appliance receives the full 230 volts regardless of what else is on, and switching one appliance off — breaking its branch — leaves the rest running. The danger is the resistance rule: each added appliance opens another branch, dropping the total resistance and raising the total current, which is why an overloaded multiplug overheats and why the breaker in the distribution board trips when the current climbs too high. The wall switch stays in series with its light because there a single break is exactly what is wanted."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+Hey, it's Bianca — I saw the powers of ten marching across the board and I know exactly how that feels. Here is the secret about Coulomb's law: you have already passed this topic once. It is gravitation wearing a raincoat. Multiply the two sources, divide by the distance squared, scale by the constant from the data sheet. If you survived gravitation ratios, the physics here is already in your pocket.
+
+What is actually new is just housekeeping, three rules' worth. Rule one: convert before you calculate. Micro means times ten to the minus six, and every centimetre becomes metres BEFORE you square. Rule two: only magnitudes go into the formula — strip the signs off, feed in clean positive numbers. Rule three: the signs you stripped off answer one question only: pull or push? Opposites pull, likes push. That answer becomes a little arrow on your sketch.
+
+And the sketch is the whole game. Middle-charge questions are a tug-of-war: one arrow per neighbour, each priced with its OWN distance. Arrows agreeing? Add. Arrows facing off? Subtract, and the bigger one names the direction. Corner questions with one neighbour north and one east? The two arrows are sideways to each other — square, add, root, exactly like the vectors topic, then the inverse tangent for the angle. You have done all of these moves before.
+
+Touching spheres, the last piece: identical spheres share the SIGNED total equally. Positive 8 and negative 4 make positive 4 in total, so 2 each — and watch the force possibly flip from attraction to repulsion. Say the word identical in your answer; it is what earns the sharing step.
+
+So: convert, strip the signs, draw the arrows, price each one, combine. Five moves, and every question in the practice set is built from them. The questions are ready when you are — go collect those marks. You've got this!

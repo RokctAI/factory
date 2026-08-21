@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A minibus accelerates uniformly from rest at 3 m/s² for 4 s. Find its final velocity and displacement, then confirm the displacement using the velocity-time graph.",
+      "expected_answer": "v = u + at = 0 + 3 × 4 = 12 m/s. Δx = ut + ½at² = 0 + ½ × 3 × 16 = 24 m. Cross-check: v² = u² + 2aΔx = 2 × 3 × 24 = 144, √144 = 12 m/s — agreement. Graph: the velocity-time graph is a straight line from 0 to 12 m/s over 4 s; the area under it is a triangle, ½ × 4 × 12 = 24 m, matching the equation."
+    },
+    {
+      "id": "cc2",
+      "question": "A 5 kg ball is dropped from 8 m (ignore air resistance, ground as reference). Give the energy ledger at the top, at 4 m and at the ground, with the speeds at the last two positions, and state why mass never affects the landing speed.",
+      "expected_answer": "Top: E p = 5 × 9,8 × 8 = 392 J, E k = 0, total 392 J sealed. At 4 m: E p = 196 J, E k = 196 J; ½ × 5 × v² = 196 gives v² = 78,4, v = 8,85 m/s. Ground: E p = 0, E k = 392 J; v² = 156,8, v = 12,52 m/s. Setting ½mv² = mgh, the mass cancels, giving v² = 2gh: a heavier object carries proportionally more energy but needs proportionally more for the same speed, so landing speed depends only on height."
+    },
+    {
+      "id": "cc3",
+      "question": "An 18 V battery is connected to a 3 Ω and a 6 Ω resistor, first in series and then in parallel. Solve both circuits completely and state the audit line for each.",
+      "expected_answer": "Series: R = 3 + 6 = 9 Ω; I = 18/9 = 2 A through both; potential differences 2 × 3 = 6 V and 2 × 6 = 12 V. Audit: 6 + 12 = 18 V returns the emf. Parallel: each branch feels the full 18 V; branch currents 18/3 = 6 A and 18/6 = 3 A; battery current 9 A. Effective resistance R = 18/9 = 2 Ω, smaller than the smallest branch. Audit: 6 + 3 = 9 A returns the battery current at the junction."
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Two Kinds of Quantities",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A quantity is a vector when it:",
+          "options": [
+            "Is measured in newtons",
+            "Has a very large magnitude",
+            "Needs both a magnitude and a direction to be fully described",
+            "Is always positive"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The dependable classification test asks:",
+          "options": [
+            "Is a direction needed to complete the quantity's meaning?",
+            "Does the quantity have an SI unit?",
+            "Is the quantity used in mechanics?",
+            "Is the number measured with an instrument?"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why must vectors and scalars use different arithmetic?",
+          "options": [
+            "Vectors always use bigger numbers",
+            "Vectors can strengthen, partly cancel or fully cancel each other depending on direction",
+            "Scalars cannot be added at all",
+            "They do not — everything adds the same way"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Classifying the Five — and the Famous Pairs",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Which grouping of the five quantities is correct?",
+          "options": [
+            "Vectors: speed, energy; scalars: displacement, force, velocity",
+            "Vectors: displacement, energy; scalars: speed, force, velocity",
+            "All five are scalars",
+            "Vectors: displacement, force, velocity; scalars: speed, energy"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "You jog once around a 600 m loop, ending at your starting gate. Distance and displacement are:",
+          "options": [
+            "Distance 600 m; displacement zero, because start and finish coincide",
+            "Both 600 m",
+            "Distance zero; displacement 600 m",
+            "Both zero"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "That 600 m loop took 150 s. Average speed and average velocity are:",
+          "options": [
+            "Both 4 m/s",
+            "Speed 4 m/s; velocity zero, because displacement was zero",
+            "Speed zero; velocity 4 m/s",
+            "Both zero"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Velocity is best defined as:",
+          "options": [
+            "Distance covered per unit time",
+            "The scalar partner of speed",
+            "The rate of change of position — speed with its direction attached",
+            "Force divided by mass"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Resultant — 40 N East Meets 70 N West",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Taking east as positive, 40 N east and 70 N west become:",
+          "options": [
+            "+40 N and +70 N",
+            "−40 N and +70 N",
+            "−40 N and −70 N",
+            "+40 N and −70 N"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The resultant of 40 N east and 70 N west is:",
+          "options": [
+            "30 N west",
+            "110 N west",
+            "30 N east",
+            "110 N east"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Why is '110 N' the classic wrong answer for these two forces?",
+          "options": [
+            "The unit should be kilonewtons",
+            "It adds the magnitudes with scalar arithmetic, ignoring that the forces oppose each other",
+            "It forgets to halve the answer",
+            "It is actually the correct answer"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Which pair of sanity checks confirms '30 N west'?",
+          "options": [
+            "The resultant must be zero, and forces always cancel",
+            "The resultant equals the smaller force and points east",
+            "The resultant points with the larger force, and its magnitude is the difference 70 N − 40 N",
+            "No checks exist for vector answers"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Toolkit, the Special Cases, and the Road to Matric",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The four-step method for adding vectors along a line is:",
+          "options": [
+            "Declare a positive direction; rewrite each vector as a signed number; add algebraically; translate the final sign back into a direction",
+            "Add all magnitudes, then choose the majority direction",
+            "Average the forces and double the result",
+            "Draw every vector to scale and measure with a protractor only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Forces of 70 N east and 70 N west act on a trolley. The resultant is:",
+          "options": [
+            "140 N east",
+            "70 N west",
+            "Zero — the forces balance completely",
+            "35 N east"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Adding magnitudes directly gives the correct resultant only when:",
+          "options": [
+            "The forces are measured in newtons",
+            "All the vectors point in the same direction",
+            "The object is heavy",
+            "There are exactly two forces"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "A complete final answer to a vector problem must state:",
+          "options": [
+            "Only the magnitude with units",
+            "Only the direction",
+            "The sign convention instead of a direction",
+            "Both the magnitude with units AND the direction"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Does It Need a \"Which Way\"?",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Which statement is already complete, needing no direction?",
+          "options": [
+            "A shove of 40 N on a stuck gate",
+            "An airtime voucher costs thirty rand",
+            "A journey of 2 km from the taxi rank",
+            "A velocity of 80 km/h"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The sentence test on 'six hundred joules of energy southward' shows that energy is:",
+          "options": [
+            "A vector, because energy sounds mighty",
+            "A vector, because joules are large units",
+            "A scalar, because the direction adds nothing to the meaning",
+            "Impossible to classify"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A speed becomes a velocity the moment:",
+          "options": [
+            "A direction of travel is attached to it",
+            "It exceeds 100 km/h",
+            "It is converted to metres per second",
+            "It is measured by a speed camera"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Lap Around the Block",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "You jog once around a 600 m block and stop at your own gate. Distance and displacement are:",
+          "options": [
+            "600 m and 600 m",
+            "Zero and 600 m",
+            "1200 m and zero",
+            "600 m and zero"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Distance and displacement can disagree because:",
+          "options": [
+            "Distance asks how much moving happened; displacement asks what the moving achieved",
+            "Displacement uses different units from distance",
+            "Distance is a vector and displacement is a scalar",
+            "One of the two measurements must be an error"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The 600 m loop took 150 seconds. The average velocity is:",
+          "options": [
+            "4 m/s",
+            "600 m/s",
+            "0 m/s, because the displacement was zero",
+            "150 m/s"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Jogging the same 600 m dead straight south in 150 s instead would give:",
+          "options": [
+            "Distance zero, displacement 600 m south",
+            "Distance 600 m, displacement 600 m south, velocity 4 m/s south",
+            "Distance 600 m, displacement zero",
+            "Speed zero, velocity zero"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Two Teams on One Rope",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In the tug-of-war picture, why is the answer 30 N rather than 110 N?",
+          "options": [
+            "Because the rope absorbs the extra force",
+            "Because forces weaken over time",
+            "Because 40 N of the stronger team's pull is used up cancelling the weaker team, leaving 30 N spare",
+            "Because the measurement of 110 N was faulty"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "'Declare a positive direction' means:",
+          "options": [
+            "Choose a direction, call it positive, and keep that choice until the final line",
+            "Always make north the positive direction",
+            "Write every force as a positive number",
+            "Reserve positive signs for the largest force"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Forces of 40 N east and 70 N east act on the same crate. The resultant is:",
+          "options": [
+            "30 N east",
+            "30 N west",
+            "Zero",
+            "110 N east"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Why is 'thirty newtons' only half an answer?",
+          "options": [
+            "Because the number should be seventy",
+            "Because a vector answer needs its direction too — 30 N west",
+            "Because forces must be written in words",
+            "Because the unit is missing"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

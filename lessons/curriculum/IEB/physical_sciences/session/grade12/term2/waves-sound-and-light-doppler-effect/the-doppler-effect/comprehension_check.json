@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the Doppler effect, and use a wavefront diagram in words to explain why a listener standing ahead of a moving siren detects a higher frequency while a listener behind it detects a lower one, even though the siren's emitted frequency and the speed of sound never change.",
+      "expected_answer": "The Doppler effect is the change in frequency of the sound detected by a listener because the sound source and the listener have different velocities relative to the medium of sound propagation. A stationary source emits wavefronts as evenly spaced expanding spheres. When the source moves, each new wavefront is emitted from a position slightly ahead of the previous one, so ahead of the source the wavefronts are bunched together (shorter wavelength) and behind the source they are spread apart (longer wavelength). The speed of sound is a property of the medium and stays constant, so from v = fλ, the shorter wavelength ahead means a higher detected frequency and the longer wavelength behind means a lower detected frequency. The source's own vibration frequency never changes — only the spacing of the wavefronts reaching each listener changes."
+    },
+    {
+      "id": "cc2",
+      "question": "A fire-engine siren emits 840 Hz. Taking the speed of sound as 340 m·s⁻¹, calculate the frequency detected by a stationary listener while the engine approaches at 25 m·s⁻¹ and after it passes and recedes at the same speed. Explain how you chose the signs in each case.",
+      "expected_answer": "Use fL = v/(v ± vs) × fs with the listener stationary. Approach must raise the detected frequency, so the denominator must shrink: subtract vs. fL = 340/(340 − 25) × 840 = 340/315 × 840 = 906,67 Hz, higher than 840 Hz as required. Recession must lower the detected frequency, so the denominator must grow: add vs. fL = 340/(340 + 25) × 840 = 340/365 × 840 = 782,47 Hz, lower than 840 Hz. The sign choice follows the single physical principle that approach raises and recession lowers the detected frequency, and the final answers confirm the choice: the listener hears the pitch fall from about 907 Hz to about 782 Hz as the engine passes, while the siren itself emits 840 Hz throughout."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain what a red shift is, how astronomers detect one using spectral lines, and how the pattern of red shifts across the sky leads, step by step, to the conclusion that the universe is expanding.",
+      "expected_answer": "A red shift is the displacement of a receding light source's detected light toward lower frequencies — the red end of the visible spectrum — the optical analogue of the Doppler drop in pitch behind a receding siren. Each element emits and absorbs light at a fixed, recognisable pattern of frequencies (its spectral lines), like a fingerprint. In the light of a distant galaxy, astronomers recognise the pattern of an element such as hydrogen, but find the whole pattern shifted bodily to lower frequencies than the same lines measured in a laboratory: the fingerprint is intact but slid toward the red, and the size of the slide gives the recession speed. The reasoning to the expanding universe: (1) the spectral fingerprints of almost all distant galaxies are red-shifted, so they are receding; (2) the farther the galaxy, the greater the red shift, so more distant galaxies recede faster; (3) therefore the galaxies are moving away from us and from each other in every direction — the universe is expanding. This does not place Earth at a centre: in an expanding universe every observer sees the same recession pattern, like raisins in rising bread dough all watching each other move apart."
+    }
+  ]
+}

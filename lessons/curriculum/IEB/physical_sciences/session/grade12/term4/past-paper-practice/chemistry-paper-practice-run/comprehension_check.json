@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A 4 g impure MgCO₃ sample releases 0,896 dm³ of CO₂ at STP with excess HCl. Reconstruct the signpost chain to the percentage purity.",
+      "expected_answer": "n(CO₂) = 0,896/22,4 = 0,04 mol. Balanced equation gives a 1:1 ratio, so n(MgCO₃) = 0,04 mol. M(MgCO₃) = 24 + 12 + 48 = 84 g·mol⁻¹, so m = 0,04 × 84 = 3,36 g. Purity = 3,36/4 × 100 = 84%. Audit: purity must lie between 0 and 100%."
+    },
+    {
+      "id": "cc2",
+      "question": "For N₂ + 3H₂ ⇌ 2NH₃ (0,6 mol and 0,8 mol sealed in 2 dm³; 0,4 mol NH₃ at equilibrium), show the RICE reasoning, the compulsory division, and Kc.",
+      "expected_answer": "Change: 0,2 mol N₂ consumed (1:2) and 0,6 mol H₂ (3:2). Equilibrium moles: N₂ 0,4; H₂ 0,2; NH₃ 0,4. Divide by 2 dm³: [N₂] = 0,2; [H₂] = 0,1; [NH₃] = 0,2 mol·dm⁻³ — the compulsory line before the constant. Kc = [NH₃]²/([N₂][H₂]³) = 0,04/0,0002 = 200, no units. Kc of 200 means the equilibrium leans firmly toward products."
+    },
+    {
+      "id": "cc3",
+      "question": "In the Al-Ag galvanic cell, identify the anode with its reason, calculate the emf, and state the salt bridge's function.",
+      "expected_answer": "Aluminium has the lower reduction potential (−1,66 V), so it is the stronger reducing agent, is oxidised, and is the anode; silver is the cathode. E°cell = E°cathode − E°anode = 0,80 − (−1,66) = 2,46 V — positive, so the reaction is spontaneous. The salt bridge completes the circuit by allowing ion migration, maintaining electrical neutrality in both half-cell solutions."
+    }
+  ]
+}

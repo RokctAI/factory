@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the law of conservation of energy and the principle of conservation of mechanical energy, making clear the condition attached to the second.",
+      "expected_answer": "Law: energy cannot be created or destroyed; it can only be transferred from one object to another or converted from one form to another. Principle: in the absence of friction and air resistance (no dissipative forces), the mechanical energy — the sum of kinetic and gravitational potential energy — of an object moving in the Earth's gravitational field remains constant: E k1 + E p1 = E k2 + E p2. The condition matters: with friction present, mechanical energy decreases (transferring to heat) even though total energy is still conserved."
+    },
+    {
+      "id": "cc2",
+      "question": "A 4 kg ball is released from rest 15 m above the ground. Using the ground as reference, give its full energy ledger at the top, at 7,5 m and just before the ground, and find its speed at the last two positions.",
+      "expected_answer": "Top: E p = 4 × 9,8 × 15 = 588 J, E k = 0, E M = 588 J (sealed, air resistance ignored). At 7,5 m: E p = 4 × 9,8 × 7,5 = 294 J, so E k = 588 − 294 = 294 J; ½ × 4 × v² = 294 gives v² = 147, v = 12,12 m/s. Just before the ground: E p = 0, E k = 588 J; ½ × 4 × v² = 588 gives v² = 294, v = 17,15 m/s. Audit: 588 + 0; 294 + 294; 0 + 588 — one unchanging total."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why the landing speed of a freely falling object does not depend on its mass, and describe what changes in the energy account when air resistance is NOT ignored.",
+      "expected_answer": "Setting ½mv² = mgh, the mass cancels, leaving v² = 2gh — landing speed depends only on drop height and g. A heavier object holds more potential energy but needs proportionally more kinetic energy for the same speed, so the effects cancel exactly. With air resistance, mechanical energy is no longer conserved: some energy transfers to heat (and sound) through the rubbing, so the mechanical total decreases and the object lands slower than v² = 2gh predicts; total energy is still conserved."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the test used to classify any quantity as a vector or a scalar, and apply it to energy and to force.",
+      "expected_answer": "Ask whether a direction is needed to complete the quantity's meaning. Energy: 'six hundred joules southward' means nothing — no direction needed, so energy is a scalar. Force: a 40 N push east is a completely different event from 40 N west — direction essential, so force is a vector."
+    },
+    {
+      "id": "cc2",
+      "question": "A jogger completes one full 600 m loop back to her own gate. Explain why distance and displacement give different answers, and what each quantity measures.",
+      "expected_answer": "Distance (scalar) adds up every metre of the path: 600 m. Displacement (vector) compares only the final position with the start; they coincide, so displacement is zero. Distance measures how much moving happened; displacement measures the net change in position, direction included."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the sign-convention method for adding forces on a line, and explain physically why 40 N east and 70 N west give 30 N west rather than 110 N.",
+      "expected_answer": "Declare a positive direction (say east), rewrite each force as a signed number (+40, −70), add algebraically (−30), then translate back into words (30 N west). Physically the forces oppose: 40 N of the westward pull is consumed cancelling the eastward pull, leaving only 30 N of unbalanced westward force. Adding to 110 N wrongly treats opponents as teammates."
+    }
+  ]
+}

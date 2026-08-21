@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a longitudinal wave, a compression and a rarefaction, and explain why sound cannot travel through a vacuum.",
+      "expected_answer": "A longitudinal wave is one in which the particles of the medium vibrate parallel to — along the same line as — the direction in which the wave travels. A compression is a region where the particles are crowded together, so the pressure and density are higher than normal; a rarefaction is a region where the particles are spread further apart, so pressure and density are lower than normal. Sound is a longitudinal wave consisting of travelling compressions and rarefactions, so it needs particles to squash and stretch. A vacuum contains no particles, so no compressions can form and no sound can travel — which is why a ringing bell sealed in an evacuated jar falls silent even though the hammer is still striking, and why space is silent."
+    },
+    {
+      "id": "cc2",
+      "question": "State what property of a sound wave determines pitch, loudness and quality, and calculate the wavelength of a 680 Hz siren note in air where sound travels at 340 m·s⁻¹.",
+      "expected_answer": "Pitch is determined by frequency — more vibrations per second give a higher note. Loudness is determined by amplitude — a bigger amplitude means the source pushed the air harder, delivering more energy to the ear. Quality (tone or timbre) is determined by the waveform — the shape of the wave produced by the particular mix of fainter higher frequencies stacked on the main note, which is why different instruments or voices are recognisable on the same note. The calculation: formula v = fλ, so λ = v ÷ f; substitution λ = 340 ÷ 680; answer λ = 0,5 m. If the pitch rises, the wavelength shortens, because the speed is fixed by the air."
+    },
+    {
+      "id": "cc3",
+      "question": "A survey boat's sonar pulse returns from the lagoon floor after 0,6 s, with sound travelling at 1 500 m·s⁻¹ in seawater. Calculate the depth, explain the factor of two, and give one medical use of ultrasound with the reason it is preferred over X-rays.",
+      "expected_answer": "Formula: d = (v × Δt) ÷ 2. Substitution: d = (1 500 × 0,6) ÷ 2 = 900 ÷ 2. Answer: d = 450 m. The factor of two is needed because the measured time covers the pulse's journey down to the floor AND back up to the boat — the round trip is twice the depth, so the total distance of 900 m must be halved. Medically, ultrasound is used to scan an unborn baby: different tissues reflect the pulses differently and the echoes are assembled into an image. It is preferred over X-rays because ultrasound is not ionising radiation, so it does not damage cells."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State Newton's first law, define inertia, and use both to explain in full sentences why a passenger without a seatbelt lunges forward when a taxi brakes hard.",
+      "expected_answer": "Newton's first law: an object continues in its state of rest or of uniform velocity in a straight line unless acted upon by a net or unbalanced force. Inertia is the tendency of an object to resist a change in its state of rest or uniform motion, and mass is the measure of inertia. When the taxi brakes, the brakes and road exert a large backward net force on the taxi, so the taxi decelerates. No comparable backward force acts on the passenger, so the passenger's body obeys the first law and continues forward at its original velocity while the taxi slows beneath it — the passenger appears to lunge forward relative to the taxi. The seatbelt exists to supply the missing backward force so the passenger decelerates together with the vehicle. The key phrasing is net force, not force: forces are almost always present, and what matters is whether they cancel."
+    },
+    {
+      "id": "cc2",
+      "question": "A 60 kg learner stands on a scale in a lift. Calculate the scale reading when the lift is stationary, accelerating upward at 1,5 m·s⁻², accelerating downward at 1,5 m·s⁻², and in free fall. Show formula, substitution and answer, and explain what apparent weightlessness means.",
+      "expected_answer": "Weight: w = mg = 60 × 9,8 = 588 N down. Take upward as positive; the scale reads the normal force N. Stationary (a = 0): N − 588 = 0, so N = 588 N. Upward at 1,5 m·s⁻²: N − mg = ma gives N = 588 + 60 × 1,5 = 588 + 90 = 678 N — the learner feels heavier though the true weight is unchanged. Downward at 1,5 m·s⁻²: N = 588 − 90 = 498 N — the learner feels lighter. Free fall (a = 9,8 m·s⁻² down): N = 588 − 588 = 0 N. Apparent weightlessness is the condition of experiencing no supporting force while gravity still acts — the floor and person fall together, so nothing pushes up on the feet; gravity has not switched off and the true weight, 588 N, is unchanged throughout."
+    },
+    {
+      "id": "cc3",
+      "question": "State Newton's third law, list the four properties of a genuine action-reaction pair, and explain why the weight of a dictionary resting on a desk and the desk's normal force on it are not such a pair, naming the two genuine pairs present.",
+      "expected_answer": "Newton's third law: when object A exerts a force on object B, object B simultaneously exerts a force on object A that is equal in magnitude and opposite in direction. A genuine pair is equal in magnitude, opposite in direction, acts on different objects, and consists of forces of the same type. The dictionary's weight (down, on the dictionary) and the desk's normal force (up, on the dictionary) are equal and opposite but both act on the same object — the dictionary — and are different types of force (gravitational versus contact), so they are balanced forces, not an action-reaction pair. The genuine pairs are: the Earth pulls the dictionary down with 18 N and the dictionary pulls the Earth up with 18 N (both gravitational, on different bodies); and the desk pushes the dictionary up with 18 N while the dictionary pushes the desk down with 18 N (both contact forces, on different bodies). Because pair members act on different objects, they never appear in the same net-force equation and can never cancel each other — which is why the donkey-and-cart system still moves."
+    }
+  ]
+}

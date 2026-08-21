@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Series and Parallel Networks",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Adding another resistor in SERIES always:",
+          "options": [
+            "Decreases the total resistance",
+            "Increases the total resistance",
+            "Leaves the total resistance unchanged",
+            "Halves the current in one branch only"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A 12 Ω and a 6 Ω resistor connected in parallel have a combined resistance of:",
+          "options": [
+            "18 Ω",
+            "9 Ω",
+            "4 Ω",
+            "0,25 Ω"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The built-in sanity check for any parallel calculation is that the answer must be:",
+          "options": [
+            "Larger than the largest branch",
+            "Equal to the sum of the branches",
+            "Exactly half the largest branch",
+            "Smaller than the smallest branch"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The 12 Ω // 6 Ω pair is wired in series with a 5 Ω resistor. The total network resistance is:",
+          "options": [
+            "9 Ω",
+            "23 Ω",
+            "11 Ω",
+            "4 Ω"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "EMF and Internal Resistance",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The emf of a battery is best defined as:",
+          "options": [
+            "The voltage across the external resistor",
+            "The energy the battery gives each coulomb of charge, read when no current flows",
+            "The heat generated inside the battery",
+            "The current the battery can deliver"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "A 9 V cell with r = 0,5 Ω drives a 4 Ω external resistor. The current in the circuit is:",
+          "options": [
+            "2,25 A",
+            "1,8 A",
+            "2 A",
+            "4,5 A"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "In that same circuit, the terminal voltage and the lost volts are respectively:",
+          "options": [
+            "8 V and 1 V",
+            "9 V and 0 V",
+            "4 V and 5 V",
+            "1 V and 8 V"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "With the switch OPEN, a voltmeter across the battery terminals reads:",
+          "options": [
+            "Zero",
+            "The terminal voltage under load",
+            "The lost volts",
+            "The full emf, because no current means no lost volts"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Full Circuit Problems",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The correct first step of the full-circuit routine is to:",
+          "options": [
+            "Collapse the external network into a single equivalent resistance",
+            "Guess the branch currents",
+            "Calculate the power in each resistor",
+            "Read the terminal voltage off the diagram"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "An 18 V battery (r = 1 Ω) feeds a 2 Ω resistor in series with a 10 Ω // 15 Ω pair. The main current is:",
+          "options": [
+            "1,5 A",
+            "2 A",
+            "2,25 A",
+            "9 A"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "In that circuit, the voltage across the 10 Ω // 15 Ω parallel pair is:",
+          "options": [
+            "4 V",
+            "16 V",
+            "18 V",
+            "12 V"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The branch currents through the 10 Ω and 15 Ω resistors are 1,2 A and 0,8 A. The junction audit confirms this because:",
+          "options": [
+            "Their difference equals the lost volts",
+            "Each equals half the main current",
+            "They add up to the 2 A main current exactly",
+            "Both are smaller than 1,5 A"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Graphs, Switches and Power",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "On a terminal-voltage versus current graph for a real battery, the vertical intercept and gradient give:",
+          "options": [
+            "The intercept gives the emf; the gradient gives negative r",
+            "The intercept gives r; the gradient gives the emf",
+            "Both give the terminal voltage",
+            "The intercept gives the power; the gradient gives the current"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "When an extra lamp is connected in PARALLEL across a battery, the terminal voltage:",
+          "options": [
+            "Rises, because more energy is drawn",
+            "Drops, because total current rises and the lost volts I·r rise with it",
+            "Stays exactly the same",
+            "Becomes equal to the emf"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The three equivalent expressions for electrical power are:",
+          "options": [
+            "V·I, I²R and V²/R",
+            "V/I, I/R and R/V",
+            "V·R, I·R and V·I·R",
+            "V+I, I²+R and V²+R"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "In the 18 V circuit with a main current of 2 A and r = 1 Ω, the power wasted inside the battery is:",
+          "options": [
+            "36 W",
+            "8 W",
+            "4 W",
+            "2 W"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Battery Charges a Toll",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the depot picture, the emf is:",
+          "options": [
+            "The toll taken at the gate",
+            "The push left over on the road outside",
+            "The number of parcels sent",
+            "The full push the depot promises before the toll gate"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The toll collector's merciful rule is that the lost volts are zero whenever:",
+          "options": [
+            "No current flows",
+            "The battery is new",
+            "The external resistance is large",
+            "The voltmeter is disconnected"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "An old torch cell reads full voltage on a meter but barely lights the bulb because:",
+          "options": [
+            "The bulb has become more resistive",
+            "Its internal resistance has swollen, so the toll eats the push once current flows",
+            "The meter is broken",
+            "Its emf has doubled"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "One River, Many Channels",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the river picture, resistors in SERIES are like:",
+          "options": [
+            "Channels around separate islands",
+            "Two rivers merging",
+            "Obstacles one after another that every drop must pass — difficulties add",
+            "A dam storing the water"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Cutting one MORE parallel channel, even a narrow one, makes the total resistance:",
+          "options": [
+            "Larger",
+            "Smaller — every new route relieves the existing ones",
+            "Unchanged",
+            "Infinite"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The chant for what is COMMON in each layout is:",
+          "options": [
+            "In series the voltage is common; in parallel the current is common",
+            "Current is common in both",
+            "Voltage is common in both",
+            "In series the current is common; in parallel the voltage is common"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Household appliances are wired in parallel so that:",
+          "options": [
+            "Each draws its own current on its own branch without blocking the others",
+            "They all share one current equally",
+            "The total resistance stays as high as possible",
+            "A single switch controls everything"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Night the Headlights Dimmed",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "When the ignition key is turned, the starter motor joins the circuit as:",
+          "options": [
+            "A high-resistance series obstacle",
+            "A new salt bridge",
+            "A hungry low-resistance parallel branch",
+            "An open switch"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The four-link chain that explains the dimming headlights, in order, is:",
+          "options": [
+            "External resistance falls, total current rises, lost volts rise, terminal voltage drops",
+            "Current falls, resistance rises, emf rises, lights brighten",
+            "Terminal voltage rises, current falls, toll falls, lights dim",
+            "Resistance rises, current rises, emf falls, toll disappears"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Lights dipping when a heater kicks in on the same overloaded multiplug is explained by:",
+          "options": [
+            "The heater absorbing the light",
+            "Each new device opening a channel that raises the total current, which pays more toll along the supply",
+            "The lights sharing their current with the fridge",
+            "A drop in the mains frequency"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A battery reads a healthy voltage at rest but collapses while cranking. The mechanic's diagnosis is:",
+          "options": [
+            "The emf has vanished",
+            "The starter motor is too small",
+            "The voltmeter needs new leads",
+            "Swollen internal resistance — the idle reading tested the promise, cranking tested the delivery"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

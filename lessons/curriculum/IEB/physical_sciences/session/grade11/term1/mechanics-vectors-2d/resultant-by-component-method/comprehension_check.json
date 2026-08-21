@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what it means to resolve a vector into components, state the two component formulae in words, and describe the sketch that tells you whether a component takes sine or cosine.",
+      "expected_answer": "To resolve a vector is to replace it with two perpendicular vectors, one along the x-axis and one along the y-axis, which together have exactly the same effect as the original vector. The x-component equals the magnitude of the vector multiplied by the cosine of the angle it makes with the x-axis, written Rx = R cosθ, and the y-component equals the magnitude multiplied by the sine of that same angle, written Ry = R sinθ. Those formulae only hold when θ is measured from the x-axis, so the safe procedure is to sketch the right-angled triangle with the vector as the hypotenuse and the given angle clearly marked: the component adjacent to the marked angle takes cosine, and the component opposite the marked angle takes sine. Direction is carried by signs — with east and north positive, westward and southward components are entered as negatives, and a dropped minus sign shifts the final direction by tens of degrees."
+    },
+    {
+      "id": "cc2",
+      "question": "Four forces act on an anchor plate: 300 N at 40° above the horizontal (pointing east and up), 140 N due north, 150 N due west and 60 N due south. Determine the resultant, showing formula, substitution and answer with units.",
+      "expected_answer": "Resolve each force. The 300 N force: Fx = 300 cos40° = 229,8 N east and Fy = 300 sin40° = 192,8 N north. The 140 N force: x = 0, y = +140 N. The 150 N force: x = −150 N, y = 0. The 60 N force: x = 0, y = −60 N. Sum the columns: Rx = 229,8 + 0 − 150 + 0 = 79,8 N east; Ry = 192,8 + 140 + 0 − 60 = 272,8 N north. Magnitude: R = √(Rx² + Ry²) = √(79,8² + 272,8²) = √(6 368,04 + 74 419,84) = √80 787,88 = 284,2 N. Direction: θ = tan⁻¹(Ry ÷ Rx) = tan⁻¹(272,8 ÷ 79,8) = tan⁻¹(3,419) = 73,7°. The resultant is 284,2 N at 73,7° north of east; both magnitude and direction must be stated for the answer to be complete."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the tail-to-head and parallelogram constructions, explain what a closed vector diagram tells you and how the equilibrant relates to the resultant, and name three errors that commonly spoil two-dimensional vector answers.",
+      "expected_answer": "In the tail-to-head construction each vector is drawn to scale with its tail placed at the head of the previous vector, and the resultant is the single arrow from the tail of the first vector to the head of the last. In the parallelogram (tail-to-tail) construction two vectors are drawn from one shared point, the parallelogram is completed, and the diagonal from the shared tail to the opposite corner is the resultant; the two constructions always agree. If vectors drawn tail-to-head close on themselves — the final arrowhead landing on the first tail — the resultant is zero and the object is in equilibrium; the equilibrant of a non-zero set is the single force that would produce that closure, equal in magnitude to the resultant and opposite in direction. Three common errors: a calculator left in radian mode instead of degree mode; a dropped minus sign on a westward or southward component; and ignoring the quadrant, since the inverse tangent only returns angles between −90° and +90°, so a negative Rx requires adding 180° or stating the angle relative to a named axis."
+    }
+  ]
+}

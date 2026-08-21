@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the three-leg journey of a stoichiometric calculation using the 42 g MgCO₃ problem, and why grams may never cross the equation directly.",
+      "expected_answer": "Leg one: grams to moles — 42 g ÷ 84 g/mol = 0,5 mol MgCO₃. Leg two: cross the equation with the mole ratio — 1 : 1, so 0,5 mol MgO. Leg three: moles back to grams — 0,5 × 40 = 20 g. Grams cannot cross directly because coefficients are a mole ratio, and equal mole counts of different substances have different masses (84 g vs 40 g per mole here)."
+    },
+    {
+      "id": "cc2",
+      "question": "Define theoretical yield, actual yield and percentage yield, and calculate the yield when 17 g of MgO is collected against a 20 g prediction.",
+      "expected_answer": "Theoretical yield is the maximum mass the balanced equation allows (20 g — a ceiling); actual yield is the mass really collected (17 g); percentage yield = actual ÷ theoretical × 100 = 17/20 × 100 = 85%. Yields fall short because of incomplete reaction, losses in transfer and side reactions; a yield above 100% signals a wet or contaminated product or an inverted fraction, never an overachieving reaction."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain how conservation of mass provides a free check on the MgCO₃ decomposition even though the CO₂ escapes unweighed.",
+      "expected_answer": "The equation prices the escaped gas: 0,5 mol CO₂ × 44 g/mol = 22 g. Products total 20 + 22 = 42 g, exactly the reactant mass, because atoms are rearranged, never created or destroyed. If product masses in a decomposition don't add up to the starting mass, the error is in the arithmetic; in a sealed container the balance reading would not change at all."
+    }
+  ]
+}

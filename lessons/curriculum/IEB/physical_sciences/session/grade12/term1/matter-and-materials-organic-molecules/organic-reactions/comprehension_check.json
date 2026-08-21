@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write and balance the equation for the complete combustion of pentane in excess oxygen, stating the balancing order used. Then give the reactants, catalyst, conditions and products for the esterification that forms methyl propanoate, and state the naming rule for esters.",
+      "expected_answer": "Complete combustion: C₅H₁₂ + 8O₂ → 5CO₂ + 6H₂O. Balancing order: carbons first (5 CO₂), hydrogens second (6 H₂O), oxygen last (5×2 + 6 = 16 oxygen atoms, so 8 O₂). In excess oxygen the only products are carbon dioxide and water, and the large energy release is why alkanes are used as fuels. Esterification: propanoic acid + methanol ⇌ methyl propanoate + water, with concentrated sulfuric acid as catalyst and gentle heating. The acid loses the OH of its carboxyl group and the alcohol loses the H of its hydroxyl group; together those pieces leave as the water molecule. Naming rule: the alcohol contributes the first part of the name, ending in -yl, and the acid contributes the second part, ending in -oate — methanol + propanoic acid → methyl propanoate; ethanol + methanoic acid → ethyl methanoate."
+    },
+    {
+      "id": "cc2",
+      "question": "HCl is added to but-1-ene. Name the reaction type, describe what happens at the double bond, name the major and minor products, and state and apply the rule that decides the major product. Also give the laboratory test that distinguishes an alkene from an alkane.",
+      "expected_answer": "This is an addition reaction (hydrohalogenation). One bond of the carbon-carbon double bond opens and the H and Cl bond to the two carbons that shared it, so the unsaturated alkene becomes a saturated haloalkane — two reactants become one product. The rule for the major product: the incoming hydrogen attaches to the double-bond carbon that already carries the greater number of hydrogen atoms. In but-1-ene, carbon 1 carries two hydrogens and carbon 2 carries one, so the H joins carbon 1 and the Cl joins carbon 2: the major product is 2-chlorobutane and the minor product is 1-chlorobutane. Test for unsaturation: add bromine water — an alkene decolourises the red-brown bromine almost instantly (addition), while an alkane decolourises it only very slowly and only in light (substitution)."
+    },
+    {
+      "id": "cc3",
+      "question": "2-bromopentane reacts with sodium hydroxide. Explain how the conditions determine whether the product is pentan-2-ol or pent-2-ene, name the reaction type in each case, and state the rule that makes pent-2-ene the major elimination product rather than pent-1-ene.",
+      "expected_answer": "With DILUTE sodium hydroxide in aqueous solution under gentle warming, substitution (hydrolysis) occurs: the OH⁻ replaces the Br in the same position, giving pentan-2-ol (plus sodium bromide), with saturation unchanged. With CONCENTRATED sodium hydroxide dissolved in ethanol at high temperature, elimination (dehydrohalogenation) occurs: the Br leaves carbon 2 and a hydrogen is removed from a neighbouring carbon, forming a carbon-carbon double bond — one molecule becomes an alkene plus the eliminated pieces. The major-product rule: the hydrogen is removed from the neighbouring carbon bearing the FEWER hydrogen atoms. Carbon 3 (two hydrogens) loses its H rather than carbon 1 (three hydrogens), so the double bond forms between carbons 2 and 3, giving pent-2-ene — the more substituted, more stable alkene — as the major product, with pent-1-ene as the minor product. The condition passwords in summary: dilute, aqueous, mild — substitution to the alcohol; concentrated, ethanolic, hot — elimination to the alkene."
+    }
+  ]
+}

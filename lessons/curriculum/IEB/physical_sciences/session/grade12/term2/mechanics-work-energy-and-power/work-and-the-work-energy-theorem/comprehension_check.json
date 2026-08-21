@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the work done by a force, and use the definition to explain why, for a compost bag dragged across level ground, the applied force does positive work, friction does negative work, and the normal force and weight do zero work.",
+      "expected_answer": "The work done on an object by a force is the product of the magnitude of the force, the magnitude of the displacement, and the cosine of the angle between the force and the displacement: W = FΔx cos θ. Work is a scalar measured in joules. The applied force points along the displacement, so θ = 0° and cos θ = 1, giving positive work — energy is transferred into the bag's motion. Friction acts opposite to the displacement, so θ = 180° and cos θ = −1, giving negative work — energy is drained from the motion and converted to heat. The normal force and the weight are both perpendicular to the horizontal displacement, so θ = 90° and cos θ = 0: each does zero work no matter how large it is, because none of the motion happens along its direction and it transfers no energy to or from the bag."
+    },
+    {
+      "id": "cc2",
+      "question": "State the work-energy theorem. A 1 200 kg bakkie travelling at 25 m·s⁻¹ brakes to rest in 62,5 m on a level road. Use the theorem to calculate the average frictional force, and explain why halving the speed would cut the stopping distance to a quarter for the same force.",
+      "expected_answer": "The work-energy theorem states that the net work done on an object equals the change in its kinetic energy: Wnet = ΔEk = ½mvf² − ½mvi². For the braking bakkie: ΔEk = 0 − ½ × 1 200 × 25² = −375 000 J. The only horizontal force is friction acting opposite to the motion over 62,5 m, so −F × 62,5 = −375 000 J, giving F = 6 000 N. Kinetic energy depends on the square of the speed, so at 12,5 m·s⁻¹ the bakkie carries ½ × 1 200 × 12,5² = 93 750 J — one quarter of the energy. With the same friction force, the stopping distance is 93 750 ÷ 6 000 = 15,625 m, one quarter of 62,5 m. Halving the speed quarters the energy to be removed, and since work is force times distance, the same force needs only a quarter of the distance to remove it."
+    },
+    {
+      "id": "cc3",
+      "question": "A 25 kg crate is pulled 6 m up a ramp inclined at 30° at constant velocity, against friction of 35 N, by a force parallel to the slope. Calculate the work done by each force acting on the crate, verify that the net work is consistent with the work-energy theorem, and show that gravity's work equals −mgh for the vertical height gained.",
+      "expected_answer": "The weight component along the slope is mg sin 30° = 25 × 9,8 × 0,5 = 122,5 N down the slope. Constant velocity means zero net force, so the applied force is 122,5 + 35 = 157,5 N up the slope. Work over 6 m: applied force W = 157,5 × 6 = +945 J; gravity W = −122,5 × 6 = −735 J (its along-slope component opposes the motion); friction W = −35 × 6 = −210 J; normal force W = 0 (perpendicular to the motion). Net work = 945 − 735 − 210 = 0 J. This matches the work-energy theorem: constant velocity means ΔEk = 0, so the net work must be zero. Gravity check: the vertical height gained is h = 6 × sin 30° = 3 m, and −mgh = −25 × 9,8 × 3 = −735 J, exactly the along-slope value — gravity's work depends only on the vertical height, not the path length, and the 735 J reappears as gravitational potential energy gained."
+    }
+  ]
+}

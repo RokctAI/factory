@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "An 8 kg trolley on a rough floor is pulled horizontally with 60 N while friction opposes with 12 N. Run the full free-body method to find the acceleration, and explain why the trolley's equal-and-opposite pull on the rope does not stop it accelerating.",
+      "expected_answer": "Free-body diagram: applied force 60 N forward, friction 12 N backward, weight down, normal force up; the vertical forces balance. Choose forward positive. Fnet = 60 − 12 = 48 N. a = Fnet ÷ m = 48 ÷ 8 = 6 m·s⁻² forward. The trolley's pull on the rope is a third-law partner acting on the ROPE, a different object — only forces acting ON the trolley enter its own free-body diagram, so the pair never cancels."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate the electrostatic force between charges of 4 μC and 5 μC placed 0,2 m apart (k = 9 × 10⁹), then use the inverse-square reflex to state the force at 0,4 m without recalculating.",
+      "expected_answer": "Convert prefixes first: 4 × 10⁻⁶ C and 5 × 10⁻⁶ C. F = kQ₁Q₂ ÷ r² = (9 × 10⁹ × 4 × 10⁻⁶ × 5 × 10⁻⁶) ÷ (0,2)² = 0,18 ÷ 0,04 = 4,5 N, acting along the line joining the charges; with both charges of the same sign the force is repulsive. At 0,4 m the distance has doubled, so the force quarters: 4,5 ÷ 4 = 1,125 N."
+    },
+    {
+      "id": "cc3",
+      "question": "A 24 V battery feeds a 2 Ω resistor in series with a 6 Ω and 3 Ω parallel pair. Solve the whole network with the collapse-solve-expand drill and close the power ledger.",
+      "expected_answer": "Collapse: parallel pair = (6 × 3) ÷ (6 + 3) = 2 Ω; total = 2 + 2 = 4 Ω. Solve: I = 24 ÷ 4 = 6 A from the battery and through the series resistor. Expand: V across the series resistor = 6 × 2 = 12 V, leaving 12 V across each parallel branch; branch currents 12 ÷ 6 = 2 A and 12 ÷ 3 = 4 A, summing to 6 A at the junction. Power ledger: battery delivers 24 × 6 = 144 W; dissipation is 6² × 2 = 72 W, 2² × 6 = 24 W and 4² × 3 = 48 W, totalling 144 W — the ledger closes, certifying every number."
+    }
+  ]
+}
