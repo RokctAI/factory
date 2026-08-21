@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the three construction rules for a market graph and explain what goes wrong when the scale rule is broken.",
+      "expected_answer": "Rule one: price on the vertical axis, quantity on the horizontal axis. Rule two: even scales — equal steps along each axis that use the space, for example fives for prices and fifties for quantities. Rule three: label everything — both axes, a heading, and the curve names D and S. Breaking the scale rule warps the curves: uneven steps bend lines that should be straight, so every reading taken off the graph afterwards is distorted."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how you would confirm that your plotted equilibrium is correct using both the graph and the table.",
+      "expected_answer": "On the graph, the curves should cross at one point — here fifteen rand and 150 units — with dotted lines to both axes. In the table, the equilibrium must correspond to the row where the demand and supply columns are equal (150 and 150 at fifteen rand). If the crossing does not line up with that row, one or more points are plotted incorrectly and each point must be checked against its table row."
+    },
+    {
+      "id": "cc3",
+      "question": "Walk through the full method for reading the excess supply at twenty rand, and state the error the method is designed to prevent.",
+      "expected_answer": "Go to twenty rand on the price axis and sweep horizontally at that height. The sweep touches the demand curve at 100 units and the supply curve at 200 units. Subtract: 200 minus 100 gives an excess supply of 100 units, because twenty rand lies above the equilibrium price of fifteen rand. The method prevents the classic error of reading the two curves at different prices — both readings must be taken at the same height before subtracting."
+    }
+  ]
+}

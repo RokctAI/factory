@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define GDP phrase by phrase, and use the wool chain to show why only final goods are counted.",
+      "expected_answer": "GDP is the total market value of all final goods and services produced within a country's borders in a given period, usually one year. Market value: counted in prices so unlike things can be added. Final goods: only what reaches the end user. Within the borders: geography decides, never nationality. Given period: a flow per year, not a stockpile. The wool chain: fleece R30, yarn R70, jersey R200 — adding all three sales gives R300, but only R200 of value exists; fleece and yarn are intermediate goods already inside the jersey's price. Count the final R200 once, or sum value added: 30 + 40 + 130 = 200. Double counting is the error; 'final goods only' is the guard."
+    },
+    {
+      "id": "cc2",
+      "question": "Define GNI, compute the bridge from GDP in both directions, and read the GDP-GNI gap for South Africa and Lesotho.",
+      "expected_answer": "GNI is the total income earned by a country's permanent residents' factors of production in the period, wherever in the world the production happened — GDP asks where produced, GNI asks who earned. Bridge: start with GDP, subtract factor incomes generated here but paid to foreigners (the Australian-owned mine's dividends, foreign consultants' remitted fees), add factor incomes residents earn abroad (South African companies' foreign profits, citizens' remitted wages). South Africa: substantial foreign ownership means more factor income leaves than arrives, so GNI runs somewhat below GDP — the machine on our soil produces more than residents keep. Lesotho: many citizens work abroad and remit wages, so GNI stands above GDP — its people earn more than its territory produces. The gap describes structure, not scandal."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why per capita and price corrections are needed, and list GDP's four blind spots with an example of each.",
+      "expected_answer": "Totals mislead when populations differ, so divide by population for GDP per capita — output per person, the first welfare correction; and comparing years requires stripping out inflation, since a bigger number is no better if prices merely rose. Four blind spots: distribution — one tycoon and ninety-nine unemployed average out respectably; the number is silent on who holds the income. Unpaid and informal work — the grandmother's daily childcare and home vegetable patches are real production with no till, so official figures understate economies like ours. Well-being — the count cannot see safer streets, shorter clinic queues or actual learning; a place can produce more and live worse. The environment — the felled jacaranda appears as firewood revenue while the lost tree appears nowhere. GDP remains essential — growth funds wages, taxes and clinics — but it is a speedometer, not a report card."
+    }
+  ]
+}

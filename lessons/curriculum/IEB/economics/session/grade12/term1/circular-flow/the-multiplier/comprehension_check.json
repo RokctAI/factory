@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the marginal propensity to consume and derive the multiplier from it, using an injection of R2 000 and an MPC of 0,75.",
+      "expected_answer": "The marginal propensity to consume is the change in consumption divided by the change in income, MPC = ΔC ÷ ΔY — the fraction of each additional rand of income that is spent rather than saved. Its twin, the MPS, is the fraction saved, and in the simple model MPC + MPS = 1. An injection of R2 000 is received as income; with an MPC of 0,75 the recipient spends R1 500, which becomes the next person's income; she spends R1 125; the next spends about R844; each round is 0,75 of the one before. The series 2 000 + 1 500 + 1 125 + 844 + … converges to the first term divided by (1 − 0,75), that is 2 000 ÷ 0,25 = R8 000. Hence k = 1 ÷ (1 − MPC) = 1 ÷ MPS = 4, and ΔY = k × ΔJ: R2 000 of injection generates R8 000 of national income."
+    },
+    {
+      "id": "cc2",
+      "question": "Government commits an extra R8 billion to school building. Calculate the effect on national income first in a simple model with an MPC of 0,8, and then in an open economy with MPS 0,15, MPT 0,20 and MPM 0,15. Explain why the answers differ.",
+      "expected_answer": "Simple model: k = 1 ÷ (1 − 0,8) = 1 ÷ 0,2 = 5, so ΔY = 5 × R8 billion = R40 billion. Open economy with government: k = 1 ÷ (MPS + MPT + MPM) = 1 ÷ (0,15 + 0,20 + 0,15) = 1 ÷ 0,50 = 2, so ΔY = 2 × R8 billion = R16 billion. The difference arises because each rand of income now leaks three ways instead of one: part is saved, part is taxed, and part buys imports and leaves the country entirely. The wider the combined leakage, the smaller the multiplier. The composition of spending therefore matters: rands paid to local builders, teachers and maintenance teams keep circulating domestically, while rands spent on imported equipment exit the chain in the first round."
+    },
+    {
+      "id": "cc3",
+      "question": "Evaluate the multiplier as a policy tool: state its three conditions, show how it operates in reverse using a fall in exports of R4 billion with a multiplier of 2, and comment on its relevance to South Africa.",
+      "expected_answer": "The multiplier converts spending into real output only under conditions. First, spare capacity: idle workers and unused plant must exist to answer the extra demand; at full capacity the injection multiplies prices, not production. Second, time: the rounds are sequential, so the full effect unfolds over a year or more and stimulus may land after the downswing has passed. Third, finance: heavy state borrowing can raise interest rates and crowd out private investment, clawing back part of the gain. The multiplier is symmetrical: a R4 billion fall in exports with a multiplier of 2 cuts national income by R8 billion as retrenchments reduce spending round after round — every recession is a multiplier in reverse, which is why automatic stabilisers such as progressive tax and unemployment insurance are valuable dampers. For South Africa, mass unemployment argues for demand-side stimulus, but a high import propensity keeps the multiplier small, and the binding constraints may be electricity, rail and ports rather than labour — capping how much extra demand can become extra production."
+    }
+  ]
+}
