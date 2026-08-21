@@ -1,0 +1,9 @@
+Hey, it's Mandy — three market structures in one lesson looks like a mountain, I know. Here's what shrinks it back to a hill: you are not learning three new methods. You already own the only method — from perfect markets — and the three new structures just turn two dials: how steeply the firm's demand curve slopes, and how easily rivals can enter. Slope and door. Everything else follows.
+
+Monopoly: steep slope, bolted door. The one genuinely new move is MR falling below the demand curve — hold it with the number story: dropping the price to win one more buyer discounts every existing buyer, so the extra unit earns less than its price tag. Draw D, then MR twice as steep, then the usual tick and U. Quantity at MR equals MC — then the mark everyone throws away: read the PRICE up on the demand curve, never off MR. Bolted door means the profit rectangle survives the long run.
+
+Oligopoly: the kinked curve. Flat-ish above the kink — raise alone and you lose alone; steep below — cut and everyone matches, so nobody gains. Result: frozen prices and a war fought through adverts, loyalty cards and sponsorships instead. And remember the two sentences about cartels: members cheat from inside, and the Competition Act prosecutes from outside.
+
+Monopolistic competition: gentle slope, open door. Short run looks like a small monopoly — profit possible. Long run, the open door does its work: entrants shave customers away until the demand curve just touches AC. Tangency means normal profit, and because the touch lands left of AC's minimum, excess capacity — paid out to customers as variety.
+
+For revision, build the comparison table from memory: sellers, product, entry, price power, demand curve, long-run profit. Six rows, four columns, and most structure questions are answered before they're asked. Now go do the practice questions — dial by dial, you've already got this.

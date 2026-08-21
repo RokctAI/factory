@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between average cost and marginal cost, including the calculation verb for each and the question each one answers.",
+      "expected_answer": "Average cost divides total cost by output and answers 'what has each unit cost on average so far?' Marginal cost subtracts neighbouring total costs and answers 'what did the newest unit alone add to cost?' Average speaks about the whole batch; marginal isolates only the latest step."
+    },
+    {
+      "id": "cc2",
+      "question": "Why does the MR = MC rule land on the same answer as computing profit at every output level? Explain the unit-by-unit logic.",
+      "expected_answer": "Every unit whose marginal revenue exceeds its marginal cost adds to profit, and every unit whose marginal cost exceeds marginal revenue subtracts from it. Making exactly all the profit-adding units and none of the profit-destroying ones must place the firm at the peak of the profit column — so the marginal rule and the brute-force profit calculation always agree."
+    },
+    {
+      "id": "cc3",
+      "question": "The firm earns R74 of profit at six units, which is still positive. In your own words, explain why the firm should nevertheless produce five units, and how you would self-check this answer.",
+      "expected_answer": "Positive profit is not the test — maximum profit is. The sixth unit costs R46 but earns only R40, so it drags profit from R80 down to R74. Self-check from both directions: the fifth unit still adds profit (MC R32 < MR R40) and the sixth destroys it (MC R46 > MR R40), and the profit column confirms the peak of R80 at five units."
+    }
+  ]
+}

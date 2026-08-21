@@ -1,0 +1,11 @@
+Hi, Mandy here — this topic can feel like three chapters wearing one trench coat: trade theory, a national bank statement, and a currency market. Relax. It is one story told in three scenes, and each scene runs on a single trick.
+
+Scene one, why nations trade. The only real trap is absolute versus comparative advantage, and the password is SACRIFICE. Absolute advantage asks who produces more. Comparative advantage asks who gives up less — opportunity cost. When a table gives you two countries and two goods, ignore the big flashy numbers and divide: find what one ton of each good costs in the other good, then hand each country the product that costs it least. Even the country that is worse at everything owns a least-bad option — that is the entire theorem, and it never stops feeling like a magic trick.
+
+Scene two, the balance of payments. Placement questions are gift marks with one sorting question: is this item trade or income happening NOW? Current account. Is it the buying or selling of ASSETS — bonds, shares, factories, loans? Financial account. A tourist's hotel bill here: current account, service export. A foreign carmaker's new plant: financial account, direct investment. A foreign fund loading up on our bonds: financial account, portfolio — say "hot money" and add why: it can leave in an afternoon.
+
+Scene three, the rand. Draw the market for DOLLARS — quantity of dollars along the bottom, rand-per-dollar up the side — and apply one more sorting rule: whoever must PAY the world queues to buy dollars; whoever the world is PAYING queues to sell them. Every headline is one curve shifting. Drought wheat imports: demand right, rand weaker. Bumper citrus exports: supply right, rand firmer. And police your vocabulary: depreciation and appreciation for the floating market; devaluation and revaluation only when a government resets a fixed rate.
+
+For corrections, carry four medicines with their side effects: a cheaper currency brings imported inflation; a tighter belt costs growth; blocked imports invite retaliation; borrowed time comes with conditions.
+
+Divide for sacrifice, sort now-versus-assets, queue the buyers and sellers. Three tricks and the whole topic folds open. The practice questions are ready when you are — go.
