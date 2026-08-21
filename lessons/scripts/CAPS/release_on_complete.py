@@ -447,6 +447,14 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
         break_questions=break_questions, segment_bounds=segment_bounds,
         grade=ident["grade"], standing_clips=standing_clips)
     clip_table = lm.collect_clip_table(tracks)
+    # Same treatment as the job-card path: a clips entry claims a script
+    # exists, so say so out loud when it does not (lesson_compliance R6 is
+    # the gate), and trade an estimated duration for the real one as soon as
+    # the named clips carry recorded audio.
+    for ref, script in lm.unresolved_clip_scripts(clip_table):
+        print(f"[clips] WARNING: {ref} -> {script or '(no script path)'} "
+              "does not resolve")
+    lm.apply_measured_clip_durations(tracks, clip_table)
 
     questions = {q["id"]: q for b in mcq.get("subtopics", [])
                  for q in b.get("questions", []) if q.get("id")}

@@ -43,6 +43,11 @@ and the manifest-level `clips` table) are additive: the client's TrackEvent
 keeps type as a plain string and the raw map, so a player that predates an
 event type simply never dispatches it. See build_tracks and
 resolve_standing_clips for the contract (decisions #7/#9/#38/#39/#40).
+A duration for audio that has not been recorded is never emitted as a bare
+`duration_seconds`: it travels as `estimated_duration_seconds` alongside
+`duration_source` until apply_measured_clip_durations can replace it with a
+real length, and an event whose position depends on such a clip states its
+ordering with `after` rather than a made-up time.
 
 `lesson_slug` (2026-08) is the knowledge-bite join key (decision #52): the
 session-tree lesson slug — the name of the lesson's leaf directory under
@@ -77,7 +82,9 @@ full 15-minute script and the factor is ~1; for the SAPI proof it compresses
 to the real (shorter) synthesized length so playback stays coherent.
 """
 import argparse
+import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -375,10 +382,36 @@ MAX_BREAK_QUESTIONS = 4  # client caps at 4 so a break stays a break
 # every session belong to the grade's host — greeting, introduction, handover
 # to the tutor — and never exceed them. Same five minutes as the late-door
 # policy (DOOR_CLOSE_SECONDS) and the backend's ASSISTANT_OPENING_MINUTES.
-ASSISTANT_OPENING_SECONDS = 300
+#
+# It is a BUDGET, NOT A MEASUREMENT: the opening clips have not been recorded
+# (decision #9), so nobody knows how long the host actually speaks. The event
+# therefore carries it as `estimated_duration_seconds` with
+# `duration_source: "estimate"` and NEVER as a bare `duration_seconds` — a
+# consumer must be able to tell a placeholder from a measured length. See
+# apply_measured_clip_durations for the upgrade path once the clips exist.
+ASSISTANT_OPENING_ESTIMATE_SECONDS = 300
 # The assistant calls the time five minutes before the end of a tutor's
 # block (decision #38); the tutor sometimes acknowledges and teaches on.
 FIVE_MIN_WARNING_SECONDS = 300
+
+# The host's standing lines, keyed as the emitter names them, valued by the
+# line's family/name pair in the team layout. Each is a DIRECTORY of numbered
+# variants once they are authored, exactly like a tutor's greetings/ — see
+# assign_assistant_clips.
+ASSISTANT_CLIP_LINES = {
+    "intro_new": "intro/new",
+    "intro_returning": "intro/returning",
+    "five_min_warning": "timekeeping/five_min_warning",
+    "halfway": "timekeeping/halfway",
+    "wrap_up": "timekeeping/wrap_up",
+    "into_break": "handover/into_break",
+    "out_of_break": "handover/out_of_break",
+    "session_end": "signoff/session_end",
+    "recording_stopped": "signoff/recording_stopped",
+}
+# A lesson is taught in at most two blocks (one tutor, or the duo either side
+# of the break), so the five-minute warning is spoken at most twice.
+MAX_TUTOR_BLOCKS = 2
 
 
 def _clipless(ref):
@@ -387,6 +420,49 @@ def _clipless(ref):
     that ref plus .md."""
     ref = (ref or "").strip()
     return ref[:-3] if ref.endswith(".md") else ref
+
+
+def assign_assistant_clips(host, h):
+    """The host's assigned standing lines for this lesson — the assistant
+    counterpart of the tutor's assigned greeting/sign-off.
+
+    Every lesson of every grade is framed by the SAME handful of host lines,
+    and the five-minute warning alone is spoken once per tutor block, so a
+    single fixed ref per line means a student hears the identical sentence
+    two or three times a lesson, every lesson. assign_ack_variant already
+    states the standard for the tutor's side ("never becomes a tic"); this
+    holds the host to it, through lesson_pipeline's own picker
+    (assign_assistant_variant) rather than a parallel one, keyed on the same
+    session hash — re-running the generator for a session reproduces the
+    same variants.
+
+    Returns {key: ref} over ASSISTANT_CLIP_LINES, with `five_min_warning` a
+    LIST of one ref per tutor block (successive blocks get successive
+    variants). Until a line has variants authored on disk the value is the
+    single fixed ref the manifest has always named, so nothing changes for a
+    checkout without the team assets. {} when the grade has no host."""
+    if not host:
+        return {}
+    from lesson_pipeline import assign_assistant_variant
+    out = {}
+    for key, line in ASSISTANT_CLIP_LINES.items():
+        fixed = f"{host}/{line}"
+        if key == "five_min_warning":
+            out[key] = [_clipless(assign_assistant_variant(host, line, h, i))
+                        or fixed for i in range(MAX_TUTOR_BLOCKS)]
+        else:
+            out[key] = _clipless(assign_assistant_variant(host, line, h)) or fixed
+    return out
+
+
+def _assistant_clip(clips, key, host, occurrence=0):
+    """One assigned host line out of a standing-clip plan, falling back to
+    the line's single fixed ref for a plan that carries no assignment (a
+    caller predating assign_assistant_clips)."""
+    ref = (clips.get("assistant_clips") or {}).get(key)
+    if isinstance(ref, list):
+        ref = ref[occurrence] if occurrence < len(ref) else (ref[-1] if ref else "")
+    return ref or f"{host}/{ASSISTANT_CLIP_LINES[key]}"
 
 
 def resolve_standing_clips(session_key, first_tutor, second_tutor, grade,
@@ -408,18 +484,19 @@ def resolve_standing_clips(session_key, first_tutor, second_tutor, grade,
     never-reshuffled, RARE-ack, never-both-tutors rules. Returns a dict of
     refs ('' where nothing resolves — the emitter then omits that field, the
     text-first contract the qa_break events already follow), plus the
-    grade's assistant id (None when the grade has no host)."""
-    import hashlib
+    grade's assistant id (None when the grade has no host) and, under
+    `assistant_clips`, the host's own assigned lines (assign_assistant_clips).
+    """
+    from lesson_pipeline import assign_ack_variant, assign_tutor_variant
     plan = {"assistant": assistant_registry.assistant_for_grade(grade),
             "greeting": _clipless(greeting_ref),
             "signoff": _clipless(signoff_ref),
             "ack_first": "", "ack_second": ""}
     h = hashlib.sha256(str(session_key).encode("utf-8")).hexdigest()
+    plan["assistant_clips"] = assign_assistant_clips(plan["assistant"], h)
     need_derive = (not plan["greeting"] or not plan["signoff"]
                    or ack_ref is None)
     if need_derive:
-        sys.path.insert(0, str(Path(__file__).parent))
-        from lesson_pipeline import assign_ack_variant, assign_tutor_variant
         if not plan["greeting"]:
             plan["greeting"] = _clipless(
                 assign_tutor_variant(first_tutor["id"], "greetings", h))
@@ -439,14 +516,51 @@ def resolve_standing_clips(session_key, first_tutor, second_tutor, grade,
     return plan
 
 
+def clip_script_ref(ref):
+    """Team-layout-relative path of a standing clip's authored script:
+    tutors/CAPS/... for tutor_* refs, assistants/CAPS/... for everything
+    else. The one place that mapping is written down — collect_clip_table
+    and lesson_compliance's R6 both go through here."""
+    speaker = ref.split("/", 1)[0]
+    root = "tutors" if speaker.startswith("tutor_") else "assistants"
+    return f"{root}/CAPS/{ref}.md"
+
+
+def resolve_clip_script(script_rel):
+    """(path, checkable) for a clips-table `script` value.
+
+    `path` is where that script lives in whichever team layout this checkout
+    has: $TEAM_ROOT/tutors/CAPS/... under the cross-repo layout, the legacy
+    in-repo lessons/tutors/... otherwise (the legacy tree has no CAPS
+    segment). `checkable` is False when NEITHER layout is present — there is
+    then nothing to verify against, so callers skip rather than report a
+    violation they cannot substantiate. Same graceful degrade the persona
+    checks already use."""
+    parts = Path(script_rel).parts
+    if len(parts) < 3 or parts[0] not in ("tutors", "assistants"):
+        return None, False
+    team = os.environ.get("TEAM_ROOT", "").strip()
+    if team:
+        base = Path(team)
+        return ((base / script_rel), True) if base.is_dir() else (None, False)
+    legacy_root = Path("lessons") / parts[0]
+    if not legacy_root.is_dir():
+        return None, False
+    return legacy_root.joinpath(*parts[2:]), True
+
+
 def collect_clip_table(tracks):
     """The manifest's standing-clip table: every clip ref the track events
     name, mapped to where its authored script lives in the app-bundled team
-    layout (tutors/CAPS/... for tutor_* refs, assistants/CAPS/... for
-    assistant_* refs). The clips ship text-first — each entry gains an
-    `audio` field once the one-time standing-clip recording session happens
-    (decision #9; blocked on the voice-engine call), with no change to the
-    event vocabulary."""
+    layout (clip_script_ref). The clips ship text-first — each entry gains
+    an `audio` field, and the measured `duration_seconds` beside it, once
+    the one-time standing-clip recording session happens (decision #9;
+    blocked on the voice-engine call), with no change to the event
+    vocabulary.
+
+    The `script` value is a CLAIM about a file, so it is verified rather
+    than merely concatenated: see unresolved_clip_scripts, which generation
+    reports as a warning and lesson_compliance R6 gates as a violation."""
     table = {}
     for ev in tracks:
         refs = [ev.get("clip"), ev.get("ack_clip")]
@@ -454,11 +568,68 @@ def collect_clip_table(tracks):
         for ref in refs:
             if not ref or ref in table:
                 continue
-            speaker = ref.split("/", 1)[0]
-            root = "tutors" if speaker.startswith("tutor_") else "assistants"
-            table[ref] = {"speaker": speaker,
-                          "script": f"{root}/CAPS/{ref}.md"}
+            table[ref] = {"speaker": ref.split("/", 1)[0],
+                          "script": clip_script_ref(ref)}
     return table
+
+
+def unresolved_clip_scripts(table):
+    """The clips-table refs whose `script` names no file in this checkout's
+    team layout — the manifest promising a script nobody has written.
+
+    Returns [(ref, script)], empty when everything resolves AND when no team
+    layout is present to check against (resolve_clip_script says so).
+    Generation only WARNS on these: the standing-clip scripts genuinely are
+    not authored yet, so failing the run would stop the lesson pipeline dead
+    over an asset gap it cannot fix. The gate is lesson_compliance R6, which
+    fails on a manifest.json that was actually produced with a dangling
+    script — the manifest is the artefact consumers trust."""
+    out = []
+    for ref, entry in sorted((table or {}).items()):
+        script = (entry or {}).get("script") if isinstance(entry, dict) else None
+        if not script:
+            out.append((ref, ""))
+            continue
+        path, checkable = resolve_clip_script(script)
+        if checkable and not path.is_file():
+            out.append((ref, script))
+    return out
+
+
+def apply_measured_clip_durations(tracks, clip_table):
+    """Turn an event's ESTIMATED duration into a measured one, once the
+    clips it names have actually been recorded.
+
+    An event that budgets time for unrecorded audio carries
+    `estimated_duration_seconds` + `duration_source: "estimate"` and no
+    `duration_seconds` at all, so a consumer can never mistake a placeholder
+    for a measurement. When every clip the event names has gained its
+    `audio` field and the measured `duration_seconds` beside it (decision
+    #9), the estimate is dropped and the event gains a real
+    `duration_seconds` with `duration_source: "measured"`. Where an event
+    offers ALTERNATIVE clips (assistant_opening's new/returning — the app
+    plays exactly one) the longest is the block's real length.
+
+    A no-op until the standing-clip recording session happens; it is the
+    documented path by which these events stop being estimates."""
+    for ev in tracks:
+        if ev.get("duration_source") != "estimate":
+            continue
+        refs = [r for r in [ev.get("clip"),
+                            *(ev.get("clips") or {}).values()] if r]
+        measured = []
+        for ref in refs:
+            entry = (clip_table or {}).get(ref) or {}
+            if not entry.get("audio") or entry.get("duration_seconds") is None:
+                measured = []
+                break
+            measured.append(float(entry["duration_seconds"]))
+        if not measured:
+            continue
+        ev.pop("estimated_duration_seconds", None)
+        ev["duration_seconds"] = round(max(measured), 2)
+        ev["duration_source"] = "measured"
+    return tracks
 
 
 def qa_ask_labels():
@@ -526,12 +697,22 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
     length without re-cutting lesson audio. With a `standing_clips` plan:
 
       assistant_opening (0)    the grade's host opens the session — greeting,
-                               introduction, handover, inside five minutes;
-                               `clips` offers intro/new and intro/returning
-                               and the APP picks the variant (it knows the
-                               attendance history — decision #39).
+                               introduction, handover, inside a five-minute
+                               budget; `clips` offers intro/new and
+                               intro/returning and the APP picks the variant
+                               (it knows the attendance history — decision
+                               #39). The budget travels as
+                               `estimated_duration_seconds` +
+                               `duration_source: "estimate"`, NOT as a bare
+                               `duration_seconds`: the clips are unrecorded,
+                               so their real length is unknown and must not
+                               look measured (apply_measured_clip_durations).
       handover (0)             the host hands the floor to the tutor; the
                                whiteboard stays held until this fires.
+                               `after: "assistant_opening"` says so
+                               explicitly — the two events share time 0
+                               because the opening's true length is unknown,
+                               not because they are simultaneous.
       profile/signoff          gain `clip` — the tutor's ASSIGNED greeting /
                                sign-off variant. `audio` keeps its deployed
                                value untouched (same sibling-field pattern
@@ -553,6 +734,12 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                                about to disappear and gives the assembler
                                an unambiguous cut point.
 
+    Every host `clip` ref is the lesson's ASSIGNED variant of that line
+    (assign_assistant_clips, carried on the plan as `assistant_clips`), the
+    same deterministic treatment the tutor's greeting/sign-off/ack refs get
+    — a plan without assignments, or a line with no variants authored, falls
+    back to that line's single fixed ref.
+
     Events fall back to their clipless shape wherever a ref (or the grade's
     host) does not resolve — the same text-first tolerance the qa_break
     contract ships with."""
@@ -565,12 +752,25 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
 
     tracks = []
     if host:
+        # The opening clips are not recorded yet, so the five-minute block is
+        # a BUDGET: it goes out as `estimated_duration_seconds` with an
+        # explicit `duration_source`, never as a bare `duration_seconds` that
+        # would read as a measurement (apply_measured_clip_durations swaps it
+        # for the real number once the clips exist).
         tracks.append({
             "time": 0, "type": "assistant_opening", "assistant": host,
-            "duration_seconds": ASSISTANT_OPENING_SECONDS,
-            "clips": {"new": f"{host}/intro/new",
-                      "returning": f"{host}/intro/returning"}})
-        tracks.append({"time": 0, "type": "handover",
+            "estimated_duration_seconds": ASSISTANT_OPENING_ESTIMATE_SECONDS,
+            "duration_source": "estimate",
+            "clips": {"new": _assistant_clip(clips, "intro_new", host),
+                      "returning": _assistant_clip(clips, "intro_returning",
+                                                   host)}})
+        # `after` states the ordering the two events at time 0 would
+        # otherwise only imply: the handover fires when the opening FINISHES,
+        # whenever that turns out to be. It cannot be expressed as a time —
+        # the opening's length is an estimate — so it is expressed as a
+        # dependency on the event it follows.
+        tracks.append({"time": 0, "type": "handover", "after":
+                       "assistant_opening",
                        "from": host, "to": first_tutor["id"]})
     tracks.append({"time": 0, "type": "topic_display", "topic": topic,
                    "duration_seconds": round(topic_display_seconds, 2)})
@@ -620,8 +820,9 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                            # The host's bridge lines around the break —
                            # standing handover clips, spoken into and out of
                            # the mid-session tutor swap (decision #9).
-                           **({"clips": {"into_break": f"{host}/handover/into_break",
-                                         "out_of_break": f"{host}/handover/out_of_break"}}
+                           **({"clips": {
+                               "into_break": _assistant_clip(clips, "into_break", host),
+                               "out_of_break": _assistant_clip(clips, "out_of_break", host)}}
                               if host else {}),
                            **({"questions": break_questions} if break_questions else {})})
     if host:
@@ -639,23 +840,24 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
                    (break_time, last_end, clips.get("ack_second"), second_tutor)]
                   if break_time is not None else
                   [(0.0, last_end, clips.get("ack_first"), first_tutor)])
-        for block_start, block_end, ack, tutor in blocks:
+        for i, (block_start, block_end, ack, tutor) in enumerate(blocks):
             warn_at = round(max(block_start,
                                 block_end - FIVE_MIN_WARNING_SECONDS), 2)
             tracks.append({"time": warn_at, "type": "assistant_interjection",
                            "assistant": host, "kind": "five_min_warning",
-                           "clip": f"{host}/timekeeping/five_min_warning",
+                           "clip": _assistant_clip(clips, "five_min_warning",
+                                                   host, i),
                            **({"ack_clip": ack, "ack_tutor": tutor["id"]}
                               if ack and tutor else {})})
         if break_time is None:
             tracks.append({"time": round(min(last_end, cap) / 2, 2),
                            "type": "assistant_interjection", "assistant": host,
                            "kind": "halfway",
-                           "clip": f"{host}/timekeeping/halfway"})
+                           "clip": _assistant_clip(clips, "halfway", host)})
         tracks.append({"time": round(last_end, 2),
                        "type": "assistant_interjection", "assistant": host,
                        "kind": "wrap_up",
-                       "clip": f"{host}/timekeeping/wrap_up"})
+                       "clip": _assistant_clip(clips, "wrap_up", host)})
     cc_ids = [q["id"] for q in comprehension.get("questions", []) if q.get("id")]
     if cc_ids:
         tracks.append({"time": round(last_end, 2), "type": "comprehension_check",
@@ -670,10 +872,11 @@ def build_tracks(subtopics, mcq, comprehension, first_tutor, second_tutor,
         # assembler's unambiguous cut point.
         tracks.append({"time": round(last_end, 2), "type": "assistant_signoff",
                        "assistant": host,
-                       "clip": f"{host}/signoff/session_end"})
+                       "clip": _assistant_clip(clips, "session_end", host)})
         tracks.append({"time": round(last_end, 2), "type": "recording_stopped",
                        "assistant": host,
-                       "clip": f"{host}/signoff/recording_stopped"})
+                       "clip": _assistant_clip(clips, "recording_stopped",
+                                               host)})
     tracks.sort(key=lambda t: t["time"])
     return tracks
 
@@ -864,6 +1067,20 @@ def main():
     cc_bank = {q["id"]: q for q in comprehension.get("questions", []) if q.get("id")}
 
     clip_table = collect_clip_table(tracks)
+    # A clips entry is a promise that a script exists; verify it rather than
+    # ship the promise unchecked. WARN, do not fail: the standing-clip
+    # scripts are not authored yet, so a hard failure here would stop the
+    # lesson pipeline over an asset gap it cannot close. lesson_compliance
+    # R6 is the gate that refuses the produced manifest.
+    missing = unresolved_clip_scripts(clip_table)
+    if missing:
+        print(f"[clips] WARNING: {len(missing)} clip script(s) do not resolve "
+              "— lesson_compliance R6 will fail this manifest:")
+        for ref, script in missing[:10]:
+            print(f"[clips]   {ref} -> {script or '(no script path)'}")
+    # Estimates become measurements the moment the clips carry recorded
+    # audio; today this is a no-op (decision #9 is still open).
+    apply_measured_clip_durations(tracks, clip_table)
 
     # --- manifest (ReplayManifest.fromJson contract) ---
     manifest = {

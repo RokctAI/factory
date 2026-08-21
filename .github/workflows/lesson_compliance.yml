@@ -9,6 +9,7 @@ name: Lesson Compliance
 #   R3 no bracketed stage directions in script text
 #   R4 tutor identity ids are opaque (^tutor_<n>$), never name/slug-derived
 #   R5 camera_move events inline in primitives (not a sibling top-level key)
+#   R6 standing-clip scripts named by a manifest's clips table exist
 #
 # Fast by design: checks only the files a push changed. workflow_dispatch runs
 # the full-tree baseline.
