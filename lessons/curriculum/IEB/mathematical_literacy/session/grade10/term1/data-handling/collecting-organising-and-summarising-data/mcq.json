@@ -1,0 +1,228 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Data Cycle and the Question Worth Asking",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Which of these is the correct order of the data cycle?",
+          "options": ["Pose a question, collect, organise and classify, summarise and represent, analyse, report", "Collect, pose a question, summarise, organise, report", "Summarise, collect, pose a question, report, organise", "Organise, collect, analyse, pose a question, report"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A commuter's queueing time of 23,5 minutes is an example of which type of data?",
+          "options": ["Categorical data", "Continuous numerical data", "Discrete numerical data", "Secondary categorical data"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The class uses the association's departure log book instead of timing commuters themselves. This makes the data:",
+          "options": ["primary data, because the class is using them for its own question", "biased data, because log books are never accurate", "categorical data, because a log book contains names", "secondary data, because they were recorded by someone else for another purpose"],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Which choice would have introduced the most serious bias into the rank study?",
+          "options": ["Timing commuters to the nearest minute", "Timing fifteen commuters spread across the morning", "Timing only the five o'clock rush, or only commuters who came to complain", "Using a stopwatch rather than asking commuters to estimate"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Tallies, Frequency Tables and Class Intervals",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In the class's frequency table, the interval 20 to 39 minutes has a frequency of:",
+          "options": ["4", "6", "2", "15"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Why are intervals of \"0 to 20\" and \"20 to 40\" unacceptable?",
+          "options": ["Because the intervals are too narrow", "Because intervals must always start at 1", "Because they overlap, so a wait of exactly 20 minutes belongs in two rows", "Because continuous data may never be grouped"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "What check should be done on every frequency table before it is used?",
+          "options": ["That the frequencies add up to the number of values collected", "That every interval holds at least one value", "That the biggest frequency sits in the first row", "That the intervals run from largest to smallest"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "What is lost when continuous data are grouped into class intervals?",
+          "options": ["The unit of measurement", "The total number of values", "Nothing — the table keeps all the original information", "The individual values themselves, so exact figures such as three waits of 30 minutes can no longer be read off"],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Mean, Median, Mode and Range",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The fifteen queueing times total 540 minutes. What is the mean?",
+          "options": ["30 minutes", "45 minutes", "36 minutes", "54 minutes"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For the fifteen ordered values, which position holds the median, and what is it?",
+          "options": ["Position 8; median 30 minutes", "Position 7,5; median 29 minutes", "Position 8; median 36 minutes", "Position 15; median 96 minutes"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The range of the queueing times is:",
+          "options": ["96 minutes", "90 minutes", "36 minutes", "30 minutes"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Which measure of centre can be used for categorical data such as the destination of a trip?",
+          "options": ["The mean", "The median", "The range", "The mode"],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Which Summary Answers Which Question",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Why is the mean of 36 minutes higher than the median of 30 minutes?",
+          "options": ["Because the mode is also 30", "Because three commuters waited 60, 72 and 96 minutes, and those outliers pull the mean upward", "Because the median was taken from unordered data", "Because 15 is an odd number of values"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The association wants the total commuter time the queue swallowed. Which summary rebuilds that total?",
+          "options": ["The median, because it is the typical wait", "The mode, because it is the most common wait", "The mean, because mean × number of commuters gives back 540 minutes", "The range, because it spans all the values"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "What is the stated weakness of the range?",
+          "options": ["It is built from only two values, so a single unusual case can distort it", "It cannot be calculated for continuous data", "It always equals the mean minus the median", "It ignores the smallest value in the data set"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which conclusion best matches the rank's data?",
+          "options": ["Every commuter waits about an hour, so more taxis are needed all day", "The rank is quick, since the mode is only 30 minutes", "The typical wait is 30 minutes; the real problem is a long tail of very long waits", "Nothing can be concluded, because the mean and median disagree"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Asking a Question the Numbers Can Answer",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Why is \"Do we spend too much on transport?\" a poor question to investigate?",
+          "options": ["Because transport spending is categorical data", "Because it asks about a household rather than a school", "Because it needs a tally table", "Because \"too much\" cannot be measured, so no number could settle it"],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Which of these can NOT be added together?",
+          "options": ["Rands spent on taxis by each person", "The bus companies people ride with, such as MyCiTi and Golden Arrow", "Minutes queued by each commuter", "Taxis counted on the rank each hour"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "\"Don't you agree the queue is a disaster?\" is a poor survey question because it:",
+          "options": ["produces continuous data instead of discrete data", "cannot be tallied", "leans towards the answer it wants, instead of asking neutrally", "requires secondary data"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Sorting the Washing",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "What is the first thing to do with a jumbled list of values?",
+          "options": ["Put them in order from smallest to largest", "Calculate the average", "Draw a graph", "Round them all to the nearest ten"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In a tally, why is every fifth stroke drawn across the four before it?",
+          "options": ["To mark the end of a class interval", "So the marks count themselves in fives and are easy to total", "To show that value is the mode", "To flag an outlier"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The five piles of queue times contain 4, 6, 2, 2 and 1 commuters. What does adding them confirm?",
+          "options": ["That the mode is in the second pile", "That the intervals do not overlap", "That all 15 commuters have been counted once, with none lost or double-counted", "That the range is 90 minutes"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Middle, the Most, the Average and the Stretch",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The Simplifier calls the mean the \"sharing-out number\". For the rank data that number is:",
+          "options": ["30 minutes", "36 minutes", "540 minutes", "90 minutes"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "If there had been an EVEN number of commuters, how would the middle value be found?",
+          "options": ["Take the two middle values and split the difference between them", "Take the larger of the two middle values", "Use the mode instead", "The median cannot be found for an even number of values"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which everyday comparison does the Simplifier use for the mean being dragged upward?",
+          "options": ["A taxi that is always full", "A tally counted twice", "A washing basket that never empties", "One cousin with a big contract phone hauling up the family's \"average airtime spend\""],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "What does the Simplifier say a complete answer must include, beyond the number itself?",
+          "options": ["The unit, and a plain sentence about what should actually be done", "A second calculation using a different method", "A graph of the data", "The raw data listed in full"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

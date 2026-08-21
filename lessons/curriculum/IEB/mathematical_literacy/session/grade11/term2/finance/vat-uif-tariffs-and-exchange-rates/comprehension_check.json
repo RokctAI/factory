@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A washing machine is advertised at R5 313 including VAT at 15%. Calculate the price excluding VAT and the VAT amount, and explain why subtracting 15% of R5 313 gives the wrong answer.",
+      "expected_answer": "The advertised price includes VAT, so it represents 115% of the pre-tax price. Dividing by 1,15 recovers the exclusive price: 5 313 ÷ 1,15 = R4 620. The VAT amount is the difference: 5 313 − 4 620 = R693, which checks out as 15% of 4 620. Subtracting 15% of R5 313 is wrong because it takes fifteen percent of the larger, already-taxed figure: 5 313 × 0,15 = R796,95, giving R4 516,05 — too low. Percentage increases and decreases are not symmetrical: adding 15% and then removing 15% does not return to the original, because the two percentages are taken of different numbers."
+    },
+    {
+      "id": "cc2",
+      "question": "A worker earns a gross salary of R9 200 a month, with UIF and other deductions of R648. Explain how the UIF contribution works on both sides of the employment relationship, and calculate the worker's net pay.",
+      "expected_answer": "UIF is a contribution of 1% of gross earnings, collected twice: the worker's 1% — 9 200 × 0,01 = R92 — is deducted from the payslip, and the employer pays a matching R92 to the fund out of the business's own money, on top of the salary. The fund therefore receives R184 a month, although only R92 ever appears on the payslip. The contribution is calculated on gross earnings before other deductions, and the fund exists to pay a temporary income during retrenchment, maternity leave or illness. Net pay is gross minus all deductions: 9 200 − 92 − 648 = R8 460."
+    },
+    {
+      "id": "cc3",
+      "question": "Two cellphone options are offered: Option P at R120 per month plus R0,60 per minute, and Option Q with no monthly charge at R1,40 per minute. Compare the options for a user who talks 100 minutes a month and for one who talks 250 minutes, find the usage at which the options cost the same, and give advice in words.",
+      "expected_answer": "Write each option as a formula: P costs 120 + 0,60 × minutes and Q costs 1,40 × minutes. At 100 minutes, P costs 120 + 60 = R180 and Q costs R140, so Q is cheaper by R40. At 250 minutes, P costs 120 + 150 = R270 and Q costs R350, so P is cheaper by R80. The options cost the same where 120 + 0,60m = 1,40m, so 120 = 0,80m and m = 150 minutes exactly. The advice: a light caller below 150 minutes a month should choose Option Q, because paying no monthly charge outweighs the expensive minutes; a heavy caller above 150 minutes should choose Option P, because the R120 charge buys cheap minutes; at 150 minutes the two options tie. On a graph the swap shows as the point where the two cost lines intersect."
+    }
+  ]
+}

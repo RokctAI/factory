@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A room's floor measures 5,2 m by 3,6 m. Tiles come in boxes covering 1,6 m² at R210 per box. Show the full costing, including why the rounding must go up.",
+      "expected_answer": "Area: 5,2 × 3,6 = 18,72 m². Boxes: 18,72 ÷ 1,6 = 11,7, rounded UP to 12 because part-boxes cannot be bought and 11 boxes would leave floor untiled. Cost: 12 × 210 = R2 520. Rounding to the nearest (12 happens to agree here, but rounding DOWN to 11 fails the job); materials always round up to whole purchasable units."
+    },
+    {
+      "id": "cc2",
+      "question": "A builder's plan is drawn at 1 : 50. A wall measures 84 mm on the plan, and a real wardrobe is 1,6 m wide. Convert both, and state the sanity check that catches direction errors.",
+      "expected_answer": "Paper to real: 84 mm × 50 = 4 200 mm = 4,2 m. Real to paper: 1 600 mm ÷ 50 = 32 mm. Multiply to grow paper into reality, divide to shrink reality onto paper. The check: the real length must always be the bigger number — a 'real wall' smaller than its drawing signals the wrong direction."
+    },
+    {
+      "id": "cc3",
+      "question": "In a class of 50, 30 learners ride the minibus and 15 of those are girls. P(load-shedding this evening) is 0,4 and P(supper late, given load-shedding) is 0,5. Compute P(minibus), P(girl and minibus) and P(load-shedding and late), naming the tool used for each.",
+      "expected_answer": "P(minibus) = 30/50 = 0,6, read from the two-way table's margin. P(girl and minibus) = 15/50 = 3/10, the inner cell over the grand total. P(load-shedding and late) = 0,4 × 0,5 = 0,2, multiplying along the tree diagram's branches — tables handle 'and' within one group; trees handle events in sequence."
+    }
+  ]
+}

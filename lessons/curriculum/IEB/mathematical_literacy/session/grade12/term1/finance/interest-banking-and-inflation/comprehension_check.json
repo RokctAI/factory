@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "R12 000 is invested for 3 years at 6,5% per year. Calculate the final amount under simple interest and under yearly compound interest, and explain why the compound answer is bigger.",
+      "expected_answer": "Simple interest works on the original principal only: one year's interest is 12 000 × 0,065 = R780,00, three years give 780 × 3 = R2 340,00, and the investment ends at 12 000 + 2 340 = R14 340,00. Compound interest works on the current balance each year: 12 000 × 1,065 = R12 780,00 after year one, 12 780 × 1,065 = R13 610,70 after year two, and 13 610,70 × 1,065 = R14 495,40 after year three. Compound ends R155,40 ahead because from year two onwards the interest already earned starts earning its own interest — the base being multiplied grows every year, while simple interest keeps multiplying the same original R12 000. The gap widens every further year the money is left in."
+    },
+    {
+      "id": "cc2",
+      "question": "A statement opens at R860,40 and shows a wage credit of R4 200,00, a debit order of R329,00, a cash withdrawal of R600,00, an ATM fee of R10,50 and an admin fee of R5,90. Calculate the closing balance and the total fees, and state the check that proves a closing balance is correct.",
+      "expected_answer": "The closing balance is the opening balance plus all credits minus all debits: 860,40 + 4 200,00 − 329,00 − 600,00 − 10,50 − 5,90 = R4 115,00. The fees are the two charges that bought nothing: 10,50 + 5,90 = R16,40 for the month, which is R196,80 over a year. The check is the closing-balance equation itself: opening balance plus total credits minus total debits must land exactly on the printed closing balance, to the cent. Rebuilding it line by line proves the bank's arithmetic and exposes any missing value the question asks for. The R10,50 arose from drawing cash at another bank's ATM, which is why using your own bank's machine is the standard fee-saving advice."
+    },
+    {
+      "id": "cc3",
+      "question": "A two-litre bottle of milk costs R32,00 and inflation runs at 5% per year. Calculate the price after two years, explain what happens to the buying power of a R200 note over that time, and explain why a 3% wage increase during 5% inflation is really a decrease.",
+      "expected_answer": "Inflation compounds on the new price each year: 32,00 × 1,05 = R33,60 after one year, and 33,60 × 1,05 = R35,28 after two years. The R200 note's number never changes, but its buying power shrinks: today it buys six bottles at R32,00, while at R35,28 it buys only five — the same note commands less milk, which is exactly what losing buying power means. A wage of R7 500 raised by 3% becomes R7 725, but matching 5% inflation required 7 500 × 1,05 = R7 875, so the earner is R150 a month short of last year's buying power. Any increase below the inflation rate is a decrease in real terms: the number on the payslip rises while what it can buy falls."
+    }
+  ]
+}

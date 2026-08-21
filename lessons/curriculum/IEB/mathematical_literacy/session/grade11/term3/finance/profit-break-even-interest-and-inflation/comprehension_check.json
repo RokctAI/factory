@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A fundraising stall makes 80 boerewors rolls from ingredients costing R480 in total and sells them at R10 each, having paid R290 for its site at the sports day. Calculate the cost price per roll, the percentage profit on cost, and the break-even number of rolls, explaining the rounding of the final answer.",
+      "expected_answer": "The cost price per roll is 480 ÷ 80 = R6,00. Profit per roll is 10 − 6,00 = R4,00, and percentage profit on cost is 4,00 ÷ 6,00 × 100 = 66,7% — the base is the cost price, and stating that base matters because measuring against the selling price would give a different figure, 40%. For break-even, the R290 site fee is a fixed cost and the R6,00 is a variable cost, so each sale contributes 10 − 6,00 = R4,00 toward the fixed cost: 290 ÷ 4,00 = 72,5. This rounds UP to 73, because at 72 rolls the income of R720 still falls R2 short of the total cost of R722, while at 73 the stall is R2 into profit — break-even answers always round up, since the crossing must actually be reached."
+    },
+    {
+      "id": "cc2",
+      "question": "R8 000 of fundraising profit is placed in a fixed deposit at 6% per year, with interest added to the balance each year. Build the balance year by year for three years without using a formula, compare the result with simple interest at the same rate, and explain why the yearly interest amounts differ under compounding.",
+      "expected_answer": "Year one: interest is 8 000 × 0,06 = R480, giving a balance of R8 480. Year two: the 6% now works on 8 480, giving interest of R508,80 and a balance of R8 988,80. Year three: 6% of 8 988,80 is R539,33, giving a final balance of R9 528,13. Under simple interest the deposit would earn R480 every year — 3 × 480 = R1 440 — reaching only R9 440, so compounding earns R88,13 more over the three years. The yearly interest amounts grow under compounding because each year's interest is calculated on the new, larger balance rather than on the original deposit: interest earns interest. The same table describes a debt of R8 000 at 6% compound with nothing repaid — the amounts owed climb the identical staircase, which is why compounding favours savers and punishes borrowers."
+    },
+    {
+      "id": "cc3",
+      "question": "The stall's ingredient basket costs R2 400 this year and inflation runs at 5% per year. Find the basket's cost next year and in two years, explain why adding 5% twice gives the wrong two-year answer, and calculate the inflation rate shown by milk rising from R22,50 to R24,30.",
+      "expected_answer": "Next year the basket costs 2 400 × 1,05 = R2 520. In two years it costs 2 400 × 1,05 × 1,05 = 2 400 × 1,1025 = R2 646. Adding 5% twice — 10% of the original, giving R2 640 — is wrong because the second year's rise happens on the first year's higher prices: 5% of R2 520 is R126, more than 5% of R2 400, so percentages stack by multiplying, never by adding, and two years at 5% is effectively 10,25%. For the milk, the increase is 24,30 − 22,50 = R1,80, and the rate is the increase divided by the OLD price: 1,80 ÷ 22,50 × 100 = 8%. Dividing by the new price instead gives about 7,4% and is the classic error — the base of an inflation rate is always the earlier price."
+    }
+  ]
+}

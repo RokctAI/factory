@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A British recipe requires 5 pounds of sugar and an oven at 400 °F. Using 1 kg = 2,205 pounds, convert the sugar to kilograms and the temperature to Celsius, explaining how you chose between multiplying and dividing, and why temperature uses a formula instead of a factor.",
+      "expected_answer": "The kilogram is the bigger unit — one kilogram contains 2,205 pounds — so converting pounds into kilograms must shrink the number: divide, 5 ÷ 2,205 = 2,268 kg, about 2 268 g. Multiplying would give 11,03 kg, which fails the size check since 5 pounds must be less than 2,5 kg. Temperature cannot use a single factor because Celsius and Fahrenheit place zero differently — Fahrenheit puts freezing water at 32, not 0 — so the scales are shifted as well as stretched. The formula is °F = 1,8 × °C + 32; working backwards from 400 °F, first subtract 32 to get 368, then divide by 1,8 to get 204,4 °C, so the oven dial is set to 200 °C, the nearest available setting."
+    },
+    {
+      "id": "cc2",
+      "question": "A cylindrical tank has a diameter of 2,2 m and a height of 1,5 m. Using pi = 3,142, calculate its volume in cubic metres and its capacity in litres, and state the two errors that most commonly ruin this calculation.",
+      "expected_answer": "The radius is half the diameter: 1,1 m. Volume of a cylinder is pi × radius² × height: radius squared is 1,1 × 1,1 = 1,21; times the height gives 1,21 × 1,5 = 1,815; times pi gives 3,142 × 1,815 = 5,703 m³ to three decimal places. Since one cubic metre holds 1 000 litres, the capacity is 5 703 litres. The two classic errors: first, substituting the full diameter 2,2 as the radius — because the radius is squared, this makes the answer four times too large; second, mixing units, such as centimetres and metres, inside one formula — all measurements must be converted to the same unit before substitution."
+    },
+    {
+      "id": "cc3",
+      "question": "The tank's curved wall and top must be painted (not the base). Calculate the area to paint using pi = 3,142, then determine how many one-litre tins must be bought if one litre covers 8 m², explaining the rounding rule that applies to buying materials.",
+      "expected_answer": "The curved wall unrolls into a rectangle of circumference by height: 2 × 3,142 × 1,1 × 1,5 = 10,369 m². The top is a circle: 3,142 × 1,1² = 3,142 × 1,21 = 3,802 m². The base is excluded because it stands on a concrete plinth. Total area: 10,369 + 3,802 = 14,171, about 14,17 m². Paint needed: 14,17 ÷ 8 = 1,77 litres. Because paint is sold in whole litres, the ceiling rule applies: quantities you buy always round up, so 2 litres must be bought. Rounding 1,77 to the nearest whole number would still give 2 here, but the rule is not nearest-whole — it is always up: even 1,05 litres would mean buying 2, because rounding down leaves part of the tank unpainted — materials round up regardless of the size of the decimal, and the leftover is the cost of completing the job."
+    }
+  ]
+}

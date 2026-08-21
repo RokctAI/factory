@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A flat-pack cupboard kit lists 12 cam locks, 12 cam bolts, 10 dowels, 4 hinges and 20 screws, but the box contains only 9 cam locks. Each of the 3 shelves needs 4 cam locks. Explain the purpose of the parts audit, state what is missing, and say what the shortage stops.",
+      "expected_answer": "The parts audit — counting every component against the parts list before any building — exists because a shortage found before step 1 costs one phone call to the warehouse, while the same shortage discovered at step 10 costs the afternoon and possibly a partial dismantling. Here the audit finds 9 cam locks against a listed 12, so 3 cam locks are missing. Since each shelf locks with 4, two shelves can be fully secured while the third must wait for the missing locks. The kit carries no spares — 12 locks for exactly 12 lockings — so the shortage genuinely halts the third shelf rather than merely eating into a reserve. A full answer states both the missing count and the consequence in a sentence."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the correct wiring of a South African three-pin plug, and explain why a plug with the brown and blue cores swapped is dangerous even though the iron still heats.",
+      "expected_answer": "The colour code is fixed: the brown core connects to the LIVE terminal on the right, the blue core to the NEUTRAL terminal on the left, and the green-and-yellow core to the EARTH terminal at the top — the tallest pin. The cord grip must clamp the thick outer sheath, never the thin cores, which it would bite through. With brown and blue swapped, the iron still heats — the circuit is complete either way, so everything appears normal. The danger is that the appliance's switch now interrupts the neutral instead of the live: switching off stops the flow, but the element remains connected to the live side and stays energised even while the iron reads 'off'. The fault is invisible in ordinary use and is only caught by checking the colours against the code before the cover closes — which is why a working appliance is never proof of a correctly wired plug."
+    },
+    {
+      "id": "cc3",
+      "question": "A cupboard costs R2 499 with delivery at R300. The warehouse's assembly service costs R450; a handyman charges R180 per half hour and quotes three half-hours; self-assembly is free but step 8 requires two people, and a split door panel would cost R520 to replace. Compare the three options and give a defensible recommendation.",
+      "expected_answer": "Self-assembly: 2 499 + 300 = R2 799. Warehouse assembly: 2 499 + 300 + 450 = R3 249. Handyman: 2 499 + 300 + 3 × 180 = R3 339. Self-assembly is cheapest, saving R450 against the warehouse and R540 against the handyman. The recommendation must engage the planted risk: step 8 needs four hands, and a failed solo attempt risks a R520 door panel — more than the saving. Either direction is defensible when reasoned with the numbers: a household with two capable builders should self-assemble and keep the R450, since the kit includes the only tool needed; someone building alone should pay the R450, because insurance costing less than the R520 part it protects, plus a three-week wait avoided, is rational. A bare choice without the amounts earns little — the expected answer is the comparison table plus a recommendation whose reason uses the rands."
+    }
+  ]
+}

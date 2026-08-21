@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A route measures 8 cm on a street map with a number scale of 1 : 25 000. Calculate the real distance in kilometres, showing the unit conversions, and explain the sense test that protects the answer.",
+      "expected_answer": "One centimetre on the map represents 25 000 cm on the ground, so the route is 8 × 25 000 = 200 000 cm. Converting in two steps: divide by 100 to get metres, 2 000 m, then divide by 1 000 to get kilometres, 2 km. The sense test: going from paper to world the number must balloon, and going from world to paper it must collapse; an 8 cm route across a town street map giving 2 km is sensible, whereas an answer of 20 km or 0,2 km would signal a conversion error — most likely dividing by the wrong power of ten — and should be rechecked before moving on."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why a bar scale still gives correct distances after a map has been reduced on a photocopier, while the printed number scale does not, and state the weakness a bar scale carries in exchange.",
+      "expected_answer": "A number scale like 1 : 25 000 is only true at the size the map was printed: when the photocopier shrinks the map, every road on the paper becomes shorter, but the printed ratio still claims that one centimetre represents 25 000 cm, which is no longer true, so calculations from it are wrong. The bar scale is a drawing, so the reduction shrinks the bar by exactly the same proportion as the roads; the relationship between bar and route survives, and measuring the route against the bar still gives the correct real distance on any enlarged or reduced copy. The bar scale's weakness is precision: it must itself be measured with a ruler, so the answer inherits measuring error from the ruler and the eye, whereas a number scale is mathematically exact at original size. Good maps often carry both for this reason."
+    },
+    {
+      "id": "cc3",
+      "question": "A trip measures 11 cm on a 1 : 200 000 road map. The car averages 55 km/h and uses 7,5 ℓ of petrol per 100 km at R22,80 per litre; a minibus charges R30 per person each way. Calculate the distance, the travel time, the return fuel cost, and compare car and minibus for one traveller and for four travelling together.",
+      "expected_answer": "Distance: 11 × 200 000 = 2 200 000 cm = 22 km. Time: 22 ÷ 55 = 0,4 hours, and 0,4 × 60 = 24 minutes — not 40 minutes, because decimal hours must be multiplied by 60. Fuel one way: 22 ÷ 100 × 7,5 = 1,65 ℓ, costing 1,65 × 22,80 = R37,62; the return trip costs 2 × 37,62 = R75,24. The minibus return fare is 2 × 30 = R60 per person. For one traveller the minibus is cheaper: R60 against R75,24, saving R15,24. For four travelling together the minibus costs 4 × 60 = R240 while the car still costs R75,24 — about R18,81 per person — so the car is cheaper by R164,76, because the car's fuel cost is fixed for the vehicle while the minibus fare multiplies per passenger."
+    }
+  ]
+}

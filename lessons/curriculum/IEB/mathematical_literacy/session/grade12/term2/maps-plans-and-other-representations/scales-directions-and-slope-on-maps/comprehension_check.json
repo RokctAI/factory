@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "On a 1 : 1 500 000 road map, the N2 from Cape Town to Knysna measures 33 cm, and Swellendam lies about 225 km from Cape Town by road. Calculate the real N2 distance and the map distance for Swellendam-Cape Town, showing the unit chain and the sense test for each.",
+      "expected_answer": "First price one centimetre: 1 500 000 cm = 15 km, so every centimetre represents 15 km. N2: 33 × 15 = 495 km; with the full chain, 33 × 1 500 000 = 49 500 000 cm ÷ 100 000 = 495 km. Sense test: paper to ground must grow, and 495 km agrees closely with the signposted 489 km — map measurement is honest estimation within a small range. Swellendam-Cape Town: ground to paper must shrink, so divide: 225 ÷ 15 = 15 cm, about a hand-span on the page. If the answer had come out in thousands of centimetres, the operations were swapped — multiplication used where division was needed — which the sense test catches: paper-to-ground answers are big, ground-to-paper answers are small."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to determine the scale of an unlabelled drawing, using a 12 cm drawing of a 30 m netball court, and how to choose a suitable scale for a plan of a 45 m pool complex that must fit a 90 cm display board, defending the choice against rivals.",
+      "expected_answer": "Determining a scale is one fraction: drawn length over real length in the same units, simplified to 1 : n. Convert first — 30 m = 3 000 cm — then scale = 12 : 3 000 = 1 : 250, meaning every centimetre of drawing represents 250 cm of real court. Choosing a scale reverses the logic: the complex is 4 500 cm and the space 90 cm, so the minimum shrinking is 4 500 ÷ 90 = 50 — any scale of about 1 : 50 or more would fit. Choose a round workable number beyond the minimum: 1 : 100 gives 4 500 ÷ 100 = 45 cm, which fits the board with room for labelling. Defend against rivals: 1 : 50 gives 90 cm, which fills the board edge to edge with no margin; 1 : 500 gives 9 cm, which fits but wastes the board and hides detail. The principle: a suitable scale makes the drawing as large as the space allows while remaining easy to calculate with, and the fit must be shown with a checking line, since a marking guideline rewards the checked reasoning rather than a bare number."
+    },
+    {
+      "id": "cc3",
+      "question": "An Outeniqua trail map has a contour interval of 10 m. Trail A crosses twelve contour lines over a map length of 4,8 cm at 1 : 25 000; Trail B gains the same height over 360 m of ground. Calculate both gradients, state which trail is steeper and why, and estimate the walking time for a 7 km trail at 4 km/h.",
+      "expected_answer": "Rise for both trails: twelve contour crossings × 10 m = 120 m. Trail A's horizontal distance: 4,8 cm × 25 000 = 120 000 cm = 1 200 m, so gradient = 120 : 1 200 = 1 : 10 — one metre climbed for every ten metres travelled. Trail B: 120 : 360 = 1 : 3 — one metre climbed every three metres. Trail B is steeper: the smaller second number means the same climb is packed into less horizontal distance, like a ladder standing nearly upright, whereas 1 : 10 spreads the metre over ten steps. This matches the visual rule that contours crowded close together mean steep ground. Walking time: 7 km ÷ 4 km/h = 1,75 hours = 105 minutes, with extra allowed for rest stops and for any sections where the contours bunch, since steep gradients slow the pace below the flat-ground average."
+    }
+  ]
+}

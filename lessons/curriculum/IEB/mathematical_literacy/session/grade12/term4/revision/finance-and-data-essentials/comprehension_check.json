@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A household uses 18 kl on a tariff of R9,00 for the first 10 kl and R16,50 above that. Calculate the bill including VAT, and explain the block-splitting rule. Then show why an inclusive till total of R368,00 must be divided by 1,15 rather than reduced by 15 percent to recover the exclusive price.",
+      "expected_answer": "Split the consumption across the blocks: 10 × R9,00 = R90,00 and the remaining 8 kilolitres at R16,50 = R132,00, subtotal R222,00; VAT at 15% gives 222 × 1,15 = R255,30. The block boundary protects the first 10 kilolitres — charging all 18 at R16,50 is the classic error, because a rising block tariff is a staircase, not a single switch. For VAT backwards: an inclusive total was built as exclusive × 1,15, so dividing R368,00 by 1,15 returns exactly R320,00. Taking 15% OF R368,00 (R55,20) and subtracting gives R312,80, which is too low, because the VAT actually charged was 15% of the smaller exclusive price (R48,00), not of the inclusive total."
+    },
+    {
+      "id": "cc2",
+      "question": "Nandi's annual taxable income is R285 000. The bracket printed on the question reads 'R38 916 + 26% of the amount above R226 000' and the supplied rebate is R16 425. Calculate her monthly tax, naming each step, and state the step most often forgotten. Then compare R6 000 invested for two years at 5% simple against 5% compound, explaining the gap.",
+      "expected_answer": "Tax route: excess = 285 000 − 226 000 = R59 000; 26% of the excess = R15 340,00; plus the base R38 916 gives R54 256,00; minus the rebate R16 425 leaves annual tax of R37 831,00; divided by 12 gives R3 152,58 per month. The rebate subtraction is the most commonly forgotten step, and applying 26% to the whole income instead of the excess is the most common error. Interest: simple pays 6 000 × 0,05 = R300 each year on the original deposit — R6 600,00 after two years. Compound: 6 000 × 1,05 = R6 300,00 after year one, then 6 300 × 1,05 = R6 615,00. The R15,00 gap is year two's interest earned on year one's interest, and it widens every additional year."
+    },
+    {
+      "id": "cc3",
+      "question": "Five test marks are 68, 64, 75, 71 and 22. Calculate the mean and median, explain which average honestly represents the learner and why, and describe two ways a graph can mislead together with the check that exposes each.",
+      "expected_answer": "Mean: sum 300 ÷ 5 = 60,0. Median: arrange as 22, 64, 68, 71, 75; the middle of five values is the third, so 68. The 22 is an outlier — removing it lifts the mean of the rest to 69,5, showing the single mark dragged the mean down about nine and a half points while the median never moved, since the median depends only on position. For outlier-carrying data the median represents typical performance; a full answer names the average, names the outlier and states its direction of pull. Misleading graphs: an axis starting above zero (at 60, say) makes a rise from 65 to 70 look like a doubling — exposed by checking where the axis starts, the thumb test; a biased sample, like surveying only car passengers about bus reliability, cannot represent the target population — exposed by asking who was surveyed. A tilted 3-D pie exaggerating a front slice is also acceptable, exposed by comparing slice angles to the stated percentages."
+    }
+  ]
+}

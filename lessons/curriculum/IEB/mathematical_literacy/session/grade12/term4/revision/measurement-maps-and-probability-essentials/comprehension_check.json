@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A cylindrical drum has radius 0,6 m and height 1,2 m. Using 3,142 for pi, calculate its capacity in litres, showing the full-marks four-line shape and naming the trap if a diameter of 1,2 m had been given instead. Then state the perimeter and area of a 7 m by 4 m chicken run and explain why the units differ.",
+      "expected_answer": "Four lines: radius stated (0,6 m — if given the 1,2 m diameter, halve it first, since substituting the diameter quadruples the answer because the error is squared); substitution shown — V = 3,142 × 0,6² × 1,2 = 3,142 × 0,36 × 1,2; result 1,357 m³ to three decimals; conversion 1,357 × 1 000 ≈ 1 357 litres, since one cubic metre is 1 000 litres. Chicken run: perimeter 2 × (7 + 4) = 22 m — a distance around, in metres; area 7 × 4 = 28 m² — a surface covered, in square metres. Edging and covering are different jobs, so their units carry different dimensions."
+    },
+    {
+      "id": "cc2",
+      "question": "On a 1 : 100 000 map a gravel road measures 7 cm, and a 240 km trip is driven at an average 80 km/h with 45 minutes of stops, aiming to arrive at 11:30. Calculate the road's real length via the unit ladder, the departure line worked backwards, and the trip's fuel cost at 9 litres per 100 km and R22,40 per litre.",
+      "expected_answer": "Scale: 7 × 100 000 = 700 000 cm — still centimetres; ÷ 100 gives 7 000 m; ÷ 1 000 gives 7 km. Driving time: 240 ÷ 80 = 3 hours exactly. Reverse timeline: 11:30 minus 3 hours of driving is 08:30, minus the 45 minutes of stops gives a departure of 07:45, each subtraction earning its own mark. Fuel: 240 ÷ 100 × 9 = 21,6 litres; cost 21,6 × 22,40 = R483,84 — the small Finance calculation the practical topics permit where it links to travel."
+    },
+    {
+      "id": "cc3",
+      "question": "The forecast gives a 40% chance of rain on the reunion day, and rain fell on that weekend in 6 of the last 24 years. Express the forecast in all three notations with its complement, explain what 40% does not mean, compare the experimental probability with the forecast, and show what a full-marks answer on hiring the R1 200 marquee contains.",
+      "expected_answer": "Three dialects: 40% = 40/100 = 2/5 as a fraction, 0,4 as a decimal; the complement — no rain — is 60%, because the two outcomes share the whole 1. It does NOT mean rain for 40% of the day or over 40% of the district; it means that on days like this, rain has historically arrived about 4 times in 10. Experimental probability from the family's data: 6 ÷ 24 = 0,25 = 25%, close to the modelled forecast; more years of data would make the experimental figure steadier. The marquee answer earns marks for the argument, not the choice: either decision is acceptable if it weighs the R1 200 cost against the consequence of being wrong — 60% suggests the money may be wasted, 40% risks 96 soaked guests — and states the choice with its numerical reason."
+    }
+  ]
+}

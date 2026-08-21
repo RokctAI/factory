@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A fair spinner has eight equal sectors numbered 1 to 8 and is spun once. State the sample space, calculate the probability of landing on an even number and the probability of not landing on the 8, and explain the condition under which the counting method for probability is valid.",
+      "expected_answer": "The sample space is the eight sectors: 1, 2, 3, 4, 5, 6, 7 and 8. The event 'even number' contains 2, 4, 6 and 8, so its probability is 4 out of 8, which is one half, or 0,5. The probability of not landing on the 8 uses the complement rule: probabilities across the sample space add to 1, so it is 1 minus one eighth, which is seven eighths, about 0,88. The counting method — favourable outcomes divided by total outcomes — is valid only when all outcomes are equally likely, which is what 'fair spinner with equal sectors' guarantees; a weighted spinner breaks the method, and observed relative frequencies would then be needed instead."
+    },
+    {
+      "id": "cc2",
+      "question": "A coin is tossed 200 times and shows 108 heads. Calculate the relative frequency of heads, compare it with the theoretical probability, and explain what happens to relative frequency as the number of trials becomes very large. Give one example of a probability that can only be found by relative frequency.",
+      "expected_answer": "Relative frequency is occurrences divided by trials: 108 ÷ 200 = 0,54. The theoretical probability for a fair coin is 0,5, from two equally likely faces. The two disagree because chance is variable over short runs, but as the number of trials grows very large the relative frequency drifts toward the theoretical value — after thousands of tosses the proportion of heads settles very close to 0,5. This long-run settling is why casinos and insurers can rely on probability while a single player cannot. An example needing relative frequency: the probability that a spaza shop's bread delivery arrives late (say 21 late deliveries out of 60 gives 0,35), because no equally-likely symmetry argument exists for deliveries — only observation can supply the number. Insurance risk assessment works the same way, from claim records."
+    },
+    {
+      "id": "cc3",
+      "question": "The probability of morning load-shedding is 0,4. When the power is off, the probability that a shop's bread delivery is late is 0,5; with power on, it is 0,1. Use a tree diagram to find the probability of power off and a late delivery, and the probability of a late delivery at all. State the check that confirms the tree is complete. Then, for a two-way table where 18 of 45 walkers arrived late out of 120 surveyed learners with 24 total latecomers, explain why 'the probability a walker was late' is 0,4 and not 0,15.",
+      "expected_answer": "The first fork is power off 0,4 and power on 0,6. From each, the delivery forks into late and on time: late-given-off 0,5, late-given-on 0,1. Multiplying along branches answers AND: power off and late is 0,4 × 0,5 = 0,20. Adding between paths answers OR: late at all is off-and-late plus on-and-late, 0,20 + 0,6 × 0,1 = 0,20 + 0,06 = 0,26. The completeness check: all four endpoints, 0,20 + 0,20 + 0,06 + 0,54, must add to exactly 1, because the tree contains every possible morning. For the table: 'of the walkers' shrinks the pool to the 45 walkers, so the probability a walker was late is 18 ÷ 45 = 0,4. The value 18 ÷ 120 = 0,15 answers a different question — the probability that a learner chosen from all 120 is a walker who arrived late. The denominator must always come from the group named in the question's words."
+    }
+  ]
+}

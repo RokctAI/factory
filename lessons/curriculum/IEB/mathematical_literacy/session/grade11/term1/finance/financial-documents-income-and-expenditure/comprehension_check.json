@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A household used 285 kWh of electricity at a tariff of R2,40 per kWh, with a basic charge of R160. Calculate the total municipal charge including VAT at 15%, and explain how you would recover the pre-VAT amount if only the final total were shown.",
+      "expected_answer": "The consumption charge is 285 × R2,40 = R684,00. Adding the basic charge of R160 — owed even in a month of zero consumption — gives a subtotal of R844,00. VAT at 15% is 844 × 0,15 = R126,60, so the total charge is 844 + 126,60 = R970,60. If only the VAT-inclusive total were shown, the pre-VAT amount is recovered by dividing by 1,15, since the total represents 115% of the original: 970,60 ÷ 1,15 = R844,00. Subtracting 15% of the total instead is wrong, because that takes 15% of the larger, already-taxed figure and gives R825,01, not R844."
+    },
+    {
+      "id": "cc2",
+      "question": "Classify each of the following as fixed, variable or occasional, with a reason: a salary of R11 200 a month; wages of R32,00 per hour; commission of 4% on sales; taxi fare of R16,00 a trip on working days; a school uniform bought in January. Then explain why the classification matters when drawing up a budget.",
+      "expected_answer": "The salary is fixed income, because the contract guarantees the same amount every month. The wages are variable income, because the total depends on the hours actually worked — 38 hours pays R1 216, fewer hours pays less. The commission is variable income, because it tracks the sales made — R1 540 on sales of R38 500, but R0 in a month with no sales. The taxi fare is variable expenditure: although it repeats every working day, the month's total is not guaranteed — a public holiday, illness or a lift changes the number of trips. The uniform is occasional expenditure, arriving irregularly with no monthly schedule. The classification matters because a budget must rest on amounts that can be relied upon: fixed income can be planned on in full, variable income should be entered at an ordinary month's level rather than the record high, and occasional expenses must be saved for in advance so they do not force borrowing when they land. When a budget shows a deficit, only the variable lines can realistically be cut, because the fixed amounts are promised to other people."
+    },
+    {
+      "id": "cc3",
+      "question": "A washing machine costing R6 500 is bought on a loan at 14% per year simple interest over 2 years. Calculate the total amount repaid and the approximate monthly instalment, and explain what makes the interest 'simple'.",
+      "expected_answer": "Simple interest for one year is the principal times the rate: 6 500 × 0,14 = R910. Over two years the interest is 910 × 2 = R1 820, so the total repaid is principal plus interest: 6 500 + 1 820 = R8 320. Spread over 24 monthly instalments this is 8 320 ÷ 24 ≈ R346,67 a month. The interest is 'simple' because it is computed each year on the original principal of R6 500 only — every year is charged the same R910, and interest is never charged on interest already added. The practical meaning is that a machine with an R6 500 price tag genuinely costs R8 320, and the extra R1 820 is the fee for borrowing the money for two years."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A coin is flipped 250 times and lands heads 110 times. State the theoretical probability of heads and the relative frequency observed, explain the difference between the two ideas, and say what the comparison suggests about the coin.",
+      "expected_answer": "The theoretical probability of heads is a half — 0,5 — calculated before any flipping from the symmetry of the coin: two equally likely faces share the certainty. The relative frequency is what was actually observed: 110 ÷ 250 = 0,44. The difference is that theoretical probability comes from the structure of the situation and never changes, while relative frequency is measured by counting trials and wobbles from sample to sample, settling toward the true probability as the number of trials grows. Here 0,44 sits close to 0,5, and 250 flips is a reasonably long test, so the comparison suggests the coin behaves fairly — the gap is the ordinary wobble of a finite sample, not evidence of a loaded coin."
+    },
+    {
+      "id": "cc2",
+      "question": "A fair game tosses a coin twice and pays a koeksister for two tails. Set out the tree of outcomes in words, and find the probability of winning, of exactly one tail, and of at least one tail — showing the complement shortcut for the last.",
+      "expected_answer": "The first toss branches into heads and tails, each with probability a half; each branch splits again for the second toss, giving four equally likely journeys: heads-heads, heads-tails, tails-heads and tails-tails, each with probability a half times a half — a quarter. Winning is the single journey tails-tails: probability one quarter. Exactly one tail covers two journeys, heads-tails and tails-heads — the second being the one mental counters lose — so two quarters: a half. At least one tail covers three journeys, giving three quarters by addition; the complement shortcut instead notes that the only failure is no tails at all — heads-heads, probability one quarter — so the answer is 1 minus one quarter, again three quarters. The check: winning, exactly one tail and no tails sum to one quarter plus a half plus a quarter, exactly 1."
+    },
+    {
+      "id": "cc3",
+      "question": "A survey of 150 fair visitors found 36 learners who came by minibus, 54 learners who walked, 24 adults by minibus and 36 adults who walked. Complete the totals, then find the probability that a random visitor is a learner, that a random visitor is an adult who came by minibus, and that a visitor came by minibus given that they are a learner — explaining the choice of denominator each time.",
+      "expected_answer": "Row totals: learners 36 + 54 = 90, adults 24 + 36 = 60. Column totals: minibus 36 + 24 = 60, walked 54 + 36 = 90. Grand total 150, and every row and column adds to its total. The probability that a random visitor is a learner uses the grand total, because all 150 visitors are candidates: 90 ÷ 150 = three fifths, 0,6. The probability that a random visitor is an adult who came by minibus is the single cell over the grand total, since the visitor is drawn from the whole gate: 24 ÷ 150 = 0,16. The conditional question — minibus given learner — shrinks the world: 'given that they are a learner' removes the 60 adults, leaving 90 candidates, of whom 36 rode: 36 ÷ 90 = 0,4. The denominator is always the group still possible after the given information: the grand total for an unrestricted visitor, the row total once the wording restricts to learners."
+    }
+  ]
+}

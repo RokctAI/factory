@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using the fee R2,50 plus R1,20 per R100 or part thereof, calculate the ATM fee for withdrawals of R400 and R350, explaining the difference in how the hundreds are counted.",
+      "expected_answer": "R400 contains four full hundreds: fee is 2,50 + 4 × 1,20 = R7,30. R350 also counts as four hundreds because the partial fourth hundred counts in full ('part thereof' rounds up): fee is 2,50 + 4 × 1,20 = R7,30, not 2,50 + 3,5 × 1,20 = R6,70."
+    },
+    {
+      "id": "cc2",
+      "question": "Lwazi makes five R400 ATM withdrawals in a month. Compare his total cost on PayPerUse (R5,00 admin plus fees) with the R48 AllInOne and give a recommendation with the margin.",
+      "expected_answer": "PayPerUse: 5 × R7,30 = R36,50 plus R5,00 admin = R41,50. AllInOne: R48,00. PayPerUse is cheaper by R6,50 for this month, so he should choose PayPerUse — but the advice flips in heavy months, e.g. ten R1 000 withdrawals cost R150,00 versus R48."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the graph of the two accounts' monthly cost against number of R400 withdrawals, and explain what the crossing point means.",
+      "expected_answer": "AllInOne is a horizontal line at R48; PayPerUse starts at R5,00 (admin fee with zero withdrawals) and rises R7,30 per withdrawal. The rising line passes the flat one between five withdrawals (R41,50) and six (R48,80). The crossing is the break-even: left of it the pay-per-use account is cheaper, right of it the flat-fee account is cheaper."
+    }
+  ]
+}

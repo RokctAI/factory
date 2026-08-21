@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what the vertical intercept and the gradient of a cost line each reveal about a tariff, using the two electricity options as your examples.",
+      "expected_answer": "The vertical intercept is the cost at zero usage — the fixed charge (R0 for Option A, R200 for Option B). The gradient is the amount the cost climbs per extra unit — the price per kWh (R2,50 for A, R1,70 for B). Between them these two numbers describe the entire tariff."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how the break-even point splits the graph into decision zones, and why 'which option is cheaper?' has no single answer.",
+      "expected_answer": "At the break-even (250 kWh, R625) the options cost the same. Left of it Option A's line is lower — light users avoid the R200 fixed fee, so A is cheaper. Right of it Option B's line is lower — the 80c-per-unit saving eventually outweighs the fixed fee. The cheaper option therefore depends on which zone the household's usage falls in."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, explain how to verify a value read off a graph and why that check matters, using the 400 kWh comparison as your example.",
+      "expected_answer": "Recalculate from the tariff rules: A costs 400 × R2,50 = R1 000 and B costs R200 + 400 × R1,70 = R880, so B is cheaper by R120 — agreeing with the graph, where B's line sits below A's at 400. Verification matters because misreading a scale or following the wrong line is easy, and when graph, arithmetic and common sense agree the answer is reliable."
+    }
+  ]
+}

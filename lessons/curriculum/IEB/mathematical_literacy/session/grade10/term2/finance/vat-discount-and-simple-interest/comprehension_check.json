@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A till slip shows a total of R386,00, made up of R248,00 of zero-rated groceries and R138,00 of standard-rated goods. Show how to find the VAT on the slip, and explain why 15% of R386,00 is the wrong answer.",
+      "expected_answer": "Only the standard-rated R138,00 carries VAT, and that price is already VAT-inclusive, so divide rather than multiply: R138,00 ÷ 1,15 = R120,00, the price excluding VAT. The VAT is therefore R138,00 − R120,00 = R18,00, and the check confirms it because R120,00 × 0,15 = R18,00. Taking 15% of R386,00 gives R57,90, which is wrong twice over: it taxes the zero-rated rice, eggs and vegetables, which carry no VAT at all, and it takes the percentage of a VAT-inclusive amount instead of the exclusive one. The routine is always the same: strip out the zero-rated items first, then divide the taxed portion by 1,15."
+    },
+    {
+      "id": "cc2",
+      "question": "A jacket is marked R780,00. One sign offers 15% off and a second offers a further 10% off at the till. Explain why the total discount is not 25%, and calculate what the shopper actually pays and saves.",
+      "expected_answer": "Successive percentages do not add, because each one is calculated on what the previous one left behind. The first discount gives R780 × 0,85 = R663,00. The second 10% comes off R663,00, not off R780,00, removing R66,30 instead of R78,00 and leaving R663 × 0,90 = R596,70. Combining the multipliers, 0,85 × 0,90 = 0,765, so the shopper pays 76,5% of the marked price — a discount of 23,5%, not 25%. The saving is R780,00 − R596,70 = R183,30, which is R11,70 less than the R195,00 a true 25% discount would have delivered."
+    },
+    {
+      "id": "cc3",
+      "question": "A family has R5 900 in savings at 5% simple interest per year and can buy a R6 800 washing machine today at 20% off, or wait six months. Work out both options and recommend one, showing the habits that earn marks.",
+      "expected_answer": "The sale price is R6 800 × 0,80 = R5 440,00, a discount of R1 360,00. Six months' simple interest on the savings is 5 900 × 0,05 × 0,5 = R147,50, where the time must be written as 0,5 of a year, never as 6. Buying now takes R5 440 out of the account and leaves R460,00 behind; waiting grows the savings to R6 047,50 while the machine returns to R6 800,00, leaving the family R752,50 short. Netting the two effects, waiting earns R147,50 but sacrifices R1 360,00 of discount — a net loss of R1 212,50. The recommendation, stated as a sentence, is that the family should buy during the sale. The mark-earning habits on display are writing the substitution line, converting months to years, keeping the rand sign and cents, rounding only at the end, and closing with a decision in words."
+    }
+  ]
+}
