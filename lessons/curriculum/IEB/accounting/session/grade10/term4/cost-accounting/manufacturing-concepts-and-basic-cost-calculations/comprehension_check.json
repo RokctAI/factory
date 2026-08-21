@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the two sortings of cost accounting and classify the workshop's costs on both axes.",
+      "expected_answer": "Sorting one asks where a cost attaches: traceable to one unit is direct (timber R60 per stool — direct material; the carpenter's R30 per stool — direct labour); costs serving production in general are indirect and gather as factory overheads (glue, sandpaper and blades — indirect material; the foreman — indirect labour; workshop rent, electricity, depreciation on machines). Shop costs like the sales assistant sit outside the factory fence. Sorting two asks how a cost behaves: variables (timber, carpenter) scale in total with output but stay constant per unit; fixed costs (rent, foreman) stand still in total but fall per unit as output rises. Every cost wears both labels: timber is direct and variable; rent is overhead and fixed."
+    },
+    {
+      "id": "cc2",
+      "question": "Build the month's cost statement for 300 stools and state the unit cost's role in pricing.",
+      "expected_answer": "Direct materials 300 × R60 = R18 000 plus direct labour 300 × R30 = R9 000 gives prime cost R27 000. Add factory overheads — rent R4 200, foreman R2 400, electricity R900, glue/sandpaper/blades R900 = R8 400 — for total cost of production R35 400. Divide by 300 units: unit cost R118. The unit cost is the floor under the price: at R150 each stool clears R32; below R118 every sale funds a loss. Half-assembled stools at month-end are work-in-progress, their cost held in the workshop until completion."
+    },
+    {
+      "id": "cc3",
+      "question": "Rerun the statement at 400 stools and at 150 stools, and explain why the unit cost moves.",
+      "expected_answer": "Variables scale, fixeds stand. At 400: materials R24 000 plus labour R12 000 — prime R36 000; plus the unchanged R8 400 — R44 400; over 400 — R111 (variable R90 plus fixed spread R21). At 150: variable still R90 per unit, but R8 400 over 150 is R56 — unit cost R146, leaving almost nothing against a R150 price. The unit cost moves only because the fixed total is spread over more or fewer units — busy months slice the rent thinner, quiet months pile it higher; the error to avoid is scaling fixed costs with volume."
+    }
+  ]
+}

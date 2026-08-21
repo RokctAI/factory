@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between the analysis of receipts column and the Bank column, and describe a day on which their line entries would differ.",
+      "expected_answer": "The analysis column records each amount as it is received during the day; the Bank column records what is actually deposited. On a busy day with several separate receipts, each amount is listed in the analysis column and only their total appears in the Bank column when the collection is banked — several analysis entries become one Bank figure."
+    },
+    {
+      "id": "cc2",
+      "question": "Goods marked up 50 percent on cost are sold for R2 700 cash. Show how to find cost of sales, prove your answer, and name every column the sale touches.",
+      "expected_answer": "Divide the selling price by 1,5: R2 700 divided by 1,5 is R1 800 cost. Proof: R1 800 times 1,5 returns R2 700. The line touches the analysis column, the Bank column and the Sales column with R2 700, and the Cost of Sales column with R1 800 — feeding Bank, Sales, Cost of Sales and Trading Stock at month end."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the cross-cast, state which column stays out of it, and explain why the check must happen before posting.",
+      "expected_answer": "The cross-cast tests that the Sales total plus the Sundries total equals the Bank column total, proving every banked rand is explained by a lane. Cost of Sales stays out because it is not money received. It must be done before posting, otherwise an unbalanced journal carries its error into the ledger where it is far harder to find."
+    }
+  ]
+}

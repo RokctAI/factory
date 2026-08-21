@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Build the asset side of the statement from the year's figures, naming each sub-heading and family.",
+      "expected_answer": "Non-current assets: fixed assets at carrying value — equipment cost R14 000 less accumulated depreciation R2 800 = R11 200 (detail in the fixed assets note). Current assets, least to most liquid: inventories R11 100 (trading stock R10 700 + consumable stores on hand R400); trade and other receivables R8 100 (trade debtors R6 300 + accrued income R600 + prepaid expenses R1 200); cash and cash equivalents R25 200 (bank R24 500 + petty cash R450 + cash float R250). Total assets R55 600, which the equity-and-liabilities side must meet exactly."
+    },
+    {
+      "id": "cc2",
+      "question": "Build the equity and liabilities side, showing the equity movement and explaining the loan's balance.",
+      "expected_answer": "Owner's equity closes at R28 000: opening capital R22 000 plus the net profit of R10 500 (arriving from the Statement of Comprehensive Income — the most examined link between the statements) less drawings R4 500; the movement lives in the owner's equity note. Non-current liabilities: the loan at its capitalised R16 500 — the original R15 000 grown by unpaid interest. Current liabilities: trade and other payables R11 100 (trade creditors R10 200 + accrued expenses R300 + income received in advance R600). Total R55 600, agreeing with the assets."
+    },
+    {
+      "id": "cc3",
+      "question": "Map all seven adjustments to their final statement addresses.",
+      "expected_answer": "Accrued expenses → current liabilities (trade and other payables). Prepaid expenses → current assets (trade and other receivables). Accrued income → trade and other receivables. Income received in advance → trade and other payables. Consumable stores on hand → inventories. Depreciation → twice: the year's charge as an operating expense on the income statement, the accumulated total reducing fixed assets to carrying value here. Interest capitalised → the expense in the income statement's financing tail, and the loan swollen to R16 500 among non-current liabilities."
+    }
+  ]
+}

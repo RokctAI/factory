@@ -1,0 +1,264 @@
+# Copyright (c) 2026 RokctAI
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+from manim import *
+
+# Band-layout whiteboard scene for the IEB Grade 11 Term 1 duo
+# "Creditors Reconciliation". One band per teaching beat; camera moves down,
+# nothing removed. Exporter-safe primitives only; the corrected creditors
+# ledger account and the reconciliation statement build line by line in
+# script order. Subtopic shares: 205/240/210/225/185/190/190 of 1445 s.
+
+BAND = config.frame_height
+
+
+def band_shift(k):
+    return DOWN * BAND * k
+
+
+def strike(m):
+    return Line(m.get_corner(DL) + 0.08 * DL, m.get_corner(UR) + 0.08 * UR,
+                color=RED, stroke_width=6)
+
+
+class CreditorsReconciliationSession(MovingCameraScene):
+    def next_band(self, k):
+        self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
+
+    def construct(self):
+        # Intro beat: topic held full-screen while intro.md audio plays.
+        self.wait(14)
+
+        # ============ Part 1 — Expert ============
+        # --- Band 0 (subtopic_1): two records of one debt ---
+        title = Tex("Creditors Reconciliation").scale(1.3).to_edge(UP)
+        self.play(Write(title))
+        self.wait(2)
+        b0_l1 = Tex("Supplier's statement: their debtors ledger").scale(1.0).shift(UP * 1.2)
+        self.play(Write(b0_l1))
+        self.wait(2)
+        b0_l2 = Tex("Our creditors ledger: the mirror image").scale(1.0).shift(UP * 0.4)
+        self.play(Write(b0_l2))
+        self.wait(2)
+        b0_l3 = Tex("Three families: timing, omissions, errors").scale(1.0).shift(DOWN * 0.5)
+        self.play(Write(b0_l3))
+        self.wait(2)
+        b0_l4 = Tex("New here: the SUPPLIER can be wrong too").scale(1.0).shift(DOWN * 1.4)
+        self.play(Write(b0_l4))
+        self.wait(2)
+        b0_l5 = Tex("A statement is a claim, not a command").scale(1.05).shift(DOWN * 2.3)
+        self.play(Write(b0_l5))
+        self.play(Create(SurroundingRectangle(b0_l5, color=GREEN)))
+        self.wait(3)
+
+        # --- Band 1 (subtopic_2): differences that change OUR books ---
+        self.next_band(1)
+        b1_title = Tex("Statement R65 930 vs our ledger R48 660").scale(1.05).shift(band_shift(1) + UP * 2.2)
+        self.play(Write(b1_title))
+        self.wait(2)
+        b1_l1 = Tex("Invoice 3187, R7 200, goods here 25 Feb:").scale(0.95).shift(band_shift(1) + UP * 1.2)
+        b1_l2 = Tex("Dr Trading stock, Cr Creditors control").scale(0.95).shift(band_shift(1) + UP * 0.5)
+        self.play(Write(b1_l1))
+        self.play(Write(b1_l2))
+        self.wait(2.5)
+        b1_l3 = Tex("Credit note 244: 4 100 entered as 1 400 —").scale(0.95).shift(band_shift(1) + DOWN * 0.3)
+        b1_l4 = Tex("R2 700 (divides by 9): balance DOWN").scale(0.95).shift(band_shift(1) + DOWN * 1.0)
+        self.play(Write(b1_l3))
+        self.play(Write(b1_l4))
+        self.wait(2.5)
+        b1_l5 = Tex("Interest R540: Dr Interest exp, Cr Creditors").scale(0.95).shift(band_shift(1) + DOWN * 1.8)
+        self.play(Write(b1_l5))
+        self.wait(2)
+        b1_l6 = Tex("Discount R950: Dr Creditors, Cr Discount recd").scale(0.95).shift(band_shift(1) + DOWN * 2.6)
+        self.play(Write(b1_l6))
+        self.wait(3)
+
+        # --- Band 2 (subtopic_2): what stays out, and the corrected balance ---
+        self.next_band(2)
+        b2_title = Tex("Not ours to fix — then work the balance").scale(1.1).shift(band_shift(2) + UP * 2.2)
+        self.play(Write(b2_title))
+        self.wait(1.5)
+        b2_l1 = Tex("R2 380 never delivered: THEIR error —").scale(1.0).shift(band_shift(2) + UP * 1.1)
+        b2_l2 = Tex("no journal; phone them today").scale(1.0).shift(band_shift(2) + UP * 0.4)
+        self.play(Write(b2_l1))
+        self.play(Write(b2_l2))
+        self.wait(2.5)
+        b2_l3 = Tex("EFT R10 800 of 26 Feb: timing — no journal").scale(0.95).shift(band_shift(2) + DOWN * 0.4)
+        self.play(Write(b2_l3))
+        self.wait(2.5)
+        b2_l4 = Tex(r"48 660 + 7 200 $-$ 2 700 + 540 $-$ 950").scale(1.0).shift(band_shift(2) + DOWN * 1.3)
+        self.play(Write(b2_l4))
+        self.wait(2)
+        b2_l5 = Tex("Corrected ledger balance: R52 750").scale(1.1).shift(band_shift(2) + DOWN * 2.2)
+        self.play(Write(b2_l5))
+        self.play(Create(SurroundingRectangle(b2_l5, color=GREEN)))
+        self.wait(3)
+
+        # --- Band 3 (subtopic_3): the reconciliation statement ---
+        self.next_band(3)
+        b3_title = Tex("Creditors Reconciliation Statement, 28 Feb").scale(1.05).shift(band_shift(3) + UP * 2.3)
+        self.play(Write(b3_title))
+        b3_rule = Line(band_shift(3) + UP * 1.95 + LEFT * 3.3,
+                       band_shift(3) + UP * 1.95 + RIGHT * 3.3, stroke_width=3)
+        self.play(Create(b3_rule))
+        self.wait(1.5)
+        b3_l1 = Tex("Balance per statement received: 65 930").scale(1.0).shift(band_shift(3) + UP * 1.2)
+        self.play(Write(b3_l1))
+        self.wait(2)
+        b3_l2 = Tex("Less payment in transit: (10 800)").scale(1.0).shift(band_shift(3) + UP * 0.4)
+        self.play(Write(b3_l2))
+        self.wait(2)
+        b3_l3 = Tex("Less invoiced in error: (2 380)").scale(1.0).shift(band_shift(3) + DOWN * 0.3)
+        self.play(Write(b3_l3))
+        self.wait(2)
+        b3_l4 = Tex("= R52 750 — agrees to the rand").scale(1.05).shift(band_shift(3) + DOWN * 1.1)
+        self.play(Write(b3_l4))
+        self.play(Create(SurroundingRectangle(b3_l4, color=GREEN)))
+        self.wait(2.5)
+        b3_l5 = Tex("Direction: what will the SUPPLIER still do?").scale(0.95).shift(band_shift(3) + DOWN * 2.0)
+        self.play(Write(b3_l5))
+        self.wait(2)
+        b3_l6 = Tex("One supplier's account — not Creditors Control").scale(0.9).shift(band_shift(3) + DOWN * 2.8)
+        self.play(Write(b3_l6))
+        self.wait(3)
+
+        # --- Band 4 (subtopic_4): the four traps ---
+        self.next_band(4)
+        b4_title = Tex("The four traps").scale(1.2).shift(band_shift(4) + UP * 2.2)
+        self.play(Write(b4_title))
+        self.wait(1.5)
+        b4_w1 = Tex("Journalise the supplier's R2 380 error?").scale(1.0).shift(band_shift(4) + UP * 1.1)
+        self.play(Write(b4_w1))
+        self.play(Create(strike(b4_w1)))
+        self.wait(2)
+        b4_l1 = Tex("You'd pay for another business's goods").scale(0.95).shift(band_shift(4) + UP * 0.3)
+        self.play(Write(b4_l1))
+        self.wait(2)
+        b4_l2 = Tex("Credit note reduces the debt — understating").scale(0.95).shift(band_shift(4) + DOWN * 0.5)
+        b4_l3 = Tex("one leaves the balance too HIGH").scale(0.95).shift(band_shift(4) + DOWN * 1.2)
+        self.play(Write(b4_l2))
+        self.play(Write(b4_l3))
+        self.wait(2.5)
+        b4_w2 = Tex("Ignore the interest you never agreed to?").scale(0.95).shift(band_shift(4) + DOWN * 2.0)
+        self.play(Write(b4_w2))
+        self.play(Create(strike(b4_w2)))
+        self.wait(1.5)
+        b4_l4 = Tex("You agreed in the credit terms — record it").scale(0.95).shift(band_shift(4) + DOWN * 2.8)
+        self.play(Write(b4_l4))
+        self.wait(3)
+
+        # --- Band 5 (subtopic_4): method and control value ---
+        self.next_band(5)
+        b5_title = Tex("Method marks, and why it protects money").scale(1.05).shift(band_shift(5) + UP * 2.2)
+        self.play(Write(b5_title))
+        self.wait(1.5)
+        b5_l1 = Tex("Corrected account: opening balance, each").scale(1.0).shift(band_shift(5) + UP * 1.1)
+        b5_l2 = Tex("correction on its own line, then balance").scale(1.0).shift(band_shift(5) + UP * 0.4)
+        self.play(Write(b5_l1))
+        self.play(Write(b5_l2))
+        self.wait(2.5)
+        b5_l3 = Tex("Full heading; brackets on deductions").scale(1.0).shift(band_shift(5) + DOWN * 0.4)
+        self.play(Write(b5_l3))
+        self.wait(2)
+        b5_l4 = Tex("Only routine check on a supplier's claims:").scale(0.95).shift(band_shift(5) + DOWN * 1.3)
+        b5_l5 = Tex("overcharges, double invoices, lost credits").scale(0.95).shift(band_shift(5) + DOWN * 2.0)
+        self.play(Write(b5_l4))
+        self.play(Write(b5_l5))
+        self.wait(2.5)
+        b5_l6 = Tex("Pay from YOUR corrected ledger, never").scale(0.95).shift(band_shift(5) + DOWN * 2.8)
+        b5_l7 = Tex("from the statement").scale(0.95).shift(band_shift(5) + DOWN * 3.4)
+        self.play(Write(b5_l6))
+        self.play(Write(b5_l7))
+        self.play(Create(SurroundingRectangle(b5_l7, color=GREEN)))
+        self.wait(3)
+
+        # ============ Part 2 — Simplifier ============
+        # --- Band 6 (subtopic_5): the spaza owner and the bill ---
+        self.next_band(6)
+        b6_title = Tex("The spaza owner and the wholesaler's bill").scale(1.1).shift(band_shift(6) + UP * 2.2)
+        self.play(Write(b6_title))
+        self.wait(2)
+        b6_l1 = Tex("Their bill: R65 930. Your book: R48 660").scale(1.0).shift(band_shift(6) + UP * 1.1)
+        self.play(Write(b6_l1))
+        self.wait(2.5)
+        b6_l2 = Tex("Don't just pay theirs; don't insist on yours").scale(1.0).shift(band_shift(6) + UP * 0.3)
+        self.play(Write(b6_l2))
+        self.wait(2.5)
+        b6_l3 = Tex("Sit with both, line by line: things late,").scale(1.0).shift(band_shift(6) + DOWN * 0.5)
+        b6_l4 = Tex("things you never knew, things plain WRONG").scale(1.0).shift(band_shift(6) + DOWN * 1.2)
+        self.play(Write(b6_l3))
+        self.play(Write(b6_l4))
+        self.wait(3)
+        b6_l5 = Tex("The wholesaler's clerk is a person too").scale(1.0).shift(band_shift(6) + DOWN * 2.1)
+        self.play(Write(b6_l5))
+        self.wait(2)
+        b6_l6 = Tex("A bill is a claim, not a command").scale(1.05).shift(band_shift(6) + DOWN * 2.9)
+        self.play(Write(b6_l6))
+        self.play(Create(SurroundingRectangle(b6_l6, color=GREEN)))
+        self.wait(3)
+
+        # --- Band 7 (subtopic_6): whose book is wrong? ---
+        self.next_band(7)
+        b7_title = Tex("Whose book must change?").scale(1.15).shift(band_shift(7) + UP * 2.2)
+        self.play(Write(b7_title))
+        self.wait(2)
+        b7_l1 = Tex("Sheeting in the yard: yours short, add 7 200").scale(0.95).shift(band_shift(7) + UP * 1.1)
+        self.play(Write(b7_l1))
+        self.wait(2.5)
+        b7_l2 = Tex("Digit swap on the credit note: down 2 700").scale(0.95).shift(band_shift(7) + UP * 0.3)
+        self.play(Write(b7_l2))
+        self.wait(2.5)
+        b7_l3 = Tex("Late-payment interest: add 540").scale(0.95).shift(band_shift(7) + DOWN * 0.5)
+        b7_l4 = Tex("Unrecorded discount: take off 950").scale(0.95).shift(band_shift(7) + DOWN * 1.2)
+        self.play(Write(b7_l3))
+        self.play(Write(b7_l4))
+        self.wait(2.5)
+        b7_l5 = Tex("You honestly owe: R52 750").scale(1.05).shift(band_shift(7) + DOWN * 2.0)
+        self.play(Write(b7_l5))
+        self.play(Create(SurroundingRectangle(b7_l5, color=GREEN)))
+        self.wait(2.5)
+        b7_l6 = Tex("Their 2 380 mistake and your 10 800 in").scale(0.95).shift(band_shift(7) + DOWN * 2.8)
+        b7_l7 = Tex("flight: not your book's problem").scale(0.95).shift(band_shift(7) + DOWN * 3.4)
+        self.play(Write(b7_l6))
+        self.play(Write(b7_l7))
+        self.wait(3.5)
+
+        # --- Band 8 (subtopic_7): the short bridge ---
+        self.next_band(8)
+        b8_title = Tex("Why this small job protects real money").scale(1.1).shift(band_shift(8) + UP * 2.2)
+        self.play(Write(b8_title))
+        self.wait(2)
+        b8_l1 = Tex("Pay the bill unchecked: hand a stranger").scale(1.0).shift(band_shift(8) + UP * 1.1)
+        b8_l2 = Tex("more than R13 000 you do not owe").scale(1.0).shift(band_shift(8) + UP * 0.4)
+        self.play(Write(b8_l1))
+        self.play(Write(b8_l2))
+        self.wait(2.5)
+        b8_l3 = Tex(r"65 930 $-$ 10 800 $-$ 2 380 = R52 750").scale(1.05).shift(band_shift(8) + DOWN * 0.5)
+        self.play(Write(b8_l3))
+        self.play(Create(SurroundingRectangle(b8_l3, color=GREEN)))
+        self.wait(3)
+        b8_l4 = Tex("Same steering question: what does the").scale(1.0).shift(band_shift(8) + DOWN * 1.4)
+        b8_l5 = Tex("OTHER side still have to do?").scale(1.0).shift(band_shift(8) + DOWN * 2.1)
+        self.play(Write(b8_l4))
+        self.play(Write(b8_l5))
+        self.wait(2.5)
+        b8_l6 = Tex("Businesses bleed from bills nobody checked").scale(1.0).shift(band_shift(8) + DOWN * 3.0)
+        self.play(Write(b8_l6))
+        self.wait(4)

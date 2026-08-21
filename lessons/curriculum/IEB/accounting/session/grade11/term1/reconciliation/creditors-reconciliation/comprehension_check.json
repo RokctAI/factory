@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Correct the creditors ledger account of Kei Steel & Roofing Wholesalers in the books of Amatola Building Supplies, starting from R48 660, and give the double entry for each correction.",
+      "expected_answer": "Invoice 3187 for R7 200 for roof sheeting delivered on 25 February but invoiced to us in March: debit Trading stock, credit Creditors control — the balance rises to R55 860. Credit note 244 for R4 100 entered as R1 400: the R2 700 shortfall is corrected by debit Creditors control, credit Trading stock, bringing the balance to R53 160, and the difference divides by nine, the signature of a transposition. Interest of R540 charged on the overdue account: debit Interest expense, credit Creditors control, giving R53 700. Settlement discount of R950 allowed on the February payment and never recorded: debit Creditors control, credit Discount received, giving the corrected balance of R52 750. The R2 380 invoiced in error and the R10 800 payment in transit are not journalised at all."
+    },
+    {
+      "id": "cc2",
+      "question": "Prepare the Creditors Reconciliation Statement at 28 February 2026 and explain why the unrecorded invoice does not appear on it.",
+      "expected_answer": "Creditors Reconciliation Statement of Kei Steel & Roofing Wholesalers on 28 February 2026: balance per statement received R65 930; less payment of R10 800 in transit, because the supplier still has to process our transfer of 26 February; less R2 380 of guttering invoiced to us in error, because the supplier still has to reverse it; balance per corrected creditors ledger account R52 750. Invoice 3187 does not appear because we have already corrected it in our own books — the reconciliation statement carries only the items that remain for the SUPPLIER to act on. The direction of every item is settled by asking what the supplier will still do to this balance."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the internal control value of reconciling creditors' statements and set out four practices a partnership should follow.",
+      "expected_answer": "The reconciliation is the only routine check that can catch a supplier overcharging, double-invoicing, omitting a credit note or charging interest the credit terms do not allow, because nobody inside the business sees the supplier's books except through the statement; it equally catches the business's own failures — unrecorded invoices, understated returns, and payments posted to the wrong supplier's account. Four practices: reconcile every supplier's statement in the month it arrives, while the supporting documents can still be found; have the reconciliation performed by someone who does not authorise payments, so the same person cannot both create and conceal a difference; always pay from the business's own corrected creditors ledger account rather than from the statement; and investigate long-outstanding items and query every difference in writing, so a record exists if the matter is disputed later."
+    }
+  ]
+}

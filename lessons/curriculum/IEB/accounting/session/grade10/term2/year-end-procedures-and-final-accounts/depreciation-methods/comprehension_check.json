@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why depreciation exists, naming the two GAAP principles, and describe the three figures every depreciation question turns on.",
+      "expected_answer": "Matching spreads the asset's cost as an expense across the years it earns income, instead of crushing year one; prudence stops the books overstating what an ageing asset is worth. The three figures: cost price, anchored permanently on purchase day by historical cost; accumulated depreciation, the negative-asset running total of all wear written off; and carrying value, cost minus accumulated — what the asset is still worth in the books. The annual entry debits Depreciation and credits Accumulated Depreciation, leaving cost untouched."
+    },
+    {
+      "id": "cc2",
+      "question": "Compare straight-line and diminishing balance on the R150 000 bakkie at 20%, showing the first three years' charges and carrying values under each.",
+      "expected_answer": "Straight-line takes 20% of cost each year: R30 000, R30 000, R30 000, with carrying values 120 000, 90 000, 60 000 — a level slice from a constant base, consuming the cost in five years. Diminishing balance takes 20% of carrying value: R30 000, then R24 000 (20% of 120 000), then R19 200 (20% of 96 000), with carrying values 120 000, 96 000, 76 800 — a shrinking slice from a shrinking base that never fully consumes the asset. Straight-line suits even service; diminishing balance suits machines that work hardest when new."
+    },
+    {
+      "id": "cc3",
+      "question": "The office computer cost R24 000 on 1 November, straight-line at 15%, with a 28 February year end. Calculate its first-year depreciation and carrying value, and state the rule you applied.",
+      "expected_answer": "A full year would be 15% of R24 000 = R3 600, but depreciation runs pro rata from the month of purchase. The computer served four months (November to February), so the charge is 3 600 × 4/12 = R1 200, and its first-year carrying value is R24 000 − R1 200 = R22 800. Any mid-year addition, on either method, is charged only for the months it actually served."
+    }
+  ]
+}

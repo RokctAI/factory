@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why an asset disposal account is opened, what it gathers, and what its balancing figure means.",
+      "expected_answer": "An asset leaving carries three pieces held in three places: its cost in the asset account, the wear written off in accumulated depreciation, and whatever the buyer paid. The disposal account brings all three together — cost debited, accumulated depreciation and proceeds credited — so they can be weighed and the difference recognised. Posting proceeds straight against cost would corrupt both the asset account and the profit figure, because selling price and cost are different amounts. Credits exceeding debits gives a profit on disposal (other operating income); debits exceeding credits gives a loss (an operating expense). The figure is not trading profit — it is a correction, the accumulated verdict on every depreciation estimate made across the asset's life."
+    },
+    {
+      "id": "cc2",
+      "question": "Work the full disposal: a vehicle costing R240 000 bought 1 March two years ago, depreciated at 20% p.a. on diminishing balance, sold for R122 000 cash on 30 November of the third year (financial year ends 28 February). Give the four steps and the result, verified two ways.",
+      "expected_answer": "Step one — bring depreciation up to date: year one 20% of R240 000 = R48 000 (carrying value R192 000); year two 20% of R192 000 = R38 400 (carrying value R153 600); part-year 20% of R153 600 × 9/12 = R23 040. Accumulated total R109 440, carrying value R130 560. Step two — debit Asset Disposal, credit Vehicles R240 000. Step three — debit Accumulated Depreciation, credit Asset Disposal R109 440. Step four — debit Bank, credit Asset Disposal R122 000. Debits R240 000 against credits R231 440 gives a LOSS on disposal of R8 560. Verified the quick way: proceeds R122 000 against carrying value R130 560 is the same R8 560 shortfall. The two methods must always agree; disagreement usually means the part-year depreciation was skipped."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the four kinds of disposal and the internal controls that should govern an asset leaving the business.",
+      "expected_answer": "Only step four differs. Cash sale: debit Bank. Credit sale: debit a sundry or other debtor — not Debtors Control, since the business does not trade in that asset. Trade-in: debit the new asset account with the trade-in allowance, and record the new asset at its FULL cost (allowance plus cash paid) — recording only the cash understates the asset and every future depreciation charge. Drawings: debit Drawings at a fair value; understating it overstates equity and is a misstatement. Scrapped or donated assets have no proceeds, so the whole remaining carrying value becomes the loss. Controls: written authorisation by someone senior enough to be accountable; quotes or a valuation to show the price was reasonable rather than a favour; numbered documentation and a signed gate release; segregation of authorising, receiving money and updating records; and periodic physical verification against the register — which together defeat the classic fraud of selling an asset, pocketing the cash and writing it off as scrapped."
+    }
+  ]
+}

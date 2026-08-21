@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Kiepersol Limited: sales R4 500 000, cost of sales R3 000 000, other income R60 000, operating expenses R760 000, interest income R20 000, interest expense R120 000, tax at 27 percent. Rebuild the income statement chain to net profit after tax, then compute earnings per share on seven hundred and thirty thousand shares.",
+      "expected_answer": "Gross profit: 4 500 000 minus 3 000 000 is R1 500 000, a fifty percent mark-up on cost. Add other income R60 000 to reach R1 560 000; subtract operating expenses R760 000 for operating profit of R800 000. Add interest income R20 000 to reach R820 000; subtract interest expense R120 000 for net profit before tax of R700 000. Income tax at twenty-seven percent is R189 000, leaving net profit after tax of R511 000. Earnings per share: R511 000 over seven hundred and thirty thousand shares is 70 cents. The chain must be recited in order because each line is a mark, and the tax rate is the company rate of twenty-seven percent, not the VAT rate."
+    },
+    {
+      "id": "cc2",
+      "question": "A company with share capital of R2 920 000 and seven hundred and thirty thousand shares repurchases thirty thousand shares at R4,60. Give the three ledger effects with amounts, the arithmetic check, and explain why retained income and not the income statement absorbs the difference.",
+      "expected_answer": "Average issue price: 2 920 000 over seven hundred and thirty thousand is R4,00. Ordinary share capital decreases by thirty thousand times R4,00 — R120 000. Retained income decreases by thirty thousand times 60 cents — R18 000. Bank decreases by thirty thousand times R4,60 — R138 000. Check: 120 000 plus 18 000 equals 138 000. The difference goes to retained income because it is a distribution to owners of profits previously retained on those shares, not a cost of operating — nothing was consumed to earn income, so no expense exists and net profit and earnings per share are undisturbed while equity shrinks."
+    },
+    {
+      "id": "cc3",
+      "question": "Using tax charge R189 000 with SARS owed R12 000 opening and R18 000 closing, and dividends of interim R146 000 and final R182 500 with last year's final of R130 000 unpaid at the start, calculate tax paid and dividends paid for the cash flow statement, and state why the paid figures differ from the charges.",
+      "expected_answer": "Tax paid: charge plus opening owed minus closing owed — 189 000 plus 12 000 minus 18 000 is R183 000. Dividends paid: last year's final of R130 000 settled during the year plus this year's interim of R146 000 actually paid — R276 000; this year's final of R182 500 is declared but unpaid, so it sits as the closing liability shareholders for dividends. Paid differs from charged because the income statement matches amounts to the year they belong to while the cash flow statement records only money that crossed the bank account — the gaps are timing, held in the opening and closing liability balances."
+    }
+  ]
+}

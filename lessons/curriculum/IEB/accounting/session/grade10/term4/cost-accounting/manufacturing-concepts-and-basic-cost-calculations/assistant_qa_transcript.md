@@ -1,0 +1,21 @@
+**Thandi:** Questions from the class! First one: the electricity confused a few of us — the lesson called it an overhead and mostly fixed, but surely running the saws more uses more electricity? How strict are these boxes?
+
+**Tutor:** Less strict than the neat table suggests — and noticing that is a good sign, not a problem. Classification follows the COST'S BEHAVIOUR in the business at hand, not a memorised list. Electricity genuinely has two parts: the lights and the fixed connection charge burn the same in any month, while the saws' consumption rises with output — a semi-variable cost, fixed floor plus variable slope. Grade 10 is allowed to simplify it into one bin, and the workshop treats it as broadly fixed because the machines' share is small. But hold the principle above the table: ask how the cost actually responds when output moves. A delivery driver paid per trip is variable; the same driver on a monthly salary is fixed. Same job, different behaviour, different bin. Examiners at every level reward the learner who classifies by reasoning — and the scenario will always give you the facts you need to reason with.
+
+***
+
+**Thandi:** Next: why does prime cost get its own name and its own line? If we are adding everything up anyway, why stop halfway?
+
+**Tutor:** Because the halfway line answers a question of its own. Prime cost gathers only what is INSIDE each unit — the timber and the hands — the costs that would follow the product anywhere. If Lerato asked a rival workshop to build the same stool, prime cost is roughly what the stool itself demands; the overheads above that line belong to HER floor — her rent, her foreman, her machines. So the split lets a maker see two different problems separately. Prime cost creeping up means the product is getting dearer to make — timber prices, wage rates. Overheads creeping up means the FLOOR is getting dearer to run — and that conversation is about the premises and the structure, not the stool. Blend them into one number and both signals blur. Next year's manufacturing accounts keep the same architecture, so the habit of respecting the line pays twice.
+
+***
+
+**Thandi:** This one came up twice: the what-if question. Why is stretching the rent with output THE classic error, and how do we make sure we never do it?
+
+**Tutor:** It is the classic error because proportion feels so natural — output rose by a third, so surely everything rises by a third. But the rent is a contract, not a recipe ingredient: the landlord charges R4 200 for the floor whether it produces one stool or four hundred. Stretching it with volume invents money that nobody will ever pay. The armour is a two-line habit at the top of every what-if answer: write V next to the costs that scale — timber, piece-work labour — and F next to the costs that stand — rent, the foreman, insurance. Then let each letter give its orders: V-costs, multiply by the new volume; F-costs, copy them across untouched. At four hundred stools: variables 90 times 400 — 36 000; fixed — still 8 400; total 44 400; unit R111. Two letters, written before any arithmetic, and the trap cannot close on you.
+
+***
+
+**Thandi:** Last one: for someone who never opens a factory — why does unit cost matter in real life?
+
+**Tutor:** Because everyone eventually makes something and names a price — and the unit cost is the difference between trading and guessing. Bake for a market stall, print T-shirts, mix hair products, cater a function: in every case there are costs inside each unit and costs of keeping the operation running, and only the full stack divided by the units tells you your floor. People who skip the overheads price on ingredients alone, feel busy, and go backwards — the gas, the stall fee and the transport quietly eat what looked like profit. And the behaviour sorting matters just as much: knowing which costs stand still tells you how much busyness you need before the standing costs are covered — why a quiet month can lose money at the very price that a busy month banks comfortably. Those two ideas — the floor under the price, and the drumbeat of fixed costs — protect more small businesses than any slogan about working hard. Hard work at the wrong price is just expensive exercise.

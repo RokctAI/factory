@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Run the administrator's month from gross to net, naming each deduction, its basis and its destination.",
+      "expected_answer": "Gross R11 000. PAYE R1 430 from the SARS tables, paid over to SARS; pension R825 at 7,5% of gross, to the pension fund; UIF R110 at 1% of gross, to the Unemployment Insurance Fund; medical aid R520 as a fixed amount, to the medical scheme; union R75 as a fixed subscription, to the union. Total deductions R2 960; net pay R8 040. Every deduction is the employee's own money redirected to an agreed destination — gross is earned, net is received."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish deductions from contributions, and build the total cost of employing the administrator.",
+      "expected_answer": "A deduction comes out of the employee's gross and shrinks net pay; a contribution is the employer's own additional expense on top of gross and never touches the payslip arithmetic. The employer contributes pension R825 and medical R520 rand-for-rand, matches the 1% UIF with R110, and pays the SDL of R110 — a levy with no employee half. Contributions total R1 565, so the total cost is gross R11 000 plus R1 565 = R12 565, against the R8 040 the worker receives. UIF lives in both families at one percent a side."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the double entry behind the Salaries Journal and how the withheld amounts are settled afterwards.",
+      "expected_answer": "Debit Salaries with the full gross of R11 000 — the expense of employing; credit Bank via the CPJ with only the net R8 040; credit each deduction's destination as a creditor now owed — SARS, pension fund, UIF, medical scheme, union. Employer contributions debit their own expense accounts (Pension, UIF, Medical Contributions and SDL) and credit the same creditors. In the following days the CPJ settles each fund: SARS receives PAYE plus SDL (R1 430 + R110), the pension fund both halves (R825 + R825 = R1 650), the UIF both one-percents (R220), each payment debiting the creditor and crediting Bank."
+    }
+  ]
+}

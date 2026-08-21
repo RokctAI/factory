@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Khanya Footwear: opening raw materials R60 000, purchases R560 000, carriage on purchases R25 000, closing raw materials R95 000; direct labour R350 000; factory overheads R390 000; opening work-in-progress R40 000, closing work-in-progress R80 000; 50 000 pairs finished. Build the production cost statement down to unit cost.",
+      "expected_answer": "Direct materials used: 60 000 plus 560 000 plus 25 000 gives materials available of R645 000, less closing stock of R95 000 — R550 000; what still lies in the storeroom was never used. Add direct labour of R350 000: prime cost R900 000. Add factory overheads of R390 000: total manufacturing cost R1 290 000. Work-in-progress adjustment: add the opening R40 000 — last year's spending completed this year — and subtract the closing R80 000 — this year's spending not yet finished. Cost of production of finished goods: R1 250 000. Unit cost: 1 250 000 divided by 50 000 pairs — R25 per pair. The statement filters a year of spending down to the cost of what was actually completed; money spent and production finished differ by exactly the stock movements."
+    },
+    {
+      "id": "cc2",
+      "question": "Continue to the income statement: opening finished goods R100 000, closing finished goods R150 000, sales of 48 000 pairs at R35, administration cost R150 000, selling and distribution cost R138 000. Compute cost of sales, verify the mark-up, and reach net profit — then explain how depreciation is classified in this business.",
+      "expected_answer": "Finished goods: opening R100 000 plus cost of production R1 250 000 gives R1 350 000 available, less closing stock of R150 000 — cost of sales R1 200 000, which is 48 000 pairs at the R25 unit cost. Sales: 48 000 at R35 is R1 680 000. Gross profit: R480 000, and 480 000 over 1 200 000 confirms a 40 percent mark-up on cost. Deduct administration of R150 000 and selling and distribution of R138 000: net profit R192 000. Depreciation is classified by the asset's use: factory machinery to factory overheads, office computers to administration, delivery vehicles to selling and distribution — the address of any expense depends on what the spending served, and mixed expense lists must be sorted on that principle."
+    },
+    {
+      "id": "cc3",
+      "question": "A product sells at R35 with variable costs of R23 per unit and fixed costs of R540 000; 48 000 units are produced and sold. Calculate and interpret the break-even point, explain why contribution uses variable cost rather than the full unit cost, and connect two manufacturing ethics risks to the figures together with their controls.",
+      "expected_answer": "Contribution per unit: 35 less 23 — R12. Break-even: 540 000 divided by 12 — 45 000 units; below it the year runs at a loss, and at 48 000 units the business operates 3 000 units above break-even, each contributing R12 of pure profit — a safety cushion worth stating. Contribution excludes fixed costs because they do not grow with one more unit: the full unit cost of R25 already carries averaged fixed costs and is only true at one volume, while contribution stays constant at any volume, making it the correct tool for volume and pricing decisions. Ethics: substituting cheaper, substandard raw materials lowers the materials line and flatters unit cost while endangering customers — countered by quality standards and honest sourcing; theft of materials shows up as materials used rising against unchanged production, caught by issuing materials only against signed requisitions and computing unit cost monthly. Price fixing between competitors widens contribution but is illegal collusion, and production counts should come from someone independent of those whose performance they measure."
+    }
+  ]
+}
