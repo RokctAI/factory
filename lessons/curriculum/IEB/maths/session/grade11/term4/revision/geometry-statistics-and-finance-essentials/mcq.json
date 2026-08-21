@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Circle Geometry — the Theorem Toolkit",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A chord sits 8 units from the centre of a circle with radius 17. The chord's length is:",
+          "options": [
+            "15",
+            "30 — half-chord √(17² − 8²) = 15, doubled",
+            "34",
+            "25"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The angle at the centre is 130°. The angle at the circumference on the same arc is:",
+          "options": [
+            "260°",
+            "130°",
+            "65° — the centre angle is double the circumference angle",
+            "50°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "One angle of a cyclic quadrilateral is 110°. Its opposite angle is:",
+          "options": [
+            "70° — opposite angles are supplementary",
+            "110°",
+            "250°",
+            "20°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The tan-chord theorem states that the angle between a tangent and a chord equals:",
+          "options": [
+            "The angle at the centre",
+            "90° always",
+            "The opposite angle of any cyclic quadrilateral",
+            "The angle in the alternate segment"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Analytical Geometry — Gradient, Inclination and Lines",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The link between gradient and inclination is:",
+          "options": [
+            "m = tan θ, with 0° ≤ θ < 180°",
+            "m = sin θ",
+            "m = cos θ",
+            "θ = 90° · m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For A(1; −2) and B(5; 6), the gradient and inclination are approximately:",
+          "options": [
+            "m = 1/2; θ = 26,6°",
+            "m = 2; θ = 63,4°",
+            "m = 2; θ = 116,6°",
+            "m = 8; θ = 82,9°"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "A line with gradient −2 has inclination approximately:",
+          "options": [
+            "63,4°",
+            "−63,4°",
+            "116,6° — negative gradient means an obtuse inclination",
+            "90°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "A line perpendicular to one with gradient 2 has gradient:",
+          "options": [
+            "2",
+            "−2",
+            "1/2",
+            "−1/2 — flip and negate, product −1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Statistics — Ogives, Deviation and Outliers",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "For the data 3; 5; 9; 11; 12 (mean 8), the standard deviation is:",
+          "options": [
+            "√12 ≈ 3,46",
+            "12",
+            "60",
+            "0"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Deviations from the mean are squared before averaging because:",
+          "options": [
+            "Squaring makes the numbers bigger",
+            "Raw deviations always sum to zero and would cancel",
+            "The calculator requires it",
+            "Only positive data is allowed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "On an ogive, the median is read by:",
+          "options": [
+            "Finding the steepest point of the curve",
+            "Reading the highest point",
+            "Going across from half of n, touching the curve, dropping to the value axis",
+            "Averaging the first and last values"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "With Q_1 = 15 and Q_3 = 25, a value of 44 is:",
+          "options": [
+            "Ordinary — it is below 50",
+            "Impossible to classify",
+            "An outlier only if the mean says so",
+            "An outlier — the upper fence is 25 + 1,5 × 10 = 40"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Finance and Probability — Decay, Effective Rates and Independence",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A R120 000 bakkie depreciates at 20% p.a. on REDUCING balance for 3 years. Its value is:",
+          "options": [
+            "R61 440 — from 120 000(0,8)³",
+            "R48 000",
+            "R76 800",
+            "R24 000"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The same bakkie on STRAIGHT-LINE depreciation at 20% p.a. for 3 years is worth:",
+          "options": [
+            "R61 440",
+            "R48 000 — from 120 000(1 − 0,6)",
+            "R96 000",
+            "R36 000"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A nominal rate of 18% p.a. compounded monthly has an effective annual rate of about:",
+          "options": [
+            "18% exactly",
+            "16,7%",
+            "19,56% — from (1,015)¹² − 1",
+            "36%"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "P(A) = 0,3, P(B) = 0,6, P(A and B) = 0,18. The events are:",
+          "options": [
+            "Mutually exclusive",
+            "Complementary",
+            "Dependent",
+            "Independent — 0,3 × 0,6 = 0,18 matches the joint probability"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Circle as a Crime Scene",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Every chord question hides:",
+          "options": [
+            "A right-angled triangle — radius as hypotenuse, half-chord as a leg",
+            "A cyclic quadrilateral",
+            "Two tangents",
+            "An isosceles trapezium"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The key question to ask every circumference angle is:",
+          "options": [
+            "How big is it?",
+            "Which arc are you watching? — same arc means related angles",
+            "Is it acute or obtuse?",
+            "Does it touch the centre?"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "In a geometry answer, each statement must be accompanied by:",
+          "options": [
+            "A decimal approximation",
+            "A ruler measurement",
+            "Its reason — the short standard theorem name",
+            "A congruence proof"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Data That Tells on Itself",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The standard deviation recipe, in order, is:",
+          "options": [
+            "Mean, deviations, square, average, root",
+            "Square, mean, root, deviations",
+            "Order, quartiles, fences",
+            "Root, average, square"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "'Across, touch, down' is the reading method for:",
+          "options": [
+            "A box-and-whisker plot",
+            "The ogive — from a cumulative count to a data value",
+            "A tree diagram",
+            "A histogram"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A mean far above its median suggests:",
+          "options": [
+            "The data is symmetric",
+            "A calculation error",
+            "Large values dragging the mean rightward — report the median as the honest centre",
+            "The standard deviation is zero"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The outlier fences sit at:",
+          "options": [
+            "The minimum and maximum",
+            "One standard deviation from the mean",
+            "The quartiles themselves",
+            "Q_1 − 1,5 × IQR and Q_3 + 1,5 × IQR"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Two Slopes, One Honest Rate — and the Final Sweep",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The words 'reducing balance' or 'on book value' select:",
+          "options": [
+            "A = P(1−i)^n — the bouncing ball, compound decay",
+            "A = P(1−in) — the ramp",
+            "A = P(1+i)^n",
+            "The effective rate formula"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Whenever compounding happens more often than yearly, the effective annual rate is:",
+          "options": [
+            "Equal to the nominal rate",
+            "Higher than the nominal label",
+            "Lower than the nominal label",
+            "Impossible to compute"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Independence of two events is established by:",
+          "options": [
+            "Assuming it when events feel unrelated",
+            "Checking the events cannot happen together",
+            "Testing whether P(A) × P(B) equals P(A and B)",
+            "Drawing a Venn diagram with no overlap"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "On a tree diagram for DEPENDENT events, the second-level branches:",
+          "options": [
+            "Repeat the first level's probabilities",
+            "Always sum to more than 1",
+            "Are ignored in the calculation",
+            "Carry updated probabilities, because the first event changed the pool"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

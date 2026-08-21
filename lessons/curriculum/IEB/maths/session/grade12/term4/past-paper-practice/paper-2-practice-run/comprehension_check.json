@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "In the analytical triangle P(−4; 1), Q(2; 5), R(6; −1), prove angle PQR = 90° and explain why the midpoint of PR is equidistant from all three vertices.",
+      "expected_answer": "m(PQ) = (5−1)/(2+4) = 2/3 and m(QR) = (−1−5)/(6−2) = −3/2; product = −1, so PQ ⊥ QR and angle PQR = 90°. Since angle Q = 90°, PR subtends a right angle at Q, so PR is a diameter of the circle through P, Q, R (converse of angle in semicircle); its midpoint M(1; 0) is therefore the centre, equidistant from P, Q and R — each distance is √26."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the length of the tangent from (4; 9) to the circle (x+4)² + (y−3)² = 25, naming the theorem that justifies the method.",
+      "expected_answer": "Distance from (4; 9) to centre (−4; 3) squared: 8² + 6² = 100. The tangent is perpendicular to the radius at the point of contact, so tangent² = 100 − 25 = 75, giving tangent length √75 = 5√3 ≈ 8,66."
+    },
+    {
+      "id": "cc3",
+      "question": "In the rider, angle EAB = 35° and angle DAC = 72°. Give the sizes of angles ACB, ABC and BAC, each with its accepted reason.",
+      "expected_answer": "Angle ACB = 35° (tan chord theorem, alternate segment to angle EAB). Angle ABC = 72° (tan chord theorem on the other side, alternate segment to angle DAC). Angle BAC = 180° − 35° − 72° = 73° (angle sum in triangle); check: 35 + 72 + 73 = 180."
+    }
+  ]
+}

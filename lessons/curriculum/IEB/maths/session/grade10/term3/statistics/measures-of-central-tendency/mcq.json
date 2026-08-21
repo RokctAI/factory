@@ -1,0 +1,334 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Mean, Median and Mode for Ungrouped Data",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "For the reading times 10, 13, 16, 16, 19, 22, 24, 27, 33 the mean is:",
+          "options": [
+            "180 ÷ 9 = 20 minutes",
+            "19 minutes",
+            "33 − 10 = 23 minutes",
+            "180 ÷ 10 = 18 minutes"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The median of the nine ordered values is:",
+          "options": [
+            "16, the most frequent value",
+            "the fifth value, 19 — four values below it and four above",
+            "20, the same as the mean",
+            "the average of 10 and 33"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Before finding any median, you must ALWAYS:",
+          "options": [
+            "remove the largest value",
+            "compute the mean first",
+            "order the data — an unordered median is meaningless",
+            "convert the values to percentages"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The mode of the dataset is:",
+          "options": [
+            "19, the middle value",
+            "20, the share-out value",
+            "there is no mode",
+            "16 — the only value that appears twice"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Outliers and Choosing the Right Measure",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "A tenth learner adds 130 minutes to the data. The mean jumps to:",
+          "options": [
+            "310 ÷ 10 = 31 minutes — with nine of the ten learners below it",
+            "20 minutes, unchanged",
+            "130 minutes",
+            "310 ÷ 9 ≈ 34,4 minutes"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "With ten values, the median becomes:",
+          "options": [
+            "the fifth value, 19",
+            "the mean of the fifth and sixth values: (19 + 22) ÷ 2 = 20,5",
+            "the sixth value, 22",
+            "impossible to find for even counts"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The median is called RESISTANT to outliers because:",
+          "options": [
+            "it uses every value in the dataset",
+            "it is always smaller than the mean",
+            "it responds only to position in the ordered list — an extreme value is just one more body at the end of the queue",
+            "outliers are removed before computing it"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "For salaries at a firm where one director earns far more than everyone else, the best-justified report is:",
+          "options": [
+            "the mean, because it uses every salary",
+            "the mode, because salaries repeat",
+            "the range, because it shows the gap",
+            "the median, because the data contains an outlier which distorts the mean"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Grouped Data and the Estimated Mean",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Why can the mean of the fifty grouped marks only be ESTIMATED?",
+          "options": [
+            "The grouping destroyed the individual marks — fourteen learners sit somewhere in 70–80, but nobody knows where",
+            "Fifty values is too many to add",
+            "Percentages cannot be averaged",
+            "The calculator rounds each product"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The midpoint of the interval 40 to below 50 is:",
+          "options": [
+            "40",
+            "50",
+            "(40 + 50) ÷ 2 = 45",
+            "44,5"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "With frequencies 6, 12, 13, 14, 5 and midpoints 45, 55, 65, 75, 85, the estimated mean is:",
+          "options": [
+            "3 250 ÷ 5 = 650",
+            "(270 + 660 + 845 + 1 050 + 425) ÷ 50 = 65 percent",
+            "(45 + 55 + 65 + 75 + 85) ÷ 5 = 65 percent by coincidence, so no working is needed",
+            "50 ÷ 5 = 10 percent"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Modal Interval, Median Interval and Reading the Table",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "With frequencies 6, 12, 13, 14, 5, the modal interval is:",
+          "options": [
+            "14",
+            "60 to below 70",
+            "70 to below 80 — the class with the highest frequency, and the answer is the interval, not the 14",
+            "80 to below 90"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Using cumulative frequencies 6, 18, 31, 45, 50, the median interval is found because:",
+          "options": [
+            "the 25th and 26th values lie in the third class — the count was 18 before it and 31 by its end, so the median interval is 60 to below 70",
+            "50 ÷ 2 = 25, so the interval is 40–50",
+            "the middle class of five is always the median interval",
+            "31 is closest to 25"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The estimated mean (65) sits below the modal interval (70–80) because:",
+          "options": [
+            "the midpoint assumption always lowers the mean",
+            "estimated means are rounded down",
+            "the modal interval was misread",
+            "the tail of weaker marks in the forties and fifties drags the mean down"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The five-move method for any grouped table starts with:",
+          "options": [
+            "finding the largest midpoint",
+            "auditing the frequency total — a miscounted table poisons everything after it",
+            "dividing every frequency by two",
+            "sketching a histogram"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Three Ways to Say Typical",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the three pictures, the mean is the pool-and-split because:",
+          "options": [
+            "all the minutes are pooled and split perfectly equally — the only measure that touches every value",
+            "it is the biggest of the three answers",
+            "pools are shaped like averages",
+            "it ignores extreme values"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Finding the median is like tapping the middle shoulder in an ordered queue because:",
+          "options": [
+            "the middle person always has the average value",
+            "queues are used in statistics offices",
+            "you only order and point — the answer is the value of the middle position, with nothing added or divided",
+            "the median requires exactly nine people"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The tuck shop wants its bestseller, not an average flavour, because:",
+          "options": [
+            "averages are hard to calculate for drinks",
+            "an average of orange and cola is not a drink anyone can buy — for categories, the most common value (the mode) is the useful answer",
+            "the mode is always the largest value",
+            "bestsellers change daily"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "When One Number Lies",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "When the 130-minute reader tips into the pool, the split becomes 31 minutes each. The problem is:",
+          "options": [
+            "31 is not a whole share",
+            "the pool was already full",
+            "the newcomer read too little to count",
+            "nine of the ten learners read less than 31 — the share-out now describes almost nobody"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The newcomer joins the back of the queue and the median barely moves because:",
+          "options": [
+            "the queue does not care how extreme the last person is — the middle position shifts by almost nothing",
+            "the queue re-orders itself around the newcomer",
+            "medians are always 20,5",
+            "the newcomer is removed from the data"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "'Salaries at a company where the owner pays herself two million' calls for which thinking?",
+          "options": [
+            "Pool thinking — the mean uses every salary",
+            "Bestseller thinking — the mode",
+            "Queue thinking — the median, because the monster value wrecks the pool but not the queue",
+            "No measure can describe salaries"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Grouped Data Without Fear",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Everyone in the forties crate is 'called 45' because:",
+          "options": [
+            "45 is the crate's most common mark",
+            "the crate hides the details, and the midpoint is the fairest single stand-in — errors above and below balance out",
+            "45 is the smallest possible mark in the crate",
+            "the table says so"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The fullest crate — fourteen learners in the seventies — identifies:",
+          "options": [
+            "the median interval",
+            "the estimated mean",
+            "the range",
+            "the modal interval"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Counting through the crates — six, then eighteen, then thirty-one — places the middle pair (25th and 26th) in:",
+          "options": [
+            "the sixties crate, so the median interval is the sixties",
+            "the fifties crate",
+            "the seventies crate, because it is fullest",
+            "between two crates"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

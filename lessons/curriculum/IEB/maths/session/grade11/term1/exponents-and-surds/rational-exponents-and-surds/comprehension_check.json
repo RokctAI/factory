@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Evaluate 81^(3/4) and 8^(−2/3) without a calculator, explaining what the bottom and top of each fractional exponent instruct you to do, and why the second answer is not negative.",
+      "expected_answer": "The bottom of the fraction names the root and the top names the power. For 81^(3/4): write the base as a prime, 81 = 3⁴, so (3⁴)^(3/4) = 3³ = 27 — equivalently, the fourth root of 81 is 3, and 3 cubed is 27. For 8^(−2/3): the negative exponent means reciprocal, so it is 1/8^(2/3); with 8 = 2³, (2³)^(2/3) = 2² = 4, so the answer is 1/4. The minus sign inverts the value — it never makes it negative, so the answer is 1/4, not −4."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve 2^(2x) − 6·2^x + 8 = 0 using a substitution, state what you would do if the substitution produced a negative value, and explain why equating exponents on a common base is a legal step.",
+      "expected_answer": "Since 2^(2x) = (2^x)², let k = 2^x. The equation becomes k² − 6k + 8 = 0, factorising to (k − 2)(k − 4) = 0, so k = 2 or k = 4. Substituting back: 2^x = 2 gives x = 1, and 2^x = 4 = 2² gives x = 2. If the substitution offered a negative k, it would be rejected in writing, because a positive base raised to any real power is always positive, so 2^x can never equal a negative number — and the written rejection earns a mark. Equating exponents on a common base is legal because an exponential function takes each value exactly once (it is one-to-one), so equal outputs force equal exponents."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve √(x + 11) = x − 1, showing why one candidate must be rejected, and simplify 8/(√7 − √3), naming the tool used on the denominator.",
+      "expected_answer": "Square both sides: x + 11 = x² − 2x + 1, so x² − 3x − 10 = 0, factorising to (x − 5)(x + 2) = 0, giving x = 5 or x = −2. Check both in the original: at x = 5 the left side is √16 = 4 and the right side is 4, so 5 stands; at x = −2 the left side is √9 = 3 but the right side is −3, and a square root never outputs a negative, so −2 is rejected — squaring both sides manufactures false solutions, which is why the check is compulsory. The only solution is x = 5. For 8/(√7 − √3), multiply top and bottom by the conjugate √7 + √3: the denominator becomes 7 − 3 = 4 (a difference of two squares kills both surds), so the fraction is 8(√7 + √3)/4 = 2√7 + 2√3."
+    }
+  ]
+}

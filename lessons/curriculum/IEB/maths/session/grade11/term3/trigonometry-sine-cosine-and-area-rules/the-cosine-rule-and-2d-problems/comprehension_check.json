@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the cosine rule, outline its proof by dropping a perpendicular, and show how Pythagoras emerges as a special case.",
+      "expected_answer": "The rule: a² = b² + c² − 2bc·cos A, where side a and angle A face each other. Proof: in triangle ABC drop a perpendicular from C onto AB, meeting it at D. In right-angled triangle ACD, CD = b·sin A and AD = b·cos A, so DB = c − b·cos A. Pythagoras in triangle CDB: a² = CD² + DB² = b²sin²A + c² − 2bc·cos A + b²cos²A. Grouping the b² terms gives b²(sin²A + cos²A) = b², since the fundamental identity makes the bracket equal 1, leaving a² = b² + c² − 2bc·cos A. Special case: with A = 90°, cos 90° = 0, so the correction term vanishes and the rule collapses to a² = b² + c² — Pythagoras. The cosine rule is thus Pythagoras generalised to all triangles, with −2bc·cos A measuring how far the included angle leans away from 90°: acute angles subtract (shorter far side), obtuse angles add (longer far side)."
+    },
+    {
+      "id": "cc2",
+      "question": "In triangle PQR, p = 7 cm, r = 8 cm and the included angle Q = 120°. Find q, explaining carefully how the sign of cos 120° affects the calculation, and state the check that catches sign errors. Then, for a triangle with sides 4, 7 and 9 cm, find the largest angle.",
+      "expected_answer": "q² = 7² + 8² − 2(7)(8)cos 120° = 49 + 64 − 112 × (−0,5). Since 120° is in the second quadrant, cos 120° = −0,5, so the correction term becomes +56: q² = 113 + 56 = 169, giving q = 13 cm. The check: an obtuse included angle must produce a LONGER side than the right-angle value √113 ≈ 10,6 — an answer shorter than that means a minus sign was mishandled; type the whole right-hand side in one line with the cosine in brackets. Largest angle of the 4-7-9 triangle: it faces the longest side, 9. cos θ = (4² + 7² − 9²)/(2 × 4 × 7) = (16 + 49 − 81)/56 = −16/56 = −0,2857, so θ = 106,6°. The negative cosine announces the obtuse angle before inverse cosine is pressed, and inverse cosine carries no 180°-minus ambiguity because cos(180° − θ) has the opposite sign."
+    },
+    {
+      "id": "cc3",
+      "question": "Two boats leave harbour H, boat one on a bearing of 040° for 5 km to P, boat two on a bearing of 105° for 7 km to Q. Find the distance PQ and the angle HPQ, and describe the general method for a follow-up question that adds a second triangle standing on PQ.",
+      "expected_answer": "The angle between the courses is the bearing difference: 105° − 40° = 65°. In triangle HPQ two sides and the included angle are known, so the cosine rule applies: PQ² = 5² + 7² − 2(5)(7)cos 65° = 74 − 70 × 0,4226 = 74 − 29,58 = 44,42, so PQ ≈ 6,66 km. For angle HPQ, all three sides are now known; choosing the cosine rule (safe even if the angle were obtuse): cos P = (5² + 6,66² − 7²)/(2 × 5 × 6,66) ≈ 20,42/66,65 ≈ 0,3064, so P ≈ 72,2°, and Q ≈ 180° − 65° − 72,2° ≈ 42,8°. For a second triangle standing on PQ (say a lighthouse seen from both boats): PQ is the shared side — the bridge. Solve triangle HPQ first, carry the FULL unrounded calculator value of PQ into the second triangle as known information, and solve it with whichever rule the new stocktake demands, rounding only the reported answers — rounding at the bridge seeds error through the whole second triangle."
+    }
+  ]
+}

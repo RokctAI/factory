@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Factorise 4x² − 4x − 15, showing the target product and sum, the sign-reading, the split, and the grouping.",
+      "expected_answer": "Target product a·c = 4 × (−15) = −60; target sum b = −4. Negative product means opposite signs; negative sum puts the minus on the larger number. Pair: −10 and +6. Split: 4x² − 10x + 6x − 15; group: 2x(2x − 5) + 3(2x − 5); shared bracket out: (2x − 5)(2x + 3). Verify by expanding back to the original."
+    },
+    {
+      "id": "cc2",
+      "question": "State the three sign patterns that predict the pair before any factor hunting, with an example of when each applies.",
+      "expected_answer": "Product a·c positive, sum positive: both numbers positive (e.g. x² + 7x + 10). Product positive, sum negative: both negative. Product negative (either sum sign): opposite signs, with the sum's sign on the larger number (e.g. 4x² − 4x − 15 → −10 and +6). Reading the signs halves the search."
+    },
+    {
+      "id": "cc3",
+      "question": "Why must a common factor come out before the product-and-sum hunt, and what should you write if no factor pair passes both tests?",
+      "expected_answer": "A common factor first (e.g. 2x² + 14x + 20 = 2(x² + 7x + 10)) keeps numbers small and is required for 'factorise fully' — skipping it loses marks even if the bracket is later factorised. If no pair satisfies both product and sum, the trinomial is irreducible over the integers, and stating 'it does not factorise' is the complete, correct answer."
+    }
+  ]
+}

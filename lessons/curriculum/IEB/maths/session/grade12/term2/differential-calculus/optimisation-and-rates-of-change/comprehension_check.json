@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A particle moves with s(t) = 2t³ − 15t² + 24t (metres, seconds). Find its velocity and acceleration functions, the times it is momentarily at rest, its motion between those times, and its initial velocity, explaining the translation from words to calculus.",
+      "expected_answer": "Velocity is the derivative of position: v(t) = 6t² − 30t + 24 = 6(t − 1)(t − 4). Acceleration is the derivative of velocity: a(t) = 12t − 30. Momentarily at rest translates to v(t) = 0, giving t = 1 and t = 4 seconds. Between those instants the factors make v negative — the particle travels backwards from t = 1 to t = 4, then forwards again. Initial velocity is v(0) = 24 m/s. Acceleration is zero at t = 2,5, where slowing down flips into speeding up. The phrase book: distance uses s itself; velocity and any 'rate of change of position' use the first derivative; acceleration uses the second; at rest sets v = 0; and speed is the magnitude of velocity — a velocity of −5 m/s is a speed of 5 m/s with direction reversed."
+    },
+    {
+      "id": "cc2",
+      "question": "A farmer with 160 m of fencing builds a rectangular camp against an existing wall (fence on two widths and one length only). Use calculus to find the dimensions giving maximum area, confirm it is a maximum, and explain the role of the constraint.",
+      "expected_answer": "Let the width be x; the fence supplies two widths and one length, so the length is 160 − 2x and the area is A(x) = x(160 − 2x) = 160x − 2x². Differentiate: A′(x) = 160 − 4x; setting this to zero gives x = 40, so the camp is 40 m wide and 80 m long, with area 3200 m². It is a maximum because A″(x) = −4 is negative — the area function is a concave-down parabola, zero at both extreme designs and peaked between them. The constraint (the fixed 160 m) is what eliminates the second variable and keeps the question meaningful: without it the area could grow without bound. The domain 0 < x < 80 should be declared, trespassing candidates rejected in writing, and the final answer matched to the phrasing — dimensions, or the maximum area itself, as asked."
+    },
+    {
+      "id": "cc3",
+      "question": "An open-topped box with square base of side x and height h must hold 108 cm³. Show that the surface area is S(x) = x² + 432/x, find the dimensions minimising material, verify the minimum, and note the differentiation trap in the fraction term.",
+      "expected_answer": "The volume constraint x²h = 108 forces h = 108/x². Material is the base plus four walls: S = x² + 4xh = x² + 4x(108/x²) = x² + 432/x. Rewrite 432/x as 432x⁻¹ before differentiating: S′(x) = 2x − 432/x², where the minus sign comes from the exponent −1 falling forward — omitting it is the classic error, and without it S′ = 0 has no positive solution. Setting 2x = 432/x² gives x³ = 216, so x = 6 cm and h = 108/36 = 3 cm, with minimum material S(6) = 36 + 72 = 108 cm². It is a genuine minimum since S″(x) = 2 + 864/x³ is positive for all positive x, so the function is concave up across the sensible domain. The optimal open-topped square box stands half as tall as it is wide — squat rather than towering — balancing base cost against wall cost."
+    }
+  ]
+}

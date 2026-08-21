@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For y = 3 sin x − 1, give the amplitude, middle line, maximum and minimum with the angles where they occur, and the range — then show how the same numbers recover the equation from a sketch.",
+      "expected_answer": "Amplitude 3 (the size of a); middle line y = −1 (the q). The bare wave would swing ±3, lowered by 1: maximum 3 − 1 = 2 at x = 90° (where sine peaks), minimum −3 − 1 = −4 at x = 270°. Range: −4 ≤ y ≤ 2, both ends included because a wave genuinely touches its peaks. Backwards from a sketch with top 2 and bottom −4: the middle line is the average, (2 + (−4))/2 = −1, so q = −1; the amplitude is half the total swing, (2 − (−4))/2 = 3, so a = 3 — recovering y = 3 sin x − 1 in two divisions."
+    },
+    {
+      "id": "cc2",
+      "question": "State the period rule for k and apply it to y = sin 3x, y = cos(x/2) and y = tan 3x (including the asymptotes), then explain what k never changes.",
+      "expected_answer": "New period = mother period divided by the size of k: 360°/k for sine and cosine, 180°/k for tangent. sin 3x: period 120°, so three full waves fit in 360°, anchors at one-third spacing (peak at 30°, zero at 60°, trough at 90°). cos(x/2): period 720° — half a wave fills the standard window. tan 3x: period 60°, with the vertical asymptotes compressed identically — walls at 30° plus every multiple of 60°. k changes the period only: amplitude and middle line are untouched, so a fast wave is not a tall wave — cycles in the window reveal k, and only the heights reveal a."
+    },
+    {
+      "id": "cc3",
+      "question": "Sketch-plan y = 2 sin(x − 30°) on 0° to 360° using the four-step order, state the co-function fact that links cosine to sine, and give the closing y-intercept check.",
+      "expected_answer": "Shape: sine skeleton. Shift: bracket-zero at x = 30°, so slide every anchor 30° right — climbing zero at 30°, peak at 120°, falling zero at 210°, trough at 300°. Stretch: double the heights — peaks at 2, troughs at −2. Check: at x = 0, y = 2 sin(−30°) = 2 × (−1/2) = −1, so the curve must cut the y-axis at −1; if sketch and calculation disagree, the sketch is wrong. Co-function fact: cosine is sine shifted 90° to the left — sin(x + 90°) = cos x; they are one wave with two names, which is the full expected answer when a question asks how the graphs relate."
+    }
+  ]
+}

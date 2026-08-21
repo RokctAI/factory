@@ -1,0 +1,7 @@
+Hey, it's Mandy — if the geometry-heavy paper is the one that makes your stomach drop, stay with me for one minute, because the practice run just proved something important.
+
+Count what you actually needed today. Statistics: a calculator in the right mode and one fence formula — which even acquitted the suspicious-looking eighteen. Regression: the same calculator, plus two honest sentences about strength and extrapolation. The analytical triangle: gradient, distance, midpoint — three formulas you have used for years — and one borrowed circle theorem doing the elegant lifting. The circle: complete the square, then tangent meets radius at ninety degrees, twice. Trigonometry: compound angle identities wearing special values, one well-chosen face of cos two x, and a general solution written as a family. The rider: the tan chord theorem, used twice, plus the angle sum of a triangle — and a proof you can rehearse like a song.
+
+That is the whole paper. A short stack of tools you have used all year, arranged in a familiar order.
+
+So the fear is not about the mathematics — it is about the blank page, and the practice run just filled that page in front of you. Now make the filling yours: redo today's rider from only the diagram, perform the tan-chord proof on blank paper twice this week, and run one more full paper under real conditions before you check the solutions. Reasons word-perfect, degree mode checked, diagram labelled first. Every rehearsal makes the real day more ordinary. You've got this!

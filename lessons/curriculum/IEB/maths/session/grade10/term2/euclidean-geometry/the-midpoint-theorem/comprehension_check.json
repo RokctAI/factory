@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the midpoint theorem in full, list the conditions that must hold before you may quote it, and use it on triangle XYZ where XY = 18 cm, YZ = 30 cm and XZ = 22 cm, with M the midpoint of XY and N the midpoint of XZ.",
+      "expected_answer": "The midpoint theorem: the segment joining the midpoints of two sides of a triangle is parallel to the third side and equal to half of that third side. The conditions: both points must genuinely be midpoints, they must lie on two different sides of the same triangle, and the conclusions apply to the third side — the one neither midpoint touches. Applied to triangle XYZ: MN is parallel to YZ, and MN is half of 30 cm, so MN = 15 cm. Also XM = 9 cm and XN = 11 cm, since M and N halve XY and XZ. The perimeter of triangle XMN is therefore 9 + 15 + 11 = 35 cm, exactly half the perimeter of triangle XYZ, which is 18 + 30 + 22 = 70 cm."
+    },
+    {
+      "id": "cc2",
+      "question": "Prove the midpoint theorem for triangle PQR, where M and N are the midpoints of PQ and PR, giving a reason for every statement.",
+      "expected_answer": "Construction: extend MN to K so that MN = NK, and join KR. In triangles PMN and RKN: PN = NR (N is the midpoint of PR); MN = NK (construction); angle PNM = angle RNK (vertically opposite angles). Therefore triangle PMN is congruent to triangle RKN (side-angle-side). Hence PM = RK and angle PMN = angle RKN (corresponding parts of congruent triangles). Angles PMN and RKN are alternate angles on line MK, so PM is parallel to RK, and hence MQ is parallel to KR since Q lies on PM produced. Also PM = MQ (M is the midpoint of PQ), so MQ = KR. Quadrilateral MQRK therefore has one pair of opposite sides equal and parallel, which makes MQRK a parallelogram. Consequently MK is parallel to QR and MK = QR. Since MN is half of MK by construction, MN is parallel to QR and MN = half of QR."
+    },
+    {
+      "id": "cc3",
+      "question": "Distinguish the midpoint theorem from its converse, giving the reason you would quote for each, and name three errors that cost marks in midpoint-theorem riders.",
+      "expected_answer": "The theorem is given two midpoints on two different sides and concludes that the joining segment is parallel to the third side and half its length; the reason written is 'midpoint theorem'. The converse is given one midpoint plus a line through it parallel to a second side, and concludes that this line bisects the third side, delivering a second midpoint; the reason written is 'line through midpoint parallel to second side'. Three common errors: doubling instead of halving, since the joining segment is always the shorter one — if the join is 15 the third side is 30, never 7,5; quoting the theorem when only one midpoint is given and no parallel line is stated, so the hypothesis fails; and treating a point as a midpoint because it looks central in the sketch, when only a stated fact or matching tick marks count as evidence. A fourth is writing a true statement with no reason beside it, which earns nothing."
+    }
+  ]
+}

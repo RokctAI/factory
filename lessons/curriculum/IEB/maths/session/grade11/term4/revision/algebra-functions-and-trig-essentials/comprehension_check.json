@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve √(x+3) = x − 3 completely, including the checking step, and explain why the check is compulsory.",
+      "expected_answer": "Squaring gives x + 3 = x² − 6x + 9, so x² − 7x + 6 = 0, giving x = 6 or x = 1. Check in the original: x = 6 gives √9 = 3 = 6 − 3, valid; x = 1 gives √4 = 2 but 1 − 3 = −2, invalid. Squaring is not reversible and manufactures ghost solutions, so substitution back into the original equation is part of the method, and x = 6 is the only solution."
+    },
+    {
+      "id": "cc2",
+      "question": "For y = 2(x+1)² − 18, state the turning point, both intercept types, and explain how the a, p, q 'dials' produce the sketch without solving from scratch.",
+      "expected_answer": "Turning point (−1; −18) — p flips sign, q does not. Y-intercept: x = 0 gives 2(1) − 18 = −16. X-intercepts: (x+1)² = 9 so x = 2 or x = −4. The dials: a = 2 doubles the steepness of the basic bowl y = x², the (x+1) slides it left 1, the −18 drops it 18 — so the anchor (turning point) is read directly and the intercepts anchor the sketch."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain when to use the sine rule versus the cosine rule, and verify the choice on a triangle with sides 6 and 10 and included angle 40°.",
+      "expected_answer": "Sine rule needs a matching pair (a side with its opposite angle). Cosine rule handles two sides with the included angle, or three sides. With sides 6 and 10 gripping 40° there is no matching pair, so cosine rule: a² = 36 + 100 − 2(6)(10)cos40° ≈ 44,07, a ≈ 6,64. The area, if asked, is ½(6)(10)sin40° ≈ 19,28 square units."
+    }
+  ]
+}

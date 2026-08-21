@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Compound-Angle Identities",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Sine of 90° is 1, but sine 45° + sine 45° is about 1,41. This shows:",
+          "options": [
+            "Sine of a sum is not the sum of the sines",
+            "The calculator is set to radians",
+            "Sine 45° is wrong",
+            "Angles cannot be added"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Sine of (alpha + beta) equals:",
+          "options": [
+            "sin α cos β + cos α sin β",
+            "sin α cos β − cos α sin β",
+            "cos α cos β + sin α sin β",
+            "sin α + sin β"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Cosine of (alpha + beta) equals:",
+          "options": [
+            "cos α cos β + sin α sin β",
+            "cos α cos β − sin α sin β",
+            "sin α cos β + cos α sin β",
+            "cos α + cos β"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The pattern for the cosine expansions is:",
+          "options": [
+            "Functions mix and the sign is copied",
+            "Functions pair up (cos cos, sin sin) and the sign flips",
+            "Functions pair up and the sign is copied",
+            "Functions mix and the sign flips"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Exact Values Without a Calculator",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "To find sine 15° exactly, write 15° as:",
+          "options": [
+            "45° − 30°",
+            "60° − 40°",
+            "90° − 70°",
+            "30° − 10°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Sine 15° in exact surd form is:",
+          "options": [
+            "(√6 − √2)/4",
+            "(√6 + √2)/4",
+            "(√3 − √2)/2",
+            "(√2 − 1)/2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "cos 50° cos 20° + sin 50° sin 20° collapses to:",
+          "options": [
+            "cos 70°",
+            "cos 30° = √3/2",
+            "sin 30° = 1/2",
+            "cos 1000°"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "cos 75° equals sine 15° because:",
+          "options": [
+            "They are co-functions of complementary angles",
+            "Both are negative",
+            "75° = 5 × 15°",
+            "The calculator rounds them the same way"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Double Angles and the Three Faces of cos 2 Alpha",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Sine of 2 alpha equals:",
+          "options": [
+            "2 sin α cos α",
+            "sin² α − cos² α",
+            "2 sin α",
+            "sin α cos α"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Which is NOT a face of cos 2 alpha?",
+          "options": [
+            "cos² α − sin² α",
+            "2 cos² α − 1",
+            "1 − 2 sin² α",
+            "2 sin α cos α"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Given cos α = −5/13 with α in the second quadrant, sin α equals:",
+          "options": [
+            "12/13",
+            "−12/13",
+            "5/13",
+            "−5/12"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "With cos α = −5/13 and sin α = 12/13, sin 2α and cos 2α equal:",
+          "options": [
+            "−120/169 and −119/169",
+            "120/169 and 119/169",
+            "−60/169 and −119/169",
+            "−120/169 and 119/169"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Double Angles in Identities and Equations",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "To prove sin 2α/(1 + cos 2α) = tan α, the face chosen for cos 2α is:",
+          "options": [
+            "2 cos² α − 1, so the constant cancels in the denominator",
+            "1 − 2 sin² α, so the sines match",
+            "cos² α − sin² α, for symmetry",
+            "Any face works equally well"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "In cos 2x + 3 sin x − 2 = 0, cos 2x should wear the face:",
+          "options": [
+            "2 cos² x − 1",
+            "1 − 2 sin² x",
+            "cos² x − sin² x",
+            "2 sin x cos x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The equation becomes 2 sin² x − 3 sin x + 1 = 0, which factorises as:",
+          "options": [
+            "(2 sin x − 1)(sin x − 1) = 0",
+            "(2 sin x + 1)(sin x + 1) = 0",
+            "(sin x − 2)(2 sin x + 1) = 0",
+            "It does not factorise"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The solutions in 0° to 360° are:",
+          "options": [
+            "30°, 90°, 150°",
+            "30°, 150°, 210°",
+            "90°, 210°, 330°",
+            "60°, 90°, 120°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Why the Shortcut Fails",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Tilting a ramp 45° and then 45° more does not double the height gained because:",
+          "options": [
+            "The second tilt starts from a slope already leaning, spending effort sideways",
+            "Ramps cannot exceed 60°",
+            "Height is always constant",
+            "The first tilt was measured wrongly"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In the expansion of sine of a sum, each angle's sine is scaled by:",
+          "options": [
+            "The other angle's cosine",
+            "Its own cosine",
+            "The other angle's sine",
+            "One half"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The two memory hooks are:",
+          "options": [
+            "Sine mixes and copies the sign; cosine pairs and flips it",
+            "Sine pairs and flips; cosine mixes and copies",
+            "Both mix and copy the sign",
+            "Both pair and flip the sign"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Distributing sine across a bracket, as in sin(A + B) = sin A + sin B, is:",
+          "options": [
+            "Valid for acute angles",
+            "Never valid — angles combine by rotation, not stacking",
+            "Valid when A equals B",
+            "Valid in radians only"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Making 15 Degrees From Scratch",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The paint-mixing picture says an exact value for 15° is made by:",
+          "options": [
+            "Combining the stocked angles 45° and 30° through an identity",
+            "Diluting 30° by half",
+            "Reading 15° off the calculator",
+            "Doubling 7,5°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "√2/2 × √3/2 equals:",
+          "options": [
+            "√6/4",
+            "√5/4",
+            "√6/2",
+            "√3/4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "In an exam, sine 15° written as 0,26 instead of (√6 − √2)/4:",
+          "options": [
+            "Earns full marks",
+            "Earns nothing when an exact value is demanded",
+            "Earns half marks",
+            "Is more accurate"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Reading a recipe backwards means:",
+          "options": [
+            "Recognising an expansion like cos 50° cos 20° + sin 50° sin 20° as cos 30°",
+            "Swapping sine and cosine",
+            "Working from 360° downwards",
+            "Inverting the fraction"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "One Angle, Folded Double",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Setting beta equal to alpha in sine of a sum gives:",
+          "options": [
+            "sin 2α = 2 sin α cos α",
+            "sin 2α = sin² α",
+            "sin 2α = 2 sin α",
+            "sin 2α = sin α + cos α"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Holding only cos α, the best face for cos 2α is:",
+          "options": [
+            "2 cos² α − 1",
+            "1 − 2 sin² α",
+            "cos² α − sin² α",
+            "2 sin α cos α"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "In the second quadrant, the sign of sine fetched from the Pythagorean identity is:",
+          "options": [
+            "Positive",
+            "Negative",
+            "Zero",
+            "Cannot be determined"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The double angle changes costume in an equation so that:",
+          "options": [
+            "It matches the single-angle function standing beside it",
+            "It becomes a constant",
+            "The equation gains more solutions",
+            "The bracket disappears"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Derive the future value of an annuity of x per month for n months at i per month, then apply it to R1 500 monthly for 5 years at 9% per annum compounded monthly, separating deposits from interest earned.",
+      "expected_answer": "The final payment earns nothing (worth x), the one before earns one month (x(1 + i)), back to the first payment worth x(1 + i)^(n−1). The total is a geometric series with first term x, ratio (1 + i) and n terms, so F = x[(1 + i)^n − 1]/i. With i = 0,0075 and n = 60: 1,0075⁶⁰ = 1,56568, factor = 0,56568/0,0075 = 75,4241, so F = 1 500 × 75,4241 = R113 136,21. The sixty deposits supplied R90 000; the remaining R23 136,21 is compound interest earned by the stream, most of it by the earliest payments. The formula assumes end-of-month payments valued at the moment of the last one — any other timing grows the fund or individual payments through the missing months."
+    },
+    {
+      "id": "cc2",
+      "question": "A bakkie costing R180 000 is financed at 10,5% per annum compounded monthly over 4 years. Find the monthly instalment, the total repaid, and the cost of credit, and state the principle that fixes the instalment.",
+      "expected_answer": "The principle: the lump received today must equal the present value of the whole repayment stream, P = x[1 − (1 + i)^(−n)]/i. With i = 0,00875 and n = 48: 1,00875⁴⁸ = 1,5192, reciprocal 0,6582, bracket 0,3418, so x = 180 000 × 0,00875/0,3418 = R4 608,61 per month. Total repaid: 48 × 4 608,61 ≈ R221 213, so the cost of credit is about R41 213 — nearly a quarter of the price of the bakkie again. Save points to the future value formula; borrow or owe points to present value."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how a sinking fund target is set for an R800 000 machine replaced after 6 years (inflation 7% p.a., depreciation 12% p.a. reducing balance, fund earning 9% p.a. compounded monthly), and why the outstanding balance on the bakkie loan after 18 payments is far more than a proportional share.",
+      "expected_answer": "Three rates do three jobs. Inflation prices the replacement: 800 000 × 1,07⁶ = R1 200 584,28. Depreciation prices the scrap: 800 000 × 0,88⁶ = R371 523,27. The fund must reach the shortfall 1 200 584,28 − 371 523,27 = R829 061,01; with i = 0,0075 over 72 payments the future value factor is 95,0070, giving monthly payments of R8 726,31. For the loan: the outstanding balance is the present value of the REMAINING payments at the loan rate — after 18 payments, 30 remain, so balance = 4 608,61 × [1 − 1,00875⁻³⁰]/0,00875 ≈ R121 138, about two thirds of the original loan despite over a third of the payments (≈ R82 955) having been made. Each instalment pays the month's interest on the current balance first and only the remainder reduces debt, so early instalments are mostly interest — which is why early overpayments shorten a loan so dramatically."
+    }
+  ]
+}

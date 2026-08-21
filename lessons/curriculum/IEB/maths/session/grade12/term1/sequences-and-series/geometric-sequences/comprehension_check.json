@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a geometric sequence, derive the general term T_n = a·r^(n−1) from the structure of the first few terms, and explain what values the common ratio may and may not take.",
+      "expected_answer": "A geometric sequence is one in which each term is the previous term multiplied by a fixed number, the common ratio r, found by dividing any term by its predecessor. Structurally T_1 = a with no multiplication yet, T_2 = a·r with one, T_3 = a·r² with two, so position n carries n − 1 multiplications and T_n = a·r^(n−1) — the exponent trails the position by one because the first term is a starting point, not a step. The ratio may be a fraction (giving decay, as in 162; 54; 18 with r = 1/3) and may be negative (giving alternating signs, as in 5; −10; 20 with r = −2), but r may not be zero and no term may be zero, since a zero term would make every later term zero and destroy the division that defines the test. The formula should always be certified against a visible term, for example T_4 = 3 × 4³ = 192 for the sequence 3; 12; 48; 192."
+    },
+    {
+      "id": "cc2",
+      "question": "Given that T_2 = 10 and T_5 = 80 for a geometric sequence, find a and r, state the general term, and explain why dividing the two equations is the efficient method.",
+      "expected_answer": "Writing both facts through the general term gives a·r = 10 and a·r⁴ = 80. Dividing the second equation by the first cancels a and leaves r³ = 8, so r = 2, and substituting back gives a = 5. Division is efficient because both equations share the same factor a, and the quotient isolates a pure power of r whose exponent equals the number of jumps between the positions — from position two to position five is three multiplications, and the value grew by a factor of eight, so each multiplication is by 2. The general term is T_n = 5 × 2^(n−1), and checking on the unused fact, T_5 = 5 × 16 = 80, confirms both constants. The general principle is that the quotient of any two terms equals r raised to the number of positions between them."
+    },
+    {
+      "id": "cc3",
+      "question": "The terms x; x + 4; x + 6 are consecutive terms of a geometric sequence. Find x, list the terms with their ratio, and explain the identity used and why substitution back matters.",
+      "expected_answer": "Three consecutive geometric terms satisfy: middle term squared equals the product of its neighbours, which comes from equating the two consecutive ratios and cross-multiplying. So (x + 4)² = x(x + 6), expanding to x² + 8x + 16 = x² + 6x; the squared terms cancel, leaving 2x = −16 and x = −8. Substituting back, the terms are −8; −4; −2, and dividing both ways gives −4/−8 = 1/2 and −2/−4 = 1/2, a genuine geometric sequence with r = 1/2 consisting entirely of negative terms, which the definition allows. Substitution matters because it converts an algebraic answer into a verified sequence — and in questions where an even root produces r² = k, both the positive and negative roots must be reported unless the question excludes one, since each sign builds a valid sequence."
+    }
+  ]
+}

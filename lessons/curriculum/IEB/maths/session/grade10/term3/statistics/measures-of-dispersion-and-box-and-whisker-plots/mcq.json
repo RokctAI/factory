@@ -1,0 +1,334 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Range and Why Spread Matters",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Datasets A (56, 58, 60, 62, 64) and B (30, 45, 60, 75, 90) both have mean 60. Their ranges are:",
+          "options": [
+            "A: 8 and B: 60 — same centre, very different spread",
+            "both 60, since the means match",
+            "A: 60 and B: 8",
+            "A: 64 and B: 90"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Every serious data report carries two kinds of number because:",
+          "options": [
+            "one number is never enough for full marks",
+            "a centre says where the data sits, and a spread says how far it wanders — two datasets can share a centre yet tell opposite stories",
+            "the range must always be double-checked",
+            "means and medians usually disagree"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The range's weakness is that:",
+          "options": [
+            "it requires the data to be ordered",
+            "it cannot be computed for test scores",
+            "it uses only the two most extreme values, so one outlier owns it completely — a 95 joining dataset A blows the range from 8 to 39",
+            "it is always larger than the IQR"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Quartiles and the Interquartile Range",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "For the ordered sales 3, 5, 8, 10, 12, 13, 18, 21, 24, 26, 33 the median is:",
+          "options": [
+            "12, the fifth value",
+            "the sixth value, 13 — five below and five above",
+            "18, the middle of the page",
+            "(12 + 13) ÷ 2 = 12,5"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The lower and upper quartiles of the dataset are:",
+          "options": [
+            "Q1 = 5, Q3 = 26",
+            "Q1 = 10, Q3 = 21",
+            "Q1 = 3, Q3 = 33",
+            "Q1 = 8 (middle of 3, 5, 8, 10, 12) and Q3 = 24 (middle of 18, 21, 24, 26, 33)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The interquartile range is:",
+          "options": [
+            "Q3 − Q1 = 24 − 8 = 16 — the width of the middle half of the days",
+            "33 − 3 = 30",
+            "24 + 8 = 32",
+            "13 − 8 = 5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The IQR is called the outlier-resistant range because:",
+          "options": [
+            "it is smaller than the range",
+            "outliers are deleted before computing it",
+            "the extreme days (3 and 33) sit outside the quartile fences, so they cannot stretch it",
+            "it uses the mean instead of the median"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Five-Number Summary and the Box-and-Whisker Diagram",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The five-number summary of the juice data is:",
+          "options": [
+            "3, 8, 13, 24, 33 — minimum, Q1, median, Q3, maximum",
+            "8, 13, 24 only",
+            "3, 13, 33 only",
+            "3, 8, 16, 24, 33"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "In the box-and-whisker diagram, the box itself:",
+          "options": [
+            "runs from the minimum to the maximum",
+            "runs from Q1 at 8 to Q3 at 24 — its length IS the IQR, and it holds the middle half of the data",
+            "is centred on the mean",
+            "holds all the data except the median"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Each of the four sections of any box plot contains:",
+          "options": [
+            "a number of days proportional to its length",
+            "the values closest to the mean",
+            "one quarter of the data — always, no matter how long the section looks",
+            "at most one data value"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The left whisker spans 3 to 8 while the right whisker spans 24 to 33. This means:",
+          "options": [
+            "the right whisker holds more days",
+            "the left whisker holds more days",
+            "the diagram is drawn incorrectly",
+            "both hold a quarter of the days — the quiet quarter is tightly bunched, the busy quarter is spread out"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Percentiles, Skew and Comparing Two Box Plots",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "'The 75th percentile of sales was 24' is the same statement as:",
+          "options": [
+            "'Q3 was 24'",
+            "'the median was 24'",
+            "'the maximum was 24'",
+            "'75 percent of days sold exactly 24 cups'"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A selection squad taking only learners at the 90th percentile demands:",
+          "options": [
+            "a mark of at least 90 percent on the paper",
+            "a mark that only 10 percent of candidates beat — percentiles rank you against the group, not the paper",
+            "any distinction-level mark",
+            "the top 90 percent of candidates"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The juice data's median sits 5 units from Q1 but 11 from Q3, with a longer right whisker. The distribution is:",
+          "options": [
+            "symmetrical",
+            "skewed to the left",
+            "skewed to the right — most days bunch low with a tail of big sales days",
+            "bimodal"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Class A: median 62, IQR 10. Class B: median 58, IQR 26. The full two-sentence comparison is:",
+          "options": [
+            "A scored higher; nothing else can be said",
+            "B is better because its box is longer",
+            "the two classes are identical",
+            "A typically scored higher (62 vs 58) AND was more consistent (IQR 10 vs 26)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Same Average, Different Story",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Both pizza places average 40 minutes, but their ranges are 4 and 30 minutes. The flyer's average hides:",
+          "options": [
+            "how far deliveries wander from the centre — the reliability of the service",
+            "the price of the pizzas",
+            "which place is closer to your house",
+            "the number of deliveries per night"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Spread is described as 'the wandering' because:",
+          "options": [
+            "data points physically move",
+            "it measures how far values stray from the centre, which the average cannot show",
+            "ranges are calculated while walking",
+            "only outliers wander"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "One freak delivery — a flat tyre — balloons the range even if every other pizza was on time. This shows:",
+          "options": [
+            "the range should be doubled for safety",
+            "flat tyres must be excluded from data",
+            "averages are more reliable than ranges",
+            "the range hears only the two most extreme stories, never the everyday ones"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Folding the Line in Half, Then in Half Again",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Folding the strip of eleven ordered numbers at its middle lands on:",
+          "options": [
+            "the sixth number, 13 — the median, with five numbers on each side",
+            "the fifth number, 12",
+            "the crease between 12 and 13",
+            "whichever number is largest"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The second and third folds — middles of each half — land on:",
+          "options": [
+            "5 and 26",
+            "8 and 24: the lower and upper quartiles",
+            "10 and 21",
+            "3 and 33"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The width between the two outer creases — 8 to 24 — measures:",
+          "options": [
+            "the full range of the data",
+            "the number of ordinary days",
+            "how wide 'ordinary' is: the IQR of 16, which the wild days at 3 and 33 cannot stretch",
+            "the semi-interquartile range"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Drawing the Box in Words",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Narrating the box plot from the summary 3, 8, 13, 24, 33: the walls of the box rise at:",
+          "options": [
+            "3 and 33",
+            "13 and 24",
+            "3 and 13",
+            "8 and 24, with the median line inside at 13"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "'Long never means many; long means spread' warns that:",
+          "options": [
+            "a long section holds the same quarter of the data as a short one — just stretched over more values",
+            "longer boxes contain more data",
+            "whiskers should be kept short",
+            "the number line must not be too long"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Comparing two boxes on one number line always takes two sentences:",
+          "options": [
+            "one about colours, one about labels",
+            "one comparing medians (centre), one comparing box lengths (spread and consistency)",
+            "one about the minimum, one about the maximum",
+            "one per whisker"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

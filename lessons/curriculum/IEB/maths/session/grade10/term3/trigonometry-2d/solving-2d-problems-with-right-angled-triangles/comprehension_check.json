@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define the angles of elevation and depression, and explain why a given angle of depression may immediately be marked as an equal angle of elevation at ground level.",
+      "expected_answer": "Both are measured from the horizontal through the observer's eye: elevation is the tilt of the line of sight upward, depression the tilt downward (never from the vertical face). The observer's horizontal and the ground are parallel lines cut by the line of sight, so alternate angles are equal — the depression from the top equals the elevation from the object below, letting you move the angle into the ground triangle where the known sides live."
+    },
+    {
+      "id": "cc2",
+      "question": "Walk through the three-step method on the mast problem: 35 m from the base, elevation 28°.",
+      "expected_answer": "Sketch: vertical mast, horizontal ground, line of sight, right angle at the base, 28° at the observer. Label from the angle: opposite = h (the mast), adjacent = 35 m, hypotenuse = line of sight (unused). Choose by have-and-want: adjacent known, opposite wanted, so tangent — tan 28° = h/35, h = 35 × tan 28° ≈ 18,6 m, in degree mode, with the unit stated."
+    },
+    {
+      "id": "cc3",
+      "question": "Outline the strategy for the two-observation problem (35° at P, 55° at Q, 25 m apart) and state how the answer is verified.",
+      "expected_answer": "Let d be the distance from the nearer point Q to the base. The triangles share the height: h = d tan 55° and h = (d + 25) tan 35°. Equate, factor out d: d(tan 55° − tan 35°) = 25 tan 35°, so d = 25 tan 35° ÷ (tan 55° − tan 35°) ≈ 24,05 m, giving h ≈ 34,3 m. Verify through the unused triangle: (24,05 + 25) × tan 35° ≈ 34,3 — both triangles reporting the same height confirms the answer."
+    }
+  ]
+}

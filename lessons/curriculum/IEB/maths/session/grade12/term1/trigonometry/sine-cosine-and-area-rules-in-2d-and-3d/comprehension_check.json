@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the sine rule, the cosine rule and the area rule with the standard labelling convention, and describe the stocktaking procedure that decides which rule a question requires.",
+      "expected_answer": "Labelling: in triangle ABC, side little a lies opposite angle capital A, b opposite B, c opposite C. The sine rule: a/sin A = b/sin B = c/sin C, connecting each side with its opposite angle in pairs. The cosine rule: a² = b² + c² − 2bc·cos A, connecting three sides and the one angle clamped between the two known sides. The area rule: area = ½ab·sin C, using two sides and the included angle with no height needed. The stocktake: list what the question gives. A complete pair — a side with its opposite angle — plus one extra piece calls the sine rule; two sides with the included angle, or all three sides while hunting an angle, calls the cosine rule; two sides and the included angle with area requested calls the area rule. All three proofs are examinable and each begins by dropping a perpendicular height to split the triangle into right-angled pieces, with Pythagoras completing the cosine rule's proof."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the two trades of the cosine rule using sides 6 and 11 with a 50° included angle, and sides 4, 7, 9 hunting the angle opposite the 4, and interpret the correction term and a negative cosine.",
+      "expected_answer": "Trade one, third side from two sides and the included angle: a² = 6² + 11² − 2(6)(11)cos 50° = 157 − 132(0,6428) ≈ 157 − 84,85 = 72,15, so a ≈ 8,49 units. The formula is Pythagoras plus a correction: at 90° the cosine is zero, the correction vanishes, and the answer would be √157 ≈ 12,53; at 50° the corner is pinched tighter than square so the far side shortens by exactly the correction; wider than 90° the cosine turns negative, the correction adds, and the far side stretches. Trade two, angle from three sides: cos A = (b² + c² − a²)/2bc = (49 + 81 − 16)/126 = 114/126 = 19/21, so A ≈ 25,21°. No quadrant debate arises because cosine is negative for obtuse angles, so the calculator's single answer is always correct — a negative cosine simply announces an obtuse angle. The area of the 6-11-50° triangle is ½(6)(11)sin 50° ≈ 25,28 square units."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the two-triangle strategy for 3D problems and apply it: a mast stands at P, observers at Q and R with angle PQR = 65°, angle PRQ = 40°, QR = 80 m, and elevation of the mast's top from Q is 32°. Find the height.",
+      "expected_answer": "Every 3D problem splits into a horizontal triangle lying on the ground and a vertical triangle standing upright, joined along one shared side — the bridge or spine. Solve the triangle holding the data first, compute the bridge there, then carry it into the other triangle. Here the ground triangle PQR has angles 65° and 40°, so the angle at P is 180° − 65° − 40° = 75°. The bridge is PQ, the horizontal run from Q to the mast's foot, which faces the 40° angle at R; by the sine rule PQ = 80·sin 40°/sin 75° ≈ 53,24 m. The vertical triangle stands on PQ, right-angled at the mast's foot, with the 32° elevation at Q; the height is opposite that angle with PQ adjacent, so height = 53,24 × tan 32° ≈ 33,27 m. Discipline: mark the right angle where the vertical mast meets level ground, keep the elevation angle inside the vertical triangle, and name the bridge before computing — most marks are lost by solving the wrong triangle first."
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Five Number Summary and the Box-and-Whisker",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "For the sorted marks 38, 42, 45, 47, 49, 51, 52, 54, 56, 86, the five number summary is:",
+          "options": [
+            "38; 45; 50; 54; 86",
+            "38; 47; 50; 52; 86",
+            "42; 45; 51; 54; 56",
+            "38; 45; 49; 54; 86"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The lower quartile of ten sorted values is found as:",
+          "options": [
+            "The average of the second and third values",
+            "The median of the bottom five values — here 45",
+            "One quarter of the maximum",
+            "The third value from the top"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The interquartile range of the marks is:",
+          "options": [
+            "48",
+            "16",
+            "54 − 45 = 9",
+            "50"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The range is a risky spread measure because:",
+          "options": [
+            "It requires the data to be sorted",
+            "It is always larger than the median",
+            "It cannot be shown on a box plot",
+            "It depends entirely on the two most extreme values — one strange mark controls it"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Variance and Standard Deviation",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The deviations of any dataset from its mean always sum to:",
+          "options": [
+            "Zero — the data below the mean balances the data above",
+            "The variance",
+            "The standard deviation",
+            "One"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For the goals 3, 5, 8, 10, 14 with mean 8, the variance is:",
+          "options": [
+            "8",
+            "3,85",
+            "74",
+            "74 ÷ 5 = 14,8"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The standard deviation of those goals is:",
+          "options": [
+            "14,8",
+            "√14,8 ≈ 3,85",
+            "74",
+            "5,92"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "We report standard deviation rather than variance because:",
+          "options": [
+            "It is always the smaller number",
+            "Calculators cannot display variance",
+            "The square root returns the measure to the data's own units — goals, not goals squared",
+            "Variance only works for even sample sizes"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Symmetric and Skewed Data",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Skewness is named after:",
+          "options": [
+            "The hump of the distribution",
+            "The largest value",
+            "The median bar",
+            "The tail — a long right tail is positively skewed"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For the marks, mean 52 against median 50 signals:",
+          "options": [
+            "Positive skew — the mean has been dragged towards the long right tail",
+            "Negative skew — the mean sits below the median",
+            "Perfect symmetry",
+            "An arithmetic error, since mean and median must be equal"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "On a box plot, positive skew typically shows as:",
+          "options": [
+            "A box with no median bar",
+            "Whiskers of exactly equal length",
+            "A right whisker much longer than the left — here 32 marks against 7",
+            "A median bar outside the box"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A claim of skewness in an interpretation question must be:",
+          "options": [
+            "Avoided unless the data is symmetric",
+            "Justified with evidence — mean against median, or the whisker lengths — in a sentence",
+            "Stated using the word 'quality'",
+            "Backed by removing the largest value first"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Identifying Outliers",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The outlier fences are placed at:",
+          "options": [
+            "The minimum and maximum",
+            "One standard deviation either side of the mean",
+            "The class boundaries",
+            "Q1 − 1,5 × IQR and Q3 + 1,5 × IQR"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "With Q1 = 45, Q3 = 54 and IQR = 9, the fences stand at:",
+          "options": [
+            "31,5 and 67,5",
+            "36 and 63",
+            "38 and 86",
+            "40,5 and 58,5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The written verdict on the mark of 86 is:",
+          "options": [
+            "86 looks too big, so it is probably an outlier",
+            "86 is the maximum, so it cannot be tested",
+            "86 > 67,5, the upper fence, therefore 86 is an outlier",
+            "86 < 67,5, therefore 86 is not an outlier"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Removing the 86 drops the standard deviation from about 12,5 to about 5,5, showing that:",
+          "options": [
+            "Standard deviation is robust against outliers",
+            "The standard deviation is fragile — one value more than doubled the apparent spread",
+            "The median must also have halved",
+            "The IQR was calculated wrongly"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Five Landmarks on One Road",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the road picture, the box of the box-and-whisker represents:",
+          "options": [
+            "The stretch between the quarter and three-quarter marks — the ordinary neighbourhood",
+            "The whole road from first to last house",
+            "The house at the halfway mark only",
+            "The two extreme houses"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "On our map, the neighbourhood is 9 marks wide while the right-hand road out runs:",
+          "options": [
+            "7 marks",
+            "13,5 marks",
+            "48 marks",
+            "32 marks — to the mansion at 86"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Measuring the road end to end gives the range, which is hostage to:",
+          "options": [
+            "The median bar",
+            "The extreme houses — moving one changes the whole answer",
+            "The neighbourhood width",
+            "The number of houses"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The interquartile range stays put when extremes change because:",
+          "options": [
+            "It is always equal to 9",
+            "It counts every house equally",
+            "It measures only the neighbourhood, not the roads out to the edges",
+            "It is measured with a longer ruler"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Average Distance from Home",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Averaging the raw distances from the mean, signs included, always gives:",
+          "options": [
+            "Zero — the belows cancel the aboves, because the mean is the balance point",
+            "The variance",
+            "The interquartile range",
+            "A small positive number"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Squaring the distances before averaging does two jobs:",
+          "options": [
+            "Halves the total and sorts the data",
+            "Makes everything positive and punishes big strays more than small ones",
+            "Removes the largest value and rounds the rest",
+            "Doubles each distance and centres the data"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The striker's variance of 14,8 must be square-rooted because:",
+          "options": [
+            "14,8 is too large to report",
+            "Roots make the answer more accurate",
+            "The five-step recipe always ends in a division",
+            "14,8 is in goals squared — a unit no scoreboard shows"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A rival striker also averaging 8 but with standard deviation 1,5 is the safer pick because:",
+          "options": [
+            "A higher standard deviation means more goals",
+            "Her mean must actually be higher",
+            "Same average output, far shorter wanderings from home — more consistent",
+            "Standard deviation measures shooting accuracy"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Mansion and the Fences",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The fences stand at one and a half neighbourhood-widths beyond each end of the box, which here means:",
+          "options": [
+            "At 38 and 86",
+            "At 45 − 13,5 = 31,5 and 54 + 13,5 = 67,5",
+            "At 45 and 54",
+            "At 50 either side of the median"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The mansion at 86 hauls the mean from about 48 to 52 because:",
+          "options": [
+            "The mean makes every house share the road's total equally",
+            "The mean counts heads down the line",
+            "The mansion moves the median first",
+            "Means always round upwards"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The standard deviation reacts even more strongly to the mansion because:",
+          "options": [
+            "It is measured in different units",
+            "It only uses the two extreme values",
+            "Squaring makes distant houses roar — 86 alone lifts it from about 5,5 to about 12,5",
+            "It ignores the houses near the middle"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "With a mansion on the road, the wise report uses:",
+          "options": [
+            "The mean and standard deviation, since they are more precise",
+            "The range, since it includes the mansion",
+            "No measures at all",
+            "The median and interquartile range — robust tools — with a sentence saying why"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

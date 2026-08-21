@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the one-third law for pyramids and cones, including the physical demonstration, and state which height every volume formula requires.",
+      "expected_answer": "A pyramid or cone holds exactly one third of the prism or cylinder sharing its base and height: V = one third times base area times perpendicular height. The pour test proves it — a hollow cone filled with water empties into its matching cylinder exactly three times. Volume formulas always take the perpendicular height (apex straight down to the centre of the base), never the slant height."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how the slant height is manufactured with Pythagoras for the cone (r = 5, h = 12) and the pyramid (edge 12, h = 8), and where s is then used.",
+      "expected_answer": "Inside the cone a right triangle links perpendicular height, radius and slant height: s² = h² + r² = 144 + 25 = 169, so s = 13. For the pyramid the horizontal leg is half the base edge: s² = 8² + 6² = 100, so s = 10. The slant height serves surface area only: cone SA = πr² + πrs = 25π + 65π = 90π; pyramid SA = base 144 plus four triangles of half times 12 times 10, totalling 384."
+    },
+    {
+      "id": "cc3",
+      "question": "State the two principles for combined solids, using the spinning top (cone r = 3, h = 4 plus hemisphere r = 3) as the example.",
+      "expected_answer": "Volumes simply add: cone 12π plus hemisphere 18π gives 30π — the join never matters. Surface area counts only exposed faces: at the join the cone's base circle and the hemisphere's flat circle are buried, so the outside is the cone's curved πrs = 15π (s = 5) plus the hemisphere's skin 18π, totalling 33π. Blindly adding the complete surface areas would include the buried circles and overstate the answer."
+    }
+  ]
+}

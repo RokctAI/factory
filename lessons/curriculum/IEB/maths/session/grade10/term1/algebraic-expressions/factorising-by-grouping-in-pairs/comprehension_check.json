@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Factorise 3mp + 3mq − np − nq step by step, naming the three moves of the grouping method as you go.",
+      "expected_answer": "Move one — pair: (3mp + 3mq) and (−np − nq). Move two — factor each pair: 3m(p + q) and −n(p + q), taking out NEGATIVE n because the pair leads with a minus. Move three — factor out the shared bracket: (p + q)(3m − n). Verify by expanding: all four original terms return."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why a pair that begins with a minus sign demands a negative common factor, and what goes wrong if a positive factor is used instead.",
+      "expected_answer": "Dividing by a negative flips the signs inside the bracket, so −np − nq becomes −n(p + q), matching the first pair's bracket. With positive n the bracket comes out as (−p − q), which cannot match (p + q); the shared-bracket step is then impossible. Erasing signs to force a match is illegal because it changes the expression's value."
+    },
+    {
+      "id": "cc3",
+      "question": "The terms 3mp − nq − np + 3mq refuse to group as given. Describe the rescue and the principle behind it, and state where grouping reappears in later work.",
+      "expected_answer": "Rearrange so like families sit together — 3mp + 3mq − np − nq — which is allowed because addition is commutative; then group normally to get (p + q)(3m − n). Grouping reappears as the finishing step of the trinomial method after the middle term is split, and in cubic factorisations via the factor theorem later on."
+    }
+  ]
+}

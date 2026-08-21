@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the difference table procedure that classifies a pattern as linear or quadratic, and apply it to 4; 11; 22; 37, then recover the general term using the three-equation machine.",
+      "expected_answer": "Write the terms in a row and subtract neighbours in order, each term minus its predecessor. If the first differences are constant the pattern is linear; if the first differences are not constant but their own differences — the second differences — are constant, the pattern is quadratic with shape T_n = an² + bn + c. For 4; 11; 22; 37 the first differences are 7; 11; 15 (not constant) and the second differences are 4 and 4 (constant), so the pattern is quadratic. The recovery machine: 2a equals the second difference, so a = 2; 3a + b equals the first of the first differences, so 6 + b = 7 and b = 1; a + b + c equals the first term, so 2 + 1 + c = 4 and c = 1. Thus T_n = 2n² + n + 1, and the certification test on a visible term gives T_3 = 18 + 3 + 1 = 22, matching the list. At least four terms are needed before declaring quadratic, since only then does the second level show a matching pair."
+    },
+    {
+      "id": "cc2",
+      "question": "For the pattern T_n = 2n² + n + 1, determine with full reasoning whether 172 and 250 are terms, and state the conclusion for each value.",
+      "expected_answer": "For 172: set 2n² + n + 1 = 172, giving 2n² + n − 171 = 0, which factorises as (2n + 19)(n − 9) = 0, so n = 9 or n = −9,5. A position must be a natural number, so the negative fraction is discarded and 172 is the ninth term; checking, T_9 = 162 + 9 + 1 = 172. For 250: set 2n² + n + 1 = 250, giving 2n² + n − 249 = 0 with discriminant 1 + 1992 = 1993, which is not a perfect square (44² = 1936, 45² = 2025), so n is irrational and not a natural number, and 250 is not a term. The terms confirm it: T_10 = 211 and T_11 = 254, so the pattern strides over 250. The conclusion must be stated as a sentence — n is not a natural number, therefore 250 does not appear — and rounding n would wrongly identify 250 with 254."
+    },
+    {
+      "id": "cc3",
+      "question": "The pattern x; 9; 22; 41 is quadratic with constant second difference 6. Find x and the general term, and then explain how to find the smallest term of a turning pattern such as T_n = n² − 10n + 27.",
+      "expected_answer": "Carry x through the difference table: first differences are 9 − x; 13; 19, and second differences are 13 − (9 − x) = 4 + x and 19 − 13 = 6. Constant second difference forces 4 + x = 6, so x = 2. The honest table for 2; 9; 22; 41 has first differences 7; 13; 19 and second differences 6; 6. The machine then gives 2a = 6 so a = 3; 3a + b = 7 so b = −2; a + b + c = 2 so c = 1, hence T_n = 3n² − 2n + 1, verified by T_4 = 48 − 8 + 1 = 41. For a turning pattern, the quadratic in n reaches its minimum at n = −b/2a; for T_n = n² − 10n + 27 that is n = 5, a natural number, so the smallest term is T_5 = 25 − 50 + 27 = 2. If the vertex fell between whole positions, the natural numbers on either side must be tested and the smaller term kept, because the pattern exists only at natural positions."
+    }
+  ]
+}

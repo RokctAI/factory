@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "From Expanding to Factorising",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Factorising a trinomial is best described as:",
+          "options": [
+            "Expansion run in reverse — recovering the brackets that multiplied out to give it",
+            "Adding the three terms together",
+            "Substituting numbers until something works",
+            "Halving each coefficient"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "For x² + 7x + 10, the two governing numbers must have:",
+          "options": [
+            "Product 7 and sum 10",
+            "Product 10 and sum 7 — the numbers 2 and 5",
+            "Product 17 and sum 3",
+            "Product 70 and sum 10"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The correct FIRST move on 2x² + 14x + 20 is:",
+          "options": [
+            "Splitting the middle term immediately",
+            "Hunting numbers with product 40",
+            "Taking out the common factor 2, leaving 2(x² + 7x + 10), which still factorises further",
+            "Dividing every term by x"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Why is factorising worth learning at all?",
+          "options": [
+            "It is only needed for this one test",
+            "It makes expressions longer and more impressive",
+            "It replaces the need for arithmetic",
+            "Factors expose hidden structure — the zeros of a quadratic, the cancellations in fractions, and later the roots that calculus needs"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Product-and-Sum Hunt — When a Is Not One",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "For 4x² − 4x − 15, the correct target product and target sum are:",
+          "options": [
+            "Product −15, sum −4",
+            "Product −60, sum −4, because the product is a × c when a is not one",
+            "Product 60, sum 4",
+            "Product −4, sum −60"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The target product is negative and the target sum is negative. The pair must be:",
+          "options": [
+            "Both negative",
+            "Both positive",
+            "Opposite signs, with the larger number carrying the minus",
+            "Opposite signs, with the smaller number carrying the minus"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "When the pair must have OPPOSITE signs, you hunt the factor pair whose:",
+          "options": [
+            "DIFFERENCE equals the target sum's size — for −60 and −4, the pair 6 and 10",
+            "Sum equals the product",
+            "Quotient equals the target sum",
+            "Squares add to the product"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The verified pair for 4x² − 4x − 15 is:",
+          "options": [
+            "+10 and −6",
+            "−10 and +6, since (−10)(6) = −60 and −10 + 6 = −4",
+            "−12 and +5",
+            "−15 and +4"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Splitting the Middle Term and Grouping",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Splitting −4x as −10x + 6x is legal because:",
+          "options": [
+            "Any middle term may be split into any two pieces",
+            "The exam allows one free change per question",
+            "−10x + 6x equals −4x — the value is unchanged, only the outfit",
+            "Negative terms may always be doubled"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Factoring the first pair 4x² − 10x gives:",
+          "options": [
+            "2x(2x − 5)",
+            "4x(x − 10)",
+            "2(2x² − 5)",
+            "x(4x − 10x)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "After grouping, both pairs hold the bracket (2x − 5). This matters because:",
+          "options": [
+            "It means the answer is (2x − 5)²",
+            "It allows the brackets to cancel",
+            "It shows the trinomial is prime",
+            "The match certifies the split and signs were right, and the shared bracket can now be factored out"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Splitting in the other order, −4x = +6x − 10x, produces:",
+          "options": [
+            "A wrong answer",
+            "The same factorisation through a different route — (2x + 3)(2x − 5)",
+            "A trinomial that no longer factorises",
+            "An extra solution"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Verification, Sign Patterns and the Full Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Expanding (2x − 5)(2x + 3) as a check gives:",
+          "options": [
+            "4x² − 4x − 15 — the original returns, proving the factorisation",
+            "4x² + 4x + 15",
+            "4x² − 15",
+            "2x² − 4x − 15"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Product a·c positive, sum negative. The pair is:",
+          "options": [
+            "Opposite signs",
+            "Both negative",
+            "Both positive",
+            "Impossible to determine"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A learner factorises 4x² − 4x − 15 by hunting product −15. The museum exhibit on display is:",
+          "options": [
+            "Sign amnesia",
+            "Stopping halfway",
+            "Using c instead of a × c when the leading coefficient is not one",
+            "Splitting in the wrong order"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "No factor pair passes both the product test and the sum test. The correct response is:",
+          "options": [
+            "Invent a pair that is close enough",
+            "Write the trinomial as a perfect square anyway",
+            "Leave the question blank",
+            "State that the trinomial does not factorise over the integers — that statement IS the answer"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Two Numbers That Multiply and Add",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Two taxi fares add to R7 and multiply to 10. The fares are:",
+          "options": [
+            "R2 and R5",
+            "R1 and R10",
+            "R3 and R4",
+            "R7 and R10"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In x² + 7x + 10, the 10 and the 7 were 'born' as:",
+          "options": [
+            "The 10 as a sum, the 7 as a product",
+            "The 10 as a product of the bracket numbers, the 7 as their sum",
+            "Both as products",
+            "Both as sums"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The habit that must run BEFORE any product-and-sum hunt is:",
+          "options": [
+            "Doubling the middle term",
+            "Substituting x = 1",
+            "Checking whether one factor divides all three terms and pulling it out front",
+            "Sketching the parabola"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "When the Number in Front Is Not a One",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "For 4x² − 4x − 15, the multiply-target in the Simplifier's language is:",
+          "options": [
+            "The last number alone: −15",
+            "The front number alone: 4",
+            "The two x-coefficients multiplied: 16",
+            "The front number times the last number: 4 × (−15) = −60"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Why does 'adding' the pair really mean 'subtracting' here?",
+          "options": [
+            "Because one number is positive and the other negative, their sum is effectively a difference",
+            "Because subtraction is faster",
+            "Because the front number is even",
+            "Because the target is a fraction"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Checking the pair −10 and +6 'like change at the window' means:",
+          "options": [
+            "Confirming both promises: (−10)(6) = −60 AND −10 + 6 = −4",
+            "Checking only the product",
+            "Checking only the sum",
+            "Rounding both numbers first"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Splitting the Bill and Checking Your Change",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Splitting −4x into −10x + 6x is like:",
+          "options": [
+            "Splitting R100 into R60 and R40 — the total never changes",
+            "Discarding R4 from a till",
+            "Doubling a payment",
+            "Exchanging rands for another currency"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The second pair +6x − 15 factors as:",
+          "options": [
+            "6(x − 15)",
+            "3(2x − 5)",
+            "x(6 − 15)",
+            "−3(2x + 5)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "If the two brackets come out DIFFERENT after grouping, the correct move is:",
+          "options": [
+            "Force them together and continue",
+            "Delete the second bracket",
+            "Walk back — re-test the two numbers and check every minus survived the trip",
+            "Add the brackets instead of multiplying"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The final answer for 4x² − 4x − 15 is:",
+          "options": [
+            "(4x − 5)(x + 3)",
+            "(2x − 3)(2x + 5)",
+            "(4x + 15)(x − 1)",
+            "(2x − 5)(2x + 3)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

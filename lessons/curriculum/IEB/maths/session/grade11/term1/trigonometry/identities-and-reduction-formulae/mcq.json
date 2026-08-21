@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Two Identities Every Proof Leans On",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "With a point (x; y) at distance r from the origin on the arm of θ, tan θ equals:",
+          "options": [
+            "y/x",
+            "x/y",
+            "y/r",
+            "x/r"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Dividing x² + y² = r² by r² proves that:",
+          "options": [
+            "tan θ = sin θ / cos θ",
+            "sin²θ + cos²θ = 1",
+            "sin θ = 1 − cos θ",
+            "r = 1 for all angles"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "(1 − cos²θ) / (sin θ cos θ) simplifies to:",
+          "options": [
+            "cos θ",
+            "sin θ cos θ",
+            "tan θ",
+            "1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "tan θ does not exist at 90° and 270° because:",
+          "options": [
+            "sin θ is zero there",
+            "r becomes negative there",
+            "the angle is too large for a triangle",
+            "cos θ, its denominator, is zero there"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Signs in the Four Quadrants — the CAST Rule",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In the third quadrant, the only positive ratio is:",
+          "options": [
+            "sine",
+            "tangent",
+            "cosine",
+            "none of them"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The letters of CAST are planted starting in the:",
+          "options": [
+            "first quadrant",
+            "second quadrant",
+            "fourth quadrant",
+            "third quadrant"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Given cos θ = −5/13 with 180° < θ < 270°, sin θ equals:",
+          "options": [
+            "−12/13",
+            "12/13",
+            "−5/12",
+            "12/5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "For that same angle, tan θ equals:",
+          "options": [
+            "−12/5",
+            "−5/12",
+            "12/13",
+            "12/5"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Reduction Formulae — One Eighty, Three Sixty and the Minus",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "In every reduction, the size comes from the acute angle and the sign comes from:",
+          "options": [
+            "the calculator",
+            "the quadrant where the large angle lives",
+            "whether the angle is even or odd",
+            "the size of r"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "cos 150° equals:",
+          "options": [
+            "−√3/2",
+            "√3/2",
+            "−1/2",
+            "1/2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "sin 240° equals:",
+          "options": [
+            "√3/2",
+            "1/2",
+            "−√3/2",
+            "−1/2"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "cos 120° × tan 210° equals:",
+          "options": [
+            "√3/6",
+            "−√3/2",
+            "√3/3",
+            "−√3/6"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Co-functions, Simplifying Chains and Where an Identity Breaks",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "cos(90° − x) equals:",
+          "options": [
+            "cos x",
+            "−sin x",
+            "sin x",
+            "−cos x"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "sin(90° + x) equals:",
+          "options": [
+            "cos x",
+            "−cos x",
+            "sin x",
+            "−sin x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The chain [cos(90° − x) · sin(180° − x) · tan(360° − x)] / [sin(90° + x) · sin(180° + x)] collapses to:",
+          "options": [
+            "sin²x",
+            "tan²x",
+            "−tan x",
+            "cos²x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The identity 1/(1 − cos x) + 1/(1 + cos x) = 2/sin²x holds for:",
+          "options": [
+            "all x without exception",
+            "all x except multiples of 90°",
+            "only acute x",
+            "all x except multiples of 180°"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Spoke and the Shadow",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the wheel picture, cosine is:",
+          "options": [
+            "the east-west shadow of the arm",
+            "the north-south shadow of the arm",
+            "the length of the arm",
+            "the speed of the wheel"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "At 210° the arm leans south-west, so:",
+          "options": [
+            "sine is positive and cosine negative",
+            "both sine and cosine are negative",
+            "both sine and cosine are positive",
+            "sine is negative and cosine positive"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Tangent does not exist at 90° because:",
+          "options": [
+            "the arm has left the first quadrant",
+            "the north-south shadow is zero there",
+            "the east-west shadow is zero there, and dividing by zero is meaningless",
+            "the arm becomes negative"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Four Neighbourhoods, One Rule",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The letter sitting in each neighbourhood of the CAST wheel names:",
+          "options": [
+            "the ratio that is undefined there",
+            "the largest ratio there",
+            "the first letter of the quadrant",
+            "the only ratio that is positive there"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Tangent is positive in the third neighbourhood because:",
+          "options": [
+            "both shadows are negative, and their quotient is positive",
+            "sine is positive there",
+            "cosine is positive there",
+            "tangent is positive everywhere"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The sketch method beats the calculator because:",
+          "options": [
+            "it is faster to type",
+            "it gives exact, unrounded values with the signs built in",
+            "calculators cannot handle angles past 90°",
+            "it avoids Pythagoras"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Folding the Angle Back Home",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The home angle of 240° is:",
+          "options": [
+            "40°",
+            "30°",
+            "60°",
+            "120°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The three-step recipe for any reduction is:",
+          "options": [
+            "sign, then size, then quadrant",
+            "home angle, then neighbourhood sign, then write sign before the home angle",
+            "calculator, then rounding, then sign",
+            "swap, then fold, then half-turn"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "tan 315° equals:",
+          "options": [
+            "−1",
+            "1",
+            "−√3",
+            "√3/3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "What makes 90° different from 180° and 360° in reductions?",
+          "options": [
+            "It changes only the sign",
+            "It has no effect at all",
+            "It doubles the angle",
+            "It swaps sine and cosine, and then the quadrant sets the sign"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

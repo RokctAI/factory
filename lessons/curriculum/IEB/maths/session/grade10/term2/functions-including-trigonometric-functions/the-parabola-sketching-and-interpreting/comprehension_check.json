@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the graph of y = x² fully — its shape, turning point, axis of symmetry, domain and range — and explain why the left half mirrors the right half.",
+      "expected_answer": "The graph of y = x² is a smooth curve lying entirely on or above the x-axis. Its single lowest point, the turning point, is at the origin (0; 0), and because the curve opens upward this turning point is a minimum. The axis of symmetry is the vertical line x = 0, the y-axis. The domain is all real x, because every real number can be squared. The range is y ≥ 0, because a square is never negative — and the range must be written in terms of y, never x. The two halves mirror each other because squaring wipes out the sign: x = −2 and x = 2 both give 4, x = −3 and x = 3 both give 9, so the heights on the left repeat the heights on the right. The curve flattens and rounds at the bottom rather than forming a sharp V, and it climbs ever more steeply as x moves away from zero — one up at one across, four at two, nine at three."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the separate effects of a and q in y = ax² + q, including what each does to the turning point, the range and the number of x-intercepts.",
+      "expected_answer": "The sign of a sets the direction: positive a opens the parabola upward with a minimum turning point; negative a opens it downward with a maximum. The size of a sets the width: a size greater than 1 (such as 3) stretches the graph vertically and narrows it, while a size between 0 and 1 (such as ¼) squashes it and widens it. With q = 0, no value of a moves the turning point off the origin or the axis off x = 0. The parameter q shifts the whole graph vertically by q units and does nothing else: the turning point moves to (0; q), the y-intercept equals q, and the axis of symmetry stays x = 0. The range becomes y ≥ q for positive a and y ≤ q for negative a. For x-intercepts: same sign for a and q means none, because the algebra gives x² equal to a negative number — for example y = x² + 5; opposite signs mean two, as in y = x² − 16 with x = ±4; and q = 0 means one touch at the origin."
+    },
+    {
+      "id": "cc3",
+      "question": "Sketch y = 2x² − 8 in words, listing every feature a marker expects, then find the equation of a parabola y = ax² + q with turning point (0; −5) passing through (2; 7).",
+      "expected_answer": "For y = 2x² − 8: a = 2 is positive, so the parabola opens upward with a minimum. q = −8, so the turning point is (0; −8), which is also the y-intercept. The axis of symmetry is x = 0. For the x-intercepts, set y = 0: 2x² = 8, so x² = 4 and x = 2 or x = −2, giving (2; 0) and (−2; 0) — the plus-or-minus is compulsory. The domain is all real x and the range is y ≥ −8. A useful extra point is (3; 10), since 2(9) − 8 = 10, with (−3; 10) by symmetry. The sketch is a smooth upward valley with its floor on the y-axis at −8, cutting the x-axis at −2 and 2 and climbing steeply on both sides. For the second part: the turning point gives q = −5 immediately, so y = ax² − 5. Substituting (2; 7): 7 = a(2)² − 5, so 4a = 12 and a = 3. The equation is y = 3x² − 5."
+    }
+  ]
+}

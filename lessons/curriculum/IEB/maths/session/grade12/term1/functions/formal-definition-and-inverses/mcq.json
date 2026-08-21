@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Formal Definition of a Function",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A relation qualifies as a function when:",
+          "options": [
+            "Every input is paired with exactly one output",
+            "Every output is paired with exactly one input",
+            "Its graph is a straight line",
+            "All its outputs are positive"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Why is y² = x NOT a function?",
+          "options": [
+            "Because x may be negative",
+            "Because the input 16 produces both 4 and −4",
+            "Because it has no y-intercept",
+            "Because it cannot be graphed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The vertical line test checks whether:",
+          "options": [
+            "The graph is symmetrical",
+            "Any input has more than one output",
+            "Any output has more than one input",
+            "The graph passes through the origin"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The rule y = x² sends both 4 and −4 to 16. This shows that:",
+          "options": [
+            "y = x² is not a function",
+            "Many-to-one is permitted; y = x² is still a function",
+            "The vertical line test fails for y = x²",
+            "16 has no inverse image"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Building the Inverse by Swapping x and y",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The inverse of y = 3x − 5 is:",
+          "options": [
+            "y = (x + 5)/3",
+            "y = (x − 5)/3",
+            "y = 3x + 5",
+            "y = 1/(3x − 5)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The original sends 2 to 1. A correctly built inverse must:",
+          "options": [
+            "Send 2 to 1 as well",
+            "Send 1 back to 2",
+            "Send −2 to −1",
+            "Send 1 to −2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The inverse of y = 2x + 8 has gradient:",
+          "options": [
+            "2",
+            "−2",
+            "One half",
+            "−8"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The notation f⁻¹(x) means:",
+          "options": [
+            "1 divided by f(x)",
+            "The reversed function of f",
+            "f(x) raised to the power −1",
+            "The derivative of f"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Reflection in the Line y Equals x",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Under inversion, the point (2; 1) on the original becomes:",
+          "options": [
+            "(−2; −1)",
+            "(1; 2)",
+            "(2; −1)",
+            "(−1; −2)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The graph of an inverse is the original graph reflected in:",
+          "options": [
+            "The x axis",
+            "The y axis",
+            "The line y = x",
+            "The line y = −x"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The original y = 2x + 8 has intercepts (0; 8) and (−4; 0). Its inverse passes through:",
+          "options": [
+            "(8; 0) and (0; −4)",
+            "(0; 8) and (−4; 0)",
+            "(8; 0) and (4; 0)",
+            "(0; −8) and (4; 0)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "If a function has domain all real x and range y > 0, its inverse has:",
+          "options": [
+            "Domain all real x and range y > 0",
+            "Domain x > 0 and range all real y",
+            "Domain x < 0 and range y < 0",
+            "Domain y > 0 and range x > 0"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Restricting the Domain So the Inverse Is a Function",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Inverting y = x² without restriction gives y = ±√x, which is:",
+          "options": [
+            "A function, since the algebra worked",
+            "Not a function — one input receives two outputs",
+            "A function only for x > 0",
+            "Undefined everywhere"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The test on the ORIGINAL graph that predicts whether the inverse will be a function is:",
+          "options": [
+            "The vertical line test",
+            "The horizontal line test",
+            "The intercept test",
+            "The symmetry test"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "For y = 3x² with domain x ≤ 0, the inverse is:",
+          "options": [
+            "y = √(x/3)",
+            "y = −√(x/3)",
+            "y = ±√(x/3)",
+            "y = −√(3x)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The sign of the root in a restricted inverse is chosen because:",
+          "options": [
+            "Roots are always positive",
+            "The original's domain becomes the inverse's range, which fixes the sign of the outputs",
+            "The inverse must pass through the origin",
+            "Negative roots are extraneous"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "One Ticket, One Prize",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the vending machine picture, a function is a machine where:",
+          "options": [
+            "Each code drops exactly one snack",
+            "Each snack has exactly one code",
+            "All snacks cost the same",
+            "The machine never runs empty"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The rule y² = x behaves like a machine that:",
+          "options": [
+            "Rejects the code 16",
+            "Drops both 4 and −4 for the code 16",
+            "Drops one snack for every code",
+            "Only accepts positive codes"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Sliding a vertical line across a graph checks:",
+          "options": [
+            "One output at a time",
+            "One input at a time",
+            "The gradient",
+            "The intercepts"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Two different codes dropping the same snack means the machine is:",
+          "options": [
+            "Faulty — not a function",
+            "Working — many-to-one is allowed",
+            "Working only for positive codes",
+            "Impossible to build"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Running the Machine Backwards",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Algebraically, an inverse is built by:",
+          "options": [
+            "Swapping x and y, then solving for y",
+            "Multiplying the equation by −1",
+            "Reflecting in the x axis",
+            "Substituting x = 0"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The machine y = 3x − 5 multiplies by 3 then subtracts 5. Its reverse:",
+          "options": [
+            "Multiplies by 3 then adds 5",
+            "Adds 5 then divides by 3",
+            "Divides by 3 then adds 5",
+            "Subtracts 5 then divides by 3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The original sends 2 to 1. Feeding 1 into the inverse (x + 5)/3 gives:",
+          "options": [
+            "2, confirming the inverse",
+            "1, confirming the inverse",
+            "3, exposing an error",
+            "−2, exposing an error"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Why trial the reversed machine with a known pairing?",
+          "options": [
+            "It is required notation",
+            "A pairing that fails to reverse exposes an algebra slip immediately",
+            "It proves the function is linear",
+            "It finds the intercepts"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Mirror on the Diagonal and the Machine That Cannot Decide",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The mirror that maps a graph onto its inverse lies along:",
+          "options": [
+            "The y axis",
+            "The line y = x",
+            "The x axis",
+            "The line y = −x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Reversing y = x² stalls at the snack 16 because:",
+          "options": [
+            "16 is not in the range",
+            "The machine cannot decide between codes 4 and −4",
+            "The graph has no vertex",
+            "Square roots are undefined"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The early-warning test for a stalling reverse machine is:",
+          "options": [
+            "A vertical line on the inverse",
+            "A horizontal line on the original touching twice",
+            "Checking the y-intercept",
+            "Testing x = 0"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Keeping only codes x ≥ 0 for y = x² makes the reverse machine answer:",
+          "options": [
+            "y = ±√x",
+            "y = −√x",
+            "y = √x",
+            "Nothing — it still stalls"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

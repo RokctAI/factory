@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Finding the Steady Step",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The constant difference of the sequence 4; 9; 14; 19 is:",
+          "options": [
+            "4",
+            "9",
+            "5",
+            "45"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "For the sequence 50; 43; 36 the constant difference d is:",
+          "options": [
+            "7",
+            "−7, computed as later term minus earlier term",
+            "−50",
+            "43"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why is 1; 3; 9 NOT a linear pattern?",
+          "options": [
+            "Because it starts at 1",
+            "Because it has an odd number of terms",
+            "It is linear, with d = 2",
+            "Its gaps are 2 then 6 — not constant; it multiplies instead of adding"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Before declaring a five-term sequence linear, how many gap-checks are required?",
+          "options": [
+            "Four — every gap must agree",
+            "One",
+            "Two",
+            "Five"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Constructing the Formula for Term n",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The general term of 4; 9; 14; 19 is:",
+          "options": [
+            "T_n = 4n + 5",
+            "T_n = 5n − 1",
+            "T_n = 5n + 4",
+            "T_n = 5n + 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In T_n = dn + c, the adjustment c equals:",
+          "options": [
+            "d − T_1",
+            "T_1",
+            "T_1 − d",
+            "T_1 + d"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The general term of the falling pattern 50; 43; 36 is:",
+          "options": [
+            "T_n = −7n + 57",
+            "T_n = −7n + 50",
+            "T_n = 7n + 43",
+            "T_n = 50n − 7"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Plotting position n against term value for a linear pattern gives:",
+          "options": [
+            "A parabola through the origin",
+            "Points on a straight line with gradient d",
+            "A horizontal line at T_1",
+            "Scattered points with no shape"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Term Sixty in One Line, and Solving for the Position",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "For T_n = 5n − 1, the sixtieth term is:",
+          "options": [
+            "300",
+            "295",
+            "301",
+            "299"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Which term of the sequence equals 124? Solving 5n − 1 = 124 gives:",
+          "options": [
+            "n = 25 — the twenty-fifth term",
+            "n = 124",
+            "n = 24",
+            "n = 26"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Testing whether 163 is a term: 5n − 1 = 163 gives n = 164/5. The conclusion is:",
+          "options": [
+            "163 is the 33rd term",
+            "163 is not a term, because n is not a natural number",
+            "The algebra must contain an error",
+            "163 lies between positions 32 and 33, so it is a term"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A backward question ('which term equals ...?') is solved by:",
+          "options": [
+            "Substituting the given value as n",
+            "Setting T_n equal to the given value and solving for n",
+            "Listing terms until the value appears",
+            "Dividing the value by d"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Hidden Patterns — Triangles, Tables and Call-Out Fees",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Matchstick triangles in a row use 3; 5; 7 matches. The general term is:",
+          "options": [
+            "T_n = 3n",
+            "T_n = 2n + 3",
+            "T_n = 2n + 1",
+            "T_n = 3n − 1"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Why does each new triangle add only 2 matches instead of 3?",
+          "options": [
+            "It shares one side with its neighbour",
+            "The triangles shrink as the figure grows",
+            "Matches are counted in pairs",
+            "The first triangle used one match too few"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Hexagonal tables seat 6; 10; 14 as they are joined (T_n = 4n + 2). How many tables seat 50 guests?",
+          "options": [
+            "13",
+            "11",
+            "14",
+            "12"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "A plumber charges R60 call-out plus R40 per hour. The cost pattern for n hours is:",
+          "options": [
+            "40n + 60",
+            "60n + 40",
+            "100n",
+            "40n − 60"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Parcel Price That Climbs Step by Step",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Parcel prices are R14; R20; R26. The heartbeat (constant difference) is:",
+          "options": [
+            "R14",
+            "R6",
+            "R8",
+            "R4"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "If a four-kilogram parcel cost R35, what would that mean?",
+          "options": [
+            "The pattern continues perfectly",
+            "d would become negative",
+            "The first term changes",
+            "The gap would be 9, breaking the constant difference — no linear tools apply"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A phone battery drops the same percentage each hour. Its hourly-level pattern has:",
+          "options": [
+            "A negative constant difference — linear, falling",
+            "A positive constant difference",
+            "A changing difference",
+            "No difference at all"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "A Times Table with a Top-Up",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Prices 14; 20; 26 climb by 6. The top-up on the six times table is:",
+          "options": [
+            "6",
+            "14",
+            "8, since 14 − 6 = 8",
+            "20"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The price formula is 6n + 8. A twenty-kilogram box costs:",
+          "options": [
+            "R120",
+            "R128",
+            "R134",
+            "R126"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A customer paid R92. Solving 6n + 8 = 92 gives the mass in kilograms as:",
+          "options": [
+            "15",
+            "16",
+            "13",
+            "14"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The correct first test of a newly built formula is to:",
+          "options": [
+            "Substitute n = 0",
+            "Check it reproduces a term you already know",
+            "Round its coefficients to whole numbers",
+            "Solve it equal to 100"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Can a Parcel Cost Exactly Seventy-Five Rand?",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Could a parcel cost exactly R75? 6n + 8 = 75 gives n = 67/6. Verdict:",
+          "options": [
+            "No — n is not a natural number, so 75 is not a term",
+            "Yes — the eleventh parcel costs R75",
+            "Yes — round n up to 12",
+            "The equation was set up wrongly"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "R92 gave n = 14 exactly. That whole number means:",
+          "options": [
+            "92 is not a term",
+            "92 IS a term — the fourteenth one",
+            "d must equal 14",
+            "The pattern must be re-checked"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Step one of the closing checklist for any pattern question is:",
+          "options": [
+            "Write T_n = dn + c immediately",
+            "Substitute n = 60",
+            "Extract at least three terms and subtract every gap",
+            "Sketch the straight line"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A membership question ('is 75 a term?') is answered by:",
+          "options": [
+            "Checking whether 75 is divisible by d",
+            "Listing the first seventy-five terms",
+            "Substituting n = 75 into the formula",
+            "Solving for n, then judging whether n is a natural number, and stating the reason"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

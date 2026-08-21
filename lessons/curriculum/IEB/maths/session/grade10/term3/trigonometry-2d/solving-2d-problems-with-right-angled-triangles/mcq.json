@@ -1,0 +1,310 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Angles of Elevation and Depression",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The angle of elevation is measured between:",
+          "options": [
+            "the vertical and the line of sight",
+            "the horizontal through the eye and the line of sight tilted UP",
+            "the ground and the top of the object",
+            "any two lines of sight"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The most common depression error is:",
+          "options": [
+            "measuring the angle from the vertical cliff face instead of from the horizontal — depression always hangs below the horizontal",
+            "measuring it in radians",
+            "drawing the cliff too tall",
+            "placing the observer at the bottom"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The angle of depression from a clifftop to a car equals the angle of elevation from the car to the top because:",
+          "options": [
+            "both are less than 90 degrees",
+            "the cliff is vertical",
+            "the two horizontals are parallel and the line of sight is a transversal — alternate angles are equal",
+            "elevation and depression are the same word"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Three-Step Method — Sketch, Label, Choose the Ratio",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "A surveyor 35 m from a mast measures elevation 28° to the top. Labelling from the 28° angle:",
+          "options": [
+            "the mast is the hypotenuse and 35 m is opposite",
+            "the mast is adjacent and 35 m is opposite",
+            "both the mast and 35 m are adjacent",
+            "the mast (h) is opposite, 35 m is adjacent, and the line of sight is the hypotenuse"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "With adjacent known and opposite wanted, the correct equation is:",
+          "options": [
+            "tan 28° = h/35, so h = 35 × tan 28° ≈ 18,6 m",
+            "sin 28° = h/35",
+            "cos 28° = h/35",
+            "h = 35 ÷ tan 28°"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Before computing 35 × tan 28° you must:",
+          "options": [
+            "round tan 28° to one decimal",
+            "confirm the calculator is in degree mode — the little D on the screen",
+            "convert 35 m to centimetres",
+            "press inverse tan"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding an Angle and Finding a Distance",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "A 6 m ladder has its foot 1,8 m from the wall. The angle with the ground satisfies:",
+          "options": [
+            "tan θ = 1,8/6",
+            "sin θ = 1,8/6",
+            "cos θ = 1,8/6 = 0,3 — adjacent over hypotenuse",
+            "cos θ = 6/1,8"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "To recover the angle from cos θ = 0,3 you must:",
+          "options": [
+            "divide 0,3 by cos",
+            "use the inverse cosine: θ = cos⁻¹(0,3) ≈ 72,5°",
+            "multiply 0,3 by 90",
+            "look up 0,3 in a tangent table"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "From a 45 m cliff the depression to a car is 32°. Using the alternate angle at the car, the distance d satisfies:",
+          "options": [
+            "tan 32° = 45/d, so d = 45 ÷ tan 32° ≈ 72,0 m",
+            "tan 32° = d/45, so d = 45 × tan 32°",
+            "sin 32° = 45/d",
+            "d = 45 × 32"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "When the unknown sits in the BOTTOM of the ratio, the safe procedure is:",
+          "options": [
+            "always multiply by the tan",
+            "swap opposite and adjacent",
+            "guess the operation and check by eye",
+            "write the equation first, then rearrange — here you divide by the tan, not multiply"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Two Triangles, One Height",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "From P the elevation to a tower is 35°; 25 m closer at Q it is 55°. The key strategy is:",
+          "options": [
+            "average the two angles to 45°",
+            "both triangles share the same height — write h from each and equate the expressions",
+            "use only the larger angle",
+            "add the two distances"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "With d the distance from the NEARER point Q, the equation to solve is:",
+          "options": [
+            "d tan 35° = (d + 25) tan 55°",
+            "d tan 55° = d tan 35° + 25",
+            "d tan 55° = (d + 25) tan 35°",
+            "tan 55° + tan 35° = 25/d"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Solving gives d = 25 tan 35° ÷ (tan 55° − tan 35°) ≈ 24,05 m. The height is then:",
+          "options": [
+            "h = d × tan 55° ≈ 34,3 m",
+            "h = d × tan 35° ≈ 16,8 m",
+            "h = 25 × tan 55°",
+            "h = d + 25"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Looking Up, Looking Down — Everything Starts Level",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Every angle in this topic starts from:",
+          "options": [
+            "the vertical wall of the building",
+            "the imaginary level line through your eyes",
+            "the top of the object",
+            "your feet"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Watching a drone climb higher above the field, your angle of elevation:",
+          "options": [
+            "stays the same",
+            "becomes negative",
+            "grows — a bigger tilt up from level as the drone moves toward overhead",
+            "becomes an angle of depression"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "'The angle you look down at your friend equals the angle your friend looks up at you' works because:",
+          "options": [
+            "friends always stand at equal distances",
+            "both angles are 45 degrees",
+            "the grandstand is exactly vertical",
+            "your level line and the flat field are parallel, and one line of sight crosses both — alternate angles"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "One Triangle at a Time",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Standing inside the 28° angle, the three sides of the mast triangle are:",
+          "options": [
+            "opposite = the mast, adjacent = the 35 m of ground, hypotenuse = the line of sight",
+            "opposite = the ground, adjacent = the mast, hypotenuse = the line of sight",
+            "opposite = the line of sight, adjacent = the mast, hypotenuse = the ground",
+            "all three sides are equal"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The pair 'opposite and adjacent' selects which ratio in SOH CAH TOA?",
+          "options": [
+            "SOH — sine",
+            "TOA — tangent: tan 28° = mast ÷ 35",
+            "CAH — cosine",
+            "none; you need the hypotenuse first"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A 40 m zipline cable rises at 25°. The platform height uses:",
+          "options": [
+            "tan: 40 × tan 25°",
+            "cos: 40 × cos 25°",
+            "sine, because the pair is opposite and hypotenuse: 40 × sin 25° ≈ 16,9 m",
+            "40 ÷ sin 25°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Reading the Story Into a Sketch",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In any story sketch, the right angle is found:",
+          "options": [
+            "by measuring with a protractor",
+            "at the observer's eye",
+            "on the hypotenuse",
+            "where the vertical object meets the horizontal ground — the story builds it for you"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "'From the top of the cliff, the angle of depression is 32°.' The angle is sketched:",
+          "options": [
+            "at the top, hanging below a small level line drawn through the observer's eye",
+            "at the car, above the ground",
+            "inside the cliff face",
+            "at the base of the cliff"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Your calculation says a communications mast is 1 860 m tall. Habit four says:",
+          "options": [
+            "write it down — the calculator is never wrong",
+            "read the picture back: no mast is that tall, so check the mode and the ratio before anything else",
+            "round it to 1 900 m",
+            "convert it to kilometres for neatness"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the graph of y = 8/x fully — branches, asymptotes, domain, range — and explain why it can never have a y-intercept.",
+      "expected_answer": "The graph consists of two separate branches. One lies in the first quadrant, high against the y-axis on the left and sweeping down to flatten toward the x-axis on the right. The other is its point-reflection through the origin, in the third quadrant. The asymptotes are the vertical line x = 0 and the horizontal line y = 0; the curve approaches both without ever touching them. The domain is all real x except x = 0, because division by zero is undefined; the range is all real y except y = 0, because 8 divided by any number never equals zero. There is no y-intercept because finding one would require substituting x = 0, which the domain forbids — a learner who computes one has broken the restriction, not made a rounding slip. The graph also has two axes of symmetry, y = x and y = −x. If a were negative, as in y = −8/x, the branches would occupy the second and fourth quadrants instead."
+    },
+    {
+      "id": "cc2",
+      "question": "Sketch y = 8/x + 2 in words, giving asymptotes, intercepts, domain and range, and explain how the shift creates an x-intercept that y = 8/x did not have.",
+      "expected_answer": "The vertical asymptote stays at x = 0, since the shift is vertical and the division by x is untouched. The horizontal asymptote moves to y = 2, because q lifts the whole graph two units and carries the asymptote with it. Domain: all real x except 0. Range: all real y except 2. There is no y-intercept. The x-intercept: set y = 0, so 8/x = −2, giving 8 = −2x and x = −4, the point (−4; 0). The original y = 8/x had no x-intercept because 8/x never equals zero; lifting the graph two units drags the lower (left-hand) branch up through the x-axis, creating the crossing at x = −4. Useful points: (1; 10) and (−2; −2). The right branch rides high through (1; 10) and flattens just above y = 2; the left branch creeps just below y = 2 far to the left, crosses at (−4; 0), passes through (−2; −2), and plunges as x approaches zero from the left."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare y = 3ˣ with y = x², then sketch y = 3ˣ − 9 in words with all its features.",
+      "expected_answer": "In y = x² the variable is in the base: the graph is a parabola with a turning point at the origin, symmetry about the y-axis, and range y ≥ 0. In y = 3ˣ the variable is in the exponent: the graph is exponential, with no turning point and no symmetry, increasing continuously from left to right, passing through (0; 1) because any base to the power 0 is 1, and with range y > 0 strictly, since 3 to any power is positive but never zero — the x-axis is a horizontal asymptote approached only on the left. For y = 3ˣ − 9: the asymptote is y = −9; the y-intercept is 3⁰ − 9 = −8, the point (0; −8); the x-intercept comes from 3ˣ = 9, so x = 2, the point (2; 0); the domain is all real x and the range is y > −9. The curve enters from the far left just above the dashed line y = −9, rises through (0; −8), crosses the x-axis at (2; 0), and climbs steeply — at x = 3 it reaches 27 − 9 = 18."
+    }
+  ]
+}

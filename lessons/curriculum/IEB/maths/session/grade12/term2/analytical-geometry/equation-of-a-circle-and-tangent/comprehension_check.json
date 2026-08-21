@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Show how the circle equation (x − a)² + (y − b)² = r² comes from the distance formula, read the centre and radius off (x + 2)² + (y − 1)² = 25, and use substitution to decide whether the point (2; 4) lies on, inside or outside the circle.",
+      "expected_answer": "A circle is the set of all points at distance exactly r from the centre (a; b). The distance from a point (x; y) to (a; b) is the square root of (x − a)² + (y − b)²; setting this equal to r and squaring both sides gives the circle equation. For (x + 2)² + (y − 1)² = 25, ask what makes each bracket zero: x = −2 and y = 1, so the centre is (−2; 1) — the signs reverse because the equation stores the subtraction of the centre coordinates. The radius is the square root of 25, namely 5, not 25. Substituting (2; 4): (2 + 2)² + (4 − 1)² = 16 + 9 = 25, exactly r², so the point lies on the circle; a total under 25 would place it inside and a total over 25 outside."
+    },
+    {
+      "id": "cc2",
+      "question": "Complete the square to find the centre and radius of the circle x² + y² + 4x − 2y − 20 = 0, explaining why compensating constants appear on the right side and giving one way of checking the result.",
+      "expected_answer": "Group and carry the constant across: x² + 4x + y² − 2y = 20. Half of 4 is 2, squared is 4, so x² + 4x = (x + 2)² − 4; half of −2 is −1, squared is 1, so y² − 2y = (y − 1)² − 1. The equation becomes (x + 2)² + (y − 1)² = 20 + 4 + 1 = 25, giving centre (−2; 1) and radius 5. Each completed bracket introduces a constant the original expression never contained — the 4 and the 1 — and to keep the equation true these must be compensated on the other side; omitting one leaves the centre correct but silently changes the radius. Check by expanding the completed form and matching it against the original term by term, or by substituting a known point such as (2; 4) into both versions."
+    },
+    {
+      "id": "cc3",
+      "question": "State the relationship between a radius and a tangent at the point of tangency, then find the equation of the tangent to (x + 2)² + (y − 1)² = 25 at the point (2; 4), including the final verification.",
+      "expected_answer": "The radius drawn to the point of tangency is perpendicular to the tangent, so their gradients multiply to −1. Routine: first confirm (2; 4) lies on the circle — 16 + 9 = 25, it does. The radius gradient from the centre (−2; 1) to (2; 4) is (4 − 1)/(2 − (−2)) = 3/4. The tangent gradient is the negative reciprocal, −4/3. The tangent is the line through (2; 4) with that gradient: y − 4 = −4/3(x − 2), which simplifies to y = −4/3 x + 20/3. Verify by substituting the touching point: −4/3 × 2 = −8/3, and −8/3 + 20/3 = 12/3 = 4, matching the point's y coordinate, so the equation is confirmed."
+    }
+  ]
+}

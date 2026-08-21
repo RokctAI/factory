@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Constant Difference Test",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A sequence qualifies as arithmetic when:",
+          "options": [
+            "Each term is the previous term multiplied by a fixed number",
+            "The gap between consecutive terms is the same everywhere",
+            "All its terms are whole numbers",
+            "The gaps between terms grow by a constant amount"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The common difference of 31; 26; 21; ... is:",
+          "options": [
+            "−5",
+            "5",
+            "26",
+            "−26"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Why is 3; 6; 12 NOT an arithmetic sequence?",
+          "options": [
+            "Its terms are multiples of 3",
+            "The gaps 3 and 6 are not equal",
+            "It has too few terms to decide",
+            "It never decreases"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "In the sequence 4; 11; 18; 25, the values of a and d are:",
+          "options": [
+            "a = 7, d = 4",
+            "a = 4, d = 7",
+            "a = 4, d = 11",
+            "a = 25, d = 7"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The General Term T n Equals a Plus n Minus One, Times d",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The general term of 4; 11; 18; 25; ... is:",
+          "options": [
+            "T_n = 7n − 3",
+            "T_n = 4n + 7",
+            "T_n = 7n + 4",
+            "T_n = 4n − 7"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For T_n = 7n − 3, term 200 equals:",
+          "options": [
+            "1400",
+            "1397",
+            "1403",
+            "1390"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Is 150 a term of the sequence with T_n = 7n − 3?",
+          "options": [
+            "Yes, it is term 22",
+            "Yes, it is term 21",
+            "No, because n = 21,857... is not a natural number",
+            "No, because 150 is not divisible by 7"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "If T_4 = 19 and T_9 = 39, then d equals:",
+          "options": [
+            "5",
+            "20",
+            "4",
+            "3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Unknowns in the Terms and Arithmetic Means",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "If x + 3; 2x + 1; 4x − 5 is arithmetic, the equation to solve is:",
+          "options": [
+            "(2x + 1) − (x + 3) = (4x − 5) − (2x + 1)",
+            "(x + 3)(4x − 5) = (2x + 1)²",
+            "(x + 3) + (4x − 5) = 2x + 1",
+            "(x + 3) − (2x + 1) = (2x + 1) − (4x − 5)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Solving that equation gives x = 4, so the three terms are:",
+          "options": [
+            "6; 8; 10",
+            "7; 9; 11",
+            "7; 10; 13",
+            "5; 9; 13"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Insert four arithmetic means between 3 and 18. The means are:",
+          "options": [
+            "6; 9; 12; 15",
+            "5; 8; 11; 14",
+            "7; 10; 13; 16",
+            "4; 8; 12; 16"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Inserting k arithmetic means between two given numbers creates how many equal jumps?",
+          "options": [
+            "k − 1",
+            "k",
+            "2k",
+            "k + 1"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "From Word Problem to Term Number",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Row one holds 12 seedlings and each row holds 5 more than the last. Row nine holds:",
+          "options": [
+            "57 seedlings",
+            "52 seedlings",
+            "47 seedlings",
+            "60 seedlings"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "With the same planting pattern, the first row to hold 92 seedlings is row:",
+          "options": [
+            "16",
+            "18",
+            "17",
+            "15"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Why does row nine use eight increases and not nine?",
+          "options": [
+            "Because the first row starts the pattern without an increase",
+            "Because increases only apply to even rows",
+            "Because the formula rounds n down",
+            "Because d must first be divided by n"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "If solving T_n > 100 gives n = 18,6, the count first exceeds 100 at term:",
+          "options": [
+            "18",
+            "18,6",
+            "20",
+            "19"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Steps of the Same Size",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the staircase picture, the common difference d is:",
+          "options": [
+            "The rise of each step",
+            "The number of steps climbed",
+            "The height of the whole staircase",
+            "The bottom step"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The reliable way to test whether a sequence is arithmetic is to:",
+          "options": [
+            "Check that the terms keep growing",
+            "Check every gap between neighbouring terms is identical",
+            "Divide each term by the previous one",
+            "Check only the first two terms"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A sequence with d = −5 is:",
+          "options": [
+            "Increasing by 5 each term",
+            "Not a valid sequence",
+            "Decreasing by 5 each term",
+            "Constant"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The gap of a sequence is calculated as:",
+          "options": [
+            "Earlier term minus later term",
+            "First term minus last term",
+            "Later term divided by earlier term",
+            "Later term minus earlier term"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Jumping Straight to Term Two Hundred",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Scooter fare: 4 rand for kilometre one, 7 rand each kilometre after. The fare for n kilometres is:",
+          "options": [
+            "7n − 3",
+            "4n + 7",
+            "11n",
+            "7n + 4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In T_n = a + (n − 1)d, the n − 1 counts:",
+          "options": [
+            "The number of terms in the whole sequence",
+            "How many times d has been added by position n",
+            "The value of the last term",
+            "The position of the middle term"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "With 88 rand and fare T_n = 7n − 3, you can ride exactly:",
+          "options": [
+            "12 kilometres",
+            "14 kilometres",
+            "13 kilometres",
+            "11 kilometres"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Solving 7n − 3 = 150 gives n = 21,857... This means:",
+          "options": [
+            "150 is term 22",
+            "150 is never a value of the sequence",
+            "150 is term 21",
+            "The sequence is not arithmetic"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Missing Rung and the Fair Middle",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "For three consecutive terms of an arithmetic sequence, the governing rule is:",
+          "options": [
+            "Middle squared equals first times last",
+            "First plus last equals middle",
+            "Middle minus first equals last minus middle",
+            "Last minus first equals the middle term"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "After solving for x in a hidden-unknown question you should always:",
+          "options": [
+            "Substitute back and confirm the gaps are equal",
+            "Round x to the nearest whole number",
+            "Multiply the three terms together",
+            "Divide the terms by x"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Planting 4 fence posts evenly between 2 corner posts creates how many equal spaces?",
+          "options": [
+            "4",
+            "6",
+            "5",
+            "3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The single arithmetic mean between 6 and 20 is:",
+          "options": [
+            "12",
+            "13",
+            "14",
+            "11"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "One Dimension Stretched — the Volume Tracks It",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A box 5 × 2 × 3 has volume 30. Doubling only the breadth gives a volume of:",
+          "options": [
+            "60",
+            "120",
+            "240",
+            "90"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Why does doubling one dimension exactly double the volume?",
+          "options": [
+            "Because volume always doubles under any change",
+            "That dimension appears once in the product, so the whole product doubles",
+            "Because the box has six faces",
+            "It doesn't — volume quadruples"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "After doubling one dimension, the surface area:",
+          "options": [
+            "Also exactly doubles",
+            "Multiplies by four",
+            "Scales by no clean factor — some faces stretched, some did not",
+            "Stays the same"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "For a single-dimension change, the safe method for surface area is to:",
+          "options": [
+            "Multiply the old surface area by k",
+            "Multiply the old surface area by k squared",
+            "Halve the old surface area",
+            "Recompute it honestly from the new dimensions"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Why the Radius Pays Double",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "A cylinder has V = 240π (r = 4, h = 15). Doubling only the height gives:",
+          "options": [
+            "480π",
+            "960π",
+            "240π",
+            "720π"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Doubling only the radius of that cylinder gives:",
+          "options": [
+            "480π — volume doubles",
+            "960π — volume quadruples, because the radius is squared",
+            "1200π",
+            "2160π"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "If a cylinder's radius is multiplied by 3 (height fixed), the volume multiplies by:",
+          "options": [
+            "3",
+            "6",
+            "9",
+            "27"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The governing principle is that k acts on the volume:",
+          "options": [
+            "Once for every time the scaled dimension appears in the formula",
+            "Three times, always",
+            "Twice, always",
+            "Only when k is a whole number"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Enlarging Everything — the k Squared and k Cubed Laws",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Every dimension of the 5 × 2 × 3 box is doubled. The new volume is:",
+          "options": [
+            "60",
+            "120",
+            "180",
+            "240 — eight times the original"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "When every dimension is multiplied by k, surface area multiplies by:",
+          "options": [
+            "k",
+            "k squared",
+            "k cubed",
+            "2k"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The complete scaling pattern is:",
+          "options": [
+            "Lengths k, areas 2k, volumes 3k",
+            "Lengths k, areas k², volumes k³",
+            "Everything scales by k",
+            "Lengths k³, areas k², volumes k"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "All sides grow by 20% (k = 1,2). The volume grows by:",
+          "options": [
+            "60%",
+            "20%",
+            "72,8%, since 1,2³ = 1,728",
+            "44%"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Backwards From the Multiplier to k",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "A container's volume becomes 64 times bigger. Each length was multiplied by:",
+          "options": [
+            "8",
+            "4 — the cube root of 64",
+            "64",
+            "16"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A balloon's surface area becomes 9 times bigger. Its volume becomes:",
+          "options": [
+            "9 times bigger",
+            "3 times bigger",
+            "81 times bigger",
+            "27 times bigger — k = 3, so k³ = 27"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Given a change in AREA, the route to k is:",
+          "options": [
+            "A square root",
+            "A cube root",
+            "No root — divide by two",
+            "Squaring the multiplier"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The question says 'enlarged' but your k works out to 0,5. That means:",
+          "options": [
+            "The answer is fine — k can be anything",
+            "You computed a shrinking; revisit the division",
+            "You should cube the 0,5",
+            "The object doubled"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Eight Matchboxes Build the Double Matchbox",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Building a matchbox double-sized in every direction requires how many original matchboxes?",
+          "options": [
+            "2",
+            "4",
+            "8 — two along each of three directions",
+            "6"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Making the box only twice as wide (nothing else) multiplies the volume by:",
+          "options": [
+            "2",
+            "4",
+            "8",
+            "3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Tripling every direction requires how many original boxes?",
+          "options": [
+            "9",
+            "3",
+            "18",
+            "27 — three by three by three"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Wrapping Grows Slower Than Juice",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Doubling a carton in every direction: juice inside and wrapping outside multiply by:",
+          "options": [
+            "8 and 4",
+            "4 and 8",
+            "2 and 4",
+            "8 and 8"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Why does a flat face collect only two copies of k?",
+          "options": [
+            "Faces shrink during enlargement",
+            "A face has only two directions of its own — length and width",
+            "Faces are counted twice in the net",
+            "Because k is squared by convention"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Triple the carton's size: the juice and wrapping multipliers are:",
+          "options": [
+            "9 and 27",
+            "6 and 9",
+            "27 and 9",
+            "27 and 18"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Every side grows by 20%. The wrapping paper needed grows by:",
+          "options": [
+            "44%, since 1,2² = 1,44",
+            "40%",
+            "20%",
+            "72,8%"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Reverse Questions Without Panic",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "A tank's volume became 125 times bigger. Each side was multiplied by:",
+          "options": [
+            "25",
+            "5 — the cube root of 125",
+            "125",
+            "15"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "That same tank's outside coating multiplies by:",
+          "options": [
+            "125",
+            "5",
+            "50",
+            "25 — k squared with k = 5"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The essential middle step of every reverse question is:",
+          "options": [
+            "Extracting k from the given change before predicting anything else",
+            "Converting to litres",
+            "Doubling the given multiplier",
+            "Drawing the net"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "For an enlargement with k above one, which multiplier must be the larger?",
+          "options": [
+            "The area multiplier",
+            "They are equal",
+            "The volume multiplier — k cubed beats k squared",
+            "It depends on the solid"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

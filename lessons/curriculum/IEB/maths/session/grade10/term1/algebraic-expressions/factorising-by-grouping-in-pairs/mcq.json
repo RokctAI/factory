@@ -1,0 +1,346 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Why Four Terms Demand a Different Tool",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "In factorisation, what does a count of FOUR terms signal?",
+          "options": [
+            "The difference of squares",
+            "Factorising by grouping in pairs",
+            "The trinomial product-and-sum method",
+            "The expression cannot be factorised"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Why is there no overall common factor in 3mp + 3mq − np − nq?",
+          "options": [
+            "Because the expression has too many terms",
+            "Because 3 divides every term",
+            "The first two terms carry m and no n, the last two carry n and no m, and no number beyond 1 divides all four",
+            "Because p and q appear in every term"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "What LOCAL structure makes grouping possible in 3mp + 3mq − np − nq?",
+          "options": [
+            "Each pair of terms shares its own common factor even though all four share nothing",
+            "All four terms are perfect squares",
+            "The terms alternate in sign",
+            "The expression is secretly a trinomial"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Factoring Each Pair — and the Negative Factor Trap",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Factoring 3m out of 3mp + 3mq leaves:",
+          "options": [
+            "(3p + 3q)",
+            "(mp + mq)",
+            "(p + q)",
+            "(3m + pq)"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Factoring POSITIVE n out of −np − nq creates a problem because:",
+          "options": [
+            "n cannot divide into np",
+            "The result n(−p − q) has a bracket that does not match the first pair's (p + q)",
+            "The result equals zero",
+            "Positive factors are never allowed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The rule for a pair that BEGINS with a minus sign is:",
+          "options": [
+            "Erase the minus signs inside the bracket",
+            "Swap the two terms first",
+            "Skip that pair and factor the other one twice",
+            "Factor out a NEGATIVE common factor so the signs inside flip into agreement"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Dividing −np by −n gives:",
+          "options": [
+            "+p, because a minus divided by a minus is a plus",
+            "−p",
+            "−np²",
+            "+n"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Common Bracket — Finishing the Factorisation",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "3m(p + q) − n(p + q) factorises fully to:",
+          "options": [
+            "(p + q)(3m − n)",
+            "(3m − n)(3m + n)",
+            "(p + q)(p − q)",
+            "3m − n(p + q)"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "What does a MISMATCH between the two brackets tell you?",
+          "options": [
+            "The expression is prime",
+            "Something upstream is wrong — usually a positive factor where a negative belonged, or a pairing that needs rearranging",
+            "You should multiply the brackets together anyway",
+            "The answer is the mismatched brackets side by side"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The four terms 3mp − nq − np + 3mq refuse to pair as given. The correct fix is:",
+          "options": [
+            "Declare the expression unfactorisable",
+            "Change the minus signs to plus signs",
+            "Rearrange the terms so kin sits with kin: 3mp + 3mq − np − nq, then group as usual",
+            "Divide every term by p"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "How do you PROVE that (p + q)(3m − n) is the correct factorisation?",
+          "options": [
+            "Substitute p = q = 0 only",
+            "Compare it with the difference of squares",
+            "Check that the brackets look symmetrical",
+            "Expand it and confirm all four original terms return with their correct signs"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "The Full Method, the Checks, and Where Grouping Hides",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The five-step grouping method opens with:",
+          "options": [
+            "Checking for an overall common factor",
+            "Splitting the middle term",
+            "Expanding all brackets",
+            "Equating the expression to zero"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "In 2cd + 6c − d − 3, the second pair −d − 3 is factored as:",
+          "options": [
+            "d(−1 − 3)",
+            "−1(d + 3), using minus one as the negative common factor",
+            "+1(d − 3)",
+            "−d(1 + 3)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Stopping at 3m(p + q) − n(p + q) loses marks because:",
+          "options": [
+            "The brackets should have been expanded",
+            "The expression should first have been divided by p + q",
+            "It is only a rest stop — the shared bracket must still be factored out to finish",
+            "The minus sign should be removed"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Where does grouping reappear inside OTHER techniques?",
+          "options": [
+            "It finishes the trinomial method after the middle term is split, and completes cubic factorisations later on",
+            "It never reappears — it is a standalone trick",
+            "Only in geometry problems",
+            "Only when an expression has exactly two terms"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Sorting the Shopping Into Two Bags",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The 'two bags' in the shopping picture stand for:",
+          "options": [
+            "The two pairs of terms, each sharing its own common factor",
+            "The two sides of an equation",
+            "The numerator and denominator",
+            "Positive and negative numbers"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "After lifting 3m out of the first bag, the bracket holds (p + q) because:",
+          "options": [
+            "p and q are the largest terms",
+            "brackets always hold the smallest letters",
+            "A bracket carries the LEFTOVERS — the parts the two terms did not share",
+            "p and q were shared by both terms"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Which term count calls for which tool?",
+          "options": [
+            "Two terms: grouping; three: identities; four: trinomial method",
+            "Two terms: squares or cubes identities; three: product-and-sum hunt; four: grouping in pairs",
+            "The count never matters",
+            "Four terms: difference of squares"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Minus That Must Come Out",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Lifting positive n out of −np − nq gives n(−p − q). Why is this a dead end?",
+          "options": [
+            "The bracket (−p − q) is not a twin of the first bag's (p + q), and the next move needs identical brackets",
+            "Because n is too small a factor",
+            "Because brackets may never contain minus signs",
+            "It is not a dead end — the answer is finished"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Lifting NEGATIVE n out of −np − nq gives:",
+          "options": [
+            "−n(−p − q)",
+            "n(p + q)",
+            "−n(p + q), because dividing by a negative flips the signs inside",
+            "−n(p − q)"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Why may you NOT simply erase the minus signs inside a bracket to force a match?",
+          "options": [
+            "Because erasing changes the value of the expression — the insides may only change if the factor outside changes to pay for it",
+            "Because examiners prefer minus signs",
+            "You may — it is a standard shortcut",
+            "Because brackets are permanent once written"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Same Bracket in Both Hands",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Nicknaming the bracket (p + q) as B turns 3mB − nB into:",
+          "options": [
+            "B(3m − n) — the bracket comes out like any other factor",
+            "3mn − B",
+            "B²(3m − n)",
+            "(3m − n) with B discarded"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The matching bracket acts as a free error alarm because:",
+          "options": [
+            "Brackets always match in correct maths",
+            "Twin brackets confirm the sorting and signs were right; different brackets signal an upstream error to fix, never to force",
+            "It counts the number of terms for you",
+            "It removes the need for any checking"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "A four-term expression whose given order refuses to pair is usually:",
+          "options": [
+            "Prime",
+            "A trick question with no answer",
+            "A seating problem — reshuffle so family sits with family, then group as normal",
+            "Solvable only by the quadratic formula"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Expanding (p + q)(3m − n) returns:",
+          "options": [
+            "3mp + 3mq − np − nq — all four original terms with their signs",
+            "3mp − 3mq + np − nq",
+            "3m²p²q²",
+            "p + q + 3m − n"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

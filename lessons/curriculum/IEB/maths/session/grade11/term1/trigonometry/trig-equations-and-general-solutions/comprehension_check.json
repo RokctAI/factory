@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve 5 sin x + 2 = 0 in general, explaining why the reference angle is taken from the positive value and how the quadrants are chosen.",
+      "expected_answer": "Isolate the ratio: sin x = −0,4. The reference angle is the acute angle whose sine has the SIZE 0,4, so take inverse sine of +0,4, giving 23,58° — the calculator's job is only to measure size; feeding it the minus would place the angle as well, and the quadrant work would then double-count the sign. Sine is negative in the third and fourth quadrants, so the first-turn solutions are 180° + 23,58° = 203,58° and 360° − 23,58° = 336,42°. General solution: x = 203,58° + k·360° or x = 336,42° + k·360°, with k any integer, because sine repeats every full turn in both directions."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve √3 sin x = cos x in general, and justify why the division you perform loses no solutions.",
+      "expected_answer": "Divide both sides by cos x: √3 tan x = 1, so tan x = 1/√3, whose reference angle is 30°, and since the value is positive, x = 30° + k·180°, k an integer — tangent's period is 180°, since a half-turn flips both y and x and leaves the fraction unchanged. The division must be defended: dividing by cos x is only legal if cos x cannot be zero at a solution. If cos x were zero, then sin x would be ±1, and the equation would read ±√3 = 0, which is impossible; so no solution has cos x = 0, the division is safe, and no answers were lost. In general, an equation is never divided by sin x, cos x or any expression in x unless it is first shown non-zero — otherwise factorise instead."
+    },
+    {
+      "id": "cc3",
+      "question": "Solve 2cos²x + cos x − 1 = 0 for x in [0°; 360°], showing the substitution, and state the two disciplines that guard this question type.",
+      "expected_answer": "Let c = cos x. Then 2c² + c − 1 = 0 factorises to (2c − 1)(c + 1) = 0, so c = 1/2 or c = −1. Each value is its own equation. cos x = 1/2: reference angle 60°, cosine positive in the first and fourth quadrants, giving 60° and 300°. cos x = −1: a boundary value at the far west point of the wheel, giving the single answer 180° — the two usual quadrant partners merge there. Solutions on the interval: x = 60°, 180° or 300°. The two disciplines: first, if the substitution offers a value outside [−1; 1] for sine or cosine, reject it in writing, since those functions never leave that range, and the written rejection earns its mark; second, boundary values (0, 1, −1) should be read off a quick sketch rather than the quadrant machine, because they sit exactly where the quadrants meet."
+    }
+  ]
+}

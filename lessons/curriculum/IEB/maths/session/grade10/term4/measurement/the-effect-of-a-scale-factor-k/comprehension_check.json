@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the complete scaling pattern for lengths, areas and volumes when every dimension is multiplied by k, and explain where the powers come from.",
+      "expected_answer": "Lengths scale by k, areas by k squared, volumes by k cubed. Each dimension of space contributes one copy of k: a length has one dimension, a flat face has two (length and width), and a solid has three. The matchbox picture proves the cube: building a double-size box needs 2 × 2 × 2 = 8 originals, and a triple-size box needs 27."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why doubling a cylinder's radius quadruples its volume while doubling its height only doubles it, and state the general principle.",
+      "expected_answer": "In V = πr²h the height appears once, so k on the height puts one factor of k on the volume; the radius is squared, appearing twice, so k on the radius multiplies the volume by k squared — doubling the radius gives 4 times the volume (240π to 960π in the worked tin). General principle: k acts on the volume once for every appearance of the scaled dimension in the formula."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the three-step routine for a reverse question, using a tank whose volume grew 125 times, and give the sense checks.",
+      "expected_answer": "Step one: name the changed quantity — volume, so the multiplier is k cubed. Step two: undo the power — k = cube root of 125 = 5. Step three: use k for whatever else is asked — surface area multiplies by k² = 25. Always pass through k; never jump from a volume change straight to an area change. Sense checks: k below one means shrinking, so it must match the question's wording, and for an enlargement the volume multiplier must exceed the area multiplier."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the one-sentence framework for all Grade 10 functions and explain what a and q each do, including the special role of q on hyperbolas, exponentials and trig graphs.",
+      "expected_answer": "Every function is a basic shape, stretched or flipped by a, then slid up or down by q. The a controls steepness and amplitude, and a negative a reflects the graph (bowl to dome, wave opening downward). The q lifts or lowers the whole picture without changing shape; on hyperbolas and exponentials it fixes the horizontal asymptote at y = q, and on trig graphs it sets the midline, with maximum = midline + amplitude and minimum = midline − amplitude."
+    },
+    {
+      "id": "cc2",
+      "question": "Walk through finding the intersection of y = x² − 4 and y = x + 2, and explain what the answer lets you read off about which graph is on top.",
+      "expected_answer": "Set the formulas equal: x² − 4 = x + 2, sweep to one side to get x² − x − 6 = 0, factorise (x − 3)(x + 2) = 0, so x = 3 or x = −2; substituting into the line gives the points (3; 5) and (−2; 0). Between the crossings, −2 < x < 3, the parabola lies below the line; outside them it lies above. Intersection questions are quadratic equations in disguise."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the asymptote discipline for sketching y = 4/x − 2 and y = 3^x − 1, including domains and ranges.",
+      "expected_answer": "Rule the asymptotes first as dotted lines, then hang the curve on them, never crossing. The hyperbola y = 4/x − 2 has x = 0 and y = −2, x-intercept at x = 2, domain all x except 0, range all y except −2. The exponential y = 3^x − 1 has one asymptote y = −1, passes through the origin since 3⁰ − 1 = 0, and has range y strictly greater than −1 because the power never reaches zero."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Using the x, y, r definitions of the ratios, derive both fundamental identities, and state for which angles the quotient identity fails.",
+      "expected_answer": "Place θ at the origin with a point (x; y) on its arm at distance r > 0, so sin θ = y/r, cos θ = x/r and tan θ = y/x. Quotient identity: sin θ ÷ cos θ = (y/r) ÷ (x/r) = y/x = tan θ, so tan θ = sin θ / cos θ. Square identity: the point, the origin and the foot of the perpendicular form a right-angled triangle, so x² + y² = r²; dividing every term by r² gives (x/r)² + (y/r)² = 1, that is cos²θ + sin²θ = 1, true for every angle. The quotient identity fails wherever its denominator cos θ = 0, namely at 90° and 270° and all angles differing from these by full turns of 360°."
+    },
+    {
+      "id": "cc2",
+      "question": "Given cos θ = −5/13 with 180° < θ < 270°, find sin θ and tan θ without a calculator, explaining how the quadrant fixes each sign.",
+      "expected_answer": "The interval places θ in the third quadrant, so draw the arm there. Since cos θ = x/r, take x = −5 and r = 13 (r is always positive; x is negative because the third quadrant lies west of the origin). Pythagoras: y² = 13² − 5² = 169 − 25 = 144, so y = 12 in size — and in the third quadrant y points south, so y = −12. Then sin θ = y/r = −12/13 (negative, as sine must be in the third quadrant) and tan θ = y/x = −12/−5 = 12/5, positive, which matches the CAST rule: tangent is the only positive ratio in the third quadrant."
+    },
+    {
+      "id": "cc3",
+      "question": "Prove that 1/(1 − cos x) + 1/(1 + cos x) = 2/sin²x, and state the values of x for which the identity holds, with reasons.",
+      "expected_answer": "Left side over the common denominator (1 − cos x)(1 + cos x): the numerators add to (1 + cos x) + (1 − cos x) = 2, and the denominator is a difference of squares, 1 − cos²x, which the square identity rewrites as sin²x. So the left side equals 2/sin²x, which is the right side. Validity: every denominator must be non-zero. 1 − cos x = 0 at multiples of 360°; 1 + cos x = 0 at 180° plus multiples of 360°; sin²x = 0 at every multiple of 180° — and this last condition contains the other two. Therefore the identity holds for all x except multiples of 180°, where the expressions are undefined."
+    }
+  ]
+}

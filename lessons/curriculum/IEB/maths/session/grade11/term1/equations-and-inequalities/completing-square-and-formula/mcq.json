@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Building a Perfect Square from an Incomplete One",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The number that completes the square for x² + 8x is:",
+          "options": [
+            "4",
+            "8",
+            "16",
+            "64"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Completing the square on x² − 12x gives:",
+          "options": [
+            "(x − 12)²",
+            "(x − 6)²",
+            "(x + 6)²",
+            "(x − 36)²"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Solving x² + 8x + 3 = 0 by completing the square gives:",
+          "options": [
+            "x = −4 ± √13",
+            "x = 4 ± √13",
+            "x = −4 ± √19",
+            "x = −4 + √13 only"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "x² + 8x + 3 written in the form (x + p)² + q is:",
+          "options": [
+            "(x + 4)² + 13",
+            "(x + 8)² − 61",
+            "(x + 4)² − 13",
+            "(x + 4)² + 19"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Completing the Square when a Is Not One",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "To solve 3x² − 12x + 2 = 0 by completing the square, the first step is to:",
+          "options": [
+            "Subtract 12x from both sides",
+            "Divide every term by x",
+            "Take the square root of both sides",
+            "Divide every term by 3"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Solving 3x² − 12x + 2 = 0 by completing the square gives:",
+          "options": [
+            "x = 2 ± (√30)/3",
+            "x = 2 ± √30",
+            "x = −2 ± (√30)/3",
+            "x = 6 ± (√30)/3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Written in the form a(x + p)² + q, the expression 3x² − 12x + 2 becomes:",
+          "options": [
+            "3(x − 2)² + 2",
+            "3(x − 2)² − 10",
+            "(x − 2)² − 10",
+            "3(x − 2)² − 2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The classic error when factoring the leading coefficient out of the first two terms is:",
+          "options": [
+            "Halving the coefficient of x twice",
+            "Moving the constant to the wrong side",
+            "Failing to multiply the leading coefficient by the constant produced inside the bracket",
+            "Dividing the constant term by the leading coefficient as well"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Deriving the Quadratic Formula",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The quadratic formula is obtained by:",
+          "options": [
+            "Completing the square on ax² + bx + c = 0",
+            "Factorising the general quadratic",
+            "Substituting x = 1 into ax² + bx + c",
+            "Trial and error with whole numbers"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "After dividing by a and moving the constant across, the quantity added to both sides is:",
+          "options": [
+            "b/(2a)",
+            "b²/(2a)",
+            "b² − 4ac",
+            "b²/(4a²)"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The quadratic formula states that:",
+          "options": [
+            "x = b ± √(b² − 4ac), all over 2a",
+            "x = −b ± √(b² − 4ac), all over 2a",
+            "x = −b ± √(b² + 4ac), all over 2a",
+            "x = −b ± √(b² − 4ac)/2a, with 2a dividing only the root"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "In the derivation, b²/(4a²) − c/a becomes (b² − 4ac)/(4a²) because:",
+          "options": [
+            "The discriminant is defined that way",
+            "c/a is always negative",
+            "Both fractions are placed over the common denominator 4a²",
+            "√(4a²) equals 2a"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Using the Formula — Exact Values and Rounding",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "For 2x² − 9x + 3 = 0, the values of a, b and c are:",
+          "options": [
+            "a = 2, b = 9, c = 3",
+            "a = 2, b = −9, c = −3",
+            "a = −2, b = 9, c = 3",
+            "a = 2, b = −9, c = 3"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The exact solution of 2x² − 9x + 3 = 0 is:",
+          "options": [
+            "x = (9 ± √57)/4",
+            "x = (−9 ± √57)/4",
+            "x = (9 ± √57)/2",
+            "x = (9 ± √105)/4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Correct to two decimal places, those solutions are:",
+          "options": [
+            "4,13 and 0,38",
+            "4,14 and 0,36",
+            "4,14 and 0,38",
+            "4,13 and 0,36"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "For −3x² + 7x + 6 = 0 the discriminant works out to 121, which tells you that:",
+          "options": [
+            "There are no real solutions",
+            "The roots are irrational",
+            "The quadratic would have factorised, so factorising would have been quicker",
+            "The formula cannot be used"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Paving the Corner of the Yard",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the paving picture, the empty corner for x² + 8x measures:",
+          "options": [
+            "8 by 8",
+            "x by 4",
+            "x by x",
+            "4 by 4"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Adding sixteen pavers to one side of an equation means you must:",
+          "options": [
+            "Add sixteen to the other side too, so the equation stays true",
+            "Subtract sixteen from the other side",
+            "Halve the other side",
+            "Leave the other side alone"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "(x + 4)² = 13 leads to:",
+          "options": [
+            "x + 4 = 13, so x = 9",
+            "x + 4 = ±√13, so x = −4 ± √13",
+            "x + 4 = √13 only",
+            "x = 4 ± √13"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "If the equation begins with 3x² instead of x², the paving picture works again once you:",
+          "options": [
+            "Triple the corner tile",
+            "Ignore the 3",
+            "Divide every term by 3 first",
+            "Take the square root of 3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Recipe Someone Already Cooked",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The quadratic formula is best described as:",
+          "options": [
+            "A shortcut that only works for factorisable quadratics",
+            "A rule with no connection to completing the square",
+            "A way of estimating the roots",
+            "Completing the square done once, in general, so it never has to be repeated"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "'All over 2a' means that 2a divides:",
+          "options": [
+            "Only the −b",
+            "The entire numerator, the −b included",
+            "Only the square root",
+            "The whole equation before you begin"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "When b = −9, the values of −b and b² are:",
+          "options": [
+            "−b = 9 and b² = 81",
+            "−b = −9 and b² = 81",
+            "−b = 9 and b² = −81",
+            "−b = −9 and b² = −81"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A perfect square appearing under the root sign is a hint that:",
+          "options": [
+            "The roots must be irrational",
+            "There are no real roots",
+            "The quadratic could have been factorised",
+            "An arithmetic error was made"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Exact or Rounded — Say Which",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'Leave your answer in simplest surd form' means:",
+          "options": [
+            "Give the answer correct to two decimal places",
+            "Give only the positive root",
+            "Convert the answer to a percentage",
+            "Keep the root sign in the answer — do not decimalise it on the calculator"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Rounding √57 to 7,5 before dividing by 4 produces:",
+          "options": [
+            "4,13 instead of 4,14 — a wrong second decimal and a lost mark",
+            "Exactly the same answer",
+            "A more accurate answer",
+            "An exact answer"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Which method should you choose when a question asks for the turning point of a parabola?",
+          "options": [
+            "The quadratic formula",
+            "Completing the square, since it delivers the turning point directly",
+            "Factorising",
+            "Substituting x = 0"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Rounding is compared to laminating a page because:",
+          "options": [
+            "It makes the answer exact",
+            "It can safely be done at any stage",
+            "It protects the answer from markers",
+            "It must be done last, since nothing can be corrected afterwards"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

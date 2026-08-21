@@ -1,0 +1,358 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Three Ratios and SOH CAH TOA",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Sine of theta is defined as:",
+          "options": [
+            "Opposite over hypotenuse",
+            "Adjacent over hypotenuse",
+            "Opposite over adjacent",
+            "Hypotenuse over opposite"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "Which side can be identified WITHOUT choosing an angle first?",
+          "options": [
+            "The opposite",
+            "The hypotenuse — it always faces the right angle",
+            "The adjacent",
+            "None of them"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Scaling every side of a triangle by 10 leaves sine of its angles unchanged because:",
+          "options": [
+            "Sine ignores lengths entirely",
+            "Calculators round away the difference",
+            "7/25 and 70/250 are the same number — similar triangles keep every ratio fixed",
+            "The angle grows with the triangle"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Why must you re-label opposite and adjacent when you switch to the other acute angle?",
+          "options": [
+            "Because the hypotenuse moves",
+            "Because the triangle rotates",
+            "You never need to re-label",
+            "Because the two labels belong to the ANGLE and trade places when the angle changes"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Special Angles — Values Without a Calculator",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Halving an equilateral triangle of side 2 gives a height of:",
+          "options": [
+            "√3, from 2² − 1² = 3 by Pythagoras",
+            "2",
+            "1",
+            "√2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "From the half-triangle, tan 60° equals:",
+          "options": [
+            "1/√3",
+            "√3 — opposite √3 over adjacent 1",
+            "1/2",
+            "√3/2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "sin 45° × cos 45° evaluates exactly to:",
+          "options": [
+            "√2",
+            "1",
+            "1/2, since (1/√2)(1/√2) = 1/2",
+            "0,707"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The full expression sin 45° cos 45° + tan 60° tan 30° equals:",
+          "options": [
+            "1",
+            "2",
+            "1/2",
+            "3/2 — one half plus one, left as an exact fraction"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding the Angle — the Inverse Move",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Hypotenuse 25, opposite 7. The equation for the angle x is:",
+          "options": [
+            "sin x = 7/25",
+            "cos x = 7/25",
+            "tan x = 7/25",
+            "sin x = 25/7"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "To recover x from sin x = 7/25, you use:",
+          "options": [
+            "The sine of both sides again",
+            "Inverse sine (shift then sin): x = sin⁻¹(7/25) = 16,3°",
+            "Division: x = 7 ÷ 25",
+            "Pythagoras"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The first sense check on 16,3° is:",
+          "options": [
+            "16,3 is less than 25, so it fits",
+            "16,3 is an even number of minutes",
+            "7/25 = 0,28 is under a half, and sin 30° is exactly a half — so the angle must sit below 30°",
+            "All angles are below 30°"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The second check uses the 7-24-25 triangle:",
+          "options": [
+            "7 + 24 = 31, close to 25",
+            "24/25 rounds to 1",
+            "The triangle has three acute angles",
+            "The other angle is sin⁻¹(24/25) = 73,7°, and 16,3° + 73,7° = 90° — the triangle closes"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Choosing the Right Ratio — and the Complete Method",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The choosing routine's four steps, in order, are:",
+          "options": [
+            "Mark the angle; label the sides relative to it; circle the two sides that matter; pick the ratio whose letters match",
+            "Pick the ratio; mark the angle; label; circle",
+            "Circle two sides; pick any ratio; check with Pythagoras; label",
+            "Label the sides; mark the angle; compute; verify"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Given opposite 7 and adjacent 24, the angle comes from:",
+          "options": [
+            "sin⁻¹(7/24)",
+            "tan⁻¹(7/24) — TOA, returning the same 16,3°",
+            "cos⁻¹(7/24)",
+            "tan(7/24)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A calculator returning sin 30° ≠ 0,5 signals:",
+          "options": [
+            "A broken calculator that must be replaced",
+            "That 30° is a special angle with no sine",
+            "Wrong mode — likely radians; find the D on the display before trusting anything",
+            "A flat battery"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Plain function or inverse — what decides?",
+          "options": [
+            "Whichever gives the nicer number",
+            "Always the inverse for accuracy",
+            "The size of the triangle",
+            "The direction of the question: ratio or side wanted, plain function; angle wanted, inverse"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Where You Stand Decides the Names",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the playground slide, the hypotenuse is:",
+          "options": [
+            "The slide itself — the slant facing the square corner, and its name never changes",
+            "The ladder",
+            "The ground",
+            "Whichever side is longest from where you sit"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Sitting at the BOTTOM angle, the ladder is the opposite. Climbing to the TOP angle makes the ladder:",
+          "options": [
+            "Still the opposite",
+            "The adjacent — what faced you now runs beside you",
+            "The hypotenuse",
+            "Unlabelled"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The airtime-per-rand picture explains that:",
+          "options": [
+            "Bigger vouchers load more total airtime, so bigger triangles have bigger sines",
+            "Trigonometry only works for money",
+            "The RATE stays fixed regardless of size — just as a ratio stays fixed for a given angle in any size triangle",
+            "Vouchers expire like angles"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Two Triangles You Can Rebuild Anywhere",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The folded square serviette of side 1 delivers:",
+          "options": [
+            "A diagonal of √2 and two 45° corners — so sin 45° = cos 45° = 1/√2 and tan 45° = 1",
+            "A diagonal of 2 and two 60° corners",
+            "A height of √3",
+            "Three equal angles"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "tan 60° × tan 30° equals exactly:",
+          "options": [
+            "√3",
+            "1, since √3 × (1/√3) = 1",
+            "3",
+            "1/3"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Why must 3/2 NOT be converted to 1,5 in a no-calculator question?",
+          "options": [
+            "Because 1,5 is a different number",
+            "Because decimals are always wrong in maths",
+            "The question tests EXACT values — the exact fraction is the finished answer, and decimalising discards the tested skill",
+            "Because fractions are quicker to write"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Forward Gear, Reverse Gear",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Forward gear and reverse gear stand for:",
+          "options": [
+            "Sine and cosine",
+            "Angle in, ratio out (sine); ratio in, angle out (inverse sine) — one machine, two directions",
+            "Multiplying and adding",
+            "Degrees and radians"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The 25 m slide with its top 7 m up makes an angle with the ground of:",
+          "options": [
+            "sin⁻¹(7/25) = 16,3°",
+            "cos⁻¹(7/25)",
+            "tan⁻¹(7/25)",
+            "25 ÷ 7 degrees"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The two-check defence of 16,3° is:",
+          "options": [
+            "It is an acute angle, and acute angles are always right",
+            "The calculator displayed it twice",
+            "0,28 is under a half so the angle sits below 30°; and 16,3° + 73,7° = 90° closes the 7-24-25 triangle",
+            "16,3 rounds to 16, an even number"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Old side-labels must be abandoned when a question moves to a new angle because:",
+          "options": [
+            "Examiners prefer fresh diagrams",
+            "The hypotenuse changes name",
+            "Labels expire after one use",
+            "Opposite and adjacent swap the moment the reference angle changes"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

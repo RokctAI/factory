@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why sin 30° is 'a constant of the universe' rather than a fact about one drawing, and why that matters practically.",
+      "expected_answer": "In every right-angled triangle containing 30°, the ratio opposite/hypotenuse comes out identical, whatever the size — similar triangles guarantee it (7/25 = 70/250). Because the value depends only on the angle, calculators can store it and surveyors/engineers can compute unreachable distances from one measured angle and one known side."
+    },
+    {
+      "id": "cc2",
+      "question": "Rebuild the two special triangles and use them to evaluate sin 45° cos 45° + tan 60° tan 30° exactly.",
+      "expected_answer": "Equilateral triangle side 2, halved: height √3, giving sin 60° = √3/2, cos 60° = 1/2, tan 60° = √3, and from the 30° corner tan 30° = 1/√3. Square of side 1 cut on the diagonal: hypotenuse √2, so sin 45° = cos 45° = 1/√2. Then (1/√2)(1/√2) = 1/2 and √3 × 1/√3 = 1, so the total is 1/2 + 1 = 3/2, left exact."
+    },
+    {
+      "id": "cc3",
+      "question": "For the triangle with hypotenuse 25 and opposite side 7, find the unknown angle and defend it with both sense checks.",
+      "expected_answer": "sin x = 7/25, so x = sin⁻¹(7/25) = 16,3° (degree mode). Check one: 7/25 = 0,28 < 0,5 = sin 30°, so x must be below 30° — it is. Check two: 7-24-25 is a Pythagorean triple, so the other acute angle is sin⁻¹(24/25) = 73,7°, and 16,3° + 73,7° = 90° — the triangle closes, confirming the answer."
+    }
+  ]
+}

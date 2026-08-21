@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the boundary rule for class intervals and why it matters, using the learner who worked exactly 40 minutes.",
+      "expected_answer": "Each interval includes its lower boundary and excludes its upper one, so exactly 40 minutes belongs to the 40-to-60 class, not the 20-to-40 class. The rule guarantees every value has exactly one home — no value is double-counted and none is homeless — which keeps the frequency total honest (6 + 16 + 9 + 6 + 3 = 40) and protects every calculation built on the table."
+    },
+    {
+      "id": "cc2",
+      "question": "Why do a histogram's bars touch while a bar graph's bars stand apart? Give an example of data suited to each.",
+      "expected_answer": "A histogram displays continuous measured data — like homework time in minutes — where 39,9 flows into 40,0 with nothing between, so the bars share walls to show one unbroken scale. A bar graph displays categories — like favourite subjects or cricket versus hockey — where nothing exists between the categories, so the bars stand apart. Gaps mean categories; touching bars mean a continuous measurement."
+    },
+    {
+      "id": "cc3",
+      "question": "Write a three-sentence comment (centre, spread, shape) on the homework data, staying in context.",
+      "expected_answer": "Centre: the modal class is 20 to below 40 minutes and the estimated mean is 42 minutes, so a typical learner spends around forty minutes on homework. Spread: times run from under 20 minutes to nearly 100 — a wide spread, so homework habits differ sharply. Shape: the distribution is skewed to the right — most learners finish in moderate time while a small group works far longer than everyone else."
+    }
+  ]
+}

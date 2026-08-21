@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "From Growth to Decay — the Two Depreciation Formulae",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The straight-line depreciation formula is:",
+          "options": [
+            "A = P(1 − i)ⁿ",
+            "A = P(1 − in)",
+            "A = P(1 + in)",
+            "A = P(1 + i)ⁿ"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A minibus of R360 000 depreciates straight-line at 12% p.a. After 5 years it is worth:",
+          "options": [
+            "R216 000",
+            "R189 983,49",
+            "R144 000",
+            "R43 200"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The same minibus on reducing balance at 12% p.a. for 5 years is worth:",
+          "options": [
+            "R189 983,49",
+            "R144 000",
+            "R316 800",
+            "R52 773"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "A structural difference between the two models is that:",
+          "options": [
+            "Reducing balance reaches zero first",
+            "Straight line can never reach zero",
+            "Both reach zero at the same moment",
+            "Straight line reaches zero after 1 ÷ i years, while reducing balance never reaches zero"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Different Compounding Periods",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "For 8% p.a. compounded quarterly over 3 years, the correct i and n are:",
+          "options": [
+            "i = 0,02 and n = 12",
+            "i = 0,08 and n = 3",
+            "i = 0,02 and n = 3",
+            "i = 0,08 and n = 12"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "R15 000 at 8% p.a. compounded quarterly grows in 3 years to:",
+          "options": [
+            "R18 895,68",
+            "R19 023,63",
+            "R18 600,00",
+            "R21 600,00"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "At the same quoted rate, quarterly compounding beats annual compounding because:",
+          "options": [
+            "The bank rounds up four times instead of once",
+            "The quarterly rate is larger than the annual rate",
+            "Each quarter's interest joins the principal immediately and starts earning interest itself",
+            "The formula uses a larger P each quarter for free"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The classic finance error this section warns against is:",
+          "options": [
+            "Rounding the final answer to two decimals",
+            "Writing the conversion line before the formula",
+            "Using a calculator for the power",
+            "Mixing clocks — a quarterly rate with n in years, or an annual rate with n in quarters"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Nominal versus Effective Rates",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The effective annual rate of 8% p.a. compounded quarterly is about:",
+          "options": [
+            "8,00%",
+            "8,89%",
+            "8,24%",
+            "7,76%"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The law connecting effective and nominal rates is:",
+          "options": [
+            "1 + i_eff = (1 + i_nom/m)^m",
+            "i_eff = i_nom × m",
+            "1 + i_eff = m(1 + i_nom)",
+            "i_eff = i_nom ÷ m"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Bank X offers 8,3% compounded annually; Bank Y offers 8,1% compounded monthly. The better offer is:",
+          "options": [
+            "Bank X, because 8,3 is bigger than 8,1",
+            "Bank Y, whose effective rate of about 8,41% beats 8,3%",
+            "They pay exactly the same",
+            "It depends on the size of the deposit"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "With compounding more than once a year, a computed effective rate BELOW the nominal rate means:",
+          "options": [
+            "The bank pays no interest in December",
+            "The compounding must be half-yearly",
+            "The nominal rate was quoted in months",
+            "A power and a root swapped somewhere — effective must exceed nominal in that case"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Exchange Rates and Mixed Timeline Problems",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "At R17,60 per dollar, a camera priced at $650 costs:",
+          "options": [
+            "R11 440",
+            "R6 500",
+            "R17 600",
+            "R27,08"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "When the rand weakens from R17,60 to R18,40 per dollar, the same $650 camera:",
+          "options": [
+            "Keeps its rand price, since the dollar price is unchanged",
+            "Costs R520 less in rand",
+            "Costs R520 more in rand — how a weaker rand feeds inflation",
+            "Is no longer available for import"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "One advantage of a WEAKER rand is that:",
+          "options": [
+            "Imported fuel becomes cheaper",
+            "South African exports and tourism become cheaper for foreign buyers",
+            "Overseas holidays cost South Africans less",
+            "Imported machinery falls in price"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "R9 000 at 7% p.a. compounded quarterly for 4 years grows to:",
+          "options": [
+            "R11 520,00",
+            "R11 798,90",
+            "R12 600,00",
+            "R11 879,36"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Photocopy and the Ruler",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "In the ruler picture, straight-line depreciation removes:",
+          "options": [
+            "12% of the current value each year",
+            "A shrinking amount each year",
+            "The same fixed step of the ORIGINAL value every year",
+            "Nothing after the third year"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The photocopy-of-a-photocopy picture captures reducing balance because:",
+          "options": [
+            "Each generation keeps 88% of the ONE BEFORE, never of the original",
+            "Photocopies improve with each copy",
+            "The original picture is destroyed first",
+            "Copies are made only in December"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "On reducing balance, the minibus loses R43 200 in year one but only about R25 900 in year five because:",
+          "options": [
+            "The rate drops from 12% to 7%",
+            "12% of a smaller current value is a smaller bite",
+            "Straight-line takes over in year five",
+            "The owner drives fewer kilometres"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The keywords that signal the photocopier model in a question are:",
+          "options": [
+            "'Straight-line' or 'simple decay'",
+            "'Nominal' or 'effective'",
+            "'Compounded quarterly'",
+            "'Reducing balance' or 'compound decay'"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Interest Paydays",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the paydays picture, quarterly compounding wins because:",
+          "options": [
+            "Four paydays always contain more interest at a higher rate",
+            "March's interest is already earning by April instead of waiting for December",
+            "Banks prefer quarterly customers",
+            "December interest is taxed more heavily"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Over 3 years on R15 000 at 8%, payday timing alone is worth about:",
+          "options": [
+            "R128",
+            "R1 280",
+            "R12,80",
+            "R830"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The clock-conversion rule for monthly paydays is:",
+          "options": [
+            "Divide the rate by 4 and count quarters",
+            "Multiply the rate by 12 and count years",
+            "Divide the rate by 12 and count months",
+            "Keep the annual rate and count months"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The honest footnote about compounding frequency is that:",
+          "options": [
+            "Daily compounding doubles the return",
+            "Beyond quarterly, extra frequency loses money",
+            "Frequency matters only above R100 000",
+            "Each extra slicing helps less than the last — daily beats monthly by barely a cent"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "The Headline and the Till Slip",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In the bank-window picture, the nominal rate is the headline poster and the effective rate is:",
+          "options": [
+            "The manager's commission",
+            "The till slip — what the year actually did to your money, fine print included",
+            "The rate before fees",
+            "The poster of the rival bank"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The till slip is printed by:",
+          "options": [
+            "Pushing one rand through a full year — for example 1,00675 twelve times over",
+            "Adding the twelve monthly rates together",
+            "Subtracting the fine print from the headline",
+            "Dividing the headline rate by the number of paydays"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Offers from different banks can only be compared fairly by:",
+          "options": [
+            "Picking the larger headline number",
+            "Asking which bank has lower fees",
+            "Comparing minimum balances",
+            "Converting every offer to its effective rate and comparing those"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The camera's rand price rising from R11 440 to R11 960 while staying $650 shows that:",
+          "options": [
+            "The dollar price rose secretly",
+            "The shop increased its profit margin",
+            "A weakening rand raises the rand cost of imports even when foreign prices stand still",
+            "Exchange rates only matter to exporters"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

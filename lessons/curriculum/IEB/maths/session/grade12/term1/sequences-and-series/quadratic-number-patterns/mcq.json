@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Difference Table Verdict",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A number pattern is quadratic when:",
+          "options": [
+            "Its first differences are constant",
+            "Its second differences are constant",
+            "Its terms are all perfect squares",
+            "Its terms keep increasing"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "For 4; 11; 22; 37 the first differences are:",
+          "options": [
+            "7; 11; 15",
+            "4; 4; 4",
+            "7; 13; 19",
+            "11; 15; 19"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The pattern 5; 9; 13; 17 is:",
+          "options": [
+            "Quadratic with second difference 4",
+            "Linear with T_n = 4n + 1",
+            "Geometric with ratio 4",
+            "Neither linear nor quadratic"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Why should you demand at least four terms before declaring a pattern quadratic?",
+          "options": [
+            "Because the formula has four unknowns",
+            "Because four terms give two second differences — a matching pair, not one number alone",
+            "Because quadratics have four roots",
+            "Because shorter patterns are always linear"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Three Equations Recover a, b and c",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In T_n = an² + bn + c, the second difference of the pattern equals:",
+          "options": [
+            "a",
+            "2a",
+            "3a + b",
+            "a + b + c"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For 4; 11; 22; 37 the value of a is:",
+          "options": [
+            "4",
+            "1",
+            "2",
+            "3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Continuing for 4; 11; 22; 37 with a = 2, the values of b and c are:",
+          "options": [
+            "b = 1, c = 1",
+            "b = 2, c = 0",
+            "b = 0, c = 2",
+            "b = 1, c = 2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "For T_n = 2n² + n + 1, term 50 equals:",
+          "options": [
+            "5 151",
+            "5 051",
+            "5 001",
+            "5 251"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Which Position Holds a Given Value",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "To find which term of 2n² + n + 1 equals 172, the equation to solve is:",
+          "options": [
+            "2n² + n + 1 = 0",
+            "2n² + n − 171 = 0",
+            "2n² + n + 173 = 0",
+            "n² + n − 172 = 0"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Solving 2n² + n − 171 = 0 gives n = 9 or n = −9,5. The conclusion is:",
+          "options": [
+            "Both are valid positions",
+            "172 is term 9; the negative fraction is discarded",
+            "172 is not a term",
+            "172 is term 10 after rounding"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "For 2n² + n + 1 = 250, the discriminant is 1993, which is not a perfect square. Therefore:",
+          "options": [
+            "250 is term 11",
+            "250 is term 10",
+            "n is not a natural number, so 250 is not a term",
+            "The pattern is not quadratic"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "T_10 = 211 and T_11 = 254 for this pattern. What does this show about 250?",
+          "options": [
+            "The pattern steps over 250 without landing on it",
+            "250 lies exactly halfway between two terms",
+            "250 must be term 10,5",
+            "The pattern repeats after term 10"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Hidden Unknowns and the Smallest Term",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The pattern x; 9; 22; 41 has constant second difference 6. The equation for x is:",
+          "options": [
+            "4 + x = 6",
+            "9 − x = 6",
+            "13 − x = 6",
+            "x + 9 = 22"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "With x = 2, the general term of 2; 9; 22; 41 is:",
+          "options": [
+            "T_n = 3n² − 2n + 1",
+            "T_n = 3n² + 2n − 1",
+            "T_n = 2n² + 3n + 1",
+            "T_n = 6n² − 2n + 1"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "For T_n = n² − 10n + 27, the smallest term sits at position:",
+          "options": [
+            "n = 10",
+            "n = 5",
+            "n = 27",
+            "n = 2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "If the vertex of a pattern's parabola lands at n = 6,4, the smallest term is found by:",
+          "options": [
+            "Evaluating T at 6,4",
+            "Rounding to n = 6 automatically",
+            "Testing n = 6 and n = 7 and keeping the smaller value",
+            "Taking the average of T_6 and T_7"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Stacks Where the Gaps Grow",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The tin displays use 2; 6; 12; 20 tins. The gaps are:",
+          "options": [
+            "4; 6; 8",
+            "2; 2; 2",
+            "4; 8; 12",
+            "6; 12; 20"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "A quadratic pattern climbs like:",
+          "options": [
+            "A staircase with identical steps",
+            "A staircase whose steps grow by the same extra amount each time",
+            "A ramp with no steps",
+            "A staircase that doubles each step"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "For 2; 6; 12; 20, the next display uses:",
+          "options": [
+            "28 tins",
+            "32 tins",
+            "30 tins",
+            "26 tins"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "Someone claims 2; 6; 12; 20 is linear because it keeps growing. The one-line rebuttal is:",
+          "options": [
+            "The terms are even, so it is quadratic",
+            "The gaps 4; 6; 8 are growing, not equal",
+            "Linear patterns cannot start at 2",
+            "Growth always means quadratic"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Three Facts Build the Whole Formula",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Paving designs use 9; 20; 37; 60 stones. Fact one gives a =",
+          "options": [
+            "6",
+            "3",
+            "2",
+            "11"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "With a = 3 and first gap 11, the value of b comes from 3a + b = 11, so b =",
+          "options": [
+            "2",
+            "8",
+            "3",
+            "−2"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "With a = 3, b = 2 and first term 9, the value of c is:",
+          "options": [
+            "5",
+            "9",
+            "4",
+            "14"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Using T_n = 3n² + 2n + 4, design twenty uses:",
+          "options": [
+            "1 244 stones",
+            "1 204 stones",
+            "1 264 stones",
+            "1 200 stones"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Which Stack Holds 212 Stones",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "A client orders 212 stones. With T_n = 3n² + 2n + 4, the equation to solve is:",
+          "options": [
+            "3n² + 2n − 208 = 0",
+            "3n² + 2n + 216 = 0",
+            "3n² − 2n − 212 = 0",
+            "n² + n − 212 = 0"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The discriminant of 3n² + 2n − 208 = 0 is 2500, so n equals:",
+          "options": [
+            "n = 8 or a negative value that is discarded",
+            "n = 50",
+            "n = 10 or n = −8",
+            "No solution exists"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Tin displays follow T_n = n² + n. The display holding exactly 240 tins is:",
+          "options": [
+            "Display 16",
+            "Display 15",
+            "Display 14",
+            "No display holds exactly 240"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Display 11 holds 132 tins and display 12 holds 156. A display of exactly 150 tins:",
+          "options": [
+            "Is display 11,5",
+            "Is display 12 after rounding",
+            "Cannot be built — the pattern skips 150",
+            "Is display 11"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Sigma Notation — Reading and Writing the Instruction",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The sum from k = 1 to 6 of (3k + 2) equals:",
+          "options": [
+            "75",
+            "72",
+            "80",
+            "70"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The sum from k = 4 to 25 contains how many terms?",
+          "options": [
+            "21",
+            "25",
+            "22",
+            "20"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The series 7 + 11 + 15 + ... + 83 written in sigma notation is:",
+          "options": [
+            "Sum from k = 1 to 83 of (4k + 3)",
+            "Sum from k = 1 to 20 of (4k + 3)",
+            "Sum from k = 1 to 19 of (4k + 3)",
+            "Sum from k = 1 to 20 of (7k + 4)"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Replacing the counter k with the letter m in a sigma expression:",
+          "options": [
+            "Changes the sum by one term",
+            "Leaves the sum unchanged — the counter is scaffolding",
+            "Doubles each term",
+            "Is not allowed"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Arithmetic Sum — Folding the List in Half",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "In the folding proof, adding the forwards and backwards rows column by column gives every column equal to:",
+          "options": [
+            "a + l",
+            "2a",
+            "n(a + l)",
+            "a − l"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "For the series 6 + 10 + 14 + ..., the sum of the first 30 terms is:",
+          "options": [
+            "1980",
+            "1820",
+            "1920",
+            "2040"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "How many terms of 3 + 7 + 11 + ... add up to 210?",
+          "options": [
+            "9",
+            "11",
+            "12",
+            "10"
+          ],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "When the quadratic for n yields 10 and a negative root, the negative root is rejected because:",
+          "options": [
+            "Negative numbers cannot be squared",
+            "A count of terms must be a positive natural number",
+            "The formula only works for even n",
+            "Negative roots are always extraneous in algebra"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Geometric Sum and Its Collapsing Proof",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The geometric sum proof begins by multiplying the whole sum S_n by:",
+          "options": [
+            "a",
+            "n",
+            "r",
+            "1 − r"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "For the series 2 + 6 + 18 + ..., the sum of the first 9 terms is:",
+          "options": [
+            "19 682",
+            "19 683",
+            "9 841",
+            "39 366"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "How many terms of 3 + 6 + 12 + ... make 381?",
+          "options": [
+            "6",
+            "8",
+            "7",
+            "381 cannot be reached exactly"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "The geometric sum formula fails when r = 1 because:",
+          "options": [
+            "The terms alternate in sign",
+            "The denominator becomes zero — the correct sum is then simply n times a",
+            "The exponent becomes negative",
+            "The series diverges to zero"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Sum to Infinity — When Forever Adds Up",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The sum to infinity of 27 + 9 + 3 + 1 + ... is:",
+          "options": [
+            "40,5",
+            "40",
+            "41",
+            "It does not exist"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A geometric series converges exactly when:",
+          "options": [
+            "r is positive",
+            "−1 < r < 1 with r not zero",
+            "r is less than 1",
+            "a is smaller than 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A series has ratio 3x − 2. It converges for:",
+          "options": [
+            "−1 < x < 1",
+            "x < 1",
+            "One third < x < 1, excluding x = two thirds",
+            "0 < x < 3"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "As an infinite geometric series, the recurring decimal 0,777... equals:",
+          "options": [
+            "7/10",
+            "77/100",
+            "7/9",
+            "7/8"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Instruction on the Crate",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "On the crate reading of sigma, the number below the sigma tells you:",
+          "options": [
+            "Where the counting starts",
+            "How many items to pack",
+            "The size of each item",
+            "The total in the crate"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "For the sum from k = 1 to 6 of (3k + 2), the items packed are:",
+          "options": [
+            "3; 6; 9; 12; 15; 18",
+            "5; 8; 11; 14; 17; 20",
+            "2; 5; 8; 11; 14; 17",
+            "5; 8; 11; 14; 17"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Counting boxes from the fourth to the twenty-fifth in a row, your finger touches:",
+          "options": [
+            "21 boxes",
+            "22 boxes",
+            "25 boxes",
+            "20 boxes"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "After the crate is sealed, the counter letter k:",
+          "options": [
+            "Appears in the final total",
+            "Equals the number of items",
+            "Is discarded — the answer never contains it",
+            "Must be written beside the answer"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Gauss Folds the Queue",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Folding the queue 1 to 100 pairs 1 with 100, 2 with 99, and so on. Each pair totals:",
+          "options": [
+            "100",
+            "101",
+            "99",
+            "50"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The sum of 1 to 100 by the folding argument is:",
+          "options": [
+            "5050",
+            "5000",
+            "10 100",
+            "4950"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A brick wall has rows of 6, 10, 14, ... bricks for 30 rows. It contains:",
+          "options": [
+            "1920 bricks",
+            "1880 bricks",
+            "2040 bricks",
+            "1780 bricks"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Envelopes collect 3; 7; 11; ... rand. Reaching exactly 210 rand takes:",
+          "options": [
+            "9 envelopes",
+            "11 envelopes",
+            "10 envelopes",
+            "12 envelopes"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Half the Oranges, Forever",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "From a bag of 24 oranges, takings of 12; 6; 3; 1,5; ... forever add up to:",
+          "options": [
+            "Exactly 24",
+            "Just under 23",
+            "Infinity",
+            "48"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "The takings settle at a finite total because:",
+          "options": [
+            "The ratio one half lies strictly between −1 and 1",
+            "Oranges cannot be divided forever",
+            "The first taking is the largest",
+            "The bag is round"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "If each taking were equal to or larger than the one before, the total would:",
+          "options": [
+            "Still settle at a over one minus r",
+            "Grow without limit — no final number exists",
+            "Become negative",
+            "Equal exactly twice the bag"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "The decimal 0,777... written as takings of 7 tenths, 7 hundredths, ... has sum:",
+          "options": [
+            "7/9",
+            "7/10",
+            "0,78",
+            "7/11"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}
