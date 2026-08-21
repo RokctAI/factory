@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Classify the seven February findings of Amatola Building Supplies and give the double entry for each item that must be recorded in the business's own books.",
+      "expected_answer": "Six findings are the business's own omissions or errors and must be journalised. Bank charges R2 140: debit Bank charges, credit Bank. Interest on the favourable balance R520: debit Bank, credit Interest income. Insurance stop order R2 750: debit Insurance, credit Bank. Armed response debit order R1 430: debit Sundry expenses, credit Bank. Dishonoured EFT from a debtor R5 400: debit Debtors control, credit Bank, because nothing was actually collected and the debt is reinstated. The CPJ error of R450 (a payment of R5 720 written as R5 270): debit Creditors control, credit Bank. Stale cheque 0873 for R8 100: debit Bank, credit Creditors control. The outstanding deposit of R19 800, the two outstanding EFTs of R21 300 and the bank's own R2 950 error are timing differences or the bank's error and are never entered in our books."
+    },
+    {
+      "id": "cc2",
+      "question": "Prepare the Bank Reconciliation Statement of Khumalo and Smit Traders at 28 February 2026 and explain how you decided the direction of each item.",
+      "expected_answer": "Balance per bank statement R67 540 favourable; add the outstanding deposit of R19 800; add R2 950 debited in error by the bank; less outstanding EFT 0524 R11 460 and EFT 0531 R9 840, R21 300 together; balance per Bank account R68 990. The direction of every item is decided by one question — what will the BANK still do to this balance? The bank must still add the uncleared deposit and must still reverse its own wrong debit, so both are added; the bank must still deduct the two transfers, so they are subtracted. Chanting \"deposits are added\" fails as soon as a question opens with an overdraft, so the reasoning must be applied item by item."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the internal control value of the monthly bank reconciliation and describe four practices that strengthen control over cash.",
+      "expected_answer": "The reconciliation works because the bank is an independent outside party keeping its own complete record of every movement of cash, so setting that record against the business's cash journals exposes theft, omission and error that no purely internal check could find — it is a division of duties expressed as arithmetic. Four supporting practices: reconcile every month without fail so differences are found while they are still small; have the reconciliation done by someone who neither handles cash nor writes up the journals; have it reviewed and signed by a partner; and investigate every long-outstanding item instead of rolling it forward, watching especially for deposits that surface only after month end, which is the classic signature of lapping — using a later receipt to cover an earlier theft."
+    }
+  ]
+}

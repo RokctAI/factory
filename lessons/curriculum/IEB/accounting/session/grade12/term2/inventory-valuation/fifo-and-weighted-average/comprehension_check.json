@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Radebe Electrical: opening stock 250 units at R42; purchases of 500 at R45, 350 at R48 and 150 at R50; 950 units sold at R70. Calculate closing stock, cost of sales and gross profit under FIFO, showing the layering.",
+      "expected_answer": "Stock available: 250 units at R42 is R10 500, plus 500 at R45 is R22 500, plus 350 at R48 is R16 800, plus 150 at R50 is R7 500 — one thousand two hundred and fifty units costing R57 300. Sold 950, so 300 remain. FIFO layers the remainder from the newest delivery backwards: the November delivery gives 150 units at R50, R7 500; the balance of 150 units comes from the August delivery at R48, R7 200. Closing stock: R14 700. Cost of sales by subtraction: R57 300 less R14 700 is R42 600. Sales are 950 times R70, R66 500, so gross profit is R66 500 less R42 600 — R23 900. The layering must run backwards from the last delivery; counting forward from opening stock is the classic error."
+    },
+    {
+      "id": "cc2",
+      "question": "Using the same figures, calculate closing stock, cost of sales and gross profit under the weighted average method, prove your figures rebuild the pool, and explain why FIFO's gross profit is exactly R948 higher.",
+      "expected_answer": "Weighted average cost: R57 300 divided by 1 250 units is R45,84 per unit — weighted by units, never a simple average of the four prices, which would wrongly give R46,25. Closing stock: 300 units at R45,84 is R13 752. Cost of sales: 950 units at R45,84 is R43 548. Proof: R13 752 plus R43 548 rebuilds exactly R57 300, the full pool. Gross profit: R66 500 less R43 548 is R22 952. FIFO's profit of R23 900 is higher by R948 — precisely the difference between the closing stock values of R14 700 and R13 752 — because the pool of available cost has only two destinations, the shelf or cost of sales: whatever value stays on the shelf has by that exact amount been kept out of cost of sales. In a rising-price year FIFO leaves the newest, dearest costs on the shelf, so it reports the higher stock value and the higher profit; falling prices reverse the comparison. Over the business's life the methods report identical total profit — the choice only decides which year carries which cost."
+    },
+    {
+      "id": "cc3",
+      "question": "Records show 300 fans but the physical count finds 275. Explain the accounting treatment, what the deficit signals, the internal controls over stock, and the two directions of stock manipulation with their victims.",
+      "expected_answer": "The twenty-five missing units are valued at cost — at the weighted average of R45,84 that is R1 146 — and written off as a trading stock deficit, an expense. The deficit is information, not just a loss: possible theft, breakage, unrecorded sales, or deliveries signed for but never received; an internal auditor judges it against past trends, the nature of the stock and any pattern by location or person before concluding. Controls: division of duties so that ordering, receiving, recording and counting are different people; pre-numbered documents so every unit is traceable; physical security over storerooms; independent, unannounced counts by someone other than the storeman; and management review of the deficit trend, since a rising deficit is a control failing in real time. Manipulation runs both ways: overstating stock in count or value inflates profit, deceiving lenders, shareholders and bonus schemes; understating it shrinks profit and the tax owed to SARS. Switching valuation methods to suit the year is the subtle version, which is why consistency is a GAAP principle and any change must be disclosed — and an accountant instructed to nudge the figure must refuse."
+    }
+  ]
+}

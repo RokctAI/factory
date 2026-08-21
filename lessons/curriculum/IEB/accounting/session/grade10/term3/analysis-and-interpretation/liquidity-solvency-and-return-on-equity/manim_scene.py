@@ -1,0 +1,285 @@
+# Copyright (c) 2026 RokctAI
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+from manim import *
+
+# Band-layout whiteboard scene for the IEB Grade 10 Accounting session duo
+# "Liquidity, Solvency and Return on Equity". One band per teaching beat,
+# add-only lifecycle (write-only reveals), camera moves down between bands.
+# Covers all seven subtopics: Part 1 Expert (subtopics 1-4) then Part 2
+# Simplifier (subtopics 5-7) with fresh bands. Durations in subtopics.json
+# (220/210/220/210/190/190/190 of 1430 s) set the proportional dwell times.
+
+BAND = config.frame_height
+
+
+def band_shift(k):
+    return DOWN * BAND * k
+
+
+def strike(m):
+    return Line(m.get_corner(DL) + 0.08 * DL, m.get_corner(UR) + 0.08 * UR,
+                color=RED, stroke_width=6)
+
+
+class LiquiditySolvencyReturnSession(MovingCameraScene):
+    def next_band(self, k):
+        self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
+
+    def construct(self):
+        # Intro beat: topic held full-screen while intro.md audio plays.
+        self.wait(14)
+
+        # ============ Part 1 — Expert ============
+        # --- Band 0 (subtopic_1): the current ratio, computed in full
+        title = Tex("Liquidity, Solvency, Return on Equity").scale(1.25).to_edge(UP)
+        self.play(Write(title))
+        self.wait(2)
+        b0_l1 = Tex("Current ratio: current assets : current liabilities").scale(1.0).shift(UP * 1.2)
+        self.play(Write(b0_l1))
+        self.wait(2.5)
+        b0_l2 = MathTex(r"11\,100 + 8\,100 + 25\,200 = \text{R}44\,400").scale(1.1).shift(UP * 0.3)
+        self.play(Write(b0_l2))
+        self.wait(2.5)
+        b0_l3 = MathTex(r"44\,400 : 11\,100 = 4{,}0").scale(1.1).shift(DOWN * 0.6)
+        self.play(Write(b0_l3))
+        self.wait(2)
+        b0_l4 = MathTex(r"= 4 : 1").scale(1.2).shift(DOWN * 1.5)
+        self.play(Write(b0_l4))
+        self.play(Create(SurroundingRectangle(b0_l4, color=GREEN)))
+        self.wait(2)
+        b0_l5 = Tex("Four rand turning to cash for every rand knocking").scale(1.0).shift(DOWN * 2.5)
+        self.play(Write(b0_l5))
+        self.wait(3)
+
+        # --- Band 1 (subtopic_1): acid test, norms, the too-high reading
+        self.next_band(1)
+        b1_title = Tex("Acid-test ratio — set the stock aside").scale(1.2).shift(band_shift(1) + UP * 2.2)
+        self.play(Write(b1_title))
+        self.wait(2)
+        b1_l1 = MathTex(r"(44\,400 - 11\,100) : 11\,100").scale(1.1).shift(band_shift(1) + UP * 1.1)
+        self.play(Write(b1_l1))
+        self.wait(2.5)
+        b1_l2 = MathTex(r"33\,300 : 11\,100 = 3 : 1").scale(1.15).shift(band_shift(1) + UP * 0.2)
+        self.play(Write(b1_l2))
+        self.play(Create(SurroundingRectangle(b1_l2, color=GREEN)))
+        self.wait(2.5)
+        b1_l3 = Tex("Norms (guides, not laws):").scale(1.05).shift(band_shift(1) + DOWN * 0.8)
+        b1_l4 = MathTex(r"\text{current } \approx 2:1, \quad \text{acid test } \approx 1:1").scale(0.95).shift(band_shift(1) + DOWN * 1.6)
+        self.play(Write(b1_l3))
+        self.play(Write(b1_l4))
+        self.wait(2.5)
+        b1_l5 = Tex("Very high is not excellent: R24 500 idle in bank").scale(1.0).shift(band_shift(1) + DOWN * 2.6)
+        self.play(Write(b1_l5))
+        self.wait(3)
+
+        # --- Band 2 (subtopic_2): solvency ratio, computed in full
+        self.next_band(2)
+        b2_title = Tex("Solvency — the total question").scale(1.2).shift(band_shift(2) + UP * 2.2)
+        self.play(Write(b2_title))
+        self.wait(2)
+        b2_l1 = Tex("Total assets : total liabilities").scale(1.1).shift(band_shift(2) + UP * 1.1)
+        self.play(Write(b2_l1))
+        self.wait(2)
+        b2_l2 = MathTex(r"\text{Liabilities: } 16\,500 + 11\,100 = 27\,600").scale(1.1).shift(band_shift(2) + UP * 0.2)
+        self.play(Write(b2_l2))
+        self.wait(2.5)
+        b2_l3 = MathTex(r"55\,600 : 27\,600 = 2{,}0 : 1").scale(1.15).shift(band_shift(2) + DOWN * 0.8)
+        self.play(Write(b2_l3))
+        self.play(Create(SurroundingRectangle(b2_l3, color=GREEN)))
+        self.wait(2.5)
+        b2_l4 = Tex("Boundary 1 : 1 — below it, INSOLVENT").scale(1.05).shift(band_shift(2) + DOWN * 1.9)
+        self.play(Write(b2_l4))
+        self.wait(3)
+
+        # --- Band 3 (subtopic_2): liquidity vs solvency, kept cleanly apart
+        self.next_band(3)
+        b3_title = Tex("Two gauges, two questions").scale(1.2).shift(band_shift(3) + UP * 2.2)
+        self.play(Write(b3_title))
+        self.wait(2)
+        b3_l1 = Tex("Liquidity: the SHORT game — current items only").scale(1.0).shift(band_shift(3) + UP * 1.1)
+        self.play(Write(b3_l1))
+        self.wait(2.5)
+        b3_l2 = Tex("Solvency: the WHOLE game — all vs all").scale(1.0).shift(band_shift(3) + UP * 0.2)
+        self.play(Write(b3_l2))
+        self.wait(2.5)
+        b3_l3 = Tex("Solvent but illiquid: equipment-rich,").scale(1.0).shift(band_shift(3) + DOWN * 0.8)
+        b3_l4 = Tex("cannot find Friday's wages").scale(1.0).shift(band_shift(3) + DOWN * 1.6)
+        self.play(Write(b3_l3))
+        self.play(Write(b3_l4))
+        self.wait(2.5)
+        b3_l5 = Tex("Liquid but sinking: cash now, debts compounding").scale(1.0).shift(band_shift(3) + DOWN * 2.6)
+        self.play(Write(b3_l5))
+        self.wait(3)
+
+        # --- Band 4 (subtopic_3): return on owner's equity, average base
+        self.next_band(4)
+        b4_title = Tex("Return on owner's equity").scale(1.2).shift(band_shift(4) + UP * 2.2)
+        self.play(Write(b4_title))
+        self.wait(2)
+        b4_l1 = MathTex(r"\frac{\text{Net profit}}{\text{Average equity}} \times 100").scale(1.1).shift(band_shift(4) + UP * 1.0)
+        self.play(Write(b4_l1))
+        self.wait(2.5)
+        b4_l2 = MathTex(r"\text{Average} = \frac{22\,000 + 28\,000}{2} = 25\,000").scale(1.05).shift(band_shift(4) + DOWN * 0.2)
+        self.play(Write(b4_l2))
+        self.wait(2.5)
+        b4_l3 = MathTex(r"\frac{10\,500}{25\,000} \times 100 = 42\%").scale(1.15).shift(band_shift(4) + DOWN * 1.4)
+        self.play(Write(b4_l3))
+        self.play(Create(SurroundingRectangle(b4_l3, color=GREEN)))
+        self.wait(2.5)
+        b4_l4 = Tex("Average, because equity moved during the year").scale(1.0).shift(band_shift(4) + DOWN * 2.5)
+        self.play(Write(b4_l4))
+        self.wait(3)
+
+        # --- Band 5 (subtopic_3): the risk-weighed comparison
+        self.next_band(5)
+        b5_title = Tex("Was it worth it?").scale(1.2).shift(band_shift(5) + UP * 2.2)
+        self.play(Write(b5_title))
+        self.wait(2)
+        b5_l1 = Tex("Fixed deposit: 7\\% — promised, almost no risk").scale(1.05).shift(band_shift(5) + UP * 1.1)
+        self.play(Write(b5_l1))
+        self.wait(2.5)
+        b5_l2 = Tex("The business: 42\\% — earned, at risk").scale(1.05).shift(band_shift(5) + UP * 0.2)
+        self.play(Write(b5_l2))
+        self.wait(2.5)
+        b5_l3 = MathTex(r"42 \div 7 = 6 \text{ times the safe rate}").scale(1.05).shift(band_shift(5) + DOWN * 0.8)
+        self.play(Write(b5_l3))
+        self.wait(2.5)
+        b5_l4 = Tex("A business return must beat the bank comfortably").scale(1.0).shift(band_shift(5) + DOWN * 1.8)
+        b5_l5 = Tex("— the extra return is the wage of risk").scale(1.0).shift(band_shift(5) + DOWN * 2.6)
+        self.play(Write(b5_l4))
+        self.play(Write(b5_l5))
+        self.wait(3)
+
+        # --- Band 6 (subtopic_4): the full nine-gauge dashboard, as a table
+        self.next_band(6)
+        b6_title = Tex("The full dashboard — nine gauges").scale(1.2).shift(band_shift(6) + UP * 2.2)
+        self.play(Write(b6_title))
+        self.wait(2)
+        panel = Rectangle(width=11.0, height=4.6).shift(band_shift(6) + DOWN * 0.5)
+        self.play(Create(panel))
+        b6_r1 = Tex("Earning: mark-up 50\\%, margin 33,3\\%, expenses 25,3\\%").scale(0.95).shift(band_shift(6) + UP * 1.0)
+        b6_r2 = Tex("operating profit 20\\%, net profit 17,5\\%").scale(0.95).shift(band_shift(6) + UP * 0.2)
+        self.play(Write(b6_r1))
+        self.wait(2)
+        self.play(Write(b6_r2))
+        self.wait(2)
+        div1 = Line(LEFT * 5.5, RIGHT * 5.5).shift(band_shift(6) + DOWN * 0.3)
+        self.play(Create(div1))
+        b6_r3 = Tex("Safety: current 4:1, acid 3:1, solvency 2:1").scale(0.95).shift(band_shift(6) + DOWN * 0.9)
+        self.play(Write(b6_r3))
+        self.wait(2.5)
+        div2 = Line(LEFT * 5.5, RIGHT * 5.5).shift(band_shift(6) + DOWN * 1.5)
+        self.play(Create(div2))
+        b6_r4 = Tex("Investor's verdict: return on equity 42\\%").scale(0.95).shift(band_shift(6) + DOWN * 2.1)
+        self.play(Write(b6_r4))
+        self.play(Create(SurroundingRectangle(b6_r4, color=GREEN)))
+        self.wait(3)
+
+        # --- Band 7 (subtopic_4): five habits of technique, and the classic trap
+        self.next_band(7)
+        b7_title = Tex("Technique — five habits").scale(1.2).shift(band_shift(7) + UP * 2.2)
+        self.play(Write(b7_title))
+        self.wait(2)
+        b7_l1 = Tex("1. Ratios AS ratios (4 : 1); percents as \\%").scale(1.0).shift(band_shift(7) + UP * 1.2)
+        self.play(Write(b7_l1))
+        self.wait(2)
+        b7_l2 = Tex("2. Show labelled substitution: 44 400 / 11 100").scale(1.0).shift(band_shift(7) + UP * 0.5)
+        self.play(Write(b7_l2))
+        self.wait(2)
+        b7_wrong = MathTex(r"\text{Return on closing } 28\,000 \text{ only}").scale(1.0).shift(band_shift(7) + DOWN * 0.3)
+        self.play(Write(b7_wrong))
+        self.play(Create(strike(b7_wrong)))
+        self.wait(2)
+        b7_l3 = Tex("3. Use AVERAGE equity — and say so").scale(1.0).shift(band_shift(7) + DOWN * 1.1)
+        self.play(Write(b7_l3))
+        self.wait(2)
+        b7_l4 = Tex("4. Comment both ways: too low OR idle").scale(1.0).shift(band_shift(7) + DOWN * 1.9)
+        self.play(Write(b7_l4))
+        self.wait(2)
+        b7_l5 = Tex("5. Match the gauge to the question").scale(1.0).shift(band_shift(7) + DOWN * 2.7)
+        self.play(Write(b7_l5))
+        self.wait(3)
+
+        # ============ Part 2 — Simplifier ============
+        # --- Band 8 (subtopic_5): the month-end test at the kitchen table
+        self.next_band(8)
+        b8_title = Tex("The month-end test").scale(1.2).shift(band_shift(8) + UP * 2.2)
+        self.play(Write(b8_title))
+        self.wait(2)
+        b8_l1 = Tex("Bills knocking: R11 100; on the table: R44 400").scale(1.0).shift(band_shift(8) + UP * 1.1)
+        self.play(Write(b8_l1))
+        self.wait(2.5)
+        b8_l2 = MathTex(r"44\,400 : 11\,100 = 4 : 1").scale(1.1).shift(band_shift(8) + UP * 0.2)
+        self.play(Write(b8_l2))
+        self.play(Create(SurroundingRectangle(b8_l2, color=GREEN)))
+        self.wait(2.5)
+        b8_l3 = Tex("You cannot pay the rent with tins of beans —").scale(1.0).shift(band_shift(8) + DOWN * 0.8)
+        b8_l4 = MathTex(r"\text{set stock aside: } 33\,300 : 11\,100 = 3 : 1").scale(1.0).shift(band_shift(8) + DOWN * 1.6)
+        self.play(Write(b8_l3))
+        self.play(Write(b8_l4))
+        self.wait(2.5)
+        b8_l5 = Tex("Too much sitting money quietly becomes waste").scale(1.0).shift(band_shift(8) + DOWN * 2.6)
+        self.play(Write(b8_l5))
+        self.wait(3)
+
+        # --- Band 9 (subtopic_6): if everything went wrong tomorrow
+        self.next_band(9)
+        b9_title = Tex("If everything went wrong tomorrow").scale(1.15).shift(band_shift(9) + UP * 2.2)
+        self.play(Write(b9_title))
+        self.wait(2)
+        b9_l1 = Tex("Everything owned: R55 600").scale(1.05).shift(band_shift(9) + UP * 1.1)
+        self.play(Write(b9_l1))
+        self.wait(2)
+        b9_l2 = MathTex(r"\text{Everything owed: } 16\,500 + 11\,100 = 27\,600").scale(1.0).shift(band_shift(9) + UP * 0.2)
+        self.play(Write(b9_l2))
+        self.wait(2.5)
+        b9_l3 = MathTex(r"55\,600 : 27\,600 = 2{,}0 : 1").scale(1.1).shift(band_shift(9) + DOWN * 0.8)
+        self.play(Write(b9_l3))
+        self.play(Create(SurroundingRectangle(b9_l3, color=GREEN)))
+        self.wait(2.5)
+        b9_l4 = Tex("Liquidity is the sprint; solvency the whole race").scale(1.0).shift(band_shift(9) + DOWN * 1.8)
+        self.play(Write(b9_l4))
+        self.wait(2)
+        b9_l5 = Tex("Below 1 : 1 you spend the creditors' money").scale(1.0).shift(band_shift(9) + DOWN * 2.6)
+        self.play(Write(b9_l5))
+        self.wait(3)
+
+        # --- Band 10 (subtopic_7): was it worth the owner's while?
+        self.next_band(10)
+        b10_title = Tex("Was it worth the owner's while?").scale(1.15).shift(band_shift(10) + UP * 2.2)
+        self.play(Write(b10_title))
+        self.wait(2)
+        b10_l1 = Tex("Average stake in the shop: R25 000").scale(1.05).shift(band_shift(10) + UP * 1.2)
+        self.play(Write(b10_l1))
+        self.wait(2)
+        b10_l2 = MathTex(r"\frac{10\,500}{25\,000} \times 100 = 42\%").scale(1.1).shift(band_shift(10) + UP * 0.1)
+        self.play(Write(b10_l2))
+        self.play(Create(SurroundingRectangle(b10_l2, color=GREEN)))
+        self.wait(2.5)
+        b10_l3 = Tex("Bank: 7\\% promised. Shop: 42\\% earned, at risk").scale(1.0).shift(band_shift(10) + DOWN * 1.0)
+        self.play(Write(b10_l3))
+        self.wait(2.5)
+        b10_l4 = Tex("Beat the bank comfortably — risk must be paid").scale(1.0).shift(band_shift(10) + DOWN * 1.9)
+        self.play(Write(b10_l4))
+        self.wait(2)
+        b10_l5 = Tex("At 8\\% against the bank's 7\\%: rethink").scale(1.0).shift(band_shift(10) + DOWN * 2.7)
+        self.play(Write(b10_l5))
+        self.wait(4)

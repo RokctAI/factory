@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write the full General Journal entry, with narration, for writing off N. Mahlangu's debt of R1 100, and explain why no cash is involved.",
+      "expected_answer": "Debit Bad Debts R1 100; credit Debtors Control R1 100 (and Mahlangu's personal account). Narration: debt written off as irrecoverable. No cash moves because nothing was received — the asset 'money receivable' is removed so assets are not overstated, and the loss is absorbed as an expense. Prudence requires the write-off."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the method for correcting the R320 stationery error, and the classic mistake to avoid.",
+      "expected_answer": "Establish what was done — Trading Stock debited R320 — versus what should have been done — Stationery debited R320. The credit to Creditors Control was correct, so only the wrong leg is corrected: debit Stationery R320, credit Trading Stock R320, with a narration. The classic mistake is redoing the whole transaction and crediting Creditors Control again, which double-counts the liability."
+    },
+    {
+      "id": "cc3",
+      "question": "Show that the month's General Journal balances, naming the debit and credit totals and their components.",
+      "expected_answer": "Debits: Bad Debts R1 100, Debtors Control R60, Interest Expense R150, Drawings R480, Stationery R320 — total R2 110. Credits: Debtors Control R1 100, Interest Income R60, Creditors Control R150, Trading Stock R480 and R320 — total R2 110. Debits equal credits, so the journal proves itself before posting."
+    }
+  ]
+}

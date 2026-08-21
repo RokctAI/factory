@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the routing system: the two questions that send any transaction to its journal, and why money collected from debtors and payments to creditors never strike the Sales or Trading Stock columns.",
+      "expected_answer": "Ask whether money moved and in which direction; if no money moved, ask what happened — goods out or in on trust (DJ/CJ), goods travelling back (DAJ/CAJ), or an exception for the General Journal. Money from a debtor settles a sale already recorded in the DJ, so it strikes Bank and Debtors Control only; a payment to a creditor settles a purchase already recorded in the CJ, so it strikes Bank and Creditors Control only. The control columns settle old promises; the trading columns belong to the original events."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the three layers of proof that closed the combined month at Zanele's Traders, and what each layer catches that the others cannot.",
+      "expected_answer": "Every journal cross-casts before posting, catching errors inside a single journal; each control account is compared with its list of personal balances, catching detail-versus-summary errors for debtors and creditors; and the trial balance levels at R47 900, catching double-entry arithmetic failures across the whole ledger. A wrong-account-right-side error slips past the trial balance but surfaces in the list-against-control comparison or document trace, so the layers overlap deliberately."
+    },
+    {
+      "id": "cc3",
+      "question": "In your own words, describe the owner's Friday walk and how each stop pairs a physical check with a written record.",
+      "expected_answer": "Till counted against the day's analysis column, then banked intact; a sample of shelf lines counted against the Trading Stock balance's claim of R2 600; the debtors list read for ageing debts and credit limits; supplier statements agreed to their ledger pages with payment diarised for the terms date. Every stop tests physical reality against a record — control only works because the books exist to check against."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Hey, it's Thandi — final topic of the year, and if the budget family feels like a blur — cash, capital, zero-based, medium, long — here's the sorting trick: each one answers exactly ONE question. Can we pay our way this month? Cash budget. When do we buy the big things? Capital budget. Does every cost still deserve its place? Zero-based. Where are we heading over the next few years? Medium and long term. Match the question to the budget and the concept marks are yours.
+
+All the calculating lives in the cash budget, and its skeleton never changes: in, out, difference, opening, closing — and every closing walks into the next month as the opening. Five lines per month, and the arithmetic is honestly just adding and subtracting; the marks hide in two rules. Rule one: cash ONLY — credit sales count when the money ARRIVES, a month late, and depreciation never appears because no rand leaves. Rule two: label your estimates — writing "30% of September's sales" next to the figure is a mark banked.
+
+And truthfully? You already know this tool. If you've ever watched someone plan the month before the salary lands — rent first, then food, then transport, then whatever's left — you've watched a cash budget run live. Tonight just gave it columns.
+
+One topic, one skeleton, two rules. Finish the practice quarter and you've finished Grade 10 Accounting — the whole toolkit, yours. You've got this!

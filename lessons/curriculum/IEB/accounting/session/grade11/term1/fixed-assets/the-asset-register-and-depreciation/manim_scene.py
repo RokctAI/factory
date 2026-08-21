@@ -1,0 +1,301 @@
+# Copyright (c) 2026 RokctAI
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+from manim import *
+
+# Band-layout whiteboard scene for the IEB Grade 11 Term 1 duo
+# "The Asset Register and Depreciation". One band per teaching beat; camera
+# moves down, nothing removed. Exporter-safe primitives only; the register
+# page is recreated as a Rectangle card with Tex rows.
+# Subtopic shares: 220/240/250/220/190/200/200 of 1520 s.
+
+BAND = config.frame_height
+
+
+def band_shift(k):
+    return DOWN * BAND * k
+
+
+def strike(m):
+    return Line(m.get_corner(DL) + 0.08 * DL, m.get_corner(UR) + 0.08 * UR,
+                color=RED, stroke_width=6)
+
+
+class AssetRegisterAndDepreciationSession(MovingCameraScene):
+    def next_band(self, k):
+        self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
+
+    def construct(self):
+        # Intro beat: topic held full-screen while intro.md audio plays.
+        self.wait(15)
+
+        # ============ Part 1 — Expert ============
+        # --- Band 0 (subtopic_1): ledger summary vs register detail ---
+        title = Tex("The Asset Register and Depreciation").scale(1.25).to_edge(UP)
+        self.play(Write(title))
+        self.wait(2)
+        b0_l1 = Tex("Ledger: Vehicles at cost + Acc Dep only").scale(1.05).shift(UP * 1.1)
+        self.play(Write(b0_l1))
+        self.wait(2)
+        b0_l2 = Tex("Register: one page per asset — the detail").scale(1.05).shift(UP * 0.3)
+        self.play(Write(b0_l2))
+        self.wait(2)
+        b0_l3 = Tex("Register = DETAIL, ledger = SUMMARY").scale(1.1).shift(DOWN * 0.6)
+        self.play(Write(b0_l3))
+        self.wait(2)
+        b0_l4 = Tex("Sum of pages must equal ledger balances").scale(1.05).shift(DOWN * 1.5)
+        self.play(Write(b0_l4))
+        self.play(Create(SurroundingRectangle(b0_l4, color=GREEN)))
+        self.wait(2)
+        b0_l5 = Tex("Same idea as debtors' list vs control").scale(1.0).shift(DOWN * 2.4)
+        self.play(Write(b0_l5))
+        self.wait(3)
+
+        # --- Band 1 (subtopic_1): the register page and its three uses ---
+        self.next_band(1)
+        b1_title = Tex("A register page carries").scale(1.2).shift(band_shift(1) + UP * 2.4)
+        self.play(Write(b1_title))
+        self.wait(1.5)
+        card = Rectangle(width=7.0, height=3.4).shift(band_shift(1) + UP * 0.3)
+        self.play(Create(card))
+        b1_r1 = Tex("Description, reg/serial no, date, supplier").scale(0.9).shift(band_shift(1) + UP * 1.5)
+        b1_r2 = Tex("Cost price; method and rate").scale(0.9).shift(band_shift(1) + UP * 0.8)
+        b1_r3 = Tex("Year by year: dep, acc dep, carrying value").scale(0.9).shift(band_shift(1) + UP * 0.1)
+        b1_r4 = Tex("Location and person responsible").scale(0.9).shift(band_shift(1) + DOWN * 0.6)
+        b1_r5 = Tex("Disposal: date, proceeds, profit/loss").scale(0.9).shift(band_shift(1) + DOWN * 1.3)
+        self.play(Write(b1_r1))
+        self.wait(1.5)
+        self.play(Write(b1_r2))
+        self.wait(1.5)
+        self.play(Write(b1_r3))
+        self.wait(1.5)
+        self.play(Write(b1_r4))
+        self.wait(1.5)
+        self.play(Write(b1_r5))
+        self.wait(2)
+        b1_l6 = Tex("Three uses: control, decisions, audit").scale(1.05).shift(band_shift(1) + DOWN * 2.4)
+        self.play(Write(b1_l6))
+        self.play(Create(SurroundingRectangle(b1_l6, color=GREEN)))
+        self.wait(3)
+
+        # --- Band 2 (subtopic_2): what counts as cost ---
+        self.next_band(2)
+        b2_title = Tex("Cost = everything needed to bring it into use").scale(1.05).shift(band_shift(2) + UP * 2.2)
+        self.play(Write(b2_title))
+        self.wait(2)
+        b2_l1 = Tex("Invoice price R120 000").scale(1.1).shift(band_shift(2) + UP * 1.1)
+        self.play(Write(b2_l1))
+        self.wait(2)
+        b2_l2 = Tex("+ delivery R5 500").scale(1.1).shift(band_shift(2) + UP * 0.3)
+        self.play(Write(b2_l2))
+        self.wait(1.5)
+        b2_l3 = Tex("+ installation R9 500").scale(1.1).shift(band_shift(2) + DOWN * 0.5)
+        self.play(Write(b2_l3))
+        self.wait(1.5)
+        b2_line = Line(band_shift(2) + DOWN * 0.95 + LEFT * 2.6,
+                       band_shift(2) + DOWN * 0.95 + RIGHT * 2.6, stroke_width=3)
+        b2_l4 = Tex("Enters the books at R135 000").scale(1.1).shift(band_shift(2) + DOWN * 1.5)
+        self.play(Create(b2_line))
+        self.play(Write(b2_l4))
+        self.play(Create(SurroundingRectangle(b2_l4, color=GREEN)))
+        self.wait(2.5)
+        b2_l5 = Tex("Registered vendor: record cost EXCLUDING VAT").scale(0.95).shift(band_shift(2) + DOWN * 2.5)
+        self.play(Write(b2_l5))
+        self.wait(3)
+
+        # --- Band 3 (subtopic_2): capital vs revenue expenditure ---
+        self.next_band(3)
+        b3_title = Tex("Capital vs revenue expenditure").scale(1.2).shift(band_shift(3) + UP * 2.2)
+        self.play(Write(b3_title))
+        self.wait(1.5)
+        b3_l1 = Tex("Capital: extends life or capacity —").scale(1.05).shift(band_shift(3) + UP * 1.1)
+        b3_l2 = Tex("new engine, extension — add to cost").scale(1.05).shift(band_shift(3) + UP * 0.4)
+        self.play(Write(b3_l1))
+        self.play(Write(b3_l2))
+        self.wait(2.5)
+        b3_l3 = Tex("Revenue: keeps it running — service,").scale(1.05).shift(band_shift(3) + DOWN * 0.4)
+        b3_l4 = Tex("repairs, fuel — expense of the year").scale(1.05).shift(band_shift(3) + DOWN * 1.1)
+        self.play(Write(b3_l3))
+        self.play(Write(b3_l4))
+        self.wait(2.5)
+        b3_wrong = Tex("Routine servicing added to the asset?").scale(1.0).shift(band_shift(3) + DOWN * 2.0)
+        self.play(Write(b3_wrong))
+        self.play(Create(strike(b3_wrong)))
+        self.wait(2)
+        b3_l5 = Tex("That overstates profit AND the asset").scale(1.0).shift(band_shift(3) + DOWN * 2.9)
+        self.play(Write(b3_l5))
+        self.wait(3)
+
+        # --- Band 4 (subtopic_3): the two methods ---
+        self.next_band(4)
+        b4_title = Tex("The two methods").scale(1.2).shift(band_shift(4) + UP * 2.2)
+        self.play(Write(b4_title))
+        self.wait(1.5)
+        b4_l1 = Tex(r"Straight-line: \% of ORIGINAL COST").scale(1.05).shift(band_shift(4) + UP * 1.1)
+        self.play(Write(b4_l1))
+        self.wait(2)
+        b4_l2 = Tex(r"R135 000 at 10\%: R13 500 every year").scale(1.05).shift(band_shift(4) + UP * 0.3)
+        self.play(Write(b4_l2))
+        self.wait(2.5)
+        b4_l3 = Tex(r"Diminishing: \% of CARRYING VALUE").scale(1.05).shift(band_shift(4) + DOWN * 0.6)
+        self.play(Write(b4_l3))
+        self.wait(2)
+        b4_l4 = Tex(r"20\%: R27 000, then 20\% of 108 000").scale(1.0).shift(band_shift(4) + DOWN * 1.4)
+        b4_l5 = Tex("= R21 600 — the charge shrinks").scale(1.0).shift(band_shift(4) + DOWN * 2.2)
+        self.play(Write(b4_l4))
+        self.wait(2)
+        self.play(Write(b4_l5))
+        self.wait(3)
+
+        # --- Band 5 (subtopic_3): the part-year worked example ---
+        self.next_band(5)
+        b5_title = Tex(r"R320 000, bought 1 June, 15\% diminishing").scale(1.05).shift(band_shift(5) + UP * 2.2)
+        self.play(Write(b5_title))
+        self.wait(2)
+        b5_l1 = Tex(r"Full year: 15\% $\times$ 320 000 = R48 000").scale(1.05).shift(band_shift(5) + UP * 1.2)
+        self.play(Write(b5_l1))
+        self.wait(2)
+        b5_l2 = MathTex(r"48\,000 \times \tfrac{9}{12} = R36\,000").scale(1.1).shift(band_shift(5) + UP * 0.3)
+        self.play(Write(b5_l2))
+        self.play(Create(SurroundingRectangle(b5_l2, color=GREEN)))
+        self.wait(2.5)
+        b5_l3 = Tex("Carrying value at year end: R284 000").scale(1.05).shift(band_shift(5) + DOWN * 0.6)
+        self.play(Write(b5_l3))
+        self.wait(2)
+        b5_l4 = Tex(r"Year 2 (full): 15\% $\times$ 284 000 = R42 600").scale(1.0).shift(band_shift(5) + DOWN * 1.5)
+        self.play(Write(b5_l4))
+        self.wait(2)
+        b5_l5 = Tex(r"CV 241 400; Year 3: R36 210").scale(1.0).shift(band_shift(5) + DOWN * 2.4)
+        self.play(Write(b5_l5))
+        self.wait(3)
+
+        # --- Band 6 (subtopic_3): the fully depreciated asset ---
+        self.next_band(6)
+        b6_title = Tex("The fully depreciated asset").scale(1.2).shift(band_shift(6) + UP * 2.2)
+        self.play(Write(b6_title))
+        self.wait(1.5)
+        b6_l1 = Tex("Written down to zero: no further charge").scale(1.05).shift(band_shift(6) + UP * 1.0)
+        self.play(Write(b6_l1))
+        self.wait(2)
+        b6_l2 = Tex("Never depreciate below zero").scale(1.05).shift(band_shift(6) + UP * 0.1)
+        self.play(Write(b6_l2))
+        self.play(Create(SurroundingRectangle(b6_l2, color=GREEN)))
+        self.wait(2)
+        b6_l3 = Tex("Often a nominal R1 is left standing").scale(1.05).shift(band_shift(6) + DOWN * 0.9)
+        self.play(Write(b6_l3))
+        self.wait(2)
+        b6_l4 = Tex("Still on the register, still controlled").scale(1.05).shift(band_shift(6) + DOWN * 1.8)
+        self.play(Write(b6_l4))
+        self.wait(3)
+
+        # --- Band 7 (subtopic_4): control and ethics ---
+        self.next_band(7)
+        b7_title = Tex("Control and ethics over assets").scale(1.2).shift(band_shift(7) + UP * 2.2)
+        self.play(Write(b7_title))
+        self.wait(1.5)
+        b7_l1 = Tex("Acquisition: authorise, quotes, check").scale(1.0).shift(band_shift(7) + UP * 1.1)
+        b7_l2 = Tex("on arrival, register updated at once").scale(1.0).shift(band_shift(7) + UP * 0.4)
+        self.play(Write(b7_l1))
+        self.play(Write(b7_l2))
+        self.wait(2.5)
+        b7_l3 = Tex("Custody: numbered, named person,").scale(1.0).shift(band_shift(7) + DOWN * 0.4)
+        b7_l4 = Tex("secured, insured, usage log").scale(1.0).shift(band_shift(7) + DOWN * 1.1)
+        self.play(Write(b7_l3))
+        self.play(Write(b7_l4))
+        self.wait(2.5)
+        b7_l5 = Tex("Verification: independent count vs register").scale(1.0).shift(band_shift(7) + DOWN * 1.9)
+        self.play(Write(b7_l5))
+        self.wait(2)
+        b7_l6 = Tex("Private use = drawings at fair value").scale(1.0).shift(band_shift(7) + DOWN * 2.8)
+        self.play(Write(b7_l6))
+        self.play(Create(SurroundingRectangle(b7_l6, color=GREEN)))
+        self.wait(3)
+
+        # ============ Part 2 — Simplifier ============
+        # --- Band 8 (subtopic_5): the notebook of expensive things ---
+        self.next_band(8)
+        b8_title = Tex("The notebook of expensive things").scale(1.2).shift(band_shift(8) + UP * 2.2)
+        self.play(Write(b8_title))
+        self.wait(2)
+        b8_l1 = Tex("Ledger only says: vehicles, R500 000-odd").scale(1.0).shift(band_shift(8) + UP * 1.1)
+        self.play(Write(b8_l1))
+        self.wait(2.5)
+        b8_l2 = Tex("The notebook: a page per thing —").scale(1.0).shift(band_shift(8) + UP * 0.3)
+        b8_l3 = Tex("what, when, what it cost, yearly wear,").scale(1.0).shift(band_shift(8) + DOWN * 0.4)
+        b8_l4 = Tex("what it's worth now, who drives it").scale(1.0).shift(band_shift(8) + DOWN * 1.1)
+        self.play(Write(b8_l2))
+        self.play(Write(b8_l3))
+        self.play(Write(b8_l4))
+        self.wait(3)
+        b8_l5 = Tex("Total of the pages = the ledger figure").scale(1.05).shift(band_shift(8) + DOWN * 2.0)
+        self.play(Write(b8_l5))
+        self.play(Create(SurroundingRectangle(b8_l5, color=GREEN)))
+        self.wait(2.5)
+        b8_l6 = Tex("Walk the yard, check page against thing").scale(1.0).shift(band_shift(8) + DOWN * 2.9)
+        self.play(Write(b8_l6))
+        self.wait(3)
+
+        # --- Band 9 (subtopic_6): what the thing really cost ---
+        self.next_band(9)
+        b9_title = Tex("What the thing really cost").scale(1.2).shift(band_shift(9) + UP * 2.2)
+        self.play(Write(b9_title))
+        self.wait(2)
+        b9_l1 = Tex("Invoice 120 000 + truck 5 500 + wiring 9 500").scale(1.0).shift(band_shift(9) + UP * 1.1)
+        self.play(Write(b9_l1))
+        self.wait(2.5)
+        b9_l2 = Tex("It cost her R135 000 — working, not boxed").scale(1.05).shift(band_shift(9) + UP * 0.2)
+        self.play(Write(b9_l2))
+        self.play(Create(SurroundingRectangle(b9_l2, color=GREEN)))
+        self.wait(2.5)
+        b9_l3 = Tex("New engine = more asset, on the page").scale(1.0).shift(band_shift(9) + DOWN * 0.7)
+        self.play(Write(b9_l3))
+        self.wait(2.5)
+        b9_l4 = Tex("Service, tyres, fuel = this year's expense").scale(1.0).shift(band_shift(9) + DOWN * 1.5)
+        self.play(Write(b9_l4))
+        self.wait(2.5)
+        b9_wrong = Tex("Servicing written onto the bakkie's page?").scale(0.95).shift(band_shift(9) + DOWN * 2.4)
+        self.play(Write(b9_wrong))
+        self.play(Create(strike(b9_wrong)))
+        self.wait(3)
+
+        # --- Band 10 (subtopic_7): bought in June, not in January ---
+        self.next_band(10)
+        b10_title = Tex("Bought in June, not in January").scale(1.2).shift(band_shift(10) + UP * 2.2)
+        self.play(Write(b10_title))
+        self.wait(2)
+        b10_l1 = Tex("Nine months owned: June to February").scale(1.0).shift(band_shift(10) + UP * 1.1)
+        self.play(Write(b10_l1))
+        self.wait(2.5)
+        b10_l2 = MathTex(r"48\,000 \times \tfrac{9}{12} = R36\,000").scale(1.1).shift(band_shift(10) + UP * 0.2)
+        self.play(Write(b10_l2))
+        self.play(Create(SurroundingRectangle(b10_l2, color=GREEN)))
+        self.wait(2.5)
+        b10_l3 = Tex("Book value drops to R284 000").scale(1.0).shift(band_shift(10) + DOWN * 0.7)
+        self.play(Write(b10_l3))
+        self.wait(2.5)
+        b10_l4 = Tex(r"Year 2, no slicing: 15\% of 284 000 = R42 600").scale(0.95).shift(band_shift(10) + DOWN * 1.5)
+        self.play(Write(b10_l4))
+        self.wait(2.5)
+        b10_l5 = Tex("Write the fraction — it earns its own mark").scale(1.0).shift(band_shift(10) + DOWN * 2.3)
+        self.play(Write(b10_l5))
+        self.wait(2.5)
+        b10_l6 = Tex("Fully worn: leave R1, keep it in the book").scale(1.0).shift(band_shift(10) + DOWN * 3.1)
+        self.play(Write(b10_l6))
+        self.wait(4)
