@@ -71,7 +71,10 @@ with an "id" and a paired {"primitive": "clear", "target": <id>,
 ordered before the transform event. A morph whose target does not
 serialize to a plainly drawable primitive (e.g. a group) skips the
 transform path entirely and falls back to the add-only model, so nothing
-is half-emitted.
+is half-emitted. TransformFromCopy is excluded on purpose: it reverses
+its constructor arguments and morphs a COPY, leaving the original on the
+board — nothing is replaced, so the add-only pass already exports its
+outcome correctly.
 
 Output: {"version": "1", "scene": <name>, "duration_seconds": float,
          "primitives": [{"time": s, "primitive": type, "position": {x, y},
@@ -119,7 +122,6 @@ def _install_tex_shim():
 def _primitive_of(mobject, scaler):
     """Serialize one mobject to a ManimPlayer primitive dict (or None)."""
     import manim
-    import numpy as np
 
     def norm(point):
         x, y = float(point[0]), float(point[1])
@@ -170,11 +172,19 @@ def _primitive_of(mobject, scaler):
 def _transform_parts(animation):
     """(source, target) mobjects for a transform-family animation, else None.
 
-    Covers manim.Transform and its subclasses (ReplacementTransform,
-    TransformFromCopy, ...) plus the TransformMatching* family, which is an
-    AnimationGroup rather than a Transform and records its pair as
-    to_remove/to_add. Anything else — including Transforms whose parts
-    can't be identified — returns None and stays on the add-only path.
+    Covers manim.Transform and its replacing subclasses
+    (ReplacementTransform, ...) plus the TransformMatching* family, which is
+    an AnimationGroup rather than a Transform and records its pair as
+    to_remove/to_add (its `mobject` is a synthetic Group built from the
+    sub-animations, never the lesson's own mobject). Anything else —
+    including Transforms whose parts can't be identified — returns None and
+    stays on the add-only path.
+
+    TransformFromCopy is excluded on purpose: its constructor reverses its
+    arguments (Transform(target, source)) and it interpolates backwards, so
+    it morphs a COPY into place and leaves the original on the board.
+    Nothing is replaced — the add-only pass already exports its outcome
+    correctly, and a clear here would erase an element still visible.
     """
     import manim
     from manim.animation.transform_matching_parts import (
@@ -190,6 +200,8 @@ def _transform_parts(animation):
         if source is None or target is None:
             return None
         return source, target
+    if isinstance(animation, manim.TransformFromCopy):
+        return None  # morphs a copy; replaces nothing (see docstring)
     if isinstance(animation, manim.Transform):
         source = getattr(animation, "mobject", None)
         target = getattr(animation, "target_mobject", None)
@@ -197,6 +209,71 @@ def _transform_parts(animation):
             return None
         return source, target
     return None
+
+
+def _emit_morph_events(source, target, source_prim, at_time, scaler,
+                       primitives, seen, emitted, new_element_id):
+    """Append the events one morph contributes, in the order the player
+    reads them: the `clear` of the element being replaced (omitted when
+    that element was never emitted — a clear would be a lie), then the
+    `transform` carrying the END STATE inline under `to`. `source_prim` is
+    the source's serialization captured BEFORE the animation ran (an
+    in-place Transform mutates the source into the target), and supplies
+    the event's anchor.
+
+    A morph whose target does not serialize to a plainly drawable
+    primitive (a VGroup of several mobjects, an unrecognized type) appends
+    nothing and stays on the add-only path, which exports the pieces
+    individually, exactly as before. Returns the events appended.
+    """
+    target_prim = _primitive_of(target, scaler)
+    if (target_prim is None or
+            target_prim.get("primitive") not in DRAWABLE_PRIMITIVE_TYPES):
+        # Unsupported morph target (group, unknown geometry):
+        # fall back to the add-only model untouched.
+        return []
+    anchor = None
+    if source_prim is not None:
+        anchor = source_prim.get("position") or source_prim.get("from")
+    if anchor is None:
+        anchor = (target_prim.get("position")
+                  or target_prim.get("from")
+                  or {"x": 0.5, "y": 0.5})
+    prior = emitted.get(id(source))
+    events = []
+    if prior is not None:
+        # The source is on the board: retro-stamp it with an id
+        # (dicts stay mutable until the payload is written) and
+        # fade it out at the moment the morph begins. Appended
+        # before the transform event and sorted stably, so the
+        # player sees clear-then-draw.
+        prior_id = prior.setdefault("id", new_element_id())
+        events.append({
+            "time": round(at_time, 2),
+            "primitive": "clear",
+            "target": prior_id,
+            "animation": "fade_out",
+        })
+    event = {
+        "time": round(at_time, 2),
+        "primitive": "transform",
+        "id": new_element_id(),
+        "position": dict(anchor),
+        "to": target_prim,
+    }
+    events.append(event)
+    primitives.extend(events)
+    # Neither side of the morph may re-emit as a plain
+    # primitive: the transform event already carries the end
+    # state, and ReplacementTransform/TransformMatching* put
+    # the target into scene.mobjects. Both sides map to the
+    # transform event, so a later morph of either one clears the
+    # step actually on the board.
+    seen.add(id(source))
+    seen.add(id(target))
+    emitted[id(source)] = event
+    emitted[id(target)] = event
+    return events
 
 
 def export_scene(scene_file, out_path):
@@ -261,52 +338,12 @@ def export_scene(scene_file, out_path):
             # player's whiteboard_canvas.dart 'transform' case): one event
             # per morph, END STATE nested under "to", source cleared via
             # the removal vocabulary. See TRANSFORM EVENTS in the module
-            # docstring.
+            # docstring and _emit_morph_events (module level, so the unit
+            # suite exercises the real emit path without a scene run).
             for source, target, source_prim in pending:
-                target_prim = _primitive_of(target, scaler)
-                if (target_prim is None or
-                        target_prim.get("primitive")
-                        not in DRAWABLE_PRIMITIVE_TYPES):
-                    # Unsupported morph target (group, unknown geometry):
-                    # fall back to the add-only model untouched.
-                    continue
-                anchor = None
-                if source_prim is not None:
-                    anchor = source_prim.get("position") or source_prim.get("from")
-                if anchor is None:
-                    anchor = (target_prim.get("position")
-                              or target_prim.get("from")
-                              or {"x": 0.5, "y": 0.5})
-                prior = emitted.get(id(source))
-                if prior is not None:
-                    # The source is on the board: retro-stamp it with an id
-                    # (dicts stay mutable until the payload is written) and
-                    # fade it out at the moment the morph begins. Appended
-                    # before the transform event and sorted stably, so the
-                    # player sees clear-then-draw.
-                    prior_id = prior.setdefault("id", new_element_id())
-                    primitives.append({
-                        "time": round(at_time, 2),
-                        "primitive": "clear",
-                        "target": prior_id,
-                        "animation": "fade_out",
-                    })
-                event = {
-                    "time": round(at_time, 2),
-                    "primitive": "transform",
-                    "id": new_element_id(),
-                    "position": dict(anchor),
-                    "to": target_prim,
-                }
-                primitives.append(event)
-                # Neither side of the morph may re-emit as a plain
-                # primitive: the transform event already carries the end
-                # state, and ReplacementTransform/TransformMatching* put
-                # the target into scene.mobjects.
-                seen.add(id(source))
-                seen.add(id(target))
-                emitted[id(source)] = event
-                emitted[id(target)] = event
+                _emit_morph_events(source, target, source_prim, at_time,
+                                   scaler, primitives, seen, emitted,
+                                   new_element_id)
 
         def _record_camera(self, at_time):
             # Band transitions: a MovingCameraScene animating camera.frame
