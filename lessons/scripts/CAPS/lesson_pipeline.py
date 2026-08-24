@@ -849,6 +849,15 @@ def tutor_asset_dir(slug, kind):
     return TUTORS_DIR / slug / kind
 
 
+def assistant_asset_dir(assistant_id, line):
+    """Directory of an assistant's variants for ONE standing line. `line` is
+    the line's family/name pair as the manifest names it —
+    'timekeeping/five_min_warning', 'intro/new', 'handover/into_break',
+    'signoff/session_end' — and the directory holds that line's numbered
+    *.md variants, exactly as a tutor's greetings/ holds theirs."""
+    return ASSISTANTS_DIR / assistant_id / line
+
+
 def load_tutor_variants(slug, kind):
     """The in-voice variant texts for a tutor (greetings/signoffs), sorted by
     filename so ordering is deterministic."""
@@ -897,6 +906,24 @@ def assign_ack_variant(tutor_id, h, is_expert):
     return assign_tutor_variant(tutor_id, "acknowledgements", h)
 
 
+def _assign_variant(d, owner_id, kind, h, occurrence=0):
+    """The shared variant picker behind assign_tutor_variant and
+    assign_assistant_variant: one of the *.md files in `d`, chosen from the
+    entry hash so re-seeding never reshuffles, returned as the ref
+    '<owner_id>/<kind>/<file>' ('' when the directory holds no variants).
+
+    `occurrence` walks the picked index forward for a line spoken more than
+    once in the SAME lesson (the five-minute warning, once per tutor block):
+    successive occurrences land on different variants whenever the line has
+    more variants than occurrences, so a repeat never sounds like a repeat."""
+    files = sorted(d.glob("*.md")) if d.is_dir() else []
+    if not files:
+        return ""
+    n = int(h, 16)
+    idx = n % len(files) if kind == "greetings" else (n // 7) % len(files)
+    return f"{owner_id}/{kind}/{files[(idx + occurrence) % len(files)].name}"
+
+
 def assign_tutor_variant(tutor_id, kind, h):
     """Deterministically assign one of a tutor's greeting/sign-off variants
     to a lesson (owner decision 2026-07-28: every lesson carries an ASSIGNED
@@ -906,13 +933,25 @@ def assign_tutor_variant(tutor_id, kind, h):
     doesn't always pair variant N with variant N. Returns a ref relative to
     lessons/tutors/, e.g. 'tutor_001/greetings/02.md', or '' if the tutor
     has no variants."""
-    d = tutor_asset_dir(tutor_id, kind)
-    files = sorted(d.glob("*.md")) if d.is_dir() else []
-    if not files:
-        return ""
-    n = int(h, 16)
-    idx = n % len(files) if kind == "greetings" else (n // 7) % len(files)
-    return f"{tutor_id}/{kind}/{files[idx].name}"
+    return _assign_variant(tutor_asset_dir(tutor_id, kind), tutor_id, kind, h)
+
+
+def assign_assistant_variant(assistant_id, line, h, occurrence=0):
+    """The assistant/host counterpart of assign_tutor_variant: which variant
+    of one standing line (`line` = 'timekeeping/five_min_warning',
+    'intro/new', ...) this lesson uses.
+
+    The host's framing lines repeat far more than a tutor's — the
+    five-minute warning alone lands once per tutor block, and every lesson
+    of every grade carries the same timekeeping set — so they need the same
+    never-a-tic treatment the tutor refs already get (see
+    assign_ack_variant). Same picker, same entry hash, same
+    never-reshuffled guarantee. Returns '<assistant_id>/<line>/<file>', or
+    '' when the line has no variants authored — the caller then keeps the
+    single fixed ref, which is the layout in use until the variants are
+    written."""
+    return _assign_variant(assistant_asset_dir(assistant_id, line),
+                           assistant_id, line, h, occurrence)
 
 
 def roster_key_for(type_str, subject):

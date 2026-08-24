@@ -55,6 +55,13 @@ warn. Rules, all previously enforced ad hoc and now gated in one place:
      animations.json `primitives` array, never a sibling top-level `camera`
      key. This is the exact contract bug that shipped silently before (the app
      loads only `primitives`); this is its regression gate.
+  R6 STANDING-CLIP SCRIPTS RESOLVE — every entry in a manifest's `clips`
+     table names an authored script, and that file must exist in the team
+     layout. The table is built by string concatenation from a clip ref, so
+     without this gate a manifest can ship naming a script nobody has
+     written and the player finds nothing to say. Skipped (not passed)
+     when no team layout is present to check against — see
+     lesson_manifest.resolve_clip_script.
 
 Knowledge-bite checks (W1-W3) are ADVISORY ONLY — printed as warnings and
 never counted toward the exit code (a bite warning cannot fail the build):
@@ -79,6 +86,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import assistant_registry  # assistant name<->opaque-id mapping (both team layouts)
+import lesson_manifest  # R6: the standing-clip script resolver (one mapping, two callers)
 from lesson_pipeline import verify_no_session_framing  # R2 + R3 detector
 
 # CROSS-REPO: tutor persona cards moved to the RokctAI/agent repo (lms/team/).
@@ -245,6 +253,32 @@ def check_manifest(path):
                 out.append(("R4", f"{path}: track {tr.get('type')} bridge "
                                   f"{br!r} resolves to {cid} but bridge_id "
                                   f"is {bid!r}"))
+    out += check_clip_table(path, m)
+    return out
+
+
+def check_clip_table(path, manifest):
+    """R6: every standing-clip script the manifest's `clips` table names
+    actually exists.
+
+    lesson_manifest builds each `script` by concatenating a clip ref into a
+    team-layout path, so the value is a claim, not a lookup — a typo'd or
+    unauthored ref ships silently and the player has nothing to play. The
+    generator only warns (the clips are genuinely unrecorded and unauthored
+    today, and failing generation would stop the lesson pipeline over an
+    asset gap it cannot close); the produced manifest is what consumers
+    trust, so this is where it fails."""
+    out = []
+    clips = manifest.get("clips")
+    if not isinstance(clips, dict):
+        return out
+    for ref, script in lesson_manifest.unresolved_clip_scripts(clips):
+        if not script:
+            out.append(("R6", f"{path}: clips[{ref!r}] carries no `script` "
+                              "path — the clip names no authored line"))
+        else:
+            out.append(("R6", f"{path}: clips[{ref!r}] names {script}, which "
+                              "does not exist in the team layout"))
     return out
 
 
@@ -282,6 +316,7 @@ RULE_TITLES = {
     "R3": "No bracketed stage directions in script text",
     "R4": "Opaque identity ids only (^tutor_<n>$ / ^assistant_<n>$)",
     "R5": "Camera events inline in primitives (not a sibling key)",
+    "R6": "Standing-clip scripts named by a manifest's clips table exist",
 }
 
 WARN_TITLES = {
@@ -356,7 +391,7 @@ def main():
     by_rule = {}
     for rule, msg in violations:
         by_rule.setdefault(rule, []).append(msg)
-    for rule in ("R1", "R2", "R3", "R4", "R5"):
+    for rule in ("R1", "R2", "R3", "R4", "R5", "R6"):
         msgs = by_rule.get(rule, [])
         if msgs:
             print(f"\n[{rule}] {RULE_TITLES[rule]} — {len(msgs)} violation(s):")
