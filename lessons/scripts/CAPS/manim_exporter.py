@@ -25,8 +25,9 @@ Implements supacharge-tech.md §4's "ManimExporter outputs JSON primitives"
 step: the app never receives video — ReplaySDK's ManimPlayer renders these
 primitives on-device (lms_sdk ManimPrimitive.fromJson expects a `primitive`
 type string plus a normalized `position`/`from`; the whiteboard painter
-currently draws dot/circle/line/text and falls back to a marker dot for
-anything else, so unknown types stay visible rather than vanishing).
+currently draws dot/circle/rect/line/text/transform and falls back to a
+marker dot for anything else, so unknown types stay visible rather than
+vanishing).
 
 How it works:
 - Loads the scene module with `manim.Tex`/`manim.MathTex` shimmed onto a
@@ -57,9 +58,27 @@ top-level "camera" array (NOT a primitive: the ManimPlayer painter renders
 unknown primitive types as marker dots, and a camera event must never
 paint).
 
+TRANSFORM MORPHS: the "solve it live" style rewrites a line in place
+(Transform / ReplacementTransform / TransformMatchingTex) instead of
+writing the next step beside it, and the add-only model above cannot
+express that. An in-place Transform mutates the source mobject, which keeps
+its python id and is therefore never re-recorded — the board would show the
+PRE-morph line for the rest of the lesson; the Replacement variants add a
+second mobject and the new line would stack on top of the old one. So each
+morph exports the pair the player consumes: a `clear` of the element being
+replaced, then a `transform` primitive carrying the morph's END STATE
+inline under `to` (a nested drawable primitive the painter renders as-is
+rather than re-simulating the morph). Both halves need to name an element,
+so every emitted primitive carries a stable `id` and removal targets it.
+
 Output: {"version": "1", "scene": <name>, "duration_seconds": float,
-         "primitives": [{"time": s, "primitive": type, "position": {x, y},
-                         ...type fields...}],
+         "primitives": [{"time": s, "primitive": type, "id": "e1",
+                         "position": {x, y}, ...type fields...},
+                        {"time": s, "primitive": "clear", "target": "e1"},
+                        {"time": s, "primitive": "transform", "id": "e2",
+                         "position": {x, y},
+                         "to": {"primitive": type, "position": {x, y},
+                                ...type fields...}}],
          "camera": [{"time": s, "target": {x, y}}, ...]}
 """
 import argparse
@@ -93,7 +112,6 @@ def _install_tex_shim():
 def _primitive_of(mobject, scaler):
     """Serialize one mobject to a ManimPlayer primitive dict (or None)."""
     import manim
-    import numpy as np
 
     def norm(point):
         x, y = float(point[0]), float(point[1])
@@ -141,6 +159,122 @@ def _primitive_of(mobject, scaler):
     return None
 
 
+# The primitive types the player's painter draws for real
+# (whiteboard_primitive_types.dart kDrawablePrimitiveTypes), minus
+# `transform` itself — a morph's end state is a drawn element, never
+# another morph, and the painter refuses a nested transform.
+MORPH_TARGET_PRIMITIVES = {"dot", "circle", "rect", "line", "text"}
+
+
+class _ElementIds:
+    """Stable element ids, keyed by python id() like the add-only pass.
+
+    Removal events name the element they erase (`clear` with a `target`),
+    so every emitted primitive carries an id and every mobject that IS that
+    element on the board maps to it. A morph re-points BOTH its mobjects at
+    the id of the transform it emitted, so a later morph of either one
+    clears the event now on the board rather than the primitive it already
+    replaced."""
+
+    def __init__(self):
+        self._ids = {}
+        self._issued = 0
+
+    def new(self, *mobjects):
+        self._issued += 1
+        element_id = f"e{self._issued}"
+        for mobject in mobjects:
+            self._ids[id(mobject)] = element_id
+        return element_id
+
+    def of(self, mobject):
+        return self._ids.get(id(mobject))
+
+
+def _is_morph(animation):
+    """True for the Transform family — the animations that REPLACE the
+    element they are handed (Transform, ReplacementTransform, FadeTransform,
+    TransformMatchingTex/Shapes). Matched on class name rather than
+    isinstance: it costs no manim import, and the TransformMatching*
+    classes are AnimationGroups that do not share Transform's base.
+
+    TransformFromCopy is excluded on purpose — it reverses its arguments and
+    morphs a COPY, leaving the original where it was. Nothing is replaced,
+    so the add-only pass already exports it correctly."""
+    names = [cls.__name__ for cls in type(animation).__mro__]
+    if "TransformFromCopy" in names:
+        return False
+    return any("Transform" in name for name in names)
+
+
+def _morph_of(animation, scaler):
+    """Pre-play half of a morph: the source and target mobjects plus the
+    source's anchor, captured BEFORE the animation runs because an in-place
+    Transform mutates the source into the target. None for anything that is
+    not a replacing morph."""
+    if not _is_morph(animation):
+        return None
+    source = getattr(animation, "mobject", None)
+    target = getattr(animation, "target_mobject", None)
+    if target is None:  # TransformMatching* keeps its target as `to_add`
+        target = getattr(animation, "to_add", None)
+    if source is None or target is None:
+        return None
+    before = _primitive_of(source, scaler)
+    anchor = None
+    if before is not None:
+        anchor = before.get("position") or before.get("from")
+    return {"source": source, "target": target, "anchor": anchor}
+
+
+def _emit_morph(morph, at_time, scaler, ids):
+    """The primitives one morph contributes, in the order the player reads
+    them: the `clear` of the element being replaced (omitted when that
+    element was never emitted), then the `transform` carrying the end state
+    inline under `to`. The clear keeps the default fade_out — the old line
+    dissolving as the new one lands is the closest the event stream gets to
+    the morph itself.
+
+    Returns [] when the target is not a single drawable primitive (a VGroup
+    of several mobjects, say): those stay on the add-only path, which
+    exports the pieces individually, exactly as before."""
+    target = _primitive_of(morph["target"], scaler)
+    if target is None or target["primitive"] not in MORPH_TARGET_PRIMITIVES:
+        return []
+
+    emitted = []
+    replaced = ids.of(morph["source"])
+    if replaced is not None:
+        emitted.append({"time": round(at_time, 2), "primitive": "clear",
+                        "target": replaced})
+    # The morph result IS the on-board element now, under one id shared by
+    # both mobjects: the source survives an in-place Transform, the target
+    # survives a ReplacementTransform, and either may be morphed again.
+    primitive = {"time": round(at_time, 2), "primitive": "transform",
+                 "id": ids.new(morph["source"], morph["target"]),
+                 "to": target}
+    # The anchor is where the morph happens; the painter falls back to it
+    # when the nested end state carries no position of its own.
+    anchor = morph["anchor"] or target.get("position") or target.get("from")
+    if anchor is not None:
+        primitive["position"] = anchor
+    emitted.append(primitive)
+    return emitted
+
+
+def _mark_recorded(mobject, seen):
+    """Mark a morph target (and its family) as already recorded, so the
+    add-only pass does not emit it a second time beside the transform that
+    carries it. ReplacementTransform and TransformMatching* leave the target
+    on the scene as a mobject the pass has never visited."""
+    try:
+        family = list(mobject.get_family())
+    except Exception:
+        family = [mobject] + list(getattr(mobject, "submobjects", []))
+    for m in family:
+        seen.add(id(m))
+
+
 def export_scene(scene_file, out_path):
     _install_tex_shim()
     import manim
@@ -168,6 +302,7 @@ def export_scene(scene_file, out_path):
     primitives = []
     camera_events = []
     seen = set()
+    ids = _ElementIds()
 
     def norm_point(point):
         return {"x": round((float(point[0]) + scaler["fw"] / 2) / scaler["fw"], 4),
@@ -176,9 +311,26 @@ def export_scene(scene_file, out_path):
     class Recorder(scene_cls):
         def play(self, *args, **kwargs):
             started_at = float(self.renderer.time)
+            # Anchors have to be read before the animation runs: an
+            # in-place Transform mutates the source into the target.
+            morphs = [m for m in (_morph_of(a, scaler) for a in args)
+                      if m is not None]
             super().play(*args, **kwargs)
+            self._record_morphs(morphs, started_at)
             self._record(started_at)
             self._record_camera(started_at)
+
+        def _record_morphs(self, morphs, at_time):
+            # Transform-based style (#51): each morph replaces an element,
+            # so it exports a clear + transform pair and its target is
+            # marked recorded — the add-only pass below must not emit that
+            # end state again beside the transform already carrying it.
+            for morph in morphs:
+                emitted = _emit_morph(morph, at_time, scaler, ids)
+                if not emitted:
+                    continue
+                primitives.extend(emitted)
+                _mark_recorded(morph["target"], seen)
 
         def _record_camera(self, at_time):
             # Band transitions: a MovingCameraScene animating camera.frame
@@ -196,9 +348,10 @@ def export_scene(scene_file, out_path):
         def _record(self, at_time):
             # Whole-mobject granularity: a Text/Tex is ONE primitive, never
             # its Pango glyph leaves. Only unrecognized containers recurse.
-            # Add-only model: each mobject is emitted once, at the scene time
-            # it first appears — matching today's ManimPlayer, which only
-            # accumulates primitives (no move/remove events yet).
+            # Add-only model: each mobject is emitted once, at the scene
+            # time it first appears, and is never moved afterwards. The one
+            # exception is a morph, which _record_morphs has already
+            # exported (and marked recorded) above.
             def visit(m):
                 if id(m) in seen:
                     return
@@ -206,6 +359,7 @@ def export_scene(scene_file, out_path):
                 prim = _primitive_of(m, scaler)
                 if prim is not None:
                     prim["time"] = round(at_time, 2)
+                    prim["id"] = ids.new(m)
                     primitives.append(prim)
                 else:
                     for sub in getattr(m, "submobjects", []):

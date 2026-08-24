@@ -25,10 +25,13 @@ warn. Rules, all previously enforced ad hoc and now gated in one place:
 
   R1 PRIMITIVE VOCABULARY — every emitted primitive `type` in an
      animations.json must be one of the REAL whiteboard vocabulary
-     (text/dot/circle/line/rect + camera_move/band_start/clear/fade_out), the
-     set whiteboard_canvas.dart + the player actually render. NOT the stale
-     replaysdk-spec.md list (mathtex/shape/graph/hand_overlay/transform);
-     anything outside the real set is drift and fails.
+     (text/dot/circle/line/rect/transform + camera_move/band_start/clear/
+     fade_out), the set whiteboard_canvas.dart + the player actually render.
+     NOT the stale replaysdk-spec.md list (mathtex/shape/graph/hand_overlay);
+     anything outside the real set is drift and fails. `transform` (#51) is
+     checked one level deeper: its nested `to` must itself be a DRAWABLE
+     type, because a transform the painter cannot resolve falls back to a
+     grey marker dot — the same silent drift R1 exists to catch.
   R2 NO GREETING/SIGNOFF in script text — greetings, self-introductions,
      handoffs and sign-offs are owned by tutor/assistant assets, never the
      lesson script. Reuses the structural detector from lesson_pipeline
@@ -87,13 +90,18 @@ PERSONA_TUTORS_DIR = (Path(_TEAM_ROOT) / "tutors" / "CAPS" if _TEAM_ROOT
                       else Path("lessons/tutors"))
 
 # R1: the real render vocabulary. whiteboard_canvas.dart draws
-# text/dot/circle/line/rect; the player handles camera_move/band_start (camera)
-# and clear/fade_out (removal). Everything else renders as a marker dot = drift.
+# text/dot/circle/line/rect/transform; the player handles camera_move/band_start
+# (camera) and clear/fade_out (removal). Everything else renders as a marker
+# dot = drift.
 ALLOWED_PRIMITIVES = {
-    "text", "dot", "circle", "line", "rect",
+    "text", "dot", "circle", "line", "rect", "transform",
     "camera_move", "band_start", "clear", "fade_out",
 }
 CAMERA_TYPES = {"camera_move", "band_start"}
+# What a `transform` may morph INTO: a drawn element, never another morph and
+# never a camera or removal event. The painter resolves `to` as a nested
+# primitive, or accepts a plain top-level `text` as shorthand.
+MORPH_TARGET_PRIMITIVES = {"text", "dot", "circle", "line", "rect"}
 
 # R4: opaque id shapes. ASSISTANT_ID_RE gates manifest bridge_id (active
 # since the assistant opaque-id migration; see assistant_registry.py).
@@ -123,6 +131,25 @@ def check_script(path):
 
 # --- R1 + R5: animations.json ---
 
+def _check_morph(path, i, prim):
+    """R1, one level down: a transform states the morph's END STATE, either
+    as a nested drawable primitive under `to` or as a plain top-level `text`.
+    A transform carrying neither — or a `to` the painter cannot draw — is
+    rendered as a marker dot, so it fails the same rule."""
+    to = prim.get("to")
+    if not isinstance(to, dict):
+        if prim.get("text") is None:
+            return [("R1", f"{path}: primitive[{i}] transform carries neither a "
+                           "nested 'to' primitive nor a top-level 'text' — the "
+                           "painter renders it as a marker dot")]
+        return []
+    if to.get("primitive") not in MORPH_TARGET_PRIMITIVES:
+        return [("R1", f"{path}: primitive[{i}] transform morphs into "
+                       f"{to.get('primitive')!r}, not one of the drawable types "
+                       f"{sorted(MORPH_TARGET_PRIMITIVES)}")]
+    return []
+
+
 def check_animations(path):
     out = []
     try:
@@ -142,6 +169,8 @@ def check_animations(path):
         if t not in ALLOWED_PRIMITIVES:
             out.append(("R1", f"{path}: primitive[{i}] type {t!r} not in the "
                               f"real whiteboard vocabulary {sorted(ALLOWED_PRIMITIVES)}"))
+        elif t == "transform":
+            out.extend(_check_morph(path, i, p))
     # R5 (positive): if the scene pans, camera events must be present inline.
     if not any(p.get("primitive") in CAMERA_TYPES for p in prims):
         bands = {int(float(p.get("position", {}).get("y", 0)))
