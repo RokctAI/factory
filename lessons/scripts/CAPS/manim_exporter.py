@@ -215,6 +215,14 @@ def _morph_of(animation, scaler):
     if not _is_morph(animation):
         return None
     source = getattr(animation, "mobject", None)
+    # TransformMatching* is an AnimationGroup, and an AnimationGroup's
+    # `mobject` is the synthetic Group it builds out of its sub-animations
+    # (manim composition.py) — never the equation the lesson wrote, so it
+    # carries no id and no anchor. The element actually being replaced is
+    # to_remove[0]; manim sets to_remove = [mobject, fade_target_copy].
+    replaced = getattr(animation, "to_remove", None)
+    if replaced:
+        source = replaced[0]
     target = getattr(animation, "target_mobject", None)
     if target is None:  # TransformMatching* keeps its target as `to_add`
         target = getattr(animation, "to_add", None)

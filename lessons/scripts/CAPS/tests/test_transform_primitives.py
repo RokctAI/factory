@@ -145,11 +145,22 @@ class TransformFromCopy(Transform):
 
 
 class TransformMatchingTex:
-    """The matching family keeps its target as `to_add`, not
-    `target_mobject`, and is an AnimationGroup rather than a Transform."""
+    """The matching family exactly as manim 0.21.0 leaves it
+    (transform_matching_parts.py:139-142).
+
+    It is an AnimationGroup, so `mobject` is NOT the source: AnimationGroup
+    hands its synthetic `self.group` up to Animation (composition.py:75-79),
+    a Group built from the SUB-animations' mobjects — the matched and faded
+    part groups — which the exporter has never emitted. The source being
+    replaced is `to_remove[0]`; `to_remove[1]` is the fade_target copy. The
+    target is `to_add`.
+
+    Faking `mobject = mobject` here would hide exactly the bug this class
+    exists to catch, so it must stay a group that is neither mobject."""
 
     def __init__(self, mobject, target_mobject):
-        self.mobject = mobject
+        self.mobject = Group(Group(), Group())
+        self.to_remove = [mobject, Group()]
         self.to_add = target_mobject
 
 
@@ -236,7 +247,23 @@ class EmittedPairTests(unittest.TestCase):
     def test_the_matching_family_target_is_read_from_to_add(self):
         emitted = emit(TransformMatchingTex(self.source, Tex("$x = 4$")),
                        self.ids)
-        self.assertEqual(emitted[1]["to"]["latex"], "$x = 4$")
+        self.assertEqual(emitted[-1]["to"]["latex"], "$x = 4$")
+
+    def test_the_matching_family_source_is_read_from_to_remove(self):
+        # TransformMatchingTex is the idiomatic live-solve animation, and it
+        # is an AnimationGroup: its `mobject` is a synthetic Group that was
+        # never emitted, so reading the source from there erases nothing and
+        # the new equation paints on top of the old one. The source is
+        # to_remove[0].
+        emitted = emit(TransformMatchingTex(self.source,
+                                            Tex("$x = 4$", x=-2.0, y=1.0)),
+                       self.ids, at_time=3.25)
+        self.assertEqual([p["primitive"] for p in emitted],
+                         ["clear", "transform"])
+        self.assertEqual(emitted[0]["target"], self.written)
+        # The anchor comes off the source too, not off the synthetic group
+        # (which serializes to nothing at all).
+        self.assertEqual(emitted[1]["position"], {"x": 0.3, "y": 0.4})
 
 
 class FallThroughTests(unittest.TestCase):
