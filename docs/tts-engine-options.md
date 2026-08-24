@@ -17,13 +17,13 @@
 
 | Engine | License | CPU speed | Long-form quality | Custom voice ("Grandmaster") |
 |---|---|---|---|---|
-| **Piper** | MIT (commercial-safe) | Very fast — real-time on a Raspberry Pi 5, 10-30x real-time on desktop CPU | Clear/intelligible, can sound robotic on long passages — "functional," not narration-grade | ~100+ fixed voice presets, no real cloning — pick a preset, don't create a bespoke character |
+| **Piper** | **GPL-3.0-or-later** (code, since v1.3.0's move to `OHF-voice/piper1-gpl`; MIT covers v1.2.0 and earlier only). Voice models licensed separately and vary — e.g. `en_GB-cori-high` is public domain, but several popular `en_US` voices are CC BY-NC-SA (non-commercial); check per voice | Very fast — real-time on a Raspberry Pi 5, 10-30x real-time on desktop CPU | Clear/intelligible, can sound robotic on long passages — "functional," not narration-grade | ~100+ fixed voice presets, no real cloning — pick a preset, don't create a bespoke character |
 | **Kokoro TTS** | Apache 2.0 (commercial-safe) | Real-time or faster on budget CPU (~150ms per 10s of text) | #1 on TTS Arena as of Jan 2026; many report it's indistinguishable from ElevenLabs casually; strong long-form quality | No built-in cloning; community add-on (KokoClone) does zero-shot cloning from a 3-10s reference sample — quality depends on the reference |
 | **XTTS v2 (Coqui)** | **CPML — non-commercial only.** Coqui Inc. also shut down Jan 2024. | Needs GPU for real-time; CPU is slow | Best-in-class cloning quality among open models | Best cloning (6s sample, 17 languages) — **but licensing blocks commercial use**, reference/research only |
 | **F5-TTS** | **CC-BY-NC-4.0 — non-commercial only** | GPU-oriented, CPU slow | Good quality, strong cloning | Cloning supported but same licensing block as XTTS v2 |
 | **StyleTTS2** | Mostly MIT-derivative (varies by fork) | GPU-oriented; CPU path underdocumented/slower | Regarded as best prosody in open source, well suited to long-form | Fine-tuning possible, more engineering-heavy |
 
-**Read**: Piper is safe and fast but sounds more "functional" than premium. Kokoro is the best fit if you
+**Read**: Piper is fast (but GPL-3.0-or-later since v1.3.0, with per-voice model licenses to check) and sounds more "functional" than premium. Kokoro is the best fit if you
 want quality and are okay with community-supported cloning — commercially usable, CPU-friendly, currently
 top-rated. XTTS v2/F5-TTS have the best cloning tech but are legally off-limits for a commercial product.
 
@@ -42,7 +42,7 @@ one-time**. Google/Azure land in a similar or cheaper range depending on tier.
 
 ## Pocket TTS (Kyutai Labs) — added 2026-07-17, CPU-only WITH cloning (strongest fit so far)
 
-Released January 2026, MIT licensed, 100M params. The one option found so far that combines
+Released January 2026, 100M params. Code is MIT, but the **weights are CC-BY-4.0** and consent-gated — distributed on Hugging Face behind a term prohibiting voice impersonation or cloning without explicit and lawful consent. The one option found so far that combines
 CPU-only inference (runs on the owner's own PC — Intel UHD, no GPU) with real zero-shot voice
 cloning (20s reference sample) — Piper/Kokoro lack or only community-support cloning; VibeVoice/
 Voxtral have cloning but need a GPU. Built on a new "Continuous Audio Language Models" architecture
