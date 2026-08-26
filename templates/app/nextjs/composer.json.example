@@ -1,0 +1,37 @@
+{
+  "_note": "Example menu, not read by anything. Copy the entries you need into composer.json and refresh each sha256 pin (SHA-256 of the SDK's install.py at the pinned ref) at activation time - a stale or missing pin fails the composer. Entries below are copied verbatim from live sources: telemetry_sdk from rokctai/supacharge-web's committed composer.json; erp_sdk and crm_sdk from The-Rokct-Protocol core/utils/frappe/composer/rokctapp.json (which ship without pins in the registry - add a fresh sha256 when you activate them).",
+  "name": "{{APP_SLUG}}_composer",
+  "version": "1.0.0",
+  "description": "Known Next.js SDK entries for RokctAI shells - an example menu for the {{APP_NAME}} app",
+  "sdks": [
+    {
+      "name": "telemetry_sdk",
+      "enabled": true,
+      "source": "git",
+      "git": "https://github.com/RokctAI/core",
+      "path": "../core/telemetry/nextjs",
+      "ref": "main",
+      "sha256": "e5b23d1e8ee80b8c9bd964a0aa02049e75ecbd7a90d8a66ddd5b3eb6d54e5c6f",
+      "_sha256_comment": "SHA-256 of telemetry/nextjs/install.py at core as bootstrapped; required by the composer's unpinned-installer gate. Update when upstream install.py changes.",
+      "_comment": "Mandatory in every Next.js composition (SDK_ECOSYSTEM.md hard invariant 9, mirroring the flutter templates' telemetry_sdk entries). Empty-manifest seam owner: installs nothing; base_sdk's kernel carries the TelemetryClient."
+    },
+    {
+      "name": "erp_sdk",
+      "enabled": true,
+      "source": "git",
+      "git": "https://github.com/RokctAI/pay",
+      "path": "../pay/erp/nextjs",
+      "ref": "main",
+      "_comment": "Read by the Next.js composer (core/utils/nextjs/sdk_composer.py) only — the frappe engine reads 'modules' above and ignores this key. The erp SDK's nextjs half (accounting + hrms app trees). A Next.js shell for this product commits just '.rokct/config/app_type' containing 'rokctapp' and composes this list."
+    },
+    {
+      "name": "crm_sdk",
+      "enabled": true,
+      "source": "git",
+      "git": "https://github.com/RokctAI/productivity",
+      "path": "../productivity/crm/nextjs",
+      "ref": "main",
+      "_comment": "The crm SDK's nextjs half (leads, deals, contacts, organizations, dashboard — the frontend of the crm frappe module above). Listed after erp_sdk because its manifest 'requires' names accounting action files erp_sdk installs (requires is a warn-only prerequisite check in sdk_installer_base.py's check_requires(), not an auto-install)."
+    }
+  ]
+}
