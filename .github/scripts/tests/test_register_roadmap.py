@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Licensed under the MIT License.
-# Copyright 2026 RokctAI
+# Copyright 2026 ROKCT INTELLIGENCE (PTY) LTD
 """Unit tests for .github/scripts/register_roadmap.py (stdlib unittest).
 
 Two properties matter here, and they pull in opposite directions.
