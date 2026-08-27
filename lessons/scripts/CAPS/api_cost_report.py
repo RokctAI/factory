@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2026 RokctAI
+# Copyright (c) 2026 ROKCT INTELLIGENCE (PTY) LTD
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 # SOFTWARE.
 
 # Licensed under the MIT License.
-# Copyright 2026 RokctAI
+# Copyright 2026 ROKCT INTELLIGENCE (PTY) LTD
 """Cost / rate-limit reporting over .rokct/agent/log/api_usage.jsonl.
 
 Implements the reporting half of docs/lesson-pipeline-scale-hardening-brief.md

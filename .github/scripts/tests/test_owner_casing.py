@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Licensed under the MIT License.
-# Copyright 2026 RokctAI
+# Copyright 2026 ROKCT INTELLIGENCE (PTY) LTD
 """Unit tests for .github/scripts/owners.py and the owner field of
 parse_app_idea.py (stdlib unittest).
 
