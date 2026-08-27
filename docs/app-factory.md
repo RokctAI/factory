@@ -35,9 +35,51 @@ re-applying the label retries.
 | :--- | :--- | :--- |
 | `app-idea` | the issue form, automatically | This issue is a candidate app. |
 | `approved` | Ray, by hand | Build it. Triggers the spawn. |
+| `nextjs` | Ray, by hand, optional | Seed the Next.js stack overlay. |
+| `flutter` | Ray, by hand, optional | Seed the Flutter stack overlay. |
+| `frappe` | Ray, by hand, optional | Seed the Frappe stack overlay. |
 
-Both labels must be present for the spawn to run; `approved` on anything
-without `app-idea` is ignored.
+`app-idea` and `approved` must both be present for the spawn to run;
+`approved` on anything without `app-idea` is ignored.
+
+### Stack labels and per-stack templates
+
+`templates/app/` is layered: `common/` holds the stack-neutral scaffold every
+app gets, and `nextjs/`, `flutter/` and `frappe/` are overlay directories
+seeded *on top of* `common/` (overlay files win on collision). At most one of
+the three stack labels may sit on the issue when `approved` lands:
+
+- **none** — the repo is seeded from `common/` only, exactly the old
+  behaviour. The agent picks the stack itself, per `AGENTS.md`.
+- **exactly one** — `app_spawn.yml` passes it as the `stack` input to
+  `app_create.yml`, which hands the seeder `--stack` and, best-effort, sets
+  the stack name as a topic on the new repo (a failed topics call never
+  fails the spawn).
+- **two or more** — the spawn fails loudly: the workflow comments the
+  contradiction on the issue and removes `approved`, same as every other
+  guard. Remove the extra label and re-apply `approved` to retry.
+
+Every overlay ships `.rokct/config/app_type` containing `{{APP_SLUG}}` — the
+fleet's app-identity/persona marker (compare `supacharge`, `telephony`,
+`deliveryplatform`). It is a *persona slug*, **not** a framework name; no
+overlay ever writes `nextjs`/`flutter`/`frappe` into it. The composer files
+differ per stack, deliberately:
+
+- `nextjs/` — an **active** `composer.json` with an empty `sdks` array (the
+  Next.js composer reads it; network-cloned entries need a `sha256` pin of
+  the SDK's `install.py` or the composer exits) plus a `composer.json.example`
+  menu of known entries copied from live sources.
+- `flutter/` — `composer.json.example` **only**. Flutter CI overwrites a
+  committed `composer.json` from the registry template in the Protocol repo
+  (`core/utils/flutter/composer/<app_type>.json`), so an empty active file
+  would be pointless; the example is the menu (derived from
+  `rokctai/supacharge`'s composed list, pins included).
+- `frappe/` — `composer.json.example` **only**, and this one is load-bearing:
+  `universal-frappe-ci` composes **whenever a committed `composer.json`
+  exists at the repo root**, so seeding an active file would trigger a
+  compose the moment the shell lands. Activation is a deliberate copy to
+  `composer.json`. The menu mirrors the Protocol registry's
+  `core/utils/frappe/composer/rokctapp.json` `modules` list.
 
 ## Configuration
 
@@ -192,8 +234,11 @@ the transferred repo before re-running it.
 
 ## The scaffold
 
-`templates/app/` is what every new repo starts as. Files are copied verbatim
-with `{{TOKEN}}` placeholders substituted by
+`templates/app/` is what every new repo starts as: `common/` holds the
+stack-neutral files, and the `nextjs/`, `flutter/` and `frappe/` overlay
+directories are layered on top when the issue carried a stack label (see
+[Stack labels and per-stack templates](#stack-labels-and-per-stack-templates)).
+Files are copied verbatim with `{{TOKEN}}` placeholders substituted by
 `.github/scripts/seed_app_repo.py`:
 
 | Token | Source |
@@ -202,14 +247,17 @@ with `{{TOKEN}}` placeholders substituted by
 | `{{APP_DESCRIPTION}}` | issue form, *One-line description* |
 | `{{APP_SPEC}}` | issue form, *Rationale*, verbatim |
 | `{{APP_OWNER}}` / `{{APP_REPO}}` / `{{APP_VISIBILITY}}` | resolved owner and visibility |
+| `{{APP_SLUG}}` | derived from *App name*: lowercased, spaces/underscores to hyphens, stripped to `[a-z0-9-]` |
 | `{{SOURCE_ISSUE}}` | URL of the accepted issue |
 
-Contents: `README.md`, `AGENTS.md` (the agent's build brief), `.gitignore`
-(stored as `gitignore` so it does not act on the factory's own tree),
-`.relation`, `docs/spec.md` (the accepted brief, verbatim) and a `.rokct/`
+`common/` contents: `README.md`, `AGENTS.md` (the agent's build brief),
+`.gitignore` (stored as `gitignore` so it does not act on the factory's own
+tree), `docs/spec.md` (the accepted brief, verbatim) and a `.rokct/`
 bootstrap — `bootstrap.sh`, which fetches `initiate.py` from
 `RokctAI/The-Rokct-Protocol` and runs it. The protocol is fetched rather than
-vendored so spawned repos never ship a stale copy.
+vendored so spawned repos never ship a stale copy. A template directory with
+no `common/` subdirectory still seeds the old way — one flat copy — so the
+seeder keeps working against a legacy layout.
 
 Dotfiles other than `.gitignore` ship with their dot intact — `seed_app_repo.py`
 walks the template with `os.walk`, which does not skip them, and `app_create.yml`
@@ -217,27 +265,27 @@ stages the seeded tree with `git add -A`, which does not either. Only
 `.gitignore` needs the `gitignore` → `.gitignore` rename, because a live
 `.gitignore` inside `templates/app/` would act on the factory's own tree.
 
-### `.relation` — declaring which SDKs the app consumes
+### `.relation` — an SDK-repo marker, deliberately absent here
 
-`.relation` is the fleet's convention for declaring which sibling repos a repo
-depends on: a JSON array of `{git, dart, frappe, public, ref}` entries, one per
-repo, specified in `SDK_ECOSYSTEM.md` in `RokctAI/The-Rokct-Protocol` and used
-for real in `RokctAI/agent`'s root `.relation`. The scaffold ships it as an
-empty array — a new app consumes nothing yet — and `AGENTS.md` carries the entry
-shape plus a short orientation on how the SDK fleet works, pointing at the
-fleet documents that hold the real contract: the generated SDK census in
-`SDK_ECOSYSTEM.md` (which SDK lives in which repo) and its reverse index
-`SDK_CONSUMERS.md`, both in the Protocol repo, plus `SDK_README.md` in
-`RokctAI/agent` for the per-SDK authoring contract.
+The scaffold used to ship an empty `.relation`. It no longer does, by
+ruling: `.relation` is a marker for **SDK repos only** — it tells an agent
+working in an SDK repo which sibling repos hold related SDKs (see
+`RokctAI/agent`'s root `.relation` and `SDK_ECOSYSTEM.md` in
+`RokctAI/The-Rokct-Protocol`) — and an app shell is not an SDK repo. What an
+app *consumes* is declared in its `composer.json`, which is what the
+composers actually read; the empty `.relation` the scaffold shipped was one
+more file to go stale and one more convention to confuse.
 
-The census is deliberately **not** copied into the scaffold. A duplicate list in
+`AGENTS.md` still carries the short orientation on how the SDK fleet works,
+pointing at the fleet documents that hold the real contract: the generated
+SDK census in `SDK_ECOSYSTEM.md` (which SDK lives in which repo) and its
+reverse index `SDK_CONSUMERS.md`, both in the Protocol repo, plus
+`SDK_README.md` in `RokctAI/agent` for the per-SDK authoring contract. The
+census is deliberately **not** copied into the scaffold: a duplicate list in
 every spawned repo goes stale the moment an SDK moves, and the fleet docs are
 one `gh` call away.
 
-Nothing parses `.relation` today: no script or workflow in `control`, `agent`,
-`factory` or `the-rokct-protocol` reads it. It is documentation by convention,
-addressed to the agent that wakes up in the new repo. Two neighbouring
-conventions it is easy to confuse it with — neither belongs in an app repo:
+Two neighbouring conventions that also do **not** belong in an app repo:
 `.repo` (in `control`) lists the *apps* that sit on top of that backend, one
 `https://…/<repo>.git (branch)` per line; `.private_repo` names the single private
 companion repo whose code is merged into the working tree and git-excluded.
@@ -272,7 +320,8 @@ Two caveats worth knowing:
 ## Reusing the creation step
 
 `app_create.yml` is a `workflow_call` workflow taking `name`, `description`,
-`visibility`, `owner`, and optionally `spec` and `source_issue`; it takes
+`visibility`, `owner`, and optionally `spec`, `source_issue` and `stack`
+(one of `nextjs`/`flutter`/`frappe`, empty for the common scaffold); it takes
 `FACTORY_PAT` as a secret (the caller resolves which token that is) and
 returns `repo_url`. A second front-end — say a
 merged PR that adds an app folder — can call it without going through issues.

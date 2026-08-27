@@ -40,8 +40,7 @@ skips installing the session workflows whenever `CI` is set.
 ## The SDK fleet
 
 Only relevant if `docs/spec.md` puts this app on the fleet's stack (Flutter
-client + Frappe backend). If you pick a different stack, skip this section and
-delete `.relation`.
+client + Frappe backend). If you pick a different stack, skip this section.
 
 Rokct apps are thin shells: an app's `lib/` is regenerated on every compose
 from the SDKs listed in its root `composer.json`. The SDKs live in multi-SDK
@@ -76,14 +75,11 @@ above; it will drift, and these will not:
    contract: DDD layout, manifest and import rules, offline doctrine, ADR-005.
    It is the template for *writing* an SDK, not a list of the ones that exist.
 
-`.relation` in this repo's root declares which SDK repos this app consumes. It
-ships empty. Add one entry per repo you take a dependency on, in the shape
-`RokctAI/agent` uses in its own `.relation`:
-
-```json
-{ "git": "https://github.com/RokctAI/<repo>", "dart": "../<repo>/<sdk>/dart",
-  "frappe": "../<repo>/<sdk>/frappe", "public": false, "ref": "main" }
-```
+This repo deliberately carries no `.relation` file. That marker belongs to
+SDK repos only — it tells an agent working *in an SDK repo* which sibling
+repos hold related SDKs (see `RokctAI/agent`'s root `.relation`). An app
+shell declares what it consumes in `composer.json` instead; do not add a
+`.relation` here.
 
 ## How to work
 

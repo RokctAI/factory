@@ -8,10 +8,14 @@ on:
     paths:
       - 'lessons/scripts/**'
       - '.github/scripts/**'
+      # test_seed_app_repo.py asserts invariants on the committed template
+      # tree (layered layout, no .relation), so template edits must run it.
+      - 'templates/app/**'
   pull_request:
     paths:
       - 'lessons/scripts/**'
       - '.github/scripts/**'
+      - 'templates/app/**'
   workflow_dispatch:
 
 jobs:

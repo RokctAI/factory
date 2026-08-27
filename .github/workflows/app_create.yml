@@ -44,6 +44,13 @@ on:
         required: false
         type: string
         default: ''
+      # One of nextjs/flutter/frappe, or empty for the stack-neutral common
+      # scaffold. The seeder validates the value; here it is passed through
+      # and, best-effort, pinned on the new repo as a topic.
+      stack:
+        required: false
+        type: string
+        default: ''
     secrets:
       FACTORY_PAT:
         required: true
@@ -113,9 +120,24 @@ jobs:
           fi
           echo "repo_url=https://github.com/$TARGET" >> "$GITHUB_OUTPUT"
 
+      # Advisory, so an agent (or a person) can see the chosen stack from the
+      # repo page without opening the tree. The repo, seed and Build v0 issue
+      # do not depend on it, so a failed topics call must not fail the spawn.
+      - name: Set stack topic on the repo
+        if: inputs.stack != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
+          STACK: ${{ inputs.stack }}
+        run: |
+          gh repo edit "$TARGET" --add-topic "$STACK" \
+            || echo "::warning::Could not set topic '$STACK' on $TARGET; continuing."
+
       - name: Seed scaffold
         env:
           APP_SPEC: ${{ inputs.spec }}
+          STACK: ${{ inputs.stack }}
         run: |
           printf '%s\n' "$APP_SPEC" > spec.txt
           python3 .github/scripts/seed_app_repo.py \
@@ -126,7 +148,8 @@ jobs:
             --spec-file spec.txt \
             --owner "${{ steps.owner.outputs.owner }}" \
             --visibility "${{ inputs.visibility }}" \
-            --issue "${{ inputs.source_issue }}"
+            --issue "${{ inputs.source_issue }}" \
+            ${STACK:+--stack "$STACK"}
 
       - name: Push main
         working-directory: seed
