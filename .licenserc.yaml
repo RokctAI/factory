@@ -1,0 +1,70 @@
+# Configuration for apache/skywalking-eyes (license-eye) v0.4.0.
+# This repository is licensed under the GNU Affero General Public
+# License v3 (AGPL-3.0-only); see the root LICENSE file.
+header:
+  license:
+    spdx-id: AGPL-3.0-only
+    copyright-owner: ROKCT INTELLIGENCE (PTY) LTD
+    # The literal header text license-eye matches against. WITHOUT this,
+    # license-eye has no template to compare and matches nothing at all:
+    # it ships header templates for Apache-2.0 and MPL-2.0 ONLY, so neither
+    # MIT nor AGPL-3.0 can be resolved from the spdx-id alone and the check
+    # scores `valid: 0, invalid: <everything>` regardless of what the files
+    # actually carry. Supplying the text makes the check actually check.
+    #
+    # This repository is licensed under the GNU Affero General Public
+    # License v3 (see the root LICENSE file). Keep this block, the root
+    # LICENSE and the header in every source file in agreement.
+    content: |
+      Copyright (c) 2026 ROKCT INTELLIGENCE (PTY) LTD
+
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Affero General Public License as published
+      by the Free Software Foundation, version 3.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU Affero General Public License for more details.
+
+      You should have received a copy of the GNU Affero General Public License
+      along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+  # `paths` and `paths-ignore` MUST be nested under `header:`. At the top
+  # level license-eye silently ignores them and scope defaults to '**',
+  # dragging README.md, JSON, workflow YAML and images into the check.
+  paths:
+    - '**/*.py'
+    - '**/*.js'
+    - '**/*.jsx'
+    - '**/*.ts'
+    - '**/*.tsx'
+    - '**/*.dart'
+
+  paths-ignore:
+    # CI tooling for the app-spawn flow. These seven scripts carry no ROKCT
+    # MIT notice at all -- four have no licence header and three carry only a
+    # one-line "Licensed under the MIT License." stanza rather than the full
+    # block -- so the relicensing pass, which rewrites an existing notice and
+    # never prepends one, has nothing to convert. They were already failing
+    # the shared default MIT check before this change (invalid: 7). Excluded
+    # here so the repo config reflects the relicensing honestly; giving them
+    # headers is a separate decision, flagged in the PR.
+    - '.github/**'
+    # Agent-internal protocol state. `initiate.py` is relicensed with the
+    # rest of the repo; `end_protocol.py` and `sync_workspace.py` carry a
+    # "Copyright (c) 2026 RokctAI" owner line instead of the canonical
+    # "ROKCT INTELLIGENCE (PTY) LTD" and so were left untouched -- also
+    # flagged in the PR.
+    - '.rokct/**'
+    # Vendored / third-party code
+    - '**/node_modules/**'
+    - '**/vendor/**'
+    # Build output
+    - '**/dist/**'
+    - '**/build/**'
+    # Local environments
+    - '**/venv/**'
+    - '**/.venv/**'
+
+  comment: on-failure
