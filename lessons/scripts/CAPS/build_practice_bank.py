@@ -71,7 +71,11 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import curriculum_target
+
 REPO_ROOT = Path(__file__).resolve().parents[3]
+# Defaults for a no-flag run. main() re-points both at the tree named by
+# --curriculum (see curriculum_target); CAPS keeps these exact paths.
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "practice_bank.json"
 
@@ -233,6 +237,16 @@ def publish(bank: dict) -> int:
 
 def main(argv=None) -> int:
     argv = sys.argv[1:] if argv is None else argv
+    global CAPS_ROOT, OUTPUT_PATH
+    curriculum, CAPS_ROOT, OUTPUT_PATH = curriculum_target.resolve(
+        REPO_ROOT, argv, "practice_bank.json")
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    if curriculum != curriculum_target.DEFAULT_CURRICULUM:
+        print(
+            f"building {curriculum} from "
+            f"{CAPS_ROOT.relative_to(REPO_ROOT)} -> "
+            f"{OUTPUT_PATH.relative_to(REPO_ROOT)}"
+        )
     bank = build_bank()
     item_count = len(bank["items"])
 
