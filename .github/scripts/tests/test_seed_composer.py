@@ -16,6 +16,10 @@ creation time. These tests pin down, with the network stubbed out:
      as read from the SDK repo now, CRLF folded to LF (compose.sh's own
      rule); an unreadable installer keeps the source's pin with a warning
      and an entry left with no pin at all is fatal.
+  2b. **Versions.** Every git entry's `version` is what the manifest.json
+     next to that install.py declares now - the consumers index trails
+     releases - and the source's value stands, with a warning, only when
+     the manifest is unreachable, not JSON, or has no version.
   3. **Drift.** An entry the index places in another repo or at another
      path stops the spawn; an SDK the index has not caught up with is a
      warning.
@@ -32,6 +36,7 @@ import os
 import sys
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -64,14 +69,20 @@ def git_entry(name, repo_short, sha=None, home=False, enabled=True):
 
 
 class FakeNetwork:
-    """Stands in for fetch_raw/fetch_head: a dict of (repo, path) -> bytes."""
+    """Stands in for fetch_raw/fetch_head: a dict of (repo, path) -> bytes.
+    A (repo, path) in `broken` raises the way a 5xx from the contents API
+    would."""
 
-    def __init__(self, files):
+    def __init__(self, files, broken=()):
         self.files = files
+        self.broken = set(broken)
         self.calls = []
 
     def fetch_raw(self, owner_repo, path, ref, token=None):
         self.calls.append((owner_repo, path, ref))
+        if (owner_repo, path) in self.broken:
+            raise urllib.error.HTTPError(f"https://api.github.com/{owner_repo}/{path}", 503,
+                                         "Service Unavailable", None, None)
         return self.files.get((owner_repo, path))
 
     def fetch_head(self, owner_repo, ref, token=None):
@@ -248,6 +259,111 @@ class TestPins(SeedComposerCase):
             self.run_main()
         self.assertIn("new_sdk", str(ctx.exception))
         self.assertIn("unpinned", str(ctx.exception))
+
+
+class TestVersions(SeedComposerCase):
+    """The consumers index is regenerated weekly and trails releases: it
+    wrote base_sdk 1.35.0 while core's main declared 1.37.0. The version an
+    entry ships with is the manifest's, read next to the installer."""
+
+    def manifest(self, name, version=None, raw=None):
+        sub = {"telemetry_sdk": "telemetry/nextjs", "base_sdk": "base/nextjs", "lms_sdk": "lms/nextjs"}[name]
+        repo = "RokctAI/agent" if name == "lms_sdk" else "RokctAI/core"
+        body = raw if raw is not None else json.dumps(
+            {"name": name, **({"version": version} if version is not None else {}), "installs": []}
+        ).encode("utf-8")
+        self.net.files[(repo, f"{sub}/manifest.json")] = body
+
+    def test_version_comes_from_the_live_manifest_not_the_index(self):
+        self.manifest("telemetry_sdk", "1.2.0")
+        self.manifest("base_sdk", "1.37.0")  # the index still says 1.35.0
+        self.write_index()
+        self.write_example()
+        out, err = self.run_main()
+        c = self.composer()
+        self.assertEqual(c["sdks"][0]["version"], "1.2.0")
+        self.assertEqual(c["sdks"][1]["version"], "1.37.0")
+        self.assertIn(("RokctAI/core", "base/nextjs/manifest.json", "main"), self.net.calls)
+        self.assertIn("the source said 1.35.0 but manifest.json", out)
+        self.assertIn("declares 1.37.0", out)
+        self.assertNotIn("keeping the source's version", err)
+
+    def test_manifest_version_is_read_at_the_entry_ref(self):
+        write_json(self.protocol / "core/utils/frappe/composer/acme-web.json", {"sdks": [
+            git_entry("telemetry_sdk", "core", SHA_TEL),
+            dict(git_entry("base_sdk", "core", SHA_BASE), ref="v1.37.0", version="1.35.0"),
+        ]})
+        self.manifest("base_sdk", "1.37.0")
+        self.write_index()
+        out, err = self.run_main()
+        self.assertIn(("RokctAI/core", "base/nextjs/manifest.json", "v1.37.0"), self.net.calls)
+        self.assertEqual(self.composer()["sdks"][1]["version"], "1.37.0")
+
+    def test_registry_entry_without_a_version_gets_the_manifest_one(self):
+        write_json(self.protocol / "core/utils/frappe/composer/acme-web.json", {"sdks": [
+            git_entry("telemetry_sdk", "core", SHA_TEL),
+            git_entry("base_sdk", "core", SHA_BASE),
+            git_entry("lms_sdk", "agent", SHA_LMS, home=True),  # no version key at all
+        ]})
+        self.manifest("lms_sdk", "1.26.0")
+        self.write_index({"lms_sdk": record("RokctAI/agent", "lms/nextjs", "1.25.0", SHA_LMS)})
+        out, err = self.run_main()
+        self.assertEqual(self.composer()["sdks"][2]["version"], "1.26.0")
+        self.assertNotIn("the source said", out)  # nothing to contradict
+
+    def test_missing_manifest_keeps_the_index_version_with_a_warning(self):
+        self.manifest("telemetry_sdk", "1.2.0")  # base_sdk's manifest is absent
+        self.write_index()
+        self.write_example()
+        out, err = self.run_main()
+        self.assertEqual(self.composer()["sdks"][1]["version"], "1.35.0")
+        self.assertIn("base_sdk: RokctAI/core/base/nextjs/manifest.json@main does not exist", err)
+        self.assertIn("keeping the source's version 1.35.0", err)
+
+    def test_unreachable_manifest_keeps_the_index_version_with_a_warning(self):
+        self.manifest("telemetry_sdk", "1.2.0")
+        self.manifest("base_sdk", "1.37.0")
+        self.net.broken.add(("RokctAI/core", "base/nextjs/manifest.json"))
+        self.write_index()
+        self.write_example()
+        out, err = self.run_main()
+        c = self.composer()
+        self.assertEqual(c["sdks"][1]["version"], "1.35.0")
+        self.assertEqual(c["sdks"][1]["sha256"], seed_composer.sha256_lf(BASE_PY))  # the pin still lands
+        self.assertIn("base/nextjs/manifest.json@main could not be read", err)
+        self.assertIn("keeping the source's version 1.35.0", err)
+
+    def test_manifest_without_a_version_keeps_the_index_version(self):
+        self.manifest("telemetry_sdk", "1.2.0")
+        self.manifest("base_sdk")  # no version key
+        self.write_index()
+        self.write_example()
+        out, err = self.run_main()
+        self.assertEqual(self.composer()["sdks"][1]["version"], "1.35.0")
+        self.assertIn("declares no version", err)
+
+    def test_manifest_that_is_not_json_keeps_the_index_version(self):
+        self.manifest("telemetry_sdk", "1.2.0")
+        self.manifest("base_sdk", raw=b"<html>rate limited</html>")
+        self.write_index()
+        self.write_example()
+        out, err = self.run_main()
+        self.assertEqual(self.composer()["sdks"][1]["version"], "1.35.0")
+        self.assertIn("is not valid JSON", err)
+
+    def test_manifest_lookup_skips_disabled_and_local_entries(self):
+        write_json(self.protocol / "core/utils/frappe/composer/acme-web.json", {"sdks": [
+            git_entry("telemetry_sdk", "core", SHA_TEL),
+            git_entry("base_sdk", "core", SHA_BASE),
+            dict(git_entry("corporate_sdk", "corporate", enabled=False), git="https://github.com/RokctAI/nowhere"),
+            {"name": "local_sdk", "enabled": True, "source": "local", "path": "../local/nextjs"},
+        ]})
+        self.write_index()
+        out, err = self.run_main()
+        paths = [p for _, p, _ in self.net.calls]
+        self.assertNotIn("corporate/nextjs/manifest.json", paths)
+        self.assertEqual([p for p in paths if p.endswith("manifest.json")],
+                         ["telemetry/nextjs/manifest.json", "base/nextjs/manifest.json"])
 
 
 class TestDrift(SeedComposerCase):

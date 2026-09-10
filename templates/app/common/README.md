@@ -2,7 +2,7 @@
 
 {{APP_DESCRIPTION}}
 
-Spawned by [RokctAI Factory](https://github.com/rokctai/factory) from {{SOURCE_ISSUE}}.
+Spawned by [RokctAI Factory](https://github.com/rokctai/factory) from <{{SOURCE_ISSUE}}>.
 
 ## Status
 

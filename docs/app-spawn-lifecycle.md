@@ -132,6 +132,19 @@ detailed in [app-factory.md](app-factory.md#registering-with-the-roadmap)).
 Finally the `announce` job comments the new repo's URL on the factory issue and
 closes it.
 
+For a Next.js shell (`--stack nextjs`) there is one dependency the spawn cannot
+satisfy: its CI — the node-ci compose step and `scripts/compose.sh refresh`,
+the only thing that writes `.rokct/cache/` and `.rokct/lock.json` — needs a
+registry template `core/utils/frappe/composer/<app_type>.json` in
+The-Rokct-Protocol, and stops at the composer's registry guard until it exists.
+A freshly spawned shell therefore carries no `.rokct/lock.json`, and its
+`build.yml` "Compose Offline + Build (Vercel parity)" job skips itself — a
+`::notice::` plus a step-summary line naming the missing template — rather
+than failing on a cache nothing in the repo could have produced. Once the
+template lands, one `scripts/compose.sh refresh` commits the cache and the job
+runs in full. Landing that template is a maintainer's Protocol PR; the factory
+does not open it.
+
 ## What the factory does not do
 
 This is the part most often assumed wrongly. It **never executes anything
