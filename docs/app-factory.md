@@ -151,6 +151,20 @@ So:
 `app_create.yml` checks the token up front and fails with the required scope
 named, rather than letting a bare 404 surface from the creation call.
 
+### GraphQL quota and the REST fallback
+
+`gh repo create` (and the repository lookup inside `gh issue create`) go
+through GitHub's GraphQL API, which has its own hourly quota, separate from
+REST. A classic PAT's GraphQL quota is shared with **everything else that uses
+that account** — other workflows, agents, local `gh` sessions — so a spawn can
+arrive after the quota is already spent and fail with
+`GraphQL: API rate limit already exceeded for user ID ...` even though the
+REST scope check just passed on the same token. When that happens
+`app_create.yml` prints the `gh` error as a warning and retries the same
+operation over REST (`POST /orgs/{org}/repos` or `POST /user/repos` for the
+repo, `POST /repos/{owner}/{repo}/issues` for Build v0) with the same name,
+description and visibility. Only when both attempts fail does the step go red.
+
 ## Registering with the roadmap
 
 Creating the repo is only half the loop. The fleet already has a roadmap

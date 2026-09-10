@@ -70,10 +70,10 @@ issue labelled `approved`
    |
    +-- create job (app_create.yml, reusable)
    |     check token scopes ............... app_create.yml:85
-   |     gh repo create ................... app_create.yml:101
+   |     gh repo create ................... app_create.yml:101   REST fallback if GraphQL quota is spent
    |     seed templates/app -> seed/ ...... seed_app_repo.py
    |     git init / commit / push main .... app_create.yml:131
-   |     gh issue create "Build v0" ....... app_create.yml:145
+   |     gh issue create "Build v0" ....... app_create.yml:145   REST fallback likewise
    |     register with the roadmap ........ app_create.yml:165  optional, continue-on-error
    |
    +-- announce job
