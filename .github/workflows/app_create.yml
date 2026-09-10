@@ -183,6 +183,30 @@ jobs:
             --issue "${{ inputs.source_issue }}" \
             ${STACK:+--stack "$STACK"}
 
+      # A composed Next.js shell's composer.json must be real on day one
+      # (Ray, 2026-09-10: an empty one "is same as not being there") and
+      # current: its SDK list comes from the protocol's main, read over
+      # HTTPS - the registry template named by the app_type
+      # (core/utils/frappe/composer/<app_type>.json) when one exists, else the
+      # SDK consumers index (sdk_consumers.json) when it lists this shell,
+      # else the protocol's generated nextjs_compose_example.json (the
+      # kernel) - and every pin is the sha256 of that SDK's install.py at its
+      # ref, computed now, not a digest copied into the template months ago.
+      # FACTORY_PAT (the cross-repo MONOREPO_PAT) reads the private SDK repos
+      # for the pins; the protocol repo itself is public. Only when the
+      # protocol cannot be read at all does the overlay's own telemetry +
+      # base default stand, logged loudly.
+      - name: Generate composer.json from the protocol (Next.js shells)
+        if: inputs.stack == 'nextjs'
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          APP_NAME: ${{ inputs.name }}
+        run: |
+          python3 .github/scripts/seed_composer.py \
+            --dest seed \
+            --app-type "$(tr -d '\r\n[:space:]' < seed/.rokct/config/app_type)" \
+            --name "$APP_NAME"
+
       - name: Push main
         working-directory: seed
         env:

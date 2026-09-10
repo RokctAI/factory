@@ -2,6 +2,32 @@
   "name": "{{APP_SLUG}}_composer",
   "version": "1.0.0",
   "description": "Active Next.js SDK list for the {{APP_NAME}} shell (composed by The-Rokct-Protocol core/utils/nextjs/sdk_composer.py)",
-  "_comment": "Starts empty on purpose: a new shell composes nothing yet. Pick entries from composer.json.example beside this file. Every network-cloned SDK entry needs a sha256 pin of that SDK's install.py or the composer exits.",
-  "sdks": []
+  "_comment": "The generic Next.js shell default: the two kernel SDKs every Next.js composition composes, both active, neither the home SDK. The spawn REWRITES this file (factory .github/scripts/seed_composer.py) from the protocol's main over HTTPS - the registry template core/utils/frappe/composer/<app_type>.json when one exists, else the SDK consumers index (sdk_consumers.json) when it lists this shell, else the protocol's generated nextjs_compose_example.json - and re-pins every entry to the SHA-256 of that SDK's install.py at its ref as of the spawn, so a new shell never starts on a stale digest. This copy is the FALLBACK the spawn uses only when the protocol cannot be read at all (logged loudly); its pins were current when the template was last updated. The menu of every other SDK with a Next.js half is the protocol's nextjs_compose_example.json (_available_sdks), generated from the consumers index - not kept here.",
+  "_home_sdk": "Declare the home SDK by flagging exactly one entry \"home_sdk\": true - the SDK that owns app/page.tsx and base_sdk's single-answer landing registries (site metadata, hero copy, page sections). Neither kernel entry may be it. Pick it from the protocol's nextjs_compose_example.json _available_sdks menu, add it to the registry template, then mirror it here.",
+  "sdks": [
+    {
+      "name": "telemetry_sdk",
+      "enabled": true,
+      "source": "git",
+      "git": "https://github.com/RokctAI/core",
+      "path": "../core/telemetry/nextjs",
+      "ref": "main",
+      "sha256": "318d20eb7123ffaa549618d06b4530dfce5df9ba0b07df2328c0c6e1738e36c4",
+      "home_sdk": false,
+      "_sha256_comment": "SHA-256 of telemetry/nextjs/install.py at core main as of 2026-09-10 (1079 bytes, CRLF folded to LF the way scripts/compose.sh verifies it); required by the composer's unpinned-installer gate. The spawn recomputes it; `scripts/compose.sh refresh` re-pins it.",
+      "_comment": "Mandatory in every Next.js composition (SDK_ECOSYSTEM.md hard invariant 9, mirroring the flutter templates' telemetry_sdk entries). Delivery-policy seam owner; base_sdk's kernel carries the TelemetryClient. Its 'requires' names app/services/base/platform-gateway.ts (installed by base_sdk below) and the host's components/ui/card.tsx and table.tsx."
+    },
+    {
+      "name": "base_sdk",
+      "enabled": true,
+      "source": "git",
+      "git": "https://github.com/RokctAI/core",
+      "path": "../core/base/nextjs",
+      "ref": "main",
+      "sha256": "b6c434a1c05611d29f1018f68b9423383f7ecfbf9cc1efe74825ba6c4df98fff",
+      "home_sdk": false,
+      "_sha256_comment": "SHA-256 of base/nextjs/install.py at core main as of 2026-09-10 (1074 bytes, CRLF folded to LF the way scripts/compose.sh verifies it); required by the composer's unpinned-installer gate. The spawn recomputes it; `scripts/compose.sh refresh` re-pins it.",
+      "_comment": "The base SDK's nextjs half (base_sdk 1.32.x): the platform kernel - app/services/base (platform gateway, tenant hosts, session, telemetry), the landing host (/landing) and its registries, the base admin content/settings/system actions and pages, the manager shell, the shared app sidebar, nav-user/team-switcher, theme-provider, date-range-picker and use-mobile. Its 'requires' names the host-owned files this overlay commits (lib/utils.ts, the components/ui primitives, components/custom/branding.tsx and brand-logo.tsx, theme-toggle.tsx, the neutral session.ts / session-provider.tsx seams, app/config/*, app/lib/*, the merchants shop action and merchant/delivery navs) - warn-only via check_requires(), not an auto-install."
+    }
+  ]
 }
