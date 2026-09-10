@@ -1,0 +1,70 @@
+name: IEB Licence Gate
+
+# Enforcement layer for the IEB's non-commercial reproduction clause.
+#
+# lessons/curriculum/IEB/SOURCES.md records that "©IEB material may not be
+# reproduced for commercial gain", and carries a standing owner flag: no IEB
+# paper content may be embedded as worked examples in the product before
+# written permission exists. Knowledge bites ARE past-paper worked examples —
+# the index inlines each question, method, memo working and answer, and is
+# then POSTed to the rlms backend and shipped to students. So the bites index
+# is where restricted material would actually leave the repo, and this gate
+# refuses a non-empty IEB one until that permission is on record.
+#
+# It passes trivially today: the IEB tree holds zero knowledge_bites/
+# directories, so lessons/IEB/knowledge_bites_index.json does not exist. The
+# gate is here BECAUSE it is empty — since the index builders were
+# generalised to take --curriculum (PR #165), an IEB bites index is one flag
+# away, and the guard should predate the first person who reaches for it.
+#
+# This is a prohibition, not a pipeline: it builds nothing, publishes
+# nothing, and makes no assumption about the shape of the IEB tree.
+#
+# Lifting it is deliberate and reviewable — see the script's docstring and
+# the failure message it prints.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lessons/IEB/**'
+      - 'lessons/curriculum/IEB/**'
+      - 'lessons/scripts/IEB/check_ieb_licence.py'
+      - 'lessons/scripts/IEB/tests/test_check_ieb_licence.py'
+      - 'lessons/scripts/CAPS/build_knowledge_bites_index.py'
+      - 'lessons/scripts/CAPS/curriculum_target.py'
+      - '.github/workflows/ieb_licence_gate.yml'
+  pull_request:
+    paths:
+      - 'lessons/IEB/**'
+      - 'lessons/curriculum/IEB/**'
+      - 'lessons/scripts/IEB/check_ieb_licence.py'
+      - 'lessons/scripts/IEB/tests/test_check_ieb_licence.py'
+      - 'lessons/scripts/CAPS/build_knowledge_bites_index.py'
+      - 'lessons/scripts/CAPS/curriculum_target.py'
+      - '.github/workflows/ieb_licence_gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ieb_licence_gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # The gate's own suite lives under lessons/scripts/IEB/tests, which
+      # unit_tests.yml does not discover — so run it here, where it is the
+      # thing being relied on.
+      - name: Test the gate
+        run: python3 -m unittest discover -s lessons/scripts/IEB/tests -p 'test_check_ieb_licence.py' -v
+
+      - name: Check IEB knowledge bites licence status
+        run: python3 lessons/scripts/IEB/check_ieb_licence.py
