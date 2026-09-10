@@ -105,18 +105,50 @@ jobs:
             exit 1
           fi
 
+      # `gh repo create` goes through GraphQL, which has its own hourly quota
+      # separate from REST. When that quota is spent (seen 2026-09-10 on #166:
+      # "GraphQL: API rate limit already exceeded for user ID ...") the REST
+      # scope check above still passes, so fall back to the REST create
+      # endpoint rather than failing the spawn on a quota the rest of the job
+      # never touches. Same token, same permissions, same resulting repo.
       - name: Create repository
         id: create_repo
         env:
           GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          OWNER: ${{ steps.owner.outputs.owner }}
+          NAME: ${{ inputs.name }}
           TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
+          VISIBILITY: ${{ inputs.visibility }}
+          DESCRIPTION: ${{ inputs.description }}
         run: |
-          if ! gh repo create "$TARGET" \
-                --"${{ inputs.visibility }}" \
-                --description "${{ inputs.description }}" 2>create.err; then
+          if gh repo create "$TARGET" --"$VISIBILITY" --description "$DESCRIPTION" 2>create.err; then
+            echo "Created $TARGET via gh repo create."
+          else
             cat create.err
-            echo "::error::Could not create $TARGET. If this is a permissions failure, the factory PAT needs classic \`repo\` scope, or must be a fine-grained token whose resource owner is ${{ steps.owner.outputs.owner }} with Administration: write. See docs/app-factory.md."
-            exit 1
+            echo "::warning::gh repo create (GraphQL) failed for $TARGET; retrying via the REST API."
+            private=false; [ "$VISIBILITY" = "private" ] && private=true
+            # An org owner uses /orgs/{org}/repos; a user owner uses /user/repos,
+            # which only ever creates under the token's own account.
+            owner_type=$(gh api "/users/$OWNER" --jq .type 2>/dev/null || echo unknown)
+            if [ "$owner_type" = "Organization" ]; then
+              endpoint="/orgs/$OWNER/repos"
+            else
+              token_login=$(gh api /user --jq .login 2>/dev/null || echo '')
+              if [ "$(echo "$token_login" | tr '[:upper:]' '[:lower:]')" != "$(echo "$OWNER" | tr '[:upper:]' '[:lower:]')" ]; then
+                echo "::error::Could not create $TARGET. gh repo create failed (see above) and the REST fallback cannot help: $OWNER is not an organization and is not the account that owns the factory PAT (${token_login:-unknown}). See docs/app-factory.md."
+                exit 1
+              fi
+              endpoint="/user/repos"
+            fi
+            if ! gh api -X POST "$endpoint" \
+                  -f name="$NAME" \
+                  -f description="$DESCRIPTION" \
+                  -F private="$private" 2>create_rest.err >/dev/null; then
+              cat create_rest.err
+              echo "::error::Could not create $TARGET (GraphQL and REST both failed). If this is a permissions failure, the factory PAT needs classic \`repo\` scope, or must be a fine-grained token whose resource owner is $OWNER with Administration: write. See docs/app-factory.md."
+              exit 1
+            fi
+            echo "Created $TARGET via REST $endpoint."
           fi
           echo "repo_url=https://github.com/$TARGET" >> "$GITHUB_OUTPUT"
 
@@ -165,19 +197,36 @@ jobs:
           git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${TARGET}.git"
           git push -q origin main
 
+      # `gh issue create` also touches GraphQL (repository lookup), so it can
+      # fail on the same spent quota as `gh repo create` above. Same shape:
+      # try gh first, then the REST issues endpoint with the same title/body.
       - name: Open Build v0 issue
         env:
           GH_TOKEN: ${{ secrets.FACTORY_PAT }}
           TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
+          SOURCE_ISSUE: ${{ inputs.source_issue }}
         run: |
-          gh issue create --repo "$TARGET" \
-            --title "Build v0" \
-            --body "$(printf '%s\n' \
-              "The brief is in [docs/spec.md](../blob/main/docs/spec.md); how to work on this repo is in [AGENTS.md](../blob/main/AGENTS.md)." \
-              "" \
-              "Run \`bash .rokct/bootstrap.sh\` first, then ship a v0 a person can run." \
-              "" \
-              "Spawned from ${{ inputs.source_issue }}.")"
+          title="Build v0"
+          body=$(printf '%s\n' \
+            "The brief is in [docs/spec.md](../blob/main/docs/spec.md); how to work on this repo is in [AGENTS.md](../blob/main/AGENTS.md)." \
+            "" \
+            "Run \`bash .rokct/bootstrap.sh\` first, then ship a v0 a person can run." \
+            "" \
+            "Spawned from $SOURCE_ISSUE.")
+          if gh issue create --repo "$TARGET" --title "$title" --body "$body" 2>issue.err; then
+            echo "Opened '$title' on $TARGET via gh issue create."
+          else
+            cat issue.err
+            echo "::warning::gh issue create failed for $TARGET; retrying via the REST API."
+            if ! gh api -X POST "/repos/$TARGET/issues" \
+                  -f title="$title" \
+                  -f body="$body" 2>issue_rest.err >/dev/null; then
+              cat issue_rest.err
+              echo "::error::Could not open '$title' on $TARGET (gh issue create and REST both failed)."
+              exit 1
+            fi
+            echo "Opened '$title' on $TARGET via REST /repos/$TARGET/issues."
+          fi
 
       # The other half of the loop: the repo now exists on GitHub, so tell the
       # roadmap module about it and let the fleet's own scheduling pick it up.
