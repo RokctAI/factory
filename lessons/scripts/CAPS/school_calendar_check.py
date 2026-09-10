@@ -17,8 +17,17 @@
 
 The DBE gazettes a new national school calendar every year (term dates shift
 annually). This tool keeps the repo's calendar files current so downstream
-consumers - the app backend fetches the raw JSON from this repo and adjusts
-schedules - never run a year on stale dates.
+consumers never run a year on stale dates.
+
+Nothing fetches these files at runtime. They are the transcription of record:
+a human confirms each new year against the gazette here, and the consumers
+keep their own packaged copy of the dates, because term boundaries must not
+depend on a network hop. The agent repo's LMS backend is the consumer that
+matters today - lms/frappe/src/tenant/rlms/data/sa_school_terms.json, read by
+term_report_rules for the Term Report's term windows - and it is updated by
+hand from this directory (its own test suite fails once its copy stops
+covering the year ahead). So adding a year HERE is necessary but not
+sufficient: copy it across as well.
 
     python lessons/scripts/CAPS/school_calendar_check.py            # check + report
     python lessons/scripts/CAPS/school_calendar_check.py --write    # also write next
@@ -52,7 +61,20 @@ import urllib.request
 from pathlib import Path
 
 CAL_DIR = Path("lessons/curriculum/CAPS/school_calendar")
+
+#: The GCIS summary page the extractor reads. Useful for re-fetching, but NOT
+#: the authority for the dates: the calendar is made by a notice in the
+#: Government Gazette under the National Education Policy Act, 1996, and that
+#: notice is what every calendar file cites as its `gazette`.
 SOURCE_URL = "https://www.gov.za/about-sa/school-calendar"
+
+#: An auto-written year cannot cite its gazette: the summary page carries the
+#: dates but not the notice number. Rather than leave the GCIS page standing
+#: alone as the authority - or invent a citation - the written file asks for
+#: the reference in the same breath as it asks for human verification.
+GAZETTE_PENDING = ("PENDING-HUMAN - cite the Government Gazette notice under the "
+                   "National Education Policy Act, 1996 (number, notice number and "
+                   "date) that published this calendar")
 
 MONTHS = {m.lower(): i + 1 for i, m in enumerate(
     ["January", "February", "March", "April", "May", "June", "July",
@@ -174,12 +196,18 @@ def main():
             "year": target,
             "authority": "Department of Basic Education (single national calendar)",
             "source_url": SOURCE_URL,
+            "gazette": GAZETTE_PENDING,
             "verified": "PENDING-HUMAN",
             "terms": terms,
             "note": ("Auto-extracted by school_calendar_check.py - confirm every "
-                     "date against the gazette, add public-holiday notes, then "
-                     "set verified to the confirmation date. Maps ATP term "
-                     "numbers to real dates for scheduling."),
+                     "date against the gazette, add public-holiday notes, fill in "
+                     "the gazette reference, then set verified to the confirmation "
+                     "date. The gazette notice is the authority for these dates; "
+                     "source_url is the GCIS summary page kept for re-fetching, not "
+                     "the authority. Record LEARNER dates: the gazette summary "
+                     "prints educator dates in parentheses and the gov.za page "
+                     "quotes the educator close. Maps ATP term numbers to real "
+                     "dates for scheduling."),
         }
         out = CAL_DIR / f"{target}.json"
         out.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
