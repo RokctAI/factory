@@ -65,10 +65,23 @@ fleet's app-identity/persona marker (compare `supacharge`, `telephony`,
 overlay ever writes `nextjs`/`flutter`/`frappe` into it. The composer files
 differ per stack, deliberately:
 
-- `nextjs/` — an **active** `composer.json` with an empty `sdks` array (the
-  Next.js composer reads it; network-cloned entries need a `sha256` pin of
-  the SDK's `install.py` or the composer exits) plus a `composer.json.example`
-  menu of known entries copied from live sources.
+- `nextjs/` — a **composable shell** (the host layer `base_sdk`'s manifest
+  `requires`: the `components/ui/*` primitives, `app/config/*`, `app/lib/*`,
+  the neutral branding/session seams, Tailwind, `scripts/compose.sh`,
+  `vercel.json`, a `build.yml` with the compose-offline + zero-drift gate,
+  `package.json` + lockfile) and an **active** `composer.json`. The spawn
+  does not ship static pins: after the seed, `app_create.yml` runs
+  `.github/scripts/seed_composer.py`, which rewrites `composer.json` from
+  the Protocol's `main` over HTTPS — the registry template
+  `core/utils/frappe/composer/<app_type>.json` when one exists, else the SDK
+  consumers index (`sdk_consumers.json`) when it lists the shell, else the
+  Protocol's generated `nextjs_compose_example.json` (the kernel:
+  `telemetry_sdk` + `base_sdk`) — and re-pins every entry to the SHA-256 of
+  that SDK's `install.py` at its ref as of the spawn (`FACTORY_PAT` reads
+  the private SDK repos). The overlay's own `composer.json` is the fallback
+  only when the Protocol cannot be read at all, logged loudly. There is no
+  `composer.json.example` here: the menu of every SDK with a Next.js half
+  is the Protocol's `nextjs_compose_example.json` (`_available_sdks`).
 - `flutter/` — `composer.json.example` **only**. Flutter CI overwrites a
   committed `composer.json` from the registry template in the Protocol repo
   (`core/utils/flutter/composer/<app_type>.json`), so an empty active file
