@@ -78,10 +78,25 @@ differ per stack, deliberately:
   Protocol's generated `nextjs_compose_example.json` (the kernel:
   `telemetry_sdk` + `base_sdk`) — and re-pins every entry to the SHA-256 of
   that SDK's `install.py` at its ref as of the spawn (`FACTORY_PAT` reads
-  the private SDK repos). The overlay's own `composer.json` is the fallback
+  the private SDK repos) and takes each entry's `version` from the
+  `manifest.json` next to that installer (the consumers index is regenerated
+  weekly and trails releases; its value stands only when the manifest cannot
+  be read, with a warning). The overlay's own `composer.json` is the fallback
   only when the Protocol cannot be read at all, logged loudly. There is no
   `composer.json.example` here: the menu of every SDK with a Next.js half
   is the Protocol's `nextjs_compose_example.json` (`_available_sdks`).
+
+  One thing the spawn cannot supply: the shell's CI needs the **registry
+  template** `core/utils/frappe/composer/<app_type>.json` in
+  The-Rokct-Protocol. The node-ci compose step and `scripts/compose.sh
+  refresh` (the only producer of `.rokct/cache/` and `.rokct/lock.json`)
+  both stop at the composer's registry guard until it exists, so a fresh
+  shell ships no vendored cache and its `build.yml` "Compose Offline +
+  Build (Vercel parity)" job skips itself — loudly, with a notice and a
+  step-summary line naming the missing template — until a maintainer lands
+  that template, runs one `scripts/compose.sh refresh` and commits
+  `.rokct/lock.json`. From then on the job runs in full. The factory does
+  not open that Protocol PR.
 - `flutter/` — `composer.json.example` **only**. Flutter CI overwrites a
   committed `composer.json` from the registry template in the Protocol repo
   (`core/utils/flutter/composer/<app_type>.json`), so an empty active file

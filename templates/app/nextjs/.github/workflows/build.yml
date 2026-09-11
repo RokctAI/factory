@@ -185,7 +185,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # A freshly spawned shell ships no vendored cache: the spawn writes
+      # composer.json, but `scripts/compose.sh refresh` - the only thing that
+      # produces .rokct/cache/ and .rokct/lock.json - stops at its registry
+      # guard until core/utils/frappe/composer/<app_type>.json exists in
+      # The-Rokct-Protocol. Until a maintainer lands that template and commits
+      # one refresh, an offline compose has nothing to compose from, so this
+      # job self-skips for that one condition, loudly, the way compose-check
+      # above self-skips on its own missing prerequisites. The moment
+      # .rokct/lock.json is committed every step below runs unchanged.
+      - name: Gate on a vendored SDK cache
+        id: cache
+        run: |
+          set -euo pipefail
+          if [ -f ".rokct/lock.json" ]; then
+            echo "vendored=true" >> "$GITHUB_OUTPUT"
+            echo ".rokct/lock.json is committed - composing from the vendored cache."
+          else
+            echo "vendored=false" >> "$GITHUB_OUTPUT"
+            APP_TYPE=$(tr -d '\r\n[:space:]' < .rokct/config/app_type 2>/dev/null || echo '<app_type>')
+            echo "::notice::No .rokct/lock.json is committed yet, so the SDK cache has not been vendored. scripts/compose.sh refresh needs the registry template core/utils/frappe/composer/${APP_TYPE}.json in The-Rokct-Protocol first. Skipping the offline compose, the zero-drift check and the Vercel-parity build."
+            {
+              echo "## Compose Offline + Build - skipped"
+              echo ""
+              echo "No \`.rokct/lock.json\` is committed. Land the registry template \`core/utils/frappe/composer/${APP_TYPE}.json\` in The-Rokct-Protocol, run \`scripts/compose.sh refresh\` once and commit the cache; this job then runs in full."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - uses: actions/setup-node@v4
+        if: steps.cache.outputs.vendored == 'true'
         with:
           node-version: '24'
           cache: 'npm'
@@ -193,9 +221,11 @@ jobs:
       # Same order Vercel uses: install from the committed lockfile first,
       # then compose, then build.
       - name: Install dependencies
+        if: steps.cache.outputs.vendored == 'true'
         run: npm ci --no-audit --no-fund
 
       - name: Compose from the committed cache (no network, no token)
+        if: steps.cache.outputs.vendored == 'true'
         run: |
           set -euo pipefail
           env -u POSTGRES_URL -u POSTGRES_URL_NON_POOLING -u AUTH_SECRET \
@@ -204,6 +234,7 @@ jobs:
               bash scripts/compose.sh
 
       - name: Zero-drift check (a compose must reproduce HEAD)
+        if: steps.cache.outputs.vendored == 'true'
         run: |
           set -euo pipefail
           DRIFT="$(git status --porcelain)"
@@ -259,6 +290,7 @@ jobs:
       # still a set variable, and code that only checks presence would read it
       # as configured.
       - name: Build the composed tree (no runtime env, exactly like Vercel)
+        if: steps.cache.outputs.vendored == 'true'
         run: |
           set -euo pipefail
           env -u POSTGRES_URL -u POSTGRES_URL_NON_POOLING -u AUTH_SECRET \
@@ -269,6 +301,7 @@ jobs:
       # The three routes base_sdk installs into every Next.js shell. A shell
       # that composes more (auth_sdk's /login, a home SDK's /) adds them here.
       - name: Assert the composed routes are there
+        if: steps.cache.outputs.vendored == 'true'
         run: |
           set -euo pipefail
           MISSING=0

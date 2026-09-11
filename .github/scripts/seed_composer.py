@@ -32,9 +32,13 @@ the private repos), computed exactly as compose.sh's sha256_file() and the
 composer's enforce_sdk_pin() compute it (CRLF folded to LF), so
 `scripts/compose.sh refresh` accepts the file as written. A pin that cannot
 be fetched keeps the source's pin with a warning; an entry left with no pin
-at all is fatal. Finally every entry is checked against the index: an SDK
-the index places in another repo or at another path is drift and stops the
-spawn; an SDK the index does not list yet is only warned about.
+at all is fatal. The entry's `version` is read the same way, from the
+`manifest.json` next to that install.py: the consumers index trails releases
+by up to a week (it wrote base_sdk 1.35.0 while core's main declared 1.37.0),
+so the index value stands only when the manifest cannot be read or declares
+no version, with a warning. Finally every entry is checked against the
+index: an SDK the index places in another repo or at another path is drift
+and stops the spawn; an SDK the index does not list yet is only warned about.
 
 The result is always a real composition - at least one enabled, pinned SDK -
 or this exits non-zero and the spawn fails loudly rather than pushing a
@@ -242,9 +246,10 @@ def index_entry(name, record, enabled=True):
         "version": half.get("version"),
         "home_sdk": False,
         "_comment": (
-            f"From {CONSUMERS_JSON} at spawn: {name} {half.get('version') or '?'} in {repo} "
-            f"({half['path']}). The index records no home SDK - flag the home SDK by hand, then "
-            f"add the registry template {REGISTRY_DIR}/<app_type>.json."
+            f"From {CONSUMERS_JSON} at spawn: {name} in {repo} ({half['path']}); version and "
+            "sha256 re-read from that repo's manifest.json and install.py. The index records no "
+            f"home SDK - flag the home SDK by hand, then add the registry template "
+            f"{REGISTRY_DIR}/<app_type>.json."
         ),
     }
 
@@ -324,8 +329,51 @@ def check_against_index(sdks, index):
     return problems, unknown
 
 
+def manifest_version(repo, subpath, ref, token=None):
+    """The `version` an SDK's manifest.json declares in <repo> at <ref> now,
+    as (version, None) - or (None, reason) when the manifest cannot be read,
+    is not JSON, or carries no version string. The consumers index is
+    regenerated weekly and trails releases, so an entry's version is read
+    from the same repo and ref its installer is pinned from."""
+    manifest = f"{subpath}/manifest.json"
+    where = f"{repo}/{manifest}@{ref}"
+    try:
+        raw = fetch_raw(repo, manifest, ref, token)
+    except (urllib.error.HTTPError, urllib.error.URLError, OSError) as e:
+        return None, f"{where} could not be read: {e}"
+    if raw is None:
+        return None, f"{where} does not exist"
+    try:
+        data = json.loads(raw.decode("utf-8-sig"))
+    except ValueError as e:
+        return None, f"{where} is not valid JSON: {e}"
+    version = data.get("version") if isinstance(data, dict) else None
+    if not isinstance(version, str) or not version.strip():
+        return None, f"{where} declares no version"
+    return version.strip(), None
+
+
+def version_sdk(entry, repo, ref, at, token=None):
+    """Set the entry's `version` to what its manifest.json declares on <ref>
+    now; keep the source's value (the index's, typically) with a warning
+    when the manifest is unreachable or has no version."""
+    name = entry.get("name", "?")
+    known = entry.get("version")
+    live, why = manifest_version(repo, sdk_subpath(entry), ref, token)
+    if live is None:
+        warn(f"{name}: {why} - keeping the source's version {known or '?'} "
+             "(the consumers index trails releases by up to a week)")
+        return
+    if known and known != live:
+        log(f"{name}: the source said {known} but manifest.json at {at} declares {live} - "
+            "using the live version")
+    entry["version"] = live
+
+
 def pin_sdks(sdks, token=None):
-    """Re-pin every enabled git entry in place. Returns the number pinned."""
+    """Re-pin every enabled git entry in place - sha256 from install.py,
+    version from manifest.json, both read from the SDK repo at the entry's
+    ref now. Returns the number pinned."""
     pinned = 0
     for entry in sdks:
         if not entry.get("enabled", True):
@@ -355,6 +403,7 @@ def pin_sdks(sdks, token=None):
         digest = sha256_lf(raw)
         head = fetch_head(repo, ref, token)
         at = f"{repo_name(entry['git'])}@{head[:8]}" if head else f"{repo_name(entry['git'])}@{ref}"
+        version_sdk(entry, repo, ref, at, token)
         changed = entry.get("sha256") not in (None, "", digest)
         if changed:
             warn(f"{name}: the source pinned {entry['sha256'][:12]}... but {installer} at {at} "
@@ -365,7 +414,8 @@ def pin_sdks(sdks, token=None):
             "factory's seed_composer.py; required by the composer's unpinned-installer gate. "
             "`scripts/compose.sh refresh` re-pins from the registry."
         )
-        log(f"{name:<18} {digest[:12]}  {repo}/{installer}@{ref}" + ("  (re-pinned)" if changed else ""))
+        log(f"{name:<18} {digest[:12]}  {entry.get('version') or '?':<8} {repo}/{installer}@{ref}"
+            + ("  (re-pinned)" if changed else ""))
         pinned += 1
     return pinned
 

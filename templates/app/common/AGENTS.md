@@ -8,7 +8,7 @@ else. Your job is to turn the brief into a working application.
 **{{APP_NAME}}** — {{APP_DESCRIPTION}}
 
 Repo: `{{APP_REPO}}` ({{APP_VISIBILITY}})
-Accepted from: {{SOURCE_ISSUE}}
+Accepted from: <{{SOURCE_ISSUE}}>
 
 ## Read first
 

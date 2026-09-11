@@ -9,7 +9,7 @@ is to turn the brief into a working application on that shell.
 **{{APP_NAME}}** — {{APP_DESCRIPTION}}
 
 Repo: `{{APP_REPO}}` ({{APP_VISIBILITY}})
-Accepted from: {{SOURCE_ISSUE}}
+Accepted from: <{{SOURCE_ISSUE}}>
 
 ## Read first
 
