@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "owner": "RokctAI/factory",
+  "default": "CAPS",
+  "curricula": [
+    {
+      "id": "CAPS",
+      "name": "CAPS",
+      "badge": "CAPS",
+      "status": "live",
+      "delivery": "package",
+      "content": "allowed",
+      "root": "lessons/curriculum/CAPS"
+    },
+    {
+      "id": "IEB",
+      "name": "IEB",
+      "badge": "IEB",
+      "status": "live",
+      "delivery": "overlay",
+      "content": "allowed",
+      "content_basis": "CAPS",
+      "root": "lessons/curriculum/IEB"
+    },
+    {
+      "id": "CAMBRIDGE",
+      "name": "Cambridge",
+      "badge": "Cambridge",
+      "status": "soon",
+      "delivery": null,
+      "content": "blocked_pending_permission",
+      "root": "lessons/curriculum/CAMBRIDGE",
+      "note": "Declared, no content: generating or accepting a Cambridge overlay is refused until written permission is recorded (same standing rule as the IEB licence gate)."
+    }
+  ]
+}

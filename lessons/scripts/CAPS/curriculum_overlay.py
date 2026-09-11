@@ -47,6 +47,13 @@ twin package's worked case rather than the shared one). They are carried,
 flagged, never silently dropped; the label counts them so a rollout can be
 gated per lesson.
 
+The curriculum set comes from the factory-owned registry
+(lessons/curriculum/curricula.json via curriculum_target): overlay paths
+are generic `overlays/<CURRICULUM>/`, a label's badge, the manifest's
+`curricula` order and the R7 membership check all derive from it, so a
+curriculum declared "soon" (Cambridge) needs no code change when its
+content arrives.
+
 Stdlib only; deterministic output (sorted keys where order is not part of
 the contract, two-space JSON, trailing newline).
 """
@@ -56,8 +63,10 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import curriculum_target
+
 OVERLAY_DIR = "overlays"
-DEFAULT_CURRICULUM = "CAPS"
+DEFAULT_CURRICULUM = curriculum_target.DEFAULT_CURRICULUM
 CURRICULUM_NAME_RE_TEXT = r"^[A-Z][A-Z0-9_]{1,15}$"
 
 OVERLAY_MCQ = "mcq.json"
@@ -192,10 +201,13 @@ def needs_reauthor_count(mcq: dict, cc: dict) -> int:
 
 def make_label(curriculum: str, source_twin: str = "", **extra) -> dict:
     """The label.json payload. `extra` keys (counts, statuses) are sorted
-    into place so the file is deterministic whatever the caller passes."""
+    into place so the file is deterministic whatever the caller passes.
+    Refuses a curriculum the registry does not allow content for."""
+    if not curriculum_target.content_allowed(curriculum):
+        raise OverlayError(curriculum_target.refusal(curriculum))
     label = {
         "curriculum": curriculum,
-        "badge": curriculum,
+        "badge": curriculum_target.badge(curriculum),
         "content_basis": LABEL_CONTENT_BASIS,
         "source_twin": source_twin,
         "break_audio": {
@@ -222,6 +234,17 @@ def validate_label(label, curriculum: str | None = None) -> list[str]:
             f"label.json: curriculum {label.get('curriculum')!r} "
             f"does not match its directory {curriculum!r}"
         )
+    declared = label.get("curriculum") or curriculum
+    if isinstance(declared, str) and declared:
+        if not curriculum_target.content_allowed(declared):
+            problems.append(f"label.json: {curriculum_target.refusal(declared)}")
+        elif isinstance(label.get("badge"), str) and label["badge"] != (
+            curriculum_target.badge(declared)
+        ):
+            problems.append(
+                f"label.json: badge {label['badge']!r} is not the registry "
+                f"badge {curriculum_target.badge(declared)!r}"
+            )
     if label.get("content_basis") not in (None, LABEL_CONTENT_BASIS):
         problems.append(
             f"label.json: content_basis must be "
@@ -389,12 +412,17 @@ def build_variants(
     overlays = read_all_overlays(folder)
     if not overlays:
         return {}
+    for ov in overlays:
+        if not curriculum_target.content_allowed(ov["curriculum"]):
+            raise OverlayError(
+                f"{ov['dir']}: {curriculum_target.refusal(ov['curriculum'])}"
+            )
     shared_layout = mcq_ids_by_ref(shared_mcq)
     variants = {
         default_curriculum: {
             "label": {
                 "curriculum": default_curriculum,
-                "badge": default_curriculum,
+                "badge": curriculum_target.badge(default_curriculum),
                 "content_basis": LABEL_CONTENT_BASIS,
             },
             "questions": _bank(mcq_questions(shared_mcq)),
@@ -444,9 +472,9 @@ def build_variants(
         if differing:
             variant["exercise_by_ref"] = differing
         variants[curriculum] = variant
-    curricula = [default_curriculum] + [
-        c for c in sorted(variants) if c != default_curriculum
-    ]
+    # Registry order (the display order), never a second hard-coded list;
+    # only curricula this package actually carries are listed.
+    curricula = curriculum_target.ordered(variants)
     return {
         "curricula": curricula,
         "default_curriculum": default_curriculum,

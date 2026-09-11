@@ -500,9 +500,12 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
     # when the package carries an overlay. The top-level banks and the
     # break_start questions above stay the default (CAPS) variant, so a
     # player that predates `variants` keeps playing exactly what it did.
-    manifest.update(curriculum_overlay.build_variants(
-        folder, mcq, comprehension, break_questions,
-        break_question_extractor=extract_session_break_questions))
+    try:
+        manifest.update(curriculum_overlay.build_variants(
+            folder, mcq, comprehension, break_questions,
+            break_question_extractor=extract_session_break_questions))
+    except curriculum_overlay.OverlayError as e:
+        raise ReleaseError(f"curriculum overlay: {e}")
     manifest_path = out_dir / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print(f"  [manifest] {len(tracks)} tracks, audio {audio_seconds:.1f}s "

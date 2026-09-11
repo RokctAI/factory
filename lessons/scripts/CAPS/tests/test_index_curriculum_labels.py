@@ -79,9 +79,9 @@ class PracticeBankLabelTests(unittest.TestCase):
         self.assertEqual(item["subtopic_ref"], "subtopic_1")
         self.assertEqual(item["correct_index"], 0)
 
-    def test_overlay_items_ride_under_the_ieb_suffix(self):
+    def _write_ieb_overlay(self):
         mcq = json.loads(json.dumps(fx.TWIN_MCQ))
-        # Flag one question as case-bound: it must not be published.
+        # Flag one question as case-bound: it must never be published.
         mcq["subtopics"][0]["questions"][1][co.NEEDS_REAUTHOR] = True
         co.write_overlay(
             self.shared,
@@ -93,6 +93,44 @@ class PracticeBankLabelTests(unittest.TestCase):
             exam_weight="",
             label=co.make_label("IEB"),
         )
+
+    def _with_overlay_curricula(self, names):
+        saved = bank.OVERLAY_CURRICULA
+        bank.OVERLAY_CURRICULA = tuple(names)
+        self.addCleanup(setattr, bank, "OVERLAY_CURRICULA", saved)
+
+    def test_overlay_items_are_off_by_default_output_unchanged(self):
+        # W2 adds the curriculum filter to practice_queue; until then an
+        # overlay must change nothing about the published bank.
+        self.assertEqual(bank.OVERLAY_CURRICULA, ())
+        before = bank.content_signature(bank.build_bank())
+        before_json = json.dumps(bank.scan_items(), ensure_ascii=False, indent=2)
+        self._write_ieb_overlay()
+        after = bank.content_signature(bank.build_bank())
+        after_json = json.dumps(bank.scan_items(), ensure_ascii=False, indent=2)
+        self.assertEqual(before, after)
+        self.assertEqual(before_json, after_json)
+        self.assertFalse(any("~" in i for i in bank.scan_items()))
+        # Minus the additive `curriculum` label, each item is the pre-W1
+        # shape (the ids and every field the backend already reads).
+        for item in bank.scan_items().values():
+            legacy = {k: v for k, v in item.items() if k != "curriculum"}
+            self.assertEqual(
+                list(legacy),
+                [
+                    "subject",
+                    "grade",
+                    "lesson",
+                    "subtopic_ref",
+                    "question",
+                    "options",
+                    "correct_index",
+                ],
+            )
+
+    def test_overlay_items_ride_under_the_ieb_suffix_when_asked(self):
+        self._write_ieb_overlay()
+        self._with_overlay_curricula(["IEB"])
         items = self._items()
         caps_ids = [i for i in items if "~" not in i]
         ieb_ids = [i for i in items if i.endswith("~ieb")]
@@ -115,6 +153,11 @@ class PracticeBankLabelTests(unittest.TestCase):
             items["maths.grade10.simple-growth.subtopic_1_q2"]["question"],
             "R5 000 at 8% for 3 years grows to:",
         )
+
+    def test_flag_names_only_the_curricula_it_lists(self):
+        self._write_ieb_overlay()
+        self._with_overlay_curricula(["CAPS"])  # registered, but no overlay
+        self.assertFalse(any("~" in i for i in self._items()))
 
     def test_bank_signature_stable_across_runs(self):
         first = bank.content_signature(bank.build_bank())

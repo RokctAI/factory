@@ -78,6 +78,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import curriculum_overlay as co  # noqa: E402
+import curriculum_target  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 SHARED_ROOT = REPO_ROOT / "lessons" / "curriculum" / co.DEFAULT_CURRICULUM
@@ -839,6 +840,8 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     if not re.match(co.CURRICULUM_NAME_RE_TEXT, args.curriculum):
         ap.error(f"--curriculum must match {co.CURRICULUM_NAME_RE_TEXT}")
+    if not curriculum_target.content_allowed(args.curriculum):
+        ap.error(f"--curriculum: {curriculum_target.refusal(args.curriculum)}")
     shared_root = Path(args.root)
     twin_root = (
         Path(args.twin_root) if args.twin_root else CURRICULA_ROOT / args.curriculum
