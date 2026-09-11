@@ -64,7 +64,20 @@ work environment) are queued for manual browser download in `FETCH_QUEUE.md`.
   extractions — see FETCH_QUEUE.md REFERENCE section for exact paths).
 - **gov.za / Government Gazette** — school-calendar gazettes tracked as
   `../school_calendar/2026.pdf` and `2027.pdf`; 2027 term dates extracted
-  to `../school_calendar/2027.json`.
+  to `../school_calendar/2027.json`. Terms note: the DBE row above is about
+  **education.gov.za** and its permissive reading does not carry over here —
+  **gov.za** is GCIS, and its
+  [terms of use](https://www.gov.za/terms-and-conditions-use-0) permit use
+  "only for non-commercial informational or reference purposes", with
+  commercial use needing prior written permission from the GCIS web manager
+  (© GCIS, all rights reserved). What this repo relies on, however, is not
+  the GCIS page but the gazette notice it summarises: the term dates are
+  made by a notice under the National Education Policy Act, 1996, and
+  s.12(8)(a) of the Copyright Act 98 of 1978 provides that no copyright
+  subsists in "official texts of a legislative, administrative or legal
+  nature". Both calendar files therefore cite the gazette notice as their
+  authority (`gazette`), keeping `source_url` only as the page to re-fetch
+  from. Checked 2026-09-10.
 
 All documents © Department of Basic Education / Government Printing Works,
 reproduced for educational use with attribution. Every batch-3 PDF was
