@@ -1,0 +1,21 @@
+**Thandi:** Questions from the class before we close! Start with the sneaky one: prepaid EXPENSES — the word says expenses — so why do they sit with the receivables on the ASSET side?
+
+**Tutor:** Read past the label to the substance: what does the business HOLD at midnight? Eight months of insurance cover, already paid for, waiting to protect next year — that is value in hand, a benefit arriving within the year, which is precisely what a current asset is. The word "expenses" in the name describes where the amount CAME from — it was sitting in an expense account until the adjustment rescued the unused part — not what it now IS. The receivables family holds it because the family's true definition is "benefit owed to the business within the year": the debtors owe money, the tenant owes a month's rent, and the insurer owes eight months of cover. Money, rent, cover — three currencies, one direction: toward the business. File by direction and timing, never by the noun in the label.
+
+***
+
+**Thandi:** Next: drawings reduce the owner's equity — but so do expenses, in the end. Why does one go through the profit story and the other straight into the jar?
+
+**Tutor:** Because one is the business SPENDING and the other is the owner COLLECTING. Wages, electricity, insurance — the business consumed those to earn its income; they belong in the year's earning story, and matching insists they meet the incomes they helped produce. Drawings consumed nothing in the earning: the shop did not sell more or spend less because Zanele took R4 500 home; the owner simply withdrew part of what was already hers. Put drawings among the expenses and the profit understates what the business truly earned — you would be blaming the machine for what the driver took out of the till. So the profit is computed clean, and THEN the jar's note shows the owner's movements: profit in, drawings out. The separation also keeps the two questions a reader asks distinct: how well did the business earn, and what did the owner do with the earning?
+
+***
+
+**Thandi:** This one puzzled the class: the statement shows the equipment at R11 200 — but nobody would actually pay exactly R11 200 for our used equipment. Is the photograph lying?
+
+**Tutor:** The photograph is precise about WHAT it claims — and it never claims a selling price. Carrying value is cost minus the wear charged so far: a disciplined, documented allocation of the R14 000 across the years it serves, at the rate the policy declares. It answers "how much of what we paid has not yet been used up?" — an accounting truth, verifiable from the register and the rate. Market value answers a different question — "what would a buyer pay today?" — which shifts with fashion, scarcity and luck, and which the going concern principle makes largely irrelevant: the business intends to USE the equipment, not sell it, so what matters is unconsumed service, not tomorrow's auction. The reader is protected by consistency: every figure on the page is built by stated method, so figures can be compared across years and businesses. A statement of guesses about market prices would read friendlier and mean less.
+
+***
+
+**Thandi:** Last one: my totals didn't agree by exactly R4 500. The lesson says check drawings first — why do the classic errors each leave such recognisable fingerprints?
+
+**Tutor:** Because a single missing piece throws the page out by exactly its own size — the equation is so tight that every omission signs its name. Forget drawings: equity is overstated by precisely R4 500, and the funding wall stands exactly that much heavy. Forget the interest capitalisation: the loan sits R1 500 light. Drop one adjustment twin — say the accrued income — and assets run R600 short. So read your difference as evidence, exactly like the error-fingerprints of the reconciliation topic: match the gap against the famous suspects — drawings, the loan's growth, each adjustment twin — and check whether one of them equals it before re-adding anything. A difference divisible by nine still whispers transposition; a doubled item throws the page out by twice its size. The page failing to balance is not a disaster; it is a message with the culprit's measurements attached. Learn to read it and the hunt takes a minute, not an evening.

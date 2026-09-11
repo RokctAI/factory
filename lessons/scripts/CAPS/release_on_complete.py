@@ -49,6 +49,14 @@ verbatim as an override (escape hatch, not the main path), and a package
 unexpectedly missing its scene releases with an empty timeline plus a loud
 warning.
 
+CURRICULUM OVERLAYS (additive): a package may carry
+overlays/<CURRICULUM>/ (see curriculum_overlay.py) with that curriculum's
+MCQs, comprehension check, break Q&A and label. The nine files above stay
+the shared lesson AND the CAPS variant; when overlays exist the manifest
+gains `curricula`, `default_curriculum` and `variants` on top of its
+unchanged fields (a package without overlays assembles byte-identically).
+The overlay files pass the same mojibake/compliance gates as the package.
+
 intro.md is REQUIRED for completeness but not consumed by manifest
 assembly: it is the tutor's separate spoken-intro recording (played over
 the manifest's topic_display beat), same as on the card path today.
@@ -89,6 +97,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import assistant_registry
 import check_mojibake
+import curriculum_overlay
 import lesson_compliance
 import lesson_manifest as lm
 from lesson_pipeline import CAPS_TYPE_BY_FOLDER, persona_id, subject_duo_for
@@ -487,6 +496,16 @@ def assemble(folder, ident, audio_file, scene_dir, out_dir):
         **({"questions": questions} if questions else {}),
         **({"comprehension_check": cc_bank} if cc_bank else {}),
     }
+    # Per-curriculum variants (spec §4.3): additive keys only, and only
+    # when the package carries an overlay. The top-level banks and the
+    # break_start questions above stay the default (CAPS) variant, so a
+    # player that predates `variants` keeps playing exactly what it did.
+    try:
+        manifest.update(curriculum_overlay.build_variants(
+            folder, mcq, comprehension, break_questions,
+            break_question_extractor=extract_session_break_questions))
+    except curriculum_overlay.OverlayError as e:
+        raise ReleaseError(f"curriculum overlay: {e}")
     manifest_path = out_dir / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     print(f"  [manifest] {len(tracks)} tracks, audio {audio_seconds:.1f}s "
@@ -610,7 +629,8 @@ def main():
             audio_file = audio_path(folder, root, args.audio_root)
             scene_dir = (Path(args.scene_root) / folder.relative_to(root)
                          if args.scene_root else folder)
-            check_clean(sorted(p for p in folder.iterdir() if p.is_file()),
+            check_clean(sorted(p for p in folder.iterdir() if p.is_file())
+                        + curriculum_overlay.overlay_files(folder),
                         "package")
             out_dir = Path(args.out_root) / ident["id"]
             shutil.rmtree(out_dir, ignore_errors=True)

@@ -56,6 +56,14 @@ warn. Rules, all previously enforced ad hoc and now gated in one place:
      written and the player finds nothing to say. Skipped (not passed)
      when no team layout is present to check against — see
      lesson_manifest.resolve_clip_script.
+  R7 CURRICULUM OVERLAYS ALIGN WITH THEIR SHARED PACKAGE — every
+     overlays/<CURRICULUM>/label.json has the label contract shape
+     (curriculum/badge/content_basis, break_audio slot), every overlay
+     subtopic ref and comprehension id exists in the package's shared
+     mcq.json / comprehension_check.json, overlay question ids are unique
+     and `needs_reauthor` flags are booleans. An overlay that drifts from
+     the shared package would ask questions the board never reaches.
+     See curriculum_overlay.validate_overlay.
 
 Knowledge-bite checks (W1-W3) are ADVISORY ONLY — printed as warnings and
 never counted toward the exit code (a bite warning cannot fail the build):
@@ -80,6 +88,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import assistant_registry  # assistant name<->opaque-id mapping (both team layouts)
+import curriculum_overlay  # R7: overlay contract (one validator, two callers)
 import lesson_manifest  # R6: the standing-clip script resolver (one mapping, two callers)
 from lesson_pipeline import verify_no_session_framing  # R2 + R3 detector
 
@@ -276,6 +285,42 @@ def check_clip_table(path, manifest):
     return out
 
 
+# --- R7: curriculum overlays ---
+
+def overlay_label_for(path):
+    """The label.json that owns any file under overlays/<CURRICULUM>/, or
+    None when `path` is not inside an overlay directory."""
+    p = Path(path)
+    parts = p.parts
+    if curriculum_overlay.OVERLAY_DIR not in parts:
+        return None
+    i = len(parts) - 1 - parts[::-1].index(curriculum_overlay.OVERLAY_DIR)
+    if i + 1 >= len(parts):
+        return None
+    return Path(*parts[:i + 2]) / curriculum_overlay.OVERLAY_LABEL
+
+
+def check_overlay(label_path):
+    """R7 for one overlay directory, identified by its label.json."""
+    label_path = Path(label_path)
+    curriculum = label_path.parent.name
+    folder = label_path.parent.parent.parent
+    shared_mcq = folder / "mcq.json"
+    shared_cc = folder / "comprehension_check.json"
+    if not (shared_mcq.is_file() and shared_cc.is_file()):
+        return [("R7", f"{label_path}: overlay has no shared mcq.json / "
+                       "comprehension_check.json beside it to align with")]
+    try:
+        overlay = curriculum_overlay.read_overlay(folder, curriculum)
+        mcq = json.loads(shared_mcq.read_text(encoding="utf-8"))
+        cc = json.loads(shared_cc.read_text(encoding="utf-8"))
+    except (curriculum_overlay.OverlayError, json.JSONDecodeError,
+            OSError) as e:
+        return [("R7", f"{label_path}: {e}")]
+    return [("R7", f"{label_path}: {msg}")
+            for msg in curriculum_overlay.validate_overlay(overlay, mcq, cc)]
+
+
 # --- W1 + W2 + W3: knowledge bites (advisory warnings, never failures) ---
 
 # Lenient by design: the merged bites write "**Source:** Department of Basic
@@ -311,7 +356,9 @@ RULE_TITLES = {
     "R4": "Opaque identity ids only (^tutor_<n>$ / ^assistant_<n>$)",
     "R5": "Camera events inline in primitives (not a sibling key)",
     "R6": "Standing-clip scripts named by a manifest's clips table exist",
+    "R7": "Curriculum overlays align with their shared package",
 }
+RULES = tuple(RULE_TITLES)
 
 WARN_TITLES = {
     "W1": "Knowledge bite carries a question.md",
@@ -321,8 +368,8 @@ WARN_TITLES = {
 
 
 def discover():
-    """(scripts, animations, manifests, job_cards, persona_cards, bite_dirs)
-    in the tree."""
+    """(scripts, animations, manifests, job_cards, persona_cards, bite_dirs,
+    overlay_labels) in the tree."""
     scripts = sorted(Path("lessons").rglob("script.md"))
     animations = sorted(Path("lessons").rglob("animations.json")) + \
         sorted(Path(".").glob("**/animations.json"))
@@ -332,17 +379,30 @@ def discover():
     persona = sorted(PERSONA_TUTORS_DIR.glob("*/tutor.md"))
     bites = [p for p in sorted(Path("lessons").rglob("knowledge_bites/*/*/*"))
              if p.is_dir()]
+    overlays = sorted(Path("lessons").rglob(
+        f"{curriculum_overlay.OVERLAY_DIR}/*/{curriculum_overlay.OVERLAY_LABEL}"))
     return (scripts, list(dict.fromkeys(animations)), manifests, job_cards,
-            persona, bites)
+            persona, bites, overlays)
 
 
 def run(paths):
     violations = []
     warnings = []
     checked = {"script": 0, "animations": 0, "manifest": 0, "job_card": 0,
-               "persona": 0, "bite": 0}
+               "persona": 0, "bite": 0, "overlay": 0}
+    overlays_seen = set()
     for p in paths:
         p = Path(p)
+        # Any file inside overlays/<CURRICULUM>/ (changed-files mode passes
+        # the file that changed) checks its whole overlay once, via the
+        # label.json that owns it.
+        label = overlay_label_for(p)
+        if label is not None:
+            if label not in overlays_seen:
+                overlays_seen.add(label)
+                violations += check_overlay(label)
+                checked["overlay"] += 1
+            continue
         # Bite DIRECTORIES (from --all discovery): W1 + content warnings.
         if p.is_dir():
             if len(p.parts) >= 4 and p.parts[-4] == "knowledge_bites":
@@ -373,9 +433,10 @@ def main():
         print(__doc__)
         return 2
     if args == ["--all"]:
-        scripts, animations, manifests, job_cards, persona, bites = discover()
+        (scripts, animations, manifests, job_cards, persona, bites,
+         overlays) = discover()
         paths = [*scripts, *animations, *manifests, *job_cards, *persona,
-                 *bites]
+                 *bites, *overlays]
     else:
         paths = args
 
@@ -385,7 +446,7 @@ def main():
     by_rule = {}
     for rule, msg in violations:
         by_rule.setdefault(rule, []).append(msg)
-    for rule in ("R1", "R2", "R3", "R4", "R5", "R6"):
+    for rule in RULES:
         msgs = by_rule.get(rule, [])
         if msgs:
             print(f"\n[{rule}] {RULE_TITLES[rule]} — {len(msgs)} violation(s):")

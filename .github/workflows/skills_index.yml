@@ -26,6 +26,9 @@ on:
       - main
     paths:
       - 'lessons/curriculum/CAPS/*/skills/**'
+      # Sibling curricula's skill pointers decide each entry's
+      # `curriculum` label, so their edits rebuild the index too.
+      - 'lessons/curriculum/*/skills/**'
       - 'lessons/scripts/CAPS/build_skills_index.py'
   workflow_dispatch:
 

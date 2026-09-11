@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why an unbalanced equation with correct formulae still 'lies', using the propane equation's census, and state the law it breaks.",
+      "expected_answer": "The unbalanced line C3H8 plus O2 gives CO2 plus H2O uses correct formulae, but counting atoms exposes the lie: the left holds three carbons, eight hydrogens and two oxygens, while the right holds one carbon, two hydrogens and three oxygens — so the equation claims two carbons and six hydrogens were destroyed and an oxygen was created from nothing. That claim breaks the law of conservation of mass: in a chemical reaction atoms are neither created nor destroyed, only rearranged, so every atom entering on the left must leave on the right and the mass of products must equal the mass of reactants. Balancing adjusts how many of each molecule takes part — never what the molecules are — until every element tallies across the arrow."
+    },
+    {
+      "id": "cc2",
+      "question": "State the one commandment of balancing, explain the difference between a coefficient and a subscript with the water-versus-peroxide example, and defend the C, H, O order for combustion.",
+      "expected_answer": "The commandment: change only coefficients, never subscripts. A subscript is part of a substance's identity — H2O with two hydrogens and one oxygen is water, and editing it to H2O2 manufactures a different chemical, hydrogen peroxide, so an equation 'balanced' by subscripts describes a reaction that never happened. A coefficient is a multiplier of the entire formula — four H2O means eight hydrogens and four oxygens; five O2 means ten oxygen atoms — so coefficients change amounts without touching identities, which is exactly the freedom balancing needs. The C, H, O order works because carbon and hydrogen each appear in only one product, so their coefficients settle instantly, while oxygen appears in both products and stands alone as O2 on the left; balancing the dependent element last lets the lone O2 set the oxygen count in one clean move, whereas balancing oxygen first begins a tail-chase in which every later fix breaks it again."
+    },
+    {
+      "id": "cc3",
+      "question": "Balance the combustion of butane, C4H10, clearing the fraction lawfully, audit the result, and explain the smallest-set rule with an example.",
+      "expected_answer": "Carbon first: four carbons need four CO2. Hydrogen: ten hydrogens at two per water need five H2O. Oxygen demand on the right: four CO2 hold eight oxygens and five H2O hold five — thirteen atoms, which is thirteen halves of O2. Whole numbers are required, so double every coefficient: two C4H10 plus thirteen O2 gives eight CO2 plus ten H2O. Audit: carbons eight and eight; hydrogens twenty and twenty; oxygens twenty-six on the left and sixteen plus ten — twenty-six — on the right: three matches, lawful. The smallest-set rule says the final coefficients must be the smallest whole numbers that balance: four H2 plus two O2 gives four H2O audits perfectly, but every coefficient divides by two, so the final form is two H2 plus one O2 gives two H2O. Check any final answer by asking whether one number divides all the coefficients; for two, thirteen, eight, ten nothing does, so the butane line is final."
+    }
+  ]
+}

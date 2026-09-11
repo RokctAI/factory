@@ -1,0 +1,21 @@
+**Thandi:** Time for the questions that come up a lot with this one! First: the question says the rate is 6 percent, so why is the answer R240 and not 6 percent?
+
+**Tutor:** Because the question asked for the interest, and interest is always money, never a percentage. Read the two words as two different objects. The rate — 6 percent per year — is just a price tag: it tells you how fast money will grow, but on its own it has paid nobody anything. The interest is the event: the actual rand amount that appears when the rate acts on the principal. Six percent of R4 000 is R240, so R240 is the interest. Here is the self-check that catches the error every time: look at the unit your answer is wearing. If the question asks for interest and your answer has a percent symbol, or it asks for a rate and your answer has a rand sign, you have answered the wrong question — swap tools and redo it. In marking guidelines those units are not decoration; an interest answer of 240 without the rand sign can drop a mark, and 240 percent is simply wrong.
+
+***
+
+**Thandi:** Next one: in year two of the savings question, why is the interest suddenly R254,40? The rate never changed from 6 percent.
+
+**Tutor:** The rate stayed still but the balance moved, and interest is calculated on the balance as it stands at the start of that year. Year one: 6 percent of R4 000 gives R240, and Zanele leaves it in the account, so the account enters year two holding R4 240. Year two: 6 percent of R4 240 gives R254,40 — bigger, because last year's R240 is now itself earning. That extra R14,40 is precisely 6 percent of R240, the interest earned by the interest. The discipline that protects you in an exam is to write the opening balance before computing each year: year one opens at R4 000, year two opens at R4 240. The moment you catch yourself taking 6 percent of the original deposit twice, you know you have drifted. And when the question says the saver withdraws the interest each year, the balance resets to R4 000 every January, and each year's interest is a flat R240 — read carefully which story you are in, because questions use both.
+
+***
+
+**Thandi:** Third one, and it is the money question: the mashonisa's 25 sounds close to the bank's 15 — why is the loan twenty times more expensive?
+
+**Tutor:** Because the two numbers are speeds measured over different distances. The bank's 15 percent runs per YEAR: on R4 000, that is R600 of interest for twelve whole months. The mashonisa's 25 percent runs per MONTH: on the same R4 000, that is R1 000 every single month — more in one month than the bank wants for a year. To compare them honestly, stretch both onto the same time period. Twenty-five percent per month, charged simply for twelve months, is 300 percent per year. Divide 300 by 15 and you get the twenty. The disguise works because our eyes compare the 25 with the 15 and skip the small words after them. So build the habit of reading a rate as one object with two parts — number AND period — the way you would never read a speed limit as just 60 without asking whether it is kilometres per hour. Every wrong option in these questions is manufactured from someone comparing bare numbers across different periods.
+
+***
+
+**Thandi:** Last one: when a question gives the interest and asks me to find the rate, what exactly do I divide by what?
+
+**Tutor:** Interest divided by principal, times 100 — and the whole trap lives in choosing the principal correctly. The rate describes what the lender charged on the amount originally borrowed, so the original amount is the only honest denominator. Take the example: R480 of interest on a R4 000 loan over a year. Divide 480 by 4 000 to get 0,12, multiply by 100, and the rate is 12 percent per year. The tempting error is dividing by the total repaid, R4 480, which gives about 10,7 percent — wrong, because the R480 was never charged on R4 480; the rate acted before the repayment existed. Then finish with two checks. State the period: 12 percent per year, since the interest accrued over one year. And verify forwards: 12 percent of R4 000 should rebuild the R480 — 0,12 times 4 000 is indeed 480. Backwards answer, forwards check: the same proving habit you use everywhere else in Finance.

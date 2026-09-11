@@ -47,6 +47,24 @@ and lms_sdk's PracticeItem.fromJson):
 Item ids are namespaced with subject/grade/lesson because MCQ question ids
 (`<subtopic_ref>_q<n>` per the metarules) are only unique within one lesson.
 
+CURRICULUM LABELS (shared-lesson overlays, W1): every item carries
+`"curriculum": "<name>"` — the tree it was scanned from (CAPS on the
+default path). A lesson's `overlays/<CURRICULUM>/mcq.json` (see
+curriculum_overlay.py) can contribute that curriculum's items under the id
+`<subject>.<grade>.<lesson-slug>.<question-id>~<curriculum lower>` so the
+existing ids — and every LMS Practice Attempt row keyed by them — are
+untouched. Overlay questions flagged `needs_reauthor: true` (they quote a
+worked case the shared lesson never taught) are never published until
+re-authored; they stay in the overlay file and are counted on stderr.
+
+OVERLAY ITEMS ARE OFF BY DEFAULT. The backend's practice_queue has no
+curriculum filter until W2, so overlay items in the published bank would be
+served to every learner. They enter the bank only when asked for
+explicitly — `--include-overlay-curricula IEB[,...]` or the environment
+variable ROKCT_PRACTICE_OVERLAY_CURRICULA=IEB[,...] — and W2 flips the
+workflow on once the filter exists. With neither set, a lesson's overlay
+changes nothing about this file.
+
 Publishing: POST the file to the rlms backend's System-Manager-only
 `publish_practice_bank` endpoint (the app's practice queue is selected
 server-side from this bank plus the member's own history). `--publish` does
@@ -71,6 +89,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import curriculum_overlay
 import curriculum_target
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -78,6 +97,11 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 # --curriculum (see curriculum_target); CAPS keeps these exact paths.
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "practice_bank.json"
+CURRICULUM = curriculum_target.DEFAULT_CURRICULUM
+# Overlay curricula whose items join the bank; empty = none (the default).
+OVERLAY_CURRICULA_ENV = "ROKCT_PRACTICE_OVERLAY_CURRICULA"
+OVERLAY_CURRICULA_FLAG = "--include-overlay-curricula"
+OVERLAY_CURRICULA: tuple[str, ...] = ()
 
 # All calls ride the single gateway endpoint; the prefix-free `cmd` below
 # addresses the rlms whitelisted-method alias
@@ -113,11 +137,16 @@ def valid_question(question: dict) -> bool:
     )
 
 
-def lesson_items(mcq_path: Path, subject: str, grade: int):
+def lesson_items(mcq_path: Path, subject: str, grade: int,
+                 curriculum: str | None = None, lesson_slug: str | None = None,
+                 id_suffix: str = ""):
     """Yields (item_id, item) for every servable MCQ in one lesson's
     mcq.json; unreadable files and malformed questions warn and are
-    skipped rather than published broken."""
-    lesson_slug = mcq_path.parent.name
+    skipped rather than published broken. `curriculum` labels the items
+    (default: the tree being built); an overlay passes its lesson slug and
+    the `~<curriculum>` id suffix explicitly."""
+    lesson_slug = lesson_slug or mcq_path.parent.name
+    curriculum = curriculum or CURRICULUM
     try:
         mcq = json.loads(mcq_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
@@ -134,11 +163,20 @@ def lesson_items(mcq_path: Path, subject: str, grade: int):
                     file=sys.stderr,
                 )
                 continue
-            item_id = f"{subject}.grade{grade}.{lesson_slug}.{question['id']}"
+            if question.get(curriculum_overlay.NEEDS_REAUTHOR) is True:
+                print(
+                    f"note: {mcq_path}: {question['id']} needs re-authoring "
+                    "against the shared lesson; not published",
+                    file=sys.stderr,
+                )
+                continue
+            item_id = (f"{subject}.grade{grade}.{lesson_slug}.{question['id']}"
+                       f"{id_suffix}")
             item = {
                 "subject": subject,
                 "grade": grade,
                 "lesson": lesson_slug,
+                "curriculum": curriculum,
                 "subtopic_ref": subtopic.get("ref"),
                 "question": question["question"],
                 "options": list(question["options"]),
@@ -176,7 +214,56 @@ def scan_items() -> dict:
                         )
                         continue
                     items[item_id] = item
+                for item_id, item in overlay_items(
+                    mcq_path.parent, subject_dir.name, grade
+                ):
+                    if item_id in items:
+                        print(
+                            f"warning: duplicate item id {item_id} "
+                            f"({mcq_path.parent}); keeping the first",
+                            file=sys.stderr,
+                        )
+                        continue
+                    items[item_id] = item
     return dict(sorted(items.items()))
+
+
+def parse_overlay_curricula(argv, environ=None) -> tuple[str, ...]:
+    """Overlay curricula to include, from `--include-overlay-curricula
+    A[,B]` / `--include-overlay-curricula=A` or the environment variable;
+    () when neither is set. Names must be registered curricula."""
+    environ = os.environ if environ is None else environ
+    argv = list(argv or [])
+    raw = environ.get(OVERLAY_CURRICULA_ENV, "")
+    for i, arg in enumerate(argv):
+        if arg == OVERLAY_CURRICULA_FLAG and i + 1 < len(argv):
+            raw = argv[i + 1]
+        elif arg.startswith(OVERLAY_CURRICULA_FLAG + "="):
+            raw = arg.split("=", 1)[1]
+    names = tuple(n.strip() for n in raw.split(",") if n.strip())
+    for name in names:
+        if not curriculum_target.content_allowed(name):
+            raise ValueError(curriculum_target.refusal(name))
+    return names
+
+
+def overlay_items(lesson_dir: Path, subject: str, grade: int):
+    """(item_id, item) for every INCLUDED overlay curriculum of one lesson
+    (see OVERLAY_CURRICULA — empty by default): the overlay's mcq.json under
+    the `~<curriculum>` id suffix, labelled with that curriculum, the lesson
+    slug shared with the CAPS items."""
+    if not OVERLAY_CURRICULA:
+        return
+    for curriculum in curriculum_overlay.list_overlays(lesson_dir):
+        if curriculum not in OVERLAY_CURRICULA:
+            continue
+        mcq_path = (curriculum_overlay.overlay_dir(lesson_dir, curriculum)
+                    / curriculum_overlay.OVERLAY_MCQ)
+        if not mcq_path.is_file():
+            continue
+        yield from lesson_items(
+            mcq_path, subject, grade, curriculum=curriculum,
+            lesson_slug=lesson_dir.name, id_suffix=f"~{curriculum.lower()}")
 
 
 def build_bank() -> dict:
@@ -237,9 +324,13 @@ def publish(bank: dict) -> int:
 
 def main(argv=None) -> int:
     argv = sys.argv[1:] if argv is None else argv
-    global CAPS_ROOT, OUTPUT_PATH
+    global CAPS_ROOT, OUTPUT_PATH, CURRICULUM, OVERLAY_CURRICULA
     curriculum, CAPS_ROOT, OUTPUT_PATH = curriculum_target.resolve(
         REPO_ROOT, argv, "practice_bank.json")
+    CURRICULUM = curriculum
+    OVERLAY_CURRICULA = parse_overlay_curricula(argv)
+    if OVERLAY_CURRICULA:
+        print(f"including overlay curricula: {', '.join(OVERLAY_CURRICULA)}")
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     if curriculum != curriculum_target.DEFAULT_CURRICULUM:
         print(

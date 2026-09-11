@@ -1,0 +1,21 @@
+**Thandi:** Time for the class questions — and today they're good ones. First: a few of us mix up which side is "opposite" and which is "adjacent" the moment the triangle is drawn at a strange orientation. Is there a foolproof way to label?
+
+**Tutor:** There is, and it fits in one instruction: stand inside the angle. Imagine yourself shrunk down, standing in the corner where the given angle sits, looking into the triangle. The side you could reach out and touch, running away from your feet — that is the adjacent; the word literally means "next to". The side far across the triangle, the one a thrown ball would strike — that is the opposite. And the hypotenuse never needs your position at all: it is always the side facing the square corner, always the longest. The reason learners slip is that they label from the picture's orientation — top, bottom, left, right — and those words betray you the moment a triangle is drawn tilted. Position words fail; angle words never do. Stand inside the angle, and any triangle at any orientation labels itself.
+
+***
+
+**Thandi:** Next one, straight from the practice run: someone computed the ladder angle and got a tiny decimal instead of seventy-something degrees. What happened, and how do we catch it?
+
+**Tutor:** Two suspects, and both leave fingerprints. Suspect one: the calculator was in radian mode, which turns every trigonometric answer into nonsense for this course — the little D must be on the screen before your first keystroke, and checking it should be as automatic as writing your name. Suspect two: pressing cos when the question needed inverse cos. Remember the direction of travel: angle in, ratio out uses the plain function; ratio in, angle out needs the inverse — shift then cos. If you feed 0,3 into plain cos you get the cosine OF 0,3 degrees, a number very close to 1, and everything downstream collapses. The catch-all defence is the sense check: an angle in a ladder problem must land between 0 and 90 degrees, and a steep ladder should read steep — seventy-something, not nought comma nine. Read every answer against the picture, and both suspects get caught at the door.
+
+***
+
+**Thandi:** Here's the one that half the room whispered during the break: in the two-triangle tower problem, why must d be the distance from the NEARER point? Would the sum still work from the far point?
+
+**Tutor:** The mathematics would still work — the algebra does not care which point owns the letter — but the bookkeeping becomes treacherous. Assign d to the nearer point Q and the far point sits at d plus 25: both expressions are built by ADDING, which matches the story of walking closer. Assign d to the far point instead, and the near point becomes d minus 25: now a subtraction lives inside your bracket, and one dropped minus sign later the tower has negative height. The convention of anchoring d at the nearest point keeps every term positive and every bracket honest, and it gives you the verification move for free: solve for d, compute the height from the near triangle, then confirm through the far one. Same discipline, fewer traps. In an examination, choose the layout that cannot betray you.
+
+***
+
+**Thandi:** Last question, and it's the big-picture one: this all works beautifully when there's a right angle. But what happens when the triangle in the story doesn't have one? Are we stuck?
+
+**Tutor:** Not stuck — merely one year early. Everything in this lesson depends on that square corner, because sine, cosine and tangent as you know them are defined inside right-angled triangles. But notice how often the world provides the right angle for free: anything vertical meeting anything horizontal — masts on the ground, cliffs above the sea, walls against floors. That is why this topic reaches so far with one tool. When a story finally offers a triangle with no right angle at all — two ships on crossing bearings, a mountain slope measured from two towns — Grade 11 hands you the sine rule and the cosine rule, which extend these same ratios to every triangle there is. And here is the encouraging part: those rules are learned by the identical discipline you practised today — sketch the story, label what you have, choose the rule by have-and-want. Master the three steps now, and next year's tools will slot straight into hands that already know the grip.

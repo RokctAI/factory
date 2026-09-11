@@ -38,6 +38,18 @@ lookup keys lms_sdk's SkillLessonInfo.fromJson pins:
     subtopic     — the first covered_by subtopic, "" for
                    authored-review-only skills
 
+CURRICULUM LABELS (shared-lesson overlays, W1): each entry also carries
+`"curriculum": ["CAPS", ...]` — the tree being built plus every sibling
+curriculum under lessons/curriculum/ whose skills tree holds a pointer
+file for the same skill (an `inherits_from` file, as
+lessons/scripts/IEB/build_from_caps.py writes) — and
+`importance.exam_weight_by_curriculum`: the tree's own `exam_weight`
+under its name, and `{"status": "pending_sag"}` for a pointer curriculum
+whose exam structure is not ingested yet (its pointer's
+`overrides_pending` says DBE marks must not be shown in that context).
+The legacy `importance.exam_weight` key stays exactly as authored for
+older clients.
+
 Output shape (the contract pinned by rlms's `LMS Skills Index` doctype and
 lms_sdk's SkillLessonIndex.parse):
 
@@ -83,6 +95,8 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 # --curriculum (see curriculum_target); CAPS keeps these exact paths.
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "skills_index.json"
+CURRICULUM = curriculum_target.DEFAULT_CURRICULUM
+PENDING_EXAM_WEIGHT = {"status": "pending_sag"}
 
 # All calls ride the single gateway endpoint; the prefix-free `cmd` below
 # addresses the rlms whitelisted-method alias
@@ -90,6 +104,55 @@ OUTPUT_PATH = REPO_ROOT / "lessons" / "skills_index.json"
 # lms/frappe/manifest.json) whatever the composed app is named.
 GATEWAY_PATH = "/api/v1/method/rokct.platform.api"
 PUBLISH_CMD = "api.lms.publish_skills_index"
+
+
+def pointer_curricula(skill_path: Path) -> list[str]:
+    """Sibling curricula (directory names under lessons/curriculum/, sorted)
+    whose skills tree carries a pointer to this skill: the same relative
+    path `<subject>/skills/<grade>/<file>.json` holding `inherits_from`."""
+    try:
+        rel = skill_path.relative_to(CAPS_ROOT)
+    except ValueError:
+        return []
+    curricula_root = CAPS_ROOT.parent
+    if not curricula_root.is_dir():
+        return []
+    found = []
+    for sibling in sorted(curricula_root.iterdir()):
+        if not sibling.is_dir() or sibling.name == CAPS_ROOT.name:
+            continue
+        pointer = sibling / rel
+        if not pointer.is_file():
+            continue
+        try:
+            data = json.loads(pointer.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(data, dict) and data.get("inherits_from"):
+            found.append(sibling.name)
+    return found
+
+
+def with_curriculum_labels(entry: dict, curricula: list[str],
+                           own: str = "") -> dict:
+    """Add `curriculum` and `importance.exam_weight_by_curriculum` to an
+    entry (a copy of `importance` — the verbatim CAPS dict is never
+    mutated). `own` is the tree being built (its exam_weight is the only
+    authored one); every pointer curriculum reads pending."""
+    own = own or CURRICULUM
+    entry["curriculum"] = [own] + [c for c in curricula if c != own]
+    importance = entry.get("importance")
+    if isinstance(importance, dict):
+        importance = dict(importance)
+        by_curriculum = {}
+        if "exam_weight" in importance:
+            by_curriculum[own] = importance["exam_weight"]
+        for c in curricula:
+            if c != own:
+                by_curriculum[c] = dict(PENDING_EXAM_WEIGHT)
+        importance["exam_weight_by_curriculum"] = by_curriculum
+        entry["importance"] = importance
+    return entry
 
 
 def index_entry(skill: dict) -> dict:
@@ -148,7 +211,8 @@ def scan_skills() -> dict:
                     file=sys.stderr,
                 )
                 continue
-            skills[skill_ref] = index_entry(skill)
+            skills[skill_ref] = with_curriculum_labels(
+                index_entry(skill), pointer_curricula(skill_path))
     return dict(sorted(skills.items()))
 
 
@@ -210,9 +274,10 @@ def publish(index: dict) -> int:
 
 def main(argv=None) -> int:
     argv = sys.argv[1:] if argv is None else argv
-    global CAPS_ROOT, OUTPUT_PATH
+    global CAPS_ROOT, OUTPUT_PATH, CURRICULUM
     curriculum, CAPS_ROOT, OUTPUT_PATH = curriculum_target.resolve(
         REPO_ROOT, argv, "skills_index.json")
+    CURRICULUM = curriculum
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     if curriculum != curriculum_target.DEFAULT_CURRICULUM:
         print(

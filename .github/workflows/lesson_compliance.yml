@@ -10,6 +10,7 @@ name: Lesson Compliance
 #   R4 tutor identity ids are opaque (^tutor_<n>$), never name/slug-derived
 #   R5 camera_move events inline in primitives (not a sibling top-level key)
 #   R6 standing-clip scripts named by a manifest's clips table exist
+#   R7 curriculum overlays (overlays/<CURRICULUM>/) align with their package
 #
 # Fast by design: checks only the files a push changed. workflow_dispatch runs
 # the full-tree baseline.
@@ -60,7 +61,8 @@ jobs:
                     '.rokct/agent/jobs/**/*.md' \
                     'lessons/**/script.md' \
                     'lessons/**/animations.json' \
-                    'lessons/**/manifest.json' || true)
+                    'lessons/**/manifest.json' \
+                    'lessons/**/overlays/**' || true)
           EXISTING=""
           for F in $FILES; do
             [ -f "$F" ] && EXISTING="$EXISTING $F"
