@@ -27,6 +27,12 @@ directly. Each entry carries the full question.md content inline: an
 accepted bite must stay readable offline forever, so the index is the
 complete payload, not a pointer.
 
+CURRICULUM LABEL (shared-lesson overlays, W1): every bite carries
+`"curriculum": ["<name>"]` — the tree it was scanned from (CAPS on the
+default path: today's bites are all DBE past-paper items). A bite valid
+for more than one curriculum lists them all; the backend filter treats
+an unlabelled entry as CAPS.
+
 Output shape (the contract pinned by rlms's bite_rules + lms_sdk's
 KnowledgeBiteIndex.parse):
 
@@ -36,7 +42,7 @@ KnowledgeBiteIndex.parse):
       "bites": {
         "<lesson-slug>": [
           {"bite_slug": ..., "subject": ..., "grade": ..., "title": ...,
-           "question_md": ...},
+           "question_md": ..., "curriculum": [...]},
           ...
         ]
       }
@@ -68,6 +74,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 # --curriculum (see curriculum_target); CAPS keeps these exact paths.
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "knowledge_bites_index.json"
+CURRICULUM = curriculum_target.DEFAULT_CURRICULUM
 
 
 def parse_int(value, default=None):
@@ -128,6 +135,7 @@ def scan_bites() -> dict:
                             "grade": grade,
                             "title": bite_title(question_md, bite_dir.name),
                             "question_md": question_md,
+                            "curriculum": [CURRICULUM],
                         }
                     )
     for entries in bites.values():
@@ -156,9 +164,10 @@ def content_signature(index: dict) -> str:
 
 def main(argv=None) -> int:
     argv = sys.argv[1:] if argv is None else argv
-    global CAPS_ROOT, OUTPUT_PATH
+    global CAPS_ROOT, OUTPUT_PATH, CURRICULUM
     curriculum, CAPS_ROOT, OUTPUT_PATH = curriculum_target.resolve(
         REPO_ROOT, argv, "knowledge_bites_index.json")
+    CURRICULUM = curriculum
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     if curriculum != curriculum_target.DEFAULT_CURRICULUM:
         print(

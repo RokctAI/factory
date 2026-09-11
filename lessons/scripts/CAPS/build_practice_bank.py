@@ -47,6 +47,19 @@ and lms_sdk's PracticeItem.fromJson):
 Item ids are namespaced with subject/grade/lesson because MCQ question ids
 (`<subtopic_ref>_q<n>` per the metarules) are only unique within one lesson.
 
+CURRICULUM LABELS (shared-lesson overlays, W1): every item carries
+`"curriculum": "<name>"` — the tree it was scanned from (CAPS on the
+default path). A lesson's `overlays/<CURRICULUM>/mcq.json` (see
+curriculum_overlay.py) contributes that curriculum's items under the id
+`<subject>.<grade>.<lesson-slug>.<question-id>~<curriculum lower>` so the
+existing ids — and every LMS Practice Attempt row keyed by them — are
+untouched. Overlay questions flagged `needs_reauthor: true` (they quote a
+worked case the shared lesson never taught) are NOT published to the bank
+until re-authored; they stay in the overlay file and are counted on
+stderr. Serving-side curriculum filtering is the backend's job (W2); until
+it lands, consumers of this file should treat unlabelled or CAPS items as
+the default set.
+
 Publishing: POST the file to the rlms backend's System-Manager-only
 `publish_practice_bank` endpoint (the app's practice queue is selected
 server-side from this bank plus the member's own history). `--publish` does
@@ -71,6 +84,7 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+import curriculum_overlay
 import curriculum_target
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -78,6 +92,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 # --curriculum (see curriculum_target); CAPS keeps these exact paths.
 CAPS_ROOT = REPO_ROOT / "lessons" / "curriculum" / "CAPS"
 OUTPUT_PATH = REPO_ROOT / "lessons" / "practice_bank.json"
+CURRICULUM = curriculum_target.DEFAULT_CURRICULUM
 
 # All calls ride the single gateway endpoint; the prefix-free `cmd` below
 # addresses the rlms whitelisted-method alias
@@ -113,11 +128,16 @@ def valid_question(question: dict) -> bool:
     )
 
 
-def lesson_items(mcq_path: Path, subject: str, grade: int):
+def lesson_items(mcq_path: Path, subject: str, grade: int,
+                 curriculum: str | None = None, lesson_slug: str | None = None,
+                 id_suffix: str = ""):
     """Yields (item_id, item) for every servable MCQ in one lesson's
     mcq.json; unreadable files and malformed questions warn and are
-    skipped rather than published broken."""
-    lesson_slug = mcq_path.parent.name
+    skipped rather than published broken. `curriculum` labels the items
+    (default: the tree being built); an overlay passes its lesson slug and
+    the `~<curriculum>` id suffix explicitly."""
+    lesson_slug = lesson_slug or mcq_path.parent.name
+    curriculum = curriculum or CURRICULUM
     try:
         mcq = json.loads(mcq_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
@@ -134,11 +154,20 @@ def lesson_items(mcq_path: Path, subject: str, grade: int):
                     file=sys.stderr,
                 )
                 continue
-            item_id = f"{subject}.grade{grade}.{lesson_slug}.{question['id']}"
+            if question.get(curriculum_overlay.NEEDS_REAUTHOR) is True:
+                print(
+                    f"note: {mcq_path}: {question['id']} needs re-authoring "
+                    "against the shared lesson; not published",
+                    file=sys.stderr,
+                )
+                continue
+            item_id = (f"{subject}.grade{grade}.{lesson_slug}.{question['id']}"
+                       f"{id_suffix}")
             item = {
                 "subject": subject,
                 "grade": grade,
                 "lesson": lesson_slug,
+                "curriculum": curriculum,
                 "subtopic_ref": subtopic.get("ref"),
                 "question": question["question"],
                 "options": list(question["options"]),
@@ -176,7 +205,32 @@ def scan_items() -> dict:
                         )
                         continue
                     items[item_id] = item
+                for item_id, item in overlay_items(
+                    mcq_path.parent, subject_dir.name, grade
+                ):
+                    if item_id in items:
+                        print(
+                            f"warning: duplicate item id {item_id} "
+                            f"({mcq_path.parent}); keeping the first",
+                            file=sys.stderr,
+                        )
+                        continue
+                    items[item_id] = item
     return dict(sorted(items.items()))
+
+
+def overlay_items(lesson_dir: Path, subject: str, grade: int):
+    """(item_id, item) for every overlay curriculum of one lesson: the
+    overlay's mcq.json under the `~<curriculum>` id suffix, labelled with
+    that curriculum, the lesson slug shared with the CAPS items."""
+    for curriculum in curriculum_overlay.list_overlays(lesson_dir):
+        mcq_path = (curriculum_overlay.overlay_dir(lesson_dir, curriculum)
+                    / curriculum_overlay.OVERLAY_MCQ)
+        if not mcq_path.is_file():
+            continue
+        yield from lesson_items(
+            mcq_path, subject, grade, curriculum=curriculum,
+            lesson_slug=lesson_dir.name, id_suffix=f"~{curriculum.lower()}")
 
 
 def build_bank() -> dict:
@@ -237,9 +291,10 @@ def publish(bank: dict) -> int:
 
 def main(argv=None) -> int:
     argv = sys.argv[1:] if argv is None else argv
-    global CAPS_ROOT, OUTPUT_PATH
+    global CAPS_ROOT, OUTPUT_PATH, CURRICULUM
     curriculum, CAPS_ROOT, OUTPUT_PATH = curriculum_target.resolve(
         REPO_ROOT, argv, "practice_bank.json")
+    CURRICULUM = curriculum
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     if curriculum != curriculum_target.DEFAULT_CURRICULUM:
         print(
