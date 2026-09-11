@@ -1,0 +1,21 @@
+**Thandi:** Questions from the class before we close! The first one comes up in every group: why does multiplying by 0,85 take fifteen percent off? People feel like it's a shortcut somebody invented, and shortcuts feel risky in a test.
+
+**Tutor:** It is not a shortcut; it is the definition wearing decimal clothes, and the proof fits in one breath. Any price is one hundred percent of itself — R800 is one hundred percent of R800. Remove fifteen percent, and what survives is one hundred minus fifteen: eighty-five percent. So "take off fifteen percent" and "keep eighty-five percent" are the same instruction, and eighty-five percent as a decimal is 0,85. Multiplying by 0,85 literally says: keep eighty-five percent. Try it on an easy number. Fifteen percent of R200 is R30, so R200 minus R30 is R170; and R200 times 0,85 is also R170. Identical. The increase multiplier is born the same way: adding fifteen percent means keeping your full hundred percent and gaining fifteen more, so you stand on one hundred and fifteen percent, which is 1,15. Decrease, one minus the decimal; increase, one plus the decimal. See the multiplier as the leftover percentage in decimal form and there is nothing left to memorise.
+
+***
+
+**Thandi:** Next one, and it actually started an argument at break. Someone insists the sneakers go down fifteen percent and then up fifteen percent, so they must come back to R800. Why don't they?
+
+**Tutor:** Because the two fifteens are cut from different amounts of money. The wording settles it: the VAT is added to the discounted price. So the discount bites R800 and takes fifteen percent of R800 — R120 — leaving R680. The VAT then bites R680 and adds fifteen percent of R680 — only R102. Same rate, smaller base, smaller rands: eighteen rand smaller. You step down a big stair and climb back a smaller one, so you finish below your starting point: R680 plus R102 is R782. The matching rates are the whole illusion — a percentage is not an amount of money until you finish the sentence "percent of what". And the full journey has its own single number: multiply the multipliers, 0,85 times 1,15, and you get 0,9775 — the final price is 97,75 percent of the original, a 2,25 percent decrease. That single figure is what the second half of the question wants.
+
+***
+
+**Thandi:** Here's one from a learner whose arithmetic was perfect and whose answer was still wrong. For percentage change, how do you know whether to divide by the old price or the new one?
+
+**Tutor:** Ask what the phrase is secretly comparing against: changed relative to what? Change is always measured from the starting point, so the original goes in the denominator, every single time. Difference divided by original, times one hundred. On the sneakers: the price fell R18 — that is R800 minus R782 — and the original was R800. So 18 over 800 is 0,0225, times one hundred is a 2,25 percent decrease. Now divide by the wrong figure and watch the damage: 18 over 782 is about 0,0230, so you would report 2,30 percent — close enough to look right, wrong enough to lose the credit. The everyday version locks it in: when the news says bread is eight percent more expensive, eight percent of what? Of last month's price, the one it moved away from. The past is the baseline. Original underneath, always.
+
+***
+
+**Thandi:** Last one, and it's the mistake that costs the most in real tests: taking VAT off. If putting VAT on was plus fifteen percent, why can't I just take fifteen percent off to get back?
+
+**Tutor:** Because putting the VAT on was never "add fifteen percent of the final price" — it was a multiplication by 1,15 performed on the smaller, pre-VAT price. Follow the actual rands. The pre-VAT price was R680, and the VAT charged was fifteen percent of R680: R102. Now try stripping fifteen percent off the inclusive R782: that removes R117,30 — fifteen rand and thirty cents more VAT than was ever charged — and dumps you at R664,70 instead of R680. It is the sneaker mistake running in reverse: a percentage of the wrong amount. The cure is always to undo the operation that actually happened. Multiplication is undone by division, so divide the inclusive price by 1,15: R782 divided by 1,15 is R680, exactly. Multiply in, divide out — and that same gate works for interest, mark-ups and inflation.

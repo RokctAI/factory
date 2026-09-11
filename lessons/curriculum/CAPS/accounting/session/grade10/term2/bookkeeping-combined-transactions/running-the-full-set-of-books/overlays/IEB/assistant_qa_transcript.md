@@ -1,0 +1,21 @@
+**Thandi:** Question time! Here's the one most of the class got tangled in: when Mokoena paid his R2 400, quite a few of us wanted to credit Sales — it feels like income arriving. Why is that wrong?
+
+**Tutor:** Because earning and collecting are two separate events, booked on two separate days — and the earning was booked first. On the 9th, when the goods left the shop, the Debtors Journal recorded Sales of four thousand five hundred rand: complete, final, done. The payment on the 16th settles the PROMISE that sale created: Bank grows, his page shrinks, Sales does not move — credit it again and the month would claim six thousand nine hundred rand of sales from a four-and-a-half-thousand-rand transaction. The rule generalises beautifully: the Debtors and Creditors Control columns in the cash journals exist precisely for money that settles old promises, and money in those columns never visits a trading account. Interrogate every receipt with one question: is this NEW earning, or an OLD promise being kept? New earning — Sales. Old promise — the page.
+
+***
+
+**Thandi:** Next one: with eleven transactions flying around, how do we make sure nothing gets counted twice — once from the journal total and once from the personal page?
+
+**Tutor:** By remembering that the two destinations do different jobs and never overlap. A personal page in the Debtors or Creditors Ledger holds DETAIL: it receives each transaction line, daily, so any customer's balance is current at any moment. The general ledger holds TOTALS: one posting per column, at month end. Those are two views of the same facts, not two recordings of them — the subsidiary ledgers sit outside the double entry entirely; only the general ledger carries it. Double-counting happens when someone posts an individual line to Debtors CONTROL as well as to the page — but control receives only column totals, never lines. Keep the map: lines to pages daily, totals to control monthly. And if the rule ever slips, the month-end comparison of list against control exposes it immediately — that mismatch is exactly what the comparison exists to catch.
+
+***
+
+**Thandi:** Ooh, a sharp one from the back row: the trial balance levelled at forty-seven thousand nine hundred — but if a slip had gone through the completely WRONG door, would the trial balance have noticed?
+
+**Tutor:** Sometimes, but usually not — and knowing which case is which shows real understanding. Suppose Mokoena's receipt had been entered in sundries as commission income: debits and credits still move equally, so the trial balance stays perfectly level while the books tell a false story. That is the wrong-account error the trial balance is structurally blind to. But the system has other eyes. Mokoena's page would never have been credited, so at month end the debtors list would stand two thousand four hundred rand above Debtors Control — the comparison shouts. The income analysis would look odd against a shop that earns no commission. And the moment anyone traced the source document, the misfit would surface. That is why the month closed behind THREE proofs, not one: cross-casts inside each journal, list against control for each side, and the trial balance across everything. Layers, because every individual check has a blind spot.
+
+***
+
+**Thandi:** Last question: Zanele's Friday walk works for a corner shop — but does a big company with computer systems still do anything like it?
+
+**Tutor:** It does precisely that, only faster and in software. The till count against the day's record becomes an automated cash-up reconciliation with exceptions flagged before the manager's coffee cools. The shelf sample becomes cycle counting — a rotating slice of stock counted every day against the perpetual records. The finger down the debtors list becomes an aged analysis generated every Monday, with credit limits enforced by the system itself at the point of sale. The supplier statement check becomes automated matching of statements to the creditors ledger. Notice that not one principle has moved since Zanele's counter: physical reality tested against written records, on a schedule, by somebody accountable for the answer. Technology changes the speed of the walk, never its purpose — and scenario questions love testing exactly that idea: the same control, dressed for a bigger business.
