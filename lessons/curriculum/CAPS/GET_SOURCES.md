@@ -9,7 +9,8 @@ which `load_seed_entries` and `atp_drift_check` skip, so no Grade R-9 row reache
 until that flag is removed. A second switch, `"lessons_enabled"`, keeps lessons to the six taught
 subjects even after that: whole files outside them carry `false`, and inside the mixed subjects the
 off-scope strands carry it per topic (Social Sciences History, EMS Entrepreneurship, and the science
-Life and Living strand), each with a `lessons_off_reason`. `parse_status` is `curated` from the ATP, except Grade 3 English FAL
+Life and Living strand), each with a `lessons_off_reason`. Languages are off except English First
+Additional Language in Grades 1-3 (Foundation Phase); Home Language is off in every grade. `parse_status` is `curated` from the ATP, except Grade 3 English FAL
 (`caps_only`, no ATP published). Grade R is built from the Grade R Resource Kit lesson plans because DBE
 publishes no Grade R ATP; that scan stops at week 34, so Term 4 weeks 5-10 are missing from it.
 
