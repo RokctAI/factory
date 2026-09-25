@@ -10,7 +10,9 @@ until that flag is removed. A second switch, `"lessons_enabled"`, keeps lessons 
 subjects even after that: whole files outside them carry `false`, and inside the mixed subjects the
 off-scope strands carry it per topic (Social Sciences History, EMS Entrepreneurship, and the science
 Life and Living strand), each with a `lessons_off_reason`. Languages are off except English First
-Additional Language in Grades 1-3 (Foundation Phase); Home Language is off in every grade. `parse_status` is `curated` from the ATP, except Grade 3 English FAL
+Additional Language in Grades 1-3 (Foundation Phase); Home Language is off in every grade. Life Skills R-3 is on for Beginning Knowledge only (the base for NST
+and Social Sciences 4-6): Grades 1-3 turn the other strands off per topic, and Grade R, which is taught
+as mixed weekly themes, turns off its Creative Arts and PE activity lines per subtopic. `parse_status` is `curated` from the ATP, except Grade 3 English FAL
 (`caps_only`, no ATP published). Grade R is built from the Grade R Resource Kit lesson plans because DBE
 publishes no Grade R ATP; that scan stops at week 34, so Term 4 weeks 5-10 are missing from it.
 

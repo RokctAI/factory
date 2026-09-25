@@ -393,8 +393,9 @@ def load_seed_entries():
 
     A syllabus file with "pipeline_enabled": false is skipped entirely: the
     Grades R-9 syllabi are on file ahead of any go-ahead to write lessons.
-    "lessons_enabled": false (file or topic) marks content outside the taught
-    subjects, and stays skipped even after pipeline_enabled is lifted."""
+    "lessons_enabled": false (file, topic or object-form subtopic) marks
+    content outside the taught subjects, and stays skipped even after
+    pipeline_enabled is lifted."""
     entries = []
     for folder, lesson_type in sorted(CAPS_TYPE_BY_FOLDER.items()):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
@@ -409,6 +410,8 @@ def load_seed_entries():
                     if topic.get("lessons_enabled") is False:
                         continue  # strand outside the taught subjects
                     for sub in subs:
+                        if isinstance(sub, dict) and sub.get("lessons_enabled") is False:
+                            continue  # activity line outside the taught strand
                         row = {
                             "type": lesson_type,
                             "subject": data["subject"],
