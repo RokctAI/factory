@@ -17,6 +17,14 @@ name: Practice Bank
 # repository secrets (a System-Manager API token on the rlms site). Until
 # they are configured the step skips cleanly and the workflow only keeps
 # the committed bank fresh.
+#
+# IEB overlay items (the ~ieb practice ids under each shared lesson's
+# overlays/IEB/mcq.json) are included: the rlms practice_queue filters the
+# bank to each learner's curriculum (agent #301), so a CAPS learner never
+# sees them. Items marked needs_reauthor stay withheld by the builder.
+
+env:
+  ROKCT_PRACTICE_OVERLAY_CURRICULA: IEB
 
 on:
   push:
