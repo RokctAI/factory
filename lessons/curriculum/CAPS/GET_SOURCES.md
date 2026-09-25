@@ -47,3 +47,22 @@ Maths shares the existing `maths/` folder. The new subject folders are:
 - Coding and Robotics: CAPS documents only (draft/pilot subject); no ATPs published.
 - Editions differ: most ATPs are 2023/24; IP/SP Maths and Natural Sciences carry 2026 revisions; some Foundation Phase language plans are the 2020/2021 editions DBE still links.
 - The Grade R Resource Kit lesson plans are re-encoded from a 147 MB scan to about 10 MB (130 dpi greyscale) so they fit in git.
+
+## Subject pathway (choosing subjects)
+
+Every R-9 syllabus file has a `pathway` block: `comes_from`, `leads_to`, and `fet_subjects` (the Grade 10-12 subjects it feeds). NS, SS and EMS topics also carry their own `leads_to`, because those subjects split later.
+
+| Grades | Subject | Leads to |
+|---|---|---|
+| R-3 | Life Skills (Beginning Knowledge) | NST and Social Sciences (4-6) |
+| R-3 | Life Skills (PSW, PE, Creative Arts) | Life Skills 4-6 |
+| 4-6 | Natural Sciences and Technology | Natural Sciences, Technology (7-9) |
+| 4-6 | Life Skills | Life Orientation, Creative Arts (7-9) |
+| 7-9 | Natural Sciences | Physical Sciences (Matter, Energy, Planet Earth), Life Sciences (Life and Living) |
+| 4-9 | Social Sciences | Geography, History |
+| 7-9 | EMS | Economics (The economy), Accounting (Financial literacy), Business Studies (Entrepreneurship) |
+| R-9 | Mathematics | Mathematics, Mathematical Literacy, Technical Mathematics |
+| 7-9 | Technology | EGD, Civil/Electrical/Mechanical Technology, CAT |
+| 7-9 | Creative Arts | Dance, Drama, Music, Visual Arts |
+| 7-9 | Life Orientation | Life Orientation 10-12 |
+| R-9 | English HL / FAL | English HL / FAL 10-12 |
