@@ -50,6 +50,23 @@ class PipelineHoldTest(unittest.TestCase):
                 rows = lp.load_seed_entries()
         self.assertEqual({r["grade"] for r in rows}, {10})
 
+    def test_lessons_disabled_file_and_topic_are_skipped(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            syl = Path(tmp) / "maths" / "syllabus"
+            syl.mkdir(parents=True)
+            live = _syllabus(8)
+            live["terms"][0]["topics"].append(
+                {"name": "History: off-scope strand", "subtopics": ["X"], "weeks": [2],
+                 "lessons_enabled": False})
+            (syl / "grade8.json").write_text(json.dumps(live), encoding="utf-8")
+            (syl / "grade7.json").write_text(
+                json.dumps(_syllabus(7, lessons_enabled=False)), encoding="utf-8")
+            with mock.patch.object(lp, "CAPS_DIR", Path(tmp)), \
+                    mock.patch.object(lp, "CAPS_TYPE_BY_FOLDER", {"maths": "lesson.maths"}), \
+                    mock.patch.object(lp, "load_caps_skills", return_value={}):
+                rows = lp.load_seed_entries()
+        self.assertEqual([(r["grade"], r["topic"]) for r in rows], [(8, "Whole numbers")])
+
     def test_repo_has_no_pipeline_rows_below_grade_10(self):
         grades = {str(r["grade"]) for r in lp.load_seed_entries() if "category" not in r}
         self.assertTrue(grades <= {"10", "11", "12"}, grades)

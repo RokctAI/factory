@@ -114,7 +114,7 @@ def main():
     for folder in sorted(CAPS_TYPE_BY_FOLDER):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
             data = json.loads(gf.read_text(encoding="utf-8"))
-            if data.get("pipeline_enabled") is False:
+            if data.get("pipeline_enabled") is False or data.get("lessons_enabled") is False:
                 continue
             sources[f"{data['subject']} Grade {data['grade']}"] = data.get("source_url", "")
             edition = data.get("atp_edition", edition)

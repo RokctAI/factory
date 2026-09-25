@@ -11,6 +11,11 @@
   ],
   "parse_status": "curated",
   "pipeline_enabled": false,
+  "lessons_enabled": true,
+  "lesson_scope": [
+    "Economics",
+    "Accounting"
+  ],
   "terms": [
     {
       "term": 1,
@@ -105,7 +110,9 @@
           ],
           "weeks": [
             3
-          ]
+          ],
+          "lessons_enabled": false,
+          "lessons_off_reason": "Entrepreneurship strand (Business Studies, not one of the 6 subjects)"
         },
         {
           "name": "Financial literacy: credit transactions",
@@ -159,7 +166,9 @@
           "weeks": [
             1,
             2
-          ]
+          ],
+          "lessons_enabled": false,
+          "lessons_off_reason": "Entrepreneurship strand (Business Studies, not one of the 6 subjects)"
         },
         {
           "name": "Entrepreneurship: business plan",
@@ -171,7 +180,9 @@
           "weeks": [
             3,
             4
-          ]
+          ],
+          "lessons_enabled": false,
+          "lessons_off_reason": "Entrepreneurship strand (Business Studies, not one of the 6 subjects)"
         },
         {
           "name": "Financial literacy: debtors",
