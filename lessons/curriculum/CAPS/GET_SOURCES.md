@@ -3,9 +3,12 @@
 Fetched 2026-09-25 straight from the Department of Basic Education site, English versions only.
 Every file, its DBE source URL, edition and sha256 is listed in `get_sources.json`.
 
-These are **raw sources only**. No `syllabus/grade*.json` exists yet for Grades R-9, so the lesson
-pipeline (`load_seed_entries`) and the index builders see nothing new. Curated syllabus JSON in the
-same shape as the Grade 10-12 files comes next, subject by subject.
+Curated syllabus JSON now sits beside the PDFs as `{subject}/syllabus/grade{N}.json` (Grade R:
+`gradeR.json`), 60 files in the same shape as Grades 10-12. Every one carries `"pipeline_enabled": false`,
+which `load_seed_entries` and `atp_drift_check` skip, so no Grade R-9 row reaches lesson generation
+until that flag is removed. `parse_status` is `curated` from the ATP, except Grade 3 English FAL
+(`caps_only`, no ATP published). Grade R is built from the Grade R Resource Kit lesson plans because DBE
+publishes no Grade R ATP; that scan stops at week 34, so Term 4 weeks 5-10 are missing from it.
 
 ## Layout
 
@@ -39,4 +42,4 @@ Maths shares the existing `maths/` folder. The new subject folders are:
 - Grade 3 English FAL: not listed on the DBE Foundation Phase ATP page.
 - Coding and Robotics: CAPS documents only (draft/pilot subject); no ATPs published.
 - Editions differ: most ATPs are 2023/24; IP/SP Maths and Natural Sciences carry 2026 revisions; some Foundation Phase language plans are the 2020/2021 editions DBE still links.
-- Not committed: the Grade R Resource Kit lesson plans (147 MB of scans, over GitHub's file limit). The URL is in `get_sources.json` under `not_committed`.
+- The Grade R Resource Kit lesson plans are re-encoded from a 147 MB scan to about 10 MB (130 dpi greyscale) so they fit in git.
