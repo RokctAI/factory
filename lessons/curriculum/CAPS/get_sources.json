@@ -1295,13 +1295,18 @@
    "bytes": 14899734,
    "sha256": "1f00d44ef7c6dbbc58cf47fc3cb1cabb6523e93bedb1c186124e3d2709ee1d7a",
    "fetched": "2026-09-25"
-  }
- ],
- "not_committed": [
+  },
   {
-   "what": "Grade R Resource Kit / Lesson Plans (40-week programme, the nearest thing to a Grade R ATP)",
+   "kind": "grade_r_kit",
+   "subject": "life_skills",
+   "grades": "R",
+   "path": "life_skills/curriculum/grade_r_resource_kit_lesson_plans.pdf",
    "source_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=Oal_e8kEc5A%3d&tabid=981&portalid=0&mid=4318",
-   "reason": "147 MB scanned images, over GitHub's 100 MB file limit; no text layer (needs OCR)"
+   "label": "Grade R Resource Kit / Lesson Plans and Assessment (40-week daily planners by theme; stands in for the missing Grade R ATP)",
+   "note": "Re-encoded from DBE's 147 MB scan to 130 dpi greyscale JPEG pages so it fits in git; same 53 pages, no text layer.",
+   "bytes": 10295696,
+   "sha256": "14ae43aeefbcbca5554247d44bb9aa281f2278e6586079ddd34afe8625bdf7c8",
+   "fetched": "2026-09-25"
   }
  ],
  "gaps": [

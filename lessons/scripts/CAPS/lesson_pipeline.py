@@ -389,17 +389,29 @@ def load_seed_entries():
     prior_knowledge. Topic-level `tutors` applies to every subtopic of that
     topic; a single subtopic pairs alone by using the object form
     {"name": <subtopic>, "tutors": ["expert", "simplifier"]} (plain-string
-    subtopics stay exactly as before)."""
+    subtopics stay exactly as before).
+
+    A syllabus file with "pipeline_enabled": false is skipped entirely: the
+    Grades R-9 syllabi are on file ahead of any go-ahead to write lessons.
+    "lessons_enabled": false (file, topic or object-form subtopic) marks
+    content outside the taught subjects, and stays skipped even after
+    pipeline_enabled is lifted."""
     entries = []
     for folder, lesson_type in sorted(CAPS_TYPE_BY_FOLDER.items()):
         for gf in sorted((CAPS_DIR / folder / "syllabus").glob("grade*.json")):
             data = json.loads(gf.read_text(encoding="utf-8"))
+            if data.get("pipeline_enabled") is False or data.get("lessons_enabled") is False:
+                continue  # on file but held out of lesson generation (Grades R-9)
             for term in data.get("terms", []):
                 for topic in term.get("topics", []):
                     subs = topic.get("subtopics") or []
                     if not subs or NON_LESSON_TOPIC_RE.search(topic["name"]):
                         continue
+                    if topic.get("lessons_enabled") is False:
+                        continue  # strand outside the taught subjects
                     for sub in subs:
+                        if isinstance(sub, dict) and sub.get("lessons_enabled") is False:
+                            continue  # activity line outside the taught strand
                         row = {
                             "type": lesson_type,
                             "subject": data["subject"],
