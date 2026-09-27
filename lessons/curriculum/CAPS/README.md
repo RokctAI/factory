@@ -62,6 +62,10 @@ term). Revision/exam topics carry no subtopics.
 Each file's `source_url` points at the actual PDF fetched from `education.gov.za`. All 18
 subject/grade PDFs (6 subjects × grades 10-12) were live and fetched successfully.
 
+The other FET subjects (languages, Life Sciences, History, CAT, IT and more) are listed in
+`FET_SOURCES.md` / `fet_sources.json`. Their syllabus JSON is held with `"pipeline_enabled": false`.
+The Grades R-9 sources are listed in `GET_SOURCES.md`.
+
 **Found and fixed one real bug while doing this**: `caps_seed.json`'s `_sources.documents` block had the
 Physical Sciences Grade 11 and Grade 12 URLs swapped — the "Grade 11" link actually served the Grade 12
 ATP and vice versa. Confirmed by reading each PDF's own header (`ANNUAL TEACHING PLANS: PHYSICAL
