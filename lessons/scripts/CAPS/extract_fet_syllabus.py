@@ -54,18 +54,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from fet_pathways import PATHWAYS, SUBJECT_NAMES  # noqa: E402
 
 CAPS_DIR = Path(__file__).resolve().parents[2] / "curriculum" / "CAPS"
-# Syllabus JSON is built for these; the other eight official languages have
-# their CAPS and ATP PDFs on file (fet_sources.json) but no JSON yet, because
-# their plans' layouts vary too much for this extractor to read unreviewed.
-BUILD_SUBJECTS = {
-    "english_home_language", "english_first_additional_language",
-    "afrikaans_home_language", "afrikaans_first_additional_language",
-    "isizulu_home_language", "isizulu_first_additional_language",
-    "life_sciences", "agricultural_sciences", "history", "business_studies",
-    "life_orientation", "computer_applications_technology", "information_technology",
-    "tourism", "consumer_studies", "engineering_graphics_and_design", "visual_arts",
-    "religion_studies",
-}
+# Syllabus JSON is built for every FET subject with sources on file.
+BUILD_SUBJECTS = set(SUBJECT_NAMES)
 MANIFEST = CAPS_DIR / "fet_sources.json"
 
 # Left-column row labels, in every language DBE writes the FET ATPs in.
@@ -74,17 +64,31 @@ LABELS = [
     ("ignore", r"INFORMAL|INFORMELE|NGAMISEL|OKUNGANISEL|YEO E SEGO|E SE SONG|NKAMAFUNDZA|"
                r"LE SENG|RESOURCE|BRONNE|IZINSIZA|DITLABAKELO|DIDIRI|SWIPFUNO|OKUNYE OKUBALULEKILE|"
                r"DATE|DATUM|COVERAGE|DEKKING|ACTIVIT|AKTIWITEIT|INVESTIGATION|EXPERIMENT|"
-               r"TEACHING TIME|SIGNATURE|HANDTEKENING|REMEDIATION|REMEDI[EË]RING"),
+               r"TEACHING TIME|SIGNATURE|HANDTEKENING|REMEDIATION|REMEDI[EË]RING|"
+               # Setswana, Sesotho, Tshivenda, isiNdebele, siSwati, Xitsonga: informal
+               # assessment, resources, enrichment, intervention
+               r"TLHOMAMANG|TSEREGANYO|TSELEGANYO|METSWEDI|NONOTSHA|HLOPHISWANG|HO LOKISA|"
+               r"MEHLODI|NTLAFATSA|MATLAFATSA|HU SI HA|HUSIHA|ZWIKO|ZWISHUMISWA|U ENGEDZA|"
+               r"DZHENELELA|MVUSULUDZO|DZILAFHO|OKUNGAKAHLELWA|IINTLABAGELO|TINSITA|"
+               r"TEKWELEKELELA|LOLUNGAKAHLE|KULUNGISA|OLOLOXA"),
     ("prior", r"PRE-|PRE -|KNOWLEDGE|VOORKENNIS|LWANGAPHAMBILI|LWAPHAMBILI|TSEBO YA PELE|"
               r"VUTIVI BYO RHANGELA|SWILAVEKO SWA VUTIVI|DINYAKE|DINYAKWA|TSEBO E|NDIVHO|"
-              r"LWAZI LWA|KWATI|LWATI"),
+              r"LWAZI LWA|KWATI|LWATI|TLHOKEGANG|TSHIMOLOGONG|PPKT|PKTT|NḒIVHO|LANGAPHAMBILI|MANTLHA"),
     ("sba", r"SBA|SGA|FORMAL|FORMELE|OKUMISELWE|OKUBEKELWE|SEMMU|MAKAMBELELO|TEKANYETSO|"
-            r"TLHATLHOBO|KUHLOLA|U LINGA|NDINGO|KELO YA"),
+            r"TLHATLHOBO|KUHLOLA|U LINGA|NDINGO|KELO YA|TLHOMAMENG|HLOPHISITSWENG|LUHLELEKILE|"
+            r"OKUHLELWEKO|LUHLOLO|MULINGO"),
     ("topic", r"TOPIC|ONDERWERP|IZIHLOKO|DIHLOGO|TINHLOKOMHAKA|THOHO|SIHLOKO|DITLHOGO|"
               r"SEPHOLEKE|XIPHOKHAMA"),
     ("concept", r"CONCEPT|SKILL|CONTENT|VAARDIGHED|KABV|AMAKHONO|MABOKGONI|VUSWIKOTI|"
                 r"BOKGONI|MAKONE|LUSWIKOTI|MAKHONO|LIKHONO|TIKHONO|ZWIKILI|ZWIKILA|"
-                r"MANONG|MAKGONI|TOPIC|CAPS"),
+                r"MANONG|MAKGONI|TOPIC|CAPS|"
+                # skills strands and topic/concept rows in the other official languages
+                r"DIKGONO|DIKGOPOLO|GO REETSA|GO BUISA|GO KWALA|DIPOPEGO|KGHONO|UKULALELA|"
+                r"NOKUKHULUMA|^UKUFUNDA|UKUTLOLA|IZAKHI|NEMITHETJHWANA|UMQONDO|IINHLOKO|TIHLOKO|"
+                r"IMICONDVO|^KUFUNDZA|KULALELA|KUBHALA|TAKHI NETIMISO|TEKUSETJENTISWA|KU YINGISELA|"
+                r"KU HLAYA|KU TSALA|SWIAKI|MATIRHISELO|MINONGOTI|HO BALA|HO NGOLA|HO MAMELA|HO BUA|"
+                r"DIBOPEHO|MELAO YA|TSHEBEDISO|MEHOPOLO|DIHLOOHO|SLKT|KHONTSEPUTI|TSHITATAMENNDE|"
+                r"THETSHELESA|VHALA NA|ṄWALA|KUSHUMISEL|ZWIVHUMBE|ṰHOHO"),
 ]
 LABEL_RES = [(role, re.compile(pat)) for role, pat in LABELS]
 
@@ -94,7 +98,37 @@ DURATION_RE = re.compile(r"^(?:Duration|Tydsduur|Duur|Isikhathi|Nako|Nakgwana|Nk
                          r"\s*[:\-]?\s*(\d+(?:[.,]\d+)?)\s*(?:hours?|hrs?|h\b|ure|uur|amahora|diiri|tiawara|"
                          r"iawara|awara|tihora|ihora|mahora)", re.I)
 DURATION_ANY_RE = re.compile(DURATION_RE.pattern.lstrip("^"), re.I)
+TIME_WORD = r"(?:Duration|Tydsduur|Duur|Isikhathi|Nako|Nakgwana|Nkarhi|Tshifhinga|Sikhatsi|Ixesha|Ubude bexesha)"
+NUM_WORDS = {"nngwe": 1, "n'we": 1, "yin'we": 1, "yin’we": 1, "pedi": 2, "bedi": 2, "mbirhi": 2,
+             "tharo": 3, "raro": 3, "nharhu": 3, "nne": 4, "mune": 4, "tlhano": 5, "hlano": 5,
+             "ntlhanu": 5, "thataro": 6}
+_NUM = r"(\d+(?:[.,]\d+)?½?|" + "|".join(re.escape(w) for w in NUM_WORDS) + r")"
+_HOUR = r"(?:d\s?i|t\s?i|ama-?|am-|i-|i)?(?:ura|hora|iri|awara|iiyure|iyure|hours?|hrs?|ure|uur)"
+# a whole line that only gives a duration, in any of the eleven languages:
+# "Dihora tse 2", "Ixesha: 2 iiyure", "Ura e le nngwe le halofo", "Nkarhi: Tiawara ta 3"
+DURATION_LINE_RE = re.compile(
+    r"(?i)^\s*(?:" + TIME_WORD + r"\s*[:\-]?\s*)?(?:" + _NUM + r"\s*-?\s*" + _HOUR + r"|" + _HOUR +
+    r"-?\s*(?:e|di|tše|tš\s?e|ye|tse|ti|ta|ya|yi|li-?|ama-?|ezi-?)?\s*(?:le\s+)?-?\s*" + _NUM + r")"
+    r"(\s*(?:le halofo|na hafu|nesiquntu))?\s*\.?\s*$")
+TIME_LABEL_RE = re.compile(r"(?i)[:\s]*\b" + TIME_WORD + r"\s*:?\s*$")
+
+
+def duration_line(text):
+    """Hours from a line that only states a duration, else None."""
+    m = DURATION_LINE_RE.match(text)
+    if not m:
+        return None
+    raw = (m.group(1) or m.group(2)).lower()
+    half = 0.5 if raw.endswith("½") or m.group(3) else 0
+    raw = raw.rstrip("½")
+    value = NUM_WORDS.get(raw)
+    if value is None:
+        value = float(raw.replace(",", ".")) if raw else 0
+    return value + half
+
+
 EXAM_RE = re.compile(r"(?i)exam|eksamen|study leave|studieverlof")
+TERM_WORD_RE = re.compile(r"(?i)\b(?:TERM|KWARTAAL|KOTARA|ITHEMU|THEMO|KGWEDITHARO|IKOTA|IKWATA|SEKOTA)\b")
 WEEK_NUM_RE = re.compile(r"(\d{1,2})(?:\s*[-–&]\s*(\d{1,2}))?")
 
 
@@ -178,6 +212,45 @@ def label_role(label):
     return None
 
 
+def _same_label(upper, lower, content):
+    """True when two stacked label cells are pieces of one label: no week cell
+    starts a new row at the line between them."""
+    if min(upper[2], lower[2]) - max(upper[0], lower[0]) <= 0 or abs(lower[1] - upper[3]) > 3:
+        return False
+    y = lower[1]
+    crossing = sum(1 for c in content if c[1] < y - 3 and c[3] > y + 3)
+    starting = sum(1 for c in content if abs(c[1] - y) <= 3)
+    return crossing > 0 and starting == 0
+
+
+def label_blocks(page, labels, content, cache):
+    """Fill `cache` with one role per label: stacked pieces of a split label
+    ("TLHATLHOBO E E" over "SA TLHOMAMANG") are read as a whole, so an
+    informal-assessment or resources row keeps its role in every piece."""
+    blocks = []
+    for lb in sorted(labels, key=lambda b: (b[0], b[1])):
+        for block in blocks:
+            if _same_label(block[-1], lb, content):
+                block.append(lb)
+                break
+        else:
+            blocks.append([lb])
+    for block in blocks:
+        texts = []
+        for lb in block:
+            txt = cell_text(page, lb)
+            texts.append(txt if re.search(r"\w", txt) else "")
+        joined = clean(" ".join(t for t in texts if t))
+        role = label_role(joined) if joined else None
+        # a qualifier further down ("SA TLHOMAMANG": informal) turns an
+        # assessment label into "ignore", but not a skills or topic label
+        first = next((label_role(t) for t in texts if t and label_role(t)), None)
+        if role == "ignore" and first in ("topic", "concept", "prior"):
+            role = first
+        for lb, txt in zip(block, texts):
+            cache[lb] = (joined if joined else "", role if joined else None)
+
+
 def row_role(page, cell, labels, cache):
     """Role of a content cell: the labelled row it overlaps most. Label text is
     often split over several stacked cells, so fragments without a role of
@@ -227,14 +300,21 @@ def header_weeks(page, table):
 
 
 def _header_row(page, table, row):
-    numbered = []
+    numbered, term_cell, unnumbered = [], None, []
     for c in row.cells:
         if not c:
             continue
-        txt = cell_text(page, c)
+        txt = re.sub(r"^\d{1,2}\.\s+", "", cell_text(page, c))  # stray list number: "5. BEKE YA 4"
         m = WEEK_NUM_RE.search(txt)
-        if m:
+        if m and TERM_WORD_RE.search(txt) and not numbered:
+            term_cell = (c, int(m.group(1)))  # "KOTARA YA 1" heads the label column
+        elif m:
             numbered.append((c, txt, int(m.group(1)), int(m.group(2) or m.group(1))))
+        elif txt and not numbered and term_cell:
+            unnumbered.append(c)
+    # "VHIKI RA" printed without its 1: the unnumbered cell before week 2
+    if numbered and numbered[0][2] == 2 and len(unnumbered) == 1:
+        numbered.insert(0, (unnumbered[0], "", 1, 1))
     if len(numbered) < 3:
         return None
     # weeks: the longest run at the end whose numbers keep increasing
@@ -244,7 +324,7 @@ def _header_row(page, table, row):
     weeks = numbered[start:]
     if len(weeks) < 3:
         return None
-    term = numbered[start - 1][2] if start > 0 else None
+    term = numbered[start - 1][2] if start > 0 else (term_cell[1] if term_cell else None)
     cols = []
     for i, (c, _, a, b) in enumerate(weeks):
         x1 = weeks[i + 1][0][0] if i + 1 < len(weeks) else table.bbox[2]
@@ -285,6 +365,7 @@ def extract(pdf_path):
             if pt:
                 cur_term = pt
             page_labels = []  # a table split mid-page loses its left column
+            page_content = []
             carry_role = page_bottom[1] if page_bottom else None
             page_bottom = [0, None]
             for table in page.find_tables():
@@ -293,6 +374,10 @@ def extract(pdf_path):
                 hdr = header_weeks(page, table)
                 if hdr:
                     t, cols, start = hdr
+                    # a continuation page's header can misprint the term
+                    # ("ITHEMU 2" inside Term 3): terms only move forward
+                    if t and not 1 <= t <= 4 or t and cur_term and t < cur_term:
+                        t = None
                     cur_term = pt or t or cur_term
                     body = table.rows[start:]
                 elif cols is None:
@@ -314,6 +399,8 @@ def extract(pdf_path):
                 page_labels.extend(lb for lb in labels if lb not in page_labels)
                 labels = page_labels
                 content = [c for c in cells if c[2] > first_x + 10]
+                page_content.extend(content)
+                label_blocks(page, labels, page_content, label_cache)
                 for c in content:
                     role = row_role(page, c, labels, label_cache)
                     if role == "blank":
@@ -555,6 +642,10 @@ def build_language_terms(raw, legend=None):
                         text = re.sub(r"\s*\d\s*\.\s*$", "", m.group(2))
                         if clean(text).lower().rstrip(":") == skill.lower() or not clean(text):
                             continue
+                    hours = duration_line(text) if not DURATION_ANY_RE.search(text) else None
+                    if hours is not None and topic is not None:
+                        topic["hours"] = topic.get("hours", 0) + hours
+                        continue
                     dur = DURATION_ANY_RE.search(text)
                     if dur:
                         topic["hours"] = topic.get("hours", 0) + float(dur.group(1).replace(",", "."))
@@ -564,6 +655,17 @@ def build_language_terms(raw, legend=None):
                 continue
             cur, prev_bold = None, False
             for text, bold, x0 in cc["lines"]:
+                hours = duration_line(text) if not DURATION_ANY_RE.search(text) else None
+                if hours is not None:
+                    if cur is not None:
+                        cur["hours"] = cur.get("hours", 0) + hours
+                    prev_bold = False
+                    continue
+                if TIME_LABEL_RE.search(text):
+                    # "Nako" / "...: Nako" with the hours on the next line
+                    text = clean(TIME_LABEL_RE.sub("", text))
+                    if not text:
+                        continue
                 dur = DURATION_ANY_RE.search(text)
                 if dur:
                     if cur is not None:
@@ -616,6 +718,9 @@ def build_language_terms(raw, legend=None):
             if not topic["name"]:
                 continue
             subs = items_from_lines(t["_lines"])
+            # a heading printed twice (overlaid text) leaves its pieces behind
+            low = topic["name"].lower()
+            subs = [x for x in subs if not (len(x) > 3 and x.lower().rstrip(" :") in low)]
             if subs:
                 topic["subtopics"] = list(dict.fromkeys(subs))
             pk = [v for k, vs in prior.items() if set(k) & set(t["weeks"]) for v in vs]

@@ -70,7 +70,9 @@ class FetSourcesTest(unittest.TestCase):
 class FetSyllabusTest(unittest.TestCase):
     def test_syllabi_are_held_and_carry_pathway(self):
         files = list(_fet_syllabi())
-        self.assertGreaterEqual(len(files), 54)
+        # every FET subject with sources on file has Grades 10, 11 and 12
+        self.assertEqual({(f, g) for f, g, _ in files},
+                         {(f, g) for f in SUBJECT_NAMES for g in (10, 11, 12)})
         for folder, grade, path in files:
             with self.subTest(path=str(path.relative_to(CAPS_DIR))):
                 data = json.loads(path.read_text(encoding="utf-8"))
@@ -93,6 +95,32 @@ class FetSyllabusTest(unittest.TestCase):
         new = set(SUBJECT_NAMES) - {"english_home_language", "english_first_additional_language",
                                     "life_orientation"}
         self.assertFalse(new & set(lp.CAPS_TYPE_BY_FOLDER))
+
+
+try:
+    import extract_fet_syllabus as fet  # needs pdfplumber
+except ImportError:  # pragma: no cover
+    fet = None
+
+
+@unittest.skipIf(fet is None, "pdfplumber not installed")
+class FetExtractorTest(unittest.TestCase):
+    def test_duration_lines_in_each_language(self):
+        cases = {
+            "Dihora tse 2": 2, "Ixesha: 2 iiyure": 2, "Ura e le nngwe": 1,
+            "Diura di le tharo": 3, "Nako: Diiri tše 4": 4, "Nkarhi: Awara ya 1 na hafu": 1.5,
+            "Isikhathi: Ama-iri ama-2 nesiquntu.": 2.5, "Tshifhinga: Awara 2": 2,
+        }
+        for text, hours in cases.items():
+            with self.subTest(text=text):
+                self.assertEqual(fet.duration_line(text), hours)
+        self.assertIsNone(fet.duration_line("Poko"))
+
+    def test_split_informal_assessment_label_is_ignored(self):
+        self.assertEqual(fet.label_role("TLHATLHOBO E E SA TLHOMAMANG"), "ignore")
+        self.assertEqual(fet.label_role("SBA TLHATLHOBO E E TLHOMAMENG"), "sba")
+        self.assertEqual(fet.label_role("UKUHLOLA OKUNGAKAHLELWA: UKUBUYEKEZA"), "ignore")
+        self.assertEqual(fet.label_role("DIKGONO"), "concept")
 
 
 if __name__ == "__main__":
