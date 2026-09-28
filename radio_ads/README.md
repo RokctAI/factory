@@ -76,6 +76,69 @@ version:
 }
 ```
 
+## Render in CI
+
+`.github/workflows/radio_ads.yml` is the factory on GitHub Actions: commit an
+ad JSON into `radio_ads/inbox/` and push (any branch), and the run validates
+it, renders it and attaches an artifact `radio-ad-<id>` holding
+`<id>.mp3`, `<id>.wav`, `report.json` and `ad.json`. The run's summary page
+shows duration, LUFS, true peak and the word check for each ad.
+
+One-time setup (repo admin):
+
+1. **Secret `AGENT_REPO_TOKEN`.** The persona voices are in the private repo
+   RokctAI/agent. Create a fine-grained personal access token at
+   github.com -> Settings -> Developer settings -> Personal access tokens ->
+   Fine-grained tokens -> Generate new token: resource owner **RokctAI**,
+   repository access **Only select repositories -> RokctAI/agent**,
+   repository permissions **Contents: Read-only** (nothing else), an expiry
+   you will remember to renew. (If the RokctAI org requires approval for
+   fine-grained tokens, an org owner approves it under the org's Settings ->
+   Personal access tokens -> Pending requests.) Then in RokctAI/factory:
+   Settings -> Secrets and variables -> Actions -> **Secrets** -> New
+   repository secret, name `AGENT_REPO_TOKEN`. Without it the run stops at
+   the first step with an error saying exactly this.
+2. **Variable `VOICES_REF`.** Same page, **Variables** tab -> New repository
+   variable `VOICES_REF` = `claude/voice-render-pipeline-qk3n8v`. The voices
+   are only on that branch (agent PR #319) until it merges; after the merge,
+   delete the variable (the default is `main`).
+
+Then:
+
+```bash
+cp examples/vuka_rides_30.json inbox/my_ad_30.json   # edit id, script, cast ...
+python make_ad.py --validate inbox/my_ad_30.json     # optional local check
+git add inbox/my_ad_30.json && git commit -m "ad: my_ad_30" && git push
+```
+
+Open the repo's **Actions** tab -> "Radio ads" -> the run for that push ->
+**Artifacts** at the bottom of the summary -> `radio-ad-my_ad_30` (a zip).
+Artifacts are kept 30 days.
+
+* Only JSONs added or changed by the push are rendered (deleting one renders
+  nothing). To re-render, use **Run workflow** on the Radio ads page, with
+  `ad_path` (e.g. `radio_ads/inbox/my_ad_30.json`, or any ad JSON under
+  `radio_ads/`) or empty for everything in the inbox.
+* One render at a time; several ads in one push render one after another,
+  each as its own job and artifact. GitHub keeps only the newest *pending*
+  run, so if several pushes arrive while one is rendering, the ones in
+  between are cancelled: re-run those ads by hand.
+* The runner is GitHub's standard `ubuntu-latest`, which for a public repo is
+  4 CPUs, 16 GB RAM, 14 GB SSD
+  ([GitHub docs: GitHub-hosted runners](https://docs.github.com/en/actions/reference/runners/github-hosted-runners),
+  checked 2026-09-28). The first run downloads the model (~5 GB) and caches
+  it. Untimed on GitHub so far; from the local numbers under "Speed and limits" expect very roughly
+  5-15 minutes per 30 s ad (model load + render + word check), plus ~5 minutes of
+  setup. Rendered lines are cached across runs as locally, so re-pushing an
+  edited ad only re-renders the changed lines. Runs time out after 2 hours.
+  The model cache (~5.5 GB) counts against the repo's Actions cache quota
+  (10 GB by default); if GitHub evicts it, the next run downloads it again.
+* The voices are copied into `voices/` (git-ignored) on the runner only;
+  they are never printed, committed or uploaded. Only `out/<id>/` is.
+* Optional variables: `ASR_MODEL` (word-check model, default `base.en`),
+  `VIBEVOICE_REF` (VibeVoice fork commit, pinned by default).
+* Pull requests do not trigger renders (fork PRs must not see the token).
+
 ## What happens to an ad
 
 1. **Validate** (JSON Schema + semantic checks, a word-count estimate of
@@ -139,6 +202,8 @@ adfactory/pipeline.py   the ad pipeline
 adfactory/watch.py      inbox watcher
 schema/ad.schema.json   JSON Schema
 examples/               example ads
+inbox/                  drop ad JSONs here (committed ones render in CI)
+ci/                     helper scripts for .github/workflows/radio_ads.yml
 samples/                rendered example ads (mp3 + report)
 voices/                 git-ignored reference voices (README explains)
 tests/                  quick tests (no model needed)
