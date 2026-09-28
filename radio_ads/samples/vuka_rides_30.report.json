@@ -1,0 +1,183 @@
+{
+  "id": "vuka_rides_30",
+  "client": "Vuka Rides (fictional taxi-booking service, demo only)",
+  "title": "Book your seat",
+  "format": "single-voice",
+  "created": "2026-09-28T18:45:35+00:00",
+  "source_sha256": "0c81873dba86b8d1cee730f28a423889e40c45dcfa49a87c995f53def39fb72b",
+  "files": {
+    "wav": "vuka_rides_30.wav",
+    "mp3": "vuka_rides_30.mp3"
+  },
+  "target": {
+    "duration_s": 30,
+    "loudness_lufs": -23,
+    "true_peak_dbtp": -1,
+    "sample_rate": 44100,
+    "channels": 2
+  },
+  "timing": {
+    "status": "fits",
+    "actual_duration_s": 30.0,
+    "voice_window_s": 27.8,
+    "natural_speech_s": 26.642,
+    "natural_speech_plus_pauses_s": 28.442,
+    "tempo_applied": 1.0247,
+    "pause_scale": 1.0,
+    "voice_start_s": 1.2,
+    "voice_end_s": 29.0,
+    "words": 66,
+    "words_per_minute": 152.3
+  },
+  "loudness": {
+    "mastering": {
+      "integrated_lufs": -23.0,
+      "true_peak_dbtp": -4.72
+    },
+    "measured": {
+      "wav": {
+        "integrated_lufs": -23.0,
+        "lra_lu": 4.1,
+        "true_peak_dbtp": -4.7,
+        "duration_s": 30.0
+      },
+      "mp3": {
+        "integrated_lufs": -23.0,
+        "lra_lu": 4.1,
+        "true_peak_dbtp": -4.8,
+        "encode_gain_db": 0.2,
+        "duration_s": 30.0
+      }
+    }
+  },
+  "render": {
+    "engine": "vibevoice",
+    "model": "microsoft/VibeVoice-1.5B",
+    "mode_requested": "auto",
+    "mode_used": "per_line",
+    "cfg_scale": 1.3,
+    "ddpm_steps": 10,
+    "seed": 7,
+    "joint_split": null,
+    "lines_rendered": 0,
+    "lines_cached": 5
+  },
+  "music": {
+    "bed": "builtin:upbeat",
+    "level_db": -6,
+    "duck_db": -12,
+    "intro_s": 1.2,
+    "fade_out_s": 0.7
+  },
+  "sfx": [
+    {
+      "file": "builtin:hooter",
+      "at_s": 0.15,
+      "gain_db": -4
+    }
+  ],
+  "lines": [
+    {
+      "n": 0,
+      "kind": "script",
+      "speaker": "driver",
+      "voice": "voice:tutor_008",
+      "text": "Sawubona, Joburg! Still standing at the rank, waiting for the taxi to fill up?",
+      "delivery": "friendly, knowing smile",
+      "start_s": 1.2,
+      "end_s": 5.582,
+      "duration_s": 4.382,
+      "tempo": 1.0247,
+      "pause_after_s": 0.4,
+      "cached": true,
+      "render_s": 0.0,
+      "rendered_via": "per_line",
+      "cache_key": "461101f403c87260c5c43430",
+      "asr": "supple boner joba still standing at the rank waiting for the taxi to fill up",
+      "wer": 0.214
+    },
+    {
+      "n": 1,
+      "kind": "script",
+      "speaker": "driver",
+      "voice": "voice:tutor_008",
+      "text": "With Vuka Rides, you book your seat on your phone, and the taxi leaves on time.",
+      "delivery": "confident",
+      "start_s": 5.982,
+      "end_s": 11.131,
+      "duration_s": 5.15,
+      "tempo": 1.0247,
+      "pause_after_s": 0.3,
+      "cached": true,
+      "render_s": 0.0,
+      "rendered_via": "per_line",
+      "cache_key": "41d88eaf373b3b2ae8f83cb1",
+      "asr": "With Booker writes you book your seat on your phone, and the taxi leaves on time.",
+      "wer": 0.125
+    },
+    {
+      "n": 2,
+      "kind": "script",
+      "speaker": "driver",
+      "voice": "voice:tutor_008",
+      "text": "No more waiting. No more guessing. Just your seat, a fair fare, and a driver who knows the way.",
+      "delivery": "punchy, building",
+      "start_s": 11.431,
+      "end_s": 19.161,
+      "duration_s": 7.729,
+      "tempo": 1.0247,
+      "pause_after_s": 0.5,
+      "cached": true,
+      "render_s": 0.0,
+      "rendered_via": "per_line",
+      "cache_key": "6eb87a69039cce237dc578a2",
+      "asr": "Not more waiting. No more guessing. Just your seat, a fair fair, and a driver who knows the way.",
+      "wer": 0.105
+    },
+    {
+      "n": 3,
+      "kind": "script",
+      "speaker": "driver",
+      "voice": "voice:tutor_008",
+      "text": "Vuka Rides. Wake up, book up, get going!",
+      "delivery": "upbeat sign-off",
+      "start_s": 19.661,
+      "end_s": 23.659,
+      "duration_s": 3.998,
+      "tempo": 1.0247,
+      "pause_after_s": 0.3,
+      "cached": true,
+      "render_s": 0.0,
+      "rendered_via": "per_line",
+      "cache_key": "d47d3771c942ab609d18833c",
+      "asr": "Book our rights, wake up, book up, get going.",
+      "wer": 0.375
+    },
+    {
+      "n": 4,
+      "kind": "tag",
+      "speaker": "driver",
+      "voice": "voice:tutor_008",
+      "text": "Vuka Rides is a fictional service. Data costs apply.",
+      "delivery": null,
+      "start_s": 24.259,
+      "end_s": 29.0,
+      "duration_s": 4.741,
+      "tempo": 1.2296,
+      "pause_after_s": 0.0,
+      "cached": true,
+      "render_s": 0.0,
+      "rendered_via": "per_line",
+      "cache_key": "a80e67cd38ab1a2dd4791f11",
+      "asr": "Booker Rides is a fictional service. Data costs apply.",
+      "wer": 0.111
+    }
+  ],
+  "asr": {
+    "asr_model": "base.en",
+    "transcript": "Subbub on a joba, still standing at the rank waiting for the taxi to fill up? With bucca rides you book your seat on your phone, and the taxi leaves on time. Not more waiting, no more guessing. Just your seat, a fair fair, and a driver who knows the way. bucca rides, wake up bucca, get going, bucca rides is a fictional service, data costs apply.",
+    "wer": 0.167
+  },
+  "warnings": [],
+  "wall_time_s": 19.2
+}

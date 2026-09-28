@@ -1,0 +1,11 @@
+# Reference voices are never committed (see voices/README.md).
+voices/*
+!voices/README.md
+# Render products and caches
+out/
+cache/
+inbox/
+failed/
+__pycache__/
+*.pyc
+*.part

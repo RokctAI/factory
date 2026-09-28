@@ -1,0 +1,234 @@
+{
+  "id": "kasi_corner_30",
+  "client": "Kasi Corner Spaza (fictional spaza shop, demo only)",
+  "title": "Out of bread again",
+  "format": "dialogue",
+  "created": "2026-09-28T18:45:58+00:00",
+  "source_sha256": "9c31e25773560cd6269477064343d3b0041dbce3946b649f7157a511432c6e36",
+  "files": {
+    "wav": "kasi_corner_30.wav",
+    "mp3": "kasi_corner_30.mp3"
+  },
+  "target": {
+    "duration_s": 30,
+    "loudness_lufs": -23,
+    "true_peak_dbtp": -1,
+    "sample_rate": 44100,
+    "channels": 2
+  },
+  "timing": {
+    "status": "fits",
+    "actual_duration_s": 30.0,
+    "voice_window_s": 27.8,
+    "natural_speech_s": 27.975,
+    "natural_speech_plus_pauses_s": 29.825,
+    "tempo_applied": 1.078,
+    "pause_scale": 1.0,
+    "voice_start_s": 1.2,
+    "voice_end_s": 29.0,
+    "words": 66,
+    "words_per_minute": 152.6
+  },
+  "loudness": {
+    "mastering": {
+      "integrated_lufs": -23.0,
+      "true_peak_dbtp": -5.14
+    },
+    "measured": {
+      "wav": {
+        "integrated_lufs": -23.0,
+        "lra_lu": 3.9,
+        "true_peak_dbtp": -5.1,
+        "duration_s": 30.0
+      },
+      "mp3": {
+        "integrated_lufs": -23.0,
+        "lra_lu": 3.9,
+        "true_peak_dbtp": -5.2,
+        "encode_gain_db": 0.2,
+        "duration_s": 30.0
+      }
+    }
+  },
+  "render": {
+    "engine": "vibevoice",
+    "model": "microsoft/VibeVoice-1.5B",
+    "mode_requested": "auto",
+    "mode_used": "joint",
+    "cfg_scale": 1.3,
+    "ddpm_steps": 10,
+    "seed": 7,
+    "joint_split": {
+      "asr_model": "base.en",
+      "word_match": 0.889,
+      "cuts_s": [
+        4.08,
+        9.49,
+        12.71,
+        17.49,
+        20.81
+      ],
+      "cache_key": "08d58a7246c924a8ae9a7c36",
+      "cached": true,
+      "render_s": 0.0
+    },
+    "lines_rendered": 0,
+    "lines_cached": 7
+  },
+  "music": {
+    "bed": "builtin:corporate",
+    "level_db": -7,
+    "duck_db": -12,
+    "intro_s": 1.2,
+    "fade_out_s": 0.7
+  },
+  "sfx": [
+    {
+      "file": "builtin:ding",
+      "at_s": 4.643,
+      "gain_db": -8
+    }
+  ],
+  "lines": [
+    {
+      "n": 0,
+      "kind": "script",
+      "speaker": "gogo",
+      "voice": "voice:tutor_006",
+      "text": "Eish, Sipho! The whole street is out of bread again!",
+      "delivery": "exasperated, comic",
+      "start_s": 1.2,
+      "end_s": 4.743,
+      "duration_s": 3.543,
+      "tempo": 1.078,
+      "pause_after_s": 0.25,
+      "cached": true,
+      "render_s": null,
+      "rendered_via": "joint",
+      "cache_key": "08d58a7246c924a8ae9a7c36",
+      "asr": "Aish Sipo, the whole street is out of bread again.",
+      "wer": 0.2
+    },
+    {
+      "n": 1,
+      "kind": "script",
+      "speaker": "sipho",
+      "voice": "voice:tutor_004",
+      "text": "Not at Kasi Corner, Gogo. Fresh loaves every morning at six, still warm.",
+      "delivery": "relaxed, proud",
+      "start_s": 4.993,
+      "end_s": 9.826,
+      "duration_s": 4.833,
+      "tempo": 1.078,
+      "pause_after_s": 0.25,
+      "cached": true,
+      "render_s": null,
+      "rendered_via": "joint",
+      "cache_key": "08d58a7246c924a8ae9a7c36",
+      "asr": "Not a cussy corner go-go, fresh lows every morning at 6, still warm.",
+      "wer": 0.385
+    },
+    {
+      "n": 2,
+      "kind": "script",
+      "speaker": "gogo",
+      "voice": "voice:tutor_006",
+      "text": "And my airtime? My electricity?",
+      "delivery": "suspicious",
+      "start_s": 10.076,
+      "end_s": 12.933,
+      "duration_s": 2.857,
+      "tempo": 1.078,
+      "pause_after_s": 0.2,
+      "cached": true,
+      "render_s": null,
+      "rendered_via": "joint",
+      "cache_key": "08d58a7246c924a8ae9a7c36",
+      "asr": "and my airtime, my electricity.",
+      "wer": 0.0
+    },
+    {
+      "n": 3,
+      "kind": "script",
+      "speaker": "sipho",
+      "voice": "voice:tutor_004",
+      "text": "Airtime, electricity, even school stationery. All under one roof.",
+      "delivery": null,
+      "start_s": 13.133,
+      "end_s": 17.354,
+      "duration_s": 4.221,
+      "tempo": 1.078,
+      "pause_after_s": 0.25,
+      "cached": true,
+      "render_s": null,
+      "rendered_via": "joint",
+      "cache_key": "08d58a7246c924a8ae9a7c36",
+      "asr": "airtime, electricity, even school stationery, all under one roof.",
+      "wer": 0.0
+    },
+    {
+      "n": 4,
+      "kind": "script",
+      "speaker": "gogo",
+      "voice": "voice:tutor_006",
+      "text": "Hau! Then why am I walking to town?",
+      "delivery": "delighted",
+      "start_s": 17.604,
+      "end_s": 20.535,
+      "duration_s": 2.931,
+      "tempo": 1.078,
+      "pause_after_s": 0.25,
+      "cached": true,
+      "render_s": null,
+      "rendered_via": "joint",
+      "cache_key": "08d58a7246c924a8ae9a7c36",
+      "asr": "How? Then why am I walking to town?",
+      "wer": 0.125
+    },
+    {
+      "n": 5,
+      "kind": "script",
+      "speaker": "sipho",
+      "voice": "voice:tutor_004",
+      "text": "Exactly, Gogo. Kasi Corner. Your shop, around the corner.",
+      "delivery": "warm sign-off",
+      "start_s": 20.785,
+      "end_s": 25.312,
+      "duration_s": 4.527,
+      "tempo": 1.078,
+      "pause_after_s": 0.3,
+      "cached": true,
+      "render_s": null,
+      "rendered_via": "joint",
+      "cache_key": "08d58a7246c924a8ae9a7c36",
+      "asr": "Exactly go go, cussy corner, your shop around the corner.",
+      "wer": 0.333
+    },
+    {
+      "n": 6,
+      "kind": "tag",
+      "speaker": "announcer",
+      "voice": "voice:assistant_002",
+      "text": "Kasi Corner Spaza is a fictional shop, made up for this demo.",
+      "delivery": null,
+      "start_s": 25.962,
+      "end_s": 29.0,
+      "duration_s": 3.038,
+      "tempo": 1.2936,
+      "pause_after_s": 0.0,
+      "cached": true,
+      "render_s": 0.0,
+      "rendered_via": "per_line",
+      "cache_key": "d77fbe1db48632b31ac11950",
+      "asr": "Cassie Cornasparza is a fictional shop, made up for this demo.",
+      "wer": 0.25
+    }
+  ],
+  "asr": {
+    "asr_model": "base.en",
+    "transcript": "Aish Sipol. The whole street is out of bread again. Not a cussy corner, Gogo. Fresh loaves every morning at six, still warm. And my airtime. My electricity. Airtime, electricity, even school stationery. All under one roof. How? Then why am I walking to town? Exactly, Gogo. Cussy corner. Your shop, around a corner. Kerci Corner Sparza is a fictional shop, made up for this demo.",
+    "wer": 0.136
+  },
+  "warnings": [],
+  "wall_time_s": 23.4
+}

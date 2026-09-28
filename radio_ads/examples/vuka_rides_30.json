@@ -1,0 +1,27 @@
+{
+  "$schema": "../schema/ad.schema.json",
+  "schema_version": 1,
+  "id": "vuka_rides_30",
+  "client": "Vuka Rides (fictional taxi-booking service, demo only)",
+  "title": "Book your seat",
+  "notes": "Single-voice 30s demo. Vuka Rides is invented for this example.",
+  "duration_s": 30,
+  "format": "single-voice",
+  "cast": {
+    "driver": {"voice": "tutor_008"}
+  },
+  "script": [
+    {"speaker": "driver", "text": "Sawubona, Joburg! Still standing at the rank, waiting for the taxi to fill up?", "pause_after_s": 0.4, "delivery": "friendly, knowing smile"},
+    {"speaker": "driver", "text": "With Vuka Rides, you book your seat on your phone, and the taxi leaves on time.", "pause_after_s": 0.3, "delivery": "confident"},
+    {"speaker": "driver", "text": "No more waiting. No more guessing. Just your seat, a fair fare, and a driver who knows the way.", "pause_after_s": 0.5, "delivery": "punchy, building"},
+    {"speaker": "driver", "text": "Vuka Rides. Wake up, book up, get going!", "pause_after_s": 0.3, "delivery": "upbeat sign-off"}
+  ],
+  "tag": {"speaker": "driver", "text": "Vuka Rides is a fictional service. Data costs apply.", "fast": true, "gap_before_s": 0.3},
+  "music": {"bed": "builtin:upbeat", "seed": 1, "level_db": -6, "duck_db": -12, "intro_s": 1.2, "outro_min_s": 1.0},
+  "sfx": [
+    {"file": "builtin:hooter", "at_s": 0.15, "gain_db": -4}
+  ],
+  "timing": {"fit": "speed_up", "max_stretch": 0.08},
+  "render": {"mode": "auto", "seed": 7},
+  "output": {"formats": ["wav", "mp3"], "sample_rate": 44100, "loudness_lufs": -23, "true_peak_dbtp": -1}
+}
