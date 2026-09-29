@@ -21,8 +21,8 @@ platform whose keys are set):
    tempo and progression) and lays three shared voice lines over it with the
    music ducked: `assets/voice_brand.wav` (a man's voice saying "ROKCT", from
    `radio_ads/inbox/facebook_reel_brand_15.json`) on the first beat,
-   `assets/voice_open.wav` ("Need funding? Here's one you can
-   apply for right now.", from `radio_ads/inbox/facebook_reel_open_15.json`)
+   `assets/voice_open.wav` ("Looking for funding? Here's one you
+   can apply for, right now.", from `radio_ads/inbox/facebook_reel_open_15.json`)
    straight after it, and `assets/voice_close.wav` ("Follow Rocket for more
    funding opportunities every day.", from
    `radio_ads/inbox/facebook_reel_follow_15.json`) over the close.

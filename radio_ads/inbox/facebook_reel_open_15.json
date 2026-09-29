@@ -5,10 +5,26 @@
   "notes": "Shared voice-over for every daily Facebook opportunity Reel (social/facebook). Opening line: the pipeline trims the silence and lays it over the first seconds of the Reel. 'Rokct' is pronounced 'rocket', so the script spells it that way.",
   "duration_s": 15,
   "format": "spot",
-  "cast": {"announcer": {"voice": "assistant_003"}},
+  "cast": {
+    "announcer": {
+      "voice": "assistant_003"
+    }
+  },
   "script": [
-    {"speaker": "announcer", "text": "Need funding? Here's one you can apply for right now."}
+    {
+      "speaker": "announcer",
+      "text": "Looking for funding? Here's one you can apply for, right now."
+    }
   ],
-  "music": {"bed": "none"},
-  "output": {"formats": ["wav", "mp3"], "loudness_lufs": -16, "true_peak_dbtp": -1}
+  "music": {
+    "bed": "none"
+  },
+  "output": {
+    "formats": [
+      "wav",
+      "mp3"
+    ],
+    "loudness_lufs": -16,
+    "true_peak_dbtp": -1
+  }
 }
