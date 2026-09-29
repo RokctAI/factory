@@ -24,9 +24,9 @@ appears in the video; the brand name does.
 
 Built for the first second: the money figure is already on screen, big,
 in frame one, and the beats land on the music's tempo. Colours are the
-brand's; the background motif and the music rotate by date, so consecutive
-days do not look like one template (Meta limits reach and monetisation on
-repetitive, templated content).
+brand's; each post type has four background motifs of its own, and motif
+and music rotate by date, so consecutive days do not look like one template
+(Meta limits reach and monetisation on repetitive, templated content).
 """
 
 import math
@@ -48,6 +48,34 @@ BG = (9, 9, 11)
 ACCENT = (250, 204, 21)
 INK = (244, 244, 245)
 TILE_TOP, TILE_BOTTOM = (244, 244, 245), (212, 212, 216)
+
+# Backgrounds: four per post type, picked by the day's seed, so each type
+# has a look of its own and no type repeats inside a working week. Every
+# motif sits at low alpha behind the text and moves slowly; the two soft
+# glows under it carry the type's tint next to the brand gold.
+MOTIFS = {
+    "Grant": ("aurora", "coins", "sprout", "confetti"),
+    "Tender": ("blueprint", "checklist", "sheets", "ruler"),
+    "Investor": ("network", "globe", "orbits", "hexes"),
+    "Funding tip": ("notebook", "chevrons", "sparks", "waves"),
+}
+MOTIF_NAMES = {
+    "aurora": "Aurora ribbons", "coins": "Drifting coins", "sprout": "Sprouting stems", "confetti": "Confetti",
+    "blueprint": "Blueprint grid", "checklist": "Checklist", "sheets": "Floating sheets", "ruler": "Tape measures",
+    "network": "Constellation", "globe": "Turning globe", "orbits": "Orbits", "hexes": "Honeycomb",
+    "notebook": "Ruled page", "chevrons": "Chevrons", "sparks": "Idea sparks", "waves": "Waves",
+}
+TINT = {"Grant": (255, 150, 0), "Tender": (150, 160, 185), "Investor": (255, 110, 60), "Funding tip": (255, 228, 170)}
+
+
+def motif_for(kind, seed):
+    names = MOTIFS.get(kind, MOTIFS["Grant"])
+    return names[seed % len(names)]
+
+
+def _noise(k, i=0):
+    """A stable pseudo-random 0..1 for particle k, channel i."""
+    return (math.sin(k * 127.1 + i * 311.7) * 43758.5453) % 1.0
 ASSETS = Path(__file__).resolve().parent / "assets"
 LOGO = ASSETS / "rokct-logo-dark.png"
 
@@ -250,15 +278,15 @@ class Scene:
             self.badge = f"{tip.group(1)} tip".upper()
             rest = headline[tip.end():]
             self.headline = rest[:1].upper() + rest[1:]
-        if opp["kind"] == "Funding tip" and opp.get("id"):
-            self.badge += f" #{opp['id']}"
+        # A tip's number sits in a second, white pill beside the badge.
+        self.tag = f"#{opp['id']}" if opp["kind"] == "Funding tip" and opp.get("id") else ""
         self.fonts = {}
         self.days_left = days_left
         self.duration = duration
         self.beat = 60.0 / bpm
         self.bg, self.accent, self.ink = BG, ACCENT, INK
-        self.motif = seed % 3
-        self.glows = [_glow(ACCENT, 260), _glow((255, 150, 0), 200)]
+        self.motif = motif_for(opp["kind"], seed)
+        self.glows = [_glow(ACCENT, 260), _glow(TINT.get(opp["kind"], TINT["Grant"]), 200)]
         self.base = Image.new("RGB", (W, H), self.bg)
         self.tile_small = _logo_tile(84)
         self.f_brand = _font(58)
@@ -280,32 +308,286 @@ class Scene:
     def _background(self, img, t):
         from PIL import ImageDraw
 
-        # Two glows drifting on slow Lissajous paths.
+        # Two glows drifting on slow Lissajous paths, then the type's motif.
         for i, g in enumerate(self.glows):
             x = W / 2 + math.sin(t * (0.35 + 0.2 * i) + i * 2) * 360 - g.width / 2
             y = H * (0.3 + 0.35 * i) + math.cos(t * (0.3 + 0.15 * i) + i) * 280 - g.height / 2
             img.paste(g, (int(x), int(y)), g)
-        d = ImageDraw.Draw(img, "RGBA")
-        a = self.accent + (26,)
-        if self.motif == 0:  # diagonal lines sliding
-            off = (t * 60) % 120
-            for k in range(-20, 30):
-                x = k * 120 + off
-                d.line([(x, 0), (x - 900, H)], fill=a, width=3)
-        elif self.motif == 1:  # rising dots
-            for k in range(40):
-                x = (k * 173) % W
-                y = (H - ((t * (40 + k % 5 * 18) + k * 211) % (H + 100)))
-                r = 4 + k % 4 * 2
-                d.ellipse([x - r, y - r, x + r, y + r], fill=self.accent + (60,))
-        else:  # pulsing rings
-            for k in range(5):
-                r = ((t * 120 + k * 260) % 1300)
-                d.ellipse(
-                    [W / 2 - r, H * 0.45 - r, W / 2 + r, H * 0.45 + r],
-                    outline=self.accent + (int(40 * (1 - r / 1300)),),
-                    width=4,
-                )
+        getattr(self, f"_m_{self.motif}")(ImageDraw.Draw(img, "RGBA"), t, self.pulse(t))
+
+    # Grants: generous, warm, upward.
+
+    def _m_aurora(self, d, t, hit):
+        # Five soft ribbons, each a slow sine band, layered at low alpha.
+        for i in range(5):
+            base = H * (0.18 + 0.17 * i)
+            amp, thick, speed = 90 + 30 * (i % 3), 110 + 40 * (i % 2), 0.25 + 0.07 * i
+            top = [(x, base + amp * math.sin(x / 320 + t * speed + i * 1.3)) for x in range(-40, W + 80, 40)]
+            bottom = [(x, y + thick + 30 * math.sin(x / 210 - t * speed * 0.7 + i)) for x, y in reversed(top)]
+            d.polygon(top + bottom, fill=self.accent + (22 + 6 * (i % 2),))
+
+    def _m_coins(self, d, t, hit):
+        # Coins drifting up at three depths: the nearer, the bigger and faster.
+        for k in range(26):
+            depth = k % 3
+            r = 14 + 12 * depth
+            x = _noise(k) * W + math.sin(t * 0.6 + k) * (20 + 10 * depth)
+            y = H + 100 - ((t * (55 + 30 * depth) + _noise(k, 1) * (H + 200)) % (H + 200))
+            a = 40 + 25 * depth
+            d.ellipse([x - r, y - r, x + r, y + r], outline=self.accent + (a,), width=3)
+            ri = r * 0.62
+            d.ellipse([x - ri, y - ri, x + ri, y + ri], outline=self.accent + (a // 2,), width=2)
+
+    def _m_sprout(self, d, t, hit):
+        # Stems growing up from the foot, each with a pair of leaves, swaying.
+        a = self.accent
+        grow = _ease(_phase(t, 0.2, 3.5))
+        for k in range(9):
+            x0 = 60 + _noise(k) * (W - 120)
+            height = (420 + 520 * _noise(k, 1)) * grow
+            lean = (_noise(k, 2) - 0.5) * 260
+            sway = math.sin(t * 0.7 + k) * 22
+            pts = []
+            for i in range(21):
+                u = i / 20
+                y = H + 20 - height * u
+                x = x0 + lean * u * u + sway * u
+                pts.append((x, y))
+            d.line(pts, fill=a + (46,), width=5, joint="curve")
+            for j, u in enumerate((0.45, 0.72)):
+                if height * u < 60:
+                    continue
+                x, y = pts[int(u * 20)]
+                side = 1 if (k + j) % 2 else -1
+                leaf = [(x, y), (x + side * 44, y - 30), (x + side * 70, y + 6), (x + side * 40, y + 26)]
+                d.polygon(leaf, fill=a + (34,), outline=a + (70,), width=2)
+            tx, ty = pts[-1]
+            r = 7 + 4 * hit * (k % 3 == 0)
+            d.ellipse([tx - r, ty - r, tx + r, ty + r], fill=a + (150,))
+
+    def _m_confetti(self, d, t, hit):
+        # Confetti drifting down, each piece a small bar tumbling at its own rate.
+        a = self.accent
+        for k in range(44):
+            depth = k % 3
+            w, h = 28 + 14 * depth, 10 + 4 * depth
+            x = _noise(k) * W + math.sin(t * (0.5 + 0.2 * depth) + k) * (40 + 20 * depth)
+            y = ((t * (45 + 28 * depth) + _noise(k, 1) * (H + 200)) % (H + 200)) - 100
+            ang = t * (1.2 + 0.4 * (k % 4)) + k
+            c, s = math.cos(ang), math.sin(ang)
+            pts = [(x + px * c - py * s, y + px * s + py * c) for px, py in ((-w / 2, -h / 2), (w / 2, -h / 2), (w / 2, h / 2), (-w / 2, h / 2))]
+            d.polygon(pts, fill=a + (50 + 30 * depth,))
+
+    # Tenders: structured, official, measured.
+
+    def _m_blueprint(self, d, t, hit):
+        # A drafting grid panning slowly, crosshairs on the major lines, a scan line.
+        a, step = self.accent, 96
+        ox, oy = (t * 18) % step, (t * 12) % step
+        for x in range(-step, W + step, step):
+            d.line([(x + ox, 0), (x + ox, H)], fill=a + (24,), width=1)
+        for y in range(-step, H + step, step):
+            d.line([(0, y + oy), (W, y + oy)], fill=a + (24,), width=1)
+        for i in range(-1, W // (step * 4) + 2):
+            for j in range(-1, H // (step * 4) + 2):
+                x, y = i * step * 4 + ox, j * step * 4 + oy
+                d.line([(x - 14, y), (x + 14, y)], fill=a + (70,), width=2)
+                d.line([(x, y - 14), (x, y + 14)], fill=a + (70,), width=2)
+        sy = (t * 140) % (H + 200) - 100
+        d.line([(0, sy), (W, sy)], fill=a + (40,), width=3)
+
+    def _m_checklist(self, d, t, hit):
+        # A compliance checklist down the right edge: boxes drifting up, ticks
+        # landing one after another, each tick kicking on the beat it lands.
+        a = self.accent
+        step, size = 150, 46
+        off = (t * 22) % step
+        for k in range(-1, H // step + 2):
+            y = k * step + step - off
+            x = W - 150
+            d.rounded_rectangle([x, y, x + size, y + size], radius=8, outline=a + (60,), width=3)
+            d.line([(x + size + 24, y + size / 2), (x + size + 24 + 60, y + size / 2)], fill=a + (0,), width=2)
+            due = 0.8 + (k * 0.47) % 4.0  # when this row's tick lands
+            p = _ease(_phase(t, due, 0.3))
+            if p > 0:
+                pts = [(x + 10, y + 24), (x + 20, y + 34), (x + 36, y + 12)]
+                seg = [pts[0], pts[1]] if p < 0.5 else pts
+                if p < 0.5:
+                    q = p / 0.5
+                    seg = [pts[0], (pts[0][0] + (pts[1][0] - pts[0][0]) * q, pts[0][1] + (pts[1][1] - pts[0][1]) * q)]
+                else:
+                    q = (p - 0.5) / 0.5
+                    seg = [pts[0], pts[1], (pts[1][0] + (pts[2][0] - pts[1][0]) * q, pts[1][1] + (pts[2][1] - pts[1][1]) * q)]
+                d.line(seg, fill=a + (170,), width=5, joint="curve")
+            # a faint text rule to the left of each box, as a list line
+            d.line([(x - 300, y + size / 2), (x - 30, y + size / 2)], fill=a + (22,), width=3)
+
+    def _m_sheets(self, d, t, hit):
+        # Document sheets drifting and turning slowly, drawn as outlines with rules.
+        a = self.accent
+        for k in range(7):
+            w, h = 260 + 90 * (k % 3), 340 + 110 * (k % 3)
+            cx = _noise(k) * W + math.sin(t * 0.2 + k) * 60
+            cy = _noise(k, 1) * H + math.cos(t * 0.17 + k * 2) * 80
+            ang = math.radians(-14 + 28 * _noise(k, 2)) + math.sin(t * 0.15 + k) * 0.08
+            c, s = math.cos(ang), math.sin(ang)
+
+            def at(x, y):
+                return (cx + x * c - y * s, cy + x * s + y * c)
+
+            d.polygon([at(-w / 2, -h / 2), at(w / 2, -h / 2), at(w / 2, h / 2), at(-w / 2, h / 2)], outline=a + (36,), width=3)
+            for r in range(3):
+                y = -h / 2 + 60 + r * 46
+                d.line([at(-w / 2 + 40, y), at(w / 2 - 40 - 50 * (r == 2), y)], fill=a + (26,), width=3)
+
+    def _m_ruler(self, d, t, hit):
+        # Three tape measures scrolling at their own speeds, a marker pulsing on the beat.
+        a = self.accent
+        for y, speed in ((H * 0.12, 90), (H * 0.62, -60), (H * 0.94, 120)):
+            d.line([(0, y), (W, y)], fill=a + (40,), width=2)
+            for k in range(-2, W // 30 + 6):
+                x = (k * 30 + t * speed) % (W + 150) - 75
+                major = k % 5 == 0
+                d.line([(x, y), (x, y - (40 if major else 18))], fill=a + (100 if major else 55,), width=3 if major else 2)
+            mx = W * 0.5
+            d.polygon([(mx - 12, y + 30), (mx + 12, y + 30), (mx, y + 8)], fill=a + (int(80 + 140 * hit),))
+
+    # Investors: capital, connections, growth.
+
+    def _m_network(self, d, t, hit):
+        # Nodes drifting on slow paths, linked while they are near each other.
+        pts = []
+        for k in range(20):
+            x = _noise(k) * W + math.sin(t * (0.18 + 0.05 * (k % 4)) + k) * 90
+            y = _noise(k, 1) * H + math.cos(t * (0.14 + 0.04 * (k % 3)) + k * 1.7) * 110
+            pts.append((x, y))
+        for i in range(20):
+            for j in range(i + 1, 20):
+                dist = math.hypot(pts[i][0] - pts[j][0], pts[i][1] - pts[j][1])
+                if dist < 460:
+                    d.line([pts[i], pts[j]], fill=self.accent + (int(70 * (1 - dist / 460)),), width=2)
+        for k, (x, y) in enumerate(pts):
+            r = 5 + k % 3 * 2 + 3 * hit * (k % 5 == 0)
+            d.ellipse([x - r, y - r, x + r, y + r], fill=self.accent + (120,))
+
+    def _m_globe(self, d, t, hit):
+        # A dotted globe turning slowly behind the card, lower right: capital
+        # that reaches across borders. Only the front hemisphere is drawn,
+        # dots fading toward the rim.
+        a = self.accent
+        cx, cy, R = W * 0.70, H * 0.66, 560
+        spin = t * 0.18
+        for lat in range(-75, 90, 15):
+            phi = math.radians(lat)
+            n = max(6, int(36 * math.cos(phi)))
+            for i in range(n):
+                lam = i * 2 * math.pi / n + spin
+                z = math.cos(phi) * math.cos(lam)
+                if z <= 0:
+                    continue
+                x = cx + R * math.cos(phi) * math.sin(lam)
+                y = cy - R * math.sin(phi)
+                r = 2 + 5 * z
+                d.ellipse([x - r, y - r, x + r, y + r], fill=a + (int(10 + 120 * z * z),))
+        # Meridians: half-ellipses whose width follows the spin, so the
+        # sphere reads as turning rather than as a flat grid.
+        for k in range(6):
+            lam = k * math.pi / 6 + spin % (math.pi / 6)
+            rx = abs(R * math.sin(lam))
+            if rx > 4:
+                d.arc([cx - rx, cy - R, cx + rx, cy + R], 90, 270 if math.cos(lam) > 0 else 90, fill=a + (40,), width=2)
+                d.arc([cx - rx, cy - R, cx + rx, cy + R], -90, 90, fill=a + (40,), width=2)
+        d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=a + (70,), width=3)
+        r = 12 + 6 * hit
+        d.ellipse([cx - r, cy - R * 0.35 - r, cx + r, cy - R * 0.35 + r], fill=a + (160,))
+
+    def _m_orbits(self, d, t, hit):
+        # Three tilted orbits around one centre, a body on each with a short trail.
+        a = self.accent
+        cx, cy = W / 2, H * 0.46
+        for i in range(3):
+            ra, rb = 420 + 170 * i, 150 + 70 * i
+            ang = math.radians(-30 + 25 * i)
+            c, s = math.cos(ang), math.sin(ang)
+
+            def at(q):
+                return (cx + ra * math.cos(q) * c - rb * math.sin(q) * s, cy + ra * math.cos(q) * s + rb * math.sin(q) * c)
+
+            d.line([at(j * math.pi / 45) for j in range(91)], fill=a + (44,), width=2)
+            th = t * (0.9 - 0.2 * i) + i * 2.1
+            for k in range(6):
+                x, y = at(th - k * 0.09)
+                r = (10 + 4 * hit) if k == 0 else max(1.5, 5 - k * 0.7)
+                d.ellipse([x - r, y - r, x + r, y + r], fill=a + (170 if k == 0 else 60 - k * 8,))
+
+    def _m_hexes(self, d, t, hit):
+        # A honeycomb whose cells light up and dim on their own clocks.
+        a, R = self.accent, 64
+        dx, dy = R * math.sqrt(3), R * 1.5
+        for j in range(int(H / dy) + 2):
+            for i in range(int(W / dx) + 2):
+                cx, cy = i * dx + (dx / 2 if j % 2 else 0), j * dy
+                k = i * 31 + j * 17
+                lit = max(0.0, math.sin(t * (0.5 + 0.4 * _noise(k)) + _noise(k, 1) * 6.28))
+                al = int(10 + 48 * lit)
+                if al < 12:
+                    continue
+                pts = [(cx + (R - 6) * math.cos(math.pi / 6 + q * math.pi / 3), cy + (R - 6) * math.sin(math.pi / 6 + q * math.pi / 3)) for q in range(6)]
+                d.polygon(pts, outline=a + (al,), width=2)
+
+    # Tips: friendly, notebook, ideas.
+
+    def _m_notebook(self, d, t, hit):
+        # A ruled page drifting up slowly, a margin rule and punched holes.
+        a, step = self.accent, 88
+        off = (t * 10) % step
+        for y in range(-step, H + step, step):
+            d.line([(0, y + step - off), (W, y + step - off)], fill=a + (30,), width=2)
+        d.line([(64, 0), (64, H)], fill=a + (55,), width=3)
+        for k in range(6):
+            y = 220 + k * 300
+            d.ellipse([32 - 10, y - 10, 32 + 10, y + 10], outline=a + (45,), width=3)
+
+    def _m_chevrons(self, d, t, hit):
+        # Rows of chevrons marching up the frame, brighter as they climb: the
+        # "next step" of a tip. Each row scrolls sideways at its own pace.
+        a = self.accent
+        rows, gap = 9, 210
+        off_y = (t * 26) % gap
+        for r in range(-1, rows + 1):
+            y = H - r * gap + off_y
+            f = 1 - min(1, max(0, y / H))
+            al = int(14 + 44 * f)
+            off_x = (t * (30 + 12 * (r % 3)) * (1 if r % 2 else -1)) % 160
+            for k in range(-1, W // 160 + 2):
+                x = k * 160 + off_x
+                d.line([(x - 26, y + 16), (x, y - 12), (x + 26, y + 16)], fill=a + (al,), width=4, joint="curve")
+
+    def _m_sparks(self, d, t, hit):
+        # Rays bursting from a point top right, flaring on the beat, inside two rings.
+        a = self.accent
+        cx, cy = W * 0.78, H * 0.20
+        for k in range(18):
+            ang = k * math.pi * 2 / 18 + t * 0.12
+            ln = 160 + 120 * _noise(k) + 90 * hit + 40 * math.sin(t * 1.5 + k)
+            c, s = math.cos(ang), math.sin(ang)
+            for seg, al in ((0.0, 90), (0.45, 50), (0.75, 22)):
+                x0, y0 = cx + c * (60 + ln * seg), cy + s * (60 + ln * seg)
+                x1, y1 = cx + c * (60 + ln * min(1, seg + 0.3)), cy + s * (60 + ln * min(1, seg + 0.3))
+                d.line([(x0, y0), (x1, y1)], fill=a + (al,), width=4)
+        for i in range(2):
+            r = 40 + 30 * i + 12 * hit
+            d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=a + (70 - 30 * i,), width=3)
+
+    def _m_waves(self, d, t, hit):
+        a = self.accent
+        for i in range(4):
+            base = H * (0.62 + 0.08 * i + 0.08 * (i == 3))
+            pts = [
+                (x, base + (30 + 14 * i) * math.sin(x / (170 + 40 * i) + t * (0.8 - 0.12 * i) + i * 1.1) + 14 * math.sin(x / 61 - t * 1.3))
+                for x in range(-20, W + 40, 20)
+            ]
+            d.line(pts, fill=a + (44 + 10 * i,), width=4, joint="curve")
 
     # -- frame ------------------------------------------------------------
 
@@ -348,6 +630,11 @@ class Scene:
             y = 420
             d.rounded_rectangle([x, y, x + bw, y + 78], radius=39, fill=self.accent + (int(255 * fade),))
             text((x + 28, y + 14), label, self.f_kind, self.bg, fade)
+            if self.tag:
+                tx = x + bw + 20
+                tw = d.textlength(self.tag, font=self.f_kind) + 56
+                d.rounded_rectangle([tx, y, tx + tw, y + 78], radius=39, fill=self.ink + (int(255 * fade),))
+                text((tx + 28, y + 14), self.tag, self.f_kind, self.bg, fade)
 
             # Headline figure: on screen and big from frame one, counting up
             # to the exact card value, kicking on every beat. A grant's

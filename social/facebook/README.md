@@ -15,8 +15,9 @@ platform whose keys are set):
    and it closes on "Link in the comments". Every fact is copied verbatim
    from the card (`.rokct/types/opportunity.*/metarules/reel_rules.md`). The
    video shows the ROKCT brand mark only; the link and domain go in the
-   first comment. The background motif rotates by day so the feed does not
-   read as one repeated template.
+   first comment. Each post type has four background motifs of its own
+   (`motion.MOTIFS`), rotating by day, so the feed does not read as one
+   repeated template. `preview.py` renders every look.
 3. **Sound** — `music.py` synthesises a royalty-free track (rotating key,
    tempo and progression) and lays three shared voice lines over it with the
    music ducked: `assets/voice_brand.wav` (a man's voice saying "ROKCT", from
