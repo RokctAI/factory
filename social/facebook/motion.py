@@ -148,23 +148,45 @@ def split_figure(text):
     return text[:end].strip(), text[end:].strip(" ,"), first_end
 
 
+_MULTIPLIER = {"k": 1e3, "m": 1e6, "million": 1e6, "bn": 1e9, "billion": 1e9}
+
+
+def _unit_of(text):
+    return re.search(_UNIT + "$", text.strip(), re.I).group(0).strip().lower()
+
+
+def _expand(text, value, unit):
+    """'€1 million' -> '€1,000,000' so it counts on from a figure in units."""
+    m = _AMOUNT.search(text)
+    full = value * _MULTIPLIER.get(unit, 1)
+    return text[: m.start()] + f"{full:,.0f}" + text[m.end():]
+
+
 def figure_at(figure, first_end, t):
     """(text to show, finished) at t seconds. A single figure counts up from
-    40%; a range counts to its minimum, holds, then counts on to its maximum
-    on the same line."""
+    40%. A range shows one amount only: it counts to the minimum, holds, then
+    becomes "Up to" and climbs on to the maximum - the climb says there is
+    more without printing two numbers."""
     if first_end is None:
         p = 0.4 + 0.6 * _phase(t, 0.0, 1.4)
         return counting(figure, p), p >= 1
     head, tail = figure[:first_end], figure[first_end:]
+    top = re.sub(r"^\s*(?:to|-|–)\s*", "", tail, flags=re.I)
+    if top[:1].isdigit():  # "€1-2.5 million": the maximum borrows the minimum's symbol
+        sym = re.search(r"(\S*?)\d", head)
+        top = (sym.group(1) if sym else "") + top
+    lo, hi = _value(head), _value(top)
+    u_lo, u_hi = _unit_of(head), _unit_of(top)
+    if u_hi and not u_lo and lo is not None and lo < 1000:
+        head, u_lo = head.rstrip() + " " + u_hi, u_hi  # "€1-2.5 million" -> "€1 million"
+    elif u_hi != u_lo and not u_lo and hi is not None:
+        top = _expand(top, hi, u_hi)  # "€800,000 to €1 million" -> "... €1,000,000"
+        hi, u_hi = _value(top), ""
     if t < MIN_AT + HOLD:
         return counting(head, 0.4 + 0.6 * _phase(t, 0.0, MIN_AT)), False
-    lo, hi = _value(head), _value(tail)
-    same_unit = re.search(_UNIT + "$", head.strip(), re.I).group(0).strip().lower() == (
-        re.search(_UNIT + "$", tail.strip(), re.I).group(0).strip().lower()
-    )
-    start = lo if (lo is not None and hi and same_unit and lo < hi) else 0.4 * (hi or 0)
+    start = lo if (lo is not None and hi and u_lo == u_hi and lo < hi) else 0.4 * (hi or 0)
     p = _phase(t, MIN_AT + HOLD, MAX_FOR)
-    return head + counting(tail, p, start), p >= 1
+    return "Up to " + counting(top, p, start), p >= 1
 
 
 def _glow(color, radius):
@@ -312,7 +334,8 @@ class Scene:
             y = 560
             if split:
                 figure, rest, first_end = split
-                size = min(104, int(104 * inner / max(1, d.textlength(figure, font=self.f_head))))
+                final, _ = figure_at(figure, first_end, self.duration)
+                size = min(104, int(104 * inner / max(1, d.textlength(final, font=self.f_head))))
                 shown, done = figure_at(figure, first_end, t)
                 f_fig = _font(int(size * kick)) if hit > 0.05 else _font(size)
                 text((margin, y + (104 - size) * 0.6), shown, f_fig, self.ink if done else self.accent, fade)

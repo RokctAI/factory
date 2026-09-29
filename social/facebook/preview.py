@@ -34,6 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import opportunity_post as op  # noqa: E402
 
 MOTIFS = ["lines", "dots", "rings"]
+STILLS = (0.6, 2.4, 6.0, 10.6)  # seconds: count, climb/deadline, full card, end card
 
 
 def samples(repo: Path, today: dt.date):
@@ -75,9 +76,14 @@ def one(job):
         ],
         check=True,
     )
+    # A static strip of the beats: the count, the deadline landing, the
+    # full card and the end card.
+    strip = clip.with_suffix(".jpg")
+    picks = "+".join(f"eq(n\\,{int(s * 30)})" for s in STILLS)
     subprocess.run(
-        ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-ss", "5", "-i", str(clip),
-         "-frames:v", "1", "-q:v", "4", str(clip.with_suffix(".jpg"))],
+        ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(folder / "motion.mp4"),
+         "-vf", f"select='{picks}',scale=360:640,tile={len(STILLS)}x1:padding=12:color=0x09090b",
+         "-frames:v", "1", "-vsync", "0", "-q:v", "3", str(strip)],
         check=True,
     )
     return {
@@ -86,7 +92,7 @@ def one(job):
         "headline": op.headline_for(opp),
         "title": opp["title"],
         "video": clip.name,
-        "poster": clip.with_suffix(".jpg").name,
+        "strip": strip.name,
     }
 
 
