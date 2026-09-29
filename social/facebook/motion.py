@@ -55,15 +55,15 @@ TILE_TOP, TILE_BOTTOM = (244, 244, 245), (212, 212, 216)
 # glows under it carry the type's tint next to the brand gold.
 MOTIFS = {
     "Grant": ("aurora", "coins", "bars", "horizon"),
-    "Tender": ("blueprint", "stripes", "sheets", "ruler"),
+    "Tender": ("blueprint", "checklist", "sheets", "ruler"),
     "Investor": ("network", "curve", "orbits", "hexes"),
-    "Funding tip": ("notebook", "bubbles", "sparks", "waves"),
+    "Funding tip": ("notebook", "chevrons", "sparks", "waves"),
 }
 MOTIF_NAMES = {
     "aurora": "Aurora ribbons", "coins": "Drifting coins", "bars": "Rising bars", "horizon": "Horizon grid",
-    "blueprint": "Blueprint grid", "stripes": "Sliding stripes", "sheets": "Floating sheets", "ruler": "Tape measures",
+    "blueprint": "Blueprint grid", "checklist": "Checklist", "sheets": "Floating sheets", "ruler": "Tape measures",
     "network": "Constellation", "curve": "Growth curve", "orbits": "Orbits", "hexes": "Honeycomb",
-    "notebook": "Ruled page", "bubbles": "Rising dots", "sparks": "Idea sparks", "waves": "Waves",
+    "notebook": "Ruled page", "chevrons": "Chevrons", "sparks": "Idea sparks", "waves": "Waves",
 }
 TINT = {"Grant": (255, 150, 0), "Tender": (150, 160, 185), "Investor": (255, 110, 60), "Funding tip": (255, 228, 170)}
 
@@ -378,11 +378,31 @@ class Scene:
         sy = (t * 140) % (H + 200) - 100
         d.line([(0, sy), (W, sy)], fill=a + (40,), width=3)
 
-    def _m_stripes(self, d, t, hit):
-        off = (t * 60) % 120
-        for k in range(-20, 30):
-            x = k * 120 + off
-            d.line([(x, 0), (x - 900, H)], fill=self.accent + (26,), width=3)
+    def _m_checklist(self, d, t, hit):
+        # A compliance checklist down the right edge: boxes drifting up, ticks
+        # landing one after another, each tick kicking on the beat it lands.
+        a = self.accent
+        step, size = 150, 46
+        off = (t * 22) % step
+        for k in range(-1, H // step + 2):
+            y = k * step + step - off
+            x = W - 150
+            d.rounded_rectangle([x, y, x + size, y + size], radius=8, outline=a + (60,), width=3)
+            d.line([(x + size + 24, y + size / 2), (x + size + 24 + 60, y + size / 2)], fill=a + (0,), width=2)
+            due = 0.8 + (k * 0.47) % 4.0  # when this row's tick lands
+            p = _ease(_phase(t, due, 0.3))
+            if p > 0:
+                pts = [(x + 10, y + 24), (x + 20, y + 34), (x + 36, y + 12)]
+                seg = [pts[0], pts[1]] if p < 0.5 else pts
+                if p < 0.5:
+                    q = p / 0.5
+                    seg = [pts[0], (pts[0][0] + (pts[1][0] - pts[0][0]) * q, pts[0][1] + (pts[1][1] - pts[0][1]) * q)]
+                else:
+                    q = (p - 0.5) / 0.5
+                    seg = [pts[0], pts[1], (pts[1][0] + (pts[2][0] - pts[1][0]) * q, pts[1][1] + (pts[2][1] - pts[1][1]) * q)]
+                d.line(seg, fill=a + (170,), width=5, joint="curve")
+            # a faint text rule to the left of each box, as a list line
+            d.line([(x - 300, y + size / 2), (x - 30, y + size / 2)], fill=a + (22,), width=3)
 
     def _m_sheets(self, d, t, hit):
         # Document sheets drifting and turning slowly, drawn as outlines with rules.
@@ -498,12 +518,20 @@ class Scene:
             y = 220 + k * 300
             d.ellipse([32 - 10, y - 10, 32 + 10, y + 10], outline=a + (45,), width=3)
 
-    def _m_bubbles(self, d, t, hit):
-        for k in range(40):
-            x = (k * 173) % W
-            y = H - ((t * (40 + k % 5 * 18) + k * 211) % (H + 100))
-            r = 4 + k % 4 * 2
-            d.ellipse([x - r, y - r, x + r, y + r], fill=self.accent + (60,))
+    def _m_chevrons(self, d, t, hit):
+        # Rows of chevrons marching up the frame, brighter as they climb: the
+        # "next step" of a tip. Each row scrolls sideways at its own pace.
+        a = self.accent
+        rows, gap = 9, 210
+        off_y = (t * 26) % gap
+        for r in range(-1, rows + 1):
+            y = H - r * gap + off_y
+            f = 1 - min(1, max(0, y / H))
+            al = int(14 + 44 * f)
+            off_x = (t * (30 + 12 * (r % 3)) * (1 if r % 2 else -1)) % 160
+            for k in range(-1, W // 160 + 2):
+                x = k * 160 + off_x
+                d.line([(x - 26, y + 16), (x, y - 12), (x + 26, y + 16)], fill=a + (al,), width=4, joint="curve")
 
     def _m_sparks(self, d, t, hit):
         # Rays bursting from a point top right, flaring on the beat, inside two rings.
