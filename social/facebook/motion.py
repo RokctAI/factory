@@ -35,7 +35,7 @@ import subprocess
 from pathlib import Path
 
 W, H, FPS = 1080, 1920, 30
-BRAND = "Rokct"
+BRAND = "ROKCT"
 CLOSE_LINE = "Link in the comments"
 
 # Brand, from RokctAI_frontend: --primary hsl(48 96% 53%) on the dark
@@ -162,7 +162,6 @@ class Scene:
         self.glows = [_glow(ACCENT, 260), _glow((255, 150, 0), 200)]
         self.base = Image.new("RGB", (W, H), self.bg)
         self.tile_small = _logo_tile(84)
-        self.tile_big = _logo_tile(300)
         self.f_brand = _font(58)
         self.f_brand_big = _font(130)
         self.f_kind = _font(42)
@@ -299,14 +298,14 @@ class Scene:
                 text((margin, y2 + 30 * (1 - p)), line, self.f_small, self.ink, min(p * 0.85, fade))
                 y2 += 58
         else:
-            # Close: the brand mark, big, and the pointer to the first comment.
+            # Close: the brand mark (logo at its first-frame size, above the
+            # name) and the pointer to the first comment.
             p = _back(_phase(t, end_start, 0.6))
-            size = int(300 * (0.6 + 0.4 * min(1, p)) * (1 + 0.03 * hit))
+            size = self.tile_small.width
             if p > 0.05:
-                tile = self.tile_big.resize((size, size))
-                img.paste(tile, (int((W - size) / 2), int(H * 0.30 - size / 2 + 150)), tile)
+                img.paste(self.tile_small, (int((W - size) / 2), int(H * 0.36 - 40 * (1 - p))), self.tile_small)
             bw = d.textlength(BRAND, font=self.f_brand_big)
-            text(((W - bw) / 2, H * 0.30 + 330), BRAND, self.f_brand_big, self.ink, p)
+            text(((W - bw) / 2, H * 0.36 + size + 40 + 60 * (1 - p)), BRAND, self.f_brand_big, self.ink, p)
             p2 = _ease(_phase(t, end_start + 0.4, 0.5))
             cw = d.textlength(CLOSE_LINE, font=self.f_cta)
             text(((W - cw) / 2, H * 0.62), CLOSE_LINE, self.f_cta, self.accent, p2)

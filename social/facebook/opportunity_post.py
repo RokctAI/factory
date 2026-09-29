@@ -99,6 +99,30 @@ def _short_amount(amount):
     return _clip(re.split(r"[;(]", amount)[0].strip().rstrip(","), 60)
 
 
+_FIRST_NUMBER = re.compile(r"\d[\d,.\s]*\d|\d")
+_CURRENCY_BEFORE = re.compile(r"([$€£₹¥]|\b(?:USD|EUR|GBP|AUD|CAD|NZD|CHF|HUF|ZAR|INR|TL|R|Rs\.?|CA\$|US\$|A\$))\s?$")
+_CURRENCY_AFTER = re.compile(r"^\s?(?:million|billion|m|bn|k)?\s?(?:USD|EUR|GBP|AUD|CAD|CHF|HUF|ZAR|INR|TL|euros?|dollars?|pounds?|rand|lakhs?|crores?)\b", re.I)
+
+
+def money_headline(amount):
+    """The headline figure, or None when the card's Funding Amount does not
+    lead with real money. The first number in the headline clause must be a
+    currency amount - '$25,000', 'CHF 25,000', '€12 million', '₹10 lakhs' -
+    because that is the number the video counts up and shouts; a percentage
+    ('up to 50% of approved project budget'), 'Unspecified' or 'Varies' is
+    not a hook, so that grant is skipped rather than posted weakly."""
+    head = _short_amount(amount)
+    m = _FIRST_NUMBER.search(head)
+    if not m:
+        return None
+    after = head[m.end():]
+    if after.lstrip().startswith("%"):
+        return None
+    if _CURRENCY_BEFORE.search(head[: m.start()]) or _CURRENCY_AFTER.match(after):
+        return head
+    return None
+
+
 def grant_candidates(repo: Path):
     for path in sorted((repo / "02_grants").glob("*.md")):
         text = path.read_text(encoding="utf-8", errors="replace")
@@ -109,6 +133,8 @@ def grant_candidates(repo: Path):
         link = _field(text, "Applying Link")
         title = re.sub(r"^#\s*Grant Opportunity:\s*", "", text.splitlines()[0]).strip()
         if not (deadline and amount and link and title) or "[" in amount:
+            continue
+        if not money_headline(amount):
             continue
         yield {
             "key": f"grant:{path.stem}",
@@ -168,7 +194,7 @@ def _nice_date(d: dt.date):
 
 def headline_for(opp):
     if opp["kind"] == "Grant":
-        return _short_amount(opp["amount"])
+        return money_headline(opp["amount"])
     return f"{opp['organization']} is taking bids"
 
 
