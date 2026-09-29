@@ -1,0 +1,16 @@
+{
+  "$schema": "../schema/ad.schema.json",
+  "id": "template_spot_15",
+  "client": "Your client here",
+  "notes": "15s jingle-less announcer spot, mastered for streaming (-16 LUFS). Swap 'voice' for {\"ref\": \"voices/your_recording.wav\"} to clone your own reference.",
+  "duration_s": 15,
+  "format": "spot",
+  "cast": {"announcer": {"voice": "assistant_003"}},
+  "script": [
+    {"speaker": "announcer", "text": "This weekend only: everything in store is twenty percent off.", "pause_after_s": 0.3},
+    {"speaker": "announcer", "text": "Come early, bring a friend, and leave with more.", "pause_after_s": 0.2}
+  ],
+  "tag": {"speaker": "announcer", "text": "While stocks last.", "fast": true},
+  "music": {"bed": "builtin:calm"},
+  "output": {"formats": ["mp3"], "loudness_lufs": -16, "true_peak_dbtp": -1}
+}

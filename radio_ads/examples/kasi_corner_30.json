@@ -1,0 +1,31 @@
+{
+  "$schema": "../schema/ad.schema.json",
+  "schema_version": 1,
+  "id": "kasi_corner_30",
+  "client": "Kasi Corner Spaza (fictional spaza shop, demo only)",
+  "title": "Out of bread again",
+  "notes": "Two-voice 30s dialogue demo plus an announcer tag. Kasi Corner is invented for this example.",
+  "duration_s": 30,
+  "format": "dialogue",
+  "cast": {
+    "gogo": {"voice": "tutor_006"},
+    "sipho": {"voice": "tutor_004"},
+    "announcer": {"voice": "assistant_002"}
+  },
+  "script": [
+    {"speaker": "gogo", "text": "Eish, Sipho! The whole street is out of bread again!", "pause_after_s": 0.25, "delivery": "exasperated, comic"},
+    {"speaker": "sipho", "text": "Not at Kasi Corner, Gogo. Fresh loaves every morning at six, still warm.", "pause_after_s": 0.25, "delivery": "relaxed, proud"},
+    {"speaker": "gogo", "text": "And my airtime? My electricity?", "pause_after_s": 0.2, "delivery": "suspicious"},
+    {"speaker": "sipho", "text": "Airtime, electricity, even school stationery. All under one roof.", "pause_after_s": 0.25},
+    {"speaker": "gogo", "text": "Hau! Then why am I walking to town?", "pause_after_s": 0.25, "delivery": "delighted"},
+    {"speaker": "sipho", "text": "Exactly, Gogo. Kasi Corner. Your shop, around the corner.", "pause_after_s": 0.3, "delivery": "warm sign-off"}
+  ],
+  "tag": {"speaker": "announcer", "text": "Kasi Corner Spaza is a fictional shop, made up for this demo.", "fast": true, "gap_before_s": 0.35},
+  "music": {"bed": "builtin:corporate", "seed": 2, "level_db": -7, "duck_db": -12, "intro_s": 1.2, "outro_min_s": 1.0},
+  "sfx": [
+    {"file": "builtin:ding", "segment": 1, "anchor": "start", "offset_s": -0.35, "gain_db": -8}
+  ],
+  "timing": {"fit": "speed_up", "max_stretch": 0.08},
+  "render": {"mode": "auto", "seed": 7},
+  "output": {"formats": ["wav", "mp3"], "sample_rate": 44100, "loudness_lufs": -23, "true_peak_dbtp": -1}
+}

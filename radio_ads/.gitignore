@@ -1,0 +1,15 @@
+# Reference voices are never committed (see voices/README.md).
+voices/*
+!voices/README.md
+# Render products and caches
+out/
+cache/
+# inbox/: ad JSONs are committed so a push renders them in CI
+# (.github/workflows/radio_ads.yml); anything else dropped there stays local.
+inbox/*
+!inbox/*.json
+!inbox/README.md
+failed/
+__pycache__/
+*.pyc
+*.part
