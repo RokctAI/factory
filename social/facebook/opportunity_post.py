@@ -22,13 +22,16 @@ One run = one post:
               with a readable title), soonest-closing first but never one
               closing inside MIN_DAYS_LEFT - a viewer must have time to apply.
   2. brief  - write a brief.json in the TikTok post-folder contract
-              (hook / on_screen_text / duration_seconds, silent_ok), with
+              (duration_seconds, silent_ok) plus the post description,
               every fact copied verbatim from the card (reel_rules.md rule 5:
               no invented terms).
-  3. card   - draw the 1080x1920 still the captions sit over (Pillow).
+  3. motion - animate the 1080x1920 clip (motion.py): brand, count-up
+              figure, title, live days-left counter, "link in the
+              description" close. Brand name only; the domain stays in the
+              description.
   4. render - hand the folder to RokctAI/agent's tiktok_render.py, the one
-              renderer the fleet already uses, which burns the captions in
-              and writes render/<id>.mp4.
+              renderer the fleet already uses, which conforms and encodes it
+              to render/<id>.mp4.
   5. post   - publish the MP4 to the Page as a Reel (Graph API video_reels),
               read back its permalink, and record it in posted.json.
 
@@ -56,6 +59,8 @@ from pathlib import Path
 
 import requests
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 HERE = Path(__file__).resolve().parent
 LEDGER = HERE / "posted.json"
 
@@ -63,15 +68,8 @@ GRAPH = "https://graph.facebook.com/v21.0"
 RUPLOAD = "https://rupload.facebook.com/video-upload/v21.0"
 MIN_DAYS_LEFT = 7
 DURATION_SECONDS = 15
-CTA = "Find more and apply at rokct.ai"
 SITE = "https://rokct.ai"
 
-W, H = 1080, 1920
-INK = (14, 14, 16)
-PANEL = (28, 28, 32)
-YELLOW = (255, 196, 0)
-WHITE = (245, 245, 245)
-GREY = (160, 160, 168)
 
 
 # --------------------------------------------------------------------- pick
@@ -166,19 +164,20 @@ def _nice_date(d: dt.date):
     return f"{d.day} {d.strftime('%B %Y')}"
 
 
+def headline_for(opp):
+    if opp["kind"] == "Grant":
+        return _short_amount(opp["amount"])
+    return f"{opp['organization']} is taking bids"
+
+
 def make_brief(opp, today: dt.date):
+    """The post spec. All on-screen text is drawn by motion.py, so the
+    brief carries no hook or overlay lines for the renderer to burn in."""
     stamp = today.strftime("%Y%m%d")
     closes = f"Closes {_nice_date(opp['deadline'])}"
-    if opp["kind"] == "Grant":
-        amount = _short_amount(opp["amount"])
-        hook = amount if len(amount) <= 40 else _clip(opp["title"], 70)
-        lines = [f"From {opp['organization']}", closes, CTA]
-    else:
-        hook = f"{opp['organization']} is taking bids"
-        lines = [opp.get("region") or "South Africa", closes, CTA]
     caption = "\n".join(
         [
-            hook,
+            f"{headline_for(opp)} - {opp['title']}",
             "",
             closes + ".",
             f"Apply: {opp['link']}",
@@ -189,95 +188,29 @@ def make_brief(opp, today: dt.date):
     return {
         "id": f"fb_opportunity_{stamp}",
         "format": "text-on-screen",
-        "hook": hook,
-        "on_screen_text": lines,
+        "hook": "",
+        "on_screen_text": [],
         "caption": caption,
-        "cta": CTA,
         "duration_seconds": DURATION_SECONDS,
         "source_key": opp["key"],
-        # The card is drawn here, not generated, so it carries no AI
-        # watermark strip for the renderer to trim away.
-        "_pipeline_only": {"silent_ok": True, "watermark_trim": {"bottom": 0, "right": 0}},
+        "_pipeline_only": {"silent_ok": True},
     }
 
 
-# --------------------------------------------------------------------- card
+# ------------------------------------------------------------------- motion
 
 
-def _font(size, bold=True):
-    from PIL import ImageFont
+def make_motion(opp, today: dt.date, path: Path):
+    from motion import render_motion
 
-    name = "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf"
-    for base in ("/usr/share/fonts/truetype/dejavu", "/usr/share/fonts/dejavu"):
-        if Path(base, name).exists():
-            return ImageFont.truetype(str(Path(base, name)), size)
-    return ImageFont.load_default()
-
-
-def _wrap(draw, text, font, width):
-    words, lines, line = text.split(), [], ""
-    for word in words:
-        trial = f"{line} {word}".strip()
-        if draw.textlength(trial, font=font) <= width or not line:
-            line = trial
-        else:
-            lines.append(line)
-            line = word
-    if line:
-        lines.append(line)
-    return lines
-
-
-def _wrap_max(draw, text, font, width, max_lines):
-    """Wrap, and mark a cut with '...' so a clipped figure never reads whole."""
-    lines = _wrap(draw, text, font, width)
-    if len(lines) > max_lines:
-        lines = lines[:max_lines]
-        lines[-1] = lines[-1].rstrip(" ,-") + "..."
-    return lines
-
-
-def make_card(opp, path: Path):
-    """The still behind the captions. The renderer burns the hook in at
-    ~14% height (first 3s only) and the on-screen lines at ~66%, so the
-    card keeps its facts in the band between them and its brand mark at
-    the foot."""
-    from PIL import Image, ImageDraw
-
-    img = Image.new("RGB", (W, H), INK)
-    d = ImageDraw.Draw(img)
-    for y in range(H):  # soft vertical fade so the slow zoom has texture
-        shade = int(8 * y / H)
-        d.line([(0, y), (W, y)], fill=(INK[0] + shade, INK[1] + shade, INK[2] + shade + 2))
-
-    margin, inner = 110, W - 2 * 110 - 20
-    kind_f, head_f, title_f, date_f = _font(40), _font(72), _font(42, bold=False), _font(46)
-    headline = _short_amount(opp["amount"]) if opp["amount"] else opp["organization"]
-    head_lines = _wrap_max(d, headline, head_f, inner, 3)
-    title_lines = _wrap_max(d, opp["title"], title_f, inner, 4)
-    height = 50 + 70 + len(head_lines) * 88 + 24 + len(title_lines) * 56 + 30 + 60 + 40
-    top = int(H * 0.26)
-    bottom = top + height
-    d.rounded_rectangle([margin - 30, top, W - margin + 30, bottom], radius=36, fill=PANEL)
-    d.rectangle([margin - 30, top, margin - 18, bottom], fill=YELLOW)
-
-    y = top + 50
-    d.text((margin + 10, y), opp["kind"].upper(), font=kind_f, fill=YELLOW)
-    y += 70
-    for line in head_lines:
-        d.text((margin + 10, y), line, font=head_f, fill=WHITE)
-        y += 88
-    y += 24
-    for line in title_lines:
-        d.text((margin + 10, y), line, font=title_f, fill=GREY)
-        y += 56
-    y += 30
-    d.text((margin + 10, y), f"Closes {_nice_date(opp['deadline'])}", font=date_f, fill=YELLOW)
-
-    mark = "rokct.ai"
-    f = _font(64)
-    d.text(((W - d.textlength(mark, font=f)) / 2, int(H * 0.86)), mark, font=f, fill=YELLOW)
-    img.save(path)
+    shown = dict(opp)
+    shown["deadline_text"] = _nice_date(opp["deadline"])
+    if opp["kind"] == "Grant":
+        shown["who"] = f"From {opp['organization']}"
+    else:
+        shown["who"] = opp.get("region") or "South Africa"
+    days_left = (opp["deadline"] - today).days
+    return render_motion(shown, headline_for(opp), days_left, today.toordinal(), DURATION_SECONDS, path)
 
 
 # ------------------------------------------------------------------- render
@@ -398,7 +331,7 @@ def main(argv=None):
     folder = args.out / brief["id"]
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "brief.json").write_text(json.dumps(brief, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    make_card(opp, folder / "card.png")
+    make_motion(opp, args.today, folder / "motion.mp4")
     mp4 = render(folder, args.agent.resolve())
     print(f"Picked {opp['key']} (closes {opp['deadline']}); rendered {mp4}")
 
