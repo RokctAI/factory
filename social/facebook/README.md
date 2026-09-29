@@ -17,10 +17,14 @@ posts one Reel to the RokctAI Facebook Page:
    first comment. The background motif rotates by day so the feed does not
    read as one repeated template.
 3. **Sound** — `music.py` synthesises a royalty-free track (rotating key,
-   tempo and progression) and lays the shared voice-over
-   (`assets/voiceover.wav`, "Follow Rocket for more funding opportunities
-   every day", rendered by `radio_ads/inbox/facebook_reel_follow_15.json`) over the
-   close with the music ducked.
+   tempo and progression) and lays three shared voice lines over it with the
+   music ducked: `assets/voice_brand.wav` (a man's voice saying "ROKCT", from
+   `radio_ads/inbox/facebook_reel_brand_15.json`) on the first beat,
+   `assets/voice_open.wav` ("Need funding? Here's one you can
+   apply for right now.", from `radio_ads/inbox/facebook_reel_open_15.json`)
+   straight after it, and `assets/voice_close.wav` ("Follow Rocket for more
+   funding opportunities every day.", from
+   `radio_ads/inbox/facebook_reel_follow_15.json`) over the close.
 4. **Render** — `RokctAI/agent` `lms/team/scripts/tiktok_render.py` conforms
    the clip and mixes the audio into a 12 s 1080x1920 MP4.
 5. **Post** — the Graph API `video_reels` upload, the apply link as the

@@ -127,7 +127,13 @@ def render_music(seed, duration, out: Path):
     return out
 
 
-VOICEOVER = Path(__file__).resolve().parent / "assets" / "voiceover.wav"
+ASSETS = Path(__file__).resolve().parent / "assets"
+# Shared voice lines, rendered by the radio-ads factory from
+# radio_ads/inbox/facebook_reel_brand_15.json, facebook_reel_open_15.json and
+# facebook_reel_follow_15.json.
+VOICE_BRAND = ASSETS / "voice_brand.wav"
+VOICE_OPEN = ASSETS / "voice_open.wav"
+VOICE_CLOSE = ASSETS / "voice_close.wav"
 
 
 def _trimmed(vo: Path, tmp: Path):
@@ -148,17 +154,17 @@ def _trimmed(vo: Path, tmp: Path):
         return w.getnframes() / w.getframerate()
 
 
-def add_voiceover(music: Path, duration, vo: Path = VOICEOVER):
-    """Lay the shared voice-over (radio_ads/inbox/facebook_reel_follow_15.json,
-    rendered by the radio-ads factory) over the close of the track, with the
-    music ducked under it. No asset yet means music only."""
+def _lay(music: Path, vo: Path, at_for):
+    """Mix one voice line into the track at at_for(line_length) seconds,
+    ducking the music under it. Returns when the line ends; a missing asset
+    leaves the track as is and returns None."""
     import subprocess
 
     if not vo.exists():
         return None
     line = music.with_name("voice_line.wav")
     length = _trimmed(vo, line)
-    at = max(0.5, duration - length - 0.35)
+    at = at_for(length)
     mixed = music.with_name("music_vo.wav")
     subprocess.run(
         [
@@ -174,4 +180,12 @@ def add_voiceover(music: Path, duration, vo: Path = VOICEOVER):
     )
     line.unlink()
     mixed.replace(music)
-    return at
+    return at + length
+
+
+def add_voiceover(music: Path, duration):
+    """ROKCT (a man's voice) on the first beat, the opening line straight
+    after it, the follow line over the close."""
+    brand_end = _lay(music, VOICE_BRAND, lambda length: 0.15)
+    _lay(music, VOICE_OPEN, lambda length: (brand_end or 0) + 0.15)
+    _lay(music, VOICE_CLOSE, lambda length: max(0.5, duration - length - 0.35))
