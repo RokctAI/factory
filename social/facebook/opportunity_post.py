@@ -251,6 +251,7 @@ def tip_candidates():
     for tip in json.loads(TIPS.read_text(encoding="utf-8")):
         yield {
             "key": f"tip:{tip['id']}",
+            "id": tip["id"],
             "kind": "Funding tip",
             "title": tip["body"],
             "heading": tip["heading"],
@@ -276,7 +277,8 @@ def pick(repo: Path, posted: set, today: dt.date, stream="grant", ledger=()):
         return next((c for c in equity_candidates(repo) if c["key"] not in posted), None)
 
     def tip():
-        tips = list(tip_candidates())
+        # In id order: tips.json is shuffled so one type never runs long.
+        tips = sorted(tip_candidates(), key=lambda c: c["id"])
         fresh = [c for c in tips if c["key"] not in posted]
         if fresh:
             return fresh[0]
@@ -333,7 +335,10 @@ def _post_text(opp):
         lead = f"{opp['organization']} invests in {opp['industry']} ({opp['stage']}), {opp['territory']}."
         return lead, "No deadline: pitch any time.", f"Details: {page}\n{more}", f"Details: {page}"
     if opp["kind"] == "Funding tip":
-        lead = f"Funding tip: {opp['heading']}\n\n{opp['title']}"
+        # "Tender tip: partner to qualify" -> "Tender tip #7: partner to qualify"
+        kind, sep, rest = opp["heading"].partition(" tip: ")
+        heading = f"{kind} tip #{opp['id']}: {rest}" if sep else f"Funding tip #{opp['id']}: {opp['heading']}"
+        lead = f"{heading}\n\n{opp['title']}"
         return lead, "Follow ROKCT for more funding opportunities every day.", more, ""
     closes = f"Closes {_nice_date(opp['deadline'])}."
     lead = f"{headline_for(opp)} - {opp['title']}"

@@ -96,6 +96,21 @@ def _wrap(draw, text, font, width, max_lines):
     return lines
 
 
+def _fit(draw, text, size, width, max_lines, floor, bold=True):
+    """The largest font from size down to floor that wraps text into
+    max_lines without cutting it; floor (cut if it must) when none does."""
+    for n in range(size, floor - 1, -4):
+        font = _font(n, bold)
+        if len(_wrap(draw, text, font, width, 99)) <= max_lines:
+            return font
+    return _font(floor, bold)
+
+
+# A tip heading such as "Tender tip: partner to qualify" puts its type on the
+# badge and the rest in the headline.
+_TIP_TYPE = re.compile(r"^\s*(tender|grant|investor|funding) tip:\s*", re.I)
+
+
 _NUMBER = re.compile(r"\d[\d,\s]*(?:\.\d+)?")
 
 
@@ -229,6 +244,15 @@ class Scene:
         self.opp = opp
         self.close_line = close_line
         self.headline = headline
+        self.badge = opp["kind"].upper()
+        tip = _TIP_TYPE.match(headline) if opp["kind"] == "Funding tip" else None
+        if tip:
+            self.badge = f"{tip.group(1)} tip".upper()
+            rest = headline[tip.end():]
+            self.headline = rest[:1].upper() + rest[1:]
+        if opp["kind"] == "Funding tip" and opp.get("id"):
+            self.badge += f" #{opp['id']}"
+        self.fonts = {}
         self.days_left = days_left
         self.duration = duration
         self.beat = 60.0 / bpm
@@ -318,7 +342,7 @@ class Scene:
 
             # Kind badge: already there in frame one, slides the last bit.
             p = _ease(_phase(t, -0.3, 0.6))
-            label = self.opp["kind"].upper()
+            label = self.badge
             bw = d.textlength(label, font=self.f_kind) + 56
             x = margin - 200 * (1 - p)
             y = 420
@@ -344,21 +368,31 @@ class Scene:
                     text((margin, y), line, self.f_rest, self.ink, fade)
                     y += 70
             else:
+                # Shrunk until the whole headline fits in three lines.
+                if "head" not in self.fonts:
+                    self.fonts["head"] = _fit(d, self.headline, 104, inner, 3, 72)
+                size = self.fonts["head"].size
                 p = 0.4 + 0.6 * _phase(t, 0.0, 1.4)
                 shown = counting(self.headline, p)
-                lines = _wrap(d, self.headline, self.f_head, inner, 3)
-                live = _wrap(d, shown, self.f_head, inner, 3) if p < 1 else lines
-                f_head = _font(int(104 * kick)) if hit > 0.05 else self.f_head
+                lines = _wrap(d, self.headline, self.fonts["head"], inner, 3)
+                live = _wrap(d, shown, self.fonts["head"], inner, 3) if p < 1 else lines
+                f_head = _font(int(size * kick)) if hit > 0.05 else self.fonts["head"]
                 for line in live:
                     text((margin, y), line, f_head, self.accent if t < 1.4 else self.ink, fade)
-                    y += 124
+                    y += int(size * 1.19)
 
             # Title rises line by line.
             y += 24
-            for i, line in enumerate(_wrap(d, self.opp["title"], self.f_title, inner, 4)):
+            # A tip's body is the tip itself, so it gets more lines than a title.
+            if "title" not in self.fonts:
+                rows = 6 if self.opp["kind"] == "Funding tip" else 4
+                self.fonts["title"] = _fit(d, self.opp["title"], 48, inner, rows, 40, bold=False)
+                self.fonts["rows"] = rows
+            f_title = self.fonts["title"]
+            for i, line in enumerate(_wrap(d, self.opp["title"], f_title, inner, self.fonts["rows"])):
                 p = _ease(_phase(t, 1.0 + i * 0.18, 0.5))
-                text((margin, y + 50 * (1 - p)), line, self.f_title, self.ink, min(p * 0.85, fade))
-                y += 64
+                text((margin, y + 50 * (1 - p)), line, f_title, self.ink, min(p * 0.85, fade))
+                y += int(f_title.size * 1.33)
 
             # Deadline block: live days-left counter, pulsing on the beat.
             # Posts with no deadline (investors, tips) carry a two-line
