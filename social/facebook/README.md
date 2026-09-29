@@ -28,11 +28,13 @@ platform whose keys are set):
    `radio_ads/inbox/facebook_reel_follow_15.json`) over the close.
 4. **Render** — `RokctAI/agent` `lms/team/scripts/tiktok_render.py` conforms
    the clip and mixes the audio into a 12 s 1080x1920 MP4.
-5. **Post** — Facebook: the Graph API `video_reels` upload, the apply link
-   as the first comment. TikTok (`tiktok.py`, Content Posting API) and
-   YouTube Shorts (`youtube.py`, Data API v3) get a second cut that closes on
-   "Link in bio", because neither makes links in comments clickable; the apply
-   link rides in the caption. Links and a one-tap Facebook share link land in
+5. **Post** — Facebook: the Graph API `video_reels` upload, with the
+   opportunity's own rokct.ai page (`/opportunities/<grants|tenders|equity>/<slug>`,
+   the path rokctai_frontend's opportunity search links to) as the first
+   comment. Viewers never go straight to the funder's apply link. TikTok
+   (`tiktok.py`, Content Posting API) and YouTube Shorts (`youtube.py`, Data
+   API v3) get a second cut that closes on "Link in bio", because neither makes
+   links in comments clickable; the page link rides in the caption. Links and a one-tap Facebook share link land in
    the run summary, and the post is recorded in `posted.json` so it is never
    repeated. One platform failing does not stop the others.
 
