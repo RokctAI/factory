@@ -14,7 +14,7 @@ voices="$src/lms/team/voices"
 dest="$(cd "$(dirname "$0")/.." && pwd)/voices"
 
 if [ ! -d "$voices/samples" ]; then
-  echo "::error::$voices/samples not found in RokctAI/agent at this ref. The voices are on branch claude/voice-render-pipeline-qk3n8v (PR #319) until it merges: set the repository variable VOICES_REF to that branch (radio_ads/README.md, 'Render in CI')." >&2
+  echo "::error::$voices/samples not found in RokctAI/agent at this ref. The voices are expected under lms/team/voices/samples on RokctAI/agent main (PR #319); if VOICES_REF is set, check that it points at a ref that has them (radio_ads/README.md, 'Render in CI')." >&2
   exit 1
 fi
 

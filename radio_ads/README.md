@@ -84,24 +84,17 @@ it, renders it and attaches an artifact `radio-ad-<id>` holding
 `<id>.mp3`, `<id>.wav`, `report.json` and `ad.json`. The run's summary page
 shows duration, LUFS, true peak and the word check for each ad.
 
-One-time setup (repo admin):
+Setup: none beyond what the org already has.
 
-1. **Secret `AGENT_REPO_TOKEN`.** The persona voices are in the private repo
-   RokctAI/agent. Create a fine-grained personal access token at
-   github.com -> Settings -> Developer settings -> Personal access tokens ->
-   Fine-grained tokens -> Generate new token: resource owner **RokctAI**,
-   repository access **Only select repositories -> RokctAI/agent**,
-   repository permissions **Contents: Read-only** (nothing else), an expiry
-   you will remember to renew. (If the RokctAI org requires approval for
-   fine-grained tokens, an org owner approves it under the org's Settings ->
-   Personal access tokens -> Pending requests.) Then in RokctAI/factory:
-   Settings -> Secrets and variables -> Actions -> **Secrets** -> New
-   repository secret, name `AGENT_REPO_TOKEN`. Without it the run stops at
-   the first step with an error saying exactly this.
-2. **Variable `VOICES_REF`.** Same page, **Variables** tab -> New repository
-   variable `VOICES_REF` = `claude/voice-render-pipeline-qk3n8v`. The voices
-   are only on that branch (agent PR #319) until it merges; after the merge,
-   delete the variable (the default is `main`).
+- **Secret `MONOREPO_PAT`.** The persona voices are in the private repo
+  RokctAI/agent. The workflow reads them with the org's existing
+  cross-repo token `MONOREPO_PAT` (the same one `agent_checks.yml` uses to
+  check out RokctAI/agent), so no new token is needed. If the secret is not
+  available to RokctAI/factory the run stops at the first step with an
+  error saying so.
+- **Variable `VOICES_REF` (optional).** Branch, tag or SHA of RokctAI/agent
+  to take the voices from. Defaults to `main`, where the voices now live
+  (agent PR #319), so leave it unset.
 
 Then:
 
