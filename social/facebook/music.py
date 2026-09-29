@@ -134,6 +134,7 @@ ASSETS = Path(__file__).resolve().parent / "assets"
 VOICE_BRAND = ASSETS / "voice_brand.wav"
 VOICE_OPEN = ASSETS / "voice_open.wav"
 VOICE_CLOSE = ASSETS / "voice_close.wav"
+OPEN_PAUSE = 0.7  # seconds between "ROKCT" and the opening line
 
 
 def _trimmed(vo: Path, tmp: Path):
@@ -188,5 +189,5 @@ def add_voiceover(music: Path, duration, opener=True):
     after it (unless opener is False), the follow line over the close."""
     brand_end = _lay(music, VOICE_BRAND, lambda length: 0.15)
     if opener:
-        _lay(music, VOICE_OPEN, lambda length: (brand_end or 0) + 0.15)
+        _lay(music, VOICE_OPEN, lambda length: (brand_end or 0) + OPEN_PAUSE)
     _lay(music, VOICE_CLOSE, lambda length: max(0.5, duration - length - 0.35))
