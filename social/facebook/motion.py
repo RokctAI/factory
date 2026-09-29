@@ -54,13 +54,13 @@ TILE_TOP, TILE_BOTTOM = (244, 244, 245), (212, 212, 216)
 # motif sits at low alpha behind the text and moves slowly; the two soft
 # glows under it carry the type's tint next to the brand gold.
 MOTIFS = {
-    "Grant": ("aurora", "coins", "bars", "horizon"),
+    "Grant": ("aurora", "coins", "sprout", "confetti"),
     "Tender": ("blueprint", "checklist", "sheets", "ruler"),
     "Investor": ("network", "curve", "orbits", "hexes"),
     "Funding tip": ("notebook", "chevrons", "sparks", "waves"),
 }
 MOTIF_NAMES = {
-    "aurora": "Aurora ribbons", "coins": "Drifting coins", "bars": "Rising bars", "horizon": "Horizon grid",
+    "aurora": "Aurora ribbons", "coins": "Drifting coins", "sprout": "Sprouting stems", "confetti": "Confetti",
     "blueprint": "Blueprint grid", "checklist": "Checklist", "sheets": "Floating sheets", "ruler": "Tape measures",
     "network": "Constellation", "curve": "Growth curve", "orbits": "Orbits", "hexes": "Honeycomb",
     "notebook": "Ruled page", "chevrons": "Chevrons", "sparks": "Idea sparks", "waves": "Waves",
@@ -338,27 +338,45 @@ class Scene:
             ri = r * 0.62
             d.ellipse([x - ri, y - ri, x + ri, y + ri], outline=self.accent + (a // 2,), width=2)
 
-    def _m_bars(self, d, t, hit):
-        # A bar chart along the foot, each bar breathing on its own clock.
-        n, gap = 16, 16
-        bw = (W - gap * (n + 1)) / n
-        for k in range(n):
-            base = 140 + 260 * _noise(k, 2)
-            h = base * (0.7 + 0.3 * math.sin(t * (0.5 + 0.2 * (k % 4)) + k)) + 40 * hit * (k % 3 == 0)
-            x = gap + k * (bw + gap)
-            d.rectangle([x, H - h, x + bw, H], fill=self.accent + (30,))
-            d.rectangle([x, H - h, x + bw, H - h + 6], fill=self.accent + (60,))
+    def _m_sprout(self, d, t, hit):
+        # Stems growing up from the foot, each with a pair of leaves, swaying.
+        a = self.accent
+        grow = _ease(_phase(t, 0.2, 3.5))
+        for k in range(9):
+            x0 = 60 + _noise(k) * (W - 120)
+            height = (420 + 520 * _noise(k, 1)) * grow
+            lean = (_noise(k, 2) - 0.5) * 260
+            sway = math.sin(t * 0.7 + k) * 22
+            pts = []
+            for i in range(21):
+                u = i / 20
+                y = H + 20 - height * u
+                x = x0 + lean * u * u + sway * u
+                pts.append((x, y))
+            d.line(pts, fill=a + (46,), width=5, joint="curve")
+            for j, u in enumerate((0.45, 0.72)):
+                if height * u < 60:
+                    continue
+                x, y = pts[int(u * 20)]
+                side = 1 if (k + j) % 2 else -1
+                leaf = [(x, y), (x + side * 44, y - 30), (x + side * 70, y + 6), (x + side * 40, y + 26)]
+                d.polygon(leaf, fill=a + (34,), outline=a + (70,), width=2)
+            tx, ty = pts[-1]
+            r = 7 + 4 * hit * (k % 3 == 0)
+            d.ellipse([tx - r, ty - r, tx + r, ty + r], fill=a + (150,))
 
-    def _m_horizon(self, d, t, hit):
-        # A perspective floor rolling toward the viewer under a horizon line.
-        a, hz, vx = self.accent, H * 0.62, W / 2
-        d.line([(0, hz), (W, hz)], fill=a + (80,), width=3)
-        for k in range(-9, 10):
-            d.line([(vx + k * 80, hz), (vx + k * 900, H)], fill=a + (36,), width=2)
-        for k in range(14):
-            f = ((k + t * 0.35) % 14) / 14  # 0 at the horizon, 1 at the foot
-            y = hz + (H - hz) * f * f
-            d.line([(0, y), (W, y)], fill=a + (int(16 + 56 * f),), width=2 if f < 0.5 else 3)
+    def _m_confetti(self, d, t, hit):
+        # Confetti drifting down, each piece a small bar tumbling at its own rate.
+        a = self.accent
+        for k in range(44):
+            depth = k % 3
+            w, h = 28 + 14 * depth, 10 + 4 * depth
+            x = _noise(k) * W + math.sin(t * (0.5 + 0.2 * depth) + k) * (40 + 20 * depth)
+            y = ((t * (45 + 28 * depth) + _noise(k, 1) * (H + 200)) % (H + 200)) - 100
+            ang = t * (1.2 + 0.4 * (k % 4)) + k
+            c, s = math.cos(ang), math.sin(ang)
+            pts = [(x + px * c - py * s, y + px * s + py * c) for px, py in ((-w / 2, -h / 2), (w / 2, -h / 2), (w / 2, h / 2), (-w / 2, h / 2))]
+            d.polygon(pts, fill=a + (50 + 30 * depth,))
 
     # Tenders: structured, official, measured.
 
