@@ -25,15 +25,17 @@ One run = one post:
               (duration_seconds, silent_ok) plus the post description,
               every fact copied verbatim from the card (reel_rules.md rule 5:
               no invented terms).
-  3. motion - animate the 1080x1920 clip (motion.py): brand, count-up
-              figure, title, live days-left counter, "link in the
-              description" close. Brand name only; the domain stays in the
-              description.
+  3. motion - animate the 1080x1920 clip (motion.py): brand mark, count-up
+              figure from frame one, title, live days-left counter, "link in
+              the comments" close, all on the beat of a track synthesised by
+              music.py (royalty-free by construction). Brand name only; the
+              link and domain go in the post's first comment.
   4. render - hand the folder to RokctAI/agent's tiktok_render.py, the one
-              renderer the fleet already uses, which conforms and encodes it
-              to render/<id>.mp4.
+              renderer the fleet already uses, which conforms the clip and
+              mixes the music in, writing render/<id>.mp4.
   5. post   - publish the MP4 to the Page as a Reel (Graph API video_reels),
-              read back its permalink, and record it in posted.json.
+              add the apply link as the first comment, read back the
+              permalink, and record it in posted.json.
 
 With no Page credentials in the environment the run is a dry run: steps
 1-4 happen, nothing is published and the ledger is untouched, so the
@@ -67,7 +69,7 @@ LEDGER = HERE / "posted.json"
 GRAPH = "https://graph.facebook.com/v21.0"
 RUPLOAD = "https://rupload.facebook.com/video-upload/v21.0"
 MIN_DAYS_LEFT = 7
-DURATION_SECONDS = 15
+DURATION_SECONDS = 12
 SITE = "https://rokct.ai"
 
 
@@ -180,9 +182,13 @@ def make_brief(opp, today: dt.date):
             f"{headline_for(opp)} - {opp['title']}",
             "",
             closes + ".",
+            "Link in the comments.",
+        ]
+    )
+    comment = "\n".join(
+        [
             f"Apply: {opp['link']}",
-            "",
-            f"More funding, grants and tenders every day at {SITE}",
+            f"More funding, grants and tenders every day: {SITE}",
         ]
     )
     return {
@@ -191,6 +197,7 @@ def make_brief(opp, today: dt.date):
         "hook": "",
         "on_screen_text": [],
         "caption": caption,
+        "first_comment": comment,
         "duration_seconds": DURATION_SECONDS,
         "source_key": opp["key"],
         "_pipeline_only": {"silent_ok": True},
@@ -200,9 +207,13 @@ def make_brief(opp, today: dt.date):
 # ------------------------------------------------------------------- motion
 
 
-def make_motion(opp, today: dt.date, path: Path):
+def make_motion(opp, today: dt.date, folder: Path):
+    """The visual (motion.mp4) and its soundtrack (music.wav), side by side
+    in the post folder - the renderer takes them as the visual and audio."""
     from motion import render_motion
+    from music import add_voiceover, render_music, tempo_for
 
+    seed = today.toordinal()
     shown = dict(opp)
     shown["deadline_text"] = _nice_date(opp["deadline"])
     if opp["kind"] == "Grant":
@@ -210,7 +221,11 @@ def make_motion(opp, today: dt.date, path: Path):
     else:
         shown["who"] = opp.get("region") or "South Africa"
     days_left = (opp["deadline"] - today).days
-    return render_motion(shown, headline_for(opp), days_left, today.toordinal(), DURATION_SECONDS, path)
+    render_music(seed, DURATION_SECONDS, folder / "music.wav")
+    add_voiceover(folder / "music.wav", DURATION_SECONDS)
+    render_motion(
+        shown, headline_for(opp), days_left, seed, DURATION_SECONDS, tempo_for(seed), folder / "motion.mp4"
+    )
 
 
 # ------------------------------------------------------------------- render
@@ -305,6 +320,18 @@ def publish_reel(page_id, token, mp4: Path, description):
     return video_id, permalink or f"https://www.facebook.com/reel/{video_id}"
 
 
+def post_comment(object_id, token, message):
+    """The apply link rides in the first comment, not in the video."""
+    return _check(
+        requests.post(
+            f"{GRAPH}/{object_id}/comments",
+            data={"message": message, "access_token": token},
+            timeout=60,
+        ),
+        "first comment",
+    ).get("id")
+
+
 def share_link(url):
     return "https://www.facebook.com/sharer/sharer.php?u=" + urllib.parse.quote(url, safe="")
 
@@ -331,7 +358,7 @@ def main(argv=None):
     folder = args.out / brief["id"]
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "brief.json").write_text(json.dumps(brief, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    make_motion(opp, args.today, folder / "motion.mp4")
+    make_motion(opp, args.today, folder)
     mp4 = render(folder, args.agent.resolve())
     print(f"Picked {opp['key']} (closes {opp['deadline']}); rendered {mp4}")
 
@@ -344,6 +371,7 @@ def main(argv=None):
         summary.append(f"- Dry run ({why}); the rendered MP4 is in the run artifacts.")
     else:
         video_id, permalink = publish_reel(page_id, token, mp4, brief["caption"])
+        post_comment(video_id, token, brief["first_comment"])
         ledger.append(
             {
                 "date": args.today.isoformat(),

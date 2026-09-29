@@ -19,11 +19,13 @@ Draws every frame with Pillow and pipes them to ffmpeg, producing a
 beats, in order: the brand drops in, the kind badge slides across, the
 headline figure counts up to its exact card value, the title rises line
 by line, the deadline lands with a live days-left counter, and the close
-points the viewer at the description for the link. The domain never
+points the viewer at the first comment for the link. The domain never
 appears in the video; the brand name does.
 
-The palette and background motif rotate by date, so consecutive days do
-not look like one template (Meta limits reach and monetisation on
+Built for the first second: the money figure is already on screen, big,
+in frame one, and the beats land on the music's tempo. Colours are the
+brand's; the background motif and the music rotate by date, so consecutive
+days do not look like one template (Meta limits reach and monetisation on
 repetitive, templated content).
 """
 
@@ -33,17 +35,18 @@ import subprocess
 from pathlib import Path
 
 W, H, FPS = 1080, 1920, 30
-BRAND = "ROKCT"
-CLOSE_LINE = "Link in the description"
+BRAND = "Rokct"
+CLOSE_LINE = "Link in the comments"
 
-# (background, glow, accent, text) - rotated by day.
-PALETTES = [
-    ((12, 12, 16), (255, 196, 0), (255, 196, 0), (245, 245, 245)),
-    ((8, 16, 28), (0, 170, 255), (90, 210, 255), (240, 246, 252)),
-    ((20, 10, 24), (255, 70, 140), (255, 120, 170), (250, 242, 246)),
-    ((6, 20, 14), (0, 220, 130), (80, 240, 170), (238, 250, 244)),
-    ((24, 14, 6), (255, 120, 20), (255, 160, 70), (252, 246, 240)),
-]
+# Brand, from RokctAI_frontend: --primary hsl(48 96% 53%) on the dark
+# --background hsl(240 10% 3.9%); the logo tile is the header's dark-mode
+# zinc-100 -> zinc-300 gradient carrying logo_dark.svg.
+BG = (9, 9, 11)
+ACCENT = (250, 204, 21)
+INK = (244, 244, 245)
+TILE_TOP, TILE_BOTTOM = (244, 244, 245), (212, 212, 216)
+ASSETS = Path(__file__).resolve().parent / "assets"
+LOGO = ASSETS / "rokct-logo-dark.png"
 
 
 def _font(size, bold=True):
@@ -123,27 +126,55 @@ def _glow(color, radius):
     return img.filter(ImageFilter.GaussianBlur(radius // 2))
 
 
+def _logo_tile(size):
+    """The header brand mark: rounded gradient tile with the logo inside."""
+    from PIL import Image, ImageDraw
+
+    tile = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    grad = Image.new("RGBA", (size, size))
+    gd = ImageDraw.Draw(grad)
+    for y in range(size):
+        k = y / max(1, size - 1)
+        gd.line([(0, y), (size, y)], fill=tuple(
+            int(TILE_TOP[i] + (TILE_BOTTOM[i] - TILE_TOP[i]) * k) for i in range(3)) + (255,))
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).rounded_rectangle([0, 0, size - 1, size - 1], radius=size // 5, fill=255)
+    tile.paste(grad, (0, 0), mask)
+    if LOGO.exists():
+        logo = Image.open(LOGO).convert("RGBA")
+        h = int(size * 0.66)
+        logo = logo.resize((int(logo.width * h / logo.height), h), Image.LANCZOS)
+        tile.alpha_composite(logo, ((size - logo.width) // 2, (size - logo.height) // 2))
+    return tile
+
+
 class Scene:
-    def __init__(self, opp, headline, days_left, seed, duration):
+    def __init__(self, opp, headline, days_left, seed, duration, bpm):
         from PIL import Image
 
         self.opp = opp
         self.headline = headline
         self.days_left = days_left
         self.duration = duration
-        self.bg, glow, self.accent, self.ink = PALETTES[seed % len(PALETTES)]
+        self.beat = 60.0 / bpm
+        self.bg, self.accent, self.ink = BG, ACCENT, INK
         self.motif = seed % 3
-        self.glows = [_glow(glow, 260), _glow(self.accent, 200)]
+        self.glows = [_glow(ACCENT, 260), _glow((255, 150, 0), 200)]
         self.base = Image.new("RGB", (W, H), self.bg)
-        self.f_brand = _font(54)
-        self.f_brand_big = _font(150)
+        self.tile_small = _logo_tile(84)
+        self.tile_big = _logo_tile(300)
+        self.f_brand = _font(58)
+        self.f_brand_big = _font(130)
         self.f_kind = _font(42)
-        self.f_head = _font(96)
+        self.f_head = _font(104)
         self.f_title = _font(48, bold=False)
         self.f_date = _font(54)
-        self.f_days = _font(170)
         self.f_small = _font(44, bold=False)
-        self.f_cta = _font(58)
+        self.f_cta = _font(62)
+
+    def pulse(self, t):
+        """1 on each beat, decaying to 0 before the next - for on-beat hits."""
+        return math.exp(-((t % self.beat) / self.beat) * 6)
 
     # -- background -------------------------------------------------------
 
@@ -186,7 +217,6 @@ class Scene:
         self._background(img, t)
         d = ImageDraw.Draw(img, "RGBA")
         margin, inner = 96, W - 2 * 96
-        end_start = self.duration - 3.2
 
         def text(xy, s, font, fill, alpha=1.0):
             # ImageDraw ignores fill alpha for text, so fades go through a mask.
@@ -198,53 +228,59 @@ class Scene:
             ImageDraw.Draw(mask).text((-left, -top), s, font=font, fill=int(255 * alpha))
             img.paste(fill, (int(xy[0] + left), int(xy[1] + top)), mask)
 
-        # Brand, top-left, drops in.
-        p = _back(_phase(t, 0.0, 0.6))
-        if t < end_start:
-            text((margin, 110 - 80 * (1 - p)), BRAND, self.f_brand, self.accent, p)
+        end_start = self.duration - 2.6
+        hit = self.pulse(t)
 
+        # Brand mark, top-left: logo tile + wordmark, drops in.
         if t < end_start:
-            fade = 1 - _ease(_phase(t, end_start - 0.5, 0.5))
+            p = _back(_phase(t, 0.0, 0.5))
+            y = int(100 - 60 * (1 - p))
+            if p > 0.05:
+                img.paste(self.tile_small, (margin, y), self.tile_small)
+            text((margin + 104, y + 8), BRAND, self.f_brand, self.ink, p)
 
-            # Kind badge slides in from the left.
-            p = _ease(_phase(t, 0.3, 0.6))
+            fade = 1 - _ease(_phase(t, end_start - 0.4, 0.4))
+
+            # Kind badge: already there in frame one, slides the last bit.
+            p = _ease(_phase(t, -0.3, 0.6))
             label = self.opp["kind"].upper()
             bw = d.textlength(label, font=self.f_kind) + 56
-            x = margin - (bw + margin) * (1 - p)
-            y = 440
+            x = margin - 200 * (1 - p)
+            y = 420
             d.rounded_rectangle([x, y, x + bw, y + 78], radius=39, fill=self.accent + (int(255 * fade),))
             text((x + 28, y + 14), label, self.f_kind, self.bg, fade)
 
-            # Headline figure scales in and counts up to the exact value.
-            p = _phase(t, 0.8, 2.0)
+            # Headline figure: on screen and big from frame one, counting up
+            # from 40% to the exact card value, kicking on every beat.
+            p = 0.4 + 0.6 * _phase(t, 0.0, 1.4)
             shown = counting(self.headline, p)
             lines = _wrap(d, self.headline, self.f_head, inner, 3)
             live = _wrap(d, shown, self.f_head, inner, 3) if p < 1 else lines
-            y = 580
-            pop = _back(_phase(t, 0.8, 0.5))
+            kick = 1 + 0.035 * hit
+            f_head = _font(int(104 * kick)) if hit > 0.05 else self.f_head
+            y = 560
             for line in live:
-                text((margin, y + 40 * (1 - pop)), line, self.f_head, self.ink, min(pop, fade))
-                y += 112
+                text((margin, y), line, f_head, self.accent if t < 1.4 else self.ink, fade)
+                y += 124
 
             # Title rises line by line.
-            y += 30
+            y += 24
             for i, line in enumerate(_wrap(d, self.opp["title"], self.f_title, inner, 4)):
-                p = _ease(_phase(t, 2.6 + i * 0.25, 0.6))
-                text((margin, y + 50 * (1 - p)), line, self.f_title, self.ink, min(p * 0.8, fade))
+                p = _ease(_phase(t, 1.0 + i * 0.18, 0.5))
+                text((margin, y + 50 * (1 - p)), line, self.f_title, self.ink, min(p * 0.85, fade))
                 y += 64
 
-            # Deadline block: date + live days-left counter.
-            y = max(y + 90, 1320)
-            p = _back(_phase(t, 4.6, 0.6))
+            # Deadline block: live days-left counter, pulsing on the beat.
+            y = max(y + 80, 1320)
+            p = _back(_phase(t, 2.2, 0.5))
             if p > 0.01:
                 w = (W - 2 * margin) * min(1, p)
                 d.rounded_rectangle(
                     [margin, y, margin + w, y + 330], radius=34, fill=(255, 255, 255, int(22 * fade))
                 )
                 d.rectangle([margin, y, margin + 12, y + 330], fill=self.accent + (int(255 * fade),))
-                count = int(round(self.days_left * _ease(_phase(t, 4.9, 1.4))))
-                pulse = 1 + 0.04 * math.sin(max(0, t - 6.3) * 6) * (t > 6.3)
-                days_font = _font(int(170 * pulse))
+                count = int(round(self.days_left * _ease(_phase(t, 2.4, 1.0))))
+                days_font = _font(int(170 * (1 + 0.05 * hit * (t > 3.4))))
                 text((margin + 50, y + 26), f"{count}", days_font, self.accent, min(p, fade))
                 nx = margin + 70 + d.textlength(f"{count}", font=days_font)
                 text((nx, y + 110), "days left", self.f_date, self.ink, min(p, fade))
@@ -257,22 +293,25 @@ class Scene:
                 )
 
             # Who it is from.
-            p = _ease(_phase(t, 7.2, 0.7))
-            who = self.opp.get("who") or ""
+            p = _ease(_phase(t, 4.0, 0.6))
             y2 = y + 400
-            for line in _wrap(d, who, self.f_small, inner, 2):
+            for line in _wrap(d, self.opp.get("who") or "", self.f_small, inner, 2):
                 text((margin, y2 + 30 * (1 - p)), line, self.f_small, self.ink, min(p * 0.85, fade))
                 y2 += 58
         else:
-            # Close: big brand + pointer to the description.
-            p = _back(_phase(t, end_start, 0.7))
+            # Close: the brand mark, big, and the pointer to the first comment.
+            p = _back(_phase(t, end_start, 0.6))
+            size = int(300 * (0.6 + 0.4 * min(1, p)) * (1 + 0.03 * hit))
+            if p > 0.05:
+                tile = self.tile_big.resize((size, size))
+                img.paste(tile, (int((W - size) / 2), int(H * 0.30 - size / 2 + 150)), tile)
             bw = d.textlength(BRAND, font=self.f_brand_big)
-            text(((W - bw) / 2, H * 0.36 + 60 * (1 - p)), BRAND, self.f_brand_big, self.accent, p)
-            p2 = _ease(_phase(t, end_start + 0.5, 0.6))
+            text(((W - bw) / 2, H * 0.30 + 330), BRAND, self.f_brand_big, self.ink, p)
+            p2 = _ease(_phase(t, end_start + 0.4, 0.5))
             cw = d.textlength(CLOSE_LINE, font=self.f_cta)
-            text(((W - cw) / 2, H * 0.52), CLOSE_LINE, self.f_cta, self.ink, p2)
-            bounce = abs(math.sin((t - end_start) * 5)) * 30
-            ax, ay = W / 2, H * 0.60 + bounce
+            text(((W - cw) / 2, H * 0.62), CLOSE_LINE, self.f_cta, self.accent, p2)
+            bounce = abs(math.sin((t - end_start) * math.pi / self.beat)) * 30
+            ax, ay = W / 2, H * 0.70 + bounce
             d.polygon(
                 [(ax - 40, ay), (ax + 40, ay), (ax, ay + 50)],
                 fill=self.accent + (int(255 * p2),),
@@ -283,9 +322,9 @@ class Scene:
         return img
 
 
-def render_motion(opp, headline, days_left, seed, duration, out: Path):
+def render_motion(opp, headline, days_left, seed, duration, bpm, out: Path):
     """Write the animated clip to `out` (mp4, no audio)."""
-    scene = Scene(opp, headline, days_left, seed, duration)
+    scene = Scene(opp, headline, days_left, seed, duration, bpm)
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
