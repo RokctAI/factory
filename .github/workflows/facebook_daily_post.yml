@@ -1,0 +1,103 @@
+name: Facebook - Daily Opportunity Reel
+
+# One Reel a day on the RokctAI Facebook Page, built from an open, verified
+# opportunity in RokctAI/opportunities and rendered by RokctAI/agent's
+# tiktok_render.py. See social/facebook/README.md.
+on:
+  schedule:
+    - cron: '0 5 * * *' # 07:00 SAST
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Render only, do not publish'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: facebook-daily-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout opportunities
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/opportunities
+          path: _opportunities
+
+      - name: Checkout agent (renderer)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _agent
+          sparse-checkout: lms/team/scripts
+
+      - name: Install render tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install pillow requests
+
+      # Page credentials live in Occultation .env/production.env (below the
+      # END_FLUTTER marker), never as repo secrets. Values are masked before
+      # use, parsed outside the workspace, and the fetched file is deleted
+      # in-step. Missing keys make this a dry run, not a failure.
+      - name: Resolve Facebook Page credentials
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          ENV_FILE="$RUNNER_TEMP/production.env"
+          if [ -z "$GH_TOKEN" ] || ! gh api "repos/RokctAI/Occultation/contents/.env/production.env" -H "Accept: application/vnd.github.v3.raw" > "$ENV_FILE"; then
+            rm -f "$ENV_FILE"
+            echo "::warning::Could not fetch Occultation production.env - running as a dry run."
+            exit 0
+          fi
+          for NAME in FACEBOOK_PAGE_ID FACEBOOK_PAGE_ACCESS_TOKEN; do
+            LINE=$(grep -E "^[[:space:]]*(export[[:space:]]+)?${NAME}=" "$ENV_FILE" | head -n 1 | tr -d '\r')
+            VALUE=$(printf '%s' "$LINE" | cut -d= -f2- | sed -e "s/^[[:space:]]*//" -e "s/[[:space:]]*\$//" -e "s/^[\"']//" -e "s/[\"']\$//")
+            if [ -n "$VALUE" ]; then
+              echo "::add-mask::$VALUE"
+              echo "$NAME=$VALUE" >> "$GITHUB_ENV"
+              echo "✅ $NAME resolved."
+            else
+              echo "::warning::$NAME is empty in Occultation production.env - running as a dry run."
+            fi
+          done
+          rm -f "$ENV_FILE"
+
+      - name: Build and post today's Reel
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi
+          python social/facebook/opportunity_post.py \
+            --opportunities _opportunities --agent _agent --out "$RUNNER_TEMP/facebook" $ARGS
+
+      - name: Keep the rendered video
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: facebook-reel
+          path: ${{ runner.temp }}/facebook
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Record the post
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add social/facebook/posted.json
+          if git diff --staged --quiet; then
+            echo "Nothing published - ledger unchanged."
+          else
+            git commit -m "chore(social): record today's Facebook opportunity Reel [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
