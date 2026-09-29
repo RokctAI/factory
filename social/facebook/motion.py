@@ -56,13 +56,13 @@ TILE_TOP, TILE_BOTTOM = (244, 244, 245), (212, 212, 216)
 MOTIFS = {
     "Grant": ("aurora", "coins", "sprout", "confetti"),
     "Tender": ("blueprint", "checklist", "sheets", "ruler"),
-    "Investor": ("network", "curve", "orbits", "hexes"),
+    "Investor": ("network", "globe", "orbits", "hexes"),
     "Funding tip": ("notebook", "chevrons", "sparks", "waves"),
 }
 MOTIF_NAMES = {
     "aurora": "Aurora ribbons", "coins": "Drifting coins", "sprout": "Sprouting stems", "confetti": "Confetti",
     "blueprint": "Blueprint grid", "checklist": "Checklist", "sheets": "Floating sheets", "ruler": "Tape measures",
-    "network": "Constellation", "curve": "Growth curve", "orbits": "Orbits", "hexes": "Honeycomb",
+    "network": "Constellation", "globe": "Turning globe", "orbits": "Orbits", "hexes": "Honeycomb",
     "notebook": "Ruled page", "chevrons": "Chevrons", "sparks": "Idea sparks", "waves": "Waves",
 }
 TINT = {"Grant": (255, 150, 0), "Tender": (150, 160, 185), "Investor": (255, 110, 60), "Funding tip": (255, 228, 170)}
@@ -470,24 +470,36 @@ class Scene:
             r = 5 + k % 3 * 2 + 3 * hit * (k % 5 == 0)
             d.ellipse([x - r, y - r, x + r, y + r], fill=self.accent + (120,))
 
-    def _m_curve(self, d, t, hit):
-        # A growth curve drawing itself up and to the right, glowing, its area shaded.
+    def _m_globe(self, d, t, hit):
+        # A dotted globe turning slowly behind the card, lower right: capital
+        # that reaches across borders. Only the front hemisphere is drawn,
+        # dots fading toward the rim.
         a = self.accent
-        p = _ease(_phase(t, 0.3, 3.0))
-        n = 60
-        pts = []
-        for i in range(int(n * p) + 1):
-            u = i / n
-            x = -20 + (W + 10) * u
-            y = H * 0.88 - H * 0.36 * u ** 2.2 + 26 * math.sin(u * 9 + t * 0.9)
-            pts.append((x, y))
-        if len(pts) > 1:
-            d.polygon(pts + [(pts[-1][0], H), (pts[0][0], H)], fill=a + (12,))
-            for w, al in ((26, 14), (14, 30), (5, 110)):
-                d.line(pts, fill=a + (al,), width=w, joint="curve")
-            x, y = pts[-1]
-            r = 10 + 6 * hit
-            d.ellipse([x - r, y - r, x + r, y + r], fill=a + (200,))
+        cx, cy, R = W * 0.70, H * 0.66, 560
+        spin = t * 0.18
+        for lat in range(-75, 90, 15):
+            phi = math.radians(lat)
+            n = max(6, int(36 * math.cos(phi)))
+            for i in range(n):
+                lam = i * 2 * math.pi / n + spin
+                z = math.cos(phi) * math.cos(lam)
+                if z <= 0:
+                    continue
+                x = cx + R * math.cos(phi) * math.sin(lam)
+                y = cy - R * math.sin(phi)
+                r = 2 + 5 * z
+                d.ellipse([x - r, y - r, x + r, y + r], fill=a + (int(10 + 120 * z * z),))
+        # Meridians: half-ellipses whose width follows the spin, so the
+        # sphere reads as turning rather than as a flat grid.
+        for k in range(6):
+            lam = k * math.pi / 6 + spin % (math.pi / 6)
+            rx = abs(R * math.sin(lam))
+            if rx > 4:
+                d.arc([cx - rx, cy - R, cx + rx, cy + R], 90, 270 if math.cos(lam) > 0 else 90, fill=a + (40,), width=2)
+                d.arc([cx - rx, cy - R, cx + rx, cy + R], -90, 90, fill=a + (40,), width=2)
+        d.ellipse([cx - R, cy - R, cx + R, cy + R], outline=a + (70,), width=3)
+        r = 12 + 6 * hit
+        d.ellipse([cx - r, cy - R * 0.35 - r, cx + r, cy - R * 0.35 + r], fill=a + (160,))
 
     def _m_orbits(self, d, t, hit):
         # Three tilted orbits around one centre, a body on each with a short trail.
