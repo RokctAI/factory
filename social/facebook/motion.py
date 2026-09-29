@@ -37,6 +37,9 @@ from pathlib import Path
 W, H, FPS = 1080, 1920, 30
 BRAND = "ROKCT"
 CLOSE_LINE = "Link in the comments"
+# TikTok and YouTube Shorts do not make links in comments clickable, so
+# their cut points at the profile link instead.
+CLOSE_LINE_BIO = "Link in bio"
 
 # Brand, from RokctAI_frontend: --primary hsl(48 96% 53%) on the dark
 # --background hsl(240 10% 3.9%); the logo tile is the header's dark-mode
@@ -96,10 +99,19 @@ def _wrap(draw, text, font, width, max_lines):
 _NUMBER = re.compile(r"\d[\d,\s]*(?:\.\d+)?")
 
 
-def counting(text, progress):
-    """The headline with its first number counted up to `progress` of its
-    value, formatted the way the card writes it. At progress 1 the text is
-    exactly the card's text - the count only ever lands on the real figure."""
+def _value(text):
+    m = _NUMBER.search(text or "")
+    try:
+        return float(re.sub(r"[,\s]", "", m.group(0))) if m else None
+    except ValueError:
+        return None
+
+
+def counting(text, progress, start=0.0):
+    """The headline with its first number counted from `start` up to its
+    value (`progress` 0..1), formatted the way the card writes it. At
+    progress 1 the text is exactly the card's text - the count only ever
+    lands on the real figure."""
     m = _NUMBER.search(text)
     if not m or progress >= 1:
         return text
@@ -109,10 +121,50 @@ def counting(text, progress):
         value = float(digits)
     except ValueError:
         return text
-    now = value * _ease(progress)
+    now = start + (value - start) * _ease(progress)
     decimals = len(digits.split(".")[1]) if "." in digits else 0
     shown = f"{now:,.{decimals}f}" if "," in raw else f"{now:.{decimals}f}"
     return text[: m.start()] + shown + text[m.start() + len(raw):]
+
+
+_UNIT = r"(?:\s?(?:million|billion|bn|m|k|lakhs?|crores?)\b)?"
+_AMOUNT = re.compile(r"\d[\d,]*(?:\.\d+)?" + _UNIT, re.I)
+_RANGE_JOIN = re.compile(r"\s*(?:to|-|–)\s*[^\d\s]{0,3}", re.I)
+MIN_AT, HOLD, MAX_FOR = 1.2, 0.6, 1.2  # range: count to min, hold, count to max
+
+
+def split_figure(text):
+    """'Up to $2,000 to $7,500 per project' ->
+    ('Up to $2,000 to $7,500', 'per project', index where the minimum ends).
+    The index is None for a single figure; None overall when there is no number."""
+    m = _AMOUNT.search(text)
+    if not m:
+        return None
+    end, first_end = m.end(), None
+    j = _RANGE_JOIN.match(text, end)
+    m2 = _AMOUNT.match(text, j.end()) if j else None
+    if m2:
+        first_end, end = m.end(), m2.end()
+    return text[:end].strip(), text[end:].strip(" ,"), first_end
+
+
+def figure_at(figure, first_end, t):
+    """(text to show, finished) at t seconds. A single figure counts up from
+    40%; a range counts to its minimum, holds, then counts on to its maximum
+    on the same line."""
+    if first_end is None:
+        p = 0.4 + 0.6 * _phase(t, 0.0, 1.4)
+        return counting(figure, p), p >= 1
+    head, tail = figure[:first_end], figure[first_end:]
+    if t < MIN_AT + HOLD:
+        return counting(head, 0.4 + 0.6 * _phase(t, 0.0, MIN_AT)), False
+    lo, hi = _value(head), _value(tail)
+    same_unit = re.search(_UNIT + "$", head.strip(), re.I).group(0).strip().lower() == (
+        re.search(_UNIT + "$", tail.strip(), re.I).group(0).strip().lower()
+    )
+    start = lo if (lo is not None and hi and same_unit and lo < hi) else 0.4 * (hi or 0)
+    p = _phase(t, MIN_AT + HOLD, MAX_FOR)
+    return head + counting(tail, p, start), p >= 1
 
 
 def _glow(color, radius):
@@ -149,10 +201,11 @@ def _logo_tile(size):
 
 
 class Scene:
-    def __init__(self, opp, headline, days_left, seed, duration, bpm):
+    def __init__(self, opp, headline, days_left, seed, duration, bpm, close_line=CLOSE_LINE):
         from PIL import Image
 
         self.opp = opp
+        self.close_line = close_line
         self.headline = headline
         self.days_left = days_left
         self.duration = duration
@@ -166,6 +219,7 @@ class Scene:
         self.f_brand_big = _font(130)
         self.f_kind = _font(42)
         self.f_head = _font(104)
+        self.f_rest = _font(58)
         self.f_title = _font(48, bold=False)
         self.f_date = _font(54)
         self.f_small = _font(44, bold=False)
@@ -250,17 +304,31 @@ class Scene:
             text((x + 28, y + 14), label, self.f_kind, self.bg, fade)
 
             # Headline figure: on screen and big from frame one, counting up
-            # from 40% to the exact card value, kicking on every beat.
-            p = 0.4 + 0.6 * _phase(t, 0.0, 1.4)
-            shown = counting(self.headline, p)
-            lines = _wrap(d, self.headline, self.f_head, inner, 3)
-            live = _wrap(d, shown, self.f_head, inner, 3) if p < 1 else lines
+            # to the exact card value, kicking on every beat. A grant's
+            # figure (a range too) stays on one line, sized to fit; what
+            # follows it ("per project") sits underneath.
             kick = 1 + 0.035 * hit
-            f_head = _font(int(104 * kick)) if hit > 0.05 else self.f_head
+            split = split_figure(self.headline) if self.opp["kind"] == "Grant" else None
             y = 560
-            for line in live:
-                text((margin, y), line, f_head, self.accent if t < 1.4 else self.ink, fade)
+            if split:
+                figure, rest, first_end = split
+                size = min(104, int(104 * inner / max(1, d.textlength(figure, font=self.f_head))))
+                shown, done = figure_at(figure, first_end, t)
+                f_fig = _font(int(size * kick)) if hit > 0.05 else _font(size)
+                text((margin, y + (104 - size) * 0.6), shown, f_fig, self.ink if done else self.accent, fade)
                 y += 124
+                for line in _wrap(d, rest, self.f_rest, inner, 2):
+                    text((margin, y), line, self.f_rest, self.ink, fade)
+                    y += 70
+            else:
+                p = 0.4 + 0.6 * _phase(t, 0.0, 1.4)
+                shown = counting(self.headline, p)
+                lines = _wrap(d, self.headline, self.f_head, inner, 3)
+                live = _wrap(d, shown, self.f_head, inner, 3) if p < 1 else lines
+                f_head = _font(int(104 * kick)) if hit > 0.05 else self.f_head
+                for line in live:
+                    text((margin, y), line, f_head, self.accent if t < 1.4 else self.ink, fade)
+                    y += 124
 
             # Title rises line by line.
             y += 24
@@ -270,9 +338,26 @@ class Scene:
                 y += 64
 
             # Deadline block: live days-left counter, pulsing on the beat.
+            # Posts with no deadline (investors, tips) carry a two-line
+            # panel instead: opp["panel"] = (big accent line, small line).
             y = max(y + 80, 1320)
             p = _back(_phase(t, 2.2, 0.5))
-            if p > 0.01:
+            panel = self.opp.get("panel")
+            if panel and p > 0.01:
+                w = (W - 2 * margin) * min(1, p)
+                d.rounded_rectangle(
+                    [margin, y, margin + w, y + 330], radius=34, fill=(255, 255, 255, int(22 * fade))
+                )
+                d.rectangle([margin, y, margin + 12, y + 330], fill=self.accent + (int(255 * fade),))
+                big = _wrap(d, panel[0], self.f_date, inner - 100, 2)
+                yy = y + 40 + (60 if len(big) == 1 else 0)
+                for line in big:
+                    text((margin + 50, yy), line, self.f_date, self.accent, min(p, fade))
+                    yy += 72
+                for line in _wrap(d, panel[1], self.f_small, inner - 100, 2):
+                    text((margin + 50, yy + 20), line, self.f_small, self.ink, min(p, fade))
+                    yy += 56
+            elif p > 0.01:
                 w = (W - 2 * margin) * min(1, p)
                 d.rounded_rectangle(
                     [margin, y, margin + w, y + 330], radius=34, fill=(255, 255, 255, int(22 * fade))
@@ -307,8 +392,8 @@ class Scene:
             bw = d.textlength(BRAND, font=self.f_brand_big)
             text(((W - bw) / 2, H * 0.36 + size + 40 + 60 * (1 - p)), BRAND, self.f_brand_big, self.ink, p)
             p2 = _ease(_phase(t, end_start + 0.4, 0.5))
-            cw = d.textlength(CLOSE_LINE, font=self.f_cta)
-            text(((W - cw) / 2, H * 0.62), CLOSE_LINE, self.f_cta, self.accent, p2)
+            cw = d.textlength(self.close_line, font=self.f_cta)
+            text(((W - cw) / 2, H * 0.62), self.close_line, self.f_cta, self.accent, p2)
             bounce = abs(math.sin((t - end_start) * math.pi / self.beat)) * 30
             ax, ay = W / 2, H * 0.70 + bounce
             d.polygon(
@@ -321,9 +406,9 @@ class Scene:
         return img
 
 
-def render_motion(opp, headline, days_left, seed, duration, bpm, out: Path):
+def render_motion(opp, headline, days_left, seed, duration, bpm, out: Path, close_line=CLOSE_LINE):
     """Write the animated clip to `out` (mp4, no audio)."""
-    scene = Scene(opp, headline, days_left, seed, duration, bpm)
+    scene = Scene(opp, headline, days_left, seed, duration, bpm, close_line)
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),

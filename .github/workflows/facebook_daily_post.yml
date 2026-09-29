@@ -1,13 +1,20 @@
-name: Facebook - Daily Opportunity Reel
+name: Social - Daily Opportunity Reel
 
-# One Reel a day on the RokctAI Facebook Page, built from an open, verified
-# opportunity in RokctAI/opportunities and rendered by RokctAI/agent's
-# tiktok_render.py. See social/facebook/README.md.
+# One Reel a day on the RokctAI Facebook Page, TikTok and YouTube Shorts,
+# built from an open, verified opportunity in RokctAI/opportunities and
+# rendered by RokctAI/agent's tiktok_render.py. See social/facebook/README.md.
 on:
   schedule:
-    - cron: '0 5 * * *' # 07:00 SAST
+    - cron: '0 5 * * *'  # 07:00 SAST - grant (an investor once grants run out)
+    - cron: '0 10 * * *' # 12:00 SAST - tender
+    - cron: '0 15 * * *' # 17:00 SAST - spotlight (investor / funding tip on alternate days)
   workflow_dispatch:
     inputs:
+      stream:
+        description: 'Which slot to post'
+        type: choice
+        options: [grant, tender, spotlight]
+        default: grant
       dry_run:
         description: 'Render only, do not publish'
         type: boolean
@@ -50,7 +57,7 @@ jobs:
       # END_FLUTTER marker), never as repo secrets. Values are masked before
       # use, parsed outside the workspace, and the fetched file is deleted
       # in-step. Missing keys make this a dry run, not a failure.
-      - name: Resolve Facebook Page credentials
+      - name: Resolve platform credentials
         env:
           GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
         run: |
@@ -60,7 +67,9 @@ jobs:
             echo "::warning::Could not fetch Occultation production.env - running as a dry run."
             exit 0
           fi
-          for NAME in FACEBOOK_PAGE_ID FACEBOOK_PAGE_ACCESS_TOKEN; do
+          for NAME in FACEBOOK_PAGE_ID FACEBOOK_PAGE_ACCESS_TOKEN \
+                      TIKTOK_CLIENT_KEY TIKTOK_CLIENT_SECRET TIKTOK_REFRESH_TOKEN \
+                      YOUTUBE_CLIENT_ID YOUTUBE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN; do
             LINE=$(grep -E "^[[:space:]]*(export[[:space:]]+)?${NAME}=" "$ENV_FILE" | head -n 1 | tr -d '\r')
             VALUE=$(printf '%s' "$LINE" | cut -d= -f2- | sed -e "s/^[[:space:]]*//" -e "s/[[:space:]]*\$//" -e "s/^[\"']//" -e "s/[\"']\$//")
             if [ -n "$VALUE" ]; then
@@ -68,15 +77,24 @@ jobs:
               echo "$NAME=$VALUE" >> "$GITHUB_ENV"
               echo "✅ $NAME resolved."
             else
-              echo "::warning::$NAME is empty in Occultation production.env - running as a dry run."
+              echo "::notice::$NAME is empty in Occultation production.env - that platform is skipped."
             fi
           done
           rm -f "$ENV_FILE"
 
       - name: Build and post today's Reel
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          STREAM_INPUT: ${{ inputs.stream }}
         run: |
-          ARGS=""
-          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="--dry-run"; fi
+          case "$SCHEDULE" in
+            '0 10 * * *') STREAM=tender ;;
+            '0 15 * * *') STREAM=spotlight ;;
+            '0 5 * * *')  STREAM=grant ;;
+            *)            STREAM="${STREAM_INPUT:-grant}" ;;
+          esac
+          ARGS="--stream $STREAM"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           python social/facebook/opportunity_post.py \
             --opportunities _opportunities --agent _agent --out "$RUNNER_TEMP/facebook" $ARGS
 
@@ -89,7 +107,9 @@ jobs:
           retention-days: 14
           if-no-files-found: ignore
 
+      # Always: a platform that failed must not lose the ones that posted.
       - name: Record the post
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -97,7 +117,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "Nothing published - ledger unchanged."
           else
-            git commit -m "chore(social): record today's Facebook opportunity Reel [skip ci]"
+            git commit -m "chore(social): record today's opportunity Reel [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:main
           fi

@@ -183,9 +183,10 @@ def _lay(music: Path, vo: Path, at_for):
     return at + length
 
 
-def add_voiceover(music: Path, duration):
+def add_voiceover(music: Path, duration, opener=True):
     """ROKCT (a man's voice) on the first beat, the opening line straight
-    after it, the follow line over the close."""
+    after it (unless opener is False), the follow line over the close."""
     brand_end = _lay(music, VOICE_BRAND, lambda length: 0.15)
-    _lay(music, VOICE_OPEN, lambda length: (brand_end or 0) + 0.15)
+    if opener:
+        _lay(music, VOICE_OPEN, lambda length: (brand_end or 0) + 0.15)
     _lay(music, VOICE_CLOSE, lambda length: max(0.5, duration - length - 0.35))
