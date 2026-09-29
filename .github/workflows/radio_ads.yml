@@ -3,11 +3,12 @@ name: Radio ads
 # Push an ad JSON into radio_ads/inbox/ and this renders it: the finished
 # MP3 + WAV + report.json come back as a run artifact named radio-ad-<id>.
 # See radio_ads/README.md ("Render in CI") for the one-time setup:
-#   * secret   AGENT_REPO_TOKEN  fine-grained PAT, Contents: read on RokctAI/agent
-#   * variable VOICES_REF        branch/tag/SHA of RokctAI/agent holding
-#                                lms/team/voices (defaults to main)
+#   * secret   MONOREPO_PAT  the org's cross-repo token (already set; it reads
+#                            the private RokctAI/agent, like agent_checks.yml)
+#   * variable VOICES_REF    OPTIONAL: branch/tag/SHA of RokctAI/agent holding
+#                            lms/team/voices (defaults to main)
 #
-# Deliberately no pull_request trigger: the job needs AGENT_REPO_TOKEN and
+# Deliberately no pull_request trigger: the job needs MONOREPO_PAT and
 # fork PRs must never get it. The persona voices are copied into
 # radio_ads/voices/ (git-ignored), used for rendering and never printed,
 # committed or uploaded; only the rendered ads are.
@@ -56,12 +57,12 @@ jobs:
       matrix: ${{ steps.plan.outputs.matrix }}
       count: ${{ steps.plan.outputs.count }}
     steps:
-      - name: Check AGENT_REPO_TOKEN is set
+      - name: Check MONOREPO_PAT is set
         env:
-          AGENT_REPO_TOKEN: ${{ secrets.AGENT_REPO_TOKEN }}
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
-          if [ -z "$AGENT_REPO_TOKEN" ]; then
-            echo "::error title=AGENT_REPO_TOKEN missing::The persona voices live in the private repo RokctAI/agent, so this workflow needs a token to read them. Create a fine-grained personal access token (github.com/settings/personal-access-tokens/new): Resource owner RokctAI, Repository access 'Only select repositories' -> RokctAI/agent, Repository permissions -> Contents: Read-only (nothing else). Then add it to RokctAI/factory under Settings -> Secrets and variables -> Actions -> New repository secret, name AGENT_REPO_TOKEN, and re-run this workflow. See radio_ads/README.md 'Render in CI'."
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::The persona voices live in the private repo RokctAI/agent, so this workflow needs the org cross-repo token to read them. Make sure the secret MONOREPO_PAT is available to RokctAI/factory (organization secret with this repository selected, or a repository secret under Settings -> Secrets and variables -> Actions) and that the token can read RokctAI/agent, then re-run this workflow. See radio_ads/README.md 'Render in CI'."
             exit 1
           fi
 
@@ -88,7 +89,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
-          token: ${{ secrets.AGENT_REPO_TOKEN }}
+          token: ${{ secrets.MONOREPO_PAT }}
           ref: ${{ env.VOICES_REF }}
           path: .agent-voices
           fetch-depth: 1
@@ -148,7 +149,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
-          token: ${{ secrets.AGENT_REPO_TOKEN }}
+          token: ${{ secrets.MONOREPO_PAT }}
           ref: ${{ env.VOICES_REF }}
           path: .agent-voices
           fetch-depth: 1

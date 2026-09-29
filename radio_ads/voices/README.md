@@ -8,11 +8,11 @@ this folder is committed except this README.
 
 ## Fill it from the agent repo
 
-The tutor/assistant persona voices live in `RokctAI/agent` on branch
-`claude/voice-render-pipeline-qk3n8v` (PR #319):
+The tutor/assistant persona voices live in `RokctAI/agent` on `main`
+(PR #319, merged):
 
 ```bash
-git clone --depth 1 -b claude/voice-render-pipeline-qk3n8v https://github.com/RokctAI/agent.git /tmp/agent
+git clone --depth 1 https://github.com/RokctAI/agent.git /tmp/agent
 cp /tmp/agent/lms/team/voices/samples/*.wav   radio_ads/voices/
 cp /tmp/agent/lms/team/voices/*.voice.json    radio_ads/voices/
 ```
