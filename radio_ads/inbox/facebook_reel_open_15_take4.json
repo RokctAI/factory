@@ -1,0 +1,38 @@
+{
+  "$schema": "../schema/ad.schema.json",
+  "id": "facebook_reel_open_15_take4",
+  "client": "Rokct",
+  "notes": "Shared voice-over for every daily Facebook opportunity Reel (social/facebook). Opening line: the pipeline trims the silence and lays it over the first seconds of the Reel. 'Rokct' is pronounced 'rocket', so the script spells it that way. Alternative take (seed 42, 30 diffusion steps) for review.",
+  "duration_s": 15,
+  "format": "spot",
+  "cast": {
+    "announcer": {
+      "voice": "assistant_003"
+    }
+  },
+  "script": [
+    {
+      "speaker": "announcer",
+      "text": "Looking for funding? Here's one you can apply for, right now."
+    }
+  ],
+  "music": {
+    "bed": "none"
+  },
+  "output": {
+    "formats": [
+      "wav",
+      "mp3"
+    ],
+    "loudness_lufs": -16,
+    "true_peak_dbtp": -1
+  },
+  "render": {
+    "engine": "vibevoice",
+    "model": "microsoft/VibeVoice-1.5B",
+    "mode": "auto",
+    "cfg_scale": 1.3,
+    "ddpm_steps": 30,
+    "seed": 42
+  }
+}
