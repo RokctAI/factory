@@ -310,18 +310,34 @@ def headline_for(opp):
     return f"{opp['organization']} is taking bids"
 
 
+# Viewers land on the opportunity's own rokct.ai page, never straight on the
+# funder's apply link (Ray, 2026-09-29). The path is the one rokctai_frontend's
+# opportunity search links to: /opportunities/<tenders|grants|equity>/<slug>,
+# where the slug is the card's file stem (grants, equity) or the tender slug.
+PAGE_SECTION = {"grant": "grants", "tender": "tenders", "equity": "equity"}
+
+
+def page_url(opp):
+    kind, _, slug = opp["key"].partition(":")
+    section = PAGE_SECTION.get(kind)
+    if not section:
+        return SITE
+    return f"{SITE}/opportunities/{section}/{urllib.parse.quote(slug, safe='')}"
+
+
 def _post_text(opp):
     """(caption lead, closing line, first comment, caption link line) per kind."""
     more = f"More funding, grants and tenders every day: {SITE}"
+    page = page_url(opp)
     if opp["kind"] == "Investor":
         lead = f"{opp['organization']} invests in {opp['industry']} ({opp['stage']}), {opp['territory']}."
-        return lead, "No deadline: pitch any time.", f"Website: {opp['link']}\n{more}", f"Website: {opp['link']}"
+        return lead, "No deadline: pitch any time.", f"Details: {page}\n{more}", f"Details: {page}"
     if opp["kind"] == "Funding tip":
         lead = f"Funding tip: {opp['heading']}\n\n{opp['title']}"
         return lead, "Follow ROKCT for more funding opportunities every day.", more, ""
     closes = f"Closes {_nice_date(opp['deadline'])}."
     lead = f"{headline_for(opp)} - {opp['title']}"
-    return lead, closes, f"Apply: {opp['link']}\n{more}", f"Apply: {opp['link']}"
+    return lead, closes, f"How to apply: {page}\n{more}", f"How to apply: {page}"
 
 
 def make_brief(opp, today: dt.date, stream="grant"):
