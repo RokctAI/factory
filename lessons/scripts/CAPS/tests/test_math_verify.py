@@ -17,7 +17,10 @@
 
 Every verdict is exercised (verified, MISMATCH, MULTIPLE_CORRECT,
 NO_CORRECT, UNPARSEABLE, SKIPPED), including a deliberately wrong key and
-gibberish maths. math_verify needs sympy, which the stdlib-only Unit tests
+gibberish maths. The step checks (STEP_OK, STEP_WRONG, ANSWER_WRONG,
+WARNING, UNPARSEABLE, SKIPPED, CONSISTENT, CONTRADICTS_SCREEN) are exercised
+on chains, spoken maths, animations and narration-vs-screen, including an
+unconventional-but-valid route that must pass (truth, not method). math_verify needs sympy, which the stdlib-only Unit tests
 workflow does not install, so the whole module is skipped there and runs in
 .github/workflows/math_verify.yml instead.
 
@@ -269,6 +272,241 @@ class ReportTests(unittest.TestCase):
             md = out_md.read_text(encoding="utf-8")
             self.assertIn("MISMATCH", md)
             self.assertIn("subtopic_1_q1", md)
+
+
+# --- step checks: what we teach -------------------------------------------
+
+def steps(text, lit=False):
+    found, _ = mv.check_written_line(text, 1, lit=lit)
+    return [f["verdict"] for f in found], found
+
+
+def spoken(text):
+    found, _ = mv.check_spoken_text(text, 1)
+    return [f["verdict"] for f in found], found
+
+
+FLAGS = {"STEP_WRONG", "ANSWER_WRONG", "UNPARSEABLE"}
+
+
+@unittest.skipIf(mv is None, "sympy not installed")
+class StepChainTests(unittest.TestCase):
+    def test_correct_chain_is_ok_at_every_step(self):
+        v, found = steps("x² − 5x + 6 = 0 → (x−2)(x−3) = 0 → x = 2 or x = 3")
+        self.assertEqual(v, ["STEP_OK", "STEP_OK"])
+        self.assertEqual([f["step"] for f in found], [1, 2])
+
+    def test_wrong_factorisation_step_names_the_step(self):
+        v, found = steps("x² − 5x + 6 = 0 → (x−2)(x+3) = 0 → x = 2 or x = −3")
+        wrong = [f for f in found if f["verdict"] == "STEP_WRONG"]
+        self.assertEqual(len(wrong), 1)
+        self.assertEqual(wrong[0]["step"], 1)
+
+    def test_wrong_final_root_is_answer_wrong(self):
+        v, found = steps("x² − 5x + 6 = 0 → (x−2)(x−3) = 0 → x = 2 or x = 4")
+        self.assertEqual(v, ["STEP_OK", "ANSWER_WRONG"])
+        self.assertEqual(found[1]["step"], 2)
+
+    def test_root_losing_step_is_a_warning_not_wrong(self):
+        v, found = steps("x² = 3x → x = 3")
+        self.assertIn("WARNING", v)
+        self.assertFalse(FLAGS & set(v))
+        self.assertIn("dividing", [f for f in found
+                                   if f["verdict"] == "WARNING"][0]["reason"])
+
+    def test_squaring_gains_roots_as_a_warning(self):
+        v, found = steps("√(x + 2) = x → x + 2 = x² → x = 2 or x = −1")
+        warn = [f for f in found if f["verdict"] == "WARNING"]
+        self.assertEqual(len(warn), 1)
+        self.assertIn("squaring", warn[0]["reason"])
+        self.assertFalse(FLAGS & set(v))
+
+    def test_gibberish_is_unparseable(self):
+        v, _ = steps("x² + 3x = (x + 2)((x − ")
+        self.assertEqual(v, ["UNPARSEABLE"])
+        v, _ = steps("2x +* 3 = 7")
+        self.assertEqual(v, ["UNPARSEABLE"])
+
+    def test_numeric_equals_chain(self):
+        v, _ = steps("2(−1)² + 5(−1) + 3 = 2 − 5 + 3 = 0 ✓")
+        self.assertEqual(v, ["STEP_OK", "STEP_OK"])
+        v, found = steps("Range = 140 − 20 = 110 minutes")
+        self.assertEqual(v, ["STEP_WRONG"])
+
+    def test_identity_claims(self):
+        self.assertEqual(steps("a^m × a^n = a^(m+n)")[0], ["STEP_OK"])
+        self.assertEqual(steps("a^m × a^n = a^(mn)")[0], ["STEP_WRONG"])
+
+    def test_unit_conversion_and_percent_labels_are_not_flagged(self):
+        v, _ = steps("1 m = 1 000 mm", lit=True)
+        self.assertFalse(FLAGS & set(v))
+        v, _ = steps("Percentage = 34/60 × 100 = 56,67%")
+        self.assertEqual(v, ["STEP_OK"])
+        v, _ = steps("1 cm = 50 cm = 0,5 m", lit=True)
+        self.assertFalse(FLAGS & set(v))
+
+
+@unittest.skipIf(mv is None, "sympy not installed")
+class TruthNotMethodTests(unittest.TestCase):
+    """The checker judges whether each stated step is TRUE, never the route."""
+
+    def test_guess_and_check_route_passes(self):
+        v, _ = steps("Solve x² − 5x + 6 = 0 by guess-and-check: try x = 2: "
+                     "4 − 10 + 6 = 0 ✓; try x = 3: 9 − 15 + 6 = 0 ✓. "
+                     "So x = 2 or x = 3.")
+        self.assertIn("STEP_OK", v)
+        self.assertFalse(FLAGS & set(v))
+        self.assertNotIn("WARNING", v)
+
+    def test_big_jump_and_non_textbook_order_pass(self):
+        v, _ = steps("x² − 5x + 6 = 0 → x = 2 or x = 3")  # one leap
+        self.assertEqual(v, ["STEP_OK"])
+        v, _ = steps("−2x + 6 = (1/2)x − 4 → 10 = (5/2)x → 5x = 20 → x = 4")
+        self.assertEqual(set(v) - {"SKIPPED"}, {"STEP_OK"})
+
+    def test_mental_shortcut_passes(self):
+        v, _ = steps("99 × 12 = 100 × 12 − 12 = 1 188")
+        self.assertEqual(v, ["STEP_OK", "STEP_OK"])
+
+    def test_arrow_between_values_is_never_judged(self):
+        # 'maps to' / 'next term' / derivative arrows are not rewrites
+        for text in ("5 → 10 → 20 → 40", "x² → 2x", "7 cm → 3,5 km"):
+            v, _ = steps(text)
+            self.assertFalse(FLAGS & set(v), text)
+
+    def test_error_example_is_never_flagged(self):
+        v, _ = spoken("A common mistake: learners write that two plus two "
+                      "is five.")
+        self.assertFalse(FLAGS & set(v))
+
+
+@unittest.skipIf(mv is None, "sympy not installed")
+class SpokenMathsTests(unittest.TestCase):
+    def test_spoken_chain_ok_and_wrong_answer(self):
+        self.assertEqual(spoken("So x plus one equals three, which gives x "
+                                "equals two.")[0], ["STEP_OK"])
+        self.assertEqual(spoken("So x plus one equals three, which gives x "
+                                "equals five.")[0], ["ANSWER_WRONG"])
+
+    def test_spoken_numeric_fact(self):
+        self.assertEqual(spoken("Multiply: four times four is sixteen.")[0],
+                         ["STEP_OK"])
+        self.assertEqual(spoken("Multiply: four times four is fifteen.")[0],
+                         ["STEP_WRONG"])
+
+    def test_spoken_factorisation_identity(self):
+        v, _ = spoken("The factorisation: six x squared minus seven x minus "
+                      "three equals the quantity two x minus three, times the "
+                      "quantity three x plus one.")
+        self.assertEqual(v, ["STEP_OK"])
+
+    def test_spoken_two_roots_in_one_breath(self):
+        v, _ = spoken("So x squared minus five x plus six equals zero, which "
+                      "gives x equals two or x equals three.")
+        self.assertEqual(v, ["STEP_OK"])
+
+    def test_unhandled_vocabulary_is_never_flagged(self):
+        v, _ = spoken("Half of six is three, and sine thirty is one half.")
+        self.assertFalse(FLAGS & set(v))
+
+    def test_factorise_task_answer(self):
+        ok = mv._spoken_task_answer(
+            "Factorise six x squared minus seven x minus three. Split the "
+            "middle term. Two x minus three, times three x plus one.", 4)
+        self.assertEqual([f["verdict"] for f in ok], ["STEP_OK"])
+        bad = mv._spoken_task_answer(
+            "Factorise six x squared minus seven x minus three. Split the "
+            "middle term. Two x plus three, times three x plus one.", 4)
+        self.assertEqual([f["verdict"] for f in bad], ["ANSWER_WRONG"])
+        self.assertEqual(bad[0]["line"], 4)
+
+
+MANIM = """from manim import *
+
+class S(MovingCameraScene):
+    def construct(self):
+        # --- Band 0 (subtopic_1): the equation
+        a = MathTex(r"3x + 1 = 7")
+        b = MathTex(r"3x = 6 \\Rightarrow x = 2")
+        # --- Band 1 (subtopic_2): the error museum
+        w = MathTex(r"\\sqrt{9 + 16} = 3 + 4 = 7")
+        self.play(Create(strike(w)))
+        c = MathTex(r"\\frac{54^\\circ}{360^\\circ} = 0{,}15 = 15\\%")
+"""
+
+
+def lesson(tmp, narration):
+    d = Path(tmp) / "maths" / "session" / "grade10" / "term1" / "t" / "l"
+    d.mkdir(parents=True)
+    (d / "script.md").write_text(
+        "# Part 1 — Expert\n\n## Subtopic: One\n\n" + narration +
+        "\n\n## Subtopic: Two\n\nSquare roots do not split over plus.\n",
+        encoding="utf-8")
+    (d / "manim_scene.py").write_text(MANIM, encoding="utf-8")
+    return d
+
+
+@unittest.skipIf(mv is None, "sympy not installed")
+class AnimationAndConsistencyTests(unittest.TestCase):
+    def test_animation_steps_and_struck_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d = lesson(tmp, "Three x plus one equals seven, so x equals two.")
+            found = mv.check_manim(d / "manim_scene.py")
+            verdicts = [f["verdict"] for f in found]
+            self.assertIn("STEP_OK", verdicts)
+            self.assertFalse(FLAGS & set(verdicts))  # the struck line is skipped
+            self.assertEqual(
+                [f["line"] for f in found if f["verdict"] == "STEP_OK"
+                 and f["kind"] == "equals-chain"], [11, 11])
+
+    def test_narration_matching_screen_with_other_wording(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d = lesson(tmp, "Take one away from both sides: three x plus one "
+                            "equals seven, which gives x equals two.")
+            found = mv.check_consistency(d / "script.md", d / "manim_scene.py")
+            self.assertEqual([f["verdict"] for f in found], ["CONSISTENT"])
+
+    def test_narration_contradicting_screen(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d = lesson(tmp, "Three x plus one equals seven, so x equals three.")
+            found = mv.check_consistency(d / "script.md", d / "manim_scene.py")
+            self.assertEqual([f["verdict"] for f in found],
+                             ["CONTRADICTS_SCREEN"])
+            self.assertEqual(found[0]["line"], 5)
+
+    def test_cli_steps_only_exits_zero(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            lesson(tmp, "So x plus one equals three, which gives x equals five.")
+            out = Path(tmp) / "s.json"
+            rc = mv.main(["--steps-only", "--root", tmp, "--steps-json", str(out),
+                          "--steps-md", str(Path(tmp) / "s.md")])
+            self.assertEqual(rc, 0)  # report-only
+            report = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(report["totals"].get("ANSWER_WRONG"), 1)
+            self.assertIn("script | maths grade10", report["by_type_grade"])
+
+
+@unittest.skipIf(mv is None, "sympy not installed")
+class AgentPrivacyTests(unittest.TestCase):
+    def test_agent_rows_carry_no_text(self):
+        secret = ("Factorise six x squared minus seven x minus three. Two x "
+                  "plus three, times three x plus one.")
+        sample = json.dumps({"samples": [{"id": "s1", "grade": 11,
+                                          "script": secret}]}, indent=2)
+        orig = (mv._agent_tree, mv._agent_get)
+        mv._agent_tree = lambda repo, ref, token: [
+            "lms/team/tutors/CAPS/tutor_x/samples.json"]
+        mv._agent_get = lambda repo, path, ref, token: sample
+        try:
+            rows = mv.check_agent(token="t")
+        finally:
+            mv._agent_tree, mv._agent_get = orig
+        self.assertIn("ANSWER_WRONG", [r["verdict"] for r in rows])
+        for r in rows:
+            self.assertEqual(r["text"], "")
+            self.assertEqual(r["reason"], "")
+            self.assertNotIn("six x", json.dumps(r))
+            self.assertEqual(r["line"], 6)
 
 
 if __name__ == "__main__":

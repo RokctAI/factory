@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-"""Report-only maths correctness verifier for maths and Maths Lit MCQs.
+"""Report-only maths correctness verifier: MCQ keys and the maths we teach.
 
 lesson_pipeline.py's verify_answer_keys recognises a handful of regex forms
 (discriminant, rational roots, factor/expand strings, numeric "value of")
@@ -47,20 +47,79 @@ It is deliberately conservative: anything ambiguous is SKIPPED, never
 guessed at. The checker is REPORT-ONLY — it always exits 0 unless it crashes
 (CI: .github/workflows/math_verify.yml).
 
+Step checks — what we TEACH, not only what we ask (--steps / --steps-only)
+-------------------------------------------------------------------------
+The same sympy core reads:
+
+  script          lesson scripts (spoken maths: "three x plus one equals
+                  seven, so x equals two") under */session/**/script.md
+  knowledge_bite  past-paper worked solutions, memo working and answers
+                  (*/knowledge_bites/**/question.md)
+  animation       the on-screen maths of each lesson (MathTex/Tex strings in
+                  manim_scene.py); one animation can carry several tutors'
+                  narration, so it is checked once, on its own
+  consistency     narration vs screen: script.md "## Subtopic" N is paired
+                  with the manim band marked "(subtopic_N)"
+
+It finds derivation chains ("x² − 5x + 6 = 0 → (x−2)(x−3) = 0 → x = 2 or
+x = 3", "a = b = c", "so"/"gives" links, and consecutive lines of one
+worked solution or screen band), standalone identities ("a^m × a^n =
+a^(m+n)") and numeric facts, and gives each one a verdict:
+
+  STEP_OK       the step is true
+  STEP_WRONG    the step is false (the step index is reported)
+  ANSWER_WRONG  the stated final answer is not a solve of the original
+  WARNING       a step legitimately loses or gains roots (dividing by an
+                expression in the unknown, squaring both sides, a root
+                rejected by context) or holds only after unstated rounding
+  UNPARSEABLE   maths-looking text that is malformed (unbalanced brackets,
+                garbled operators)
+  SKIPPED       prose, or maths that cannot be formalised with certainty
+  CONSISTENT / CONTRADICTS_SCREEN  (consistency only)
+
+It CHECKS TRUTH, NOT METHOD. A tutor may simplify, jump several steps at
+once, work in a non-textbook order, guess and check, or take any other valid
+route: only whether each stated step is mathematically true is judged
+(expressions equivalent, solution set preserved, numeric fact correct).
+A step that cannot be verified is SKIPPED, never wrong; a root-losing or
+root-gaining step is a WARNING that says why, never STEP_WRONG; an arrow
+between plain values ("5 → 10 → 20", "x² → 2x") may mean "maps to" and is
+never judged. Deliberate error examples ("the error museum", struck-out
+screen lines) are never flagged. Spoken maths is read under every plausible
+bracketing and is flagged only if false under all of them and free of
+vocabulary the reader does not formalise (sine, half of, percent, ...).
+
+Narration-vs-screen is anchored on the equation, never on wording: a
+narrated "equation → x = v" is compared only when the same equation (same
+solution set, any route) is on screen in that subtopic, and is flagged only
+when v is none of the values the screen states.
+
+Private tutor content (RokctAI/agent) is LOCAL ONLY: --agent reads the tutor
+snippets (lms/team/tutors/CAPS/*/samples.json, samples/*.md) and whiteboard
+animations (animations.json) through the GitHub REST API with MONOREPO_PAT,
+GH_TOKEN or GITHUB_TOKEN, writes nothing to disk and prints only
+"path:line — verdict". It is never run in the public CI.
+
 Usage (repo root):
     python3 lessons/scripts/CAPS/math_verify.py \\
         --json math_verify_report.json --md math_verify_report.md
     python3 lessons/scripts/CAPS/math_verify.py path/to/mcq.json ...
+    python3 lessons/scripts/CAPS/math_verify.py --steps-only \\
+        --steps-json math_steps_report.json --steps-md math_steps_report.md
+    python3 lessons/scripts/CAPS/math_verify.py --steps-only --content script
+    MONOREPO_PAT=... python3 lessons/scripts/CAPS/math_verify.py --agent
 """
 
 import argparse
 import json
+import math
 import random
 import re
 import signal
 import sys
 from collections import Counter, defaultdict
 from contextlib import contextmanager
+from dataclasses import dataclass
 from pathlib import Path
 
 import sympy as sp
@@ -1839,13 +1898,1993 @@ def to_markdown(summary):
     return "\n".join(out) + "\n"
 
 
+# ===========================================================================
+# Step checking: what we TEACH, not only what we ask
+# ===========================================================================
+#
+# The same sympy core checks derivation chains, identities and numeric claims
+# in lesson scripts (spoken prose), knowledge-bite worked solutions, the
+# on-screen maths of each lesson animation (manim_scene.py), and whether the
+# narration contradicts the step on screen. It judges TRUTH, NEVER METHOD:
+# see the module docstring.
+
+STEP_VERDICTS = ("STEP_OK", "STEP_WRONG", "ANSWER_WRONG", "WARNING",
+                 "UNPARSEABLE", "SKIPPED")
+STEP_FLAGGED = ("STEP_WRONG", "ANSWER_WRONG", "UNPARSEABLE")
+
+# Words that mark a deliberately wrong example ("the error museum"): maths
+# stated inside such a clause is never flagged.
+_ERROR_CONTEXT = re.compile(
+    r"\bwrong|\berror|mistake|\btrap\b|\bexhibit|misconception|\bincorrect"
+    r"|\bfalse\b|\bnot\b|\bnever\b|n't\b|\binstead\b|\bforget|\bforgot"
+    r"|\btempt|\bbroken\b|\bbreaks?\b|\bslip\b|\bcareless|\blearners? who\b"
+    r"|\bmight write\b|\bwould write\b|\bwrites?\b|\bclaims?\b|\bsuppose"
+    r"|\bpretend|\bimagine|\bmisread|\bconfus|\bloses?\b|\bdrops?\b|\breject"
+    r"|\bcheck\b|\binvalid|≠|!=|\bunless\b|\bwhat if\b|\bif\b|✗|✘",
+    re.I)
+
+# Instruction verbs that make the next sentence the next step of the same
+# derivation ("Rearrange: x^2 + 6x = 0").
+_STEP_CUE = re.compile(
+    r"^\s*(?:(?:and|then|now|next)\s+)?(?:square|rearrang|factoris|factoriz"
+    r"|simplif|expand|divid|multipl|subtract|add\b|isolat|collect|raise"
+    r"|so\b|then\b|therefore|hence|thus|this gives|which gives|giving"
+    r"|equate|cross-multipl|take)", re.I)
+
+# Chain links inside one clause.
+_ARROW = re.compile(r"\s*(?:->|→|⇒|=>|⟹)\s*")
+_WORD_LINK = re.compile(r"(?:,\s*|\s+)(?:so|which gives|this gives|giving|gives"
+                        r"|therefore|hence|thus|and so)\s+", re.I)
+
+_MARK_CODES = re.compile(
+    r"\(\s*\d*\s*(?:M|A|CA|MA|RT|RG|RM|S|R|J|D|F|O|P|C|AO|MCA|SF|SR|NP)"
+    r"(?:\b[^()]*)?\)|\bAO\b|✓|✔|\\checkmark")
+
+_UNITS_ALL = (r"km/h|m/s|l/min|c/kWh|kWh|kW|mm|cm|km|kg|mg|ml|kl|m|g|l|ℓ|h|hrs?"
+               r"|hours?|min|mins|minutes?|s|seconds?|days?|weeks?|months?"
+               r"|years?|units?|people|learners|rand|cents?|litres?|liters?"
+               r"|metres?|meters?|degrees|feet|foot|inch(?:es)?|miles?|W")
+_UNITS_MATHS = (r"km/h|m/s|mm|cm|km|kg|ml|kl|min|mins|minutes?|hours?|seconds?"
+                r"|units?|people|learners|rand|cents?|degrees|litres?|metres?")
+_NOT_UNIT = {"and", "or", "the", "per", "of", "for", "to", "is", "are", "was",
+             "which", "with", "from", "by", "into", "than", "times", "gives",
+             "so", "then", "plus", "minus", "over", "divided", "multiplied",
+             "because", "since", "each", "rounded", "correct", "decimal",
+             "percent", "out", "more", "less", "equals", "after", "before",
+             "at", "in", "on", "as", "if", "not", "all", "both", "only"}
+
+@dataclass
+class Item:
+    """One formalised piece of a chain.
+
+    kind  'expr' | 'eq' | 'sol'
+    alts  alternative readings (spoken maths is ambiguous): Expr, or
+          (lhs, rhs), or (var, FiniteSet)
+    """
+    kind: str
+    alts: list
+    text: str = ""
+    approx: bool = False
+    decimals: int = 0
+    clean: bool = True
+
+
+def _finding(verdict, line, step=None, reason="", text="", kind=""):
+    return {"verdict": verdict, "line": line, "step": step, "reason": reason,
+            "text": text, "kind": kind}
+
+
+# --- written maths (knowledge bites, animations) ---
+
+def _unit_tag(s, lit):
+    """Mark unit words glued to numbers ('1 200 mm' -> '1200 @mm'), so a
+    conversion such as '1 m = 1 000 mm' is never read as 1 = 1000."""
+    units = _UNITS_ALL if lit else _UNITS_MATHS
+    s = re.sub(r"(?<=[\d)])\s*(" + units + r")(?:\s*\^\s*\(?\d\)?)?(?![\w(])",
+               lambda m: " @" + m.group(1).replace("/", "per") + " ", s)
+    if lit:
+        # Maths Lit: any noun after a number is a unit ('36 tags')
+        s = re.sub(r"(?<=\d)\s+([A-Za-z][a-z]{2,})\b",
+                   lambda m: m.group(0) if m.group(1).lower() in _NOT_UNIT
+                   else " @" + m.group(1).lower() + " ", s)
+    return s
+
+
+def written_normalise(text, lit=False):
+    """Knowledge-bite / animation text -> normalised maths text."""
+    s = _MARK_CODES.sub(" ", str(text))
+    s = re.sub(r"\*{3,}", " ", s)  # redacted values on a slip
+    s = s.replace("≈", " ~= ")
+    # 4 629 629,63 -> 4629629,63 (before the comma decimal is read)
+    s = re.sub(r"(?<![\d.,])\d{1,3}(?: \d{3})+(?=,\d|\b)(?! \d)",
+               lambda m: m.group().replace(" ", ""), s)
+    s = normalise(s)
+    s = _unit_tag(s, lit)
+    # 'x' / 'X' used as a times sign: '1,2 m x 1 000', 'a x c = 2 x 3'
+    tsign = r"(?<=[\d)])(\s*@\w+)?\s*[xX]\s*(?=[\d(])" if lit else \
+        r"(?<=[\d)])(\s*@\w+)?\s+[xX]\s+(?=[\d(])" \
+        r"|(?<=\b[a-z])\s+x\s+(?=[a-z]\b(?!\s*[\^(]))"
+    s = re.sub(tsign, lambda m: (m.group(1) or "") + " * ", s)
+    s = re.sub(r"(\d(?:[\d.]*\d)?)\s*%", r"(\1/100)", s)
+    return s
+
+
+_PROSE_SMALL = {"of", "is", "a", "an", "to", "in", "on", "at", "by", "so",
+                "the", "and", "or", "for", "we", "it", "as", "with", "from",
+                "into", "then", "gives", "get", "use", "via"}
+
+
+def _clean_part(p, index=0):
+    """One side of a relation -> (kind, Expr|None, units, dropped_lead)
+
+    kind: 'expr' | 'label' | 'prose' | 'bad'; units: the unit tags on the
+    side; dropped_lead: leading prose words were removed ('Mean 55').
+    """
+    p = p.strip().strip(",;:").strip()
+    units = frozenset(u.lower().rstrip("s") for u in re.findall(r"@(\w+)", p))
+    p = re.sub(r"\s*@\w+\s*", " ", p).strip()
+    colon = False
+    if "?" in p:
+        return "prose", None, units, False  # a question, not a claim
+    if ":" in p:
+        head, tail = p.rsplit(":", 1)
+        if index > 0:
+            return "prose", None, units, False  # a new statement starts
+        if re.search(r"[A-Za-z]{3,}", head):
+            p, colon = tail.strip(), True
+    if re.match(r"^\s*[+*/^]", p) or re.search(
+            r"\bd\s*/\s*d[a-z]|\(d\)/\(d[a-z]\)|\blim\b|\bxbar\b|'", p):
+        return "prose", None, units, False  # a continuation line; calculus
+    toks = p.split()
+    dropped = False
+    while toks:
+        t = toks[0].rstrip(":?,")
+        nxt = toks[1] if len(toks) > 1 else ""
+        if re.fullmatch(r"\(?[A-Za-z][A-Za-z'\-]*", t) and t.lstrip("(") \
+                not in FUNCS and (len(t) >= 3 or t.lower() in _PROSE_SMALL) \
+                and not re.match(r"^[+\-*/^]", nxt):
+            toks.pop(0)
+            dropped = True
+            continue
+        break
+    p = " ".join(toks).strip().rstrip(".,;:?")
+    p = re.sub(r"\.{3,}|…", "", p).strip()
+    if dropped and colon:
+        dropped = False
+    if not p:
+        return "label", None, units, dropped
+    core = re.sub(r"sqrt|cbrt|pi|log|sin|cos|tan|rad|alpha|beta|theta|gamma|phi",
+                  "", p)
+    if re.search(r"[A-Za-z]{3,}", core) or re.search(r"[A-Z]", core) or any(
+            t in _NOT_PRODUCTS or t in _PROSE_SMALL
+            for t in re.findall(r"(?<![A-Za-z])[a-z]{2}(?![A-Za-z(])", core)):
+        return "prose", None, units, dropped
+    if re.search(r",\s", core):
+        return "prose", None, units, dropped  # a list, not one value
+    if re.search(r"[^\x00-\x7f]", core):  # T̂, Ô, ∈, ∪ ...
+        return "prose", None, units, dropped
+    if "_" in core or ";" in core or "'" in core or re.search(r"\|", core):
+        return "prose", None, units, dropped  # T_n, (3 ; 0), f'(x), |x|
+    if re.search(r"\d\s+\(?\d", core) or not _balanced(core):
+        return "prose", None, units, dropped  # '20 h 40 min', a cut bracket
+    if re.search(r"(?<![A-Za-z])[a-z]\s*\(\s*[^()]*\)", p) and not re.search(
+            r"\d\s*\(", p):
+        # f(x), g(1 - m): a function name, not a product
+        if re.fullmatch(r"[a-z]\s*\([^()]*\)", p):
+            return "label", None, units, dropped
+        return "prose", None, units, dropped
+    try:
+        return "expr", parse_math(_over(p)), units, dropped
+    except ParseFailure as exc:
+        return "bad", str(exc), units, dropped
+
+
+def _is_label_text(p):
+    p = p.strip()
+    return bool(re.fullmatch(r"[A-Za-z]{1,3}\d?|[a-z]\([^()]*\)|T_?\(?\w+\)?"
+                             r"|[A-Z]\w*\([^()]*\)", p)) or bool(
+        re.search(r"[^\x00-\x7f]", p) and not re.search(r"[\d+\-*/^]", p))
+
+
+_NUMTOK = r"[+-]?\s*(?:\d+(?:\.\d+)?(?:\s*/\s*\d+(?:\.\d+)?)?|\(\d+/\d+\))"
+
+
+def _parse_solution(s):
+    """'x = 7/2 or x = 1' / 'x = ±3' / 'x = -1 or 2' -> Item('sol') or None."""
+    s = s.strip().rstrip(".").strip()
+    s = re.sub(r"^(?:so|then|and|hence|therefore|thus|giving|gives)\s+", "", s,
+               flags=re.I)
+    m = re.match(r"^([a-z])\s*=\s*(.+)$", s)
+    if not m:
+        return None
+    var, rest = m.group(1), m.group(2)
+    pieces = re.split(r"\s+(?:or|and)\s+|\s*;\s*|\s*,\s+", rest)
+    vals = []
+    for pc in pieces:
+        pc = re.sub(r"^" + var + r"\s*=\s*", "", pc.strip())
+        pc = re.sub(r"\s*\((?:valid|n/a|rejected|reject|accept|accepted)\)", "",
+                    pc, flags=re.I)
+        variants = [pc]
+        if pc.startswith("±"):
+            variants = [pc[1:], "-(" + pc[1:] + ")"]
+        for v in variants:
+            v = v.strip()
+            if not v or re.search(r"[A-Za-z]", re.sub(r"sqrt|pi", "", v)):
+                return None
+            try:
+                e = parse_math(v)
+            except ParseFailure:
+                return None
+            if not _is_number(e):
+                return None
+            vals.append(e)
+    if not vals:
+        return None
+    return Item("sol", [(sp.Symbol(var), sp.FiniteSet(*vals))], s,
+                decimals=_decimals(rest))
+
+
+def _written_relation(seg):
+    """One clause -> (Item or None, parts).
+
+    parts are the cleaned '=' sides for chain checking:
+    [(kind, expr_or_None, raw, approx_link_before, units)].
+    """
+    seg = seg.strip()
+    sol = _parse_solution(seg)
+    if sol is not None:
+        return sol, []
+    if re.search(r"<|>|!=|\bnot\b", seg):
+        return None, []
+    raw_parts = re.split(r"(~=|(?<![<>!~])=(?!=))", seg)
+    parts = []
+    approx = False
+    for i, rp in enumerate(raw_parts):
+        if i % 2:
+            approx = rp == "~="
+            continue
+        kind, e, units, dropped = _clean_part(rp, i // 2)
+        if kind == "expr" and i == 0 and (dropped or _is_label_text(
+                re.sub(r"@\w+", "", rp).split(":")[-1])):
+            kind, e = "label", None  # 'Quartile 3 = ...', 'Mean = ...'
+        elif kind == "expr" and dropped:
+            kind, e = "prose", None
+        if re.search(r"\.{3,}|…", rp):
+            approx = True
+        parts.append((kind, e, re.sub(r"\s*@\w+", "", rp).strip(), approx,
+                      units))
+        approx = False
+    item = None
+    if len(parts) == 1 and parts[0][0] == "expr":
+        item = Item("expr", [parts[0][1]], seg)
+    elif len(parts) == 2 and all(p[0] == "expr" for p in parts) and \
+            parts[0][4] == parts[1][4]:
+        item = Item("eq", [(parts[0][1], parts[1][1])], seg)
+    return item, parts
+
+
+def _num_close(lv, rv, rtext, approx, ctx):
+    dp = _decimals(rtext)
+    tol = 0.5 * 10 ** (-dp) * 1.0001 + 1e-9 * max(1.0, abs(lv))
+    if abs(lv - rv) <= tol:
+        return "ok"
+    if approx or re.search(r"approx|about|round|nearest|correct to|decimal"
+                           r"|≈|~=", ctx, re.I):
+        if abs(lv - rv) <= max(tol * 2, 0.01 * max(abs(lv), abs(rv))):
+            return "ok"
+    if abs(lv - rv) <= 0.005 * max(abs(lv), abs(rv)):
+        return "rounded"
+    return "wrong"
+
+
+def _equal_step(a, b, btext, approx, ctx):
+    """'ok' | 'wrong' | 'rounded' | None for expression a == expression b."""
+    if _is_number(a) and _is_number(b):
+        lv, rv = to_float(a), to_float(b)
+        if lv is None or rv is None:
+            return None
+        return _num_close(lv, rv, btext, approx, ctx)
+    r = equivalent(a, b)
+    if r is None:
+        return None
+    return "ok" if r else "wrong"
+
+
+def check_equals_chain(parts, ctx, line, error_ctx):
+    """'a = b = c' chains: every consecutive pair of formal parts must be
+    equal. The first part may be a label ('Mean', 'f(3)', 'y')."""
+    out = []
+    # a leading lone symbol or label names the chain, it is not a claim
+    start = 0
+    if parts and (parts[0][0] in ("label", "prose") or (
+            parts[0][0] == "expr" and isinstance(parts[0][1], sp.Symbol)
+            and len(parts) > 2)):
+        start = 1
+    exprs = parts[start:]
+    if len(exprs) < 2:
+        return out
+    if len(parts) == 2 and start == 0:
+        # a lone 'lhs = rhs': identity or numeric fact, never an equation
+        a, b = parts[0][1], parts[1][1]
+        if parts[0][0] != "expr" or parts[1][0] != "expr":
+            return out
+        if not (_is_number(a) and _is_number(b)):
+            return out  # handled by check_identity
+    for k in range(1, len(exprs)):
+        (ka, a, ra, _, ua), (kb, b, rb, apx, ub) = exprs[k - 1], exprs[k]
+        if ka != "expr" or kb != "expr":
+            continue
+        if ua != ub and (ua or not re.search(r"[+\-*/^]", ra.strip().lstrip("-"))
+                         or _power_of_ten(a, b)):
+            # a conversion ('1 m = 1 000 mm', '45 min = 45/60', '4 rolls =
+            # R1 400'); only 'arithmetic = value unit' is compared
+            continue
+        if a.free_symbols != b.free_symbols and not (
+                _is_number(a) or _is_number(b)):
+            continue  # a named quantity substituted ('-cos α/4 = -p/4')
+        if "°" in ctx and re.search(r"sin|cos|tan", ra + rb):
+            continue  # degree/radian reading of the text is not reliable
+        pct = [bool(re.fullmatch(r"\s*\(\d[\d.]*/100\)\s*", x)) for x in (ra, rb)]
+        if pct[0] and not pct[1]:
+            continue  # '1% = R30': a percentage OF an amount
+        if (ua or ub) and (a == 1 or b == 1):
+            continue  # '1 cm = 50 cm': a scale statement
+        if (_is_number(a) != _is_number(b)):
+            continue  # 'x^2 - 4 = 0' style; not a rewrite
+        res = _equal_step(a, b, rb, apx, ctx)
+        if res != "ok" and re.search(r"/100\)", ra + rb):
+            # '34/60 × 100 = 56,67%': the % sign as a label, not ÷ 100
+            try:
+                a2 = parse_math(_over(re.sub(r"\((\d[\d.]*)/100\)", r"\1", ra)))
+                b2 = parse_math(_over(re.sub(r"\((\d[\d.]*)/100\)", r"\1", rb)))
+                if _equal_step(a2, b2, rb, apx, ctx) == "ok":
+                    res = "ok"
+            except ParseFailure:
+                pass
+        if res is None:
+            out.append(_finding("SKIPPED", line, k, "could not decide", ctx,
+                                "equals-chain"))
+        elif res == "ok":
+            out.append(_finding("STEP_OK", line, k, "", ctx, "equals-chain"))
+        elif res == "rounded":
+            out.append(_finding("WARNING", line, k,
+                                f"'{ra} = {rb}' holds only after rounding "
+                                "that is not stated", ctx, "equals-chain"))
+        elif error_ctx:
+            out.append(_finding("SKIPPED", line, k,
+                                "false on purpose? (error-example wording)",
+                                ctx, "equals-chain"))
+        elif _run_on(a, rb):
+            out.append(_finding("WARNING", line, k,
+                                "run-on '=': the next part continues the "
+                                "calculation from the previous result", ctx,
+                                "equals-chain"))
+        else:
+            out.append(_finding("STEP_WRONG", line, k,
+                                f"'{ra}' is not equal to '{rb}'", ctx,
+                                "equals-chain"))
+    return out
+
+
+def _power_of_ten(a, b):
+    va, vb = to_float(a), to_float(b)
+    if not va or not vb:
+        return False
+    r = abs(math.log10(abs(vb / va)))
+    return r > 0.5 and abs(r - round(r)) < 0.01
+
+
+def _run_on(a, btext):
+    """'40 ÷ 2 = 20 × R65 = R1 300': b starts from a's value and goes on."""
+    m = re.match(r"\s*\(?\s*(-?\d+(?:\.\d+)?)\s*\)?\s*[+\-*/^]", btext)
+    if not m or not _is_number(a):
+        return False
+    va = to_float(a)
+    return va is not None and abs(va - float(m.group(1))) <= 0.005 * max(1, abs(va))
+
+
+_IDENTITY_CUE = re.compile(r"identit|\blaws?\b|\balways\b|factoris"
+                           r"|factoriz|expand|expansion|multipl\w* out"
+                           r"|simplif|\bsum of (two )?cubes|difference of"
+                           r"|equivalent", re.I)
+
+
+def check_identity(item, ctx, line, error_ctx, cue_ctx=None):
+    """A lone 'lhs = rhs' with symbols: a TRUE identity is STEP_OK; a false
+    one is flagged only when the wording says it is an identity/law/
+    factorisation (otherwise it is an equation to solve)."""
+    if item is None or item.kind != "eq":
+        return []
+    cue = _IDENTITY_CUE.search(cue_ctx if cue_ctx is not None else ctx)
+    results = []
+    for lhs, rhs in item.alts:
+        if _is_number(lhs) and _is_number(rhs):
+            return []
+        if not (lhs.free_symbols and rhs.free_symbols):
+            results.append(None)
+            continue
+        results.append(equivalent(lhs, rhs))
+    if any(r is True for r in results):
+        return [_finding("STEP_OK", line, 1, "identity holds", ctx, "identity")]
+    if not results or any(r is None for r in results):
+        return []
+    lhs, rhs = item.alts[0]
+    symbolic_power = any(
+        isinstance(x, sp.Pow) and x.exp.free_symbols
+        for side in (lhs, rhs) for x in sp.preorder_traversal(side))
+    product_side = any(
+        isinstance(side, sp.Mul) and sum(1 for f in side.args
+                                         if f.free_symbols) >= 2
+        for side in (lhs, rhs))
+    same_syms = lhs.free_symbols == rhs.free_symbols and not (
+        isinstance(lhs, sp.Symbol) or isinstance(rhs, sp.Symbol))
+    if not (symbolic_power and same_syms and len(lhs.free_symbols) >= 2
+            or cue and product_side and same_syms):
+        return [_finding("SKIPPED", line, None, "an equation, not a claim",
+                         ctx, "identity")]
+    if error_ctx:
+        return [_finding("SKIPPED", line, None,
+                         "false on purpose? (error-example wording)", ctx,
+                         "identity")]
+    return [_finding("STEP_WRONG", line, 1,
+                     "stated identity/factorisation is not an identity", ctx,
+                     "identity")]
+
+
+def _solution_set(item):
+    """-> list of (var, Set) readings for an eq/sol item (single unknown)."""
+    out = []
+    for alt in item.alts:
+        if item.kind == "sol":
+            out.append(alt)
+            continue
+        lhs, rhs = alt
+        free = (lhs - rhs).free_symbols
+        if len(free) != 1:
+            out.append(None)
+            continue
+        v = next(iter(free))
+        try:
+            with time_limit(TIMEOUT_SECONDS):
+                s = sp.solveset(sp.Eq(lhs, rhs), v, sp.S.Reals)
+        except Exception:
+            out.append(None)
+            continue
+        if isinstance(s, (sp.ConditionSet, sp.ImageSet)) or s.has(sp.ImageSet) \
+                or s.has(sp.ConditionSet):
+            out.append(None)
+            continue
+        out.append((v, s))
+    return out
+
+
+def _set_relation(a, b):
+    """'equal' | 'lost' (b ⊂ a) | 'gained' (a ⊂ b) | 'different' | None."""
+    try:
+        if _sets_equal(a, b):
+            return "equal"
+        with time_limit(TIMEOUT_SECONDS):
+            if isinstance(a, sp.FiniteSet) and isinstance(b, sp.FiniteSet):
+                fa = [to_float(x) for x in a]
+                fb = [to_float(x) for x in b]
+                if None in fa or None in fb:
+                    return None
+
+                def within(xs, ys):
+                    return all(any(abs(x - y) <= 0.0051 * max(1, abs(x))
+                                   for y in ys) for x in xs)
+                if within(fb, fa):
+                    return "lost"
+                if within(fa, fb):
+                    return "gained"
+                return "different"
+            if b.is_subset(a):
+                return "lost"
+            if a.is_subset(b):
+                return "gained"
+            return "different"
+    except Exception:
+        return None
+
+
+def _why_changed(prev, nxt, rel):
+    ptxt, ntxt = prev.text, nxt.text
+    if rel == "gained":
+        if re.search(r"sqrt|√", ptxt) and not re.search(r"sqrt|√", ntxt):
+            return "roots gained: squaring both sides can add extraneous roots"
+        return ("roots gained: typical of squaring or multiplying by an "
+                "expression in the unknown; check in the original")
+    if nxt.kind == "sol":
+        return ("roots lost from the stated answer: dividing by an "
+                "expression in the unknown, or a root rejected by context")
+    return ("roots lost: typical of dividing by an expression in the "
+            "unknown")
+
+
+def _rewrite_like(a, b):
+    """Both sides polynomials in the same unknowns and of the same degree:
+    an expand / factorise / simplify arrow, not a mapping."""
+    try:
+        if _is_number(a) or _is_number(b) or a.free_symbols != b.free_symbols:
+            return False
+        syms = sorted(a.free_symbols, key=str)
+        with time_limit(TIMEOUT_SECONDS):
+            pa, pb = sp.Poly(sp.expand(a), *syms), sp.Poly(sp.expand(b), *syms)
+        return pa.total_degree() == pb.total_degree()
+    except Exception:
+        return False
+
+
+def check_step(prev, nxt, line, step, ctx, error_ctx, final=False):
+    """One arrow/'so' step between two items -> finding or None."""
+    if prev.kind == "expr" and nxt.kind == "expr":
+        results = []
+        for a in prev.alts:
+            for b in nxt.alts:
+                results.append(_equal_step(a, b, nxt.text, nxt.approx, ctx))
+        if "ok" in results:
+            return _finding("STEP_OK", line, step, "", ctx, "rewrite")
+        if not _rewrite_like(prev.alts[0], nxt.alts[0]):
+            # an arrow between values can mean 'maps to', 'next term',
+            # 'derivative', 'limit' or 'on the ground': never judged
+            return _finding("SKIPPED", line, step, "arrow is not a rewrite",
+                            ctx, "rewrite")
+        if None in results or not results:
+            return _finding("SKIPPED", line, step, "could not decide", ctx,
+                            "rewrite")
+        if "rounded" in results:
+            return _finding("WARNING", line, step, "equal only after rounding",
+                            ctx, "rewrite")
+        if error_ctx:
+            return _finding("SKIPPED", line, step,
+                            "false on purpose? (error-example wording)", ctx,
+                            "rewrite")
+        return _finding("STEP_WRONG", line, step,
+                        "expression is not equivalent to the previous one", ctx,
+                        "rewrite")
+    if prev.kind == "eq" and nxt.kind in ("eq", "sol"):
+        ps, ns = _solution_set(prev), _solution_set(nxt)
+        rels = []
+        for p in ps:
+            for n in ns:
+                if p is None or n is None or p[0] != n[0]:
+                    continue
+                rels.append(_set_relation(p[1], n[1]))
+        if not rels:
+            if nxt.kind == "eq" and prev.kind == "eq":
+                return _multivar_step(prev, nxt, line, step, ctx)
+            return _finding("SKIPPED", line, step, "not a one-unknown step", ctx,
+                            "transform")
+        if "equal" in rels:
+            return _finding("STEP_OK", line, step, "", ctx, "transform")
+        if None in rels:
+            return _finding("SKIPPED", line, step, "could not decide", ctx,
+                            "transform")
+        for rel in ("gained", "lost"):
+            if rel in rels:
+                return _finding("WARNING", line, step, _why_changed(prev, nxt, rel),
+                                ctx, "transform")
+        if error_ctx:
+            return _finding("SKIPPED", line, step,
+                            "false on purpose? (error-example wording)", ctx,
+                            "transform")
+        verdict = "ANSWER_WRONG" if nxt.kind == "sol" and final else "STEP_WRONG"
+        return _finding(verdict, line, step,
+                        "solution set changes: the step does not follow" if
+                        verdict == "STEP_WRONG" else
+                        "stated answer is not the solution of the equation",
+                        ctx, "transform")
+    return _finding("SKIPPED", line, step, f"{prev.kind} -> {nxt.kind}", ctx,
+                    "transform")
+
+
+def _multivar_step(prev, nxt, line, step, ctx):
+    """Several unknowns: accept a rearrangement (same relation up to a
+    nonzero constant factor); anything else is SKIPPED, never wrong."""
+    for pl, pr in prev.alts:
+        for nl, nr in nxt.alts:
+            a, b = pl - pr, nl - nr
+            try:
+                with time_limit(TIMEOUT_SECONDS):
+                    if b == 0 or a == 0:
+                        continue
+                    ratio = sp.simplify(a / b)
+                    if ratio.is_number and ratio != 0:
+                        return _finding("STEP_OK", line, step, "", ctx,
+                                        "transform")
+            except Exception:
+                continue
+    return _finding("SKIPPED", line, step, "several unknowns", ctx, "transform")
+
+
+def _malformed_line(text):
+    """Unbalanced brackets or garbled operator runs in a written maths line."""
+    n = _MARK_CODES.sub(" ", str(text))
+    n = re.sub(r"\*{3,}", " ", n)  # redacted values on a slip
+    n = re.sub(r"\((?:[a-z]|\d+(?:\.\d+)?|[ivx]+)\)(?=\s)", " ", n)  # (a) (i)
+    n = normalise(n)
+    n = re.sub(r"\[\s*-?[\d.∞oo]+\s*;\s*-?[\d.∞oo]+\s*\)|\(\s*-?[\d.∞oo]+\s*;"
+               r"\s*-?[\d.∞oo]+\s*\]", "", n)  # half-open intervals
+    if not _balanced(n):
+        return "unbalanced brackets"
+    if re.search(r"(?<![<>!=~])==(?!=)|[+*/^]\s*[*/^](?!\()|\(\s*\)|\+\s*\+|--\s*-", n):
+        return "malformed operator sequence"
+    return None
+
+
+def _clauses(sentence):
+    """Split a sentence into chain pieces on arrows and 'so' links."""
+    pieces = []
+    for chunk in _ARROW.split(sentence):
+        sub = _WORD_LINK.split(chunk)
+        pieces.extend(sub)
+    return [p for p in pieces if p.strip()]
+
+
+def _sentences(line):
+    """Sentence split that keeps decimals and coordinates together."""
+    # '(Memo alternative: ...)' asides are sentences of their own
+    line = re.sub(r"(^|\s)\((?=(?:Memo|Alternative|Or|OR|Note|See)\b)", r"\1", line)
+    parts = re.split(r"(?<=[.?!])\s+(?=[A-Z0-9(\"'])|(?<=[.?!])\s*$|;\s+(?=[A-Za-z]"
+                     r"[A-Za-z]{2,}\b|[A-Z])", line)
+    return [p for p in parts if p and p.strip()]
+
+
+def _split_top(s):
+    """Split on ': ' / '; ' outside brackets (coordinates keep their ';')."""
+    out, depth, cur, i = [], 0, [], 0
+    while i < len(s):
+        ch = s[i]
+        if ch in "([":
+            depth += 1
+        elif ch in ")]":
+            depth = max(0, depth - 1)
+        if ch in ":;" and depth == 0 and (i + 1 == len(s) or s[i + 1] == " ") \
+                and not (i > 0 and s[i - 1] == " " and ch == ":"):
+            out.append("".join(cur))
+            cur = []
+            i += 1
+            continue
+        cur.append(ch)
+        i += 1
+    out.append("".join(cur))
+    return out
+
+
+def check_written_line(text, line, lit=False, prev_item=None, link_prev=False):
+    """Malformed-maths gate, then every chain and claim in the line."""
+    why = _malformed_line(text)
+    if why:
+        return [_finding("UNPARSEABLE", line, None, why, text, "malformed")], None
+    return check_written_text(text, line, lit=lit, prev_item=prev_item,
+                              link_prev=link_prev)
+
+
+def check_written_text(text, line, lit=False, prev_item=None, ctx_extra="",
+                       link_prev=False):
+    """All chains/claims in one written line -> (findings, last_item)."""
+    findings = []
+    last = prev_item
+    segments = []
+    for sent in _sentences(text):
+        # a colon or semicolon starts a new statement ('Factorise: ...',
+        # 'try x = 2: 4 - 10 + 6 = 0'); prose before it is the step's cue
+        segs = [g for g in _split_top(sent) if g.strip()]
+        pending_cue = False
+        for g in segs:
+            segments.append((g, sent, pending_cue))
+            pending_cue = bool(_STEP_CUE.search(g)) and not re.search(
+                r"[=]", g)
+    for sent, whole, carried in segments:
+        s_norm = written_normalise(sent, lit)
+        error_ctx = bool(_ERROR_CONTEXT.search(sent))
+        worded = bool(_STEP_CUE.search(sent) or carried)
+        cue = worded or (link_prev and last is prev_item)
+        chain_items = []
+        pieces = _clauses(s_norm)
+        for idx, piece in enumerate(pieces):
+            item, parts = _written_relation(piece)
+            if parts and len(parts) >= 2:
+                findings.extend(check_equals_chain(
+                    parts, sent, line, error_ctx))
+                if len(parts) == 2 and item is not None:
+                    findings.extend(check_identity(item, sent, line, error_ctx,
+                                                   cue_ctx=piece + " " + sent))
+            if item is None:
+                chain_items.append(None)
+                continue
+            chain_items.append(item)
+        # consecutive formal items in one sentence form a chain
+        n_steps = 0
+        for k in range(1, len(chain_items)):
+            a, b = chain_items[k - 1], chain_items[k]
+            if a is None or b is None:
+                continue
+            if a.kind == "sol":
+                continue  # 'x = 0 gives √4 − 0 = 2': a check, not a step
+            if a.kind == "expr" and b.kind != "expr":
+                continue
+            if a.kind == "eq" and b.kind == "expr":
+                continue
+            n_steps += 1
+            final = k == len(chain_items) - 1
+            findings.append(check_step(a, b, line, n_steps, sent, error_ctx,
+                                       final=final))
+        # a step cue links this sentence's first equation to the last one
+        first = next((c for c in chain_items if c is not None), None)
+        if cue and last is not None and first is not None and \
+                last.kind == "eq" and first.kind in ("eq", "sol") and len(
+                    (last.alts[0][0] - last.alts[0][1]).free_symbols) == 1:
+            f = check_step(last, first, line, 0, sent, error_ctx, final=False)
+            if f["verdict"] == "STEP_WRONG" or (
+                    f["verdict"] == "WARNING" and not worded):
+                # across sentences / screen lines we cannot be sure the
+                # equation is the same one being transformed (a zero-product
+                # branch, a new example): never flag, only skip
+                f.update(verdict="SKIPPED", reason="cross-line mismatch "
+                         "(may be a new equation or a branch)")
+            findings.append(f)
+        formal = [c for c in chain_items if c is not None]
+        if formal:
+            last = formal[-1]
+    return findings, last
+
+
+# --- spoken maths (lesson scripts, tutor snippets) ---
+
+_ONES = {"nought": 0, "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+         "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
+         "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+         "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19}
+_TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+         "seventy": 70, "eighty": 80, "ninety": 90}
+_SCALES = {"hundred": 100, "thousand": 1000, "million": 10 ** 6}
+
+
+def _read_number(words, i):
+    """Spoken number at words[i:] -> (value_str, next_index) or None."""
+    total, cur, j, seen = 0, 0, i, False
+    while j < len(words):
+        w = words[j]
+        if w in _ONES:
+            if seen and cur % 10 and cur < 100 and cur % 100 != 0 and \
+                    not words[j - 1] in _TENS:
+                break
+            if seen and words[j - 1] in _ONES:
+                break
+            cur += _ONES[w]
+        elif w in _TENS:
+            if seen and cur % 100 and words[j - 1] not in _SCALES \
+                    and words[j - 1] != "and":
+                break
+            cur += _TENS[w]
+        elif w in _SCALES and seen:
+            if w == "hundred":
+                cur *= 100
+            else:
+                total += cur * _SCALES[w]
+                cur = 0
+        elif w == "and" and seen and j + 1 < len(words) and (
+                words[j + 1] in _ONES or words[j + 1] in _TENS) and \
+                words[j - 1] in _SCALES:
+            pass
+        elif w == "point" and seen and j + 1 < len(words) and words[j + 1] in _ONES:
+            digits = []
+            k = j + 1
+            while k < len(words) and words[k] in _ONES and _ONES[words[k]] < 10:
+                digits.append(str(_ONES[words[k]]))
+                k += 1
+            return f"{total + cur}.{''.join(digits)}", k
+        else:
+            break
+        seen = True
+        j += 1
+    if not seen:
+        return None
+    return str(total + cur), j
+
+
+_SPOKEN_STOP = {"equals", ",", "and", "or", "which", "so", "then"}
+_LETTERS = set("bcdfghjkmnpqrtuvwxyz")  # 'a' only next to an operator
+
+
+def _spoken_tokens(sentence):
+    s = re.sub(r"(?<![\w'])(?!A\b)[A-Z](?![\w'])", " POINTNAME ", sentence)
+    s = s.lower()
+    s = re.sub(r"(?<=\d),(?=\d)", ".", s)
+    s = re.sub(r"(?<![\d.])\d{1,3}(?: \d{3})+\b(?!\.\d*\s\d)",
+               lambda m: m.group().replace(" ", ""), s)
+    s = s.replace("—", " , ").replace("–", " , ").replace(";", " , ")
+    s = re.sub(r"[“”\"():!?]", " ", s)
+    s = re.sub(r"(\w)-(\w)", r"\1 \2", s)
+    s = re.sub(r"([a-z])'s\b", r"\1", s)
+    s = s.replace(",", " , ")
+    s = re.sub(r"\.(?!\d)", " ", s)
+    return s.split()
+
+
+_SPOKEN_BOUND_BEFORE = {
+    "", ",", "and", "so", "which", "because", "but", "then", "that", "means",
+    "gives", "giving", "since", "now", "here", "check", "answer", "result",
+    "therefore", "hence", "thus", "is", "as", "get", "becomes", "leaves",
+    "makes", "write", "rewrite", "say", "solve", "simplify", "expand",
+    "factorise", "calculate", "compute", "confirm", "verify", "reads", "read",
+    "try", "gets", "got", "exactly", "just", "yes", "right", "see", "equation",
+    "expression", "sum", "product", "was", "were", "be"}
+_SPOKEN_BOUND_AFTER = {
+    "", ",", "and", "so", "which", "because", "but", "then", "that", "since",
+    "now", "here", "the", "a", "exactly", "again", "too", "as", "for", "when",
+    "with", "every", "each", "is", "was", "correct", "confirmed", "true",
+    "yes", "right", "checks", "holds", "works", "done", "both", "also"}
+# maths vocabulary the spoken reader does not formalise: a claim touching it
+# is never flagged
+_SPOKEN_UNHANDLED = re.compile(
+    r"\b(half|halves|quarter|third|thirds|fifths?|tenths?|of|percent|per|cent"
+    r"|sine|cosine|tangent|sin|cos|tan|log|base|root|roots|by|cubic|square"
+    r"|degrees?|factorial|pi|rand|doubled|twice|triple|jumps?|term|terms"
+    r"|bracket|brackets|point|dot|th|nd|rd|st|mod|modulus|absolute|choose"
+    r"|metres?|units?|cm|mm|km|kg|hours?|minutes?|seconds?|litres?"
+    r"|grade|page|question|mark|marks|step|row|column|number|cent|r"
+    r"|between|halfway|average|mean|median|mode|pointname|log|ln"
+    r"|probability|chance|out)\b")
+
+
+_OPS_WORDS = {"plus": "+", "minus": "-", "times": "*", "over": "/"}
+
+
+def spoken_to_math(sentence):
+    """Spoken maths in one sentence -> list of spans; each span is a list of
+    alternative ASCII readings (exponent/root/'over' scope is ambiguous in
+    speech, so every plausible bracketing is kept)."""
+    w = _spoken_tokens(sentence)
+    spans, cur, i = [], [], 0
+    n_words = len(w)
+
+    def is_var(k):
+        if k >= n_words:
+            return False
+        t = w[k]
+        if t in _LETTERS:
+            return True
+        if t == "a":
+            prev_ = w[k - 1] if k else ""
+            nxt_ = w[k + 1] if k + 1 < n_words else ""
+            return prev_ in ("plus", "minus", "times", "over", "equals") or \
+                nxt_ in ("plus", "minus", "times", "squared", "cubed", "over",
+                         "equals") or nxt_ in _LETTERS
+        return False
+
+    start = [0]
+
+    def add(tok):
+        if not cur:
+            start[0] = i
+        cur.append(tok)
+
+    def flush():
+        if cur:
+            spans.append((list(cur), start[0], i))
+            cur.clear()
+
+    while i < n_words:
+        t = w[i]
+        nxt = w[i + 1] if i + 1 < n_words else ""
+        num = _read_number(w, i) if (t in _ONES or t in _TENS) else None
+        if num:
+            add(("num", num[0]))
+            i = num[1]
+            continue
+        if re.fullmatch(r"\d+(?:[.,]\d+)?", t):
+            add(("num", t.replace(",", ".")))
+            i += 1
+            continue
+        if is_var(i):
+            add(("var", t))
+            i += 1
+            continue
+        if t in ("plus", "times", "over"):
+            add(("op", _OPS_WORDS[t]))
+            i += 1
+            continue
+        if t in ("minus", "negative"):
+            add(("neg" if t == "negative" else "op", "-"))
+            i += 1
+            continue
+        if t in ("multiplied", "divided") and nxt == "by":
+            add(("op", "*" if t == "multiplied" else "/"))
+            i += 2
+            continue
+        if t == "squared":
+            add(("pow", "2"))
+            i += 1
+            continue
+        if t == "cubed":
+            add(("pow", "3"))
+            i += 1
+            continue
+        if t == "all" and nxt in ("squared", "cubed"):
+            add(("allpow", "2" if nxt == "squared" else "3"))
+            i += 2
+            continue
+        if t == "to" and nxt == "the" and i + 2 < n_words:
+            k = i + 2
+            if w[k] == "power":
+                k += 1
+                if k < n_words and w[k] == "of":
+                    k += 1
+            if k < n_words and (w[k] in _ONES or w[k] in _TENS or w[k] in
+                                ("negative", "minus") or is_var(k)
+                                or re.fullmatch(r"\d+", w[k])):
+                add(("to", None))
+                i = k
+                continue
+        if t == "equals" or (t == "is" and nxt == "equal" and i + 2 < n_words
+                             and w[i + 2] == "to"):
+            add(("eq", "="))
+            i += 1 if t == "equals" else 3
+            continue
+        if t == "is" and cur and nxt != "not":
+            add(("is", "="))
+            i += 1
+            continue
+        if t == "the" and nxt == "quantity":
+            add(("open", "("))
+            i += 2
+            continue
+        if t == "open" and nxt == "bracket":
+            add(("lp", "("))
+            i += 2
+            continue
+        if t in ("close", "closed") and nxt == "bracket":
+            add(("rp", ")"))
+            i += 2
+            continue
+        if t in ("square", "cube") and nxt == "root" and i + 2 < n_words \
+                and w[i + 2] == "of":
+            add(("root", "sqrt" if t == "square" else "cbrt"))
+            i += 3
+            continue
+        if t == "," and cur:
+            add(("comma", ","))
+            i += 1
+            continue
+        flush()
+        i += 1
+    flush()
+    out = []
+    for span, w0, w1 in spans:
+        before = w[w0 - 1] if w0 > 0 else ""
+        after = w[w1] if w1 < n_words else ""
+        clean = (before in _SPOKEN_BOUND_BEFORE) and (
+            after in _SPOKEN_BOUND_AFTER) and not _SPOKEN_UNHANDLED.search(
+            " ".join(w[max(0, w0 - 2):w1 + 2]))
+        # leading minus is a sign, not an operator
+        lead_neg = bool(span) and span[0] == ("op", "-")
+        if span and (span[0][0] in ("op", "is", "eq", "pow", "allpow", "to")
+                     and not lead_neg or span[-1][0] in ("op", "is", "eq",
+                                                         "open", "to", "root",
+                                                         "neg")):
+            clean = False  # a running total or a cut-off expression
+        if any(a[0] == "num" and b[0] == "num" for a, b in zip(span, span[1:])):
+            clean = False  # '11:45 is 12:25', '1,539 58'
+        if before == "and" and w0 >= 2 and (re.fullmatch(r"[\d.]+", w[w0 - 2])
+                                             or w[w0 - 2] in _ONES
+                                             or w[w0 - 2] in _TENS):
+            clean = False  # 'the mean of 4 and 10 is 7'
+        if _SPOKEN_UNHANDLED.search(" ".join(w)):
+            clean = False
+        while span and span[-1][0] in ("comma", "is", "eq", "op", "open", "to",
+                                       "root", "neg"):
+            span.pop()
+        while span and span[0][0] in ("comma", "is", "eq", "op", "pow", "allpow",
+                                      "to"):
+            span.pop(0)
+        if lead_neg and span and span[0][0] in ("num", "var"):
+            span.insert(0, ("neg", "-"))
+        # a comma inside a span: the grouping is only trusted around
+        # 'the quantity' and ', times'; other pieces are never flagged
+        has_comma = any(t[0] == "comma" for t in span)
+        pieces, piece = [], []
+        for k, tok in enumerate(span):
+            if tok[0] == "comma":
+                nxt_ = span[k + 1] if k + 1 < len(span) else None
+                if nxt_ and (nxt_[0] in ("op", "eq") or any(
+                        p[0] == "open" for p in piece)):
+                    piece.append(tok)
+                    continue
+                pieces.append(piece)
+                piece = []
+                continue
+            piece.append(tok)
+        pieces.append(piece)
+        if len(pieces) > 1:
+            clean = False
+        for p in pieces:
+            kinds = [t[0] for t in p]
+            operands = sum(1 for k in kinds if k in ("num", "var"))
+            if operands < 2 or not any(k in ("op", "eq", "is", "pow", "to",
+                                             "allpow", "root") for k in kinds):
+                continue
+            if "comma" in kinds and ("is" in kinds or "eq" in kinds) and not (
+                    "open" in kinds or any(
+                        p[k][0] == "comma" and k + 1 < len(p) and
+                        p[k + 1] == ("op", "*") for k in range(len(p)))):
+                continue  # '72, over 120, which is 0,6': grouping unclear
+            if "is" in kinds and ("eq" in kinds or "var" in kinds):
+                # 'is' reads as '=' only between plain numbers
+                cut = kinds.index("is")
+                if "eq" in kinds[:cut] or "var" in kinds[:cut]:
+                    p = p[:cut]
+                else:
+                    continue
+                if sum(1 for t in p if t[0] in ("num", "var")) < 2:
+                    continue
+            readings = _render_span(p)
+            if readings:
+                out.append((readings, clean and not has_comma or clean and
+                            "open" in kinds))
+    return out
+
+
+def _render_span(tokens):
+    """Tokens -> up to 8 alternative ASCII strings."""
+    results = []
+
+    def emit(toks, choices):
+        s, stack, i = [], [], 0
+        side_start = 0
+        pending_close = []   # for 'the quantity' groups
+        choice_i = 0
+        while i < len(toks):
+            kind, val = toks[i]
+            if kind == "num":
+                s.append(val)
+            elif kind == "var":
+                s.append(" " + val + " ")
+            elif kind == "op":
+                if kind == "op" and val == "-" and (not s or s[-1].strip() in
+                                                    ("", "=", "(", "+", "-", "*", "/")):
+                    s.append(" -")
+                else:
+                    if val == "/" and choice_i < len(choices) and choices[choice_i] == "wide":
+                        choice_i += 1
+                        left = "".join(s[side_start:])
+                        s[side_start:] = ["((" + left + ")/("]
+                        stack.append("wide_over")
+                    elif val == "/":
+                        choice_i += 1
+                        s.append(" / ")
+                    else:
+                        s.append(f" {val} ")
+            elif kind == "neg":
+                s.append(" -")
+            elif kind == "pow":
+                s.append(f"^({val})")
+            elif kind == "allpow":
+                while stack:
+                    s.append(")" if stack.pop() != "wide_over" else "))")
+                left = "".join(s[side_start:])
+                s[side_start:] = [f"({left})^({val})"]
+            elif kind == "to":
+                wide = choice_i < len(choices) and choices[choice_i] == "wide"
+                choice_i += 1
+                j = i + 1
+                expo = []
+                if wide:
+                    while j < len(toks) and toks[j][0] not in ("eq", "is", "comma"):
+                        expo.append(toks[j])
+                        j += 1
+                else:
+                    if j < len(toks) and toks[j][0] in ("neg",) or (
+                            j < len(toks) and toks[j] == ("op", "-")):
+                        expo.append(("neg", "-"))
+                        j += 1
+                    if j < len(toks) and toks[j][0] in ("num", "var"):
+                        expo.append(toks[j])
+                        j += 1
+                sub = emit(expo, [])
+                if sub is None:
+                    return None
+                s.append(f"^({sub})")
+                i = j
+                continue
+            elif kind == "root":
+                wide = choice_i < len(choices) and choices[choice_i] == "wide"
+                choice_i += 1
+                j = i + 1
+                arg = []
+                if wide:
+                    while j < len(toks) and toks[j][0] not in ("eq", "is", "comma"):
+                        arg.append(toks[j])
+                        j += 1
+                elif j < len(toks) and toks[j][0] in ("num", "var"):
+                    arg.append(toks[j])
+                    j += 1
+                sub = emit(arg, [])
+                if sub is None:
+                    return None
+                s.append(f" {val}({sub}) ")
+                i = j
+                continue
+            elif kind in ("eq", "is"):
+                while pending_close:
+                    pending_close.pop()
+                    s.append(")")
+                while stack:
+                    s.append(")" if stack.pop() != "wide_over" else "))")
+                s.append(" = ")
+                side_start = len(s)
+            elif kind == "open":
+                s.append(" (")
+                pending_close.append(True)
+            elif kind == "lp":
+                s.append(" (")
+            elif kind == "rp":
+                s.append(") ")
+            elif kind == "comma":
+                if pending_close:
+                    pending_close.pop()
+                    s.append(")")
+                # ', times ...' groups the left side as one factor
+                nxt = toks[i + 1] if i + 1 < len(toks) else None
+                if nxt and nxt[0] == "op" and nxt[1] in "*/":
+                    left = "".join(s[side_start:])
+                    s[side_start:] = ["(" + left + ")"]
+                    s.append(f" {nxt[1]} (")
+                    stack.append("group")
+                    i += 2
+                    continue
+            i += 1
+        while pending_close:
+            pending_close.pop()
+            s.append(")")
+        while stack:
+            s.append(")" if stack.pop() != "wide_over" else "))")
+        return re.sub(r"\s+", " ", "".join(s)).strip()
+
+    n_choice = sum(1 for k, v in tokens if k in ("to", "root") or
+                   (k == "op" and v == "/"))
+    n_choice = min(n_choice, 3)
+    import itertools
+    for combo in itertools.product(("narrow", "wide"), repeat=n_choice):
+        r = emit(tokens, list(combo))
+        if r and r not in results:
+            results.append(r)
+    extra = []
+    for r in results:
+        # 'minus two squared' is usually (-2)^2 when spoken
+        v = re.sub(r"(?<![\w)])-\s*(\d+(?:\.\d+)?|[a-z])\s*\^", r"(-\1)^", r)
+        # 'x minus four times x plus one' is usually (x - 4)(x + 1)
+        sides = v.split(" = ")
+        new_sides = []
+        for side in sides:
+            if side.count(" * ") == 1 and "(" not in side:
+                left, right = side.split(" * ")
+                if re.search(r"[+-]", left.strip().lstrip("-")) or re.search(
+                        r"[+-]", right.strip().lstrip("-")):
+                    side = f"({left})*({right})"
+            new_sides.append(side)
+        v2 = " = ".join(new_sides)
+        for cand in (v, v2):
+            if cand not in results and cand not in extra:
+                extra.append(cand)
+    return (results + extra)[:12]
+
+
+def _spoken_item(readings):
+    """Alternative readings -> (Item or None, parts_by_reading)."""
+    alts_items = []
+    for r in readings:
+        if r.count("=") == 0:
+            try:
+                alts_items.append(("expr", parse_math(r), [r]))
+            except ParseFailure:
+                continue
+        else:
+            parts = [p.strip() for p in r.split("=")]
+            try:
+                exprs = [parse_math(p) for p in parts]
+            except ParseFailure:
+                continue
+            alts_items.append(("rel", exprs, parts))
+    return alts_items
+
+
+def check_spoken_text(text, line, prev_item=None, pairs=None):
+    """Spoken maths in one script/snippet paragraph -> (findings, last_item).
+
+    pairs, when a list, collects (line, equation Item, solution Item) for
+    the narration-vs-screen consistency check.
+    """
+    findings = []
+    last = prev_item
+    for sent in _sentences(text):
+        if not re.search(r"\b(plus|minus|times|equals|squared|cubed|over|power"
+                         r"|divided|multiplied|root|is)\b", sent, re.I):
+            continue
+        clauses = re.split(r"\s*(?:—|–|;|:(?=\s)|\bso\b|\bwhich gives\b|\bgives\b"
+                           r"|\bgiving\b|\btherefore\b|\bhence\b|\bthen\b)\s*",
+                           sent, flags=re.I)
+        chain = []
+        for clause in clauses:
+            error_ctx = bool(_ERROR_CONTEXT.search(clause)) or bool(
+                re.search(r"\b(wrong|error|mistake|trap|museum|exhibit|not"
+                          r"|never|instead|broken)\b", sent, re.I))
+            spans = spoken_to_math(clause)
+            merged = _merge_spoken_solutions(spans, clause)
+            if merged is not None:
+                chain.append(merged)
+                continue
+            if len(spans) != 1:
+                if spans:
+                    chain.append(None)
+                for readings, clean in spans:
+                    findings.extend(_spoken_claims(readings, clause, line,
+                                                   error_ctx or not clean)[0])
+                continue
+            f, item = _spoken_claims(spans[0][0], clause, line,
+                                     error_ctx or not spans[0][1])
+            findings.extend(f)
+            if item is not None:
+                item.clean = spans[0][1] and not error_ctx
+            chain.append(item)
+        steps = 0
+        for k in range(1, len(chain)):
+            a, b = chain[k - 1], chain[k]
+            if a is None or b is None or a.kind != "eq" or b.kind not in ("eq", "sol"):
+                continue
+            steps += 1
+            error_ctx = bool(_ERROR_CONTEXT.search(sent)) or not (
+                a.clean and b.clean)
+            findings.append(check_step(a, b, line, steps, sent, error_ctx,
+                                       final=k == len(chain) - 1))
+            if pairs is not None and b.kind == "sol" and a.clean and b.clean:
+                pairs.append((line, a, b))
+        formal = [c for c in chain if c is not None]
+        if formal:
+            last = formal[-1]
+    return findings, last
+
+
+def _merge_spoken_solutions(spans, clause):
+    """'x equals zero or x equals five' / 'x equals zero or five' -> one
+    solution Item; None when the clause is anything else."""
+    low = clause.lower()
+    m = re.search(r"\b([b-z]) equals ([\w\- ]+?) or (?:\1 equals )?"
+                  r"((?:minus |negative )?[\w\-]+)\s*[.,]?\s*$", low)
+    if not m:
+        return None
+    var = sp.Symbol(m.group(1))
+    vals = []
+    for chunk in (m.group(2), m.group(3)):
+        words = chunk.replace("-", " ").split()
+        neg = bool(words) and words[0] in ("minus", "negative")
+        words = words[1:] if neg else words
+        num = _read_number(words, 0) if words else None
+        if not num or num[1] != len(words):
+            if len(words) == 1 and re.fullmatch(r"\d+(?:[.,]\d+)?", words[0]):
+                num = (words[0].replace(",", "."), 1)
+            else:
+                return None
+        vals.append(sp.Rational(num[0]) * (-1 if neg else 1))
+    clean = not _SPOKEN_UNHANDLED.search(low)
+    return Item("sol", [(var, sp.FiniteSet(*vals))], clause, clean=clean)
+
+
+def _spoken_claims(readings, clause, line, error_ctx):
+    """One spoken span (several readings) -> (findings, Item for chaining)."""
+    alts = _spoken_item(readings)
+    if not alts:
+        return [_finding("SKIPPED", line, None, "spoken maths not formalised",
+                         clause, "spoken")], None
+    rels = [a for a in alts if a[0] == "rel"]
+    if not rels:
+        return [], Item("expr", [a[1] for a in alts], clause)
+    nparts = {len(a[1]) for a in rels}
+    if len(nparts) != 1:
+        return [_finding("SKIPPED", line, None, "ambiguous", clause, "spoken")], None
+    n = nparts.pop()
+    numeric = all(_is_number(e) for a in rels for e in a[1])
+    if numeric or n >= 3:
+        # every '=' in every reading must hold in at least one reading
+        oks = []
+        for _, exprs, parts in rels:
+            good = True
+            for k in range(1, len(exprs)):
+                a, b = exprs[k - 1], exprs[k]
+                if _is_number(a) != _is_number(b):
+                    if k == 1 and isinstance(a, sp.Symbol):
+                        continue
+                    good = None
+                    break
+                r = _equal_step(a, b, parts[k], False, clause)
+                if r != "ok":
+                    good = False if r in ("wrong", "rounded") and good else None
+                    if good is None:
+                        break
+            oks.append(good)
+        if True in oks:
+            return [_finding("STEP_OK", line, None, "", clause, "spoken-claim")], \
+                _eq_item(rels, clause)
+        if None in oks or error_ctx:
+            return [_finding("SKIPPED", line, None,
+                             "could not decide" if not error_ctx else
+                             "false on purpose? (error-example wording)",
+                             clause, "spoken-claim")], None
+        return [_finding("STEP_WRONG", line, 1,
+                         "spoken claim is false under every reading", clause,
+                         "spoken-claim")], None
+    item = _eq_item(rels, clause)
+    if item is None:
+        return [], None
+    if item.kind == "sol":
+        return [], item
+    return check_identity(item, clause, line, error_ctx), item
+
+
+def _eq_item(rels, clause):
+    alts = []
+    sol = []
+    for _, exprs, parts in rels:
+        if len(exprs) != 2:
+            continue
+        lhs, rhs = exprs
+        if isinstance(lhs, sp.Symbol) and _is_number(rhs):
+            sol.append((lhs, sp.FiniteSet(rhs)))
+        alts.append((lhs, rhs))
+    if sol and len(sol) == len(alts):
+        return Item("sol", sol, clause)
+    if alts:
+        return Item("eq", alts, clause)
+    return None
+
+
+# --- LaTeX (animations) ---
+
+def latex_to_plain(tex):
+    s = str(tex)
+    s = re.sub(r"\^\s*(?:\{\s*\\circ\s*\}|\\circ)", "°", s)
+    s = re.sub(r"\\times\s*(?=\\;|\\quad|\\qquad|$|\})", " ✗ ", s)  # a cross mark
+    s = s.replace(r"\ell", " ℓ ").replace(r"\bar{x}", " xbar ")
+    s = re.sub(r"\\(?:text|mathrm|textbf|mathbf|operatorname)\{([^{}]*)\}",
+               r" \1 ", s)
+    for a, b in ((r"\left", ""), (r"\right", ""), (r"\,", " "), (r"\;", " "),
+                 (r"\!", ""), (r"\quad", " ; "), (r"\qquad", " ; "),
+                 (r"\times", "×"), (r"\cdot", "·"), (r"\div", "÷"),
+                 (r"\pm", "±"), (r"\leq", "≤"), (r"\geq", "≥"), (r"\le", "≤"),
+                 (r"\ge", "≥"), (r"\neq", "≠"), (r"\ne", "≠"),
+                 (r"\approx", "≈"), (r"\Rightarrow", " → "),
+                 (r"\rightarrow", " → "), (r"\Longrightarrow", " → "),
+                 (r"\implies", " → "), (r"\to", " → "), (r"\therefore", " so "),
+                 (r"\checkmark", " ✓ "), (r"\circ", "°"), (r"\%", "%"),
+                 (r"\pi", "π"), (r"\theta", "θ"), (r"\alpha", "α"),
+                 (r"\beta", "β"), (r"\{", "("), (r"\}", ")"), (r"\ldots", "..."),
+                 (r"\cdots", "..."), ("{,}", ","), (r"\infty", "∞")):
+        s = s.replace(a, b)
+    for _ in range(4):
+        s = re.sub(r"\\[dt]?frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}", r"((\1)/(\2))", s)
+        s = re.sub(r"\\[dt]?frac\s*(\d)(\d)", r"(\1/\2)", s)
+        s = re.sub(r"\\sqrt\s*\[([^\]]+)\]\s*\{([^{}]*)\}", r"((\2)^(1/(\1)))", s)
+        s = re.sub(r"\\sqrt\s*\{([^{}]*)\}", r"sqrt(\1)", s)
+        s = re.sub(r"\^\s*\{([^{}]*)\}", r"^(\1)", s)
+        s = re.sub(r"_\s*\{([^{}]*)\}", r"_\1", s)
+    s = re.sub(r"\\(sin|cos|tan|log|ln)\b", r"\1", s)
+    s = re.sub(r"\\hat\{([^{}]*)\}", r"\1̂", s)
+    s = re.sub(r"\\[A-Za-z]+", " Sym ", s)  # an unknown command is prose
+    s = s.replace("{", "(").replace("}", ")")
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def manim_math(path):
+    """manim_scene.py -> [(line, plain_text, subtopic_ref)] of on-screen maths."""
+    import ast
+    src = Path(path).read_text(encoding="utf-8")
+    lines = src.splitlines()
+    bands = []
+    for i, l in enumerate(lines, 1):
+        m = re.search(r"#\s*---\s*Band\s*\d+\s*\((subtopic_\d+)", l)
+        if m:
+            bands.append((i, m.group(1)))
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return None
+    out = []
+    assigned = {}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Assign) and len(node.targets) == 1 and \
+                isinstance(node.targets[0], ast.Name):
+            for sub in ast.walk(node.value):
+                if isinstance(sub, ast.Call):
+                    assigned[id(sub)] = node.targets[0].id
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        fn = node.func.id if isinstance(node.func, ast.Name) else (
+            node.func.attr if isinstance(node.func, ast.Attribute) else "")
+        if fn not in ("MathTex", "Tex"):
+            continue
+        strs = [a.value for a in node.args
+                if isinstance(a, ast.Constant) and isinstance(a.value, str)]
+        if not strs:
+            continue
+        raw = " ".join(strs) if fn == "MathTex" else " ".join(strs)
+        if fn == "Tex":
+            segs = re.findall(r"\$([^$]+)\$", raw)
+            if not segs:
+                continue
+            texts = [latex_to_plain(x) for x in segs]
+        else:
+            texts = [latex_to_plain(raw)]
+        ref = None
+        for ln, r in bands:
+            if ln <= node.lineno:
+                ref = r
+        wrong = any(isinstance(k, ast.keyword) and k.arg == "color" and
+                    "RED" in ast.unparse(k.value) for k in node.keywords)
+        target = assigned.get(id(node))
+        if target and re.search(r"strike\(\s*" + re.escape(target) + r"\b|"
+                                + re.escape(target) + r"\b[^\n]*color\s*=\s*RED"
+                                r"|Cross\(\s*" + re.escape(target) + r"\b", src):
+            wrong = True
+        for t in texts:
+            out.append((node.lineno, t + (" ✗" if wrong else ""), ref, raw))
+    out.sort(key=lambda x: x[0])
+    return out
+
+
+def _latex_malformed(raw):
+    depth = 0
+    for ch in raw.replace(r"\{", "").replace(r"\}", ""):
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth < 0:
+                return "unbalanced braces"
+    return "unbalanced braces" if depth else None
+
+
+# --- content walkers ---
+
+def _grade_of(path):
+    m = re.search(r"grade(\d+)", str(path))
+    return f"grade{m.group(1)}" if m else "unknown"
+
+
+def _subject_of(path):
+    p = str(path)
+    return "mathematical_literacy" if "mathematical_literacy" in p else (
+        "maths" if "/maths/" in p or p.startswith("maths/") else "unknown")
+
+
+def _rel(path):
+    try:
+        return Path(path).resolve().relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def check_question_md(path):
+    """Knowledge-bite question.md: worked solution chains + final answer."""
+    text = Path(path).read_text(encoding="utf-8")
+    lit = "mathematical_literacy" in str(path)
+    findings = []
+    section = None
+    question_lines, answer_lines = [], []
+    last = None
+    for ln, raw in enumerate(text.splitlines(), 1):
+        if raw.startswith("## "):
+            section = raw[3:].lower()
+            last = None
+            continue
+        if not raw.strip() or raw.startswith("#") or raw.startswith("**"):
+            continue
+        if section is None or section.startswith("method"):
+            continue
+        if section.startswith("question"):
+            why = _malformed_line(raw)
+            if why:
+                findings.append(_finding("UNPARSEABLE", ln, None, why, raw,
+                                         "malformed"))
+                continue
+            question_lines.append((ln, raw))
+            continue
+        if section.startswith("answer"):
+            answer_lines.append((ln, raw))
+        f, last = check_written_line(raw, ln, lit=lit, prev_item=last)
+        findings.extend(f)
+    findings.extend(_answer_check(question_lines, answer_lines, lit))
+    return findings
+
+
+def _answer_check(question_lines, answer_lines, lit):
+    """'Solve for x: <one equation>' vs the stated answer."""
+    qtext = " ".join(t for _, t in question_lines)
+    if not re.search(r"\bsolve\b", qtext, re.I) or re.search(
+            r"simultaneous|inequalit|<|>|≤|≥|\bsin|\bcos|\btan|log|interval"
+            r"|domain|\bif\b|graph", qtext, re.I):
+        return []
+    eqs = []
+    for _, t in question_lines:
+        for sent in _sentences(t):
+            for piece in re.split(r":\s+|\s{2,}", written_normalise(sent, lit)):
+                item, parts = _written_relation(piece)
+                if item is not None and item.kind == "eq":
+                    eqs.append(item)
+    if len(eqs) != 1:
+        return []
+    eq = eqs[0]
+    for ln, t in answer_lines:
+        sols = [s for s in (_parse_solution(p) for p in re.split(
+            r"\s+OR\s+|\s*;\s*", written_normalise(t, lit)))]
+        if not sols or any(s is None for s in sols):
+            continue
+        var = sols[0].alts[0][0]
+        vals = set()
+        for s in sols:
+            if s.alts[0][0] != var:
+                return []
+            vals |= set(s.alts[0][1])
+        stated = Item("sol", [(var, sp.FiniteSet(*vals))], t,
+                      decimals=_decimals(t))
+        f = check_step(eq, stated, ln, None, t, False, final=True)
+        f["kind"] = "answer"
+        if f["verdict"] == "STEP_OK":
+            f["reason"] = "answer matches a solve of the question"
+        return [f]
+    return []
+
+
+def check_script_md(path):
+    text = Path(path).read_text(encoding="utf-8")
+    findings = []
+    for ln, raw in enumerate(text.splitlines(), 1):
+        if not raw.strip() or raw.startswith("#"):
+            continue
+        if "open bracket" in raw and "close bracket" in raw and \
+                raw.count("open bracket") != raw.count("close bracket"):
+            findings.append(_finding("UNPARSEABLE", ln, None,
+                                     "unbalanced spoken brackets", raw,
+                                     "malformed"))
+            continue
+        f, _ = check_spoken_text(raw, ln)
+        findings.extend(f)
+    return findings
+
+
+def check_manim(path):
+    items = manim_math(path)
+    if items is None:
+        return [_finding("SKIPPED", 1, None, "manim_scene.py does not parse",
+                         "", "animation")]
+    lit = "mathematical_literacy" in str(path)
+    findings = []
+    last, last_ref = None, None
+    for ln, plain, ref, raw in items:
+        why = _latex_malformed(raw) or _malformed_line(plain)
+        if why:
+            findings.append(_finding("UNPARSEABLE", ln, None, why, raw,
+                                     "malformed"))
+            continue
+        # consecutive lines of one band are the next step of the derivation
+        # (a mismatch across lines is only ever SKIPPED: it may be a new
+        # example)
+        f, last = check_written_text(plain, ln, lit=lit,
+                                     prev_item=last if ref == last_ref else None,
+                                     link_prev=True)
+        last_ref = ref
+        findings.extend(f)
+    return findings
+
+
+def _script_subtopics(path):
+    """script.md -> {subtopic_N: [(line, text)]} in heading order."""
+    out, cur, n = defaultdict(list), None, 0
+    for ln, raw in enumerate(Path(path).read_text(encoding="utf-8").splitlines(), 1):
+        if raw.startswith("## Subtopic"):
+            n += 1
+            cur = f"subtopic_{n}"
+            continue
+        if raw.startswith("# "):
+            continue
+        if cur and raw.strip():
+            out[cur].append((ln, raw))
+    return out
+
+
+def _screen_by_band(items):
+    """{subtopic: {'eqs': [Item], 'vals': {var: set(floats)}}} of the maths
+    shown on screen in each subtopic band."""
+    bands = defaultdict(lambda: {"eqs": [], "vals": defaultdict(set)})
+    for ln, plain, ref, raw in items:
+        if ref is None or "✗" in plain:
+            continue
+        for piece in _clauses(written_normalise(plain)):
+            item, parts = _written_relation(piece)
+            if item is None and len(parts) >= 3 and parts[0][0] == "expr" \
+                    and isinstance(parts[0][1], sp.Symbol) and all(
+                        p[0] == "expr" and _is_number(p[1]) for p in parts[1:]):
+                # 'n = 98/3 = 32,67...'
+                item = Item("sol", [(parts[0][1], sp.FiniteSet(parts[1][1]))],
+                            piece)
+            if item is None:
+                continue
+            if item.kind == "eq":
+                bands[ref]["eqs"].append(item)
+            elif item.kind == "sol":
+                var, fs = item.alts[0]
+                for v in fs:
+                    f = to_float(v)
+                    if f is not None:
+                        bands[ref]["vals"][var].add(round(f, 4))
+    return bands
+
+
+def check_consistency(script_path, manim_path):
+    """Narration vs the on-screen step of the same subtopic band.
+
+    Anchored on the equation, never on wording: a narration chain
+    'equation -> x = v' is compared only when the SAME equation (same
+    solution set, any route) is on screen in that subtopic's band, and it
+    is flagged only when the narrated value is none of the values the
+    screen states for that unknown.
+    """
+    items = manim_math(manim_path)
+    if items is None:
+        return []
+    screen = _screen_by_band(items)
+    spoken = _script_subtopics(script_path)
+    findings = []
+    for ref, band in screen.items():
+        if not band["eqs"] or not band["vals"]:
+            continue
+        pairs = []
+        for ln, raw in spoken.get(ref, []):
+            check_spoken_text(raw, ln, pairs=pairs)
+        for ln, eq, sol in pairs:
+            nsets = [x for x in _solution_set(eq) if x is not None]
+            var, said = sol.alts[0]
+            shown = band["vals"].get(var)
+            if not nsets or not shown:
+                continue
+            same = False
+            for seq in band["eqs"]:
+                for sset in _solution_set(seq):
+                    if sset is None or sset[0] != var:
+                        continue
+                    stated = {round(to_float(v), 4) for v in sset[1]
+                              if to_float(v) is not None} if isinstance(
+                        sset[1], sp.FiniteSet) else set()
+                    if not stated & shown:
+                        continue  # the screen never states this one's answer
+                    if any(n[0] == var and _set_relation(n[1], sset[1]) ==
+                           "equal" for n in nsets):
+                        same = True
+            if not same:
+                continue
+            said_f = {round(to_float(v), 4) for v in said
+                      if to_float(v) is not None}
+            if said_f & shown:
+                findings.append(_finding("CONSISTENT", ln, None,
+                                         f"{ref} {var}", "", "consistency"))
+            else:
+                findings.append(_finding(
+                    "CONTRADICTS_SCREEN", ln, None,
+                    f"{ref}: narration gives {var} = "
+                    f"{', '.join(f'{x:g}' for x in sorted(said_f))}; the screen "
+                    f"shows {var} = {', '.join(f'{x:g}' for x in sorted(shown))} "
+                    "for the same equation", "", "consistency"))
+    return findings
+
+
+def iter_step_content(root=CURRICULUM_ROOT):
+    """(content_type, path) for every factory item the step checker reads."""
+    for subject in SUBJECTS:
+        base = Path(root) / subject
+        for p in sorted((base / "session").rglob("script.md")) if (
+                base / "session").is_dir() else []:
+            if "overlays" in p.parts:
+                continue
+            yield "script", p
+            m = p.with_name("manim_scene.py")
+            if m.exists():
+                yield "animation", m
+                yield "consistency", (p, m)
+        kb = base / "knowledge_bites"
+        for p in sorted(kb.rglob("question.md")) if kb.is_dir() else []:
+            yield "knowledge_bite", p
+
+
+_CHECKERS = {"script": check_script_md, "knowledge_bite": check_question_md,
+             "animation": check_manim}
+
+
+def run_steps(items):
+    rows = []
+    for ctype, path in items:
+        try:
+            with time_limit(TIMEOUT_SECONDS * 60):
+                if ctype == "consistency":
+                    found = check_consistency(*path)
+                    path = path[0]
+                else:
+                    found = _CHECKERS[ctype](path)
+        except Timeout:
+            found = [_finding("SKIPPED", 1, None, "timeout", "", ctype)]
+        for f in found:
+            f.update(content_type=ctype, path=_rel(path),
+                     subject=_subject_of(_rel(path)), grade=_grade_of(path))
+            rows.append(f)
+    return rows
+
+
+def summarise_steps(rows):
+    by = defaultdict(Counter)
+    for r in rows:
+        by[f"{r['content_type']} | {r['subject']} {r['grade']}"][r["verdict"]] += 1
+    flagged = [r for r in rows if r["verdict"] in STEP_FLAGGED + (
+        "CONTRADICTS_SCREEN",)]
+    warnings = [r for r in rows if r["verdict"] == "WARNING"]
+    return {"by_type_grade": {k: dict(v) for k, v in sorted(by.items())},
+            "totals": dict(Counter(r["verdict"] for r in rows)),
+            "flagged": flagged, "warnings": warnings}
+
+
+def steps_markdown(summary):
+    cols = STEP_VERDICTS + ("CONSISTENT", "CONTRADICTS_SCREEN")
+    out = ["# Maths step verification (report only)", "",
+           "Checks truth, not method: every stated step must be true "
+           "(equivalent, solution set preserved, numeric fact correct); "
+           "route, order and shortcuts are never judged. Findings never "
+           "fail the build.", "",
+           "| content \\| grade | " + " | ".join(cols) + " |",
+           "|---|" + "---|" * len(cols)]
+    for k, c in summary["by_type_grade"].items():
+        out.append(f"| {k} | " + " | ".join(str(c.get(v, 0)) for v in cols) + " |")
+    out += ["", "## Flagged", ""]
+    if not summary["flagged"]:
+        out.append("None.")
+    for f in summary["flagged"]:
+        step = f" step {f['step']}" if f.get("step") else ""
+        out.append(f"- **{f['verdict']}**{step} `{f['path']}:{f['line']}` — "
+                   f"{f['reason']}")
+        if f.get("text"):
+            out.append(f"  - {str(f['text'])[:300]}")
+    out += ["", "## Warnings (roots lost/gained, unstated rounding)", ""]
+    for f in summary["warnings"]:
+        out.append(f"- `{f['path']}:{f['line']}` — {f['reason']}")
+    return "\n".join(out) + "\n"
+
+
+# --- private tutor content (local CLI only) ---
+
+def _agent_get(repo, path, ref, token):
+    import urllib.request
+    url = f"https://api.github.com/repos/{repo}/contents/{path}?ref={ref}"
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github.raw",
+        "X-GitHub-Api-Version": "2022-11-28"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return r.read().decode("utf-8")
+
+
+def _agent_tree(repo, ref, token):
+    import urllib.request
+    url = f"https://api.github.com/repos/{repo}/git/trees/{ref}?recursive=1"
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return [t["path"] for t in json.loads(r.read())["tree"]
+                if t["type"] == "blob"]
+
+
+def check_agent(repo="RokctAI/agent", ref="main", token=None):
+    """Tutor snippets and whiteboard animations in the PRIVATE agent repo,
+    read through the REST API only (nothing is cloned or written to disk).
+
+    Returns rows WITHOUT any text: path, line, verdict, step, content_type.
+    """
+    import os
+    token = token or os.environ.get("MONOREPO_PAT") or os.environ.get(
+        "GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if not token:
+        raise SystemExit("--agent needs MONOREPO_PAT, GH_TOKEN or GITHUB_TOKEN")
+    paths = _agent_tree(repo, ref, token)
+    rows = []
+    wanted = [p for p in paths if re.search(
+        r"^lms/team/tutors/CAPS/[^/]+/(samples\.json|samples/[^/]+\.md)$", p)]
+    wanted += [p for p in paths if re.search(r"(^|/)animations\.json$", p)]
+    for p in sorted(wanted):
+        raw = _agent_get(repo, p, ref, token)
+        lines = raw.splitlines()
+        found, ctype = [], "tutor_snippet"
+        if p.endswith("samples.json"):
+            try:
+                data = json.loads(raw)
+            except ValueError:
+                continue
+            for s in data.get("samples", []) or []:
+                script = s.get("script") or ""
+                if not script:
+                    continue
+                # the JSON line that holds this sample's script
+                key = json.dumps(script, ensure_ascii=False)[1:41]
+                ln = next((i for i, l in enumerate(lines, 1)
+                           if '"script"' in l and key in l), 1)
+                f, _ = check_spoken_text(script, ln)
+                f += _spoken_task_answer(script, ln)
+                for x in f:
+                    x["grade"] = f"grade{s.get('grade')}" if s.get("grade") \
+                        else "unknown"
+                found += f
+        elif p.endswith(".md"):
+            for ln, l in enumerate(lines, 1):
+                if l.strip() and not l.startswith("#"):
+                    f, _ = check_spoken_text(l, ln)
+                    found += f + _spoken_task_answer(l, ln)
+        else:
+            ctype = "animation"
+            try:
+                data = json.loads(raw)
+            except ValueError:
+                continue
+            last = None
+            for prim in sorted(data.get("primitives", []) or [],
+                               key=lambda x: x.get("time", 0)):
+                if prim.get("primitive") == "camera_move":
+                    last = None  # a new board region
+                t = prim.get("text")
+                if not t:
+                    continue
+                ln = next((i for i, l in enumerate(lines, 1)
+                           if json.dumps(t)[1:-1][:40] in l), 1)
+                why = _malformed_line(t)
+                if why:
+                    found.append(_finding("UNPARSEABLE", ln, None, why, "",
+                                          "malformed"))
+                    continue
+                f, last = check_written_text(latex_to_plain(t), ln,
+                                             prev_item=last, link_prev=True)
+                found += f
+        for x in found:
+            x.update(content_type=ctype, path=p, text="",
+                     subject="agent", grade=x.get("grade", "unknown"))
+            x["reason"] = ""  # never carry private wording out
+            rows.append(x)
+    return rows
+
+
+def _spoken_task_answer(text, line):
+    """'Factorise <E>. ... <product>.' -> the product must equal E."""
+    m = re.search(r"\bfactori[sz]e\s+([^.]+)\.", text, re.I)
+    if not m:
+        return []
+    task = spoken_to_math(m.group(1))
+    if len(task) != 1:
+        return []
+    try:
+        targets = [parse_math(r) for r in task[0][0] if "=" not in r]
+    except ParseFailure:
+        return []
+    if not targets:
+        return []
+    rest = text[m.end():]
+    answers = []
+    for sent in _sentences(rest):
+        for readings, _clean in spoken_to_math(sent):
+            for r in readings:
+                if "=" in r:
+                    continue
+                try:
+                    e = parse_math(r)
+                except ParseFailure:
+                    continue
+                if isinstance(e, sp.Mul) and sum(
+                        1 for f in e.args if f.free_symbols) >= 2 and \
+                        e.free_symbols == targets[0].free_symbols:
+                    answers.append((readings, sent))
+                    break
+    if not answers:
+        return []
+    readings, sent = answers[-1]
+    ok = any(equivalent(t, parse_math(r)) for t in targets for r in readings
+             if "=" not in r)
+    if ok:
+        return [_finding("STEP_OK", line, None, "factorised answer expands back",
+                         sent, "answer")]
+    if _ERROR_CONTEXT.search(sent):
+        return [_finding("SKIPPED", line, None, "error-example wording", sent,
+                         "answer")]
+    return [_finding("ANSWER_WRONG", line, None,
+                     "factorised answer does not expand to the task", sent,
+                     "answer")]
+
+
+def _step_counts_line(name, c):
+    checked = sum(c.get(v, 0) for v in ("STEP_OK", "STEP_WRONG", "ANSWER_WRONG",
+                                        "WARNING", "CONSISTENT",
+                                        "CONTRADICTS_SCREEN"))
+    flagged = sum(c.get(v, 0) for v in STEP_FLAGGED + ("CONTRADICTS_SCREEN",))
+    ok = c.get("STEP_OK", 0) + c.get("CONSISTENT", 0)
+    return (f"  {name}: checked {checked}, OK {ok}, flagged {flagged}, "
+            f"warnings {c.get('WARNING', 0)}, skipped {c.get('SKIPPED', 0)}")
+
+
+def _main_steps(args):
+    items = [x for x in iter_step_content(Path(args.root))
+             if not args.content or x[0] in args.content]
+    rows = run_steps(items)
+    summary = summarise_steps(rows)
+    if args.steps_json:
+        Path(args.steps_json).write_text(
+            json.dumps(summary, indent=2, ensure_ascii=False, default=str) + "\n",
+            encoding="utf-8")
+    md = steps_markdown(summary)
+    if args.steps_md:
+        Path(args.steps_md).write_text(md, encoding="utf-8")
+    print("Step checks (truth, not method):")
+    by_type = defaultdict(Counter)
+    for k, c in summary["by_type_grade"].items():
+        by_type[k.split(" | ")[0]].update(c)
+        print(_step_counts_line(k, c))
+    for k, c in sorted(by_type.items()):
+        print(_step_counts_line("TOTAL " + k, c))
+    for f in summary["flagged"]:
+        step = f" step {f['step']}" if f.get("step") else ""
+        print(f"  {f['verdict']}{step} {f['path']}:{f['line']} — {f['reason']}")
+    return summary
+
+
+def _main_agent(args):
+    rows = check_agent(args.agent_repo, args.agent_ref)
+    counts = defaultdict(Counter)
+    for r in rows:
+        counts[f"{r['content_type']} {r['grade']}"][r["verdict"]] += 1
+        if r["verdict"] != "SKIPPED":
+            step = f" (step {r['step']})" if r.get("step") else ""
+            print(f"{r['path']}:{r['line']} — {r['verdict']}{step}")
+    for k, c in sorted(counts.items()):
+        print(_step_counts_line(k, c))
+    return 0  # report-only
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("paths", nargs="*",
                     help="mcq.json files (default: every maths and Maths Lit mcq.json)")
     ap.add_argument("--json", dest="json_out", help="write the JSON report here")
     ap.add_argument("--md", dest="md_out", help="write the markdown summary here")
+    ap.add_argument("--steps", action="store_true",
+                    help="also step-check what we teach: lesson scripts, "
+                         "knowledge-bite worked solutions, lesson animations "
+                         "and narration-vs-screen consistency")
+    ap.add_argument("--steps-only", action="store_true",
+                    help="step checks only (skip the MCQ answer keys)")
+    ap.add_argument("--steps-json", help="write the step-check JSON report here")
+    ap.add_argument("--steps-md", help="write the step-check markdown here")
+    ap.add_argument("--content", action="append",
+                    choices=("script", "knowledge_bite", "animation",
+                             "consistency"),
+                    help="limit step checks to these content types")
+    ap.add_argument("--agent", action="store_true",
+                    help="LOCAL ONLY: step-check the private agent repo's tutor "
+                         "snippets and animations through the GitHub REST API "
+                         "(token: MONOREPO_PAT / GH_TOKEN / GITHUB_TOKEN). "
+                         "Prints only 'path:line — verdict'; never text.")
+    ap.add_argument("--root", default=str(CURRICULUM_ROOT),
+                    help="curriculum root for the step checks")
+    ap.add_argument("--agent-repo", default="RokctAI/agent")
+    ap.add_argument("--agent-ref", default="main")
     args = ap.parse_args(argv)
+    if args.agent:
+        return _main_agent(args)
+    if args.steps or args.steps_only:
+        _main_steps(args)
+        if args.steps_only:
+            return 0
     paths = [Path(p) for p in args.paths] or list(iter_mcq_files())
     summary = summarise(run(paths))
     if args.json_out:
