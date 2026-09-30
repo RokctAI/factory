@@ -5,11 +5,15 @@
 #
 # Only claude/ branches. Stages only the tutor's .wav files and
 # <voice>_manifest[.<category>].json (never the reference, never anything else), then
-# pushes with the token passed as an HTTP header for that one command. The
-# token is masked, never echoed, never written to .git/config; xtrace is off.
+# pushes with the token passed as an HTTP header (git -c, scoped to the origin
+# host) on every network-capable git command. The token is masked, never
+# echoed, never written to .git/config; xtrace is off.
 # Idempotent: re-running over identical files commits nothing. Parallel
 # category jobs touch disjoint files, so a rejected push is resolved by
 # rebasing onto the remote branch and retrying (up to 5 times).
+# The checkout is a sparse, blob-less partial clone, so the rebase lazily
+# fetches missing blobs from the promisor remote: it must carry the header too,
+# or that fetch fails with "could not read Username".
 set +x
 set -euo pipefail
 
@@ -46,14 +50,19 @@ git commit --quiet -m "$tutor $voice: $category audio ($n_wav file(s)) from fact
 b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
 echo "::add-mask::$b64"
 auth="AUTHORIZATION: basic $b64"
+# Scope the header to origin's scheme://host/ (https://github.com/ in CI).
+host="$(git remote get-url origin | sed -E 's#^([a-z]+://[^/]+/).*#\1#')"
+# -c is inherited by git's child processes (GIT_CONFIG_PARAMETERS), which
+# covers the promisor lazy fetches that rebase triggers.
+agit() { git -c "http.${host}.extraheader=$auth" "$@"; }
 for i in 1 2 3 4 5; do
-  if git -c "http.https://github.com/.extraheader=$auth" push --quiet origin "HEAD:refs/heads/$branch"; then
+  if agit push --quiet origin "HEAD:refs/heads/$branch"; then
     echo "category $category: pushed $(git rev-parse --short HEAD) to $branch"
     exit 0
   fi
   echo "push rejected (attempt $i); rebasing on the remote branch"
-  git -c "http.https://github.com/.extraheader=$auth" fetch --quiet --depth=50 origin "$branch"
-  git rebase --quiet FETCH_HEAD || { git rebase --abort; echo "::error::rebase onto the agent branch failed"; exit 1; }
+  agit fetch --quiet --depth=50 origin "$branch"
+  agit rebase --quiet FETCH_HEAD || { git rebase --abort || true; echo "::error::rebase onto the agent branch failed"; exit 1; }
   sleep $((RANDOM % 5 + 2))
 done
 echo "::error::could not push to the agent branch"
