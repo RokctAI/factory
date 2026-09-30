@@ -1,0 +1,303 @@
+name: Voice batch
+
+# Push a batch JSON into voice_batches/inbox/ on main (or run it by hand) and
+# this renders a tutor's standing lines in the tutor's consented cloned voice,
+# gates every line, and commits the passing WAVs + a manifest straight to a
+# claude/ branch of the private RokctAI/agent repo. See voice_batch/README.md.
+#
+# PUBLIC-REPO SAFETY — this repository is public, the audio is not:
+#   * No pull_request trigger: the job needs MONOREPO_PAT and fork PRs must
+#     never get it.
+#   * No upload-artifact, and nothing audio-related is cached: fork PR runs
+#     can restore caches. Only public model weights are cached.
+#   * Logs and the job summary carry line ids and scores only — never line
+#     text, transcripts, audio or the reference clip.
+#   * The reference is read from the agent checkout and verified against the
+#     batch's sha256; it never leaves the runner.
+#   * push_agent.sh only pushes to claude/ branches, only the tutor's .wav
+#     files + manifest, with the token masked and never stored in .git/config.
+#
+# Idempotent: re-running a batch re-renders only lines whose text or
+# reference changed and overwrites the same files on the agent branch.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'voice_batches/inbox/**.json'
+  workflow_dispatch:
+    inputs:
+      batch_path:
+        description: 'Batch JSON, e.g. voice_batches/inbox/tutor_001_voice_a_batch1.json (empty = every JSON in voice_batches/inbox/)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+# One batch run at a time. Inside a run each category job has its own runner
+# and renders one line at a time (VibeVoice on CPU peaks ~12.5 GB of 16 GB).
+concurrency:
+  group: voice-batch
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: '3.11'
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  # ASR for the word-exact gate, cached on its own (small, separate key).
+  ASR_MODEL: small.en
+  ASR_DOWNLOAD_ROOT: /home/runner/.cache/voice-batch-asr
+  # radio_ads' ASR model: part of the SHARED weights entry below, so the
+  # entry this workflow saves is byte-for-byte what radio_ads would save.
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+
+jobs:
+  plan:
+    name: Find and validate batches
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      count: ${{ steps.list.outputs.count }}
+      file: ${{ steps.plan.outputs.file }}
+      categories_json: ${{ steps.plan.outputs.categories_json }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: List batches
+        id: list
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          BATCH_PATH: ${{ inputs.batch_path }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          bash voice_batch/ci/changed_batches.sh "$EVENT" "$BEFORE" "$AFTER" "$BATCH_PATH" "$DEFAULT_BRANCH" > "$RUNNER_TEMP/batches.txt"
+          echo "Batches:"; sed 's/^/  /' "$RUNNER_TEMP/batches.txt"
+          echo "count=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)" >> "$GITHUB_OUTPUT"
+
+      - name: Validate batch and build category matrix
+        id: plan
+        env:
+          COUNT: ${{ steps.list.outputs.count }}
+        run: |
+          if [ "$COUNT" = "0" ]; then
+            echo "No added or changed batch JSON under voice_batches/inbox/; nothing to render." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ "$COUNT" != "1" ]; then
+            echo "::error::$COUNT batch files changed in one push; push (or dispatch) one batch per run."
+            exit 1
+          fi
+          file=$(head -n1 "$RUNNER_TEMP/batches.txt")
+          python3 voice_batch/batch.py "$file" > "$RUNNER_TEMP/batch.out"
+          cat "$RUNNER_TEMP/batch.out" >> "$GITHUB_OUTPUT"
+          echo "file=$file" >> "$GITHUB_OUTPUT"
+          grep -E '^(tutor|voice|agent_branch|categories|lines)=' "$RUNNER_TEMP/batch.out" | sed 's/^/  /'
+
+  # One job per category, each on its own runner (16 GB, one render at a
+  # time inside it), all restoring the same shared weights cache. Each
+  # commits its own files to the agent branch as soon as it finishes.
+  render:
+    name: Render ${{ matrix.category }}
+    needs: plan
+    if: needs.plan.outputs.count == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        category: ${{ fromJSON(needs.plan.outputs.categories_json) }}
+    steps:
+      - name: Check MONOREPO_PAT is set
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          set +x
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::This workflow reads and writes the private RokctAI/agent repo with the org secret MONOREPO_PAT. Make it available to RokctAI/factory and re-run."
+            exit 1
+          fi
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - uses: actions/checkout@v4
+
+      - name: Read batch
+        id: batch
+        env:
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+        run: python3 voice_batch/batch.py "$BATCH_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Check out agent branch (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ steps.batch.outputs.agent_branch }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/tutors/CAPS/${{ steps.batch.outputs.tutor }}
+            lms/team/voices
+            lms/team/voice_refs
+            lms/team/scripts
+
+      - name: Verify reference sha256
+        env:
+          REF_PATH: ${{ steps.batch.outputs.ref_path }}
+          REF_SHA: ${{ steps.batch.outputs.ref_sha256 }}
+        run: |
+          got=$(sha256sum ".agent/$REF_PATH" | cut -d' ' -f1)
+          if [ "$got" != "$REF_SHA" ]; then
+            echo "::error::reference sha256 does not match the batch; refusing to render"
+            exit 1
+          fi
+          echo "reference sha256 verified"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: voice_batch/requirements.txt
+
+      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r voice_batch/requirements.txt
+          python -c "import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)"
+
+      # SHARED with radio_ads.yml: same path, same key format. radio_ads keys
+      # on the model's current main revision; this workflow pins that revision,
+      # so while they agree both workflows reuse ONE ~5.6 GB entry.
+      - name: Restore model weights (shared with radio_ads)
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Download model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])  # tokenizer repo
+          from faster_whisper import WhisperModel
+          WhisperModel(os.environ["RADIO_ADS_ASR_MODEL"], device="cpu", compute_type="int8")
+          PY
+          du -sh "$HF_HOME/hub"
+
+      - name: Save model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: ${{ steps.models.outputs.cache-primary-key }}
+
+      - name: Restore ASR model
+        id: asr
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-${{ env.ASR_MODEL }}
+
+      - name: Download ASR model
+        if: steps.asr.outputs.cache-hit != 'true'
+        run: |
+          python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+          du -sh "$ASR_DOWNLOAD_ROOT"
+
+      - name: Render, gate and commit ${{ matrix.category }} to the agent branch
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          HF_HUB_OFFLINE: '1'
+          CATEGORY: ${{ matrix.category }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          REF_PATH: ${{ steps.batch.outputs.ref_path }}
+          REF_SHA: ${{ steps.batch.outputs.ref_sha256 }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+          LINES: ${{ steps.batch.outputs.lines }}
+        run: |
+          set +x
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          python voice_batch/run.py --agent-root .agent --tutor "$TUTOR" --voice "$VOICE" \
+            --ref ".agent/$REF_PATH" --ref-sha256 "$REF_SHA" --category "$CATEGORY" --lines "$LINES" \
+            --model-path "$model_path" --work "$RUNNER_TEMP/voice_batch" --asr-model "$ASR_MODEL"
+          bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" "$CATEGORY"
+
+      - name: Job summary
+        if: always()
+        env:
+          CATEGORY: ${{ matrix.category }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+        run: python3 voice_batch/summary.py ".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.$CATEGORY.json" >> "$GITHUB_STEP_SUMMARY"
+
+  # Fold the per-category manifests into <voice>_manifest.json on the branch.
+  merge:
+    name: Merge manifest
+    needs: [plan, render]
+    if: always() && needs.plan.outputs.count == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read batch
+        id: batch
+        env:
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+        run: python3 voice_batch/batch.py "$BATCH_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Check out agent branch (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ steps.batch.outputs.agent_branch }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/tutors/CAPS/${{ steps.batch.outputs.tutor }}
+
+      - name: Merge and commit
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: |
+          set +x
+          python3 voice_batch/merge_manifest.py ".agent/lms/team/tutors/CAPS/$TUTOR" "$VOICE"
+          bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" manifest
+
+      - name: Job summary
+        if: always()
+        env:
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+        run: python3 voice_batch/summary.py ".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.json" >> "$GITHUB_STEP_SUMMARY"
