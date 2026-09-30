@@ -1,0 +1,227 @@
+name: Reel voices
+
+# Push a batch JSON into radio_ads/reel_voices/ (any branch) and this renders
+# its lines in the cloned voices with voice_batch's per-sentence renderer and
+# QC gate (radio_ads/reel_voice.py): every passing take comes back as a run
+# artifact reel-voices-<batch id> (WAV + MP3 + report.json). The run fails if
+# a line has no passing take after seeds 11, 22, 33, 44 and 55.
+#
+# All of a batch's takes render in this one run, so the concurrency group
+# never cancels some of them. Rendered audio is never committed: the
+# artifact is the delivery (these lines are for public social posts).
+#
+# Deliberately no pull_request trigger: the job needs MONOREPO_PAT and fork
+# PRs must never get it. The reference voices are sha256-checked by
+# install_voices.sh, used on the runner and never uploaded or cached.
+
+on:
+  push:
+    paths:
+      - 'radio_ads/reel_voices/**.json'
+  workflow_dispatch:
+    inputs:
+      batch_path:
+        description: 'Batch JSON, e.g. radio_ads/reel_voices/facebook_reel.json (empty = every JSON in radio_ads/reel_voices/)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reel-voices
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: '3.11'
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  # Pinned, as in voice_batch.yml: never the model's moving main branch.
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  REEL_ASR_MODEL: small.en
+  ASR_DOWNLOAD_ROOT: /home/runner/.cache/voice-batch-asr
+  # Part of the weights entry shared with radio_ads.yml and voice_batch.yml.
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  VOICES_REF: ${{ vars.VOICES_REF || 'main' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+
+jobs:
+  render:
+    name: Render reel voices
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Check MONOREPO_PAT is set
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::The cloned voices live in the private repo RokctAI/agent; make the org secret MONOREPO_PAT available to RokctAI/factory and re-run."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: List batches
+        id: list
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          BATCH_PATH: ${{ inputs.batch_path }}
+        run: |
+          dir=radio_ads/reel_voices
+          if [ "$EVENT" = "workflow_dispatch" ] && [ -n "$BATCH_PATH" ]; then
+            case "$BATCH_PATH" in
+              *..*|"") echo "::error::bad batch_path"; exit 1 ;;
+              "$dir"/*.json) ;;
+              *) echo "::error::batch_path must be a .json under $dir/"; exit 1 ;;
+            esac
+            [ -f "$BATCH_PATH" ] || { echo "::error::$BATCH_PATH not found"; exit 1; }
+            echo "$BATCH_PATH" > "$RUNNER_TEMP/batches.txt"
+          elif [ "$EVENT" = "push" ] && git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            git diff --name-only --diff-filter=AMR "$BEFORE" "$AFTER" -- "$dir" | grep -E '\.json$' > "$RUNNER_TEMP/batches.txt" || true
+          else
+            git ls-files -- "$dir" | grep -E '\.json$' > "$RUNNER_TEMP/batches.txt" || true
+          fi
+          echo "Batches:"; sed 's/^/  /' "$RUNNER_TEMP/batches.txt"
+          echo "count=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)" >> "$GITHUB_OUTPUT"
+          mapfile -t bs < "$RUNNER_TEMP/batches.txt"
+          for b in "${bs[@]}"; do python3 radio_ads/reel_voice.py "$b" --validate; done
+
+      - name: Free disk space
+        if: steps.list.outputs.count != '0'
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - name: Fetch voices and renderer (RokctAI/agent)
+        if: steps.list.outputs.count != '0'
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.VOICES_REF }}
+          path: .agent-voices
+          fetch-depth: 1
+          sparse-checkout: |
+            lms/team/voices
+            lms/team/voice_refs
+            lms/team/scripts
+          persist-credentials: false
+
+      - name: Install voices (sha256-checked) into radio_ads/voices
+        if: steps.list.outputs.count != '0'
+        run: |
+          cp -r .agent-voices/lms/team/scripts "$RUNNER_TEMP/agent_scripts"
+          bash radio_ads/ci/install_voices.sh .agent-voices
+
+      - uses: actions/setup-python@v5
+        if: steps.list.outputs.count != '0'
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: voice_batch/requirements.txt
+
+      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork)
+        if: steps.list.outputs.count != '0'
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r voice_batch/requirements.txt
+
+      - name: Restore model weights (shared with radio_ads and voice_batch)
+        if: steps.list.outputs.count != '0'
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Download model weights
+        if: steps.list.outputs.count != '0' && steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])  # tokenizer repo
+          from faster_whisper import WhisperModel
+          WhisperModel(os.environ["RADIO_ADS_ASR_MODEL"], device="cpu", compute_type="int8")
+          PY
+          du -sh "$HF_HOME/hub"
+
+      - name: Save model weights
+        if: steps.list.outputs.count != '0' && steps.models.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: ${{ steps.models.outputs.cache-primary-key }}
+
+      - name: Restore ASR model (shared with voice_batch)
+        if: steps.list.outputs.count != '0'
+        id: asr
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-${{ env.REEL_ASR_MODEL }}
+
+      - name: Download ASR model
+        if: steps.list.outputs.count != '0' && steps.asr.outputs.cache-hit != 'true'
+        run: python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['REEL_ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+
+      - name: Render and gate
+        if: steps.list.outputs.count != '0'
+        env:
+          HF_HUB_OFFLINE: '1'
+        run: |
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          mapfile -t bs < "$RUNNER_TEMP/batches.txt"
+          rc=0
+          for b in "${bs[@]}"; do
+            id=$(python -c "import json,sys; print(json.load(open(sys.argv[1]))['id'])" "$b")
+            python radio_ads/reel_voice.py "$b" --voices radio_ads/voices --scripts-dir "$RUNNER_TEMP/agent_scripts" \
+              --model-path "$model_path" --work "$RUNNER_TEMP/reel/$id" --out "radio_ads/out/reel_voices/$id" || rc=1
+          done
+          exit $rc
+
+      - name: Job summary
+        if: always() && steps.list.outputs.count != '0'
+        run: |
+          python - >> "$GITHUB_STEP_SUMMARY" <<'PY'
+          import json
+          from pathlib import Path
+          for rep in sorted(Path("radio_ads/out/reel_voices").glob("*/report.json")):
+              r = json.loads(rep.read_text())
+              print(f"### Reel voices `{r['batch']}`\n")
+              print("| line | voice | seed | pass | F0 Hz | similarity | ASR errors | tail dB |")
+              print("|---|---|---|---|---|---|---|---|")
+              for ln in r["lines"]:
+                  for t in ln["takes"]:
+                      print(f"| {ln['id']} | {ln['voice']} | {t['seed']} | {t['status']} | {t.get('median_f0_hz', 'n/a')} "
+                            f"| {t.get('similarity', 'n/a')} | {t.get('asr_word_errors', 'n/a')} | {t.get('tail_db', 'n/a')} |")
+              print(f"\nDownload: the **reel-voices** artifact on this run's Summary page.\n")
+          PY
+
+      - name: Upload passing takes
+        if: always() && steps.list.outputs.count != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-voices-${{ github.run_id }}
+          path: |
+            radio_ads/out/reel_voices/*/*.wav
+            radio_ads/out/reel_voices/*/*.mp3
+            radio_ads/out/reel_voices/*/report.json
+          if-no-files-found: warn
+          retention-days: 30

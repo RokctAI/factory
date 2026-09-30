@@ -1,0 +1,13 @@
+{
+  "id": "facebook_reel",
+  "notes": "The daily opportunity Reel's shared voice-over (social/facebook). 'Rokct' is pronounced 'rocket', so the script spells it that way. The sting is a full sentence because a one-word line does not hold the clone; 'Rocket' is cut from the chosen take.",
+  "voices": {
+    "voice_a": {"f0_target_hz": 102, "f0_tolerance_hz": 8},
+    "voice_b": {"f0_target_hz": 196, "f0_tolerance_hz": 12}
+  },
+  "lines": [
+    {"id": "brand", "voice": "voice_a", "text": "This is Rocket.", "takes": 3},
+    {"id": "open", "voice": "voice_b", "text": "Looking for funding? Here's one you can apply for, right now."},
+    {"id": "follow", "voice": "voice_b", "text": "Follow Rocket for more funding opportunities every day."}
+  ]
+}

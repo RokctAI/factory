@@ -131,6 +131,25 @@ Artifacts are kept 30 days.
 * Optional variables: `ASR_MODEL` (word-check model, default `base.en`),
   `VIBEVOICE_REF` (VibeVoice fork commit, pinned by default).
 * Pull requests do not trigger renders (fork PRs must not see the token).
+* The cloned voices (`lms/team/voice_refs/*_ref.wav`) install only when
+  their sha256 matches the value pinned in `ci/install_voices.sh`, and no
+  voice may overwrite another of the same name; either failure stops the run.
+
+## Reel voice-overs (`reel_voices/`)
+
+The daily Reel's shared lines (social/facebook) do not go through the ad
+pipeline. Push a batch JSON into `reel_voices/` (any branch) and
+`.github/workflows/reel_voices.yml` renders every line with `reel_voice.py`,
+which reuses voice_batch's renderer and QC (`voice_batch/qc.py`,
+`voice_batch/textnorm.py`): VibeVoice-1.5B pinned at revision
+`c00898d2`, cfg 1.3, 10 steps, one sentence at a time (a sentence of two
+words or fewer joins its neighbour), each take gated on median F0 (Voice A
+102 +/- 8 Hz, Voice B 196 +/- 12 Hz), speaker similarity >= 0.88 (>= 0.83
+under 5 s), word-exact ASR (faster-whisper `small.en`) and a clean tail.
+Seeds 11, 22, 33, 44, 55 are tried until a line has its `takes` passing
+takes; a line with none fails the run. All takes of a batch render in one
+run, and the passing ones come back as the artifact `reel-voices-<run id>`.
+Rendered audio is never committed.
 
 ## What happens to an ad
 

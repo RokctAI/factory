@@ -25,15 +25,42 @@ if [ "${#wavs[@]}" -eq 0 ]; then
   echo "::error::no reference WAVs in lms/team/voices/samples/ at this ref" >&2
   exit 1
 fi
+# The cloned voices' references, pinned: a reference whose bytes differ is
+# never used (same values as the voice batches that rendered these voices).
+declare -A ref_sha256=(
+  [voice_a_ref.wav]=de4a86bdea53fa5722cb8d08edd699098207019a8a2611bf569491a4e6993d5f
+  [voice_b_ref.wav]=30c7ab70671dcd2c7239337d8de2dd2e6c9b468a11c0e7028646cc244ab6564d
+)
 mkdir -p "$dest"
-cp "${wavs[@]}" "$dest/"
-if [ "${#specs[@]}" -gt 0 ]; then cp "${specs[@]}" "$dest/"; fi
-# Cloned persona voices (lms/team/voice_refs/voice_a_ref.wav and the like)
-# install as voices/voice_a.wav, so an ad casts them as "voice": "voice_a".
+# install_one SRC NAME: copy SRC to voices/NAME, refusing to replace a voice that
+# is already there (two sources with one name would silently swap a voice).
+install_one() {
+  if [ -e "$dest/$2" ]; then
+    echo "::error::radio_ads/voices/$2 already exists; refusing to overwrite it" >&2
+    exit 1
+  fi
+  cp "$1" "$dest/$2"
+}
+for w in "${wavs[@]}"; do install_one "$w" "$(basename "$w")"; done
+for s in "${specs[@]}"; do install_one "$s" "$(basename "$s")"; done
+# Cloned voices (lms/team/voice_refs/voice_a_ref.wav and the like) install as
+# voices/voice_a.wav, so an ad casts them as "voice": "voice_a".
 refs=("$src"/lms/team/voice_refs/*_ref.wav)
+cloned=0
 for r in "${refs[@]}"; do
-  name="$(basename "$r" _ref.wav)"
-  cp "$r" "$dest/$name.wav"
+  base="$(basename "$r")"
+  want="${ref_sha256[$base]:-}"
+  if [ -z "$want" ]; then
+    echo "::notice::skipping lms/team/voice_refs/$base: no pinned sha256 in radio_ads/ci/install_voices.sh"
+    continue
+  fi
+  got="$(sha256sum "$r" | cut -d' ' -f1)"
+  if [ "$got" != "$want" ]; then
+    echo "::error::lms/team/voice_refs/$base sha256 does not match the pinned value; refusing to use it" >&2
+    exit 1
+  fi
+  install_one "$r" "$(basename "$r" _ref.wav).wav"
+  cloned=$((cloned + 1))
 done
 rm -rf "$src"
-echo "Installed ${#wavs[@]} reference voices, ${#refs[@]} cloned voices (+${#specs[@]} .voice.json) into radio_ads/voices/"
+echo "Installed ${#wavs[@]} reference voices, $cloned cloned voices (sha256 verified) (+${#specs[@]} .voice.json) into radio_ads/voices/"
