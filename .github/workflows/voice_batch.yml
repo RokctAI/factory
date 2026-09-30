@@ -175,6 +175,15 @@ jobs:
           AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
         run: git -C .agent checkout --quiet -b "$AGENT_BRANCH"
 
+      # Tutor scripts are only visible now: fail the job if a line uses an
+      # "ambiguous" word (pronunciations.json) without an inline
+      # {{word|respelling}}, or has malformed markup. Errors name the line
+      # id and the word, never the line text.
+      - name: Check pronunciations
+        env:
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+        run: python3 voice_batch/batch.py --agent-root .agent "$BATCH_FILE" > /dev/null
+
       - name: Verify reference sha256
         env:
           REF_PATH: ${{ steps.batch.outputs.ref_path }}

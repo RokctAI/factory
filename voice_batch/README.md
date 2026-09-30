@@ -87,6 +87,57 @@ Re-running a batch is idempotent: lines whose text and reference are
 unchanged are skipped; changed ones are re-rendered and overwrite the same
 files.
 
+## Pronunciations
+
+`pronunciations.json` fixes how the voice says a word, for every batch kind
+(tutor and r3). It ships empty; add entries as needed:
+
+```json
+{
+  "words": {"Mahikeng": "mah-hee-KENG"},
+  "ambiguous": {"<Name>": ["<variant 1>", "<variant 2>"]}
+}
+```
+
+- `words`: every whole-word use of the word (any case) is spoken as the
+  respelling.
+- `ambiguous`: words, usually names, with more than one right pronunciation
+  for the same spelling, with the known variants. The global list never
+  touches them. A line that uses one must say which it means inline, or the
+  batch fails with, e.g., `line tutor_009/greetings/01 uses '<Name>': write
+  {{<Name>|<variant 1>}} or {{<Name>|<variant 2>}}`.
+- Inline, in the line's script: `{{Thendo|TEN-doh}}`. The voice gets the
+  part after the bar; the display text (manifest `text`) and the word check
+  get the part before it. Inline always wins over the file, and any
+  respelling is allowed, not only a listed variant.
+
+Only the spoken text changes. The word check stays word-exact except for
+the respelled words, which match 1 to N transcript words (N = the larger of
+the word's and the respelling's word counts, plus one). A line with a
+pronunciation records `tts_text` and `pronounced` in the manifest and is
+marked `needs_listen`. Changing a pronunciation changes `render_sha256`, so
+the next batch re-renders that line.
+
+The r3 check runs in the plan job (the packs are here). Tutor scripts live
+in the agent repo, so each render job checks them after checkout
+(`batch.py --agent-root .agent`). The app shows the `samples.json` teaching
+`script` on the tutor card, today through a hand-copied demo constant
+(`kDemoTutorSnippets`); avoid inline markup in `samples.json`, or strip it
+when that constant is re-copied. Greetings, acknowledgements and sign-offs
+are never displayed.
+
+R–3 phonics respellings stay in `r3_respellings.json` (whole-line); word
+pronunciations apply after them.
+
+**Audition.** A push to `main` that changes `pronunciations.json` (or a
+manual run of `pronunciation_audition.yml` with a comma-separated `words`
+list) renders one short clip per changed word and voice (every variant of
+a changed ambiguous entry), so someone can listen and adjust. The clips go
+to the agent repo's `rokct/pronunciation-audition` branch, never to this
+repo: `lms/team/voices/samples/pronunciation/<voice>/<word>--<respelling>.mp3`,
+with `audition.json` beside them. `voices/samples/` is excluded from the app
+bundle by `sync_team_assets.dart`. No agent PR is opened.
+
 ## What a run does
 
 1. **plan** lists the changed batch, validates it (`batch.py`) and emits one

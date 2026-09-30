@@ -25,6 +25,9 @@ text) to a TTS-only text, e.g. "a as in ant" -> "ah, as in ant", so the
 voice says the sound and not the letter name. The display text never
 changes; the respelled text is what is rendered and what the ASR gate
 checks, and the line is flagged needs_listen for a human ear.
+
+Word pronunciations (pronunciations.json, inline {{word|respelling}}) then
+apply to that text, as for every batch kind; they flag needs_listen too.
 """
 from __future__ import annotations
 
@@ -35,7 +38,8 @@ import re
 import sys
 from pathlib import Path
 
-from textnorm import speak_text, split_sentences
+import pronunciations
+from lines import pronounced_fields
 
 FACTORY = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(FACTORY / "lessons" / "scripts" / "CAPS"))
@@ -215,23 +219,24 @@ def file_id(key: str, locale: str) -> str:
     return key if locale == "en" else f"{key}.{locale}"
 
 
-def item(key: str, text: str, locale: str, source: str, resp: dict) -> dict:
-    tts = respelled(key, text, resp)
-    spoken = tts or text
-    sentences = split_sentences(spoken)
-    render = [speak_text(s) for s in sentences]
+def item(key: str, text: str, locale: str, source: str, resp: dict, pron: dict | None = None) -> dict:
+    display = pronunciations.display_text(text) if pronunciations.has_markup(text) else text
+    tts = respelled(key, display, resp)
+    f = pronounced_fields(file_id(key, locale), tts or text, pron)
     fid = file_id(key, locale)
     it = {
-        "id": fid, "key": key, "locale": locale, "category": "r3", "text": text,
-        "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
-        "render_sha256": hashlib.sha256("\n".join(render).encode("utf-8")).hexdigest(),
+        "id": fid, "key": key, "locale": locale, "category": "r3", "text": display,
+        "text_sha256": hashlib.sha256(display.encode("utf-8")).hexdigest(),
+        "render_sha256": f["render_sha256"],
         "file": f"{AUDIO_DIR}/{fid}.mp3", "final_wav": f"r3/{fid}.wav", "script": source,
-        # sentences = what is rendered and what the ASR gate checks per take.
-        "sentences": sentences, "render_text": render, "asr_text": spoken,
-        "needs_listen": tts is not None,
+        # sentences = what the ASR gate checks per take (display words);
+        # render_text = what is rendered (respelling + pronunciations).
+        "sentences": f["sentences"], "render_text": f["render_text"], "asr_text": f["asr_text"],
+        "sentence_wild": f["sentence_wild"], "asr_wild": f["asr_wild"], "pronounced": f["pronounced"],
+        "source_text": text, "needs_listen": tts is not None or bool(f["pronounced"]),
     }
-    if tts is not None:
-        it["tts_text"] = tts
+    if tts is not None or "tts_text" in f:
+        it["tts_text"] = f.get("tts_text", f["asr_text"])
     return it
 
 
@@ -253,13 +258,15 @@ def all_keyed_lines(factory_root: str | Path = FACTORY, packs: list[str] | None 
 
 def build_r3_lines(factory_root: str | Path = FACTORY, packs: list[str] | None = None,
                    only: list[str] | None = None, locale: str = "en",
-                   agent_root: str | Path | None = None, respellings: dict | None = None) -> list[dict]:
+                   agent_root: str | Path | None = None, respellings: dict | None = None,
+                   pron: dict | None = None) -> list[dict]:
     resp = load_respellings() if respellings is None else respellings
+    pron = pronunciations.load() if pron is None else pron
     rows = all_keyed_lines(factory_root, packs, locale, agent_root)
     if only:
         want = set(only)
         rows = [r for r in rows if r[0] in want]
-    return [item(k, t, locale, s, resp) for k, t, s in rows]
+    return [item(k, t, locale, s, resp, pron) for k, t, s in rows]
 
 
 def shard(items: list, k: int, n: int) -> list:

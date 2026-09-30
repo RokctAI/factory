@@ -18,6 +18,14 @@ Two kinds:
 
 Both take an optional F0 gate: "f0_target_hz" and "f0_tolerance_hz"
 (defaults: the Voice A values, 102 +/- 8 Hz, i.e. 94-110 Hz).
+
+Pronunciations (voice_batch/pronunciations.json): the file must be valid,
+and no line may use an "ambiguous" word outside an inline
+{{word|respelling}}; the error names the line and the variants. R-3 lines
+are in this repo, so an r3 batch is checked here. Tutor lines live in the
+agent repo: pass --agent-root once it is checked out.
+
+    python voice_batch/batch.py --agent-root .agent voice_batches/inbox/<batch>.json > /dev/null
 """
 from __future__ import annotations
 
@@ -159,7 +167,31 @@ def _load_r3(raw: dict, factory_root: Path | None) -> dict:
     return out
 
 
-def load_batch(path: str | Path, factory_root: Path | None = None) -> dict:
+def pronunciation_errors(b: dict, agent_root: str | Path | None = None, factory_root: Path | None = None,
+                         pron: dict | None = None) -> list[str]:
+    """Lines of the batch that use an ambiguous word without an inline
+    respelling, or carry malformed inline markup. Tutor lines need the agent
+    checkout (agent_root); without it only an r3 batch is checked."""
+    import pronunciations
+    try:
+        pron = pronunciations.load() if pron is None else pron
+        if b["kind"] == "r3":
+            import r3_lines
+            items = r3_lines.build_r3_lines(factory_root or r3_lines.FACTORY, b.get("packs"), b.get("lines"),
+                                            b["locale"], agent_root, pron=pron)
+        elif agent_root is None:
+            return []
+        else:
+            from lines import build_lines
+            items = build_lines(agent_root, b["tutor"], b["categories"], pron)
+            if b.get("lines"):
+                items = [it for it in items if it["id"] in set(b["lines"])]
+    except pronunciations.PronunciationError as exc:
+        return [str(exc)]
+    return pronunciations.check_ambiguous(items, pron)
+
+
+def load_batch(path: str | Path, factory_root: Path | None = None, agent_root: str | Path | None = None) -> dict:
     try:
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
@@ -173,6 +205,9 @@ def load_batch(path: str | Path, factory_root: Path | None = None) -> dict:
     out["kind"] = kind
     out["f0_target_hz"] = _num(raw, "f0_target_hz", F0_TARGET_HZ, F0_TARGET_RANGE)
     out["f0_tolerance_hz"] = _num(raw, "f0_tolerance_hz", F0_TOLERANCE_HZ, F0_TOLERANCE_RANGE)
+    errs = pronunciation_errors(out, agent_root, factory_root)
+    if errs:
+        raise BatchError("; ".join(errs))
     return out
 
 
@@ -199,13 +234,17 @@ def outputs(b: dict) -> list[str]:
 
 
 def main(argv: list[str]) -> int:
+    agent_root = None
+    if len(argv) == 4 and argv[1] == "--agent-root":
+        agent_root, argv = argv[2], [argv[0], argv[3]]
     if len(argv) != 2:
-        print("usage: batch.py BATCH_JSON", file=sys.stderr)
+        print("usage: batch.py [--agent-root AGENT_DIR] BATCH_JSON", file=sys.stderr)
         return 2
     try:
-        b = load_batch(argv[1])
+        b = load_batch(argv[1], agent_root=agent_root)
     except BatchError as exc:
-        print(f"::error::{argv[1]}: {exc}", file=sys.stderr)
+        for e in str(exc).split("; "):
+            print(f"::error::{argv[1]}: {e}", file=sys.stderr)
         return 1
     print("\n".join(outputs(b)))
     return 0
