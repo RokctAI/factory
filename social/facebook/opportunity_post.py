@@ -339,7 +339,7 @@ def _post_text(opp):
         kind, sep, rest = opp["heading"].partition(" tip: ")
         heading = f"{kind} tip #{opp['id']}: {rest}" if sep else f"Funding tip #{opp['id']}: {opp['heading']}"
         lead = f"{heading}\n\n{opp['title']}"
-        return lead, "Follow ROKCT for a new opportunity every day.", more, ""
+        return lead, "Follow ROKCT for more funding opportunities every day.", more, ""
     closes = f"Closes {_nice_date(opp['deadline'])}."
     lead = f"{headline_for(opp)} - {opp['title']}"
     return lead, closes, f"How to apply: {page}\n{more}", f"How to apply: {page}"
