@@ -41,7 +41,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from lines import build_lines  # noqa: E402
-from qc import F0_TOLERANCE, TARGET_F0, f0_range  # noqa: E402
+from qc import F0_TOLERANCE, TAIL_MAX_DB, TAIL_WIN_S, TARGET_F0, f0_range  # noqa: E402
+from textnorm import TAIL_PAD  # noqa: E402
 
 SEED_ROUNDS = ([11, 22, 33], [44], [55])
 
@@ -128,14 +129,15 @@ def run_header(args, ref: Path, agent: Path) -> dict:
             "library_versions": versions(),
         },
         "settings": {
-            "prompt": "Speaker 1: <sentence>", "cfg_scale": 1.3, "ddpm_steps": 10,
+            "prompt": f"Speaker 1: <sentence>{TAIL_PAD}", "tail_pad": TAIL_PAD, "cfg_scale": 1.3, "ddpm_steps": 10,
             "seed_rounds": [list(s) for s in SEED_ROUNDS], "per_sentence": True,
             "pause_ms": [280, 320], "fade_ms": 12, "trim_top_db": 40,
             "loudness_dbfs": -20.0, "sample_rate": 24000, "channels": 1, "subtype": "PCM_16",
             "selection": f"word-exact takes; median F0 closest to {args.f0_target:g} Hz, then fewest upward swings, then higher similarity",
             "gate": {"median_f0_hz": [round(lo, 2), round(hi, 2)], "f0_target_hz": args.f0_target,
                      "f0_tolerance_hz": args.f0_tolerance,
-                     "similarity_min_ge_5s": 0.88, "similarity_min_lt_5s": 0.83, "asr": "word-exact"},
+                     "similarity_min_ge_5s": 0.88, "similarity_min_lt_5s": 0.83, "asr": "word-exact",
+                     "tail_max_db": TAIL_MAX_DB, "tail_window_ms": int(TAIL_WIN_S * 1000)},
         },
         "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
@@ -153,17 +155,21 @@ def score_fields(r: dict) -> dict:
     return {**run_id(), "duration": r["duration_s"], "seeds": r["seeds"], "median_f0": r["median_f0_hz"],
             "similarity": r["similarity"], "asr_match": r["asr_match"],
             "similarity_threshold": r["similarity_threshold"], "upward_swings": r["upward_swings"],
-            "rms_dbfs": r["rms_dbfs"], "peak": r["peak"], "pauses_ms": r["pauses_ms"]}
+            "rms_dbfs": r["rms_dbfs"], "peak": r["peak"], "pauses_ms": r["pauses_ms"],
+            "tail_db": r["tail_db"], "tail_pad": TAIL_PAD}
 
 
 def failed_fields(r: dict) -> dict:
     return {**run_id(), "status": r["status"], "seeds_tried": r["seeds_tried"],
             **{k: r[k] for k in ("duration_s", "median_f0_hz", "similarity", "similarity_threshold",
-                                 "asr_match", "gate") if k in r}}
+                                 "asr_match", "tail_db", "gate") if k in r}}
 
 
 def unchanged(prev: dict | None, it: dict, agent: Path, ref_sha: str, extra: tuple = ()) -> bool:
+    # A line rendered without the current tail pad (before the clipped-last-
+    # word fix) counts as changed, so the next batch re-renders it.
     return bool(prev and prev.get("text_sha256") == it["text_sha256"]
+                and prev.get("tail_pad") == TAIL_PAD
                 and all(prev.get(k) == it[k] for k in extra)
                 and prev.get("ref_sha256", ref_sha) == ref_sha
                 and (agent / it["file"]).exists() and sha256_file(agent / it["file"]) == prev.get("sha256"))
