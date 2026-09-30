@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Pick the agent ref a voice batch job (render or merge) checks out.
+# Pick the agent ref a voice batch job checks out (render), or tell the
+# merge job the branch is still missing (nothing was rendered).
 #
 #   AGENT_PAT=... resolve_agent_ref.sh BRANCH [AGENT_URL]
 #

@@ -319,33 +319,37 @@ jobs:
           BATCH_FILE: ${{ needs.plan.outputs.file }}
         run: python3 voice_batch/batch.py "$BATCH_FILE" >> "$GITHUB_OUTPUT"
 
-      # Same fallback as render: normally a render job has created the branch
-      # by now, but if none pushed anything it may still not exist.
-      - name: Resolve agent branch (main if it does not exist)
+      # The first render job to push creates the agent branch. If it still
+      # does not exist here, no render job pushed anything: there is nothing
+      # to merge and no PR to open, so skip the rest (the failed render jobs
+      # already turn the run red).
+      - name: Check the agent branch exists
         id: agentref
         env:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
           AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
         run: bash voice_batch/ci/resolve_agent_ref.sh "$AGENT_BRANCH"
 
+      - name: Nothing rendered
+        if: steps.agentref.outputs.create == 'true'
+        run: |
+          echo "::notice::no lines rendered, no agent PR opened"
+          echo "no lines rendered, no agent PR opened" >> "$GITHUB_STEP_SUMMARY"
+
       - name: Check out agent branch (private)
+        if: steps.agentref.outputs.create != 'true'
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
           token: ${{ secrets.MONOREPO_PAT }}
-          ref: ${{ steps.agentref.outputs.ref }}
+          ref: ${{ steps.batch.outputs.agent_branch }}
           path: .agent
           fetch-depth: 1
           persist-credentials: false
           sparse-checkout: ${{ steps.batch.outputs.kind == 'r3' && 'lms/dart/templates/assets/r3_packs/audio' || format('lms/team/tutors/CAPS/{0}', steps.batch.outputs.tutor) }}
 
-      - name: Start the agent branch from main
-        if: steps.agentref.outputs.create == 'true'
-        env:
-          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
-        run: git -C .agent checkout --quiet -b "$AGENT_BRANCH"
-
       - name: Merge and commit
+        if: steps.agentref.outputs.create != 'true'
         env:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
           KIND: ${{ steps.batch.outputs.kind }}
@@ -366,6 +370,7 @@ jobs:
       # is open; otherwise leave one comment with this run's counts. Counts
       # and the run URL only, never line text or ids.
       - name: Open the agent PR (or note this run on the open one)
+        if: steps.agentref.outputs.create != 'true'
         env:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
           KIND: ${{ steps.batch.outputs.kind }}
@@ -384,7 +389,7 @@ jobs:
             --target "$target" --voice "$VOICE" --manifest "$m" --run-url "$RUN_URL"
 
       - name: Job summary
-        if: always()
+        if: always() && steps.agentref.outputs.create != 'true'
         env:
           KIND: ${{ steps.batch.outputs.kind }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
