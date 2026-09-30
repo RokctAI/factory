@@ -1,0 +1,1053 @@
+name: Media baseline (old engines)
+
+# Step 0 of the rokct-media migration: render one small fixed fixture with
+# each CURRENT media engine, before any code moves, and keep the outputs and
+# a manifest (engine, fixture, source repo@sha, command, files + sha256,
+# durations, audio duration / loudness / F0) as Actions artifacts. Later
+# steps render the same fixtures through the new package and compare.
+# See baseline/README.md.
+#
+# Nothing here publishes, commits or releases:
+#   * permissions: contents read. The only secret any job sees is
+#     MONOREPO_PAT, and only as a checkout token (persist-credentials:
+#     false, so no checkout keeps it) plus the tour fragment fetch; the
+#     optional BASELINE_ARTIFACT_KEY only encrypts withheld audio.
+#   * No platform credentials exist in any job. Every engine is driven by
+#     its render function or render CLI, never by the entry point that posts
+#     or pushes (baseline/README.md lists each one).
+#   * The guard job fails the run if any baseline file or this workflow
+#     names a publish/push command (baseline/tools/forbidden.txt) or uses
+#     another secret.
+#   * No cache is written (restore only), so production caches are never
+#     evicted; the weights entry is the one voice_batch.yml saves.
+#
+# Cloned-voice audio (Voice A, Voice B) is hashed and measured but NOT
+# uploaded: this repository is public and so are its artifacts. Set the
+# repository secret BASELINE_ARTIFACT_KEY to upload it AES-256 encrypted.
+#
+# workflow_dispatch only works from the default branch, so the branch that
+# carries this workflow also runs it on push (path-filtered).
+
+on:
+  push:
+    branches: [claude/media-baseline]
+    paths:
+      - '.github/workflows/baseline.yml'
+      - 'baseline/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: media-baseline
+  cancel-in-progress: false
+
+env:
+  # Sources, pinned. factory engine code is main at FACTORY_BASE (the guard
+  # job proves this branch changes nothing outside baseline/ and this file).
+  FACTORY_BASE: 990de813c3c1bff68182a3fcfc6fa27ac93fc137
+  FACTORY_PR196: d65c9dec116cff373e6e7ed17935c302606563dc
+  AGENT_MAIN: b8a2bec01d8eb3612c2a529dd1acdc31c0b648e9
+  AGENT_PR202: b5c5407efca511f04e8c6faef841ad3bdab99c0f
+  AGENT_PORTRAIT_SOURCE: 13d668ea6658deb8b4e51caa20ce26c8e72b551a
+  SUPACHARGE_SHA: c77c063f4b087e3e4f60c9b368a48f5792e9adad
+  OPPORTUNITIES_SHA: e00e5e10de1d90dcf3e536cfb361c65bb8017ba0
+  SHARED_WORKFLOWS_SHA: 70374eba4071ce4826efa7a7dd94e1729ae2c29a
+  MINILAUNCHER_SHA: 50afbeda499d7eeb1626734c57709b9657efb235
+  # Voice engine, as voice_batch.yml pins it.
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  ASR_DOWNLOAD_ROOT: /home/runner/.cache/voice-batch-asr
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  BASELINE_FRAGMENTS: baseline_fragments
+
+jobs:
+  guard:
+    name: Guard (no publish path, engine code = main)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            baseline
+            .github
+
+      - name: No publish or push command in the baseline
+        run: |
+          hits=$(grep -rnF -f baseline/tools/forbidden.txt baseline .github/workflows/baseline.yml \
+                 | grep -v '^baseline/tools/forbidden.txt:' || true)
+          if [ -n "$hits" ]; then
+            echo "::error::a publish/push command appears in the baseline:"; echo "$hits"; exit 1
+          fi
+          echo "no publish/push command in baseline/ or this workflow"
+
+      - name: Only the checkout token and the artifact key are used as secrets
+        run: |
+          used=$(grep -oE 'secrets\.[A-Za-z0-9_]+' .github/workflows/baseline.yml | sort -u | tr '\n' ' ')
+          echo "secrets referenced: $used"
+          for s in $used; do
+            case "$s" in
+              secrets.MONOREPO_PAT|secrets.BASELINE_ARTIFACT_KEY) ;;
+              *) echo "::error::unexpected secret $s"; exit 1 ;;
+            esac
+          done
+
+      - name: Engine code is factory main at FACTORY_BASE
+        run: |
+          git fetch --quiet --no-tags --filter=blob:none --depth=1 origin "$FACTORY_BASE"
+          changed=$(git diff --name-only "$FACTORY_BASE" HEAD -- . ':(exclude)baseline' ':(exclude).github/workflows/baseline.yml')
+          if [ -n "$changed" ]; then
+            echo "::error::this branch changes files outside baseline/:"; echo "$changed"; exit 1
+          fi
+          echo "HEAD = factory@$FACTORY_BASE + baseline/ + this workflow"
+
+  # 1. Tutor voice batch: voice_batch/run.py for one line (no agent push).
+  tutor_voice:
+    name: Tutor voice batch
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      ENGINE: tutor_voice
+      OUT: baseline_out/tutor_voice
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check MONOREPO_PAT is visible
+        id: pat
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            python3 baseline/tools/record.py skip --engine "$ENGINE" --reason "MONOREPO_PAT is not visible to this workflow; the tutor scripts and the Voice A reference are in the private agent repo"
+            echo "::error::MONOREPO_PAT is not set for RokctAI/factory"; exit 1
+          fi
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - name: Read fixture
+        id: fx
+        run: |
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
+          import json
+          for k, v in json.load(open("baseline/fixtures/tutor_voice.json")).items():
+              if not k.startswith("_"):
+                  print(f"{k}={v}")
+          PY
+
+      - name: Check out agent (private, pinned)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_MAIN }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/tutors/CAPS/${{ steps.fx.outputs.tutor }}
+            lms/team/voices
+            lms/team/voice_refs
+            lms/team/scripts
+
+      - name: Verify reference sha256
+        env:
+          REF_PATH: ${{ steps.fx.outputs.ref_path }}
+          REF_SHA: ${{ steps.fx.outputs.ref_sha256 }}
+        run: |
+          got=$(sha256sum ".agent/$REF_PATH" | cut -d' ' -f1)
+          [ "$got" = "$REF_SHA" ] || { echo "::error::reference sha256 does not match the fixture"; exit 1; }
+          echo "reference sha256 verified"
+
+      # run.py skips a line its category manifest already records for this
+      # text and reference. Set the committed manifest aside (runner only)
+      # so the line is rendered, and keep it to compare hashes with.
+      - name: Set the committed category manifest aside
+        env:
+          TUTOR: ${{ steps.fx.outputs.tutor }}
+          VOICE: ${{ steps.fx.outputs.voice }}
+          CATEGORY: ${{ steps.fx.outputs.category }}
+        run: |
+          m=".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.$CATEGORY.json"
+          if [ -f "$m" ]; then mv "$m" "$RUNNER_TEMP/committed_manifest.json"; fi
+
+      - uses: ./baseline/actions/voice-engine
+        with:
+          requirements: voice_batch/requirements.txt
+          model-revision: ${{ env.TTS_MODEL_REVISION }}
+          radio-asr-model: ${{ env.RADIO_ADS_ASR_MODEL }}
+
+      - name: Restore ASR model (read-only)
+        id: asr
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-${{ steps.fx.outputs.asr_model }}
+
+      - name: Download ASR model (this job only)
+        if: steps.asr.outputs.cache-hit != 'true'
+        env:
+          ASR_MODEL: ${{ steps.fx.outputs.asr_model }}
+        run: python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+
+      - name: Install ffmpeg (measurements)
+        run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends ffmpeg
+
+      - name: Render and gate one line
+        env:
+          HF_HUB_OFFLINE: '1'
+          ASR_MODEL: ${{ steps.fx.outputs.asr_model }}
+          FX_TUTOR: ${{ steps.fx.outputs.tutor }}
+          FX_VOICE: ${{ steps.fx.outputs.voice }}
+          FX_CATEGORY: ${{ steps.fx.outputs.category }}
+          FX_LINE: ${{ steps.fx.outputs.line }}
+          FX_REF: ${{ steps.fx.outputs.ref_path }}
+          FX_REF_SHA: ${{ steps.fx.outputs.ref_sha256 }}
+          FX_F0: ${{ steps.fx.outputs.f0_target_hz }}
+          FX_F0_TOL: ${{ steps.fx.outputs.f0_tolerance_hz }}
+          FX_LANG: ${{ steps.fx.outputs.language }}
+        run: |
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          python baseline/tools/record.py run --engine "$ENGINE" --step render --no-tail -- \
+            python voice_batch/run.py --agent-root .agent --voice "$FX_VOICE" --ref ".agent/$FX_REF" \
+              --ref-sha256 "$FX_REF_SHA" --model-path "$model_path" --work "$RUNNER_TEMP/voice_batch" \
+              --asr-model "$ASR_MODEL" --language "$FX_LANG" --f0-target "$FX_F0" --f0-tolerance "$FX_F0_TOL" \
+              --tutor "$FX_TUTOR" --category "$FX_CATEGORY" --lines "$FX_LINE"
+
+      - name: Collect the render
+        run: |
+          python baseline/tools/record.py run --engine "$ENGINE" --step collect --no-tail -- \
+            python baseline/drivers/tutor_voice_collect.py baseline/fixtures/tutor_voice.json .agent \
+              "$RUNNER_TEMP/voice_batch" "$RUNNER_TEMP/committed_manifest.json" "$OUT"
+
+      - name: Record
+        if: always()
+        env:
+          BASELINE_ARTIFACT_KEY: ${{ secrets.BASELINE_ARTIFACT_KEY }}
+          FX_LINE: ${{ steps.fx.outputs.line }}
+        run: |
+          python3 baseline/tools/record.py finalize --engine "$ENGINE" --out "$OUT" \
+            --source factory=. --source agent=.agent \
+            --fixture file=baseline/fixtures/tutor_voice.json --fixture line="$FX_LINE" \
+            --fixture model="$TTS_MODEL@$TTS_MODEL_REVISION" --fixture cfg_scale=1.3 --fixture ddpm_steps=10 \
+            --withhold '*.wav' --f0 '*.wav' \
+            --note "Voice A audio: sha256 and metrics only, not uploaded (public repository)" \
+            --pkg torch --pkg transformers --pkg vibevoice --pkg faster-whisper --pkg resemblyzer --pkg librosa --pkg numpy --pkg soundfile
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-${{ env.ENGINE }}
+          path: |
+            ${{ env.OUT }}
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragment
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-${{ env.ENGINE }}
+          path: ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  # 2. Radio ads: make_ad.py on the kasi_corner_30 example, model revision
+  #    pinned for the baseline (radio_ads.yml itself is unchanged).
+  radio_ad:
+    name: Radio ad
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      ENGINE: radio_ad
+      OUT: baseline_out/radio_ad
+      AD: radio_ads/examples/kasi_corner_30.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check MONOREPO_PAT is visible
+        id: pat
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            python3 baseline/tools/record.py skip --engine "$ENGINE" --reason "MONOREPO_PAT is not visible to this workflow; the persona reference voices are in the private agent repo"
+            echo "::error::MONOREPO_PAT is not set for RokctAI/factory"; exit 1
+          fi
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - name: Fetch persona voices (agent, pinned)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_MAIN }}
+          path: .agent-voices
+          fetch-depth: 1
+          sparse-checkout: lms/team/voices
+          persist-credentials: false
+
+      - name: Install voices into radio_ads/voices
+        run: bash radio_ads/ci/install_voices.sh .agent-voices
+
+      - name: Install ffmpeg (with rubberband)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends ffmpeg
+          ffmpeg -hide_banner -filters | grep -q rubberband && echo "rubberband filter available"
+
+      - uses: ./baseline/actions/voice-engine
+        with:
+          requirements: radio_ads/requirements.txt
+          model-revision: ${{ env.TTS_MODEL_REVISION }}
+          radio-asr-model: ${{ env.RADIO_ADS_ASR_MODEL }}
+
+      # make_ad.py loads the model by name, which resolves the hub's "main"
+      # ref. Point "main" at the pinned revision in this runner's cache and
+      # render offline, so the baseline uses exactly that revision.
+      - name: Pin the model revision for this render
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          repo = Path(os.environ["HF_HOME"]) / "hub" / ("models--" + os.environ["TTS_MODEL"].replace("/", "--"))
+          rev = os.environ["TTS_MODEL_REVISION"]
+          assert (repo / "snapshots" / rev).is_dir(), "pinned revision missing"
+          ref = repo / "refs" / "main"
+          before = ref.read_text().strip() if ref.exists() else "(none)"
+          ref.parent.mkdir(parents=True, exist_ok=True)
+          ref.write_text(rev)
+          print(f"refs/main: {before} -> {rev}")
+          Path(os.environ["RUNNER_TEMP"], "hf_main_before.txt").write_text(before)
+          PY
+
+      - name: Render
+        env:
+          HF_HUB_OFFLINE: '1'
+        run: |
+          python baseline/tools/record.py run --engine "$ENGINE" --step render -- \
+            python radio_ads/make_ad.py "$AD" --asr-model "$RADIO_ADS_ASR_MODEL" --out "$OUT" \
+              --cache "$RUNNER_TEMP/tts-cache"
+
+      - name: Record
+        if: always()
+        run: |
+          before=$(cat "$RUNNER_TEMP/hf_main_before.txt" 2>/dev/null || echo unknown)
+          inputs=()
+          for v in tutor_006 tutor_004 assistant_002; do inputs+=(--input "voice_$v=radio_ads/voices/$v.wav"); done
+          python3 baseline/tools/record.py finalize --engine "$ENGINE" --out "$OUT" \
+            --source factory=. --input ad="$AD" "${inputs[@]}" \
+            --fixture ad="$AD" --fixture voices="RokctAI/agent@$AGENT_MAIN:lms/team/voices" \
+            --fixture model="$TTS_MODEL@$TTS_MODEL_REVISION" --fixture asr_model="$RADIO_ADS_ASR_MODEL" \
+            --note "model revision pinned for the baseline; radio_ads.yml resolves the hub's main at run time (the runner cache's main ref was $before)" \
+            --note "fresh line cache, so every line is rendered" \
+            --pkg torch --pkg transformers --pkg vibevoice --pkg faster-whisper --pkg pyloudnorm --pkg librosa --pkg numpy --pkg soundfile
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-${{ env.ENGINE }}
+          path: |
+            ${{ env.OUT }}
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragment
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-${{ env.ENGINE }}
+          path: ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  # 3. Reel voices: reel_voice.py from factory PR #196 on a one-line batch.
+  reel_voices:
+    name: Reel voices (PR 196)
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      ENGINE: reel_voices
+      OUT: baseline_out/reel_voices
+      BATCH: baseline/fixtures/reel_voices_batch.json
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check MONOREPO_PAT is visible
+        id: pat
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            python3 baseline/tools/record.py skip --engine "$ENGINE" --reason "MONOREPO_PAT is not visible to this workflow; the Voice B reference and the renderer are in the private agent repo"
+            echo "::error::MONOREPO_PAT is not set for RokctAI/factory"; exit 1
+          fi
+
+      - name: Check out factory PR 196 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.FACTORY_PR196 }}
+          path: pr196
+          persist-credentials: false
+          sparse-checkout: |
+            radio_ads
+            voice_batch
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - name: Fetch voices and renderer (agent, pinned)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_MAIN }}
+          path: .agent-voices
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/voices
+            lms/team/voice_refs
+            lms/team/scripts
+
+      - name: Install voices (sha256-checked, PR 196 installer)
+        run: |
+          git -C .agent-voices rev-parse HEAD > "$RUNNER_TEMP/agent_sha.txt"
+          cp -r .agent-voices/lms/team/scripts "$RUNNER_TEMP/agent_scripts"
+          bash pr196/radio_ads/ci/install_voices.sh .agent-voices
+
+      - name: Validate the batch
+        run: python3 pr196/radio_ads/reel_voice.py "$BATCH" --validate
+
+      - uses: ./baseline/actions/voice-engine
+        with:
+          requirements: pr196/voice_batch/requirements.txt
+          model-revision: ${{ env.TTS_MODEL_REVISION }}
+          radio-asr-model: ${{ env.RADIO_ADS_ASR_MODEL }}
+
+      - name: Restore ASR model (read-only)
+        id: asr
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-small.en
+
+      - name: Download ASR model (this job only)
+        if: steps.asr.outputs.cache-hit != 'true'
+        run: python -c "import os; from faster_whisper import WhisperModel; WhisperModel('small.en', device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+
+      - name: Install ffmpeg (measurements)
+        run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends ffmpeg
+
+      - name: Render and gate
+        env:
+          HF_HUB_OFFLINE: '1'
+          REEL_ASR_MODEL: small.en
+        run: |
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          python baseline/tools/record.py run --engine "$ENGINE" --step render -- \
+            python pr196/radio_ads/reel_voice.py "$BATCH" --voices pr196/radio_ads/voices \
+              --scripts-dir "$RUNNER_TEMP/agent_scripts" --model-path "$model_path" \
+              --work "$RUNNER_TEMP/reel" --out "$OUT"
+
+      - name: Record
+        if: always()
+        env:
+          BASELINE_ARTIFACT_KEY: ${{ secrets.BASELINE_ARTIFACT_KEY }}
+        run: |
+          python3 baseline/tools/record.py finalize --engine "$ENGINE" --out "$OUT" \
+            --source factory=. --source factory_pr196=pr196 --input batch="$BATCH" \
+            --input voice_b_ref=pr196/radio_ads/voices/voice_b.wav \
+            --fixture batch="$BATCH" --fixture agent="RokctAI/agent@$(cat "$RUNNER_TEMP/agent_sha.txt" 2>/dev/null)" \
+            --fixture model="$TTS_MODEL@$TTS_MODEL_REVISION" --fixture cfg_scale=1.3 --fixture ddpm_steps=10 \
+            --withhold '*.wav' --withhold '*.mp3' --f0 '*.wav' \
+            --note "Voice B audio: sha256 and metrics only, not uploaded (public repository)" \
+            --pkg torch --pkg transformers --pkg vibevoice --pkg faster-whisper --pkg resemblyzer --pkg librosa --pkg numpy --pkg soundfile
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-${{ env.ENGINE }}
+          path: |
+            ${{ env.OUT }}
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragment
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-${{ env.ENGINE }}
+          path: ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  # 4. Social daily Reel: motion.py + music.py + the agent renderer, and
+  #    preview.py, for one fixed card and date (driver never posts).
+  social_reel:
+    name: Social daily Reel
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      ENGINE: social_reel
+      OUT: baseline_out/social_reel
+      CARD: 2027-03-05_Open_Call_for_Feasibility_Fund_New_Zealand
+      TODAY: '2026-10-01'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check MONOREPO_PAT is visible
+        id: pat
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            python3 baseline/tools/record.py skip --engine "$ENGINE" --reason "MONOREPO_PAT is not visible to this workflow; the Reel's final render runs the private agent repo's renderer"
+            echo "::error::MONOREPO_PAT is not set for RokctAI/factory"; exit 1
+          fi
+
+      - name: Check out opportunities (pinned card)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/opportunities
+          ref: ${{ env.OPPORTUNITIES_SHA }}
+          path: .opportunities
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /02_grants/${{ env.CARD }}.md
+
+      - name: Check out agent renderer (pinned)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_MAIN }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: lms/team/scripts
+
+      - name: Install render tools (as facebook_daily_post.yml)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install pillow requests
+
+      - name: Render
+        run: |
+          python baseline/tools/record.py run --engine "$ENGINE" --step render -- \
+            python baseline/drivers/social_reel.py --opportunities .opportunities --agent .agent --out "$OUT" \
+              --card-key "grant:$CARD" --today "$TODAY" --stream grant
+
+      - name: Record
+        if: always()
+        run: |
+          python3 baseline/tools/record.py finalize --engine "$ENGINE" --out "$OUT" \
+            --source factory=. --source opportunities=.opportunities --source agent=.agent \
+            --input card=".opportunities/02_grants/$CARD.md" \
+            --input voice_brand=social/facebook/assets/voice_brand.wav \
+            --input voice_open=social/facebook/assets/voice_open.wav \
+            --input voice_close=social/facebook/assets/voice_close.wav \
+            --fixture card="grant:$CARD" --fixture today="$TODAY" --fixture stream=grant \
+            --note "Reel voice-over is the committed social/facebook/assets WAVs (main)" \
+            --pkg pillow --pkg numpy
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-${{ env.ENGINE }}
+          path: |
+            ${{ env.OUT }}
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragment
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-${{ env.ENGINE }}
+          path: ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  # 5. Lesson 6 production: lesson_manifest.py for one session-tree lesson,
+  #    on the sapi backend lesson6_production.yml defaults to.
+  lesson6:
+    name: Lesson 6 production
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      ENGINE: lesson6
+      OUT: baseline_out/lesson6
+      CARD: baseline/fixtures/lesson6_card.md
+      LESSON: lessons/curriculum/CAPS/accounting/session/grade10/term1/bookkeeping-cash-transactions/cash-receipts-journal
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install system + Python dependencies (as lesson6_production.yml)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config ffmpeg espeak
+          pip install manim pyttsx3 requests python-dotenv
+
+      - name: Mojibake gate
+        run: |
+          mapfile -t files < <(find "$LESSON" -type f | sort)
+          python baseline/tools/record.py run --engine "$ENGINE" --step mojibake_gate -- \
+            python lessons/scripts/CAPS/check_mojibake.py "$CARD" "${files[@]}"
+
+      - name: Assemble
+        run: |
+          python baseline/tools/record.py run --engine "$ENGINE" --step assemble -- \
+            python lessons/scripts/CAPS/lesson_manifest.py --card "$CARD" --out-dir "$OUT" --audio-backend sapi
+
+      - name: Record
+        if: always()
+        run: |
+          python3 baseline/tools/record.py finalize --engine "$ENGINE" --out "$OUT" \
+            --source factory=. --input card="$CARD" --input script="$LESSON/script.md" \
+            --input subtopics="$LESSON/subtopics.json" --input scene="$LESSON/manim_scene.py" \
+            --fixture lesson="$LESSON" --fixture card="$CARD" --fixture audio_backend=sapi \
+            --note "production default backend (sapi, CPU); the GPU backend needs a GPU runner and was not run" \
+            --note "no Level 6 job card exists for this session-tree lesson; the fixture card only feeds lesson_manifest.py the fields it reads" \
+            --pkg manim --pkg pyttsx3 --pkg numpy
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-${{ env.ENGINE }}
+          path: |
+            ${{ env.OUT }}
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragment
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-${{ env.ENGINE }}
+          path: ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  # 6. TikTok tutor campaign: tiktok_render.py at agent PR #202's head on
+  #    one campaign_01 post; plus the PR's typed still, recorded as-is.
+  tiktok_post:
+    name: TikTok post (agent PR 202)
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ENGINE: tiktok_post
+      OUT: baseline_out/tiktok_post
+      POST: lms/team/marketing/tiktok/tutor_001/w01/d1_mon/s03
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check MONOREPO_PAT is visible
+        id: pat
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            python3 baseline/tools/record.py skip --engine "$ENGINE" --reason "MONOREPO_PAT is not visible to this workflow; the renderer and the post folder are in the private agent repo"
+            python3 baseline/tools/record.py skip --engine still_typed_pr202 --reason "MONOREPO_PAT is not visible to this workflow"
+            echo "::error::MONOREPO_PAT is not set for RokctAI/factory"; exit 1
+          fi
+
+      - name: Check out agent PR 202 head
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_PR202 }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/scripts
+            ${{ env.POST }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install render tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          python -m pip install pillow
+
+      - name: Render
+        run: |
+          python baseline/tools/record.py run --engine "$ENGINE" --step render --cwd .agent -- \
+            python lms/team/scripts/tiktok_render.py "$POST" --force
+
+      - name: Collect the render
+        run: |
+          mkdir -p "$OUT"
+          cp -r ".agent/$POST/render" "$OUT/"
+
+      - name: Record
+        if: always()
+        run: |
+          python3 baseline/tools/record.py finalize --engine "$ENGINE" --out "$OUT" \
+            --source factory=. --source agent=.agent \
+            --input brief=".agent/$POST/brief.json" --input still=".agent/$POST/still.webp" \
+            --fixture post="$POST" --fixture flags=--force \
+            --note "no campaign_01 folder has a voice file yet; this post declares silent_ok, so the silent path is what is baselined" \
+            --pkg pillow
+          [ -f ".agent/$POST/still.webp" ] && python3 baseline/tools/record.py skip --engine still_typed_pr202 \
+            --reason "the typed stills' generator is not committed (PR 202 adds the 260 still.webp files only); the committed still is recorded as the reference" \
+            --input still=".agent/$POST/still.webp" --source agent=.agent \
+            --fixture still="RokctAI/agent@$AGENT_PR202:$POST/still.webp"
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-${{ env.ENGINE }}
+          path: |
+            ${{ env.OUT }}
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragments
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-${{ env.ENGINE }}
+          path: |
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+            ${{ env.BASELINE_FRAGMENTS }}/still_typed_pr202.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  # 7. Still images: tutor_images.py (tutor_001 card + avatars) and
+  #    tour_still.py (06-schedule), called as functions.
+  stills:
+    name: Still images
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUBJECT: lms/team/tutors/CAPS/tutor_001/appearance
+      CHAPTER: 06-schedule
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check MONOREPO_PAT is visible
+        id: pat
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            for e in still_tutor_images still_tour; do
+              python3 baseline/tools/record.py skip --engine "$e" --reason "MONOREPO_PAT is not visible to this workflow; the scripts are in the private agent repo"
+            done
+            echo "::error::MONOREPO_PAT is not set for RokctAI/factory"; exit 1
+          fi
+
+      - name: Check out agent (pinned)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_MAIN }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/scripts
+            ${{ env.SUBJECT }}
+
+      - name: Check out the portrait source (last agent commit that has it)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_PORTRAIT_SOURCE }}
+          path: .agent-portrait
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: ${{ env.SUBJECT }}
+
+      - name: Check out the tour screenshot (supacharge, pinned)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/supacharge
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.SUPACHARGE_SHA }}
+          path: .supacharge
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /marketing/tour/screenshots/${{ env.CHAPTER }}.png
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow and ffmpeg
+        run: |
+          python -m pip install pillow
+          sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends ffmpeg
+
+      - name: Render tutor_001 card and avatars
+        run: |
+          python baseline/tools/record.py run --engine still_tutor_images --step render -- \
+            python baseline/drivers/stills.py tutor-images .agent ".agent-portrait/$SUBJECT" "$SUBJECT" \
+              baseline_out/still_tutor_images
+
+      - name: Record tutor_images
+        if: always()
+        run: |
+          python3 baseline/tools/record.py finalize --engine still_tutor_images --out baseline_out/still_tutor_images \
+            --source factory=. --source agent=.agent --source agent_portrait_source=.agent-portrait \
+            --fixture subject="$SUBJECT" --fixture flags=force \
+            --note "the source portrait was pruned from agent main by the script's one-week policy; it is taken from the last commit that has it" \
+            --pkg pillow
+
+      - name: Render the tour still
+        if: always() && steps.pat.outcome == 'success'
+        run: |
+          python baseline/tools/record.py run --engine still_tour --step render -- \
+            python baseline/drivers/stills.py tour-still .agent ".supacharge/marketing/tour/screenshots/$CHAPTER.png" \
+              baseline_out/still_tour
+
+      - name: Record tour_still
+        if: always()
+        run: |
+          python3 baseline/tools/record.py finalize --engine still_tour --out baseline_out/still_tour \
+            --source factory=. --source agent=.agent --source supacharge=.supacharge \
+            --input screenshot=".supacharge/marketing/tour/screenshots/$CHAPTER.png" --fixture chapter="$CHAPTER" \
+            --note "tour_still.fetch() reads the app repo's moving main; the screenshot is checked out pinned and downscale() applied" \
+            --pkg pillow
+
+      - name: Upload tutor_images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-still_tutor_images
+          path: |
+            baseline_out/still_tutor_images
+            ${{ env.BASELINE_FRAGMENTS }}/still_tutor_images.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload tour_still
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-still_tour
+          path: |
+            baseline_out/still_tour
+            ${{ env.BASELINE_FRAGMENTS }}/still_tour.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragments
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-stills
+          path: |
+            ${{ env.BASELINE_FRAGMENTS }}/still_tutor_images.json
+            ${{ env.BASELINE_FRAGMENTS }}/still_tour.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  # 8. Guided tour: shared-workflows scripts/tour (merge_fragments.py +
+  #    assemble.py) on minilauncher's committed screenshots, no emulator.
+  guided_tour:
+    name: Guided tour
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      ENGINE: guided_tour
+      OUT: baseline_out/guided_tour
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check out shared-workflows (pinned)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/shared-workflows
+          token: ${{ secrets.MONOREPO_PAT || github.token }}
+          ref: ${{ env.SHARED_WORKFLOWS_SHA }}
+          path: .sw
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: scripts/tour
+
+      - name: Check out minilauncher (pinned; committed screenshots)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/minilauncher
+          token: ${{ secrets.MONOREPO_PAT || github.token }}
+          ref: ${{ env.MINILAUNCHER_SHA }}
+          path: .ml
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /tour/
+            /composer.json
+            /marketing/tour/screenshots/
+            /assets/
+            /flutter_native_splash.yaml
+            /lib/presentation/theme/
+            /pubspec.yaml
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install tools (as universal-guided-tour.yml)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q ffmpeg fonts-dejavu-core
+          python -m pip install pyyaml pillow
+
+      # merge_fragments.py fetches each SDK's tour fragment from its repo
+      # (read-only contents API). The resolved plan it writes is uploaded,
+      # so later comparisons reuse the exact plan this baseline used.
+      - name: Resolve the tour plan
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          mkdir -p "$OUT"
+          python baseline/tools/record.py run --engine "$ENGINE" --step merge_fragments --cwd .ml -- \
+            python ../.sw/scripts/tour/merge_fragments.py --out-json "$GITHUB_WORKSPACE/$OUT/tour.resolved.json" \
+              --out-dart "$RUNNER_TEMP/tour_steps.g.dart"
+
+      - name: Assemble the feature guide
+        run: |
+          python baseline/tools/record.py run --engine "$ENGINE" --step guide --cwd .ml -- \
+            python ../.sw/scripts/tour/assemble.py --resolved "$GITHUB_WORKSPACE/$OUT/tour.resolved.json" \
+              --shots marketing/tour/screenshots --out "$GITHUB_WORKSPACE/$OUT/tour" --guide
+
+      - name: Assemble the tour videos and store stills
+        run: |
+          python baseline/tools/record.py run --engine "$ENGINE" --step video --cwd .ml -- \
+            python ../.sw/scripts/tour/assemble.py --resolved "$GITHUB_WORKSPACE/$OUT/tour.resolved.json" \
+              --shots marketing/tour/screenshots --out "$GITHUB_WORKSPACE/$OUT/tour" --video --codec libx264 --container mp4
+
+      - name: Record
+        if: always()
+        run: |
+          python3 baseline/tools/record.py finalize --engine "$ENGINE" --out "$OUT" \
+            --source factory=. --source shared_workflows=.sw --source minilauncher=.ml \
+            --fixture screenshots="RokctAI/minilauncher@$MINILAUNCHER_SHA:marketing/tour/screenshots" \
+            --fixture device=phone \
+            --note "screenshots are minilauncher's committed ones; no emulator run" \
+            --note "SDK tour fragments are fetched at their repos' main at run time; tour.resolved.json in this artifact is the exact plan used" \
+            --note "no composed app cache on the runner, so brand colours are assemble.py's built-in defaults unless the app manifest sets them" \
+            --pkg pillow --pkg PyYAML
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-${{ env.ENGINE }}
+          path: |
+            ${{ env.OUT }}
+            ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Upload manifest fragment
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-frag-${{ env.ENGINE }}
+          path: ${{ env.BASELINE_FRAGMENTS }}/${{ env.ENGINE }}.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+  manifest:
+    name: Baseline manifest
+    needs: [guard, tutor_voice, radio_ad, reel_voices, social_reel, lesson6, tiktok_post, stills, guided_tour]
+    if: always() && needs.guard.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: baseline
+
+      - name: Download manifest fragments
+        uses: actions/download-artifact@v4
+        with:
+          pattern: baseline-frag-*
+          path: fragments
+          merge-multiple: true
+
+      - name: Merge
+        run: |
+          mkdir -p fragments
+          python3 baseline/tools/merge.py fragments baseline_manifest.json | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload baseline_manifest.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline_manifest
+          path: baseline_manifest.json
+          if-no-files-found: error
+          retention-days: 90

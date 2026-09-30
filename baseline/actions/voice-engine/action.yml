@@ -1,0 +1,75 @@
+name: Baseline voice engine setup
+description: >
+  Python, CPU torch, the pinned voice-model fork and an engine's requirements,
+  then the shared model-weights cache entry restored READ-ONLY (the same key
+  voice_batch.yml, reel_voices.yml and radio_ads.yml use). On a miss the
+  weights are downloaded for this job only and never saved: this workflow
+  writes no cache entry, so it can never evict the production ones.
+
+inputs:
+  requirements:
+    description: requirements.txt of the engine being baselined
+    required: true
+  model-revision:
+    description: pinned model revision (part of the shared weights key)
+    required: true
+  radio-asr-model:
+    description: speech-recognition model that is part of the shared weights key
+    required: false
+    default: base.en
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies (CPU torch, pinned fork)
+      shell: bash
+      env:
+        REQS: ${{ inputs.requirements }}
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+        git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+        git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+        python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+        python -m pip install -r "$REQS"
+        python -c "import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)"
+
+    - name: Restore model weights (read-only)
+      id: models
+      uses: actions/cache/restore@v4
+      with:
+        path: /home/runner/.cache/huggingface/hub
+        key: radio-ads-hf-vibevoice15b-${{ inputs.model-revision }}-whisper-${{ inputs.radio-asr-model }}
+        restore-keys: |
+          radio-ads-hf-vibevoice15b-${{ inputs.model-revision }}-
+
+    - name: Download model weights (this job only, not cached)
+      if: steps.models.outputs.cache-hit != 'true'
+      shell: bash
+      env:
+        RADIO_ASR: ${{ inputs.radio-asr-model }}
+      run: |
+        python - <<'PY'
+        import os
+        from huggingface_hub import snapshot_download
+        snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+        from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+        VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])  # tokenizer repo
+        from faster_whisper import WhisperModel
+        WhisperModel(os.environ["RADIO_ASR"], device="cpu", compute_type="int8")
+        PY
+        du -sh "$HF_HOME/hub"
+
+    - name: Check the pinned revision is on disk
+      shell: bash
+      run: |
+        snap="$HF_HOME/hub/models--${TTS_MODEL/\//--}/snapshots/$TTS_MODEL_REVISION"
+        if [ ! -d "$snap" ]; then
+          echo "::error::pinned model revision $TTS_MODEL_REVISION is not in the weights cache"
+          exit 1
+        fi
+        echo "pinned revision present: $TTS_MODEL_REVISION"

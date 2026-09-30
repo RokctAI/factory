@@ -1,0 +1,21 @@
+{
+ "id": "reel_open_baseline",
+ "notes": "Regression-baseline fixture for radio_ads/reel_voice.py (factory PR #196): the 'open' line of radio_ads/reel_voices/facebook_reel.json exactly as it is at the PR head, alone, so the job renders one line. prefer_seeds [44] renders the approved seed-44 take first; renders are deterministic, so its sha256 is the baseline.",
+ "voices": {
+  "voice_b": {
+   "f0_target_hz": 196,
+   "f0_tolerance_hz": 12
+  }
+ },
+ "lines": [
+  {
+   "id": "open",
+   "voice": "voice_b",
+   "text": "Looking for funding? Here's one you can apply for, right now.",
+   "asset": "voice_open.wav",
+   "prefer_seeds": [
+    44
+   ]
+  }
+ ]
+}
