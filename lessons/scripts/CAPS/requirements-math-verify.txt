@@ -1,0 +1,5 @@
+# Pinned for lessons/scripts/CAPS/math_verify.py (.github/workflows/math_verify.yml).
+# A sympy upgrade can change simplify()/solveset() output, so bump deliberately
+# and re-run the verifier over the full MCQ set before merging.
+sympy==1.14.0
+mpmath==1.3.0
