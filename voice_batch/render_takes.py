@@ -7,8 +7,9 @@
 jobs.json: [{"key": "<line id>#<n>", "text": "...", "seed": 11, "out": "takes/..wav"}]
 Uses the agent repo's render_voices.Renderer (VibeVoice, CPU, cfg 1.3,
 10 DDPM steps, 'Speaker 1:' prompt) and its -20 dBFS / 24 kHz / PCM_16
-writer, so CI renders exactly like the local pipeline. Logs ids, seeds and
-timings only; never the text.
+writer, so CI renders exactly like the local pipeline. Each sentence goes
+to the model as textnorm.tts_prompt (sentence + " ...") so its last word is
+not clipped. Logs ids, seeds and timings only; never the text.
 """
 from __future__ import annotations
 
@@ -36,6 +37,7 @@ def main() -> int:
     import numpy as np
     import torch
     import render_voices as rv
+    from textnorm import tts_prompt
 
     r = rv.Renderer(args.model_path, "cpu", rv.DEFAULT_DDPM_STEPS, rv.DEFAULT_CFG_SCALE)
     r.load()
@@ -46,7 +48,7 @@ def main() -> int:
         torch.manual_seed(seed); np.random.seed(seed); random.seed(seed)
         t0 = time.time()
         try:
-            audio = r.render(j["text"], ref)
+            audio = r.render(tts_prompt(j["text"]), ref)
             out = Path(j["out"]); out.parent.mkdir(parents=True, exist_ok=True)
             tmp = out.with_suffix(".part.wav")
             dur = rv.write_wav(tmp, rv.normalise(audio))

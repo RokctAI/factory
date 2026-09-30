@@ -13,8 +13,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import batch  # noqa: E402
 from lines import build_lines, spoken_text  # noqa: E402
-from qc import pick, sim_threshold, stitch  # noqa: E402
-from textnorm import norm_words, speak_text, split_sentences, word_errors  # noqa: E402
+from qc import TAIL_MAX_DB, pick, sim_threshold, stitch, tail_db, tail_ok  # noqa: E402
+from textnorm import TAIL_PAD, norm_words, speak_text, split_sentences, tts_prompt, word_errors  # noqa: E402
 
 
 class TextNorm(unittest.TestCase):
@@ -33,6 +33,20 @@ class TextNorm(unittest.TestCase):
     def test_spelling_and_punctuation(self):
         self.assertEqual(word_errors("Practise tomorrow's drill.", "Practice tomorrows drill"), 0)
         self.assertEqual(word_errors("Top-level work", "top level work"), 0)
+
+    def test_asr_homophones(self):
+        ref = "We move quickly and we move correctly — nothing in this session is guessed."
+        self.assertEqual(word_errors(ref, "We move quickly and we move correctly, nothing in this session is guest."), 0)
+        self.assertEqual(word_errors("Our guest.", "Our guessed."), 0)
+        self.assertEqual(word_errors(ref, "We move quickly and we move correctly, nothing in this session is best."), 1)
+
+    def test_tts_prompt_pads_the_end(self):
+        self.assertEqual(TAIL_PAD, " ...")
+        self.assertEqual(tts_prompt("Let us begin."), "Let us begin. ...")
+        self.assertEqual(tts_prompt("Ready?"), "Ready? ...")
+        self.assertEqual(tts_prompt("Not you, not today "), "Not you, not today. ...")
+        # the pad is punctuation only: the ASR words are unchanged
+        self.assertEqual(norm_words(tts_prompt("Two x minus 3.")), norm_words("Two x minus 3."))
 
     def test_real_errors_count(self):
         self.assertEqual(word_errors("Let us start.", "Let's start."), 2)
@@ -106,6 +120,62 @@ class Selection(unittest.TestCase):
         self.assertTrue(all(280 <= p <= 320 for p in pauses))
         self.assertAlmostEqual(len(y) / sr, 3 + 6 * 0.04 + 0.22 + 0.20, delta=0.1)  # trim works in 128-sample hops
         self.assertAlmostEqual(float(y[0]), 0.0, places=6)
+
+
+class Tail(unittest.TestCase):
+    """A take or line whose last 50 ms still has speech energy was cut off."""
+    sr = 24000
+
+    def tone(self, s, amp=0.3):
+        import numpy as np
+        return amp * np.sin(np.arange(int(s * self.sr)) * 2 * np.pi * 110 / self.sr)
+
+    def test_abrupt_end_fails(self):
+        self.assertGreater(tail_db(self.tone(1.0), self.sr), TAIL_MAX_DB)
+        self.assertFalse(tail_ok(tail_db(self.tone(1.0), self.sr)))
+
+    def test_clean_end_passes(self):
+        import numpy as np
+        x = np.concatenate([self.tone(1.0), np.zeros(int(0.1 * self.sr))])
+        self.assertTrue(tail_ok(tail_db(x, self.sr)))
+        # a natural decay into silence passes too
+        decay = self.tone(0.3) * np.exp(-np.arange(int(0.3 * self.sr)) / (0.03 * self.sr))
+        self.assertTrue(tail_ok(tail_db(np.concatenate([self.tone(1.0), decay]), self.sr)))
+
+    def test_silence_and_short(self):
+        import numpy as np
+        self.assertEqual(tail_db(np.zeros(1000), self.sr), -120.0)
+        self.assertTrue(tail_ok(tail_db(np.zeros(10), self.sr)))
+
+    def test_stitch_keeps_a_clipped_end_detectable(self):
+        # the 12 ms fade must not hide a take that stopped mid-word
+        import numpy as np
+        pad = np.zeros(int(0.5 * self.sr))
+        decay = self.tone(0.3) * np.exp(-np.arange(int(0.3 * self.sr)) / (0.02 * self.sr))
+        clean = np.concatenate([pad, self.tone(1.0), decay, pad])  # speech dies away, then silence
+        clipped = np.concatenate([pad, self.tone(1.0)])            # the take stops mid-sound
+        self.assertTrue(tail_ok(tail_db(stitch([clean, clean])[0], self.sr)))
+        self.assertFalse(tail_ok(tail_db(stitch([clean, clipped])[0], self.sr)))
+
+    def test_pick_skips_clipped_takes(self):
+        good = {"err": 0, "f0": 110, "swings": 3, "res": 0.84, "tail_db": -45.0}
+        cut = {"err": 0, "f0": 102, "swings": 0, "res": 0.95, "tail_db": -12.0}
+        self.assertIs(pick([cut, good])[0], good)
+        self.assertEqual(pick([cut]), (None, 0))
+        # measurements cached before the tail check existed still count
+        old = {"err": 0, "f0": 102, "swings": 0, "res": 0.95}
+        self.assertEqual(pick([old]), (old, 1))
+
+    def test_rendered_before_fix_is_rerendered(self):
+        import hashlib
+        import run
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d, "a.wav")
+            f.write_bytes(b"x")
+            it = {"text_sha256": "t", "file": "a.wav"}
+            prev = {"text_sha256": "t", "sha256": hashlib.sha256(b"x").hexdigest()}
+            self.assertFalse(run.unchanged(prev, it, Path(d), "r"))
+            self.assertTrue(run.unchanged(dict(prev, tail_pad=TAIL_PAD), it, Path(d), "r"))
 
 
 class Lines(unittest.TestCase):

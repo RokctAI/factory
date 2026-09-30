@@ -17,7 +17,9 @@ Selection: among the sentence's passing takes, median F0 closest to
            higher similarity. A passing take is word-exact AND has F0
            within target +/- tolerance (default 94-110 Hz) AND
            similarity >= 0.83; if a sentence has none of those, word-exact
-           takes are used (tier 2) and the final gate decides.
+           takes are used (tier 2) and the final gate decides. A take whose
+           last 50 ms is above -34 dB of its loudest frame (it ends mid-word)
+           never counts, even when the ASR still heard the clipped word.
 Stitch   : trim at -40 dB with 40 ms padding, 12 ms fades, 200-240 ms
            silence (280-320 ms pauses between words), -20 dBFS, 24 kHz
            mono PCM_16.
@@ -25,7 +27,9 @@ Gate     : final file median F0 within target +/- tolerance (default
            94-110 Hz, tuned to Voice A; a batch sets f0_target_hz and
            f0_tolerance_hz for another voice); similarity >= 0.88 (>= 5 s)
            or >= 0.83 (< 5 s); word-exact ASR against the line's asr_text
-           (the TTS respelling for an R-3 phonics line, else the text).
+           (the TTS respelling for an R-3 phonics line, else the text);
+           tail: the file's last 50 ms at or below -34 dB of its loudest
+           10 ms frame.
 Word-exact: every word except the ones a pronunciation respelled
            (pronunciations.py: pronunciations.json or inline
            {{word|respelling}}), which are wildcards for 1-N words.
@@ -51,6 +55,30 @@ SIM_LONG, SIM_SHORT, LONG_S = 0.88, 0.83, 5.0
 TAKE_SIM_MIN = SIM_SHORT
 GAPS_S = (0.22, 0.20, 0.24, 0.22)   # + 2 x 40 ms padding = 300/280/320/300 ms pauses
 PAD_S, FADE_S = 0.04, 0.012
+# Tail check: the last TAIL_WIN_S of a take or line, relative to its loudest
+# 10 ms frame, must be below TAIL_MAX_DB. Speech still sounding there means
+# the model stopped mid-word (the ASR often still hears the clipped word).
+# Tuned on tutor_001's Voice A lines (25 sentence ends): clean ends measure
+# -37.8 dB or lower, clipped ends -30.0 dB or higher. The 50 ms window is
+# just over the stitch's 40 ms pad.
+TAIL_WIN_S, TAIL_MAX_DB = 0.05, -34.0
+
+
+def tail_db(x, sr: int = SR, win_s: float = TAIL_WIN_S) -> float:
+    """dB of the last `win_s` of `x` relative to its loudest 10 ms frame."""
+    import numpy as np
+    x = np.asarray(x, dtype=np.float64).reshape(-1)
+    n = max(1, int(0.01 * sr))
+    frames = x[: len(x) // n * n].reshape(-1, n) if len(x) >= n else x.reshape(1, -1)
+    ref = float(np.sqrt(np.mean(frames ** 2, axis=1)).max())
+    if ref <= 0.0:
+        return -120.0
+    tail = x[-max(1, int(win_s * sr)):]
+    return round(max(-120.0, 20 * float(np.log10(max(float(np.sqrt(np.mean(tail ** 2))), 1e-12) / ref))), 2)
+
+
+def tail_ok(db: float) -> bool:
+    return db <= TAIL_MAX_DB
 
 
 def sim_threshold(duration_s: float) -> float:
@@ -75,7 +103,8 @@ def take_rank(m: dict, target: float = TARGET_F0) -> tuple:
 def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOLERANCE) -> tuple[dict | None, int]:
     """(best take, tier) — tier 1 strict pass, tier 2 word-exact only, 0 none."""
     lo, hi = f0_range(target, tolerance)
-    exact = [c for c in cands if c["err"] == 0]
+    # A take that ends mid-word never counts, however well the ASR heard it.
+    exact = [c for c in cands if c["err"] == 0 and tail_ok(c.get("tail_db", -120.0))]
     strict = [c for c in exact if lo <= c["f0"] <= hi and c["res"] >= TAKE_SIM_MIN]
     rank = lambda c: take_rank(c, target)  # noqa: E731
     if strict:
@@ -152,10 +181,14 @@ class Meter:
             else:
                 swings += run >= 3
                 run = 0
+        import soundfile as sf
+        x, sr = sf.read(str(p))
+        x = x.mean(1) if x.ndim > 1 else x
         e = self.enc.embed_utterance(self._pre(w))
         res = float(np.dot(e, self.R) / np.linalg.norm(e) / np.linalg.norm(self.R))
         return {"dur": round(len(w) / 16000, 3), "res": round(res, 4), "err": word_errors_wild(text, tx, wild),
-                "f0": round(float(np.median(fv)), 2) if len(fv) else 0.0, "swings": int(swings), "transcript": tx}
+                "f0": round(float(np.median(fv)), 2) if len(fv) else 0.0, "swings": int(swings), "transcript": tx,
+                "tail_db": tail_db(x, sr)}
 
 
 def main() -> int:
@@ -189,7 +222,7 @@ def main() -> int:
         m = meter.measure(p, sentence_of[meta["key"]], wild_of.get(meta["key"]))
         M[p] = {**m, **meta}
         print(f"take {meta['key']} seed{meta['seed']}: err={m['err']} f0={m['f0']} swings={m['swings']} "
-              f"sim={m['res']} dur={m['dur']}", flush=True)
+              f"sim={m['res']} dur={m['dur']} tail={m['tail_db']}", flush=True)
         mpath.write_text(json.dumps(M, indent=1), encoding="utf-8")
 
     results = []
@@ -223,23 +256,25 @@ def main() -> int:
         x, _ = sf.read(str(dst))
         dur = round(len(x) / SR, 3)
         thr = sim_threshold(dur)
-        gate = {"f0": lo <= fm["f0"] <= hi, "similarity": fm["res"] >= thr, "asr": fm["err"] == 0}
+        gate = {"f0": lo <= fm["f0"] <= hi, "similarity": fm["res"] >= thr, "asr": fm["err"] == 0,
+                "tail": tail_ok(fm["tail_db"])}
         r.update({
             "status": "pass" if all(gate.values()) else "fail", "gate": gate, "final_path": str(dst),
             "duration_s": dur, "median_f0_hz": fm["f0"], "upward_swings": fm["swings"],
             "similarity": fm["res"], "similarity_threshold": thr, "asr_match": fm["err"] == 0,
-            "asr_word_errors": fm["err"], "asr_transcript": fm["transcript"],
+            "asr_word_errors": fm["err"], "asr_transcript": fm["transcript"], "tail_db": fm["tail_db"],
             "rms_dbfs": round(float(20 * np.log10(np.sqrt(np.mean(x ** 2)))), 2),
             "peak": round(float(np.max(np.abs(x))), 4), "pauses_ms": pauses,
             "sha256": hashlib.sha256(dst.read_bytes()).hexdigest(),
             "seeds": [b["seed"] for b in picks],
             "takes": [{"sentence": k, "seed": b["seed"], "tier": t, "median_f0_hz": b["f0"],
-                       "upward_swings": b["swings"], "similarity": b["res"], "duration_s": b["dur"]}
+                       "upward_swings": b["swings"], "similarity": b["res"], "duration_s": b["dur"],
+                       "tail_db": b.get("tail_db")}
                       for k, (b, t) in enumerate(zip(picks, tiers), 1)],
         })
         results.append(r)
         print(f"line {it['id']}: {r['status']} dur={dur}s f0={fm['f0']} sim={fm['res']} (>= {thr}) "
-              f"asr_errors={fm['err']} seeds={r['seeds']}", flush=True)
+              f"asr_errors={fm['err']} tail={fm['tail_db']} seeds={r['seeds']}", flush=True)
     (work / "results.json").write_text(json.dumps(results, indent=1, ensure_ascii=False), encoding="utf-8")
     return 0
 

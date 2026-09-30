@@ -1,0 +1,58 @@
+name: Maths Answer-Key Verification
+
+# REPORT-ONLY sympy check of every maths and Maths Lit MCQ answer key
+# (lessons/scripts/CAPS/math_verify.py). It recomputes what it can formalise
+# (equations, inequalities, factorise/expand/simplify, evaluation,
+# substitution, percent, ratio, finance, sequences) and reports
+# verified / MISMATCH / MULTIPLE_CORRECT / NO_CORRECT / UNPARSEABLE / SKIPPED.
+#
+# Findings NEVER fail the build: the verifier always exits 0. The job goes red
+# only if the verifier or its unit tests crash. The full report is uploaded as
+# an artifact and the markdown summary is written to the job summary.
+
+on:
+  push:
+    paths:
+      - 'lessons/**'
+      - '.github/workflows/math_verify.yml'
+  pull_request:
+    paths:
+      - 'lessons/**'
+      - '.github/workflows/math_verify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  math_verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install pinned sympy
+        run: pip install -r lessons/scripts/CAPS/requirements-math-verify.txt
+
+      - name: Unit tests (math_verify)
+        run: python3 -m unittest discover -s lessons/scripts/CAPS/tests -p 'test_math_verify.py' -v
+
+      - name: Verify every maths and Maths Lit MCQ (report only)
+        run: |
+          python3 lessons/scripts/CAPS/math_verify.py \
+            --json math_verify_report.json --md math_verify_report.md
+          cat math_verify_report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-verify-report
+          path: |
+            math_verify_report.json
+            math_verify_report.md
+          if-no-files-found: ignore

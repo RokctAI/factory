@@ -18,7 +18,8 @@ Carrier: "<respelling>. <respelling>." rendered as one take: the word said
 twice, short enough to judge, and a lone word is where the model is least
 stable. Seeds 11, then 22, then 33, until a take passes a light QC (no ASR:
 these are odd words): 0.4-8 s long, not silent, speaker similarity >= 0.75,
-and the tail check from qc.py when it has one (tail_db/tail_ok). If none
+and the tail check from qc.py (tail_db/tail_ok: last 50 ms at or below
+-34 dB of the loudest 10 ms frame). The prompt carries textnorm's tail pad. If none
 passes, the best-scoring take is kept and marked passed: false.
 
 Output (agent repo, never this public repo):
@@ -42,6 +43,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import pronunciations  # noqa: E402
+from qc import tail_db, tail_ok  # noqa: E402
 from textnorm import speak_text  # noqa: E402
 
 PRON_REL = "voice_batch/pronunciations.json"
@@ -192,11 +194,6 @@ class LightMeter:
         self._pre = preprocess_wav
         self.enc = VoiceEncoder("cpu", verbose=False)
         self.R = self.enc.embed_utterance(preprocess_wav(self._r16(ref)))
-        try:
-            from qc import tail_db, tail_ok
-            self.tail = (tail_db, tail_ok)
-        except ImportError:  # the tail check is not in qc.py yet
-            self.tail = None
 
     @staticmethod
     def _r16(p):
@@ -215,13 +212,12 @@ class LightMeter:
         sim = float(np.dot(e, self.R) / np.linalg.norm(e) / np.linalg.norm(self.R))
         m = {"duration_s": round(len(x) / sr, 3), "similarity": round(sim, 4),
              "rms_dbfs": round(float(20 * np.log10(max(float(np.sqrt(np.mean(x ** 2))), 1e-12))), 2)}
-        if self.tail:
-            m["tail_db"] = self.tail[0](x, sr)
+        m["tail_db"] = tail_db(x, sr)
         return m
 
     def passes(self, m: dict) -> bool:
         ok = MIN_S <= m["duration_s"] <= MAX_S and m["rms_dbfs"] > MIN_DBFS and m["similarity"] >= MIN_SIM
-        return ok and (self.tail is None or self.tail[1](m["tail_db"]))
+        return ok and tail_ok(m["tail_db"])
 
 
 def render(args) -> int:
