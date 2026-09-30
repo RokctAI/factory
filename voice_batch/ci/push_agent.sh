@@ -15,7 +15,10 @@
 # echoed, never written to .git/config; xtrace is off.
 # Idempotent: re-running over identical files commits nothing. Parallel
 # category jobs touch disjoint files, so a rejected push is resolved by
-# rebasing onto the remote branch and retrying (up to 5 times).
+# rebasing this job's one commit onto the remote branch and retrying (up to 5
+# times). The branch may not exist yet (the job started it from main after
+# the old one was merged and deleted): the first push creates it, and a
+# sibling that loses that race finds it on the remote and rebases onto it.
 # The checkout is a sparse, blob-less partial clone, so the rebase lazily
 # fetches missing blobs from the promisor remote: it must carry the header too,
 # or that fetch fails with "could not read Username".
@@ -71,6 +74,8 @@ fi
 n_audio=$(git diff --cached --name-only --diff-filter=AM | grep -c "\.$ext\$" || true)
 git commit --quiet -m "$tutor $voice: $category audio ($n_audio file(s)) from factory voice batch CI" \
   -m "Rendered and gated by RokctAI/factory voice_batch (run ${GITHUB_RUN_ID:-local}). Per-line seeds, scores and hashes are in $manifest."
+# This job's commit sits alone on top of base; rebases replay only base..HEAD.
+base="$(git rev-parse HEAD~1)"
 
 b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
 echo "::add-mask::$b64"
@@ -85,9 +90,19 @@ for i in 1 2 3 4 5; do
     echo "category $category: pushed $(git rev-parse --short HEAD) to $branch"
     exit 0
   fi
-  echo "push rejected (attempt $i); rebasing on the remote branch"
-  agit fetch --quiet --depth=50 origin "$branch"
-  agit rebase --quiet FETCH_HEAD || { git rebase --abort || true; echo "::error::rebase onto the agent branch failed"; exit 1; }
+  # 2 = the branch is not on the remote (yet): nothing to rebase onto, retry
+  # the push that creates it. Anything else non-zero is a real failure.
+  rc=0; agit ls-remote --exit-code --heads origin "refs/heads/$branch" > /dev/null || rc=$?
+  if [ "$rc" = 2 ]; then
+    echo "push failed (attempt $i); $branch is not on the remote yet, retrying"
+  elif [ "$rc" != 0 ]; then
+    echo "::error::could not reach the agent repo"; exit 1
+  else
+    echo "push rejected (attempt $i); rebasing on the remote branch"
+    agit fetch --quiet --depth=50 origin "$branch"
+    agit rebase --quiet --onto FETCH_HEAD "$base" || { git rebase --abort || true; echo "::error::rebase onto the agent branch failed"; exit 1; }
+    base="$(git rev-parse FETCH_HEAD)"
+  fi
   sleep $((RANDOM % 5 + 2))
 done
 echo "::error::could not push to the agent branch"

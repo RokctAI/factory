@@ -3,7 +3,9 @@
 Reproduces the CI layout: a sparse, blob-less, depth-1 checkout with no
 persisted credentials, and a sibling category job that pushes first, so our
 push is rejected and must rebase. The rebase lazily fetches blobs from the
-promisor remote and needs the auth header too.
+promisor remote and needs the auth header too. Also the deleted-branch path:
+resolve_agent_ref.sh falls back to main, the jobs start the branch from it,
+the first push recreates it and the siblings that lose the race rebase onto it.
 
     python -m unittest voice_batch/tests/test_push_agent.py
 """
@@ -21,6 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "voice_batch" / "ci" / "push_agent.sh"
+RESOLVE = ROOT / "voice_batch" / "ci" / "resolve_agent_ref.sh"
 TOKEN = "test-token"
 EXPECTED = "Basic " + base64.b64encode(f"x-access-token:{TOKEN}".encode()).decode()
 BRANCH = "rokct/tutor-001-voice-a-test"
@@ -126,7 +129,9 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.write(seed, f"{ADIR}/README.md", b"r3 audio")
         self.git("add", "-A", cwd=seed)
         self.git("commit", "--quiet", "-m", "seed", cwd=seed)
-        self.git("-c", self.hdr, "push", "--quiet", self.url, f"HEAD:refs/heads/{BRANCH}", cwd=seed)
+        self.git("-c", self.hdr, "push", "--quiet", self.url, f"HEAD:refs/heads/{BRANCH}", "HEAD:refs/heads/main",
+                 cwd=seed)
+        self.seed = seed
 
     def tearDown(self):
         self.server.shutdown()
@@ -141,7 +146,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_bytes(data)
 
-    def checkout(self, name: str) -> Path:
+    def checkout(self, name: str, ref: str = BRANCH) -> Path:
         """Like actions/checkout with sparse-checkout, fetch-depth 1, persist-credentials false."""
         d = self.tmp / name
         self.git("init", "--quiet", str(d))
@@ -150,8 +155,24 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.git("config", "remote.origin.partialclonefilter", "blob:none", cwd=d)
         self.git("sparse-checkout", "set", TDIR, ADIR, "lms/team/voice_refs", cwd=d)
         self.git("-c", self.hdr, "fetch", "--quiet", "--filter=blob:none", "--depth=1", "origin",
-                 f"+refs/heads/{BRANCH}:refs/remotes/origin/{BRANCH}", cwd=d)
-        self.git("-c", self.hdr, "checkout", "--quiet", "-B", BRANCH, f"refs/remotes/origin/{BRANCH}", cwd=d)
+                 f"+refs/heads/{ref}:refs/remotes/origin/{ref}", cwd=d)
+        self.git("-c", self.hdr, "checkout", "--quiet", "-B", ref, f"refs/remotes/origin/{ref}", cwd=d)
+        return d
+
+    def resolve(self, branch: str = BRANCH):
+        r = subprocess.run(["bash", str(RESOLVE), branch, self.url],
+                           env={**{k: v for k, v in self.env.items() if k != "GITHUB_OUTPUT"}, "AGENT_PAT": TOKEN},
+                           capture_output=True, text=True)
+        out = dict(line.split("=", 1) for line in r.stdout.splitlines() if "=" in line and "::" not in line)
+        return r, out
+
+    def delete_remote_branch(self):
+        self.git("update-ref", "-d", f"refs/heads/{BRANCH}", cwd=self.tmp / "srv" / "agent.git")
+
+    def start_from_main(self, name: str) -> Path:
+        """The workflow's deleted-branch path: check out main, then create the branch locally."""
+        d = self.checkout(name, "main")
+        self.git("checkout", "--quiet", "-b", BRANCH, cwd=d)
         return d
 
     def push(self, repo: Path, category: str, target: str = "tutor_001", voice: str = "voice_a", branch: str = BRANCH):
@@ -239,6 +260,73 @@ class PushAgentRebaseTest(unittest.TestCase):
         # The token never lands in the checkout's config.
         self.assertNotIn(TOKEN, (b / ".git" / "config").read_text())
         self.assertNotIn(EXPECTED.split()[1], (b / ".git" / "config").read_text())
+
+    def test_resolve_existing_and_missing_branch(self):
+        r, out = self.resolve()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(out, {"ref": BRANCH, "create": "false"})
+        self.delete_remote_branch()
+        r, out = self.resolve()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(out, {"ref": "main", "create": "true"})
+        # The token only ever appears masked, never in the clear.
+        self.assertNotIn(TOKEN, r.stdout + r.stderr)
+        for bad in ("main", "claude/x"):
+            r, _ = self.resolve(bad)
+            self.assertNotEqual(r.returncode, 0)
+            self.assertIn("non-rokct/", r.stdout)
+        # A bad token is an error, not a silent fallback to main.
+        r = subprocess.run(["bash", str(RESOLVE), BRANCH, self.url], env={**self.env, "AGENT_PAT": "wrong"},
+                           capture_output=True, text=True)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertNotIn("ref=", r.stdout)
+
+    def test_missing_branch_is_recreated_from_main(self):
+        self.delete_remote_branch()
+        a = self.start_from_main("teaching")
+        self.write(a, f"{TDIR}/samples/sample_line.wav", b"teaching-audio")
+        self.write(a, f"{TDIR}/voice_a_manifest.teaching.json", b'{"lines": []}\n')
+        r = self.push(a, "teaching")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("pushed", r.stdout)
+        self.assertNotIn("rejected", r.stdout)
+        files = self.remote_files()
+        for f in (f"{TDIR}/samples/sample_line.wav", f"{TDIR}/voice_a_manifest.teaching.json", "outside/big.bin"):
+            self.assertIn(f, files)
+        main = self.git("rev-parse", "main", cwd=self.tmp / "srv" / "agent.git").stdout.strip()
+        self.assertEqual(self.git("rev-parse", f"{BRANCH}~1", cwd=self.tmp / "srv" / "agent.git").stdout.strip(), main)
+
+    def test_missing_branch_race_first_creates_rest_rebase(self):
+        self.delete_remote_branch()
+        a, b = self.start_from_main("teaching"), self.start_from_main("greetings")
+        # main moves on before the third job checks out: its rebase must replay
+        # only its own commit, not main's new one.
+        self.write(self.seed, "outside/later.txt", b"later")
+        self.git("add", "-A", cwd=self.seed)
+        self.git("commit", "--quiet", "-m", "later on main", cwd=self.seed)
+        self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/main", cwd=self.seed)
+        c = self.start_from_main("praise")
+        for d, cat in ((a, "teaching"), (b, "greetings"), (c, "praise")):
+            self.write(d, f"{TDIR}/{cat}/01.wav", f"{cat}-audio".encode())
+            self.write(d, f"{TDIR}/voice_a_manifest.{cat}.json", b'{"lines": []}\n')
+
+        first = self.push(a, "teaching")
+        self.assertEqual(first.returncode, 0, first.stdout + first.stderr)
+        self.assertNotIn("rejected", first.stdout)
+        for d, cat in ((b, "greetings"), (c, "praise")):
+            r = self.push(d, cat)
+            self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+            self.assertIn("push rejected (attempt 1)", r.stdout)
+            self.assertIn("pushed", r.stdout)
+
+        files = self.remote_files()
+        for cat in ("teaching", "greetings", "praise"):
+            self.assertIn(f"{TDIR}/{cat}/01.wav", files)
+            self.assertIn(f"{TDIR}/voice_a_manifest.{cat}.json", files)
+        self.assertNotIn("outside/later.txt", files)
+        log = self.git("rev-list", "--count", f"main~1..{BRANCH}", cwd=self.tmp / "srv" / "agent.git").stdout.strip()
+        self.assertEqual(log, "3")
+        self.assertNotIn(TOKEN, (c / ".git" / "config").read_text())
 
 
 if __name__ == "__main__":
