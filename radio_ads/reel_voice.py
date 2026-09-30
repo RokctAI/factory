@@ -116,7 +116,7 @@ def gate_takes(args) -> int:
             m = meter.measure(p, text)
             best, tier = qc.pick([m], target, tol)
             parts.append({"tier": tier, "median_f0_hz": m["f0"], "similarity": m["res"], "asr_word_errors": m["err"],
-                          "tail_db": m["tail_db"], "duration_s": m["dur"]})
+                          "asr_transcript": m["transcript"], "tail_db": m["tail_db"], "duration_s": m["dur"]})
             if best is not None:
                 x, sr = sf.read(p)
                 assert sr == qc.SR, "unexpected sample rate"

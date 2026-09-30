@@ -1,0 +1,14 @@
+{
+  "id": "facebook_reel_probe",
+  "notes": "Longer wordings of the sting and the closer, to see whether the QC gate passes them where the short lines failed every seed.",
+  "voices": {
+    "voice_a": {"f0_target_hz": 102, "f0_tolerance_hz": 8},
+    "voice_b": {"f0_target_hz": 196, "f0_tolerance_hz": 12}
+  },
+  "lines": [
+    {"id": "brand_long", "voice": "voice_a", "text": "Hi, this is Rocket, with today's funding opportunity."},
+    {"id": "brand_longer", "voice": "voice_a", "text": "This is Rocket, and here is a funding opportunity you can apply for today."},
+    {"id": "follow_long", "voice": "voice_b", "text": "Follow Rocket, and you will see a new funding opportunity every single day."},
+    {"id": "follow_plain", "voice": "voice_b", "text": "Follow us for more funding opportunities, every single day."}
+  ]
+}
