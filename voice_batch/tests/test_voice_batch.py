@@ -57,6 +57,18 @@ class Batch(unittest.TestCase):
             with self.assertRaises(batch.BatchError, msg=k):
                 self.load(dict(self.good, **{k: v}))
 
+    def test_voice_b_batch1(self):
+        """tutor_011's first Voice B batch pins the agent reference and its
+        own F0 gate (196 +/- 12 Hz), and renders to a rokct/ branch."""
+        b = batch.load_batch(Path(__file__).resolve().parents[2]
+                             / "voice_batches/inbox/tutor_011_voice_b_batch1.json")
+        self.assertEqual((b["tutor"], b["voice"], b["ref_path"], b["ref_sha256"]), (
+            "tutor_011", "voice_b", "lms/team/voice_refs/voice_b_ref.wav",
+            "30c7ab70671dcd2c7239337d8de2dd2e6c9b468a11c0e7028646cc244ab6564d"))
+        self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (196.0, 12.0))
+        self.assertEqual(b["agent_branch"], "rokct/tutor-011-voice-b-batch1")
+        self.assertEqual(b["categories"], list(batch.CATEGORIES))
+        self.assertNotIn("lines", b)
 
     def test_lines_filter(self):
         b = self.load(dict(self.good, lines=["tutor_001/greetings/02", "tutor_001_sample_line"]))
@@ -122,6 +134,18 @@ class Lines(unittest.TestCase):
         items = build_lines(os.environ["AGENT_ROOT"], "tutor_001", cats)
         self.assertEqual(len(items), 13)
         self.assertEqual(sum(len(i["sentences"]) for i in items), 34)
+        for i in items:
+            self.assertNotIn("#", i["text"])
+            self.assertEqual(word_errors(i["text"], " ".join(i["render_text"])), 0, i["id"])
+            for r in i["render_text"]:
+                self.assertNotIn(" - ", r)
+                self.assertNotIn("—", r)
+
+    @unittest.skipUnless(os.environ.get("AGENT_ROOT"), "AGENT_ROOT not set")
+    def test_real_tutor_011(self):
+        cats = ["acknowledgements", "greetings", "signoffs", "teaching"]
+        items = build_lines(os.environ["AGENT_ROOT"], "tutor_011", cats)
+        self.assertEqual(len(items), 13)
         for i in items:
             self.assertNotIn("#", i["text"])
             self.assertEqual(word_errors(i["text"], " ".join(i["render_text"])), 0, i["id"])
