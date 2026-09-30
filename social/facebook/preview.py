@@ -65,7 +65,7 @@ def one(job):
     folder.mkdir(parents=True, exist_ok=True)
     shown, days_left = op.scene_facts(opp, today)
     render_music(seed, op.DURATION_SECONDS, folder / "music.wav")
-    add_voiceover(folder / "music.wav", op.DURATION_SECONDS, opener=opp["kind"] != "Funding tip")
+    add_voiceover(folder / "music.wav", op.DURATION_SECONDS, opp["kind"])
     render_motion(shown, op.headline_for(opp), days_left, seed, op.DURATION_SECONDS, tempo_for(seed), folder / "motion.mp4")
     clip = out / f"{name}-{motif}.mp4"
     subprocess.run(

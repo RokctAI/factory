@@ -405,8 +405,7 @@ def make_motion(opp, today: dt.date, folder: Path, close_line=None):
     seed = today.toordinal() + 1000 * KIND_SEED.get(opp["kind"], 0)
     shown, days_left = scene_facts(opp, today)
     render_music(seed, DURATION_SECONDS, folder / "music.wav")
-    # "Here's one you can apply for" does not fit a tip.
-    add_voiceover(folder / "music.wav", DURATION_SECONDS, opener=opp["kind"] != "Funding tip")
+    add_voiceover(folder / "music.wav", DURATION_SECONDS, opp["kind"])
     render_motion(
         shown, headline_for(opp), days_left, seed, DURATION_SECONDS, tempo_for(seed), folder / "motion.mp4",
         close_line or CLOSE_LINE,

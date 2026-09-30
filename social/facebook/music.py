@@ -133,6 +133,9 @@ ASSETS = Path(__file__).resolve().parent / "assets"
 # facebook_reel_follow_15.json.
 VOICE_BRAND = ASSETS / "voice_brand.wav"
 VOICE_OPEN = ASSETS / "voice_open.wav"
+# A tender is not funding, so tenders get their own opening line; until
+# the asset exists a tender Reel has no opener.
+VOICE_OPEN_TENDER = ASSETS / "voice_open_tender.wav"
 VOICE_CLOSE = ASSETS / "voice_close.wav"
 OPEN_PAUSE = 0.7  # seconds between "ROKCT" and the opening line
 
@@ -184,10 +187,18 @@ def _lay(music: Path, vo: Path, at_for):
     return at + length
 
 
-def add_voiceover(music: Path, duration, opener=True):
-    """ROKCT (a man's voice) on the first beat, the opening line straight
-    after it (unless opener is False), the follow line over the close."""
+def opener_for(kind):
+    """The opening line for a post kind: none for a tip ("Here's one you can
+    apply for" does not fit it), the tender line for a tender, else the
+    funding line (grants and investors)."""
+    return {"Funding tip": None, "Tender": VOICE_OPEN_TENDER}.get(kind, VOICE_OPEN)
+
+
+def add_voiceover(music: Path, duration, kind):
+    """ROKCT (a man's voice) on the first beat, the kind's opening line
+    straight after it, the follow line over the close."""
     brand_end = _lay(music, VOICE_BRAND, lambda length: 0.15)
-    if opener:
-        _lay(music, VOICE_OPEN, lambda length: (brand_end or 0) + OPEN_PAUSE)
+    opener = opener_for(kind)
+    if opener is not None:
+        _lay(music, opener, lambda length: (brand_end or 0) + OPEN_PAUSE)
     _lay(music, VOICE_CLOSE, lambda length: max(0.5, duration - length - 0.35))
