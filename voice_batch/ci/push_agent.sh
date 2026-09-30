@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
-# Commit one category's passing audio + its manifest to the agent branch.
+# Commit one job's passing audio + its manifest to the agent branch.
 #
 #   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH TUTOR VOICE CATEGORY
+#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH r3 VOICE LABEL
 #
-# Only claude/ branches. Stages only the tutor's .wav files and
-# <voice>_manifest[.<category>].json (never the reference, never anything else), then
+# Only rokct/ branches. A tutor job stages only the tutor's .wav files and
+# <voice>_manifest[.<category>].json; an r3 job stages only
+# lms/dart/templates/assets/r3_packs/audio/<key>.mp3 and
+# r3_manifest.<voice>[.partNN].json directly in that folder (additions,
+# changes, and the merge job's removal of folded part manifests). Never the
+# reference, never anything else. Then it
 # pushes with the token passed as an HTTP header (git -c, scoped to the origin
 # host) on every network-capable git command. The token is masked, never
 # echoed, never written to .git/config; xtrace is off.
@@ -17,35 +22,55 @@
 set +x
 set -euo pipefail
 
-dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor}"; voice="${4:?voice}"; category="${5:?category}"
+dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor or r3}"; voice="${4:?voice}"; category="${5:?category}"
 : "${AGENT_PAT:?AGENT_PAT must be set}"
 case "$branch" in
-  claude/*) ;;
-  *) echo "::error::refusing to push to non-claude/ branch"; exit 1 ;;
+  rokct/*) ;;
+  *) echo "::error::refusing to push to non-rokct/ branch"; exit 1 ;;
 esac
-tdir="lms/team/tutors/CAPS/$tutor"
+if ! printf '%s' "$voice" | grep -qE '^[a-z][a-z0-9_]{0,31}$'; then
+  echo "::error::bad voice name"; exit 1
+fi
+if [ "$tutor" = "r3" ]; then
+  tdir="lms/dart/templates/assets/r3_packs/audio"
+  allowed="^$tdir/([A-Za-z0-9_][A-Za-z0-9_.-]*\.mp3|r3_manifest\.${voice}(\.part[0-9]{2})?\.json)$"
+  ext="mp3"; manifest="$tdir/r3_manifest.${voice}.json"
+elif printf '%s' "$tutor" | grep -qE '^tutor_[0-9]{3}$'; then
+  tdir="lms/team/tutors/CAPS/$tutor"
+  allowed="^$tdir/(.+\.wav|${voice}_manifest(\.[a-z]+)?\.json)$"
+  ext="wav"; manifest="$tdir/${voice}_manifest.json"
+else
+  echo "::error::target must be tutor_NNN or r3"; exit 1
+fi
 cd "$dir"
 
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-for m in "$tdir/${voice}"_manifest*.json; do
-  if [ -e "$m" ]; then git add -- "$m"; fi
-done
-{ git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; } \
-  | { grep -E '\.wav$' || true; } | sort -u | while IFS= read -r f; do git add -- "$f"; done
+if [ "$tutor" = "r3" ]; then
+  # Only files directly in the audio folder that match the allow-list:
+  # new, modified, or deleted (the merge job removes folded part manifests).
+  { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; git ls-files --deleted -- "$tdir"; } \
+    | { grep -E "$allowed" || true; } | sort -u | while IFS= read -r f; do git add -A -- "$f"; done
+else
+  for m in "$tdir/${voice}"_manifest*.json; do
+    if [ -e "$m" ]; then git add -- "$m"; fi
+  done
+  { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; } \
+    | { grep -E '\.wav$' || true; } | sort -u | while IFS= read -r f; do git add -- "$f"; done
+fi
 if git diff --cached --quiet; then
   echo "category $category: nothing new to commit"
   exit 0
 fi
 echo "Staged:"
 git diff --cached --name-only | sed 's/^/  /'
-if git diff --cached --name-only | grep -v -E "^$tdir/(.+\.wav|${voice}_manifest(\.[a-z]+)?\.json)$"; then
+if git diff --cached --name-only | grep -v -E "$allowed"; then
   echo "::error::unexpected staged path; refusing to commit"; exit 1
 fi
-n_wav=$(git diff --cached --name-only | grep -c '\.wav$' || true)
-git commit --quiet -m "$tutor $voice: $category audio ($n_wav file(s)) from factory voice batch CI" \
-  -m "Rendered and gated by RokctAI/factory voice_batch (run ${GITHUB_RUN_ID:-local}). Per-line seeds, scores and hashes are in $tdir/${voice}_manifest.json."
+n_audio=$(git diff --cached --name-only --diff-filter=AM | grep -c "\.$ext\$" || true)
+git commit --quiet -m "$tutor $voice: $category audio ($n_audio file(s)) from factory voice batch CI" \
+  -m "Rendered and gated by RokctAI/factory voice_batch (run ${GITHUB_RUN_ID:-local}). Per-line seeds, scores and hashes are in $manifest."
 
 b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
 echo "::add-mask::$b64"

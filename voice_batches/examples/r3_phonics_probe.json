@@ -1,0 +1,17 @@
+{
+  "_comment": "Pronunciation probe for the R-3 phonics respellings (voice_batch/r3_respellings.json): 6 lines covering ah, aw, vuh/vvvvv, guh, mmm/juh, kuh/ih, rendered in Voice A only to hear whether the voice says the sound, not the letter name. Not in inbox/: moving it to voice_batches/inbox/ on main is what runs it.",
+  "kind": "r3",
+  "voice": "voice_a",
+  "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
+  "ref_sha256": "de4a86bdea53fa5722cb8d08edd699098207019a8a2611bf569491a4e6993d5f",
+  "agent_branch": "rokct/r3-phonics-probe",
+  "locale": "en",
+  "lines": [
+    "english_home_language.gradeR.term1.w01_sound_a.show",
+    "english_home_language.gradeR.term1.w01_write_a.beat_the_tutor_win_line",
+    "english_home_language.gradeR.term1.w03_sound_v.hints_1",
+    "english_home_language.gradeR.term1.w05_sound_g.rounds_1_prompt",
+    "english_home_language.gradeR.term1.w07_sound_m_j.show",
+    "english_home_language.gradeR.term1.w09_sound_k_i.show"
+  ]
+}

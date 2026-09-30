@@ -3,6 +3,7 @@
 (no line text, transcripts or audio), because the factory repo is public.
 
     python voice_batch/summary.py <agent>/lms/team/tutors/CAPS/<tutor>/<voice>_manifest.json >> "$GITHUB_STEP_SUMMARY"
+    python voice_batch/summary.py <agent>/lms/dart/templates/assets/r3_packs/audio/r3_manifest.<voice>.json >> "$GITHUB_STEP_SUMMARY"
 """
 from __future__ import annotations
 
@@ -17,8 +18,10 @@ def fmt(v, nd=2):
 
 def summary(m: dict) -> str:
     rows = [("pass", e) for e in m.get("lines", [])] + [("FAIL", e) for e in m.get("failed", [])]
-    out = [f"### Voice batch `{m.get('tutor', '?')}` / `{m.get('voice', '?')}`", "",
-           f"{len(m.get('lines', []))} passed, {len(m.get('failed', []))} failed", "",
+    listen = sum(bool(e.get("needs_listen")) for e in m.get("lines", []))
+    out = [f"### Voice batch `{m.get('tutor') or m.get('kind', '?')}` / `{m.get('voice', '?')}`", "",
+           f"{len(m.get('lines', []))} passed, {len(m.get('failed', []))} failed"
+           + (f", {listen} respelled for phonics (needs a listen)" if listen else ""), "",
            "| id | category | duration s | median F0 Hz | similarity | ASR exact | seeds | result |",
            "|---|---|---|---|---|---|---|---|"]
     for status, e in rows:

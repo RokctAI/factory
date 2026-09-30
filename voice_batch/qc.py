@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Measure takes, pick one per sentence, stitch each line, gate the result.
 
-    python voice_batch/qc.py --work WORK --ref REF.wav --scripts-dir <agent>/lms/team/scripts
+    python voice_batch/qc.py --work WORK --ref REF.wav --scripts-dir <agent>/lms/team/scripts \
+        [--f0-target 102 --f0-tolerance 8] [--language en]
 
 Reads WORK/lines.json and WORK/takes_index.json ({take path: {key, seed}}),
 caches per-take measurements in WORK/takes_measure.json and writes
@@ -12,15 +13,19 @@ Per take : faster-whisper transcript (word-exact after number/punctuation
            voiced frames above the reference's 90th-percentile F0),
            Resemblyzer cosine similarity to the reference.
 Selection: among the sentence's passing takes, median F0 closest to
-           102 Hz, then fewest upward swings, then higher similarity.
-           A passing take is word-exact AND has F0 in 94-110 Hz AND
+           the target (default 102 Hz), then fewest upward swings, then
+           higher similarity. A passing take is word-exact AND has F0
+           within target +/- tolerance (default 94-110 Hz) AND
            similarity >= 0.83; if a sentence has none of those, word-exact
            takes are used (tier 2) and the final gate decides.
 Stitch   : trim at -40 dB with 40 ms padding, 12 ms fades, 200-240 ms
            silence (280-320 ms pauses between words), -20 dBFS, 24 kHz
            mono PCM_16.
-Gate     : final file median F0 94-110 Hz; similarity >= 0.88 (>= 5 s) or
-           >= 0.83 (< 5 s); word-exact ASR.
+Gate     : final file median F0 within target +/- tolerance (default
+           94-110 Hz, tuned to Voice A; a batch sets f0_target_hz and
+           f0_tolerance_hz for another voice); similarity >= 0.88 (>= 5 s)
+           or >= 0.83 (< 5 s); word-exact ASR against the line's asr_text
+           (the TTS respelling for an R-3 phonics line, else the text).
 """
 from __future__ import annotations
 
@@ -35,8 +40,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from textnorm import word_errors  # noqa: E402
 
 SR = 24_000
+# Voice A defaults; batch.py's f0_target_hz / f0_tolerance_hz override them.
 TARGET_F0 = 102.0
-F0_RANGE = (94.0, 110.0)
+F0_TOLERANCE = 8.0
+F0_RANGE = (TARGET_F0 - F0_TOLERANCE, TARGET_F0 + F0_TOLERANCE)
 SIM_LONG, SIM_SHORT, LONG_S = 0.88, 0.83, 5.0
 TAKE_SIM_MIN = SIM_SHORT
 GAPS_S = (0.22, 0.20, 0.24, 0.22)   # + 2 x 40 ms padding = 300/280/320/300 ms pauses
@@ -47,18 +54,31 @@ def sim_threshold(duration_s: float) -> float:
     return SIM_LONG if duration_s >= LONG_S else SIM_SHORT
 
 
-def take_rank(m: dict) -> tuple:
-    return (abs(m["f0"] - TARGET_F0), m["swings"], -m["res"])
+def f0_range(target: float = TARGET_F0, tolerance: float = F0_TOLERANCE) -> tuple[float, float]:
+    return (target - tolerance, target + tolerance)
 
 
-def pick(cands: list[dict]) -> tuple[dict | None, int]:
+def pyin_bounds(target: float = TARGET_F0, tolerance: float = F0_TOLERANCE) -> tuple[float, float]:
+    """pYIN search range: 50-300 Hz for Voice A, widened for a voice whose
+    gate reaches outside it (e.g. a higher R-3 voice)."""
+    lo, hi = f0_range(target, tolerance)
+    return min(50.0, round(lo * 0.6)), max(300.0, hi * 2)
+
+
+def take_rank(m: dict, target: float = TARGET_F0) -> tuple:
+    return (abs(m["f0"] - target), m["swings"], -m["res"])
+
+
+def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOLERANCE) -> tuple[dict | None, int]:
     """(best take, tier) — tier 1 strict pass, tier 2 word-exact only, 0 none."""
+    lo, hi = f0_range(target, tolerance)
     exact = [c for c in cands if c["err"] == 0]
-    strict = [c for c in exact if F0_RANGE[0] <= c["f0"] <= F0_RANGE[1] and c["res"] >= TAKE_SIM_MIN]
+    strict = [c for c in exact if lo <= c["f0"] <= hi and c["res"] >= TAKE_SIM_MIN]
+    rank = lambda c: take_rank(c, target)  # noqa: E731
     if strict:
-        return min(strict, key=take_rank), 1
+        return min(strict, key=rank), 1
     if exact:
-        return min(exact, key=take_rank), 2
+        return min(exact, key=rank), 2
     return None, 0
 
 
@@ -83,7 +103,10 @@ def stitch(arrays: list, sr: int = SR):
 
 
 class Meter:
-    def __init__(self, ref: Path, asr_model: str):
+    def __init__(self, ref: Path, asr_model: str, language: str = "en",
+                 pyin: tuple[float, float] = (50.0, 300.0)):
+        self.language = language
+        self.pyin_bounds = pyin
         import librosa  # noqa: F401
         from faster_whisper import WhisperModel
         from resemblyzer import VoiceEncoder, preprocess_wav
@@ -105,16 +128,16 @@ class Meter:
         w = w.mean(1) if w.ndim > 1 else w
         return librosa.resample(w, orig_sr=sr, target_sr=16000)
 
-    @staticmethod
-    def _pyin(w):
+    def _pyin(self, w):
         import librosa
-        f, v, _ = librosa.pyin(w, fmin=50, fmax=300, sr=16000, frame_length=1024, hop_length=256)
+        fmin, fmax = self.pyin_bounds
+        f, v, _ = librosa.pyin(w, fmin=fmin, fmax=fmax, sr=16000, frame_length=1024, hop_length=256)
         return f, v
 
     def measure(self, p, text: str) -> dict:
         import numpy as np
         w = self.r16(p)
-        segs, _ = self.asr.transcribe(str(p), beam_size=5, language="en")
+        segs, _ = self.asr.transcribe(str(p), beam_size=5, language=self.language)
         tx = " ".join(s.text.strip() for s in segs)
         f, v = self._pyin(w)
         fv = f[v]
@@ -138,7 +161,11 @@ def main() -> int:
     ap.add_argument("--ref", required=True)
     ap.add_argument("--scripts-dir", required=True)
     ap.add_argument("--asr-model", default=os.environ.get("ASR_MODEL", "small.en"))
+    ap.add_argument("--f0-target", type=float, default=TARGET_F0)
+    ap.add_argument("--f0-tolerance", type=float, default=F0_TOLERANCE)
+    ap.add_argument("--language", default="en")
     args = ap.parse_args()
+    lo, hi = f0_range(args.f0_target, args.f0_tolerance)
     sys.path.insert(0, args.scripts_dir)
     import numpy as np
     import soundfile as sf
@@ -149,7 +176,7 @@ def main() -> int:
     index = json.loads((work / "takes_index.json").read_text(encoding="utf-8"))
     mpath = work / "takes_measure.json"
     M = json.loads(mpath.read_text(encoding="utf-8")) if mpath.exists() else {}
-    meter = Meter(Path(args.ref), args.asr_model)
+    meter = Meter(Path(args.ref), args.asr_model, args.language, pyin_bounds(args.f0_target, args.f0_tolerance))
     sentence_of = {f"{it['id']}#{k}": s for it in lines for k, s in enumerate(it["sentences"], 1)}
 
     for p, meta in index.items():
@@ -167,7 +194,7 @@ def main() -> int:
         for k in range(1, len(it["sentences"]) + 1):
             key = f"{it['id']}#{k}"
             cands = [dict(m, path=p) for p, m in M.items() if m["key"] == key]
-            best, tier = pick(cands)
+            best, tier = pick(cands, args.f0_target, args.f0_tolerance)
             picks.append(best); tiers.append(tier)
             if tier != 1:
                 lacking.append({"key": key, "tier": tier})
@@ -185,14 +212,14 @@ def main() -> int:
             arrays.append(x)
         y, pauses = stitch(arrays)
         y = rv.normalise(y).astype(np.float32)
-        dst = work / "final" / it["file"]
+        dst = work / "final" / it.get("final_wav", it["file"])
         dst.parent.mkdir(parents=True, exist_ok=True)
         sf.write(str(dst), y, SR, subtype="PCM_16")
-        fm = meter.measure(dst, it["text"])
+        fm = meter.measure(dst, it.get("asr_text", it["text"]))
         x, _ = sf.read(str(dst))
         dur = round(len(x) / SR, 3)
         thr = sim_threshold(dur)
-        gate = {"f0": F0_RANGE[0] <= fm["f0"] <= F0_RANGE[1], "similarity": fm["res"] >= thr, "asr": fm["err"] == 0}
+        gate = {"f0": lo <= fm["f0"] <= hi, "similarity": fm["res"] >= thr, "asr": fm["err"] == 0}
         r.update({
             "status": "pass" if all(gate.values()) else "fail", "gate": gate, "final_path": str(dst),
             "duration_s": dur, "median_f0_hz": fm["f0"], "upward_swings": fm["swings"],

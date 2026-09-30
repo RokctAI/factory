@@ -1,9 +1,10 @@
 name: Voice batch
 
 # Push a batch JSON into voice_batches/inbox/ on main (or run it by hand) and
-# this renders a tutor's standing lines in the tutor's consented cloned voice,
-# gates every line, and commits the passing WAVs + a manifest straight to a
-# claude/ branch of the private RokctAI/agent repo. See voice_batch/README.md.
+# this renders a tutor's standing lines in the tutor's consented cloned voice
+# (kind "tutor"), or the Grades R-3 activity-pack lines (kind "r3"), gates
+# every line, and commits the passing audio + a manifest straight to a
+# rokct/ branch of the private RokctAI/agent repo. See voice_batch/README.md.
 #
 # PUBLIC-REPO SAFETY — this repository is public, the audio is not:
 #   * No pull_request trigger: the job needs MONOREPO_PAT and fork PRs must
@@ -11,11 +12,13 @@ name: Voice batch
 #   * No upload-artifact, and nothing audio-related is cached: fork PR runs
 #     can restore caches. Only public model weights are cached.
 #   * Logs and the job summary carry line ids and scores only — never line
-#     text, transcripts, audio or the reference clip.
+#     text, transcripts, respellings, audio or the reference clip.
 #   * The reference is read from the agent checkout and verified against the
 #     batch's sha256; it never leaves the runner.
-#   * push_agent.sh only pushes to claude/ branches, only the tutor's .wav
-#     files + manifest, with the token masked and never stored in .git/config.
+#   * push_agent.sh only pushes to rokct/ branches (never main), only the tutor's .wav
+#     files + manifest (kind tutor) or the .mp3 files + r3_manifest JSONs
+#     directly in lms/dart/templates/assets/r3_packs/audio/ (kind r3), with
+#     the token masked and never stored in .git/config.
 #
 # Idempotent: re-running a batch re-renders only lines whose text or
 # reference changed and overwrites the same files on the agent branch.
@@ -64,7 +67,8 @@ jobs:
     outputs:
       count: ${{ steps.list.outputs.count }}
       file: ${{ steps.plan.outputs.file }}
-      categories_json: ${{ steps.plan.outputs.categories_json }}
+      kind: ${{ steps.plan.outputs.kind }}
+      matrix_json: ${{ steps.plan.outputs.matrix_json }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -83,7 +87,7 @@ jobs:
           echo "Batches:"; sed 's/^/  /' "$RUNNER_TEMP/batches.txt"
           echo "count=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)" >> "$GITHUB_OUTPUT"
 
-      - name: Validate batch and build category matrix
+      - name: Validate batch and build the job matrix (categories, or r3 shards)
         id: plan
         env:
           COUNT: ${{ steps.list.outputs.count }}
@@ -100,21 +104,23 @@ jobs:
           python3 voice_batch/batch.py "$file" > "$RUNNER_TEMP/batch.out"
           cat "$RUNNER_TEMP/batch.out" >> "$GITHUB_OUTPUT"
           echo "file=$file" >> "$GITHUB_OUTPUT"
-          grep -E '^(tutor|voice|agent_branch|categories|lines)=' "$RUNNER_TEMP/batch.out" | sed 's/^/  /'
+          grep -E '^(kind|tutor|voice|agent_branch|categories|locale|line_count|f0_target_hz|f0_tolerance_hz|matrix_json)=' "$RUNNER_TEMP/batch.out" | sed 's/^/  /'
 
-  # One job per category, each on its own runner (16 GB, one render at a
-  # time inside it), all restoring the same shared weights cache. Each
-  # commits its own files to the agent branch as soon as it finishes.
+  # One job per category (kind tutor) or per ~40-line shard (kind r3, at
+  # most 8), each on its own runner (16 GB, one render at a time inside it),
+  # all restoring the same shared weights cache. Each commits its own files
+  # to the agent branch as soon as it finishes.
   render:
-    name: Render ${{ matrix.category }}
+    name: Render ${{ matrix.category }} ${{ matrix.shard }}
     needs: plan
     if: needs.plan.outputs.count == '1'
     runs-on: ubuntu-latest
     timeout-minutes: 240
     strategy:
       fail-fast: false
+      max-parallel: 8
       matrix:
-        category: ${{ fromJSON(needs.plan.outputs.categories_json) }}
+        include: ${{ fromJSON(needs.plan.outputs.matrix_json) }}
     steps:
       - name: Check MONOREPO_PAT is set
         env:
@@ -149,11 +155,7 @@ jobs:
           path: .agent
           fetch-depth: 1
           persist-credentials: false
-          sparse-checkout: |
-            lms/team/tutors/CAPS/${{ steps.batch.outputs.tutor }}
-            lms/team/voices
-            lms/team/voice_refs
-            lms/team/scripts
+          sparse-checkout: ${{ steps.batch.outputs.sparse }}
 
       - name: Verify reference sha256
         env:
@@ -216,47 +218,74 @@ jobs:
           path: ${{ env.HF_HOME }}/hub
           key: ${{ steps.models.outputs.cache-primary-key }}
 
+      # small.en for English; a non-English r3 batch (locale af) gets the
+      # multilingual model named by batch.py.
       - name: Restore ASR model
         id: asr
         uses: actions/cache@v4
         with:
           path: ${{ env.ASR_DOWNLOAD_ROOT }}
-          key: voice-batch-asr-faster-whisper-${{ env.ASR_MODEL }}
+          key: voice-batch-asr-faster-whisper-${{ steps.batch.outputs.asr_model }}
 
       - name: Download ASR model
         if: steps.asr.outputs.cache-hit != 'true'
+        env:
+          ASR_MODEL: ${{ steps.batch.outputs.asr_model }}
         run: |
           python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
           du -sh "$ASR_DOWNLOAD_ROOT"
 
-      - name: Render, gate and commit ${{ matrix.category }} to the agent branch
+      - name: Render, gate and commit ${{ matrix.category }} ${{ matrix.shard }} to the agent branch
         env:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
           HF_HUB_OFFLINE: '1'
+          KIND: ${{ steps.batch.outputs.kind }}
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
           CATEGORY: ${{ matrix.category }}
+          SHARD: ${{ matrix.shard }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
           VOICE: ${{ steps.batch.outputs.voice }}
           REF_PATH: ${{ steps.batch.outputs.ref_path }}
           REF_SHA: ${{ steps.batch.outputs.ref_sha256 }}
           AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
           LINES: ${{ steps.batch.outputs.lines }}
+          F0_TARGET: ${{ steps.batch.outputs.f0_target_hz }}
+          F0_TOLERANCE: ${{ steps.batch.outputs.f0_tolerance_hz }}
+          LOCALE: ${{ steps.batch.outputs.locale }}
+          ASR_MODEL: ${{ steps.batch.outputs.asr_model }}
         run: |
           set +x
           model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
-          python voice_batch/run.py --agent-root .agent --tutor "$TUTOR" --voice "$VOICE" \
-            --ref ".agent/$REF_PATH" --ref-sha256 "$REF_SHA" --category "$CATEGORY" --lines "$LINES" \
-            --model-path "$model_path" --work "$RUNNER_TEMP/voice_batch" --asr-model "$ASR_MODEL"
-          bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" "$CATEGORY"
+          common=(--agent-root .agent --voice "$VOICE" --ref ".agent/$REF_PATH" --ref-sha256 "$REF_SHA"
+                  --model-path "$model_path" --work "$RUNNER_TEMP/voice_batch" --asr-model "$ASR_MODEL"
+                  --language "$LOCALE" --f0-target "$F0_TARGET" --f0-tolerance "$F0_TOLERANCE")
+          if [ "$KIND" = "r3" ]; then
+            python voice_batch/run.py --kind r3 "${common[@]}" --batch "$BATCH_FILE" --shard "$SHARD"
+            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" "r3 shard $SHARD"
+          else
+            python voice_batch/run.py "${common[@]}" --tutor "$TUTOR" --category "$CATEGORY" --lines "$LINES"
+            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" "$CATEGORY"
+          fi
 
       - name: Job summary
         if: always()
         env:
+          KIND: ${{ steps.batch.outputs.kind }}
           CATEGORY: ${{ matrix.category }}
+          SHARD: ${{ matrix.shard }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
           VOICE: ${{ steps.batch.outputs.voice }}
-        run: python3 voice_batch/summary.py ".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.$CATEGORY.json" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          if [ "$KIND" = "r3" ]; then
+            m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.part$(printf '%02d' "${SHARD%%/*}").json"
+          else
+            m=".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.$CATEGORY.json"
+          fi
+          python3 voice_batch/summary.py "$m" >> "$GITHUB_STEP_SUMMARY"
 
-  # Fold the per-category manifests into <voice>_manifest.json on the branch.
+  # Fold the per-category manifests into <voice>_manifest.json (kind tutor),
+  # or the per-shard parts into r3_manifest.<voice>.json (kind r3), on the
+  # branch.
   merge:
     name: Merge manifest
     needs: [plan, render]
@@ -281,23 +310,56 @@ jobs:
           path: .agent
           fetch-depth: 1
           persist-credentials: false
-          sparse-checkout: |
-            lms/team/tutors/CAPS/${{ steps.batch.outputs.tutor }}
+          sparse-checkout: ${{ steps.batch.outputs.kind == 'r3' && 'lms/dart/templates/assets/r3_packs/audio' || format('lms/team/tutors/CAPS/{0}', steps.batch.outputs.tutor) }}
 
       - name: Merge and commit
         env:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          KIND: ${{ steps.batch.outputs.kind }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
           VOICE: ${{ steps.batch.outputs.voice }}
           AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
         run: |
           set +x
-          python3 voice_batch/merge_manifest.py ".agent/lms/team/tutors/CAPS/$TUTOR" "$VOICE"
-          bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" manifest
+          if [ "$KIND" = "r3" ]; then
+            python3 voice_batch/merge_manifest.py --r3 .agent/lms/dart/templates/assets/r3_packs/audio "$VOICE"
+            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" manifest
+          else
+            python3 voice_batch/merge_manifest.py ".agent/lms/team/tutors/CAPS/$TUTOR" "$VOICE"
+            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" manifest
+          fi
+
+      # Open a PR from the agent branch into main (ready for review) if none
+      # is open; otherwise leave one comment with this run's counts. Counts
+      # and the run URL only, never line text or ids.
+      - name: Open the agent PR (or note this run on the open one)
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          KIND: ${{ steps.batch.outputs.kind }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set +x
+          if [ "$KIND" = "r3" ]; then
+            target=r3; m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json"
+          else
+            target="$TUTOR"; m=".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.json"
+          fi
+          python3 voice_batch/ci/open_agent_pr.py --repo RokctAI/agent --head "$AGENT_BRANCH" --base main \
+            --target "$target" --voice "$VOICE" --manifest "$m" --run-url "$RUN_URL"
 
       - name: Job summary
         if: always()
         env:
+          KIND: ${{ steps.batch.outputs.kind }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
           VOICE: ${{ steps.batch.outputs.voice }}
-        run: python3 voice_batch/summary.py ".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.json" >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          if [ "$KIND" = "r3" ]; then
+            m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json"
+          else
+            m=".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.json"
+          fi
+          python3 voice_batch/summary.py "$m" >> "$GITHUB_STEP_SUMMARY"

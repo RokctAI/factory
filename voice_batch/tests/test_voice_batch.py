@@ -41,7 +41,7 @@ class TextNorm(unittest.TestCase):
 
 class Batch(unittest.TestCase):
     good = {"tutor": "tutor_001", "voice": "voice_a", "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
-            "ref_sha256": "0" * 64, "agent_branch": "claude/x-y", "categories": ["teaching", "greetings"]}
+            "ref_sha256": "0" * 64, "agent_branch": "rokct/x-y", "categories": ["teaching", "greetings"]}
 
     def load(self, d):
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
@@ -52,7 +52,7 @@ class Batch(unittest.TestCase):
         self.assertEqual(self.load(self.good)["categories"], ["greetings", "teaching"])
 
     def test_rejects(self):
-        for k, v in [("agent_branch", "main"), ("agent_branch", "claude/../main"), ("ref_path", "../x.wav"),
+        for k, v in [("agent_branch", "main"), ("agent_branch", "rokct/../main"), ("ref_path", "../x.wav"),
                      ("tutor", "tutor_1; rm"), ("categories", ["all"]), ("ref_sha256", "abc")]:
             with self.assertRaises(batch.BatchError, msg=k):
                 self.load(dict(self.good, **{k: v}))

@@ -23,8 +23,9 @@ ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "voice_batch" / "ci" / "push_agent.sh"
 TOKEN = "test-token"
 EXPECTED = "Basic " + base64.b64encode(f"x-access-token:{TOKEN}".encode()).decode()
-BRANCH = "claude/tutor-001-voice-a-test"
+BRANCH = "rokct/tutor-001-voice-a-test"
 TDIR = "lms/team/tutors/CAPS/tutor_001"
+ADIR = "lms/dart/templates/assets/r3_packs/audio"
 
 
 def http_backend() -> str | None:
@@ -122,6 +123,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.write(seed, "lms/team/voice_refs/voice_a_ref.wav", b"ref")
         self.write(seed, "outside/big.bin", b"x" * 1000)
         self.write(seed, f"{TDIR}/README", b"tutor")
+        self.write(seed, f"{ADIR}/README.md", b"r3 audio")
         self.git("add", "-A", cwd=seed)
         self.git("commit", "--quiet", "-m", "seed", cwd=seed)
         self.git("-c", self.hdr, "push", "--quiet", self.url, f"HEAD:refs/heads/{BRANCH}", cwd=seed)
@@ -146,15 +148,74 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.git("remote", "add", "origin", self.url, cwd=d)
         self.git("config", "remote.origin.promisor", "true", cwd=d)
         self.git("config", "remote.origin.partialclonefilter", "blob:none", cwd=d)
-        self.git("sparse-checkout", "set", TDIR, "lms/team/voice_refs", cwd=d)
+        self.git("sparse-checkout", "set", TDIR, ADIR, "lms/team/voice_refs", cwd=d)
         self.git("-c", self.hdr, "fetch", "--quiet", "--filter=blob:none", "--depth=1", "origin",
                  f"+refs/heads/{BRANCH}:refs/remotes/origin/{BRANCH}", cwd=d)
         self.git("-c", self.hdr, "checkout", "--quiet", "-B", BRANCH, f"refs/remotes/origin/{BRANCH}", cwd=d)
         return d
 
-    def push(self, repo: Path, category: str):
-        return subprocess.run(["bash", str(SCRIPT), str(repo), BRANCH, "tutor_001", "voice_a", category],
+    def push(self, repo: Path, category: str, target: str = "tutor_001", voice: str = "voice_a", branch: str = BRANCH):
+        return subprocess.run(["bash", str(SCRIPT), str(repo), branch, target, voice, category],
                               env={**self.env, "AGENT_PAT": TOKEN}, capture_output=True, text=True)
+
+    def remote_files(self):
+        return self.git("ls-tree", "-r", "--name-only", BRANCH, cwd=self.tmp / "srv" / "agent.git").stdout.split()
+
+    def test_r3_shards_then_merge(self):
+        a, b = self.checkout("shard1"), self.checkout("shard2")
+        key1 = "english_home_language.gradeR.term1.w01_sound_a.show"
+        self.write(a, f"{ADIR}/{key1}.mp3", b"mp3-1")
+        self.write(a, f"{ADIR}/r3_manifest.voice_x.part01.json", b'{"lines": []}\n')
+        # Never staged: a subfolder, another extension, another voice's manifest, outside the folder.
+        self.write(a, f"{ADIR}/sub/{key1}.mp3", b"nested")
+        self.write(a, f"{ADIR}/notes.txt", b"no")
+        self.write(a, f"{ADIR}/r3_manifest.voice_y.json", b"{}")
+        self.write(a, f"{TDIR}/greetings/01.wav", b"tutor-audio")
+        self.write(a, "lms/team/voice_refs/voice_a_ref.wav", b"changed-ref")
+        self.write(b, f"{ADIR}/r3.r3_praise_yes.mp3", b"mp3-2")
+        self.write(b, f"{ADIR}/r3_manifest.voice_x.part02.json", b'{"lines": []}\n')
+
+        first = self.push(a, "r3 shard 1/2", "r3", "voice_x")
+        self.assertEqual(first.returncode, 0, first.stdout + first.stderr)
+        second = self.push(b, "r3 shard 2/2", "r3", "voice_x")
+        self.assertEqual(second.returncode, 0, second.stdout + second.stderr)
+        self.assertIn("push rejected (attempt 1)", second.stdout)
+        files = self.remote_files()
+        for f in (f"{ADIR}/{key1}.mp3", f"{ADIR}/r3.r3_praise_yes.mp3",
+                  f"{ADIR}/r3_manifest.voice_x.part01.json", f"{ADIR}/r3_manifest.voice_x.part02.json"):
+            self.assertIn(f, files)
+        for f in (f"{ADIR}/sub/{key1}.mp3", f"{ADIR}/notes.txt", f"{ADIR}/r3_manifest.voice_y.json",
+                  f"{TDIR}/greetings/01.wav"):
+            self.assertNotIn(f, files)
+        self.assertEqual(self.git("show", f"{BRANCH}:lms/team/voice_refs/voice_a_ref.wav",
+                                  cwd=self.tmp / "srv" / "agent.git").stdout, "ref")
+
+        # The merge job: fold the parts into one manifest and remove them.
+        m = self.checkout("merge")
+        for n in ("01", "02"):
+            (m / ADIR / f"r3_manifest.voice_x.part{n}.json").unlink()
+        self.write(m, f"{ADIR}/r3_manifest.voice_x.json", b'{"lines": [1, 2]}\n')
+        merged = self.push(m, "manifest", "r3", "voice_x")
+        self.assertEqual(merged.returncode, 0, merged.stdout + merged.stderr)
+        files = self.remote_files()
+        self.assertIn(f"{ADIR}/r3_manifest.voice_x.json", files)
+        self.assertNotIn(f"{ADIR}/r3_manifest.voice_x.part01.json", files)
+        self.assertIn(f"{ADIR}/README.md", files)
+        again = self.push(m, "manifest", "r3", "voice_x")
+        self.assertIn("nothing new to commit", again.stdout)
+
+    def test_r3_refuses_unexpected_and_bad_args(self):
+        a = self.checkout("bad")
+        self.write(a, f"{ADIR}/k.mp3", b"ok")
+        self.write(a, f"{TDIR}/sneaky.txt", b"x")
+        self.git("add", f"{TDIR}/sneaky.txt", cwd=a)
+        r = self.push(a, "r3 shard 1/1", "r3", "voice_x")
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("unexpected staged path", r.stdout)
+        self.assertNotEqual(self.push(a, "x", "r3", "voice_x", branch="main").returncode, 0)
+        self.assertNotEqual(self.push(a, "x", "r3", "voice_x", branch="claude/x").returncode, 0)
+        self.assertNotEqual(self.push(a, "x", "../r3", "voice_x").returncode, 0)
+        self.assertNotEqual(self.push(a, "x", "r3", "Voice X").returncode, 0)
 
     def test_rejected_push_rebases_with_auth(self):
         a, b = self.checkout("teaching"), self.checkout("greetings")
