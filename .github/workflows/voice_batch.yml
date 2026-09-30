@@ -146,16 +146,34 @@ jobs:
           BATCH_FILE: ${{ needs.plan.outputs.file }}
         run: python3 voice_batch/batch.py "$BATCH_FILE" >> "$GITHUB_OUTPUT"
 
+      # If the agent branch does not exist (never created, or its PR was
+      # merged and the branch auto-deleted before this run), check out main
+      # instead and start the branch from it; push_agent.sh's push then
+      # creates it on the remote. The sha256 check below runs on whichever
+      # of the two was checked out.
+      - name: Resolve agent branch (main if it does not exist)
+        id: agentref
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: bash voice_batch/ci/resolve_agent_ref.sh "$AGENT_BRANCH"
+
       - name: Check out agent branch (private)
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
           token: ${{ secrets.MONOREPO_PAT }}
-          ref: ${{ steps.batch.outputs.agent_branch }}
+          ref: ${{ steps.agentref.outputs.ref }}
           path: .agent
           fetch-depth: 1
           persist-credentials: false
           sparse-checkout: ${{ steps.batch.outputs.sparse }}
+
+      - name: Start the agent branch from main
+        if: steps.agentref.outputs.create == 'true'
+        env:
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: git -C .agent checkout --quiet -b "$AGENT_BRANCH"
 
       - name: Verify reference sha256
         env:
@@ -301,16 +319,31 @@ jobs:
           BATCH_FILE: ${{ needs.plan.outputs.file }}
         run: python3 voice_batch/batch.py "$BATCH_FILE" >> "$GITHUB_OUTPUT"
 
+      # Same fallback as render: normally a render job has created the branch
+      # by now, but if none pushed anything it may still not exist.
+      - name: Resolve agent branch (main if it does not exist)
+        id: agentref
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: bash voice_batch/ci/resolve_agent_ref.sh "$AGENT_BRANCH"
+
       - name: Check out agent branch (private)
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
           token: ${{ secrets.MONOREPO_PAT }}
-          ref: ${{ steps.batch.outputs.agent_branch }}
+          ref: ${{ steps.agentref.outputs.ref }}
           path: .agent
           fetch-depth: 1
           persist-credentials: false
           sparse-checkout: ${{ steps.batch.outputs.kind == 'r3' && 'lms/dart/templates/assets/r3_packs/audio' || format('lms/team/tutors/CAPS/{0}', steps.batch.outputs.tutor) }}
+
+      - name: Start the agent branch from main
+        if: steps.agentref.outputs.create == 'true'
+        env:
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: git -C .agent checkout --quiet -b "$AGENT_BRANCH"
 
       - name: Merge and commit
         env:
