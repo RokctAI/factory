@@ -68,7 +68,38 @@ class Batch(unittest.TestCase):
             self.load(batch(lines=[{"id": "x", "voice": "voice_a", "text": "Hello there you.", "takes": 6}]))
 
 
+    def test_prefer_seeds_only_reorders(self):
+        self.assertEqual(rvx.seed_rounds([33]), [[33], [11, 22], [44], [55]])
+        self.assertEqual(rvx.seed_rounds([44]), [[44], [11, 22, 33], [55]])
+        self.assertEqual(rvx.seed_rounds(), [[11, 22, 33], [44], [55]])
+        b = self.load(batch(lines=[{"id": "x", "voice": "voice_a", "text": "Hello there you.", "prefer_seeds": [33]}]))
+        self.assertEqual(sorted(s for r in b["lines"][0]["rounds"] for s in r), sorted(rvx.SEEDS))
+
+    def test_prefer_seeds_must_be_seed_list_seeds(self):
+        for bad in ([99], [33, 33], 33):
+            with self.assertRaises(ValueError):
+                self.load(batch(lines=[{"id": "x", "voice": "voice_a", "text": "Hello there you.", "prefer_seeds": bad}]))
+
+    def test_inline_respelling_reaches_the_tts_only(self):
+        b = self.load(batch(lines=[{"id": "x", "voice": "voice_a", "keep_through": "Rocket",
+                                    "text": "Follow {{Rocket|Rock-it}} for more every day."}]))
+        ln = b["lines"][0]
+        self.assertEqual(ln["text"], "Follow Rocket for more every day.")
+        self.assertEqual(ln["parts"], ["Follow Rocket for more every day."])
+        self.assertEqual(ln["tts_parts"], ["Follow Rock-it for more every day."])
+        self.assertEqual(ln["wild"], [["Rocket", "Rock-it"]])
+
+    def test_malformed_markup_is_a_batch_error(self):
+        with self.assertRaises(ValueError):
+            self.load(batch(lines=[{"id": "x", "voice": "voice_a", "text": "Follow {{Rocket for more."}]))
+
+
 class Cut(unittest.TestCase):
+    def test_word_end_finds_a_respelled_word(self):
+        from types import SimpleNamespace as NS
+        words = [NS(word=w, end=float(i)) for i, w in enumerate(["Follow", "Rock", "it", "for", "more."])]
+        self.assertEqual(rvx.word_end(words, "Follow Rocket", "for more.", [["Rocket", "Rock-it"]]), 2.0)
+
     def test_text_through(self):
         self.assertEqual(rvx.text_through("Hi, this is Rocket, with today's opportunity.", "Rocket"),
                          "Hi, this is Rocket,")

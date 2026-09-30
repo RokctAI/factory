@@ -10,7 +10,10 @@ renderer and QC gate, so they meet the tutor voices' quality bar.
 A batch lists lines ({"id", "voice", "text", optional "takes", default 1;
 optional "keep_through": a word to cut a passing take after, gated again;
 optional "asset": the social/facebook/assets file name the first passing
-take, or its cut, is written as under OUT/assets/})
+take, or its cut, is written as under OUT/assets/; optional "prefer_seeds":
+seeds from the seed rounds to try first, in that order, so a take already
+heard and approved is rendered, and chosen, before the others; the other
+seeds keep their rounds)
 and, per voice, the F0 gate ("f0_target_hz", "f0_tolerance_hz"). A take is
 one seed's rendering of a whole line:
 
@@ -18,6 +21,11 @@ Render : textnorm.split_sentences, then any sentence of two words or fewer
          joins its neighbour (a one-word sentence such as "Begin." comes
          out as "Mm-hmm"); voice_batch/render_takes.py renders each part as
          textnorm.tts_prompt (part + " ...") at cfg 1.3, 10 DDPM steps.
+         Pronunciations (voice_batch/pronunciations.py) apply as in the
+         tutor batches: inline {{Rocket|Rock-it}} or a global
+         pronunciations.json entry changes only what the TTS is given; the
+         display text is what the ASR check compares against, with each
+         respelled word a wildcard there.
 QC     : qc.Meter measures each part (qc.pick: word-exact with a clean
          tail, else the take fails), qc.stitch joins them, and the stitched
          take is gated on median F0 within target +/- tolerance, similarity
@@ -46,12 +54,22 @@ HERE = Path(__file__).resolve().parent
 VB = HERE.parent / "voice_batch"
 sys.path.insert(0, str(VB))
 import mp3  # noqa: E402
+import pronunciations  # noqa: E402
 import qc  # noqa: E402
 import textnorm  # noqa: E402
 from run import SEED_ROUNDS, safe, sha256_file, versions  # noqa: E402
 
 ID_RE = r"[a-z][a-z0-9_]{0,40}"
 MAX_TAKES = sum(len(r) for r in SEED_ROUNDS)
+SEEDS = [s for r in SEED_ROUNDS for s in r]
+
+
+def seed_rounds(prefer: list[int] | None = None) -> list[list[int]]:
+    """SEED_ROUNDS with the preferred seeds first, one round each: the same
+    seeds, only in a different order."""
+    prefer = list(prefer or [])
+    rest = [[s for s in r if s not in prefer] for r in SEED_ROUNDS]
+    return [[s] for s in prefer] + [r for r in rest if r]
 
 
 def render_parts(text: str) -> list[str]:
@@ -101,8 +119,9 @@ def cut_after(x, sr: int, word_end_s: float, quiet_db: float = -42.0, quiet_s: f
     return None
 
 
-def load_batch(path: Path) -> dict:
+def load_batch(path: Path, pron: dict | None = None) -> dict:
     b = json.loads(path.read_text(encoding="utf-8"))
+    pron = pronunciations.load() if pron is None else pron
     if not re.fullmatch(ID_RE, str(b.get("id", ""))):
         raise ValueError(f"batch id must match {ID_RE}")
     voices = b.get("voices") or {}
@@ -124,7 +143,24 @@ def load_batch(path: Path) -> dict:
         ln.setdefault("takes", 1)
         if not (isinstance(ln["takes"], int) and 1 <= ln["takes"] <= MAX_TAKES):
             raise ValueError(f"line {ln['id']}: takes must be 1-{MAX_TAKES}")
-        ln["parts"] = render_parts(ln["text"])
+        try:
+            said = [pronunciations.apply(p, pron) for p in render_parts(ln["text"])]
+        except pronunciations.PronunciationError as exc:
+            raise ValueError(f"line {ln['id']}: {exc}") from None
+        for w in pronunciations.ambiguous_uses(ln["text"], pron):
+            raise ValueError(pronunciations.ambiguous_error(ln["id"], w, pron))
+        # "text" and "parts" are the display text (the ASR reference);
+        # "tts_parts" is what the model is given.
+        ln["source_text"] = ln["text"]
+        ln["parts"] = [d for d, _, _ in said]
+        ln["text"] = " ".join(ln["parts"])
+        ln["tts_parts"] = [t for _, t, _ in said]
+        ln["part_wild"] = [w for _, _, w in said]
+        ln["wild"] = [x for w in ln["part_wild"] for x in w]
+        prefer = ln.get("prefer_seeds", [])
+        if not (isinstance(prefer, list) and all(s in SEEDS for s in prefer) and len(set(prefer)) == len(prefer)):
+            raise ValueError(f"line {ln['id']}: prefer_seeds must be distinct seeds from {SEEDS}")
+        ln["rounds"] = seed_rounds(prefer)
         if "keep_through" in ln and text_through(ln["text"], ln["keep_through"]) is None:
             raise ValueError(f"line {ln['id']}: keep_through {ln['keep_through']!r} is not a word of its text")
         if "asset" in ln and not re.fullmatch(r"[a-z][a-z0-9_]{0,40}\.wav", str(ln["asset"])):
@@ -132,6 +168,20 @@ def load_batch(path: Path) -> dict:
     if not seen:
         raise ValueError("batch has no lines")
     return b
+
+
+def word_end(words: list, want: str, rest: str, wild: list | None) -> float | None:
+    """End time of the transcript word that closes `want` when the words
+    after it match `rest`: how keep_through finds a respelled word, whose
+    transcript spelling is not the display word ("Rock it" for Rocket)."""
+    end = None
+    for k in range(1, len(words) + 1):
+        head = " ".join(w.word for w in words[:k])
+        tail = " ".join(w.word for w in words[k:])
+        if (pronunciations.word_errors_wild(want, head, wild) == 0
+                and pronunciations.word_errors_wild(rest, tail, wild) == 0):
+            end = words[k - 1].end
+    return end
 
 
 def keep_through(meter, dst: Path, t: dict) -> dict:
@@ -142,15 +192,17 @@ def keep_through(meter, dst: Path, t: dict) -> dict:
     import soundfile as sf
     want = text_through(t["text"], t["keep_through"])
     segs, _ = meter.asr.transcribe(str(dst), beam_size=5, language=meter.language, word_timestamps=True)
-    ends = [w.end for s in segs for w in (s.words or [])
-            if textnorm.norm_words(w.word) == textnorm.norm_words(t["keep_through"])]
+    words = [w for s in segs for w in (s.words or [])]
+    ends = [w.end for w in words if textnorm.norm_words(w.word) == textnorm.norm_words(t["keep_through"])]
+    if not ends:
+        ends = [e for e in [word_end(words, want, t["text"][len(want):], t.get("wild"))] if e is not None]
     x, sr = sf.read(str(dst))
     y = cut_after(x, sr, ends[0]) if ends else None
     if y is None:
         return {"status": "fail", "reason": f"could not cut after {t['keep_through']!r}"}
     cut = dst.with_name(dst.stem + "_cut.wav")
     sf.write(str(cut), y, sr, subtype="PCM_16")
-    m = meter.measure(cut, want)
+    m = meter.measure(cut, want, t.get("wild"))
     gate = {"similarity": m["res"] >= qc.SIM_SHORT, "asr": m["err"] == 0, "tail": qc.tail_ok(m["tail_db"])}
     out = {"cut": {"text": want, "gate": gate, "duration_s": m["dur"], "median_f0_hz": m["f0"],
                    "similarity": m["res"], "asr_word_errors": m["err"], "asr_transcript": m["transcript"],
@@ -175,11 +227,11 @@ def gate_takes(args) -> int:
     for t in spec["takes"]:
         r = {"id": t["id"], "seed": t["seed"], "status": "fail"}
         parts, arrays = [], []
-        for text, p in zip(t["parts"], t["paths"]):
+        for text, p, wild in zip(t["parts"], t["paths"], t["part_wild"]):
             if not Path(p).exists():
                 parts.append({"missing": True})
                 continue
-            m = meter.measure(p, text)
+            m = meter.measure(p, text, wild)
             best, tier = qc.pick([m], target, tol)
             parts.append({"tier": tier, "median_f0_hz": m["f0"], "similarity": m["res"], "asr_word_errors": m["err"],
                           "asr_transcript": m["transcript"], "tail_db": m["tail_db"], "duration_s": m["dur"]})
@@ -197,7 +249,7 @@ def gate_takes(args) -> int:
         dst = Path(t["final"])
         dst.parent.mkdir(parents=True, exist_ok=True)
         sf.write(str(dst), rv.normalise(y).astype(np.float32), qc.SR, subtype="PCM_16")
-        fm = meter.measure(dst, t["text"])
+        fm = meter.measure(dst, t["text"], t["wild"])
         dur = fm["dur"]
         thr = qc.sim_threshold(dur)
         gate = {"f0": lo <= fm["f0"] <= hi, "similarity": fm["res"] >= thr, "asr": fm["err"] == 0,
@@ -222,19 +274,22 @@ def render_voice(voice: str, gate: dict, lines: list[dict], args, work: Path) ->
         raise SystemExit(f"::error::{ref} not found (install_voices.sh installs the cloned voices)")
     work.mkdir(parents=True, exist_ok=True)
     taken: dict[str, list[dict]] = {ln["id"]: [] for ln in lines}
-    for rnd, seeds in enumerate(SEED_ROUNDS, 1):
-        todo = [ln for ln in lines if sum(t["status"] == "pass" for t in taken[ln["id"]]) < ln["takes"]]
+    for rnd in range(1, max(len(ln["rounds"]) for ln in lines) + 1):
+        todo = [ln for ln in lines if len(ln["rounds"]) >= rnd
+                and sum(t["status"] == "pass" for t in taken[ln["id"]]) < ln["takes"]]
         if not todo:
-            break
+            continue
+        seeds = sorted({s for ln in todo for s in ln["rounds"][rnd - 1]})
         jobs, takes = [], []
         for ln in todo:
-            for seed in seeds:
+            for seed in ln["rounds"][rnd - 1]:
                 paths = []
-                for k, part in enumerate(ln["parts"], 1):
+                for k, (part, said) in enumerate(zip(ln["parts"], ln["tts_parts"]), 1):
                     out = str(work / "takes" / f"{safe(ln['id'] + '#' + str(k))}_seed{seed}.wav")
-                    jobs.append({"key": f"{ln['id']}#{k}", "text": part, "seed": seed, "out": out})
+                    jobs.append({"key": f"{ln['id']}#{k}", "text": said, "seed": seed, "out": out})
                     paths.append(out)
                 takes.append({"id": ln["id"], "seed": seed, "text": ln["text"], "parts": ln["parts"], "paths": paths,
+                              "part_wild": ln["part_wild"], "wild": ln["wild"],
                               "keep_through": ln.get("keep_through"),
                               "final": str(work / "final" / f"{ln['id']}_seed{seed}.wav")})
         (work / "jobs.json").write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
@@ -326,7 +381,10 @@ def main() -> int:
             for t in taken[ln["id"]]:
                 t.pop("final_path", None)
                 t.pop("cut_path", None)
-            report["lines"].append({"id": ln["id"], "voice": voice, "text": ln["text"], "parts": ln["parts"],
+            said = ({"source_text": ln["source_text"], "tts_parts": ln["tts_parts"]}
+                    if ln["tts_parts"] != ln["parts"] else {})
+            report["lines"].append({"id": ln["id"], "voice": voice, "text": ln["text"], "parts": ln["parts"], **said,
+                                    "seed_order": [s for r in ln["rounds"] for s in r],
                                     "takes_wanted": ln["takes"], "takes_passed": len(passed),
                                     "chosen_seeds": [t["seed"] for t in passed], "asset": ln.get("asset") if passed else None,
                                     "takes": taken[ln["id"]]})

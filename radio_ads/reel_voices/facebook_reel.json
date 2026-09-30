@@ -1,6 +1,6 @@
 {
   "id": "facebook_reel",
-  "notes": "The daily opportunity Reel's shared voice-over (social/facebook). 'Rokct' is pronounced 'rocket', so the script spells it that way. The sting plays on every post kind, so it never says 'funding' (a tender is not funding); a line that short on its own does not hold the clone, so the sting renders as a sentence and keep_through cuts it after 'Rocket'. Each line's first passing take is written as its asset, which the daily Reel workflow downloads in place of the committed voice files.",
+  "notes": "The daily opportunity Reel's shared voice-over (social/facebook). 'Rokct' is pronounced 'rocket', so the script spells it that way. The sting plays on every post kind, so what is heard never says 'funding' (a tender is not funding): a line that short on its own does not hold the clone, so the sting renders as a sentence and keep_through cuts it after 'Rocket'. Its text is the sentence whose seed-33 take passed the gate and whose cut the owner approved; renders are deterministic, so prefer_seeds [33] reproduces that take (and open's prefer_seeds [44] its passing take). The closer respells Rocket for the voice only ({{Rocket|Rock-it}}); the displayed and checked word stays 'Rocket'. Each line's first passing take is written as its asset, which the daily Reel workflow downloads in place of the committed voice files.",
   "voices": {
     "voice_a": {
       "f0_target_hz": 102,
@@ -15,16 +15,22 @@
     {
       "id": "brand",
       "voice": "voice_a",
-      "text": "Hi, this is Rocket, with today's opportunity.",
+      "text": "Hi, this is Rocket, with today's funding opportunity.",
       "takes": 3,
       "asset": "voice_brand.wav",
-      "keep_through": "Rocket"
+      "keep_through": "Rocket",
+      "prefer_seeds": [
+        33
+      ]
     },
     {
       "id": "open",
       "voice": "voice_b",
       "text": "Looking for funding? Here's one you can apply for, right now.",
-      "asset": "voice_open.wav"
+      "asset": "voice_open.wav",
+      "prefer_seeds": [
+        44
+      ]
     },
     {
       "id": "open_tender",
@@ -35,7 +41,7 @@
     {
       "id": "follow",
       "voice": "voice_b",
-      "text": "Follow Rocket for more funding opportunities every day.",
+      "text": "Follow {{Rocket|Rock-it}} for more funding opportunities every day.",
       "asset": "voice_close.wav"
     }
   ]
