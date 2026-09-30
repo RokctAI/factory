@@ -37,6 +37,14 @@ Seeds  : voice_batch's rounds, 11/22/33 then 44 then 55, until the line has
 Render and QC run as separate processes (as in voice_batch/run.py) so the
 TTS model and the ASR/speaker models are never resident together. Writes
 OUT/<line>_seed<N>.wav and .mp3 for every passing take, and OUT/report.json.
+
+Every take rendered, passing or not, is also written for listening as
+OUT/takes/<line>_seed<N>[_cut]_<PASS|FAIL>.mp3 (64 kbps mono): the full take
+is PASS when it passes the full-take gate, the cut when it passes the cut's
+gate (a take whose cut fails therefore has a PASS full take and a FAIL cut,
+and is still a failed take). A take with a sentence that failed qc.pick is
+stitched from its sentences anyway, only to be heard; its report entry keeps
+the reason and gains "listen" (the stitched take's measurements, not gated).
 """
 from __future__ import annotations
 
@@ -212,6 +220,41 @@ def keep_through(meter, dst: Path, t: dict) -> dict:
     return out
 
 
+def listen_take(meter, t: dict, r: dict, rv) -> None:
+    """Stitch a take whose sentence failed qc.pick from every sentence it
+    rendered, only so it can be heard: measured (report "listen"), not gated."""
+    import numpy as np
+    import soundfile as sf
+    arrays = [sf.read(p)[0] for p in t["paths"] if Path(p).exists()]
+    if not arrays:
+        return
+    y, _ = qc.stitch(arrays)
+    dst = Path(t["final"])
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    sf.write(str(dst), rv.normalise(y).astype(np.float32), qc.SR, subtype="PCM_16")
+    m = meter.measure(dst, t["text"], t["wild"])
+    r["final_path"] = str(dst)
+    r["listen"] = {"duration_s": m["dur"], "median_f0_hz": m["f0"], "similarity": m["res"],
+                   "asr_word_errors": m["err"], "asr_transcript": m["transcript"], "tail_db": m["tail_db"]}
+
+
+def write_listen_takes(line_id: str, takes: list[dict], out: Path) -> None:
+    """OUT/takes/<line>_seed<N>[_cut]_<PASS|FAIL>.mp3 for every take rendered;
+    each file is labelled by its own gate (see the module docstring)."""
+    d = out / "takes"
+    for t in takes:
+        files = []
+        for key, gate in (("final_path", t.get("gate")), ("cut_path", (t.get("cut") or {}).get("gate"))):
+            if not t.get(key) or not Path(t[key]).exists():
+                continue
+            ok = bool(gate) and all(gate.values())
+            name = f"{line_id}_seed{t['seed']}{'_cut' if key == 'cut_path' else ''}_{'PASS' if ok else 'FAIL'}.mp3"
+            mp3.encode(t[key], d / name, bitrate_kbps=64)
+            files.append(f"takes/{name}")
+        if files:
+            t["listen_files"] = files
+
+
 def gate_takes(args) -> int:
     """QC process: gate every (line, seed) in --qc's jobs file."""
     import numpy as np
@@ -242,6 +285,7 @@ def gate_takes(args) -> int:
         r["parts"] = parts
         if len(arrays) != len(t["parts"]):
             r["reason"] = "a sentence has no word-exact take with a clean tail"
+            listen_take(meter, t, r, rv)
             results.append(r)
             print(f"take {t['id']} seed{t['seed']}: fail ({r['reason']})", flush=True)
             continue
@@ -378,6 +422,7 @@ def main() -> int:
             if passed and ln.get("asset"):
                 (out / "assets").mkdir(exist_ok=True)
                 shutil.copyfile(passed[0].get("cut_path") or passed[0]["final_path"], out / "assets" / ln["asset"])
+            write_listen_takes(ln["id"], taken[ln["id"]], out)
             for t in taken[ln["id"]]:
                 t.pop("final_path", None)
                 t.pop("cut_path", None)

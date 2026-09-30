@@ -3,7 +3,9 @@ name: Reel voices
 # Push a batch JSON into radio_ads/reel_voices/ (any branch) and this renders
 # its lines in the cloned voices with voice_batch's per-sentence renderer and
 # QC gate (radio_ads/reel_voice.py): every passing take comes back as a run
-# artifact reel-voices-<batch id> (WAV + MP3 + report.json). The run fails if
+# artifact reel-voices-<batch id> (WAV + MP3 + report.json), and every take
+# rendered, failed ones and failed cuts included, as a 64 kbps mono MP3 under
+# <batch id>/takes/ (<line>_seed<N>[_cut]_<PASS|FAIL>.mp3). The run fails if
 # a line has no passing take after seeds 11, 22, 33, 44 and 55.
 #
 # All of a batch's takes render in this one run, so the concurrency group
@@ -214,7 +216,7 @@ jobs:
               print(f"\nDownload: the **reel-voices** artifact on this run's Summary page.\n")
           PY
 
-      - name: Upload passing takes
+      - name: Upload takes
         if: always() && steps.list.outputs.count != '0'
         uses: actions/upload-artifact@v4
         with:
@@ -224,5 +226,6 @@ jobs:
             radio_ads/out/reel_voices/*/*.mp3
             radio_ads/out/reel_voices/*/report.json
             radio_ads/out/reel_voices/*/assets/*.wav
+            radio_ads/out/reel_voices/*/takes/*.mp3
           if-no-files-found: warn
           retention-days: 30

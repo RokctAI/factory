@@ -190,6 +190,15 @@ class Rounds(unittest.TestCase):
             self.assertTrue((d / "out" / "brand_seed44.mp3").exists())
             self.assertTrue((d / "out" / "brand_seed44_cut.mp3").exists())
             self.assertEqual(line["asset"], "voice_brand.wav")
+            # Every rendered take is kept to listen to, the failed seed 22 too.
+            takes = sorted(f.name for f in (d / "out" / "takes").iterdir())
+            self.assertEqual(takes, ["brand_seed11_PASS.mp3", "brand_seed11_cut_PASS.mp3", "brand_seed22_FAIL.mp3",
+                                     "brand_seed33_PASS.mp3", "brand_seed33_cut_PASS.mp3",
+                                     "brand_seed44_PASS.mp3", "brand_seed44_cut_PASS.mp3"])
+            seed22 = next(t for t in line["takes"] if t["seed"] == 22)
+            self.assertEqual(seed22["status"], "fail")
+            self.assertEqual(seed22["listen_files"], ["takes/brand_seed22_FAIL.mp3"])
+            self.assertEqual(seed22["listen"]["asr_word_errors"], 1)
             import soundfile as sf
             self.assertLess(sf.info(str(d / "out" / "assets" / "voice_brand.wav")).duration, 0.7)
 
