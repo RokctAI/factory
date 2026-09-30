@@ -21,7 +21,7 @@ def summary(m: dict) -> str:
     listen = sum(bool(e.get("needs_listen")) for e in m.get("lines", []))
     out = [f"### Voice batch `{m.get('tutor') or m.get('kind', '?')}` / `{m.get('voice', '?')}`", "",
            f"{len(m.get('lines', []))} passed, {len(m.get('failed', []))} failed"
-           + (f", {listen} respelled for phonics (needs a listen)" if listen else ""), "",
+           + (f", {listen} need a listen (phonics respelling or pronunciation)" if listen else ""), "",
            "| id | category | duration s | median F0 Hz | similarity | ASR exact | seeds | result |",
            "|---|---|---|---|---|---|---|---|"]
     for status, e in rows:

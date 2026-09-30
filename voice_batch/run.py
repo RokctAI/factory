@@ -266,7 +266,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
             continue
         items.append(it)
     print(f"{label}: {len(mine)} line(s), {len(items)} to render "
-          f"({sum(it['needs_listen'] for it in items)} respelled for phonics)")
+          f"({sum(it['needs_listen'] for it in items)} need a listen: phonics respelling or pronunciation)")
     if not items:
         return 0
 

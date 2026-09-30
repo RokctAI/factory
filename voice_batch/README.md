@@ -136,7 +136,11 @@ a changed ambiguous entry), so someone can listen and adjust. The clips go
 to the agent repo's `rokct/pronunciation-audition` branch, never to this
 repo: `lms/team/voices/samples/pronunciation/<voice>/<word>--<respelling>.mp3`,
 with `audition.json` beside them. `voices/samples/` is excluded from the app
-bundle by `sync_team_assets.dart`. No agent PR is opened.
+bundle by `sync_team_assets.dart`. No agent PR is opened. The carrier is
+`<respelling>. <respelling>.`, one take, seeds 11/22/33 until a light QC
+passes (0.4–8 s, not silent, similarity ≥ 0.75, and the tail check once
+`qc.py` has it); no ASR check, since these are unusual words. Otherwise the
+best take is kept and marked `passed: false`.
 
 ## What a run does
 

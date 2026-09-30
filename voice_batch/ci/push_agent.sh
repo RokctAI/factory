@@ -3,12 +3,16 @@
 #
 #   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH TUTOR VOICE CATEGORY
 #   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH r3 VOICE LABEL
+#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH pronunciation VOICE LABEL
 #
 # Only rokct/ branches. A tutor job stages only the tutor's .wav files and
 # <voice>_manifest[.<category>].json; an r3 job stages only
 # lms/dart/templates/assets/r3_packs/audio/<key>.mp3 and
 # r3_manifest.<voice>[.partNN].json directly in that folder (additions,
-# changes, and the merge job's removal of folded part manifests). Never the
+# changes, and the merge job's removal of folded part manifests); a
+# pronunciation audition job stages only
+# lms/team/voices/samples/pronunciation/<voice>/<slug>.mp3 and audition.json
+# there (voices/samples/ never ships in the app bundle). Never the
 # reference, never anything else. Then it
 # pushes with the token passed as an HTTP header (git -c, scoped to the origin
 # host) on every network-capable git command. The token is masked, never
@@ -25,7 +29,7 @@
 set +x
 set -euo pipefail
 
-dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor or r3}"; voice="${4:?voice}"; category="${5:?category}"
+dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor, r3 or pronunciation}"; voice="${4:?voice}"; category="${5:?category}"
 : "${AGENT_PAT:?AGENT_PAT must be set}"
 case "$branch" in
   rokct/*) ;;
@@ -38,19 +42,23 @@ if [ "$tutor" = "r3" ]; then
   tdir="lms/dart/templates/assets/r3_packs/audio"
   allowed="^$tdir/([A-Za-z0-9_][A-Za-z0-9_.-]*\.mp3|r3_manifest\.${voice}(\.part[0-9]{2})?\.json)$"
   ext="mp3"; manifest="$tdir/r3_manifest.${voice}.json"
+elif [ "$tutor" = "pronunciation" ]; then
+  tdir="lms/team/voices/samples/pronunciation/$voice"
+  allowed="^$tdir/([a-z0-9][a-z0-9-]*\.mp3|audition\.json)$"
+  ext="mp3"; manifest="$tdir/audition.json"
 elif printf '%s' "$tutor" | grep -qE '^tutor_[0-9]{3}$'; then
   tdir="lms/team/tutors/CAPS/$tutor"
   allowed="^$tdir/(.+\.wav|${voice}_manifest(\.[a-z]+)?\.json)$"
   ext="wav"; manifest="$tdir/${voice}_manifest.json"
 else
-  echo "::error::target must be tutor_NNN or r3"; exit 1
+  echo "::error::target must be tutor_NNN, r3 or pronunciation"; exit 1
 fi
 cd "$dir"
 
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-if [ "$tutor" = "r3" ]; then
+if [ "$tutor" = "r3" ] || [ "$tutor" = "pronunciation" ]; then
   # Only files directly in the audio folder that match the allow-list:
   # new, modified, or deleted (the merge job removes folded part manifests).
   { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; git ls-files --deleted -- "$tdir"; } \
