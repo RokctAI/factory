@@ -6,6 +6,15 @@ name: Maths Answer-Key Verification
 # substitution, percent, ratio, finance, sequences) and reports
 # verified / MISMATCH / MULTIPLE_CORRECT / NO_CORRECT / UNPARSEABLE / SKIPPED.
 #
+# It also step-checks what we TEACH: lesson scripts (script.md), knowledge-
+# bite worked solutions (question.md), the on-screen maths of each lesson
+# animation (manim_scene.py) and narration-vs-screen consistency, reporting
+# STEP_OK / STEP_WRONG / ANSWER_WRONG / WARNING / UNPARSEABLE / SKIPPED. It
+# checks truth, not method: any valid route passes.
+#
+# The private tutor snippets in RokctAI/agent are NOT read here; that check
+# is a local CLI option (--agent) so private text never reaches public logs.
+#
 # Findings NEVER fail the build: the verifier always exits 0. The job goes red
 # only if the verifier or its unit tests crash. The full report is uploaded as
 # an artifact and the markdown summary is written to the job summary.
@@ -14,10 +23,16 @@ on:
   push:
     paths:
       - 'lessons/**'
+      - 'lessons/curriculum/**/script.md'
+      - 'lessons/curriculum/**/question.md'
+      - 'lessons/curriculum/**/manim_scene.py'
       - '.github/workflows/math_verify.yml'
   pull_request:
     paths:
       - 'lessons/**'
+      - 'lessons/curriculum/**/script.md'
+      - 'lessons/curriculum/**/question.md'
+      - 'lessons/curriculum/**/manim_scene.py'
       - '.github/workflows/math_verify.yml'
   workflow_dispatch:
 
@@ -47,6 +62,12 @@ jobs:
             --json math_verify_report.json --md math_verify_report.md
           cat math_verify_report.md >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Step-check lesson scripts, worked solutions and animations (report only)
+        run: |
+          python3 lessons/scripts/CAPS/math_verify.py --steps-only \
+            --steps-json math_steps_report.json --steps-md math_steps_report.md
+          cat math_steps_report.md >> "$GITHUB_STEP_SUMMARY"
+
       - name: Upload report
         if: always()
         uses: actions/upload-artifact@v4
@@ -55,4 +76,6 @@ jobs:
           path: |
             math_verify_report.json
             math_verify_report.md
+            math_steps_report.json
+            math_steps_report.md
           if-no-files-found: ignore
