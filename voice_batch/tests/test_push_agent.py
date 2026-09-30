@@ -29,6 +29,7 @@ EXPECTED = "Basic " + base64.b64encode(f"x-access-token:{TOKEN}".encode()).decod
 BRANCH = "rokct/tutor-001-voice-a-test"
 TDIR = "lms/team/tutors/CAPS/tutor_001"
 ADIR = "lms/dart/templates/assets/r3_packs/audio"
+PDIR = "lms/team/voices/samples/pronunciation"
 
 
 def http_backend() -> str | None:
@@ -153,7 +154,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.git("remote", "add", "origin", self.url, cwd=d)
         self.git("config", "remote.origin.promisor", "true", cwd=d)
         self.git("config", "remote.origin.partialclonefilter", "blob:none", cwd=d)
-        self.git("sparse-checkout", "set", TDIR, ADIR, "lms/team/voice_refs", cwd=d)
+        self.git("sparse-checkout", "set", TDIR, ADIR, PDIR, "lms/team/voice_refs", cwd=d)
         self.git("-c", self.hdr, "fetch", "--quiet", "--filter=blob:none", "--depth=1", "origin",
                  f"+refs/heads/{ref}:refs/remotes/origin/{ref}", cwd=d)
         self.git("-c", self.hdr, "checkout", "--quiet", "-B", ref, f"refs/remotes/origin/{ref}", cwd=d)
@@ -224,6 +225,31 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.assertIn(f"{ADIR}/README.md", files)
         again = self.push(m, "manifest", "r3", "voice_x")
         self.assertIn("nothing new to commit", again.stdout)
+
+    def test_pronunciation_audition_two_voices_missing_branch(self):
+        """Both voice jobs start the deleted branch from main; the second
+        push rebases onto the first. Only <voice>/<slug>.mp3 + audition.json."""
+        self.delete_remote_branch()
+        a, b = self.start_from_main("va"), self.start_from_main("vb")
+        self.write(a, f"{PDIR}/voice_a/mahikeng--mah-hee-keng.mp3", b"a1")
+        self.write(a, f"{PDIR}/voice_a/audition.json", b"{}\n")
+        self.write(a, f"{PDIR}/voice_a/Bad Name.mp3", b"no")
+        self.write(a, f"{PDIR}/voice_a/sub/x.mp3", b"no")
+        self.write(a, f"{PDIR}/voice_b/x.mp3", b"no")
+        self.write(a, f"{TDIR}/greetings/01.wav", b"no")
+        self.write(b, f"{PDIR}/voice_b/mahikeng--mah-hee-keng.mp3", b"b1")
+        self.write(b, f"{PDIR}/voice_b/audition.json", b"{}\n")
+        first = self.push(a, "audition", "pronunciation", "voice_a")
+        self.assertEqual(first.returncode, 0, first.stdout + first.stderr)
+        second = self.push(b, "audition", "pronunciation", "voice_b")
+        self.assertEqual(second.returncode, 0, second.stdout + second.stderr)
+        files = self.remote_files()
+        for f in (f"{PDIR}/voice_a/mahikeng--mah-hee-keng.mp3", f"{PDIR}/voice_a/audition.json",
+                  f"{PDIR}/voice_b/mahikeng--mah-hee-keng.mp3", f"{PDIR}/voice_b/audition.json"):
+            self.assertIn(f, files)
+        for f in (f"{PDIR}/voice_a/Bad Name.mp3", f"{PDIR}/voice_a/sub/x.mp3", f"{PDIR}/voice_b/x.mp3",
+                  f"{TDIR}/greetings/01.wav"):
+            self.assertNotIn(f, files)
 
     def test_r3_refuses_unexpected_and_bad_args(self):
         a = self.checkout("bad")

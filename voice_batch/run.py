@@ -40,6 +40,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+import pronunciations  # noqa: E402
 from lines import build_lines  # noqa: E402
 from qc import F0_TOLERANCE, TAIL_MAX_DB, TAIL_WIN_S, TARGET_F0, f0_range  # noqa: E402
 from textnorm import TAIL_PAD  # noqa: E402
@@ -184,11 +185,26 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
     manifest = load_json(manifest_path)
     done = {e["id"]: e for e in manifest.get("lines", [])}
     same_ref = manifest.get("reference", {}).get("sha256") == args.ref_sha256
+    pron = pronunciations.load()
+    try:
+        built = [it for it in build_lines(agent, args.tutor, [args.category], pron) if not only or it["id"] in only]
+    except pronunciations.PronunciationError as exc:
+        print(f"::error::{exc}")
+        return 1
+    errs = pronunciations.check_ambiguous(built, pron)
+    for e in errs:
+        print(f"::error::{e}")
+    if errs:
+        return 1
     items = []
-    for it in build_lines(agent, args.tutor, [args.category]):
-        if only and it["id"] not in only:
-            continue
-        if same_ref and unchanged(done.get(it["id"]), it, agent, args.ref_sha256):
+    for it in built:
+        prev = done.get(it["id"])
+        # An entry from before pronunciations has no render_sha256: it was
+        # rendered from the display text, so it is current unless a
+        # pronunciation now changes what is spoken.
+        legacy = prev is not None and "render_sha256" not in prev and "tts_text" not in it
+        same_render = legacy or (prev or {}).get("render_sha256") == it["render_sha256"]
+        if same_ref and same_render and unchanged(prev, it, agent, args.ref_sha256):
             print(f"line {it['id']}: already rendered for this text and reference, skipping")
             continue
         items.append(it)
@@ -210,6 +226,9 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
             shutil.copyfile(r["final_path"], dst)
             lines[it["id"]] = {
                 "id": it["id"], "category": it["category"], "text": it["text"], "text_sha256": it["text_sha256"],
+                "render_sha256": it["render_sha256"],
+                **({"tts_text": it["tts_text"], "pronounced": it["pronounced"], "needs_listen": True}
+                   if "tts_text" in it else {}),
                 "script": it["script"], "file": it["file"], **score_fields(r), "sha256": r["sha256"],
                 "sentences": [dict(t, text=s) for t, s in zip(r["takes"], it["sentences"])],
                 "seeds_tried": r["seeds_tried"],
@@ -253,7 +272,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
             continue
         items.append(it)
     print(f"{label}: {len(mine)} line(s), {len(items)} to render "
-          f"({sum(it['needs_listen'] for it in items)} respelled for phonics)")
+          f"({sum(it['needs_listen'] for it in items)} need a listen: phonics respelling or pronunciation)")
     if not items:
         return 0
 
@@ -274,6 +293,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
             encoder = mp3.encode(r["final_path"], dst)
             lines[it["id"]] = {
                 **base, "text": it["text"], **({"tts_text": it["tts_text"]} if "tts_text" in it else {}),
+                **({"pronounced": it["pronounced"]} if it.get("pronounced") else {}),
                 "text_sha256": it["text_sha256"], "render_sha256": it["render_sha256"], "script": it["script"],
                 "file": it["file"], **score_fields(r), "sha256": sha256_file(dst), "wav_sha256": r["sha256"],
                 "encoder": encoder, "ref_sha256": args.ref_sha256,

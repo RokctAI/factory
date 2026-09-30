@@ -1,0 +1,210 @@
+name: Pronunciation audition
+
+# Change voice_batch/pronunciations.json on main (or run this by hand with a
+# words list) and this renders one short clip per changed word and voice
+# ("<respelling>. <respelling>."), so someone can listen and adjust the
+# entry. For a changed "ambiguous" entry every listed variant is rendered.
+# See voice_batch/audition.py and voice_batch/README.md (Pronunciations).
+#
+# PUBLIC-REPO SAFETY: same rules as voice_batch.yml. The clips are cloned
+# voice: no upload-artifact, nothing audio-related cached, no pull_request
+# trigger. They are committed only to the private agent repo's
+# rokct/pronunciation-audition branch under
+# lms/team/voices/samples/pronunciation/<voice>/ (excluded from the app
+# bundle by sync_team_assets.dart). No agent PR is opened. Logs and the
+# summary carry words, respellings and paths only, which are already public
+# in pronunciations.json.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'voice_batch/pronunciations.json'
+  workflow_dispatch:
+    inputs:
+      words:
+        description: 'Comma-separated words from pronunciations.json to audition (empty = what the last commit changed)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+# Shares the voice batch queue: one render workload at a time.
+concurrency:
+  group: voice-batch
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: '3.11'
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+
+jobs:
+  plan:
+    name: Find changed words
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      count: ${{ steps.plan.outputs.count }}
+      words_json: ${{ steps.plan.outputs.words_json }}
+      voices_json: ${{ steps.plan.outputs.voices_json }}
+      branch: ${{ steps.plan.outputs.branch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Diff pronunciations.json
+        id: plan
+        env:
+          BEFORE: ${{ github.event_name == 'push' && github.event.before || '' }}
+          AFTER: ${{ github.sha }}
+          WORDS: ${{ inputs.words }}
+        run: |
+          python3 voice_batch/audition.py plan --before "$BEFORE" --after "$AFTER" --words "$WORDS" > "$RUNNER_TEMP/plan.out"
+          cat "$RUNNER_TEMP/plan.out" >> "$GITHUB_OUTPUT"
+          count=$(sed -n 's/^count=//p' "$RUNNER_TEMP/plan.out")
+          echo "$count clip(s) per voice"
+          if [ "$count" = "0" ]; then
+            echo "No added or changed pronunciation; nothing to audition." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+  render:
+    name: Audition ${{ matrix.voice }}
+    needs: plan
+    if: needs.plan.outputs.count != '0' && needs.plan.outputs.count != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.voices_json) }}
+    steps:
+      - name: Check MONOREPO_PAT is set
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          set +x
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::This workflow writes the private RokctAI/agent repo with the org secret MONOREPO_PAT."
+            exit 1
+          fi
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - uses: actions/checkout@v4
+
+      # The branch is kept for listening, never merged; if it is missing
+      # (first run, or deleted) start it from main (voice_batch #192 logic).
+      - name: Resolve agent branch (main if it does not exist)
+        id: agentref
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          AGENT_BRANCH: ${{ needs.plan.outputs.branch }}
+        run: bash voice_batch/ci/resolve_agent_ref.sh "$AGENT_BRANCH"
+
+      - name: Check out agent branch (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ steps.agentref.outputs.ref }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/voice_refs
+            lms/team/scripts
+            lms/team/voices/samples/pronunciation
+
+      - name: Start the agent branch from main
+        if: steps.agentref.outputs.create == 'true'
+        env:
+          AGENT_BRANCH: ${{ needs.plan.outputs.branch }}
+        run: git -C .agent checkout --quiet -b "$AGENT_BRANCH"
+
+      - name: Verify reference sha256
+        env:
+          REF_PATH: ${{ matrix.ref_path }}
+          REF_SHA: ${{ matrix.ref_sha256 }}
+        run: |
+          got=$(sha256sum ".agent/$REF_PATH" | cut -d' ' -f1)
+          if [ "$got" != "$REF_SHA" ]; then
+            echo "::error::reference sha256 does not match the pinned batch value; refusing to render"
+            exit 1
+          fi
+          echo "reference sha256 verified"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: voice_batch/requirements.txt
+
+      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r voice_batch/requirements.txt
+
+      # The same shared weights entry as voice_batch.yml and radio_ads.yml.
+      - name: Restore model weights (shared with voice_batch and radio_ads)
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Download model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])  # tokenizer repo
+          from faster_whisper import WhisperModel
+          WhisperModel(os.environ["RADIO_ADS_ASR_MODEL"], device="cpu", compute_type="int8")
+          PY
+
+      - name: Save model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: ${{ steps.models.outputs.cache-primary-key }}
+
+      - name: Render and commit ${{ matrix.voice }} clips to the agent branch
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          HF_HUB_OFFLINE: '1'
+          VOICE: ${{ matrix.voice }}
+          REF_PATH: ${{ matrix.ref_path }}
+          REF_SHA: ${{ matrix.ref_sha256 }}
+          AGENT_BRANCH: ${{ needs.plan.outputs.branch }}
+          WORDS_JSON: ${{ needs.plan.outputs.words_json }}
+        run: |
+          set +x
+          printf '%s' "$WORDS_JSON" > "$RUNNER_TEMP/words.json"
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          python voice_batch/audition.py render --agent-root .agent --voice "$VOICE" \
+            --ref ".agent/$REF_PATH" --ref-sha256 "$REF_SHA" --model-path "$model_path" \
+            --work "$RUNNER_TEMP/audition" --words-json "$RUNNER_TEMP/words.json" \
+            --summary "$GITHUB_STEP_SUMMARY"
+          bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" pronunciation "$VOICE" audition

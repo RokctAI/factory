@@ -30,6 +30,9 @@ Gate     : final file median F0 within target +/- tolerance (default
            (the TTS respelling for an R-3 phonics line, else the text);
            tail: the file's last 50 ms at or below -34 dB of its loudest
            10 ms frame.
+Word-exact: every word except the ones a pronunciation respelled
+           (pronunciations.py: pronunciations.json or inline
+           {{word|respelling}}), which are wildcards for 1-N words.
 """
 from __future__ import annotations
 
@@ -41,7 +44,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from textnorm import word_errors  # noqa: E402
+from pronunciations import word_errors_wild  # noqa: E402
 
 SR = 24_000
 # Voice A defaults; batch.py's f0_target_hz / f0_tolerance_hz override them.
@@ -163,7 +166,7 @@ class Meter:
         f, v, _ = librosa.pyin(w, fmin=fmin, fmax=fmax, sr=16000, frame_length=1024, hop_length=256)
         return f, v
 
-    def measure(self, p, text: str) -> dict:
+    def measure(self, p, text: str, wild: list | None = None) -> dict:
         import numpy as np
         w = self.r16(p)
         segs, _ = self.asr.transcribe(str(p), beam_size=5, language=self.language)
@@ -183,7 +186,7 @@ class Meter:
         x = x.mean(1) if x.ndim > 1 else x
         e = self.enc.embed_utterance(self._pre(w))
         res = float(np.dot(e, self.R) / np.linalg.norm(e) / np.linalg.norm(self.R))
-        return {"dur": round(len(w) / 16000, 3), "res": round(res, 4), "err": word_errors(text, tx),
+        return {"dur": round(len(w) / 16000, 3), "res": round(res, 4), "err": word_errors_wild(text, tx, wild),
                 "f0": round(float(np.median(fv)), 2) if len(fv) else 0.0, "swings": int(swings), "transcript": tx,
                 "tail_db": tail_db(x, sr)}
 
@@ -211,11 +214,12 @@ def main() -> int:
     M = json.loads(mpath.read_text(encoding="utf-8")) if mpath.exists() else {}
     meter = Meter(Path(args.ref), args.asr_model, args.language, pyin_bounds(args.f0_target, args.f0_tolerance))
     sentence_of = {f"{it['id']}#{k}": s for it in lines for k, s in enumerate(it["sentences"], 1)}
+    wild_of = {f"{it['id']}#{k}": w for it in lines for k, w in enumerate(it.get("sentence_wild", []), 1)}
 
     for p, meta in index.items():
         if p in M or not Path(p).exists():
             continue
-        m = meter.measure(p, sentence_of[meta["key"]])
+        m = meter.measure(p, sentence_of[meta["key"]], wild_of.get(meta["key"]))
         M[p] = {**m, **meta}
         print(f"take {meta['key']} seed{meta['seed']}: err={m['err']} f0={m['f0']} swings={m['swings']} "
               f"sim={m['res']} dur={m['dur']} tail={m['tail_db']}", flush=True)
@@ -248,7 +252,7 @@ def main() -> int:
         dst = work / "final" / it.get("final_wav", it["file"])
         dst.parent.mkdir(parents=True, exist_ok=True)
         sf.write(str(dst), y, SR, subtype="PCM_16")
-        fm = meter.measure(dst, it.get("asr_text", it["text"]))
+        fm = meter.measure(dst, it.get("asr_text", it["text"]), it.get("asr_wild"))
         x, _ = sf.read(str(dst))
         dur = round(len(x) / SR, 3)
         thr = sim_threshold(dur)
