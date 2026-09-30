@@ -28,5 +28,12 @@ fi
 mkdir -p "$dest"
 cp "${wavs[@]}" "$dest/"
 if [ "${#specs[@]}" -gt 0 ]; then cp "${specs[@]}" "$dest/"; fi
+# Cloned persona voices (lms/team/voice_refs/voice_a_ref.wav and the like)
+# install as voices/voice_a.wav, so an ad casts them as "voice": "voice_a".
+refs=("$src"/lms/team/voice_refs/*_ref.wav)
+for r in "${refs[@]}"; do
+  name="$(basename "$r" _ref.wav)"
+  cp "$r" "$dest/$name.wav"
+done
 rm -rf "$src"
-echo "Installed ${#wavs[@]} reference voices (+${#specs[@]} .voice.json) into radio_ads/voices/"
+echo "Installed ${#wavs[@]} reference voices, ${#refs[@]} cloned voices (+${#specs[@]} .voice.json) into radio_ads/voices/"
