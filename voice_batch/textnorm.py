@@ -3,8 +3,11 @@
 * split_sentences: a line is rendered one sentence at a time.
 * speak_text: punctuation-only changes for the TTS prompt (a spaced hyphen
   or dash is a pause, never "minus"; a colon is a comma). Words never change.
-* norm_words / word_errors: the word-exact ASR check. Numbers and a few
-  spelling variants are normalised; everything else must match exactly.
+* tts_prompt: what the model is actually given for one sentence - the
+  sentence plus TAIL_PAD, so the model does not stop on the last phoneme.
+* norm_words / word_errors: the word-exact ASR check. Numbers, a few
+  spelling variants and ASR homophones are normalised; everything else
+  must match exactly.
 """
 from __future__ import annotations
 
@@ -24,6 +27,21 @@ def speak_text(sentence: str) -> str:
     s = s.replace(" - ", ", ")
     s = re.sub(r":\s+", ", ", s)
     return " ".join(s.split())
+
+
+# The model often stops generating on the final phoneme of its prompt, so a
+# take lost the end of its last word (12 of 25 sentences in tutor_001's
+# first Voice A lines). A trailing " ..." gives it
+# something after that word: it comes out as a short silence, which the
+# stitch trim then removes. Not a word, so the ASR check is unaffected.
+TAIL_PAD = " ..."
+
+
+def tts_prompt(sentence: str) -> str:
+    s = sentence.rstrip()
+    if s and s[-1] not in ".!?":
+        s += "."
+    return s + TAIL_PAD
 
 
 _ONES = ("zero one two three four five six seven eight nine ten eleven twelve "
@@ -47,6 +65,11 @@ _SPELLING = {"practice": "practise", "factorize": "factorise", "factorizing": "f
              "factorized": "factorised", "recognize": "recognise", "organize": "organise",
              "okay": "ok"}
 
+# Homophones the ASR model writes for a correctly spoken word (a sentence-
+# final "guessed" comes back as "guest"). Applied to both sides, so either
+# spelling matches the other; keep this to true sound-alikes.
+_HOMOPHONES = {"guest": "guessed"}
+
 
 def norm_words(text: str) -> list[str]:
     s = text.lower().replace("’", "'").replace("'", "")
@@ -55,7 +78,7 @@ def norm_words(text: str) -> list[str]:
     s = re.sub(r"(\d)([a-z])", r"\1 \2", s)
     s = re.sub(r"\d+", lambda m: " " + _n2w(int(m.group())) + " ", s)
     s = re.sub(r"[^a-z ]", " ", s)
-    return [_SPELLING.get(w, w) for w in s.split()]
+    return [_HOMOPHONES.get(w, w) for w in (_SPELLING.get(w, w) for w in s.split())]
 
 
 def word_errors(reference: str, hypothesis: str) -> int:

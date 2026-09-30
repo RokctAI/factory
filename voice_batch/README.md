@@ -98,16 +98,22 @@ files.
    - splits each line into sentences (`textnorm.py`, `lines.py`: spoken
      text only, never markdown or metadata);
    - renders every sentence with seeds 11/22/33, one take at a time
-     (`render_takes.py`, reusing the agent repo's `render_voices.py`);
+     (`render_takes.py`, reusing the agent repo's `render_voices.py`); the
+     prompt is the sentence plus a trailing ` ...` (`textnorm.tts_prompt`),
+     because without it the model often stops on the last phoneme and the
+     last word is clipped;
    - measures each take (`qc.py`): word-exact ASR, median F0, upward
-     swings, speaker similarity to the reference;
+     swings, speaker similarity to the reference, and the tail level (the
+     last 50 ms relative to the loudest 10 ms frame); a take whose tail is
+     above -34 dB ended mid-word and is never picked;
    - picks per sentence: median F0 closest to the target (default 102 Hz), then fewest swings,
      then higher similarity; stitches with 280–320 ms pauses and 12 ms
      fades; normalises to -20 dBFS, 24 kHz mono PCM_16;
    - gates the final file: median F0 in the batch's gate (default 94–110 Hz), similarity ≥ 0.88
-     (≥ 5 s) or ≥ 0.83 (< 5 s), word-exact ASR;
+     (≥ 5 s) or ≥ 0.83 (< 5 s), word-exact ASR, tail ≤ -34 dB;
    - lines not yet passing get seed 44, then 55; still failing = recorded
-     as failed, audio not committed;
+     as failed, audio not committed. A line rendered before the tail pad
+     existed (no `tail_pad` in its manifest entry) is re-rendered;
    - writes `<voice>_manifest.<category>.json` and commits the passing
      WAVs + that manifest to the agent branch (`ci/push_agent.sh`, with
      rebase-and-retry because category jobs push concurrently).
