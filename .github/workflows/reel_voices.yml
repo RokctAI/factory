@@ -223,5 +223,6 @@ jobs:
             radio_ads/out/reel_voices/*/*.wav
             radio_ads/out/reel_voices/*/*.mp3
             radio_ads/out/reel_voices/*/report.json
+            radio_ads/out/reel_voices/*/assets/*.wav
           if-no-files-found: warn
           retention-days: 30

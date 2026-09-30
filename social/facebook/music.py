@@ -128,9 +128,10 @@ def render_music(seed, duration, out: Path):
 
 
 ASSETS = Path(__file__).resolve().parent / "assets"
-# Shared voice lines, rendered by the radio-ads factory from
-# radio_ads/inbox/facebook_reel_brand_15.json, facebook_reel_open_15.json and
-# facebook_reel_follow_15.json.
+# Shared voice lines. The daily workflow replaces them with the QC-gated
+# lines of the newest successful "Reel voices" run on main
+# (radio_ads/reel_voices/facebook_reel.json); the committed files are the
+# fallback until one exists.
 VOICE_BRAND = ASSETS / "voice_brand.wav"
 VOICE_OPEN = ASSETS / "voice_open.wav"
 # A tender is not funding, so tenders get their own opening line; until

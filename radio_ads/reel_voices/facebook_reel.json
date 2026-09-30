@@ -1,6 +1,6 @@
 {
   "id": "facebook_reel",
-  "notes": "The daily opportunity Reel's shared voice-over (social/facebook). 'Rokct' is pronounced 'rocket', so the script spells it that way. The sting plays on every post kind, so it never says 'funding' (a tender is not funding); it is cut to 'Hi, this is Rocket' from the chosen take, because a line that short on its own does not hold the clone.",
+  "notes": "The daily opportunity Reel's shared voice-over (social/facebook). 'Rokct' is pronounced 'rocket', so the script spells it that way. The sting plays on every post kind, so it never says 'funding' (a tender is not funding); a line that short on its own does not hold the clone, so the sting renders as a sentence and keep_through cuts it after 'Rocket'. Each line's first passing take is written as its asset, which the daily Reel workflow downloads in place of the committed voice files.",
   "voices": {
     "voice_a": {
       "f0_target_hz": 102,
@@ -16,28 +16,27 @@
       "id": "brand",
       "voice": "voice_a",
       "text": "Hi, this is Rocket, with today's opportunity.",
-      "takes": 3
-    },
-    {
-      "id": "brand_calm",
-      "voice": "voice_a",
-      "text": "Good day, this is Rocket. Settle in, here is today's opportunity.",
-      "takes": 2
+      "takes": 3,
+      "asset": "voice_brand.wav",
+      "keep_through": "Rocket"
     },
     {
       "id": "open",
       "voice": "voice_b",
-      "text": "Looking for funding? Here's one you can apply for, right now."
+      "text": "Looking for funding? Here's one you can apply for, right now.",
+      "asset": "voice_open.wav"
     },
     {
       "id": "open_tender",
       "voice": "voice_b",
-      "text": "Looking for a tender? Here's one you can bid on, right now."
+      "text": "Looking for a tender? Here's one you can bid on, right now.",
+      "asset": "voice_open_tender.wav"
     },
     {
       "id": "follow",
       "voice": "voice_b",
-      "text": "Follow Rocket for more funding opportunities every day."
+      "text": "Follow Rocket for more funding opportunities every day.",
+      "asset": "voice_close.wav"
     }
   ]
 }

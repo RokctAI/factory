@@ -7,7 +7,10 @@ renderer and QC gate, so they meet the tutor voices' quality bar.
         --voices radio_ads/voices --scripts-dir <agent>/lms/team/scripts \
         --model-path <pinned snapshot dir> --work $RUNNER_TEMP/reel --out radio_ads/out/<batch id>
 
-A batch lists lines ({"id", "voice", "text", optional "takes", default 1})
+A batch lists lines ({"id", "voice", "text", optional "takes", default 1;
+optional "keep_through": a word to cut a passing take after, gated again;
+optional "asset": the social/facebook/assets file name the first passing
+take, or its cut, is written as under OUT/assets/})
 and, per voice, the F0 gate ("f0_target_hz", "f0_tolerance_hz"). A take is
 one seed's rendering of a whole line:
 
@@ -65,6 +68,39 @@ def render_parts(text: str) -> list[str]:
     return parts
 
 
+def text_through(text: str, word: str) -> str | None:
+    """`text` up to and including the first occurrence of `word`
+    (case and punctuation ignored), or None when it is not there."""
+    words = text.split()
+    for i, w in enumerate(words):
+        if textnorm.norm_words(w) == textnorm.norm_words(word):
+            return " ".join(words[: i + 1])
+    return None
+
+
+def cut_after(x, sr: int, word_end_s: float, quiet_db: float = -42.0, quiet_s: float = 0.08,
+              search_s: float = 0.6):
+    """`x` cut in the first quiet stretch (`quiet_s` below `quiet_db` of the
+    loudest 10 ms frame) that starts after `word_end_s`, keeping 40 ms of it
+    and fading out over the stitch's 12 ms. None when no quiet stretch starts
+    within `search_s` (the word runs straight into the next one)."""
+    import numpy as np
+    x = np.asarray(x, dtype=np.float64).reshape(-1)
+    n = max(1, int(0.01 * sr))
+    frames = x[: len(x) // n * n].reshape(-1, n)
+    rms = np.sqrt(np.mean(frames ** 2, axis=1))
+    db = 20 * np.log10(np.maximum(rms, 1e-12) / max(float(rms.max()), 1e-12))
+    need = max(1, int(round(quiet_s / 0.01)))
+    first, last = int(word_end_s / 0.01), min(len(db) - need, int((word_end_s + search_s) / 0.01))
+    for i in range(max(0, first), last + 1):
+        if (db[i:i + need] < quiet_db).all():
+            y = x[: min(len(x), (i + int(qc.PAD_S / 0.01)) * n)].copy()
+            fade = int(qc.FADE_S * sr)
+            y[-fade:] *= np.linspace(1, 0, fade) ** 2
+            return y
+    return None
+
+
 def load_batch(path: Path) -> dict:
     b = json.loads(path.read_text(encoding="utf-8"))
     if not re.fullmatch(ID_RE, str(b.get("id", ""))):
@@ -89,9 +125,39 @@ def load_batch(path: Path) -> dict:
         if not (isinstance(ln["takes"], int) and 1 <= ln["takes"] <= MAX_TAKES):
             raise ValueError(f"line {ln['id']}: takes must be 1-{MAX_TAKES}")
         ln["parts"] = render_parts(ln["text"])
+        if "keep_through" in ln and text_through(ln["text"], ln["keep_through"]) is None:
+            raise ValueError(f"line {ln['id']}: keep_through {ln['keep_through']!r} is not a word of its text")
+        if "asset" in ln and not re.fullmatch(r"[a-z][a-z0-9_]{0,40}\.wav", str(ln["asset"])):
+            raise ValueError(f"line {ln['id']}: asset must be a file name like voice_open.wav")
     if not seen:
         raise ValueError("batch has no lines")
     return b
+
+
+def keep_through(meter, dst: Path, t: dict) -> dict:
+    """Cut a passing take after its keep_through word (faster-whisper word
+    timestamps, then the next quiet stretch) and gate the cut: word-exact
+    against the text through that word, a clean tail and similarity. A cut
+    that fails fails the take."""
+    import soundfile as sf
+    want = text_through(t["text"], t["keep_through"])
+    segs, _ = meter.asr.transcribe(str(dst), beam_size=5, language=meter.language, word_timestamps=True)
+    ends = [w.end for s in segs for w in (s.words or [])
+            if textnorm.norm_words(w.word) == textnorm.norm_words(t["keep_through"])]
+    x, sr = sf.read(str(dst))
+    y = cut_after(x, sr, ends[0]) if ends else None
+    if y is None:
+        return {"status": "fail", "reason": f"could not cut after {t['keep_through']!r}"}
+    cut = dst.with_name(dst.stem + "_cut.wav")
+    sf.write(str(cut), y, sr, subtype="PCM_16")
+    m = meter.measure(cut, want)
+    gate = {"similarity": m["res"] >= qc.SIM_SHORT, "asr": m["err"] == 0, "tail": qc.tail_ok(m["tail_db"])}
+    out = {"cut": {"text": want, "gate": gate, "duration_s": m["dur"], "median_f0_hz": m["f0"],
+                   "similarity": m["res"], "asr_word_errors": m["err"], "asr_transcript": m["transcript"],
+                   "tail_db": m["tail_db"], "sha256": sha256_file(cut)}, "cut_path": str(cut)}
+    if not all(gate.values()):
+        out.update({"status": "fail", "reason": "the cut fails the gate"})
+    return out
 
 
 def gate_takes(args) -> int:
@@ -140,6 +206,8 @@ def gate_takes(args) -> int:
                   "duration_s": dur, "median_f0_hz": fm["f0"], "similarity": fm["res"],
                   "similarity_threshold": thr, "asr_word_errors": fm["err"], "asr_transcript": fm["transcript"],
                   "tail_db": fm["tail_db"], "pauses_ms": pauses, "sha256": sha256_file(dst)})
+        if r["status"] == "pass" and t.get("keep_through"):
+            r.update(keep_through(meter, dst, t))
         results.append(r)
         print(f"take {t['id']} seed{t['seed']}: {r['status']} dur={dur}s f0={fm['f0']} sim={fm['res']} "
               f"(>= {thr}) asr_errors={fm['err']} tail={fm['tail_db']}", flush=True)
@@ -167,6 +235,7 @@ def render_voice(voice: str, gate: dict, lines: list[dict], args, work: Path) ->
                     jobs.append({"key": f"{ln['id']}#{k}", "text": part, "seed": seed, "out": out})
                     paths.append(out)
                 takes.append({"id": ln["id"], "seed": seed, "text": ln["text"], "parts": ln["parts"], "paths": paths,
+                              "keep_through": ln.get("keep_through"),
                               "final": str(work / "final" / f"{ln['id']}_seed{seed}.wav")})
         (work / "jobs.json").write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
         (work / "qc.json").write_text(json.dumps({"ref": str(ref), **gate, "takes": takes}, ensure_ascii=False),
@@ -245,11 +314,22 @@ def main() -> int:
                 shutil.copyfile(t["final_path"], out / f"{name}.wav")
                 mp3.encode(out / f"{name}.wav", out / f"{name}.mp3")
                 t["files"] = [f"{name}.wav", f"{name}.mp3"]
+                if t.get("cut_path"):
+                    shutil.copyfile(t["cut_path"], out / f"{name}_cut.wav")
+                    mp3.encode(out / f"{name}_cut.wav", out / f"{name}_cut.mp3")
+                    t["files"] += [f"{name}_cut.wav", f"{name}_cut.mp3"]
+            # The first passing take (its cut, when the line has one) is the
+            # line's asset: the file social/facebook/assets/ uses.
+            if passed and ln.get("asset"):
+                (out / "assets").mkdir(exist_ok=True)
+                shutil.copyfile(passed[0].get("cut_path") or passed[0]["final_path"], out / "assets" / ln["asset"])
             for t in taken[ln["id"]]:
                 t.pop("final_path", None)
+                t.pop("cut_path", None)
             report["lines"].append({"id": ln["id"], "voice": voice, "text": ln["text"], "parts": ln["parts"],
                                     "takes_wanted": ln["takes"], "takes_passed": len(passed),
-                                    "chosen_seeds": [t["seed"] for t in passed], "takes": taken[ln["id"]]})
+                                    "chosen_seeds": [t["seed"] for t in passed], "asset": ln.get("asset") if passed else None,
+                                    "takes": taken[ln["id"]]})
             print(f"line {ln['id']}: {len(passed)}/{ln['takes']} passing take(s), seeds {[t['seed'] for t in passed]}")
             if not passed:
                 failed.append(ln["id"])

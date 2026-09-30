@@ -149,7 +149,7 @@ under 5 s), word-exact ASR (faster-whisper `small.en`) and a clean tail.
 Seeds 11, 22, 33, 44, 55 are tried until a line has its `takes` passing
 takes; a line with none fails the run. All takes of a batch render in one
 run, and the passing ones come back as the artifact `reel-voices-<run id>`.
-Rendered audio is never committed.
+Rendered audio is never committed. A line's optional `keep_through` cuts a passing take after that word (faster-whisper word timestamps, then the next pause) and gates the cut again; its optional `asset` names the file the first passing take (or its cut) is written as under `assets/`. The daily Reel workflow (`facebook_daily_post.yml`) downloads those assets from the newest successful run on main into `social/facebook/assets/` on the runner, falling back to the committed voice files.
 
 ## What happens to an ad
 

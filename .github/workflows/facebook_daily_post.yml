@@ -22,6 +22,7 @@ on:
 
 permissions:
   contents: write
+  actions: read  # the gated voice-over artifact from reel_voices.yml
 
 concurrency:
   group: facebook-daily-post
@@ -81,6 +82,29 @@ jobs:
             fi
           done
           rm -f "$ENV_FILE"
+
+      # The shared voice lines come from the newest successful "Reel voices"
+      # run on main (radio_ads/reel_voice.py, QC-gated), never from a commit.
+      # Only the lines that run produced are replaced; without one (none yet,
+      # or its artifact has expired) the committed files are used as before.
+      - name: Use the gated voice-over
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run_id=$(gh run list -R "$GITHUB_REPOSITORY" --workflow reel_voices.yml --branch main --status success \
+                   --limit 1 --json databaseId --jq '.[0].databaseId // empty' || true)
+          if [ -z "$run_id" ]; then
+            echo "::notice::No successful Reel voices run on main yet; using the committed voice files."
+            exit 0
+          fi
+          if ! gh run download "$run_id" -R "$GITHUB_REPOSITORY" -n "reel-voices-$run_id" -D "$RUNNER_TEMP/reel-voices"; then
+            echo "::warning::Could not download the voice-over from Reel voices run $run_id (expired?); using the committed voice files."
+            exit 0
+          fi
+          shopt -s nullglob
+          assets=("$RUNNER_TEMP"/reel-voices/facebook_reel/assets/*.wav)
+          for a in "${assets[@]}"; do cp "$a" social/facebook/assets/; done
+          echo "Voice-over from Reel voices run $run_id: ${#assets[@]} line(s)"
 
       - name: Build and post today's Reel
         env:

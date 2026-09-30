@@ -68,11 +68,47 @@ class Batch(unittest.TestCase):
             self.load(batch(lines=[{"id": "x", "voice": "voice_a", "text": "Hello there you.", "takes": 6}]))
 
 
+class Cut(unittest.TestCase):
+    def test_text_through(self):
+        self.assertEqual(rvx.text_through("Hi, this is Rocket, with today's opportunity.", "Rocket"),
+                         "Hi, this is Rocket,")
+        self.assertIsNone(rvx.text_through("Hi there.", "Rocket"))
+
+    def test_cut_after_waits_for_the_pause(self):
+        import numpy as np
+        sr = 24000
+        t = np.arange(2 * sr) / sr
+        tone = 0.3 * np.sin(2 * np.pi * 120 * t)
+        x = np.concatenate([tone[: int(1.2 * sr)], np.zeros(int(0.3 * sr)), tone[: int(0.8 * sr)]])
+        y = rvx.cut_after(x, sr, 1.0)
+        self.assertAlmostEqual(len(y) / sr, 1.24, delta=0.02)
+        self.assertEqual(float(y[-1]), 0.0)
+
+    def test_cut_after_none_without_a_pause(self):
+        import numpy as np
+        sr = 24000
+        x = 0.3 * np.sin(2 * np.pi * 120 * np.arange(2 * sr) / sr)
+        self.assertIsNone(rvx.cut_after(x, sr, 0.5))
+
+    def test_keep_through_needs_its_word(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "b.json"
+            p.write_text(json.dumps(batch(lines=[{"id": "x", "voice": "voice_a", "text": "Hello there you.",
+                                                  "keep_through": "Rocket"}])))
+            with self.assertRaises(ValueError):
+                rvx.load_batch(p)
+
+
 class FakeMeter:
     """Seed 22 misses a word; every other take passes."""
 
+    language = "en"
+
     def __init__(self, *a, **k):
-        pass
+        from types import SimpleNamespace as NS
+        # One sentence "This is Rocket, today." -> "Rocket" ends at 0.5 s.
+        words = [NS(word=" This", end=0.1), NS(word=" is", end=0.2), NS(word=" Rocket,", end=0.5)]
+        self.asr = NS(transcribe=lambda *a, **k: ([NS(words=words)], None))
 
     def measure(self, p, text, wild=None):
         bad = "seed22" in str(p)
@@ -93,8 +129,9 @@ class Rounds(unittest.TestCase):
                 for j in json.loads(Path(cmd[cmd.index("--jobs") + 1]).read_text()):
                     Path(j["out"]).parent.mkdir(parents=True, exist_ok=True)
                     t = np.arange(24000) / 24000
-                    sf.write(j["out"], 0.3 * np.sin(2 * np.pi * 110 * t) * np.hanning(t.size), 24000,
-                             subtype="PCM_16")
+                    x = 0.3 * np.sin(2 * np.pi * 110 * t)
+                    x[int(0.6 * 24000):int(0.8 * 24000)] = 0
+                    sf.write(j["out"], x, 24000, subtype="PCM_16")
                 return subprocess.CompletedProcess(cmd, 0)
             if "--qc" in cmd:
                 ns = argparse.Namespace(qc=cmd[cmd.index("--qc") + 1], qc_out=cmd[cmd.index("--qc-out") + 1],
@@ -108,7 +145,9 @@ class Rounds(unittest.TestCase):
             d = Path(d)
             (d / "voices").mkdir()
             sf.write(str(d / "voices" / "voice_a.wav"), np.zeros(24000), 24000)
-            (d / "b.json").write_text(json.dumps(batch()))
+            b = batch()
+            b["lines"][0].update(text="This is Rocket, today.", keep_through="Rocket", asset="voice_brand.wav")
+            (d / "b.json").write_text(json.dumps(b))
             argv = ["reel_voice.py", str(d / "b.json"), "--voices", str(d / "voices"), "--scripts-dir", str(SCRIPTS),
                     "--model-path", "x", "--work", str(d / "work"), "--out", str(d / "out")]
             with mock.patch.object(rvx.subprocess, "run", fake_run), mock.patch.object(sys, "argv", argv):
@@ -118,6 +157,10 @@ class Rounds(unittest.TestCase):
             self.assertEqual(line["chosen_seeds"], [11, 33, 44])
             self.assertEqual([t["seed"] for t in line["takes"]], [11, 22, 33, 44])
             self.assertTrue((d / "out" / "brand_seed44.mp3").exists())
+            self.assertTrue((d / "out" / "brand_seed44_cut.mp3").exists())
+            self.assertEqual(line["asset"], "voice_brand.wav")
+            import soundfile as sf
+            self.assertLess(sf.info(str(d / "out" / "assets" / "voice_brand.wav")).duration, 0.7)
 
 
 if __name__ == "__main__":
