@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w03_times_two_five",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Times tables",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 99",
+    "subtopic": "Multiply numbers 1 to 10 by 2 and 5 (weeks 1-2) and by 2, 5, 3, 4 (weeks 3-8) using ×, □, ="
+  },
+  "skill": "multiply.by_2_5",
+  "prereq_skills": ["count.skip.2_5_10.to_80"],
+  "images": ["shoes_three_pairs", "faces_four", "hands_three", "socks_six_pairs", "sum_4_times_5", "sum_4_times_2", "sum_5_times_5", "bikes_five", "numeral_40", "numeral_45", "numeral_16", "tutor_five_jumps"],
+  "show": {
+    "line": "Three pairs of shoes. Two, four, six. Three times two is six!",
+    "image": "shoes_three_pairs"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Four faces. Two eyes on each. Count in twos. How many eyes?", "image": "faces_four", "count": "8", "options": ["6", "8", "10"], "answer": "8", "praise": "Eight! Four times two is eight."},
+    {"type": "count_tap", "prompt": "Three hands. Five fingers on each. How many fingers?", "image": "hands_three", "count": "15", "options": ["10", "15", "20"], "answer": "15", "praise": "Fifteen! Three times five is fifteen."},
+    {"type": "say_it", "prompt": "Six times two. Count in twos. Say the answer.", "accept": ["twelve", "12", "twelf"], "image": "socks_six_pairs"},
+    {"type": "listen_tap", "prompt": "Tap the sum that shows four groups of five.", "options": ["sum_4_times_5", "sum_4_times_2", "sum_5_times_5"], "answer": "sum_4_times_5", "praise": "Yes! Four times five is twenty."},
+    {"type": "what_next", "prompt": "Seven times five. Count in fives. Which number do you land on?", "sequence": ["5", "10", "15", "20"], "options": ["35", "30", "40"], "answer": "35", "praise": "Thirty five! Seven times five is thirty five."},
+    {"type": "count_tap", "prompt": "Two wheels on each bike. Five bikes. How many wheels?", "image": "bikes_five", "count": "10", "options": ["7", "10", "12"], "answer": "10", "praise": "Ten! Five times two is ten."},
+    {"type": "listen_tap", "prompt": "Eight times five. Tap the answer.", "options": ["numeral_40", "numeral_45", "numeral_16"], "answer": "numeral_40", "praise": "Yes! Eight times five is forty."}
+  ],
+  "hints": ["Times means groups of. Count each group.", "For times two count in twos. For times five count in fives."],
+  "beat_the_tutor": {
+    "setup": "My turn! Six times five.",
+    "tutor_try": "Five, ten, fifteen, twenty, twenty five. Six times five is twenty five!",
+    "image": "tutor_five_jumps",
+    "answer": "thirty",
+    "win_line": "You caught me! That was only five jumps. Six jumps is thirty.",
+    "gentle_line": "Let's count six jumps of five. Five, ten, fifteen, twenty, twenty five, thirty!"
+  },
+  "parent_line": "Can multiply by two and by five using skip counting."
+}

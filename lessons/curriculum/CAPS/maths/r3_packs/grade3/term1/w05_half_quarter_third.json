@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w05_half_quarter_third",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Fractions",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Fractions",
+    "subtopic": "Use and name unitary fractions 1/2, 1/4, 1/3, 1/5"
+  },
+  "skill": "fraction.unitary.name",
+  "prereq_skills": [],
+  "images": ["bread_halves_quarters", "pizza_quarters", "pizza_halves", "pizza_thirds", "circle_one_third", "circle_one_half", "circle_one_quarter", "chocolate_halves", "square_unequal", "square_halves", "apple_halves", "cake_fifth", "cake_quarter", "cake_half", "card_one_quarter", "card_one_half", "card_one_third", "tutor_pizza_thirds"],
+  "show": {
+    "line": "Cut the bread into two equal parts. Each part is one half. Four equal parts? Each is one quarter!",
+    "image": "bread_halves_quarters"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which pizza is cut into quarters?", "options": ["pizza_quarters", "pizza_halves", "pizza_thirds"], "answer": "pizza_quarters", "praise": "Yes! Four equal parts. Quarters."},
+    {"type": "listen_tap", "prompt": "Which shape has one third coloured in?", "options": ["circle_one_third", "circle_one_half", "circle_one_quarter"], "answer": "circle_one_third", "praise": "Yes! Three equal parts, one coloured. One third."},
+    {"type": "say_it", "prompt": "The chocolate is cut into two equal parts. What is one part called? Say it.", "accept": ["half", "a half", "one half", "harf"], "image": "chocolate_halves"},
+    {"type": "listen_tap", "prompt": "Which one is not cut into halves? The parts must be equal.", "options": ["square_unequal", "square_halves", "apple_halves"], "answer": "square_unequal", "praise": "Yes! Those parts are not equal, so they are not halves."},
+    {"type": "match_sort", "prompt": "Half, quarter or third? Put each picture in its group.", "groups": ["half", "quarter", "third"], "items": [{"image": "pizza_halves", "group": "half"}, {"image": "chocolate_halves", "group": "half"}, {"image": "pizza_quarters", "group": "quarter"}, {"image": "circle_one_quarter", "group": "quarter"}, {"image": "pizza_thirds", "group": "third"}, {"image": "circle_one_third", "group": "third"}]},
+    {"type": "listen_tap", "prompt": "Five friends share a cake equally. Which piece is one fifth?", "options": ["cake_fifth", "cake_quarter", "cake_half"], "answer": "cake_fifth", "praise": "Yes! Five equal parts. One fifth."},
+    {"type": "listen_tap", "prompt": "Which card says one quarter?", "options": ["card_one_quarter", "card_one_half", "card_one_third"], "answer": "card_one_quarter", "praise": "Yes! One quarter."}
+  ],
+  "hints": ["Count the equal parts. Two parts are halves, four parts are quarters.", "The parts must be the same size to be fair."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will cut the pizza into quarters.",
+    "tutor_try": "One, two, three pieces. Quarters!",
+    "image": "tutor_pizza_thirds",
+    "answer": "no",
+    "win_line": "You caught me! Three pieces are thirds. Quarters need four equal pieces.",
+    "gentle_line": "Let's count the pieces together. One, two, three. Three equal parts are thirds!"
+  },
+  "parent_line": "Can name halves, quarters, thirds and fifths of a shape."
+}

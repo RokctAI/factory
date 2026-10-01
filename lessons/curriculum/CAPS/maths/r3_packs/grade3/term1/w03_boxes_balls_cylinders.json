@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade3.term1.w03_boxes_balls_cylinders",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "3D objects",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Space and shape: 3D objects and position",
+    "subtopic": "Range of 3D objects: boxes, balls, cylinders"
+  },
+  "skill": "geometry.3d.box_ball_cylinder",
+  "prereq_skills": [],
+  "images": ["box_ball_cylinder", "tin", "dice", "soccer_ball", "ball", "box", "book", "cereal_box", "orange", "candle", "brick", "tutor_holds_tin"],
+  "show": {
+    "line": "A box, a ball and a cylinder. A cylinder is like a tin. Flat ends and a round side!",
+    "image": "box_ball_cylinder"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which object is a cylinder?", "options": ["tin", "dice", "soccer_ball"], "answer": "tin", "praise": "Yes! A tin is a cylinder."},
+    {"type": "listen_tap", "prompt": "Which object can roll but never slide?", "options": ["ball", "box", "book"], "answer": "ball", "praise": "Yes! A ball only rolls."},
+    {"type": "match_sort", "prompt": "Box, ball or cylinder? Put each object in its group.", "groups": ["box", "ball", "cylinder"], "items": [{"image": "dice", "group": "box"}, {"image": "cereal_box", "group": "box"}, {"image": "soccer_ball", "group": "ball"}, {"image": "orange", "group": "ball"}, {"image": "tin", "group": "cylinder"}, {"image": "candle", "group": "cylinder"}]},
+    {"type": "say_it", "prompt": "Does a box have flat sides or round sides? Say flat or round.", "accept": ["flat", "flat sides", "flet"], "image": "cereal_box"},
+    {"type": "listen_tap", "prompt": "Which object has flat sides and slides?", "options": ["brick", "ball", "tin"], "answer": "brick", "praise": "Yes! A brick is a box. It slides."},
+    {"type": "listen_tap", "prompt": "Which object has two flat ends and one round side?", "options": ["candle", "dice", "orange"], "answer": "candle", "praise": "Yes! A candle is a cylinder."}
+  ],
+  "hints": ["Round sides roll. Flat sides slide.", "A cylinder has a round side and flat ends, like a tin."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this object.",
+    "tutor_try": "A tin is a ball!",
+    "image": "tutor_holds_tin",
+    "answer": "cylinder",
+    "win_line": "You caught me! A tin has flat ends. It is a cylinder.",
+    "gentle_line": "Let's look together. Flat ends, round side. That is a cylinder!"
+  },
+  "parent_line": "Can tell boxes, balls and cylinders apart and say how they move."
+}

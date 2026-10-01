@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w05_measure_centimetres",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Measuring length",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Measurement: Length",
+    "subtopic": "Introduce formal measuring: metre sticks, metre lengths of string; estimate and measure lengths in centimetres using a ruler"
+  },
+  "skill": "measure.length.cm_m",
+  "prereq_skills": [],
+  "images": ["ruler_pencil_8cm", "ruler_crayon_6cm", "eraser", "school_hall", "river", "ruler_clip_3cm", "metre_stick", "door", "spoon", "pencil", "ruler_from_zero", "ruler_from_one", "tutor_ruler_from_two"],
+  "show": {
+    "line": "This is a ruler. The little steps are centimetres. The pencil reaches eight. It is eight centimetres long!",
+    "image": "ruler_pencil_8cm"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Read the ruler. How many centimetres long is the crayon?", "image": "ruler_crayon_6cm", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six centimetres!"},
+    {"type": "listen_tap", "prompt": "Which one would you measure with a ruler?", "options": ["eraser", "school_hall", "river"], "answer": "eraser", "praise": "Yes! Small things fit on a ruler."},
+    {"type": "count_tap", "prompt": "The paper clip starts at zero. Where does it end?", "image": "ruler_clip_3cm", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three centimetres!"},
+    {"type": "say_it", "prompt": "One hundred centimetres make one what? Say the word.", "accept": ["metre", "meter", "a metre", "one metre"], "image": "metre_stick"},
+    {"type": "listen_tap", "prompt": "Which is longer than one metre?", "options": ["door", "spoon", "pencil"], "answer": "door", "praise": "Yes! A door is taller than a metre stick."},
+    {"type": "listen_tap", "prompt": "Which ruler is read the right way, starting at zero?", "options": ["ruler_from_zero", "ruler_from_one"], "answer": "ruler_from_zero", "praise": "Yes! Always start at zero."},
+    {"type": "match_sort", "prompt": "Centimetres or metres? Pick the best unit for each.", "groups": ["centimetres", "metres"], "items": [{"image": "eraser", "group": "centimetres"}, {"image": "pencil", "group": "centimetres"}, {"image": "spoon", "group": "centimetres"}, {"image": "door", "group": "metres"}, {"image": "school_hall", "group": "metres"}]}
+  ],
+  "hints": ["Line up the start with zero. Then read the number at the end.", "Small things in centimetres. Big things in metres."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will measure the pencil.",
+    "tutor_try": "It starts at two and ends at ten. The pencil is ten centimetres!",
+    "image": "tutor_ruler_from_two",
+    "answer": "eight",
+    "win_line": "You caught me! It did not start at zero. From two to ten is eight centimetres.",
+    "gentle_line": "Let's start at zero together. Now the end says eight. Eight centimetres!"
+  },
+  "parent_line": "Can read centimetres on a ruler and knows a metre is 100 centimetres."
+}

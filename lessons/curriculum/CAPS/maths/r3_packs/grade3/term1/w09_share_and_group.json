@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w09_share_and_group",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Sharing and grouping",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Solve problems in context up to 99",
+    "subtopic": "Repeated addition leading to multiplication (weeks 3-10); equal grouping and sharing leading to division that may include remainders (weeks 3-4, 9-10)"
+  },
+  "skill": "divide.share_group.to_50",
+  "prereq_skills": ["multiply.by_2_5"],
+  "images": ["sweets_12_three_plates", "apples_10_two_baskets", "pencils_15_in_fives", "numeral_4", "numeral_6", "numeral_2", "money_20_four_children", "numeral_1", "numeral_3", "eggs_20_boxes_of_six", "numeral_9", "numeral_15", "tutor_shares_unfairly"],
+  "show": {
+    "line": "Twelve sweets, three friends. Share them out. Four each! Twelve shared by three is four.",
+    "image": "sweets_12_three_plates"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Ten apples shared between two baskets. How many in each basket?", "image": "apples_10_two_baskets", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five each! Ten shared by two is five."},
+    {"type": "count_tap", "prompt": "Fifteen pencils. Put them in groups of five. How many groups?", "image": "pencils_15_in_fives", "count": "3", "options": ["3", "5", "10"], "answer": "3", "praise": "Three groups of five!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho has eight bread rolls. He gives two to each friend. How many friends get rolls?", "options": ["numeral_4", "numeral_6", "numeral_2"], "answer": "numeral_4", "praise": "Four friends! Eight shared in twos is four."},
+    {"type": "say_it", "prompt": "Twenty rand shared between four children. How much does each child get? Say the number.", "accept": ["five", "5", "five rand", "fife"], "image": "money_20_four_children"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thirteen marbles are shared between four children. Each gets three. How many marbles are left over?", "options": ["numeral_1", "numeral_3", "numeral_4"], "answer": "numeral_1", "praise": "One left over! Four threes make twelve, and one is left."},
+    {"type": "count_tap", "prompt": "Twenty eggs. Put six in each box. How many boxes are full?", "image": "eggs_20_boxes_of_six", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three full boxes, and two eggs left over!"},
+    {"type": "listen_tap", "prompt": "Eighteen stars shared by three. Tap the answer.", "options": ["numeral_6", "numeral_9", "numeral_15"], "answer": "numeral_6", "praise": "Yes! Six each. Three sixes are eighteen."}
+  ],
+  "hints": ["Share one at a time. One for you, one for me, until they are all gone.", "Grouping means make equal groups. Count the groups."],
+  "beat_the_tutor": {
+    "setup": "My turn! Fourteen bananas for two monkeys.",
+    "tutor_try": "Ten for this monkey and four for that one. Fair!",
+    "image": "tutor_shares_unfairly",
+    "answer": "seven",
+    "win_line": "You caught me! Sharing must be equal. Seven bananas each.",
+    "gentle_line": "Let's share together. One for you, one for me. Seven each!"
+  },
+  "parent_line": "Can share and group up to 50 objects and spot a leftover."
+}

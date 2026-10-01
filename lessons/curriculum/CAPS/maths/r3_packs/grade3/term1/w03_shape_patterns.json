@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade3.term1.w03_shape_patterns",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Patterns",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Patterns, functions and algebra: Geometric patterns (integrated with 3D objects)",
+    "subtopic": "Copy, extend and describe simple patterns made of physical objects, drawings, shapes"
+  },
+  "skill": "pattern.geometric.extend",
+  "prereq_skills": [],
+  "images": ["pattern_cc_square", "pattern_cc_square_open", "square", "circle", "triangle", "pattern_tri_square", "pattern_boxes", "box_small", "box_big", "pattern_beads_rbb", "pattern_star_moon", "pattern_star_star_moon", "pattern_cylinder_ball_ball", "unit_cylinder_ball_ball", "unit_cylinder_ball", "unit_ball_ball", "tutor_adds_triangle"],
+  "show": {
+    "line": "Look. Circle, circle, square. Circle, circle, square. The part that repeats is circle, circle, square!",
+    "image": "pattern_cc_square"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Circle, circle, square, circle, circle. What comes next?", "image": "pattern_cc_square_open", "options": ["square", "circle", "triangle"], "answer": "square", "praise": "Square! Circle, circle, square."},
+    {"type": "listen_tap", "prompt": "Triangle, square, triangle, square. Which shape comes next?", "image": "pattern_tri_square", "options": ["triangle", "square", "circle"], "answer": "triangle", "praise": "Triangle! Triangle, square, triangle, square, triangle."},
+    {"type": "listen_tap", "prompt": "Big box, small box, small box. Big box, small box. What comes next?", "image": "pattern_boxes", "options": ["box_small", "box_big"], "answer": "box_small", "praise": "Small box! Big, small, small."},
+    {"type": "say_it", "prompt": "Red, blue, blue, red, blue, blue. Say the colour that comes next.", "accept": ["red", "a red", "red one"], "image": "pattern_beads_rbb"},
+    {"type": "listen_tap", "prompt": "Which pattern is star, moon, star, moon?", "options": ["pattern_star_moon", "pattern_star_star_moon"], "answer": "pattern_star_moon", "praise": "Yes! Star, moon, star, moon."},
+    {"type": "listen_tap", "prompt": "Which part repeats in this pattern? Tap the piece.", "image": "pattern_cylinder_ball_ball", "options": ["unit_cylinder_ball_ball", "unit_cylinder_ball", "unit_ball_ball"], "answer": "unit_cylinder_ball_ball", "praise": "Yes! Cylinder, ball, ball repeats."}
+  ],
+  "hints": ["Say the pattern out loud. Find the part that repeats.", "Look at the start. The pattern does the same thing again."],
+  "beat_the_tutor": {
+    "setup": "My turn! Circle, circle, square, circle, circle.",
+    "tutor_try": "Next comes a triangle!",
+    "image": "tutor_adds_triangle",
+    "answer": "square",
+    "win_line": "You caught me! There is no triangle here. Square comes next.",
+    "gentle_line": "Let's say it together. Circle, circle, square. Circle, circle, square!"
+  },
+  "parent_line": "Can continue and describe a repeating shape pattern."
+}
