@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term2.w06_sound_c_k_e_u",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [6, 7],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Letter-sound relationships of most single letters"
+  },
+  "skill": "phonics.letter_sound.c_k_e_u",
+  "prereq_skills": ["phonics.letter_sound.h_o_g"],
+  "images": ["cat_kite_egg_umbrella", "king", "egg", "cup", "pen", "pin", "kite", "bus", "bat", "cat", "key", "tutor_tiles_bus"],
+  "show": {
+    "line": "More sounds! c, c, cat. k, k, kite. e, e, egg. u, u, umbrella.",
+    "image": "cat_kite_egg_umbrella"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with k, as in kite?", "options": ["king", "egg", "cup"], "answer": "king", "praise": "k, k, king."},
+    {"type": "say_it", "prompt": "Say the sound with me. u, as in umbrella!", "accept": ["u", "uh", "a", "ah"]},
+    {"type": "listen_tap", "prompt": "Which word has e in the middle? Listen. Pen, pin.", "options": ["pen", "pin"], "answer": "pen", "praise": "Pen! p, e, n."},
+    {"type": "listen_tap", "prompt": "Which one starts with c, as in cat?", "options": ["cup", "kite", "egg"], "answer": "cup", "praise": "c, c, cup."},
+    {"type": "listen_tap", "prompt": "Which word has u in the middle? Listen. Bus, bat.", "options": ["bus", "bat"], "answer": "bus", "praise": "Bus! b, u, s."},
+    {"type": "trace", "prompt": "Trace e with your finger. Across, then up and round.", "glyph": "e"},
+    {"type": "match_sort", "prompt": "Does it start with c or k? Sort the pictures.", "groups": ["c", "k"], "items": [{"image": "cat", "group": "c"}, {"image": "cup", "group": "c"}, {"image": "kite", "group": "k"}, {"image": "king", "group": "k"}, {"image": "key", "group": "k"}]}
+  ],
+  "hints": ["c and k make the same sound. Look at the letter shape.", "e and u are vowels. Listen in the middle of the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the vowel in bus.",
+    "tutor_try": "The vowel in bus is e!",
+    "image": "tutor_tiles_bus",
+    "answer": "u",
+    "win_line": "You caught me! b, u, s. The vowel is u.",
+    "gentle_line": "Let's say it slowly. Buuus. The middle sound is u!"
+  },
+  "parent_line": "Can hear and recognise the sounds c, k, e and u."
+}

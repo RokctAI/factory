@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w05_long_short",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Measuring",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Measurement: Length",
+    "subtopic": "Compare the length of objects; talk about comparisons: long, short, longer"
+  },
+  "skill": "measure.length.long_short",
+  "prereq_skills": ["measure.length.longest_shortest"],
+  "images": ["snake_and_worm", "pencil_long", "pencil_short", "rope_long", "rope_short", "giraffe", "child_tall", "child_short", "table_blocks_six", "ribbon_short", "ribbon_medium", "ribbon_long", "tutor_points_short_pencil"],
+  "show": {
+    "line": "The snake is long. The worm is short. The snake is longer than the worm!",
+    "image": "snake_and_worm"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which pencil is longer?", "options": ["pencil_long", "pencil_short"], "answer": "pencil_long", "praise": "Yes! That pencil is longer."},
+    {"type": "listen_tap", "prompt": "Which rope is shorter?", "options": ["rope_long", "rope_short"], "answer": "rope_short", "praise": "That rope is shorter."},
+    {"type": "say_it", "prompt": "Is the giraffe tall or short? Say it.", "accept": ["tall", "tol", "taller", "big"], "image": "giraffe"},
+    {"type": "listen_tap", "prompt": "Which child is taller?", "options": ["child_tall", "child_short"], "answer": "child_tall", "praise": "Taller!"},
+    {"type": "count_tap", "prompt": "The table is as long as some blocks. Count the blocks. How many?", "image": "table_blocks_six", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six blocks long!"},
+    {"type": "listen_tap", "prompt": "Tap the longest ribbon.", "options": ["ribbon_short", "ribbon_medium", "ribbon_long"], "answer": "ribbon_long", "praise": "The longest one!"}
+  ],
+  "hints": ["Put them side by side. Which one sticks out more?", "Long goes a long way. Short stops soon."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the longer pencil.",
+    "tutor_try": "The short one is longer!",
+    "image": "tutor_points_short_pencil",
+    "answer": "no",
+    "win_line": "You caught me! The long pencil is longer. It sticks out more.",
+    "gentle_line": "Let's line them up. This one sticks out. It is longer!"
+  },
+  "parent_line": "Can compare lengths and use long, short, longer and taller."
+}

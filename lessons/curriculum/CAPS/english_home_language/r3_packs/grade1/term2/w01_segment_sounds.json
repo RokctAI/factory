@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w01_segment_sounds",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [1],
+  "theme": "Sounds and words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Phonemic awareness: segmenting words (hop into h-o-p)"
+  },
+  "skill": "phonics.segment.sounds",
+  "prereq_skills": ["phonics.blend.cvc_review_t1"],
+  "images": ["frog_hopping", "sun", "pin", "at_sign_word", "mat", "dog", "dig", "cat", "tutor_fingers_two"],
+  "show": {
+    "line": "Words break into sounds! Hop. h, o, p. Three sounds. Let's pull words apart.",
+    "image": "frog_hopping"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Say the sounds in sun. s, u, n. How many sounds?", "image": "sun", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three sounds! s, u, n."},
+    {"type": "say_it", "prompt": "Pin. Say the first sound.", "accept": ["p", "puh", "pe", "pa"], "image": "pin"},
+    {"type": "count_tap", "prompt": "Say the sounds in at. How many sounds?", "image": "at_sign_word", "count": "2", "options": ["1", "2", "3"], "answer": "2", "praise": "Two sounds! a, t."},
+    {"type": "say_it", "prompt": "Mat. Say the last sound.", "accept": ["t", "tuh", "te", "ta"], "image": "mat"},
+    {"type": "listen_tap", "prompt": "Which word has these sounds? d, o, g.", "options": ["dog", "dig", "cat"], "answer": "dog", "praise": "Dog! d, o, g."},
+    {"type": "say_it", "prompt": "Hop. Say the middle sound.", "accept": ["o", "aw", "oh", "ah"], "image": "frog_hopping"}
+  ],
+  "hints": ["Say the word very slowly. Hear each sound.", "Tap a finger for each sound. h, o, p."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the sounds in cat.",
+    "tutor_try": "c, a. Two sounds!",
+    "image": "tutor_fingers_two",
+    "answer": "three",
+    "win_line": "You caught me! c, a, t. Three sounds.",
+    "gentle_line": "Let's tap them together. c, a, t. Three!"
+  },
+  "parent_line": "Can break a short word into its sounds."
+}

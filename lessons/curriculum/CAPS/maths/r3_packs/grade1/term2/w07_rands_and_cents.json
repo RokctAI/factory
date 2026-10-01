@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w07_rands_and_cents",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Money",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Solve problems in context",
+    "subtopic": "Recognise South African currency; solve money problems involving totals and change"
+  },
+  "skill": "money.recognise.rand_coins",
+  "prereq_skills": ["number.add_subtract.to_6_symbols"],
+  "images": ["coins_and_note", "coin_r1", "coin_r2", "coin_r5", "coins_r1_four", "numeral_4", "numeral_5", "numeral_6", "note_r10", "numeral_2", "numeral_3", "tutor_coins_wrong"],
+  "show": {
+    "line": "This is our money. One rand, two rand, five rand coins. A ten rand note. Let's go shopping!",
+    "image": "coins_and_note"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the five rand coin.", "options": ["coin_r1", "coin_r2", "coin_r5"], "answer": "coin_r5", "praise": "Five rand!"},
+    {"type": "say_it", "prompt": "How much is this coin? Say it.", "accept": ["two rand", "two rands", "2 rand", "two", "r2"], "image": "coin_r2"},
+    {"type": "count_tap", "prompt": "Count the one rand coins. How many rand?", "image": "coins_r1_four", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four rand!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A sweet costs two rand. A chip packet costs three rand. How much altogether?", "options": ["numeral_4", "numeral_5", "numeral_6"], "answer": "numeral_5", "praise": "Five rand! Two plus three."},
+    {"type": "listen_tap", "prompt": "Which is worth more, a two rand coin or a ten rand note?", "options": ["coin_r2", "note_r10"], "answer": "note_r10", "praise": "Ten rand is more than two rand."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho has five rand. He buys a sucker for two rand. How much change?", "options": ["numeral_2", "numeral_3", "numeral_5"], "answer": "numeral_3", "praise": "Three rand change! Five minus two."}
+  ],
+  "hints": ["Look at the number on the coin. It tells you how much.", "Altogether means add. Change means take away what you paid."],
+  "beat_the_tutor": {
+    "setup": "My turn! Two rand plus two rand.",
+    "tutor_try": "Two rand plus two rand is five rand!",
+    "image": "tutor_coins_wrong",
+    "answer": "four",
+    "win_line": "You caught me! Two plus two is four rand.",
+    "gentle_line": "Let's count the coins. Two, and two more is four rand!"
+  },
+  "parent_line": "Can recognise rand coins and notes and add small amounts."
+}

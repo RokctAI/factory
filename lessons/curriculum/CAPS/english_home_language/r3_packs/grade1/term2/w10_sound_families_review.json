@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w10_sound_families_review",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [10],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Revision: Phonics",
+    "subtopic": "Groups common words into sound families"
+  },
+  "skill": "phonics.word_family.review_t2",
+  "prereq_skills": ["phonics.word_family.an_en", "phonics.onset_rime.en_in_ug"],
+  "images": ["word_family_houses", "rug", "rat", "bug", "pot", "dot", "hen", "ten", "mug", "letter_tiles_l_e_g", "bus", "tutor_sorts_bus_wrong"],
+  "show": {
+    "line": "Let's show what we know! Sort the words into families. ot, en, ug. Ready?",
+    "image": "word_family_houses"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. r, u, g. What word is it?", "sounds": ["r", "u", "g"], "options": ["rug", "rat", "bug"], "answer": "rug", "praise": "Rug! r, u, g."},
+    {"type": "match_sort", "prompt": "Which family? ot, en or ug? Sort the words.", "groups": ["ot", "en", "ug"], "items": [{"image": "pot", "group": "ot"}, {"image": "dot", "group": "ot"}, {"image": "hen", "group": "en"}, {"image": "ten", "group": "en"}, {"image": "bug", "group": "ug"}, {"image": "mug", "group": "ug"}]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "fun", "accept": ["fun", "fan", "fon"]},
+    {"type": "say_it", "prompt": "Leg. Change l to p. What word do you make?", "accept": ["peg", "pig", "pag"], "image": "letter_tiles_l_e_g"},
+    {"type": "listen_tap", "prompt": "Which word does not belong in the ug family?", "options": ["bug", "mug", "bus"], "answer": "bus", "praise": "Bus ends with s, not g."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "The bug is in the mug.", "accept": ["the bug is in the mug", "the bug is in the mug.", "bug is in the mug"]}
+  ],
+  "hints": ["Listen to the end of the word. That is the family.", "Sound it out. First sound, then the rest."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will sort bus.",
+    "tutor_try": "Bus goes in the ug family!",
+    "image": "tutor_sorts_bus_wrong",
+    "answer": "no",
+    "win_line": "You caught me! Bus ends in us, not ug.",
+    "gentle_line": "Let's listen to the end. Bus. Us, not ug!"
+  },
+  "parent_line": "Can sort words into sound families and read them."
+}

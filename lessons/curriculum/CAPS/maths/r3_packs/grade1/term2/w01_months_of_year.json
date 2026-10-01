@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w01_months_of_year",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Time",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Measurement: Time",
+    "subtopic": "Sequence the days of the week and months of the year; place birthdays on the calendar"
+  },
+  "skill": "time.months_of_year",
+  "prereq_skills": ["time.days_of_week"],
+  "images": ["calendar_year", "card_january", "card_june", "card_december", "card_april", "card_february", "card_may", "tutor_skips_march"],
+  "show": {
+    "line": "Twelve months make a year! January, February, March, April. Which month is your birthday?",
+    "image": "calendar_year"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Say the months with me. January, February, and then?", "accept": ["march", "much", "mach"]},
+    {"type": "what_next", "prompt": "Which month comes next? October, November, and then?", "sequence": ["October", "November"], "options": ["December", "January", "June"], "answer": "December", "praise": "December! The last month of the year."},
+    {"type": "listen_tap", "prompt": "Which month comes first in the year?", "options": ["card_january", "card_june", "card_december"], "answer": "card_january", "praise": "January starts the year."},
+    {"type": "count_tap", "prompt": "Count the months on the calendar. How many months in a year?", "image": "calendar_year", "count": "12", "options": ["10", "12", "7"], "answer": "12", "praise": "Twelve months!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lindi's birthday is in the month after March. Which month is it?", "options": ["card_april", "card_february", "card_may"], "answer": "card_april", "praise": "April comes after March."},
+    {"type": "what_next", "prompt": "What comes next? Monday, Tuesday, Wednesday, and then?", "sequence": ["Monday", "Tuesday", "Wednesday"], "options": ["Thursday", "Friday", "Sunday"], "answer": "Thursday", "praise": "Thursday!"}
+  ],
+  "hints": ["Sing the months in order. January, February, March.", "December is the last month. Then January starts again."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the months.",
+    "tutor_try": "January, February, April!",
+    "image": "tutor_skips_march",
+    "answer": "march",
+    "win_line": "You caught me! After February comes March, then April.",
+    "gentle_line": "Let's say them together. January, February, March, April!"
+  },
+  "parent_line": "Can name the months of the year in order and find a birthday month."
+}

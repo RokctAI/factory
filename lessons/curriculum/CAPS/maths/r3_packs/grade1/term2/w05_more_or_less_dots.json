@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w05_more_or_less_dots",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Numbers to 10",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 10)",
+    "subtopic": "Compare numbers to 5 (weeks 1-2), 7 (weeks 3-4), 9 (weeks 5-6) and 10 (weeks 7-10): which is more or less; recognise dot formations"
+  },
+  "skill": "number.compare.to_9_dots",
+  "prereq_skills": ["number.one_more_one_less.to_5"],
+  "images": ["dice_five_three", "dice_six", "dice_four", "dice_two", "numeral_7", "numeral_4", "dot_card_four", "numeral_9", "numeral_6", "dot_card_eight", "dot_card_five", "tutor_compare_wrong"],
+  "show": {
+    "line": "Look at the dice. Five dots! You can see it without counting. Which is more, five or three?",
+    "image": "dice_five_three"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Quick! Which dice shows six?", "options": ["dice_six", "dice_four", "dice_two"], "answer": "dice_six", "praise": "Six! Two rows of three."},
+    {"type": "listen_tap", "prompt": "Which is more, seven or four?", "options": ["numeral_7", "numeral_4"], "answer": "numeral_7", "praise": "Seven is more than four."},
+    {"type": "say_it", "prompt": "Look fast. How many dots? Say the number.", "accept": ["four", "4", "for", "fo"], "image": "dot_card_four"},
+    {"type": "listen_tap", "prompt": "Which is less, nine or six?", "options": ["numeral_9", "numeral_6"], "answer": "numeral_6", "praise": "Six is less than nine."},
+    {"type": "listen_tap", "prompt": "Which dot card shows more dots?", "options": ["dot_card_eight", "dot_card_five"], "answer": "dot_card_eight", "praise": "Eight is more than five."},
+    {"type": "what_next", "prompt": "Put them in order, smallest first. Three, five, seven, and then?", "sequence": ["3", "5", "7"], "options": ["9", "6", "2"], "answer": "9", "praise": "Nine is the biggest!"}
+  ],
+  "hints": ["Dice dots make a shape. Learn the shape, no counting!", "On the number line, more is further along."],
+  "beat_the_tutor": {
+    "setup": "My turn! Which is more, eight or five?",
+    "tutor_try": "Five is more than eight!",
+    "image": "tutor_compare_wrong",
+    "answer": "eight",
+    "win_line": "You caught me! Eight comes after five. Eight is more.",
+    "gentle_line": "Let's count up together. Five, six, seven, eight. Eight is more!"
+  },
+  "parent_line": "Can compare numbers to 9 and spot dice dots without counting."
+}

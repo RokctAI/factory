@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term2.w07_read_numbers_to_fifty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Counting to 50",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Number symbols and number names",
+    "subtopic": "Recognise, identify and read number symbols 1-50"
+  },
+  "skill": "number.read_symbols.to_50",
+  "prereq_skills": ["number.count.to_20"],
+  "images": ["number_grid_fifty", "numeral_25", "numeral_52", "numeral_15", "numeral_30", "numeral_14", "numeral_41", "numeral_40", "numeral_17", "numeral_50", "numeral_5", "tutor_reads_32"],
+  "show": {
+    "line": "Big numbers! Two tens and three ones. Twenty three. Let's read numbers up to fifty.",
+    "image": "number_grid_fifty"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number twenty five.", "options": ["numeral_25", "numeral_52", "numeral_15"], "answer": "numeral_25", "praise": "A two and a five. Twenty five!"},
+    {"type": "say_it", "prompt": "Read this number. Say it.", "accept": ["thirty", "30", "thirdy", "firty"], "image": "numeral_30"},
+    {"type": "listen_tap", "prompt": "Tap the number forty one.", "options": ["numeral_14", "numeral_41", "numeral_40"], "answer": "numeral_41", "praise": "Forty one!"},
+    {"type": "what_next", "prompt": "What comes next? Twenty eight, twenty nine, and then?", "sequence": ["28", "29"], "options": ["30", "20", "31"], "answer": "30", "praise": "Thirty! A new ten."},
+    {"type": "say_it", "prompt": "Read this number. Say it.", "accept": ["seventeen", "17", "sewenteen"], "image": "numeral_17"},
+    {"type": "listen_tap", "prompt": "Which number is fifty?", "options": ["numeral_15", "numeral_50", "numeral_5"], "answer": "numeral_50", "praise": "Fifty! Five tens."},
+    {"type": "what_next", "prompt": "Count on. Forty five, forty six, forty seven, and then?", "sequence": ["45", "46", "47"], "options": ["48", "50", "44"], "answer": "48", "praise": "Forty eight!"}
+  ],
+  "hints": ["The first digit tells the tens. Two means twenty.", "Say the tens, then the ones. Twenty, three. Twenty three."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this number.",
+    "tutor_try": "Three, two. That says twenty three!",
+    "image": "tutor_reads_32",
+    "answer": "thirty two",
+    "win_line": "You caught me! A three first means thirty. Thirty two.",
+    "gentle_line": "Let's read it together. Three tens is thirty. Thirty two!"
+  },
+  "parent_line": "Can read number symbols up to 50."
+}

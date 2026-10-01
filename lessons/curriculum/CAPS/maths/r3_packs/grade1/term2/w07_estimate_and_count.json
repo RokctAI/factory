@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w07_estimate_and_count",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Counting to 20",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Count objects reliably to 20",
+    "subtopic": "Give a reasonable estimate and check by counting out objects reliably; group counting"
+  },
+  "skill": "number.estimate_count.to_20",
+  "prereq_skills": ["number.count.to_20"],
+  "images": ["beans_pile", "numeral_5", "numeral_12", "numeral_30", "stars_twelve", "shells_sixteen", "numeral_20", "marbles_eighteen", "egg_box_twelve", "tutor_counts_egg_twice"],
+  "show": {
+    "line": "Guess first, then count! I think about ten beans. Let's count and see. Guessing is estimating.",
+    "image": "beans_pile"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Look quickly. About how many stars? Tap your guess.", "options": ["numeral_5", "numeral_12", "numeral_30"], "answer": "numeral_12", "praise": "Good guess! About twelve."},
+    {"type": "count_tap", "prompt": "Now count the stars carefully. How many?", "image": "stars_twelve", "count": "12", "options": ["11", "12", "13"], "answer": "12", "praise": "Twelve! Your guess was close."},
+    {"type": "count_tap", "prompt": "Count the shells. Touch each one once. How many?", "image": "shells_sixteen", "count": "16", "options": ["15", "16", "17"], "answer": "16", "praise": "Sixteen shells!"},
+    {"type": "listen_tap", "prompt": "About how many marbles? Is it closer to five or twenty?", "options": ["numeral_5", "numeral_20"], "answer": "numeral_20", "praise": "Closer to twenty!"},
+    {"type": "count_tap", "prompt": "Count the marbles in groups of two. How many?", "image": "marbles_eighteen", "count": "18", "options": ["16", "18", "20"], "answer": "18", "praise": "Eighteen marbles!"},
+    {"type": "say_it", "prompt": "Count the eggs in the box. How many? Say the number.", "accept": ["twelve", "12", "twelf"], "image": "egg_box_twelve"}
+  ],
+  "hints": ["Move each one as you count it, so you count it once.", "Count in twos to go faster."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the eggs.",
+    "tutor_try": "One, two, three, three, four, five!",
+    "image": "tutor_counts_egg_twice",
+    "answer": "no",
+    "win_line": "You caught me! I counted one egg twice. Touch each one once.",
+    "gentle_line": "Let's count together, touching each egg once. One, two, three, four, five!"
+  },
+  "parent_line": "Can estimate how many and then count objects carefully to 20."
+}

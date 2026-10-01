@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w06_onset_rime",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [6, 7],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Builds up and breaks down words into onset and rime (h-en, p-en, t-in, p-in), identifying rhymes"
+  },
+  "skill": "phonics.onset_rime.en_in_ug",
+  "prereq_skills": ["phonics.word_family.an_en"],
+  "images": ["hen_and_pen", "tin", "ten", "tan", "pen", "pin", "pan", "mug", "mop", "man", "bin", "fin", "tutor_tiles_pin"],
+  "show": {
+    "line": "Split a word in two! h, en. Hen. p, en. Pen. Hen and pen rhyme!",
+    "image": "hen_and_pen"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. t, in. What word is it?", "sounds": ["t", "in"], "options": ["tin", "ten", "tan"], "answer": "tin", "praise": "Tin! t, in."},
+    {"type": "say_it", "prompt": "b, ug. Put them together. What word is it?", "accept": ["bug", "bag", "bog"]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with hen?", "options": ["pen", "pin", "pan"], "answer": "pen", "praise": "Hen, pen. They rhyme!"},
+    {"type": "blend", "prompt": "Listen. m, ug. Tap the word.", "sounds": ["m", "ug"], "options": ["mug", "mop", "man"], "answer": "mug", "praise": "Mug! m, ug."},
+    {"type": "say_it", "prompt": "Pin. Break it. Say the first sound, then the rest.", "accept": ["p in", "puh in", "p pin", "pin"], "image": "pin"},
+    {"type": "match_sort", "prompt": "Rhymes with hen, or with pin? Sort the words.", "groups": ["en", "in"], "items": [{"image": "pen", "group": "en"}, {"image": "ten", "group": "en"}, {"image": "tin", "group": "in"}, {"image": "bin", "group": "in"}, {"image": "fin", "group": "in"}]}
+  ],
+  "hints": ["The first sound, then the rest. h, en.", "Words that rhyme share the same end part."],
+  "beat_the_tutor": {
+    "setup": "My turn! p, in.",
+    "tutor_try": "p, in. Pen!",
+    "image": "tutor_tiles_pin",
+    "answer": "pin",
+    "win_line": "You caught me! p, in is pin. Pen has en.",
+    "gentle_line": "Let's put them together. p, in. Pin!"
+  },
+  "parent_line": "Can split a word into its first sound and the rest, and hear rhymes."
+}

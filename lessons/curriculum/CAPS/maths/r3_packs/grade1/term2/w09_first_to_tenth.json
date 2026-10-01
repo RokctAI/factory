@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w09_first_to_tenth",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Numbers to 10",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 10",
+    "subtopic": "Identify, read and write numbers, symbols and number names; ordinal position 1st-10th on the number line (weeks 9-10)"
+  },
+  "skill": "number.ordinal.1st_10th",
+  "prereq_skills": ["number.ordinal.1st_5th"],
+  "images": ["ducks_ten_row", "duck_fifth", "duck_sixth", "duck_seventh", "word_eight", "word_three", "word_ten", "runner_eighth", "runner_ninth", "runner_tenth", "word_six", "word_nine", "word_seven", "tutor_points_sixth_duck"],
+  "show": {
+    "line": "Ten ducks in a row! First, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth.",
+    "image": "ducks_ten_row"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the duck that is sixth in the row.", "options": ["duck_fifth", "duck_sixth", "duck_seventh"], "answer": "duck_sixth", "praise": "Sixth! Count from the front."},
+    {"type": "what_next", "prompt": "Fifth, sixth, seventh, and then?", "sequence": ["fifth", "sixth", "seventh"], "options": ["eighth", "ninth", "fourth"], "answer": "eighth", "praise": "Eighth!"},
+    {"type": "say_it", "prompt": "The last duck of ten. Which place is it? Say it.", "accept": ["tenth", "tent", "last", "ten"], "image": "ducks_ten_row"},
+    {"type": "listen_tap", "prompt": "Tap the number word eight.", "options": ["word_eight", "word_three", "word_ten"], "answer": "word_eight", "praise": "That says eight!"},
+    {"type": "listen_tap", "prompt": "Which runner is ninth?", "options": ["runner_eighth", "runner_ninth", "runner_tenth"], "answer": "runner_ninth", "praise": "Ninth! Just before tenth."},
+    {"type": "listen_tap", "prompt": "Tap the number word six.", "options": ["word_six", "word_nine", "word_seven"], "answer": "word_six", "praise": "That says six!"}
+  ],
+  "hints": ["Count from the front. First, second, third.", "Read the number word slowly. It starts like the number sounds."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the seventh duck.",
+    "tutor_try": "One, two, three, four, five, six. This one is seventh!",
+    "image": "tutor_points_sixth_duck",
+    "answer": "no",
+    "win_line": "You caught me! I stopped at six. That duck is sixth. Seventh is next.",
+    "gentle_line": "Let's count together. Six, and one more. That is the seventh!"
+  },
+  "parent_line": "Can say first to tenth and read the number words to ten."
+}
