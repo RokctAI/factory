@@ -89,12 +89,13 @@ class PipelineHoldTest(unittest.TestCase):
 
 
 class SeedMinGradeTest(unittest.TestCase):
-    """Lifted Grade 8-9 rows load, but the seed step writes no card below SEED_MIN_GRADE."""
+    """The seed step writes cards from SEED_MIN_GRADE (8) up and nothing below it."""
 
     def test_rows_below_min_grade_are_not_seeded(self):
-        self.assertEqual(lp.SEED_MIN_GRADE, 10)
-        self.assertFalse(lp._seed_grade_ok({"grade": 9}))
-        self.assertFalse(lp._seed_grade_ok({"grade": "8"}))
+        self.assertEqual(lp.SEED_MIN_GRADE, 8)
+        self.assertTrue(lp._seed_grade_ok({"grade": 9}))
+        self.assertTrue(lp._seed_grade_ok({"grade": "8"}))
+        self.assertFalse(lp._seed_grade_ok({"grade": 7}))
         self.assertFalse(lp._seed_grade_ok({"grade": "R"}))
         self.assertTrue(lp._seed_grade_ok({"grade": 10}))
         self.assertTrue(lp._seed_grade_ok({"grade": "12"}))
@@ -105,11 +106,11 @@ class SeedMinGradeTest(unittest.TestCase):
             self.assertTrue(lp._seed_grade_ok({"grade": 8}))
             self.assertFalse(lp._seed_grade_ok({"grade": 7}))
 
-    def test_real_grade_8_9_rows_load_but_do_not_seed(self):
+    def test_real_grade_8_9_rows_load_and_seed(self):
         rows = [r for r in lp.load_seed_entries()
                 if str(r.get("grade")) in ("8", "9")]
         self.assertTrue(rows, "lifted Grade 8-9 Maths rows should load")
-        self.assertFalse([r for r in rows if lp._seed_grade_ok(r)])
+        self.assertTrue(all(lp._seed_grade_ok(r) for r in rows))
 
 
 if __name__ == "__main__":
