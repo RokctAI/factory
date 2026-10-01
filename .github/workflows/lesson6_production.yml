@@ -2,7 +2,10 @@ name: Lesson 6 - Production (Manim JSON + Audio + Manifest)
 
 # Turns Level-4-approved (`status: evaluated`) lesson cards into the ReplaySDK
 # asset triple the app downloads — manifest.json, audio.mp3, animations.json —
-# and publishes them as a GitHub Release the backend can serve.
+# and records their checksums/sizes on the card. It does NOT publish releases:
+# shipped lessons are released only to RokctAI/agent, by
+# lessons/scripts/CAPS/release_on_complete.py
+# (.github/workflows/lesson_release_on_complete.yml).
 #
 # WHY A SCHEDULED CI JOB, NOT A PERSISTENT VPS
 # Production is periodic and human-gated (a card only reaches `evaluated`
@@ -64,7 +67,7 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest   # production audio: swap for a GPU runner label
     permissions:
-      contents: write        # create GitHub Releases + push card updates
+      contents: write        # push card updates + ledger/run report
     outputs:
       produced_ids: ${{ steps.produce.outputs.produced_ids }}
     steps:
@@ -97,10 +100,7 @@ jobs:
 
       - name: Produce evaluated lessons
         id: produce
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          REPO="${{ github.repository }}"
           PRODUCED=""
           COUNT=0
 
@@ -111,9 +111,8 @@ jobs:
             echo "AUDIO_BACKEND=$AUDIO_BACKEND MAX_CARDS=$MAX_CARDS CARD_FILTER=$CARD_FILTER REPRODUCE=${REPRODUCE:-0}"
           fi
           # REPRODUCE=1 (dispatch-file only): re-export ALREADY-PRODUCED
-          # cards so existing releases match a changed asset contract. The
-          # card's status stays 'produced' throughout (no state-machine
-          # transitions); the release is re-published in place.
+          # cards against a changed asset contract. The card's status stays
+          # 'produced' throughout (no state-machine transitions).
           REPRODUCE="${REPRODUCE:-0}"
 
           # Run report: committed at the end of every run (even no-op ones)
@@ -212,19 +211,11 @@ jobs:
               }
             fi
 
-            # Publish assets as a per-lesson GitHub Release (free, CDN-fronted,
-            # durable, direct download URLs — no new infra). Cloudflare R2 is
-            # the documented scale-up path once egress volume warrants it.
-            TAG="lesson-$ID"
-            gh release delete "$TAG" --repo "$REPO" --yes --cleanup-tag 2>/dev/null || true
-            gh release create "$TAG" --repo "$REPO" \
-              --title "Lesson assets: $ID" \
-              --notes "Level 6 produced assets (manifest/audio/animations) for $ID." \
-              "$OUT/manifest.json" "$OUT/audio.mp3" "$OUT/animations.json"
-
-            BASE="https://github.com/$REPO/releases/download/$TAG"
+            # No release is published here (releases go only to
+            # RokctAI/agent via release_on_complete.py), so no download URLs
+            # are written — only checksums, sizes and produced_at.
             python lessons/scripts/CAPS/record_production.py \
-              --card "$FILE" --out-dir "$OUT" --base-url "$BASE"
+              --card "$FILE" --out-dir "$OUT"
 
             if [ "$REPRODUCE" != "1" ]; then
               python .rokct/skills/agent_delegation/scripts/update_status.py --file "$FILE" --status produced --agent level6
@@ -236,7 +227,7 @@ jobs:
             # batch can produce several cards; committed with the same push.
             LEDGER_STATUS="produced"
             [ "$REPRODUCE" = "1" ] && LEDGER_STATUS="reproduced"
-            echo "| $ID | $TYPE | $THEME | $LEDGER_STATUS | level6 | L6-$GITHUB_RUN_ID | $BASE/manifest.json | $(date -u +'%Y-%m-%d %H:%M') |" >> .rokct/agent/log/ledger.md
+            echo "| $ID | $TYPE | $THEME | $LEDGER_STATUS | level6 | L6-$GITHUB_RUN_ID | (not published) | $(date -u +'%Y-%m-%d %H:%M') |" >> .rokct/agent/log/ledger.md
 
             PRODUCED="$PRODUCED $ID"
             COUNT=$((COUNT + 1))
