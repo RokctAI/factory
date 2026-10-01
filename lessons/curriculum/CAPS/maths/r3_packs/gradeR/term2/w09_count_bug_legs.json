@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term2.w09_count_bug_legs",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Gardens and bugs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Gardens and bugs: Numeracy",
+    "subtopic": "Counts to 10; counts legs and groups of 2 and 3 on bugs"
+  },
+  "skill": "count.to_10.bug_legs",
+  "prereq_skills": ["number.revise.1_to_6"],
+  "images": ["beetle_six_legs", "ladybird_six_legs", "butterflies_two", "spider_eight_legs", "ant_six_legs", "worm", "bees_ten", "snails_three", "spider_small_eight_legs", "tutor_wrong_count_legs"],
+  "show": {
+    "line": "Bugs have legs! A beetle has six legs. Three on this side, three on that side.",
+    "image": "beetle_six_legs"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the legs on the ladybird. How many?", "image": "ladybird_six_legs", "count": "6", "options": ["4", "6", "8"], "answer": "6", "praise": "Six legs! All insects have six legs."},
+    {"type": "count_tap", "prompt": "Count the butterflies on the flower.", "image": "butterflies_two", "count": "2", "options": ["1", "2", "3"], "answer": "2"},
+    {"type": "count_tap", "prompt": "A spider is not an insect. Count its legs.", "image": "spider_eight_legs", "count": "8", "options": ["6", "8", "10"], "answer": "8", "praise": "Eight legs! A spider has eight."},
+    {"type": "listen_tap", "prompt": "Which bug has six legs?", "options": ["ant_six_legs", "spider_eight_legs", "worm"], "answer": "ant_six_legs", "praise": "Yes! An ant has six legs."},
+    {"type": "count_tap", "prompt": "Count the bees. How many?", "image": "bees_ten", "count": "10", "options": ["8", "9", "10"], "answer": "10", "praise": "Ten bees! Buzz, buzz."},
+    {"type": "say_it", "prompt": "Count the snails. Say the number.", "accept": ["three", "3", "tree", "free", "tri"], "image": "snails_three"},
+    {"type": "match_sort", "prompt": "Six legs or eight legs? Put each bug in its group.", "groups": ["six_legs", "eight_legs"], "items": [{"image": "beetle_six_legs", "group": "six_legs"}, {"image": "ant_six_legs", "group": "six_legs"}, {"image": "ladybird_six_legs", "group": "six_legs"}, {"image": "spider_eight_legs", "group": "eight_legs"}, {"image": "spider_small_eight_legs", "group": "eight_legs"}]}
+  ],
+  "hints": ["Touch each leg as you count.", "Count one side, then the other side."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the beetle's legs.",
+    "tutor_try": "One, two, three, four. Four legs!",
+    "image": "tutor_wrong_count_legs",
+    "answer": "six",
+    "win_line": "You caught me! I forgot the back legs. A beetle has six legs.",
+    "gentle_line": "Let's count together. Three on this side, three on that side. Six!"
+  },
+  "parent_line": "Can count to 10 and count the legs on bugs."
+}

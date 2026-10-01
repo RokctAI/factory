@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term2.w07_write_x",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Opposites",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Opposites: Emergent Writing",
+    "subtopic": "Letter formation of 'x'"
+  },
+  "skill": "writing.letter.x",
+  "prereq_skills": ["phonics.initial_sound.x", "writing.letter.v"],
+  "images": ["letter_x", "letter_v", "letter_k", "fox", "hat", "cup", "tutor_wrote_v"],
+  "show": {
+    "line": "Let's write x. One line slides down this way. One line slides down that way. They cross!",
+    "image": "letter_x"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says x, as in fox.", "options": ["letter_x", "letter_v", "letter_k"], "answer": "letter_x", "praise": "Yes! That is x."},
+    {"type": "say_it", "prompt": "This letter says x. Say the sound!", "accept": ["x", "ks", "ex", "iks", "eks"]},
+    {"type": "trace", "prompt": "Trace x with your finger. Slide down one way, then slide down the other way.", "glyph": "x"},
+    {"type": "listen_tap", "prompt": "Which picture ends with x?", "options": ["fox", "hat", "cup"], "answer": "fox", "praise": "Yes! Fox ends with x."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is x? Two lines that cross.", "options": ["letter_x", "letter_v"], "answer": "letter_x"}
+  ],
+  "hints": ["x is two lines that cross in the middle.", "Start at the top. Slide down one way, then the other."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write x.",
+    "tutor_try": "Slide down, slide up. Look, I wrote x!",
+    "image": "tutor_wrote_v",
+    "answer": "x",
+    "win_line": "You caught me! That is v. x has two lines that cross.",
+    "gentle_line": "Look together. One line this way, one line that way. That is x!"
+  },
+  "parent_line": "Can recognise the letter x, say its sound and trace it."
+}

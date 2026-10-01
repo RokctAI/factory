@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term2.w05_sound_y_o",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Shapes and colours in my community",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Shapes and colours in my community: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'y' and 'o' sounds at the beginning of words"
+  },
+  "skill": "phonics.initial_sound.y_o",
+  "prereq_skills": ["phonics.initial_sound.a"],
+  "images": ["yellow_sun", "yoyo", "ball", "red_block", "octopus", "square", "kite", "yellow_circle", "orange_square", "yawn", "orange", "tutor_holds_kite"],
+  "show": {
+    "line": "Listen. y as in yellow. o as in orange. y, y, yellow. o, o, orange!",
+    "image": "yellow_sun"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with y, as in yellow?", "options": ["yoyo", "ball", "red_block"], "answer": "yoyo", "praise": "Yes! y, y, yoyo."},
+    {"type": "say_it", "prompt": "Say the sound with me. y, as in yellow!", "accept": ["y", "yuh", "ye", "ya", "yi"]},
+    {"type": "listen_tap", "prompt": "Which one starts with o, as in orange?", "options": ["octopus", "square", "kite"], "answer": "octopus", "praise": "Yes! o, o, octopus."},
+    {"type": "say_it", "prompt": "Say the sound with me. o, as in orange!", "accept": ["o", "oh", "aw", "or", "ah"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Yolanda paints a yellow circle. Then she paints an orange square. What colour is the circle?", "options": ["yellow_circle", "orange_square", "red_block"], "answer": "yellow_circle", "praise": "Yes! y, y, yellow."},
+    {"type": "match_sort", "prompt": "Does it start with y or o? Put each one in its group.", "groups": ["y", "o"], "items": [{"image": "yoyo", "group": "y"}, {"image": "yellow_sun", "group": "y"}, {"image": "yawn", "group": "y"}, {"image": "octopus", "group": "o"}, {"image": "orange", "group": "o"}]}
+  ],
+  "hints": ["Listen for the first sound. y, y, yellow.", "o is round, like your mouth. o, o, orange."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with y.",
+    "tutor_try": "Kite! Kite starts with y.",
+    "image": "tutor_holds_kite",
+    "answer": "no",
+    "win_line": "You caught me! Kite starts with k. Yellow starts with y.",
+    "gentle_line": "Let's listen together. y, y, yellow. Yellow starts with y!"
+  },
+  "parent_line": "Can hear the y and o sounds at the start of words."
+}

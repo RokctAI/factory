@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term2.w01_diamond",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Friends: Numeracy",
+    "subtopic": "Introduced to the diamond shape (sides and corners)"
+  },
+  "skill": "shape.recognise.diamond",
+  "prereq_skills": ["shape.recognise.square"],
+  "images": ["diamond", "square", "circle", "diamond_corners", "kite", "ball", "drum", "road_sign_diamond", "plate", "tutor_points_square"],
+  "show": {
+    "line": "This is a diamond. Four sides and four pointy corners. Like a kite in the sky!",
+    "image": "diamond"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the diamond.", "options": ["square", "diamond", "circle"], "answer": "diamond", "praise": "Yes! That is a diamond."},
+    {"type": "say_it", "prompt": "What shape is this? Say it with me. Diamond!", "accept": ["diamond", "a diamond", "dimond", "daimond", "dymond"], "image": "diamond"},
+    {"type": "count_tap", "prompt": "Touch each corner of the diamond. How many corners?", "image": "diamond_corners", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four corners! Well done."},
+    {"type": "listen_tap", "prompt": "Which toy is a diamond? Look for the pointy corners.", "options": ["kite", "ball", "drum"], "answer": "kite", "praise": "Yes! A kite is a diamond."},
+    {"type": "match_sort", "prompt": "Put the diamonds in one group and the circles in the other.", "groups": ["diamond", "circle"], "items": [{"image": "kite", "group": "diamond"}, {"image": "diamond", "group": "diamond"}, {"image": "road_sign_diamond", "group": "diamond"}, {"image": "ball", "group": "circle"}, {"image": "plate", "group": "circle"}]},
+    {"type": "listen_tap", "prompt": "Find the diamond again. It stands on one point.", "options": ["square", "diamond"], "answer": "diamond"}
+  ],
+  "hints": ["A diamond has four pointy corners.", "A diamond stands on its point, like a kite."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the diamond.",
+    "tutor_try": "This one! It sits flat on its side, so it is a diamond.",
+    "image": "tutor_points_square",
+    "answer": "no",
+    "win_line": "You caught me! That is a square. A diamond stands on its point.",
+    "gentle_line": "Let's look together. A diamond has a point at the top and the bottom."
+  },
+  "parent_line": "Can recognise and name a diamond shape."
+}

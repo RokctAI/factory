@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term2.w03_write_e",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "This is what I wear",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "This is what I wear: Emergent Writing",
+    "subtopic": "Letter formation of 'e'"
+  },
+  "skill": "writing.letter.e",
+  "prereq_skills": ["phonics.initial_sound.e"],
+  "images": ["letter_e", "letter_c", "letter_o", "hat", "elephant", "shoe", "tutor_wrote_c"],
+  "show": {
+    "line": "Let's write e. A line across, then up and round like a curl. e, e, egg!",
+    "image": "letter_e"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says e, as in egg.", "options": ["letter_c", "letter_e", "letter_o"], "answer": "letter_e", "praise": "Yes! That is e."},
+    {"type": "say_it", "prompt": "This letter says e. Say the sound!", "accept": ["e", "eh", "ea", "eh eh", "ehh"]},
+    {"type": "trace", "prompt": "Trace e with your finger. Across, then up and round.", "glyph": "e"},
+    {"type": "listen_tap", "prompt": "Which picture starts with e?", "options": ["hat", "elephant", "shoe"], "answer": "elephant", "praise": "Yes! e, e, elephant."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is e? It has a line in the middle.", "options": ["letter_e", "letter_c"], "answer": "letter_e"}
+  ],
+  "hints": ["e has a line in the middle and a round back.", "Start in the middle. Across, then round."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write e for egg.",
+    "tutor_try": "Round like a curl. Look, I wrote e!",
+    "image": "tutor_wrote_c",
+    "answer": "e",
+    "win_line": "You caught me! That is c. e needs a line in the middle.",
+    "gentle_line": "Look together. A line across, then round. That is e!"
+  },
+  "parent_line": "Can recognise the letter e, say its sound and trace it."
+}

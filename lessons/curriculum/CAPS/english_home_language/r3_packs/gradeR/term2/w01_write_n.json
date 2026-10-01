@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term2.w01_write_n",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Friends: Emergent Writing",
+    "subtopic": "Letter formation of 'n'"
+  },
+  "skill": "writing.letter.n",
+  "prereq_skills": ["phonics.initial_sound.n", "writing.letter.m_j"],
+  "images": ["letter_n", "letter_m", "letter_h", "ball", "nest", "cup", "tutor_wrote_m"],
+  "show": {
+    "line": "Let's write n. A line down, then up and over one hump. n, n, nose!",
+    "image": "letter_n"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says n, as in nose.", "options": ["letter_m", "letter_n", "letter_h"], "answer": "letter_n", "praise": "Yes! That is n."},
+    {"type": "say_it", "prompt": "This letter says n. Say the sound!", "accept": ["n", "nn", "nnn", "nuh", "ne"]},
+    {"type": "trace", "prompt": "Trace n with your finger. Down, then up and over one hump.", "glyph": "n"},
+    {"type": "listen_tap", "prompt": "Which picture starts with n?", "options": ["ball", "nest", "cup"], "answer": "nest", "praise": "Yes! n, n, nest."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is n? It has one hump.", "options": ["letter_n", "letter_m"], "answer": "letter_n"}
+  ],
+  "hints": ["n has one hump. m has two.", "Start at the top. Go down first."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write n for nose.",
+    "tutor_try": "Down, up and over, up and over. Look, I wrote n!",
+    "image": "tutor_wrote_m",
+    "answer": "n",
+    "win_line": "You caught me! That is m. n has only one hump.",
+    "gentle_line": "Look together. Down, then one hump. That is n!"
+  },
+  "parent_line": "Can recognise the letter n, say its sound and trace it."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term2.w03_sound_e",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "This is what I wear",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "This is what I wear: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'e' sound at the beginning of words; recognises letters introduced so far"
+  },
+  "skill": "phonics.initial_sound.e",
+  "prereq_skills": ["phonics.initial_sound.a"],
+  "images": ["egg", "elephant", "hat", "shoe", "elbow", "envelope", "sock", "scarf", "tutor_holds_hat"],
+  "show": {
+    "line": "Listen. e as in egg. e, e, egg. Your elbow starts with e too!",
+    "image": "egg"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with e, as in egg?", "options": ["elephant", "hat", "shoe"], "answer": "elephant", "praise": "Yes! e, e, elephant."},
+    {"type": "say_it", "prompt": "Say the sound with me. e, as in egg!", "accept": ["e", "eh", "ea", "eh eh", "ehh"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Emma puts on her jersey. Her elbow pokes through a hole! What pokes through the hole?", "options": ["elbow", "hat", "shoe"], "answer": "elbow", "praise": "Yes! e, e, elbow."},
+    {"type": "listen_tap", "prompt": "Which one starts with e? e, e.", "options": ["envelope", "sock", "scarf"], "answer": "envelope", "praise": "Yes! e, e, envelope."},
+    {"type": "say_it", "prompt": "What is this? It starts with e.", "accept": ["egg", "an egg", "eggs", "eg", "ek"], "image": "egg"},
+    {"type": "match_sort", "prompt": "Does it start with e? Put e words in the e group.", "groups": ["e", "not_e"], "items": [{"image": "egg", "group": "e"}, {"image": "elephant", "group": "e"}, {"image": "elbow", "group": "e"}, {"image": "hat", "group": "not_e"}, {"image": "shoe", "group": "not_e"}]}
+  ],
+  "hints": ["Listen for e at the start. e, e, egg.", "Open your mouth a little and say e."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with e.",
+    "tutor_try": "Hat! Hat starts with e.",
+    "image": "tutor_holds_hat",
+    "answer": "no",
+    "win_line": "You caught me! Hat starts with h. Egg starts with e.",
+    "gentle_line": "Let's listen together. e, e, egg. Egg starts with e!"
+  },
+  "parent_line": "Can hear the e sound at the start of words."
+}

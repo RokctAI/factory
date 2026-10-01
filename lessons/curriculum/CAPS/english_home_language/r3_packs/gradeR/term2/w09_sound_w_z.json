@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term2.w09_sound_w_z",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Gardens and bugs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Gardens and bugs: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'w' and 'z' sounds at the beginning of words"
+  },
+  "skill": "phonics.initial_sound.w_z",
+  "prereq_skills": ["phonics.initial_sound.v"],
+  "images": ["worm", "wasp", "bee", "ant", "zebra", "spider", "leaf", "zip", "web", "tutor_holds_bee"],
+  "show": {
+    "line": "Listen. w as in worm. z as in zebra. w, w, worm. z, z, zip!",
+    "image": "worm"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with w, as in worm?", "options": ["wasp", "bee", "ant"], "answer": "wasp", "praise": "Yes! w, w, wasp."},
+    {"type": "say_it", "prompt": "Say the sound with me. w, as in worm!", "accept": ["w", "wuh", "we", "wa", "woo"]},
+    {"type": "listen_tap", "prompt": "Which one starts with z, as in zip?", "options": ["zebra", "spider", "leaf"], "answer": "zebra", "praise": "Yes! z, z, zebra."},
+    {"type": "say_it", "prompt": "Say the sound with me. z, as in zebra! Buzz like a bee.", "accept": ["z", "zz", "zzz", "zuh", "ze"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A worm wiggles in the wet garden. A bee buzzes past the zip on Wandile's bag. What wiggles?", "options": ["worm", "bee", "zip"], "answer": "worm", "praise": "Yes! w, w, worm."},
+    {"type": "match_sort", "prompt": "Does it start with w or z? Put each one in its group.", "groups": ["w", "z"], "items": [{"image": "worm", "group": "w"}, {"image": "wasp", "group": "w"}, {"image": "web", "group": "w"}, {"image": "zebra", "group": "z"}, {"image": "zip", "group": "z"}]}
+  ],
+  "hints": ["Listen for the first sound. w, w, worm.", "z buzzes like a bee. z, z, zebra."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with w.",
+    "tutor_try": "Bee! Bee starts with w.",
+    "image": "tutor_holds_bee",
+    "answer": "no",
+    "win_line": "You caught me! Bee starts with b. Worm starts with w.",
+    "gentle_line": "Let's listen together. w, w, worm. Worm starts with w!"
+  },
+  "parent_line": "Can hear the w and z sounds at the start of words."
+}

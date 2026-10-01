@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term2.w09_dice_dots",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Gardens and bugs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Gardens and bugs: Numeracy",
+    "subtopic": "Revises numbers 1 to 6 and number words one to six; matches number, word and dots on a die"
+  },
+  "skill": "number.match.dice_dots",
+  "prereq_skills": ["number.revise.1_to_6"],
+  "images": ["dice_six", "dice_four", "dice_two", "dice_three", "dice_five", "numeral_4", "numeral_5", "numeral_6", "ladybird_two_spots", "ladybird_six_spots", "bugs_six", "tutor_dice_six_wrong"],
+  "show": {
+    "line": "Look at the dice. Count the dots. One, two, three, four, five, six. Six dots!",
+    "image": "dice_six"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which dice shows four dots?", "options": ["dice_four", "dice_two", "dice_six"], "answer": "dice_four", "praise": "Yes! Four dots."},
+    {"type": "count_tap", "prompt": "Count the dots on this dice. Tap the number.", "image": "dice_three", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three dots!"},
+    {"type": "listen_tap", "prompt": "Tap the number that matches these dots.", "image": "dice_five", "options": ["numeral_4", "numeral_5", "numeral_6"], "answer": "numeral_5", "praise": "Five dots, number five!"},
+    {"type": "say_it", "prompt": "How many dots? Say the number.", "accept": ["two", "2", "too", "to", "tu"], "image": "dice_two"},
+    {"type": "match_sort", "prompt": "Match each picture to its number. Put each one in its group.", "groups": ["two", "six"], "items": [{"image": "dice_two", "group": "two"}, {"image": "ladybird_two_spots", "group": "two"}, {"image": "dice_six", "group": "six"}, {"image": "ladybird_six_spots", "group": "six"}, {"image": "bugs_six", "group": "six"}]},
+    {"type": "count_tap", "prompt": "Throw the dice! Count the dots.", "image": "dice_six", "count": "6", "options": ["5", "6"], "answer": "6"},
+    {"type": "what_next", "prompt": "One, two, three, four, five. What comes next?", "sequence": ["1", "2", "3", "4", "5"], "options": ["6", "4"], "answer": "6", "praise": "Six! One, two, three, four, five, six."}
+  ],
+  "hints": ["Touch each dot as you count.", "The dots and the number say the same thing."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read the dice.",
+    "tutor_try": "One, two, three, four, five. Five dots!",
+    "image": "tutor_dice_six_wrong",
+    "answer": "six",
+    "win_line": "You caught me! There are six dots. One more than five.",
+    "gentle_line": "Let's count the dots together. One, two, three, four, five, six!"
+  },
+  "parent_line": "Can match dice dots to numbers 1 to 6."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term2.w07_sound_x",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Opposites",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Opposites: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'x' sound at the beginning of words"
+  },
+  "skill": "phonics.initial_sound.x",
+  "prereq_skills": ["phonics.initial_sound.k_i"],
+  "images": ["fox", "box", "hat", "cup", "dots_six", "dots_two", "dots_four", "axe", "tutor_holds_hat"],
+  "show": {
+    "line": "Listen. x says ks. Fox. Box. Six. Hear the x at the end? Fox!",
+    "image": "fox"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one ends with x, as in fox?", "options": ["box", "hat", "cup"], "answer": "box", "praise": "Yes! Box ends with x."},
+    {"type": "say_it", "prompt": "Say the sound with me. x says ks!", "accept": ["x", "ks", "ex", "iks", "eks"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Max has a big box. A small fox hides inside. Big box, small fox! What hides in the box?", "options": ["fox", "cup", "hat"], "answer": "fox", "praise": "Yes! Fox ends with x."},
+    {"type": "listen_tap", "prompt": "Which number ends with x? Count the dots.", "options": ["dots_six", "dots_two", "dots_four"], "answer": "dots_six", "praise": "Yes! Six ends with x."},
+    {"type": "say_it", "prompt": "What is this? It ends with x.", "accept": ["box", "a box", "boks", "bocks", "boxes"], "image": "box"},
+    {"type": "match_sort", "prompt": "Does it end with x? Put x words in the x group.", "groups": ["x", "not_x"], "items": [{"image": "fox", "group": "x"}, {"image": "box", "group": "x"}, {"image": "axe", "group": "x"}, {"image": "hat", "group": "not_x"}, {"image": "cup", "group": "not_x"}]}
+  ],
+  "hints": ["Listen to the end of the word. Fox. Box. ks!", "x says ks. Say it fast. ks, ks."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that ends with x.",
+    "tutor_try": "Hat! Hat ends with x.",
+    "image": "tutor_holds_hat",
+    "answer": "no",
+    "win_line": "You caught me! Hat ends with t. Fox ends with x.",
+    "gentle_line": "Let's listen together. Fox. Fox ends with x!"
+  },
+  "parent_line": "Can hear the x sound in words like fox and box."
+}

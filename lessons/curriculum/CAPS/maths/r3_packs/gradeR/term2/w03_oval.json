@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term2.w03_oval",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "This is what I wear",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "This is what I wear: Numeracy",
+    "subtopic": "Introduced to the oval shape"
+  },
+  "skill": "shape.recognise.oval",
+  "prereq_skills": ["shape.recognise.circle"],
+  "images": ["oval", "circle", "square", "egg", "ball", "box", "rugby_ball", "plate", "button_round", "oval_buttons_three", "tutor_holds_ball"],
+  "show": {
+    "line": "This is an oval. Round and long, like an egg. Some buttons and hats are ovals!",
+    "image": "oval"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the oval.", "options": ["circle", "oval", "square"], "answer": "oval", "praise": "Yes! That is an oval."},
+    {"type": "say_it", "prompt": "What shape is this? Say it with me. Oval!", "accept": ["oval", "an oval", "ovul", "ohval", "oval shape"], "image": "oval"},
+    {"type": "listen_tap", "prompt": "Which one is an oval? Round but long.", "options": ["circle", "oval"], "answer": "oval"},
+    {"type": "listen_tap", "prompt": "Which one looks like an oval?", "options": ["egg", "ball", "box"], "answer": "egg", "praise": "Yes! An egg is an oval."},
+    {"type": "match_sort", "prompt": "Put the ovals in one group and the circles in the other.", "groups": ["oval", "circle"], "items": [{"image": "egg", "group": "oval"}, {"image": "oval", "group": "oval"}, {"image": "rugby_ball", "group": "oval"}, {"image": "plate", "group": "circle"}, {"image": "button_round", "group": "circle"}]},
+    {"type": "count_tap", "prompt": "Count the oval buttons on the coat.", "image": "oval_buttons_three", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three oval buttons!"}
+  ],
+  "hints": ["An oval is round but long. Like an egg.", "A circle is round all over. An oval is stretched."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the oval.",
+    "tutor_try": "This ball! It is round, so it is an oval.",
+    "image": "tutor_holds_ball",
+    "answer": "circle",
+    "win_line": "You caught me! The ball is a circle. An oval is long, like an egg.",
+    "gentle_line": "Let's look together. An oval is round and long, like an egg."
+  },
+  "parent_line": "Can recognise an oval and tell it apart from a circle."
+}

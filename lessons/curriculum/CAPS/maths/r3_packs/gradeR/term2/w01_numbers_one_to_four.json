@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term2.w01_numbers_one_to_four",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Friends: Numeracy",
+    "subtopic": "Revises numbers 1 to 4; matches numerals, number words and dot patterns"
+  },
+  "skill": "number.revise.1_to_4",
+  "prereq_skills": ["number.recognise.1", "number.recognise.2", "number.recognise.3", "number.recognise.4"],
+  "images": ["friends_four", "friends_two", "numeral_3", "numeral_4", "numeral_2", "dots_two", "dots_three", "dots_four", "balls_four", "kite_one", "balls_three", "tutor_matches_dots_wrong"],
+  "show": {
+    "line": "Let's count our friends! One, two, three, four. Four friends playing together.",
+    "image": "friends_four"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "How many friends are on the swing?", "image": "friends_two", "count": "2", "options": ["1", "2", "3"], "answer": "2", "praise": "Two friends!"},
+    {"type": "listen_tap", "prompt": "Tap the number four.", "options": ["numeral_3", "numeral_4", "numeral_2"], "answer": "numeral_4", "praise": "Yes! That is four."},
+    {"type": "listen_tap", "prompt": "Which card shows three dots? Count them.", "options": ["dots_two", "dots_three", "dots_four"], "answer": "dots_three", "praise": "Three dots! Good counting."},
+    {"type": "count_tap", "prompt": "Count the balls. How many?", "image": "balls_four", "count": "4", "options": ["2", "3", "4"], "answer": "4", "praise": "Four balls! Well done."},
+    {"type": "say_it", "prompt": "How many kites? Say the number.", "accept": ["one", "1", "wan"], "image": "kite_one"},
+    {"type": "what_next", "prompt": "One, two, three. What comes next?", "sequence": ["1", "2", "3"], "options": ["4", "2", "5"], "answer": "4", "praise": "Four! One, two, three, four."},
+    {"type": "match_sort", "prompt": "Match the dots to the number. Put each card in its number group.", "groups": ["three", "four"], "items": [{"image": "dots_three", "group": "three"}, {"image": "balls_three", "group": "three"}, {"image": "dots_four", "group": "four"}, {"image": "friends_four", "group": "four"}, {"image": "balls_four", "group": "four"}]}
+  ],
+  "hints": ["Touch each one as you count.", "Four comes after three. One, two, three, four."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will match the dots to the number.",
+    "tutor_try": "Three dots. That goes with four!",
+    "image": "tutor_matches_dots_wrong",
+    "answer": "three",
+    "win_line": "You caught me! Three dots go with the number three.",
+    "gentle_line": "Let's count the dots together. One, two, three. Three dots, number three!"
+  },
+  "parent_line": "Can count to 4 and match numerals and dot patterns."
+}
