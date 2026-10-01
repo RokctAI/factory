@@ -72,6 +72,27 @@ CAPS_TYPE_BY_FOLDER = {
     "accounting": "lesson.accounting",
 }
 
+# Lowest grade the seed step writes job cards for. Grades 8-9 syllabi are
+# lifted into the pipeline (dashboard and drift check read them) but no
+# lessons are written below this grade until it is lowered to 8.
+SEED_MIN_GRADE = 10
+
+
+def _seed_grade_ok(entry):
+    """True when the seed step may write a card for this row's grade.
+    Rows without a numeric grade (skills, Grade R) follow the same rule:
+    a blank grade passes, "R" counts as 0."""
+    grade = str(entry.get("grade", "")).strip()
+    if not grade:
+        return True
+    if grade.upper() == "R":
+        return SEED_MIN_GRADE <= 0
+    try:
+        return int(grade) >= SEED_MIN_GRADE
+    except ValueError:
+        return True
+
+
 # ATP topics that are pacing entries, not teachable lesson content.
 NON_LESSON_TOPIC_RE = re.compile(
     r"(?i)revision|revise|examination|exam\b|control test|controlled test|"
@@ -509,7 +530,8 @@ def cmd_seed(args):
     if not CAPS_DIR.exists():
         print(f"Error: syllabus directory {CAPS_DIR} not found.")
         return 1
-    entries = [e for e in load_seed_entries() if e.get("type") == args.type]
+    entries = [e for e in load_seed_entries()
+               if e.get("type") == args.type and _seed_grade_ok(e)]
     if getattr(args, "category", None):
         entries = [e for e in entries
                    if str(e.get("category", "")).strip().lower() == args.category.lower()]
