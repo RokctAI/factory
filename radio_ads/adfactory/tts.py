@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import time
 from pathlib import Path
 
@@ -71,6 +72,17 @@ class LineCache:
         (self.root / f"{key}.json").write_text(json.dumps(meta, indent=1), encoding="utf-8")
 
 
+def pinned_model_path(model: str) -> str:
+    """The local snapshot of `model` at TTS_MODEL_REVISION, when the environment
+    pins one for this repo (TTS_MODEL names the repo; CI sets both). Anything
+    else (a local folder, another repo, no pin set) is returned unchanged."""
+    rev = os.environ.get("TTS_MODEL_REVISION")
+    if not rev or model != os.environ.get("TTS_MODEL") or Path(model).is_dir():
+        return model
+    from huggingface_hub import snapshot_download
+    return snapshot_download(model, revision=rev)
+
+
 class VibeVoiceEngine:
     """Loads the model once and keeps it (loading costs ~15 s and ~6 GB)."""
 
@@ -92,10 +104,11 @@ class VibeVoiceEngine:
 
         t = time.time()
         print(f"  loading {self.model_path} on {self.device} ...", flush=True)
-        self.processor = VibeVoiceProcessor.from_pretrained(self.model_path)
+        path = pinned_model_path(self.model_path)
+        self.processor = VibeVoiceProcessor.from_pretrained(path)
         dtype = torch.float32 if self.device == "cpu" else torch.bfloat16
         self.model = VibeVoiceForConditionalGenerationInference.from_pretrained(
-            self.model_path, torch_dtype=dtype, attn_implementation="sdpa",
+            path, torch_dtype=dtype, attn_implementation="sdpa",
             device_map=self.device)
         self.model.eval()
         print(f"  model ready in {time.time() - t:.1f}s", flush=True)
