@@ -41,6 +41,10 @@ env:
   # override with the repository variable VIBEVOICE_REF.
   VIBEVOICE_REF: ${{ vars.VIBEVOICE_REF || '952326ddb264062466a888cf32a5b2f4e803e16e' }}
   TTS_MODEL: microsoft/VibeVoice-1.5B
+  # Pinned model revision, the same one voice_batch.yml and
+  # pronunciation_audition.yml use. Download, render (adfactory/tts.py reads
+  # this variable) and the weights cache key all use it.
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
   # faster-whisper model for the word check (make_ad.py default is base.en;
   # set the variable ASR_MODEL to e.g. small.en for a stricter check).
   ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
@@ -182,24 +186,12 @@ jobs:
           python -c "import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)"
           df -h / | tail -1
 
-      - name: Resolve model revision
-        id: rev
-        run: |
-          sha=$(curl -fsS "https://huggingface.co/api/models/${TTS_MODEL}/revision/main" \
-                | python -c 'import json,sys; print(json.load(sys.stdin)["sha"])' || true)
-          if [ -z "$sha" ]; then
-            echo "::warning::Could not resolve the ${TTS_MODEL} revision; caching under 'main'."
-            sha=main
-          fi
-          echo "sha=$sha" >> "$GITHUB_OUTPUT"
-          echo "${TTS_MODEL} @ $sha, ASR ${ASR_MODEL}"
-
       - name: Restore model weights
         id: models
         uses: actions/cache/restore@v4
         with:
           path: ${{ env.HF_HOME }}/hub
-          key: radio-ads-hf-vibevoice15b-${{ steps.rev.outputs.sha }}-whisper-${{ env.ASR_MODEL }}
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.ASR_MODEL }}
 
       - name: Download model weights
         if: steps.models.outputs.cache-hit != 'true'
@@ -207,10 +199,10 @@ jobs:
           python - <<'PY'
           import os
           from huggingface_hub import snapshot_download
-          snapshot_download(os.environ["TTS_MODEL"])
+          model_path = snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
           # The processor pulls its tokenizer from a second repo; fetch it now so it is cached too.
           from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
-          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])
+          VibeVoiceProcessor.from_pretrained(model_path)
           from faster_whisper import WhisperModel
           WhisperModel(os.environ["ASR_MODEL"], device="cpu", compute_type="int8")
           PY
