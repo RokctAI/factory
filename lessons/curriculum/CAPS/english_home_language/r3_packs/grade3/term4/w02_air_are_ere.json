@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w02_air_are_ere",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Vowel sounds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises vowel sounds -ere (here), -air (hair), -are (square)"
+  },
+  "skill": "phonics.vowel_r.air_are_ere",
+  "prereq_skills": ["phonics.sound_spellings.ow_ou_aw_au"],
+  "images": ["hair_square_where", "chair", "here", "hat", "bear", "bird", "bus", "word_stairs", "word_stares", "word_stars", "word_chair", "word_square", "word_where", "word_deer", "word_near", "word_cheer", "word_care", "word_car", "word_cart", "tutor_points_here"],
+  "show": {
+    "line": "Hair, square, where. They all end with the same sound, spelt air, are or ere. Here sounds different!",
+    "image": "hair_square_where"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word rhymes with hair?", "options": ["chair", "here", "hat"], "answer": "chair", "praise": "Yes! Hair, chair."},
+    {"type": "listen_tap", "prompt": "Which word rhymes with square?", "options": ["bear", "bird", "bus"], "answer": "bear", "praise": "Yes! Square, bear. Spelt differently, same sound."},
+    {"type": "say_it", "prompt": "Where is my ... ? It rhymes with hair. You sit on it. Say it.", "accept": ["chair", "a chair", "my chair"], "image": "chair"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells stairs the right way.", "options": ["word_stairs", "word_stares", "word_stars"], "answer": "word_stairs", "praise": "Yes! Stairs you climb, with air."},
+    {"type": "match_sort", "prompt": "Rhymes with hair, or rhymes with here? Sort the words.", "groups": ["rhymes_with_hair", "rhymes_with_here"], "items": [{"image": "word_chair", "group": "rhymes_with_hair"}, {"image": "word_square", "group": "rhymes_with_hair"}, {"image": "word_where", "group": "rhymes_with_hair"}, {"image": "word_deer", "group": "rhymes_with_here"}, {"image": "word_near", "group": "rhymes_with_here"}, {"image": "word_cheer", "group": "rhymes_with_here"}]},
+    {"type": "listen_tap", "prompt": "Which word has are, as in square?", "options": ["word_care", "word_car", "word_cart"], "answer": "word_care", "praise": "Yes! Care rhymes with square."},
+    {"type": "read_to_me", "prompt": "Read this out loud.", "text": "Where is the chair?", "accept": ["where is the chair"]}
+  ],
+  "hints": ["Say the end of the word. Does it sound like hair, or like here?", "air, are and ere can all make the sound in hair."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that rhymes with square.",
+    "tutor_try": "Here! Square, here.",
+    "image": "tutor_points_here",
+    "answer": "no",
+    "win_line": "You caught me! Here sounds like near. Chair rhymes with square.",
+    "gentle_line": "Let's listen together. Square, chair, hair. Same ending!"
+  },
+  "parent_line": "Can hear the sound in hair, square and where and knows its spellings."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w09_place_value_to_999",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Place value",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Place value (numbers to 999)",
+    "subtopic": "Decompose numbers into multiples of hundreds, tens and ones up to 700 (weeks 1-2), 900 (weeks 5-6) and 999 (weeks 9-10)"
+  },
+  "skill": "place_value.htu.to_999",
+  "prereq_skills": ["place_value.htu.to_700"],
+  "images": ["flard_999", "numeral_875", "numeral_857", "numeral_785", "cards_900_4", "cards_900_40", "cards_90_4", "flard_893", "numeral_806", "numeral_860", "numeral_680", "card_900", "card_800", "card_70", "card_90", "card_5", "card_4", "numeral_950", "numeral_851", "tutor_builds_902"],
+  "show": {
+    "line": "999 is the biggest three digit number. Nine hundreds, nine tens, nine ones. One more makes one thousand!",
+    "image": "flard_999"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number that is 800 plus 70 plus 5.", "options": ["numeral_875", "numeral_857", "numeral_785"], "answer": "numeral_875", "praise": "Yes! 875."},
+    {"type": "listen_tap", "prompt": "Break up 904. Which cards show it?", "options": ["cards_900_4", "cards_900_40", "cards_90_4"], "answer": "cards_900_4", "praise": "Yes! Nine hundred and four. No tens."},
+    {"type": "say_it", "prompt": "What is the nine worth in 893? Say the number.", "accept": ["ninety", "90", "nine tens"], "image": "flard_893"},
+    {"type": "listen_tap", "prompt": "Which number has eight hundreds, no tens and six ones?", "options": ["numeral_806", "numeral_860", "numeral_680"], "answer": "numeral_806", "praise": "Yes! 806."},
+    {"type": "what_next", "prompt": "Add one each time. 997, 998, 999. What comes next?", "sequence": ["997", "998", "999"], "options": ["1000", "9910", "990"], "answer": "1000", "praise": "One thousand!"},
+    {"type": "match_sort", "prompt": "Sort the cards into hundreds, tens and ones.", "groups": ["hundreds", "tens", "ones"], "items": [{"image": "card_900", "group": "hundreds"}, {"image": "card_800", "group": "hundreds"}, {"image": "card_70", "group": "tens"}, {"image": "card_90", "group": "tens"}, {"image": "card_5", "group": "ones"}, {"image": "card_4", "group": "ones"}]},
+    {"type": "listen_tap", "prompt": "Which number is 100 more than 850?", "options": ["numeral_950", "numeral_860", "numeral_851"], "answer": "numeral_950", "praise": "Yes! Add one hundred. 950."}
+  ],
+  "hints": ["Hundreds, tens, ones. Read each digit in its place.", "999 and one more is 1000, four digits."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will build 920.",
+    "tutor_try": "900 and 2. That is 920!",
+    "image": "tutor_builds_902",
+    "answer": "no",
+    "win_line": "You caught me! 900 and 2 is 902. 920 needs a 20 card.",
+    "gentle_line": "Let's build it together. 900, 20, and no ones. 920!"
+  },
+  "parent_line": "Can break numbers up to 999 into hundreds, tens and ones."
+}

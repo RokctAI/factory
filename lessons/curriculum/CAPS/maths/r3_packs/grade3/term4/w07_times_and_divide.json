@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w07_times_and_divide",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Fact families",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 750)",
+    "subtopic": "Use the relationship between + and - and between × and ÷"
+  },
+  "skill": "multiply_divide.inverse",
+  "prereq_skills": ["multiply.to_100.mixed", "divide.remainders"],
+  "images": ["triangle_3_4_12", "numeral_5", "numeral_6", "numeral_24", "sum_5_times_4", "sum_5_times_2", "sum_20_times_4", "triangle_7_10_70", "numeral_8", "numeral_22", "numeral_7", "box_times_3_27", "numeral_9", "sum_3_times_5", "sum_15_div_5", "sum_15_div_3", "sum_2_times_6", "sum_12_div_6", "sum_12_div_2", "sum_8_times_5", "sum_8_plus_5", "sum_40_times_5", "tutor_subtracts_instead"],
+  "show": {
+    "line": "Three times four is twelve. So twelve divided by four is three! Times and divide are a team.",
+    "image": "triangle_3_4_12"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Five times six is thirty. So thirty divided by six is ... Tap the answer.", "options": ["numeral_5", "numeral_6", "numeral_24"], "answer": "numeral_5", "praise": "Yes! Five."},
+    {"type": "listen_tap", "prompt": "Twenty divided by four is five. Which times sum is in the same family?", "options": ["sum_5_times_4", "sum_5_times_2", "sum_20_times_4"], "answer": "sum_5_times_4", "praise": "Yes! Five times four is twenty."},
+    {"type": "say_it", "prompt": "Seven times ten is seventy. Seventy divided by ten is what? Say it.", "accept": ["seven", "7", "sewen"], "image": "triangle_7_10_70"},
+    {"type": "listen_tap", "prompt": "Eight plus seven is fifteen. So fifteen take away seven is ... Tap the answer.", "options": ["numeral_8", "numeral_22", "numeral_7"], "answer": "numeral_8", "praise": "Yes! Eight. Adding and taking away are a team too."},
+    {"type": "listen_tap", "prompt": "Which number is missing? Some number times three is twenty seven.", "image": "box_times_3_27", "options": ["numeral_9", "numeral_8", "numeral_24"], "answer": "numeral_9", "praise": "Yes! Twenty seven divided by three is nine."},
+    {"type": "match_sort", "prompt": "Which family? Sort the sums into the 3, 5, 15 family or the 2, 6, 12 family.", "groups": ["family_3_5_15", "family_2_6_12"], "items": [{"image": "sum_3_times_5", "group": "family_3_5_15"}, {"image": "sum_15_div_5", "group": "family_3_5_15"}, {"image": "sum_15_div_3", "group": "family_3_5_15"}, {"image": "sum_2_times_6", "group": "family_2_6_12"}, {"image": "sum_12_div_6", "group": "family_2_6_12"}, {"image": "sum_12_div_2", "group": "family_2_6_12"}]},
+    {"type": "listen_tap", "prompt": "Forty divided by five is eight. Check it. Which sum proves it?", "options": ["sum_8_times_5", "sum_8_plus_5", "sum_40_times_5"], "answer": "sum_8_times_5", "praise": "Yes! Eight times five is forty."}
+  ],
+  "hints": ["Turn it round. If three times four is twelve, then twelve divided by four is three.", "Use the times fact you know to find the divide fact."],
+  "beat_the_tutor": {
+    "setup": "My turn! Six times four is twenty four. Now twenty four divided by four.",
+    "tutor_try": "Twenty four divided by four is twenty!",
+    "image": "tutor_subtracts_instead",
+    "answer": "six",
+    "win_line": "You caught me! I took away. Six times four is twenty four, so twenty four divided by four is six.",
+    "gentle_line": "Let's turn it round together. Six times four is twenty four. Twenty four divided by four is six!"
+  },
+  "parent_line": "Knows times and divide are linked, like 3 times 4 and 12 divided by 4."
+}

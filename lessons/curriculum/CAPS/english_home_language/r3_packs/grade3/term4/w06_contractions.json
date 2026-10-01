@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w06_contractions",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Apostrophes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Uses apostrophes in contractions (can't, Mary's)"
+  },
+  "skill": "grammar.apostrophe.contractions",
+  "prereq_skills": ["grammar.apostrophe.possession_contraction"],
+  "images": ["cant_im_apostrophe", "word_dont", "word_do_nt", "word_dont_no_apostrophe", "word_shes", "word_shes_no_apostrophe", "word_sheis", "children_running_late", "card_it_is", "card_it_was", "card_is_it", "sentence_i_cant_swim", "sentence_i_cant_swim_no_apostrophe", "card_do_not", "card_we_are", "word_cant", "tutor_dosent"],
+  "show": {
+    "line": "Can not becomes can't. I am becomes I'm. The apostrophe takes the place of the missing letters!",
+    "image": "cant_im_apostrophe"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Do not. Which short form is right?", "options": ["word_dont", "word_do_nt", "word_dont_no_apostrophe"], "answer": "word_dont", "praise": "Yes! Don't, with the apostrophe."},
+    {"type": "listen_tap", "prompt": "She is happy. Which short form fits?", "options": ["word_shes", "word_shes_no_apostrophe", "word_sheis"], "answer": "word_shes", "praise": "Yes! She's."},
+    {"type": "say_it", "prompt": "We are late. Say it the short way.", "accept": ["we're", "were", "wir"], "image": "children_running_late"},
+    {"type": "listen_tap", "prompt": "It's raining. Which two words does it's stand for?", "options": ["card_it_is", "card_it_was", "card_is_it"], "answer": "card_it_is", "praise": "Yes! It is."},
+    {"type": "listen_tap", "prompt": "Which sentence uses the short form correctly?", "options": ["sentence_i_cant_swim", "sentence_i_cant_swim_no_apostrophe"], "answer": "sentence_i_cant_swim", "praise": "Yes! Can't, with the apostrophe."},
+    {"type": "match_sort", "prompt": "Long form or short form? Sort the cards.", "groups": ["long_form", "short_form"], "items": [{"image": "card_do_not", "group": "long_form"}, {"image": "card_it_is", "group": "long_form"}, {"image": "card_we_are", "group": "long_form"}, {"image": "word_dont", "group": "short_form"}, {"image": "word_shes", "group": "short_form"}, {"image": "word_cant", "group": "short_form"}]},
+    {"type": "read_to_me", "prompt": "Read this out loud.", "text": "I'm sure they won't be late.", "accept": ["i'm sure they won't be late", "im sure they wont be late"]}
+  ],
+  "hints": ["Squash two words together. Put an apostrophe where letters fall out.", "Can't is can not. Won't is will not."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will shorten does not.",
+    "tutor_try": "Does not becomes dosen't!",
+    "image": "tutor_dosent",
+    "answer": "no",
+    "win_line": "You caught me! The apostrophe goes where the 'o' was. Doesn't.",
+    "gentle_line": "Let's fix it together. Does not. Take out the 'o', add the apostrophe. Doesn't!"
+  },
+  "parent_line": "Can write short forms like don't and it's with an apostrophe."
+}

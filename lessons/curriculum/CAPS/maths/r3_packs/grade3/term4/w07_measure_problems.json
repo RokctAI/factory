@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w07_measure_problems",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Measuring",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Measurement: Length, mass and capacity",
+    "subtopic": "Practise more problem solving using formal units of measuring for length, mass and capacity"
+  },
+  "skill": "measure.units.problems",
+  "prereq_skills": ["measure.length.cm_m", "measure.mass.g_kg", "measure.capacity.ml_l"],
+  "images": ["measuring_tools", "numeral_150", "numeral_250", "numeral_48", "card_kilograms", "card_centimetres", "card_litres", "jug_half_litre", "bricks_seven", "numeral_135", "numeral_105", "numeral_125", "road", "rope", "bag_of_oranges", "child", "bath", "bucket", "card_500_ml", "card_250_ml", "card_1_litre", "tutor_wrong_unit"],
+  "show": {
+    "line": "Metres and centimetres, kilograms and grams, litres and millilitres. Let's solve measuring problems!",
+    "image": "measuring_tools"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A rope is 2 metres long. Zinzi cuts off 50 centimetres. How many centimetres are left?", "options": ["numeral_150", "numeral_250", "numeral_48"], "answer": "numeral_150", "praise": "150 centimetres! Two metres is 200 centimetres."},
+    {"type": "listen_tap", "prompt": "Which unit would you use to weigh a bag of oranges?", "options": ["card_kilograms", "card_centimetres", "card_litres"], "answer": "card_kilograms", "praise": "Yes! Kilograms."},
+    {"type": "say_it", "prompt": "A jug holds one litre. You pour out 500 millilitres. How much is left? Say it.", "accept": ["500 millilitres", "five hundred millilitres", "half a litre", "five hundred"], "image": "jug_half_litre"},
+    {"type": "count_tap", "prompt": "Each brick is 1 kilogram. Count the bricks. How many kilograms?", "image": "bricks_seven", "count": "7", "options": ["6", "7", "8"], "answer": "7", "praise": "Seven kilograms!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thabo is 120 centimetres tall. His brother is 15 centimetres taller. How tall is his brother?", "options": ["numeral_135", "numeral_105", "numeral_125"], "answer": "numeral_135", "praise": "135 centimetres!"},
+    {"type": "match_sort", "prompt": "Which unit? Sort the things by what you would measure them in.", "groups": ["metres", "kilograms", "litres"], "items": [{"image": "road", "group": "metres"}, {"image": "rope", "group": "metres"}, {"image": "bag_of_oranges", "group": "kilograms"}, {"image": "child", "group": "kilograms"}, {"image": "bath", "group": "litres"}, {"image": "bucket", "group": "litres"}]},
+    {"type": "listen_tap", "prompt": "Two cups of 250 millilitres. How much altogether?", "options": ["card_500_ml", "card_250_ml", "card_1_litre"], "answer": "card_500_ml", "praise": "Yes! 500 millilitres."}
+  ],
+  "hints": ["Read the units. Centimetres, kilograms or millilitres?", "One metre is 100 centimetres. One litre is 1000 millilitres."],
+  "beat_the_tutor": {
+    "setup": "My turn! A stick is 1 metre. I cut off 30 centimetres.",
+    "tutor_try": "100 take away 30. Seventy metres are left!",
+    "image": "tutor_wrong_unit",
+    "answer": "centimetres",
+    "win_line": "You caught me! Seventy centimetres, not metres. A metre is only 100 centimetres.",
+    "gentle_line": "Let's say it together. 100 centimetres take away 30 is 70 centimetres!"
+  },
+  "parent_line": "Can solve simple problems with metres, centimetres, kilograms, litres and millilitres."
+}

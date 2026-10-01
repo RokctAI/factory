@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w01_who_said_it",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [1],
+  "theme": "Dialogue",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Writes a selection of short texts in different forms such as recounts and dialogues"
+  },
+  "skill": "comprehension.dialogue.who_said",
+  "prereq_skills": ["grammar.punctuation.inverted_commas"],
+  "images": ["dialogue_mama_sipho", "sipho", "mama", "book", "lunch_box", "pencil", "dialogue_shop", "line_that_costs_ten_rand", "line_i_want_an_apple", "dialogue_gogo_zola", "thandi", "neo", "card_new_line_with_name", "card_same_line_no_name", "line_time_for_bed", "line_brush_your_teeth", "line_five_more_minutes", "line_i_am_not_tired", "tutor_wrong_speaker"],
+  "show": {
+    "line": "A dialogue is people talking. Each line shows who speaks. Mama: Time for bed. Sipho: Five more minutes!",
+    "image": "dialogue_mama_sipho"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Mama said, Time for bed. Sipho said, Five more minutes, please! Who wants to stay up?", "options": ["sipho", "mama"], "answer": "sipho", "praise": "Yes! Sipho asked for more minutes."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Teacher said, Open your books. Lebo said, I left mine at home. What did Lebo forget?", "options": ["book", "lunch_box", "pencil"], "answer": "book", "praise": "Yes! Lebo left her book at home."},
+    {"type": "listen_tap", "prompt": "Which line did the shopkeeper say? Tap it.", "image": "dialogue_shop", "options": ["line_that_costs_ten_rand", "line_i_want_an_apple"], "answer": "line_that_costs_ten_rand", "praise": "Yes! The shopkeeper tells the price."},
+    {"type": "say_it", "prompt": "Gogo said, Who ate the cake? Zola said, Not me! What did Zola say? Say it.", "accept": ["not me", "not me gogo", "it was not me"], "image": "dialogue_gogo_zola"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thandi said, Let's play soccer. Neo said, I would rather read. Who wants to play?", "options": ["thandi", "neo"], "answer": "thandi", "praise": "Yes! Thandi wants to play."},
+    {"type": "listen_tap", "prompt": "In a dialogue, how do we show a new person is speaking?", "options": ["card_new_line_with_name", "card_same_line_no_name"], "answer": "card_new_line_with_name", "praise": "Yes! A new line, with the speaker's name."},
+    {"type": "match_sort", "prompt": "Who said it? Sort the lines.", "groups": ["mama_said", "sipho_said"], "items": [{"image": "line_time_for_bed", "group": "mama_said"}, {"image": "line_brush_your_teeth", "group": "mama_said"}, {"image": "line_five_more_minutes", "group": "sipho_said"}, {"image": "line_i_am_not_tired", "group": "sipho_said"}]}
+  ],
+  "hints": ["Look for the name before the words. That is the speaker.", "Think about who would say it. A mama, or a child?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Mama said, Time for bed. Sipho said, Five more minutes! Who wants bed?",
+    "tutor_try": "Sipho wants to go to bed!",
+    "image": "tutor_wrong_speaker",
+    "answer": "mama",
+    "win_line": "You caught me! Mama said time for bed. Sipho wanted five more minutes.",
+    "gentle_line": "Let's read it together. Mama: Time for bed. Mama wants bedtime!"
+  },
+  "parent_line": "Can follow a short dialogue and say who said what."
+}

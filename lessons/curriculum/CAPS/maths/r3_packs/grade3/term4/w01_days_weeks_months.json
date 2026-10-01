@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w01_days_weeks_months",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Calendars",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Measurement: Telling time",
+    "subtopic": "Use calendars to calculate the length of time in days and weeks; convert between days and weeks, and between weeks and months"
+  },
+  "skill": "time.convert.days_weeks_months",
+  "prereq_skills": ["time.calendar.days_weeks"],
+  "images": ["calendar_year", "numeral_21", "numeral_14", "numeral_28", "numeral_2", "numeral_7", "card_february", "card_march", "card_december", "numeral_24", "numeral_11", "card_november", "card_october", "card_january", "calendar_month_saturdays", "tutor_two_weeks_ten"],
+  "show": {
+    "line": "Seven days make a week. About four weeks make a month. Twelve months make a year!",
+    "image": "calendar_year"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Three weeks. How many days? Tap the answer.", "options": ["numeral_21", "numeral_14", "numeral_28"], "answer": "numeral_21", "praise": "Yes! Three sevens are twenty one."},
+    {"type": "listen_tap", "prompt": "Fourteen days. How many weeks is that?", "options": ["numeral_2", "numeral_7", "numeral_14"], "answer": "numeral_2", "praise": "Yes! Two weeks."},
+    {"type": "say_it", "prompt": "How many months in a year? Say the number.", "accept": ["twelve", "12", "twelf"], "image": "calendar_year"},
+    {"type": "listen_tap", "prompt": "Which month has the fewest days?", "options": ["card_february", "card_march", "card_december"], "answer": "card_february", "praise": "Yes! February, with 28 days."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Zola's birthday is in four weeks. How many days is that?", "options": ["numeral_28", "numeral_24", "numeral_11"], "answer": "numeral_28", "praise": "Twenty eight days! Four sevens."},
+    {"type": "listen_tap", "prompt": "Which month comes just before December?", "options": ["card_november", "card_october", "card_january"], "answer": "card_november", "praise": "Yes! November."},
+    {"type": "count_tap", "prompt": "Count the Saturdays in this month on the calendar.", "image": "calendar_month_saturdays", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four Saturdays! About four weeks."}
+  ],
+  "hints": ["Weeks to days? Count in sevens.", "A month is about four weeks. A year is twelve months."],
+  "beat_the_tutor": {
+    "setup": "My turn! Two weeks. I will say how many days.",
+    "tutor_try": "Two weeks is ten days!",
+    "image": "tutor_two_weeks_ten",
+    "answer": "fourteen",
+    "win_line": "You caught me! A week has seven days. Two weeks is fourteen days.",
+    "gentle_line": "Let's count in sevens together. Seven, fourteen. Fourteen days!"
+  },
+  "parent_line": "Can change weeks into days and knows the months of the year."
+}

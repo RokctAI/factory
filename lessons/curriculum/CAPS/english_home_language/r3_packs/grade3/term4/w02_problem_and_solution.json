@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w02_problem_and_solution",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Story comprehension",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Reading",
+    "subtopic": "Shared: reads fiction and non-fiction big books, newspaper articles, dialogues and electronic texts; discusses characters, problem, plot and values; higher-order questions; uses a dictionary"
+  },
+  "skill": "comprehension.problem_solution",
+  "prereq_skills": ["comprehension.main_idea.title"],
+  "images": ["story_problem_solved", "kite_in_tree", "brother_climbing", "neo_crying", "new_kite", "papa", "mama", "the_tap", "friend_shares_lunch", "stool", "ladder", "chair", "puppy_lost_sign", "puppy_found_hug", "puppy_sleeping", "tutor_mixes_problem"],
+  "show": {
+    "line": "Every good story has a problem. Then someone solves it! Listen for the problem and how it gets fixed.",
+    "image": "story_problem_solved"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Neo's kite got stuck in a tree. Her big brother climbed up and got it down. What was the problem?", "options": ["kite_in_tree", "brother_climbing", "neo_crying"], "answer": "kite_in_tree", "praise": "Yes! The kite was stuck."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Neo's kite got stuck in a tree. Her big brother climbed up and got it down. How was it solved?", "options": ["brother_climbing", "kite_in_tree", "new_kite"], "answer": "brother_climbing", "praise": "Yes! Her brother climbed up."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The tap in the kitchen would not stop dripping. Papa fixed it with a new washer. Who solved the problem?", "options": ["papa", "mama", "the_tap"], "answer": "papa", "praise": "Yes! Papa fixed it."},
+    {"type": "say_it", "prompt": "Sipho forgot his lunch. His friend shared hers. Who helped Sipho? Say it.", "accept": ["his friend", "friend", "a friend"], "image": "friend_shares_lunch"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lebo could not reach the top shelf. She fetched a stool and stood on it. What did Lebo use?", "options": ["stool", "ladder", "chair"], "answer": "stool", "praise": "Yes! A stool."},
+    {"type": "listen_tap", "prompt": "Which picture shows the problem in the story about the lost puppy?", "options": ["puppy_lost_sign", "puppy_found_hug", "puppy_sleeping"], "answer": "puppy_lost_sign", "praise": "Yes! The puppy was lost. That was the problem."},
+    {"type": "listen_tap", "prompt": "Which picture shows how the lost puppy story ends happily?", "options": ["puppy_found_hug", "puppy_lost_sign", "puppy_sleeping"], "answer": "puppy_found_hug", "praise": "Yes! The puppy was found."}
+  ],
+  "hints": ["The problem is what goes wrong. The solution is how it gets fixed.", "Ask, what was wrong? Then ask, who made it better?"],
+  "beat_the_tutor": {
+    "setup": "My turn! The kite got stuck. Her brother got it down. I will say the problem.",
+    "tutor_try": "The problem was the brother climbing the tree!",
+    "image": "tutor_mixes_problem",
+    "answer": "no",
+    "win_line": "You caught me! The stuck kite was the problem. The brother climbing was the solution.",
+    "gentle_line": "Let's think together. What went wrong? The kite got stuck. That is the problem!"
+  },
+  "parent_line": "Can find the problem and the solution in a short story."
+}

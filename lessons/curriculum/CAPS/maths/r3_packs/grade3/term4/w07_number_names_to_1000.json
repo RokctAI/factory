@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w07_number_names_to_1000",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Number names",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Number symbols and number names",
+    "subtopic": "Write number symbols and number names to 0-1000"
+  },
+  "skill": "number.names.to_1000",
+  "prereq_skills": ["place_value.htu.to_700"],
+  "images": ["number_name_cards", "numeral_462", "numeral_426", "numeral_642", "name_five_hundred_and_eighty", "name_five_hundred_and_eight", "name_fifty_eight", "numeral_709", "numeral_990", "numeral_909", "numeral_919", "numeral_1000", "numeral_100", "numeral_10000", "numeral_580", "numeral_347", "numeral_856", "name_eight_hundred_and_fifty_six", "name_eight_hundred_and_sixty_five", "name_six_hundred_and_fifty_eight", "tutor_reads_630_wrong"],
+  "show": {
+    "line": "Numbers have names. 347 is three hundred and forty seven. 1000 is one thousand. Let's match names and numbers!",
+    "image": "number_name_cards"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number that says four hundred and sixty two.", "options": ["numeral_462", "numeral_426", "numeral_642"], "answer": "numeral_462", "praise": "Yes! 462."},
+    {"type": "listen_tap", "prompt": "Which name card matches 580?", "options": ["name_five_hundred_and_eighty", "name_five_hundred_and_eight", "name_fifty_eight"], "answer": "name_five_hundred_and_eighty", "praise": "Yes! Five hundred and eighty."},
+    {"type": "say_it", "prompt": "Read this number out loud.", "accept": ["seven hundred and nine", "709", "seven hundred nine", "seven oh nine"], "image": "numeral_709"},
+    {"type": "listen_tap", "prompt": "Tap the number that says nine hundred and ninety.", "options": ["numeral_990", "numeral_909", "numeral_919"], "answer": "numeral_990", "praise": "Yes! 990."},
+    {"type": "listen_tap", "prompt": "Which number is one thousand?", "options": ["numeral_1000", "numeral_100", "numeral_10000"], "answer": "numeral_1000", "praise": "Yes! A one and three zeros."},
+    {"type": "match_sort", "prompt": "Which numbers have a zero in them? Sort the cards.", "groups": ["has_a_zero", "no_zero"], "items": [{"image": "numeral_709", "group": "has_a_zero"}, {"image": "numeral_990", "group": "has_a_zero"}, {"image": "numeral_580", "group": "has_a_zero"}, {"image": "numeral_462", "group": "no_zero"}, {"image": "numeral_347", "group": "no_zero"}, {"image": "numeral_856", "group": "no_zero"}]},
+    {"type": "listen_tap", "prompt": "Which name card matches 856?", "options": ["name_eight_hundred_and_fifty_six", "name_eight_hundred_and_sixty_five", "name_six_hundred_and_fifty_eight"], "answer": "name_eight_hundred_and_fifty_six", "praise": "Yes! Eight hundred and fifty six."}
+  ],
+  "hints": ["Say the hundreds, then and, then the tens and ones.", "A zero in the tens means no tens. Seven hundred and nine."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read 630.",
+    "tutor_try": "Six hundred and three!",
+    "image": "tutor_reads_630_wrong",
+    "answer": "no",
+    "win_line": "You caught me! 630 is six hundred and thirty. The three is in the tens place.",
+    "gentle_line": "Let's read it together. Six hundreds, three tens, no ones. Six hundred and thirty!"
+  },
+  "parent_line": "Can read and match number names and numerals up to 1000."
+}

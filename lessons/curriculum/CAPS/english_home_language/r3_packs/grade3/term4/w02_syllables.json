@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w02_syllables",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Syllables",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Breaks multi-syllabic words into syllables (re-mem-ber); spells correctly in tests, dictation and written work"
+  },
+  "skill": "phonics.syllables.clap",
+  "prereq_skills": [],
+  "images": ["banana_three_claps", "banana", "sun", "child_remembering", "table", "rabbit", "cat", "elephant", "dog", "card_but_ter_fly", "card_bu_tterf_ly", "card_butter_fl_y", "tutor_claps_twice"],
+  "show": {
+    "line": "Clap the beats in a word. Ba, na, na. Three claps, three syllables! Long words break into little parts.",
+    "image": "banana_three_claps"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Clap the beats. Ba, na, na. How many syllables in banana?", "image": "banana", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three! Ba, na, na."},
+    {"type": "count_tap", "prompt": "Clap the beats in sun. How many syllables?", "image": "sun", "count": "1", "options": ["1", "2", "3"], "answer": "1", "praise": "One! Sun is one beat."},
+    {"type": "count_tap", "prompt": "Clap the beats. Re, mem, ber. How many syllables in remember?", "image": "child_remembering", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three! Re, mem, ber."},
+    {"type": "say_it", "prompt": "Clap the beats in table. Ta, ble. How many? Say the number.", "accept": ["two", "2", "too"], "image": "table"},
+    {"type": "listen_tap", "prompt": "Which word has two syllables?", "options": ["rabbit", "cat", "elephant"], "answer": "rabbit", "praise": "Yes! Rab, bit."},
+    {"type": "match_sort", "prompt": "One, two or three syllables? Sort the pictures.", "groups": ["one_syllable", "two_syllables", "three_syllables"], "items": [{"image": "sun", "group": "one_syllable"}, {"image": "dog", "group": "one_syllable"}, {"image": "rabbit", "group": "two_syllables"}, {"image": "table", "group": "two_syllables"}, {"image": "banana", "group": "three_syllables"}, {"image": "elephant", "group": "three_syllables"}]},
+    {"type": "listen_tap", "prompt": "Which card breaks butterfly into syllables the right way?", "options": ["card_but_ter_fly", "card_bu_tterf_ly", "card_butter_fl_y"], "answer": "card_but_ter_fly", "praise": "Yes! But, ter, fly."}
+  ],
+  "hints": ["Put your hand under your chin. It drops once for each syllable.", "Say the word slowly and clap each beat."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will clap the beats in elephant.",
+    "tutor_try": "El, phant. Two claps!",
+    "image": "tutor_claps_twice",
+    "answer": "three",
+    "win_line": "You caught me! El, e, phant. Three claps.",
+    "gentle_line": "Let's clap it together. El, e, phant. Three syllables!"
+  },
+  "parent_line": "Can break a word into syllables by clapping the beats."
+}
