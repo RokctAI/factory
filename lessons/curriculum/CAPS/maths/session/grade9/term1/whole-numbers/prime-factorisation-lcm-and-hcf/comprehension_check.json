@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write 360 and 84 as products of prime factors in index form, then explain how to read the HCF and the LCM off those factorisations.",
+      "expected_answer": "360 = 2³ × 3² × 5 and 84 = 2² × 3 × 7. HCF: take only the primes common to both at their lower powers — 2² × 3 = 12. LCM: take every prime that appears in either number at its higher power — 2³ × 3² × 5 × 7 = 2 520. Check: 12 × 2 520 = 30 240 = 360 × 84."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how you decide whether a word problem wants the HCF or the LCM, giving one example of each.",
+      "expected_answer": "Splitting into the largest equal pieces or identical packs with nothing left over wants the HCF — e.g. the largest square tile for a 360 cm by 84 cm floor is 12 cm. Repeating events coinciding, or the smallest quantity both measures fit into, wants the LCM — e.g. taxis every 12 and 18 minutes leave together again after 36 minutes. Boundary check: an HCF cannot exceed the smaller number and an LCM cannot be below the larger."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why HCF × LCM always equals the product of the two numbers, and state how this can be used as a check.",
+      "expected_answer": "Every prime power in the two factorisations lands in exactly one of the two results: the lower power goes to the HCF and the higher power to the LCM, so together they hold every factor of both numbers exactly once. Hence HCF × LCM = product. Having found one of them, divide the product by it to get the other, or multiply both to confirm they match the product — 24 × 144 = 3 456 = 48 × 72."
+    }
+  ]
+}

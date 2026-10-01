@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why 0,333 recurring is rational but √2 is irrational, and show the method that converts 0,333... into a fraction.",
+      "expected_answer": "0,333... recurs, and any recurring decimal is a fraction: let x = 0,333..., then 10x = 3,333..., subtract to get 9x = 3, so x = 3/9 = 1/3. √2 = 1,41421356... never terminates and never settles into a repeating block, so no fraction of integers equals it — that is the definition of irrational."
+    },
+    {
+      "id": "cc2",
+      "question": "Classify −3, 0, 2/5 and √9, naming every set each belongs to, and explain why √9 must be simplified before it is classified.",
+      "expected_answer": "−3: integer, rational, real (not whole — whole numbers are never negative). 0: whole, integer, rational, real (not natural). 2/5: rational and real only. √9 = 3, so natural, whole, integer, rational, real. A root sign is a disguise: the number must be evaluated first, otherwise √9 is wrongly labelled irrational."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how to place √10 between two consecutive integers and then between two consecutive one-decimal values, without a calculator.",
+      "expected_answer": "Bracket 10 by perfect squares: 9 < 10 < 16, so 3 < √10 < 4. Refine by squaring decimals: 3,1² = 9,61 and 3,2² = 10,24, so 3,1 < √10 < 3,2, closer to 3,2 since 10 is nearer 10,24. The calculator value 3,162... confirms the bracket."
+    }
+  ]
+}
