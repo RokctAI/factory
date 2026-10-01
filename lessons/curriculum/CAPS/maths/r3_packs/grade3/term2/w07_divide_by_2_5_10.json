@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w07_divide_by_2_5_10",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Dividing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Context-free calculations",
+    "subtopic": "Divide numbers to 50 by 2, 3, 5, 4, 10 using ÷, □, = (weeks 3-4, 7-8)"
+  },
+  "skill": "divide.by_2_5_10.to_50",
+  "prereq_skills": ["divide.share_group.to_50", "multiply.by_3_4_10"],
+  "images": ["sweets_20_in_fives", "buns_12_two_plates", "numeral_3", "numeral_10", "numeral_20", "sweets_40_in_fives", "marbles_18_in_threes", "sum_24_div_4", "sum_24_div_6", "sum_24_div_2", "numeral_5", "numeral_40", "numeral_500", "numeral_4", "numeral_12", "tutor_five_jumps_short"],
+  "show": {
+    "line": "Twenty shared by five. How many fives make twenty? Five, ten, fifteen, twenty. Four! Twenty divided by five is four.",
+    "image": "sweets_20_in_fives"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Twelve buns shared between two plates. How many on each plate?", "image": "buns_12_two_plates", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six each! Twelve divided by two is six."},
+    {"type": "listen_tap", "prompt": "Thirty divided by ten. Tap the answer.", "options": ["numeral_3", "numeral_10", "numeral_20"], "answer": "numeral_3", "praise": "Yes! Three tens make thirty."},
+    {"type": "say_it", "prompt": "Forty divided by five. Count in fives. Say the answer.", "accept": ["eight", "8", "ate"], "image": "sweets_40_in_fives"},
+    {"type": "count_tap", "prompt": "Eighteen marbles. Put them in groups of three. How many groups?", "image": "marbles_18_in_threes", "count": "6", "options": ["3", "6", "9"], "answer": "6", "praise": "Six groups of three!"},
+    {"type": "listen_tap", "prompt": "Which sum matches? Twenty four shared by four is six.", "options": ["sum_24_div_4", "sum_24_div_6", "sum_24_div_2"], "answer": "sum_24_div_4", "praise": "Yes! Twenty four divided by four is six."},
+    {"type": "listen_tap", "prompt": "Fifty divided by ten. Tap the answer.", "options": ["numeral_5", "numeral_40", "numeral_500"], "answer": "numeral_5", "praise": "Yes! Five tens make fifty."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Mama has sixteen samoosas. Each plate gets four. How many plates does she fill?", "options": ["numeral_4", "numeral_12", "numeral_20"], "answer": "numeral_4", "praise": "Four plates! Four fours make sixteen."}
+  ],
+  "hints": ["Divide means share or group. How many groups fit?", "Think of the times table backwards. Four times five is twenty, so twenty divided by five is four."],
+  "beat_the_tutor": {
+    "setup": "My turn! Thirty divided by five.",
+    "tutor_try": "Five, ten, fifteen, twenty, twenty five. Thirty divided by five is five!",
+    "image": "tutor_five_jumps_short",
+    "answer": "six",
+    "win_line": "You caught me! Five jumps only reach twenty five. Six fives make thirty.",
+    "gentle_line": "Let's count the fives together. Five, ten, fifteen, twenty, twenty five, thirty. Six!"
+  },
+  "parent_line": "Can divide numbers to 50 by two, three, five and ten."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w02_ow_ou_aw_au",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "Same sound, different spelling",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises different spellings of the same sound: ow (cow) / ou (found); aw (draw) / au (autumn)"
+  },
+  "skill": "phonics.sound_spellings.ow_ou_aw_au",
+  "prereq_skills": ["phonics.sound_spellings.ay_ee_oa"],
+  "images": ["cow_cloud_draw_autumn", "cloud", "coat", "cup", "straw", "star", "stripe", "mouse", "word_house", "word_howse", "word_hous", "owl", "paw", "sauce", "word_sauce", "word_sock", "word_sun", "word_town", "word_toe", "word_tin", "tutor_points_coat"],
+  "show": {
+    "line": "Cow and found. Same sound, two spellings, ow and ou. Draw and autumn. Same sound, aw and au!",
+    "image": "cow_cloud_draw_autumn"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the same sound as cow?", "options": ["cloud", "coat", "cup"], "answer": "cloud", "praise": "Yes! Cow, cloud."},
+    {"type": "listen_tap", "prompt": "Which word has the same sound as draw?", "options": ["straw", "star", "stripe"], "answer": "straw", "praise": "Yes! Draw, straw."},
+    {"type": "say_it", "prompt": "This word sounds like cow and has ou in it. It is small and squeaks.", "accept": ["mouse", "a mouse", "mows"], "image": "mouse"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells house the right way.", "options": ["word_house", "word_howse", "word_hous"], "answer": "word_house", "praise": "Yes! House, with ou."},
+    {"type": "match_sort", "prompt": "ow as in cow, or aw as in draw? Sort the pictures by sound.", "groups": ["sound_ow", "sound_aw"], "items": [{"image": "cloud", "group": "sound_ow"}, {"image": "mouse", "group": "sound_ow"}, {"image": "owl", "group": "sound_ow"}, {"image": "straw", "group": "sound_aw"}, {"image": "paw", "group": "sound_aw"}, {"image": "sauce", "group": "sound_aw"}]},
+    {"type": "listen_tap", "prompt": "Which word has au, as in autumn?", "options": ["word_sauce", "word_sock", "word_sun"], "answer": "word_sauce", "praise": "Yes! Sauce."},
+    {"type": "listen_tap", "prompt": "Which word has ow, as in cow?", "options": ["word_town", "word_toe", "word_tin"], "answer": "word_town", "praise": "Yes! Town."}
+  ],
+  "hints": ["Say the word slowly. Does it sound like cow or like draw?", "ow and ou can sound the same. So can aw and au."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that sounds like cow.",
+    "tutor_try": "Coat! Cow, coat.",
+    "image": "tutor_points_coat",
+    "answer": "no",
+    "win_line": "You caught me! Coat has oa, like boat. Cloud sounds like cow.",
+    "gentle_line": "Let's listen together. Cow, cloud, owl. Same sound!"
+  },
+  "parent_line": "Can hear the ow and aw sounds and knows their two spellings."
+}

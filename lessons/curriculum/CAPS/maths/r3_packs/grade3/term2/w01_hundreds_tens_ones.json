@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w01_hundreds_tens_ones",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Place value",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Place value",
+    "subtopic": "Decompose numbers into multiples of hundreds, tens and ones up to 200 (weeks 1-2), 400 (weeks 5-6) and 500 (weeks 7-8)"
+  },
+  "skill": "place_value.htu.to_500",
+  "prereq_skills": ["place_value.tens_ones.to_99"],
+  "images": ["flard_347", "numeral_235", "numeral_253", "numeral_325", "blocks_four_hundreds", "card_100", "card_60", "card_2", "flard_489", "numeral_306", "numeral_360", "numeral_36", "card_400", "card_30", "card_7", "numeral_251", "numeral_521", "numeral_125", "tutor_reads_240_wrong"],
+  "show": {
+    "line": "Look at 347. Three hundreds, four tens and seven ones. Three hundred and forty seven!",
+    "image": "flard_347"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number that is two hundreds, three tens and five ones.", "options": ["numeral_235", "numeral_253", "numeral_325"], "answer": "numeral_235", "praise": "Yes! Two hundred and thirty five."},
+    {"type": "count_tap", "prompt": "Count the big hundred blocks. How many hundreds in four hundred?", "image": "blocks_four_hundreds", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four hundreds make four hundred!"},
+    {"type": "listen_tap", "prompt": "Which card shows the hundreds in 162?", "options": ["card_100", "card_60", "card_2"], "answer": "card_100", "praise": "Yes! The one in 162 is worth one hundred."},
+    {"type": "say_it", "prompt": "In 489, what is the eight worth? Say the number.", "accept": ["eighty", "80", "eighty ones"], "image": "flard_489"},
+    {"type": "listen_tap", "prompt": "Three hundred and six. Tap the number.", "options": ["numeral_306", "numeral_360", "numeral_36"], "answer": "numeral_306", "praise": "Yes! Three hundreds, no tens, six ones."},
+    {"type": "match_sort", "prompt": "Hundreds, tens or ones? Put each card in its group.", "groups": ["hundreds", "tens", "ones"], "items": [{"image": "card_100", "group": "hundreds"}, {"image": "card_400", "group": "hundreds"}, {"image": "card_60", "group": "tens"}, {"image": "card_30", "group": "tens"}, {"image": "card_2", "group": "ones"}, {"image": "card_7", "group": "ones"}]},
+    {"type": "listen_tap", "prompt": "Which number has a five in the tens place?", "options": ["numeral_251", "numeral_521", "numeral_125"], "answer": "numeral_251", "praise": "Yes! 251 has five tens."}
+  ],
+  "hints": ["Three digits. Hundreds, then tens, then ones.", "A zero in the middle means no tens, like 306."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read 240.",
+    "tutor_try": "Two hundreds and four ones. Two hundred and four!",
+    "image": "tutor_reads_240_wrong",
+    "answer": "no",
+    "win_line": "You caught me! The four is in the tens place. Two hundred and forty.",
+    "gentle_line": "Let's look together. Two hundreds, four tens, zero ones. Two hundred and forty!"
+  },
+  "parent_line": "Can break a three digit number into hundreds, tens and ones."
+}

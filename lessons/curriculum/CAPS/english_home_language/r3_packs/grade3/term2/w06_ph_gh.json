@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade3.term2.w06_ph_gh",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [6, 7],
+  "theme": "The f sound",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises digraphs making the 'f' sound ('ph' elephant, 'gh' laugh)"
+  },
+  "skill": "phonics.digraph.ph_gh_f",
+  "prereq_skills": ["phonics.digraph.sh_ch_th_wh"],
+  "images": ["fish_elephant_laugh", "phone", "fan", "van", "laugh", "lamp", "leaf", "elephant", "word_photo", "word_foto", "word_phoco", "word_fish", "word_fan", "word_phone", "word_elephant", "word_laugh", "word_cough", "dolphin", "dog", "duck", "tutor_spells_elefant"],
+  "show": {
+    "line": "Listen. f, as in fish. Elephant has that sound too, spelt ph. Laugh has it at the end, spelt gh!",
+    "image": "fish_elephant_laugh"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the f sound spelt ph?", "options": ["phone", "fan", "van"], "answer": "phone", "praise": "Yes! Phone starts with ph."},
+    {"type": "listen_tap", "prompt": "Which word ends with the f sound, spelt gh?", "options": ["laugh", "lamp", "leaf"], "answer": "laugh", "praise": "Yes! Laugh ends with gh."},
+    {"type": "say_it", "prompt": "This animal is big and grey. It starts with ph, which says f. Say it.", "accept": ["elephant", "an elephant", "elefant"], "image": "elephant"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells photo the right way.", "options": ["word_photo", "word_foto", "word_phoco"], "answer": "word_photo", "praise": "Yes! Photo, with ph."},
+    {"type": "match_sort", "prompt": "How is the f sound spelt? Sort the words.", "groups": ["spelt_f", "spelt_ph", "spelt_gh"], "items": [{"image": "word_fish", "group": "spelt_f"}, {"image": "word_fan", "group": "spelt_f"}, {"image": "word_phone", "group": "spelt_ph"}, {"image": "word_elephant", "group": "spelt_ph"}, {"image": "word_laugh", "group": "spelt_gh"}, {"image": "word_cough", "group": "spelt_gh"}]},
+    {"type": "listen_tap", "prompt": "Which word has the f sound? Dolphin, dog or duck?", "options": ["dolphin", "dog", "duck"], "answer": "dolphin", "praise": "Yes! Dolphin, with ph."}
+  ],
+  "hints": ["Say the word. Can you hear f? Then look at how it is spelt.", "ph and gh can both say f."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will spell the sound in elephant.",
+    "tutor_try": "Elephant is spelt with an f in the middle!",
+    "image": "tutor_spells_elefant",
+    "answer": "no",
+    "win_line": "You caught me! Elephant uses ph for the f sound.",
+    "gentle_line": "Let's look together. Ele, ph, ant. The ph says f!"
+  },
+  "parent_line": "Can hear the f sound and knows it can be spelt f, ph or gh."
+}

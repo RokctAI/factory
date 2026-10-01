@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w03_times_three_four",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Times tables",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Context-free calculations",
+    "subtopic": "Multiply numbers 1 to 10 by 2, 4, 5, 10, 3 and 5 to 50 using ×, □, = (weeks 3-4, 7-8)"
+  },
+  "skill": "multiply.by_3_4_10",
+  "prereq_skills": ["multiply.by_2_5"],
+  "images": ["tricycles_four", "dogs_three", "children_five_hands_up", "cars_six", "numeral_21", "numeral_24", "numeral_17", "sum_5_times_3", "sum_3_times_4", "sum_5_times_2", "tutor_seven_jumps"],
+  "show": {
+    "line": "Three wheels on each tricycle. Four tricycles. Three, six, nine, twelve. Four times three is twelve!",
+    "image": "tricycles_four"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Four legs on each dog. Three dogs. How many legs?", "image": "dogs_three", "count": "12", "options": ["9", "12", "16"], "answer": "12", "praise": "Twelve! Three times four is twelve."},
+    {"type": "what_next", "prompt": "Count in threes. Three, six, nine. What comes next?", "sequence": ["3", "6", "9"], "options": ["12", "10", "13"], "answer": "12", "praise": "Twelve! Three, six, nine, twelve."},
+    {"type": "count_tap", "prompt": "Ten fingers on each child. Five children. How many fingers?", "image": "children_five_hands_up", "count": "50", "options": ["40", "50", "55"], "answer": "50", "praise": "Fifty! Five times ten is fifty."},
+    {"type": "say_it", "prompt": "Six times four. Count in fours. Say the answer.", "accept": ["twenty four", "24", "twenty-four"], "image": "cars_six"},
+    {"type": "listen_tap", "prompt": "Seven times three. Tap the answer.", "options": ["numeral_21", "numeral_24", "numeral_17"], "answer": "numeral_21", "praise": "Yes! Seven threes are twenty one."},
+    {"type": "what_next", "prompt": "Count in fours. Twelve, sixteen, twenty. What comes next?", "sequence": ["12", "16", "20"], "options": ["24", "22", "28"], "answer": "24", "praise": "Twenty four!"},
+    {"type": "listen_tap", "prompt": "Which sum shows five groups of three?", "options": ["sum_5_times_3", "sum_3_times_4", "sum_5_times_2"], "answer": "sum_5_times_3", "praise": "Yes! Five times three is fifteen."}
+  ],
+  "hints": ["Times three means count in threes. Times four means count in fours.", "Times ten? Add a zero. Three times ten is thirty."],
+  "beat_the_tutor": {
+    "setup": "My turn! Eight times three.",
+    "tutor_try": "Three, six, nine, twelve, fifteen, eighteen, twenty one. Eight times three is twenty one!",
+    "image": "tutor_seven_jumps",
+    "answer": "twenty four",
+    "win_line": "You caught me! That was seven jumps. Eight jumps is twenty four.",
+    "gentle_line": "Let's count eight jumps of three. Three, six, nine, twelve, fifteen, eighteen, twenty one, twenty four!"
+  },
+  "parent_line": "Can multiply by three, four and ten using skip counting."
+}
