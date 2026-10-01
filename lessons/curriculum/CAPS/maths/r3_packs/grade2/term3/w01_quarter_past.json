@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term3.w01_quarter_past",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Quarter past and quarter to",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Measurement: Telling time",
+    "subtopic": "Tell 12-hour time in hours, half hours and quarter hours"
+  },
+  "skill": "time.read.quarter_hours",
+  "prereq_skills": ["time.read.half_past", "fraction.recognise.half_third_quarter"],
+  "images": ["clock_quarter_past_two", "clock_quarter_past_five", "clock_half_past_five", "clock_five_oclock", "clock_quarter_past_nine", "hand_points_three", "hand_points_six", "hand_points_nine", "clock_quarter_past_eleven", "word_quarter_past", "word_half_past", "clock_quarter_to_seven", "clock_quarter_past_seven", "clock_seven_oclock", "tutor_quarter_past_eight_wrong"],
+  "show": {
+    "line": "The long hand points to three. It has gone a quarter of the way round. Quarter past two!",
+    "image": "clock_quarter_past_two"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which clock shows quarter past five?", "options": ["clock_quarter_past_five", "clock_half_past_five", "clock_five_oclock"], "answer": "clock_quarter_past_five", "praise": "Yes! Long hand on three, short hand just past five."},
+    {"type": "say_it", "prompt": "Look at the clock. What time is it? Say the time.", "accept": ["quarter past nine", "quarter past 9", "a quarter past nine", "nine fifteen"], "image": "clock_quarter_past_nine"},
+    {"type": "listen_tap", "prompt": "Where does the long hand point at quarter past?", "options": ["hand_points_three", "hand_points_six", "hand_points_nine"], "answer": "hand_points_three", "praise": "Yes! The long hand points to three."},
+    {"type": "listen_tap", "prompt": "Is this clock half past or quarter past? Tap the words.", "image": "clock_quarter_past_eleven", "options": ["word_quarter_past", "word_half_past"], "answer": "word_quarter_past", "praise": "Quarter past! Quarter past eleven."},
+    {"type": "what_next", "prompt": "Four o'clock, quarter past four, half past four. What comes next?", "sequence": ["4 o'clock", "quarter past 4", "half past 4"], "options": ["quarter to 5", "5 o'clock", "quarter past 5"], "answer": "quarter to 5", "praise": "Quarter to five! Then five o'clock."},
+    {"type": "listen_tap", "prompt": "Which clock shows quarter to seven? The long hand points to nine.", "options": ["clock_quarter_to_seven", "clock_quarter_past_seven", "clock_seven_oclock"], "answer": "clock_quarter_to_seven", "praise": "Yes! Quarter to seven. Nearly seven o'clock."}
+  ],
+  "hints": ["Long hand on three means quarter past. Long hand on nine means quarter to.", "The short hand shows which hour it has just passed."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this clock.",
+    "tutor_try": "The long hand is on three. It is half past eight!",
+    "image": "tutor_quarter_past_eight_wrong",
+    "answer": "quarter past eight",
+    "win_line": "You caught me! Long hand on three is quarter past. Quarter past eight.",
+    "gentle_line": "Let's look together. Long hand on three, short hand past eight. Quarter past eight!"
+  },
+  "parent_line": "Can read quarter past and quarter to on a clock with hands."
+}

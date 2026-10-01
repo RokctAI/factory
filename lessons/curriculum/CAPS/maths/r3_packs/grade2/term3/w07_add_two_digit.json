@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term3.w07_add_two_digit",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Adding bigger numbers",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 75",
+    "subtopic": "Addition and subtraction to 50 (weeks 1-2), 60 (weeks 3-4), 70 (weeks 5-6) and 75 (weeks 7-10) using +, -, = and □"
+  },
+  "skill": "number.add_subtract.to_75",
+  "prereq_skills": ["number.add_subtract.tens", "number.bonds.to_20"],
+  "images": ["sticks_24_plus_13", "numeral_47", "numeral_37", "numeral_45", "sticks_46_plus_20", "sticks_50_plus_21", "numeral_23", "numeral_73", "numeral_33", "numeral_22", "numeral_50", "numeral_24", "numeral_5", "numeral_15", "numeral_10", "tutor_ones_slip"],
+  "show": {
+    "line": "Twenty-four plus thirteen. Break it up! Twenty plus ten is thirty. Four plus three is seven. Thirty-seven!",
+    "image": "sticks_24_plus_13"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Thirty-two plus fifteen. Add the tens, then the ones. What is the answer?", "options": ["numeral_47", "numeral_37", "numeral_45"], "answer": "numeral_47", "praise": "Forty-seven! Forty and seven."},
+    {"type": "count_tap", "prompt": "Four tens and six ones, plus two more tens. Count all the sticks.", "image": "sticks_46_plus_20", "count": "66", "options": ["48", "66", "60"], "answer": "66", "praise": "Sixty-six! Forty-six plus twenty."},
+    {"type": "say_it", "prompt": "Fifty plus twenty-one. Say the answer.", "accept": ["seventy-one", "seventy one", "71"], "image": "sticks_50_plus_21"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The shop had forty-eight loaves of bread. It sold twenty-five. How many loaves are left?", "options": ["numeral_23", "numeral_73", "numeral_33"], "answer": "numeral_23", "praise": "Twenty-three! Forty-eight take away twenty-five."},
+    {"type": "listen_tap", "prompt": "Thirty-six take away fourteen. What is the answer?", "options": ["numeral_22", "numeral_50", "numeral_24"], "answer": "numeral_22", "praise": "Twenty-two! Thirty-six, twenty-six, twenty-two."},
+    {"type": "listen_tap", "prompt": "Forty-five plus what equals fifty? Tap the missing number.", "options": ["numeral_5", "numeral_15", "numeral_10"], "answer": "numeral_5", "praise": "Five! Forty-five and five make fifty."}
+  ],
+  "hints": ["Break each number into tens and ones. Add the tens, then the ones.", "For take away, take the tens first, then the ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! Twenty-three plus twelve.",
+    "tutor_try": "Twenty plus ten is thirty. Three plus two is six. Thirty-six!",
+    "image": "tutor_ones_slip",
+    "answer": "thirty-five",
+    "win_line": "You caught me! Three plus two is five. The answer is thirty-five.",
+    "gentle_line": "Let's add the ones together. Three, four, five. Thirty-five!"
+  },
+  "parent_line": "Can add and take away two-digit numbers up to 75 by breaking them into tens and ones."
+}

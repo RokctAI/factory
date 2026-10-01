@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term3.w03_add_tens",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Adding tens",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 75)",
+    "subtopic": "Add or subtract multiples of 10 from 0-50"
+  },
+  "skill": "number.add_subtract.tens",
+  "prereq_skills": ["place_value.tens_ones.to_50", "count.skip.10_5_2"],
+  "images": ["sticks_23_plus_10", "numeral_24", "numeral_15", "numeral_40", "sticks_five_tens", "sticks_four_tens_one_crossed", "numeral_46", "numeral_28", "numeral_36", "numeral_25", "numeral_45", "numeral_34", "tutor_adds_one"],
+  "show": {
+    "line": "Adding ten is easy! Twenty-three plus ten. The tens go up by one. Thirty-three! The ones stay the same.",
+    "image": "sticks_23_plus_10"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Fourteen plus ten. What is the answer?", "options": ["numeral_24", "numeral_15", "numeral_40"], "answer": "numeral_24", "praise": "Twenty-four! Fourteen, twenty-four."},
+    {"type": "count_tap", "prompt": "Three bundles of ten. Add two more bundles. Count all the sticks in tens.", "image": "sticks_five_tens", "count": "50", "options": ["40", "50", "32"], "answer": "50", "praise": "Fifty! Thirty plus twenty is fifty."},
+    {"type": "say_it", "prompt": "Forty take away ten. Say the answer.", "accept": ["thirty", "30", "thirdy", "tirty"], "image": "sticks_four_tens_one_crossed"},
+    {"type": "listen_tap", "prompt": "Twenty-six plus twenty. What is the answer?", "options": ["numeral_46", "numeral_28", "numeral_36"], "answer": "numeral_46", "praise": "Forty-six! Twenty-six, thirty-six, forty-six."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Kabelo has thirty-five marbles. He loses ten of them. How many marbles does he have left?", "options": ["numeral_25", "numeral_45", "numeral_34"], "answer": "numeral_25", "praise": "Twenty-five! Thirty-five take away ten."},
+    {"type": "what_next", "prompt": "Keep adding ten. Twelve, twenty-two, thirty-two. What comes next?", "sequence": ["12", "22", "32"], "options": ["42", "33", "52"], "answer": "42", "praise": "Forty-two! The ones stay two."}
+  ],
+  "hints": ["Adding ten makes the tens digit one bigger. The ones stay the same.", "Count in tens from the number. Twenty-three, thirty-three."],
+  "beat_the_tutor": {
+    "setup": "My turn! Thirty-one plus ten.",
+    "tutor_try": "Thirty-one plus ten is thirty-two!",
+    "image": "tutor_adds_one",
+    "answer": "forty-one",
+    "win_line": "You caught me! I added one, not ten. Thirty-one plus ten is forty-one.",
+    "gentle_line": "Let's count in tens together. Thirty-one, forty-one. Forty-one!"
+  },
+  "parent_line": "Can add and take away tens from numbers up to 50."
+}

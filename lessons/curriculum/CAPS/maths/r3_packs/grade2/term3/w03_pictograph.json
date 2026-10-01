@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term3.w03_pictograph",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Picture graphs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Data handling: Collect, represent and interpret data",
+    "subtopic": "Collect and sort data; represent data in a pictograph; represent sorted data"
+  },
+  "skill": "data.pictograph.read",
+  "prereq_skills": ["count.to_60"],
+  "images": ["pictograph_fruit", "apple", "banana", "orange", "pictograph_pets", "red_ball", "blue_ball", "green_car", "yellow_car", "striped_ball"],
+  "show": {
+    "line": "A picture graph! Each picture stands for one child. Four children like apples. Two children like bananas. Apples win!",
+    "image": "pictograph_fruit"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Look at the graph. How many children like oranges? Count the pictures.", "image": "pictograph_fruit", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three children like oranges!"},
+    {"type": "listen_tap", "prompt": "Which fruit do the most children like?", "image": "pictograph_fruit", "options": ["apple", "banana", "orange"], "answer": "apple", "praise": "Apples! The apple row is the longest."},
+    {"type": "listen_tap", "prompt": "Which fruit do the fewest children like?", "image": "pictograph_fruit", "options": ["banana", "apple", "orange"], "answer": "banana", "praise": "Bananas! Only two pictures."},
+    {"type": "say_it", "prompt": "This graph shows pets. How many children have a dog? Say the number.", "accept": ["five", "5", "fife", "faiv"], "image": "pictograph_pets"},
+    {"type": "count_tap", "prompt": "Count the cats and the fish together on the pets graph. How many?", "image": "pictograph_pets", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six! Four cats and two fish."},
+    {"type": "match_sort", "prompt": "Sort the toys before we make a graph. Balls or cars?", "groups": ["balls", "cars"], "items": [{"image": "red_ball", "group": "balls"}, {"image": "blue_ball", "group": "balls"}, {"image": "green_car", "group": "cars"}, {"image": "yellow_car", "group": "cars"}, {"image": "striped_ball", "group": "balls"}]}
+  ],
+  "hints": ["Each picture is one. Count the pictures in the row.", "The longest row has the most."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read the fruit graph.",
+    "tutor_try": "Three children like apples!",
+    "image": "pictograph_fruit",
+    "answer": "four",
+    "win_line": "You caught me! One, two, three, four. Four children like apples.",
+    "gentle_line": "Let's count the apple pictures together. One, two, three, four!"
+  },
+  "parent_line": "Can read a simple picture graph and say which has the most and the fewest."
+}

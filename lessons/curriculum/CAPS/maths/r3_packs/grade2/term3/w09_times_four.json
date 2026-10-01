@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term3.w09_times_four",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Groups of four",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 75",
+    "subtopic": "Multiply numbers 1 to 10 by 2 and 5 (weeks 1-2, 7-8), 2 and 4 (weeks 3-4), 2, 5 and 4 (weeks 5-6), 4 and 5 (weeks 9-10) using ×, □ and ="
+  },
+  "skill": "number.multiply.by_4",
+  "prereq_skills": ["number.multiply.by_2_5", "pattern.number.extend"],
+  "images": ["cars_three", "dogs_two", "chairs_five", "dots_four_groups_of_four", "numeral_24", "numeral_20", "numeral_10", "numeral_28", "numeral_11", "numeral_8", "numeral_6", "numeral_16", "groups_two_of_four", "groups_four_of_two", "groups_two_of_five", "tutor_fours_slip"],
+  "show": {
+    "line": "Three cars. Each car has four wheels. Four, eight, twelve. Three times four equals twelve!",
+    "image": "cars_three"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Two dogs. Four legs each. Count the legs in fours. How many legs?", "image": "dogs_two", "count": "8", "options": ["6", "8", "4"], "answer": "8", "praise": "Eight legs! Two times four is eight."},
+    {"type": "count_tap", "prompt": "Five chairs. Four legs on each chair. Count in fours. How many legs?", "image": "chairs_five", "count": "20", "options": ["16", "20", "24"], "answer": "20", "praise": "Twenty! Five times four is twenty."},
+    {"type": "say_it", "prompt": "Four times four. Four groups of four. Say the answer.", "accept": ["sixteen", "16", "six teen"], "image": "dots_four_groups_of_four"},
+    {"type": "listen_tap", "prompt": "Six times four. What is the answer?", "options": ["numeral_24", "numeral_20", "numeral_10"], "answer": "numeral_24", "praise": "Twenty-four! Four, eight, twelve, sixteen, twenty, twenty-four."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Each table has four children. There are seven tables. How many children are there?", "options": ["numeral_28", "numeral_11", "numeral_24"], "answer": "numeral_28", "praise": "Twenty-eight! Seven times four."},
+    {"type": "listen_tap", "prompt": "Double two is four. Double again! What is four times two?", "options": ["numeral_8", "numeral_6", "numeral_16"], "answer": "numeral_8", "praise": "Eight! Times four is double, then double again."},
+    {"type": "listen_tap", "prompt": "Which picture shows two times four?", "options": ["groups_two_of_four", "groups_four_of_two", "groups_two_of_five"], "answer": "groups_two_of_four", "praise": "Yes! Two groups with four in each."}
+  ],
+  "hints": ["Count in fours, once for each group. Four, eight, twelve.", "Times four is double, then double again."],
+  "beat_the_tutor": {
+    "setup": "My turn! Three times four.",
+    "tutor_try": "Four, eight, ten. Three times four is ten!",
+    "image": "tutor_fours_slip",
+    "answer": "twelve",
+    "win_line": "You caught me! Four, eight, twelve. Three times four is twelve.",
+    "gentle_line": "Let's count in fours together. Four, eight, twelve!"
+  },
+  "parent_line": "Can work out groups of four up to 10 groups."
+}
