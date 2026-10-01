@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term3.w03_bonds_of_eight",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 15",
+    "subtopic": "Practise number bonds up to 7 (weeks 1-2), 8 (weeks 3-4) and 9 (weeks 5-10)"
+  },
+  "skill": "number.bonds.to_8",
+  "prereq_skills": ["number.add_subtract.to_10"],
+  "images": ["ladybird_eight_spots", "counters_six_two", "numeral_3", "numeral_4", "numeral_5", "ladybird_seven_spots", "numeral_2", "card_two_plus_six", "card_three_plus_three", "card_four_plus_five", "card_five_plus_three", "card_four_plus_four", "tutor_bond_eight_wrong"],
+  "show": {
+    "line": "Eight spots on a ladybird! Five on one side, three on the other. Five and three make eight.",
+    "image": "ladybird_eight_spots"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Six red counters and two blue. How many altogether?", "image": "counters_six_two", "count": "8", "options": ["7", "8", "9"], "answer": "8", "praise": "Eight! Six and two."},
+    {"type": "listen_tap", "prompt": "Four plus the box equals eight. What goes in the box?", "options": ["numeral_3", "numeral_4", "numeral_5"], "answer": "numeral_4", "praise": "Four and four make eight. A double!"},
+    {"type": "say_it", "prompt": "Seven and how many more make eight? Say the number.", "accept": ["one", "1", "wan"], "image": "ladybird_seven_spots"},
+    {"type": "listen_tap", "prompt": "Eight minus five. Tap the answer.", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Three! Five and three make eight."},
+    {"type": "listen_tap", "prompt": "Which pair makes eight?", "options": ["card_two_plus_six", "card_three_plus_three", "card_four_plus_five"], "answer": "card_two_plus_six", "praise": "Two and six make eight."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Eight ladybirds on a leaf. Some fly away. Now there are five. How many flew away?", "options": ["numeral_2", "numeral_3", "numeral_5"], "answer": "numeral_3", "praise": "Three flew away! Five and three make eight."},
+    {"type": "match_sort", "prompt": "Does it make eight? Sort the sums.", "groups": ["makes_eight", "not_eight"], "items": [{"image": "card_two_plus_six", "group": "makes_eight"}, {"image": "card_five_plus_three", "group": "makes_eight"}, {"image": "card_four_plus_four", "group": "makes_eight"}, {"image": "card_three_plus_three", "group": "not_eight"}, {"image": "card_four_plus_five", "group": "not_eight"}]}
+  ],
+  "hints": ["Eight fingers up. How many on each hand?", "Count on from the bigger number to eight."],
+  "beat_the_tutor": {
+    "setup": "My turn! Five plus the box equals eight.",
+    "tutor_try": "Five plus two equals eight!",
+    "image": "tutor_bond_eight_wrong",
+    "answer": "three",
+    "win_line": "You caught me! Five plus three equals eight.",
+    "gentle_line": "Let's count on from five. Six, seven, eight. Three more!"
+  },
+  "parent_line": "Knows the pairs of numbers that make 8."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term3.w08_get_well_card",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [8, 9],
+  "theme": "Writing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Writes a message on a card (e.g. get well card)"
+  },
+  "skill": "writing.card_message",
+  "prereq_skills": ["writing.capital_full_stop"],
+  "images": ["get_well_card", "card_get_well", "card_happy_birthday", "card_thank_you", "line_dear_gogo", "line_love_sam", "line_get_well", "tutor_wrong_card"],
+  "show": {
+    "line": "Gogo is sick. Let's make a card! Dear Gogo. Get well soon. Love, Sam.",
+    "image": "get_well_card"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which card is for someone who is sick?", "options": ["card_get_well", "card_happy_birthday", "card_thank_you"], "answer": "card_get_well", "praise": "Get well soon!"},
+    {"type": "read_to_me", "prompt": "Read the message to me.", "text": "Get well soon.", "accept": ["get well soon", "get well soon.", "get well"]},
+    {"type": "listen_tap", "prompt": "A card starts with Dear and a name. Which line goes first?", "options": ["line_dear_gogo", "line_love_sam", "line_get_well"], "answer": "line_dear_gogo", "praise": "Dear Gogo comes first."},
+    {"type": "listen_tap", "prompt": "Who is the card from? Tap the name at the end.", "options": ["line_love_sam", "line_dear_gogo"], "answer": "line_love_sam", "praise": "Love, Sam. Sam wrote it."},
+    {"type": "read_to_me", "prompt": "Read this card to me.", "text": "Dear Mom. I love you.", "accept": ["dear mom i love you", "dear mom. i love you.", "dear mum i love you"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "It is Lebo's birthday. Zama makes him a card. Which card does she make?", "options": ["card_happy_birthday", "card_get_well", "card_thank_you"], "answer": "card_happy_birthday", "praise": "Happy birthday, Lebo!"}
+  ],
+  "hints": ["Dear and the name first. Your name last.", "Think who the card is for. What do you want to say?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write a card for Gogo.",
+    "tutor_try": "Dear Gogo. Happy birthday! But Gogo is sick.",
+    "image": "tutor_wrong_card",
+    "answer": "no",
+    "win_line": "You caught me! Gogo is sick. The card should say get well soon.",
+    "gentle_line": "Let's fix it together. Dear Gogo. Get well soon!"
+  },
+  "parent_line": "Can read and put together a short card message."
+}

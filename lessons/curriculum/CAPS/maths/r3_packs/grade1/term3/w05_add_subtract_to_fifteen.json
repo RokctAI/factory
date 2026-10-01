@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term3.w05_add_subtract_to_fifteen",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 15",
+    "subtopic": "Addition and subtraction up to 10 (weeks 1-4) and up to 15 (weeks 5-10) using +, -, =, □"
+  },
+  "skill": "number.add_subtract.to_15",
+  "prereq_skills": ["number.add_subtract.to_10", "number.place_value.to_15"],
+  "images": ["number_line_fifteen", "numeral_14", "numeral_15", "numeral_5", "birds_nine_plus_three", "counters_twelve_take_two", "numeral_13", "numeral_10", "numeral_12", "numeral_7", "numeral_2", "numeral_3", "numeral_4", "tutor_ten_plus_four_wrong"],
+  "show": {
+    "line": "Bigger sums! Ten plus three equals thirteen. Fourteen minus four equals ten. Use the ten to help you.",
+    "image": "number_line_fifteen"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Ten plus five. Tap the answer.", "options": ["numeral_14", "numeral_15", "numeral_5"], "answer": "numeral_15", "praise": "Ten plus five equals fifteen."},
+    {"type": "count_tap", "prompt": "Nine birds and three more land. How many birds now?", "image": "birds_nine_plus_three", "count": "12", "options": ["11", "12", "13"], "answer": "12", "praise": "Twelve! Nine, ten, eleven, twelve."},
+    {"type": "say_it", "prompt": "Twelve minus two. Say the answer.", "accept": ["ten", "10", "tin"], "image": "counters_twelve_take_two"},
+    {"type": "listen_tap", "prompt": "Eight plus six. Tap the answer.", "options": ["numeral_13", "numeral_14", "numeral_15"], "answer": "numeral_14", "praise": "Fourteen!"},
+    {"type": "listen_tap", "prompt": "Fifteen minus five. Tap the answer.", "options": ["numeral_5", "numeral_10", "numeral_12"], "answer": "numeral_10", "praise": "Ten! Fifteen minus five."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lebo has eleven marbles. He wins four more. How many marbles now?", "options": ["numeral_14", "numeral_15", "numeral_7"], "answer": "numeral_15", "praise": "Fifteen! Eleven plus four."},
+    {"type": "listen_tap", "prompt": "Thirteen minus the box equals ten. What goes in the box?", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Three! Thirteen minus three is ten."}
+  ],
+  "hints": ["Start at the bigger number and count on.", "Make ten first, then add the rest."],
+  "beat_the_tutor": {
+    "setup": "My turn! Ten plus four.",
+    "tutor_try": "Ten plus four equals forty!",
+    "image": "tutor_ten_plus_four_wrong",
+    "answer": "fourteen",
+    "win_line": "You caught me! Ten and four is fourteen, not forty.",
+    "gentle_line": "Let's count on from ten. Eleven, twelve, thirteen, fourteen!"
+  },
+  "parent_line": "Can add and subtract with numbers up to 15."
+}

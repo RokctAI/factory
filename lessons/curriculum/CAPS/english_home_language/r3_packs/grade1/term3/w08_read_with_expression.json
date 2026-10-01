@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term3.w08_read_with_expression",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [8, 9],
+  "theme": "Reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Reading",
+    "subtopic": "Group guided: reads with increasing fluency and expression; monitors self"
+  },
+  "skill": "reading.fluency.set2",
+  "prereq_skills": ["reading.sentence.cvc_set1", "phonics.digraph.ch_th"],
+  "images": ["frog_on_log_reading", "ship_big", "chip_bag", "shop_small", "word_chops", "word_dog", "word_grass", "crab", "frog", "ship", "tutor_reads_robot"],
+  "show": {
+    "line": "Read like you talk! The frog can hop. Smooth, not one word at a time. Let's read!",
+    "image": "frog_on_log_reading"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this sentence to me. Make it smooth.", "text": "The frog sat on a log.", "accept": ["the frog sat on a log", "the frog sat on a log.", "frog sat on a log", "the frog sat on the log"]},
+    {"type": "listen_tap", "prompt": "Which picture matches? The ship is big.", "options": ["ship_big", "chip_bag", "shop_small"], "answer": "ship_big", "praise": "The ship is big!"},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "She has a red dress.", "accept": ["she has a red dress", "she has a red dress.", "she has red dress"]},
+    {"type": "listen_tap", "prompt": "Does this make sense? The dog chops the grass. Tap the word that is wrong.", "options": ["word_chops", "word_dog", "word_grass"], "answer": "word_chops", "praise": "Yes! A dog does not chop. Check it makes sense."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "Chin up, said the thin man.", "accept": ["chin up said the thin man", "chin up said the thin man.", "chin up the thin man said"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thandi sees a crab on the sand. It is red. She claps. What did Thandi see?", "options": ["crab", "frog", "ship"], "answer": "crab", "praise": "A red crab!"}
+  ],
+  "hints": ["Read it once slowly. Then again, smoothly.", "Stop and check. Does it make sense?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this sentence.",
+    "tutor_try": "The. Frog. Sat. On. The. Log.",
+    "image": "tutor_reads_robot",
+    "answer": "no",
+    "win_line": "You caught me! I read like a robot. The frog sat on a log.",
+    "gentle_line": "Let's read it together, smoothly. The frog sat on a log!"
+  },
+  "parent_line": "Can read short sentences smoothly and check that they make sense."
+}

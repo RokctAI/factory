@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w07_full_empty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Measuring",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Measurement: Capacity and volume",
+    "subtopic": "Language: more than, less than, full, empty; use non-standard measures (spoons, cups)"
+  },
+  "skill": "measure.capacity.full_empty",
+  "prereq_skills": ["measure.length.long_short"],
+  "images": ["glasses_full_half_empty", "bottle_full", "bottle_empty", "jug_full", "jug_quarter", "bucket_empty", "jug_six_cups", "bucket_full", "cup_full", "glass_full", "glass_half", "glass_empty", "tutor_points_full_bottle"],
+  "show": {
+    "line": "This glass is full. That glass is empty. This one is half full. How much is inside?",
+    "image": "glasses_full_half_empty"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which bottle is full?", "options": ["bottle_full", "bottle_empty"], "answer": "bottle_full", "praise": "Full to the top!"},
+    {"type": "listen_tap", "prompt": "Which jug has less juice?", "options": ["jug_full", "jug_quarter"], "answer": "jug_quarter", "praise": "That jug has less."},
+    {"type": "say_it", "prompt": "Is this bucket full or empty? Say it.", "accept": ["empty", "emty", "nothing", "empty bucket"], "image": "bucket_empty"},
+    {"type": "count_tap", "prompt": "It takes cups to fill the jug. Count the cups. How many?", "image": "jug_six_cups", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six cups fill the jug!"},
+    {"type": "listen_tap", "prompt": "Which holds more, the bucket or the cup?", "options": ["bucket_full", "cup_full"], "answer": "bucket_full", "praise": "The bucket holds more."},
+    {"type": "listen_tap", "prompt": "Which glass is half full?", "options": ["glass_full", "glass_half", "glass_empty"], "answer": "glass_half", "praise": "Half full!"}
+  ],
+  "hints": ["Full means right to the top. Empty means nothing inside.", "Bigger containers hold more."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the empty one.",
+    "tutor_try": "This full bottle is empty!",
+    "image": "tutor_points_full_bottle",
+    "answer": "no",
+    "win_line": "You caught me! That bottle is full. Empty has nothing inside.",
+    "gentle_line": "Let's look together. Nothing inside. That one is empty!"
+  },
+  "parent_line": "Can say full, empty, more and less about containers."
+}

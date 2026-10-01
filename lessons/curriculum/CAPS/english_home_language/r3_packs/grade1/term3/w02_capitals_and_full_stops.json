@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term3.w02_capitals_and_full_stops",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [2, 3],
+  "theme": "Writing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Begins to use capital letters and full stops, including capitals for names"
+  },
+  "skill": "writing.capital_full_stop",
+  "prereq_skills": ["writing.sentence.cvc_words"],
+  "images": ["sentence_capital_full_stop", "strip_capital_the_dog_ran", "strip_lower_the_dog_ran", "strip_with_full_stop", "strip_no_full_stop", "full_stop_big", "name_capital_zama", "name_lower_zama", "word_name_lebo", "word_dog", "word_van", "tutor_no_capital"],
+  "show": {
+    "line": "A sentence starts with a capital letter and ends with a full stop. Names get capitals too. Sam!",
+    "image": "sentence_capital_full_stop"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which sentence starts with a capital letter?", "options": ["strip_capital_the_dog_ran", "strip_lower_the_dog_ran"], "answer": "strip_capital_the_dog_ran", "praise": "Big letter at the start!"},
+    {"type": "listen_tap", "prompt": "Which sentence has a full stop at the end?", "options": ["strip_with_full_stop", "strip_no_full_stop"], "answer": "strip_with_full_stop", "praise": "The full stop says the sentence is done."},
+    {"type": "say_it", "prompt": "What goes at the end of a sentence? Say it.", "accept": ["full stop", "a full stop", "fullstop", "stop", "dot"], "image": "full_stop_big"},
+    {"type": "listen_tap", "prompt": "Names start with a capital. Which name is written right?", "options": ["name_capital_zama", "name_lower_zama"], "answer": "name_capital_zama", "praise": "Zama with a big Z!"},
+    {"type": "read_to_me", "prompt": "Read this sentence to me. Stop at the full stop.", "text": "Sam has a red van.", "accept": ["sam has a red van", "sam has a red van.", "sam has red van"]},
+    {"type": "listen_tap", "prompt": "Which word needs a capital letter?", "options": ["word_name_lebo", "word_dog", "word_van"], "answer": "word_name_lebo", "praise": "Lebo is a name. Capital letter!"}
+  ],
+  "hints": ["Capital letters are the big ones. They start a sentence.", "A full stop is a little dot at the end."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write a sentence.",
+    "tutor_try": "the cat sat. Perfect!",
+    "image": "tutor_no_capital",
+    "answer": "no",
+    "win_line": "You caught me! The first letter must be a capital. The cat sat.",
+    "gentle_line": "Let's fix it. Make the first letter big. The cat sat!"
+  },
+  "parent_line": "Knows a sentence starts with a capital letter and ends with a full stop."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w01_count_on_from_any",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Counting to 50",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Counting",
+    "subtopic": "Count forwards and backwards in 1s from any number between 1 and 50 (weeks 1-2), 60 (weeks 3-4), 70 (weeks 5-6) and 80 (weeks 7-10)"
+  },
+  "skill": "number.count.from_any_to_50",
+  "prereq_skills": ["number.read_symbols.to_50"],
+  "images": ["number_line_fifty", "numeral_28", "numeral_30", "numeral_39", "numeral_49", "numeral_51", "numeral_40", "tutor_thirty_ten"],
+  "show": {
+    "line": "Start anywhere and count on! Twenty seven, twenty eight, twenty nine, thirty. Now backwards. Thirty, twenty nine.",
+    "image": "number_line_fifty"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count on. Thirty three, thirty four, thirty five, and then?", "sequence": ["33", "34", "35"], "options": ["36", "37", "30"], "answer": "36", "praise": "Thirty six!"},
+    {"type": "say_it", "prompt": "Start at eighteen and count on. Eighteen, nineteen, and then?", "accept": ["twenty", "20", "twenty twenty one", "twenny"]},
+    {"type": "what_next", "prompt": "Count backwards. Forty two, forty one, forty, and then?", "sequence": ["42", "41", "40"], "options": ["39", "43", "30"], "answer": "39", "praise": "Thirty nine! Back past forty."},
+    {"type": "listen_tap", "prompt": "Which number comes just after twenty nine?", "options": ["numeral_28", "numeral_30", "numeral_39"], "answer": "numeral_30", "praise": "Thirty!"},
+    {"type": "listen_tap", "prompt": "Which number comes just before fifty?", "options": ["numeral_49", "numeral_51", "numeral_40"], "answer": "numeral_49", "praise": "Forty nine comes before fifty."},
+    {"type": "say_it", "prompt": "Count back from twenty three. Twenty three, twenty two, and then?", "accept": ["twenty one", "21", "twenty one twenty", "twenny one"]}
+  ],
+  "hints": ["Say the tens, then the ones. Thirty, then six.", "After nine ones comes a new ten. Twenty nine, thirty."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count on from thirty eight.",
+    "tutor_try": "Thirty eight, thirty nine, thirty ten!",
+    "image": "tutor_thirty_ten",
+    "answer": "forty",
+    "win_line": "You caught me! After thirty nine comes forty.",
+    "gentle_line": "Let's count together. Thirty eight, thirty nine, forty!"
+  },
+  "parent_line": "Can count forwards and backwards from any number up to 50."
+}

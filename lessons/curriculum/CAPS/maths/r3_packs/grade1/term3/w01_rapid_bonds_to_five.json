@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term3.w01_rapid_bonds_to_five",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 15)",
+    "subtopic": "Rapid recall of number bonds; practise addition and subtraction facts to 5"
+  },
+  "skill": "number.bonds.rapid_to_5",
+  "prereq_skills": ["number.bonds.to_5"],
+  "images": ["flash_cards_bonds", "numeral_4", "numeral_5", "numeral_3", "numeral_2", "numeral_1", "numeral_7", "card_two_plus_three", "card_four_plus_one", "card_two_plus_two", "card_five_minus_one", "tutor_quick_sum_wrong"],
+  "show": {
+    "line": "Quick sums! Two plus three? Five! Five minus one? Four! Know them fast, no counting.",
+    "image": "flash_cards_bonds"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Quick! Four plus one.", "options": ["numeral_4", "numeral_5", "numeral_3"], "answer": "numeral_5", "praise": "Five!"},
+    {"type": "say_it", "prompt": "Quick! Three plus two. Say the answer.", "accept": ["five", "5", "fife", "faiv"]},
+    {"type": "listen_tap", "prompt": "Quick! Five minus two.", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Three!"},
+    {"type": "say_it", "prompt": "Quick! One plus one. Say the answer.", "accept": ["two", "2", "too", "tu"]},
+    {"type": "listen_tap", "prompt": "Quick! Four minus three.", "options": ["numeral_1", "numeral_2", "numeral_7"], "answer": "numeral_1", "praise": "One!"},
+    {"type": "listen_tap", "prompt": "Quick! Two plus two.", "options": ["numeral_3", "numeral_4", "numeral_5"], "answer": "numeral_4", "praise": "Four! A double."},
+    {"type": "match_sort", "prompt": "Does the answer make five or four? Sort the sums.", "groups": ["five", "four"], "items": [{"image": "card_two_plus_three", "group": "five"}, {"image": "card_four_plus_one", "group": "five"}, {"image": "card_two_plus_two", "group": "four"}, {"image": "card_five_minus_one", "group": "four"}]}
+  ],
+  "hints": ["Picture your fingers. You know this one!", "Think of the bond. Two and three make five."],
+  "beat_the_tutor": {
+    "setup": "My turn! Quick! Five minus three.",
+    "tutor_try": "Five minus three equals three!",
+    "image": "tutor_quick_sum_wrong",
+    "answer": "two",
+    "win_line": "You caught me! Five minus three equals two.",
+    "gentle_line": "Let's check with fingers. Five, fold three down. Two left!"
+  },
+  "parent_line": "Knows the adding and taking away facts to 5 quickly."
+}
