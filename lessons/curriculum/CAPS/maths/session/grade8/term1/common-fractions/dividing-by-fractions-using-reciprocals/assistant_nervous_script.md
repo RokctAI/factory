@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Dividing by fractions today. Flip and multiply — I learnt the words in primary school and used them for years without having the faintest idea why they worked, and I always flipped the wrong one under pressure. So today I am going to learn the reason, which turns out to be about making a denominator equal to one.
+
+Our expert tutor starts from what division means — how many of this fit into that — then proves the flip using reciprocals, and runs through mixed numbers, whole numbers and mixed operations in the five-line examination layout. The anchors are six divided by a half, which is twelve, and three quarters divided by two thirds, which is nine eighths. Our simplifier tutor pours juice into cups, shares chocolate and cuts ribbon, and ends with three questions to ask before every division so the size of the answer can never surprise you.
+
+My own rule for the session: say the sentence, predict bigger or smaller, convert everything to single fractions, then keep, change, flip. Questions follow each section; I will be pouring juice right beside you.

@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Fractions today — adding, subtracting and multiplying, with mixed numbers and fractions of whole numbers. I will admit that for years I added the bottoms as well as the tops, and nobody could convince me it was wrong until someone put two pizzas in front of me with different slice sizes. So that picture is the one I am carrying into this session.
+
+Our expert tutor rebuilds everything from equivalent fractions: the common denominator for adding and subtracting, two methods for mixed numbers, straight-across multiplication with cancelling, and the divide-by-the-bottom-first trick for a fraction of an amount. The anchors are two thirds plus three quarters, which is one and five twelfths, and one and a half times two and two thirds, which is exactly four. Our simplifier tutor serves the same maths as pizza slices, a chocolate slab cut into a grid, a scaled-up recipe and a shared taxi fare.
+
+My rule for the session: same-size slices before I add, convert mixed numbers before I multiply, and simplify at the end. Questions follow each section, and I will be cutting pizzas right alongside you.
