@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w06_alphabetical_order",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [6, 7],
+  "theme": "Alphabet order",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Sorts letters and words into alphabetical order"
+  },
+  "skill": "spelling.alphabetical_order",
+  "prereq_skills": [],
+  "images": ["dictionary_open", "word_cat", "word_dog", "word_bee", "word_goat", "word_fish", "word_elephant", "letter_c", "letter_h", "letter_k", "letter_p", "letter_t", "letter_x", "word_apple", "word_mango", "word_zebra", "tutor_order_wrong"],
+  "show": {
+    "line": "The alphabet has an order. Words in a dictionary follow it. Apple comes before banana, because 'a' comes before 'b'!",
+    "image": "dictionary_open"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Which letter comes next in the alphabet?", "sequence": ["j", "k", "l"], "options": ["m", "n", "o"], "answer": "m", "praise": "Yes! Then comes 'm'."},
+    {"type": "what_next", "prompt": "Which letter comes next?", "sequence": ["r", "s", "t"], "options": ["u", "w", "q"], "answer": "u", "praise": "Yes! 'u' comes after 't'."},
+    {"type": "listen_tap", "prompt": "Which word comes first in alphabetical order?", "options": ["word_cat", "word_dog", "word_bee"], "answer": "word_bee", "praise": "Yes! Bee starts with 'b', which comes first."},
+    {"type": "listen_tap", "prompt": "Fish, goat, elephant. Which word comes last in alphabetical order?", "options": ["word_goat", "word_fish", "word_elephant"], "answer": "word_goat", "praise": "Yes! 'g' comes after 'e' and 'f'."},
+    {"type": "say_it", "prompt": "Which letter comes right after 'p'? Say its name.", "accept": ["q", "queue", "cue"]},
+    {"type": "match_sort", "prompt": "Which half of the alphabet? Put each letter card in its group.", "groups": ["a_to_m", "n_to_z"], "items": [{"image": "letter_c", "group": "a_to_m"}, {"image": "letter_h", "group": "a_to_m"}, {"image": "letter_k", "group": "a_to_m"}, {"image": "letter_p", "group": "n_to_z"}, {"image": "letter_t", "group": "n_to_z"}, {"image": "letter_x", "group": "n_to_z"}]},
+    {"type": "listen_tap", "prompt": "Mango, apple, zebra. Which word comes first?", "options": ["word_apple", "word_mango", "word_zebra"], "answer": "word_apple", "praise": "Yes! Apple. 'a' is first in the alphabet."}
+  ],
+  "hints": ["Sing the alphabet song. Stop at the letter you need.", "Look at the first letter of each word. Which comes first in the alphabet?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will put dog, cat and bird in order.",
+    "tutor_try": "Dog, cat, bird!",
+    "image": "tutor_order_wrong",
+    "answer": "bird",
+    "win_line": "You caught me! 'b' comes first. Bird, cat, dog.",
+    "gentle_line": "Let's sing it together. 'a', 'b', 'c', 'd'. Bird, cat, dog!"
+  },
+  "parent_line": "Can put letters and words in alphabetical order."
+}

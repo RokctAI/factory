@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w04_same_sound_spellings",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [4, 5],
+  "theme": "Same sound, different spelling",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises different spellings of the same sound (play, pain, plate; feet, read, key; boat, blow, note; tiger, like, sigh, fly)"
+  },
+  "skill": "phonics.sound_spellings.ay_ee_oa",
+  "prereq_skills": ["phonics.vowel_digraph.oo_ee_ai_oa"],
+  "images": ["play_pain_plate", "cake", "bed", "boot", "key", "cow", "hat", "snow", "sun", "ship", "fly_and_flat", "word_rain", "word_plate", "word_tree", "word_read", "word_blow", "word_note", "word_bed", "word_boat", "word_night", "word_leaf", "word_coat", "tutor_points_plum"],
+  "show": {
+    "line": "Play, pain, plate. Same sound in the middle, three different spellings. Let's listen for the sound, not the letters!",
+    "image": "play_pain_plate"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the same middle sound as play?", "options": ["cake", "bed", "boot"], "answer": "cake", "praise": "Yes! Play, cake. Same sound."},
+    {"type": "listen_tap", "prompt": "Which word has the same sound as feet?", "options": ["key", "cow", "hat"], "answer": "key", "praise": "Yes! Feet, key. Same ee sound."},
+    {"type": "listen_tap", "prompt": "Which word has the same sound as boat?", "options": ["snow", "sun", "ship"], "answer": "snow", "praise": "Yes! Boat, snow."},
+    {"type": "say_it", "prompt": "Tiger, like, sigh. Which of these rhymes with sigh? Fly or flat? Say it.", "accept": ["fly", "a fly", "flai"], "image": "fly_and_flat"},
+    {"type": "match_sort", "prompt": "Which sound? Put each word with its sound family.", "groups": ["sound_ay", "sound_ee", "sound_oa"], "items": [{"image": "word_rain", "group": "sound_ay"}, {"image": "word_plate", "group": "sound_ay"}, {"image": "word_tree", "group": "sound_ee"}, {"image": "word_read", "group": "sound_ee"}, {"image": "word_blow", "group": "sound_oa"}, {"image": "word_note", "group": "sound_oa"}]},
+    {"type": "listen_tap", "prompt": "Tap the word that does not belong. Boat, blow, bed.", "options": ["word_bed", "word_boat", "word_blow"], "answer": "word_bed", "praise": "Yes! Bed has a different sound."},
+    {"type": "listen_tap", "prompt": "Which word has the same sound as fly?", "options": ["word_night", "word_leaf", "word_coat"], "answer": "word_night", "praise": "Yes! Fly, night."}
+  ],
+  "hints": ["Close your eyes and listen. Which sound is in the middle?", "Different letters can make the same sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that sounds like play.",
+    "tutor_try": "Plum! Play, plum, same sound.",
+    "image": "tutor_points_plum",
+    "answer": "no",
+    "win_line": "You caught me! Plum has a short u. Plate sounds like play.",
+    "gentle_line": "Let's listen together. Play, plate, rain. Same sound in all three!"
+  },
+  "parent_line": "Can hear one sound spelt different ways, like play, pain and plate."
+}

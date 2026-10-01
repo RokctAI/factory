@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w03_sh_ch_th_wh",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [3],
+  "theme": "Digraphs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises consonant digraphs sh, ch, th, wh at the beginning and end of words (sh-irt, wh-en, wi-sh, bo-th)"
+  },
+  "skill": "phonics.digraph.sh_ch_th_wh",
+  "prereq_skills": ["phonics.blend.digraph_words"],
+  "images": ["shirt_chair_thumb_wheel", "shoe", "chair", "thumb", "cheese", "ship", "wheel", "card_sh", "card_ch", "card_th", "tooth", "dish", "bench", "three", "whale", "shell", "chick", "tutor_points_shoe"],
+  "show": {
+    "line": "Two letters, one sound. sh as in shirt. ch as in chair. th as in thumb. wh as in wheel!",
+    "image": "shirt_chair_thumb_wheel"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with sh, as in shirt?", "options": ["shoe", "chair", "thumb"], "answer": "shoe", "praise": "Yes! sh, shoe."},
+    {"type": "listen_tap", "prompt": "Which one starts with ch?", "options": ["cheese", "ship", "wheel"], "answer": "cheese", "praise": "Yes! ch, cheese."},
+    {"type": "listen_tap", "prompt": "Listen to the end of the word. Fish. Which sound is at the end?", "options": ["card_sh", "card_ch", "card_th"], "answer": "card_sh", "praise": "Yes! Fish ends with sh."},
+    {"type": "say_it", "prompt": "Say the word that starts with wh. It is round and it rolls.", "accept": ["wheel", "a wheel", "wheels", "weel"], "image": "wheel"},
+    {"type": "listen_tap", "prompt": "Which one ends with th, as in bath?", "options": ["tooth", "dish", "bench"], "answer": "tooth", "praise": "Yes! Tooth ends with th."},
+    {"type": "match_sort", "prompt": "sh, ch or th? Put each picture with its starting sound.", "groups": ["sh", "ch", "th"], "items": [{"image": "shoe", "group": "sh"}, {"image": "ship", "group": "sh"}, {"image": "cheese", "group": "ch"}, {"image": "chair", "group": "ch"}, {"image": "thumb", "group": "th"}, {"image": "three", "group": "th"}]},
+    {"type": "listen_tap", "prompt": "Which word has wh at the start? Tap the picture.", "options": ["whale", "shell", "chick"], "answer": "whale", "praise": "Yes! wh, whale."}
+  ],
+  "hints": ["Listen to the very first sound. Is it sh, ch, th or wh?", "sh is quiet like a librarian. ch is like a sneeze. th pokes your tongue out."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with ch.",
+    "tutor_try": "Shoe! Shoe starts with ch.",
+    "image": "tutor_points_shoe",
+    "answer": "no",
+    "win_line": "You caught me! Shoe starts with sh. Chair starts with ch.",
+    "gentle_line": "Let's listen together. ch, ch, chair. Chair starts with ch!"
+  },
+  "parent_line": "Can hear sh, ch, th and wh at the start and end of words."
+}

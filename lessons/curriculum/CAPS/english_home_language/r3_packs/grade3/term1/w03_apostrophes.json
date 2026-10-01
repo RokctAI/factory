@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w03_apostrophes",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [3],
+  "theme": "Apostrophes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Reading",
+    "subtopic": "Recognises apostrophes for possession and contractions (Sipho's book, can't)"
+  },
+  "skill": "grammar.apostrophe.possession_contraction",
+  "prereq_skills": [],
+  "images": ["apostrophe_siphos_book", "word_lebos_bag", "word_lebos_bag_plain", "word_bag_lebo", "card_can_not", "card_can_do", "card_cat_nut", "card_i_am", "word_dont", "word_do", "word_done", "word_the_dogs_ball", "word_the_dog_ball", "word_grannys_hat", "word_cant", "word_its_raining", "tutor_dont_no_apostrophe"],
+  "show": {
+    "line": "This little mark is an apostrophe. Sipho's book means the book belongs to Sipho. Can't is short for cannot!",
+    "image": "apostrophe_siphos_book"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which card says the bag belongs to Lebo?", "options": ["word_lebos_bag", "word_lebos_bag_plain", "word_bag_lebo"], "answer": "word_lebos_bag", "praise": "Yes! Lebo's bag, with an apostrophe."},
+    {"type": "listen_tap", "prompt": "Can't is short for two words. Which two?", "options": ["card_can_not", "card_can_do", "card_cat_nut"], "answer": "card_can_not", "praise": "Yes! Can not becomes can't."},
+    {"type": "say_it", "prompt": "I am. Say it the short way, with an apostrophe.", "accept": ["i'm", "im", "ahm"], "image": "card_i_am"},
+    {"type": "listen_tap", "prompt": "Which short word means do not?", "options": ["word_dont", "word_do", "word_done"], "answer": "word_dont", "praise": "Yes! Don't."},
+    {"type": "listen_tap", "prompt": "The ball belongs to the dog. Which card is right?", "options": ["word_the_dogs_ball", "word_the_dog_ball"], "answer": "word_the_dogs_ball", "praise": "Yes! The dog's ball."},
+    {"type": "match_sort", "prompt": "Belongs to someone, or two words made short? Put each card in its group.", "groups": ["belongs_to", "short_word"], "items": [{"image": "word_lebos_bag", "group": "belongs_to"}, {"image": "word_the_dogs_ball", "group": "belongs_to"}, {"image": "word_grannys_hat", "group": "belongs_to"}, {"image": "word_dont", "group": "short_word"}, {"image": "word_cant", "group": "short_word"}, {"image": "word_its_raining", "group": "short_word"}]},
+    {"type": "read_to_me", "prompt": "Read this out loud.", "text": "I can't find Thabo's hat.", "accept": ["i can't find thabo's hat", "i cant find thabos hat", "i can not find thabo's hat"]}
+  ],
+  "hints": ["An apostrophe before the last letter shows who owns it. Mama's bag belongs to Mama.", "In a short word, the apostrophe stands where letters are missing."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will make do not short.",
+    "tutor_try": "Do not becomes dont, with no apostrophe!",
+    "image": "tutor_dont_no_apostrophe",
+    "answer": "no",
+    "win_line": "You caught me! The apostrophe stands for the missing letter. Don't.",
+    "gentle_line": "Let's look together. Do not. Take out a letter, put in an apostrophe. Don't!"
+  },
+  "parent_line": "Can spot apostrophes that show owning and short words like can't."
+}

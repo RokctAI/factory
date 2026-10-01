@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w04_silent_e",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [4, 5],
+  "theme": "Silent e",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises 'silent e' / split digraphs (same, bite, note)"
+  },
+  "skill": "phonics.split_digraph.silent_e",
+  "prereq_skills": ["phonics.sound_spellings.ay_ee_oa"],
+  "images": ["cap_and_cape", "word_bite", "word_bit", "word_bet", "cape", "cap", "cup", "word_same", "word_sam", "word_sun", "pin_and_pine", "word_note", "word_hop", "kite", "kit", "cat", "tutor_hate_cat"],
+  "show": {
+    "line": "Cap. Add a silent 'e'. Cape! The 'e' is quiet, but the middle vowel now says its name.",
+    "image": "cap_and_cape"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Bit. Add a silent 'e'. Which word do we get?", "options": ["word_bite", "word_bit", "word_bet"], "answer": "word_bite", "praise": "Yes! Bite."},
+    {"type": "listen_tap", "prompt": "Which picture is a cape, with a silent 'e'?", "options": ["cape", "cap", "cup"], "answer": "cape", "praise": "Yes! Cape."},
+    {"type": "read_to_me", "prompt": "Read this word. The 'e' at the end is silent.", "text": "note", "accept": ["note", "a note"]},
+    {"type": "listen_tap", "prompt": "Which word has a silent 'e'?", "options": ["word_same", "word_sam", "word_sun"], "answer": "word_same", "praise": "Yes! Same has a silent 'e'."},
+    {"type": "say_it", "prompt": "Pin. Add a silent 'e'. Say the new word.", "accept": ["pine", "pyne", "pain"], "image": "pin_and_pine"},
+    {"type": "match_sort", "prompt": "Silent 'e' or not? Put each word in its group.", "groups": ["silent_e", "no_silent_e"], "items": [{"image": "word_bite", "group": "silent_e"}, {"image": "word_note", "group": "silent_e"}, {"image": "word_same", "group": "silent_e"}, {"image": "word_bit", "group": "no_silent_e"}, {"image": "word_sam", "group": "no_silent_e"}, {"image": "word_hop", "group": "no_silent_e"}]},
+    {"type": "listen_tap", "prompt": "Kit. Add a silent 'e'. Tap the picture.", "options": ["kite", "kit", "cat"], "answer": "kite", "praise": "Yes! Kite."}
+  ],
+  "hints": ["The 'e' at the end says nothing. It makes the middle vowel say its name.", "Cover the 'e'. Then read it again. Does the word change?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Hat. I will add a silent 'e'.",
+    "tutor_try": "Hat, hate. That rhymes with cat!",
+    "image": "tutor_hate_cat",
+    "answer": "no",
+    "win_line": "You caught me! Hate rhymes with gate, not cat. The 'e' changed the sound.",
+    "gentle_line": "Let's say it together. Hat, hate. The vowel says its name now!"
+  },
+  "parent_line": "Can read words with a silent e, like bite and note."
+}

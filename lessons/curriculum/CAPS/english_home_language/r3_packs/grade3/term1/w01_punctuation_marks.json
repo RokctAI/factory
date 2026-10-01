@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w01_punctuation_marks",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [1],
+  "theme": "Punctuation",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Writing",
+    "subtopic": "Uses correct punctuation"
+  },
+  "skill": "grammar.punctuation.end_marks",
+  "prereq_skills": [],
+  "images": ["three_end_marks", "question_mark", "full_stop", "exclamation_mark", "sentence_cat_correct", "sentence_cat_no_capital", "sentence_cat_no_stop", "card_what_time_is_it", "card_can_you_swim", "card_where_do_you_live", "card_i_like_pap", "card_the_sun_is_hot", "card_my_name_is_zola", "tutor_full_stop_on_question"],
+  "show": {
+    "line": "Every sentence ends with a mark. A full stop, a question mark or an exclamation mark!",
+    "image": "three_end_marks"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where is my hat. Which mark should end this question?", "options": ["question_mark", "full_stop", "exclamation_mark"], "answer": "question_mark", "praise": "Yes! A question ends with a question mark."},
+    {"type": "listen_tap", "prompt": "The dog is brown. Which mark ends this telling sentence?", "options": ["full_stop", "question_mark", "exclamation_mark"], "answer": "full_stop", "praise": "Yes! A full stop."},
+    {"type": "listen_tap", "prompt": "Watch out! Which mark shows a loud, excited shout?", "options": ["exclamation_mark", "full_stop", "question_mark"], "answer": "exclamation_mark", "praise": "Yes! An exclamation mark."},
+    {"type": "read_to_me", "prompt": "Read this sentence out loud. Make your voice go up at the end.", "text": "Where is my hat?", "accept": ["where is my hat", "where's my hat"]},
+    {"type": "listen_tap", "prompt": "Which sentence starts with a capital letter and ends with a full stop?", "options": ["sentence_cat_correct", "sentence_cat_no_capital", "sentence_cat_no_stop"], "answer": "sentence_cat_correct", "praise": "Yes! Capital letter at the start, full stop at the end."},
+    {"type": "match_sort", "prompt": "Question or telling sentence? Put each card in its group.", "groups": ["question", "telling"], "items": [{"image": "card_what_time_is_it", "group": "question"}, {"image": "card_can_you_swim", "group": "question"}, {"image": "card_where_do_you_live", "group": "question"}, {"image": "card_i_like_pap", "group": "telling"}, {"image": "card_the_sun_is_hot", "group": "telling"}]},
+    {"type": "say_it", "prompt": "My name is Zola. What mark goes at the end? Say it.", "accept": ["full stop", "a full stop", "fullstop", "stop"], "image": "card_my_name_is_zola"}
+  ],
+  "hints": ["Asking something? Use a question mark.", "Telling something? Use a full stop. Shouting? Exclamation mark."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will finish this sentence. What is your name",
+    "tutor_try": "I will put a full stop. What is your name.",
+    "image": "tutor_full_stop_on_question",
+    "answer": "question mark",
+    "win_line": "You caught me! That is a question. It needs a question mark.",
+    "gentle_line": "Let's read it together. What is your name? That is asking, so a question mark!"
+  },
+  "parent_line": "Can choose a full stop, question mark or exclamation mark to end a sentence."
+}
