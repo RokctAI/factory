@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A spaza owner buys cooldrink for R80 a case and sells it for R100. Explain how to find the profit and the percentage profit, and why the percentage is calculated on the cost price.",
+      "expected_answer": "Profit = selling price − cost price = R100 − R80 = R20. Percentage profit = profit ÷ cost price × 100 = 20/80 × 100 = 25%. It is measured on the cost price because that is the money the seller invested; the selling price already contains the profit, so dividing by it would understate the return (20% instead of 25%)."
+    },
+    {
+      "id": "cc2",
+      "question": "A till slip shows R529 including 15% VAT. Explain why taking 15% of R529 gives the wrong VAT amount and show the correct method.",
+      "expected_answer": "R529 is 115% of the price excluding VAT, so the VAT is 15/115 of R529, not 15/100. Divide by 1,15: R529 ÷ 1,15 = R460 excluding VAT, and the VAT is R529 − R460 = R69. Taking 15% of R529 would give R79,35, which taxes the tax."
+    },
+    {
+      "id": "cc3",
+      "question": "A R6 000 fridge is bought on hire purchase: 10% deposit, balance at 12% per annum simple interest for 2 years, paid in 24 equal instalments. Work out the instalment and the real cost, and explain what the difference from the cash price represents.",
+      "expected_answer": "Deposit R600, balance R5 400. Interest = 5 400 × 0,12 × 2 = R1 296. Amount owed = R6 696; instalment = 6 696 ÷ 24 = R279. Real cost = 600 + 6 696 = R7 296. The extra R1 296 over the cash price is the cost of the credit — the price paid for not having the cash now."
+    }
+  ]
+}

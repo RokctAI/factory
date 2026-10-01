@@ -1,0 +1,19 @@
+### subtopic_2 — Sharing in a Given Ratio — The Parts Method
+**Assistant:** Why do we divide by nine and not by two when two people are sharing?
+
+**Tutor:** Because the ratio four to five tells you the money is not being split into two equal pieces — it is being split into nine equal pieces, of which one person takes four and the other takes five. Dividing by two would give equal shares and would ignore the ratio altogether, which is precisely the information the question gave you. The number of people only tells you how many names appear in the answer; the number of parts tells you how finely the total is cut. So the first line of every sharing problem is to add the terms of the ratio — four plus five is nine — and divide the total by that sum. If the ratio had three terms, you would add three numbers. The habit to build is to read the colon as a list of stack sizes and to count the stacks before you touch the money.
+
+### subtopic_3 — Increasing and Decreasing a Number in a Given Ratio
+**Assistant:** How do I know whether to put the five or the three on top of the fraction?
+
+**Tutor:** Read the word in the question. If it says increase, the result must be bigger, so the fraction must be bigger than one, and a fraction is bigger than one when the larger number is on top: five over three. If it says decrease, the fraction must be smaller than one, so the smaller number goes on top: three over five. A second way to see it is new over old: the ratio names the new size first and the old size second, so the multiplier is the first number over the second. Both readings agree, and the direction check is your safety net — compute the answer, compare it with the original, and if an increase came out smaller you inverted the fraction. Flip it and multiply again. The error is common and the check is instant, so there is no excuse for carrying it into a final answer.
+
+### subtopic_4 — Rate — Comparing Different Kinds, and the Full Method
+**Assistant:** Why does a rate keep its units when a ratio does not?
+
+**Tutor:** Because of what is being compared. A ratio sets two quantities of the same kind against each other — rand against rand, or litres against litres — and when you simplify, identical units divide out and vanish, leaving pure numbers like four to five. A rate sets two different kinds against each other — kilometres against hours — and different units cannot cancel, so they stay as part of the answer: eighty kilometres per hour. That is why the word per is the signature of a rate; it literally reads as for each, and the unit after it is the one you divided by. In practice the rule protects you: if your answer to a speed question is a bare number, it is incomplete, and if your ratio answer carries units, you have probably compared quantities you should have converted first. Ratios are unitless comparisons; rates are measured quantities.
+
+### subtopic_1 — Ratio — Comparing Parts of the Same Kind
+**Assistant:** What goes wrong if the two quantities in a ratio are in different units?
+
+**Tutor:** The comparison becomes meaningless, because the numbers no longer measure the same thing. Fifty centimetres to two metres written as fifty to two claims that the first length is twenty-five times the second, when in fact two metres is four times longer than fifty centimetres. Convert first — two metres is two hundred centimetres — and the ratio fifty to two hundred simplifies to one to four, which is the true relationship. The rule is to bring both quantities to the same unit before writing the colon, and to choose the smaller unit so that both numbers stay whole. Examiners set exactly this trap with centimetres and metres, minutes and hours, cents and rand, and the conversion line is usually worth a mark on its own. Once the units match, they cancel, and the ratio becomes the pure comparison it is meant to be.
