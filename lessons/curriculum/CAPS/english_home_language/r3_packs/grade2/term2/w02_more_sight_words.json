@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term2.w02_more_sight_words",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "More words we know by sight",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Reading",
+    "subtopic": "Group guided: uses sight words, phonics, context and structural analysis; begins to monitor self; builds sight vocabulary"
+  },
+  "skill": "reading.sight_words.set2",
+  "prereq_skills": ["reading.sight_words.set1"],
+  "images": ["sight_word_cards_set2", "word_little", "word_like", "word_look", "word_went", "sentence_i_gap_a_little_dog", "word_have", "word_here", "word_with", "word_what", "word_come", "sentence_i_like_cake", "word_yes", "word_no", "tutor_misreads_here"],
+  "show": {
+    "line": "More words to know by sight. Have, here, like, little, look, with, come, went. Read them fast!",
+    "image": "sight_word_cards_set2"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word little.", "options": ["word_little", "word_like", "word_look"], "answer": "word_little", "praise": "Yes! Little."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["went", "wend", "whent"], "image": "word_went"},
+    {"type": "listen_tap", "prompt": "I have a little dog. Which word is missing? I, gap, a little dog.", "image": "sentence_i_gap_a_little_dog", "options": ["word_have", "word_here", "word_with"], "answer": "word_have", "praise": "Have! I have a little dog."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["here", "hear", "hee-a"], "image": "word_here"},
+    {"type": "listen_tap", "prompt": "Tap the word with.", "options": ["word_with", "word_went", "word_what"], "answer": "word_with", "praise": "Yes! With."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lulu says, come and look! Her brother comes. He looks at the little bird. Which word did Lulu say first?", "options": ["word_come", "word_look", "word_little"], "answer": "word_come", "praise": "Come! Come and look."},
+    {"type": "listen_tap", "prompt": "Does this word look right? Read it and check. I like cake.", "image": "sentence_i_like_cake", "options": ["word_yes", "word_no"], "answer": "word_yes", "praise": "Yes! It looks right and it makes sense."}
+  ],
+  "hints": ["Look at the whole word. You know this one!", "Read the sentence again. Which word makes sense?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this sentence. Come here, little cat.",
+    "tutor_try": "Come have, little cat!",
+    "image": "tutor_misreads_here",
+    "answer": "here",
+    "win_line": "You caught me! That word is here, not have. Come here, little cat.",
+    "gentle_line": "Let's read it together. Come here, little cat!"
+  },
+  "parent_line": "Can read more common words by sight and check that a sentence makes sense."
+}

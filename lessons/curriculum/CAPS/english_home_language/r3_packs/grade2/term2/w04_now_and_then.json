@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term2.w04_now_and_then",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Now and yesterday",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Uses present and past tenses correctly"
+  },
+  "skill": "grammar.tense.present_past",
+  "prereq_skills": ["reading.sight_words.set2"],
+  "images": ["today_yesterday_jump", "sentence_yesterday_gap_ball", "word_played", "word_play", "sentence_today_gap_school", "word_walk", "word_walked", "child_jumped_yesterday", "sentence_we_cooked_pap", "sentence_we_cook_pap", "mama_cooked_yesterday", "word_jump", "word_look", "word_jumped", "word_looked", "tutor_wash_wrong"],
+  "show": {
+    "line": "Today I jump. Yesterday I jumped. When it already happened, the word changes. Jump, jumped. Play, played!",
+    "image": "today_yesterday_jump"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Yesterday I, gap, with my ball. Which word fits?", "image": "sentence_yesterday_gap_ball", "options": ["word_played", "word_play"], "answer": "word_played", "praise": "Played! Yesterday I played."},
+    {"type": "listen_tap", "prompt": "Today I, gap, to school. Which word fits?", "image": "sentence_today_gap_school", "options": ["word_walk", "word_walked"], "answer": "word_walk", "praise": "Walk! Today I walk to school."},
+    {"type": "say_it", "prompt": "Today I jump. Yesterday I, what? Say the word.", "accept": ["jumped", "jumpt", "jumpd"], "image": "child_jumped_yesterday"},
+    {"type": "listen_tap", "prompt": "Which sentence tells about yesterday?", "options": ["sentence_we_cooked_pap", "sentence_we_cook_pap"], "answer": "sentence_we_cooked_pap", "praise": "Yes! Cooked means it already happened."},
+    {"type": "say_it", "prompt": "Today Mama cooks. Yesterday Mama, what? Say the word.", "accept": ["cooked", "cookt", "cookd"], "image": "mama_cooked_yesterday"},
+    {"type": "match_sort", "prompt": "Now, or already happened? Put each word in its group.", "groups": ["now", "already_happened"], "items": [{"image": "word_jump", "group": "now"}, {"image": "word_look", "group": "now"}, {"image": "word_jumped", "group": "already_happened"}, {"image": "word_looked", "group": "already_happened"}, {"image": "word_played", "group": "already_happened"}]}
+  ],
+  "hints": ["Yesterday means it already happened. Add the ending. Jump, jumped.", "Today means now. Keep the word short. Jump."],
+  "beat_the_tutor": {
+    "setup": "My turn! Yesterday I, gap, my dog.",
+    "tutor_try": "Yesterday I wash my dog!",
+    "image": "tutor_wash_wrong",
+    "answer": "washed",
+    "win_line": "You caught me! Yesterday has already happened. Yesterday I washed my dog.",
+    "gentle_line": "Let's say it together. Yesterday I washed my dog!"
+  },
+  "parent_line": "Can choose the right word for now and for something that already happened."
+}

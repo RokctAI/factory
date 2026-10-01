@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term2.w02_question_marks",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "Asking questions",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Uses capital letters (sentence start, proper names), full stops and question marks"
+  },
+  "skill": "writing.punctuation.question_mark",
+  "prereq_skills": ["writing.sentence.capital_full_stop", "phonics.digraph.wh"],
+  "images": ["full_stop_and_question_mark", "mark_question", "mark_full_stop", "sentence_can_you_jump", "sentence_what_is_your_name", "sentence_my_name_is_zola", "word_where", "word_the", "word_and", "sentence_i_am_six", "sentence_we_eat_pap", "sentence_who_is_there", "sentence_why_are_you_sad", "word_thandi_capital", "word_thandi_lower", "tutor_full_stop_on_question"],
+  "show": {
+    "line": "Telling sentences end with a full stop. The dog is big. Asking sentences end with a question mark. Is the dog big?",
+    "image": "full_stop_and_question_mark"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where is my hat? Which mark goes at the end?", "options": ["mark_question", "mark_full_stop"], "answer": "mark_question", "praise": "Yes! It asks, so it needs a question mark."},
+    {"type": "listen_tap", "prompt": "I like red apples. Which mark goes at the end?", "options": ["mark_full_stop", "mark_question"], "answer": "mark_full_stop", "praise": "Yes! It tells, so it needs a full stop."},
+    {"type": "say_it", "prompt": "Read this question out loud. Make your voice go up at the end.", "accept": ["can you jump", "can you jump?", "can u jump"], "image": "sentence_can_you_jump"},
+    {"type": "listen_tap", "prompt": "Which sentence is a question?", "options": ["sentence_what_is_your_name", "sentence_my_name_is_zola"], "answer": "sentence_what_is_your_name", "praise": "Yes! What is your name? That asks something."},
+    {"type": "listen_tap", "prompt": "Which word often starts a question?", "options": ["word_where", "word_the", "word_and"], "answer": "word_where", "praise": "Yes! Where is a question word."},
+    {"type": "match_sort", "prompt": "Telling or asking? Put each sentence in its group.", "groups": ["telling", "asking"], "items": [{"image": "sentence_i_am_six", "group": "telling"}, {"image": "sentence_we_eat_pap", "group": "telling"}, {"image": "sentence_who_is_there", "group": "asking"}, {"image": "sentence_can_you_jump", "group": "asking"}, {"image": "sentence_why_are_you_sad", "group": "asking"}]},
+    {"type": "listen_tap", "prompt": "Names need a capital letter. Which card shows the name Thandi written right?", "options": ["word_thandi_capital", "word_thandi_lower"], "answer": "word_thandi_capital", "praise": "Yes! Thandi starts with a big letter."}
+  ],
+  "hints": ["Does the sentence ask something? Then it needs a question mark.", "Question words like who, what and where start questions."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will finish this sentence. Where is the ball",
+    "tutor_try": "I put a full stop. Where is the ball.",
+    "image": "tutor_full_stop_on_question",
+    "answer": "question mark",
+    "win_line": "You caught me! It asks something. It needs a question mark.",
+    "gentle_line": "Let's listen together. Where is the ball? That asks, so question mark!"
+  },
+  "parent_line": "Knows that a question ends with a question mark and names start with a capital letter."
+}

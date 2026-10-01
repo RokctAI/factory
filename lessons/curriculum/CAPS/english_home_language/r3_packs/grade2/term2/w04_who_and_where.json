@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term2.w04_who_and_where",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Characters and setting",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Reading",
+    "subtopic": "Shared: discusses cause-effect relations; identifies main characters and setting; answers higher-order questions; gives an opinion on what was read"
+  },
+  "skill": "reading.comprehension.characters_setting",
+  "prereq_skills": ["reading.comprehension.details"],
+  "images": ["story_scene_farm", "pule_and_gogo", "farmer_and_cow", "two_boys", "farm", "beach", "city", "rain_falling", "sun_shining", "wind_blowing", "mouse_owl_forest", "ice_cream_dropped", "dog_barks", "it_rains", "face_happy", "face_sad", "tutor_points_beach"],
+  "show": {
+    "line": "Every story has characters, the people or animals in it. And a setting, where it happens. Let's find them!",
+    "image": "story_scene_farm"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Pule and his gogo plant mealies on the farm. The sun is hot. Who are the characters?", "options": ["pule_and_gogo", "farmer_and_cow", "two_boys"], "answer": "pule_and_gogo", "praise": "Yes! Pule and his gogo are the characters."},
+    {"type": "story_tap", "prompt": "Listen again.", "story": "Pule and his gogo plant mealies on the farm. The sun is hot. Where does the story happen?", "options": ["farm", "beach", "city"], "answer": "farm", "praise": "On the farm! That is the setting."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Rain falls all night. In the morning the river is full. Why is the river full?", "options": ["rain_falling", "sun_shining", "wind_blowing"], "answer": "rain_falling", "praise": "Yes! The rain made the river full."},
+    {"type": "say_it", "prompt": "A mouse and an owl meet in the forest. Where is the setting? Say it.", "accept": ["forest", "the forest", "in the forest", "forrest"], "image": "mouse_owl_forest"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Ama drops her ice cream. It melts on the hot road. Ama cries. Why does Ama cry?", "options": ["ice_cream_dropped", "dog_barks", "it_rains"], "answer": "ice_cream_dropped", "praise": "Yes! She dropped her ice cream."},
+    {"type": "listen_tap", "prompt": "Did you like the story about Pule? Tap your answer. There is no wrong answer.", "options": ["face_happy", "face_sad"], "answer": "face_happy", "praise": "Thank you for telling me what you think!"}
+  ],
+  "hints": ["Characters are who the story is about. Setting is where it happens.", "Ask why. What made it happen?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Pule and his gogo plant mealies on the farm.",
+    "tutor_try": "The setting is the beach!",
+    "image": "tutor_points_beach",
+    "answer": "farm",
+    "win_line": "You caught me! They are on the farm, not the beach.",
+    "gentle_line": "Let's listen again. On the farm. The setting is the farm!"
+  },
+  "parent_line": "Can name the characters and the setting of a short story and say why something happened."
+}

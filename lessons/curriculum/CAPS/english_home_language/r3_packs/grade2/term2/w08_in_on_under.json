@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term2.w08_in_on_under",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [8, 9],
+  "theme": "In, on, under",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Uses capital letters and correct punctuation; uses prepositions correctly"
+  },
+  "skill": "grammar.prepositions.in_on_under",
+  "prereq_skills": ["space.position.left_right", "reading.sight_words.set2"],
+  "images": ["cat_in_on_under_box", "ball_under_table", "ball_on_table", "ball_in_box", "bird_in_cage", "book_on_shelf", "word_on", "word_under", "word_in", "dog_next_to_tree", "dog_under_tree", "dog_behind_tree", "shoes_under_bed", "fish_in_bowl", "sweets_in_jar", "cup_on_table", "hat_on_head", "bird_on_roof", "cat_under_box"],
+  "show": {
+    "line": "Where is the cat? In the box. On the box. Under the box! Little words tell us where.",
+    "image": "cat_in_on_under_box"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture shows the ball under the table?", "options": ["ball_under_table", "ball_on_table", "ball_in_box"], "answer": "ball_under_table", "praise": "Yes! Under the table."},
+    {"type": "say_it", "prompt": "Look. Is the bird in the cage or on the cage? Say the sentence.", "accept": ["in the cage", "the bird is in the cage", "in", "inside the cage"], "image": "bird_in_cage"},
+    {"type": "listen_tap", "prompt": "The book is, gap, the shelf. Which word fits?", "image": "book_on_shelf", "options": ["word_on", "word_under", "word_in"], "answer": "word_on", "praise": "On! The book is on the shelf."},
+    {"type": "listen_tap", "prompt": "Which picture shows the dog next to the tree?", "options": ["dog_next_to_tree", "dog_under_tree", "dog_behind_tree"], "answer": "dog_next_to_tree", "praise": "Yes! Next to the tree."},
+    {"type": "say_it", "prompt": "Where are the shoes? Say the sentence with under.", "accept": ["under the bed", "the shoes are under the bed", "under", "under bed"], "image": "shoes_under_bed"},
+    {"type": "match_sort", "prompt": "In or on? Put each picture in its group.", "groups": ["in", "on"], "items": [{"image": "fish_in_bowl", "group": "in"}, {"image": "sweets_in_jar", "group": "in"}, {"image": "cup_on_table", "group": "on"}, {"image": "hat_on_head", "group": "on"}, {"image": "bird_on_roof", "group": "on"}]}
+  ],
+  "hints": ["In means inside. On means on top. Under means below.", "Look at the picture. Where exactly is it?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say where the cat is.",
+    "tutor_try": "The cat is on the box!",
+    "image": "cat_under_box",
+    "answer": "under",
+    "win_line": "You caught me! The cat is under the box, not on it.",
+    "gentle_line": "Let's look together. The cat is below the box. Under the box!"
+  },
+  "parent_line": "Can use in, on, under and next to correctly in a sentence."
+}

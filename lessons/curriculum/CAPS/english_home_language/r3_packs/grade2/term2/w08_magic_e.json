@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term2.w08_magic_e",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [8, 9],
+  "theme": "The magic letter at the end",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises 'silent e' / split digraph (tape, time, note)"
+  },
+  "skill": "phonics.split_digraph.magic_e",
+  "prereq_skills": ["phonics.vowel_digraph.oa_ea_ai", "phonics.build_words.3_4_letters"],
+  "images": ["cap_to_cape", "pine_tree", "pin", "pen", "word_kite", "word_note", "word_not", "word_net", "word_tape", "word_hate", "word_hat", "word_cap", "word_pin", "word_cape", "word_pine", "word_time", "tutor_holds_tape"],
+  "show": {
+    "line": "A magic letter! Cap. Add a quiet letter at the end. Cape! The middle sound says its name. Cap, cape.",
+    "image": "cap_to_cape"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Pin. Add the quiet letter at the end. Which picture is the new word?", "options": ["pine_tree", "pin", "pen"], "answer": "pine_tree", "praise": "Yes! Pin becomes pine."},
+    {"type": "say_it", "prompt": "Read this word. The quiet letter at the end makes the middle say its name.", "accept": ["kite", "kyte", "a kite"], "image": "word_kite"},
+    {"type": "listen_tap", "prompt": "Which word card says note?", "options": ["word_note", "word_not", "word_net"], "answer": "word_note", "praise": "Yes! Note, with the quiet letter at the end."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["tape", "taip", "a tape"], "image": "word_tape"},
+    {"type": "listen_tap", "prompt": "Which picture shows the word with the quiet letter? Hat or hate? Tap the one that is not a hat.", "options": ["word_hate", "word_hat"], "answer": "word_hate", "praise": "Yes! Hate has the quiet letter at the end."},
+    {"type": "match_sort", "prompt": "Short middle sound, or long middle sound with the quiet letter? Put each word in its group.", "groups": ["short", "long"], "items": [{"image": "word_cap", "group": "short"}, {"image": "word_pin", "group": "short"}, {"image": "word_cape", "group": "long"}, {"image": "word_pine", "group": "long"}, {"image": "word_time", "group": "long"}]}
+  ],
+  "hints": ["Look at the last letter. If it is the quiet one, the middle sound says its name.", "Cap, cape. Pin, pine. Hear the middle change?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says tap!",
+    "image": "tutor_holds_tape",
+    "answer": "tape",
+    "win_line": "You caught me! There is a quiet letter at the end. It says tape.",
+    "gentle_line": "Let's read it together. The quiet letter makes the middle long. Tape!"
+  },
+  "parent_line": "Knows that a silent e at the end makes the middle vowel say its name, like cap and cape."
+}
