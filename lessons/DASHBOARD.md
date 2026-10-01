@@ -1,6 +1,6 @@
 # Lesson Pipeline Dashboard
 
-*Generated 2026-08-18 01:48 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
+*Generated 2026-10-01 09:00 UTC by `lesson_pipeline.py dashboard` (regenerated hourly by Lesson 0 and on seed pushes — if this timestamp is old, check the Lesson 0 workflow).*
 
 ## Waiting on you (0)
 
@@ -45,11 +45,13 @@ No stalled, failed or blocked cards.
 | Maths | 10 | 3 | 51 |
 | Maths | 11 | 1 | 46 |
 | Maths | 12 | 0 | 41 |
+| Maths | 8 | 0 | 82 |
+| Maths | 9 | 0 | 58 |
 | Physical Sciences | 10 | 5 | 82 |
 | Physical Sciences | 11 | 0 | 64 |
 | Physical Sciences | 12 | 0 | 56 |
 
-Syllabus rows total: 841; opened: 25; remaining: 816.
+Syllabus rows total: 981; opened: 25; remaining: 956.
 
 ## Evaluated (Level 4 complete, awaiting Level 6): 0
 
