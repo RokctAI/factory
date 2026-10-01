@@ -66,6 +66,30 @@ the audio itself, set the repository secret `BASELINE_ARTIFACT_KEY`: withheld
 files are then uploaded as `withheld.tar.gz.enc`
 (`openssl enc -d -aes-256-cbc -pbkdf2 -pass env:BASELINE_ARTIFACT_KEY`).
 
+## Step 2 candidate (rokct-media)
+
+The `candidate` job pip-installs `rokct-media[voice]` from
+RokctAI/The-Rokct-Protocol at `ROKCT_MEDIA_REF` (a commit SHA, never main),
+renders the `tutor_voice` and `reel_voices` fixtures through
+`rokct-media render`, records the outputs with `tools/record.py` (same
+metrics, clone audio withheld) into `candidate_manifest.json`
+(`tools/candidate_manifest.py`), and runs
+`rokct-media compare step0/baseline_manifest.json candidate_manifest.json`
+against the manifest of run `STEP0_RUN_ID`. A deterministic render must
+reproduce every baseline WAV and MP3 by sha256.
+
+- `drivers/candidate.py jobs` writes the job folders on the runner: the
+  tutor line as `script.md` + `voice.txt` (zero JSON), the Reel line as a
+  `job.json` with whole-take selection, `prefer_seeds` and `asset` from the
+  fixture. The voices file names the same references and sha256 pins as
+  the fixtures, with `agreement_in_place = false` (local delivery only).
+- The agent's scripts folder is not checked out: the package carries the
+  renderer.
+- Library versions are constrained to the step-0 run's (its manifest's
+  `tools`), so only the code differs.
+- A commit whose message contains `[candidate only]` runs the guard and
+  this job, and skips re-rendering the old engines.
+
 ## Files
 
 - `tools/record.py`: runs a step, then lists outputs with sha256 and metrics
@@ -73,3 +97,4 @@ files are then uploaded as `withheld.tar.gz.enc`
 - `tools/merge.py`: folds fragments into `baseline_manifest.json`.
 - `drivers/`: the small callers for engines driven as functions.
 - `actions/voice-engine`: shared setup for the three voice jobs.
+- `drivers/candidate.py`, `tools/candidate_manifest.py`: the step-2 candidate.

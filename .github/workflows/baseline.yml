@@ -65,6 +65,11 @@ env:
   HF_HOME: /home/runner/.cache/huggingface
   HF_HUB_DISABLE_TELEMETRY: '1'
   BASELINE_FRAGMENTS: baseline_fragments
+  # Step 2 candidate: rokct-media at this protocol commit renders the voice
+  # fixtures and is compared with the step-0 baseline of run STEP0_RUN_ID.
+  ROKCT_MEDIA_REF: ae924f8a7209cbe4062a77968aba7fd0ac80dd66
+  STEP0_RUN_ID: '36774462433'
+  VOICE_B_REF_SHA256: 30c7ab70671dcd2c7239337d8de2dd2e6c9b468a11c0e7028646cc244ab6564d
 
 jobs:
   guard:
@@ -112,6 +117,7 @@ jobs:
   tutor_voice:
     name: Tutor voice batch
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
     env:
@@ -272,6 +278,7 @@ jobs:
   radio_ad:
     name: Radio ad
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 180
     env:
@@ -390,6 +397,7 @@ jobs:
   reel_voices:
     name: Reel voices (PR 196)
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 240
     env:
@@ -520,6 +528,7 @@ jobs:
   social_reel:
     name: Social daily Reel
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
@@ -613,6 +622,7 @@ jobs:
   lesson6:
     name: Lesson 6 production
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
@@ -682,6 +692,7 @@ jobs:
   tiktok_post:
     name: TikTok post (agent PR 202)
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -778,6 +789,7 @@ jobs:
   stills:
     name: Still images
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -914,6 +926,7 @@ jobs:
   guided_tour:
     name: Guided tour
     needs: guard
+    if: ${{ !contains(github.event.head_commit.message || '', '[candidate only]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
@@ -1023,7 +1036,7 @@ jobs:
   manifest:
     name: Baseline manifest
     needs: [guard, tutor_voice, radio_ad, reel_voices, social_reel, lesson6, tiktok_post, stills, guided_tour]
-    if: always() && needs.guard.result == 'success'
+    if: always() && needs.guard.result == 'success' && !contains(github.event.head_commit.message || '', '[candidate only]')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -1050,4 +1063,210 @@ jobs:
           name: baseline_manifest
           path: baseline_manifest.json
           if-no-files-found: error
+          retention-days: 90
+
+  # Step 2: the same two voice fixtures (tutor_voice: Voice A, tutor_001
+  # acknowledgements/02; reel_voices: Voice B open line, seed 44 first)
+  # rendered by rokct-media, pip-installed from the protocol at
+  # ROKCT_MEDIA_REF, then `rokct-media compare` against the step-0
+  # manifest. Same model weights, same library versions as the step-0 run
+  # (constraints below, from its manifest), deliver local only; the agent
+  # scripts are not checked out (the package carries the renderer). Clone
+  # audio is hashed and measured, never uploaded. A commit whose message
+  # has "[candidate only]" runs this job without re-rendering the old engines.
+  candidate:
+    name: Candidate (rokct-media, voice fixtures)
+    needs: guard
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    permissions:
+      contents: read
+      actions: read
+    env:
+      BASELINE_FRAGMENTS: candidate_fragments
+      OUT: candidate_out
+      ROKCT_MEDIA_CACHE: ${{ github.workspace }}/../rokct-media-cache
+      ROKCT_MEDIA_VOICES_ROOT: ${{ github.workspace }}/.agent
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check MONOREPO_PAT is visible
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error::MONOREPO_PAT is not set for RokctAI/factory (the voice references are in the private agent repo)"; exit 1
+          fi
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - name: Check out agent (private, pinned; scripts and references only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_MAIN }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: |
+            lms/team/tutors/CAPS/tutor_001
+            lms/team/voice_refs
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install rokct-media[voice] at ROKCT_MEDIA_REF (CPU torch, step-0 library versions)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch==2.14.1 torchaudio --index-url https://download.pytorch.org/whl/cpu
+          cat > "$RUNNER_TEMP/constraints.txt" <<'TXT'
+          torch==2.14.1
+          transformers==4.51.3
+          numpy==2.4.6
+          librosa==0.11.0
+          soundfile==0.14.0
+          faster-whisper==1.2.1
+          ctranslate2==4.8.2
+          resemblyzer==0.1.4
+          TXT
+          python -m pip install -c "$RUNNER_TEMP/constraints.txt" \
+            "rokct-media[voice] @ git+https://github.com/RokctAI/The-Rokct-Protocol@${ROKCT_MEDIA_REF}#subdirectory=core/utils/rokct_media"
+          rokct-media --version
+          python -c "import torch, transformers, numpy, librosa; print('torch', torch.__version__, '| transformers', transformers.__version__, '| numpy', numpy.__version__, '| librosa', librosa.__version__)"
+
+      - name: Restore model weights (read-only)
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: /home/runner/.cache/huggingface/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Download model weights (this job only, not cached)
+        if: steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])  # tokenizer repo
+          PY
+
+      - name: Restore ASR model (read-only)
+        id: asr
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-small.en
+
+      - name: Download ASR model (this job only)
+        if: steps.asr.outputs.cache-hit != 'true'
+        run: python -c "import os; from faster_whisper import WhisperModel; WhisperModel('small.en', device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+
+      - name: Install ffmpeg (measurements)
+        run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends ffmpeg
+
+      # The caller's voices file: the package ships none. Same references and
+      # sha256 pins as the step-0 fixtures; agreement_in_place stays false
+      # (local delivery never needs it).
+      - name: Voices file and job folders (runner only)
+        run: |
+          cat > "$RUNNER_TEMP/voices.toml" <<TOML
+          [voice_a]
+          ref = "lms/team/voice_refs/voice_a_ref.wav"
+          sha256 = "$(python3 -c "import json; print(json.load(open('baseline/fixtures/tutor_voice.json'))['ref_sha256'])")"
+          f0_target_hz = 102
+          f0_tolerance_hz = 8
+          agreement_in_place = false
+          aliases = ["tutor_001"]
+
+          [voice_b]
+          ref = "lms/team/voice_refs/voice_b_ref.wav"
+          sha256 = "$VOICE_B_REF_SHA256"
+          f0_target_hz = 196
+          f0_tolerance_hz = 12
+          agreement_in_place = false
+          TOML
+          rokct-media voices verify --voices "$RUNNER_TEMP/voices.toml"
+          python baseline/drivers/candidate.py jobs .agent "$RUNNER_TEMP/jobs"
+          rokct-media validate "$RUNNER_TEMP/jobs/tutor_voice" "$RUNNER_TEMP/jobs/reel_voices" --voices "$RUNNER_TEMP/voices.toml"
+
+      - name: Render tutor_voice with rokct-media
+        env:
+          HF_HUB_OFFLINE: '1'
+        run: |
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          python baseline/tools/record.py run --engine tutor_voice --step render --no-tail -- \
+            rokct-media render "$RUNNER_TEMP/jobs/tutor_voice" --voices "$RUNNER_TEMP/voices.toml" \
+              --model-path "$model_path" --asr-model small.en --deliver local
+
+      - name: Render reel_voices with rokct-media
+        if: always() && steps.models.outcome != 'failure'
+        env:
+          HF_HUB_OFFLINE: '1'
+        run: |
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          python baseline/tools/record.py run --engine reel_voices --step render --no-tail -- \
+            rokct-media render "$RUNNER_TEMP/jobs/reel_voices" --voices "$RUNNER_TEMP/voices.toml" \
+              --model-path "$model_path" --asr-model small.en --deliver local
+
+      - name: Record (hash and measure; clone audio withheld)
+        if: always()
+        run: |
+          for e in tutor_voice reel_voices; do
+            [ -f "$RUNNER_TEMP/jobs/$e/out/result.json" ] || continue
+            python baseline/drivers/candidate.py collect "$e" "$RUNNER_TEMP/jobs/$e" "$OUT/$e" "candidate_qc/$e.json" \
+              || echo "::warning::$e: could not collect the rokct-media outputs (see result.json)"
+            python3 baseline/tools/record.py finalize --engine "$e" --out "$OUT/$e" \
+              --source factory=. --source agent=.agent \
+              --fixture rokct_media="RokctAI/The-Rokct-Protocol@$ROKCT_MEDIA_REF" \
+              --fixture model="$TTS_MODEL@$TTS_MODEL_REVISION" \
+              --withhold '*.wav' --withhold '*.mp3' --f0 '*.wav' \
+              --note "rokct-media candidate; clone audio: sha256 and metrics only, not uploaded (public repository)" \
+              --pkg rokct-media --pkg torch --pkg transformers --pkg vibevoice --pkg faster-whisper \
+              --pkg resemblyzer --pkg librosa --pkg numpy --pkg soundfile --pkg lameenc
+          done
+          python3 baseline/tools/candidate_manifest.py "$BASELINE_FRAGMENTS" candidate_qc candidate_manifest.json "$ROKCT_MEDIA_REF"
+
+      - name: Download the step-0 baseline manifest
+        if: always()
+        uses: actions/download-artifact@v4
+        with:
+          name: baseline_manifest
+          path: step0
+          run-id: ${{ env.STEP0_RUN_ID }}
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+
+      - name: rokct-media compare (step 0 vs candidate)
+        if: always()
+        run: |
+          rc=0
+          rokct-media compare step0/baseline_manifest.json candidate_manifest.json \
+            --engine tutor_voice --engine reel_voices -o compare.json > compare.txt || rc=$?
+          cat compare.txt
+          { echo '### rokct-media compare: step 0 vs candidate'; echo; echo '```'; cat compare.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          exit $rc
+
+      - name: Upload candidate manifest and compare report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate
+          path: |
+            candidate_manifest.json
+            compare.json
+            compare.txt
+            ${{ env.OUT }}
+          if-no-files-found: warn
           retention-days: 90
