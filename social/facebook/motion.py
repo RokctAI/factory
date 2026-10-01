@@ -40,6 +40,9 @@ CLOSE_LINE = "Link in the comments"
 # TikTok and YouTube Shorts do not make links in comments clickable, so
 # their cut points at the profile link instead.
 CLOSE_LINE_BIO = "Link in bio"
+# The close screen's sponsor line, per kind: tender Reels carry TenderAssist
+# (Ray, 2026-10-01), the product a tender viewer is most likely to want.
+SPONSOR = {"Tender": ("Brought to you by TenderAssist", "your tender officer on demand")}
 
 # Brand, from RokctAI_frontend: --primary hsl(48 96% 53%) on the dark
 # --background hsl(240 10% 3.9%); the logo tile is the header's dark-mode
@@ -744,6 +747,12 @@ class Scene:
                 [(ax - 40, ay), (ax + 40, ay), (ax, ay + 50)],
                 fill=self.accent + (int(255 * p2),),
             )
+            sponsor = SPONSOR.get(self.opp["kind"])
+            if sponsor:
+                p3 = _ease(_phase(t, end_start + 0.8, 0.5))
+                for i, (line, font) in enumerate(zip(sponsor, (self.f_date, self.f_small))):
+                    lw = d.textlength(line, font=font)
+                    text(((W - lw) / 2, H * 0.79 + i * 70), line, font, self.ink, p3)
 
         # Progress bar along the foot.
         d.rectangle([0, H - 14, W * t / self.duration, H], fill=self.accent + (220,))
