@@ -81,9 +81,35 @@ class PipelineHoldTest(unittest.TestCase):
                 rows = lp.load_seed_entries()
         self.assertEqual([r["subtopic"] for r in rows], ["Counting"])
 
-    def test_repo_has_no_pipeline_rows_below_grade_10(self):
+    def test_repo_has_no_pipeline_rows_below_grade_8(self):
+        # Grades 8-9 are lifted (2026-10-01); Grades R-7 stay held.
         grades = {str(r["grade"]) for r in lp.load_seed_entries() if "category" not in r}
-        self.assertTrue(grades <= {"10", "11", "12"}, grades)
+        self.assertTrue(grades <= {"8", "9", "10", "11", "12"}, grades)
+
+
+
+class SeedMinGradeTest(unittest.TestCase):
+    """Lifted Grade 8-9 rows load, but the seed step writes no card below SEED_MIN_GRADE."""
+
+    def test_rows_below_min_grade_are_not_seeded(self):
+        self.assertEqual(lp.SEED_MIN_GRADE, 10)
+        self.assertFalse(lp._seed_grade_ok({"grade": 9}))
+        self.assertFalse(lp._seed_grade_ok({"grade": "8"}))
+        self.assertFalse(lp._seed_grade_ok({"grade": "R"}))
+        self.assertTrue(lp._seed_grade_ok({"grade": 10}))
+        self.assertTrue(lp._seed_grade_ok({"grade": "12"}))
+        self.assertTrue(lp._seed_grade_ok({}))
+
+    def test_lowering_min_grade_opens_grade_8(self):
+        with mock.patch.object(lp, "SEED_MIN_GRADE", 8):
+            self.assertTrue(lp._seed_grade_ok({"grade": 8}))
+            self.assertFalse(lp._seed_grade_ok({"grade": 7}))
+
+    def test_real_grade_8_9_rows_load_but_do_not_seed(self):
+        rows = [r for r in lp.load_seed_entries()
+                if str(r.get("grade")) in ("8", "9")]
+        self.assertTrue(rows, "lifted Grade 8-9 Maths rows should load")
+        self.assertFalse([r for r in rows if lp._seed_grade_ok(r)])
 
 
 if __name__ == "__main__":

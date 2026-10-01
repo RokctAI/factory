@@ -4,16 +4,18 @@ Fetched 2026-09-25 straight from the Department of Basic Education site, English
 Every file, its DBE source URL, edition and sha256 is listed in `get_sources.json`.
 
 Curated syllabus JSON now sits beside the PDFs as `{subject}/syllabus/grade{N}.json` (Grade R:
-`gradeR.json`), 60 files in the same shape as Grades 10-12. Every one carries `"pipeline_enabled": false`,
-which `load_seed_entries` and `atp_drift_check` skip, so no Grade R-9 row reaches lesson generation
-until that flag is removed. A second switch, `"lessons_enabled"`, keeps lessons to the six taught
-subjects even after that: whole files outside them carry `false`, and inside the mixed subjects the
-off-scope strands carry it per topic (Social Sciences History, EMS Entrepreneurship, and the science
-Life and Living strand), each with a `lessons_off_reason`. Languages are on only in the Foundation Phase:
-English Home Language in Grades R-3 (reading, writing, phonics) and First Additional Language in Grades 1-3;
-both are off from Grade 4. Life Skills R-3 is on for Beginning Knowledge only (the base for NST
-and Social Sciences 4-6): Grades 1-3 turn the other strands off per topic, and Grade R, which is taught
-as mixed weekly themes, turns off its Creative Arts and PE activity lines per subtopic. `parse_status` is `curated` from the ATP, except Grade 3 English FAL
+`gradeR.json`), 60 files in the same shape as Grades 10-12. Files carrying `"pipeline_enabled": false`
+are skipped by `load_seed_entries` and `atp_drift_check`. The Grade 8-9 files of the subjects that feed
+the six FET subjects (Maths, Natural Sciences, Social Sciences, EMS) have that hold lifted; every other
+Grade R-9 file still carries it. Lifting the hold does not write lessons: `SEED_MIN_GRADE` in
+`lesson_pipeline.py` (10) stops the seed step below Grade 10 until it is lowered to 8.
+
+A second switch, `"lessons_enabled"`, is whole-subject (ruled 2026-10-01: a learner who takes a subject
+expects all of it). A subject is either on in full or off as a file; no topic is switched off inside an
+enabled subject. On: Maths R-9, Natural Sciences 7-9 and NST 4-6, Social Sciences 4-9 (Geography and
+History), EMS 7-9 (including Entrepreneurship) and Life Skills R-3 (all strands). Languages are on only
+in the Foundation Phase: English Home Language in Grades R-3 (reading, writing, phonics) and First
+Additional Language in Grades 1-3; both are off from Grade 4. `parse_status` is `curated` from the ATP, except Grade 3 English FAL
 (`caps_only`, no ATP published). Grade R is built from the Grade R Resource Kit lesson plans because DBE
 publishes no Grade R ATP; that scan stops at week 34, so Term 4 weeks 5-10 are missing from it.
 
