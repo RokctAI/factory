@@ -83,12 +83,16 @@ def _source_ok(source):
     data = json.loads(path.read_text(encoding="utf-8"))
     if data.get("lessons_enabled") is False:
         return f"{source['file']} has lessons_enabled false"
+    found_topic = False
     for term in data.get("terms", []):
         if term.get("term") != source.get("term"):
             continue
+        # Grade 1-3 syllabi repeat a topic name per week block ("Phonics" for
+        # weeks 1, 2, 3, ...), so every topic with that name is searched.
         for topic in term.get("topics", []):
             if topic["name"] != source.get("topic"):
                 continue
+            found_topic = True
             if topic.get("lessons_enabled") is False:
                 return f"topic {topic['name']!r} has lessons_enabled false"
             for sub in topic.get("subtopics", []):
@@ -96,7 +100,8 @@ def _source_ok(source):
                     if isinstance(sub, dict) and sub.get("lessons_enabled") is False:
                         return "subtopic has lessons_enabled false"
                     return None
-            return f"subtopic {source.get('subtopic')!r} not in topic {topic['name']!r}"
+    if found_topic:
+        return f"subtopic {source.get('subtopic')!r} not in topic {source.get('topic')!r}"
     return f"term {source.get('term')} topic {source.get('topic')!r} not found in {source['file']}"
 
 
