@@ -1,0 +1,41 @@
+{
+  "id": "maths.gradeR.term3.w05_numerals_to_ten",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "The sky (day and night)",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night): Numeracy",
+    "subtopic": "Recognises numerals 1 to 10"
+  },
+  "skill": "number.recognise.1_to_10",
+  "prereq_skills": ["number.revise.1_to_6"],
+  "images": ["stars_ten", "numeral_6", "numeral_7", "numeral_8", "stars_eight", "numeral_10", "numeral_1", "owls_nine", "numeral_3", "tutor_skips_nine"],
+  "show": {
+    "line": "Let's count the stars! One, two, three, four, five, six, seven, eight, nine, ten. Ten stars!",
+    "image": "stars_ten"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number seven.", "options": ["numeral_6", "numeral_7", "numeral_8"], "answer": "numeral_7", "praise": "Yes! That is seven."},
+    {"type": "say_it", "prompt": "Say it with me. Seven!", "accept": ["seven", "7", "sevin", "sewen", "seben"]},
+    {"type": "count_tap", "prompt": "Count the stars. How many?", "image": "stars_eight", "count": "8", "options": ["7", "8", "9"], "answer": "8", "praise": "Eight stars! Good counting."},
+    {"type": "listen_tap", "prompt": "Tap the number ten. It has a one and a zero.", "options": ["numeral_10", "numeral_1", "numeral_7"], "answer": "numeral_10", "praise": "Yes! That is ten."},
+    {"type": "count_tap", "prompt": "Count the owls on the branch.", "image": "owls_nine", "count": "9", "options": ["8", "9", "10"], "answer": "9"},
+    {"type": "what_next", "prompt": "Six, seven, eight. What comes next?", "sequence": ["6", "7", "8"], "options": ["9", "7", "10"], "answer": "9", "praise": "Nine! Six, seven, eight, nine."},
+    {"type": "listen_tap", "prompt": "Which number is eight?", "options": ["numeral_3", "numeral_8", "numeral_6"], "answer": "numeral_8"},
+    {"type": "trace", "prompt": "Draw eight with your finger. Make a snake that curls back up.", "glyph": "8"}
+  ],
+  "hints": ["Count slowly. Touch each star.", "Seven, eight, nine, ten. Ten has a one and a zero."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the owls.",
+    "tutor_try": "One, two, three, four, five, six, seven, eight, ten!",
+    "image": "tutor_skips_nine",
+    "answer": "nine",
+    "win_line": "You caught me! I forgot nine. Eight, nine, ten.",
+    "gentle_line": "Let's count together. Seven, eight, nine, ten!"
+  },
+  "parent_line": "Can recognise and count the numbers 1 to 10."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term3.w05_write_q",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "The sky (day and night)",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night): Emergent Writing",
+    "subtopic": "Traces letter 'q' templates to make 'q' mobiles"
+  },
+  "skill": "writing.letter.q",
+  "prereq_skills": ["phonics.initial_sound.q", "writing.letter.g"],
+  "images": ["letter_q", "letter_g", "letter_p", "moon", "queen", "star", "tutor_wrote_g"],
+  "show": {
+    "line": "Let's write q. Go round, then a long line down with a little flick. q, q, queen!",
+    "image": "letter_q"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says q, as in queen.", "options": ["letter_g", "letter_q", "letter_p"], "answer": "letter_q", "praise": "Yes! That is q."},
+    {"type": "say_it", "prompt": "This letter says q. Say the sound!", "accept": ["q", "kw", "kwuh", "qu", "koo"]},
+    {"type": "trace", "prompt": "Trace q with your finger. Round, then a long line down and a little flick.", "glyph": "q"},
+    {"type": "listen_tap", "prompt": "Which picture starts with q?", "options": ["moon", "queen", "star"], "answer": "queen", "praise": "Yes! q, q, queen."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is q? Its tail flicks out.", "options": ["letter_q", "letter_g"], "answer": "letter_q"}
+  ],
+  "hints": ["q is round with a long tail that flicks out.", "Start at the top. Round, then down."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write q for queen.",
+    "tutor_try": "Round, then down and curl like a hook. Look, I wrote q!",
+    "image": "tutor_wrote_g",
+    "answer": "q",
+    "win_line": "You caught me! That is g. The tail of q flicks the other way.",
+    "gentle_line": "Look together. Round, then down with a little flick. That is q!"
+  },
+  "parent_line": "Can recognise the letter q, say its sound and trace it."
+}

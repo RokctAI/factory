@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term3.w01_write_c",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Time and weather",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Time and weather: Emergent Writing",
+    "subtopic": "Copies 'c' onto pegboards"
+  },
+  "skill": "writing.letter.c",
+  "prereq_skills": ["phonics.initial_sound.c"],
+  "images": ["letter_c", "letter_o", "letter_e", "sun", "cat", "hat", "tutor_wrote_o"],
+  "show": {
+    "line": "Let's write c. Start at the top and curl round like a cloud, but leave it open.",
+    "image": "letter_c"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says c, as in cloud.", "options": ["letter_o", "letter_c", "letter_e"], "answer": "letter_c", "praise": "Yes! That is c."},
+    {"type": "say_it", "prompt": "This letter says c. Say the sound!", "accept": ["c", "k", "kuh", "ka", "ke"]},
+    {"type": "trace", "prompt": "Trace c with your finger. Start at the top, curl round, stop before you close it.", "glyph": "c"},
+    {"type": "listen_tap", "prompt": "Which picture starts with c?", "options": ["sun", "cat", "hat"], "answer": "cat", "praise": "Yes! c, c, cat."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is c? It stays open.", "options": ["letter_c", "letter_o"], "answer": "letter_c"}
+  ],
+  "hints": ["c is a curl that stays open.", "Start at the top. Curl round, then stop."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write c for cloud.",
+    "tutor_try": "Curl round and round, all the way closed. Look, I wrote c!",
+    "image": "tutor_wrote_o",
+    "answer": "c",
+    "win_line": "You caught me! That is o. c stays open on the side.",
+    "gentle_line": "Look together. Curl round, then stop. That is c!"
+  },
+  "parent_line": "Can recognise the letter c, say its sound and trace it."
+}

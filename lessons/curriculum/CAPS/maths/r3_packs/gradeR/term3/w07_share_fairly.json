@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w07_share_fairly",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "People who help us",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "People who help us: Numeracy",
+    "subtopic": "Shares concrete apparatus to find leftovers (odd) or no leftovers (even), to at least 6"
+  },
+  "skill": "number.share.leftovers",
+  "prereq_skills": ["number.revise.1_to_6"],
+  "images": ["oranges_six_shared", "plates_two_two", "plates_three_one", "sweets_shared_three_each", "bananas_leftover_one", "bananas_no_leftover", "oranges_two_shared", "apples_four", "sweets_six", "oranges_two", "bananas_five", "pears_three", "plasters_none_left", "plasters_one_left", "tutor_shares_unfairly"],
+  "show": {
+    "line": "Let's share fairly! Six oranges for two friends. Three for you, three for me. No leftovers!",
+    "image": "oranges_six_shared"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Share four apples between two plates. Which picture is fair?", "options": ["plates_two_two", "plates_three_one"], "answer": "plates_two_two", "praise": "Yes! Two and two is fair."},
+    {"type": "count_tap", "prompt": "Six sweets shared between two children. How many does each child get?", "image": "sweets_shared_three_each", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three each! That is fair."},
+    {"type": "listen_tap", "prompt": "Five bananas for two friends. Is one left over? Tap the picture.", "options": ["bananas_leftover_one", "bananas_no_leftover"], "answer": "bananas_leftover_one", "praise": "Yes! One banana is left over."},
+    {"type": "say_it", "prompt": "Two oranges, two children. How many does each child get? Say the number.", "accept": ["one", "1", "wan", "one each"], "image": "oranges_two_shared"},
+    {"type": "match_sort", "prompt": "Share between two. Is one left over? Put each group in its place.", "groups": ["no_leftover", "one_leftover"], "items": [{"image": "apples_four", "group": "no_leftover"}, {"image": "sweets_six", "group": "no_leftover"}, {"image": "oranges_two", "group": "no_leftover"}, {"image": "bananas_five", "group": "one_leftover"}, {"image": "pears_three", "group": "one_leftover"}]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nurse Dlamini has six plasters for two children. She gives each child three. Are any plasters left?", "options": ["plasters_none_left", "plasters_one_left"], "answer": "plasters_none_left", "praise": "Yes! Three and three is six. None left."}
+  ],
+  "hints": ["One for you, one for me. Keep going.", "If one is left and nobody gets it, that is a leftover."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will share four buns between two children.",
+    "tutor_try": "Three for you, one for you. Fair!",
+    "image": "tutor_shares_unfairly",
+    "answer": "two",
+    "win_line": "You caught me! Two and two is fair.",
+    "gentle_line": "Let's share together. One for you, one for me. Two each!"
+  },
+  "parent_line": "Can share fairly between two and spot a leftover."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term3.w03_write_f",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Keeping safe",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe: Emergent Writing",
+    "subtopic": "Letter formation of 'f' (red plasticine 'f', copying 'f' in red crayon)"
+  },
+  "skill": "writing.letter.f",
+  "prereq_skills": ["phonics.initial_sound.f"],
+  "images": ["letter_f", "letter_t", "letter_l", "pot", "fish", "knife", "tutor_wrote_t"],
+  "show": {
+    "line": "Let's write f. Curl at the top, a long line down, then a line across. Red f for fire!",
+    "image": "letter_f"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says f, as in fire.", "options": ["letter_t", "letter_f", "letter_l"], "answer": "letter_f", "praise": "Yes! That is f."},
+    {"type": "say_it", "prompt": "This letter says f. Say the sound!", "accept": ["f", "ff", "fff", "fuh", "fe"]},
+    {"type": "trace", "prompt": "Trace f with your finger. Curl at the top, go down, then across.", "glyph": "f"},
+    {"type": "listen_tap", "prompt": "Which picture starts with f?", "options": ["pot", "fish", "knife"], "answer": "fish", "praise": "Yes! f, f, fish."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is f? It has a curl at the top.", "options": ["letter_f", "letter_t"], "answer": "letter_f"}
+  ],
+  "hints": ["f is tall with a curl at the top and a line across.", "Start at the top. Curl, then go down."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write f for fire.",
+    "tutor_try": "A line down, then across. Look, I wrote f!",
+    "image": "tutor_wrote_t",
+    "answer": "f",
+    "win_line": "You caught me! That is t. f needs a curl at the top.",
+    "gentle_line": "Look together. Curl at the top, down, then across. That is f!"
+  },
+  "parent_line": "Can recognise the letter f, say its sound and trace it."
+}

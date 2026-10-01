@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term3.w09_write_h",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Helping hands",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Helping hands: Emergent Writing",
+    "subtopic": "Letter formation of 'h' ('h' mobiles)"
+  },
+  "skill": "writing.letter.h",
+  "prereq_skills": ["phonics.initial_sound.h", "writing.letter.n"],
+  "images": ["letter_h", "letter_n", "letter_b", "broom", "hat", "cup", "tutor_wrote_n"],
+  "show": {
+    "line": "Let's write h. A tall line down, then up and over one hump. h, h, hand!",
+    "image": "letter_h"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says h, as in hand.", "options": ["letter_n", "letter_h", "letter_b"], "answer": "letter_h", "praise": "Yes! That is h."},
+    {"type": "say_it", "prompt": "This letter says h. Say the sound!", "accept": ["h", "hh", "huh", "ha", "he"]},
+    {"type": "trace", "prompt": "Trace h with your finger. Tall line down, then up and over the hump.", "glyph": "h"},
+    {"type": "listen_tap", "prompt": "Which picture starts with h?", "options": ["broom", "hat", "cup"], "answer": "hat", "praise": "Yes! h, h, hat."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is h? It is tall.", "options": ["letter_h", "letter_n"], "answer": "letter_h"}
+  ],
+  "hints": ["h is tall, with one hump.", "Start at the top. Go all the way down first."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write h for hand.",
+    "tutor_try": "A short line down, then a hump. Look, I wrote h!",
+    "image": "tutor_wrote_n",
+    "answer": "h",
+    "win_line": "You caught me! That is n. h starts with a tall line.",
+    "gentle_line": "Look together. Tall line down, then a hump. That is h!"
+  },
+  "parent_line": "Can recognise the letter h, say its sound and trace it."
+}

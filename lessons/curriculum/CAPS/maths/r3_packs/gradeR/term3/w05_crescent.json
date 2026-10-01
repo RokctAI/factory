@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w05_crescent",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "The sky (day and night)",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night): Numeracy",
+    "subtopic": "Crescent shape; identifies shapes in a picture (Worksheet 4); copies shape patterns on pegboards"
+  },
+  "skill": "shape.recognise.crescent",
+  "prereq_skills": ["shape.recognise.circle"],
+  "images": ["crescent", "circle", "triangle", "banana", "orange", "apple", "moon_full", "moon_crescent", "sun", "crescents_four", "tutor_points_full_moon"],
+  "show": {
+    "line": "This is a crescent. It is curved, like the moon at night. A banana is a crescent too!",
+    "image": "crescent"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the crescent.", "options": ["circle", "crescent", "triangle"], "answer": "crescent", "praise": "Yes! That is a crescent."},
+    {"type": "say_it", "prompt": "What shape is this? Say it with me. Crescent!", "accept": ["crescent", "a crescent", "cresent", "kresent", "moon shape"], "image": "crescent"},
+    {"type": "listen_tap", "prompt": "Which fruit is a crescent shape?", "options": ["banana", "orange", "apple"], "answer": "banana", "praise": "Yes! A banana is a crescent."},
+    {"type": "listen_tap", "prompt": "Which moon is a crescent? Thin and curved.", "options": ["moon_full", "moon_crescent"], "answer": "moon_crescent", "praise": "Yes! A thin curved moon."},
+    {"type": "match_sort", "prompt": "Put the crescents in one group and the circles in the other.", "groups": ["crescent", "circle"], "items": [{"image": "moon_crescent", "group": "crescent"}, {"image": "banana", "group": "crescent"}, {"image": "crescent", "group": "crescent"}, {"image": "moon_full", "group": "circle"}, {"image": "sun", "group": "circle"}]},
+    {"type": "count_tap", "prompt": "Count the crescents in the night sky.", "image": "crescents_four", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four crescents!"}
+  ],
+  "hints": ["A crescent is curved, with two points.", "Look at the moon at night. Sometimes it is a crescent."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the crescent.",
+    "tutor_try": "This full moon! It is a crescent.",
+    "image": "tutor_points_full_moon",
+    "answer": "circle",
+    "win_line": "You caught me! The full moon is a circle. A crescent is thin and curved.",
+    "gentle_line": "Let's look together. Curved, with two points. Like a banana!"
+  },
+  "parent_line": "Can recognise and name a crescent shape."
+}

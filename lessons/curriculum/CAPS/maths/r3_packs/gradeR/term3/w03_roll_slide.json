@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w03_roll_slide",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Keeping safe",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe: Numeracy",
+    "subtopic": "Manipulates household containers and sorts them into those that slide and those that roll"
+  },
+  "skill": "geometry.roll_slide",
+  "prereq_skills": ["shape.recognise.circle", "shape.recognise.square"],
+  "images": ["ball_and_box", "ball", "box", "tin_can", "book", "orange", "tin_can_rolling", "tutor_rolls_box"],
+  "show": {
+    "line": "Some things roll. Some things slide. A ball rolls. A box slides. Let's find out!",
+    "image": "ball_and_box"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one rolls down the hill?", "options": ["ball", "box"], "answer": "ball", "praise": "Yes! A ball is round, so it rolls."},
+    {"type": "listen_tap", "prompt": "Which one slides? It has flat sides.", "options": ["tin_can", "book", "orange"], "answer": "book", "praise": "Yes! A book is flat. It slides."},
+    {"type": "say_it", "prompt": "Look at the tin on its side. Does it roll or slide?", "accept": ["roll", "rolls", "it rolls", "rol", "rolling"], "image": "tin_can_rolling"},
+    {"type": "match_sort", "prompt": "Roll or slide? Put each thing in its group.", "groups": ["roll", "slide"], "items": [{"image": "ball", "group": "roll"}, {"image": "orange", "group": "roll"}, {"image": "tin_can", "group": "roll"}, {"image": "book", "group": "slide"}, {"image": "box", "group": "slide"}]},
+    {"type": "listen_tap", "prompt": "Why does the ball roll? Tap the round one.", "options": ["ball", "box"], "answer": "ball"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thandi drops a tin. It rolls under the stove. Mama says, careful, the stove is hot! What rolled away?", "options": ["tin_can", "book", "box"], "answer": "tin_can", "praise": "Yes! The round tin rolled."}
+  ],
+  "hints": ["Round things roll. Flat things slide.", "Feel the sides. Round or flat?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a thing that rolls.",
+    "tutor_try": "This box! It rolls down the hill.",
+    "image": "tutor_rolls_box",
+    "answer": "slide",
+    "win_line": "You caught me! A box has flat sides. It slides.",
+    "gentle_line": "Let's look together. A box is flat. Flat things slide!"
+  },
+  "parent_line": "Can sort things into those that roll and those that slide."
+}

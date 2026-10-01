@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term3.w07_sound_p_t",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "People who help us",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "People who help us: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'p' and 't' sounds at the beginning of words and initial and end sounds of community workers' names"
+  },
+  "skill": "phonics.initial_sound.p_t",
+  "prereq_skills": ["phonics.initial_sound.k_i"],
+  "images": ["police_officer", "pot", "bus", "nurse", "taxi_driver", "doctor", "postman", "teacher", "tutor_points_nurse"],
+  "show": {
+    "line": "Listen. p as in police. t as in teacher. p, p, police. t, t, teacher!",
+    "image": "police_officer"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with p, as in police?", "options": ["pot", "bus", "nurse"], "answer": "pot", "praise": "Yes! p, p, pot."},
+    {"type": "say_it", "prompt": "Say the sound with me. p, as in police! Pop your lips.", "accept": ["p", "puh", "pe", "pa", "pi"]},
+    {"type": "listen_tap", "prompt": "Which helper starts with t, as in teacher?", "options": ["taxi_driver", "nurse", "doctor"], "answer": "taxi_driver", "praise": "Yes! t, t, taxi driver."},
+    {"type": "say_it", "prompt": "Say the sound with me. t, as in teacher!", "accept": ["t", "tuh", "te", "ta", "ti"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Teacher Pule reads to the class. The postman brings a parcel. Who brings the parcel?", "options": ["postman", "teacher", "nurse"], "answer": "postman", "praise": "Yes! p, p, postman."},
+    {"type": "match_sort", "prompt": "Does it start with p or t? Put each one in its group.", "groups": ["p", "t"], "items": [{"image": "police_officer", "group": "p"}, {"image": "postman", "group": "p"}, {"image": "pot", "group": "p"}, {"image": "teacher", "group": "t"}, {"image": "taxi_driver", "group": "t"}]}
+  ],
+  "hints": ["Listen for the first sound. p, p, police.", "t is quick, with your tongue behind your teeth. t, t."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with p.",
+    "tutor_try": "Nurse! Nurse starts with p.",
+    "image": "tutor_points_nurse",
+    "answer": "no",
+    "win_line": "You caught me! Nurse starts with n. Police starts with p.",
+    "gentle_line": "Let's listen together. p, p, police. Police starts with p!"
+  },
+  "parent_line": "Can hear the p and t sounds at the start of words."
+}

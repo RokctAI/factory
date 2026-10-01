@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w01_day_times",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Time and weather",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Time and weather: Numeracy",
+    "subtopic": "Describes morning, afternoon and night"
+  },
+  "skill": "time.day_parts",
+  "prereq_skills": [],
+  "images": ["sun_rising", "morning_sunrise", "night_moon", "afternoon_sun", "child_sleeping", "playing_soccer", "eating_breakfast", "sun_high", "child_at_school", "moon_stars", "day_sequence", "tutor_sleeps_morning"],
+  "show": {
+    "line": "Morning, afternoon and night. The sun comes up in the morning. The moon comes out at night!",
+    "image": "sun_rising"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "When do we wake up and brush our teeth? Tap the picture.", "options": ["morning_sunrise", "night_moon"], "answer": "morning_sunrise", "praise": "Yes! We wake up in the morning."},
+    {"type": "listen_tap", "prompt": "When do we see the moon and stars?", "options": ["afternoon_sun", "night_moon", "morning_sunrise"], "answer": "night_moon", "praise": "Yes! The moon comes out at night."},
+    {"type": "say_it", "prompt": "Look. The child is sleeping. Is it morning or night?", "accept": ["night", "nite", "night time", "at night", "nait"], "image": "child_sleeping"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "In the morning Zanele eats pap. In the afternoon she plays soccer. What does she do in the afternoon?", "options": ["playing_soccer", "eating_breakfast", "child_sleeping"], "answer": "playing_soccer", "praise": "Yes! She plays soccer in the afternoon."},
+    {"type": "match_sort", "prompt": "Day or night? Put each picture in its group.", "groups": ["day", "night"], "items": [{"image": "sun_high", "group": "day"}, {"image": "child_at_school", "group": "day"}, {"image": "playing_soccer", "group": "day"}, {"image": "moon_stars", "group": "night"}, {"image": "child_sleeping", "group": "night"}]},
+    {"type": "listen_tap", "prompt": "Morning, afternoon, then what comes next?", "image": "day_sequence", "options": ["night_moon", "morning_sunrise"], "answer": "night_moon", "praise": "Night! Morning, afternoon, night."}
+  ],
+  "hints": ["In the morning the sun comes up. At night it is dark.", "Think about what you do. Sleep is at night."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say when we sleep.",
+    "tutor_try": "We sleep in the morning, when the sun comes up!",
+    "image": "tutor_sleeps_morning",
+    "answer": "night",
+    "win_line": "You caught me! We sleep at night, when it is dark.",
+    "gentle_line": "Let's think together. It is dark and the moon is out. That is night!"
+  },
+  "parent_line": "Can tell morning, afternoon and night apart."
+}
