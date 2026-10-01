@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A television costs R6 000 cash or 10% deposit with the balance over 24 months at 12% p.a. simple interest. Calculate the monthly instalment and the total hire-purchase cost, and compare it with the cash price.",
+      "expected_answer": "Deposit 10% of 6 000 = R600; balance R5 400. Interest = 5 400 × 0,12 × 2 = R1 296. Total owed = R6 696; instalment = 6 696 ÷ 24 = R279 per month. Total paid = 600 + 6 696 = R7 296, which is R1 296 more than the cash price."
+    },
+    {
+      "id": "cc2",
+      "question": "Compare R5 000 invested for 3 years at 8% p.a. under simple interest and under annual compound interest, and explain why the compound total is larger.",
+      "expected_answer": "Simple: I = 5 000 × 0,08 × 3 = R1 200, total R6 200. Compound: A = 5 000 × 1,08³ = R6 298,56 (5 400 → 5 832 → 6 298,56). Compound earns R98,56 more because each year's interest is added to the balance and itself earns interest the following year, whereas simple interest is always calculated on the original R5 000."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how to find the price excluding VAT from a VAT-inclusive price of R460, and why subtracting 15% of R460 is wrong.",
+      "expected_answer": "The inclusive price is 115% of the pre-VAT price, so divide by 1,15: 460 ÷ 1,15 = R400, with VAT of R60. Subtracting 15% of R460 takes 15% of the wrong base (the inclusive amount, giving R69 and R391) — VAT was charged on R400, not on R460."
+    }
+  ]
+}
