@@ -74,8 +74,9 @@ CAPS_TYPE_BY_FOLDER = {
 
 # Lowest grade the seed step writes job cards for. Grades 8-9 syllabi are
 # lifted into the pipeline (dashboard and drift check read them) but no
-# lessons are written below this grade. Lowered to 8 on 2026-10-01 (Ray).
-SEED_MIN_GRADE = 8
+# lessons are written below this grade: Ray (2026-10-01) wants the Grade 8-9
+# packages hand-written by the lessons thread, not seeded by this pipeline.
+SEED_MIN_GRADE = 10
 
 
 def _seed_grade_ok(entry):
