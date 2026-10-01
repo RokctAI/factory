@@ -7,8 +7,9 @@ Curated syllabus JSON now sits beside the PDFs as `{subject}/syllabus/grade{N}.j
 `gradeR.json`), 60 files in the same shape as Grades 10-12. Files carrying `"pipeline_enabled": false`
 are skipped by `load_seed_entries` and `atp_drift_check`. The Grade 8-9 files of the subjects that feed
 the six FET subjects (Maths, Natural Sciences, Social Sciences, EMS) have that hold lifted; every other
-Grade R-9 file still carries it. `SEED_MIN_GRADE` in `lesson_pipeline.py` is 8 (Ray's go-ahead,
-2026-10-01), so the seed step now writes Grade 8-9 cards for those four subjects.
+Grade R-9 file still carries it. Lifting the hold does not write lessons: `SEED_MIN_GRADE` in
+`lesson_pipeline.py` (10) keeps the seed step above Grade 9. Ray (2026-10-01) wants the Grade 8-9
+packages hand-written by the lessons thread, not seeded by the hourly pipeline.
 
 A second switch, `"lessons_enabled"`, is whole-subject (ruled 2026-10-01: a learner who takes a subject
 expects all of it). A subject is either on in full or off as a file; no topic is switched off inside an
