@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w07_take_away_six",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "People who help us",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "People who help us: Numeracy",
+    "subtopic": "Uses concrete apparatus to subtract from at least 6"
+  },
+  "skill": "number.subtract.from_6",
+  "prereq_skills": ["number.add_subtract.to_6"],
+  "images": ["counters_six_take_two", "bandages_four_left", "numeral_4", "numeral_5", "numeral_3", "loaves_one_left", "counters_three_left", "numeral_2", "numeral_6", "numeral_7", "tutor_letters_wrong"],
+  "show": {
+    "line": "Take away! Six counters. I take away two. Four are left.",
+    "image": "counters_six_take_two"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Six bandages. The doctor uses two. Count what is left.", "image": "bandages_four_left", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four left! Six take away two is four."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Firefighter Naledi has five hoses. She uses one. How many are left?", "options": ["numeral_4", "numeral_5", "numeral_3"], "answer": "numeral_4", "praise": "Four! Five take away one is four."},
+    {"type": "count_tap", "prompt": "Four loaves at the shop. The baker sells three. How many are left?", "image": "loaves_one_left", "count": "1", "options": ["1", "2", "3"], "answer": "1", "praise": "One loaf left!"},
+    {"type": "say_it", "prompt": "Six counters. Take away three. How many are left? Say the number.", "accept": ["three", "3", "tree", "free", "tri"], "image": "counters_three_left"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The police officer has six cones. The wind blows two over. How many still stand?", "options": ["numeral_4", "numeral_2", "numeral_6"], "answer": "numeral_4", "praise": "Four! Six take away two is four."},
+    {"type": "listen_tap", "prompt": "Six, take away one. Which number is left?", "options": ["numeral_5", "numeral_6", "numeral_7"], "answer": "numeral_5", "praise": "Five! Six take away one is five."}
+  ],
+  "hints": ["Take away means some go. Count what is still there.", "Cover the ones that went away. Count the rest."],
+  "beat_the_tutor": {
+    "setup": "My turn! Six letters. The postman gives away two.",
+    "tutor_try": "Six take away two. Six letters are left!",
+    "image": "tutor_letters_wrong",
+    "answer": "four",
+    "win_line": "You caught me! Two went away, so four are left.",
+    "gentle_line": "Let's count what is left together. One, two, three, four!"
+  },
+  "parent_line": "Can take away from 6 and say how many are left."
+}

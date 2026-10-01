@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w01_sound_b",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'b' sound at the beginning of words and recognises the symbol 'b'"
+  },
+  "skill": "phonics.initial_sound.b",
+  "prereq_skills": ["phonics.initial_sound.p_t"],
+  "images": ["baby_bird", "ball", "egg", "nest", "bug", "bunny", "lamb", "chick", "tutor_holds_egg"],
+  "show": {
+    "line": "Listen. b as in baby. b, b, baby. Baby birds in the nest. b, b, bird!",
+    "image": "baby_bird"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with b, as in baby?", "options": ["ball", "egg", "nest"], "answer": "ball", "praise": "Yes! b, b, ball."},
+    {"type": "say_it", "prompt": "Say the sound with me. b, as in baby!", "accept": ["b", "buh", "be", "ba", "bi"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A baby bird sits in the nest. Its mother brings a bug for breakfast. What does the mother bring?", "options": ["bug", "egg", "nest"], "answer": "bug", "praise": "Yes! b, b, bug."},
+    {"type": "listen_tap", "prompt": "Which baby animal starts with b? b, b.", "options": ["bunny", "lamb", "chick"], "answer": "bunny", "praise": "Yes! b, b, bunny."},
+    {"type": "say_it", "prompt": "What is this? It starts with b.", "accept": ["bird", "a bird", "birds", "bed", "bud"], "image": "baby_bird"},
+    {"type": "match_sort", "prompt": "Does it start with b? Put b words in the b group.", "groups": ["b", "not_b"], "items": [{"image": "ball", "group": "b"}, {"image": "bug", "group": "b"}, {"image": "bunny", "group": "b"}, {"image": "egg", "group": "not_b"}, {"image": "nest", "group": "not_b"}]}
+  ],
+  "hints": ["Listen for b at the start. b, b, baby.", "Press your lips together and pop. b, b."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with b.",
+    "tutor_try": "Egg! Egg starts with b.",
+    "image": "tutor_holds_egg",
+    "answer": "no",
+    "win_line": "You caught me! Egg starts with e. Baby starts with b.",
+    "gentle_line": "Let's listen together. b, b, baby. Baby starts with b!"
+  },
+  "parent_line": "Can hear the b sound at the start of words."
+}

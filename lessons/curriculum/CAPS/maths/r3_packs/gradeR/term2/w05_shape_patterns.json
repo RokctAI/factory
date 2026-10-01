@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term2.w05_shape_patterns",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Shapes and colours in my community",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Shapes and colours in my community: Numeracy",
+    "subtopic": "Creates and completes simple patterns with shapes"
+  },
+  "skill": "pattern.shape.continue",
+  "prereq_skills": ["shape.recognise.circle", "shape.recognise.square", "shape.recognise.triangle"],
+  "images": ["pattern_circle_square", "circle", "square", "triangle", "pattern_red_blue_beads", "red_bead", "blue_bead", "pattern_triangle_circle", "pattern_big_small_squares", "square_small", "square_big", "fence_pattern", "fence_plain", "pattern_yellow_green_missing", "yellow_triangle", "green_triangle", "tutor_adds_triangle"],
+  "show": {
+    "line": "Look at this pattern. Circle, square, circle, square. The shapes take turns!",
+    "image": "pattern_circle_square"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Circle, square, circle, square. Which shape comes next?", "image": "pattern_circle_square", "options": ["circle", "square", "triangle"], "answer": "circle", "praise": "Circle! Circle, square, circle, square, circle."},
+    {"type": "listen_tap", "prompt": "Red, blue, red, blue. Which bead comes next?", "image": "pattern_red_blue_beads", "options": ["red_bead", "blue_bead"], "answer": "red_bead", "praise": "Red! Red, blue, red, blue, red."},
+    {"type": "say_it", "prompt": "Triangle, circle, triangle, circle. Say what comes next.", "accept": ["triangle", "a triangle", "traingle", "tryangle", "triangel"], "image": "pattern_triangle_circle"},
+    {"type": "listen_tap", "prompt": "Big square, small square, big square. Which one comes next?", "image": "pattern_big_small_squares", "options": ["square_small", "square_big"], "answer": "square_small", "praise": "Small square! Big, small, big, small."},
+    {"type": "listen_tap", "prompt": "Which fence has a pattern that takes turns?", "options": ["fence_pattern", "fence_plain"], "answer": "fence_pattern", "praise": "Yes! Circle, square, circle, square."},
+    {"type": "listen_tap", "prompt": "Yellow, green, yellow, gap, yellow. Which shape is missing?", "image": "pattern_yellow_green_missing", "options": ["yellow_triangle", "green_triangle"], "answer": "green_triangle", "praise": "Green! Now the pattern is whole."}
+  ],
+  "hints": ["Say the pattern out loud. Then say the next one.", "A pattern takes turns. This one, that one, this one, that one."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will finish the pattern. Circle, square, circle, square.",
+    "tutor_try": "Next comes a triangle!",
+    "image": "tutor_adds_triangle",
+    "answer": "circle",
+    "win_line": "You caught me! There is no triangle in this pattern. Circle comes next.",
+    "gentle_line": "Let's say it together. Circle, square, circle, square, circle!"
+  },
+  "parent_line": "Can continue a simple shape and colour pattern."
+}

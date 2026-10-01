@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w03_where_i_live",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "This is where people live",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live: Emergent Reading and Phonics",
+    "subtopic": "Reads along with the repetitive story text; completes the sentence strip 'Where do you live? I live in a ...'"
+  },
+  "skill": "reading.sentence.i_live_in",
+  "prereq_skills": [],
+  "images": ["houses_street", "flat", "hut", "house", "nest", "kennel", "tutor_bird_kennel"],
+  "show": {
+    "line": "Where do you live? I live in a house. I live in a hut. Say it with me!",
+    "image": "houses_street"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sam says, I live in a flat. Lindi says, I live in a hut. Where does Sam live?", "options": ["flat", "hut", "house"], "answer": "flat", "praise": "Yes! Sam lives in a flat."},
+    {"type": "say_it", "prompt": "Where do you live? Say it with me. I live in a house!", "accept": ["house", "a house", "i live in a house", "in a house", "hous"], "image": "house"},
+    {"type": "listen_tap", "prompt": "Where does the bird live? Tap its home.", "options": ["nest", "kennel", "house"], "answer": "nest", "praise": "Yes! A bird lives in a nest."},
+    {"type": "listen_tap", "prompt": "Where does the dog sleep? Tap its home.", "options": ["kennel", "nest", "flat"], "answer": "kennel", "praise": "Yes! A dog sleeps in a kennel."},
+    {"type": "say_it", "prompt": "Look at this home. Say it with me. I live in a hut!", "accept": ["hut", "a hut", "i live in a hut", "in a hut", "hat"], "image": "hut"},
+    {"type": "match_sort", "prompt": "Homes for people, or homes for animals? Put each one in its group.", "groups": ["people", "animals"], "items": [{"image": "house", "group": "people"}, {"image": "flat", "group": "people"}, {"image": "hut", "group": "people"}, {"image": "nest", "group": "animals"}, {"image": "kennel", "group": "animals"}]}
+  ],
+  "hints": ["Say the whole sentence. I live in a house.", "Think about your own home. What is it like?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say where the bird lives.",
+    "tutor_try": "The bird lives in a kennel!",
+    "image": "tutor_bird_kennel",
+    "answer": "nest",
+    "win_line": "You caught me! A bird lives in a nest. A dog lives in a kennel.",
+    "gentle_line": "Let's look together. The bird is in the nest. It lives in a nest!"
+  },
+  "parent_line": "Can say and complete the sentence I live in a ..."
+}

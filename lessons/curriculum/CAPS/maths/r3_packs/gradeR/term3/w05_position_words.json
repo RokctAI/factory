@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w05_position_words",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "The sky (day and night)",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night): Numeracy",
+    "subtopic": "Responds to positional language (on, next to, behind, in front of, under)"
+  },
+  "skill": "space.position_words",
+  "prereq_skills": [],
+  "images": ["owl_on_branch", "cat_on_roof", "cat_under_table", "ball_under_chair", "ball_on_chair", "ball_next_to_chair", "bird_next_to_moon", "dog_behind_tree", "dog_in_front_of_tree", "girl_behind_house", "girl_in_front_of_house", "owl_under_branch", "star", "tutor_cat_on_roof"],
+  "show": {
+    "line": "Where is the owl? On the branch. Under the moon. Next to the star. Let's play!",
+    "image": "owl_on_branch"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture shows the cat on the roof?", "options": ["cat_on_roof", "cat_under_table"], "answer": "cat_on_roof", "praise": "Yes! The cat is on the roof."},
+    {"type": "listen_tap", "prompt": "Tap the ball that is under the chair.", "options": ["ball_under_chair", "ball_on_chair", "ball_next_to_chair"], "answer": "ball_under_chair", "praise": "Yes! Under the chair."},
+    {"type": "say_it", "prompt": "Where is the bird? On the moon, or next to the moon?", "accept": ["next to", "next to the moon", "next", "beside", "next to it"], "image": "bird_next_to_moon"},
+    {"type": "listen_tap", "prompt": "Which dog is behind the tree? You can only see its tail.", "options": ["dog_behind_tree", "dog_in_front_of_tree"], "answer": "dog_behind_tree", "praise": "Yes! The dog is hiding behind the tree."},
+    {"type": "listen_tap", "prompt": "Tap the girl who is in front of the house.", "options": ["girl_behind_house", "girl_in_front_of_house"], "answer": "girl_in_front_of_house"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "At night Owl sits on the branch. A star shines next to him. Where does Owl sit?", "options": ["owl_on_branch", "owl_under_branch", "star"], "answer": "owl_on_branch", "praise": "Yes! Owl sits on the branch."}
+  ],
+  "hints": ["On means on top. Under means below.", "Behind means at the back. You cannot see it well."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say where the cat is.",
+    "tutor_try": "The cat is under the roof!",
+    "image": "tutor_cat_on_roof",
+    "answer": "on",
+    "win_line": "You caught me! The cat is on the roof, on top.",
+    "gentle_line": "Let's look together. The cat is on top of the roof. On!"
+  },
+  "parent_line": "Can understand on, under, next to, behind and in front of."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term4.w03_building_sums",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "This is where people live",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live: Numeracy",
+    "subtopic": "Theme-related subtraction story sums with 10 counters (e.g. Bob has 8 nails, hammers 4)"
+  },
+  "skill": "number.subtract.to_10",
+  "prereq_skills": ["number.add_subtract.to_8", "count.to_10"],
+  "images": ["nails_eight_four_used", "numeral_4", "numeral_8", "numeral_2", "bricks_seven_left", "numeral_6", "numeral_3", "planks_five_left", "buckets_three_full", "numeral_9", "numeral_10", "tutor_nails_wrong"],
+  "show": {
+    "line": "Builders use nails! Eight nails. Bob hammers four. Four nails are left.",
+    "image": "nails_eight_four_used"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Bob has eight nails. He hammers four into the wood. How many nails are left?", "options": ["numeral_4", "numeral_8", "numeral_2"], "answer": "numeral_4", "praise": "Four! Eight take away four is four."},
+    {"type": "count_tap", "prompt": "Ten bricks. The builder uses three. Count the bricks that are left.", "image": "bricks_seven_left", "count": "7", "options": ["6", "7", "8"], "answer": "7", "praise": "Seven bricks left!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thuli paints six doors. Two are already dry. How many doors are still wet?", "options": ["numeral_4", "numeral_6", "numeral_3"], "answer": "numeral_4", "praise": "Four! Six take away two is four."},
+    {"type": "say_it", "prompt": "Nine planks. Four are used for the roof. How many are left? Say the number.", "accept": ["five", "5", "fife", "faiv", "fahv"], "image": "planks_five_left"},
+    {"type": "count_tap", "prompt": "Five buckets of water. Two are empty. How many buckets are still full?", "image": "buckets_three_full", "count": "3", "options": ["2", "3", "4"], "answer": "3"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Ten tiles on the roof. The wind blows one off. How many tiles are left on the roof?", "options": ["numeral_9", "numeral_10", "numeral_8"], "answer": "numeral_9", "praise": "Nine! Ten take away one is nine."}
+  ],
+  "hints": ["Take away means some are gone. Count what is left.", "Cover the ones that are used. Count the rest."],
+  "beat_the_tutor": {
+    "setup": "My turn! Eight nails. I hammer four.",
+    "tutor_try": "Eight take away four. Six nails are left!",
+    "image": "tutor_nails_wrong",
+    "answer": "four",
+    "win_line": "You caught me! Four were hammered in, so four are left.",
+    "gentle_line": "Let's count what is left together. One, two, three, four nails!"
+  },
+  "parent_line": "Can solve taking away stories up to 10."
+}

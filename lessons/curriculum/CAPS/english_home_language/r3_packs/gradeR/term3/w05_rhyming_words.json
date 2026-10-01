@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term3.w05_rhyming_words",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "The sky (day and night)",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night): Emergent Reading and Phonics",
+    "subtopic": "Identifies words that rhyme with sky, moon, queen, etc."
+  },
+  "skill": "phonics.rhyme.sky_moon",
+  "prereq_skills": [],
+  "images": ["sky_fly", "fly", "moon", "sun", "star", "spoon", "cloud", "bun_and_hat", "car", "owl", "bee", "pie", "eye", "balloon", "tutor_points_star"],
+  "show": {
+    "line": "Rhymes sound the same at the end. Sky, fly, pie! Moon, spoon! Let's find rhymes.",
+    "image": "sky_fly"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one rhymes with sky?", "options": ["fly", "moon", "sun"], "answer": "fly", "praise": "Yes! Sky, fly. They rhyme."},
+    {"type": "listen_tap", "prompt": "Which one rhymes with moon?", "options": ["star", "spoon", "cloud"], "answer": "spoon", "praise": "Yes! Moon, spoon."},
+    {"type": "say_it", "prompt": "Sun. Which one rhymes with sun? Bun or hat? Say it.", "accept": ["bun", "a bun", "ban", "bunn", "buns"], "image": "bun_and_hat"},
+    {"type": "listen_tap", "prompt": "Which one rhymes with star?", "options": ["car", "moon", "owl"], "answer": "car", "praise": "Yes! Star, car."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Queen Quellerina sits by the sea. She sees a bee and drinks her tea. Which word rhymes with sea?", "options": ["bee", "moon", "star"], "answer": "bee", "praise": "Yes! Sea, bee, tea. They rhyme."},
+    {"type": "match_sort", "prompt": "Does it rhyme with sky, or with moon? Put each one in its group.", "groups": ["sky", "moon"], "items": [{"image": "fly", "group": "sky"}, {"image": "pie", "group": "sky"}, {"image": "eye", "group": "sky"}, {"image": "spoon", "group": "moon"}, {"image": "balloon", "group": "moon"}]}
+  ],
+  "hints": ["Listen to the end of the word. Sky, fly. Same ending!", "Say both words. Do the ends sound the same?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a rhyme for moon.",
+    "tutor_try": "Moon, star! They rhyme.",
+    "image": "tutor_points_star",
+    "answer": "no",
+    "win_line": "You caught me! Moon and star do not rhyme. Moon, spoon!",
+    "gentle_line": "Let's listen together. Moon, spoon. The ends sound the same!"
+  },
+  "parent_line": "Can hear which words rhyme."
+}

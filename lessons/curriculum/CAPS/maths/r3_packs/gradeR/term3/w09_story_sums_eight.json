@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w09_story_sums_eight",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Helping hands",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Helping hands: Numeracy",
+    "subtopic": "Solves verbally stated addition and subtraction story sums in the range 1-8 with counters"
+  },
+  "skill": "number.add_subtract.to_8",
+  "prereq_skills": ["number.recognise.7_8", "number.add_subtract.to_6"],
+  "images": ["brooms_eight", "numeral_6", "numeral_4", "numeral_5", "plates_three_and_four", "numeral_8", "numeral_3", "coins_six_and_two", "numeral_7", "numeral_9", "spoons_two_and_six", "tutor_cups_wrong"],
+  "show": {
+    "line": "Story sums to eight! Five brooms and three more brooms. Count them all. Eight brooms!",
+    "image": "brooms_eight"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Bongani helps carry four bags. His sister carries two bags. How many bags altogether?", "options": ["numeral_6", "numeral_4", "numeral_5"], "answer": "numeral_6", "praise": "Six! Four and two is six."},
+    {"type": "count_tap", "prompt": "Three plates and four plates. Count them all.", "image": "plates_three_and_four", "count": "7", "options": ["6", "7", "8"], "answer": "7", "praise": "Seven plates altogether!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "There are eight socks on the line. Mama takes down three. How many are still on the line?", "options": ["numeral_5", "numeral_8", "numeral_3"], "answer": "numeral_5", "praise": "Five! Eight take away three is five."},
+    {"type": "say_it", "prompt": "Six coins in the money box. I put in two more. How many now? Say the number.", "accept": ["eight", "8", "ate", "ayt", "eit"], "image": "coins_six_and_two"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Seven children help sweep. Two go to fetch water. How many are still sweeping?", "options": ["numeral_5", "numeral_7", "numeral_9"], "answer": "numeral_5", "praise": "Five! Seven take away two is five."},
+    {"type": "count_tap", "prompt": "Two spoons and six spoons. How many spoons altogether?", "image": "spoons_two_and_six", "count": "8", "options": ["6", "7", "8"], "answer": "8", "praise": "Eight spoons!"}
+  ],
+  "hints": ["More means count on. Take away means count what is left.", "Use your fingers to help you count."],
+  "beat_the_tutor": {
+    "setup": "My turn! Five cups and two more cups.",
+    "tutor_try": "Five and two more. That makes six cups!",
+    "image": "tutor_cups_wrong",
+    "answer": "seven",
+    "win_line": "You caught me! Five and two more is seven.",
+    "gentle_line": "Let's count on together. Five, six, seven!"
+  },
+  "parent_line": "Can solve adding and taking away stories up to 8."
+}

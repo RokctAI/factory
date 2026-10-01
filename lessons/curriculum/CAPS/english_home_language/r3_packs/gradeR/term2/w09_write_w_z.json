@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term2.w09_write_w_z",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Gardens and bugs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Gardens and bugs: Emergent Writing",
+    "subtopic": "Letter formation of 'w' and 'z'"
+  },
+  "skill": "writing.letter.w_z",
+  "prereq_skills": ["phonics.initial_sound.w_z", "writing.letter.v"],
+  "images": ["letter_w", "letter_v", "letter_m", "letter_z", "letter_s", "letter_n", "zebra", "worm", "bee", "tutor_wrote_v"],
+  "show": {
+    "line": "Let's write w and z. w goes down, up, down, up. z zigzags like a bee!",
+    "image": "letter_w"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says w, as in worm.", "options": ["letter_v", "letter_w", "letter_m"], "answer": "letter_w", "praise": "Yes! That is w."},
+    {"type": "trace", "prompt": "Trace w with your finger. Down, up, down, up.", "glyph": "w"},
+    {"type": "listen_tap", "prompt": "Tap the letter that says z, as in zebra.", "options": ["letter_z", "letter_s", "letter_n"], "answer": "letter_z", "praise": "Yes! That is z."},
+    {"type": "trace", "prompt": "Trace z with your finger. Across, slide down, across.", "glyph": "z"},
+    {"type": "say_it", "prompt": "Point to z. What sound does it make?", "accept": ["z", "zz", "zzz", "zuh", "ze"]},
+    {"type": "listen_tap", "prompt": "Which picture starts with w?", "options": ["zebra", "worm", "bee"], "answer": "worm", "praise": "Yes! w, w, worm."}
+  ],
+  "hints": ["w has two points at the bottom. z zigzags.", "Start at the top. Go down first."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write w for worm.",
+    "tutor_try": "Down, up. Look, I wrote w!",
+    "image": "tutor_wrote_v",
+    "answer": "w",
+    "win_line": "You caught me! That is v. w goes down and up two times.",
+    "gentle_line": "Look together. Down, up, down, up. That is w!"
+  },
+  "parent_line": "Can recognise the letters w and z, say their sounds and trace them."
+}

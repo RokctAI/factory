@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w01_rhyme_time",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Emergent Reading and Phonics",
+    "subtopic": "Identifies rhyming words in the story and makes up other rhyming words"
+  },
+  "skill": "phonics.rhyme.animals",
+  "prereq_skills": ["phonics.rhyme.sky_moon"],
+  "images": ["cat_hat", "frog", "lamb", "baby_bird", "pen", "cow", "egg", "chick_stick", "mug", "bee", "leaf", "child_running", "child_jumping", "hat", "bat", "mat", "log", "tutor_points_dog"],
+  "show": {
+    "line": "Rhymes again! Cat, hat, bat. Dog, frog, log. Spring babies love to rhyme!",
+    "image": "cat_hat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one rhymes with dog?", "options": ["frog", "lamb", "baby_bird"], "answer": "frog", "praise": "Yes! Dog, frog."},
+    {"type": "listen_tap", "prompt": "Which one rhymes with hen?", "options": ["pen", "cow", "egg"], "answer": "pen", "praise": "Yes! Hen, pen."},
+    {"type": "say_it", "prompt": "Chick. Which one rhymes with chick? Stick or nest? Say it.", "accept": ["stick", "a stick", "stik", "steek", "sticks"], "image": "chick_stick"},
+    {"type": "listen_tap", "prompt": "Which one rhymes with bug?", "options": ["mug", "bee", "leaf"], "answer": "mug", "praise": "Yes! Bug, mug."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A little lamb plays in the sun. It likes to jump and run. Which word rhymes with sun?", "options": ["child_running", "lamb", "child_jumping"], "answer": "child_running", "praise": "Yes! Sun, run. They rhyme."},
+    {"type": "match_sort", "prompt": "Does it rhyme with cat, or with dog? Put each one in its group.", "groups": ["cat", "dog"], "items": [{"image": "hat", "group": "cat"}, {"image": "bat", "group": "cat"}, {"image": "mat", "group": "cat"}, {"image": "frog", "group": "dog"}, {"image": "log", "group": "dog"}]}
+  ],
+  "hints": ["Listen to the end of the word. Cat, hat. Same ending!", "Say both words. Do the ends sound the same?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a rhyme for cat.",
+    "tutor_try": "Cat, dog! They rhyme.",
+    "image": "tutor_points_dog",
+    "answer": "no",
+    "win_line": "You caught me! Cat and dog do not rhyme. Cat, hat!",
+    "gentle_line": "Let's listen together. Cat, hat. The ends sound the same!"
+  },
+  "parent_line": "Can hear rhymes and find a rhyming word."
+}

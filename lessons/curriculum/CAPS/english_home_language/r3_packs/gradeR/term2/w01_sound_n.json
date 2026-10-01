@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term2.w01_sound_n",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Friends: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'n' sound at the beginning of words"
+  },
+  "skill": "phonics.initial_sound.n",
+  "prereq_skills": ["phonics.initial_sound.m_j"],
+  "images": ["nose", "nest", "ball", "cup", "naartjie", "neck", "hand", "foot", "net", "tutor_holds_ball"],
+  "show": {
+    "line": "Listen. n as in nose. n, n, nose. My friend Nandi has a nose and a neck!",
+    "image": "nose"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with n, as in nose?", "options": ["nest", "ball", "cup"], "answer": "nest", "praise": "Yes! n, n, nest."},
+    {"type": "say_it", "prompt": "Say the sound with me. n, as in nose!", "accept": ["n", "nn", "nnn", "nuh", "ne"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nandi and Neo are friends. They share a naartjie at break. What do they share?", "options": ["naartjie", "ball", "cup"], "answer": "naartjie", "praise": "Yes! n, n, naartjie."},
+    {"type": "listen_tap", "prompt": "Which body part starts with n? n, n.", "options": ["neck", "hand", "foot"], "answer": "neck", "praise": "Yes! n, n, neck."},
+    {"type": "say_it", "prompt": "What is this? It starts with n.", "accept": ["net", "a net", "nets", "nett", "nat"], "image": "net"},
+    {"type": "match_sort", "prompt": "Does it start with n? Put n words in the n group.", "groups": ["n", "not_n"], "items": [{"image": "nose", "group": "n"}, {"image": "nest", "group": "n"}, {"image": "net", "group": "n"}, {"image": "ball", "group": "not_n"}, {"image": "cup", "group": "not_n"}]}
+  ],
+  "hints": ["Listen for n at the start. n, n, nose.", "Put your tongue up and hum. nnn."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with n.",
+    "tutor_try": "Ball! Ball starts with n.",
+    "image": "tutor_holds_ball",
+    "answer": "no",
+    "win_line": "You caught me! Ball starts with b. Nose starts with n.",
+    "gentle_line": "Let's listen together. n, n, nose. Nose starts with n!"
+  },
+  "parent_line": "Can hear the n sound at the start of words."
+}

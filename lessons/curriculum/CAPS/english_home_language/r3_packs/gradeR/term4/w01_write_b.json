@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term4.w01_write_b",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Emergent Writing",
+    "subtopic": "Letter formation of 'b' (salt-dough 'b')"
+  },
+  "skill": "writing.letter.b",
+  "prereq_skills": ["phonics.initial_sound.b", "writing.letter.p_t"],
+  "images": ["letter_b", "letter_d", "letter_p", "egg", "ball", "nest", "tutor_wrote_d"],
+  "show": {
+    "line": "Let's write b. A tall line down, then back up and round the tummy. b, b, baby!",
+    "image": "letter_b"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says b, as in baby.", "options": ["letter_d", "letter_b", "letter_p"], "answer": "letter_b", "praise": "Yes! That is b."},
+    {"type": "say_it", "prompt": "This letter says b. Say the sound!", "accept": ["b", "buh", "be", "ba", "bi"]},
+    {"type": "trace", "prompt": "Trace b with your finger. Tall line down, back up, then round.", "glyph": "b"},
+    {"type": "listen_tap", "prompt": "Which picture starts with b?", "options": ["egg", "ball", "nest"], "answer": "ball", "praise": "Yes! b, b, ball."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is b? The tummy is on the right.", "options": ["letter_b", "letter_d"], "answer": "letter_b"}
+  ],
+  "hints": ["b has a tall line first, then a round tummy.", "Start at the top. Go all the way down first."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write b for baby.",
+    "tutor_try": "Round tummy first, then a line up. Look, I wrote b!",
+    "image": "tutor_wrote_d",
+    "answer": "b",
+    "win_line": "You caught me! That is d. b starts with the tall line.",
+    "gentle_line": "Look together. Tall line down, then round. That is b!"
+  },
+  "parent_line": "Can recognise the letter b, say its sound and trace it."
+}

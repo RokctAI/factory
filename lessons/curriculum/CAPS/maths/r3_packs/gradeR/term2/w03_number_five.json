@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term2.w03_number_five",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "This is what I wear",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "This is what I wear: Numeracy",
+    "subtopic": "Number 5: numeral and number word 'five'"
+  },
+  "skill": "number.recognise.5",
+  "prereq_skills": ["number.recognise.4"],
+  "images": ["numeral_5", "numeral_4", "numeral_3", "buttons_five", "socks_four", "glove_five_fingers", "mitten", "tutor_wrong_count_buttons"],
+  "show": {
+    "line": "This is five. Five fingers in one glove. One, two, three, four, five!",
+    "image": "numeral_5"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number five.", "options": ["numeral_4", "numeral_5", "numeral_3"], "answer": "numeral_5", "praise": "Yes! That is five."},
+    {"type": "say_it", "prompt": "Say it with me. Five!", "accept": ["five", "5", "fife", "faiv", "fahv"]},
+    {"type": "count_tap", "prompt": "Count the buttons on the shirt. How many?", "image": "buttons_five", "count": "5", "options": ["3", "4", "5"], "answer": "5", "praise": "Five buttons! Good counting."},
+    {"type": "count_tap", "prompt": "How many socks on the washing line?", "image": "socks_four", "count": "4", "options": ["4", "5"], "answer": "4"},
+    {"type": "listen_tap", "prompt": "Which glove shows five fingers?", "options": ["glove_five_fingers", "mitten"], "answer": "glove_five_fingers", "praise": "Yes! Five fingers."},
+    {"type": "what_next", "prompt": "Count with me. One, two, three, four. What comes next?", "sequence": ["1", "2", "3", "4"], "options": ["5", "3", "6"], "answer": "5", "praise": "Five! One, two, three, four, five."},
+    {"type": "trace", "prompt": "Draw five with your finger. Down, round the tummy, then a hat on top.", "glyph": "5"}
+  ],
+  "hints": ["Five comes after four. Hold up your hand. Five fingers!", "Touch each one as you count. Stop at the last one."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the buttons.",
+    "tutor_try": "One, two, three, four. Four buttons!",
+    "image": "tutor_wrong_count_buttons",
+    "answer": "five",
+    "win_line": "You caught me! I missed one. There are five buttons.",
+    "gentle_line": "Let's count together. One, two, three, four, five!"
+  },
+  "parent_line": "Can recognise, count and trace the number 5."
+}

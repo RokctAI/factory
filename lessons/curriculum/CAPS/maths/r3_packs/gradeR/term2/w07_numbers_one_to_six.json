@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term2.w07_numbers_one_to_six",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Opposites",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Opposites: Numeracy",
+    "subtopic": "Revises numbers 1 to 6 and number words one to six"
+  },
+  "skill": "number.revise.1_to_6",
+  "prereq_skills": ["number.recognise.5", "number.recognise.6"],
+  "images": ["mice_six", "elephant_one", "numeral_5", "numeral_6", "numeral_4", "giraffes_three", "dots_six", "dots_five", "dots_four", "pencils_short_four", "tutor_wrong_count_mice"],
+  "show": {
+    "line": "Let's count opposites! One big elephant. Six small mice. One, two, three, four, five, six.",
+    "image": "mice_six"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "How many big elephants?", "image": "elephant_one", "count": "1", "options": ["1", "2"], "answer": "1", "praise": "One big elephant!"},
+    {"type": "count_tap", "prompt": "Count the small mice. How many?", "image": "mice_six", "count": "6", "options": ["4", "5", "6"], "answer": "6", "praise": "Six small mice!"},
+    {"type": "listen_tap", "prompt": "Tap the number five.", "options": ["numeral_5", "numeral_6", "numeral_4"], "answer": "numeral_5"},
+    {"type": "say_it", "prompt": "How many tall giraffes? Say the number.", "accept": ["three", "3", "tree", "free", "tri"], "image": "giraffes_three"},
+    {"type": "listen_tap", "prompt": "Which card shows six dots?", "options": ["dots_six", "dots_five", "dots_four"], "answer": "dots_six", "praise": "Six dots! Good counting."},
+    {"type": "what_next", "prompt": "Four, five. What comes next?", "sequence": ["4", "5"], "options": ["6", "3"], "answer": "6", "praise": "Six! Four, five, six."},
+    {"type": "count_tap", "prompt": "Count the short pencils.", "image": "pencils_short_four", "count": "4", "options": ["3", "4", "5"], "answer": "4"}
+  ],
+  "hints": ["Touch each one as you count.", "Count slowly with me. One, two, three, four, five, six."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the mice.",
+    "tutor_try": "One, two, three, four, five. Five mice!",
+    "image": "tutor_wrong_count_mice",
+    "answer": "six",
+    "win_line": "You caught me! I missed a mouse. There are six.",
+    "gentle_line": "Let's count together, one at a time. One, two, three, four, five, six!"
+  },
+  "parent_line": "Can count, name and recognise the numbers 1 to 6."
+}

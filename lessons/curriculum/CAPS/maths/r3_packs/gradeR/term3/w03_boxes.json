@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w03_boxes",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Keeping safe",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe: Numeracy",
+    "subtopic": "Identifies boxes among 3-D objects and describes their properties"
+  },
+  "skill": "geometry.3d.box",
+  "prereq_skills": ["geometry.roll_slide"],
+  "images": ["box", "ball", "tin_can", "box_three_faces", "cereal_box", "orange", "shoe_box", "matchbox", "boxes_stacked", "balls_piled", "tutor_holds_tin"],
+  "show": {
+    "line": "This is a box. It has flat sides and corners. You can stack boxes on top of each other!",
+    "image": "box"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the box.", "options": ["ball", "box", "tin_can"], "answer": "box", "praise": "Yes! That is a box."},
+    {"type": "say_it", "prompt": "What is this? Say it with me. Box!", "accept": ["box", "a box", "boks", "bocks", "boxes"], "image": "box"},
+    {"type": "count_tap", "prompt": "Count the flat sides you can see on this box.", "image": "box_three_faces", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three flat sides! A box has more at the back."},
+    {"type": "listen_tap", "prompt": "Which one is shaped like a box?", "options": ["cereal_box", "orange", "ball"], "answer": "cereal_box", "praise": "Yes! A cereal box is a box."},
+    {"type": "match_sort", "prompt": "Box or not a box? Put each thing in its group.", "groups": ["box", "not_box"], "items": [{"image": "cereal_box", "group": "box"}, {"image": "shoe_box", "group": "box"}, {"image": "matchbox", "group": "box"}, {"image": "ball", "group": "not_box"}, {"image": "tin_can", "group": "not_box"}]},
+    {"type": "listen_tap", "prompt": "Which pile can you stack safely? Boxes stack. Balls roll off.", "options": ["boxes_stacked", "balls_piled"], "answer": "boxes_stacked", "praise": "Yes! Flat sides stack."}
+  ],
+  "hints": ["A box has flat sides and pointy corners.", "Can it stack? Boxes stack. Balls roll."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a box.",
+    "tutor_try": "This tin! It is a box.",
+    "image": "tutor_holds_tin",
+    "answer": "no",
+    "win_line": "You caught me! A tin is round and rolls. A box has flat sides.",
+    "gentle_line": "Let's feel together. Flat sides and corners. That is a box!"
+  },
+  "parent_line": "Can recognise a box and say that it has flat sides."
+}

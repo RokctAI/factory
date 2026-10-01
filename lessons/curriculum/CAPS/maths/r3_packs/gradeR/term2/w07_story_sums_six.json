@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term2.w07_story_sums_six",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Opposites",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Opposites: Numeracy",
+    "subtopic": "Solves oral addition and subtraction problems with solutions to at least 6 and explains own solutions"
+  },
+  "skill": "number.add_subtract.to_6",
+  "prereq_skills": ["number.revise.1_to_6"],
+  "images": ["buttons_big_small_six", "numeral_3", "numeral_2", "numeral_4", "boys_tall_short_six", "numeral_5", "apples_three_plus_two", "numeral_6", "balls_big_small_five", "tutor_ice_creams_wrong"],
+  "show": {
+    "line": "Let's do story sums! Three big buttons and three small buttons. Altogether that is six.",
+    "image": "buttons_big_small_six"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho has two hot cups of tea. Gogo gives him one more. How many cups now?", "options": ["numeral_3", "numeral_2", "numeral_4"], "answer": "numeral_3", "praise": "Three! Two and one more is three."},
+    {"type": "count_tap", "prompt": "Four tall boys and two short boys. Count them all. How many?", "image": "boys_tall_short_six", "count": "6", "options": ["4", "5", "6"], "answer": "6", "praise": "Six altogether!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lerato has five sweets. She eats two. How many sweets are left?", "options": ["numeral_3", "numeral_5", "numeral_2"], "answer": "numeral_3", "praise": "Three left! Five take away two is three."},
+    {"type": "say_it", "prompt": "Three apples and two more apples. How many altogether? Say the number.", "accept": ["five", "5", "fife", "faiv", "fahv"], "image": "apples_three_plus_two"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Six birds sit on a wire. One flies up high. How many birds are still down low?", "options": ["numeral_5", "numeral_6", "numeral_4"], "answer": "numeral_5", "praise": "Five! Six take away one is five."},
+    {"type": "count_tap", "prompt": "Two big balls and three small balls. How many balls altogether?", "image": "balls_big_small_five", "count": "5", "options": ["4", "5", "6"], "answer": "5"}
+  ],
+  "hints": ["Count them all, one at a time.", "Take away means some go away. Count what is left."],
+  "beat_the_tutor": {
+    "setup": "My turn! Four cold ice creams. I eat one.",
+    "tutor_try": "Four take away one. Four ice creams are left!",
+    "image": "tutor_ice_creams_wrong",
+    "answer": "three",
+    "win_line": "You caught me! I ate one, so only three are left.",
+    "gentle_line": "Let's count what is left together. One, two, three ice creams!"
+  },
+  "parent_line": "Can solve simple adding and taking away stories up to 6."
+}

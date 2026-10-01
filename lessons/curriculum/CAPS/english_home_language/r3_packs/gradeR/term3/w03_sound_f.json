@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term3.w03_sound_f",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Keeping safe",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'f' sound at the beginning of words and the sound objects begin with"
+  },
+  "skill": "phonics.initial_sound.f",
+  "prereq_skills": ["phonics.initial_sound.v"],
+  "images": ["fire", "fish", "pot", "knife", "firefighter", "fork", "stove", "tutor_holds_pot"],
+  "show": {
+    "line": "Listen. f as in fire. f, f, fire. Fire is hot! Keep safe, stay far away. fff.",
+    "image": "fire"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with f, as in fire?", "options": ["fish", "pot", "knife"], "answer": "fish", "praise": "Yes! f, f, fish."},
+    {"type": "say_it", "prompt": "Say the sound with me. f, as in fire! Blow softly.", "accept": ["f", "ff", "fff", "fuh", "fe"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Fezile sees a fire. He calls the firefighter. The firefighter puts the fire out. Who helps Fezile?", "options": ["firefighter", "fish", "pot"], "answer": "firefighter", "praise": "Yes! f, f, firefighter."},
+    {"type": "listen_tap", "prompt": "Which one starts with f? f, f.", "options": ["fork", "pot", "stove"], "answer": "fork", "praise": "Yes! f, f, fork. Hold it carefully."},
+    {"type": "say_it", "prompt": "What is this? It starts with f.", "accept": ["fish", "a fish", "fishes", "fis", "fiss"], "image": "fish"},
+    {"type": "match_sort", "prompt": "Does it start with f? Put f words in the f group.", "groups": ["f", "not_f"], "items": [{"image": "fire", "group": "f"}, {"image": "fish", "group": "f"}, {"image": "fork", "group": "f"}, {"image": "pot", "group": "not_f"}, {"image": "knife", "group": "not_f"}]}
+  ],
+  "hints": ["Listen for f at the start. f, f, fire.", "Put your teeth on your lip and blow. fff."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with f.",
+    "tutor_try": "Pot! Pot starts with f.",
+    "image": "tutor_holds_pot",
+    "answer": "no",
+    "win_line": "You caught me! Pot starts with p. Fire starts with f.",
+    "gentle_line": "Let's listen together. f, f, fire. Fire starts with f!"
+  },
+  "parent_line": "Can hear the f sound at the start of words."
+}

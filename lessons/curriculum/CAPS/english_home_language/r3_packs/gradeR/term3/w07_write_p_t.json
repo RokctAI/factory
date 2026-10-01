@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term3.w07_write_p_t",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "People who help us",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "People who help us: Emergent Writing",
+    "subtopic": "Letter formation of 'p' and 't' (walking large chalk letters, pipe-cleaner and plasticine letters)"
+  },
+  "skill": "writing.letter.p_t",
+  "prereq_skills": ["phonics.initial_sound.p_t"],
+  "images": ["letter_p", "letter_b", "letter_d", "letter_t", "letter_l", "letter_f", "pot", "teacher", "nurse", "tutor_wrote_l"],
+  "show": {
+    "line": "Let's write p and t. p has a long tail and a round tummy. t is tall with a cross.",
+    "image": "letter_p"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says p, as in police.", "options": ["letter_b", "letter_p", "letter_d"], "answer": "letter_p", "praise": "Yes! That is p."},
+    {"type": "trace", "prompt": "Trace p with your finger. A long line down, then back up and round.", "glyph": "p"},
+    {"type": "listen_tap", "prompt": "Tap the letter that says t, as in teacher.", "options": ["letter_t", "letter_l", "letter_f"], "answer": "letter_t", "praise": "Yes! That is t."},
+    {"type": "trace", "prompt": "Trace t with your finger. A tall line down, then a line across.", "glyph": "t"},
+    {"type": "say_it", "prompt": "Point to p. What sound does it make?", "accept": ["p", "puh", "pe", "pa", "pi"]},
+    {"type": "listen_tap", "prompt": "Which picture starts with t?", "options": ["pot", "teacher", "nurse"], "answer": "teacher", "praise": "Yes! t, t, teacher."}
+  ],
+  "hints": ["p has a tail that hangs down. t is tall with a cross.", "Start at the top. Go down first."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write t for teacher.",
+    "tutor_try": "A tall line down. Look, I wrote t!",
+    "image": "tutor_wrote_l",
+    "answer": "t",
+    "win_line": "You caught me! That is l. t needs a line across.",
+    "gentle_line": "Look together. Tall line down, then across. That is t!"
+  },
+  "parent_line": "Can recognise the letters p and t, say their sounds and trace them."
+}

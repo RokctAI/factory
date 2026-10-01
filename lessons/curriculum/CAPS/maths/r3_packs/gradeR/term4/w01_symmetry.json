@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term4.w01_symmetry",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Numeracy",
+    "subtopic": "Investigates symmetry in nature using mirrors; completes an incomplete symmetrical picture on pegboards"
+  },
+  "skill": "geometry.symmetry",
+  "prereq_skills": [],
+  "images": ["butterfly_symmetrical", "butterfly_odd_wings", "leaf_symmetrical", "leaf_torn", "face_symmetrical", "butterfly_half", "wing_match", "wing_different", "ladybird_symmetrical", "flower_half", "flower_half_match", "flower_half_wrong", "tutor_odd_wings"],
+  "show": {
+    "line": "Look at the butterfly. This side and that side are the same. That is symmetry!",
+    "image": "butterfly_symmetrical"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which butterfly is the same on both sides?", "options": ["butterfly_symmetrical", "butterfly_odd_wings"], "answer": "butterfly_symmetrical", "praise": "Yes! Both wings match."},
+    {"type": "listen_tap", "prompt": "Look in the mirror. Which leaf is the same on both sides?", "options": ["leaf_symmetrical", "leaf_torn"], "answer": "leaf_symmetrical", "praise": "Yes! Both sides match."},
+    {"type": "say_it", "prompt": "Look at the face. One eye each side. Is it the same on both sides? Say yes or no.", "accept": ["yes", "ya", "yebo", "same", "yes it is"], "image": "face_symmetrical"},
+    {"type": "listen_tap", "prompt": "Half the butterfly is missing! Which wing finishes it so both sides match?", "image": "butterfly_half", "options": ["wing_match", "wing_different"], "answer": "wing_match", "praise": "Yes! Now both sides are the same."},
+    {"type": "match_sort", "prompt": "Same on both sides, or not? Put each picture in its group.", "groups": ["same_both_sides", "not_same"], "items": [{"image": "butterfly_symmetrical", "group": "same_both_sides"}, {"image": "leaf_symmetrical", "group": "same_both_sides"}, {"image": "ladybird_symmetrical", "group": "same_both_sides"}, {"image": "butterfly_odd_wings", "group": "not_same"}, {"image": "leaf_torn", "group": "not_same"}]},
+    {"type": "listen_tap", "prompt": "Finish the flower. Which half makes both sides the same?", "image": "flower_half", "options": ["flower_half_match", "flower_half_wrong"], "answer": "flower_half_match", "praise": "Yes! Both sides match now."}
+  ],
+  "hints": ["Fold it in the middle. Do the two sides match?", "Look at one side, then the other. Same or different?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will finish the butterfly.",
+    "tutor_try": "I put a big wing here and a tiny wing there. Perfect!",
+    "image": "tutor_odd_wings",
+    "answer": "no",
+    "win_line": "You caught me! The wings must match. Same on both sides.",
+    "gentle_line": "Let's look together. A big wing here, so a big wing there. Now they match!"
+  },
+  "parent_line": "Can see when a picture is the same on both sides."
+}

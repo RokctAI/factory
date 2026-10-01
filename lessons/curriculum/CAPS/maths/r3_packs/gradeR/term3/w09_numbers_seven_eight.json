@@ -1,0 +1,41 @@
+{
+  "id": "maths.gradeR.term3.w09_numbers_seven_eight",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Helping hands",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Helping hands: Numeracy",
+    "subtopic": "Breaks down and builds up numbers to 8; matches numeral and word cards to 8"
+  },
+  "skill": "number.recognise.7_8",
+  "prereq_skills": ["number.recognise.6"],
+  "images": ["numerals_seven_eight", "numeral_7", "numeral_8", "numeral_6", "hands_seven", "counters_five_and_three", "counters_four_and_two", "cups_eight", "counters_four_and_four", "counters_five_and_two", "tutor_counters_wrong"],
+  "show": {
+    "line": "This is seven and this is eight. Seven helping hands. One more makes eight!",
+    "image": "numerals_seven_eight"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number eight.", "options": ["numeral_7", "numeral_8", "numeral_6"], "answer": "numeral_8", "praise": "Yes! That is eight."},
+    {"type": "say_it", "prompt": "Say it with me. Eight!", "accept": ["eight", "8", "ate", "ayt", "eit"]},
+    {"type": "count_tap", "prompt": "Count the helping hands. How many?", "image": "hands_seven", "count": "7", "options": ["6", "7", "8"], "answer": "7", "praise": "Seven hands! Good counting."},
+    {"type": "listen_tap", "prompt": "Five and three more. Which picture shows eight?", "options": ["counters_five_and_three", "counters_four_and_two"], "answer": "counters_five_and_three", "praise": "Yes! Five and three make eight."},
+    {"type": "count_tap", "prompt": "Count the cups Gogo helped wash.", "image": "cups_eight", "count": "8", "options": ["7", "8", "9"], "answer": "8"},
+    {"type": "what_next", "prompt": "Five, six, seven. What comes next?", "sequence": ["5", "6", "7"], "options": ["8", "6", "9"], "answer": "8", "praise": "Eight! Five, six, seven, eight."},
+    {"type": "listen_tap", "prompt": "Eight can break into two groups. Which picture shows four and four?", "options": ["counters_four_and_four", "counters_five_and_two"], "answer": "counters_four_and_four", "praise": "Yes! Four and four make eight."},
+    {"type": "trace", "prompt": "Draw seven with your finger. Go across the top, then slide down.", "glyph": "7"}
+  ],
+  "hints": ["Seven comes after six. Eight comes after seven.", "Count the first group, then keep counting the next group."],
+  "beat_the_tutor": {
+    "setup": "My turn! Four counters and four more counters.",
+    "tutor_try": "Four and four. That makes seven!",
+    "image": "tutor_counters_wrong",
+    "answer": "eight",
+    "win_line": "You caught me! Four and four make eight.",
+    "gentle_line": "Let's count together. One, two, three, four, five, six, seven, eight!"
+  },
+  "parent_line": "Can recognise 7 and 8 and build them from two groups."
+}

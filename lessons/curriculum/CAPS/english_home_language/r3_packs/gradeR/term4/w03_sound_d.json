@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w03_sound_d",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "This is where people live",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'd' sound at the beginning of words (door, desk, dog, donkey)"
+  },
+  "skill": "phonics.initial_sound.d",
+  "prereq_skills": ["phonics.initial_sound.b"],
+  "images": ["door", "dog", "cat", "house", "desk", "donkey", "cow", "tutor_holds_cat"],
+  "show": {
+    "line": "Listen. d as in door. d, d, door. Knock on the door. d, d, dog!",
+    "image": "door"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with d, as in door?", "options": ["dog", "cat", "house"], "answer": "dog", "praise": "Yes! d, d, dog."},
+    {"type": "say_it", "prompt": "Say the sound with me. d, as in door!", "accept": ["d", "duh", "de", "da", "di"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Dumisani opens the door. His dog runs in and sits under the desk. Where does the dog sit?", "options": ["desk", "door", "house"], "answer": "desk", "praise": "Yes! d, d, desk."},
+    {"type": "listen_tap", "prompt": "Which animal starts with d? d, d.", "options": ["donkey", "cat", "cow"], "answer": "donkey", "praise": "Yes! d, d, donkey."},
+    {"type": "say_it", "prompt": "What is this? It starts with d.", "accept": ["dog", "a dog", "dogs", "dok", "doggy"], "image": "dog"},
+    {"type": "match_sort", "prompt": "Does it start with d? Put d words in the d group.", "groups": ["d", "not_d"], "items": [{"image": "door", "group": "d"}, {"image": "dog", "group": "d"}, {"image": "desk", "group": "d"}, {"image": "cat", "group": "not_d"}, {"image": "house", "group": "not_d"}]}
+  ],
+  "hints": ["Listen for d at the start. d, d, door.", "Tap your tongue behind your teeth. d, d."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with d.",
+    "tutor_try": "Cat! Cat starts with d.",
+    "image": "tutor_holds_cat",
+    "answer": "no",
+    "win_line": "You caught me! Cat starts with c. Door starts with d.",
+    "gentle_line": "Let's listen together. d, d, door. Door starts with d!"
+  },
+  "parent_line": "Can hear the d sound at the start of words."
+}

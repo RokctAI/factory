@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term3.w01_sound_c",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Time and weather",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Time and weather: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'c' (hard c) sound at the beginning of words; slow-speaks words (c-a-t)"
+  },
+  "skill": "phonics.initial_sound.c",
+  "prereq_skills": ["phonics.initial_sound.k_i"],
+  "images": ["cloud", "cat", "sun", "hat", "coat", "cup", "cow", "tutor_points_sun"],
+  "show": {
+    "line": "Listen. c as in cloud. c, c, cloud. Look up! Clouds in the sky. c, c, cat.",
+    "image": "cloud"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with c, as in cloud?", "options": ["cat", "sun", "hat"], "answer": "cat", "praise": "Yes! c, c, cat."},
+    {"type": "say_it", "prompt": "Say the sound with me. c, as in cat!", "accept": ["c", "k", "kuh", "ka", "ke"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A big cloud covers the sun. It gets cold. Cebo puts on his coat. What does Cebo put on?", "options": ["coat", "sun", "hat"], "answer": "coat", "praise": "Yes! c, c, coat."},
+    {"type": "listen_tap", "prompt": "Slow speak with me. c, u, p. Which picture is cup?", "options": ["cup", "cat", "cow"], "answer": "cup", "praise": "Yes! c, u, p. Cup!"},
+    {"type": "say_it", "prompt": "What is this? It starts with c.", "accept": ["cup", "a cup", "cups", "kup", "cap"], "image": "cup"},
+    {"type": "match_sort", "prompt": "Does it start with c? Put c words in the c group.", "groups": ["c", "not_c"], "items": [{"image": "cat", "group": "c"}, {"image": "cup", "group": "c"}, {"image": "cow", "group": "c"}, {"image": "sun", "group": "not_c"}, {"image": "hat", "group": "not_c"}]}
+  ],
+  "hints": ["Listen for c at the start. c, c, cat.", "c comes from the back of your throat, quick and quiet."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with c.",
+    "tutor_try": "Sun! Sun starts with c.",
+    "image": "tutor_points_sun",
+    "answer": "no",
+    "win_line": "You caught me! Sun starts with s. Cloud starts with c.",
+    "gentle_line": "Let's listen together. c, c, cloud. Cloud starts with c!"
+  },
+  "parent_line": "Can hear the c sound at the start of words."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term3.w09_sound_h",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Helping hands",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Helping hands: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'h' sound at the beginning of words and recognises the symbol 'h'"
+  },
+  "skill": "phonics.initial_sound.h",
+  "prereq_skills": ["phonics.initial_sound.f"],
+  "images": ["hand", "hat", "broom", "cup", "gogo", "horse", "cow", "dog", "house", "tutor_holds_broom"],
+  "show": {
+    "line": "Listen. h as in hand. h, h, hand. Helping hands! Feel your breath. hhh.",
+    "image": "hand"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with h, as in hand?", "options": ["hat", "broom", "cup"], "answer": "hat", "praise": "Yes! h, h, hat."},
+    {"type": "say_it", "prompt": "Say the sound with me. h, as in hand! Breathe out softly.", "accept": ["h", "hh", "huh", "ha", "he"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Hope helps Gogo at home. She hangs the washing and holds the pegs. Who does Hope help?", "options": ["gogo", "horse", "hat"], "answer": "gogo", "praise": "Yes! Hope helps Gogo at home."},
+    {"type": "listen_tap", "prompt": "Which animal starts with h? h, h.", "options": ["horse", "cow", "dog"], "answer": "horse", "praise": "Yes! h, h, horse."},
+    {"type": "say_it", "prompt": "What is this? It starts with h.", "accept": ["house", "a house", "houses", "hous", "haus"], "image": "house"},
+    {"type": "match_sort", "prompt": "Does it start with h? Put h words in the h group.", "groups": ["h", "not_h"], "items": [{"image": "hand", "group": "h"}, {"image": "hat", "group": "h"}, {"image": "house", "group": "h"}, {"image": "broom", "group": "not_h"}, {"image": "cup", "group": "not_h"}]}
+  ],
+  "hints": ["Listen for h at the start. h, h, hand.", "h is a soft breath. Feel it on your hand. hhh."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with h.",
+    "tutor_try": "Broom! Broom starts with h.",
+    "image": "tutor_holds_broom",
+    "answer": "no",
+    "win_line": "You caught me! Broom starts with b. Hand starts with h.",
+    "gentle_line": "Let's listen together. h, h, hand. Hand starts with h!"
+  },
+  "parent_line": "Can hear the h sound at the start of words."
+}

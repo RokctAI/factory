@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term2.w05_write_y_o",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Shapes and colours in my community",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Shapes and colours in my community: Emergent Writing",
+    "subtopic": "Letter formation of 'y' and 'o'"
+  },
+  "skill": "writing.letter.y_o",
+  "prereq_skills": ["phonics.initial_sound.y_o"],
+  "images": ["letter_y", "letter_v", "letter_u", "letter_o", "letter_a", "letter_c", "orange", "yoyo", "square", "tutor_wrote_a"],
+  "show": {
+    "line": "Let's write y and o. y goes down and down with a tail. o is a round circle.",
+    "image": "letter_y"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says y, as in yellow.", "options": ["letter_v", "letter_y", "letter_u"], "answer": "letter_y", "praise": "Yes! That is y."},
+    {"type": "trace", "prompt": "Trace y with your finger. Short line down, long line down with a tail.", "glyph": "y"},
+    {"type": "listen_tap", "prompt": "Tap the letter that says o, as in orange.", "options": ["letter_o", "letter_a", "letter_c"], "answer": "letter_o", "praise": "Yes! That is o."},
+    {"type": "trace", "prompt": "Trace o with your finger. Go round and round, like a circle.", "glyph": "o"},
+    {"type": "say_it", "prompt": "Point to o. What sound does it make?", "accept": ["o", "oh", "aw", "or", "ah"]},
+    {"type": "listen_tap", "prompt": "Which picture starts with y?", "options": ["orange", "yoyo", "square"], "answer": "yoyo", "praise": "Yes! y, y, yoyo."}
+  ],
+  "hints": ["y has a long tail. o is a circle.", "Start at the top. Go down first."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write o for orange.",
+    "tutor_try": "Round, then a line down. Look, I wrote o!",
+    "image": "tutor_wrote_a",
+    "answer": "o",
+    "win_line": "You caught me! That is a. o is just a circle.",
+    "gentle_line": "Look together. Round and round, like a circle. That is o!"
+  },
+  "parent_line": "Can recognise the letters y and o, say their sounds and trace them."
+}

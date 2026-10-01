@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term3.w05_sound_q",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "The sky (day and night)",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night): Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'q(u)' sound at the beginning of words (quick, quiet, queen)"
+  },
+  "skill": "phonics.initial_sound.q",
+  "prereq_skills": ["phonics.initial_sound.c"],
+  "images": ["queen", "quilt", "moon", "star", "owl", "quack_duck", "sun", "tutor_points_moon"],
+  "show": {
+    "line": "Listen. q as in queen. q, q, queen. Queen Quellerina is quiet and quick!",
+    "image": "queen"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with q, as in queen?", "options": ["quilt", "moon", "star"], "answer": "quilt", "praise": "Yes! q, q, quilt."},
+    {"type": "say_it", "prompt": "Say the sound with me. q, as in queen!", "accept": ["q", "kw", "kwuh", "qu", "koo"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Queen Quellerina sleeps under a quilt. At night a quiet owl watches the moon. Who sleeps under the quilt?", "options": ["queen", "owl", "moon"], "answer": "queen", "praise": "Yes! q, q, queen."},
+    {"type": "listen_tap", "prompt": "Be quick! Which one starts with q? q, q.", "options": ["quack_duck", "sun", "star"], "answer": "quack_duck", "praise": "Yes! q, q, quack."},
+    {"type": "say_it", "prompt": "Who is this? She starts with q.", "accept": ["queen", "a queen", "the queen", "kween", "kwin"], "image": "queen"},
+    {"type": "match_sort", "prompt": "Does it start with q? Put q words in the q group.", "groups": ["q", "not_q"], "items": [{"image": "queen", "group": "q"}, {"image": "quilt", "group": "q"}, {"image": "quack_duck", "group": "q"}, {"image": "moon", "group": "not_q"}, {"image": "star", "group": "not_q"}]}
+  ],
+  "hints": ["Listen for q at the start. q, q, queen.", "q sounds like kw. Round your lips. kw, kw."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with q.",
+    "tutor_try": "Moon! Moon starts with q.",
+    "image": "tutor_points_moon",
+    "answer": "no",
+    "win_line": "You caught me! Moon starts with m. Queen starts with q.",
+    "gentle_line": "Let's listen together. q, q, queen. Queen starts with q!"
+  },
+  "parent_line": "Can hear the q sound at the start of words."
+}

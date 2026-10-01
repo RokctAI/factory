@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term3.w01_heavy_light",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Time and weather",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Time and weather: Numeracy",
+    "subtopic": "Describes the mass of water-filled bags or tins: heavy, light, heaviest, lightest"
+  },
+  "skill": "measure.mass.heavy_light",
+  "prereq_skills": [],
+  "images": ["buckets_full_empty", "full_bucket", "feather", "brick", "balloon", "big_rock", "elephant_and_mouse", "leaf", "tins_three_sizes", "tin_big", "tin_small", "tin_medium", "bag_full", "bag_half", "bag_empty", "tutor_lifts_feather"],
+  "show": {
+    "line": "Heavy and light! A full bucket of water is heavy. An empty bucket is light.",
+    "image": "buckets_full_empty"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is heavy?", "options": ["full_bucket", "feather"], "answer": "full_bucket", "praise": "Yes! A full bucket is heavy."},
+    {"type": "listen_tap", "prompt": "Which one is light? Easy to lift.", "options": ["brick", "balloon", "big_rock"], "answer": "balloon", "praise": "Yes! A balloon is light."},
+    {"type": "say_it", "prompt": "Look at the elephant. Is it heavy or light?", "accept": ["heavy", "hevy", "hevvy", "very heavy", "heavy one"], "image": "elephant_and_mouse"},
+    {"type": "match_sort", "prompt": "Heavy or light? Put each thing in its group.", "groups": ["heavy", "light"], "items": [{"image": "brick", "group": "heavy"}, {"image": "big_rock", "group": "heavy"}, {"image": "full_bucket", "group": "heavy"}, {"image": "feather", "group": "light"}, {"image": "leaf", "group": "light"}]},
+    {"type": "listen_tap", "prompt": "Three tins. Which one is the heaviest? The biggest full one.", "image": "tins_three_sizes", "options": ["tin_big", "tin_small", "tin_medium"], "answer": "tin_big", "praise": "Yes! The big full tin is the heaviest."},
+    {"type": "listen_tap", "prompt": "Which bag is the lightest? It has the least inside.", "options": ["bag_full", "bag_half", "bag_empty"], "answer": "bag_empty", "praise": "Yes! The empty bag is the lightest."}
+  ],
+  "hints": ["Heavy things are hard to lift. Light things are easy.", "Full is heavy. Empty is light."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will lift the heavy one.",
+    "tutor_try": "This feather is so heavy! I cannot lift it.",
+    "image": "tutor_lifts_feather",
+    "answer": "light",
+    "win_line": "You caught me! A feather is light. A brick is heavy.",
+    "gentle_line": "Let's think together. A feather floats. It is light!"
+  },
+  "parent_line": "Can say which things are heavy and which are light."
+}
