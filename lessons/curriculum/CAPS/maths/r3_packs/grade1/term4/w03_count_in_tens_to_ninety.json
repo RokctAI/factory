@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term4.w03_count_in_tens_to_ninety",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "Counting to 100",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Counting",
+    "subtopic": "Count forwards in 10s, 5s and 2s from any multiple of 10, 5 or 2 within the same ranges; see the relationship with addition"
+  },
+  "skill": "number.skip_count.to_90",
+  "prereq_skills": ["number.skip_count.2_5_10", "number.read_symbols.to_80"],
+  "images": ["ten_rand_notes_row", "sticks_seven_bundles", "numeral_41", "numeral_50", "numeral_30", "tutor_skips_eighty"],
+  "show": {
+    "line": "Count in tens all the way! Ten, twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety.",
+    "image": "ten_rand_notes_row"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count in tens. Fifty, sixty, seventy, and then?", "sequence": ["50", "60", "70"], "options": ["80", "71", "90"], "answer": "80", "praise": "Eighty!"},
+    {"type": "say_it", "prompt": "Count in tens with me. Sixty, seventy, eighty. What comes next?", "accept": ["ninety", "90", "ninety hundred", "ninty"]},
+    {"type": "what_next", "prompt": "Count in fives. Thirty, thirty five, forty, and then?", "sequence": ["30", "35", "40"], "options": ["45", "50", "41"], "answer": "45", "praise": "Forty five!"},
+    {"type": "count_tap", "prompt": "Count the bundles of ten sticks. How many sticks?", "image": "sticks_seven_bundles", "count": "70", "options": ["60", "70", "80"], "answer": "70", "praise": "Seventy! Seven bundles of ten."},
+    {"type": "what_next", "prompt": "Count in twos. Forty, forty two, forty four, and then?", "sequence": ["40", "42", "44"], "options": ["46", "45", "48"], "answer": "46", "praise": "Forty six!"},
+    {"type": "listen_tap", "prompt": "Start at forty and add ten. Which number?", "options": ["numeral_41", "numeral_50", "numeral_30"], "answer": "numeral_50", "praise": "Forty plus ten is fifty."}
+  ],
+  "hints": ["Tens end in zero. Only the first digit changes.", "Adding ten is one jump in the tens count."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count in tens from sixty.",
+    "tutor_try": "Sixty, seventy, ninety!",
+    "image": "tutor_skips_eighty",
+    "answer": "eighty",
+    "win_line": "You caught me! I forgot eighty. Sixty, seventy, eighty, ninety.",
+    "gentle_line": "Let's count together. Sixty, seventy, eighty, ninety!"
+  },
+  "parent_line": "Can count in tens, fives and twos up to 90."
+}

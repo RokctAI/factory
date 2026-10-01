@@ -64,11 +64,11 @@ class PackLines(unittest.TestCase):
         cls.items = R.build_r3_lines(respellings=NO_RESP)
 
     def test_counts(self):
-        self.assertEqual(len(self.packs), 152)  # Grade R Terms 1-4 and Grade 1 Terms 1-3, maths + English HL
+        self.assertEqual(len(self.packs), 177)  # Grade R and Grade 1, Terms 1-4, maths + English HL
         pack_items = [i for i in self.items if not i["key"].startswith("r3.")]
-        self.assertEqual(len(pack_items), 2612)
-        self.assertEqual(len(self.items), 2616)  # + the 4 default praise lines
-        self.assertEqual(len({i["key"] for i in self.items}), 2616)
+        self.assertEqual(len(pack_items), 3062)
+        self.assertEqual(len(self.items), 3066)  # + the 4 default praise lines
+        self.assertEqual(len({i["key"] for i in self.items}), 3066)
 
     def test_mirrors_checker(self):
         """Same lines as r3_pack_check._spoken_lines (the packs all pass the
@@ -223,7 +223,7 @@ class Respellings(unittest.TestCase):
 class R3Batch(unittest.TestCase):
     def test_all_lines(self):
         b = load(GOOD)
-        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", 2616))
+        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", 3066))
         self.assertEqual(len(b["matrix"]), 8)
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (102.0, 8.0))
 

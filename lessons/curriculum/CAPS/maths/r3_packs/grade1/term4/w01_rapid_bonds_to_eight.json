@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term4.w01_rapid_bonds_to_eight",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 20)",
+    "subtopic": "Rapid recall of number bonds and addition and subtraction facts to 8 (weeks 1-4), 9 (weeks 5-6) and 10 (weeks 7-10)"
+  },
+  "skill": "number.bonds.rapid_to_8",
+  "prereq_skills": ["number.bonds.to_8", "number.bonds.rapid_to_5"],
+  "images": ["flash_cards_eight", "numeral_7", "numeral_8", "numeral_9", "numeral_2", "numeral_3", "numeral_4", "numeral_6", "card_six_plus_two", "card_one_plus_seven", "card_three_plus_four", "card_eight_minus_one", "tutor_quick_eight_wrong"],
+  "show": {
+    "line": "Quick sums to eight! Six plus two? Eight! Eight minus three? Five! Fast as you can.",
+    "image": "flash_cards_eight"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Quick! Five plus three.", "options": ["numeral_7", "numeral_8", "numeral_9"], "answer": "numeral_8", "praise": "Eight!"},
+    {"type": "say_it", "prompt": "Quick! Four plus four. Say the answer.", "accept": ["eight", "8", "ate", "eit"]},
+    {"type": "listen_tap", "prompt": "Quick! Eight minus six.", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_2", "praise": "Two!"},
+    {"type": "say_it", "prompt": "Quick! Seven minus two. Say the answer.", "accept": ["five", "5", "fife", "faiv"]},
+    {"type": "listen_tap", "prompt": "Quick! Three plus four.", "options": ["numeral_6", "numeral_7", "numeral_8"], "answer": "numeral_7", "praise": "Seven!"},
+    {"type": "listen_tap", "prompt": "Quick! Eight minus one.", "options": ["numeral_6", "numeral_7", "numeral_9"], "answer": "numeral_7", "praise": "Seven!"},
+    {"type": "match_sort", "prompt": "Does the answer make eight or seven? Sort the sums.", "groups": ["eight", "seven"], "items": [{"image": "card_six_plus_two", "group": "eight"}, {"image": "card_one_plus_seven", "group": "eight"}, {"image": "card_three_plus_four", "group": "seven"}, {"image": "card_eight_minus_one", "group": "seven"}]}
+  ],
+  "hints": ["Think of the bond. Five and three make eight.", "Doubles are quick. Four and four is eight."],
+  "beat_the_tutor": {
+    "setup": "My turn! Quick! Eight minus five.",
+    "tutor_try": "Eight minus five equals four!",
+    "image": "tutor_quick_eight_wrong",
+    "answer": "three",
+    "win_line": "You caught me! Five and three make eight. Eight minus five is three.",
+    "gentle_line": "Let's count up from five. Six, seven, eight. Three!"
+  },
+  "parent_line": "Knows the adding and taking away facts to 8 quickly."
+}

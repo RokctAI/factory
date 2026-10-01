@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term4.w04_digraphs_at_end",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Revises consonant digraphs (sh, ch, th) at the end of a word (fi-sh, mu-ch, wi-th)"
+  },
+  "skill": "phonics.digraph.end",
+  "prereq_skills": ["phonics.digraph.start_review"],
+  "images": ["fish_end_sh", "brush", "bath", "bench", "bat", "much_sweets", "dish", "moth", "tutor_holds_bath"],
+  "show": {
+    "line": "Two-letter sounds at the end too! Fi, sh. Fish! Mu, ch. Much! Wi, th. With!",
+    "image": "fish_end_sh"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one ends with sh, as in fish?", "options": ["brush", "bath", "bench"], "answer": "brush", "praise": "Bru, sh. Brush!"},
+    {"type": "blend", "prompt": "Listen. b, a, th. What word is it?", "sounds": ["b", "a", "th"], "options": ["bath", "bat", "brush"], "answer": "bath", "praise": "Bath! b, a, th."},
+    {"type": "say_it", "prompt": "Much. What sound is at the end? Say it.", "accept": ["ch", "chuh", "che", "cha"], "image": "much_sweets"},
+    {"type": "listen_tap", "prompt": "Which one ends with ch, as in much?", "options": ["bench", "dish", "moth"], "answer": "bench", "praise": "Ben, ch. Bench!"},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "dish", "accept": ["dish", "desh", "dush"]},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "The fish is in the dish.", "accept": ["the fish is in the dish", "the fish is in the dish.", "fish is in the dish"]},
+    {"type": "match_sort", "prompt": "Does it end with sh, ch or th? Sort the pictures.", "groups": ["sh", "ch", "th"], "items": [{"image": "fish_end_sh", "group": "sh"}, {"image": "brush", "group": "sh"}, {"image": "bench", "group": "ch"}, {"image": "much_sweets", "group": "ch"}, {"image": "bath", "group": "th"}, {"image": "moth", "group": "th"}]}
+  ],
+  "hints": ["Say the word slowly. Listen to the very end.", "Fish ends in sh, like a quiet sound at the end."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the last sound in bath.",
+    "tutor_try": "Bath ends with t!",
+    "image": "tutor_holds_bath",
+    "answer": "th",
+    "win_line": "You caught me! Bath ends with th. Ba, th.",
+    "gentle_line": "Let's say it slowly. Baaath. The last sound is th!"
+  },
+  "parent_line": "Can hear and read sh, ch and th at the end of words."
+}

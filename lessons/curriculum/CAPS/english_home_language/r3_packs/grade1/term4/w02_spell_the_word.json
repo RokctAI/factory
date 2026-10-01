@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w02_spell_the_word",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Learns to spell ten words a week from phonics lessons"
+  },
+  "skill": "phonics.spell.cvc_digraph",
+  "prereq_skills": ["phonics.digraph.start_review", "phonics.build.cvc_all_vowels"],
+  "images": ["spelling_list", "tile_ship", "tile_shop", "tile_chip", "tile_fish", "tile_fis", "tile_fich", "frog", "tile_chin", "tile_shin_wrong", "thin_man", "chin", "tin", "tutor_spells_ship"],
+  "show": {
+    "line": "Spelling time! Say the word, hear the sounds, write the letters. Ship. sh, i, p.",
+    "image": "spelling_list"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word is spelled ship?", "options": ["tile_ship", "tile_shop", "tile_chip"], "answer": "tile_ship", "praise": "sh, i, p. Ship!"},
+    {"type": "listen_tap", "prompt": "Fish. Which tile has the right letters?", "options": ["tile_fish", "tile_fis", "tile_fich"], "answer": "tile_fish", "praise": "f, i, sh. Fish!"},
+    {"type": "say_it", "prompt": "Spell frog with sounds. Say each sound.", "accept": ["f r o g", "fr o g", "fruh o guh", "frog"], "image": "frog"},
+    {"type": "listen_tap", "prompt": "Which word is spelled with a mistake?", "options": ["tile_chin", "tile_chip", "tile_shin_wrong"], "answer": "tile_shin_wrong", "praise": "You found it! That one has the wrong letters."},
+    {"type": "blend", "prompt": "Listen. th, i, n. Which word is it?", "sounds": ["th", "i", "n"], "options": ["thin_man", "chin", "tin"], "answer": "thin_man", "praise": "Thin! th, i, n."},
+    {"type": "read_to_me", "prompt": "Read your spelling word to me.", "text": "drum", "accept": ["drum", "dram", "drom"]}
+  ],
+  "hints": ["Say the word slowly. Write one letter for each sound.", "Two-letter sounds need both letters. sh, ch, th."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will spell chip.",
+    "tutor_try": "Chip. s, h, i, p!",
+    "image": "tutor_spells_ship",
+    "answer": "no",
+    "win_line": "You caught me! Chip starts with ch, not sh.",
+    "gentle_line": "Let's hear the start. Ch, ch, chip. c, h first!"
+  },
+  "parent_line": "Can spell short words with digraphs by hearing each sound."
+}

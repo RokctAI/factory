@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w04_then_and_now",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "Writing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Begins to use past and present tense correctly"
+  },
+  "skill": "grammar.tense.past_present",
+  "prereq_skills": ["grammar.pronouns.he_she_it"],
+  "images": ["today_yesterday", "word_swam", "word_swims", "word_swim", "word_kicks", "word_kicked", "frog_hopping", "strip_we_played_ball", "strip_we_play_ball", "word_jump", "word_jumped", "word_hopped", "tutor_tense_wrong"],
+  "show": {
+    "line": "Today I jump. Yesterday I jumped. Words change when it already happened. Then and now!",
+    "image": "today_yesterday"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Yesterday Sam ... in the pool. Which word?", "options": ["word_swam", "word_swims", "word_swim"], "answer": "word_swam", "praise": "Yesterday Sam swam."},
+    {"type": "listen_tap", "prompt": "Now the dog ... the ball. Which word?", "options": ["word_kicks", "word_kicked"], "answer": "word_kicks", "praise": "Now the dog kicks the ball."},
+    {"type": "say_it", "prompt": "Today I hop. Yesterday I? Say the word.", "accept": ["hopped", "hoped", "hopt"], "image": "frog_hopping"},
+    {"type": "listen_tap", "prompt": "Which sentence tells about yesterday?", "options": ["strip_we_played_ball", "strip_we_play_ball"], "answer": "strip_we_played_ball", "praise": "We played. That already happened."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "Yesterday I jumped in the mud.", "accept": ["yesterday i jumped in the mud", "yesterday i jumped in the mud.", "yesterday i jumped in mud"]},
+    {"type": "match_sort", "prompt": "Now or yesterday? Sort the words.", "groups": ["now", "yesterday"], "items": [{"image": "word_jump", "group": "now"}, {"image": "word_kicks", "group": "now"}, {"image": "word_jumped", "group": "yesterday"}, {"image": "word_swam", "group": "yesterday"}, {"image": "word_hopped", "group": "yesterday"}]}
+  ],
+  "hints": ["Yesterday words often end in ed. Jumped, hopped.", "Now means it is happening. Yesterday means it is done."],
+  "beat_the_tutor": {
+    "setup": "My turn! Yesterday I ... to school.",
+    "tutor_try": "Yesterday I walk to school!",
+    "image": "tutor_tense_wrong",
+    "answer": "walked",
+    "win_line": "You caught me! Yesterday is done. I walked to school.",
+    "gentle_line": "Let's say it together. Yesterday I walked to school!"
+  },
+  "parent_line": "Can pick the right word for now and for yesterday."
+}
