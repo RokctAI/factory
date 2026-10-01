@@ -60,11 +60,11 @@ class PackLines(unittest.TestCase):
         cls.items = R.build_r3_lines(respellings=NO_RESP)
 
     def test_counts(self):
-        self.assertEqual(len(self.packs), 20)
+        self.assertEqual(len(self.packs), 74)  # Grade R Terms 1-4, maths + English HL
         pack_items = [i for i in self.items if not i["key"].startswith("r3.")]
-        self.assertEqual(len(pack_items), 310)
-        self.assertEqual(len(self.items), 314)  # + the 4 default praise lines
-        self.assertEqual(len({i["key"] for i in self.items}), 314)
+        self.assertEqual(len(pack_items), 1232)
+        self.assertEqual(len(self.items), 1236)  # + the 4 default praise lines
+        self.assertEqual(len({i["key"] for i in self.items}), 1236)
 
     def test_mirrors_checker(self):
         """Same lines as r3_pack_check._spoken_lines (the packs all pass the
@@ -85,7 +85,7 @@ class PackLines(unittest.TestCase):
                 self.assertRegex(i["key"], r"^r3\.r3_praise_[a-z]+$")
                 continue
             pid, where = i["key"].rsplit(".", 1)
-            self.assertRegex(pid, r"^(maths|english_home_language)\.gradeR\.term1\.w\d\d_[a-z0-9_]+$")
+            self.assertRegex(pid, r"^(maths|english_home_language)\.gradeR\.term[1-4]\.w\d\d_[a-z0-9_]+$")
             self.assertIn(template_of(where), R.WHERE_TEMPLATES, i["key"])
             self.assertEqual(i["file"], f"{R.AUDIO_DIR}/{i['key']}.mp3")
 
@@ -125,10 +125,11 @@ class PackLines(unittest.TestCase):
 
     def test_shards(self):
         n = R.shard_count(len(self.items), batch.R3_LINES_PER_SHARD, batch.R3_MAX_SHARDS)
-        self.assertEqual(n, 8)
+        self.assertEqual(n, 8)  # capped at R3_MAX_SHARDS, so each shard is about 155 lines
         parts = [R.shard(self.items, k, n) for k in range(1, n + 1)]
         self.assertEqual(sum(parts, []), self.items)
-        self.assertTrue(all(0 < len(p) <= 40 for p in parts))
+        per_shard = -(-len(self.items) // n)
+        self.assertTrue(all(0 < len(p) <= per_shard for p in parts))
         self.assertEqual(R.shard_count(6), 1)
         self.assertEqual(R.shard_count(10_000), 8)
 
@@ -218,7 +219,7 @@ class Respellings(unittest.TestCase):
 class R3Batch(unittest.TestCase):
     def test_all_lines(self):
         b = load(GOOD)
-        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", 314))
+        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", 1236))
         self.assertEqual(len(b["matrix"]), 8)
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (102.0, 8.0))
 
