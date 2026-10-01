@@ -32,6 +32,10 @@ EN = "english_home_language."
 GOOD = {"kind": "r3", "voice": "voice_x", "ref_path": "lms/team/voice_refs/voice_x_ref.wav",
         "ref_sha256": "0" * 64, "agent_branch": "rokct/r3-test"}
 NO_RESP = {"by_key": {}, "by_text": {}}
+# Grade 1 digraph and blend tokens that are respelled as one sound (sh, ch, th, bl-ack, sp-ot).
+DIGRAPHS = {"sh", "ch", "th", "bl", "fl", "sl", "cl", "pl", "gl", "br", "fr", "dr", "tr", "gr", "cr", "pr",
+            "sp", "st", "sn", "sm", "sw", "sk", "ng", "ck", "nk"}
+LETTER_TOKEN = r"(?<!['’])\b([b-hj-zB-HJ-Z]|i|sh|ch|th|bl|fl|sl|cl|pl|gl|br|fr|dr|tr|gr|cr|pr|sp|st|sn|sm|sw|sk)\b(?!['’])"
 
 
 def load(d):
@@ -60,11 +64,11 @@ class PackLines(unittest.TestCase):
         cls.items = R.build_r3_lines(respellings=NO_RESP)
 
     def test_counts(self):
-        self.assertEqual(len(self.packs), 74)  # Grade R Terms 1-4, maths + English HL
+        self.assertEqual(len(self.packs), 100)  # Grade R Terms 1-4 and Grade 1 Term 1, maths + English HL
         pack_items = [i for i in self.items if not i["key"].startswith("r3.")]
-        self.assertEqual(len(pack_items), 1232)
-        self.assertEqual(len(self.items), 1236)  # + the 4 default praise lines
-        self.assertEqual(len({i["key"] for i in self.items}), 1236)
+        self.assertEqual(len(pack_items), 1687)
+        self.assertEqual(len(self.items), 1691)  # + the 4 default praise lines
+        self.assertEqual(len({i["key"] for i in self.items}), 1691)
 
     def test_mirrors_checker(self):
         """Same lines as r3_pack_check._spoken_lines (the packs all pass the
@@ -85,7 +89,7 @@ class PackLines(unittest.TestCase):
                 self.assertRegex(i["key"], r"^r3\.r3_praise_[a-z]+$")
                 continue
             pid, where = i["key"].rsplit(".", 1)
-            self.assertRegex(pid, r"^(maths|english_home_language)\.gradeR\.term[1-4]\.w\d\d_[a-z0-9_]+$")
+            self.assertRegex(pid, r"^(maths|english_home_language)\.grade[R1]\.term[1-4]\.w\d\d_[a-z0-9_]+$")
             self.assertIn(template_of(where), R.WHERE_TEMPLATES, i["key"])
             self.assertEqual(i["file"], f"{R.AUDIO_DIR}/{i['key']}.mp3")
 
@@ -182,7 +186,7 @@ class Respellings(unittest.TestCase):
             self.assertEqual(len(a), len(b), k)
             for x, y in zip(a, b):
                 if x != y:
-                    self.assertTrue(len(x) == 1 or x == "vvv", (k, x, y))
+                    self.assertTrue(len(x) == 1 or x == "vvv" or x in DIGRAPHS, (k, x, y))
 
     def test_no_letter_names_left(self):
         """A respelled line never keeps a bare letter (bar the article a and
@@ -193,7 +197,7 @@ class Respellings(unittest.TestCase):
 
     def test_every_phonics_line_is_covered(self):
         for k, it in self.plain.items():
-            if k.startswith(EN) and re.search(r"(?<!['’])\b([b-hj-zB-HJ-Z]|i)\b(?!['’])", it["text"]):
+            if k.startswith(EN) and re.search(LETTER_TOKEN, it["text"]):
                 self.assertIn(k, self.resp["by_key"], k)
 
     def test_display_text_unchanged_render_and_asr_use_tts(self):
@@ -219,7 +223,7 @@ class Respellings(unittest.TestCase):
 class R3Batch(unittest.TestCase):
     def test_all_lines(self):
         b = load(GOOD)
-        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", 1236))
+        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", 1691))
         self.assertEqual(len(b["matrix"]), 8)
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (102.0, 8.0))
 

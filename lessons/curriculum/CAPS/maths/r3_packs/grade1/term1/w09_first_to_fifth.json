@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term1.w09_first_to_fifth",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Numbers to 5",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 5 (number line)",
+    "subtopic": "Identify, read and write number symbols and number names to 5; position 1st-5th on the number line (weeks 9-10)"
+  },
+  "skill": "number.ordinal.1st_5th",
+  "prereq_skills": ["number.one_more_one_less.to_5"],
+  "images": ["race_five_runners", "runner_first", "runner_third", "runner_fifth", "car_first", "car_second", "car_third", "car_fourth", "birds_five_in_row", "word_five", "word_four", "word_two", "word_three", "word_one", "tutor_points_last_runner"],
+  "show": {
+    "line": "Five runners in a race! First, second, third, fourth, fifth. Who is first?",
+    "image": "race_five_runners"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the runner who is first.", "options": ["runner_first", "runner_third", "runner_fifth"], "answer": "runner_first", "praise": "Yes! First is at the front."},
+    {"type": "listen_tap", "prompt": "Tap the car that is third in the line.", "options": ["car_first", "car_second", "car_third", "car_fourth"], "answer": "car_third", "praise": "Third! One, two, three."},
+    {"type": "say_it", "prompt": "The bird is at the end of five. Is it first or fifth? Say it.", "accept": ["fifth", "fif", "fith", "last"], "image": "birds_five_in_row"},
+    {"type": "listen_tap", "prompt": "Tap the number word five.", "options": ["word_five", "word_four", "word_two"], "answer": "word_five", "praise": "That says five!"},
+    {"type": "what_next", "prompt": "First, second, third, and then?", "sequence": ["first", "second", "third"], "options": ["fourth", "fifth", "second"], "answer": "fourth", "praise": "Fourth comes after third."},
+    {"type": "listen_tap", "prompt": "Tap the number word three.", "options": ["word_three", "word_five", "word_one"], "answer": "word_three", "praise": "That says three!"},
+    {"type": "trace", "prompt": "Draw five with your finger. Down, round the tummy, then a hat on top.", "glyph": "5"}
+  ],
+  "hints": ["Start at the front. First, second, third, fourth, fifth.", "Point and count. The number you land on tells you the place."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the second runner.",
+    "tutor_try": "This one at the back is second!",
+    "image": "tutor_points_last_runner",
+    "answer": "fifth",
+    "win_line": "You caught me! The one at the back is fifth. Second is right behind first.",
+    "gentle_line": "Let's point together. First, second. That is the second runner!"
+  },
+  "parent_line": "Can say first to fifth and read the number words one to five."
+}

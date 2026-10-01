@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w04_write_s_a_t_p",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [4, 5],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Handwriting",
+    "subtopic": "Forms lower case letters correctly, aligned to the phonics programme"
+  },
+  "skill": "writing.letter.s_a_t_p",
+  "prereq_skills": ["phonics.letter_sound.s_a_t"],
+  "images": ["letters_s_a_t_p", "letter_t", "letter_p", "letter_s", "letter_a", "tutor_wrote_l"],
+  "show": {
+    "line": "Let's write our letters. s curls like a snake. a goes round, then down. Watch and trace!",
+    "image": "letters_s_a_t_p"
+  },
+  "rounds": [
+    {"type": "trace", "prompt": "Trace s with your finger. Start at the top, curl one way, then the other.", "glyph": "s"},
+    {"type": "trace", "prompt": "Trace a with your finger. Go round, then a line down.", "glyph": "a"},
+    {"type": "listen_tap", "prompt": "Tap the letter that says t.", "options": ["letter_t", "letter_p", "letter_s"], "answer": "letter_t", "praise": "Yes! That is t."},
+    {"type": "trace", "prompt": "Trace t with your finger. A tall line down, then a cross.", "glyph": "t"},
+    {"type": "trace", "prompt": "Trace p with your finger. A long line down, back up, then round.", "glyph": "p"},
+    {"type": "listen_tap", "prompt": "Which letter has a long tail that hangs down?", "options": ["letter_p", "letter_a", "letter_s"], "answer": "letter_p", "praise": "p hangs its tail below the line."}
+  ],
+  "hints": ["Start at the top. Small letters sit on the line.", "Go slowly. Follow the arrow with your finger."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write t.",
+    "tutor_try": "Look, I wrote t!",
+    "image": "tutor_wrote_l",
+    "answer": "no",
+    "win_line": "You caught me! I forgot the cross. That is not t yet.",
+    "gentle_line": "Let's fix it together. Tall line down, then a cross. Now it is t!"
+  },
+  "parent_line": "Can trace the letters s, a, t and p the right way."
+}

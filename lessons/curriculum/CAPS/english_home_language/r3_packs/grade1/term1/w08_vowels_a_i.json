@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w08_vowels_a_i",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [8, 9],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises and names some letters: 2 vowels and at least 6 consonants"
+  },
+  "skill": "phonics.vowel.a_i",
+  "prereq_skills": ["phonics.letter_sound.p_i_n"],
+  "images": ["cat_and_pin", "cat", "pin", "sat_child", "sit_child", "mat", "letter_i", "letter_t", "letter_s", "tin", "pan", "tutor_tiles_pin"],
+  "show": {
+    "line": "a and i are vowels. Every word needs one! Cat has a. Pin has i. Listen in the middle.",
+    "image": "cat_and_pin"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has a in the middle? Listen. Cat, pin.", "options": ["cat", "pin"], "answer": "cat", "praise": "Cat! c, a, t."},
+    {"type": "listen_tap", "prompt": "Which word has i in the middle? Listen. Sat, sit.", "options": ["sat_child", "sit_child"], "answer": "sit_child", "praise": "Sit! s, i, t."},
+    {"type": "say_it", "prompt": "Mat. What sound is in the middle? Say it.", "accept": ["a", "ah", "aa", "ae"], "image": "mat"},
+    {"type": "listen_tap", "prompt": "Tap the vowel.", "options": ["letter_i", "letter_t", "letter_s"], "answer": "letter_i", "praise": "i is a vowel!"},
+    {"type": "say_it", "prompt": "Tin. What sound is in the middle? Say it.", "accept": ["i", "ih", "ee", "ii"], "image": "tin"},
+    {"type": "match_sort", "prompt": "a in the middle, or i in the middle? Sort the words.", "groups": ["a", "i"], "items": [{"image": "cat", "group": "a"}, {"image": "mat", "group": "a"}, {"image": "pan", "group": "a"}, {"image": "pin", "group": "i"}, {"image": "tin", "group": "i"}]}
+  ],
+  "hints": ["Say the word slowly. The middle sound is the vowel.", "a opens your mouth wide. i is a small smile."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the vowel in pin.",
+    "tutor_try": "The vowel in pin is a!",
+    "image": "tutor_tiles_pin",
+    "answer": "i",
+    "win_line": "You caught me! p, i, n. The vowel is i.",
+    "gentle_line": "Let's say it slowly. Piiin. The middle sound is i!"
+  },
+  "parent_line": "Can hear the vowels a and i in the middle of short words."
+}

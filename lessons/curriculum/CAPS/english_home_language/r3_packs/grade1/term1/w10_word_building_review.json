@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w10_word_building_review",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [10],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Revision: Phonics",
+    "subtopic": "Builds short words using sounds learnt; blends sounds to make words (c-at, m-at)"
+  },
+  "skill": "phonics.blend.cvc_review_t1",
+  "prereq_skills": ["phonics.blend.cvc_at_it", "phonics.vowel.a_i"],
+  "images": ["sad_face", "nap_child", "net", "map", "dip_chip", "dad", "tin", "letter_tiles_m_a_t", "mat", "tutor_tiles_nap"],
+  "show": {
+    "line": "Let's show what we know! Blend the sounds, build the words. s, a, d. Sad!",
+    "image": "sad_face"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. n, a, p. What word is it?", "sounds": ["n", "a", "p"], "options": ["nap_child", "net", "map"], "answer": "nap_child", "praise": "Nap! n, a, p, nap."},
+    {"type": "blend", "prompt": "Listen. d, i, p. Tap the word.", "sounds": ["d", "i", "p"], "options": ["dip_chip", "dad", "tin"], "answer": "dip_chip", "praise": "Dip! d, i, p, dip."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "sip", "accept": ["sip", "seep", "sep"]},
+    {"type": "say_it", "prompt": "Change the m in mat to s. What word do you make?", "accept": ["sat", "set", "sut"], "image": "letter_tiles_m_a_t"},
+    {"type": "blend", "prompt": "Listen. m, a, p. What word is it?", "sounds": ["m", "a", "p"], "options": ["map", "mat", "nap_child"], "answer": "map", "praise": "Map! m, a, p, map."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "Dad is sad.", "accept": ["dad is sad", "dad is sad.", "dad sad"]}
+  ],
+  "hints": ["Say each sound, then push them together.", "Look at the first letter. Start with its sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word. n, a, p.",
+    "tutor_try": "n, a, p. Pan!",
+    "image": "tutor_tiles_nap",
+    "answer": "nap",
+    "win_line": "You caught me! n, a, p is nap. Pan starts with p.",
+    "gentle_line": "Let's blend together. Nnn, a, p. Nap!"
+  },
+  "parent_line": "Can blend and read short words with the sounds learnt this term."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w01_many_fewer",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Counting to 10",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Describe, compare and order up to 5 objects",
+    "subtopic": "Compare collections of objects: many, fewer, most, least (weeks 1-2); more than, less than (weeks 3-4, 9-10); the same as, just as many, different (weeks 5-8)"
+  },
+  "skill": "number.compare.many_fewer",
+  "prereq_skills": ["count.to_10"],
+  "images": ["plates_many_fewer", "bowl_five_apples", "bowl_two_apples", "jar_four_buttons", "jar_one_button", "birds_three", "bag_two_marbles", "bag_five_marbles", "bag_three_marbles", "tutor_points_five_apples"],
+  "show": {
+    "line": "Look! This plate has many sweets. That plate has fewer sweets. Many and fewer.",
+    "image": "plates_many_fewer"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which bowl has more apples?", "options": ["bowl_five_apples", "bowl_two_apples"], "answer": "bowl_five_apples", "praise": "Yes! Five is more than two."},
+    {"type": "listen_tap", "prompt": "Which jar has fewer buttons?", "options": ["jar_four_buttons", "jar_one_button"], "answer": "jar_one_button", "praise": "Yes! One is fewer than four."},
+    {"type": "count_tap", "prompt": "Count the birds on the wire. How many?", "image": "birds_three", "count": "3", "options": ["2", "3", "4"], "answer": "3"},
+    {"type": "listen_tap", "prompt": "Who has the most marbles?", "options": ["bag_two_marbles", "bag_five_marbles", "bag_three_marbles"], "answer": "bag_five_marbles", "praise": "Five is the most!"},
+    {"type": "listen_tap", "prompt": "Who has the least?", "options": ["bag_two_marbles", "bag_five_marbles", "bag_three_marbles"], "answer": "bag_two_marbles", "praise": "Two is the least."},
+    {"type": "match_sort", "prompt": "Many or few? Put each picture in its group.", "groups": ["many", "few"], "items": [{"image": "bowl_five_apples", "group": "many"}, {"image": "bag_five_marbles", "group": "many"}, {"image": "jar_one_button", "group": "few"}, {"image": "bowl_two_apples", "group": "few"}, {"image": "bag_two_marbles", "group": "few"}]}
+  ],
+  "hints": ["Count each group. The bigger number is more.", "Fewer means a smaller number. Least means the smallest of all."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the bowl with fewer apples.",
+    "tutor_try": "This one! Five apples is fewer.",
+    "image": "tutor_points_five_apples",
+    "answer": "two",
+    "win_line": "You caught me! Two is fewer than five.",
+    "gentle_line": "Let's count together. Two apples, five apples. Two is fewer!"
+  },
+  "parent_line": "Can compare groups of objects using many, fewer, most and least."
+}

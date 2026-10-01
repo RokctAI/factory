@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w01_count_to_ten",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Counting to 10",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Counting",
+    "subtopic": "Count forwards and backwards in 1s from any number between 1 and 10 (weeks 1-4) and between 1 and 20 (weeks 5-10); describe the sequence"
+  },
+  "skill": "number.count.to_10_from_any",
+  "prereq_skills": ["count.to_10"],
+  "images": ["number_track_ten", "frogs_eight", "numeral_8", "numeral_10", "numeral_9", "tutor_skips_three"],
+  "show": {
+    "line": "Let's count to ten! One, two, three, four, five, six, seven, eight, nine, ten.",
+    "image": "number_track_ten"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Count on with me. Four, five, six. What comes next?", "accept": ["seven", "7", "seven eight", "sewen"]},
+    {"type": "what_next", "prompt": "What comes next? Three, four, five, and then?", "sequence": ["3", "4", "5"], "options": ["6", "7", "4"], "answer": "6", "praise": "Six! Three, four, five, six."},
+    {"type": "count_tap", "prompt": "Count the frogs on the log. How many?", "image": "frogs_eight", "count": "8", "options": ["7", "8", "9"], "answer": "8", "praise": "Eight frogs!"},
+    {"type": "what_next", "prompt": "Now count backwards. Seven, six, five, and then?", "sequence": ["7", "6", "5"], "options": ["4", "6", "8"], "answer": "4", "praise": "Four! Seven, six, five, four."},
+    {"type": "listen_tap", "prompt": "Which number comes after nine?", "options": ["numeral_8", "numeral_10", "numeral_9"], "answer": "numeral_10", "praise": "Ten comes after nine."},
+    {"type": "say_it", "prompt": "Start at seven and count up to ten. Go!", "accept": ["seven eight nine ten", "eight nine ten", "7 8 9 10", "seven eight nine"]}
+  ],
+  "hints": ["Say the numbers slowly. Each number is one more.", "Backwards means getting smaller. Ten, nine, eight."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count backwards from five.",
+    "tutor_try": "Five, four, two, one!",
+    "image": "tutor_skips_three",
+    "answer": "three",
+    "win_line": "You caught me! I forgot three. Five, four, three, two, one.",
+    "gentle_line": "Let's count back together. Five, four, three, two, one!"
+  },
+  "parent_line": "Can count forwards and backwards between 1 and 10 from any number."
+}
