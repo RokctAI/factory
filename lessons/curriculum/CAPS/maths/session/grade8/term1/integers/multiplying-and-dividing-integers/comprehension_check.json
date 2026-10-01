@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, using a pattern, why (−1) × (−4) must equal 4.",
+      "expected_answer": "3 × (−4) = −12, 2 × (−4) = −8, 1 × (−4) = −4, 0 × (−4) = 0; each time the first factor drops by one the product rises by 4, so (−1) × (−4) = 4."
+    },
+    {
+      "id": "cc2",
+      "question": "What is the sign of a product of seven negative integers, and why?",
+      "expected_answer": "Negative. Each pair of negative factors gives a positive, so an even count of negatives is positive and an odd count is negative; seven is odd."
+    },
+    {
+      "id": "cc3",
+      "question": "Evaluate −3 × (2 − 7) + 12 ÷ (−4), showing the order of operations.",
+      "expected_answer": "Brackets: 2 − 7 = −5. Multiply and divide: −3 × (−5) = 15 and 12 ÷ (−4) = −3. Add: 15 + (−3) = 12."
+    }
+  ]
+}

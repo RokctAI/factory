@@ -1,0 +1,1 @@
+Today we revise the integers: the whole numbers, their negatives, and zero. You will order and compare them on a number line, then add and subtract them with sign rules you can actually explain, not just recite. By the end, minus seven minus negative three will be a thirty-second calculation, and you will know why the answer is negative four.

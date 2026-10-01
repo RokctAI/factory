@@ -1,0 +1,19 @@
+### subtopic_1 — Multiplying Integers — Where the Sign Rules Come From
+**Assistant:** Is there a real reason a negative times a negative is positive, or is it just a rule?
+
+**Tutor:** There is a real reason, and it is the pattern of products. Three times negative four is negative twelve, two times negative four is negative eight, one times negative four is negative four, and zero times negative four is zero. Each time the first factor drops by one, the product rises by four, with perfect regularity. If the pattern is to continue — and arithmetic would collapse if it did not — then negative one times negative four must be four and negative two times negative four must be eight. The slogan about two minuses cancelling is a memory aid, not an explanation, and it is dangerous because it tempts learners to apply it to addition, where two negatives added give a negative. The pattern argument is the one that earns the explanation mark in an examination, and it is the one to remember.
+
+### subtopic_2 — Dividing Integers and Products of Several Factors
+**Assistant:** When there are many negative factors, is counting the signs really safe?
+
+**Tutor:** It is safe, and it is faster than multiplying pair by pair, provided you count carefully. Every pair of negative factors multiplies to a positive, so the sign of the whole product depends only on whether the number of negative factors is even or odd. An even count gives a positive product and an odd count gives a negative product; the positive factors never change the sign. Then multiply the absolute values to find the size. The only trap is a factor of zero somewhere in the product, which makes the whole product zero regardless of how many negatives there are, so scan for a zero before you count. This counting rule also tells you that negative one raised to an even power is one and to an odd power is negative one, which appears constantly in algebra.
+
+### subtopic_3 — All Four Operations — Order of Operations with Integers
+**Assistant:** Why does the anchor give positive twelve when there are so many negatives in it?
+
+**Tutor:** Because the signs are decided operation by operation, not by counting minus signs across the whole line. The bracket two minus seven gives negative five. Negative three times negative five is a product of two negatives, which is positive fifteen. Twelve divided by negative four is a quotient of different signs, which is negative three. At that point the line reads fifteen plus negative three, an addition of different signs, where the heavier number is the positive fifteen, so the answer is positive twelve. Each step used the rule for its own operation. Learners who try to judge the sign of the whole expression at a glance usually guess negative because they see three minus signs, which is exactly why the four-line layout exists: it makes you handle one operation at a time.
+
+### subtopic_6 — Temperatures Dropping by the Hour
+**Assistant:** How does time running backwards show that a negative times a negative is positive?
+
+**Tutor:** Take a temperature that is falling at two degrees every hour, so the change per hour is negative two. Hours into the future are positive, so five hours ahead the total change is five times negative two, which is negative ten degrees — colder, as expected. Hours into the past are negative, so five hours ago is negative five hours. The change over that interval is negative five times negative two, which is positive ten degrees. In other words, five hours ago it was ten degrees warmer than now, which is obviously true if the temperature has been falling all along. The clock and the thermometer agree with the arithmetic, and that agreement is why the rule is trustworthy: it describes how real quantities behave when both the rate and the direction of time are reversed.
