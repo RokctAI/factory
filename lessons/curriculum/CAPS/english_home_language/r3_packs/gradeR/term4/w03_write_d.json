@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term4.w03_write_d",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "This is where people live",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live: Emergent Writing",
+    "subtopic": "Letter formation of 'd' (sand tray, chalk, sawdust letter)"
+  },
+  "skill": "writing.letter.d",
+  "prereq_skills": ["phonics.initial_sound.d", "writing.letter.b"],
+  "images": ["letter_d", "letter_b", "letter_a", "cat", "dog", "house", "tutor_wrote_a"],
+  "show": {
+    "line": "Let's write d. Go round like a ball, then a tall line up and down. d, d, door!",
+    "image": "letter_d"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says d, as in door.", "options": ["letter_b", "letter_d", "letter_a"], "answer": "letter_d", "praise": "Yes! That is d."},
+    {"type": "say_it", "prompt": "This letter says d. Say the sound!", "accept": ["d", "duh", "de", "da", "di"]},
+    {"type": "trace", "prompt": "Trace d with your finger. Round first, then a tall line up and down.", "glyph": "d"},
+    {"type": "listen_tap", "prompt": "Which picture starts with d?", "options": ["cat", "dog", "house"], "answer": "dog", "praise": "Yes! d, d, dog."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is d? The tummy is on the left.", "options": ["letter_d", "letter_b"], "answer": "letter_d"}
+  ],
+  "hints": ["d starts round, then a tall line.", "Round first, then go up tall and back down."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write d for door.",
+    "tutor_try": "Round, then a short line. Look, I wrote d!",
+    "image": "tutor_wrote_a",
+    "answer": "d",
+    "win_line": "You caught me! That is a. d needs a tall line.",
+    "gentle_line": "Look together. Round, then a tall line. That is d!"
+  },
+  "parent_line": "Can recognise the letter d, say its sound and trace it."
+}

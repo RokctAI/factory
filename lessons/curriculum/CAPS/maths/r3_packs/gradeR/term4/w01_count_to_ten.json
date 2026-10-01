@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term4.w01_count_to_ten",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Numeracy",
+    "subtopic": "Counts objects to 10"
+  },
+  "skill": "count.to_10",
+  "prereq_skills": ["number.recognise.1_to_10"],
+  "images": ["chicks_ten", "lambs_seven", "ducklings_five", "eggs_nine", "numeral_9", "numeral_6", "numeral_10", "tutor_wrong_count_chicks"],
+  "show": {
+    "line": "New babies in spring! Count the chicks. One, two, three, four, five, six, seven, eight, nine, ten!",
+    "image": "chicks_ten"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the chicks. How many?", "image": "chicks_ten", "count": "10", "options": ["8", "9", "10"], "answer": "10", "praise": "Ten chicks! Good counting."},
+    {"type": "count_tap", "prompt": "Count the lambs in the field.", "image": "lambs_seven", "count": "7", "options": ["6", "7", "8"], "answer": "7", "praise": "Seven lambs!"},
+    {"type": "say_it", "prompt": "Count the ducklings. Say the number.", "accept": ["five", "5", "fife", "faiv", "fahv"], "image": "ducklings_five"},
+    {"type": "count_tap", "prompt": "How many eggs in the nest?", "image": "eggs_nine", "count": "9", "options": ["8", "9", "10"], "answer": "9", "praise": "Nine eggs!"},
+    {"type": "listen_tap", "prompt": "Tap the number nine.", "options": ["numeral_9", "numeral_6", "numeral_10"], "answer": "numeral_9", "praise": "Yes! That is nine."},
+    {"type": "what_next", "prompt": "Seven, eight, nine. What comes next?", "sequence": ["7", "8", "9"], "options": ["10", "8"], "answer": "10", "praise": "Ten! Seven, eight, nine, ten."},
+    {"type": "trace", "prompt": "Draw nine with your finger. A ball at the top, then a line down.", "glyph": "9"}
+  ],
+  "hints": ["Touch each one as you count.", "Count slowly. Do not skip any."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the chicks.",
+    "tutor_try": "One, two, three, four, five, six, seven, eight, nine, ten, eleven chicks!",
+    "image": "tutor_wrong_count_chicks",
+    "answer": "ten",
+    "win_line": "You caught me! I counted one chick twice. There are ten.",
+    "gentle_line": "Let's count together, one at a time. All the way to ten!"
+  },
+  "parent_line": "Can count up to 10 objects."
+}

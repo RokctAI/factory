@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term4.w03_count_houses",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "This is where people live",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live: Numeracy",
+    "subtopic": "Counts buildings, windows, doors and tiles on Poster 17"
+  },
+  "skill": "count.to_10.houses",
+  "prereq_skills": ["count.to_10"],
+  "images": ["street_houses", "house_windows_four", "street_doors_three", "houses_six", "roof_tiles_five", "huts_two", "flats_windows_ten", "house_two_doors", "house_one_door", "tutor_wrong_count_windows_four"],
+  "show": {
+    "line": "Look at the houses in the street. Count the windows and doors with me!",
+    "image": "street_houses"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the windows on this house. How many?", "image": "house_windows_four", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four windows!"},
+    {"type": "count_tap", "prompt": "Count the doors in the street.", "image": "street_doors_three", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three doors!"},
+    {"type": "count_tap", "prompt": "Count the houses. How many?", "image": "houses_six", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six houses! Good counting."},
+    {"type": "say_it", "prompt": "Count the roof tiles. Say the number.", "accept": ["five", "5", "fife", "faiv", "fahv"], "image": "roof_tiles_five"},
+    {"type": "count_tap", "prompt": "How many huts in the village?", "image": "huts_two", "count": "2", "options": ["1", "2", "3"], "answer": "2"},
+    {"type": "count_tap", "prompt": "Count the windows on the block of flats.", "image": "flats_windows_ten", "count": "10", "options": ["8", "9", "10"], "answer": "10", "praise": "Ten windows! Good counting."},
+    {"type": "listen_tap", "prompt": "Which house has two doors?", "options": ["house_two_doors", "house_one_door"], "answer": "house_two_doors", "praise": "Yes! Two doors."}
+  ],
+  "hints": ["Touch each window as you count.", "Count the top row, then the bottom row."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the windows.",
+    "tutor_try": "One, two, three, four, five windows!",
+    "image": "tutor_wrong_count_windows_four",
+    "answer": "four",
+    "win_line": "You caught me! There are only four windows.",
+    "gentle_line": "Let's count together. One, two, three, four windows!"
+  },
+  "parent_line": "Can count the windows, doors and houses in a picture."
+}

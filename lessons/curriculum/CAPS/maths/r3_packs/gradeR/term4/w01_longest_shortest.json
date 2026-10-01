@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term4.w01_longest_shortest",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Numeracy",
+    "subtopic": "Compares the length of objects concretely and sorts from longest to shortest (caterpillars, tubes)"
+  },
+  "skill": "measure.length.longest_shortest",
+  "prereq_skills": [],
+  "images": ["caterpillars_three", "caterpillar_long", "caterpillar_short", "caterpillar_medium", "worm_long", "worm_short", "snake_and_worm", "tubes_two_rows", "tubes_ordered", "tubes_mixed", "tube_long", "tube_short", "pencil_long", "pencil_short", "pencil_medium", "tutor_picks_short"],
+  "show": {
+    "line": "Long and short! This caterpillar is long. This one is short. Which is the longest?",
+    "image": "caterpillars_three"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which caterpillar is the longest?", "options": ["caterpillar_long", "caterpillar_short", "caterpillar_medium"], "answer": "caterpillar_long", "praise": "Yes! That one is the longest."},
+    {"type": "listen_tap", "prompt": "Which worm is the shortest?", "options": ["worm_long", "worm_short"], "answer": "worm_short", "praise": "Yes! That one is the shortest."},
+    {"type": "say_it", "prompt": "Look at the snake and the worm. Which one is longer? Say snake or worm.", "accept": ["snake", "the snake", "snek", "snake is longer", "sneik"], "image": "snake_and_worm"},
+    {"type": "listen_tap", "prompt": "Longest, then shorter, then shortest. Which row is in the right order?", "image": "tubes_two_rows", "options": ["tubes_ordered", "tubes_mixed"], "answer": "tubes_ordered", "praise": "Yes! Longest to shortest, in order."},
+    {"type": "match_sort", "prompt": "Long or short? Put each thing in its group.", "groups": ["long", "short"], "items": [{"image": "caterpillar_long", "group": "long"}, {"image": "worm_long", "group": "long"}, {"image": "tube_long", "group": "long"}, {"image": "caterpillar_short", "group": "short"}, {"image": "tube_short", "group": "short"}]},
+    {"type": "listen_tap", "prompt": "Which pencil is the shortest?", "options": ["pencil_long", "pencil_short", "pencil_medium"], "answer": "pencil_short"}
+  ],
+  "hints": ["Put them side by side. Start at the same end.", "Longest is the biggest stretch. Shortest is the smallest."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the longest caterpillar.",
+    "tutor_try": "This tiny one! It is the longest.",
+    "image": "tutor_picks_short",
+    "answer": "no",
+    "win_line": "You caught me! That one is the shortest. The long one stretches furthest.",
+    "gentle_line": "Let's line them up together. This one stretches the furthest. Longest!"
+  },
+  "parent_line": "Can order things from longest to shortest."
+}

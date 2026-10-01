@@ -1,0 +1,40 @@
+{
+  "id": "maths.gradeR.term4.w03_shape_puzzles",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "This is where people live",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live: Numeracy",
+    "subtopic": "Shape puzzles; covers a square floor area with shape cut-outs"
+  },
+  "skill": "shape.puzzle.fit",
+  "prereq_skills": ["shape.recognise.square", "shape.recognise.triangle", "shape.recognise.rectangle"],
+  "images": ["shape_house", "house_missing_roof", "triangle", "circle", "square", "house_missing_door", "rectangle", "window_square", "floor_half_covered", "tile_square", "tile_circle", "floor_tiles_six", "roof_triangle", "flag_triangle", "door_rectangle", "wall_rectangle", "step_rectangle", "house_missing_window", "tutor_circle_roof"],
+  "show": {
+    "line": "Let's build a house with shapes! A square wall, a triangle roof, a rectangle door.",
+    "image": "shape_house"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "The roof is missing! Which shape fits on top?", "image": "house_missing_roof", "options": ["triangle", "circle", "square"], "answer": "triangle", "praise": "Yes! A triangle makes the roof."},
+    {"type": "listen_tap", "prompt": "The door is missing! Which shape fits the gap?", "image": "house_missing_door", "options": ["rectangle", "circle", "triangle"], "answer": "rectangle", "praise": "Yes! A rectangle makes the door."},
+    {"type": "say_it", "prompt": "What shape is the window? Say it.", "accept": ["square", "a square", "skwea", "squea", "sqware"], "image": "window_square"},
+    {"type": "listen_tap", "prompt": "Cover the floor! Which tile fits the empty space?", "image": "floor_half_covered", "options": ["tile_square", "tile_circle"], "answer": "tile_square", "praise": "Yes! Squares fit together with no gaps."},
+    {"type": "count_tap", "prompt": "Count the square tiles on the floor.", "image": "floor_tiles_six", "count": "6", "options": ["4", "6", "8"], "answer": "6", "praise": "Six tiles!"},
+    {"type": "match_sort", "prompt": "Which shapes made this house? Put each one in its group.", "groups": ["triangle", "rectangle"], "items": [{"image": "roof_triangle", "group": "triangle"}, {"image": "flag_triangle", "group": "triangle"}, {"image": "door_rectangle", "group": "rectangle"}, {"image": "wall_rectangle", "group": "rectangle"}, {"image": "step_rectangle", "group": "rectangle"}]},
+    {"type": "listen_tap", "prompt": "The window is missing! Which shape fits?", "image": "house_missing_window", "options": ["square", "triangle"], "answer": "square", "praise": "Yes! A square window."}
+  ],
+  "hints": ["Look at the gap. Which shape has the same corners?", "Turn the shape round. Does it fit now?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will put the roof on the house.",
+    "tutor_try": "A circle on top. That is a lovely roof!",
+    "image": "tutor_circle_roof",
+    "answer": "triangle",
+    "win_line": "You caught me! A circle rolls off. A triangle fits the roof.",
+    "gentle_line": "Let's look together. The gap is pointy. A triangle fits!"
+  },
+  "parent_line": "Can fit shapes into a shape puzzle."
+}
