@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Use 2^3 ÷ 2^5 to show why 2^−2 must equal 1/4, and state the general law.",
+      "expected_answer": "By the division law 2^3 ÷ 2^5 = 2^(3−5) = 2^−2. By cancelling factors, three twos over five twos leaves 1/2^2 = 1/4. The two results describe the same quotient, so 2^−2 = 1/4. In general a^−m = 1/a^m for a not equal to 0: a negative exponent means a reciprocal, never a negative number."
+    },
+    {
+      "id": "cc2",
+      "question": "Simplify 3x^−2 (exponent on x only) and (2x)^−2, and explain why the answers differ.",
+      "expected_answer": "3x^−2 = 3/x^2: only the x carries the negative exponent, so only the x moves below the bar; the 3 stays on top. (2x)^−2 shares the exponent with both factors: 2^−2 × x^−2 = 1/(4x^2). The bracket puts the 2 under the exponent; without the bracket the 2 is an untouched coefficient. Testing x = 1 gives 3 and 1/4 respectively."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain, using the law for negative exponents, why 7,5 × 10^−6 equals 0,0000075.",
+      "expected_answer": "10^−6 = 1/10^6 = 1/1 000 000, so 7,5 × 10^−6 = 7,5 ÷ 1 000 000. Dividing by a million moves the comma six places left, giving 0,0000075. The negative exponent is an instruction to divide by a power of ten, which is why numbers between 0 and 1 carry negative exponents in scientific notation."
+    }
+  ]
+}

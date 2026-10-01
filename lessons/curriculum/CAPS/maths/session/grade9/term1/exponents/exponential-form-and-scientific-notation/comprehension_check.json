@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, with the values, why (−2)^4 and −2^4 give different answers.",
+      "expected_answer": "(−2)^4 means four copies of −2 multiplied: an even number of negative factors, so the product is positive 16. −2^4 means the negative of 2^4: the exponent applies to the 2 only, giving 16, and the minus sign is applied afterwards, giving −16. The bracket makes the minus part of the base; without it the minus waits outside."
+    },
+    {
+      "id": "cc2",
+      "question": "Write 149 600 000 km and 0,0000075 m in scientific notation, showing how the exponent is found in each case.",
+      "expected_answer": "149 600 000: place the comma after the first digit to get 1,496; it moved 8 places left, so the number is 1,496 × 10^8 km. 0,0000075: move the comma right until one non-zero digit is in front, giving 7,5; it moved 6 places right, so the exponent is negative: 7,5 × 10^−6 m. A negative exponent marks a small positive number, not a negative one."
+    },
+    {
+      "id": "cc3",
+      "question": "Why is 45 × 10^6 not in standard scientific notation, and how is it corrected?",
+      "expected_answer": "Standard form needs a between 1 and 10 (one non-zero digit before the comma); 45 has two digits. Write 45 as 4,5 × 10, so the number becomes 4,5 × 10^7. Moving the comma one place left divides a by 10, so the exponent rises by 1 to keep the value, 45 000 000, unchanged."
+    }
+  ]
+}
