@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term1.w03_ch_and_th",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [3],
+  "theme": "The ch and th sounds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Revises (or teaches) consonant digraphs ch and th"
+  },
+  "skill": "phonics.digraph.ch_th",
+  "prereq_skills": ["phonics.digraph.sh"],
+  "images": ["letters_ch_th", "chair", "thumb", "ship", "three", "shoe", "cheese", "letters_ch", "letters_th", "letters_sh", "moth", "fish", "bench", "chick", "tutor_holds_thumb"],
+  "show": {
+    "line": "Chip, chop, chin start like a sneeze. Chuh! Thumb, think, thin start with your tongue out. Thh!",
+    "image": "letters_ch_th"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture starts like chip?", "options": ["chair", "thumb", "ship"], "answer": "chair", "praise": "Yes! Chip, chair. Same start."},
+    {"type": "listen_tap", "prompt": "Which picture starts like thumb? Tongue out!", "options": ["three", "chair", "shoe"], "answer": "three", "praise": "Yes! Thumb, three. Tongue out."},
+    {"type": "say_it", "prompt": "What is this? It starts like chip.", "accept": ["cheese", "chees", "cheez"], "image": "cheese"},
+    {"type": "listen_tap", "prompt": "Which two letters make the sound at the start of chair?", "options": ["letters_ch", "letters_th", "letters_sh"], "answer": "letters_ch", "praise": "Yes! Those letters say the chair sound."},
+    {"type": "listen_tap", "prompt": "Which picture ends like bath? Tongue out at the end.", "options": ["moth", "fish", "bench"], "answer": "moth", "praise": "Yes! Bath, moth. Same ending."},
+    {"type": "match_sort", "prompt": "Starts like chip, or starts like thumb? Put each picture in its group.", "groups": ["ch", "th"], "items": [{"image": "chair", "group": "ch"}, {"image": "cheese", "group": "ch"}, {"image": "chick", "group": "ch"}, {"image": "thumb", "group": "th"}, {"image": "three", "group": "th"}]}
+  ],
+  "hints": ["Chip, chop, chin. Does the word start like that?", "Put your tongue between your teeth for thumb and think."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts like chip.",
+    "tutor_try": "Thumb! Thumb starts like chip.",
+    "image": "tutor_holds_thumb",
+    "answer": "no",
+    "win_line": "You caught me! Thumb starts like think. Chair starts like chip.",
+    "gentle_line": "Let's listen together. Chip, chair. They start the same!"
+  },
+  "parent_line": "Can hear the difference between the ch and th sounds at the start and end of words."
+}

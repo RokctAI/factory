@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term1.w01_word_families",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [1],
+  "theme": "Word families",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Groups common words into sound families"
+  },
+  "skill": "phonics.word_family.at_og_in",
+  "prereq_skills": ["phonics.rhyme.animals", "phonics.initial_sound.c"],
+  "images": ["cat_hat_mat_bat", "hat", "dog", "sun", "log", "cat", "pin", "pin_bin_fin", "bus", "mat", "bat", "frog", "word_mat", "map", "man", "tutor_holds_dog_card"],
+  "show": {
+    "line": "Cat, hat, mat, bat. They all end with at. They are a word family! Say them with me.",
+    "image": "cat_hat_mat_bat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture is in the at family? It ends like cat.", "options": ["hat", "dog", "sun"], "answer": "hat", "praise": "Yes! Cat, hat. Same ending."},
+    {"type": "listen_tap", "prompt": "Which picture is in the og family? It ends like dog.", "options": ["log", "cat", "pin"], "answer": "log", "praise": "Yes! Dog, log. Same ending."},
+    {"type": "say_it", "prompt": "Pin, bin, fin. Say one more word that ends like pin.", "accept": ["tin", "win", "chin", "thin", "sin", "din"], "image": "pin_bin_fin"},
+    {"type": "listen_tap", "prompt": "Which word does not belong with cat and hat?", "options": ["bus", "mat", "bat"], "answer": "bus", "praise": "Yes! Bus does not end with at."},
+    {"type": "match_sort", "prompt": "At family or og family? Put each picture in its group.", "groups": ["at", "og"], "items": [{"image": "cat", "group": "at"}, {"image": "hat", "group": "at"}, {"image": "bat", "group": "at"}, {"image": "dog", "group": "og"}, {"image": "log", "group": "og"}, {"image": "frog", "group": "og"}]},
+    {"type": "listen_tap", "prompt": "Read the word on the card. Which picture matches?", "image": "word_mat", "options": ["mat", "map", "man"], "answer": "mat", "praise": "Mat! It ends with at, like cat."}
+  ],
+  "hints": ["Listen to the end of the word. Cat, hat. Same ending!", "Say both words slowly. Do they end the same way?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word in the at family.",
+    "tutor_try": "Cat, hat, dog! Dog is in the at family.",
+    "image": "tutor_holds_dog_card",
+    "answer": "no",
+    "win_line": "You caught me! Dog ends with og. Rat is in the at family.",
+    "gentle_line": "Let's listen together. Cat, hat, rat. They all end with at!"
+  },
+  "parent_line": "Can group words into families by their ending sound."
+}

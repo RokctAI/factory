@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term1.w08_build_words",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [8, 9],
+  "theme": "Building words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Builds 3- and 4-letter words using single letters and digraphs taught this term; spells 10 words a week"
+  },
+  "skill": "phonics.build_words.3_4_letters",
+  "prereq_skills": ["phonics.blend.initial_final", "phonics.digraph.ch_th", "phonics.digraph.sh"],
+  "images": ["letter_tiles_cat", "letter_tiles_map", "sun", "bun", "sock", "letter_tiles_step", "letter_tiles_h_gap_t", "tile_a", "tile_o", "tile_i", "tiles_sh_o_p", "tiles_ch_o_p", "tiles_sh_i_p", "letter_tiles_sit", "word_frog", "word_fog", "word_from", "tutor_tiles_p_e_n"],
+  "show": {
+    "line": "Let's build a word! c-a-t. Push the sounds together. Cat! Now a longer one. f-r-o-g. Frog!",
+    "image": "letter_tiles_cat"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Listen. m-a-p. Push the sounds together. What word is it?", "accept": ["map", "a map", "mapp"], "image": "letter_tiles_map"},
+    {"type": "listen_tap", "prompt": "Listen. s-u-n. Which picture is it?", "options": ["sun", "bun", "sock"], "answer": "sun", "praise": "Yes! s-u-n, sun."},
+    {"type": "say_it", "prompt": "Listen. s-t-e-p. Four sounds. What word is it?", "accept": ["step", "a step", "stepp"], "image": "letter_tiles_step"},
+    {"type": "listen_tap", "prompt": "Which letter tile is missing? h-gap-t. Hat.", "image": "letter_tiles_h_gap_t", "options": ["tile_a", "tile_o", "tile_i"], "answer": "tile_a", "praise": "Yes! h-a-t, hat."},
+    {"type": "listen_tap", "prompt": "Shop. Which tiles build the word shop?", "options": ["tiles_sh_o_p", "tiles_ch_o_p", "tiles_sh_i_p"], "answer": "tiles_sh_o_p", "praise": "Yes! Shh, o, p. Shop."},
+    {"type": "say_it", "prompt": "Listen. s-i-t. What word is it?", "accept": ["sit", "sitt", "set"], "image": "letter_tiles_sit"},
+    {"type": "listen_tap", "prompt": "Which word card says frog?", "options": ["word_frog", "word_fog", "word_from"], "answer": "word_frog", "praise": "Yes! f-r-o-g, frog."}
+  ],
+  "hints": ["Say each sound, then say them faster and faster until they join.", "Look at the first sound and the last sound. What word fits?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will build the word pin.",
+    "tutor_try": "p-i-n. Pin! Look, I built it.",
+    "image": "tutor_tiles_p_e_n",
+    "answer": "no",
+    "win_line": "You caught me! I used e, not i. My tiles say pen.",
+    "gentle_line": "Let's build it together. p-i-n. Pin!"
+  },
+  "parent_line": "Can build and read three- and four-letter words from their sounds."
+}
