@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term3.w09_what_would_happen",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "What would happen if?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Reading",
+    "subtopic": "Shared: answers higher-order questions ('What would have happened if...?'); gives an opinion on what was read"
+  },
+  "skill": "reading.comprehension.inference",
+  "prereq_skills": ["reading.comprehension.sequence"],
+  "images": ["puddle_sun", "lolly_melts", "lolly_grows", "lolly_freezes", "plant_droops", "plant_blooms", "plant_sings", "baby_hungry", "baby_cold", "baby_happy", "glass_falling", "kgosi_gets_wet", "kgosi_stays_dry", "kgosi_flies", "word_yes", "word_no", "tutor_lolly_wrong"],
+  "show": {
+    "line": "Good readers think ahead. If the rain stops, what happens to the puddle? It dries up! Let's think about stories.",
+    "image": "puddle_sun"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lesedi leaves her ice lolly in the sun. She goes to play. What will happen to the ice lolly?", "options": ["lolly_melts", "lolly_grows", "lolly_freezes"], "answer": "lolly_melts", "praise": "Yes! The sun melts it."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Tau forgets to water his plant for a week. What would happen to the plant?", "options": ["plant_droops", "plant_blooms", "plant_sings"], "answer": "plant_droops", "praise": "Yes! Without water the plant droops."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The baby cries. Mama gives her milk. The baby stops crying. Why did the baby cry?", "options": ["baby_hungry", "baby_cold", "baby_happy"], "answer": "baby_hungry", "praise": "Yes! She was hungry, so milk helped."},
+    {"type": "say_it", "prompt": "Ben drops a glass on the floor. What would happen to the glass? Say it.", "accept": ["it breaks", "breaks", "it will break", "break", "it would break"], "image": "glass_falling"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Kgosi has no umbrella. Dark clouds come. He runs home fast. What would happen if he walked slowly?", "options": ["kgosi_gets_wet", "kgosi_stays_dry", "kgosi_flies"], "answer": "kgosi_gets_wet", "praise": "Yes! The rain would catch him."},
+    {"type": "listen_tap", "prompt": "Was it a good idea for Kgosi to run home? Tap what you think.", "options": ["word_yes", "word_no"], "answer": "word_yes", "praise": "Thank you for sharing what you think!"}
+  ],
+  "hints": ["Think about what usually happens. Ice in the sun melts.", "Ask yourself, why did that happen?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Lesedi leaves her ice lolly in the sun.",
+    "tutor_try": "The ice lolly will get colder!",
+    "image": "tutor_lolly_wrong",
+    "answer": "melts",
+    "win_line": "You caught me! The sun is hot. The lolly melts.",
+    "gentle_line": "Let's think together. Hot sun, cold lolly. It melts!"
+  },
+  "parent_line": "Can say what would happen next in a story and why something happened."
+}

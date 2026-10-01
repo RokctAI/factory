@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term3.w03_oy_and_ay",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Boy, coin, day, rain",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises vowel digraphs and diphthongs 'oy', 'oi', 'ay', 'ai' and groups words into these sound families"
+  },
+  "skill": "phonics.vowel_digraph.oy_oi_ay_ai",
+  "prereq_skills": ["phonics.vowel_digraph.oa_ea_ai"],
+  "images": ["boy_coin_day_rain", "coin", "rain", "tail", "toy", "oil", "word_toy", "word_play", "day", "word_rain", "word_ruin", "word_run", "boy", "hay", "tutor_holds_rain"],
+  "show": {
+    "line": "Boy, toy, coin, oil. Hear the oy sound? Day, play, rain, tail. Hear the ay sound? Two sound families!",
+    "image": "boy_coin_day_rain"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture has the oy sound, like boy?", "options": ["coin", "rain", "tail"], "answer": "coin", "praise": "Yes! Boy, coin. Oy."},
+    {"type": "listen_tap", "prompt": "Which picture has the ay sound, like day?", "options": ["tail", "toy", "oil"], "answer": "tail", "praise": "Yes! Day, tail. Ay."},
+    {"type": "say_it", "prompt": "Read this word. It has the oy sound.", "accept": ["toy", "a toy", "toi"], "image": "word_toy"},
+    {"type": "say_it", "prompt": "Read this word. It has the ay sound.", "accept": ["play", "plai", "to play"], "image": "word_play"},
+    {"type": "listen_tap", "prompt": "Which word rhymes with boy?", "options": ["toy", "day", "tail"], "answer": "toy", "praise": "Boy, toy! They rhyme."},
+    {"type": "listen_tap", "prompt": "Which word card says rain? The ay sound in the middle.", "options": ["word_rain", "word_ruin", "word_run"], "answer": "word_rain", "praise": "Yes! Rain."},
+    {"type": "match_sort", "prompt": "Oy family or ay family? Put each picture in its group.", "groups": ["oy", "ay"], "items": [{"image": "boy", "group": "oy"}, {"image": "coin", "group": "oy"}, {"image": "oil", "group": "oy"}, {"image": "rain", "group": "ay"}, {"image": "tail", "group": "ay"}, {"image": "hay", "group": "ay"}]}
+  ],
+  "hints": ["Say the word slowly. Does the middle say oy or ay?", "Boy, toy, coin. Day, play, rain. Which list does it fit?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word in the oy family.",
+    "tutor_try": "Rain! Rain has the oy sound.",
+    "image": "tutor_holds_rain",
+    "answer": "no",
+    "win_line": "You caught me! Rain has the ay sound. Coin has oy.",
+    "gentle_line": "Let's listen together. Boy, coin. Oy!"
+  },
+  "parent_line": "Can hear and read the oy sound as in boy and coin, and the ay sound as in day and rain."
+}

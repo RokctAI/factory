@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term3.w01_plurals_and_endings",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "One or many, now or then",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Aurally revises plurals ('s', 'es'), '-ing' and '-ed' endings"
+  },
+  "skill": "phonics.endings.plural_ing_ed",
+  "prereq_skills": ["grammar.tense.present_past"],
+  "images": ["cat_cats_box_boxes", "word_dogs", "word_dog", "word_dogging", "two_buses", "girl_running_now", "word_running", "word_ran", "word_run", "two_wishes_stars", "boy_washed_bike", "word_washed", "word_washing", "word_wash", "one_hat", "one_fox", "three_hats", "two_foxes", "many_dishes", "tutor_two_foxes"],
+  "show": {
+    "line": "One cat, two cats. One box, two boxes. Add an ending for more than one. Jump, jumping, jumped!",
+    "image": "cat_cats_box_boxes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "One dog. Now there are more. Which word card says dogs?", "options": ["word_dogs", "word_dog", "word_dogging"], "answer": "word_dogs", "praise": "Yes! Dogs, more than one."},
+    {"type": "say_it", "prompt": "One bus. Here are two. Say the word for more than one bus.", "accept": ["buses", "busses", "bussis"], "image": "two_buses"},
+    {"type": "listen_tap", "prompt": "The girl is, gap, right now. Which word fits?", "image": "girl_running_now", "options": ["word_running", "word_ran", "word_run"], "answer": "word_running", "praise": "Running! It is happening now."},
+    {"type": "say_it", "prompt": "One wish, two what? Say the word.", "accept": ["wishes", "wishis", "wishez"], "image": "two_wishes_stars"},
+    {"type": "listen_tap", "prompt": "Yesterday the boy, gap, his bike. Which word fits?", "image": "boy_washed_bike", "options": ["word_washed", "word_washing", "word_wash"], "answer": "word_washed", "praise": "Washed! It already happened."},
+    {"type": "match_sort", "prompt": "One, or more than one? Put each picture in its group.", "groups": ["one", "more_than_one"], "items": [{"image": "one_hat", "group": "one"}, {"image": "one_fox", "group": "one"}, {"image": "three_hats", "group": "more_than_one"}, {"image": "two_foxes", "group": "more_than_one"}, {"image": "many_dishes", "group": "more_than_one"}]}
+  ],
+  "hints": ["More than one? Add the sss sound at the end. Cats, dogs.", "Happening now ends with ing. Already happened ends with ed."],
+  "beat_the_tutor": {
+    "setup": "My turn! One fox. Here are two. I will say the word.",
+    "tutor_try": "Two fox!",
+    "image": "tutor_two_foxes",
+    "answer": "foxes",
+    "win_line": "You caught me! More than one fox is foxes.",
+    "gentle_line": "Let's say it together. One fox, two foxes!"
+  },
+  "parent_line": "Can hear and use word endings for more than one, happening now and already happened."
+}
