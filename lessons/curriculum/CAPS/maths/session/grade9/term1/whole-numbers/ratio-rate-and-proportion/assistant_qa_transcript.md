@@ -1,0 +1,25 @@
+### subtopic_1 — Ratio — Simplifying and Sharing in a Given Ratio
+**Assistant:** Why does a simplified ratio have no units, when the quantities it came from clearly did?
+
+**Tutor:** Because a ratio is a comparison, not a measurement, and the units cancel in the comparison. Five hundred grams to two kilograms only becomes a ratio once both quantities are in the same unit — 500 grams to 2 000 grams — and at that moment the ratio says "for every 500 of these, 2 000 of those". Divide both by 500 and it says "for every 1, 4". The grams are still there in spirit, but they appear on both sides equally, so they tell you nothing extra; one gram to four grams is the same relationship as one tonne to four tonnes. That is also why you must match the units BEFORE simplifying: 500 to 2 is a false comparison between grams and kilograms, and it simplifies to a nonsense 250 to 1. The discipline is two lines — convert to a common unit, then divide by the highest common factor — and the answer is a pair of plain numbers. A rate, by contrast, compares different kinds of things, so its units cannot cancel and must stay: rand per kilogram means something that a bare number does not.
+
+***
+
+### subtopic_2 — Rate — Comparing Quantities of Different Kinds
+**Assistant:** Why do we divide by 3,6 to turn kilometres per hour into metres per second?
+
+**Tutor:** Because that single number carries both unit conversions at once. One kilometre is 1 000 metres, so the top of the rate is multiplied by 1 000. One hour is 60 times 60 seconds, which is 3 600 seconds, so the bottom is multiplied by 3 600. Multiplying the top by 1 000 and the bottom by 3 600 is the same as multiplying the whole rate by 1 000 over 3 600, and that fraction simplifies to 1 over 3,6. Hence 72 kilometres per hour is 72 divided by 3,6, which is 20 metres per second — and you can confirm it the long way: 72 000 metres in 3 600 seconds is 20 metres each second. Going the other way, from metres per second to kilometres per hour, you multiply by 3,6; a 10 metres per second sprinter is running at 36 kilometres per hour. The number 3,6 is worth memorising, but the derivation is worth more, because in an examination a forgotten shortcut can always be rebuilt from 1 000 metres and 3 600 seconds, whereas a misremembered one — dividing when you should multiply — produces an answer that is wrong by a factor of thirteen with no warning.
+
+***
+
+### subtopic_3 — Direct Proportion — Constant Ratio
+**Assistant:** A straight-line graph that does not pass through the origin — is that still direct proportion?
+
+**Tutor:** No, and the distinction is one of the most tested ideas in this topic. Direct proportion means one quantity is a constant MULTIPLE of the other, so when the input is zero the output must be zero as well — no loaves, no cost. The graph therefore has to pass through the origin, and its gradient is the constant of proportionality, the unit rate. A straight line that cuts the vertical axis somewhere else — say a taxi fare of R15 flag-fall plus R12 per kilometre — is a linear relationship, but it is not a direct proportion: doubling the distance does not double the fare, because the R15 does not double. The test on a table makes the same point. Divide each output by its input: for a true direct proportion you get the same number every time, 17 rand per loaf, 23 rand per litre. For the taxi fare you would get a different number for each distance. So when a question asks you to decide, do not stop at "the points lie on a straight line"; check that the line goes through the origin, or equivalently that output over input is constant. Straight is necessary, through the origin is what makes it proportional.
+
+***
+
+### subtopic_4 — Indirect Proportion — Constant Product
+**Assistant:** How do you know a problem is indirect proportion rather than just a trick question?
+
+**Tutor:** Apply the diagnostic question with the units attached, and then check that a product makes physical sense. The diagnostic question is: if the first quantity increases, does the second decrease? More workers, fewer days; faster speed, shorter time; more friends, smaller slices of the same pizza. If the answer is yes, you are in indirect territory. Then ask what the constant product MEANS — and it should mean something real. Workers times days is the total amount of work, measured in worker-days; speed times time is the fixed distance; number of friends times slice size is one whole pizza. When the product has a sensible name, the proportion is genuine. When it does not, be suspicious: some quantities fall as others rise without being inversely proportional at all — a car's fuel economy worsens as speed rises, but speed times fuel economy is not a constant. In Grade 9 the examination keeps to the honest cases, so the diagnostic question plus a named constant is enough. Write the constant down explicitly — "6 times 10 equals 60 worker-days" — because that line is both the method mark and your protection against treating the problem as direct.
