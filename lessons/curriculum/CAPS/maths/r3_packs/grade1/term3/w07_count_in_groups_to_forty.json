@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w07_count_in_groups_to_forty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Counting to 50",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Count objects reliably to 40",
+    "subtopic": "Give a reasonable estimate and check by counting out objects reliably; group counting"
+  },
+  "skill": "number.group_count.to_40",
+  "prereq_skills": ["number.estimate_count.to_20", "number.skip_count.2_5_10"],
+  "images": ["beans_groups_of_ten", "numeral_5", "numeral_25", "numeral_90", "bottle_tops_twenty_four", "sticks_three_bundles", "shells_groups_of_five_twenty", "beans_thirty_seven", "buttons_in_tens", "buttons_scattered", "tutor_group_count_wrong"],
+  "show": {
+    "line": "Lots of beans! Put them in groups of ten. Ten, twenty, thirty, and four more. Thirty four!",
+    "image": "beans_groups_of_ten"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Look quickly. About how many bottle tops? Tap your guess.", "options": ["numeral_5", "numeral_25", "numeral_90"], "answer": "numeral_25", "praise": "About twenty five. Good estimate!"},
+    {"type": "count_tap", "prompt": "Now count in groups of ten. How many bottle tops?", "image": "bottle_tops_twenty_four", "count": "24", "options": ["22", "24", "26"], "answer": "24", "praise": "Twenty four! Ten, twenty, and four."},
+    {"type": "count_tap", "prompt": "Count the sticks in bundles of ten. How many?", "image": "sticks_three_bundles", "count": "30", "options": ["20", "30", "40"], "answer": "30", "praise": "Thirty! Three bundles of ten."},
+    {"type": "count_tap", "prompt": "Count the shells in groups of five. How many?", "image": "shells_groups_of_five_twenty", "count": "20", "options": ["15", "20", "25"], "answer": "20", "praise": "Twenty! Five, ten, fifteen, twenty."},
+    {"type": "say_it", "prompt": "Three groups of ten and seven more. How many? Say the number.", "accept": ["thirty seven", "37", "thirdy seven"], "image": "beans_thirty_seven"},
+    {"type": "listen_tap", "prompt": "Which is the quickest way to count forty buttons?", "options": ["buttons_in_tens", "buttons_scattered"], "answer": "buttons_in_tens", "praise": "Groups of ten are quick to count!"}
+  ],
+  "hints": ["Make groups of ten first. Then count the tens.", "Count the leftover ones last and add them on."],
+  "beat_the_tutor": {
+    "setup": "My turn! Two tens and three ones.",
+    "tutor_try": "Two tens and three ones. Twenty one!",
+    "image": "tutor_group_count_wrong",
+    "answer": "twenty three",
+    "win_line": "You caught me! Twenty, and three more is twenty three.",
+    "gentle_line": "Let's count together. Ten, twenty, twenty one, twenty two, twenty three!"
+  },
+  "parent_line": "Can estimate and count up to 40 objects in groups of ten and five."
+}

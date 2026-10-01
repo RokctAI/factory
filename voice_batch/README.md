@@ -56,10 +56,10 @@ behave exactly as before). Set them for any other voice.
 ```
 
 `packs` (a pack-id glob or a list of globs), `lines` (app line keys) and
-`locale` are optional. Without filters a batch renders all 1232 pack lines of
-the 74 Grade R packs (Terms 1-4, maths and English Home Language) plus the 4
-default praise lines (1236), split into 8 shard jobs (`R3_MAX_SHARDS`) of
-about 155 lines. A `packs` filter leaves out the shared
+`locale` are optional. Without filters a batch renders all 3062 pack lines of
+the 177 Grade R and Grade 1 packs (Terms 1-4, maths and English Home
+Language) plus the 4 default praise lines (3066), split into 8 shard jobs
+(`R3_MAX_SHARDS`) of about 383 lines. A `packs` filter leaves out the shared
 praise lines. `locale` only changes the praise lines (packs are English):
 `af` renders the 4 Afrikaans praise lines as `<key>.af.mp3` with the
 multilingual ASR model, which the app does not play yet.

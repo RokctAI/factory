@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term4.w01_place_value_to_twenty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Tens and ones",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Place value to 20",
+    "subtopic": "Decompose two-digit numbers into multiples of ten and ones (e.g. 16 is 10 and 6; 19 is 1 ten and 9 ones; 20 is 2 tens and 0 ones)"
+  },
+  "skill": "number.place_value.to_20",
+  "prereq_skills": ["number.place_value.to_15"],
+  "images": ["ten_sticks_sixteen", "ten_stick_and_seven", "numeral_1", "numeral_9", "numeral_19", "two_ten_sticks", "ten_stick_and_eight", "numeral_16", "numeral_61", "numeral_6", "sweets_ten_plus_nine", "numeral_2", "numeral_0", "tutor_eighteen_wrong"],
+  "show": {
+    "line": "Sixteen is one ten and six ones. Twenty is two tens and no ones. Tens and ones make every number!",
+    "image": "ten_sticks_sixteen"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "One ten-stick and seven ones. What number is it?", "image": "ten_stick_and_seven", "count": "17", "options": ["16", "17", "18"], "answer": "17", "praise": "Seventeen! Ten and seven."},
+    {"type": "listen_tap", "prompt": "Nineteen is one ten and how many ones?", "options": ["numeral_1", "numeral_9", "numeral_19"], "answer": "numeral_9", "praise": "One ten and nine ones."},
+    {"type": "say_it", "prompt": "Two tens and no ones. What number is it? Say it.", "accept": ["twenty", "20", "twenny"], "image": "two_ten_sticks"},
+    {"type": "listen_tap", "prompt": "Which picture shows eighteen?", "options": ["ten_stick_and_eight", "ten_stick_and_seven", "two_ten_sticks"], "answer": "ten_stick_and_eight", "praise": "Ten and eight is eighteen."},
+    {"type": "listen_tap", "prompt": "Tap the number that is one ten and six ones.", "options": ["numeral_16", "numeral_61", "numeral_6"], "answer": "numeral_16", "praise": "Sixteen!"},
+    {"type": "count_tap", "prompt": "Count the sweets. One bag of ten and some loose. How many?", "image": "sweets_ten_plus_nine", "count": "19", "options": ["18", "19", "20"], "answer": "19", "praise": "Nineteen! Ten and nine."},
+    {"type": "listen_tap", "prompt": "How many tens in twenty?", "options": ["numeral_1", "numeral_2", "numeral_0"], "answer": "numeral_2", "praise": "Two tens make twenty."}
+  ],
+  "hints": ["Count the ten-sticks first. Then the ones.", "Teen numbers are one ten and some more. Twenty is two tens."],
+  "beat_the_tutor": {
+    "setup": "My turn! One ten and eight ones.",
+    "tutor_try": "One ten and eight ones. Eighty!",
+    "image": "tutor_eighteen_wrong",
+    "answer": "eighteen",
+    "win_line": "You caught me! One ten and eight is eighteen. Eighty is eight tens.",
+    "gentle_line": "Let's count on from ten. Eleven, twelve, up to eighteen!"
+  },
+  "parent_line": "Can break numbers to 20 into tens and ones."
+}

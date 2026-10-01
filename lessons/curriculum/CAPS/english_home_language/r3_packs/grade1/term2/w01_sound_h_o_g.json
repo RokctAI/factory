@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term2.w01_sound_h_o_g",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [1],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Letter-sound relationships of some single letters; names 2 vowels and at least 6 consonants"
+  },
+  "skill": "phonics.letter_sound.h_o_g",
+  "prereq_skills": ["phonics.letter_sound.m_d"],
+  "images": ["hat_octopus_goat", "hen", "goat", "sun", "letter_g", "letter_h", "letter_o", "gate", "hat", "orange_fruit", "hot_cup", "gift", "tutor_holds_hat"],
+  "show": {
+    "line": "New sounds! h, h, hat. o, o, octopus. g, g, goat. Listen for them.",
+    "image": "hat_octopus_goat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with h, as in hat?", "options": ["hen", "goat", "sun"], "answer": "hen", "praise": "h, h, hen."},
+    {"type": "listen_tap", "prompt": "Tap the letter that says g.", "options": ["letter_g", "letter_h", "letter_o"], "answer": "letter_g", "praise": "Yes! That is g."},
+    {"type": "say_it", "prompt": "Say the sound with me. o, as in octopus!", "accept": ["o", "aw", "oh", "ah"]},
+    {"type": "listen_tap", "prompt": "Which one starts with g, as in goat?", "options": ["gate", "hat", "orange_fruit"], "answer": "gate", "praise": "g, g, gate."},
+    {"type": "listen_tap", "prompt": "Which word has o in the middle? Listen. Hot, hat.", "options": ["hot_cup", "hat"], "answer": "hot_cup", "praise": "Hot! h, o, t."},
+    {"type": "trace", "prompt": "Trace h with your finger. Tall line down, then up and over the hump.", "glyph": "h"},
+    {"type": "match_sort", "prompt": "Does it start with h or g? Sort the pictures.", "groups": ["h", "g"], "items": [{"image": "hat", "group": "h"}, {"image": "hen", "group": "h"}, {"image": "goat", "group": "g"}, {"image": "gate", "group": "g"}, {"image": "gift", "group": "g"}]}
+  ],
+  "hints": ["Listen for the first sound. h is a little puff of air.", "g comes from the back of your throat. g, g."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with g.",
+    "tutor_try": "Hat! Hat starts with g.",
+    "image": "tutor_holds_hat",
+    "answer": "no",
+    "win_line": "You caught me! Hat starts with h. Goat starts with g.",
+    "gentle_line": "Let's listen together. g, g, goat. Goat starts with g!"
+  },
+  "parent_line": "Can hear and recognise the sounds h, o and g."
+}

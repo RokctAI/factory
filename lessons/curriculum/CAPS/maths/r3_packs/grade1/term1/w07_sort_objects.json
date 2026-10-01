@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w07_sort_objects",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Sorting",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Data handling: Collect, sort and describe objects",
+    "subtopic": "Collect, sort and describe objects (integrated with Numbers, operations and relationships)"
+  },
+  "skill": "data.sort.objects",
+  "prereq_skills": [],
+  "images": ["buttons_sorted_red_blue", "red_apple", "red_car", "yellow_banana", "yellow_duck", "red_ball", "big_elephant", "big_bus", "small_ant", "small_button", "shells_big_four", "orange_fruit", "book", "tutor_banana_red_box"],
+  "show": {
+    "line": "Let's sort! Red buttons in this box, blue buttons in that box. Sorting puts things in groups.",
+    "image": "buttons_sorted_red_blue"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Sort by colour. Red or yellow?", "groups": ["red", "yellow"], "items": [{"image": "red_apple", "group": "red"}, {"image": "red_car", "group": "red"}, {"image": "yellow_banana", "group": "yellow"}, {"image": "yellow_duck", "group": "yellow"}, {"image": "red_ball", "group": "red"}]},
+    {"type": "match_sort", "prompt": "Sort by size. Big or small?", "groups": ["big", "small"], "items": [{"image": "big_elephant", "group": "big"}, {"image": "big_bus", "group": "big"}, {"image": "small_ant", "group": "small"}, {"image": "small_button", "group": "small"}]},
+    {"type": "count_tap", "prompt": "We sorted the shells. Count the big shells. How many?", "image": "shells_big_four", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four big shells!"},
+    {"type": "listen_tap", "prompt": "These are sorted into a group. Which one does not belong?", "options": ["red_apple", "red_ball", "yellow_banana"], "answer": "yellow_banana", "praise": "Yes! The banana is yellow, not red."},
+    {"type": "match_sort", "prompt": "Sort by shape. Round or not round?", "groups": ["round", "not_round"], "items": [{"image": "red_ball", "group": "round"}, {"image": "orange_fruit", "group": "round"}, {"image": "book", "group": "not_round"}, {"image": "big_bus", "group": "not_round"}]},
+    {"type": "say_it", "prompt": "How did we sort these? By colour, or by size? Say it.", "accept": ["colour", "color", "by colour", "by color"], "image": "buttons_sorted_red_blue"}
+  ],
+  "hints": ["Look at one thing at a time. Which group does it match?", "Think: same colour? Same size? Same shape?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will sort the red things.",
+    "tutor_try": "The banana goes in the red box!",
+    "image": "tutor_banana_red_box",
+    "answer": "no",
+    "win_line": "You caught me! The banana is yellow. It goes in the yellow box.",
+    "gentle_line": "Let's look together. The banana is yellow, so it goes with yellow!"
+  },
+  "parent_line": "Can sort objects by colour, size or shape and say how they were sorted."
+}

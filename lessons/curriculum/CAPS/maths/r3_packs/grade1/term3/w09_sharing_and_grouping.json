@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w09_sharing_and_grouping",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Solve problems in context",
+    "subtopic": "Solve problems in context and explain own solutions involving addition and subtraction, and equal sharing and grouping that may include remainders"
+  },
+  "skill": "number.share_group.to_12",
+  "prereq_skills": ["number.repeated_addition.to_10", "number.share.leftovers"],
+  "images": ["sweets_shared_two", "numeral_2", "numeral_4", "numeral_8", "balls_bags_of_three", "numeral_0", "numeral_1", "crayons_ten_five_children", "share_three_three", "share_four_two", "numeral_3", "tutor_unfair_share"],
+  "show": {
+    "line": "Share fairly! Six sweets, two friends. Three each. Sometimes one is left over!",
+    "image": "sweets_shared_two"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Eight apples shared between two baskets. The same in each. How many in each basket?", "options": ["numeral_2", "numeral_4", "numeral_8"], "answer": "numeral_4", "praise": "Four in each! Four and four is eight."},
+    {"type": "count_tap", "prompt": "Nine balls in bags of three. Count the bags. How many bags?", "image": "balls_bags_of_three", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three bags of three!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Seven biscuits shared between two children. Each gets three. How many are left over?", "options": ["numeral_0", "numeral_1", "numeral_2"], "answer": "numeral_1", "praise": "One left over!"},
+    {"type": "say_it", "prompt": "Ten crayons, five children. Share them fairly. How many each? Say it.", "accept": ["two", "2", "too", "two each"], "image": "crayons_ten_five_children"},
+    {"type": "listen_tap", "prompt": "Which picture shows a fair share of six?", "options": ["share_three_three", "share_four_two"], "answer": "share_three_three", "praise": "Three and three. Fair!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Twelve eggs. Four eggs fit in a box. How many boxes do we fill?", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Three boxes! Four, eight, twelve."}
+  ],
+  "hints": ["Give one to each, then one more to each, until they are gone.", "Left over means it cannot be shared fairly."],
+  "beat_the_tutor": {
+    "setup": "My turn! Six sweets, two friends.",
+    "tutor_try": "I get five and you get one. Fair!",
+    "image": "tutor_unfair_share",
+    "answer": "no",
+    "win_line": "You caught me! Three each is fair.",
+    "gentle_line": "Let's share together. One for you, one for me. Three each!"
+  },
+  "parent_line": "Can share and group objects fairly and spot leftovers."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term2.w08_sound_r_l_b_f",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [8, 9],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Letter-sound relationships of most single letters; consonant and vowel substitution word play"
+  },
+  "skill": "phonics.letter_sound.r_l_b_f",
+  "prereq_skills": ["phonics.letter_sound.c_k_e_u"],
+  "images": ["rat_leg_bus_fan", "rug", "leg", "fan", "lip", "bus", "rat", "letter_b", "letter_d", "letter_f", "letter_tiles_b_a_t", "tutor_holds_rat"],
+  "show": {
+    "line": "Four sounds! r, r, rat. l, l, leg. b, b, bus. f, f, fan.",
+    "image": "rat_leg_bus_fan"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with r, as in rat?", "options": ["rug", "leg", "fan"], "answer": "rug", "praise": "r, r, rug."},
+    {"type": "listen_tap", "prompt": "Which one starts with l, as in leg?", "options": ["lip", "bus", "rat"], "answer": "lip", "praise": "l, l, lip."},
+    {"type": "say_it", "prompt": "Say the sound with me. f, as in fan!", "accept": ["f", "fff", "fe", "fa"]},
+    {"type": "listen_tap", "prompt": "Tap the letter that says b.", "options": ["letter_b", "letter_d", "letter_f"], "answer": "letter_b", "praise": "Yes! b has a tall back and a round tummy."},
+    {"type": "say_it", "prompt": "Bat. Change b to r. What word do you make?", "accept": ["rat", "ret", "rut"], "image": "letter_tiles_b_a_t"},
+    {"type": "trace", "prompt": "Trace f with your finger. Curl at the top, go down, then across.", "glyph": "f"},
+    {"type": "match_sort", "prompt": "Does it start with r, l, b or f? Sort the pictures.", "groups": ["r", "l", "b", "f"], "items": [{"image": "rat", "group": "r"}, {"image": "rug", "group": "r"}, {"image": "leg", "group": "l"}, {"image": "lip", "group": "l"}, {"image": "bus", "group": "b"}, {"image": "fan", "group": "f"}]}
+  ],
+  "hints": ["Listen for the first sound. r growls. l sings.", "f blows air through your teeth. b pops."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with l.",
+    "tutor_try": "Rat! Rat starts with l.",
+    "image": "tutor_holds_rat",
+    "answer": "no",
+    "win_line": "You caught me! Rat starts with r. Leg starts with l.",
+    "gentle_line": "Let's listen together. l, l, leg. Leg starts with l!"
+  },
+  "parent_line": "Can hear and recognise the sounds r, l, b and f."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w06_digraphs_ch_th",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [6, 7],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises common consonant digraphs (sh, ch, th) at the beginning of a word"
+  },
+  "skill": "phonics.digraph.ch_th",
+  "prereq_skills": ["phonics.digraph.sh"],
+  "images": ["chip_and_thumb", "chair", "thumb", "ship", "three", "chick", "shell", "chin", "chip", "thin_man", "tile_th", "tile_ch", "tile_sh", "tutor_holds_chip"],
+  "show": {
+    "line": "Two more! c and h say ch. ch, ch, chip. t and h say th. th, th, thumb.",
+    "image": "chip_and_thumb"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with ch, as in chip?", "options": ["chair", "thumb", "ship"], "answer": "chair", "praise": "ch, ch, chair."},
+    {"type": "listen_tap", "prompt": "Which one starts with th, as in thumb?", "options": ["three", "chick", "shell"], "answer": "three", "praise": "th, th, three."},
+    {"type": "say_it", "prompt": "Say the sound with me. ch, as in chip!", "accept": ["ch", "chuh", "che", "cha"]},
+    {"type": "blend", "prompt": "Listen. ch, i, n. What word is it?", "sounds": ["ch", "i", "n"], "options": ["chin", "chip", "thin_man"], "answer": "chin", "praise": "Chin! ch, i, n."},
+    {"type": "listen_tap", "prompt": "Tap the letters that say th.", "options": ["tile_th", "tile_ch", "tile_sh"], "answer": "tile_th", "praise": "t and h together say th."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "chop", "accept": ["chop", "chap", "shop"]},
+    {"type": "match_sort", "prompt": "Does it start with sh, ch or th? Sort the pictures.", "groups": ["sh", "ch", "th"], "items": [{"image": "ship", "group": "sh"}, {"image": "shell", "group": "sh"}, {"image": "chip", "group": "ch"}, {"image": "chair", "group": "ch"}, {"image": "thumb", "group": "th"}, {"image": "three", "group": "th"}]}
+  ],
+  "hints": ["ch is like a sneeze. th puts your tongue between your teeth.", "Two letters, one sound. Listen to the start."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with th.",
+    "tutor_try": "Chip! Chip starts with th.",
+    "image": "tutor_holds_chip",
+    "answer": "no",
+    "win_line": "You caught me! Chip starts with ch. Thumb starts with th.",
+    "gentle_line": "Let's listen together. th, th, thumb. Thumb starts with th!"
+  },
+  "parent_line": "Can hear and read ch and th at the start of words."
+}

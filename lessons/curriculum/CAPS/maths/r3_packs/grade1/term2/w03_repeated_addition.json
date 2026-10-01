@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w03_repeated_addition",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Solve problems in context",
+    "subtopic": "Solve problems in context and explain own solutions involving addition and subtraction, repeated addition (weeks 3-10), and equal sharing and grouping that may include remainders"
+  },
+  "skill": "number.repeated_addition.to_10",
+  "prereq_skills": ["number.add_subtract.to_6_symbols"],
+  "images": ["bikes_two", "plates_three_two_apples", "numeral_5", "numeral_10", "numeral_7", "dogs_four", "bags_three_three_sweets", "numeral_2", "numeral_4", "numeral_8", "numeral_6", "tutor_bike_wheels_wrong"],
+  "show": {
+    "line": "Two bikes. Each bike has two wheels. Two plus two equals four wheels. Adding the same number again!",
+    "image": "bikes_two"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Three plates. Two apples on each plate. How many apples?", "image": "plates_three_two_apples", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six! Two plus two plus two."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Two children each have five fingers up. How many fingers altogether?", "options": ["numeral_5", "numeral_10", "numeral_7"], "answer": "numeral_10", "praise": "Ten! Five plus five equals ten."},
+    {"type": "count_tap", "prompt": "Four dogs. Each dog has two ears. Count the ears.", "image": "dogs_four", "count": "8", "options": ["6", "8", "10"], "answer": "8", "praise": "Eight ears! Two, four, six, eight."},
+    {"type": "say_it", "prompt": "Three bags. Three sweets in each bag. How many sweets? Say the number.", "accept": ["nine", "9", "nain"], "image": "bags_three_three_sweets"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thandi shares eight cookies between two friends. Each gets the same. How many each?", "options": ["numeral_2", "numeral_4", "numeral_8"], "answer": "numeral_4", "praise": "Four each! Four plus four is eight."},
+    {"type": "listen_tap", "prompt": "Two plus two plus two. Tap the answer.", "options": ["numeral_4", "numeral_6", "numeral_8"], "answer": "numeral_6", "praise": "Six!"}
+  ],
+  "hints": ["Count in jumps. Two, four, six.", "Each group has the same number. Add them one group at a time."],
+  "beat_the_tutor": {
+    "setup": "My turn! Three bikes, two wheels each.",
+    "tutor_try": "Two plus two plus two. Five wheels!",
+    "image": "tutor_bike_wheels_wrong",
+    "answer": "six",
+    "win_line": "You caught me! Two, four, six. Six wheels.",
+    "gentle_line": "Let's count in twos together. Two, four, six wheels!"
+  },
+  "parent_line": "Can add the same number again and again to solve a story sum."
+}

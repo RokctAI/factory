@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w01_read_the_punctuation",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [1],
+  "theme": "Reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Reading",
+    "subtopic": "Group guided: reads aloud from own book; monitors self; shows understanding of punctuation when reading aloud"
+  },
+  "skill": "reading.punctuation.question_exclaim",
+  "prereq_skills": ["reading.fluency.set2", "writing.capital_full_stop"],
+  "images": ["punctuation_marks", "mark_question", "mark_full_stop", "mark_exclaim", "strip_look_a_shark_exclaim", "strip_the_fish_swims", "mark_comma_small", "tutor_reads_flat"],
+  "show": {
+    "line": "Marks tell us how to read! A question mark asks. Is it a dog? An exclamation mark shouts. Run!",
+    "image": "punctuation_marks"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which mark asks a question?", "options": ["mark_question", "mark_full_stop", "mark_exclaim"], "answer": "mark_question", "praise": "The question mark!"},
+    {"type": "read_to_me", "prompt": "Read this like a question.", "text": "Can the frog hop?", "accept": ["can the frog hop", "can the frog hop?", "can frog hop"]},
+    {"type": "listen_tap", "prompt": "Which sentence should be read loud and excited?", "options": ["strip_look_a_shark_exclaim", "strip_the_fish_swims"], "answer": "strip_look_a_shark_exclaim", "praise": "Look, a shark! Loud and excited."},
+    {"type": "read_to_me", "prompt": "Read this with a big voice.", "text": "Stop that cat!", "accept": ["stop that cat", "stop that cat!", "stop the cat"]},
+    {"type": "say_it", "prompt": "What is the little dot at the end of a sentence called? Say it.", "accept": ["full stop", "a full stop", "fullstop", "stop", "dot"], "image": "mark_full_stop"},
+    {"type": "listen_tap", "prompt": "Where do you stop and take a breath? Tap the full stop.", "options": ["mark_full_stop", "mark_comma_small", "mark_question"], "answer": "mark_full_stop", "praise": "Stop at the full stop."}
+  ],
+  "hints": ["A question goes up at the end. Can the frog hop?", "Full stop means stop. Take a little breath."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this. Is the cat wet?",
+    "tutor_try": "Is the cat wet. Flat, like a stone.",
+    "image": "tutor_reads_flat",
+    "answer": "no",
+    "win_line": "You caught me! It has a question mark. Is the cat wet? Up at the end!",
+    "gentle_line": "Let's read it together, like a question. Is the cat wet?"
+  },
+  "parent_line": "Can read a question, an exclamation and a full stop with the right voice."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term4.w05_make_your_own_pattern",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Patterns",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Patterns, functions and algebra: Geometric patterns",
+    "subtopic": "Draw own simple patterns; create and describe own pattern"
+  },
+  "skill": "pattern.create_own",
+  "prereq_skills": ["pattern.describe_rule"],
+  "images": ["child_making_pattern", "row_big_big_small", "row_big_small_small", "beads_red_blue_blue", "row_triangle_circle_repeat", "row_mixed_shapes", "tutor_breaks_rule"],
+  "show": {
+    "line": "Make your own pattern! Pick two shapes. Square, heart, square, heart. Say the rule. Keep it going!",
+    "image": "child_making_pattern"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Your rule is heart, star. Heart, star, heart, and then?", "sequence": ["heart", "star", "heart"], "options": ["star", "heart", "moon"], "answer": "star", "praise": "Star! You kept the rule."},
+    {"type": "listen_tap", "prompt": "Which row follows the rule big, big, small?", "options": ["row_big_big_small", "row_big_small_small"], "answer": "row_big_big_small", "praise": "Big, big, small. That follows the rule!"},
+    {"type": "say_it", "prompt": "Look at this pattern. Say its rule. Red, blue, blue?", "accept": ["red blue blue", "red blue", "red then blue blue", "red blue blue red"], "image": "beads_red_blue_blue"},
+    {"type": "what_next", "prompt": "Make a growing pattern. One dot, two dots, three dots, and then?", "sequence": ["1", "2", "3"], "options": ["4", "3", "1"], "answer": "4", "praise": "Four dots! It grows by one."},
+    {"type": "listen_tap", "prompt": "Which row is a pattern you could keep going?", "options": ["row_triangle_circle_repeat", "row_mixed_shapes"], "answer": "row_triangle_circle_repeat", "praise": "Triangle, circle, again and again."},
+    {"type": "match_sort", "prompt": "Pattern or not a pattern? Sort the rows.", "groups": ["pattern", "not_pattern"], "items": [{"image": "row_big_big_small", "group": "pattern"}, {"image": "row_triangle_circle_repeat", "group": "pattern"}, {"image": "beads_red_blue_blue", "group": "pattern"}, {"image": "row_mixed_shapes", "group": "not_pattern"}]}
+  ],
+  "hints": ["Pick a rule and say it out loud. Then follow it.", "A pattern repeats. Check that yours does."],
+  "beat_the_tutor": {
+    "setup": "My turn! My rule is square, heart.",
+    "tutor_try": "Square, heart, square, square!",
+    "image": "tutor_breaks_rule",
+    "answer": "heart",
+    "win_line": "You caught me! After square comes heart. I broke my own rule.",
+    "gentle_line": "Let's say the rule. Square, heart, square, heart!"
+  },
+  "parent_line": "Can make a pattern with a rule and keep it going."
+}

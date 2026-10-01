@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w03_left_right_on_top",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Where is it?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Space and shape: Position, orientation and views",
+    "subtopic": "Describe the position of one object in relation to another: right, left, on top of, next to, in the middle, up, down"
+  },
+  "skill": "space.position.left_right",
+  "prereq_skills": ["space.position_words"],
+  "images": ["cat_dog_box_ball", "bird_on_roof", "bird_next_to_house", "left_hand", "right_hand", "child_left", "child_middle", "child_right", "ball_next_to_box", "kite_up", "kite_down", "cup_left", "cup_right", "tutor_cat_on_box"],
+  "show": {
+    "line": "The cat is on top of the box. The dog is next to the box. Where is the ball?",
+    "image": "cat_dog_box_ball"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the picture where the bird is on top of the house.", "options": ["bird_on_roof", "bird_next_to_house"], "answer": "bird_on_roof", "praise": "Yes! On top of the house."},
+    {"type": "listen_tap", "prompt": "Which hand is on the left?", "options": ["left_hand", "right_hand"], "answer": "left_hand", "praise": "That is the left hand."},
+    {"type": "listen_tap", "prompt": "Tap the child in the middle.", "options": ["child_left", "child_middle", "child_right"], "answer": "child_middle", "praise": "Yes! In the middle."},
+    {"type": "say_it", "prompt": "Is the ball next to the box or on top of the box? Say it.", "accept": ["next to", "next to the box", "next", "beside"], "image": "ball_next_to_box"},
+    {"type": "listen_tap", "prompt": "Which kite is up high?", "options": ["kite_up", "kite_down"], "answer": "kite_up", "praise": "That kite is up high!"},
+    {"type": "listen_tap", "prompt": "Tap the cup on the right.", "options": ["cup_left", "cup_right"], "answer": "cup_right", "praise": "Yes! On the right."}
+  ],
+  "hints": ["On top means above, touching it. Next to means beside it.", "Your left hand makes an L shape with the thumb."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say where the cat is.",
+    "tutor_try": "The cat is under the box!",
+    "image": "tutor_cat_on_box",
+    "answer": "on top",
+    "win_line": "You caught me! The cat is on top of the box.",
+    "gentle_line": "Let's look together. The cat sits on top of the box!"
+  },
+  "parent_line": "Can say where things are: left, right, on top of, next to, in the middle."
+}

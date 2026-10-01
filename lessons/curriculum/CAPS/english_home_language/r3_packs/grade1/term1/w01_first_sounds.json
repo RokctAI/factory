@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w01_first_sounds",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [1],
+  "theme": "Sounds and words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises sounds at the beginning of some words"
+  },
+  "skill": "phonics.initial_sound.mixed_review",
+  "prereq_skills": ["phonics.initial_sound.a", "phonics.initial_sound.m_j"],
+  "images": ["sun_and_mat", "sock", "mat", "tap", "sun", "moon", "tent", "mouse", "tutor_holds_moon"],
+  "show": {
+    "line": "Every word starts with a sound. Sun starts with s. Mat starts with m. Listen for the first sound!",
+    "image": "sun_and_mat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with s, as in sun?", "options": ["sock", "mat", "tap"], "answer": "sock", "praise": "Yes! s, s, sock."},
+    {"type": "listen_tap", "prompt": "Which one starts with m, as in mat?", "options": ["sun", "moon", "tap"], "answer": "moon", "praise": "Yes! m, m, moon."},
+    {"type": "say_it", "prompt": "Tap. What sound does tap start with? Say the sound.", "accept": ["t", "tuh", "te", "ta"], "image": "tap"},
+    {"type": "listen_tap", "prompt": "Which one starts with t, as in tap?", "options": ["tent", "sock", "moon"], "answer": "tent", "praise": "Yes! t, t, tent."},
+    {"type": "say_it", "prompt": "Sock. What is the first sound? Say it.", "accept": ["s", "sss", "se", "sa"], "image": "sock"},
+    {"type": "match_sort", "prompt": "Does it start with s or m? Put each picture in its group.", "groups": ["s", "m"], "items": [{"image": "sock", "group": "s"}, {"image": "sun", "group": "s"}, {"image": "moon", "group": "m"}, {"image": "mat", "group": "m"}, {"image": "mouse", "group": "m"}]}
+  ],
+  "hints": ["Say the word slowly. The first sound comes out first.", "Stretch it. Sssun. Mmmat."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the first sound of moon.",
+    "tutor_try": "Moon starts with s!",
+    "image": "tutor_holds_moon",
+    "answer": "no",
+    "win_line": "You caught me! Moon starts with m. m, m, moon.",
+    "gentle_line": "Let's listen together. Mmmoon. Moon starts with m!"
+  },
+  "parent_line": "Can hear the first sound of a word."
+}

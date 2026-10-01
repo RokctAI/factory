@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w05_count_to_twenty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Counting to 20",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Counting",
+    "subtopic": "Count forwards and backwards in 1s from any number between 1 and 10 (weeks 1-4) and between 1 and 20 (weeks 5-10); describe the sequence"
+  },
+  "skill": "number.count.to_20",
+  "prereq_skills": ["number.count.to_10_from_any"],
+  "images": ["number_track_twenty", "numeral_12", "numeral_21", "numeral_20", "beads_fifteen", "numeral_18", "numeral_19", "tutor_skips_fourteen"],
+  "show": {
+    "line": "After ten we keep going! Eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty.",
+    "image": "number_track_twenty"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Count on with me. Ten, eleven, twelve. What comes next?", "accept": ["thirteen", "13", "firteen", "thirteen fourteen"]},
+    {"type": "what_next", "prompt": "What comes next? Fourteen, fifteen, sixteen, and then?", "sequence": ["14", "15", "16"], "options": ["17", "18", "15"], "answer": "17", "praise": "Seventeen!"},
+    {"type": "listen_tap", "prompt": "Tap the number twelve.", "options": ["numeral_12", "numeral_21", "numeral_20"], "answer": "numeral_12", "praise": "Yes! A one and a two make twelve."},
+    {"type": "count_tap", "prompt": "Count the beads on the string. How many?", "image": "beads_fifteen", "count": "15", "options": ["14", "15", "16"], "answer": "15", "praise": "Fifteen beads!"},
+    {"type": "what_next", "prompt": "Count backwards. Twenty, nineteen, eighteen, and then?", "sequence": ["20", "19", "18"], "options": ["17", "16", "19"], "answer": "17", "praise": "Seventeen! Twenty, nineteen, eighteen, seventeen."},
+    {"type": "listen_tap", "prompt": "Which number comes just before twenty?", "options": ["numeral_18", "numeral_19", "numeral_21"], "answer": "numeral_19", "praise": "Nineteen comes before twenty."}
+  ],
+  "hints": ["Teen numbers come after ten. Thirteen, fourteen, fifteen.", "Look at the number track. Each step is one more."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count from twelve.",
+    "tutor_try": "Twelve, thirteen, fifteen, sixteen!",
+    "image": "tutor_skips_fourteen",
+    "answer": "fourteen",
+    "win_line": "You caught me! I forgot fourteen. Twelve, thirteen, fourteen, fifteen.",
+    "gentle_line": "Let's count together. Twelve, thirteen, fourteen, fifteen, sixteen!"
+  },
+  "parent_line": "Can count forwards and backwards to 20 and read numbers to 20."
+}

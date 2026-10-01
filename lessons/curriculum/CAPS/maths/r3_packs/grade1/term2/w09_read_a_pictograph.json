@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w09_read_a_pictograph",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Sorting",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Data handling: Collect, sort and represent data",
+    "subtopic": "Collect and organise data (e.g. a class birthday calendar); answer questions about data in a pictograph"
+  },
+  "skill": "data.pictograph.read",
+  "prereq_skills": ["data.sort.objects"],
+  "images": ["pictograph_fruit", "apple", "banana", "orange_fruit", "pictograph_birthdays", "card_june", "card_march", "card_october", "shoe_laces", "shoe_straps", "tutor_pictograph_wrong"],
+  "show": {
+    "line": "A picture graph! Each picture is one child. Four children like apples, two like bananas. Apples win!",
+    "image": "pictograph_fruit"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Look at the graph. How many children like apples?", "image": "pictograph_fruit", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four children like apples."},
+    {"type": "listen_tap", "prompt": "Which fruit do the most children like?", "options": ["apple", "banana", "orange_fruit"], "answer": "apple", "praise": "Apples have the longest row!"},
+    {"type": "count_tap", "prompt": "Birthday graph. How many birthdays in June?", "image": "pictograph_birthdays", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three birthdays in June."},
+    {"type": "listen_tap", "prompt": "Which month has the fewest birthdays?", "options": ["card_june", "card_march", "card_october"], "answer": "card_march", "praise": "March has the shortest row."},
+    {"type": "say_it", "prompt": "How many children like bananas? Say the number.", "accept": ["two", "2", "too", "tu"], "image": "pictograph_fruit"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Our class sorted shoes. Five with laces, three with straps. Which row is longer on the graph?", "options": ["shoe_laces", "shoe_straps"], "answer": "shoe_laces", "praise": "Laces! Five is more than three."}
+  ],
+  "hints": ["Count the pictures in the row. Each picture is one.", "The longest row is the most. The shortest row is the fewest."],
+  "beat_the_tutor": {
+    "setup": "My turn! Which fruit do the most children like?",
+    "tutor_try": "Bananas! Two children like bananas.",
+    "image": "tutor_pictograph_wrong",
+    "answer": "apples",
+    "win_line": "You caught me! Four is more than two. Apples win.",
+    "gentle_line": "Let's count the rows. Apples, four. Bananas, two. Apples are more!"
+  },
+  "parent_line": "Can read a picture graph and say which has the most and fewest."
+}

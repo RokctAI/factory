@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term3.w06_he_she_it",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [6, 7],
+  "theme": "Writing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "With help, uses nouns and pronouns (I, you, he, she, it) correctly"
+  },
+  "skill": "grammar.pronouns.he_she_it",
+  "prereq_skills": ["writing.capital_full_stop"],
+  "images": ["boy_girl_dog", "word_she", "word_he", "word_it", "dad", "strip_it_is_wet", "strip_she_is_wet", "strip_he_is_wet", "thabo_boy", "kite", "zama_girl", "tutor_girl_he"],
+  "show": {
+    "line": "Sam is a boy. He runs. Zama is a girl. She hops. The dog? It barks! He, she, it.",
+    "image": "boy_girl_dog"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word goes with the girl? She or he?", "options": ["word_she", "word_he"], "answer": "word_she", "praise": "She! A girl is she."},
+    {"type": "listen_tap", "prompt": "Which word goes with the ball? He, she or it?", "options": ["word_he", "word_she", "word_it"], "answer": "word_it", "praise": "It! A thing is it."},
+    {"type": "say_it", "prompt": "Dad is a man. Which word? He or she? Say it.", "accept": ["he", "hee", "him"], "image": "dad"},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "She has a hat.", "accept": ["she has a hat", "she has a hat.", "she has hat"]},
+    {"type": "listen_tap", "prompt": "The cat is wet. Which sentence says it right?", "options": ["strip_it_is_wet", "strip_she_is_wet", "strip_he_is_wet"], "answer": "strip_it_is_wet", "praise": "It is wet!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thabo has a kite. He runs with it. The kite goes up. Who is he?", "options": ["thabo_boy", "kite", "zama_girl"], "answer": "thabo_boy", "praise": "He is Thabo!"}
+  ],
+  "hints": ["He is for a boy or man. She is for a girl or woman.", "It is for a thing or an animal."],
+  "beat_the_tutor": {
+    "setup": "My turn! Zama is a girl.",
+    "tutor_try": "He has a hat!",
+    "image": "tutor_girl_he",
+    "answer": "she",
+    "win_line": "You caught me! Zama is a girl. She has a hat.",
+    "gentle_line": "Let's say it together. Zama is a girl. She has a hat!"
+  },
+  "parent_line": "Can use he, she and it for people and things."
+}

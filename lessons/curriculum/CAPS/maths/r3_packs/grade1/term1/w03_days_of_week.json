@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w03_days_of_week",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Time",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Measurement: Time",
+    "subtopic": "Name and sequence the days of the week and months of the year"
+  },
+  "skill": "time.days_of_week",
+  "prereq_skills": ["time.day_parts"],
+  "images": ["week_chart", "card_monday", "card_friday", "card_sunday", "card_wednesday", "card_saturday", "tutor_skips_days"],
+  "show": {
+    "line": "Seven days make a week. Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.",
+    "image": "week_chart"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Say the days with me. Monday, Tuesday, and then?", "accept": ["wednesday", "wensday", "wendsday"]},
+    {"type": "what_next", "prompt": "What day comes next? Thursday, Friday, and then?", "sequence": ["Thursday", "Friday"], "options": ["Saturday", "Monday", "Tuesday"], "answer": "Saturday", "praise": "Saturday! Then Sunday."},
+    {"type": "listen_tap", "prompt": "Which day comes first in the school week?", "options": ["card_monday", "card_friday", "card_sunday"], "answer": "card_monday", "praise": "Monday starts the school week."},
+    {"type": "count_tap", "prompt": "Count the days on the chart. How many days in a week?", "image": "week_chart", "count": "7", "options": ["5", "7", "10"], "answer": "7", "praise": "Seven days in a week!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Today is Tuesday. Zanele has soccer tomorrow. Which day is tomorrow?", "options": ["card_wednesday", "card_monday", "card_friday"], "answer": "card_wednesday", "praise": "Wednesday comes after Tuesday."},
+    {"type": "match_sort", "prompt": "School day, or weekend? Put each day in its group.", "groups": ["school_day", "weekend"], "items": [{"image": "card_monday", "group": "school_day"}, {"image": "card_wednesday", "group": "school_day"}, {"image": "card_friday", "group": "school_day"}, {"image": "card_saturday", "group": "weekend"}, {"image": "card_sunday", "group": "weekend"}]}
+  ],
+  "hints": ["Sing the days in order. Monday, Tuesday, Wednesday.", "Saturday and Sunday are the weekend. No school!"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the days.",
+    "tutor_try": "Monday, Tuesday, Friday!",
+    "image": "tutor_skips_days",
+    "answer": "wednesday",
+    "win_line": "You caught me! After Tuesday comes Wednesday, then Thursday.",
+    "gentle_line": "Let's say them together. Monday, Tuesday, Wednesday, Thursday, Friday!"
+  },
+  "parent_line": "Can name the days of the week in order."
+}

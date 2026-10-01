@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w02_write_h_o_g",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Handwriting",
+    "subtopic": "Forms lower case letters correctly by size and position (correct start and end)"
+  },
+  "skill": "writing.letter.h_o_g_n",
+  "prereq_skills": ["phonics.letter_sound.h_o_g"],
+  "images": ["letters_h_o_g_lines", "letter_h", "letter_o", "letter_g", "letter_n", "tutor_wrote_h"],
+  "show": {
+    "line": "Tall letters, small letters, letters with tails. h is tall. o is small. g has a tail. Let's write!",
+    "image": "letters_h_o_g_lines"
+  },
+  "rounds": [
+    {"type": "trace", "prompt": "Trace o with your finger. Start at the top and go round.", "glyph": "o"},
+    {"type": "trace", "prompt": "Trace g with your finger. Go round, then down and curl the tail.", "glyph": "g"},
+    {"type": "listen_tap", "prompt": "Which letter is tall and reaches the top line?", "options": ["letter_h", "letter_o", "letter_g"], "answer": "letter_h", "praise": "h is tall!"},
+    {"type": "trace", "prompt": "Trace n with your finger. Down, then up and over the hump.", "glyph": "n"},
+    {"type": "listen_tap", "prompt": "Which letter has a tail under the line?", "options": ["letter_g", "letter_n", "letter_o"], "answer": "letter_g", "praise": "g hangs its tail down."},
+    {"type": "trace", "prompt": "Trace h with your finger. Tall line down, up, then over the hump.", "glyph": "h"}
+  ],
+  "hints": ["Start at the top. Small letters sit between the lines.", "Tails go under the line. Tall letters touch the top."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write n.",
+    "tutor_try": "Look, I wrote n!",
+    "image": "tutor_wrote_h",
+    "answer": "h",
+    "win_line": "You caught me! I made it tall. That is h. n is small.",
+    "gentle_line": "Let's look together. A small hump, not tall. That is n!"
+  },
+  "parent_line": "Can trace h, o, g and n with the right size and starting point."
+}

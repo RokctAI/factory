@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w01_clap_the_words",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [1],
+  "theme": "Sounds and words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Segments oral sentences into individual words (claps on each word)"
+  },
+  "skill": "phonics.segment.words_syllables",
+  "prereq_skills": [],
+  "images": ["child_clapping", "strip_the_cat_sat", "strip_i_can_jump_high", "banana", "crocodile", "dog", "elephant", "strip_we_go_to_school", "tutor_claps_two"],
+  "show": {
+    "line": "Sentences are made of words. Clap each word. I, like, my, dog. Four claps, four words!",
+    "image": "child_clapping"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Clap the words. The cat sat. How many words?", "image": "strip_the_cat_sat", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three words! The, cat, sat."},
+    {"type": "count_tap", "prompt": "Clap the words. I can jump high. How many words?", "image": "strip_i_can_jump_high", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four words!"},
+    {"type": "say_it", "prompt": "Clap the parts of this word. Ba, na, na. How many claps? Say the number.", "accept": ["three", "3", "tree", "free"], "image": "banana"},
+    {"type": "count_tap", "prompt": "Clap the parts. Croc, o, dile. How many parts?", "image": "crocodile", "count": "3", "options": ["1", "2", "3"], "answer": "3", "praise": "Three parts! Croc, o, dile."},
+    {"type": "listen_tap", "prompt": "Which animal name has only one clap?", "options": ["crocodile", "dog", "elephant"], "answer": "dog", "praise": "Dog! One clap."},
+    {"type": "count_tap", "prompt": "Clap the words. We go to school. How many words?", "image": "strip_we_go_to_school", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four words! We, go, to, school."}
+  ],
+  "hints": ["Say the sentence slowly. Clap once for each word.", "Count your claps on your fingers."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will clap the words. My dog runs.",
+    "tutor_try": "My dog runs. Two claps!",
+    "image": "tutor_claps_two",
+    "answer": "three",
+    "win_line": "You caught me! My, dog, runs. Three words, three claps.",
+    "gentle_line": "Let's clap together. My, dog, runs. Three claps!"
+  },
+  "parent_line": "Can clap the words in a sentence and the parts in a long word."
+}

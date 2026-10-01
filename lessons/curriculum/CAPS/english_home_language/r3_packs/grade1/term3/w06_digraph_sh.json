@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w06_digraph_sh",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [6, 7],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises common consonant digraphs (sh, ch, th) at the beginning of a word"
+  },
+  "skill": "phonics.digraph.sh",
+  "prereq_skills": ["phonics.blend.l_blends"],
+  "images": ["ship", "shop", "sock", "hat", "shell", "bell", "tile_sh", "tile_s", "tile_ch", "sheep", "shoe", "sun", "tutor_holds_sock"],
+  "show": {
+    "line": "Two letters, one sound! s and h together say sh. sh, sh, ship. Quiet like a library!",
+    "image": "ship"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with sh, as in ship?", "options": ["shop", "sock", "hat"], "answer": "shop", "praise": "sh, sh, shop."},
+    {"type": "say_it", "prompt": "Say the sound with me. sh, as in ship!", "accept": ["sh", "shh", "shuh", "she"]},
+    {"type": "blend", "prompt": "Listen. sh, e, ll. What word is it?", "sounds": ["sh", "e", "ll"], "options": ["shell", "ship", "bell"], "answer": "shell", "praise": "Shell! sh, e, ll."},
+    {"type": "listen_tap", "prompt": "Tap the letters that say sh.", "options": ["tile_sh", "tile_s", "tile_ch"], "answer": "tile_sh", "praise": "s and h together say sh."},
+    {"type": "listen_tap", "prompt": "Which one does not start with sh?", "options": ["sheep", "shoe", "sun"], "answer": "sun", "praise": "Sun starts with just s."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "shop", "accept": ["shop", "shap", "shup"]},
+    {"type": "match_sort", "prompt": "Does it start with sh or just s? Sort the pictures.", "groups": ["sh", "s"], "items": [{"image": "ship", "group": "sh"}, {"image": "shop", "group": "sh"}, {"image": "sheep", "group": "sh"}, {"image": "sun", "group": "s"}, {"image": "sock", "group": "s"}]}
+  ],
+  "hints": ["sh is the quiet sound. Finger on your lips. sh!", "s and h together make one new sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with sh.",
+    "tutor_try": "Sock! Sock starts with sh.",
+    "image": "tutor_holds_sock",
+    "answer": "no",
+    "win_line": "You caught me! Sock starts with s. Ship starts with sh.",
+    "gentle_line": "Let's listen together. sh, sh, ship. Ship starts with sh!"
+  },
+  "parent_line": "Can hear and read the sh sound at the start of words."
+}

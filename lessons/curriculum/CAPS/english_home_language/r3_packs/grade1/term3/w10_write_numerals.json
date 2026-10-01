@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w10_write_numerals",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [10],
+  "theme": "Numbers",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Handwriting",
+    "subtopic": "Forms numerals correctly"
+  },
+  "skill": "writing.numerals.0_9",
+  "prereq_skills": ["writing.capital_letters.set1"],
+  "images": ["numerals_0_to_9", "numeral_3_correct", "numeral_3_backwards", "numeral_7_backwards", "numeral_7_correct", "tutor_wrote_nine"],
+  "show": {
+    "line": "Numbers are written too! Start at the top. One is a line down. Let's write our numerals.",
+    "image": "numerals_0_to_9"
+  },
+  "rounds": [
+    {"type": "trace", "prompt": "Draw two with your finger. Go round at the top, then along the bottom.", "glyph": "2"},
+    {"type": "trace", "prompt": "Draw three with your finger. Make one bump, then another bump.", "glyph": "3"},
+    {"type": "listen_tap", "prompt": "Which numeral is written the right way round?", "options": ["numeral_3_correct", "numeral_3_backwards"], "answer": "numeral_3_correct", "praise": "The bumps face right!"},
+    {"type": "trace", "prompt": "Draw six with your finger. Curl down, then round into a ball at the bottom.", "glyph": "6"},
+    {"type": "trace", "prompt": "Draw zero with your finger. Start at the top and go all the way round.", "glyph": "0"},
+    {"type": "listen_tap", "prompt": "Which numeral is written the right way round?", "options": ["numeral_7_backwards", "numeral_7_correct"], "answer": "numeral_7_correct", "praise": "Across the top, then slide down!"},
+    {"type": "trace", "prompt": "Draw nine with your finger. A ball at the top, then a line down.", "glyph": "9"}
+  ],
+  "hints": ["Start at the top. Numbers sit on the line.", "Say the number as you draw it."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write a six.",
+    "tutor_try": "Look, a six!",
+    "image": "tutor_wrote_nine",
+    "answer": "nine",
+    "win_line": "You caught me! The ball is at the top. That is a nine.",
+    "gentle_line": "Let's look together. Six has its ball at the bottom!"
+  },
+  "parent_line": "Can write the numerals 0 to 9 the right way round."
+}

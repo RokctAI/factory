@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w03_order_numbers_to_twelve",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Numbers to 15",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 15)",
+    "subtopic": "Order a given set of numbers 1-10 (weeks 1-2), 1-12 (weeks 3-4) and 1-15 (weeks 5-10): smallest to greatest, ascending and descending"
+  },
+  "skill": "number.order.to_12",
+  "prereq_skills": ["number.compare.to_9_dots"],
+  "images": ["number_cards_ordered", "numeral_9", "numeral_4", "numeral_12", "numeral_6", "numeral_11", "numeral_3", "number_line_gap_nine", "row_3_6_9_12", "row_6_3_12_9", "tutor_order_wrong"],
+  "show": {
+    "line": "Put numbers in order! Smallest first. Three, seven, ten, twelve. Going up is ascending. Going down is descending.",
+    "image": "number_cards_ordered"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Smallest to greatest. Two, five, eight, and then?", "sequence": ["2", "5", "8"], "options": ["11", "6", "1"], "answer": "11", "praise": "Eleven is the greatest!"},
+    {"type": "listen_tap", "prompt": "Which number is the smallest? Nine, four or twelve?", "options": ["numeral_9", "numeral_4", "numeral_12"], "answer": "numeral_4", "praise": "Four is the smallest."},
+    {"type": "what_next", "prompt": "Greatest to smallest. Twelve, ten, seven, and then?", "sequence": ["12", "10", "7"], "options": ["3", "9", "11"], "answer": "3", "praise": "Three! Going down."},
+    {"type": "listen_tap", "prompt": "Which number is the greatest? Six, eleven or three?", "options": ["numeral_6", "numeral_11", "numeral_3"], "answer": "numeral_11", "praise": "Eleven is the greatest."},
+    {"type": "say_it", "prompt": "Which number is between eight and ten? Say it.", "accept": ["nine", "9", "nain"], "image": "number_line_gap_nine"},
+    {"type": "listen_tap", "prompt": "Which row is in order from smallest to greatest?", "options": ["row_3_6_9_12", "row_6_3_12_9"], "answer": "row_3_6_9_12", "praise": "Three, six, nine, twelve. In order!"}
+  ],
+  "hints": ["Find the smallest first. Then the next smallest.", "Use the number line. Left is smaller, right is bigger."],
+  "beat_the_tutor": {
+    "setup": "My turn! Smallest to greatest. Five, two, nine.",
+    "tutor_try": "Five, two, nine. Done!",
+    "image": "tutor_order_wrong",
+    "answer": "no",
+    "win_line": "You caught me! Two is smallest. Two, five, nine.",
+    "gentle_line": "Let's find the smallest. Two! Then five, then nine."
+  },
+  "parent_line": "Can put numbers to 12 in order from smallest to greatest and back."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w05_heavy_light",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Measuring",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Measurement: Mass",
+    "subtopic": "Vocabulary: heavy and light, more, less, big, small"
+  },
+  "skill": "measure.mass.heavy_light_compare",
+  "prereq_skills": ["measure.mass.heavy_light"],
+  "images": ["elephant_feather", "rock", "balloon", "brick", "leaf", "scale_side_down", "scale_side_up", "potato_bag", "pumpkin_big", "tomato_small", "tutor_blows_rock"],
+  "show": {
+    "line": "The elephant is heavy. The feather is light. Heavy things are hard to lift!",
+    "image": "elephant_feather"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is heavy?", "options": ["rock", "balloon"], "answer": "rock", "praise": "Yes! A rock is heavy."},
+    {"type": "listen_tap", "prompt": "Which one is light?", "options": ["brick", "leaf"], "answer": "leaf", "praise": "A leaf is light. It floats down."},
+    {"type": "listen_tap", "prompt": "Look at the scale. Which side is heavier? Tap it.", "options": ["scale_side_down", "scale_side_up"], "answer": "scale_side_down", "praise": "Yes! The heavy side goes down."},
+    {"type": "say_it", "prompt": "Is a bag of potatoes heavy or light? Say it.", "accept": ["heavy", "hevy", "heavy bag"], "image": "potato_bag"},
+    {"type": "listen_tap", "prompt": "Which is heavier, the big pumpkin or the small tomato?", "options": ["pumpkin_big", "tomato_small"], "answer": "pumpkin_big", "praise": "The big pumpkin is heavier."},
+    {"type": "match_sort", "prompt": "Heavy or light? Put each thing in its group.", "groups": ["heavy", "light"], "items": [{"image": "rock", "group": "heavy"}, {"image": "brick", "group": "heavy"}, {"image": "pumpkin_big", "group": "heavy"}, {"image": "leaf", "group": "light"}, {"image": "balloon", "group": "light"}]}
+  ],
+  "hints": ["Heavy things are hard to lift. Light things are easy.", "On a scale, the heavy side goes down."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will pick the light one.",
+    "tutor_try": "The rock is light. I can blow it away!",
+    "image": "tutor_blows_rock",
+    "answer": "no",
+    "win_line": "You caught me! A rock is heavy. A feather is light.",
+    "gentle_line": "Let's lift together. The rock is heavy. The feather is light!"
+  },
+  "parent_line": "Can compare objects and say which is heavy and which is light."
+}

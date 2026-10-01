@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w09_read_numbers_to_eighty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Counting to 80",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Number symbols and number names",
+    "subtopic": "Recognise, identify and read number symbols 1-80"
+  },
+  "skill": "number.read_symbols.to_80",
+  "prereq_skills": ["number.read_symbols.to_50"],
+  "images": ["number_grid_eighty", "numeral_63", "numeral_36", "numeral_60", "numeral_70", "numeral_85", "numeral_58", "numeral_50", "numeral_45", "numeral_18", "numeral_80", "numeral_8", "tutor_reads_74"],
+  "show": {
+    "line": "Numbers past fifty! Sixty, seventy, eighty. Six tens and two ones is sixty two. Let's read!",
+    "image": "number_grid_eighty"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number sixty three.", "options": ["numeral_63", "numeral_36", "numeral_60"], "answer": "numeral_63", "praise": "Sixty three!"},
+    {"type": "say_it", "prompt": "Read this number. Say it.", "accept": ["seventy", "70", "sewenty"], "image": "numeral_70"},
+    {"type": "listen_tap", "prompt": "Tap the number fifty eight.", "options": ["numeral_85", "numeral_58", "numeral_50"], "answer": "numeral_58", "praise": "Fifty eight!"},
+    {"type": "what_next", "prompt": "Count on. Sixty eight, sixty nine, and then?", "sequence": ["68", "69"], "options": ["70", "60", "71"], "answer": "70", "praise": "Seventy! A new ten."},
+    {"type": "say_it", "prompt": "Read this number. Say it.", "accept": ["forty five", "45", "fourty five", "forty fife"], "image": "numeral_45"},
+    {"type": "listen_tap", "prompt": "Which number is eighty?", "options": ["numeral_18", "numeral_80", "numeral_8"], "answer": "numeral_80", "praise": "Eighty! Eight tens."}
+  ],
+  "hints": ["The first digit is the tens. Six means sixty.", "Say the tens, then the ones. Sixty, three. Sixty three."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this number.",
+    "tutor_try": "Seven, four. Forty seven!",
+    "image": "tutor_reads_74",
+    "answer": "seventy four",
+    "win_line": "You caught me! Seven tens first. Seventy four.",
+    "gentle_line": "Let's read it together. Seven tens is seventy. Seventy four!"
+  },
+  "parent_line": "Can read number symbols up to 80."
+}

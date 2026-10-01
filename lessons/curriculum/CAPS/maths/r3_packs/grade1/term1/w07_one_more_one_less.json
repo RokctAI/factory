@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term1.w07_one_more_one_less",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Numbers to 5",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 5)",
+    "subtopic": "Compare numbers to 5 and say which is more or less; one more, one less, two more, two less (weeks 5-10)"
+  },
+  "skill": "number.one_more_one_less.to_5",
+  "prereq_skills": ["number.count.to_10_from_any"],
+  "images": ["bananas_three", "numeral_1", "numeral_3", "numeral_4", "numeral_5", "cars_four", "numeral_2", "tutor_one_less_wrong"],
+  "show": {
+    "line": "Three bananas. One more makes four. One less makes two. Let's play more and less!",
+    "image": "bananas_three"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "One more than two. Tap the number.", "options": ["numeral_1", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "One more than two is three."},
+    {"type": "listen_tap", "prompt": "One less than five. Tap the number.", "options": ["numeral_4", "numeral_5", "numeral_3"], "answer": "numeral_4", "praise": "One less than five is four."},
+    {"type": "say_it", "prompt": "Four cars. One more car comes. How many now? Say the number.", "accept": ["five", "5", "fife", "faiv"], "image": "cars_four"},
+    {"type": "listen_tap", "prompt": "Which is more, three or five?", "options": ["numeral_3", "numeral_5"], "answer": "numeral_5", "praise": "Five is more than three."},
+    {"type": "listen_tap", "prompt": "Two more than one. Tap the number.", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Two more than one is three."},
+    {"type": "what_next", "prompt": "One less each time. Five, four, three, and then?", "sequence": ["5", "4", "3"], "options": ["2", "4", "1"], "answer": "2", "praise": "Two! One less than three."},
+    {"type": "listen_tap", "prompt": "Which number is less, two or four?", "options": ["numeral_2", "numeral_4"], "answer": "numeral_2", "praise": "Two is less than four."}
+  ],
+  "hints": ["One more means count one forward. One less means count one back.", "Find the number on the line. More is to the right."],
+  "beat_the_tutor": {
+    "setup": "My turn! One less than four.",
+    "tutor_try": "One less than four is five!",
+    "image": "tutor_one_less_wrong",
+    "answer": "three",
+    "win_line": "You caught me! One less than four is three.",
+    "gentle_line": "Let's count back together. Four, and one less is three!"
+  },
+  "parent_line": "Can say one more and one less than a number up to 5 and compare numbers."
+}

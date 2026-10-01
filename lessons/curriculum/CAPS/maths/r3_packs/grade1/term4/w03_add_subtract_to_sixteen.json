@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term4.w03_add_subtract_to_sixteen",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 20",
+    "subtopic": "Addition and subtraction up to 16 using +, -, =, □"
+  },
+  "skill": "number.add_subtract.to_16",
+  "prereq_skills": ["number.add_subtract.to_15", "number.place_value.to_20"],
+  "images": ["ten_frame_nine_plus_seven", "numeral_15", "numeral_16", "numeral_6", "beads_eight_five", "counters_sixteen_take_six", "numeral_12", "numeral_14", "numeral_2", "numeral_3", "numeral_4", "numeral_7", "numeral_8", "tutor_double_eight_wrong"],
+  "show": {
+    "line": "Sums to sixteen! Nine plus seven. Make ten first. Nine and one is ten, then six more. Sixteen!",
+    "image": "ten_frame_nine_plus_seven"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Ten plus six. Tap the answer.", "options": ["numeral_15", "numeral_16", "numeral_6"], "answer": "numeral_16", "praise": "Sixteen!"},
+    {"type": "count_tap", "prompt": "Eight red beads and five blue beads. How many altogether?", "image": "beads_eight_five", "count": "13", "options": ["12", "13", "14"], "answer": "13", "praise": "Thirteen!"},
+    {"type": "say_it", "prompt": "Sixteen minus six. Say the answer.", "accept": ["ten", "10", "tin"], "image": "counters_sixteen_take_six"},
+    {"type": "listen_tap", "prompt": "Seven plus seven. Tap the answer.", "options": ["numeral_12", "numeral_14", "numeral_16"], "answer": "numeral_14", "praise": "Fourteen! Double seven."},
+    {"type": "listen_tap", "prompt": "Fifteen minus the box equals twelve. What goes in the box?", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Three!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sixteen birds on a wire. Nine fly away. How many birds are left?", "options": ["numeral_6", "numeral_7", "numeral_8"], "answer": "numeral_7", "praise": "Seven! Sixteen minus nine."},
+    {"type": "listen_tap", "prompt": "Nine plus six. Tap the answer.", "options": ["numeral_14", "numeral_15", "numeral_16"], "answer": "numeral_15", "praise": "Fifteen! Nine and one is ten, plus five."}
+  ],
+  "hints": ["Make ten first. Then add what is left.", "Count back from the big number to take away."],
+  "beat_the_tutor": {
+    "setup": "My turn! Eight plus eight.",
+    "tutor_try": "Eight plus eight equals fourteen!",
+    "image": "tutor_double_eight_wrong",
+    "answer": "sixteen",
+    "win_line": "You caught me! Double eight is sixteen.",
+    "gentle_line": "Let's count on from eight. Nine, ten, up to sixteen!"
+  },
+  "parent_line": "Can add and subtract with numbers up to 16."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term4.w09_same_as_just_as_many",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Numbers to 20",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Describe, compare and order up to 20 objects",
+    "subtopic": "Compare collections of objects: many, fewer, most, least; more than, less than; the same as, just as many, different"
+  },
+  "skill": "number.compare.same_as_to_20",
+  "prereq_skills": ["number.compare.many_fewer"],
+  "images": ["cups_saucers_seven", "forks_eight", "forks_six", "children_fourteen", "marbles_fifteen", "marbles_ten", "birds_nests_nine", "beads_eleven", "beads_twenty", "fingers_ten", "eggs_ten", "tutor_seven_eight_same"],
+  "show": {
+    "line": "Seven cups and seven saucers. Just as many! The same number. Let's compare big groups.",
+    "image": "cups_saucers_seven"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which row has just as many as the row of eight spoons?", "options": ["forks_eight", "forks_six"], "answer": "forks_eight", "praise": "Eight and eight. The same!"},
+    {"type": "count_tap", "prompt": "Count the children. Is it the same as fourteen chairs? How many children?", "image": "children_fourteen", "count": "14", "options": ["13", "14", "15"], "answer": "14", "praise": "Fourteen! Just as many as the chairs."},
+    {"type": "listen_tap", "prompt": "Which group has more than twelve?", "options": ["marbles_fifteen", "marbles_ten"], "answer": "marbles_fifteen", "praise": "Fifteen is more than twelve."},
+    {"type": "say_it", "prompt": "Nine birds and nine nests. Are they the same, or different? Say it.", "accept": ["same", "the same", "same number", "just as many"], "image": "birds_nests_nine"},
+    {"type": "listen_tap", "prompt": "Which has fewer than sixteen?", "options": ["beads_eleven", "beads_twenty"], "answer": "beads_eleven", "praise": "Eleven is fewer than sixteen."},
+    {"type": "match_sort", "prompt": "Same as ten, or different? Sort the groups.", "groups": ["same_as_ten", "different"], "items": [{"image": "fingers_ten", "group": "same_as_ten"}, {"image": "eggs_ten", "group": "same_as_ten"}, {"image": "forks_eight", "group": "different"}, {"image": "marbles_fifteen", "group": "different"}]}
+  ],
+  "hints": ["Match them up one to one. Any left over? Then not the same.", "Count both groups. Same number means just as many."],
+  "beat_the_tutor": {
+    "setup": "My turn! Seven cups, eight saucers.",
+    "tutor_try": "Just as many! The same.",
+    "image": "tutor_seven_eight_same",
+    "answer": "no",
+    "win_line": "You caught me! Eight is one more than seven. Not the same.",
+    "gentle_line": "Let's match them up. One saucer has no cup. Different!"
+  },
+  "parent_line": "Can tell when two groups have the same number, more or fewer."
+}

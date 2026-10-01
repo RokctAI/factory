@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w03_bonds_to_three",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 5",
+    "subtopic": "Addition and subtraction and number bonds up to 3 (weeks 1-4), up to 4 (weeks 5-6) and up to 5 (weeks 7-10)"
+  },
+  "skill": "number.bonds.to_3",
+  "prereq_skills": ["number.add_subtract.to_6"],
+  "images": ["counters_two_and_one", "counters_one_red_two_blue", "numeral_2", "numeral_3", "numeral_1", "counters_three_take_one", "tutor_two_plus_one_wrong"],
+  "show": {
+    "line": "Three can be two and one. Two plus one equals three. Let's make three!",
+    "image": "counters_two_and_one"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "One red counter and two blue counters. How many altogether?", "image": "counters_one_red_two_blue", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three! One plus two equals three."},
+    {"type": "listen_tap", "prompt": "Two plus one. Tap the answer.", "options": ["numeral_2", "numeral_3", "numeral_1"], "answer": "numeral_3", "praise": "Yes! Two plus one equals three."},
+    {"type": "say_it", "prompt": "Three take away one. How many are left? Say the number.", "accept": ["two", "2", "too", "tu"], "image": "counters_three_take_one"},
+    {"type": "listen_tap", "prompt": "One plus one. Tap the answer.", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "One plus one equals two."},
+    {"type": "listen_tap", "prompt": "Three take away two. Which number is left?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_1", "praise": "One is left!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thabo has one ball. His friend gives him two more. How many balls does Thabo have?", "options": ["numeral_2", "numeral_3", "numeral_1"], "answer": "numeral_3", "praise": "Three balls! One plus two equals three."}
+  ],
+  "hints": ["Plus means put them together and count them all.", "Take away means some go. Count what is left."],
+  "beat_the_tutor": {
+    "setup": "My turn! Two plus one.",
+    "tutor_try": "Two plus one equals two!",
+    "image": "tutor_two_plus_one_wrong",
+    "answer": "three",
+    "win_line": "You caught me! Two plus one equals three.",
+    "gentle_line": "Let's count together. One, two, and one more is three!"
+  },
+  "parent_line": "Can add and take away with numbers up to 3."
+}
