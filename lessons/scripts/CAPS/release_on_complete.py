@@ -78,6 +78,13 @@ with no Part 2 heading releases as a single-voice lesson.
 IDEMPOTENT: a package whose release tag already exists on the release repo
 is skipped, so re-runs and overlapping triggers never double-publish.
 
+EMPTY TAG BASE: every lesson tag points at one empty commit on the release
+repo (no parents, git's empty tree), kept alive by the tag
+`lesson-release-base`. GitHub's auto-generated "Source code" archives on
+each release are therefore empty instead of the whole agent repo. The base
+is created on first use (ensure_release_base) — no manual setup step;
+--base-commit overrides it with a known sha.
+
 Usage:
   python lessons/scripts/CAPS/release_on_complete.py --dry-run       # scan only
   python lessons/scripts/CAPS/release_on_complete.py --max-releases 5
@@ -104,6 +111,9 @@ from lesson_pipeline import CAPS_TYPE_BY_FOLDER, persona_id, subject_duo_for
 
 SESSION_ROOT = Path("lessons/curriculum/CAPS")
 RELEASE_REPO = "RokctAI/agent"  # shipped-content home (decision log #50)
+RELEASE_BASE_TAG = "lesson-release-base"  # tag holding the empty base commit
+EMPTY_TREE_SHA = "4b825dc642cb6eb9a060e54bf8d69288fbee4904"  # git's empty tree
+RELEASE_BASE_MESSAGE = "Empty base for lesson release tags"
 LEDGER = Path(".rokct/agent/log/ledger.md")
 
 REQUIRED_FILES = (
@@ -521,9 +531,72 @@ def release_exists(tag, repo):
     return r.returncode == 0
 
 
-def create_release(tag, repo, ident, out_dir):
+def gh_api(path, method="GET", body=None):
+    """`gh api` call; returns the parsed JSON, or None on a non-zero exit
+    (e.g. 404 for a missing ref). Writes raise on failure."""
+    cmd = ["gh", "api", "-X", method, path]
+    if body is not None:
+        cmd += ["--input", "-"]
+    r = subprocess.run(cmd, input=json.dumps(body) if body is not None else None,
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        if method == "GET":
+            return None
+        raise ReleaseError(f"gh api {method} {path} failed: "
+                           f"{(r.stderr or r.stdout).strip()}")
+    return json.loads(r.stdout) if r.stdout.strip() else {}
+
+
+def tag_sha(repo, tag):
+    """Commit sha a lightweight tag ref points at, or None if it is missing.
+    git/ref/ (singular) is an exact match, never a prefix match."""
+    ref = gh_api(f"repos/{repo}/git/ref/tags/{tag}")
+    return ref["object"]["sha"] if ref else None
+
+
+def ensure_release_base(repo):
+    """Return the sha of the empty base commit all lesson tags point at,
+    creating it (empty tree, no parents) plus its keep-alive tag
+    RELEASE_BASE_TAG on first use."""
+    sha = tag_sha(repo, RELEASE_BASE_TAG)
+    if sha:
+        return sha
+    body = {"message": RELEASE_BASE_MESSAGE, "tree": EMPTY_TREE_SHA,
+            "parents": []}
+    try:
+        commit = gh_api(f"repos/{repo}/git/commits", "POST", body)
+    except ReleaseError:
+        # The well-known empty tree may not exist in the repo's object
+        # store yet; ask GitHub to write it, then retry with its sha.
+        tree = gh_api(f"repos/{repo}/git/trees", "POST", {"tree": []})
+        body["tree"] = tree["sha"]
+        commit = gh_api(f"repos/{repo}/git/commits", "POST", body)
+    sha = commit["sha"]
+    gh_api(f"repos/{repo}/git/refs", "POST",
+           {"ref": f"refs/tags/{RELEASE_BASE_TAG}", "sha": sha})
+    print(f"[base] created {RELEASE_BASE_TAG} -> {sha} on {repo}")
+    return sha
+
+
+def ensure_lesson_tag(repo, tag, base_sha):
+    """Point refs/tags/<tag> at the empty base commit. A tag left over from
+    an interrupted run is reused only if it already points at the base."""
+    sha = tag_sha(repo, tag)
+    if sha is None:
+        gh_api(f"repos/{repo}/git/refs", "POST",
+               {"ref": f"refs/tags/{tag}", "sha": base_sha})
+    elif sha != base_sha:
+        raise ReleaseError(f"tag {tag} exists at {sha}, not the empty base "
+                           f"{base_sha}; delete the stray tag and re-run")
+
+
+def create_release(tag, repo, ident, out_dir, base_sha):
+    """Cut the lesson tag at the empty base commit, then release on that
+    existing tag (gh never creates the tag itself, so it can't land on the
+    default branch head)."""
+    ensure_lesson_tag(repo, tag, base_sha)
     subprocess.run(
-        ["gh", "release", "create", tag, "--repo", repo,
+        ["gh", "release", "create", tag, "--repo", repo, "--verify-tag",
          "--title", f"Lesson assets: {ident['id']}",
          "--notes", f"Released on folder complete "
                     f"(manifest/audio/animations) for {ident['id']}.",
@@ -565,6 +638,10 @@ def main():
                     help="stop after releasing this many lessons")
     ap.add_argument("--release-repo", default=RELEASE_REPO,
                     help="owner/repo the GitHub Releases are created on")
+    ap.add_argument("--base-commit", default="",
+                    help="sha every lesson tag points at; empty = the "
+                         f"commit behind {RELEASE_BASE_TAG}, created on the "
+                         "release repo if missing")
     ap.add_argument("--out-root", default=".rokct/tmp/release_on_complete",
                     help="working directory for assembled assets")
     ap.add_argument("--dry-run", action="store_true",
@@ -613,6 +690,7 @@ def main():
         return 1
 
     released, failed = [], []
+    base_sha = args.base_commit or None
     for folder in complete:
         if len(released) >= args.max_releases:
             print(f"[stop] reached --max-releases={args.max_releases}")
@@ -643,7 +721,9 @@ def main():
                 raise ReleaseError("manifest failed ManifestParser validation")
             if verdict is None:
                 print("  [validate] ReplaySDK validator not available — skipped")
-            create_release(tag, args.release_repo, ident, out_dir)
+            if base_sha is None:
+                base_sha = ensure_release_base(args.release_repo)
+            create_release(tag, args.release_repo, ident, out_dir, base_sha)
             base = (f"https://github.com/{args.release_repo}"
                     f"/releases/download/{tag}")
             append_ledger(ident, base, run_id)

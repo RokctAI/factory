@@ -15,8 +15,10 @@
 
 """Records Level 6 production outputs on a lesson job card.
 
-After the asset triple is uploaded, this writes the download URLs plus
-sha256 + byte size for each asset onto the card. The field names match
+After the asset triple is built, this writes sha256 + byte size for each
+asset onto the card, plus the download URLs when --base-url is given (Level 6
+no longer publishes releases, so it passes none and any URLs already on the
+card are left as they are). The field names match
 replay_sdk's UpcomingSession.fromJson (manifest_url/audio_url/animation_url,
 *_checksum, *_size_bytes) so the backend's get_upcoming_sessions endpoint can
 lift them straight onto the payload the app verifies downloads against.
@@ -47,8 +49,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--card", required=True)
     ap.add_argument("--out-dir", required=True)
-    ap.add_argument("--base-url", required=True,
-                    help="release download base, no trailing slash")
+    ap.add_argument("--base-url", default="",
+                    help="release download base, no trailing slash; empty = "
+                         "don't write *_url fields")
     args = ap.parse_args()
 
     out = Path(args.out_dir)
@@ -60,7 +63,8 @@ def main():
     content = Path(args.card).read_text(encoding="utf-8")
     for key, name in assets.items():
         path = out / name
-        content = set_field(content, f"{key}_url", f"{args.base_url}/{name}")
+        if args.base_url:
+            content = set_field(content, f"{key}_url", f"{args.base_url}/{name}")
         content = set_field(content, f"{key}_checksum", sha256_of(path))
         content = set_field(content, f"{key}_size_bytes", str(path.stat().st_size))
     content = set_field(content, "produced_at",
