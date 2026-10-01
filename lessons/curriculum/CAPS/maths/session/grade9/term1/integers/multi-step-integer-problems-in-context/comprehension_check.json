@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "An account opens at −R250, receives a deposit of R1 200, pays three debit orders of R180 each and a fee of R45. Write a single expression for the closing balance, evaluate it, and show the reverse check.",
+      "expected_answer": "Expression: −250 + 1 200 − 3 × 180 − 45. Products first: 3 × 180 = 540. Then negative 250 plus 1 200 gives 950; 950 − 540 = 410; 410 − 45 = 365. Closing balance R365 in credit. Reverse: 365 + 45 + 540 − 1 200 lands on negative 250, the opening balance, so the forward work is confirmed."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the difference in altitude between Johannesburg (1 753 m) and the Dead Sea shore (−430 m) is 2 183 m and not 1 323 m.",
+      "expected_answer": "Difference between two values is the higher minus the lower: 1 753 − (−430) = 1 753 + 430 = 2 183 m. The two places lie on opposite sides of sea level, so moving from one to the other crosses zero and the two sizes add. Subtracting 430 would treat the Dead Sea as if it were above sea level."
+    },
+    {
+      "id": "cc3",
+      "question": "From −6 °C the temperature rises 3 °C per hour for 5 hours and then falls 2 °C per hour for 4 hours. Find the final temperature and explain the order in which the operations must be done.",
+      "expected_answer": "Rate × time for each stage first: 3 × 5 = 15 degrees of warming and 2 × 4 = 8 degrees of cooling. Then move along the scale left to right: negative 6 plus 15 gives 9, and 9 − 8 = 1 °C. The products must be settled before the additions and subtractions, otherwise the rates are added as if they were single changes."
+    }
+  ]
+}
