@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term4.w04_er_ir_ur",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "Fern, shirt, church",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises at least 5 new vowel digraphs (ar, er, ir, or, ur)"
+  },
+  "skill": "phonics.r_vowel.er_ir_ur",
+  "prereq_skills": ["phonics.r_vowel.ar_or"],
+  "images": ["fern_shirt_church", "bird", "car", "fork", "word_shirt", "word_nurse", "word_nose", "word_nest", "word_girl", "star", "church", "fern", "nurse", "shirt", "tutor_holds_car"],
+  "show": {
+    "line": "Fern, shirt, church. Different letters, same sound in the middle. Er! Her, bird, nurse. All say er!",
+    "image": "fern_shirt_church"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture has the er sound, like fern?", "options": ["bird", "car", "fork"], "answer": "bird", "praise": "Yes! Fern, bird. Er."},
+    {"type": "say_it", "prompt": "Read this word. It has the er sound.", "accept": ["shirt", "shut", "a shirt"], "image": "word_shirt"},
+    {"type": "listen_tap", "prompt": "Which word card says nurse?", "options": ["word_nurse", "word_nose", "word_nest"], "answer": "word_nurse", "praise": "Yes! Nurse, with the er sound."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["girl", "gel", "gurl"], "image": "word_girl"},
+    {"type": "listen_tap", "prompt": "Which picture does not have the er sound?", "options": ["star", "church", "fern"], "answer": "star", "praise": "Yes! Star has the ar sound."},
+    {"type": "match_sort", "prompt": "Er like fern, or ar like car? Put each picture in its group.", "groups": ["er", "ar"], "items": [{"image": "bird", "group": "er"}, {"image": "church", "group": "er"}, {"image": "nurse", "group": "er"}, {"image": "shirt", "group": "er"}, {"image": "car", "group": "ar"}, {"image": "star", "group": "ar"}]}
+  ],
+  "hints": ["Stretch the middle. Feeern. Shiiirt. Chuuurch. Same sound!", "Three spellings, one sound. Listen, do not just look."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word with the er sound.",
+    "tutor_try": "Car! Car has the er sound.",
+    "image": "tutor_holds_car",
+    "answer": "no",
+    "win_line": "You caught me! Car has the ar sound. Bird has er.",
+    "gentle_line": "Let's listen together. Fern, bird. Er!"
+  },
+  "parent_line": "Can hear and read the er sound in words like fern, shirt and church."
+}
