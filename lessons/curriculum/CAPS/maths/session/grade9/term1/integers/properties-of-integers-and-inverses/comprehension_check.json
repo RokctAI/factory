@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the commutative and associative properties for addition and multiplication, and give one counter-example each showing that subtraction fails both.",
+      "expected_answer": "Commutative: a + b = b + a and a × b = b × a. Associative: (a + b) + c = a + (b + c) and (a × b) × c = a × (b × c). Subtraction is not commutative: 5 − 3 = 2 but 3 − 5 = −2. Subtraction is not associative: (8 − 3) − 2 = 3 but 8 − (3 − 2) = 7."
+    },
+    {
+      "id": "cc2",
+      "question": "Use the distributive property to evaluate 7 × 98 and −3(4 − 9), and explain how the same property runs backwards in 6 × 23 + 6 × 7.",
+      "expected_answer": "Write 98 as 100 − 2, so 7(100 − 2) = 700 − 14 = 686. For −3(4 − 9), distributing gives −12 plus 27, which is 15, confirmed by working the bracket first: −3 times −5 is 15. Backwards, the common factor 6 is taken out: 6 × 23 + 6 × 7 becomes 6(23 + 7) = 6 × 30 = 180 — this is factorising."
+    },
+    {
+      "id": "cc3",
+      "question": "Define additive and multiplicative inverses, give the inverses of −5 and −2/3, explain why 0 has no multiplicative inverse, and show how inverses solve −5x = 35.",
+      "expected_answer": "The additive inverse of a is −a, since a + (−a) = 0; for −5 it is 5. The multiplicative inverse of a is 1/a, since a × 1/a = 1; for −2/3 it is −3/2. Zero has none because no number times 0 equals 1. For −5x = 35, multiply both sides by −1/5: x = 35 × (−1/5) = −7; check: −5 times −7 gives 35."
+    }
+  ]
+}
