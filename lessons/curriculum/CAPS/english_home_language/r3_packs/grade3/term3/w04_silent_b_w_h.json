@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w04_silent_b_w_h",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [4, 5],
+  "theme": "Silent letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises silent letters ('b' in comb, 'w' in write, 'h' in hour)"
+  },
+  "skill": "phonics.silent_letters.b_w_h",
+  "prereq_skills": ["phonics.silent_letters.k_l"],
+  "images": ["comb_write_hour", "word_lamb", "word_ball", "word_bed", "word_wrist", "word_wind", "word_web", "comb", "word_thumb", "word_thum", "word_thump", "word_comb", "word_write", "word_hour", "word_honest", "word_wrap", "word_wet", "word_wall", "tutor_says_write_wrong"],
+  "show": {
+    "line": "More hiding letters! Comb has a silent 'b'. Write has a silent 'w'. Hour has a silent 'h'!",
+    "image": "comb_write_hour"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has a silent 'b'?", "options": ["word_lamb", "word_ball", "word_bed"], "answer": "word_lamb", "praise": "Yes! Lamb. You do not say the 'b'."},
+    {"type": "listen_tap", "prompt": "Which word has a silent 'w'?", "options": ["word_wrist", "word_wind", "word_web"], "answer": "word_wrist", "praise": "Yes! Wrist starts with a silent 'w'."},
+    {"type": "read_to_me", "prompt": "Read this word. The 'h' is silent.", "text": "hour", "accept": ["hour", "an hour", "our"]},
+    {"type": "say_it", "prompt": "Use this to tidy your hair. It ends with a silent 'b'. Say it.", "accept": ["comb", "a comb", "kome"], "image": "comb"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells thumb the right way.", "options": ["word_thumb", "word_thum", "word_thump"], "answer": "word_thumb", "praise": "Yes! Thumb, with a silent 'b'."},
+    {"type": "match_sort", "prompt": "Silent 'b', silent 'w' or silent 'h'? Sort the words.", "groups": ["silent_b", "silent_w", "silent_h"], "items": [{"image": "word_lamb", "group": "silent_b"}, {"image": "word_comb", "group": "silent_b"}, {"image": "word_wrist", "group": "silent_w"}, {"image": "word_write", "group": "silent_w"}, {"image": "word_hour", "group": "silent_h"}, {"image": "word_honest", "group": "silent_h"}]},
+    {"type": "listen_tap", "prompt": "Which word starts with a silent 'w'? Wrap, wet or wall?", "options": ["word_wrap", "word_wet", "word_wall"], "answer": "word_wrap", "praise": "Yes! Wrap."}
+  ],
+  "hints": ["Say it. Then spell it. Which letter did you not hear?", "'b' after 'm' is often silent. Comb, lamb, thumb."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word. Write.",
+    "tutor_try": "Wuh, rite. Wuh-rite a letter!",
+    "image": "tutor_says_write_wrong",
+    "answer": "write",
+    "win_line": "You caught me! The 'w' is silent. Write, just like right.",
+    "gentle_line": "Let's say it together. The 'w' hides. Rite. Write!"
+  },
+  "parent_line": "Can read words with a silent b, w or h, like comb, write and hour."
+}

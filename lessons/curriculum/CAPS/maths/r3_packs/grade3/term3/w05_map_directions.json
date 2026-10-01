@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w05_map_directions",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Maps and directions",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Space and shape: Position, orientation and views",
+    "subtopic": "Position and directions (on an informal map)"
+  },
+  "skill": "space.map.directions",
+  "prereq_skills": [],
+  "images": ["town_map", "school", "shop", "church", "town_map_school_left", "clinic", "town_map_church_clinic", "arrow_right", "arrow_left", "arrow_up", "park", "dog_behind_tree", "dog_in_front_of_tree", "dog_on_tree", "tutor_turns_wrong"],
+  "show": {
+    "line": "Here is a map of our town. The school is next to the park. The shop is across the road!",
+    "image": "town_map"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "On the map, what is next to the park?", "image": "town_map", "options": ["school", "shop", "church"], "answer": "school", "praise": "Yes! The school is next to the park."},
+    {"type": "listen_tap", "prompt": "Start at the school. Walk left. Which building do you reach?", "image": "town_map_school_left", "options": ["shop", "clinic", "church"], "answer": "shop", "praise": "Yes! Left from the school is the shop."},
+    {"type": "say_it", "prompt": "Is the clinic to the left or the right of the church? Say left or right.", "accept": ["right", "to the right", "on the right"], "image": "town_map_church_clinic"},
+    {"type": "listen_tap", "prompt": "Which arrow shows turning right?", "options": ["arrow_right", "arrow_left", "arrow_up"], "answer": "arrow_right", "praise": "Yes! That is right."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Zanele leaves the shop. She turns right and walks past the park. Where does she arrive?", "options": ["school", "clinic", "church"], "answer": "school", "praise": "Yes! Past the park is the school."},
+    {"type": "listen_tap", "prompt": "Which building is between the shop and the clinic?", "image": "town_map", "options": ["church", "school", "park"], "answer": "church", "praise": "Yes! The church is in between."},
+    {"type": "listen_tap", "prompt": "Where is the dog? Tap the picture that shows it behind the tree.", "options": ["dog_behind_tree", "dog_in_front_of_tree", "dog_on_tree"], "answer": "dog_behind_tree", "praise": "Yes! Behind the tree."}
+  ],
+  "hints": ["Find where you start. Then follow the directions one step at a time.", "Hold up your hands. Left is where your thumb and finger make an L."],
+  "beat_the_tutor": {
+    "setup": "My turn! From the school, I will walk to the shop.",
+    "tutor_try": "I turn right from the school and I am at the shop!",
+    "image": "tutor_turns_wrong",
+    "answer": "left",
+    "win_line": "You caught me! The shop is to the left of the school.",
+    "gentle_line": "Let's look at the map together. School, then left, then the shop!"
+  },
+  "parent_line": "Can follow left and right directions on a simple map."
+}

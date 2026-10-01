@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w02_commas_in_lists",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [2, 3],
+  "theme": "Punctuation",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Uses capital letters, full stops, commas, question marks, exclamation marks and inverted commas correctly"
+  },
+  "skill": "grammar.punctuation.commas_lists",
+  "prereq_skills": ["grammar.punctuation.end_marks"],
+  "images": ["fruit_list_commas", "sentence_list_commas_correct", "sentence_list_no_commas", "comma", "full_stop", "question_mark", "sentence_pets_list", "colour_list", "sentence_missing_comma", "gap_after_sipho", "gap_after_and", "sentence_need_bread_list", "sentence_the_dog_sleeps", "sentence_i_like_pap", "tutor_list_no_commas"],
+  "show": {
+    "line": "I bought apples, pears and bananas. Commas keep the things in a list apart. Breathe at each comma!",
+    "image": "fruit_list_commas"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which sentence uses commas in the list correctly?", "options": ["sentence_list_commas_correct", "sentence_list_no_commas"], "answer": "sentence_list_commas_correct", "praise": "Yes! Apples, pears and bananas."},
+    {"type": "listen_tap", "prompt": "Which mark goes between things in a list?", "options": ["comma", "full_stop", "question_mark"], "answer": "comma", "praise": "Yes! A comma."},
+    {"type": "count_tap", "prompt": "I have a dog, a cat, a fish and a bird. Count the commas.", "image": "sentence_pets_list", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three commas! And joins the last two."},
+    {"type": "read_to_me", "prompt": "Read this out loud. Pause at each comma.", "text": "We need bread, milk, eggs and sugar.", "accept": ["we need bread milk eggs and sugar"]},
+    {"type": "say_it", "prompt": "Red, yellow, green and ... Say one more colour for the list.", "accept": ["blue", "purple", "pink", "orange", "black", "white", "brown"], "image": "colour_list"},
+    {"type": "listen_tap", "prompt": "Where is the comma missing? Tap the gap.", "image": "sentence_missing_comma", "options": ["gap_after_sipho", "gap_after_and"], "answer": "gap_after_sipho", "praise": "Yes! Sipho, Lebo and Thandi."},
+    {"type": "match_sort", "prompt": "A list, or not a list? Sort the sentences.", "groups": ["list", "not_a_list"], "items": [{"image": "sentence_list_commas_correct", "group": "list"}, {"image": "sentence_pets_list", "group": "list"}, {"image": "sentence_need_bread_list", "group": "list"}, {"image": "sentence_the_dog_sleeps", "group": "not_a_list"}, {"image": "sentence_i_like_pap", "group": "not_a_list"}]}
+  ],
+  "hints": ["A comma goes between the things in a list.", "Before the last thing, use and instead of a comma."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write my shopping list in a sentence.",
+    "tutor_try": "I need bread milk eggs and jam. No commas needed!",
+    "image": "tutor_list_no_commas",
+    "answer": "no",
+    "win_line": "You caught me! The list needs commas. Bread, milk, eggs and jam.",
+    "gentle_line": "Let's add them together. Bread, comma, milk, comma, eggs and jam!"
+  },
+  "parent_line": "Can use commas to separate things in a list."
+}

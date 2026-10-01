@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w01_fractions_of_groups",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Fractions of a group",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Solve problems in context up to 700",
+    "subtopic": "Sharing leading to fractions (weeks 1-2, 5-6)"
+  },
+  "skill": "fraction.of_group.share",
+  "prereq_skills": ["fraction.unitary.name", "divide.by_2_5_10.to_50"],
+  "images": ["sweets_eight_halved", "apples_ten_half", "balls_twelve_quarters", "numeral_2", "numeral_3", "numeral_6", "money_20_halved", "eggs_half_coloured", "eggs_quarter_coloured", "eggs_all_coloured", "numeral_4", "numeral_8", "numeral_12", "tutor_half_wrong"],
+  "show": {
+    "line": "Eight sweets. Half of them for you, half for me. Four each! Half of eight is four.",
+    "image": "sweets_eight_halved"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Ten apples. Take half of them. How many is half of ten?", "image": "apples_ten_half", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five! Half of ten is five."},
+    {"type": "count_tap", "prompt": "Twelve balls shared into four equal groups. One quarter is one group. How many in a quarter?", "image": "balls_twelve_quarters", "count": "3", "options": ["3", "4", "6"], "answer": "3", "praise": "Three! A quarter of twelve is three."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Three friends share six oranges equally. Each gets one third. How many oranges in one third?", "options": ["numeral_2", "numeral_3", "numeral_6"], "answer": "numeral_2", "praise": "Two! One third of six is two."},
+    {"type": "say_it", "prompt": "Half of twenty rand. How much is that? Say the number.", "accept": ["ten", "10", "ten rand"], "image": "money_20_halved"},
+    {"type": "listen_tap", "prompt": "Which picture shows half of the eggs coloured in?", "options": ["eggs_half_coloured", "eggs_quarter_coloured", "eggs_all_coloured"], "answer": "eggs_half_coloured", "praise": "Yes! Six out of twelve is half."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Mama cuts a pizza into eight slices. Thabo eats half. How many slices does he eat?", "options": ["numeral_4", "numeral_2", "numeral_8"], "answer": "numeral_4", "praise": "Four! Half of eight slices is four."},
+    {"type": "listen_tap", "prompt": "A quarter of sixteen marbles. Tap the answer.", "options": ["numeral_4", "numeral_8", "numeral_12"], "answer": "numeral_4", "praise": "Yes! Sixteen shared into four groups is four each."}
+  ],
+  "hints": ["Half means two equal groups. Quarter means four equal groups.", "Share them out equally, then count one group."],
+  "beat_the_tutor": {
+    "setup": "My turn! Half of twelve biscuits.",
+    "tutor_try": "Half of twelve is eight!",
+    "image": "tutor_half_wrong",
+    "answer": "six",
+    "win_line": "You caught me! Eight and eight is sixteen. Six and six is twelve. Half of twelve is six.",
+    "gentle_line": "Let's share twelve into two equal groups. Six and six. Half is six!"
+  },
+  "parent_line": "Can find half, a quarter and a third of a group of objects."
+}

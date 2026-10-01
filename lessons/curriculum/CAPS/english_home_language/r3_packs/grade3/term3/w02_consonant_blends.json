@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w02_consonant_blends",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [2, 3],
+  "theme": "Blends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises all vowel and consonant blends learnt so far"
+  },
+  "skill": "phonics.consonant_blends",
+  "prereq_skills": ["phonics.blend.five_letter"],
+  "images": ["blue_star_frog", "blanket", "brick", "bed", "stairs", "snake", "spoon", "card_st", "card_nd", "card_mp", "frog", "blocks", "star", "fruit", "spin", "soon", "lamp", "lap", "land", "tutor_points_snake"],
+  "show": {
+    "line": "Two consonants make a blend. You hear both! bl, as in blue. st, as in star. fr, as in frog.",
+    "image": "blue_star_frog"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with bl, as in blue?", "options": ["blanket", "brick", "bed"], "answer": "blanket", "praise": "Yes! bl, blanket."},
+    {"type": "listen_tap", "prompt": "Which one starts with st?", "options": ["stairs", "snake", "spoon"], "answer": "stairs", "praise": "Yes! st, stairs."},
+    {"type": "listen_tap", "prompt": "Listen to the end. Nest. Which blend ends the word?", "options": ["card_st", "card_nd", "card_mp"], "answer": "card_st", "praise": "Yes! Nest ends with st."},
+    {"type": "say_it", "prompt": "This word starts with fr. It is green and hops. Say it.", "accept": ["frog", "a frog", "frok"], "image": "frog"},
+    {"type": "match_sort", "prompt": "bl, st or fr? Sort the pictures by their first blend.", "groups": ["bl", "st", "fr"], "items": [{"image": "blanket", "group": "bl"}, {"image": "blocks", "group": "bl"}, {"image": "stairs", "group": "st"}, {"image": "star", "group": "st"}, {"image": "frog", "group": "fr"}, {"image": "fruit", "group": "fr"}]},
+    {"type": "blend", "prompt": "Listen. s, p, oo, n. Tap the word.", "sounds": ["s", "p", "oo", "n"], "options": ["spoon", "spin", "soon"], "answer": "spoon", "praise": "Yes! Spoon."},
+    {"type": "listen_tap", "prompt": "Which word ends with mp, as in jump?", "options": ["lamp", "lap", "land"], "answer": "lamp", "praise": "Yes! Lamp."}
+  ],
+  "hints": ["Say the first two sounds slowly. Can you hear both?", "A blend is two letters, two sounds, said close together."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with st.",
+    "tutor_try": "Snake! Snake starts with st.",
+    "image": "tutor_points_snake",
+    "answer": "no",
+    "win_line": "You caught me! Snake starts with sn. Star starts with st.",
+    "gentle_line": "Let's listen together. st, st, star. Star starts with st!"
+  },
+  "parent_line": "Can hear and read consonant blends like bl, st and fr."
+}

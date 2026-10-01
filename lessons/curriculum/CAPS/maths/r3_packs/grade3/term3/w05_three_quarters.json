@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w05_three_quarters",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Fractions",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Fractions",
+    "subtopic": "Use and name unitary and non-unitary fractions (1/2, 1/4, 1/3, 1/5, 1/6, 1/8, 3/4, 2/5, 2/4 etc.); note that 2/4 = 1/2 and 4/4 and 3/3 = 1 whole"
+  },
+  "skill": "fraction.non_unitary",
+  "prereq_skills": ["fraction.unitary.name"],
+  "images": ["pizza_three_quarters", "square_three_quarters", "square_one_quarter", "square_half", "bar_two_fifths", "bar_one_fifth", "bar_four_fifths", "chocolate_two_quarters", "card_one_whole", "card_one_quarter", "card_one_half", "circle_one_eighth", "circle_five_sixths", "circle_three_thirds", "card_one_third", "card_two_thirds", "cake_eighth", "cake_quarter", "cake_half", "tutor_two_quarters"],
+  "show": {
+    "line": "Cut the pizza into quarters. Eat three pieces. That is three quarters! One quarter is left.",
+    "image": "pizza_three_quarters"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture shows three quarters coloured?", "options": ["square_three_quarters", "square_one_quarter", "square_half"], "answer": "square_three_quarters", "praise": "Yes! Three out of four parts."},
+    {"type": "listen_tap", "prompt": "Which picture shows two fifths coloured?", "options": ["bar_two_fifths", "bar_one_fifth", "bar_four_fifths"], "answer": "bar_two_fifths", "praise": "Yes! Two out of five parts."},
+    {"type": "say_it", "prompt": "Two quarters of the chocolate. That is the same as one what? Say it.", "accept": ["half", "one half", "a half", "harf"], "image": "chocolate_two_quarters"},
+    {"type": "listen_tap", "prompt": "Four quarters. How much of the pizza is that?", "options": ["card_one_whole", "card_one_quarter", "card_one_half"], "answer": "card_one_whole", "praise": "Yes! Four quarters make one whole."},
+    {"type": "match_sort", "prompt": "Less than a half, or more than a half? Sort the pictures.", "groups": ["less_than_half", "more_than_half"], "items": [{"image": "square_one_quarter", "group": "less_than_half"}, {"image": "bar_one_fifth", "group": "less_than_half"}, {"image": "circle_one_eighth", "group": "less_than_half"}, {"image": "square_three_quarters", "group": "more_than_half"}, {"image": "bar_four_fifths", "group": "more_than_half"}, {"image": "circle_five_sixths", "group": "more_than_half"}]},
+    {"type": "listen_tap", "prompt": "Which card names this fraction? Three parts out of three.", "image": "circle_three_thirds", "options": ["card_one_whole", "card_one_third", "card_two_thirds"], "answer": "card_one_whole", "praise": "Yes! Three thirds make one whole."},
+    {"type": "listen_tap", "prompt": "One eighth of the cake. Which piece is it?", "options": ["cake_eighth", "cake_quarter", "cake_half"], "answer": "cake_eighth", "praise": "Yes! Eight equal pieces, one of them."}
+  ],
+  "hints": ["The bottom number says how many equal parts. The top says how many you have.", "All the parts together make one whole."],
+  "beat_the_tutor": {
+    "setup": "My turn! The bar has four parts. Two are coloured.",
+    "tutor_try": "Two quarters. That is more than a half!",
+    "image": "tutor_two_quarters",
+    "answer": "no",
+    "win_line": "You caught me! Two quarters is exactly a half, not more.",
+    "gentle_line": "Let's look together. Two out of four is the same as one out of two. A half!"
+  },
+  "parent_line": "Can name fractions like three quarters and knows two quarters is a half."
+}

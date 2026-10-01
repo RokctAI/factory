@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w07_leftovers",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Remainders",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Solve problems in context up to 700",
+    "subtopic": "Repeated addition leading to multiplication (weeks 1-4, 7-10); equal grouping and sharing leading to division that may include remainders (weeks 3-4, 7-8)"
+  },
+  "skill": "divide.remainders",
+  "prereq_skills": ["divide.by_2_5_10.to_50"],
+  "images": ["sweets_11_remainder", "apples_13_bags_four", "numeral_2", "numeral_3", "numeral_5", "biscuits_9_two_plates", "eggs_22_boxes_six", "numeral_1", "numeral_4", "numeral_6", "card_4_remainder_2", "card_4_remainder_1", "card_5_remainder_0", "numeral_20", "numeral_23", "numeral_17", "tutor_forgets_remainder"],
+  "show": {
+    "line": "Eleven sweets, two friends. Five each, and one sweet is left over. That is a remainder!",
+    "image": "sweets_11_remainder"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Thirteen apples in bags of four. Three bags are full. How many apples are left over?", "image": "apples_13_bags_four", "count": "1", "options": ["0", "1", "2"], "answer": "1", "praise": "One left over!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Seventeen children sit in groups of five. How many are left without a full group?", "options": ["numeral_2", "numeral_3", "numeral_5"], "answer": "numeral_2", "praise": "Two! Three fives are fifteen, and two are left."},
+    {"type": "say_it", "prompt": "Nine biscuits shared between two. Four each. How many are left over? Say it.", "accept": ["one", "1", "wan"], "image": "biscuits_9_two_plates"},
+    {"type": "count_tap", "prompt": "Twenty two eggs. Six in each box. How many full boxes?", "image": "eggs_22_boxes_six", "count": "3", "options": ["3", "4", "6"], "answer": "3", "praise": "Three full boxes, and four eggs left over."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Twenty five rand shared between four children. Each gets six rand. How much is left over?", "options": ["numeral_1", "numeral_4", "numeral_6"], "answer": "numeral_1", "praise": "One rand left over!"},
+    {"type": "listen_tap", "prompt": "Fourteen shared by three. Which card shows the answer with the remainder?", "options": ["card_4_remainder_2", "card_4_remainder_1", "card_5_remainder_0"], "answer": "card_4_remainder_2", "praise": "Yes! Four each, remainder two."},
+    {"type": "listen_tap", "prompt": "Which number shares equally into fives with nothing left over?", "options": ["numeral_20", "numeral_23", "numeral_17"], "answer": "numeral_20", "praise": "Yes! Four fives are twenty."}
+  ],
+  "hints": ["Share out as many equal groups as you can. What is left is the remainder.", "The remainder is always smaller than the group size."],
+  "beat_the_tutor": {
+    "setup": "My turn! Ten sweets for three friends.",
+    "tutor_try": "Three each, and nothing left over!",
+    "image": "tutor_forgets_remainder",
+    "answer": "one",
+    "win_line": "You caught me! Three threes are nine. One sweet is left over.",
+    "gentle_line": "Let's share together. Three, three, three. One is left. Remainder one!"
+  },
+  "parent_line": "Can share into groups and say what is left over."
+}

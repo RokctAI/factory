@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w05_money_with_notes",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Money",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Solve problems in context up to 700",
+    "subtopic": "Money problems involving totals and change (weeks 1-2, 5-6, 9-10)"
+  },
+  "skill": "money.totals_change.notes",
+  "prereq_skills": ["money.totals_change.to_99", "add_subtract.to_500"],
+  "images": ["notes_and_coins", "notes_50_20_20_10", "numeral_15", "numeral_25", "numeral_185", "coin_50c", "coin_r5", "coin_20c", "coins_50c_50c", "numeral_40", "numeral_30", "numeral_44", "notes_100_20", "notes_50_50", "notes_100_50", "numeral_50", "numeral_350", "numeral_100", "tutor_change_45"],
+  "show": {
+    "line": "Rand and cents. One hundred cents make one rand. A fifty rand note, a twenty rand note. Let's go shopping!",
+    "image": "notes_and_coins"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the notes. Fifty, twenty, twenty, ten. How many rand?", "image": "notes_50_20_20_10", "count": "100", "options": ["90", "100", "110"], "answer": "100", "praise": "One hundred rand!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A school bag costs 85 rand. Papa pays with a 100 rand note. How much change?", "options": ["numeral_15", "numeral_25", "numeral_185"], "answer": "numeral_15", "praise": "Fifteen rand change! 85 and 15 make 100."},
+    {"type": "listen_tap", "prompt": "Which coin is fifty cents?", "options": ["coin_50c", "coin_r5", "coin_20c"], "answer": "coin_50c", "praise": "Yes! Fifty cents."},
+    {"type": "say_it", "prompt": "Two fifty cent coins. How many rand is that? Say the number.", "accept": ["one", "1", "one rand", "a rand"], "image": "coins_50c_50c"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Bread costs 18 rand and milk costs 22 rand. How much altogether?", "options": ["numeral_40", "numeral_30", "numeral_44"], "answer": "numeral_40", "praise": "Forty rand! Eighteen and twenty two."},
+    {"type": "listen_tap", "prompt": "A book costs 120 rand. Which notes pay for it exactly?", "options": ["notes_100_20", "notes_50_50", "notes_100_50"], "answer": "notes_100_20", "praise": "Yes! One hundred and twenty."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lindi has 200 rand. She buys shoes for 150 rand. How much is left?", "options": ["numeral_50", "numeral_350", "numeral_100"], "answer": "numeral_50", "praise": "Fifty rand left!"}
+  ],
+  "hints": ["Add the prices for the total. Take away from what you paid for the change.", "Count on from the price to the note you paid with."],
+  "beat_the_tutor": {
+    "setup": "My turn! A kite costs 65 rand. I pay with 100 rand.",
+    "tutor_try": "My change is 45 rand!",
+    "image": "tutor_change_45",
+    "answer": "35",
+    "win_line": "You caught me! 65 and 35 make 100. The change is 35 rand.",
+    "gentle_line": "Let's count on together. 65, 75, 85, 95, 100. That is 35 rand!"
+  },
+  "parent_line": "Can add prices and work out change with notes up to 200 rand."
+}

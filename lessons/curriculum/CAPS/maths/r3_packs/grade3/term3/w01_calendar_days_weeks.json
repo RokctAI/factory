@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w01_calendar_days_weeks",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Calendars",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Measurement: Time",
+    "subtopic": "Use calendars to calculate and describe length of time in days or weeks (weeks 1-4)"
+  },
+  "skill": "time.calendar.days_weeks",
+  "prereq_skills": ["time.analogue.hour_half"],
+  "images": ["calendar_month", "calendar_week_row", "card_thursday", "card_tuesday", "card_friday", "calendar_3_to_10", "card_7_days", "card_3_days", "card_10_days", "calendar_two_weeks", "card_april", "card_may", "card_february", "calendar_15_wednesday", "card_wednesday", "card_monday", "card_saturday", "card_more_than_a_week", "card_less_than_a_week", "tutor_calendar_wrong"],
+  "show": {
+    "line": "This is a calendar. Seven days make a week. Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday!",
+    "image": "calendar_month"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the days in one row of the calendar. How many days in a week?", "image": "calendar_week_row", "count": "7", "options": ["5", "7", "10"], "answer": "7", "praise": "Seven days in a week!"},
+    {"type": "listen_tap", "prompt": "Which day comes after Wednesday?", "options": ["card_thursday", "card_tuesday", "card_friday"], "answer": "card_thursday", "praise": "Yes! Thursday."},
+    {"type": "listen_tap", "prompt": "Today is the 3rd. Lebo's party is on the 10th. How many days until the party?", "image": "calendar_3_to_10", "options": ["card_7_days", "card_3_days", "card_10_days"], "answer": "card_7_days", "praise": "Yes! Seven days, one whole week."},
+    {"type": "say_it", "prompt": "Two weeks. How many days is that? Say the number.", "accept": ["fourteen", "14", "forteen"], "image": "calendar_two_weeks"},
+    {"type": "listen_tap", "prompt": "Which month comes after March?", "options": ["card_april", "card_may", "card_february"], "answer": "card_april", "praise": "Yes! April."},
+    {"type": "listen_tap", "prompt": "Find the 15th on the calendar. Which day of the week is it?", "image": "calendar_15_wednesday", "options": ["card_wednesday", "card_monday", "card_saturday"], "answer": "card_wednesday", "praise": "Yes! The 15th is a Wednesday."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Holidays start on Friday the 20th and end on Sunday the 29th. Is that more or less than a week?", "options": ["card_more_than_a_week", "card_less_than_a_week"], "answer": "card_more_than_a_week", "praise": "More! Nine days is more than seven."}
+  ],
+  "hints": ["One row on the calendar is one week, seven days.", "Count the squares from one date to the other."],
+  "beat_the_tutor": {
+    "setup": "My turn! Today is Monday the 1st. I will find one week later.",
+    "tutor_try": "One week later is Monday the 5th!",
+    "image": "tutor_calendar_wrong",
+    "answer": "8th",
+    "win_line": "You caught me! A week is seven days. Monday the 1st plus seven is Monday the 8th.",
+    "gentle_line": "Let's count seven days together. 2, 3, 4, 5, 6, 7, 8. Monday the 8th!"
+  },
+  "parent_line": "Can read a calendar and count days and weeks between dates."
+}

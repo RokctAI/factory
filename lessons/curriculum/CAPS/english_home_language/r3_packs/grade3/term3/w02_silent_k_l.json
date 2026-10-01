@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w02_silent_k_l",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [2, 3],
+  "theme": "Silent letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises silent letters ('k' in know, 'l' in half)"
+  },
+  "skill": "phonics.silent_letters.k_l",
+  "prereq_skills": ["phonics.split_digraph.silent_e"],
+  "images": ["knee_and_half", "word_knee", "word_kite", "word_key", "word_calf", "word_lamp", "word_leaf", "apple_half", "word_knock", "word_nock", "word_knok", "word_walk", "knot", "nut", "net", "tutor_says_knee_wrong"],
+  "show": {
+    "line": "Some letters hide! Know starts with 'k', but you do not say it. Half has a silent 'l'!",
+    "image": "knee_and_half"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has a silent 'k'?", "options": ["word_knee", "word_kite", "word_key"], "answer": "word_knee", "praise": "Yes! Knee. The 'k' is silent."},
+    {"type": "listen_tap", "prompt": "Which word has a silent 'l'?", "options": ["word_calf", "word_lamp", "word_leaf"], "answer": "word_calf", "praise": "Yes! Calf, like half."},
+    {"type": "read_to_me", "prompt": "Read this word. Do not say the 'k'.", "text": "knife", "accept": ["knife", "a knife", "nife"]},
+    {"type": "say_it", "prompt": "Half of the apple. Say the word half.", "accept": ["half", "harf", "haf"], "image": "apple_half"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells knock the right way.", "options": ["word_knock", "word_nock", "word_knok"], "answer": "word_knock", "praise": "Yes! Knock starts with a silent 'k'."},
+    {"type": "match_sort", "prompt": "Silent 'k', silent 'l', or no silent letter? Sort the words.", "groups": ["silent_k", "silent_l", "no_silent"], "items": [{"image": "word_knee", "group": "silent_k"}, {"image": "word_knock", "group": "silent_k"}, {"image": "word_calf", "group": "silent_l"}, {"image": "word_walk", "group": "silent_l"}, {"image": "word_kite", "group": "no_silent"}, {"image": "word_lamp", "group": "no_silent"}]},
+    {"type": "listen_tap", "prompt": "Which picture is a knot? It starts with a silent 'k'.", "options": ["knot", "nut", "net"], "answer": "knot", "praise": "Yes! A knot."}
+  ],
+  "hints": ["Say the word out loud. Then look at the letters. Which one is quiet?", "'k' before 'n' is often silent. Know, knee, knock."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word. Knee.",
+    "tutor_try": "Kuh, nee. Kuh-nee!",
+    "image": "tutor_says_knee_wrong",
+    "answer": "knee",
+    "win_line": "You caught me! The 'k' is silent. Knee, like the one on your leg.",
+    "gentle_line": "Let's say it together. The 'k' hides. Nee. Knee!"
+  },
+  "parent_line": "Can read words with a silent k or l, like know and half."
+}

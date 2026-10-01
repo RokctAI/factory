@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w01_add_to_500",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Numbers to 500",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Context-free calculations",
+    "subtopic": "Addition and subtraction to 500 (weeks 1-2) and 800 (weeks 7-10) using +, -, = and □; practise number bonds to 30"
+  },
+  "skill": "add_subtract.to_500",
+  "prereq_skills": ["add_subtract.to_200", "place_value.htu.to_500"],
+  "images": ["sum_235_plus_142", "numeral_500", "numeral_230", "numeral_320", "numeral_470", "numeral_370", "numeral_480", "bonds_18_12", "numeral_280", "numeral_460", "numeral_380", "numeral_332", "numeral_336", "numeral_475", "numeral_415", "numeral_575", "box_sum_150_plus_box_300", "numeral_150", "numeral_450", "numeral_250", "tutor_drops_hundred"],
+  "show": {
+    "line": "Let's add 235 and 142. Hundreds, three hundred. Tens, seventy. Ones, seven. 377!",
+    "image": "sum_235_plus_142"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Two hundred plus three hundred. Tap the answer.", "options": ["numeral_500", "numeral_230", "numeral_320"], "answer": "numeral_500", "praise": "Yes! Five hundred."},
+    {"type": "listen_tap", "prompt": "320 plus 150. Tap the answer.", "options": ["numeral_470", "numeral_370", "numeral_480"], "answer": "numeral_470", "praise": "Yes! Four hundred and seventy."},
+    {"type": "say_it", "prompt": "Eighteen plus twelve. Say the answer.", "accept": ["thirty", "30", "thirtee"], "image": "bonds_18_12"},
+    {"type": "listen_tap", "prompt": "480 take away 200. Tap the answer.", "options": ["numeral_280", "numeral_460", "numeral_380"], "answer": "numeral_280", "praise": "Yes! Take away two hundreds. 280."},
+    {"type": "listen_tap", "prompt": "356 take away 24. Tap the answer.", "options": ["numeral_332", "numeral_380", "numeral_336"], "answer": "numeral_332", "praise": "Yes! 332."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A school has 245 girls and 230 boys. How many children altogether?", "options": ["numeral_475", "numeral_415", "numeral_575"], "answer": "numeral_475", "praise": "475 children! 245 and 230."},
+    {"type": "listen_tap", "prompt": "Which number is missing? 150 plus a number makes 300.", "image": "box_sum_150_plus_box_300", "options": ["numeral_150", "numeral_450", "numeral_250"], "answer": "numeral_150", "praise": "Yes! 150 and 150 make 300."}
+  ],
+  "hints": ["Add the hundreds, then the tens, then the ones.", "Number bonds to thirty help. Eighteen and twelve make thirty."],
+  "beat_the_tutor": {
+    "setup": "My turn! 300 plus 150.",
+    "tutor_try": "300 plus 150 is 350!",
+    "image": "tutor_drops_hundred",
+    "answer": "450",
+    "win_line": "You caught me! 150 is one hundred and fifty. 300 and 150 is 450.",
+    "gentle_line": "Let's add together. 300 and 100 is 400. Add fifty. 450!"
+  },
+  "parent_line": "Can add and subtract numbers to 500."
+}

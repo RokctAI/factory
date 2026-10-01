@@ -1,0 +1,41 @@
+{
+  "id": "maths.grade3.term3.w03_two_and_ten_times",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Times table facts",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 700)",
+    "subtopic": "Multiplication and division facts for the two times table (up to 2×10 and 20÷2) and ten times table (up to 10×10 and 100÷10)"
+  },
+  "skill": "multiply_divide.facts.2_10",
+  "prereq_skills": ["multiply.by_3_4_10", "divide.by_2_5_10.to_50"],
+  "images": ["two_ten_tables", "numeral_14", "numeral_12", "numeral_72", "numeral_60", "numeral_16", "numeral_600", "socks_16", "numeral_9", "numeral_80", "numeral_900", "numeral_100", "numeral_20", "numeral_1000", "numeral_10", "numeral_40", "numeral_18", "numeral_19", "numeral_11", "tutor_adds_instead"],
+  "show": {
+    "line": "Two times table and ten times table. Two, four, six, eight. Ten, twenty, thirty, forty. Quick as a flash!",
+    "image": "two_ten_tables"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Seven times two. Quick! Tap the answer.", "options": ["numeral_14", "numeral_12", "numeral_72"], "answer": "numeral_14", "praise": "Yes! Fourteen."},
+    {"type": "listen_tap", "prompt": "Six times ten. Tap the answer.", "options": ["numeral_60", "numeral_16", "numeral_600"], "answer": "numeral_60", "praise": "Yes! Sixty."},
+    {"type": "say_it", "prompt": "Sixteen divided by two. Say the answer.", "accept": ["eight", "8", "ate"], "image": "socks_16"},
+    {"type": "listen_tap", "prompt": "Ninety divided by ten. Tap the answer.", "options": ["numeral_9", "numeral_80", "numeral_900"], "answer": "numeral_9", "praise": "Yes! Nine tens make ninety."},
+    {"type": "what_next", "prompt": "Two times table. Twelve, fourteen, sixteen. What comes next?", "sequence": ["12", "14", "16"], "options": ["18", "17", "20"], "answer": "18", "praise": "Eighteen!"},
+    {"type": "listen_tap", "prompt": "Ten times ten. Tap the answer.", "options": ["numeral_100", "numeral_20", "numeral_1000"], "answer": "numeral_100", "praise": "Yes! One hundred."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Twenty children stand in pairs. How many pairs?", "options": ["numeral_10", "numeral_20", "numeral_40"], "answer": "numeral_10", "praise": "Ten pairs! Twenty divided by two."},
+    {"type": "listen_tap", "prompt": "Nine times two. Tap the answer.", "options": ["numeral_18", "numeral_19", "numeral_11"], "answer": "numeral_18", "praise": "Yes! Eighteen."}
+  ],
+  "hints": ["Times two is doubling. Times ten puts a zero on the end.", "Dividing is the times table backwards."],
+  "beat_the_tutor": {
+    "setup": "My turn! Eight times ten.",
+    "tutor_try": "Eight times ten is eighteen!",
+    "image": "tutor_adds_instead",
+    "answer": "eighty",
+    "win_line": "You caught me! I added. Eight tens are eighty.",
+    "gentle_line": "Let's count in tens together. Ten, twenty, thirty, forty, fifty, sixty, seventy, eighty!"
+  },
+  "parent_line": "Knows the two and ten times tables and their division facts."
+}
