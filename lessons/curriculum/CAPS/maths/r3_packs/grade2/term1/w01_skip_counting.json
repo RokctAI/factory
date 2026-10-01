@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w01_skip_counting",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Counting in 10s, 5s and 2s",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Counting (integrated with number patterns and mental maths)",
+    "subtopic": "Count forwards and backwards in 10s, 5s and 2s from any multiple within the same ranges; use the relationship between + and -; emphasise more than, less than; ascending and descending order"
+  },
+  "skill": "count.skip.10_5_2",
+  "prereq_skills": ["count.to_60"],
+  "images": ["ten_frames_tens", "hands_four_open", "socks_four_pairs", "tutor_counts_fives_wrong"],
+  "show": {
+    "line": "Counting in tens is fast! Ten, twenty, thirty, forty. In fives: five, ten, fifteen. In twos: two, four, six.",
+    "image": "ten_frames_tens"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count in tens. Ten, twenty, thirty. What comes next?", "sequence": ["10", "20", "30"], "options": ["40", "31", "50"], "answer": "40", "praise": "Forty! Ten, twenty, thirty, forty."},
+    {"type": "what_next", "prompt": "Count in twos. Two, four, six. What comes next?", "sequence": ["2", "4", "6"], "options": ["7", "8", "10"], "answer": "8", "praise": "Eight! Two, four, six, eight."},
+    {"type": "what_next", "prompt": "Count in fives. Five, ten, fifteen. What comes next?", "sequence": ["5", "10", "15"], "options": ["16", "25", "20"], "answer": "20", "praise": "Twenty! Five, ten, fifteen, twenty."},
+    {"type": "count_tap", "prompt": "Count the fingers on these hands in fives. How many fingers?", "image": "hands_four_open", "count": "20", "options": ["15", "20", "25"], "answer": "20", "praise": "Twenty fingers! Five, ten, fifteen, twenty."},
+    {"type": "say_it", "prompt": "Count the socks in twos. Two, four, six. How many socks? Say it.", "accept": ["eight", "8", "ate", "eyt"], "image": "socks_four_pairs"},
+    {"type": "what_next", "prompt": "Count backwards in tens. Sixty, fifty, forty. What comes next?", "sequence": ["60", "50", "40"], "options": ["30", "39", "20"], "answer": "30", "praise": "Thirty! Sixty, fifty, forty, thirty."}
+  ],
+  "hints": ["Say the counting song out loud. Then say the next one.", "In tens the last digit stays the same. Ten, twenty, thirty."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count in fives.",
+    "tutor_try": "Five, ten, fifteen, sixteen!",
+    "image": "tutor_counts_fives_wrong",
+    "answer": "twenty",
+    "win_line": "You caught me! Five, ten, fifteen, twenty. Sixteen is counting in ones.",
+    "gentle_line": "Let's count in fives together. Five, ten, fifteen, twenty!"
+  },
+  "parent_line": "Can count in tens, fives and twos."
+}

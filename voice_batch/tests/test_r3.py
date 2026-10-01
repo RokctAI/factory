@@ -60,11 +60,16 @@ class PackLines(unittest.TestCase):
         cls.items = R.build_r3_lines(respellings=NO_RESP)
 
     def test_counts(self):
-        self.assertEqual(len(self.packs), 74)  # Grade R Terms 1-4, maths + English HL
+        # Derived from the pack tree (Grades R-3 land one grade at a time), so
+        # a new grade's packs never need this number changed by hand.
+        paths = r3_pack_check.pack_paths()
+        self.assertGreaterEqual(len(paths), 74)  # Grade R Terms 1-4, maths + English HL
+        self.assertEqual(len(self.packs), len(paths))
         pack_items = [i for i in self.items if not i["key"].startswith("r3.")]
-        self.assertEqual(len(pack_items), 1232)
-        self.assertEqual(len(self.items), 1236)  # + the 4 default praise lines
-        self.assertEqual(len({i["key"] for i in self.items}), 1236)
+        want = sum(1 for p in self.packs for _, t in r3_pack_check._spoken_lines(p) if t.strip())
+        self.assertEqual(len(pack_items), want)
+        self.assertEqual(len(self.items), want + 4)  # + the 4 default praise lines
+        self.assertEqual(len({i["key"] for i in self.items}), len(self.items))
 
     def test_mirrors_checker(self):
         """Same lines as r3_pack_check._spoken_lines (the packs all pass the
@@ -85,7 +90,7 @@ class PackLines(unittest.TestCase):
                 self.assertRegex(i["key"], r"^r3\.r3_praise_[a-z]+$")
                 continue
             pid, where = i["key"].rsplit(".", 1)
-            self.assertRegex(pid, r"^(maths|english_home_language)\.gradeR\.term[1-4]\.w\d\d_[a-z0-9_]+$")
+            self.assertRegex(pid, r"^(maths|english_home_language)\.grade[R123]\.term[1-4]\.w\d\d_[a-z0-9_]+$")
             self.assertIn(template_of(where), R.WHERE_TEMPLATES, i["key"])
             self.assertEqual(i["file"], f"{R.AUDIO_DIR}/{i['key']}.mp3")
 
@@ -219,7 +224,8 @@ class Respellings(unittest.TestCase):
 class R3Batch(unittest.TestCase):
     def test_all_lines(self):
         b = load(GOOD)
-        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", 1236))
+        self.assertEqual((b["kind"], b["locale"]), ("r3", "en"))
+        self.assertEqual(b["line_count"], len(R.build_r3_lines()))
         self.assertEqual(len(b["matrix"]), 8)
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (102.0, 8.0))
 

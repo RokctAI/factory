@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w03_shape_patterns",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Shape patterns",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Patterns, functions and algebra: Geometric and number patterns",
+    "subtopic": "Geometric patterns made with objects, drawings of lines and shapes: copy, extend and describe; create and describe own patterns"
+  },
+  "skill": "pattern.shape.extend_describe",
+  "prereq_skills": ["pattern.shape.continue"],
+  "images": ["pattern_circle_circle_square", "square", "circle", "triangle", "pattern_triangle_star_star", "star", "pattern_big_small_circles", "pattern_red_blue_missing", "red_square", "blue_square", "beads_pattern", "beads_mixed", "zigzag_fence", "zigzag_mountains", "wavy_water", "wavy_snake", "tutor_adds_third_circle"],
+  "show": {
+    "line": "Look at this pattern. Circle, circle, square. Circle, circle, square. Two circles, then a square. It repeats!",
+    "image": "pattern_circle_circle_square"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Circle, circle, square, circle, circle. Which shape comes next?", "image": "pattern_circle_circle_square", "options": ["square", "circle", "triangle"], "answer": "square", "praise": "Square! Circle, circle, square."},
+    {"type": "listen_tap", "prompt": "Triangle, star, star, triangle, star, star. Which shape comes next?", "image": "pattern_triangle_star_star", "options": ["star", "triangle", "circle"], "answer": "triangle", "praise": "Triangle! The pattern starts again."},
+    {"type": "say_it", "prompt": "Big, small, big, small, big. Say what comes next.", "accept": ["small", "a small one", "small circle", "smol"], "image": "pattern_big_small_circles"},
+    {"type": "listen_tap", "prompt": "Red square, blue square, gap, blue square. Which square is missing?", "image": "pattern_red_blue_missing", "options": ["red_square", "blue_square"], "answer": "red_square", "praise": "Red! Red, blue, red, blue."},
+    {"type": "listen_tap", "prompt": "Which beads make a pattern that repeats?", "options": ["beads_pattern", "beads_mixed"], "answer": "beads_pattern", "praise": "Yes! Blue, blue, yellow, again and again."},
+    {"type": "match_sort", "prompt": "Does the line pattern go up and down, or round and round? Put each one in its group.", "groups": ["zigzag", "wavy"], "items": [{"image": "zigzag_fence", "group": "zigzag"}, {"image": "zigzag_mountains", "group": "zigzag"}, {"image": "wavy_water", "group": "wavy"}, {"image": "wavy_snake", "group": "wavy"}]}
+  ],
+  "hints": ["Say the pattern out loud. Find the part that repeats.", "Look at where the pattern starts again."],
+  "beat_the_tutor": {
+    "setup": "My turn! Circle, circle, square, circle, circle. I will say what comes next.",
+    "tutor_try": "Next comes a circle!",
+    "image": "tutor_adds_third_circle",
+    "answer": "square",
+    "win_line": "You caught me! Two circles, then a square. Square comes next.",
+    "gentle_line": "Let's say it together. Circle, circle, square. Circle, circle, square!"
+  },
+  "parent_line": "Can copy, continue and describe a repeating shape pattern."
+}
