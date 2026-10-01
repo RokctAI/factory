@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term4.w05_count_to_two_hundred",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Counting to 200",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Counting (integrated with number patterns and mental maths)",
+    "subtopic": "Count forwards and backwards in 1s from any number between 0 and 180 (weeks 1-4) and 200 (weeks 5-10)"
+  },
+  "skill": "count.to_200",
+  "prereq_skills": ["count.to_150"],
+  "images": ["number_track_195_to_200", "numeral_173", "numeral_179", "numeral_181", "numeral_170", "numeral_186", "numeral_168", "numeral_196", "numeral_190", "numeral_145", "tutor_skips_170"],
+  "show": {
+    "line": "Big numbers! One hundred and ninety-eight, one hundred and ninety-nine, two hundred! Let's count up to two hundred.",
+    "image": "number_track_195_to_200"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count on. One hundred and fifty-seven, one hundred and fifty-eight. What comes next?", "sequence": ["157", "158"], "options": ["159", "160", "150"], "answer": "159", "praise": "One hundred and fifty-nine!"},
+    {"type": "say_it", "prompt": "Look at this number. Say it.", "accept": ["one hundred and seventy-three", "one hundred and seventy three", "hundred and seventy three", "173"], "image": "numeral_173"},
+    {"type": "what_next", "prompt": "Count on. One hundred and ninety-eight, one hundred and ninety-nine. What comes next?", "sequence": ["198", "199"], "options": ["200", "100", "1000"], "answer": "200", "praise": "Two hundred!"},
+    {"type": "listen_tap", "prompt": "Which number comes just before one hundred and eighty?", "options": ["numeral_179", "numeral_181", "numeral_170"], "answer": "numeral_179", "praise": "One hundred and seventy-nine!"},
+    {"type": "what_next", "prompt": "Count backwards. One hundred and sixty-two, one hundred and sixty-one. What comes next?", "sequence": ["162", "161"], "options": ["160", "163", "150"], "answer": "160", "praise": "One hundred and sixty!"},
+    {"type": "listen_tap", "prompt": "Tap the number one hundred and eighty-six.", "options": ["numeral_186", "numeral_168", "numeral_196"], "answer": "numeral_186", "praise": "Yes! One hundred and eighty-six."},
+    {"type": "listen_tap", "prompt": "Which number is greater, one hundred and forty-five or one hundred and ninety?", "options": ["numeral_190", "numeral_145"], "answer": "numeral_190", "praise": "One hundred and ninety is greater."}
+  ],
+  "hints": ["Say one hundred and, then count on with the small number.", "After one hundred and ninety-nine comes two hundred."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count on from one hundred and sixty-eight.",
+    "tutor_try": "One hundred and sixty-eight, one hundred and sixty-nine, one hundred and eighty!",
+    "image": "tutor_skips_170",
+    "answer": "one hundred and seventy",
+    "win_line": "You caught me! After one hundred and sixty-nine comes one hundred and seventy.",
+    "gentle_line": "Let's count together. Sixty-eight, sixty-nine, seventy. One hundred and seventy!"
+  },
+  "parent_line": "Can count forwards and backwards in ones up to 200."
+}

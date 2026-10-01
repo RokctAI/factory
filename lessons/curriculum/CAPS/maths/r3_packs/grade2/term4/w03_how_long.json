@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term4.w03_how_long",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "How long does it take?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Measurement: Telling time",
+    "subtopic": "Use clocks to calculate the length of time in hours and half hours"
+  },
+  "skill": "time.duration.hours_half",
+  "prereq_skills": ["time.read.half_past", "time.read.quarter_hours"],
+  "images": ["clocks_two_to_four", "clocks_three_to_five", "word_two_hours", "word_one_hour", "word_three_hours", "clocks_twelve_to_half_past", "word_half_an_hour", "clocks_eight_to_one", "clock_eleven_oclock", "clock_nine_oclock", "clock_half_past_ten", "clock_half_past_six", "clock_seven_oclock", "clock_six_oclock", "tutor_counts_clocks_wrong"],
+  "show": {
+    "line": "The show starts at two o'clock and ends at four o'clock. Two, three, four. It lasts two hours!",
+    "image": "clocks_two_to_four"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Soccer starts at three o'clock and ends at five o'clock. How long is that?", "image": "clocks_three_to_five", "options": ["word_two_hours", "word_one_hour", "word_three_hours"], "answer": "word_two_hours", "praise": "Two hours! Three, four, five."},
+    {"type": "listen_tap", "prompt": "Lunch starts at twelve o'clock and ends at half past twelve. How long is lunch?", "image": "clocks_twelve_to_half_past", "options": ["word_half_an_hour", "word_one_hour", "word_two_hours"], "answer": "word_half_an_hour", "praise": "Half an hour!"},
+    {"type": "say_it", "prompt": "School starts at eight o'clock. It ends at one o'clock. How many hours? Say the number.", "accept": ["five", "5", "five hours", "fife"], "image": "clocks_eight_to_one"},
+    {"type": "listen_tap", "prompt": "The bus leaves at ten o'clock. The trip takes one hour. Which clock shows when it arrives?", "options": ["clock_eleven_oclock", "clock_nine_oclock", "clock_half_past_ten"], "answer": "clock_eleven_oclock", "praise": "Eleven o'clock! One hour after ten."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nomsa starts reading at six o'clock. She reads for half an hour. What time does she stop?", "options": ["clock_half_past_six", "clock_seven_oclock", "clock_six_oclock"], "answer": "clock_half_past_six", "praise": "Half past six!"},
+    {"type": "listen_tap", "prompt": "Which takes longer, one hour or half an hour?", "options": ["word_one_hour", "word_half_an_hour"], "answer": "word_one_hour", "praise": "Yes! One hour is longer than half an hour."}
+  ],
+  "hints": ["Count the hours from the start time to the end time.", "From o'clock to half past is half an hour."],
+  "beat_the_tutor": {
+    "setup": "My turn! The party starts at one o'clock and ends at three o'clock.",
+    "tutor_try": "One, two, three. The party lasts three hours!",
+    "image": "tutor_counts_clocks_wrong",
+    "answer": "two hours",
+    "win_line": "You caught me! Count the jumps, not the numbers. One to two, two to three. Two hours.",
+    "gentle_line": "Let's count the jumps together. One to two, two to three. Two hours!"
+  },
+  "parent_line": "Can work out how long something takes in hours and half hours."
+}

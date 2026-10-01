@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term4.w05_times_three",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Groups of three",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 99",
+    "subtopic": "Multiply numbers 1 to 10 by 2 and 5 (weeks 1-2), 2 and 4 (weeks 3-4), 5 and 3 (weeks 5-6), 3 and 5 (weeks 7-8), 3 and 4 (weeks 9-10)"
+  },
+  "skill": "number.multiply.by_3",
+  "prereq_skills": ["number.multiply.by_2_5", "number.multiply.by_4", "pattern.number.extend"],
+  "images": ["tricycles_four", "clovers_two", "triangles_five", "dots_three_groups_of_three", "numeral_18", "numeral_15", "numeral_9", "numeral_21", "numeral_10", "numeral_24", "groups_four_of_three", "groups_three_of_four", "groups_four_of_two", "tutor_counts_four_threes"],
+  "show": {
+    "line": "Four tricycles. Each has three wheels. Three, six, nine, twelve. Four times three equals twelve!",
+    "image": "tricycles_four"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Two clovers. Three leaves on each. Count the leaves in threes. How many?", "image": "clovers_two", "count": "6", "options": ["5", "6", "9"], "answer": "6", "praise": "Six leaves! Two times three is six."},
+    {"type": "count_tap", "prompt": "Five triangles. Three sides each. Count the sides in threes. How many sides?", "image": "triangles_five", "count": "15", "options": ["12", "15", "18"], "answer": "15", "praise": "Fifteen! Five times three is fifteen."},
+    {"type": "say_it", "prompt": "Three times three. Three groups of three. Say the answer.", "accept": ["nine", "9", "nain", "nyne"], "image": "dots_three_groups_of_three"},
+    {"type": "listen_tap", "prompt": "Six times three. What is the answer?", "options": ["numeral_18", "numeral_15", "numeral_9"], "answer": "numeral_18", "praise": "Eighteen! Three, six, nine, twelve, fifteen, eighteen."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Each bag has three oranges. Gogo buys seven bags. How many oranges does she buy?", "options": ["numeral_21", "numeral_10", "numeral_24"], "answer": "numeral_21", "praise": "Twenty-one oranges! Seven times three."},
+    {"type": "what_next", "prompt": "Count in threes. Three, six, nine, twelve. What comes next?", "sequence": ["3", "6", "9", "12"], "options": ["15", "13", "18"], "answer": "15", "praise": "Fifteen!"},
+    {"type": "listen_tap", "prompt": "Which picture shows four times three?", "options": ["groups_four_of_three", "groups_three_of_four", "groups_four_of_two"], "answer": "groups_four_of_three", "praise": "Yes! Four groups with three in each."}
+  ],
+  "hints": ["Count in threes, once for each group. Three, six, nine.", "Times means groups of. Four times three is four groups of three."],
+  "beat_the_tutor": {
+    "setup": "My turn! Five times three.",
+    "tutor_try": "Three, six, nine, twelve. Five times three is twelve!",
+    "image": "tutor_counts_four_threes",
+    "answer": "fifteen",
+    "win_line": "You caught me! I only counted four threes. Three, six, nine, twelve, fifteen.",
+    "gentle_line": "Let's count five threes together. Three, six, nine, twelve, fifteen!"
+  },
+  "parent_line": "Can work out groups of three up to 10 groups."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term4.w07_symmetry",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Symmetry",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Space and shape: 3D objects, 2D shapes, position and symmetry (integrated with data handling)",
+    "subtopic": "Symmetry: recognise and draw a line of symmetry in 2D geometrical and non-geometrical shapes"
+  },
+  "skill": "geometry.symmetry.line",
+  "prereq_skills": ["geometry.symmetry", "shape.2d.name_features"],
+  "images": ["butterfly_fold_line", "heart_symmetric", "blob_lopsided", "arrow_bent", "square_line_middle", "square_line_off_centre", "face_symmetric", "ladybird_half", "ladybird_half_match", "ladybird_half_wrong", "butterfly", "letter_t_shape", "circle", "boot", "letter_a_shape", "letter_f_shape", "letter_g_shape", "tutor_heart_line_wrong"],
+  "show": {
+    "line": "Fold the butterfly down the middle. Both sides match! That fold line is a line of symmetry.",
+    "image": "butterfly_fold_line"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture has a line of symmetry? Both sides match.", "options": ["heart_symmetric", "blob_lopsided", "arrow_bent"], "answer": "heart_symmetric", "praise": "Yes! Fold the heart and both sides match."},
+    {"type": "listen_tap", "prompt": "Which line cuts the square into two matching halves?", "options": ["square_line_middle", "square_line_off_centre"], "answer": "square_line_middle", "praise": "Yes! The line through the middle."},
+    {"type": "say_it", "prompt": "Look at this face. Is it the same on both sides? Say yes or no.", "accept": ["yes", "it is", "same", "ja"], "image": "face_symmetric"},
+    {"type": "listen_tap", "prompt": "Which half finishes the picture of the ladybird?", "image": "ladybird_half", "options": ["ladybird_half_match", "ladybird_half_wrong"], "answer": "ladybird_half_match", "praise": "Yes! Now both sides match."},
+    {"type": "match_sort", "prompt": "Does it have a line of symmetry? Put each one in its group.", "groups": ["symmetry", "no_symmetry"], "items": [{"image": "butterfly", "group": "symmetry"}, {"image": "letter_t_shape", "group": "symmetry"}, {"image": "circle", "group": "symmetry"}, {"image": "blob_lopsided", "group": "no_symmetry"}, {"image": "boot", "group": "no_symmetry"}]},
+    {"type": "listen_tap", "prompt": "Which letter shape has a line of symmetry down the middle?", "options": ["letter_a_shape", "letter_f_shape", "letter_g_shape"], "answer": "letter_a_shape", "praise": "Yes! Fold it down the middle and the sides match."}
+  ],
+  "hints": ["Imagine folding the picture. Do the two sides sit exactly on top of each other?", "A line of symmetry goes right through the middle."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will draw the line of symmetry on the heart.",
+    "tutor_try": "Here is my line, across the top!",
+    "image": "tutor_heart_line_wrong",
+    "answer": "down the middle",
+    "win_line": "You caught me! The two parts do not match. The line goes down the middle.",
+    "gentle_line": "Let's fold it together. Down the middle, and both sides match!"
+  },
+  "parent_line": "Can recognise a line of symmetry in shapes and pictures."
+}
