@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Draw y = 2x − 1 using a table with x = −1, 0, 1. Give the three points, explain why three are plotted rather than two, and state how the line is finished.",
+      "expected_answer": "At x = −1: 2(−1) − 1 gives −3; at x = 0: −1; at x = 1: 1. Points (−1; −3), (0; −1), (1; 1). Three points are plotted because any two always line up, so the third is the check that catches an arithmetic error. Plot, confirm they line up, rule the line through them with arrowheads at both ends, and label it y = 2x − 1."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how to draw y = −2x + 4 by the dual-intercept method and by the gradient-intercept method, and say what the two methods have in common.",
+      "expected_answer": "Dual-intercept: x = 0 gives y = 4, the point (0; 4); y = 0 gives 0 = −2x + 4, x = 2, the point (2; 0); rule through both. Gradient-intercept: start at c = 4 on the y-axis, then for each 1 across go 2 down (m = −2) to (1; 2) and (2; 0). Both start from the y-intercept (0; 4) and both produce a line falling from left to right, as the negative gradient requires."
+    },
+    {
+      "id": "cc3",
+      "question": "A line passes through (1; 5) and (3; 9). Find its equation and verify it, explaining how c is found when the y-intercept is not visible.",
+      "expected_answer": "Gradient: rise 9 − 5 is 4, run 3 − 1 is 2, so m = 2. Since the y-intercept is not given, substitute a known point into y = 2x + c: using (1; 5), 5 = 2(1) + c, so c = 3. Equation: y = 2x + 3. Verify with the other point: 2(3) + 3 is 9, which matches (3; 9)."
+    }
+  ]
+}
