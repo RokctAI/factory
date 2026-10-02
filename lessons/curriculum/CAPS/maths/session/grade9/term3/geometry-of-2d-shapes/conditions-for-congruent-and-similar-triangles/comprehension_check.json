@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, using a construction, why two sides and the included angle (SAS) is a congruence condition but two sides and a non-included angle (SSA) is not.",
+      "expected_answer": "SAS: draw one given side, measure the given angle at its end, mark the second side along the arm and join; the third side is forced, so only one triangle can be drawn and everyone's triangle is identical. SSA: draw the 7 cm side, make the 40 degree angle at one end, then swing an arc of radius 5 cm from the other end; the arc cuts the arm in two places, giving two different triangles from the same data, one with an acute and one with an obtuse angle at the third vertex. Two possible triangles means the information does not force congruence."
+    },
+    {
+      "id": "cc2",
+      "question": "In the diagram AB = DC and angle ABC = angle DCB, and BC is common to triangles ABC and DCB. Prove the triangles congruent and state which other side you may then deduce equal.",
+      "expected_answer": "In triangle ABC and triangle DCB: AB = DC (given); angle ABC = angle DCB (given); BC is common. Therefore triangle ABC is congruent to triangle DCB (SAS), since the given angle lies between the two sides in each triangle. Hence AC = DB (congruent triangles), matching the third letters in order."
+    },
+    {
+      "id": "cc3",
+      "question": "Decide whether triangles with sides 4, 6, 8 and 6, 9, 11 are similar. Then, given triangle PQR similar to triangle XYZ with PQ = 5, XY = 15 and QR = 7, find YZ with a layout.",
+      "expected_answer": "Match smallest with smallest and largest with largest: 6 over 4 is 1.5, 9 over 6 is 1.5, but 11 over 8 is 1.375. The three ratios do not all agree, so the triangles are not similar. For PQR and XYZ: XY over PQ equals YZ over QR (similar triangles), so 15 over 5 equals YZ over 7. The scale factor is 3, so YZ is 3 × 7, which is 21."
+    }
+  ]
+}
