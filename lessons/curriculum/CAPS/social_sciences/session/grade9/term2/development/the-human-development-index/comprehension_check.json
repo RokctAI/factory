@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the three dimensions and four indicators of the HDI and explain why the HDI was introduced.",
+      "expected_answer": "Dimensions: a long and healthy life (life expectancy at birth), knowledge (mean years of schooling for adults 25+ and expected years of schooling for children) and a decent standard of living (GNI per capita at PPP). Introduced by the UNDP in 1990, developed by Mahbub ul Haq with Amartya Sen, because GDP or income alone does not show whether people live long, healthy, educated lives; income is a means, not the end of development."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate the health index for a country with a life expectancy of 65 years, and explain how the HDI combines its three dimension indices.",
+      "expected_answer": "Health index = (actual - minimum) / (maximum - minimum) = (65 - 20) / (85 - 20) = 45 / 65, about 0,692. Education index is the average of expected schooling/18 and mean schooling/15; income uses logarithms with goalposts 100 and 75 000 PPP dollars. The HDI is the geometric mean: the cube root of the product of the three indices, so weakness in one dimension pulls the total down; e.g. 0,692, 0,764 and 0,746 give about 0,734 (high)."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe South Africa's position on the HDI and explain two limitations of the HDI.",
+      "expected_answer": "South Africa's HDI is about 0,72, in the high category (0,700-0,799), ranked around 110th of about 190; its HDI fell during the HIV epidemic and recovered with antiretroviral treatment. Limitations: it is an average that hides inequality (South Africa's IHDI is much lower, among the largest losses worldwide); it measures quantity not quality of education; it ignores environment, freedom, safety and gender; data are estimates."
+    }
+  ]
+}
