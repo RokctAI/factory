@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A fair coin was tossed 50 times and gave 27 heads. Compare the relative frequency with the probability, state the difference and its direction, and explain whether the coin should be judged unfair.",
+      "expected_answer": "Probability of heads 0.5; relative frequency 27/50 = 0.54; difference 0.54 − 0.5 = 0.04, that is 4 percentage points, or 2 heads more than the expected 25. In 50 tosses, chance variation routinely produces anything from about 20 to 30 heads, and exactly 25 happens only about one time in nine, so a gap of 2 is small for this number of trials. The cause is chance variation, not evidence of bias; the coin should not be judged unfair, and more trials would be needed to test it."
+    },
+    {
+      "id": "cc2",
+      "question": "A die is rolled 600 times and a 6 appears 160 times. Find the expected number of sixes and the relative frequency, and explain the likely cause of the difference, naming possible sources of bias. What would you expect if the experiment were repeated?",
+      "expected_answer": "Expected: 1/6 × 600 = 100 sixes. Relative frequency 160/600, about 0.267, against a probability of about 0.167. Chance variation in 600 rolls usually keeps the count within about 18 of 100, so a gap of 60 is far too large for chance. The likely cause is bias: a weighted or damaged die, or a method such as placing the die rather than throwing it. Bias is systematic, so a repeat would again show far more than 100 sixes, whereas a chance gap would not persist."
+    },
+    {
+      "id": "cc3",
+      "question": "A running record of coin tosses gave 7 heads in 10, 27 in 50, 46 in 100, 258 in 500 and 512 in 1000. Find the relative frequencies, describe how they behave, and explain why the count of extra heads grew while the relative frequency approached 0.5.",
+      "expected_answer": "Relative frequencies: 0.7, 0.54, 0.46, 0.516, 0.512. They swing widely at first and settle towards the probability 0.5 as trials accumulate. The count gap from the expected number was +2, +2, −4, +8, +12: it does not shrink, because the coin does not compensate for earlier heads. The relative frequency settles because the gap is divided by an ever larger number of tosses: 12/1000 = 0.012, so the extra heads are diluted rather than cancelled."
+    }
+  ]
+}
