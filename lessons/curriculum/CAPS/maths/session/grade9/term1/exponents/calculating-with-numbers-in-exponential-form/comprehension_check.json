@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why 2^3 + 2^4 is 24 and not 2^7, and state the one case in which added powers can be simplified.",
+      "expected_answer": "There is no exponent law for addition: each power is evaluated and the values added, 8 + 16 = 24, whereas 2^7 is 128. The only simplification is for identical powers, which are counted: 2^5 + 2^5 is two copies, 2 × 2^5, and the multiplication law then gives 2^6. This is the distributive property, not an exponent law."
+    },
+    {
+      "id": "cc2",
+      "question": "Evaluate 2^3 × 2^2 + 2^5 ÷ 2^3, showing the order of operations.",
+      "expected_answer": "Multiplication and division before addition. 2^3 × 2^2 = 2^5 = 32 by adding exponents; 2^5 ÷ 2^3 = 2^2 = 4 by subtracting. Then 32 + 4 = 36. Adding all exponents to get 2^7 is wrong because the plus sign separates two products."
+    },
+    {
+      "id": "cc3",
+      "question": "Calculate 3 × 10^5 + 2 × 10^4 and (4 × 10^3) × (5 × 10^2), giving both in standard form.",
+      "expected_answer": "Addition needs equal powers of ten: 3 × 10^5 is 30 × 10^4, so the sum is 32 × 10^4, which is 3,2 × 10^5 (check: 300 000 + 20 000 = 320 000). Multiplication handles fronts and powers separately: 4 × 5 = 20 and 10^3 × 10^2 = 10^5, giving 20 × 10^5, which is 2 × 10^6 in standard form (check: 4 000 × 500 = 2 000 000)."
+    }
+  ]
+}

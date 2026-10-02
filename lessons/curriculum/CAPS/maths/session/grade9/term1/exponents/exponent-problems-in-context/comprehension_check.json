@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A culture of 500 bacteria doubles every hour. Write an expression for the count after 6 hours, evaluate it, and explain why 500 × 2 × 6 is wrong.",
+      "expected_answer": "Each hour multiplies the count by 2, so six hours multiply by 2 six times: 500 × 2^6 = 32 000 cells, since 2^6 is 64. 500 × 2 × 6 is 6 000, which treats the growth as one multiplication by 6 (or six additions of 500); doubling six times is repeated multiplication, which is a power, not a product with 6."
+    },
+    {
+      "id": "cc2",
+      "question": "Light travels at 3 × 10^5 km/s and takes 500 s to reach Earth from the Sun. Find the distance in standard form, showing fronts and powers separately, and give a size check.",
+      "expected_answer": "500 s is 5 × 10^2 s. Distance is speed × time: fronts 3 × 5 = 15; powers 10^5 × 10^2 = 10^7. So 15 × 10^7 km, which in standard form is 1,5 × 10^8 km. Size check: a few hundred thousand times a few hundred is hundreds of millions, so exponent 8 is right — about 150 million km."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why 1 km^2 is 10^6 m^2 and not 10^3 m^2, and state what happens to the volume of a cube when every edge is doubled.",
+      "expected_answer": "1 km is 10^3 m, and area is length squared, so 1 km^2 is (10^3)^2 m^2, which is 10^6 m^2 — the conversion factor is squared along with the unit. Doubling every edge of a cube multiplies the volume by 2^3 = 8, because volume is edge cubed and (2s)^3 = 8s^3."
+    }
+  ]
+}
