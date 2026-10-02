@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w03_same_or_different_sound",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Distinguishes aurally between different initial sounds of words"
+  },
+  "skill": "phonics.initial_sound.same_different",
+  "prereq_skills": ["phonics.letter_sound.s_a_t"],
+  "images": ["sun_sock_mat", "tap_and_tent", "sun", "sock", "moon", "apple_and_mat", "tent", "ant", "apple", "seal", "tap", "tutor_sun_sock"],
+  "show": {
+    "line": "Sun and sock start the same. s, s. Sun and mat start differently. s and m. Listen!",
+    "image": "sun_sock_mat"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Tap and tent. Do they start the same? Say yes or no.", "accept": ["yes", "ya", "yebo", "same"], "image": "tap_and_tent"},
+    {"type": "listen_tap", "prompt": "Which one starts differently from the others?", "options": ["sun", "sock", "moon"], "answer": "moon", "praise": "Moon! It starts with m, not s."},
+    {"type": "say_it", "prompt": "Apple and mat. Do they start the same? Say yes or no.", "accept": ["no", "nope", "different", "no they dont"], "image": "apple_and_mat"},
+    {"type": "listen_tap", "prompt": "Which one starts the same as tap?", "options": ["tent", "sun", "ant"], "answer": "tent", "praise": "Tap, tent. Both start with t."},
+    {"type": "listen_tap", "prompt": "Which one does not start with a?", "options": ["ant", "apple", "sock"], "answer": "sock", "praise": "Sock starts with s."},
+    {"type": "match_sort", "prompt": "Same first sound as sun, or not? Sort the pictures.", "groups": ["starts_with_s", "different"], "items": [{"image": "sock", "group": "starts_with_s"}, {"image": "seal", "group": "starts_with_s"}, {"image": "moon", "group": "different"}, {"image": "tap", "group": "different"}, {"image": "ant", "group": "different"}]}
+  ],
+  "hints": ["Say both words slowly. Listen to the very first sound.", "Sss and mmm feel different in your mouth."],
+  "beat_the_tutor": {
+    "setup": "My turn! Sun and sock.",
+    "tutor_try": "Sun and sock start differently!",
+    "image": "tutor_sun_sock",
+    "answer": "no",
+    "win_line": "You caught me! Sun and sock both start with s. The same!",
+    "gentle_line": "Let's listen together. Sssun, sssock. The same sound!"
+  },
+  "parent_line": "Can hear whether two words start with the same sound."
+}

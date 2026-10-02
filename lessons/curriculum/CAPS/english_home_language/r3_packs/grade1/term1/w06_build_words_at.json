@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w06_build_words_at",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [6, 7],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Begins to build up short words using sounds learnt"
+  },
+  "skill": "phonics.build.at_words",
+  "prereq_skills": ["phonics.letter_sound.m_d"],
+  "images": ["letter_tiles_s_a_t", "mat", "sun", "pin", "pat_dog", "tap", "tile_mat", "tile_sat", "tile_pat", "letter_tiles_m_a_t", "tutor_tiles_sat"],
+  "show": {
+    "line": "Sounds make words! a, t. at. Put s in front. s, at. Sat! Let's build words.",
+    "image": "letter_tiles_s_a_t"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. m, a, t. What word is it?", "sounds": ["m", "a", "t"], "options": ["mat", "sun", "pin"], "answer": "mat", "praise": "Mat! m, a, t, mat."},
+    {"type": "blend", "prompt": "Listen. p, a, t. Tap the word.", "sounds": ["p", "a", "t"], "options": ["pat_dog", "mat", "tap"], "answer": "pat_dog", "praise": "Pat! p, a, t, pat."},
+    {"type": "say_it", "prompt": "Put s in front of at. What word do you make?", "accept": ["sat", "set", "sut"], "image": "letter_tiles_s_a_t"},
+    {"type": "listen_tap", "prompt": "Which word tile says mat?", "options": ["tile_mat", "tile_sat", "tile_pat"], "answer": "tile_mat", "praise": "m, a, t. Mat!"},
+    {"type": "blend", "prompt": "Listen. t, a, p. What word is it?", "sounds": ["t", "a", "p"], "options": ["tap", "pin", "mat"], "answer": "tap", "praise": "Tap! t, a, p, tap."},
+    {"type": "say_it", "prompt": "Put m in front of at. What word do you make?", "accept": ["mat", "met", "mut"], "image": "letter_tiles_m_a_t"}
+  ],
+  "hints": ["Say each sound, then push them together. m, a, t. Mat.", "At is the end. Add the first sound in front."],
+  "beat_the_tutor": {
+    "setup": "My turn! s, a, t. I will say the word.",
+    "tutor_try": "s, a, t. Mat!",
+    "image": "tutor_tiles_sat",
+    "answer": "sat",
+    "win_line": "You caught me! s, a, t says sat, not mat.",
+    "gentle_line": "Let's push the sounds together. Sss, a, t. Sat!"
+  },
+  "parent_line": "Can build short words like sat, mat and tap from sounds."
+}

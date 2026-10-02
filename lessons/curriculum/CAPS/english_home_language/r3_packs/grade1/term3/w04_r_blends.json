@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w04_r_blends",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [4, 5],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Uses consonant blends to build up and break down words (r and l blends: bl-ack, fl-op, sl-ip)"
+  },
+  "skill": "phonics.blend.r_blends",
+  "prereq_skills": ["phonics.blend.l_blends"],
+  "images": ["frog_drum_grass", "fruit", "drum", "crab", "drip", "frog", "crown", "grass", "dress", "grapes", "tutor_tiles_drum"],
+  "show": {
+    "line": "More blends! fr, fr, frog. dr, dr, drum. gr, gr, grass. Listen for the r.",
+    "image": "frog_drum_grass"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with fr, as in frog?", "options": ["fruit", "drum", "crab"], "answer": "fruit", "praise": "fr, fr, fruit."},
+    {"type": "blend", "prompt": "Listen. dr, u, m. What word is it?", "sounds": ["dr", "u", "m"], "options": ["drum", "drip", "frog"], "answer": "drum", "praise": "Drum! dr, u, m."},
+    {"type": "say_it", "prompt": "Say the blend with me. gr, as in grass!", "accept": ["gr", "gruh", "gre", "gra"]},
+    {"type": "listen_tap", "prompt": "Which one starts with cr, as in crab?", "options": ["crown", "grass", "frog"], "answer": "crown", "praise": "cr, cr, crown."},
+    {"type": "blend", "prompt": "Listen. fr, o, g. Tap the word.", "sounds": ["fr", "o", "g"], "options": ["frog", "fruit", "drum"], "answer": "frog", "praise": "Frog! fr, o, g."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "trip", "accept": ["trip", "trep", "chip"]},
+    {"type": "match_sort", "prompt": "Does it start with fr, dr or gr? Sort the pictures.", "groups": ["fr", "dr", "gr"], "items": [{"image": "frog", "group": "fr"}, {"image": "fruit", "group": "fr"}, {"image": "drum", "group": "dr"}, {"image": "dress", "group": "dr"}, {"image": "grass", "group": "gr"}, {"image": "grapes", "group": "gr"}]}
+  ],
+  "hints": ["Say both sounds fast. f, r. fr!", "The second sound is r. Hear it growl."],
+  "beat_the_tutor": {
+    "setup": "My turn! dr, u, m.",
+    "tutor_try": "dr, u, m. Dum!",
+    "image": "tutor_tiles_drum",
+    "answer": "drum",
+    "win_line": "You caught me! I forgot the r. dr, u, m. Drum!",
+    "gentle_line": "Let's blend together. Drr, u, m. Drum!"
+  },
+  "parent_line": "Can hear and blend the r blends fr, dr, gr and cr."
+}

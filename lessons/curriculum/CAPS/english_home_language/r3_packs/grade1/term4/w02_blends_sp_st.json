@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term4.w02_blends_sp_st",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Uses consonant blends to build up and break down words (sp-o-t, fr-o-g, dr-i-nk, st-i-ck)"
+  },
+  "skill": "phonics.blend.sp_st_sn",
+  "prereq_skills": ["phonics.blend.l_blends", "phonics.blend.r_blends"],
+  "images": ["spot_stick_snap", "spot_dog", "stop", "spin", "star", "spoon", "snail", "step", "stick", "snake", "tutor_holds_snail"],
+  "show": {
+    "line": "Blends that start with s! sp, sp, spot. st, st, stick. sn, sn, snap.",
+    "image": "spot_stick_snap"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. sp, o, t. What word is it?", "sounds": ["sp", "o", "t"], "options": ["spot_dog", "stop", "spin"], "answer": "spot_dog", "praise": "Spot! sp, o, t."},
+    {"type": "listen_tap", "prompt": "Which one starts with st, as in stick?", "options": ["star", "spoon", "snail"], "answer": "star", "praise": "st, st, star."},
+    {"type": "say_it", "prompt": "Say the blend with me. sn, as in snap!", "accept": ["sn", "snuh", "sna", "sne"]},
+    {"type": "blend", "prompt": "Listen. st, e, p. Tap the word.", "sounds": ["st", "e", "p"], "options": ["step", "stop", "spot_dog"], "answer": "step", "praise": "Step! st, e, p."},
+    {"type": "listen_tap", "prompt": "Which one starts with sp, as in spot?", "options": ["spoon", "star", "snail"], "answer": "spoon", "praise": "sp, sp, spoon."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "stick", "accept": ["stick", "stik", "steek"]},
+    {"type": "match_sort", "prompt": "Does it start with sp, st or sn? Sort the pictures.", "groups": ["sp", "st", "sn"], "items": [{"image": "spoon", "group": "sp"}, {"image": "spot_dog", "group": "sp"}, {"image": "star", "group": "st"}, {"image": "stick", "group": "st"}, {"image": "snail", "group": "sn"}, {"image": "snake", "group": "sn"}]}
+  ],
+  "hints": ["Start with s, then the next sound fast. s, t. st!", "Listen to the second sound. p, t or n?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with st.",
+    "tutor_try": "Snail! Snail starts with st.",
+    "image": "tutor_holds_snail",
+    "answer": "no",
+    "win_line": "You caught me! Snail starts with sn. Star starts with st.",
+    "gentle_line": "Let's listen together. st, st, star. Star starts with st!"
+  },
+  "parent_line": "Can hear and blend the s blends sp, st and sn."
+}

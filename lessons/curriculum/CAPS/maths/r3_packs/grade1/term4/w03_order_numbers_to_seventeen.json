@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term4.w03_order_numbers_to_seventeen",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "Numbers to 20",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Mental maths (number range 20)",
+    "subtopic": "Order a given set of numbers 1-16 (weeks 1-2), 1-17 (weeks 3-4), 1-18 (weeks 5-6), 1-20 (weeks 7-8): ascending and descending, left to right"
+  },
+  "skill": "number.order.to_17",
+  "prereq_skills": ["number.order.to_12"],
+  "images": ["number_cards_to_seventeen", "numeral_15", "numeral_8", "numeral_16", "numeral_11", "numeral_13", "cards_16_13", "row_2_7_12_17", "row_12_2_17_7", "tutor_order_backwards"],
+  "show": {
+    "line": "Line them up! Four, nine, thirteen, seventeen. Smallest on the left, biggest on the right.",
+    "image": "number_cards_to_seventeen"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Smallest to greatest. Six, eleven, fourteen, and then?", "sequence": ["6", "11", "14"], "options": ["17", "12", "4"], "answer": "17", "praise": "Seventeen is the greatest!"},
+    {"type": "listen_tap", "prompt": "Which is the smallest? Fifteen, eight or sixteen?", "options": ["numeral_15", "numeral_8", "numeral_16"], "answer": "numeral_8", "praise": "Eight is the smallest."},
+    {"type": "what_next", "prompt": "Greatest to smallest. Seventeen, thirteen, ten, and then?", "sequence": ["17", "13", "10"], "options": ["5", "12", "16"], "answer": "5", "praise": "Five! Going down."},
+    {"type": "listen_tap", "prompt": "Which number is between twelve and fourteen?", "options": ["numeral_11", "numeral_13", "numeral_15"], "answer": "numeral_13", "praise": "Thirteen!"},
+    {"type": "say_it", "prompt": "Which is greater, sixteen or thirteen? Say it.", "accept": ["sixteen", "16", "sixteen is greater"], "image": "cards_16_13"},
+    {"type": "listen_tap", "prompt": "Which row goes from smallest to greatest?", "options": ["row_2_7_12_17", "row_12_2_17_7"], "answer": "row_2_7_12_17", "praise": "Two, seven, twelve, seventeen. In order!"}
+  ],
+  "hints": ["Find the smallest first. Put it on the left.", "Teen numbers are bigger than numbers under ten."],
+  "beat_the_tutor": {
+    "setup": "My turn! Smallest to greatest. Fifteen, nine, twelve.",
+    "tutor_try": "Fifteen, twelve, nine. Done!",
+    "image": "tutor_order_backwards",
+    "answer": "no",
+    "win_line": "You caught me! That is greatest to smallest. Nine, twelve, fifteen.",
+    "gentle_line": "Let's start with the smallest. Nine, then twelve, then fifteen!"
+  },
+  "parent_line": "Can put numbers to 17 in order, going up and going down."
+}

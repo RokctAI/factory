@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w02_write_capital_letters",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [2, 3],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Handwriting",
+    "subtopic": "Begins to form frequently used upper case letters and numerals"
+  },
+  "skill": "writing.capital_letters.set1",
+  "prereq_skills": ["writing.letter.h_o_g_n", "writing.capital_full_stop"],
+  "images": ["small_and_capital_s", "letter_capital_m", "letter_capital_n", "letter_capital_w", "letter_capital_b", "letter_capital_d", "letter_capital_p", "tutor_wrote_small_t"],
+  "show": {
+    "line": "Capital letters are big and tall. Small s, capital S. Same sound, bigger shape. Let's write them!",
+    "image": "small_and_capital_s"
+  },
+  "rounds": [
+    {"type": "trace", "prompt": "Trace the capital S. Curl one way, then the other, big and tall.", "glyph": "S"},
+    {"type": "trace", "prompt": "Trace the capital T. A tall line down, then a line across the top.", "glyph": "T"},
+    {"type": "listen_tap", "prompt": "Which is the capital that matches small m?", "options": ["letter_capital_m", "letter_capital_n", "letter_capital_w"], "answer": "letter_capital_m", "praise": "Yes! Capital M has two mountains."},
+    {"type": "trace", "prompt": "Trace the capital A. Up to the point, down, then a line across.", "glyph": "A"},
+    {"type": "trace", "prompt": "Trace the capital I. One tall line down.", "glyph": "I"},
+    {"type": "listen_tap", "prompt": "Which is the capital that matches small d?", "options": ["letter_capital_b", "letter_capital_d", "letter_capital_p"], "answer": "letter_capital_d", "praise": "Capital D. A line and a big curve."},
+    {"type": "trace", "prompt": "Trace the capital M. Down, up to the point, down to the point, up.", "glyph": "M"}
+  ],
+  "hints": ["Capitals touch the top line. Start at the top.", "Say the sound as you trace it."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write the capital T.",
+    "tutor_try": "Look, a capital T!",
+    "image": "tutor_wrote_small_t",
+    "answer": "no",
+    "win_line": "You caught me! That is a small t. A capital T is tall with the line on top.",
+    "gentle_line": "Let's make it tall. Line down, line across the top. Capital T!"
+  },
+  "parent_line": "Can trace the capital letters S, T, A, I and M."
+}

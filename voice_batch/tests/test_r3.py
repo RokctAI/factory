@@ -32,6 +32,10 @@ EN = "english_home_language."
 GOOD = {"kind": "r3", "voice": "voice_x", "ref_path": "lms/team/voice_refs/voice_x_ref.wav",
         "ref_sha256": "0" * 64, "agent_branch": "rokct/r3-test"}
 NO_RESP = {"by_key": {}, "by_text": {}}
+# Grade 1 digraph and blend tokens that are respelled as one sound (sh, ch, th, bl-ack, sp-ot).
+DIGRAPHS = {"sh", "ch", "th", "bl", "fl", "sl", "cl", "pl", "gl", "br", "fr", "dr", "tr", "gr", "cr", "pr",
+            "sp", "st", "sn", "sm", "sw", "sk", "ng", "ck", "nk"}
+LETTER_TOKEN = r"(?<!['’])\b([b-hj-zB-HJ-Z]|i|sh|ch|th|bl|fl|sl|cl|pl|gl|br|fr|dr|tr|gr|cr|pr|sp|st|sn|sm|sw|sk)\b(?!['’])"
 
 
 def load(d):
@@ -186,7 +190,7 @@ class Respellings(unittest.TestCase):
             self.assertEqual(len(a), len(b), k)
             for x, y in zip(a, b):
                 if x != y:
-                    self.assertTrue(len(x) == 1 or x == "vvv", (k, x, y))
+                    self.assertTrue(len(x) == 1 or x == "vvv" or x in DIGRAPHS, (k, x, y))
 
     def test_no_letter_names_left(self):
         """A respelled line never keeps a bare letter (bar the article a and
@@ -197,7 +201,7 @@ class Respellings(unittest.TestCase):
 
     def test_every_phonics_line_is_covered(self):
         for k, it in self.plain.items():
-            if k.startswith(EN) and re.search(r"(?<!['’])\b([b-hj-zB-HJ-Z]|i)\b(?!['’])", it["text"]):
+            if k.startswith(EN) and re.search(LETTER_TOKEN, it["text"]):
                 self.assertIn(k, self.resp["by_key"], k)
 
     def test_display_text_unchanged_render_and_asr_use_tts(self):

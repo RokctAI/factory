@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term4.w05_ordinal_first_to_tenth",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Numbers to 20",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 20",
+    "subtopic": "Use ordinal numbers to show order, place and position: first, second, third ... tenth, last"
+  },
+  "skill": "number.ordinal.position_words",
+  "prereq_skills": ["number.ordinal.1st_10th"],
+  "images": ["queue_ten_people", "person_third", "person_fourth", "person_fifth", "person_first", "person_tenth", "race_red_second", "card_tuesday", "card_wednesday", "card_thursday", "step_eighth", "step_ninth", "step_tenth", "tutor_points_last_in_queue"],
+  "show": {
+    "line": "A queue at the shop! Who is first? Who is last? Who is third from the front?",
+    "image": "queue_ten_people"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the person who is fourth in the queue.", "options": ["person_third", "person_fourth", "person_fifth"], "answer": "person_fourth", "praise": "Fourth! One, two, three, four."},
+    {"type": "listen_tap", "prompt": "Who is last in the queue of ten?", "options": ["person_first", "person_tenth", "person_fifth"], "answer": "person_tenth", "praise": "The tenth person is last."},
+    {"type": "say_it", "prompt": "The red car came in after the first car. Which place? Say it.", "accept": ["second", "2nd", "sekond", "two"], "image": "race_red_second"},
+    {"type": "listen_tap", "prompt": "Tap the day that comes third in the week.", "options": ["card_tuesday", "card_wednesday", "card_thursday"], "answer": "card_wednesday", "praise": "Monday, Tuesday, Wednesday. Third!"},
+    {"type": "what_next", "prompt": "Sixth, seventh, eighth, and then?", "sequence": ["sixth", "seventh", "eighth"], "options": ["ninth", "tenth", "fifth"], "answer": "ninth", "praise": "Ninth!"},
+    {"type": "listen_tap", "prompt": "Which step is the ninth step?", "options": ["step_eighth", "step_ninth", "step_tenth"], "answer": "step_ninth", "praise": "Ninth! One before the tenth."}
+  ],
+  "hints": ["Count from the front. First, second, third.", "Last means at the very end."],
+  "beat_the_tutor": {
+    "setup": "My turn! Who is second in the queue?",
+    "tutor_try": "The one at the very back is second!",
+    "image": "tutor_points_last_in_queue",
+    "answer": "no",
+    "win_line": "You caught me! The back is last. Second is right behind first.",
+    "gentle_line": "Let's count from the front. First, second. There!"
+  },
+  "parent_line": "Can use first to tenth and last to say where something is in a line."
+}

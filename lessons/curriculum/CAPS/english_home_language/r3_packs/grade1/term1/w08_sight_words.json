@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w08_sight_words",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [8, 9],
+  "theme": "Reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Reading",
+    "subtopic": "Group guided: reads aloud from own book with the group; builds sight vocabulary"
+  },
+  "skill": "reading.sight_words.set1",
+  "prereq_skills": ["phonics.blend.cvc_at_it"],
+  "images": ["word_cards_i_the_is", "word_is", "word_the", "word_in", "word_it", "word_on", "tutor_card_is"],
+  "show": {
+    "line": "Some words we just know by sight. I. The. Is. Let's read them fast!",
+    "image": "word_cards_i_the_is"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "the", "accept": ["the", "thee", "da", "duh"]},
+    {"type": "listen_tap", "prompt": "Tap the word that says is.", "options": ["word_is", "word_the", "word_in"], "answer": "word_is", "praise": "That says is!"},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "in", "accept": ["in", "een"]},
+    {"type": "listen_tap", "prompt": "Tap the word that says the.", "options": ["word_is", "word_the", "word_it"], "answer": "word_the", "praise": "That says the!"},
+    {"type": "read_to_me", "prompt": "Now read the whole sentence to me.", "text": "I sit on the mat.", "accept": ["i sit on the mat", "i sit on the mat.", "sit on the mat", "i sit on a mat"]},
+    {"type": "listen_tap", "prompt": "Which word is on?", "options": ["word_on", "word_in", "word_it"], "answer": "word_on", "praise": "That says on!"}
+  ],
+  "hints": ["Look at the whole word. You have seen it before!", "Point to each word as you read."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this card.",
+    "tutor_try": "This card says the!",
+    "image": "tutor_card_is",
+    "answer": "is",
+    "win_line": "You caught me! That card says is, not the.",
+    "gentle_line": "Let's look together. i, s. That card says is!"
+  },
+  "parent_line": "Can read the sight words the, is, in, on and I."
+}

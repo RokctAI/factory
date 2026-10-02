@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w01_add_subtract_to_six",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 10",
+    "subtopic": "Addition and subtraction up to 6 (weeks 1-2), 7 (weeks 3-4), 8 (weeks 5-6), 9 (weeks 7-8) and 10 (weeks 9-10) using +, -, =, □"
+  },
+  "skill": "number.add_subtract.to_6_symbols",
+  "prereq_skills": ["number.bonds.to_5"],
+  "images": ["number_sentence_four_plus_two", "cars_three_three", "numeral_4", "numeral_5", "numeral_6", "counters_six_take_four", "sentence_two_plus_four", "sentence_two_minus_one", "sentence_four_plus_four", "numeral_2", "numeral_3", "numeral_1", "tutor_six_minus_one_wrong"],
+  "show": {
+    "line": "Four plus two equals six. Six take away two equals four. Plus adds, minus takes away!",
+    "image": "number_sentence_four_plus_two"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Three red cars and three blue cars. How many altogether?", "image": "cars_three_three", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six! Three plus three equals six."},
+    {"type": "listen_tap", "prompt": "Five plus one. Tap the answer.", "options": ["numeral_4", "numeral_5", "numeral_6"], "answer": "numeral_6", "praise": "Five plus one equals six."},
+    {"type": "say_it", "prompt": "Six minus four. How many are left? Say the number.", "accept": ["two", "2", "too", "tu"], "image": "counters_six_take_four"},
+    {"type": "listen_tap", "prompt": "Which number sentence shows the picture? Two plus four.", "options": ["sentence_two_plus_four", "sentence_two_minus_one", "sentence_four_plus_four"], "answer": "sentence_two_plus_four", "praise": "Yes! Two plus four equals six."},
+    {"type": "listen_tap", "prompt": "Six minus three. Tap the answer.", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Six minus three equals three."},
+    {"type": "listen_tap", "prompt": "Four plus the box equals six. What goes in the box?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two! Four plus two equals six."}
+  ],
+  "hints": ["Plus means count on. Minus means count back.", "Use counters or your fingers. Count them all."],
+  "beat_the_tutor": {
+    "setup": "My turn! Six minus one.",
+    "tutor_try": "Six minus one equals seven!",
+    "image": "tutor_six_minus_one_wrong",
+    "answer": "five",
+    "win_line": "You caught me! Minus means take away. Six minus one equals five.",
+    "gentle_line": "Let's count back together. Six, and one less is five!"
+  },
+  "parent_line": "Can add and subtract to 6 and read plus, minus and equals."
+}

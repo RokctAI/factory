@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w01_skip_counting",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Counting to 50",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Counting",
+    "subtopic": "Count forwards in 10s, 5s and 2s from any multiple of 10, 5 or 2 within the same ranges; see the relationship with addition (more than, ascending order)"
+  },
+  "skill": "number.skip_count.2_5_10",
+  "prereq_skills": ["number.count.to_20"],
+  "images": ["socks_in_pairs", "socks_five_pairs", "hands_three", "tutor_skip_count_wrong"],
+  "show": {
+    "line": "Count in twos! Two, four, six, eight, ten. Count in tens! Ten, twenty, thirty. Fast counting!",
+    "image": "socks_in_pairs"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count in twos. Two, four, six, and then?", "sequence": ["2", "4", "6"], "options": ["7", "8", "10"], "answer": "8", "praise": "Eight! Two, four, six, eight."},
+    {"type": "say_it", "prompt": "Count in tens with me. Ten, twenty, thirty. What comes next?", "accept": ["forty", "40", "fourty", "forty fifty"]},
+    {"type": "count_tap", "prompt": "Count the socks in twos. How many socks?", "image": "socks_five_pairs", "count": "10", "options": ["8", "10", "12"], "answer": "10", "praise": "Ten socks! Two, four, six, eight, ten."},
+    {"type": "what_next", "prompt": "Count in fives. Five, ten, fifteen, and then?", "sequence": ["5", "10", "15"], "options": ["16", "20", "25"], "answer": "20", "praise": "Twenty!"},
+    {"type": "what_next", "prompt": "Count in tens. Ten, twenty, thirty, forty, and then?", "sequence": ["10", "20", "30", "40"], "options": ["50", "41", "60"], "answer": "50", "praise": "Fifty!"},
+    {"type": "count_tap", "prompt": "Each hand has five fingers. Count in fives. How many fingers?", "image": "hands_three", "count": "15", "options": ["10", "15", "20"], "answer": "15", "praise": "Fifteen! Five, ten, fifteen."}
+  ],
+  "hints": ["Twos: say every second number. Two, four, six.", "Tens end in zero. Ten, twenty, thirty, forty."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count in twos.",
+    "tutor_try": "Two, four, five, six!",
+    "image": "tutor_skip_count_wrong",
+    "answer": "no",
+    "win_line": "You caught me! Five is not in the twos. Two, four, six, eight.",
+    "gentle_line": "Let's count together. Two, four, six, eight, ten!"
+  },
+  "parent_line": "Can count in twos, fives and tens up to 50."
+}

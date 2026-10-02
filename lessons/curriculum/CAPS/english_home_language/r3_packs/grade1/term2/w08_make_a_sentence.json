@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w08_make_a_sentence",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [8, 9],
+  "theme": "Writing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Writes sentences using words containing phonic sounds already taught"
+  },
+  "skill": "writing.sentence.cvc_words",
+  "prereq_skills": ["reading.sentence.cvc_set1"],
+  "images": ["hen_running", "strip_the_bug_is_red", "strip_the_cup_is_hot", "strip_the_dog_can_dig", "word_hot", "word_hat", "word_hen", "strip_spaced", "strip_squashed", "strip_i_can_hop", "strip_hop_can_i", "tutor_wrote_no_spaces"],
+  "show": {
+    "line": "A sentence tells us something. The hen can run. Words in order, with a space between them!",
+    "image": "hen_running"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which sentence matches the picture?", "options": ["strip_the_bug_is_red", "strip_the_cup_is_hot", "strip_the_dog_can_dig"], "answer": "strip_the_bug_is_red", "praise": "The bug is red!"},
+    {"type": "listen_tap", "prompt": "Which word finishes the sentence? The sun is", "options": ["word_hot", "word_hat", "word_hen"], "answer": "word_hot", "praise": "The sun is hot!"},
+    {"type": "read_to_me", "prompt": "Read your sentence to me.", "text": "The sun is hot.", "accept": ["the sun is hot", "the sun is hot.", "sun is hot"]},
+    {"type": "listen_tap", "prompt": "Which sentence has spaces between the words?", "options": ["strip_spaced", "strip_squashed"], "answer": "strip_spaced", "praise": "Spaces help us read!"},
+    {"type": "listen_tap", "prompt": "Put the words in order. Which one is a proper sentence?", "options": ["strip_i_can_hop", "strip_hop_can_i"], "answer": "strip_i_can_hop", "praise": "I can hop. That makes sense!"},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "I can hop and run.", "accept": ["i can hop and run", "i can hop and run.", "i can hop run"]}
+  ],
+  "hints": ["Say the sentence first. Then find each word.", "Leave a finger space between words."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write a sentence.",
+    "tutor_try": "Thebugisred. Done!",
+    "image": "tutor_wrote_no_spaces",
+    "answer": "no",
+    "win_line": "You caught me! I forgot the spaces. The bug is red.",
+    "gentle_line": "Let's add finger spaces. The, bug, is, red. Much better!"
+  },
+  "parent_line": "Can read and build a short sentence from words with known sounds."
+}

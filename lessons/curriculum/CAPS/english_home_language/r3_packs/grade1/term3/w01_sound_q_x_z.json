@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w01_sound_q_x_z",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [1],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Revises single letter sounds; distinguishes beginning and end sounds"
+  },
+  "skill": "phonics.letter_sound.q_x_z",
+  "prereq_skills": ["phonics.letter_sound.j_v_w_y"],
+  "images": ["queen_zip_fox", "quilt", "zip", "fox", "zebra", "queen", "box", "six", "letter_q", "letter_g", "letter_p", "tutor_holds_box"],
+  "show": {
+    "line": "The last sounds! q, q, queen. z, z, zip. x is at the end. Fox. Box.",
+    "image": "queen_zip_fox"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with q, as in queen?", "options": ["quilt", "zip", "fox"], "answer": "quilt", "praise": "q, q, quilt."},
+    {"type": "listen_tap", "prompt": "Which one starts with z, as in zip?", "options": ["zebra", "queen", "box"], "answer": "zebra", "praise": "z, z, zebra."},
+    {"type": "say_it", "prompt": "Fox. What is the last sound? Say it.", "accept": ["x", "ks", "ex", "eks"], "image": "fox"},
+    {"type": "listen_tap", "prompt": "Which one ends with x, as in fox?", "options": ["six", "zip", "queen"], "answer": "six", "praise": "Six ends with x."},
+    {"type": "say_it", "prompt": "Say the sound with me. z, as in zip!", "accept": ["z", "zzz", "ze", "za"]},
+    {"type": "listen_tap", "prompt": "Tap the letter that says q.", "options": ["letter_q", "letter_g", "letter_p"], "answer": "letter_q", "praise": "Yes! q has a tail that flicks out."},
+    {"type": "match_sort", "prompt": "Starts with q, starts with z, or ends with x? Sort the pictures.", "groups": ["q", "z", "x"], "items": [{"image": "queen", "group": "q"}, {"image": "quilt", "group": "q"}, {"image": "zip", "group": "z"}, {"image": "zebra", "group": "z"}, {"image": "fox", "group": "x"}, {"image": "box", "group": "x"}]}
+  ],
+  "hints": ["q always has u with it. Queen, quilt.", "x is a sound at the end. Fox, box, six."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the last sound in box.",
+    "tutor_try": "Box ends with s!",
+    "image": "tutor_holds_box",
+    "answer": "x",
+    "win_line": "You caught me! Box ends with x. Bo, x.",
+    "gentle_line": "Let's say it slowly. Boxxx. The last sound is x!"
+  },
+  "parent_line": "Can hear and recognise the sounds q, z and x."
+}

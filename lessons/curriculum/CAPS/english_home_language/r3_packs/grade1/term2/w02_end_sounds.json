@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w02_end_sounds",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "Sounds and words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Distinguishes aurally between beginning and end sounds of words"
+  },
+  "skill": "phonics.end_sound.cvc",
+  "prereq_skills": ["phonics.segment.sounds"],
+  "images": ["dog", "cat", "pin", "hat", "frog_hopping", "cap", "hen", "mat", "net", "pig", "tutor_holds_pig"],
+  "show": {
+    "line": "Words have a first sound and a last sound. Dog starts with d, ends with g. Listen to the end!",
+    "image": "dog"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Cat. What is the last sound? Say it.", "accept": ["t", "tuh", "te", "ta"], "image": "cat"},
+    {"type": "listen_tap", "prompt": "Which one ends with n, as in sun?", "options": ["pin", "hat", "dog"], "answer": "pin", "praise": "Pin ends with n."},
+    {"type": "say_it", "prompt": "Hop. What is the first sound? Say it.", "accept": ["h", "huh", "ha", "he"], "image": "frog_hopping"},
+    {"type": "listen_tap", "prompt": "Which one ends with p, as in hop?", "options": ["cap", "hen", "mat"], "answer": "cap", "praise": "Cap ends with p."},
+    {"type": "listen_tap", "prompt": "Which one ends with the same sound as goat?", "options": ["hat", "dog", "pin"], "answer": "hat", "praise": "Goat, hat. Both end with t."},
+    {"type": "match_sort", "prompt": "Does the word end with t or g? Sort the pictures.", "groups": ["t", "g"], "items": [{"image": "cat", "group": "t"}, {"image": "hat", "group": "t"}, {"image": "net", "group": "t"}, {"image": "dog", "group": "g"}, {"image": "pig", "group": "g"}]}
+  ],
+  "hints": ["Say the word slowly. The last sound comes at the very end.", "Stretch it out. Caaat. Hear the t?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the last sound in pig.",
+    "tutor_try": "Pig ends with p!",
+    "image": "tutor_holds_pig",
+    "answer": "g",
+    "win_line": "You caught me! Pig starts with p. It ends with g.",
+    "gentle_line": "Let's say it slowly. Piiig. The last sound is g!"
+  },
+  "parent_line": "Can hear the first and last sound of a short word."
+}

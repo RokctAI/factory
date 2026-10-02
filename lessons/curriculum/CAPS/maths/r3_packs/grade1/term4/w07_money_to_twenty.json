@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term4.w07_money_to_twenty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Money",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Solve problems in context (at least 20)",
+    "subtopic": "Recognise South African currency; solve money problems involving totals and change"
+  },
+  "skill": "money.totals_change.to_20",
+  "prereq_skills": ["money.totals_change.to_10", "number.add_subtract.to_16"],
+  "images": ["notes_r10_r20", "note_r10", "note_r20", "note_r50", "money_r10_r5_r2", "numeral_14", "numeral_16", "numeral_18", "numeral_3", "numeral_5", "numeral_10", "coins_r5_r5", "notes_two_r10", "coin_r5", "tutor_change_twenty_wrong"],
+  "show": {
+    "line": "A twenty rand note! Two ten rand notes make twenty. Let's shop with bigger money.",
+    "image": "notes_r10_r20"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the twenty rand note.", "options": ["note_r10", "note_r20", "note_r50"], "answer": "note_r20", "praise": "Twenty rand!"},
+    {"type": "count_tap", "prompt": "Count the money. Ten rand, five rand, two rand. How much?", "image": "money_r10_r5_r2", "count": "17", "options": ["15", "17", "18"], "answer": "17", "praise": "Seventeen rand!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A book costs twelve rand. A pen costs four rand. How much altogether?", "options": ["numeral_14", "numeral_16", "numeral_18"], "answer": "numeral_16", "praise": "Sixteen rand!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A ball costs fifteen rand. You pay with twenty rand. How much change?", "options": ["numeral_3", "numeral_5", "numeral_10"], "answer": "numeral_5", "praise": "Five rand change!"},
+    {"type": "say_it", "prompt": "Which coins make ten rand? Say it.", "accept": ["five and five", "two fives", "five rand and five rand", "five plus five"], "image": "coins_r5_r5"},
+    {"type": "listen_tap", "prompt": "Which is worth more, two ten rand notes or one five rand coin?", "options": ["notes_two_r10", "coin_r5"], "answer": "notes_two_r10", "praise": "Twenty rand is more than five."}
+  ],
+  "hints": ["Add the big notes first, then the coins.", "Change is what you paid minus the price."],
+  "beat_the_tutor": {
+    "setup": "My turn! A kite costs eleven rand. I pay twenty.",
+    "tutor_try": "My change is eleven rand!",
+    "image": "tutor_change_twenty_wrong",
+    "answer": "nine",
+    "win_line": "You caught me! Twenty minus eleven is nine rand change.",
+    "gentle_line": "Let's count on from eleven to twenty. Nine rand change!"
+  },
+  "parent_line": "Can add money and work out change with amounts up to 20 rand."
+}

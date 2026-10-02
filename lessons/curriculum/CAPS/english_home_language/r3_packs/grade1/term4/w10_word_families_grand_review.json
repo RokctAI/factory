@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w10_word_families_grand_review",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [10],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Builds words using sounds learnt; groups words into sound families"
+  },
+  "skill": "phonics.word_family.review_t4",
+  "prereq_skills": ["phonics.blend_digraph.review", "phonics.plurals.s_es"],
+  "images": ["word_family_tree", "ship", "drip", "crash_car", "splash", "jump_child", "bump", "jam", "letter_tiles_sh_i_p", "tutor_sorts_splash_wrong"],
+  "show": {
+    "line": "You know so many sounds now! Let's build big words and sort them. Ship, chip, drip. The ip family!",
+    "image": "word_family_tree"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Which family? ip, ash or ump? Sort the words.", "groups": ["ip", "ash", "ump"], "items": [{"image": "ship", "group": "ip"}, {"image": "drip", "group": "ip"}, {"image": "crash_car", "group": "ash"}, {"image": "splash", "group": "ash"}, {"image": "jump_child", "group": "ump"}, {"image": "bump", "group": "ump"}]},
+    {"type": "blend", "prompt": "Listen. j, u, mp. What word is it?", "sounds": ["j", "u", "mp"], "options": ["jump_child", "bump", "jam"], "answer": "jump_child", "praise": "Jump! j, u, mp."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "splash", "accept": ["splash", "splosh", "slash"]},
+    {"type": "say_it", "prompt": "Ship. Change sh to dr. What word do you make?", "accept": ["drip", "drep", "trip"], "image": "letter_tiles_sh_i_p"},
+    {"type": "listen_tap", "prompt": "Which word does not belong in the ump family?", "options": ["bump", "jump_child", "ship"], "answer": "ship", "praise": "Ship is in the ip family."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "Six frogs jump and splash in the pond.", "accept": ["six frogs jump and splash in the pond", "six frogs jump and splash in the pond.", "six frogs jump and splash in a pond"]}
+  ],
+  "hints": ["Listen to the end of the word. That is the family.", "Sound it out part by part. First the start, then the rest."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will sort splash.",
+    "tutor_try": "Splash goes in the ump family!",
+    "image": "tutor_sorts_splash_wrong",
+    "answer": "no",
+    "win_line": "You caught me! Splash ends in ash. It goes with crash.",
+    "gentle_line": "Let's listen to the end. Splash, crash. The ash family!"
+  },
+  "parent_line": "Can build and read longer words and sort them into sound families."
+}

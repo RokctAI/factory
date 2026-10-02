@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term4.w01_sort_and_show",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Sorting",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Data handling: Collect, sort and represent objects",
+    "subtopic": "Collect and sort objects, discuss sorted collections and represent sorted objects"
+  },
+  "skill": "data.sort_represent",
+  "prereq_skills": ["data.sort.objects", "data.pictograph.read"],
+  "images": ["leaves_sorted_rows", "leaf_green", "leaf_green_small", "leaf_yellow", "leaf_brown", "leaf_brown_big", "toy_car", "toy_bike", "toy_bus", "teddy", "ball", "toys_sorted_rows", "toys_pile", "tutor_brown_in_green"],
+  "show": {
+    "line": "We collected leaves! Sort them by colour, then draw a row for each colour. Which row is longest?",
+    "image": "leaves_sorted_rows"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Sort the leaves by colour.", "groups": ["green", "yellow", "brown"], "items": [{"image": "leaf_green", "group": "green"}, {"image": "leaf_green_small", "group": "green"}, {"image": "leaf_yellow", "group": "yellow"}, {"image": "leaf_brown", "group": "brown"}, {"image": "leaf_brown_big", "group": "brown"}]},
+    {"type": "count_tap", "prompt": "Look at the rows. How many green leaves?", "image": "leaves_sorted_rows", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five green leaves."},
+    {"type": "listen_tap", "prompt": "Which colour has the fewest leaves?", "options": ["leaf_green", "leaf_yellow", "leaf_brown"], "answer": "leaf_yellow", "praise": "Yellow has the shortest row."},
+    {"type": "match_sort", "prompt": "Sort the toys. Has wheels, or no wheels?", "groups": ["wheels", "no_wheels"], "items": [{"image": "toy_car", "group": "wheels"}, {"image": "toy_bike", "group": "wheels"}, {"image": "toy_bus", "group": "wheels"}, {"image": "teddy", "group": "no_wheels"}, {"image": "ball", "group": "no_wheels"}]},
+    {"type": "say_it", "prompt": "Three toys have wheels, two do not. Which group is bigger? Say it.", "accept": ["wheels", "has wheels", "the wheels", "with wheels"], "image": "toys_sorted_rows"},
+    {"type": "listen_tap", "prompt": "Which picture shows the sorted toys as rows?", "options": ["toys_sorted_rows", "toys_pile"], "answer": "toys_sorted_rows", "praise": "Rows make it easy to count!"}
+  ],
+  "hints": ["Decide the rule first. Colour, size or shape.", "Put each group in a row. Then count the rows."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will sort by colour.",
+    "tutor_try": "Green, green, brown. All in the green row!",
+    "image": "tutor_brown_in_green",
+    "answer": "no",
+    "win_line": "You caught me! The brown leaf goes in the brown row.",
+    "gentle_line": "Let's look at the colour. Brown goes with brown!"
+  },
+  "parent_line": "Can sort objects, show the groups in rows and talk about them."
+}

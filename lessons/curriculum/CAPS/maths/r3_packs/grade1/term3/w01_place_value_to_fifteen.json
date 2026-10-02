@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w01_place_value_to_fifteen",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Tens and ones",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Place value to 15",
+    "subtopic": "Decompose 2-digit numbers into multiples of ten and ones (e.g. 11 is 10 and 1, 15 is 10 and 5)"
+  },
+  "skill": "number.place_value.to_15",
+  "prereq_skills": ["number.count.to_20"],
+  "images": ["ten_stick_and_three", "ten_stick_and_two", "numeral_1", "numeral_5", "numeral_15", "ten_stick_and_four", "ten_stick_and_one", "egg_box_ten_plus_five", "numeral_13", "numeral_31", "numeral_3", "tutor_place_value_wrong"],
+  "show": {
+    "line": "Thirteen is ten and three. One full ten-stick and three ones. Big numbers are tens and ones!",
+    "image": "ten_stick_and_three"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "One ten-stick and two ones. What number is it?", "image": "ten_stick_and_two", "count": "12", "options": ["11", "12", "13"], "answer": "12", "praise": "Twelve! Ten and two."},
+    {"type": "listen_tap", "prompt": "Fifteen is ten and how many ones?", "options": ["numeral_1", "numeral_5", "numeral_15"], "answer": "numeral_5", "praise": "Ten and five is fifteen."},
+    {"type": "say_it", "prompt": "Ten and four. What number is it? Say it.", "accept": ["fourteen", "14", "forteen"], "image": "ten_stick_and_four"},
+    {"type": "listen_tap", "prompt": "Which picture shows eleven?", "options": ["ten_stick_and_one", "ten_stick_and_two", "ten_stick_and_four"], "answer": "ten_stick_and_one", "praise": "Ten and one is eleven."},
+    {"type": "count_tap", "prompt": "Count the eggs. One box of ten and some more. How many?", "image": "egg_box_ten_plus_five", "count": "15", "options": ["14", "15", "16"], "answer": "15", "praise": "Fifteen! Ten and five."},
+    {"type": "listen_tap", "prompt": "Tap the number that is one ten and three ones.", "options": ["numeral_13", "numeral_31", "numeral_3"], "answer": "numeral_13", "praise": "Thirteen!"}
+  ],
+  "hints": ["The ten-stick is one ten. Count the ones left over.", "Teen numbers are ten and some more."],
+  "beat_the_tutor": {
+    "setup": "My turn! One ten and four ones.",
+    "tutor_try": "One ten and four ones. That is five!",
+    "image": "tutor_place_value_wrong",
+    "answer": "fourteen",
+    "win_line": "You caught me! Ten and four is fourteen, not five.",
+    "gentle_line": "Let's count on from ten. Eleven, twelve, thirteen, fourteen!"
+  },
+  "parent_line": "Can break numbers to 15 into one ten and some ones."
+}

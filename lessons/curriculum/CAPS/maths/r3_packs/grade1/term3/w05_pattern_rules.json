@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w05_pattern_rules",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Patterns",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Patterns, functions and algebra: Geometric patterns",
+    "subtopic": "Copy, extend and describe simple patterns; pack out objects"
+  },
+  "skill": "pattern.describe_rule",
+  "prereq_skills": ["pattern.shape_colour.extend"],
+  "images": ["buttons_big_small_pattern", "row_red_blue_yellow", "row_red_red_blue", "shapes_cc_s_cc_s", "row_abab_correct", "row_abab_mistake", "tutor_pattern_moon_wrong"],
+  "show": {
+    "line": "Every pattern has a rule. Big, small, big, small. The rule is big then small. Find the rule!",
+    "image": "buttons_big_small_pattern"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Star, star, moon, star, star, moon. What comes next?", "sequence": ["star", "star", "moon", "star", "star", "moon"], "options": ["star", "moon", "sun"], "answer": "star", "praise": "Star! Two stars, then a moon."},
+    {"type": "listen_tap", "prompt": "Which row follows the rule red, blue, yellow?", "options": ["row_red_blue_yellow", "row_red_red_blue"], "answer": "row_red_blue_yellow", "praise": "Red, blue, yellow, red, blue, yellow!"},
+    {"type": "what_next", "prompt": "Up, down, up, down. What comes next?", "sequence": ["up", "down", "up", "down"], "options": ["up", "down", "across"], "answer": "up", "praise": "Up!"},
+    {"type": "say_it", "prompt": "Circle, circle, square. Say what comes next.", "accept": ["circle", "a circle", "sirkle", "circle circle"], "image": "shapes_cc_s_cc_s"},
+    {"type": "listen_tap", "prompt": "Which pattern has a mistake in it?", "options": ["row_abab_correct", "row_abab_mistake"], "answer": "row_abab_mistake", "praise": "You found the mistake!"},
+    {"type": "what_next", "prompt": "One leaf, two leaves, one leaf, two leaves. What comes next?", "sequence": ["1 leaf", "2 leaves", "1 leaf", "2 leaves"], "options": ["1 leaf", "2 leaves", "3 leaves"], "answer": "1 leaf", "praise": "One leaf!"}
+  ],
+  "hints": ["Say the pattern aloud. Find where it starts again.", "The rule is the part that repeats."],
+  "beat_the_tutor": {
+    "setup": "My turn! Star, star, moon. Next is?",
+    "tutor_try": "Next is moon!",
+    "image": "tutor_pattern_moon_wrong",
+    "answer": "star",
+    "win_line": "You caught me! The rule is star, star, moon. Next is star.",
+    "gentle_line": "Let's say the rule. Star, star, moon, star!"
+  },
+  "parent_line": "Can continue a pattern and say its rule."
+}

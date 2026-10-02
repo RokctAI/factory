@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w01_digraphs_start_review",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [1],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises consonant digraphs (sh, ch, th) at the beginning of a word"
+  },
+  "skill": "phonics.digraph.start_review",
+  "prereq_skills": ["phonics.digraph.ch_th"],
+  "images": ["ship_chip_thin", "ship", "chip", "shop", "chin", "thin_man", "chair", "shell", "thumb", "tutor_tiles_shop"],
+  "show": {
+    "line": "Remember our two-letter sounds? sh, sh, ship. ch, ch, chip. th, th, thin. Let's find them again!",
+    "image": "ship_chip_thin"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. sh, i, p. What word is it?", "sounds": ["sh", "i", "p"], "options": ["ship", "chip", "shop"], "answer": "ship", "praise": "Ship! sh, i, p."},
+    {"type": "blend", "prompt": "Listen. ch, i, p. Tap the word.", "sounds": ["ch", "i", "p"], "options": ["chip", "ship", "chin"], "answer": "chip", "praise": "Chip! ch, i, p."},
+    {"type": "say_it", "prompt": "Thin. What sound does thin start with? Say it.", "accept": ["th", "thh", "thuh", "the"], "image": "thin_man"},
+    {"type": "listen_tap", "prompt": "Which word starts with ch?", "options": ["chair", "shell", "thumb"], "answer": "chair", "praise": "ch, ch, chair."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "The ship has a shop.", "accept": ["the ship has a shop", "the ship has a shop.", "ship has a shop"]},
+    {"type": "match_sort", "prompt": "Does it start with sh, ch or th? Sort the pictures.", "groups": ["sh", "ch", "th"], "items": [{"image": "ship", "group": "sh"}, {"image": "shell", "group": "sh"}, {"image": "chip", "group": "ch"}, {"image": "chair", "group": "ch"}, {"image": "thumb", "group": "th"}, {"image": "thin_man", "group": "th"}]}
+  ],
+  "hints": ["Two letters, one sound. Listen to the very start.", "sh is quiet. ch is a sneeze. th is tongue between teeth."],
+  "beat_the_tutor": {
+    "setup": "My turn! sh, o, p.",
+    "tutor_try": "sh, o, p. Chop!",
+    "image": "tutor_tiles_shop",
+    "answer": "shop",
+    "win_line": "You caught me! sh, o, p is shop. Chop starts with ch.",
+    "gentle_line": "Let's blend together. Shh, o, p. Shop!"
+  },
+  "parent_line": "Can hear and read sh, ch and th at the start of words."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term4.w08_blends_and_digraphs_review",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [8, 9],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Revises consonant digraphs; uses consonant blends (sp-o-t, fr-o-g)"
+  },
+  "skill": "phonics.blend_digraph.review",
+  "prereq_skills": ["phonics.blend.sp_st_sn", "phonics.digraph.end"],
+  "images": ["sound_wall", "fresh_fruit", "fish_end_sh", "frog", "chop", "shop", "stop", "tile_spin", "tile_shin", "tile_stin", "drink_glass", "spoon", "star", "ship", "chair", "thumb", "tutor_tiles_stop"],
+  "show": {
+    "line": "All our sounds together! Blends like fr and sp. Digraphs like sh and ch. Read anything!",
+    "image": "sound_wall"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. fr, e, sh. What word is it?", "sounds": ["fr", "e", "sh"], "options": ["fresh_fruit", "fish_end_sh", "frog"], "answer": "fresh_fruit", "praise": "Fresh! fr, e, sh."},
+    {"type": "blend", "prompt": "Listen. ch, o, p. Tap the word.", "sounds": ["ch", "o", "p"], "options": ["chop", "shop", "stop"], "answer": "chop", "praise": "Chop! ch, o, p."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "crash", "accept": ["crash", "krash", "cash"]},
+    {"type": "listen_tap", "prompt": "Which word tile says spin?", "options": ["tile_spin", "tile_shin", "tile_stin"], "answer": "tile_spin", "praise": "sp, i, n. Spin!"},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "The frog can spot a fresh snack.", "accept": ["the frog can spot a fresh snack", "the frog can spot a fresh snack.", "frog can spot a fresh snack"]},
+    {"type": "say_it", "prompt": "Drink. Say the first two sounds together.", "accept": ["dr", "druh", "dri", "drink"], "image": "drink_glass"},
+    {"type": "match_sort", "prompt": "Starts with a blend, or a digraph? Sort the pictures.", "groups": ["blend", "digraph"], "items": [{"image": "frog", "group": "blend"}, {"image": "spoon", "group": "blend"}, {"image": "star", "group": "blend"}, {"image": "ship", "group": "digraph"}, {"image": "chair", "group": "digraph"}, {"image": "thumb", "group": "digraph"}]}
+  ],
+  "hints": ["Blends keep both sounds. fr, sp, st.", "Digraphs make one new sound. sh, ch, th."],
+  "beat_the_tutor": {
+    "setup": "My turn! st, o, p.",
+    "tutor_try": "st, o, p. Shop!",
+    "image": "tutor_tiles_stop",
+    "answer": "stop",
+    "win_line": "You caught me! st, o, p is stop. Shop starts with sh.",
+    "gentle_line": "Let's blend together. Stt, o, p. Stop!"
+  },
+  "parent_line": "Can read words with blends and digraphs in sentences."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w07_money_change",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Money",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Solve problems in context",
+    "subtopic": "Recognise South African currency; solve money problems involving totals and change"
+  },
+  "skill": "money.totals_change.to_10",
+  "prereq_skills": ["money.recognise.rand_coins", "number.add_subtract.to_10"],
+  "images": ["tuck_shop", "coins_r2_r2_r1", "numeral_7", "numeral_8", "numeral_9", "numeral_3", "numeral_4", "numeral_6", "coins_r5_r5", "coins_r5_r2", "coins_r2_r2", "sucker_r2", "ball_r8", "kite_r6", "tutor_change_wrong"],
+  "show": {
+    "line": "At the tuck shop! A bun costs four rand. Pay with five rand. One rand change!",
+    "image": "tuck_shop"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the coins. Two rand, two rand, one rand. How much?", "image": "coins_r2_r2_r1", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five rand!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "An apple costs three rand. Juice costs five rand. How much altogether?", "options": ["numeral_7", "numeral_8", "numeral_9"], "answer": "numeral_8", "praise": "Eight rand! Three plus five."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A pencil costs six rand. You pay with ten rand. How much change?", "options": ["numeral_3", "numeral_4", "numeral_6"], "answer": "numeral_4", "praise": "Four rand change! Ten minus six."},
+    {"type": "listen_tap", "prompt": "Which coins make ten rand?", "options": ["coins_r5_r5", "coins_r5_r2", "coins_r2_r2"], "answer": "coins_r5_r5", "praise": "Five and five make ten rand."},
+    {"type": "say_it", "prompt": "A sucker costs two rand. You pay five rand. How much change? Say it.", "accept": ["three rand", "three", "3", "three rands", "r3"], "image": "sucker_r2"},
+    {"type": "listen_tap", "prompt": "Which costs more, the ball or the kite?", "options": ["ball_r8", "kite_r6"], "answer": "ball_r8", "praise": "Eight rand is more than six rand."}
+  ],
+  "hints": ["Altogether means add the prices.", "Change is what you get back. Take the price away from what you paid."],
+  "beat_the_tutor": {
+    "setup": "My turn! A bun is four rand. I pay with five rand.",
+    "tutor_try": "My change is four rand!",
+    "image": "tutor_change_wrong",
+    "answer": "one",
+    "win_line": "You caught me! Five minus four is one rand change.",
+    "gentle_line": "Let's count on from four. Five! One rand change."
+  },
+  "parent_line": "Can add prices and work out change with amounts up to 10 rand."
+}

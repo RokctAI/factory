@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w02_three_letter_words",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [2, 3],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Builds 3-letter words using single letters"
+  },
+  "skill": "phonics.build.cvc_all_vowels",
+  "prereq_skills": ["phonics.word_family.review_t2", "phonics.letter_sound.j_v_w_y"],
+  "images": ["jet_and_wig", "jet", "jam", "net", "van", "fan", "vet", "tile_cub", "tile_cab", "tile_cob", "yak", "yoyo", "jug", "tutor_tiles_web"],
+  "show": {
+    "line": "Three letters, one word! j, e, t. Jet! w, i, g. Wig! Build them with me.",
+    "image": "jet_and_wig"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. j, e, t. What word is it?", "sounds": ["j", "e", "t"], "options": ["jet", "jam", "net"], "answer": "jet", "praise": "Jet! j, e, t."},
+    {"type": "blend", "prompt": "Listen. v, a, n. Tap the word.", "sounds": ["v", "a", "n"], "options": ["van", "fan", "vet"], "answer": "van", "praise": "Van! v, a, n."},
+    {"type": "say_it", "prompt": "Build it. z, i, p. What word is it?", "accept": ["zip", "zep", "sip"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "web", "accept": ["web", "wep", "wab"]},
+    {"type": "listen_tap", "prompt": "Which word tile says cub?", "options": ["tile_cub", "tile_cab", "tile_cob"], "answer": "tile_cub", "praise": "c, u, b. Cub!"},
+    {"type": "blend", "prompt": "Listen. y, a, k. What word is it?", "sounds": ["y", "a", "k"], "options": ["yak", "yoyo", "jug"], "answer": "yak", "praise": "Yak! y, a, k."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "fox", "accept": ["fox", "foks", "fawks"]}
+  ],
+  "hints": ["Say each sound, then push them together.", "Look at the middle letter. That is the vowel sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! w, e, b.",
+    "tutor_try": "w, e, b. Wig!",
+    "image": "tutor_tiles_web",
+    "answer": "web",
+    "win_line": "You caught me! w, e, b is web.",
+    "gentle_line": "Let's blend together. w, e, b. Web!"
+  },
+  "parent_line": "Can build and read three-letter words with any vowel."
+}

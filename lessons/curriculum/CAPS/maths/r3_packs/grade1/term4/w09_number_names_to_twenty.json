@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term4.w09_number_names_to_twenty",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Numbers to 20",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Number symbols and number names",
+    "subtopic": "Write number symbols and number names to 20"
+  },
+  "skill": "number.names.to_20",
+  "prereq_skills": ["number.ordinal.1st_5th", "reading.sight_words.set1"],
+  "images": ["number_words_chart", "word_twelve", "word_twenty", "word_two", "numeral_18", "numeral_8", "numeral_80", "word_eleven", "word_seven", "word_thirteen", "numeral_13", "word_fourteen", "numeral_14", "tutor_word_twenty"],
+  "show": {
+    "line": "Numbers have names in words. Eleven, twelve, thirteen. Let's match the word to the number!",
+    "image": "number_words_chart"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word that says twelve.", "options": ["word_twelve", "word_twenty", "word_two"], "answer": "word_twelve", "praise": "Twelve!"},
+    {"type": "read_to_me", "prompt": "Read this number word to me.", "text": "fifteen", "accept": ["fifteen", "15", "fifteen fifteen"]},
+    {"type": "listen_tap", "prompt": "Which number matches the word eighteen?", "options": ["numeral_18", "numeral_8", "numeral_80"], "answer": "numeral_18", "praise": "Eighteen!"},
+    {"type": "read_to_me", "prompt": "Read this number word to me.", "text": "twenty", "accept": ["twenty", "20", "twenny"]},
+    {"type": "listen_tap", "prompt": "Tap the word that says eleven.", "options": ["word_eleven", "word_seven", "word_twelve"], "answer": "word_eleven", "praise": "Eleven!"},
+    {"type": "trace", "prompt": "Write sixteen with your finger. A one, then a six.", "glyph": "16"},
+    {"type": "match_sort", "prompt": "Match the word to its number. Is it thirteen or fourteen?", "groups": ["thirteen", "fourteen"], "items": [{"image": "word_thirteen", "group": "thirteen"}, {"image": "numeral_13", "group": "thirteen"}, {"image": "word_fourteen", "group": "fourteen"}, {"image": "numeral_14", "group": "fourteen"}]}
+  ],
+  "hints": ["Teen words end in teen. Look at the start of the word.", "Sound out the first part. Fif, teen. Fifteen."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this number word.",
+    "tutor_try": "This word says twelve!",
+    "image": "tutor_word_twenty",
+    "answer": "twenty",
+    "win_line": "You caught me! That word says twenty. Twelve ends in elve.",
+    "gentle_line": "Let's read it together. Twen, ty. Twenty!"
+  },
+  "parent_line": "Can read the number words to twenty and match them to numerals."
+}

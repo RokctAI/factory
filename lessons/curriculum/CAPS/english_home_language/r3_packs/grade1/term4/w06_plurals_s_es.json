@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w06_plurals_s_es",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises plurals ('s' and 'es')"
+  },
+  "skill": "phonics.plurals.s_es",
+  "prereq_skills": ["phonics.digraph.end"],
+  "images": ["one_cat_two_cats", "word_dogs", "word_dog", "word_doges", "hats_two", "word_dishes", "word_dishs", "word_dish", "buses_three", "cat", "dog", "pin", "dish", "bench", "box", "tutor_boxs_wrong"],
+  "show": {
+    "line": "One cat, two cats. Add s for more than one! One dish, two dishes. After sh and ch, add es.",
+    "image": "one_cat_two_cats"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Two dogs. Which word is right?", "options": ["word_dogs", "word_dog", "word_doges"], "answer": "word_dogs", "praise": "Dogs! Add s."},
+    {"type": "say_it", "prompt": "One hat. Two? Say the word.", "accept": ["hats", "two hats", "hatz"], "image": "hats_two"},
+    {"type": "listen_tap", "prompt": "Three fish dishes. Which word is right?", "options": ["word_dishes", "word_dishs", "word_dish"], "answer": "word_dishes", "praise": "Dishes! After sh we add es."},
+    {"type": "count_tap", "prompt": "Count the buses. How many buses?", "image": "buses_three", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three buses! Bus, buses."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "The hens sit in two boxes.", "accept": ["the hens sit in two boxes", "the hens sit in two boxes.", "hens sit in two boxes"]},
+    {"type": "match_sort", "prompt": "Add s, or add es? Sort the words.", "groups": ["add_s", "add_es"], "items": [{"image": "cat", "group": "add_s"}, {"image": "dog", "group": "add_s"}, {"image": "pin", "group": "add_s"}, {"image": "dish", "group": "add_es"}, {"image": "bench", "group": "add_es"}, {"image": "box", "group": "add_es"}]}
+  ],
+  "hints": ["More than one? Add s at the end.", "If the word ends in sh, ch, s or x, add es."],
+  "beat_the_tutor": {
+    "setup": "My turn! One box, two?",
+    "tutor_try": "Two boxs!",
+    "image": "tutor_boxs_wrong",
+    "answer": "boxes",
+    "win_line": "You caught me! Box ends in x, so we add es. Boxes.",
+    "gentle_line": "Let's say it together. Box, boxes!"
+  },
+  "parent_line": "Can make words for more than one by adding s or es."
+}

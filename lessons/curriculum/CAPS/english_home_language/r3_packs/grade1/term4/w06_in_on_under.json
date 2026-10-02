@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w06_in_on_under",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Writing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Uses past and present tense; uses prepositions correctly"
+  },
+  "skill": "grammar.prepositions.in_on_under",
+  "prereq_skills": ["grammar.tense.past_present", "space.position.left_right"],
+  "images": ["cat_in_on_under", "ball_under_bed", "ball_on_bed", "word_in", "word_under", "word_behind", "hat_on_chair", "dog_behind_tree", "dog_next_to_tree", "shoe_on_step", "shoe_under_bed", "shoe_in_bag", "tutor_cat_on_box"],
+  "show": {
+    "line": "Little words tell us where! The cat is in the box. On the box. Under the box. Where is it?",
+    "image": "cat_in_on_under"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "The ball is under the bed. Tap the picture.", "options": ["ball_under_bed", "ball_on_bed"], "answer": "ball_under_bed", "praise": "Under the bed!"},
+    {"type": "listen_tap", "prompt": "Which word fits? The bird is ... the nest.", "options": ["word_in", "word_under", "word_behind"], "answer": "word_in", "praise": "The bird is in the nest."},
+    {"type": "say_it", "prompt": "Where is the hat? On or under the chair? Say it.", "accept": ["on", "on the chair", "on top", "on it"], "image": "hat_on_chair"},
+    {"type": "listen_tap", "prompt": "The dog hides behind the tree. Tap the picture.", "options": ["dog_behind_tree", "dog_next_to_tree"], "answer": "dog_behind_tree", "praise": "Behind the tree!"},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "The fish is in the dish on the mat.", "accept": ["the fish is in the dish on the mat", "the fish is in the dish on the mat.", "fish is in the dish on the mat"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lebo looks for his shoe. Not under the bed. Not in the bag. It is on the step! Where?", "options": ["shoe_on_step", "shoe_under_bed", "shoe_in_bag"], "answer": "shoe_on_step", "praise": "On the step!"}
+  ],
+  "hints": ["In means inside. On means on top. Under means below.", "Look at the picture. Where exactly is it?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Where is the cat?",
+    "tutor_try": "The cat is under the box!",
+    "image": "tutor_cat_on_box",
+    "answer": "on",
+    "win_line": "You caught me! The cat is on the box, on top.",
+    "gentle_line": "Let's look together. The cat sits on top. On the box!"
+  },
+  "parent_line": "Can use in, on, under and behind to say where things are."
+}
