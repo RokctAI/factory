@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we start data handling at the very beginning: writing a question worth answering, naming the population, choosing a sample that is fair, and deciding where the data will come from. I used to think statistics was all about calculating averages, and that the asking part was easy; the first time my survey of friends told me everyone loves the same music, I realised that who you ask decides what you find.
+
+Our expert tutor covers posing statistical questions on social, economic and environmental issues, populations and samples, representative and biased samples with random selection, and primary versus secondary sources. Our simplifier tutor follows a tuck shop survey that had to be redesigned twice and picks apart a radio phone-in, a fitness app and a chat-group poll.
+
+My plan: sharpen the question, name the population, ask who is being left out, and write down the source every time. Questions follow every section; I will be answering alongside you.
