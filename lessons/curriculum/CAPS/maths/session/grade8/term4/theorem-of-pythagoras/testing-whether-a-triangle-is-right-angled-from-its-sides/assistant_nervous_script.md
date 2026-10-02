@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we turn the Theorem of Pythagoras around: given three sides and no angles, square the longest and compare it with the other two squares to decide whether the triangle is right-angled, and if not, which way it misses. I once squared the wrong side and declared 5, 12, 13 not right-angled, so the first step in this session — find the longest — is one I take slowly.
+
+Our expert tutor covers the converse and its justification, the test on decimals, fractions and multiples of triples, reading the inequality for acute or obtuse, and locating the right angle and writing the conclusion. Our simplifier tutor follows a builder checking a foundation with a tape, a learner returning a frame that was not square, and a groundsman marking a pitch.
+
+My plan: check the triangle exists, find the longest side, square it alone, square and add the others, compare exactly, place the right angle where the two shorter sides meet, and quote the converse. Questions follow every section; I will be squaring alongside you.

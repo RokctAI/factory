@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we discover the Theorem of Pythagoras: construct right-angled triangles, square the sides, draw squares on grid paper, and find that the square on the hypotenuse always equals the other two together. I spent a year thinking the theorem said three plus four equals five, and could not see why anyone was impressed; it is the squares, and the area picture is what finally made it click.
+
+Our expert tutor covers constructing and measuring, the area picture with the four-triangles proof, stating the theorem with the hypotenuse correctly named, and triples with finding a hypotenuse. Our simplifier tutor stretches an Egyptian rope with twelve knots and builds the squares out of sticky notes on a classroom window.
+
+My plan: find the right angle, name the side opposite it as the hypotenuse, square the legs, add, take the square root, give units, and check whether the numbers are a triple I know. Questions follow every section; I will be counting squares alongside you.
