@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we work backwards from a point and its image to name the transformation — which reflection, which translation, which rotation — and we learn the checks that stop a swap being mistaken for a rotation. I once wrote rotation for every pair where the numbers changed places, until a classmate marking my work showed me that a plain swap is a reflection in the line y equals x.
+
+Our expert tutor covers reading the sign-and-swap clues, describing a transformation completely, the distance checks, and what to do when one point fits two transformations. Our simplifier tutor reads a scooter fleet's GPS log and marks a classmate's homework by reading every answer backwards.
+
+My plan: write the pairs one above the other, compare distances from the origin, read the pattern, confirm with a check, and give the full description with the line, the shift or the centre, angle and direction. Questions follow every section; I will be comparing coordinates alongside you.

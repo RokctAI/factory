@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Give the images of the point 3 semicolon 2 under reflection in the x-axis, the y-axis and the line y equals x.",
+      "expected_answer": "In the x-axis the y-coordinate changes sign: 3 semicolon negative 2. In the y-axis the x-coordinate changes sign: negative 3 semicolon 2. In the line y equals x the coordinates swap: 2 semicolon 3."
+    },
+    {
+      "id": "cc2",
+      "question": "Give the images of 3 semicolon 2 under rotation about the origin through 90 degrees anticlockwise, 180 degrees and 90 degrees clockwise, and state a check.",
+      "expected_answer": "90 anticlockwise gives negative 2 semicolon 3; 180 gives negative 3 semicolon negative 2; 90 clockwise gives 2 semicolon negative 3. Each image is the same distance from the origin as the point, the square root of 13."
+    },
+    {
+      "id": "cc3",
+      "question": "How is a point rotated about a centre that is not the origin?",
+      "expected_answer": "Subtract the centre's coordinates to get the point's offsets from the centre, rotate the offsets with the origin rule, then add the centre's coordinates back. For 3 semicolon 2 about 1 semicolon 1 through 90 anticlockwise: offset 2 semicolon 1 becomes negative 1 semicolon 2, giving 0 semicolon 3."
+    }
+  ]
+}
