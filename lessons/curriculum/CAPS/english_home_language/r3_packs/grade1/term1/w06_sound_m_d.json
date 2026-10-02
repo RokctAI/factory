@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term1.w06_sound_m_d",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [6, 7],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Letter-sound relationships of some single letters; names some letters of the alphabet"
+  },
+  "skill": "phonics.letter_sound.m_d",
+  "prereq_skills": ["phonics.letter_sound.p_i_n"],
+  "images": ["mat_and_dog", "duck", "mat", "sun", "letter_m", "letter_d", "letter_n", "milk", "dog", "pin", "mop", "tutor_points_letter_m"],
+  "show": {
+    "line": "Two more sounds! m, m, mat. d, d, dog. Can you hear them?",
+    "image": "mat_and_dog"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with d, as in dog?", "options": ["duck", "mat", "sun"], "answer": "duck", "praise": "Yes! d, d, duck."},
+    {"type": "listen_tap", "prompt": "Tap the letter that says m.", "options": ["letter_m", "letter_d", "letter_n"], "answer": "letter_m", "praise": "Yes! m has two humps."},
+    {"type": "say_it", "prompt": "Say the sound with me. d, as in dog!", "accept": ["d", "duh", "de", "da"]},
+    {"type": "listen_tap", "prompt": "Which one starts with m, as in mat?", "options": ["milk", "dog", "pin"], "answer": "milk", "praise": "m, m, milk."},
+    {"type": "trace", "prompt": "Trace d with your finger. Round first, then a tall line up and down.", "glyph": "d"},
+    {"type": "trace", "prompt": "Trace m with your finger. Down, then up and over, up and over.", "glyph": "m"},
+    {"type": "match_sort", "prompt": "Does it start with m or d? Sort the pictures.", "groups": ["m", "d"], "items": [{"image": "mat", "group": "m"}, {"image": "milk", "group": "m"}, {"image": "mop", "group": "m"}, {"image": "dog", "group": "d"}, {"image": "duck", "group": "d"}]}
+  ],
+  "hints": ["Listen for the first sound. m hums. d taps.", "m has two humps. d has a round tummy and a tall back."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the letter that says d.",
+    "tutor_try": "This one with two humps says d!",
+    "image": "tutor_points_letter_m",
+    "answer": "m",
+    "win_line": "You caught me! Two humps is m. d has a tall back.",
+    "gentle_line": "Let's look together. Round tummy, tall back. That is d!"
+  },
+  "parent_line": "Can hear and write the sounds m and d."
+}

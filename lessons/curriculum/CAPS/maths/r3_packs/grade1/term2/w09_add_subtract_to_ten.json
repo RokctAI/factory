@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term2.w09_add_subtract_to_ten",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 10",
+    "subtopic": "Addition and subtraction up to 6 (weeks 1-2), 7 (weeks 3-4), 8 (weeks 5-6), 9 (weeks 7-8) and 10 (weeks 9-10) using +, -, =, □"
+  },
+  "skill": "number.add_subtract.to_10",
+  "prereq_skills": ["number.add_subtract.to_6_symbols"],
+  "images": ["hands_seven_three", "numeral_9", "numeral_10", "numeral_8", "birds_five_plus_three", "fingers_ten_take_two", "numeral_3", "numeral_4", "numeral_5", "numeral_1", "numeral_2", "numeral_6", "numeral_7", "card_seven_plus_three", "card_five_plus_five", "card_six_plus_two", "card_four_plus_four", "tutor_seven_plus_three_wrong"],
+  "show": {
+    "line": "Ten fingers! Seven up and three down. Seven plus three equals ten. Let's work to ten.",
+    "image": "hands_seven_three"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Six plus four. Tap the answer.", "options": ["numeral_9", "numeral_10", "numeral_8"], "answer": "numeral_10", "praise": "Six plus four equals ten."},
+    {"type": "count_tap", "prompt": "Five birds and three more land. How many birds now?", "image": "birds_five_plus_three", "count": "8", "options": ["7", "8", "9"], "answer": "8", "praise": "Eight! Five plus three."},
+    {"type": "say_it", "prompt": "Ten minus two. How many are left? Say the number.", "accept": ["eight", "8", "ate", "eit"], "image": "fingers_ten_take_two"},
+    {"type": "listen_tap", "prompt": "Nine minus five. Tap the answer.", "options": ["numeral_3", "numeral_4", "numeral_5"], "answer": "numeral_4", "praise": "Nine minus five equals four."},
+    {"type": "listen_tap", "prompt": "Eight plus the box equals ten. What goes in the box?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two! Eight plus two equals ten."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Ten children play. Four go home. How many children still play?", "options": ["numeral_4", "numeral_6", "numeral_7"], "answer": "numeral_6", "praise": "Six! Ten minus four."},
+    {"type": "match_sort", "prompt": "Does it make ten? Sort the sums.", "groups": ["makes_ten", "not_ten"], "items": [{"image": "card_seven_plus_three", "group": "makes_ten"}, {"image": "card_five_plus_five", "group": "makes_ten"}, {"image": "card_six_plus_two", "group": "not_ten"}, {"image": "card_four_plus_four", "group": "not_ten"}]}
+  ],
+  "hints": ["Start with the bigger number and count on.", "Use all ten fingers. Fold some down to take away."],
+  "beat_the_tutor": {
+    "setup": "My turn! Seven plus three.",
+    "tutor_try": "Seven plus three equals nine!",
+    "image": "tutor_seven_plus_three_wrong",
+    "answer": "ten",
+    "win_line": "You caught me! Seven plus three equals ten.",
+    "gentle_line": "Let's count on from seven. Eight, nine, ten!"
+  },
+  "parent_line": "Can add and subtract with numbers up to 10."
+}

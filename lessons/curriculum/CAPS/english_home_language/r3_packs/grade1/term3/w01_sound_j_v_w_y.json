@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w01_sound_j_v_w_y",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [1],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Revises single letter sounds; distinguishes beginning and end sounds"
+  },
+  "skill": "phonics.letter_sound.j_v_w_y",
+  "prereq_skills": ["phonics.letter_sound.r_l_b_f"],
+  "images": ["jam_van_web_yoyo", "jug", "van", "web", "wig", "yoyo", "jam", "yak", "letter_v", "letter_w", "letter_y", "tutor_holds_web"],
+  "show": {
+    "line": "Four sounds! j, j, jam. v, v, van. w, w, web. y, y, yoyo.",
+    "image": "jam_van_web_yoyo"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with j, as in jam?", "options": ["jug", "van", "web"], "answer": "jug", "praise": "j, j, jug."},
+    {"type": "listen_tap", "prompt": "Which one starts with w, as in web?", "options": ["wig", "yoyo", "jam"], "answer": "wig", "praise": "w, w, wig."},
+    {"type": "say_it", "prompt": "Say the sound with me. v, as in van!", "accept": ["v", "vuh", "ve", "va"]},
+    {"type": "listen_tap", "prompt": "Which one starts with y, as in yoyo?", "options": ["yak", "van", "jug"], "answer": "yak", "praise": "y, y, yak."},
+    {"type": "listen_tap", "prompt": "Tap the letter that says v.", "options": ["letter_v", "letter_w", "letter_y"], "answer": "letter_v", "praise": "Yes! v has one point."},
+    {"type": "say_it", "prompt": "Jam. What is the last sound? Say it.", "accept": ["m", "mmm", "me", "ma"], "image": "jam"},
+    {"type": "match_sort", "prompt": "Does it start with j, v, w or y? Sort the pictures.", "groups": ["j", "v", "w", "y"], "items": [{"image": "jam", "group": "j"}, {"image": "jug", "group": "j"}, {"image": "van", "group": "v"}, {"image": "web", "group": "w"}, {"image": "wig", "group": "w"}, {"image": "yoyo", "group": "y"}]}
+  ],
+  "hints": ["Listen for the first sound. j jumps. v buzzes.", "w is one point down twice. v is one point."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with v.",
+    "tutor_try": "Web! Web starts with v.",
+    "image": "tutor_holds_web",
+    "answer": "no",
+    "win_line": "You caught me! Web starts with w. Van starts with v.",
+    "gentle_line": "Let's listen together. v, v, van. Van starts with v!"
+  },
+  "parent_line": "Can hear and recognise the sounds j, v, w and y."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term3.w03_follow_directions",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Where is it?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Space and shape: 3D objects and 2D shapes",
+    "subtopic": "3D objects: position and directions; follow directions (right, left)"
+  },
+  "skill": "space.directions.left_right_turn",
+  "prereq_skills": ["space.position.left_right"],
+  "images": ["ball_on_box", "ball_under_table", "ball_on_table", "robot_faces_left", "robot_faces_right", "box_behind_chair", "box_in_front_of_chair", "cup_right_of_plate", "path_forward_right", "path_forward_left", "cube_in_front", "cube_behind", "tutor_ball_left_of_box"],
+  "show": {
+    "line": "Follow the directions! Put the ball on the box. Turn left. Turn right. Let's move things!",
+    "image": "ball_on_box"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Put the ball under the table. Which picture is right?", "options": ["ball_under_table", "ball_on_table"], "answer": "ball_under_table", "praise": "Under the table!"},
+    {"type": "listen_tap", "prompt": "The robot turns left. Which way does it face now?", "options": ["robot_faces_left", "robot_faces_right"], "answer": "robot_faces_left", "praise": "Left!"},
+    {"type": "listen_tap", "prompt": "Put the box behind the chair. Tap the right picture.", "options": ["box_behind_chair", "box_in_front_of_chair"], "answer": "box_behind_chair", "praise": "Behind the chair!"},
+    {"type": "say_it", "prompt": "Is the cup on the left or the right of the plate? Say it.", "accept": ["right", "the right", "on the right", "rite"], "image": "cup_right_of_plate"},
+    {"type": "listen_tap", "prompt": "Walk forward two steps, then turn right. Where is the dog now?", "options": ["path_forward_right", "path_forward_left"], "answer": "path_forward_right", "praise": "Forward, then right!"},
+    {"type": "listen_tap", "prompt": "Which block is in front of the cylinder?", "options": ["cube_in_front", "cube_behind"], "answer": "cube_in_front", "praise": "In front!"}
+  ],
+  "hints": ["Hold up your left hand. Left is that side.", "Behind is at the back. In front is at the front."],
+  "beat_the_tutor": {
+    "setup": "My turn! Put the ball to the right of the box.",
+    "tutor_try": "Here! I put it on the left.",
+    "image": "tutor_ball_left_of_box",
+    "answer": "no",
+    "win_line": "You caught me! I put it on the left. Right is the other side.",
+    "gentle_line": "Let's hold up our right hands. The ball goes on this side!"
+  },
+  "parent_line": "Can follow directions using left, right, in front of, behind, on and under."
+}

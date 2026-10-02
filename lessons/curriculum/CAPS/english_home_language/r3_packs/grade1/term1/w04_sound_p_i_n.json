@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term1.w04_sound_p_i_n",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [4, 5],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Whole-class phonemic awareness oral activities; letter-sound relationships of some single letters (1-2 new letters a week)"
+  },
+  "skill": "phonics.letter_sound.p_i_n",
+  "prereq_skills": ["phonics.letter_sound.s_a_t"],
+  "images": ["pig_insect_net", "pan", "net", "sun", "letter_p", "letter_n", "letter_i", "nose", "pig", "ink", "pin", "tutor_holds_pig"],
+  "show": {
+    "line": "New sounds! p, p, pig. i, i, insect. n, n, net. Let's find them.",
+    "image": "pig_insect_net"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with p, as in pig?", "options": ["pan", "net", "sun"], "answer": "pan", "praise": "Yes! p, p, pan."},
+    {"type": "listen_tap", "prompt": "Tap the letter that says n.", "options": ["letter_p", "letter_n", "letter_i"], "answer": "letter_n", "praise": "Yes! That is n."},
+    {"type": "say_it", "prompt": "Say the sound with me. i, as in insect!", "accept": ["i", "ih", "ee", "ii"]},
+    {"type": "listen_tap", "prompt": "Which one starts with n, as in net?", "options": ["nose", "pig", "ink"], "answer": "nose", "praise": "n, n, nose."},
+    {"type": "listen_tap", "prompt": "Which one starts with i, as in insect?", "options": ["ink", "pan", "nose"], "answer": "ink", "praise": "i, i, ink."},
+    {"type": "say_it", "prompt": "What is this? It starts with p.", "accept": ["pig", "a pig", "pigs", "peg"], "image": "pig"},
+    {"type": "match_sort", "prompt": "Does it start with p or n? Sort the pictures.", "groups": ["p", "n"], "items": [{"image": "pig", "group": "p"}, {"image": "pan", "group": "p"}, {"image": "pin", "group": "p"}, {"image": "net", "group": "n"}, {"image": "nose", "group": "n"}]}
+  ],
+  "hints": ["Listen for the first sound. p, p, pig.", "p pops from your lips. n hums in your nose."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with n.",
+    "tutor_try": "Pig! Pig starts with n.",
+    "image": "tutor_holds_pig",
+    "answer": "no",
+    "win_line": "You caught me! Pig starts with p. Net starts with n.",
+    "gentle_line": "Let's listen together. n, n, net. Net starts with n!"
+  },
+  "parent_line": "Can hear and recognise the sounds p, i and n."
+}

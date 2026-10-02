@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w08_story_order",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [8, 9],
+  "theme": "Reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Reading",
+    "subtopic": "Shared: uses the cover to predict; identifies the sequence of events; recognises cause and effect; interprets posters; answers open-ended questions"
+  },
+  "skill": "reading.story.sequence_cause",
+  "prereq_skills": ["reading.story.problem"],
+  "images": ["egg_chick_three_steps", "plant_seed", "water_plant", "flower_grows", "cover_dog_beach", "cover_space_rocket", "rain_cloud", "sun_shining", "wind_blowing", "glass_falling", "poster_time_nine", "poster_time_three", "tutor_order_story_wrong"],
+  "show": {
+    "line": "Stories happen in order. First, next, last. First the egg cracks. Next the chick comes out. Last it runs!",
+    "image": "egg_chick_three_steps"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nandi plants a seed. She waters it. A flower grows! What happened first?", "options": ["plant_seed", "water_plant", "flower_grows"], "answer": "plant_seed", "praise": "First she planted the seed."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nandi plants a seed. She waters it. A flower grows! What happened last?", "options": ["plant_seed", "water_plant", "flower_grows"], "answer": "flower_grows", "praise": "Last the flower grew."},
+    {"type": "listen_tap", "prompt": "Look at the cover. What do you think the story is about?", "options": ["cover_dog_beach", "cover_space_rocket"], "answer": "cover_dog_beach", "praise": "A dog at the beach! The cover gives clues."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "It rained all night. In the morning the field was full of puddles. Why were there puddles?", "options": ["rain_cloud", "sun_shining", "wind_blowing"], "answer": "rain_cloud", "praise": "Because it rained!"},
+    {"type": "say_it", "prompt": "Sam dropped the glass. What happened next? Say it.", "accept": ["it broke", "broke", "it smashed", "smashed", "it fell"], "image": "glass_falling"},
+    {"type": "listen_tap", "prompt": "Read the poster. What time does the school fun run start?", "options": ["poster_time_nine", "poster_time_three"], "answer": "poster_time_nine", "praise": "Nine o'clock! The poster tells us."}
+  ],
+  "hints": ["Think about what comes first, next and last.", "Why did it happen? Look for the cause."],
+  "beat_the_tutor": {
+    "setup": "My turn! The seed story. First, next, last.",
+    "tutor_try": "First the flower grows. Then she plants the seed!",
+    "image": "tutor_order_story_wrong",
+    "answer": "no",
+    "win_line": "You caught me! You plant the seed first. The flower grows last.",
+    "gentle_line": "Let's say it in order. Plant, water, grow!"
+  },
+  "parent_line": "Can put story events in order and say why something happened."
+}

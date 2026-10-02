@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w04_read_phonic_sentences",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Reads phonic words in sentences and other texts"
+  },
+  "skill": "reading.sentence.cvc_set1",
+  "prereq_skills": ["reading.sight_words.set1", "phonics.word_family.ot_op"],
+  "images": ["dog_on_mat", "hen_in_pen", "pig_in_mud", "word_hot", "word_hat", "word_hop", "hat", "pot", "pen", "tutor_reads_mat_as_map"],
+  "show": {
+    "line": "Now we read sentences! The dog sat on the mat. Point to each word and read.",
+    "image": "dog_on_mat"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "The cat is on the mat.", "accept": ["the cat is on the mat", "the cat is on the mat.", "cat is on the mat", "the cat on the mat"]},
+    {"type": "listen_tap", "prompt": "Which picture matches? The hen is in the pen.", "options": ["hen_in_pen", "dog_on_mat", "pig_in_mud"], "answer": "hen_in_pen", "praise": "Yes! The hen is in the pen."},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "A pig can dig.", "accept": ["a pig can dig", "a pig can dig.", "pig can dig", "the pig can dig"]},
+    {"type": "listen_tap", "prompt": "Read the sentence strip. Which word is hot?", "options": ["word_hot", "word_hat", "word_hop"], "answer": "word_hot", "praise": "h, o, t. Hot!"},
+    {"type": "read_to_me", "prompt": "Read this sentence to me.", "text": "Mom has a hot pot.", "accept": ["mom has a hot pot", "mom has a hot pot.", "mum has a hot pot", "mom has hot pot"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Dad has a red hat. The hat is on the dog! What is on the dog?", "options": ["hat", "pot", "pen"], "answer": "hat", "praise": "The hat is on the dog!"}
+  ],
+  "hints": ["Point to each word. Sound it out if you get stuck.", "Read it again, faster. Make it sound like talking."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this sentence.",
+    "tutor_try": "The cat is on the map!",
+    "image": "tutor_reads_mat_as_map",
+    "answer": "mat",
+    "win_line": "You caught me! m, a, t. The cat is on the mat.",
+    "gentle_line": "Let's read it together. The cat is on the mat!"
+  },
+  "parent_line": "Can read short sentences made of phonic words and sight words."
+}

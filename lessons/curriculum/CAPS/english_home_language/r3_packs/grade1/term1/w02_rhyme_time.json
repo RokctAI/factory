@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w02_rhyme_time",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [2],
+  "theme": "Sounds and words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Identifies rhyming words in well-known rhymes and songs"
+  },
+  "skill": "phonics.rhyme.songs",
+  "prereq_skills": ["phonics.rhyme.sky_moon"],
+  "images": ["humpty_dumpty", "ball", "cat", "sun", "car", "moon", "hat", "clock", "dog", "cup", "pill", "pail", "water", "bat", "mat", "doll", "tutor_points_dog"],
+  "show": {
+    "line": "Humpty Dumpty sat on a wall. Humpty Dumpty had a great fall. Wall, fall! They rhyme.",
+    "image": "humpty_dumpty"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one rhymes with wall?", "options": ["ball", "cat", "sun"], "answer": "ball", "praise": "Wall, ball! They rhyme."},
+    {"type": "story_tap", "prompt": "Listen to the rhyme.", "story": "Twinkle, twinkle, little star, how I wonder what you are. Which word rhymes with star?", "options": ["car", "moon", "hat"], "answer": "car", "praise": "Star, car. Same ending!"},
+    {"type": "say_it", "prompt": "Hickory dickory dock. The mouse ran up the? It rhymes with dock.", "accept": ["clock", "klock", "the clock"], "image": "clock"},
+    {"type": "listen_tap", "prompt": "Which one rhymes with cat?", "options": ["dog", "hat", "cup"], "answer": "hat", "praise": "Cat, hat!"},
+    {"type": "listen_tap", "prompt": "Jack and Jill went up the hill. Which one rhymes with hill?", "options": ["pill", "pail", "water"], "answer": "pill", "praise": "Hill, pill. They rhyme."},
+    {"type": "match_sort", "prompt": "Does it rhyme with cat, or with wall? Put each one in its group.", "groups": ["cat", "wall"], "items": [{"image": "hat", "group": "cat"}, {"image": "bat", "group": "cat"}, {"image": "mat", "group": "cat"}, {"image": "ball", "group": "wall"}, {"image": "doll", "group": "wall"}]}
+  ],
+  "hints": ["Listen to the end of the word. Wall, ball. Same ending!", "Say both words. Do they sound the same at the end?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a rhyme for cat.",
+    "tutor_try": "Cat, dog! They rhyme.",
+    "image": "tutor_points_dog",
+    "answer": "no",
+    "win_line": "You caught me! Cat and dog do not rhyme. Cat, hat!",
+    "gentle_line": "Let's listen together. Cat, hat. Same ending!"
+  },
+  "parent_line": "Can find the rhyming words in songs and rhymes."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w05_shape_patterns",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Patterns",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Patterns, functions and algebra: Geometric and number patterns",
+    "subtopic": "Copy and extend simple patterns using physical objects and drawings (colours and shapes)"
+  },
+  "skill": "pattern.shape_colour.extend",
+  "prereq_skills": ["pattern.shape.continue"],
+  "images": ["beads_red_blue", "row_triangle_circle_repeat", "row_mixed_shapes", "stars_big_small", "row_green_blue", "row_green_green_blue", "tutor_adds_yellow"],
+  "show": {
+    "line": "A pattern repeats. Red, blue, red, blue. What comes next? Red!",
+    "image": "beads_red_blue"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Circle, square, circle, square. What comes next?", "sequence": ["circle", "square", "circle", "square"], "options": ["circle", "square", "triangle"], "answer": "circle", "praise": "Circle! The pattern repeats."},
+    {"type": "what_next", "prompt": "Red, red, yellow, red, red, yellow. What comes next?", "sequence": ["red", "red", "yellow", "red", "red", "yellow"], "options": ["red", "yellow", "blue"], "answer": "red", "praise": "Red! Red, red, yellow."},
+    {"type": "listen_tap", "prompt": "Which row is a pattern that repeats?", "options": ["row_triangle_circle_repeat", "row_mixed_shapes"], "answer": "row_triangle_circle_repeat", "praise": "Yes! Triangle, circle, triangle, circle."},
+    {"type": "say_it", "prompt": "Big, small, big, small. What comes next? Say it.", "accept": ["big", "a big one", "big one"], "image": "stars_big_small"},
+    {"type": "what_next", "prompt": "Triangle, square, circle, triangle, square. What comes next?", "sequence": ["triangle", "square", "circle", "triangle", "square"], "options": ["circle", "square", "triangle"], "answer": "circle", "praise": "Circle! Three shapes, then again."},
+    {"type": "listen_tap", "prompt": "Copy the pattern. Which row matches green, blue, green, blue?", "options": ["row_green_blue", "row_green_green_blue"], "answer": "row_green_blue", "praise": "That matches!"}
+  ],
+  "hints": ["Say the pattern out loud. Listen for the part that repeats.", "Look back at the start. The pattern starts again."],
+  "beat_the_tutor": {
+    "setup": "My turn! Red, blue, red, blue. I will add the next one.",
+    "tutor_try": "Next is yellow!",
+    "image": "tutor_adds_yellow",
+    "answer": "red",
+    "win_line": "You caught me! Red, blue, red, blue, red. No yellow!",
+    "gentle_line": "Let's say it together. Red, blue, red, blue, red!"
+  },
+  "parent_line": "Can copy and continue a shape or colour pattern."
+}

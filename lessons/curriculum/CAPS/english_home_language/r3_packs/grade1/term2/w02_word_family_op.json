@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w02_word_family_op",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Builds words with sounds learnt; groups common words into sound families (hot, hop, hob)"
+  },
+  "skill": "phonics.word_family.ot_op",
+  "prereq_skills": ["phonics.letter_sound.h_o_g"],
+  "images": ["pot_hot", "hot_cup", "hat", "hop_frog", "mop", "map", "mat", "letter_tiles_h_o_t", "dot", "dog", "dip_chip", "pot", "tutor_sorts_mop_wrong"],
+  "show": {
+    "line": "Word families! Hot, pot, dot all end in ot. Hop, top, mop all end in op.",
+    "image": "pot_hot"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. h, o, t. What word is it?", "sounds": ["h", "o", "t"], "options": ["hot_cup", "hat", "hop_frog"], "answer": "hot_cup", "praise": "Hot! h, o, t."},
+    {"type": "blend", "prompt": "Listen. m, o, p. Tap the word.", "sounds": ["m", "o", "p"], "options": ["mop", "map", "mat"], "answer": "mop", "praise": "Mop! m, o, p."},
+    {"type": "say_it", "prompt": "Change the h in hot to p. What word do you make?", "accept": ["pot", "pat", "put"], "image": "letter_tiles_h_o_t"},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "top", "accept": ["top", "tap", "tup"]},
+    {"type": "listen_tap", "prompt": "Which word is in the ot family?", "options": ["dot", "dog", "dip_chip"], "answer": "dot", "praise": "Dot! d, o, t."},
+    {"type": "match_sort", "prompt": "Which family? ot or op? Sort the words.", "groups": ["ot", "op"], "items": [{"image": "hot_cup", "group": "ot"}, {"image": "pot", "group": "ot"}, {"image": "dot", "group": "ot"}, {"image": "mop", "group": "op"}, {"image": "hop_frog", "group": "op"}]}
+  ],
+  "hints": ["Listen to the end. ot or op?", "Keep the end the same. Change only the first sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will put mop in a family.",
+    "tutor_try": "Mop goes with hot and pot!",
+    "image": "tutor_sorts_mop_wrong",
+    "answer": "no",
+    "win_line": "You caught me! Mop ends in op. It goes with hop and top.",
+    "gentle_line": "Let's listen to the end. Mop, hop, top. The op family!"
+  },
+  "parent_line": "Can build and sort words in the ot and op families."
+}

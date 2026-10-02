@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term2.w03_circles_triangles_squares",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Shapes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Space and shape: 3D objects, position and 2D shapes",
+    "subtopic": "2D shapes: recognise and name circles, triangles and squares"
+  },
+  "skill": "shape.name.circle_triangle_square",
+  "prereq_skills": ["shape.recognise.circle", "shape.recognise.square", "shape.recognise.triangle"],
+  "images": ["shapes_three", "circle", "triangle", "square", "slice_of_pizza", "clock", "window", "coin", "roof", "dice", "tutor_holds_triangle"],
+  "show": {
+    "line": "A circle is round. A triangle has three sides. A square has four sides the same. Shapes!",
+    "image": "shapes_three"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the triangle.", "options": ["circle", "triangle", "square"], "answer": "triangle", "praise": "Yes! Three sides, three corners."},
+    {"type": "say_it", "prompt": "What shape is this? Say its name.", "accept": ["square", "a square", "skware"], "image": "square"},
+    {"type": "count_tap", "prompt": "Count the sides of the square. How many?", "image": "square", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four sides, all the same!"},
+    {"type": "listen_tap", "prompt": "Which shape has no corners?", "options": ["circle", "triangle", "square"], "answer": "circle", "praise": "A circle is round. No corners!"},
+    {"type": "listen_tap", "prompt": "Which thing is shaped like a triangle?", "options": ["slice_of_pizza", "clock", "window"], "answer": "slice_of_pizza", "praise": "Pizza slice! A triangle."},
+    {"type": "match_sort", "prompt": "Sort the shapes. Circle, triangle or square?", "groups": ["circle", "triangle", "square"], "items": [{"image": "clock", "group": "circle"}, {"image": "coin", "group": "circle"}, {"image": "slice_of_pizza", "group": "triangle"}, {"image": "roof", "group": "triangle"}, {"image": "window", "group": "square"}, {"image": "dice", "group": "square"}]}
+  ],
+  "hints": ["Count the sides. Three is a triangle, four is a square.", "Round with no corners is a circle."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this shape.",
+    "tutor_try": "Three sides. It is a square!",
+    "image": "tutor_holds_triangle",
+    "answer": "triangle",
+    "win_line": "You caught me! Three sides makes a triangle. A square has four.",
+    "gentle_line": "Let's count the sides. One, two, three. A triangle!"
+  },
+  "parent_line": "Can name circles, triangles and squares and count their sides."
+}

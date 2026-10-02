@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade1.term1.w09_story_sums_to_five",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Solve problems in context",
+    "subtopic": "Practically solve problems in context and explain solutions involving addition and subtraction"
+  },
+  "skill": "number.story_sums.to_5",
+  "prereq_skills": ["number.bonds.to_5"],
+  "images": ["children_swing_four", "numeral_2", "numeral_3", "numeral_4", "numeral_5", "kites_two_three", "sweets_five_give_two", "numeral_1", "tutor_cats_wrong"],
+  "show": {
+    "line": "A story sum! Two children on the swing. Two more come. Now four children. Two plus two is four.",
+    "image": "children_swing_four"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nomsa has three oranges. She eats one. How many oranges are left?", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_2", "praise": "Two left! Three take away one is two."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Four birds sit in a tree. One more bird lands. How many birds now?", "options": ["numeral_3", "numeral_4", "numeral_5"], "answer": "numeral_5", "praise": "Five birds! Four plus one is five."},
+    {"type": "count_tap", "prompt": "Two red kites and three blue kites. Count them all.", "image": "kites_two_three", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five kites altogether!"},
+    {"type": "say_it", "prompt": "Five sweets. You give two to a friend. How many are left? Say the number.", "accept": ["three", "3", "tree", "free"], "image": "sweets_five_give_two"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho has one shoe on. He puts on the other shoe. How many shoes is he wearing?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two shoes! One plus one is two."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Gogo bakes four buns. The dog eats three! How many buns are left?", "options": ["numeral_1", "numeral_3", "numeral_4"], "answer": "numeral_1", "praise": "One bun left! Four take away three is one."}
+  ],
+  "hints": ["Listen for more or left. More means add. Left means take away.", "Use your fingers to act out the story."],
+  "beat_the_tutor": {
+    "setup": "My turn! Three cats. Two more cats come.",
+    "tutor_try": "Three take away two. One cat!",
+    "image": "tutor_cats_wrong",
+    "answer": "five",
+    "win_line": "You caught me! More cats came, so we add. Three plus two is five.",
+    "gentle_line": "Let's count together. Three cats, and two more. Four, five!"
+  },
+  "parent_line": "Can solve simple adding and taking away stories up to 5 and explain the answer."
+}

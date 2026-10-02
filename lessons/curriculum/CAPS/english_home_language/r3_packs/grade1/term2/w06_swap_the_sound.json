@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term2.w06_swap_the_sound",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [6, 7],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Phonemic awareness: consonant and vowel substitution (hop to mop)"
+  },
+  "skill": "phonics.substitute.cvc",
+  "prereq_skills": ["phonics.word_family.an_en"],
+  "images": ["hop_to_mop", "letter_tiles_c_a_t", "pan", "pen", "pin", "letter_tiles_d_o_g", "hop_frog", "hat", "hot_cup", "pot", "pet", "pit", "letter_tiles_b_u_g", "tutor_tiles_bat"],
+  "show": {
+    "line": "Word magic! Hop. Change h to m. Mop! Change o to a. Map! Swap one sound, new word.",
+    "image": "hop_to_mop"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Cat. Change c to h. What word do you make?", "accept": ["hat", "het", "hut"], "image": "letter_tiles_c_a_t"},
+    {"type": "listen_tap", "prompt": "Pin. Change i to a. Tap the new word.", "options": ["pan", "pen", "pin"], "answer": "pan", "praise": "Pan! p, a, n."},
+    {"type": "say_it", "prompt": "Dog. Change d to h. What word do you make?", "accept": ["hog", "hug", "hag"], "image": "letter_tiles_d_o_g"},
+    {"type": "listen_tap", "prompt": "Hot. Change t to p. Tap the new word.", "options": ["hop_frog", "hat", "hot_cup"], "answer": "hop_frog", "praise": "Hop! h, o, p."},
+    {"type": "blend", "prompt": "Pet. Change e to o. Listen. p, o, t. What word is it?", "sounds": ["p", "o", "t"], "options": ["pot", "pet", "pit"], "answer": "pot", "praise": "Pot!"},
+    {"type": "say_it", "prompt": "Bug. Change b to m. What word do you make?", "accept": ["mug", "mag", "mog"], "image": "letter_tiles_b_u_g"}
+  ],
+  "hints": ["Keep the other sounds the same. Swap just one.", "Say the old word, then the new sound in its place."],
+  "beat_the_tutor": {
+    "setup": "My turn! Cat. I will change c to m.",
+    "tutor_try": "Cat becomes bat!",
+    "image": "tutor_tiles_bat",
+    "answer": "mat",
+    "win_line": "You caught me! c to m makes mat, not bat.",
+    "gentle_line": "Let's swap together. Take away c, put in m. Mat!"
+  },
+  "parent_line": "Can change one sound in a word to make a new word."
+}

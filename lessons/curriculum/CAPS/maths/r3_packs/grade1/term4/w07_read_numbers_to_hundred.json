@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term4.w07_read_numbers_to_hundred",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Counting to 100",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Number symbols and number names",
+    "subtopic": "Recognise, identify and read number symbols 1-100"
+  },
+  "skill": "number.read_symbols.to_100",
+  "prereq_skills": ["number.read_symbols.to_80"],
+  "images": ["hundred_chart", "numeral_86", "numeral_68", "numeral_80", "numeral_90", "numeral_100", "numeral_10", "numeral_1000", "numeral_73", "numeral_99", "numeral_101", "numeral_57", "numeral_75", "numeral_17", "tutor_reads_95"],
+  "show": {
+    "line": "All the way to one hundred! Ninety nine, then one hundred. A one and two zeros. Let's read big numbers.",
+    "image": "hundred_chart"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number eighty six.", "options": ["numeral_86", "numeral_68", "numeral_80"], "answer": "numeral_86", "praise": "Eighty six!"},
+    {"type": "say_it", "prompt": "Read this number. Say it.", "accept": ["ninety", "90", "ninty"], "image": "numeral_90"},
+    {"type": "listen_tap", "prompt": "Tap one hundred.", "options": ["numeral_100", "numeral_10", "numeral_1000"], "answer": "numeral_100", "praise": "One hundred! Ten tens."},
+    {"type": "what_next", "prompt": "Count on. Ninety seven, ninety eight, ninety nine, and then?", "sequence": ["97", "98", "99"], "options": ["100", "90", "910"], "answer": "100", "praise": "One hundred!"},
+    {"type": "say_it", "prompt": "Read this number. Say it.", "accept": ["seventy three", "73", "sewenty three"], "image": "numeral_73"},
+    {"type": "listen_tap", "prompt": "Which number comes just before one hundred?", "options": ["numeral_99", "numeral_101", "numeral_90"], "answer": "numeral_99", "praise": "Ninety nine!"},
+    {"type": "listen_tap", "prompt": "Tap the number fifty seven on the chart.", "options": ["numeral_57", "numeral_75", "numeral_17"], "answer": "numeral_57", "praise": "Fifty seven!"}
+  ],
+  "hints": ["The first digit is the tens. Eight means eighty.", "One hundred is special. One, zero, zero."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this number.",
+    "tutor_try": "Nine, five. Fifty nine!",
+    "image": "tutor_reads_95",
+    "answer": "ninety five",
+    "win_line": "You caught me! Nine tens first. Ninety five.",
+    "gentle_line": "Let's read it together. Nine tens is ninety. Ninety five!"
+  },
+  "parent_line": "Can read number symbols up to 100."
+}

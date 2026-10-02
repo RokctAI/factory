@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term3.w04_l_blends",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [4, 5],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Uses consonant blends to build up and break down words (r and l blends: bl-ack, fl-op, sl-ip)"
+  },
+  "skill": "phonics.blend.l_blends",
+  "prereq_skills": ["phonics.build.cvc_all_vowels"],
+  "images": ["black_flag_slip", "flower", "black_cat", "slide", "slip_banana", "flip", "clip", "clock", "flag", "block", "slug", "tutor_holds_flag"],
+  "show": {
+    "line": "Two sounds stuck together! bl, bl, black. fl, fl, flag. sl, sl, slip. Blends!",
+    "image": "black_flag_slip"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with fl, as in flag?", "options": ["flower", "black_cat", "slide"], "answer": "flower", "praise": "fl, fl, flower."},
+    {"type": "blend", "prompt": "Listen. sl, i, p. What word is it?", "sounds": ["sl", "i", "p"], "options": ["slip_banana", "flip", "clip"], "answer": "slip_banana", "praise": "Slip! sl, i, p."},
+    {"type": "say_it", "prompt": "Say the blend with me. bl, as in black!", "accept": ["bl", "bluh", "ble", "bla"]},
+    {"type": "listen_tap", "prompt": "Which one starts with cl, as in clap?", "options": ["clock", "flag", "block"], "answer": "clock", "praise": "cl, cl, clock."},
+    {"type": "blend", "prompt": "Listen. fl, a, g. Tap the word.", "sounds": ["fl", "a", "g"], "options": ["flag", "flower", "slug"], "answer": "flag", "praise": "Flag! fl, a, g."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "plum", "accept": ["plum", "plam", "plom"]},
+    {"type": "match_sort", "prompt": "Does it start with bl, fl or sl? Sort the pictures.", "groups": ["bl", "fl", "sl"], "items": [{"image": "black_cat", "group": "bl"}, {"image": "block", "group": "bl"}, {"image": "flag", "group": "fl"}, {"image": "flower", "group": "fl"}, {"image": "slide", "group": "sl"}, {"image": "slug", "group": "sl"}]}
+  ],
+  "hints": ["Say both sounds fast. b, l. bl!", "Listen to the very start. Two sounds, not one."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with sl.",
+    "tutor_try": "Flag! Flag starts with sl.",
+    "image": "tutor_holds_flag",
+    "answer": "no",
+    "win_line": "You caught me! Flag starts with fl. Slide starts with sl.",
+    "gentle_line": "Let's listen together. sl, sl, slide. Slide starts with sl!"
+  },
+  "parent_line": "Can hear and blend the l blends bl, fl, sl and cl."
+}

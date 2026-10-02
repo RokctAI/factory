@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term4.w02_what_went_wrong",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Reading",
+    "subtopic": "Shared: uses clues and pictures for understanding; identifies the initial problem that sets a story in motion (e.g. The Three Bears); answers open-ended questions"
+  },
+  "skill": "reading.story.problem",
+  "prereq_skills": ["reading.fluency.set2"],
+  "images": ["three_bears_porridge", "kite_in_tree", "kite_flying", "zola_smiling", "chair_broken", "bed_big", "porridge_bowl", "boy_dropped_ice_cream", "boy_eating_ice_cream", "face_worried", "face_happy", "face_sleepy", "girl_dog_ran_away", "goldilocks_in_bed", "baby_bear", "mama_bear", "tutor_kite_wrong"],
+  "show": {
+    "line": "Every story has a problem! The three bears come home. Someone ate the porridge! That starts the story.",
+    "image": "three_bears_porridge"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Zola's kite flies up, up, and gets stuck in a tree. She cannot reach it. What is the problem?", "options": ["kite_in_tree", "kite_flying", "zola_smiling"], "answer": "kite_in_tree", "praise": "The kite is stuck! That is the problem."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Baby bear finds his chair broken. Who broke it? He looks and looks. What did baby bear find?", "options": ["chair_broken", "bed_big", "porridge_bowl"], "answer": "chair_broken", "praise": "His chair was broken!"},
+    {"type": "listen_tap", "prompt": "Look at the picture. What is the problem?", "options": ["boy_dropped_ice_cream", "boy_eating_ice_cream"], "answer": "boy_dropped_ice_cream", "praise": "He dropped his ice cream. Oh no!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thabo goes to school. He opens his bag. His lunch is not there! How does Thabo feel?", "options": ["face_worried", "face_happy", "face_sleepy"], "answer": "face_worried", "praise": "Worried. His lunch is missing."},
+    {"type": "say_it", "prompt": "The dog ran away. How could the girl fix the problem? Say one idea.", "accept": ["call it", "look for it", "find it", "call the dog", "find the dog", "shout"], "image": "girl_dog_ran_away"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The bears come home. The porridge is gone and someone is in the bed! Who is in the bed?", "options": ["goldilocks_in_bed", "baby_bear", "mama_bear"], "answer": "goldilocks_in_bed", "praise": "A girl in the bed!"}
+  ],
+  "hints": ["The problem is the thing that goes wrong.", "Look at the faces in the picture. How do they feel?"],
+  "beat_the_tutor": {
+    "setup": "My turn! What is the problem in the kite story?",
+    "tutor_try": "The problem is that Zola has a kite!",
+    "image": "tutor_kite_wrong",
+    "answer": "no",
+    "win_line": "You caught me! Having a kite is fine. The problem is that it got stuck.",
+    "gentle_line": "Let's look together. The kite is up in the tree. That is the problem!"
+  },
+  "parent_line": "Can say what the problem is in a story and how a character feels."
+}

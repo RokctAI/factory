@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade1.term1.w08_blend_cat_mat",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [8, 9],
+  "theme": "Making words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Begins to blend sounds to make words (at, c-at, m-at)"
+  },
+  "skill": "phonics.blend.cvc_at_it",
+  "prereq_skills": ["phonics.build.at_words"],
+  "images": ["cat_sitting", "cat", "dog", "pin", "pan", "tin", "tap", "net", "mat", "tutor_tiles_mat"],
+  "show": {
+    "line": "Blend the sounds! c, a, t. Cat! s, i, t. Sit! Listen and blend.",
+    "image": "cat_sitting"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. c, a, t. What word is it?", "sounds": ["c", "a", "t"], "options": ["cat", "dog", "pin"], "answer": "cat", "praise": "Cat! c, a, t, cat."},
+    {"type": "blend", "prompt": "Listen. p, i, n. Tap the word.", "sounds": ["p", "i", "n"], "options": ["pin", "pan", "tin"], "answer": "pin", "praise": "Pin! p, i, n, pin."},
+    {"type": "say_it", "prompt": "s, i, t. Blend the sounds. What word is it?", "accept": ["sit", "set", "sut"]},
+    {"type": "blend", "prompt": "Listen. t, i, n. What word is it?", "sounds": ["t", "i", "n"], "options": ["tin", "tap", "net"], "answer": "tin", "praise": "Tin! t, i, n, tin."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "mat", "accept": ["mat", "met", "mut"]},
+    {"type": "say_it", "prompt": "d, a, d. Blend the sounds. Who is it?", "accept": ["dad", "ded", "dud", "daddy"]},
+    {"type": "match_sort", "prompt": "Does the word end in at, or in in? Sort the words.", "groups": ["at", "in"], "items": [{"image": "cat", "group": "at"}, {"image": "mat", "group": "at"}, {"image": "pin", "group": "in"}, {"image": "tin", "group": "in"}]}
+  ],
+  "hints": ["Say the sounds slowly, then fast. c, a, t. Cat!", "Keep the sounds going. Cccaaat."],
+  "beat_the_tutor": {
+    "setup": "My turn! m, a, t.",
+    "tutor_try": "m, a, t. Cat!",
+    "image": "tutor_tiles_mat",
+    "answer": "mat",
+    "win_line": "You caught me! m, a, t is mat. Cat starts with c.",
+    "gentle_line": "Let's blend together. Mmm, a, t. Mat!"
+  },
+  "parent_line": "Can blend three sounds into words like cat, pin and sit."
+}

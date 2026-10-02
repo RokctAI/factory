@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade1.term1.w07_bonds_to_five",
+  "subject": "Mathematics",
+  "grade": "1",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Adding and taking away",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 5",
+    "subtopic": "Addition and subtraction and number bonds up to 3 (weeks 1-4), up to 4 (weeks 5-6) and up to 5 (weeks 7-10)"
+  },
+  "skill": "number.bonds.to_5",
+  "prereq_skills": ["number.bonds.to_3"],
+  "images": ["hand_two_three", "beads_four_one", "numeral_3", "numeral_4", "numeral_5", "fingers_five_take_two", "numeral_2", "card_two_plus_three", "card_four_plus_one", "card_one_plus_one", "card_two_plus_two", "tutor_three_plus_two_wrong"],
+  "show": {
+    "line": "Five fingers on one hand! Two up and three down. Two plus three equals five.",
+    "image": "hand_two_three"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Four red beads and one blue bead. How many altogether?", "image": "beads_four_one", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five! Four plus one equals five."},
+    {"type": "listen_tap", "prompt": "Three plus one. Tap the answer.", "options": ["numeral_3", "numeral_4", "numeral_5"], "answer": "numeral_4", "praise": "Three plus one equals four."},
+    {"type": "say_it", "prompt": "Five take away two. How many are left? Say the number.", "accept": ["three", "3", "tree", "free"], "image": "fingers_five_take_two"},
+    {"type": "listen_tap", "prompt": "Two plus two. Tap the answer.", "options": ["numeral_3", "numeral_4", "numeral_5"], "answer": "numeral_4", "praise": "Two plus two equals four. A double!"},
+    {"type": "listen_tap", "prompt": "Five equals one plus what? Tap the missing number.", "options": ["numeral_3", "numeral_4", "numeral_5"], "answer": "numeral_4", "praise": "One plus four equals five."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Five ducks swim on the pond. Three fly away. How many ducks are left?", "options": ["numeral_2", "numeral_3", "numeral_5"], "answer": "numeral_2", "praise": "Two ducks! Five take away three is two."},
+    {"type": "match_sort", "prompt": "Does it make five? Put each sum in its group.", "groups": ["makes_five", "not_five"], "items": [{"image": "card_two_plus_three", "group": "makes_five"}, {"image": "card_four_plus_one", "group": "makes_five"}, {"image": "card_one_plus_one", "group": "not_five"}, {"image": "card_two_plus_two", "group": "not_five"}]}
+  ],
+  "hints": ["Use your fingers. Put some up, count them all.", "Take away means hide some fingers. Count the ones still up."],
+  "beat_the_tutor": {
+    "setup": "My turn! Three plus two.",
+    "tutor_try": "Three plus two equals four!",
+    "image": "tutor_three_plus_two_wrong",
+    "answer": "five",
+    "win_line": "You caught me! Three plus two equals five.",
+    "gentle_line": "Let's use fingers. Three, and two more. Four, five!"
+  },
+  "parent_line": "Can add and take away with numbers up to 5 and knows the bonds of 5."
+}

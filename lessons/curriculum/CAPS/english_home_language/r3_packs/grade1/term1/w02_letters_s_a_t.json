@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade1.term1.w02_letters_s_a_t",
+  "subject": "English Home Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [2],
+  "theme": "Sounds and letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises and names some letters of the alphabet, such as letters in own name"
+  },
+  "skill": "phonics.letter_sound.s_a_t",
+  "prereq_skills": ["phonics.initial_sound.mixed_review"],
+  "images": ["letters_s_a_t", "letter_s", "letter_a", "letter_t", "tap", "sun", "apple", "sock", "ant", "tent", "tutor_points_letter_s"],
+  "show": {
+    "line": "Three letters! This is s. s, s, snake. This is a. a, a, apple. This is t. t, t, tap.",
+    "image": "letters_s_a_t"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says s.", "options": ["letter_s", "letter_a", "letter_t"], "answer": "letter_s", "praise": "Yes! That is s."},
+    {"type": "listen_tap", "prompt": "Tap the letter that says t.", "options": ["letter_s", "letter_a", "letter_t"], "answer": "letter_t", "praise": "Yes! That is t."},
+    {"type": "say_it", "prompt": "This letter says a. Say the sound!", "accept": ["a", "ah", "aa", "ae"], "image": "letter_a"},
+    {"type": "listen_tap", "prompt": "Which picture starts with t?", "options": ["tap", "sun", "apple"], "answer": "tap", "praise": "t, t, tap."},
+    {"type": "listen_tap", "prompt": "Sam starts with s. Tap the first letter of Sam.", "options": ["letter_a", "letter_s", "letter_t"], "answer": "letter_s", "praise": "Yes! Sam starts with s."},
+    {"type": "match_sort", "prompt": "Which letter does it start with? Sort the pictures.", "groups": ["s", "a", "t"], "items": [{"image": "sun", "group": "s"}, {"image": "sock", "group": "s"}, {"image": "apple", "group": "a"}, {"image": "ant", "group": "a"}, {"image": "tap", "group": "t"}, {"image": "tent", "group": "t"}]}
+  ],
+  "hints": ["s is curly like a snake. t is tall with a cross. a is round.", "Say the picture word. Listen for the first sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the letter that says t.",
+    "tutor_try": "This one! The curly one says t.",
+    "image": "tutor_points_letter_s",
+    "answer": "s",
+    "win_line": "You caught me! The curly letter says s. t is the tall one with a cross.",
+    "gentle_line": "Let's look together. Tall with a cross. That is t!"
+  },
+  "parent_line": "Can recognise the letters s, a and t and say their sounds."
+}
