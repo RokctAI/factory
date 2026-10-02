@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we investigate the three angle facts of triangles — the 180-degree sum, the 60s of the equilateral, the equal base angles of the isosceles — by constructing and measuring, then explain them, then calculate with them. The first time I tore the corners off a paper triangle and they made a straight line I did not believe it, and tried a second triangle, and a third.
+
+Our expert tutor covers constructing triangles and measuring the angle sum with its parallel-line explanation, the angles of equilateral triangles, the base angles of isosceles triangles with the converse, and calculations with reasons including algebraic angles. Our simplifier tutor runs the torn-corner investigation across a whole class and finds every angle in a bridge truss from one measurement.
+
+My plan: read the dashes, find the apex, subtract from 180, halve when the base angles are equal, write every reason, and check the three angles add to 180. Questions follow every section; I will be constructing alongside you.
