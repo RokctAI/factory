@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Two consecutive angles of a parallelogram are x and 2x + 30. Find all four angles with reasons and check.",
+      "expected_answer": "Consecutive angles of a parallelogram are co-interior between the parallel sides, so x + 2x + 30 = 180 (co-int angles, AB parallel to DC). Then 3x + 30 = 180, 3x = 150 and x = 50. The angles are 50, 130, 50 and 130 degrees, since opposite angles of a parallelogram are equal. Check: 50 + 130 + 50 + 130 is 360, the sum of angles in a quadrilateral."
+    },
+    {
+      "id": "cc2",
+      "question": "Decide whether each statement is true or false, giving a reason or a counterexample: every square is a rhombus; every rhombus is a square; every rectangle is a parallelogram.",
+      "expected_answer": "Every square is a rhombus: true, because a square has four equal sides and is a parallelogram, which is the definition of a rhombus. Every rhombus is a square: false; a rhombus with angles of 60 and 120 degrees has four equal sides but no right angle, so it is a counterexample. Every rectangle is a parallelogram: true, because a rectangle is defined as a parallelogram with a right angle, so it inherits both pairs of parallel sides."
+    },
+    {
+      "id": "cc3",
+      "question": "ABCD is a rhombus with angle A equal to 60 degrees and diagonals AC and BD meeting at O. Find the angles of triangle AOB with reasons.",
+      "expected_answer": "The diagonals of a rhombus bisect the angles at their ends, so angle OAB is half of 60, which is 30 degrees. The diagonals of a rhombus cross at right angles, so angle AOB is 90 degrees. The angle sum in triangle AOB gives angle ABO equal to 180 − 30 − 90, which is 60 degrees. The triangle has angles 30, 90 and 60 degrees; as a check, angle B of the rhombus is 120 degrees (co-int with angle A) and the diagonal BD bisects it into two 60s, which agrees."
+    }
+  ]
+}

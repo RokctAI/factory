@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "ABCD is a rectangle with diagonals meeting at O, and diagonal AC makes an angle of 35 degrees with side AB. Find the angles of triangle AOB with reasons, and the angles of triangle BOC.",
+      "expected_answer": "The diagonals of a rectangle are equal and bisect each other, so AO = BO and triangle AOB is isosceles. Angle OBA is 35 degrees (angles opposite equal sides). Angle AOB is 180 − 35 − 35, which is 110 degrees (sum of angles in a triangle). Angle BOC is 180 − 110, which is 70 degrees (angles on a str line), and since BO = CO the base angles of triangle BOC are each (180 − 70) divided by 2, which is 55 degrees."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the interior angles of a hexagon add to 720 degrees, and find the size of each interior angle and each exterior angle of a regular hexagon.",
+      "expected_answer": "From one vertex of a hexagon, diagonals to the three non-adjacent vertices split it into 4 triangles, two fewer than the 6 sides. Each triangle has an angle sum of 180 degrees and the triangle angles together make up the hexagon's angles, so the sum is 4 × 180, which is 720 degrees. In a regular hexagon all six angles are equal, so each is 720 divided by 6, which is 120 degrees. Each exterior angle is 180 − 120, which is 60 degrees; check: six exterior angles of 60 add to 360."
+    },
+    {
+      "id": "cc3",
+      "question": "The angles of a pentagon are x, x + 10, x + 20, x + 30 and x + 40 degrees. Find the angles with a check. Then find the number of sides of a regular polygon whose interior angles are each 150 degrees.",
+      "expected_answer": "The angle sum of a pentagon is 3 × 180, which is 540 degrees. The five angles add to 5x + 100, so 5x + 100 = 540, 5x = 440 and x = 88. The angles are 88, 98, 108, 118 and 128 degrees; check 88 + 98 + 108 + 118 + 128 is 540. For the regular polygon, each exterior angle is 180 − 150, which is 30 degrees, and the exterior angles add to 360, so n = 360 divided by 30, which is 12 sides."
+    }
+  ]
+}

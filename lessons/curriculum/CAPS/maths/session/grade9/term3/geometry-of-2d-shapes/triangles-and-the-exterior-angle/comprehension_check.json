@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A triangle has angles x, 2x and 3x. Find the angles with reasons and classify the triangle by its angles.",
+      "expected_answer": "x + 2x + 3x = 180 (sum of angles in a triangle), so 6x = 180 and x = 30. The angles are 30, 60 and 90 degrees. One angle is 90 degrees, so the triangle is right-angled; check 30 + 60 + 90 is 180."
+    },
+    {
+      "id": "cc2",
+      "question": "Prove that the exterior angle of a triangle equals the sum of the two interior opposite angles, and say what construction would lead a learner to suspect it.",
+      "expected_answer": "Let the triangle be ABC with side BC extended beyond C. Exterior angle at C = 180 − angle C (angles on a str line). Also angle A + angle B = 180 − angle C (sum of angles in a triangle). Both equal 180 − angle C, so the exterior angle at C = angle A + angle B. A learner would construct several triangles, extend a side, measure the exterior angle and find it matches the sum of the two far interior angles each time, for example 50 + 60 giving 110."
+    },
+    {
+      "id": "cc3",
+      "question": "The exterior angle at C is 2x + 10 and the interior angles at A and B are x + 15 and 35. Find x and all three angles mentioned, with a check.",
+      "expected_answer": "2x + 10 = (x + 15) + 35 (exterior angle of a triangle), so 2x + 10 = x + 50 and x = 40. The exterior angle is 90 degrees, angle A is 55 degrees and angle B is 35 degrees. Check: 55 + 35 is 90. The interior angle at C is 180 − 90, which is 90, and 55 + 35 + 90 is 180."
+    }
+  ]
+}
