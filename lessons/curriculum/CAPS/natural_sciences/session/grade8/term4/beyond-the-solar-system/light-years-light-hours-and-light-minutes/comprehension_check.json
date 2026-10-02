@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the speed of light and the relationship between distance, speed and time. Calculate how far light travels in 5 seconds, and how long light takes to travel from the Moon (384 000 km) to the Earth.",
+      "expected_answer": "Light travels at about 300 000 km/s (3 × 10^5 km/s) in empty space; nothing travels faster. Distance = speed × time (and time = distance ÷ speed). In 5 s: 5 × 300 000 = 1 500 000 km. From the Moon: 384 000 ÷ 300 000 = 1.28 s, about 1.3 seconds."
+    },
+    {
+      "id": "cc2",
+      "question": "Define a light minute, a light hour and a light year, and calculate the value of each in kilometres. State whether a light year is a unit of time or distance, and give one suitable example for each unit.",
+      "expected_answer": "A light minute is the distance light travels in one minute: 300 000 km/s × 60 s = 18 million km (e.g. the Sun is about 8.3 light minutes from Earth). A light hour is the distance light travels in one hour: 300 000 × 3 600 = 1 080 million km (e.g. Neptune is about 4.2 light hours from the Sun). A light year is the distance light travels in one year: 300 000 × about 31.6 million s ≈ 9.5 trillion km (e.g. Proxima Centauri is about 4.24 light years away). A light year is a unit of distance, not time."
+    },
+    {
+      "id": "cc3",
+      "question": "Jupiter is about 43 light minutes from the Sun. Convert this to kilometres, showing all steps. Explain why astronomers say that looking into space means looking back in time, using an example.",
+      "expected_answer": "Distance = speed × time; time = 43 min × 60 = 2 580 s; distance = 300 000 km/s × 2 580 s = 774 000 000 km, about 774 million km. Because light takes time to travel, we see an object as it was when its light left it: we see the Sun as it was about 8 minutes ago, a star 100 light years away as it was 100 years ago, and the Andromeda Galaxy (about 2.5 million light years away) as it was about 2.5 million years ago."
+    }
+  ]
+}
