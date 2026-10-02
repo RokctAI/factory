@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to decide whether an arrangement of 6 squares is a net of a cube. Use the two elimination rules and the opposite-faces rule, and number the cross net as a standard die.",
+      "expected_answer": "Reject any arrangement with 5 or more squares in a straight row, since 4 already wrap round the cube and a fifth overlaps; reject any 2 by 2 block, since that puts 4 faces at one vertex where a cube has only 3. In any straight line of 3 squares, the first and third become opposite faces, so the six squares must split into three opposite pairs. In the cross (row of 4 with one square above and one below the second), the row's first and third, the row's second and fourth, and the top and bottom squares are opposite; number them 1 and 6, 2 and 5, 3 and 4 so that opposites add to 7."
+    },
+    {
+      "id": "cc2",
+      "question": "Draw and describe the net of a triangular prism with right-angled triangular ends of sides 3, 4 and 5 cm and length 10 cm. Explain the length of the strip and how the triangles are placed.",
+      "expected_answer": "The net has three rectangles side by side, 3 by 10, 4 by 10 and 5 by 10 cm, forming a strip 3 + 4 + 5 = 12 cm long (the perimeter of the end) and 10 cm wide, with a 3, 4, 5 triangle attached to each of the two long edges of the strip. Each side of a triangle must lie against a rectangle edge of the same length, the 3 cm side against the 3 cm edge, and so on, so that every pair of meeting edges is equal and the net closes."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the net of a cylinder of radius 3.5 cm and height 10 cm, calculating the dimensions of the rectangle. Explain why using the diameter for the rectangle's length is wrong.",
+      "expected_answer": "Two circles of radius 3.5 cm and one rectangle, with the circles touching opposite long sides of the rectangle. The rectangle is 10 cm wide (the height) and as long as the circumference: 2 × π × 3.5 ≈ 21.99 cm, about 22 cm. The rectangle must wrap once around the circular end, so its length is the distance round the circle, not across it; a 7 cm rectangle (the diameter) would cover less than a third of the curved surface."
+    }
+  ]
+}

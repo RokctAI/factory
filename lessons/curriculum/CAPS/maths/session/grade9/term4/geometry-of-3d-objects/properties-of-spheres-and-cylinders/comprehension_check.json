@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe a cylinder fully by its flat faces, curved surfaces, edges and vertices, and describe its cross-sections when cut parallel to the base, vertically through the axis, and at a slant. Use a tin of radius 3.5 cm and height 10 cm.",
+      "expected_answer": "A cylinder has 2 flat circular faces, 1 curved surface, 2 curved edges (the rims) and 0 vertices. Cut parallel to the base, the cross-section is a circle congruent to the base, radius 3.5 cm (a uniform cross-section, like a prism). Cut vertically through the axis, it is a rectangle as wide as the diameter and as tall as the cylinder, 7 cm by 10 cm. Cut at a slant through the curved surface, it is an ellipse (oval)."
+    },
+    {
+      "id": "cc2",
+      "question": "Define a sphere, describe its faces, edges and vertices, and explain great circles. A sphere of radius 10 cm is cut by a plane 6 cm from the centre; find the radius of the cross-section.",
+      "expected_answer": "A sphere is the set of all points in space at a fixed distance, the radius, from a centre. It has 0 flat faces, 1 curved surface, 0 edges and 0 vertices. Every cross-section is a circle; a plane through the centre gives a great circle with the sphere's own radius, the largest possible, such as the equator. Radius of the cut: √(10² − 6²) = √64 = 8 cm."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare the cylinder, cone, sphere and hemisphere in a table of flat faces, curved surfaces, edges and vertices, and explain why Euler's formula should not be used for them.",
+      "expected_answer": "Cylinder: 2, 1, 2, 0. Cone: 1, 1, 1, 1 (the apex). Sphere: 0, 1, 0, 0. Hemisphere: 1, 1, 1, 0. Euler's formula V − E + F = 2 describes polyhedra, whose faces are flat polygons joined along straight edges meeting at vertices. Curved surfaces and circular edges do not fit that counting: for a cylinder, 0 − 2 + 3 = 1, not 2, which shows the formula does not apply, not that the count is wrong."
+    }
+  ]
+}
