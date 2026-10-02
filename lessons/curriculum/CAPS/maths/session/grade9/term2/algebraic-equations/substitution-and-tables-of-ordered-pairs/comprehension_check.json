@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Complete the table of ordered pairs for y = 2x + 1 with x = −2, −1, 0, 1, 2, showing the bracketed substitution for x = −2, and explain why (5; 2) is not a solution.",
+      "expected_answer": "At x = −2: 2(−2) + 1 gives −4 + 1, which is −3. The table reads y = −3, −1, 1, 3, 5, so the pairs are (−2; −3), (−1; −1), (0; 1), (1; 3), (2; 5). The pair (5; 2) has x = 5 and y = 2, and 2(5) + 1 is 11, not 2, so it does not satisfy the equation; the pair with x = 2 and y = 5 is written (2; 5)."
+    },
+    {
+      "id": "cc2",
+      "question": "For y = 3x − 2, find x when y = 10. For y = x^2 − 1, find x when y = 8. Explain why one question has two answers.",
+      "expected_answer": "10 = 3x − 2, so 3x = 12 and x = 4; the pair is (4; 10). 8 = x^2 − 1, so x^2 = 9 and x = 3 or x = −3; the pairs are (3; 8) and (−3; 8). The squared rule gives two answers because both 3 and −3 square to 9; the table for y = x^2 − 1 is symmetrical about x = 0."
+    },
+    {
+      "id": "cc3",
+      "question": "A table has x = 0, 1, 2, 3 and y = 5, 8, 11, 14. Find the rule, state how you know it is linear, and check with one column.",
+      "expected_answer": "The differences in y are 3, 3, 3 for a step of 1 in x, so the rule is linear with coefficient 3. At x = 0, y = 5, so the constant is 5: y = 3x + 5. Check at x = 3: 3(3) + 5 is 14, which matches. Constant differences across at least three columns are the evidence for linearity."
+    }
+  ]
+}

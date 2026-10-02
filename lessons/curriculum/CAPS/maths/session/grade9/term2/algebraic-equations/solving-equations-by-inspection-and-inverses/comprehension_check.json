@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve 3x − 5 = 16 and 10 − 2x = 4 by inverses, showing each step on both sides and checking each answer.",
+      "expected_answer": "3x − 5 = 16: add 5 to both sides to get 3x = 21, divide both sides by 3 to get x = 7. Check: 3 × 7 − 5 gives 16. 10 − 2x = 4: subtract 10 from both sides to get −2x = −6, divide both sides by −2 to get x = 3. Check: 10 − 2 × 3 gives 4. Dividing by 2 instead of −2 would give −3, and 10 − 2(−3) is 16, which fails the check."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve 5(x + 2) = 3(x + 6), and solve 3^(x + 1) = 81, explaining the method for each.",
+      "expected_answer": "Expand both brackets: 5x + 10 = 3x + 18. Subtract 3x from both sides: 2x + 10 = 18. Subtract 10: 2x = 8. Divide by 2: x = 4. Check: 5 × 6 is 30 and 3 × 10 is 30. For 3^(x + 1) = 81, write 81 as 3^4; with the same base the exponents are equal, so x + 1 = 4 and x = 3."
+    },
+    {
+      "id": "cc3",
+      "question": "A taxi charges a flat R20 plus R12 per kilometre and a trip costs R104. Set up and solve an equation for the distance, and state the four steps you used.",
+      "expected_answer": "Step one: let k be the distance in kilometres. Step two: 12k + 20 = 104. Step three: subtract 20 to get 12k = 84, divide by 12 to get k = 7. Step four: the trip was 7 km. Check against the story: 7 km at R12 is R84, plus R20 is R104."
+    }
+  ]
+}
