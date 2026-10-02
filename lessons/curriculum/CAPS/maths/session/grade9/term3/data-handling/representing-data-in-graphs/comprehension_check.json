@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Sixty learners travel to school: 33 walk, 21 use a taxi and 6 come by car. Calculate the angle of each slice of a pie chart, check the total, and give each as a percentage.",
+      "expected_answer": "Walk: 33 over 60 × 360, which is 198 degrees. Taxi: 21 over 60 × 360, which is 126 degrees. Car: 6 over 60 × 360, which is 36 degrees. Check: 198 + 126 + 36 is 360. Percentages: 33 over 60 is 55 percent, 21 over 60 is 35 percent, 6 over 60 is 10 percent, adding to 100 percent."
+    },
+    {
+      "id": "cc2",
+      "question": "Thirty learners' distances to school range from 0.2 km to 4.8 km. Explain how you would choose class intervals for a histogram, and explain why the bars of a histogram touch while the bars of a bar graph do not.",
+      "expected_answer": "The range is 4.8 − 0.2, which is 4.6 km. Choose between five and eight equal-width intervals with round boundaries that cover the range, for example five intervals of width 1 km from 0 to 5. Write the boundaries so that no value belongs to two intervals: 0 to under 1, 1 to under 2, and so on. Tally each value into exactly one interval and check that the tallies add to 30. The bars touch because the intervals are adjacent stretches of a continuous number line with no gap in the data between them; in a bar graph the categories, such as walk, taxi and car, are separate and unordered, so gaps are left between the bars."
+    },
+    {
+      "id": "cc3",
+      "question": "Eight learners' study hours and test marks are (1, 35), (2, 42), (2, 50), (3, 55), (4, 60), (5, 68), (6, 75), (7, 80). Name the graph you would draw, describe what it shows, and state a caution about the conclusion. Also say which graph suits a household's monthly electricity use over six months and why its vertical axis should start at zero.",
+      "expected_answer": "A scatter plot, with hours on the horizontal axis and marks on the vertical axis, one dot per learner and the dots not joined. The dots rise from left to right, showing a positive relationship: more hours of study tend to go with higher marks. Caution: a scatter plot shows association, not cause; the data cannot show whether studying raised the marks or whether some other factor affected both. Monthly electricity use over time suits a broken-line graph with months evenly spaced on the horizontal axis and points joined by straight segments. The vertical axis should start at zero (or show a clearly marked break) because a scale starting near 300 would exaggerate the rise from 320 to 480 kilowatt hours and mislead the reader about its size."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between random error and systematic bias, using the stopwatch example, and say which one a larger sample reduces and why.",
+      "expected_answer": "Random error is the unpredictable scatter of readings on both sides of the true value, such as five stopwatch times of 14.2, 14.5, 14.3, 14.4 and 14.1 seconds caused by reaction time; it averages out, so the mean of many readings is closer to the truth, and sampling error of the same kind shrinks as the sample grows. Systematic bias is a lean in one direction built into the method, such as every stopwatch being started late so every time is too short; averaging more biased readings gives a precise but wrong answer. A larger sample reduces random error but does nothing to bias, which is removed only by fixing the method, for example calibrating the instrument, choosing a fair sample or wording the question neutrally."
+    },
+    {
+      "id": "cc2",
+      "question": "A radio station's SMS poll of 4 000 listeners found 78 percent in favour of scrapping matric examinations; a stratified survey of 1 000 adults found 41 percent. Identify the biases in the poll, give their direction, and say which figure is the better estimate and why.",
+      "expected_answer": "Selection bias: the sample is listeners of one station, not the public, so it over-represents that audience. Self-selection bias: only people who felt strongly enough to pay for an SMS replied, which leans the result towards strong opinions. Possible question bias from the broadcast wording. The direction is towards an exaggerated yes. The 1 000-adult stratified survey is the better estimate even though it is smaller, because its sample was chosen fairly across the population; a large sample does not cure selection bias, so the 4 000 replies describe a self-selected group of listeners rather than the public."
+    },
+    {
+      "id": "cc3",
+      "question": "Ten households' daily water use was recorded as 280, 300, 310, 290, 350, 320, 305, 295, 330 and 320 litres. (a) Find the mean. (b) If the 350 had been typed as 35, find the new mean and explain how the error could be caught. (c) A report gives a suburb's average income as R18 000 using the mean; explain what may be wrong and what to report instead.",
+      "expected_answer": "(a) The sum is 3100, so the mean is 310 litres per day. (b) With 35 instead of 350 the sum is 2785 and the mean is 278.5 litres, a drop of 31.5 litres from one slipped digit. The error is caught by looking for a value that does not belong: 35 litres is about a tenth of every other household, so it is checked against the source reading before being accepted as data. (c) The mean is pulled up by a few very high incomes, so R18 000 may be far above what a typical household earns if most earn under R10 000; the median income should be reported, with a note that the distribution is skewed by a few high values."
+    }
+  ]
+}
