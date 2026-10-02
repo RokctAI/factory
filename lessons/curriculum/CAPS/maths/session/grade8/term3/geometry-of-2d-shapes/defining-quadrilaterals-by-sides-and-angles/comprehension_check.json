@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a rectangle, a rhombus and a square, and explain how the three are related.",
+      "expected_answer": "A rectangle is a parallelogram with a right angle; a rhombus is a parallelogram with four equal sides; a square is a rectangle with four equal sides, equivalently a rhombus with a right angle. The square inherits every property of both, so every square is a rectangle and a rhombus, but not conversely."
+    },
+    {
+      "id": "cc2",
+      "question": "Is every rhombus a kite? Is every kite a rhombus? Give reasons.",
+      "expected_answer": "Every rhombus is a kite, because its four equal sides give two pairs of equal adjacent sides. Not every kite is a rhombus: a kite with sides 3, 3, 5, 5 has unequal opposite sides and no parallel sides, so it is not a parallelogram."
+    },
+    {
+      "id": "cc3",
+      "question": "A rectangular gate sags so its angles become 80 and 100 degrees but its sides are unchanged. What is it now and why?",
+      "expected_answer": "A parallelogram. Both pairs of opposite sides remain parallel and equal, which the definition of a parallelogram requires, but the right angle that made it a rectangle has gone, so it falls to the name directly above rectangle in the family tree."
+    }
+  ]
+}

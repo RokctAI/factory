@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we pin down congruent — same shape and size — and similar — same shape, any size — and learn to test for each and to calculate with a scale factor. I used to think two shapes with the same area must be the same shape, until a 2 by 6 and a 3 by 4 rectangle sat side by side and disagreed.
+
+Our expert tutor covers congruent shapes and corresponding parts, similar shapes and the scale factor, missing lengths from scale factors, and which families of shapes are always similar. Our simplifier tutor enlarges a photograph for a wall and rescues one stretched on a phone, lays congruent paving tiles every way up, and measures a flagpole with a metre stick and its shadow.
+
+My plan: pair the vertices, compare every side and angle for congruence, divide corresponding sides the same way round for similarity, keep one direction for the scale factor, and never trust angles alone for quadrilaterals. Questions follow every section; I will be matching corners alongside you.
