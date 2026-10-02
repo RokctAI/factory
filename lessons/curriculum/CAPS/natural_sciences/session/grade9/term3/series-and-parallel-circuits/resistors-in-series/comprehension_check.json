@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State three rules for resistors connected in series.",
+      "expected_answer": "The current is the same at every point; the source voltage divides between the resistors, and their voltages add up to the source voltage; adding resistors increases the total resistance, so the current decreases."
+    },
+    {
+      "id": "cc2",
+      "question": "Two identical bulbs are connected in series to a 6 V battery. State the voltage across each bulb and explain what happens to the current and brightness if a third identical bulb is added.",
+      "expected_answer": "Each has 3 V (3 + 3 = 6 V). Adding a third bulb increases the total resistance, so the current decreases; each bulb then has 2 V and all three glow more dimly."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why all the bulbs go out if one bulb in a series circuit is removed.",
+      "expected_answer": "A series circuit has only one path. Removing a bulb breaks that path, so the circuit is open and no current can flow anywhere."
+    }
+  ]
+}

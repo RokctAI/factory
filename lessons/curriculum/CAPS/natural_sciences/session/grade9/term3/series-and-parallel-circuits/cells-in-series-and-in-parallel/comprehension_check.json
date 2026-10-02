@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate the total voltage of three 1,5 V cells in series, and of three 1,5 V cells in parallel.",
+      "expected_answer": "Series: 1,5 + 1,5 + 1,5 = 4,5 V. Parallel: 1,5 V (same as one cell)."
+    },
+    {
+      "id": "cc2",
+      "question": "Compare the brightness of a bulb and how long the cells last for two identical cells in series and two in parallel.",
+      "expected_answer": "Series: 3 V, so the bulb is brighter, but the cells run down faster. Parallel: 1,5 V, so the bulb has normal brightness, but the cells share the current and last longer."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how to connect a voltmeter to measure the voltage across a bulb, and why a torch with one cell reversed may not light.",
+      "expected_answer": "Connect the voltmeter in parallel, one lead to each end of the bulb (positive lead to the side nearer the positive terminal). A reversed cell pushes against the others, so its voltage subtracts and the total voltage is too small."
+    }
+  ]
+}

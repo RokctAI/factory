@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Give three reasons why household appliances are connected in parallel.",
+      "expected_answer": "Each receives the full mains voltage of 230 V; each can be switched on and off independently; if one fails, the others keep working."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why a kettle draws a much larger current than an LED bulb when both are connected to 230 V.",
+      "expected_answer": "Both have the same voltage across them, so the current depends on resistance. The kettle's element has a low resistance (about 26 Ω), so it draws a large current (about 8,7 A); the LED bulb has a much higher resistance and draws a small current."
+    },
+    {
+      "id": "cc3",
+      "question": "A kitchen circuit has a 16 A breaker. A kettle (8,7 A), toaster (3,5 A) and microwave (5,2 A) are switched on. Calculate the total current and explain what happens.",
+      "expected_answer": "8,7 + 3,5 + 5,2 = 17,4 A. This exceeds 16 A, so the circuit is overloaded and the breaker trips, cutting off the circuit to prevent the cables from overheating."
+    }
+  ]
+}
