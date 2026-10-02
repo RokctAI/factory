@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what pi means and why 3,14 is not its exact value.",
+      "expected_answer": "Pi is the circumference of a circle divided by its diameter, which is the same for every circle because all circles are similar. Pi is irrational, so its decimal never ends or repeats, and 3,14 is only an approximation to two decimal places."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the area of a circle is pi r squared.",
+      "expected_answer": "Cut the circle into many thin equal slices and lay them alternately point up and point down. They form a shape close to a rectangle with height r and base half the circumference, pi r, so the area is pi r times r, which is pi r squared."
+    },
+    {
+      "id": "cc3",
+      "question": "A circle has area 50,27 square centimetres. Find its radius and circumference.",
+      "expected_answer": "Divide by pi to get about 16, and take the square root: the radius is about 4 cm. The circumference is 2 pi times 4, which is 8 pi, about 25,13 cm."
+    }
+  ]
+}
