@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the three wires in a household cable, give the modern colour of each, and state its function.",
+      "expected_answer": "Live (brown): carries current to the appliance at 230 V. Neutral (blue): completes the circuit back to the supply, near 0 V. Earth (green and yellow): connects metal casings to the ground; carries current only in a fault."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how the earth wire protects a person if the live wire touches the metal casing of a kettle.",
+      "expected_answer": "The earth wire provides a low-resistance path from the casing to the ground, so a large current flows to earth at once. This trips the circuit breaker or blows the fuse, and the earth leakage unit detects the leakage and switches off, so the casing does not stay live and the current does not pass through the person."
+    },
+    {
+      "id": "cc3",
+      "question": "Why must switches and fuses be placed in the live wire, and why is the earth pin the longest?",
+      "expected_answer": "In the live wire, switching off or a blown fuse disconnects the appliance from the 230 V supply; in the neutral it would stop the current but leave the appliance live. The earth pin is longest so it connects first and disconnects last, keeping the appliance earthed whenever it is live (it also opens socket shutters)."
+    }
+  ]
+}

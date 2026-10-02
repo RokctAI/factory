@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Distinguish between an overload and a short circuit and give one cause of each.",
+      "expected_answer": "Overload: too much total current because too many (or too powerful) appliances are on one circuit, e.g. a heater, kettle and iron on one multiplug. Short circuit: the live wire touches the neutral (or earth) directly with almost no resistance, e.g. damaged insulation, water in a socket."
+    },
+    {
+      "id": "cc2",
+      "question": "Compare how a fuse and a circuit breaker protect a circuit, and give one advantage of a circuit breaker.",
+      "expected_answer": "Both are in series in the live wire and cut off the current when it exceeds their rating. A fuse's thin wire melts and must be replaced; a breaker is an automatic switch (bimetallic strip or electromagnet) that trips and can be reset. Advantage: it can be reset and cannot be wrongly replaced with a higher rating."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how an earth leakage unit protects a person who touches a faulty appliance.",
+      "expected_answer": "It compares the current in the live and neutral wires. If current leaks through the person to earth, less returns on the neutral. When the difference reaches about 30 mA, it switches off the supply in a fraction of a second, before a fatal shock."
+    }
+  ]
+}
