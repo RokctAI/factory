@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve 3x − 4 = 20 by inspection and show the check.",
+      "expected_answer": "What number minus 4 is 20? 24, so 3x = 24. Three times what is 24? 8, so x = 8. Check: 3(8) − 4 = 24 − 4 = 20, which equals the right side."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is 5 − x = 12 solved by x = −7 and not x = 7?",
+      "expected_answer": "The equation asks what number subtracted from 5 gives 12. Trying 7 gives 5 − 7 = −2, not 12; trying −7 gives 5 − (−7) = 5 + 7 = 12. Reading the order of subtraction exactly is essential."
+    },
+    {
+      "id": "cc3",
+      "question": "How does trial and improvement work for 7x + 9 = 121?",
+      "expected_answer": "Try x = 10: 79, too small. Try 20: 149, too big. The answer lies between; try 16: 112 + 9 = 121, exactly. Each trial's result narrows the range until the equation is satisfied."
+    }
+  ]
+}
