@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term4.w06_will_did_do",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Yesterday, today, tomorrow",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Uses present, past and future tenses; builds word bank; uses a dictionary"
+  },
+  "skill": "grammar.tense.past_present_future",
+  "prereq_skills": ["grammar.tense.present_past", "grammar.nouns_verbs_pronouns"],
+  "images": ["yesterday_today_tomorrow", "sentence_tomorrow_gap_beach", "word_will_go", "word_went", "word_go", "sentence_yesterday_gap_bread", "word_baked", "word_will_bake", "word_bake", "child_reading_tomorrow", "sentence_i_will_swim", "sentence_i_swam", "sentence_i_swim", "sentence_we_cooked_pap", "sentence_we_will_sing", "tutor_tomorrow_wrong"],
+  "show": {
+    "line": "Yesterday I played. Today I play. Tomorrow I will play. Will tells us it has not happened yet!",
+    "image": "yesterday_today_tomorrow"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tomorrow we, gap, to the beach. Which words fit?", "image": "sentence_tomorrow_gap_beach", "options": ["word_will_go", "word_went", "word_go"], "answer": "word_will_go", "praise": "Will go! Tomorrow has not happened yet."},
+    {"type": "listen_tap", "prompt": "Yesterday Gogo, gap, bread. Which word fits?", "image": "sentence_yesterday_gap_bread", "options": ["word_baked", "word_will_bake", "word_bake"], "answer": "word_baked", "praise": "Baked! It already happened."},
+    {"type": "say_it", "prompt": "Today I read. Tomorrow I, what? Say the words.", "accept": ["will read", "i will read", "will reed"], "image": "child_reading_tomorrow"},
+    {"type": "listen_tap", "prompt": "Which sentence is about tomorrow?", "options": ["sentence_i_will_swim", "sentence_i_swam", "sentence_i_swim"], "answer": "sentence_i_will_swim", "praise": "Yes! I will swim. Not yet, but soon."},
+    {"type": "listen_tap", "prompt": "Which sentence is about right now?", "options": ["sentence_i_swim", "sentence_i_swam", "sentence_i_will_swim"], "answer": "sentence_i_swim", "praise": "Yes! I swim. Right now."},
+    {"type": "match_sort", "prompt": "Yesterday, today or tomorrow? Put each sentence in its group.", "groups": ["yesterday", "today", "tomorrow"], "items": [{"image": "sentence_i_swam", "group": "yesterday"}, {"image": "sentence_we_cooked_pap", "group": "yesterday"}, {"image": "sentence_i_swim", "group": "today"}, {"image": "sentence_i_will_swim", "group": "tomorrow"}, {"image": "sentence_we_will_sing", "group": "tomorrow"}]}
+  ],
+  "hints": ["Tomorrow? Use will. I will play.", "Yesterday? The word changes. Play, played."],
+  "beat_the_tutor": {
+    "setup": "My turn! Tomorrow I, gap, my gogo.",
+    "tutor_try": "Tomorrow I visited my gogo!",
+    "image": "tutor_tomorrow_wrong",
+    "answer": "will visit",
+    "win_line": "You caught me! Tomorrow has not happened yet. Tomorrow I will visit my gogo.",
+    "gentle_line": "Let's say it together. Tomorrow I will visit my gogo!"
+  },
+  "parent_line": "Can talk about yesterday, today and tomorrow with the right words, including will."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term4.w01_rands_and_cents",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Rands and cents",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Solve problems in context to 99",
+    "subtopic": "Money problems involving totals and change (weeks 1-4, 7-10)"
+  },
+  "skill": "money.rands_cents.to_99",
+  "prereq_skills": ["money.totals.to_50", "number.add_subtract.to_75"],
+  "images": ["coins_cents", "coin_50c", "coin_20c", "coin_r1", "coins_20c_three", "price_r32", "price_r8", "price_r22", "note_r20_coin_r5", "price_r20", "price_r80", "price_r30", "coins_50c_two", "notes_r10_four_coin_r5", "tutor_adds_notes_wrong"],
+  "show": {
+    "line": "Coins can be cents too! Fifty cents, twenty cents, ten cents. Two fifty cent coins make one rand.",
+    "image": "coins_cents"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which coin is fifty cents?", "options": ["coin_50c", "coin_20c", "coin_r1"], "answer": "coin_50c", "praise": "Yes! The fifty cent coin."},
+    {"type": "count_tap", "prompt": "Count the twenty cent coins in twenties. How many cents?", "image": "coins_20c_three", "count": "60", "options": ["40", "60", "80"], "answer": "60", "praise": "Sixty cents! Twenty, forty, sixty."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A pen costs twelve rand. A book costs twenty rand. How much do they cost together?", "options": ["price_r32", "price_r8", "price_r22"], "answer": "price_r32", "praise": "Thirty-two rand! Twelve plus twenty."},
+    {"type": "say_it", "prompt": "A twenty rand note and a five rand coin. How much money is that?", "accept": ["twenty-five rand", "twenty five rand", "twenty-five", "25 rand"], "image": "note_r20_coin_r5"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Musa pays with a fifty rand note. His ball costs thirty rand. How much change does he get?", "options": ["price_r20", "price_r80", "price_r30"], "answer": "price_r20", "praise": "Twenty rand change! Fifty take away thirty."},
+    {"type": "listen_tap", "prompt": "Which is worth more, two fifty cent coins or one twenty cent coin?", "options": ["coins_50c_two", "coin_20c"], "answer": "coins_50c_two", "praise": "Yes! Two fifty cents make one rand."},
+    {"type": "count_tap", "prompt": "Count the ten rand notes and the five rand coin. How many rand in all?", "image": "notes_r10_four_coin_r5", "count": "45", "options": ["40", "45", "50"], "answer": "45", "praise": "Forty-five rand! Ten, twenty, thirty, forty, forty-five."}
+  ],
+  "hints": ["Add the notes first, then the coins.", "Change is what you get back. Take the price away from what you paid."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will add a twenty rand note and a ten rand note.",
+    "tutor_try": "Twenty rand and ten rand make twenty-one rand!",
+    "image": "tutor_adds_notes_wrong",
+    "answer": "thirty rand",
+    "win_line": "You caught me! Twenty and ten make thirty. Thirty rand.",
+    "gentle_line": "Let's count in tens together. Ten, twenty, thirty. Thirty rand!"
+  },
+  "parent_line": "Can add up money in rands and cents and work out change up to 99 rand."
+}

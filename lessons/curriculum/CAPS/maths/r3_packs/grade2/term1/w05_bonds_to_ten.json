@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w05_bonds_to_ten",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Friends of ten",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 20",
+    "subtopic": "Practise number bonds to 10"
+  },
+  "skill": "number.bonds.to_10",
+  "prereq_skills": ["number.add_subtract.to_8", "count.to_10"],
+  "images": ["ten_frame_seven_three", "ten_frame_seven_dots", "numeral_4", "numeral_5", "numeral_3", "hands_eight_up", "pair_5_5", "pair_6_3", "pair_7_2", "numeral_1", "numeral_2", "numeral_0", "card_7_plus_3", "card_2_plus_8", "card_4_plus_6", "card_5_plus_4", "card_3_plus_6", "tutor_ten_frame_wrong"],
+  "show": {
+    "line": "Friends of ten! Seven and three make ten. Six and four make ten. Every number has a friend of ten.",
+    "image": "ten_frame_seven_three"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Seven dots are in the ten frame. How many empty spaces? Tap the number.", "image": "ten_frame_seven_dots", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three! Seven and three make ten."},
+    {"type": "listen_tap", "prompt": "Six and what make ten?", "options": ["numeral_4", "numeral_5", "numeral_3"], "answer": "numeral_4", "praise": "Four! Six and four make ten."},
+    {"type": "say_it", "prompt": "Eight fingers are up. How many are down? Say the number.", "accept": ["two", "2", "to", "tu"], "image": "hands_eight_up"},
+    {"type": "listen_tap", "prompt": "Which pair of numbers are friends of ten?", "options": ["pair_5_5", "pair_6_3", "pair_7_2"], "answer": "pair_5_5", "praise": "Yes! Five and five make ten."},
+    {"type": "listen_tap", "prompt": "Nine and what make ten?", "options": ["numeral_1", "numeral_2", "numeral_0"], "answer": "numeral_1", "praise": "One! Nine and one make ten."},
+    {"type": "match_sort", "prompt": "Do these two numbers make ten? Put each card in its group.", "groups": ["makes_ten", "not_ten"], "items": [{"image": "card_7_plus_3", "group": "makes_ten"}, {"image": "card_2_plus_8", "group": "makes_ten"}, {"image": "card_4_plus_6", "group": "makes_ten"}, {"image": "card_5_plus_4", "group": "not_ten"}, {"image": "card_3_plus_6", "group": "not_ten"}]}
+  ],
+  "hints": ["Use your ten fingers. Put some up. Count the ones still down.", "Count on from the first number until you reach ten."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the friend of seven.",
+    "tutor_try": "Seven and four make ten!",
+    "image": "tutor_ten_frame_wrong",
+    "answer": "three",
+    "win_line": "You caught me! Seven and three make ten. Seven and four is eleven.",
+    "gentle_line": "Let's count on together. Seven, eight, nine, ten. That is three more!"
+  },
+  "parent_line": "Knows the pairs of numbers that make 10."
+}

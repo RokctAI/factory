@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w03_long_and_short",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Longer and shorter",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Measurement: Length",
+    "subtopic": "Vocabulary: long, longer, longest; short, shorter, shortest"
+  },
+  "skill": "measure.length.compare_order",
+  "prereq_skills": ["measure.length.longest_shortest"],
+  "images": ["ribbons_three_lengths", "pencil_long", "pencil_short", "pencil_middle", "snake_long", "snake_short", "snake_middle", "ropes_yellow_longer", "book_six_clips", "foot_print", "hand_span", "tutor_picks_short_ribbon"],
+  "show": {
+    "line": "Three ribbons. The red one is long. The blue one is longer. The green one is the longest of all!",
+    "image": "ribbons_three_lengths"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which pencil is the longest?", "options": ["pencil_long", "pencil_short", "pencil_middle"], "answer": "pencil_long", "praise": "Yes! That pencil is the longest."},
+    {"type": "listen_tap", "prompt": "Which snake is the shortest?", "options": ["snake_long", "snake_short", "snake_middle"], "answer": "snake_short", "praise": "Yes! That snake is the shortest."},
+    {"type": "say_it", "prompt": "Look at the two ropes. Is the yellow rope longer or shorter than the brown rope?", "accept": ["longer", "long", "it is longer", "longa"], "image": "ropes_yellow_longer"},
+    {"type": "count_tap", "prompt": "Measure the book with paper clips. How many clips long is it?", "image": "book_six_clips", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six clips long!"},
+    {"type": "what_next", "prompt": "Put the sticks in order. Short, longer, then what comes next?", "sequence": ["short", "longer"], "options": ["longest", "shortest"], "answer": "longest", "praise": "Longest! Short, longer, longest."},
+    {"type": "listen_tap", "prompt": "Which is longer, your foot or your hand span? Tap your answer.", "options": ["foot_print", "hand_span"], "answer": "foot_print", "praise": "Yes! A foot is longer than a hand span."}
+  ],
+  "hints": ["Line the ends up. Then look at which one sticks out more.", "Longest means longer than all the others."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the longest ribbon.",
+    "tutor_try": "The red ribbon is the longest!",
+    "image": "tutor_picks_short_ribbon",
+    "answer": "green",
+    "win_line": "You caught me! The green ribbon is the longest. Red is the shortest.",
+    "gentle_line": "Let's line them up together. The green one sticks out the most. Longest!"
+  },
+  "parent_line": "Can compare and order lengths using longer, shorter, longest and shortest."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term1.w04_blends",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [4, 5],
+  "theme": "Blending sounds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Uses initial and final consonant blends to build and break down words (bl-a-ck, bri-ng)"
+  },
+  "skill": "phonics.blend.initial_final",
+  "prereq_skills": ["phonics.word_family.at_og_in"],
+  "images": ["black_blue_block", "block", "ball", "star", "flag_sounds", "snake", "drum_sounds", "nest", "net", "swing", "swim", "sun", "blanket", "stick", "stool", "tutor_says_spot"],
+  "show": {
+    "line": "Two sounds stuck together! b-l. Black, blue, block. s-t. Stop, star, nest!",
+    "image": "black_blue_block"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Listen. b-l. Which picture starts with b-l?", "options": ["block", "ball", "star"], "answer": "block", "praise": "Yes! b-l, block."},
+    {"type": "say_it", "prompt": "Listen. f-l-a-g. Put the sounds together. What word is it?", "accept": ["flag", "flahg", "a flag"], "image": "flag_sounds"},
+    {"type": "listen_tap", "prompt": "Listen. s-t. Which picture starts with s-t?", "options": ["star", "snake", "block"], "answer": "star", "praise": "Yes! s-t, star."},
+    {"type": "say_it", "prompt": "Listen. d-r-u-m. Put the sounds together. Say the word.", "accept": ["drum", "a drum", "drumm"], "image": "drum_sounds"},
+    {"type": "listen_tap", "prompt": "Which picture ends with s-t? Nest, or net?", "options": ["nest", "net"], "answer": "nest", "praise": "Yes! Nest ends with s-t."},
+    {"type": "listen_tap", "prompt": "Which picture ends with n-g, like ring?", "options": ["swing", "swim", "sun"], "answer": "swing", "praise": "Yes! Swing ends like ring."},
+    {"type": "match_sort", "prompt": "Starts with b-l, or starts with s-t? Put each picture in its group.", "groups": ["bl", "st"], "items": [{"image": "block", "group": "bl"}, {"image": "blanket", "group": "bl"}, {"image": "star", "group": "st"}, {"image": "stick", "group": "st"}, {"image": "stool", "group": "st"}]}
+  ],
+  "hints": ["Say the two sounds fast, so they stick together.", "Stretch the word out slowly. Listen to the first two sounds."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will put these sounds together. s-t-o-p.",
+    "tutor_try": "s-t-o-p. Spot!",
+    "image": "tutor_says_spot",
+    "answer": "stop",
+    "win_line": "You caught me! s-t-o-p says stop. Spot has the sounds in a different order.",
+    "gentle_line": "Let's say the sounds together. s-t-o-p. Stop!"
+  },
+  "parent_line": "Can put two consonant sounds together at the start or end of a word."
+}

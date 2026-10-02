@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term3.w05_bonds_to_twenty",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Friends of twenty",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 75",
+    "subtopic": "Practise number bonds to 15 (weeks 1-4) and 20 (weeks 5-10)"
+  },
+  "skill": "number.bonds.to_20",
+  "prereq_skills": ["number.bonds.to_10", "number.add_subtract.to_20"],
+  "images": ["double_ten_frame_15_5", "double_ten_frame_14", "numeral_3", "numeral_2", "numeral_13", "double_ten_frame_11", "pair_13_7", "pair_12_9", "pair_15_4", "numeral_6", "numeral_5", "numeral_7", "numeral_4", "numeral_36", "tutor_double_frame_wrong"],
+  "show": {
+    "line": "Friends of twenty! Fifteen and five make twenty. Twelve and eight make twenty. Use your friends of ten to help.",
+    "image": "double_ten_frame_15_5"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Fourteen dots in the two ten frames. How many empty spaces to make twenty?", "image": "double_ten_frame_14", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six! Fourteen and six make twenty."},
+    {"type": "listen_tap", "prompt": "Seventeen and what make twenty?", "options": ["numeral_3", "numeral_2", "numeral_13"], "answer": "numeral_3", "praise": "Three! Seventeen and three make twenty."},
+    {"type": "say_it", "prompt": "Eleven and what make twenty? Say the number.", "accept": ["nine", "9", "nain", "nyne"], "image": "double_ten_frame_11"},
+    {"type": "listen_tap", "prompt": "Which pair makes twenty?", "options": ["pair_13_7", "pair_12_9", "pair_15_4"], "answer": "pair_13_7", "praise": "Yes! Thirteen and seven make twenty."},
+    {"type": "listen_tap", "prompt": "Nine and what make fifteen?", "options": ["numeral_6", "numeral_5", "numeral_7"], "answer": "numeral_6", "praise": "Six! Nine and six make fifteen."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Twenty eggs fit in the box. Sixteen eggs are in. How many more eggs are needed to fill it?", "options": ["numeral_4", "numeral_6", "numeral_36"], "answer": "numeral_4", "praise": "Four! Sixteen and four make twenty."}
+  ],
+  "hints": ["Think of friends of ten. Four and six make ten, so fourteen and six make twenty.", "Count on from the number until you reach twenty."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the friend of eighteen.",
+    "tutor_try": "Eighteen and three make twenty!",
+    "image": "tutor_double_frame_wrong",
+    "answer": "two",
+    "win_line": "You caught me! Eighteen and two make twenty. Eighteen and three is twenty-one.",
+    "gentle_line": "Let's count on together. Eighteen, nineteen, twenty. That is two more!"
+  },
+  "parent_line": "Knows the pairs of numbers that make 15 and 20."
+}

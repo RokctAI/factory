@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term2.w06_oa_ea_ai",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [6, 7],
+  "theme": "Boat, eat and train sounds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises at least three new vowel digraphs ('oa' boat, 'ea' eat, short 'oo' book, 'ai' train)"
+  },
+  "skill": "phonics.vowel_digraph.oa_ea_ai",
+  "prereq_skills": ["phonics.vowel_digraph.oo_ee"],
+  "images": ["boat_train_leaf", "goat", "train", "leaf", "snail", "coat", "sea", "word_leaf", "word_coat", "word_rain", "word_ran", "word_run", "hook", "moon", "boat", "road", "rain", "tail", "tutor_holds_train"],
+  "show": {
+    "line": "Boat, coat, goat. Train, rain, snail. Eat, leaf, sea. Two letters in the middle make one long sound!",
+    "image": "boat_train_leaf"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture has the middle sound of boat?", "options": ["goat", "train", "leaf"], "answer": "goat", "praise": "Yes! Boat, goat. Same middle sound."},
+    {"type": "listen_tap", "prompt": "Which picture has the middle sound of train?", "options": ["snail", "coat", "sea"], "answer": "snail", "praise": "Yes! Train, snail."},
+    {"type": "say_it", "prompt": "Read this word. It has the middle sound of eat.", "accept": ["leaf", "leef", "leaves"], "image": "word_leaf"},
+    {"type": "say_it", "prompt": "Read this word. It has the middle sound of boat.", "accept": ["coat", "cote", "a coat"], "image": "word_coat"},
+    {"type": "listen_tap", "prompt": "Which word card says rain?", "options": ["word_rain", "word_ran", "word_run"], "answer": "word_rain", "praise": "Yes! Rain, like train."},
+    {"type": "listen_tap", "prompt": "Book and look have a short middle sound. Which picture has the short sound of book?", "options": ["hook", "moon", "boat"], "answer": "hook", "praise": "Yes! Book, hook. Short and quick."},
+    {"type": "match_sort", "prompt": "Middle sound like boat, or like train? Put each picture in its group.", "groups": ["boat", "train"], "items": [{"image": "goat", "group": "boat"}, {"image": "coat", "group": "boat"}, {"image": "road", "group": "boat"}, {"image": "snail", "group": "train"}, {"image": "rain", "group": "train"}, {"image": "tail", "group": "train"}]}
+  ],
+  "hints": ["Stretch the middle of the word. Boooat. Traaain.", "Say the two words. Do the middles sound the same?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word with the middle sound of boat.",
+    "tutor_try": "Train! Train sounds like boat in the middle.",
+    "image": "tutor_holds_train",
+    "answer": "no",
+    "win_line": "You caught me! Train has the rain sound. Goat has the boat sound.",
+    "gentle_line": "Let's listen together. Boat, goat. Same middle sound!"
+  },
+  "parent_line": "Can hear and read the vowel sounds in boat, train, eat and book."
+}

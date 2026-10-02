@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term2.w01_count_past_hundred",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Past one hundred",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Counting (integrated with number patterns and mental maths)",
+    "subtopic": "Count forwards and backwards in 1s from any number between 0 and 110 (weeks 1-2), 120 (weeks 3-4), 140 (weeks 5-8) and 150 (weeks 9-10)"
+  },
+  "skill": "count.to_150",
+  "prereq_skills": ["count.to_60", "count.skip.10_5_2"],
+  "images": ["number_track_98_to_103", "numeral_105", "numeral_119", "numeral_121", "numeral_109", "numeral_114", "numeral_141", "numeral_104", "tutor_jumps_to_200"],
+  "show": {
+    "line": "Ninety-eight, ninety-nine, one hundred! And we keep going. One hundred and one, one hundred and two, one hundred and three.",
+    "image": "number_track_98_to_103"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count on. Ninety-seven, ninety-eight, ninety-nine. What comes next?", "sequence": ["97", "98", "99"], "options": ["100", "90", "1000"], "answer": "100", "praise": "One hundred! Ninety-nine, one hundred."},
+    {"type": "say_it", "prompt": "Look at this number. Say it.", "accept": ["one hundred and five", "hundred and five", "one hundred five", "105"], "image": "numeral_105"},
+    {"type": "what_next", "prompt": "Count on. One hundred and eight, one hundred and nine. What comes next?", "sequence": ["108", "109"], "options": ["110", "200", "100"], "answer": "110", "praise": "One hundred and ten!"},
+    {"type": "listen_tap", "prompt": "Which number comes just before one hundred and twenty?", "options": ["numeral_119", "numeral_121", "numeral_109"], "answer": "numeral_119", "praise": "One hundred and nineteen, then one hundred and twenty."},
+    {"type": "what_next", "prompt": "Count backwards. One hundred and two, one hundred and one, one hundred. What comes next?", "sequence": ["102", "101", "100"], "options": ["99", "103", "90"], "answer": "99", "praise": "Ninety-nine! Going down from one hundred."},
+    {"type": "listen_tap", "prompt": "Tap the number one hundred and fourteen.", "options": ["numeral_114", "numeral_141", "numeral_104"], "answer": "numeral_114", "praise": "Yes! One hundred and fourteen."}
+  ],
+  "hints": ["After one hundred, say one hundred and then count on. And one, and two, and three.", "Say the numbers slowly. Listen to the number before."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count on from one hundred and ten.",
+    "tutor_try": "One hundred and ten, one hundred and eleven, two hundred!",
+    "image": "tutor_jumps_to_200",
+    "answer": "one hundred and twelve",
+    "win_line": "You caught me! After one hundred and eleven comes one hundred and twelve.",
+    "gentle_line": "Let's count together. One hundred and ten, eleven, twelve. One hundred and twelve!"
+  },
+  "parent_line": "Can count on and back past 100, up to 150."
+}

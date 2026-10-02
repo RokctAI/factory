@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term3.w07_nouns_and_verbs",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Naming words and doing words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Uses present, past and future tenses; identifies and uses nouns, verbs and pronouns correctly"
+  },
+  "skill": "grammar.nouns_verbs_pronouns",
+  "prereq_skills": ["grammar.tense.present_past"],
+  "images": ["dog_runs_labels", "word_ball", "word_jump", "word_run", "word_swim", "word_cat", "word_tree", "girl_kicks_ball", "word_he", "word_she", "word_it", "word_we", "word_school", "word_apple", "word_sing", "word_eat", "sentence_tomorrow_gap_park", "word_will_go", "word_went", "word_going", "tutor_points_apple"],
+  "show": {
+    "line": "Naming words name things. Dog, ball, Mama. Doing words tell what we do. Run, jump, eat. The dog runs!",
+    "image": "dog_runs_labels"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word is a naming word, a thing you can see?", "options": ["word_ball", "word_jump", "word_run"], "answer": "word_ball", "praise": "Yes! Ball is a naming word."},
+    {"type": "listen_tap", "prompt": "Which word is a doing word? Something you can do.", "options": ["word_swim", "word_cat", "word_tree"], "answer": "word_swim", "praise": "Yes! Swim is a doing word."},
+    {"type": "say_it", "prompt": "The girl kicks the ball. Which word is the doing word? Say it.", "accept": ["kicks", "kick", "kiks"], "image": "girl_kicks_ball"},
+    {"type": "listen_tap", "prompt": "Thabo is tall. Which little word can take the place of Thabo?", "options": ["word_he", "word_she", "word_it"], "answer": "word_he", "praise": "Yes! He is tall."},
+    {"type": "listen_tap", "prompt": "Mama and I are going to the shop. Which word takes the place of Mama and I?", "options": ["word_we", "word_he", "word_it"], "answer": "word_we", "praise": "Yes! We are going to the shop."},
+    {"type": "match_sort", "prompt": "Naming word or doing word? Put each word in its group.", "groups": ["naming", "doing"], "items": [{"image": "word_cat", "group": "naming"}, {"image": "word_school", "group": "naming"}, {"image": "word_apple", "group": "naming"}, {"image": "word_jump", "group": "doing"}, {"image": "word_sing", "group": "doing"}, {"image": "word_eat", "group": "doing"}]},
+    {"type": "listen_tap", "prompt": "Tomorrow I, gap, to the park. Which word fits?", "image": "sentence_tomorrow_gap_park", "options": ["word_will_go", "word_went", "word_going"], "answer": "word_will_go", "praise": "Will go! Tomorrow has not happened yet."}
+  ],
+  "hints": ["Can you see it or touch it? Then it is a naming word.", "Can you do it? Then it is a doing word."],
+  "beat_the_tutor": {
+    "setup": "My turn! The boy eats an apple. I will find the doing word.",
+    "tutor_try": "Apple! Apple is the doing word.",
+    "image": "tutor_points_apple",
+    "answer": "eats",
+    "win_line": "You caught me! You cannot apple. Eats is the doing word.",
+    "gentle_line": "Let's find it together. What does the boy do? He eats. Eats!"
+  },
+  "parent_line": "Can tell naming words from doing words and use he, she, it and we."
+}

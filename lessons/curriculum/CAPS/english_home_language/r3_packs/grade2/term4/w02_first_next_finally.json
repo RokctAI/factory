@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term4.w02_first_next_finally",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "First, next, finally",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Drafts, writes and publishes own story of at least two paragraphs ('once upon a time', 'in the end'); sequences with 'first', 'next', 'finally'"
+  },
+  "skill": "writing.story.sequence_words",
+  "prereq_skills": ["reading.comprehension.sequence"],
+  "images": ["storybook_once_upon_a_time", "words_once_upon_a_time", "words_in_the_end", "words_finally", "bakes_cake", "eats_cake", "mixes_flour", "storybook_last_page", "sentence_gap_brushed_teeth", "word_first", "word_finally", "word_end", "tutor_story_words_wrong"],
+  "show": {
+    "line": "Story words! Once upon a time starts a story. First, next, finally keep the order. In the end finishes it!",
+    "image": "storybook_once_upon_a_time"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which words start a story?", "options": ["words_once_upon_a_time", "words_in_the_end", "words_finally"], "answer": "words_once_upon_a_time", "praise": "Yes! Once upon a time."},
+    {"type": "what_next", "prompt": "First, next, then what word comes last?", "sequence": ["first", "next"], "options": ["finally", "once", "first"], "answer": "finally", "praise": "Finally! First, next, finally."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "First Zanele mixes the flour. Next she bakes the cake. Finally she eats it. What does she do next?", "options": ["bakes_cake", "eats_cake", "mixes_flour"], "answer": "bakes_cake", "praise": "Yes! Next she bakes the cake."},
+    {"type": "say_it", "prompt": "Which words finish a story? Say them.", "accept": ["in the end", "the end", "in the end they lived happily", "finally"], "image": "storybook_last_page"},
+    {"type": "listen_tap", "prompt": "Gap, I brushed my teeth. Then I went to bed. Which word fits the gap?", "image": "sentence_gap_brushed_teeth", "options": ["word_first", "word_finally", "word_end"], "answer": "word_first", "praise": "First! First I brushed my teeth."},
+    {"type": "what_next", "prompt": "Put the story words in order. Once upon a time, first, next. What comes next?", "sequence": ["once upon a time", "first", "next"], "options": ["finally", "once upon a time", "first"], "answer": "finally", "praise": "Finally! Then, in the end."}
+  ],
+  "hints": ["First is the start. Next is the middle. Finally is the end.", "Think about what happens before and after."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will tell the cake story with story words.",
+    "tutor_try": "Finally Zanele mixes the flour. First she eats the cake!",
+    "image": "tutor_story_words_wrong",
+    "answer": "first mixes",
+    "win_line": "You caught me! First she mixes. Finally she eats. I swapped them.",
+    "gentle_line": "Let's say it together. First mix, next bake, finally eat!"
+  },
+  "parent_line": "Can use once upon a time, first, next, finally and in the end to order a story."
+}

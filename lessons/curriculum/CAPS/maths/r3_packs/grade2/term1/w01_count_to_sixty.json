@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w01_count_to_sixty",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Counting to 60",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Counting (integrated with number patterns and mental maths)",
+    "subtopic": "Count forwards and backwards in 1s from any number to 60 (weeks 1-2), 80 (weeks 3-6) and 100 (weeks 7-10)"
+  },
+  "skill": "count.to_60",
+  "prereq_skills": ["count.to_10", "number.recognise.1_to_10"],
+  "images": ["number_track_20_to_30", "numeral_42", "numeral_60", "numeral_58", "numeral_50", "numeral_29", "numeral_31", "numeral_20", "tutor_skips_fifty"],
+  "show": {
+    "line": "Let's count on from any number. Twenty-seven, twenty-eight, twenty-nine, thirty! Now backwards. Thirty, twenty-nine, twenty-eight.",
+    "image": "number_track_20_to_30"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count on with me. Thirty-six, thirty-seven, thirty-eight. What comes next?", "sequence": ["36", "37", "38"], "options": ["39", "40", "30"], "answer": "39", "praise": "Thirty-nine! Then forty."},
+    {"type": "say_it", "prompt": "Look at this number. Say it.", "accept": ["forty-two", "forty two", "fourty two", "42"], "image": "numeral_42"},
+    {"type": "what_next", "prompt": "Count backwards. Fifty-two, fifty-one, fifty. What comes next?", "sequence": ["52", "51", "50"], "options": ["49", "53", "40"], "answer": "49", "praise": "Forty-nine! Going backwards, the number gets smaller."},
+    {"type": "listen_tap", "prompt": "Which number comes just after fifty-nine?", "options": ["numeral_60", "numeral_58", "numeral_50"], "answer": "numeral_60", "praise": "Sixty! Fifty-nine, sixty."},
+    {"type": "what_next", "prompt": "Count on. Seventeen, eighteen, nineteen. What comes next?", "sequence": ["17", "18", "19"], "options": ["20", "21", "29"], "answer": "20", "praise": "Twenty! After nineteen comes twenty."},
+    {"type": "listen_tap", "prompt": "Which number comes just before thirty?", "options": ["numeral_29", "numeral_31", "numeral_20"], "answer": "numeral_29", "praise": "Twenty-nine! Twenty-nine, thirty."}
+  ],
+  "hints": ["Counting forwards, the number gets one bigger each time.", "Say the numbers slowly. Listen to the number before."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count on from forty-seven.",
+    "tutor_try": "Forty-seven, forty-eight, forty-nine, sixty!",
+    "image": "tutor_skips_fifty",
+    "answer": "fifty",
+    "win_line": "You caught me! After forty-nine comes fifty, not sixty.",
+    "gentle_line": "Let's count together. Forty-seven, forty-eight, forty-nine, fifty!"
+  },
+  "parent_line": "Can count forwards and backwards in ones from any number up to 60."
+}

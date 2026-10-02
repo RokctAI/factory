@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term2.w03_money_totals",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Rands and cents",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Solve problems in context to 50",
+    "subtopic": "Money problems involving totals and change"
+  },
+  "skill": "money.totals.to_50",
+  "prereq_skills": ["number.add_subtract.to_20", "count.skip.10_5_2"],
+  "images": ["coin_r5_note_r10", "coin_r2", "coin_r5", "coin_r1", "coins_r2_four", "price_r8", "price_r2", "price_r15", "coins_r5_two", "note_r10", "price_r6", "price_r4", "price_r14", "notes_r10_three", "tutor_adds_coins_wrong"],
+  "show": {
+    "line": "A five rand coin and a ten rand note. Five rand and ten rand together make fifteen rand!",
+    "image": "coin_r5_note_r10"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which coin is worth two rand?", "options": ["coin_r2", "coin_r5", "coin_r1"], "answer": "coin_r2", "praise": "Yes! The two rand coin."},
+    {"type": "count_tap", "prompt": "Count the two rand coins in twos. How many rand in all?", "image": "coins_r2_four", "count": "8", "options": ["6", "8", "10"], "answer": "8", "praise": "Eight rand! Two, four, six, eight."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "An apple costs five rand. A banana costs three rand. How much do they cost together?", "options": ["price_r8", "price_r2", "price_r15"], "answer": "price_r8", "praise": "Eight rand! Five plus three is eight."},
+    {"type": "say_it", "prompt": "Two five rand coins. How much money is that? Say it.", "accept": ["ten rand", "ten", "10 rand", "r10"], "image": "coins_r5_two"},
+    {"type": "listen_tap", "prompt": "Which is worth more, a ten rand note or a five rand coin?", "options": ["note_r10", "coin_r5"], "answer": "note_r10", "praise": "Yes! Ten rand is more than five rand."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nandi has ten rand. She buys a sweet for four rand. How much money does she get back?", "options": ["price_r6", "price_r4", "price_r14"], "answer": "price_r6", "praise": "Six rand change! Ten take away four is six."},
+    {"type": "count_tap", "prompt": "Count the ten rand notes in tens. How many rand?", "image": "notes_r10_three", "count": "30", "options": ["20", "30", "3"], "answer": "30", "praise": "Thirty rand! Ten, twenty, thirty."}
+  ],
+  "hints": ["Look at the number on each coin. Add them up.", "Count the same coins together. Two, four, six."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will add a five rand coin and a two rand coin.",
+    "tutor_try": "Five rand and two rand make ten rand!",
+    "image": "tutor_adds_coins_wrong",
+    "answer": "seven rand",
+    "win_line": "You caught me! Five and two make seven. Seven rand.",
+    "gentle_line": "Let's count on together. Five, six, seven. Seven rand!"
+  },
+  "parent_line": "Can add up small amounts of money in rand and work out simple change."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term4.w02_ar_and_or",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Car and fork sounds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises at least 5 new vowel digraphs ('ar' car, 'er' fern, 'ir' shirt, 'or' short, 'ur' church)"
+  },
+  "skill": "phonics.r_vowel.ar_or",
+  "prereq_skills": ["phonics.vowel_digraph.oy_oi_ay_ai"],
+  "images": ["car_star_fork_horse", "star", "fork", "bus", "horse", "farm", "hat", "word_farm", "word_corn", "word_shark", "word_shock", "word_shack", "jar", "corn", "cat", "storm", "tutor_holds_horse"],
+  "show": {
+    "line": "Car, star, farm. Hear the ar sound? Fork, horse, corn. Hear the or sound? Two letters, one sound!",
+    "image": "car_star_fork_horse"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture has the ar sound, like car?", "options": ["star", "fork", "bus"], "answer": "star", "praise": "Yes! Car, star. Ar."},
+    {"type": "listen_tap", "prompt": "Which picture has the or sound, like fork?", "options": ["horse", "farm", "hat"], "answer": "horse", "praise": "Yes! Fork, horse. Or."},
+    {"type": "say_it", "prompt": "Read this word. It has the ar sound.", "accept": ["farm", "fahm", "a farm"], "image": "word_farm"},
+    {"type": "say_it", "prompt": "Read this word. It has the or sound.", "accept": ["corn", "cawn", "korn"], "image": "word_corn"},
+    {"type": "listen_tap", "prompt": "Which word card says shark?", "options": ["word_shark", "word_shock", "word_shack"], "answer": "word_shark", "praise": "Yes! Shark, with the ar sound."},
+    {"type": "listen_tap", "prompt": "Which word rhymes with car?", "options": ["jar", "corn", "cat"], "answer": "jar", "praise": "Car, jar! They rhyme."},
+    {"type": "match_sort", "prompt": "Ar like car, or or like fork? Put each picture in its group.", "groups": ["ar", "or"], "items": [{"image": "star", "group": "ar"}, {"image": "farm", "group": "ar"}, {"image": "jar", "group": "ar"}, {"image": "horse", "group": "or"}, {"image": "corn", "group": "or"}, {"image": "storm", "group": "or"}]}
+  ],
+  "hints": ["Stretch the middle. Caaar. Fooork.", "Say the word with car. Say it with fork. Which one matches?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word with the ar sound.",
+    "tutor_try": "Horse! Horse has the ar sound.",
+    "image": "tutor_holds_horse",
+    "answer": "no",
+    "win_line": "You caught me! Horse has the or sound. Star has ar.",
+    "gentle_line": "Let's listen together. Car, star. Ar!"
+  },
+  "parent_line": "Can hear and read the ar sound as in car and the or sound as in fork."
+}

@@ -64,14 +64,15 @@ class PackLines(unittest.TestCase):
         cls.items = R.build_r3_lines(respellings=NO_RESP)
 
     def test_counts(self):
-        # One pack per file under the r3_packs tree (Grade R Terms 1-4 and the
-        # Grade 1-3 packs as they land), every line of every pack, plus the 4
-        # default praise lines; the tree is the source of truth for the numbers.
-        self.assertEqual(len(self.packs), len(r3_pack_check.pack_paths()))
-        self.assertGreaterEqual(len(self.packs), 74)  # the Grade R packs
+        # Derived from the pack tree (Grades R-3 land one grade at a time), so
+        # a new grade's packs never need this number changed by hand.
+        paths = r3_pack_check.pack_paths()
+        self.assertGreaterEqual(len(paths), 74)  # Grade R Terms 1-4, maths + English HL
+        self.assertEqual(len(self.packs), len(paths))
         pack_items = [i for i in self.items if not i["key"].startswith("r3.")]
-        self.assertEqual(len(pack_items), sum(len(R.pack_lines(p)) for p in self.packs))
-        self.assertEqual(len(self.items), len(pack_items) + 4)  # + the 4 default praise lines
+        want = sum(1 for p in self.packs for _, t in r3_pack_check._spoken_lines(p) if t.strip())
+        self.assertEqual(len(pack_items), want)
+        self.assertEqual(len(self.items), want + 4)  # + the 4 default praise lines
         self.assertEqual(len({i["key"] for i in self.items}), len(self.items))
 
     def test_mirrors_checker(self):
@@ -93,7 +94,7 @@ class PackLines(unittest.TestCase):
                 self.assertRegex(i["key"], r"^r3\.r3_praise_[a-z]+$")
                 continue
             pid, where = i["key"].rsplit(".", 1)
-            self.assertRegex(pid, r"^(maths|english_home_language)\.grade(R|[1-3])\.term[1-4]\.w\d\d_[a-z0-9_]+$")
+            self.assertRegex(pid, r"^(maths|english_home_language)\.grade[R123]\.term[1-4]\.w\d\d_[a-z0-9_]+$")
             self.assertIn(template_of(where), R.WHERE_TEMPLATES, i["key"])
             self.assertEqual(i["file"], f"{R.AUDIO_DIR}/{i['key']}.mp3")
 
@@ -227,7 +228,8 @@ class Respellings(unittest.TestCase):
 class R3Batch(unittest.TestCase):
     def test_all_lines(self):
         b = load(GOOD)
-        self.assertEqual((b["kind"], b["locale"], b["line_count"]), ("r3", "en", len(R.build_r3_lines())))
+        self.assertEqual((b["kind"], b["locale"]), ("r3", "en"))
+        self.assertEqual(b["line_count"], len(R.build_r3_lines()))
         self.assertEqual(len(b["matrix"]), 8)
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (102.0, 8.0))
 

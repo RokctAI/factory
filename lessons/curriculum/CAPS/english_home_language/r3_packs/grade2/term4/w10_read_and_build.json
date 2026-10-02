@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term4.w10_read_and_build",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [10],
+  "theme": "Build and read",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Builds words using phonics sounds taught during the year"
+  },
+  "skill": "phonics.build_words.year_review",
+  "prereq_skills": ["phonics.r_vowel.er_ir_ur", "phonics.vowel_digraph.ow_oa_oe", "phonics.suffix.ly_ies", "reading.text.phonics_words"],
+  "images": ["letter_tiles_year", "letter_tiles_crab", "tiles_sh_ar_k", "tiles_sh_or_k", "tiles_ch_ar_k", "letter_tiles_spot", "tiles_t_r_ai_n", "tiles_t_r_ee_n", "tiles_d_r_ai_n", "word_coin", "word_con", "word_corn", "word_bird", "sentence_shark_swims_in_the_sea", "tutor_tiles_f_o_g"],
+  "show": {
+    "line": "You know so many sounds now! Let's build words with all of them. f-l-a-g. Flag! Shark, train, coin, bird.",
+    "image": "letter_tiles_year"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Listen. c-r-a-b. Push the sounds together. What word is it?", "accept": ["crab", "a crab", "krab"], "image": "letter_tiles_crab"},
+    {"type": "listen_tap", "prompt": "Which tiles build the word shark?", "options": ["tiles_sh_ar_k", "tiles_sh_or_k", "tiles_ch_ar_k"], "answer": "tiles_sh_ar_k", "praise": "Yes! Shh, ar, kuh. Shark."},
+    {"type": "say_it", "prompt": "Listen. s-p-o-t. What word is it?", "accept": ["spot", "a spot", "spott"], "image": "letter_tiles_spot"},
+    {"type": "listen_tap", "prompt": "Which tiles build the word train?", "options": ["tiles_t_r_ai_n", "tiles_t_r_ee_n", "tiles_d_r_ai_n"], "answer": "tiles_t_r_ai_n", "praise": "Yes! Train."},
+    {"type": "listen_tap", "prompt": "Which word card says coin?", "options": ["word_coin", "word_con", "word_corn"], "answer": "word_coin", "praise": "Yes! Coin, with the oy sound."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["bird", "a bird", "bud"], "image": "word_bird"},
+    {"type": "say_it", "prompt": "Read this sentence out loud.", "accept": ["the shark swims in the sea", "a shark swims in the sea", "the shark swims in the see"], "image": "sentence_shark_swims_in_the_sea"}
+  ],
+  "hints": ["Say each sound, then push them together.", "Look for two letters that make one sound, like in shark and train."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will build the word frog.",
+    "tutor_try": "f-r-o-g. Look, I built frog!",
+    "image": "tutor_tiles_f_o_g",
+    "answer": "no",
+    "win_line": "You caught me! I left out r. My tiles say fog.",
+    "gentle_line": "Let's build it together. f-r-o-g. Frog!"
+  },
+  "parent_line": "Can build and read words using all the sounds learnt this year."
+}

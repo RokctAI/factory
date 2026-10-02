@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term3.w09_read_the_text",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Reading a short text",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Builds words with the digraphs, blends and double consonants taught this year; reads phonics words in texts; spells ten words a week"
+  },
+  "skill": "reading.text.phonics_words",
+  "prereq_skills": ["reading.sentences.phonics_words", "phonics.double_consonant.ll_ss_zz", "phonics.vowel_digraph.oy_oi_ay_ai"],
+  "images": ["text_boy_toy_train", "sentence_boy_has_toy_train", "toy_train", "toy_car", "ball", "sentence_bell_rings_at_three", "sentence_dog_gap_at_cat", "word_barks", "word_bats", "word_banks", "word_dress", "word_dres", "word_dess", "sentence_we_play_in_the_rain", "stream", "street", "shop", "tutor_misreads_train"],
+  "show": {
+    "line": "Let's read a little text. The boy has a toy train. It runs on the track. Read it with me!",
+    "image": "text_boy_toy_train"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Read the first sentence out loud.", "accept": ["the boy has a toy train", "a boy has a toy train", "the boy has toy train"], "image": "sentence_boy_has_toy_train"},
+    {"type": "listen_tap", "prompt": "Read the text. What does the boy have?", "image": "text_boy_toy_train", "options": ["toy_train", "toy_car", "ball"], "answer": "toy_train", "praise": "Yes! A toy train."},
+    {"type": "say_it", "prompt": "Read this sentence out loud.", "accept": ["the bell rings at three", "a bell rings at three", "the bell rings at 3"], "image": "sentence_bell_rings_at_three"},
+    {"type": "listen_tap", "prompt": "Which word is missing? The dog, gap, at the cat.", "image": "sentence_dog_gap_at_cat", "options": ["word_barks", "word_bats", "word_banks"], "answer": "word_barks", "praise": "Barks! The dog barks at the cat."},
+    {"type": "listen_tap", "prompt": "Spell the word. Listen. d-r-e-s-s. Which card is spelled right?", "options": ["word_dress", "word_dres", "word_dess"], "answer": "word_dress", "praise": "Yes! Dress, with two of the last letter."},
+    {"type": "say_it", "prompt": "Read this sentence out loud.", "accept": ["we play in the rain", "we play in rain", "we played in the rain"], "image": "sentence_we_play_in_the_rain"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Joy has a doll in a red dress. They play in the stream. Where do they play?", "options": ["stream", "street", "shop"], "answer": "stream", "praise": "Yes! In the stream."}
+  ],
+  "hints": ["Read one word at a time. Sound out the hard ones.", "Look at the picture. Does your reading make sense?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this sentence. The boy has a toy train.",
+    "tutor_try": "The boy has a toy tray!",
+    "image": "tutor_misreads_train",
+    "answer": "train",
+    "win_line": "You caught me! That word is train, not tray. The toy train.",
+    "gentle_line": "Let's read it together. The boy has a toy train!"
+  },
+  "parent_line": "Can read a short text made of words with this year's sounds."
+}

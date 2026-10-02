@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term4.w04_ow_two_ways",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "Cow and snow",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises vowel digraphs and diphthongs ('oa', 'oe', 'ow' as in cow and as in show)"
+  },
+  "skill": "phonics.vowel_digraph.ow_oa_oe",
+  "prereq_skills": ["phonics.vowel_digraph.oa_ea_ai"],
+  "images": ["cow_and_snow", "owl", "snow", "toe", "bow", "cow", "clown", "word_town", "word_grow", "word_toe", "word_to", "word_tow", "boat", "show", "crown", "tutor_reads_snow_as_cow"],
+  "show": {
+    "line": "Two letters, two sounds! Cow, owl, down say ow. Snow, show, grow say oh. Toe and boat say oh too!",
+    "image": "cow_and_snow"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture has the ow sound, like cow?", "options": ["owl", "snow", "toe"], "answer": "owl", "praise": "Yes! Cow, owl. Ow."},
+    {"type": "listen_tap", "prompt": "Which picture has the oh sound, like snow?", "options": ["bow", "cow", "clown"], "answer": "bow", "praise": "Yes! Snow, bow. Oh."},
+    {"type": "say_it", "prompt": "Read this word. It rhymes with cow.", "accept": ["town", "toun", "a town"], "image": "word_town"},
+    {"type": "say_it", "prompt": "Read this word. It rhymes with snow.", "accept": ["grow", "gro", "to grow"], "image": "word_grow"},
+    {"type": "listen_tap", "prompt": "Which word card says toe?", "options": ["word_toe", "word_to", "word_tow"], "answer": "word_toe", "praise": "Yes! Toe, with the oh sound."},
+    {"type": "listen_tap", "prompt": "Which word rhymes with goat?", "options": ["boat", "cow", "show"], "answer": "boat", "praise": "Goat, boat! They rhyme."},
+    {"type": "match_sort", "prompt": "Ow like cow, or oh like snow? Put each picture in its group.", "groups": ["cow", "snow"], "items": [{"image": "owl", "group": "cow"}, {"image": "clown", "group": "cow"}, {"image": "crown", "group": "cow"}, {"image": "bow", "group": "snow"}, {"image": "toe", "group": "snow"}, {"image": "boat", "group": "snow"}]}
+  ],
+  "hints": ["Try the word both ways. Which way makes a real word?", "Cow, owl, down. Snow, show, grow. Which list does it fit?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says snow, like cow. Snow!",
+    "image": "tutor_reads_snow_as_cow",
+    "answer": "snow",
+    "win_line": "You caught me! Snow says oh, like show. Not ow like cow.",
+    "gentle_line": "Let's try it together. Snow, show, grow. Oh!"
+  },
+  "parent_line": "Knows the two sounds of ow, as in cow and as in snow, and the oh sound in toe and boat."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term1.w06_capitals_and_full_stops",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [6, 7],
+  "theme": "Capital letters and full stops",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Writing",
+    "subtopic": "Writes at least 3 sentences of own news or a creative story using capital letters and full stops"
+  },
+  "skill": "writing.sentence.capital_full_stop",
+  "prereq_skills": ["reading.sight_words.set1"],
+  "images": ["sentence_the_dog_ran", "sentence_capital_i_like_cake", "sentence_lower_i_like_cake", "mark_full_stop", "mark_comma", "letter_capital_t", "sentence_we_went_to_the_shop", "sentence_mom_is_here_stop", "sentence_mom_is_here_none", "word_sipho_capital", "word_sipho_lower", "sentence_i_see_a_cat_ok", "sentence_the_sun_is_hot_ok", "sentence_my_dog_lower_start", "sentence_we_play_no_stop", "tutor_sentence_no_capital_no_stop"],
+  "show": {
+    "line": "A sentence starts with a capital letter. It ends with a full stop. The dog ran. Big letter, little dot!",
+    "image": "sentence_the_dog_ran"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which sentence starts with a capital letter?", "options": ["sentence_capital_i_like_cake", "sentence_lower_i_like_cake"], "answer": "sentence_capital_i_like_cake", "praise": "Yes! A big letter at the start."},
+    {"type": "listen_tap", "prompt": "What goes at the end of a sentence? Tap it.", "options": ["mark_full_stop", "mark_comma", "letter_capital_t"], "answer": "mark_full_stop", "praise": "Yes! A full stop ends the sentence."},
+    {"type": "say_it", "prompt": "Read this sentence out loud. Stop at the full stop.", "accept": ["we went to the shop", "we went to the shops", "we went to shop"], "image": "sentence_we_went_to_the_shop"},
+    {"type": "listen_tap", "prompt": "Which sentence has a full stop at the end?", "options": ["sentence_mom_is_here_stop", "sentence_mom_is_here_none"], "answer": "sentence_mom_is_here_stop", "praise": "Yes! Mom is here. Full stop."},
+    {"type": "listen_tap", "prompt": "Names start with a capital letter too. Tap the name written the right way.", "options": ["word_sipho_capital", "word_sipho_lower"], "answer": "word_sipho_capital", "praise": "Yes! Sipho starts with a big letter."},
+    {"type": "match_sort", "prompt": "Is the sentence written right, or does it need fixing? Put each one in its group.", "groups": ["right", "needs_fixing"], "items": [{"image": "sentence_i_see_a_cat_ok", "group": "right"}, {"image": "sentence_the_sun_is_hot_ok", "group": "right"}, {"image": "sentence_my_dog_lower_start", "group": "needs_fixing"}, {"image": "sentence_we_play_no_stop", "group": "needs_fixing"}]}
+  ],
+  "hints": ["Look at the first letter. Is it big?", "Look at the end. Is there a little dot?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write a sentence. The cat sat.",
+    "tutor_try": "Look, I wrote it! the cat sat",
+    "image": "tutor_sentence_no_capital_no_stop",
+    "answer": "no",
+    "win_line": "You caught me! I forgot the capital letter and the full stop.",
+    "gentle_line": "Let's fix it together. Big letter at the start, dot at the end. The cat sat."
+  },
+  "parent_line": "Knows a sentence starts with a capital letter and ends with a full stop."
+}

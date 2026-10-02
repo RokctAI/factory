@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term3.w01_days_of_the_week",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Days of the week",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Measurement: Telling time",
+    "subtopic": "Name and sequence days of the week and months of the year"
+  },
+  "skill": "time.days.order",
+  "prereq_skills": ["time.months.order"],
+  "images": ["week_calendar", "day_saturday", "day_thursday", "day_monday", "week_calendar_tuesday", "day_wednesday", "day_friday", "day_sunday", "tutor_skips_thursday"],
+  "show": {
+    "line": "Seven days make a week. Monday, Tuesday, Wednesday, Thursday, Friday. Then the weekend: Saturday and Sunday!",
+    "image": "week_calendar"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Monday, Tuesday, Wednesday. Which day comes next?", "sequence": ["Monday", "Tuesday", "Wednesday"], "options": ["Thursday", "Friday", "Sunday"], "answer": "Thursday", "praise": "Thursday! Monday, Tuesday, Wednesday, Thursday."},
+    {"type": "listen_tap", "prompt": "Which day comes after Friday?", "options": ["day_saturday", "day_thursday", "day_monday"], "answer": "day_saturday", "praise": "Yes! Saturday comes after Friday."},
+    {"type": "say_it", "prompt": "Which day comes before Tuesday? Say the day.", "accept": ["monday", "mondee", "mundy"], "image": "week_calendar_tuesday"},
+    {"type": "count_tap", "prompt": "Count the days in one week. How many days?", "image": "week_calendar", "count": "7", "options": ["5", "7", "10"], "answer": "7", "praise": "Seven days in a week!"},
+    {"type": "match_sort", "prompt": "School day or weekend? Put each day in its group.", "groups": ["school_day", "weekend"], "items": [{"image": "day_monday", "group": "school_day"}, {"image": "day_wednesday", "group": "school_day"}, {"image": "day_friday", "group": "school_day"}, {"image": "day_saturday", "group": "weekend"}, {"image": "day_sunday", "group": "weekend"}]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Today is Wednesday. Ayesha has soccer in two days. On which day is soccer?", "options": ["day_friday", "day_thursday", "day_saturday"], "answer": "day_friday", "praise": "Friday! Wednesday, Thursday, Friday."}
+  ],
+  "hints": ["Say the days from Monday. Stop at the one you need.", "Saturday and Sunday are the weekend. No school!"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the days after Tuesday.",
+    "tutor_try": "Tuesday, Wednesday, Friday!",
+    "image": "tutor_skips_thursday",
+    "answer": "thursday",
+    "win_line": "You caught me! I skipped Thursday. Tuesday, Wednesday, Thursday, Friday.",
+    "gentle_line": "Let's say them together. Tuesday, Wednesday, Thursday, Friday!"
+  },
+  "parent_line": "Can say the days of the week in order."
+}

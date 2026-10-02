@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term3.w07_exclamation_marks",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Wow! Stop!",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Uses correct punctuation (. , ? !); spells common words correctly and attempts unfamiliar words using phonics"
+  },
+  "skill": "writing.punctuation.exclamation_comma",
+  "prereq_skills": ["writing.punctuation.question_mark"],
+  "images": ["exclamation_mark_wow", "mark_exclamation", "mark_question", "mark_full_stop", "sentence_we_won", "list_with_commas", "list_without_commas", "sentence_the_cat_sleeps", "sentence_where_is_gogo", "sentence_look_out", "sentence_hooray", "sentence_i_am_seven", "tutor_question_on_shout"],
+  "show": {
+    "line": "Wow! Stop! Help! When we shout or feel strongly, we use an exclamation mark. A line with a dot!",
+    "image": "exclamation_mark_wow"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which mark is the exclamation mark?", "options": ["mark_exclamation", "mark_question", "mark_full_stop"], "answer": "mark_exclamation", "praise": "Yes! A line with a dot under it."},
+    {"type": "listen_tap", "prompt": "Watch out, a snake! Which mark goes at the end?", "options": ["mark_exclamation", "mark_full_stop", "mark_question"], "answer": "mark_exclamation", "praise": "Yes! We shout it, so an exclamation mark."},
+    {"type": "say_it", "prompt": "Read this with a big, excited voice.", "accept": ["we won", "we won!", "we one"], "image": "sentence_we_won"},
+    {"type": "listen_tap", "prompt": "Is it a question or a shout? What time is it?", "options": ["mark_question", "mark_exclamation"], "answer": "mark_question", "praise": "A question! It asks, so a question mark."},
+    {"type": "listen_tap", "prompt": "A list needs commas. I like apples, pears and grapes. Which card has the commas in the right place?", "options": ["list_with_commas", "list_without_commas"], "answer": "list_with_commas", "praise": "Yes! A comma between the things in the list."},
+    {"type": "match_sort", "prompt": "Full stop, question mark or exclamation mark? Put each sentence in its group.", "groups": ["full_stop", "question_mark", "exclamation_mark"], "items": [{"image": "sentence_the_cat_sleeps", "group": "full_stop"}, {"image": "sentence_where_is_gogo", "group": "question_mark"}, {"image": "sentence_look_out", "group": "exclamation_mark"}, {"image": "sentence_hooray", "group": "exclamation_mark"}, {"image": "sentence_i_am_seven", "group": "full_stop"}]}
+  ],
+  "hints": ["Would you shout it? Then it needs an exclamation mark.", "Does it ask? Question mark. Does it tell? Full stop."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will finish this sentence. Happy birthday",
+    "tutor_try": "I put a question mark. Happy birthday?",
+    "image": "tutor_question_on_shout",
+    "answer": "exclamation mark",
+    "win_line": "You caught me! We shout happy birthday. It needs an exclamation mark.",
+    "gentle_line": "Let's say it together with a big voice. Happy birthday! Exclamation mark!"
+  },
+  "parent_line": "Knows when to use an exclamation mark and a comma in a list."
+}

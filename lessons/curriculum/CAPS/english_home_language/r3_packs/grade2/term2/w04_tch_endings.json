@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term2.w04_tch_endings",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Catch, fetch, itch",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises 3-letter consonant blends at the end of words (ca-tch, fe-tch, i-tch)"
+  },
+  "skill": "phonics.blend.tch_final",
+  "prereq_skills": ["phonics.digraph.ch_th", "phonics.blend.three_letter_initial"],
+  "images": ["catch_fetch_match", "match", "cat", "map", "watch", "word_fetch", "word_fish", "word_fat", "letters_tch", "letters_sh", "letters_th", "dog_fetches_ball", "dog_sleeps", "dog_eats", "witch", "fish", "brush", "tutor_holds_cat"],
+  "show": {
+    "line": "Catch, fetch, itch, match. Listen to the end. Catch! Three letters make that ending sound.",
+    "image": "catch_fetch_match"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture ends like catch?", "options": ["match", "cat", "map"], "answer": "match", "praise": "Yes! Catch, match. Same ending."},
+    {"type": "say_it", "prompt": "What is this? It ends like catch.", "accept": ["watch", "a watch", "wotch"], "image": "watch"},
+    {"type": "listen_tap", "prompt": "Which word card says fetch?", "options": ["word_fetch", "word_fish", "word_fat"], "answer": "word_fetch", "praise": "Yes! Fetch."},
+    {"type": "listen_tap", "prompt": "Which three letters end the word itch?", "options": ["letters_tch", "letters_sh", "letters_th"], "answer": "letters_tch", "praise": "Yes! Those three letters end itch."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Dumi throws the ball. His dog runs to fetch it. What does the dog do?", "options": ["dog_fetches_ball", "dog_sleeps", "dog_eats"], "answer": "dog_fetches_ball", "praise": "Yes! The dog fetches the ball."},
+    {"type": "match_sort", "prompt": "Ends like catch, or ends like fish? Put each picture in its group.", "groups": ["tch", "sh"], "items": [{"image": "match", "group": "tch"}, {"image": "watch", "group": "tch"}, {"image": "witch", "group": "tch"}, {"image": "fish", "group": "sh"}, {"image": "brush", "group": "sh"}]}
+  ],
+  "hints": ["Say the word slowly. Listen to the very end.", "Catch, fetch, itch. Does the word end like that?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that ends like catch.",
+    "tutor_try": "Cat! Cat ends like catch.",
+    "image": "tutor_holds_cat",
+    "answer": "no",
+    "win_line": "You caught me! Cat ends with tuh. Match ends like catch.",
+    "gentle_line": "Let's listen together. Catch, match. Same ending!"
+  },
+  "parent_line": "Can hear and read the tch ending in words like catch and fetch."
+}

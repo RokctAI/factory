@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term1.w01_sight_words",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [1],
+  "theme": "Words we know by sight",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Reading",
+    "subtopic": "Group guided: builds sight vocabulary (high-frequency words)"
+  },
+  "skill": "reading.sight_words.set1",
+  "prereq_skills": ["reading.sentence.i_live_in"],
+  "images": ["sight_word_cards", "word_said", "word_sad", "word_and", "word_they", "word_you", "word_yes", "word_was", "sentence_dog_gap_cat", "word_the", "sentence_mom_said", "word_come", "word_here", "cat", "dog", "tutor_holds_they"],
+  "show": {
+    "line": "Some words we just know. The, and, said, you, was, they. Look at them and read them fast!",
+    "image": "sight_word_cards"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word said.", "options": ["word_said", "word_sad", "word_and"], "answer": "word_said", "praise": "Yes! Said."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["they", "thay", "day"], "image": "word_they"},
+    {"type": "listen_tap", "prompt": "Tap the word you.", "options": ["word_you", "word_yes", "word_was"], "answer": "word_you", "praise": "Yes! You."},
+    {"type": "listen_tap", "prompt": "The dog and the cat. Which word is missing? The dog, gap, the cat.", "image": "sentence_dog_gap_cat", "options": ["word_and", "word_the", "word_said"], "answer": "word_and", "praise": "And! The dog and the cat."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["was", "woz", "wuz"], "image": "word_was"},
+    {"type": "listen_tap", "prompt": "Read the sentence. Mom said, come here. Which word is said?", "image": "sentence_mom_said", "options": ["word_said", "word_come", "word_here"], "answer": "word_said", "praise": "Yes! Said."},
+    {"type": "match_sort", "prompt": "Is it a word we know by sight, or a picture? Put each card in its group.", "groups": ["word", "picture"], "items": [{"image": "word_the", "group": "word"}, {"image": "word_you", "group": "word"}, {"image": "word_they", "group": "word"}, {"image": "cat", "group": "picture"}, {"image": "dog", "group": "picture"}]}
+  ],
+  "hints": ["Look at the shape of the whole word. Do not sound it out.", "Think of the sentence. Which word makes sense?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says you!",
+    "image": "tutor_holds_they",
+    "answer": "they",
+    "win_line": "You caught me! That word is they. You is a shorter word.",
+    "gentle_line": "Let's read it together. They. They went home!"
+  },
+  "parent_line": "Can read common words like the, and, said, you, was and they by sight."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term4.w06_suffixes",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Slowly and babies",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises and uses suffixes (-ly, -ies)"
+  },
+  "skill": "phonics.suffix.ly_ies",
+  "prereq_skills": ["phonics.endings.plural_ing_ed"],
+  "images": ["snail_slowly_babies", "snail_moving", "word_slowly", "word_slow", "word_slows", "two_babies", "word_quickly", "word_quick", "word_quiet", "three_flies", "girl_singing", "word_softly", "word_soft", "word_sing", "word_loudly", "word_babies", "word_flies", "word_puppies", "tutor_two_puppies"],
+  "show": {
+    "line": "Slow, slowly. Quick, quickly. Add an ending to say how. Baby, babies. Fly, flies. More than one!",
+    "image": "snail_slowly_babies"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "The snail moves, gap. Which word fits?", "image": "snail_moving", "options": ["word_slowly", "word_slow", "word_slows"], "answer": "word_slowly", "praise": "Slowly! It tells how the snail moves."},
+    {"type": "say_it", "prompt": "One baby. Here are two. Say the word for more than one baby.", "accept": ["babies", "babys", "baybees"], "image": "two_babies"},
+    {"type": "listen_tap", "prompt": "Which word card says quickly?", "options": ["word_quickly", "word_quick", "word_quiet"], "answer": "word_quickly", "praise": "Yes! Quickly."},
+    {"type": "say_it", "prompt": "One fly. Here are three. Say the word.", "accept": ["flies", "flys", "flize"], "image": "three_flies"},
+    {"type": "listen_tap", "prompt": "The girl sings, gap. Which word tells how she sings?", "image": "girl_singing", "options": ["word_softly", "word_soft", "word_sing"], "answer": "word_softly", "praise": "Softly! It tells how."},
+    {"type": "match_sort", "prompt": "Tells how, or more than one? Put each word in its group.", "groups": ["how", "more_than_one"], "items": [{"image": "word_slowly", "group": "how"}, {"image": "word_quickly", "group": "how"}, {"image": "word_loudly", "group": "how"}, {"image": "word_babies", "group": "more_than_one"}, {"image": "word_flies", "group": "more_than_one"}, {"image": "word_puppies", "group": "more_than_one"}]}
+  ],
+  "hints": ["Does the word tell how something is done? Slowly, quickly.", "More than one baby? The ending changes. Babies."],
+  "beat_the_tutor": {
+    "setup": "My turn! One puppy. Here are two. I will say the word.",
+    "tutor_try": "Two puppys!",
+    "image": "tutor_two_puppies",
+    "answer": "puppies",
+    "win_line": "You caught me! More than one puppy is puppies, like babies.",
+    "gentle_line": "Let's say it together. One puppy, two puppies!"
+  },
+  "parent_line": "Can read and use words ending in ly, like slowly, and ies, like babies."
+}

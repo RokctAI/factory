@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term1.w09_add_to_twenty",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Adding and taking away to 20",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 20",
+    "subtopic": "Addition and subtraction to 15 (weeks 1-4) and 20 (weeks 5-10) using +, -, = and □"
+  },
+  "skill": "number.add_subtract.to_20",
+  "prereq_skills": ["number.bonds.to_10", "number.subtract.to_10"],
+  "images": ["number_line_8_plus_5", "numeral_13", "numeral_12", "numeral_14", "birds_nine_left", "ten_frame_ten_six", "numeral_8", "numeral_20", "numeral_6", "numeral_17", "sign_minus", "sign_plus", "sign_equals", "numeral_5", "numeral_4", "numeral_15", "tutor_number_line_slip"],
+  "show": {
+    "line": "Eight plus five. Start at eight. Count on five. Nine, ten, eleven, twelve, thirteen. Eight plus five equals thirteen!",
+    "image": "number_line_8_plus_5"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Nine plus four. Count on from nine. What is the answer?", "options": ["numeral_13", "numeral_12", "numeral_14"], "answer": "numeral_13", "praise": "Thirteen! Nine plus four equals thirteen."},
+    {"type": "count_tap", "prompt": "Twelve birds on the wire. Three fly away. Count the birds that are left.", "image": "birds_nine_left", "count": "9", "options": ["8", "9", "10"], "answer": "9", "praise": "Nine birds left! Twelve minus three is nine."},
+    {"type": "say_it", "prompt": "Ten plus six. Say the answer.", "accept": ["sixteen", "16", "six teen"], "image": "ten_frame_ten_six"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Zola has fourteen stickers. She gives six to her brother. How many stickers does Zola have now?", "options": ["numeral_8", "numeral_20", "numeral_6"], "answer": "numeral_8", "praise": "Eight! Fourteen minus six equals eight."},
+    {"type": "listen_tap", "prompt": "Seven plus seven. Double seven! What is the answer?", "options": ["numeral_14", "numeral_12", "numeral_17"], "answer": "numeral_14", "praise": "Fourteen! Double seven is fourteen."},
+    {"type": "listen_tap", "prompt": "Which number sign means take away?", "options": ["sign_minus", "sign_plus", "sign_equals"], "answer": "sign_minus", "praise": "Yes! Minus means take away."},
+    {"type": "listen_tap", "prompt": "Fifteen plus what equals twenty? Tap the missing number.", "options": ["numeral_5", "numeral_4", "numeral_15"], "answer": "numeral_5", "praise": "Five! Fifteen plus five equals twenty."}
+  ],
+  "hints": ["Put the bigger number first. Count on from there.", "For take away, count backwards from the big number."],
+  "beat_the_tutor": {
+    "setup": "My turn! Eleven plus five.",
+    "tutor_try": "Eleven plus five equals fifteen!",
+    "image": "tutor_number_line_slip",
+    "answer": "sixteen",
+    "win_line": "You caught me! Twelve, thirteen, fourteen, fifteen, sixteen. The answer is sixteen.",
+    "gentle_line": "Let's count on together from eleven. Twelve, thirteen, fourteen, fifteen, sixteen!"
+  },
+  "parent_line": "Can add and take away with numbers up to 20."
+}

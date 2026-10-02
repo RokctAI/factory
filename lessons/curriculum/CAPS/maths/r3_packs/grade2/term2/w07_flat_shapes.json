@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term2.w07_flat_shapes",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Flat shapes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Space and shape: Position, directions and 2D shapes",
+    "subtopic": "Recognise, name, describe, sort and compare 2D shapes; range of shapes; features of shapes"
+  },
+  "skill": "shape.2d.name_features",
+  "prereq_skills": ["shape.recognise.triangle", "shape.recognise.rectangle", "shape.recognise.circle"],
+  "images": ["shapes_triangle_square_circle", "triangle", "square", "circle", "rectangle_outline", "rectangle", "oval", "triangle_outline", "tutor_square_three"],
+  "show": {
+    "line": "Flat shapes! A triangle has three straight sides. A square has four equal sides. A circle has one curved side.",
+    "image": "shapes_triangle_square_circle"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which shape has three sides?", "options": ["triangle", "square", "circle"], "answer": "triangle", "praise": "Yes! A triangle has three sides."},
+    {"type": "count_tap", "prompt": "Count the sides of this shape. How many?", "image": "rectangle_outline", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four sides! It is a rectangle."},
+    {"type": "say_it", "prompt": "This shape has four equal sides and four corners. What is it called?", "accept": ["square", "a square", "skwear"], "image": "square"},
+    {"type": "listen_tap", "prompt": "Which shape has no straight sides and no corners?", "options": ["circle", "triangle", "rectangle"], "answer": "circle", "praise": "Yes! A circle is round all the way."},
+    {"type": "listen_tap", "prompt": "Which shape has four sides, two long and two short?", "options": ["rectangle", "square", "triangle"], "answer": "rectangle", "praise": "Yes! A rectangle has two long sides and two short sides."},
+    {"type": "match_sort", "prompt": "Straight sides or curved sides? Put each shape in its group.", "groups": ["straight", "curved"], "items": [{"image": "triangle", "group": "straight"}, {"image": "square", "group": "straight"}, {"image": "rectangle", "group": "straight"}, {"image": "circle", "group": "curved"}, {"image": "oval", "group": "curved"}]},
+    {"type": "count_tap", "prompt": "Count the corners on this triangle. How many?", "image": "triangle_outline", "count": "3", "options": ["3", "4", "6"], "answer": "3", "praise": "Three corners!"}
+  ],
+  "hints": ["Count the sides with your finger. One, two, three.", "A corner is where two sides meet."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say how many sides a square has.",
+    "tutor_try": "A square has three sides!",
+    "image": "tutor_square_three",
+    "answer": "four",
+    "win_line": "You caught me! A square has four sides. A triangle has three.",
+    "gentle_line": "Let's count together. One, two, three, four. Four sides!"
+  },
+  "parent_line": "Can name flat shapes and say how many sides and corners they have."
+}

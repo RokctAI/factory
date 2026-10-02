@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term4.w09_measure_sums",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Measuring stories",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Measurement: Length, mass and capacity",
+    "subtopic": "Factor into problem-solving sums that integrate length, mass and capacity"
+  },
+  "skill": "measure.problems.length_mass_capacity",
+  "prereq_skills": ["measure.length.compare_order", "measure.mass.compare", "measure.capacity.compare", "number.add_subtract.to_99"],
+  "images": ["ropes_ten_six_paces", "numeral_5", "numeral_11", "numeral_3", "scale_apples_seven_blocks", "numeral_7", "numeral_17", "buckets_two_ten_cups", "pumpkin", "melon", "numeral_12", "numeral_28", "numeral_18", "tutor_jug_wrong"],
+  "show": {
+    "line": "Measuring stories! The red rope is ten paces long. The blue rope is six paces. Together they are sixteen paces!",
+    "image": "ropes_ten_six_paces"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A jug holds eight cups of water. Three cups are poured out. How many cups are left in the jug?", "options": ["numeral_5", "numeral_11", "numeral_3"], "answer": "numeral_5", "praise": "Five cups left!"},
+    {"type": "count_tap", "prompt": "The bag of apples weighs the same as these blocks. Count the blocks.", "image": "scale_apples_seven_blocks", "count": "7", "options": ["6", "7", "8"], "answer": "7", "praise": "Seven blocks heavy!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thandi's desk is five hand spans long. Her table is twelve hand spans. How many more spans is the table?", "options": ["numeral_7", "numeral_17", "numeral_5"], "answer": "numeral_7", "praise": "Seven more hand spans!"},
+    {"type": "say_it", "prompt": "A bucket holds ten cups. Two buckets hold how many cups? Say the number.", "accept": ["twenty", "20", "twendy"], "image": "buckets_two_ten_cups"},
+    {"type": "listen_tap", "prompt": "The pumpkin weighs the same as four bricks. The melon weighs two bricks. Which is heavier?", "options": ["pumpkin", "melon"], "answer": "pumpkin", "praise": "The pumpkin! Four bricks is more than two."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A ribbon is twenty paper clips long. Sam cuts off eight clips. How long is the ribbon now?", "options": ["numeral_12", "numeral_28", "numeral_18"], "answer": "numeral_12", "praise": "Twelve clips long! Twenty take away eight."}
+  ],
+  "hints": ["Find the numbers in the story. Do they join together or are some taken away?", "Draw the cups, blocks or clips. Then count."],
+  "beat_the_tutor": {
+    "setup": "My turn! A jug holds six cups. Mama pours in four more.",
+    "tutor_try": "Six take away four. Two cups!",
+    "image": "tutor_jug_wrong",
+    "answer": "ten cups",
+    "win_line": "You caught me! She poured more in, so we add. Six plus four is ten cups.",
+    "gentle_line": "Let's add together. Six cups and four more. Seven, eight, nine, ten!"
+  },
+  "parent_line": "Can solve story sums about length, mass and how much things hold."
+}

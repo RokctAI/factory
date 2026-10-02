@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term2.w09_tens_and_ones_to_fifty",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Tens and ones to 50",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Place value (numbers between 11 and 50)",
+    "subtopic": "Decompose two-digit numbers into multiples of tens and units/ones to 30 (weeks 1-2), 40 (weeks 3-6) and 50 (weeks 7-10)"
+  },
+  "skill": "place_value.tens_ones.to_50",
+  "prereq_skills": ["place_value.tens_ones.to_25", "count.skip.10_5_2"],
+  "images": ["sticks_three_tens_six", "sticks_four_tens_two", "sticks_two_tens_seven", "sticks_seven_tens_two", "sticks_two_tens_five", "sticks_three_tens_five", "numeral_48", "numeral_84", "numeral_40", "numeral_0", "numeral_5", "numeral_10", "numeral_31", "numeral_13", "numeral_30", "tutor_swaps_43"],
+  "show": {
+    "line": "Thirty-six. Three bundles of ten and six loose sticks. Thirty and six make thirty-six!",
+    "image": "sticks_three_tens_six"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Four bundles of ten and two loose sticks. How many sticks? Tap the number.", "image": "sticks_four_tens_two", "count": "42", "options": ["42", "24", "40"], "answer": "42", "praise": "Forty-two! Forty and two."},
+    {"type": "listen_tap", "prompt": "Which picture shows twenty-seven?", "options": ["sticks_two_tens_seven", "sticks_seven_tens_two", "sticks_two_tens_five"], "answer": "sticks_two_tens_seven", "praise": "Yes! Two tens and seven ones."},
+    {"type": "say_it", "prompt": "Thirty-five. How many tens? Say the number.", "accept": ["three", "3", "tree", "free"], "image": "sticks_three_tens_five"},
+    {"type": "listen_tap", "prompt": "Forty and eight. Which number is it?", "options": ["numeral_48", "numeral_84", "numeral_40"], "answer": "numeral_48", "praise": "Forty-eight! Four tens and eight ones."},
+    {"type": "listen_tap", "prompt": "In the number fifty, how many ones are there?", "options": ["numeral_0", "numeral_5", "numeral_10"], "answer": "numeral_0", "praise": "Zero ones! Fifty is five tens and no ones."},
+    {"type": "listen_tap", "prompt": "Which number has three tens and one one?", "options": ["numeral_31", "numeral_13", "numeral_30"], "answer": "numeral_31", "praise": "Thirty-one! Three tens and one."}
+  ],
+  "hints": ["Count the bundles in tens. Then count on the loose ones.", "The first digit is the tens. The second digit is the ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will break up forty-three.",
+    "tutor_try": "Forty-three is four ones and three tens!",
+    "image": "tutor_swaps_43",
+    "answer": "four tens and three ones",
+    "win_line": "You caught me! Forty-three is four tens and three ones.",
+    "gentle_line": "Let's look together. Four bundles of ten, three loose. Forty-three!"
+  },
+  "parent_line": "Can break a number up to 50 into tens and ones."
+}

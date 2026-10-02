@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w07_o_clock",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "What time is it?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Measurement: Time",
+    "subtopic": "Tell 12-hour time in hours and half hours on an analogue clock"
+  },
+  "skill": "time.read.o_clock",
+  "prereq_skills": ["time.day_parts", "number.recognise.1_to_10"],
+  "images": ["clock_three_oclock", "clock_seven_oclock", "clock_two_oclock", "clock_ten_oclock", "clock_five_oclock", "hand_short", "hand_long", "clock_twelve_oclock", "clock_six_oclock", "clock_nine_oclock", "clock_eight_oclock", "tutor_reads_wrong_hand"],
+  "show": {
+    "line": "A clock has two hands. The short hand shows the hour. The long hand points up at twelve. Three o'clock!",
+    "image": "clock_three_oclock"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which clock shows seven o'clock?", "options": ["clock_seven_oclock", "clock_two_oclock", "clock_ten_oclock"], "answer": "clock_seven_oclock", "praise": "Yes! The short hand points to seven."},
+    {"type": "say_it", "prompt": "Look at the clock. What time is it? Say the time.", "accept": ["five o'clock", "five oclock", "five", "5 o'clock"], "image": "clock_five_oclock"},
+    {"type": "listen_tap", "prompt": "Which hand is the hour hand?", "options": ["hand_short", "hand_long"], "answer": "hand_short", "praise": "Yes! The short hand tells the hour."},
+    {"type": "listen_tap", "prompt": "Which clock shows twelve o'clock?", "options": ["clock_twelve_oclock", "clock_six_oclock", "clock_nine_oclock"], "answer": "clock_twelve_oclock", "praise": "Yes! Both hands point to twelve."},
+    {"type": "say_it", "prompt": "School starts at this time. What time is it?", "accept": ["eight o'clock", "eight oclock", "eight", "8 o'clock"], "image": "clock_eight_oclock"},
+    {"type": "what_next", "prompt": "One o'clock, two o'clock, three o'clock. What time comes next?", "sequence": ["1 o'clock", "2 o'clock", "3 o'clock"], "options": ["4 o'clock", "5 o'clock", "12 o'clock"], "answer": "4 o'clock", "praise": "Four o'clock! The hours go round in order."}
+  ],
+  "hints": ["Find the short hand. Which number does it point to?", "The long hand points straight up at twelve for o'clock."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this clock.",
+    "tutor_try": "The short hand points to four. It is twelve o'clock!",
+    "image": "tutor_reads_wrong_hand",
+    "answer": "four o'clock",
+    "win_line": "You caught me! I read the long hand. The short hand says four o'clock.",
+    "gentle_line": "Let's look together. Short hand on four, long hand on twelve. Four o'clock!"
+  },
+  "parent_line": "Can read o'clock times on a clock with hands."
+}
