@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the purpose of the cash receipts journal and name and explain the use of each column in the CRJ of a service business.",
+      "expected_answer": "The CRJ is a book of first entry in which all money received is recorded in date order from source documents; it analyses receipts and allows column totals to be posted to the ledger. Columns: Doc — source document number (receipt no., CRR, B/S); Day — day of the month; Details — from whom received; Fol — posting reference; Analysis of receipts — individual amounts when several receipts are deposited together; Bank — total deposited each day (total debited to Bank); Current income — fees for services (total credited to Current income); Sundry accounts (amount, fol, details) — other receipts such as capital, loan, rent income, interest income, each posted individually to the account named."
+    },
+    {
+      "id": "cc2",
+      "question": "Name the source documents used for the CRJ and state what each is used for, including the role of the deposit slip and the bank statement.",
+      "expected_answer": "Duplicate receipt: money received from a person (customer, owner, tenant), entered by receipt number. Cash register roll: daily total of till sales, entered as one line marked CRR. Duplicate cash invoice: services paid immediately. Bank statement: receipts with no receipt issued — EFTs and direct deposits from customers, loans paid in, interest earned — entered as B/S; also used at month-end to check the CRJ. Deposit slip: not entered as a line, but used to check that each day's bank column total agrees with the amount actually deposited."
+    },
+    {
+      "id": "cc3",
+      "question": "Show how each of these receipts is entered (document, bank, current income or sundry with account name): capital R60 000 (receipt 001); CRR R4 200; loan R25 000 (bank statement); CRR R3 600 and receipt 003 R900 deposited together; rent R2 500 (receipt 004); interest R150 (bank statement).",
+      "expected_answer": "Capital: Doc 001; Bank 60 000; Sundry 60 000, Capital. CRR: Doc CRR; Bank 4 200; Current income 4 200. Loan: Doc B/S; Bank 25 000; Sundry 25 000, Loan. Combined deposit: analysis 3 600 (CRR) and 900 (003); Bank 4 500 once; Current income 3 600 and 900. Rent: Doc 004; Bank 2 500; Sundry 2 500, Rent income. Interest: Doc B/S; Bank 150; Sundry 150, Interest income."
+    }
+  ]
+}
