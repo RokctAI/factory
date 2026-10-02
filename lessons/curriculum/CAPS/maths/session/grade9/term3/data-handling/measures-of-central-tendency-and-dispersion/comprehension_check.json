@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Twelve learners spent 12, 60, 10, 15, 8, 12, 20, 5, 25, 10, 18 and 12 rands at the tuck shop. Find the mean, median, mode, extremes and range, showing the ordered list.",
+      "expected_answer": "Ordered: 5, 8, 10, 10, 12, 12, 12, 15, 18, 20, 25, 60. n = 12. Mean: the sum is 207, and 207 divided by 12 is 17.25 rands. Median: the mean of the 6th and 7th values, 12 and 12, which is 12 rands. Mode: 12 rands, occurring three times. Extremes: minimum 5 and maximum 60. Range: 60 − 5, which is 55 rands."
+    },
+    {
+      "id": "cc2",
+      "question": "Shoe sizes of 25 learners: size 4 (3 learners), 5 (7), 6 (8), 7 (5), 8 (2). Find the mean, median and mode from the table, and explain the error of adding the five sizes and dividing by 5.",
+      "expected_answer": "Mean: multiply each size by its frequency: 4 × 3 = 12, 5 × 7 = 35, 6 × 8 = 48, 7 × 5 = 35, 8 × 2 = 16; the sum is 146 and 146 divided by 25 is 5.84. Mode: size 6, the highest frequency (8). Median: the 13th of 25 ordered values; cumulative frequencies are 3, 10, 18, so the 13th value lies in size 6, and the median is 6. Adding 4 + 5 + 6 + 7 + 8 and dividing by 5 gives 6, which ignores how many learners wear each size and treats each size as if it occurred once; the frequencies must weight the sizes."
+    },
+    {
+      "id": "cc3",
+      "question": "Remove the outlier of 60 from the tuck shop data and recalculate the mean, median, mode and range. State which measures were affected and which measure best represents the original data, with a reason.",
+      "expected_answer": "Without 60 there are 11 values with sum 147, so the mean is 147 divided by 11, which is 13.36 rands (from 17.25). The median is the 6th of 11 ordered values, which is 12, unchanged. The mode is still 12. The range is 25 − 5, which is 20 (from 55). The mean and range were pulled by the outlier; the median and mode were resistant. The median of 12 rands best represents the original data, because the outlier of 60 pulls the mean up to 17.25 while most learners spent between 8 and 20 rands, and the median describes the typical learner."
+    }
+  ]
+}

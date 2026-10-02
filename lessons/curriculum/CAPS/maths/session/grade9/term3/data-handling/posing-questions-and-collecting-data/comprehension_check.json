@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Rewrite the vague question 'Do learners spend too much at the tuck shop?' as a statistical question that data can answer, and state the type of data it produces.",
+      "expected_answer": "A suitable version names the variable, group and period: 'How much, in rands to the nearest rand, did each Grade 9 learner at our school spend at the tuck shop during the past week?' The variable is amount spent in rands, the group is Grade 9 learners at our school, and the period is the past week. The data is numerical; since it is money counted to the nearest rand it is treated as discrete numerical data, and it can be summarised with an average and shown in a histogram with ranges such as 0 to 9, 10 to 19 and 20 to 29."
+    },
+    {
+      "id": "cc2",
+      "question": "A school has 1200 learners, 300 in each of four grades. Describe a stratified sample of 60 and a systematic sample of 60, explain why asking the first 60 learners through the gate is biased, and estimate how many learners walk to school if 42 of a fair sample of 60 do.",
+      "expected_answer": "Stratified: divide the population by grade and take 15 learners from each of the four grades, chosen at random within each grade, giving 60 in total with every grade represented in proportion. Systematic: number the 1200 learners on the register and take every 20th name, since 1200 divided by 60 is 20, giving 60 learners spread through the list. The first 60 through the gate is a convenience sample: early arrivals are more likely to live nearby or be driven, so learners who travel far and arrive late are under-represented and the result leans towards short journeys. Estimate: 42 of 60 is 70 percent, so about 70 percent of 1200, which is about 840 learners, walk; this is an estimate, not an exact count."
+    },
+    {
+      "id": "cc3",
+      "question": "For each question choose and justify a method or source of data collection: (a) how many cars pass the school gate between 07:00 and 08:00; (b) the youth unemployment rate in your province; (c) the daily water use of households in your street. Then explain what is wrong with the questionnaire item 'Do you agree that the tuck shop prices are far too high?'",
+      "expected_answer": "(a) Observation with a tally sheet at the gate for the hour, because counting directly is more reliable than asking people to remember traffic. (b) A secondary source, the Quarterly Labour Force Survey from Statistics South Africa, because a school project cannot survey a province; the report must cite the source, the date and whether the official or expanded definition of unemployment is used. (c) Measurement from water meter readings taken on consecutive days, because measured use is more accurate than households' estimates of their own use. The questionnaire item is a leading question: 'Do you agree' and 'far too high' push the respondent towards yes. A neutral version asks 'How much did you spend at the tuck shop this week?' with non-overlapping ranges to tick."
+    }
+  ]
+}
