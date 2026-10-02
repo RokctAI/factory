@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the path of electricity from a coal power station to a home, naming the role of transformers at each stage.",
+      "expected_answer": "Generators produce electricity at many thousands of volts; a step-up transformer raises it to transmission voltage (e.g. 400 000 V); transmission lines on pylons carry it long distances; substations step it down in stages (e.g. 132 000 V, then 11 000 or 22 000 V); a local pole or mini-substation transformer steps it down to 230 V for the home."
+    },
+    {
+      "id": "cc2",
+      "question": "A line must carry 100 MW. Calculate the current at 400 000 V and at 20 000 V and explain why the higher voltage is used.",
+      "expected_answer": "I = P ÷ V: 100 000 000 ÷ 400 000 = 250 A; 100 000 000 ÷ 20 000 = 5 000 A. The higher voltage gives a current twenty times smaller, so much less energy is lost as heat in the line's resistance (about 400 times less) and thinner, cheaper cables can be used."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why load shedding is used when demand exceeds supply.",
+      "expected_answer": "Supply and demand must balance every moment. If demand exceeds supply, generators slow down and the frequency falls below 50 Hz; power stations may trip off and the grid could collapse into a national blackout. Switching off areas in turn (load shedding) reduces demand to match supply and protects the grid."
+    }
+  ]
+}

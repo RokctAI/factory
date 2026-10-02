@@ -1,0 +1,25 @@
+### subtopic_1 — Generation, Transmission and Distribution
+**Assistant:** If high voltage reduces losses, why not transmit at millions of volts?
+
+**Tutor:** Because higher voltages bring their own problems and costs, so engineers choose a voltage that balances the savings against them. The higher the voltage, the farther apart the wires must be from each other, from the pylon and from the ground, otherwise electricity could arc across the air gap. That means taller, stronger and more expensive pylons, longer strings of insulators, and wider strips of land that must be kept clear beneath the lines. At very high voltages, the air right around the wires starts to break down a little, producing a crackling sound and a faint glow called corona, which itself wastes energy and creates radio interference, especially in damp weather. The transformers and switchgear at each end also become much larger and more costly. For most lines in South Africa, 400 000 or 275 000 volts is a good compromise. For very long distances, such as the lines bringing power to the Western Cape, Eskom uses 765 000 volts, because the longer the line, the more the savings in losses are worth. Some countries also use very high-voltage direct current for extremely long lines, converting it back at each end.
+
+***
+
+### subtopic_2 — Transformers and High-voltage Transmission
+**Assistant:** Why do transformers on poles sometimes hum or buzz?
+
+**Tutor:** The hum comes from the iron core vibrating very slightly as the alternating current changes direction. In South Africa the current changes direction 100 times each second, because one full cycle of a 50 hertz supply contains two changes of direction. Each time, the magnetic field in the iron core grows, shrinks and reverses, and the iron itself changes its shape by a tiny amount, an effect called magnetostriction. These tiny vibrations, 100 times a second, produce a low hum that you can hear when standing near a transformer, especially at night when it is quiet. Loose parts or plates in the core can make the sound louder. A steady hum is normal. A loud crackling, sizzling or popping sound, sparks, smoke, or a smell of burning oil is not normal and could mean the transformer is overloaded or faulty. In that case, keep well away and report it to Eskom or the municipality immediately. Never climb a pole or open a mini-substation to investigate; the voltages inside are high enough to kill instantly, and only trained technicians may work on them.
+
+***
+
+### subtopic_3 — Energy Losses and Overload
+**Assistant:** Why can't we just store extra electricity at night to use in the evening peak?
+
+**Tutor:** We can, to some extent, but storing electricity on the scale of a whole country is difficult and expensive, which is why supply and demand must normally be balanced moment by moment. Electricity itself is a flow of energy, and to store it you must change it into another form and change it back later. South Africa's main large-scale store is pumped storage: at night, when there is spare electricity, water is pumped from a lower dam to an upper dam, storing gravitational potential energy. In the evening peak the water flows back down through turbines, generating electricity within minutes. Schemes such as Drakensberg, Ingula and Palmiet can supply several thousand megawatts together, but only for some hours before the upper dam runs low, and some energy is lost in each conversion. Large battery systems are now being built next to solar farms and substations, and homes with solar panels often have batteries too. These help a great deal, especially for shifting solar energy from midday to the evening, but batteries are still costly and store far less than a country needs for many hours. Better storage is one of the most important challenges for a grid that uses more solar and wind power.
+
+***
+
+### subtopic_4 — Saving Electricity and the Error Museum
+**Assistant:** Why does load shedding sometimes damage appliances when the power comes back?
+
+**Tutor:** Because the moment the power returns can bring a brief surge, and because many appliances start at once. When a whole area is reconnected, the voltage can briefly spike above or dip below its normal value while the network settles. Fridges, air conditioners and pumps all try to start their motors at the same instant, each drawing a large starting current, which can cause the voltage to dip and then overshoot. Sensitive electronics such as televisions, computers, routers and gate motors can be damaged by these spikes, and fridge compressors can be strained if power is restored a few seconds after it was cut. Simple precautions help. Switch off or unplug sensitive appliances at the wall during load shedding and switch them on again a few minutes after the power returns. Use surge protectors, which divert brief high voltages away from the appliance. Some people install devices that delay reconnecting the fridge for a few minutes. A circuit breaker or earth leakage unit does not protect against short surges, because those devices are designed to respond to excess current or leakage, not to brief voltage spikes.

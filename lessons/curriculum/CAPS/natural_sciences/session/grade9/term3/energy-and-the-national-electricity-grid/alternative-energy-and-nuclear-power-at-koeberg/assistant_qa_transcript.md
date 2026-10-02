@@ -1,0 +1,25 @@
+### subtopic_1 — Renewable and Non-renewable Sources
+**Assistant:** If nuclear power releases no carbon dioxide, why don't we build many more nuclear stations instead of coal?
+
+**Tutor:** It is a fair question, and many countries are debating it. Nuclear power does have a big advantage for the climate: once a station is running it releases almost no carbon dioxide, and it supplies steady power day and night. But there are several reasons it is not simply built everywhere. First, cost and time: a large nuclear station costs an enormous amount of money and can take ten years or more to plan and build, and many projects around the world have run far over budget and behind schedule. Second, waste: no country has yet fully solved the long-term storage of high-level waste, though some, such as Finland, are building deep underground stores. Third, safety and public trust: accidents are rare but can have serious, long-lasting effects, so stations need strict regulation and highly skilled staff. Fourth, uranium is non-renewable. In South Africa, plans for new nuclear stations have been discussed for years, alongside the life extension of Koeberg. Most planners expect a mix: renewables, storage, some gas and nuclear, and a gradual reduction in coal.
+
+***
+
+### subtopic_2 — Solar, Wind and Water
+**Assistant:** How can a tiny amount of uranium produce so much more energy than coal?
+
+**Tutor:** Because the energy comes from a completely different place. When coal burns, the energy comes from rearranging electrons as carbon and oxygen atoms form new chemical bonds. That is a chemical change, and the energy involved per atom is relatively small. In nuclear fission the energy comes from the nucleus itself, the tiny, dense centre of the atom, where the particles are held together by extremely strong forces. When a uranium nucleus splits, the two smaller nuclei that form are more tightly bound, and the difference is released as energy. Per atom, fission releases millions of times more energy than a chemical reaction such as burning. In practical terms, one small uranium fuel pellet, about the size of a fingertip, can release roughly as much energy as burning about a tonne of coal. That is why Koeberg needs only a few truckloads of new fuel each time it refuels, while a coal station of similar output needs trainloads or conveyor belts of coal every day. It is also why the waste, though small in volume, is so intensely radioactive.
+
+***
+
+### subtopic_3 — Nuclear Power at Koeberg
+**Assistant:** Do solar panels work on cloudy days and in winter?
+
+**Tutor:** Yes, but they produce less electricity. Solar panels respond to light, not heat, so they work whenever light reaches them. On a bright cloudy day some light still passes through the clouds, but the output may fall to a fraction of what it is in full sun, depending on how thick the clouds are. In winter the sun is lower in the sky and the days are shorter, so a panel receives less light energy over the day, and output falls. Interestingly, panels are slightly more efficient when they are cool, so a clear, cold winter day can be quite productive per hour of sunshine. Installers in South Africa tilt panels towards the north, because in the Southern Hemisphere the sun is in the northern part of the sky, and they choose an angle that balances summer and winter. At night, of course, panels produce nothing, which is why home solar systems often include batteries to store energy for the evening, or stay connected to the grid. Planning a solar system always starts with estimating how much light is available through the year. Dust also matters: in dry, windy areas panels must be cleaned regularly, because a layer of dust blocks light and lowers their output.
+
+***
+
+### subtopic_4 — Nuclear Waste and the Error Museum
+**Assistant:** Why was Vaalputs chosen as the place to bury nuclear waste?
+
+**Tutor:** Because its natural conditions help keep radioactive material isolated from people and water for a very long time. Vaalputs lies in the Namaqualand region of the Northern Cape, an area that is very dry, with low and unpredictable rainfall and very high evaporation, so little water seeps down through the ground that could carry radioactive substances away. The groundwater is deep below the surface, and the underlying clay-rich soils and rock layers are stable and slow water movement further. The area is sparsely populated, far from large towns and farms, and is not prone to earthquakes or flooding. When choosing such a site, scientists study the geology, the groundwater, the climate and the long-term stability of the land, and the facility is designed with several barriers: the solid waste form, the sealed metal or concrete container, the engineered trench and its covering, and finally the natural ground itself. Each barrier slows any escape. The site is monitored continuously, and it is licensed and inspected by the National Nuclear Regulator. Choosing a remote, dry site is therefore one barrier among several, not the whole solution, and the same thinking is used by every country that stores radioactive waste.
