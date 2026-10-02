@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Give the image of (3; 5) under each of the six reflections and rotations about the origin, and find the translation that maps (3; 5) to (7; 2).",
+      "expected_answer": "x-axis (3; −5); y-axis (−3; 5); y = x (5; 3); 180° (−3; −5); 90° anticlockwise (−5; 3); 90° clockwise (5; −3). Translation: image minus original, 7 − 3 = 4 and 2 − 5 = −3, so 4 right and 3 down, (x; y) → (x + 4; y − 3)."
+    },
+    {
+      "id": "cc2",
+      "question": "A(2; −2) maps to (−2; 2) and B(4; 1) maps to (1; 4). List the transformations A alone allows, and use B to decide.",
+      "expected_answer": "A alone allows reflection in y = x, rotation through 180° about the origin, or the translation 4 left and 4 up. On B: y = x gives (1; 4), which matches; 180° gives (−4; −1); the translation gives (0; 5). So it is reflection in the line y = x."
+    },
+    {
+      "id": "cc3",
+      "question": "Reflect (2; 5) in y = x and then in the x-axis. Name the single equivalent transformation, and show with (3; 1), a reflection in the y-axis and a translation 2 right, that order matters.",
+      "expected_answer": "(2; 5) → (5; 2) → (5; −2). The rule (x; y) → (y; −x) is rotation through 90° clockwise about the origin. Reflect then translate: (3; 1) → (−3; 1) → (−1; 1). Translate then reflect: (3; 1) → (5; 1) → (−5; 1). The results differ, so order matters."
+    }
+  ]
+}

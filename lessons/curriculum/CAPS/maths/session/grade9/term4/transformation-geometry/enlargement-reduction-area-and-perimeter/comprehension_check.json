@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A rectangle 4 cm by 3 cm is enlarged by scale factor 2. Find the image dimensions, compare perimeters and areas, and explain why adding 2 cm to each side is not an enlargement.",
+      "expected_answer": "Image 8 cm by 6 cm. Perimeter 14 cm becomes 28 cm, multiplied by k = 2. Area 12 cm² becomes 48 cm², multiplied by k² = 4. Adding 2 cm gives 6 cm by 5 cm; 6 ÷ 4 = 1.5 but 5 ÷ 3 ≈ 1.67, so the ratios differ and the shape is not similar."
+    },
+    {
+      "id": "cc2",
+      "question": "Two similar triangles have areas 20 cm² and 180 cm². Find the scale factor, and the side of the larger triangle matching a 5 cm side of the smaller. If the smaller has perimeter 12 cm, find the larger perimeter.",
+      "expected_answer": "Area ratio 180 ÷ 20 = 9 = k², so k = 3. The matching side is 5 × 3 = 15 cm. The perimeter is multiplied by k: 12 × 3 = 36 cm."
+    },
+    {
+      "id": "cc3",
+      "question": "A mural designed on a 30 cm by 20 cm sheet is painted on a 6 m by 4 m wall. The design has 100 cm of border tape and uses 10 ml of paint. Find the scale factor, the tape length and the paint needed on the wall.",
+      "expected_answer": "k = 600 ÷ 30 = 20. Tape is a length: 100 cm × 20 = 2000 cm = 20 m. Paint covers an area: multiplied by 20² = 400, so 10 ml × 400 = 4000 ml = 4 litres. Check: 600 cm² × 400 = 240 000 cm² = 24 m², which is 6 m × 4 m."
+    }
+  ]
+}
