@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "24 unit cubes can be arranged as a 1 by 1 by 24 rod or a 2 by 3 by 4 block. Compare their surface areas and explain the difference.",
+      "expected_answer": "The rod has surface area 98 square units and the block 52, although both have volume 24. In the compact block more cubes touch each other, hiding more faces, so less surface is exposed."
+    },
+    {
+      "id": "cc2",
+      "question": "A cube's edge is doubled. What happens to its surface area, its volume, and its surface-area-to-volume ratio?",
+      "expected_answer": "The surface area is multiplied by 4 and the volume by 8, so the ratio of surface area to volume is halved: the larger cube has half as much surface for each unit of volume."
+    },
+    {
+      "id": "cc3",
+      "question": "Use surface area and volume to explain why crushed ice melts faster than a block of ice of the same volume.",
+      "expected_answer": "Ice melts at its surface. Crushing the block into small pieces keeps the volume the same but exposes far more surface, so the surface-area-to-volume ratio is much larger and the ice melts faster."
+    }
+  ]
+}
