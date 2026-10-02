@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between (−3)^2 and −3^2 and give the value of each.",
+      "expected_answer": "In (−3)^2 the brackets make −3 the base, so (−3)(−3) = 9. In −3^2 the base is 3; square it to get 9 and then apply the negative sign: −9."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is a negative base with an even exponent always positive?",
+      "expected_answer": "The negative factors pair off, and each pair of negatives multiplies to a positive. With an even exponent every factor is in a pair, so the product is positive; with an odd exponent one negative is left over."
+    },
+    {
+      "id": "cc3",
+      "question": "Write 3 × 3 × 5 × 5 × 5 in exponential form and explain why 15^5 is wrong.",
+      "expected_answer": "3^2 × 5^3. Exponents count identical factors, so the two threes and three fives are counted separately. 15^5 would mean five factors of fifteen, which is 759 375, far larger than 1 125."
+    }
+  ]
+}
