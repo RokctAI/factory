@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the columns of the CPJ of a service business and explain how each is used.",
+      "expected_answer": "Doc: EFT number (or B/S; formerly cheque number). Day: day of payment. Name of payee: who was paid. Fol: generally blank for individual payments. Bank: amount of each payment; total credited to bank. Analysis columns (e.g. wages, repair parts): frequent payments; totals debited to the account named. Sundry accounts (amount, folio, details): other payments such as rent expense, stationery, water and electricity, insurance, bank charges, equipment, loan repayment and drawings; each posted individually to the account named in details. Every payment appears twice: bank and one other column."
+    },
+    {
+      "id": "cc2",
+      "question": "Name four source documents for the CPJ and state when each is used.",
+      "expected_answer": "EFT payment confirmation (proof of payment): electronic payments to suppliers, landlord, employees, owner — EFT number in Doc. Original invoice/cash slip from supplier: evidence of what was bought, filed with the EFT. Bank statement (B/S): bank charges, debit orders (e.g. insurance), card payments, interest on overdraft. Payslip/wages record: supports wage payments. (Cheque counterfoil: historical, cheques ended 2020.)"
+    },
+    {
+      "id": "cc3",
+      "question": "The CPJ has columns for wages and repair parts. Wages paid: R3 000 twice; parts: R2 340 and R1 860; sundry: rent R4 500, stationery R680, drawings R2 500, water and electricity R1 380, equipment R5 200, bank charges R245, insurance R620. Calculate the column totals and show the cross-check.",
+      "expected_answer": "Wages = 3 000 + 3 000 = R6 000. Repair parts = 2 340 + 1 860 = R4 200. Sundry = 4 500 + 680 + 2 500 + 1 380 + 5 200 + 245 + 620 = R15 125. Bank = 6 000 + 4 200 + 15 125 = R25 325, which equals the sum of each payment, so the CPJ cross-casts."
+    }
+  ]
+}
