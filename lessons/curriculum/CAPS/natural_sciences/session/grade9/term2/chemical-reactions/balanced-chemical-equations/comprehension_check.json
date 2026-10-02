@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Balance CH4 + O2 → CO2 + H2O and show a stocktake table to prove it is balanced.",
+      "expected_answer": "CH4 + 2O2 → CO2 + 2H2O. Carbon: left 1, right 1. Hydrogen: left 4, right 2 × 2 = 4. Oxygen: left 2 × 2 = 4, right 2 + 2 = 4. All elements match."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why you may not balance H2 + O2 → H2O by changing the product to H2O2.",
+      "expected_answer": "Changing a subscript changes the substance: H2O2 is hydrogen peroxide, not water, so the equation would describe a different reaction. Only coefficients may be changed: 2H2 + O2 → 2H2O."
+    },
+    {
+      "id": "cc3",
+      "question": "Balance Fe + O2 → Fe2O3 and explain how you chose the coefficient for oxygen.",
+      "expected_answer": "Oxygen comes in 2s on the left and 3s on the right; the lowest common multiple is 6, so use 3O2 and 2Fe2O3. Then iron on the right is 4, so use 4Fe: 4Fe + 3O2 → 2Fe2O3. Iron 4 and 4, oxygen 6 and 6."
+    }
+  ]
+}
