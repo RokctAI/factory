@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how height is shown on a 1:10 000 orthophoto map, why its contour interval is smaller than on the topographic map, and how you would tell a contour from a fence on a black and white extract.",
+      "expected_answer": "Contour lines at a 5 m interval, labelled heights, spot heights and trig stations are printed over the image; all heights are in metres above mean sea level. A smaller interval is needed because the large scale shows a small area in detail, and a 20 m interval would leave small landforms unshown. Contours run smoothly, never cross, split or stop, and do not turn sharply at gates or join buildings, while fences and paths run in straight lines and corners."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate the gradient of a road that rises from a spot height of 1 520 m to the 1 555 m contour over a map distance of 2,5 cm on a 1:10 000 orthophoto, showing all steps.",
+      "expected_answer": "Gradient = VI / HE. VI = 1 555 - 1 520 = 35 m. HE = 2,5 cm x 10 000 = 25 000 cm = 250 m. Gradient = 35 / 250 = 1 : (250 / 35) = 1:7,1."
+    },
+    {
+      "id": "cc3",
+      "question": "Using both contour and image evidence, explain how you would identify a farm dam, a road cutting and a donga on an orthophoto.",
+      "expected_answer": "Dam: a smooth dark area whose edge follows a contour (still water is level), with a straight wall where valley contours narrow. Cutting: a road crossing high ground where the contours on either side bend inward and crowd together because ground has been dug away. Donga: a sharp narrow V in the contours on a steep bare slope with no river, appearing as a pale raw branching scar with little vegetation."
+    }
+  ]
+}

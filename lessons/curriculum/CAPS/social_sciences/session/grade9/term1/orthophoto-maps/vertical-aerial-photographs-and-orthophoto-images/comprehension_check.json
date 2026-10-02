@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Distinguish between vertical, low oblique and high oblique aerial photographs, and explain why vertical photographs are used for mapping.",
+      "expected_answer": "A vertical photograph is taken with the camera pointing straight down and shows the ground in plan view; a low oblique is taken with the camera tilted but does not show the horizon; a high oblique is tilted enough to show the horizon. Vertical photographs are used for mapping because their scale is nearly constant and they show features as on a map, while obliques have a scale that decreases towards the background and cannot be measured."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why a raw vertical aerial photograph cannot be measured exactly and how an orthophoto map is produced from it.",
+      "expected_answer": "Its scale varies because of relief displacement (high ground is closer to the camera and appears larger, tall objects lean outward), aircraft tilt and lens distortion. Orthorectification uses a digital model of ground height and control points to shift every point to its true position, giving a uniform scale. The corrected images are mosaicked and printed at 1:10 000 with 5 m contours, spot heights, names, a co-ordinate frame and a scale to make the orthophoto map."
+    },
+    {
+      "id": "cc3",
+      "question": "Name the clues used to interpret an orthophoto and use them to identify an informal settlement, an industrial area and centre-pivot irrigation.",
+      "expected_answer": "Tone, texture, shape, size, pattern, shadow and association. Informal settlement: very small, closely packed roofs of uneven tone, irregular narrow paths, little vegetation, often on marginal land. Industrial area: large rectangular flat-roofed buildings, open yards and railway sidings. Centre-pivot irrigation: large perfect circles on farmland, green when cropped and pale when bare, often near a river."
+    }
+  ]
+}
