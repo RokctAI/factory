@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For 4x^2 − 3x + 7, state the number of terms, the coefficient of each variable term, the constant and the degree, and evaluate it at x = −2.",
+      "expected_answer": "Three terms: 4x^2, −3x and 7. Coefficient of x^2 is 4; coefficient of x is −3 (the sign belongs to the term); constant 7; degree 2. At x = −2, with brackets: 4(−2)^2 − 3(−2) + 7 gives 16 + 6 + 7, which is 29."
+    },
+    {
+      "id": "cc2",
+      "question": "Simplify 7a − 3b + 2a + b and explain why 3x + 2 cannot be simplified to 5x.",
+      "expected_answer": "Collect like terms: 7a + 2a = 9a and −3b + b = −2b, so 9a − 2b. 3x and 2 are unlike terms — 2 has no x — so they cannot be combined; adding like terms uses the distributive property, 3x + 5x = (3 + 5)x, which requires the same variable part. 3x + 2 stays as it is."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the difference between x + x and x × x, and between 2x^2 + 3x^2 and 2x^2 × 3x^2.",
+      "expected_answer": "x + x is two copies added, 2x; x × x is two copies multiplied, x^2. Adding like terms adds coefficients and leaves the exponent: 2x^2 + 3x^2 = 5x^2. Multiplying multiplies coefficients and adds exponents: 2x^2 × 3x^2 = 6x^4. Addition never changes the exponent; multiplication does."
+    }
+  ]
+}
