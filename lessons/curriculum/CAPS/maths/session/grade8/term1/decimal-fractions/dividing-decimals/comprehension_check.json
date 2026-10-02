@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why 4,8 ÷ 0,6 may be rewritten as 48 ÷ 6, and give the answer.",
+      "expected_answer": "A division is a fraction; multiplying numerator and denominator by 10 leaves its value unchanged. 48 ÷ 6 = 8."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate 7,35 ÷ 0,5 and explain why the answer is larger than 7,35.",
+      "expected_answer": "Scale both by 10: 73,5 ÷ 5 = 14,7. Dividing by a number less than one asks how many small pieces fit, and halves fit many times, so the quotient is larger."
+    },
+    {
+      "id": "cc3",
+      "question": "A learner gives 0,8 as the answer to 4,8 ÷ 0,6. Identify the error and the check that catches it.",
+      "expected_answer": "Only the divisor was scaled. The direction check catches it: dividing by 0,6 must give an answer bigger than 4,8, and 0,8 is smaller. The correct answer is 8."
+    }
+  ]
+}

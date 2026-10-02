@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, using fractions, why 0,6 × 0,4 has two decimal places.",
+      "expected_answer": "0,6 is 6/10 and 0,4 is 4/10; their product is 24/100 = 0,24. The denominators multiply to 100, so the decimal places add to two."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate 2,35 × 1,2 and show how an estimate confirms the position of the comma.",
+      "expected_answer": "235 × 12 = 2 820; three decimal places gives 2,820 = 2,82. Estimate: about 2,4 times about 1 is a little more than 2,4, so 2,82 is sensible."
+    },
+    {
+      "id": "cc3",
+      "question": "A learner gives 0,008 as the answer to 3,2 × 0,25. Explain the error.",
+      "expected_answer": "32 × 25 = 800 and there are three decimal places, so the comma must be placed in 800 to give 0,800 = 0,8. Dropping the zeros before placing the comma counts the places in 8 instead."
+    }
+  ]
+}
