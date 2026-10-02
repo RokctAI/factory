@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to plot (−3; 2) and name its quadrant.",
+      "expected_answer": "From the origin move 3 to the left along the x-axis, then 2 up. The x-coordinate is negative and the y-coordinate positive, so the point is in the second quadrant, top left."
+    },
+    {
+      "id": "cc2",
+      "question": "Why do the points of y = 2x + 1 lie on a straight line while those of y = x² lie on a curve?",
+      "expected_answer": "For y = 2x + 1 each step of 1 in x adds the same 2 to y, a constant slope, so the points are collinear. For y = x² the steps change (1, 3, 5, ...), so the slope changes and the points follow a curve."
+    },
+    {
+      "id": "cc3",
+      "question": "When should plotted points be joined, and with what?",
+      "expected_answer": "Join when both variables are continuous. Use a ruler if the table has constant steps (a straight line) and a smooth freehand curve if the steps change. Leave the points as dots when a variable is a count, such as tickets."
+    }
+  ]
+}
