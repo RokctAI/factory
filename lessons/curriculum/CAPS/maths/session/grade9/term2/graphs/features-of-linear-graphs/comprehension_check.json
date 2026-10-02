@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "For the line y = 3x − 6, find the y-intercept and the x-intercept, writing each as an ordered pair and stating which variable you set to zero.",
+      "expected_answer": "y-intercept: set x = 0, giving y = −6, so the point is (0; −6). x-intercept: set y = 0, giving 0 = 3x − 6, so 3x = 6 and x = 2; the point is (2; 0). The y-intercept has x = 0 and sits on the vertical axis; the x-intercept has y = 0 and sits on the horizontal axis."
+    },
+    {
+      "id": "cc2",
+      "question": "A line passes through (0; −3) and (3; 3). Calculate its gradient, write its equation, and find its x-intercept.",
+      "expected_answer": "Gradient: rise is 3 − (−3), which is 6; run is 3 − 0, which is 3; gradient 6/3 = 2. The y-intercept is −3 (the point with x = 0), so the equation is y = 2x − 3. x-intercept: 0 = 2x − 3 gives x = 1,5, so the point is (1,5; 0)."
+    },
+    {
+      "id": "cc3",
+      "question": "A taxi fare is given by fare = 12k + 20 rand for k kilometres. Interpret the gradient and the y-intercept in the context, with units.",
+      "expected_answer": "The gradient is 12, meaning the fare increases by R12 for every kilometre travelled (R12 per kilometre, the rate). The y-intercept is 20, meaning the fare is R20 when k = 0: the flag fee charged before any distance is driven (the starting value)."
+    }
+  ]
+}
