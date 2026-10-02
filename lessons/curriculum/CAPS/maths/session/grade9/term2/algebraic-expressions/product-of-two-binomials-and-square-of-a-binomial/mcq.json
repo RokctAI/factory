@@ -1,0 +1,235 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Multiplying Two Binomials With the Grid",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "(x + 3)(x + 5) expands to:",
+          "options": ["x^2 + 15", "x^2 + 8x + 15", "x^2 + 15x + 8", "2x + 8"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "(2x − 3)(x + 4) expands to:",
+          "options": ["2x^2 − 12", "2x^2 + 11x − 12", "2x^2 + 5x − 12", "2x^2 − 5x − 12"],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "How many products are written before collecting when two binomials are multiplied?",
+          "options": ["Two", "Three", "Four", "Six"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "(x + 2)(x − 5) expands to:",
+          "options": ["x^2 − 3x − 10", "x^2 + 3x − 10", "x^2 − 10", "x^2 − 7x − 10"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The Square of a Binomial",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "(2x + 5)^2 equals:",
+          "options": ["4x^2 + 25", "4x^2 + 10x + 25", "4x^2 + 20x + 25", "2x^2 + 20x + 25"],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "(x − 4)^2 equals:",
+          "options": ["x^2 − 16", "x^2 − 8x − 16", "x^2 + 8x + 16", "x^2 − 8x + 16"],
+          "correct_index": 3,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "At x = 1, (x + 5)^2 is 36. The value of x^2 + 25 at x = 1 is:",
+          "options": ["36", "26", "35", "30"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The middle term of (3x − 1)^2 is:",
+          "options": ["−3x", "−6x", "+6x", "There is no middle term"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Difference of Two Squares as a Product",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "(x + 7)(x − 7) equals:",
+          "options": ["x^2 − 14x − 49", "x^2 − 49", "x^2 + 49", "x^2 − 14x + 49"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "(3x − 2)(3x + 2) equals:",
+          "options": ["9x^2 − 4", "9x^2 + 12x − 4", "3x^2 − 4", "9x^2 − 12x + 4"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Why does (x + 7)(x − 7) have no x term?",
+          "options": ["x × x is zero", "The cross products −7x and +7x cancel", "7 × (−7) is zero", "Binomials never give an x term"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Which expression equals x^2 − 49 when expanded?",
+          "options": ["(x − 7)^2", "(x + 7)^2", "(x − 7)(x + 7)", "(x − 49)(x + 1)"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Mixed Expansions and the Error Museum",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "(x + 3)(x + 5) − (x − 2)^2 simplifies to:",
+          "options": ["12x + 11", "4x + 19", "2x^2 + 12x + 11", "12x + 19"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "(x − 3)^2 − (x + 3)(x − 3) simplifies to:",
+          "options": ["−6x", "18", "−6x + 18", "2x^2 − 6x"],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A learner writes (2x − 3)(x + 4) = 2x^2 − 12. Which products were skipped?",
+          "options": ["2x × x and −3 × 4", "2x × 4 and −3 × x", "Only −3 × x", "None; the answer is correct"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The best quick check that an expansion is correct is to:",
+          "options": ["Count the terms", "Substitute a value for x into both the original and the answer", "Check that the constant is positive", "Re-read the question"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Every Term Meets Every Term",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Bag one holds x and 3; bag two holds x and 5. How many meetings are there?",
+          "options": ["Two", "Three", "Four", "Five"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "In the grid for (2x − 3)(x + 4), the two middle cells hold:",
+          "options": ["8x and −3x", "2x^2 and −12", "8x and 3x", "−8x and −3x"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "At x = 1, (2x − 3)(x + 4) and 2x^2 + 5x − 12 both give:",
+          "options": ["5", "−5", "−10", "0"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Middle Term Is Not Zero",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "(x + 5)^2 equals:",
+          "options": ["x^2 + 25", "x^2 + 5x + 25", "x^2 + 10x + 25", "2x + 10"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In the square-tile picture of (x + 5)^2, the middle term 10x is:",
+          "options": ["The big x by x square", "The small 5 by 5 square", "The two x by 5 rectangles", "The border of the tile"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The last term of (x − 4)^2 is:",
+          "options": ["−16", "+16", "−8", "+8"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The rhythm for squaring a bracket is:",
+          "options": ["First squared, last squared", "First squared, double the product, last squared", "Double the first, double the last", "First times last, doubled"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Two Terms Vanish, Then Check Everything",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "Which pair of bags gives an answer with only two terms?",
+          "options": ["(x + 7)(x + 7)", "(x − 7)(x − 7)", "(x + 7)(x − 7)", "(x + 7)(x + 1)"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "At x = 1, (x + 3)(x + 5) − (x − 2)^2 and 12x + 11 both give:",
+          "options": ["24", "23", "25", "11"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "When a minus sign sits in front of a second expansion, you should:",
+          "options": ["Flip only its first sign", "Ignore it until the end", "Keep the expansion in a bracket, then flip every sign", "Drop the minus"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "(x − 3)^2 − (x + 3)(x − 3) at x = 1 gives:",
+          "options": ["4 − (−8), which is 12", "4 + (−8), which is −4", "36 − 8, which is 28", "0"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        }
+      ]
+    }
+  ]
+}
