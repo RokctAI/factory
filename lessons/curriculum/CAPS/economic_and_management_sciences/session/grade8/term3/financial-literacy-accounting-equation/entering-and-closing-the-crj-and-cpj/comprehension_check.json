@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Classify each June transaction of the garden service into the CRJ or CPJ and name the column: (a) loan R10 000 shown on the bank statement; (b) lawnmower R6 800 by EFT; (c) customer's EFT R1 650 for garden maintenance; (d) bank charges R95; (e) loan repayment R1 000.",
+      "expected_answer": "(a) CRJ, sundry, details loan (B/S). (b) CPJ, sundry, details equipment. (c) CRJ, current income (B/S). (d) CPJ, sundry, details bank charges (B/S). (e) CPJ, sundry, details loan."
+    },
+    {
+      "id": "cc2",
+      "question": "Close off both June journals: CRJ current income 1 200 + 850 + 2 300 + 1 650, sundry 15 000 + 10 000 + 40; CPJ wages 1 800 + 1 800, fuel 640 + 710, sundry 6 800 + 450 + 1 500 + 1 000 + 95. Give each total, cross-cast each journal and calculate the bank balance at 30 June (opening balance nil).",
+      "expected_answer": "CRJ: current income R6 000; sundry R25 040; bank R31 040 = 6 000 + 25 040. CPJ: wages R3 600; fuel R1 350; sundry R9 845; bank R14 795 = 3 600 + 1 350 + 9 845. Bank balance = 0 + 31 040 − 14 795 = R16 245 favourable."
+    },
+    {
+      "id": "cc3",
+      "question": "Show June's total effect on the accounting equation and calculate the profit. Explain why the profit is much smaller than the bank balance.",
+      "expected_answer": "Assets +23 045 (bank +16 245, equipment +6 800). OE +14 045 (capital +15 000, income +6 040, expenses −5 495, drawings −1 500). L +9 000 (loan +10 000 − 1 000). 14 045 + 9 000 = 23 045: balances. Profit = 6 040 − 5 495 = R545. Capital and the loan (R25 000) increased bank but are not income; equipment, drawings and the loan repayment reduced bank but are not expenses."
+    }
+  ]
+}
