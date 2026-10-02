@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A garden 12 m by 8 m has a path 1 m wide around it. Find the area of the path and explain a common error.",
+      "expected_answer": "The outer rectangle is 14 m by 10 m, area 140 square metres, and the garden is 96 square metres, so the path is 44 square metres. A common error is adding the path width only once to each dimension, or multiplying the garden's perimeter by the width and forgetting the four corner squares."
+    },
+    {
+      "id": "cc2",
+      "question": "A track has straights of 80 m and semicircular ends of radius 30 m. Find the length of its inside edge.",
+      "expected_answer": "The two straights give 160 m and the two semicircles together make a full circle of circumference 60 pi, about 188,50 m, so the inside edge is about 348,50 m."
+    },
+    {
+      "id": "cc3",
+      "question": "Why are numbers of tiles or tins always rounded up?",
+      "expected_answer": "Because they are bought as whole items, and rounding down would leave the job short. Even 15,4 boxes means 16 boxes must be bought."
+    }
+  ]
+}

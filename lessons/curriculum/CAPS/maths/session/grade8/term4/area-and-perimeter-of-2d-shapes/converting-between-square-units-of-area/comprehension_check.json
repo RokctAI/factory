@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why 1 square centimetre equals 100 square millimetres and not 10.",
+      "expected_answer": "A square 1 cm on each side is 10 mm on each side, so it divides into 10 rows of 10 small squares, each 1 mm on a side. That is 10 times 10, which is 100 square millimetres: the area factor is the length factor squared."
+    },
+    {
+      "id": "cc2",
+      "question": "Convert 4,2 square metres to square centimetres and 750 000 square metres to square kilometres.",
+      "expected_answer": "4,2 square metres times 10 000 is 42 000 square centimetres. 750 000 square metres divided by 1 000 000 is 0,75 square kilometres."
+    },
+    {
+      "id": "cc3",
+      "question": "A tile is 30 cm by 30 cm and a floor is 4,2 m by 3,6 m. How many tiles cover the floor, ignoring waste, and why must the units match?",
+      "expected_answer": "The tile is 0,09 square metres and the floor is 15,12 square metres, so 15,12 divided by 0,09 gives 168 tiles. The units must match because dividing square metres by square centimetres would compare different-sized units and give a meaningless number."
+    }
+  ]
+}
