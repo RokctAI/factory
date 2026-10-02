@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Squares, cubes and roots of decimals today. My own confession: I wrote zero comma three squared as zero comma nine for an embarrassingly long time, because three squared is nine and the comma just seemed to come along for the ride. It does not. The places add.
+
+Our expert tutor treats powers as repeated multiplication with the places adding, roots as fractions over powers of ten with the places halving or dividing by three, and spends real time on the trap that the root of zero comma four is not zero comma two. The anchors are zero comma three squared equals zero comma zero nine, one comma five squared equals two comma two five, root zero comma four nine equals zero comma seven and the cube root of zero comma zero two seven equals zero comma three. Our simplifier tutor puts a thirty-centimetre tile on a one-metre grid and a twenty-centimetre box inside a cubic metre so the shrinking is something you can see, and finishes with the place-counting rules in one list.
+
+My rule for the session: count the places, do the digits, check the size. Questions follow every section; I will be counting alongside you.

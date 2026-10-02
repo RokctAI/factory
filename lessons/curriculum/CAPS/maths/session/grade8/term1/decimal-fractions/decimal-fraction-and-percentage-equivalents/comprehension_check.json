@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to tell, without dividing, whether 5/12 gives a terminating or recurring decimal.",
+      "expected_answer": "In simplest form the denominator 12 is 2 × 2 × 3. The factor 3 is not 2 or 5, so the decimal recurs: 0,41 with the 6 recurring."
+    },
+    {
+      "id": "cc2",
+      "question": "Convert 2,5% to a decimal and to a fraction in simplest form, and explain the placeholder zero.",
+      "expected_answer": "Dividing by 100 moves the digits two places: 0,025, with a zero after the comma because 2,5 must shift past the tenths. As a fraction, 2,5/100 = 25/1000 = 1/40."
+    },
+    {
+      "id": "cc3",
+      "question": "Why is 0,17 × 90 not equal to one sixth of 90, and what is the exact value?",
+      "expected_answer": "0,17 is a rounded form of one sixth, which is 0,16 recurring; one sixth of 90 is exactly 15, while 0,17 × 90 = 15,3."
+    }
+  ]
+}
