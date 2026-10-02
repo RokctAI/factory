@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why (2/3)^2 = 4/9 and why the answer is smaller than 2/3.",
+      "expected_answer": "Squaring a fraction squares numerator and denominator: 2^2 over 3^2 is 4/9. Taking two thirds of two thirds leaves less than two thirds, so a proper fraction gets smaller when squared."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is √0,09 equal to 0,3 and not 0,03?",
+      "expected_answer": "A square root halves the number of decimal places: 0,09 has two, so its root has one. Check: 0,3^2 = 0,09 while 0,03^2 = 0,0009. As a fraction, √(9/100) = 3/10 = 0,3."
+    },
+    {
+      "id": "cc3",
+      "question": "Why must a mixed number be converted before it is squared?",
+      "expected_answer": "The exponent does not distribute over the plus inside a mixed number. (1 1/2)^2 = (3/2)^2 = 9/4 = 2 1/4, not 1 1/4; squaring the 1 and the 1/2 separately drops the cross terms."
+    }
+  ]
+}
