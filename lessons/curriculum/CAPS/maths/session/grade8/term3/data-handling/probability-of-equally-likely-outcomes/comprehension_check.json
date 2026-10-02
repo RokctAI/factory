@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A bag holds 3 red, 5 blue and 2 green marbles. Give P(blue), P(not blue) and P(red or green), and explain the denominator.",
+      "expected_answer": "P(blue) is 5/10, which is 1/2; P(not blue) is 1 minus 1/2, which is 1/2; P(red or green) is 5/10, also 1/2. The denominator is 10 because there are ten marbles, each an equally likely outcome; the three colours are not equally likely and cannot be the denominator."
+    },
+    {
+      "id": "cc2",
+      "question": "Why does tossing two coins have four outcomes rather than three?",
+      "expected_answer": "The first coin can land H or T and for each the second can land H or T, giving HH, HT, TH and TT. One of each can happen in two ways, HT and TH, so treating it as a single outcome would wrongly make it as likely as two heads; it is actually twice as likely."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the complement rule with an example.",
+      "expected_answer": "The probability of an event not happening is 1 minus the probability that it does, because the two together cover every outcome. P(not rolling a 6) is 1 minus 1/6, which is 5/6, the same as counting the five outcomes 1 to 5 out of six."
+    }
+  ]
+}

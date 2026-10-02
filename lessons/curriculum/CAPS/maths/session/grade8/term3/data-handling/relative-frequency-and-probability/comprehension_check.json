@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A die is rolled 120 times and a 6 appears 23 times. Give the relative frequency of a 6, the expected number under fairness, and a comment.",
+      "expected_answer": "Relative frequency 23 over 120, about 0,19. Expected number one sixth of 120, which is 20, a probability of about 0,167. The observed value is a little above the probability, which is ordinary chance variation in 120 rolls; the result is consistent with a fair die."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why thirty learners pooling 300 tosses gives a better comparison with probability than any one learner's ten.",
+      "expected_answer": "Relative frequency settles towards the probability as the number of trials grows. Ten tosses can easily give 2 or 9 heads, relative frequencies far from 0,5, while 300 tosses almost always give a relative frequency close to 0,5. Pooling creates a long series from many short ones."
+    },
+    {
+      "id": "cc3",
+      "question": "How is probability found for an object whose outcomes are not equally likely, such as a bottle top?",
+      "expected_answer": "No symmetry gives a formula, so a long series of trials is run and the relative frequency of the outcome is used as the estimate of its probability. More trials make the estimate more reliable, and the estimate can then predict the expected count in further trials."
+    }
+  ]
+}

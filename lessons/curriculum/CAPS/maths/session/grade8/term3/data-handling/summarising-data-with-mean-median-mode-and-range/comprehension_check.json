@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Find the mean, median, mode and range of 4, 7, 9, 12, 15, 20 and 9.",
+      "expected_answer": "Ordered: 4, 7, 9, 9, 12, 15, 20, seven values totalling 76. Mean 76 divided by 7, about 10,86. Median the fourth value, 9. Mode 9, which occurs twice. Range 20 minus 4, which is 16."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the median is preferred to the mean for house prices on a street with one very expensive sale.",
+      "expected_answer": "The expensive sale adds a great deal to the total and so pulls the mean upwards towards a value no typical house reaches. The median depends only on the middle position, so one extreme sale moves it at most one step, and it reports what a typical house costs."
+    },
+    {
+      "id": "cc3",
+      "question": "How is the mean calculated from a frequency table, and what is the common error?",
+      "expected_answer": "Multiply each value by its frequency, add these products to get the total, and divide by the sum of the frequencies, which is the number of observations. The common error is dividing by the number of rows in the table instead of the total frequency."
+    }
+  ]
+}

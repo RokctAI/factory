@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we compare what probability predicts with what actually happens when the coin is tossed and the die is rolled: relative frequency, expected counts, and why short experiments wobble while long ones settle. I once decided a die was loaded after it gave three sixes in a row, and I was wrong, which is exactly the mistake this session is about.
+
+Our expert tutor covers relative frequency from a series of trials, predicting the number of occurrences, comparing relative frequency with probability as trials grow, and judging fair or loaded from evidence. Our simplifier tutor fills a chalkboard with three hundred coin tosses and estimates probabilities for a bottle top and a goalkeeper's penalties where no formula applies.
+
+My plan: tally the trials, divide by the number of trials, predict with probability times trials, compare in the same form, and remember that the weight of the evidence grows with the number of trials. Questions follow every section; I will be tossing alongside you.
