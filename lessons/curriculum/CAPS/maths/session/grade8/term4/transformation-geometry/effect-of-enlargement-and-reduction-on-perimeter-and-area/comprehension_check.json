@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A rectangle 3 units by 2 units is enlarged by the scale factor 3. Give the new perimeter and area and explain the multipliers.",
+      "expected_answer": "The image is 9 by 6, with perimeter 30 units and area 54 square units. The perimeter is multiplied by 3, the scale factor, because it is a length; the area is multiplied by 9, the scale factor squared, because each unit square becomes a 3 by 3 block."
+    },
+    {
+      "id": "cc2",
+      "question": "Two similar shapes have areas 12 square centimetres and 75 square centimetres. Find the scale factor and the ratio of their perimeters.",
+      "expected_answer": "The area ratio is 75 divided by 12, which is 6,25. The scale factor is the square root of 6,25, which is 2,5, so the perimeters are in the ratio 1 to 2,5, or 2 to 5."
+    },
+    {
+      "id": "cc3",
+      "question": "Why does doubling the side of a square garden need twice the fencing but four times the compost?",
+      "expected_answer": "Fencing covers the perimeter, a length, which scales by the factor 2. Compost covers the area, which scales by 2 squared, which is 4: the new garden holds four copies of the old one."
+    }
+  ]
+}

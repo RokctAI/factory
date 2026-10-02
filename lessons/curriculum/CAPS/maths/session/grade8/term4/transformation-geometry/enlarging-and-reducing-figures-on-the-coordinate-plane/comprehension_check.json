@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Triangle ABC has A at 1 semicolon 2, B at 3 semicolon 2 and C at 1 semicolon 5. Give its image under an enlargement from the origin by 3, and the area of the image.",
+      "expected_answer": "A prime is 3 semicolon 6, B prime is 9 semicolon 6 and C prime is 3 semicolon 15. The original has legs 2 and 3 and area 3 square units, so the image has area 3 times 9, which is 27 square units, with legs 6 and 9."
+    },
+    {
+      "id": "cc2",
+      "question": "A figure has a vertex at 4 semicolon 6 and its image has the matching vertex at 6 semicolon 9. Is this consistent with an enlargement from the origin, and what is the factor?",
+      "expected_answer": "Yes: 6 divided by 4 is 1,5 and 9 divided by 6 is 1,5, so both coordinates give the same factor, k equals 1,5, provided every other vertex gives 1,5 as well."
+    },
+    {
+      "id": "cc3",
+      "question": "Why does a photocopy at 50 percent look much smaller than half the size?",
+      "expected_answer": "Because 50 percent is the scale factor for lengths. Every length is halved, so the area is multiplied by one half squared, which is one quarter."
+    }
+  ]
+}

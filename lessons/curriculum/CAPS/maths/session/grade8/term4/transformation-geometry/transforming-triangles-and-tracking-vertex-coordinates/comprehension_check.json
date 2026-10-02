@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Triangle ABC has A at 1 semicolon 1, B at 4 semicolon 1 and C at 1 semicolon 3. Give the image vertices after a rotation of 90 degrees clockwise about the origin.",
+      "expected_answer": "Using the rule x semicolon y maps to y semicolon negative x: A prime is 1 semicolon negative 1, B prime is 1 semicolon negative 4 and C prime is 3 semicolon negative 1."
+    },
+    {
+      "id": "cc2",
+      "question": "How can you check that a triangle has been translated correctly?",
+      "expected_answer": "Subtract original from image for each vertex; for a translation every vertex gives the same pair. The sides must also keep their directions and lengths, and the orientation stays the same."
+    },
+    {
+      "id": "cc3",
+      "question": "A triangle and its image are congruent but go round in opposite directions. What kind of transformation was it, and why?",
+      "expected_answer": "A reflection, because reflections reverse orientation like a mirror, while translations and rotations keep the order of the vertices going round in the same direction."
+    }
+  ]
+}
