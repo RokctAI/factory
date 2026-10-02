@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A box measures 4 cm by 3 cm by 2 cm. Find its volume, then the volume when one dimension is doubled, when two are doubled and when all three are doubled. State the multiplier each time and explain the pattern.",
+      "expected_answer": "Original 4 × 3 × 2 = 24 cm³. One doubled, for example 8 × 3 × 2 = 48 cm³, times 2. Two doubled, 8 × 6 × 2 = 96 cm³, times 4. All three doubled, 8 × 6 × 4 = 192 cm³, times 8. Volume is a product of three dimensions, so each doubled dimension multiplies the product by another 2: 2, 2 × 2 = 4, 2 × 2 × 2 = 8."
+    },
+    {
+      "id": "cc2",
+      "question": "A cylinder has radius 2 cm and height 5 cm. Find its volume, and the volume when the height is doubled, when the radius is doubled, and when both are doubled. Explain why doubling the radius has a bigger effect than doubling the height.",
+      "expected_answer": "Original π × 2² × 5 = 20π ≈ 62.83 cm³. Height doubled: π × 4 × 10 = 40π ≈ 125.66 cm³, times 2. Radius doubled: π × 4² × 5 = 80π ≈ 251.33 cm³, times 4. Both doubled: π × 16 × 10 = 160π ≈ 502.65 cm³, times 8. The radius appears squared in πr²h because it sets the width of the circular base in both directions, so doubling it multiplies the base area, and the volume, by 2² = 4, while the height appears once and gives a factor of 2."
+    },
+    {
+      "id": "cc3",
+      "question": "Every dimension of a cube of side 5 cm is doubled. Compare the new volume and surface area with the old, then state the general rule for a scale factor k and use it to find the scale factor for a container in the same shape that holds 27 times as much.",
+      "expected_answer": "Old volume 5³ = 125 cm³, new 10³ = 1 000 cm³, times 8. Old surface area 6 × 25 = 150 cm², new 6 × 100 = 600 cm², times 4. For scale factor k: lengths × k, areas × k², volumes × k³. Holding 27 times as much means k³ = 27, so k is the cube root of 27, which is 3: every length is tripled."
+    }
+  ]
+}
