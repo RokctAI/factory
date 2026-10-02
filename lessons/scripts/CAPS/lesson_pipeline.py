@@ -613,7 +613,8 @@ def cmd_seed(args):
             ack_ref = assign_ack_variant(
                 tutor_id, h,
                 is_expert_tutor(entry.get("type", ""),
-                                entry.get("subject", ""), tutor_id))
+                                entry.get("subject", ""), tutor_id,
+                                entry.get("grade")))
         if category == CATEGORY_SKILL:
             # Skills are term-independent; a term on a skill row is a
             # contradiction, and a skill without a stable ref is unlinkable.
@@ -741,11 +742,12 @@ def _seed_pair_row(entry, existing, card_tokens, pair_roles):
     if set(PAIR_ROLES) <= pair_roles.get(pair_id, set()):
         return 0
 
-    roster_entry = load_roster().get("subjects", {}).get(
-        roster_key_for(entry.get("type", ""), entry.get("subject", "")), {})
+    duo_entry = roster_entry(
+        roster_key_for(entry.get("type", ""), entry.get("subject", "")),
+        entry.get("grade"))
     members = []
     for role, roster_role in zip(PAIR_ROLES, PAIR_TUTOR_ROLES):
-        tid = roster_entry.get(roster_role, "")
+        tid = duo_entry.get(roster_role, "")
         ptext = load_tutor_card(tid) if tid else ""
         if not (tid and ptext):
             print(f"ERROR: paired seed row {label}: cannot resolve the "
@@ -895,12 +897,11 @@ def load_tutor_variants(slug, kind):
             for p in sorted(d.glob("*.md"))]
 
 
-def is_expert_tutor(type_str, subject, tutor_id):
+def is_expert_tutor(type_str, subject, tutor_id, grade=None):
     """True when this tutor is the EXPERT half of the subject's duo (the one
     who teaches before the break). Roster lookup by opaque id, never by name
     or style."""
-    entry = load_roster().get("subjects", {}).get(
-        roster_key_for(type_str, subject), {})
+    entry = roster_entry(roster_key_for(type_str, subject), grade)
     return bool(tutor_id) and entry.get("expert") == tutor_id
 
 
@@ -995,8 +996,45 @@ def card_roster_key(card):
     return roster_key_for(get_field(card, "type"), get_field(card, "subject"))
 
 
-def _duo_for_key(key):
-    entry = load_roster().get("subjects", {}).get(key, {})
+# Senior Phase (Grades 8-9) duos live in the roster's `senior_phase` block,
+# keyed by its own subject names; a session-tree folder whose name differs
+# from that key is aliased here. Grades outside senior_phase.grades never
+# read the block, so Grade 10-12 resolution is untouched.
+SENIOR_PHASE_KEY_ALIAS = {
+    "economic_and_management_sciences": "ems",
+}
+
+
+def _grade_int(grade):
+    """A grade as an int ("8", 8, "grade8", "Grade 8" -> 8), or None."""
+    digits = re.sub(r"\D", "", str(grade if grade is not None else ""))
+    return int(digits) if digits else None
+
+
+def roster_entry(key, grade=None):
+    """The roster's {expert, simplifier} entry for a subject key.
+
+    For a grade listed in roster senior_phase.grades the key (aliased via
+    SENIOR_PHASE_KEY_ALIAS) resolves through senior_phase.subjects, with a
+    per-grade `grade_duos` entry taking precedence. Anything else - no
+    grade, a grade outside the senior phase, or a subject the senior phase
+    does not list - falls back to the top-level "subjects" lookup exactly
+    as before."""
+    roster = load_roster()
+    senior = roster.get("senior_phase") or {}
+    g = _grade_int(grade)
+    if g is not None and g in {_grade_int(x) for x in senior.get("grades", [])}:
+        entry = senior.get("subjects", {}).get(
+            SENIOR_PHASE_KEY_ALIAS.get(key, key), {})
+        if "grade_duos" in entry:
+            entry = entry["grade_duos"].get(str(g), {})
+        if entry:
+            return entry
+    return roster.get("subjects", {}).get(key, {})
+
+
+def _duo_for_key(key, grade=None):
+    entry = roster_entry(key, grade)
     duo = []
     for role in ("expert", "simplifier"):
         text = load_tutor_card(entry.get(role, ""))
@@ -1006,13 +1044,15 @@ def _duo_for_key(key):
 
 
 def subject_duo(card):
-    """[(slug, persona card text)] for this card's subject, Expert first."""
-    return _duo_for_key(card_roster_key(card))
+    """[(slug, persona card text)] for this card's subject (and grade, for
+    the senior-phase duos), Expert first."""
+    return _duo_for_key(card_roster_key(card), get_field(card, "grade"))
 
 
-def subject_duo_for(type_str, subject):
-    """subject_duo from a raw type/subject (seed rows, before a card exists)."""
-    return _duo_for_key(roster_key_for(type_str, subject))
+def subject_duo_for(type_str, subject, grade=None):
+    """subject_duo from a raw type/subject/grade (seed rows and session-tree
+    packages, before a card exists)."""
+    return _duo_for_key(roster_key_for(type_str, subject), grade)
 
 
 # Tutor identity is carried as separate fields on the persona card and job
@@ -1066,7 +1106,8 @@ def resolve_seed_tutor(entry):
     raw = str(entry.get("tutor", "")).strip()
     if not raw:
         return "", ""
-    duo = subject_duo_for(entry.get("type", ""), entry.get("subject", ""))
+    duo = subject_duo_for(entry.get("type", ""), entry.get("subject", ""),
+                          entry.get("grade"))
     slug, ptext = match_persona(duo, raw) if duo else (None, "")
     if slug:
         return persona_id(ptext), str(entry.get("tutor_style", "")).strip() or persona_style_tag(ptext)
@@ -2630,7 +2671,8 @@ def run_checks(card, card_file):
     # break and has none.
     first_tutor = is_expert_tutor(get_field(card, "type"),
                                   get_field(card, "subject"),
-                                  get_field(card, "tutor"))
+                                  get_field(card, "tutor"),
+                                  get_field(card, "grade"))
     required = dict(CONTENT_FILES)
     if not first_tutor:
         required.pop("assistant_qa_transcript_path", None)
