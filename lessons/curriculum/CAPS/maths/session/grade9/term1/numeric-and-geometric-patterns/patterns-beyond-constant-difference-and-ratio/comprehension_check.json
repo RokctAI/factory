@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Show that 2, 5, 10, 17, 26 is neither a constant-difference nor a constant-ratio pattern, find its general term, and test it.",
+      "expected_answer": "First differences 3, 5, 7, 9 are not constant; ratios 2,5, 2, 1,7 are not constant. Second differences 2, 2, 2 are constant, so the rule involves n^2. Each term is one more than a square (2 is 1 plus 1; 5 is 4 plus 1; 10 is 9 plus 1), so T n = n^2 + 1. Test: T 4 = 17 and T 5 = 26, both correct."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why \"each term is the sum of the two before it\" is not a complete description of the Fibonacci sequence, and write the complete rule.",
+      "expected_answer": "The same recipe starting from different terms gives a different list (from 2 and 5 it gives 2, 5, 7, 12, 19). A recursive rule needs its starting terms: T n = T(n−1) + T(n−2) with T 1 = 1 and T 2 = 1, giving 1, 1, 2, 3, 5, 8, 13."
+    },
+    {
+      "id": "cc3",
+      "question": "Create a pattern from the rule T n = 3n^2 − 1: list five terms, show the fingerprint, and describe the rule in words.",
+      "expected_answer": "Terms 2, 11, 26, 47, 74. First differences 9, 15, 21, 27; second difference 6, which is twice the coefficient 3, as expected for a square pattern. In words: square the position, multiply by 3, then subtract 1."
+    }
+  ]
+}

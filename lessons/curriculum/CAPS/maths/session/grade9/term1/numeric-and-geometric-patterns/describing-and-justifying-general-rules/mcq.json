@@ -1,0 +1,235 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "From Words to Algebra and Back",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "\"Double the position and add 1\" in algebra is:",
+          "options": ["T n = 2(n + 1)", "T n = 2n + 1", "T n = n + 2", "T n = 2n − 1"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "\"Start at 5 and add 3 each time\" has position rule:",
+          "options": ["T n = 5n + 3", "T n = n + 3", "T n = 3n + 2", "T n = 3n + 5"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "T n = 3(n − 1) + 5 produces the terms:",
+          "options": ["5, 8, 11, 14", "3, 6, 9, 12", "8, 11, 14, 17", "2, 5, 8, 11"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Which description is complete?",
+          "options": ["It goes up by 3", "Square it", "Start at 5 and go up by 3 each time", "Add some each time"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Justifying a Rule From the Structure",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Square tables in a row seat 4, 6, 8, ... people. The rule is:",
+          "options": ["4n", "2n + 2", "n + 3", "4n − 2"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "In the rule 2n + 2 for the tables, the +2 is explained by:",
+          "options": ["Two tables", "The two long sides", "The two ends of the row", "Two chairs lost at each join"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Border dots on an n by n square are 4n − 4 because:",
+          "options": ["Four sides of n dots, minus the four corners counted twice", "Four sides minus four interior dots", "n^2 minus 4", "Each side has 4 dots"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "\"It works for n = 1, 2 and 3\" is:",
+          "options": ["A full justification", "A check, not a reason", "A counter-example", "An algebraic proof"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Equivalent Rules",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "4(n − 1) expands to:",
+          "options": ["4n − 1", "4n − 4", "4n + 4", "n − 4"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "2n + 2(n − 2) simplifies to:",
+          "options": ["4n − 2", "2n − 4", "4n − 4", "4n + 4"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Which rule is equivalent to 2n + 2 for the tables?",
+          "options": ["4n − 2(n − 1)", "4n − 2", "2(n − 1)", "4n − (n − 1)"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Substituting two values of n into two rules and getting equal results is:",
+          "options": ["Proof that they are equal", "Strong evidence; expansion is the proof", "Meaningless", "Only valid for n = 1"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "When a Rule Fails and the Error Museum",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Regions in a circle from joining n points: 1, 2, 4, 8, 16, then:",
+          "options": ["32", "31", "30", "64"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "To show a rule is WRONG you need:",
+          "options": ["Three examples that fit", "One counter-example", "A picture", "The memorandum"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "T n = n + 3 for 5, 8, 11, ... is wrong because it gives:",
+          "options": ["4, 5, 6", "5, 8, 11", "3, 6, 9", "8, 11, 14"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "\"Each table adds 2 people\" as the whole justification of 2n + 2 is incomplete because:",
+          "options": ["It explains the constant but not the coefficient", "It explains the coefficient but not the constant", "It is false", "Tables do not add people"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Saying It in Words First",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "\"Square the position and take away 1\" gives:",
+          "options": ["0, 3, 8, 15", "1, 4, 9, 16", "0, 1, 4, 9", "2, 5, 10, 17"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "T 5 means:",
+          "options": ["T multiplied by 5", "The fifth term", "Five terms", "The position of 5"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "P = 2t + 2 is the same kind of rule as T n = 2n + 2 because:",
+          "options": ["Only the letter names changed", "P is bigger", "t is a position", "It is a different pattern"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Why It Works, Not Just That It Works",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In 2n + 2 for a row of n tables, the 2n points at:",
+          "options": ["The two ends", "The two long sides", "Two tables", "Two chairs"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "In 3n + 1 for matchstick squares, the +1 points at:",
+          "options": ["The last square", "The stick that closes the first square", "One square", "The top row"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A justification sentence should begin:",
+          "options": ["It gives the right numbers because", "This works because", "I think", "The answer is"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A rule you can explain from the picture is useful in an exam because:",
+          "options": ["It is shorter", "You can rebuild it if you forget it", "It needs no testing", "It is always 2n + 2"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "One Pattern, Many Rules",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "For a 5 by 5 square of dots, 4n − 4 and n^2 − (n − 2)^2 give:",
+          "options": ["16 and 16", "16 and 9", "20 and 16", "16 and 25"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "If your rule looks different from the memorandum's, you should:",
+          "options": ["Cross it out", "Substitute two values and then expand to compare", "Assume you are wrong", "Change the pattern"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The circle pattern 1, 2, 4, 8, 16, 31 teaches that:",
+          "options": ["Doubling never happens", "Numbers that fit are not a reason", "Six is unlucky", "Circles have no rules"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "One term that fails a rule:",
+          "options": ["Can be ignored", "Proves the rule wrong", "Means the pattern is random", "Needs three more to count"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}
