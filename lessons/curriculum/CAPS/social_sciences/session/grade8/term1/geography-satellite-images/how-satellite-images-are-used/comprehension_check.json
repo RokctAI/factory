@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define remote sensing and explain how a satellite sensor produces an image. Give two differences between satellite images and aerial photographs.",
+      "expected_answer": "Remote sensing is collecting information about something without touching it. A satellite sensor records the electromagnetic energy reflected or emitted by the Earth's surface, square by square, and computers turn these measurements into an image made of pixels. Differences: satellites fly much higher than the aircraft that take aerial photographs, so their images cover much larger areas; satellites pass over the same places repeatedly on a schedule, so they can record change over days, months and years."
+    },
+    {
+      "id": "cc2",
+      "question": "Compare geostationary and polar-orbiting satellites under the headings height, coverage, detail and main use.",
+      "expected_answer": "Geostationary: about 36 000 km above the equator; stays over one point and sees almost a whole hemisphere, imaging Africa about every 15 minutes; low detail, with pixels of kilometres; used for weather forecasting and tracking storms. Polar-orbiting: about 600 to 800 km up, passing near both poles; covers the Earth strip by strip, revisiting a place every few days; high detail, with pixels from 30 m to under 1 m; used for mapping land use, crops, water, change and disasters."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain spatial resolution using the example of a soccer field on 30 m and 10 m images. What is a false-colour image, and why does healthy vegetation appear red in one?",
+      "expected_answer": "Spatial resolution is the size of ground covered by one pixel. A soccer field about 105 m by 68 m covers about three by two pixels on a 30 m image, so it is visible but without detail, and about ten by seven pixels on a 10 m image, so it is clearer. A false-colour image shows invisible bands of energy as visible colours. In the common combination, near-infrared is shown as red; healthy plants reflect near-infrared very strongly, so they appear bright red."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the three steps for calculating the distance between two settlements on a map, and use both routes to calculate the distance between two towns 6,4 cm apart on a 1:250 000 map.",
+      "expected_answer": "Step one: measure the map distance from centre to centre of the symbols in centimetres, to one decimal place. Step two: convert using the scale. Step three: give the answer with a unit and check it is sensible. Route one: 6,4 × 250 000 = 1 600 000 cm, and 1 600 000 ÷ 100 000 = 16 km. Route two: 1:250 000 means 1 cm represents 2,5 km, so 6,4 × 2,5 = 16 km."
+    },
+    {
+      "id": "cc2",
+      "question": "On a 1:10 000 000 map, Johannesburg and Cape Town measure 12,6 cm apart. Calculate the straight-line distance, and explain why the road distance of about 1 400 km is longer. How would you measure the road distance on the map?",
+      "expected_answer": "1 cm represents 100 km, so 12,6 × 100 = 1 260 km. The road is longer because it bends around mountains and valleys and passes through other towns instead of going directly. To measure it on the map, lay string or the edge of a sheet of paper along the road, following each bend, then straighten it and measure its length against the scale."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why distances measured on a flat world map can be inaccurate and how a globe gives a better answer. Then find the scale of a map on which two towns 30 km apart measure 12 cm.",
+      "expected_answer": "A flat map of the round Earth must stretch or squash parts of the surface, depending on the projection, so the printed scale is true only in some places and long distances, especially far from the equator, are distorted. A globe is a scale model with almost no distortion; stretching a string tightly between two cities shows the shortest great circle route, which can be measured against the globe's scale. Scale: 30 km is 3 000 000 cm, and 3 000 000 ÷ 12 = 250 000, so the scale is 1:250 000."
+    }
+  ]
+}
