@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w05_read_the_graph",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Reading data",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Data handling: Analyse data",
+    "subtopic": "Analyse data from representations provided"
+  },
+  "skill": "data.analyse.compare",
+  "prereq_skills": ["data.interpret.pictograph"],
+  "images": ["bar_graph_transport", "bicycle", "walking", "taxi", "numeral_27", "numeral_25", "numeral_30", "table_rain_months", "card_march", "card_january", "card_may", "graph_march_tall", "graph_january_tall", "card_true", "card_false", "tutor_adds_bars"],
+  "show": {
+    "line": "This bar graph shows how children get to school. Walking is the tallest bar. Let's read it closely!",
+    "image": "bar_graph_transport"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "How many children come by taxi? Read the bar.", "image": "bar_graph_transport", "count": "8", "options": ["6", "8", "10"], "answer": "8", "praise": "Eight by taxi!"},
+    {"type": "listen_tap", "prompt": "Which way do the fewest children use?", "image": "bar_graph_transport", "options": ["bicycle", "walking", "taxi"], "answer": "bicycle", "praise": "Yes! Bicycle is the shortest bar."},
+    {"type": "say_it", "prompt": "Twelve walk and eight come by taxi. How many more walk? Say the number.", "accept": ["four", "4", "for"], "image": "bar_graph_transport"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Twelve walk, eight ride a taxi, five come by car, two cycle. How many children in the class?", "options": ["numeral_27", "numeral_25", "numeral_30"], "answer": "numeral_27", "praise": "Twenty seven children altogether!"},
+    {"type": "listen_tap", "prompt": "Here is a table of rainy days. Which month had the most rain?", "image": "table_rain_months", "options": ["card_march", "card_january", "card_may"], "answer": "card_march", "praise": "Yes! March."},
+    {"type": "listen_tap", "prompt": "Which graph matches the table? March had the most rainy days.", "image": "table_rain_months", "options": ["graph_march_tall", "graph_january_tall"], "answer": "graph_march_tall", "praise": "Yes! The March bar is the tallest."},
+    {"type": "listen_tap", "prompt": "Is this true? More children walk than ride a taxi.", "image": "bar_graph_transport", "options": ["card_true", "card_false"], "answer": "card_true", "praise": "Yes! Twelve is more than eight."}
+  ],
+  "hints": ["Read the number at the top of each bar.", "To find how many more, take the small number away from the big one."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find how many more walk than cycle.",
+    "tutor_try": "Twelve walk and two cycle. Twelve plus two. Fourteen more!",
+    "image": "tutor_adds_bars",
+    "answer": "ten",
+    "win_line": "You caught me! How many more means take away. Twelve take away two is ten.",
+    "gentle_line": "Let's take away together. Twelve take away two. Ten more children walk!"
+  },
+  "parent_line": "Can read a bar graph and a table and compare the numbers."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w06_and_but",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [6, 7],
+  "theme": "Joining sentences",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Joins sentences using conjunctions ('and', 'but'); uses varied vocabulary"
+  },
+  "skill": "grammar.conjunctions.and_but",
+  "prereq_skills": ["grammar.sentence_types"],
+  "images": ["hands_joining_sentences", "word_but", "word_and", "word_so", "word_or", "sunny_but_cold", "sentence_hungry_but_no_food", "sentence_hungry_and_no_food", "pair_runs_jumps", "pair_bread_milk", "pair_sings_dances", "pair_tired_finished", "pair_apples_not_pears", "pair_sunny_cold", "tutor_and_for_but"],
+  "show": {
+    "line": "Two short sentences can join hands. I like tea. I like coffee. I like tea and coffee! And joins them.",
+    "image": "hands_joining_sentences"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "I like apples. I do not like pears. Which word joins them best?", "options": ["word_but", "word_and", "word_so"], "answer": "word_but", "praise": "Yes! I like apples but I do not like pears."},
+    {"type": "listen_tap", "prompt": "Thabo runs. Thabo jumps. Which word joins them?", "options": ["word_and", "word_but", "word_or"], "answer": "word_and", "praise": "Yes! Thabo runs and jumps."},
+    {"type": "say_it", "prompt": "The sun is out ... it is cold. And or but? Say the word.", "accept": ["but", "bat", "bud"], "image": "sunny_but_cold"},
+    {"type": "listen_tap", "prompt": "Which sentence is joined correctly?", "options": ["sentence_hungry_but_no_food", "sentence_hungry_and_no_food"], "answer": "sentence_hungry_but_no_food", "praise": "Yes! But shows a surprise."},
+    {"type": "listen_tap", "prompt": "I was tired, ... I finished my homework. Which word fits?", "options": ["word_but", "word_and", "word_or"], "answer": "word_but", "praise": "Yes! Tired, but I finished anyway."},
+    {"type": "match_sort", "prompt": "Join with and, or join with but? Sort the sentence pairs.", "groups": ["join_with_and", "join_with_but"], "items": [{"image": "pair_runs_jumps", "group": "join_with_and"}, {"image": "pair_bread_milk", "group": "join_with_and"}, {"image": "pair_sings_dances", "group": "join_with_and"}, {"image": "pair_tired_finished", "group": "join_with_but"}, {"image": "pair_apples_not_pears", "group": "join_with_but"}, {"image": "pair_sunny_cold", "group": "join_with_but"}]},
+    {"type": "read_to_me", "prompt": "Read this long sentence out loud.", "text": "I wanted to swim but the pool was closed.", "accept": ["i wanted to swim but the pool was closed"]}
+  ],
+  "hints": ["And adds more of the same. But shows something different.", "Say both sentences. Which joining word sounds right?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I like dogs. I am scared of cats.",
+    "tutor_try": "I like dogs and I am scared of cats!",
+    "image": "tutor_and_for_but",
+    "answer": "but",
+    "win_line": "You caught me! Those two ideas are different. I like dogs but I am scared of cats.",
+    "gentle_line": "Let's join them together. I like dogs, but I am scared of cats!"
+  },
+  "parent_line": "Can join two sentences with and or but."
+}

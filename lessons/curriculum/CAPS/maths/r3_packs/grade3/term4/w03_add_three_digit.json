@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w03_add_three_digit",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "Story sums",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Solve problems in context up to 999",
+    "subtopic": "Addition and subtraction with 3-digit numbers (weeks 3-4)"
+  },
+  "skill": "add_subtract.3digit.problems",
+  "prereq_skills": ["add_subtract.to_500", "place_value.htu.to_700"],
+  "images": ["farm_sheep_goats", "numeral_570", "numeral_270", "numeral_470", "numeral_450", "numeral_550", "numeral_1150", "sum_250_plus_250", "numeral_339", "numeral_239", "numeral_349", "sum_670_minus_120", "sum_670_plus_120", "sum_120_minus_670", "numeral_220", "numeral_210", "numeral_800", "numeral_700", "numeral_790", "tutor_subtracts_altogether"],
+  "show": {
+    "line": "A story sum! The farm has 325 sheep and 240 goats. Add them. 565 animals altogether!",
+    "image": "farm_sheep_goats"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The school library has 420 books. The shop gives 150 more. How many books now?", "options": ["numeral_570", "numeral_270", "numeral_470"], "answer": "numeral_570", "praise": "570 books! 420 and 150."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A bus can carry 800 people in a day. By lunch it carried 350. How many more can it carry?", "options": ["numeral_450", "numeral_550", "numeral_1150"], "answer": "numeral_450", "praise": "450 more! 800 take away 350."},
+    {"type": "say_it", "prompt": "250 plus 250. Say the answer.", "accept": ["five hundred", "500", "five hundreds"], "image": "sum_250_plus_250"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Gogo knits 136 red squares and 203 blue squares. How many squares altogether?", "options": ["numeral_339", "numeral_239", "numeral_349"], "answer": "numeral_339", "praise": "339 squares!"},
+    {"type": "listen_tap", "prompt": "Which sum matches? There were 670 chairs. 120 were taken away.", "options": ["sum_670_minus_120", "sum_670_plus_120", "sum_120_minus_670"], "answer": "sum_670_minus_120", "praise": "Yes! Taken away means subtract. 550 chairs."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thabo saves 345 rand. He spends 125 rand on a ball. How much is left?", "options": ["numeral_220", "numeral_470", "numeral_210"], "answer": "numeral_220", "praise": "220 rand left!"},
+    {"type": "listen_tap", "prompt": "498 plus 302. Tap the answer.", "options": ["numeral_800", "numeral_700", "numeral_790"], "answer": "numeral_800", "praise": "Yes! 498 and 2 is 500, and 300 more is 800."}
+  ],
+  "hints": ["Altogether and more means add. Left and taken away means subtract.", "Break the numbers into hundreds, tens and ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! 460 children and 230 children.",
+    "tutor_try": "460 take away 230. 230 children altogether!",
+    "image": "tutor_subtracts_altogether",
+    "answer": "690",
+    "win_line": "You caught me! Altogether means add. 460 and 230 is 690.",
+    "gentle_line": "Let's add together. 400 and 200 is 600. 60 and 30 is 90. 690!"
+  },
+  "parent_line": "Can solve story sums with three digit numbers."
+}

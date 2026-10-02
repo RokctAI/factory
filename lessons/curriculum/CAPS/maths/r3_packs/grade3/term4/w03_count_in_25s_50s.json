@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w03_count_in_25s_50s",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "Counting in big steps",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Counting (integrated with number patterns and mental maths)",
+    "subtopic": "Count forwards and backwards in 10s, 5s, 2s, 3s and 4s within the same ranges, and in 20s, 25s, 50s and 100s to at least 1000"
+  },
+  "skill": "count.skip.20_25_50_100.to_1000",
+  "prereq_skills": ["count.ones.to_500"],
+  "images": ["number_line_fifties", "number_line_twenties", "notes_50_times_6", "tutor_jumps_ten"],
+  "show": {
+    "line": "Big jumps! Count in fifties. Fifty, one hundred, one hundred and fifty, two hundred. Count in hundreds to one thousand!",
+    "image": "number_line_fifties"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Count in fifties. 100, 150, 200. What comes next?", "sequence": ["100", "150", "200"], "options": ["250", "300", "210"], "answer": "250", "praise": "Yes! 250."},
+    {"type": "what_next", "prompt": "Count in hundreds. 600, 700, 800. What comes next?", "sequence": ["600", "700", "800"], "options": ["900", "1000", "810"], "answer": "900", "praise": "Yes! 900."},
+    {"type": "what_next", "prompt": "Count in twenty fives. 25, 50, 75. What comes next?", "sequence": ["25", "50", "75"], "options": ["100", "80", "125"], "answer": "100", "praise": "Yes! One hundred. Four twenty fives."},
+    {"type": "say_it", "prompt": "Count in twenties. Twenty, forty, sixty, then what? Say the number.", "accept": ["eighty", "80", "aity"], "image": "number_line_twenties"},
+    {"type": "what_next", "prompt": "Count back in hundreds. 1000, 900, 800. What comes next?", "sequence": ["1000", "900", "800"], "options": ["700", "600", "790"], "answer": "700", "praise": "Yes! 700."},
+    {"type": "count_tap", "prompt": "Count the money in fifty rand notes. How many rand?", "image": "notes_50_times_6", "count": "300", "options": ["250", "300", "350"], "answer": "300", "praise": "300 rand! Six fifties."},
+    {"type": "what_next", "prompt": "Count in fifties. 850, 900, 950. What comes next?", "sequence": ["850", "900", "950"], "options": ["1000", "960", "1050"], "answer": "1000", "praise": "One thousand!"}
+  ],
+  "hints": ["Say the jumps out loud. Fifty, one hundred, one hundred and fifty.", "Two twenty fives make fifty. Two fifties make one hundred."],
+  "beat_the_tutor": {
+    "setup": "My turn! Count in twenty fives. 25, 50, 75.",
+    "tutor_try": "25, 50, 75, 85!",
+    "image": "tutor_jumps_ten",
+    "answer": "100",
+    "win_line": "You caught me! The jump is twenty five, not ten. 75 and 25 is 100.",
+    "gentle_line": "Let's count together. 25, 50, 75, 100!"
+  },
+  "parent_line": "Can count in twenties, twenty fives, fifties and hundreds to 1000."
+}

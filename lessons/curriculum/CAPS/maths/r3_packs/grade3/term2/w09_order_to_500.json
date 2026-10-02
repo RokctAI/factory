@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w09_order_to_500",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Ordering numbers",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 500",
+    "subtopic": "Describe and order numbers from smallest to greatest and greatest to smallest"
+  },
+  "skill": "number.order.to_500",
+  "prereq_skills": ["number.compare.to_99", "place_value.htu.to_500"],
+  "images": ["cards_230_302_320", "numeral_145", "numeral_154", "numeral_415", "numeral_499", "numeral_500", "numeral_409", "list_120_210_300", "list_210_120_300", "list_300_210_120", "numbers_268_286", "list_450_400_350", "list_350_400_450", "list_400_450_350", "numeral_230", "tutor_order_401_410"],
+  "show": {
+    "line": "Let's put 320, 230 and 302 in order. Smallest first. 230, 302, 320. Look at the hundreds, then the tens!",
+    "image": "cards_230_302_320"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the smallest number.", "options": ["numeral_145", "numeral_154", "numeral_415"], "answer": "numeral_145", "praise": "Yes! 145 is the smallest."},
+    {"type": "listen_tap", "prompt": "Tap the greatest number.", "options": ["numeral_499", "numeral_500", "numeral_409"], "answer": "numeral_500", "praise": "Yes! Five hundred is the greatest."},
+    {"type": "listen_tap", "prompt": "Which list is in order from smallest to greatest?", "options": ["list_120_210_300", "list_210_120_300", "list_300_210_120"], "answer": "list_120_210_300", "praise": "Yes! 120, 210, 300."},
+    {"type": "say_it", "prompt": "Which is greater, 268 or 286? Say the number.", "accept": ["two hundred and eighty six", "286", "two eighty six"], "image": "numbers_268_286"},
+    {"type": "listen_tap", "prompt": "Which list goes from greatest to smallest?", "options": ["list_450_400_350", "list_350_400_450", "list_400_450_350"], "answer": "list_450_400_350", "praise": "Yes! 450, 400, 350. Going down."},
+    {"type": "what_next", "prompt": "Smallest to greatest. 275, 300, 325. Which number comes next?", "sequence": ["275", "300", "325"], "options": ["350", "340", "250"], "answer": "350", "praise": "Yes! 350."},
+    {"type": "match_sort", "prompt": "Smaller than 250 or greater than 250? Sort the numbers.", "groups": ["smaller_than_250", "greater_than_250"], "items": [{"image": "numeral_145", "group": "smaller_than_250"}, {"image": "numeral_154", "group": "smaller_than_250"}, {"image": "numeral_230", "group": "smaller_than_250"}, {"image": "numeral_415", "group": "greater_than_250"}, {"image": "numeral_499", "group": "greater_than_250"}]}
+  ],
+  "hints": ["Compare the hundreds first. Then the tens. Then the ones.", "Smallest to greatest goes up. Greatest to smallest goes down."],
+  "beat_the_tutor": {
+    "setup": "My turn! Smallest to greatest. 410, 140, 401.",
+    "tutor_try": "140, 410, 401!",
+    "image": "tutor_order_401_410",
+    "answer": "no",
+    "win_line": "You caught me! 401 is smaller than 410. It goes 140, 401, 410.",
+    "gentle_line": "Let's compare 401 and 410 together. Zero tens is less than one ten. 401 comes first!"
+  },
+  "parent_line": "Can order numbers to 500 from smallest to greatest and back."
+}

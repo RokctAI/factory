@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w08_one_word_two_meanings",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [8, 9],
+  "theme": "Word meanings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Uses words pronounced and spelt the same with different meanings (fly: the verb and the insect)"
+  },
+  "skill": "vocabulary.multiple_meanings",
+  "prereq_skills": ["spelling.homophones"],
+  "images": ["fly_insect_bird_flying", "fly_insect", "bird_flying", "bat_animal", "cricket_bat", "kite_flying", "ring_jewel", "phone_ringing", "seal_sticker", "seal_animal", "tutor_wrong_bat"],
+  "show": {
+    "line": "A fly is a little insect. To fly is what birds do. Same word, two meanings. The sentence tells which!",
+    "image": "fly_insect_bird_flying"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "A fly landed on my bread. Which picture shows this fly?", "options": ["fly_insect", "bird_flying"], "answer": "fly_insect", "praise": "Yes! The insect."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The bat flew out of the cave at night. Which bat?", "options": ["bat_animal", "cricket_bat"], "answer": "bat_animal", "praise": "Yes! The animal that flies."},
+    {"type": "listen_tap", "prompt": "Thabo hit the ball with his bat. Which bat?", "options": ["cricket_bat", "bat_animal"], "answer": "cricket_bat", "praise": "Yes! The cricket bat."},
+    {"type": "say_it", "prompt": "I can see the ... in the sky, and I can ... a kite. Same word. Say it.", "accept": ["fly", "flai"], "image": "kite_flying"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Gogo put the ring on her finger. Which picture shows this ring?", "options": ["ring_jewel", "phone_ringing"], "answer": "ring_jewel", "praise": "Yes! The ring she wears."},
+    {"type": "match_sort", "prompt": "Which meaning? Sort the pictures. A thing, or an animal?", "groups": ["thing", "animal"], "items": [{"image": "cricket_bat", "group": "thing"}, {"image": "ring_jewel", "group": "thing"}, {"image": "seal_sticker", "group": "thing"}, {"image": "bat_animal", "group": "animal"}, {"image": "fly_insect", "group": "animal"}, {"image": "seal_animal", "group": "animal"}]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Papa will seal the envelope. A seal swims in the sea. Which picture shows the sea animal?", "options": ["seal_animal", "seal_sticker"], "answer": "seal_animal", "praise": "Yes! The seal that swims."}
+  ],
+  "hints": ["Read the whole sentence. The other words tell you which meaning.", "Picture it in your head. Does an insect fit, or a flying bird?"],
+  "beat_the_tutor": {
+    "setup": "My turn! The bat hit the ball. I will pick the picture.",
+    "tutor_try": "A furry bat with wings hit the ball!",
+    "image": "tutor_wrong_bat",
+    "answer": "no",
+    "win_line": "You caught me! A bat that hits a ball is a cricket bat. The sentence tells us.",
+    "gentle_line": "Let's read it together. Hit the ball. That needs a cricket bat!"
+  },
+  "parent_line": "Can work out which meaning a word has from the sentence."
+}

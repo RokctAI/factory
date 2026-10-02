@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w02_build_words",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [2],
+  "theme": "Building words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Builds words using phonic sounds"
+  },
+  "skill": "phonics.blend.digraph_words",
+  "prereq_skills": [],
+  "images": ["shop", "ship", "chip", "chin", "thin", "fish", "dish", "fan", "thing", "ring", "bees", "bus", "beak", "tutor_says_ship"],
+  "show": {
+    "line": "Let's build words from sounds. sh, o, p. Push them together. Shop!",
+    "image": "shop"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. sh, i, p. Tap the word.", "sounds": ["sh", "i", "p"], "options": ["ship", "shop", "chip"], "answer": "ship", "praise": "Yes! sh, i, p. Ship!"},
+    {"type": "blend", "prompt": "Listen. ch, i, n. Tap the word.", "sounds": ["ch", "i", "n"], "options": ["chin", "chip", "thin"], "answer": "chin", "praise": "Yes! Chin."},
+    {"type": "blend", "prompt": "Listen. f, i, sh. Tap the word.", "sounds": ["f", "i", "sh"], "options": ["fish", "dish", "fan"], "answer": "fish", "praise": "Yes! f, i, sh. Fish!"},
+    {"type": "say_it", "prompt": "Push the sounds together. m, oo, n. Say the word.", "accept": ["moon", "the moon", "moo"]},
+    {"type": "blend", "prompt": "Listen. th, i, ng. Tap the word.", "sounds": ["th", "i", "ng"], "options": ["thing", "thin", "ring"], "answer": "thing", "praise": "Yes! Thing."},
+    {"type": "blend", "prompt": "Listen. b, ee, s. Tap the word.", "sounds": ["b", "ee", "s"], "options": ["bees", "bus", "beak"], "answer": "bees", "praise": "Yes! Bees."},
+    {"type": "read_to_me", "prompt": "Read this word out loud.", "text": "fish", "accept": ["fish", "a fish"]}
+  ],
+  "hints": ["Say each sound. Then say them fast together.", "Two letters can make one sound, like sh and ch."],
+  "beat_the_tutor": {
+    "setup": "My turn! sh, o, p.",
+    "tutor_try": "sh, o, p. Ship!",
+    "image": "tutor_says_ship",
+    "answer": "shop",
+    "win_line": "You caught me! sh, o, p is shop. Ship has an i.",
+    "gentle_line": "Let's push the sounds together. sh, o, p. Shop!"
+  },
+  "parent_line": "Can blend sounds, including sh, ch and th, into words."
+}

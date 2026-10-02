@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w01_count_in_tens_fives",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Counting in steps",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Counting (integrated with number patterns and mental maths)",
+    "subtopic": "Count forwards and backwards in 10s, 5s, 2s, 3s and 4s from any multiple between 0-80 (weeks 1-2), 0-180 (weeks 3-4) and 0-200 (weeks 5-10), and in 100s to at least 500"
+  },
+  "skill": "count.skip.2_5_10.to_80",
+  "prereq_skills": [],
+  "images": ["number_line_tens", "socks_seven_pairs", "tutor_counts_fives_wrong"],
+  "show": {
+    "line": "Let's count in tens! Ten, twenty, thirty, forty, fifty. Each jump adds ten.",
+    "image": "number_line_tens"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Ten, twenty, thirty. What comes next?", "sequence": ["10", "20", "30"], "options": ["40", "31", "50"], "answer": "40", "praise": "Forty! Ten, twenty, thirty, forty."},
+    {"type": "what_next", "prompt": "Count in fives. Five, ten, fifteen. What comes next?", "sequence": ["5", "10", "15"], "options": ["25", "20", "16"], "answer": "20", "praise": "Twenty! Five, ten, fifteen, twenty."},
+    {"type": "what_next", "prompt": "Count in twos. Twelve, fourteen, sixteen. What comes next?", "sequence": ["12", "14", "16"], "options": ["17", "18", "20"], "answer": "18", "praise": "Eighteen! Twelve, fourteen, sixteen, eighteen."},
+    {"type": "say_it", "prompt": "Count back in tens from fifty. Fifty, forty, then what? Say the number.", "accept": ["thirty", "30", "thirtee"]},
+    {"type": "what_next", "prompt": "Count back in fives. Forty, thirty five, thirty. What comes next?", "sequence": ["40", "35", "30"], "options": ["25", "20", "35"], "answer": "25", "praise": "Twenty five! Forty, thirty five, thirty, twenty five."},
+    {"type": "count_tap", "prompt": "Count the socks in twos. How many socks?", "image": "socks_seven_pairs", "count": "14", "options": ["12", "14", "16"], "answer": "14", "praise": "Fourteen! Two, four, six, eight, ten, twelve, fourteen."},
+    {"type": "what_next", "prompt": "Count in hundreds. One hundred, two hundred, three hundred. What comes next?", "sequence": ["100", "200", "300"], "options": ["400", "301", "500"], "answer": "400", "praise": "Four hundred!"}
+  ],
+  "hints": ["Each jump is the same size. Add the same number again.", "Say the counting words out loud. Ten, twenty, thirty."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count in fives. Five, ten, fifteen.",
+    "tutor_try": "Five, ten, fifteen, sixteen!",
+    "image": "tutor_counts_fives_wrong",
+    "answer": "twenty",
+    "win_line": "You caught me! After fifteen comes twenty, not sixteen.",
+    "gentle_line": "Let's count in fives together. Five, ten, fifteen, twenty!"
+  },
+  "parent_line": "Can count forwards and backwards in twos, fives and tens to 80."
+}

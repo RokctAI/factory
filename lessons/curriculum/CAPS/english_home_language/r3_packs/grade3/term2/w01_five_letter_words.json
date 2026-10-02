@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w01_five_letter_words",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [1],
+  "theme": "Building words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Builds 3-, 4- and 5-letter words with Term 1 consonant and vowel digraphs"
+  },
+  "skill": "phonics.blend.five_letter",
+  "prereq_skills": ["phonics.digraph.sh_ch_th_wh"],
+  "images": ["snail", "sheep", "ship", "sheet", "train", "tray", "drain", "chair", "cheer", "hair", "broom", "three", "tree", "thread", "coach", "couch", "coat", "tutor_says_tray"],
+  "show": {
+    "line": "Longer words, same trick. s, n, ai, l. Snail! Say each sound, then push them together.",
+    "image": "snail"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. sh, ee, p. Tap the word.", "sounds": ["sh", "ee", "p"], "options": ["sheep", "ship", "sheet"], "answer": "sheep", "praise": "Yes! Sheep."},
+    {"type": "blend", "prompt": "Listen. t, r, ai, n. Tap the word.", "sounds": ["t", "r", "ai", "n"], "options": ["train", "tray", "drain"], "answer": "train", "praise": "Yes! Train."},
+    {"type": "blend", "prompt": "Listen. ch, ai, r. Tap the word.", "sounds": ["ch", "ai", "r"], "options": ["chair", "cheer", "hair"], "answer": "chair", "praise": "Yes! Chair."},
+    {"type": "say_it", "prompt": "Push the sounds together. b, r, oo, m. Say the word.", "accept": ["broom", "a broom", "brum"], "image": "broom"},
+    {"type": "blend", "prompt": "Listen. th, r, ee. Tap the word.", "sounds": ["th", "r", "ee"], "options": ["three", "tree", "thread"], "answer": "three", "praise": "Yes! Three."},
+    {"type": "blend", "prompt": "Listen. c, oa, ch. Tap the word.", "sounds": ["c", "oa", "ch"], "options": ["coach", "couch", "coat"], "answer": "coach", "praise": "Yes! Coach."},
+    {"type": "read_to_me", "prompt": "Read this word out loud.", "text": "snail", "accept": ["snail", "a snail"]}
+  ],
+  "hints": ["Find the two letters that make one sound first.", "Say the sounds slowly, then faster, then say the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! t, r, ai, n.",
+    "tutor_try": "t, r, ai, n. Tray!",
+    "image": "tutor_says_tray",
+    "answer": "train",
+    "win_line": "You caught me! There is an n at the end. Train.",
+    "gentle_line": "Let's push them together. t, r, ai, n. Train!"
+  },
+  "parent_line": "Can blend four and five letter words with digraphs."
+}

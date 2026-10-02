@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w04_statement_question_command",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [4, 5],
+  "theme": "Sentence types",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Uses different sentence types (statements, questions, commands) and full punctuation"
+  },
+  "skill": "grammar.sentence_types",
+  "prereq_skills": ["grammar.punctuation.end_marks"],
+  "images": ["three_sentence_types", "card_command", "card_question", "card_statement", "sentence_where_is_the_cat", "sentence_the_cat_is_asleep", "sentence_feed_the_cat", "dog_waiting", "sentence_i_have_two_brothers", "sentence_do_you_like_mangoes", "sentence_wash_your_hands", "full_stop", "question_mark", "comma", "tutor_calls_command_question"],
+  "show": {
+    "line": "Three kinds of sentence. A statement tells. A question asks. A command gives an order. Sit down!",
+    "image": "three_sentence_types"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Close the door. What kind of sentence is this?", "options": ["card_command", "card_question", "card_statement"], "answer": "card_command", "praise": "Yes! It tells someone what to do."},
+    {"type": "listen_tap", "prompt": "The sky is blue. What kind of sentence is this?", "options": ["card_statement", "card_command", "card_question"], "answer": "card_statement", "praise": "Yes! A statement tells us something."},
+    {"type": "listen_tap", "prompt": "Which sentence is a question?", "options": ["sentence_where_is_the_cat", "sentence_the_cat_is_asleep", "sentence_feed_the_cat"], "answer": "sentence_where_is_the_cat", "praise": "Yes! Where is the cat?"},
+    {"type": "say_it", "prompt": "Give the dog a command. Tell it to sit. Say it.", "accept": ["sit", "sit down", "sit dog"], "image": "dog_waiting"},
+    {"type": "match_sort", "prompt": "Statement, question or command? Sort the sentences.", "groups": ["statement", "question", "command"], "items": [{"image": "sentence_the_cat_is_asleep", "group": "statement"}, {"image": "sentence_i_have_two_brothers", "group": "statement"}, {"image": "sentence_where_is_the_cat", "group": "question"}, {"image": "sentence_do_you_like_mangoes", "group": "question"}, {"image": "sentence_feed_the_cat", "group": "command"}, {"image": "sentence_wash_your_hands", "group": "command"}]},
+    {"type": "read_to_me", "prompt": "Read this command out loud, like a teacher.", "text": "Open your books.", "accept": ["open your books"]},
+    {"type": "listen_tap", "prompt": "Which mark usually ends a command?", "options": ["full_stop", "question_mark", "comma"], "answer": "full_stop", "praise": "Yes! A full stop, or an exclamation mark if it is loud."}
+  ],
+  "hints": ["Telling? Statement. Asking? Question. Ordering? Command.", "A command often starts with a doing word. Sit. Open. Wash."],
+  "beat_the_tutor": {
+    "setup": "My turn! Wash your hands. I will say what kind it is.",
+    "tutor_try": "It is a question!",
+    "image": "tutor_calls_command_question",
+    "answer": "command",
+    "win_line": "You caught me! Wash your hands tells you what to do. It is a command.",
+    "gentle_line": "Let's think together. Is it asking? No. It is telling you to do something. A command!"
+  },
+  "parent_line": "Can tell statements, questions and commands apart."
+}

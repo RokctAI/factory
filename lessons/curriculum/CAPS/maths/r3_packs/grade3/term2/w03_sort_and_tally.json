@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade3.term2.w03_sort_and_tally",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Sorting data",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Data handling: Collect, sort and represent data",
+    "subtopic": "Collect and sort data"
+  },
+  "skill": "data.sort_tally",
+  "prereq_skills": ["data.bar_graph.read"],
+  "images": ["pets_sorted_tally", "dog", "cat", "hamster", "cow", "sheep", "chicken", "tally_red_cars_eight", "tally_five_bundle", "tally_four", "tally_six", "tally_netball_soccer", "triangle", "triangle_big", "square", "rectangle", "diamond", "tally_walk_twelve", "table_walk_12", "table_walk_10", "tutor_tally_two_bundles"],
+  "show": {
+    "line": "Let's sort the class pets. Dogs here, cats there. Then we count each pile with tally marks!",
+    "image": "pets_sorted_tally"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Sort the animals. Pets or farm animals?", "groups": ["pets", "farm_animals"], "items": [{"image": "dog", "group": "pets"}, {"image": "cat", "group": "pets"}, {"image": "hamster", "group": "pets"}, {"image": "cow", "group": "farm_animals"}, {"image": "sheep", "group": "farm_animals"}, {"image": "chicken", "group": "farm_animals"}]},
+    {"type": "count_tap", "prompt": "Count the tally marks for red cars.", "image": "tally_red_cars_eight", "count": "8", "options": ["7", "8", "9"], "answer": "8", "praise": "Eight! One bundle of five and three more."},
+    {"type": "listen_tap", "prompt": "Five children chose soccer. Which tally shows five?", "options": ["tally_five_bundle", "tally_four", "tally_six"], "answer": "tally_five_bundle", "praise": "Yes! Four lines and one across makes five."},
+    {"type": "say_it", "prompt": "Six tally marks for netball. Nine for soccer. Which sport got more? Say it.", "accept": ["soccer", "football", "sokker"], "image": "tally_netball_soccer"},
+    {"type": "match_sort", "prompt": "Sort the shapes by how many sides they have.", "groups": ["three_sides", "four_sides"], "items": [{"image": "triangle", "group": "three_sides"}, {"image": "triangle_big", "group": "three_sides"}, {"image": "square", "group": "four_sides"}, {"image": "rectangle", "group": "four_sides"}, {"image": "diamond", "group": "four_sides"}]},
+    {"type": "listen_tap", "prompt": "The tally shows twelve children walk to school. Which table matches?", "image": "tally_walk_twelve", "options": ["table_walk_12", "table_walk_10"], "answer": "table_walk_12", "praise": "Yes! Twelve."}
+  ],
+  "hints": ["Put things that are the same together.", "Tally marks go in bundles of five. Count five, ten, then the extras."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count these tally marks.",
+    "tutor_try": "One, two, three, four, five, six, seven. Seven!",
+    "image": "tutor_tally_two_bundles",
+    "answer": "ten",
+    "win_line": "You caught me! Two bundles of five is ten.",
+    "gentle_line": "Let's count the bundles together. Five, ten. Ten tally marks!"
+  },
+  "parent_line": "Can sort objects into groups and count them with tally marks."
+}

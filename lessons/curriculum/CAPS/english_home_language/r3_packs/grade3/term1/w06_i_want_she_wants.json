@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w06_i_want_she_wants",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [6, 7],
+  "theme": "Sentence building",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Writing",
+    "subtopic": "Uses subject-verb agreement correctly (I want / she wants)"
+  },
+  "skill": "grammar.subject_verb_agreement",
+  "prereq_skills": [],
+  "images": ["girl_wants_sweet", "word_wants", "word_want", "word_walk", "word_walks", "word_bark", "word_barks", "boy_football", "sentence_she_runs_fast", "sentence_she_run_fast", "word_like", "word_likes", "tutor_thabo_walk"],
+  "show": {
+    "line": "I want a sweet. She wants a sweet. Listen to the end of the verb. Wants!",
+    "image": "girl_wants_sweet"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Lebo ... to play. Which word fits?", "options": ["word_wants", "word_want"], "answer": "word_wants", "praise": "Yes! Lebo wants to play."},
+    {"type": "listen_tap", "prompt": "I ... to the shop every day. Which word fits?", "options": ["word_walk", "word_walks"], "answer": "word_walk", "praise": "Yes! I walk."},
+    {"type": "listen_tap", "prompt": "The dogs ... loudly. Which word fits?", "options": ["word_bark", "word_barks"], "answer": "word_bark", "praise": "Yes! Many dogs bark."},
+    {"type": "say_it", "prompt": "He ... football. Like or likes? Say the right word.", "accept": ["likes", "lyks", "liks"], "image": "boy_football"},
+    {"type": "listen_tap", "prompt": "Which sentence is right?", "options": ["sentence_she_runs_fast", "sentence_she_run_fast"], "answer": "sentence_she_runs_fast", "praise": "Yes! She runs fast."},
+    {"type": "read_to_me", "prompt": "Read this sentence out loud.", "text": "My cat sleeps all day.", "accept": ["my cat sleeps all day"]},
+    {"type": "match_sort", "prompt": "Which words go with I and you? Which go with she and he? Sort them.", "groups": ["i_and_you", "she_and_he"], "items": [{"image": "word_want", "group": "i_and_you"}, {"image": "word_walk", "group": "i_and_you"}, {"image": "word_like", "group": "i_and_you"}, {"image": "word_wants", "group": "she_and_he"}, {"image": "word_walks", "group": "she_and_he"}, {"image": "word_likes", "group": "she_and_he"}]}
+  ],
+  "hints": ["She, he, it, or one name: the verb gets a tail. Wants, likes.", "I, you, we, they: no tail. Want, like."],
+  "beat_the_tutor": {
+    "setup": "My turn! Thabo ... to school.",
+    "tutor_try": "Thabo walk to school!",
+    "image": "tutor_thabo_walk",
+    "answer": "walks",
+    "win_line": "You caught me! One person, Thabo. Thabo walks to school.",
+    "gentle_line": "Let's say it together. Thabo walks to school!"
+  },
+  "parent_line": "Can match the verb to the person, like I want and she wants."
+}

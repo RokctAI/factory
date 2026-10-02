@@ -1,0 +1,41 @@
+{
+  "id": "maths.grade3.term3.w09_times_tables_to_100",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Times tables",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Context-free calculations",
+    "subtopic": "Multiply numbers 1 to 10 by 2, 4, 5, 10, 3 and 5 to 100 using ×, □, = (weeks 3-6, 9-10)"
+  },
+  "skill": "multiply.to_100.mixed",
+  "prereq_skills": ["multiply_divide.facts.2_10", "multiply.by_3_4_10"],
+  "images": ["times_table_grid", "numeral_30", "numeral_25", "numeral_35", "numeral_90", "numeral_19", "numeral_900", "chairs_seven", "numeral_27", "numeral_24", "box_5_times_box_45", "numeral_9", "numeral_8", "numeral_40", "numeral_14", "numeral_44", "numeral_100", "numeral_20", "numeral_110", "tutor_six_jumps"],
+  "show": {
+    "line": "Let's mix the times tables! Five times four is twenty. Ten times nine is ninety. Three times six is eighteen.",
+    "image": "times_table_grid"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Six times five. Tap the answer.", "options": ["numeral_30", "numeral_25", "numeral_35"], "answer": "numeral_30", "praise": "Yes! Thirty."},
+    {"type": "listen_tap", "prompt": "Nine times ten. Tap the answer.", "options": ["numeral_90", "numeral_19", "numeral_900"], "answer": "numeral_90", "praise": "Yes! Ninety."},
+    {"type": "say_it", "prompt": "Four times seven. Count in fours. Say the answer.", "accept": ["twenty eight", "28", "twenty-eight"], "image": "chairs_seven"},
+    {"type": "listen_tap", "prompt": "Three times nine. Tap the answer.", "options": ["numeral_27", "numeral_24", "numeral_30"], "answer": "numeral_27", "praise": "Yes! Twenty seven."},
+    {"type": "listen_tap", "prompt": "Which number is missing? Five times a number is forty five.", "image": "box_5_times_box_45", "options": ["numeral_9", "numeral_8", "numeral_40"], "answer": "numeral_9", "praise": "Yes! Five nines are forty five."},
+    {"type": "what_next", "prompt": "Count in fours. Twenty eight, thirty two, thirty six. What comes next?", "sequence": ["28", "32", "36"], "options": ["40", "38", "44"], "answer": "40", "praise": "Forty!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Each table has four legs. There are ten tables in the class. How many legs?", "options": ["numeral_40", "numeral_14", "numeral_44"], "answer": "numeral_40", "praise": "Forty legs! Ten times four."},
+    {"type": "listen_tap", "prompt": "Ten times ten. Tap the answer.", "options": ["numeral_100", "numeral_20", "numeral_110"], "answer": "numeral_100", "praise": "Yes! One hundred."}
+  ],
+  "hints": ["Count in jumps. Fives, fours, threes or tens.", "Swap them round. Four times five is the same as five times four."],
+  "beat_the_tutor": {
+    "setup": "My turn! Seven times five.",
+    "tutor_try": "Seven times five is thirty!",
+    "image": "tutor_six_jumps",
+    "answer": "thirty five",
+    "win_line": "You caught me! Thirty is six fives. Seven fives are thirty five.",
+    "gentle_line": "Let's count seven fives together. Five, ten, fifteen, twenty, twenty five, thirty, thirty five!"
+  },
+  "parent_line": "Can multiply by two, three, four, five and ten up to 100."
+}

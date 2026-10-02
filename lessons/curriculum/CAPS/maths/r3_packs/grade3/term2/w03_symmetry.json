@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade3.term2.w03_symmetry",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Symmetry",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Space and shape: 2D shapes and symmetry",
+    "subtopic": "Symmetry"
+  },
+  "skill": "geometry.symmetry.line",
+  "prereq_skills": [],
+  "images": ["butterfly_fold_line", "square_line_middle", "square_line_off_centre", "heart_symmetrical", "heart_lopsided", "blob", "card_capital_a", "half_tree", "half_tree_match", "half_tree_wrong", "circle_shape", "square_four_lines", "square_one_line", "tutor_rectangle_diagonal"],
+  "show": {
+    "line": "Fold the butterfly down the middle. Both sides match. That fold line is a line of symmetry!",
+    "image": "butterfly_fold_line"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which shape is cut by its line of symmetry? Both halves must match.", "options": ["square_line_middle", "square_line_off_centre"], "answer": "square_line_middle", "praise": "Yes! Both halves match."},
+    {"type": "listen_tap", "prompt": "Which picture is symmetrical?", "options": ["heart_symmetrical", "heart_lopsided", "blob"], "answer": "heart_symmetrical", "praise": "Yes! The heart is the same on both sides."},
+    {"type": "say_it", "prompt": "Look at the big letter. Fold it down the middle. Do the sides match? Say yes or no.", "accept": ["yes", "yebo", "ya", "they match"], "image": "card_capital_a"},
+    {"type": "listen_tap", "prompt": "Finish the picture. Which half makes it symmetrical?", "image": "half_tree", "options": ["half_tree_match", "half_tree_wrong"], "answer": "half_tree_match", "praise": "Yes! Now both sides match."},
+    {"type": "match_sort", "prompt": "Symmetrical or not? Put each shape in its group.", "groups": ["symmetrical", "not_symmetrical"], "items": [{"image": "heart_symmetrical", "group": "symmetrical"}, {"image": "butterfly_fold_line", "group": "symmetrical"}, {"image": "circle_shape", "group": "symmetrical"}, {"image": "heart_lopsided", "group": "not_symmetrical"}, {"image": "blob", "group": "not_symmetrical"}]},
+    {"type": "listen_tap", "prompt": "How many lines of symmetry does a square have? Tap the picture.", "options": ["square_four_lines", "square_one_line"], "answer": "square_four_lines", "praise": "Yes! A square has four lines of symmetry."}
+  ],
+  "hints": ["Imagine folding it. Do the two halves sit exactly on top of each other?", "The line of symmetry cuts the shape into two matching halves."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will draw a line of symmetry on the rectangle.",
+    "tutor_try": "I drew it from one corner, across to the other corner!",
+    "image": "tutor_rectangle_diagonal",
+    "answer": "no",
+    "win_line": "You caught me! Fold on that line and the halves do not match. Go straight across the middle.",
+    "gentle_line": "Let's fold it together. Straight across the middle. Now the halves match!"
+  },
+  "parent_line": "Can spot symmetrical shapes and draw a line of symmetry."
+}

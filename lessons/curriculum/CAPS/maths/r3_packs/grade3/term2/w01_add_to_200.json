@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w01_add_to_200",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Numbers to 200",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Context-free calculations",
+    "subtopic": "Addition and subtraction to 200 (weeks 1-2) and 400 (weeks 5-6, 9-10) using +, -, = and □"
+  },
+  "skill": "add_subtract.to_200",
+  "prereq_skills": ["add_subtract.to_99"],
+  "images": ["sum_120_plus_35", "numeral_150", "numeral_105", "numeral_115", "numeral_160", "numeral_142", "numeral_120", "blocks_200_minus_100", "numeral_165", "numeral_110", "numeral_130", "numeral_190", "numeral_100", "box_sum_100_plus_box_180", "numeral_80", "numeral_280", "numeral_8", "tutor_adds_tens_as_ones"],
+  "show": {
+    "line": "Let's add 120 and 35. One hundred and twenty, plus thirty is one hundred and fifty, plus five. 155!",
+    "image": "sum_120_plus_35"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "One hundred plus fifty. Tap the answer.", "options": ["numeral_150", "numeral_105", "numeral_115"], "answer": "numeral_150", "praise": "Yes! One hundred and fifty."},
+    {"type": "listen_tap", "prompt": "One hundred and forty plus twenty. Tap the answer.", "options": ["numeral_160", "numeral_142", "numeral_120"], "answer": "numeral_160", "praise": "Yes! Forty and twenty is sixty. 160."},
+    {"type": "say_it", "prompt": "Two hundred take away one hundred. Say the answer.", "accept": ["one hundred", "100", "a hundred"], "image": "blocks_200_minus_100"},
+    {"type": "listen_tap", "prompt": "One hundred and sixty five take away five. Tap the answer.", "options": ["numeral_160", "numeral_165", "numeral_115"], "answer": "numeral_160", "praise": "Yes! Take away the five ones. 160."},
+    {"type": "listen_tap", "prompt": "Ninety plus thirty. Jump over one hundred. Tap the answer.", "options": ["numeral_120", "numeral_110", "numeral_130"], "answer": "numeral_120", "praise": "Yes! Ninety and ten is one hundred, and twenty more is 120."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Gogo has 150 beads. She uses 40 for a necklace. How many beads are left?", "options": ["numeral_110", "numeral_190", "numeral_100"], "answer": "numeral_110", "praise": "One hundred and ten! 150 take away 40."},
+    {"type": "listen_tap", "prompt": "Which number makes the sum true? 100 plus a number equals 180.", "image": "box_sum_100_plus_box_180", "options": ["numeral_80", "numeral_280", "numeral_8"], "answer": "numeral_80", "praise": "Yes! 100 and 80 make 180."}
+  ],
+  "hints": ["Keep the hundred. Add or take away the tens and ones.", "Use a number line. Jump in tens, then in ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! 130 plus 50.",
+    "tutor_try": "130 plus 50 is 135!",
+    "image": "tutor_adds_tens_as_ones",
+    "answer": "180",
+    "win_line": "You caught me! Fifty is five tens. 130 and 50 is 180.",
+    "gentle_line": "Let's jump in tens together. 140, 150, 160, 170, 180!"
+  },
+  "parent_line": "Can add and subtract numbers to 200."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w08_past_present_future",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [8, 9],
+  "theme": "Tenses",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Writing",
+    "subtopic": "Uses present, past and future tense correctly"
+  },
+  "skill": "grammar.tense.past_present_future",
+  "prereq_skills": ["grammar.subject_verb_agreement"],
+  "images": ["yesterday_today_tomorrow", "word_walked", "word_walk", "word_will_walk", "word_will_bake", "word_baked", "word_bake", "word_drinks", "word_drank", "word_will_drink", "boy_jumped", "word_jumps", "lost_tooth", "new_tooth_growing", "big_smile", "word_tomorrow", "word_yesterday", "word_now", "tutor_tense_wrong"],
+  "show": {
+    "line": "Yesterday I played. Today I play. Tomorrow I will play. The verb changes with the time!",
+    "image": "yesterday_today_tomorrow"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Yesterday I ... to school. Which word fits?", "options": ["word_walked", "word_walk", "word_will_walk"], "answer": "word_walked", "praise": "Yes! Yesterday is the past. Walked."},
+    {"type": "listen_tap", "prompt": "Tomorrow we ... a cake. Which words fit?", "options": ["word_will_bake", "word_baked", "word_bake"], "answer": "word_will_bake", "praise": "Yes! Tomorrow is the future. Will bake."},
+    {"type": "listen_tap", "prompt": "Every day Gogo ... tea. Which word fits?", "options": ["word_drinks", "word_drank", "word_will_drink"], "answer": "word_drinks", "praise": "Yes! Every day is now. Drinks."},
+    {"type": "say_it", "prompt": "Jump. Say it in the past, like yesterday.", "accept": ["jumped", "jumpt"], "image": "boy_jumped"},
+    {"type": "match_sort", "prompt": "Past, now or future? Put each word in its group.", "groups": ["past", "now", "future"], "items": [{"image": "word_walked", "group": "past"}, {"image": "word_baked", "group": "past"}, {"image": "word_drinks", "group": "now"}, {"image": "word_jumps", "group": "now"}, {"image": "word_will_bake", "group": "future"}, {"image": "word_will_walk", "group": "future"}]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Last week Zinzi lost her tooth. Today a new one is growing. Which picture shows what happened last week?", "options": ["lost_tooth", "new_tooth_growing", "big_smile"], "answer": "lost_tooth", "praise": "Yes! Last week she lost her tooth."},
+    {"type": "listen_tap", "prompt": "Which word tells us about the future?", "options": ["word_tomorrow", "word_yesterday", "word_now"], "answer": "word_tomorrow", "praise": "Yes! Tomorrow."}
+  ],
+  "hints": ["Yesterday is the past. Many past verbs end with ed.", "Tomorrow is the future. Use will before the verb."],
+  "beat_the_tutor": {
+    "setup": "My turn! Yesterday I ... my room.",
+    "tutor_try": "Yesterday I will clean my room!",
+    "image": "tutor_tense_wrong",
+    "answer": "cleaned",
+    "win_line": "You caught me! Yesterday is the past. Yesterday I cleaned my room.",
+    "gentle_line": "Let's say it together. Yesterday I cleaned my room. Tomorrow I will clean it again!"
+  },
+  "parent_line": "Can use past, present and future tense, like played, play and will play."
+}

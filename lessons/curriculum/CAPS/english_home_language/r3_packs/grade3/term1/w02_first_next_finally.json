@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w02_first_next_finally",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [2],
+  "theme": "Order of events",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Writing",
+    "subtopic": "Sequences text using 'first', 'next' and 'finally'"
+  },
+  "skill": "comprehension.sequence.first_next_finally",
+  "prereq_skills": [],
+  "images": ["morning_three_steps", "mix_flour", "pour_milk", "bake_cake", "seed_water_flower", "water_plant", "pick_flower", "plant_seed", "socks_and_shoes", "tie_shoes", "run_to_school", "put_on_socks", "word_finally", "word_first", "word_next", "tutor_cake_backwards"],
+  "show": {
+    "line": "First, next, finally. These words put a story in order. First I wake up. Next I wash. Finally I eat!",
+    "image": "morning_three_steps"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "First Neo mixes the flour. Next she adds milk. Finally she bakes the cake. What does Neo do first?", "options": ["mix_flour", "pour_milk", "bake_cake"], "answer": "mix_flour", "praise": "Yes! First she mixes the flour."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "First Neo mixes the flour. Next she adds milk. Finally she bakes the cake. What does she do finally?", "options": ["bake_cake", "mix_flour", "pour_milk"], "answer": "bake_cake", "praise": "Yes! Finally she bakes the cake."},
+    {"type": "listen_tap", "prompt": "Plant the seed, water it, pick the flower. Which comes next after planting?", "image": "seed_water_flower", "options": ["water_plant", "pick_flower", "plant_seed"], "answer": "water_plant", "praise": "Yes! Next you water it."},
+    {"type": "say_it", "prompt": "First I put on my socks. Which word comes after first? Say the word.", "accept": ["next", "then", "necks"], "image": "socks_and_shoes"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "First Tumi puts on socks. Next she ties her shoes. Finally she runs to school. What does Tumi do next?", "options": ["tie_shoes", "run_to_school", "put_on_socks"], "answer": "tie_shoes", "praise": "Yes! Next she ties her shoes."},
+    {"type": "match_sort", "prompt": "First, next or finally? Put each picture in its place.", "groups": ["first", "next", "finally"], "items": [{"image": "plant_seed", "group": "first"}, {"image": "water_plant", "group": "next"}, {"image": "pick_flower", "group": "finally"}]},
+    {"type": "listen_tap", "prompt": "Which word do we use for the last thing that happens?", "options": ["word_finally", "word_first", "word_next"], "answer": "word_finally", "praise": "Yes! Finally means last."}
+  ],
+  "hints": ["First is the start. Finally is the end.", "Think about what must happen before the next thing."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will tell the cake story in order.",
+    "tutor_try": "First she bakes the cake. Finally she mixes the flour!",
+    "image": "tutor_cake_backwards",
+    "answer": "no",
+    "win_line": "You caught me! You mix the flour first. The baking comes finally.",
+    "gentle_line": "Let's say it together. First mix, next pour, finally bake!"
+  },
+  "parent_line": "Can put events in order using first, next and finally."
+}

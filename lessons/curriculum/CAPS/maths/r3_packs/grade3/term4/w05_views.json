@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w05_views",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Position and views",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Space and shape: Language of position and views",
+    "subtopic": "Language of position and views"
+  },
+  "skill": "space.views.top_side_front",
+  "prereq_skills": ["space.map.directions"],
+  "images": ["cup_top_side", "box_top_view", "box_side_view", "box_front_view", "car_side_view", "car_front_view", "car_top_view", "ball_views", "view_front_house", "house", "car", "tree", "cup_top_view", "cup_side_view", "teddy_between", "teddy_left_of_both", "teddy_on_book", "girl_behind_chair", "girl_in_front_of_chair", "girl_on_chair", "tutor_cup_side"],
+  "show": {
+    "line": "Look at the cup from the top. A circle! From the side it looks different. Your view changes!",
+    "image": "cup_top_side"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture shows the box from the top?", "options": ["box_top_view", "box_side_view", "box_front_view"], "answer": "box_top_view", "praise": "Yes! From above you see the lid."},
+    {"type": "listen_tap", "prompt": "Which picture shows the car from the side?", "options": ["car_side_view", "car_front_view", "car_top_view"], "answer": "car_side_view", "praise": "Yes! The side view."},
+    {"type": "say_it", "prompt": "Look at the ball from the top, the side or the front. What shape do you always see? Say it.", "accept": ["circle", "a circle", "round", "sirkel"], "image": "ball_views"},
+    {"type": "listen_tap", "prompt": "This is the view from the front. Which object is it?", "image": "view_front_house", "options": ["house", "car", "tree"], "answer": "house", "praise": "Yes! A house from the front."},
+    {"type": "match_sort", "prompt": "Top view or side view? Sort the pictures.", "groups": ["top_view", "side_view"], "items": [{"image": "box_top_view", "group": "top_view"}, {"image": "car_top_view", "group": "top_view"}, {"image": "cup_top_view", "group": "top_view"}, {"image": "box_side_view", "group": "side_view"}, {"image": "car_side_view", "group": "side_view"}, {"image": "cup_side_view", "group": "side_view"}]},
+    {"type": "listen_tap", "prompt": "The teddy is between the book and the ball. Tap the right picture.", "options": ["teddy_between", "teddy_left_of_both", "teddy_on_book"], "answer": "teddy_between", "praise": "Yes! Between means in the middle."},
+    {"type": "listen_tap", "prompt": "Which picture shows the girl behind the chair?", "options": ["girl_behind_chair", "girl_in_front_of_chair", "girl_on_chair"], "answer": "girl_behind_chair", "praise": "Yes! Behind the chair."}
+  ],
+  "hints": ["Imagine you are a bird looking down. That is the top view.", "The side view shows how tall and long something is."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will look at the cup from the top.",
+    "tutor_try": "From the top I see a tall cup with a handle!",
+    "image": "tutor_cup_side",
+    "answer": "circle",
+    "win_line": "You caught me! From the top you see a circle. The tall shape is the side view.",
+    "gentle_line": "Let's look down together. From above, a cup is a circle!"
+  },
+  "parent_line": "Can describe top, side and front views and use position words."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w04_igh_eigh_augh",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "Spelling patterns",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises and uses spelling patterns -igh (high), -ough (tough), -eigh (neigh), -augh (caught)"
+  },
+  "skill": "phonics.patterns.igh_ough_eigh_augh",
+  "prereq_skills": ["phonics.sound_spellings.ie_igh_y_ew_ue"],
+  "images": ["high_eight_caught_tough", "word_light", "word_let", "word_lot", "word_weigh", "word_way", "word_we", "teacher_taught", "word_night", "word_nite", "word_nighte", "word_eight", "word_taught", "word_caught", "word_tough", "word_though", "word_through", "tutor_spells_ate"],
+  "show": {
+    "line": "Tricky letter teams! igh as in high. eigh as in eight. augh as in caught. ough as in tough!",
+    "image": "high_eight_caught_tough"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has igh, as in high?", "options": ["word_light", "word_let", "word_lot"], "answer": "word_light", "praise": "Yes! Light."},
+    {"type": "listen_tap", "prompt": "Which word has eigh, as in eight?", "options": ["word_weigh", "word_way", "word_we"], "answer": "word_weigh", "praise": "Yes! Weigh, like weighing on a scale."},
+    {"type": "say_it", "prompt": "This word has augh. It is what the teacher did when she showed you something new. Say it.", "accept": ["taught", "tort", "tot"], "image": "teacher_taught"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells night the right way.", "options": ["word_night", "word_nite", "word_nighte"], "answer": "word_night", "praise": "Yes! Night."},
+    {"type": "match_sort", "prompt": "igh, eigh or augh? Sort the words by their letter team.", "groups": ["team_igh", "team_eigh", "team_augh"], "items": [{"image": "word_light", "group": "team_igh"}, {"image": "word_night", "group": "team_igh"}, {"image": "word_weigh", "group": "team_eigh"}, {"image": "word_eight", "group": "team_eigh"}, {"image": "word_taught", "group": "team_augh"}, {"image": "word_caught", "group": "team_augh"}]},
+    {"type": "listen_tap", "prompt": "Which word has ough and rhymes with puff?", "options": ["word_tough", "word_though", "word_through"], "answer": "word_tough", "praise": "Yes! Tough, like puff."},
+    {"type": "read_to_me", "prompt": "Read this sentence out loud.", "text": "I caught eight fish last night.", "accept": ["i caught eight fish last night"]}
+  ],
+  "hints": ["These teams have a silent gh. Look at the letters before it.", "igh says the sound in high. eigh says the sound in eight."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will spell the number eight.",
+    "tutor_try": "'a', 't', 'e'. Ate!",
+    "image": "tutor_spells_ate",
+    "answer": "no",
+    "win_line": "You caught me! Ate is what you did to your lunch. The number eight has eigh.",
+    "gentle_line": "Let's spell it together. 'e', 'i', 'g', 'h', 't'. Eight!"
+  },
+  "parent_line": "Can read words with igh, eigh, augh and ough."
+}

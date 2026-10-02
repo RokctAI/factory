@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w02_write_a_letter",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [2, 3],
+  "theme": "Letters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Writes personal texts in different forms: diary entry, letter to a relative, description"
+  },
+  "skill": "writing.letter.parts",
+  "prereq_skills": [],
+  "images": ["letter_to_gogo", "card_dear_gogo", "card_love_from_zola", "card_the_end", "card_once_upon_a_time", "tooth", "five_rand", "mouse", "letter_layout", "spot_top_corner", "spot_bottom", "spot_middle", "card_dear_uncle_sam", "card_i_lost_my_tooth", "card_we_won_the_match", "card_your_friend_neo", "card_diary_monday", "tutor_letter_backwards"],
+  "show": {
+    "line": "A letter to Gogo! It starts with Dear Gogo. It ends with Love from Zola. The news goes in between!",
+    "image": "letter_to_gogo"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which words start a letter?", "options": ["card_dear_gogo", "card_love_from_zola", "card_the_end"], "answer": "card_dear_gogo", "praise": "Yes! Dear Gogo."},
+    {"type": "listen_tap", "prompt": "Which words end a letter?", "options": ["card_love_from_zola", "card_dear_gogo", "card_once_upon_a_time"], "answer": "card_love_from_zola", "praise": "Yes! Love from Zola."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Dear Gogo. I lost my tooth on Monday. The tooth mouse left five rand. Love, Zola. What did Zola lose?", "options": ["tooth", "five_rand", "mouse"], "answer": "tooth", "praise": "Yes! Zola lost a tooth."},
+    {"type": "say_it", "prompt": "Who is the letter to? Say the name.", "accept": ["gogo", "my gogo", "granny"], "image": "letter_to_gogo"},
+    {"type": "listen_tap", "prompt": "Where does the date go on a letter?", "image": "letter_layout", "options": ["spot_top_corner", "spot_bottom", "spot_middle"], "answer": "spot_top_corner", "praise": "Yes! The date goes at the top."},
+    {"type": "match_sort", "prompt": "Which part of the letter? Sort the cards.", "groups": ["start", "middle", "end"], "items": [{"image": "card_dear_gogo", "group": "start"}, {"image": "card_dear_uncle_sam", "group": "start"}, {"image": "card_i_lost_my_tooth", "group": "middle"}, {"image": "card_we_won_the_match", "group": "middle"}, {"image": "card_love_from_zola", "group": "end"}, {"image": "card_your_friend_neo", "group": "end"}]},
+    {"type": "listen_tap", "prompt": "Which card is a diary entry, not a letter?", "options": ["card_diary_monday", "card_dear_gogo", "card_love_from_zola"], "answer": "card_diary_monday", "praise": "Yes! A diary starts with the day."}
+  ],
+  "hints": ["A letter starts with Dear and the person's name.", "The end says who wrote it. Love from, or Your friend."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will start my letter to Uncle Sam.",
+    "tutor_try": "Love from Uncle Sam. Then the news!",
+    "image": "tutor_letter_backwards",
+    "answer": "no",
+    "win_line": "You caught me! A letter starts with Dear Uncle Sam. Love from goes at the end.",
+    "gentle_line": "Let's start it together. Dear Uncle Sam. Now the news!"
+  },
+  "parent_line": "Knows the parts of a letter: Dear, the news and Love from."
+}

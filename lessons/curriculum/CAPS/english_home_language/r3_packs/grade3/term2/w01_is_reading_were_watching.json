@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w01_is_reading_were_watching",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [1],
+  "theme": "Tenses",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Uses present and past progressive tenses (He is reading; They were watching)"
+  },
+  "skill": "grammar.tense.progressive",
+  "prereq_skills": ["grammar.tense.past_present_future"],
+  "images": ["boy_reading_now", "girl_skipping", "word_is_skipping", "word_was_skipping", "word_skipped", "word_were_playing", "word_are_playing", "word_play", "child_reading", "sentence_she_is_eating", "sentence_she_was_eating", "sentence_she_ate", "word_were", "word_was", "word_is", "tutor_cats_is"],
+  "show": {
+    "line": "He is reading. It is happening right now. They were watching. That was happening before. Listen for ing!",
+    "image": "boy_reading_now"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Right now the girl ... Which words fit?", "image": "girl_skipping", "options": ["word_is_skipping", "word_was_skipping", "word_skipped"], "answer": "word_is_skipping", "praise": "Yes! Right now, she is skipping."},
+    {"type": "listen_tap", "prompt": "Yesterday the boys ... football. Which words fit?", "options": ["word_were_playing", "word_are_playing", "word_play"], "answer": "word_were_playing", "praise": "Yes! Yesterday, they were playing."},
+    {"type": "say_it", "prompt": "I am ... a book. Read or reading? Say the right word.", "accept": ["reading", "reeding"], "image": "child_reading"},
+    {"type": "listen_tap", "prompt": "Which sentence tells what is happening now?", "options": ["sentence_she_is_eating", "sentence_she_was_eating", "sentence_she_ate"], "answer": "sentence_she_is_eating", "praise": "Yes! She is eating, right now."},
+    {"type": "match_sort", "prompt": "Happening now, or happening before? Sort the cards.", "groups": ["now", "before"], "items": [{"image": "sentence_she_is_eating", "group": "now"}, {"image": "word_is_skipping", "group": "now"}, {"image": "word_are_playing", "group": "now"}, {"image": "sentence_she_was_eating", "group": "before"}, {"image": "word_were_playing", "group": "before"}, {"image": "word_was_skipping", "group": "before"}]},
+    {"type": "read_to_me", "prompt": "Read this sentence out loud.", "text": "The dogs were barking all night.", "accept": ["the dogs were barking all night"]},
+    {"type": "listen_tap", "prompt": "Which word goes with they? They ... singing.", "options": ["word_were", "word_was", "word_is"], "answer": "word_were", "praise": "Yes! They were singing."}
+  ],
+  "hints": ["Is and are mean now. Was and were mean before.", "The verb ends with ing. Reading, watching, playing."],
+  "beat_the_tutor": {
+    "setup": "My turn! Yesterday the cats ... sleeping.",
+    "tutor_try": "Yesterday the cats is sleeping!",
+    "image": "tutor_cats_is",
+    "answer": "were",
+    "win_line": "You caught me! Yesterday, and more than one cat. The cats were sleeping.",
+    "gentle_line": "Let's say it together. Yesterday the cats were sleeping!"
+  },
+  "parent_line": "Can use is, are, was and were with ing verbs, like he is reading."
+}

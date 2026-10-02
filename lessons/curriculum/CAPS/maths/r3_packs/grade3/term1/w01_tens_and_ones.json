@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w01_tens_and_ones",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Place value",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Place value (numbers to 99)",
+    "subtopic": "Decompose two-digit numbers into multiples of tens and ones up to 80 (weeks 1-2) and 99 (weeks 5-6, 9-10); use flard cards / place value cards daily"
+  },
+  "skill": "place_value.tens_ones.to_99",
+  "prereq_skills": ["count.skip.2_5_10.to_80"],
+  "images": ["flard_43", "numeral_52", "numeral_25", "numeral_57", "bundles_six_tens", "card_30", "card_8", "card_3", "flard_76", "numeral_29", "numeral_92", "numeral_20", "card_50", "card_80", "card_4", "card_40", "tutor_swaps_digits"],
+  "show": {
+    "line": "Look at 43. Four tens and three ones. Forty and three make forty three!",
+    "image": "flard_43"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number that is five tens and two ones.", "options": ["numeral_52", "numeral_25", "numeral_57"], "answer": "numeral_52", "praise": "Yes! Fifty and two is fifty two."},
+    {"type": "count_tap", "prompt": "Count the bundles of ten. How many tens in sixty?", "image": "bundles_six_tens", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six tens! Six tens make sixty."},
+    {"type": "listen_tap", "prompt": "Which card shows the tens in 38?", "options": ["card_30", "card_8", "card_3"], "answer": "card_30", "praise": "Yes! The three in 38 is worth thirty."},
+    {"type": "say_it", "prompt": "Seventy six. How many ones? Say the number.", "accept": ["six", "6", "siks"], "image": "flard_76"},
+    {"type": "listen_tap", "prompt": "Twenty and nine. Tap the number they make.", "options": ["numeral_29", "numeral_92", "numeral_20"], "answer": "numeral_29", "praise": "Yes! Twenty and nine make twenty nine."},
+    {"type": "match_sort", "prompt": "Tens or ones? Put each card in its group.", "groups": ["tens", "ones"], "items": [{"image": "card_30", "group": "tens"}, {"image": "card_50", "group": "tens"}, {"image": "card_80", "group": "tens"}, {"image": "card_8", "group": "ones"}, {"image": "card_3", "group": "ones"}]},
+    {"type": "listen_tap", "prompt": "What is the four worth in 84?", "options": ["card_4", "card_40", "card_80"], "answer": "card_4", "praise": "Yes! The four is in the ones place. It is worth four."}
+  ],
+  "hints": ["The first digit tells you the tens. The last digit tells you the ones.", "Say the number slowly. Forty three is forty and three."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will break 65 into tens and ones.",
+    "tutor_try": "Six ones and five tens!",
+    "image": "tutor_swaps_digits",
+    "answer": "no",
+    "win_line": "You caught me! 65 is six tens and five ones. Sixty and five.",
+    "gentle_line": "Let's look together. Six tens is sixty. Add five ones. Sixty five!"
+  },
+  "parent_line": "Can break a two digit number into tens and ones."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w08_homophones",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [8, 9],
+  "theme": "Words that sound the same",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Uses words pronounced the same with different meanings in written sentences"
+  },
+  "skill": "spelling.homophones",
+  "prereq_skills": ["spelling.alphabetical_order"],
+  "images": ["eye_and_sea", "word_hear", "word_here", "word_sun", "word_son", "two_cats", "word_pear", "word_pair", "tutor_spells_son"],
+  "show": {
+    "line": "See and sea sound the same, but they are different words. I see the sea! Spelling tells them apart.",
+    "image": "eye_and_sea"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "I can ... the bell. Which spelling fits?", "options": ["word_hear", "word_here"], "answer": "word_hear", "praise": "Yes! Hear, with an ear in it."},
+    {"type": "listen_tap", "prompt": "The ... is shining. Which spelling fits?", "options": ["word_sun", "word_son"], "answer": "word_sun", "praise": "Yes! The sun in the sky."},
+    {"type": "say_it", "prompt": "I have ... cats. Which word? The number. Say it.", "accept": ["two", "2", "too"], "image": "two_cats"},
+    {"type": "listen_tap", "prompt": "Come ... please. Which spelling fits?", "options": ["word_here", "word_hear"], "answer": "word_here", "praise": "Yes! Here means this place."},
+    {"type": "listen_tap", "prompt": "She ate a juicy ... Which spelling fits?", "options": ["word_pear", "word_pair"], "answer": "word_pear", "praise": "Yes! A pear to eat."},
+    {"type": "read_to_me", "prompt": "Read this sentence out loud.", "text": "I can see the sea.", "accept": ["i can see the sea"]},
+    {"type": "listen_tap", "prompt": "A ... of shoes. Which spelling fits?", "options": ["word_pair", "word_pear"], "answer": "word_pair", "praise": "Yes! A pair means two."}
+  ],
+  "hints": ["Think about the meaning. Then pick the spelling.", "Hear has ear in it. Here is a place, like there."],
+  "beat_the_tutor": {
+    "setup": "My turn! The sun is hot. I will spell sun.",
+    "tutor_try": "s, o, n. Son!",
+    "image": "tutor_spells_son",
+    "answer": "no",
+    "win_line": "You caught me! Son is a boy. The hot sun is spelt s, u, n.",
+    "gentle_line": "Let's spell it together. s, u, n. Sun, in the sky!"
+  },
+  "parent_line": "Can choose the right spelling for words that sound the same, like sea and see."
+}

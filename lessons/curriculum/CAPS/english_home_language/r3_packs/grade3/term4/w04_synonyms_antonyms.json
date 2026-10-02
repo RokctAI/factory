@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w04_synonyms_antonyms",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "Word meanings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises and uses synonyms (happy / glad) and antonyms (good / bad)"
+  },
+  "skill": "vocabulary.synonyms_antonyms",
+  "prereq_skills": ["vocabulary.multiple_meanings"],
+  "images": ["happy_glad_good_bad", "word_large", "word_small", "word_blue", "word_cold", "word_warm", "word_wet", "happy_child", "word_slow", "word_quick", "word_tall", "word_glad", "word_cheerful", "word_joyful", "word_sad", "word_unhappy", "word_gloomy", "word_huge", "word_tiny", "word_quiet", "pair_up_down", "pair_big_large", "pair_happy_glad", "tutor_tall_high"],
+  "show": {
+    "line": "Happy and glad mean the same. They are synonyms. Good and bad are opposites. They are antonyms!",
+    "image": "happy_glad_good_bad"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word means the same as big?", "options": ["word_large", "word_small", "word_blue"], "answer": "word_large", "praise": "Yes! Big and large are synonyms."},
+    {"type": "listen_tap", "prompt": "Which word is the opposite of hot?", "options": ["word_cold", "word_warm", "word_wet"], "answer": "word_cold", "praise": "Yes! Hot and cold are antonyms."},
+    {"type": "say_it", "prompt": "Say a word that means the same as happy.", "accept": ["glad", "joyful", "cheerful", "jolly", "pleased"], "image": "happy_child"},
+    {"type": "listen_tap", "prompt": "Which word is the opposite of fast?", "options": ["word_slow", "word_quick", "word_tall"], "answer": "word_slow", "praise": "Yes! Slow."},
+    {"type": "match_sort", "prompt": "Same as happy, or opposite of happy? Sort the words.", "groups": ["same_as_happy", "opposite_of_happy"], "items": [{"image": "word_glad", "group": "same_as_happy"}, {"image": "word_cheerful", "group": "same_as_happy"}, {"image": "word_joyful", "group": "same_as_happy"}, {"image": "word_sad", "group": "opposite_of_happy"}, {"image": "word_unhappy", "group": "opposite_of_happy"}, {"image": "word_gloomy", "group": "opposite_of_happy"}]},
+    {"type": "listen_tap", "prompt": "The giant was enormous. Which word means the same as enormous?", "options": ["word_huge", "word_tiny", "word_quiet"], "answer": "word_huge", "praise": "Yes! Enormous and huge."},
+    {"type": "listen_tap", "prompt": "Which pair of words are antonyms?", "options": ["pair_up_down", "pair_big_large", "pair_happy_glad"], "answer": "pair_up_down", "praise": "Yes! Up and down are opposites."}
+  ],
+  "hints": ["Synonyms are the same. Antonyms are opposites.", "Think of a word that could swap in and keep the meaning."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the opposite of tall.",
+    "tutor_try": "The opposite of tall is high!",
+    "image": "tutor_tall_high",
+    "answer": "short",
+    "win_line": "You caught me! Tall and high mean the same. The opposite of tall is short.",
+    "gentle_line": "Let's think together. A tall tree, a short tree. Short is the opposite!"
+  },
+  "parent_line": "Can find words that mean the same and words that are opposites."
+}

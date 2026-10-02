@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w04_tie_high_sky",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Same sound, different spelling",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises different spellings of the same sound: tie, high, sky; few, blue"
+  },
+  "skill": "phonics.sound_spellings.ie_igh_y_ew_ue",
+  "prereq_skills": ["phonics.sound_spellings.ay_ee_oa"],
+  "images": ["tie_high_sky", "pie", "pea", "pot", "glue", "glass", "glow", "light_bulb", "word_night", "word_nite", "word_nyt", "word_tie", "word_high", "word_fly", "word_few", "word_blue", "word_new", "word_stew", "word_stop", "word_star", "word_hat", "tutor_points_bell"],
+  "show": {
+    "line": "Tie, high, sky. One sound, three spellings. Few and blue, same sound, two spellings!",
+    "image": "tie_high_sky"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the same sound as sky?", "options": ["pie", "pea", "pot"], "answer": "pie", "praise": "Yes! Sky, pie."},
+    {"type": "listen_tap", "prompt": "Which word has the same sound as blue?", "options": ["glue", "glass", "glow"], "answer": "glue", "praise": "Yes! Blue, glue."},
+    {"type": "say_it", "prompt": "This word rhymes with high. You switch it on when it is dark. What is it?", "accept": ["light", "a light", "lite"], "image": "light_bulb"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells night the right way.", "options": ["word_night", "word_nite", "word_nyt"], "answer": "word_night", "praise": "Yes! Night, with igh."},
+    {"type": "match_sort", "prompt": "Sounds like sky, or sounds like blue? Sort the words.", "groups": ["sound_igh", "sound_ue"], "items": [{"image": "word_tie", "group": "sound_igh"}, {"image": "word_high", "group": "sound_igh"}, {"image": "word_fly", "group": "sound_igh"}, {"image": "word_few", "group": "sound_ue"}, {"image": "word_blue", "group": "sound_ue"}, {"image": "word_new", "group": "sound_ue"}]},
+    {"type": "listen_tap", "prompt": "Which word has ew, as in few?", "options": ["word_stew", "word_stop", "word_star"], "answer": "word_stew", "praise": "Yes! Stew."},
+    {"type": "listen_tap", "prompt": "Tap the word that does not have the same sound. Tie, high, hat.", "options": ["word_hat", "word_tie", "word_high"], "answer": "word_hat", "praise": "Yes! Hat sounds different."}
+  ],
+  "hints": ["Listen to the vowel sound. Does it sound like sky or like blue?", "igh, ie and the letter 'y' can all say the same sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that sounds like blue.",
+    "tutor_try": "Bell! Blue, bell.",
+    "image": "tutor_points_bell",
+    "answer": "no",
+    "win_line": "You caught me! Bell has a short e. Glue sounds like blue.",
+    "gentle_line": "Let's listen together. Blue, glue, few, new. Same sound!"
+  },
+  "parent_line": "Can hear the sounds in sky and blue and knows their spellings."
+}

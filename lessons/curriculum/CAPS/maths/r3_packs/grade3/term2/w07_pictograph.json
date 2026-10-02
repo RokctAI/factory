@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade3.term2.w07_pictograph",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Reading data",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Data handling: Analyse and interpret data",
+    "subtopic": "Analyse and interpret data"
+  },
+  "skill": "data.interpret.pictograph",
+  "prereq_skills": ["data.sort_tally"],
+  "images": ["pictograph_weather", "snow", "sun", "rain", "pictograph_fruit_sold", "banana", "apple", "pear", "pictograph_key_two", "numeral_6", "numeral_3", "numeral_5", "blue_swatch", "red_swatch", "green_swatch", "tutor_points_longest_row"],
+  "show": {
+    "line": "This pictograph shows the weather this month. Each sun picture is one sunny day. Count the suns!",
+    "image": "pictograph_weather"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the suns. How many sunny days?", "image": "pictograph_weather", "count": "9", "options": ["8", "9", "10"], "answer": "9", "praise": "Nine sunny days!"},
+    {"type": "listen_tap", "prompt": "Which weather happened the least this month?", "image": "pictograph_weather", "options": ["snow", "sun", "rain"], "answer": "snow", "praise": "Yes! Only one snow picture."},
+    {"type": "say_it", "prompt": "Six rainy days and nine sunny days. How many more sunny days? Say the number.", "accept": ["three", "3", "tree"], "image": "pictograph_weather"},
+    {"type": "listen_tap", "prompt": "Here are the fruit sold today. Which fruit sold the most?", "image": "pictograph_fruit_sold", "options": ["banana", "apple", "pear"], "answer": "banana", "praise": "Yes! The banana row is the longest."},
+    {"type": "listen_tap", "prompt": "Each picture stands for two children. Three pictures for netball. How many children? Tap the number.", "image": "pictograph_key_two", "options": ["numeral_6", "numeral_3", "numeral_5"], "answer": "numeral_6", "praise": "Yes! Three pictures of two is six children."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "The graph shows four children chose red, seven chose blue and two chose green. Which colour did most children choose?", "options": ["blue_swatch", "red_swatch", "green_swatch"], "answer": "blue_swatch", "praise": "Blue! Seven is the most."}
+  ],
+  "hints": ["Count the pictures in each row. More pictures means more.", "Check the key. One picture might stand for more than one."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the fruit that sold the least.",
+    "tutor_try": "Bananas! The banana row is the longest, so it is the least!",
+    "image": "tutor_points_longest_row",
+    "answer": "pear",
+    "win_line": "You caught me! The longest row is the most. The shortest row, pears, is the least.",
+    "gentle_line": "Let's look together. The shortest row has the fewest. Pears!"
+  },
+  "parent_line": "Can read a pictograph and answer questions about it."
+}

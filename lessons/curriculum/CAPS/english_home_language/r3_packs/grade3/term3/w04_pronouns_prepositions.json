@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w04_pronouns_prepositions",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [4, 5],
+  "theme": "Parts of speech",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Identifies and uses nouns, pronouns, adjectives, verbs, adverbs and prepositions"
+  },
+  "skill": "grammar.pronouns_prepositions",
+  "prereq_skills": ["grammar.parts_of_speech.noun_verb_adj"],
+  "images": ["girl_cat_under_table", "word_he", "word_she", "word_it", "word_they", "cat_on_box", "word_on", "word_under", "word_in", "ball_under_chair", "word_we", "bird_over_tree", "word_over", "tutor_he_for_mama"],
+  "show": {
+    "line": "Lebo is tall. She is tall. She stands in for Lebo. The cat is under the table. Under says where!",
+    "image": "girl_cat_under_table"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Thabo is fast. ... is fast. Which word stands in for Thabo?", "options": ["word_he", "word_she", "word_it"], "answer": "word_he", "praise": "Yes! He stands in for Thabo."},
+    {"type": "listen_tap", "prompt": "The ball is red. ... is red. Which word fits?", "options": ["word_it", "word_he", "word_they"], "answer": "word_it", "praise": "Yes! It, for a thing."},
+    {"type": "listen_tap", "prompt": "Where is the cat? Tap the word.", "image": "cat_on_box", "options": ["word_on", "word_under", "word_in"], "answer": "word_on", "praise": "Yes! The cat is on the box."},
+    {"type": "say_it", "prompt": "Look. Where is the ball? In or under the chair? Say the word.", "accept": ["under", "under the chair", "onder"], "image": "ball_under_chair"},
+    {"type": "listen_tap", "prompt": "Lebo and Zola are friends. ... are friends. Which word fits?", "options": ["word_they", "word_she", "word_we"], "answer": "word_they", "praise": "Yes! They, for two people."},
+    {"type": "match_sort", "prompt": "Pronoun or preposition? Sort the words.", "groups": ["pronoun", "preposition"], "items": [{"image": "word_he", "group": "pronoun"}, {"image": "word_she", "group": "pronoun"}, {"image": "word_they", "group": "pronoun"}, {"image": "word_on", "group": "preposition"}, {"image": "word_under", "group": "preposition"}, {"image": "word_in", "group": "preposition"}]},
+    {"type": "listen_tap", "prompt": "The bird flew ... the tree. Which word fits the picture?", "image": "bird_over_tree", "options": ["word_over", "word_under", "word_in"], "answer": "word_over", "praise": "Yes! Over the tree."}
+  ],
+  "hints": ["A pronoun stands in for a name. He, she, it, they.", "A preposition tells where. In, on, under, over, next to."],
+  "beat_the_tutor": {
+    "setup": "My turn! Mama is kind. I will use a pronoun.",
+    "tutor_try": "He is kind!",
+    "image": "tutor_he_for_mama",
+    "answer": "she",
+    "win_line": "You caught me! Mama is a woman. She is kind.",
+    "gentle_line": "Let's say it together. Mama is kind. She is kind!"
+  },
+  "parent_line": "Can use pronouns like he and she and prepositions like on and under."
+}

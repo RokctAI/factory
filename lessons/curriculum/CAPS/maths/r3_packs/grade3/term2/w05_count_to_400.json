@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w05_count_to_400",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Counting to 400",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Counting (integrated with number patterns and mental maths)",
+    "subtopic": "Count forwards and backwards in 1s from any number between 0 and 200 (weeks 1-2), 300 (weeks 3-4), 400 (weeks 5-6) and 500 (weeks 7-10)"
+  },
+  "skill": "count.ones.to_500",
+  "prereq_skills": ["place_value.htu.to_500"],
+  "images": ["number_line_197_200", "numeral_250", "numeral_200", "numeral_190", "numeral_1910", "tutor_skips_hundred"],
+  "show": {
+    "line": "Let's count on from 197. One hundred and ninety eight, ninety nine, two hundred! Over the hundred we go.",
+    "image": "number_line_197_200"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "What comes next? 236, 237, 238.", "sequence": ["236", "237", "238"], "options": ["239", "240", "229"], "answer": "239", "praise": "Yes! 239."},
+    {"type": "what_next", "prompt": "Count back. 302, 301, 300. What comes next?", "sequence": ["302", "301", "300"], "options": ["299", "399", "290"], "answer": "299", "praise": "Yes! 299. Back under three hundred."},
+    {"type": "what_next", "prompt": "Count on. 398, 399. What comes next?", "sequence": ["398", "399"], "options": ["400", "500", "310"], "answer": "400", "praise": "Four hundred!"},
+    {"type": "say_it", "prompt": "What number comes just before 250? Say it.", "accept": ["two hundred and forty nine", "249", "two forty nine"], "image": "numeral_250"},
+    {"type": "what_next", "prompt": "Count back. 150, 149, 148. What comes next?", "sequence": ["150", "149", "148"], "options": ["147", "146", "158"], "answer": "147", "praise": "Yes! 147."},
+    {"type": "listen_tap", "prompt": "Which number comes just after 199?", "options": ["numeral_200", "numeral_190", "numeral_1910"], "answer": "numeral_200", "praise": "Yes! Two hundred."},
+    {"type": "what_next", "prompt": "Count on. 345, 346, 347. What comes next?", "sequence": ["345", "346", "347"], "options": ["348", "358", "338"], "answer": "348", "praise": "Yes! 348."}
+  ],
+  "hints": ["Only the ones change, until you reach a new ten.", "After ninety nine comes the next hundred."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count on from 298.",
+    "tutor_try": "298, 299, 400!",
+    "image": "tutor_skips_hundred",
+    "answer": "300",
+    "win_line": "You caught me! After 299 comes 300, not 400.",
+    "gentle_line": "Let's count together. 298, 299, 300. Three hundred!"
+  },
+  "parent_line": "Can count forwards and backwards in ones across the hundreds, up to 500."
+}

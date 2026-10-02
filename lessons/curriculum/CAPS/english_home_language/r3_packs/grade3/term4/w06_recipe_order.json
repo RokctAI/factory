@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w06_recipe_order",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Instructions",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Uses informational structures such as experiments and recipes"
+  },
+  "skill": "comprehension.instructions.order",
+  "prereq_skills": ["comprehension.sequence.first_next_finally"],
+  "images": ["recipe_card", "spread_butter", "add_cheese", "take_bread", "water_seed", "dig_hole", "drop_seed", "tea_steps", "card_ingredients", "card_title", "card_chapter", "coin", "stone", "feather", "card_two_eggs", "card_one_cup_flour", "card_some_milk", "card_mix_the_eggs", "card_pour_the_milk", "card_bake_for_20_minutes", "tutor_tea_backwards"],
+  "show": {
+    "line": "A recipe tells you what to do, step by step. Step one, step two, step three. The order matters!",
+    "image": "recipe_card"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Making a sandwich. One, take two slices of bread. Two, spread the butter. Three, add cheese. What is step two?", "options": ["spread_butter", "add_cheese", "take_bread"], "answer": "spread_butter", "praise": "Yes! Spread the butter."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Making a sandwich. One, take two slices of bread. Two, spread the butter. Three, add cheese. What comes first?", "options": ["take_bread", "add_cheese", "spread_butter"], "answer": "take_bread", "praise": "Yes! Take the bread first."},
+    {"type": "listen_tap", "prompt": "Planting a seed. Dig, drop the seed, cover it, water it. Which picture shows the last step?", "options": ["water_seed", "dig_hole", "drop_seed"], "answer": "water_seed", "praise": "Yes! Water it last."},
+    {"type": "say_it", "prompt": "Boil the water. Add the tea bag. Pour the milk. What do you do first? Say it.", "accept": ["boil the water", "boil water", "boil"], "image": "tea_steps"},
+    {"type": "listen_tap", "prompt": "A recipe has a list of what you need. What is this list called?", "options": ["card_ingredients", "card_title", "card_chapter"], "answer": "card_ingredients", "praise": "Yes! Ingredients."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Experiment. Fill a glass with water. Drop in a coin. Watch it sink. What do you drop in?", "options": ["coin", "stone", "feather"], "answer": "coin", "praise": "Yes! A coin."},
+    {"type": "match_sort", "prompt": "Ingredients, or steps? Sort the recipe cards.", "groups": ["ingredients", "steps"], "items": [{"image": "card_two_eggs", "group": "ingredients"}, {"image": "card_one_cup_flour", "group": "ingredients"}, {"image": "card_some_milk", "group": "ingredients"}, {"image": "card_mix_the_eggs", "group": "steps"}, {"image": "card_pour_the_milk", "group": "steps"}, {"image": "card_bake_for_20_minutes", "group": "steps"}]}
+  ],
+  "hints": ["Steps go in order. Step one happens before step two.", "Ingredients are the things you need. Steps are what you do."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will make tea. I will say the steps in order.",
+    "tutor_try": "First pour the milk. Then add the tea bag. Then boil the water!",
+    "image": "tutor_tea_backwards",
+    "answer": "no",
+    "win_line": "You caught me! You boil the water first. The order matters.",
+    "gentle_line": "Let's say it in order. Boil the water. Add the tea bag. Pour the milk!"
+  },
+  "parent_line": "Can follow the order of steps in a recipe or experiment."
+}

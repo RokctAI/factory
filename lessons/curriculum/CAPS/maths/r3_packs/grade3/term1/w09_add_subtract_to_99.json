@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w09_add_subtract_to_99",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Adding and subtracting",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 99",
+    "subtopic": "Addition and subtraction to 80 (weeks 1-4) and 99 (weeks 5-10) using +, -, = and □; practise number bonds to 20"
+  },
+  "skill": "add_subtract.to_99",
+  "prereq_skills": ["place_value.tens_ones.to_99"],
+  "images": ["sum_34_plus_25", "numeral_20", "numeral_19", "numeral_21", "numeral_76", "numeral_49", "numeral_66", "number_line_15_minus_7", "numeral_38", "numeral_56", "numeral_78", "box_sum_7_plus_box_20", "numeral_13", "numeral_27", "numeral_12", "numeral_59", "numeral_55", "numeral_69", "numeral_45", "numeral_35", "tutor_adds_ones_wrong"],
+  "show": {
+    "line": "Let's add 34 and 25. Tens first, thirty and twenty is fifty. Then four and five is nine. Fifty nine!",
+    "image": "sum_34_plus_25"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Twelve plus eight. Tap the answer.", "options": ["numeral_20", "numeral_19", "numeral_21"], "answer": "numeral_20", "praise": "Yes! Twelve and eight make twenty."},
+    {"type": "listen_tap", "prompt": "Forty six plus thirty. Add the tens. Tap the answer.", "options": ["numeral_76", "numeral_49", "numeral_66"], "answer": "numeral_76", "praise": "Yes! Forty and thirty is seventy. Seventy six."},
+    {"type": "say_it", "prompt": "Fifteen take away seven. Say the answer.", "accept": ["eight", "8", "ate"], "image": "number_line_15_minus_7"},
+    {"type": "listen_tap", "prompt": "Fifty eight take away twenty. Tap the answer.", "options": ["numeral_38", "numeral_56", "numeral_78"], "answer": "numeral_38", "praise": "Yes! Take away two tens. Thirty eight."},
+    {"type": "listen_tap", "prompt": "Seven plus a number makes twenty. Which number is missing?", "image": "box_sum_7_plus_box_20", "options": ["numeral_13", "numeral_27", "numeral_12"], "answer": "numeral_13", "praise": "Yes! Seven and thirteen make twenty."},
+    {"type": "listen_tap", "prompt": "Twenty seven plus thirty two. Tap the answer.", "options": ["numeral_59", "numeral_55", "numeral_69"], "answer": "numeral_59", "praise": "Yes! Fifty and nine. Fifty nine."},
+    {"type": "listen_tap", "prompt": "Ninety take away forty five. Tap the answer.", "options": ["numeral_45", "numeral_55", "numeral_35"], "answer": "numeral_45", "praise": "Yes! Forty five and forty five make ninety."}
+  ],
+  "hints": ["Add the tens first, then the ones.", "For take away, count back. Or count on from the small number."],
+  "beat_the_tutor": {
+    "setup": "My turn! Thirty six plus twenty three.",
+    "tutor_try": "Thirty and twenty is fifty. Six and three is eight. Fifty eight!",
+    "image": "tutor_adds_ones_wrong",
+    "answer": "fifty nine",
+    "win_line": "You caught me! Six and three is nine. Fifty nine.",
+    "gentle_line": "Let's add the ones together. Six, seven, eight, nine. Fifty nine!"
+  },
+  "parent_line": "Can add and subtract two digit numbers to 99."
+}

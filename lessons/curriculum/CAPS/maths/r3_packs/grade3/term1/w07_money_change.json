@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term1.w07_money_change",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Money",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Solve problems in context up to 99",
+    "subtopic": "Money problems involving totals and change (weeks 1-2, 5-8)"
+  },
+  "skill": "money.totals_change.to_99",
+  "prereq_skills": ["place_value.tens_ones.to_99"],
+  "images": ["shop_apple_banana", "coin_r5", "coin_r2", "coin_r1", "money_10_10_5", "numeral_10", "numeral_2", "numeral_12", "sweet_two_rand", "coins_10_2", "coins_5_5", "coins_10_5", "numeral_5", "numeral_15", "numeral_35", "cap_r45", "kite_r30", "tutor_change_wrong"],
+  "show": {
+    "line": "An apple costs five rand. A banana costs three rand. Together that is eight rand!",
+    "image": "shop_apple_banana"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the coin that is worth five rand.", "options": ["coin_r5", "coin_r2", "coin_r1"], "answer": "coin_r5", "praise": "Yes! That is a five rand coin."},
+    {"type": "count_tap", "prompt": "Count the money. Ten rand, ten rand, five rand. How many rand?", "image": "money_10_10_5", "count": "25", "options": ["20", "25", "30"], "answer": "25", "praise": "Twenty five rand!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thandi buys a pen for six rand and a ruler for four rand. How much does she pay altogether?", "options": ["numeral_10", "numeral_2", "numeral_12"], "answer": "numeral_10", "praise": "Ten rand! Six and four make ten."},
+    {"type": "say_it", "prompt": "A sweet costs two rand. You pay with five rand. How much change? Say the number.", "accept": ["three", "3", "three rand", "tree"], "image": "sweet_two_rand"},
+    {"type": "listen_tap", "prompt": "A ball costs twelve rand. Which coins pay for it exactly?", "options": ["coins_10_2", "coins_5_5", "coins_10_5"], "answer": "coins_10_2", "praise": "Yes! Ten and two make twelve."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Bongi has twenty rand. She buys juice for fifteen rand. How much money is left?", "options": ["numeral_5", "numeral_15", "numeral_35"], "answer": "numeral_5", "praise": "Five rand left! Twenty take away fifteen is five."},
+    {"type": "listen_tap", "prompt": "Which costs more, the kite for thirty rand or the cap for forty five rand?", "options": ["cap_r45", "kite_r30"], "answer": "cap_r45", "praise": "Yes! Forty five is more than thirty."}
+  ],
+  "hints": ["Altogether means add. Change means take away what you spent.", "Count on from the price up to the money you paid."],
+  "beat_the_tutor": {
+    "setup": "My turn! A bun costs seven rand. I pay with ten rand.",
+    "tutor_try": "My change is four rand!",
+    "image": "tutor_change_wrong",
+    "answer": "three",
+    "win_line": "You caught me! Seven and three make ten. The change is three rand.",
+    "gentle_line": "Let's count on together. Seven, eight, nine, ten. Three rand change!"
+  },
+  "parent_line": "Can add prices and work out change up to 99 rand."
+}

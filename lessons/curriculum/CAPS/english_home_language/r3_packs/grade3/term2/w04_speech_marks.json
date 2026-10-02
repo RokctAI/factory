@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade3.term2.w04_speech_marks",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Punctuation",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Uses capital letters, full stops, commas, question marks, exclamation marks and inverted commas correctly"
+  },
+  "skill": "grammar.punctuation.inverted_commas",
+  "prereq_skills": ["grammar.punctuation.end_marks"],
+  "images": ["mama_speech_bubble", "sentence_sipho_quotes", "sentence_sipho_no_quotes", "sentence_girl_said_hello", "card_hello_gogo", "card_said_the_girl", "boy_bubble_hungry", "sentence_quotes_correct", "sentence_quotes_wrong_place", "comma", "full_stop", "question_mark", "sentence_the_dog_sleeps", "tutor_quotes_wrong"],
+  "show": {
+    "line": "Inverted commas hold the words someone says. Mama said, \"Come and eat.\" Only the spoken words go inside!",
+    "image": "mama_speech_bubble"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which sentence shows that Sipho is talking?", "options": ["sentence_sipho_quotes", "sentence_sipho_no_quotes"], "answer": "sentence_sipho_quotes", "praise": "Yes! His words are inside inverted commas."},
+    {"type": "listen_tap", "prompt": "Which words did the girl say? Tap the part inside the inverted commas.", "image": "sentence_girl_said_hello", "options": ["card_hello_gogo", "card_said_the_girl"], "answer": "card_hello_gogo", "praise": "Yes! Hello Gogo is what she said."},
+    {"type": "say_it", "prompt": "Look at the speech bubble. What does the boy say? Read it.", "accept": ["i am hungry", "im hungry", "i'm hungry"], "image": "boy_bubble_hungry"},
+    {"type": "listen_tap", "prompt": "Where do the inverted commas go?", "options": ["sentence_quotes_correct", "sentence_quotes_wrong_place"], "answer": "sentence_quotes_correct", "praise": "Yes! Around the spoken words only."},
+    {"type": "listen_tap", "prompt": "Which mark goes after Mama said, before the spoken words?", "options": ["comma", "full_stop", "question_mark"], "answer": "comma", "praise": "Yes! A comma."},
+    {"type": "match_sort", "prompt": "Someone talking, or no one talking? Sort the sentences.", "groups": ["someone_talks", "no_one_talks"], "items": [{"image": "sentence_sipho_quotes", "group": "someone_talks"}, {"image": "sentence_girl_said_hello", "group": "someone_talks"}, {"image": "sentence_quotes_correct", "group": "someone_talks"}, {"image": "sentence_sipho_no_quotes", "group": "no_one_talks"}, {"image": "sentence_the_dog_sleeps", "group": "no_one_talks"}]}
+  ],
+  "hints": ["Inverted commas go around the exact words someone says.", "Find the speech bubble words. Those go inside."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write what Thabo said.",
+    "tutor_try": "I put inverted commas around Thabo said!",
+    "image": "tutor_quotes_wrong",
+    "answer": "no",
+    "win_line": "You caught me! Only the words Thabo spoke go inside the inverted commas.",
+    "gentle_line": "Let's find the spoken words together. I am tired. Those go inside!"
+  },
+  "parent_line": "Can spot and use inverted commas around spoken words."
+}

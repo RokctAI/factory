@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term4.w05_compare_to_999",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Comparing numbers",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 999",
+    "subtopic": "Describe and compare numbers to 700 (weeks 1-2), 800 (weeks 3-4), 900 (weeks 5-6) and 999 (weeks 7-10): smaller than, greater than"
+  },
+  "skill": "number.compare.to_999",
+  "prereq_skills": ["number.order.to_500", "place_value.htu.to_700"],
+  "images": ["numbers_867_876", "numeral_912", "numeral_921", "numeral_750", "numeral_705", "numbers_640_460", "sign_greater_than", "sign_less_than", "sign_equal", "numbers_899_900", "list_780_807_870", "list_870_807_780", "list_807_780_870", "numeral_600", "numeral_591", "numeral_690", "numeral_799", "numeral_808", "tutor_999_greater"],
+  "show": {
+    "line": "Which is greater, 867 or 876? Same hundreds. Look at the tens. Seven tens beat six tens. 876!",
+    "image": "numbers_867_876"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the greater number.", "options": ["numeral_912", "numeral_921"], "answer": "numeral_921", "praise": "Yes! Two tens beat one ten."},
+    {"type": "listen_tap", "prompt": "Tap the smaller number.", "options": ["numeral_750", "numeral_705"], "answer": "numeral_705", "praise": "Yes! 705 has no tens."},
+    {"type": "listen_tap", "prompt": "Which sign fits? 640 and 460.", "image": "numbers_640_460", "options": ["sign_greater_than", "sign_less_than", "sign_equal"], "answer": "sign_greater_than", "praise": "Yes! 640 is greater than 460."},
+    {"type": "say_it", "prompt": "Which is smaller, 899 or 900? Say the number.", "accept": ["eight hundred and ninety nine", "899", "eight ninety nine"], "image": "numbers_899_900"},
+    {"type": "listen_tap", "prompt": "Which list is in order from smallest to greatest?", "options": ["list_780_807_870", "list_870_807_780", "list_807_780_870"], "answer": "list_780_807_870", "praise": "Yes! 780, 807, 870."},
+    {"type": "listen_tap", "prompt": "Which number is ten more than 590?", "options": ["numeral_600", "numeral_591", "numeral_690"], "answer": "numeral_600", "praise": "Yes! 590 and ten is 600."},
+    {"type": "match_sort", "prompt": "Smaller than 800 or greater than 800? Sort the numbers.", "groups": ["smaller_than_800", "greater_than_800"], "items": [{"image": "numeral_750", "group": "smaller_than_800"}, {"image": "numeral_705", "group": "smaller_than_800"}, {"image": "numeral_799", "group": "smaller_than_800"}, {"image": "numeral_912", "group": "greater_than_800"}, {"image": "numeral_921", "group": "greater_than_800"}, {"image": "numeral_808", "group": "greater_than_800"}]}
+  ],
+  "hints": ["Hundreds first. If they match, look at the tens. Then the ones.", "The crocodile mouth opens towards the bigger number."],
+  "beat_the_tutor": {
+    "setup": "My turn! 999 and 1000.",
+    "tutor_try": "999 is greater, because it has three nines!",
+    "image": "tutor_999_greater",
+    "answer": "1000",
+    "win_line": "You caught me! 1000 has four digits. It comes after 999, so it is greater.",
+    "gentle_line": "Let's count on together. 998, 999, 1000. One thousand is greater!"
+  },
+  "parent_line": "Can compare and order numbers up to 999."
+}

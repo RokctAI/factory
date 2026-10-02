@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w03_place_value_to_700",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Place value",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Place value (numbers to 700)",
+    "subtopic": "Decompose numbers up to 700 into multiples of hundreds, tens and ones"
+  },
+  "skill": "place_value.htu.to_700",
+  "prereq_skills": ["place_value.htu.to_500"],
+  "images": ["flard_653", "numeral_542", "numeral_524", "numeral_452", "cards_600_10_8", "cards_600_18_0", "cards_60_10_8", "flard_705", "numeral_630", "numeral_603", "numeral_360", "numeral_409", "numeral_490", "numeral_49", "card_600", "card_700", "card_50", "card_10", "card_3", "card_8", "numeral_598", "numeral_589", "tutor_builds_507"],
+  "show": {
+    "line": "Six hundred and fifty three. 600 plus 50 plus 3. Break it up, then put it back together!",
+    "image": "flard_653"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the number that is 500 plus 40 plus 2.", "options": ["numeral_542", "numeral_524", "numeral_452"], "answer": "numeral_542", "praise": "Yes! Five hundred and forty two."},
+    {"type": "listen_tap", "prompt": "Break up 618. Which cards show it?", "options": ["cards_600_10_8", "cards_600_18_0", "cards_60_10_8"], "answer": "cards_600_10_8", "praise": "Yes! Six hundred, ten and eight."},
+    {"type": "say_it", "prompt": "What is the seven worth in 705? Say the number.", "accept": ["seven hundred", "700", "seven hundreds"], "image": "flard_705"},
+    {"type": "listen_tap", "prompt": "Which number has a zero in the ones place?", "options": ["numeral_630", "numeral_603", "numeral_360"], "answer": "numeral_630", "praise": "Yes! 630 has no ones."},
+    {"type": "listen_tap", "prompt": "Four hundred and nine. Tap the number.", "options": ["numeral_409", "numeral_490", "numeral_49"], "answer": "numeral_409", "praise": "Yes! Four hundreds, no tens, nine ones."},
+    {"type": "match_sort", "prompt": "Which place? Sort the cards into hundreds, tens and ones.", "groups": ["hundreds", "tens", "ones"], "items": [{"image": "card_600", "group": "hundreds"}, {"image": "card_700", "group": "hundreds"}, {"image": "card_50", "group": "tens"}, {"image": "card_10", "group": "tens"}, {"image": "card_3", "group": "ones"}, {"image": "card_8", "group": "ones"}]},
+    {"type": "listen_tap", "prompt": "Which number is greater, 589 or 598?", "options": ["numeral_598", "numeral_589"], "answer": "numeral_598", "praise": "Yes! Nine tens beat eight tens."}
+  ],
+  "hints": ["Hundreds first, then tens, then ones.", "Zero holds a place. 603 has no tens."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will build 570 with cards.",
+    "tutor_try": "500 and 7. That is 570!",
+    "image": "tutor_builds_507",
+    "answer": "no",
+    "win_line": "You caught me! 500 and 7 is 507. 570 needs a 70 card.",
+    "gentle_line": "Let's build it together. 500, 70, and zero ones. 570!"
+  },
+  "parent_line": "Can break numbers up to 700 into hundreds, tens and ones."
+}

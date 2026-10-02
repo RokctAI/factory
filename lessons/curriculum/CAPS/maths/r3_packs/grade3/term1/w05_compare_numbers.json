@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade3.term1.w05_compare_numbers",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Comparing numbers",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 99",
+    "subtopic": "Describe and compare numbers to 80 (weeks 1-2) and 99 (weeks 5-6, 9-10): smaller than, greater than, >, <, ="
+  },
+  "skill": "number.compare.to_99",
+  "prereq_skills": ["place_value.tens_ones.to_99"],
+  "images": ["crocodile_47_74", "numeral_63", "numeral_36", "numeral_85", "numeral_58", "numbers_29_92", "sign_less_than", "sign_greater_than", "sign_equal", "numbers_51_49", "numbers_70_70", "numeral_92", "numeral_29", "tutor_crocodile_wrong"],
+  "show": {
+    "line": "Which is greater, 47 or 74? Look at the tens. Seven tens beat four tens. 74 is greater!",
+    "image": "crocodile_47_74"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the greater number.", "options": ["numeral_63", "numeral_36"], "answer": "numeral_63", "praise": "Yes! Six tens is more than three tens."},
+    {"type": "listen_tap", "prompt": "Tap the smaller number.", "options": ["numeral_85", "numeral_58"], "answer": "numeral_58", "praise": "Yes! Fifty eight is smaller than eighty five."},
+    {"type": "listen_tap", "prompt": "The crocodile eats the bigger number. 29 and 92. Which sign fits?", "image": "numbers_29_92", "options": ["sign_less_than", "sign_greater_than", "sign_equal"], "answer": "sign_less_than", "praise": "Yes! 29 is less than 92."},
+    {"type": "say_it", "prompt": "Which is greater, 51 or 49? Say the number.", "accept": ["fifty one", "51", "fifty-one"], "image": "numbers_51_49"},
+    {"type": "listen_tap", "prompt": "Both numbers are seventy. Which sign fits?", "image": "numbers_70_70", "options": ["sign_equal", "sign_greater_than", "sign_less_than"], "answer": "sign_equal", "praise": "Yes! Seventy equals seventy."},
+    {"type": "match_sort", "prompt": "Greater than fifty or smaller than fifty? Put each number in its group.", "groups": ["greater_than_50", "smaller_than_50"], "items": [{"image": "numeral_63", "group": "greater_than_50"}, {"image": "numeral_85", "group": "greater_than_50"}, {"image": "numeral_92", "group": "greater_than_50"}, {"image": "numeral_36", "group": "smaller_than_50"}, {"image": "numeral_29", "group": "smaller_than_50"}]}
+  ],
+  "hints": ["Look at the tens first. More tens means a greater number.", "Same tens? Then look at the ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! 38 and 83.",
+    "tutor_try": "38 is greater than 83, because eight is a big number!",
+    "image": "tutor_crocodile_wrong",
+    "answer": "83",
+    "win_line": "You caught me! Look at the tens. Eight tens beat three tens. 83 is greater.",
+    "gentle_line": "Let's look at the tens together. Three tens, eight tens. 83 is greater!"
+  },
+  "parent_line": "Can compare two numbers to 99 using greater than, less than and equal."
+}

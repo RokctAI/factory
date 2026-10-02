@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w05_grams_kilograms",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Mass",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Measurement: Mass",
+    "subtopic": "Introduce formal units of measurement: read scale, grams, kilograms"
+  },
+  "skill": "measure.mass.g_kg",
+  "prereq_skills": [],
+  "images": ["sugar_bag_1kg", "feather", "bus", "watermelon", "apple", "scale_potatoes_3kg", "sweet", "pencil", "bag_of_potatoes", "child", "card_1000_g", "card_100_g", "card_10_g", "balance_brick_feather", "brick", "tutor_sweet_kilograms"],
+  "show": {
+    "line": "A bag of sugar is one kilogram. A sweet is a few grams. Heavy in kilograms, light in grams!",
+    "image": "sugar_bag_1kg"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is about one kilogram?", "options": ["sugar_bag_1kg", "feather", "bus"], "answer": "sugar_bag_1kg", "praise": "Yes! One kilogram of sugar."},
+    {"type": "listen_tap", "prompt": "Which is heavier?", "options": ["watermelon", "apple"], "answer": "watermelon", "praise": "Yes! The watermelon is heavier."},
+    {"type": "count_tap", "prompt": "Read the scale. How many kilograms do the potatoes weigh?", "image": "scale_potatoes_3kg", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three kilograms!"},
+    {"type": "say_it", "prompt": "Would you weigh a feather in grams or kilograms? Say it.", "accept": ["grams", "gram", "grems"], "image": "feather"},
+    {"type": "match_sort", "prompt": "Grams or kilograms? Pick the unit for each.", "groups": ["grams", "kilograms"], "items": [{"image": "feather", "group": "grams"}, {"image": "sweet", "group": "grams"}, {"image": "pencil", "group": "grams"}, {"image": "watermelon", "group": "kilograms"}, {"image": "bag_of_potatoes", "group": "kilograms"}, {"image": "child", "group": "kilograms"}]},
+    {"type": "listen_tap", "prompt": "One kilogram is one thousand grams. Which card says that?", "options": ["card_1000_g", "card_100_g", "card_10_g"], "answer": "card_1000_g", "praise": "Yes! One thousand grams in a kilogram."},
+    {"type": "listen_tap", "prompt": "Which side of the balance goes down? The heavy side.", "image": "balance_brick_feather", "options": ["brick", "feather"], "answer": "brick", "praise": "Yes! The brick is heavier, so it goes down."}
+  ],
+  "hints": ["Kilograms are for heavy things. Grams are for light things.", "On a scale, read the number the arrow points to."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will weigh a sweet.",
+    "tutor_try": "This sweet weighs five kilograms!",
+    "image": "tutor_sweet_kilograms",
+    "answer": "grams",
+    "win_line": "You caught me! Five kilograms is heavier than a baby. A sweet is a few grams.",
+    "gentle_line": "Let's think together. A sweet is tiny and light. Grams!"
+  },
+  "parent_line": "Can choose grams or kilograms and read a simple scale."
+}

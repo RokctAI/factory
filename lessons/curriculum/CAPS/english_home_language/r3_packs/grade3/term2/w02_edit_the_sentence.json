@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w02_edit_the_sentence",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "Editing",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Reads and edits own writing (spelling, punctuation) and reads it to a friend or group; builds personal dictionary"
+  },
+  "skill": "writing.edit.spelling_punctuation",
+  "prereq_skills": ["grammar.punctuation.end_marks"],
+  "images": ["child_editing_pencil", "sentence_my_dog_correct", "sentence_my_dog_no_capital", "sentence_my_dog_no_stop", "sentence_i_can_swm", "word_swm", "word_i", "word_can", "word_school", "word_skool", "word_shcool", "sentence_no_stop_cat", "word_thandi_capital", "word_thandi_lower", "sentence_we_like_tea", "word_dog", "word_cat", "word_bus", "tutor_sentence_no_capital"],
+  "show": {
+    "line": "Good writers check their work. Capital letter at the start? Full stop at the end? Spelling right? Let's be editors!",
+    "image": "child_editing_pencil"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which sentence is written correctly?", "options": ["sentence_my_dog_correct", "sentence_my_dog_no_capital", "sentence_my_dog_no_stop"], "answer": "sentence_my_dog_correct", "praise": "Yes! Capital letter and full stop."},
+    {"type": "listen_tap", "prompt": "Find the spelling mistake. Which word is wrong?", "image": "sentence_i_can_swm", "options": ["word_swm", "word_i", "word_can"], "answer": "word_swm", "praise": "Yes! Swim needs an i."},
+    {"type": "listen_tap", "prompt": "Which word is spelt the right way?", "options": ["word_school", "word_skool", "word_shcool"], "answer": "word_school", "praise": "Yes! School."},
+    {"type": "say_it", "prompt": "The cat sat on the mat. What is missing at the end? Say it.", "accept": ["full stop", "a full stop", "fullstop", "stop"], "image": "sentence_no_stop_cat"},
+    {"type": "listen_tap", "prompt": "Names need a capital letter. Which card is right?", "options": ["word_thandi_capital", "word_thandi_lower"], "answer": "word_thandi_capital", "praise": "Yes! Thandi starts with a capital letter."},
+    {"type": "match_sort", "prompt": "Right, or needs fixing? Sort the sentences.", "groups": ["right", "needs_fixing"], "items": [{"image": "sentence_my_dog_correct", "group": "right"}, {"image": "sentence_we_like_tea", "group": "right"}, {"image": "sentence_my_dog_no_capital", "group": "needs_fixing"}, {"image": "sentence_my_dog_no_stop", "group": "needs_fixing"}, {"image": "sentence_i_can_swm", "group": "needs_fixing"}]},
+    {"type": "listen_tap", "prompt": "Which word belongs in your dictionary under the letter 'd'?", "options": ["word_dog", "word_cat", "word_bus"], "answer": "word_dog", "praise": "Yes! Dog starts with 'd'."}
+  ],
+  "hints": ["Read it out loud. Does it sound right and look right?", "Check the start, the end and the spelling."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write a sentence. the bus is late",
+    "tutor_try": "the bus is late. Perfect!",
+    "image": "tutor_sentence_no_capital",
+    "answer": "no",
+    "win_line": "You caught me! The bus is late needs a capital letter and a full stop.",
+    "gentle_line": "Let's fix it together. Capital letter at the start, full stop at the end!"
+  },
+  "parent_line": "Can check a sentence for capital letters, full stops and spelling."
+}

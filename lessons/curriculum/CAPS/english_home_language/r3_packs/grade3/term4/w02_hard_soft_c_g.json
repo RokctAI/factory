@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w02_hard_soft_c_g",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "Hard and soft sounds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises hard and soft 'c' and 'g' (city, giant)"
+  },
+  "skill": "phonics.hard_soft_c_g",
+  "prereq_skills": ["phonics.silent_letters.b_w_h"],
+  "images": ["cat_city_goat_giant", "circle", "cat", "cup", "gate", "giraffe", "gem", "cake", "city", "word_cake", "word_cup", "word_cow", "word_city", "word_circle", "word_ice", "word_gate", "word_gum", "word_giant", "word_giraffe", "word_gem", "tutor_says_kitty"],
+  "show": {
+    "line": "'c' says k in cat, but s in city. 'g' says g in goat, but j in giant!",
+    "image": "cat_city_goat_giant"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has a soft 'c' that says s, like city?", "options": ["circle", "cat", "cup"], "answer": "circle", "praise": "Yes! Circle starts with the s sound."},
+    {"type": "listen_tap", "prompt": "Which word has a hard 'g' like goat?", "options": ["gate", "giraffe", "gem"], "answer": "gate", "praise": "Yes! Gate. Hard 'g'."},
+    {"type": "say_it", "prompt": "This word has a soft 'g' that says j. It is a very tall animal with a long neck.", "accept": ["giraffe", "a giraffe", "jiraf"], "image": "giraffe"},
+    {"type": "listen_tap", "prompt": "Which word has a hard 'c' like cat?", "options": ["cake", "city", "circle"], "answer": "cake", "praise": "Yes! Cake."},
+    {"type": "match_sort", "prompt": "Hard 'c' like cat, or soft 'c' like city? Sort the words.", "groups": ["hard_c", "soft_c"], "items": [{"image": "word_cake", "group": "hard_c"}, {"image": "word_cup", "group": "hard_c"}, {"image": "word_cow", "group": "hard_c"}, {"image": "word_city", "group": "soft_c"}, {"image": "word_circle", "group": "soft_c"}, {"image": "word_ice", "group": "soft_c"}]},
+    {"type": "match_sort", "prompt": "Hard 'g' like goat, or soft 'g' like giant? Sort the words.", "groups": ["hard_g", "soft_g"], "items": [{"image": "word_gate", "group": "hard_g"}, {"image": "word_gum", "group": "hard_g"}, {"image": "word_giant", "group": "soft_g"}, {"image": "word_giraffe", "group": "soft_g"}, {"image": "word_gem", "group": "soft_g"}]},
+    {"type": "read_to_me", "prompt": "Read this out loud.", "text": "The giant ate ice cream in the city.", "accept": ["the giant ate ice cream in the city"]}
+  ],
+  "hints": ["'c' before 'e', 'i' or 'y' often says s. City, circle, ice.", "'g' before 'e' or 'i' often says j. Giant, gem, giraffe."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word. City.",
+    "tutor_try": "Kitty! City says kitty, with a hard 'c'.",
+    "image": "tutor_says_kitty",
+    "answer": "no",
+    "win_line": "You caught me! Before 'i', the 'c' is soft. City, with s.",
+    "gentle_line": "Let's say it together. Soft 'c'. s, city!"
+  },
+  "parent_line": "Knows c and g can be hard or soft, as in cat, city, goat and giant."
+}

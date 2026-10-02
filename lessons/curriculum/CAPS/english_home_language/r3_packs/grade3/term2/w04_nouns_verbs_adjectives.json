@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w04_nouns_verbs_adjectives",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Parts of speech",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Writing",
+    "subtopic": "Identifies and uses nouns, adjectives, verbs and adverbs correctly; reads and edits own writing"
+  },
+  "skill": "grammar.parts_of_speech.noun_verb_adj",
+  "prereq_skills": [],
+  "images": ["big_dog_runs", "word_dog", "word_big", "word_runs", "frog", "word_cake", "word_eats", "word_sweet", "word_loudly", "word_sings", "word_she", "cake", "tutor_picks_small"],
+  "show": {
+    "line": "A noun names a thing, like dog. A verb is a doing word, like runs. An adjective describes, like big!",
+    "image": "big_dog_runs"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "The big dog runs. Which word is the noun, the thing?", "options": ["word_dog", "word_big", "word_runs"], "answer": "word_dog", "praise": "Yes! Dog is a noun."},
+    {"type": "listen_tap", "prompt": "The big dog runs. Which word is the verb, the doing word?", "options": ["word_runs", "word_dog", "word_big"], "answer": "word_runs", "praise": "Yes! Runs is a verb."},
+    {"type": "listen_tap", "prompt": "Which word describes the dog?", "options": ["word_big", "word_dog", "word_runs"], "answer": "word_big", "praise": "Yes! Big is an adjective."},
+    {"type": "say_it", "prompt": "Think of a doing word. What does a frog do? Say it.", "accept": ["jumps", "jump", "hops", "hop"], "image": "frog"},
+    {"type": "match_sort", "prompt": "Noun, verb or adjective? Sort the words.", "groups": ["noun", "verb", "adjective"], "items": [{"image": "word_dog", "group": "noun"}, {"image": "word_cake", "group": "noun"}, {"image": "word_runs", "group": "verb"}, {"image": "word_eats", "group": "verb"}, {"image": "word_big", "group": "adjective"}, {"image": "word_sweet", "group": "adjective"}]},
+    {"type": "listen_tap", "prompt": "She sings loudly. Which word tells how she sings? That is an adverb.", "options": ["word_loudly", "word_sings", "word_she"], "answer": "word_loudly", "praise": "Yes! Loudly is an adverb."},
+    {"type": "listen_tap", "prompt": "Pick an adjective for the cake.", "image": "cake", "options": ["word_sweet", "word_eats", "word_cake"], "answer": "word_sweet", "praise": "Yes! Sweet describes the cake."}
+  ],
+  "hints": ["A noun is a person, place or thing. A verb is what they do.", "An adjective tells you what something is like. An adverb tells how it is done."],
+  "beat_the_tutor": {
+    "setup": "My turn! The small cat sleeps. I will find the verb.",
+    "tutor_try": "Small! Small is the verb.",
+    "image": "tutor_picks_small",
+    "answer": "sleeps",
+    "win_line": "You caught me! Small describes the cat. Sleeps is the doing word.",
+    "gentle_line": "Let's find the doing word together. What does the cat do? It sleeps!"
+  },
+  "parent_line": "Can tell nouns, verbs, adjectives and adverbs apart."
+}

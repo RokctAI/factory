@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term2.w07_oclock_half_past",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Telling time",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Measurement: Time",
+    "subtopic": "Read 12-hour time in hours and half hours; use an analogue clock to tell time"
+  },
+  "skill": "time.analogue.hour_half",
+  "prereq_skills": [],
+  "images": ["clock_3_oclock", "clock_7_oclock", "clock_12_oclock", "clock_half_past_7", "clock_half_past_2", "clock_2_oclock", "clock_half_past_8", "clock_10_oclock", "clock_8_oclock", "clock_9_oclock", "card_1_hour", "card_half_hour", "card_2_hours", "digital_4_30", "digital_4_00", "digital_3_30", "tutor_reads_half_past_4"],
+  "show": {
+    "line": "The short hand points to the hour. The long hand on twelve means o'clock. Three o'clock!",
+    "image": "clock_3_oclock"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which clock shows seven o'clock?", "options": ["clock_7_oclock", "clock_12_oclock", "clock_half_past_7"], "answer": "clock_7_oclock", "praise": "Yes! Short hand on seven, long hand on twelve."},
+    {"type": "listen_tap", "prompt": "The long hand points to six. Which clock shows half past two?", "options": ["clock_half_past_2", "clock_2_oclock", "clock_half_past_8"], "answer": "clock_half_past_2", "praise": "Yes! Half past two."},
+    {"type": "say_it", "prompt": "Look at the clock. What time is it? Say the time.", "accept": ["ten o'clock", "ten", "10 o'clock"], "image": "clock_10_oclock"},
+    {"type": "listen_tap", "prompt": "School starts at eight o'clock. Which clock shows eight o'clock?", "options": ["clock_8_oclock", "clock_half_past_8", "clock_9_oclock"], "answer": "clock_8_oclock", "praise": "Yes! Eight o'clock."},
+    {"type": "match_sort", "prompt": "O'clock or half past? Put each clock in its group.", "groups": ["oclock", "half_past"], "items": [{"image": "clock_3_oclock", "group": "oclock"}, {"image": "clock_7_oclock", "group": "oclock"}, {"image": "clock_10_oclock", "group": "oclock"}, {"image": "clock_half_past_2", "group": "half_past"}, {"image": "clock_half_past_7", "group": "half_past"}, {"image": "clock_half_past_8", "group": "half_past"}]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lunch starts at twelve o'clock and ends at one o'clock. How long is lunch?", "options": ["card_1_hour", "card_half_hour", "card_2_hours"], "answer": "card_1_hour", "praise": "One hour! From twelve to one."},
+    {"type": "listen_tap", "prompt": "It is half past four. Which digital clock matches?", "options": ["digital_4_30", "digital_4_00", "digital_3_30"], "answer": "digital_4_30", "praise": "Yes! Four thirty is half past four."}
+  ],
+  "hints": ["Short hand is the hour. Long hand on twelve is o'clock, on six is half past.", "Half past means the long hand is halfway round."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this clock.",
+    "tutor_try": "The long hand is on six and the short hand is near five. Six o'clock!",
+    "image": "tutor_reads_half_past_4",
+    "answer": "half past four",
+    "win_line": "You caught me! The long hand on six means half past. Half past four.",
+    "gentle_line": "Let's look together. Long hand on six, half past. Short hand just past four. Half past four!"
+  },
+  "parent_line": "Can read o'clock and half past on an analogue clock."
+}

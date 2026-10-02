@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term3.w06_pick_the_title",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 3,
+  "weeks": [6, 7],
+  "theme": "Main idea",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Writing",
+    "subtopic": "Drafts, writes, edits and publishes own story of at least two paragraphs (ten or more sentences) with a title"
+  },
+  "skill": "comprehension.main_idea.title",
+  "prereq_skills": ["comprehension.sequence.first_next_finally"],
+  "images": ["book_with_title", "title_neos_new_puppy", "title_a_rainy_day", "title_milk_for_breakfast", "title_siphos_sunflower", "title_the_big_bucket", "title_a_hot_day", "boy_wins_race", "gogo", "the_street", "a_loaf", "title_the_lost_kitten_caps", "title_the_lost_kitten_lower", "title_the_missing_lunch_box", "title_the_cold_fridge", "title_a_day_at_school", "title_page", "last_page", "middle_page", "tutor_wrong_title"],
+  "show": {
+    "line": "Every story has a title. The title tells you what the story is mostly about. Let's pick good titles!",
+    "image": "book_with_title"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Neo found a wet puppy. She dried it and gave it milk. Now it follows her everywhere. Which title fits?", "options": ["title_neos_new_puppy", "title_a_rainy_day", "title_milk_for_breakfast"], "answer": "title_neos_new_puppy", "praise": "Yes! The story is mostly about the puppy."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho planted a seed. He watered it every day. Soon a tall sunflower grew. Which title fits?", "options": ["title_siphos_sunflower", "title_the_big_bucket", "title_a_hot_day"], "answer": "title_siphos_sunflower", "praise": "Yes! Sipho's sunflower."},
+    {"type": "say_it", "prompt": "A story about a boy who wins a race. Say a good title. The Big Race, or The Blue Hat?", "accept": ["the big race", "big race", "race"], "image": "boy_wins_race"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Gogo bakes bread every Friday. The whole street smells it. Everyone buys a loaf. Who is the story mostly about?", "options": ["gogo", "the_street", "a_loaf"], "answer": "gogo", "praise": "Yes! Gogo and her bread."},
+    {"type": "listen_tap", "prompt": "Which title is written correctly, with capital letters?", "options": ["title_the_lost_kitten_caps", "title_the_lost_kitten_lower"], "answer": "title_the_lost_kitten_caps", "praise": "Yes! Important words in a title get capital letters."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Zinzi lost her lunch box. She looked everywhere at school. It was in the fridge at home! Which title fits?", "options": ["title_the_missing_lunch_box", "title_the_cold_fridge", "title_a_day_at_school"], "answer": "title_the_missing_lunch_box", "praise": "Yes! The missing lunch box."},
+    {"type": "listen_tap", "prompt": "Which comes first in a story book?", "options": ["title_page", "last_page", "middle_page"], "answer": "title_page", "praise": "Yes! The title comes first."}
+  ],
+  "hints": ["Ask yourself, what is this story mostly about?", "A good title is short and says the main idea."],
+  "beat_the_tutor": {
+    "setup": "My turn! A story about a cat stuck in a tree. I will pick the title.",
+    "tutor_try": "The Red Bicycle!",
+    "image": "tutor_wrong_title",
+    "answer": "no",
+    "win_line": "You caught me! There is no bicycle in that story. The Cat in the Tree fits better.",
+    "gentle_line": "Let's think together. What is the story about? A cat in a tree. That is the title!"
+  },
+  "parent_line": "Can pick a title that fits the main idea of a short story."
+}

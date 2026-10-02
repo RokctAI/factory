@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade3.term3.w03_cups_and_litres",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Capacity",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Measurement: Capacity/volume",
+    "subtopic": "Introduce formal measuring (ml, litre): know that 1 cup = 250 ml, teaspoon = 5 ml"
+  },
+  "skill": "measure.capacity.ml_l",
+  "prereq_skills": ["measure.mass.g_kg"],
+  "images": ["litre_bottle_cup_spoon", "bucket", "cup", "teaspoon", "milk_bottle_1l", "bath", "jug_four_cups", "medicine_spoon", "jug_full", "jug_half", "jug_500ml", "card_500_ml", "card_250_ml", "card_1_litre", "tutor_jug_half"],
+  "show": {
+    "line": "A big bottle holds one litre. A cup holds 250 millilitres. A teaspoon holds just five millilitres!",
+    "image": "litre_bottle_cup_spoon"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one holds the most?", "options": ["bucket", "cup", "teaspoon"], "answer": "bucket", "praise": "Yes! The bucket holds the most."},
+    {"type": "listen_tap", "prompt": "Which container holds about one litre?", "options": ["milk_bottle_1l", "teaspoon", "bath"], "answer": "milk_bottle_1l", "praise": "Yes! A big milk bottle is one litre."},
+    {"type": "count_tap", "prompt": "Four cups fill the one litre jug. How many cups of 250 millilitres make a litre?", "image": "jug_four_cups", "count": "4", "options": ["2", "4", "5"], "answer": "4", "praise": "Four cups make one litre!"},
+    {"type": "say_it", "prompt": "Would you measure medicine in millilitres or litres? Say it.", "accept": ["millilitres", "millilitre", "milliliters", "mils"], "image": "medicine_spoon"},
+    {"type": "match_sort", "prompt": "Millilitres or litres? Pick the unit for each.", "groups": ["millilitres", "litres"], "items": [{"image": "teaspoon", "group": "millilitres"}, {"image": "cup", "group": "millilitres"}, {"image": "medicine_spoon", "group": "millilitres"}, {"image": "bucket", "group": "litres"}, {"image": "bath", "group": "litres"}, {"image": "milk_bottle_1l", "group": "litres"}]},
+    {"type": "listen_tap", "prompt": "Which jug has more juice?", "options": ["jug_full", "jug_half"], "answer": "jug_full", "praise": "Yes! The full jug."},
+    {"type": "listen_tap", "prompt": "Read the measuring jug. How much water is in it?", "image": "jug_500ml", "options": ["card_500_ml", "card_250_ml", "card_1_litre"], "answer": "card_500_ml", "praise": "Yes! 500 millilitres. That is half a litre."}
+  ],
+  "hints": ["Millilitres for small amounts. Litres for big amounts.", "A cup is 250 millilitres. Four cups make one litre."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will fill the litre jug with cups.",
+    "tutor_try": "One cup, two cups. Full! Two cups make a litre.",
+    "image": "tutor_jug_half",
+    "answer": "four",
+    "win_line": "You caught me! Two cups is only 500 millilitres. Four cups make a litre.",
+    "gentle_line": "Let's pour together. One, two, three, four cups. Now it is a litre!"
+  },
+  "parent_line": "Can compare how much containers hold and knows cups, millilitres and litres."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term4.w06_prefixes_suffixes",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Word building",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises and uses prefixes (un-, re-) and suffixes (-ful, -ness)"
+  },
+  "skill": "spelling.prefixes_suffixes",
+  "prereq_skills": ["spelling.homophones"],
+  "images": ["unhappy_careful", "word_untidy", "word_tidyun", "word_retidy", "word_rewrite", "word_unwrite", "word_writeful", "helpful_child", "word_unkind", "word_kindness", "word_rekind", "word_sadness", "word_unsad", "word_sadful", "word_helpful", "word_careful", "tutor_suffix_un"],
+  "show": {
+    "line": "Add un to happy. Unhappy! Add ful to care. Careful! Little word parts change the meaning.",
+    "image": "unhappy_careful"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Add un to the word tidy. Which word do you get?", "options": ["word_untidy", "word_tidyun", "word_retidy"], "answer": "word_untidy", "praise": "Yes! Untidy means not tidy."},
+    {"type": "listen_tap", "prompt": "Re means again. Which word means write again?", "options": ["word_rewrite", "word_unwrite", "word_writeful"], "answer": "word_rewrite", "praise": "Yes! Rewrite."},
+    {"type": "say_it", "prompt": "Add ful to help. Say the new word.", "accept": ["helpful", "help full", "helpfull"], "image": "helpful_child"},
+    {"type": "listen_tap", "prompt": "Which word means not kind?", "options": ["word_unkind", "word_kindness", "word_rekind"], "answer": "word_unkind", "praise": "Yes! Unkind."},
+    {"type": "listen_tap", "prompt": "Add ness to sad. Which word do you get?", "options": ["word_sadness", "word_unsad", "word_sadful"], "answer": "word_sadness", "praise": "Yes! Sadness."},
+    {"type": "match_sort", "prompt": "Starts with un or re, or ends with ful or ness? Sort the words.", "groups": ["prefix_start", "suffix_end"], "items": [{"image": "word_untidy", "group": "prefix_start"}, {"image": "word_rewrite", "group": "prefix_start"}, {"image": "word_unkind", "group": "prefix_start"}, {"image": "word_helpful", "group": "suffix_end"}, {"image": "word_sadness", "group": "suffix_end"}, {"image": "word_careful", "group": "suffix_end"}]},
+    {"type": "read_to_me", "prompt": "Read this out loud.", "text": "The careful boy was never unkind.", "accept": ["the careful boy was never unkind"]}
+  ],
+  "hints": ["un means not. re means again.", "ful means full of. ness turns a describing word into a thing."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will add un to lucky.",
+    "tutor_try": "Lucky, un. Luckyun!",
+    "image": "tutor_suffix_un",
+    "answer": "unlucky",
+    "win_line": "You caught me! Un goes at the front. Unlucky.",
+    "gentle_line": "Let's say it together. Un, lucky. Unlucky!"
+  },
+  "parent_line": "Can build words with un, re, ful and ness."
+}

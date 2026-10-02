@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term1.w03_vowel_teams",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 1,
+  "weeks": [3],
+  "theme": "Vowel teams",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises Grade 2 vowel digraphs (oo, ee, ea, ai, oa, ay)"
+  },
+  "skill": "phonics.vowel_digraph.oo_ee_ai_oa",
+  "prereq_skills": [],
+  "images": ["feet_moon_rain_boat", "tree", "boat", "rain", "spoon", "bee", "goat", "train", "moon", "soap", "word_rain", "word_rane", "word_ran", "sheep", "boot", "tray", "toad", "tutor_points_feet"],
+  "show": {
+    "line": "Two vowels team up. ee as in feet. oo as in moon. ai as in rain. oa as in boat!",
+    "image": "feet_moon_rain_boat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the ee sound, as in feet?", "options": ["tree", "boat", "rain"], "answer": "tree", "praise": "Yes! Tree has ee."},
+    {"type": "listen_tap", "prompt": "Which word has the oo sound, as in moon?", "options": ["spoon", "bee", "goat"], "answer": "spoon", "praise": "Yes! Spoon has oo."},
+    {"type": "listen_tap", "prompt": "Which word has ai, as in rain?", "options": ["train", "moon", "soap"], "answer": "train", "praise": "Yes! Train has ai."},
+    {"type": "say_it", "prompt": "This word has oa, as in boat. What is it? It says baa.", "accept": ["goat", "a goat", "goats"], "image": "goat"},
+    {"type": "listen_tap", "prompt": "Tap the word that spells rain the right way.", "options": ["word_rain", "word_rane", "word_ran"], "answer": "word_rain", "praise": "Yes! Rain, with ai."},
+    {"type": "match_sort", "prompt": "ee or oo? Put each picture with its vowel sound.", "groups": ["ee", "oo"], "items": [{"image": "tree", "group": "ee"}, {"image": "bee", "group": "ee"}, {"image": "sheep", "group": "ee"}, {"image": "spoon", "group": "oo"}, {"image": "moon", "group": "oo"}, {"image": "boot", "group": "oo"}]},
+    {"type": "listen_tap", "prompt": "Which word has ay at the end, as in play?", "options": ["tray", "tree", "toad"], "answer": "tray", "praise": "Yes! Tray ends with ay."}
+  ],
+  "hints": ["Listen to the middle of the word. Which vowel sound do you hear?", "ee is a long squeaky sound. oo is the sound you make when you see a gift."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word with oo, as in moon.",
+    "tutor_try": "Feet! Feet has oo.",
+    "image": "tutor_points_feet",
+    "answer": "no",
+    "win_line": "You caught me! Feet has ee. Moon and spoon have oo.",
+    "gentle_line": "Let's listen together. Moon, spoon, boot. They all have oo!"
+  },
+  "parent_line": "Can hear and spot the vowel teams ee, oo, ai, oa and ay in words."
+}

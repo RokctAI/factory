@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w04_contents_page",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [4, 5],
+  "theme": "Finding information",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Reading",
+    "subtopic": "Shared: uses key words and headings to find information in non-fiction; uses table of contents, index and page numbers"
+  },
+  "skill": "reading.nonfiction.contents_page",
+  "prereq_skills": [],
+  "images": ["contents_page_animals", "page_9", "page_4", "page_12", "heading_snakes", "heading_lions", "heading_birds", "story_page", "back_cover", "index_page", "word_ant", "word_zebra", "word_lion", "heading_lion_food", "heading_lion_homes", "heading_lion_babies", "tutor_turns_wrong_page"],
+  "show": {
+    "line": "A contents page lists the chapters and their page numbers. Lions, page four. Elephants, page nine. Easy to find!",
+    "image": "contents_page_animals"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which page is the chapter about elephants on?", "image": "contents_page_animals", "options": ["page_9", "page_4", "page_12"], "answer": "page_9", "praise": "Yes! Elephants, page nine."},
+    {"type": "listen_tap", "prompt": "You want to read about snakes. Which heading do you look for?", "image": "contents_page_animals", "options": ["heading_snakes", "heading_lions", "heading_birds"], "answer": "heading_snakes", "praise": "Yes! Snakes."},
+    {"type": "say_it", "prompt": "Lions are on page four. Say the page number.", "accept": ["four", "4", "for"], "image": "contents_page_animals"},
+    {"type": "listen_tap", "prompt": "Which part of the book is the contents page?", "options": ["contents_page_animals", "story_page", "back_cover"], "answer": "contents_page_animals", "praise": "Yes! It is at the front, with a list of chapters."},
+    {"type": "listen_tap", "prompt": "The index is at the back. It lists words in alphabetical order. Which word comes first?", "image": "index_page", "options": ["word_ant", "word_zebra", "word_lion"], "answer": "word_ant", "praise": "Yes! Ant. The index follows the alphabet."},
+    {"type": "listen_tap", "prompt": "Which heading tells you where to find out what lions eat?", "options": ["heading_lion_food", "heading_lion_homes", "heading_lion_babies"], "answer": "heading_lion_food", "praise": "Yes! Lion food."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Nomsa wants to find the chapter about birds. The contents says Birds, page twelve. Which page does she turn to?", "options": ["page_12", "page_9", "page_4"], "answer": "page_12", "praise": "Yes! Page twelve."}
+  ],
+  "hints": ["Look down the list of headings. Find the one you need.", "The number next to the heading is the page."],
+  "beat_the_tutor": {
+    "setup": "My turn! I want to read about elephants.",
+    "tutor_try": "Elephants, page nine. I will turn to page four!",
+    "image": "tutor_turns_wrong_page",
+    "answer": "nine",
+    "win_line": "You caught me! The contents says elephants are on page nine.",
+    "gentle_line": "Let's look at the list together. Elephants, page nine. Turn to nine!"
+  },
+  "parent_line": "Can use a contents page and an index to find information."
+}

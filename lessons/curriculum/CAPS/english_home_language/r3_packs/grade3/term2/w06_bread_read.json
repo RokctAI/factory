@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade3.term2.w06_bread_read",
+  "subject": "English Home Language",
+  "grade": 3,
+  "term": 2,
+  "weeks": [6, 7],
+  "theme": "Two sounds, one spelling",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises that the same spelling can represent different sounds (bread, read)"
+  },
+  "skill": "phonics.ea_two_sounds",
+  "prereq_skills": ["phonics.vowel_digraph.oo_ee_ai_oa"],
+  "images": ["bread_and_book", "head", "leaf", "tea", "sea", "thread", "bed", "feather", "word_head", "word_thread", "word_feather", "word_sea", "word_leaf", "word_tea", "word_bed", "word_bead", "word_bird", "tutor_says_heed"],
+  "show": {
+    "line": "Bread and read. Both have ea, but they sound different! The same letters can make two sounds.",
+    "image": "bread_and_book"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has ea that sounds like bread?", "options": ["head", "leaf", "tea"], "answer": "head", "praise": "Yes! Head sounds like bread."},
+    {"type": "listen_tap", "prompt": "Which word has ea that sounds like read?", "options": ["sea", "thread", "bed"], "answer": "sea", "praise": "Yes! Sea sounds like read."},
+    {"type": "say_it", "prompt": "This word has ea like bread. It is light and comes from a bird. Say it.", "accept": ["feather", "a feather", "fether"], "image": "feather"},
+    {"type": "match_sort", "prompt": "Sounds like bread, or sounds like read? Sort the words.", "groups": ["sound_bread", "sound_read"], "items": [{"image": "word_head", "group": "sound_bread"}, {"image": "word_thread", "group": "sound_bread"}, {"image": "word_feather", "group": "sound_bread"}, {"image": "word_sea", "group": "sound_read"}, {"image": "word_leaf", "group": "sound_read"}, {"image": "word_tea", "group": "sound_read"}]},
+    {"type": "listen_tap", "prompt": "Tap the word that sounds different from the others. Tea, sea, head.", "options": ["word_head", "word_tea", "word_sea"], "answer": "word_head", "praise": "Yes! Head has the bread sound."},
+    {"type": "read_to_me", "prompt": "Read this sentence out loud.", "text": "I eat bread by the sea.", "accept": ["i eat bread by the sea"]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with bread?", "options": ["word_bed", "word_bead", "word_bird"], "answer": "word_bed", "praise": "Yes! Bread, bed."}
+  ],
+  "hints": ["Try both sounds. Which one makes a real word?", "ea can say the sound in bread or the sound in read."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word. Head.",
+    "tutor_try": "Heed! It rhymes with read.",
+    "image": "tutor_says_heed",
+    "answer": "head",
+    "win_line": "You caught me! Here ea says the sound in bread. Head.",
+    "gentle_line": "Let's try both together. Heed? No. Head, like bread. Yes!"
+  },
+  "parent_line": "Can read ea words with both sounds, like bread and read."
+}

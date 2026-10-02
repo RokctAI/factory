@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade3.term1.w07_bar_graphs",
+  "subject": "Mathematics",
+  "grade": 3,
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Data",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Data handling: Collect, represent and analyse data",
+    "subtopic": "Represent data in tables and bar graphs"
+  },
+  "skill": "data.bar_graph.read",
+  "prereq_skills": [],
+  "images": ["bar_graph_fruit", "banana", "apple", "orange", "bar_graph_pets", "fish", "dog", "cat", "table_walk_taxi", "graph_taxi_tall", "graph_walk_tall", "tally_soccer_seven", "tutor_points_short_bar"],
+  "show": {
+    "line": "This bar graph shows our favourite fruit. The tallest bar is bananas. Most children chose bananas!",
+    "image": "bar_graph_fruit"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which fruit got the most votes? Tap it.", "image": "bar_graph_fruit", "options": ["banana", "apple", "orange"], "answer": "banana", "praise": "Yes! The banana bar is the tallest."},
+    {"type": "count_tap", "prompt": "Read the graph. How many children chose apples?", "image": "bar_graph_fruit", "count": "4", "options": ["3", "4", "6"], "answer": "4", "praise": "Four! The apple bar reaches four."},
+    {"type": "listen_tap", "prompt": "Which pet got the fewest votes?", "image": "bar_graph_pets", "options": ["fish", "dog", "cat"], "answer": "fish", "praise": "Yes! The fish bar is the shortest."},
+    {"type": "say_it", "prompt": "Dogs got six votes. Cats got four. How many more chose dogs? Say the number.", "accept": ["two", "2", "too"], "image": "bar_graph_pets"},
+    {"type": "listen_tap", "prompt": "Here is a table. Three children walk, seven ride a taxi. Which bar graph matches?", "image": "table_walk_taxi", "options": ["graph_taxi_tall", "graph_walk_tall"], "answer": "graph_taxi_tall", "praise": "Yes! The taxi bar is taller."},
+    {"type": "count_tap", "prompt": "Count the tally marks for soccer.", "image": "tally_soccer_seven", "count": "7", "options": ["5", "7", "8"], "answer": "7", "praise": "Seven! A bundle of five and two more."}
+  ],
+  "hints": ["A taller bar means more. A shorter bar means fewer.", "Read the number at the top of the bar."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the favourite fruit.",
+    "tutor_try": "Apples! The apple bar is the shortest, so it wins!",
+    "image": "tutor_points_short_bar",
+    "answer": "banana",
+    "win_line": "You caught me! The tallest bar wins. Bananas got the most votes.",
+    "gentle_line": "Let's look together. The banana bar is the tallest. Most children chose bananas!"
+  },
+  "parent_line": "Can read a bar graph and a tally table."
+}
