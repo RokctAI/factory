@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Classify each payment of a hardware store into the correct CPJ column and give the sundry details where needed: (a) stock bought for resale; (b) a new computer for the office; (c) the owner's personal withdrawal; (d) bank charges.",
+      "expected_answer": "(a) Trading stock column. (b) Sundry accounts, details Equipment (not for resale). (c) Sundry accounts, details Drawings (the owner is not an employee). (d) Sundry accounts, details Bank charges; source document: bank statement."
+    },
+    {
+      "id": "cc2",
+      "question": "The CPJ totals are bank R56 590, trading stock R29 000, wages R12 000 and sundry R15 590. Show that the journal cross-casts.",
+      "expected_answer": "Trading stock + wages + sundry = 29 000 + 12 000 + 15 590 = R56 590 = bank total."
+    },
+    {
+      "id": "cc3",
+      "question": "Total receipts were R140 250 and total payments R56 590. Calculate the bank balance and state whether it is favourable or unfavourable. Then calculate the stock on hand if stock costing R29 000 was bought and stock costing R18 400 was sold.",
+      "expected_answer": "Bank balance = 140 250 - 56 590 = R83 660, favourable (an asset). Stock on hand = 29 000 - 18 400 = R10 600."
+    }
+  ]
+}

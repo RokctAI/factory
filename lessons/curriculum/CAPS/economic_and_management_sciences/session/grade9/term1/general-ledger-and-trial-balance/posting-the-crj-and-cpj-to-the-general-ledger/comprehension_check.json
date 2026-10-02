@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the posting from the CRJ for: (a) the bank total of R140 250; (b) the sales total of R27 600; (c) the cost of sales total of R18 400; (d) capital of R80 000.",
+      "expected_answer": "(a) Debit Bank, details Total receipts, folio CRJ1. (b) Credit Sales, details Bank, folio CRJ1. (c) Debit Cost of sales, details Trading stock, and credit Trading stock, details Cost of sales, both folio CRJ1. (d) Credit Capital on 1 March, details Bank, folio CRJ1."
+    },
+    {
+      "id": "cc2",
+      "question": "State the posting from the CPJ for: (a) the bank total of R56 590; (b) the trading stock total of R29 000; (c) drawings of R2 000.",
+      "expected_answer": "(a) Credit Bank, details Total payments, folio CPJ1. (b) Debit Trading stock, details Bank, folio CPJ1. (c) Debit Drawings, details Bank, folio CPJ1."
+    },
+    {
+      "id": "cc3",
+      "question": "Balance the bank account (debits R140 250, credits R56 590) and the trading stock account (debits R29 000, credits R18 400), stating where each balance c/d and b/d is written.",
+      "expected_answer": "Bank: 140 250 - 56 590 = R83 660; balance c/d on the credit side (31 March), totals R140 250 both sides, balance b/d R83 660 on the debit side (1 April). Trading stock: 29 000 - 18 400 = R10 600; balance c/d on the credit side, totals R29 000, balance b/d R10 600 on the debit side (1 April)."
+    }
+  ]
+}
