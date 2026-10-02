@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term2.w05_times_two_and_five",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Groups of two and five",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 50",
+    "subtopic": "Multiply numbers 1 to 10 by 2 and 5 (weeks 3-10; to 40 in weeks 3-4)"
+  },
+  "skill": "number.multiply.by_2_5",
+  "prereq_skills": ["count.skip.10_5_2", "number.add_subtract.to_20"],
+  "images": ["bicycles_three", "shoes_four_pairs", "hands_three_open", "dots_five_groups_of_two", "numeral_30", "numeral_25", "numeral_35", "numeral_20", "numeral_9", "groups_three_of_two", "groups_two_of_three", "groups_three_of_five", "numeral_14", "numeral_12", "tutor_counts_three_fives"],
+  "show": {
+    "line": "Three bicycles. Each has two wheels. Two, four, six. Three groups of two is six. Three times two equals six!",
+    "image": "bicycles_three"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Four pairs of shoes. Count the shoes in twos. How many shoes?", "image": "shoes_four_pairs", "count": "8", "options": ["6", "8", "4"], "answer": "8", "praise": "Eight shoes! Four times two is eight."},
+    {"type": "count_tap", "prompt": "Three hands. Five fingers on each. Count in fives. How many fingers?", "image": "hands_three_open", "count": "15", "options": ["10", "15", "20"], "answer": "15", "praise": "Fifteen! Three times five is fifteen."},
+    {"type": "say_it", "prompt": "Five times two. Five groups of two. Say the answer.", "accept": ["ten", "10", "tin"], "image": "dots_five_groups_of_two"},
+    {"type": "listen_tap", "prompt": "Six times five. Count in fives six times. What is the answer?", "options": ["numeral_30", "numeral_25", "numeral_35"], "answer": "numeral_30", "praise": "Thirty! Five, ten, fifteen, twenty, twenty-five, thirty."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Mama buys four packets of sweets. Each packet has five sweets. How many sweets in all?", "options": ["numeral_20", "numeral_9", "numeral_25"], "answer": "numeral_20", "praise": "Twenty! Four times five is twenty."},
+    {"type": "listen_tap", "prompt": "Which picture shows three times two?", "options": ["groups_three_of_two", "groups_two_of_three", "groups_three_of_five"], "answer": "groups_three_of_two", "praise": "Yes! Three groups with two in each."},
+    {"type": "listen_tap", "prompt": "Seven times two. What is the answer?", "options": ["numeral_14", "numeral_12", "numeral_9"], "answer": "numeral_14", "praise": "Fourteen! Seven times two is fourteen."}
+  ],
+  "hints": ["Count in twos or fives, once for each group.", "Times means groups of. Three times two is three groups of two."],
+  "beat_the_tutor": {
+    "setup": "My turn! Four times five.",
+    "tutor_try": "Five, ten, fifteen. Four times five is fifteen!",
+    "image": "tutor_counts_three_fives",
+    "answer": "twenty",
+    "win_line": "You caught me! I only counted three fives. Five, ten, fifteen, twenty.",
+    "gentle_line": "Let's count four fives together. Five, ten, fifteen, twenty!"
+  },
+  "parent_line": "Can work out groups of two and groups of five up to 10 groups."
+}

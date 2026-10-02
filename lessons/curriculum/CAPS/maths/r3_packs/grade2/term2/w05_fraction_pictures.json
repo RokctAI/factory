@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term2.w05_fraction_pictures",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Halves, thirds and quarters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Numbers, operations and relationships: Fractions",
+    "subtopic": "Recognise fractions in diagrammatic form (weeks 5-6)"
+  },
+  "skill": "fraction.recognise.half_third_quarter",
+  "prereq_skills": ["number.share.equal_groups"],
+  "images": ["pizza_halves_quarters", "circle_halves", "circle_quarters", "circle_whole", "bar_quarters", "bar_halves", "bar_thirds", "bread_thirds", "square_half_shaded", "square_quarter_shaded", "square_all_shaded", "circle_unequal_cut", "word_no", "word_yes", "apple_halves", "rectangle_halves", "orange_quarters", "square_quarters", "tutor_quarter_pizza"],
+  "show": {
+    "line": "Cut a pizza into two equal pieces. Each piece is a half. Four equal pieces? Each is a quarter!",
+    "image": "pizza_halves_quarters"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which shape is cut into halves? Two equal parts.", "options": ["circle_halves", "circle_quarters", "circle_whole"], "answer": "circle_halves", "praise": "Yes! Two equal parts. Halves."},
+    {"type": "listen_tap", "prompt": "Which chocolate is cut into quarters? Four equal parts.", "options": ["bar_quarters", "bar_halves", "bar_thirds"], "answer": "bar_quarters", "praise": "Yes! Four equal pieces. Quarters."},
+    {"type": "say_it", "prompt": "This bread is cut into three equal pieces. What is each piece called? Say it.", "accept": ["a third", "third", "thirds", "one third", "turd"], "image": "bread_thirds"},
+    {"type": "listen_tap", "prompt": "Which shape has one half coloured in?", "options": ["square_half_shaded", "square_quarter_shaded", "square_all_shaded"], "answer": "square_half_shaded", "praise": "Yes! One of two equal parts is coloured."},
+    {"type": "listen_tap", "prompt": "Is this cut fairly into halves? Tap yes or no.", "image": "circle_unequal_cut", "options": ["word_no", "word_yes"], "answer": "word_no", "praise": "No! Halves must be the same size."},
+    {"type": "match_sort", "prompt": "Halves or quarters? Put each picture in its group.", "groups": ["halves", "quarters"], "items": [{"image": "apple_halves", "group": "halves"}, {"image": "rectangle_halves", "group": "halves"}, {"image": "orange_quarters", "group": "quarters"}, {"image": "square_quarters", "group": "quarters"}, {"image": "circle_quarters", "group": "quarters"}]}
+  ],
+  "hints": ["Count the pieces. Two pieces are halves. Four pieces are quarters.", "The pieces must all be the same size."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this piece of pizza.",
+    "tutor_try": "The pizza is in four pieces. This piece is a half!",
+    "image": "tutor_quarter_pizza",
+    "answer": "quarter",
+    "win_line": "You caught me! Four equal pieces. Each one is a quarter.",
+    "gentle_line": "Let's count the pieces together. One, two, three, four. Quarters!"
+  },
+  "parent_line": "Can recognise halves, thirds and quarters in pictures."
+}

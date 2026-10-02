@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term4.w02_apostrophes",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [2, 3],
+  "theme": "The little flying comma",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Reading",
+    "subtopic": "Shared: reads fiction and non-fiction; answers higher-order questions ('In your opinion...'); says whether a story was liked and justifies it; recognises apostrophes in contractions and possession (John's car, don't)"
+  },
+  "skill": "reading.apostrophe.contraction_possession",
+  "prereq_skills": ["writing.punctuation.exclamation_comma"],
+  "images": ["apostrophe_dont_johns", "word_dont", "word_do_not", "word_done", "word_cant", "card_siphos_ball", "sipho", "thandi", "gogo", "word_dogs_bone_apostrophe", "word_dogs_bone_plain", "word_its", "word_isnt", "word_mamas_hat", "word_cats_tail", "word_yes", "word_no", "tutor_misreads_gogos"],
+  "show": {
+    "line": "The little flying comma is an apostrophe. Do not becomes don't. John's car means the car belongs to John.",
+    "image": "apostrophe_dont_johns"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which card shows the short way to write do not?", "options": ["word_dont", "word_do_not", "word_done"], "answer": "word_dont", "praise": "Yes! Don't, with an apostrophe."},
+    {"type": "say_it", "prompt": "Read this short word. It means can not.", "accept": ["can't", "cant", "carnt"], "image": "word_cant"},
+    {"type": "listen_tap", "prompt": "Whose ball is it? Read the card. Sipho's ball.", "image": "card_siphos_ball", "options": ["sipho", "thandi", "gogo"], "answer": "sipho", "praise": "Yes! The apostrophe shows it belongs to Sipho."},
+    {"type": "listen_tap", "prompt": "Which card has the apostrophe in the right place for the dog's bone?", "options": ["word_dogs_bone_apostrophe", "word_dogs_bone_plain"], "answer": "word_dogs_bone_apostrophe", "praise": "Yes! The bone belongs to the dog."},
+    {"type": "say_it", "prompt": "Read this. It is short for it is.", "accept": ["it's", "its", "it is"], "image": "word_its"},
+    {"type": "match_sort", "prompt": "Short for two words, or shows who owns it? Put each card in its group.", "groups": ["short_form", "belongs_to"], "items": [{"image": "word_dont", "group": "short_form"}, {"image": "word_cant", "group": "short_form"}, {"image": "word_isnt", "group": "short_form"}, {"image": "word_mamas_hat", "group": "belongs_to"}, {"image": "word_cats_tail", "group": "belongs_to"}]},
+    {"type": "listen_tap", "prompt": "In your opinion, is Sipho's ball a good present? Tap what you think.", "options": ["word_yes", "word_no"], "answer": "word_yes", "praise": "Thank you for sharing your opinion!"}
+  ],
+  "hints": ["The apostrophe takes the place of missing letters. Do not, don't.", "Name, apostrophe, then s means it belongs to that person."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this card. Gogo's hat.",
+    "tutor_try": "This says Gogo is a hat!",
+    "image": "tutor_misreads_gogos",
+    "answer": "belongs to gogo",
+    "win_line": "You caught me! The apostrophe means the hat belongs to Gogo.",
+    "gentle_line": "Let's read it together. Gogo's hat. The hat belongs to Gogo!"
+  },
+  "parent_line": "Can recognise an apostrophe in short forms like don't and in Sipho's ball."
+}

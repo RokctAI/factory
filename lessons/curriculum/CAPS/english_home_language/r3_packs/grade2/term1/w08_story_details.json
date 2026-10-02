@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term1.w08_story_details",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [8, 9],
+  "theme": "Listen for the details",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Reading",
+    "subtopic": "Shared: predicts from visual clues; identifies key details; personal response; focus on language patterns, word identification strategies and comprehension"
+  },
+  "skill": "reading.comprehension.details",
+  "prereq_skills": ["reading.sight_words.set1"],
+  "images": ["storybook_open", "kite_red", "kite_blue", "kite_green", "park", "shop", "school", "face_sad", "face_happy", "face_sleepy", "cover_boy_and_dog", "boy_and_dog", "fish", "car", "neo_with_kite", "oven", "bed", "tree", "tutor_points_shop"],
+  "show": {
+    "line": "Good readers listen for the details. Who is in the story? Where are they? What happens? Let's find out!",
+    "image": "storybook_open"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Neo has a red kite. She takes it to the park. It flies high. What colour is the kite?", "options": ["kite_red", "kite_blue", "kite_green"], "answer": "kite_red", "praise": "Red! Neo has a red kite."},
+    {"type": "story_tap", "prompt": "Listen again.", "story": "Neo has a red kite. She takes it to the park. The wind lifts it high. Where does Neo go?", "options": ["park", "shop", "school"], "answer": "park", "praise": "The park! She takes the kite to the park."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Bongani wakes up late. He runs to the bus. The bus has gone! How does Bongani feel?", "options": ["face_sad", "face_happy", "face_sleepy"], "answer": "face_sad", "praise": "Sad! He missed the bus."},
+    {"type": "listen_tap", "prompt": "Look at the cover. What do you think this book is about?", "image": "cover_boy_and_dog", "options": ["boy_and_dog", "fish", "car"], "answer": "boy_and_dog", "praise": "Yes! The cover shows a boy and his dog."},
+    {"type": "say_it", "prompt": "Neo has a red kite. Who has the kite? Say the name.", "accept": ["neo", "nay oh", "neyo"], "image": "neo_with_kite"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Gogo bakes bread. The kitchen smells sweet. The cat sleeps by the warm oven. Where does the cat sleep?", "options": ["oven", "bed", "tree"], "answer": "oven", "praise": "By the warm oven!"}
+  ],
+  "hints": ["Listen again. The answer is in the story.", "Think about who, where and what."],
+  "beat_the_tutor": {
+    "setup": "My turn! Neo has a red kite. She takes it to the park.",
+    "tutor_try": "Neo took her kite to the shop!",
+    "image": "tutor_points_shop",
+    "answer": "park",
+    "win_line": "You caught me! She took it to the park, not the shop.",
+    "gentle_line": "Let's listen again together. She takes it to the park. The park!"
+  },
+  "parent_line": "Can answer who, where and what questions about a short story."
+}

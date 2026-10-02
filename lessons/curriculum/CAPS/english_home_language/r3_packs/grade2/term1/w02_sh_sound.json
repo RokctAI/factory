@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term1.w02_sh_sound",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [2],
+  "theme": "The sh sound",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Revises (or teaches) the consonant digraph sh"
+  },
+  "skill": "phonics.digraph.sh",
+  "prereq_skills": ["phonics.initial_sound.h", "phonics.word_family.at_og_in"],
+  "images": ["letters_sh_ship", "shoe", "cat", "sun", "brush", "bus", "dog", "shop", "letters_sh", "letters_ch", "letters_th", "ship", "shell", "fish", "tutor_holds_sun"],
+  "show": {
+    "line": "Shh! Two letters make one sound. Ship, shop, shell. They all start with shh. Fish ends with shh!",
+    "image": "letters_sh_ship"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture starts like ship? Shh.", "options": ["shoe", "cat", "sun"], "answer": "shoe", "praise": "Yes! Shh, shoe."},
+    {"type": "say_it", "prompt": "Put your finger on your lips. Say the quiet sound. Shh!", "accept": ["sh", "shh", "shhh", "sha"]},
+    {"type": "listen_tap", "prompt": "Which picture ends like fish? Shh at the end.", "options": ["brush", "bus", "dog"], "answer": "brush", "praise": "Yes! Brush ends with shh."},
+    {"type": "say_it", "prompt": "What is this? It starts with shh.", "accept": ["shop", "a shop", "the shop", "shopp"], "image": "shop"},
+    {"type": "listen_tap", "prompt": "Which two letters make the shh sound?", "options": ["letters_sh", "letters_ch", "letters_th"], "answer": "letters_sh", "praise": "Yes! Those two letters say shh."},
+    {"type": "match_sort", "prompt": "Does it have the shh sound? Put each picture in its group.", "groups": ["sh", "not_sh"], "items": [{"image": "ship", "group": "sh"}, {"image": "shell", "group": "sh"}, {"image": "fish", "group": "sh"}, {"image": "cat", "group": "not_sh"}, {"image": "sun", "group": "not_sh"}]}
+  ],
+  "hints": ["Listen for the quiet sound. Shh, like telling someone to be quiet.", "Say the word slowly. Do you hear shh at the start or the end?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with shh.",
+    "tutor_try": "Sun! Sun starts with shh.",
+    "image": "tutor_holds_sun",
+    "answer": "no",
+    "win_line": "You caught me! Sun starts with sss. Ship starts with shh.",
+    "gentle_line": "Let's listen together. Shh, ship. Ship starts with shh!"
+  },
+  "parent_line": "Can hear and read the sh sound at the start and end of words."
+}

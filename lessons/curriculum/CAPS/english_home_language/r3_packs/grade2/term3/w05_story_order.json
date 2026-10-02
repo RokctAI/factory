@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term3.w05_story_order",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "What happened first?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Reading",
+    "subtopic": "Shared (2-3 sessions a week, at least one text a week): identifies sequence of events and setting; uses the cover to predict"
+  },
+  "skill": "reading.comprehension.sequence",
+  "prereq_skills": ["reading.comprehension.characters_setting"],
+  "images": ["bongi_morning_three_steps", "plants_seed", "waters_plant", "green_shoot", "cover_girl_with_umbrella", "it_rains", "it_snows", "a_lion_roars", "put_on_socks", "put_on_shoes", "tutor_order_wrong"],
+  "show": {
+    "line": "Stories happen in order. First, next, last. First Bongi wakes up. Next she brushes her teeth. Last she eats breakfast.",
+    "image": "bongi_morning_three_steps"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "First Bongi wakes up. Next she brushes her teeth. What happens last?", "sequence": ["wakes up", "brushes teeth"], "options": ["eats breakfast", "goes to sleep", "wakes up"], "answer": "eats breakfast", "praise": "Yes! Last she eats breakfast."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sizwe plants a seed. He waters it every day. A green shoot pops up. What happens first?", "options": ["plants_seed", "waters_plant", "green_shoot"], "answer": "plants_seed", "praise": "Yes! First he plants the seed."},
+    {"type": "story_tap", "prompt": "Listen again.", "story": "Sizwe plants a seed. He waters it every day. A green shoot pops up. What happens last?", "options": ["green_shoot", "plants_seed", "waters_plant"], "answer": "green_shoot", "praise": "Yes! Last, the green shoot pops up."},
+    {"type": "what_next", "prompt": "Making tea. First boil the water. Next pour it in the cup. What comes next?", "sequence": ["boil water", "pour in cup"], "options": ["add milk", "boil water", "buy a cup"], "answer": "add milk", "praise": "Yes! Then you add the milk."},
+    {"type": "listen_tap", "prompt": "Look at the cover. What do you think happens in this book?", "image": "cover_girl_with_umbrella", "options": ["it_rains", "it_snows", "a_lion_roars"], "answer": "it_rains", "praise": "Yes! The umbrella tells us it will rain."},
+    {"type": "listen_tap", "prompt": "Which picture shows what happens first when you get dressed?", "options": ["put_on_socks", "put_on_shoes"], "answer": "put_on_socks", "praise": "Socks first, then shoes!"}
+  ],
+  "hints": ["Think about what has to happen before the next thing can.", "Listen for first, next and last."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will tell Bongi's morning in order.",
+    "tutor_try": "First Bongi eats breakfast. Then she wakes up!",
+    "image": "tutor_order_wrong",
+    "answer": "wakes up first",
+    "win_line": "You caught me! You cannot eat before you wake up. First she wakes up.",
+    "gentle_line": "Let's say it in order together. Wakes up, brushes teeth, eats breakfast!"
+  },
+  "parent_line": "Can put the events of a short story in order and guess what a book is about from its cover."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w07_share_equally",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Sharing equally",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Solve problems in context to 25",
+    "subtopic": "Equal grouping and sharing leading to division that may include remainders (weeks 3-8)"
+  },
+  "skill": "number.share.equal_groups",
+  "prereq_skills": ["number.share.leftovers", "count.skip.10_5_2"],
+  "images": ["sweets_eight_two_plates", "apples_six_two_bowls", "numeral_2", "numeral_5", "numeral_10", "eggs_twelve_three_boxes", "biscuits_nine_three_plates", "numeral_1", "numeral_3", "blocks_four_four", "blocks_six_two", "blocks_five_three", "tutor_shares_unfairly"],
+  "show": {
+    "line": "Share fairly! Eight sweets for two friends. One for you, one for me. Each friend gets four.",
+    "image": "sweets_eight_two_plates"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Six apples shared between two children. Count how many each child gets.", "image": "apples_six_two_bowls", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three each! Six shared by two is three."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Gogo has ten oranges. She shares them between five grandchildren. How many does each one get?", "options": ["numeral_2", "numeral_5", "numeral_10"], "answer": "numeral_2", "praise": "Two each! Ten shared by five is two."},
+    {"type": "count_tap", "prompt": "Twelve eggs go into boxes of four. Count the boxes.", "image": "eggs_twelve_three_boxes", "count": "3", "options": ["3", "4", "6"], "answer": "3", "praise": "Three boxes! Four, eight, twelve."},
+    {"type": "say_it", "prompt": "Nine biscuits shared between three friends. How many each? Say the number.", "accept": ["three", "3", "tree", "free"], "image": "biscuits_nine_three_plates"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho has seven marbles. He shares them fairly between two friends. How many marbles are left over?", "options": ["numeral_1", "numeral_3", "numeral_2"], "answer": "numeral_1", "praise": "One left over! Each friend gets three, and one is left."},
+    {"type": "listen_tap", "prompt": "Which picture shows eight blocks shared equally into two groups?", "options": ["blocks_four_four", "blocks_six_two", "blocks_five_three"], "answer": "blocks_four_four", "praise": "Yes! Four and four. That is fair."}
+  ],
+  "hints": ["Give one to each, then one more to each, until they are all gone.", "Fair means every group has the same number."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will share eight sweets between two friends.",
+    "tutor_try": "Five for you, three for me. Fair!",
+    "image": "tutor_shares_unfairly",
+    "answer": "four each",
+    "win_line": "You caught me! Five and three is not fair. Four and four is fair.",
+    "gentle_line": "Let's share together. One for you, one for me, until they are gone. Four each!"
+  },
+  "parent_line": "Can share objects equally and say how many are left over."
+}

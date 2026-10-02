@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term3.w05_same_and_opposite",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Same and opposite",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Reading",
+    "subtopic": "Shared: identifies some synonyms and antonyms; interprets simple tables such as a calendar"
+  },
+  "skill": "vocabulary.synonyms_antonyms",
+  "prereq_skills": ["reading.sight_words.set2"],
+  "images": ["big_small_elephant_mouse", "word_cold", "word_warm", "word_big", "word_large", "word_small", "word_tall", "arrow_up", "face_sad", "face_happy", "face_sleepy", "little_mouse", "word_quick", "word_speedy", "word_slow", "calendar_week_party_friday", "day_friday", "day_monday", "day_sunday", "tutor_big_large"],
+  "show": {
+    "line": "Big and large mean the same. Big and small are opposites! Hot and cold, happy and sad. Opposites!",
+    "image": "big_small_elephant_mouse"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What is the opposite of hot?", "options": ["word_cold", "word_warm", "word_big"], "answer": "word_cold", "praise": "Yes! Hot and cold are opposites."},
+    {"type": "listen_tap", "prompt": "Which word means the same as big?", "options": ["word_large", "word_small", "word_tall"], "answer": "word_large", "praise": "Yes! Big and large mean the same."},
+    {"type": "say_it", "prompt": "The opposite of up is what? Say it.", "accept": ["down", "doun", "downn"], "image": "arrow_up"},
+    {"type": "listen_tap", "prompt": "Which picture shows the opposite of happy?", "options": ["face_sad", "face_happy", "face_sleepy"], "answer": "face_sad", "praise": "Yes! Sad is the opposite of happy."},
+    {"type": "say_it", "prompt": "Little means the same as what? Say a word.", "accept": ["small", "tiny", "smol", "wee"], "image": "little_mouse"},
+    {"type": "match_sort", "prompt": "Same as fast, or opposite of fast? Put each word in its group.", "groups": ["same", "opposite"], "items": [{"image": "word_quick", "group": "same"}, {"image": "word_speedy", "group": "same"}, {"image": "word_slow", "group": "opposite"}]},
+    {"type": "listen_tap", "prompt": "Look at the calendar. Which day has the party sticker?", "image": "calendar_week_party_friday", "options": ["day_friday", "day_monday", "day_sunday"], "answer": "day_friday", "praise": "Friday! The sticker is on Friday."}
+  ],
+  "hints": ["Opposites are as different as can be. Hot, cold.", "Same means you could swap the words. Big, large."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the opposite of big.",
+    "tutor_try": "The opposite of big is large!",
+    "image": "tutor_big_large",
+    "answer": "small",
+    "win_line": "You caught me! Large means the same as big. The opposite is small.",
+    "gentle_line": "Let's think together. Big elephant, small mouse. Small is the opposite!"
+  },
+  "parent_line": "Can find words that mean the same and words that are opposites."
+}

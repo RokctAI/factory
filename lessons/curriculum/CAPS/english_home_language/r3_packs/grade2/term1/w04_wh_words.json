@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term1.w04_wh_words",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [4, 5],
+  "theme": "Question words",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises 'wh' at the beginning of words (wh-en, wh-y, wh-at)"
+  },
+  "skill": "phonics.digraph.wh",
+  "prereq_skills": ["phonics.initial_sound.w_z", "phonics.digraph.ch_th"],
+  "images": ["letters_wh_question", "word_what", "word_the", "word_was", "word_why", "wheel", "sun", "cat", "letters_wh", "letters_sh", "letters_th", "word_where", "word_when", "tutor_holds_what"],
+  "show": {
+    "line": "When, why, what, where, who. Question words start the same way! Two letters, one sound. Wuh!",
+    "image": "letters_wh_question"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word that starts like when.", "options": ["word_what", "word_the", "word_was"], "answer": "word_what", "praise": "Yes! When, what. Same start."},
+    {"type": "say_it", "prompt": "Read this question word.", "accept": ["why", "wye", "wai"], "image": "word_why"},
+    {"type": "listen_tap", "prompt": "Which picture starts like what?", "options": ["wheel", "sun", "cat"], "answer": "wheel", "praise": "Yes! What, wheel."},
+    {"type": "listen_tap", "prompt": "Which two letters start the word where?", "options": ["letters_wh", "letters_sh", "letters_th"], "answer": "letters_wh", "praise": "Yes! Those two letters start where."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Mama asks, where is your shoe? Thabo looks. It is under the bed. Which question word did Mama use?", "options": ["word_where", "word_when", "word_why"], "answer": "word_where", "praise": "Where! Where is your shoe?"},
+    {"type": "say_it", "prompt": "Read this question word.", "accept": ["when", "wen", "whenn"], "image": "word_when"}
+  ],
+  "hints": ["Question words start with the same two letters. When, why, what.", "Look at the first two letters of the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this question word.",
+    "tutor_try": "This word says when!",
+    "image": "tutor_holds_what",
+    "answer": "what",
+    "win_line": "You caught me! That word is what. What, not when.",
+    "gentle_line": "Let's read it together. What. What is your name?"
+  },
+  "parent_line": "Can read question words that start with wh: when, why, what, where, who."
+}

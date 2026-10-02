@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term3.w01_double_letters",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Doll, fuss, buzz",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises double consonants ll, ss, zz at the end of words (do-ll, fu-ss, buzz)"
+  },
+  "skill": "phonics.double_consonant.ll_ss_zz",
+  "prereq_skills": ["phonics.build_words.3_4_letters"],
+  "images": ["doll_bell_buzz", "word_bell", "word_bed", "word_belt", "word_buzz", "dress", "doll", "bell", "word_hill", "bee_says_gap", "word_bus", "word_ball", "word_dress", "word_miss", "word_fizz", "tutor_writes_dol"],
+  "show": {
+    "line": "Doll, bell, hill. Two letters the same at the end, one sound. Fuss, kiss, hiss. Buzz, fizz, jazz!",
+    "image": "doll_bell_buzz"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word card says bell? Look for the two letters the same at the end.", "options": ["word_bell", "word_bed", "word_belt"], "answer": "word_bell", "praise": "Yes! Bell, with a double letter at the end."},
+    {"type": "say_it", "prompt": "Read this word. It ends with a buzzing sound.", "accept": ["buzz", "buz", "bus"], "image": "word_buzz"},
+    {"type": "listen_tap", "prompt": "Which picture ends like kiss? Sss at the end.", "options": ["dress", "doll", "bell"], "answer": "dress", "praise": "Yes! Kiss, dress. Same ending."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["hill", "hil", "a hill"], "image": "word_hill"},
+    {"type": "listen_tap", "prompt": "Which word is missing? The bee says, gap.", "image": "bee_says_gap", "options": ["word_buzz", "word_bus", "word_ball"], "answer": "word_buzz", "praise": "Buzz! The bee says buzz."},
+    {"type": "match_sort", "prompt": "Ends like doll, like kiss, or like buzz? Put each word in its group.", "groups": ["ll", "ss", "zz"], "items": [{"image": "word_bell", "group": "ll"}, {"image": "word_hill", "group": "ll"}, {"image": "word_dress", "group": "ss"}, {"image": "word_miss", "group": "ss"}, {"image": "word_fizz", "group": "zz"}]}
+  ],
+  "hints": ["Two letters the same at the end make just one sound.", "Say the word slowly. Listen to the last sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write the word doll.",
+    "tutor_try": "d-o-l. Doll! Look, I wrote it.",
+    "image": "tutor_writes_dol",
+    "answer": "no",
+    "win_line": "You caught me! Doll needs two of the last letter. d-o-l-l.",
+    "gentle_line": "Let's write it together. Two letters the same at the end. Doll!"
+  },
+  "parent_line": "Can read and spell words that end with a double letter, like doll, kiss and buzz."
+}

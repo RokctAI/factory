@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term3.w05_full_and_empty",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "How much does it hold?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Measurement: Capacity",
+    "subtopic": "Estimate, measure, compare, order and record capacity of containers using non-standard measures"
+  },
+  "skill": "measure.capacity.compare",
+  "prereq_skills": ["measure.mass.compare"],
+  "images": ["bucket_and_cup", "bath", "cup", "spoon", "glass_full", "glass_half", "glass_empty", "bottle_empty", "jug_six_cups", "glass_quarter", "tutor_spoon_bucket"],
+  "show": {
+    "line": "How much does it hold? The bucket holds a lot. The cup holds a little. The bucket holds more!",
+    "image": "bucket_and_cup"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one holds the most water?", "options": ["bath", "cup", "spoon"], "answer": "bath", "praise": "Yes! The bath holds the most."},
+    {"type": "listen_tap", "prompt": "Which glass is full?", "options": ["glass_full", "glass_half", "glass_empty"], "answer": "glass_full", "praise": "Yes! That glass is full to the top."},
+    {"type": "say_it", "prompt": "Look at this bottle. Is it full or empty? Say it.", "accept": ["empty", "it is empty", "emty", "empy"], "image": "bottle_empty"},
+    {"type": "count_tap", "prompt": "Fill the jug with cups. Count the cups it took. How many cups?", "image": "jug_six_cups", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six cups fill the jug!"},
+    {"type": "listen_tap", "prompt": "Which glass has less juice?", "options": ["glass_quarter", "glass_full"], "answer": "glass_quarter", "praise": "Yes! That glass has less."},
+    {"type": "what_next", "prompt": "Put them in order. Empty, half full, then what comes next?", "sequence": ["empty", "half full"], "options": ["full", "empty"], "answer": "full", "praise": "Full! Empty, half full, full."}
+  ],
+  "hints": ["Big containers hold more. Small ones hold less.", "Full means right to the top. Empty means nothing inside."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say which holds more.",
+    "tutor_try": "The spoon holds more than the bucket!",
+    "image": "tutor_spoon_bucket",
+    "answer": "bucket",
+    "win_line": "You caught me! The bucket holds much more than a spoon.",
+    "gentle_line": "Let's look together. The bucket is big. It holds more!"
+  },
+  "parent_line": "Can compare how much containers hold using more, less, full and empty."
+}

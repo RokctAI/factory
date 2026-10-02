@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w05_roll_or_slide",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Roll or slide",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Space and shape: 3D objects",
+    "subtopic": "Investigate which objects roll or slide (spheres, prisms); straight and curved sides"
+  },
+  "skill": "geometry.3d.roll_slide_sides",
+  "prereq_skills": ["geometry.roll_slide", "geometry.3d.box"],
+  "images": ["ball_and_box_ramp", "ball", "box", "book", "brick", "orange", "marble", "tin_on_side", "tin", "dice", "box_six_faces", "tutor_rolls_box"],
+  "show": {
+    "line": "A ball is a sphere. It is round all over, so it rolls. A box has flat sides. It slides.",
+    "image": "ball_and_box_ramp"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which object will roll down the ramp?", "options": ["ball", "box", "book"], "answer": "ball", "praise": "Yes! The ball is round, so it rolls."},
+    {"type": "listen_tap", "prompt": "Which object slides but does not roll?", "options": ["brick", "orange", "marble"], "answer": "brick", "praise": "Yes! The brick has flat sides. It slides."},
+    {"type": "say_it", "prompt": "Look at this tin. Can it roll? Say yes or no.", "accept": ["yes", "it can", "yes it can", "ja"], "image": "tin_on_side"},
+    {"type": "listen_tap", "prompt": "Which object has curved sides and flat sides? It rolls and it slides.", "options": ["tin", "dice", "ball"], "answer": "tin", "praise": "Yes! A tin has a curved side and two flat ends."},
+    {"type": "match_sort", "prompt": "Does it roll, or does it slide? Put each object in its group.", "groups": ["rolls", "slides"], "items": [{"image": "ball", "group": "rolls"}, {"image": "orange", "group": "rolls"}, {"image": "marble", "group": "rolls"}, {"image": "box", "group": "slides"}, {"image": "dice", "group": "slides"}]},
+    {"type": "count_tap", "prompt": "Count the flat sides on this box. How many?", "image": "box_six_faces", "count": "6", "options": ["4", "6", "8"], "answer": "6", "praise": "Six flat sides!"}
+  ],
+  "hints": ["Round things roll. Flat sides slide.", "Think about pushing it down a slide. Does it tumble or glide?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say which one rolls.",
+    "tutor_try": "The box rolls down the ramp!",
+    "image": "tutor_rolls_box",
+    "answer": "ball",
+    "win_line": "You caught me! The box slides. The ball rolls.",
+    "gentle_line": "Let's push them together. The ball rolls away. The box slides!"
+  },
+  "parent_line": "Can say which objects roll or slide, and why."
+}

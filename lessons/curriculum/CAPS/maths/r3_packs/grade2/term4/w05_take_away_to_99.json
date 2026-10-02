@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term4.w05_take_away_to_99",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Adding and taking away to 99",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Context-free calculations to 99",
+    "subtopic": "Addition and subtraction to 75 (weeks 1-2), 80 (weeks 3-4) and 99 (weeks 5-10) using +, -, = and □"
+  },
+  "skill": "number.add_subtract.to_99",
+  "prereq_skills": ["number.add_subtract.to_75", "number.bonds.to_20"],
+  "images": ["sticks_67_minus_23", "numeral_32", "numeral_84", "numeral_38", "numeral_78", "numeral_68", "numeral_88", "sticks_99", "sticks_80_minus_10", "numeral_43", "numeral_53", "numeral_127", "numeral_6", "numeral_4", "numeral_16", "numeral_82", "numeral_22", "numeral_72", "tutor_adds_instead"],
+  "show": {
+    "line": "Sixty-seven take away twenty-three. Take the tens: sixty-seven, forty-seven. Take the ones: forty-four!",
+    "image": "sticks_67_minus_23"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Fifty-eight take away twenty-six. Take the tens, then the ones. What is left?", "options": ["numeral_32", "numeral_84", "numeral_38"], "answer": "numeral_32", "praise": "Thirty-two! Fifty-eight, thirty-eight, thirty-two."},
+    {"type": "listen_tap", "prompt": "Forty-three plus thirty-five. What is the answer?", "options": ["numeral_78", "numeral_68", "numeral_88"], "answer": "numeral_78", "praise": "Seventy-eight! Seventy and eight."},
+    {"type": "count_tap", "prompt": "Nine tens and nine ones. Count all the sticks. What is the biggest two-digit number?", "image": "sticks_99", "count": "99", "options": ["90", "99", "100"], "answer": "99", "praise": "Ninety-nine!"},
+    {"type": "say_it", "prompt": "Eighty take away ten. Say the answer.", "accept": ["seventy", "70", "sevendy"], "image": "sticks_80_minus_10"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "There are eighty-five chairs in the hall. Forty-two children sit down. How many chairs are still empty?", "options": ["numeral_43", "numeral_53", "numeral_127"], "answer": "numeral_43", "praise": "Forty-three empty chairs!"},
+    {"type": "listen_tap", "prompt": "Sixty-four plus what equals seventy? Tap the missing number.", "options": ["numeral_6", "numeral_4", "numeral_16"], "answer": "numeral_6", "praise": "Six! Sixty-four and six make seventy."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lindiwe reads fifty-two pages on Monday and thirty pages on Tuesday. How many pages in all?", "options": ["numeral_82", "numeral_22", "numeral_72"], "answer": "numeral_82", "praise": "Eighty-two pages!"}
+  ],
+  "hints": ["Take away the tens first. Then take away the ones.", "Break the numbers into tens and ones, then put them back together."],
+  "beat_the_tutor": {
+    "setup": "My turn! Seventy-six take away thirty-two.",
+    "tutor_try": "Seventy-six take away thirty is forty-six. Take two more. Forty-eight!",
+    "image": "tutor_adds_instead",
+    "answer": "forty-four",
+    "win_line": "You caught me! I added the two. Forty-six take away two is forty-four.",
+    "gentle_line": "Let's take the ones away together. Forty-six, forty-five, forty-four!"
+  },
+  "parent_line": "Can add and take away two-digit numbers up to 99."
+}

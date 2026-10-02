@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term2.w02_str_blends",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [2, 3],
+  "theme": "Three sounds together",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises 3-letter consonant blends at the beginning of words (str-ip, str-ap)"
+  },
+  "skill": "phonics.blend.three_letter_initial",
+  "prereq_skills": ["phonics.blend.initial_final"],
+  "images": ["string_street_strap", "string", "sting", "ring", "strap_sounds", "spring", "spoon", "scrub_sounds", "word_street", "word_sweet", "word_steep", "strap", "straw", "sprout", "tutor_drops_s"],
+  "show": {
+    "line": "Three sounds stuck together! s-t-r. Strip, strap, string, street. Say them fast!",
+    "image": "string_street_strap"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Listen. s-t-r. Which picture starts with s-t-r?", "options": ["string", "sting", "ring"], "answer": "string", "praise": "Yes! s-t-r, string."},
+    {"type": "say_it", "prompt": "Listen. s-t-r-a-p. Put the sounds together. What word is it?", "accept": ["strap", "a strap", "strapp"], "image": "strap_sounds"},
+    {"type": "listen_tap", "prompt": "Listen. s-p-r. Which picture starts with s-p-r?", "options": ["spring", "spoon", "ring"], "answer": "spring", "praise": "Yes! s-p-r, spring."},
+    {"type": "say_it", "prompt": "Listen. s-c-r-u-b. What word is it?", "accept": ["scrub", "skrub", "scrubb"], "image": "scrub_sounds"},
+    {"type": "listen_tap", "prompt": "Which word card says street?", "options": ["word_street", "word_sweet", "word_steep"], "answer": "word_street", "praise": "Yes! Street starts with s-t-r."},
+    {"type": "match_sort", "prompt": "Starts with s-t-r, or starts with s-p-r? Put each picture in its group.", "groups": ["str", "spr"], "items": [{"image": "string", "group": "str"}, {"image": "strap", "group": "str"}, {"image": "straw", "group": "str"}, {"image": "spring", "group": "spr"}, {"image": "sprout", "group": "spr"}]}
+  ],
+  "hints": ["Say the three sounds slowly, then faster, until they join.", "Listen to the very start of the word. Three sounds before the vowel."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will put these sounds together. s-t-r-i-p.",
+    "tutor_try": "s-t-r-i-p. Trip!",
+    "image": "tutor_drops_s",
+    "answer": "strip",
+    "win_line": "You caught me! I dropped the first sound. s-t-r-i-p says strip.",
+    "gentle_line": "Let's say the sounds together. s-t-r-i-p. Strip!"
+  },
+  "parent_line": "Can blend three consonant sounds at the start of a word, like str and spr."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term3.w01_number_patterns",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Number patterns",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Patterns, functions and algebra: Geometric and number patterns",
+    "subtopic": "Number patterns: copy, extend and describe to 150 (multiples of 10, 5, 2, 3, 4); create own number patterns"
+  },
+  "skill": "pattern.number.extend",
+  "prereq_skills": ["count.skip.10_5_2", "count.to_150"],
+  "images": ["number_pattern_threes", "rule_add_5", "rule_add_2", "rule_add_10", "number_pattern_twos_gap", "number_pattern_tens_gap", "numeral_50", "numeral_45", "numeral_70", "tutor_wrong_jump"],
+  "show": {
+    "line": "A number pattern has a rule. Three, six, nine, twelve. Each number is three more. The rule is add three!",
+    "image": "number_pattern_threes"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Three, six, nine, twelve. What comes next?", "sequence": ["3", "6", "9", "12"], "options": ["15", "13", "18"], "answer": "15", "praise": "Fifteen! Add three each time."},
+    {"type": "what_next", "prompt": "Four, eight, twelve, sixteen. What comes next?", "sequence": ["4", "8", "12", "16"], "options": ["20", "17", "24"], "answer": "20", "praise": "Twenty! Counting in fours."},
+    {"type": "what_next", "prompt": "Count in tens from a hundred. One hundred and ten, one hundred and twenty. What comes next?", "sequence": ["100", "110", "120"], "options": ["130", "121", "200"], "answer": "130", "praise": "One hundred and thirty!"},
+    {"type": "listen_tap", "prompt": "Five, ten, fifteen, twenty. What is the rule of this pattern?", "options": ["rule_add_5", "rule_add_2", "rule_add_10"], "answer": "rule_add_5", "praise": "Yes! Add five each time."},
+    {"type": "what_next", "prompt": "The pattern goes backwards. Fifty, forty-five, forty. What comes next?", "sequence": ["50", "45", "40"], "options": ["35", "30", "39"], "answer": "35", "praise": "Thirty-five! Take away five each time."},
+    {"type": "say_it", "prompt": "Two, four, six, eight, ten. Say the missing number after ten.", "accept": ["twelve", "12", "twelf"], "image": "number_pattern_twos_gap"},
+    {"type": "listen_tap", "prompt": "Which number is missing? Thirty, forty, gap, sixty.", "image": "number_pattern_tens_gap", "options": ["numeral_50", "numeral_45", "numeral_70"], "answer": "numeral_50", "praise": "Fifty! Thirty, forty, fifty, sixty."}
+  ],
+  "hints": ["Find the jump. How much more is each number than the one before?", "Say the pattern out loud and keep the same jump."],
+  "beat_the_tutor": {
+    "setup": "My turn! Six, nine, twelve. I will say what comes next.",
+    "tutor_try": "Six, nine, twelve, fourteen!",
+    "image": "tutor_wrong_jump",
+    "answer": "fifteen",
+    "win_line": "You caught me! The jump is three. Twelve and three is fifteen.",
+    "gentle_line": "Let's add three together. Twelve, thirteen, fourteen, fifteen. Fifteen!"
+  },
+  "parent_line": "Can continue a number pattern and say its rule."
+}

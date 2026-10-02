@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term3.w07_compare_numbers",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Bigger and smaller numbers",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 75",
+    "subtopic": "Describe and compare numbers to 50, 60, 70 and 75 across the term: smaller than, greater than"
+  },
+  "skill": "number.compare.to_75",
+  "prereq_skills": ["place_value.tens_ones.to_50", "count.to_150"],
+  "images": ["compare_47_62", "numeral_58", "numeral_35", "numeral_29", "numeral_41", "numeral_50", "compare_63_68", "numeral_70", "numeral_68", "numeral_79", "numeral_65", "numeral_74", "numeral_85", "card_43", "card_18", "card_67", "card_52", "card_75", "tutor_compares_ones"],
+  "show": {
+    "line": "Which is greater, forty-seven or sixty-two? Look at the tens first. Six tens beat four tens. Sixty-two is greater!",
+    "image": "compare_47_62"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which number is greater?", "options": ["numeral_58", "numeral_35"], "answer": "numeral_58", "praise": "Fifty-eight! Five tens is more than three tens."},
+    {"type": "listen_tap", "prompt": "Which number is smaller than forty?", "options": ["numeral_29", "numeral_41", "numeral_50"], "answer": "numeral_29", "praise": "Twenty-nine is smaller than forty."},
+    {"type": "say_it", "prompt": "Sixty-three and sixty-eight. Which one is greater? Say the number.", "accept": ["sixty-eight", "sixty eight", "68"], "image": "compare_63_68"},
+    {"type": "what_next", "prompt": "Put them in order from smallest to greatest. Twenty-one, thirty-six, fifty. Which number comes next?", "sequence": ["21", "36", "50"], "options": ["74", "19", "45"], "answer": "74", "praise": "Seventy-four! It is the greatest of all."},
+    {"type": "listen_tap", "prompt": "Which number is one more than sixty-nine?", "options": ["numeral_70", "numeral_68", "numeral_79"], "answer": "numeral_70", "praise": "Seventy! Sixty-nine, seventy."},
+    {"type": "listen_tap", "prompt": "Which number is ten less than seventy-five?", "options": ["numeral_65", "numeral_74", "numeral_85"], "answer": "numeral_65", "praise": "Sixty-five! Ten less than seventy-five."},
+    {"type": "match_sort", "prompt": "Smaller than fifty, or greater than fifty? Put each number in its group.", "groups": ["smaller_than_50", "greater_than_50"], "items": [{"image": "card_43", "group": "smaller_than_50"}, {"image": "card_18", "group": "smaller_than_50"}, {"image": "card_67", "group": "greater_than_50"}, {"image": "card_52", "group": "greater_than_50"}, {"image": "card_75", "group": "greater_than_50"}]}
+  ],
+  "hints": ["Look at the tens digit first. More tens means a greater number.", "If the tens are the same, look at the ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say which is greater, thirty-nine or forty-one.",
+    "tutor_try": "Thirty-nine is greater. Nine is a big number!",
+    "image": "tutor_compares_ones",
+    "answer": "forty-one",
+    "win_line": "You caught me! Look at the tens first. Four tens beat three tens. Forty-one is greater.",
+    "gentle_line": "Let's look at the tens together. Three tens, four tens. Forty-one is greater!"
+  },
+  "parent_line": "Can say which of two numbers up to 75 is greater or smaller."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term2.w01_months_of_the_year",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Months of the year",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Measurement: Time",
+    "subtopic": "Know the sequence of months of the year; place birthdays on a calendar"
+  },
+  "skill": "time.months.order",
+  "prereq_skills": ["time.day_parts"],
+  "images": ["calendar_year", "month_january", "month_december", "month_june", "calendar_june", "month_november", "month_april", "month_march", "month_may", "tutor_skips_june"],
+  "show": {
+    "line": "A year has twelve months. January, February, March, April, May, June. July, August, September, October, November, December!",
+    "image": "calendar_year"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "January, February, March. Which month comes next?", "sequence": ["January", "February", "March"], "options": ["April", "June", "May"], "answer": "April", "praise": "April! January, February, March, April."},
+    {"type": "listen_tap", "prompt": "Which month is the first month of the year?", "options": ["month_january", "month_december", "month_june"], "answer": "month_january", "praise": "Yes! January starts the year."},
+    {"type": "say_it", "prompt": "Which month comes after June? Say the month.", "accept": ["july", "joo lie", "jew lie"], "image": "calendar_june"},
+    {"type": "what_next", "prompt": "September, October, November. Which month comes next?", "sequence": ["September", "October", "November"], "options": ["December", "January", "August"], "answer": "December", "praise": "December! The last month of the year."},
+    {"type": "listen_tap", "prompt": "Which month is the last month of the year?", "options": ["month_december", "month_january", "month_november"], "answer": "month_december", "praise": "Yes! December ends the year."},
+    {"type": "count_tap", "prompt": "Count the months on the calendar. How many months in a year?", "image": "calendar_year", "count": "12", "options": ["10", "12", "7"], "answer": "12", "praise": "Twelve months in a year!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thabo's birthday is in the month after March. In which month is Thabo's birthday?", "options": ["month_april", "month_march", "month_may"], "answer": "month_april", "praise": "April! The month after March is April."}
+  ],
+  "hints": ["Say the months song from January. Stop at the one you need.", "December is last. January is first."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say the months after April.",
+    "tutor_try": "April, May, July!",
+    "image": "tutor_skips_june",
+    "answer": "june",
+    "win_line": "You caught me! I skipped June. April, May, June, July.",
+    "gentle_line": "Let's say them together. April, May, June, July!"
+  },
+  "parent_line": "Can say the months of the year in order."
+}

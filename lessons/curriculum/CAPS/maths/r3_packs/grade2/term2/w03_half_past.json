@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term2.w03_half_past",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Half past",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Measurement: Time",
+    "subtopic": "Tell 12-hour time in hours and half hours on an analogue clock"
+  },
+  "skill": "time.read.half_past",
+  "prereq_skills": ["time.read.o_clock"],
+  "images": ["clock_half_past_two", "clock_half_past_four", "clock_four_oclock", "clock_half_past_ten", "clock_half_past_seven", "hand_points_six", "hand_points_twelve", "hand_points_three", "clock_half_past_nine", "word_half_past", "word_oclock", "clock_half_past_eight", "tutor_half_past_three_wrong"],
+  "show": {
+    "line": "Long hand down on six means half past. The short hand is between two and three. Half past two!",
+    "image": "clock_half_past_two"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which clock shows half past four?", "options": ["clock_half_past_four", "clock_four_oclock", "clock_half_past_ten"], "answer": "clock_half_past_four", "praise": "Yes! Long hand on six, short hand past four."},
+    {"type": "say_it", "prompt": "Look at the clock. What time is it? Say the time.", "accept": ["half past seven", "half past 7", "seven thirty", "half seven"], "image": "clock_half_past_seven"},
+    {"type": "listen_tap", "prompt": "Where does the long hand point at half past?", "options": ["hand_points_six", "hand_points_twelve", "hand_points_three"], "answer": "hand_points_six", "praise": "Yes! Down to six for half past."},
+    {"type": "listen_tap", "prompt": "Is this clock o'clock or half past? Tap the word.", "image": "clock_half_past_nine", "options": ["word_half_past", "word_oclock"], "answer": "word_half_past", "praise": "Half past! Half past nine."},
+    {"type": "say_it", "prompt": "Bedtime is at this time. What time is it?", "accept": ["half past eight", "half past 8", "eight thirty", "half eight"], "image": "clock_half_past_eight"},
+    {"type": "what_next", "prompt": "One o'clock, half past one, two o'clock. What time comes next?", "sequence": ["1 o'clock", "half past 1", "2 o'clock"], "options": ["half past 2", "3 o'clock", "half past 1"], "answer": "half past 2", "praise": "Half past two! O'clock, half past, o'clock, half past."}
+  ],
+  "hints": ["Long hand on six means half past.", "Look where the short hand has just come from. That is the hour."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this clock.",
+    "tutor_try": "The long hand is on six. It is six o'clock!",
+    "image": "tutor_half_past_three_wrong",
+    "answer": "half past three",
+    "win_line": "You caught me! Long hand on six means half past. It is half past three.",
+    "gentle_line": "Let's look together. Long hand on six, short hand past three. Half past three!"
+  },
+  "parent_line": "Can read half past times on a clock with hands."
+}

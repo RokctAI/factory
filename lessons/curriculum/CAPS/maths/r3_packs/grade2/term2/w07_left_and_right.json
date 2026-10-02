@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term2.w07_left_and_right",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Left and right",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Space and shape: Position, directions and 2D shapes",
+    "subtopic": "Language of position: in front of, behind, left, right, up, down, next to, on top of"
+  },
+  "skill": "space.position.left_right",
+  "prereq_skills": ["space.position_words"],
+  "images": ["cat_left_dog_right", "cat", "dog", "ball_behind_box", "ball_in_front_of_box", "ball_on_box", "bird_on_tree", "hand_right", "hand_left", "children_line_teacher", "child_next_to_teacher", "child_far_from_teacher", "park", "shop", "school"],
+  "show": {
+    "line": "My left hand, my right hand. The cat is on the left. The dog is on the right!",
+    "image": "cat_left_dog_right"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which animal is on the left?", "image": "cat_left_dog_right", "options": ["cat", "dog"], "answer": "cat", "praise": "Yes! The cat is on the left."},
+    {"type": "listen_tap", "prompt": "Where is the ball? Tap the picture where the ball is behind the box.", "options": ["ball_behind_box", "ball_in_front_of_box", "ball_on_box"], "answer": "ball_behind_box", "praise": "Yes! The ball is behind the box."},
+    {"type": "say_it", "prompt": "Look. Is the bird on top of the tree or under the tree?", "accept": ["on top", "on top of the tree", "on top of", "top"], "image": "bird_on_tree"},
+    {"type": "listen_tap", "prompt": "Which hand is the right hand?", "options": ["hand_right", "hand_left"], "answer": "hand_right", "praise": "Yes! That is the right hand."},
+    {"type": "listen_tap", "prompt": "Which child is standing next to the teacher?", "image": "children_line_teacher", "options": ["child_next_to_teacher", "child_far_from_teacher"], "answer": "child_next_to_teacher", "praise": "Yes! Next to means right beside."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lebo walks. The shop is on her left. The park is on her right. What is on her right?", "options": ["park", "shop", "school"], "answer": "park", "praise": "The park! It is on her right."}
+  ],
+  "hints": ["Hold up your hands. Your left hand makes an L shape with its thumb.", "In front means you can see it first. Behind means it is hidden at the back."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say where the dog is.",
+    "tutor_try": "The dog is on the left!",
+    "image": "cat_left_dog_right",
+    "answer": "right",
+    "win_line": "You caught me! The dog is on the right. The cat is on the left.",
+    "gentle_line": "Let's look together. Cat on the left, dog on the right!"
+  },
+  "parent_line": "Can use left, right, in front of, behind, next to and on top of."
+}

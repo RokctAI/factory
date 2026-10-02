@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term2.w09_heavy_and_light",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Heavier and lighter",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Measurement: Mass",
+    "subtopic": "Talk about the comparison: light, heavy, lighter, heavier"
+  },
+  "skill": "measure.mass.compare",
+  "prereq_skills": ["measure.mass.heavy_light"],
+  "images": ["scale_brick_feather", "watermelon", "grape", "scale_apple_down_leaf_up", "side_down", "side_up", "pillow_and_rock", "scale_book_five_blocks", "elephant", "car", "brick", "feather", "balloon", "tutor_lifts_feather"],
+  "show": {
+    "line": "A balance scale! The heavy side goes down. The light side goes up. The brick is heavier than the feather.",
+    "image": "scale_brick_feather"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is heavier, the watermelon or the grape?", "options": ["watermelon", "grape"], "answer": "watermelon", "praise": "Yes! The watermelon is heavier."},
+    {"type": "listen_tap", "prompt": "Look at the scale. Which side has the heavier thing?", "image": "scale_apple_down_leaf_up", "options": ["side_down", "side_up"], "answer": "side_down", "praise": "Yes! The heavy side goes down."},
+    {"type": "say_it", "prompt": "A pillow and a rock. Which one is lighter? Say it.", "accept": ["pillow", "the pillow", "a pillow", "pilo"], "image": "pillow_and_rock"},
+    {"type": "count_tap", "prompt": "The book balances the blocks. Count the blocks. How many blocks heavy is the book?", "image": "scale_book_five_blocks", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five blocks heavy!"},
+    {"type": "match_sort", "prompt": "Heavy or light? Put each one in its group.", "groups": ["heavy", "light"], "items": [{"image": "elephant", "group": "heavy"}, {"image": "car", "group": "heavy"}, {"image": "brick", "group": "heavy"}, {"image": "feather", "group": "light"}, {"image": "balloon", "group": "light"}]},
+    {"type": "what_next", "prompt": "Put them in order. Light, heavier, then what comes next?", "sequence": ["light", "heavier"], "options": ["heaviest", "lightest"], "answer": "heaviest", "praise": "Heaviest! Light, heavier, heaviest."}
+  ],
+  "hints": ["Think about lifting it. Does your arm go down?", "On a scale, the heavy side goes down."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say which is heavier.",
+    "tutor_try": "The feather is heavier than the brick!",
+    "image": "tutor_lifts_feather",
+    "answer": "brick",
+    "win_line": "You caught me! The brick is heavier. The feather is light.",
+    "gentle_line": "Let's try the scale together. The brick side goes down. Heavier!"
+  },
+  "parent_line": "Can compare masses using heavier and lighter."
+}

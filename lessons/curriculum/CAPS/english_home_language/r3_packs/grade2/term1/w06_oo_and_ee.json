@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term1.w06_oo_and_ee",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [6, 7],
+  "theme": "The oo and ee sounds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises vowel digraphs 'oo' (moon) and 'ee' (tree)"
+  },
+  "skill": "phonics.vowel_digraph.oo_ee",
+  "prereq_skills": ["phonics.digraph.sh", "phonics.blend.initial_final"],
+  "images": ["moon_and_tree", "spoon", "tree", "cat", "bee", "boot", "dog", "word_boot", "word_feet", "word_moon", "word_man", "word_meet", "roof", "feet", "sheep", "tutor_holds_tree"],
+  "show": {
+    "line": "Moon, spoon, boot. Hear the oo in the middle? Tree, bee, feet. Hear the ee? Two letters, one sound!",
+    "image": "moon_and_tree"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture has the oo sound, like moon?", "options": ["spoon", "tree", "cat"], "answer": "spoon", "praise": "Yes! Moon, spoon. Oo."},
+    {"type": "listen_tap", "prompt": "Which picture has the ee sound, like tree?", "options": ["bee", "boot", "dog"], "answer": "bee", "praise": "Yes! Tree, bee. Ee."},
+    {"type": "say_it", "prompt": "Read this word. It has oo in the middle.", "accept": ["boot", "boots", "a boot", "boat"], "image": "word_boot"},
+    {"type": "say_it", "prompt": "Read this word. It has ee in the middle.", "accept": ["feet", "feat", "fit"], "image": "word_feet"},
+    {"type": "listen_tap", "prompt": "Which word card says moon?", "options": ["word_moon", "word_man", "word_meet"], "answer": "word_moon", "praise": "Yes! Moon, with oo in the middle."},
+    {"type": "match_sort", "prompt": "Oo like moon, or ee like tree? Put each picture in its group.", "groups": ["oo", "ee"], "items": [{"image": "spoon", "group": "oo"}, {"image": "boot", "group": "oo"}, {"image": "roof", "group": "oo"}, {"image": "bee", "group": "ee"}, {"image": "feet", "group": "ee"}, {"image": "sheep", "group": "ee"}]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with moon?", "options": ["spoon", "sheep", "boot"], "answer": "spoon", "praise": "Moon, spoon! They rhyme."}
+  ],
+  "hints": ["Stretch the middle of the word. Moooon. Treeee.", "Two letters the same, side by side, make one long sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word with oo like moon.",
+    "tutor_try": "Tree! Tree has oo.",
+    "image": "tutor_holds_tree",
+    "answer": "no",
+    "win_line": "You caught me! Tree has ee. Spoon has oo like moon.",
+    "gentle_line": "Let's listen together. Moon, spoon. Oo in the middle!"
+  },
+  "parent_line": "Can hear and read the oo and ee sounds in the middle of words."
+}

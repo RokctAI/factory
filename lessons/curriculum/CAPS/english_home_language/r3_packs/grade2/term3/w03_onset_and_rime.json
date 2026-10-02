@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term3.w03_onset_and_rime",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Change the start",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises onset and rime in more complex patterns (dr-eam, cr-eam, scr-eam, str-eam)"
+  },
+  "skill": "phonics.onset_rime.complex",
+  "prereq_skills": ["phonics.blend.three_letter_initial", "phonics.word_family.at_og_in"],
+  "images": ["dream_cream_stream", "scream", "drum", "star", "stream", "word_dream", "word_drum", "word_cream", "drain", "word_drip", "word_stream", "word_scream", "word_brain", "word_drain", "tutor_says_scram"],
+  "show": {
+    "line": "Dream, cream, scream, stream. Keep the end the same. Change the start. A whole family of words!",
+    "image": "dream_cream_stream"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Dream, cream, stream. Which picture belongs to this family?", "options": ["scream", "drum", "star"], "answer": "scream", "praise": "Yes! Scream ends like dream."},
+    {"type": "say_it", "prompt": "Cream. Take off the start and put on s-t-r. What word is it?", "accept": ["stream", "streem", "a stream"], "image": "stream"},
+    {"type": "listen_tap", "prompt": "Which word card says dream?", "options": ["word_dream", "word_drum", "word_cream"], "answer": "word_dream", "praise": "Yes! Dream."},
+    {"type": "say_it", "prompt": "Train, brain. Change the start to d-r. What word is it?", "accept": ["drain", "drane", "a drain"], "image": "drain"},
+    {"type": "listen_tap", "prompt": "Which word does not belong with dream and cream?", "options": ["word_drip", "word_stream", "word_scream"], "answer": "word_drip", "praise": "Yes! Drip has a different ending."},
+    {"type": "match_sort", "prompt": "Ends like dream, or ends like train? Put each word in its group.", "groups": ["eam", "ain"], "items": [{"image": "word_cream", "group": "eam"}, {"image": "word_stream", "group": "eam"}, {"image": "word_scream", "group": "eam"}, {"image": "word_brain", "group": "ain"}, {"image": "word_drain", "group": "ain"}]}
+  ],
+  "hints": ["Cover the start of the word. Does the rest sound like dream?", "Say the new start, then the old ending. Push them together."],
+  "beat_the_tutor": {
+    "setup": "My turn! Dream. I will change the start to s-c-r.",
+    "tutor_try": "s-c-r, then the end of dream. Scram!",
+    "image": "tutor_says_scram",
+    "answer": "scream",
+    "win_line": "You caught me! Keep the ending the same. Scream, like dream.",
+    "gentle_line": "Let's say it together. s-c-r, then the end of dream. Scream!"
+  },
+  "parent_line": "Can make new words by changing the start and keeping the ending, like dream, cream and stream."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term1.w03_tens_and_ones",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Tens and ones",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Numbers, operations and relationships: Place value (numbers between 11 and 25)",
+    "subtopic": "Decompose two-digit numbers into multiples of tens and units/ones to 15 (weeks 1-4), 20 (weeks 5-6) and 25 (weeks 7-10)"
+  },
+  "skill": "place_value.tens_ones.to_25",
+  "prereq_skills": ["count.to_60", "count.skip.10_5_2"],
+  "images": ["sticks_one_ten_four", "sticks_one_ten_three", "sticks_one_ten_five", "sticks_five_loose", "sticks_two_tens", "sticks_one_ten_two", "numeral_21", "numeral_12", "numeral_20", "sticks_two_tens_four", "digit_1_tens", "digit_8_ones", "tutor_swaps_tens_ones"],
+  "show": {
+    "line": "Fourteen is one ten and four ones. One bundle of ten sticks, and four loose sticks. Ten and four, fourteen!",
+    "image": "sticks_one_ten_four"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "One bundle of ten and three loose sticks. How many sticks? Tap the number.", "image": "sticks_one_ten_three", "count": "13", "options": ["13", "31", "10"], "answer": "13", "praise": "Thirteen! Ten and three."},
+    {"type": "listen_tap", "prompt": "Which picture shows one ten and five ones?", "options": ["sticks_one_ten_five", "sticks_five_loose", "sticks_two_tens"], "answer": "sticks_one_ten_five", "praise": "Yes! One ten and five ones is fifteen."},
+    {"type": "say_it", "prompt": "Twelve. How many ones are with the ten? Say the number.", "accept": ["two", "2", "to", "tu"], "image": "sticks_one_ten_two"},
+    {"type": "listen_tap", "prompt": "Two tens and one one. Which number is it?", "options": ["numeral_21", "numeral_12", "numeral_20"], "answer": "numeral_21", "praise": "Twenty-one! Two tens and one."},
+    {"type": "count_tap", "prompt": "Two bundles of ten and four loose sticks. How many sticks?", "image": "sticks_two_tens_four", "count": "24", "options": ["42", "24", "20"], "answer": "24", "praise": "Twenty-four! Twenty and four."},
+    {"type": "listen_tap", "prompt": "In the number eighteen, which digit tells us about the tens?", "options": ["digit_1_tens", "digit_8_ones"], "answer": "digit_1_tens", "praise": "Yes! The one means one ten. The eight means eight ones."}
+  ],
+  "hints": ["A bundle is ten. Count the bundles first, then the loose ones.", "The first digit says how many tens. The second says how many ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will break up the number fifteen.",
+    "tutor_try": "Fifteen is five tens and one one!",
+    "image": "tutor_swaps_tens_ones",
+    "answer": "one ten and five ones",
+    "win_line": "You caught me! Fifteen is one ten and five ones. Ten and five.",
+    "gentle_line": "Let's look together. One bundle of ten, five loose. Fifteen!"
+  },
+  "parent_line": "Can break a number up to 25 into tens and ones."
+}

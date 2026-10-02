@@ -1,0 +1,40 @@
+{
+  "id": "maths.grade2.term4.w07_tens_and_ones_to_99",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Tens and ones to 99",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Place value (numbers between 11 and 99)",
+    "subtopic": "Decompose two-digit numbers into multiples of tens and units/ones to 75 (weeks 1-2), 80 (weeks 3-6) and 99 (weeks 7-10)"
+  },
+  "skill": "place_value.tens_ones.to_99",
+  "prereq_skills": ["place_value.tens_ones.to_50", "count.to_200"],
+  "images": ["sticks_eight_tens_four", "sticks_seven_tens_six", "sticks_nine_tens_two", "sticks_two_tens_nine", "sticks_nine_tens_five", "sticks_six_tens_eight", "numeral_59", "numeral_95", "numeral_50", "word_eighty", "word_eight", "word_eight_hundred", "numeral_99", "numeral_90", "numeral_19", "card_71", "card_78", "card_85", "card_80", "card_89", "tutor_swaps_96"],
+  "show": {
+    "line": "Eighty-four. Eight bundles of ten and four loose sticks. Eighty and four make eighty-four!",
+    "image": "sticks_eight_tens_four"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Seven bundles of ten and six loose sticks. How many sticks? Tap the number.", "image": "sticks_seven_tens_six", "count": "76", "options": ["76", "67", "70"], "answer": "76", "praise": "Seventy-six! Seventy and six."},
+    {"type": "listen_tap", "prompt": "Which picture shows ninety-two?", "options": ["sticks_nine_tens_two", "sticks_two_tens_nine", "sticks_nine_tens_five"], "answer": "sticks_nine_tens_two", "praise": "Yes! Nine tens and two ones."},
+    {"type": "say_it", "prompt": "Sixty-eight. How many tens? Say the number.", "accept": ["six", "6", "siks", "sex"], "image": "sticks_six_tens_eight"},
+    {"type": "listen_tap", "prompt": "Fifty and nine. Which number is it?", "options": ["numeral_59", "numeral_95", "numeral_50"], "answer": "numeral_59", "praise": "Fifty-nine! Five tens and nine ones."},
+    {"type": "listen_tap", "prompt": "In the number eighty-seven, what is the eight worth?", "options": ["word_eighty", "word_eight", "word_eight_hundred"], "answer": "word_eighty", "praise": "Yes! The eight is in the tens place. It is worth eighty."},
+    {"type": "listen_tap", "prompt": "Which number has nine tens and nine ones?", "options": ["numeral_99", "numeral_90", "numeral_19"], "answer": "numeral_99", "praise": "Ninety-nine! Nine tens and nine ones."},
+    {"type": "match_sort", "prompt": "Does the number have seven tens or eight tens? Put each card in its group.", "groups": ["seven_tens", "eight_tens"], "items": [{"image": "card_71", "group": "seven_tens"}, {"image": "card_78", "group": "seven_tens"}, {"image": "card_85", "group": "eight_tens"}, {"image": "card_80", "group": "eight_tens"}, {"image": "card_89", "group": "eight_tens"}]}
+  ],
+  "hints": ["Count the bundles in tens. Then count on the loose ones.", "The first digit is the tens. The second digit is the ones."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will break up ninety-six.",
+    "tutor_try": "Ninety-six is six tens and nine ones!",
+    "image": "tutor_swaps_96",
+    "answer": "nine tens and six ones",
+    "win_line": "You caught me! Ninety-six is nine tens and six ones.",
+    "gentle_line": "Let's look together. Nine bundles of ten, six loose. Ninety-six!"
+  },
+  "parent_line": "Can break any number up to 99 into tens and ones."
+}

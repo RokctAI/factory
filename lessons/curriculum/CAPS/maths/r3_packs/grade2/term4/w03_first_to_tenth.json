@@ -1,0 +1,39 @@
+{
+  "id": "maths.grade2.term4.w03_first_to_tenth",
+  "subject": "Mathematics",
+  "grade": "2",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "First, second, third",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Numbers, operations and relationships: Describe, compare and order numbers to 99",
+    "subtopic": "Use ordinal numbers to show place or position: first, second, third ... tenth (weeks 3-4, 7-8)"
+  },
+  "skill": "number.ordinal.to_10th",
+  "prereq_skills": ["count.to_10", "number.compare.to_75"],
+  "images": ["race_cars_finish", "runners_finish_line", "runner_first", "runner_second", "runner_third", "children_queue_five", "child_third", "child_second", "child_fifth", "ducks_row_yellow_fifth", "children_queue_ten", "child_tenth", "child_first", "child_sixth", "word_third", "word_first", "word_fourth", "tutor_points_third_car"],
+  "show": {
+    "line": "The race is over! The red car came first. The blue car came second. The green car came third.",
+    "image": "race_cars_finish"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which runner came first?", "image": "runners_finish_line", "options": ["runner_first", "runner_second", "runner_third"], "answer": "runner_first", "praise": "Yes! First is the winner."},
+    {"type": "listen_tap", "prompt": "Look at the children in the line. Tap the third child.", "image": "children_queue_five", "options": ["child_third", "child_second", "child_fifth"], "answer": "child_third", "praise": "Yes! First, second, third."},
+    {"type": "say_it", "prompt": "The ducks are in a row. The yellow duck is after the fourth duck. What place is it?", "accept": ["fifth", "fift", "fith", "number five"], "image": "ducks_row_yellow_fifth"},
+    {"type": "what_next", "prompt": "First, second, third. What comes next?", "sequence": ["first", "second", "third"], "options": ["fourth", "fifth", "tenth"], "answer": "fourth", "praise": "Fourth! First, second, third, fourth."},
+    {"type": "listen_tap", "prompt": "Ten children are in a line. Tap the last one, the tenth child.", "image": "children_queue_ten", "options": ["child_tenth", "child_first", "child_sixth"], "answer": "child_tenth", "praise": "Yes! Tenth is the last of ten."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Zinhle came second in the race. Her friend Amo came just after her. In what place did Amo come?", "options": ["word_third", "word_first", "word_fourth"], "answer": "word_third", "praise": "Third! Just after second comes third."}
+  ],
+  "hints": ["Start at the front. First, second, third. Count along.", "Tenth is the last of ten. First is the very front."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find the second car.",
+    "tutor_try": "This one is second!",
+    "image": "tutor_points_third_car",
+    "answer": "no",
+    "win_line": "You caught me! That car is third. First, second, third.",
+    "gentle_line": "Let's count the places together. First, second. This one is second!"
+  },
+  "parent_line": "Can use first to tenth to say where things are in a line."
+}

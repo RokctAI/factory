@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.grade2.term2.w10_read_sentences",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [10],
+  "theme": "Reading sentences",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Reads phonics words in sentences and other texts"
+  },
+  "skill": "reading.sentences.phonics_words",
+  "prereq_skills": ["phonics.split_digraph.magic_e", "phonics.vowel_digraph.oa_ea_ai", "reading.sight_words.set2"],
+  "images": ["sentence_goat_on_boat", "sentence_snail_on_leaf", "sentence_fish_in_net", "fish_in_net", "fish_in_bowl", "cat_in_net", "sentence_we_ride_the_bike", "sentence_gap_on_road", "word_goat", "word_got", "word_gate", "kite_red", "bike", "boat", "sentence_train_is_late", "tutor_misreads_goat"],
+  "show": {
+    "line": "Let's read whole sentences! The goat sat on the boat. Read each word, then read it all together.",
+    "image": "sentence_goat_on_boat"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Read this sentence out loud.", "accept": ["the snail is on the leaf", "a snail is on the leaf", "the snail is on a leaf"], "image": "sentence_snail_on_leaf"},
+    {"type": "listen_tap", "prompt": "Read the sentence. The fish is in the net. Which picture matches?", "image": "sentence_fish_in_net", "options": ["fish_in_net", "fish_in_bowl", "cat_in_net"], "answer": "fish_in_net", "praise": "Yes! The fish is in the net."},
+    {"type": "say_it", "prompt": "Read this sentence out loud.", "accept": ["we ride the bike", "we ride a bike", "we ride the bikes"], "image": "sentence_we_ride_the_bike"},
+    {"type": "listen_tap", "prompt": "Read the sentence. Which word is missing? The, gap, is on the road.", "image": "sentence_gap_on_road", "options": ["word_goat", "word_got", "word_gate"], "answer": "word_goat", "praise": "Goat! The goat is on the road."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Mike has a kite. The kite is red. He flies it in the rain. What does Mike have?", "options": ["kite_red", "bike", "boat"], "answer": "kite_red", "praise": "Yes! Mike has a red kite."},
+    {"type": "say_it", "prompt": "Read this sentence out loud.", "accept": ["the train is late", "a train is late", "the train is lat"], "image": "sentence_train_is_late"}
+  ],
+  "hints": ["Read one word at a time. Then read them all together.", "If a word is hard, say its sounds and push them together."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this sentence. The goat sat on the boat.",
+    "tutor_try": "The got sat on the bot!",
+    "image": "tutor_misreads_goat",
+    "answer": "goat",
+    "win_line": "You caught me! Those words have two letters in the middle. Goat, boat.",
+    "gentle_line": "Let's read it together. The goat sat on the boat!"
+  },
+  "parent_line": "Can read short sentences made of words with the sounds learnt this term."
+}

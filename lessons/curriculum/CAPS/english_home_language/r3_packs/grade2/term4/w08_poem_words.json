@@ -1,0 +1,40 @@
+{
+  "id": "english_home_language.grade2.term4.w08_poem_words",
+  "subject": "English Home Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [8, 9],
+  "theme": "Reading a poem",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Reading",
+    "subtopic": "Shared: reads poems and songs and discusses format and word choice; answers higher-order questions; justifies opinions; responds to print media images"
+  },
+  "skill": "reading.poem.rhyme_word_choice",
+  "prereq_skills": ["phonics.rhyme.sky_moon", "reading.comprehension.inference"],
+  "images": ["poem_frog_on_log", "word_fog", "word_sat", "word_hid", "frog_scared_of_dog", "frog_sleepy", "frog_hungry", "little_frog", "frog_log_dog_fog", "cat_on_mat", "bird_in_tree", "poster_school_sports_day", "sports_day", "bedtime", "a_new_shop", "face_happy", "face_sad", "tutor_points_sat"],
+  "show": {
+    "line": "A poem! The little frog sat on a log. He saw a dog and hid in the fog. It rhymes!",
+    "image": "poem_frog_on_log"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Frog, log, dog. Which word in the poem rhymes with them too?", "options": ["word_fog", "word_sat", "word_hid"], "answer": "word_fog", "praise": "Yes! Frog, log, dog, fog."},
+    {"type": "count_tap", "prompt": "Look at the poem. Count the lines. How many lines?", "image": "poem_frog_on_log", "count": "4", "options": ["3", "4", "6"], "answer": "4", "praise": "Four short lines!"},
+    {"type": "story_tap", "prompt": "Listen to the poem again.", "story": "The frog sat on a log. He saw a dog and hid in the fog. Why did he hide?", "options": ["frog_scared_of_dog", "frog_sleepy", "frog_hungry"], "answer": "frog_scared_of_dog", "praise": "Yes! The dog scared him."},
+    {"type": "say_it", "prompt": "The poet chose the word little for the frog. Say another word that means little.", "accept": ["small", "tiny", "wee", "smol"], "image": "little_frog"},
+    {"type": "listen_tap", "prompt": "Which picture matches the poem best?", "options": ["frog_log_dog_fog", "cat_on_mat", "bird_in_tree"], "answer": "frog_log_dog_fog", "praise": "Yes! A frog, a log, a dog and fog."},
+    {"type": "listen_tap", "prompt": "Look at this poster. What is it telling us about?", "image": "poster_school_sports_day", "options": ["sports_day", "bedtime", "a_new_shop"], "answer": "sports_day", "praise": "Yes! The running shoes and ribbons show sports day."},
+    {"type": "listen_tap", "prompt": "Did you like the frog poem? Tap what you think.", "options": ["face_happy", "face_sad"], "answer": "face_happy", "praise": "Thank you for sharing what you think!"}
+  ],
+  "hints": ["Rhymes sound the same at the end. Frog, log.", "Poems have short lines. Each line starts on a new row."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a rhyme for frog in the poem.",
+    "tutor_try": "Frog, sat! They rhyme.",
+    "image": "tutor_points_sat",
+    "answer": "no",
+    "win_line": "You caught me! Frog and sat do not rhyme. Frog, log!",
+    "gentle_line": "Let's listen together. Frog, log. Same ending!"
+  },
+  "parent_line": "Can hear rhymes in a short poem, count its lines and say why a character did something."
+}
