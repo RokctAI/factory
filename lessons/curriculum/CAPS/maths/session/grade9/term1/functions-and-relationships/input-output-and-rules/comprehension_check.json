@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "The rule is \"times 3, then plus 2\". Find the output for input −2, and find the input that gives output 20, explaining the order of undoing.",
+      "expected_answer": "Output: −2 × 3 is −6, then plus 2 gives −4. Input for 20: undo the last operation first, 20 − 2 = 18, then undo the multiplication, 18 ÷ 3 = 6. Operations are undone in reverse order (last done, first undone), like shoes before socks. Check: 6 × 3 + 2 = 20."
+    },
+    {
+      "id": "cc2",
+      "question": "Inputs 2, 5, 10 produce outputs 7, 16, 31. Find the rule and explain why the raw differences 9 and 15 cannot be used directly.",
+      "expected_answer": "The inputs are not consecutive, so compute the rise per unit input: from 2 to 5 the output rises 9 over 3 units, 3 per unit; from 5 to 10 it rises 15 over 5 units, 3 per unit. So y = 3x + c; 3 × 2 + c = 7 gives c = 1. Rule: y = 3x + 1. Check: 3 × 10 + 1 = 31. The raw differences mix different step sizes and would suggest a wrong multiplier."
+    },
+    {
+      "id": "cc3",
+      "question": "For y = x^2 − 1, find all inputs that give y = 24, and explain why there is more than one.",
+      "expected_answer": "Setting x^2 − 1 equal to 24 gives x^2 = 25, so x = 5 or x = −5, since both square to 25. The squaring operation discards the sign, so running the rule backwards from one output can give two inputs; both must be stated unless the question restricts x to positive values."
+    }
+  ]
+}
