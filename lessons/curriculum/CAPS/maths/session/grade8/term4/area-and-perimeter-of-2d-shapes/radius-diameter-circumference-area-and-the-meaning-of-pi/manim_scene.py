@@ -177,7 +177,7 @@ class CirclePiSession(MovingCameraScene):
         m25 = Tex(r"Convert to the radius first, then calculate").scale(1.05).shift(band_shift(6) + UP * 1.2)
         self.play(Write(m25))
         self.wait(2)
-        m26 = MathTex(r"25{,}13 \div 2\pi \approx 4 \Rightarrow A = 16\pi \approx 50{,}27").scale(1.1).shift(band_shift(6) + DOWN * 0.17)
+        m26 = MathTex(r"25{,}13 \div (2\pi) \approx 4 \Rightarrow A = 16\pi \approx 50{,}27").scale(1.1).shift(band_shift(6) + DOWN * 0.17)
         self.play(Write(m26))
         self.wait(2)
         m27 = MathTex(r"\tfrac{22}{7} \times 14^2 = 616").scale(1.1).shift(band_shift(6) + DOWN * 1.53)
