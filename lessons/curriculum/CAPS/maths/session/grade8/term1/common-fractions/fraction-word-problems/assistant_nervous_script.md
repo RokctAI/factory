@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Fraction word problems today: grouping, sharing, fractions of amounts, remainders and missing wholes. I can do the fraction arithmetic; what used to defeat me was the story, especially the phrase of the remainder, which I read as of the original more times than I want to admit.
+
+Our expert tutor gives each problem type a signature — how many fit, how much each, how much of — and then works the hard cases: a fraction of a remainder, the difference between a quarter of the tank and a quarter of the water, and finding a whole from a part using the unitary method. The anchors are seven and a half metres of fabric cut into three-quarter-metre pieces, which gives ten, and a shopper who spends a third of six hundred rand and then a quarter of what is left, ending with three hundred. Our simplifier tutor slows everything down to three questions and two words — of what — and finishes with a block picture for working backwards.
+
+My plan: say the question, ask of what for every fraction, and draw blocks when the whole is missing. Questions follow each section; I will be pointing at the amounts right alongside you.

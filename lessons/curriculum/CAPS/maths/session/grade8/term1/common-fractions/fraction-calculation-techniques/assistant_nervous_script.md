@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today is a toolkit session: converting mixed numbers, simplifying, building equivalent fractions and cancelling. None of it is new, which is exactly why it is dangerous — I used to know all four tricks and still reach for the wrong one, cancelling in a sum or forgetting to convert before multiplying.
+
+Our expert tutor sets out each technique with its reason, then shows when to use which: convert before multiplying, simplify with the highest common factor, build equivalents over the lowest common multiple to compare and order, and cancel across products only. The anchors are thirty-six over forty-eight becoming three quarters in one move, and fourteen fifteenths times twenty-five twenty-firsts collapsing to ten ninths with nothing large ever written. Our simplifier tutor turns the same ideas into cakes re-cut with different knives and a market where coins on top pay off coins on the bottom.
+
+My aim for the session is to name the tool before I use it. Questions follow each section; I will be choosing tools right alongside you.

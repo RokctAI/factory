@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we tie three topics together: fractions, decimals and percentages are one number with three names. I used to keep them in separate boxes in my head, and the ordering questions that mixed all three left me guessing. The fix, it turns out, is one rule: translate everything into the same language before you compare anything.
+
+Our expert tutor sets out the conversion moves in all six directions — divide top by bottom, multiply or divide by one hundred, write over a power of ten and simplify — handles recurring decimals and fractional percentages honestly, and shows how to choose the form that makes each step easiest. The anchors are three eighths, zero comma three seven five and thirty-seven and a half percent, and two thirds with its recurring six. Our simplifier tutor calls the forms three languages, visits a sale, a test and a measuring jug to show which language suits which job, and finishes with the ten-row table everyone should know by heart.
+
+My plan: learn the table, name the move, and translate before comparing. Questions follow each section; I will be translating alongside you.
