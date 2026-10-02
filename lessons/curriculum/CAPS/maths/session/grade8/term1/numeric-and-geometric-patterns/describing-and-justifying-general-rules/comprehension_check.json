@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the rule for chairs around a row of n tables in words and in symbols, and justify each part.",
+      "expected_answer": "Two chairs per table plus two end chairs: c = 2n + 2. Each table has a chair on its top and bottom side (2n), and the row has one chair at each end (+2)."
+    },
+    {
+      "id": "cc2",
+      "question": "Show that 2(n + 1) and 2n + 2 are equivalent, and explain what each describes.",
+      "expected_answer": "Expanding 2(n + 1) gives 2n + 2. The first imagines an extra table and gives every table two chairs; the second counts two per table and two at the ends. Same chairs, different counting."
+    },
+    {
+      "id": "cc3",
+      "question": "Why is 4n wrong for the number of dots on the border of an n-by-n grid, and what is the correct rule?",
+      "expected_answer": "Each corner dot lies on two sides and is counted twice by 4n; for n = 3, 4n gives 12 but there are 8. Subtracting the four double-counted corners gives 4n − 4."
+    }
+  ]
+}

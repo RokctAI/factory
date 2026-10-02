@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today is the last patterns lesson, and it is about why a rule works: describing it in words and symbols, justifying each part from the picture, and recognising when two different-looking rules are actually the same. I used to think that if my formula looked different from the memo's, I was wrong. Often I was not — I had just counted in a different order.
+
+Our expert tutor sets out word rules and symbol rules with defined letters, justifies three n plus one, two n plus two and four n minus four from their diagrams, proves equivalence by expanding brackets, and shows how a single counterexample kills a wrong rule. Our simplifier tutor goes to a wedding where two guests count the chairs differently, to a chessboard border counted three ways, and to a builder's quote that hides a call-out fee inside a bracket.
+
+My plan: point at the picture for every part of the formula, check with two values, and expand the brackets before deciding two rules are different. Questions follow every section; I will be justifying alongside you.
