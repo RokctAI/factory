@@ -1,0 +1,1 @@
+Today we multiply common fractions and mixed numbers, and learn to simplify before we calculate. One garden runs through the session: a vegetable plot is 3 1/3 metres long and 2 1/4 metres wide, and spinach is planted on 2/3 of it. By the end you will find the area of the plot, the area under spinach, and you will cancel common factors so the numbers stay small.

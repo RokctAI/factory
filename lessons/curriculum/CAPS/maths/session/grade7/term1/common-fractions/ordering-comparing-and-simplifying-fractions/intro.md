@@ -1,0 +1,1 @@
+Today we compare, order and simplify common fractions, including fractions with denominators up to a thousand. One question runs through the session: three learners ate 3/4, 5/8 and 7/10 of their lunch — who ate the most? By the end you will answer it with equivalent fractions, simplify fractions like 375/1000, and place fractions on a number line.

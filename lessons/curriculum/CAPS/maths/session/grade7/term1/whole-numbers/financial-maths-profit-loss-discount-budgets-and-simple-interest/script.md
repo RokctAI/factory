@@ -14,7 +14,7 @@ Loss works the same way in reverse. If six cans go flat and Thabo can sell only 
 
 Businesses also express profit as a percentage of the cost price. A profit of R120 on a cost of R216 is about fifty-six percent, but at Grade 7 the essential skill is the rand amount, calculated carefully.
 
-Break-even is the point where income exactly equals cost: no profit and no loss. For Thabo, R216 divided by R14 is about 15.4, so he must sell at least sixteen cans to make a profit.
+Break-even is the point where income exactly equals cost: no profit and no loss. For Thabo, R216 divided by R14 is about 15,4, so he must sell at least sixteen cans to make a profit.
 
 The questions for this section are ready: profit, loss and break-even.
 
@@ -38,7 +38,7 @@ Simple interest is calculated only on the original principal, the same amount ev
 
 Thabo borrows R5 000 at twelve percent simple interest per year for three years. Interest for one year: twelve percent of R5 000, which is R600. For three years: three times R600, R1 800. Using the formula: 5 000 times 12 times 3, divided by 100, is R1 800. The total amount he must repay is principal plus interest: R5 000 plus R1 800, R6 800.
 
-If he repays in equal monthly instalments over three years, that is thirty-six months: R6 800 divided by 36 is about R188.89 a month.
+If he repays in equal monthly instalments over three years, that is thirty-six months: R6 800 divided by 36 is about R188,89 a month.
 
 Simple interest also applies to savings. If Thabo invests R5 000 at seven percent simple interest per year for three years, he earns 5 000 times 7 times 3 divided by 100, R1 050, and has R6 050 at the end.
 
