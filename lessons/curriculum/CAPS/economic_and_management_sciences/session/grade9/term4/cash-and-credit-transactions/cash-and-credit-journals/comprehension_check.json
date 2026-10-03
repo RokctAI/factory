@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the four subsidiary journals, the source document of each, and the question that decides whether a transaction belongs in it.",
+      "expected_answer": "CRJ: cash register roll and duplicate receipts; did money come into the bank? CPJ: EFT proofs of payment, cheque counterfoils and the bank statement; did money go out of the bank? DJ: duplicate invoices; was trading stock sold on credit? CJ: original invoices from suppliers; was something bought on credit?"
+    },
+    {
+      "id": "cc2",
+      "question": "Kasi Cycles bought stock for R2 000 and paid immediately, and paid Bike Parts Wholesale R5 000 for an earlier credit purchase. In which journal and column is each recorded? Explain.",
+      "expected_answer": "Both go in the CPJ because money left the bank. The R2 000 cash purchase goes in the Trading stock column, because the stock is recorded for the first time. The R5 000 goes in the Creditors control column, because it settles a debt; the stock was already recorded in the CJ when it was bought on credit, so recording it under Trading stock would count it twice."
+    },
+    {
+      "id": "cc3",
+      "question": "Give the November totals of the CRJ (Bank, Sales, Cost of sales, Debtors control) and CPJ (Bank, Trading stock, Wages, Creditors control, Sundry), and show both cross-casts.",
+      "expected_answer": "CRJ: Bank R21 000, Sales R15 000, Cost of sales R10 000, Debtors control R6 000; cross-cast 15 000 + 6 000 = 21 000. CPJ: Bank R16 700, Trading stock R2 000, Wages R3 500, Creditors control R8 000, Sundry R3 200; cross-cast 2 000 + 3 500 + 8 000 + 3 200 = 16 700."
+    }
+  ]
+}
