@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Distinguish between a cash purchase of trading stock and a payment to a creditor, and show where each is recorded in the CPJ.",
+      "expected_answer": "A cash purchase is stock bought and paid for immediately: CPJ, Bank and Trading stock columns. A payment to a creditor settles an earlier credit purchase already recorded in the CJ: CPJ, Bank and Creditors control columns, with nothing in Trading stock, otherwise the stock would be counted twice."
+    },
+    {
+      "id": "cc2",
+      "question": "Ridgeview's October payments: Office Hub R600, BuildMart R5 800, wages R2 800, Toolquip R2 000, Cash and Carry stock R3 300, Highveld R4 200, Glow Signs R900. Total the CPJ columns and cross-cast.",
+      "expected_answer": "Bank 19 600. Trading stock 3 300. Wages 2 800. Creditors control 600 + 5 800 + 2 000 + 4 200 + 900 = 13 500. Cross-cast: 3 300 + 2 800 + 13 500 = 19 600, which agrees."
+    },
+    {
+      "id": "cc3",
+      "question": "Creditors control had an opening credit balance of R15 000. October credit purchases were R9 600 and payments to creditors R13 500. Calculate the closing balance and reconcile it with the creditors list: BuildMart R6 500, Toolquip R1 500, Highveld R3 100.",
+      "expected_answer": "Creditors control: 15 000 + 9 600 - 13 500 = R11 100 credit. Creditors list: 6 500 + 1 500 + 3 100 = R11 100 (Office Hub and Glow Signs nil). The two agree."
+    }
+  ]
+}
