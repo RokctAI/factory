@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the three kinds of map found in an atlas, give a typical scale for each, and explain how scale and detail are related.",
+      "expected_answer": "World maps show the whole Earth or a continent, at very small scales such as 1:100 000 000, with little detail. Regional maps show a large region such as southern Africa, at scales such as 1:10 000 000, showing main towns, roads, rivers and boundaries. Local maps show a small area such as a city, at larger scales such as 1:250 000 or 1:50 000, showing suburbs, smaller roads and features. On the same page size, a larger area needs a smaller scale and shows less detail; a smaller area allows a larger scale and more detail."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what the ratio scale 1:250 000 means, why it has no units, and convert it into a word scale. Then convert the word scale 1 cm represents 5 km into a ratio scale.",
+      "expected_answer": "1:250 000 means one unit of length on the map represents 250 000 of the same units on the ground. Because the same unit is used on both sides, the units cancel and the ratio has no units. One kilometre is 100 000 cm, so 250 000 ÷ 100 000 = 2,5, and the word scale is 1 cm represents 2,5 km. For 1 cm represents 5 km: 5 km is 5 × 100 000 = 500 000 cm, so the ratio scale is 1:500 000."
+    },
+    {
+      "id": "cc3",
+      "question": "Map A has a scale of 1:50 000 and map B a scale of 1:250 000. Which is the larger scale? How long would a 10 km road be on each map, and which map would a hiker choose?",
+      "expected_answer": "Map A is the larger scale because its denominator is smaller. On map A, 1 cm represents 0,5 km, so 10 km measures 10 ÷ 0,5 = 20 cm. On map B, 1 cm represents 2,5 km, so 10 km measures 10 ÷ 2,5 = 4 cm. A hiker would choose map A because it shows a smaller area in more detail, such as paths, streams and huts."
+    }
+  ]
+}
