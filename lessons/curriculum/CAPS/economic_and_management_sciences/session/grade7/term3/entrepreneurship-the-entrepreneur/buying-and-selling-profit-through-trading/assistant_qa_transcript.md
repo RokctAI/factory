@@ -1,0 +1,18 @@
+### subtopic_1 — Trading: Buying and Selling
+**Assistant:** If the trader does not change the goods, why should customers pay more than the trader paid?
+
+**Tutor:** Because the trader provides real services that customers value, and those services cost money. The most important is convenience: a spaza shop on the corner saves a family the time and taxi fare of going to a supermarket in town, which could easily cost more than the extra few rand on a loaf of bread. Breaking bulk is another: a household cannot buy a whole case of cooking oil from a wholesaler, but it can buy one bottle from the trader. The trader also stores the goods, keeps them available when customers need them, sometimes late at night, takes the risk that goods will not sell or will be stolen, and may offer credit to trusted customers. All of this involves costs: rent, electricity, transport from the wholesaler, the trader's own time and sometimes wages. The extra the customer pays, the mark-up, covers these costs and gives the trader a profit as reward for the risk and effort. If the mark-up is too high, customers will travel to a cheaper shop, so competition keeps prices in check. In an exam, explain that traders add value through place, time and quantity.
+
+***
+
+### subtopic_2 — Cost Price, Selling Price and Mark-up
+**Assistant:** What is the difference between gross profit and net profit?
+
+**Tutor:** Gross profit is what is left after subtracting only the cost of the goods sold from the sales. Net profit is what is left after subtracting all the other expenses of running the business as well. Suppose a spaza shop has sales of R30 000 in a month and the goods it sold cost it R22 000. Its gross profit is R8 000. But the shop also pays rent of R1 500, electricity of R900, transport to the wholesaler of R800 and an assistant's wage of R2 500, a total of R5 700 in other expenses. Its net profit is R8 000 minus R5 700, which is R2 300. This is the amount that really belongs to the owner as a reward for the month's work and risk. The distinction matters because a trader might look at the mark-up on each item, see a healthy gross profit, and believe the business is doing well, while the other expenses are quietly eating it up. When setting a mark-up, a trader must make sure that the total gross profit is large enough to cover all the other expenses and still leave a net profit. You will use these terms throughout Accounting in later grades.
+
+***
+
+### subtopic_3 — What Affects a Trader's Prices and Profit
+**Assistant:** How can a small spaza shop compete with a big supermarket?
+
+**Tutor:** By offering what the supermarket cannot, rather than trying to beat it on price alone. A big supermarket chain buys enormous quantities directly from manufacturers and pays less per item, so a small shop usually cannot match its prices on every product. But the spaza shop has other strengths. It is close to customers' homes, saving them time and taxi fare. It is often open early and late, including when the supermarket is closed. It sells small quantities, such as a single cigarette-sized pack of washing powder or a few eggs, which suit households with little cash. The owner knows customers by name, offers friendly service and may give credit to trusted regulars until payday. It can stock items that local customers particularly want. Spaza owners can also lower their costs by buying together through cooperatives or buying groups, and some wholesalers deliver to them. Keeping good records, a clean and well-organised shop, reliable stock of popular items and honest pricing build loyalty. The best answer in an exam lists convenience, location, small quantities, opening hours, personal service and credit as competitive advantages.
