@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w02_respect_others",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Respect and kindness",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Orientation / Perceptual development",
+    "subtopic": "Showing respect, love, empathy and acceptance"
+  },
+  "skill": "social.respect",
+  "prereq_skills": [],
+  "images": ["children_kind", "invite_to_play", "ignore", "laugh", "listen", "say_please", "wait_turn", "push_in_line", "call_names", "kind", "rude", "sleepy", "give_hug", "walk_away", "tutor_grab_crayon"],
+  "show": {
+    "line": "We show respect. We are kind, we listen and we care about others.",
+    "image": "children_kind"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A new child is alone. What do you do?", "options": ["invite_to_play", "ignore", "laugh"], "answer": "invite_to_play", "praise": "Invite them to play!"},
+    {"type": "match_sort", "prompt": "Respectful or not? Sort them.", "groups": ["respect", "not_respect"], "items": [{"image": "listen", "group": "respect"}, {"image": "say_please", "group": "respect"}, {"image": "wait_turn", "group": "respect"}, {"image": "push_in_line", "group": "not_respect"}, {"image": "call_names", "group": "not_respect"}]},
+    {"type": "say_it", "prompt": "You want a pencil. What magic word do you say?", "accept": ["please", "please may i have a pencil", "may i please", "can i please"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Musa speaks a different language. Tom smiles and shows him the toilets. How is Tom?", "options": ["kind", "rude", "sleepy"], "answer": "kind", "praise": "Kind! Tom made Musa feel welcome."},
+    {"type": "listen_tap", "prompt": "Your friend is sad. How do you show you care?", "options": ["give_hug", "walk_away", "laugh"], "answer": "give_hug", "praise": "A hug or kind words!"},
+    {"type": "say_it", "prompt": "Greet your teacher. Say good morning!", "accept": ["good morning", "good morning teacher", "morning teacher", "goeie more", "sawubona", "dumela", "molo"]}
+  ],
+  "hints": ["Treat others how you want to be treated.", "Kind words and listening show respect."],
+  "beat_the_tutor": {
+    "setup": "My turn! I want a crayon.",
+    "tutor_try": "Give me that crayon now!",
+    "image": "tutor_grab_crayon",
+    "answer": "please",
+    "win_line": "You caught me! I should say please.",
+    "gentle_line": "May I please have the crayon? Thank you!"
+  },
+  "parent_line": "Shows respect, kindness and acceptance to others."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w07_yes_no_feelings",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [10, 11],
+  "theme": "Yes and no feelings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Keeping my body safe",
+    "subtopic": "Safe and unsafe situations and places; \"yes\" and \"no\" feelings; practising saying \"no\""
+  },
+  "skill": "safety.body_feelings",
+  "prereq_skills": ["safety.strangers"],
+  "images": ["yes_no_faces", "hug_mama", "playing_friends", "story_time", "stranger_secret", "dark_alley", "trusted_adult", "nobody", "stranger", "thumbs_down", "thumbs_up", "home_with_family", "empty_field_at_night", "strangers_car", "tutor_secret"],
+  "show": {
+    "line": "Yes feelings are happy and safe. No feelings are scary. Listen to them!",
+    "image": "yes_no_faces"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "A yes feeling or a no feeling?", "groups": ["yes_feeling", "no_feeling"], "items": [{"image": "hug_mama", "group": "yes_feeling"}, {"image": "playing_friends", "group": "yes_feeling"}, {"image": "story_time", "group": "yes_feeling"}, {"image": "stranger_secret", "group": "no_feeling"}, {"image": "dark_alley", "group": "no_feeling"}]},
+    {"type": "say_it", "prompt": "Someone touches you and you do not like it. What do you say?", "accept": ["no", "stop", "no stop", "don't touch me", "stop it", "no!"]},
+    {"type": "listen_tap", "prompt": "Who do you tell if you have a no feeling?", "options": ["trusted_adult", "nobody", "stranger"], "answer": "trusted_adult", "praise": "Tell a grown-up you trust!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "A man says, this is our secret, do not tell your mom. Is that a good secret?", "options": ["thumbs_down", "thumbs_up"], "answer": "thumbs_down", "praise": "No! Always tell. Bad secrets must be told."},
+    {"type": "listen_tap", "prompt": "Which is a safe place?", "options": ["home_with_family", "empty_field_at_night", "strangers_car"], "answer": "home_with_family", "praise": "Home with family!"},
+    {"type": "say_it", "prompt": "Your body belongs to...?", "accept": ["me", "myself", "my body belongs to me"]}
+  ],
+  "hints": ["Trust your no feeling.", "Say no, go away, and tell someone."],
+  "beat_the_tutor": {
+    "setup": "My turn! Someone made me feel scared.",
+    "tutor_try": "I will keep it a secret!",
+    "image": "tutor_secret",
+    "answer": "tell",
+    "win_line": "You caught me! Always tell a grown-up you trust.",
+    "gentle_line": "No secrets that scare us. Tell a grown-up!"
+  },
+  "parent_line": "Knows yes and no feelings, can say no, and tells a trusted adult."
+}

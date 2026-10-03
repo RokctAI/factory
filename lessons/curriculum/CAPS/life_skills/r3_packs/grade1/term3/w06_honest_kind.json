@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w06_honest_kind",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [8],
+  "theme": "Honest and kind",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Manners and responsibility",
+    "subtopic": "Sharing, showing kindness, being honest; respecting others and their belongings"
+  },
+  "skill": "social.honesty",
+  "prereq_skills": ["social.manners"],
+  "images": ["honest_child", "thumbs_up", "thumbs_down", "give_back", "keep_it", "hide_it", "share_lunch", "eat_in_front", "laugh", "tell_truth", "return_money", "own_up", "blame_friend", "take_sweets", "tutor_broken_vase"],
+  "show": {
+    "line": "Honest means telling the truth. Kind means caring. Respect other people's things!",
+    "image": "honest_child"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen.", "story": "Kabelo breaks a cup. Mama asks what happened. He says, I broke it, sorry. Was he honest?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! He told the truth."},
+    {"type": "listen_tap", "prompt": "You find a pencil that is not yours. What do you do?", "options": ["give_back", "keep_it", "hide_it"], "answer": "give_back", "praise": "Give it back!"},
+    {"type": "listen_tap", "prompt": "Your friend forgot lunch. What is kind?", "options": ["share_lunch", "eat_in_front", "laugh"], "answer": "share_lunch", "praise": "Sharing is kind!"},
+    {"type": "say_it", "prompt": "Before you use someone's ruler, what do you do?", "accept": ["ask", "ask first", "say please", "ask please", "ask them"]},
+    {"type": "match_sort", "prompt": "Honest or not honest?", "groups": ["honest", "not_honest"], "items": [{"image": "tell_truth", "group": "honest"}, {"image": "return_money", "group": "honest"}, {"image": "own_up", "group": "honest"}, {"image": "blame_friend", "group": "not_honest"}, {"image": "take_sweets", "group": "not_honest"}]},
+    {"type": "say_it", "prompt": "Say it: I tell the truth!", "accept": ["i tell the truth", "tell the truth", "i always tell the truth"]}
+  ],
+  "hints": ["Truth even when it is hard.", "Ask before you borrow."],
+  "beat_the_tutor": {
+    "setup": "My turn! I broke the vase.",
+    "tutor_try": "The cat did it!",
+    "image": "tutor_broken_vase",
+    "answer": "truth",
+    "win_line": "You caught me! I must tell the truth.",
+    "gentle_line": "I broke it. Sorry! That is honest."
+  },
+  "parent_line": "Knows to be honest, kind, share and respect others' belongings."
+}

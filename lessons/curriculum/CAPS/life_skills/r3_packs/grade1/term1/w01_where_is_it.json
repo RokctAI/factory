@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w01_where_is_it",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Where is it?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: Orientation / Perceptual development",
+    "subtopic": "Direction and place: next to, behind, in front of, on top of (Mathematics vocabulary)"
+  },
+  "skill": "space.position.words",
+  "prereq_skills": [],
+  "images": ["cat_on_box", "ball_on_table", "ball_under_table", "ball_next_table", "ball_behind_chair", "ball_in_front_chair", "ball_on_chair", "child_front_bus", "child_behind_bus", "child_in_bus", "bag_next_desk", "bird_under_tree", "bird_on_tree", "bird_in_sky"],
+  "show": {
+    "line": "The cat is on top of the box. The dog is next to the box!",
+    "image": "cat_on_box"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the ball on top of the table.", "options": ["ball_on_table", "ball_under_table", "ball_next_table"], "answer": "ball_on_table", "praise": "On top!"},
+    {"type": "listen_tap", "prompt": "Tap the ball behind the chair.", "options": ["ball_behind_chair", "ball_in_front_chair", "ball_on_chair"], "answer": "ball_behind_chair", "praise": "Behind the chair!"},
+    {"type": "listen_tap", "prompt": "Tap the child in front of the bus.", "options": ["child_front_bus", "child_behind_bus", "child_in_bus"], "answer": "child_front_bus", "praise": "In front!"},
+    {"type": "say_it", "prompt": "Where is the bag? It is next to the...?", "accept": ["desk", "the desk", "next to the desk"], "image": "bag_next_desk"},
+    {"type": "listen_tap", "prompt": "Which bird is under the tree?", "options": ["bird_under_tree", "bird_on_tree", "bird_in_sky"], "answer": "bird_under_tree", "praise": "Under the tree!"},
+    {"type": "say_it", "prompt": "Put your hand on top of your head. Where is your hand?", "accept": ["on top of my head", "on my head", "on top", "on top of head"]}
+  ],
+  "hints": ["On top means up on it. Under means below it.", "Behind is at the back. In front is at the front."],
+  "beat_the_tutor": {
+    "setup": "My turn! Where is the cat?",
+    "tutor_try": "The cat is under the box!",
+    "image": "cat_on_box",
+    "answer": "on top",
+    "win_line": "You caught me! The cat is on top of the box.",
+    "gentle_line": "The cat is on top. Up high!"
+  },
+  "parent_line": "Can use words like on top, under, behind, in front of and next to."
+}
