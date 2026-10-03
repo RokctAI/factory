@@ -1,0 +1,1 @@
+Today we describe, sort, name and compare triangles by their sides and their angles. One roof truss runs through the session: a builder's frame containing equilateral, isosceles, scalene and right-angled triangles. By the end you will classify any triangle in two ways and know which combinations are possible.

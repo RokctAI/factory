@@ -1,0 +1,1 @@
+Today we recognise and describe similar and congruent figures by comparing their shape and size. One set of photographs runs through the session — a 10 cm by 15 cm photo, its 20 cm by 30 cm enlargement, a second copy of the small photo, and a stretched 10 cm by 25 cm version. By the end you will say which are congruent, which are similar, and which are neither, and explain why.

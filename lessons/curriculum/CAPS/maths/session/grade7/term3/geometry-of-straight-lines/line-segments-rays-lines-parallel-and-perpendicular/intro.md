@@ -1,0 +1,1 @@
+Today we define the basic building blocks of geometry: line segments, rays, straight lines, parallel lines and perpendicular lines. One street map runs through the session — a straight main road, a taxi route that starts at a rank and goes on, and side streets that cross or run alongside. By the end you will name and draw each kind of line with the correct notation.
