@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w05_sound_o",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [5],
+  "theme": "Animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 5: /o/ (on, mop, top, pot); differentiates d and o; claps out syllables"
+  },
+  "skill": "efal.phonics.sound.o",
+  "prereq_skills": ["efal.phonics.sound.h"],
+  "images": ["pot", "word_top", "word_tap", "mop", "map", "pit", "top", "num_2", "num_3", "num_4", "tutor_holds_top"],
+  "show": {
+    "line": "Listen. o, o, on. o, o, pot! Pot has the o sound.",
+    "image": "pot"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the o sound? Top, tap.", "options": ["word_top", "word_tap"], "answer": "word_top", "praise": "Yes! t, o, p. Top."},
+    {"type": "say_it", "prompt": "Say the sound with me. o, as in on!", "accept": ["o", "aw", "oh", "on"]},
+    {"type": "blend", "prompt": "Listen. m, o, p. What word is it?", "sounds": ["m", "o", "p"], "options": ["mop", "map", "pot"], "answer": "mop", "praise": "Mop! m, o, p."},
+    {"type": "blend", "prompt": "Listen. p, o, t. What word is it?", "sounds": ["p", "o", "t"], "options": ["pot", "pit", "top"], "answer": "pot", "praise": "Pot! p, o, t."},
+    {"type": "listen_tap", "prompt": "Clap the word elephant. El, e, phant. How many claps?", "options": ["num_2", "num_3", "num_4"], "answer": "num_3", "praise": "Three claps! El, e, phant."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "top", "accept": ["top", "tob", "tap"]}
+  ],
+  "hints": ["Make your mouth round. o, o, on.", "Say the sounds, then say them fast."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. t, o, p.",
+    "tutor_try": "That makes tap!",
+    "image": "tutor_holds_top",
+    "answer": "top",
+    "win_line": "You caught me! t, o, p makes top.",
+    "gentle_line": "Let's do it together. t, o, p. Top!"
+  },
+  "parent_line": "Can hear the o sound and blend words like mop, pot and top."
+}

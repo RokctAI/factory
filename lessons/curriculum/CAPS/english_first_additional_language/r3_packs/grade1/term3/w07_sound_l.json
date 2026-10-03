@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w07_sound_l",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [7],
+  "theme": "Books and reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 7: /l/ (lip, lap, lot, lid); segmenting and blending; differentiates l and f"
+  },
+  "skill": "efal.phonics.sound.l",
+  "prereq_skills": ["efal.phonics.sound.f"],
+  "images": ["lips", "lion", "fan", "rat", "lot", "lid", "hot", "tile_l", "tile_f", "leg", "fish", "tutor_holds_lid"],
+  "show": {
+    "line": "Listen. l, l, lip. l, l, lid! Lip starts with l.",
+    "image": "lips"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with l, as in lid?", "options": ["lion", "fan", "rat"], "answer": "lion", "praise": "Yes! l, l, lion."},
+    {"type": "say_it", "prompt": "Say the sound with me. l, as in lap!", "accept": ["l", "ll", "lll", "lap"]},
+    {"type": "blend", "prompt": "Listen. l, o, t. What word is it?", "sounds": ["l", "o", "t"], "options": ["lot", "lid", "hot"], "answer": "lot", "praise": "Lot! l, o, t."},
+    {"type": "listen_tap", "prompt": "Is it l or f? Listen. Lap.", "options": ["tile_l", "tile_f"], "answer": "tile_l", "praise": "Yes! Lap starts with l."},
+    {"type": "match_sort", "prompt": "Does it start with l or f? Sort the pictures.", "groups": ["l", "f"], "items": [{"image": "lid", "group": "l"}, {"image": "lion", "group": "l"}, {"image": "leg", "group": "l"}, {"image": "fish", "group": "f"}, {"image": "fan", "group": "f"}]}
+  ],
+  "hints": ["Put your tongue behind your top teeth. l, l, l.", "Say the sounds, then say them fast."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. l, i, d.",
+    "tutor_try": "That makes lip!",
+    "image": "tutor_holds_lid",
+    "answer": "lid",
+    "win_line": "You caught me! l, i, d makes lid.",
+    "gentle_line": "Let's do it together. l, i, d. Lid!"
+  },
+  "parent_line": "Can hear the l sound and blend words like lid, lip and lot."
+}

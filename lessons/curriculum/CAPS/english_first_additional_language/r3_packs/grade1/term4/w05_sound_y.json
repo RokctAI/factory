@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term4.w05_sound_y",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [5],
+  "theme": "Long ago",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 5: initial /y/ (yes, yet, yum); sound differentiation; claps syllables in sight words"
+  },
+  "skill": "efal.phonics.sound.y",
+  "prereq_skills": ["efal.phonics.ending.x"],
+  "images": ["child_nods_yes", "yoghurt", "wig", "jam", "tile_y", "tile_j", "num_1", "num_2", "num_3", "tutor_holds_jam"],
+  "show": {
+    "line": "Listen. y, y, yes. y, y, yum! Yes starts with y.",
+    "image": "child_nods_yes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with y, as in yes?", "options": ["yoghurt", "wig", "jam"], "answer": "yoghurt", "praise": "Yes! y, y, yoghurt."},
+    {"type": "say_it", "prompt": "Say the sound with me. y, as in yum!", "accept": ["y", "yuh", "ye", "yum"]},
+    {"type": "listen_tap", "prompt": "Is it y or j? Listen. Yet.", "options": ["tile_y", "tile_j"], "answer": "tile_y", "praise": "Yes! Yet starts with y."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "yes", "accept": ["yes", "yis", "jes"]},
+    {"type": "listen_tap", "prompt": "Clap the word special. Spe, cial. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Spe, cial."}
+  ],
+  "hints": ["Smile and say y. y, y, yes.", "y and j are different. Yes, jet."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with y.",
+    "tutor_try": "Jam! Jam starts with y.",
+    "image": "tutor_holds_jam",
+    "answer": "no",
+    "win_line": "You caught me! Jam starts with j. Yum starts with y.",
+    "gentle_line": "Let's listen together. y, y, yum. Yum starts with y!"
+  },
+  "parent_line": "Can hear the y sound at the start of words like yes, yum and yet."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w05_clothes_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Clothes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. clothing, colours, boots, dress, pants, skirt, uniform, jersey, T-shirt, choose, buy, shopping, mirror"
+  },
+  "skill": "efal.vocab.clothes",
+  "prereq_skills": ["efal.vocab.town"],
+  "images": ["clothes_shop", "boots", "dress", "jersey", "shorts", "sunhat", "two_red_shirts", "one_blue_dress", "two_boots", "socks", "school_shoes", "tutor_holds_jersey"],
+  "show": {
+    "line": "What do you wear? A dress, boots, a jersey, a shirt. Let's learn clothes!",
+    "image": "clothes_shop"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the boots.", "options": ["boots", "dress", "jersey"], "answer": "boots", "praise": "Yes! Boots go on our feet."},
+    {"type": "listen_tap", "prompt": "It is cold. What do we wear?", "options": ["jersey", "shorts", "sunhat"], "answer": "jersey", "praise": "Yes! A warm jersey."},
+    {"type": "say_it", "prompt": "What is this? Say it.", "accept": ["dress", "a dress", "the dress", "dres"], "image": "dress"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Neo buys two red shirts at the shop. What does Neo buy?", "options": ["two_red_shirts", "one_blue_dress", "two_boots"], "answer": "two_red_shirts", "praise": "Two red shirts!"},
+    {"type": "match_sort", "prompt": "Do we wear it on our feet or on our body? Sort the pictures.", "groups": ["feet", "body"], "items": [{"image": "boots", "group": "feet"}, {"image": "socks", "group": "feet"}, {"image": "school_shoes", "group": "feet"}, {"image": "dress", "group": "body"}, {"image": "jersey", "group": "body"}]}
+  ],
+  "hints": ["Look at the picture. Where do we wear it?", "Boots and socks go on our feet."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this.",
+    "tutor_try": "This is a dress!",
+    "image": "tutor_holds_jersey",
+    "answer": "jersey",
+    "win_line": "You caught me! It is a jersey. We wear it when it is cold.",
+    "gentle_line": "Let's look together. A jersey keeps us warm!"
+  },
+  "parent_line": "Can name clothes in English: dress, boots, jersey, shirt, socks."
+}

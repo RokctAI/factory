@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w10_ll_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [10],
+  "theme": "My body",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 10: revision; 'll' (ball, call, hill); segmenting and blending"
+  },
+  "skill": "efal.phonics.ending.ll",
+  "prereq_skills": ["efal.grammar.plural_es"],
+  "images": ["ball", "hill", "hat", "bus", "will", "bell", "tutor_holds_bell"],
+  "show": {
+    "line": "Two l's at the end. Ball, hill, call! Let's read ll words.",
+    "image": "ball"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one ends like ball?", "options": ["hill", "hat", "bus"], "answer": "hill", "praise": "Yes! Ball, hill."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "ball", "accept": ["ball", "bal", "bowl"]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with hill?", "options": ["will", "hat", "ball"], "answer": "will", "praise": "Yes! Hill, will."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "doll", "accept": ["doll", "dol", "dull"]},
+    {"type": "say_it", "prompt": "What is this? Say it.", "accept": ["bell", "a bell", "bel"], "image": "bell"}
+  ],
+  "hints": ["Two l's say one sound at the end.", "Listen to the end of the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that rhymes with ball.",
+    "tutor_try": "Bell! Bell rhymes with ball.",
+    "image": "tutor_holds_bell",
+    "answer": "no",
+    "win_line": "You caught me! Bell does not rhyme with ball. Call rhymes with ball.",
+    "gentle_line": "Let's listen together. Ball, call. Same at the end!"
+  },
+  "parent_line": "Can read words that end in ll, like ball, hill and doll."
+}

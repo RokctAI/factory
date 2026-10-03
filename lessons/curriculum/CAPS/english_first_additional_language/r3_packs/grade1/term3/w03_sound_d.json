@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w03_sound_d",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [3],
+  "theme": "Helping each other",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 3: /d/ (dad, dot, dog, dig); claps syllables in familiar words"
+  },
+  "skill": "efal.phonics.sound.d",
+  "prereq_skills": ["efal.phonics.sound.g"],
+  "images": ["dog", "dig", "bed", "gap", "dot", "pot", "num_1", "num_2", "num_3", "dad", "duck", "bat", "tutor_holds_dig"],
+  "show": {
+    "line": "Listen. d, d, dog. d, d, dad! Dog starts with d.",
+    "image": "dog"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with d, as in dog?", "options": ["dig", "bed", "gap"], "answer": "dig", "praise": "Yes! d, d, dig."},
+    {"type": "say_it", "prompt": "Say the sound with me. d, as in dad!", "accept": ["d", "duh", "de", "dad"]},
+    {"type": "blend", "prompt": "Listen. d, o, t. What word is it?", "sounds": ["d", "o", "t"], "options": ["dot", "dog", "pot"], "answer": "dot", "praise": "Dot! d, o, t."},
+    {"type": "listen_tap", "prompt": "Clap the word beetroot. Beet, root. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Beet, root."},
+    {"type": "match_sort", "prompt": "Does it start with d or b? Sort the pictures.", "groups": ["d", "b"], "items": [{"image": "dog", "group": "d"}, {"image": "dad", "group": "d"}, {"image": "duck", "group": "d"}, {"image": "bed", "group": "b"}, {"image": "bat", "group": "b"}]}
+  ],
+  "hints": ["Tap your tongue behind your teeth. d, d, d.", "Clap for each part of the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. d, i, g.",
+    "tutor_try": "That makes dog!",
+    "image": "tutor_holds_dig",
+    "answer": "dig",
+    "win_line": "You caught me! d, i, g makes dig.",
+    "gentle_line": "Let's do it together. d, i, g. Dig!"
+  },
+  "parent_line": "Can hear the d sound and blend words like dog, dad and dig."
+}

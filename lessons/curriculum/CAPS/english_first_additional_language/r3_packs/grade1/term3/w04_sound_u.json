@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w04_sound_u",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [4],
+  "theme": "Helping each other",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 4: /u/ (sun, bun, hug, bug); segmenting and blending; differentiates u and g; rhyming words"
+  },
+  "skill": "efal.phonics.sound.u",
+  "prereq_skills": ["efal.phonics.sound.d"],
+  "images": ["sun", "word_bun", "word_bin", "hug", "hut", "bug", "bag", "bun", "big", "tutor_holds_sit"],
+  "show": {
+    "line": "Listen. u, u, up. u, u, sun! Sun has the u sound.",
+    "image": "sun"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the u sound? Bun, bin.", "options": ["word_bun", "word_bin"], "answer": "word_bun", "praise": "Yes! b, u, n. Bun."},
+    {"type": "say_it", "prompt": "Say the sound with me. u, as in up!", "accept": ["u", "uh", "up", "ah"]},
+    {"type": "blend", "prompt": "Listen. h, u, g. What word is it?", "sounds": ["h", "u", "g"], "options": ["hug", "hut", "bug"], "answer": "hug", "praise": "Hug! h, u, g."},
+    {"type": "listen_tap", "prompt": "Which word rhymes with bug?", "options": ["hug", "bag", "bun"], "answer": "hug", "praise": "Yes! Bug, hug. They rhyme."},
+    {"type": "blend", "prompt": "Listen. b, u, g. What word is it?", "sounds": ["b", "u", "g"], "options": ["bug", "bag", "big"], "answer": "bug", "praise": "Bug! b, u, g."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "sun", "accept": ["sun", "son", "san"]}
+  ],
+  "hints": ["Open your mouth a little and say u. u, u, up.", "Listen to the middle sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that rhymes with sun.",
+    "tutor_try": "Sit! Sit rhymes with sun.",
+    "image": "tutor_holds_sit",
+    "answer": "no",
+    "win_line": "You caught me! Sit does not rhyme with sun. Bun rhymes with sun.",
+    "gentle_line": "Let's listen together. Sun, bun. Same at the end!"
+  },
+  "parent_line": "Can hear the u sound and blend words like sun, hug and bug."
+}

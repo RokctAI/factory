@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w01_sound_i",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [1],
+  "theme": "Friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 1: revises Term 1 sounds; /i/ (it, sit, pit, tip); differentiates p and i; segments oral sentences into words"
+  },
+  "skill": "efal.phonics.sound.i",
+  "prereq_skills": ["efal.phonics.sound.p"],
+  "images": ["child_sits", "word_sit", "word_sat", "pit", "pat", "tip", "tile_i", "tile_p", "tap", "sit", "tutor_holds_sit"],
+  "show": {
+    "line": "Listen. i, i, it. i, i, sit! Sit has the i sound.",
+    "image": "child_sits"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the i sound? Sit, sat.", "options": ["word_sit", "word_sat"], "answer": "word_sit", "praise": "Yes! s, i, t. Sit."},
+    {"type": "say_it", "prompt": "Say the sound with me. i, as in it!", "accept": ["i", "ih", "it", "e"]},
+    {"type": "blend", "prompt": "Listen. p, i, t. What word is it?", "sounds": ["p", "i", "t"], "options": ["pit", "pat", "tip"], "answer": "pit", "praise": "Pit! p, i, t."},
+    {"type": "listen_tap", "prompt": "Is it p or i? Listen. It.", "options": ["tile_i", "tile_p"], "answer": "tile_i", "praise": "Yes! It starts with i."},
+    {"type": "blend", "prompt": "Listen. t, i, p. What word is it?", "sounds": ["t", "i", "p"], "options": ["tip", "tap", "sit"], "answer": "tip", "praise": "Tip! t, i, p."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "sit", "accept": ["sit", "set", "seat"]}
+  ],
+  "hints": ["Smile a little and say i. i, i, it.", "Say each sound, then say them fast."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. s, i, t.",
+    "tutor_try": "That makes sat!",
+    "image": "tutor_holds_sit",
+    "answer": "sit",
+    "win_line": "You caught me! s, i, t makes sit.",
+    "gentle_line": "Let's do it together. s, i, t. Sit!"
+  },
+  "parent_line": "Can hear the i sound and blend words like sit, pit and tip."
+}

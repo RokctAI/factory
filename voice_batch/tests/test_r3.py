@@ -28,7 +28,7 @@ import r3_pack_check  # noqa: E402
 
 AGENT_ROOT = os.environ.get("AGENT_ROOT")
 PROBE = FACTORY / "voice_batches" / "examples" / "r3_phonics_probe.json"
-EN = "english_home_language."
+EN = ("english_home_language.", "english_first_additional_language.")
 GOOD = {"kind": "r3", "voice": "voice_x", "ref_path": "lms/team/voice_refs/voice_x_ref.wav",
         "ref_sha256": "0" * 64, "agent_branch": "rokct/r3-test"}
 NO_RESP = {"by_key": {}, "by_text": {}}
@@ -67,7 +67,7 @@ class PackLines(unittest.TestCase):
         # Derived from the pack tree (Grades R-3 land one grade at a time), so
         # a new grade's packs never need this number changed by hand.
         paths = r3_pack_check.pack_paths()
-        self.assertGreaterEqual(len(paths), 74)  # Grade R Terms 1-4, maths + English HL
+        self.assertGreaterEqual(len(paths), 74)  # Grade R Terms 1-4, maths + English HL (+ EFAL Grades 1-3)
         self.assertEqual(len(self.packs), len(paths))
         pack_items = [i for i in self.items if not i["key"].startswith("r3.")]
         want = sum(1 for p in self.packs for _, t in r3_pack_check._spoken_lines(p) if t.strip())
@@ -94,7 +94,7 @@ class PackLines(unittest.TestCase):
                 self.assertRegex(i["key"], r"^r3\.r3_praise_[a-z]+$")
                 continue
             pid, where = i["key"].rsplit(".", 1)
-            self.assertRegex(pid, r"^(maths|english_home_language)\.grade[R123]\.term[1-4]\.w\d\d_[a-z0-9_]+$")
+            self.assertRegex(pid, r"^(maths|english_home_language|english_first_additional_language)\.grade[R123]\.term[1-4]\.w\d\d_[a-z0-9_]+$")
             self.assertIn(template_of(where), R.WHERE_TEMPLATES, i["key"])
             self.assertEqual(i["file"], f"{R.AUDIO_DIR}/{i['key']}.mp3")
 
