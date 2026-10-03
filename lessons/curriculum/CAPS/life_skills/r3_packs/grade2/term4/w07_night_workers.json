@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w07_night_workers",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [9],
+  "theme": "Night time",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Personal and Social Well-being: Day and night",
+    "subtopic": "People who work at night and serve communities, such as security officers, doctors, pilots and truck drivers"
+  },
+  "skill": "community.night_workers",
+  "prereq_skills": ["sky.day_night"],
+  "images": ["night_city", "security_guard", "teacher", "baker", "doctor", "librarian", "farmer", "truck_driver", "to_rest", "to_eat", "tutor_sleep"],
+  "show": {
+    "line": "At night we sleep. But some people work at night to help us!",
+    "image": "night_city"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Bath, pyjamas, brush teeth, and then?", "sequence": ["bath", "pyjamas", "brush teeth"], "options": ["bed", "breakfast", "school"], "answer": "bed", "praise": "Bed!"},
+    {"type": "listen_tap", "prompt": "Who works at night keeping buildings safe?", "options": ["security_guard", "teacher", "baker"], "answer": "security_guard", "praise": "A security guard!"},
+    {"type": "listen_tap", "prompt": "Who may work at night in a hospital?", "options": ["doctor", "librarian", "farmer"], "answer": "doctor", "praise": "Doctors and nurses!"},
+    {"type": "say_it", "prompt": "What do we do when we sleep?", "accept": ["dream", "rest", "we dream", "snore"]},
+    {"type": "listen_tap", "prompt": "Who may drive trucks at night?", "options": ["truck_driver", "teacher"], "answer": "truck_driver", "praise": "Truck drivers!"},
+    {"type": "listen_tap", "prompt": "Why do we sleep?", "options": ["to_rest", "to_eat"], "answer": "to_rest", "praise": "To rest and grow!"}
+  ],
+  "hints": ["Night is for rest.", "Some jobs go on all night."],
+  "beat_the_tutor": {
+    "setup": "My turn! At night everyone sleeps.",
+    "tutor_try": "Nobody works at night!",
+    "image": "tutor_sleep",
+    "answer": "doctors",
+    "win_line": "You caught me! Doctors and guards work at night.",
+    "gentle_line": "Some helpers work all night!"
+  },
+  "parent_line": "Knows night routines and people who work at night."
+}

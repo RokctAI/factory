@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w03_anthem_coat_of_arms",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [5],
+  "theme": "Anthem and coat of arms",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: National anthem and coat of arms",
+    "subtopic": "Recognising the coat of arms as the signature of South Africa; include learners from other countries and their flags"
+  },
+  "skill": "sa.coat_of_arms",
+  "prereq_skills": ["sa.flag"],
+  "images": ["coat_of_arms", "sa_flag", "protea", "stand_still", "run_around", "passport", "cereal_box", "thumbs_up", "thumbs_down", "tutor_dance"],
+  "show": {
+    "line": "Our coat of arms is South Africa's special badge. Our anthem is our national song!",
+    "image": "coat_of_arms"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the coat of arms.", "options": ["coat_of_arms", "sa_flag", "protea"], "answer": "coat_of_arms", "praise": "The coat of arms!"},
+    {"type": "say_it", "prompt": "Our national anthem starts Nkosi sikelel'...?", "accept": ["iafrika", "i afrika", "africa", "afrika"]},
+    {"type": "listen_tap", "prompt": "When we sing the anthem we...?", "options": ["stand_still", "run_around"], "answer": "stand_still", "praise": "Stand still with respect!"},
+    {"type": "listen_tap", "prompt": "Where can you see the coat of arms?", "options": ["passport", "cereal_box"], "answer": "passport", "praise": "On passports and documents!"},
+    {"type": "listen_tap", "prompt": "The anthem uses how many languages? More than one?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! Five languages."},
+    {"type": "say_it", "prompt": "Say: I am proudly South African!", "accept": ["i am proudly south african", "proudly south african", "i'm proudly south african"]}
+  ],
+  "hints": ["The coat of arms is like a country's signature.", "We stand when we sing the anthem."],
+  "beat_the_tutor": {
+    "setup": "My turn! During the anthem...",
+    "tutor_try": "I dance and shout!",
+    "image": "tutor_dance",
+    "answer": "stand",
+    "win_line": "You caught me! We stand still with respect.",
+    "gentle_line": "Stand tall and sing!"
+  },
+  "parent_line": "Recognises the coat of arms and knows the national anthem."
+}

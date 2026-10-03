@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term3.w02_electricity_taxis",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Electricity and taxis",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Public safety",
+    "subtopic": "Riding trains and taxis safely; dangers of electricity; poisonous and inflammable substances"
+  },
+  "skill": "safety.electricity_transport",
+  "prereq_skills": ["safety.public_places"],
+  "images": ["power_lines", "stay_away", "touch_it", "broken_plug", "book", "taxi_stopped", "taxi_moving", "petrol", "water", "sand", "tutor_kite"],
+  "show": {
+    "line": "Electricity can kill. Never touch wires. In taxis, sit down and wear a seatbelt!",
+    "image": "power_lines"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A wire is hanging down. What do you do?", "options": ["stay_away", "touch_it"], "answer": "stay_away", "praise": "Stay away!"},
+    {"type": "listen_tap", "prompt": "Which is dangerous?", "options": ["broken_plug", "book"], "answer": "broken_plug", "praise": "Broken plugs are dangerous!"},
+    {"type": "say_it", "prompt": "In a taxi, wear your...?", "accept": ["seatbelt", "seat belt", "belt"]},
+    {"type": "listen_tap", "prompt": "When do you get out of a taxi?", "options": ["taxi_stopped", "taxi_moving"], "answer": "taxi_stopped", "praise": "When it has stopped!"},
+    {"type": "listen_tap", "prompt": "Which can catch fire easily?", "options": ["petrol", "water", "sand"], "answer": "petrol", "praise": "Petrol is flammable!"},
+    {"type": "say_it", "prompt": "Should you fly a kite near power lines?", "accept": ["no", "never"]}
+  ],
+  "hints": ["Electricity and fire are not toys.", "Sit still and buckle up."],
+  "beat_the_tutor": {
+    "setup": "My turn! A kite is stuck on a power line.",
+    "tutor_try": "I'll climb up!",
+    "image": "tutor_kite",
+    "answer": "no",
+    "win_line": "You caught me! Never climb near power lines.",
+    "gentle_line": "Leave it. Call a grown-up!"
+  },
+  "parent_line": "Knows dangers of electricity and how to ride trains and taxis safely."
+}

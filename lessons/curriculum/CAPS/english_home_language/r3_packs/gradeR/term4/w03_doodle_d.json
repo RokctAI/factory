@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term4.w03_doodle_d",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "This is where people live",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live: Emergent Reading and Phonics",
+    "subtopic": "Counts how many times the 'd' sound is heard in 'doodle'"
+  },
+  "skill": "phonics.count_sound.d",
+  "prereq_skills": ["phonics.initial_sound.d"],
+  "images": ["doodle", "dad_drum", "dog_door", "duck", "tutor_doodle_one"],
+  "show": {
+    "line": "Listen. Doodle. d, oo, d, le. I hear d two times in doodle!",
+    "image": "doodle"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Doodle. How many times do you hear d?", "image": "doodle", "count": "2", "options": ["1", "2", "3"], "answer": "2", "praise": "Two! d, oo, d, le."},
+    {"type": "count_tap", "prompt": "Dad. How many times do you hear d?", "image": "dad_drum", "count": "2", "options": ["1", "2", "3"], "answer": "2", "praise": "Two! d at the start and the end."},
+    {"type": "count_tap", "prompt": "Duck. How many times do you hear d?", "image": "duck", "count": "1", "options": ["1", "2", "3"], "answer": "1", "praise": "One! Just at the start."},
+    {"type": "say_it", "prompt": "Say doodle with me. Clap for every d!", "accept": ["doodle", "doo dle", "dudle", "doodl", "doodel"], "image": "doodle"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Dad plays the drum. His dog sits by the door. What does Dad play?", "options": ["dad_drum", "duck", "dog_door"], "answer": "dad_drum", "praise": "Yes! d, d, drum."}
+  ],
+  "hints": ["Say the word slowly. Listen for every d.", "Clap each time you hear d."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the d in doodle.",
+    "tutor_try": "Doodle. I hear d one time!",
+    "image": "tutor_doodle_one",
+    "answer": "two",
+    "win_line": "You caught me! d, oo, d, le. Two times!",
+    "gentle_line": "Let's say it slowly. d, oo, d, le. Two times!"
+  },
+  "parent_line": "Can count how many times the d sound is heard in a word."
+}

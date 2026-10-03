@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term1.w04_first_aid",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 1,
+  "weeks": [6],
+  "theme": "Basic first aid",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Health protection",
+    "subtopic": "Basic first aid practices in situations such as nose bleeds, animal bites, cuts and burns"
+  },
+  "skill": "health.first_aid",
+  "prereq_skills": ["health.germs"],
+  "images": ["first_aid_kit", "plaster", "paper", "leaf", "cool_water", "butter", "ice_cream", "lean_forward_pinch", "lie_back", "lunchbox", "toy_box", "tutor_butter"],
+  "show": {
+    "line": "First aid helps until a grown-up or nurse comes. Cuts, burns and nose bleeds!",
+    "image": "first_aid_kit"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A small cut. What covers it?", "options": ["plaster", "paper", "leaf"], "answer": "plaster", "praise": "A plaster!"},
+    {"type": "listen_tap", "prompt": "A small burn. What helps?", "options": ["cool_water", "butter", "ice_cream"], "answer": "cool_water", "praise": "Cool running water!"},
+    {"type": "listen_tap", "prompt": "A nose bleed. What do you do?", "options": ["lean_forward_pinch", "lie_back"], "answer": "lean_forward_pinch", "praise": "Lean forward and pinch your nose!"},
+    {"type": "say_it", "prompt": "A dog bites you. Who do you tell?", "accept": ["grown up", "adult", "teacher", "mom", "mama", "parent", "nurse", "doctor"]},
+    {"type": "listen_tap", "prompt": "Which box has first aid things?", "options": ["first_aid_kit", "lunchbox", "toy_box"], "answer": "first_aid_kit", "praise": "The first aid kit!"},
+    {"type": "say_it", "prompt": "Should you touch someone else's blood?", "accept": ["no", "never", "no never"]}
+  ],
+  "hints": ["Always get a grown-up for injuries.", "Don't touch blood without gloves."],
+  "beat_the_tutor": {
+    "setup": "My turn! I burnt my finger.",
+    "tutor_try": "I'll put butter on it!",
+    "image": "tutor_butter",
+    "answer": "cool water",
+    "win_line": "You caught me! Cool water is right.",
+    "gentle_line": "Cool water for burns!"
+  },
+  "parent_line": "Knows basic first aid for cuts, burns, nose bleeds and bites."
+}

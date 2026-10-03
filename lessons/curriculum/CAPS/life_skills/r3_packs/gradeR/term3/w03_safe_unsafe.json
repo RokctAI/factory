@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w03_safe_unsafe",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Safe or unsafe?",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe",
+    "subtopic": "Identifies safe and unsafe situations in the home, at school and in the environment"
+  },
+  "skill": "safety.safe_unsafe",
+  "prereq_skills": [],
+  "images": ["safe_home", "reading_book", "holding_hands_road", "playing_ball_park", "climbing_stove", "playing_road", "hot_pot", "teddy", "book", "playground", "busy_road", "river", "knife", "spoon", "cup", "tell_adult", "eat_pill", "hide_bottle", "tutor_road_ball"],
+  "show": {
+    "line": "Some things are safe and some are not. Let's keep safe at home and school!",
+    "image": "safe_home"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Safe or unsafe? Sort them.", "groups": ["safe", "unsafe"], "items": [{"image": "reading_book", "group": "safe"}, {"image": "holding_hands_road", "group": "safe"}, {"image": "playing_ball_park", "group": "safe"}, {"image": "climbing_stove", "group": "unsafe"}, {"image": "playing_road", "group": "unsafe"}]},
+    {"type": "listen_tap", "prompt": "Which one is unsafe to touch?", "options": ["hot_pot", "teddy", "book"], "answer": "hot_pot", "praise": "Hot! Never touch a hot pot."},
+    {"type": "listen_tap", "prompt": "Where is the safe place to play?", "options": ["playground", "busy_road", "river"], "answer": "playground", "praise": "The playground!"},
+    {"type": "listen_tap", "prompt": "Tap the sharp thing.", "options": ["knife", "spoon", "cup"], "answer": "knife", "praise": "A knife is sharp. Only grown-ups use it."},
+    {"type": "say_it", "prompt": "You see a broken bottle. What do you do?", "accept": ["tell a grown up", "tell an adult", "tell teacher", "tell mama", "leave it", "do not touch", "don't touch it"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Kagiso sees an open bottle of pills on the table. He wants to taste one. What should he do?", "options": ["tell_adult", "eat_pill", "hide_bottle"], "answer": "tell_adult", "praise": "Tell a grown-up! Medicine is not sweets."}
+  ],
+  "hints": ["Could it hurt you? Then it is unsafe.", "When unsure, ask a grown-up."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will play in a safe place.",
+    "tutor_try": "I will play ball in the busy road!",
+    "image": "tutor_road_ball",
+    "answer": "unsafe",
+    "win_line": "You caught me! The road is unsafe. Play in the park.",
+    "gentle_line": "Never play in the road. The park is safe!"
+  },
+  "parent_line": "Can tell safe from unsafe situations and knows to tell a grown-up."
+}

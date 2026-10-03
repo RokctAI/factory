@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term4.w01_faster_fastest",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 4,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Language Use",
+    "subtopic": "Understands and uses comparative adjectives ('A car is faster than a bicycle. An aeroplane is the fastest.')"
+  },
+  "skill": "efal.grammar.comparatives",
+  "prereq_skills": ["efal.vocab.transport"],
+  "images": ["aeroplane", "car", "bicycle", "bus", "word_bigger", "word_big", "word_biggest", "donkey_cart", "taxi", "train", "tutor_holds_bicycle"],
+  "show": {
+    "line": "A car is fast. A train is faster. An aeroplane is the fastest!",
+    "image": "aeroplane"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is faster?", "options": ["car", "bicycle"], "answer": "car", "praise": "Yes! A car is faster than a bicycle."},
+    {"type": "listen_tap", "prompt": "Which one is the fastest?", "options": ["aeroplane", "bus", "bicycle"], "answer": "aeroplane", "praise": "Yes! The aeroplane is the fastest."},
+    {"type": "listen_tap", "prompt": "A truck is ... than a car. Big, bigger or biggest?", "options": ["word_bigger", "word_big", "word_biggest"], "answer": "word_bigger", "praise": "Yes! Bigger."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "A car is faster than a bicycle.", "accept": ["a car is faster than a bicycle", "car is faster than bicycle", "a car is faster"]},
+    {"type": "listen_tap", "prompt": "Which one is the slowest?", "options": ["donkey_cart", "taxi", "train"], "answer": "donkey_cart", "praise": "Yes! The donkey cart is the slowest."}
+  ],
+  "hints": ["Compare two things? Add er. Faster.", "The most of all? Add est. Fastest."],
+  "beat_the_tutor": {
+    "setup": "My turn! Look at the bicycle and the bus.",
+    "tutor_try": "The bicycle is faster than the bus!",
+    "image": "tutor_holds_bicycle",
+    "answer": "no",
+    "win_line": "You caught me! The bus is faster than the bicycle.",
+    "gentle_line": "Let's say it together. The bus is faster!"
+  },
+  "parent_line": "Can compare things: fast, faster, fastest."
+}

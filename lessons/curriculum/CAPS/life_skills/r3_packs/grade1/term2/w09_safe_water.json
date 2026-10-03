@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w09_safe_water",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [10, 11],
+  "theme": "Safe water to drink",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Keeping my body safe",
+    "subtopic": "Making water safe to drink (teacher demonstration): boiling in a pot on a stove; other methods such as Jik and filtering"
+  },
+  "skill": "health.safe_water",
+  "prereq_skills": ["health.food.fresh"],
+  "images": ["boiling_pot", "clean_water", "river_water_dirty", "puddle", "boil_water", "add_sand", "add_sugar", "cool_down", "freeze", "spill", "drink_now", "add_juice", "covered_bucket", "open_bucket", "tutor_river"],
+  "show": {
+    "line": "Dirty water can make us sick. Boiling water kills germs and makes it safe!",
+    "image": "boiling_pot"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which water is safe?", "options": ["clean_water", "river_water_dirty", "puddle"], "answer": "clean_water", "praise": "Clean water!"},
+    {"type": "listen_tap", "prompt": "How can grown-ups make water safe?", "options": ["boil_water", "add_sand", "add_sugar"], "answer": "boil_water", "praise": "Boil it!"},
+    {"type": "say_it", "prompt": "Who boils the water, a child or a grown-up?", "accept": ["grown up", "a grown up", "adult", "an adult", "mama", "parent"]},
+    {"type": "listen_tap", "prompt": "After boiling, we let it...?", "options": ["cool_down", "freeze", "spill"], "answer": "cool_down", "praise": "Cool down, then drink!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "The tap is broken. Mama gets water from the river. What must she do before they drink it?", "options": ["boil_water", "drink_now", "add_juice"], "answer": "boil_water", "praise": "Boil it first!"},
+    {"type": "listen_tap", "prompt": "Where should clean water be kept?", "options": ["covered_bucket", "open_bucket"], "answer": "covered_bucket", "praise": "Covered! No flies or dirt."}
+  ],
+  "hints": ["Germs hide in dirty water.", "Heat kills germs."],
+  "beat_the_tutor": {
+    "setup": "My turn! I am thirsty at the river.",
+    "tutor_try": "I drink the brown water!",
+    "image": "tutor_river",
+    "answer": "boil",
+    "win_line": "You caught me! First a grown-up boils it.",
+    "gentle_line": "Boil the water first. Then it is safe!"
+  },
+  "parent_line": "Knows dirty water can make us sick and boiling makes it safe."
+}

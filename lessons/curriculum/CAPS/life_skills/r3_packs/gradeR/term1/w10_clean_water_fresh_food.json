@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w10_clean_water_fresh_food",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Clean water, fresh food",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "Healthy eating",
+    "subtopic": "Importance of drinking clean water and eating fresh food; sorts foods into two groups and explains"
+  },
+  "skill": "health.food.fresh",
+  "prereq_skills": ["health.food.healthy"],
+  "images": ["glass_of_water", "clean_water", "muddy_water", "puddle", "fresh_apple", "rotten_apple", "mouldy_bread", "fresh_tomato", "green_spinach", "thumbs_down", "thumbs_up", "child_washing_fruit", "child_dropping_fruit", "child_hiding_fruit", "tutor_puddle"],
+  "show": {
+    "line": "Our bodies need clean water every day. Fresh food keeps us well!",
+    "image": "glass_of_water"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which water is safe to drink?", "options": ["clean_water", "muddy_water", "puddle"], "answer": "clean_water", "praise": "Clean water! Safe to drink."},
+    {"type": "listen_tap", "prompt": "Which fruit is fresh?", "options": ["fresh_apple", "rotten_apple", "mouldy_bread"], "answer": "fresh_apple", "praise": "A fresh, crunchy apple!"},
+    {"type": "match_sort", "prompt": "Fresh food, or old food? Sort them.", "groups": ["fresh", "old"], "items": [{"image": "fresh_apple", "group": "fresh"}, {"image": "fresh_tomato", "group": "fresh"}, {"image": "green_spinach", "group": "fresh"}, {"image": "rotten_apple", "group": "old"}, {"image": "mouldy_bread", "group": "old"}]},
+    {"type": "say_it", "prompt": "You are thirsty after playing. What is the best drink?", "accept": ["water", "clean water", "a glass of water"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Zanele finds bread with green spots on it. Should she eat it?", "options": ["thumbs_down", "thumbs_up"], "answer": "thumbs_down", "praise": "No! Green spots mean the bread is old."},
+    {"type": "listen_tap", "prompt": "We wash fruit before we eat it. Tap the child washing fruit.", "options": ["child_washing_fruit", "child_dropping_fruit", "child_hiding_fruit"], "answer": "child_washing_fruit", "praise": "Wash it first!"}
+  ],
+  "hints": ["Fresh food looks bright and smells good.", "Water is the best drink for our bodies."],
+  "beat_the_tutor": {
+    "setup": "My turn! I am thirsty.",
+    "tutor_try": "I will drink water from the puddle!",
+    "image": "tutor_puddle",
+    "answer": "clean water",
+    "win_line": "You caught me! Puddle water is dirty. Drink clean water.",
+    "gentle_line": "Only clean water. Never puddle water!"
+  },
+  "parent_line": "Knows to drink clean water and choose fresh food."
+}

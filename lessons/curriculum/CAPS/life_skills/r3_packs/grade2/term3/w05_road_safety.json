@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w05_road_safety",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [9],
+  "theme": "Road safety",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Road safety",
+    "subtopic": "Road safety rules for pedestrians, cyclists and passengers; healthy living habits"
+  },
+  "skill": "safety.road",
+  "prereq_skills": ["safety.traffic_lights"],
+  "images": ["zebra_crossing", "between_cars", "on_bend", "seatbelt", "hat", "scarf", "helmet", "cap", "crown", "hold_hands", "walk_pavement", "play_road", "run_across", "bright_clothes", "dark_clothes", "tutor_run_road"],
+  "show": {
+    "line": "Stop, look right, look left, look right again. Then cross!",
+    "image": "zebra_crossing"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where is the safest place to cross?", "options": ["zebra_crossing", "between_cars", "on_bend"], "answer": "zebra_crossing", "praise": "The zebra crossing!"},
+    {"type": "say_it", "prompt": "Before crossing, look right, look left, then look...?", "accept": ["right", "right again", "look right again"]},
+    {"type": "listen_tap", "prompt": "In a car you must wear a...?", "options": ["seatbelt", "hat", "scarf"], "answer": "seatbelt", "praise": "A seatbelt!"},
+    {"type": "listen_tap", "prompt": "On a bicycle you wear a...?", "options": ["helmet", "cap", "crown"], "answer": "helmet", "praise": "A helmet!"},
+    {"type": "match_sort", "prompt": "Safe or unsafe on the road?", "groups": ["safe", "unsafe"], "items": [{"image": "hold_hands", "group": "safe"}, {"image": "seatbelt", "group": "safe"}, {"image": "walk_pavement", "group": "safe"}, {"image": "play_road", "group": "unsafe"}, {"image": "run_across", "group": "unsafe"}]},
+    {"type": "listen_tap", "prompt": "At night, wear clothes that are...?", "options": ["bright_clothes", "dark_clothes"], "answer": "bright_clothes", "praise": "Bright, so drivers see you!"}
+  ],
+  "hints": ["Cars drive on the left here, so look right first.", "Wear a seatbelt every trip."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will cross the road.",
+    "tutor_try": "I just run, no looking!",
+    "image": "tutor_run_road",
+    "answer": "look",
+    "win_line": "You caught me! Stop and look both ways.",
+    "gentle_line": "Stop, look, listen, then cross!"
+  },
+  "parent_line": "Knows road safety rules for walkers, cyclists and passengers."
+}

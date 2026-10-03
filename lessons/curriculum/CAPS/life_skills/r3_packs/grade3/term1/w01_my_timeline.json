@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term1.w01_my_timeline",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "My timeline",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: About me",
+    "subtopic": "Timeline of own life (my first tooth, my first step, first day at play school)"
+  },
+  "skill": "history.timeline",
+  "prereq_skills": ["self.personal_details"],
+  "images": ["life_timeline", "baby", "schoolchild", "teenager", "baby_photo", "today_photo", "school", "born", "tutor_timeline"],
+  "show": {
+    "line": "A timeline shows my life in order. Born, first tooth, first steps, first day at school!",
+    "image": "life_timeline"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Born, first tooth, first steps, and then?", "sequence": ["born", "first tooth", "first steps"], "options": ["first day at school", "born", "first tooth"], "answer": "first day at school", "praise": "School!"},
+    {"type": "listen_tap", "prompt": "What came first?", "options": ["baby", "schoolchild", "teenager"], "answer": "baby", "praise": "Being a baby!"},
+    {"type": "say_it", "prompt": "What happened first, walking or going to school?", "accept": ["walking", "walk", "walking first"]},
+    {"type": "listen_tap", "prompt": "Which is from the past?", "options": ["baby_photo", "today_photo"], "answer": "baby_photo", "praise": "The past!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Lulu was born in 2018. She started school in 2024. Which happened later?", "options": ["school", "born"], "answer": "school", "praise": "School came later!"},
+    {"type": "say_it", "prompt": "Ask a grown-up! What was your first word? Do you know it?", "accept": ["mama", "baba", "dada", "no", "yes", "i don't know", "mom", "dad"]}
+  ],
+  "hints": ["Put things in the order they happened.", "Past is before now."],
+  "beat_the_tutor": {
+    "setup": "My turn! My timeline.",
+    "tutor_try": "School, then I was born!",
+    "image": "tutor_timeline",
+    "answer": "born first",
+    "win_line": "You caught me! I was born first.",
+    "gentle_line": "Born first, then school!"
+  },
+  "parent_line": "Can order events from their own life on a timeline."
+}

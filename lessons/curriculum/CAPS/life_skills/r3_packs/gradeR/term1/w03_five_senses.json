@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w03_five_senses",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "My five senses",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "My senses",
+    "subtopic": "Names the five senses and how the body uses them to explore the world"
+  },
+  "skill": "body.senses.five",
+  "prereq_skills": ["body.parts.name"],
+  "images": ["five_senses", "ears", "nose", "hands", "eyes", "feet", "tongue", "knee", "fingers", "tutor_flower_ear"],
+  "show": {
+    "line": "I have five senses. I see, hear, smell, taste and touch!",
+    "image": "five_senses"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which part do we hear with?", "options": ["ears", "nose", "hands"], "answer": "ears", "praise": "Ears! We hear with our ears."},
+    {"type": "listen_tap", "prompt": "Which part do we smell with?", "options": ["nose", "eyes", "feet"], "answer": "nose", "praise": "Nose! Sniff, sniff."},
+    {"type": "listen_tap", "prompt": "Which part do we taste with?", "options": ["tongue", "ears", "knee"], "answer": "tongue", "praise": "Tongue! Yum, we taste with our tongue."},
+    {"type": "say_it", "prompt": "You look at a rainbow. Which sense do you use?", "accept": ["see", "seeing", "sight", "eyes", "my eyes"]},
+    {"type": "listen_tap", "prompt": "You stroke a soft kitten. Which part feels it?", "options": ["fingers", "nose", "ears"], "answer": "fingers", "praise": "Fingers! We touch and feel."},
+    {"type": "say_it", "prompt": "Can you name the five senses? Try!", "accept": ["see hear smell taste touch", "sight hearing smell taste touch", "see hear smell touch taste", "hear see smell taste touch"]}
+  ],
+  "hints": ["Think: which part of my body does that?", "Eyes see, ears hear, nose smells, tongue tastes, skin feels."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will smell a flower.",
+    "tutor_try": "I smell it with my ears!",
+    "image": "tutor_flower_ear",
+    "answer": "nose",
+    "win_line": "You caught me! We smell with our nose.",
+    "gentle_line": "We smell with our nose. Sniff, sniff!"
+  },
+  "parent_line": "Can name the five senses and the body part for each."
+}

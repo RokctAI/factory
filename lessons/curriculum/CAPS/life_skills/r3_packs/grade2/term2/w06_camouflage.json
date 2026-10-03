@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w06_camouflage",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [8],
+  "theme": "Hiding in plain sight",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Wild animals",
+    "subtopic": "Camouflage: why and how animals camouflage themselves"
+  },
+  "skill": "animals.camouflage",
+  "prereq_skills": ["animals.wild_big5"],
+  "images": ["chameleon", "lion", "elephant", "green_leaves", "red_wall", "hide_in_trees", "to_look_pretty", "camouflage", "moth_gone", "rhino", "chicken", "tutor_rabbit"],
+  "show": {
+    "line": "Camouflage helps animals hide. A chameleon changes colour to match leaves!",
+    "image": "chameleon"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which animal can change colour?", "options": ["chameleon", "lion", "elephant"], "answer": "chameleon", "praise": "The chameleon!"},
+    {"type": "listen_tap", "prompt": "Where can a green frog hide best?", "options": ["green_leaves", "red_wall"], "answer": "green_leaves", "praise": "In green leaves!"},
+    {"type": "listen_tap", "prompt": "Why does a leopard have spots?", "options": ["hide_in_trees", "to_look_pretty"], "answer": "hide_in_trees", "praise": "To hide in the shady trees!"},
+    {"type": "say_it", "prompt": "Hiding by matching the colours around you is called?", "accept": ["camouflage", "camo"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "A brown moth sits on brown tree bark. A bird flies past and does not see it. Why?", "options": ["camouflage", "moth_gone"], "answer": "camouflage", "praise": "Camouflage!"},
+    {"type": "listen_tap", "prompt": "Which animal is endangered and must be protected?", "options": ["rhino", "chicken"], "answer": "rhino", "praise": "Rhinos need protecting!"}
+  ],
+  "hints": ["Matching colours helps animals hide.", "Spots and stripes break up the shape."],
+  "beat_the_tutor": {
+    "setup": "My turn! A white rabbit hides best...",
+    "tutor_try": "On green grass!",
+    "image": "tutor_rabbit",
+    "answer": "snow",
+    "win_line": "You caught me! A white rabbit hides in snow.",
+    "gentle_line": "White on white, hidden!"
+  },
+  "parent_line": "Knows why and how animals use camouflage."
+}

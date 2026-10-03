@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w09_healthy_choices",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [10, 11],
+  "theme": "Healthy choices",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Food",
+    "subtopic": "Healthy choices and the right amount of food"
+  },
+  "skill": "food.choices",
+  "prereq_skills": ["food.groups"],
+  "images": ["balanced_plate", "chips_plate", "sweets_plate", "apple", "chocolate", "chips_packet", "water", "fizzy_drink", "sweet_juice", "vegetables", "fruit", "cake", "sweets", "too_much", "too_little", "tutor_chocolates"],
+  "show": {
+    "line": "A balanced plate has a bit of everything. Not too much, not too little!",
+    "image": "balanced_plate"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which plate is balanced?", "options": ["balanced_plate", "chips_plate", "sweets_plate"], "answer": "balanced_plate", "praise": "A bit of everything!"},
+    {"type": "listen_tap", "prompt": "Which snack is healthier?", "options": ["apple", "chocolate", "chips_packet"], "answer": "apple", "praise": "An apple!"},
+    {"type": "listen_tap", "prompt": "Which drink is best?", "options": ["water", "fizzy_drink", "sweet_juice"], "answer": "water", "praise": "Water!"},
+    {"type": "say_it", "prompt": "Too much sugar is bad for our...?", "accept": ["teeth", "body", "health", "tummy"]},
+    {"type": "match_sort", "prompt": "Eat every day or only sometimes?", "groups": ["every_day", "sometimes"], "items": [{"image": "vegetables", "group": "every_day"}, {"image": "fruit", "group": "every_day"}, {"image": "water", "group": "every_day"}, {"image": "cake", "group": "sometimes"}, {"image": "sweets", "group": "sometimes"}]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Lerato eats three plates of pap and feels sick. What went wrong?", "options": ["too_much", "too_little"], "answer": "too_much", "praise": "Too much! Eat just enough."}
+  ],
+  "hints": ["Balance means a mix of foods.", "Treats are only for sometimes."],
+  "beat_the_tutor": {
+    "setup": "My turn! I choose a snack.",
+    "tutor_try": "I eat five chocolates!",
+    "image": "tutor_chocolates",
+    "answer": "apple",
+    "win_line": "You caught me! Too many sweets. An apple is better.",
+    "gentle_line": "Choose fruit for a healthy snack!"
+  },
+  "parent_line": "Can choose healthy foods and the right amount."
+}

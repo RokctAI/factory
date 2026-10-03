@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term1.w07_sight_words_we_in",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Outside",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Listening and Speaking",
+    "subtopic": "Sight words: we, in, the, sun; do, you, hot, run"
+  },
+  "skill": "efal.sight_words.we_in",
+  "prereq_skills": ["efal.sight_words.i_like"],
+  "images": ["sight_word_cards_we_in", "word_sun", "word_run", "word_we", "word_in", "hot_sun_day", "rain_day", "cold_snow", "word_hot", "tutor_holds_run"],
+  "show": {
+    "line": "New words to read! We, in, the, sun, run, hot. Look and read!",
+    "image": "sight_word_cards_we_in"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word sun.", "options": ["word_sun", "word_run", "word_we"], "answer": "word_sun", "praise": "Yes! Sun."},
+    {"type": "listen_tap", "prompt": "Tap the word run.", "options": ["word_run", "word_sun", "word_in"], "answer": "word_run", "praise": "Yes! Run."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["we", "wi", "wee"], "image": "word_we"},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "We run in the sun.", "accept": ["we run in the sun", "we run in sun", "run in the sun"]},
+    {"type": "listen_tap", "prompt": "It is hot. Which picture is hot?", "options": ["hot_sun_day", "rain_day", "cold_snow"], "answer": "hot_sun_day", "praise": "Yes! The sun is hot."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["hot", "hut", "hott"], "image": "word_hot"}
+  ],
+  "hints": ["Look at the first letter. Then read the whole word.", "Point to each word. We, run, in, the, sun."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says sun!",
+    "image": "tutor_holds_run",
+    "answer": "run",
+    "win_line": "You caught me! That word is run. We run in the sun.",
+    "gentle_line": "Let's read it together. Run. We run fast!"
+  },
+  "parent_line": "Can read the words we, in, the, sun, run and hot."
+}

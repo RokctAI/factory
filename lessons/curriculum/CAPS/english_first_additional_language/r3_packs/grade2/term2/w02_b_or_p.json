@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term2.w02_b_or_p",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [2],
+  "theme": "Friendship",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 2: revises o, u and -at words; contrasts b and p sounds (bun, pan, pit)"
+  },
+  "skill": "efal.phonics.consonant.b_p_contrast",
+  "prereq_skills": ["efal.phonics.vowel.a_e_contrast"],
+  "images": ["bun", "tile_b", "tile_p", "word_bat", "word_pat", "bus", "ball", "bed", "pot", "pen", "tutor_holds_word_pin"],
+  "show": {
+    "line": "b or p? b has a voice. p is just a puff! Bun, pan.",
+    "image": "bun"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Listen. Bun. Is it b or p?", "options": ["tile_b", "tile_p"], "answer": "tile_b", "praise": "Yes! Bun starts with b."},
+    {"type": "listen_tap", "prompt": "Listen. Pit. Is it b or p?", "options": ["tile_p", "tile_b"], "answer": "tile_p", "praise": "Yes! Pit starts with p."},
+    {"type": "listen_tap", "prompt": "Tap the word bat.", "options": ["word_bat", "word_pat"], "answer": "word_bat", "praise": "Yes! Bat."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "pig", "accept": ["pig", "big", "peg"]},
+    {"type": "match_sort", "prompt": "Does it start with b or p? Sort the pictures.", "groups": ["b", "p"], "items": [{"image": "bus", "group": "b"}, {"image": "ball", "group": "b"}, {"image": "bed", "group": "b"}, {"image": "pot", "group": "p"}, {"image": "pen", "group": "p"}]}
+  ],
+  "hints": ["Hand on your throat. b buzzes. p does not.", "Say it slowly. Listen to the first sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says bin!",
+    "image": "tutor_holds_word_pin",
+    "answer": "pin",
+    "win_line": "You caught me! It says pin. p at the start.",
+    "gentle_line": "Let's read it together. p, i, n. Pin!"
+  },
+  "parent_line": "Can hear the difference between b and p in words like bun and pan."
+}

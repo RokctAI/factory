@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term3.w06_three_letter_blends",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 3,
+  "weeks": [6, 7, 8, 9, 10],
+  "theme": "Making things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises three-letter consonant blends at the beginning and end of words (str-, scr-, -tch, -nch)"
+  },
+  "skill": "efal.phonics.blend.str_scr_tch_nch",
+  "prereq_skills": ["efal.phonics.blend.cl_pl_br_gr"],
+  "images": ["lunch_box", "word_catch", "word_cat", "word_lunch", "word_scream", "word_stream", "word_cream", "word_patch", "word_watch", "word_bench", "word_pinch", "tutor_holds_word_street"],
+  "show": {
+    "line": "Three letters at the start! Street, scrap. And at the end: match, lunch.",
+    "image": "lunch_box"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "street", "accept": ["street", "stret", "sreet"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "lunch", "accept": ["lunch", "lanch", "luns"]},
+    {"type": "listen_tap", "prompt": "Which word ends like match?", "options": ["word_catch", "word_cat", "word_lunch"], "answer": "word_catch", "praise": "Yes! Match, catch."},
+    {"type": "listen_tap", "prompt": "Which word starts like scrap?", "options": ["word_scream", "word_stream", "word_cream"], "answer": "word_scream", "praise": "Yes! Scrap, scream."},
+    {"type": "match_sort", "prompt": "Does it end like match or like lunch? Sort the words.", "groups": ["match", "lunch"], "items": [{"image": "word_catch", "group": "match"}, {"image": "word_patch", "group": "match"}, {"image": "word_watch", "group": "match"}, {"image": "word_bench", "group": "lunch"}, {"image": "word_pinch", "group": "lunch"}]}
+  ],
+  "hints": ["Say each sound quickly, all together.", "Listen to the start and the end."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says tree!",
+    "image": "tutor_holds_word_street",
+    "answer": "street",
+    "win_line": "You caught me! It says street. s, t, r at the start.",
+    "gentle_line": "Let's read it together. Street!"
+  },
+  "parent_line": "Can read words with three-letter blends, like street, scrap, match and lunch."
+}

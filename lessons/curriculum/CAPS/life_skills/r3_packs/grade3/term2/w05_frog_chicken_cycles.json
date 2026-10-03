@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term2.w05_frog_chicken_cycles",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 2,
+  "weeks": [9],
+  "theme": "Life cycles",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Life cycles",
+    "subtopic": "Life cycle of an amphibian (frog) and of a bird (chicken)"
+  },
+  "skill": "animals.life_cycles",
+  "prereq_skills": ["animals.babies"],
+  "images": ["life_cycles", "tadpole", "frog", "chick", "water", "nest", "tree", "thumbs_up", "thumbs_down", "tutor_tadpole"],
+  "show": {
+    "line": "A frog: egg, tadpole, froglet, frog. A chicken: egg, chick, hen!",
+    "image": "life_cycles"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Egg, tadpole, froglet, and then?", "sequence": ["egg", "tadpole", "froglet"], "options": ["frog", "egg", "fish"], "answer": "frog", "praise": "Frog!"},
+    {"type": "what_next", "prompt": "Egg, chick, and then?", "sequence": ["egg", "chick"], "options": ["hen", "egg", "duck"], "answer": "hen", "praise": "Hen!"},
+    {"type": "listen_tap", "prompt": "Which is a tadpole?", "options": ["tadpole", "frog", "chick"], "answer": "tadpole", "praise": "A tadpole!"},
+    {"type": "say_it", "prompt": "What does a hen lay?", "accept": ["eggs", "an egg", "egg"]},
+    {"type": "listen_tap", "prompt": "A tadpole lives in...?", "options": ["water", "nest", "tree"], "answer": "water", "praise": "Water!"},
+    {"type": "listen_tap", "prompt": "Does a life cycle go round and start again?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Round and round!"}
+  ],
+  "hints": ["A life cycle shows how an animal grows.", "Frogs start in water."],
+  "beat_the_tutor": {
+    "setup": "My turn! A tadpole grows into...",
+    "tutor_try": "A fish!",
+    "image": "tutor_tadpole",
+    "answer": "frog",
+    "win_line": "You caught me! A tadpole becomes a frog.",
+    "gentle_line": "Tadpole, then frog!"
+  },
+  "parent_line": "Can order the life cycles of a frog and a chicken."
+}

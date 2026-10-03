@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w01_baby_animals",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Emergent Reading and Phonics",
+    "subtopic": "'Reads' names of baby and adult animals; makes a class reader and 'reads' from it, pointing to the words"
+  },
+  "skill": "reading.words.baby_animals",
+  "prereq_skills": [],
+  "images": ["hen_and_chick", "chick", "calf", "puppy", "kitten", "lamb", "cow", "dog", "cat", "sheep", "hen", "tutor_puppy_cat"],
+  "show": {
+    "line": "Baby animals! A baby hen is a chick. A baby cow is a calf. Let's read them!",
+    "image": "hen_and_chick"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A baby dog is a puppy. Tap the puppy.", "options": ["puppy", "kitten", "lamb"], "answer": "puppy", "praise": "Yes! That is a puppy."},
+    {"type": "listen_tap", "prompt": "A baby sheep is a lamb. Tap the lamb.", "options": ["calf", "lamb", "chick"], "answer": "lamb", "praise": "Yes! The lamb says baa."},
+    {"type": "say_it", "prompt": "A baby cat is a ... Say it!", "accept": ["kitten", "a kitten", "kitty", "kiten", "kittens"], "image": "kitten"},
+    {"type": "read_to_me", "prompt": "Point to each word and read with me.", "text": "The cow has a calf.", "accept": ["the cow has a calf", "cow has a calf", "the cow has a calf.", "cow calf"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lerato visits the farm. The hen sits with her baby. Who is the hen's baby?", "options": ["chick", "puppy", "calf"], "answer": "chick", "praise": "Yes! The hen's baby is a chick."},
+    {"type": "match_sort", "prompt": "Baby or grown-up? Put each animal in its group.", "groups": ["baby", "grown_up"], "items": [{"image": "calf", "group": "baby"}, {"image": "kitten", "group": "baby"}, {"image": "lamb", "group": "baby"}, {"image": "dog", "group": "grown_up"}, {"image": "sheep", "group": "grown_up"}]}
+  ],
+  "hints": ["Think of the mother. A baby cow is a calf.", "Point to each word as you read it."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name the baby dog.",
+    "tutor_try": "A baby dog is a kitten!",
+    "image": "tutor_puppy_cat",
+    "answer": "puppy",
+    "win_line": "You caught me! A baby dog is a puppy. A baby cat is a kitten.",
+    "gentle_line": "Let's say it together. Dog and puppy. Cat and kitten!"
+  },
+  "parent_line": "Can name and read baby animal words like calf, lamb and puppy."
+}

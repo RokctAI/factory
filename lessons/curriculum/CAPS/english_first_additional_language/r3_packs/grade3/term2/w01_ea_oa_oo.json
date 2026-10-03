@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term2.w01_ea_oa_oo",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 2,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Growing things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises at least three new vowel digraphs ('ea' eat, 'oa' boat, short 'oo' book)"
+  },
+  "skill": "efal.phonics.vowel_digraph.ea_oa_oo_short",
+  "prereq_skills": ["efal.phonics.vowel_digraph.oo_oa"],
+  "images": ["girl_eats", "word_book", "word_boat", "word_beak", "word_seat", "word_soap", "word_foot", "word_bean", "word_leaf", "word_tea", "word_road", "word_coat", "tutor_holds_word_leaf"],
+  "show": {
+    "line": "More sound pairs! Eat has ee. Boat has oh. Book has a short oo.",
+    "image": "girl_eats"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "eat", "accept": ["eat", "it", "et"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "seed", "accept": ["seed", "sid", "sed"]},
+    {"type": "listen_tap", "prompt": "Tap the word book.", "options": ["word_book", "word_boat", "word_beak"], "answer": "word_book", "praise": "Yes! Book."},
+    {"type": "listen_tap", "prompt": "Which word sounds like eat?", "options": ["word_seat", "word_soap", "word_foot"], "answer": "word_seat", "praise": "Yes! Eat, seat."},
+    {"type": "match_sort", "prompt": "Does it sound like eat or boat? Sort the words.", "groups": ["eat", "boat"], "items": [{"image": "word_bean", "group": "eat"}, {"image": "word_leaf", "group": "eat"}, {"image": "word_tea", "group": "eat"}, {"image": "word_road", "group": "boat"}, {"image": "word_coat", "group": "boat"}]}
+  ],
+  "hints": ["e and a together say ee, like eat.", "o and a together say oh, like boat."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says lift!",
+    "image": "tutor_holds_word_leaf",
+    "answer": "leaf",
+    "win_line": "You caught me! It says leaf. e and a say ee.",
+    "gentle_line": "Let's read it together. Leaf. A green leaf!"
+  },
+  "parent_line": "Can read words with ea, oa and short oo, like eat, boat and book."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w04_about_me",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "All about me",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: Me",
+    "subtopic": "Personal details: name, address, telephone number and age"
+  },
+  "skill": "self.personal_details",
+  "prereq_skills": ["self.same_different"],
+  "images": ["about_me_card", "birthday_cake", "phone", "house", "house_address", "cake", "ball", "book", "spoon", "tutor_stranger_ask"],
+  "show": {
+    "line": "I know my name, my age and where I live. These are my details!",
+    "image": "about_me_card"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "What is your name? Say: my name is, and your name.", "accept": ["my name is"]},
+    {"type": "say_it", "prompt": "How old are you?", "accept": ["six", "seven", "five", "eight", "6", "7", "i am six", "i am seven", "six years old", "seven years old"]},
+    {"type": "listen_tap", "prompt": "Which card shows a birthday?", "options": ["birthday_cake", "phone", "house"], "answer": "birthday_cake", "praise": "A birthday cake!"},
+    {"type": "listen_tap", "prompt": "Which one shows where you live?", "options": ["house_address", "cake", "ball"], "answer": "house_address", "praise": "Your address tells where you live."},
+    {"type": "listen_tap", "prompt": "Which do we use to phone home?", "options": ["phone", "book", "spoon"], "answer": "phone", "praise": "A phone! Learn your phone number."},
+    {"type": "say_it", "prompt": "Who can you tell your address to? A stranger or a teacher?", "accept": ["teacher", "a teacher", "my teacher", "the teacher"]}
+  ],
+  "hints": ["Your address is your street and number.", "Only share details with grown-ups you trust."],
+  "beat_the_tutor": {
+    "setup": "My turn! A stranger asks where I live.",
+    "tutor_try": "I tell him my address!",
+    "image": "tutor_stranger_ask",
+    "answer": "no",
+    "win_line": "You caught me! Only tell grown-ups you trust.",
+    "gentle_line": "We only share our address with people we trust!"
+  },
+  "parent_line": "Knows own name, age, address and that details are shared only with trusted adults."
+}

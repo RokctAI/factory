@@ -1,0 +1,18 @@
+### subtopic_1 — Capital, Assets and Liabilities
+**Assistant:** Why is the business treated as separate from its owner?
+
+**Tutor:** Because otherwise it would be impossible to tell whether the business is doing well. Accountants call this the business entity concept. Imagine Nandi keeps her personal money and her business money in the same purse. She buys flour for cupcakes, then a pair of jeans for herself, then pays for electricity, then airtime. At the end of the month she cannot say how much the business earned, what it cost to run, or whether it made a profit, because personal spending is mixed in. By treating the business as a separate entity, every business transaction is recorded on its own. When Nandi puts her savings into the business, it is recorded as capital, which the business owes her. When she takes money out for personal use, it is recorded as drawings, which reduce her capital, not as a business expense. This also matters for taxes, for getting a loan, because banks want clear records, and for selling the business one day. Even a tiny business should open a separate bank account or at least keep a separate cash box and notebook. You will use this idea in every accounting task from now on.
+
+***
+
+### subtopic_2 — Income, Expenses and Profit
+**Assistant:** Is money taken by the owner for personal use an expense?
+
+**Tutor:** No, and this is one of the most common mistakes. An expense is a cost incurred to run the business and earn income, such as wages, rent, electricity or ingredients. When the owner takes money or goods out of the business for personal use, for example Nandi taking R300 from the cash box to buy school shoes for her son, or taking a dozen cupcakes for a family party, the business has not used that money to earn income. It is simply giving back to the owner part of what belongs to her. Accountants call this drawings. Drawings reduce the owner's equity directly, just as capital increases it. They do not appear in the calculation of profit. Why does this matter? If Nandi recorded her personal R300 as an expense, the business's profit would look R300 lower than it really is, and she might wrongly think the business is struggling. Keeping drawings separate gives a true picture of how well the business performs, and a true picture of how much the owner is taking out. In later grades you will see drawings in the owner's equity section of the financial statements.
+
+***
+
+### subtopic_3 — The Effect on Owner's Equity
+**Assistant:** Why might an owner leave profit in the business instead of taking it all?
+
+**Tutor:** Because profit left in the business can help it grow and protect it in hard times. If Nandi takes all her profit out every month, the business stays the same size forever, and if a bad month comes, with fewer orders or a broken oven, there is no cash to cope. If she leaves some profit in, it builds up the business's assets: more cash to buy ingredients in bulk at lower prices, money to buy a second oven so she can take bigger orders, or money for advertising. Growth can increase future profits, which benefits her later. Larger businesses do the same thing; companies keep part of their profits, called retained income, to invest in new machines, shops and products. Of course, the owner also needs to live, so she will usually take some drawings for household needs. The skill is balance: take enough to meet personal needs, leave enough to keep the business healthy and growing. Good records make that decision easier, because the owner can see exactly how much profit there was and how much cash is needed for next month.

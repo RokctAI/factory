@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w05_body_parts_moves",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [8, 9],
+  "theme": "My body moves",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: My body",
+    "subtopic": "Different parts of my body and how it moves"
+  },
+  "skill": "body.movement",
+  "prereq_skills": ["body.parts.name"],
+  "images": ["child_stretching", "knee", "elbow", "wrist", "ankle", "shoulder", "neck", "hand", "tutor_elbow"],
+  "show": {
+    "line": "My body can bend, stretch, twist and jump. Elbows, knees and wrists help!",
+    "image": "child_stretching"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which part bends in the middle of your leg?", "options": ["knee", "elbow", "wrist"], "answer": "knee", "praise": "Your knee!"},
+    {"type": "listen_tap", "prompt": "Which part bends in the middle of your arm?", "options": ["elbow", "ankle", "knee"], "answer": "elbow", "praise": "Your elbow!"},
+    {"type": "listen_tap", "prompt": "Tap the ankle.", "options": ["ankle", "shoulder", "neck"], "answer": "ankle", "praise": "The ankle joins the foot!"},
+    {"type": "say_it", "prompt": "Your neck helps you turn your...?", "accept": ["head", "my head"]},
+    {"type": "match_sort", "prompt": "Arm or leg? Sort them.", "groups": ["arm", "leg"], "items": [{"image": "elbow", "group": "arm"}, {"image": "wrist", "group": "arm"}, {"image": "hand", "group": "arm"}, {"image": "knee", "group": "leg"}, {"image": "ankle", "group": "leg"}]},
+    {"type": "say_it", "prompt": "Show me a way to move. Tell me what you did.", "accept": ["jump", "hop", "skip", "bend", "stretch", "twist", "run", "clap", "spin", "dance"]}
+  ],
+  "hints": ["Joints let your body bend.", "Elbow and wrist are on your arm."],
+  "beat_the_tutor": {
+    "setup": "My turn! This bends my arm.",
+    "tutor_try": "My knee bends my arm!",
+    "image": "tutor_elbow",
+    "answer": "elbow",
+    "win_line": "You caught me! The elbow bends my arm.",
+    "gentle_line": "Elbows bend arms. Knees bend legs!"
+  },
+  "parent_line": "Can name body parts and joints and how the body moves."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term4.w02_home_materials",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "What homes are made of",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Homes",
+    "subtopic": "What homes are made of (wood, mud, bricks, tin, stone, hardboard, plastic); suitability of materials"
+  },
+  "skill": "homes.materials",
+  "prereq_skills": ["homes.types_weather"],
+  "images": ["materials", "bricks", "wood", "tin", "mud", "glass", "paper", "tin_roof", "grass_roof", "tile_roof", "stone", "ice", "straw", "sticks", "tutor_straw"],
+  "show": {
+    "line": "Homes are made of bricks, wood, mud, stone or tin. Strong homes keep us safe!",
+    "image": "materials"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the bricks.", "options": ["bricks", "wood", "tin"], "answer": "bricks", "praise": "Bricks!"},
+    {"type": "listen_tap", "prompt": "A rondavel wall can be made of...?", "options": ["mud", "glass", "paper"], "answer": "mud", "praise": "Mud!"},
+    {"type": "listen_tap", "prompt": "Which roof is made of tin?", "options": ["tin_roof", "grass_roof", "tile_roof"], "answer": "tin_roof", "praise": "A tin roof!"},
+    {"type": "match_sort", "prompt": "Good for building, or not?", "groups": ["good", "not_good"], "items": [{"image": "bricks", "group": "good"}, {"image": "stone", "group": "good"}, {"image": "wood", "group": "good"}, {"image": "paper", "group": "not_good"}, {"image": "ice", "group": "not_good"}]},
+    {"type": "say_it", "prompt": "Which is stronger, bricks or paper?", "accept": ["bricks", "brick"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Three pigs build homes of straw, sticks and bricks. The wolf blows. Which house stands?", "options": ["bricks", "straw", "sticks"], "answer": "bricks", "praise": "Bricks! Strong."}
+  ],
+  "hints": ["Strong materials keep out wind and rain.", "Paper and straw are not strong."],
+  "beat_the_tutor": {
+    "setup": "My turn! I build with straw.",
+    "tutor_try": "Straw is the strongest!",
+    "image": "tutor_straw",
+    "answer": "bricks",
+    "win_line": "You caught me! Bricks are stronger.",
+    "gentle_line": "Bricks are strong!"
+  },
+  "parent_line": "Can name building materials and which are strong."
+}

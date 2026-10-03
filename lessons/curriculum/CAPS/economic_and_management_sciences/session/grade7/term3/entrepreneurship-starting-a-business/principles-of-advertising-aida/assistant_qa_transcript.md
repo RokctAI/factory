@@ -1,0 +1,18 @@
+### subtopic_1 — Attention and Interest
+**Assistant:** Why do adverts focus on benefits rather than features?
+
+**Tutor:** Because customers buy what a product will do for them, not just what it is. A feature is a fact about the product: this phone has a 5 000 milliamp-hour battery, this muffin contains real blueberries, this taxi service has GPS tracking. Many customers do not know what those facts mean for them, or do not care. A benefit translates the feature into the customer's language: your phone lasts all day without charging, a fresh, fruity taste in every bite, your parents can see that you got home safely. Benefits connect to needs and wants, which you studied in Term 1, such as convenience, safety, health, saving money, looking good or feeling part of a group. That is what creates interest and, in the next stage, desire. Good advertisers usually mention the feature as proof and lead with the benefit. A useful trick when writing an advert is to read each feature and ask: so what? The answer to so what is the benefit. For your Entrepreneur's Day poster, instead of popcorn made with butter, try warm, buttery popcorn, the perfect break-time treat.
+
+***
+
+### subtopic_2 — Desire and Action
+**Assistant:** Is it fair for adverts to create urgency with phrases like today only?
+
+**Tutor:** It is fair when it is true, and unfair and illegal when it is not. Genuine urgency gives customers useful information: if a stall really has a special price only on Friday, or really has limited stock, saying so helps people decide and avoids disappointment. It also encourages action, which is the purpose of the final AIDA stage. The problem arises when urgency is fake: a shop that says sale ends today every day, or claims only three left when there are hundreds, is trying to pressure customers into rushing a decision they might regret. That is misleading, and South Africa's Consumer Protection Act prohibits false or misleading claims in advertising. Pressure tactics are also a warning sign of scams, as you learned in Term 2. As an advertiser, use urgency honestly. As a consumer, when you feel rushed by an advert, slow down and ask whether the offer is real, whether you need the product and whether you can afford it. Honest advertising builds trust, and for a small business that depends on repeat customers and word of mouth, trust is worth more than one rushed sale.
+
+***
+
+### subtopic_3 — Analysing and Designing AIDA Adverts
+**Assistant:** How should an AIDA advert change for radio compared with a poster?
+
+**Tutor:** The four stages stay the same, but the techniques change because radio has only sound and listeners cannot read or look back. For attention, a radio advert relies on a distinctive sound, a jingle, a surprising question, a well-known voice or humour in the first few seconds, rather than a picture and a headline. For interest, it must explain the product in simple spoken language, often through a short dialogue or story that listeners can relate to, rather than written bullet points. For desire, it uses tone of voice, sound effects such as sizzling food, testimonials spoken by customers and offers stated clearly. For action, it must repeat the key information, such as the business name, place and contact number, at least twice, because listeners cannot write it down instantly and may miss it the first time; many radio adverts end with a memorable slogan or an easy number. Radio adverts are also short, usually around thirty seconds, so every word counts. A poster, by contrast, can show the product and give details that people can read at their own pace but must grab attention in a glance. Choosing techniques to suit the medium is part of good advertising.

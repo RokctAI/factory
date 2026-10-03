@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term3.w06_planets_telescopes",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Planets and space travel",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Space",
+    "subtopic": "Names of the planets; telescopes; space travel"
+  },
+  "skill": "space.planets",
+  "prereq_skills": ["space.earth_stars"],
+  "images": ["solar_system", "telescope", "spoon", "cup", "astronaut", "farmer", "chef", "jupiter", "earth", "mercury", "neptune", "tutor_microwave"],
+  "show": {
+    "line": "Eight planets go round the sun. We use telescopes to look at them!",
+    "image": "solar_system"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "How many planets go round the sun?", "image": "solar_system", "count": "8", "options": ["7", "8", "9"], "answer": "8", "praise": "Eight!"},
+    {"type": "listen_tap", "prompt": "What do we look through to see far stars?", "options": ["telescope", "spoon", "cup"], "answer": "telescope", "praise": "A telescope!"},
+    {"type": "listen_tap", "prompt": "Who travels into space?", "options": ["astronaut", "farmer", "chef"], "answer": "astronaut", "praise": "An astronaut!"},
+    {"type": "say_it", "prompt": "Which planet do we live on?", "accept": ["earth", "planet earth"]},
+    {"type": "listen_tap", "prompt": "Which planet is biggest?", "options": ["jupiter", "earth", "mercury"], "answer": "jupiter", "praise": "Jupiter!"},
+    {"type": "listen_tap", "prompt": "Which planet is closest to the sun?", "options": ["mercury", "neptune", "earth"], "answer": "mercury", "praise": "Mercury!"}
+  ],
+  "hints": ["Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.", "Telescopes make far things look closer."],
+  "beat_the_tutor": {
+    "setup": "My turn! We look at stars with...",
+    "tutor_try": "A microwave!",
+    "image": "tutor_microwave",
+    "answer": "telescope",
+    "win_line": "You caught me! We use a telescope.",
+    "gentle_line": "A telescope!"
+  },
+  "parent_line": "Knows there are eight planets and about telescopes and astronauts."
+}

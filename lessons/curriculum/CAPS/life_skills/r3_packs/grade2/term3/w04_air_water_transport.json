@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w04_air_water_transport",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [8],
+  "theme": "Transport by air and water",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Transport by air/water",
+    "subtopic": "Different modes of air transport and their uses"
+  },
+  "skill": "transport.air_water",
+  "prereq_skills": ["transport.land"],
+  "images": ["plane_ship", "aeroplane", "helicopter", "hot_air_balloon", "ship", "canoe", "train", "sailboat", "car", "cargo_ship", "bicycle", "rowing_boat", "walking", "tutor_helicopter"],
+  "show": {
+    "line": "Aeroplanes and helicopters fly. Boats and ships sail on water!",
+    "image": "plane_ship"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Air or water?", "groups": ["air", "water"], "items": [{"image": "aeroplane", "group": "air"}, {"image": "helicopter", "group": "air"}, {"image": "hot_air_balloon", "group": "air"}, {"image": "ship", "group": "water"}, {"image": "canoe", "group": "water"}]},
+    {"type": "listen_tap", "prompt": "Which can land on a hospital roof?", "options": ["helicopter", "ship", "train"], "answer": "helicopter", "praise": "A helicopter!"},
+    {"type": "listen_tap", "prompt": "Which uses wind to move?", "options": ["sailboat", "car", "train"], "answer": "sailboat", "praise": "A sailboat!"},
+    {"type": "say_it", "prompt": "Who flies an aeroplane?", "accept": ["pilot", "a pilot", "the pilot"]},
+    {"type": "listen_tap", "prompt": "Which carries big containers across the sea?", "options": ["cargo_ship", "canoe", "bicycle"], "answer": "cargo_ship", "praise": "A cargo ship!"},
+    {"type": "listen_tap", "prompt": "Which is fastest to go far?", "options": ["aeroplane", "rowing_boat", "walking"], "answer": "aeroplane", "praise": "The aeroplane!"}
+  ],
+  "hints": ["Air transport flies. Water transport floats.", "Sails catch the wind."],
+  "beat_the_tutor": {
+    "setup": "My turn! A helicopter goes...",
+    "tutor_try": "Under the sea!",
+    "image": "tutor_helicopter",
+    "answer": "air",
+    "win_line": "You caught me! Helicopters fly in the air.",
+    "gentle_line": "Helicopters fly!"
+  },
+  "parent_line": "Can name air and water transport and their uses."
+}

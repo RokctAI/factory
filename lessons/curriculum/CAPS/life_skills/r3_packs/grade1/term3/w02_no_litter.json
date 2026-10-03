@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w02_no_litter",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Keep it clean",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: My community",
+    "subtopic": "Looking after facilities in my community; keeping places clean and why we should not litter"
+  },
+  "skill": "community.care",
+  "prereq_skills": ["community.places"],
+  "images": ["bin_and_litter", "clean_park", "littered_park", "bin", "ground", "river", "pick_up_litter", "water_tree", "bin_rubbish", "break_swing", "draw_on_wall", "thumbs_up", "thumbs_down", "tutor_juice_box"],
+  "show": {
+    "line": "Litter makes our community dirty. Put rubbish in the bin!",
+    "image": "bin_and_litter"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the clean park.", "options": ["clean_park", "littered_park"], "answer": "clean_park", "praise": "Clean and lovely!"},
+    {"type": "listen_tap", "prompt": "You finish your chips. Where does the packet go?", "options": ["bin", "ground", "river"], "answer": "bin", "praise": "In the bin!"},
+    {"type": "match_sort", "prompt": "Looking after the community, or not?", "groups": ["caring", "not_caring"], "items": [{"image": "pick_up_litter", "group": "caring"}, {"image": "water_tree", "group": "caring"}, {"image": "bin_rubbish", "group": "caring"}, {"image": "break_swing", "group": "not_caring"}, {"image": "draw_on_wall", "group": "not_caring"}]},
+    {"type": "say_it", "prompt": "Why shouldn't we litter?", "accept": ["it is dirty", "dirty", "it makes it dirty", "animals get hurt", "germs", "it is ugly", "to keep it clean"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Litter blows into the river. A fish gets a plastic bag stuck on it. Is litter harmful?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! Litter hurts animals."},
+    {"type": "say_it", "prompt": "Say it: I am proud of my community!", "accept": ["i am proud of my community", "i'm proud of my community", "proud of my community"]}
+  ],
+  "hints": ["Bins keep places clean.", "Litter can hurt animals and people."],
+  "beat_the_tutor": {
+    "setup": "My turn! I finished my juice.",
+    "tutor_try": "I throw the box in the street!",
+    "image": "tutor_juice_box",
+    "answer": "bin",
+    "win_line": "You caught me! Rubbish goes in the bin.",
+    "gentle_line": "Rubbish in the bin. Clean community!"
+  },
+  "parent_line": "Knows how to look after community places and why not to litter."
+}

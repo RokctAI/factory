@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term2.w01_food_groups_g3",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Food groups",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Healthy eating",
+    "subtopic": "Food groups: vitamins (fruit and vegetables), carbohydrates (bread, maize meal), proteins (eggs, beans, meat, nuts), dairy (milk, cheese, yoghurt)"
+  },
+  "skill": "food.groups.g3",
+  "prereq_skills": ["food.groups.g2"],
+  "images": ["food_groups_g3", "bread", "maize_meal", "rice", "eggs", "beans", "oranges", "sweets", "chips_packet", "protein", "fizzy_drink", "balanced_plate", "pap_only_plate", "porridge", "lettuce", "tutor_eggs"],
+  "show": {
+    "line": "Vitamins from fruit and veg. Carbohydrates from bread and pap. Protein from eggs and beans!",
+    "image": "food_groups_g3"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Carbohydrate or protein?", "groups": ["carbohydrate", "protein"], "items": [{"image": "bread", "group": "carbohydrate"}, {"image": "maize_meal", "group": "carbohydrate"}, {"image": "rice", "group": "carbohydrate"}, {"image": "eggs", "group": "protein"}, {"image": "beans", "group": "protein"}]},
+    {"type": "listen_tap", "prompt": "Which gives vitamins?", "options": ["oranges", "sweets", "chips_packet"], "answer": "oranges", "praise": "Oranges!"},
+    {"type": "listen_tap", "prompt": "Which helps build muscles?", "options": ["protein", "fizzy_drink"], "answer": "protein", "praise": "Protein!"},
+    {"type": "say_it", "prompt": "Food gives us energy to move and...?", "accept": ["work", "play", "grow", "learn", "think"]},
+    {"type": "listen_tap", "prompt": "Which plate is balanced?", "options": ["balanced_plate", "pap_only_plate"], "answer": "balanced_plate", "praise": "All the groups!"},
+    {"type": "listen_tap", "prompt": "Which gives quick energy for running?", "options": ["porridge", "lettuce"], "answer": "porridge", "praise": "Porridge!"}
+  ],
+  "hints": ["Carbs for energy, protein to grow, vitamins to stay well.", "Balanced means some of each."],
+  "beat_the_tutor": {
+    "setup": "My turn! Eggs are...",
+    "tutor_try": "A vitamin from fruit!",
+    "image": "tutor_eggs",
+    "answer": "protein",
+    "win_line": "You caught me! Eggs are protein.",
+    "gentle_line": "Eggs give protein!"
+  },
+  "parent_line": "Can sort foods into vitamins, carbohydrates and protein."
+}

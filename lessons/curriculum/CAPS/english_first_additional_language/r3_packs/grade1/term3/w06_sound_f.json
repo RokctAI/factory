@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w06_sound_f",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [6],
+  "theme": "Clothes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 6: /f/ (fat, fit, fig, fin); segmenting and blending; differentiates r and f"
+  },
+  "skill": "efal.phonics.sound.f",
+  "prereq_skills": ["efal.phonics.sound.r"],
+  "images": ["fish", "fig", "rat", "sun", "fin", "fit", "fan", "tile_f", "tile_r", "tutor_holds_fit"],
+  "show": {
+    "line": "Listen. f, f, fish. Like air from a flat tyre! Fish starts with f.",
+    "image": "fish"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with f, as in fish?", "options": ["fig", "rat", "sun"], "answer": "fig", "praise": "Yes! f, f, fig."},
+    {"type": "say_it", "prompt": "Say the sound with me. f, as in fan!", "accept": ["f", "ff", "fff", "fan"]},
+    {"type": "blend", "prompt": "Listen. f, i, n. What word is it?", "sounds": ["f", "i", "n"], "options": ["fin", "fit", "fan"], "answer": "fin", "praise": "Fin! f, i, n."},
+    {"type": "listen_tap", "prompt": "Is it r or f? Listen. Fat.", "options": ["tile_f", "tile_r"], "answer": "tile_f", "praise": "Yes! Fat starts with f."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "fit", "accept": ["fit", "feet", "fat"]}
+  ],
+  "hints": ["Top teeth on your bottom lip. Blow! f, f, f.", "f blows air. r growls."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. f, i, t.",
+    "tutor_try": "That makes fat!",
+    "image": "tutor_holds_fit",
+    "answer": "fit",
+    "win_line": "You caught me! f, i, t makes fit.",
+    "gentle_line": "Let's do it together. f, i, t. Fit!"
+  },
+  "parent_line": "Can hear the f sound and blend words like fin, fit and fig."
+}

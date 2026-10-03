@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term2.w06_rhymes_and_long_short",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 2,
+  "weeks": [6, 7, 8, 9, 10],
+  "theme": "Growing things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises known rhyming words (fly, sky, dry, cry, try)"
+  },
+  "skill": "efal.phonics.rhyme.y_family",
+  "prereq_skills": ["efal.phonics.ending.y_review"],
+  "images": ["kite_in_sky", "cry", "day", "dog", "sun", "fly", "try", "word_kite", "word_kit", "word_book", "word_boot", "tutor_holds_flower"],
+  "show": {
+    "line": "Fly, sky, dry, cry, try. They all rhyme!",
+    "image": "kite_in_sky"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word rhymes with dry?", "options": ["cry", "day", "dog"], "answer": "cry", "praise": "Yes! Dry, cry."},
+    {"type": "listen_tap", "prompt": "Which word does not rhyme with sky?", "options": ["sun", "fly", "try"], "answer": "sun", "praise": "Yes! Sun does not rhyme."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "dry", "accept": ["dry", "dri", "try"]},
+    {"type": "listen_tap", "prompt": "Short or long? Kit, kite. Tap kite.", "options": ["word_kite", "word_kit"], "answer": "word_kite", "praise": "Yes! Kite is long."},
+    {"type": "listen_tap", "prompt": "Short or long? Book, boot. Tap book.", "options": ["word_book", "word_boot"], "answer": "word_book", "praise": "Yes! Book is short."}
+  ],
+  "hints": ["Rhyming words sound the same at the end.", "Long sounds stretch. Short sounds are quick."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that rhymes with fly.",
+    "tutor_try": "Flower! Flower rhymes with fly.",
+    "image": "tutor_holds_flower",
+    "answer": "no",
+    "win_line": "You caught me! Flower does not rhyme. Try rhymes with fly.",
+    "gentle_line": "Let's listen together. Fly, try. Same at the end!"
+  },
+  "parent_line": "Can find rhyming words and hear long and short vowel sounds."
+}

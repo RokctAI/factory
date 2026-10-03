@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w08_brush_teeth",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Brushing my teeth",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "Keeping clean and fit",
+    "subtopic": "Steps for personal hygiene: correct tooth brushing (small tooth-brushing book)"
+  },
+  "skill": "health.teeth.brush",
+  "prereq_skills": ["health.clean.products"],
+  "images": ["child_brushing_teeth", "morning_and_night", "only_birthday", "never", "apple", "sweets", "fizzy_drink", "clean_teeth", "dirty_teeth", "broken_tooth", "carrot", "milk", "tutor_birthday_cake"],
+  "show": {
+    "line": "Brush, brush, brush your teeth! Up and down, round and round. Morning and night!",
+    "image": "child_brushing_teeth"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "When do we brush our teeth?", "options": ["morning_and_night", "only_birthday", "never"], "answer": "morning_and_night", "praise": "Morning and night!"},
+    {"type": "what_next", "prompt": "Toothpaste on the brush, brush all teeth, and then?", "sequence": ["toothpaste", "brush", "spit"], "options": ["rinse", "sleep", "toothpaste"], "answer": "rinse", "praise": "Rinse! Clean teeth."},
+    {"type": "listen_tap", "prompt": "Which food is kind to our teeth?", "options": ["apple", "sweets", "fizzy_drink"], "answer": "apple", "praise": "An apple! Crunchy and good for teeth."},
+    {"type": "listen_tap", "prompt": "Tap the happy, clean teeth.", "options": ["clean_teeth", "dirty_teeth", "broken_tooth"], "answer": "clean_teeth", "praise": "Shiny clean teeth!"},
+    {"type": "say_it", "prompt": "Who helps us look after our teeth? It starts with d.", "accept": ["dentist", "a dentist", "the dentist", "tooth doctor"]},
+    {"type": "match_sort", "prompt": "Good for teeth, or bad for teeth? Sort them.", "groups": ["good", "bad"], "items": [{"image": "apple", "group": "good"}, {"image": "carrot", "group": "good"}, {"image": "milk", "group": "good"}, {"image": "sweets", "group": "bad"}, {"image": "fizzy_drink", "group": "bad"}]}
+  ],
+  "hints": ["Sweets stick to teeth. Brushing cleans them off.", "Brush twice a day, in the morning and at night."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will brush my teeth.",
+    "tutor_try": "I only brush on my birthday!",
+    "image": "tutor_birthday_cake",
+    "answer": "morning and night",
+    "win_line": "You caught me! We brush every morning and every night.",
+    "gentle_line": "Every day, morning and night. Brush, brush!"
+  },
+  "parent_line": "Knows how and when to brush teeth."
+}

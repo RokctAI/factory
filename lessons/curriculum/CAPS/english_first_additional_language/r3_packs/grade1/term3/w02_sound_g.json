@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w02_sound_g",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [2],
+  "theme": "In town",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 2: /g/ (gap, gas, got, gun); differentiates ck and g; claps syllables in familiar words"
+  },
+  "skill": "efal.phonics.sound.g",
+  "prereq_skills": ["efal.phonics.ending.ck"],
+  "images": ["gate", "goat", "sock", "bed", "gas", "gap", "bus", "num_1", "num_2", "num_3", "gift", "cat", "cap", "tutor_holds_got"],
+  "show": {
+    "line": "Listen. g, g, gun. g, g, gap! Gap starts with g.",
+    "image": "gate"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with g?", "options": ["goat", "sock", "bed"], "answer": "goat", "praise": "Yes! g, g, goat."},
+    {"type": "say_it", "prompt": "Say the sound with me. g, as in got!", "accept": ["g", "guh", "ge", "got"]},
+    {"type": "blend", "prompt": "Listen. g, a, s. What word is it?", "sounds": ["g", "a", "s"], "options": ["gas", "gap", "bus"], "answer": "gas", "praise": "Gas! g, a, s."},
+    {"type": "listen_tap", "prompt": "Clap the word taxi. Ta, xi. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Ta, xi."},
+    {"type": "match_sort", "prompt": "Does it start with g or c? Sort the pictures.", "groups": ["g", "c"], "items": [{"image": "goat", "group": "g"}, {"image": "gate", "group": "g"}, {"image": "gift", "group": "g"}, {"image": "cat", "group": "c"}, {"image": "cap", "group": "c"}]}
+  ],
+  "hints": ["g comes from the back of your throat. g, g, g.", "Clap for each part. Ta, xi."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. g, o, t.",
+    "tutor_try": "That makes gap!",
+    "image": "tutor_holds_got",
+    "answer": "got",
+    "win_line": "You caught me! g, o, t makes got.",
+    "gentle_line": "Let's do it together. g, o, t. Got!"
+  },
+  "parent_line": "Can hear the g sound and blend words like gas, got and gap."
+}

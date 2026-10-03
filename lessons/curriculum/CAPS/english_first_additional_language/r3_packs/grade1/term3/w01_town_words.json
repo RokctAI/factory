@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w01_town_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "In town",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. taxi, passenger, town, street, bus stop, clinic, driver, petrol station, sidewalk, safe, unsafe, warning"
+  },
+  "skill": "efal.vocab.town",
+  "prereq_skills": ["efal.vocab.school"],
+  "images": ["town_street", "taxi", "bus_stop", "clinic", "petrol_station", "shop", "taxi_driver", "cross_at_robot", "run_in_street", "hold_hands_street", "seatbelt_on", "play_in_road", "tutor_holds_petrol_station"],
+  "show": {
+    "line": "Let's go to town! We ride in a taxi. We stop at the shop.",
+    "image": "town_street"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the taxi.", "options": ["taxi", "bus_stop", "clinic"], "answer": "taxi", "praise": "Yes! The taxi takes us to town."},
+    {"type": "listen_tap", "prompt": "Where do we go when we are sick?", "options": ["clinic", "petrol_station", "shop"], "answer": "clinic", "praise": "Yes! The clinic helps sick people."},
+    {"type": "say_it", "prompt": "Who drives the taxi? Say it.", "accept": ["driver", "the driver", "a driver", "drayver"], "image": "taxi_driver"},
+    {"type": "listen_tap", "prompt": "Which one is safe? Crossing at the robot, or running in the street?", "options": ["cross_at_robot", "run_in_street"], "answer": "cross_at_robot", "praise": "Yes! Cross at the robot. It is safe."},
+    {"type": "match_sort", "prompt": "Is it safe or unsafe? Sort the pictures.", "groups": ["safe", "unsafe"], "items": [{"image": "cross_at_robot", "group": "safe"}, {"image": "hold_hands_street", "group": "safe"}, {"image": "seatbelt_on", "group": "safe"}, {"image": "run_in_street", "group": "unsafe"}, {"image": "play_in_road", "group": "unsafe"}]}
+  ],
+  "hints": ["Look at the picture. Where are they?", "Safe means no one gets hurt."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this place.",
+    "tutor_try": "This is the clinic!",
+    "image": "tutor_holds_petrol_station",
+    "answer": "petrol station",
+    "win_line": "You caught me! It is the petrol station. Cars get petrol there.",
+    "gentle_line": "Let's look together. Cars get petrol here. Petrol station!"
+  },
+  "parent_line": "Can name places in town in English and tell safe from unsafe."
+}

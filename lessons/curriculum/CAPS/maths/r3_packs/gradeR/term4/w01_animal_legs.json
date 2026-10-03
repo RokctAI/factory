@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term4.w01_animal_legs",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Numeracy",
+    "subtopic": "Counts legs of plasticine animals; older and younger"
+  },
+  "skill": "count.legs_older_younger",
+  "prereq_skills": ["count.to_10"],
+  "images": ["chicken_legs", "cow_legs", "spider_legs", "beetle_legs", "hen_and_chick", "cow_and_calf", "baby", "gogo", "goat_and_kid", "tutor_cow_two_legs"],
+  "show": {
+    "line": "Let's make clay animals! A chicken has two legs. A cow has four legs. Count with me!",
+    "image": "cow_legs"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the chicken's legs.", "image": "chicken_legs", "count": "2", "options": ["2", "3", "4"], "answer": "2", "praise": "Two legs!"},
+    {"type": "count_tap", "prompt": "Count the cow's legs.", "image": "cow_legs", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four legs!"},
+    {"type": "count_tap", "prompt": "A beetle has lots of legs. Count them.", "image": "beetle_legs", "count": "6", "options": ["4", "6", "8"], "answer": "6", "praise": "Six legs!"},
+    {"type": "count_tap", "prompt": "Count the spider's legs. Go slowly!", "image": "spider_legs", "count": "8", "options": ["6", "8", "10"], "answer": "8", "praise": "Eight legs! Well counted."},
+    {"type": "listen_tap", "prompt": "The hen and her chick. Which one is younger?", "image": "hen_and_chick", "options": ["baby", "gogo"], "answer": "baby", "praise": "Yes! The baby chick is younger."},
+    {"type": "say_it", "prompt": "The cow and her calf. Who is older, the cow or the calf? Say it.", "accept": ["cow", "the cow", "kow", "mother cow", "mom"], "image": "cow_and_calf"}
+  ],
+  "hints": ["Touch each leg as you count. One, two, three.", "A baby is younger. A mother is older."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the cow's legs.",
+    "tutor_try": "One, two. A cow has two legs!",
+    "image": "tutor_cow_two_legs",
+    "answer": "four",
+    "win_line": "You caught me! I forgot the back legs. A cow has four legs.",
+    "gentle_line": "Let's count together. One, two, three, four. Four legs!"
+  },
+  "parent_line": "Can count animal legs to 8 and say who is older or younger."
+}

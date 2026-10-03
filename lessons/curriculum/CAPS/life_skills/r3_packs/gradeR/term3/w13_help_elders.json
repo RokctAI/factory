@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w13_help_elders",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Helping old and young",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Helping hands",
+    "subtopic": "Being young and old: ways to help elderly people; card of appreciation for grandparents"
+  },
+  "skill": "social.helping_elders",
+  "prereq_skills": ["social.helping"],
+  "images": ["gogo_and_baby", "mkhulu", "baby", "puppy", "gogo", "read_to_gogo", "hide_glasses", "make_noise", "give_seat", "stay_seated", "push", "tutor_on_seat"],
+  "show": {
+    "line": "Gogo and mkhulu are old. Babies are young. We can help them both!",
+    "image": "gogo_and_baby"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Who is old?", "options": ["mkhulu", "baby", "puppy"], "answer": "mkhulu", "praise": "Mkhulu is old!"},
+    {"type": "listen_tap", "prompt": "Who is young?", "options": ["baby", "gogo", "mkhulu"], "answer": "baby", "praise": "The baby is young!"},
+    {"type": "listen_tap", "prompt": "Gogo cannot see well. How can you help?", "options": ["read_to_gogo", "hide_glasses", "make_noise"], "answer": "read_to_gogo", "praise": "Read to gogo or find her glasses!"},
+    {"type": "say_it", "prompt": "Gogo gave you a gift. What do you say?", "accept": ["thank you", "thank you gogo", "ngiyabonga", "dankie", "enkosi", "thanks"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "There is one seat on the taxi. An old man is standing. Lindi is sitting. What can Lindi do?", "options": ["give_seat", "stay_seated", "push"], "answer": "give_seat", "praise": "Give him the seat! Kind Lindi."},
+    {"type": "what_next", "prompt": "Baby, child, grown-up, and then?", "sequence": ["baby", "child", "grown_up"], "options": ["old", "baby", "child"], "answer": "old", "praise": "Old! Like gogo and mkhulu."}
+  ],
+  "hints": ["Old people may need help to walk, see or carry.", "Being kind to elders shows respect."],
+  "beat_the_tutor": {
+    "setup": "My turn! An old lady needs a seat.",
+    "tutor_try": "I keep the seat. It is mine!",
+    "image": "tutor_on_seat",
+    "answer": "give seat",
+    "win_line": "You caught me! I should give her my seat.",
+    "gentle_line": "Let's give our seat to the old lady!"
+  },
+  "parent_line": "Can describe ways to help older people and show respect."
+}
