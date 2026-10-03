@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term4.w01_types_of_homes",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "Types of homes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Homes",
+    "subtopic": "Types of homes: flats, houses, shacks, traditional homes; homes to suit different weather conditions"
+  },
+  "skill": "homes.types_weather",
+  "prereq_skills": ["homes.types"],
+  "images": ["homes_row", "flats", "rondavel", "house", "caravan", "cool_home", "hot_home", "sloped_roof", "no_roof", "flat", "tutor_tall_building"],
+  "show": {
+    "line": "Homes can be houses, flats, shacks or traditional homes. Each keeps people safe!",
+    "image": "homes_row"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the flats.", "options": ["flats", "rondavel", "house"], "answer": "flats", "praise": "Flats! Many homes stacked up."},
+    {"type": "listen_tap", "prompt": "Tap the traditional home.", "options": ["rondavel", "flats", "caravan"], "answer": "rondavel", "praise": "A rondavel!"},
+    {"type": "listen_tap", "prompt": "A hot place needs a home that stays...?", "options": ["cool_home", "hot_home"], "answer": "cool_home", "praise": "Cool inside!"},
+    {"type": "listen_tap", "prompt": "A rainy place needs a roof that is...?", "options": ["sloped_roof", "no_roof"], "answer": "sloped_roof", "praise": "Sloped so rain runs off!"},
+    {"type": "say_it", "prompt": "Name a type of home.", "accept": ["house", "flat", "flats", "shack", "rondavel", "hut", "caravan", "tent", "townhouse"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Nandi lives in a flat on the tenth floor. She takes the lift up. Does she live in a house?", "options": ["flat", "house"], "answer": "flat", "praise": "A flat!"}
+  ],
+  "hints": ["Homes are different but all give shelter.", "Weather changes how homes are built."],
+  "beat_the_tutor": {
+    "setup": "My turn! A home on the tenth floor is...",
+    "tutor_try": "A rondavel!",
+    "image": "tutor_tall_building",
+    "answer": "flat",
+    "win_line": "You caught me! It is a flat.",
+    "gentle_line": "Homes up high are flats!"
+  },
+  "parent_line": "Can name types of homes and how they suit the weather."
+}

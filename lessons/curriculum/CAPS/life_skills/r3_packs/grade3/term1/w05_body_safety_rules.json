@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term1.w05_body_safety_rules",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Keeping my body safe",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Keeping my body safe",
+    "subtopic": "We are not safe with everyone; rules to keep my body safe; trusting 'yes' and 'no' feelings"
+  },
+  "skill": "safety.body_rules",
+  "prereq_skills": ["safety.body_feelings"],
+  "images": ["say_no_go_tell", "tell_adult", "keep_secret", "surprise_party", "birthday_gift", "hide_and_seek_spot", "scary_touch", "dont_tell_mom", "teacher", "stranger_car", "say_no_tell", "go_along", "tutor_secret"],
+  "show": {
+    "line": "My body belongs to me. If something feels wrong, say no, go and tell.",
+    "image": "say_no_go_tell"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Say the three steps. No, go and...?", "accept": ["tell", "tell someone", "tell a grown up"]},
+    {"type": "listen_tap", "prompt": "Someone asks you to keep a secret that scares you. What do you do?", "options": ["tell_adult", "keep_secret"], "answer": "tell_adult", "praise": "Tell a grown-up you trust!"},
+    {"type": "match_sort", "prompt": "Safe secret or unsafe secret?", "groups": ["safe", "unsafe"], "items": [{"image": "surprise_party", "group": "safe"}, {"image": "birthday_gift", "group": "safe"}, {"image": "hide_and_seek_spot", "group": "safe"}, {"image": "scary_touch", "group": "unsafe"}, {"image": "dont_tell_mom", "group": "unsafe"}]},
+    {"type": "listen_tap", "prompt": "Who can you tell? Tap a trusted adult.", "options": ["teacher", "stranger_car"], "answer": "teacher", "praise": "Your teacher!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "An older child says, come behind the toilets alone. Pam has a no feeling. What should Pam do?", "options": ["say_no_tell", "go_along"], "answer": "say_no_tell", "praise": "Say no, go and tell!"},
+    {"type": "say_it", "prompt": "Who does your body belong to?", "accept": ["me", "myself", "my body belongs to me"]}
+  ],
+  "hints": ["Trust your no feeling.", "Keep telling until someone helps."],
+  "beat_the_tutor": {
+    "setup": "My turn! Someone said keep a scary secret.",
+    "tutor_try": "I will never tell!",
+    "image": "tutor_secret",
+    "answer": "tell",
+    "win_line": "You caught me! Scary secrets must be told.",
+    "gentle_line": "Say no, go and tell!"
+  },
+  "parent_line": "Knows rules to keep their body safe and how to report abuse."
+}

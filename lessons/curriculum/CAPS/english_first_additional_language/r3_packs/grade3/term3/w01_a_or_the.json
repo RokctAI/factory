@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term3.w01_a_or_the",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 3,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Making things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Language Use",
+    "subtopic": "Uses the articles 'a' and 'the' with nouns (a bottle / the bottle, water / the water)"
+  },
+  "skill": "efal.grammar.articles",
+  "prereq_skills": ["efal.grammar.countable"],
+  "images": ["green_bottle", "word_a", "word_an", "word_the", "sentence_an_apple", "sentence_a_apple", "tutor_holds_orange"],
+  "show": {
+    "line": "I have a bottle. The bottle is green! We say a first, then the.",
+    "image": "green_bottle"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "I see ... bird. A or an?", "options": ["word_a", "word_an"], "answer": "word_a", "praise": "Yes! A bird."},
+    {"type": "listen_tap", "prompt": "I see ... egg. A or an?", "options": ["word_an", "word_a"], "answer": "word_an", "praise": "Yes! An egg."},
+    {"type": "listen_tap", "prompt": "Pass me some water. Which word fits? Pass me ... water.", "options": ["word_the", "word_a"], "answer": "word_the", "praise": "Yes! Pass me the water."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I need a box. The box is big.", "accept": ["i need a box the box is big", "i need a box", "the box is big"]},
+    {"type": "listen_tap", "prompt": "Which sentence is right?", "options": ["sentence_an_apple", "sentence_a_apple"], "answer": "sentence_an_apple", "praise": "Yes! An apple."}
+  ],
+  "hints": ["Use an before a vowel sound. An egg, an apple.", "Use the when we know which one."],
+  "beat_the_tutor": {
+    "setup": "My turn! Look at this.",
+    "tutor_try": "I have a orange!",
+    "image": "tutor_holds_orange",
+    "answer": "an",
+    "win_line": "You caught me! An orange. Orange starts with a vowel.",
+    "gentle_line": "Let's say it together. An orange!"
+  },
+  "parent_line": "Can use a, an and the with nouns: a box, an egg, the water."
+}

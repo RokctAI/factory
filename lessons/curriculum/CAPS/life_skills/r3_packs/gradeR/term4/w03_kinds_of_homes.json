@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term4.w03_kinds_of_homes",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "Kinds of homes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live",
+    "subtopic": "Different types of homes and what homes are made of; a home provides shelter and safety"
+  },
+  "skill": "homes.types",
+  "prereq_skills": [],
+  "images": ["kinds_of_homes", "flats", "hut", "tent", "rondavel", "caravan", "bricks", "paper", "cake", "stone", "wood", "jelly", "tutor_paper_house"],
+  "show": {
+    "line": "People live in houses, flats, huts and shacks. A home keeps us safe and dry!",
+    "image": "kinds_of_homes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the tall building with many homes. It is a flat.", "options": ["flats", "hut", "tent"], "answer": "flats", "praise": "Flats! Many homes in one building."},
+    {"type": "listen_tap", "prompt": "Which home has a round wall and a grass roof?", "options": ["rondavel", "flats", "caravan"], "answer": "rondavel", "praise": "A rondavel!"},
+    {"type": "listen_tap", "prompt": "What is this house made of?", "options": ["bricks", "paper", "cake"], "answer": "bricks", "praise": "Bricks! Strong and safe."},
+    {"type": "say_it", "prompt": "Why do we need a home?", "accept": ["to stay safe", "to keep warm", "to keep dry", "shelter", "to sleep", "safe", "warm", "dry"]},
+    {"type": "match_sort", "prompt": "Strong material for a house, or not? Sort them.", "groups": ["strong", "not_strong"], "items": [{"image": "bricks", "group": "strong"}, {"image": "stone", "group": "strong"}, {"image": "wood", "group": "strong"}, {"image": "paper", "group": "not_strong"}, {"image": "jelly", "group": "not_strong"}]},
+    {"type": "say_it", "prompt": "What kind of home do you live in?", "accept": ["house", "flat", "hut", "rondavel", "shack", "town house", "a house", "a flat", "room", "farm house"]}
+  ],
+  "hints": ["Homes can be big or small, but all keep us safe.", "A strong home keeps out wind and rain."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will build a home.",
+    "tutor_try": "I will build it from paper!",
+    "image": "tutor_paper_house",
+    "answer": "bricks",
+    "win_line": "You caught me! Paper is not strong. Bricks are strong.",
+    "gentle_line": "Let's build with bricks. Strong and safe!"
+  },
+  "parent_line": "Can name types of homes and why people need them."
+}

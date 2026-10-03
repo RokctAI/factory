@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term1.w01_there_is_there_are",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 1,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Wild animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Language Use",
+    "subtopic": "Understands and uses 'There is / There are' (There is a book on the table)"
+  },
+  "skill": "efal.grammar.there_is_are",
+  "prereq_skills": ["efal.grammar.plural_review"],
+  "images": ["two_lions", "giraffe_one", "giraffes_three", "word_are", "word_is", "tutor_holds_five_zebras"],
+  "show": {
+    "line": "There is one lion. There are two lions! Is for one. Are for more.",
+    "image": "two_lions"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "There is one... which picture?", "options": ["giraffe_one", "giraffes_three"], "answer": "giraffe_one", "praise": "Yes! There is one giraffe."},
+    {"type": "listen_tap", "prompt": "There are three... which picture?", "options": ["giraffes_three", "giraffe_one"], "answer": "giraffes_three", "praise": "Yes! There are three giraffes."},
+    {"type": "listen_tap", "prompt": "There ... two elephants. Is or are?", "options": ["word_are", "word_is"], "answer": "word_are", "praise": "Yes! There are two elephants."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "There is a book on the table.", "accept": ["there is a book on the table", "there is book on the table", "a book on the table"]},
+    {"type": "listen_tap", "prompt": "There ... a monkey in the tree. Is or are?", "options": ["word_is", "word_are"], "answer": "word_is", "praise": "Yes! There is a monkey."}
+  ],
+  "hints": ["One thing? Say there is.", "More than one? Say there are."],
+  "beat_the_tutor": {
+    "setup": "My turn! Look at the zebras.",
+    "tutor_try": "There is five zebras!",
+    "image": "tutor_holds_five_zebras",
+    "answer": "are",
+    "win_line": "You caught me! There are five zebras. More than one, so are.",
+    "gentle_line": "Let's say it together. There are five zebras!"
+  },
+  "parent_line": "Can say there is for one thing and there are for many."
+}

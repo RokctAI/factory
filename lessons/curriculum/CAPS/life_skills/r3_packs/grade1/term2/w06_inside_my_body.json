@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w06_inside_my_body",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [8, 9],
+  "theme": "Inside my body",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: My body",
+    "subtopic": "Parts of my body that I cannot see: lungs and heart (inquiry process)"
+  },
+  "skill": "body.organs",
+  "prereq_skills": ["body.movement"],
+  "images": ["heart_lungs", "heart", "lungs", "stomach", "skeleton", "brain", "bones", "tutor_breathe"],
+  "show": {
+    "line": "Inside you there is a heart that beats and lungs that breathe. Ba-dum, ba-dum!",
+    "image": "heart_lungs"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which part pumps blood? Ba-dum!", "options": ["heart", "lungs", "stomach"], "answer": "heart", "praise": "Your heart!"},
+    {"type": "listen_tap", "prompt": "Which parts help you breathe?", "options": ["lungs", "heart", "skeleton"], "answer": "lungs", "praise": "Your lungs!"},
+    {"type": "listen_tap", "prompt": "Where does food go after you swallow?", "options": ["stomach", "brain", "lungs"], "answer": "stomach", "praise": "Your stomach!"},
+    {"type": "listen_tap", "prompt": "Which part helps you think?", "options": ["brain", "stomach", "bones"], "answer": "brain", "praise": "Your clever brain!"},
+    {"type": "say_it", "prompt": "The bones inside you are called your...?", "accept": ["skeleton", "the skeleton", "bones"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Kopano runs fast. Then he puts his hand on his chest. Ba-dum, ba-dum! What does he feel?", "options": ["heart", "stomach", "brain"], "answer": "heart", "praise": "His heart beats fast after running!"}
+  ],
+  "hints": ["Heart pumps. Lungs breathe. Brain thinks.", "We cannot see them but they work all day."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will breathe in.",
+    "tutor_try": "Air goes into my stomach!",
+    "image": "tutor_breathe",
+    "answer": "lungs",
+    "win_line": "You caught me! Air goes into my lungs.",
+    "gentle_line": "We breathe with our lungs!"
+  },
+  "parent_line": "Knows the heart, lungs, stomach, brain and skeleton and what they do."
+}

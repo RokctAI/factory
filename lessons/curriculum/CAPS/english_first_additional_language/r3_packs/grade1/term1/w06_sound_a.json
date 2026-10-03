@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term1.w06_sound_a",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [6],
+  "theme": "My family",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Week 6: introduces /a/ (ant, apple, axe, animal) with the song 'ants on my arm'"
+  },
+  "skill": "efal.phonics.sound.a",
+  "prereq_skills": ["efal.vocab.family"],
+  "images": ["ant", "apple", "sun", "bed", "axe", "dog", "cup", "tile_a", "tile_s", "tile_o", "animal_lion", "tutor_holds_bed"],
+  "show": {
+    "line": "Listen. a, a, ant. Ants on my arm! Ant starts with a.",
+    "image": "ant"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with a, as in ant?", "options": ["apple", "sun", "bed"], "answer": "apple", "praise": "Yes! a, a, apple."},
+    {"type": "say_it", "prompt": "Say the sound with me. a, as in ant!", "accept": ["a", "ah", "aa", "ant"]},
+    {"type": "listen_tap", "prompt": "Which one starts with a?", "options": ["axe", "dog", "cup"], "answer": "axe", "praise": "Yes! a, a, axe."},
+    {"type": "listen_tap", "prompt": "Tap the letter that says a.", "options": ["tile_a", "tile_s", "tile_o"], "answer": "tile_a", "praise": "Yes! This letter says a."},
+    {"type": "match_sort", "prompt": "Does it start with a? Sort the pictures.", "groups": ["yes", "no"], "items": [{"image": "ant", "group": "yes"}, {"image": "apple", "group": "yes"}, {"image": "animal_lion", "group": "yes"}, {"image": "sun", "group": "no"}, {"image": "bed", "group": "no"}]}
+  ],
+  "hints": ["Open your mouth wide. a, a, ant.", "Say the word slowly. Listen to the first sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with a.",
+    "tutor_try": "Bed! Bed starts with a.",
+    "image": "tutor_holds_bed",
+    "answer": "no",
+    "win_line": "You caught me! Bed starts with b. Apple starts with a.",
+    "gentle_line": "Let's listen together. a, a, apple. Apple starts with a!"
+  },
+  "parent_line": "Can hear and say the a sound at the start of words like ant and apple."
+}

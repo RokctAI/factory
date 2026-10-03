@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w04_summer_winter_clothes",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "Clothes for the weather",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "This is what I wear",
+    "subtopic": "Season and occasion for which clothing is worn (winter/summer washing line, party outfits)"
+  },
+  "skill": "clothes.season",
+  "prereq_skills": ["clothes.name"],
+  "images": ["summer_winter_line", "shorts", "sunhat", "sandals", "beanie", "scarf", "jersey", "swimsuit", "gloves", "party_clothes", "pyjamas", "raincoat", "warm_coat", "tutor_shorts_snow"],
+  "show": {
+    "line": "In summer it is hot. In winter it is cold. We wear different clothes!",
+    "image": "summer_winter_line"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Summer or winter clothes? Sort them.", "groups": ["summer", "winter"], "items": [{"image": "shorts", "group": "summer"}, {"image": "sunhat", "group": "summer"}, {"image": "sandals", "group": "summer"}, {"image": "beanie", "group": "winter"}, {"image": "scarf", "group": "winter"}]},
+    {"type": "listen_tap", "prompt": "It is cold outside. What do you wear?", "options": ["jersey", "swimsuit", "sandals"], "answer": "jersey", "praise": "A warm jersey!"},
+    {"type": "listen_tap", "prompt": "It is a hot day. What do you wear?", "options": ["sunhat", "scarf", "gloves"], "answer": "sunhat", "praise": "A sunhat keeps the sun off."},
+    {"type": "listen_tap", "prompt": "It is a party! Which outfit is for a party?", "options": ["party_clothes", "pyjamas", "raincoat"], "answer": "party_clothes", "praise": "Party clothes! Time to dance."},
+    {"type": "say_it", "prompt": "What do you wear to bed?", "accept": ["pyjamas", "pjs", "pajamas", "nightie", "nightdress"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "It is snowing in the mountains. Thandi goes outside to play. What should she wear?", "options": ["warm_coat", "swimsuit", "shorts"], "answer": "warm_coat", "praise": "A warm coat. Brrr!"}
+  ],
+  "hints": ["Hot weather: light clothes. Cold weather: warm clothes.", "Think: will I be too hot or too cold?"],
+  "beat_the_tutor": {
+    "setup": "My turn! It is a cold winter day.",
+    "tutor_try": "I will wear shorts and sandals!",
+    "image": "tutor_shorts_snow",
+    "answer": "jersey",
+    "win_line": "You caught me! In winter I need a jersey and a beanie.",
+    "gentle_line": "Winter is cold. Jersey, beanie and scarf!"
+  },
+  "parent_line": "Can choose clothes for hot, cold and special days."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w02_water_air_sun",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Water, air and sunlight",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: What we need to live",
+    "subtopic": "Water: why we need it (cook, drink, plants, wash); sources of water (rain, dams, rivers); how to save water"
+  },
+  "skill": "needs.water_air_sun",
+  "prereq_skills": ["food.groups.g2"],
+  "images": ["water_air_sun", "dam", "desk", "cupboard", "clean_air", "smoky_air", "to_grow", "to_sleep", "to_sing", "river", "rain", "sand_dune", "rock", "hat_sunscreen", "no_hat", "tutor_dark_plant"],
+  "show": {
+    "line": "All living things need water, air and sunlight. People, animals and plants!",
+    "image": "water_air_sun"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where does rain water collect?", "options": ["dam", "desk", "cupboard"], "answer": "dam", "praise": "A dam!"},
+    {"type": "say_it", "prompt": "Name one thing we use water for.", "accept": ["drink", "cook", "wash", "water plants", "bath", "clean", "flush", "brush teeth"]},
+    {"type": "listen_tap", "prompt": "Which air is clean?", "options": ["clean_air", "smoky_air"], "answer": "clean_air", "praise": "Fresh, clean air!"},
+    {"type": "listen_tap", "prompt": "Why do plants need sunlight?", "options": ["to_grow", "to_sleep", "to_sing"], "answer": "to_grow", "praise": "Sunlight helps plants grow!"},
+    {"type": "match_sort", "prompt": "Source of water or not?", "groups": ["water_source", "not_source"], "items": [{"image": "river", "group": "water_source"}, {"image": "rain", "group": "water_source"}, {"image": "dam", "group": "water_source"}, {"image": "sand_dune", "group": "not_source"}, {"image": "rock", "group": "not_source"}]},
+    {"type": "listen_tap", "prompt": "How do we protect ourselves from strong sun?", "options": ["hat_sunscreen", "no_hat"], "answer": "hat_sunscreen", "praise": "Hat and sunscreen!"}
+  ],
+  "hints": ["Every living thing needs water, air and light.", "Water comes from rain, rivers and dams."],
+  "beat_the_tutor": {
+    "setup": "My turn! Plants can live in a dark cupboard.",
+    "tutor_try": "They don't need sunlight!",
+    "image": "tutor_dark_plant",
+    "answer": "sunlight",
+    "win_line": "You caught me! Plants need sunlight.",
+    "gentle_line": "Plants need light to grow!"
+  },
+  "parent_line": "Knows living things need water, air and sunlight and where water comes from."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term4.w06_suffixes",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 4,
+  "weeks": [6, 7, 8, 9, 10],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises and uses suffixes (-es, -ies, -ly, -ing, -ed), identified in Shared Reading texts"
+  },
+  "skill": "efal.grammar.suffixes",
+  "prereq_skills": ["efal.grammar.ed_ing", "efal.grammar.plural_es"],
+  "images": ["buses", "word_buses", "word_buss", "word_babies", "word_babys", "word_quickly", "word_quick", "word_trains", "word_slowly", "tutor_holds_two_taxis"],
+  "show": {
+    "line": "Add an ending to change a word. Bus, buses. Quick, quickly. Fly, flies!",
+    "image": "buses"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "One bus, two...?", "options": ["word_buses", "word_buss"], "answer": "word_buses", "praise": "Yes! Buses."},
+    {"type": "listen_tap", "prompt": "One baby, two...?", "options": ["word_babies", "word_babys"], "answer": "word_babies", "praise": "Yes! Babies. y changes to ies."},
+    {"type": "listen_tap", "prompt": "The car went... what?", "options": ["word_quickly", "word_quick"], "answer": "word_quickly", "praise": "Yes! The car went quickly."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "driving", "accept": ["driving", "drive", "driveing"]},
+    {"type": "match_sort", "prompt": "Which ending? Sort the words.", "groups": ["more than one", "how"], "items": [{"image": "word_buses", "group": "more than one"}, {"image": "word_babies", "group": "more than one"}, {"image": "word_trains", "group": "more than one"}, {"image": "word_quickly", "group": "how"}, {"image": "word_slowly", "group": "how"}]}
+  ],
+  "hints": ["ly tells us how. Quickly, slowly.", "es and ies mean more than one."],
+  "beat_the_tutor": {
+    "setup": "My turn! One taxi, two...",
+    "tutor_try": "Two taxis! No, two taxies!",
+    "image": "tutor_holds_two_taxis",
+    "answer": "taxis",
+    "win_line": "You caught me! Two taxis. We just add s.",
+    "gentle_line": "Let's say it together. One taxi, two taxis!"
+  },
+  "parent_line": "Can read and use word endings like es, ies, ly, ing and ed."
+}

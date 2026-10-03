@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term4.w03_picture_maps",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 4,
+  "weeks": [6],
+  "theme": "Picture maps",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Picture maps",
+    "subtopic": "Finding places and things on a picture map; using directions to find a place"
+  },
+  "skill": "space.maps",
+  "prereq_skills": ["space.position.words"],
+  "images": ["picture_map", "map_school", "map_shop", "map_house", "above", "below", "inside", "map_shop_next_school", "path_park", "path_river", "path_shop", "map", "photo_face", "book_cover", "tutor_map"],
+  "show": {
+    "line": "A map is a picture from above. It helps us find our way!",
+    "image": "picture_map"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "On the map, which is the school?", "options": ["map_school", "map_shop", "map_house"], "answer": "map_school", "praise": "The school!"},
+    {"type": "listen_tap", "prompt": "A map shows things from...?", "options": ["above", "below", "inside"], "answer": "above", "praise": "From above, like a bird!"},
+    {"type": "say_it", "prompt": "The shop is next to the...?", "accept": ["school", "the school"], "image": "map_shop_next_school"},
+    {"type": "listen_tap", "prompt": "Which path goes to the park?", "options": ["path_park", "path_river", "path_shop"], "answer": "path_park", "praise": "This way to the park!"},
+    {"type": "listen_tap", "prompt": "Which is a map?", "options": ["map", "photo_face", "book_cover"], "answer": "map", "praise": "A map!"},
+    {"type": "say_it", "prompt": "Who sees the world from above, like a map? A bird or a fish?", "accept": ["bird", "a bird"]}
+  ],
+  "hints": ["Imagine you are a bird flying over.", "Follow the path with your finger."],
+  "beat_the_tutor": {
+    "setup": "My turn! A map shows...",
+    "tutor_try": "A map shows things from underground!",
+    "image": "tutor_map",
+    "answer": "above",
+    "win_line": "You caught me! A map shows things from above.",
+    "gentle_line": "Maps are a bird's-eye view!"
+  },
+  "parent_line": "Can find places and paths on a simple picture map."
+}

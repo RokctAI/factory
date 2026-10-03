@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term4.w02_animal_skins",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Feathers, fur and scales",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life",
+    "subtopic": "Natural Sciences: describes animal skin, hair and fur by touch (smooth, furry, rough)"
+  },
+  "skill": "animals.coverings",
+  "prereq_skills": ["animals.babies"],
+  "images": ["animal_coverings", "rabbit", "tortoise", "fish", "chicken", "dog", "frog", "sheep", "cat", "lion", "snake", "puppy", "bird", "porcupine", "tutor_sheep"],
+  "show": {
+    "line": "Animals feel different. A cat is furry. A fish is smooth. A crocodile is rough!",
+    "image": "animal_coverings"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which animal is soft and furry?", "options": ["rabbit", "tortoise", "fish"], "answer": "rabbit", "praise": "Soft, furry rabbit!"},
+    {"type": "listen_tap", "prompt": "Which animal has feathers?", "options": ["chicken", "dog", "frog"], "answer": "chicken", "praise": "A chicken has feathers!"},
+    {"type": "match_sort", "prompt": "Furry or not furry? Sort them.", "groups": ["furry", "not_furry"], "items": [{"image": "sheep", "group": "furry"}, {"image": "cat", "group": "furry"}, {"image": "lion", "group": "furry"}, {"image": "fish", "group": "not_furry"}, {"image": "snake", "group": "not_furry"}]},
+    {"type": "listen_tap", "prompt": "Which animal has a hard shell?", "options": ["tortoise", "puppy", "bird"], "answer": "tortoise", "praise": "A hard tortoise shell!"},
+    {"type": "say_it", "prompt": "Is a crocodile's skin smooth or rough?", "accept": ["rough", "bumpy", "rough and bumpy", "scaly"]},
+    {"type": "listen_tap", "prompt": "Which one feels smooth and wet?", "options": ["frog", "sheep", "porcupine"], "answer": "frog", "praise": "A frog is smooth!"}
+  ],
+  "hints": ["Imagine stroking the animal.", "Fur is soft. Shells are hard. Feathers are for birds."],
+  "beat_the_tutor": {
+    "setup": "My turn! A sheep feels...",
+    "tutor_try": "A sheep feels smooth like glass!",
+    "image": "tutor_sheep",
+    "answer": "furry",
+    "win_line": "You caught me! A sheep is soft and woolly.",
+    "gentle_line": "A sheep has soft wool!"
+  },
+  "parent_line": "Can describe animal coverings as furry, smooth, rough or feathered."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w02_sound_n",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [2],
+  "theme": "Friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 2: /n/ (nap, nip, pin, tin); differentiates i and n; segments oral sentences into words"
+  },
+  "skill": "efal.phonics.sound.n",
+  "prereq_skills": ["efal.phonics.sound.i"],
+  "images": ["baby_nap", "nose", "tin", "sun", "pin", "pit", "tip", "tile_n", "tile_i", "tutor_holds_tip"],
+  "show": {
+    "line": "Listen. n, n, nap. n, n, net! Nap starts with n.",
+    "image": "baby_nap"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with n, as in nap?", "options": ["nose", "tin", "sun"], "answer": "nose", "praise": "Yes! n, n, nose."},
+    {"type": "say_it", "prompt": "Say the sound with me. n, as in nap!", "accept": ["n", "nn", "nuh", "nap"]},
+    {"type": "blend", "prompt": "Listen. p, i, n. What word is it?", "sounds": ["p", "i", "n"], "options": ["pin", "tin", "pit"], "answer": "pin", "praise": "Pin! p, i, n."},
+    {"type": "blend", "prompt": "Listen. t, i, n. What word is it?", "sounds": ["t", "i", "n"], "options": ["tin", "pin", "tip"], "answer": "tin", "praise": "Tin! t, i, n."},
+    {"type": "listen_tap", "prompt": "Is it i or n? Listen. Nip.", "options": ["tile_n", "tile_i"], "answer": "tile_n", "praise": "Yes! Nip starts with n."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "nap", "accept": ["nap", "nep", "nab"]}
+  ],
+  "hints": ["Put your tongue up and hum. n, n, n.", "Listen for n at the start or at the end."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that ends with n.",
+    "tutor_try": "Tip! Tip ends with n.",
+    "image": "tutor_holds_tip",
+    "answer": "no",
+    "win_line": "You caught me! Tip ends with p. Tin ends with n.",
+    "gentle_line": "Let's listen together. t, i, n. Tin ends with n!"
+  },
+  "parent_line": "Can hear the n sound and blend words like pin, tin and nap."
+}

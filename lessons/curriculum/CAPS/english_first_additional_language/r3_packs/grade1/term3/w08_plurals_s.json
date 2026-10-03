@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w08_plurals_s",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [8],
+  "theme": "Books and reading",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 8: plurals with -s (books, dogs, cats) and the function of -s"
+  },
+  "skill": "efal.grammar.plural_s",
+  "prereq_skills": ["efal.phonics.sound.l"],
+  "images": ["books_pile", "dogs_three", "dog_one", "cat_one", "cats_two", "books_two", "word_pens", "word_pen", "tutor_holds_two_cats"],
+  "show": {
+    "line": "One book. Two books! Add s when there is more than one.",
+    "image": "books_pile"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the picture for dogs.", "options": ["dogs_three", "dog_one"], "answer": "dogs_three", "praise": "Yes! Dogs. More than one dog."},
+    {"type": "listen_tap", "prompt": "Tap the picture for cat.", "options": ["cat_one", "cats_two"], "answer": "cat_one", "praise": "Yes! Cat. Just one."},
+    {"type": "say_it", "prompt": "One book, two... what? Say it.", "accept": ["books", "two books", "bookss"], "image": "books_two"},
+    {"type": "listen_tap", "prompt": "One pen, three...?", "options": ["word_pens", "word_pen"], "answer": "word_pens", "praise": "Yes! Three pens."},
+    {"type": "match_sort", "prompt": "One or more than one? Sort the pictures.", "groups": ["one", "more"], "items": [{"image": "cat_one", "group": "one"}, {"image": "dog_one", "group": "one"}, {"image": "dogs_three", "group": "more"}, {"image": "books_two", "group": "more"}, {"image": "cats_two", "group": "more"}]}
+  ],
+  "hints": ["Count them. More than one? Add s.", "Listen to the end. Cat, cats."],
+  "beat_the_tutor": {
+    "setup": "My turn! Two cats. Let me say it.",
+    "tutor_try": "Two cat!",
+    "image": "tutor_holds_two_cats",
+    "answer": "cats",
+    "win_line": "You caught me! Two cats. We add s.",
+    "gentle_line": "Let's say it together. One cat, two cats!"
+  },
+  "parent_line": "Knows that we add s to show more than one, like books and dogs."
+}

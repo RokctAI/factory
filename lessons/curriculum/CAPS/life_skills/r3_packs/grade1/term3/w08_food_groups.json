@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w08_food_groups",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [10, 11],
+  "theme": "Where food comes from",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Food",
+    "subtopic": "Identify food from different food groups; where foods come from: fruit, vegetables, dairy, meat"
+  },
+  "skill": "food.groups",
+  "prereq_skills": ["health.food.healthy"],
+  "images": ["food_groups", "cow", "tree", "chicken", "fish", "apple", "banana", "mango", "carrot", "cabbage", "cheese", "bread", "mielie", "egg", "milk", "tutor_milk_tree"],
+  "show": {
+    "line": "Food comes from plants and animals. Fruit, vegetables, milk and meat!",
+    "image": "food_groups"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where does milk come from?", "options": ["cow", "tree", "chicken"], "answer": "cow", "praise": "From a cow!"},
+    {"type": "listen_tap", "prompt": "Where do eggs come from?", "options": ["chicken", "cow", "fish"], "answer": "chicken", "praise": "From a chicken!"},
+    {"type": "match_sort", "prompt": "Fruit or vegetable?", "groups": ["fruit", "vegetable"], "items": [{"image": "apple", "group": "fruit"}, {"image": "banana", "group": "fruit"}, {"image": "mango", "group": "fruit"}, {"image": "carrot", "group": "vegetable"}, {"image": "cabbage", "group": "vegetable"}]},
+    {"type": "listen_tap", "prompt": "Which one is dairy?", "options": ["cheese", "apple", "bread"], "answer": "cheese", "praise": "Cheese is made from milk!"},
+    {"type": "say_it", "prompt": "Name a vegetable.", "accept": ["carrot", "cabbage", "spinach", "potato", "pumpkin", "beans", "onion", "tomato", "peas", "beetroot", "butternut"]},
+    {"type": "listen_tap", "prompt": "Which food comes from a plant?", "options": ["mielie", "egg", "milk"], "answer": "mielie", "praise": "Mielies grow on plants!"}
+  ],
+  "hints": ["Ask: did it grow, or come from an animal?", "Dairy comes from milk."],
+  "beat_the_tutor": {
+    "setup": "My turn! Milk comes from...",
+    "tutor_try": "Milk comes from a tree!",
+    "image": "tutor_milk_tree",
+    "answer": "cow",
+    "win_line": "You caught me! Milk comes from cows.",
+    "gentle_line": "Milk comes from cows. Moo!"
+  },
+  "parent_line": "Can sort foods into groups and say where they come from."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term4.w04_save_water",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Saving water",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Personal and Social Well-being: Water",
+    "subtopic": "Ways water is wasted and ways of saving water; what to do about leaks or a dripping tap"
+  },
+  "skill": "water.save",
+  "prereq_skills": ["health.safe_water"],
+  "images": ["dripping_tap", "tap_off_brushing", "tap_on_brushing", "tell_adult", "ignore", "turn_it_more", "short_shower", "bucket_plants", "tap_off", "tap_running", "hose_play", "rain_tank", "plate", "shoe", "shower", "full_bath", "tutor_tap_on"],
+  "show": {
+    "line": "Water is precious. Turn off the tap! Every drop counts.",
+    "image": "dripping_tap"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which child saves water?", "options": ["tap_off_brushing", "tap_on_brushing"], "answer": "tap_off_brushing", "praise": "Tap off while brushing!"},
+    {"type": "listen_tap", "prompt": "A tap is dripping. What do you do?", "options": ["tell_adult", "ignore", "turn_it_more"], "answer": "tell_adult", "praise": "Tell a grown-up to fix it!"},
+    {"type": "match_sort", "prompt": "Saves water or wastes water?", "groups": ["saves", "wastes"], "items": [{"image": "short_shower", "group": "saves"}, {"image": "bucket_plants", "group": "saves"}, {"image": "tap_off", "group": "saves"}, {"image": "tap_running", "group": "wastes"}, {"image": "hose_play", "group": "wastes"}]},
+    {"type": "say_it", "prompt": "While brushing your teeth, turn the tap...?", "accept": ["off", "the tap off"]},
+    {"type": "listen_tap", "prompt": "What collects rain water?", "options": ["rain_tank", "plate", "shoe"], "answer": "rain_tank", "praise": "A rain tank!"},
+    {"type": "listen_tap", "prompt": "Which uses less water?", "options": ["shower", "full_bath"], "answer": "shower", "praise": "A short shower!"}
+  ],
+  "hints": ["Turn taps off tightly.", "Use water again for plants."],
+  "beat_the_tutor": {
+    "setup": "My turn! I brush my teeth.",
+    "tutor_try": "I leave the tap running!",
+    "image": "tutor_tap_on",
+    "answer": "off",
+    "win_line": "You caught me! Turn it off to save water.",
+    "gentle_line": "Tap off while brushing!"
+  },
+  "parent_line": "Knows ways to save water and what to do about leaks."
+}

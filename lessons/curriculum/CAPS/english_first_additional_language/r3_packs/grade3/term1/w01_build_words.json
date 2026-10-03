@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term1.w01_build_words",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 1,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Wild animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Builds and sounds out 3- and 4-letter words using sounds learnt"
+  },
+  "skill": "efal.phonics.build.four_letter",
+  "prereq_skills": ["efal.phonics.digraph.start_review"],
+  "images": ["lion", "frog", "fog", "dog", "snake", "snail", "lake", "tutor_holds_crab"],
+  "show": {
+    "line": "Let's build longer words! l, i, o, n. Lion!",
+    "image": "lion"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. f, r, o, g. What word is it?", "sounds": ["f", "r", "o", "g"], "options": ["frog", "fog", "dog"], "answer": "frog", "praise": "Frog! f, r, o, g."},
+    {"type": "blend", "prompt": "Listen. s, n, a, ke. What animal is it?", "sounds": ["s", "n", "a", "ke"], "options": ["snake", "snail", "lake"], "answer": "snake", "praise": "Snake!"},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "crab", "accept": ["crab", "crap", "cab"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "duck", "accept": ["duck", "dock", "dug"]},
+    {"type": "say_it", "prompt": "Break it up! Say the sounds in frog.", "accept": ["f r o g", "f-r-o-g", "fff rrr aw guh", "frog"], "image": "frog"}
+  ],
+  "hints": ["Say each sound. Then push them all together.", "Point to each letter as you say its sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. c, r, a, b.",
+    "tutor_try": "That makes cab!",
+    "image": "tutor_holds_crab",
+    "answer": "crab",
+    "win_line": "You caught me! c, r, a, b makes crab. I missed the r.",
+    "gentle_line": "Let's do it together. c, r, a, b. Crab!"
+  },
+  "parent_line": "Can sound out and read four-letter words like frog, crab and duck."
+}

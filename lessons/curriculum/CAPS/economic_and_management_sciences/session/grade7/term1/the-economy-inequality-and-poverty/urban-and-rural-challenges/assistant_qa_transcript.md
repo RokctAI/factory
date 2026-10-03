@@ -1,0 +1,18 @@
+### subtopic_1 — Urban and Rural Areas
+**Assistant:** Why is rural poverty so deep in provinces like the Eastern Cape and Limpopo?
+
+**Tutor:** Several causes combine, and history is a big part of them. Under apartheid, large parts of these provinces were homelands, such as the Transkei, Ciskei, Venda and Lebowa, where millions of black South Africans were forced to live on land that was too small and often too poor to farm successfully. Government invested little in roads, water, electricity, schools or businesses there, and the homelands mainly supplied migrant workers to the mines and cities. When apartheid ended, these areas started far behind. Today they still have fewer jobs, because most businesses locate in cities near markets, skilled workers and infrastructure. Many young people leave to find work elsewhere, which means rural households often consist of grandparents and children, supported by grants and remittances. Distances are long and transport is expensive, so reaching clinics, schools and shops costs time and money. There are also strengths: land, communities, natural beauty and potential for farming and tourism. Development programmes try to build on these, but progress has been uneven. In an exam, mention both historical causes and present-day factors.
+
+***
+
+### subtopic_2 — Challenges in Rural Areas
+**Assistant:** Should young people stay in rural areas or move to the cities?
+
+**Tutor:** There is no single right answer; it depends on the person and the opportunities available, and it is a real dilemma for many families. Moving to a city can give access to more jobs, colleges and services, and many families depend on the income sent home by members who work in cities. But moving is risky: unemployment is also high in cities, rent and transport are expensive, and many new arrivals end up in informal settlements without secure jobs. Leaving also weakens rural communities, which lose young, energetic people. Staying can work when there are real opportunities, for example in farming with support, tourism, small businesses serving the community, or work as teachers, nurses and extension officers, and remote work is possible where internet is available. Some people move for study and then return with skills to start something at home. A balanced answer explains push factors such as lack of jobs and pull factors such as opportunities in cities, the benefits and costs of moving, and the importance of developing rural economies so that young people have a real choice.
+
+***
+
+### subtopic_3 — Challenges in Urban Areas
+**Assistant:** Why do people move into informal settlements if conditions are so hard?
+
+**Tutor:** Because for many people, being close to possible work is worth the hardship. A person from a rural area with no jobs may calculate that a shack near the city gives a better chance of earning an income than staying at home with none. Informal settlements are often located close to jobs, transport routes or shopping centres, while formal townships or subsidised housing may be far away. Rent in a shack or backyard room is lower than for a formal flat, and many newcomers cannot afford anything else. Some people wait for many years on the housing waiting list. Conditions can be very hard: limited water and sanitation, risk of fires and floods, and insecurity. But informal settlements are also communities, with their own spaza shops, churches, crèches and organisations, and many residents work hard to improve them. Government policy has moved towards upgrading informal settlements where people already live, by providing services and secure tenure, rather than only moving people elsewhere. In an exam, explain both the pull of opportunity and the shortage of affordable housing.

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term3.w07_th_end",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [7],
+  "theme": "Healthy food",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 7: final 'th' (bath, cloth, with, tooth)"
+  },
+  "skill": "efal.phonics.digraph.th_end",
+  "prereq_skills": ["efal.phonics.digraph.ch"],
+  "images": ["bath", "word_bath", "word_bat", "word_bash", "tooth", "cloth", "word_with", "word_cloth", "word_fish", "word_wish", "tutor_holds_word_bath"],
+  "show": {
+    "line": "th at the end! Bath, cloth, with, tooth.",
+    "image": "bath"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word ends with th?", "options": ["word_bath", "word_bat", "word_bash"], "answer": "word_bath", "praise": "Yes! Bath ends with th."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "with", "accept": ["with", "wif", "wit"]},
+    {"type": "listen_tap", "prompt": "We brush each... what?", "options": ["tooth", "cloth", "bath"], "answer": "tooth", "praise": "Yes! Each tooth."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I eat with a spoon.", "accept": ["i eat with a spoon", "i eat with spoon", "eat with a spoon"]},
+    {"type": "match_sort", "prompt": "Does it end with th or sh? Sort the words.", "groups": ["th", "sh"], "items": [{"image": "word_bath", "group": "th"}, {"image": "word_with", "group": "th"}, {"image": "word_cloth", "group": "th"}, {"image": "word_fish", "group": "sh"}, {"image": "word_wish", "group": "sh"}]}
+  ],
+  "hints": ["Tongue between your teeth at the end. th!", "Listen to the last sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says bash!",
+    "image": "tutor_holds_word_bath",
+    "answer": "bath",
+    "win_line": "You caught me! It says bath. th at the end.",
+    "gentle_line": "Let's read it together. b, a, th. Bath!"
+  },
+  "parent_line": "Can read words that end in th, like bath, with and tooth."
+}

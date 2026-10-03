@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w05_sound_r",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [5],
+  "theme": "Clothes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 5: /r/ (red, rat, rod, rip); segmenting and blending; differentiates r and n"
+  },
+  "skill": "efal.phonics.sound.r",
+  "prereq_skills": ["efal.phonics.sound.u"],
+  "images": ["red_dress", "rat", "nut", "dog", "tile_r", "tile_n", "rip", "nip", "rabbit", "ring", "nest", "nose", "tutor_holds_nut"],
+  "show": {
+    "line": "Listen. r, r, red. r, r, rat! Red starts with r.",
+    "image": "red_dress"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with r, as in red?", "options": ["rat", "nut", "dog"], "answer": "rat", "praise": "Yes! r, r, rat."},
+    {"type": "say_it", "prompt": "Say the sound with me. r, as in run!", "accept": ["r", "rr", "rrr", "run"]},
+    {"type": "listen_tap", "prompt": "Is it r or n? Listen. Rod.", "options": ["tile_r", "tile_n"], "answer": "tile_r", "praise": "Yes! Rod starts with r."},
+    {"type": "blend", "prompt": "Listen. r, i, p. What word is it?", "sounds": ["r", "i", "p"], "options": ["rip", "rat", "nip"], "answer": "rip", "praise": "Rip! r, i, p."},
+    {"type": "match_sort", "prompt": "Does it start with r or n? Sort the pictures.", "groups": ["r", "n"], "items": [{"image": "rat", "group": "r"}, {"image": "rabbit", "group": "r"}, {"image": "ring", "group": "r"}, {"image": "nest", "group": "n"}, {"image": "nose", "group": "n"}]}
+  ],
+  "hints": ["Growl like a dog. r, r, r.", "r growls. n hums."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with r.",
+    "tutor_try": "Nut! Nut starts with r.",
+    "image": "tutor_holds_nut",
+    "answer": "no",
+    "win_line": "You caught me! Nut starts with n. Rat starts with r.",
+    "gentle_line": "Let's listen together. r, r, rat. Rat starts with r!"
+  },
+  "parent_line": "Can hear the r sound and blend words like rat, red and rip."
+}

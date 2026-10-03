@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w01_ck_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [1],
+  "theme": "In town",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 1: revises Term 2 sounds; 'ck' (sick, pack, sock, kick); rhyming words (pack/sack)"
+  },
+  "skill": "efal.phonics.ending.ck",
+  "prereq_skills": ["efal.phonics.build.cvc_t2"],
+  "images": ["sock", "kick", "sun", "pen", "sick", "sit", "sack", "pick", "pot", "backpack", "duck", "tutor_holds_sack"],
+  "show": {
+    "line": "c and k together say one sound at the end. Sock, kick, pack!",
+    "image": "sock"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one ends like sock?", "options": ["kick", "sun", "pen"], "answer": "kick", "praise": "Yes! Sock, kick."},
+    {"type": "blend", "prompt": "Listen. s, i, ck. What word is it?", "sounds": ["s", "i", "ck"], "options": ["sick", "sit", "sock"], "answer": "sick", "praise": "Sick! s, i, ck."},
+    {"type": "listen_tap", "prompt": "Which word rhymes with pack?", "options": ["sack", "pick", "pot"], "answer": "sack", "praise": "Yes! Pack, sack. They rhyme."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "kick", "accept": ["kick", "kik", "keck"]},
+    {"type": "match_sort", "prompt": "Does it end like sock? Sort the pictures.", "groups": ["yes", "no"], "items": [{"image": "sock", "group": "yes"}, {"image": "backpack", "group": "yes"}, {"image": "duck", "group": "yes"}, {"image": "sun", "group": "no"}, {"image": "pen", "group": "no"}]}
+  ],
+  "hints": ["c and k together make one sound at the end.", "Listen to the end of the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that rhymes with sock.",
+    "tutor_try": "Sack! Sack rhymes with sock.",
+    "image": "tutor_holds_sack",
+    "answer": "no",
+    "win_line": "You caught me! Sack does not rhyme with sock. Rock rhymes with sock.",
+    "gentle_line": "Let's listen together. Sock, rock. Same at the end!"
+  },
+  "parent_line": "Can read words that end in ck, like sock, kick and pack."
+}

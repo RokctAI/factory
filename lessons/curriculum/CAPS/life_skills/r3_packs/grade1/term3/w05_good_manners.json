@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w05_good_manners",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [8],
+  "theme": "Good manners",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Manners and responsibility",
+    "subtopic": "Greeting people we know and strangers; waiting my turn; listening to others"
+  },
+  "skill": "social.manners",
+  "prereq_skills": ["social.respect"],
+  "images": ["good_manners", "child_in_line", "child_pushing", "listen", "interrupt", "shout", "say_please", "say_thank_you", "greet", "push_in", "talk_full_mouth", "mouth_closed_eating", "talking_with_food", "tutor_interrupt"],
+  "show": {
+    "line": "Good manners! Greet people, say please and thank you, and wait your turn.",
+    "image": "good_manners"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "You meet your neighbour in the morning. What do you say?", "accept": ["good morning", "hello", "hi", "morning", "sawubona", "dumela", "molo", "goeie more"]},
+    {"type": "listen_tap", "prompt": "Which child is waiting their turn?", "options": ["child_in_line", "child_pushing"], "answer": "child_in_line", "praise": "Waiting nicely!"},
+    {"type": "listen_tap", "prompt": "Someone is speaking. What do you do?", "options": ["listen", "interrupt", "shout"], "answer": "listen", "praise": "Listen!"},
+    {"type": "match_sort", "prompt": "Good manners or bad manners?", "groups": ["good", "bad"], "items": [{"image": "say_please", "group": "good"}, {"image": "say_thank_you", "group": "good"}, {"image": "greet", "group": "good"}, {"image": "push_in", "group": "bad"}, {"image": "talk_full_mouth", "group": "bad"}]},
+    {"type": "say_it", "prompt": "You bump into someone. What do you say?", "accept": ["sorry", "i'm sorry", "excuse me", "i am sorry", "pardon"]},
+    {"type": "listen_tap", "prompt": "Which shows good table manners?", "options": ["mouth_closed_eating", "talking_with_food"], "answer": "mouth_closed_eating", "praise": "Chew with your mouth closed!"}
+  ],
+  "hints": ["Magic words: please, thank you, sorry.", "Wait, listen, then speak."],
+  "beat_the_tutor": {
+    "setup": "My turn! I want to talk.",
+    "tutor_try": "Blah blah, I talk while you talk!",
+    "image": "tutor_interrupt",
+    "answer": "wait",
+    "win_line": "You caught me! I must wait my turn.",
+    "gentle_line": "Wait and listen. Then talk!"
+  },
+  "parent_line": "Uses good manners: greeting, waiting, listening, please and thank you."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w03_pets",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [7],
+  "theme": "Caring for pets",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Pets",
+    "subtopic": "Animals we can keep as pets; how to look after pets at home"
+  },
+  "skill": "animals.pets",
+  "prereq_skills": [],
+  "images": ["pets", "dog", "lion", "crocodile", "fish_tank", "kennel", "nest", "give_water", "feed_pet", "vet_visit", "pull_tail", "forget_food", "vet", "teacher", "baker", "elephant", "cat", "rabbit", "tutor_dog_bowl"],
+  "show": {
+    "line": "A pet is an animal we look after at home. Dogs, cats, fish and birds!",
+    "image": "pets"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one can be a pet?", "options": ["dog", "lion", "crocodile"], "answer": "dog", "praise": "A dog!"},
+    {"type": "listen_tap", "prompt": "What does a pet fish need?", "options": ["fish_tank", "kennel", "nest"], "answer": "fish_tank", "praise": "Water in a tank!"},
+    {"type": "match_sort", "prompt": "Good pet care or not?", "groups": ["good", "not_good"], "items": [{"image": "give_water", "group": "good"}, {"image": "feed_pet", "group": "good"}, {"image": "vet_visit", "group": "good"}, {"image": "pull_tail", "group": "not_good"}, {"image": "forget_food", "group": "not_good"}]},
+    {"type": "say_it", "prompt": "Every day pets need food and...?", "accept": ["water", "clean water", "love"]},
+    {"type": "listen_tap", "prompt": "Your dog is sick. Who helps?", "options": ["vet", "teacher", "baker"], "answer": "vet", "praise": "The vet!"},
+    {"type": "listen_tap", "prompt": "Which animal is wild, not a pet?", "options": ["elephant", "cat", "rabbit"], "answer": "elephant", "praise": "Elephants are wild!"}
+  ],
+  "hints": ["Pets need food, water, a home and love.", "Wild animals live free, not in our homes."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will care for my dog.",
+    "tutor_try": "My dog does not need water!",
+    "image": "tutor_dog_bowl",
+    "answer": "water",
+    "win_line": "You caught me! Pets need water every day.",
+    "gentle_line": "Fresh water every day!"
+  },
+  "parent_line": "Can name pets and how to care for them."
+}

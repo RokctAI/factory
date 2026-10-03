@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term1.w09_feeling_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "My feelings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. sad, mad, embarrassed, grumpy, mood, excited, scared, worried, polite, rude, syllable, clap"
+  },
+  "skill": "efal.vocab.feelings",
+  "prereq_skills": ["efal.vocab.family"],
+  "images": ["feeling_faces", "face_sad", "face_happy", "face_excited", "face_scared", "face_grumpy", "girl_smiling", "face_worried", "tutor_holds_sad_face"],
+  "show": {
+    "line": "How do you feel today? Happy, sad, scared, excited. Let's learn feeling words!",
+    "image": "feeling_faces"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the sad face.", "options": ["face_sad", "face_happy", "face_excited"], "answer": "face_sad", "praise": "Yes! Sad. The boy is crying."},
+    {"type": "listen_tap", "prompt": "Tap the scared face.", "options": ["face_scared", "face_happy", "face_grumpy"], "answer": "face_scared", "praise": "Yes! Scared."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Thabo gets a new ball. He jumps up and down. How does Thabo feel?", "options": ["face_excited", "face_sad", "face_scared"], "answer": "face_excited", "praise": "Excited! Thabo is very happy."},
+    {"type": "say_it", "prompt": "How does she feel? Say it.", "accept": ["happy", "she is happy", "hapi", "happy happy"], "image": "girl_smiling"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Zama's ice cream falls on the ground. How does Zama feel?", "options": ["face_sad", "face_excited", "face_happy"], "answer": "face_sad", "praise": "Sad. Poor Zama!"},
+    {"type": "match_sort", "prompt": "Is it a happy feeling or a sad feeling? Sort the faces.", "groups": ["happy", "sad"], "items": [{"image": "face_happy", "group": "happy"}, {"image": "face_excited", "group": "happy"}, {"image": "face_sad", "group": "sad"}, {"image": "face_grumpy", "group": "sad"}, {"image": "face_worried", "group": "sad"}]}
+  ],
+  "hints": ["Look at the mouth. Is it up or down?", "Happy faces smile. Sad faces cry."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say how he feels.",
+    "tutor_try": "He is happy!",
+    "image": "tutor_holds_sad_face",
+    "answer": "sad",
+    "win_line": "You caught me! He is sad. His mouth goes down.",
+    "gentle_line": "Let's look together. His mouth goes down. He is sad."
+  },
+  "parent_line": "Can name feelings in English: happy, sad, scared, excited and grumpy."
+}

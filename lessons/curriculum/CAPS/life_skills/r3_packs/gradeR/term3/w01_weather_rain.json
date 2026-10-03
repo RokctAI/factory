@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w01_weather_rain",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Weather and rain",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Time and weather",
+    "subtopic": "Weather: how clouds fill with water and fall as rain (cotton-wool experiment); weather board"
+  },
+  "skill": "weather.types",
+  "prereq_skills": [],
+  "images": ["rain_cloud", "rainy", "sunny", "windy", "cloudy", "clouds", "trees", "taps", "washing_blowing", "snowman", "sun_hat", "sun", "ice_cream", "swimming", "snow", "beanie", "tutor_grey_clouds"],
+  "show": {
+    "line": "Clouds fill up with water. When they are full, rain falls down! Pitter, patter.",
+    "image": "rain_cloud"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the rainy day.", "options": ["rainy", "sunny", "windy"], "answer": "rainy", "praise": "Rain! Pitter, patter."},
+    {"type": "listen_tap", "prompt": "Tap the sunny day.", "options": ["sunny", "rainy", "cloudy"], "answer": "sunny", "praise": "Sunny and hot!"},
+    {"type": "listen_tap", "prompt": "Where does rain come from?", "options": ["clouds", "trees", "taps"], "answer": "clouds", "praise": "Clouds! Full of water."},
+    {"type": "listen_tap", "prompt": "It is windy. What can you see?", "options": ["washing_blowing", "snowman", "sun_hat"], "answer": "washing_blowing", "praise": "The wind blows the washing!"},
+    {"type": "match_sort", "prompt": "Hot day or cold day? Sort them.", "groups": ["hot", "cold"], "items": [{"image": "sun", "group": "hot"}, {"image": "ice_cream", "group": "hot"}, {"image": "swimming", "group": "hot"}, {"image": "snow", "group": "cold"}, {"image": "beanie", "group": "cold"}]},
+    {"type": "say_it", "prompt": "Look outside. What is the weather today?", "accept": ["sunny", "rainy", "cloudy", "windy", "cold", "hot", "misty", "snowy", "warm"]}
+  ],
+  "hints": ["Look at the sky in the picture.", "Grey clouds bring rain."],
+  "beat_the_tutor": {
+    "setup": "My turn! I see grey clouds.",
+    "tutor_try": "It will snow ice cream!",
+    "image": "tutor_grey_clouds",
+    "answer": "rain",
+    "win_line": "You caught me! Grey clouds bring rain.",
+    "gentle_line": "Grey clouds fill up and it rains!"
+  },
+  "parent_line": "Can name weather types and knows rain falls from clouds."
+}

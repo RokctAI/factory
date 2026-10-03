@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w01_four_seasons",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "The four seasons",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Orientation - Seasons",
+    "subtopic": "The four seasons; how seasons affect us: clothes, food, activities"
+  },
+  "skill": "seasons.four",
+  "prereq_skills": ["clothes.season"],
+  "images": ["four_seasons_tree", "autumn", "summer", "spring", "winter", "swimming", "ice_cream", "sunhat", "heater", "hot_soup", "tutor_winter"],
+  "show": {
+    "line": "Summer, autumn, winter and spring! Each season is different.",
+    "image": "four_seasons_tree"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Summer, autumn, winter, and then?", "sequence": ["summer", "autumn", "winter"], "options": ["spring", "summer", "rain"], "answer": "spring", "praise": "Spring!"},
+    {"type": "listen_tap", "prompt": "Leaves fall off trees in...?", "options": ["autumn", "summer", "spring"], "answer": "autumn", "praise": "Autumn!"},
+    {"type": "listen_tap", "prompt": "Flowers bloom in...?", "options": ["spring", "winter", "autumn"], "answer": "spring", "praise": "Spring!"},
+    {"type": "match_sort", "prompt": "Summer or winter?", "groups": ["summer", "winter"], "items": [{"image": "swimming", "group": "summer"}, {"image": "ice_cream", "group": "summer"}, {"image": "sunhat", "group": "summer"}, {"image": "heater", "group": "winter"}, {"image": "hot_soup", "group": "winter"}]},
+    {"type": "say_it", "prompt": "Which season is the coldest?", "accept": ["winter"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "It is December. Families go to the beach and it is hot. Which season in South Africa?", "options": ["summer", "winter"], "answer": "summer", "praise": "Summer! December is hot here."}
+  ],
+  "hints": ["Four seasons repeat every year.", "Winter is cold, summer is hot."],
+  "beat_the_tutor": {
+    "setup": "My turn! After winter comes...",
+    "tutor_try": "Summer!",
+    "image": "tutor_winter",
+    "answer": "spring",
+    "win_line": "You caught me! After winter comes spring.",
+    "gentle_line": "Winter, then spring!"
+  },
+  "parent_line": "Can name the four seasons in order and how they affect us."
+}

@@ -1,0 +1,1 @@
+Today we move from a household budget to a business budget. We help a small car-wash business plan its income and expenditure for the next month, estimate how many cars it will wash, list its fixed and variable costs and work out whether it expects a profit. Then we compare the plan with what actually happened and see how the owner uses the budget to make better decisions.

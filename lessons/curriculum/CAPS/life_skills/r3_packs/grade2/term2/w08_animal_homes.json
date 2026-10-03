@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w08_animal_homes",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [11, 12],
+  "theme": "Animal homes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Animal homes",
+    "subtopic": "Animals that make their homes (birds, bees, ants), find a home (baboons, snakes, squirrels) and carry their homes (snails, tortoises)"
+  },
+  "skill": "animals.homes",
+  "prereq_skills": ["animals.water"],
+  "images": ["animal_homes", "nest", "hive", "burrow", "shell", "snail", "bird", "ant", "bee", "tortoise", "under_rock", "beehive", "nest_high", "tutor_bee"],
+  "show": {
+    "line": "Birds build nests. Bees make hives. Snails carry their homes!",
+    "image": "animal_homes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where does a bird live?", "options": ["nest", "hive", "burrow"], "answer": "nest", "praise": "A nest!"},
+    {"type": "listen_tap", "prompt": "Where do bees live?", "options": ["hive", "nest", "shell"], "answer": "hive", "praise": "A hive!"},
+    {"type": "listen_tap", "prompt": "Which animal carries its home?", "options": ["snail", "bird", "ant"], "answer": "snail", "praise": "The snail!"},
+    {"type": "match_sort", "prompt": "Makes its home or carries its home?", "groups": ["makes", "carries"], "items": [{"image": "bird", "group": "makes"}, {"image": "bee", "group": "makes"}, {"image": "ant", "group": "makes"}, {"image": "snail", "group": "carries"}, {"image": "tortoise", "group": "carries"}]},
+    {"type": "say_it", "prompt": "A rabbit lives in a hole in the ground. It is called a...?", "accept": ["burrow", "hole", "warren"]},
+    {"type": "listen_tap", "prompt": "Where can a snake find a home?", "options": ["under_rock", "beehive", "nest_high"], "answer": "under_rock", "praise": "Under a rock!"}
+  ],
+  "hints": ["Some build, some find, some carry their homes.", "A shell is a home you carry."],
+  "beat_the_tutor": {
+    "setup": "My turn! A bee lives in...",
+    "tutor_try": "A shell!",
+    "image": "tutor_bee",
+    "answer": "hive",
+    "win_line": "You caught me! Bees live in hives.",
+    "gentle_line": "Bees, hive. Birds, nest!"
+  },
+  "parent_line": "Can match animals to their homes."
+}

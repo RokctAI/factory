@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term4.w04_animals_help_us",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 4,
+  "weeks": [8, 9],
+  "theme": "Animals that help us",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Animals and creatures that help us",
+    "subtopic": "Animals that work for us: guide dogs, watch dogs, sniffer dogs, donkeys and horses; stories of other helpful animals (dolphins)"
+  },
+  "skill": "animals.working",
+  "prereq_skills": ["animals.farm_uses"],
+  "images": ["working_animals", "guide_dog", "poodle", "puppy", "sniffer_dog", "lap_dog", "donkey", "cat", "chicken", "cow", "bee", "watch_dog", "toy_dog", "tutor_fish"],
+  "show": {
+    "line": "Some animals work for us. Guide dogs, sniffer dogs, donkeys and horses!",
+    "image": "working_animals"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which dog helps a blind person?", "options": ["guide_dog", "poodle", "puppy"], "answer": "guide_dog", "praise": "A guide dog!"},
+    {"type": "listen_tap", "prompt": "Which dog finds things by smell?", "options": ["sniffer_dog", "lap_dog"], "answer": "sniffer_dog", "praise": "A sniffer dog!"},
+    {"type": "listen_tap", "prompt": "Which animal pulls a cart?", "options": ["donkey", "cat", "chicken"], "answer": "donkey", "praise": "A donkey!"},
+    {"type": "say_it", "prompt": "Bees give us...?", "accept": ["honey"]},
+    {"type": "match_sort", "prompt": "Gives food or does work?", "groups": ["food", "work"], "items": [{"image": "cow", "group": "food"}, {"image": "chicken", "group": "food"}, {"image": "bee", "group": "food"}, {"image": "guide_dog", "group": "work"}, {"image": "donkey", "group": "work"}]},
+    {"type": "listen_tap", "prompt": "Which dog guards a house?", "options": ["watch_dog", "toy_dog"], "answer": "watch_dog", "praise": "A watchdog!"}
+  ],
+  "hints": ["Some animals give food, some do work.", "Dogs have strong noses."],
+  "beat_the_tutor": {
+    "setup": "My turn! A guide dog helps...",
+    "tutor_try": "A fish swim!",
+    "image": "tutor_fish",
+    "answer": "blind person",
+    "win_line": "You caught me! A guide dog helps a blind person.",
+    "gentle_line": "Guide dogs help blind people!"
+  },
+  "parent_line": "Can name animals that give food and animals that work for us."
+}

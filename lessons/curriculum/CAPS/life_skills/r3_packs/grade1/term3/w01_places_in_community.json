@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w01_places_in_community",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Places in my community",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: My community",
+    "subtopic": "Places in my community and what they are used for; people in my community"
+  },
+  "skill": "community.places",
+  "prereq_skills": ["homes.buildings"],
+  "images": ["community_places", "library", "clinic", "shop", "park", "post_office", "nurse", "librarian", "farmer", "bandage", "medicine", "books", "spaza_shop", "school", "church", "tutor_clinic"],
+  "show": {
+    "line": "My community has a clinic, school, shops, a library, a church and a park!",
+    "image": "community_places"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where do we borrow books?", "options": ["library", "clinic", "shop"], "answer": "library", "praise": "The library!"},
+    {"type": "listen_tap", "prompt": "Where do children play on swings?", "options": ["park", "post_office", "clinic"], "answer": "park", "praise": "The park!"},
+    {"type": "listen_tap", "prompt": "Who works at the clinic?", "options": ["nurse", "librarian", "farmer"], "answer": "nurse", "praise": "A nurse!"},
+    {"type": "say_it", "prompt": "Where do we buy food?", "accept": ["shop", "the shop", "spaza", "spaza shop", "supermarket", "market"]},
+    {"type": "match_sort", "prompt": "Clinic or library?", "groups": ["clinic", "library"], "items": [{"image": "nurse", "group": "clinic"}, {"image": "bandage", "group": "clinic"}, {"image": "medicine", "group": "clinic"}, {"image": "books", "group": "library"}, {"image": "librarian", "group": "library"}]},
+    {"type": "listen_tap", "prompt": "Which is a spaza shop?", "options": ["spaza_shop", "school", "church"], "answer": "spaza_shop", "praise": "A spaza shop!"}
+  ],
+  "hints": ["Think what you do in that place.", "People in the community help us."],
+  "beat_the_tutor": {
+    "setup": "My turn! I want to borrow a book.",
+    "tutor_try": "I go to the clinic!",
+    "image": "tutor_clinic",
+    "answer": "library",
+    "win_line": "You caught me! Books are at the library.",
+    "gentle_line": "The library has books to borrow!"
+  },
+  "parent_line": "Can name places in the community and what they are for."
+}

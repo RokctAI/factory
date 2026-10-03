@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w04_fire_safety",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Fire helps and harms",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe",
+    "subtopic": "Fire as a help and a danger; how to put out a fire; potentially dangerous objects and cutlery"
+  },
+  "skill": "safety.fire",
+  "prereq_skills": ["safety.safe_unsafe"],
+  "images": ["fire_pot", "cooking_pot", "fire_burning_house", "burnt_hand", "give_adult", "light_match", "hide_matches", "water_bucket", "paper", "wood", "spoon", "cup", "teddy", "matches", "candle_burning", "tutor_matches"],
+  "show": {
+    "line": "Fire cooks our food and keeps us warm. But fire can burn. Be careful!",
+    "image": "fire_pot"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "How does fire help us?", "options": ["cooking_pot", "fire_burning_house", "burnt_hand"], "answer": "cooking_pot", "praise": "Fire cooks our food!"},
+    {"type": "listen_tap", "prompt": "You find matches. What do you do?", "options": ["give_adult", "light_match", "hide_matches"], "answer": "give_adult", "praise": "Give them to a grown-up!"},
+    {"type": "say_it", "prompt": "Who comes to put out a big fire?", "accept": ["firefighter", "firefighters", "fireman", "the fire brigade", "fire brigade"]},
+    {"type": "listen_tap", "prompt": "What puts out a fire?", "options": ["water_bucket", "paper", "wood"], "answer": "water_bucket", "praise": "Water puts out fire."},
+    {"type": "match_sort", "prompt": "Safe for children, or not? Sort them.", "groups": ["safe", "not_safe"], "items": [{"image": "spoon", "group": "safe"}, {"image": "cup", "group": "safe"}, {"image": "teddy", "group": "safe"}, {"image": "matches", "group": "not_safe"}, {"image": "candle_burning", "group": "not_safe"}]},
+    {"type": "say_it", "prompt": "If your clothes catch fire, stop, drop and...?", "accept": ["roll", "stop drop and roll", "roll over"]}
+  ],
+  "hints": ["Fire is hot. Only grown-ups use it.", "Stop, drop and roll puts out flames on clothes."],
+  "beat_the_tutor": {
+    "setup": "My turn! I found some matches.",
+    "tutor_try": "I will play with the matches!",
+    "image": "tutor_matches",
+    "answer": "give to an adult",
+    "win_line": "You caught me! Matches go to a grown-up.",
+    "gentle_line": "Never play with matches. Give them to a grown-up!"
+  },
+  "parent_line": "Knows fire helps and harms, and never to play with matches."
+}

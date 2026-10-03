@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w07_traffic_lights",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Traffic lights and safety gear",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe",
+    "subtopic": "Safety equipment: where, when and why it is used (sunglasses, hard hat, armbands); traffic lights"
+  },
+  "skill": "safety.traffic_lights",
+  "prereq_skills": ["safety.safe_unsafe"],
+  "images": ["traffic_light", "light_red", "light_green", "light_orange", "armbands", "sunglasses", "hard_hat", "gloves", "builder", "baker", "swimmer", "tutor_red_light"],
+  "show": {
+    "line": "Red means stop. Orange means wait. Green means go. Look both ways!",
+    "image": "traffic_light"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which light means stop?", "options": ["light_red", "light_green", "light_orange"], "answer": "light_red", "praise": "Red means stop!"},
+    {"type": "listen_tap", "prompt": "Which light means go?", "options": ["light_green", "light_red", "light_orange"], "answer": "light_green", "praise": "Green means go!"},
+    {"type": "listen_tap", "prompt": "You swim in the pool. What keeps you safe?", "options": ["armbands", "sunglasses", "hard_hat"], "answer": "armbands", "praise": "Armbands help you float!"},
+    {"type": "listen_tap", "prompt": "The sun is very bright. What do you wear?", "options": ["sunglasses", "armbands", "gloves"], "answer": "sunglasses", "praise": "Sunglasses protect your eyes."},
+    {"type": "say_it", "prompt": "Before you cross the road, you look left and...?", "accept": ["right", "look right", "left and right", "right and left again"]},
+    {"type": "listen_tap", "prompt": "Who wears a hard hat?", "options": ["builder", "baker", "swimmer"], "answer": "builder", "praise": "Builders wear hard hats to keep safe."}
+  ],
+  "hints": ["Red at the top means stop.", "Safety gear protects one part of the body."],
+  "beat_the_tutor": {
+    "setup": "My turn! The light is red.",
+    "tutor_try": "Red means go, go, go!",
+    "image": "tutor_red_light",
+    "answer": "stop",
+    "win_line": "You caught me! Red means stop.",
+    "gentle_line": "Red means stop. Green means go!"
+  },
+  "parent_line": "Knows traffic light colours and when to use safety gear."
+}

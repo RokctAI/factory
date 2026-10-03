@@ -1,0 +1,18 @@
+### subtopic_1 — What Is an Entrepreneur?
+**Assistant:** Is everyone who owns a business an entrepreneur?
+
+**Tutor:** Broadly yes, but some people use the word in a narrower sense, and it is useful to understand the difference. In the broad sense used in Grade 7, anyone who starts and runs a business, taking on the risk in the hope of profit, is an entrepreneur, whether it is a spaza shop or a technology company. In a narrower sense, some writers reserve the word for people who are especially innovative, who bring something new to the market or find a new way of doing something, and who aim to grow the business. In that sense, a person who opens one more ordinary shop exactly like the others is a small business owner, while someone who invents a new product, a new service or a new way of reaching customers is an entrepreneur. Another distinction is between the person who starts a business and a manager who is employed to run it; the manager does not carry the owner's risk. In an exam at this level, use the broad definition: an entrepreneur identifies an opportunity, organises the factors of production and accepts the risk. If you can add that innovation is often part of it, even better.
+
+***
+
+### subtopic_2 — Characteristics of Successful Entrepreneurs
+**Assistant:** Are entrepreneurs born or made?
+
+**Tutor:** Most experts believe they are mainly made, although personality plays some part. Some people are naturally more comfortable with risk, more outgoing or more curious, and these traits can help. But the characteristics that matter most, such as determination, responsibility, creativity and resilience, can be strengthened through experience, and the skills of running a business, such as managing money, marketing and planning, can definitely be learned. South Africa has many entrepreneurs who started with no special advantages and learned by doing: selling at school, helping in a family business, joining a youth programme or simply trying, failing and trying again. Programmes such as school entrepreneurship days, the NYDA's business support and university incubators exist precisely because entrepreneurship can be taught. That does not mean everyone should start a business; many people prefer the security of a job, and the economy needs good employees too. But everyone benefits from entrepreneurial thinking: spotting opportunities, solving problems and taking initiative are valued in every workplace. Entrepreneur's Day this term is your chance to practise.
+
+***
+
+### subtopic_3 — Skills of an Entrepreneur
+**Assistant:** Which skill should a Grade 7 learner practise first for Entrepreneur's Day?
+
+**Tutor:** Financial skills are a strong place to start, because they decide whether your stall makes a profit no matter how good the product is. Practise working out the cost of making one unit of your product: if you sell muffins, add up the cost of flour, sugar, eggs, oil and paper cups for a batch, and divide by the number of muffins. Then set a selling price that covers that cost and leaves a profit, while staying affordable for your customers. Keep a simple record of every rand you spend and every rand you earn on the day. Close behind are communication and marketing skills: a clear, attractive poster, a friendly greeting and a short explanation of why your product is good can make a big difference to sales. Planning and time management also matter: list everything you need, prepare in advance, and decide who in your team does what. And practise problem-solving by thinking ahead: what will you do if you run out of change, or if it rains? You will cover costing, SWOT analysis, goals and advertising in the rest of this term, which will build exactly these skills.

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term2.w01_we_are_planting",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 2,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Growing things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Language Use",
+    "subtopic": "Understands and uses the present progressive ('We are planting a seed')"
+  },
+  "skill": "efal.grammar.present_progressive",
+  "prereq_skills": ["efal.grammar.ed_ing"],
+  "images": ["children_plant_seed", "children_dig", "children_eat", "children_sleep", "word_watering", "word_watered", "boy_digs", "sentence_they_are_growing", "sentence_they_is_growing", "tutor_holds_girl_watering"],
+  "show": {
+    "line": "What are we doing now? We are planting a seed. We are watering it!",
+    "image": "children_plant_seed"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "We are digging. Tap the picture.", "options": ["children_dig", "children_eat", "children_sleep"], "answer": "children_dig", "praise": "Yes! We are digging."},
+    {"type": "listen_tap", "prompt": "She is ... the plant. Watering or watered?", "options": ["word_watering", "word_watered"], "answer": "word_watering", "praise": "Yes! She is watering the plant."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "We are planting a seed.", "accept": ["we are planting a seed", "we planting a seed", "we are planting seed"]},
+    {"type": "say_it", "prompt": "Look! What is he doing? Say, he is digging.", "accept": ["he is digging", "digging", "he digging", "he's digging"], "image": "boy_digs"},
+    {"type": "listen_tap", "prompt": "Which sentence is right?", "options": ["sentence_they_are_growing", "sentence_they_is_growing"], "answer": "sentence_they_are_growing", "praise": "Yes! They are growing."}
+  ],
+  "hints": ["Is it happening now? Use is or are, and ing.", "I am, he is, we are."],
+  "beat_the_tutor": {
+    "setup": "My turn! Look at the girl.",
+    "tutor_try": "She are watering!",
+    "image": "tutor_holds_girl_watering",
+    "answer": "is",
+    "win_line": "You caught me! She is watering. One girl, so is.",
+    "gentle_line": "Let's say it together. She is watering the plant!"
+  },
+  "parent_line": "Can say what is happening now: we are planting, she is watering."
+}
