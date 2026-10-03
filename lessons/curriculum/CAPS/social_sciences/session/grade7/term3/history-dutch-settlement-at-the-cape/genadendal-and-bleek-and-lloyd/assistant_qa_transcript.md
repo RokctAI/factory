@@ -1,0 +1,18 @@
+### subtopic_1 — Georg Schmidt and the First Mission
+**Assistant:** Why was the Dutch Reformed Church so opposed to Schmidt?
+
+**Tutor:** There were religious, legal and social reasons. The Dutch Reformed Church was the only church officially permitted at the Cape under VOC rule, and its ministers claimed the sole right to administer sacraments such as baptism. Schmidt had not been formally ordained as a minister when he began baptising, and the Moravians were regarded with suspicion as a different Protestant group. Behind the religious argument lay social fears. Many colonists did not want Khoikhoi people to become Christians, because Christianity was associated with being a member of colonial society, and baptism might suggest equality or rights, including freedom from forced labour. Some believed that educating Khoikhoi people would make them less willing to work on farms. So Schmidt's school and baptisms challenged the colonial order, in which Khoikhoi were expected to be servants. It is interesting that, decades later, the Moravians were allowed to return, by which time attitudes were beginning to change, and the British, who took over the Cape in 1795, were more open to missionary work. Genadendal's story shows how religion and power were intertwined at the Cape.
+
+***
+
+### subtopic_3 — Bleek, Lloyd and the !Xam
+**Assistant:** Who were //Kabbo and Dia!kwain?
+
+**Tutor:** They were two of the most important !Xam people who worked with Bleek and Lloyd, and through the notebooks we know something of them as individuals. //Kabbo, whose name means Dream, was an older man from the area of the Strandberg in the Northern Cape. He was arrested in about 1869 with members of his family for stock theft and sent to the Breakwater Prison, and from 1871 he lived in the Bleek household for about two years. He was a gifted storyteller, and he told many stories about /Kaggen, about the stars and the rain, and about his own life. He spoke movingly about wanting to return home, to sit in the sun, listen to stories travelling from afar and visit his people. He did eventually go home. Dia!kwain, a younger man from the Katkop hills, also contributed many stories, songs and accounts, including descriptions of the beliefs about rain and animals, and of conflict with farmers. Other contributors included /Han#kass'o and women such as !kweiten ta //ken. Remembering them by name gives them the recognition that colonial records usually denied the San.
+
+***
+
+### subtopic_4 — The Bleek and Lloyd Archive
+**Assistant:** How does the archive help us understand rock art?
+
+**Tutor:** For a long time, many people thought San rock paintings were simply pictures of everyday life, such as hunting scenes, or decoration. In the 1970s, the South African archaeologist David Lewis-Williams and others began comparing the rock art with the beliefs recorded in the Bleek and Lloyd notebooks, and with accounts of San healers in the Kalahari. They found that many paintings show spiritual experiences linked to the trance dance, when healers entered a trance to heal the sick, make rain and travel to the spirit world. Features that seemed strange, such as figures bleeding from the nose, people with animal heads, lines connecting figures, and dying eland, made sense in light of these beliefs: healers sometimes bled from the nose in trance, and the eland was believed to have great spiritual power. The notebooks also describe the rain animal and the capture of rain, which appear in some paintings. This interpretation, while still debated in its details, transformed how rock art is understood worldwide. It shows how a written archive and visual art, combined, can reveal the meaning of beliefs from long ago.

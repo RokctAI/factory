@@ -1,0 +1,18 @@
+### subtopic_1 — The First Free Burghers
+**Assistant:** Were there women among the first settlers?
+
+**Tutor:** Yes, though at first very few. Van Riebeeck's wife, Maria de la Quellerie, came with him in 1652, and a few other wives of officials and free burghers followed. For several decades, there were many more European men than women at the Cape. The VOC tried to address this by sending young women, some from orphanages in Amsterdam and Rotterdam, to marry settlers, especially in the 1680s. Some European men married freed slave women or women of mixed descent; in the early colony such marriages were not unusual, and they were recorded in church registers. Krotoa's marriage to Pieter van Meerhof in 1664 was one example. Women played essential roles in farming households, managing dairies, gardens and households, overseeing enslaved workers, and running businesses as widows. Under Dutch law, married women had some property rights, and widows could inherit and run farms, so several women became important landowners. Women's history at the Cape is still being researched, and historians are looking more closely at the lives of settler, Khoikhoi and enslaved women, whose experiences were very different from each other.
+
+***
+
+### subtopic_3 — Wine, Wheat and the Western Cape Farms
+**Assistant:** What does the Adam Tas story tell us?
+
+**Tutor:** It shows that the colonists at the Cape were not simply servants of the Company, and that they increasingly saw themselves as having their own rights and interests. Governor Willem Adriaan van der Stel and some senior officials had used their positions to acquire large farms, such as Vergelegen near today's Somerset West, and to use Company slaves and resources on them. They then sold meat, wine and grain to the Company and to passing ships, competing with the burghers and, the burghers said, controlling prices. Adam Tas and other burghers wrote a petition to the directors in the Netherlands describing these abuses, and it was smuggled out. When the governor discovered it, Tas was arrested and held in the Castle for over a year. But the directors sided with the burghers, recalled Van der Stel in 1707, and ordered that officials should not farm on a large scale. Some historians see this as an early sign of a separate settler identity. Interestingly, around the same time, in 1707, a young man named Hendrik Biebouw is recorded as saying he was an Afrikaander, one of the earliest uses of that word.
+
+***
+
+### subtopic_4 — Expanding Frontiers
+**Assistant:** Why was smallpox so deadly for the Khoikhoi?
+
+**Tutor:** Smallpox is a highly infectious viral disease that spreads through close contact and the air. It had existed in Europe and Asia for centuries, so many people there had built up some immunity through previous exposure, or had survived it in childhood. The Khoikhoi had never been exposed to it before, so almost nobody had any immunity, and the disease spread through whole communities at once. In 1713 a VOC ship arrived at the Cape with linen from the Indian Ocean that had been used by sick passengers, and when it was washed by enslaved women, the infection spread. It killed many enslaved people and colonists in Cape Town, but its effect on the Khoikhoi in the surrounding area was catastrophic; contemporary observers wrote of Khoikhoi lying dead along the roads. With so many people dying, and with their chiefdoms already weakened by land and cattle losses, the social structure of many Khoikhoi groups in the south-western Cape collapsed. Further smallpox epidemics followed in 1755 and 1767. This was similar to what happened to indigenous peoples in the Americas, where diseases brought by Europeans caused enormous loss of life.
