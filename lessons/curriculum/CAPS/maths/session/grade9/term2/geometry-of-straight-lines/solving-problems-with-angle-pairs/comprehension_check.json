@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Two straight lines cross. One angle is 2x and the adjacent angle on the line is x + 30. Find all four angles, writing each step with its reason, and give a check.",
+      "expected_answer": "2x + x + 30 = 180 (angles on a str line), so 3x = 150 and x = 50. The marked angles are 2(50), which is 100 degrees, and 50 + 30, which is 80 degrees. The angle vertically opposite the 100 is 100 degrees (vert opp angles) and the angle vertically opposite the 80 is 80 degrees (vert opp angles). Check: 100 + 80 + 100 + 80 is 360."
+    },
+    {
+      "id": "cc2",
+      "question": "Parallel lines AB and CD are cut by a transversal. Co-interior angles are 2x + 10 and x + 20. Find x and the two angles, and explain why setting the expressions equal would be wrong.",
+      "expected_answer": "Co-interior angles add to 180: 2x + 10 + x + 20 = 180 (co-int angles, AB ∥ CD), so 3x + 30 = 180, 3x = 150 and x = 50. The angles are 110 degrees and 70 degrees; check 110 + 70 is 180. Setting the expressions equal is the rule for corresponding or alternate angles, not co-interior; it would give x = 10 and angles of 30 and 30, which do not add to 180."
+    },
+    {
+      "id": "cc3",
+      "question": "Two lines PQ and RS are cut by a transversal. In one case the co-interior angles are 110 and 70; in another they are 110 and 65. Decide in each case whether PQ is parallel to RS, with reasons.",
+      "expected_answer": "Case one: 110 + 70 = 180, so PQ ∥ RS (co-int angles supplementary). Case two: 110 + 65 = 175, which is not 180, so PQ is not parallel to RS. The converse relationships are used: equal alternate or corresponding angles, or co-interior angles adding to 180, prove parallel lines; a parallel-line rule may not be used to find angles before the lines are proved parallel."
+    }
+  ]
+}

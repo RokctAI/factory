@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "ABCD is a trapezium with AB parallel to DC, angle A is 115 degrees, angle B is 2x + 10 and angle D is x. Find all four angles with reasons and a check.",
+      "expected_answer": "Angle A and angle D are co-interior between the parallel sides, so 115 + x = 180 (co-int angles, AB parallel to DC) and x = 65, giving angle D = 65 degrees. Angle B is 2(65) + 10, which is 140 degrees. Angle C is 180 − 140, which is 40 degrees (co-int angles, AB parallel to DC). Check: 115 + 140 + 65 + 40 is 360, the sum of angles in a quadrilateral."
+    },
+    {
+      "id": "cc2",
+      "question": "ABCD is a rectangle and E is the midpoint of AB. Prove that ED = EC, and if angle ADE is 32 degrees find angle DEC.",
+      "expected_answer": "In triangles AED and BEC: AE = EB (E is the midpoint of AB); angle A = angle B = 90 degrees (angles of a rectangle); AD = BC (opposite sides of a rectangle). So triangle AED is congruent to triangle BEC (SAS) and ED = EC (congruent triangles). Angle AED is 180 − 90 − 32, which is 58 degrees (sum of angles in a triangle); angle BEC is also 58 degrees (congruent triangles); angle DEC is 180 − 58 − 58, which is 64 degrees (angles on a str line)."
+    },
+    {
+      "id": "cc3",
+      "question": "In triangle ABC, D lies on AB and E on AC with DE parallel to BC. AD = 3, DB = 5 and DE = 4.5. Prove the triangles similar and find BC. Then find x if the opposite sides of a parallelogram are 2x + 1 and 3x − 4.",
+      "expected_answer": "In triangles ADE and ABC: angle A is common; angle ADE = angle ABC (corresponding angles, DE parallel to BC); so the third angles are equal and triangle ADE is similar to triangle ABC (AAA). AB = 3 + 5 = 8, so BC over DE = AB over AD (similar triangles), giving BC = 4.5 × 8 divided by 3, which is 12. For the parallelogram, opposite sides are equal, so 2x + 1 = 3x − 4 and x = 5; each side is 11."
+    }
+  ]
+}

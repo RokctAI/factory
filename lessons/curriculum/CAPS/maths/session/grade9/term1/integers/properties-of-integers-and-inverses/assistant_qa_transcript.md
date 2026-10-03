@@ -1,0 +1,25 @@
+### subtopic_1 — The Commutative and Associative Properties
+**Assistant:** If subtraction is not commutative, how are we allowed to rearrange 48 − 19 + 52 to add 48 and 52 first?
+
+**Tutor:** Because the rearrangement is not performed on a subtraction at all — it is performed after the subtraction has been rewritten as an addition. The expression 48 minus 19 plus 52 is, by definition, 48 plus negative 19 plus 52, and that is a sum of three integers. Addition is both commutative and associative, so the three terms may be placed in any order and grouped in any way: 48 plus 52 is 100, and 100 plus negative 19 is 81. What you may NOT do is treat the minus sign as if it belonged to the operation rather than to the number — swapping to 19 minus 48 would be a genuine commutation of subtraction and would give the wrong result. The habit to build is this: whenever you want to rearrange, first attach every minus sign to the number that follows it, turning the whole line into a sum of signed numbers. Then the sum is yours to reorder. The same reasoning applies to division: rewrite dividing by 5 as multiplying by one fifth, and the product may then be rearranged freely. The properties never fail; they simply apply to addition and multiplication, and you must convert to those first.
+
+***
+
+### subtopic_2 — The Distributive Property
+**Assistant:** Why does the distributive property work over addition and subtraction but not over multiplication?
+
+**Tutor:** Because multiplication is repeated addition, and distributing is nothing more than counting that repeated addition in two parts. Seven times the quantity 100 minus 2 asks for seven copies of 98; seven copies of 100 with seven copies of 2 removed is exactly the same count, so 700 minus 14. The property is a statement about how multiplication interacts with the thing it is built from. Multiplication is not built from multiplication in the same way, so there is no corresponding splitting rule. Test it with numbers: 2 times the quantity 3 times 4 is 2 times 12, which is 24. If you distributed the 2 to both factors you would compute 6 times 8, which is 48 — you have doubled twice and the answer is twice too big. The algebra version of this error appears constantly in Grade 10: writing 2 times x y as 2x times 2y. Keep the rule narrow and precise — a factor outside a bracket multiplies each TERM inside, and terms are separated by plus and minus signs, never by multiplication signs. If the bracket contains only a product, there is nothing to distribute; just multiply through once.
+
+***
+
+### subtopic_3 — Identities and Inverses
+**Assistant:** Why does zero have an additive inverse but no multiplicative inverse? It seems inconsistent.
+
+**Tutor:** It is perfectly consistent once you see what each inverse must achieve. An additive inverse must return you to the additive identity, which is zero. Zero plus zero is zero, so zero is its own additive inverse — the question is answered trivially. A multiplicative inverse must return you to the multiplicative identity, which is one. So the multiplicative inverse of zero would be a number that, multiplied by zero, gives one. But zero multiplied by anything whatsoever gives zero, never one; no such number exists in the integers, the rationals or the reals. That is not a gap in the system; it is a theorem about it. And it is the same fact you already know as "division by zero is undefined", because dividing by a number means multiplying by its inverse — dividing by zero would mean multiplying by the inverse that does not exist. Every other number, positive or negative, integer or fraction, has a multiplicative inverse: flip the fraction and keep the sign. Zero is the single exception, and it is the exception for both of these equivalent reasons at once.
+
+***
+
+### subtopic_4 — Using the Properties Strategically
+**Assistant:** In an exam, how do I tell which property a rewrite is using when they look similar?
+
+**Tutor:** Look at what changed between the two lines, because each property changes exactly one thing. If the same numbers appear in a different ORDER, with the operation and grouping unchanged, that is the commutative property: 5 plus negative 8 becoming negative 8 plus 5. If the numbers keep their order but the BRACKETS move, that is the associative property: the quantity 3 times 4, times 25, becoming 3 times the quantity 4 times 25. If a multiplication has been spread across a plus or minus inside a bracket — or gathered back out of one — that is the distributive property: 6 times the quantity 20 plus 3 becoming 120 plus 18, or 6 times 23 plus 6 times 7 becoming 6 times 30. If two opposites have collapsed to zero, that is the additive inverse; if a number and its reciprocal have collapsed to one, that is the multiplicative inverse; and if a zero or a one has simply vanished without changing anything, that is an identity. So the diagnosis is a short checklist — order changed, brackets moved, multiplication spread, opposites cancelled, or a do-nothing number dropped — and the name follows from whichever one you see.

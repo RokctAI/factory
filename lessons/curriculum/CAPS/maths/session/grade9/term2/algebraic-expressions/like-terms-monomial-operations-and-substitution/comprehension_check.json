@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Simplify (3x^2 − 2x + 5) − (x^2 + 4x − 1), explain what the minus before the bracket does, and check your answer at x = 1.",
+      "expected_answer": "The minus multiplies every term in the bracket by −1: 3x^2 − 2x + 5 − x^2 − 4x + 1. Collect: 2x^2 − 6x + 6. Check at x = 1: original gives 6 − 4 = 2; simplified gives 2 − 6 + 6 = 2. Flipping only the first sign would give 2x^2 + 2x + 4, which gives 8 at x = 1 and fails the check."
+    },
+    {
+      "id": "cc2",
+      "question": "Simplify 3x^2 × 4x^3 and 12x^5 ÷ 3x^2, stating the rule for coefficients and exponents in each case.",
+      "expected_answer": "Multiplying: coefficients multiply and exponents add, so 3x^2 × 4x^3 = 12x^5. Dividing: coefficients divide and exponents subtract, so 12x^5 ÷ 3x^2 = 4x^3. Neither rule touches exponents the way addition does — 3x^2 + 4x^2 would be 7x^2 with the exponent unchanged."
+    },
+    {
+      "id": "cc3",
+      "question": "Evaluate 2x^2 − 3x + 1 at x = 1/2 and at x = −3/4, showing the brackets and explaining why they matter.",
+      "expected_answer": "At x = 1/2: 2(1/2)^2 − 3(1/2) + 1 gives 1/2 − 3/2 + 1, which is 0. At x = −3/4: 2(−3/4)^2 − 3(−3/4) + 1 gives 9/8 + 9/4 + 1, which is 35/8 or 4,375. The brackets ensure the negative value is squared as a whole (positive 9/16) and that −3 times a negative becomes positive; without them the signs are misread."
+    }
+  ]
+}

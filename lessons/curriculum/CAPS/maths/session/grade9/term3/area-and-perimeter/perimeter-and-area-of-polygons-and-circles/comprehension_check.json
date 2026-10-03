@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A semicircle has radius 10 cm. Find its area and its perimeter to one decimal place, explaining which part of the perimeter is most often forgotten.",
+      "expected_answer": "Area is half of pi × 10², which is half of 314.16, so 157.1 cm². The perimeter is the curved arc plus the straight diameter: the arc is half of 2 × pi × 10, which is 31.42 cm, and the diameter is 20 cm, so the perimeter is 51.4 cm. The straight diameter is the part most often forgotten; leaving it out gives 31.4 cm, which is only the arc."
+    },
+    {
+      "id": "cc2",
+      "question": "A rectangular floor 4.5 m by 3 m is tiled with square tiles of side 300 mm. How many tiles are needed? Show the unit conversion and a check.",
+      "expected_answer": "Convert the tile to metres: 300 mm is 0.3 m, so one tile has area 0.3 × 0.3, which is 0.09 m². The floor has area 4.5 × 3, which is 13.5 m². The number of tiles is 13.5 divided by 0.09, which is 150. Check by counting: 4.5 divided by 0.3 is 15 tiles along the length and 3 divided by 0.3 is 10 along the width, and 15 × 10 is 150, with no cutting needed."
+    },
+    {
+      "id": "cc3",
+      "question": "A shape is a rectangle 10 cm by 6 cm with a semicircle attached to one 6 cm side. Find its area and perimeter to one decimal place, and explain why a corner cut from a rectangle does not change the rectangle's perimeter.",
+      "expected_answer": "The semicircle has radius 3 cm. Area is 10 × 6 plus half of pi × 3², which is 60 + 14.14, so 74.1 cm². Perimeter is the three exposed sides of the rectangle, 10 + 6 + 10, which is 26 cm, plus the arc, half of 2 × pi × 3, which is 9.42 cm, giving 35.4 cm; the 6 cm side where the semicircle joins is inside the shape and is not counted. Cutting a rectangular corner from a rectangle removes two edges but adds two new edges of exactly the same lengths, so the perimeter stays the same while the area decreases."
+    }
+  ]
+}

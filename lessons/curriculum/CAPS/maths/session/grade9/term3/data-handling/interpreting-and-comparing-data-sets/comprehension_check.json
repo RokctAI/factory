@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Class A scored 23, 31, 35, 35, 38, 40, 42, 44, 45, 47 and Class B scored 30, 33, 36, 37, 38, 39, 40, 41, 43, 49 on a test out of 50. Calculate the mean, median and range of each class and write a fair comparison.",
+      "expected_answer": "Class A: sum 380, mean 38.0; median is the mean of 38 and 40, which is 39; range 47 − 23, which is 24. Class B: sum 386, mean 38.6; median is the mean of 38 and 39, which is 38.5; range 49 − 30, which is 19. Comparison: the centres are nearly equal (means differ by 0.6, medians by 0.5), so neither class is clearly ahead on the typical mark. B is more consistent with the smaller range; A's lowest mark of 23 is seven below B's lowest of 30, while B's highest of 49 is slightly above A's 47. With only ten learners each, the differences are small and do not show that one class was taught better."
+    },
+    {
+      "id": "cc2",
+      "question": "School X has 240 recyclers among 800 learners and School Y has 150 among 400. A poster says School X is the more environmentally aware school because it has more recyclers. Evaluate the claim.",
+      "expected_answer": "The claim compares counts from groups of different sizes, which is unfair. As proportions, School X has 240 over 800, which is 30 percent, and School Y has 150 over 400, which is 37.5 percent. School X has more recyclers in number, but School Y has the higher proportion of recyclers, so if environmental awareness is judged by the share of learners who recycle, School Y is ahead. The poster's conclusion does not follow from its data."
+    },
+    {
+      "id": "cc3",
+      "question": "Durban's monthly rainfall from January to June was 130, 120, 110, 70, 50 and 30 mm and Cape Town's was 15, 15, 20, 50, 80 and 95 mm. Describe how you would graph the two sets together, what the graph shows, and one caution about concluding which city is wetter. Also name two features of a graph that can mislead a reader.",
+      "expected_answer": "Draw two broken-line graphs on the same axes and scale, months evenly spaced on the horizontal axis and rainfall in mm on the vertical axis from zero, with a key distinguishing the cities. Durban's line falls from 130 to 30 while Cape Town's rises from 15 to 95, and the lines cross between April and May. Totals are 510 mm for Durban and 275 mm for Cape Town. The graph shows opposite seasonal patterns: summer rainfall in Durban and winter rainfall in Cape Town. Caution: six months covering Durban's wet season and only the start of Cape Town's cannot settle which city is wetter over a year; a full twelve months is needed. Misleading features include a vertical axis that does not start at zero without a marked break, unequal spacing on the time axis, a three-dimensional pie chart, unequal histogram intervals, or a cherry-picked period."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Square tables in a row, one person per side, seat 4, 6, 8, ... people. State the rule in algebra and justify each part from the structure.",
+      "expected_answer": "P = 2n + 2 for n tables. Along the top of the row sit n people and along the bottom n more, which is the 2n; one person sits at each end of the row, which is the +2. Every row has two long sides and two ends, so the rule holds for all n; fitting n = 1, 2, 3 is only a check."
+    },
+    {
+      "id": "cc2",
+      "question": "Show that 4(n − 1) and 2n + 2(n − 2) are the same rule for the border dots of an n by n square, using both a numerical check and expansion.",
+      "expected_answer": "Numerical: at n = 5 both give 16; at n = 3 both give 8. Expansion: 4(n − 1) = 4n − 4, and 2n + 2(n − 2) = 2n + 2n − 4 = 4n − 4. Both equal 4n − 4, so they are the same rule seen two ways: four sides without their end corners, or two full rows plus two shortened columns."
+    },
+    {
+      "id": "cc3",
+      "question": "Joining n points on a circle gives 1, 2, 4, 8, 16 regions. Explain why the rule 2^(n−1) is not justified, and what one failing case shows.",
+      "expected_answer": "The rule fits five terms, but fitting terms is a check, not a reason; nothing in the structure explains why regions must double. At n = 6 the count is 31, not 32, so one counter-example proves the rule wrong. A rule is justified only when each part is explained by the structure for every n."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve x^2 + 8x + 15 = 0 by factorising, showing each factor set to zero, and explain why x = 3 or x = 5 is a common wrong answer.",
+      "expected_answer": "Factorise: (x + 3)(x + 5) = 0. A product is zero only when a factor is zero, so x + 3 = 0 or x + 5 = 0, giving x = −3 or x = −5. Check x = −3: 9 − 24 + 15 is 0. The wrong answer 3 or 5 comes from reading the numbers off the brackets without solving the small equations; substituting 3 gives 9 + 24 + 15, which is 48, not 0."
+    },
+    {
+      "id": "cc2",
+      "question": "Solve x^2 = 5x and explain why dividing both sides by x gives an incomplete answer.",
+      "expected_answer": "Rearrange to get zero on one side: x^2 − 5x = 0. Factorise: x(x − 5) = 0, so x = 0 or x = 5. Both check: 0 equals 0 and 25 equals 25. Dividing by x assumes x is not zero and discards exactly that case, leaving only x = 5 and losing a solution."
+    },
+    {
+      "id": "cc3",
+      "question": "A rectangle's length is 3 cm more than its width and its area is 40 cm^2. Set up an equation, solve it by factorising, and interpret both solutions.",
+      "expected_answer": "Let the width be w; the length is w + 3 and w(w + 3) = 40. Expand and rearrange: w^2 + 3w − 40 = 0. Factorise: (w + 8)(w − 5) = 0, so w = −8 or w = 5. A width cannot be negative, so w = −8 is rejected with that reason; the width is 5 cm and the length is 8 cm. Check: 5 × 8 is 40."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Expand −2(x^2 − 3x + 4), explain what happens to each sign, and check at x = 1.",
+      "expected_answer": "Each term is multiplied by −2: −2x^2 + 6x − 8. The middle term flips from minus to plus because −2 × −3x is positive 6x; the others become negative. Check at x = 1: the bracket is 2, times −2 gives −4; the answer gives −2 + 6 − 8, which is −4. The unflipped version −2x^2 − 6x − 8 would give −16 and fail."
+    },
+    {
+      "id": "cc2",
+      "question": "Simplify (12x^3 − 8x^2 + 4x)/4x and verify your answer without substitution.",
+      "expected_answer": "Divide every term: 12x^3/4x = 3x^2, −8x^2/4x = −2x, 4x/4x = 1, giving 3x^2 − 2x + 1. The last term is 1, not 0. Verify by multiplying back: 4x(3x^2 − 2x + 1) = 12x^3 − 8x^2 + 4x, the original."
+    },
+    {
+      "id": "cc3",
+      "question": "Simplify 2x(x + 3) − x(x − 1) and explain the role of the minus in front of the second product.",
+      "expected_answer": "2x(x + 3) = 2x^2 + 6x. The minus in front of x(x − 1) multiplies the whole product by −1: −x^2 + x. Together 2x^2 + 6x − x^2 + x = x^2 + 7x. Writing −x^2 − x (the minus reaching the first term only) gives x^2 + 5x, which fails the check at x = 2 (18 against 14)."
+    }
+  ]
+}

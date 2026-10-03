@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A temperature graph falls from 15 degrees at midnight to 8 degrees at 05:00, rises to 28 degrees at 14:00 and falls to 16 degrees by midnight. Describe the graph in full sentences, naming the maximum and minimum with their times.",
+      "expected_answer": "The temperature decreases from 15 degrees Celsius at 00:00 to a minimum of 8 degrees Celsius at 05:00, increases to a maximum of 28 degrees Celsius at 14:00, and then decreases to 16 degrees Celsius at 24:00. The graph is non-linear and continuous. The minimum is 8 degrees at 05:00 and the maximum is 28 degrees at 14:00; both the value and the time are required."
+    },
+    {
+      "id": "cc2",
+      "question": "A learner's distance-from-home graph increases from 0 to 10 minutes, is horizontal from 10 to 15 minutes and increases again from 15 to 25 minutes. Describe each section and explain what the horizontal section means.",
+      "expected_answer": "From 0 to 10 minutes the distance is increasing: the learner is walking away from home. From 10 to 15 minutes the distance is constant: the learner is stationary, for example in a shop; a horizontal section does not mean moving backwards, which would be a decreasing section. From 15 to 25 minutes the distance increases again: the learner walks on."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain whether a graph of taxi fare collected against number of passengers at R15 each should be drawn as dots or as a line, and contrast it with a graph of fare against kilometres travelled.",
+      "expected_answer": "The number of passengers is discrete: it can only be a whole number, so the graph is separate dots at (1; 15), (2; 30), (3; 45), (4; 60) and the dots are not joined, because a joined line would give a fare for 2,5 passengers, which does not exist. Kilometres travelled are continuous, since any fraction of a kilometre is possible, so fare against kilometres is a continuous straight line."
+    }
+  ]
+}

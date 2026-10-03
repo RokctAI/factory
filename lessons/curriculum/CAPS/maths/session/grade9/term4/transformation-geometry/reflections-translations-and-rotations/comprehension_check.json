@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Triangle ABC has A(1; 2), B(4; 2) and C(1; 4). Give the rule and the image vertices for reflection in the x-axis, in the y-axis and in the line y = x, and state what each reflection preserves and changes.",
+      "expected_answer": "x-axis: (x; y) → (x; −y): A'(1; −2), B'(4; −2), C'(1; −4). y-axis: (x; y) → (−x; y): A'(−1; 2), B'(−4; 2), C'(−1; 4). y = x: (x; y) → (y; x): A'(2; 1), B'(2; 4), C'(4; 1). Each reflection preserves lengths and angles, so the image is congruent, and points on the mirror are invariant; each changes position and reverses orientation (ABC anticlockwise, A'B'C' clockwise)."
+    },
+    {
+      "id": "cc2",
+      "question": "Translate triangle ABC, with A(1; 2), B(4; 2) and C(1; 4), 3 units left and 2 units down. Write the rule, the image vertices, and the single translation equivalent to this followed by 5 right and 1 up.",
+      "expected_answer": "Rule (x; y) → (x − 3; y − 2). A'(−2; 0), B'(1; 0), C'(−2; 2). The image is congruent, has the same orientation and every side is parallel to its original. Combined with 5 right and 1 up, the shifts add: −3 + 5 = 2 and −2 + 1 = −1, so the net translation is 2 right and 1 down, (x; y) → (x + 2; y − 1)."
+    },
+    {
+      "id": "cc3",
+      "question": "Rotate A(1; 2) about the origin through 90° anticlockwise, 90° clockwise and 180°, giving the rules and checking one answer by quadrant. Then rotate P(5; 3) through 180° and through 90° anticlockwise about the centre (2; 1).",
+      "expected_answer": "90° anticlockwise: (x; y) → (−y; x), A' = (−2; 1). 90° clockwise: (x; y) → (y; −x), A' = (2; −1). 180°: (x; y) → (−x; −y), A' = (−1; −2). Check: A is in the first quadrant, and a quarter turn anticlockwise carries it into the second, where x is negative, matching (−2; 1). About (2; 1): P is 3 right and 2 up from the centre. 180° gives 3 left and 2 down from the centre: (−1; −1). 90° anticlockwise turns 3 right, 2 up into 2 left, 3 up: (0; 4)."
+    }
+  ]
+}

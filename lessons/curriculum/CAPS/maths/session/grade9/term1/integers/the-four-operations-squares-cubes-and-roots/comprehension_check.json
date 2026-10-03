@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Evaluate 5 − 2 × (−3)² + ∛(−8), stating the order in which you perform the operations.",
+      "expected_answer": "Exponents and roots first: (−3)² = 9 and ∛(−8) = −2, giving 5 − 2 × 9 + (−2). Multiplication next: 2 × 9 = 18, giving 5 − 18 + (−2). Then left to right: 5 − 18 = −13 and −13 + (−2) = −15."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the difference between (−5)² and −5², and why a cube root of a negative number exists while a square root of a negative number does not.",
+      "expected_answer": "(−5)² squares the whole of −5: (−5)(−5) = 25. −5² is the negative of 5², so −25; the bracket decides whether the minus is squared. Any real number squared is positive or zero (same signs multiply to a positive), so no real number squares to −25. A cube keeps the sign of its base — (−3)³ = −27 — so ∛(−27) = −3 exists."
+    },
+    {
+      "id": "cc3",
+      "question": "Use the debt picture to explain why 5 − (−3) = 8 and why (−3) × (−2) = 6.",
+      "expected_answer": "A negative is a debt. 5 − (−3) is holding R5 and having a R3 debt taken away, which leaves you R8 better off — subtracting a negative is adding a positive. (−3) × (−2) is taking away three debts of R2; each removal makes you R2 richer, so you gain R6 — a negative times a negative is a positive. The pattern 3 × (−2) = −6, 2 × (−2) = −4, 1 × (−2) = −2, 0 × (−2) = 0 rising by 2 each step forces the same result."
+    }
+  ]
+}

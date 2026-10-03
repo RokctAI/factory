@@ -1,0 +1,235 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Numeric Patterns With a Constant Difference",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The general term of 5, 8, 11, 14, ... is:",
+          "options": ["T n = 5n + 3", "T n = 3n + 2", "T n = 3n + 5", "T n = n + 3"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The 20th term of 5, 8, 11, 14, ... is:",
+          "options": ["60", "62", "65", "47"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Is 100 a term of 5, 8, 11, 14, ...?",
+          "options": ["Yes, it is T 33", "Yes, it is T 32", "No, because 98 is not a multiple of 3", "No, because 100 is even"],
+          "correct_index": 2,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The general term of 20, 17, 14, 11, ... is:",
+          "options": ["T n = 20 − 3n", "T n = 23 − 3n", "T n = 3n − 23", "T n = 17 − 3n"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Geometric Patterns and Constant Ratio",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The general term of 3, 6, 12, 24, ... is:",
+          "options": ["T n = 3 × 2^n", "T n = 3 × 2^(n−1)", "T n = 6n − 3", "T n = 2 × 3^(n−1)"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The 8th term of 3, 6, 12, 24, ... is:",
+          "options": ["768", "384", "192", "24"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The exponent in a geometric rule is n − 1 because:",
+          "options": ["The first term has had no multiplications", "Positions start at 0", "The ratio is always 2", "It makes the numbers smaller"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The 6th term of 2, 6, 18, 54, ... is:",
+          "options": ["162", "324", "486", "1 458"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Patterns in Diagrams and Tables",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Matchstick squares in a row use 4, 7, 10, ... sticks. The rule is:",
+          "options": ["T n = 4n", "T n = 3n + 1", "T n = 4n − 1", "T n = 3n + 4"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "In the matchstick rule 3n + 1, the +1 is:",
+          "options": ["The number of squares", "The stick that closes the first square", "A mistake", "The number of rows"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "With 31 matchsticks, how many squares in a row can be built?",
+          "options": ["7", "10", "11", "31"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "L-shapes of dots with 3, 5, 7, ... dots have the rule:",
+          "options": ["T n = 2n + 1", "T n = 3n", "T n = n + 2", "T n = 2n + 3"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Finding the Rule and Testing It",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "For a constant difference d, the constant c in T n = dn + c equals:",
+          "options": ["T 1", "T 1 + d", "T 1 − d", "d"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Which term of 3, 6, 12, 24, ... is 384?",
+          "options": ["T 7", "T 8", "T 9", "T 128"],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A rule should be tested on:",
+          "options": ["No terms; the differences are enough", "One term", "At least two terms", "Only the last term"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "The rule T n = 5n fits 5, 8, 11 at T 1 but fails at T 2 because it gives:",
+          "options": ["8", "10", "13", "6"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Taxi Fares and Steps",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A taxi charges R2 flag fall and R3 per km. After n km the fare is:",
+          "options": ["2n + 3", "3n + 2", "5n", "3n − 2"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The flag fall is found from the first term by:",
+          "options": ["Adding one step", "Taking one step back", "Doubling it", "Halving it"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "A battery at 20% loses 3% per hour. After 10 hours the rule 23 − 3n gives:",
+          "options": ["−10", "−7", "7", "−3"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Doubling Patterns",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The fingerprint of a multiplying pattern is that:",
+          "options": ["Differences are constant", "Ratios of neighbours are constant", "Terms are all even", "Terms decrease"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Four terms have how many multiplications between them?",
+          "options": ["4", "3", "5", "2"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The 5th term of 80, 40, 20, 10, ... is:",
+          "options": ["0", "5", "2,5", "−10"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Writing 3 × 2^n for 3, 6, 12, 24, ... gives T 1 equal to:",
+          "options": ["3", "6", "1", "12"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Reading a Picture Pattern",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "In a picture pattern, the number in front of n is:",
+          "options": ["The fixed part", "The growing part per step", "The first term", "The last term"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "15 matchstick squares in a row need:",
+          "options": ["45 sticks", "46 sticks", "60 sticks", "48 sticks"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "50 sticks make how many complete squares in a row?",
+          "options": ["16", "17", "12", "50"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Before using any rule you should:",
+          "options": ["Test it on two terms", "Round the terms", "Draw a graph", "Double-check the ratio only"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

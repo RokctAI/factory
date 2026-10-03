@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Factorise 6x^2 + 9x fully and explain why 3(2x^2 + 3x) would lose a mark.",
+      "expected_answer": "The highest common factor of 6x^2 and 9x is 3x, so 6x^2 + 9x = 3x(2x + 3). Expanding confirms it: 3x × 2x = 6x^2 and 3x × 3 = 9x. The form 3(2x^2 + 3x) is a true statement but the bracket still contains a common factor x, so it is not fully factorised."
+    },
+    {
+      "id": "cc2",
+      "question": "Factorise 2x^2 − 50 fully, stating which step comes first and why x^2 + 49 cannot be factorised the same way.",
+      "expected_answer": "Common factor first: 2x^2 − 50 becomes 2(x^2 − 25). The bracket is a difference of two squares, so the full answer is 2(x + 5)(x − 5). x^2 + 49 is a sum of two squares, not a difference; (x + 7)(x + 7) expands to x^2 + 14x + 49, which has a middle term, so x^2 + 49 does not factorise in Grade 9."
+    },
+    {
+      "id": "cc3",
+      "question": "Factorise x^2 − 3x − 10 and 3x^2 − 3x − 18, showing the product and sum you hunted for in each case.",
+      "expected_answer": "For x^2 − 3x − 10: product −10, sum −3; the numbers are 2 and −5, so the answer is (x + 2)(x − 5). For 3x^2 − 3x − 18: take out the common factor 3 to get 3(x^2 − x − 6); product −6, sum −1; the numbers are −3 and 2, so the answer is 3(x − 3)(x + 2). Expanding each confirms the original."
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Second Differences and Square Patterns",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The second difference of 1, 4, 9, 16, 25 is:",
+          "options": ["3", "2", "1", "Not constant"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The general term of 2, 5, 10, 17, ... is:",
+          "options": ["T n = 3n − 1", "T n = n^2 + 1", "T n = 2n^2", "T n = n^2 − 1"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The general term of 2, 8, 18, 32, ... is:",
+          "options": ["T n = n^2 + 1", "T n = 4n^2", "T n = 2n^2", "T n = 6n − 4"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "1, 9, 25, 49, ... are the squares of the odd numbers, so T n is:",
+          "options": ["(2n − 1)^2", "2n^2 − 1", "(2n + 1)^2", "n^2 + 8n"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Triangular Numbers and Patterns From Previous Terms",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "The 10th triangular number, n(n + 1)/2 at n = 10, is:",
+          "options": ["45", "50", "55", "110"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "The next term of 1, 1, 2, 3, 5, 8, 13, ... is:",
+          "options": ["18", "20", "21", "26"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "A recursive rule is complete only when it also gives:",
+          "options": ["The 100th term", "The starting term(s)", "The second difference", "The ratio"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The general term of 1, −2, 4, −8, 16, ... is:",
+          "options": ["(−2)^n", "−2^(n−1)", "(−2)^(n−1)", "2^(n−1)"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Identifying the Type",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "1, 2, 4 can be continued as 8 or as 7. This shows that:",
+          "options": ["Patterns are random", "Three terms are not enough to decide the type", "Doubling is always right", "Differences never help"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "2, 6, 12, 20, 30, ... has general term:",
+          "options": ["T n = 4n − 2", "T n = n^2 + n", "T n = 2n^2", "T n = n^2 + 1"],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "1, 8, 27, 64, 125, ... is best described as:",
+          "options": ["T n = n^3", "T n = 7n − 6", "T n = n^2 + 7", "A Fibonacci pattern"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "4, 7, 12, 19, 28, ... has general term:",
+          "options": ["T n = 3n + 1", "T n = n^2 + 3", "T n = 2n^2 + 2", "T n = n^2 + 4"],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Creating and Describing Your Own Patterns",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The first five terms of T n = 3n^2 − 1 are:",
+          "options": ["2, 11, 26, 47, 74", "2, 5, 8, 11, 14", "3, 12, 27, 48, 75", "2, 8, 18, 32, 50"],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Start at 2 and 5, each term the sum of the previous two. The 6th term is:",
+          "options": ["26", "31", "19", "50"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Border dots on an n by n square of dots are counted by:",
+          "options": ["4n", "n^2", "4n − 4", "2n + 2"],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Which description is precise enough to be a rule?",
+          "options": ["It goes up by more each time", "Multiply by the position", "Square the position, then add 1", "The numbers get bigger"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Staircases and Squares",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A staircase of blocks totals 1, 3, 6, 10, ... The differences are:",
+          "options": ["Constant at 2", "2, 3, 4, growing by 1", "3, 5, 7, growing by 2", "Doubling"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Differences growing by 2 each time mean the rule involves:",
+          "options": ["n^2", "2n", "2^n", "n^3"],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "0, 3, 8, 15, 24 lined up against 1, 4, 9, 16, 25 shows T n =",
+          "options": ["n^2 + 1", "n^2 − 1", "2n^2", "n^2"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Rabbits and Spirals",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "In the Fibonacci sequence each term is:",
+          "options": ["Double the one before", "The sum of the two before", "The position squared", "Three more than the one before"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "\"Add the two before\" starting from 2 and 5 gives:",
+          "options": ["2, 5, 7, 12, 19", "2, 5, 10, 20, 40", "2, 5, 8, 11, 14", "1, 1, 2, 3, 5"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The backwards recipe for 3, 6, 12, 24 is:",
+          "options": ["Add 3 to the one before, start at 3", "Double the one before, start at 3", "Add the two before", "Square the position"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A pattern that swings positive, negative, positive forever has:",
+          "options": ["A negative difference", "A negative multiplier", "A second difference of 2", "No rule"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Make Your Own Pattern",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The first five terms of T n = n^2 + 3 are:",
+          "options": ["4, 7, 12, 19, 28", "4, 7, 10, 13, 16", "3, 6, 11, 18, 27", "4, 8, 16, 32, 64"],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Start at 3 and 4, add the two before. The 6th term is:",
+          "options": ["18", "29", "47", "11"],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "Checking the fingerprint of your own pattern matters because:",
+          "options": ["It makes the terms bigger", "An arithmetic slip would make the puzzle impossible", "Fingerprints are marked", "It is quicker"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "A complete description of a created pattern includes:",
+          "options": ["Only the terms", "Only the algebra", "Words, algebra, at least five terms and the fingerprint", "A drawing only"],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

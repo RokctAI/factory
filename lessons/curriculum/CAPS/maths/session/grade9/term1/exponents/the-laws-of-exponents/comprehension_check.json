@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Simplify 2^5 × 2^3 ÷ 2^6 using the laws, naming each law, and confirm the answer with values.",
+      "expected_answer": "Multiplying powers of the same base adds exponents: 2^5 × 2^3 = 2^8. Dividing subtracts: 2^8 ÷ 2^6 = 2^2 = 4. Check with values: 32 × 8 = 256 and 256 ÷ 64 = 4."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why (3x)^2 is 9x^2 and not 3x^2, and why (a + b)^2 cannot be simplified the same way.",
+      "expected_answer": "An exponent outside a bracket is shared with every factor of a product inside: (3x)^2 = 3^2 × x^2 = 9x^2; the coefficient 3 is a factor and is squared too. (a + b) is a sum, not a product, so the law does not apply: (3 + 4)^2 = 49 but 3^2 + 4^2 = 25. Sums in brackets must be multiplied out, not shared."
+    },
+    {
+      "id": "cc3",
+      "question": "Use the division law to show why 5^0 must equal 1, and state the value of 3 × 5^0.",
+      "expected_answer": "5^4 ÷ 5^4 = 1 because any non-zero number divided by itself is 1; the division law gives the same quotient as 5^(4−4) = 5^0, so 5^0 = 1. In 3 × 5^0 the exponent applies to the 5 only, so the value is 3 × 1 = 3."
+    }
+  ]
+}

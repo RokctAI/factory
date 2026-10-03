@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Find the surface area of a closed box 4 cm by 3 cm by 2 cm and of a triangular prism with 3, 4, 5 cm right-angled ends and length 10 cm. State the general prism formula you used.",
+      "expected_answer": "Box: 2(lb + lh + bh) = 2(12 + 8 + 6) = 2 × 26 = 52 cm². Prism: each end has area ½ × 3 × 4 = 6, so the two ends give 12 cm²; the three rectangles 3 × 10, 4 × 10 and 5 × 10 give 30 + 40 + 50 = 120 cm², which is the perimeter 12 times the length 10. Total 12 + 120 = 132 cm². General formula: surface area = 2 × area of end + perimeter of end × length."
+    },
+    {
+      "id": "cc2",
+      "question": "A closed tin has radius 3.5 cm and height 10 cm. Find its total surface area, the area of its label, and its volume and capacity. Explain where 2πrh comes from.",
+      "expected_answer": "Ends: 2 × π × 3.5² ≈ 76.97 cm². Label (curved surface): 2 × π × 3.5 × 10 ≈ 219.91 cm². Total ≈ 296.88 cm². Volume: π × 3.5² × 10 ≈ 384.85 cm³, so the capacity is about 385 ml since 1 cm³ holds 1 ml. 2πrh is the area of the label unrolled into a rectangle: its length is the circumference 2πr and its breadth is the height h."
+    },
+    {
+      "id": "cc3",
+      "question": "A crate measures 1.2 m by 80 cm by 50 cm. Find its volume in cubic centimetres, litres and cubic metres, and explain why 1 m³ is 1 000 000 cm³ and not 100 cm³.",
+      "expected_answer": "Convert first: 120 cm by 80 cm by 50 cm. Volume 120 × 80 × 50 = 480 000 cm³. Litres: 480 000 ÷ 1 000 = 480 litres. Cubic metres: 480 000 ÷ 1 000 000 = 0.48 m³. A cube 1 m on each side is 100 cm long, 100 cm wide and 100 cm high, so it holds 100 × 100 × 100 = 1 000 000 cubes of 1 cm³; the factor 100 applies once for each of the three dimensions."
+    }
+  ]
+}

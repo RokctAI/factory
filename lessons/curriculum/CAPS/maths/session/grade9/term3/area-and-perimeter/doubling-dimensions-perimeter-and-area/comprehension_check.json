@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A rectangle is 6 cm by 4 cm. Find its perimeter and area when only the length is doubled, and when both dimensions are doubled. Explain why doubling one dimension does not double the perimeter.",
+      "expected_answer": "Original: perimeter 2(6 + 4), which is 20 cm; area 24 cm². Length doubled to 12 by 4: perimeter 2(12 + 4), which is 32 cm; area 48 cm², double. Both doubled to 12 by 8: perimeter 2(12 + 8), which is 40 cm, exactly double; area 96 cm², four times. Doubling one dimension adds twice that dimension to the perimeter (12 here) while the other two sides are unchanged, so the increase is 12 and not 20; the area doubles because one factor of the product doubled."
+    },
+    {
+      "id": "cc2",
+      "question": "A circle has radius 3 cm. Show by calculation that doubling the radius doubles the circumference and quadruples the area, and explain why using the formulas.",
+      "expected_answer": "Radius 3: circumference 2 × pi × 3, about 18.85 cm; area pi × 9, about 28.27 cm². Radius 6: circumference 2 × pi × 6, about 37.70 cm, which is 2 × 18.85; area pi × 36, about 113.10 cm², which is 4 × 28.27. In C = 2 pi r the radius appears once, so doubling r doubles C; in A = pi r² the radius is squared, so doubling r multiplies A by 2², which is 4. The constant pi is unchanged and cancels in the comparison."
+    },
+    {
+      "id": "cc3",
+      "question": "State the effect of a scale factor k on perimeter and area. A photograph is enlarged so that its area is 9 times as large; find the scale factor and the effect on the frame length. A 30 cm pizza costs R120 and a 15 cm pizza costs R45; which is the better buy?",
+      "expected_answer": "Multiplying every dimension by k multiplies the perimeter by k and the area by k². Area 9 times larger means k² = 9, so k is the square root of 9, which is 3, and the frame (perimeter) is 3 times as long. The 30 cm pizza has scale factor 2 relative to the 15 cm pizza, so 2², which is 4, times the area; four small pizzas would cost 4 × R45, which is R180, more than R120, so the large pizza is the better buy."
+    }
+  ]
+}

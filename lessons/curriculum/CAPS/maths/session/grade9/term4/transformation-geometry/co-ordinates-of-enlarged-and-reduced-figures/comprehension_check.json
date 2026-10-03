@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Triangle ABC has A(1; 1), B(3; 1), C(1; 2). Give its image vertices for enlargement about the origin by scale factor 2 and by scale factor 3, and compare the side AB and the area in each case.",
+      "expected_answer": "k = 2: (2; 2), (6; 2), (2; 4). k = 3: (3; 3), (9; 3), (3; 6). AB = 2 becomes 4 and then 6, multiplied by k. Area ½ × 2 × 1 = 1 becomes ½ × 4 × 2 = 4 and ½ × 6 × 3 = 9, multiplied by k²."
+    },
+    {
+      "id": "cc2",
+      "question": "Reduce P(4; 6), Q(8; 2), R(2; 2) by scale factor 1/2 about the origin. State the inverse transformation, and find the original of A' = (3; −6) after an enlargement by scale factor 3.",
+      "expected_answer": "P'(2; 3), Q'(4; 1), R'(1; 1). The inverse is the enlargement by scale factor 2, (x; y) → (2x; 2y). Dividing by 3: A = (1; −2)."
+    },
+    {
+      "id": "cc3",
+      "question": "Decide whether each mapping is an enlargement about the origin, giving k where it is: (2; 3) → (4; 9); (4; −2) → (10; −5); (3; 4) → (6; 8). For the last one, compare distances from the origin.",
+      "expected_answer": "(2; 3) → (4; 9): 4 ÷ 2 = 2 but 9 ÷ 3 = 3, not an enlargement. (4; −2) → (10; −5): both quotients 2.5, k = 2.5. (3; 4) → (6; 8): k = 2; distances √(9 + 16) = 5 and √(36 + 64) = 10, twice as far along the same ray."
+    }
+  ]
+}

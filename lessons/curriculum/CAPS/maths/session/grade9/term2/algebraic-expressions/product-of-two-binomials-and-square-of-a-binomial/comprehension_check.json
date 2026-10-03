@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Expand (2x − 3)(x + 4) showing all four products, then check your answer by substituting x = 1.",
+      "expected_answer": "Four products: 2x × x = 2x^2, 2x × 4 = 8x, −3 × x = −3x, −3 × 4 = −12. Collect 8x − 3x to get 5x. Result: 2x^2 + 5x − 12. Check at x = 1: the original is (−1)(5), which is −5; the answer gives 2 + 5 − 12, which is −5. Match."
+    },
+    {
+      "id": "cc2",
+      "question": "Expand (x − 4)^2 and explain why x^2 − 16 and x^2 − 8x − 16 are both wrong.",
+      "expected_answer": "(x − 4)^2 is (x − 4)(x − 4): x^2 − 4x − 4x + 16, which is x^2 − 8x + 16. x^2 − 16 leaves out the two cross products (the middle term −8x); squaring does not distribute over subtraction. x^2 − 8x − 16 has the wrong sign on the last term, since (−4)(−4) is positive 16. At x = 1 the correct value is 9; the wrong answers give −15 and −23."
+    },
+    {
+      "id": "cc3",
+      "question": "Simplify (x + 3)(x + 5) − (x − 2)^2 and state what the x = 1 check gives for the original and for your answer.",
+      "expected_answer": "(x + 3)(x + 5) = x^2 + 8x + 15 and (x − 2)^2 = x^2 − 4x + 4. Subtracting the whole second bracket: x^2 + 8x + 15 − x^2 + 4x − 4, which collects to 12x + 11. At x = 1 the original is 4 × 6 minus 1, which is 23, and the answer gives 12 + 11, which is 23."
+    }
+  ]
+}

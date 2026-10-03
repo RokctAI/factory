@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Give the table for y = 3x + 2 at x = −1, 0, 1, 2, state the ordered pairs to plot, and explain why they lie on a straight line.",
+      "expected_answer": "Outputs −1, 2, 5, 8; points (−1, −1), (0, 2), (1, 5), (2, 8), plotted input across and output up. Each rise of 1 in x gives the same rise of 3 in y, so every step right is the same step up, which is exactly a straight line. The line crosses the vertical axis at 2 (the constant) and rises 3 per unit (the coefficient)."
+    },
+    {
+      "id": "cc2",
+      "question": "Are \"double, then add 4\" and \"add 2, then double\" equivalent? Justify fully.",
+      "expected_answer": "Numerically they agree at x = 1 (6 and 6) and x = 5 (14 and 14), which is evidence but not proof. Algebraically the first is 2x + 4 and the second is 2(x + 2), which expands by the distributive property to 2x + 4. The formulae are identical, so every input gives the same output: they are equivalent."
+    },
+    {
+      "id": "cc3",
+      "question": "A taxi charges C = 3k + 2. Interpret the 2 and the 3 on its graph, and find where its graph meets that of a taxi charging C = 5k.",
+      "expected_answer": "The 2 is where the line crosses the vertical axis, the fare at 0 km — the flag fall. The 3 is the steepness, 3 rand up for every 1 km across — the rate per kilometre. They meet where 3k + 2 = 5k, so k = 1 and C = 5: at 1 km both charge R5; below 1 km the 5k taxi is cheaper, beyond it the 3k + 2 taxi is."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Simplify (x^2 + 8x + 15)/(x + 3), explain why the x's cannot simply be cancelled, and check at x = 2.",
+      "expected_answer": "Factorise the numerator: (x + 3)(x + 5). The bracket (x + 3) is a factor of the whole numerator, so it cancels with the denominator, leaving x + 5. The x in 8x and the x in x + 3 are terms of sums, not factors of the whole expression, so they cannot be cancelled. Check at x = 2: the original is 35/5, which is 7, and x + 5 gives 7."
+    },
+    {
+      "id": "cc2",
+      "question": "Simplify (x + 1)/4 ÷ (x^2 + x)/8, stating which fraction is flipped and why.",
+      "expected_answer": "Dividing by a fraction is multiplying by its reciprocal, so only the second fraction (the divisor) is flipped: (x + 1)/4 × 8/(x^2 + x). Factorise x^2 + x as x(x + 1). The bracket (x + 1) cancels and 4 goes into 8 twice, giving 2/x. Check at x = 3: the original is 1 ÷ 1,5, which is two thirds, and 2/x gives two thirds."
+    },
+    {
+      "id": "cc3",
+      "question": "Simplify (x + 1)/3 − (x − 2)/4 and explain where the common error of getting x − 2 over 12 comes from.",
+      "expected_answer": "The LCD is 12: 4(x + 1)/12 − 3(x − 2)/12. The numerator is 4x + 4 − (3x − 6), which is 4x + 4 − 3x + 6, giving (x + 10)/12. The error x − 2 comes from subtracting only the first term of the second numerator, writing 4x + 4 − 3x − 6; the minus must apply to the whole of 3x − 6. Check at x = 2: the original is 1 minus 0, which is 1, and 12/12 is 1."
+    }
+  ]
+}
