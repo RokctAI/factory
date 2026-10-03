@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define electric current and give its unit. Explain why the current is the same at every point in a single-loop circuit, and describe how an ammeter should be connected.",
+      "expected_answer": "Electric current is the rate of flow of charge past a point (charge per second), measured in amperes (A); 1 A = 1 coulomb per second. In a single loop there is only one path; charges cannot pile up or be destroyed, so the same amount of charge passes every point each second, and the current is the same before and after each component; components transfer the charges' energy, not the charges. An ammeter is connected in series: the circuit is broken and the ammeter inserted so all the current passes through it, with its positive terminal towards the positive terminal of the cell; it has very low resistance and must never be connected across a cell or component; start on the largest range."
+    },
+    {
+      "id": "cc2",
+      "question": "List four factors that affect the resistance of a wire and state how each changes the resistance. Use these ideas to explain the pencil-lead dimmer.",
+      "expected_answer": "Material: different materials have different resistance (copper low, nichrome higher, graphite higher still, insulators very high). Length: longer wire, more resistance (doubling length doubles resistance). Thickness: thicker wire, less resistance. Temperature: in metals, higher temperature gives higher resistance. In the pencil-lead dimmer, moving the clips further apart increases the length of graphite in the circuit, so the resistance increases, the current decreases, and the bulb becomes dimmer; moving them closer decreases the resistance and the bulb brightens."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how resistance affects current, give two useful outputs of resistance and explain what a short circuit is and why it is dangerous.",
+      "expected_answer": "For the same source, more total resistance in a circuit means less current; adding a resistor in a loop dims a bulb, removing it brightens the bulb. Useful outputs: heat in heating elements of kettles, stoves, toasters, irons and geysers; light from a glowing filament; a fuse wire melting to protect a circuit; resistors controlling current (dimmers, LED protection). A short circuit is a path of almost no resistance (e.g. a wire joining the terminals of a cell or live touching neutral); a very large current flows, the wires and source heat rapidly, insulation can melt and a fire can start; fuses and circuit breakers protect against this."
+    }
+  ]
+}

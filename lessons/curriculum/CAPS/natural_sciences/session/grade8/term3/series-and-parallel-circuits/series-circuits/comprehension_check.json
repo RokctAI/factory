@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a series circuit. Explain why the current is the same at all points in a series circuit and why one broken bulb makes all the bulbs go out.",
+      "expected_answer": "A series circuit has all components connected one after another in a single loop, giving only one path for the current. Every charge passes through every component in turn; charge cannot pile up or be lost, so the same number of charges passes each point per second, and the current is the same everywhere (ammeters at any point give the same reading). A broken bulb leaves a gap in the only path, so the circuit is open and the current stops everywhere; all bulbs go out."
+    },
+    {
+      "id": "cc2",
+      "question": "A bulb is connected to two cells. Explain what happens to the total resistance, the current and the brightness when a second identical bulb is added in series, and what happens if instead a third cell is added in series.",
+      "expected_answer": "Adding a second bulb in series: the resistances add, so the total resistance increases (doubles for identical bulbs); for the same battery the current decreases; both bulbs glow equally but more dimly than the single bulb, because each transfers a share of the energy. Adding a third cell in series instead: the voltages add (from 3 V to 4.5 V), so the push on the charges increases, the current increases, and the bulb becomes brighter (until it may burn out if overloaded)."
+    },
+    {
+      "id": "cc3",
+      "question": "Give two advantages and two disadvantages of series circuits, and explain why fuses and switches are connected in series.",
+      "expected_answer": "Advantages: simple and uses little wire; one switch controls all components; the same current passes through every component; cells in series give a higher voltage. Disadvantages: one fault or removed component stops the whole circuit; adding components makes all bulbs dimmer; components cannot be switched independently; faults are slow to find. Fuses and switches are connected in series so that all the current to the appliance passes through them: the switch can then open the only path and turn the appliance off, and the fuse carries the full current so it melts if that current becomes too large."
+    }
+  ]
+}

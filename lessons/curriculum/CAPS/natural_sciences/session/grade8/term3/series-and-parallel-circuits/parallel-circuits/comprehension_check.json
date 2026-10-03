@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define a parallel circuit and describe how to recognise one in a circuit diagram. Explain why each bulb in a parallel circuit works independently and receives the full voltage of the source.",
+      "expected_answer": "A parallel circuit has components in separate branches, so the current has two or more paths; it splits at a junction and rejoins at another. In a diagram it looks like a ladder, with components on separate rungs between two common wires and junction dots where branches meet. Each branch is connected directly across the terminals of the source, so it has the full voltage across it. If one branch is broken, the other branches still form complete paths with the source, so their bulbs stay lit; each branch can also have its own switch."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what happens to the total resistance, the total current and the brightness of the bulbs when a second and a third identical bulb are added in parallel to a single bulb connected to a battery.",
+      "expected_answer": "Each added bulb is a new pathway, making it easier for charge to flow, so the total resistance decreases (to a half, then a third, for identical bulbs). The total current drawn from the battery increases (about two times, then three times the original). Each bulb has the full battery voltage across it, so each glows about as brightly as the single bulb did (slightly less with real cells due to internal resistance). The battery supplies energy faster and goes flat sooner."
+    },
+    {
+      "id": "cc3",
+      "question": "State the relationship between the main-line current and the branch currents in a parallel circuit, and calculate the missing current if the main current is 0.9 A and one branch carries 0.6 A. Explain why houses are wired in parallel and why overloading a multi-plug is dangerous.",
+      "expected_answer": "The main-line current equals the sum of the branch currents (charge is conserved at junctions). Missing branch current = 0.9 − 0.6 = 0.3 A. Houses are wired in parallel so every appliance gets the full 230 V, each can be switched on and off independently, and one failure does not stop the others. Each appliance added on a multi-plug is another parallel branch, increasing the total current through the plug and its supply wires; too many high-power appliances can draw more than the rated current (e.g. 16 A), overheating the wires and causing a fire."
+    }
+  ]
+}
