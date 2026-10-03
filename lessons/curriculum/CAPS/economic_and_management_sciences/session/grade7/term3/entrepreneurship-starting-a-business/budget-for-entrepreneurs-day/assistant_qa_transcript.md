@@ -1,0 +1,18 @@
+### subtopic_1 — Fixed Costs and Variable Costs
+**Assistant:** Is the cost of buying a cooler box a fixed cost if we keep it afterwards?
+
+**Tutor:** It is a fixed cost for the day, because it does not change with the number of drinks sold, but there is a subtlety worth understanding. If the team buys a cooler box for R150 and keeps it after Entrepreneur's Day for future events or home use, it has not really been used up in one day. In proper accounting, equipment that lasts is an asset, and only the part that is used up, called depreciation, is an expense for a period, which you will learn in later grades. For a simple Grade 7 budget, there are two sensible approaches. If the team will not use the cooler box again and cannot sell it, include the full R150 as a fixed cost, because the stall must recover it from sales. If a team member already owns a cooler box and lends it, there is no cost, although it is fair to thank the lender. If the team buys it and plans to sell it afterwards, they could include only the expected loss in value. Whichever you choose, explain it in your project, because showing that you understand the choice impresses markers more than any single correct number.
+
+***
+
+### subtopic_2 — Cost Price per Unit and Selling Price
+**Assistant:** What should the team do if the cost price is higher than what customers will pay?
+
+**Tutor:** Find ways to lower the cost, change the product, or reconsider the idea, rather than selling at a loss. Suppose the team's muffins cost R9 each to make, but learners will only pay R8. First, look at the variable costs: could they buy ingredients in bulk, at a wholesaler or on special? Could a cheaper ingredient replace an expensive one without spoiling the taste, such as using fewer chocolate chips? Could they make slightly smaller muffins? Second, look at the fixed costs: could they borrow equipment rather than hire it, make posters from recycled card, or share a table with another team? Third, make more units, if they are confident they can sell them, so that the fixed costs are spread more thinly. Fourth, make the product more valuable to customers, for example with a special topping, so that a higher price is acceptable. Finally, if none of this works, the team should choose a different product. That may feel disappointing, but discovering it on paper costs nothing, while discovering it on the day costs real money. This is exactly why the budget is done before buying anything.
+
+***
+
+### subtopic_3 — Break-Even and the Full Budget
+**Assistant:** Why is the break-even point useful if we expect to sell everything?
+
+**Tutor:** Because expectations can be wrong, and the break-even point tells you how much room for error you have. If the team expects to sell 80 muffins and the break-even point is 19, they know that even if sales are disappointing, perhaps because of rain or a competitor, they will cover their costs as long as they sell at least 19. That is a comfortable margin, so the plan is low-risk. If instead the break-even point were 70 out of 80, almost any problem would push them into a loss, which would be a warning to lower costs, raise the price or rethink the product. The break-even point also helps decisions on the day: once the team has passed it, they know everything further is profit, so they might lower the price late in the day to sell the last muffins rather than throw them away, as long as the price still covers the variable cost of each muffin. Real businesses use break-even analysis for exactly these reasons: to judge risk, set targets and make pricing decisions. It is one of the most practical tools you will learn this year.
