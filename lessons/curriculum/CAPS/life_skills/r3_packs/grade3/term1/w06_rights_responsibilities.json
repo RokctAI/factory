@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term1.w06_rights_responsibilities",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Rights and responsibilities",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Rights and responsibility",
+    "subtopic": "Learners' rights and responsibilities; rights and responsibilities of others at home and at school"
+  },
+  "skill": "civics.rights",
+  "prereq_skills": ["social.respect"],
+  "images": ["rights_resp", "go_to_school", "be_safe", "have_food", "do_homework", "tidy_room", "education", "drive_car", "stay_up_late", "wash_dishes", "watch_tv", "thumbs_up", "thumbs_down", "health_care", "own_car", "tutor_not_listening"],
+  "show": {
+    "line": "I have rights, like going to school. I have responsibilities, like doing homework!",
+    "image": "rights_resp"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Right or responsibility?", "groups": ["right", "responsibility"], "items": [{"image": "go_to_school", "group": "right"}, {"image": "be_safe", "group": "right"}, {"image": "have_food", "group": "right"}, {"image": "do_homework", "group": "responsibility"}, {"image": "tidy_room", "group": "responsibility"}]},
+    {"type": "listen_tap", "prompt": "Every child has the right to...?", "options": ["education", "drive_car", "stay_up_late"], "answer": "education", "praise": "Education!"},
+    {"type": "say_it", "prompt": "I have the right to learn. So I must...?", "accept": ["listen", "do my homework", "work hard", "come to school", "pay attention", "study"]},
+    {"type": "listen_tap", "prompt": "Which is a responsibility at home?", "options": ["wash_dishes", "watch_tv"], "answer": "wash_dishes", "praise": "Helping at home!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Everyone has a right to play. Tumi lets the new boy join in. Is Tumi respecting his right?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes!"},
+    {"type": "listen_tap", "prompt": "Every child has the right to...?", "options": ["health_care", "own_car"], "answer": "health_care", "praise": "Health care!"}
+  ],
+  "hints": ["Rights are what we get. Responsibilities are what we do.", "My rights come with responsibilities."],
+  "beat_the_tutor": {
+    "setup": "My turn! I have the right to learn.",
+    "tutor_try": "So I don't have to listen!",
+    "image": "tutor_not_listening",
+    "answer": "listen",
+    "win_line": "You caught me! The right to learn means I listen.",
+    "gentle_line": "Rights come with responsibilities!"
+  },
+  "parent_line": "Can tell rights from responsibilities at home and school."
+}

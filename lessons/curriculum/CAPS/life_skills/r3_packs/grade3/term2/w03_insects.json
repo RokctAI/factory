@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term2.w03_insects",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Insects",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Insects",
+    "subtopic": "Characteristics of an insect: the body, body parts, movement; different insects such as a fly"
+  },
+  "skill": "animals.insects",
+  "prereq_skills": ["animals.insect_spider"],
+  "images": ["insect_parts", "beetle_legs", "insect_head", "insect_abdomen", "insect_thorax", "fly", "bee", "grasshopper", "spider", "worm", "butterfly", "ant_worker", "silverfish", "antennae", "ears", "tail", "tutor_spider"],
+  "show": {
+    "line": "An insect has six legs and three body parts: head, thorax and abdomen.",
+    "image": "insect_parts"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the legs on the beetle.", "image": "beetle_legs", "count": "6", "options": ["4", "6", "8"], "answer": "6", "praise": "Six!"},
+    {"type": "listen_tap", "prompt": "Which part is the head?", "options": ["insect_head", "insect_abdomen", "insect_thorax"], "answer": "insect_head", "praise": "The head!"},
+    {"type": "say_it", "prompt": "How many body parts does an insect have?", "accept": ["three", "3", "three parts"]},
+    {"type": "match_sort", "prompt": "Insect or not an insect?", "groups": ["insect", "not_insect"], "items": [{"image": "fly", "group": "insect"}, {"image": "bee", "group": "insect"}, {"image": "grasshopper", "group": "insect"}, {"image": "spider", "group": "not_insect"}, {"image": "worm", "group": "not_insect"}]},
+    {"type": "listen_tap", "prompt": "Which insect can fly?", "options": ["butterfly", "ant_worker", "silverfish"], "answer": "butterfly", "praise": "A butterfly!"},
+    {"type": "listen_tap", "prompt": "Insects feel with these on their head.", "options": ["antennae", "ears", "tail"], "answer": "antennae", "praise": "Antennae!"}
+  ],
+  "hints": ["Six legs, three parts.", "Spiders have eight legs, so not insects."],
+  "beat_the_tutor": {
+    "setup": "My turn! A spider is an insect.",
+    "tutor_try": "It has eight legs!",
+    "image": "tutor_spider",
+    "answer": "not insect",
+    "win_line": "You caught me! Eight legs means not an insect.",
+    "gentle_line": "Insects have six legs!"
+  },
+  "parent_line": "Knows insect body parts and can identify insects."
+}
