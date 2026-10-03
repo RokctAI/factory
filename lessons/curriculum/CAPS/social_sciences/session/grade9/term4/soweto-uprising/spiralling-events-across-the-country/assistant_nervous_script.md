@@ -1,0 +1,5 @@
+Hey, this topic fits in three pictures: a fire spreading in the wind, an empty factory and a list of names.
+The fire. On 17 June, protests spread to Alexandra, Kagiso and Tembisa, then across the Rand and to Pretoria's townships. Universities such as Zululand and Turfloop burned buildings. The SSRC formed under Tsietsi Mashinini. On 11 August, Cape Town's Langa, Gugulethu and Nyanga rose, and coloured students from Bonteheuwel, Athlone and UWC joined them. Protests reached the Eastern Cape and more than a hundred towns.
+The factory. The SSRC called stay-aways: 4 to 6 August, then 23 to 25 August, when Mzimhlophe hostel dwellers clashed with students, with police encouragement. The 13 to 15 September stay-away was the biggest. There were campaigns against shebeens and Christmas celebrations, and in 1977 rents were stopped and the Urban Bantu Council resigned.
+The names. Vorster and Kruger blamed agitators. Thousands were detained, and Mapetla Mohapi died in custody. The Cillié Commission reported 575 deaths and about 3 900 injured.
+Open the practice set when you are ready. You've got this!
