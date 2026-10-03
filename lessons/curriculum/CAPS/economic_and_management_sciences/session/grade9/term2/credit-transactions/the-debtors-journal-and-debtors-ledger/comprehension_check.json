@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the source document for the debtors journal and list the columns of the DJ.",
+      "expected_answer": "Source document: the duplicate (copy) invoice. Columns: document (invoice) number, day, debtor's name, folio (debtors ledger folio), Sales, Cost of sales. There is no bank or sundry column because only credit sales of trading stock are recorded."
+    },
+    {
+      "id": "cc2",
+      "question": "Ridgeview's April DJ totals are sales R18 600 and cost of sales R12 400. Show the four general ledger postings.",
+      "expected_answer": "Debtors control: debit 18 600, details Sales, folio DJ4. Sales: credit 18 600, details Debtors control. Cost of sales: debit 12 400, details Trading stock. Trading stock: credit 12 400, details Cost of sales. Gross profit on credit sales: 18 600 - 12 400 = 6 200."
+    },
+    {
+      "id": "cc3",
+      "question": "Hilltop Builders bought R6 000 and R4 500 on credit and paid R6 000. Ace Plumbing bought R3 600 and R1 800 and paid R3 600. Sunset bought R2 700. Prepare the debtors list and reconcile it with Debtors control.",
+      "expected_answer": "Hilltop 6 000 + 4 500 - 6 000 = 4 500; Ace 3 600 + 1 800 - 3 600 = 1 800; Sunset 2 700. Debtors list total 9 000. Debtors control: debit 18 600 (DJ) minus credit 9 600 (CRJ) = 9 000. The totals agree."
+    }
+  ]
+}

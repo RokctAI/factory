@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the journals and source documents used for (a) a credit sale and (b) a payment received from a debtor, and state the side of the debtor's account to which each is posted.",
+      "expected_answer": "(a) Duplicate invoice, debtors journal (DJ), posted to the debit side of the debtor's account. (b) Duplicate receipt, cash receipts journal (CRJ) in the Bank and Debtors control columns, posted to the credit side of the debtor's account."
+    },
+    {
+      "id": "cc2",
+      "question": "Hilltop Builders owed R4 800 on 1 July, bought goods for R3 900 on 4 July, paid R4 800 on 10 July and bought goods for R1 500 on 23 July. Show the running balance after each entry.",
+      "expected_answer": "1 July 4 800; 4 July debit 3 900, balance 8 700; 10 July credit 4 800, balance 3 900; 23 July debit 1 500, balance 5 400."
+    },
+    {
+      "id": "cc3",
+      "question": "Debtors control had an opening balance of R8 400. The DJ total for July was R12 000 and the CRJ Debtors control column total was R7 900. The debtors list showed Hilltop R5 400, Ace R4 200 and Sunset R2 900. Calculate the control balance and reconcile.",
+      "expected_answer": "Debtors control: 8 400 + 12 000 - 7 900 = R12 500, a debit balance. Debtors list: 5 400 + 4 200 + 2 900 = R12 500. The two totals agree, so the debtors records are in order."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the columns of the creditors journal and explain why it can be cross-cast.",
+      "expected_answer": "Document (invoice number), day, creditor, folio, Creditors control, Trading stock, Stationery, Equipment, and Sundry accounts (amount, folio, details). Each invoice is entered in Creditors control for the full amount and again in the analysis column for what was bought, so the analysis column totals must add up to the Creditors control total."
+    },
+    {
+      "id": "cc2",
+      "question": "Ridgeview's September CJ: BuildMart stock R8 000; Office Hub stationery R600; Toolquip equipment R3 500; Highveld stock R4 200; BuildMart stock R2 800; Glow Signs advertising R900. Total the columns and cross-cast.",
+      "expected_answer": "Creditors control 20 000. Trading stock 8 000 + 4 200 + 2 800 = 15 000. Stationery 600. Equipment 3 500. Sundry (Advertising) 900. Cross-cast: 15 000 + 600 + 3 500 + 900 = 20 000, which agrees."
+    },
+    {
+      "id": "cc3",
+      "question": "Show the general ledger postings of the CJ totals and reconcile Creditors control with the creditors list, given a payment of R5 000 to BuildMart.",
+      "expected_answer": "Creditors control Cr 20 000 (Total purchases); Trading stock Dr 15 000, Stationery Dr 600, Equipment Dr 3 500, Advertising Dr 900 (each details Creditors control). CPJ: Creditors control Dr 5 000 (Bank). Balance 20 000 - 5 000 = 15 000 Cr. List: BuildMart 5 800 + Office Hub 600 + Toolquip 3 500 + Highveld 4 200 + Glow Signs 900 = 15 000. They agree."
+    }
+  ]
+}

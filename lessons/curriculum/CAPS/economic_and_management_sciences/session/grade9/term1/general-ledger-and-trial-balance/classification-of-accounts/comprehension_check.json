@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Classify each account into the correct ledger section and element: Capital, Equipment, Trading stock, Loan, Sales, Cost of sales, Rent income, Wages, Drawings.",
+      "expected_answer": "Balance sheet section: Capital (owner's equity), Drawings (owner's equity, reduces capital), Equipment (non-current asset), Trading stock (current asset), Loan (liability, usually non-current). Nominal section: Sales (income), Rent income (income), Cost of sales (expense), Wages (expense)."
+    },
+    {
+      "id": "cc2",
+      "question": "State the debit and credit rules for assets, liabilities, owner's equity, income, expenses and drawings, and explain how they follow from the accounting equation.",
+      "expected_answer": "Assets, expenses and drawings increase on the debit side and decrease on the credit side; liabilities, capital and income increase on the credit side and decrease on the debit side. Assets are on the left of A = OE + L so they increase on the left (debit); OE and L are on the right so they increase on the right (credit); income increases OE (credit); expenses and drawings decrease OE (debit)."
+    },
+    {
+      "id": "cc3",
+      "question": "For each transaction, name the account debited and credited: (a) wages R6 000 paid; (b) loan R30 000 received; (c) bank charges R240 deducted by the bank.",
+      "expected_answer": "(a) Debit Wages, credit Bank. (b) Debit Bank, credit Loan. (c) Debit Bank charges, credit Bank."
+    }
+  ]
+}

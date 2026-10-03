@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the journal for each transaction: (a) cash sales R4 500; (b) goods sold on credit to Sunset R1 800; (c) Ace Plumbing paid R4 200; (d) owner withdrew R1 500; (e) bank charges R150 on the bank statement; (f) stock bought and paid by EFT R5 000.",
+      "expected_answer": "(a) CRJ (Bank, Sales, Cost of sales R3 000). (b) DJ (Sales, Cost of sales R1 200). (c) CRJ, Debtors control column. (d) CPJ, Sundry accounts, Drawings. (e) CPJ, Sundry accounts, Bank charges. (f) CPJ, Trading stock column."
+    },
+    {
+      "id": "cc2",
+      "question": "The August CRJ totals are Bank R22 600, Sales R10 500, Cost of sales R7 000, Debtors control R9 600 and Sundry R2 500. Cross-cast the CRJ and explain why cost of sales is excluded.",
+      "expected_answer": "Sales + Debtors control + Sundry = 10 500 + 9 600 + 2 500 = 22 600, which equals the Bank total. Cost of sales is excluded because it is not money received; it records the cost of the goods sold, which is posted to Cost of sales and Trading stock."
+    },
+    {
+      "id": "cc3",
+      "question": "Debtors owed R12 500 on 1 August. Credit sales were R7 500 and receipts from debtors R9 600. Calculate Debtors control at 31 August and the total sales and gross profit for August if cash sales were R10 500 (cost R7 000) and credit sales cost R5 000.",
+      "expected_answer": "Debtors control: 12 500 + 7 500 - 9 600 = R10 400. Total sales: 10 500 + 7 500 = R18 000. Cost of sales: 7 000 + 5 000 = R12 000. Gross profit: 18 000 - 12 000 = R6 000."
+    }
+  ]
+}
