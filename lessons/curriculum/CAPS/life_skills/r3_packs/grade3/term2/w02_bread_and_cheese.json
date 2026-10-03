@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term2.w02_bread_and_cheese",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Making bread",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Healthy eating",
+    "subtopic": "How to make bread; why does bread rise?"
+  },
+  "skill": "process.bread",
+  "prereq_skills": ["food.groups.g3"],
+  "images": ["bread_dough", "yeast", "salt", "water", "flour", "milk", "eggs", "apples", "risen_dough", "flat_dough", "tutor_salt"],
+  "show": {
+    "line": "Flour, water, yeast and salt make bread. Yeast makes the dough rise!",
+    "image": "bread_dough"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Mix, knead, rise, and then?", "sequence": ["mix", "knead", "rise"], "options": ["bake", "eat", "mix"], "answer": "bake", "praise": "Bake it!"},
+    {"type": "listen_tap", "prompt": "What makes bread rise?", "options": ["yeast", "salt", "water"], "answer": "yeast", "praise": "Yeast!"},
+    {"type": "listen_tap", "prompt": "Bread is made from...?", "options": ["flour", "milk", "eggs"], "answer": "flour", "praise": "Flour!"},
+    {"type": "say_it", "prompt": "Where do we bake bread?", "accept": ["oven", "in the oven", "the oven"]},
+    {"type": "listen_tap", "prompt": "Cheese is made from...?", "options": ["milk", "flour", "apples"], "answer": "milk", "praise": "Milk!"},
+    {"type": "listen_tap", "prompt": "Which bread has risen?", "options": ["risen_dough", "flat_dough"], "answer": "risen_dough", "praise": "Big and puffy!"}
+  ],
+  "hints": ["Yeast makes gas bubbles.", "Follow the steps in order."],
+  "beat_the_tutor": {
+    "setup": "My turn! Bread rises because of...",
+    "tutor_try": "Salt!",
+    "image": "tutor_salt",
+    "answer": "yeast",
+    "win_line": "You caught me! Yeast makes bread rise.",
+    "gentle_line": "Yeast makes it rise!"
+  },
+  "parent_line": "Knows the steps to make bread and that yeast makes it rise."
+}

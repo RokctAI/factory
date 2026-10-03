@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w02_grow_vegetables",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [6],
+  "theme": "Growing vegetables",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Working with soil",
+    "subtopic": "What plants need to grow; how to plant a seed; cultivating good soil for plant growth"
+  },
+  "skill": "earth.planting",
+  "prereq_skills": ["earth.soil"],
+  "images": ["veg_garden", "water_and_sun", "darkness", "fresh_food", "more_sweets", "thumbs_down", "thumbs_up", "spade", "spoon", "pencil", "tutor_fridge"],
+  "show": {
+    "line": "Dig, plant a seed, water and wait. Soon you have vegetables!",
+    "image": "veg_garden"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Dig, plant the seed, and then?", "sequence": ["dig", "plant"], "options": ["water", "harvest", "eat"], "answer": "water", "praise": "Water it!"},
+    {"type": "listen_tap", "prompt": "What helps a seed grow?", "options": ["water_and_sun", "darkness"], "answer": "water_and_sun", "praise": "Water and sun!"},
+    {"type": "say_it", "prompt": "Name a vegetable you can grow at home.", "accept": ["spinach", "carrot", "cabbage", "tomato", "beans", "pumpkin", "onion", "potato", "beetroot", "lettuce"]},
+    {"type": "listen_tap", "prompt": "Why grow our own vegetables?", "options": ["fresh_food", "more_sweets"], "answer": "fresh_food", "praise": "Fresh food for the family!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Gogo grows spinach. The family eats it every week. Do they need to buy spinach?", "options": ["thumbs_down", "thumbs_up"], "answer": "thumbs_down", "praise": "No! They grow their own."},
+    {"type": "listen_tap", "prompt": "Which tool digs soil?", "options": ["spade", "spoon", "pencil"], "answer": "spade", "praise": "A spade!"}
+  ],
+  "hints": ["Seeds need soil, water and sunlight.", "Home gardens give fresh food."],
+  "beat_the_tutor": {
+    "setup": "My turn! I plant a seed.",
+    "tutor_try": "Then I put it in the fridge!",
+    "image": "tutor_fridge",
+    "answer": "sun",
+    "win_line": "You caught me! Seeds need sun and water.",
+    "gentle_line": "Soil, water and sun!"
+  },
+  "parent_line": "Knows how to plant a seed and why home vegetable gardens help."
+}

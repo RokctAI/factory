@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w07_water_creatures",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Creatures in water",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Creatures that live in water",
+    "subtopic": "Salt water creatures in the sea (shark, crayfish) and rock pools (starfish, crab); classify and compare"
+  },
+  "skill": "animals.water",
+  "prereq_skills": ["animals.wild_big5"],
+  "images": ["sea_and_river", "frog", "crocodile", "dragonfly", "shark", "starfish", "crab", "lion", "gills", "nose", "ears", "octopus", "fish", "tutor_shark"],
+  "show": {
+    "line": "Some creatures live in rivers and dams. Some live in the salty sea!",
+    "image": "sea_and_river"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Fresh water or sea?", "groups": ["fresh_water", "sea"], "items": [{"image": "frog", "group": "fresh_water"}, {"image": "crocodile", "group": "fresh_water"}, {"image": "dragonfly", "group": "fresh_water"}, {"image": "shark", "group": "sea"}, {"image": "starfish", "group": "sea"}]},
+    {"type": "listen_tap", "prompt": "Which lives in a rock pool?", "options": ["crab", "lion", "frog"], "answer": "crab", "praise": "A crab!"},
+    {"type": "listen_tap", "prompt": "How does a fish breathe in water?", "options": ["gills", "nose", "ears"], "answer": "gills", "praise": "With gills!"},
+    {"type": "say_it", "prompt": "The sea water tastes...?", "accept": ["salty", "salt"]},
+    {"type": "listen_tap", "prompt": "Which sea animal has eight arms?", "options": ["octopus", "fish", "shark"], "answer": "octopus", "praise": "An octopus!"},
+    {"type": "listen_tap", "prompt": "Which can live in water and on land?", "options": ["frog", "shark", "starfish"], "answer": "frog", "praise": "A frog!"}
+  ],
+  "hints": ["Rivers and dams have fresh water. The sea is salty.", "Fish use gills."],
+  "beat_the_tutor": {
+    "setup": "My turn! A shark lives in...",
+    "tutor_try": "A river!",
+    "image": "tutor_shark",
+    "answer": "sea",
+    "win_line": "You caught me! Sharks live in the sea.",
+    "gentle_line": "Sharks live in the salty sea!"
+  },
+  "parent_line": "Can sort fresh water and sea creatures."
+}

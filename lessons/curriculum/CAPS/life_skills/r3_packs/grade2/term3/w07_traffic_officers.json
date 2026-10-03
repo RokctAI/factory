@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w07_traffic_officers",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [10, 11, 12],
+  "theme": "People who keep us safe",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: People who help us",
+    "subtopic": "The scholar patrol and the role they play in safety; how traffic officers help us; the work of a traffic officer"
+  },
+  "skill": "community.road_helpers",
+  "prereq_skills": ["safety.road"],
+  "images": ["scholar_patrol", "pilot", "chef", "traffic_officer", "nurse", "librarian", "library", "clinic", "farm", "farmer", "baker", "tutor_patrol"],
+  "show": {
+    "line": "Scholar patrols and traffic officers help us cross roads safely!",
+    "image": "scholar_patrol"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Who helps children cross outside school?", "options": ["scholar_patrol", "pilot", "chef"], "answer": "scholar_patrol", "praise": "Scholar patrol!"},
+    {"type": "listen_tap", "prompt": "Who stops speeding cars?", "options": ["traffic_officer", "nurse", "librarian"], "answer": "traffic_officer", "praise": "A traffic officer!"},
+    {"type": "say_it", "prompt": "The scholar patrol holds up a stop sign. What do cars do?", "accept": ["stop", "they stop", "cars stop"]},
+    {"type": "listen_tap", "prompt": "Where does a librarian work?", "options": ["library", "clinic", "farm"], "answer": "library", "praise": "The library!"},
+    {"type": "listen_tap", "prompt": "Who helps at a clinic?", "options": ["nurse", "pilot", "farmer"], "answer": "nurse", "praise": "A nurse!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "A traffic officer waves cars to stop. Children cross. Who keeps them safe?", "options": ["traffic_officer", "baker"], "answer": "traffic_officer", "praise": "The traffic officer!"}
+  ],
+  "hints": ["Think of uniforms and where they work.", "These helpers keep our roads safe."],
+  "beat_the_tutor": {
+    "setup": "My turn! The scholar patrol says stop.",
+    "tutor_try": "Cars should speed up!",
+    "image": "tutor_patrol",
+    "answer": "stop",
+    "win_line": "You caught me! Cars must stop.",
+    "gentle_line": "Stop sign means stop!"
+  },
+  "parent_line": "Knows how scholar patrols, traffic officers and other helpers keep us safe."
+}

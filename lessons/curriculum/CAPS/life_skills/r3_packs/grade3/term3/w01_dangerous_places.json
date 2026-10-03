@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term3.w01_dangerous_places",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Dangerous places to play",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Public safety",
+    "subtopic": "Dangerous places to play: rubbish dumps, train tracks, roads, construction sites"
+  },
+  "skill": "safety.public_places",
+  "prereq_skills": ["safety.road"],
+  "images": ["safe_park", "park", "school_field", "backyard", "train_tracks", "building_site", "broken_glass", "too_many_flowers", "leave_tell_adult", "fetch_it", "danger_sign", "smiley_sign", "thumbs_up", "thumbs_down", "tutor_tracks"],
+  "show": {
+    "line": "Never play on train tracks, roads, dumps or building sites. Play in safe places!",
+    "image": "safe_park"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Safe or dangerous to play?", "groups": ["safe", "dangerous"], "items": [{"image": "park", "group": "safe"}, {"image": "school_field", "group": "safe"}, {"image": "backyard", "group": "safe"}, {"image": "train_tracks", "group": "dangerous"}, {"image": "building_site", "group": "dangerous"}]},
+    {"type": "listen_tap", "prompt": "Why is a rubbish dump dangerous?", "options": ["broken_glass", "too_many_flowers"], "answer": "broken_glass", "praise": "Sharp things and germs!"},
+    {"type": "say_it", "prompt": "Where is a safe place to play?", "accept": ["park", "playground", "school", "home", "the park", "garden", "backyard", "field"]},
+    {"type": "listen_tap", "prompt": "A ball rolls onto the train tracks. What do you do?", "options": ["leave_tell_adult", "fetch_it"], "answer": "leave_tell_adult", "praise": "Leave it and tell a grown-up!"},
+    {"type": "listen_tap", "prompt": "Which sign says danger, keep out?", "options": ["danger_sign", "smiley_sign"], "answer": "danger_sign", "praise": "Keep out!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Sipho's friends climb a building site fence. Sipho says no and goes home. Was he wise?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes!"}
+  ],
+  "hints": ["Trains, cars and machines can hurt us.", "Choose places grown-ups say are safe."],
+  "beat_the_tutor": {
+    "setup": "My turn! I'll play on the train tracks.",
+    "tutor_try": "It's a fun path!",
+    "image": "tutor_tracks",
+    "answer": "dangerous",
+    "win_line": "You caught me! Train tracks are dangerous.",
+    "gentle_line": "Never play on tracks!"
+  },
+  "parent_line": "Knows dangerous places to play and chooses safe ones."
+}

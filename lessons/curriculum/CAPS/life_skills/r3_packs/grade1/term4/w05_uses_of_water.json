@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term4.w05_uses_of_water",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "How we use water",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Water",
+    "subtopic": "Uses of water at home and school; ways water is wasted; safe and unsafe drinking water"
+  },
+  "skill": "water.uses",
+  "prereq_skills": ["water.save"],
+  "images": ["water_uses", "washing_dishes", "reading", "drawing", "grow", "talk", "sleep", "bath", "cooking_pot", "washing_line", "school_tap", "school_garden", "dirty_water", "clean_water", "tap_running", "tap_off", "tutor_sandwich"],
+  "show": {
+    "line": "We use water to drink, cook, wash and grow plants!",
+    "image": "water_uses"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one uses water?", "options": ["washing_dishes", "reading", "drawing"], "answer": "washing_dishes", "praise": "Washing dishes!"},
+    {"type": "listen_tap", "prompt": "Plants need water to...?", "options": ["grow", "talk", "sleep"], "answer": "grow", "praise": "To grow!"},
+    {"type": "say_it", "prompt": "Tell me one way you use water.", "accept": ["drink", "wash", "bath", "cook", "brush teeth", "flush", "water plants", "shower", "swim", "clean"]},
+    {"type": "match_sort", "prompt": "Water at home or water at school?", "groups": ["home", "school"], "items": [{"image": "bath", "group": "home"}, {"image": "cooking_pot", "group": "home"}, {"image": "washing_line", "group": "home"}, {"image": "school_tap", "group": "school"}, {"image": "school_garden", "group": "school"}]},
+    {"type": "listen_tap", "prompt": "Which water is unsafe to drink?", "options": ["dirty_water", "clean_water"], "answer": "dirty_water", "praise": "Dirty water can make us sick!"},
+    {"type": "listen_tap", "prompt": "Which is wasting water?", "options": ["tap_running", "tap_off"], "answer": "tap_running", "praise": "A running tap wastes water!"}
+  ],
+  "hints": ["Water helps us live every day.", "Only drink clean water."],
+  "beat_the_tutor": {
+    "setup": "My turn! I use water for...",
+    "tutor_try": "I use water to make my sandwich crunchy!",
+    "image": "tutor_sandwich",
+    "answer": "drink",
+    "win_line": "You caught me! We use water to drink, cook and wash.",
+    "gentle_line": "Drink, cook and wash!"
+  },
+  "parent_line": "Can name ways we use water at home and school."
+}

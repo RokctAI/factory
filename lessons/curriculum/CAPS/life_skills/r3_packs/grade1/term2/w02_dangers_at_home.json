@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w02_dangers_at_home",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [7],
+  "theme": "Dangers at home",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Safety in the home",
+    "subtopic": "Dangers at home: cooking, washing, lighting and electricity, outside areas, medicine"
+  },
+  "skill": "safety.home",
+  "prereq_skills": ["safety.safe_unsafe"],
+  "images": ["home_dangers", "plug_socket", "teddy", "pillow", "stay_away", "touch_it", "pour_it", "book", "ball", "blanket", "iron_hot", "medicine", "call_adult", "watch", "add_water", "handle_in", "handle_out", "tutor_fork_plug"],
+  "show": {
+    "line": "Home can have dangers. Hot stoves, plugs, medicine and buckets of water!",
+    "image": "home_dangers"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which is dangerous for a child to touch?", "options": ["plug_socket", "teddy", "pillow"], "answer": "plug_socket", "praise": "Electricity is dangerous!"},
+    {"type": "listen_tap", "prompt": "The kettle just boiled. What do you do?", "options": ["stay_away", "touch_it", "pour_it"], "answer": "stay_away", "praise": "Stay away! It is hot."},
+    {"type": "match_sort", "prompt": "Safe or dangerous? Sort them.", "groups": ["safe", "dangerous"], "items": [{"image": "book", "group": "safe"}, {"image": "ball", "group": "safe"}, {"image": "blanket", "group": "safe"}, {"image": "iron_hot", "group": "dangerous"}, {"image": "medicine", "group": "dangerous"}]},
+    {"type": "say_it", "prompt": "Medicine is only from a...?", "accept": ["grown up", "adult", "doctor", "nurse", "mama", "parent"]},
+    {"type": "listen_tap", "prompt": "Baby crawls to the bucket of water. What do you do?", "options": ["call_adult", "watch", "add_water"], "answer": "call_adult", "praise": "Call a grown-up fast!"},
+    {"type": "listen_tap", "prompt": "Which shows the pot handle turned in safely?", "options": ["handle_in", "handle_out"], "answer": "handle_in", "praise": "Handle in. No bumping!"}
+  ],
+  "hints": ["Hot, sharp, electric and medicine are for grown-ups.", "If in doubt, call a grown-up."],
+  "beat_the_tutor": {
+    "setup": "My turn! The plug looks fun.",
+    "tutor_try": "I will poke the plug with a fork!",
+    "image": "tutor_fork_plug",
+    "answer": "dangerous",
+    "win_line": "You caught me! Never put things in plugs.",
+    "gentle_line": "Plugs are dangerous. Hands away!"
+  },
+  "parent_line": "Can name dangers at home: heat, electricity, medicine and water."
+}

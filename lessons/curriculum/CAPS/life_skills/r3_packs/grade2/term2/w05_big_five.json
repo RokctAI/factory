@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w05_big_five",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [8],
+  "theme": "Wild animals and the Big 5",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Wild animals",
+    "subtopic": "Types and characteristics of wild animals (the Big 5)"
+  },
+  "skill": "animals.wild_big5",
+  "prereq_skills": ["animals.farm_uses"],
+  "images": ["big_five", "rhino", "cow", "dog", "elephant", "lion", "buffalo", "leopard", "zebra", "goat", "rand_note", "toy_money", "tutor_chicken"],
+  "show": {
+    "line": "The Big 5: lion, leopard, elephant, rhino and buffalo! They live wild in South Africa.",
+    "image": "big_five"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which is one of the Big 5?", "options": ["rhino", "cow", "dog"], "answer": "rhino", "praise": "Rhino!"},
+    {"type": "listen_tap", "prompt": "Which has a long trunk?", "options": ["elephant", "lion", "buffalo"], "answer": "elephant", "praise": "The elephant!"},
+    {"type": "say_it", "prompt": "Can you name one of the Big 5?", "accept": ["lion", "leopard", "elephant", "rhino", "rhinoceros", "buffalo"]},
+    {"type": "match_sort", "prompt": "Wild or farm?", "groups": ["wild", "farm"], "items": [{"image": "lion", "group": "wild"}, {"image": "leopard", "group": "wild"}, {"image": "zebra", "group": "wild"}, {"image": "cow", "group": "farm"}, {"image": "goat", "group": "farm"}]},
+    {"type": "listen_tap", "prompt": "Which money note has an animal from the Big 5?", "options": ["rand_note", "toy_money"], "answer": "rand_note", "praise": "Our rand notes show the Big 5!"},
+    {"type": "count_tap", "prompt": "Count the Big 5. How many?", "image": "big_five", "count": "5", "options": ["4", "5", "6"], "answer": "5", "praise": "Five!"}
+  ],
+  "hints": ["Wild animals live free in nature.", "Lion, leopard, elephant, rhino, buffalo."],
+  "beat_the_tutor": {
+    "setup": "My turn! The Big 5 includes...",
+    "tutor_try": "A chicken!",
+    "image": "tutor_chicken",
+    "answer": "lion",
+    "win_line": "You caught me! A chicken is a farm animal.",
+    "gentle_line": "Lion, leopard, elephant, rhino, buffalo!"
+  },
+  "parent_line": "Can name the Big 5 and tell wild from farm animals."
+}

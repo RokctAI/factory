@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term1.w02_feelings",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 1,
+  "weeks": [5],
+  "theme": "My feelings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Feelings",
+    "subtopic": "Things that make me happy and sad; recognising feelings such as anger, fear, worry and loneliness"
+  },
+  "skill": "emotions.recognise",
+  "prereq_skills": [],
+  "images": ["feelings_faces", "angry_face", "happy_face", "sad_face", "scared_face", "sleepy_face", "lonely_face", "worried_face", "crying_child"],
+  "show": {
+    "line": "We all have feelings. Happy, sad, angry, scared, worried and lonely.",
+    "image": "feelings_faces"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the angry face.", "options": ["angry_face", "happy_face", "sad_face"], "answer": "angry_face", "praise": "Angry!"},
+    {"type": "listen_tap", "prompt": "Tap the scared face.", "options": ["scared_face", "happy_face", "sleepy_face"], "answer": "scared_face", "praise": "Scared!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Nobody plays with Thabo at break. He sits alone. How does he feel?", "options": ["lonely_face", "happy_face", "angry_face"], "answer": "lonely_face", "praise": "Lonely."},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Anele gets a new puppy for her birthday! How does she feel?", "options": ["happy_face", "sad_face", "scared_face"], "answer": "happy_face", "praise": "Happy!"},
+    {"type": "say_it", "prompt": "What makes you happy?", "accept": ["playing", "my family", "friends", "my dog", "ice cream", "soccer", "my mom", "games", "reading", "birthdays", "food"]},
+    {"type": "listen_tap", "prompt": "A test is tomorrow and Sam can't sleep. He feels?", "options": ["worried_face", "happy_face"], "answer": "worried_face", "praise": "Worried."}
+  ],
+  "hints": ["Look at the eyes and mouth.", "Think how you would feel."],
+  "beat_the_tutor": {
+    "setup": "My turn! This child is crying.",
+    "tutor_try": "She is very happy!",
+    "image": "crying_child",
+    "answer": "sad",
+    "win_line": "You caught me! Crying means sad.",
+    "gentle_line": "Tears usually mean sad!"
+  },
+  "parent_line": "Can recognise feelings such as anger, fear, worry and loneliness."
+}

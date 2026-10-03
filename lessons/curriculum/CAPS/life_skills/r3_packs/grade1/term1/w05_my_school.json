@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w05_my_school",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "My school",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: At school",
+    "subtopic": "Knowledge of own school: where to find different places in the school (toilet, office, play areas)"
+  },
+  "skill": "school.places",
+  "prereq_skills": [],
+  "images": ["school_map", "playground", "office", "toilet", "kitchen", "basin", "desk", "sandpit", "chalkboard", "books", "swing", "jungle_gym", "tutor_office"],
+  "show": {
+    "line": "My school has classrooms, toilets, an office and a playground!",
+    "image": "school_map"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where do we play at break?", "options": ["playground", "office", "toilet"], "answer": "playground", "praise": "The playground!"},
+    {"type": "listen_tap", "prompt": "Where does the principal work?", "options": ["office", "playground", "kitchen"], "answer": "office", "praise": "The office!"},
+    {"type": "listen_tap", "prompt": "Where do we wash our hands after the toilet?", "options": ["basin", "desk", "sandpit"], "answer": "basin", "praise": "The basin!"},
+    {"type": "match_sort", "prompt": "Classroom or playground? Sort them.", "groups": ["classroom", "playground"], "items": [{"image": "desk", "group": "classroom"}, {"image": "chalkboard", "group": "classroom"}, {"image": "books", "group": "classroom"}, {"image": "swing", "group": "playground"}, {"image": "jungle_gym", "group": "playground"}]},
+    {"type": "say_it", "prompt": "What do we call the head of the school?", "accept": ["principal", "the principal", "headmaster", "head teacher"]},
+    {"type": "say_it", "prompt": "You feel sick at school. Who do you tell?", "accept": ["teacher", "my teacher", "the teacher", "principal", "the office"]}
+  ],
+  "hints": ["Each place in school has a job.", "The principal leads the whole school."],
+  "beat_the_tutor": {
+    "setup": "My turn! I need the toilet.",
+    "tutor_try": "I go to the principal's office!",
+    "image": "tutor_office",
+    "answer": "toilet",
+    "win_line": "You caught me! I need the toilets.",
+    "gentle_line": "The toilets are where we go!"
+  },
+  "parent_line": "Knows places in the school and the role of teacher and principal."
+}

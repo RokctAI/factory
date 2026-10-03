@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w04_which_sense",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Using my senses",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "My senses",
+    "subtopic": "Lists items experienced with each sense and items experienced with more than one sense"
+  },
+  "skill": "body.senses.match",
+  "prereq_skills": ["body.senses.five"],
+  "images": ["popcorn_bowl", "ears", "tongue", "nose", "eyes", "drum", "bird_singing", "bell", "flower", "bread_baking", "tree_bark", "radio", "rainbow", "fingers", "tutor_rainbow"],
+  "show": {
+    "line": "Popcorn! I see it, hear it pop, smell it, taste it and touch it!",
+    "image": "popcorn_bowl"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A drum goes boom! Which sense?", "options": ["ears", "tongue", "nose"], "answer": "ears", "praise": "Ears! We hear the drum."},
+    {"type": "listen_tap", "prompt": "Lemon tastes sour. Which sense?", "options": ["tongue", "eyes", "ears"], "answer": "tongue", "praise": "Tongue! Sour lemon!"},
+    {"type": "match_sort", "prompt": "Do we hear it or smell it? Sort them.", "groups": ["hear", "smell"], "items": [{"image": "drum", "group": "hear"}, {"image": "bird_singing", "group": "hear"}, {"image": "bell", "group": "hear"}, {"image": "flower", "group": "smell"}, {"image": "bread_baking", "group": "smell"}]},
+    {"type": "listen_tap", "prompt": "Which one do we feel with our fingers? It is rough.", "options": ["tree_bark", "radio", "rainbow"], "answer": "tree_bark", "praise": "Tree bark feels rough!"},
+    {"type": "say_it", "prompt": "An orange! Can you name a sense we use for it?", "accept": ["see", "smell", "taste", "touch", "eyes", "nose", "tongue", "all", "all of them"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho smells smoke in the kitchen. Something is burning! Which sense warned Sipho?", "options": ["nose", "ears", "fingers"], "answer": "nose", "praise": "His nose! Our senses keep us safe."}
+  ],
+  "hints": ["Some things use more than one sense.", "Ask: do I look, listen, sniff, taste or touch?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will listen to the rainbow.",
+    "tutor_try": "I hear the rainbow with my ears!",
+    "image": "tutor_rainbow",
+    "answer": "eyes",
+    "win_line": "You caught me! We see a rainbow with our eyes.",
+    "gentle_line": "A rainbow is for looking. We use our eyes!"
+  },
+  "parent_line": "Can match things in the world to the sense used to notice them."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term4.w06_moon_and_stars",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "The sky at night",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: The sky at night",
+    "subtopic": "Planet Earth and beyond: changing from day to night; the moon and what it looks like"
+  },
+  "skill": "sky.moon",
+  "prereq_skills": ["sky.day_night"],
+  "images": ["moon_shapes", "full_moon", "half_moon", "crescent_moon", "sun", "night_sky", "day_sky", "star", "moon", "cloud", "tutor_moon"],
+  "show": {
+    "line": "At night the moon shines. Sometimes it is round, sometimes a thin smile!",
+    "image": "moon_shapes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the full moon.", "options": ["full_moon", "half_moon", "crescent_moon"], "answer": "full_moon", "praise": "Big and round!"},
+    {"type": "listen_tap", "prompt": "Tap the thin moon.", "options": ["crescent_moon", "full_moon", "sun"], "answer": "crescent_moon", "praise": "A thin crescent moon!"},
+    {"type": "listen_tap", "prompt": "When do we usually see the moon?", "options": ["night_sky", "day_sky"], "answer": "night_sky", "praise": "At night!"},
+    {"type": "say_it", "prompt": "A star burns like our...?", "accept": ["sun", "the sun"]},
+    {"type": "listen_tap", "prompt": "Which one is a star?", "options": ["star", "moon", "cloud"], "answer": "star", "praise": "A twinkling star!"},
+    {"type": "what_next", "prompt": "Day, evening, and then?", "sequence": ["day", "evening"], "options": ["night", "lunch", "day"], "answer": "night", "praise": "Night!"}
+  ],
+  "hints": ["The moon changes shape.", "Stars are far-away suns."],
+  "beat_the_tutor": {
+    "setup": "My turn! The moon is always round.",
+    "tutor_try": "It never changes!",
+    "image": "tutor_moon",
+    "answer": "changes",
+    "win_line": "You caught me! The moon looks different on different nights.",
+    "gentle_line": "Round, half, thin. The moon changes!"
+  },
+  "parent_line": "Knows the moon changes shape and stars burn like the sun."
+}

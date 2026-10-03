@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w03_what_i_wear",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [3, 4],
+  "theme": "What I wear",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "This is what I wear",
+    "subtopic": "Names items of clothing and describes their function, who wears them and why"
+  },
+  "skill": "clothes.name",
+  "prereq_skills": [],
+  "images": ["clothes_line", "shoes", "hat", "shirt", "socks", "skirt", "raincoat", "swimsuit", "sunglasses", "gumboots", "gloves", "mittens", "firefighter", "baker", "doctor", "tutor_socks_hands"],
+  "show": {
+    "line": "We wear clothes! A shirt, a dress, pants, socks, shoes and a hat.",
+    "image": "clothes_line"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What do we wear on our feet?", "options": ["shoes", "hat", "shirt"], "answer": "shoes", "praise": "Shoes go on our feet!"},
+    {"type": "listen_tap", "prompt": "What do we wear on our head?", "options": ["hat", "socks", "skirt"], "answer": "hat", "praise": "A hat on our head!"},
+    {"type": "listen_tap", "prompt": "What do we wear when it rains?", "options": ["raincoat", "swimsuit", "sunglasses"], "answer": "raincoat", "praise": "A raincoat keeps us dry."},
+    {"type": "match_sort", "prompt": "Feet or hands? Sort them.", "groups": ["feet", "hands"], "items": [{"image": "shoes", "group": "feet"}, {"image": "socks", "group": "feet"}, {"image": "gumboots", "group": "feet"}, {"image": "gloves", "group": "hands"}, {"image": "mittens", "group": "hands"}]},
+    {"type": "say_it", "prompt": "What are you wearing today? Name one thing.", "accept": ["shirt", "t shirt", "dress", "pants", "shorts", "skirt", "socks", "shoes", "jersey", "jacket", "hat", "uniform", "tracksuit"]},
+    {"type": "listen_tap", "prompt": "Who wears this helmet?", "options": ["firefighter", "baker", "doctor"], "answer": "firefighter", "praise": "A firefighter! It keeps her head safe."}
+  ],
+  "hints": ["Think where on your body it goes.", "Clothes keep us warm, dry or safe."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will put on my socks.",
+    "tutor_try": "My socks go on my hands!",
+    "image": "tutor_socks_hands",
+    "answer": "feet",
+    "win_line": "You caught me! Socks go on our feet.",
+    "gentle_line": "Socks on our feet. Gloves on our hands!"
+  },
+  "parent_line": "Can name clothing items and say what they are for."
+}

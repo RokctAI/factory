@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w08_ask_for_help",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [10, 11, 12],
+  "theme": "Asking for help",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: People who help us",
+    "subtopic": "How I ask for help in an emergency; interpersonal relationships and values"
+  },
+  "skill": "safety.ask_help",
+  "prereq_skills": ["safety.emergency"],
+  "images": ["child_phone", "get_adult", "run_home", "hide", "security_guard", "stranger_car", "thumbs_up", "thumbs_down", "calm", "screaming", "tutor_playing"],
+  "show": {
+    "line": "In an emergency, stay calm, find a grown-up, or phone for help.",
+    "image": "child_phone"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "Police emergency number is one zero one one one. Say it.", "accept": ["10111", "one zero one one one", "1 0 1 1 1"]},
+    {"type": "listen_tap", "prompt": "Your friend is badly hurt. What first?", "options": ["get_adult", "run_home", "hide"], "answer": "get_adult", "praise": "Get a grown-up!"},
+    {"type": "listen_tap", "prompt": "You are lost at the mall. Who do you ask?", "options": ["security_guard", "stranger_car"], "answer": "security_guard", "praise": "A security guard or shop worker!"},
+    {"type": "say_it", "prompt": "On the phone, tell them your name and your...?", "accept": ["address", "where i am", "location", "address and name"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Smoke comes from next door. Ama tells her mom, who phones the fire brigade. Did Ama help?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! She told a grown-up fast."},
+    {"type": "listen_tap", "prompt": "How should you speak on an emergency call?", "options": ["calm", "screaming"], "answer": "calm", "praise": "Calm and clear!"}
+  ],
+  "hints": ["Stay calm. Tell a grown-up.", "Know your address."],
+  "beat_the_tutor": {
+    "setup": "My turn! Someone fell and is hurt.",
+    "tutor_try": "I'll keep playing!",
+    "image": "tutor_playing",
+    "answer": "help",
+    "win_line": "You caught me! Get help fast.",
+    "gentle_line": "Run and get a grown-up!"
+  },
+  "parent_line": "Knows how to ask for help in an emergency."
+}

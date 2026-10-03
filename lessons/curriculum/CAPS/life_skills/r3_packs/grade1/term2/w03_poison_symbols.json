@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w03_poison_symbols",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [7],
+  "theme": "Poison warning signs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Safety in the home",
+    "subtopic": "Poisonous substances: types and recognising warning symbols"
+  },
+  "skill": "safety.poison_symbols",
+  "prereq_skills": ["safety.home"],
+  "images": ["warning_symbols", "skull_symbol", "heart_symbol", "star_symbol", "flame_symbol", "smiley_symbol", "tree_symbol", "rat_poison", "bleach", "paraffin", "bread", "banana", "drink_poison", "nothing", "high_cupboard", "low_shelf", "toy_box", "tutor_skull_bottle"],
+  "show": {
+    "line": "Poison can make us very sick. Look for warning symbols. Do not touch!",
+    "image": "warning_symbols"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which symbol means poison?", "options": ["skull_symbol", "heart_symbol", "star_symbol"], "answer": "skull_symbol", "praise": "The skull means poison!"},
+    {"type": "listen_tap", "prompt": "Which symbol means it can catch fire?", "options": ["flame_symbol", "smiley_symbol", "tree_symbol"], "answer": "flame_symbol", "praise": "A flame means it burns!"},
+    {"type": "match_sort", "prompt": "Poison or safe to eat?", "groups": ["poison", "safe"], "items": [{"image": "rat_poison", "group": "poison"}, {"image": "bleach", "group": "poison"}, {"image": "paraffin", "group": "poison"}, {"image": "bread", "group": "safe"}, {"image": "banana", "group": "safe"}]},
+    {"type": "say_it", "prompt": "Your friend wants to drink from a bottle with a skull. What do you say?", "accept": ["no", "stop", "don't", "no it is poison", "poison", "don't drink it"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Paraffin is kept in a cold drink bottle. Little Tumi thinks it is cool drink. What is the danger?", "options": ["drink_poison", "nothing"], "answer": "drink_poison", "praise": "He could drink poison! Keep it in a marked bottle."},
+    {"type": "listen_tap", "prompt": "Where should poison be kept?", "options": ["high_cupboard", "low_shelf", "toy_box"], "answer": "high_cupboard", "praise": "Up high, locked away!"}
+  ],
+  "hints": ["Skull means poison. Flame means fire.", "Never taste something you do not know."],
+  "beat_the_tutor": {
+    "setup": "My turn! I see a skull on a bottle.",
+    "tutor_try": "Yum, a pirate drink!",
+    "image": "tutor_skull_bottle",
+    "answer": "poison",
+    "win_line": "You caught me! A skull means poison.",
+    "gentle_line": "The skull means poison. Don't touch!"
+  },
+  "parent_line": "Recognises poison and fire warning symbols."
+}

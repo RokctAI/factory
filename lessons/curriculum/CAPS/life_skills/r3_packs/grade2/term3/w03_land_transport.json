@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w03_land_transport",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [7],
+  "theme": "Transport on land",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Transport by land/rail",
+    "subtopic": "Types and uses of land transport; different road types"
+  },
+  "skill": "transport.land",
+  "prereq_skills": [],
+  "images": ["land_transport", "train", "bus", "car", "bicycle", "motorbike", "taxi", "truck", "boat", "aeroplane", "freight_train", "passenger_train", "steam", "wind", "horses", "tutor_boat_road"],
+  "show": {
+    "line": "Cars, taxis, buses, bicycles and trains move people on land!",
+    "image": "land_transport"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which moves on rails?", "options": ["train", "bus", "car"], "answer": "train", "praise": "A train!"},
+    {"type": "listen_tap", "prompt": "Which carries lots of people on the road?", "options": ["bus", "bicycle", "motorbike"], "answer": "bus", "praise": "A bus!"},
+    {"type": "match_sort", "prompt": "Land or not land?", "groups": ["land", "not_land"], "items": [{"image": "taxi", "group": "land"}, {"image": "bicycle", "group": "land"}, {"image": "truck", "group": "land"}, {"image": "boat", "group": "not_land"}, {"image": "aeroplane", "group": "not_land"}]},
+    {"type": "say_it", "prompt": "How do you get to school?", "accept": ["walk", "taxi", "bus", "car", "bicycle", "bike", "train", "i walk", "by taxi", "by bus", "by car"]},
+    {"type": "listen_tap", "prompt": "A train that carries goods is a...?", "options": ["freight_train", "passenger_train"], "answer": "freight_train", "praise": "A freight train!"},
+    {"type": "listen_tap", "prompt": "Old trains were pushed by...?", "options": ["steam", "wind", "horses"], "answer": "steam", "praise": "Steam! Choo choo."}
+  ],
+  "hints": ["Land transport has wheels.", "Trains run on rails."],
+  "beat_the_tutor": {
+    "setup": "My turn! A boat travels on...",
+    "tutor_try": "The road!",
+    "image": "tutor_boat_road",
+    "answer": "water",
+    "win_line": "You caught me! Boats go on water.",
+    "gentle_line": "Boats on water, cars on roads!"
+  },
+  "parent_line": "Can name land transport and kinds of trains."
+}

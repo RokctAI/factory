@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w09_insects_spiders",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Insects and spiders",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Gardens and bugs",
+    "subtopic": "Classifies insects (six legs) and spiders (eight legs); an insect's body has head, thorax and abdomen"
+  },
+  "skill": "animals.insect_spider",
+  "prereq_skills": [],
+  "images": ["ant_and_spider", "ant_legs", "spider_legs", "ant", "bee", "ladybird", "butterfly", "garden_spider", "spider", "worm", "beetle", "snail", "tutor_counts_spider"],
+  "show": {
+    "line": "An insect has six legs. A spider has eight legs. Let's count!",
+    "image": "ant_and_spider"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the legs on the ant.", "image": "ant_legs", "count": "6", "options": ["5", "6", "8"], "answer": "6", "praise": "Six legs! An ant is an insect."},
+    {"type": "count_tap", "prompt": "Count the legs on the spider.", "image": "spider_legs", "count": "8", "options": ["6", "7", "8"], "answer": "8", "praise": "Eight legs! A spider is not an insect."},
+    {"type": "match_sort", "prompt": "Insect or spider? Sort them.", "groups": ["insect", "spider"], "items": [{"image": "ant", "group": "insect"}, {"image": "bee", "group": "insect"}, {"image": "ladybird", "group": "insect"}, {"image": "butterfly", "group": "insect"}, {"image": "garden_spider", "group": "spider"}]},
+    {"type": "listen_tap", "prompt": "Which one is an insect?", "options": ["bee", "spider", "worm"], "answer": "bee", "praise": "A bee! Six legs."},
+    {"type": "say_it", "prompt": "How many legs does an insect have?", "accept": ["six", "6", "six legs"]},
+    {"type": "listen_tap", "prompt": "An insect body has three parts. Tap the insect.", "options": ["beetle", "snail", "worm"], "answer": "beetle", "praise": "A beetle! Head, middle and tail end."}
+  ],
+  "hints": ["Count the legs one by one.", "Six legs: insect. Eight legs: spider."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the spider's legs.",
+    "tutor_try": "A spider has six legs!",
+    "image": "tutor_counts_spider",
+    "answer": "eight",
+    "win_line": "You caught me! A spider has eight legs.",
+    "gentle_line": "Let's count. A spider has eight legs!"
+  },
+  "parent_line": "Knows insects have six legs and spiders have eight."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w01_good_friend",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Being a good friend",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Friends",
+    "subtopic": "How to treat a friend, how to be a good friend and what to expect from a friend"
+  },
+  "skill": "social.friends.good",
+  "prereq_skills": [],
+  "images": ["friends_sharing", "child_sharing", "child_grabbing", "child_pushing", "help_up", "laugh", "run_away", "take_turns", "share_crayons", "say_sorry", "hit", "tease", "grab", "cry", "tutor_on_swing"],
+  "show": {
+    "line": "A good friend shares, takes turns and is kind. Let's be good friends!",
+    "image": "friends_sharing"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which child is a good friend?", "options": ["child_sharing", "child_grabbing", "child_pushing"], "answer": "child_sharing", "praise": "Sharing is kind!"},
+    {"type": "listen_tap", "prompt": "Your friend falls down. What do you do?", "options": ["help_up", "laugh", "run_away"], "answer": "help_up", "praise": "Help them up! That is a good friend."},
+    {"type": "match_sort", "prompt": "Good friend, or not? Sort them.", "groups": ["good_friend", "not_good"], "items": [{"image": "take_turns", "group": "good_friend"}, {"image": "share_crayons", "group": "good_friend"}, {"image": "say_sorry", "group": "good_friend"}, {"image": "hit", "group": "not_good"}, {"image": "tease", "group": "not_good"}]},
+    {"type": "say_it", "prompt": "Your friend gives you a sweet. What do you say?", "accept": ["thank you", "thanks", "thank you friend", "dankie", "ngiyabonga"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Aisha and Mpho both want the red bucket. Mpho says, you go first, then me. What did Mpho do?", "options": ["take_turns", "grab", "cry"], "answer": "take_turns", "praise": "Take turns! That is fair."},
+    {"type": "say_it", "prompt": "Say it to a friend. Let's play together!", "accept": ["let's play together", "lets play together", "let us play together", "play together"]}
+  ],
+  "hints": ["Think how your friend feels.", "Good friends share and take turns."],
+  "beat_the_tutor": {
+    "setup": "My turn! My friend wants a turn on the swing.",
+    "tutor_try": "I say no! It is always my turn!",
+    "image": "tutor_on_swing",
+    "answer": "take turns",
+    "win_line": "You caught me! Good friends take turns.",
+    "gentle_line": "Let's take turns. Me, then you!"
+  },
+  "parent_line": "Can say how to be a good friend: share, take turns and help."
+}
