@@ -1,0 +1,1 @@
+Today we learn the recipe that advertisers have used for over a hundred years to design adverts that work: AIDA, which stands for attention, interest, desire and action. We pull apart real-world style adverts to see each step, and then design a poster for an Entrepreneur's Day stall that grabs attention, builds interest, creates desire and tells people exactly what to do next.

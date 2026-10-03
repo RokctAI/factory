@@ -1,0 +1,18 @@
+### subtopic_1 — Formal Businesses
+**Assistant:** Why would a small business choose to become formal if it costs money?
+
+**Tutor:** Because the benefits often outweigh the costs once the business starts to grow. A registered business can open a business bank account and accept card payments more easily, which customers increasingly expect. It can apply for loans, grants and support from organisations such as Sefa and the NYDA, which usually require registration. It can bid for contracts from government departments, municipalities and large companies, which only buy from registered, tax-compliant suppliers; these contracts can be large and steady. It can protect its business name. Customers and suppliers often trust a registered business more. The owner is better protected too: a registered company is a separate legal person, so in many cases the owner's personal assets are protected if the business fails. Its workers gain protection through UIF and labour laws, which helps attract good staff. The costs are real, and that is why government has tried to simplify registration, for example by allowing online registration with the CIPC at low cost. For a very small, new business, staying informal at first may make sense, but formalising becomes important as the business grows.
+
+***
+
+### subtopic_2 — Informal Businesses
+**Assistant:** Is it wrong to run an informal business?
+
+**Tutor:** Not in itself. Running a small informal business, such as selling fruit or doing hair at home, is a legitimate way to earn an honest living, and for millions of South Africans it is the main source of income. Being informal mainly means not being registered with official bodies, often because the business is very small, new or the owner cannot afford the time and costs of formality. However, some rules apply to everyone. Selling illegal goods, such as stolen or counterfeit products, or breaking health and safety rules, for example selling unsafe food, is wrong and illegal whether a business is formal or informal. Trading in some places requires a municipal permit, and once a business earns above certain income levels, the owner is legally required to register for tax. Many informal traders would like to formalise but find the process confusing or costly. That is why government and support agencies try to make registration simpler and offer help. A balanced answer recognises that the informal sector provides vital income and services, while noting that informal businesses face real disadvantages and that obeying basic laws protects both owners and customers.
+
+***
+
+### subtopic_3 — Business Ideas From Needs and Wants
+**Assistant:** How do I know if my business idea is any good?
+
+**Tutor:** By testing it with real customers before risking much money. A good idea has a few signs. First, it solves a real problem or meets a real need or want that enough people have. Ask yourself who your customers are and how many there are. Second, people are willing to pay a price that covers your costs and leaves a profit. Ask potential customers directly what they would pay, and work out your costs, as you did with cost per unit. Third, you can offer something better than what is already available, whether that is a lower price, more convenience, better quality or something unique. Look at competitors: if five learners are already selling sweets at break, a sixth sweets stall will struggle, but fresh popcorn might stand out. Fourth, you have, or can get, the skills, time and resources to do it. Then start small: make a small batch, sell it, listen to feedback, and improve. If people come back for more and tell their friends, that is the best sign of all. The SWOT analysis in the next lesson is a structured way to think about all of this.
