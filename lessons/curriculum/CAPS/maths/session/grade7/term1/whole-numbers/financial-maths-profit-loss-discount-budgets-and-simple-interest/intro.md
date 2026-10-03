@@ -1,0 +1,1 @@
+Today we use whole numbers to manage money: profit and loss, discount, budgets and accounts, and the simple interest charged on a loan. One small business runs through the session — Thabo's spaza shop — and by the end you will work out his profit on a sale, the price after a discount, whether his monthly budget balances, and what a R5 000 loan really costs him.

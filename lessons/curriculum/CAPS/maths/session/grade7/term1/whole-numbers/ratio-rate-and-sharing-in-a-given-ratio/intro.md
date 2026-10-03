@@ -1,0 +1,1 @@
+Today we learn to compare quantities with ratios and rates, and to share an amount fairly in a given ratio. One story runs through the session: two friends, Lerato and Sipho, run a car wash and earn R360 on a Saturday. By the end you will simplify their ratio, share their money fairly, and compare rates like rand per car and kilometres per hour.

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Estimate 38 × 247 and then calculate it exactly using the column method. Explain how the estimate supports your answer.",
+      "expected_answer": "Estimate: 40 × 250 = 10 000. Exact: 247 × 8 = 1 976 and 247 × 30 = 7 410, total 9 386. The exact answer is a little under the estimate, which makes sense because both numbers were rounded up."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate 9 386 ÷ 13 by long division and check your answer with an inverse operation.",
+      "expected_answer": "93 ÷ 13 = 7 remainder 2; 28 ÷ 13 = 2 remainder 2; 26 ÷ 13 = 2. Answer 722. Check: 722 × 13 = 7 220 + 2 166 = 9 386."
+    },
+    {
+      "id": "cc3",
+      "question": "What is compensating? Use it to calculate 247 + 198, and explain the role of a calculator in Grade 7.",
+      "expected_answer": "Compensating means changing a number to make the calculation easy, then adjusting the answer: 247 + 200 = 447, then subtract 2 to get 445. A calculator is used only to check answers already worked out, not to replace the method."
+    }
+  ]
+}
