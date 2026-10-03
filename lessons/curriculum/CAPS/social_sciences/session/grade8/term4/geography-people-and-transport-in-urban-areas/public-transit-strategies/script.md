@@ -82,6 +82,8 @@ The Gautrain is a fast train between Johannesburg, Pretoria and O. R. Tambo airp
 
 Many other cities around the world use fast buses like these. Most South African cities chose buses because new railways cost much more.
 
+Feeder buses bring people from nearby areas to the main stations.
+
 These systems take road space from cars and cost a lot to run.
 
 ## Subtopic: Cheaper Fares
