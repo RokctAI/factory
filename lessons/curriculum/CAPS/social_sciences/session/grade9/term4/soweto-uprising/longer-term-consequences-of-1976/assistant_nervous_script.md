@@ -1,0 +1,5 @@
+Hey, this topic fits in three pictures: a bag packed at night, a cell in Pretoria and a door that opened a crack.
+The bag. Thousands of young people went into exile through Botswana, Swaziland and Lesotho. Most joined the ANC under Oliver Tambo, and many trained in Umkhonto we Sizwe. MK attacked Sasol in 1980 and Koeberg in 1982, and the Church Street bomb of 1983 killed civilians. SOMAFCO opened in Tanzania in 1978, named after Solomon Mahlangu, who was hanged in 1979.
+The cell. Detention without trial grew, with deaths in custody. Steve Biko was arrested on 18 August 1977, assaulted in Port Elizabeth, driven to Pretoria and died on 12 September. Kruger said it left him cold. On Black Wednesday, 19 October 1977, nineteen organisations and The World were banned.
+The door. UN Resolution 418 imposed an arms embargo in November 1977. P.W. Botha said adapt or die. Black unions were recognised in 1979. Then came AZAPO, COSAS and the civics. 16 June is Youth Day.
+Open the practice set when you are ready. You've got this!
