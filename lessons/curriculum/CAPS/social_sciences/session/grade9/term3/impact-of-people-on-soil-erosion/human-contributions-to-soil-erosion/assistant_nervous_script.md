@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a blanket on the ground, a tap left running and a bulldozer at work.
+The blanket. Soil is weathered rock mixed with humus. Topsoil is the most fertile layer and takes hundreds of years to form, so it is non-renewable on a human timescale. Plants protect it: leaves break raindrops, roots bind soil, cover slows water and wind. Natural erosion is slow and balanced by soil formation; accelerated erosion is caused by people.
+The tap. Water erosion: splash, then sheet erosion, then rills, then gullies, called dongas. Wind erosion removes fine, fertile soil in dry areas. Slope, rainfall, soil type and plant cover control the amount.
+The bulldozer. Agriculture: clearing, ploughing, overgrazing. Construction: bare sites, then impermeable surfaces increase runoff. Mining: open-cast pits, bare dumps and wind-blown dust. Effects: lower yields, siltation of rivers and dams, dust and damaged roads. Overcrowding in the former homelands, caused by land laws, made erosion worse.
+Open the practice set when you are ready. You've got this!
