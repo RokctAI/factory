@@ -1,0 +1,25 @@
+### subtopic_1 — The Kilowatt-hour
+**Assistant:** Why is the meter unit called a kilowatt-hour and not just a kilojoule?
+
+**Tutor:** Because the kilowatt-hour fits the way we use electrical appliances, and it gives convenient numbers. A kilojoule is 1 000 joules, which is still tiny compared with household energy use: a single 2 kW kettle running for an hour uses 7 200 kilojoules, and a household might use 300 to 600 kilowatt-hours a month, which would be over a million kilojoules. Appliances are labelled with their power in watts or kilowatts, and we naturally think about how many hours we use them, so multiplying kilowatts by hours gives the energy directly, with no need to convert to seconds. One kilowatt-hour equals 3 600 000 joules, or 3 600 kilojoules, so you can always convert if you need to compare electrical energy with, for example, the energy in food, which is labelled in kilojoules. The name also reminds us how the unit is made: a power multiplied by a time. Scientists still use the joule as the standard unit of energy, but electricity suppliers all over the world use the kilowatt-hour for billing because it is practical for both the supplier and the customer.
+
+***
+
+### subtopic_2 — Calculating the Cost
+**Assistant:** Why might my calculated cost be different from what the prepaid meter shows?
+
+**Tutor:** Because real life is messier than a simple calculation, for several reasons. First, appliances do not always use their full rated power: a geyser, oven, fridge or heater with a thermostat switches its element on and off to keep a set temperature, so the actual running time is different from the time the appliance is switched on. Second, the actual voltage may be a little above or below 230 volts, which changes the power slightly. Third, many households pay an inclining block tariff, where the first units each month cost less than later units, so the price per unit is not one fixed number across the month. Fourth, the price includes VAT and some suppliers deduct a fixed daily or monthly service charge from the units or the amount paid. Fifth, other appliances are using electricity at the same time, including ones on standby that you may forget. A good experiment is to switch off everything except one appliance, note the meter reading, run the appliance for a measured time, and read the meter again. Many prepaid meters show the current rate of use, which lets you see each appliance's power directly.
+
+***
+
+### subtopic_3 — Meters, Units and Tariffs
+**Assistant:** Why do electricity prices in South Africa keep going up every year?
+
+**Tutor:** Because the costs of producing and delivering electricity have risen, and tariffs are adjusted to cover them. Building new power stations such as Medupi and Kusile cost far more than planned, and that money was borrowed and must be repaid with interest. Older power stations need more maintenance as they age, and fuel costs, such as coal and diesel for the gas turbines used during shortages, have increased. The transmission and distribution networks also need upgrading and repair, and losses from theft and unpaid accounts add to the costs that paying customers carry. Municipalities that buy electricity from Eskom and resell it add their own costs and often use part of the income to fund other services. NERSA, the National Energy Regulator, decides each year how much Eskom may increase its prices after hearing from Eskom, businesses and the public, and must balance keeping electricity affordable against keeping the supply reliable. Rising prices are one reason many households and businesses are now installing solar panels, solar water heaters and efficient appliances, which reduce the number of units they need to buy, and why learning to calculate costs is a practical, money-saving skill.
+
+***
+
+### subtopic_4 — Comparing Costs and the Error Museum
+**Assistant:** Is it cheaper to leave the geyser on all day or switch it on only when needed?
+
+**Tutor:** In most homes it is cheaper to control the geyser with a timer than to leave it on all the time, though the saving depends on how the household uses hot water. A geyser loses heat through its walls to the surroundings all day long, even when no one uses hot water, and the element must switch on regularly just to replace that lost heat. The hotter the water is kept, the faster heat is lost. Switching the geyser off for several hours, for example during the day when the family is out, lets the water cool a little, and less heat is lost from cooler water. When the geyser is switched on again, it must reheat the water, but overall it uses fewer units than keeping the water hot the whole time. Other ways to save are setting the thermostat to about 55 to 60 °C instead of higher, wrapping the geyser and the first few metres of hot-water pipe in an insulating blanket, fixing dripping hot taps, and taking short showers instead of baths. Keeping the geyser off during the evening peak also helps the national grid and reduces the chance of load shedding.

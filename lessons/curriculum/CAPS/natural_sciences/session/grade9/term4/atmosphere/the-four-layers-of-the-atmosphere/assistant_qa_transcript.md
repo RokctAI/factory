@@ -1,0 +1,25 @@
+### subtopic_1 — The Troposphere
+**Assistant:** Why is the troposphere much thicker over the equator than over the poles?
+
+**Tutor:** Because the air over the equator is much warmer, and warm air expands and rises higher. At the equator, the Sun shines almost straight down all year, so the ground and oceans are heated strongly. The warm air near the surface becomes less dense and rises in powerful currents, carrying heat and water vapour high into the sky before it cools enough to stop rising. These rising currents build huge thunderclouds and push the tropopause up to about 16 to 18 kilometres. Over the poles, sunlight arrives at a low angle and the surface is covered with ice, so the air is cold and dense. There is little rising air, and the troposphere reaches only about 8 kilometres. The height also changes with the seasons, being higher in summer than in winter, and with the weather. Over South Africa, which lies between about 22 and 35 degrees south, the tropopause is usually at roughly 12 to 16 kilometres. One surprising result is that the coldest part of the lower atmosphere is not above the poles but high above the equator, because the air there keeps cooling as it rises so much higher, reaching about −80 °C at the tropical tropopause.
+
+***
+
+### subtopic_2 — The Stratosphere and the Ozone Layer
+**Assistant:** If ozone protects us, why is ozone near the ground considered pollution?
+
+**Tutor:** Because the same gas does very different things depending on where it is. High in the stratosphere, ozone absorbs ultraviolet radiation before it reaches us, so it protects life. Near the ground, we breathe ozone in, and it is harmful. Ozone is a very reactive gas that irritates and damages the lining of the lungs, causing coughing, chest pain and worse asthma, and it damages crops and other plants. Ground-level ozone is not released directly. It forms when sunlight acts on a mixture of pollutants, mainly nitrogen oxides from vehicle exhausts, power stations and industry, and gases from fuels, paints and solvents. This is why it is highest on hot, sunny, still days, in and downwind of cities, and is part of the brownish haze called photochemical smog. In South Africa, ground-level ozone often exceeds air quality limits in parts of Gauteng and Mpumalanga, where there are many vehicles, power stations and industries. Ozone near the ground also cannot replace the lost ozone higher up, because it breaks down within days and does not rise into the stratosphere. So scientists describe ozone as good up high and bad nearby.
+
+***
+
+### subtopic_3 — The Mesosphere and Thermosphere
+**Assistant:** If meteors burn up in the mesosphere, do any space rocks ever reach the ground?
+
+**Tutor:** Yes, a few do. Most meteoroids are tiny, from dust specks to grains of sand, and they burn up completely, mostly between about 80 and 100 kilometres up. A larger rock, the size of a fist or bigger, may lose only its outer layers as it is heated and slowed by the air, so part of it survives and falls to the ground. A space rock that reaches the surface is called a meteorite. Thousands of small meteorites land on Earth every year, but most fall into the sea or in unpopulated areas. South Africa has some famous ones. The Vredefort crater in the Free State is the largest known impact structure on Earth, formed about 2 billion years ago when an asteroid roughly 10 to 15 kilometres wide struck, and it is now a World Heritage Site. Namibia, our neighbour, is home to the Hoba meteorite, the largest single meteorite ever found, a block of iron and nickel of about 60 tonnes. Large impacts like Vredefort are extremely rare, happening only once in many millions of years. Scientists track large asteroids whose orbits come near the Earth, so that any danger can be spotted early.
+
+***
+
+### subtopic_4 — The Temperature Profile and the Error Museum
+**Assistant:** Where exactly does the atmosphere end and outer space begin?
+
+**Tutor:** There is no sharp boundary, because the atmosphere simply becomes thinner and thinner. By about 100 kilometres up, the air is about a million times thinner than at sea level, and by 400 kilometres, where the International Space Station orbits, it is thinner still, but not completely empty. Those few particles still drag on the space station and slowly pull it lower, so it must fire its engines from time to time to boost itself back up. Because there is no real edge, people have agreed on convenient boundaries. The most widely used is the Kármán line, at 100 kilometres above sea level. It is named after the engineer Theodore von Kármán, who worked out that at about this height an aircraft would need to fly as fast as an orbiting satellite to get enough lift from the thin air, so wings stop being useful and spacecraft take over. Some organisations, such as the United States Air Force, use 80 kilometres instead. Above the thermosphere is the exosphere, where hydrogen and helium atoms are so far apart that they can escape into space. It fades out gradually thousands of kilometres from the Earth.
