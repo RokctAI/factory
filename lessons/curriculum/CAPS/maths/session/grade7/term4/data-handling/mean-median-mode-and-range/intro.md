@@ -1,0 +1,1 @@
+Today we summarise a data set with single numbers: the mean, the median and the mode, which describe the centre, and the range, which describes the spread. One data set runs through the session — the number of hours seven learners spent on homework in a week — and by the end you will calculate all four and know which average tells the fairest story.

@@ -1,0 +1,1 @@
+Today we turn a messy pile of answers into organised data using tallies, frequency tables, grouping into intervals and stem-and-leaf displays. Two data sets run through the session — how 40 learners travel to school, and fifteen test marks out of 50 — and by the end you will organise both so that patterns jump out.

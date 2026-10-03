@@ -1,0 +1,1 @@
+Today we draw three kinds of graph: bar graphs, histograms and pie charts, and learn which one suits which data. The transport survey of 40 learners and the fifteen test marks run through the session, and by the end you will draw each graph correctly — including working out the angles of a pie chart.

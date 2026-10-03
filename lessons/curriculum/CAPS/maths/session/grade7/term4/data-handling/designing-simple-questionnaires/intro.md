@@ -1,0 +1,1 @@
+Today we design simple questionnaires that collect clean, useful data. One survey runs through the session — a questionnaire about learners' favourite after-school activities — and by the end you will write clear questions with yes or no answers or multiple-choice options, and avoid questions that push people towards an answer.
