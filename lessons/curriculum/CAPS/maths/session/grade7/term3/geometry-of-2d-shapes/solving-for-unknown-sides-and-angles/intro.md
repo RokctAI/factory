@@ -1,0 +1,1 @@
+Today we solve simple geometric problems, finding unknown sides and angles in triangles and quadrilaterals by using their known properties. One stained-glass window runs through the session, made of an isosceles triangle with a 40° top angle, a rectangle and a kite. By the end you will find every missing angle and side, giving a reason for each step.

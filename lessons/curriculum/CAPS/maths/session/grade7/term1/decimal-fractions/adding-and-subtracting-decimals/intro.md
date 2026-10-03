@@ -1,0 +1,1 @@
+Today we add and subtract decimal fractions with up to three decimal places. One shopping trip runs through the session: a learner buys bread for R16,99, milk for R24,5 and a bag of apples weighing 1,875 kg. By the end you will total the bill, work out the change from R50, and add and subtract masses with three decimal places.

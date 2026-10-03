@@ -1,0 +1,1 @@
+Today we read graphs critically: extracting values, comparing categories, and spotting graphs that mislead. One school example runs through the session — a bar graph of books borrowed from the library each month — and by the end you will read bar graphs, histograms and pie charts accurately and notice when a graph's design is distorting the story.

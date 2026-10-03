@@ -1,0 +1,1 @@
+Today we divide decimal fractions with up to three decimal places by whole numbers. One relay race runs through the session: a team of four runs a total of 1,85 km, and a 7,875 m rope is cut into equal pieces. By the end you will divide decimals by long division, keep the comma in its column, and add zeros when the division does not finish.

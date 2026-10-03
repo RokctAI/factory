@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A tank is 2,5 m × 1,2 m × 1,5 m. How many litres does it hold and how long does a 20 l/min pipe take to fill it?",
+      "expected_answer": "4,5 m³ = 4 500 l; 4 500 ÷ 20 = 225 min = 3 h 45 min."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the area to paint if the four sides and top of the tank are painted, and the paint needed for two coats at 10 m² per litre.",
+      "expected_answer": "2(2,5 × 1,5) + 2(1,2 × 1,5) + 2,5 × 1,2 = 7,5 + 3,6 + 3 = 14,1 m². Two coats: 28,2 ÷ 10 = 2,82 l, so buy 3 l."
+    },
+    {
+      "id": "cc3",
+      "question": "How many 10 × 6 × 20 cm cartons fit in a 60 × 30 × 40 cm crate? Why count along each edge?",
+      "expected_answer": "6 × 5 × 2 = 60. Counting along edges only counts whole cartons that fit; dividing volumes can overcount when there are gaps."
+    }
+  ]
+}

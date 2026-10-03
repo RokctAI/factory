@@ -1,0 +1,1 @@
+Today we see one relationship described in five ways — in words, in a flow diagram, in a table, by a formula and by number sentences — and we learn to check that two descriptions really are the same. One phone plan runs through the session: R50 a month plus R2 for every minute. By the end you will move between all five descriptions and spot one that does not match.

@@ -1,0 +1,1 @@
+Today we measure angles with a protractor and classify them as acute, right, obtuse, straight or reflex. One clock face runs through the session: the hands at 2 o'clock make 60°, at 3 o'clock 90°, at 5 o'clock 150°, and at 6 o'clock 180°. By the end you will measure any angle accurately, choose the correct scale, and measure reflex angles too.

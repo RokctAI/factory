@@ -1,0 +1,1 @@
+Today we use flow diagrams, tables and formulae to find input values, output values and rules. One taxi fare runs through the session: R12 to get in, plus R8 for every kilometre. By the end you will put numbers through the fare machine, run it backwards to find a distance from a fare, and discover the rule of a machine from its inputs and outputs.

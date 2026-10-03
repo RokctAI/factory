@@ -1,0 +1,1 @@
+Today we describe, sort, name and compare quadrilaterals by their sides, their parallel and perpendicular sides, and their angles. One kite-making workshop runs through the session, where learners cut paper into squares, rectangles, parallelograms, rhombi, trapeziums and kites. By the end you will know the properties of each and why a square belongs to several families at once.

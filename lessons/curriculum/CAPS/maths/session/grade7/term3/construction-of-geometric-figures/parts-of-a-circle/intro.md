@@ -1,0 +1,1 @@
+Today we describe and name the parts of a circle. One bicycle wheel runs through the session — its hub, spokes, rim and the chain ring — and by the end you will name the centre, radius, diameter, circumference, chord, arc, sector and segment, and construct a circle of a given radius with a compass.

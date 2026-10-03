@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Classify triangles with sides 2; 2; 2 m, 2,5; 2,5; 3 m and 1,2; 1,6; 2 m by their sides.",
+      "expected_answer": "Equilateral (all sides equal), isosceles (two sides equal), scalene (no sides equal)."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to classify a triangle by its angles, and why it can have at most one right or obtuse angle.",
+      "expected_answer": "Find the largest angle: less than 90° acute-angled, 90° right-angled, more than 90° obtuse-angled. The angles add to 180°, so two angles of 90° or more would leave nothing for the third."
+    },
+    {
+      "id": "cc3",
+      "question": "Give the full classification of a triangle with angles 90°, 45°, 45° and explain why a right-angled equilateral triangle is impossible.",
+      "expected_answer": "Right-angled isosceles. An equilateral triangle has three equal angles summing to 180°, so each is 60° and none can be 90°."
+    }
+  ]
+}

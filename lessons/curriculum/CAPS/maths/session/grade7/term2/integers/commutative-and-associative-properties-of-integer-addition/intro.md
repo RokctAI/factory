@@ -1,0 +1,1 @@
+Today we discover that the commutative and associative properties of addition still work when the numbers are integers, and we use them to calculate long integer sums quickly. One lift ride runs through the session: a lift starts on floor 4, goes down 7, up 9, down 6 and up 3. By the end you will find its final floor in two ways and explain why rearranging is allowed.

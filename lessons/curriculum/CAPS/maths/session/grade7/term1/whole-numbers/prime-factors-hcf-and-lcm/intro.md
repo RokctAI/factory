@@ -1,0 +1,1 @@
+Today we break whole numbers into their prime factors and use them to find the highest common factor and the lowest common multiple. One pair of numbers runs through the session — 84 and 120 — and by the end you will list their prime factors, find the HCF and LCM both by inspection and by factorisation, and know which one a word problem wants.

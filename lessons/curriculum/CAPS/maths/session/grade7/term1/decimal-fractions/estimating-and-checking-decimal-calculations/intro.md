@@ -1,0 +1,1 @@
+Today we learn to estimate decimal calculations before we do them, and to check our answers afterwards. One fuel stop runs through the session: a taxi buys 42,6 litres of petrol at R23,85 a litre. By the end you will estimate the cost, predict the number of decimal places, calculate it, and check it with rounding, an inverse operation and a calculator.

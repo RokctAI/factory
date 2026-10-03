@@ -1,0 +1,1 @@
+Today we identify and draw lines of symmetry in geometric figures. One set of road signs and flags runs through the session — a yield sign, a stop sign, a sheet of paper and a butterfly — and by the end you will find every line of symmetry in a figure, including the surprising ones a parallelogram does not have.

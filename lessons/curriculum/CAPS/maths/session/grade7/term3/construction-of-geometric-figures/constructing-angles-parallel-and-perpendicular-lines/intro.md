@@ -1,0 +1,1 @@
+Today we construct accurate angles to the nearest degree, and parallel and perpendicular lines, using a compass, ruler and protractor. One school garden plan runs through the session: a path at 65° to the fence, a bench perpendicular to the path, and a second fence parallel to the first. By the end you will construct each one accurately and check it.

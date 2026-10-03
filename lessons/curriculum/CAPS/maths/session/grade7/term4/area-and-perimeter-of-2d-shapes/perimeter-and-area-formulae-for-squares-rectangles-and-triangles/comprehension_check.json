@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate the area and perimeter of a classroom 8 m by 6 m, and explain why area uses square units.",
+      "expected_answer": "A = 8 × 6 = 48 m²; P = 2 × 8 + 2 × 6 = 28 m. Area counts unit squares (1 m by 1 m) covering the surface, so its unit is m²."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the area of a triangle with base 40 cm and perpendicular height 30 cm, and explain why the formula has a half.",
+      "expected_answer": "A = ½ × 40 × 30 = 600 cm². The triangle fills exactly half of the rectangle with the same base and height."
+    },
+    {
+      "id": "cc3",
+      "question": "A rectangle measures 2 m by 50 cm. Find its area, and explain the error in calculating 2 × 50 = 100.",
+      "expected_answer": "Convert to one unit: 2 m × 0,5 m = 1 m² (or 200 cm × 50 cm = 10 000 cm²). 2 × 50 mixes metres and centimetres, so 100 has no meaningful unit."
+    }
+  ]
+}

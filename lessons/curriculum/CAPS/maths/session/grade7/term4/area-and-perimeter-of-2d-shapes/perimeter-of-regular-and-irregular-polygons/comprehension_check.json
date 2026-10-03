@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Find the perimeter of a field with sides 85 m, 62 m, 70 m, 48 m and 55,5 m, and explain your method.",
+      "expected_answer": "Add all sides in order: 85 + 62 + 70 + 48 + 55,5 = 320,5 m. Perimeter is the total length of the boundary."
+    },
+    {
+      "id": "cc2",
+      "question": "A regular hexagon has sides of 12 cm, and a square has a perimeter of 34 cm. Find the hexagon's perimeter and the square's side.",
+      "expected_answer": "Hexagon P = 6 × 12 = 72 cm. Square side = 34 ÷ 4 = 8,5 cm."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why posts every 5 m around a closed 320 m loop need 64 posts, but a straight 20 m fence needs 5 posts.",
+      "expected_answer": "On a closed loop the last gap ends at the first post, so posts = gaps = 320 ÷ 5 = 64. On a straight fence there is an extra post at the far end: 20 ÷ 5 = 4 gaps, 5 posts."
+    }
+  ]
+}

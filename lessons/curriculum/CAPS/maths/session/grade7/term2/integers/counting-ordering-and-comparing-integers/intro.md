@@ -1,0 +1,1 @@
+Today we meet integers — whole numbers that can be positive, negative or zero. One winter morning runs through the session: Sutherland at −6 °C, Johannesburg at 3 °C and Durban at 14 °C. By the end you will place them on a number line, count forwards and backwards across zero in any step, and compare and order integers with the correct symbols.

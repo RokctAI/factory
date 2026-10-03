@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Order 3,457 m, 3,5 m and 3,45 m from longest to shortest and explain your method.",
+      "expected_answer": "Write all with three decimal places: 3,457; 3,500; 3,450. Compare from the left: tenths 4, 5, 4, so 3,5 is longest; then thousandths 7 vs 0. Order: 3,5 m, 3,457 m, 3,45 m."
+    },
+    {
+      "id": "cc2",
+      "question": "Give the value of each digit in 3,457 and explain why 3,10 does not come after 3,9.",
+      "expected_answer": "3 units, 4 tenths, 5 hundredths, 7 thousandths. 3,10 equals 3,1, which is less than 3,9; ten tenths make a whole, so after 3,9 comes 4,0."
+    },
+    {
+      "id": "cc3",
+      "question": "Round 3,457 to two and to one decimal place, and 2,996 to two decimal places.",
+      "expected_answer": "3,457 ≈ 3,46 (next digit 7) and ≈ 3,5 (next digit 5). 2,996 ≈ 3,00 because rounding the 9 hundredths up carries into the units."
+    }
+  ]
+}

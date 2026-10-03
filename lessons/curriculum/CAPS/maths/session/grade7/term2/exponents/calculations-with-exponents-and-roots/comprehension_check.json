@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate 3 + 2³ × √25 and explain why 55 is wrong.",
+      "expected_answer": "Powers and roots first: 2³ = 8 and √25 = 5; then 8 × 5 = 40; then 3 + 40 = 43. 55 comes from working left to right, which ignores the order of operations."
+    },
+    {
+      "id": "cc2",
+      "question": "Calculate (5² − 3⁴ ÷ 9) × ∛8, showing each step.",
+      "expected_answer": "(25 − 81 ÷ 9) × 2 = (25 − 9) × 2 = 16 × 2 = 32."
+    },
+    {
+      "id": "cc3",
+      "question": "Show that √(4 × 25) = √4 × √25 but √(16 + 9) ≠ √16 + √9.",
+      "expected_answer": "√100 = 10 and 2 × 5 = 10, so they are equal. √25 = 5 but 4 + 3 = 7, so roots do not split over addition."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Today we look at patterns that do not go up by the same amount each time and do not multiply by the same number each time. One growing staircase runs through the session: 1, 3, 6, 10, 15 blocks. By the end you will spot patterns with growing differences, square numbers, alternating rules and Fibonacci-style patterns, and extend them confidently.

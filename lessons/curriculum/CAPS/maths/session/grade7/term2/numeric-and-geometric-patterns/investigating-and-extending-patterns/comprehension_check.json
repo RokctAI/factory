@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why the matchstick squares pattern goes 4, 7, 10, 13 and give the next three terms.",
+      "expected_answer": "The first square needs 4 matches; each new square shares a side, so it adds 3. Next terms: 16, 19, 22."
+    },
+    {
+      "id": "cc2",
+      "question": "How many matches are needed for 10 squares, and how many squares can be made with 40 matches?",
+      "expected_answer": "4 + 9 × 3 = 31 matches. (40 − 4) ÷ 3 = 12 more squares, so 13 squares."
+    },
+    {
+      "id": "cc3",
+      "question": "Create a pattern that starts at 3 and doubles. Write five terms and describe the rule.",
+      "expected_answer": "3, 6, 12, 24, 48. Start at 3 and multiply each term by 2 to get the next."
+    }
+  ]
+}

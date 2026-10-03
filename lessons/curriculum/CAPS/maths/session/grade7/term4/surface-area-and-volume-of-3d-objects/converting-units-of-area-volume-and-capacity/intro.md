@@ -1,0 +1,1 @@
+Today we convert between units of area, volume and capacity, and use the links 1 cm³ = 1 ml and 1 m³ = 1 kl. One cube runs through the session — a one-metre cube built from one-centimetre cubes — and by the end you will know why it takes a million of them, and convert confidently between mm³, cm³, m³, ml, l and kl.

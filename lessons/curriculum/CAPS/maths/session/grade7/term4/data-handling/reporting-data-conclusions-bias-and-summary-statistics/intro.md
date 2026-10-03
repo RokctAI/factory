@@ -1,0 +1,1 @@
+Today we complete the data cycle by reporting: summarising data in words, drawing conclusions that the data actually supports, and spotting sources of bias and error. The transport survey and the pocket money data from earlier lessons run through the session, and by the end you will write a short, honest data report.

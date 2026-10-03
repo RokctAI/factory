@@ -1,0 +1,1 @@
+Today we recognise, describe and perform three transformations on squared paper: translations, reflections and rotations. One shape runs through the session — a flag-shaped figure on a grid — and by the end you will slide it, flip it over a mirror line and turn it about a point, and describe each movement precisely.

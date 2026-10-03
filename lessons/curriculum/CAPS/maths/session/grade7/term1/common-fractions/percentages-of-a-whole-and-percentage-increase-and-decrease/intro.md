@@ -1,0 +1,1 @@
+Today we work with percentages: finding a percentage of a whole, writing one quantity as a percentage of another, and increasing or decreasing a whole number by a percentage. One school runs through the session — 640 learners, of whom 240 walk to school. By the end you will find what percentage walk, calculate 15% of the school, and work out a 25% increase and a 25% decrease.

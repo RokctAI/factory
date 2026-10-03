@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write 84 and 120 as products of prime factors, and use them to find the HCF and LCM.",
+      "expected_answer": "84 = 2 × 2 × 3 × 7 and 120 = 2 × 2 × 2 × 3 × 5. HCF uses the shared primes: 2 × 2 × 3 = 12. LCM uses every prime the greater number of times: 2 × 2 × 2 × 3 × 5 × 7 = 840."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the HCF of 18 and 24 and the LCM of 6 and 8 by inspection, showing your lists.",
+      "expected_answer": "Factors of 18: 1, 2, 3, 6, 9, 18; factors of 24: 1, 2, 3, 4, 6, 8, 12, 24; HCF = 6. Multiples of 6: 6, 12, 18, 24; multiples of 8: 8, 16, 24; LCM = 24."
+    },
+    {
+      "id": "cc3",
+      "question": "How do you decide whether a word problem needs the HCF or the LCM? Give an example of each.",
+      "expected_answer": "If the answer must divide into both quantities it is the HCF, e.g. the most identical bags from 84 sweets and 120 stickers is 12. If both quantities must divide into the answer it is the LCM, e.g. buses every 84 and 120 minutes meet again after 840 minutes."
+    }
+  ]
+}

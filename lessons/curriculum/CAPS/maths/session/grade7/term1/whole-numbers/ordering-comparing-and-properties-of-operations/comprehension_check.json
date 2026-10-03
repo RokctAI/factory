@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to order 1 384 000, 1 241 000 and 1 108 000 from smallest to largest, and why counting digits comes first.",
+      "expected_answer": "All three have seven digits, so compare from the left: millions are equal, hundred thousands are 1, 2 and 3. So 1 108 000 < 1 241 000 < 1 384 000. Counting digits comes first because a number with more digits is always larger, whatever its individual digits."
+    },
+    {
+      "id": "cc2",
+      "question": "Name the commutative, associative and distributive properties and give an example of each.",
+      "expected_answer": "Commutative: order does not matter for + and ×, e.g. 6 × 7 = 7 × 6. Associative: grouping does not matter for + and ×, e.g. (25 + 75) + 37 = 25 + (75 + 37) = 137. Distributive: 7 × 103 = 7 × 100 + 7 × 3 = 721."
+    },
+    {
+      "id": "cc3",
+      "question": "Calculate 18 + 6 × 4 and explain the order you used. Why is 57 ÷ 0 undefined?",
+      "expected_answer": "Multiplication comes before addition, so 6 × 4 = 24 and 18 + 24 = 42. 57 ÷ 0 is undefined because no number multiplied by 0 gives 57; anything times 0 is 0."
+    }
+  ]
+}
