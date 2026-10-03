@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a bucket with a hole, a muddy footprint and many hands.
+The bucket. Everyone uses water, food, energy and goods and makes waste. Wealthier people use far more. Small leaks add up: water lost through leaks, about a third of food lost or wasted, landfills filling up. Choices are shaped by prices, services and what is available.
+The footprint. Burning fossil fuels releases carbon dioxide, strengthening the greenhouse effect; the earth has warmed by more than one degree Celsius. A carbon footprint is the total greenhouse gas from a person's activities, in tonnes of carbon dioxide equivalent: direct and indirect emissions. South Africans average roughly six to eight tonnes, above the world's four to five, because of coal.
+The hands. Refuse, reduce, reuse, repair, recycle. Save electricity and water, waste less food, eat less red meat, walk, cycle or use public transport, avoid single-use plastic. Cape Town halved its water use in 2018. But governments and businesses must act too: plastic bag levy 2003, carbon tax 2019, Paris Agreement 2015.
+Open the practice set when you are ready. You've got this!
