@@ -1,0 +1,18 @@
+### subtopic_3 — Hangklip and the 1808 Rebellion
+**Assistant:** Why did an Irish sailor join a slave rebellion?
+
+**Tutor:** The sources from the trial give us some clues, though we must read them carefully, because they were produced by the authorities. James Hooper and Abraham Kieviet were poor white men on the edges of colonial society, and both seem to have been influenced by the revolutionary ideas of the time: that all people had natural rights to liberty. Hooper, as a sailor, would have heard about the French and Haitian revolutions and about debates over abolition in Britain. Some historians suggest that personal frustrations and ambitions also played a part. Louis of Mauritius, who had come from a French colony, may also have been inspired by revolutionary ideas from the French world. The rebels' plan included asking the governor to free the enslaved people, and the evidence suggests they hoped for a largely peaceful uprising, which is why no one was killed. The involvement of people from different backgrounds shows that ideas of freedom crossed the lines of race and status that colonial society tried to keep fixed. At the trial, however, the authorities punished the enslaved rebels most harshly.
+
+***
+
+### subtopic_4 — Effects of Resistance
+**Assistant:** Did the Protector of Slaves really protect anyone?
+
+**Tutor:** To some extent, but with clear limits. From 1826, enslaved people at the Cape could bring complaints about cruelty, overwork or inadequate food to the Protector of Slaves, and owners had to keep a punishment record book. Thousands of complaints were made, which shows how much enslaved people wanted to use any available means to defend themselves. Some cases succeeded, with owners fined or enslaved people moved to other owners. The records of these complaints are an important source for historians, because they preserve the voices of enslaved people describing their lives. But the Protector was an official appointed by a government that still accepted slavery, many complaints were dismissed, and enslaved people who complained could face revenge from their owners. Many slave owners strongly resented the reforms, seeing them as interference with their property, and some joined protests. So the Protector of Slaves was a small step towards limiting the power of owners, not a solution to the injustice of slavery itself. That required abolition, which came in 1834, and full freedom in 1838.
+
+***
+
+### subtopic_2 — Everyday Resistance
+**Assistant:** Where did runaways think they could escape to?
+
+**Tutor:** Runaways had different hopes and destinations, depending on where they came from and what they knew. Some tried to hide in Cape Town itself, among the crowds of free blacks and enslaved people, or tried to get aboard foreign ships in the harbour. Others went to the mountains around the Cape, such as Table Mountain, the Hottentots Holland range and Hangklip, which offered caves and hiding places. Some went into the interior, beyond the colonial frontier, joining Khoikhoi, San, or later Xhosa or Griqua communities, where colonial patrols rarely reached. A striking belief among some enslaved people from Mozambique and Madagascar was that they could walk home overland, north-east along the coast. Of course, the distances were enormous and they had no maps, and most were recaptured or died. Their attempts show how strongly they longed for home and freedom. Historians know about these journeys from court records, in which recaptured runaways described their plans. These records reveal courage, knowledge of the landscape, and networks of help between enslaved people, Khoikhoi and others.

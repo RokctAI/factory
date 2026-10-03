@@ -1,0 +1,18 @@
+### subtopic_2 — Why Infants Die and How to Prevent It
+**Assistant:** How can sugar, salt and water save a baby's life?
+
+**Tutor:** Because the real danger of diarrhoea is not the infection itself but dehydration, the loss of water and salts from the body. A baby's body is small, so losing water through repeated diarrhoea can become life-threatening within hours. For a long time, the only treatment was a drip into a vein in a hospital, which most poor families could not reach in time. In the 1960s and 1970s, scientists working in Bangladesh and India discovered that the gut can still absorb water if it is given together with the right amounts of sugar and salt, because sugar helps the gut absorb salt, and water follows the salt into the body. This oral rehydration solution can be prepared at home and given by spoon or cup. It has been described as one of the most important medical advances of the twentieth century and is estimated to have saved tens of millions of lives. South African clinics teach caregivers the correct recipe, usually eight level teaspoons of sugar and half a level teaspoon of salt in one litre of clean, boiled and cooled water, because the proportions matter.
+
+***
+
+### subtopic_3 — Life Expectancy
+**Assistant:** If people in the past had a life expectancy of thirty, were there no old people?
+
+**Tutor:** There were old people, but there were also very many children who died young, and that is what pulled the average down. Imagine a village where half of all children died before the age of five, which was common in many parts of the world before modern medicine, clean water and vaccines. Even if the adults who survived childhood lived to sixty or seventy, the average age at death across everyone born would be around thirty or thirty-five. Records from many societies show grandparents, elders, chiefs and scholars living into their sixties and seventies. Ahmad Baba of Timbuktu, whom we met in Term 1, lived to about seventy. What has changed most in the last century is that most children now survive to adulthood, which is the main reason life expectancy has risen so much. Adults are living longer too, especially thanks to better treatment of infections and heart disease, but the biggest change has been in childhood. That is why demographers always look at infant and child mortality alongside life expectancy.
+
+***
+
+### subtopic_4 — Using the Indicators
+**Assistant:** Why are there such big differences in health within South Africa?
+
+**Tutor:** Mainly because of inequality in income and in access to services, much of which comes from the country's history. Under colonialism and apartheid, black South Africans were forced into overcrowded reserves and townships, often far from good land, jobs and services, and government spending on health, water and sanitation was heavily biased towards white areas. Since 1994, a great deal has changed: millions of homes have been connected to water and electricity, clinics have been built, primary health care is free at public clinics, and social grants support millions of families. But large inequalities remain. Poorer rural areas, especially in the former homelands, still often have fewer doctors, longer distances to clinics, less reliable water and higher unemployment. Wealthier people can use private medical aid and hospitals, while most people depend on the public system, which is often under pressure. As a result, a baby born in a poor rural district still faces greater risks than one born in a wealthy suburb. Measuring these differences with population indicators helps show where resources are most needed.

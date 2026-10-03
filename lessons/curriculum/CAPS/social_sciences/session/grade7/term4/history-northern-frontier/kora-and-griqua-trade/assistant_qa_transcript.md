@@ -1,0 +1,18 @@
+### subtopic_2 — Who Were the Griqua?
+**Assistant:** Why did the Griqua leave the Cape Colony?
+
+**Tutor:** The main reason was that colonial society did not treat them as equals. Although many Griqua ancestors were the children of colonists, were Christian and spoke Dutch, they were regarded as not white and therefore not fully part of settler society. They found it very difficult to obtain land: the VOC and later British authorities rarely granted loan farms or title deeds to people of mixed descent, and those who did farm could be pushed off by white farmers. They were also at risk of being treated like Khoikhoi servants and forced into labour, especially after laws like the Caledon Code of 1809. Moving north beyond the colonial boundary offered independence: the chance to own livestock, hunt, trade and govern themselves. Along the Orange River, there was grazing, water and game, and no colonial officials. Over time, others who also sought freedom joined them, including Khoikhoi, Kora, San, and runaway slaves, so the Griqua community was open and grew. Their story shows how colonial racial divisions pushed people to the frontier, where they built new communities and identities.
+
+***
+
+### subtopic_3 — Trade with the Cape
+**Assistant:** Why was tobacco so valuable in frontier trade?
+
+**Tutor:** Tobacco was valuable for several reasons. It was in very high demand among many communities in the interior, where people smoked it in pipes and used it as snuff, and it had social and ceremonial uses, being shared at gatherings and offered as a sign of hospitality and respect. Tobacco was grown in the Cape Colony and could also be imported, so colonial traders had a ready supply, while it was scarce in the interior. It was light, easy to carry in rolls or twists on pack oxen and wagons, and it did not spoil easily, which made it ideal for long journeys. It could also be divided into small amounts, so it worked well as a kind of currency, a medium of exchange: traders could pay for a small item with a little tobacco and for a larger item with more. Travellers and missionaries often carried tobacco to pay guides, buy food and give gifts to chiefs. Some missionaries later discouraged smoking and alcohol, but tobacco remained an important trade item throughout the nineteenth century on the northern frontier.
+
+***
+
+### subtopic_4 — Effects of the Northern Frontier Trade
+**Assistant:** What happened to the people defeated at Dithakong?
+
+**Tutor:** The people who approached Dithakong in 1823 were themselves refugees and survivors of violent conflicts further east, in the region of today's Free State and Lesotho, during a time of great upheaval in the 1820s. Historians debate the causes and scale of this upheaval, once called the Mfecane or Difaqane, but it involved droughts, competition for land and cattle, and raiding by various groups, including slave and cattle raiding from the Cape side. Hungry and in search of land and food, large groups of these people moved west towards the Tswana towns. At Dithakong, the Griqua horsemen's guns caused very heavy casualties among them, and the attackers, who had no firearms, were defeated. Afterwards, many survivors, especially women and children, were captured and taken south, some by Griqua and others by colonial farmers, where they were made to work as labourers, sometimes under conditions close to slavery. Some historians argue that the Dithakong battle was as much a raid for captives as a defence of the Tswana. This shows that events on the frontier were complex, and that the same battle can be interpreted differently depending on the sources and perspectives used.

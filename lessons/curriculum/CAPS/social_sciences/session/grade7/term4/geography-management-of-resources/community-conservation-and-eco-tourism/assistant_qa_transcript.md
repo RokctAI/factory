@@ -1,0 +1,18 @@
+### subtopic_1 — What Is Community Conservation?
+**Assistant:** What happens when wild animals damage community crops?
+
+**Tutor:** This is called human-wildlife conflict, and it is one of the biggest challenges for communities living near conservation areas. Elephants can destroy a whole field of maize in one night, baboons and bushpigs raid gardens, and lions, leopards and hyenas sometimes kill livestock. For a poor family, losing a harvest or a cow can be a disaster, and it can turn people against conservation. Solutions include strong, well-maintained fences around parks; early-warning systems; deterrents such as chilli fences, which use the smell of chilli peppers to repel elephants, and beehive fences, because elephants avoid bees; predator-proof enclosures, called bomas, for livestock at night; guard dogs; and compensation schemes that pay farmers for losses. Some projects in southern Africa employ community members as wildlife monitors who warn others when elephants approach. Most importantly, when communities receive real benefits from wildlife, such as jobs, income and services, they are more willing to accept some costs. Managing human-wildlife conflict fairly is therefore central to successful community conservation.
+
+***
+
+### subtopic_3 — What Is Eco-Tourism?
+**Assistant:** Is eco-tourism only for wealthy foreign tourists?
+
+**Tutor:** It does not have to be, although many eco-lodges are expensive and depend on international visitors. South Africans can enjoy eco-tourism too, often cheaply. SANParks runs an annual SA National Parks Week, usually in September, when South African citizens can enter most national parks free of charge for day visits, to encourage everyone to experience their natural heritage. Many provincial reserves, hiking trails, botanical gardens and community campsites are affordable. Schools can take part in environmental education programmes at places such as the Kruger, Kirstenbosch and many nature reserves. Domestic tourism, by South Africans travelling within their own country, also proved important when international travel stopped during the COVID-19 lockdowns. Encouraging local visitors helps make conservation areas feel like they belong to all South Africans, which was not the case under apartheid, when many parks and beaches were reserved for white people. Building a culture where all young South Africans visit and value their parks is seen as essential for the future of conservation.
+
+***
+
+### subtopic_4 — Eco-Tourism Examples
+**Assistant:** Why did the Amadiba community oppose mining on the Wild Coast?
+
+**Tutor:** In the Xolobeni area of the Pondoland Wild Coast, an Australian mining company wanted to mine titanium-rich sands in the coastal dunes. Some people supported the mine because it promised jobs and development in a poor area. But many members of the Amadiba community opposed it, saying that mining would destroy their ancestral land, graves, grazing and farming land, the coastal environment, which is part of a centre of plant endemism, and the community eco-tourism that was beginning to provide income. The dispute became bitter and, tragically, violent; an anti-mining activist, Sikhosiphi Bazooka Radebe, was murdered in 2016. In 2018, the Pretoria High Court ruled that the community had the right to give or withhold consent before mining could take place on their land, a landmark judgment for customary land rights. The story raises important geographical questions: who should decide how land and resources are used, how to balance short-term jobs from mining with long-term livelihoods from farming and tourism, and how to protect both people and nature. Different people within the community held different views, which is common in such debates.

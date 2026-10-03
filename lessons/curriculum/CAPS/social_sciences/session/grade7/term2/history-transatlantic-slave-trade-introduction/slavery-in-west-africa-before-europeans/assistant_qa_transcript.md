@@ -1,0 +1,18 @@
+### subtopic_1 — What the Transatlantic Slave Trade Was
+**Assistant:** How do historians know the numbers if records were lost?
+
+**Tutor:** By gathering every surviving record they can find and then estimating carefully for the gaps. Over several decades, historians from many countries searched archives in Europe, Africa and the Americas for records of slave-trading voyages: ships' logbooks, customs records, insurance documents, tax records and merchants' letters. They combined them into the Slave Voyages database, which now contains information on about thirty-six thousand voyages, perhaps about eighty percent of all transatlantic slaving voyages. For each voyage, records often give the ship's name, captain, where it bought captives, how many people were embarked and how many arrived. To estimate the voyages for which no records survive, historians use patterns from the known voyages. That is why the figures are given as estimates, such as about twelve and a half million embarked, and why they may be revised as new records are found. The numbers are important, but historians also remind us that each figure represents an individual person with a name, a family and a home, most of whose names were never written down.
+
+***
+
+### subtopic_3 — The Nature of Slavery in West Africa
+**Assistant:** Isn't it unfair to compare slavery in Africa with slavery in America?
+
+**Tutor:** Comparing is not the same as saying one was acceptable. Historians compare in order to understand. Slavery in any form took away people's freedom, separated families and involved violence, and none of it was fair or acceptable by today's values. But the forms of slavery really did differ, and recognising the differences helps explain what happened. In much of West Africa, enslaved people were outsiders who could, over time, be absorbed into a community, and slavery was not based on race. In the Americas, chattel slavery made people permanent property, made their children property, and tied slavery to being African, supported by racist laws and ideas that outlived slavery itself and still affect societies today. Some people have used the existence of African slavery to argue that the Atlantic trade was not so bad, or that Africans were to blame. That is a misuse of history. The Atlantic trade was driven by demand from plantations in the Americas and organised by European and American merchants, and it was far larger and more destructive than what came before.
+
+***
+
+### subtopic_4 — How the Atlantic Trade Changed Things
+**Assistant:** Did any Africans try to stop the trade?
+
+**Tutor:** Yes, many, from rulers to ordinary villagers, though their efforts are less often told. In 1526 King Afonso the First of Kongo wrote to King João the Third of Portugal complaining that Portuguese traders and their agents were kidnapping his people, including nobles and relatives of his own family, and asked for the trade to be controlled. Some rulers tried to limit or ban the sale of their own subjects; for example, rulers in parts of Senegambia and, at times, the kingdom of Benin restricted the export of captives. Communities defended themselves against raiders by building walls and fortified villages, moving to hills and swamps that were hard to reach, and organising watchmen. Captives resisted at every stage: escaping from caravans and forts, refusing food, and rebelling on board ships, which happened on perhaps one in ten voyages. Queen Nzinga of Ndongo and Matamba, in present-day Angola, fought the Portuguese for decades in the seventeenth century, though her story is complex. Resistance was constant, and it continued in the Americas, as later lessons show.

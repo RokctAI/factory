@@ -1,0 +1,1 @@
+From 1658 until 1808, about sixty-three thousand enslaved people were brought to the Cape from Africa and Asia. For most of the eighteenth century, there were more slaves than free colonists in the Cape Colony. In this lesson we learn why the VOC and the colonists turned to slavery, where enslaved people came from, and how they were captured, bought and transported to the Cape.

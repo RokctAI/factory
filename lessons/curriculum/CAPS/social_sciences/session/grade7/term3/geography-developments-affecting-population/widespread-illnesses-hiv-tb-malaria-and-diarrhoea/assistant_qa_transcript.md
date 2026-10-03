@@ -1,0 +1,18 @@
+### subtopic_1 — HIV and AIDS
+**Assistant:** Why did it take so long for South Africa to roll out ARVs?
+
+**Tutor:** This is a painful part of recent history, and it is worth understanding carefully. In the late 1990s antiretroviral medicines were very expensive, costing thousands of dollars per person per year, because of patents held by drug companies. In South Africa there was also a period, around 1999 to 2003, when some government leaders questioned whether HIV caused AIDS and doubted the safety of ARVs, which delayed a national treatment programme. Activists, especially the Treatment Action Campaign, led by people living with HIV, organised marches, court cases and public education. In 2002 the Constitutional Court ordered the government to provide medicine to prevent mother-to-child transmission. Meanwhile, generic medicines became much cheaper. In 2003 the government announced a national treatment plan, and from 2004 the ARV programme grew to become the largest in the world. Researchers later estimated that the delay cost many thousands of lives. The lesson for citizens is that science, accurate information and active, organised communities can change health policy and save lives.
+
+***
+
+### subtopic_3 — Malaria
+**Assistant:** Why doesn't malaria happen in Cape Town?
+
+**Tutor:** Because the Anopheles mosquitoes that carry malaria, and the parasite itself, need warm conditions, and Cape Town's climate is not suitable. The parasite develops inside the mosquito only when temperatures stay high enough, generally above about eighteen degrees Celsius, and it develops fastest at much warmer temperatures. Anopheles mosquitoes also breed in standing water during warm, wet seasons. The north-east of South Africa, low-lying parts of Limpopo, Mpumalanga and north-eastern KwaZulu-Natal, has hot, wet summers, which suits both. Cape Town has a Mediterranean climate with cool, wet winters, when it is too cold, and dry summers, when there is less standing water. Higher areas, such as Johannesburg on the Highveld, are also too cool at night for malaria to spread. Climate scientists are watching closely, because warmer temperatures in future could let malaria spread into higher or more southern areas. Of course, a traveller can pick up malaria in a malaria area and become ill after returning home, which is why doctors ask about recent travel when someone has a fever.
+
+***
+
+### subtopic_4 — Diarrhoea and the Overall Effect
+**Assistant:** Why do these illnesses hit poor communities hardest?
+
+**Tutor:** Because poverty increases both the risk of getting ill and the risk of dying once ill. Crowded housing with poor ventilation helps TB spread. Lack of clean piped water and toilets spreads diarrhoea. Homes without screens or nets, near standing water, expose people to malaria. Poor nutrition weakens the immune system, making every infection more dangerous. When people do get sick, a clinic may be far away and transport expensive, so treatment starts late; people may not be able to take time off work; and medicine may run out. Lack of information can also delay treatment or allow stigma to grow. Illness then deepens poverty: a sick parent cannot work, savings go on transport and funerals, and children may leave school to care for relatives. Geographers and health workers call this a cycle of poverty and disease. Breaking it requires action on several fronts at once: clean water and sanitation, better housing, nutrition, accessible clinics, health education and economic opportunities. It is a strong example of how health, wealth and geography are connected.

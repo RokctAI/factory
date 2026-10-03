@@ -1,0 +1,18 @@
+### subtopic_3 — Warnings, Education and Drills
+**Assistant:** Will scientists ever be able to predict earthquakes?
+
+**Tutor:** Perhaps one day, but despite more than a century of research, reliable short-term prediction is still not possible, and most seismologists are cautious about claims that it is. Scientists have tried many possible warning signs: patterns of small earthquakes, changes in groundwater levels, gases such as radon escaping from the ground, tiny movements of the land measured by satellites, even unusual animal behaviour. Some earthquakes have been preceded by such signs, but many have not, and the same signs often appear without any earthquake following. A famous success, the evacuation of the Chinese city of Haicheng before a large earthquake in 1975, was followed a year later by the Tangshan earthquake, which no one predicted and which killed hundreds of thousands of people. What scientists can do well is long-term forecasting: saying that a particular fault has a high chance of a large earthquake within the next thirty years. That is very useful for building codes and planning, and early warning systems add precious seconds once an earthquake has started.
+
+***
+
+### subtopic_2 — Building and Planning for Earthquakes
+**Assistant:** How can poor countries afford earthquake-resistant buildings?
+
+**Tutor:** It is a real challenge, but there are affordable solutions, and they are far cheaper than the cost of a disaster. Expensive technology such as base isolators is used mainly for important buildings like hospitals. For ordinary homes, engineers have developed low-cost methods using local materials and skills. Houses can be built with timber or bamboo frames, which flex rather than shatter. Brick or block walls can be strengthened with reinforced concrete bands around the top of the walls and at window level, steel bars at the corners, and lighter roofs securely tied to the walls. In Nepal, Peru and Indonesia, training programmes have taught local builders these methods. The main obstacles are often not technology but money, enforcement and knowledge: builders cutting corners to save costs, building codes that exist on paper but are not checked, and families building their own homes without advice. International aid after disasters increasingly funds training and building back better, because experience shows that every rand spent on preparation saves several rands, and many lives, later.
+
+***
+
+### subtopic_4 — Responding and Recovering
+**Assistant:** What does a sniffer dog actually do in a rescue?
+
+**Tutor:** It finds living people buried under rubble by smell, often faster than any machine. Search and rescue dogs are trained for years to detect the scent of human beings, which rises through gaps in collapsed concrete, brick and debris. When a dog smells a living person, it signals to its handler, usually by barking and scratching at the spot. Rescuers then use other tools to confirm and locate the person: sensitive listening devices that pick up tapping or breathing, and small cameras on long flexible poles pushed through gaps. Only then do they begin the slow, careful work of removing debris without causing further collapse, which can take many hours for a single person. Dogs are especially valuable because they can cover large areas of unstable rubble quickly and lightly. Rescue teams, including South African teams such as Rescue South Africa, travel with trained dogs. Some people have been rescued alive after more than a week under rubble, but most survivors are found within the first few days, which is why speed matters so much.
