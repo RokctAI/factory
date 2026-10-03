@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w06_caring_family",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Looking after my family",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "My family",
+    "subtopic": "What it means to be part of a family and how to look after the family"
+  },
+  "skill": "family.care",
+  "prereq_skills": ["family.members"],
+  "images": ["child_helping_family", "child_sweeping", "child_shouting", "child_hiding", "sing_to_baby", "shout_at_baby", "walk_away", "hug_gogo", "share_food", "pack_toys", "grab_toy", "kick_door", "happy_face", "angry_face", "scared_face", "tutor_messy_toys"],
+  "show": {
+    "line": "In a family we help and love each other. I can help too!",
+    "image": "child_helping_family"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which child is helping at home?", "options": ["child_sweeping", "child_shouting", "child_hiding"], "answer": "child_sweeping", "praise": "Yes! Sweeping helps the family."},
+    {"type": "listen_tap", "prompt": "Baby is crying. What can you do?", "options": ["sing_to_baby", "shout_at_baby", "walk_away"], "answer": "sing_to_baby", "praise": "Kind! A song helps baby feel better."},
+    {"type": "say_it", "prompt": "How can you help your family? Tell me one way.", "accept": ["sweep", "wash dishes", "pack away", "tidy", "help cook", "make my bed", "feed the dog", "pack my toys", "help mama", "set the table"]},
+    {"type": "match_sort", "prompt": "Kind or not kind? Sort them.", "groups": ["kind", "not_kind"], "items": [{"image": "hug_gogo", "group": "kind"}, {"image": "share_food", "group": "kind"}, {"image": "pack_toys", "group": "kind"}, {"image": "grab_toy", "group": "not_kind"}, {"image": "kick_door", "group": "not_kind"}]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Thabo's mama is tired after work. Thabo brings her a cup of water. How does mama feel?", "options": ["happy_face", "angry_face", "scared_face"], "answer": "happy_face", "praise": "Happy! Thabo looked after mama."},
+    {"type": "say_it", "prompt": "When someone helps you, what do you say?", "accept": ["thank you", "thanks", "thank you mama", "ngiyabonga", "dankie", "enkosi", "ke a leboha"]}
+  ],
+  "hints": ["Helping and being kind looks after the family.", "Think how the other person feels."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will help my family.",
+    "tutor_try": "I leave my toys all over the floor!",
+    "image": "tutor_messy_toys",
+    "answer": "pack away",
+    "win_line": "You caught me! Helping means packing away my toys.",
+    "gentle_line": "Let's pack away together. That helps the family!"
+  },
+  "parent_line": "Can name ways to help and care for family members."
+}

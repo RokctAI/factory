@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w02_class_rules",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [1, 2],
+  "theme": "Our class rules",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Time and weather",
+    "subtopic": "Works collaboratively and co-operatively to a set of classroom rules: listens to instructions, shares resources, ideas and space, waits for turn"
+  },
+  "skill": "social.rules.class",
+  "prereq_skills": ["social.friends.good"],
+  "images": ["class_listening", "hand_up", "shout", "stand_on_chair", "child_listening", "child_talking", "child_running", "share_crayons", "pack_away", "take_turns", "throw_blocks", "run_inside", "thumbs_up", "thumbs_down", "child_walking", "child_jumping_desk", "tutor_shouting"],
+  "show": {
+    "line": "In class we listen, share, take turns and put up our hand!",
+    "image": "class_listening"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "You want to talk in class. What do you do?", "options": ["hand_up", "shout", "stand_on_chair"], "answer": "hand_up", "praise": "Put up your hand!"},
+    {"type": "listen_tap", "prompt": "Teacher is talking. Which child is listening?", "options": ["child_listening", "child_talking", "child_running"], "answer": "child_listening", "praise": "Eyes and ears on teacher!"},
+    {"type": "match_sort", "prompt": "Good class rule, or not? Sort them.", "groups": ["good", "not_good"], "items": [{"image": "share_crayons", "group": "good"}, {"image": "pack_away", "group": "good"}, {"image": "take_turns", "group": "good"}, {"image": "throw_blocks", "group": "not_good"}, {"image": "run_inside", "group": "not_good"}]},
+    {"type": "say_it", "prompt": "After playing with blocks, what do we do?", "accept": ["pack away", "pack them away", "tidy up", "clean up", "put them away"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "There is one paint brush and two children. Ayanda says, you paint first, then me. Is that good?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! Sharing and taking turns."},
+    {"type": "listen_tap", "prompt": "Which child walks inside the classroom?", "options": ["child_walking", "child_running", "child_jumping_desk"], "answer": "child_walking", "praise": "We walk inside!"}
+  ],
+  "hints": ["Rules keep everyone safe and happy.", "Think: is everyone happy and safe?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I want to talk in class.",
+    "tutor_try": "I shout really loudly!",
+    "image": "tutor_shouting",
+    "answer": "hand up",
+    "win_line": "You caught me! I must put up my hand.",
+    "gentle_line": "Hand up and wait. Then talk!"
+  },
+  "parent_line": "Knows class rules: listen, share, take turns and put up a hand."
+}

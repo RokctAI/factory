@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w01_my_body",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "My body",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "My body",
+    "subtopic": "Names body parts and the actions the body can do; identifies basic rights and responsibilities"
+  },
+  "skill": "body.parts.name",
+  "prereq_skills": [],
+  "images": ["child_body_parts", "hand", "foot", "ear", "feet", "eyes", "hands", "nose", "knee", "mouth", "tutor_points_knee"],
+  "show": {
+    "line": "This is my body! Head, shoulders, knees and toes. Eyes, ears, mouth and nose!",
+    "image": "child_body_parts"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the hand.", "options": ["hand", "foot", "ear"], "answer": "hand", "praise": "Yes! A hand. We wave with our hands."},
+    {"type": "listen_tap", "prompt": "We walk with these. Tap the feet.", "options": ["feet", "eyes", "hands"], "answer": "feet", "praise": "Feet! We walk and run with our feet."},
+    {"type": "say_it", "prompt": "Touch your nose. What is it called?", "accept": ["nose", "my nose", "noes"], "image": "nose", "praise": "Nose! We smell with our nose."},
+    {"type": "listen_tap", "prompt": "Which part helps you see?", "options": ["eyes", "knee", "mouth"], "answer": "eyes", "praise": "Eyes! We see with our eyes."},
+    {"type": "match_sort", "prompt": "Is it on your head, or on your legs? Sort them.", "groups": ["head", "legs"], "items": [{"image": "ear", "group": "head"}, {"image": "mouth", "group": "head"}, {"image": "eyes", "group": "head"}, {"image": "knee", "group": "legs"}, {"image": "foot", "group": "legs"}]},
+    {"type": "say_it", "prompt": "Show me what your body can do. Jump, clap or wave. What did you do?", "accept": ["jump", "clap", "wave", "i jumped", "i clapped", "i waved", "run", "dance"]}
+  ],
+  "hints": ["Point to the part on your own body first.", "Head parts are up high. Leg parts are down low."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this part.",
+    "tutor_try": "This is my elbow!",
+    "image": "tutor_points_knee",
+    "answer": "knee",
+    "win_line": "You caught me! That is my knee. My elbow is on my arm.",
+    "gentle_line": "Let's say it together. Knee. It bends my leg!"
+  },
+  "parent_line": "Can name body parts and say what the body can do."
+}

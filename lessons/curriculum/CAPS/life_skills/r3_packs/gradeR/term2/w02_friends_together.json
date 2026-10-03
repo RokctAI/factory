@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w02_friends_together",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Things friends do",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Friends",
+    "subtopic": "Things friends do together; describes pictures of friends"
+  },
+  "skill": "social.friends.play",
+  "prereq_skills": ["social.friends.good"],
+  "images": ["friends_playing", "friends_ball", "friends_reading", "friends_eating", "friends_skipping", "happy_face", "sad_face", "angry_face", "scared_face", "seesaw", "sleeping", "brushing_teeth", "tutor_seesaw_alone"],
+  "show": {
+    "line": "Friends play together! They play ball, skip, build and read stories.",
+    "image": "friends_playing"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the friends playing ball.", "options": ["friends_ball", "friends_reading", "friends_eating"], "answer": "friends_ball", "praise": "Kick, kick! Friends play ball."},
+    {"type": "listen_tap", "prompt": "Tap the friends reading a book.", "options": ["friends_reading", "friends_skipping", "friends_ball"], "answer": "friends_reading", "praise": "Reading together!"},
+    {"type": "listen_tap", "prompt": "Two friends are skipping. How do they look?", "options": ["happy_face", "sad_face", "angry_face"], "answer": "happy_face", "praise": "Happy! Playing together is fun."},
+    {"type": "say_it", "prompt": "What do you like to play with your friends?", "accept": ["ball", "soccer", "skipping", "hide and seek", "tag", "blocks", "house", "dolls", "cars", "diketo", "kgati", "catch"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Lebo is alone on the bench. Sam asks, do you want to play with us? How does Lebo feel now?", "options": ["happy_face", "sad_face", "scared_face"], "answer": "happy_face", "praise": "Happy! Sam was kind."},
+    {"type": "listen_tap", "prompt": "Which game needs two friends?", "options": ["seesaw", "sleeping", "brushing_teeth"], "answer": "seesaw", "praise": "A seesaw needs two!"}
+  ],
+  "hints": ["Look at what the children are doing.", "Some games need more than one person."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will play seesaw.",
+    "tutor_try": "I play seesaw all by myself!",
+    "image": "tutor_seesaw_alone",
+    "answer": "a friend",
+    "win_line": "You caught me! A seesaw needs a friend on the other side.",
+    "gentle_line": "We need two friends for a seesaw. Up and down!"
+  },
+  "parent_line": "Can describe things friends do together and include others."
+}

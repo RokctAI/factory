@@ -57,8 +57,8 @@ behave exactly as before). Set them for any other voice.
 
 `packs` (a pack-id glob or a list of globs), `lines` (app line keys) and
 `locale` are optional. Without filters a batch renders every pack line of
-every pack under `r3_packs/` (Grades R to 3, Terms 1-4, maths and English Home
-Language; more grades land on their own branches) plus the
+every pack under `r3_packs/` (Grades R to 3, Terms 1-4, maths, English Home
+Language and Life Skills; more land on their own branches) plus the
 4 default praise lines, split into 8 shard jobs (`R3_MAX_SHARDS`).
 `tests/test_r3.py` derives the counts from the pack tree. A `packs` filter
 leaves out the shared praise lines. `locale` only changes the praise lines (packs are English):

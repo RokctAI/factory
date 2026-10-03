@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w05_danger_labels",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Warning signs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe",
+    "subtopic": "Safe and unsafe product labels (cleaning agents, medication, poisons); warning signs"
+  },
+  "skill": "safety.labels",
+  "prereq_skills": ["safety.safe_unsafe"],
+  "images": ["poison_label", "poison_bottle", "milk_bottle", "juice_bottle", "thumbs_down", "thumbs_up", "water_bottle", "bleach", "paraffin", "tell_adult", "drink_it", "share_it", "danger_sign", "smiley_sign", "heart_sign", "tutor_skull_bottle"],
+  "show": {
+    "line": "Some bottles have warning signs. A skull means poison. Never drink it!",
+    "image": "poison_label"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which bottle has a poison sign?", "options": ["poison_bottle", "milk_bottle", "juice_bottle"], "answer": "poison_bottle", "praise": "The skull means poison!"},
+    {"type": "listen_tap", "prompt": "Bleach is for cleaning. Can you drink it?", "options": ["thumbs_down", "thumbs_up"], "answer": "thumbs_down", "praise": "No! Never drink bleach."},
+    {"type": "match_sort", "prompt": "Food, or not food? Sort them.", "groups": ["food", "not_food"], "items": [{"image": "milk_bottle", "group": "food"}, {"image": "juice_bottle", "group": "food"}, {"image": "water_bottle", "group": "food"}, {"image": "bleach", "group": "not_food"}, {"image": "paraffin", "group": "not_food"}]},
+    {"type": "say_it", "prompt": "A bottle has a skull on it. What does it mean?", "accept": ["poison", "danger", "do not drink", "dangerous", "don't touch"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Naledi finds a cold drink bottle in the shed. It smells funny. What should she do?", "options": ["tell_adult", "drink_it", "share_it"], "answer": "tell_adult", "praise": "Tell a grown-up! It could be paraffin."},
+    {"type": "listen_tap", "prompt": "Which sign means danger?", "options": ["danger_sign", "smiley_sign", "heart_sign"], "answer": "danger_sign", "praise": "Danger! Keep away."}
+  ],
+  "hints": ["A skull or red sign means danger.", "If you are not sure, do not drink it. Ask a grown-up."],
+  "beat_the_tutor": {
+    "setup": "My turn! I am thirsty.",
+    "tutor_try": "I will drink from the bottle with the skull!",
+    "image": "tutor_skull_bottle",
+    "answer": "poison",
+    "win_line": "You caught me! The skull means poison. Never drink it!",
+    "gentle_line": "A skull means poison. Let's find clean water!"
+  },
+  "parent_line": "Recognises poison and danger signs and never tastes cleaning products."
+}

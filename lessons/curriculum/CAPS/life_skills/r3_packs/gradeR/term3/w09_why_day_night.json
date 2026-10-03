@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w09_why_day_night",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Why day and night",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night)",
+    "subtopic": "Investigates and reflects on natural phenomena: what causes day and night (globe and torch)"
+  },
+  "skill": "sky.earth_turns",
+  "prereq_skills": ["sky.day_night"],
+  "images": ["globe_torch", "day_sky", "night_sky", "torch", "ball", "book", "sunrise", "moon", "tutor_sleeping_sun"],
+  "show": {
+    "line": "The Earth turns round and round. Our side faces the sun: day! Away: night!",
+    "image": "globe_torch"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Our side of the Earth faces the sun. Is it day or night?", "options": ["day_sky", "night_sky"], "answer": "day_sky", "praise": "Day!"},
+    {"type": "listen_tap", "prompt": "Our side turns away from the sun. Is it day or night?", "options": ["night_sky", "day_sky"], "answer": "night_sky", "praise": "Night!"},
+    {"type": "what_next", "prompt": "Morning, afternoon, evening, and then?", "sequence": ["morning", "afternoon", "evening"], "options": ["night", "morning", "lunch"], "answer": "night", "praise": "Night! Then morning again."},
+    {"type": "say_it", "prompt": "What does the Earth do to give us day and night?", "accept": ["turn", "turns", "it turns", "spins", "it spins", "goes round", "turns around"]},
+    {"type": "listen_tap", "prompt": "Which one is like the sun in our game?", "options": ["torch", "ball", "book"], "answer": "torch", "praise": "The torch is like the sun!"},
+    {"type": "listen_tap", "prompt": "What time do you wake up? Day or night?", "options": ["sunrise", "moon"], "answer": "sunrise", "praise": "Morning! The sun comes up."}
+  ],
+  "hints": ["The sun stays still. The Earth turns.", "Facing the sun means light."],
+  "beat_the_tutor": {
+    "setup": "My turn! I know why we have night.",
+    "tutor_try": "At night the sun goes to sleep!",
+    "image": "tutor_sleeping_sun",
+    "answer": "earth turns",
+    "win_line": "You caught me! The Earth turns away from the sun.",
+    "gentle_line": "The Earth turns. Our side faces away. Night!"
+  },
+  "parent_line": "Knows day and night happen because the Earth turns."
+}

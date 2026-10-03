@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w10_people_who_help",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "People who help us",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "People who help us",
+    "subtopic": "People who help us at home, at school and in the community: where they work, what they do and their special skills"
+  },
+  "skill": "community.helpers",
+  "prereq_skills": [],
+  "images": ["community_helpers", "nurse", "baker", "builder", "teacher", "firefighter", "farmer", "doctor", "principal", "school_cook", "taxi_driver", "tutor_baker"],
+  "show": {
+    "line": "Many people help us! Nurses, teachers, police officers, firefighters and taxi drivers.",
+    "image": "community_helpers"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Who helps when we are sick?", "options": ["nurse", "baker", "builder"], "answer": "nurse", "praise": "A nurse at the clinic!"},
+    {"type": "listen_tap", "prompt": "Who teaches us at school?", "options": ["teacher", "firefighter", "farmer"], "answer": "teacher", "praise": "Our teacher!"},
+    {"type": "listen_tap", "prompt": "Who puts out fires?", "options": ["firefighter", "nurse", "teacher"], "answer": "firefighter", "praise": "A firefighter!"},
+    {"type": "match_sort", "prompt": "Where do they work? Sort them.", "groups": ["clinic", "school"], "items": [{"image": "nurse", "group": "clinic"}, {"image": "doctor", "group": "clinic"}, {"image": "teacher", "group": "school"}, {"image": "principal", "group": "school"}, {"image": "school_cook", "group": "school"}]},
+    {"type": "say_it", "prompt": "Who grows our vegetables?", "accept": ["farmer", "a farmer", "the farmer"]},
+    {"type": "listen_tap", "prompt": "Who drives you to town?", "options": ["taxi_driver", "nurse", "baker"], "answer": "taxi_driver", "praise": "A taxi driver!"}
+  ],
+  "hints": ["Think about what the person wears or uses.", "Where does that person work?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I am sick.",
+    "tutor_try": "I will go to the baker for medicine!",
+    "image": "tutor_baker",
+    "answer": "nurse",
+    "win_line": "You caught me! A nurse or doctor helps when we are sick.",
+    "gentle_line": "A nurse helps us get better!"
+  },
+  "parent_line": "Can name community helpers and the work they do."
+}
