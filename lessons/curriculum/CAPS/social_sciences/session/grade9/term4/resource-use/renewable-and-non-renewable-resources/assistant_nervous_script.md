@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a box of matches, a sunny roof and a fruit tree.
+The matches. Natural resources are things in nature people use. Non-renewable resources exist in fixed amounts: fossil fuels such as coal, oil and gas, and minerals such as gold and platinum. South Africa gets around 80 percent of its electricity from coal, mainly from Mpumalanga, which pollutes and adds to climate change. Gold output has fallen since its peak in 1970. Recycling stretches metals but not ore deposits.
+The roof. Flow resources such as sunlight, wind and tides never run out. South Africa has world-class sunshine, especially in the Northern Cape, and coastal winds; solar and wind farms have grown since 2011.
+The tree. Conditionally renewable resources such as water, soil, forests and fish renew only if used within their sustainable yield. Overuse can destroy them. Wise use, recycling and an energy transition that is just for coal workers all matter.
+Open the practice set when you are ready. You've got this!

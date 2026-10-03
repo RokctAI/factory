@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a bank account in the sea, a net with no holes and an empty basket.
+The account. Oceans cover about 71 percent of the earth and feed billions. Fish are renewable if enough adults breed. South Africa's cold Benguela Current brings upwelling and rich fishing on the west coast: hake, sardines, anchovies, snoek, squid and rock lobster. The warm Agulhas Current is on the east.
+The net. Over-fishing means catching fish faster than they reproduce; more than a third of assessed stocks are over-fished. Causes: rising demand, factory ships, sonar, huge nets and longlines, shared seas and the tragedy of the commons, weak management, illegal fishing and subsidies.
+The basket. Effects: shrinking stocks, damaged food webs, bycatch, ghost nets, lost jobs. Newfoundland cod collapsed and was closed in 1992, with about 30 000 to 40 000 jobs lost and slow recovery. In South Africa: West Coast rock lobster depleted, abalone poached and the fishery closed in 2008, line fish such as seventy-four collapsed, penguins declining. Hake was certified sustainable in 2004.
+Open the practice set when you are ready. You've got this!
