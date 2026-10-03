@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term3.w09_oo_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [9],
+  "theme": "Being brave",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 9: '-oo-' (pool, tool, spoon, moon); letter-swap game"
+  },
+  "skill": "efal.phonics.vowel_digraph.oo_long",
+  "prereq_skills": ["efal.phonics.digraph.th_end"],
+  "images": ["moon", "sun", "star", "spoon", "man", "pool", "word_tool", "word_pool", "word_fool", "tutor_holds_word_moon"],
+  "show": {
+    "line": "Two o's say oo. Moon, spoon, pool, tool!",
+    "image": "moon"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the moon.", "options": ["moon", "sun", "star"], "answer": "moon", "praise": "Yes! The moon."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "pool", "accept": ["pool", "pull", "pol"]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with moon?", "options": ["spoon", "man", "pool"], "answer": "spoon", "praise": "Yes! Moon, spoon."},
+    {"type": "listen_tap", "prompt": "Swap the first sound! Pool. Change p to t.", "options": ["word_tool", "word_pool", "word_fool"], "answer": "word_tool", "praise": "Tool! p-ool, t-ool."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "spoon", "accept": ["spoon", "spun", "spon"]}
+  ],
+  "hints": ["Two o's together say oo, like a ghost. Oooo!", "Moon, spoon. Same at the end."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says man!",
+    "image": "tutor_holds_word_moon",
+    "answer": "moon",
+    "win_line": "You caught me! It says moon. Two o's say oo.",
+    "gentle_line": "Let's read it together. Moon!"
+  },
+  "parent_line": "Can read oo words like moon, spoon, pool and tool."
+}

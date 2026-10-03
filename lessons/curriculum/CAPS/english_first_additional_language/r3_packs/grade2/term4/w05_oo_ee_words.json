@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term4.w05_oo_ee_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Me and my body",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 5: vowel digraph '-oo-' (book, room, boot, tooth)"
+  },
+  "skill": "efal.phonics.vowel_digraph.oo_ee",
+  "prereq_skills": ["efal.phonics.vowel_digraph.oo_long"],
+  "images": ["tree", "bee", "boot", "book", "teeth", "room", "moon", "cheese", "tutor_holds_word_bee"],
+  "show": {
+    "line": "oo and ee! Book, room, boot. Tree, bee, teeth!",
+    "image": "tree"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the bee.", "options": ["bee", "boot", "book"], "answer": "bee", "praise": "Yes! Bee has ee."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "book", "accept": ["book", "buk", "boot"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "tree", "accept": ["tree", "three", "tri"]},
+    {"type": "listen_tap", "prompt": "We brush our... what?", "options": ["teeth", "tree", "room"], "answer": "teeth", "praise": "Yes! We brush our teeth."},
+    {"type": "match_sort", "prompt": "Does it have oo or ee? Sort the pictures.", "groups": ["oo", "ee"], "items": [{"image": "book", "group": "oo"}, {"image": "boot", "group": "oo"}, {"image": "moon", "group": "oo"}, {"image": "bee", "group": "ee"}, {"image": "cheese", "group": "ee"}]}
+  ],
+  "hints": ["Two e's say ee, like a big smile.", "Two o's say oo, like book or boot."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says boot!",
+    "image": "tutor_holds_word_bee",
+    "answer": "bee",
+    "win_line": "You caught me! It says bee. Two e's say ee.",
+    "gentle_line": "Let's read it together. Bee!"
+  },
+  "parent_line": "Can read words with oo and ee, like book, boot, tree and bee."
+}
