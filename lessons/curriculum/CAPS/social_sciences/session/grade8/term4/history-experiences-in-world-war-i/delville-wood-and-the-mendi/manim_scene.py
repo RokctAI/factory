@@ -19,7 +19,7 @@ from manim import *
 # beat, camera moves down to fresh space, nothing is removed. Write-only
 # reveals on single-string Tex keep the export inside the whiteboard
 # primitive vocabulary. Dwell time proportional to subtopics.json
-# (280/270/270/250/130/130/130 of 1460 s).
+# (280/280/270/250/130/130/130 of 1470 s).
 
 BAND = config.frame_height
 
