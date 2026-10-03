@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w02_seasons_animals",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Seasons and animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Seasons",
+    "subtopic": "How seasons affect animals: hibernation, migration and nesting; sheep shearing demonstration"
+  },
+  "skill": "seasons.animals",
+  "prereq_skills": ["seasons.four"],
+  "images": ["birds_flying", "migration", "hibernation", "bear", "chicken", "cow", "spring", "winter", "wool", "milk", "eggs", "autumn", "tutor_bear"],
+  "show": {
+    "line": "Some birds fly away for winter. Some animals sleep all winter. That is hibernation!",
+    "image": "birds_flying"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Birds fly to warmer places. That is called?", "options": ["migration", "hibernation"], "answer": "migration", "praise": "Migration!"},
+    {"type": "listen_tap", "prompt": "Which animal sleeps through winter?", "options": ["bear", "chicken", "cow"], "answer": "bear", "praise": "Bears hibernate!"},
+    {"type": "listen_tap", "prompt": "When do farmers shear sheep?", "options": ["spring", "winter"], "answer": "spring", "praise": "Spring, when it warms up!"},
+    {"type": "say_it", "prompt": "Birds build nests in which season?", "accept": ["spring", "in spring"]},
+    {"type": "listen_tap", "prompt": "What do we get when sheep are sheared?", "options": ["wool", "milk", "eggs"], "answer": "wool", "praise": "Wool!"},
+    {"type": "listen_tap", "prompt": "Which season do farmers harvest mielies?", "options": ["autumn", "spring"], "answer": "autumn", "praise": "Autumn harvest!"}
+  ],
+  "hints": ["Migration means moving. Hibernation means long sleep.", "Spring is for new life."],
+  "beat_the_tutor": {
+    "setup": "My turn! A bear in winter...",
+    "tutor_try": "Goes to the beach!",
+    "image": "tutor_bear",
+    "answer": "sleeps",
+    "win_line": "You caught me! Bears sleep all winter.",
+    "gentle_line": "Bears hibernate in winter!"
+  },
+  "parent_line": "Knows how seasons affect animals: migration, hibernation and nesting."
+}

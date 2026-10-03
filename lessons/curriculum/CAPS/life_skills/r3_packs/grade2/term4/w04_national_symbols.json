@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w04_national_symbols",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [6],
+  "theme": "National symbols",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: National symbols",
+    "subtopic": "Symbols representing South Africa and where they are presented; the importance of symbols"
+  },
+  "skill": "sa.symbols",
+  "prereq_skills": ["sa.coat_of_arms"],
+  "images": ["national_symbols", "springbok", "lion", "dog", "protea", "rose", "tulip", "blue_crane", "pigeon", "chicken", "galjoen", "goldfish", "shark", "r1_coin", "toy_coin", "tutor_sunflower"],
+  "show": {
+    "line": "Our national animal is the springbok. Our flower is the protea!",
+    "image": "national_symbols"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Our national animal?", "options": ["springbok", "lion", "dog"], "answer": "springbok", "praise": "The springbok!"},
+    {"type": "listen_tap", "prompt": "Our national flower?", "options": ["protea", "rose", "tulip"], "answer": "protea", "praise": "The protea!"},
+    {"type": "listen_tap", "prompt": "Our national bird?", "options": ["blue_crane", "pigeon", "chicken"], "answer": "blue_crane", "praise": "The blue crane!"},
+    {"type": "listen_tap", "prompt": "Our national fish?", "options": ["galjoen", "goldfish", "shark"], "answer": "galjoen", "praise": "The galjoen!"},
+    {"type": "say_it", "prompt": "Which animal leaps and is our national animal?", "accept": ["springbok", "a springbok", "the springbok"]},
+    {"type": "listen_tap", "prompt": "Which coin shows a springbok?", "options": ["r1_coin", "toy_coin"], "answer": "r1_coin", "praise": "The R1 coin!"}
+  ],
+  "hints": ["Symbols stand for our country.", "Look on our coins for symbols."],
+  "beat_the_tutor": {
+    "setup": "My turn! Our national flower is...",
+    "tutor_try": "A sunflower!",
+    "image": "tutor_sunflower",
+    "answer": "protea",
+    "win_line": "You caught me! The protea.",
+    "gentle_line": "The king protea!"
+  },
+  "parent_line": "Can name national symbols like the springbok and protea."
+}

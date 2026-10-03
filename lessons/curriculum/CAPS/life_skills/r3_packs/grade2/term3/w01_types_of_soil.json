@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w01_types_of_soil",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [5],
+  "theme": "Soil",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Soil",
+    "subtopic": "Types and importance of soil: different soils, colours and textures"
+  },
+  "skill": "earth.soil",
+  "prereq_skills": ["plants.needs"],
+  "images": ["soil_jars", "sandy_soil", "clay_soil", "dark_soil", "earthworm", "fish", "bird", "mole", "ant", "eagle", "tutor_worm"],
+  "show": {
+    "line": "Soil can be sandy, clay or rich and dark. Plants love good soil!",
+    "image": "soil_jars"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which soil is sandy?", "options": ["sandy_soil", "clay_soil", "dark_soil"], "answer": "sandy_soil", "praise": "Sandy and loose!"},
+    {"type": "listen_tap", "prompt": "Which soil is sticky when wet?", "options": ["clay_soil", "sandy_soil"], "answer": "clay_soil", "praise": "Clay!"},
+    {"type": "listen_tap", "prompt": "Which creature lives in soil and helps it?", "options": ["earthworm", "fish", "bird"], "answer": "earthworm", "praise": "The earthworm!"},
+    {"type": "say_it", "prompt": "Old leaves and food scraps rot to make...?", "accept": ["compost", "soil", "good soil"]},
+    {"type": "listen_tap", "prompt": "Which soil is best for vegetables?", "options": ["dark_soil", "sandy_soil"], "answer": "dark_soil", "praise": "Rich, dark soil!"},
+    {"type": "match_sort", "prompt": "Lives in the soil or not?", "groups": ["in_soil", "not_in_soil"], "items": [{"image": "earthworm", "group": "in_soil"}, {"image": "mole", "group": "in_soil"}, {"image": "ant", "group": "in_soil"}, {"image": "fish", "group": "not_in_soil"}, {"image": "eagle", "group": "not_in_soil"}]}
+  ],
+  "hints": ["Feel the soil: gritty, sticky or crumbly.", "Compost makes soil rich."],
+  "beat_the_tutor": {
+    "setup": "My turn! Worms are bad for soil.",
+    "tutor_try": "Throw them away!",
+    "image": "tutor_worm",
+    "answer": "good",
+    "win_line": "You caught me! Worms help the soil.",
+    "gentle_line": "Worms make soil healthy!"
+  },
+  "parent_line": "Can describe soil types and creatures that live in soil."
+}

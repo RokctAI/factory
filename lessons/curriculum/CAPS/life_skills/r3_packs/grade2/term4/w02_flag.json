@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w02_flag",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [4],
+  "theme": "Our flag",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Our country South Africa",
+    "subtopic": "Recognising the South African flag and places where we can see it flying"
+  },
+  "skill": "sa.flag",
+  "prereq_skills": ["sa.provinces"],
+  "images": ["sa_flag", "colour_green", "colour_purple", "colour_pink", "school", "fridge", "bed", "y_shape", "star", "circle", "other_flag", "tutor_flag"],
+  "show": {
+    "line": "Our flag has six colours: red, white, green, yellow, black and blue!",
+    "image": "sa_flag"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the colours on our flag.", "image": "sa_flag", "count": "6", "options": ["4", "5", "6"], "answer": "6", "praise": "Six colours!"},
+    {"type": "listen_tap", "prompt": "Which colour is on our flag?", "options": ["colour_green", "colour_purple", "colour_pink"], "answer": "colour_green", "praise": "Green!"},
+    {"type": "listen_tap", "prompt": "Where do we see the flag flying?", "options": ["school", "fridge", "bed"], "answer": "school", "praise": "At schools and government buildings!"},
+    {"type": "say_it", "prompt": "Name a colour on the South African flag.", "accept": ["red", "white", "green", "yellow", "gold", "black", "blue"]},
+    {"type": "listen_tap", "prompt": "Which shape is in the flag?", "options": ["y_shape", "star", "circle"], "answer": "y_shape", "praise": "A Y shape, coming together!"},
+    {"type": "listen_tap", "prompt": "Tap the South African flag.", "options": ["sa_flag", "other_flag"], "answer": "sa_flag", "praise": "That's ours!"}
+  ],
+  "hints": ["Six colours on one flag.", "The Y shape shows people coming together."],
+  "beat_the_tutor": {
+    "setup": "My turn! Our flag has...",
+    "tutor_try": "Only one colour!",
+    "image": "tutor_flag",
+    "answer": "six",
+    "win_line": "You caught me! Six colours.",
+    "gentle_line": "Six colours together!"
+  },
+  "parent_line": "Recognises the South African flag and its colours."
+}

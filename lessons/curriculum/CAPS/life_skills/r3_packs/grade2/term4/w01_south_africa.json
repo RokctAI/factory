@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w01_south_africa",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [4],
+  "theme": "Our country South Africa",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Our country South Africa",
+    "subtopic": "Provinces: name and location of own province; the eleven official languages"
+  },
+  "skill": "sa.provinces",
+  "prereq_skills": [],
+  "images": ["sa_map", "isizulu", "french", "chinese", "gauteng", "paris", "london", "sa_flag", "other_flag", "tutor_map"],
+  "show": {
+    "line": "South Africa has nine provinces and many official languages, like isiZulu, English and Sesotho!",
+    "image": "sa_map"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "How many provinces does South Africa have?", "image": "sa_map", "count": "9", "options": ["8", "9", "10"], "answer": "9", "praise": "Nine!"},
+    {"type": "say_it", "prompt": "Name one official language of South Africa.", "accept": ["isizulu", "zulu", "isixhosa", "xhosa", "afrikaans", "english", "sesotho", "sepedi", "setswana", "xitsonga", "siswati", "tshivenda", "isindebele", "sign language", "sotho", "tswana"]},
+    {"type": "listen_tap", "prompt": "Which language is official in South Africa?", "options": ["isizulu", "french", "chinese"], "answer": "isizulu", "praise": "isiZulu!"},
+    {"type": "say_it", "prompt": "Which province do you live in?", "accept": ["gauteng", "kwazulu natal", "western cape", "eastern cape", "limpopo", "mpumalanga", "north west", "free state", "northern cape"]},
+    {"type": "listen_tap", "prompt": "Which is a South African province?", "options": ["gauteng", "paris", "london"], "answer": "gauteng", "praise": "Gauteng!"},
+    {"type": "listen_tap", "prompt": "Which flag is South Africa's?", "options": ["sa_flag", "other_flag"], "answer": "sa_flag", "praise": "Our flag!"}
+  ],
+  "hints": ["Nine provinces.", "Many languages, one country."],
+  "beat_the_tutor": {
+    "setup": "My turn! South Africa has...",
+    "tutor_try": "Two provinces!",
+    "image": "tutor_map",
+    "answer": "nine",
+    "win_line": "You caught me! Nine provinces.",
+    "gentle_line": "Nine provinces!"
+  },
+  "parent_line": "Knows South Africa has nine provinces and many official languages."
+}

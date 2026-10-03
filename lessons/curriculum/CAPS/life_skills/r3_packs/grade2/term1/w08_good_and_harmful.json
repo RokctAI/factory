@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w08_good_and_harmful",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Good habits and harmful things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Healthy living",
+    "subtopic": "Things that harm us: smoking, alcohol, drugs"
+  },
+  "skill": "health.harmful",
+  "prereq_skills": ["health.habits"],
+  "images": ["healthy_kid", "exercise", "sleep", "fruit", "cigarette", "alcohol", "lungs", "feet", "ears", "playing_outside", "tv_all_day", "say_no_tell", "take_pill", "water", "beer", "coffee", "tutor_cigarette"],
+  "show": {
+    "line": "Smoking, alcohol and drugs harm our bodies. Exercise and sleep help us!",
+    "image": "healthy_kid"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Helps or harms our body?", "groups": ["helps", "harms"], "items": [{"image": "exercise", "group": "helps"}, {"image": "sleep", "group": "helps"}, {"image": "fruit", "group": "helps"}, {"image": "cigarette", "group": "harms"}, {"image": "alcohol", "group": "harms"}]},
+    {"type": "listen_tap", "prompt": "Smoke goes into which part of the body?", "options": ["lungs", "feet", "ears"], "answer": "lungs", "praise": "The lungs. Smoke hurts them."},
+    {"type": "say_it", "prompt": "Someone offers you a cigarette. What do you say?", "accept": ["no", "no thank you", "no thanks", "never"]},
+    {"type": "listen_tap", "prompt": "Which is a good habit?", "options": ["playing_outside", "tv_all_day"], "answer": "playing_outside", "praise": "Play outside!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Pule finds pills at the park. His friend says, try them. What should Pule do?", "options": ["say_no_tell", "take_pill"], "answer": "say_no_tell", "praise": "Say no and tell an adult!"},
+    {"type": "listen_tap", "prompt": "Which is a healthy drink for children?", "options": ["water", "beer", "coffee"], "answer": "water", "praise": "Water!"}
+  ],
+  "hints": ["Harmful things make the body sick.", "Say no and tell a grown-up."],
+  "beat_the_tutor": {
+    "setup": "My turn! My friend offers me a cigarette.",
+    "tutor_try": "Sure, I'll try it!",
+    "image": "tutor_cigarette",
+    "answer": "no",
+    "win_line": "You caught me! Say no. Smoking harms lungs.",
+    "gentle_line": "No thank you! I keep my body healthy."
+  },
+  "parent_line": "Knows smoking, alcohol and drugs harm us and good habits help."
+}
