@@ -1,0 +1,18 @@
+### subtopic_1 — Work and Daily Life
+**Assistant:** What was the tot system you mentioned?
+
+**Tutor:** The tot system, also called the dop system, was a practice on Cape wine farms in which farmworkers were given wine, often several times a day, as part of their wages. Its roots lie in the daily wine rations given to enslaved people in the eighteenth century, and it continued long after slavery ended, among Coloured farmworkers in the Western Cape, until well into the twentieth century. It was a way for farmers to control workers and keep them dependent, and it was cheaper than paying full wages. The results were tragic: high rates of alcohol dependence, damaged health, poverty and violence in farmworker families, and today the Western Cape has one of the highest rates in the world of foetal alcohol spectrum disorder, which affects babies whose mothers drank alcohol during pregnancy. The tot system was outlawed in 1960, but in practice it continued on some farms for years. Many organisations now work with farm communities on health and education. It is a powerful example of how the effects of slavery and unfair labour practices can last for generations.
+
+***
+
+### subtopic_3 — Legacy: Islam at the Cape
+**Assistant:** Why didn't Christian owners want their slaves baptised?
+
+**Tutor:** In the early years of the colony, the Dutch Reformed Church taught that Christians should not be kept as slaves, and a decision of the Synod of Dort, a Dutch church meeting held in 1618, was understood to mean that baptised slaves should be given the chance of freedom and could not be sold. Slave owners therefore had a financial reason not to baptise their slaves, because baptism might mean losing their property. In 1770, the VOC passed a law stating that baptised slaves could not be sold and must be freed when their owner died if they had been confirmed and could speak Dutch, which made many owners even less willing to allow baptism. As a result, relatively few enslaved people at the Cape were baptised as Christians in the eighteenth century, while Muslim teachers welcomed them and taught them to read and write. This is one reason why Islam grew strongly among enslaved people and free blacks in Cape Town. Christian missionaries became more active among enslaved people and Khoikhoi in the late eighteenth and early nineteenth centuries, and many people later joined Christian churches as well.
+
+***
+
+### subtopic_4 — Legacy: Afrikaans and Culture
+**Assistant:** If Afrikaans has mixed origins, why was it seen as a white language?
+
+**Tutor:** Because of politics in the late nineteenth and twentieth centuries. As Afrikaner nationalism grew, especially after the South African War of 1899 to 1902, Afrikaner leaders promoted Afrikaans as a symbol of a white Afrikaner identity, distinct from English. In 1925 Afrikaans replaced Dutch as an official language, and it was standardised in dictionaries and grammar books that often downplayed words and forms associated with Coloured, Khoikhoi and Muslim speakers. During apartheid, the government's imposition of Afrikaans as a language of instruction in Black schools led to the Soweto uprising of 16 June 1976, which made Afrikaans seem to many like the language of the oppressor. But this story leaves out a great deal. Most Afrikaans speakers today are not white; many are Coloured people in the Western, Northern and Eastern Cape. The language's roots lie in the speech of enslaved people, Khoikhoi and free blacks as much as of settlers, and some of its earliest written texts were by Cape Muslims. Historians, writers and musicians today celebrate this mixed heritage, presenting Afrikaans as a language shared by many communities.

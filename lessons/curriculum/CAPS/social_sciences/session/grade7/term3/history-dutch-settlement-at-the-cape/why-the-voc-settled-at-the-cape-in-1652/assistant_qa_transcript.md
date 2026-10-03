@@ -1,0 +1,18 @@
+### subtopic_2 — Why the VOC Needed a Station
+**Assistant:** Did the Dutch know how to prevent scurvy in 1652?
+
+**Tutor:** Partly. Sailors had noticed for a long time that fresh fruit and vegetables, especially citrus fruits such as lemons and oranges, helped prevent and cure scurvy, and some ship's captains carried them. The VOC's plan for a station with vegetable gardens and fruit trees reflects this practical knowledge. However, nobody understood why these foods worked, because vitamins had not yet been discovered, and many other useless cures were also tried. In 1747 the Scottish naval surgeon James Lind carried out one of the first controlled experiments in medicine, giving different groups of sailors with scurvy different treatments, and found that those given oranges and lemons recovered fastest. Even so, it took decades before navies regularly supplied citrus juice. Vitamin C itself was only identified in the 1930s. The story of scurvy is a good example of how people can find practical solutions before scientists understand the cause, and of how careful testing can turn observations into reliable knowledge. For the VOC, a garden at the Cape was a practical answer to a deadly problem.
+
+***
+
+### subtopic_4 — The Impact on the Khoikhoi
+**Assistant:** What happened to Krotoa?
+
+**Tutor:** Krotoa, also known by the Dutch name Eva, came as a young girl, probably about ten or eleven years old, to live and work in Van Riebeeck's household. She was related to Khoikhoi leaders, including Autshumato. She learnt Dutch and Portuguese quickly and became one of the most important interpreters in negotiations between the Company and Khoikhoi leaders, moving between her own people and the fort. She was baptised as a Christian, and in 1664 she married Pieter van Meerhof, a Danish surgeon and explorer in Company service, one of the first recorded marriages between a European and a Khoikhoi person at the Cape. After her husband was killed on an expedition to Madagascar in 1668, her life fell apart. She suffered from alcohol abuse, lost custody of her children and was banished to Robben Island several times. She died in 1674. Some of her descendants became part of Cape colonial society. Today historians, writers and artists see Krotoa as a symbol of the painful encounter between cultures, and in 2017 a film was made about her life. Her story shows how the early colony disrupted individual lives as well as whole communities.
+
+***
+
+### subtopic_4 — The Impact on the Khoikhoi
+**Assistant:** How do we know what the Khoikhoi leaders said in 1660?
+
+**Tutor:** Mainly from Jan van Riebeeck's own journal, the daily record he was required to keep for the Company. In his entry for April 1660, he recorded that Khoikhoi leaders, during peace talks, complained strongly about the loss of their land, asking whether, if they came to the Netherlands, they would be allowed to act in the same way, and saying that the Dutch were taking more and more land that had always belonged to them. Van Riebeeck wrote that they were told that, having lost the land in war, they could not expect it back. This is a remarkable source, because it preserves the arguments of the Khoikhoi in their own terms, although it was written down by their opponent, in Dutch, and possibly through an interpreter. Historians therefore treat it carefully: Van Riebeeck may have shortened, misunderstood or framed the words to suit his own view. Yet the fact that he recorded such strong protests makes it more convincing that they were made. It is one of the earliest written records of an African people's claim to their land in South Africa, and it is often quoted in discussions of land and dispossession.

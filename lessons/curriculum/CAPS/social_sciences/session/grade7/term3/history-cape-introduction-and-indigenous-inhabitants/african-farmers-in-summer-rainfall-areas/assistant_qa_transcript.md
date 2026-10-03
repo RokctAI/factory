@@ -1,0 +1,18 @@
+### subtopic_1 — The Arrival of African Farmers
+**Assistant:** How do we know when African farmers arrived if there were no written records?
+
+**Tutor:** Archaeologists use several kinds of evidence. When they excavate a village site, they find pottery, iron slag from smelting furnaces, iron tools, the remains of grain bins and houses, and bones of cattle and other domestic animals. Pottery is especially useful, because different communities decorated their pots in recognisable styles, so archaeologists can trace how groups moved and changed over time. Charcoal, seeds and bones can be dated using radiocarbon dating, which measures the decay of a form of carbon in once-living things and gives a date range. These dates show farming communities in Limpopo, Mpumalanga and KwaZulu-Natal from around the third century AD. Linguists add evidence by studying how Bantu languages are related, showing that they spread from a common origin in west-central Africa. More recently, studies of ancient DNA have also confirmed movements of people. Oral traditions of many communities preserve histories of migration and of chiefs going back several centuries. Putting these sources together gives a reliable picture, even though there are no written records from this time.
+
+***
+
+### subtopic_2 — Rainfall and the 500 mm Line
+**Assistant:** Why does the 500 mm line matter so much?
+
+**Tutor:** Because it marks roughly where reliable rain-fed crop farming becomes possible. Below about five hundred millimetres a year, crops planted without irrigation often fail, because rain is not only lower but also more unreliable, with frequent droughts. Above it, sorghum and millet, and later maize, can usually be grown successfully in most years. Of course, a line on a map is a simplification: rainfall varies from year to year, and soil, temperature and how much rain is lost through evaporation also matter. But as a general guide, the line explains a great deal of South African history and geography. In the past, it separated the crop-farming African communities of the east from the herding and hunting communities of the dry west. Even today, most of South Africa's maize and other dryland crops are grown east of it, while the west is used mainly for sheep and goats or irrigated farming. It is a good example of how physical geography, in this case climate, helps explain patterns of human settlement, a theme that links history and geography.
+
+***
+
+### subtopic_4 — Cattle, Society and Meeting the Colony
+**Assistant:** Did African farmers and the San and Khoikhoi always fight?
+
+**Tutor:** No. Relationships between these communities were varied and changed over time. Archaeology and oral traditions show long periods of peaceful contact. San hunters traded game, skins, ivory and ostrich eggshell beads with farmers in exchange for grain, iron and pottery. Some San worked for farmers as rainmakers, because their spiritual skills were respected, and some San and Khoikhoi people married into farming communities. Khoikhoi groups traded cattle and copper with the Xhosa, and some Khoikhoi lived among the Xhosa as clients or became part of Xhosa chiefdoms. The click sounds in isiXhosa and isiZulu, and words for some plants and animals, show how deeply languages and cultures mixed. At other times, competition over land, water, grazing and game led to conflict, and farmers sometimes pushed hunter-gatherers off the best land. Historians emphasise that we should not imagine fixed, separate groups. Identities were often flexible, and people could move between ways of life, for example a hunter who acquired cattle, or a herder who lost them.
