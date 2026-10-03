@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Why is √(9 + 16) not equal to √9 + √16? Give both values.",
+      "expected_answer": "The root sign groups the sum: 9 + 16 = 25 and √25 = 5. Taking roots separately gives 3 + 4 = 7. Roots distribute over products, not over sums, so the two differ."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to find √(2^6) without evaluating 2^6.",
+      "expected_answer": "A square root halves the exponent because 2^3 × 2^3 = 2^6 by the multiplication law. So √(2^6) = 2^3 = 8. Check: 2^6 = 64 and √64 = 8."
+    },
+    {
+      "id": "cc3",
+      "question": "Evaluate 2^3 + √100 × 3 and explain the order used.",
+      "expected_answer": "Powers and roots first: 8 and 10. Multiplication before addition: 10 × 3 = 30. Then 8 + 30 = 38. Adding 8 + 10 first would wrongly give 54."
+    }
+  ]
+}

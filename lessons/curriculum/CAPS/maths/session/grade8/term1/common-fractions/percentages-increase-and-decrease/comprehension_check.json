@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why 800 increased by 12% can be found with a single multiplication, and give the result.",
+      "expected_answer": "After the increase you have 100% + 12% = 112% of the original, which is the multiplier 1,12. So 800 × 1,12 = 896."
+    },
+    {
+      "id": "cc2",
+      "question": "A price rises from R40 to R50 and later falls back to R40. Why are the percentage increase and decrease different?",
+      "expected_answer": "Percentage change is change over original. Rising: 10/40 = 25%. Falling: 10/50 = 20%. The original is different in each direction."
+    },
+    {
+      "id": "cc3",
+      "question": "A jacket costs R360 after a 20% discount. Find the original price and explain why adding 20% of R360 is wrong.",
+      "expected_answer": "The sale price is 80% of the original, so the original is 360 ÷ 0,8 = R450. The discount was 20% of the original, not of the sale price, so adding 20% of 360 undercounts it."
+    }
+  ]
+}

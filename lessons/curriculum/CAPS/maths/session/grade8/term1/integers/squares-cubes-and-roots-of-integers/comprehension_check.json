@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why (−3)² = 9 but −3² = −9.",
+      "expected_answer": "With brackets the whole number −3 is squared: (−3)(−3) = 9. Without brackets the exponent applies to 3 only and the negative is attached afterwards: −(3 × 3) = −9."
+    },
+    {
+      "id": "cc2",
+      "question": "Why does √(−16) have no real answer while ∛(−27) does?",
+      "expected_answer": "A square is a product of two equal factors, so it is never negative; no real number squares to −16. A cube keeps the sign of its base, so (−3)³ = −27 and ∛(−27) = −3."
+    },
+    {
+      "id": "cc3",
+      "question": "Evaluate (−5)² − (−2)³, showing each step.",
+      "expected_answer": "(−5)² = 25 and (−2)³ = −8. Then 25 − (−8) = 25 + 8 = 33."
+    }
+  ]
+}

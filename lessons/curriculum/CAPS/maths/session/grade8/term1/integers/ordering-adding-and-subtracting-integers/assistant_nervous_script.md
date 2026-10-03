@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Integers today: the whole numbers, their negatives and zero. I have to admit the negatives still make me slow down, especially when two minus signs sit next to each other. So let me tell you the one thing I am holding onto for this session: subtracting a number is the same as adding its opposite. That single idea turns every scary subtraction into an addition, and additions only have two cases — same signs, add and keep the sign; different signs, subtract and take the sign of the heavier number.
+
+Our expert tutor starts on the number line, ordering and comparing, then builds the rules properly and shows you the exam layout for a long chain. Our simplifier tutor takes the same rules to Sutherland's frosty mornings, an overdraft at the bank, and a basement parking lift, so the signs start to feel like common sense rather than a rulebook.
+
+Keep a pencil nearby. Every time a sum appears, convert any subtraction first, then decide whether the signs match. There are questions after each section, and I will be working through them right beside you, slowly and out loud when I need to.

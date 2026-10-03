@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Decimals today: place value, comparing, ordering and rounding. I will own up — I once ranked eleven comma eight as faster than eleven comma zero eight because both had an eight and the second one had more digits. The zero after the comma caught me, and it catches a lot of people.
+
+Our expert tutor rebuilds decimals as fractions over powers of ten, gives the pad-then-compare method for ordering, and then handles rounding properly, including the carry case where seven comma nine nine five becomes eight comma zero zero with both zeros kept. The anchor ordering is two comma three five, two comma three zero five, two comma five three and two comma zero three five. Our simplifier tutor makes every digit a thing you can hold — tens of cents, single cents, millilitres, hundredths of a second — and lines up race times so the padding method becomes obvious.
+
+My rule for the session: say the place name of every digit before I compare or round. Questions follow each section; I will be padding zeros right alongside you.

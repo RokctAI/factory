@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, using expanded form, why 2^3 × 2^4 = 2^7.",
+      "expected_answer": "2^3 is three factors of 2 and 2^4 is four factors of 2; multiplying them gives a string of 3 + 4 = 7 factors of 2, which is 2^7. Check: 8 × 16 = 128 = 2^7."
+    },
+    {
+      "id": "cc2",
+      "question": "Prove that 5^0 = 1 using the division law.",
+      "expected_answer": "5^3 ÷ 5^3 = 1 because anything divided by itself is 1. By the division law 5^3 ÷ 5^3 = 5^(3−3) = 5^0. Both describe the same quantity, so 5^0 = 1."
+    },
+    {
+      "id": "cc3",
+      "question": "Why is (2x)^3 equal to 8x^3 and not 2x^3?",
+      "expected_answer": "The exponent applies to every factor inside the bracket: (2x)^3 = 2^3 × x^3 = 8x^3. Writing 2x^3 cubes only the x. Test with x = 1: (2)^3 = 8 but 2(1)^3 = 2."
+    }
+  ]
+}

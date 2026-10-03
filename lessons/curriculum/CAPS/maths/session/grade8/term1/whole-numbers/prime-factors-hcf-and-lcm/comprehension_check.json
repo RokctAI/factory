@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write 180 and 300 as products of prime factors in index form, then explain how the HCF and the LCM are each read from those factorisations.",
+      "expected_answer": "180 = 2² × 3² × 5 and 300 = 2² × 3 × 5². The HCF takes the primes common to both at the lower power: 2² × 3 × 5 = 60. The LCM takes every prime that appears in either at the higher power: 2² × 3² × 5² = 900."
+    },
+    {
+      "id": "cc2",
+      "question": "How do you tell from the wording of a problem whether it is asking for an HCF or an LCM? Give one example of each.",
+      "expected_answer": "If the problem wants the largest size that goes INTO both quantities (largest tile, biggest equal group), it is an HCF problem — e.g. the largest square tile for a 180 cm by 300 cm floor is 60 cm. If it wants the smallest quantity that both go INTO (first time two repeating events coincide, lowest common denominator), it is an LCM problem — e.g. taxis every 18 and 24 minutes leave together again after 72 minutes."
+    },
+    {
+      "id": "cc3",
+      "question": "State two checks you can perform on an HCF and LCM answer, and explain why each works.",
+      "expected_answer": "Divide each original number by the HCF: both divisions must be exact and the quotients must share no common factor (180 ÷ 60 = 3, 300 ÷ 60 = 5). Also HCF × LCM must equal the product of the two numbers (60 × 900 = 54 000 = 180 × 300). An HCF larger than the smaller number or an LCM smaller than the larger number is impossible."
+    }
+  ]
+}

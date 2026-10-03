@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Multiplying decimals today — by decimals, not just by whole numbers, and with two or more decimal places. The digits were never my problem. The comma was. I would get two thousand eight hundred and twenty and then put the comma anywhere, and I had no way of knowing I was wrong.
+
+Our expert tutor derives the count-the-places rule from fractions over powers of ten, lays out the anchor two comma three five times one comma two as a four-line answer with an estimate on the first line, covers multiplying by tens and tenths, and insists on the trailing zeros being kept until the comma is placed. Our simplifier tutor goes to the butcher, the petrol pump and the fabric shop, where every decimal product is a price times an amount and the estimate comes free from the units.
+
+My rule for the session is the one both tutors share: the comma has two independent judges, counting and estimating, and they must agree before I write the answer. Questions follow every section; I will be estimating alongside you.

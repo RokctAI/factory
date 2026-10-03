@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today the integers leave the number line and go to work: temperatures, altitudes, bank balances, quiz scores, time zones and submarines. The maths in each problem is only a few lines. What used to trip me up was the translation — deciding which numbers are negative and writing one expression before calculating anything.
+
+Our expert tutor gives a four-move method — sign convention, expression, evaluate, interpret — and runs it on every kind of context the examiners use, including the anchor: an account with two hundred and fifty rand, three debit orders of one hundred and eighty rand and a deposit of five hundred rand, ending at two hundred and ten rand. Our simplifier tutor lives inside two of the stories, a quiz night where a team finishes below zero and the Monday an account went into the red, and finishes with a list of the words that tell you a number is negative.
+
+My plan for every question: underline the direction words, write the signs above them, then write one line of maths with brackets around every negative. Questions follow each section, and I will be translating right alongside you.

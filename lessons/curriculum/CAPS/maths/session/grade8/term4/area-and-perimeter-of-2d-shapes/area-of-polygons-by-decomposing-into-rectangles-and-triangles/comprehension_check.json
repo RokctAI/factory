@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A rectangle 8 m by 6 m has a 3 m by 2 m corner removed. Find its area in two different ways.",
+      "expected_answer": "Split and add: a rectangle 8 by 4, area 32, and one 5 by 2, area 10, total 42 square metres. Enclose and subtract: 8 times 6 is 48, minus 3 times 2, which is 6, gives 42 square metres."
+    },
+    {
+      "id": "cc2",
+      "question": "A house-shaped pentagon is a rectangle 6,25 m by 4,8 m with a triangle of height 2,35 m on top. Find its area to two decimal places.",
+      "expected_answer": "The rectangle is 6,25 times 4,8, which is 30 square metres. The triangle is half of 6,25 times 2,35, which is 7,34375. The total is 37,34375, which rounds to 37,34 square metres."
+    },
+    {
+      "id": "cc3",
+      "question": "Why should you round only the final answer in a decomposition?",
+      "expected_answer": "Because rounding each piece introduces small errors that add up, and the total can then be wrong in the second decimal place. Carrying every digit until the end keeps the final rounding accurate."
+    }
+  ]
+}

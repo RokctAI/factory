@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Simplify (6x² − 10x) ÷ 2x and explain the law used.",
+      "expected_answer": "The distributive law for division: each term on top is divided by 2x. 6x² ÷ 2x = 3x and −10x ÷ 2x = −5, so the answer is 3x − 5. Check: 2x(3x − 5) = 6x² − 10x."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is (9a³ − 6a² + 3a) ÷ 3a equal to 3a² − 2a + 1 and not 3a² − 2a?",
+      "expected_answer": "The third term 3a ÷ 3a is 1, not 0; a quantity divided by itself is one. Dropping it is the commonest error. Multiplying back without the +1 gives 9a³ − 6a² with no 3a, so the +1 is needed."
+    },
+    {
+      "id": "cc3",
+      "question": "Why may x be cancelled in (6x² − 10x)/(2x) but not in (x + 5)/x?",
+      "expected_answer": "In the first, x is a factor of every term on top, so it cancels from each. In the second, x is one term of a sum, not a factor of the whole top; cancelling it would be cancelling a term. (x + 5)/x = 1 + 5/x."
+    }
+  ]
+}

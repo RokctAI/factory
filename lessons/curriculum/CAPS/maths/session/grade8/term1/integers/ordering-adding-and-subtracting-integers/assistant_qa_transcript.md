@@ -1,0 +1,19 @@
+### subtopic_1 — Integers on the Number Line — Ordering and Comparing
+**Assistant:** Why is −7 less than −2 when 7 is clearly bigger than 2?
+
+**Tutor:** Because the size of an integer is decided by its position on the number line, not by the digit it carries. Negative seven sits further to the left than negative two, and further left always means smaller. The digit tells you the distance from zero — the absolute value — and seven is indeed further from zero than two is. But it is further from zero on the negative side, so it is the colder temperature, the deeper debt, the lower basement level. Think of owing money: a learner who owes seven rand is worse off than one who owes two rand, so negative seven is the smaller balance. In an ordering question, the most negative number is the first one you write in ascending order, and the mistake of writing negative two before negative seven is the single most common error on this subtopic.
+
+### subtopic_3 — Subtracting Integers — Adding the Opposite
+**Assistant:** Does subtracting a negative always make the answer bigger?
+
+**Tutor:** Yes, without exception. Subtracting any number is the same as adding its opposite, and the opposite of a negative is a positive, so subtracting a negative means adding a positive, which moves you to the right on the number line. Four minus negative three becomes four plus three, which is seven, and seven is larger than four. The reason this feels wrong at first is that the word minus suggests the answer should go down. The money picture repairs the feeling: a negative in your account is a debt, and removing a debt leaves you better off. Be careful not to over-extend the idea. Adding a negative still makes the answer smaller — negative six plus negative four is negative ten — so the rule is specifically about the subtraction sign meeting a negative number, never about two negatives in general.
+
+### subtopic_4 — Mixed Chains and Examination Technique
+**Assistant:** Is it acceptable to group all the positives and negatives rather than working left to right?
+
+**Tutor:** It is, and in a long chain it is the safer method, provided one step is shown first. Every subtraction in the chain must be converted into adding the opposite before anything is regrouped, because subtraction is not commutative and swapping terms before converting changes the answer. Once the whole line is a string of additions, addition of integers is both commutative and associative, so the positives can be collected into one total and the negatives into another, and the two totals combined at the end. In the anchor calculation the positives totalled ten and the negatives totalled negative thirteen, giving negative three. Markers award the method mark for the conversion line and the grouping line, so write both. Working strictly left to right is equally correct; it simply offers more opportunities for a sign slip in a long question.
+
+### subtopic_6 — Bank Balances and Basement Parking
+**Assistant:** What does reversing a bank charge have to do with subtracting a negative?
+
+**Tutor:** A bank charge is a negative entry on your statement; it reduces the balance. Reversing the charge means the bank removes that negative entry, and removing a negative is exactly what subtracting a negative means in arithmetic. If the balance stood at negative four hundred and fifty rand and a wrong charge of eighty rand is reversed, the calculation is negative four hundred and fifty minus negative eighty. Converting, that is negative four hundred and fifty plus eighty, which is negative three hundred and seventy rand. The balance has improved by eighty rand, still overdrawn but less so. Bank statements are a good check for every sign rule in this lesson: deposits add positives, debit orders add negatives, and reversals subtract negatives. If a calculation ever says your balance got worse after a reversal, a sign has been dropped somewhere.

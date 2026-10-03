@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Inverses today — additive and multiplicative — and I will be honest, the first time I heard the word inverse I thought it just meant negative. It does not. There are two undo buttons: one switches the sign and brings you back to zero, the other flips the number and brings you back to one. Mixing them up is the classic mistake, so I am going to read the adjective every time.
+
+Our expert tutor defines both inverses, ties them to the identities zero and one, explains why zero is the only integer with no multiplicative inverse, and then shows how inverses undo operations — the exact method you will use to solve equations next term. Our simplifier tutor plays it as undo buttons on a phone, a lift going back down, and a zoomed photo shrinking back to size, including why a zoom by zero can never be undone.
+
+The two anchor facts are negative five plus five is zero, and negative four times negative one quarter is one. Hold those two and the rest follows. Questions after each section, and I will be answering them with you, adjective first.

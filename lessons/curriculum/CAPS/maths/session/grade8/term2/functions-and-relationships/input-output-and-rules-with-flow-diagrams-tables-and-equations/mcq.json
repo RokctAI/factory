@@ -1,0 +1,466 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Input, Rule, Output — The Flow Diagram",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The rule 'multiply by 3, then subtract 2' turns input 4 into:",
+          "options": [
+            "6",
+            "10",
+            "12",
+            "14"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 40
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The same rule turns input −1 into:",
+          "options": [
+            "−5",
+            "−1",
+            "1",
+            "5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "'Subtract 2, then multiply by 3' turns input 4 into:",
+          "options": [
+            "10",
+            "6",
+            "2",
+            "12"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "'Multiply by 2, add 1, then square' turns input 3 into:",
+          "options": [
+            "19",
+            "37",
+            "49",
+            "13"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_1_q5",
+          "question": "A flow diagram is a rule because:",
+          "options": [
+            "It has arrows",
+            "Each input produces exactly one output",
+            "It uses numbers",
+            "It has two boxes"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Rule to Formula and Formula to Table",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "'Multiply by 3, then subtract 2' as a formula is:",
+          "options": [
+            "y = 3(x − 2)",
+            "y = 3x − 2",
+            "y = x − 6",
+            "y = 3 − 2x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 40
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "'Add 5, then multiply by 2' as a formula is:",
+          "options": [
+            "y = 2x + 5",
+            "y = 2(x + 5)",
+            "y = x + 10",
+            "y = 5x + 2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "y = x² − 1 as a flow diagram is:",
+          "options": [
+            "Subtract 1, then square",
+            "Square, then subtract 1",
+            "Multiply by 2, then subtract 1",
+            "Subtract 1, then multiply by x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "For y = 3x − 2, the outputs for inputs 1 to 5 are:",
+          "options": [
+            "1, 4, 7, 10, 13",
+            "3, 6, 9, 12, 15",
+            "1, 2, 3, 4, 5",
+            "−2, 1, 4, 7, 10"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_2_q5",
+          "question": "C = 8k + 12 as a flow diagram is:",
+          "options": [
+            "Add 12, then multiply by 8",
+            "Multiply by 8, then add 12",
+            "Multiply by 12, then add 8",
+            "Add 8, then multiply by 12"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Finding the Input — Working Backwards and Equations",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "'Multiply by 3, then subtract 2' gives output 19. The input was:",
+          "options": [
+            "7",
+            "57",
+            "21",
+            "6"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Running a flow diagram backwards means:",
+          "options": [
+            "Reversing the order and using inverse operations",
+            "Reversing the order only",
+            "Using the same operations",
+            "Guessing"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "'Add 5, then multiply by 2' gives output 26. The input was:",
+          "options": [
+            "8",
+            "13",
+            "47",
+            "18"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "'Square, then subtract 1' gives output 15. The input was:",
+          "options": [
+            "4 only",
+            "4 or −4",
+            "16",
+            "14"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_3_q5",
+          "question": "For y = 3x − 2, output −11 comes from input:",
+          "options": [
+            "−3",
+            "3",
+            "−13/3",
+            "−9"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Finding the Rule from a Table",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "Inputs 1, 2, 3, 4 give outputs 1, 4, 7, 10. The rule is:",
+          "options": [
+            "y = x",
+            "y = 3x − 2",
+            "y = 2x − 1",
+            "y = 3x + 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Inputs 0, 1, 2, 3 give outputs 5, 7, 9, 11. The rule is:",
+          "options": [
+            "y = 2x + 5",
+            "y = 5x + 2",
+            "y = x + 5",
+            "y = 2x + 3"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Inputs 2, 4, 6, 8 give outputs 7, 13, 19, 25. The rule is:",
+          "options": [
+            "y = 6x + 1",
+            "y = 3x + 1",
+            "y = 3x − 1",
+            "y = 6x − 5"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 75
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Inputs 1, 2, 3 give outputs 8, 6, 4. The rule is:",
+          "options": [
+            "y = 2x + 6",
+            "y = 10 − 2x",
+            "y = 8 − x",
+            "y = −2x"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_4_q5",
+          "question": "Inputs 1, 2, 3, 4 give outputs 2, 5, 10, 17. The rule is:",
+          "options": [
+            "y = 3x − 1",
+            "y = x² + 1",
+            "y = 2x",
+            "y = x² − 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 60
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Sausage Machine",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "The machine makes 3 sausages per kg and keeps 2 back. 7 kg gives:",
+          "options": [
+            "21",
+            "19",
+            "23",
+            "15"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 40
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "If 19 sausages came out, the meat put in was:",
+          "options": [
+            "7 kg",
+            "57 kg",
+            "21 kg",
+            "6 kg"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The farmhand's list 1 → 1, 2 → 4, 3 → 7 shows the machine:",
+          "options": [
+            "Adds 3",
+            "Multiplies by 3 then subtracts 2",
+            "Multiplies by 3",
+            "Squares"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "A rule never gives two different outputs for the same input. This is why:",
+          "options": [
+            "Tables are long",
+            "You can run the machine backwards with confidence",
+            "Inputs must be positive",
+            "Outputs are always odd"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q5",
+          "question": "The squaring machine (square, then subtract 1) gave 15. The algebra says the input was 4 or −4; the farmer keeps:",
+          "options": [
+            "Both",
+            "4 only, since meat cannot be negative",
+            "−4 only",
+            "Neither"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Photocopier With Two Settings",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "Dials 'times 3, then plus 5': 10 originals give:",
+          "options": [
+            "35",
+            "45",
+            "30",
+            "15"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 40
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Dials 'plus 5, then times 3': 10 originals give:",
+          "options": [
+            "35",
+            "45",
+            "30",
+            "50"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "'Times 3, then plus 5' produced 50 copies. Originals:",
+          "options": [
+            "15",
+            "45",
+            "18",
+            "145"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "'Plus 5, then times 3' produced 51 copies. Originals:",
+          "options": [
+            "12",
+            "17",
+            "22",
+            "148"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_6_q5",
+          "question": "Log: 5 → 20, 8 → 29, 12 → 41. The setting was:",
+          "options": [
+            "Times 4",
+            "Times 3, then plus 5",
+            "Plus 5, then times 3",
+            "Times 3, then plus 4"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 75
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Method Summary and Examination Technique",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "'Multiply by 5, then subtract 3' gives, for input −1, output:",
+          "options": [
+            "−8",
+            "−2",
+            "2",
+            "8"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "'Multiply by 5, then subtract 3' gave output 32. The input was:",
+          "options": [
+            "7",
+            "35",
+            "29/5",
+            "6"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "For y = 2(x − 4), output 10 comes from input:",
+          "options": [
+            "9",
+            "3",
+            "1",
+            "14"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "Inputs 1 to 4 give outputs 5, 9, 13, 17. The formula is:",
+          "options": [
+            "y = 4x + 1",
+            "y = 5x",
+            "y = 4x − 1",
+            "y = x + 4"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 60
+        },
+        {
+          "id": "subtopic_7_q5",
+          "question": "C = 30t + 15 and C = 225 gives t equals:",
+          "options": [
+            "7",
+            "8",
+            "210",
+            "7,5"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 50
+        }
+      ]
+    }
+  ]
+}

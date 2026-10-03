@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Multiplying and dividing integers today, then all four operations in one line. I will be honest: I used to mix up the multiplication rule with the addition rule — two negatives added give a negative, but two negatives multiplied give a positive — and that confusion cost me marks for a whole term. So the first thing I am going to do is name the operation before I touch a sign.
+
+Our expert tutor derives the rules from a pattern you can check, then models the four-line layout for a mixed calculation, including the anchor: negative three times bracket two minus seven bracket, plus twelve divided by negative four. Our simplifier tutor turns the same rules into debts a gran pays off, temperatures that were warmer five hours ago, and a day at the mall that ends twenty-one rand in the red.
+
+Brackets around every negative, one operation type per line, and a quick sign estimate before the final answer — that is the routine I am going to practise with you. Questions follow each section; I will be doing them too, and I will be saying the sign rule out loud every single time.

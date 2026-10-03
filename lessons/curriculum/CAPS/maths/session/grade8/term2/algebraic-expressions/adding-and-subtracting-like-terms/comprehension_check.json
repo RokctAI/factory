@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Simplify 5x² − 3x + 2x² + x − 4 and name the laws that allow each step.",
+      "expected_answer": "Rearrange and regroup by the commutative and associative laws: (5x² + 2x²) + (−3x + x) − 4. Collect by the distributive law: 7x² − 2x − 4. The laws of exponents keep x² and x apart."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is x + x equal to 2x and not x²?",
+      "expected_answer": "Adding like terms adds coefficients: 1x + 1x = 2x. Exponents add only when powers are multiplied: x × x = x². Test with x = 3: 3 + 3 = 6 but 3² = 9."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why every term inside a subtracted bracket changes sign, using (3x + 2) − (5x − 7).",
+      "expected_answer": "A minus before a bracket is a coefficient of −1, and the distributive law multiplies each term by −1: −5x and +7. So 3x + 2 − 5x + 7 = −2x + 9."
+    }
+  ]
+}

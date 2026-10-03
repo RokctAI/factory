@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, using the link between division and multiplication, why 12 ÷ 0 is undefined but 0 ÷ 12 = 0.",
+      "expected_answer": "12 ÷ 0 asks what number times 0 gives 12; every number times 0 gives 0, so no number works and the expression is undefined. 0 ÷ 12 asks what number times 12 gives 0; the answer is 0 (0 × 12 = 0), so 0 ÷ 12 = 0."
+    },
+    {
+      "id": "cc2",
+      "question": "A learner argues that 12 ÷ 0 should be 'infinity' because 12 ÷ 0,1 = 120, 12 ÷ 0,01 = 1 200 and the answers keep growing. Explain what is right and what is wrong in this argument.",
+      "expected_answer": "The pattern is right: as the divisor approaches 0 the quotient grows without limit, which shows no finite value can be assigned. The conclusion is wrong: infinity is not a number, so 12 ÷ 0 does not equal it. The correct statement is that 12 ÷ 0 is undefined."
+    },
+    {
+      "id": "cc3",
+      "question": "Give two everyday or algebraic situations where a zero divisor could appear, and state what must be done about it.",
+      "expected_answer": "Examples: speed = distance ÷ time with time 0 (no journey, speed undefined); an average with 0 learners (undefined); the expression 6/x when x = 0. In algebra one must state the restriction (x ≠ 0) before working; in context one reports that the quantity does not exist rather than writing 0 or infinity."
+    }
+  ]
+}

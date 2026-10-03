@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Show with one example that subtraction of integers is not commutative.",
+      "expected_answer": "5 − (−2) = 7 but −2 − 5 = −7; swapping the order changes the answer, so subtraction is not commutative."
+    },
+    {
+      "id": "cc2",
+      "question": "Verify the distributive property on −4 × (7 + (−3)) by evaluating it two ways.",
+      "expected_answer": "Bracket first: 7 + (−3) = 4, so −4 × 4 = −16. Distributing: −4 × 7 + (−4) × (−3) = −28 + 12 = −16. Both routes give −16."
+    },
+    {
+      "id": "cc3",
+      "question": "Why may you collect all the positives first in −3 + 8 + (−7) + 2, and what do you get?",
+      "expected_answer": "Addition of integers is commutative and associative, so terms may be reordered and regrouped. Positives 8 + 2 = 10, negatives −3 + (−7) = −10, total 0."
+    }
+  ]
+}

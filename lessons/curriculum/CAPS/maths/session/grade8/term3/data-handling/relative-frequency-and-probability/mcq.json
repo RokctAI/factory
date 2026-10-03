@@ -1,0 +1,466 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Relative Frequency from a Series of Trials",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "A coin lands heads 27 times in 60 tosses. The relative frequency of heads is:",
+          "options": [
+            "27",
+            "27/60, which is 0,45",
+            "1/2",
+            "60/27"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "If the relative frequency of heads is 0,45, the relative frequency of tails is:",
+          "options": [
+            "0,45",
+            "0,55",
+            "0,5",
+            "Cannot tell"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "A 6 came up 23 times in 120 rolls. The relative frequency of a 6 is about:",
+          "options": [
+            "0,23",
+            "0,19",
+            "0,17",
+            "1/6"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "Relative frequency differs from probability because it is:",
+          "options": [
+            "Always larger",
+            "Measured after the trials rather than calculated before",
+            "Never a fraction",
+            "Always exactly 1/2"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q5",
+          "question": "The relative frequencies of all outcomes in a series of trials add to:",
+          "options": [
+            "The number of trials",
+            "0",
+            "1",
+            "1/2"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Predicting the Number of Occurrences",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "A fair die is rolled 120 times. The expected number of sixes is:",
+          "options": [
+            "6",
+            "20",
+            "24",
+            "120"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "P(red) is 3/10. In 50 draws with replacement, the expected number of reds is:",
+          "options": [
+            "3",
+            "10",
+            "15",
+            "30"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The expected number of sixes in 100 rolls of a fair die is:",
+          "options": [
+            "16",
+            "16,67",
+            "17",
+            "20"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "If P(red) is 3/10, the number of draws needed to expect 12 reds is:",
+          "options": [
+            "12",
+            "36",
+            "40",
+            "120"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q5",
+          "question": "Getting 27 heads in 60 tosses when 30 were expected means:",
+          "options": [
+            "The coin is unfair",
+            "The prediction was wrong",
+            "The result is within ordinary chance variation",
+            "Probability does not work"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "Comparing Relative Frequency with Probability",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Predicted 0,5 and observed 0,45 for heads in 60 tosses shows:",
+          "options": [
+            "The coin is unfair",
+            "Ordinary chance variation around the probability",
+            "Probability failed",
+            "The tosses were miscounted"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "As the number of trials increases, relative frequency:",
+          "options": [
+            "Moves away from the probability",
+            "Settles closer to the probability",
+            "Stays exactly equal to the probability",
+            "Becomes 1"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "Seven heads in ten tosses, relative frequency 0,7, is:",
+          "options": [
+            "Impossible for a fair coin",
+            "Quite ordinary for so few tosses",
+            "Proof of bias",
+            "Equal to the probability"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A drawing pin lands point up 128 times in 200 drops. The estimated probability of point up is:",
+          "options": [
+            "1/2",
+            "0,64",
+            "0,36",
+            "128"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 50
+        },
+        {
+          "id": "subtopic_3_q5",
+          "question": "To estimate the probability of an outcome that is not equally likely, you should:",
+          "options": [
+            "Use favourable over total",
+            "Run a long series of trials and use relative frequency",
+            "Guess one half",
+            "Use a short series"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Fair or Loaded? Using Relative Frequency as Evidence",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "In 60 rolls of a fair die, the expected count for each face is:",
+          "options": [
+            "6",
+            "10",
+            "12",
+            "60"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 40
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "Counts of 9, 11, 8, 10, 12, 10 in 60 rolls suggest the die is:",
+          "options": [
+            "Loaded towards 5",
+            "Consistent with fair",
+            "Loaded towards 3",
+            "Impossible"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "A 6 coming up 200 times in 600 rolls gives a relative frequency of:",
+          "options": [
+            "1/6",
+            "1/3",
+            "1/2",
+            "200"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_4_q4",
+          "question": "Four sixes in twelve rolls compared with 200 sixes in 600 rolls:",
+          "options": [
+            "Is stronger evidence of loading",
+            "Is the same evidence",
+            "Is much weaker evidence because the series is short",
+            "Proves fairness"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q5",
+          "question": "Red landing 38 times in 80 spins of a four-colour spinner suggests:",
+          "options": [
+            "Equal sectors",
+            "The red sector is larger or the spinner is faulty",
+            "Red is lucky",
+            "Nothing; 80 is too few"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "The Class That Tossed Until the Board Ran Out",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A learner's 2 heads in 10 tosses gives a relative frequency of:",
+          "options": [
+            "2",
+            "0,2",
+            "0,5",
+            "0,8"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 40
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "The class total of 150 heads in 300 tosses gives a relative frequency of:",
+          "options": [
+            "0,45",
+            "0,5",
+            "0,55",
+            "150"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Individual results ranged from 0,2 to 0,9 because:",
+          "options": [
+            "Some coins were unfair",
+            "Ten tosses is a very short series",
+            "Learners cheated",
+            "Probability varies by person"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "A run of five tails makes the next toss:",
+          "options": [
+            "More likely heads",
+            "More likely tails",
+            "Still one half each",
+            "Impossible to predict"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_5_q5",
+          "question": "The first twenty learners' 99 heads in 200 tosses is a relative frequency of:",
+          "options": [
+            "0,495",
+            "0,99",
+            "0,45",
+            "0,51"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "The Bottle Top and the Goalkeeper's Diary",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "A bottle top lands face up 74 times in 200 drops. The estimated probability of face up is:",
+          "options": [
+            "0,74",
+            "0,37",
+            "0,5",
+            "0,63"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "After 400 drops with 145 face up, the estimate becomes:",
+          "options": [
+            "0,3625",
+            "0,145",
+            "0,5",
+            "0,74"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "If P(face up) is estimated at 0,36, the expected number in 1 000 drops is:",
+          "options": [
+            "36",
+            "360",
+            "640",
+            "1 000"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Penalties aimed centre 6 times out of 40 gives a relative frequency of:",
+          "options": [
+            "0,06",
+            "0,15",
+            "0,33",
+            "0,6"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q5",
+          "question": "Why can P(face up) for a bottle top not be found by favourable over total?",
+          "options": [
+            "Bottle tops are too small",
+            "Face up and face down are not equally likely",
+            "There are three outcomes",
+            "It can be found that way"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_7",
+      "title": "Method Summary and Examination Technique",
+      "questions": [
+        {
+          "id": "subtopic_7_q1",
+          "question": "The expected number of sixes in 300 rolls of a fair die is:",
+          "options": [
+            "6",
+            "30",
+            "50",
+            "60"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 40
+        },
+        {
+          "id": "subtopic_7_q2",
+          "question": "Relative frequency is calculated as frequency divided by:",
+          "options": [
+            "The number of outcomes",
+            "The number of trials",
+            "The probability",
+            "6"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q3",
+          "question": "The correct phrase for 27 heads in 60 tosses is:",
+          "options": [
+            "The coin is proven fair",
+            "The coin is proven unfair",
+            "The result is consistent with a fair coin",
+            "Probability is wrong"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q4",
+          "question": "As the number of trials increases, relative frequency approaches:",
+          "options": [
+            "Zero",
+            "One",
+            "The probability",
+            "The number of trials"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_7_q5",
+          "question": "For a non-symmetric object, probability is best estimated by:",
+          "options": [
+            "Favourable over total",
+            "The relative frequency from a long series of trials",
+            "One half",
+            "A short series"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 45
+        }
+      ]
+    }
+  ]
+}

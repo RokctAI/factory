@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A tank is 2 m by 1,5 m by 1 m and a tap delivers 12 litres per minute. How long does the tank take to fill?",
+      "expected_answer": "The volume is 3 cubic metres, which is 3 000 litres. 3 000 divided by 12 is 250 minutes, which is 4 hours and 10 minutes."
+    },
+    {
+      "id": "cc2",
+      "question": "How much water does 25 mm of rain on a roof of plan area 60 square metres give, and why must the units be converted?",
+      "expected_answer": "25 mm is 0,025 m, so the volume is 60 times 0,025, which is 1,5 cubic metres, or 1 500 litres. The depth must be in metres to multiply with square metres and give cubic metres."
+    },
+    {
+      "id": "cc3",
+      "question": "Why can dividing volumes give the wrong answer for how many boxes fit in a carton?",
+      "expected_answer": "Because boxes are rigid and must line up in whole numbers along each dimension. If a dimension does not divide exactly, gaps are left, so fewer boxes fit than the volume division suggests; the count must be checked dimension by dimension and orientation by orientation."
+    }
+  ]
+}

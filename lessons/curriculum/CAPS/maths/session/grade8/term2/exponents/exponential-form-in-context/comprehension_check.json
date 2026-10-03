@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A colony of one cell doubles every hour. How many cells after 6 hours, and what does the exponent represent?",
+      "expected_answer": "2^6 = 64 cells. The exponent 6 is the number of doublings, which equals the number of hours because the period is one hour."
+    },
+    {
+      "id": "cc2",
+      "question": "A cube has volume 343 cm³. Find its edge and explain why a cube root is needed.",
+      "expected_answer": "Volume is edge cubed, so the edge is the cube root of 343, which is 7 cm, since 7^3 = 343. The question runs the volume formula backwards, which is what a root does."
+    },
+    {
+      "id": "cc3",
+      "question": "Why does a tank with 8 times the volume have an edge only 2 times as long?",
+      "expected_answer": "Volume is edge cubed, so multiplying the edge by 2 multiplies the volume by 2^3 = 8. Going backwards, the cube root of 8 is 2, so the edge doubles, not octuples."
+    }
+  ]
+}

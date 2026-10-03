@@ -1,0 +1,19 @@
+### subtopic_1 — Prime Factorisation — The Ladder and Index Form
+**Assistant:** Why must the ladder use primes only, if the final product comes out the same anyway?
+
+**Tutor:** Because the examiner is marking the prime factorisation, not merely a factorisation, and because the HCF and LCM rules only work when every factor on the side is prime. If you write six on the side of the ladder, your index form will hide a two and a three inside that six, and when you compare powers with the other number you will under-count both primes. The result is an HCF or LCM that is wrong even though your product multiplies back correctly. There is also the uniqueness point: every number has exactly one prime factorisation, which is why two learners who ladder correctly must reach identical index forms. A factorisation that includes a composite is not unique, so it cannot be compared reliably. Keep to the smallest prime that divides at each step, and the ladder is both correct and markable.
+
+### subtopic_2 — The HCF — Shared Primes, Lowest Powers
+**Assistant:** How can I be sure the common factor I found is the HIGHEST one?
+
+**Tutor:** Divide both original numbers by your answer and look at the quotients. For 180 and 300 divided by 60 you get three and five, and three and five share no factor other than one. That is the proof: if the quotients still shared a factor, say two, then twice your answer would also divide both numbers, so your answer would not have been the highest. When the quotients are coprime, nothing larger can work. The second safeguard is the structural one — an HCF can never exceed the smaller of the two numbers, so any answer larger than 180 is wrong before you check anything else. Use the quotient test every time; it costs two short divisions and converts a plausible answer into a verified one.
+
+### subtopic_3 — The LCM — Every Prime, Highest Powers
+**Assistant:** Why does multiplying the HCF by the LCM give the product of the two numbers?
+
+**Tutor:** Look at the primes. For each prime, the HCF takes the lower power and the LCM takes the higher power, so between them they take both powers exactly once — the lower one and the higher one. Multiply the HCF by the LCM and every prime appears with the sum of its two original powers, which is precisely what you get when you multiply the two original numbers together. For 180 and 300, the three appears as three to the first in the HCF and three squared in the LCM, together three cubed, which is exactly the three squared times three that the two numbers carry between them. The identity therefore holds for any pair of numbers, and it is a genuinely useful check: compute HCF times LCM, compute the product of the numbers, and if they differ one of your answers is wrong. It also lets you find the LCM quickly once the HCF is known, by dividing the product by the HCF.
+
+### subtopic_4 — Choosing the Tool and Reading the Word Problem
+**Assistant:** What is the fastest way to decide whether a word problem wants the HCF or the LCM?
+
+**Tutor:** Ask which way the division runs. If the thing you are looking for must go INTO both given quantities — a tile into both wall lengths, a group size into both class sizes, a pack size into both stock counts — it is a factor of both, and the largest such factor is the HCF. If both given quantities must go INTO the thing you are looking for — both timetables into the meeting time, both lengths into the common length, both denominators into the common denominator — it is a multiple of both, and the smallest such multiple is the LCM. A second clue is size: an HCF answer is smaller than the numbers you were given, an LCM answer is larger. If your HCF came out bigger than a given number or your LCM came out smaller, you have the rules swapped. Classify first, calculate second, sanity-check third.

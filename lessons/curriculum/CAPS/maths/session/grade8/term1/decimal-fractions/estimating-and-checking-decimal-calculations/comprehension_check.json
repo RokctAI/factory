@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Why is 0,48 + 0,9 equal to 1,38 and not 0,57?",
+      "expected_answer": "0,9 is nine tenths, which is 0,90 when padded; adding 0,48 and 0,90 with the commas aligned gives 1,38. Treating the 9 as nine hundredths gives the wrong 0,57."
+    },
+    {
+      "id": "cc2",
+      "question": "Estimate 4,87 × 2,1 to one significant figure and use the estimate to place the comma in the digits 10227.",
+      "expected_answer": "5 × 2 = 10, so the answer is about 10; the only placement near 10 is 10,227, which also has the expected three decimal places."
+    },
+    {
+      "id": "cc3",
+      "question": "A calculator shows 788 for 38,6 ÷ 4,9. Explain how to tell this is wrong and what the answer should be.",
+      "expected_answer": "The estimate 40 ÷ 5 = 8 says the answer is about 8, so 788 has a slipped comma; the answer is 7,88 to two decimal places."
+    }
+  ]
+}

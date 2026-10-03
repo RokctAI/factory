@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today everything from the shapes topic goes to work on problems: unknown angles and sides in triangles and quadrilaterals, algebraic unknowns, perimeters, composite figures and similar triangles. I used to look at a figure with six unknowns and freeze; the trick in this session is to find the one unknown nearest a given, write it down with its reason, and let the rest fall one at a time.
+
+Our expert tutor covers unknown angles in triangles, unknown sides from definitions and perimeters, angles in quadrilaterals and composite figures, and sides and angles together with similar figures. Our simplifier tutor specifies a house-shaped window for a glazier and completes a kite builder's plan and a surveyor's trapezium sketch from almost nothing.
+
+My plan: name every shape, list its facts, start nearest a given, write statement, value and reason, solve the equation that matches the fact, substitute back to the lengths and angles, and check 180, 360 and the perimeter. Questions follow every section; I will be filling in the diagram alongside you.

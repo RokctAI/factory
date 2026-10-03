@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Point 3 semicolon 2 has image negative 2 semicolon 3. Identify the transformation and give a check.",
+      "expected_answer": "The coordinates swapped and the new first coordinate changed sign, the pattern negative y semicolon x, so it is a rotation of 90 degrees anticlockwise about the origin. Check: both points are the square root of 13 from the origin."
+    },
+    {
+      "id": "cc2",
+      "question": "Point 1 semicolon negative 3 has image negative 2 semicolon 4. Identify the transformation completely.",
+      "expected_answer": "The distance from the origin changes, from the square root of 10 to the square root of 20, so it is a translation. Image minus original gives negative 3 and 7: a translation of 3 units left and 7 units up, rule x semicolon y maps to x minus 3 semicolon y plus 7."
+    },
+    {
+      "id": "cc3",
+      "question": "Why can the pair 4 semicolon 0 to negative 4 semicolon 0 fit two different transformations, and how is it resolved?",
+      "expected_answer": "Because y is zero, negating it changes nothing, so both reflection in the y-axis and rotation of 180 about the origin give the same image. A second point off the x-axis decides: its image will have y unchanged for the reflection and y negated for the rotation."
+    }
+  ]
+}

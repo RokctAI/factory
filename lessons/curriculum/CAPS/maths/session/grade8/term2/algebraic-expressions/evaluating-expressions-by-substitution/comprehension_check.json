@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Evaluate 3x² − 5x + 7 at x = −2, showing the substitution line and explaining the two sign points.",
+      "expected_answer": "3(−2)² − 5(−2) + 7 = 3(4) + 10 + 7 = 29. First, (−2)² is +4 because a negative squared is positive. Second, −5 × (−2) is +10 because two negatives multiply to a positive."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is x = 2 a better value than x = 1 for checking algebra by substitution?",
+      "expected_answer": "At x = 1 every power equals 1, so an expression with a wrong exponent gives the same value as the correct one and the error is hidden. At x = 2 powers differ (4, 8, 16), so exponent errors show. Zero is worse still: variable terms vanish."
+    },
+    {
+      "id": "cc3",
+      "question": "In F = 9/5 C + 32, why must the multiplication be done before adding 32?",
+      "expected_answer": "Order of operations: multiplication before addition. 9/5 C means nine fifths of C, and 32 is added to that product. At C = 30, 54 + 32 = 86; adding first would give 9/5 of 62, about 111,6, which is wrong."
+    }
+  ]
+}

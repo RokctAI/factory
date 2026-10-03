@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Dividing decimals by decimals today. My old mistake was to move the comma in the divisor and forget to move it in the number being divided, so my answers were ten times too small and I never noticed because I had no way of checking.
+
+Our expert tutor fixes both problems: the method is to scale both numbers by the same power of ten until the divisor is whole — because a division is a fraction and you may scale a fraction — and the check is to multiply back, plus a direction test before you start. The anchors are four comma eight divided by zero comma six, which is eight, and seven comma three five divided by zero comma five, which is fourteen comma seven. Our simplifier tutor asks how many halves fit into seven comma three five, then goes shopping for unit prices and shows that the dearer bottle can be the cheaper juice.
+
+My rule for the session: say bigger or smaller before I divide, and scale both or scale neither. Questions follow every section; I will be checking direction alongside you.

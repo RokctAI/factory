@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Expand 2x(3x − 5) and explain which law is used and why the answer has two terms.",
+      "expected_answer": "The distributive law: 2x multiplies each term, giving 6x² and −10x. The two products are unlike terms (x² and x), so they cannot be collected and the answer is 6x² − 10x."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is 3x × 4x² equal to 12x³ and not 7x² or 12x²?",
+      "expected_answer": "Coefficients multiply: 3 × 4 = 12. Exponents of the same letter add: x¹ × x² = x³. Adding the coefficients (7) or forgetting to add exponents (x²) breaks one of the two rules."
+    },
+    {
+      "id": "cc3",
+      "question": "Expand −3a(a² − 2a + 4) and describe what happens to the signs.",
+      "expected_answer": "−3a³ + 6a² − 12a. Every term is multiplied by a negative, so every sign inside flips: plus becomes minus, minus becomes plus. Only flipping the first sign is the common error."
+    }
+  ]
+}

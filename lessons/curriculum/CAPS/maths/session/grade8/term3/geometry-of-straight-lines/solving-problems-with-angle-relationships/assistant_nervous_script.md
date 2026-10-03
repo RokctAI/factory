@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today we solve angle problems: chaining reasons through a diagram, turning angle facts into equations when the angles are expressions in x, adding a helping line when a path bends, and proving lines are parallel. I used to write x equals 42 and stop, and lose the marks for the angles the question actually asked for; this session is partly about finishing.
+
+Our expert tutor covers planning a route through a multi-step diagram, equations from straight-line and vertically opposite angles, equations from the parallel-line pairs, and auxiliary lines with the converse facts for proving parallel. Our simplifier tutor checks a roof truss from the ground and orders the right fitting for a bent pipe between two parallel walls.
+
+My plan: mark the diagram, plan the chain, write statement, value and reason, write the right kind of equation for the pair, substitute back to the angles, and check by a second route. Questions follow every section; I will be chaining reasons alongside you.

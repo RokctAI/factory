@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why 0,8 is larger than 0,75 even though 75 is larger than 8.",
+      "expected_answer": "Pad 0,8 to 0,80. Eighty hundredths is more than seventy-five hundredths. A longer decimal is not a bigger decimal; compare place by place from the left."
+    },
+    {
+      "id": "cc2",
+      "question": "Round 7,995 to two decimal places and explain the carry.",
+      "expected_answer": "The third decimal digit is 5, so round up the hundredths: 9 becomes 10, carry; the tenths 9 becomes 10, carry; units 7 becomes 8. Answer 8,00, keeping both zeros to show two decimal places."
+    },
+    {
+      "id": "cc3",
+      "question": "Order 2,35; 2,305; 2,53 and 2,035 in ascending order and describe your method.",
+      "expected_answer": "Pad to three places (2,350; 2,305; 2,530; 2,035), order the decimal parts as whole numbers (35, 305, 350, 530), then translate back: 2,035; 2,305; 2,35; 2,53."
+    }
+  ]
+}

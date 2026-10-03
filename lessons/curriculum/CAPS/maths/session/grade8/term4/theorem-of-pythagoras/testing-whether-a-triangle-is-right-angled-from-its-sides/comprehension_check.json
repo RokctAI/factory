@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Test whether a triangle with sides 7, 24 and 25 is right-angled, and say where the right angle is.",
+      "expected_answer": "The longest side is 25 and 25 squared is 625. The other two give 49 plus 576, which is 625. Equal, so the triangle is right-angled by the converse of the Theorem of Pythagoras, with the right angle between the sides 7 and 24, opposite the 25."
+    },
+    {
+      "id": "cc2",
+      "question": "Sides 5, 6 and 8: is the triangle right-angled? If not, is it acute- or obtuse-angled?",
+      "expected_answer": "8 squared is 64; 5 squared plus 6 squared is 61. Not equal, so not right-angled. Since 64 is greater than 61, the angle opposite the 8 is more than 90 degrees, so the triangle is obtuse-angled."
+    },
+    {
+      "id": "cc3",
+      "question": "Why must the longest side be the one squared on its own in the test?",
+      "expected_answer": "The converse compares the square of the side opposite the possible right angle with the other two; the right angle, if it exists, is opposite the longest side. Squaring a shorter side alone compares the wrong quantities and gives a false conclusion, as 5, 12, 13 would wrongly fail."
+    }
+  ]
+}

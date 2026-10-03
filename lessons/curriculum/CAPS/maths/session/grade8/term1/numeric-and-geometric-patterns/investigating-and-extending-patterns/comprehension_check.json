@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the rule for 3; 7; 11; 15 and give the eighth term.",
+      "expected_answer": "The differences are all 4, so the rule is add 4. Continuing: 19, 23, 27, 31 — the eighth term is 31."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is 2; 6; 18; 54 not a constant-difference pattern, and what is its rule?",
+      "expected_answer": "The differences 4, 12, 36 are not equal. Each term is three times the previous one, so the rule is multiply by 3; the next term is 162."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain from the diagram why each new matchstick square in a row adds 3 sticks, and give the number of sticks in shape 10.",
+      "expected_answer": "Each new square shares one side with the previous square, so only three new sticks are needed. Starting from 4 and adding 3 nine times gives 31."
+    }
+  ]
+}

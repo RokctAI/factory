@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Today is about three properties with long names: commutative, associative and distributive. I remember thinking they were just vocabulary to memorise. Then negatives arrived and I realised they are permissions — they tell you exactly when you are allowed to swap, regroup or spread out a calculation, and when you absolutely are not.
+
+Our expert tutor tests each property with integers, shows that subtraction and division break them, and then uses them for mental maths and for the justification questions examiners love. The anchor is negative four times bracket seven plus negative three bracket, which comes to negative sixteen whichever route you take. Our simplifier tutor plays the same ideas through a till slip, a shared taxi account and a late pizza delivery, where the properties stop being rules and become common sense about money.
+
+The one thing I am going to keep saying to myself: convert subtractions to adding the opposite, and then the freedom to rearrange is mine. Questions follow every section, and I will be working them alongside you.

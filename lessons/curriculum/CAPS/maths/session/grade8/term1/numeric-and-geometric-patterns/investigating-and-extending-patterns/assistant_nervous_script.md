@@ -1,0 +1,5 @@
+Hey — it's me, your session host. Patterns today — number sequences and shape sequences, and how to find and extend their rules. I used to look at a sequence and just guess the next number, and I was right only when the gap was obvious. The method we build today replaces guessing with two tests and a picture.
+
+Our expert tutor sets out constant-difference patterns, constant-ratio patterns, and the ones that are neither — like the square numbers, where the pattern hides in the differences — and shows how a diagram of matchsticks or dots explains the rule. The anchors are three, seven, eleven, fifteen; two, six, eighteen, fifty-four; one, four, nine, sixteen; and the matchstick squares four, seven, ten. Our simplifier tutor builds the matchstick squares one at a time, watches a rumour triple, bounces a ball to half its height, and then has you make your own pattern for a friend to crack.
+
+My plan: write the gaps first, every time, and if they are not equal, try the ratios. Questions follow every section; I will be writing gaps right alongside you.

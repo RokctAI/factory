@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Isosceles triangle ABC has AB equal to AC and BC extended to D with angle ACD of 110. Find the angles of the triangle with reasons.",
+      "expected_answer": "Angle ACB is 180 minus 110, which is 70, angles on a straight line. Angle ABC is 70, base angles of an isosceles triangle. Angle BAC is 180 minus 70 minus 70, which is 40, angle sum of a triangle."
+    },
+    {
+      "id": "cc2",
+      "question": "A rectangle has sides 2x + 1 and x + 5 and perimeter 42. Find its dimensions.",
+      "expected_answer": "Opposite sides are equal, so the perimeter is 2 times the sum of adjacent sides: 2 times the quantity 3x plus 6 equals 42, so 3x plus 6 is 21, 3x is 15 and x is 5. The sides are 11 and 10, and 2 times 21 is 42."
+    },
+    {
+      "id": "cc3",
+      "question": "A square has an equilateral triangle built outward on one side. Find the angle where the triangle's side meets the square's side at a shared vertex, and the angle sum of the resulting pentagon.",
+      "expected_answer": "At the shared vertex the square contributes 90 and the triangle 60, so the outline angle is 150. The pentagon's angles are 150, 150, 60, 90 and 90, adding to 540, which equals three triangles' worth of 180."
+    }
+  ]
+}

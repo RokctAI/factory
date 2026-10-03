@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write 150 000 000 in scientific notation and explain how the exponent is found.",
+      "expected_answer": "1,5 × 10^8. The comma moves from the end of the number to just after the first digit, a move of eight places, so the exponent is 8 — one less than the nine digits."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is 25 × 10^5 not in scientific notation, and what is its correct form?",
+      "expected_answer": "The first factor must be at least 1 and less than 10; 25 is too big. Move the comma one place left and raise the exponent by one: 2,5 × 10^6."
+    },
+    {
+      "id": "cc3",
+      "question": "How do you compare 3,9 × 10^6 and 1,2 × 10^7, and which is larger?",
+      "expected_answer": "Both are normalised, so compare exponents: 7 is greater than 6, so 1,2 × 10^7 (twelve million) is larger than 3,9 × 10^6 (3,9 million), even though 3,9 is greater than 1,2."
+    }
+  ]
+}

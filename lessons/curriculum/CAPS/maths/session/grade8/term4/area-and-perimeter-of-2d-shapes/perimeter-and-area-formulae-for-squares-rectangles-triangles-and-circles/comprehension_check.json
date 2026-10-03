@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A rectangle has area 60 square centimetres and length 12 cm. Find its breadth and perimeter.",
+      "expected_answer": "Area is length times breadth, so the breadth is 60 divided by 12, which is 5 cm. The perimeter is 2 times the bracket 12 plus 5, which is 2 times 17, which is 34 cm."
+    },
+    {
+      "id": "cc2",
+      "question": "A circle has diameter 20 m. Find its circumference and area, using the calculator's value of pi.",
+      "expected_answer": "The radius is 10 m. The circumference is pi times 20, about 62,83 m, and the area is pi times 10 squared, which is 100 pi, about 314,16 square metres."
+    },
+    {
+      "id": "cc3",
+      "question": "Why is the area of a triangle half of base times height?",
+      "expected_answer": "The triangle fits inside a rectangle with the same base and the same perpendicular height, and it takes up exactly half of that rectangle, because the height splits the rectangle into two parts that the triangle's sides cut in half along their diagonals."
+    }
+  ]
+}
