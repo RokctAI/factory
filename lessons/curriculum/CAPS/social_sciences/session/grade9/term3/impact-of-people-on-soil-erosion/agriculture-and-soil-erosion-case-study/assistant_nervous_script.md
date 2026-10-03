@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a field with no coat, a black blizzard and a staircase on a hill.
+The field. Ploughing loosens soil and leaves it bare until the crop grows, especially at the start of the rains. Ploughing downslope, monoculture, steep land and heavy machines make it worse. Overgrazing, when animals exceed carrying capacity, kills grass and compacts soil. Examples: the Karoo, and the overcrowded former homelands created by the 1913 and 1936 Land Acts.
+The blizzard. In the 1930s, prairie grassland on the Great Plains was ploughed for wheat. Drought killed the crops and wind blew the soil away in black blizzards; 14 April 1935 was Black Sunday. Farms failed and hundreds of thousands of people migrated. The Soil Conservation Service was set up in 1935.
+The staircase. Conservation methods: contour ploughing, terraces, contour banks, strip cropping across slopes, conservation agriculture, windbreaks, rotational grazing, gabions. South Africa has the Conservation of Agricultural Resources Act of 1983 and LandCare.
+Open the practice set when you are ready. You've got this!

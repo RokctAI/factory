@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain latitude and longitude, the equator and prime meridian, the division of a degree into minutes and seconds, and why South African co-ordinates carry S and E.",
+      "expected_answer": "Latitude lines (parallels) run east-west and measure position north or south of the equator (0 degrees) up to 90 degrees at the poles; longitude lines (meridians) run pole to pole and measure position east or west of the prime meridian through Greenwich (0 degrees) up to 180 degrees. A degree has 60 minutes and a minute 60 seconds. South Africa lies south of the equator and east of Greenwich, so its latitudes are S and longitudes E."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the method for finding the latitude of a feature in degrees, minutes and seconds on a 1:50 000 map in the southern hemisphere, explaining which minute line you measure from and why.",
+      "expected_answer": "Join the minute ticks to find the block containing the feature and read its degrees and minutes from the smaller-value line. Because latitude south increases towards the bottom of the map, measure from the line to the north (the smaller value) down to the centre of the feature. Measure the length of the block. Seconds = distance / block length x 60, rounded to a whole number. Write degrees, minutes, seconds and S."
+    },
+    {
+      "id": "cc3",
+      "question": "Calculate the co-ordinates of a trig station lying 1,5 cm south of 25 degrees 45 minutes S in a 3,7 cm block, and 2,0 cm east of 28 degrees 12 minutes E in a 3,3 cm block.",
+      "expected_answer": "Latitude seconds = 1,5 / 3,7 x 60 = 24,3, about 24; latitude 25 degrees 45 minutes 24 seconds S. Longitude seconds = 2,0 / 3,3 x 60 = 36,4, about 36; longitude 28 degrees 12 minutes 36 seconds E."
+    }
+  ]
+}

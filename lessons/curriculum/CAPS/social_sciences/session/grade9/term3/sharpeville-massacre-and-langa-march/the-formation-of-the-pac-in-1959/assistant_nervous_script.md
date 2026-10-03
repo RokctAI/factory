@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a continent waking up, a family argument and a teacher called "Prof".
+The continent. African nationalism, from Anton Lembede, stresses African pride, self-reliance and African leadership. Pan-Africanism, from Du Bois, Garvey and Nkrumah, unites people of African descent. Ghana became independent in 1957, Accra hosted the All-African People's Conference in 1958, and 1960 was the Year of Africa.
+The argument. The Africanists rejected the Freedom Charter's claim that South Africa belongs to all, the multiracial Congress Alliance, communist influence and the ANC's caution. The ANC defended non-racialism. They broke away in November 1958.
+The Prof. The PAC was launched on 6 April 1959 in Orlando, with Robert Sobukwe as president and Potlako Leballo as secretary. Aims: African nationalism, government of the Africans by the Africans for the Africans, a united Africa. Slogans: "Izwe Lethu" and "Africa for the Africans". Goal: freedom by 1963. Its anti-pass campaign was set for 21 March 1960, before the ANC's 31 March: no bail, no defence, no fine, and no violence.
+Open the practice set when you are ready. You've got this!

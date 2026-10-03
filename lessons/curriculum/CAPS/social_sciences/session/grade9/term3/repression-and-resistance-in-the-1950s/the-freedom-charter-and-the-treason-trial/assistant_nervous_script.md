@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a question on a scrap of paper, a field at Kliptown and a trial that went on and on.
+The paper. The Congress Alliance united the ANC, SAIC, SACPO, the Congress of Democrats and SACTU. Z.K. Matthews proposed a Congress of the People in 1953. Freedom volunteers asked, "If you could make the laws, what would you do?" and collected thousands of demands; a small group drafted the text.
+The field. On 25 and 26 June 1955, about three thousand delegates met at Kliptown. Isitwalandwe was awarded to Luthuli, Dadoo and Huddleston. The preamble: South Africa belongs to all who live in it, black and white. Ten clauses, from "The People Shall Govern" to "There Shall be Peace and Friendship". Police raided on day two. The ANC adopted it in 1956; Africanists rejected it, leading to the PAC in 1959.
+The trial. On 5 December 1956, 156 people were arrested for high treason. The state alleged a violent communist plot. Charges were dropped against most; on 29 March 1961 the last accused were acquitted.
+Open the practice set when you are ready. You've got this!

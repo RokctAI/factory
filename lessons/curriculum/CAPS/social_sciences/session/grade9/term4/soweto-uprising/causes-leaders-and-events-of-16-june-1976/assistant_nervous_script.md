@@ -1,0 +1,5 @@
+Hey, this topic fits in three pictures: a crowded classroom, a homemade placard and a famous photograph.
+The classroom. Bantu Education, from 1953, spent far less on black pupils than on white pupils. Soweto had overcrowded classes, under-qualified teachers and few books. Then the 1974 Afrikaans Medium Decree said that from Standard 5, half the subjects had to be taught in Afrikaans. Teachers and pupils struggled with the language, and many saw it as the language of the oppressor. Afrikaans was the spark, but the deeper causes were Bantu Education and apartheid itself.
+The placard. Black Consciousness, led by Steve Biko and SASO, taught pride and self-reliance. On 13 June, SASM formed an action committee, which later became the SSRC, led by Tsietsi Mashinini. They planned a peaceful march to Orlando Stadium.
+The photograph. On 16 June 1976, thousands of students marched. Police opened fire. Hastings Ndlovu and Hector Pieterson were killed. Sam Nzima photographed Mbuyisa Makhubo carrying Hector. Offices and beer halls burned. The decree was withdrawn on 6 July. 16 June is Youth Day.
+Open the practice set when you are ready. You've got this!

@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a referee at a match, a nursery in the sea and a traffic light in the fish shop.
+The referee. Sustainable use meets today's needs without harming the future. A sustainable fishery keeps stocks healthy, protects the ecosystem and is fairly managed. Maximum sustainable yield is the largest long-term catch; the precautionary principle leaves a margin. Tools: stock assessments, total allowable catch, quotas, closed seasons and areas, size and bag limits, mesh sizes and enforcement, under the Marine Living Resources Act of 1998. Hake recovered and was certified in 2004.
+The nursery. Marine protected areas let fish grow and spill over; South Africa has forty-one, including Tsitsikamma from 1964. Better gear: turtle excluders, tori lines. Aquaculture, like abalone farming, helps but has risks.
+The traffic light. SASSI, from 2004, lists fish as green, orange or red. MSC and ASC ecolabels. Small-scale fishers won recognition in the 2012 policy. The 2023 High Seas Treaty enables protection beyond national waters.
+Open the practice set when you are ready. You've got this!

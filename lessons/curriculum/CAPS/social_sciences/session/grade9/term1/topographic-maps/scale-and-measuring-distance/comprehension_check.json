@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name and explain the three types of scale, convert 1:50 000 into a word scale in metres and kilometres, and explain why the line scale remains correct on an enlarged or reduced map.",
+      "expected_answer": "Word scale: states the relationship in words (1 cm represents 0,5 km). Ratio scale: a unitless ratio meaning 1 unit on the map represents 50 000 of the same units on the ground. Line scale: a divided line labelled with ground distances. 1:50 000 = 1 cm represents 50 000 cm = 500 m = 0,5 km. The line scale is part of the map and enlarges or shrinks in the same proportion as everything else, so it still matches the map, whereas the printed ratio no longer does."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how to measure a curved distance along a road on a topographic map and calculate the real length of a road that measures 9,6 cm on a 1:50 000 map.",
+      "expected_answer": "Place the straight edge of a paper strip at the start, mark where the road bends, pivot the strip to follow each straight section and mark again until the end (or lay string along the curves and straighten it). Measure the total with a ruler or against the line scale. 9,6 cm x 50 000 = 480 000 cm = 4,8 km."
+    },
+    {
+      "id": "cc3",
+      "question": "A learner walks the 4,8 km road at 5 km/h. Calculate the time in minutes, and explain why the calculated time may be shorter than the real time.",
+      "expected_answer": "Time = distance / speed = 4,8 / 5 = 0,96 h; 0,96 x 60 = 57,6 minutes, about 58 minutes. The calculation assumes a constant speed; real walking is slowed by gradients, rests, crossings and rough surfaces, so the real time is usually longer."
+    }
+  ]
+}

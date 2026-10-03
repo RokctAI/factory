@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: an old fence, a new wall and a label on every person.
+The fence. Segregation existed before 1948: Union in 1910 gave whites power; the Natives Land Act of 1913 and the 1936 Act limited black land to about 13 percent; urban areas and pass laws controlled movement. Wartime urbanisation, the 1946 mine strike and white fears set the scene.
+The wall. On 26 May 1948 the National Party under D.F. Malan won 79 seats to 71, with fewer votes, thanks to weighted rural seats. Apartheid laws: Mixed Marriages Act 1949; Immorality Amendment Act, Population Registration Act, Group Areas Act and Suppression of Communism Act 1950; Bantu Authorities and Separate Representation of Voters Acts 1951; Abolition of Passes Act 1952; Separate Amenities and Bantu Education Acts 1953; self-government and university acts 1959.
+The label. Population Registration classified everyone and decided all other rights. Petty apartheid segregated daily life; grand apartheid created homelands. People resisted from the start.
+Open the practice set when you are ready. You've got this!
