@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w09_weather_and_us",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Weather and us",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Weather",
+    "subtopic": "The weather and us: clothes, food and activities for different weather"
+  },
+  "skill": "weather.effects",
+  "prereq_skills": [],
+  "images": ["weather_clothes", "umbrella", "sunglasses", "swimsuit", "soup", "ice_cream", "ice_lolly", "swimming", "build_snowman", "sledge", "gumboots", "raincoat", "sunhat", "sunscreen", "gloves", "scarf", "tutor_stare_sun"],
+  "show": {
+    "line": "Weather changes what we wear, eat and do. Hot day? Cold day? Rainy day?",
+    "image": "weather_clothes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "It is raining. What do you take?", "options": ["umbrella", "sunglasses", "swimsuit"], "answer": "umbrella", "praise": "An umbrella!"},
+    {"type": "listen_tap", "prompt": "A cold day. Which food warms you up?", "options": ["soup", "ice_cream", "ice_lolly"], "answer": "soup", "praise": "Hot soup!"},
+    {"type": "listen_tap", "prompt": "A hot sunny day. What can you do?", "options": ["swimming", "build_snowman", "sledge"], "answer": "swimming", "praise": "Swimming! Splash."},
+    {"type": "match_sort", "prompt": "Rainy day or sunny day? Sort them.", "groups": ["rainy", "sunny"], "items": [{"image": "umbrella", "group": "rainy"}, {"image": "gumboots", "group": "rainy"}, {"image": "raincoat", "group": "rainy"}, {"image": "sunhat", "group": "sunny"}, {"image": "sunscreen", "group": "sunny"}]},
+    {"type": "say_it", "prompt": "Never look straight at the...?", "accept": ["sun", "the sun"]},
+    {"type": "listen_tap", "prompt": "What protects your eyes from bright sun?", "options": ["sunglasses", "gloves", "scarf"], "answer": "sunglasses", "praise": "Sunglasses and a hat!"}
+  ],
+  "hints": ["Think: is it hot, cold or wet?", "The sun is too bright for our eyes."],
+  "beat_the_tutor": {
+    "setup": "My turn! The sun is out.",
+    "tutor_try": "I will stare right at the sun!",
+    "image": "tutor_stare_sun",
+    "answer": "no",
+    "win_line": "You caught me! Never look straight at the sun. It hurts eyes.",
+    "gentle_line": "Never look at the sun. Wear a hat!"
+  },
+  "parent_line": "Knows how weather affects clothes, food and activities, and to protect eyes from the sun."
+}

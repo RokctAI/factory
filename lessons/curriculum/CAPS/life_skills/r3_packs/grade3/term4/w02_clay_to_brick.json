@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term4.w02_clay_to_brick",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "From clay to brick",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Products and processes",
+    "subtopic": "The earth: what we get from the earth; process from clay to brick"
+  },
+  "skill": "process.brick",
+  "prereq_skills": ["process.sugar"],
+  "images": ["brick_kiln", "clay", "paper", "sugar", "gold", "wool", "honey", "coal", "milk", "building", "eating", "tutor_butter"],
+  "show": {
+    "line": "Bricks are made from clay. Dig, mix, shape and bake hot!",
+    "image": "brick_kiln"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Dig clay, mix, shape, and then?", "sequence": ["dig", "mix", "shape"], "options": ["bake", "dig", "eat"], "answer": "bake", "praise": "Bake in a kiln!"},
+    {"type": "listen_tap", "prompt": "Bricks are made from...?", "options": ["clay", "paper", "sugar"], "answer": "clay", "praise": "Clay!"},
+    {"type": "listen_tap", "prompt": "What do we get from the earth?", "options": ["gold", "wool", "honey"], "answer": "gold", "praise": "Gold!"},
+    {"type": "say_it", "prompt": "Where are bricks baked? In a hot...?", "accept": ["kiln", "oven", "fire"]},
+    {"type": "match_sort", "prompt": "From the earth or from animals?", "groups": ["earth", "animals"], "items": [{"image": "coal", "group": "earth"}, {"image": "clay", "group": "earth"}, {"image": "gold", "group": "earth"}, {"image": "wool", "group": "animals"}, {"image": "milk", "group": "animals"}]},
+    {"type": "listen_tap", "prompt": "What are bricks used for?", "options": ["building", "eating"], "answer": "building", "praise": "Building!"}
+  ],
+  "hints": ["The earth gives clay, coal and gold.", "Heat makes clay hard."],
+  "beat_the_tutor": {
+    "setup": "My turn! Bricks are made from...",
+    "tutor_try": "Butter!",
+    "image": "tutor_butter",
+    "answer": "clay",
+    "win_line": "You caught me! Clay.",
+    "gentle_line": "Clay, baked hot!"
+  },
+  "parent_line": "Can describe how bricks are made and what we get from the earth."
+}

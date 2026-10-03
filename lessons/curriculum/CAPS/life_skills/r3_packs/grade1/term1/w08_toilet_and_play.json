@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w08_toilet_and_play",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Toilet routine and play",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Healthy habits",
+    "subtopic": "Proper use of the toilet and toilet routine; regular exercise and play; limited television"
+  },
+  "skill": "health.toilet_play",
+  "prereq_skills": ["health.habits"],
+  "images": ["toilet_routine", "toilet_clean", "toilet_messy", "a_little_tv", "all_day_tv", "toilet_paper", "newspaper", "leaf", "tutor_lunch"],
+  "show": {
+    "line": "Use the toilet, flush, and wash your hands. Then go and play!",
+    "image": "toilet_routine"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Use the toilet, flush, and then?", "sequence": ["toilet", "flush"], "options": ["wash_hands", "eat", "sleep"], "answer": "wash_hands", "praise": "Wash your hands!"},
+    {"type": "listen_tap", "prompt": "Which picture shows the toilet left clean?", "options": ["toilet_clean", "toilet_messy"], "answer": "toilet_clean", "praise": "Clean for the next person!"},
+    {"type": "listen_tap", "prompt": "How much TV is healthy?", "options": ["a_little_tv", "all_day_tv"], "answer": "a_little_tv", "praise": "Just a little bit!"},
+    {"type": "say_it", "prompt": "Name a game that keeps you fit.", "accept": ["soccer", "netball", "skipping", "tag", "running", "hide and seek", "cricket", "swimming", "dancing", "rugby"]},
+    {"type": "listen_tap", "prompt": "Tap the toilet paper.", "options": ["toilet_paper", "newspaper", "leaf"], "answer": "toilet_paper", "praise": "Toilet paper!"},
+    {"type": "say_it", "prompt": "We wash our hands with soap and...?", "accept": ["water", "clean water"]}
+  ],
+  "hints": ["Toilet, flush, wash.", "Play every day to keep fit."],
+  "beat_the_tutor": {
+    "setup": "My turn! I used the toilet.",
+    "tutor_try": "Now I go straight to eat lunch!",
+    "image": "tutor_lunch",
+    "answer": "wash hands",
+    "win_line": "You caught me! First I wash my hands.",
+    "gentle_line": "Toilet, flush, wash hands. Then lunch!"
+  },
+  "parent_line": "Knows the toilet routine and that regular play keeps us healthy."
+}

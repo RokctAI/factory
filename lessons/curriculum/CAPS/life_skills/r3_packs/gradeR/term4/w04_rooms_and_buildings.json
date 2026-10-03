@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term4.w04_rooms_and_buildings",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "Rooms and buildings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "This is where people live",
+    "subtopic": "Buildings in the community (shop, clinic, school, post office) and why they are needed; learners' own addresses"
+  },
+  "skill": "homes.buildings",
+  "prereq_skills": ["homes.types"],
+  "images": ["community_buildings", "shop", "clinic", "school", "post_office", "bedroom", "kitchen", "bathroom", "stove", "fridge", "pots", "bath", "toilet", "tutor_post_office"],
+  "show": {
+    "line": "In my community there is a shop, a clinic, a school and a post office.",
+    "image": "community_buildings"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Where do we buy bread?", "options": ["shop", "clinic", "school"], "answer": "shop", "praise": "The shop!"},
+    {"type": "listen_tap", "prompt": "Where do we go when we are sick?", "options": ["clinic", "shop", "post_office"], "answer": "clinic", "praise": "The clinic!"},
+    {"type": "listen_tap", "prompt": "Where do we post a letter?", "options": ["post_office", "clinic", "school"], "answer": "post_office", "praise": "The post office!"},
+    {"type": "listen_tap", "prompt": "Where do we sleep at home?", "options": ["bedroom", "kitchen", "bathroom"], "answer": "bedroom", "praise": "The bedroom!"},
+    {"type": "match_sort", "prompt": "Kitchen or bathroom? Sort them.", "groups": ["kitchen", "bathroom"], "items": [{"image": "stove", "group": "kitchen"}, {"image": "fridge", "group": "kitchen"}, {"image": "pots", "group": "kitchen"}, {"image": "bath", "group": "bathroom"}, {"image": "toilet", "group": "bathroom"}]},
+    {"type": "say_it", "prompt": "Where do you go to learn and play every day?", "accept": ["school", "to school", "my school", "creche", "grade r"]}
+  ],
+  "hints": ["Think what you do in that place.", "Each room has its own job."],
+  "beat_the_tutor": {
+    "setup": "My turn! I need medicine.",
+    "tutor_try": "I will go to the post office!",
+    "image": "tutor_post_office",
+    "answer": "clinic",
+    "win_line": "You caught me! We get medicine at the clinic.",
+    "gentle_line": "The clinic helps when we are sick!"
+  },
+  "parent_line": "Can name buildings in the community and rooms in a home."
+}

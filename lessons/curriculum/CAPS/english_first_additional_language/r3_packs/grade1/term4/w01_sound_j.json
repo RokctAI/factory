@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term4.w01_sound_j",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [1],
+  "theme": "Solving problems",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 1: revises Term 3 sounds; /j/ (jog, jam, jug, jet); sound differentiation; rhyming; claps syllables in names"
+  },
+  "skill": "efal.phonics.sound.j",
+  "prereq_skills": ["efal.phonics.ending.ll"],
+  "images": ["jam", "jug", "dog", "sun", "jog", "num_1", "num_2", "num_3", "jet", "goat", "gate", "tutor_holds_jet"],
+  "show": {
+    "line": "Listen. j, j, jam. j, j, jug! Jam starts with j.",
+    "image": "jam"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with j, as in jam?", "options": ["jug", "dog", "sun"], "answer": "jug", "praise": "Yes! j, j, jug."},
+    {"type": "say_it", "prompt": "Say the sound with me. j, as in jet!", "accept": ["j", "juh", "je", "jet"]},
+    {"type": "blend", "prompt": "Listen. j, o, g. What word is it?", "sounds": ["j", "o", "g"], "options": ["jog", "jug", "dog"], "answer": "jog", "praise": "Jog! j, o, g."},
+    {"type": "listen_tap", "prompt": "Clap the name Thandi. Than, di. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Than, di."},
+    {"type": "match_sort", "prompt": "Does it start with j or g? Sort the pictures.", "groups": ["j", "g"], "items": [{"image": "jam", "group": "j"}, {"image": "jug", "group": "j"}, {"image": "jet", "group": "j"}, {"image": "goat", "group": "g"}, {"image": "gate", "group": "g"}]}
+  ],
+  "hints": ["j sounds like the start of jump. j, j, j.", "Clap for each part of the name."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. j, e, t.",
+    "tutor_try": "That makes jug!",
+    "image": "tutor_holds_jet",
+    "answer": "jet",
+    "win_line": "You caught me! j, e, t makes jet.",
+    "gentle_line": "Let's do it together. j, e, t. Jet!"
+  },
+  "parent_line": "Can hear the j sound and blend words like jog, jam and jet."
+}

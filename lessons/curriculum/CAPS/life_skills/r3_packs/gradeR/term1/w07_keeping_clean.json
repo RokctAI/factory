@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w07_keeping_clean",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Keeping clean",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "Keeping clean and fit",
+    "subtopic": "How we keep our bodies clean; names cleaning products, what they are used for and on which body part"
+  },
+  "skill": "health.clean.products",
+  "prereq_skills": ["health.handwashing"],
+  "images": ["bath_things", "shampoo", "toothpaste", "sponge", "soap", "towel", "comb", "cup", "hairbrush", "toothbrush", "clean_child", "muddy_child", "sticky_child", "tutor_shampoo_brush"],
+  "show": {
+    "line": "We keep our bodies clean. Soap for skin, shampoo for hair, toothpaste for teeth!",
+    "image": "bath_things"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What do we use to wash our hair?", "options": ["shampoo", "toothpaste", "sponge"], "answer": "shampoo", "praise": "Shampoo for hair!"},
+    {"type": "listen_tap", "prompt": "What goes on a toothbrush?", "options": ["toothpaste", "soap", "shampoo"], "answer": "toothpaste", "praise": "Toothpaste for teeth!"},
+    {"type": "listen_tap", "prompt": "What do we use to dry our body?", "options": ["towel", "comb", "cup"], "answer": "towel", "praise": "A towel! Dry and clean."},
+    {"type": "match_sort", "prompt": "Hair or teeth? Sort them.", "groups": ["hair", "teeth"], "items": [{"image": "comb", "group": "hair"}, {"image": "shampoo", "group": "hair"}, {"image": "hairbrush", "group": "hair"}, {"image": "toothbrush", "group": "teeth"}, {"image": "toothpaste", "group": "teeth"}]},
+    {"type": "say_it", "prompt": "What do you use to wash your body?", "accept": ["soap", "water", "soap and water", "a facecloth", "sponge", "cloth"]},
+    {"type": "listen_tap", "prompt": "Tap the child who is clean.", "options": ["clean_child", "muddy_child", "sticky_child"], "answer": "clean_child", "praise": "Clean and fresh!"}
+  ],
+  "hints": ["Each thing has its own job.", "Think: does it go on hair, teeth or skin?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will brush my teeth.",
+    "tutor_try": "I put shampoo on my toothbrush!",
+    "image": "tutor_shampoo_brush",
+    "answer": "toothpaste",
+    "win_line": "You caught me! Toothpaste goes on a toothbrush.",
+    "gentle_line": "Toothpaste for teeth. Shampoo for hair!"
+  },
+  "parent_line": "Knows which cleaning products are used on which part of the body."
+}

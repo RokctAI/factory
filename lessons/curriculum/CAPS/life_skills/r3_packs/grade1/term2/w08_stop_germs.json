@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w08_stop_germs",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [10, 11],
+  "theme": "Stopping germs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Keeping my body safe",
+    "subtopic": "Protecting our bodies from illness: covering mouth and nose when sneezing or coughing"
+  },
+  "skill": "health.germs",
+  "prereq_skills": ["health.handwashing"],
+  "images": ["sneeze_elbow", "sneeze_open", "sneeze_hands_friend", "tissue", "sleeve", "paper", "washing_fruit", "dropping_fruit", "cover_cough", "wash_hands", "tissue_bin", "share_spoon", "cough_on_friend", "bin", "pocket", "desk", "tutor_cough"],
+  "show": {
+    "line": "Atchoo! Cover your mouth and nose with your elbow. Stop the germs!",
+    "image": "sneeze_elbow"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "You need to sneeze. Which is right?", "options": ["sneeze_elbow", "sneeze_open", "sneeze_hands_friend"], "answer": "sneeze_elbow", "praise": "Into your elbow!"},
+    {"type": "listen_tap", "prompt": "What do we use to wipe our nose?", "options": ["tissue", "sleeve", "paper"], "answer": "tissue", "praise": "A tissue, then the bin!"},
+    {"type": "listen_tap", "prompt": "We wash fruit before we eat. Tap it.", "options": ["washing_fruit", "dropping_fruit"], "answer": "washing_fruit", "praise": "Wash away germs!"},
+    {"type": "say_it", "prompt": "Someone is bleeding. Do we touch their blood?", "accept": ["no", "never", "no we don't", "no call an adult"]},
+    {"type": "match_sort", "prompt": "Stops germs, or spreads germs?", "groups": ["stops", "spreads"], "items": [{"image": "cover_cough", "group": "stops"}, {"image": "wash_hands", "group": "stops"}, {"image": "tissue_bin", "group": "stops"}, {"image": "share_spoon", "group": "spreads"}, {"image": "cough_on_friend", "group": "spreads"}]},
+    {"type": "listen_tap", "prompt": "Where does a used tissue go?", "options": ["bin", "pocket", "desk"], "answer": "bin", "praise": "In the bin!"}
+  ],
+  "hints": ["Germs fly out when we sneeze and cough.", "Blood can carry germs. Call a grown-up."],
+  "beat_the_tutor": {
+    "setup": "My turn! I need to cough.",
+    "tutor_try": "I cough right on my friend!",
+    "image": "tutor_cough",
+    "answer": "elbow",
+    "win_line": "You caught me! Cough into my elbow.",
+    "gentle_line": "Cough into your elbow. Germs stay away!"
+  },
+  "parent_line": "Knows to cover coughs and sneezes, wash fruit and never touch blood."
+}

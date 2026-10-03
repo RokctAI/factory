@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term4.w01_i_can",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Solving problems",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Listening and Speaking",
+    "subtopic": "Uses the modal 'can' in context ('I can...')"
+  },
+  "skill": "efal.grammar.i_can",
+  "prereq_skills": ["efal.vocab.friends"],
+  "images": ["child_jumps", "child_kicks_ball", "child_sleeps", "child_reads", "girl_swims", "sentence_i_can_run", "sentence_i_can_runs", "play_ball", "cry", "sleep", "tutor_holds_baby"],
+  "show": {
+    "line": "I can run! I can jump! I can read! What can you do?",
+    "image": "child_jumps"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "I can kick. Tap the picture.", "options": ["child_kicks_ball", "child_sleeps", "child_reads"], "answer": "child_kicks_ball", "praise": "Yes! I can kick."},
+    {"type": "say_it", "prompt": "Look! What can she do? Say, she can swim.", "accept": ["she can swim", "swim", "she can swims", "can swim"], "image": "girl_swims"},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I can read.", "accept": ["i can read", "i can red", "can read"]},
+    {"type": "listen_tap", "prompt": "Which sentence is right?", "options": ["sentence_i_can_run", "sentence_i_can_runs"], "answer": "sentence_i_can_run", "praise": "Yes! I can run."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho cannot find his ball. He looks under the tree. He finds it! What can Sipho do now?", "options": ["play_ball", "cry", "sleep"], "answer": "play_ball", "praise": "He can play ball!"}
+  ],
+  "hints": ["Start with I can. I can run.", "After can, the word stays the same. I can run."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say what this baby can do.",
+    "tutor_try": "The baby can drive!",
+    "image": "tutor_holds_baby",
+    "answer": "no",
+    "win_line": "You caught me! A baby cannot drive. A baby can crawl.",
+    "gentle_line": "Let's think together. A baby can crawl. A baby can smile!"
+  },
+  "parent_line": "Can say what people can do: I can run, she can swim."
+}

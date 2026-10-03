@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w10_parts_of_a_plant",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [9, 10],
+  "theme": "Parts of a plant",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Gardens and bugs",
+    "subtopic": "Parts of a plant"
+  },
+  "skill": "plants.parts",
+  "prereq_skills": [],
+  "images": ["plant_parts", "flower", "roots", "leaf", "stem", "water", "juice", "milk", "tutor_points_flower"],
+  "show": {
+    "line": "A plant has roots, a stem, leaves and a flower. Roots drink water from the soil!",
+    "image": "plant_parts"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the flower.", "options": ["flower", "roots", "leaf"], "answer": "flower", "praise": "A pretty flower!"},
+    {"type": "listen_tap", "prompt": "Which part is under the soil?", "options": ["roots", "flower", "leaf"], "answer": "roots", "praise": "Roots! They drink water."},
+    {"type": "listen_tap", "prompt": "Tap the leaf.", "options": ["leaf", "stem", "roots"], "answer": "leaf", "praise": "A green leaf!"},
+    {"type": "say_it", "prompt": "The long part that holds the plant up. What is it called?", "accept": ["stem", "the stem", "stalk"]},
+    {"type": "what_next", "prompt": "Seed, roots, stem, and then?", "sequence": ["seed", "roots", "stem"], "options": ["leaves", "seed", "soil"], "answer": "leaves", "praise": "Leaves! Then a flower."},
+    {"type": "listen_tap", "prompt": "What does a plant drink?", "options": ["water", "juice", "milk"], "answer": "water", "praise": "Water! Plants need water."}
+  ],
+  "hints": ["Start at the bottom. Roots, stem, leaves, flower.", "Roots hide under the ground."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will show the roots.",
+    "tutor_try": "The roots are at the top!",
+    "image": "tutor_points_flower",
+    "answer": "flower",
+    "win_line": "You caught me! That is the flower. Roots are under the soil.",
+    "gentle_line": "Roots go down under the soil!"
+  },
+  "parent_line": "Can name the roots, stem, leaves and flower of a plant."
+}

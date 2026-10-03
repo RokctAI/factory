@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term3.w06_road_signs",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 3,
+  "weeks": [9],
+  "theme": "Road signs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Road safety",
+    "subtopic": "Recognising road signs for pedestrians and cyclists and remaining safe"
+  },
+  "skill": "safety.road_signs",
+  "prereq_skills": ["safety.road"],
+  "images": ["road_signs", "stop_sign", "yield_sign", "school_sign", "pedestrian_sign", "speed_sign", "cow_sign", "train_sign", "cycle_sign", "wait", "cross", "tutor_red_man"],
+  "show": {
+    "line": "Road signs tell us what to do. A stop sign is red with eight sides!",
+    "image": "road_signs"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the stop sign.", "options": ["stop_sign", "yield_sign", "school_sign"], "answer": "stop_sign", "praise": "Stop!"},
+    {"type": "listen_tap", "prompt": "Which sign shows people walking?", "options": ["pedestrian_sign", "stop_sign", "speed_sign"], "answer": "pedestrian_sign", "praise": "Pedestrians cross here!"},
+    {"type": "listen_tap", "prompt": "Which sign means a school is near?", "options": ["school_sign", "cow_sign", "train_sign"], "answer": "school_sign", "praise": "Slow down, school!"},
+    {"type": "say_it", "prompt": "What colour is a stop sign?", "accept": ["red", "red and white"]},
+    {"type": "listen_tap", "prompt": "Which sign shows bicycles?", "options": ["cycle_sign", "pedestrian_sign"], "answer": "cycle_sign", "praise": "A cycle lane!"},
+    {"type": "listen_tap", "prompt": "The little man is red. What do you do?", "options": ["wait", "cross"], "answer": "wait", "praise": "Wait!"}
+  ],
+  "hints": ["Look at the picture on the sign.", "Red usually means stop or danger."],
+  "beat_the_tutor": {
+    "setup": "My turn! The red man is showing.",
+    "tutor_try": "I cross now!",
+    "image": "tutor_red_man",
+    "answer": "wait",
+    "win_line": "You caught me! Red man means wait.",
+    "gentle_line": "Wait for the green man!"
+  },
+  "parent_line": "Recognises road signs for pedestrians and cyclists."
+}

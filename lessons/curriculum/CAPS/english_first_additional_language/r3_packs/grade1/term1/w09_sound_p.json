@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term1.w09_sound_p",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [9],
+  "theme": "My feelings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Week 9: introduces /p/ (path, pencil, map, clap); rhyming words (pat, sat, tap); differentiates s and p; segments and blends words"
+  },
+  "skill": "efal.phonics.sound.p",
+  "prereq_skills": ["efal.phonics.sound.t"],
+  "images": ["pencil", "pot", "sun", "tap", "tile_p", "tile_s", "sat", "pen", "map", "mat", "path", "sand", "tutor_holds_pot"],
+  "show": {
+    "line": "Listen. p, p, pencil. p, p, path! Pencil starts with p.",
+    "image": "pencil"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with p, as in pencil?", "options": ["pot", "sun", "tap"], "answer": "pot", "praise": "Yes! p, p, pot."},
+    {"type": "say_it", "prompt": "Say the sound with me. p, as in pencil!", "accept": ["p", "puh", "pe", "pencil"]},
+    {"type": "listen_tap", "prompt": "Is it s or p? Listen. Path.", "options": ["tile_p", "tile_s"], "answer": "tile_p", "praise": "Yes! Path starts with p."},
+    {"type": "listen_tap", "prompt": "Which word rhymes with pat?", "options": ["sat", "pen", "map"], "answer": "sat", "praise": "Yes! Pat, sat. They rhyme."},
+    {"type": "blend", "prompt": "Listen. m, a, p. What word is it?", "sounds": ["m", "a", "p"], "options": ["map", "mat", "tap"], "answer": "map", "praise": "Map! m, a, p."},
+    {"type": "match_sort", "prompt": "Does it start with p or s? Sort the pictures.", "groups": ["p", "s"], "items": [{"image": "pencil", "group": "p"}, {"image": "pot", "group": "p"}, {"image": "path", "group": "p"}, {"image": "sun", "group": "s"}, {"image": "sand", "group": "s"}]}
+  ],
+  "hints": ["Put your lips together and pop! p, p, p.", "Rhyming words sound the same at the end. Pat, sat."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that rhymes with tap.",
+    "tutor_try": "Pot! Pot rhymes with tap.",
+    "image": "tutor_holds_pot",
+    "answer": "no",
+    "win_line": "You caught me! Pot does not rhyme with tap. Map rhymes with tap.",
+    "gentle_line": "Let's listen together. Tap, map. They sound the same at the end!"
+  },
+  "parent_line": "Can hear the p sound, blend words like map and find words that rhyme."
+}

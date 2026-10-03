@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w11_helpers_keep_safe",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [7, 8],
+  "theme": "Helpers keep us safe",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "People who help us",
+    "subtopic": "How community workers help keep us safe and healthy"
+  },
+  "skill": "community.helpers_safety",
+  "prereq_skills": ["community.helpers"],
+  "images": ["police_nurse", "police_officer", "teacher", "farmer", "nurse", "taxi_driver", "baker", "scholar_patrol", "pilot", "chef", "paramedic", "tutor_fire_phone"],
+  "show": {
+    "line": "Police officers keep us safe. Nurses keep us healthy. Who helps you?",
+    "image": "police_nurse"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Who helps if someone steals?", "options": ["police_officer", "teacher", "farmer"], "answer": "police_officer", "praise": "Police officers keep us safe!"},
+    {"type": "listen_tap", "prompt": "Who gives us an injection to stop sickness?", "options": ["nurse", "taxi_driver", "baker"], "answer": "nurse", "praise": "The nurse! Ouch, but it helps."},
+    {"type": "listen_tap", "prompt": "Who helps children cross the road at school?", "options": ["scholar_patrol", "pilot", "chef"], "answer": "scholar_patrol", "praise": "The scholar patrol!"},
+    {"type": "say_it", "prompt": "What number do we phone for help? It is one, zero, one, one, one.", "accept": ["10111", "one zero one one one", "1 0 1 1 1"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "A dog bites Kabelo's leg. Mama takes him to the clinic. Who helps him?", "options": ["nurse", "police_officer", "farmer"], "answer": "nurse", "praise": "The nurse cleans the bite."},
+    {"type": "listen_tap", "prompt": "Who brings an ambulance?", "options": ["paramedic", "teacher", "baker"], "answer": "paramedic", "praise": "A paramedic. Nee naw, nee naw!"}
+  ],
+  "hints": ["Police keep us safe. Nurses keep us healthy.", "Think what went wrong, then who fixes it."],
+  "beat_the_tutor": {
+    "setup": "My turn! There is a big fire.",
+    "tutor_try": "I will call the nurse!",
+    "image": "tutor_fire_phone",
+    "answer": "firefighter",
+    "win_line": "You caught me! Firefighters put out fires.",
+    "gentle_line": "For a fire we call the firefighters!"
+  },
+  "parent_line": "Knows how police, nurses and other helpers keep us safe and healthy."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term3.w05_earth_from_space",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Earth and space",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Space",
+    "subtopic": "Earth from space: what it looks like (land, sea, clouds); stars and planets and what they are"
+  },
+  "skill": "space.earth_stars",
+  "prereq_skills": ["sky.moon"],
+  "images": ["earth_from_space", "sea", "sky", "paint", "clouds", "snowmen", "paper", "mars", "moon", "sun", "burning_gas", "rock", "ice", "earth", "jupiter", "tutor_sun"],
+  "show": {
+    "line": "From space, Earth looks blue and white. Blue sea, brown land and white clouds!",
+    "image": "earth_from_space"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What is the blue on Earth?", "options": ["sea", "sky", "paint"], "answer": "sea", "praise": "The sea!"},
+    {"type": "listen_tap", "prompt": "What is the white on Earth?", "options": ["clouds", "snowmen", "paper"], "answer": "clouds", "praise": "Clouds!"},
+    {"type": "say_it", "prompt": "Our closest star is the...?", "accept": ["sun", "the sun"]},
+    {"type": "listen_tap", "prompt": "Which is a planet?", "options": ["mars", "moon", "sun"], "answer": "mars", "praise": "Mars, the red planet!"},
+    {"type": "listen_tap", "prompt": "A star is a ball of...?", "options": ["burning_gas", "rock", "ice"], "answer": "burning_gas", "praise": "Burning gas!"},
+    {"type": "listen_tap", "prompt": "We live on planet...?", "options": ["earth", "mars", "jupiter"], "answer": "earth", "praise": "Earth!"}
+  ],
+  "hints": ["Earth is mostly sea.", "The sun is a star."],
+  "beat_the_tutor": {
+    "setup": "My turn! The sun is a...",
+    "tutor_try": "Planet!",
+    "image": "tutor_sun",
+    "answer": "star",
+    "win_line": "You caught me! The sun is a star.",
+    "gentle_line": "The sun is our star!"
+  },
+  "parent_line": "Knows what Earth looks like from space and that the sun is a star."
+}

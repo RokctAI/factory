@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term3.w06_ch_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [6],
+  "theme": "Making things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 6: 'ch' (chin, chop, much, such)"
+  },
+  "skill": "efal.phonics.digraph.ch",
+  "prereq_skills": ["efal.phonics.digraph.sh_end_th"],
+  "images": ["chin", "chair", "shoe", "cat", "chop", "shop", "top", "cheese", "ship", "shell", "tutor_holds_chin"],
+  "show": {
+    "line": "c and h together say ch. ch, ch, chin! Like a train. ch, ch, ch!",
+    "image": "chin"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with ch?", "options": ["chair", "shoe", "cat"], "answer": "chair", "praise": "Yes! ch, ch, chair."},
+    {"type": "say_it", "prompt": "Say the sound with me. ch, as in chop!", "accept": ["ch", "chuh", "che", "chop"]},
+    {"type": "blend", "prompt": "Listen. ch, o, p. What word is it?", "sounds": ["ch", "o", "p"], "options": ["chop", "shop", "top"], "answer": "chop", "praise": "Chop! ch, o, p."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "much", "accept": ["much", "mush", "match"]},
+    {"type": "match_sort", "prompt": "Is it ch or sh? Sort the pictures.", "groups": ["ch", "sh"], "items": [{"image": "chair", "group": "ch"}, {"image": "chin", "group": "ch"}, {"image": "cheese", "group": "ch"}, {"image": "ship", "group": "sh"}, {"image": "shell", "group": "sh"}]}
+  ],
+  "hints": ["ch is a short sneeze. ch!", "sh is long and quiet. ch is short."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. ch, i, n.",
+    "tutor_try": "That makes shin!",
+    "image": "tutor_holds_chin",
+    "answer": "chin",
+    "win_line": "You caught me! ch, i, n makes chin.",
+    "gentle_line": "Let's do it together. ch, i, n. Chin!"
+  },
+  "parent_line": "Can read words with ch, like chin, chop and much."
+}

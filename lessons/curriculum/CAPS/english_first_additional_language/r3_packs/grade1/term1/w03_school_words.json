@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term1.w03_school_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "We go to school",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. backpack, school, favourite, friend, teacher, classroom, uniform, pencil, learn, bus, walk, desk"
+  },
+  "skill": "efal.vocab.school",
+  "prereq_skills": [],
+  "images": ["classroom", "pencil", "backpack", "desk", "bus", "teacher", "chalkboard", "bed", "kitchen_stove", "tutor_holds_pencil"],
+  "show": {
+    "line": "Hello! Let's learn school words. Bag, pencil, desk, bus, teacher!",
+    "image": "classroom"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the pencil.", "options": ["pencil", "backpack", "desk"], "answer": "pencil", "praise": "Yes! A pencil."},
+    {"type": "listen_tap", "prompt": "Tap the bus.", "options": ["bus", "desk", "teacher"], "answer": "bus", "praise": "Yes! The school bus."},
+    {"type": "say_it", "prompt": "What is this? Say it.", "accept": ["desk", "a desk", "dest"], "image": "desk"},
+    {"type": "listen_tap", "prompt": "Who helps us learn at school?", "options": ["teacher", "bus", "backpack"], "answer": "teacher", "praise": "The teacher!"},
+    {"type": "say_it", "prompt": "What is this? Say it.", "accept": ["backpack", "a backpack", "bag", "school bag"], "image": "backpack"},
+    {"type": "match_sort", "prompt": "Do we find it at school or at home? Sort the pictures.", "groups": ["school", "home"], "items": [{"image": "desk", "group": "school"}, {"image": "teacher", "group": "school"}, {"image": "chalkboard", "group": "school"}, {"image": "bed", "group": "home"}, {"image": "kitchen_stove", "group": "home"}]}
+  ],
+  "hints": ["Look at the picture. Say the word with me.", "A pencil is for writing. A bus takes us to school."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this picture.",
+    "tutor_try": "This is a bus!",
+    "image": "tutor_holds_pencil",
+    "answer": "pencil",
+    "win_line": "You caught me! It is a pencil. We write with a pencil.",
+    "gentle_line": "Let's look together. It is a pencil. We write with it!"
+  },
+  "parent_line": "Can name school things in English: pencil, desk, bag, bus and teacher."
+}

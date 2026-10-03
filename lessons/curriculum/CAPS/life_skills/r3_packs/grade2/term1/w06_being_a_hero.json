@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w06_being_a_hero",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Caring and being a hero",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Everyone is special",
+    "subtopic": "Caring for people with disabilities; what is a hero? I can be a hero"
+  },
+  "skill": "social.caring_disability",
+  "prereq_skills": ["social.assistive"],
+  "images": ["kid_hero", "include", "ignore", "laugh", "helps_old_lady", "pushes_child", "happy_face", "sad_face", "open_door", "include_friend", "help_carry", "stare", "tease", "tutor_crutches"],
+  "show": {
+    "line": "A hero helps others. You can be a hero by being kind!",
+    "image": "kid_hero"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A child in a wheelchair wants to play. What do you do?", "options": ["include", "ignore", "laugh"], "answer": "include", "praise": "Include them! Everyone plays."},
+    {"type": "listen_tap", "prompt": "Which is a hero?", "options": ["helps_old_lady", "pushes_child"], "answer": "helps_old_lady", "praise": "Helping makes a hero!"},
+    {"type": "say_it", "prompt": "Can you be a hero?", "accept": ["yes", "yes i can", "i can be a hero"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Sara cannot hear. Her friend learns to sign hello. How does Sara feel?", "options": ["happy_face", "sad_face"], "answer": "happy_face", "praise": "Happy and included!"},
+    {"type": "match_sort", "prompt": "Caring or not caring?", "groups": ["caring", "not_caring"], "items": [{"image": "open_door", "group": "caring"}, {"image": "include_friend", "group": "caring"}, {"image": "help_carry", "group": "caring"}, {"image": "stare", "group": "not_caring"}, {"image": "tease", "group": "not_caring"}]},
+    {"type": "say_it", "prompt": "Say it: everyone is special!", "accept": ["everyone is special", "everybody is special"]}
+  ],
+  "hints": ["A hero is kind and brave.", "Everyone wants to be included."],
+  "beat_the_tutor": {
+    "setup": "My turn! A boy uses crutches.",
+    "tutor_try": "I won't play with him!",
+    "image": "tutor_crutches",
+    "answer": "include",
+    "win_line": "You caught me! I should include him.",
+    "gentle_line": "Come play with us!"
+  },
+  "parent_line": "Knows how to include and care for people with disabilities."
+}

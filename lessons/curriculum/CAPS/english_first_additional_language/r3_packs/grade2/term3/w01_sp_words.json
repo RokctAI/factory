@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term3.w01_sp_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [1],
+  "theme": "Celebrations",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 1: revises Term 1 sounds; 'sp' (spill, spin, spot); segmenting and blending; letter-swap game"
+  },
+  "skill": "efal.phonics.blend.sp",
+  "prereq_skills": ["efal.phonics.vowel.short_o_u"],
+  "images": ["spinning_top", "spin", "pin", "spot", "word_spot", "word_pot", "word_stop", "word_tin", "word_ten", "word_spin", "spoon", "spider", "sun", "sock", "tutor_holds_word_spot"],
+  "show": {
+    "line": "s and p together. sp, sp, spin! Spill, spin, spot.",
+    "image": "spinning_top"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. sp, i, n. What word is it?", "sounds": ["sp", "i", "n"], "options": ["spin", "pin", "spot"], "answer": "spin", "praise": "Spin! sp, i, n."},
+    {"type": "listen_tap", "prompt": "Which word starts with sp?", "options": ["word_spot", "word_pot", "word_stop"], "answer": "word_spot", "praise": "Yes! Spot."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "spill", "accept": ["spill", "spil", "pill"]},
+    {"type": "listen_tap", "prompt": "Swap the first sound! Spin. Change sp to t. What do we get?", "options": ["word_tin", "word_ten", "word_spin"], "answer": "word_tin", "praise": "Tin! sp-in, t-in."},
+    {"type": "match_sort", "prompt": "Does it start with sp or s? Sort the pictures.", "groups": ["sp", "s"], "items": [{"image": "spoon", "group": "sp"}, {"image": "spider", "group": "sp"}, {"image": "spinning_top", "group": "sp"}, {"image": "sun", "group": "s"}, {"image": "sock", "group": "s"}]}
+  ],
+  "hints": ["Say s, then p, quickly. sp!", "Listen to the start. Is it sp or just s?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says pot!",
+    "image": "tutor_holds_word_spot",
+    "answer": "spot",
+    "win_line": "You caught me! It says spot. sp at the start.",
+    "gentle_line": "Let's read it together. sp, o, t. Spot!"
+  },
+  "parent_line": "Can read words starting with sp, like spin, spot and spill."
+}

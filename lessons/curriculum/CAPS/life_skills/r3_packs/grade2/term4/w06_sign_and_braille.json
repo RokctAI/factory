@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w06_sign_and_braille",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [8],
+  "theme": "Sign language and Braille",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Communication without sight/hearing",
+    "subtopic": "How do we communicate if we can't hear or can't see? Sign language and Braille"
+  },
+  "skill": "communication.sign_braille",
+  "prereq_skills": ["communication.ways", "social.assistive"],
+  "images": ["sign_braille", "sign_language", "braille", "radio", "poster", "tv", "blind_person", "deaf_person", "hello", "stop", "sleep", "lip_reading", "sleeping", "tutor_nose"],
+  "show": {
+    "line": "Deaf people can use sign language. Blind people read Braille with their fingers!",
+    "image": "sign_braille"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which uses hands to talk?", "options": ["sign_language", "braille", "radio"], "answer": "sign_language", "praise": "Sign language!"},
+    {"type": "listen_tap", "prompt": "Which is read with fingers?", "options": ["braille", "poster", "tv"], "answer": "braille", "praise": "Braille!"},
+    {"type": "say_it", "prompt": "Braille is made of little raised...?", "accept": ["dots", "bumps", "dot"]},
+    {"type": "listen_tap", "prompt": "Who reads Braille?", "options": ["blind_person", "deaf_person"], "answer": "blind_person", "praise": "A blind person!"},
+    {"type": "listen_tap", "prompt": "Waving means...?", "options": ["hello", "stop", "sleep"], "answer": "hello", "praise": "Hello!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Tom cannot hear. He watches Lisa's lips as she talks slowly. What is he doing?", "options": ["lip_reading", "sleeping"], "answer": "lip_reading", "praise": "Lip reading!"}
+  ],
+  "hints": ["Sign language uses hands. Braille uses dots.", "Gestures are body messages."],
+  "beat_the_tutor": {
+    "setup": "My turn! Braille is read with...",
+    "tutor_try": "The nose!",
+    "image": "tutor_nose",
+    "answer": "fingers",
+    "win_line": "You caught me! We read Braille with fingers.",
+    "gentle_line": "Fingers feel the dots!"
+  },
+  "parent_line": "Knows about sign language, Braille and lip reading."
+}

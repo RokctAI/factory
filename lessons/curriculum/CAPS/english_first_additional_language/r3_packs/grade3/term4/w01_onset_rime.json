@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term4.w01_onset_rime",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 4,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises onset and rime in more complex patterns (dr-eam, cr-eam, scr-eam, str-eam)"
+  },
+  "skill": "efal.phonics.onset_rime.eam",
+  "prereq_skills": ["efal.phonics.blend.str_scr_tch_nch"],
+  "images": ["ice_cream", "word_cream", "word_drum", "word_dress", "word_dream", "stream", "train", "cream", "tutor_holds_word_drum"],
+  "show": {
+    "line": "Dream, cream, scream, stream! The end is the same. Only the start changes.",
+    "image": "ice_cream"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word ends like dream?", "options": ["word_cream", "word_drum", "word_dress"], "answer": "word_cream", "praise": "Yes! Dream, cream."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "stream", "accept": ["stream", "steam", "scream"]},
+    {"type": "listen_tap", "prompt": "Change cr to dr in cream. What do we get?", "options": ["word_dream", "word_drum", "word_cream"], "answer": "word_dream", "praise": "Dream!"},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "scream", "accept": ["scream", "skream", "cream"]},
+    {"type": "listen_tap", "prompt": "Water flows in a... what?", "options": ["stream", "train", "cream"], "answer": "stream", "praise": "Yes! A stream."}
+  ],
+  "hints": ["Look at the end. It stays the same.", "Change the start to make a new word."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will make a new word from dream.",
+    "tutor_try": "Dream, drum!",
+    "image": "tutor_holds_word_drum",
+    "answer": "no",
+    "win_line": "You caught me! Drum does not end like dream. Cream does.",
+    "gentle_line": "Let's listen together. Dream, cream. Same ending!"
+  },
+  "parent_line": "Can change the start of a word to make new words: dream, cream, stream."
+}

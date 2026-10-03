@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w08_hard_and_soft",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Hard and soft",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Opposites",
+    "subtopic": "Science: things that change from hard to soft or soft to hard (raw and boiled egg, pasta)"
+  },
+  "skill": "concept.hard_soft",
+  "prereq_skills": ["concept.opposites"],
+  "images": ["rock_and_pillow", "rock", "brick", "spoon", "pillow", "teddy", "soft_pasta", "hard_pasta", "pasta_box", "hard_egg", "raw_egg", "chick", "mattress", "floor", "table", "soft_mielies", "ice", "tutor_rock_bed"],
+  "show": {
+    "line": "A rock is hard. A pillow is soft. Cooking can change hard to soft!",
+    "image": "rock_and_pillow"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Hard or soft? Sort them.", "groups": ["hard", "soft"], "items": [{"image": "rock", "group": "hard"}, {"image": "brick", "group": "hard"}, {"image": "spoon", "group": "hard"}, {"image": "pillow", "group": "soft"}, {"image": "teddy", "group": "soft"}]},
+    {"type": "listen_tap", "prompt": "Dry pasta is hard. We cook it. Now it is?", "options": ["soft_pasta", "hard_pasta", "pasta_box"], "answer": "soft_pasta", "praise": "Soft! Cooking made it soft."},
+    {"type": "listen_tap", "prompt": "We boil an egg. The inside goes?", "options": ["hard_egg", "raw_egg", "chick"], "answer": "hard_egg", "praise": "Hard! A boiled egg."},
+    {"type": "say_it", "prompt": "Is a cloud hard or soft?", "accept": ["soft", "soft cloud"]},
+    {"type": "listen_tap", "prompt": "Which is soft to sleep on?", "options": ["mattress", "floor", "table"], "answer": "mattress", "praise": "A soft mattress. Goodnight!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Gogo puts hard mielies in the pot of water and cooks them. What are the mielies like now?", "options": ["soft_mielies", "rock", "ice"], "answer": "soft_mielies", "praise": "Soft and yummy!"}
+  ],
+  "hints": ["Press it in your mind. Does it squish?", "Cooking with water often makes food soft."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will lie on a soft bed.",
+    "tutor_try": "I will sleep on this soft rock!",
+    "image": "tutor_rock_bed",
+    "answer": "hard",
+    "win_line": "You caught me! A rock is hard. A pillow is soft.",
+    "gentle_line": "A rock is hard. Let's find a soft pillow!"
+  },
+  "parent_line": "Can sort things into hard and soft and knows cooking can change them."
+}

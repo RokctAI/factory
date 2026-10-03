@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w06_strangers",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "Strangers and people we trust",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Keeping safe",
+    "subtopic": "Stranger danger; adults learners trust and strangers who help us (police, nurses)"
+  },
+  "skill": "safety.strangers",
+  "prereq_skills": ["safety.safe_unsafe"],
+  "images": ["child_with_mom", "say_no_run", "take_sweets", "go_with_stranger", "police_officer", "stranger_car", "dog", "mama", "teacher", "gogo", "man_in_car", "unknown_lady", "ask_shop_worker", "leave_shop", "tutor_car"],
+  "show": {
+    "line": "A stranger is someone we do not know. We stay with people we trust.",
+    "image": "child_with_mom"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A stranger offers you sweets. What do you do?", "options": ["say_no_run", "take_sweets", "go_with_stranger"], "answer": "say_no_run", "praise": "Say no, go to a grown-up you trust!"},
+    {"type": "listen_tap", "prompt": "Who can help you if you are lost?", "options": ["police_officer", "stranger_car", "dog"], "answer": "police_officer", "praise": "A police officer can help!"},
+    {"type": "say_it", "prompt": "A stranger says, come with me. What do you say?", "accept": ["no", "no thank you", "no!", "i say no", "no i won't"]},
+    {"type": "match_sort", "prompt": "Someone you know and trust, or a stranger?", "groups": ["trust", "stranger"], "items": [{"image": "mama", "group": "trust"}, {"image": "teacher", "group": "trust"}, {"image": "gogo", "group": "trust"}, {"image": "man_in_car", "group": "stranger"}, {"image": "unknown_lady", "group": "stranger"}]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Bongi is lost at the shops. She cannot see mama. What should she do?", "options": ["ask_shop_worker", "leave_shop", "go_with_stranger"], "answer": "ask_shop_worker", "praise": "Ask a shop worker or guard to help!"},
+    {"type": "say_it", "prompt": "Name a grown-up you trust.", "accept": ["mama", "mom", "mommy", "baba", "dad", "daddy", "gogo", "granny", "teacher", "my teacher", "aunty", "uncle", "mkhulu", "grandpa"]}
+  ],
+  "hints": ["Never go anywhere with someone you do not know.", "Shout no, run away and tell a grown-up you trust."],
+  "beat_the_tutor": {
+    "setup": "My turn! A stranger offers me a ride.",
+    "tutor_try": "Yes please, I will get in the car!",
+    "image": "tutor_car",
+    "answer": "no",
+    "win_line": "You caught me! Say no, run and tell a grown-up.",
+    "gentle_line": "Say no! Run to a grown-up you trust!"
+  },
+  "parent_line": "Knows to say no to strangers and find a trusted adult."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term4.w07_say_the_plural",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [7],
+  "theme": "Science",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 7: revises sounds from weeks 1-6; initial sound differentiation; says plurals (-s, -es) of pictured objects"
+  },
+  "skill": "efal.grammar.plural_review",
+  "prereq_skills": ["efal.grammar.plural_es", "efal.phonics.ending.y_long_i"],
+  "images": ["cows", "foxes", "mop", "cow", "sun", "word_dishes", "word_dishs", "books_two", "boxes", "dishes", "tutor_holds_two_foxes"],
+  "show": {
+    "line": "One or many? One cow, two cows. One box, two boxes!",
+    "image": "cows"
+  },
+  "rounds": [
+    {"type": "say_it", "prompt": "One cow, two... what? Say it.", "accept": ["cows", "two cows", "cowss"], "image": "cows"},
+    {"type": "say_it", "prompt": "One fox, two... what? Say it.", "accept": ["foxes", "two foxes", "foxis"], "image": "foxes"},
+    {"type": "listen_tap", "prompt": "Which one starts with the same sound as milk?", "options": ["mop", "cow", "sun"], "answer": "mop", "praise": "Yes! Milk, mop. m, m."},
+    {"type": "listen_tap", "prompt": "One dish, three...?", "options": ["word_dishes", "word_dishs"], "answer": "word_dishes", "praise": "Yes! Dishes."},
+    {"type": "match_sort", "prompt": "Do we add s or es? Sort the pictures.", "groups": ["s", "es"], "items": [{"image": "cows", "group": "s"}, {"image": "books_two", "group": "s"}, {"image": "foxes", "group": "es"}, {"image": "boxes", "group": "es"}, {"image": "dishes", "group": "es"}]}
+  ],
+  "hints": ["Count them. More than one? Add s or es.", "Box, fox and dish add es."],
+  "beat_the_tutor": {
+    "setup": "My turn! Two foxes. Let me say it.",
+    "tutor_try": "Two foxs!",
+    "image": "tutor_holds_two_foxes",
+    "answer": "foxes",
+    "win_line": "You caught me! Two foxes. Fox adds es.",
+    "gentle_line": "Let's say it together. One fox, two foxes!"
+  },
+  "parent_line": "Can say the plural of words: cows, books, foxes, boxes."
+}

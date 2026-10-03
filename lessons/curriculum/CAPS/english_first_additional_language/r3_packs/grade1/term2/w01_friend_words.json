@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w01_friend_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [1, 2],
+  "theme": "Friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. friend, share, kind, unkind, shy, joke, argue, jealous, proud, apologise, sorry"
+  },
+  "skill": "efal.vocab.friends",
+  "prereq_skills": ["efal.vocab.feelings"],
+  "images": ["friends_share", "child_grabs", "child_alone", "kind_heart", "unkind_face", "girl_shy", "girl_proud", "girl_laughs", "sorry_hug", "help_up", "child_pushes", "tutor_holds_child_grabs"],
+  "show": {
+    "line": "A friend is kind. Friends share and play. Let's learn friend words!",
+    "image": "friends_share"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture shows sharing?", "options": ["friends_share", "child_grabs", "child_alone"], "answer": "friends_share", "praise": "Yes! They share the sweets."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho falls down. Neo helps him up. Is Neo kind or unkind?", "options": ["kind_heart", "unkind_face"], "answer": "kind_heart", "praise": "Kind! Neo is a good friend."},
+    {"type": "listen_tap", "prompt": "Tap the shy girl. She hides behind Mom.", "options": ["girl_shy", "girl_proud", "girl_laughs"], "answer": "girl_shy", "praise": "Yes! She is shy."},
+    {"type": "say_it", "prompt": "When we hurt a friend, we say sorry. Say it.", "accept": ["sorry", "i am sorry", "im sorry", "sori"], "image": "sorry_hug"},
+    {"type": "match_sort", "prompt": "Is it kind or unkind? Sort the pictures.", "groups": ["kind", "unkind"], "items": [{"image": "friends_share", "group": "kind"}, {"image": "sorry_hug", "group": "kind"}, {"image": "help_up", "group": "kind"}, {"image": "child_grabs", "group": "unkind"}, {"image": "child_pushes", "group": "unkind"}]}
+  ],
+  "hints": ["A kind friend shares and helps.", "Look at the faces. Are they happy?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Look at this picture.",
+    "tutor_try": "Grabbing a toy is kind!",
+    "image": "tutor_holds_child_grabs",
+    "answer": "unkind",
+    "win_line": "You caught me! Grabbing is unkind. Sharing is kind.",
+    "gentle_line": "Let's think together. Grabbing hurts a friend. It is unkind."
+  },
+  "parent_line": "Can use friend words in English: kind, share, shy, sorry."
+}

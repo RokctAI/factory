@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term4.w03_disasters",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 4,
+  "weeks": [6, 7],
+  "theme": "Disasters",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Disasters and what we should do",
+    "subtopic": "Types of disaster: floods, fire; other phenomena: lightning, earthquakes, storms and strong winds"
+  },
+  "skill": "safety.disasters",
+  "prereq_skills": ["safety.emergency"],
+  "images": ["storm", "flood", "sunny_day", "inside_house", "under_tree", "get_out_call", "hide_cupboard", "shaking_ground", "rain", "party", "tutor_tree"],
+  "show": {
+    "line": "Floods, fires, storms and lightning can be dangerous. We stay calm and safe.",
+    "image": "storm"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which is a flood?", "options": ["flood", "sunny_day"], "answer": "flood", "praise": "Lots of water!"},
+    {"type": "listen_tap", "prompt": "Lightning! Where is safe?", "options": ["inside_house", "under_tree"], "answer": "inside_house", "praise": "Inside!"},
+    {"type": "listen_tap", "prompt": "A fire! What do you do?", "options": ["get_out_call", "hide_cupboard"], "answer": "get_out_call", "praise": "Get out and call for help!"},
+    {"type": "say_it", "prompt": "In a flood, go to higher...?", "accept": ["ground", "land", "places"]},
+    {"type": "listen_tap", "prompt": "Which is an earthquake?", "options": ["shaking_ground", "rain"], "answer": "shaking_ground", "praise": "The ground shakes!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Strong winds blow roofs off homes. People need help. What happened?", "options": ["storm", "party"], "answer": "storm", "praise": "A storm!"}
+  ],
+  "hints": ["Stay calm, listen to grown-ups.", "Never shelter under a tree in lightning."],
+  "beat_the_tutor": {
+    "setup": "My turn! Lightning is flashing.",
+    "tutor_try": "I'll stand under a tall tree!",
+    "image": "tutor_tree",
+    "answer": "inside",
+    "win_line": "You caught me! Go inside.",
+    "gentle_line": "Inside is safe!"
+  },
+  "parent_line": "Can name disasters and what to do in them."
+}

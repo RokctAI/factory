@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w01_my_family",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "My family",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Orientation - My family",
+    "subtopic": "What a family is; members of my family (immediate and extended); different types of families (inclusivity)"
+  },
+  "skill": "family.types",
+  "prereq_skills": ["family.members"],
+  "images": ["different_families", "aunt", "cousin", "baby", "uncle", "gogo", "family_small", "bus_of_people", "thumbs_up", "thumbs_down", "mama", "baba", "brother", "tutor_small_family"],
+  "show": {
+    "line": "Families are different. Some are big, some small. Gogos, aunts and cousins are family too!",
+    "image": "different_families"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Your mother's sister is your?", "options": ["aunt", "cousin", "baby"], "answer": "aunt", "praise": "Your aunt!"},
+    {"type": "listen_tap", "prompt": "Your aunt's child is your?", "options": ["cousin", "uncle", "gogo"], "answer": "cousin", "praise": "Your cousin!"},
+    {"type": "listen_tap", "prompt": "Which picture shows a family?", "options": ["family_small", "bus_of_people"], "answer": "family_small", "praise": "Every family is special."},
+    {"type": "say_it", "prompt": "Who lives in your home? Name one person.", "accept": ["mama", "mom", "baba", "dad", "gogo", "granny", "brother", "sister", "aunt", "uncle", "cousin", "mkhulu"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Dineo lives with her gogo and her cousin. Is that a family?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! Families come in all shapes."},
+    {"type": "match_sort", "prompt": "Close family or extended family?", "groups": ["close", "extended"], "items": [{"image": "mama", "group": "close"}, {"image": "baba", "group": "close"}, {"image": "brother", "group": "close"}, {"image": "aunt", "group": "extended"}, {"image": "cousin", "group": "extended"}]}
+  ],
+  "hints": ["Extended family is aunts, uncles, cousins and grandparents.", "Any group that loves and cares is a family."],
+  "beat_the_tutor": {
+    "setup": "My turn! A family must have ten people.",
+    "tutor_try": "A small family is not a family!",
+    "image": "tutor_small_family",
+    "answer": "family",
+    "win_line": "You caught me! Small families are families too.",
+    "gentle_line": "Big or small, it is a family!"
+  },
+  "parent_line": "Can name family members, including extended family, and knows families differ."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w06_mixing_colours",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Mixing colours",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Shapes and colours in my community",
+    "subtopic": "Colour mixing: primary colours make secondary colours"
+  },
+  "skill": "colour.mix",
+  "prereq_skills": ["shape.colour.environment"],
+  "images": ["paint_pots", "colour_green", "colour_red", "colour_pink", "colour_orange", "colour_blue", "colour_purple", "colour_yellow", "grapes", "banana", "orange", "leaf", "frog", "cucumber", "carrot", "tutor_paint_mix"],
+  "show": {
+    "line": "Red, yellow and blue are special. Mix them to make new colours!",
+    "image": "paint_pots"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Yellow and blue make which colour?", "options": ["colour_green", "colour_red", "colour_pink"], "answer": "colour_green", "praise": "Green! Like the grass."},
+    {"type": "listen_tap", "prompt": "Red and yellow make which colour?", "options": ["colour_orange", "colour_blue", "colour_green"], "answer": "colour_orange", "praise": "Orange! Like an orange."},
+    {"type": "listen_tap", "prompt": "Red and blue make which colour?", "options": ["colour_purple", "colour_yellow", "colour_orange"], "answer": "colour_purple", "praise": "Purple! Like grapes."},
+    {"type": "say_it", "prompt": "What colour is the sun?", "accept": ["yellow", "orange"]},
+    {"type": "listen_tap", "prompt": "Which fruit is purple?", "options": ["grapes", "banana", "orange"], "answer": "grapes", "praise": "Purple grapes!"},
+    {"type": "match_sort", "prompt": "Is it green or orange? Sort them.", "groups": ["green", "orange"], "items": [{"image": "leaf", "group": "green"}, {"image": "frog", "group": "green"}, {"image": "cucumber", "group": "green"}, {"image": "orange", "group": "orange"}, {"image": "carrot", "group": "orange"}]}
+  ],
+  "hints": ["Red, yellow and blue mix to make new colours.", "Yellow and blue make green. Red and yellow make orange."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will mix yellow and blue.",
+    "tutor_try": "Yellow and blue make red!",
+    "image": "tutor_paint_mix",
+    "answer": "green",
+    "win_line": "You caught me! Yellow and blue make green.",
+    "gentle_line": "Yellow plus blue is green!"
+  },
+  "parent_line": "Knows that red, yellow and blue mix to make orange, green and purple."
+}

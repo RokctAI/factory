@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w07_opposites",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Opposites",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Opposites",
+    "subtopic": "Names opposites for actions and objects"
+  },
+  "skill": "concept.opposites",
+  "prereq_skills": [],
+  "images": ["opposites_chart", "small_ball", "big_ball", "red_ball", "door_open", "door_closed", "wall", "feather", "rock", "car", "cheetah", "aeroplane", "tortoise", "snail", "tutor_wet_towel"],
+  "show": {
+    "line": "Opposites! Big and small, hot and cold, up and down, open and closed.",
+    "image": "opposites_chart"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What is the opposite of big?", "options": ["small_ball", "big_ball", "red_ball"], "answer": "small_ball", "praise": "Small! Big and small."},
+    {"type": "say_it", "prompt": "Hot and...?", "accept": ["cold", "cool"]},
+    {"type": "listen_tap", "prompt": "Tap the door that is open.", "options": ["door_open", "door_closed", "wall"], "answer": "door_open", "praise": "Open!"},
+    {"type": "say_it", "prompt": "Up and...?", "accept": ["down"]},
+    {"type": "listen_tap", "prompt": "The elephant is heavy. Which is light?", "options": ["feather", "rock", "car"], "answer": "feather", "praise": "A feather is light!"},
+    {"type": "match_sort", "prompt": "Fast or slow? Sort them.", "groups": ["fast", "slow"], "items": [{"image": "cheetah", "group": "fast"}, {"image": "car", "group": "fast"}, {"image": "aeroplane", "group": "fast"}, {"image": "tortoise", "group": "slow"}, {"image": "snail", "group": "slow"}]}
+  ],
+  "hints": ["An opposite is the most different word.", "Think of a pair. Day and night, wet and dry."],
+  "beat_the_tutor": {
+    "setup": "My turn! I know opposites.",
+    "tutor_try": "The opposite of wet is cold!",
+    "image": "tutor_wet_towel",
+    "answer": "dry",
+    "win_line": "You caught me! The opposite of wet is dry.",
+    "gentle_line": "Wet and dry. Those are opposites!"
+  },
+  "parent_line": "Can name opposites like big and small, hot and cold, up and down."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w04_sound_h",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [4],
+  "theme": "Growing things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 4: /h/ (hut, hen, hat, hit); differentiates d and h; claps out syllables in familiar words"
+  },
+  "skill": "efal.phonics.sound.h",
+  "prereq_skills": ["efal.phonics.sound.m"],
+  "images": ["hen", "hat", "mat", "pin", "hit", "tip", "num_1", "num_2", "num_3", "hut", "mop", "man", "tutor_holds_hat"],
+  "show": {
+    "line": "Listen. h, h, hen. Breathe out, h! The little red hen starts with h.",
+    "image": "hen"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with h, as in hen?", "options": ["hat", "mat", "pin"], "answer": "hat", "praise": "Yes! h, h, hat."},
+    {"type": "say_it", "prompt": "Say the sound with me. h, as in hut!", "accept": ["h", "huh", "ha", "hut"]},
+    {"type": "blend", "prompt": "Listen. h, i, t. What word is it?", "sounds": ["h", "i", "t"], "options": ["hit", "hat", "tip"], "answer": "hit", "praise": "Hit! h, i, t."},
+    {"type": "listen_tap", "prompt": "Clap the word garden. Gar, den. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Gar, den."},
+    {"type": "match_sort", "prompt": "Does it start with h or m? Sort the pictures.", "groups": ["h", "m"], "items": [{"image": "hen", "group": "h"}, {"image": "hat", "group": "h"}, {"image": "hut", "group": "h"}, {"image": "mop", "group": "m"}, {"image": "man", "group": "m"}]}
+  ],
+  "hints": ["Put your hand in front of your mouth. h! Feel the air.", "Clap for each part of the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. h, a, t.",
+    "tutor_try": "That makes hit!",
+    "image": "tutor_holds_hat",
+    "answer": "hat",
+    "win_line": "You caught me! h, a, t makes hat.",
+    "gentle_line": "Let's do it together. h, a, t. Hat!"
+  },
+  "parent_line": "Can hear the h sound, blend words like hat and hit, and clap word parts."
+}

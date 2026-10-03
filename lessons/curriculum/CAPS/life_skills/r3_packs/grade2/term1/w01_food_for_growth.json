@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w01_food_for_growth",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "Food for growth and energy",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: What we need to live",
+    "subtopic": "Different types of food: grains, vegetables and fruit, dairy, fats and oils, meat, fish, poultry, nuts and beans"
+  },
+  "skill": "food.groups.g2",
+  "prereq_skills": ["food.groups"],
+  "images": ["food_groups_g2", "maize_meal", "apple", "fish", "beans", "sweets", "cooking_oil", "milk", "yoghurt", "cheese", "chicken", "fats_oils", "vegetables", "fruit", "energy", "sleep", "toothache", "tutor_milk"],
+  "show": {
+    "line": "Food gives us energy and helps us grow. Grains, fruit, vegetables, dairy, meat and beans!",
+    "image": "food_groups_g2"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which is a grain?", "options": ["maize_meal", "apple", "fish"], "answer": "maize_meal", "praise": "Maize meal makes pap!"},
+    {"type": "listen_tap", "prompt": "Which gives us protein to grow muscles?", "options": ["beans", "sweets", "cooking_oil"], "answer": "beans", "praise": "Beans!"},
+    {"type": "match_sort", "prompt": "Dairy or meat, fish and poultry?", "groups": ["dairy", "meat_fish"], "items": [{"image": "milk", "group": "dairy"}, {"image": "yoghurt", "group": "dairy"}, {"image": "cheese", "group": "dairy"}, {"image": "chicken", "group": "meat_fish"}, {"image": "fish", "group": "meat_fish"}]},
+    {"type": "say_it", "prompt": "Name a food that gives you energy.", "accept": ["pap", "bread", "rice", "porridge", "potato", "maize", "samp", "oats", "pasta", "banana"]},
+    {"type": "listen_tap", "prompt": "We only need a little of which group?", "options": ["fats_oils", "vegetables", "fruit"], "answer": "fats_oils", "praise": "Just a little fat and oil!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Sizwe eats porridge for breakfast and runs all morning. What did the porridge give him?", "options": ["energy", "sleep", "toothache"], "answer": "energy", "praise": "Energy!"}
+  ],
+  "hints": ["Grains give energy. Protein helps us grow.", "Think where the food comes from."],
+  "beat_the_tutor": {
+    "setup": "My turn! Milk is in which group?",
+    "tutor_try": "Milk is a grain!",
+    "image": "tutor_milk",
+    "answer": "dairy",
+    "win_line": "You caught me! Milk is dairy.",
+    "gentle_line": "Milk, cheese and yoghurt are dairy!"
+  },
+  "parent_line": "Can sort foods into groups and say how food helps us grow."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term4.w01_ar_er_ir_or_ur",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 4,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises at least five new vowel digraphs ('ar' far, 'er' her, 'ir' bird, 'or' short, 'ur' hurt)"
+  },
+  "skill": "efal.phonics.vowel_digraph.r_controlled",
+  "prereq_skills": ["efal.phonics.vowel_digraph.ai_ay_oi_oy_ou"],
+  "images": ["car", "word_bird", "word_car", "word_fork", "word_short", "word_shirt", "word_shut", "word_far", "word_park", "word_star", "word_horn", "word_corn", "tutor_holds_word_car"],
+  "show": {
+    "line": "When r comes after a vowel, it changes the sound! Car, her, bird, short, hurt.",
+    "image": "car"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "car", "accept": ["car", "ka", "cur"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "bird", "accept": ["bird", "bed", "burd"]},
+    {"type": "listen_tap", "prompt": "Which word sounds like her?", "options": ["word_bird", "word_car", "word_fork"], "answer": "word_bird", "praise": "Yes! Her and bird sound the same in the middle."},
+    {"type": "listen_tap", "prompt": "Tap the word short.", "options": ["word_short", "word_shirt", "word_shut"], "answer": "word_short", "praise": "Yes! Short."},
+    {"type": "match_sort", "prompt": "Does it sound like car or like fork? Sort the words.", "groups": ["car", "fork"], "items": [{"image": "word_far", "group": "car"}, {"image": "word_park", "group": "car"}, {"image": "word_star", "group": "car"}, {"image": "word_horn", "group": "fork"}, {"image": "word_corn", "group": "fork"}]}
+  ],
+  "hints": ["Look for the vowel and r together.", "Car, far, star. Short, fork, horn."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says cat!",
+    "image": "tutor_holds_word_car",
+    "answer": "car",
+    "win_line": "You caught me! It says car. The r changes the sound.",
+    "gentle_line": "Let's read it together. Car!"
+  },
+  "parent_line": "Can read words like car, her, bird, short and hurt."
+}

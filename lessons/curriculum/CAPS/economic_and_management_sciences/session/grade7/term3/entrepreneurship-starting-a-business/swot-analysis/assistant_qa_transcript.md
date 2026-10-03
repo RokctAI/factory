@@ -1,0 +1,18 @@
+### subtopic_1 — Strengths and Weaknesses: Looking Inside
+**Assistant:** Can the same thing be both a strength and a weakness?
+
+**Tutor:** Yes, it can depend on how you look at it, and good analysis notices this. Take the vetkoek stall again. Selling a hot, freshly made product is a strength, because customers love fresh vetkoek and it stands out from packaged snacks. But it is also a weakness, because the team must fry on the spot, which takes time, needs equipment and safety precautions, and limits how many they can sell in a short break. Being a small team can be a strength, because decisions are quick and everyone knows the plan, and a weakness, because there are few people to share the work. In a real business, having one very skilled owner who does everything is a strength until that person is ill or wants to grow the business. When this happens, list the point under both headings and explain each side, then plan how to make the most of the strength while reducing the weakness. For the vetkoek, that might mean preparing the dough in advance, frying in small, continuous batches and having one person serving while another fries. Thinking in this way is exactly what the SWOT tool is for.
+
+***
+
+### subtopic_2 — Opportunities and Threats: Looking Outside
+**Assistant:** Why are competitors a threat and not a weakness?
+
+**Tutor:** Because competitors are outside the business and it cannot control what they do. A weakness is something inside the business that it lacks or does badly, which it can work to improve, such as poor records or too little equipment. A competitor exists in the market whether or not your business does well; it decides its own products and prices. That makes it part of the external environment, and therefore a threat. Of course, competitors can expose your weaknesses: if a competitor offers lower prices, your high costs, an internal weakness, become a problem. So in a SWOT analysis you might list another stall selling hot chips as a threat, and high cost of ingredients as a weakness, and then plan to respond to both, for example by buying ingredients in bulk to lower costs and by making your vetkoek stand out with a special filling. Students often mix up these categories in exams, so use the simple test: is it inside our business and within our control, or outside it and beyond our control? Internal means strength or weakness; external means opportunity or threat.
+
+***
+
+### subtopic_3 — Using the SWOT Grid to Plan
+**Assistant:** Why do large companies still bother with a simple tool like SWOT?
+
+**Tutor:** Because its simplicity is its strength. A SWOT analysis forces people to look at a business from four angles at once, inside and outside, helpful and harmful, and to put their thinking on one page where a whole team can see and discuss it. Large companies face complex decisions: launching a new product, entering a new country, responding to a new competitor or deciding where to invest. Before detailed financial planning, a SWOT analysis helps managers agree on the big picture: what the company does well, where it is weak, what is changing in the market and what could go wrong. It also reveals blind spots, such as a strength that is fading or a threat nobody has taken seriously. Its limitations are also known: it can become a list of vague points, and it does not by itself tell you what to do. That is why good companies, like good Grade 7 teams, follow it with specific actions, responsibilities and deadlines, which connects to the next lesson on setting SMARTER goals. Learning to do a SWOT analysis well now is a skill you will use in many careers.

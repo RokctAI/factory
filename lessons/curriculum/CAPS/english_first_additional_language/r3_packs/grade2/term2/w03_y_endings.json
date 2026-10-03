@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term2.w03_y_endings",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [3],
+  "theme": "Goals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 3: -y word endings (shy, try, fly, sky, why)"
+  },
+  "skill": "efal.phonics.ending.y_review",
+  "prereq_skills": ["efal.phonics.ending.y_long_i"],
+  "images": ["kite_in_sky", "shy", "ship", "sun", "word_fly", "word_flag", "word_fish", "tutor_holds_word_shy"],
+  "show": {
+    "line": "y at the end says eye! Shy, try, fly, sky, why.",
+    "image": "kite_in_sky"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "try", "accept": ["try", "trai", "tray"]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with sky?", "options": ["shy", "ship", "sun"], "answer": "shy", "praise": "Yes! Sky, shy."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "why", "accept": ["why", "wai", "way"]},
+    {"type": "listen_tap", "prompt": "The bird can... what?", "options": ["word_fly", "word_flag", "word_fish"], "answer": "word_fly", "praise": "Yes! The bird can fly."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I will try.", "accept": ["i will try", "will try", "i try"]}
+  ],
+  "hints": ["y at the end of a short word says eye.", "Fly, sky, try. They all rhyme."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word. s, h, y.",
+    "tutor_try": "That says she!",
+    "image": "tutor_holds_word_shy",
+    "answer": "shy",
+    "win_line": "You caught me! It says shy. y at the end says eye.",
+    "gentle_line": "Let's read it together. Shy. Rhymes with sky!"
+  },
+  "parent_line": "Can read words ending in y, like shy, try, fly and why."
+}

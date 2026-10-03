@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w07_protect_food",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Protecting our food",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: Healthy living",
+    "subtopic": "Protecting food from flies (germs); keeping food cool"
+  },
+  "skill": "health.food_protect",
+  "prereq_skills": ["health.germs"],
+  "images": ["covered_food", "open_food", "fridge", "sunny_window", "bag", "lid_on_pot", "food_net", "meat_in_sun", "flies_on_bread", "thumbs_down", "thumbs_up", "boil_water", "add_sand", "tutor_flies"],
+  "show": {
+    "line": "Flies carry germs. Cover food and keep it cool so it stays safe!",
+    "image": "covered_food"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which food is safe from flies?", "options": ["covered_food", "open_food"], "answer": "covered_food", "praise": "Covered!"},
+    {"type": "listen_tap", "prompt": "Where do we keep milk cool?", "options": ["fridge", "sunny_window", "bag"], "answer": "fridge", "praise": "In the fridge!"},
+    {"type": "say_it", "prompt": "What do flies carry?", "accept": ["germs", "dirt", "germs and dirt"]},
+    {"type": "match_sort", "prompt": "Keeps food safe or not?", "groups": ["safe", "not_safe"], "items": [{"image": "lid_on_pot", "group": "safe"}, {"image": "fridge", "group": "safe"}, {"image": "food_net", "group": "safe"}, {"image": "meat_in_sun", "group": "not_safe"}, {"image": "flies_on_bread", "group": "not_safe"}]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Meat sits in the hot sun all day. Then it smells bad. Should we eat it?", "options": ["thumbs_down", "thumbs_up"], "answer": "thumbs_down", "praise": "No! It has gone off."},
+    {"type": "listen_tap", "prompt": "How can grown-ups make water safe?", "options": ["boil_water", "add_sand"], "answer": "boil_water", "praise": "Boil it!"}
+  ],
+  "hints": ["Heat and flies spoil food.", "Cover it, keep it cool."],
+  "beat_the_tutor": {
+    "setup": "My turn! I leave the stew uncovered.",
+    "tutor_try": "The flies can share!",
+    "image": "tutor_flies",
+    "answer": "cover",
+    "win_line": "You caught me! Cover food to keep flies off.",
+    "gentle_line": "Lid on! No flies."
+  },
+  "parent_line": "Knows how to protect food from flies and keep it cool."
+}

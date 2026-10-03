@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term4.w08_ship_or_sheep",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [8],
+  "theme": "Saving the Earth",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 8: distinguishes aurally between sounds that are often confused (ship/sheep)"
+  },
+  "skill": "efal.phonics.discriminate.confusable",
+  "prereq_skills": ["efal.phonics.vowel_digraph.oo_ee"],
+  "images": ["ship_and_sheep", "sheep", "ship", "chip", "bed", "bad_face", "tutor_holds_sheep"],
+  "show": {
+    "line": "Listen carefully! Ship and sheep sound close. Ship is short. Sheep is long.",
+    "image": "ship_and_sheep"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Listen. Sheep. Tap it.", "options": ["sheep", "ship"], "answer": "sheep", "praise": "Yes! The sheep says baa."},
+    {"type": "listen_tap", "prompt": "Listen. Ship. Tap it.", "options": ["ship", "sheep"], "answer": "ship", "praise": "Yes! The ship is on the sea."},
+    {"type": "listen_tap", "prompt": "Listen. Chip. Tap it.", "options": ["chip", "ship"], "answer": "chip", "praise": "Yes! A chip."},
+    {"type": "listen_tap", "prompt": "Listen. Bed. Tap it.", "options": ["bed", "bad_face"], "answer": "bed", "praise": "Yes! A bed."},
+    {"type": "say_it", "prompt": "Say it after me. Sheep!", "accept": ["sheep", "shiip", "a sheep"], "image": "sheep"}
+  ],
+  "hints": ["Listen to the middle sound. Short or long?", "Ship is quick. Sheep is long. Sheeep."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will tap the ship.",
+    "tutor_try": "This is the ship!",
+    "image": "tutor_holds_sheep",
+    "answer": "no",
+    "win_line": "You caught me! That is a sheep. The ship is on the water.",
+    "gentle_line": "Let's listen together. Ship, sheep. Ship floats!"
+  },
+  "parent_line": "Can hear the difference between words that sound close, like ship and sheep."
+}

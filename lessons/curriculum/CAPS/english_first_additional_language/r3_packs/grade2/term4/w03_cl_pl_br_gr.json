@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term4.w03_cl_pl_br_gr",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [3, 4],
+  "theme": "History",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 3: 'cl-' (cling, clap, cloth) and 'pl-' (plan, play, plum)"
+  },
+  "skill": "efal.phonics.blend.cl_pl_br_gr",
+  "prereq_skills": ["efal.phonics.blend.fl_sl"],
+  "images": ["grass", "word_clap", "word_cap", "word_plan", "word_green", "word_brown", "word_glow", "brick", "trick", "bring", "word_plum", "word_play", "word_grow", "word_grass", "tutor_holds_word_brown"],
+  "show": {
+    "line": "More blends! cl, clap. pl, play. br, brick. gr, grass!",
+    "image": "grass"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word starts with cl?", "options": ["word_clap", "word_cap", "word_plan"], "answer": "word_clap", "praise": "Yes! Clap."},
+    {"type": "listen_tap", "prompt": "Which word starts with gr?", "options": ["word_green", "word_brown", "word_glow"], "answer": "word_green", "praise": "Yes! Green."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "play", "accept": ["play", "pray", "pay"]},
+    {"type": "blend", "prompt": "Listen. br, i, ck. What word is it?", "sounds": ["br", "i", "ck"], "options": ["brick", "trick", "bring"], "answer": "brick", "praise": "Brick! br, i, ck."},
+    {"type": "match_sort", "prompt": "Does it start with pl or gr? Sort the words.", "groups": ["pl", "gr"], "items": [{"image": "word_plan", "group": "pl"}, {"image": "word_plum", "group": "pl"}, {"image": "word_play", "group": "pl"}, {"image": "word_grow", "group": "gr"}, {"image": "word_grass", "group": "gr"}]}
+  ],
+  "hints": ["Say the two sounds fast together.", "Listen to the start of the word."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says grown!",
+    "image": "tutor_holds_word_brown",
+    "answer": "brown",
+    "win_line": "You caught me! It says brown. br at the start.",
+    "gentle_line": "Let's read it together. Brown!"
+  },
+  "parent_line": "Can read words starting with cl, pl, br and gr."
+}

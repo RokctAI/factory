@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term2.w04_helpful_harmful_insects",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Helpful and harmful insects",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Insects",
+    "subtopic": "How insects help us and how some insects harm us"
+  },
+  "skill": "animals.insects_help_harm",
+  "prereq_skills": ["animals.insects"],
+  "images": ["bee_and_fly", "bee", "ladybird", "butterfly", "mosquito", "housefly", "fly", "ant", "aphids", "flowers", "soil", "mosquito_net", "pillow", "tutor_mosquito"],
+  "show": {
+    "line": "Bees make honey and help flowers. Mosquitoes and flies can spread sickness.",
+    "image": "bee_and_fly"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Helpful or harmful?", "groups": ["helpful", "harmful"], "items": [{"image": "bee", "group": "helpful"}, {"image": "ladybird", "group": "helpful"}, {"image": "butterfly", "group": "helpful"}, {"image": "mosquito", "group": "harmful"}, {"image": "housefly", "group": "harmful"}]},
+    {"type": "listen_tap", "prompt": "Which insect makes honey?", "options": ["bee", "fly", "ant"], "answer": "bee", "praise": "Bees!"},
+    {"type": "listen_tap", "prompt": "Which insect bites and can spread malaria?", "options": ["mosquito", "butterfly", "ladybird"], "answer": "mosquito", "praise": "Mosquitoes!"},
+    {"type": "say_it", "prompt": "Flies carry...?", "accept": ["germs", "dirt", "disease", "germs and dirt"]},
+    {"type": "listen_tap", "prompt": "Ladybirds help gardens by eating...?", "options": ["aphids", "flowers", "soil"], "answer": "aphids", "praise": "Tiny pests!"},
+    {"type": "listen_tap", "prompt": "Which protects us from mosquitoes at night?", "options": ["mosquito_net", "pillow"], "answer": "mosquito_net", "praise": "A net!"}
+  ],
+  "hints": ["Some insects help plants grow.", "Some carry germs."],
+  "beat_the_tutor": {
+    "setup": "My turn! Mosquitoes make honey.",
+    "tutor_try": "Yum!",
+    "image": "tutor_mosquito",
+    "answer": "bee",
+    "win_line": "You caught me! Bees make honey.",
+    "gentle_line": "Bees make honey!"
+  },
+  "parent_line": "Knows insects that help and insects that harm."
+}

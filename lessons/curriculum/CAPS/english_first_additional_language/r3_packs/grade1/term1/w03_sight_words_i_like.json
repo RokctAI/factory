@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term1.w03_sight_words_i_like",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "We go to school",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Listening and Speaking",
+    "subtopic": "Sight words: I, like, to, play; all, day, at, school"
+  },
+  "skill": "efal.sight_words.i_like",
+  "prereq_skills": ["efal.vocab.school"],
+  "images": ["sight_word_cards_i_like", "word_like", "word_play", "word_to", "word_day", "word_school", "children_play_ball", "child_sleeps", "child_eats", "tutor_holds_play"],
+  "show": {
+    "line": "Some words we see every day. I, like, to, play. Let's read them!",
+    "image": "sight_word_cards_i_like"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word like.", "options": ["word_like", "word_play", "word_to"], "answer": "word_like", "praise": "Yes! Like."},
+    {"type": "listen_tap", "prompt": "Tap the word play.", "options": ["word_play", "word_day", "word_like"], "answer": "word_play", "praise": "Yes! Play."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["school", "skool", "scool"], "image": "word_school"},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I like to play.", "accept": ["i like to play", "i like play", "like to play"]},
+    {"type": "listen_tap", "prompt": "I like to play. Which picture shows it?", "options": ["children_play_ball", "child_sleeps", "child_eats"], "answer": "children_play_ball", "praise": "Yes! They like to play."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["day", "dey", "the day"], "image": "word_day"}
+  ],
+  "hints": ["Look at the whole word. Read it fast.", "I like to play. Point to each word as you read."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says like!",
+    "image": "tutor_holds_play",
+    "answer": "play",
+    "win_line": "You caught me! That word is play. I like to play!",
+    "gentle_line": "Let's read it together. Play. I like to play!"
+  },
+  "parent_line": "Can read the words I, like, to, play, day and school."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w05_animal_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. stripes, spots, leopard, zebra, fur, claw, elephant, tail, cow, chicken, farmer, sheep, goat, tractor"
+  },
+  "skill": "efal.vocab.animals",
+  "prereq_skills": ["efal.vocab.school"],
+  "images": ["zebra", "leopard", "elephant", "cow", "lion", "chicken", "goat", "tutor_holds_leopard"],
+  "show": {
+    "line": "Let's visit the animals! A zebra has stripes. A leopard has spots.",
+    "image": "zebra"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the animal with stripes.", "options": ["zebra", "leopard", "elephant"], "answer": "zebra", "praise": "Yes! The zebra has stripes."},
+    {"type": "listen_tap", "prompt": "Tap the animal with spots.", "options": ["leopard", "zebra", "cow"], "answer": "leopard", "praise": "Yes! The leopard has spots."},
+    {"type": "say_it", "prompt": "What animal is this? Say it.", "accept": ["elephant", "an elephant", "elefant"], "image": "elephant"},
+    {"type": "listen_tap", "prompt": "Which animal lives on a farm?", "options": ["cow", "lion", "zebra"], "answer": "cow", "praise": "Yes! A cow lives on a farm."},
+    {"type": "match_sort", "prompt": "Is it a farm animal or a wild animal? Sort the pictures.", "groups": ["farm", "wild"], "items": [{"image": "cow", "group": "farm"}, {"image": "chicken", "group": "farm"}, {"image": "goat", "group": "farm"}, {"image": "lion", "group": "wild"}, {"image": "elephant", "group": "wild"}]}
+  ],
+  "hints": ["Look closely. Lines are stripes. Dots are spots.", "Farm animals live with the farmer."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this animal.",
+    "tutor_try": "This is a zebra!",
+    "image": "tutor_holds_leopard",
+    "answer": "leopard",
+    "win_line": "You caught me! It is a leopard. It has spots, not stripes.",
+    "gentle_line": "Let's look together. Spots! It is a leopard."
+  },
+  "parent_line": "Can name animals in English and say if they live on a farm or in the wild."
+}

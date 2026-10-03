@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term1.w08_short_i_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [8],
+  "theme": "Birthdays",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Week 8: short -i- words (sit, fit, lid, tin, pin)"
+  },
+  "skill": "efal.phonics.vowel.short_i",
+  "prereq_skills": ["efal.phonics.vowel.short_e"],
+  "images": ["tin", "lid", "lad", "led", "word_pin", "word_pan", "word_pen", "word_ten", "word_red", "word_tin", "word_lid", "word_fit", "tutor_holds_word_fit"],
+  "show": {
+    "line": "Listen for i in the middle. Sit, fit, lid, tin, pin!",
+    "image": "tin"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. l, i, d. What word is it?", "sounds": ["l", "i", "d"], "options": ["lid", "lad", "led"], "answer": "lid", "praise": "Lid! l, i, d."},
+    {"type": "listen_tap", "prompt": "Which word has i in the middle?", "options": ["word_pin", "word_pan", "word_pen"], "answer": "word_pin", "praise": "Yes! p, i, n. Pin."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "sit", "accept": ["sit", "set", "seat"]},
+    {"type": "listen_tap", "prompt": "Pen or pin? Listen. Pin.", "options": ["word_pin", "word_pen"], "answer": "word_pin", "praise": "Yes! Pin has i."},
+    {"type": "match_sort", "prompt": "Is it e or i in the middle? Sort the words.", "groups": ["e", "i"], "items": [{"image": "word_ten", "group": "e"}, {"image": "word_red", "group": "e"}, {"image": "word_tin", "group": "i"}, {"image": "word_lid", "group": "i"}, {"image": "word_fit", "group": "i"}]}
+  ],
+  "hints": ["i in the middle. Smile a little. s, i, t.", "Listen closely. Pen, pin."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. f, i, t.",
+    "tutor_try": "That makes fat!",
+    "image": "tutor_holds_word_fit",
+    "answer": "fit",
+    "win_line": "You caught me! f, i, t makes fit.",
+    "gentle_line": "Let's do it together. f, i, t. Fit!"
+  },
+  "parent_line": "Can read short i words like sit, lid, tin and pin."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term3.w03_sh_end_and_th",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [3, 4],
+  "theme": "My community",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 3: '-sh' at the end of words (wish, fish, cash, push)"
+  },
+  "skill": "efal.phonics.digraph.sh_end_th",
+  "prereq_skills": ["efal.phonics.digraph.sh_start"],
+  "images": ["fish", "word_wish", "word_win", "word_with", "word_think", "word_sink", "word_fink", "ship", "shell", "dish", "brush", "tutor_holds_word_fish"],
+  "show": {
+    "line": "sh can come at the end too. Fish, wish, push! And th says th, as in think.",
+    "image": "fish"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word ends with sh?", "options": ["word_wish", "word_win", "word_with"], "answer": "word_wish", "praise": "Yes! Wish ends with sh."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "fish", "accept": ["fish", "fis", "feesh"]},
+    {"type": "say_it", "prompt": "Say the sound with me. th, as in thank you!", "accept": ["th", "thh", "the", "thank"]},
+    {"type": "listen_tap", "prompt": "Which word starts with th?", "options": ["word_think", "word_sink", "word_fink"], "answer": "word_think", "praise": "Yes! Think starts with th."},
+    {"type": "match_sort", "prompt": "Where is the sh? At the start or at the end?", "groups": ["start", "end"], "items": [{"image": "ship", "group": "start"}, {"image": "shell", "group": "start"}, {"image": "fish", "group": "end"}, {"image": "dish", "group": "end"}, {"image": "brush", "group": "end"}]}
+  ],
+  "hints": ["For th, put your tongue between your teeth.", "Listen to the end of the word. Fish, sh."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says fix!",
+    "image": "tutor_holds_word_fish",
+    "answer": "fish",
+    "win_line": "You caught me! It says fish. sh at the end.",
+    "gentle_line": "Let's read it together. f, i, sh. Fish!"
+  },
+  "parent_line": "Can read sh at the end of words and th at the start: fish, wish, think."
+}

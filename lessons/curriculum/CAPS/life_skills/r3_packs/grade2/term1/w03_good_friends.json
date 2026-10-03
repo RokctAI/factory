@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w03_good_friends",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Good friends",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Myself and others",
+    "subtopic": "Friends: qualities of a good friend, including sharing, helping and showing respect"
+  },
+  "skill": "social.friend_qualities",
+  "prereq_skills": ["social.friends.good"],
+  "images": ["two_friends", "share_lunch", "help_tie_lace", "listen", "leave_out", "tell_lies", "ask_whats_wrong", "laugh", "walk_off", "share", "grab", "hide", "wait_to_speak", "interrupt", "tutor_lunch"],
+  "show": {
+    "line": "A good friend shares, helps and shows respect. Are you a good friend?",
+    "image": "two_friends"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Good friend or not?", "groups": ["good", "not_good"], "items": [{"image": "share_lunch", "group": "good"}, {"image": "help_tie_lace", "group": "good"}, {"image": "listen", "group": "good"}, {"image": "leave_out", "group": "not_good"}, {"image": "tell_lies", "group": "not_good"}]},
+    {"type": "listen_tap", "prompt": "Your friend is crying. What do you do?", "options": ["ask_whats_wrong", "laugh", "walk_off"], "answer": "ask_whats_wrong", "praise": "Ask what is wrong!"},
+    {"type": "say_it", "prompt": "Name one thing a good friend does.", "accept": ["share", "shares", "help", "helps", "listen", "listens", "is kind", "plays with me", "cares", "respects"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Ben has no crayons. Amahle shares hers. What did Amahle do?", "options": ["share", "grab", "hide"], "answer": "share", "praise": "She shared!"},
+    {"type": "listen_tap", "prompt": "Which shows respect?", "options": ["wait_to_speak", "interrupt"], "answer": "wait_to_speak", "praise": "Waiting to speak!"},
+    {"type": "say_it", "prompt": "Say: will you be my friend?", "accept": ["will you be my friend", "be my friend", "will you be my friend?"]}
+  ],
+  "hints": ["Good friends care about each other.", "Sharing, helping and respect."],
+  "beat_the_tutor": {
+    "setup": "My turn! My friend has no lunch.",
+    "tutor_try": "I eat mine and say too bad!",
+    "image": "tutor_lunch",
+    "answer": "share",
+    "win_line": "You caught me! A good friend shares.",
+    "gentle_line": "Let's share our lunch!"
+  },
+  "parent_line": "Can describe qualities of a good friend."
+}
