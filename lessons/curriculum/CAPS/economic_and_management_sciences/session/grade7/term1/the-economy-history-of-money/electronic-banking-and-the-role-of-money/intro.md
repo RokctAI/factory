@@ -1,0 +1,1 @@
+Today we follow money as it leaves your hand and becomes numbers on a screen. We look at bank cards, ATMs, EFTs, internet and cellphone banking and tap-to-pay, and we ask why most money in South Africa today never takes the form of a coin or note. We also look at the jobs money does in the economy, and at how to stay safe from fraud when money is electronic.
