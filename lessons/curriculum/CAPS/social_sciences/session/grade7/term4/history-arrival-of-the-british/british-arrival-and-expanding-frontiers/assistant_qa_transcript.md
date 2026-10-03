@@ -1,0 +1,18 @@
+### subtopic_1 — Why the British Came
+**Assistant:** Why was the Cape called the Tavern of the Seas?
+
+**Tutor:** Because it was the main stopping place for ships sailing between Europe and Asia, where crews could rest, eat, drink and resupply, just as travellers on land might stop at a tavern, an inn. Before the Suez Canal opened in 1869, every ship sailing between Europe and India, the East Indies or China had to go around Africa, and the Cape lay at the halfway point. Cape Town's harbour supplied ships with fresh water, meat, vegetables, fruit, wine and repairs, and sailors spent their money in the town's taverns and shops, which gave the town its lively, cosmopolitan character. Whoever controlled the Cape could supply friendly ships and deny supplies to enemies, and could station warships to protect or attack shipping. This is why Britain considered it so strategically important during its wars with France. After the Suez Canal opened, ships could take a much shorter route through the Mediterranean and the Red Sea, and the Cape became less important as a stopping place, although it remained important for larger ships and during times when the canal was closed, such as during wars and crises in the twentieth century.
+
+***
+
+### subtopic_3 — Laws Affecting Khoikhoi and Slaves
+**Assistant:** Why did farmers oppose Ordinance 50?
+
+**Tutor:** Many Dutch-speaking farmers, and some English-speaking ones, opposed Ordinance 50 because it threatened their control over labour. Before 1828, pass laws and apprenticeship tied Khoikhoi workers to farms; a worker who left without permission could be arrested as a vagrant. Ordinance 50 removed these controls, so Khoikhoi workers could leave farms, look for better wages or conditions, move to mission stations or the Kat River Settlement, or work for themselves. Farmers complained of labour shortages and claimed, often without evidence, that freedom of movement would lead to vagrancy and theft. Some also resented what they saw as interference by British officials and missionaries, especially Dr John Philip, whom many farmers disliked intensely. Underlying this were deep racial attitudes, the belief that Khoikhoi should be servants, not equals. In 1834 farmers petitioned for a new vagrancy law to restore control, but it was blocked by the British government. Resentment over Ordinance 50, together with the abolition of slavery and insecurity on the frontier, was one of the reasons some Dutch-speaking farmers later left the colony in the Great Trek from 1835.
+
+***
+
+### subtopic_4 — Expanding Frontiers
+**Assistant:** What happened to the Xhosa expelled from the Zuurveld in 1812?
+
+**Tutor:** In the summer of 1811 to 1812, Colonel John Graham led British troops, colonial burghers and Khoikhoi soldiers of the Cape Regiment in a campaign to drive about twenty thousand Xhosa people, mainly followers of chiefs such as Ndlambe, out of the Zuurveld and across the Great Fish River. The campaign was brutal: soldiers burnt homesteads and crops, seized cattle and killed people, including, in some cases, people who were not fighting. The Xhosa had lived in the Zuurveld for decades and considered it their land. Crowded into the area east of the Fish River, where other Xhosa chiefdoms already lived, they faced shortages of grazing and food, which increased tensions between Xhosa groups and with the colony. Many saw the expulsion as an injustice that had to be reversed. This grievance contributed directly to the war of 1818 to 1819, including the famous attack on Grahamstown in 1819 led by the prophet Makhanda, after whom the city was renamed in 2018. The 1812 expulsion is often seen as the start of a much more aggressive British policy on the eastern frontier, which we study next.
