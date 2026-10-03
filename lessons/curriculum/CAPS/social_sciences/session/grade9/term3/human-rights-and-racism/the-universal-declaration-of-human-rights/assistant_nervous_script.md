@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a promise after a nightmare, a list of thirty and two roads in 1948.
+The promise. Human rights are basic rights every person has because they are human: universal and inherent. World War II and the Holocaust showed that a government could use its own laws to destroy rights, so after 1945 the world agreed rights needed protection. The UN was founded in 1945; the Nuremberg trials introduced crimes against humanity.
+The list. Eleanor Roosevelt chaired the commission, with René Cassin, P.C. Chang, Charles Malik, John Humphrey and Hansa Mehta. Adopted in Paris on 10 December 1948: 48 for, none against, 8 abstentions, including South Africa. Thirty articles: Article 1, born free and equal in dignity and rights; Article 2, no discrimination; civil, political, economic, social and cultural rights. Not binding, but a common standard; 1966 covenants made it law.
+The roads. In 1948 the National Party began apartheid, which broke almost every article. The 1996 Bill of Rights protects these rights. Human Rights Day in South Africa is 21 March.
+Open the practice set when you are ready. You've got this!

@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a library with legs, a map before a journey and a jigsaw puzzle.
+The library. Oral history collects people's memories through recorded interviews. A person describing their own experience is a primary source. It matters for apartheid because official records reflect the government's view and many voices were never written down. The TRC and the District Six Museum used oral testimony.
+The map. Choose one apartheid law: Population Registration Act, Group Areas Act, pass laws, Bantu Education Act, Separate Amenities Act or Mixed Marriages Act. Research it in written sources, form a key question and record references. Get informed consent; prepare open, non-leading questions; listen, be sensitive, and transcribe soon afterwards.
+The puzzle. Memory can fade or blur, so evaluate the interview: first-hand or not, point of view, consistency, and corroboration with written sources. Write up with an introduction, background, interview, analysis, conclusion and bibliography. Avoid plagiarism, and reference the interview too.
+Open the practice set when you are ready. You've got this!
