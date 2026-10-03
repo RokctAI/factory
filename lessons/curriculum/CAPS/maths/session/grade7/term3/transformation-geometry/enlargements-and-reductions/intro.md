@@ -1,0 +1,1 @@
+Today we draw enlargements and reductions on squared paper and compare them with the original in terms of shape and size. One house drawing runs through the session — a simple house 4 squares wide and 6 squares tall — and by the end you will draw it twice as big and half as big, and explain what changes and what stays the same.
