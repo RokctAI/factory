@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the phone plan R50 per month plus R2 per minute in words, as a flow diagram, a table, a formula and a number sentence.",
+      "expected_answer": "Words: R50 plus R2 per minute. Flow: m → ×2 → +50 → c. Table: 0 → 50, 10 → 70, 20 → 90. Formula: c = 2 × m + 50. Number sentence: 2 × 10 + 50 = 70."
+    },
+    {
+      "id": "cc2",
+      "question": "Show that '+50 then ×2' is not equivalent to c = 2 × m + 50, but c = 2 × (m + 25) is.",
+      "expected_answer": "For m = 10: (10 + 50) × 2 = 120 ≠ 70. For c = 2 × (m + 25): m = 0, 10, 20 give 50, 70, 90, and 2 × 25 = 50 so 2(m + 25) = 2m + 50 for every m."
+    },
+    {
+      "id": "cc3",
+      "question": "Plan A is c = 2m + 50 and plan B is c = 4m. When are they equal, and which is cheaper for 40 minutes?",
+      "expected_answer": "Equal at 25 minutes (R100). For 40 minutes A costs R130 and B costs R160, so A is cheaper."
+    }
+  ]
+}

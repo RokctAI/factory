@@ -1,0 +1,1 @@
+Today we investigate and extend number patterns and geometric patterns, shown as pictures, in tables and as sequences. One matchstick pattern runs through the session: a row of squares made from 4, 7, 10, 13 matches. By the end you will extend it, record it in a table, find how many matches a later pattern needs, and invent a pattern of your own.

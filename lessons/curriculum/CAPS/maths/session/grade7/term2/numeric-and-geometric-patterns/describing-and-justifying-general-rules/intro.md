@@ -1,0 +1,1 @@
+Today we describe the general rule of a pattern in our own words and justify it, so that we can find any term without listing all the ones before it. One pattern runs through the session — the matchstick squares 4, 7, 10, 13 — and by the end you will explain why the rule is "three times the number of squares, plus one", and use it to find the 100th term.
