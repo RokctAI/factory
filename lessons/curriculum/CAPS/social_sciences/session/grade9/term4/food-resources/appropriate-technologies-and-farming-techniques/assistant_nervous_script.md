@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: the right key for the lock, a bottle that waters a plant and three sisters in a field.
+The key. Appropriate technology suits local people and places: affordable, simple to use and repair, using local skills and materials, labour-friendly and sustainable. E.F. Schumacher's Small is Beautiful, 1973. It can be modern, like the Hippo Water Roller. Yacouba Sawadogo's zaï pits turned desert into fields.
+The bottle. Water: rainwater tanks, contour ridges, planting pits, drip irrigation that cuts water use, grey water, treadle and solar pumps, and mulch.
+The sisters. Soil and pests: compost, manure, trench beds; crop rotation with nitrogen-fixing legumes; intercropping maize, beans and pumpkins; conservation agriculture; integrated pest management; push-pull with desmodium and Napier grass; agroforestry. In South Africa: school and community food gardens, indigenous crops such as sorghum, cowpeas and morogo, seed banks, airtight storage, solar dryers and mobile phone information. Land, water, training and markets still matter.
+Open the practice set when you are ready. You've got this!
