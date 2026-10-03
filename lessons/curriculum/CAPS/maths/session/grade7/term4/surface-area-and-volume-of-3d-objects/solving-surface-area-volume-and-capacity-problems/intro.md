@@ -1,0 +1,1 @@
+Today we solve problems involving surface area, volume and capacity. One school water project runs through the session — a rectangular tank 2,5 m by 1,2 m by 1,5 m, painted on the outside and filled by a pipe. By the end you will find how much paint, how much water, how long it takes to fill, and how deep the water is after some is used.

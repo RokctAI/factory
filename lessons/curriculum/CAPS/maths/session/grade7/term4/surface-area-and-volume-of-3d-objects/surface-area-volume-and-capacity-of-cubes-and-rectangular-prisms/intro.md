@@ -1,0 +1,1 @@
+Today we use formulae to calculate the surface area, volume and capacity of cubes and rectangular prisms. One cereal box runs through the session — 20 cm long, 7 cm wide and 30 cm tall — and by the end you will find how much cardboard wraps it, how much space is inside it, and how a fish tank's volume becomes litres of water.

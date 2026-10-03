@@ -1,0 +1,1 @@
+Today we explore how surface area and volume are related in cubes and rectangular prisms. One set of 24 building blocks runs through the session, arranged into different boxes. By the end you will see that boxes with the same volume can need very different amounts of wrapping, and what happens to both when a cube's side doubles.
