@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term4.w01_i_will_go",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 4,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Language Use",
+    "subtopic": "Understands and uses the future tense ('I will go to town tomorrow')"
+  },
+  "skill": "efal.grammar.future_tense",
+  "prereq_skills": ["efal.grammar.past_tense"],
+  "images": ["bus_stop", "word_will", "word_went", "sentence_i_will_ride", "sentence_i_rode", "calendar_tomorrow", "word_took", "word_will_take", "tutor_holds_calendar"],
+  "show": {
+    "line": "Tomorrow I will go to town! I will take the bus.",
+    "image": "bus_stop"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tomorrow I ... go to town. Which word?", "options": ["word_will", "word_went"], "answer": "word_will", "praise": "Yes! Tomorrow I will go."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I will go to town tomorrow.", "accept": ["i will go to town tomorrow", "i will go to town", "i go to town tomorrow"]},
+    {"type": "listen_tap", "prompt": "Which one is about tomorrow?", "options": ["sentence_i_will_ride", "sentence_i_rode"], "answer": "sentence_i_will_ride", "praise": "Yes! I will ride."},
+    {"type": "say_it", "prompt": "What will you do tomorrow? Start with, I will.", "accept": ["i will play", "i will go to school", "i will read", "i will"], "image": "calendar_tomorrow"},
+    {"type": "listen_tap", "prompt": "Yesterday I ... the train. Will take or took?", "options": ["word_took", "word_will_take"], "answer": "word_took", "praise": "Yes! Yesterday I took the train."}
+  ],
+  "hints": ["Tomorrow? Say I will.", "Yesterday is the past. Tomorrow is the future."],
+  "beat_the_tutor": {
+    "setup": "My turn! Tomorrow I...",
+    "tutor_try": "Tomorrow I went to the shop!",
+    "image": "tutor_holds_calendar",
+    "answer": "will go",
+    "win_line": "You caught me! Tomorrow I will go to the shop.",
+    "gentle_line": "Let's say it together. Tomorrow I will go!"
+  },
+  "parent_line": "Can talk about the future: tomorrow I will go."
+}
