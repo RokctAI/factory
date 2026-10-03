@@ -1,0 +1,1 @@
+Today we add and subtract integers. One bank account runs through the session: Zinhle starts with R40, spends R65, and later gets R30 back. By the end you will add and subtract positive and negative integers on a number line, understand why subtracting a negative is the same as adding, and check answers with real-life sense.

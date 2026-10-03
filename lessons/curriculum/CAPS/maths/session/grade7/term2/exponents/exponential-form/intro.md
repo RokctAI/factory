@@ -1,0 +1,1 @@
+Today we learn to write repeated multiplication in exponential form, read its base and exponent, and compare numbers written this way. One story runs through the session: a message is shared by 2 people, who each share it with 2 more, and so on. By the end you will write the number of people as a power of 2, calculate it, and compare powers like 2⁵ and 5².

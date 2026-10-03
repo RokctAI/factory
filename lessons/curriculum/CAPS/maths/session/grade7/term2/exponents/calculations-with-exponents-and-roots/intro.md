@@ -1,0 +1,1 @@
+Today we calculate with all four operations when numbers are written as powers, square roots and cube roots. One expression runs through the session — 3 + 2³ × √25 — and by the end you will know why its answer is 43 and not 55, and how brackets, powers and roots fit into the order of operations.

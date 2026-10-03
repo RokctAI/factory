@@ -1,0 +1,1 @@
+Today we learn the squares up to 12 squared and the cubes up to 6 cubed by heart, and their square roots and cube roots. One picture runs through the session: tiles laid in a square and blocks stacked into a cube. By the end you will know why 144 is a square number, why 216 is a cube number, and how to undo each one with a root.
