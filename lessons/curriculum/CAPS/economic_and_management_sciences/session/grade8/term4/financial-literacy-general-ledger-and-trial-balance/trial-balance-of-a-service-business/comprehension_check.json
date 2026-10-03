@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State three purposes of a trial balance and describe its heading and columns.",
+      "expected_answer": "It checks the arithmetic accuracy of the ledger (debit total equals credit total if the double entry was completed); it brings all ledger balances together on one page; it is the starting point for the income statement and balance sheet. Heading: name of the business, 'Trial balance', and the date (e.g. on 30 April). Columns: account name, folio, debit, credit; balance sheet accounts first, then nominal accounts, in folio order."
+    },
+    {
+      "id": "cc2",
+      "question": "Prepare the trial balance of the repair business on 30 April from these balances: capital R70 000, drawings R5 500, equipment R23 200, loan R25 000, bank R80 185 (favourable), current income R34 550, rent income R5 000, interest income R330, wages R12 000, stationery R1 430, water and electricity R2 780, bank charges R465, repair parts R4 200, rent expense R4 500, insurance R620.",
+      "expected_answer": "Debit column: drawings 5 500, equipment 23 200, bank 80 185, wages 12 000, stationery 1 430, water and electricity 2 780, bank charges 465, repair parts 4 200, rent expense 4 500, insurance 620; total R134 880. Credit column: capital 70 000, loan 25 000, current income 34 550, rent income 5 000, interest income 330; total R134 880. The totals agree."
+    },
+    {
+      "id": "cc3",
+      "question": "Name two errors that cause the trial balance totals to differ and two that do not. Then use the April trial balance to calculate net profit and show that A = OE + L.",
+      "expected_answer": "Totals differ: posting only one half of a transaction; posting different amounts on the two sides (e.g. R680 as R860); both halves on the same side; a balance in the wrong column; incorrect addition. Totals still agree: omission of a whole transaction; posting to the wrong account on the correct side; reversal of debit and credit; wrong amount in the journal; compensating errors. Profit: income 34 550 + 5 000 + 330 = 39 880; expenses 25 995; profit R13 885. A = 80 185 + 23 200 = 103 385; OE = 70 000 + 13 885 - 5 500 = 78 385; L = 25 000; 78 385 + 25 000 = 103 385."
+    }
+  ]
+}

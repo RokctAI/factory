@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the five-step routine for entering a receipt in the CRJ and show how a combined deposit of receipt 005 (R1 250) and the CRR (R2 100) on 4 April is entered.",
+      "expected_answer": "1. Enter the source document number (receipt no., CRR, B/S). 2. Enter the day. 3. Enter from whom the money was received. 4. Enter the amount in the bank column (or, for combined deposits, each amount in analysis of receipts and the total in the bank column once). 5. Enter the amount in current income (fees for services) or in sundry with the account name. Combined deposit: line 1 — 005, 4, customer, analysis 1 250, current income 1 250; line 2 — CRR, cash sales, analysis 2 100, bank 3 350, current income 2 100."
+    },
+    {
+      "id": "cc2",
+      "question": "The April CRJ contains current income of R3 950, R1 250, R2 100, R4 480, R1 750 and R5 120, and sundry receipts of capital R10 000, rent income R2 500 and interest income R180. Calculate the totals and show the cross-cast.",
+      "expected_answer": "Current income = 3 950 + 1 250 + 2 100 + 4 480 + 1 750 + 5 120 = R18 650. Sundry = 10 000 + 2 500 + 180 = R12 680. Bank = R31 330. Cross-cast: 18 650 + 12 680 = 31 330 = bank total, so the CRJ agrees."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the April CRJ is posted to the general ledger, stating the account, side, amount, details and folio for each posting.",
+      "expected_answer": "Bank: debit R31 330, details Total receipts, folio CRJ 4. Current income: credit R18 650, details Bank, CRJ 4. Capital: credit R10 000, details Bank, CRJ 4. Rent income: credit R2 500, details Bank, CRJ 4. Interest income: credit R180, details Bank, CRJ 4. Debits posted (31 330) equal credits posted (18 650 + 10 000 + 2 500 + 180 = 31 330). Ledger folio numbers are then written in the CRJ folio columns."
+    }
+  ]
+}

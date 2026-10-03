@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the general ledger, its two sections and the layout of a T-account, including the purpose of the details and folio columns.",
+      "expected_answer": "Book of final entry with an account for every asset, liability, owner's equity item, income and expense. Balance sheet accounts section (capital, drawings, assets, liabilities; folios B1, B2...) and nominal accounts section (income and expenses; N1, N2...). T-account: name and folio at top; debit (left) and credit (right) sides, each with date, details, folio and amount columns. Details: the contra account (where the other half of the entry is). Folio: the journal and page/month, e.g. CRJ 4, forming the audit trail."
+    },
+    {
+      "id": "cc2",
+      "question": "State the double-entry principle and the debit and credit rules for assets, capital, liabilities, income, expenses and drawings, linking them to the accounting equation.",
+      "expected_answer": "Every transaction affects at least two accounts with equal debit and credit amounts. Assets, expenses and drawings increase on the debit side (decrease credit). Capital, liabilities and income increase on the credit side (decrease debit). Assets are on the left of A = OE + L and increase on the left (debit); OE and L are on the right and increase on the right (credit); income increases OE (credit), expenses and drawings decrease OE (debit)."
+    },
+    {
+      "id": "cc3",
+      "question": "Name the account debited and the account credited: (a) capital R10 000 received; (b) rent income R2 500 received; (c) rent of workshop R4 500 paid; (d) equipment R5 200 bought by EFT; (e) drawings R2 500; (f) loan received R10 000; (g) loan repayment R1 000.",
+      "expected_answer": "(a) Dr Bank, Cr Capital. (b) Dr Bank, Cr Rent income. (c) Dr Rent expense, Cr Bank. (d) Dr Equipment, Cr Bank. (e) Dr Drawings, Cr Bank. (f) Dr Bank, Cr Loan. (g) Dr Loan, Cr Bank."
+    }
+  ]
+}
