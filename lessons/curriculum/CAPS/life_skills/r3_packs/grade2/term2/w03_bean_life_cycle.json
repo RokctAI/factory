@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w03_bean_life_cycle",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "A bean grows",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Seasons",
+    "subtopic": "Life cycle of a bean plant; what plants need to grow"
+  },
+  "skill": "plants.life_cycle",
+  "prereq_skills": ["plants.needs"],
+  "images": ["bean_cycle", "roots", "flower", "bean_pod", "watered_pot", "dry_pot", "beans", "rocks", "eggs", "tutor_seed"],
+  "show": {
+    "line": "A bean seed grows roots, a shoot, leaves, and then new beans!",
+    "image": "bean_cycle"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Seed, roots, shoot, and then?", "sequence": ["seed", "roots", "shoot"], "options": ["leaves", "seed", "soil"], "answer": "leaves", "praise": "Leaves!"},
+    {"type": "listen_tap", "prompt": "What comes out of the seed first?", "options": ["roots", "flower", "bean_pod"], "answer": "roots", "praise": "Roots first!"},
+    {"type": "say_it", "prompt": "What does a seed need to grow? Name one.", "accept": ["water", "soil", "sunlight", "sun", "light", "air", "warmth"]},
+    {"type": "listen_tap", "prompt": "Which pot will grow a bean plant?", "options": ["watered_pot", "dry_pot"], "answer": "watered_pot", "praise": "Water helps it grow!"},
+    {"type": "listen_tap", "prompt": "The grown plant makes new...?", "options": ["beans", "rocks", "eggs"], "answer": "beans", "praise": "New beans, new seeds!"},
+    {"type": "what_next", "prompt": "Sow, grow, and then?", "sequence": ["sow", "grow"], "options": ["harvest", "sow", "sleep"], "answer": "harvest", "praise": "Harvest!"}
+  ],
+  "hints": ["A life cycle goes round and round.", "Seeds make plants, plants make seeds."],
+  "beat_the_tutor": {
+    "setup": "My turn! A bean seed first grows...",
+    "tutor_try": "A flower!",
+    "image": "tutor_seed",
+    "answer": "roots",
+    "win_line": "You caught me! Roots grow first.",
+    "gentle_line": "Roots, then shoot!"
+  },
+  "parent_line": "Can order the life cycle of a bean plant."
+}

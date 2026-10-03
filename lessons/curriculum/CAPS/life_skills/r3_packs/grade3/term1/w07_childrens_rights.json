@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term1.w07_childrens_rights",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Children's rights",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: Rights and responsibility",
+    "subtopic": "Children's rights and how to exercise them: every child has a right to basic nutrition, shelter, health care and social services"
+  },
+  "skill": "civics.child_rights",
+  "prereq_skills": ["civics.rights"],
+  "images": ["child_rights", "food", "toys_every_day", "shelter", "phone", "clinic", "nothing", "thumbs_down", "thumbs_up", "grown_ups", "nobody", "tutor_sweets"],
+  "show": {
+    "line": "Every child has the right to food, a home, health care and safety!",
+    "image": "child_rights"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which is a child's right?", "options": ["food", "toys_every_day"], "answer": "food", "praise": "Food!"},
+    {"type": "listen_tap", "prompt": "Which is a child's right?", "options": ["shelter", "phone"], "answer": "shelter", "praise": "A safe home!"},
+    {"type": "listen_tap", "prompt": "A child is sick. They have a right to...?", "options": ["clinic", "nothing"], "answer": "clinic", "praise": "Health care!"},
+    {"type": "say_it", "prompt": "Children have the right to be safe from...?", "accept": ["harm", "abuse", "danger", "hurt", "being hurt", "violence"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "A child is not allowed to go to school and must work all day. Is that right?", "options": ["thumbs_down", "thumbs_up"], "answer": "thumbs_down", "praise": "No! Children have a right to school."},
+    {"type": "listen_tap", "prompt": "Who must protect children's rights?", "options": ["grown_ups", "nobody"], "answer": "grown_ups", "praise": "Grown-ups and the government!"}
+  ],
+  "hints": ["Rights are things every child needs.", "Food, home, health, safety, school."],
+  "beat_the_tutor": {
+    "setup": "My turn! Children have a right to...",
+    "tutor_try": "Sweets!",
+    "image": "tutor_sweets",
+    "answer": "food",
+    "win_line": "You caught me! The right is to healthy food.",
+    "gentle_line": "Food, shelter and safety!"
+  },
+  "parent_line": "Knows children's rights to nutrition, shelter, health care and protection."
+}

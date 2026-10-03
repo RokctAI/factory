@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term1.w09_transport_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. drive, car, bus, taxi, airplane, motorcycle, truck, fast, slow, transportation, trip, boat, travel"
+  },
+  "skill": "efal.vocab.transport",
+  "prereq_skills": ["efal.vocab.town"],
+  "images": ["transport_picture", "airplane", "truck", "boat", "car", "bus", "bicycle_slow", "taxi", "motorcycle", "helicopter", "tutor_holds_motorcycle"],
+  "show": {
+    "line": "How do we travel? By car, bus, taxi, truck, boat or airplane!",
+    "image": "transport_picture"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the airplane.", "options": ["airplane", "truck", "boat"], "answer": "airplane", "praise": "Yes! An airplane flies."},
+    {"type": "listen_tap", "prompt": "Which one goes on the water?", "options": ["boat", "car", "bus"], "answer": "boat", "praise": "Yes! A boat goes on water."},
+    {"type": "say_it", "prompt": "What is this? Say it.", "accept": ["truck", "a truck", "lorry", "the truck"], "image": "truck"},
+    {"type": "listen_tap", "prompt": "Which one is fast?", "options": ["airplane", "bicycle_slow"], "answer": "airplane", "praise": "Yes! The airplane is very fast."},
+    {"type": "match_sort", "prompt": "Does it go on the road or in the sky? Sort the pictures.", "groups": ["road", "sky"], "items": [{"image": "car", "group": "road"}, {"image": "taxi", "group": "road"}, {"image": "motorcycle", "group": "road"}, {"image": "airplane", "group": "sky"}, {"image": "helicopter", "group": "sky"}]}
+  ],
+  "hints": ["Think. Where does it go? Road, water or sky?", "Look at the wheels and the wings."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will name this.",
+    "tutor_try": "This is a car!",
+    "image": "tutor_holds_motorcycle",
+    "answer": "motorcycle",
+    "win_line": "You caught me! It is a motorcycle. It has two wheels.",
+    "gentle_line": "Let's look together. Two wheels and a motor. A motorcycle!"
+  },
+  "parent_line": "Can name kinds of transport in English and say where they go."
+}

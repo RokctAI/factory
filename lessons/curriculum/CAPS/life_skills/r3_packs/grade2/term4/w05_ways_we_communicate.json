@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w05_ways_we_communicate",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [7],
+  "theme": "Ways we communicate",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Different ways of communicating",
+    "subtopic": "Ways we communicate in the 21st century (cellphone calls, WhatsApp, email); interviews and research"
+  },
+  "skill": "communication.ways",
+  "prereq_skills": [],
+  "images": ["phone_letter", "letter", "radio", "tv", "cellphone", "book", "drum", "phone_call", "telling_story", "singing", "card", "poster", "post_box", "bin", "fridge", "tutor_fridge"],
+  "show": {
+    "line": "We talk, write letters, phone and send messages. That is communication!",
+    "image": "phone_letter"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one sends a message on paper?", "options": ["letter", "radio", "tv"], "answer": "letter", "praise": "A letter!"},
+    {"type": "listen_tap", "prompt": "Which do we use to call someone far away?", "options": ["cellphone", "book", "drum"], "answer": "cellphone", "praise": "A cellphone!"},
+    {"type": "match_sort", "prompt": "Speaking or writing?", "groups": ["speaking", "writing"], "items": [{"image": "phone_call", "group": "speaking"}, {"image": "telling_story", "group": "speaking"}, {"image": "singing", "group": "speaking"}, {"image": "letter", "group": "writing"}, {"image": "card", "group": "writing"}]},
+    {"type": "say_it", "prompt": "A letter needs a stamp and an...?", "accept": ["address", "envelope"]},
+    {"type": "listen_tap", "prompt": "Which do we listen to?", "options": ["radio", "letter", "poster"], "answer": "radio", "praise": "The radio!"},
+    {"type": "listen_tap", "prompt": "Where do we post a letter?", "options": ["post_box", "bin", "fridge"], "answer": "post_box", "praise": "The post box!"}
+  ],
+  "hints": ["We speak, write, read and listen.", "Phones and letters carry messages."],
+  "beat_the_tutor": {
+    "setup": "My turn! I post a letter in...",
+    "tutor_try": "The fridge!",
+    "image": "tutor_fridge",
+    "answer": "post box",
+    "win_line": "You caught me! Letters go in the post box.",
+    "gentle_line": "Post box!"
+  },
+  "parent_line": "Can name different ways people communicate."
+}

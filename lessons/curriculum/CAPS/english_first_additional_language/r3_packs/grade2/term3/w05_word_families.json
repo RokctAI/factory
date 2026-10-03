@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term3.w05_word_families",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [5],
+  "theme": "Making things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 5: word families - groups and rearranges words (bin, pin, tin; bed, fed, shed; why, my, fly)"
+  },
+  "skill": "efal.phonics.family.mixed",
+  "prereq_skills": ["efal.phonics.family.an"],
+  "images": ["word_family_houses", "word_tin", "word_ten", "word_bed", "word_fed", "word_fly", "word_pin", "word_me", "word_man", "word_bin", "word_shed", "tutor_holds_word_bed"],
+  "show": {
+    "line": "Word families end the same. Bin, pin, tin. Bed, fed, shed!",
+    "image": "word_family_houses"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word is in the same family as bin?", "options": ["word_tin", "word_ten", "word_bed"], "answer": "word_tin", "praise": "Yes! Bin, tin. The in family."},
+    {"type": "listen_tap", "prompt": "Which word is in the same family as bed?", "options": ["word_fed", "word_fly", "word_pin"], "answer": "word_fed", "praise": "Yes! Bed, fed. The ed family."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "shed", "accept": ["shed", "sed", "shad"]},
+    {"type": "listen_tap", "prompt": "Which word is in the same family as my?", "options": ["word_fly", "word_me", "word_man"], "answer": "word_fly", "praise": "Yes! My, fly."},
+    {"type": "match_sort", "prompt": "Which family? Sort the words.", "groups": ["in", "ed"], "items": [{"image": "word_bin", "group": "in"}, {"image": "word_pin", "group": "in"}, {"image": "word_tin", "group": "in"}, {"image": "word_bed", "group": "ed"}, {"image": "word_shed", "group": "ed"}]}
+  ],
+  "hints": ["Look at the end of the word.", "Same ending, same family."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will put this in the in family.",
+    "tutor_try": "Bed goes in the in family!",
+    "image": "tutor_holds_word_bed",
+    "answer": "no",
+    "win_line": "You caught me! Bed goes in the ed family.",
+    "gentle_line": "Let's look together. Bed ends with ed. The ed family!"
+  },
+  "parent_line": "Can sort words into families like bin, pin, tin and bed, fed, shed."
+}

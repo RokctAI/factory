@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term2.w06_long_short_o_u",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [6],
+  "theme": "Feelings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 6: not/note, rob/robe, hop/hope, cut/cute, tub/tube"
+  },
+  "skill": "efal.phonics.magic_e.o_u",
+  "prereq_skills": ["efal.phonics.magic_e.a_i"],
+  "images": ["toothpaste_tube", "word_hope", "word_hop", "word_cut", "word_cute", "cute_puppy", "scissors_cut", "word_rob", "word_tub", "word_robe", "word_tube", "word_note", "tutor_holds_word_tube"],
+  "show": {
+    "line": "The e at the end works again! Hop, hope. Cut, cute. Tub, tube.",
+    "image": "toothpaste_tube"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word hope.", "options": ["word_hope", "word_hop"], "answer": "word_hope", "praise": "Yes! Hope. o says its name."},
+    {"type": "listen_tap", "prompt": "Tap the word cut.", "options": ["word_cut", "word_cute"], "answer": "word_cut", "praise": "Yes! Cut. Short sound."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "note", "accept": ["note", "not", "nut"]},
+    {"type": "listen_tap", "prompt": "Which one is cute?", "options": ["cute_puppy", "scissors_cut"], "answer": "cute_puppy", "praise": "Yes! A cute puppy."},
+    {"type": "match_sort", "prompt": "Short sound or long sound? Sort the words.", "groups": ["short", "long"], "items": [{"image": "word_rob", "group": "short"}, {"image": "word_tub", "group": "short"}, {"image": "word_robe", "group": "long"}, {"image": "word_tube", "group": "long"}, {"image": "word_note", "group": "long"}]}
+  ],
+  "hints": ["e at the end makes o and u say their names.", "Not, note. Hear the change?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says tub!",
+    "image": "tutor_holds_word_tube",
+    "answer": "tube",
+    "win_line": "You caught me! It says tube. The e makes u say its name.",
+    "gentle_line": "Let's read it together. Tube. A tube of toothpaste!"
+  },
+  "parent_line": "Can read pairs like hop and hope, cut and cute."
+}

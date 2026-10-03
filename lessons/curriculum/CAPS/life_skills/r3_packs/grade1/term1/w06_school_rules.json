@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w06_school_rules",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "School rules",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: At school",
+    "subtopic": "Classroom routines and rules; school rules; respect and tolerance"
+  },
+  "skill": "school.rules",
+  "prereq_skills": ["school.places"],
+  "images": ["school_rules", "walk_corridor", "line_up", "hand_up", "run_corridor", "litter", "keep_playing", "go_home", "ruth", "jabu", "child_listening", "child_shouting", "child_turned_away", "tutor_on_swing"],
+  "show": {
+    "line": "Rules keep us safe and happy. Walk inside, listen and be kind!",
+    "image": "school_rules"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Follows the rules or breaks them? Sort.", "groups": ["follows", "breaks"], "items": [{"image": "walk_corridor", "group": "follows"}, {"image": "line_up", "group": "follows"}, {"image": "hand_up", "group": "follows"}, {"image": "run_corridor", "group": "breaks"}, {"image": "litter", "group": "breaks"}]},
+    {"type": "listen_tap", "prompt": "The bell rings after break. What do you do?", "options": ["line_up", "keep_playing", "go_home"], "answer": "line_up", "praise": "Line up and go to class!"},
+    {"type": "say_it", "prompt": "Why do we have rules?", "accept": ["to keep safe", "to be safe", "safe", "to keep us safe", "so we are safe", "to be happy", "so everyone is happy"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Jabu drops his chip packet. Ruth puts it in the bin. Who followed the rule?", "options": ["ruth", "jabu"], "answer": "ruth", "praise": "Ruth! Litter goes in the bin."},
+    {"type": "listen_tap", "prompt": "Which shows respect for the teacher?", "options": ["child_listening", "child_shouting", "child_turned_away"], "answer": "child_listening", "praise": "Listening shows respect!"},
+    {"type": "say_it", "prompt": "Say it: I am proud of my school!", "accept": ["i am proud of my school", "i'm proud of my school", "proud of my school"]}
+  ],
+  "hints": ["Rules help everyone learn and stay safe.", "Ask: is this safe and kind?"],
+  "beat_the_tutor": {
+    "setup": "My turn! The bell rang.",
+    "tutor_try": "I keep playing on the swings!",
+    "image": "tutor_on_swing",
+    "answer": "line up",
+    "win_line": "You caught me! When the bell rings, we line up.",
+    "gentle_line": "Bell rings, we line up!"
+  },
+  "parent_line": "Knows classroom and school rules and why we have them."
+}

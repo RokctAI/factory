@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w07_plant_parts_needs",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [9],
+  "theme": "Plants and seeds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Plants and seeds",
+    "subtopic": "What plants need to grow; growing a plant from a seed"
+  },
+  "skill": "plants.needs",
+  "prereq_skills": ["plants.parts"],
+  "images": ["seedling", "water", "juice", "sand_only", "sunlight", "darkness", "plastic", "roots", "flower", "leaf", "thumbs_down", "thumbs_up", "tutor_dry_pot"],
+  "show": {
+    "line": "Plant a seed! Give it soil, water and sunlight. Watch it grow!",
+    "image": "seedling"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What does a plant need to grow?", "options": ["water", "juice", "sand_only"], "answer": "water", "praise": "Water!"},
+    {"type": "listen_tap", "prompt": "What else does a plant need?", "options": ["sunlight", "darkness", "plastic"], "answer": "sunlight", "praise": "Sunlight!"},
+    {"type": "what_next", "prompt": "Seed, sprout, small plant, and then?", "sequence": ["seed", "sprout", "small plant"], "options": ["big plant", "seed", "rock"], "answer": "big plant", "praise": "A big plant!"},
+    {"type": "listen_tap", "prompt": "Which part takes up water from the soil?", "options": ["roots", "flower", "leaf"], "answer": "roots", "praise": "The roots!"},
+    {"type": "say_it", "prompt": "Why do we need plants? Name one thing they give us.", "accept": ["food", "fruit", "vegetables", "air", "oxygen", "shade", "wood", "flowers", "medicine"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Thato puts a bean seed in a dark cupboard with no water. Will it grow well?", "options": ["thumbs_down", "thumbs_up"], "answer": "thumbs_down", "praise": "No! It needs water and light."}
+  ],
+  "hints": ["Plants need soil, water, air and light.", "A seed grows into a plant."],
+  "beat_the_tutor": {
+    "setup": "My turn! I planted a seed.",
+    "tutor_try": "I never water it!",
+    "image": "tutor_dry_pot",
+    "answer": "water",
+    "win_line": "You caught me! Seeds need water to grow.",
+    "gentle_line": "Water and sun help it grow!"
+  },
+  "parent_line": "Knows what plants need to grow and why we need plants."
+}

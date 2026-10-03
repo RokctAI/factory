@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w10_weather_chart",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Our weather chart",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Beginning Knowledge: Weather",
+    "subtopic": "Use symbols to describe, record and report weather conditions; the effect of weather on us"
+  },
+  "skill": "weather.symbols",
+  "prereq_skills": ["weather.effects"],
+  "images": ["weather_chart", "symbol_rain", "symbol_sun", "symbol_wind", "symbol_cloud", "chart_sunny_days", "tutor_draws_rain"],
+  "show": {
+    "line": "We use pictures for weather. Sun for sunny, a cloud for cloudy, drops for rain!",
+    "image": "weather_chart"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which symbol means rainy?", "options": ["symbol_rain", "symbol_sun", "symbol_wind"], "answer": "symbol_rain", "praise": "Rain drops!"},
+    {"type": "listen_tap", "prompt": "Which symbol means windy?", "options": ["symbol_wind", "symbol_cloud", "symbol_sun"], "answer": "symbol_wind", "praise": "Windy! Whoosh."},
+    {"type": "listen_tap", "prompt": "Which symbol means sunny?", "options": ["symbol_sun", "symbol_rain", "symbol_cloud"], "answer": "symbol_sun", "praise": "Sunny!"},
+    {"type": "count_tap", "prompt": "Look at the chart. How many sunny days?", "image": "chart_sunny_days", "count": "3", "options": ["2", "3", "4"], "answer": "3", "praise": "Three sunny days!"},
+    {"type": "say_it", "prompt": "What is misty weather like? We see a lot of...?", "accept": ["mist", "fog", "cloud", "clouds", "white"]},
+    {"type": "what_next", "prompt": "Monday rain, Tuesday rain, Wednesday rain. Thursday?", "sequence": ["rain", "rain", "rain"], "options": ["rain", "snow", "rainbow"], "answer": "rain", "praise": "Rain again! A wet week."}
+  ],
+  "hints": ["Look at each little picture.", "Symbols are quick pictures of the weather."],
+  "beat_the_tutor": {
+    "setup": "My turn! I draw a sunny day.",
+    "tutor_try": "I draw rain drops for sunny!",
+    "image": "tutor_draws_rain",
+    "answer": "sun",
+    "win_line": "You caught me! A sunny day gets a sun symbol.",
+    "gentle_line": "Sunny means a sun symbol!"
+  },
+  "parent_line": "Can read and use weather symbols on a weather chart."
+}

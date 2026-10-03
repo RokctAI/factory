@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term1.w03_saying_sorry",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 1,
+  "weeks": [5],
+  "theme": "Showing feelings and saying sorry",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Feelings",
+    "subtopic": "Good ways to express what we feel; apologies: how to say sorry"
+  },
+  "skill": "emotions.express",
+  "prereq_skills": ["emotions.recognise"],
+  "images": ["deep_breath", "hit", "throw", "talk_about_it", "draw_feelings", "count_to_ten", "kick_chair", "shout_names", "better_face", "angrier_face", "trusted_adult", "nobody", "tutor_bump"],
+  "show": {
+    "line": "When we are angry we can breathe, count to ten and talk. Saying sorry fixes things!",
+    "image": "deep_breath"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "You feel angry. What is a good thing to do?", "options": ["deep_breath", "hit", "throw"], "answer": "deep_breath", "praise": "Breathe deeply!"},
+    {"type": "say_it", "prompt": "You broke your friend's pencil. What do you say?", "accept": ["sorry", "i'm sorry", "i am sorry", "sorry for breaking it"]},
+    {"type": "match_sort", "prompt": "Good way or bad way to show feelings?", "groups": ["good", "bad"], "items": [{"image": "talk_about_it", "group": "good"}, {"image": "draw_feelings", "group": "good"}, {"image": "count_to_ten", "group": "good"}, {"image": "kick_chair", "group": "bad"}, {"image": "shout_names", "group": "bad"}]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Neo spilt juice on Ruth's book. He says, sorry, I'll help clean it. How does Ruth feel?", "options": ["better_face", "angrier_face"], "answer": "better_face", "praise": "Better! A good sorry helps."},
+    {"type": "listen_tap", "prompt": "Who can you talk to about big feelings?", "options": ["trusted_adult", "nobody"], "answer": "trusted_adult", "praise": "A grown-up you trust!"},
+    {"type": "say_it", "prompt": "Count to five with me to calm down.", "accept": ["one two three four five", "1 2 3 4 5", "12345"]}
+  ],
+  "hints": ["Feelings are okay. Hurting is not.", "A real sorry says what you did."],
+  "beat_the_tutor": {
+    "setup": "My turn! I bumped my friend.",
+    "tutor_try": "Too bad!",
+    "image": "tutor_bump",
+    "answer": "sorry",
+    "win_line": "You caught me! I should say sorry.",
+    "gentle_line": "Sorry! Are you okay?"
+  },
+  "parent_line": "Knows good ways to express feelings and how to say sorry."
+}

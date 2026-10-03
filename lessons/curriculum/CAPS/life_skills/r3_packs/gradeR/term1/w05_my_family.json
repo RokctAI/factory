@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w05_my_family",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "My family",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "My family",
+    "subtopic": "Names family members and describes each member's role in the family"
+  },
+  "skill": "family.members",
+  "prereq_skills": [],
+  "images": ["family_together", "gogo", "baby", "brother", "baba", "sister", "mama_cooking", "baby_sleeping", "cat_playing", "teacher", "mama", "tutor_points_gogo"],
+  "show": {
+    "line": "This is a family. Mama, baba, gogo, brother, sister and baby!",
+    "image": "family_together"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the gogo. She is the granny.", "options": ["gogo", "baby", "brother"], "answer": "gogo", "praise": "Yes! Gogo is granny."},
+    {"type": "listen_tap", "prompt": "Tap the baby.", "options": ["baby", "baba", "sister"], "answer": "baby", "praise": "The baby! So small."},
+    {"type": "say_it", "prompt": "Who lives with you at home? Name one person.", "accept": ["mama", "mom", "mommy", "baba", "dad", "daddy", "gogo", "granny", "brother", "sister", "aunty", "uncle", "grandpa", "mkhulu"]},
+    {"type": "listen_tap", "prompt": "Who cooks supper in this picture?", "options": ["mama_cooking", "baby_sleeping", "cat_playing"], "answer": "mama_cooking", "praise": "Mama is cooking supper!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Lerato's gogo tells her a story every night. Lerato gives gogo a big hug. Who tells the story?", "options": ["gogo", "baby", "teacher"], "answer": "gogo", "praise": "Gogo! Families love each other."},
+    {"type": "match_sort", "prompt": "Is it a grown-up or a child? Sort them.", "groups": ["grown_up", "child"], "items": [{"image": "baba", "group": "grown_up"}, {"image": "gogo", "group": "grown_up"}, {"image": "mama", "group": "grown_up"}, {"image": "baby", "group": "child"}, {"image": "sister", "group": "child"}]}
+  ],
+  "hints": ["Families are all different. Some are big and some are small.", "A gogo or mkhulu is mama or baba's parent."],
+  "beat_the_tutor": {
+    "setup": "My turn! This is the baby.",
+    "tutor_try": "Here is the baby. She is very old!",
+    "image": "tutor_points_gogo",
+    "answer": "gogo",
+    "win_line": "You caught me! That is gogo, not the baby.",
+    "gentle_line": "That is gogo. The baby is very small!"
+  },
+  "parent_line": "Can name family members and say what they do at home."
+}

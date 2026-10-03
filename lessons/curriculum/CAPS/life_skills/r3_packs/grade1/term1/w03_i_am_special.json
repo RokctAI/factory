@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w03_i_am_special",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [3, 4],
+  "theme": "I am special",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Me",
+    "subtopic": "How I am the same as my friends and how I am different (height, hair colour, gender, weight)"
+  },
+  "skill": "self.same_different",
+  "prereq_skills": ["social.respect"],
+  "images": ["different_children", "tall_child", "short_child", "baby", "curly_hair", "straight_hair", "no_hair", "same_and_different", "exactly_same", "thumbs_up", "thumbs_down", "tutor_same_hair"],
+  "show": {
+    "line": "We are all special! Some are tall, some are short. We can do many things!",
+    "image": "different_children"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the tallest child.", "options": ["tall_child", "short_child", "baby"], "answer": "tall_child", "praise": "The tallest child!"},
+    {"type": "listen_tap", "prompt": "Which child has curly hair?", "options": ["curly_hair", "straight_hair", "no_hair"], "answer": "curly_hair", "praise": "Curly hair!"},
+    {"type": "say_it", "prompt": "Tell me something you can do!", "accept": ["run", "jump", "count", "sing", "dance", "read", "draw", "swim", "skip", "write my name", "kick a ball", "ride a bike"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Lwazi is short and Pieter is tall. Both love soccer. Are they the same or different?", "options": ["same_and_different", "exactly_same"], "answer": "same_and_different", "praise": "Both! Different heights, same favourite game."},
+    {"type": "listen_tap", "prompt": "Different is...?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Different is good! Everyone is special."},
+    {"type": "say_it", "prompt": "Say it proudly. I am special!", "accept": ["i am special", "i'm special", "i am special!"]}
+  ],
+  "hints": ["Look closely at hair, height and faces.", "Being different makes each of us special."],
+  "beat_the_tutor": {
+    "setup": "My turn! I think we must all look the same.",
+    "tutor_try": "Everyone must have the same hair!",
+    "image": "tutor_same_hair",
+    "answer": "different",
+    "win_line": "You caught me! It is good to be different.",
+    "gentle_line": "We are all different and all special!"
+  },
+  "parent_line": "Can say how they are the same as and different from friends, with self-respect."
+}

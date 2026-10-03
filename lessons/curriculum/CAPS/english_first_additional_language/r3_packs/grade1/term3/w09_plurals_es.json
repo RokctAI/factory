@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term3.w09_plurals_es",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 3,
+  "weeks": [9],
+  "theme": "My body",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 9: plurals with -es (boxes, dishes, brushes, glasses) and the function of -es"
+  },
+  "skill": "efal.grammar.plural_es",
+  "prereq_skills": ["efal.grammar.plural_s"],
+  "images": ["boxes", "dishes", "dish", "word_brushes", "word_brushs", "word_glasses", "word_glass", "books_two", "dogs_three", "brushes", "tutor_holds_two_boxes"],
+  "show": {
+    "line": "One box, two boxes! Some words add es. Box, boxes. Dish, dishes.",
+    "image": "boxes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the picture for dishes.", "options": ["dishes", "dish"], "answer": "dishes", "praise": "Yes! Dishes. More than one."},
+    {"type": "say_it", "prompt": "One box, two... what? Say it.", "accept": ["boxes", "two boxes", "boxis"], "image": "boxes"},
+    {"type": "listen_tap", "prompt": "One brush, two...?", "options": ["word_brushes", "word_brushs"], "answer": "word_brushes", "praise": "Yes! Brushes."},
+    {"type": "listen_tap", "prompt": "One glass, three...?", "options": ["word_glasses", "word_glass"], "answer": "word_glasses", "praise": "Yes! Glasses."},
+    {"type": "match_sort", "prompt": "Do we add s or es? Sort the pictures.", "groups": ["s", "es"], "items": [{"image": "books_two", "group": "s"}, {"image": "dogs_three", "group": "s"}, {"image": "boxes", "group": "es"}, {"image": "dishes", "group": "es"}, {"image": "brushes", "group": "es"}]}
+  ],
+  "hints": ["Box, boxes. Hear the extra part at the end?", "If it ends with a hissing sound, add es."],
+  "beat_the_tutor": {
+    "setup": "My turn! Two boxes. Let me say it.",
+    "tutor_try": "Two boxs!",
+    "image": "tutor_holds_two_boxes",
+    "answer": "boxes",
+    "win_line": "You caught me! Two boxes. Box adds es.",
+    "gentle_line": "Let's say it together. One box, two boxes!"
+  },
+  "parent_line": "Knows that some words add es for more than one, like boxes and dishes."
+}

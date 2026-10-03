@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w09_sound_e",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [9],
+  "theme": "Stories we know",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 9: /e/ (set, net, pet, ten, pen); differentiates k and e; identifies initial sounds"
+  },
+  "skill": "efal.phonics.sound.e",
+  "prereq_skills": ["efal.phonics.sound.c"],
+  "images": ["net", "word_pen", "word_pan", "ten", "tin", "pet", "pot", "pen", "tile_e", "tile_k", "tutor_holds_net"],
+  "show": {
+    "line": "Listen. e, e, egg. e, e, net! Net has the e sound.",
+    "image": "net"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word has the e sound? Pen, pan.", "options": ["word_pen", "word_pan"], "answer": "word_pen", "praise": "Yes! p, e, n. Pen."},
+    {"type": "say_it", "prompt": "Say the sound with me. e, as in egg!", "accept": ["e", "eh", "egg", "ae"]},
+    {"type": "blend", "prompt": "Listen. t, e, n. What word is it?", "sounds": ["t", "e", "n"], "options": ["ten", "tin", "net"], "answer": "ten", "praise": "Ten! t, e, n."},
+    {"type": "blend", "prompt": "Listen. p, e, t. What word is it?", "sounds": ["p", "e", "t"], "options": ["pet", "pot", "pen"], "answer": "pet", "praise": "Pet! p, e, t."},
+    {"type": "listen_tap", "prompt": "Is it k or e? Listen. Egg.", "options": ["tile_e", "tile_k"], "answer": "tile_e", "praise": "Yes! Egg starts with e."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "set", "accept": ["set", "sit", "sat"]}
+  ],
+  "hints": ["Open your mouth a little. e, e, egg.", "Listen to the middle sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. n, e, t.",
+    "tutor_try": "That makes nut!",
+    "image": "tutor_holds_net",
+    "answer": "net",
+    "win_line": "You caught me! n, e, t makes net.",
+    "gentle_line": "Let's do it together. n, e, t. Net!"
+  },
+  "parent_line": "Can hear the e sound and blend words like ten, pet and net."
+}

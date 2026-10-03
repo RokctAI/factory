@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w12_helping_hands",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [9, 10],
+  "theme": "Helping hands",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "Helping hands",
+    "subtopic": "How learners can help at home, at school and in the community"
+  },
+  "skill": "social.helping",
+  "prereq_skills": ["family.care"],
+  "images": ["helping_hands", "pick_up_litter", "drop_litter", "draw_on_wall", "set_table", "slam_door", "hide_shoes", "water_plants", "carry_bag", "feed_dog", "make_mess", "break_toy", "run_away", "laugh", "help_pick_up", "walk_on_them", "keep_them", "tutor_litter"],
+  "show": {
+    "line": "I have helping hands! I can help at home, at school and in my community.",
+    "image": "helping_hands"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "How can you help at school?", "options": ["pick_up_litter", "drop_litter", "draw_on_wall"], "answer": "pick_up_litter", "praise": "Pick up litter! Keep school clean."},
+    {"type": "listen_tap", "prompt": "How can you help at home?", "options": ["set_table", "slam_door", "hide_shoes"], "answer": "set_table", "praise": "Set the table!"},
+    {"type": "match_sort", "prompt": "Helping or not helping?", "groups": ["helping", "not_helping"], "items": [{"image": "water_plants", "group": "helping"}, {"image": "carry_bag", "group": "helping"}, {"image": "feed_dog", "group": "helping"}, {"image": "make_mess", "group": "not_helping"}, {"image": "break_toy", "group": "not_helping"}]},
+    {"type": "say_it", "prompt": "Tell me one way you help at home.", "accept": ["sweep", "wash dishes", "make my bed", "pack away", "feed the dog", "help cook", "water plants", "tidy", "set the table", "fold washing"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Gogo carries a heavy bag of mielie meal. Nomsa runs to help her. What does Nomsa do?", "options": ["carry_bag", "run_away", "laugh"], "answer": "carry_bag", "praise": "She helps carry it! Kind Nomsa."},
+    {"type": "listen_tap", "prompt": "A friend drops her crayons. What do you do?", "options": ["help_pick_up", "walk_on_them", "keep_them"], "answer": "help_pick_up", "praise": "Help pick them up!"}
+  ],
+  "hints": ["Helping makes things easier for someone.", "Look for someone who needs a hand."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will help at school.",
+    "tutor_try": "I throw my paper on the floor!",
+    "image": "tutor_litter",
+    "answer": "bin",
+    "win_line": "You caught me! Paper goes in the bin.",
+    "gentle_line": "Paper in the bin. That is helping!"
+  },
+  "parent_line": "Can say ways to help at home, at school and in the community."
+}

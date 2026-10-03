@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term2.w04_home_alone_emergency",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 2,
+  "weeks": [7],
+  "theme": "What to do in an emergency",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Safety in the home",
+    "subtopic": "Keeping safe when home alone; knowing what to do in an emergency"
+  },
+  "skill": "safety.emergency",
+  "prereq_skills": ["safety.home"],
+  "images": ["phone_emergency", "dont_open", "open_door", "say_alone", "get_out", "hide_bed", "keep_playing", "emergency_card", "birthday_card", "menu", "call_help", "watch_tv", "go_play", "tutor_door"],
+  "show": {
+    "line": "In an emergency, stay calm. Call a trusted grown-up or phone for help!",
+    "image": "phone_emergency"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Someone knocks and you are home alone. What do you do?", "options": ["dont_open", "open_door", "say_alone"], "answer": "dont_open", "praise": "Don't open the door!"},
+    {"type": "say_it", "prompt": "The police number is one zero one one one. Say it.", "accept": ["10111", "one zero one one one", "1 0 1 1 1"]},
+    {"type": "listen_tap", "prompt": "There is smoke in the house. What do you do?", "options": ["get_out", "hide_bed", "keep_playing"], "answer": "get_out", "praise": "Get out and call for help!"},
+    {"type": "listen_tap", "prompt": "Which card has emergency numbers?", "options": ["emergency_card", "birthday_card", "menu"], "answer": "emergency_card", "praise": "Keep it near the phone!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Gogo falls and cannot get up. Ayo is with her. What should Ayo do?", "options": ["call_help", "watch_tv", "go_play"], "answer": "call_help", "praise": "Call for help! A neighbour or an ambulance."},
+    {"type": "say_it", "prompt": "On the phone, say your name and your...?", "accept": ["address", "my address", "where i live", "phone number"]}
+  ],
+  "hints": ["Stay calm and get a grown-up.", "Know where your emergency number card is."],
+  "beat_the_tutor": {
+    "setup": "My turn! A stranger knocks. I am alone.",
+    "tutor_try": "I open the door and say come in!",
+    "image": "tutor_door",
+    "answer": "don't open",
+    "win_line": "You caught me! Never open the door when alone.",
+    "gentle_line": "Keep the door closed. Call a grown-up!"
+  },
+  "parent_line": "Knows what to do when home alone and in an emergency."
+}

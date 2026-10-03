@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term3.w03_pollution",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 3,
+  "weeks": [7],
+  "theme": "Pollution",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: Pollution",
+    "subtopic": "What pollution is; different types of pollution: water, land, air, noise"
+  },
+  "skill": "environment.pollution",
+  "prereq_skills": ["environment.recycle"],
+  "images": ["pollution", "factory_smoke", "car_fumes", "burning_tyres", "oil_in_sea", "rubbish_in_river", "litter_field", "clean_field", "loud_hooter", "soft_song", "rain", "use_bins", "drop_litter", "tutor_smoke"],
+  "show": {
+    "line": "Pollution makes air, water and land dirty. Noise can be pollution too!",
+    "image": "pollution"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Air or water pollution?", "groups": ["air", "water"], "items": [{"image": "factory_smoke", "group": "air"}, {"image": "car_fumes", "group": "air"}, {"image": "burning_tyres", "group": "air"}, {"image": "oil_in_sea", "group": "water"}, {"image": "rubbish_in_river", "group": "water"}]},
+    {"type": "listen_tap", "prompt": "Which is land pollution?", "options": ["litter_field", "clean_field"], "answer": "litter_field", "praise": "Litter on the land!"},
+    {"type": "listen_tap", "prompt": "Which is noise pollution?", "options": ["loud_hooter", "soft_song"], "answer": "loud_hooter", "praise": "Too loud!"},
+    {"type": "say_it", "prompt": "Fish die when the river is...?", "accept": ["polluted", "dirty", "full of rubbish"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "A factory pours dirty water into the river. The fish get sick. What caused it?", "options": ["pollution", "rain"], "answer": "pollution", "praise": "Pollution!"},
+    {"type": "listen_tap", "prompt": "How can we stop land pollution?", "options": ["use_bins", "drop_litter"], "answer": "use_bins", "praise": "Use bins!"}
+  ],
+  "hints": ["Pollution is anything that makes our world dirty or harmful.", "Think air, water, land, noise."],
+  "beat_the_tutor": {
+    "setup": "My turn! Smoke from a fire is...",
+    "tutor_try": "Clean air!",
+    "image": "tutor_smoke",
+    "answer": "pollution",
+    "win_line": "You caught me! Smoke pollutes the air.",
+    "gentle_line": "Smoke is air pollution!"
+  },
+  "parent_line": "Can name types of pollution and their effects."
+}

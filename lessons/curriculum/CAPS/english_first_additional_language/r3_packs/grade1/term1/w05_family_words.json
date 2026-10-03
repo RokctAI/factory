@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term1.w05_family_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "My family",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Listening and Speaking",
+    "subtopic": "Vocabulary e.g. family, brother, sister, baby, grandparents, help, clean, younger, older, sibling"
+  },
+  "skill": "efal.vocab.family",
+  "prereq_skills": ["efal.vocab.school"],
+  "images": ["family_picture", "baby", "grandmother", "brother", "sister", "family_of_three", "family_of_four", "family_of_two", "word_family", "tutor_holds_grandmother"],
+  "show": {
+    "line": "This is my family. Mom, Dad, my brother, my sister and the baby!",
+    "image": "family_picture"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the baby.", "options": ["baby", "grandmother", "brother"], "answer": "baby", "praise": "Yes! The baby is small."},
+    {"type": "listen_tap", "prompt": "Tap the grandmother. Gogo!", "options": ["grandmother", "sister", "baby"], "answer": "grandmother", "praise": "Yes! Gogo is the grandmother."},
+    {"type": "say_it", "prompt": "Who is this? Say it.", "accept": ["sister", "a sister", "my sister", "sista"], "image": "sister"},
+    {"type": "listen_tap", "prompt": "Who is older? The baby or the brother?", "options": ["brother", "baby"], "answer": "brother", "praise": "Yes! The brother is older."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lebo has a mom, a dad and a baby brother. How many people are in Lebo's family?", "options": ["family_of_three", "family_of_four", "family_of_two"], "answer": "family_of_four", "praise": "Four! Lebo, Mom, Dad and the baby."},
+    {"type": "say_it", "prompt": "Read this word.", "accept": ["family", "famly", "my family"], "image": "word_family"}
+  ],
+  "hints": ["Look at the picture. Is it a big person or a small person?", "Mom, Dad, brother, sister, baby. Say them with me."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will say who this is.",
+    "tutor_try": "This is the baby!",
+    "image": "tutor_holds_grandmother",
+    "answer": "grandmother",
+    "win_line": "You caught me! That is the grandmother. She is old. The baby is young.",
+    "gentle_line": "Let's look again. Grandmother. Gogo is old and kind!"
+  },
+  "parent_line": "Can name family members in English: mom, dad, brother, sister, baby, grandmother."
+}

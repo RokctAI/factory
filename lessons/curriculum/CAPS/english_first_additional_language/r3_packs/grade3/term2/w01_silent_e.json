@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term2.w01_silent_e",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 2,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Growing things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Recognises silent 'e' in words (cake, time, hope, note)"
+  },
+  "skill": "efal.phonics.magic_e.review",
+  "prereq_skills": ["efal.phonics.magic_e.o_u"],
+  "images": ["cake", "word_note", "word_not", "word_hope", "word_hop", "word_hot", "word_cake", "word_time", "word_bone", "word_cat", "word_sit", "tutor_holds_word_time"],
+  "show": {
+    "line": "The e at the end is silent. But it makes the vowel say its name! Cake, time, hope.",
+    "image": "cake"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "cake", "accept": ["cake", "kake", "cak"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "time", "accept": ["time", "tim", "taim"]},
+    {"type": "listen_tap", "prompt": "Tap the word note.", "options": ["word_note", "word_not"], "answer": "word_note", "praise": "Yes! Note."},
+    {"type": "listen_tap", "prompt": "Which word has a silent e?", "options": ["word_hope", "word_hop", "word_hot"], "answer": "word_hope", "praise": "Yes! Hope."},
+    {"type": "match_sort", "prompt": "Silent e or no silent e? Sort the words.", "groups": ["silent e", "no e"], "items": [{"image": "word_cake", "group": "silent e"}, {"image": "word_time", "group": "silent e"}, {"image": "word_bone", "group": "silent e"}, {"image": "word_cat", "group": "no e"}, {"image": "word_sit", "group": "no e"}]}
+  ],
+  "hints": ["We do not say the e. It is quiet.", "The silent e makes the vowel long."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says tim!",
+    "image": "tutor_holds_word_time",
+    "answer": "time",
+    "win_line": "You caught me! It says time. The silent e makes i say its name.",
+    "gentle_line": "Let's read it together. Time!"
+  },
+  "parent_line": "Can read words with a silent e at the end, like cake, time and hope."
+}

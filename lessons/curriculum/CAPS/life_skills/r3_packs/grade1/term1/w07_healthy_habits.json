@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term1.w07_healthy_habits",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Healthy habits",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Healthy habits",
+    "subtopic": "Sleep, eating healthy food, washing hands; keeping hair, teeth and nails clean; some good habits"
+  },
+  "skill": "health.habits",
+  "prereq_skills": [],
+  "images": ["healthy_habits", "sleep_early", "brush_teeth", "play_outside", "tv_all_day", "sweets_breakfast", "early_bedtime", "midnight", "never", "nail_clipper", "mud", "glue", "skipping", "sleeping", "tv", "sister", "sibu", "tutor_tv_late"],
+  "show": {
+    "line": "Healthy habits: sleep well, eat healthy food, wash hands, brush teeth and play!",
+    "image": "healthy_habits"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Healthy habit or not? Sort them.", "groups": ["healthy", "not_healthy"], "items": [{"image": "sleep_early", "group": "healthy"}, {"image": "brush_teeth", "group": "healthy"}, {"image": "play_outside", "group": "healthy"}, {"image": "tv_all_day", "group": "not_healthy"}, {"image": "sweets_breakfast", "group": "not_healthy"}]},
+    {"type": "listen_tap", "prompt": "When should you go to sleep on a school night?", "options": ["early_bedtime", "midnight", "never"], "answer": "early_bedtime", "praise": "Early! Sleep helps you grow."},
+    {"type": "listen_tap", "prompt": "How do we keep nails clean?", "options": ["nail_clipper", "mud", "glue"], "answer": "nail_clipper", "praise": "Short, clean nails!"},
+    {"type": "say_it", "prompt": "What do we do after the toilet?", "accept": ["wash hands", "wash my hands", "wash our hands", "flush and wash hands", "flush"]},
+    {"type": "listen_tap", "prompt": "Which one is good exercise?", "options": ["skipping", "sleeping", "tv"], "answer": "skipping", "praise": "Skipping! Hop, hop."},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Sibu watches TV all afternoon. His sister plays soccer outside. Who has the healthier habit?", "options": ["sister", "sibu"], "answer": "sister", "praise": "Playing outside keeps us fit!"}
+  ],
+  "hints": ["A habit is something we do every day.", "Healthy habits help our bodies grow strong."],
+  "beat_the_tutor": {
+    "setup": "My turn! It is bedtime.",
+    "tutor_try": "I will watch TV until midnight!",
+    "image": "tutor_tv_late",
+    "answer": "sleep",
+    "win_line": "You caught me! We need sleep to grow.",
+    "gentle_line": "Bedtime! Sleep helps us grow."
+  },
+  "parent_line": "Knows healthy habits like sleep, exercise, washing and brushing teeth."
+}

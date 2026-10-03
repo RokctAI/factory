@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term2.w04_farm_animals",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 2,
+  "weeks": [7],
+  "theme": "Farm animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Personal and Social Well-being: Farm animals",
+    "subtopic": "Uses of farm animals, such as food and clothing"
+  },
+  "skill": "animals.farm_uses",
+  "prereq_skills": ["animals.babies"],
+  "images": ["farm", "sheep", "chicken", "pig", "cow", "goat", "milk", "eggs", "cheese", "wool_jersey", "leather_shoes", "wool", "tutor_chicken"],
+  "show": {
+    "line": "Farm animals give us food and clothes. Milk, eggs, meat and wool!",
+    "image": "farm"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which gives us wool?", "options": ["sheep", "chicken", "pig"], "answer": "sheep", "praise": "Sheep!"},
+    {"type": "listen_tap", "prompt": "Which gives us eggs?", "options": ["chicken", "cow", "goat"], "answer": "chicken", "praise": "Chickens!"},
+    {"type": "say_it", "prompt": "We get milk from cows and...?", "accept": ["goats", "goat", "sheep"]},
+    {"type": "match_sort", "prompt": "Food or clothes?", "groups": ["food", "clothes"], "items": [{"image": "milk", "group": "food"}, {"image": "eggs", "group": "food"}, {"image": "cheese", "group": "food"}, {"image": "wool_jersey", "group": "clothes"}, {"image": "leather_shoes", "group": "clothes"}]},
+    {"type": "what_next", "prompt": "Sheep, shear, wool, and then?", "sequence": ["sheep", "shear", "wool"], "options": ["jersey", "egg", "milk"], "answer": "jersey", "praise": "A warm jersey!"},
+    {"type": "listen_tap", "prompt": "Butter is made from...?", "options": ["milk", "eggs", "wool"], "answer": "milk", "praise": "Milk! Churn, churn."}
+  ],
+  "hints": ["Think what the animal makes.", "Milk can become cheese and butter."],
+  "beat_the_tutor": {
+    "setup": "My turn! Wool comes from...",
+    "tutor_try": "Chickens!",
+    "image": "tutor_chicken",
+    "answer": "sheep",
+    "win_line": "You caught me! Wool comes from sheep.",
+    "gentle_line": "Sheep give us wool!"
+  },
+  "parent_line": "Knows what we get from farm animals, like wool from sheep."
+}

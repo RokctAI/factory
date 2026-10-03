@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term2.w05_shapes_colours_around",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 2,
+  "weeks": [5, 6],
+  "theme": "Shapes and colours around me",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 2,
+    "topic": "Shapes and colours in my community",
+    "subtopic": "Becomes aware of shapes and colours in the environment"
+  },
+  "skill": "shape.colour.environment",
+  "prereq_skills": [],
+  "images": ["street_shapes", "wheel", "door", "book", "square_window", "round_clock", "triangle_roof", "colour_green", "colour_red", "colour_blue", "colour_yellow", "ball", "plate", "orange", "tutor_points_door"],
+  "show": {
+    "line": "Look around! A round wheel, a square window, a red stop sign, a yellow taxi!",
+    "image": "street_shapes"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is round, like a circle?", "options": ["wheel", "door", "book"], "answer": "wheel", "praise": "A wheel is round!"},
+    {"type": "listen_tap", "prompt": "Tap the square window.", "options": ["square_window", "round_clock", "triangle_roof"], "answer": "square_window", "praise": "A square window!"},
+    {"type": "listen_tap", "prompt": "What colour is the grass?", "options": ["colour_green", "colour_red", "colour_blue"], "answer": "colour_green", "praise": "Green grass!"},
+    {"type": "listen_tap", "prompt": "The stop sign is which colour?", "options": ["colour_red", "colour_yellow", "colour_green"], "answer": "colour_red", "praise": "Red means stop!"},
+    {"type": "match_sort", "prompt": "Round or not round? Sort them.", "groups": ["round", "not_round"], "items": [{"image": "ball", "group": "round"}, {"image": "plate", "group": "round"}, {"image": "orange", "group": "round"}, {"image": "book", "group": "not_round"}, {"image": "door", "group": "not_round"}]},
+    {"type": "say_it", "prompt": "Name something that is red.", "accept": ["apple", "tomato", "stop sign", "fire engine", "strawberry", "blood", "a red apple", "rose", "chilli", "ladybird"]}
+  ],
+  "hints": ["A circle is round with no corners.", "Look at the picture closely."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find something round.",
+    "tutor_try": "A door is round!",
+    "image": "tutor_points_door",
+    "answer": "not round",
+    "win_line": "You caught me! A door has corners. A wheel is round.",
+    "gentle_line": "Doors have corners. Wheels are round!"
+  },
+  "parent_line": "Can spot shapes and colours in the world around them."
+}

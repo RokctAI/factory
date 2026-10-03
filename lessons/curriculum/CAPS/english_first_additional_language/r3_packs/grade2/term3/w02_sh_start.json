@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term3.w02_sh_start",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 3,
+  "weeks": [2],
+  "theme": "Celebrations",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Week 2: 'sh-' at the start of words (ship, shop, shell)"
+  },
+  "skill": "efal.phonics.digraph.sh_start",
+  "prereq_skills": ["efal.phonics.blend.sp"],
+  "images": ["ship", "shell", "sun", "bell", "shop", "top", "shoe", "sock", "tutor_holds_sock"],
+  "show": {
+    "line": "Two letters, one sound! s and h say sh. Ship, shop, shell.",
+    "image": "ship"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with sh?", "options": ["shell", "sun", "bell"], "answer": "shell", "praise": "Yes! sh, sh, shell."},
+    {"type": "say_it", "prompt": "Say the sound with me. sh, as in ship!", "accept": ["sh", "shh", "she", "ship"]},
+    {"type": "blend", "prompt": "Listen. sh, o, p. What word is it?", "sounds": ["sh", "o", "p"], "options": ["shop", "ship", "top"], "answer": "shop", "praise": "Shop! sh, o, p."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "ship", "accept": ["ship", "sheep", "sip"]},
+    {"type": "match_sort", "prompt": "Does it start with sh or s? Sort the pictures.", "groups": ["sh", "s"], "items": [{"image": "ship", "group": "sh"}, {"image": "shell", "group": "sh"}, {"image": "shoe", "group": "sh"}, {"image": "sun", "group": "s"}, {"image": "sock", "group": "s"}]}
+  ],
+  "hints": ["sh is quiet. Finger on your lips. sh!", "s and h together make a new sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with sh.",
+    "tutor_try": "Sock! Sock starts with sh.",
+    "image": "tutor_holds_sock",
+    "answer": "no",
+    "win_line": "You caught me! Sock starts with s. Shoe starts with sh.",
+    "gentle_line": "Let's listen together. sh, sh, shoe. Shoe starts with sh!"
+  },
+  "parent_line": "Can read words that start with sh, like ship, shop and shell."
+}

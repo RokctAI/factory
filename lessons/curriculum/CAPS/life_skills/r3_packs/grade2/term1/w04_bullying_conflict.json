@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w04_bullying_conflict",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [5, 6],
+  "theme": "Solving fights and bullying",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Myself and others",
+    "subtopic": "Dealing positively with conflict, including self-esteem and bullying"
+  },
+  "skill": "social.conflict",
+  "prereq_skills": ["social.friend_qualities"],
+  "images": ["talking_it_out", "take_turns", "fight", "cry", "tell_teacher", "keep_quiet", "hit_back", "thumbs_up", "thumbs_down", "talk_calmly", "say_sorry", "ask_adult", "push", "shout_names", "happy_face", "angry_face", "tutor_push"],
+  "show": {
+    "line": "When we fight, we talk it out. If someone bullies, tell a grown-up!",
+    "image": "talking_it_out"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Two friends want the same ball. What is best?", "options": ["take_turns", "fight", "cry"], "answer": "take_turns", "praise": "Take turns!"},
+    {"type": "listen_tap", "prompt": "A big child takes your lunch every day. What do you do?", "options": ["tell_teacher", "keep_quiet", "hit_back"], "answer": "tell_teacher", "praise": "Tell a teacher!"},
+    {"type": "say_it", "prompt": "You were wrong. What do you say?", "accept": ["sorry", "i'm sorry", "i am sorry"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Kids call Zola names every day. Lindo tells the teacher. Was that right?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! Telling stops bullying."},
+    {"type": "match_sort", "prompt": "Good way to solve it, or not?", "groups": ["good", "not_good"], "items": [{"image": "talk_calmly", "group": "good"}, {"image": "say_sorry", "group": "good"}, {"image": "ask_adult", "group": "good"}, {"image": "push", "group": "not_good"}, {"image": "shout_names", "group": "not_good"}]},
+    {"type": "listen_tap", "prompt": "How do you feel when you say something kind?", "options": ["happy_face", "angry_face"], "answer": "happy_face", "praise": "Happy and proud!"}
+  ],
+  "hints": ["Use words, not hands.", "Bullying is never okay. Tell someone."],
+  "beat_the_tutor": {
+    "setup": "My turn! Someone bumps me.",
+    "tutor_try": "I push them back hard!",
+    "image": "tutor_push",
+    "answer": "talk",
+    "win_line": "You caught me! I should use calm words.",
+    "gentle_line": "Let's talk calmly instead!"
+  },
+  "parent_line": "Knows how to solve conflict calmly and to report bullying."
+}
