@@ -130,6 +130,9 @@ SUBJECT_DISPLAY = {
     "economics": "Economics",
     "geography": "Geography",
     "accounting": "Accounting",
+    "natural_sciences": "Natural Sciences",
+    "social_sciences": "Social Sciences",
+    "economic_and_management_sciences": "Economic and Management Sciences",
 }
 
 PART2_RE = re.compile(r"^#\s*Part\s*2\b", re.IGNORECASE | re.MULTILINE)
@@ -358,7 +361,7 @@ def resolve_tutors(ident, subtopics, script_md):
     """(first, second, split_ref) via the same roster/duo logic as the card
     path — a minimal card text is synthesized from the path identity so
     lesson_manifest.resolve_tutor_pair/two_part_split run unchanged."""
-    duo = subject_duo_for(ident["type"], ident["subject"])
+    duo = subject_duo_for(ident["type"], ident["subject"], ident["grade"])
     if not duo:
         raise ReleaseError(
             f"no roster duo for {ident['type']} — is TEAM_ROOT set to the "
@@ -367,6 +370,7 @@ def resolve_tutors(ident, subtopics, script_md):
     split_ref = detect_split_ref(script_md, subtopics)
     card_text = (f"type: {ident['type']}\n"
                  f"subject: {ident['subject']}\n"
+                 f"grade: {ident['grade']}\n"
                  f"tutor: {lead_id}\n")
     if split_ref:
         card_text += f"{lm.SECOND_TUTOR_FIELD}: {split_ref}\n"
