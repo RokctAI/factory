@@ -1,0 +1,25 @@
+### subtopic_1 — The Gases in Air
+**Assistant:** If the gases in air are just mixed, why don't the heavy gases sink to the bottom and the light ones float up?
+
+**Tutor:** Because the air is constantly being stirred. In the lowest 100 kilometres of the atmosphere, winds, rising warm air, sinking cool air and turbulence mix the gases far faster than they can separate by weight. The gas particles are also moving very fast, hundreds of metres per second at room temperature, and colliding with one another billions of times every second, which spreads them out evenly. This is why the proportions of nitrogen, oxygen and argon in dry air are almost exactly the same at sea level, on the Highveld and at the top of Mount Everest. Gases separate by weight only where the air is so thin that particles can travel long distances without colliding, which happens above about 100 kilometres. There, lighter gases such as helium and atomic oxygen become more common. Near the ground, a heavy gas can collect only when the air is very still, for example carbon dioxide in a closed, low-lying cellar or old mine shaft, which is why such places can be dangerous to enter without testing the air first. Water vapour is different, because it condenses into clouds and falls as rain, so its amount changes a great deal from place to place.
+
+***
+
+### subtopic_2 — Why Each Gas Matters
+**Assistant:** How do scientists know that carbon dioxide in the air was only 280 parts per million before industry began?
+
+**Tutor:** Mostly from tiny bubbles of ancient air trapped in the ice of Antarctica and Greenland. Snow that falls on these ice sheets does not melt. Year after year, it is buried and squeezed into ice, and small pockets of air between the snowflakes become sealed off as bubbles. Scientists drill out long cylinders of ice, called ice cores, some more than three kilometres long, and carefully release and analyse the air from the bubbles at each depth. Deeper ice is older, and the layers can be counted and dated, so the bubbles give a record of the atmosphere going back about 800 000 years. These records show that carbon dioxide stayed between about 180 and 300 parts per million throughout that time, and was about 280 parts per million just before the Industrial Revolution. Direct, continuous measurements of the air began in 1958 at Mauna Loa in Hawaii, and South Africa runs its own monitoring station at Cape Point, one of the global atmosphere watch stations. These measurements show the concentration rising every year to over 420 parts per million today, higher than at any time in the ice core record.
+
+***
+
+### subtopic_3 — Density and Pressure with Altitude
+**Assistant:** Why don't we feel the weight of all the air pressing down on us?
+
+**Tutor:** Because the pressure acts on us from every direction, and our bodies push back with an equal pressure from inside. Air pressure is not just a downward push. The particles of air move in all directions and collide with every surface, so air pushes up, down and sideways with the same pressure. At sea level, the force on the palm of your hand is roughly the weight of a 100-kilogram mass, but the air underneath pushes up just as hard, so the forces balance. The fluids and gases inside your body, in your blood, lungs, stomach and middle ear, are at the same pressure as the air outside, so there is no overall squeeze. We notice air pressure only when the pressure inside and outside become different. When you drive up a mountain pass quickly, the air outside your eardrum drops in pressure before the air inside can adjust, so your eardrum bulges and feels strange until your ears pop. Divers feel the opposite, because water pressure increases quickly with depth. Air pressure becomes obvious when air is removed from one side, as when a plastic bottle is crushed after the air inside is sucked out.
+
+***
+
+### subtopic_4 — Living with Thin Air and the Error Museum
+**Assistant:** Why do aeroplanes fly so high if the air there is too thin to breathe?
+
+**Tutor:** Because thin air is actually useful for flying efficiently, as long as the passengers are protected. A jet cruising at about 11 kilometres meets much less air resistance, called drag, than it would lower down, because the air is only about a third as dense. Less drag means the engines burn less fuel to keep the plane moving fast. Flying high also keeps the plane above most of the weather, because clouds, storms and turbulence are mostly in the lowest layer of the atmosphere, so the flight is smoother. The plane cannot go too high, though, because the wings need enough air to produce lift and the engines need enough oxygen to burn their fuel. To keep people safe, the cabin is pressurised: air from the engines is compressed and pumped into the cabin, keeping the pressure similar to that at about 2 000 metres above sea level, a little higher than Johannesburg. This is why your ears may pop during take-off and landing. If the cabin suddenly lost pressure, oxygen masks would drop down, because at cruising height a person would lose consciousness within a minute or so without extra oxygen.
