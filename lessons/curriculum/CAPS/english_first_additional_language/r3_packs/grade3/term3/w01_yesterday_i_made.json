@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term3.w01_yesterday_i_made",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 3,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Making things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Language Use",
+    "subtopic": "Understands and uses the past tense ('Yesterday I made a mask')"
+  },
+  "skill": "efal.grammar.past_tense",
+  "prereq_skills": ["efal.grammar.present_progressive"],
+  "images": ["mask", "word_made", "word_make", "word_painted", "word_paint", "sentence_i_cut_paper", "sentence_i_will_cut", "tutor_holds_mask"],
+  "show": {
+    "line": "Yesterday I made a mask! Made, cut, painted. These words tell us about the past.",
+    "image": "mask"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Yesterday I ... a mask. Make or made?", "options": ["word_made", "word_make"], "answer": "word_made", "praise": "Yes! Yesterday I made a mask."},
+    {"type": "listen_tap", "prompt": "Yesterday I ... it yellow. Paint or painted?", "options": ["word_painted", "word_paint"], "answer": "word_painted", "praise": "Yes! I painted it yellow."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "Yesterday I made a mask.", "accept": ["yesterday i made a mask", "yesterday i make a mask", "i made a mask"]},
+    {"type": "what_next", "prompt": "First I cut. Then I painted. Finally I... what?", "sequence": ["step_cut", "step_paint"], "options": ["step_wear_mask", "step_buy_paper"], "answer": "step_wear_mask", "praise": "Finally I wore my mask!"},
+    {"type": "listen_tap", "prompt": "Which sentence is about yesterday?", "options": ["sentence_i_cut_paper", "sentence_i_will_cut"], "answer": "sentence_i_cut_paper", "praise": "Yes! I cut the paper."}
+  ],
+  "hints": ["Yesterday means it already happened.", "Many past words end with ed. Painted, glued."],
+  "beat_the_tutor": {
+    "setup": "My turn! Yesterday I... let me say it.",
+    "tutor_try": "Yesterday I make a mask!",
+    "image": "tutor_holds_mask",
+    "answer": "made",
+    "win_line": "You caught me! Yesterday I made a mask.",
+    "gentle_line": "Let's say it together. Yesterday I made a mask!"
+  },
+  "parent_line": "Can talk about the past: yesterday I made, I cut, I painted."
+}

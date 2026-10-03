@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term1.w06_an_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [6],
+  "theme": "Back to school",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Consolidation and baseline assessment: Phonics",
+    "subtopic": "Week 5: -at words (cat, mat, fat, sat); Week 6: -an words (pan, fan, can, van); segment, blend and write the words"
+  },
+  "skill": "efal.phonics.family.an",
+  "prereq_skills": ["efal.phonics.family.at"],
+  "images": ["van", "pan", "pin", "pat", "word_fan", "word_fat", "word_fun", "man", "vet", "map", "word_pan", "word_van", "word_man", "word_cat", "word_hat", "tutor_holds_word_fat"],
+  "show": {
+    "line": "Words in the an family! Pan, fan, can, van. They all end with an.",
+    "image": "van"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. p, a, n. What word is it?", "sounds": ["p", "a", "n"], "options": ["pan", "pin", "pat"], "answer": "pan", "praise": "Pan! p, a, n."},
+    {"type": "listen_tap", "prompt": "Which word is in the an family?", "options": ["word_fan", "word_fat", "word_fun"], "answer": "word_fan", "praise": "Yes! Fan ends with an."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "can", "accept": ["can", "cen", "cane"]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with van?", "options": ["man", "vet", "map"], "answer": "man", "praise": "Yes! Van, man."},
+    {"type": "match_sort", "prompt": "Is it in the an family or the at family? Sort the words.", "groups": ["an", "at"], "items": [{"image": "word_pan", "group": "an"}, {"image": "word_van", "group": "an"}, {"image": "word_man", "group": "an"}, {"image": "word_cat", "group": "at"}, {"image": "word_hat", "group": "at"}]}
+  ],
+  "hints": ["Look at the end. Is it an or at?", "Change the first sound. p-an, f-an, v-an."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that rhymes with fan.",
+    "tutor_try": "Fat! Fat rhymes with fan.",
+    "image": "tutor_holds_word_fat",
+    "answer": "no",
+    "win_line": "You caught me! Fat ends with at. Can rhymes with fan.",
+    "gentle_line": "Let's listen together. Fan, can. Same at the end!"
+  },
+  "parent_line": "Can read and build words in the an family: pan, fan, can, van."
+}

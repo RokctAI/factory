@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term4.w06_ending_y",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [6],
+  "theme": "Long ago",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 6: final -y (my, cry, why, fly, sky); rhyming words; claps syllables in sight words"
+  },
+  "skill": "efal.phonics.ending.y_long_i",
+  "prereq_skills": ["efal.phonics.sound.y"],
+  "images": ["bird_in_sky", "sky", "fan", "yes", "why", "can", "cat", "word_fly", "word_cry", "word_why", "word_yes", "word_sun", "tutor_holds_fly"],
+  "show": {
+    "line": "At the end of a word, y can say eye. My, cry, fly, sky!",
+    "image": "bird_in_sky"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word rhymes with fly?", "options": ["sky", "fan", "yes"], "answer": "sky", "praise": "Yes! Fly, sky. They rhyme."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "my", "accept": ["my", "mai", "me"]},
+    {"type": "listen_tap", "prompt": "Which word rhymes with cry?", "options": ["why", "can", "cat"], "answer": "why", "praise": "Yes! Cry, why."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "fly", "accept": ["fly", "flai", "flee"]},
+    {"type": "match_sort", "prompt": "Does it rhyme with sky? Sort the words.", "groups": ["yes", "no"], "items": [{"image": "word_fly", "group": "yes"}, {"image": "word_cry", "group": "yes"}, {"image": "word_why", "group": "yes"}, {"image": "word_yes", "group": "no"}, {"image": "word_sun", "group": "no"}]}
+  ],
+  "hints": ["At the end, y says eye. My, sky.", "Rhyming words sound the same at the end."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word. f, l, y.",
+    "tutor_try": "That says fill!",
+    "image": "tutor_holds_fly",
+    "answer": "fly",
+    "win_line": "You caught me! It says fly. y at the end says eye.",
+    "gentle_line": "Let's read it together. Fly. Birds fly in the sky!"
+  },
+  "parent_line": "Knows that y at the end of a word can say eye, as in my, fly and sky."
+}

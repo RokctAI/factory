@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term3.w01_ai_ay_oi_oy_ou",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 3,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Making things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Recognises at least five new vowel digraphs ('ai' pain, 'ay' pay, 'oi' coin, 'oy' toy, 'ou' round)"
+  },
+  "skill": "efal.phonics.vowel_digraph.ai_ay_oi_oy_ou",
+  "prereq_skills": ["efal.phonics.vowel_digraph.ea_oa_oo_short"],
+  "images": ["toy_box", "word_boy", "word_bay", "word_bow", "word_play", "word_ploy", "word_plan", "word_pain", "word_day", "word_say", "word_coin", "tutor_holds_word_rain"],
+  "show": {
+    "line": "Rain and pay say ay. Coin and toy say oy. Round says ow!",
+    "image": "toy_box"
+  },
+  "rounds": [
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "rain", "accept": ["rain", "ran", "rein"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "toy", "accept": ["toy", "toi", "tay"]},
+    {"type": "listen_tap", "prompt": "Which word sounds like coin?", "options": ["word_boy", "word_bay", "word_bow"], "answer": "word_boy", "praise": "Yes! Coin, boy. Both say oy."},
+    {"type": "listen_tap", "prompt": "Tap the word play.", "options": ["word_play", "word_ploy", "word_plan"], "answer": "word_play", "praise": "Yes! Play."},
+    {"type": "match_sort", "prompt": "Does it sound like rain or toy? Sort the words.", "groups": ["rain", "toy"], "items": [{"image": "word_pain", "group": "rain"}, {"image": "word_day", "group": "rain"}, {"image": "word_say", "group": "rain"}, {"image": "word_coin", "group": "toy"}, {"image": "word_boy", "group": "toy"}]}
+  ],
+  "hints": ["Two letters make one vowel sound.", "Rain and day say ay. Coin and boy say oy."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says rin!",
+    "image": "tutor_holds_word_rain",
+    "answer": "rain",
+    "win_line": "You caught me! It says rain. The two letters say ay.",
+    "gentle_line": "Let's read it together. Rain!"
+  },
+  "parent_line": "Can read words with ai, ay, oi, oy and ou, like rain, play, coin, toy and round."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term1.w06_animal_list",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 1,
+  "weeks": [6, 7, 8, 9, 10],
+  "theme": "Wild animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Writing",
+    "subtopic": "Writes increasingly complex lists with headings (e.g. Wild Animals: elephants, giraffes, lions)"
+  },
+  "skill": "efal.writing.list_heading",
+  "prereq_skills": ["efal.vocab.animals"],
+  "images": ["list_wild_animals", "lion", "cow", "chair", "chicken", "zebra", "giraffe", "list_heading", "list_last_item", "elephant", "goat", "tutor_holds_goat"],
+  "show": {
+    "line": "A list has a heading at the top. Wild Animals. Elephants, giraffes, lions!",
+    "image": "list_wild_animals"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one belongs on the list Wild Animals?", "options": ["lion", "cow", "chair"], "answer": "lion", "praise": "Yes! A lion is a wild animal."},
+    {"type": "listen_tap", "prompt": "Which one does not belong on the list Wild Animals?", "options": ["chicken", "zebra", "giraffe"], "answer": "chicken", "praise": "Yes! A chicken lives on a farm."},
+    {"type": "listen_tap", "prompt": "What goes at the top of a list?", "options": ["list_heading", "list_last_item"], "answer": "list_heading", "praise": "Yes! The heading."},
+    {"type": "say_it", "prompt": "What animal is this? Say it.", "accept": ["giraffe", "a giraffe", "jiraf"], "image": "giraffe"},
+    {"type": "match_sort", "prompt": "Wild Animals or Farm Animals? Sort the pictures.", "groups": ["wild", "farm"], "items": [{"image": "elephant", "group": "wild"}, {"image": "lion", "group": "wild"}, {"image": "giraffe", "group": "wild"}, {"image": "cow", "group": "farm"}, {"image": "goat", "group": "farm"}]}
+  ],
+  "hints": ["The heading tells us what the list is about.", "Does it live in the wild?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will add to my list of Wild Animals.",
+    "tutor_try": "I will add a goat!",
+    "image": "tutor_holds_goat",
+    "answer": "no",
+    "win_line": "You caught me! A goat is a farm animal. It goes on another list.",
+    "gentle_line": "Let's think together. A goat lives on the farm."
+  },
+  "parent_line": "Can sort words into a list with a heading, like Wild Animals."
+}

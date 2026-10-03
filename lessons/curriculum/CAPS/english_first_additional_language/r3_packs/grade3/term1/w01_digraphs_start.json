@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term1.w01_digraphs_start",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 1,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Wild animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises consonant digraphs sh, ch, th, wh at the beginning of words (sh-ip, ch-ip, th-in, wh-en)"
+  },
+  "skill": "efal.phonics.digraph.start_review",
+  "prereq_skills": ["efal.phonics.digraph.ch"],
+  "images": ["ship", "word_shop", "word_chop", "word_top", "word_chin", "word_shin", "word_thin", "shell", "sheep", "chair", "cheetah", "tutor_holds_word_chin"],
+  "show": {
+    "line": "Two letters, one sound! sh, ship. ch, chip. th, thin. And when!",
+    "image": "ship"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word starts like ship?", "options": ["word_shop", "word_chop", "word_top"], "answer": "word_shop", "praise": "Yes! Shop starts with sh."},
+    {"type": "listen_tap", "prompt": "Which word starts like chip?", "options": ["word_chin", "word_shin", "word_thin"], "answer": "word_chin", "praise": "Yes! Chin starts with ch."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "thin", "accept": ["thin", "tin", "fin"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "when", "accept": ["when", "wen", "win"]},
+    {"type": "match_sort", "prompt": "Does it start with sh or ch? Sort the pictures.", "groups": ["sh", "ch"], "items": [{"image": "ship", "group": "sh"}, {"image": "shell", "group": "sh"}, {"image": "sheep", "group": "sh"}, {"image": "chair", "group": "ch"}, {"image": "cheetah", "group": "ch"}]}
+  ],
+  "hints": ["Two letters can make one sound.", "sh is quiet. ch is a sneeze. th has your tongue out."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says shin!",
+    "image": "tutor_holds_word_chin",
+    "answer": "chin",
+    "win_line": "You caught me! It says chin. ch at the start.",
+    "gentle_line": "Let's read it together. Chin!"
+  },
+  "parent_line": "Can read words that start with sh, ch, th and wh."
+}

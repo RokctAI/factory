@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term2.w07_ed_and_ing",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [7, 8],
+  "theme": "Mistakes",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 7: words ending in -ed (bed, shed, asked, baked)"
+  },
+  "skill": "efal.grammar.ed_ing",
+  "prereq_skills": ["efal.phonics.magic_e.o_u"],
+  "images": ["girl_baking", "word_walked", "word_walking", "girl_singing", "word_singing", "word_sang_ed", "word_baked", "word_asked", "word_writing", "tutor_holds_word_walked"],
+  "show": {
+    "line": "Yesterday I baked. Now I am baking! Add ed for the past, ing for now.",
+    "image": "girl_baking"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Yesterday I... what?", "options": ["word_walked", "word_walking"], "answer": "word_walked", "praise": "Yes! Yesterday I walked."},
+    {"type": "listen_tap", "prompt": "Look! She is... what?", "image": "girl_singing", "options": ["word_singing", "word_sang_ed"], "answer": "word_singing", "praise": "Yes! She is singing."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "asked", "accept": ["asked", "askt", "ask"]},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I am baking.", "accept": ["i am baking", "i am bakeing", "am baking"]},
+    {"type": "match_sort", "prompt": "Did it happen before, or is it happening now? Sort the words.", "groups": ["before", "now"], "items": [{"image": "word_baked", "group": "before"}, {"image": "word_asked", "group": "before"}, {"image": "word_walking", "group": "now"}, {"image": "word_writing", "group": "now"}, {"image": "word_singing", "group": "now"}]}
+  ],
+  "hints": ["ed means it is finished. ing means it is happening now.", "Yesterday, ed. Now, ing."],
+  "beat_the_tutor": {
+    "setup": "My turn! Yesterday I... let me say it.",
+    "tutor_try": "Yesterday I walking!",
+    "image": "tutor_holds_word_walked",
+    "answer": "walked",
+    "win_line": "You caught me! Yesterday I walked. We use ed for yesterday.",
+    "gentle_line": "Let's say it together. Yesterday I walked!"
+  },
+  "parent_line": "Can read words ending in ed and ing and knows ed means it already happened."
+}

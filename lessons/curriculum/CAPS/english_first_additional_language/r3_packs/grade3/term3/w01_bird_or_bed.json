@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term3.w01_bird_or_bed",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 3,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Making things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Phonics",
+    "subtopic": "Distinguishes vowel sounds aurally (bird/bed, ship/sheep)"
+  },
+  "skill": "efal.phonics.discriminate.vowels",
+  "prereq_skills": ["efal.phonics.discriminate.confusable"],
+  "images": ["bird", "bed", "sheep", "ship", "word_bad", "word_bed", "tutor_holds_bird"],
+  "show": {
+    "line": "Listen closely! Bird and bed. Ship and sheep. They sound different.",
+    "image": "bird"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Listen. Bird. Tap it.", "options": ["bird", "bed"], "answer": "bird", "praise": "Yes! A bird."},
+    {"type": "listen_tap", "prompt": "Listen. Bed. Tap it.", "options": ["bed", "bird"], "answer": "bed", "praise": "Yes! A bed."},
+    {"type": "listen_tap", "prompt": "Listen. Sheep. Tap it.", "options": ["sheep", "ship"], "answer": "sheep", "praise": "Yes! A sheep."},
+    {"type": "listen_tap", "prompt": "Listen. Bad. Tap the word.", "options": ["word_bad", "word_bed"], "answer": "word_bad", "praise": "Yes! Bad."},
+    {"type": "say_it", "prompt": "Say it after me. Ship!", "accept": ["ship", "a ship", "shipp"], "image": "ship"}
+  ],
+  "hints": ["Listen to the middle of the word.", "Say both words slowly. Which one did you hear?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. Bed. I will tap it.",
+    "tutor_try": "This is the bird!",
+    "image": "tutor_holds_bird",
+    "answer": "no",
+    "win_line": "You caught me! That is a bird. A bed is for sleeping.",
+    "gentle_line": "Let's listen together. Bird, bed. We sleep in a bed!"
+  },
+  "parent_line": "Can hear the difference between vowel sounds, like bird and bed, ship and sheep."
+}

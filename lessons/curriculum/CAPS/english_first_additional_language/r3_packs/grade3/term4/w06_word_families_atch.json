@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term4.w06_word_families_atch",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 4,
+  "weeks": [6, 7, 8, 9, 10],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Recognises more complex word families (hatch, match, patch, catch, snatch)"
+  },
+  "skill": "efal.phonics.family.atch",
+  "prereq_skills": ["efal.phonics.onset_rime.eam"],
+  "images": ["catch_ball", "word_patch", "word_path", "word_peach", "word_hatch", "word_match", "word_watch", "word_snatch", "word_catch", "word_cash", "word_hat", "tutor_holds_word_catch"],
+  "show": {
+    "line": "Hatch, match, patch, catch, snatch. They all end with atch!",
+    "image": "catch_ball"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which word is in the atch family?", "options": ["word_patch", "word_path", "word_peach"], "answer": "word_patch", "praise": "Yes! Patch."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "catch", "accept": ["catch", "cash", "cat"]},
+    {"type": "listen_tap", "prompt": "The chick comes out of the egg. It will... what?", "options": ["word_hatch", "word_match", "word_watch"], "answer": "word_hatch", "praise": "Yes! It will hatch."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "match", "accept": ["match", "mash", "mat"]},
+    {"type": "match_sort", "prompt": "Is it in the atch family? Sort the words.", "groups": ["atch", "not"], "items": [{"image": "word_hatch", "group": "atch"}, {"image": "word_snatch", "group": "atch"}, {"image": "word_catch", "group": "atch"}, {"image": "word_cash", "group": "not"}, {"image": "word_hat", "group": "not"}]}
+  ],
+  "hints": ["All the family words end the same way.", "Change the start. h-atch, m-atch."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says cash!",
+    "image": "tutor_holds_word_catch",
+    "answer": "catch",
+    "win_line": "You caught me! It says catch. It ends with atch.",
+    "gentle_line": "Let's read it together. Catch!"
+  },
+  "parent_line": "Can read words in the atch family: hatch, match, patch, catch."
+}

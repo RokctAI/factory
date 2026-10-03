@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term4.w04_ending_x",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [4],
+  "theme": "Growing up",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 4: final /x/ (fox, box, fix, six); sound differentiation"
+  },
+  "skill": "efal.phonics.ending.x",
+  "prereq_skills": ["efal.phonics.sound.w"],
+  "images": ["fox", "box", "bus", "dog", "six", "sit", "fix", "fan", "num_6", "cat", "tutor_holds_bus"],
+  "show": {
+    "line": "Listen to the end. Fox, box, six! They end with x.",
+    "image": "fox"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one ends with x, as in fox?", "options": ["box", "bus", "dog"], "answer": "box", "praise": "Yes! Box ends with x."},
+    {"type": "blend", "prompt": "Listen. s, i, x. What word is it?", "sounds": ["s", "i", "x"], "options": ["six", "sit", "fix"], "answer": "six", "praise": "Six! s, i, x."},
+    {"type": "listen_tap", "prompt": "Which word rhymes with fox?", "options": ["box", "fix", "fan"], "answer": "box", "praise": "Yes! Fox, box. They rhyme."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "fix", "accept": ["fix", "fiks", "fox"]},
+    {"type": "match_sort", "prompt": "Does it end with x? Sort the pictures.", "groups": ["yes", "no"], "items": [{"image": "fox", "group": "yes"}, {"image": "box", "group": "yes"}, {"image": "num_6", "group": "yes"}, {"image": "bus", "group": "no"}, {"image": "cat", "group": "no"}]}
+  ],
+  "hints": ["x at the end sounds like k and s together.", "Listen to the very last sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that ends with x.",
+    "tutor_try": "Bus! Bus ends with x.",
+    "image": "tutor_holds_bus",
+    "answer": "no",
+    "win_line": "You caught me! Bus ends with s. Box ends with x.",
+    "gentle_line": "Let's listen together. Box. It ends with x!"
+  },
+  "parent_line": "Can hear and read x at the end of words like fox, box and six."
+}

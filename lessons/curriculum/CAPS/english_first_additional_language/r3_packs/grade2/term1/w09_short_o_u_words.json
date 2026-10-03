@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term1.w09_short_o_u_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Transport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Week 9: short -o- words (pot, top, hot, dot)"
+  },
+  "skill": "efal.phonics.vowel.short_o_u",
+  "prereq_skills": ["efal.phonics.vowel.short_i"],
+  "images": ["bus", "hot", "hut", "hat", "run", "ran", "rod", "word_bun", "word_dot", "word_pot", "word_hot", "word_fun", "word_nut", "tutor_holds_word_nut"],
+  "show": {
+    "line": "Listen for o and u in the middle. Hot, top, fun, run!",
+    "image": "bus"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. h, o, t. What word is it?", "sounds": ["h", "o", "t"], "options": ["hot", "hut", "hat"], "answer": "hot", "praise": "Hot! h, o, t."},
+    {"type": "blend", "prompt": "Listen. r, u, n. What word is it?", "sounds": ["r", "u", "n"], "options": ["run", "ran", "rod"], "answer": "run", "praise": "Run! r, u, n."},
+    {"type": "listen_tap", "prompt": "Which word has u in the middle?", "options": ["word_bun", "word_dot", "word_pot"], "answer": "word_bun", "praise": "Yes! b, u, n. Bun."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "top", "accept": ["top", "tap", "tub"]},
+    {"type": "match_sort", "prompt": "Is it o or u in the middle? Sort the words.", "groups": ["o", "u"], "items": [{"image": "word_pot", "group": "o"}, {"image": "word_dot", "group": "o"}, {"image": "word_hot", "group": "o"}, {"image": "word_fun", "group": "u"}, {"image": "word_nut", "group": "u"}]}
+  ],
+  "hints": ["o makes a round mouth. u is short and quick.", "Listen to the middle sound."],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. n, u, t.",
+    "tutor_try": "That makes not!",
+    "image": "tutor_holds_word_nut",
+    "answer": "nut",
+    "win_line": "You caught me! n, u, t makes nut.",
+    "gentle_line": "Let's do it together. n, u, t. Nut!"
+  },
+  "parent_line": "Can read short o and u words like hot, top, run and fun."
+}

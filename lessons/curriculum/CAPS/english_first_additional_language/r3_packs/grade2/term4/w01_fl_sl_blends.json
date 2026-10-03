@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term4.w01_fl_sl_blends",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Solving problems",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 1: 'fl-' blend (fly, flash, flip, flat)"
+  },
+  "skill": "efal.phonics.blend.fl_sl",
+  "prereq_skills": ["efal.phonics.blend.sp"],
+  "images": ["flag", "flat", "fat", "slat", "word_slow", "word_flow", "word_low", "snail", "cheetah", "word_fly", "word_flash", "word_flat", "word_slot", "word_slab", "tutor_holds_word_sly"],
+  "show": {
+    "line": "Two sounds, said fast! fl, fl, fly. sl, sl, slow!",
+    "image": "flag"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. fl, a, t. What word is it?", "sounds": ["fl", "a", "t"], "options": ["flat", "fat", "slat"], "answer": "flat", "praise": "Flat! fl, a, t."},
+    {"type": "listen_tap", "prompt": "Which word starts with sl?", "options": ["word_slow", "word_flow", "word_low"], "answer": "word_slow", "praise": "Yes! Slow."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "flip", "accept": ["flip", "flipp", "slip"]},
+    {"type": "listen_tap", "prompt": "Which one is slow?", "options": ["snail", "cheetah"], "answer": "snail", "praise": "Yes! The snail is slow."},
+    {"type": "match_sort", "prompt": "Does it start with fl or sl? Sort the words.", "groups": ["fl", "sl"], "items": [{"image": "word_fly", "group": "fl"}, {"image": "word_flash", "group": "fl"}, {"image": "word_flat", "group": "fl"}, {"image": "word_slot", "group": "sl"}, {"image": "word_slab", "group": "sl"}]}
+  ],
+  "hints": ["Say both sounds fast. f, l. fl!", "Listen to the first two sounds."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says fly!",
+    "image": "tutor_holds_word_sly",
+    "answer": "sly",
+    "win_line": "You caught me! It says sly. sl at the start.",
+    "gentle_line": "Let's read it together. sl, y. Sly!"
+  },
+  "parent_line": "Can read words that start with fl and sl, like fly, flat and slow."
+}

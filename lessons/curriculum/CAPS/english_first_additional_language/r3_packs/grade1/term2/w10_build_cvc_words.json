@@ -1,0 +1,39 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w10_build_cvc_words",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [10],
+  "theme": "Stories we know",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 10: revises a, s, t, p, i, n, d, f, k, c, e, o; builds CVC words (f-i-n, c-a-t, s-i-t); segments and blends"
+  },
+  "skill": "efal.phonics.build.cvc_t2",
+  "prereq_skills": ["efal.phonics.sound.e"],
+  "images": ["word_building_cat", "fin", "fan", "pin", "sit", "sat", "pit", "pot", "dog", "dig", "tutor_holds_fin"],
+  "show": {
+    "line": "Let's build words! Sound by sound. c, a, t. Cat!",
+    "image": "word_building_cat"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. f, i, n. What word is it?", "sounds": ["f", "i", "n"], "options": ["fin", "fan", "pin"], "answer": "fin", "praise": "Fin! A fish has a fin."},
+    {"type": "blend", "prompt": "Listen. s, i, t. What word is it?", "sounds": ["s", "i", "t"], "options": ["sit", "sat", "pit"], "answer": "sit", "praise": "Sit! s, i, t."},
+    {"type": "say_it", "prompt": "Break it up! Say the sounds in pot.", "accept": ["p o t", "p-o-t", "puh aw tuh", "pot"], "image": "pot"},
+    {"type": "blend", "prompt": "Listen. d, o, g. What word is it?", "sounds": ["d", "o", "g"], "options": ["dog", "dig", "pot"], "answer": "dog", "praise": "Dog! d, o, g."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "pen", "accept": ["pen", "pin", "pan"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "kit", "accept": ["kit", "kid", "cat"]}
+  ],
+  "hints": ["Say each sound. Then push them together.", "Look at the middle letter. Is it a, i, o or e?"],
+  "beat_the_tutor": {
+    "setup": "My turn! Listen. f, i, n.",
+    "tutor_try": "That makes fan!",
+    "image": "tutor_holds_fin",
+    "answer": "fin",
+    "win_line": "You caught me! f, i, n makes fin.",
+    "gentle_line": "Let's do it together. f, i, n. Fin!"
+  },
+  "parent_line": "Can blend and read three-letter words like cat, sit, pot and pen."
+}

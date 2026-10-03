@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term1.w05_at_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [5],
+  "theme": "Back to school",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Consolidation and baseline assessment: Phonics",
+    "subtopic": "Week 5: -at words (cat, mat, fat, sat); Week 6: -an words (pan, fan, can, van); segment, blend and write the words"
+  },
+  "skill": "efal.phonics.family.at",
+  "prereq_skills": ["efal.phonics.build.cvc_t2"],
+  "images": ["cat_on_mat", "mat", "map", "man", "word_hat", "word_hen", "word_hot", "cat", "word_cat", "word_fat", "word_bat", "word_cup", "word_pen", "tutor_holds_word_fat"],
+  "show": {
+    "line": "Words in the at family! Cat, mat, fat, sat. They all end with at.",
+    "image": "cat_on_mat"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. m, a, t. What word is it?", "sounds": ["m", "a", "t"], "options": ["mat", "map", "man"], "answer": "mat", "praise": "Mat! m, a, t."},
+    {"type": "listen_tap", "prompt": "Which word is in the at family?", "options": ["word_hat", "word_hen", "word_hot"], "answer": "word_hat", "praise": "Yes! Hat ends with at."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "sat", "accept": ["sat", "set", "sad"]},
+    {"type": "say_it", "prompt": "Break it up! Say the sounds in cat.", "accept": ["c a t", "c-a-t", "kuh ah tuh", "cat"], "image": "cat"},
+    {"type": "match_sort", "prompt": "Is it in the at family? Sort the words.", "groups": ["at", "not at"], "items": [{"image": "word_cat", "group": "at"}, {"image": "word_fat", "group": "at"}, {"image": "word_bat", "group": "at"}, {"image": "word_cup", "group": "not at"}, {"image": "word_pen", "group": "not at"}]}
+  ],
+  "hints": ["Look at the end. Does it say at?", "Change the first sound. c-at, m-at, s-at."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says cap!",
+    "image": "tutor_holds_word_fat",
+    "answer": "fat",
+    "win_line": "You caught me! It says fat. f, a, t.",
+    "gentle_line": "Let's read it together. f, a, t. Fat!"
+  },
+  "parent_line": "Can read and build words in the at family: cat, mat, fat, sat."
+}

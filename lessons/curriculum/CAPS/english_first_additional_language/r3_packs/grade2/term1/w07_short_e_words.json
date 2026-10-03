@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term1.w07_short_e_words",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 1,
+  "weeks": [7],
+  "theme": "Birthdays",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Week 7: short -e- words (ten, pen, hen, pet, red)"
+  },
+  "skill": "efal.phonics.vowel.short_e",
+  "prereq_skills": ["efal.phonics.family.an"],
+  "images": ["hen", "hat", "pen", "word_pet", "word_pot", "word_pat", "word_ten", "word_tin", "word_tan", "tutor_holds_word_pen"],
+  "show": {
+    "line": "Listen for e in the middle. Ten, pen, hen, red!",
+    "image": "hen"
+  },
+  "rounds": [
+    {"type": "blend", "prompt": "Listen. h, e, n. What word is it?", "sounds": ["h", "e", "n"], "options": ["hen", "hat", "pen"], "answer": "hen", "praise": "Hen! h, e, n."},
+    {"type": "listen_tap", "prompt": "Which word has e in the middle?", "options": ["word_pet", "word_pot", "word_pat"], "answer": "word_pet", "praise": "Yes! p, e, t. Pet."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "red", "accept": ["red", "rad", "rid"]},
+    {"type": "listen_tap", "prompt": "How many candles? Ten! Tap the word ten.", "options": ["word_ten", "word_tin", "word_tan"], "answer": "word_ten", "praise": "Yes! Ten candles on the cake."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "A red pen.", "accept": ["a red pen", "red pen", "the red pen"]}
+  ],
+  "hints": ["e in the middle. p, e, n. Pen.", "Say each sound, then say them fast."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says pin!",
+    "image": "tutor_holds_word_pen",
+    "answer": "pen",
+    "win_line": "You caught me! It says pen. e in the middle.",
+    "gentle_line": "Let's read it together. p, e, n. Pen!"
+  },
+  "parent_line": "Can read short e words like ten, pen, hen and red."
+}

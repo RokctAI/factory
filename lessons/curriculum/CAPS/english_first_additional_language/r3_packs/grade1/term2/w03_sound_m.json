@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term2.w03_sound_m",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 2,
+  "weeks": [3],
+  "theme": "Growing things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 3: /m/ (mat, man, mop, met); differentiates m and n; segments oral sentences into words"
+  },
+  "skill": "efal.phonics.sound.m",
+  "prereq_skills": ["efal.phonics.sound.n"],
+  "images": ["mat", "mop", "pot", "nest", "tile_m", "tile_n", "man", "nap", "nose", "tutor_holds_nest"],
+  "show": {
+    "line": "Listen. m, m, mat. Mmm, yummy! Mat starts with m.",
+    "image": "mat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with m, as in mat?", "options": ["mop", "pot", "nest"], "answer": "mop", "praise": "Yes! m, m, mop."},
+    {"type": "say_it", "prompt": "Say the sound with me. m, as in man!", "accept": ["m", "mm", "mmm", "man"]},
+    {"type": "listen_tap", "prompt": "Is it m or n? Listen. Man.", "options": ["tile_m", "tile_n"], "answer": "tile_m", "praise": "Yes! Man starts with m."},
+    {"type": "blend", "prompt": "Listen. m, a, n. What word is it?", "sounds": ["m", "a", "n"], "options": ["man", "mat", "nap"], "answer": "man", "praise": "Man! m, a, n."},
+    {"type": "match_sort", "prompt": "Does it start with m or n? Sort the pictures.", "groups": ["m", "n"], "items": [{"image": "mop", "group": "m"}, {"image": "man", "group": "m"}, {"image": "mat", "group": "m"}, {"image": "nest", "group": "n"}, {"image": "nose", "group": "n"}]}
+  ],
+  "hints": ["Close your lips and hum. m, m, m.", "m has lips closed. n has lips open."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with m.",
+    "tutor_try": "Nest! Nest starts with m.",
+    "image": "tutor_holds_nest",
+    "answer": "no",
+    "win_line": "You caught me! Nest starts with n. Mop starts with m.",
+    "gentle_line": "Let's listen together. m, m, mop. Mop starts with m!"
+  },
+  "parent_line": "Can hear the m sound and tell it apart from n."
+}

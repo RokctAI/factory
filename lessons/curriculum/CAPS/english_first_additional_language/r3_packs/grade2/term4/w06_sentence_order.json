@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term4.w06_sentence_order",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 4,
+  "weeks": [6],
+  "theme": "Me and my body",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Writing",
+    "subtopic": "Week 6: puts jumbled sentences in order using word cards, then copies them into the classwork book"
+  },
+  "skill": "efal.writing.sentence_order",
+  "prereq_skills": ["efal.phonics.vowel_digraph.oo_ee"],
+  "images": ["word_cards", "sentence_i_am_proud", "sentence_proud_am_i", "sentence_the_dog_runs", "sentence_runs_dog_the", "full_stop_end", "full_stop_start", "tutor_holds_sentence_jumbled"],
+  "show": {
+    "line": "Words must go in the right order to make a sentence. I like my body!",
+    "image": "word_cards"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "I, like, ... what comes next?", "sequence": ["word_i", "word_like"], "options": ["word_my", "word_the_dot"], "answer": "word_my", "praise": "Yes! I like my..."},
+    {"type": "listen_tap", "prompt": "Which sentence is right?", "options": ["sentence_i_am_proud", "sentence_proud_am_i"], "answer": "sentence_i_am_proud", "praise": "Yes! I am proud."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "I can speak up.", "accept": ["i can speak up", "can speak up", "i speak up"]},
+    {"type": "listen_tap", "prompt": "Which sentence is right?", "options": ["sentence_the_dog_runs", "sentence_runs_dog_the"], "answer": "sentence_the_dog_runs", "praise": "Yes! The dog runs."},
+    {"type": "listen_tap", "prompt": "Where does the full stop go?", "options": ["full_stop_end", "full_stop_start"], "answer": "full_stop_end", "praise": "Yes! At the end."}
+  ],
+  "hints": ["A sentence starts with a capital letter.", "Read it aloud. Does it make sense?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this sentence.",
+    "tutor_try": "Proud am I.",
+    "image": "tutor_holds_sentence_jumbled",
+    "answer": "i am proud",
+    "win_line": "You caught me! It should be, I am proud.",
+    "gentle_line": "Let's read it together. I am proud!"
+  },
+  "parent_line": "Can put words in order to make a sentence."
+}

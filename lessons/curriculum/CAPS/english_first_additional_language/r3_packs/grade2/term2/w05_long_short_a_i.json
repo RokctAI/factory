@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade2.term2.w05_long_short_a_i",
+  "subject": "English First Additional Language",
+  "grade": "2",
+  "term": 2,
+  "weeks": [5],
+  "theme": "Feelings",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade2.json",
+    "term": 2,
+    "topic": "Phonics",
+    "subtopic": "Week 5: mad/made, cap/cape, hat/hate, sit/site, kit/kite"
+  },
+  "skill": "efal.phonics.magic_e.a_i",
+  "prereq_skills": ["efal.phonics.vowel.short_o_u"],
+  "images": ["kite", "word_cape", "word_cap", "word_kit", "word_kite", "kit_bag", "word_hat", "word_sit", "word_hate", "word_site", "word_made", "tutor_holds_word_made"],
+  "show": {
+    "line": "Add e at the end and the vowel says its name! Cap, cape. Kit, kite.",
+    "image": "kite"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the word cape.", "options": ["word_cape", "word_cap"], "answer": "word_cape", "praise": "Yes! Cape. The e makes a say its name."},
+    {"type": "listen_tap", "prompt": "Tap the word kit.", "options": ["word_kit", "word_kite"], "answer": "word_kit", "praise": "Yes! Kit. No e at the end."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "made", "accept": ["made", "maid", "mad"]},
+    {"type": "listen_tap", "prompt": "Which one flies in the wind?", "options": ["kite", "kit_bag"], "answer": "kite", "praise": "Yes! A kite."},
+    {"type": "match_sort", "prompt": "Short sound or long sound? Sort the words.", "groups": ["short", "long"], "items": [{"image": "word_hat", "group": "short"}, {"image": "word_sit", "group": "short"}, {"image": "word_hate", "group": "long"}, {"image": "word_site", "group": "long"}, {"image": "word_made", "group": "long"}]}
+  ],
+  "hints": ["Look for the e at the end. It makes the vowel say its name.", "Hat, hate. Listen to the change."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says mad!",
+    "image": "tutor_holds_word_made",
+    "answer": "made",
+    "win_line": "You caught me! It says made. The e at the end changes the sound.",
+    "gentle_line": "Let's read it together. Made. The e is magic!"
+  },
+  "parent_line": "Knows that an e at the end makes the vowel long: cap and cape, kit and kite."
+}

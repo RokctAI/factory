@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term2.w01_countable_nouns",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 2,
+  "weeks": [1, 2, 3, 4, 5],
+  "theme": "Growing things",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Language Use",
+    "subtopic": "Understands and uses countable and uncountable nouns (bottles / water)"
+  },
+  "skill": "efal.grammar.countable",
+  "prereq_skills": ["efal.grammar.there_is_are"],
+  "images": ["bottles_and_water", "seeds", "soil", "water", "pots", "word_bottles", "word_waters", "bottles", "tutor_holds_water_jug"],
+  "show": {
+    "line": "We can count bottles. One, two, three! But we cannot count water. Some water.",
+    "image": "bottles_and_water"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one can we count?", "options": ["seeds", "soil"], "answer": "seeds", "praise": "Yes! One seed, two seeds."},
+    {"type": "listen_tap", "prompt": "Which one can we not count?", "options": ["water", "pots"], "answer": "water", "praise": "Yes! We say some water."},
+    {"type": "listen_tap", "prompt": "Two ... which word?", "options": ["word_bottles", "word_waters"], "answer": "word_bottles", "praise": "Yes! Two bottles."},
+    {"type": "read_to_me", "prompt": "Read this to me.", "text": "The plant needs some water.", "accept": ["the plant needs some water", "plant needs some water", "the plant need some water"]},
+    {"type": "match_sort", "prompt": "Can we count it? Sort the pictures.", "groups": ["count", "no count"], "items": [{"image": "seeds", "group": "count"}, {"image": "pots", "group": "count"}, {"image": "bottles", "group": "count"}, {"image": "water", "group": "no count"}, {"image": "soil", "group": "no count"}]}
+  ],
+  "hints": ["Can you say one, two, three? Then you can count it.", "Water, soil and milk. We say some."],
+  "beat_the_tutor": {
+    "setup": "My turn! Look at the water.",
+    "tutor_try": "Three waters!",
+    "image": "tutor_holds_water_jug",
+    "answer": "no",
+    "win_line": "You caught me! We cannot count water. We say some water.",
+    "gentle_line": "Let's say it together. Some water!"
+  },
+  "parent_line": "Knows which things we can count, like seeds, and which we cannot, like water."
+}

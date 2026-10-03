@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade1.term4.w02_sound_v",
+  "subject": "English First Additional Language",
+  "grade": "1",
+  "term": 4,
+  "weeks": [2],
+  "theme": "Solving problems",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade1.json",
+    "term": 4,
+    "topic": "Phonics",
+    "subtopic": "Week 2: /v/ (vet, van, vat); sound differentiation; claps syllables in story words"
+  },
+  "skill": "efal.phonics.sound.v",
+  "prereq_skills": ["efal.phonics.sound.j"],
+  "images": ["van", "vet", "fan", "bed", "tile_v", "tile_f", "wet", "vase", "fish", "tutor_holds_fan"],
+  "show": {
+    "line": "Listen. v, v, van. Your lip buzzes! Van starts with v.",
+    "image": "van"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with v, as in van?", "options": ["vet", "fan", "bed"], "answer": "vet", "praise": "Yes! v, v, vet."},
+    {"type": "say_it", "prompt": "Say the sound with me. v, as in van!", "accept": ["v", "vv", "vuh", "van"]},
+    {"type": "listen_tap", "prompt": "Is it v or f? Listen. Vat.", "options": ["tile_v", "tile_f"], "answer": "tile_v", "praise": "Yes! Vat starts with v."},
+    {"type": "blend", "prompt": "Listen. v, e, t. What word is it?", "sounds": ["v", "e", "t"], "options": ["vet", "van", "wet"], "answer": "vet", "praise": "Vet! The vet helps animals."},
+    {"type": "match_sort", "prompt": "Does it start with v or f? Sort the pictures.", "groups": ["v", "f"], "items": [{"image": "van", "group": "v"}, {"image": "vet", "group": "v"}, {"image": "vase", "group": "v"}, {"image": "fish", "group": "f"}, {"image": "fan", "group": "f"}]}
+  ],
+  "hints": ["Top teeth on your lip and buzz. v, v, v.", "v buzzes. f just blows."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with v.",
+    "tutor_try": "Fan! Fan starts with v.",
+    "image": "tutor_holds_fan",
+    "answer": "no",
+    "win_line": "You caught me! Fan starts with f. Van starts with v.",
+    "gentle_line": "Let's listen together. v, v, van. Van starts with v!"
+  },
+  "parent_line": "Can hear the v sound and tell it apart from f."
+}

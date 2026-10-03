@@ -1,0 +1,38 @@
+{
+  "id": "english_first_additional_language.grade3.term1.w06_endings_and_oo_oa",
+  "subject": "English First Additional Language",
+  "grade": "3",
+  "term": 1,
+  "weeks": [6, 7, 8, 9, 10],
+  "theme": "Wild animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_first_additional_language/syllabus/grade3.json",
+    "term": 1,
+    "topic": "Phonics",
+    "subtopic": "Recognises vowel digraphs ('oo' in boot, 'oa' in boat)"
+  },
+  "skill": "efal.phonics.vowel_digraph.oo_oa",
+  "prereq_skills": ["efal.phonics.digraph.start_review"],
+  "images": ["boat", "boot", "goat", "book", "word_moon", "word_zoo", "word_road", "word_soap", "word_coat", "tutor_holds_word_boat"],
+  "show": {
+    "line": "Two vowels can make one sound. Boot has oo. Boat has the oh sound!",
+    "image": "boat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the boat.", "options": ["boat", "boot", "goat"], "answer": "boat", "praise": "Yes! A boat."},
+    {"type": "listen_tap", "prompt": "Tap the boot.", "options": ["boot", "boat", "book"], "answer": "boot", "praise": "Yes! A boot."},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "goat", "accept": ["goat", "got", "gout"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "food", "accept": ["food", "fud", "foot"]},
+    {"type": "match_sort", "prompt": "Does it sound like boot or boat? Sort the words.", "groups": ["boot", "boat"], "items": [{"image": "word_moon", "group": "boot"}, {"image": "word_zoo", "group": "boot"}, {"image": "word_road", "group": "boat"}, {"image": "word_soap", "group": "boat"}, {"image": "word_coat", "group": "boat"}]}
+  ],
+  "hints": ["Boot says oo. Boat says oh.", "Look at the two vowels in the middle."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will read this word.",
+    "tutor_try": "This word says boot!",
+    "image": "tutor_holds_word_boat",
+    "answer": "boat",
+    "win_line": "You caught me! It says boat. That is the oh sound.",
+    "gentle_line": "Let's read it together. Boat. A boat floats!"
+  },
+  "parent_line": "Can read words with oo and oa, like boot, moon, boat and goat."
+}
