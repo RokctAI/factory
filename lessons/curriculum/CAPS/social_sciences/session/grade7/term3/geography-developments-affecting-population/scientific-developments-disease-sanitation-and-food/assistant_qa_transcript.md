@@ -1,0 +1,18 @@
+### subtopic_1 — Controlling Disease and Infection
+**Assistant:** If people in Africa practised variolation before Jenner, why is Jenner famous?
+
+**Tutor:** Good question, and it shows that the history of science is wider than one person. Variolation, deliberately giving a person material from a smallpox sore so that they caught a milder form and became immune, was practised for centuries in parts of Africa, India, China and the Middle East. In 1721 an enslaved West African man in Boston, known as Onesimus, explained the practice to the minister Cotton Mather, which led to its use during a smallpox outbreak there. Lady Mary Wortley Montagu brought knowledge of it from the Ottoman Empire to England around the same time. Variolation worked, but it was risky, because the person could catch serious smallpox and spread it. Jenner's contribution in 1796 was to show that cowpox, a much milder, related disease, gave protection safely, and to publish his evidence so that the method spread widely. So Jenner deserves credit for a safer method, but he built on knowledge from many cultures. Historians today try to tell these fuller stories, recognising that people outside Europe also contributed to medical knowledge.
+
+***
+
+### subtopic_2 — Improved Sanitation and Clean Water
+**Assistant:** Why was John Snow's map so important for geography?
+
+**Tutor:** Because it showed that putting information on a map can reveal patterns that are hard to see in a list of numbers. Snow marked each cholera death as a small bar at the address where it occurred, and also marked the public water pumps. The bars clustered thickly around the Broad Street pump and became fewer further away. He then investigated exceptions: workers at a nearby brewery, who drank beer and water from the brewery's own well, mostly escaped the disease, while a woman who lived far away but liked the taste of Broad Street water and had it delivered died. This combination of mapping and careful investigation built a powerful argument. Today this approach is called medical geography or spatial epidemiology, and health departments use computer mapping, called geographic information systems, to track outbreaks of diseases such as cholera, measles and COVID-19. In South Africa, mapping helps target malaria spraying, plan clinics and find areas lacking clean water. Snow's map is often shown as one of the most important maps in history.
+
+***
+
+### subtopic_4 — The Combined Effect on Population
+**Assistant:** Why is antibiotic resistance such a big worry?
+
+**Tutor:** Because antibiotics are among the most important medicines ever made, and resistance threatens to undo much of their benefit. Bacteria reproduce very quickly, and by chance a few may carry changes that help them survive an antibiotic. If someone takes antibiotics when they are not needed, for example for a cold, which is caused by a virus, or stops the course early, the weaker bacteria die but the resistant ones survive and multiply. Antibiotics are also widely used in farming, which adds to the problem. Over time, infections that were easy to cure can become difficult or impossible to treat. Drug-resistant TB is an important example in South Africa, requiring longer, more expensive and harder treatment. Experts estimate that drug-resistant infections already cause more than a million deaths a year worldwide. You can help by never taking antibiotics without a health worker's advice, always completing the course as prescribed, never sharing leftover antibiotics, and washing hands and getting vaccinated to prevent infections in the first place.

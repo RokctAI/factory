@@ -1,0 +1,18 @@
+### subtopic_1 — What Healthcare Includes
+**Assistant:** Who are community health workers and what do they do?
+
+**Tutor:** Community health workers are people from a community who are trained to provide basic health services and information in people's homes and neighbourhoods, linking families to clinics. In South Africa there are tens of thousands of them, often working in teams attached to clinics, under a programme sometimes called ward-based outreach. They visit households to check on pregnant women and new babies, encourage mothers to attend antenatal care and to immunise their children, check that people are taking their TB or HIV medicine, screen for high blood pressure and diabetes, teach about hygiene and nutrition, and refer sick people to the clinic. Because they know the community, speak the local languages and are trusted, they can reach people who might not otherwise come to a clinic, especially in rural areas and informal settlements. Similar programmes in countries such as Ethiopia, Rwanda and Brazil helped sharply reduce child deaths. Community health workers show that you do not always need expensive buildings and equipment to save lives; trained, caring people working close to home can make a big difference.
+
+***
+
+### subtopic_2 — Mothers, Babies and Young Children
+**Assistant:** Why do people still not immunise their children?
+
+**Tutor:** Most South African parents do immunise their children, but coverage is not complete, and the reasons vary. Some families live far from clinics or struggle with transport costs and time off work. Some miss follow-up doses because they move, lose the Road to Health booklet or are not reminded. Clinics sometimes run out of vaccines or are too busy. Some parents have heard false information, for example on social media, claiming that vaccines are dangerous, and become hesitant. In fact vaccines are carefully tested and monitored, and serious side effects are very rare, while the diseases they prevent, such as measles, can kill or disable children. When fewer children are immunised, outbreaks return: South Africa experienced measles outbreaks in 2009 to 2011 and again in 2022 to 2023. Health workers respond by running catch-up campaigns in schools and communities, sending reminders, and listening respectfully to parents' concerns while giving accurate information. Protecting enough people also protects those who cannot be vaccinated, such as very young babies, which is called herd or community immunity.
+
+***
+
+### subtopic_4 — Healthcare in South Africa: Progress and Challenges
+**Assistant:** What is National Health Insurance meant to change?
+
+**Tutor:** National Health Insurance, often called NHI, is a plan by the South African government to create a single public fund that would pay for healthcare for everyone, so that people can use accredited clinics, hospitals, doctors and pharmacies, public or private, without paying at the point of care. The aim is to reduce the large inequality between the private sector, used by about one in six South Africans who have medical aid, and the overstretched public sector, used by most people. The NHI Act was signed into law in 2024, but it is to be introduced in phases over many years. There is lively public debate about it. Supporters say it will make healthcare fairer and fulfil the constitutional right of access to healthcare. Critics, including some health professionals, businesses and medical schemes, worry about how it will be funded, whether the state can manage such a big system well, and what will happen to medical aids. Some of these questions have been taken to court. Learners can follow this debate in the news as an example of how governments try to improve healthcare and population health.
