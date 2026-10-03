@@ -1,0 +1,18 @@
+### subtopic_1 — Saving and Investing
+**Assistant:** Why should someone have an emergency fund before investing?
+
+**Tutor:** Because emergencies happen to everyone, and without a cushion of easily available savings a person is forced to borrow, often at high interest, or to sell investments at a bad time. Think of the unexpected events that hit households: a job loss, a car breaking down, a funeral, a medical bill or a broken geyser. If you have savings in an account you can reach quickly, you pay for the emergency and carry on. If you have none, you may take a loan from a mashonisa, an informal money lender, or use a credit card, and the debt can grow quickly. If all your money is in a long-term investment, you may have to withdraw it early, perhaps paying penalties, or sell shares when their prices are low, turning a temporary drop into a real loss. An emergency fund protects your investments and your peace of mind. Many advisers suggest aiming for enough to cover three to six months of essential expenses, built up gradually. Once that cushion is in place, money for long-term goals can be invested for growth, where it can be left alone for years.
+
+***
+
+### subtopic_2 — Interest and Compound Growth
+**Assistant:** What does it mean that savings must beat inflation?
+
+**Tutor:** Inflation is the general rise in prices over time. If prices rise by 5 percent in a year, something that cost R100 last year costs R105 this year. Now imagine your savings account pays 3 percent interest. Your R100 grows to R103, but the same goods now cost R105, so you can buy slightly less than before, even though you have more rand. In real terms, your savings have lost value. If your savings earn 8 percent while inflation is 5 percent, your R100 grows to R108 and you can buy more than before: a real gain of about 3 percent. This is why people who keep large amounts of cash at home, earning nothing, slowly lose purchasing power, and why long-term savers look for investments that are expected to grow faster than inflation over time. The South African Reserve Bank aims to keep inflation between 3 and 6 percent, and its stated preference is to keep it close to the lower end of that range. When you compare savings options, look at the interest rate compared with inflation, not only at the rand amount of interest you will earn.
+
+***
+
+### subtopic_3 — Types of Savings and Investments, Risk and Return
+**Assistant:** How can I tell whether an investment offer is a scam?
+
+**Tutor:** There are several warning signs, and the more of them you see, the more careful you should be. First, promises of very high returns that are guaranteed, such as doubling your money in a month, are the biggest red flag; real investments with high returns always carry risk, and nobody can guarantee them. Second, pressure to act quickly before the opportunity disappears. Third, rewards for recruiting new members, which is typical of pyramid schemes, where early members are paid with money from later members until no new people join and it collapses. Fourth, vague explanations of how the money will be made, or talk of secret trading systems or cryptocurrency that cannot be checked. Fifth, the person or company is not registered. In South Africa, financial service providers must be registered with the Financial Sector Conduct Authority, the FSCA, and you can check its website or call it. Many South Africans have lost savings in schemes advertised on WhatsApp and social media. If you are unsure, ask a trusted adult, a bank or the FSCA before handing over any money. If it sounds too good to be true, it almost certainly is.

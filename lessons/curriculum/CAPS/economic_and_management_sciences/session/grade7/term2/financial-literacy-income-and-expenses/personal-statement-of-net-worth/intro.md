@@ -1,0 +1,1 @@
+Today we learn how to work out what a person is really worth in money terms. We list everything a person owns, their personal assets, and everything they owe, their personal liabilities, and subtract one from the other to find their net worth. We follow Mrs Mokoena as she draws up her own statement of net worth, and we see why a bigger car does not always mean a person is richer.
