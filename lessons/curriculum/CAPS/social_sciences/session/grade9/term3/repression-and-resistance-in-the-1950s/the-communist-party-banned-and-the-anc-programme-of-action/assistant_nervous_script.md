@@ -1,0 +1,5 @@
+Hey — this topic fits in three pictures: a polite letter nobody answers, a new plan from the young and a net that catches everyone.
+The letter. The SANNC was founded on 8 January 1912 and renamed the ANC in 1923. Early leaders such as Dube, Seme and Plaatje used petitions and deputations, including to Britain in 1914 and 1919, but laws got harsher. In 1944 the Youth League formed: Lembede, Mda, Sisulu, Tambo, Mandela, calling for African nationalism and mass action.
+The plan. The Programme of Action, adopted in December 1949, called for boycotts, strikes, civil disobedience and non-cooperation, all non-violent. Moroka replaced Xuma; Sisulu became secretary-general. On 1 May 1950 police killed eighteen after the May Day strike; 26 June 1950 was a National Day of Protest.
+The net. The Suppression of Communism Act of 1950 banned the Communist Party, which dissolved itself and re-formed underground as the SACP in 1953. Its broad definition let the Minister ban almost any opponent without trial.
+Open the practice set when you are ready. You've got this!
