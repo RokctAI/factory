@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term2.w06_reduce_reuse_recycle",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 2,
+  "weeks": [10, 11],
+  "theme": "Reduce, re-use, recycle",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 2,
+    "topic": "Beginning Knowledge: Recycling",
+    "subtopic": "What happens to our waste; re-using, recycling and reducing; what cannot be recycled"
+  },
+  "skill": "environment.recycle",
+  "prereq_skills": ["community.care"],
+  "images": ["recycle_bins", "glass_bottle", "tin_can", "paper", "dirty_nappy", "chip_packet", "jar_as_pencil_pot", "throw_jar_away", "cloth_bag", "new_plastic_bag", "landfill", "school", "tutor_nappy"],
+  "show": {
+    "line": "Reduce, re-use and recycle! Less rubbish keeps our world clean.",
+    "image": "recycle_bins"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Can recycle or cannot?", "groups": ["recycle", "cannot"], "items": [{"image": "glass_bottle", "group": "recycle"}, {"image": "tin_can", "group": "recycle"}, {"image": "paper", "group": "recycle"}, {"image": "dirty_nappy", "group": "cannot"}, {"image": "chip_packet", "group": "cannot"}]},
+    {"type": "listen_tap", "prompt": "Which is re-using?", "options": ["jar_as_pencil_pot", "throw_jar_away"], "answer": "jar_as_pencil_pot", "praise": "Re-using!"},
+    {"type": "say_it", "prompt": "Food scraps and leaves make...?", "accept": ["compost", "soil"]},
+    {"type": "listen_tap", "prompt": "Which bag is better for shopping?", "options": ["cloth_bag", "new_plastic_bag"], "answer": "cloth_bag", "praise": "Use it again!"},
+    {"type": "what_next", "prompt": "Reduce, re-use, and then?", "sequence": ["reduce", "re-use"], "options": ["recycle", "rubbish", "reduce"], "answer": "recycle", "praise": "Recycle!"},
+    {"type": "listen_tap", "prompt": "Where does rubbish go if not recycled?", "options": ["landfill", "school"], "answer": "landfill", "praise": "A big dump!"}
+  ],
+  "hints": ["Reduce means use less.", "Recycle means make into something new."],
+  "beat_the_tutor": {
+    "setup": "My turn! I recycle a dirty nappy.",
+    "tutor_try": "Into the paper bin!",
+    "image": "tutor_nappy",
+    "answer": "cannot",
+    "win_line": "You caught me! Nappies cannot be recycled.",
+    "gentle_line": "Only clean paper, glass, tins and plastic!"
+  },
+  "parent_line": "Knows how to reduce, re-use and recycle."
+}

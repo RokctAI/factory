@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term3.w08_day_and_night",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 3,
+  "weeks": [5, 6],
+  "theme": "Day and night",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 3,
+    "topic": "The sky (day and night)",
+    "subtopic": "Day and night sandwich; things seen in the sky by day and by night"
+  },
+  "skill": "sky.day_night",
+  "prereq_skills": [],
+  "images": ["day_night_sky", "sun", "rainbow", "butterfly", "moon", "stars", "torch", "owl", "chicken", "night_sky", "day_sky", "tutor_night_sun"],
+  "show": {
+    "line": "In the day we see the sun. At night we see the moon and stars!",
+    "image": "day_night_sky"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Day or night? Sort them.", "groups": ["day", "night"], "items": [{"image": "sun", "group": "day"}, {"image": "rainbow", "group": "day"}, {"image": "butterfly", "group": "day"}, {"image": "moon", "group": "night"}, {"image": "stars", "group": "night"}]},
+    {"type": "listen_tap", "prompt": "What do we see in the sky at night?", "options": ["moon", "rainbow", "sun"], "answer": "moon", "praise": "The moon!"},
+    {"type": "listen_tap", "prompt": "What gives us light in the day?", "options": ["sun", "moon", "torch"], "answer": "sun", "praise": "The sun!"},
+    {"type": "say_it", "prompt": "What do you do at night?", "accept": ["sleep", "go to sleep", "go to bed", "bath", "eat supper", "brush my teeth", "read a story"]},
+    {"type": "listen_tap", "prompt": "Which animal is awake at night?", "options": ["owl", "chicken", "butterfly"], "answer": "owl", "praise": "An owl! Hoo, hoo."},
+    {"type": "story_tap", "prompt": "Listen.", "story": "The sun goes down. The sky gets dark. Stars come out. Is it day or night?", "options": ["night_sky", "day_sky"], "answer": "night_sky", "praise": "Night! Time for bed."}
+  ],
+  "hints": ["Is the sky light or dark?", "The sun is for day. The moon and stars are for night."],
+  "beat_the_tutor": {
+    "setup": "My turn! I see the night sky.",
+    "tutor_try": "I see the sun shining at night!",
+    "image": "tutor_night_sun",
+    "answer": "moon",
+    "win_line": "You caught me! At night we see the moon and stars.",
+    "gentle_line": "Night has the moon and stars!"
+  },
+  "parent_line": "Can name things seen in the day sky and the night sky."
+}

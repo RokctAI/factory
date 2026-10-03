@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade1.term3.w04_kind_to_animals",
+  "subject": "Life Skills",
+  "grade": "1",
+  "term": 3,
+  "weeks": [7],
+  "theme": "Being kind to animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade1.json",
+    "term": 3,
+    "topic": "Personal and Social Well-being: Pets",
+    "subtopic": "Treating animals appropriately; animal welfare: its function, work and contact details"
+  },
+  "skill": "animals.welfare",
+  "prereq_skills": ["animals.pets"],
+  "images": ["gentle_with_cat", "stroke_cat", "pull_cat", "chase_cat", "tell_adult", "ignore", "throw_stones", "thumbs_up", "thumbs_down", "call_adult", "pick_it_up_hard", "poke_it", "tutor_cat_tail"],
+  "show": {
+    "line": "Animals feel pain and fear. We are gentle and kind to them.",
+    "image": "gentle_with_cat"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which child is gentle with the cat?", "options": ["stroke_cat", "pull_cat", "chase_cat"], "answer": "stroke_cat", "praise": "Gentle stroking!"},
+    {"type": "listen_tap", "prompt": "You see a dog with no water. What do you do?", "options": ["tell_adult", "ignore", "throw_stones"], "answer": "tell_adult", "praise": "Tell a grown-up. Maybe the SPCA can help!"},
+    {"type": "say_it", "prompt": "The group that helps hurt animals is the S P C A. Say it.", "accept": ["spca", "s p c a", "the spca"]},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Boys throw stones at a stray dog. Lungi tells them to stop. Was Lungi kind?", "options": ["thumbs_up", "thumbs_down"], "answer": "thumbs_up", "praise": "Yes! Animals must not be hurt."},
+    {"type": "listen_tap", "prompt": "A bird has a hurt wing. What do you do?", "options": ["call_adult", "pick_it_up_hard", "poke_it"], "answer": "call_adult", "praise": "Call a grown-up to help!"},
+    {"type": "say_it", "prompt": "How should we touch animals? Gently or roughly?", "accept": ["gently", "gentle", "softly", "kindly"]}
+  ],
+  "hints": ["Animals feel pain like us.", "If an animal is hurt, get a grown-up."],
+  "beat_the_tutor": {
+    "setup": "My turn! I see a cat.",
+    "tutor_try": "I will pull its tail!",
+    "image": "tutor_cat_tail",
+    "answer": "gentle",
+    "win_line": "You caught me! That hurts the cat. Be gentle.",
+    "gentle_line": "We stroke cats gently!"
+  },
+  "parent_line": "Knows to treat animals kindly and where hurt animals can get help."
+}

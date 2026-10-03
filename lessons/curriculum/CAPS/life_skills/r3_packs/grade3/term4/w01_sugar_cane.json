@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term4.w01_sugar_cane",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 4,
+  "weeks": [4, 5],
+  "theme": "From sugar cane to sugar",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Products and processes",
+    "subtopic": "Plants: what we get from plants; process from sugar cane to sugar"
+  },
+  "skill": "process.sugar",
+  "prereq_skills": ["process.bread"],
+  "images": ["sugar_cane", "maize", "milk", "plant", "sheep", "rock", "kwazulu_natal", "northern_cape", "trees", "clay", "tutor_clouds"],
+  "show": {
+    "line": "Sugar comes from sugar cane. It is cut, crushed, boiled and dried!",
+    "image": "sugar_cane"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Grow, cut, crush, and then?", "sequence": ["grow", "cut", "crush"], "options": ["boil", "plant", "eat"], "answer": "boil", "praise": "Boil the juice!"},
+    {"type": "listen_tap", "prompt": "Sugar comes from...?", "options": ["sugar_cane", "maize", "milk"], "answer": "sugar_cane", "praise": "Sugar cane!"},
+    {"type": "say_it", "prompt": "Name something else we get from plants.", "accept": ["fruit", "vegetables", "wood", "cotton", "paper", "bread", "flour", "maize", "tea", "medicine"]},
+    {"type": "listen_tap", "prompt": "Cotton clothes come from a...?", "options": ["plant", "sheep", "rock"], "answer": "plant", "praise": "The cotton plant!"},
+    {"type": "listen_tap", "prompt": "Which province grows lots of sugar cane?", "options": ["kwazulu_natal", "northern_cape"], "answer": "kwazulu_natal", "praise": "KwaZulu-Natal!"},
+    {"type": "listen_tap", "prompt": "Paper comes from...?", "options": ["trees", "clay", "milk"], "answer": "trees", "praise": "Trees!"}
+  ],
+  "hints": ["Processes change raw things into products.", "Follow the steps in order."],
+  "beat_the_tutor": {
+    "setup": "My turn! Sugar comes from...",
+    "tutor_try": "Clouds!",
+    "image": "tutor_clouds",
+    "answer": "sugar cane",
+    "win_line": "You caught me! Sugar comes from sugar cane.",
+    "gentle_line": "Sugar cane!"
+  },
+  "parent_line": "Can describe how sugar is made from sugar cane."
+}

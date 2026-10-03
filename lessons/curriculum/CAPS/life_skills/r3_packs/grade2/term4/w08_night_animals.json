@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term4.w08_night_animals",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 4,
+  "weeks": [10],
+  "theme": "Animals of the night",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 4,
+    "topic": "Beginning Knowledge: Animals of the night",
+    "subtopic": "Night animals such as owls, hamsters, porcupines, leopards and jackals"
+  },
+  "skill": "animals.nocturnal",
+  "prereq_skills": ["community.night_workers"],
+  "images": ["night_animals", "owl", "bat", "porcupine", "chicken", "butterfly", "pigeon", "jackal", "hamster", "dog", "fish", "leopard", "cow", "sheep", "tutor_owl"],
+  "show": {
+    "line": "Owls, bats, porcupines and jackals wake up at night!",
+    "image": "night_animals"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Awake at night or day?", "groups": ["night", "day"], "items": [{"image": "owl", "group": "night"}, {"image": "bat", "group": "night"}, {"image": "porcupine", "group": "night"}, {"image": "chicken", "group": "day"}, {"image": "butterfly", "group": "day"}]},
+    {"type": "listen_tap", "prompt": "Which bird hunts at night?", "options": ["owl", "pigeon", "chicken"], "answer": "owl", "praise": "The owl!"},
+    {"type": "listen_tap", "prompt": "Which has sharp quills?", "options": ["porcupine", "jackal", "owl"], "answer": "porcupine", "praise": "The porcupine!"},
+    {"type": "say_it", "prompt": "Night animals have big eyes to see in the...?", "accept": ["dark", "the dark", "night"]},
+    {"type": "listen_tap", "prompt": "Which pet sleeps all day and runs on a wheel at night?", "options": ["hamster", "dog", "fish"], "answer": "hamster", "praise": "The hamster!"},
+    {"type": "listen_tap", "prompt": "Which wild cat hunts at night?", "options": ["leopard", "cow", "sheep"], "answer": "leopard", "praise": "The leopard!"}
+  ],
+  "hints": ["Nocturnal means awake at night.", "Big eyes and ears help in the dark."],
+  "beat_the_tutor": {
+    "setup": "My turn! An owl hunts...",
+    "tutor_try": "At lunch time!",
+    "image": "tutor_owl",
+    "answer": "night",
+    "win_line": "You caught me! Owls hunt at night.",
+    "gentle_line": "Owls hunt at night!"
+  },
+  "parent_line": "Can name night animals."
+}

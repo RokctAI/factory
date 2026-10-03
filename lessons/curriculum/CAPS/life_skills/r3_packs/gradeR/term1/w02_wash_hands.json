@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w02_wash_hands",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [1, 2],
+  "theme": "Washing my hands",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "My body",
+    "subtopic": "Hand washing routine and rhymes; health check"
+  },
+  "skill": "health.handwashing",
+  "prereq_skills": ["body.parts.name"],
+  "images": ["washing_hands", "soap", "sand", "paint", "after_toilet", "watching_tv", "sleeping", "clean_hands", "muddy_hands", "painty_hands", "before_eating", "after_playing_sand", "listening_story", "singing", "tutor_no_soap"],
+  "show": {
+    "line": "Wash, wash, wash your hands! Water, soap, rub and rinse. Germs go away!",
+    "image": "washing_hands"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What do we use to wash our hands?", "options": ["soap", "sand", "paint"], "answer": "soap", "praise": "Soap! Soap and water wash germs away."},
+    {"type": "what_next", "prompt": "Wet, soap, rub, and then?", "sequence": ["wet", "soap", "rub"], "options": ["rinse", "eat", "wet"], "answer": "rinse", "praise": "Rinse! Then dry your hands."},
+    {"type": "listen_tap", "prompt": "When must we wash our hands? Tap the picture.", "options": ["after_toilet", "watching_tv", "sleeping"], "answer": "after_toilet", "praise": "Yes! Always wash after the toilet."},
+    {"type": "listen_tap", "prompt": "Tap the clean hands.", "options": ["clean_hands", "muddy_hands", "painty_hands"], "answer": "clean_hands", "praise": "Clean hands!"},
+    {"type": "say_it", "prompt": "We wash our hands before we eat. Say it with me. Wash before we eat!", "accept": ["wash before we eat", "wash before eat", "wash before we eat!"]},
+    {"type": "match_sort", "prompt": "Wash your hands now, or not needed? Sort them.", "groups": ["wash", "not_needed"], "items": [{"image": "before_eating", "group": "wash"}, {"image": "after_toilet", "group": "wash"}, {"image": "after_playing_sand", "group": "wash"}, {"image": "listening_story", "group": "not_needed"}, {"image": "singing", "group": "not_needed"}]}
+  ],
+  "hints": ["Germs are tiny. We cannot see them, but soap chases them away.", "Think: did my hands touch something dirty?"],
+  "beat_the_tutor": {
+    "setup": "My turn! I will wash my hands.",
+    "tutor_try": "I just use water. No soap!",
+    "image": "tutor_no_soap",
+    "answer": "soap",
+    "win_line": "You caught me! I need soap too. Water and soap!",
+    "gentle_line": "We need soap and water. Rub, rub, rinse!"
+  },
+  "parent_line": "Knows when and how to wash hands with soap and water."
+}

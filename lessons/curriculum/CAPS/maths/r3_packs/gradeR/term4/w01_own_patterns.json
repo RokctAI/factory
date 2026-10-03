@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term4.w01_own_patterns",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "New life",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life: Numeracy",
+    "subtopic": "Creates own patterns; copies pegboard patterns"
+  },
+  "skill": "pattern.copy_extend",
+  "prereq_skills": ["pattern.repeat_ab"],
+  "images": ["pegs_red_yellow", "peg_red", "peg_yellow", "peg_blue", "egg", "chick", "flower", "leaf", "pattern_copy_right", "pattern_copy_wrong", "tutor_pattern_wrong"],
+  "show": {
+    "line": "Spring is here! Red peg, yellow peg, red peg, yellow peg. That is a pattern!",
+    "image": "pegs_red_yellow"
+  },
+  "rounds": [
+    {"type": "what_next", "prompt": "Red, yellow, red, yellow. What comes next?", "sequence": ["red", "yellow", "red", "yellow"], "options": ["red", "yellow", "blue"], "answer": "red", "praise": "Red! The pattern goes on."},
+    {"type": "what_next", "prompt": "Egg, chick, egg, chick. What comes next?", "sequence": ["egg", "chick", "egg", "chick"], "options": ["egg", "chick", "flower"], "answer": "egg", "praise": "Egg! Egg, chick, egg, chick, egg."},
+    {"type": "listen_tap", "prompt": "Copy my pegboard pattern. Which one is just the same?", "image": "pegs_red_yellow", "options": ["pattern_copy_right", "pattern_copy_wrong"], "answer": "pattern_copy_right", "praise": "Yes! You copied it just right."},
+    {"type": "what_next", "prompt": "Flower, flower, leaf. Flower, flower, leaf. What comes next?", "sequence": ["flower", "flower", "leaf", "flower", "flower", "leaf"], "options": ["flower", "leaf", "chick"], "answer": "flower", "praise": "Flower! Then flower, then leaf."},
+    {"type": "say_it", "prompt": "Blue, red, blue, red. What colour comes next? Say it.", "accept": ["blue", "bloo", "blu", "blue peg"], "image": "peg_blue"},
+    {"type": "listen_tap", "prompt": "Make your own pattern! Start with red, then yellow. Which peg comes next?", "options": ["peg_red", "peg_blue"], "answer": "peg_red", "praise": "Yes! Red, yellow, red. Your own pattern!"}
+  ],
+  "hints": ["Say the pattern out loud. Red, yellow, red, yellow.", "Find the part that repeats. Then say it again."],
+  "beat_the_tutor": {
+    "setup": "My turn! Red, yellow, red, yellow.",
+    "tutor_try": "Next comes blue!",
+    "image": "tutor_pattern_wrong",
+    "answer": "red",
+    "win_line": "You caught me! Red, yellow, red, yellow, red. No blue!",
+    "gentle_line": "Let's say it together. Red, yellow, red, yellow. Red comes next!"
+  },
+  "parent_line": "Can copy a pattern and say what comes next."
+}

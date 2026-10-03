@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade3.term3.w04_long_ago",
+  "subject": "Life Skills",
+  "grade": "3",
+  "term": 3,
+  "weeks": [8],
+  "theme": "Long ago and now",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade3.json",
+    "term": 3,
+    "topic": "Beginning Knowledge: How people lived long ago",
+    "subtopic": "Old pictures and photographs; how people lived then and now (change and continuity)"
+  },
+  "skill": "history.then_now",
+  "prereq_skills": ["history.timeline"],
+  "images": ["then_now", "candle", "ox_wagon", "old_phone", "cellphone", "electric_light", "fire", "microwave", "horse", "aeroplane", "black_white_photo", "colour_photo", "families_eating", "only_old_things", "tutor_cellphone"],
+  "show": {
+    "line": "Long ago people used candles and wrote letters. Now we use lights and phones!",
+    "image": "then_now"
+  },
+  "rounds": [
+    {"type": "match_sort", "prompt": "Long ago or now?", "groups": ["long_ago", "now"], "items": [{"image": "candle", "group": "long_ago"}, {"image": "ox_wagon", "group": "long_ago"}, {"image": "old_phone", "group": "long_ago"}, {"image": "cellphone", "group": "now"}, {"image": "electric_light", "group": "now"}]},
+    {"type": "listen_tap", "prompt": "Long ago, how did people cook?", "options": ["fire", "microwave"], "answer": "fire", "praise": "On a fire!"},
+    {"type": "listen_tap", "prompt": "Long ago, how did people travel far?", "options": ["horse", "aeroplane"], "answer": "horse", "praise": "By horse or wagon!"},
+    {"type": "say_it", "prompt": "Ask gogo! What did children play long ago? Guess one game.", "accept": ["diketo", "skipping", "hide and seek", "marbles", "kgati", "morabaraba", "dolls", "black and white", "hopscotch", "clay oxen"]},
+    {"type": "listen_tap", "prompt": "Which photo is old?", "options": ["black_white_photo", "colour_photo"], "answer": "black_white_photo", "praise": "Old photos were black and white!"},
+    {"type": "listen_tap", "prompt": "What has stayed the same?", "options": ["families_eating", "only_old_things"], "answer": "families_eating", "praise": "Families still eat together!"}
+  ],
+  "hints": ["Old things look simpler.", "Some things change, some stay."],
+  "beat_the_tutor": {
+    "setup": "My turn! Long ago people had...",
+    "tutor_try": "Cellphones!",
+    "image": "tutor_cellphone",
+    "answer": "letters",
+    "win_line": "You caught me! They wrote letters.",
+    "gentle_line": "Long ago, letters. Now, phones!"
+  },
+  "parent_line": "Can compare how people lived long ago and now."
+}

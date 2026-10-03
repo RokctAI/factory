@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term4.w01_baby_animals",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [1, 2],
+  "theme": "Baby animals",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "New life",
+    "subtopic": "Life cycle of a butterfly; baby animals and their mothers"
+  },
+  "skill": "animals.babies",
+  "prereq_skills": [],
+  "images": ["mothers_babies", "chick", "calf", "lamb", "kitten", "puppy", "foal", "leaf", "meat", "bread", "tutor_kitten"],
+  "show": {
+    "line": "Animals have babies! A cow has a calf. A hen has a chick. A dog has a puppy.",
+    "image": "mothers_babies"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "A hen's baby is a?", "options": ["chick", "calf", "lamb"], "answer": "chick", "praise": "A chick! Cheep, cheep."},
+    {"type": "listen_tap", "prompt": "A cow's baby is a?", "options": ["calf", "kitten", "puppy"], "answer": "calf", "praise": "A calf! Moo."},
+    {"type": "listen_tap", "prompt": "A sheep's baby is a?", "options": ["lamb", "chick", "foal"], "answer": "lamb", "praise": "A lamb! Baa."},
+    {"type": "say_it", "prompt": "A dog's baby is called a?", "accept": ["puppy", "pup", "puppies"]},
+    {"type": "what_next", "prompt": "Egg, caterpillar, cocoon, and then?", "sequence": ["egg", "caterpillar", "cocoon"], "options": ["butterfly", "egg", "bee"], "answer": "butterfly", "praise": "A butterfly! What a change."},
+    {"type": "listen_tap", "prompt": "What does a caterpillar eat?", "options": ["leaf", "meat", "bread"], "answer": "leaf", "praise": "Leaves! Munch, munch."}
+  ],
+  "hints": ["Think of the mother animal's sound.", "A caterpillar turns into a butterfly."],
+  "beat_the_tutor": {
+    "setup": "My turn! A cat's baby is a?",
+    "tutor_try": "A cat's baby is a puppy!",
+    "image": "tutor_kitten",
+    "answer": "kitten",
+    "win_line": "You caught me! A cat's baby is a kitten.",
+    "gentle_line": "A kitten! Meow."
+  },
+  "parent_line": "Can match baby animals to mothers and knows the butterfly life cycle."
+}

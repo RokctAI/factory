@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term1.w09_healthy_food",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 1,
+  "weeks": [9, 10],
+  "theme": "Healthy food",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 1,
+    "topic": "Healthy eating",
+    "subtopic": "Makes healthy food choices; discusses food groups and how much to eat from each"
+  },
+  "skill": "health.food.healthy",
+  "prereq_skills": [],
+  "images": ["healthy_plate", "banana", "bread", "egg", "carrot", "milk", "sweets", "apple", "spinach", "chips_packet", "lollipop", "lunchbox_healthy", "lunchbox_sweets", "lunchbox_chips", "vegetables", "cake", "tutor_sweets_lunch"],
+  "show": {
+    "line": "Healthy food helps us grow strong! Fruit, vegetables, pap, beans, eggs and milk.",
+    "image": "healthy_plate"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is a fruit?", "options": ["banana", "bread", "egg"], "answer": "banana", "praise": "A banana is a fruit!"},
+    {"type": "listen_tap", "prompt": "Which one is a vegetable?", "options": ["carrot", "milk", "sweets"], "answer": "carrot", "praise": "A carrot is a vegetable!"},
+    {"type": "match_sort", "prompt": "Healthy food, or a treat? Sort them.", "groups": ["healthy", "treat"], "items": [{"image": "apple", "group": "healthy"}, {"image": "spinach", "group": "healthy"}, {"image": "egg", "group": "healthy"}, {"image": "chips_packet", "group": "treat"}, {"image": "lollipop", "group": "treat"}]},
+    {"type": "listen_tap", "prompt": "Which lunchbox is healthy?", "options": ["lunchbox_healthy", "lunchbox_sweets", "lunchbox_chips"], "answer": "lunchbox_healthy", "praise": "Yes! A sandwich, fruit and water."},
+    {"type": "say_it", "prompt": "Name a fruit you like to eat.", "accept": ["apple", "banana", "orange", "mango", "pear", "grapes", "peach", "naartjie", "watermelon", "guava"]},
+    {"type": "listen_tap", "prompt": "We eat lots of these every day. Which one?", "options": ["vegetables", "sweets", "cake"], "answer": "vegetables", "praise": "Lots of vegetables. Only a little bit of treats."}
+  ],
+  "hints": ["Healthy food grows or comes from farms.", "Treats are nice, but just a little bit."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will pack a healthy lunch.",
+    "tutor_try": "I pack sweets, chips and cake!",
+    "image": "tutor_sweets_lunch",
+    "answer": "fruit",
+    "win_line": "You caught me! A healthy lunch has fruit and a sandwich.",
+    "gentle_line": "Let's pack fruit, a sandwich and water!"
+  },
+  "parent_line": "Can choose healthy foods and knows treats are for a little bit."
+}

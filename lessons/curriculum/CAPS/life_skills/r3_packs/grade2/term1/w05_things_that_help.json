@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.grade2.term1.w05_things_that_help",
+  "subject": "Life Skills",
+  "grade": "2",
+  "term": 1,
+  "weeks": [7, 8],
+  "theme": "Things that help people",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/grade2.json",
+    "term": 1,
+    "topic": "Personal and Social Well-being: Everyone is special",
+    "subtopic": "Things that help people: reading glasses, walking frames, guide dogs, hearing aids"
+  },
+  "skill": "social.assistive",
+  "prereq_skills": ["self.same_different"],
+  "images": ["assistive_items", "glasses", "crutches", "hearing_aid", "wheelchair", "guide_dog", "puppy", "sheepdog", "walking_frame", "skateboard", "bicycle", "tutor_glasses"],
+  "show": {
+    "line": "Glasses help us see. Hearing aids help us hear. Wheelchairs help us move!",
+    "image": "assistive_items"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "What helps someone see better?", "options": ["glasses", "crutches", "hearing_aid"], "answer": "glasses", "praise": "Glasses!"},
+    {"type": "listen_tap", "prompt": "What helps someone hear better?", "options": ["hearing_aid", "glasses", "wheelchair"], "answer": "hearing_aid", "praise": "A hearing aid!"},
+    {"type": "listen_tap", "prompt": "Which dog helps a blind person?", "options": ["guide_dog", "puppy", "sheepdog"], "answer": "guide_dog", "praise": "A guide dog!"},
+    {"type": "say_it", "prompt": "Someone uses this chair with wheels. What is it?", "accept": ["wheelchair", "a wheelchair"], "image": "wheelchair"},
+    {"type": "listen_tap", "prompt": "Which helps an old person walk?", "options": ["walking_frame", "skateboard", "bicycle"], "answer": "walking_frame", "praise": "A walking frame!"},
+    {"type": "story_tap", "prompt": "Listen.", "story": "Tumi broke his leg. He uses two sticks under his arms. What are they?", "options": ["crutches", "glasses", "hearing_aid"], "answer": "crutches", "praise": "Crutches!"}
+  ],
+  "hints": ["Think which body part it helps.", "These things help people do everyday things."],
+  "beat_the_tutor": {
+    "setup": "My turn! Glasses help us...",
+    "tutor_try": "Glasses help us hear!",
+    "image": "tutor_glasses",
+    "answer": "see",
+    "win_line": "You caught me! Glasses help us see.",
+    "gentle_line": "Glasses for eyes!"
+  },
+  "parent_line": "Can name aids such as glasses, hearing aids and wheelchairs."
+}
