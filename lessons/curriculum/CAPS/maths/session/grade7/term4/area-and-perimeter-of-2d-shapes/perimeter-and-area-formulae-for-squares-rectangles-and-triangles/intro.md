@@ -1,0 +1,1 @@
+Today we use formulae to calculate the perimeter and area of squares, rectangles and triangles. One classroom runs through the session — a floor 8 m by 6 m, a square notice board of 1,2 m, and a triangular flag with a base of 40 cm and a height of 30 cm. By the end you will know each formula, where it comes from, and how to use it carefully.

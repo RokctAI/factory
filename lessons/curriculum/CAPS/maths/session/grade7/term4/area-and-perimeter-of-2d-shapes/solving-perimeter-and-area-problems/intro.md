@@ -1,0 +1,1 @@
+Today we solve problems involving the perimeter and area of polygons, calculating to at least one decimal place. One room renovation runs through the session — a wall 4,5 m by 2,7 m with a door 0,9 m by 2,1 m, an L-shaped floor and a triangular gable. By the end you will split shapes, subtract holes, and decide whether a problem wants perimeter or area.

@@ -1,0 +1,1 @@
+Today we convert between units of area: square millimetres, square centimetres and square metres. One poster runs through the session — 60 cm by 40 cm — and by the end you will know why 1 cm² is 100 mm², why 1 m² is 10 000 cm², and how to convert the poster's area correctly in every direction.

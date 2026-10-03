@@ -1,0 +1,1 @@
+Today we calculate the perimeter of regular and irregular polygons. One school sports field runs through the session — an irregular five-sided field with sides of 85 m, 62 m, 70 m, 48 m and 55,5 m — and by the end you will find its perimeter, use shortcuts for regular polygons, and find a missing side when the perimeter is known.
