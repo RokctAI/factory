@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Estimate 42,6 × 23,85, predict the number of decimal places, and calculate the exact answer.",
+      "expected_answer": "Estimate 40 × 25 = 1 000. One plus two gives three decimal places. 426 × 2 385 = 1 016 010, so 1 016,010 = R1 016,01."
+    },
+    {
+      "id": "cc2",
+      "question": "Give two different ways to check that R83,99 is the correct change from R1 100 for a bill of R1 016,01.",
+      "expected_answer": "Add back: R1 016,01 + R83,99 = R1 100. Sense check: the bill is a bit over R1 000, so change should be a bit under R100. A calculator can confirm after working."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why a calculator should only be used to check answers.",
+      "expected_answer": "A calculator only shows what was typed; a wrong key gives a wrong answer with no warning. Working first and using the calculator as a second opinion gives two independent answers to compare."
+    }
+  ]
+}

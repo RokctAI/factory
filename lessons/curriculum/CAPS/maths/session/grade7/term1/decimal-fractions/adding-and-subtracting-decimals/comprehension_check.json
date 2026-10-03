@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Calculate R16,99 + R24,50 in columns and by compensation.",
+      "expected_answer": "Columns with commas aligned: R41,49. Compensation: R17 + R24,50 = R41,50, minus R0,01 = R41,49."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the change from R50 for a bill of R41,49 by counting on, and check by addition.",
+      "expected_answer": "R41,49 + R0,01 = R41,50; + R0,50 = R42; + R8 = R50. Change R8,51. Check: R41,49 + R8,51 = R50,00."
+    },
+    {
+      "id": "cc3",
+      "question": "Why must 1,875 kg and 350 g be converted before adding? Find the total.",
+      "expected_answer": "They are in different units; 350 g = 0,35 kg. Total 1,875 + 0,350 = 2,225 kg."
+    }
+  ]
+}

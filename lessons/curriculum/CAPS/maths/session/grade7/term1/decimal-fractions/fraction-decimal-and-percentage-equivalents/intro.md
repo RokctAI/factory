@@ -1,0 +1,1 @@
+Today we connect three ways of writing the same number: a common fraction, a decimal fraction and a percentage. One test result runs through the session — 3/8 of the class got a distinction — and by the end you will write it as 0,375 and as 37,5%, and move confidently between all three forms in either direction.

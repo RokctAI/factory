@@ -1,0 +1,1 @@
+Today we multiply decimal fractions: a decimal with up to three places by a whole number, and a decimal with two places by a decimal with one place. One market stall runs through the session: tomatoes at R12,45 per kilogram, a bag weighing 2,5 kg, and boxes of 1,375 kg each. By the end you will multiply them, place the comma confidently, and check with an estimate.

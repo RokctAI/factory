@@ -1,0 +1,1 @@
+Today we solve problems in context with decimal fractions: money, measurement and rates. One school trip runs through the session: a bus travels 184,5 km, fuel costs R23,85 a litre, and 38 learners share the cost of R4 845,60. By the end you will choose the right operation, calculate with decimals, and give answers with sensible units and rounding.
