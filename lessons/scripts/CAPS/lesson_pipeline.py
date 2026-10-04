@@ -997,7 +997,7 @@ def card_roster_key(card):
 
 
 # Grade-scoped duos live in grade blocks of the roster: `senior_phase`
-# (Grades 8-9), `grade_7` (Grade 7, its own duos) and `intermediate_phase`
+# (Grades 8-9), `grade_7` (Grade 7, reused duos) and `intermediate_phase`
 # (Grades 4-6), each {grades, subjects} keyed by its own subject names; a
 # session-tree folder whose name differs from that key is aliased here.
 # Grades no block lists never read them, so Grade 10-12 resolution is
