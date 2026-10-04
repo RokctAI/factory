@@ -25,7 +25,12 @@ b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
 echo "::add-mask::$b64"
 auth="AUTHORIZATION: basic $b64"
 host="$(printf '%s' "$url" | sed -E 's#^([a-z]+://[^/]+/).*#\1#')"
-if ! heads="$(git -c "http.${host}.extraheader=$auth" ls-remote --heads "$url" "refs/heads/$branch")"; then
+# CI runs this in the factory checkout, where actions/checkout persisted its
+# own GITHUB_TOKEN as an extraheader for the same host; git would send that
+# Authorization header first and GitHub would answer "not found" for the
+# private agent repo. The empty value resets the inherited headers, so only
+# ours is sent (push_agent.sh runs in .agent, checked out without them).
+if ! heads="$(git -c "http.${host}.extraheader=" -c "http.${host}.extraheader=$auth" ls-remote --heads "$url" "refs/heads/$branch")"; then
   echo "::error::could not list the agent repo's branches"; exit 1
 fi
 out="${GITHUB_OUTPUT:-/dev/stdout}"
