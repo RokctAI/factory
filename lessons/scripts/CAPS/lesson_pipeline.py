@@ -996,10 +996,12 @@ def card_roster_key(card):
     return roster_key_for(get_field(card, "type"), get_field(card, "subject"))
 
 
-# Senior Phase (Grades 8-9) duos live in the roster's `senior_phase` block,
-# keyed by its own subject names; a session-tree folder whose name differs
-# from that key is aliased here. Grades outside senior_phase.grades never
-# read the block, so Grade 10-12 resolution is untouched.
+# Grade-scoped duos live in grade blocks of the roster: `senior_phase`
+# (Grades 8-9), `grade_7` (Grade 7, its own duos) and `intermediate_phase`
+# (Grades 4-6), each {grades, subjects} keyed by its own subject names; a
+# session-tree folder whose name differs from that key is aliased here.
+# Grades no block lists never read them, so Grade 10-12 resolution is
+# untouched.
 SENIOR_PHASE_KEY_ALIAS = {
     "economic_and_management_sciences": "ems",
 }
@@ -1011,25 +1013,35 @@ def _grade_int(grade):
     return int(digits) if digits else None
 
 
+def _grade_blocks(roster):
+    """Every roster block that scopes duos to grades: a top-level dict
+    carrying both `grades` and `subjects` (senior_phase, grade_7,
+    intermediate_phase, and any later one of the same shape)."""
+    return [v for v in roster.values()
+            if isinstance(v, dict) and "grades" in v and "subjects" in v]
+
+
 def roster_entry(key, grade=None):
     """The roster's {expert, simplifier} entry for a subject key.
 
-    For a grade listed in roster senior_phase.grades the key (aliased via
-    SENIOR_PHASE_KEY_ALIAS) resolves through senior_phase.subjects, with a
+    For a grade listed in a grade block's `grades` (senior_phase for 8-9,
+    grade_7 for 7, intermediate_phase for 4-6) the key (aliased via
+    SENIOR_PHASE_KEY_ALIAS) resolves through that block's subjects, with a
     per-grade `grade_duos` entry taking precedence. Anything else - no
-    grade, a grade outside the senior phase, or a subject the senior phase
-    does not list - falls back to the top-level "subjects" lookup exactly
-    as before."""
+    grade, a grade no block lists, or a subject the block does not list -
+    falls back to the top-level "subjects" lookup exactly as before."""
     roster = load_roster()
-    senior = roster.get("senior_phase") or {}
     g = _grade_int(grade)
-    if g is not None and g in {_grade_int(x) for x in senior.get("grades", [])}:
-        entry = senior.get("subjects", {}).get(
-            SENIOR_PHASE_KEY_ALIAS.get(key, key), {})
-        if "grade_duos" in entry:
-            entry = entry["grade_duos"].get(str(g), {})
-        if entry:
-            return entry
+    if g is not None:
+        for block in _grade_blocks(roster):
+            if g not in {_grade_int(x) for x in block.get("grades", [])}:
+                continue
+            entry = block.get("subjects", {}).get(
+                SENIOR_PHASE_KEY_ALIAS.get(key, key), {})
+            if "grade_duos" in entry:
+                entry = entry["grade_duos"].get(str(g), {})
+            if entry:
+                return entry
     return roster.get("subjects", {}).get(key, {})
 
 
