@@ -271,6 +271,7 @@ jobs:
           CATEGORY: ${{ matrix.category }}
           SHARD: ${{ matrix.shard }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
           VOICE: ${{ steps.batch.outputs.voice }}
           REF_PATH: ${{ steps.batch.outputs.ref_path }}
           REF_SHA: ${{ steps.batch.outputs.ref_sha256 }}
@@ -290,7 +291,7 @@ jobs:
             python voice_batch/run.py --kind r3 "${common[@]}" --batch "$BATCH_FILE" --shard "$SHARD"
             bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" "r3 shard $SHARD"
           else
-            python voice_batch/run.py "${common[@]}" --tutor "$TUTOR" --category "$CATEGORY" --lines "$LINES"
+            python voice_batch/run.py --kind "$KIND" "${common[@]}" --tutor "$TUTOR" --category "$CATEGORY" --lines "$LINES"
             bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" "$CATEGORY"
           fi
 
@@ -301,12 +302,13 @@ jobs:
           CATEGORY: ${{ matrix.category }}
           SHARD: ${{ matrix.shard }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
           VOICE: ${{ steps.batch.outputs.voice }}
         run: |
           if [ "$KIND" = "r3" ]; then
             m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.part$(printf '%02d' "${SHARD%%/*}").json"
           else
-            m=".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.$CATEGORY.json"
+            m=".agent/$TEAM_DIR/${VOICE}_manifest.$CATEGORY.json"
           fi
           python3 voice_batch/summary.py "$m" >> "$GITHUB_STEP_SUMMARY"
 
@@ -355,7 +357,7 @@ jobs:
           path: .agent
           fetch-depth: 1
           persist-credentials: false
-          sparse-checkout: ${{ steps.batch.outputs.kind == 'r3' && 'lms/dart/templates/assets/r3_packs/audio' || format('lms/team/tutors/CAPS/{0}', steps.batch.outputs.tutor) }}
+          sparse-checkout: ${{ steps.batch.outputs.kind == 'r3' && 'lms/dart/templates/assets/r3_packs/audio' || steps.batch.outputs.team_dir }}
 
       - name: Merge and commit
         if: steps.agentref.outputs.create != 'true'
@@ -363,6 +365,7 @@ jobs:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
           KIND: ${{ steps.batch.outputs.kind }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
           VOICE: ${{ steps.batch.outputs.voice }}
           AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
         run: |
@@ -371,7 +374,7 @@ jobs:
             python3 voice_batch/merge_manifest.py --r3 .agent/lms/dart/templates/assets/r3_packs/audio "$VOICE"
             bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" manifest
           else
-            python3 voice_batch/merge_manifest.py ".agent/lms/team/tutors/CAPS/$TUTOR" "$VOICE"
+            python3 voice_batch/merge_manifest.py ".agent/$TEAM_DIR" "$VOICE"
             bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" manifest
           fi
 
@@ -384,6 +387,7 @@ jobs:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
           KIND: ${{ steps.batch.outputs.kind }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
           VOICE: ${{ steps.batch.outputs.voice }}
           AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
@@ -392,7 +396,7 @@ jobs:
           if [ "$KIND" = "r3" ]; then
             target=r3; m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json"
           else
-            target="$TUTOR"; m=".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.json"
+            target="$TUTOR"; m=".agent/$TEAM_DIR/${VOICE}_manifest.json"
           fi
           python3 voice_batch/ci/open_agent_pr.py --repo RokctAI/agent --head "$AGENT_BRANCH" --base main \
             --target "$target" --voice "$VOICE" --manifest "$m" --run-url "$RUN_URL"
@@ -402,11 +406,12 @@ jobs:
         env:
           KIND: ${{ steps.batch.outputs.kind }}
           TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
           VOICE: ${{ steps.batch.outputs.voice }}
         run: |
           if [ "$KIND" = "r3" ]; then
             m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json"
           else
-            m=".agent/lms/team/tutors/CAPS/$TUTOR/${VOICE}_manifest.json"
+            m=".agent/$TEAM_DIR/${VOICE}_manifest.json"
           fi
           python3 voice_batch/summary.py "$m" >> "$GITHUB_STEP_SUMMARY"

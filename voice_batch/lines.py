@@ -22,6 +22,16 @@ import pronunciations
 from textnorm import speak_text, split_sentences
 
 CLIP_CATEGORIES = ("acknowledgements", "greetings", "signoffs")
+ASSISTANT_CATEGORIES = ("intro", "handover", "signoff", "timekeeping")
+
+
+def team_rel(target: str) -> str:
+    """The agent-repo team folder of a tutor_NNN or assistant_NNN."""
+    if re.fullmatch(r"assistant_\d{3}", target):
+        return f"lms/team/assistants/CAPS/{target}"
+    if re.fullmatch(r"tutor_\d{3}", target):
+        return f"lms/team/tutors/CAPS/{target}"
+    raise ValueError(f"not a tutor or assistant id: {target}")
 
 
 def spoken_text(md: str) -> str:
@@ -74,9 +84,39 @@ def _item(id_: str, category: str, text: str, team_rel: str, wav: str, script: s
             "file": f"{team_rel}/{wav}", "script": script}
 
 
-def build_lines(agent_root: str | Path, tutor: str, categories: list[str], pron: dict | None = None) -> list[dict]:
+def build_assistant_lines(root: Path, assistant: str, categories: list[str], pron: dict | None) -> list[dict]:
+    """An assistant's named scripts: <cat>/<stem>.md -> <cat>/<stem>.wav, id
+    '<assistant>/<cat>/<stem>'. The voice spec's optional sample_line goes in
+    the first category as samples/sample_line.wav."""
+    rel = team_rel(assistant)
+    adir = root / rel
+    items: list[dict] = []
+    for cat in categories:
+        if cat not in ASSISTANT_CATEGORIES:
+            raise ValueError(f"unknown category {cat}")
+        for md in sorted((adir / cat).glob("*.md")):
+            if not re.fullmatch(r"[a-z0-9_]{1,40}", md.stem):
+                continue
+            text = spoken_text(md.read_text(encoding="utf-8"))
+            if text:
+                items.append(_item(f"{assistant}/{cat}/{md.stem}", cat, text, rel,
+                                   f"{cat}/{md.stem}.wav", f"{rel}/{cat}/{md.name}", pron))
+    if categories and categories[0] == ASSISTANT_CATEGORIES[0]:
+        vj = root / "lms/team/voices" / f"{assistant}.voice.json"
+        if vj.is_file():
+            line = json.loads(vj.read_text(encoding="utf-8")).get("sample_line")
+            if isinstance(line, str) and line.strip():
+                items.append(_item(f"{assistant}_sample_line", categories[0], " ".join(line.split()), rel,
+                                   "samples/sample_line.wav", f"lms/team/voices/{assistant}.voice.json#sample_line", pron))
+    return items
+
+
+def build_lines(agent_root: str | Path, tutor: str, categories: list[str], pron: dict | None = None,
+                kind: str = "tutor") -> list[dict]:
     pron = pronunciations.load() if pron is None else pron
     root = Path(agent_root)
+    if kind == "assistant":
+        return build_assistant_lines(root, tutor, categories, pron)
     team_rel = f"lms/team/tutors/CAPS/{tutor}"
     tdir = root / team_rel
     items: list[dict] = []
