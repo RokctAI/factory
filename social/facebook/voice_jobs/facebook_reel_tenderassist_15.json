@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../radio_ads/schema/ad.schema.json",
+  "id": "facebook_reel_tenderassist_15",
+  "client": "Rokct",
+  "notes": "Sponsor line for tender Reels only (social/facebook), matching the end card in motion.py SPONSOR. Only the spoken line is used: the pipeline trims the silence and lays it just before the follow line. Held here, outside radio_ads/inbox/, so a push does not render it: move it into the inbox (or the unified engine's queue) only once Ray has enabled a voice for public use, then save the result as social/facebook/assets/voice_tenderassist.wav.",
+  "duration_s": 15,
+  "format": "spot",
+  "cast": {"announcer": {"voice": "assistant_003"}},
+  "script": [
+    {"speaker": "announcer", "text": "Brought to you by TenderAssist, your tender officer on demand."}
+  ],
+  "music": {"bed": "none"},
+  "output": {"formats": ["wav", "mp3"], "loudness_lufs": -16, "true_peak_dbtp": -1}
+}
