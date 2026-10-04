@@ -34,7 +34,7 @@ Gate     : final file median F0 within target +/- tolerance (default
            10 ms frame.
            Clip checks (clip_checks): pace within the voice's target +/-
            tolerance wpm (voice spec `pace`, default 149 +/- 15); integrated
-           level within +/-1.5 dB of the -20 dBFS normalise target; >= 180 ms
+           level within +/-2.0 dB of the -20 dBFS normalise target; >= 180 ms
            silence before the first audible sample; no clipping (peak below
            -0.3 dBFS, or fewer than 3 consecutive full-scale samples); first
            50 ms RMS below -60 dBFS and the first onset rising over >= 5 ms.
@@ -79,7 +79,12 @@ LEAD_S, LEAD_FADE_S = 0.20, 0.010
 LEAD_TOP_DB = 40.0          # below -40 dB of the peak counts as silence (matches the trim)
 # Clip checks on the finished file.
 PACE_WPM, PACE_TOL_WPM = 149.0, 15.0     # default when the voice spec has no `pace`
-NORM_TARGET_DB, LOUDNESS_TOL_DB = -20.0, 1.5
+# Loudness: gated integrated level (silence excluded) vs the normaliser's
+# whole-file RMS target. On tutor_001's accepted renders after lead_in +
+# normalise the gated level reads 0.4-1.52 dB above -20 (more silence, more
+# bias), so 1.5 dB rejected a good clip; 2.0 dB clears them with margin and
+# still catches a normaliser that backed off or a mis-scaled file.
+NORM_TARGET_DB, LOUDNESS_TOL_DB = -20.0, 2.0
 LEAD_MIN_S = 0.18
 CLIP_PEAK_DBFS, CLIP_FULL_SCALE, CLIP_RUN_MAX = -0.3, 0.999, 3
 HOT_WIN_S, HOT_FLOOR_DBFS = 0.05, -60.0

@@ -74,19 +74,19 @@ def load_json(p: Path) -> dict:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
-VOICE_SPEC_DIRS = ("lms/team/voices", "lms/team/voice_refs", "lms/team/voice_specs")
+VOICE_SPEC = "lms/team/voices/{persona}.voice.json"
 
 
-def voice_pace(agent: Path, voice: str) -> tuple[float, float]:
-    """(target wpm, tolerance) from the agent's <voice>.json `pace` fields
-    (first of VOICE_SPEC_DIRS that has one), else 149 +/- 15."""
-    for d in VOICE_SPEC_DIRS:
-        p = agent / d / f"{voice}.json"
-        if p.exists():
-            try:
-                return pace_spec(json.loads(p.read_text(encoding="utf-8")))
-            except (ValueError, TypeError, AttributeError):
-                break
+def voice_pace(agent: Path, persona: str | None) -> tuple[float, float]:
+    """(target wpm, tolerance) from the persona's voice spec
+    (lms/team/voices/<persona_id>.voice.json: pace.wpm, pace.tolerance_wpm),
+    else 149 +/- 15."""
+    p = agent / VOICE_SPEC.format(persona=persona) if persona else None
+    if p is not None and p.exists():
+        try:
+            return pace_spec(json.loads(p.read_text(encoding="utf-8")))
+        except (ValueError, TypeError, AttributeError):
+            pass
     return pace_spec(None)
 
 
@@ -362,6 +362,8 @@ def main() -> int:
     ap.add_argument("--language", default="en", help="ASR language")
     ap.add_argument("--f0-target", type=float, default=TARGET_F0)
     ap.add_argument("--f0-tolerance", type=float, default=F0_TOLERANCE)
+    ap.add_argument("--persona", help="persona id whose lms/team/voices/<id>.voice.json sets the pace gate "
+                    "(default: --tutor; none -> 149 +/- 15 wpm)")
     # tutor
     ap.add_argument("--tutor")
     ap.add_argument("--category")
@@ -382,7 +384,7 @@ def main() -> int:
         print("::error::reference sha256 does not match the batch; refusing to render")
         return 1
     scripts = agent / "lms/team/scripts"
-    args.pace_wpm, args.pace_tolerance = voice_pace(agent, args.voice)
+    args.pace_wpm, args.pace_tolerance = voice_pace(agent, args.persona or args.tutor)
     print(f"pace gate: {args.pace_wpm:g} +/- {args.pace_tolerance:g} wpm")
     if args.kind == "r3":
         return run_r3(args, agent, ref, scripts)

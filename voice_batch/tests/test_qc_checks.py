@@ -80,8 +80,20 @@ class ClipChecks(unittest.TestCase):
         self.assertEqual(qc.pace_spec({"pace": 160}), (160.0, 15.0))
 
     def test_loudness(self):
-        self.assertFalse(checks(good_clip() * 10 ** (2 / 20))[0]["loudness"])
-        self.assertTrue(checks(good_clip() * 10 ** (1 / 20))[0]["loudness"])
+        self.assertFalse(checks(good_clip() * 10 ** (2.5 / 20))[0]["loudness"])
+        self.assertTrue(checks(good_clip() * 10 ** (1.5 / 20))[0]["loudness"])
+
+    def test_measured_tutor_001_renders(self):
+        """Numbers measured on tutor_001's accepted renders after lead_in +
+        normalise (audio is private, so only the numbers live here)."""
+        for integ, lead_ms, peak, head, rise in [(-18.48, 206.5, -4.14, -120.0, 35.21), (-18.95, 204.2, -3.8, -120.0, 29.5),
+                                                 (-19.03, 204.6, -3.12, -120.0, 47.88), (-19.62, 204.1, -4.04, -120.0, 26.92),
+                                                 (-18.79, 211.5, -1.18, -120.0, 21.96), (-19.41, 206.0, -1.01, -120.0, 44.54)]:
+            self.assertLessEqual(abs(integ - qc.NORM_TARGET_DB), qc.LOUDNESS_TOL_DB)
+            self.assertGreaterEqual(lead_ms, qc.LEAD_MIN_S * 1000)
+            self.assertLess(peak, qc.CLIP_PEAK_DBFS)
+            self.assertLess(head, qc.HOT_FLOOR_DBFS)
+            self.assertGreaterEqual(rise, qc.ONSET_RISE_MIN_S * 1000)
 
     def test_lead_in(self):
         x = good_clip()[int(0.05 * SR):]   # 150 ms lead-in
@@ -131,11 +143,13 @@ class Timings(unittest.TestCase):
     def test_voice_pace_from_agent(self):
         import run
         with tempfile.TemporaryDirectory() as d:
-            self.assertEqual(run.voice_pace(Path(d), "voice_a"), (149.0, 15.0))
-            p = Path(d) / "lms/team/voices/voice_a.json"
+            self.assertEqual(run.voice_pace(Path(d), "tutor_001"), (149.0, 15.0))
+            self.assertEqual(run.voice_pace(Path(d), None), (149.0, 15.0))
+            p = Path(d) / "lms/team/voices/tutor_001.voice.json"
             p.parent.mkdir(parents=True)
-            p.write_text(json.dumps({"pace": {"wpm": 135, "tolerance_wpm": 12}}))
-            self.assertEqual(run.voice_pace(Path(d), "voice_a"), (135.0, 12.0))
+            p.write_text(json.dumps({"pitch": {"target_f0_hz": 104, "tolerance_hz": 15},
+                                     "pace": {"wpm": 135, "tolerance_wpm": 15, "pause_style": "short"}}))
+            self.assertEqual(run.voice_pace(Path(d), "tutor_001"), (135.0, 15.0))
 
 
 class MeterWordTimestamps(unittest.TestCase):
