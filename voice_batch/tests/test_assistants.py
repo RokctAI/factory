@@ -118,7 +118,7 @@ class AssistantRun(unittest.TestCase):
             import run
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
-            make_agent(d, {"agreement_in_place": False})
+            make_agent(d, {"agreement_in_place": False, "pace": {"wpm": 132, "tolerance_wpm": 12}})
             ref = d / "ref.wav"
             ref.write_bytes(b"ref")
             take = d / "take.wav"
@@ -134,6 +134,9 @@ class AssistantRun(unittest.TestCase):
             args = types.SimpleNamespace(kind="assistant", tutor=AID, category="handover", lines="", voice="voice_b_sister",
                                          ref_sha256="ab" * 32, model_path="/m", work=str(d / "w"), asr_model="small.en",
                                          language="en", f0_target=241.0, f0_tolerance=25.0)
+            # persona = the assistant id: pace comes from lms/team/voices/<AID>.voice.json
+            args.pace_wpm, args.pace_tolerance = run.voice_pace(d, AID)
+            self.assertEqual((args.pace_wpm, args.pace_tolerance), (132, 12))
             with mock.patch.object(run, "render_rounds", fake_rounds), mock.patch.object(run, "versions", lambda: {}), \
                     mock.patch.object(run.pronunciations, "load", lambda: {}):
                 self.assertEqual(run.run_tutor(args, d, ref, d / "lms/team/scripts"), 0)
