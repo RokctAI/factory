@@ -28,10 +28,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # "Brought to you by TenderAssist", spoken, on tender Reels. Off until Ray
+  # names a voice for public use and the variable REEL_SPONSOR_VOICE is set
+  # to 'on'. The clip is a build artifact only, never committed.
+  sponsor_voice:
+    if: vars.REEL_SPONSOR_VOICE == 'on' && (github.event.schedule == '0 10 * * *' || inputs.stream == 'tender')
+    uses: ./.github/workflows/radio_ads.yml
+    with:
+      ad_path: radio_ads/reel_jobs/facebook_reel_tenderassist_15.json
+    secrets:
+      MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+
   post:
+    needs: sponsor_voice
+    # The Reel posts with or without the sponsor line.
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Fetch the sponsor line
+        if: needs.sponsor_voice.result == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: radio-ad-facebook_reel_tenderassist_15
+          path: ${{ runner.temp }}/sponsor
+
+      - name: Place the sponsor line
+        if: needs.sponsor_voice.result == 'success'
+        run: cp "$RUNNER_TEMP/sponsor/facebook_reel_tenderassist_15.wav" social/facebook/assets/voice_tenderassist.wav
 
       - name: Checkout opportunities
         uses: actions/checkout@v4

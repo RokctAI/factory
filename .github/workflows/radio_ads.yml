@@ -17,6 +17,16 @@ on:
   push:
     paths:
       - 'radio_ads/inbox/**.json'
+  # The daily Reel workflow calls this for one job (radio_ads/reel_jobs/)
+  # and takes the result as an artifact.
+  workflow_call:
+    inputs:
+      ad_path:
+        type: string
+        required: true
+    secrets:
+      MONOREPO_PAT:
+        required: true
   workflow_dispatch:
     inputs:
       ad_path:
@@ -77,7 +87,8 @@ jobs:
       - name: List ads to render
         id: list
         env:
-          EVENT: ${{ github.event_name }}
+          # A call (from a schedule) names its one ad, like a dispatch does.
+          EVENT: ${{ inputs.ad_path != '' && 'workflow_dispatch' || github.event_name }}
           BEFORE: ${{ github.event.before }}
           AFTER: ${{ github.sha }}
           AD_PATH: ${{ inputs.ad_path }}

@@ -1,0 +1,14 @@
+{
+  "$schema": "../schema/ad.schema.json",
+  "id": "facebook_reel_tenderassist_15",
+  "client": "Rokct",
+  "notes": "Sponsor line for tender Reels only (social/facebook), matching the end card in motion.py SPONSOR. Only the spoken line is used: the pipeline trims the silence and lays it just before the follow line. Kept out of radio_ads/inbox/ so no push renders it. The daily Reel workflow renders it at build time, only while the repository variable REEL_SPONSOR_VOICE is 'on' (Ray names the voice first), and uses the clip as a build artifact: it is never committed.",
+  "duration_s": 15,
+  "format": "spot",
+  "cast": {"announcer": {"voice": "assistant_003"}},
+  "script": [
+    {"speaker": "announcer", "text": "Brought to you by TenderAssist, your tender officer on demand."}
+  ],
+  "music": {"bed": "none"},
+  "output": {"formats": ["wav", "mp3"], "loudness_lufs": -16, "true_peak_dbtp": -1}
+}

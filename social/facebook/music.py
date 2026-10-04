@@ -130,9 +130,9 @@ def render_music(seed, duration, out: Path):
 ASSETS = Path(__file__).resolve().parent / "assets"
 # Shared voice lines, rendered by the radio-ads factory from
 # radio_ads/inbox/facebook_reel_brand_15.json, facebook_reel_open_15.json and
-# facebook_reel_follow_15.json; tender Reels add social/facebook/voice_jobs/
-# facebook_reel_tenderassist_15.json (held out of the inbox until a voice is
-# enabled for public use).
+# facebook_reel_follow_15.json; tender Reels add radio_ads/reel_jobs/
+# facebook_reel_tenderassist_15.json, rendered at build time by the Reel
+# workflow (gated by REEL_SPONSOR_VOICE) and never committed.
 VOICE_BRAND = ASSETS / "voice_brand.wav"
 VOICE_OPEN = ASSETS / "voice_open.wav"
 VOICE_CLOSE = ASSETS / "voice_close.wav"
