@@ -167,7 +167,7 @@ def run_header(args, ref: Path, agent: Path) -> dict:
                      "f0_tolerance_hz": args.f0_tolerance,
                      "similarity_min_ge_5s": 0.88, "similarity_min_lt_5s": 0.83, "asr": "word-exact",
                      "tail_max_db": TAIL_MAX_DB, "tail_window_ms": int(TAIL_WIN_S * 1000),
-                     "pace_wpm": args.pace_wpm, "pace_tolerance_wpm": args.pace_tolerance,
+                     "pace_wpm": args.pace_wpm, "pace_tolerance_wpm": args.pace_tolerance, "pace_gate": "report-only",
                      "loudness_target_db": qc.NORM_TARGET_DB, "loudness_tolerance_db": qc.LOUDNESS_TOL_DB,
                      "lead_in_min_ms": int(qc.LEAD_MIN_S * 1000), "clip_peak_max_dbfs": qc.CLIP_PEAK_DBFS,
                      "clip_full_scale_run_max": qc.CLIP_RUN_MAX, "head_rms_max_dbfs": qc.HOT_FLOOR_DBFS,
@@ -191,13 +191,13 @@ def score_fields(r: dict) -> dict:
             "similarity": r["similarity"], "asr_match": r["asr_match"],
             "similarity_threshold": r["similarity_threshold"], "upward_swings": r["upward_swings"],
             "rms_dbfs": r["rms_dbfs"], "peak": r["peak"], "pauses_ms": r["pauses_ms"],
-            "tail_db": r["tail_db"], "tail_pad": TAIL_PAD, "wpm": r.get("wpm"), "checks": r.get("checks")}
+            "tail_db": r["tail_db"], "tail_pad": TAIL_PAD, "wpm": r.get("wpm"), "pace": r.get("pace"), "checks": r.get("checks")}
 
 
 def failed_fields(r: dict) -> dict:
     return {**run_id(), "status": r["status"], "seeds_tried": r["seeds_tried"],
             **{k: r[k] for k in ("duration_s", "median_f0_hz", "similarity", "similarity_threshold",
-                                 "asr_match", "tail_db", "wpm", "checks", "gate") if k in r}}
+                                 "asr_match", "tail_db", "wpm", "pace", "checks", "gate") if k in r}}
 
 
 def unchanged(prev: dict | None, it: dict, agent: Path, ref_sha: str, extra: tuple = ()) -> bool:

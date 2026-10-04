@@ -68,11 +68,19 @@ class ClipChecks(unittest.TestCase):
         gate, m = checks(good_clip())
         self.assertTrue(all(gate.values()), (gate, m))
 
-    def test_pace(self):
-        self.assertFalse(checks(good_clip(), wpm=120)[0]["pace"])
-        self.assertFalse(checks(good_clip(), wpm=170)[0]["pace"])
-        self.assertTrue(checks(good_clip(), wpm=125, pace=(130, 10))[0]["pace"])
-        self.assertFalse(checks(good_clip(), wpm=None)[0]["pace"])
+    def test_pace_report_only(self):
+        for wpm, flag in ((120, "under"), (203, "over"), (149, "ok"), (None, None)):
+            gate, m = checks(good_clip(), wpm=wpm)
+            self.assertNotIn("pace", gate)            # never fails or retries a clip
+            self.assertTrue(all(gate.values()))
+            self.assertEqual(m["pace"]["flag"], flag)
+        self.assertEqual(qc.pace_report(125, (130, 10)),
+                         {"wpm": 125.0, "target_wpm": 130.0, "tolerance_wpm": 10.0, "flag": "ok"})
+
+    def test_summary_shows_pace(self):
+        import summary
+        m = {"voice": "voice_a", "lines": [{"id": "a", "pace": qc.pace_report(170, (135, 15))}], "failed": []}
+        self.assertIn("170 (135±15) **over**", summary.summary(m))
 
     def test_pace_spec(self):
         self.assertEqual(qc.pace_spec(None), (149.0, 15.0))

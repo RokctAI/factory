@@ -32,8 +32,10 @@ Gate     : final file median F0 within target +/- tolerance (default
            (the TTS respelling for an R-3 phonics line, else the text);
            tail: the file's last 50 ms at or below -34 dB of its loudest
            10 ms frame.
-           Clip checks (clip_checks): pace within the voice's target +/-
-           tolerance wpm (voice spec `pace`, default 149 +/- 15); integrated
+           Pace (report-only until tuned on real renders): wpm against the
+           voice's target +/- tolerance (voice spec `pace`, default 149 +/- 15)
+           is recorded with an over/under flag but never fails a clip.
+           Clip checks (clip_checks): integrated
            level within +/-2.0 dB of the -20 dBFS normalise target; >= 180 ms
            silence before the first audible sample; no clipping (peak below
            -0.3 dBFS, or fewer than 3 consecutive full-scale samples); first
@@ -195,13 +197,23 @@ def clip_checks(x, sr: int = SR, wpm: float | None = None, pace: tuple[float, fl
          "lead_in_ms": round(lead_s(x, sr) * 1000, 1), "peak_dbfs": round(_db(peak), 2),
          "full_scale_run": longest_full_scale_run(x), "head_rms_dbfs": round(_db(float(np.sqrt(np.mean(head ** 2)))), 2),
          "onset_rise_ms": round(onset_rise_s(x, sr) * 1000, 2)}
-    t, tol = pace
-    gate = {"pace": wpm is not None and abs(wpm - t) <= tol,
-            "loudness": abs(m["integrated_db"] - target_db) <= LOUDNESS_TOL_DB,
+    m["pace"] = pace_report(wpm, pace)
+    # Pace is report-only until its thresholds are tuned on real renders:
+    # it is recorded (wpm, target, over/under) but never fails or retries a clip.
+    gate = {"loudness": abs(m["integrated_db"] - target_db) <= LOUDNESS_TOL_DB,
             "lead_in": m["lead_in_ms"] >= LEAD_MIN_S * 1000,
             "clipping": m["peak_dbfs"] < CLIP_PEAK_DBFS or m["full_scale_run"] < CLIP_RUN_MAX,
             "onset": m["head_rms_dbfs"] < HOT_FLOOR_DBFS and m["onset_rise_ms"] >= ONSET_RISE_MIN_S * 1000}
     return gate, m
+
+
+def pace_report(wpm: float | None, pace: tuple[float, float] = (PACE_WPM, PACE_TOL_WPM)) -> dict:
+    """{wpm, target_wpm, tolerance_wpm, flag}: flag is "over"/"under" outside
+    target +/- tolerance, "ok" inside, None without word timings."""
+    t, tol = pace
+    flag = None if wpm is None else ("over" if wpm > t + tol else "under" if wpm < t - tol else "ok")
+    return {"wpm": None if wpm is None else round(float(wpm), 1), "target_wpm": float(t),
+            "tolerance_wpm": float(tol), "flag": flag}
 
 
 def timings(text: str, words: list, duration_s: float) -> dict:
@@ -424,7 +436,7 @@ def main() -> int:
             "asr_word_errors": fm["err"], "asr_transcript": fm["transcript"], "tail_db": fm["tail_db"],
             "rms_dbfs": round(float(20 * np.log10(np.sqrt(np.mean(x ** 2)))), 2),
             "peak": round(float(np.max(np.abs(x))), 4), "pauses_ms": pauses,
-            "wpm": tm["wpm"], "checks": cm, "timings": tm,
+            "wpm": tm["wpm"], "pace": cm["pace"], "checks": cm, "timings": tm,
             "sha256": hashlib.sha256(dst.read_bytes()).hexdigest(),
             "seeds": [b["seed"] for b in picks],
             "takes": [{"sentence": k, "seed": b["seed"], "tier": t, "median_f0_hz": b["f0"],
