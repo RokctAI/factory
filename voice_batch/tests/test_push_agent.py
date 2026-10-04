@@ -160,8 +160,8 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.git("-c", self.hdr, "checkout", "--quiet", "-B", ref, f"refs/remotes/origin/{ref}", cwd=d)
         return d
 
-    def resolve(self, branch: str = BRANCH):
-        r = subprocess.run(["bash", str(RESOLVE), branch, self.url],
+    def resolve(self, branch: str = BRANCH, cwd=None):
+        r = subprocess.run(["bash", str(RESOLVE), branch, self.url], cwd=cwd,
                            env={**{k: v for k, v in self.env.items() if k != "GITHUB_OUTPUT"}, "AGENT_PAT": TOKEN},
                            capture_output=True, text=True)
         out = dict(line.split("=", 1) for line in r.stdout.splitlines() if "=" in line and "::" not in line)
@@ -306,6 +306,24 @@ class PushAgentRebaseTest(unittest.TestCase):
                            capture_output=True, text=True)
         self.assertNotEqual(r.returncode, 0)
         self.assertNotIn("ref=", r.stdout)
+
+    def test_resolve_inside_checkout_with_persisted_credentials(self):
+        """CI runs the script in the factory checkout, where actions/checkout
+        (persist-credentials true) left its own token as an extraheader for the
+        same host. That header must not be sent alongside (ahead of) ours."""
+        ws = self.tmp / "factory"
+        self.git("init", "--quiet", str(ws))
+        port = self.server.server_port
+        stale = base64.b64encode(b"x-access-token:factory-github-token").decode()
+        self.git("config", "--local", f"http.http://127.0.0.1:{port}/.extraheader",
+                 f"AUTHORIZATION: basic {stale}", cwd=ws)
+        r, out = self.resolve(cwd=ws)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(out, {"ref": BRANCH, "create": "false"})
+        self.delete_remote_branch()
+        r, out = self.resolve(cwd=ws)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(out, {"ref": "main", "create": "true"})
 
     def test_missing_branch_is_recreated_from_main(self):
         self.delete_remote_branch()
