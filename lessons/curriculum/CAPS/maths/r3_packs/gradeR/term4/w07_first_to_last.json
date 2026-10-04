@@ -1,0 +1,38 @@
+{
+  "id": "maths.gradeR.term4.w07_first_to_last",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Reptiles and dinosaurs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Reptiles and dinosaurs: Numeracy",
+    "subtopic": "Ordinal numbers: first, second, third up to sixth, and last"
+  },
+  "skill": "number.ordinal",
+  "prereq_skills": ["count.to_10"],
+  "images": ["dinos_in_line", "dino_first", "dino_last", "dino_middle", "tortoise_race", "tortoise_second", "tortoise_first", "tortoise_third", "croc_third", "lizards_in_line", "lizard_fourth", "lizard_second", "lizard_sixth", "tutor_points_last"],
+  "show": {
+    "line": "The dinosaurs are in a line. The big one is first. The small one is last.",
+    "image": "dinos_in_line"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which dinosaur is first in the line?", "image": "dinos_in_line", "options": ["dino_first", "dino_last", "dino_middle"], "answer": "dino_first", "praise": "Yes! That one is first."},
+    {"type": "listen_tap", "prompt": "Which dinosaur is last in the line?", "image": "dinos_in_line", "options": ["dino_last", "dino_first", "dino_middle"], "answer": "dino_last", "praise": "Yes! That one is last."},
+    {"type": "listen_tap", "prompt": "The tortoises race. Who came second?", "image": "tortoise_race", "options": ["tortoise_second", "tortoise_first", "tortoise_third"], "answer": "tortoise_second", "praise": "Yes! Second place."},
+    {"type": "say_it", "prompt": "The crocodile is third in the race. Where is the crocodile? Say first, second or third.", "accept": ["third", "3rd", "the third", "turd", "therd"], "image": "croc_third"},
+    {"type": "listen_tap", "prompt": "Which lizard is fourth? Count first, second, third, fourth.", "image": "lizards_in_line", "options": ["lizard_fourth", "lizard_second", "lizard_sixth"], "answer": "lizard_fourth", "praise": "Yes! Fourth!"}
+  ],
+  "hints": ["Start counting at the front. First, second, third.", "The one at the very end is last."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will point to the first dinosaur.",
+    "tutor_try": "This one at the back is first!",
+    "image": "tutor_points_last",
+    "answer": "last",
+    "win_line": "You caught me! The one at the back is last.",
+    "gentle_line": "First is at the front. The one at the back is last!"
+  },
+  "parent_line": "Can say first, second, third and last."
+}

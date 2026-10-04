@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term4.w07_zero_to_ten",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Reptiles and dinosaurs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Reptiles and dinosaurs: Numeracy",
+    "subtopic": "Number 0 (zero) and number 10: counts, recognises and matches 0 to 10"
+  },
+  "skill": "count.zero_to_10",
+  "prereq_skills": ["count.to_10"],
+  "images": ["nest_ten_eggs", "dino_eggs_ten", "nest_empty", "nest_one_egg", "nest_three_eggs", "rock_no_lizards", "grass_four_snakes", "tutor_nest_empty"],
+  "show": {
+    "line": "Ten little dinosaur eggs. Crack, crack! Now the nest is empty. Empty means zero.",
+    "image": "nest_ten_eggs"
+  },
+  "rounds": [
+    {"type": "count_tap", "prompt": "Count the dinosaur eggs.", "image": "dino_eggs_ten", "count": "10", "options": ["8", "9", "10"], "answer": "10", "praise": "Ten eggs!"},
+    {"type": "listen_tap", "prompt": "Which nest has zero eggs?", "options": ["nest_empty", "nest_one_egg", "nest_three_eggs"], "answer": "nest_empty", "praise": "Yes! Zero means none."},
+    {"type": "what_next", "prompt": "Count on with me. Seven, eight, nine. What comes next?", "sequence": ["7", "8", "9"], "options": ["10", "6", "0"], "answer": "10", "praise": "Ten!"},
+    {"type": "say_it", "prompt": "How many lizards are on the rock? There are none. Say the number.", "accept": ["zero", "0", "none", "nothing", "nought", "no lizards"], "image": "rock_no_lizards"},
+    {"type": "count_tap", "prompt": "Count the snakes in the grass.", "image": "grass_four_snakes", "count": "4", "options": ["3", "4", "5"], "answer": "4", "praise": "Four snakes!"},
+    {"type": "what_next", "prompt": "Count back with me. Three, two, one. What comes next?", "sequence": ["3", "2", "1"], "options": ["0", "4", "10"], "answer": "0", "praise": "Zero! Blast off!"}
+  ],
+  "hints": ["Touch each one as you count.", "When there are none left, that is zero."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will count the empty nest.",
+    "tutor_try": "The nest has one egg!",
+    "image": "tutor_nest_empty",
+    "answer": "zero",
+    "win_line": "You caught me! The nest is empty. That is zero.",
+    "gentle_line": "Look together. No eggs at all. That is zero!"
+  },
+  "parent_line": "Can count to 10 and knows that none is zero."
+}

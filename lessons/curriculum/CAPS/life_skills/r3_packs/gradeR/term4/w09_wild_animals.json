@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term4.w09_wild_animals",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Wild animals and sport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Wild animals and sport",
+    "subtopic": "Wild animals: what a wild animal is, types, where they live and how they live; finding out about one wild animal"
+  },
+  "skill": "animals.wild",
+  "prereq_skills": ["animals.babies"],
+  "images": ["savanna_animals", "lion", "dog", "cow", "elephant", "zebra", "giraffe", "cat", "sheep", "river", "kennel", "house", "tree_leaves", "meat", "fish", "game_park", "kitchen", "classroom", "tutor_lion_pet"],
+  "show": {
+    "line": "Wild animals live free in nature. Lions, elephants and zebras look after themselves.",
+    "image": "savanna_animals"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is a wild animal?", "options": ["lion", "dog", "cow"], "answer": "lion", "praise": "A lion is wild!"},
+    {"type": "match_sort", "prompt": "Wild or tame? Sort the animals.", "groups": ["wild", "tame"], "items": [{"image": "elephant", "group": "wild"}, {"image": "zebra", "group": "wild"}, {"image": "giraffe", "group": "wild"}, {"image": "cat", "group": "tame"}, {"image": "sheep", "group": "tame"}]},
+    {"type": "listen_tap", "prompt": "Where does a hippo live?", "options": ["river", "kennel", "house"], "answer": "river", "praise": "In the river!"},
+    {"type": "listen_tap", "prompt": "What does a giraffe eat?", "options": ["tree_leaves", "meat", "fish"], "answer": "tree_leaves", "praise": "Leaves from tall trees!"},
+    {"type": "say_it", "prompt": "Which wild animal has a long trunk?", "accept": ["elephant", "an elephant", "the elephant", "ndlovu", "olifant", "elefant"]},
+    {"type": "listen_tap", "prompt": "Where can we safely see wild animals?", "options": ["game_park", "kitchen", "classroom"], "answer": "game_park", "praise": "At a game park!"}
+  ],
+  "hints": ["Wild animals do not live with people.", "Think where the animal finds its food and water."],
+  "beat_the_tutor": {
+    "setup": "My turn! I want a pet.",
+    "tutor_try": "I will keep a lion in my house!",
+    "image": "tutor_lion_pet",
+    "answer": "no",
+    "win_line": "You caught me! A lion is wild. It is not a pet.",
+    "gentle_line": "Lions are wild animals. They live in nature!"
+  },
+  "parent_line": "Can tell wild animals from tame ones and say where they live."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "maths.gradeR.term4.w05_bird_story_sums",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Spring and birds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Spring and birds: Numeracy",
+    "subtopic": "Story sums with numbers 1 to 9 in context, solved orally with counters"
+  },
+  "skill": "number.add_subtract.to_9",
+  "prereq_skills": ["number.subtract.to_10", "count.to_10"],
+  "images": ["birds_in_tree", "numeral_5", "numeral_4", "numeral_3", "nest_six_eggs", "numeral_7", "ducks_four_and_four", "seeds_seven_left", "numeral_2", "numeral_1", "tutor_birds_wrong"],
+  "show": {
+    "line": "Spring is here and the birds are busy! Let's count birds and solve bird stories.",
+    "image": "birds_in_tree"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Three birds sit in a tree. Two more birds fly in. How many birds are in the tree now?", "options": ["numeral_5", "numeral_4", "numeral_3"], "answer": "numeral_5", "praise": "Five! Three and two more is five."},
+    {"type": "count_tap", "prompt": "Count the eggs in the nest.", "image": "nest_six_eggs", "count": "6", "options": ["5", "6", "7"], "answer": "6", "praise": "Six eggs!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Seven birds sit on the wire. Three fly away. How many birds are still on the wire?", "options": ["numeral_4", "numeral_7", "numeral_3"], "answer": "numeral_4", "praise": "Four! Seven take away three is four."},
+    {"type": "say_it", "prompt": "Four ducks swim in the pond. Four more come. How many ducks now? Say the number.", "accept": ["eight", "8", "ait", "eit"], "image": "ducks_four_and_four"},
+    {"type": "count_tap", "prompt": "Nine seeds. A bird eats two. Count the seeds that are left.", "image": "seeds_seven_left", "count": "7", "options": ["6", "7", "8"], "answer": "7", "praise": "Seven seeds left!"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Mama bird brings one worm, then one more, then one more. How many worms?", "options": ["numeral_3", "numeral_2", "numeral_1"], "answer": "numeral_3", "praise": "Three worms!"}
+  ],
+  "hints": ["Use your fingers. Show the first number, then add or take away.", "More birds come means add. Birds fly away means take away."],
+  "beat_the_tutor": {
+    "setup": "My turn! Six birds. Two fly away.",
+    "tutor_try": "Six take away two. That leaves eight birds!",
+    "image": "tutor_birds_wrong",
+    "answer": "numeral_4",
+    "win_line": "You caught me! Six take away two is four.",
+    "gentle_line": "Let's count together. Six, take away two. Four birds are left!"
+  },
+  "parent_line": "Can solve spoken story sums with numbers up to 9."
+}

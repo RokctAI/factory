@@ -1,0 +1,38 @@
+{
+  "id": "maths.gradeR.term4.w05_more_or_fewer",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Spring and birds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Spring and birds: Numeracy",
+    "subtopic": "Compares two collections: more, fewer or the same"
+  },
+  "skill": "compare.collections",
+  "prereq_skills": ["count.to_10"],
+  "images": ["two_nests_compare", "nest_five_eggs", "nest_two_eggs", "tree_three_birds", "tree_seven_birds", "baskets_same", "baskets_different", "nests_six_four", "pot_more_flowers", "tutor_birds_compare"],
+  "show": {
+    "line": "Look at the two nests. This nest has more eggs. That nest has fewer eggs.",
+    "image": "two_nests_compare"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which nest has more eggs?", "options": ["nest_five_eggs", "nest_two_eggs"], "answer": "nest_five_eggs", "praise": "Yes! Five is more than two."},
+    {"type": "listen_tap", "prompt": "Which tree has fewer birds?", "options": ["tree_three_birds", "tree_seven_birds"], "answer": "tree_three_birds", "praise": "Yes! Three is fewer than seven."},
+    {"type": "listen_tap", "prompt": "Which two baskets have the same number of flowers?", "options": ["baskets_same", "baskets_different"], "answer": "baskets_same", "praise": "Yes! Four and four. The same!"},
+    {"type": "say_it", "prompt": "Six eggs here and four eggs there. Which has more? Say six or four.", "accept": ["six", "6", "six eggs", "siks", "the six"], "image": "nests_six_four"},
+    {"type": "count_tap", "prompt": "Count the flowers in the pot with more flowers.", "image": "pot_more_flowers", "count": "8", "options": ["6", "7", "8"], "answer": "8", "praise": "Eight flowers!"}
+  ],
+  "hints": ["Count each group. The bigger number is more.", "Match them one by one. The group with some left over has more."],
+  "beat_the_tutor": {
+    "setup": "My turn! Three birds here. Five birds there.",
+    "tutor_try": "Three is more than five!",
+    "image": "tutor_birds_compare",
+    "answer": "five",
+    "win_line": "You caught me! Five is more than three.",
+    "gentle_line": "Let's count. One, two, three. One, two, three, four, five. Five is more!"
+  },
+  "parent_line": "Can tell which group has more, fewer or the same."
+}

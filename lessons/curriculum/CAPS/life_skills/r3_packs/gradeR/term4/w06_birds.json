@@ -1,0 +1,39 @@
+{
+  "id": "life_skills.gradeR.term4.w06_birds",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Spring and birds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Spring and birds",
+    "subtopic": "Birds: different birds; feathers, two legs, a beak, lay eggs; birds that cannot fly (ostrich, penguin); nests"
+  },
+  "skill": "animals.birds",
+  "prereq_skills": ["animals.coverings"],
+  "images": ["bird_parts", "sparrow", "cat", "frog", "ostrich", "eagle", "pigeon", "nest", "kennel", "fish_bowl", "hadeda", "penguin", "tutor_flying_penguin"],
+  "show": {
+    "line": "Birds have feathers, two legs and a beak. Most birds can fly, and all birds lay eggs.",
+    "image": "bird_parts"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is a bird?", "options": ["sparrow", "cat", "frog"], "answer": "sparrow", "praise": "A sparrow is a bird!"},
+    {"type": "listen_tap", "prompt": "Which bird cannot fly?", "options": ["ostrich", "eagle", "pigeon"], "answer": "ostrich", "praise": "The ostrich runs instead!"},
+    {"type": "listen_tap", "prompt": "Where does a bird lay its eggs?", "options": ["nest", "kennel", "fish_bowl"], "answer": "nest", "praise": "In a nest!"},
+    {"type": "say_it", "prompt": "What covers a bird's body?", "accept": ["feathers", "feather", "fedders", "feders"]},
+    {"type": "match_sort", "prompt": "Can it fly? Sort the birds.", "groups": ["can_fly", "cannot_fly"], "items": [{"image": "eagle", "group": "can_fly"}, {"image": "pigeon", "group": "can_fly"}, {"image": "hadeda", "group": "can_fly"}, {"image": "ostrich", "group": "cannot_fly"}, {"image": "penguin", "group": "cannot_fly"}]},
+    {"type": "say_it", "prompt": "How many legs does a bird have?", "accept": ["two", "2", "tu", "too"]}
+  ],
+  "hints": ["Look for feathers and a beak.", "Penguins swim and ostriches run."],
+  "beat_the_tutor": {
+    "setup": "My turn! A penguin is a bird.",
+    "tutor_try": "So a penguin can fly high in the sky!",
+    "image": "tutor_flying_penguin",
+    "answer": "no",
+    "win_line": "You caught me! A penguin cannot fly. It swims.",
+    "gentle_line": "Penguins are birds, but they swim. They cannot fly!"
+  },
+  "parent_line": "Can name things all birds have and birds that cannot fly."
+}

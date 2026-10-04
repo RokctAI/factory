@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term4.w09_write_l",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Wild animals and sport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Wild animals and sport: Emergent Writing",
+    "subtopic": "Letter formation of 'l' (finger paint, crayon, sand tray)"
+  },
+  "skill": "writing.letter.l",
+  "prereq_skills": ["phonics.initial_sound.l", "writing.letter.r"],
+  "images": ["letter_l", "letter_r", "letter_s", "zebra", "lion", "ball", "tutor_wrote_r"],
+  "show": {
+    "line": "Let's write l. Start up high and go straight down, tall and thin. l, l, lion!",
+    "image": "letter_l"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says l, as in lion.", "options": ["letter_r", "letter_l", "letter_s"], "answer": "letter_l", "praise": "Yes! That is l."},
+    {"type": "say_it", "prompt": "This letter says l. Say the sound!", "accept": ["l", "lll", "ll", "la", "lu"]},
+    {"type": "trace", "prompt": "Trace l with your finger. Start at the top and go straight down.", "glyph": "l"},
+    {"type": "listen_tap", "prompt": "Which picture starts with l?", "options": ["zebra", "lion", "ball"], "answer": "lion", "praise": "Yes! l, l, lion."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is l? It is one tall line.", "options": ["letter_l", "letter_r"], "answer": "letter_l"}
+  ],
+  "hints": ["l is one tall, straight line.", "Start at the top. Go straight down."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write l for lion.",
+    "tutor_try": "A short line with a little bump. Look, I wrote l!",
+    "image": "tutor_wrote_r",
+    "answer": "l",
+    "win_line": "You caught me! That is r. l is one tall line.",
+    "gentle_line": "Look together. Start up high and go straight down. That is l!"
+  },
+  "parent_line": "Can recognise the letter l, say its sound and trace it."
+}

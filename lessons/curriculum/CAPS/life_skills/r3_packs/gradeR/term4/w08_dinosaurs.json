@@ -1,0 +1,38 @@
+{
+  "id": "life_skills.gradeR.term4.w08_dinosaurs",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Reptiles and dinosaurs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Reptiles and dinosaurs",
+    "subtopic": "Dinosaurs: different dinosaurs, how they lived and how we know about them today"
+  },
+  "skill": "animals.dinosaurs",
+  "prereq_skills": ["animals.reptiles"],
+  "images": ["dinosaur_scene", "dinosaur", "elephant", "horse", "fossil_bones", "zoo", "farm", "long_neck_eating_leaves", "t_rex_roaring", "scientist_digging", "baker", "bus_driver", "tutor_dino_at_shop"],
+  "show": {
+    "line": "Dinosaurs lived long, long ago. There are none left today. We learn about them from bones.",
+    "image": "dinosaur_scene"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one is a dinosaur?", "options": ["dinosaur", "elephant", "horse"], "answer": "dinosaur", "praise": "A dinosaur!"},
+    {"type": "listen_tap", "prompt": "How do we know about dinosaurs today?", "options": ["fossil_bones", "zoo", "farm"], "answer": "fossil_bones", "praise": "From fossil bones!"},
+    {"type": "listen_tap", "prompt": "Some dinosaurs ate plants. Which dinosaur is eating plants?", "options": ["long_neck_eating_leaves", "t_rex_roaring"], "answer": "long_neck_eating_leaves", "praise": "Yes! The long neck eats leaves."},
+    {"type": "say_it", "prompt": "Can we see a living dinosaur today? Say yes or no.", "accept": ["no", "nee", "no we cannot", "never", "cha"]},
+    {"type": "listen_tap", "prompt": "Who digs up dinosaur bones?", "options": ["scientist_digging", "baker", "bus_driver"], "answer": "scientist_digging", "praise": "A scientist digs them up!"}
+  ],
+  "hints": ["Dinosaurs lived a very long time ago.", "Bones in rocks tell us about dinosaurs."],
+  "beat_the_tutor": {
+    "setup": "My turn! I saw a dinosaur.",
+    "tutor_try": "I saw a real dinosaur at the shop today!",
+    "image": "tutor_dino_at_shop",
+    "answer": "no",
+    "win_line": "You caught me! Dinosaurs lived long ago. None are alive now.",
+    "gentle_line": "Dinosaurs are gone. We only find their bones!"
+  },
+  "parent_line": "Can say dinosaurs lived long ago and we know them from bones."
+}

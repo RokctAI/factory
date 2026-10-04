@@ -1,0 +1,38 @@
+{
+  "id": "life_skills.gradeR.term4.w07_reptiles",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Reptiles and dinosaurs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Reptiles and dinosaurs",
+    "subtopic": "Reptiles: crocodile, snake, lizard, tortoise; scaly body and lays eggs"
+  },
+  "skill": "animals.reptiles",
+  "prereq_skills": ["animals.coverings"],
+  "images": ["reptiles_group", "crocodile", "dog", "chicken", "scales", "fur", "feathers", "snake", "lizard", "tortoise", "cow", "owl", "tutor_holds_rabbit"],
+  "show": {
+    "line": "Snakes, lizards, crocodiles and tortoises are reptiles. Reptiles have scaly skin and lay eggs.",
+    "image": "reptiles_group"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which animal is a reptile?", "options": ["crocodile", "dog", "chicken"], "answer": "crocodile", "praise": "A crocodile is a reptile!"},
+    {"type": "listen_tap", "prompt": "How does a reptile's skin look?", "options": ["scales", "fur", "feathers"], "answer": "scales", "praise": "Scaly skin!"},
+    {"type": "match_sort", "prompt": "Reptile or not? Sort them.", "groups": ["reptile", "not_reptile"], "items": [{"image": "snake", "group": "reptile"}, {"image": "lizard", "group": "reptile"}, {"image": "tortoise", "group": "reptile"}, {"image": "cow", "group": "not_reptile"}, {"image": "owl", "group": "not_reptile"}]},
+    {"type": "listen_tap", "prompt": "Which reptile carries a shell on its back?", "options": ["tortoise", "snake", "lizard"], "answer": "tortoise", "praise": "The tortoise!"},
+    {"type": "say_it", "prompt": "Most baby reptiles come out of what?", "accept": ["eggs", "egg", "an egg", "eks", "the egg"]}
+  ],
+  "hints": ["Reptiles have scales, not fur or feathers.", "Snakes, lizards, crocodiles and tortoises are reptiles."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a reptile.",
+    "tutor_try": "A rabbit! It is a reptile.",
+    "image": "tutor_holds_rabbit",
+    "answer": "no",
+    "win_line": "You caught me! A rabbit has fur. It is not a reptile.",
+    "gentle_line": "Reptiles have scales. A lizard is a reptile!"
+  },
+  "parent_line": "Can name reptiles and say they have scales and lay eggs."
+}
