@@ -16,18 +16,26 @@ def fmt(v, nd=2):
     return "n/a" if v is None else (f"{v:.{nd}f}" if isinstance(v, float) else str(v))
 
 
+def pace_cell(p) -> str:
+    if not p or p.get("wpm") is None:
+        return "n/a"
+    flag = p.get("flag")
+    return (f"{p['wpm']:.0f} ({p['target_wpm']:g}±{p['tolerance_wpm']:g})"
+            + (f" **{flag}**" if flag in ("over", "under") else ""))
+
+
 def summary(m: dict) -> str:
     rows = [("pass", e) for e in m.get("lines", [])] + [("FAIL", e) for e in m.get("failed", [])]
     listen = sum(bool(e.get("needs_listen")) for e in m.get("lines", []))
     out = [f"### Voice batch `{m.get('tutor') or m.get('kind', '?')}` / `{m.get('voice', '?')}`", "",
            f"{len(m.get('lines', []))} passed, {len(m.get('failed', []))} failed"
            + (f", {listen} need a listen (phonics respelling or pronunciation)" if listen else ""), "",
-           "| id | category | duration s | median F0 Hz | similarity | ASR exact | seeds | result |",
-           "|---|---|---|---|---|---|---|---|"]
+           "| id | category | duration s | median F0 Hz | similarity | ASR exact | wpm (target, report-only) | seeds | result |",
+           "|---|---|---|---|---|---|---|---|---|"]
     for status, e in rows:
         out.append(f"| `{e['id']}` | {e.get('category', '')} | {fmt(e.get('duration', e.get('duration_s')))} | "
                    f"{fmt(e.get('median_f0', e.get('median_f0_hz')), 1)} | {fmt(e.get('similarity'), 3)} | "
-                   f"{fmt(e.get('asr_match'))} | {','.join(map(str, e.get('seeds') or e.get('seeds_tried') or []))} | {status} |")
+                   f"{fmt(e.get('asr_match'))} | {pace_cell(e.get('pace'))} | {','.join(map(str, e.get('seeds') or e.get('seeds_tried') or []))} | {status} |")
     return "\n".join(out) + "\n"
 
 

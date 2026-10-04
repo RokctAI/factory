@@ -42,7 +42,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import pronunciations  # noqa: E402
 from lines import build_lines  # noqa: E402
-from qc import F0_TOLERANCE, TAIL_MAX_DB, TAIL_WIN_S, TARGET_F0, f0_range  # noqa: E402
+import qc  # noqa: E402
+from qc import F0_TOLERANCE, TAIL_MAX_DB, TAIL_WIN_S, TARGET_F0, f0_range, pace_spec  # noqa: E402
 from textnorm import TAIL_PAD  # noqa: E402
 
 SEED_ROUNDS = ([11, 22, 33], [44], [55])
@@ -73,6 +74,32 @@ def load_json(p: Path) -> dict:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
+VOICE_SPEC = "lms/team/voices/{persona}.voice.json"
+
+
+def voice_pace(agent: Path, persona: str | None) -> tuple[float, float]:
+    """(target wpm, tolerance) from the persona's voice spec
+    (lms/team/voices/<persona_id>.voice.json: pace.wpm, pace.tolerance_wpm),
+    else 149 +/- 15."""
+    p = agent / VOICE_SPEC.format(persona=persona) if persona else None
+    if p is not None and p.exists():
+        try:
+            return pace_spec(json.loads(p.read_text(encoding="utf-8")))
+        except (ValueError, TypeError, AttributeError):
+            pass
+    return pace_spec(None)
+
+
+def timings_path(clip: Path) -> Path:
+    return clip.with_name(clip.stem + ".timings.json")
+
+
+def write_timings(clip: Path, r: dict) -> None:
+    """<clip>.timings.json next to a committed clip."""
+    if r.get("timings"):
+        timings_path(clip).write_text(json.dumps(r["timings"], indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args, label: str) -> list[dict]:
     """Seed rounds of render + QC until every line passes or the seeds run out."""
     work.mkdir(parents=True, exist_ok=True)
@@ -98,7 +125,8 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
         subprocess.run([sys.executable, str(HERE / "qc.py"), "--work", str(work), "--ref", str(ref),
                         "--scripts-dir", str(scripts), "--asr-model", args.asr_model,
                         "--f0-target", str(args.f0_target), "--f0-tolerance", str(args.f0_tolerance),
-                        "--language", args.language], check=True)
+                        "--language", args.language, "--pace-wpm", str(args.pace_wpm),
+                        "--pace-tolerance", str(args.pace_tolerance)], check=True)
         print("::endgroup::", flush=True)
         results = json.loads((work / "results.json").read_text(encoding="utf-8"))
         pending = set()
@@ -138,7 +166,13 @@ def run_header(args, ref: Path, agent: Path) -> dict:
             "gate": {"median_f0_hz": [round(lo, 2), round(hi, 2)], "f0_target_hz": args.f0_target,
                      "f0_tolerance_hz": args.f0_tolerance,
                      "similarity_min_ge_5s": 0.88, "similarity_min_lt_5s": 0.83, "asr": "word-exact",
-                     "tail_max_db": TAIL_MAX_DB, "tail_window_ms": int(TAIL_WIN_S * 1000)},
+                     "tail_max_db": TAIL_MAX_DB, "tail_window_ms": int(TAIL_WIN_S * 1000),
+                     "pace_wpm": args.pace_wpm, "pace_tolerance_wpm": args.pace_tolerance, "pace_gate": "report-only",
+                     "loudness_target_db": qc.NORM_TARGET_DB, "loudness_tolerance_db": qc.LOUDNESS_TOL_DB,
+                     "lead_in_min_ms": int(qc.LEAD_MIN_S * 1000), "clip_peak_max_dbfs": qc.CLIP_PEAK_DBFS,
+                     "clip_full_scale_run_max": qc.CLIP_RUN_MAX, "head_rms_max_dbfs": qc.HOT_FLOOR_DBFS,
+                     "onset_rise_min_ms": int(qc.ONSET_RISE_MIN_S * 1000)},
+            "lead_in_ms": int(qc.LEAD_S * 1000),
         },
         "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
@@ -157,13 +191,13 @@ def score_fields(r: dict) -> dict:
             "similarity": r["similarity"], "asr_match": r["asr_match"],
             "similarity_threshold": r["similarity_threshold"], "upward_swings": r["upward_swings"],
             "rms_dbfs": r["rms_dbfs"], "peak": r["peak"], "pauses_ms": r["pauses_ms"],
-            "tail_db": r["tail_db"], "tail_pad": TAIL_PAD}
+            "tail_db": r["tail_db"], "tail_pad": TAIL_PAD, "wpm": r.get("wpm"), "pace": r.get("pace"), "checks": r.get("checks")}
 
 
 def failed_fields(r: dict) -> dict:
     return {**run_id(), "status": r["status"], "seeds_tried": r["seeds_tried"],
             **{k: r[k] for k in ("duration_s", "median_f0_hz", "similarity", "similarity_threshold",
-                                 "asr_match", "tail_db", "gate") if k in r}}
+                                 "asr_match", "tail_db", "wpm", "pace", "checks", "gate") if k in r}}
 
 
 def unchanged(prev: dict | None, it: dict, agent: Path, ref_sha: str, extra: tuple = ()) -> bool:
@@ -224,6 +258,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
             dst = agent / it["file"]
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(r["final_path"], dst)
+            write_timings(dst, r)
             lines[it["id"]] = {
                 "id": it["id"], "category": it["category"], "text": it["text"], "text_sha256": it["text_sha256"],
                 "render_sha256": it["render_sha256"],
@@ -291,6 +326,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
         if r["status"] == "pass":
             dst = agent / it["file"]
             encoder = mp3.encode(r["final_path"], dst)
+            write_timings(dst, r)
             lines[it["id"]] = {
                 **base, "text": it["text"], **({"tts_text": it["tts_text"]} if "tts_text" in it else {}),
                 **({"pronounced": it["pronounced"]} if it.get("pronounced") else {}),
@@ -326,6 +362,8 @@ def main() -> int:
     ap.add_argument("--language", default="en", help="ASR language")
     ap.add_argument("--f0-target", type=float, default=TARGET_F0)
     ap.add_argument("--f0-tolerance", type=float, default=F0_TOLERANCE)
+    ap.add_argument("--persona", help="persona id whose lms/team/voices/<id>.voice.json sets the pace gate "
+                    "(default: --tutor; none -> 149 +/- 15 wpm)")
     # tutor
     ap.add_argument("--tutor")
     ap.add_argument("--category")
@@ -346,6 +384,8 @@ def main() -> int:
         print("::error::reference sha256 does not match the batch; refusing to render")
         return 1
     scripts = agent / "lms/team/scripts"
+    args.pace_wpm, args.pace_tolerance = voice_pace(agent, args.persona or args.tutor)
+    print(f"pace gate: {args.pace_wpm:g} +/- {args.pace_tolerance:g} wpm")
     if args.kind == "r3":
         return run_r3(args, agent, ref, scripts)
     return run_tutor(args, agent, ref, scripts)
