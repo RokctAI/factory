@@ -46,12 +46,12 @@ elif [ "$tutor" = "pronunciation" ]; then
   tdir="lms/team/voices/samples/pronunciation/$voice"
   allowed="^$tdir/([a-z0-9][a-z0-9-]*\.mp3|audition\.json)$"
   ext="mp3"; manifest="$tdir/audition.json"
-elif printf '%s' "$tutor" | grep -qE '^tutor_[0-9]{3}$'; then
-  tdir="lms/team/tutors/CAPS/$tutor"
+elif printf '%s' "$tutor" | grep -qE '^(tutor|assistant)_[0-9]{3}$'; then
+  case "$tutor" in tutor_*) tdir="lms/team/tutors/CAPS/$tutor" ;; *) tdir="lms/team/assistants/CAPS/$tutor" ;; esac
   allowed="^$tdir/(.+\.wav|.+\.timings\.json|${voice}_manifest(\.[a-z]+)?\.json)$"
   ext="wav"; manifest="$tdir/${voice}_manifest.json"
 else
-  echo "::error::target must be tutor_NNN, r3 or pronunciation"; exit 1
+  echo "::error::target must be tutor_NNN, assistant_NNN, r3 or pronunciation"; exit 1
 fi
 cd "$dir"
 

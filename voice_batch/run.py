@@ -19,7 +19,10 @@ failing after seed 55 is recorded as failed and its audio is not installed.
 Render and QC run as separate processes so the TTS model (~12 GB) and the
 ASR/speaker models are never resident together. Tutor lines: passing files
 are copied beside their scripts in the agent checkout and recorded in
-<tutor dir>/<voice>_manifest.<category>.json. R-3 lines: passing files are
+<tutor dir>/<voice>_manifest.<category>.json. Assistant lines (--kind
+assistant --tutor assistant_NNN) work the same way under
+lms/team/assistants/CAPS/<id>, and the manifest records the voice spec's
+agreement_in_place flag. R-3 lines: passing files are
 encoded to <key>.mp3 in lms/dart/templates/assets/r3_packs/audio/ and
 recorded in r3_manifest.<voice>.partNN.json beside them (merge_manifest.py
 folds the parts into r3_manifest.<voice>.json). Logs ids and numbers only.
@@ -41,11 +44,12 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import pronunciations  # noqa: E402
-from lines import build_lines  # noqa: E402
+from lines import ASSISTANT_CATEGORIES, build_lines, team_rel  # noqa: E402
 import qc  # noqa: E402
 from qc import F0_TOLERANCE, TAIL_MAX_DB, TAIL_WIN_S, TARGET_F0, f0_range, pace_spec  # noqa: E402
 from textnorm import TAIL_PAD  # noqa: E402
 
+TUTOR_ORDER = ("acknowledgements", "greetings", "signoffs", "teaching")
 SEED_ROUNDS = ([11, 22, 33], [44], [55])
 
 
@@ -212,7 +216,8 @@ def unchanged(prev: dict | None, it: dict, agent: Path, ref_sha: str, extra: tup
 
 def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
     only = {x for x in args.lines.split(",") if x}
-    tutor_rel = f"lms/team/tutors/CAPS/{args.tutor}"
+    kind = getattr(args, "kind", "tutor")
+    tutor_rel = team_rel(args.tutor)
     # One manifest per category so parallel category jobs never touch the same
     # file; merge_manifest.py folds them into <voice>_manifest.json afterwards.
     manifest_path = agent / tutor_rel / f"{args.voice}_manifest.{args.category}.json"
@@ -221,7 +226,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
     same_ref = manifest.get("reference", {}).get("sha256") == args.ref_sha256
     pron = pronunciations.load()
     try:
-        built = [it for it in build_lines(agent, args.tutor, [args.category], pron) if not only or it["id"] in only]
+        built = [it for it in build_lines(agent, args.tutor, [args.category], pron, kind=kind) if not only or it["id"] in only]
     except pronunciations.PronunciationError as exc:
         print(f"::error::{exc}")
         return 1
@@ -250,6 +255,13 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
     results = render_rounds(items, Path(args.work).resolve() / args.category, ref, scripts, args, args.category)
     by_id = {it["id"]: it for it in items}
     manifest.update({"tutor": args.tutor, "category": args.category, **run_header(args, ref, agent)})
+    if kind == "assistant":
+        from batch import voice_spec
+        spec = voice_spec(agent, args.tutor)
+        # Internal renders are allowed without an agreement; record the flag
+        # so public use can be gated on it later.
+        manifest.update({"kind": "assistant", "assistant": args.tutor,
+                         "agreement_in_place": spec.get("agreement_in_place") is True})
     lines = {e["id"]: e for e in manifest.get("lines", [])}
     failed = {e["id"]: e for e in manifest.get("failed", [])}
     for r in results:
@@ -273,7 +285,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
             failed[it["id"]] = {"id": it["id"], "category": it["category"], "file_not_committed": it["file"],
                                 **failed_fields(r)}
             lines.pop(it["id"], None)
-    order = {it["id"]: n for n, it in enumerate(build_lines(agent, args.tutor, ["acknowledgements", "greetings", "signoffs", "teaching"]))}
+    order = {it["id"]: n for n, it in enumerate(build_lines(agent, args.tutor, list(ASSISTANT_CATEGORIES if kind == "assistant" else TUTOR_ORDER), kind=kind))}
     manifest["lines"] = sorted(lines.values(), key=lambda e: order.get(e["id"], 1e9))
     manifest["failed"] = sorted(failed.values(), key=lambda e: order.get(e["id"], 1e9))
     manifest_path.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -351,7 +363,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--kind", choices=("tutor", "r3"), default="tutor")
+    ap.add_argument("--kind", choices=("tutor", "r3", "assistant"), default="tutor")
     ap.add_argument("--agent-root", required=True)
     ap.add_argument("--voice", required=True)
     ap.add_argument("--ref", required=True)
@@ -373,8 +385,11 @@ def main() -> int:
     ap.add_argument("--shard", default="1/1", help="r3: k/n, this job's contiguous share of the lines")
     ap.add_argument("--factory-root", default=str(HERE.parent))
     args = ap.parse_args()
-    if args.kind == "tutor" and not (args.tutor and args.category):
-        ap.error("--tutor and --category are required for kind tutor")
+    if args.kind in ("tutor", "assistant") and not (args.tutor and args.category):
+        ap.error("--tutor (the tutor or assistant id) and --category are required for kind tutor/assistant")
+    if args.kind == "assistant" and not (re.fullmatch(r"assistant_\d{3}", args.tutor)
+                                         and args.category in ASSISTANT_CATEGORIES):
+        ap.error("kind assistant needs --tutor assistant_NNN and an assistant category")
     if args.kind == "r3" and not (args.batch and re.fullmatch(r"[1-9]\d*/[1-9]\d*", args.shard)):
         ap.error("--batch and --shard k/n are required for kind r3")
 

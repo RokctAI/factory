@@ -114,7 +114,7 @@ def main(argv: list[str] | None = None) -> int:
     if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", args.repo):
         print("::error::bad repo")
         return 1
-    if not (args.target == "r3" or re.fullmatch(r"tutor_\d{3}", args.target)) \
+    if not (args.target == "r3" or re.fullmatch(r"(tutor|assistant)_\d{3}", args.target)) \
             or not re.fullmatch(r"[a-z][a-z0-9_]{0,31}", args.voice):
         print("::error::bad target or voice")
         return 1

@@ -16,7 +16,11 @@ Two kinds:
   Optional "packs" (a pack-id glob or a list of them), "lines" (R3Line
   keys) and "locale" (default "en").
 
-Both take an optional F0 gate: "f0_target_hz" and "f0_tolerance_hz"
+* "assistant": an assistant's named scripts (lms/team/assistants/CAPS/<id>),
+  one render job per category (intro, handover, signoff, timekeeping).
+  Optional "lines" ids of the form '<id>/<category>/<stem>'.
+
+All take an optional F0 gate: "f0_target_hz" and "f0_tolerance_hz"
 (defaults: the Voice A values, 102 +/- 8 Hz, i.e. 94-110 Hz).
 
 Pronunciations (voice_batch/pronunciations.json): the file must be valid,
@@ -37,7 +41,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 CATEGORIES = ("acknowledgements", "greetings", "signoffs", "teaching")
-KINDS = ("tutor", "r3")
+ASSISTANT_CATEGORIES = ("intro", "handover", "signoff", "timekeeping")
+DUO_SUFFIX_RE = r"@tutor_\d{3}\+tutor_\d{3}"  # per-duo host line variant (lines.py)
+KINDS = ("tutor", "r3", "assistant")
 COMMON = {
     "voice": r"[a-z][a-z0-9_]{0,31}",
     "ref_path": r"lms/team/voice_refs/[A-Za-z0-9_]+\.wav",
@@ -45,6 +51,7 @@ COMMON = {
     "agent_branch": r"rokct/[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*",
 }
 PATTERNS = {"tutor": r"tutor_\d{3}", **COMMON}   # the tutor kind's required fields
+ASSISTANT_PATTERNS = {"assistant": r"assistant_\d{3}", **COMMON}
 PACK_GLOB_RE = r"[A-Za-z0-9_.*?\[\]-]{1,120}"
 R3_KEY_RE = r"[A-Za-z0-9_.]{1,160}"
 
@@ -60,6 +67,11 @@ ASR_MODEL_EN = "small.en"
 ASR_MODEL_MULTI = "small"
 
 SPARSE_TUTOR = ("lms/team/tutors/CAPS/{tutor}", "lms/team/voices", "lms/team/voice_refs", "lms/team/scripts")
+# Non-cone patterns (the workflow turns cone mode off for assistants): the
+# rosters and tutor cards name the session's tutor duo in host lines.
+SPARSE_ASSISTANT = ("/lms/team/assistants/CAPS/{tutor}/", "/lms/team/voices/", "/lms/team/voice_refs/",
+                    "/lms/team/scripts/", "/lms/team/assistants/CAPS/roster.json", "/lms/team/tutors/CAPS/roster.json",
+                    "/lms/team/tutors/CAPS/*/tutor.md", "/lms/team/tutors/CAPS/*/appearance/still.json")
 SPARSE_R3 = ("lms/dart/templates/assets/r3_packs/audio", "lms/team/voice_refs", "lms/team/scripts",
              "lms/dart/lib/src/common/application/r3", "lms/dart/lib/src/translations")
 
@@ -77,6 +89,12 @@ def category_of(line_id: str, tutor: str) -> str | None:
     if re.fullmatch(rf"{tutor}_sample_(\d{{2}}|line)", line_id):
         return "teaching"
     return None
+
+
+def assistant_category_of(line_id: str, assistant: str) -> str | None:
+    """Category of an assistant line id '<assistant>/<category>/<stem>'."""
+    m = re.fullmatch(rf"{assistant}/({'|'.join(ASSISTANT_CATEGORIES)})/[a-z0-9_]{{1,40}}({DUO_SUFFIX_RE})?", line_id)
+    return m.group(1) if m else None
 
 
 def _num(raw: dict, key: str, default: float, lo_hi: tuple[float, float]) -> float:
@@ -123,6 +141,40 @@ def _load_tutor(raw: dict) -> dict:
     _unknown(raw, set(PATTERNS) | {"kind", "categories", "lines", "f0_target_hz", "f0_tolerance_hz"})
     out["matrix"] = [{"category": c, "shard": ""} for c in out["categories"]]
     return out
+
+
+def _load_assistant(raw: dict) -> dict:
+    out = _fields(raw, ASSISTANT_PATTERNS)
+    cats = raw.get("categories")
+    if not isinstance(cats, list) or not cats or any(c not in ASSISTANT_CATEGORIES for c in cats):
+        raise BatchError(f"categories must be a non-empty subset of {list(ASSISTANT_CATEGORIES)}")
+    out["categories"] = [c for c in ASSISTANT_CATEGORIES if c in cats]
+    lines = raw.get("lines")
+    if lines is not None:
+        if not isinstance(lines, list) or not lines or not all(isinstance(x, str) for x in lines):
+            raise BatchError("lines, when given, must be a non-empty list of line ids")
+        for x in lines:
+            if assistant_category_of(x, out["assistant"]) not in out["categories"]:
+                raise BatchError(f"line id {x!r} is not a {out['assistant']} line in the batch's categories")
+        out["lines"] = sorted(set(lines))
+        out["categories"] = [c for c in out["categories"]
+                             if any(assistant_category_of(x, out["assistant"]) == c for x in lines)]
+    _unknown(raw, set(ASSISTANT_PATTERNS) | {"kind", "categories", "lines", "f0_target_hz", "f0_tolerance_hz"})
+    out["tutor"] = out["assistant"]   # the target id the CI steps pass around
+    out["matrix"] = [{"category": c, "shard": ""} for c in out["categories"]]
+    return out
+
+
+def voice_spec(agent_root: str | Path | None, target: str) -> dict:
+    """lms/team/voices/<target>.voice.json from the agent checkout, or {}."""
+    if agent_root is None:
+        return {}
+    p = Path(agent_root) / "lms/team/voices" / f"{target}.voice.json"
+    try:
+        spec = json.loads(p.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return spec if isinstance(spec, dict) else {}
 
 
 def _load_r3(raw: dict, factory_root: Path | None) -> dict:
@@ -183,10 +235,10 @@ def pronunciation_errors(b: dict, agent_root: str | Path | None = None, factory_
             return []
         else:
             from lines import build_lines
-            items = build_lines(agent_root, b["tutor"], b["categories"], pron)
+            items = build_lines(agent_root, b["tutor"], b["categories"], pron, kind=b["kind"])
             if b.get("lines"):
                 items = [it for it in items if it["id"] in set(b["lines"])]
-    except pronunciations.PronunciationError as exc:
+    except (pronunciations.PronunciationError, ValueError) as exc:
         return [str(exc)]
     return pronunciations.check_ambiguous(items, pron)
 
@@ -201,10 +253,18 @@ def load_batch(path: str | Path, factory_root: Path | None = None, agent_root: s
     kind = raw.get("kind", "tutor")
     if kind not in KINDS:
         raise BatchError(f"kind must be one of {list(KINDS)}")
-    out = _load_tutor(raw) if kind == "tutor" else _load_r3(raw, factory_root)
+    if kind == "tutor":
+        out = _load_tutor(raw)
+    elif kind == "assistant":
+        out = _load_assistant(raw)
+    else:
+        out = _load_r3(raw, factory_root)
     out["kind"] = kind
-    out["f0_target_hz"] = _num(raw, "f0_target_hz", F0_TARGET_HZ, F0_TARGET_RANGE)
-    out["f0_tolerance_hz"] = _num(raw, "f0_tolerance_hz", F0_TOLERANCE_HZ, F0_TOLERANCE_RANGE)
+    # F0 gate: the batch's values, else the voice spec's (assistants), else Voice A.
+    spec = voice_spec(agent_root, out["tutor"]) if kind == "assistant" else {}
+    out["f0_target_hz"] = _num(raw, "f0_target_hz", spec.get("f0_target_hz", F0_TARGET_HZ), F0_TARGET_RANGE)
+    out["f0_tolerance_hz"] = _num(raw, "f0_tolerance_hz", spec.get("f0_tolerance_hz", F0_TOLERANCE_HZ),
+                                  F0_TOLERANCE_RANGE)
     errs = pronunciation_errors(out, agent_root, factory_root)
     if errs:
         raise BatchError("; ".join(errs))
@@ -214,12 +274,16 @@ def load_batch(path: str | Path, factory_root: Path | None = None, agent_root: s
 def sparse_paths(b: dict) -> list[str]:
     if b["kind"] == "r3":
         return list(SPARSE_R3)
+    if b["kind"] == "assistant":
+        return [p.format(tutor=b["tutor"]) for p in SPARSE_ASSISTANT]
     return [p.format(tutor=b["tutor"]) for p in SPARSE_TUTOR]
 
 
 def outputs(b: dict) -> list[str]:
     """GitHub step output lines. Ids, paths and numbers only, never text."""
-    out = [f"kind={b['kind']}", f"tutor={b.get('tutor', '')}"]
+    from lines import team_rel
+    out = [f"kind={b['kind']}", f"tutor={b.get('tutor', '')}",
+           f"team_dir={team_rel(b['tutor']) if b.get('tutor') else ''}"]
     out += [f"{k}={b[k]}" for k in COMMON]
     out += [f"categories={' '.join(b['categories'])}",
             f"lines={','.join(b.get('lines', []))}",

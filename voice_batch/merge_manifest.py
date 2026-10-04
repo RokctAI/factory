@@ -20,7 +20,7 @@ import json
 import sys
 from pathlib import Path
 
-ORDER = ("acknowledgements", "greetings", "signoffs", "teaching")
+ORDER = ("acknowledgements", "greetings", "signoffs", "teaching", "intro", "handover", "signoff", "timekeeping")
 
 
 def merge(tutor_dir: Path, voice: str) -> dict | None:
@@ -32,7 +32,7 @@ def merge(tutor_dir: Path, voice: str) -> dict | None:
     if not parts:
         return None
     latest = max(parts, key=lambda m: m.get("updated_at", ""))
-    out = {k: latest[k] for k in ("tutor", "voice", "reference", "engine", "settings", "updated_at", "ci_run") if k in latest}
+    out = {k: latest[k] for k in ("tutor", "kind", "assistant", "agreement_in_place", "voice", "reference", "engine", "settings", "updated_at", "ci_run") if k in latest}
     refs = {m.get("reference", {}).get("sha256") for m in parts}
     if len(refs) != 1:
         out["warning"] = "category manifests were rendered from different references"
