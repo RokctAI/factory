@@ -130,10 +130,14 @@ def render_music(seed, duration, out: Path):
 ASSETS = Path(__file__).resolve().parent / "assets"
 # Shared voice lines, rendered by the radio-ads factory from
 # radio_ads/inbox/facebook_reel_brand_15.json, facebook_reel_open_15.json and
-# facebook_reel_follow_15.json.
+# facebook_reel_follow_15.json; tender Reels add radio_ads/reel_jobs/
+# facebook_reel_tenderassist_15.json, rendered at build time by the Reel
+# workflow (gated by REEL_SPONSOR_VOICE) and never committed.
 VOICE_BRAND = ASSETS / "voice_brand.wav"
 VOICE_OPEN = ASSETS / "voice_open.wav"
 VOICE_CLOSE = ASSETS / "voice_close.wav"
+VOICE_SPONSOR = ASSETS / "voice_tenderassist.wav"
+SPONSOR_PAUSE = 0.3  # seconds between the sponsor line and the follow line
 OPEN_PAUSE = 0.7  # seconds between "ROKCT" and the opening line
 
 
@@ -184,10 +188,20 @@ def _lay(music: Path, vo: Path, at_for):
     return at + length
 
 
-def add_voiceover(music: Path, duration, opener=True):
+def add_voiceover(music: Path, duration, opener=True, sponsor=False):
     """ROKCT (a man's voice) on the first beat, the opening line straight
-    after it (unless opener is False), the follow line over the close."""
+    after it (unless opener is False), the follow line over the close. With
+    sponsor, "Brought to you by TenderAssist" ends just before the follow
+    line; until its asset is rendered it is skipped."""
     brand_end = _lay(music, VOICE_BRAND, lambda length: 0.15)
     if opener:
         _lay(music, VOICE_OPEN, lambda length: (brand_end or 0) + OPEN_PAUSE)
-    _lay(music, VOICE_CLOSE, lambda length: max(0.5, duration - length - 0.35))
+    close = {}
+
+    def close_at(length):
+        close["at"] = max(0.5, duration - length - 0.35)
+        return close["at"]
+
+    _lay(music, VOICE_CLOSE, close_at)
+    if sponsor and "at" in close:
+        _lay(music, VOICE_SPONSOR, lambda length: max(0.5, close["at"] - length - SPONSOR_PAUSE))
