@@ -19,6 +19,7 @@ import re
 from pathlib import Path
 
 import pronunciations
+import sys
 from textnorm import speak_text, split_sentences
 
 CLIP_CATEGORIES = ("acknowledgements", "greetings", "signoffs")
@@ -83,14 +84,97 @@ def _item(id_: str, category: str, text: str, team_rel: str, wav: str, script: s
     return {"id": id_, "category": category, **pronounced_fields(id_, text, pron),
             "file": f"{team_rel}/{wav}", "script": script}
 
+ASSISTANT_ROSTER = "lms/team/assistants/CAPS/roster.json"
+TUTOR_ROSTER = "lms/team/tutors/CAPS/roster.json"
+# Host-line placeholders naming the session's tutor duo. A single-brace
+# {name}, never the {{word|respelling}} pronunciation markup.
+PLACEHOLDER_RE = re.compile(r"(?<!\{)\{([a-z_]+)\}(?!\})")
+DUO_PLACEHOLDERS = ("first_tutor", "second_tutor")  # expert, simplifier
+DUO_SUFFIX_RE = r"@tutor_\d{3}\+tutor_\d{3}"
+
+
+def _json(path: Path) -> dict:
+    try:
+        d = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return d if isinstance(d, dict) else {}
+
+
+def assistant_grades(root: Path, assistant: str) -> list[str]:
+    """The grade(s) an assistant hosts live (assistants roster by_grade)."""
+    by_grade = _json(root / ASSISTANT_ROSTER).get("by_grade") or {}
+    return [str(g) for g, a in by_grade.items() if a == assistant]
+
+
+def grade_duos(root: Path, grade: str) -> list[tuple[str, str]]:
+    """(expert, simplifier) duos teaching a grade, in roster subject order,
+    deduplicated. Phases: `subjects` for fet_grades, then senior_phase,
+    intermediate_phase and grade_7 ({grades, subjects}); a subject may carry
+    per-grade `grade_duos`."""
+    t = _json(root / TUTOR_ROSTER)
+    phases = [(t.get("fet_grades") or [], t.get("subjects") or {})]
+    for key in ("senior_phase", "intermediate_phase", "grade_7"):
+        ph = t.get(key) or {}
+        phases.append((ph.get("grades") or [], ph.get("subjects") or {}))
+    duos: list[tuple[str, str]] = []
+    for grades, subjects in phases:
+        if grade not in {str(g) for g in grades}:
+            continue
+        for subj in subjects.values():
+            if not isinstance(subj, dict):
+                continue
+            d = (subj.get("grade_duos") or {}).get(grade) if "grade_duos" in subj else subj
+            if isinstance(d, dict) and all(re.fullmatch(r"tutor_\d{3}", str(d.get(k, ""))) for k in ("expert", "simplifier")):
+                pair = (d["expert"], d["simplifier"])
+                if pair not in duos:
+                    duos.append(pair)
+    return duos
+
+
+def tutor_display_name(root: Path, tutor: str) -> str:
+    """A tutor's display name: tutors roster or appearance/still.json
+    `display_name` if present, else tutor.md's `display_name:` line (where
+    the agent repo keeps it today)."""
+    tdir = root / "lms/team/tutors/CAPS" / tutor
+    for d in ((_json(root / TUTOR_ROSTER).get("tutors") or {}).get(tutor), _json(tdir / "appearance/still.json")):
+        if isinstance(d, dict) and isinstance(d.get("display_name"), str) and d["display_name"].strip():
+            return d["display_name"].strip()
+    try:
+        m = re.search(r"^display_name:\s*(.+?)\s*$", (tdir / "tutor.md").read_text(encoding="utf-8"), re.M)
+    except OSError:
+        m = None
+    if not m:
+        raise ValueError(f"no display name for {tutor}")
+    return m.group(1)
+
+
+def host_duos(root: Path, assistant: str) -> list[tuple[str, str]]:
+    duos: list[tuple[str, str]] = []
+    for g in assistant_grades(root, assistant):
+        duos += [d for d in grade_duos(root, g) if d not in duos]
+    return duos
+
+
+def fill_placeholders(text: str, names: dict[str, str]) -> str:
+    def sub(m: re.Match) -> str:
+        if m.group(1) not in names:
+            raise ValueError(f"unknown placeholder {{{m.group(1)}}}")
+        return names[m.group(1)]
+    return PLACEHOLDER_RE.sub(sub, text)
+
 
 def build_assistant_lines(root: Path, assistant: str, categories: list[str], pron: dict | None) -> list[dict]:
     """An assistant's named scripts: <cat>/<stem>.md -> <cat>/<stem>.wav, id
-    '<assistant>/<cat>/<stem>'. The voice spec's optional sample_line goes in
+    '<assistant>/<cat>/<stem>'. A script naming the session's tutors
+    ({first_tutor} = expert, {second_tutor} = simplifier) becomes one line per
+    duo of the grade(s) the assistant hosts, id and wav suffixed
+    '@<expert>+<simplifier>'; with no duo (no live grade) it is skipped. The voice spec's optional sample_line goes in
     the first category as samples/sample_line.wav."""
     rel = team_rel(assistant)
     adir = root / rel
     items: list[dict] = []
+    duos: list[tuple[str, str]] | None = None
     for cat in categories:
         if cat not in ASSISTANT_CATEGORIES:
             raise ValueError(f"unknown category {cat}")
@@ -98,9 +182,29 @@ def build_assistant_lines(root: Path, assistant: str, categories: list[str], pro
             if not re.fullmatch(r"[a-z0-9_]{1,40}", md.stem):
                 continue
             text = spoken_text(md.read_text(encoding="utf-8"))
-            if text:
+            if not text:
+                continue
+            script = f"{rel}/{cat}/{md.name}"
+            used = set(PLACEHOLDER_RE.findall(text))
+            if not used:
                 items.append(_item(f"{assistant}/{cat}/{md.stem}", cat, text, rel,
-                                   f"{cat}/{md.stem}.wav", f"{rel}/{cat}/{md.name}", pron))
+                                   f"{cat}/{md.stem}.wav", script, pron))
+                continue
+            unknown = used - set(DUO_PLACEHOLDERS)
+            if unknown:
+                raise ValueError(f"line {assistant}/{cat}/{md.stem}: unknown placeholder(s) "
+                                 + ", ".join("{%s}" % u for u in sorted(unknown)))
+            if duos is None:
+                duos = host_duos(root, assistant)
+            if not duos:
+                print(f"skip {assistant}/{cat}/{md.stem}: names the session tutors but {assistant} "
+                      "hosts no grade with a live tutor duo", file=sys.stderr)
+                continue
+            for e, s in duos:
+                names = dict(zip(DUO_PLACEHOLDERS, (tutor_display_name(root, e), tutor_display_name(root, s))))
+                sfx = f"@{e}+{s}"
+                items.append(_item(f"{assistant}/{cat}/{md.stem}{sfx}", cat, fill_placeholders(text, names), rel,
+                                   f"{cat}/{md.stem}{sfx}.wav", script, pron))
     if categories and categories[0] == ASSISTANT_CATEGORIES[0]:
         vj = root / "lms/team/voices" / f"{assistant}.voice.json"
         if vj.is_file():

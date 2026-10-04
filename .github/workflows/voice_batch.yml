@@ -168,6 +168,7 @@ jobs:
           fetch-depth: 1
           persist-credentials: false
           sparse-checkout: ${{ steps.batch.outputs.sparse }}
+          sparse-checkout-cone-mode: ${{ steps.batch.outputs.kind != 'assistant' }}
 
       - name: Start the agent branch from main
         if: steps.agentref.outputs.create == 'true'

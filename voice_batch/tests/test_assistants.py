@@ -38,8 +38,10 @@ class AssistantBatch(unittest.TestCase):
         self.assertEqual(b["tutor"], AID)
         self.assertEqual(b["categories"], ["intro", "handover", "signoff", "timekeeping"])
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (241.0, 25.0))
-        self.assertEqual(batch.sparse_paths(b), [f"lms/team/assistants/CAPS/{AID}", "lms/team/voices",
-                                                 "lms/team/voice_refs", "lms/team/scripts"])
+        sp = batch.sparse_paths(b)
+        for p in (f"/lms/team/assistants/CAPS/{AID}/", "/lms/team/assistants/CAPS/roster.json",
+                  "/lms/team/tutors/CAPS/roster.json", "/lms/team/tutors/CAPS/*/tutor.md"):
+            self.assertIn(p, sp)
         out = batch.outputs(b)
         self.assertIn(f"team_dir=lms/team/assistants/CAPS/{AID}", out)
         self.assertIn("f0_target_hz=241", out)
@@ -152,3 +154,75 @@ class AssistantRun(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def make_rosters(root: Path, by_grade: dict, extra_phase: dict | None = None) -> None:
+    (root / "lms/team/assistants/CAPS").mkdir(parents=True, exist_ok=True)
+    (root / lines.ASSISTANT_ROSTER).write_text(json.dumps({"by_grade": by_grade}))
+    t = {"fet_grades": [10, 11, 12], "subjects": {"maths": {"expert": "tutor_001", "simplifier": "tutor_002"}},
+         "senior_phase": {"grades": [8, 9], "subjects": {
+             "maths": {"expert": "tutor_001", "simplifier": "tutor_002"},
+             "ns": {"expert": "tutor_003", "simplifier": "tutor_004"},
+             "ems": {"grade_duos": {"8": {"expert": "tutor_007", "simplifier": "tutor_008"},
+                                    "9": {"expert": "tutor_005", "simplifier": "tutor_006"}}},
+             "tech": {"grade_duos": {"9": {"expert": "tutor_005", "simplifier": "tutor_006"}}}}}}
+    t.update(extra_phase or {})
+    (root / "lms/team/tutors/CAPS").mkdir(parents=True, exist_ok=True)
+    (root / lines.TUTOR_ROSTER).write_text(json.dumps(t))
+    for n in range(1, 9):
+        td = root / f"lms/team/tutors/CAPS/tutor_{n:03d}"
+        td.mkdir(parents=True, exist_ok=True)
+        (td / "tutor.md").write_text(f"# Tutor\n\nid: tutor_{n:03d}\ndisplay_name: Name {n}\n")
+
+
+class HostPlaceholders(unittest.TestCase):
+    def _agent(self, d: Path, by_grade: dict) -> None:
+        make_agent(d)
+        (d / lines.team_rel(AID) / "intro/returning.md").write_text("Welcome back. {first_tutor} takes over.\n")
+        (d / lines.team_rel(AID) / "handover/out_of_break.md").write_text(
+            "Over to you, {second_tutor}. Say {{Ngubane|ngoo-BAH-neh}}.\n")
+        make_rosters(d, by_grade)
+
+    def test_one_variant_per_duo_of_the_hosted_grade(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            self._agent(d, {"9": AID, "10": "assistant_001"})
+            self.assertEqual(lines.host_duos(d, AID), [("tutor_001", "tutor_002"), ("tutor_003", "tutor_004"),
+                                                       ("tutor_005", "tutor_006")])
+            items = {it["id"]: it for it in lines.build_lines(d, AID, ["intro", "handover"], {}, kind="assistant")}
+            self.assertIn(f"{AID}/intro/new", items)  # no placeholder: one plain line
+            self.assertNotIn(f"{AID}/intro/returning", items)
+            it = items[f"{AID}/intro/returning@tutor_001+tutor_002"]
+            self.assertEqual(it["text"], "Welcome back. Name 1 takes over.")
+            self.assertEqual(it["file"], f"{lines.team_rel(AID)}/intro/returning@tutor_001+tutor_002.wav")
+            self.assertEqual(items[f"{AID}/handover/out_of_break@tutor_003+tutor_004"]["text"],
+                             "Over to you, Name 4. Say Ngubane.")
+            self.assertEqual(sum(k.startswith(f"{AID}/intro/returning@") for k in items), 3)
+            self.assertEqual(batch.assistant_category_of(f"{AID}/intro/returning@tutor_005+tutor_006", AID), "intro")
+
+    def test_no_live_grade_skips_placeholder_lines(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            self._agent(d, {"10": "assistant_001"})
+            with mock.patch("sys.stderr") as err:
+                ids = [it["id"] for it in lines.build_lines(d, AID, ["intro"], {}, kind="assistant")]
+            self.assertEqual(ids, [f"{AID}/intro/new"])
+            self.assertIn("hosts no grade", "".join(str(c) for c in err.write.call_args_list))
+
+    def test_unknown_placeholder_is_an_error(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            self._agent(d, {"9": AID})
+            (d / lines.team_rel(AID) / "intro/new.md").write_text("Hi {student_name}.\n")
+            with self.assertRaisesRegex(ValueError, "student_name"):
+                lines.build_lines(d, AID, ["intro"], {}, kind="assistant")
+
+    def test_display_name_prefers_roster_then_still(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            make_rosters(d, {})
+            self.assertEqual(lines.tutor_display_name(d, "tutor_001"), "Name 1")
+            app = d / "lms/team/tutors/CAPS/tutor_001/appearance"
+            app.mkdir()
+            (app / "still.json").write_text(json.dumps({"display_name": "Still Name"}))
+            self.assertEqual(lines.tutor_display_name(d, "tutor_001"), "Still Name")

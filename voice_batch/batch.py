@@ -42,6 +42,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 CATEGORIES = ("acknowledgements", "greetings", "signoffs", "teaching")
 ASSISTANT_CATEGORIES = ("intro", "handover", "signoff", "timekeeping")
+DUO_SUFFIX_RE = r"@tutor_\d{3}\+tutor_\d{3}"  # per-duo host line variant (lines.py)
 KINDS = ("tutor", "r3", "assistant")
 COMMON = {
     "voice": r"[a-z][a-z0-9_]{0,31}",
@@ -66,8 +67,11 @@ ASR_MODEL_EN = "small.en"
 ASR_MODEL_MULTI = "small"
 
 SPARSE_TUTOR = ("lms/team/tutors/CAPS/{tutor}", "lms/team/voices", "lms/team/voice_refs", "lms/team/scripts")
-SPARSE_ASSISTANT = ("lms/team/assistants/CAPS/{tutor}", "lms/team/voices", "lms/team/voice_refs",
-                    "lms/team/scripts")
+# Non-cone patterns (the workflow turns cone mode off for assistants): the
+# rosters and tutor cards name the session's tutor duo in host lines.
+SPARSE_ASSISTANT = ("/lms/team/assistants/CAPS/{tutor}/", "/lms/team/voices/", "/lms/team/voice_refs/",
+                    "/lms/team/scripts/", "/lms/team/assistants/CAPS/roster.json", "/lms/team/tutors/CAPS/roster.json",
+                    "/lms/team/tutors/CAPS/*/tutor.md", "/lms/team/tutors/CAPS/*/appearance/still.json")
 SPARSE_R3 = ("lms/dart/templates/assets/r3_packs/audio", "lms/team/voice_refs", "lms/team/scripts",
              "lms/dart/lib/src/common/application/r3", "lms/dart/lib/src/translations")
 
@@ -89,7 +93,7 @@ def category_of(line_id: str, tutor: str) -> str | None:
 
 def assistant_category_of(line_id: str, assistant: str) -> str | None:
     """Category of an assistant line id '<assistant>/<category>/<stem>'."""
-    m = re.fullmatch(rf"{assistant}/({'|'.join(ASSISTANT_CATEGORIES)})/[a-z0-9_]{{1,40}}", line_id)
+    m = re.fullmatch(rf"{assistant}/({'|'.join(ASSISTANT_CATEGORIES)})/[a-z0-9_]{{1,40}}({DUO_SUFFIX_RE})?", line_id)
     return m.group(1) if m else None
 
 
@@ -234,7 +238,7 @@ def pronunciation_errors(b: dict, agent_root: str | Path | None = None, factory_
             items = build_lines(agent_root, b["tutor"], b["categories"], pron, kind=b["kind"])
             if b.get("lines"):
                 items = [it for it in items if it["id"] in set(b["lines"])]
-    except pronunciations.PronunciationError as exc:
+    except (pronunciations.PronunciationError, ValueError) as exc:
         return [str(exc)]
     return pronunciations.check_ambiguous(items, pron)
 
