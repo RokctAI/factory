@@ -118,7 +118,8 @@ class Selection(unittest.TestCase):
         y, pauses = stitch([np.concatenate([pad, tone(1), pad])] * 3, sr)
         self.assertEqual(pauses, [300, 280])
         self.assertTrue(all(280 <= p <= 320 for p in pauses))
-        self.assertAlmostEqual(len(y) / sr, 3 + 6 * 0.04 + 0.22 + 0.20, delta=0.1)  # trim works in 128-sample hops
+        # + the lead-in shortfall (the faded pad is mostly under -40 dB, so ~200 ms is added)
+        self.assertAlmostEqual(len(y) / sr, 3 + 6 * 0.04 + 0.22 + 0.20 + 0.20, delta=0.1)  # trim works in 128-sample hops
         self.assertAlmostEqual(float(y[0]), 0.0, places=6)
 
 
