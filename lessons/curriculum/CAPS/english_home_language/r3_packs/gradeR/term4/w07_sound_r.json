@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w07_sound_r",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Reptiles and dinosaurs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Reptiles and dinosaurs: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'r' sound at the beginning of words (rabbit, rain, ring, rock)"
+  },
+  "skill": "phonics.initial_sound.r",
+  "prereq_skills": ["phonics.initial_sound.s"],
+  "images": ["rock", "rabbit", "lizard", "snake", "rain", "sun", "egg", "ring", "dinosaur", "tutor_holds_snake"],
+  "show": {
+    "line": "Listen. r as in rock. r, r, rock. A lizard sits on a rock. r, r, reptile!",
+    "image": "rock"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with r, as in rock?", "options": ["rabbit", "lizard", "snake"], "answer": "rabbit", "praise": "Yes! r, r, rabbit."},
+    {"type": "say_it", "prompt": "Say the sound with me. r, as in rock!", "accept": ["r", "rrr", "rr", "ra", "ru"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Rain falls on the rock. The tortoise hides in its shell. What falls on the rock?", "options": ["rain", "sun", "egg"], "answer": "rain", "praise": "Yes! r, r, rain."},
+    {"type": "listen_tap", "prompt": "Which one starts with r? r, r.", "options": ["ring", "egg", "dinosaur"], "answer": "ring", "praise": "Yes! r, r, ring."},
+    {"type": "say_it", "prompt": "What is this? It starts with r.", "accept": ["rabbit", "a rabbit", "rabit", "bunny rabbit", "the rabbit"], "image": "rabbit"},
+    {"type": "match_sort", "prompt": "Does it start with r? Put r words in the r group.", "groups": ["r", "not_r"], "items": [{"image": "rock", "group": "r"}, {"image": "rain", "group": "r"}, {"image": "ring", "group": "r"}, {"image": "snake", "group": "not_r"}, {"image": "egg", "group": "not_r"}]}
+  ],
+  "hints": ["Listen for r at the start. r, r, rock.", "Growl like a little dog. r, r."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with r.",
+    "tutor_try": "Snake! Snake starts with r.",
+    "image": "tutor_holds_snake",
+    "answer": "no",
+    "win_line": "You caught me! Snake starts with s. Rock starts with r.",
+    "gentle_line": "Let's listen together. r, r, rock. Rock starts with r!"
+  },
+  "parent_line": "Can hear the r sound at the start of words."
+}

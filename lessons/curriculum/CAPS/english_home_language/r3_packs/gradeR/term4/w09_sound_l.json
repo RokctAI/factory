@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w09_sound_l",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Wild animals and sport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Wild animals and sport: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 'l' sound at the beginning of words (lion, leg, leaf, lamp)"
+  },
+  "skill": "phonics.initial_sound.l",
+  "prereq_skills": ["phonics.initial_sound.r"],
+  "images": ["lion", "leaf", "zebra", "ball", "leg", "hand", "head", "leopard", "hippo", "giraffe", "lamp", "tutor_holds_zebra"],
+  "show": {
+    "line": "Listen. l as in lion. l, l, lion. The lion licks its paw. l, l, leg!",
+    "image": "lion"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with l, as in lion?", "options": ["leaf", "zebra", "ball"], "answer": "leaf", "praise": "Yes! l, l, leaf."},
+    {"type": "say_it", "prompt": "Say the sound with me. l, as in lion!", "accept": ["l", "lll", "ll", "la", "lu"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Lebo lifts her leg and kicks the ball. Which body part does Lebo lift?", "options": ["leg", "hand", "head"], "answer": "leg", "praise": "Yes! l, l, leg."},
+    {"type": "listen_tap", "prompt": "Which animal starts with l? l, l.", "options": ["leopard", "hippo", "giraffe"], "answer": "leopard", "praise": "Yes! l, l, leopard."},
+    {"type": "say_it", "prompt": "What is this? It starts with l.", "accept": ["lion", "a lion", "the lion", "lyon", "leeu"], "image": "lion"},
+    {"type": "match_sort", "prompt": "Does it start with l? Put l words in the l group.", "groups": ["l", "not_l"], "items": [{"image": "lion", "group": "l"}, {"image": "leaf", "group": "l"}, {"image": "lamp", "group": "l"}, {"image": "zebra", "group": "not_l"}, {"image": "ball", "group": "not_l"}]}
+  ],
+  "hints": ["Listen for l at the start. l, l, lion.", "Put your tongue up behind your teeth. l, l."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with l.",
+    "tutor_try": "Zebra! Zebra starts with l.",
+    "image": "tutor_holds_zebra",
+    "answer": "no",
+    "win_line": "You caught me! Zebra starts with z. Lion starts with l.",
+    "gentle_line": "Let's listen together. l, l, lion. Lion starts with l!"
+  },
+  "parent_line": "Can hear the l sound at the start of words."
+}

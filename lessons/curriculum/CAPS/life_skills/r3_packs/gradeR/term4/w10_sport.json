@@ -1,0 +1,38 @@
+{
+  "id": "life_skills.gradeR.term4.w10_sport",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Wild animals and sport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Wild animals and sport",
+    "subtopic": "Sport: sport I like, why we have rules in sport and why playing sport is good for me"
+  },
+  "skill": "wellbeing.sport",
+  "prereq_skills": ["wellbeing.exercise"],
+  "images": ["children_sports", "soccer", "swimming", "netball", "running", "cricket", "shaking_hands", "pushing_player", "skipping", "drinking_water", "too_much_tv", "too_many_sweets", "tutor_holds_ball"],
+  "show": {
+    "line": "Sport keeps our bodies strong and happy. We play fair and follow the rules.",
+    "image": "children_sports"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which child is playing soccer?", "options": ["soccer", "swimming", "netball"], "answer": "soccer", "praise": "Kick the ball!"},
+    {"type": "listen_tap", "prompt": "Which sport do we play in water?", "options": ["swimming", "running", "cricket"], "answer": "swimming", "praise": "Swimming!"},
+    {"type": "listen_tap", "prompt": "Which child is playing fair?", "options": ["shaking_hands", "pushing_player"], "answer": "shaking_hands", "praise": "Good sport! Shake hands."},
+    {"type": "say_it", "prompt": "Why do we have rules in sport?", "accept": ["to be fair", "fair", "to play fair", "so it is fair", "to be safe", "safe", "to keep safe"]},
+    {"type": "match_sort", "prompt": "Good for our bodies or not? Sort them.", "groups": ["good", "not_good"], "items": [{"image": "running", "group": "good"}, {"image": "skipping", "group": "good"}, {"image": "drinking_water", "group": "good"}, {"image": "too_much_tv", "group": "not_good"}, {"image": "too_many_sweets", "group": "not_good"}]}
+  ],
+  "hints": ["Sport makes our hearts and muscles strong.", "Rules keep a game fair and safe."],
+  "beat_the_tutor": {
+    "setup": "My turn! We are playing soccer.",
+    "tutor_try": "I will pick up the ball and run with it!",
+    "image": "tutor_holds_ball",
+    "answer": "no",
+    "win_line": "You caught me! In soccer we kick, not carry.",
+    "gentle_line": "Soccer rules say kick the ball. We play fair!"
+  },
+  "parent_line": "Can name a sport, say why rules matter and why sport is good for us."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "life_skills.gradeR.term4.w05_spring",
+  "subject": "Life Skills",
+  "grade": "R",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Spring and birds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/life_skills/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Spring and birds",
+    "subtopic": "Spring: the weather in spring and how nature, animals and people are affected (what we eat, wear and do)"
+  },
+  "skill": "seasons.spring",
+  "prereq_skills": ["seasons.summer_winter"],
+  "images": ["spring_scene", "spring_flowers", "winter_snow", "autumn_leaves", "new_leaves", "snowmen", "icicles", "t_shirt", "thick_jacket", "scarf_gloves", "blossoms", "baby_birds", "bees_on_flowers", "heater", "beanie", "tutor_winter_jacket"],
+  "show": {
+    "line": "It is spring! The days get warmer. Flowers bloom and trees grow new leaves.",
+    "image": "spring_scene"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which picture shows spring?", "options": ["spring_flowers", "winter_snow", "autumn_leaves"], "answer": "spring_flowers", "praise": "Spring flowers!"},
+    {"type": "listen_tap", "prompt": "In spring, what do trees grow?", "options": ["new_leaves", "snowmen", "icicles"], "answer": "new_leaves", "praise": "New green leaves!"},
+    {"type": "listen_tap", "prompt": "It is warm in spring. What can we wear?", "options": ["t_shirt", "thick_jacket", "scarf_gloves"], "answer": "t_shirt", "praise": "A cool T-shirt!"},
+    {"type": "match_sort", "prompt": "Spring or winter? Sort them.", "groups": ["spring", "winter"], "items": [{"image": "blossoms", "group": "spring"}, {"image": "baby_birds", "group": "spring"}, {"image": "bees_on_flowers", "group": "spring"}, {"image": "heater", "group": "winter"}, {"image": "beanie", "group": "winter"}]},
+    {"type": "say_it", "prompt": "What grows in the garden in spring?", "accept": ["flowers", "flower", "plants", "leaves", "grass", "seeds", "vegetables"]}
+  ],
+  "hints": ["Think warm days and new flowers.", "In spring many baby animals are born."],
+  "beat_the_tutor": {
+    "setup": "My turn! Spring is here.",
+    "tutor_try": "I will wear my thick winter jacket!",
+    "image": "tutor_winter_jacket",
+    "answer": "no",
+    "win_line": "You caught me! Spring is warm. A T-shirt is better.",
+    "gentle_line": "Spring days get warm. We wear lighter clothes!"
+  },
+  "parent_line": "Can describe spring weather and how plants, animals and people change."
+}

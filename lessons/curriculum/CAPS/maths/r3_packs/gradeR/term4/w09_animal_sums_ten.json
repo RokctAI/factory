@@ -1,0 +1,38 @@
+{
+  "id": "maths.gradeR.term4.w09_animal_sums_ten",
+  "subject": "Mathematics",
+  "grade": "R",
+  "term": 4,
+  "weeks": [9, 10],
+  "theme": "Wild animals and sport",
+  "source": {
+    "file": "lessons/curriculum/CAPS/maths/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Wild animals and sport: Numeracy",
+    "subtopic": "Addition and subtraction story sums with answers up to 10"
+  },
+  "skill": "number.add_subtract.to_10",
+  "prereq_skills": ["number.add_subtract.to_9", "count.zero_to_10"],
+  "images": ["waterhole_animals", "numeral_10", "numeral_9", "numeral_5", "numeral_6", "numeral_4", "numeral_7", "elephants_six_two", "giraffes_four_left", "numeral_8", "tutor_hippos_wrong"],
+  "show": {
+    "line": "Wild animals at the waterhole! Let's add and take away animals up to ten.",
+    "image": "waterhole_animals"
+  },
+  "rounds": [
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Five zebras drink water. Five more zebras come. How many zebras now?", "options": ["numeral_10", "numeral_9", "numeral_5"], "answer": "numeral_10", "praise": "Ten! Five and five is ten."},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Ten monkeys sit in a tree. Four jump down. How many monkeys are still in the tree?", "options": ["numeral_6", "numeral_4", "numeral_7"], "answer": "numeral_6", "praise": "Six! Ten take away four is six."},
+    {"type": "count_tap", "prompt": "Six elephants and two more. Count all the elephants.", "image": "elephants_six_two", "count": "8", "options": ["7", "8", "9"], "answer": "8", "praise": "Eight elephants!"},
+    {"type": "say_it", "prompt": "Seven giraffes. Three walk away. How many are left? Say the number.", "accept": ["four", "4", "for", "foh"], "image": "giraffes_four_left"},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Two lions sleep. Seven lions play. How many lions?", "options": ["numeral_9", "numeral_8", "numeral_5"], "answer": "numeral_9", "praise": "Nine! Two and seven is nine."}
+  ],
+  "hints": ["Show the first number on your fingers. Add more or fold some down.", "Count what you have at the end."],
+  "beat_the_tutor": {
+    "setup": "My turn! Eight hippos. Two more come.",
+    "tutor_try": "Eight and two more is nine!",
+    "image": "tutor_hippos_wrong",
+    "answer": "numeral_10",
+    "win_line": "You caught me! Eight and two is ten.",
+    "gentle_line": "Let's count on from eight. Nine, ten. Ten hippos!"
+  },
+  "parent_line": "Can solve add and take away stories up to 10."
+}

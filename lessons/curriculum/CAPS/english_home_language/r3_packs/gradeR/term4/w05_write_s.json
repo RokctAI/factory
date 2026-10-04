@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term4.w05_write_s",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Spring and birds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Spring and birds: Emergent Writing",
+    "subtopic": "Letter formation of 's' (finger paint, crayon, sand tray)"
+  },
+  "skill": "writing.letter.s",
+  "prereq_skills": ["phonics.initial_sound.s", "writing.letter.d"],
+  "images": ["letter_s", "letter_d", "letter_b", "bird", "snake", "egg", "letter_c", "tutor_wrote_c"],
+  "show": {
+    "line": "Let's write s. Curve this way, then curve back, like a snake. s, s, sun!",
+    "image": "letter_s"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says s, as in sun.", "options": ["letter_d", "letter_s", "letter_b"], "answer": "letter_s", "praise": "Yes! That is s."},
+    {"type": "say_it", "prompt": "This letter says s. Say the sound!", "accept": ["s", "sss", "ss", "si", "se"]},
+    {"type": "trace", "prompt": "Trace s with your finger. Curve one way, then curve back.", "glyph": "s"},
+    {"type": "listen_tap", "prompt": "Which picture starts with s?", "options": ["bird", "snake", "egg"], "answer": "snake", "praise": "Yes! s, s, snake."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is s? It starts at the top and curves like a snake.", "options": ["letter_s", "letter_c"], "answer": "letter_s"}
+  ],
+  "hints": ["s curves like a snake.", "Start at the top. Curve left, then curve right."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write s for sun.",
+    "tutor_try": "One round curve. Look, I wrote s!",
+    "image": "tutor_wrote_c",
+    "answer": "s",
+    "win_line": "You caught me! That is c. s curves back the other way too.",
+    "gentle_line": "Look together. Curve one way, then curve back. That is s!"
+  },
+  "parent_line": "Can recognise the letter s, say its sound and trace it."
+}

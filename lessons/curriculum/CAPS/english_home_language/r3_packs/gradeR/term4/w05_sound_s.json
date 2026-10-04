@@ -1,0 +1,39 @@
+{
+  "id": "english_home_language.gradeR.term4.w05_sound_s",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [5, 6],
+  "theme": "Spring and birds",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Spring and birds: Emergent Reading and Phonics",
+    "subtopic": "Phonics: identifies the 's' sound at the beginning of words (sun, seed, snake, sock)"
+  },
+  "skill": "phonics.initial_sound.s",
+  "prereq_skills": ["phonics.initial_sound.d"],
+  "images": ["sun", "snake", "bird", "egg", "seed", "nest", "tree", "sock", "hat", "tutor_holds_bird"],
+  "show": {
+    "line": "Listen. s as in sun. s, s, sun. The spring sun shines. s, s, seed!",
+    "image": "sun"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Which one starts with s, as in sun?", "options": ["snake", "bird", "egg"], "answer": "snake", "praise": "Yes! s, s, snake."},
+    {"type": "say_it", "prompt": "Say the sound with me. s, as in sun!", "accept": ["s", "sss", "ss", "si", "se"]},
+    {"type": "story_tap", "prompt": "Listen to the story.", "story": "Sipho plants a seed in the soil. The sun shines and it grows. What did Sipho plant?", "options": ["seed", "nest", "tree"], "answer": "seed", "praise": "Yes! s, s, seed."},
+    {"type": "listen_tap", "prompt": "Which one starts with s? s, s.", "options": ["sock", "hat", "nest"], "answer": "sock", "praise": "Yes! s, s, sock."},
+    {"type": "say_it", "prompt": "What is this? It starts with s.", "accept": ["sun", "the sun", "son", "sunny", "a sun"], "image": "sun"},
+    {"type": "match_sort", "prompt": "Does it start with s? Put s words in the s group.", "groups": ["s", "not_s"], "items": [{"image": "sun", "group": "s"}, {"image": "seed", "group": "s"}, {"image": "sock", "group": "s"}, {"image": "bird", "group": "not_s"}, {"image": "egg", "group": "not_s"}]}
+  ],
+  "hints": ["Listen for s at the start. s, s, sun.", "Hiss like a snake. s, s."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will find a word that starts with s.",
+    "tutor_try": "Bird! Bird starts with s.",
+    "image": "tutor_holds_bird",
+    "answer": "no",
+    "win_line": "You caught me! Bird starts with b. Sun starts with s.",
+    "gentle_line": "Let's listen together. s, s, sun. Sun starts with s!"
+  },
+  "parent_line": "Can hear the s sound at the start of words."
+}

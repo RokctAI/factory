@@ -1,0 +1,38 @@
+{
+  "id": "english_home_language.gradeR.term4.w07_write_r",
+  "subject": "English Home Language",
+  "grade": "R",
+  "term": 4,
+  "weeks": [7, 8],
+  "theme": "Reptiles and dinosaurs",
+  "source": {
+    "file": "lessons/curriculum/CAPS/english_home_language/syllabus/gradeR.json",
+    "term": 4,
+    "topic": "Reptiles and dinosaurs: Emergent Writing",
+    "subtopic": "Letter formation of 'r' (finger paint, crayon, sand tray)"
+  },
+  "skill": "writing.letter.r",
+  "prereq_skills": ["phonics.initial_sound.r", "writing.letter.s"],
+  "images": ["letter_r", "letter_s", "letter_d", "snake", "rabbit", "egg", "letter_n", "tutor_wrote_n"],
+  "show": {
+    "line": "Let's write r. Go down, back up, then a little bump over. r, r, rock!",
+    "image": "letter_r"
+  },
+  "rounds": [
+    {"type": "listen_tap", "prompt": "Tap the letter that says r, as in rock.", "options": ["letter_s", "letter_r", "letter_d"], "answer": "letter_r", "praise": "Yes! That is r."},
+    {"type": "say_it", "prompt": "This letter says r. Say the sound!", "accept": ["r", "rrr", "rr", "ra", "ru"]},
+    {"type": "trace", "prompt": "Trace r with your finger. Down, back up, then a little bump.", "glyph": "r"},
+    {"type": "listen_tap", "prompt": "Which picture starts with r?", "options": ["snake", "rabbit", "egg"], "answer": "rabbit", "praise": "Yes! r, r, rabbit."},
+    {"type": "listen_tap", "prompt": "Look carefully. Which one is r? It has only a little bump.", "options": ["letter_r", "letter_n"], "answer": "letter_r"}
+  ],
+  "hints": ["r goes down, then a little bump.", "Start at the top. Down, up, and over."],
+  "beat_the_tutor": {
+    "setup": "My turn! I will write r for rock.",
+    "tutor_try": "Down, up and over, then down again. Look, I wrote r!",
+    "image": "tutor_wrote_n",
+    "answer": "r",
+    "win_line": "You caught me! That is n. r stops after the little bump.",
+    "gentle_line": "Look together. Down, up, a little bump. That is r!"
+  },
+  "parent_line": "Can recognise the letter r, say its sound and trace it."
+}
