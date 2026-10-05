@@ -148,14 +148,18 @@ class PushAgentRebaseTest(unittest.TestCase):
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_bytes(data)
 
-    def checkout(self, name: str, ref: str = BRANCH) -> Path:
-        """Like actions/checkout with sparse-checkout, fetch-depth 1, persist-credentials false."""
+    def checkout(self, name: str, ref: str = BRANCH, patterns: tuple | None = None) -> Path:
+        """Like actions/checkout with sparse-checkout, fetch-depth 1, persist-credentials false.
+        patterns: non-cone sparse patterns (the workflow's kind assistant) instead of cone mode."""
         d = self.tmp / name
         self.git("init", "--quiet", str(d))
         self.git("remote", "add", "origin", self.url, cwd=d)
         self.git("config", "remote.origin.promisor", "true", cwd=d)
         self.git("config", "remote.origin.partialclonefilter", "blob:none", cwd=d)
-        self.git("sparse-checkout", "set", TDIR, ADIR, PDIR, "lms/team/voice_refs", cwd=d)
+        if patterns:
+            self.git("sparse-checkout", "set", "--no-cone", *patterns, cwd=d)
+        else:
+            self.git("sparse-checkout", "set", TDIR, ADIR, PDIR, "lms/team/voice_refs", cwd=d)
         self.git("-c", self.hdr, "fetch", "--quiet", "--filter=blob:none", "--depth=1", "origin",
                  f"+refs/heads/{ref}:refs/remotes/origin/{ref}", cwd=d)
         self.git("-c", self.hdr, "checkout", "--quiet", "-B", ref, f"refs/remotes/origin/{ref}", cwd=d)
@@ -471,6 +475,43 @@ class PushAgentRebaseTest(unittest.TestCase):
             self.assertNotEqual(r.returncode, 0)
             self.assertIn("non-rokct/", r.stdout)
         self.assertEqual(self.remote_sha("main"), self.remote_sha(f"{BRANCH}~2"))
+
+    def test_non_cone_checkout_lazy_fetches_root_gitignore_with_auth(self):
+        """The run 37273277808 shape (kind assistant): a non-cone sparse
+        checkout leaves the root .gitignore and .gitattributes out of the
+        worktree, so git add of a manifest reads .gitignore from the index and
+        lazily fetches its blob from the promisor remote. That fetch must carry
+        the auth header, or it dies with "could not read Username" / "could not
+        fetch ... from promisor remote" at the first git add."""
+        adir = "lms/team/assistants/CAPS/assistant_005"
+        self.write(self.seed, ".gitignore", b"*.tmp\n__pycache__/\n")
+        self.write(self.seed, ".gitattributes", b"* text=auto\n*.py text eol=lf\n")
+        self.write(self.seed, f"{adir}/voice_b_manifest.intro.json", b'{"lines": ["intro"]}\n')
+        self.git("add", "-A", cwd=self.seed)
+        self.git("commit", "--quiet", "-m", "root files and an earlier manifest", cwd=self.seed)
+        self.git("-c", self.hdr, "push", "--quiet", self.url, f"HEAD:refs/heads/{BRANCH}", cwd=self.seed)
+        patterns = (f"/{adir}/", "/lms/team/voice_refs/")
+        a = self.checkout("handover", patterns=patterns)
+        self.assertFalse((a / ".gitignore").exists())
+        ignore_blob = self.git("rev-parse", "HEAD:.gitignore", cwd=a).stdout.strip()
+        missing = self.git("rev-list", "--objects", "--missing=print", "HEAD", cwd=a).stdout
+        self.assertIn("?" + ignore_blob, missing.split())
+        self.write(a, f"{adir}/handover/01.wav", b"handover-audio")
+        self.write(a, f"{adir}/voice_b_manifest.handover.json", b'{"lines": []}\n')
+        self.write(a, f"{adir}/voice_b_manifest.intro.json", b'{"lines": ["intro", "again"]}\n')
+        r = self.push(a, "handover", "assistant_005", "voice_b")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertNotIn("promisor remote", r.stderr)
+        self.assertIn("pushed", r.stdout)
+        files = self.remote_files()
+        for f in (f"{adir}/handover/01.wav", f"{adir}/voice_b_manifest.handover.json", ".gitignore"):
+            self.assertIn(f, files)
+        self.assertEqual(self.git("show", f"{BRANCH}:{adir}/voice_b_manifest.intro.json",
+                                  cwd=self.tmp / "srv" / "agent.git").stdout, '{"lines": ["intro", "again"]}\n')
+        # The token never lands in the checkout's config or the log.
+        for secret in (TOKEN, EXPECTED.split()[1]):
+            self.assertNotIn(secret, (a / ".git" / "config").read_text())
+            self.assertNotIn(secret, r.stdout.replace(f"::add-mask::{EXPECTED.split()[1]}", "") + r.stderr)
 
     def test_unexpected_git_failure_is_annotated(self):
         """A git command that dies outside the push loop names itself in an
