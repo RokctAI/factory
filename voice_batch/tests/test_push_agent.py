@@ -299,6 +299,37 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.assertNotIn(TOKEN, (b / ".git" / "config").read_text())
         self.assertNotIn(EXPECTED.split()[1], (b / ".git" / "config").read_text())
 
+    def test_tutor_clip_timings_are_committed(self):
+        """<clip>.timings.json next to a committed clip goes to the agent
+        branch with it; a stray timings file or any other extra does not."""
+        a = self.checkout("timings")
+        self.write(a, f"{TDIR}/greetings/01.wav", b"greetings-audio")
+        self.write(a, f"{TDIR}/greetings/01.timings.json", b'{"wpm": 120}\n')
+        self.write(a, f"{TDIR}/voice_a_manifest.greetings.json", b'{"lines": []}\n')
+        self.write(a, f"{TDIR}/greetings/orphan.timings.json", b"{}\n")
+        self.write(a, f"{TDIR}/greetings/notes.txt", b"no")
+        self.write(a, f"{TDIR}/greetings/01.results.json", b"{}\n")
+        r = self.push(a, "greetings")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn(f"{TDIR}/greetings/01.timings.json", r.stdout)
+        files = self.remote_files()
+        for f in (f"{TDIR}/greetings/01.wav", f"{TDIR}/greetings/01.timings.json",
+                  f"{TDIR}/voice_a_manifest.greetings.json"):
+            self.assertIn(f, files)
+        for f in (f"{TDIR}/greetings/orphan.timings.json", f"{TDIR}/greetings/notes.txt",
+                  f"{TDIR}/greetings/01.results.json"):
+            self.assertNotIn(f, files)
+        self.assertEqual(self.git("show", f"{BRANCH}:{TDIR}/greetings/01.timings.json",
+                                  cwd=self.tmp / "srv" / "agent.git").stdout, '{"wpm": 120}\n')
+        # A re-render that changes only the timings still commits them.
+        b = self.checkout("timings2")
+        self.write(b, f"{TDIR}/greetings/01.timings.json", b'{"wpm": 118}\n')
+        r = self.push(b, "greetings")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(self.git("show", f"{BRANCH}:{TDIR}/greetings/01.timings.json",
+                                  cwd=self.tmp / "srv" / "agent.git").stdout, '{"wpm": 118}\n')
+        self.assertIn("nothing new to commit", self.push(b, "greetings").stdout)
+
     def test_resolve_existing_and_missing_branch(self):
         r, out = self.resolve()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)

@@ -74,6 +74,12 @@ else
   done
   { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; } \
     | { grep -E '\.wav$' || true; } | sort -u | while IFS= read -r f; do git add -- "$f"; done
+  # run.py writes <clip>.timings.json next to each committed clip: stage it
+  # (new or changed) whenever its clip is there, never a stray one.
+  { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; } \
+    | { grep -E '\.timings\.json$' || true; } | sort -u | while IFS= read -r f; do
+      if [ -e "${f%.timings.json}.wav" ]; then git add -- "$f"; fi
+    done
 fi
 if git diff --cached --quiet; then
   echo "category $category: nothing new to commit"
