@@ -19,15 +19,20 @@
 # echoed, never written to .git/config; xtrace is off.
 # Idempotent: re-running over identical files commits nothing. Parallel
 # category jobs touch disjoint files, so a rejected push is resolved by
-# rebasing this job's one commit onto the remote branch and retrying (up to 5
-# times). The branch may not exist yet (the job started it from main after
-# the old one was merged and deleted): the first push creates it, and a
-# sibling that loses that race finds it on the remote and rebases onto it.
+# rebasing this job's one commit onto the remote branch and retrying (up to 8
+# times, with jitter; a failed fetch or rebase-time network error is retried
+# too, not fatal). The voice batch plan job creates the branch before the
+# matrix starts, so render jobs normally only append to it. If it does not
+# exist yet (the job started it from main after the old one was merged and
+# deleted): the first push creates it, and a sibling that loses that race
+# finds it on the remote and rebases onto it. Any other failing command is
+# reported as an ::error:: annotation naming its line and exit code.
 # The checkout is a sparse, blob-less partial clone, so the rebase lazily
 # fetches missing blobs from the promisor remote: it must carry the header too,
 # or that fetch fails with "could not read Username".
 set +x
-set -euo pipefail
+set -Eeuo pipefail
+trap 'rc=$?; echo "::error::push_agent.sh line $LINENO: \"$BASH_COMMAND\" exited $rc"' ERR
 
 dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor, r3 or pronunciation}"; voice="${4:?voice}"; category="${5:?category}"
 : "${AGENT_PAT:?AGENT_PAT must be set}"
@@ -93,25 +98,33 @@ host="$(git remote get-url origin | sed -E 's#^([a-z]+://[^/]+/).*#\1#')"
 # -c is inherited by git's child processes (GIT_CONFIG_PARAMETERS), which
 # covers the promisor lazy fetches that rebase triggers.
 agit() { git -c "http.${host}.extraheader=$auth" "$@"; }
-for i in 1 2 3 4 5; do
+tries=8
+for i in $(seq 1 "$tries"); do
   if agit push --quiet origin "HEAD:refs/heads/$branch"; then
     echo "category $category: pushed $(git rev-parse --short HEAD) to $branch"
     exit 0
   fi
   # 2 = the branch is not on the remote (yet): nothing to rebase onto, retry
-  # the push that creates it. Anything else non-zero is a real failure.
+  # the push that creates it.
   rc=0; agit ls-remote --exit-code --heads origin "refs/heads/$branch" > /dev/null || rc=$?
   if [ "$rc" = 2 ]; then
     echo "push failed (attempt $i); $branch is not on the remote yet, retrying"
   elif [ "$rc" != 0 ]; then
-    echo "::error::could not reach the agent repo"; exit 1
+    echo "push failed (attempt $i); could not reach the agent repo (ls-remote exit $rc), retrying"
   else
     echo "push rejected (attempt $i); rebasing on the remote branch"
-    agit fetch --quiet --depth=50 origin "$branch"
-    agit rebase --quiet --onto FETCH_HEAD "$base" || { git rebase --abort || true; echo "::error::rebase onto the agent branch failed"; exit 1; }
-    base="$(git rev-parse FETCH_HEAD)"
+    if ! agit fetch --quiet --depth=50 origin "$branch"; then
+      echo "fetch of $branch failed (attempt $i), retrying"
+    elif ! agit rebase --quiet --onto FETCH_HEAD "$base"; then
+      # Categories write disjoint files, so this is not a content conflict.
+      git rebase --abort || true
+      echo "::error::rebase onto the agent branch failed"; exit 1
+    else
+      base="$(git rev-parse FETCH_HEAD)"
+      continue
+    fi
   fi
   sleep $((RANDOM % 5 + 2))
 done
-echo "::error::could not push to the agent branch"
+echo "::error::could not push to the agent branch after $tries attempts"
 exit 1

@@ -5,7 +5,8 @@ persisted credentials, and a sibling category job that pushes first, so our
 push is rejected and must rebase. The rebase lazily fetches blobs from the
 promisor remote and needs the auth header too. Also the deleted-branch path:
 resolve_agent_ref.sh falls back to main, the jobs start the branch from it,
-the first push recreates it and the siblings that lose the race rebase onto it.
+the first push recreates it and the siblings that lose the race rebase onto it,
+including truly concurrent pushers. And the plan job's --create path.
 
     python -m unittest voice_batch/tests/test_push_agent.py
 """
@@ -160,8 +161,8 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.git("-c", self.hdr, "checkout", "--quiet", "-B", ref, f"refs/remotes/origin/{ref}", cwd=d)
         return d
 
-    def resolve(self, branch: str = BRANCH, cwd=None):
-        r = subprocess.run(["bash", str(RESOLVE), branch, self.url], cwd=cwd,
+    def resolve(self, branch: str = BRANCH, cwd=None, create: bool = False):
+        r = subprocess.run(["bash", str(RESOLVE), *(["--create"] if create else []), branch, self.url], cwd=cwd,
                            env={**{k: v for k, v in self.env.items() if k != "GITHUB_OUTPUT"}, "AGENT_PAT": TOKEN},
                            capture_output=True, text=True)
         out = dict(line.split("=", 1) for line in r.stdout.splitlines() if "=" in line and "::" not in line)
@@ -179,6 +180,17 @@ class PushAgentRebaseTest(unittest.TestCase):
     def push(self, repo: Path, category: str, target: str = "tutor_001", voice: str = "voice_a", branch: str = BRANCH):
         return subprocess.run(["bash", str(SCRIPT), str(repo), branch, target, voice, category],
                               env={**self.env, "AGENT_PAT": TOKEN}, capture_output=True, text=True)
+
+    def push_concurrently(self, jobs):
+        """Start every (repo, category) push at once, as parallel matrix jobs do."""
+        procs = [(cat, subprocess.Popen(["bash", str(SCRIPT), str(d), BRANCH, "tutor_001", "voice_a", cat],
+                                        env={**self.env, "AGENT_PAT": TOKEN}, stdout=subprocess.PIPE,
+                                        stderr=subprocess.PIPE, text=True)) for d, cat in jobs]
+        outs = [(cat, *p.communicate()) for cat, p in procs]
+        return [(cat, p.returncode, out, err) for (cat, out, err), (_, p) in zip(outs, procs)]
+
+    def remote_sha(self, ref: str) -> str:
+        return self.git("rev-parse", ref, cwd=self.tmp / "srv" / "agent.git").stdout.strip()
 
     def remote_files(self):
         return self.git("ls-tree", "-r", "--name-only", BRANCH, cwd=self.tmp / "srv" / "agent.git").stdout.split()
@@ -290,11 +302,12 @@ class PushAgentRebaseTest(unittest.TestCase):
     def test_resolve_existing_and_missing_branch(self):
         r, out = self.resolve()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertEqual(out, {"ref": BRANCH, "create": "false"})
+        # setUp seeded the branch and main with the same commit.
+        self.assertEqual(out, {"ref": BRANCH, "create": "false", "empty": "true"})
         self.delete_remote_branch()
         r, out = self.resolve()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertEqual(out, {"ref": "main", "create": "true"})
+        self.assertEqual(out, {"ref": "main", "create": "true", "empty": "false"})
         # The token only ever appears masked, never in the clear.
         self.assertNotIn(TOKEN, r.stdout + r.stderr)
         for bad in ("main", "claude/x"):
@@ -319,11 +332,11 @@ class PushAgentRebaseTest(unittest.TestCase):
                  f"AUTHORIZATION: basic {stale}", cwd=ws)
         r, out = self.resolve(cwd=ws)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertEqual(out, {"ref": BRANCH, "create": "false"})
+        self.assertEqual(out, {"ref": BRANCH, "create": "false", "empty": "true"})
         self.delete_remote_branch()
         r, out = self.resolve(cwd=ws)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertEqual(out, {"ref": "main", "create": "true"})
+        self.assertEqual(out, {"ref": "main", "create": "true", "empty": "false"})
 
     def test_missing_branch_is_recreated_from_main(self):
         self.delete_remote_branch()
@@ -371,6 +384,72 @@ class PushAgentRebaseTest(unittest.TestCase):
         log = self.git("rev-list", "--count", f"main~1..{BRANCH}", cwd=self.tmp / "srv" / "agent.git").stdout.strip()
         self.assertEqual(log, "3")
         self.assertNotIn(TOKEN, (c / ".git" / "config").read_text())
+
+    def test_concurrent_pushers_to_new_branch_all_land(self):
+        """The run 37242154621 shape: the branch is missing, every category
+        job starts it from main and they all push at the same moment."""
+        self.delete_remote_branch()
+        cats = ("intro", "handover", "signoff", "timekeeping")
+        jobs = []
+        for cat in cats:
+            d = self.start_from_main(cat)
+            self.write(d, f"{TDIR}/{cat}/01.wav", f"{cat}-audio".encode())
+            self.write(d, f"{TDIR}/voice_a_manifest.{cat}.json", b'{"lines": []}\n')
+            jobs.append((d, cat))
+        for cat, rc, out, err in self.push_concurrently(jobs):
+            self.assertEqual(rc, 0, f"{cat}: {out}{err}")
+            self.assertIn("pushed", out)
+            self.assertNotIn("::error::", out)
+        files = self.remote_files()
+        for cat in cats:
+            self.assertIn(f"{TDIR}/{cat}/01.wav", files)
+            self.assertIn(f"{TDIR}/voice_a_manifest.{cat}.json", files)
+        self.assertEqual(self.git("rev-list", "--count", f"main..{BRANCH}", cwd=self.tmp / "srv" / "agent.git")
+                         .stdout.strip(), str(len(cats)))
+
+    def test_plan_creates_branch_then_concurrent_pushers_append(self):
+        self.delete_remote_branch()
+        r, out = self.resolve(create=True)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(out, {"ref": BRANCH, "create": "false", "empty": "true"})
+        self.assertIn("created from main", r.stdout)
+        self.assertEqual(self.remote_sha(BRANCH), self.remote_sha("main"))
+        self.assertNotIn(TOKEN, r.stdout + r.stderr)
+        # Idempotent: an existing branch is left alone.
+        r, out = self.resolve(create=True)
+        self.assertEqual(out, {"ref": BRANCH, "create": "false", "empty": "true"})
+        self.assertNotIn("created", r.stdout)
+        # The render jobs now check the branch out (no local -b) and push together.
+        jobs = []
+        for cat in ("teaching", "greetings"):
+            d = self.checkout(cat)
+            self.write(d, f"{TDIR}/{cat}/01.wav", f"{cat}-audio".encode())
+            self.write(d, f"{TDIR}/voice_a_manifest.{cat}.json", b'{"lines": []}\n')
+            jobs.append((d, cat))
+        for cat, rc, out, err in self.push_concurrently(jobs):
+            self.assertEqual(rc, 0, f"{cat}: {out}{err}")
+        files = self.remote_files()
+        for cat in ("teaching", "greetings"):
+            self.assertIn(f"{TDIR}/{cat}/01.wav", files)
+        self.assertEqual(self.remote_sha(f"{BRANCH}~2"), self.remote_sha("main"))
+        # The merge job now sees a non-empty branch.
+        r, out = self.resolve()
+        self.assertEqual(out, {"ref": BRANCH, "create": "false", "empty": "false"})
+        for bad in ("main", "claude/x"):
+            r, _ = self.resolve(bad, create=True)
+            self.assertNotEqual(r.returncode, 0)
+            self.assertIn("non-rokct/", r.stdout)
+        self.assertEqual(self.remote_sha("main"), self.remote_sha(f"{BRANCH}~2"))
+
+    def test_unexpected_git_failure_is_annotated(self):
+        """A git command that dies outside the push loop names itself in an
+        ::error:: line instead of a bare exit code."""
+        a = self.checkout("broken")
+        self.write(a, f"{TDIR}/greetings/01.wav", b"audio")
+        (a / ".git" / "index.lock").write_text("")
+        r = self.push(a, "greetings")
+        self.assertNotEqual(r.returncode, 0)
+        self.assertRegex(r.stdout, r"::error::push_agent\.sh line \d+: .*git add.* exited 128")
 
 
 if __name__ == "__main__":
