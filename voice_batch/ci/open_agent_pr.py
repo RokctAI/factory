@@ -9,7 +9,8 @@ when one is already open, leave one short comment with this run's counts.
 Idempotent: the PR is only created when none is open for head -> base, and
 a run's comment carries a hidden marker so re-running the step never posts
 it twice. The PR is opened ready for review (never draft). Bodies and
-comments carry counts and the run URL only: no line text, no line ids. The
+comments carry counts, the run URL and a "Failed QC" table (line ids,
+attempts and failing gates, never line text) of the final-failed lines. The
 token goes in a header, is never printed and never written to disk.
 """
 from __future__ import annotations
@@ -22,6 +23,9 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from qc_failed import last_failing  # noqa: E402
 
 ATTRIBUTION = "<!-- ccr-projects-attribution -->\n_Requested by **Ray** via a Claude Code Project_"
 FOOTER = ("🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\n"
@@ -67,11 +71,33 @@ def counts_line(c: dict) -> str:
     return s + f". Branch manifest total: {c['total_passed']} passed, {c['total_failed']} failed."
 
 
+FAILED_ROWS = 50
+
+
+def failed_table(manifest: dict) -> list[str]:
+    """'Failed QC' section: the lines that failed every seed round (ids,
+    attempts and the gates that failed last). Empty when none. The full
+    per-round log is qc_failed.json beside the clips on this branch."""
+    failed = manifest.get("failed", [])
+    if not failed:
+        return []
+    out = ["## Failed QC", "",
+           f"{len(failed)} line(s) failed every seed round; their audio is not committed. "
+           "Per-round gates and values: `qc_failed.json` beside the clips.", "",
+           "| line | category | attempts | failing gates (last round) |", "|---|---|---|---|"]
+    for e in failed[:FAILED_ROWS]:
+        out.append(f"| `{e['id']}` | {e.get('category', '')} | {e.get('attempts', len(e.get('seeds_tried') or []))} "
+                   f"| {last_failing(e)} |")
+    if len(failed) > FAILED_ROWS:
+        out.append(f"| ... | {len(failed) - FAILED_ROWS} more | | |")
+    return out + [""]
+
+
 def title(target: str, voice: str) -> str:
     return f"{target} {voice}: rendered audio (voice batch)"
 
 
-def pr_body(target: str, voice: str, c: dict, run_url: str) -> str:
+def pr_body(target: str, voice: str, c: dict, run_url: str, manifest: dict | None = None) -> str:
     what = "Grades R-3 activity-pack lines" if target == "r3" else "the tutor's standing lines"
     where = ("lms/dart/templates/assets/r3_packs/audio/ (MP3s plus r3_manifest)" if target == "r3"
              else "the tutor's team folder (WAVs beside their scripts plus the voice manifest)")
@@ -85,12 +111,14 @@ def pr_body(target: str, voice: str, c: dict, run_url: str) -> str:
         f"- {run_url or 'run URL not available'}",
         f"- {counts_line(c)}", "",
         "Per-line scores, seeds and hashes are in the manifest on this branch.", "",
+        *failed_table(manifest or {}),
         FOOTER,
     ])
 
 
-def comment_body(c: dict, run_url: str, marker: str) -> str:
-    return f"{marker}\nVoice batch run {run_url or '(local)'}: {counts_line(c)}"
+def comment_body(c: dict, run_url: str, marker: str, manifest: dict | None = None) -> str:
+    table = failed_table(manifest or {})
+    return f"{marker}\nVoice batch run {run_url or '(local)'}: {counts_line(c)}" + ("\n\n" + "\n".join(table) if table else "")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -136,13 +164,13 @@ def main(argv: list[str] | None = None) -> int:
             print(f"PR #{num} already open and already noted for this run; nothing to do")
             return 0
         st, _ = api.call("POST", f"/repos/{args.repo}/issues/{num}/comments",
-                         {"body": comment_body(c, args.run_url, marker)})
+                         {"body": comment_body(c, args.run_url, marker, manifest)})
         print(f"PR #{num} already open; {'commented with this run' if st == 201 else f'comment failed (HTTP {st})'}")
         return 0 if st == 201 else 1
 
     st, pr = api.call("POST", f"/repos/{args.repo}/pulls", {
         "title": title(args.target, args.voice), "head": args.head, "base": args.base,
-        "body": pr_body(args.target, args.voice, c, args.run_url), "draft": False})
+        "body": pr_body(args.target, args.voice, c, args.run_url, manifest), "draft": False})
     if st == 201:
         print(f"opened PR #{pr['number']} (ready for review)")
         return 0

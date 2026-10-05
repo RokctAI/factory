@@ -343,7 +343,10 @@ class MergeR3(unittest.TestCase):
             self.assertEqual(m["lines"][0]["sha256"], "new")
             self.assertEqual([x["id"] for x in m["failed"]], ["k4"])  # a failed re-render never hides a pass
             self.assertEqual(m["needs_listen"], 1)
-            self.assertEqual(sorted(p.name for p in d.iterdir()), ["r3_manifest.v.json", "r3_manifest.w.part01.json"])
+            # qc_failed.<voice>.json: the final-failed log beside the MP3s
+            self.assertEqual(sorted(p.name for p in d.iterdir()),
+                             ["qc_failed.v.json", "r3_manifest.v.json", "r3_manifest.w.part01.json"])
+            self.assertEqual([x["id"] for x in json.loads((d / "qc_failed.v.json").read_text())["failed"]], ["k4"])
             merge_manifest.main_r3(d, "v")  # idempotent
             self.assertEqual(json.loads((d / "r3_manifest.v.json").read_text()), m)
 

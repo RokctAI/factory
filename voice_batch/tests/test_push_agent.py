@@ -25,6 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "voice_batch" / "ci" / "push_agent.sh"
 RESOLVE = ROOT / "voice_batch" / "ci" / "resolve_agent_ref.sh"
+SCAN = ROOT / "voice_batch" / "ci" / "scan_pending.sh"
 TOKEN = "test-token"
 EXPECTED = "Basic " + base64.b64encode(f"x-access-token:{TOKEN}".encode()).decode()
 BRANCH = "rokct/tutor-001-voice-a-test"
@@ -522,6 +523,109 @@ class PushAgentRebaseTest(unittest.TestCase):
         r = self.push(a, "greetings")
         self.assertNotEqual(r.returncode, 0)
         self.assertRegex(r.stdout, r"::error::push_agent\.sh line \d+: .*git add.* exited 128")
+
+    def test_checkpoint_pushes_from_one_checkout_interleave_with_a_sibling(self):
+        """run.py's checkpoints call push_agent.sh repeatedly from the same
+        checkout while a sibling category job pushes in between: each later
+        checkpoint rebases its one new commit and lands, and a checkpoint
+        with nothing new commits nothing."""
+        a, b = self.checkout("teaching"), self.checkout("greetings")
+        self.write(a, f"{TDIR}/samples/sample_01.wav", b"t1")
+        self.write(a, f"{TDIR}/voice_a_manifest.teaching.json", b'{"lines": [1], "remaining": [2]}\n')
+        self.assertEqual(self.push(a, "teaching").returncode, 0)
+        self.write(b, f"{TDIR}/greetings/01.wav", b"g1")
+        self.write(b, f"{TDIR}/voice_a_manifest.greetings.json", b'{"lines": [1]}\n')
+        r = self.push(b, "greetings")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.write(a, f"{TDIR}/samples/sample_02.wav", b"t2")
+        self.write(a, f"{TDIR}/voice_a_manifest.teaching.json", b'{"lines": [1, 2]}\n')
+        r = self.push(a, "teaching")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("push rejected (attempt 1)", r.stdout)
+        for f in (f"{TDIR}/samples/sample_01.wav", f"{TDIR}/samples/sample_02.wav", f"{TDIR}/greetings/01.wav"):
+            self.assertIn(f, self.remote_files())
+        self.assertEqual(self.git("show", f"{BRANCH}:{TDIR}/voice_a_manifest.teaching.json",
+                                  cwd=self.tmp / "srv" / "agent.git").stdout, '{"lines": [1, 2]}\n')
+        self.assertIn("nothing new to commit", self.push(a, "teaching").stdout)
+
+    def test_qc_failed_log_is_committed_and_its_removal_too(self):
+        """<clip dir>/qc_failed.json goes to the agent branch with the clips
+        (r3: qc_failed.<voice>.json in the audio folder), and when every line
+        in it has passed run.py deletes it and the deletion is pushed."""
+        a = self.checkout("qcfail")
+        self.write(a, f"{TDIR}/greetings/01.wav", b"g1")
+        self.write(a, f"{TDIR}/greetings/qc_failed.json", b'{"failed": [{"id": "tutor_001/greetings/02"}]}\n')
+        self.write(a, f"{TDIR}/voice_a_manifest.greetings.json", b'{"lines": []}\n')
+        self.write(a, f"{ADIR}/qc_failed.voice_a.json", b'{"failed": []}\n')
+        r = self.push(a, "greetings")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn(f"{TDIR}/greetings/qc_failed.json", self.remote_files())
+        self.assertNotIn(f"{ADIR}/qc_failed.voice_a.json", self.remote_files())   # not the tutor job's folder
+        r = self.push(a, "r3 shard 1/1", target="r3")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn(f"{ADIR}/qc_failed.voice_a.json", self.remote_files())
+        (a / TDIR / "greetings/qc_failed.json").unlink()
+        self.write(a, f"{TDIR}/greetings/02.wav", b"g2")
+        r = self.push(a, "greetings")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertNotIn(f"{TDIR}/greetings/qc_failed.json", self.remote_files())
+        self.assertIn(f"{TDIR}/greetings/02.wav", self.remote_files())
+
+    def test_scan_pending_picks_the_first_pending_batch(self):
+        """The scheduled scan against the agent remote: the first batch with
+        a line left; then the next one once the first is done on its branch;
+        then nothing once every line is done or final-failed on main."""
+        import json
+        import sys
+        sys.path.insert(0, str(ROOT / "voice_batch"))
+        sys.path.insert(0, str(ROOT / "voice_batch" / "tests"))
+        from test_assistants import AID, make_agent
+        from test_resume import done_manifest
+        seed = self.seed
+        make_agent(seed)
+        self.write(seed, "lms/team/assistants/CAPS/assistant_005/handover/into_break.wav", b"audio")
+        self.git("add", "-A", cwd=seed)
+        self.git("commit", "--quiet", "-m", "scripts", cwd=seed)
+        self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/main", cwd=seed)
+
+        factory = self.tmp / "factory"
+        self.git("init", "--quiet", str(factory))
+        for name, cat in (("a_handover", "handover"), ("b_timekeeping", "timekeeping")):
+            self.write(factory, f"voice_batches/inbox/{name}.json", json.dumps({
+                "kind": "assistant", "assistant": AID, "voice": "voice_b_sister",
+                "ref_path": "lms/team/voice_refs/v.wav", "ref_sha256": "ab" * 32,
+                "agent_branch": f"rokct/{name.replace('_', '-')}", "categories": [cat]}).encode())
+        self.write(factory, "voice_batches/inbox/broken.json", b"{")
+        self.git("add", "-A", cwd=factory)
+        self.git("commit", "--quiet", "-m", "inbox", cwd=factory)
+        agent = self.checkout("scanmain", "main", patterns=("/lms/team/", "!*.wav"))
+        self.assertFalse((agent / "lms/team/assistants/CAPS/assistant_005/handover/into_break.wav").exists())
+
+        def scan():
+            r = subprocess.run(["bash", str(SCAN), str(agent)], cwd=factory, capture_output=True, text=True,
+                               env={**self.env, "AGENT_PAT": TOKEN})
+            self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+            self.assertNotIn(TOKEN, r.stdout + r.stderr)
+            return r.stdout.strip()
+
+        self.assertEqual(scan(), "voice_batches/inbox/a_handover.json")
+        # a's lines pass on its agent branch (main untouched)
+        self.git("checkout", "--quiet", "-b", "rokct/a-handover", cwd=seed)
+        done_manifest(seed, "handover", seed)
+        self.git("add", "-A", cwd=seed)
+        self.git("commit", "--quiet", "-m", "a rendered", cwd=seed)
+        self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/rokct/a-handover", cwd=seed)
+        self.assertEqual(scan(), "voice_batches/inbox/b_timekeeping.json")
+        # b's lines all failed every seed round, recorded on main: done, nothing to render
+        self.git("checkout", "--quiet", "-B", "scan-main", f"{BRANCH}", cwd=seed)
+        self.git("-c", self.hdr, "fetch", "--quiet", self.url, "main", cwd=seed)
+        self.git("reset", "--quiet", "--hard", "FETCH_HEAD", cwd=seed)
+        done_manifest(seed, "timekeeping", seed, failed=True)
+        self.git("add", "-A", cwd=seed)
+        self.git("commit", "--quiet", "-m", "b failed", cwd=seed)
+        self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/main", cwd=seed)
+        self.git("-c", self.hdr, "pull", "--quiet", "origin", "main", cwd=agent)
+        self.assertEqual(scan(), "")
 
 
 if __name__ == "__main__":

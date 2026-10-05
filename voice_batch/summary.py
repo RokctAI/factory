@@ -27,11 +27,19 @@ def pace_cell(p) -> str:
 def summary(m: dict) -> str:
     rows = [("pass", e) for e in m.get("lines", [])] + [("FAIL", e) for e in m.get("failed", [])]
     listen = sum(bool(e.get("needs_listen")) for e in m.get("lines", []))
+    rem = m.get("remaining") or []
+    left = sum(len(v) for v in rem.values()) if isinstance(rem, dict) else len(rem)
     out = [f"### Voice batch `{m.get('tutor') or m.get('kind', '?')}` / `{m.get('voice', '?')}`", "",
            f"{len(m.get('lines', []))} passed, {len(m.get('failed', []))} failed"
-           + (f", {listen} need a listen (phonics respelling or pronunciation)" if listen else ""), "",
+           + (f", {listen} need a listen (phonics respelling or pronunciation)" if listen else "")
+           + (f", {left} left for a continuation run (time budget)" if left else ""), "",
            "| id | category | duration s | median F0 Hz | similarity | ASR exact | wpm (target, report-only) | seeds | result |",
            "|---|---|---|---|---|---|---|---|---|"]
+    failed = m.get("failed", [])
+    if failed:
+        # One line: count + ids (no text, no audio: this summary is public).
+        out[4:4] = [f"QC failed (every seed round): {len(failed)} line(s): "
+                    + ", ".join(f"`{e['id']}`" for e in failed), ""]
     for status, e in rows:
         out.append(f"| `{e['id']}` | {e.get('category', '')} | {fmt(e.get('duration', e.get('duration_s')))} | "
                    f"{fmt(e.get('median_f0', e.get('median_f0_hz')), 1)} | {fmt(e.get('similarity'), 3)} | "

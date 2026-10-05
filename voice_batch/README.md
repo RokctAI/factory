@@ -181,6 +181,65 @@ best take is kept and marked `passed: false`.
    this run's pass/fail counts (counts and run URL only). Merging that PR
    ships the audio into the app bundle.
 
+## Long batches: time budget, checkpoints, continuations
+
+A render job can run for hours (QC retry rounds). GitHub kills a job at 6 h, so
+renders are resumable (`resume.py`):
+
+- **Checkpoints.** `run.py` renders lines in chunks of `RENDER_CHUNK_LINES`
+  (4). After each chunk it installs what passed, records lines that failed
+  every seed round, writes the manifest and runs `push_agent.sh` (at most
+  every `RENDER_PUSH_MINUTES`, 15). Before the first chunk it pushes the
+  manifest with the job's lines listed as `remaining`.
+- **Time budget.** Before each chunk and each seed round, `run.py` checks
+  `RENDER_BUDGET_MINUTES` (300, or `vars.RENDER_BUDGET_MINUTES`), counted from
+  the job's first step. A round that would end past it, estimated from the
+  largest round so far, is not started. The job then stops cleanly, pushes
+  what it has, and keeps the unfinished ids under `remaining` in its
+  manifest. The step outputs are `incomplete=true` and `remaining=N`. The
+  render job's `timeout-minutes` is 330, which leaves 30 min of margin and
+  stays under 360.
+- **Continuations.** The merge job counts `remaining` across the batch's
+  manifests. If any line is left, it dispatches this workflow again with the
+  same `batch_path`, `continuation` + 1 and the same `series`, at most 5
+  times, using `GITHUB_TOKEN` with `actions: write`. The agent PR opens only
+  when nothing is left, or when the cap is reached. Already-pushed lines are
+  skipped. A line that failed every seed round is **final-failed**, never
+  remaining: within one series it is not retried.
+- **Concurrency.** A continuation queues behind the running run in the
+  `voice-batch` group. GitHub keeps only one pending run per group, so a run
+  queued after it, such as a push, a dispatch or the schedule, replaces it.
+  The next scheduled run then picks the batch up again.
+
+## Daily schedule
+
+The workflow also runs every day at 01:23 UTC. The plan job checks out agent
+main without audio and runs `ci/scan_pending.sh`. For each batch in
+`voice_batches/inbox/` (sorted), the scan fetches only the manifests of the
+batch's agent branch, and `pending.py` counts the lines that are not done. A
+line is done when it has a passed entry for the same text and reference, or
+when it is final-failed. The first batch with lines left is rendered; the
+next day's run picks the next one. If nothing is pending, the plan job ends
+in about a minute, with no render jobs, no model download and no PR.
+
+## Failed QC log
+
+Every final-failed line is listed in a `qc_failed.json` beside its clips on
+the agent branch (the private agent repo only). For a tutor or assistant
+that is `<team dir>/<clip dir>/qc_failed.json`. For r3 it is
+`qc_failed.<voice>.json` in the R-3 audio folder, written by the merge job.
+An entry holds:
+
+- the line id and text;
+- the failing gates and their values for every round (ASR word errors,
+  loudness dB, lead-in ms, onset, clipping, F0, similarity, tail);
+- the attempt count, the batch file, the run id and a UTC date.
+
+When the line later passes, its entry is removed, and an empty file is
+deleted. The agent PR has a short "Failed QC" table: ids, attempts and the
+last round's failing gates. The public job summary gives only a one-line
+count and the ids.
+
 Output layout in the agent repo (audio beside its script):
 `lms/team/tutors/CAPS/<tutor>/<category>/NN.wav`,
 `.../samples/<sample id>.wav`, `.../samples/sample_line.wav`.

@@ -89,7 +89,9 @@ class OpenAgentPr(unittest.TestCase):
         self.manifest.write_text(json.dumps({
             "lines": [{"id": SECRET_ID, "text": SECRET_TEXT, "needs_listen": True, "ci_run_id": "7"},
                       {"id": "old", "text": "Old.", "ci_run_id": "3"}],
-            "failed": [{"id": "r3.r3_praise_yes", "ci_run_id": "7"}]}))
+            "failed": [{"id": "r3.r3_praise_yes", "ci_run_id": "7", "text": "Yes!", "attempts": 5,
+                        "rounds": [{"round": 3, "failing": {"asr": {"asr_word_errors": 1},
+                                                            "loudness": {"integrated_db": -26.0}}}]}]}))
         self.env = {"AGENT_PAT": TOKEN, "GITHUB_API_URL": f"http://127.0.0.1:{self.srv.server_port}",
                     "NO_PROXY": "127.0.0.1", "no_proxy": "127.0.0.1"}
         self._old = {k: os.environ.get(k) for k in self.env}
@@ -131,8 +133,11 @@ class OpenAgentPr(unittest.TestCase):
         self.assertIn("https://github.com/RokctAI/factory/actions/runs/7", body)
         self.assertIn("This run: 1 passed, 1 failed, 1 respelled for phonics", body)
         self.assertIn("Branch manifest total: 2 passed, 1 failed", body)
-        for secret in (SECRET_TEXT, SECRET_ID, "r3.r3_praise_yes", "Old."):
+        for secret in (SECRET_TEXT, SECRET_ID, "Old.", "Yes!"):
             self.assertNotIn(secret, body)
+        # Failed QC: the final-failed line's id, attempts and last-round gates (never its text).
+        self.assertIn("## Failed QC", body)
+        self.assertIn("| `r3.r3_praise_yes` |  | 5 | asr, loudness |", body)
         self.assertTrue(self.gh.auth_ok)
 
         # Same run again (step re-run): no second PR, one comment.
@@ -144,6 +149,8 @@ class OpenAgentPr(unittest.TestCase):
         self.assertIn("<!-- voice-batch-run:7 -->", c)
         self.assertIn("1 passed, 1 failed", c)
         self.assertNotIn(SECRET_ID, c)
+        self.assertIn("## Failed QC", c)
+        self.assertNotIn("Yes!", c)
         # ...and again: the marker stops a duplicate comment.
         rc, out = self.run_it()
         self.assertIn("already noted", out)
