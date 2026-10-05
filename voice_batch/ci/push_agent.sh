@@ -15,7 +15,7 @@
 # there (voices/samples/ never ships in the app bundle). Never the
 # reference, never anything else. Then it
 # pushes with the token passed as an HTTP header (git -c, scoped to the origin
-# host) on every network-capable git command. The token is masked, never
+# host) on every git command in the checkout. The token is masked, never
 # echoed, never written to .git/config; xtrace is off.
 # Idempotent: re-running over identical files commits nothing. Parallel
 # category jobs touch disjoint files, so a rejected push is resolved by
@@ -27,12 +27,16 @@
 # deleted): the first push creates it, and a sibling that loses that race
 # finds it on the remote and rebases onto it. Any other failing command is
 # reported as an ::error:: annotation naming its line and exit code.
-# The checkout is a sparse, blob-less partial clone, so the rebase lazily
-# fetches missing blobs from the promisor remote: it must carry the header too,
-# or that fetch fails with "could not read Username".
+# The checkout is a sparse, blob-less partial clone, so any git command (add,
+# ls-files, commit, rebase) may lazily fetch a missing blob from the promisor
+# remote: every one carries the header, or that fetch fails with "could not
+# read Username".
 set +x
 set -Eeuo pipefail
-trap 'rc=$?; echo "::error::push_agent.sh line $LINENO: \"$BASH_COMMAND\" exited $rc"' ERR
+# A failure inside agit is reported at the agit call: its line and arguments
+# (the git subcommand and paths), never the expanded header.
+trap 'rc=$?; if [ "${FUNCNAME[0]:-}" = agit ]; then at="${BASH_LINENO[0]}"; cmd="agit $*"; else at="$LINENO"; cmd="$BASH_COMMAND"; fi
+  echo "::error::push_agent.sh line $at: \"$cmd\" exited $rc"' ERR
 
 dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor, r3 or pronunciation}"; voice="${4:?voice}"; category="${5:?category}"
 : "${AGENT_PAT:?AGENT_PAT must be set}"
@@ -60,54 +64,60 @@ else
 fi
 cd "$dir"
 
-git config user.name "github-actions[bot]"
-git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-if [ "$tutor" = "r3" ] || [ "$tutor" = "pronunciation" ]; then
-  # Only files directly in the audio folder that match the allow-list:
-  # new, modified, or deleted (the merge job removes folded part manifests).
-  { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; git ls-files --deleted -- "$tdir"; } \
-    | { grep -E "$allowed" || true; } | sort -u | while IFS= read -r f; do git add -A -- "$f"; done
-else
-  for m in "$tdir/${voice}"_manifest*.json; do
-    if [ -e "$m" ]; then git add -- "$m"; fi
-  done
-  { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; } \
-    | { grep -E '\.wav$' || true; } | sort -u | while IFS= read -r f; do git add -- "$f"; done
-  # run.py writes <clip>.timings.json next to each committed clip: stage it
-  # (new or changed) whenever its clip is there, never a stray one.
-  { git ls-files --others --exclude-standard -- "$tdir"; git ls-files --modified -- "$tdir"; } \
-    | { grep -E '\.timings\.json$' || true; } | sort -u | while IFS= read -r f; do
-      if [ -e "${f%.timings.json}.wav" ]; then git add -- "$f"; fi
-    done
-fi
-if git diff --cached --quiet; then
-  echo "category $category: nothing new to commit"
-  exit 0
-fi
-echo "Staged:"
-git diff --cached --name-only | sed 's/^/  /'
-if git diff --cached --name-only | grep -v -E "$allowed"; then
-  echo "::error::unexpected staged path; refusing to commit"; exit 1
-fi
-n_audio=$(git diff --cached --name-only --diff-filter=AM | grep -c "\.$ext\$" || true)
-git commit --quiet -m "$tutor $voice: $category audio ($n_audio file(s)) from factory voice batch CI" \
-  -m "Rendered and gated by RokctAI/factory voice_batch (run ${GITHUB_RUN_ID:-local}). Per-line seeds, scores and hashes are in $manifest."
-# This job's commit sits alone on top of base; rebases replay only base..HEAD.
-base="$(git rev-parse HEAD~1)"
-
 b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
 echo "::add-mask::$b64"
 auth="AUTHORIZATION: basic $b64"
 # Scope the header to origin's scheme://host/ (https://github.com/ in CI).
 host="$(git remote get-url origin | sed -E 's#^([a-z]+://[^/]+/).*#\1#')"
+# Every git command below goes through agit, not just fetch and push: the
+# checkout is blob-less, so any of them may lazily fetch a missing blob from
+# the promisor remote. A non-cone sparse checkout (kind assistant) leaves the
+# root .gitignore unchecked-out, and git add / ls-files --exclude-standard /
+# commit read it (and .gitattributes) from the index, which fetches the blob.
 # -c is inherited by git's child processes (GIT_CONFIG_PARAMETERS), which
-# covers the promisor lazy fetches that rebase triggers.
+# covers those lazy fetches; it is never written to .git/config.
 agit() { git -c "http.${host}.extraheader=$auth" "$@"; }
+
+agit config user.name "github-actions[bot]"
+agit config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+if [ "$tutor" = "r3" ] || [ "$tutor" = "pronunciation" ]; then
+  # Only files directly in the audio folder that match the allow-list:
+  # new, modified, or deleted (the merge job removes folded part manifests).
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; agit ls-files --deleted -- "$tdir"; } \
+    | { grep -E "$allowed" || true; } | sort -u | while IFS= read -r f; do agit add -A -- "$f"; done
+else
+  for m in "$tdir/${voice}"_manifest*.json; do
+    if [ -e "$m" ]; then agit add -- "$m"; fi
+  done
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; } \
+    | { grep -E '\.wav$' || true; } | sort -u | while IFS= read -r f; do agit add -- "$f"; done
+  # run.py writes <clip>.timings.json next to each committed clip: stage it
+  # (new or changed) whenever its clip is there, never a stray one.
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; } \
+    | { grep -E '\.timings\.json$' || true; } | sort -u | while IFS= read -r f; do
+      if [ -e "${f%.timings.json}.wav" ]; then agit add -- "$f"; fi
+    done
+fi
+if agit diff --cached --quiet; then
+  echo "category $category: nothing new to commit"
+  exit 0
+fi
+echo "Staged:"
+agit diff --cached --name-only | sed 's/^/  /'
+if agit diff --cached --name-only | grep -v -E "$allowed"; then
+  echo "::error::unexpected staged path; refusing to commit"; exit 1
+fi
+n_audio=$(agit diff --cached --name-only --diff-filter=AM | grep -c "\.$ext\$" || true)
+agit commit --quiet -m "$tutor $voice: $category audio ($n_audio file(s)) from factory voice batch CI" \
+  -m "Rendered and gated by RokctAI/factory voice_batch (run ${GITHUB_RUN_ID:-local}). Per-line seeds, scores and hashes are in $manifest."
+# This job's commit sits alone on top of base; rebases replay only base..HEAD.
+base="$(agit rev-parse HEAD~1)"
+
 tries=8
 for i in $(seq 1 "$tries"); do
   if agit push --quiet origin "HEAD:refs/heads/$branch"; then
-    echo "category $category: pushed $(git rev-parse --short HEAD) to $branch"
+    echo "category $category: pushed $(agit rev-parse --short HEAD) to $branch"
     exit 0
   fi
   # 2 = the branch is not on the remote (yet): nothing to rebase onto, retry
@@ -123,10 +133,10 @@ for i in $(seq 1 "$tries"); do
       echo "fetch of $branch failed (attempt $i), retrying"
     elif ! agit rebase --quiet --onto FETCH_HEAD "$base"; then
       # Categories write disjoint files, so this is not a content conflict.
-      git rebase --abort || true
+      agit rebase --abort || true
       echo "::error::rebase onto the agent branch failed"; exit 1
     else
-      base="$(git rev-parse FETCH_HEAD)"
+      base="$(agit rev-parse FETCH_HEAD)"
       continue
     fi
   fi
