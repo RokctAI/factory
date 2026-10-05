@@ -16,22 +16,47 @@ name: Voice batch
 #   * The reference is read from the agent checkout and verified against the
 #     batch's sha256; it never leaves the runner.
 #   * push_agent.sh only pushes to rokct/ branches (never main), only the tutor's .wav
-#     files + manifest (kind tutor) or the .mp3 files + r3_manifest JSONs
+#     files + manifest + qc_failed.json (kind tutor) or the .mp3 files + r3_manifest
+#     and qc_failed.<voice> JSONs
 #     directly in lms/dart/templates/assets/r3_packs/audio/ (kind r3), with
 #     the token masked and never stored in .git/config.
 #
 # Idempotent: re-running a batch re-renders only lines whose text or
 # reference changed and overwrites the same files on the agent branch.
+#
+# Resumable (voice_batch/resume.py): each render job checkpoint-pushes its
+# installed lines while it runs, and stops cleanly before a seed round that
+# would end past RENDER_BUDGET_MINUTES (300, from the job's first step; the
+# job's timeout-minutes is 330, under GitHub's 360). Lines it did not reach
+# are listed as "remaining" in its manifest. The merge job then re-dispatches
+# this workflow for the same batch (input continuation + 1, at most 5) and
+# opens the agent PR only once nothing is remaining (or the cap is reached).
+# A line that failed every seed round is final-failed, never remaining.
+#
+# Daily schedule: the plan job scans every batch in voice_batches/inbox/
+# (sorted) and renders the first one that still has a line not done on its
+# agent branch or agent main; nothing pending -> no render jobs at all.
 
 on:
   push:
     branches: [main]
     paths:
       - 'voice_batches/inbox/**.json'
+  schedule:
+    # Daily, off-peak (01:23 UTC): render the first batch with lines pending.
+    - cron: '23 1 * * *'
   workflow_dispatch:
     inputs:
       batch_path:
         description: 'Batch JSON, e.g. voice_batches/inbox/tutor_001_voice_a_batch1.json (empty = every JSON in voice_batches/inbox/)'
+        required: false
+        default: ''
+      continuation:
+        description: 'Set by the merge job when it re-dispatches an incomplete batch (0 = a fresh run; capped at 5)'
+        required: false
+        default: '0'
+      series:
+        description: 'Set by the merge job: the run id that started this chain of continuations'
         required: false
         default: ''
 
@@ -40,6 +65,11 @@ permissions:
 
 # One batch run at a time. Inside a run each category job has its own runner
 # and renders one line at a time (VibeVoice on CPU peaks ~12.5 GB of 16 GB).
+# A continuation dispatched from inside a run waits here behind it. GitHub
+# keeps only ONE pending run per group: a run queued after the continuation
+# (a push, a dispatch, the schedule) replaces it, and that run then renders
+# its own batch (the schedule picks the first pending batch, so an
+# interrupted chain resumes from the next scheduled run at the latest).
 concurrency:
   group: voice-batch
   cancel-in-progress: false
@@ -58,6 +88,13 @@ env:
   RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
   HF_HOME: /home/runner/.cache/huggingface
   HF_HUB_DISABLE_TELEMETRY: '1'
+  # Resumable renders (voice_batch/resume.py). Keep the budget well under the
+  # render job's timeout-minutes (330): the margin covers the round in flight
+  # past the estimate, the final push and the summary.
+  RENDER_BUDGET_MINUTES: ${{ vars.RENDER_BUDGET_MINUTES || '300' }}
+  RENDER_CHUNK_LINES: '4'
+  RENDER_PUSH_MINUTES: '15'
+  CONTINUATION_CAP: '5'
 
 jobs:
   plan:
@@ -66,6 +103,8 @@ jobs:
     timeout-minutes: 10
     outputs:
       count: ${{ steps.list.outputs.count }}
+      continuation: ${{ steps.chain.outputs.continuation }}
+      series: ${{ steps.chain.outputs.series }}
       file: ${{ steps.plan.outputs.file }}
       kind: ${{ steps.plan.outputs.kind }}
       matrix_json: ${{ steps.plan.outputs.matrix_json }}
@@ -73,6 +112,50 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      # continuation counts the re-dispatches of one incomplete batch; series
+      # is the run that started the chain (failed lines are final within it).
+      - name: Continuation
+        id: chain
+        env:
+          CONTINUATION: ${{ inputs.continuation || '0' }}
+          SERIES: ${{ inputs.series || github.run_id }}
+        run: |
+          if ! printf '%s' "$CONTINUATION" | grep -qE '^[0-9]{1,3}$' || ! printf '%s' "$SERIES" | grep -qE '^[0-9]{1,20}$'; then
+            echo "::error::continuation and series must be numbers"; exit 1
+          fi
+          echo "continuation=$CONTINUATION" >> "$GITHUB_OUTPUT"
+          echo "series=$SERIES" >> "$GITHUB_OUTPUT"
+          if [ "$CONTINUATION" != 0 ]; then echo "continuation $CONTINUATION of at most $CONTINUATION_CAP (series run $SERIES)"; fi
+
+      # Schedule only: agent main without audio (scripts, voice specs, R-3
+      # app sources, manifests) for the pending scan.
+      - name: Check out agent main for the pending scan (private)
+        if: github.event_name == 'schedule'
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: main
+          path: .agentmain
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /lms/team/tutors/CAPS/
+            /lms/team/assistants/CAPS/
+            /lms/team/voices/*.json
+            /lms/team/scripts/
+            /lms/dart/templates/assets/r3_packs/audio/*manifest*.json
+            /lms/dart/lib/src/common/application/r3/
+            /lms/dart/lib/src/translations/
+            !*.wav
+            !*.mp3
+            !*.timings.json
+            !*.png
+            !*.jpg
+            !*.webp
+            !*.mp4
 
       - name: List batches
         id: list
@@ -82,8 +165,14 @@ jobs:
           AFTER: ${{ github.sha }}
           BATCH_PATH: ${{ inputs.batch_path }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
-          bash voice_batch/ci/changed_batches.sh "$EVENT" "$BEFORE" "$AFTER" "$BATCH_PATH" "$DEFAULT_BRANCH" > "$RUNNER_TEMP/batches.txt"
+          set +x
+          if [ "$EVENT" = "schedule" ]; then
+            bash voice_batch/ci/scan_pending.sh .agentmain > "$RUNNER_TEMP/batches.txt"
+          else
+            bash voice_batch/ci/changed_batches.sh "$EVENT" "$BEFORE" "$AFTER" "$BATCH_PATH" "$DEFAULT_BRANCH" > "$RUNNER_TEMP/batches.txt"
+          fi
           echo "Batches:"; sed 's/^/  /' "$RUNNER_TEMP/batches.txt"
           echo "count=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)" >> "$GITHUB_OUTPUT"
 
@@ -132,13 +221,23 @@ jobs:
     needs: plan
     if: needs.plan.outputs.count == '1'
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    # Under GitHub's 360; RENDER_BUDGET_MINUTES (300) stops the render first.
+    timeout-minutes: 330
+    outputs:
+      # Matrix jobs share one outputs map (the last job to finish wins), so
+      # the merge job decides from the manifests' "remaining" lists instead.
+      incomplete: ${{ steps.render.outputs.incomplete }}
+      remaining: ${{ steps.render.outputs.remaining }}
     strategy:
       fail-fast: false
       max-parallel: 8
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.matrix_json) }}
     steps:
+      # The time budget counts from here, so setup time is inside it.
+      - name: Start the time budget
+        run: echo "JOB_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+
       - name: Check MONOREPO_PAT is set
         env:
           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
@@ -280,9 +379,15 @@ jobs:
           python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
           du -sh "$ASR_DOWNLOAD_ROOT"
 
+      # run.py checkpoint-pushes (push_agent.sh) after each chunk of lines, at
+      # most every RENDER_PUSH_MINUTES, and stops at RENDER_BUDGET_MINUTES
+      # with step outputs incomplete / remaining. The push after it is the
+      # final one (a no-op when the last checkpoint already carried it).
       - name: Render, gate and commit ${{ matrix.category }} ${{ matrix.shard }} to the agent branch
+        id: render
         env:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          RENDER_SERIES: ${{ needs.plan.outputs.series }}
           HF_HUB_OFFLINE: '1'
           KIND: ${{ steps.batch.outputs.kind }}
           BATCH_FILE: ${{ needs.plan.outputs.file }}
@@ -306,12 +411,15 @@ jobs:
                   --model-path "$model_path" --work "$RUNNER_TEMP/voice_batch" --asr-model "$ASR_MODEL"
                   --language "$LOCALE" --f0-target "$F0_TARGET" --f0-tolerance "$F0_TOLERANCE")
           if [ "$KIND" = "r3" ]; then
-            python voice_batch/run.py --kind r3 "${common[@]}" --batch "$BATCH_FILE" --shard "$SHARD"
-            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" "r3 shard $SHARD"
+            push=(bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" "r3 shard $SHARD")
+            python voice_batch/run.py --kind r3 "${common[@]}" --batch "$BATCH_FILE" --shard "$SHARD" \
+              --checkpoint-cmd "$(printf '%q ' "${push[@]}")"
           else
-            python voice_batch/run.py --kind "$KIND" "${common[@]}" --tutor "$TUTOR" --category "$CATEGORY" --lines "$LINES"
-            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" "$CATEGORY"
+            push=(bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" "$CATEGORY")
+            python voice_batch/run.py --kind "$KIND" "${common[@]}" --tutor "$TUTOR" --category "$CATEGORY" --lines "$LINES" \
+              --checkpoint-cmd "$(printf '%q ' "${push[@]}")"
           fi
+          "${push[@]}"
 
       - name: Job summary
         if: always()
@@ -339,6 +447,11 @@ jobs:
     if: always() && needs.plan.outputs.count == '1'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      incomplete: ${{ steps.state.outputs.incomplete }}
+      remaining: ${{ steps.state.outputs.remaining }}
+      dispatch: ${{ steps.state.outputs.dispatch }}
+      next: ${{ steps.state.outputs.next }}
     steps:
       - uses: actions/checkout@v4
 
@@ -397,11 +510,49 @@ jobs:
             bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" manifest
           fi
 
+      # Lines left by a render job's time budget (this batch's categories
+      # only). Any left: re-dispatch (the continue job) unless the cap is
+      # reached, and hold the agent PR back until the batch is complete.
+      - name: Batch state (complete, or continue)
+        id: state
+        if: steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+        env:
+          KIND: ${{ steps.batch.outputs.kind }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          CATEGORIES: ${{ steps.batch.outputs.categories }}
+          CONTINUATION: ${{ needs.plan.outputs.continuation }}
+        run: |
+          if [ "$KIND" = "r3" ]; then
+            left=$(python3 voice_batch/resume.py remaining ".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json")
+          else
+            # shellcheck disable=SC2086  # categories are validated words
+            left=$(python3 voice_batch/resume.py remaining ".agent/$TEAM_DIR/${VOICE}_manifest.json" $CATEGORIES)
+          fi
+          echo "remaining=$left" >> "$GITHUB_OUTPUT"
+          if [ "$left" = 0 ]; then
+            echo "incomplete=false" >> "$GITHUB_OUTPUT"; echo "dispatch=false" >> "$GITHUB_OUTPUT"
+            echo "batch complete: no lines left"
+            exit 0
+          fi
+          echo "incomplete=true" >> "$GITHUB_OUTPUT"
+          nxt=$(python3 voice_batch/resume.py next "$CONTINUATION")
+          printf '%s\n' "$nxt" >> "$GITHUB_OUTPUT"
+          if printf '%s\n' "$nxt" | grep -qx 'dispatch=true'; then
+            msg="$left line(s) left after the time budget; continuation $((CONTINUATION + 1)) dispatched, the agent PR opens when the batch is complete"
+          else
+            msg="$left line(s) still left after $CONTINUATION continuation(s) (the cap): no further dispatch; opening the agent PR with what rendered"
+          fi
+          echo "::notice::$msg"
+          echo "$msg" >> "$GITHUB_STEP_SUMMARY"
+
       # Open a PR from the agent branch into main (ready for review) if none
       # is open; otherwise leave one comment with this run's counts. Counts
       # and the run URL only, never line text or ids.
       - name: Open the agent PR (or note this run on the open one)
-        if: steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+        if: >-
+          steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+          && steps.state.outputs.dispatch != 'true'
         env:
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
           KIND: ${{ steps.batch.outputs.kind }}
@@ -434,3 +585,30 @@ jobs:
             m=".agent/$TEAM_DIR/${VOICE}_manifest.json"
           fi
           python3 voice_batch/summary.py "$m" >> "$GITHUB_STEP_SUMMARY"
+
+  # Re-dispatch this workflow for the same batch when the merge job found
+  # lines left by a render job's time budget (continuation + 1, capped at
+  # CONTINUATION_CAP by resume.py). A workflow_dispatch made with GITHUB_TOKEN
+  # does start a run; it queues behind this one in the voice-batch
+  # concurrency group.
+  continue:
+    name: Continue the batch
+    needs: [plan, merge]
+    if: always() && needs.merge.outputs.dispatch == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Dispatch the next continuation
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.ref_name }}
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+          NEXT: ${{ needs.merge.outputs.next }}
+          SERIES: ${{ needs.plan.outputs.series }}
+        run: |
+          gh api -X POST "repos/$REPO/actions/workflows/voice_batch.yml/dispatches" \
+            -f ref="$REF" -f "inputs[batch_path]=$BATCH_FILE" -f "inputs[continuation]=$NEXT" -f "inputs[series]=$SERIES"
+          echo "dispatched continuation $NEXT of $BATCH_FILE on $REF (series run $SERIES)" | tee -a "$GITHUB_STEP_SUMMARY"

@@ -13,12 +13,20 @@ into the single manifest the app-side tooling reads. Prints counts only.
 every part into r3_manifest.<voice>.json per line id (a part's entry
 replaces the one already merged, newest part last) and deletes the parts,
 so the audio folder keeps one manifest per voice.
+
+"remaining" (lines a render job left for a continuation run when its time
+budget ran out, resume.py) is carried over: per category for a tutor
+({category: [ids]}), one list for r3. The merge job counts it to decide
+whether to re-dispatch the workflow and hold the agent PR back.
 """
 from __future__ import annotations
 
 import json
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import qc_failed  # noqa: E402
 
 ORDER = ("acknowledgements", "greetings", "signoffs", "teaching", "intro", "handover", "signoff", "timekeeping")
 
@@ -39,6 +47,9 @@ def merge(tutor_dir: Path, voice: str) -> dict | None:
     out["categories"] = {m["category"]: f"{voice}_manifest.{m['category']}.json" for m in parts if "category" in m}
     out["lines"] = [e for m in parts for e in m.get("lines", [])]
     out["failed"] = [e for m in parts for e in m.get("failed", [])]
+    remaining = {m["category"]: m["remaining"] for m in parts if m.get("remaining") and "category" in m}
+    if remaining:
+        out["remaining"] = remaining
     return out
 
 
@@ -53,7 +64,9 @@ def merge_r3(audio_dir: Path, voice: str) -> tuple[dict | None, list[Path]]:
         return (base or None), []
     lines = {e["id"]: e for e in base.get("lines", [])}
     failed = {e["id"]: e for e in base.get("failed", [])}
+    left_by_parts: set[str] = set()
     for m in parts:
+        left_by_parts.update(m.get("remaining", []))
         for e in m.get("lines", []):
             lines[e["id"]] = e
             failed.pop(e["id"], None)
@@ -69,6 +82,11 @@ def merge_r3(audio_dir: Path, voice: str) -> tuple[dict | None, list[Path]]:
     out["lines"] = sorted(lines.values(), key=lambda e: e["id"])
     out["failed"] = sorted(failed.values(), key=lambda e: e["id"])
     out["needs_listen"] = sum(bool(e.get("needs_listen")) for e in out["lines"])
+    # The parts' lists are this run's word; a line left by an earlier run is
+    # still left unless it has since passed or failed every seed round.
+    left = sorted(left_by_parts | {i for i in base.get("remaining", []) if i not in lines and i not in failed})
+    if left:
+        out["remaining"] = left
     return out, part_paths
 
 
@@ -81,8 +99,10 @@ def main_r3(audio_dir: Path, voice: str) -> None:
                                                           encoding="utf-8")
     for p in parts:
         p.unlink()
+    # The final-failed log beside the MP3s (lines that passed since drop out).
+    qc_failed.write(audio_dir / f"qc_failed.{voice}.json", m["failed"])
     print(f"merged r3 manifest: {len(m['lines'])} passed, {len(m['failed'])} failed, "
-          f"{m['needs_listen']} need a listen, {len(parts)} part(s) folded")
+          f"{len(m.get('remaining', []))} left, {m['needs_listen']} need a listen, {len(parts)} part(s) folded")
 
 
 if __name__ == "__main__":
@@ -95,4 +115,5 @@ if __name__ == "__main__":
         print("no category manifests found")
         sys.exit(0)
     (tdir / f"{voice}_manifest.json").write_text(json.dumps(m, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"merged manifest: {len(m['lines'])} passed, {len(m['failed'])} failed")
+    print(f"merged manifest: {len(m['lines'])} passed, {len(m['failed'])} failed, "
+          f"{sum(len(v) for v in m.get('remaining', {}).values())} left")

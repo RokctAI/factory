@@ -5,10 +5,10 @@
 #   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH r3 VOICE LABEL
 #   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH pronunciation VOICE LABEL
 #
-# Only rokct/ branches. A tutor job stages only the tutor's .wav files, their <clip>.timings.json and
-# <voice>_manifest[.<category>].json; an r3 job stages only
-# lms/dart/templates/assets/r3_packs/audio/<key>.mp3, <key>.timings.json and
-# r3_manifest.<voice>[.partNN].json directly in that folder (additions,
+# Only rokct/ branches. A tutor job stages only the tutor's .wav files, their <clip>.timings.json,
+# <voice>_manifest[.<category>].json and <clip dir>/qc_failed.json; an r3 job stages only
+# lms/dart/templates/assets/r3_packs/audio/<key>.mp3, <key>.timings.json,
+# r3_manifest.<voice>[.partNN].json and qc_failed.<voice>.json directly in that folder (additions,
 # changes, and the merge job's removal of folded part manifests); a
 # pronunciation audition job stages only
 # lms/team/voices/samples/pronunciation/<voice>/<slug>.mp3 and audition.json
@@ -49,7 +49,7 @@ if ! printf '%s' "$voice" | grep -qE '^[a-z][a-z0-9_]{0,31}$'; then
 fi
 if [ "$tutor" = "r3" ]; then
   tdir="lms/dart/templates/assets/r3_packs/audio"
-  allowed="^$tdir/([A-Za-z0-9_][A-Za-z0-9_.-]*\.mp3|[A-Za-z0-9_][A-Za-z0-9_.-]*\.timings\.json|r3_manifest\.${voice}(\.part[0-9]{2})?\.json)$"
+  allowed="^$tdir/([A-Za-z0-9_][A-Za-z0-9_.-]*\.mp3|[A-Za-z0-9_][A-Za-z0-9_.-]*\.timings\.json|r3_manifest\.${voice}(\.part[0-9]{2})?\.json|qc_failed\.${voice}\.json)$"
   ext="mp3"; manifest="$tdir/r3_manifest.${voice}.json"
 elif [ "$tutor" = "pronunciation" ]; then
   tdir="lms/team/voices/samples/pronunciation/$voice"
@@ -57,7 +57,7 @@ elif [ "$tutor" = "pronunciation" ]; then
   ext="mp3"; manifest="$tdir/audition.json"
 elif printf '%s' "$tutor" | grep -qE '^(tutor|assistant)_[0-9]{3}$'; then
   case "$tutor" in tutor_*) tdir="lms/team/tutors/CAPS/$tutor" ;; *) tdir="lms/team/assistants/CAPS/$tutor" ;; esac
-  allowed="^$tdir/(.+\.wav|.+\.timings\.json|${voice}_manifest(\.[a-z]+)?\.json)$"
+  allowed="^$tdir/(.+\.wav|.+\.timings\.json|${voice}_manifest(\.[a-z]+)?\.json|([a-z_]+/)?qc_failed\.json)$"
   ext="wav"; manifest="$tdir/${voice}_manifest.json"
 else
   echo "::error::target must be tutor_NNN, assistant_NNN, r3 or pronunciation"; exit 1
@@ -98,6 +98,10 @@ else
     | { grep -E '\.timings\.json$' || true; } | sort -u | while IFS= read -r f; do
       if [ -e "${f%.timings.json}.wav" ]; then agit add -- "$f"; fi
     done
+  # qc_failed.json beside the clips (run.py): new, changed, or deleted once
+  # every line in it has passed.
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; agit ls-files --deleted -- "$tdir"; } \
+    | { grep -E "^$tdir/([a-z_]+/)?qc_failed\.json$" || true; } | sort -u | while IFS= read -r f; do agit add -A -- "$f"; done
 fi
 if agit diff --cached --quiet; then
   echo "category $category: nothing new to commit"
