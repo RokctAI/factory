@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the investigation with the pinned square and explain why adding a single diagonal makes it rigid while a pinned triangle needs nothing added.",
+      "expected_answer": "Four card strips pinned at the corners form a square that folds into a parallelogram and then flat when pushed, because each joint rotates freely and no member needs to change length; it is a mechanism. Pinning a fifth strip from corner to corner divides the square into two triangles, and now any change of shape would require the diagonal to stretch or shorten, which card resists, so the frame is rigid. A triangle is the only polygon whose shape is fixed by the lengths of its sides, so a pinned triangle is rigid without any added member; a polygon with n sides needs n minus 3 diagonals."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain tension and compression in frame members, why an X of two diagonals allows both to be thin, and how to tell whether a member is a tie or a strut.",
+      "expected_answer": "A member is in tension when a load tries to stretch it end to end and in compression when a load tries to shorten it; slender members resist tension well but buckle in compression. With an X, whichever way the frame is pushed one diagonal is in tension and holds the shape while the other, in compression, may buckle harmlessly, so both can be thin and even string works. To tell them apart, imagine removing the member: if its ends would move apart it was holding them together in tension, a tie; if they would move together it was holding them apart in compression, a strut. Tower legs under a top load are struts and must be stiff."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why a tower section with braced faces can still twist, how to prevent it, and how taper and the pattern of diagonals affect a model tower.",
+      "expected_answer": "Each braced face is rigid in its own plane, but the top square can rotate relative to the bottom square without any face changing shape, so the section twists. A diagonal across the inside from a top corner to the opposite bottom corner, or a triangulated horizontal frame, stops this; bracing is needed in every plane in which the frame could move. Sloping the legs inward lowers the centre of gravity, widens the base and builds a triangle into each face, making the tower stiffer and more stable. A zigzag of alternating single diagonals is rigid and light, an X in every panel is stiffer but uses twice the material, and bracing only at the bottom leaves the top floppy; most bracing belongs at the bottom where wind bending is greatest."
+    }
+  ]
+}
