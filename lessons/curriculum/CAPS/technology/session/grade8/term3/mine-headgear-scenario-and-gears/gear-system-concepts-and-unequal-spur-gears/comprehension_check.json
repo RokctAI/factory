@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define driver and driven gear, explain why two meshed spur gears counter-rotate, state what an idler does, and describe the trade between speed and force in a gear system.",
+      "expected_answer": "The driver is the gear turned by the effort, such as a motor or hand; the driven gear is the one it turns. At the meshing point the driver's tooth pushes the driven gear's tooth forward, and a point moving forward on the near side of the driven gear makes it rotate the opposite way, so clockwise always drives anticlockwise. An idler is a third gear placed between the driver and the final gear; it reverses direction a second time so the first and last gears turn the same way, and whatever its size it does not change the speed ratio between them. Gears trade speed for force: a driven gear that turns more slowly than its driver turns with proportionally more force, and one that turns faster turns with less, exactly apart from friction."
+    },
+    {
+      "id": "cc2",
+      "question": "Using a 10-tooth and a 40-tooth spur gear, explain the one-for-one tooth rule, calculate the velocity ratio with each gear as driver, and calculate the speed of a 60-tooth gear driven by a 12-tooth gear turning at 1 200 revolutions per minute.",
+      "expected_answer": "At the meshing point every tooth of the driver that passes pushes exactly one tooth of the driven gear past, so one turn of a 10-tooth driver moves 10 of the 40-tooth gear's teeth, a quarter turn; the velocity ratio is driven teeth over driver teeth, 40 over 10, which is 4 or 4 to 1, and the driven gear turns at a quarter of the driver's speed. With the 40-tooth gear as driver, one turn pushes 40 teeth past, which is four turns of the 10-tooth gear; the velocity ratio is 10 over 40, a quarter, and the driven gear turns four times faster. Driven speed equals driver speed times driver teeth over driven teeth: 1 200 times 12 over 60 is 240 revolutions per minute. Teeth are proportional to diameter, so diameters give the same ratio."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain mechanical advantage for a gear pair, what values above and below one mean, why nothing is gained for free, and why a model winder needs a mechanical advantage well above one.",
+      "expected_answer": "For gears the mechanical advantage equals the velocity ratio, driven teeth over driver teeth, and is the load the driven gear can turn divided by the effort at the driver. Above one, a small gear driving a large one, the driven gear turns slower and with more force, a force multiplier; below one, a large gear driving a small one, it turns faster and with less force, a speed multiplier; equal gears give one and change only direction. Work in equals work out less friction, so four times the force is delivered through a quarter of the distance in the same time. A model winder is driven by a small motor or hand crank that is fast and weak, and must lift a load slowly and reliably, so its gear train must use small gears driving large ones, often in stages, to give a mechanical advantage well above one and the correct direction of drum rotation."
+    }
+  ]
+}

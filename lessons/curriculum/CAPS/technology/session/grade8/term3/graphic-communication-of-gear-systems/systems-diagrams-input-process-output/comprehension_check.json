@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what a systems diagram shows, describe the content of its three boxes for a mechanical system and the drawing conventions, and explain why it is drawn separately from the gear drawing.",
+      "expected_answer": "A systems diagram shows what a system does without showing its parts: the input box holds what goes in, for a mechanism a motion or force with its speed and direction; the process box holds the mechanism and the change it makes, such as a gear pair with its ratio; the output box holds what comes out, changed, with its new speed, torque and direction. Boxes are equal ruled rectangles arranged left to right, each with a one- or two-word label and a short description, joined by arrows with heads on the receiving box and quantities written along them, with extra process boxes in sequence for multistage systems and a title stating the purpose. It is drawn separately because the gear drawing answers how the mechanism is built, with pitch circles and tooth counts for the maker, while the systems diagram answers what it does, in numbers a non-engineer such as a tender board member can check against the specification, and it provides the skeleton of the flow chart for the whole mechanism."
+    },
+    {
+      "id": "cc2",
+      "question": "Draw in words the systems diagram for a gear system with mechanical advantage 4:1 using a 12T driver and a 48T driven gear with an input of 400 revolutions per minute, and explain how a two-stage version and the winder's diagram follow the same shape.",
+      "expected_answer": "Input: driver 12T turned clockwise at 400 rpm with low torque. Process: gear pair 12T driving 48T, velocity ratio 48/12 = 4:1, mechanical advantage 4, direction reversed by one mesh. Output: 48T shaft turning anticlockwise at 100 rpm with four times the input torque, less friction; title: gear system MA 4:1, speed reduced four times, torque multiplied four times. Output speed is input speed divided by the ratio and output torque is input torque times the mechanical advantage. If the advantage were delivered by two stages of 2, the process becomes two boxes in sequence with 200 rpm on the arrow between them. The winder's diagram has the same shape: a fast weak motor as input, a reduction train with stated ratio and direction as process, and a slow strong drum lifting a stated load at a stated speed as output, optionally with an energy-source box before and a cage-rising box after."
+    },
+    {
+      "id": "cc3",
+      "question": "Draw in words the systems diagram for a gear train whose driven gear turns faster than the driver, explain why it mirrors the 4:1 diagram, and list what the full winder flow chart for the tender board contains.",
+      "expected_answer": "Input: driver 48T turned clockwise at 100 rpm with high torque. Process: gear pair 48T driving 12T, velocity ratio 12/48 = 1:4, mechanical advantage 0.25, direction reversed. Output: 12T shaft turning anticlockwise at 400 rpm with one quarter of the input torque, less friction; title: gear train, driven faster than driver, speed increased four times, torque reduced to a quarter, as in a hand drill or bicycle. It mirrors the 4:1 diagram because the same two gears are used and only the direction of drive changes: small gear as input multiplies force, large gear as input multiplies speed, so the ratio depends on which gear drives. The winder flow chart chains the energy source, the motor or crank with its speed, each gear stage with its ratio and intermediate speeds, any bevel pair with its angle, the drum with its diameter, speed and torque, the cage rising at a stated speed with a stated load, and a brake or safety-catch box acting on the drum, with every number matching the design calculation and the gear drawing."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how bevel gear teeth differ from spur gear teeth, how two bevel gears are mounted to mesh, and calculate the velocity ratio and mechanical advantage of a 12-tooth bevel pinion driving a 36-tooth bevel wheel.",
+      "expected_answer": "Spur teeth are cut parallel to the axle on a cylinder and mesh only on parallel shafts; bevel teeth are cut on the surface of a cone and converge towards its apex, straight or spiral across the cone face. Two bevel gears mesh when they are mounted so that the apexes of their cones meet at one point, with their shafts crossing at the designed angle, usually 90 degrees, so rotation passes from one shaft to the other. The one-for-one tooth rule applies along the meshing line, so the velocity ratio is driven over driver teeth, 36 over 12, which is 3; the wheel turns at a third of the pinion's speed with three times the torque, and the mechanical advantage is 3, so the pair turns the corner and gears down at once."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why changing the axis of rotation is a common design problem and describe how a hand drill and a car's differential use bevel gears, stating in each whether the pair increases or reduces speed.",
+      "expected_answer": "Motors and engines deliver rotation along their own shaft axis while the parts they drive, drums, chucks, axles, often lie on another axis, so rotation must be carried round a corner, usually 90 degrees, without slipping. In a hand drill the crank turns a large bevel wheel on a horizontal axis across the body, which drives a small bevel pinion on the forward-pointing chuck shaft; the large gear drives the small, so the chuck turns several times per crank turn, a speed increaser with mechanical advantage below one, suited to a fast-spinning bit under light load. In a car's differential the bevel pinion on the propeller shaft running along the car drives a large crown wheel on the axle across the car, turning the drive through 90 degrees and reducing speed with mechanical advantage above one so the wheels turn slowly and push hard, while small bevels inside the crown wheel let the two wheels turn at different speeds on a bend."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe where bevel gears appear in mine winding machinery, how a bevel pair can solve a frame problem in the model headgear, and the two mounting requirements that make a bevel pair work under load.",
+      "expected_answer": "In a winder the motor usually lies parallel to the drum, so the main reduction uses spur or helical gears; bevels appear in right-angle drives at the top of the headgear for conveyors and skip tipping, in depth-indicator and signalling mechanisms, and in older winders with engines at right angles to the drum, while the sheave wheels are free pulleys with no gears. In the model the drum must lie horizontally across the frame but the motor or crank may only fit end-on or vertically on a narrow tower; a bevel pair at the drum shaft lets the motor stand where there is room and, if the drum's bevel is larger than the motor's, adds a stage of reduction. The pair works only if the cone apexes meet, with shafts crossing at exactly 90 degrees at the correct distance in rigid bearings, and if the end thrust that pushes bevels apart along their axes under load is resisted by fixing each gear to its shaft and fitting collars or stops so the shafts turn but cannot slide."
+    }
+  ]
+}
