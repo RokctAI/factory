@@ -1,0 +1,1 @@
+Today we learn that one amount can have more than one fraction name. Half a pizza is the same as two quarters of the pizza and four eighths of it. These are called equivalent fractions. We use a pizza cut in different ways, the fraction wall and folded paper to find equivalent fractions, and we learn a rule for making them when one bottom number is a multiple of the other.

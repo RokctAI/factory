@@ -1,0 +1,1 @@
+Today we pull the whole of Term 3 together before the test. We revisit fractions, data handling, probability, mass and transformations, all at one school market day in Graaff-Reinet. We share cakes in fractions, run a survey and draw a graph, toss a coin for a prize, weigh bags of sweets, and tile the market stalls, practising the checking habits that make every answer certain.

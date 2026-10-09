@@ -1,0 +1,18 @@
+### subtopic_1 — Comparing Unit Fractions
+**Assistant:** Why does the smaller bottom number win sometimes and lose other times? It feels like the rules keep changing.
+
+**Tutor:** The rules only seem to change because there are two different things a fraction tells you: how big the pieces are, and how many pieces you have. The bottom number decides the size of the pieces, and the top number decides how many. When you compare two fractions, you want to keep one of those things the same so you can look at the other. If the bottoms are the same, the pieces are the same size, so the only question is how many pieces, and more pieces wins. Five eighths beats three eighths. If the tops are the same, you have the same number of pieces, so the only question is how big each piece is, and bigger pieces come from a smaller bottom number. Two thirds beats two fifths. There is really only one idea: a fraction is a number of pieces of a certain size. The trick is to ask first which number is the same, because that tells you which question is left to answer. When neither number is the same, we have to be cleverer, and that is where one half and the fraction wall come in. Later you will learn to change one fraction into another with the same bottom, which turns every comparison into the easy kind.
+
+***
+
+### subtopic_2 — Same Bottom or Same Top
+**Assistant:** How does comparing with one half work? How do I know if a fraction is more than a half?
+
+**Tutor:** One half means the top is exactly half of the bottom: 2 out of 4, 3 out of 6, 4 out of 8. So to test any fraction, halve its bottom number and compare the top with that. For three eighths, half of 8 is 4. The top, 3, is less than 4, so three eighths is a bit less than a half. For five eighths, the top is 5, which is more than 4, so five eighths is more than a half. For an odd bottom number, the half is a number and a half. Half of 7 is three and a half, so three sevenths is just below a half and four sevenths is just above. This is a quick and powerful check because half is a fraction you can picture so easily: half a melktert, half the route, half a bottle. When a test asks you to compare two fractions that look hard, like three eighths and four sevenths, the half test often answers it immediately. One is below the half mark and one is above, so the one above is bigger. Only when both fractions are on the same side of a half do you need the fraction wall or a cleverer method. Think of one half as the halfway flag on the fun run.
+
+***
+
+### subtopic_3 — Ordering with a Half and the Fraction Wall
+**Assistant:** Is there a way to check my order without a fraction wall in front of me?
+
+**Tutor:** Yes, and it is worth practising because a fraction wall will not always be printed in the test. First, sketch your own small wall: a few strips of the same length, one for each denominator you need, cut by eye into equal parts. It does not have to be perfect to show which fraction reaches further. Second, use the gap to one whole. Three quarters is one quarter short of a whole and two thirds is one third short. A quarter is a smaller gap than a third, so three quarters is closer to a whole and is bigger. This works well for fractions that are one part short, like 5/6, 6/7 and 7/8: the bigger the bottom, the smaller the gap, so 7/8 is the biggest of those three. Third, check pair by pair. Once your list is written, look at each pair of neighbours and ask whether the left one really is smaller. If every neighbour pair is right, the whole order is right. Finally, check you have answered the question that was asked: ascending, smallest first, or descending, biggest first. Many correct answers lose marks because they were written in the wrong direction.
