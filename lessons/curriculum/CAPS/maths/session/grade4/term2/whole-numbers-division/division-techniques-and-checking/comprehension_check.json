@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Estimate and then work out 675 divided by 5, and check your answer by multiplication.",
+      "expected_answer": "Estimate: 700 divided by 5 is 140, so a little under 140. Break 675 into 500 plus 150 plus 25: 100 plus 30 plus 5 is 135. Check: 5 times 135 is 500 plus 150 plus 25, which is 675."
+    },
+    {
+      "id": "cc2",
+      "question": "Work out 252 divided by 7 by building up from a known multiplication, and explain each step.",
+      "expected_answer": "7 times 30 is 210, which is less than 252. The gap is 252 minus 210, which is 42, and 7 times 6 is 42. So 7 times 36 is 252 and 252 divided by 7 is 36."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how to check a division with a remainder, using 255 divided by 7, and what you would do if the check failed.",
+      "expected_answer": "255 divided by 7 is 36 remainder 3. Check: divisor times quotient plus remainder, 7 times 36 is 252, plus 3 is 255, which matches. If the check gave a different number, the answer would be wrong, and the difference would show how many sevens were missed or counted twice."
+    }
+  ]
+}

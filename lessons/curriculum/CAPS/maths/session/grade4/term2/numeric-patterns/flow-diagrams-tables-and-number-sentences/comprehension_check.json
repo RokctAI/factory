@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "The taxi charges R12 per passenger plus R5 for bags. Write the rule in words, as a flow diagram, as a number sentence, and complete a table for 1 to 4 passengers.",
+      "expected_answer": "Words: multiply the number of passengers by 12 and add 5. Flow diagram: input, times 12, plus 5, output. Number sentence: 12 times box plus 5 equals the fare. Table: 1 gives 17, 2 gives 29, 3 gives 41, 4 gives 53."
+    },
+    {
+      "id": "cc2",
+      "question": "A table under the vetkoek rule times 6 has a missing output for input 3 and a missing input for output 42. Find both and explain the direction you worked in each case.",
+      "expected_answer": "The missing output is found forwards: 3 times 6 is 18. The missing input is found backwards by undoing the rule: 42 divided by 6 is 7."
+    },
+    {
+      "id": "cc3",
+      "question": "A table shows inputs 2, 4, 6 with outputs 12, 24, 36. Explain why the rule is not times 12, and find the correct rule.",
+      "expected_answer": "The outputs step by 12 but the inputs step by 2, so the multiplier is 12 divided by 2, which is 6. Check: 2 times 6 is 12, 4 times 6 is 24, 6 times 6 is 36. The rule is times 6."
+    }
+  ]
+}
