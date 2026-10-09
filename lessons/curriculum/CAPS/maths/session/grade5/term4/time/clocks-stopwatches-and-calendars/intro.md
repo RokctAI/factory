@@ -1,0 +1,1 @@
+Today we use clocks, watches and stopwatches, and we read calendars. A primary school in Mossel Bay holds a swimming gala, timing every race with stopwatches and planning practices and the gala day on the school calendar, and we read the times, compare them and find dates and days of the week.

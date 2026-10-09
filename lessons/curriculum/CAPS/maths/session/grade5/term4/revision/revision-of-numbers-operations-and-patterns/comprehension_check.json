@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Round R136 480 to the nearest 1 000 and to the nearest 100. Explain.",
+      "expected_answer": "Nearest 1 000: the hundreds digit is 4, which rounds down, so R136 000. Nearest 100: the tens digit is 8, which rounds up, so R136 500."
+    },
+    {
+      "id": "cc2",
+      "question": "750 programmes are tied in bundles of 40. How many bundles are needed to tie them all?",
+      "expected_answer": "750 divided by 40 is 18 remainder 30, because 18 times 40 is 720. The 30 left over need another bundle, so 19 bundles are needed."
+    },
+    {
+      "id": "cc3",
+      "question": "Tickets cost R35 each plus a R5 booking fee per order. How much do 4 tickets cost, and how many tickets cost R180?",
+      "expected_answer": "4 times 35 is 140, plus 5 is R145. For R180, work backwards: 180 minus 5 is 175, and 175 divided by 35 is 5 tickets."
+    }
+  ]
+}

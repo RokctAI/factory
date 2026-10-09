@@ -1,0 +1,1 @@
+Today we calculate time intervals, from seconds and minutes to weeks, years and decades, and we solve problems about time. A Grade 5 class from Polokwane goes on a tour to the Kruger National Park, and we work out how long the bus trip takes, when the game drive ends and how many decades the park has existed.

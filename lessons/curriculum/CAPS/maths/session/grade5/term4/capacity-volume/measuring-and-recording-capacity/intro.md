@@ -1,0 +1,1 @@
+Today we estimate and measure capacity and volume with measuring spoons, cups and jugs, and we record, compare and order amounts in millilitres and litres. A Grade 5 class in Stellenbosch mixes fruit punch for the end-of-year concert, measuring every ingredient carefully and comparing the sizes of bottles and jugs.

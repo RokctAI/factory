@@ -1,0 +1,1 @@
+Today we calculate the number of days between two dates, in the same month, across months, and from one year into the next. A Grade 5 learner in Komani counts down the days to her cousin's visit, the end of the school year and New Year, and we learn a step-by-step method that works for any two dates.

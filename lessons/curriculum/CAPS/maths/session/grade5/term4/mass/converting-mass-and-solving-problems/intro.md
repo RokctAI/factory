@@ -1,0 +1,1 @@
+Today we change between grams and kilograms, including fractions of a kilogram, and use these conversions to solve problems. A Grade 5 class in Kroonstad bakes scones, muffins and biscuits for a school bake sale, and we work out how much flour, sugar and butter they need and how much is left over.

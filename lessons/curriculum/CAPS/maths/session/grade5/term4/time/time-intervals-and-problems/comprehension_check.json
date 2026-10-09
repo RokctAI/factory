@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "The bus leaves at 06:45 and arrives at 10:20. How long is the trip? Show your jumps.",
+      "expected_answer": "06:45 to 07:00 is 15 minutes. 07:00 to 10:00 is 3 hours. 10:00 to 10:20 is 20 minutes. 15 plus 20 is 35, so the trip takes 3 hours 35 minutes."
+    },
+    {
+      "id": "cc2",
+      "question": "A game drive starts at 15:30 and lasts 2 hours 45 minutes. When does it end?",
+      "expected_answer": "15:30 plus 2 hours is 17:30. 17:30 plus 30 minutes is 18:00, and 15 more minutes is 18:15. It ends at 18:15."
+    },
+    {
+      "id": "cc3",
+      "question": "Change 150 minutes to hours and minutes, and 2 decades to years.",
+      "expected_answer": "150 divided by 60 is 2 remainder 30, so 150 minutes is 2 hours 30 minutes. A decade is 10 years, so 2 decades is 20 years."
+    }
+  ]
+}

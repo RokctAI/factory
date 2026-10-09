@@ -1,0 +1,1 @@
+Today we slide, turn and flip shapes to make new composite shapes and tessellating patterns. A Grade 5 class in Polokwane designs a mosaic floor for the school entrance, tracing and moving card shapes to build patterns that cover the floor with no gaps, some of them with lines of symmetry.
