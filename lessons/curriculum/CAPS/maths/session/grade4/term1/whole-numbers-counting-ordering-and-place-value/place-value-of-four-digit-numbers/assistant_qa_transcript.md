@@ -1,0 +1,18 @@
+### subtopic_1 — Thousands, Hundreds, Tens and Units
+**Assistant:** Why do we write a space in 4 736 instead of a comma like in some books?
+
+**Tutor:** In South Africa we use a space to group the thousands, and we keep the comma for something else: the decimal comma, which separates whole rands from cents, as in R12,50. If we used a comma for thousands as well, a price like R4,736 would be confusing, because it could mean four thousand seven hundred and thirty-six rand or four rand and some strange fraction. Many countries, including the United Kingdom and the United States, write 4,736 with a comma for the thousands and use a dot for decimals instead, so you will see both styles in books and on the internet. Neither is wrong; they are different conventions, like driving on the left or the right. What matters is that you know which one you are reading. The space is helpful in its own right because it groups the digits in threes, which is exactly how we say the number: four thousand, then seven hundred and thirty-six. When a number grows to five or six digits, the space keeps doing that job: 23 450 is twenty-three thousand four hundred and fifty, and 123 450 is one hundred and twenty-three thousand four hundred and fifty. Read the group before the space as thousands, and the group after it as hundreds, tens and units.
+
+***
+
+### subtopic_2 — Face Value, Place Value and Expanded Notation
+**Assistant:** Why is 7 times 100 equal to 700? Where do the zeros come from?
+
+**Tutor:** The zeros come from what a hundred is. One hundred is 1 followed by two zeros because it is ten tens, and each ten is itself ten units, so a hundred is ten times ten. When you take 7 hundreds, you have 7 groups of 100. Count them: 100, 200, 300, 400, 500, 600, 700. The digit 7 moves into the hundreds place, and the two zeros hold the tens and units places, which are empty because there are no loose tens or units in seven complete hundreds. That is why multiplying by 100 looks like writing two zeros after the number: the digits shift two places to the left. Multiplying by 10 shifts them one place, so 7 times 10 is 70, and multiplying by 1 000 shifts them three places, so 7 times 1 000 is 7 000. The same shifting is what expanded notation shows. When we write 4 736 as 4 times 1 000 plus 7 times 100 plus 3 times 10 plus 6 times 1, we are saying that each digit has been pushed into its place by multiplying by 1, 10, 100 or 1 000. The zeros are not decoration; they record how many places the digit has moved.
+
+***
+
+### subtopic_3 — The Job of Zero
+**Assistant:** If zero means nothing, why can't we just leave it out?
+
+**Tutor:** Because zero does two jobs, and only one of them is meaning nothing. Its other job is holding a place open so that the digits around it do not slide into the wrong positions. Imagine the marble jar with 2 305 marbles, packed as 2 boxes of a thousand, 3 boxes of a hundred, no boxes of ten and 5 loose marbles. If you record only the boxes you have, you would write 2, 3, 5 and someone reading 235 would think you had 2 hundreds, 3 tens and 5 marbles, which is 2 070 marbles too few. The zero in 2 305 is a note that says the tens box is empty, and that note is what keeps the 2 in the thousands place. This is also why zero was such a big invention. The Romans had no zero and wrote numbers with letters, which made adding and multiplying very slow; the system we use came to Europe from India through Arab scholars, and the zero was the piece that made the whole place-value idea work. So when you read 2 305, the zero is silent, but when you write it, the zero is essential. Leave it out and every digit to its left loses nine tenths of its value.

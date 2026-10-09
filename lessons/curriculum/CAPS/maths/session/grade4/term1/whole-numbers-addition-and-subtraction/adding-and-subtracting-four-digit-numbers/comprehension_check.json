@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Add 2 468 and 1 795 in columns, explaining each carry.",
+      "expected_answer": "Units: 8 plus 5 is 13, write 3, carry 1 ten. Tens: 6 plus 9 plus 1 is 16, write 6, carry 1 hundred. Hundreds: 4 plus 7 plus 1 is 12, write 2, carry 1 thousand. Thousands: 2 plus 1 plus 1 is 4. Total 4 263."
+    },
+    {
+      "id": "cc2",
+      "question": "Subtract 5 324 from 7 162 in columns, explaining each exchange, and check your answer.",
+      "expected_answer": "Units: 2 minus 4 cannot be done, exchange 1 ten so 6 tens become 5 and units become 12; 12 minus 4 is 8. Tens: 5 minus 2 is 3. Hundreds: 1 minus 3 cannot be done, exchange 1 thousand so 7 becomes 6 and hundreds become 11; 11 minus 3 is 8. Thousands: 6 minus 5 is 1. Answer 1 838. Check: 1 838 plus 5 324 is 7 162."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain two ways to work out 4 000 minus 2 637 and show that they agree.",
+      "expected_answer": "Way one: exchange through the zeros so 4 000 becomes 3 thousands, 9 hundreds, 9 tens and 10 units, then subtract column by column to get 1 363. Way two: subtract 1 first, 3 999 minus 2 637 is 1 362 with no exchanges, then add the 1 back to get 1 363. Both give 1 363, and 1 363 plus 2 637 is 4 000."
+    }
+  ]
+}
