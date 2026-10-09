@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the rules of first angle orthographic projection for the position and alignment of views, and describe the standard line types.",
+      "expected_answer": "In first angle projection the object is imagined between the viewer and the drawing plane, so the front view is drawn first, the top view directly below it, the view from the right on the left of the front view and the view from the left on the right; the first angle symbol, a truncated cone with its small end toward the circle view, is placed in the title block. Views are aligned so that widths project straight down from front to top view, heights project straight across from front to side view, and depths are transferred from top to side view with a 45 degree mitre line, all at a stated scale. Visible edges are thick continuous lines, hidden edges thin short dashes, centre lines thin long-short chain lines, dimension and projection lines thin continuous lines with arrowheads, and section planes chain lines with thick lettered ends."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how to dimension an orthographic drawing correctly and list the contents of the title block.",
+      "expected_answer": "Each dimension is given once, on the view that shows the feature most clearly, placed outside the outline with thin projection lines starting a small gap from the object and the dimension line between them with arrowheads; smaller dimensions sit nearest the outline and overall dimensions outermost so lines do not cross. The three overall sizes are given first, then the positions of features from a chosen datum edge or centre line, then feature sizes, with a diameter symbol for holes, R for radii and degrees for angles; figures are in millimetres, written above the line and readable from the bottom or right of the page, with the unit stated once. The title block in the bottom right holds the name of the item, the drawer's name and class, the date, the scale, the unit, the material, and the first angle projection symbol."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain which moulding features must appear on the drawing of a plastic item and how each is shown, and give a checklist for checking the drawing.",
+      "expected_answer": "Wall thickness is shown in a sectional view cut on a plane marked and lettered in another view, with the cut material hatched at 45 degrees and the wall and rib thicknesses dimensioned, ribs being no more than about two thirds of the wall. Draft is shown as a slight taper on faces parallel to the mould opening, dimensioned in degrees or covered by a note. Corner radii are dimensioned with R or covered by a note for all unspecified radii. Holes carry a centre line and a diameter. Checklist: views in first angle positions and aligned; scale stated and used; correct line types; every needed dimension given once from a datum with diameters, radii and angles marked; a section showing wall thickness; draft and radii shown or noted; a complete title block with material and symbol; overall dimensions matching the specification; and the drawing readable by someone who has not seen the item."
+    }
+  ]
+}

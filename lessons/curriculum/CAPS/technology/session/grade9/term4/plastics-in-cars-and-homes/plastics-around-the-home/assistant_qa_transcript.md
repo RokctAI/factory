@@ -1,0 +1,18 @@
+### subtopic_1 — Case Study: A Room-by-Room Audit
+**Assistant:** Why is it safe to microwave food in a polypropylene container but not in a polystyrene one?
+
+**Tutor:** Two properties decide it: how hot each plastic can get before it softens, and what it might release into the food. Polypropylene softens at around 160 degrees, well above the 100 degrees of boiling water or steaming food, so a polypropylene tub holds its shape in a microwave; it also has no small molecules that leach out at those temperatures, which is why it carries the microwave-safe symbol. Polystyrene, especially the foamed kind in takeaway boxes and cups, softens at about 90 degrees, so hot oily food deforms it, and it can release traces of styrene into fatty food when heated. Melamine is a thermoset so it does not soften, but microwaves heat it unevenly and it can crack and char, and heated melamine can release small amounts of its building chemicals, so it is marked not for microwave. PET bottles soften at about 70 degrees and distort. PVC should never be heated with food because of its additives. The microwave-safe symbol, a box with wavy lines, exists because the plastics look alike and behave differently.
+
+***
+
+### subtopic_2 — Kitchen, Bathroom and Services: Which Plastic and Why
+**Assistant:** How can a plastic pipe be better than a steel one when steel is so much stronger?
+
+**Tutor:** Because a water pipe does not need steel's strength, and steel's weakness, corrosion, is exactly what kills pipes. A domestic pipe carries water at a few atmospheres of pressure, and PVC or polyethylene handles that with ease; the pipe walls are made thick enough for the job and no more. What a pipe does need is to stay clean and open for decades, and that is where steel fails: galvanised steel pipes corrode inside, furring up with rust and scale until the flow is a trickle and the water runs brown, and they rust through at threads and joints. PVC and polyethylene never corrode, never fur up, and are smooth inside so water flows better in a smaller pipe. They are a fifth of the weight, so one person carries a six-metre length, they cut with a hand saw and join with solvent cement or push fittings instead of threading and welding, and they cost less. A plastic pipe in a wall is expected to last fifty years or more. Steel still wins where pressure or heat is high, which is why a geyser is steel and its outlet pipe is often copper for the first metre.
+
+***
+
+### subtopic_3 — Lifespan, Safety and What to Do With It After
+**Assistant:** Why does the audit split things into built-in, durable and packaging instead of just counting plastic?
+
+**Tutor:** Because the three groups need completely different design thinking, and counting them together hides that. The built-in group is small in number but large in mass and lasts the life of the house; for these the questions are durability, fire safety and whether the house can be dismantled for recycling in forty years. The durable group, kettles, chairs, buckets, lasts years and is recyclable if it reaches a collector, so the design questions are making it last the full life of its job, repairability, and marking it with a code so it is recycled instead of dumped. The packaging group is tiny in mass per item but the largest in number and the shortest in life, so for it the only sensible questions are reduce and reuse, since recycling catches only a fraction. A home with seventy plastic items might have ten built-in, thirty durable and thirty packaging, and the plastic that ends in the river is nearly all from the last group. The split tells you where to aim.
