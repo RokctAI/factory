@@ -12,6 +12,8 @@ The surfaces tell you how an object moves. Objects with only flat faces slide an
 
 To describe an object fully, say how many flat faces it has, what shapes they are, and whether it has any curved surfaces. For example: a square-based pyramid has 5 flat faces, 1 square and 4 triangles, and no curved surfaces.
 
+Counting faces carefully matters. Touch each face once and keep a count, or mark each face with a small sticker. The die is easy to check, because its numbers 1 to 6 are on its 6 faces. For the toothpaste box, count the 2 triangle ends first, then the 3 rectangles around the sides.
+
 The questions for this section are with you now: counting faces, naming face shapes and spotting curved surfaces.
 
 ## Subtopic: Sorting and Comparing 3D Objects
@@ -24,6 +26,8 @@ Comparing means saying what is the same and what is different. The toothpaste bo
 
 A cylinder and a cone both have a circle face and a curved surface. But the cylinder has 2 circle faces and the cone has only 1, and the cone has an apex.
 
+A sorting table can show two properties at once. Put the surface groups across the top, only flat, only curved and both, and the number of flat faces down the side. The tin goes in the both column with 2 flat faces, the cone in the both column with 1, and the ball in the only curved column with 0.
+
 The questions for this section are with you now: sorting objects by surfaces and by number of faces, and comparing two objects.
 
 ## Subtopic: Models and Nets
@@ -35,6 +39,8 @@ Next they cut open an old cereal box along some of its edges and press it flat. 
 A cube net has 6 equal squares. One common net is a cross: a row of 4 squares with one square above and one below the second square. But not every arrangement of 6 squares works. A straight row of 6 squares rolls into a tube with two faces overlapping and two open ends, so it is not a net of a cube. Test a net by folding it in your mind or on paper.
 
 To describe a net, say how many faces it has, what shapes they are and how they are joined.
+
+The class also cuts open a toothpaste box. Its net has 3 rectangles in a row, with one triangle joined to the top and one to the bottom of the middle rectangle. Folding the rectangles into a tube and closing the ends with the triangles rebuilds the triangular prism.
 
 The error museum, four exhibits. One: counting the curved surface of a tin as a face, and saying it has 3 faces; it has 2 flat faces and 1 curved surface. Two: saying a ball has 1 face; it has no flat faces, only a curved surface. Three: thinking two objects with 5 faces must be the same; the shapes of the faces matter. Four: thinking any 6 squares make a cube net; a row of 6 does not fold into a cube.
 

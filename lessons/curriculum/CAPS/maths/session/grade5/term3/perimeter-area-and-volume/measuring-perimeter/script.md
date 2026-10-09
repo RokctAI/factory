@@ -12,6 +12,8 @@ Perimeter is a length, so it is measured in length units: millimetres, centimetr
 
 Every shape with straight sides has a perimeter you can find by adding its sides. A triangle with sides of 5 cm, 6 cm and 7 cm has a perimeter of 18 cm. A square with sides of 25 cm has a perimeter of 4 times 25, which is 100 cm, because all four sides are equal.
 
+Perimeter is useful whenever something goes around an edge. A border of paper around a notice board, a fence around a field, lace around a tablecloth and a frame around a picture all depend on the perimeter.
+
 The questions for this section are with you now: what perimeter means, and adding sides to find the perimeter.
 
 ## Subtopic: Measuring Perimeter with Rulers and Tapes
@@ -24,6 +26,8 @@ For a shape with a curved edge, like a round table or a tree trunk, a measuring 
 
 The class measures a hexagon-shaped tile with a ruler: each side is 8 cm. The perimeter is 6 times 8, which is 48 cm. A regular shape has all sides equal, so you can multiply one side by the number of sides. An irregular shape has sides of different lengths, so you must measure and add each one.
 
+The class also measures the perimeter of a classroom desk with a metre stick: 120 cm, 60 cm, 120 cm and 60 cm. The total is 360 cm, which is 3 m 60 cm. Writing the answer in metres and centimetres shows that a bit more than 3 m of edging strip is needed.
+
 The questions for this section are with you now: measuring sides with rulers and tapes, and finding perimeters of regular and irregular shapes.
 
 ## Subtopic: Perimeter Problems and Checks
@@ -35,6 +39,8 @@ Count the sides of an L shape carefully: it has 6 sides, not 4. Missing one side
 Sometimes a side length is not given, but you can work it out. If a rectangle has a perimeter of 100 cm and its length is 30 cm, then the two lengths make 60 cm, leaving 40 cm for the two widths, so each width is 20 cm.
 
 Check that your answer makes sense. The perimeter must be longer than any one side, and for a rectangle it is exactly double the length plus the width.
+
+Different shapes can have the same perimeter. A square with sides of 7 m and a rectangle 10 m by 4 m both have a perimeter of 28 m, the same as the garden bed. The same 28 m of wire could fence any of these shapes, but each would hold a different amount of garden.
 
 The error museum, four exhibits. One: adding only the length and the width, so the painting gets 50 cm of frame instead of 100 cm. Two: missing a side of the L shape and buying only 22 m of wire. Three: adding 1 m and 45 cm as 46; change to the same unit first, 145 cm. Four: counting the squares inside a shape and calling it the perimeter; that is area.
 

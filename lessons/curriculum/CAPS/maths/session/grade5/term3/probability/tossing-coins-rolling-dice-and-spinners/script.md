@@ -12,6 +12,8 @@ For a fair coin, a fair die and a spinner with equal parts, each outcome has the
 
 Some spinners have unequal parts. The class makes a spinner that is half red, a quarter blue and a quarter green. It still has 3 possible outcomes, but red is more likely than blue or green, because the red part is bigger.
 
+A spinner can repeat colours. A spinner with 6 equal parts coloured red, red, blue, blue, blue and green has 3 possible outcomes: red, blue and green. Blue is the most likely, because it covers 3 of the 6 parts.
+
 The questions for this section are with you now: listing the possible outcomes for coins, dice and spinners, and deciding whether outcomes are equally likely.
 
 ## Subtopic: Doing Trials and Counting Results
@@ -24,6 +26,8 @@ Recording carefully matters. Do one trial, record it straight away with a tally 
 
 A frequency table for the die has a row or column for every possible outcome, even if one outcome never comes up. Then a 0 is written in its frequency space, so the reader knows it was not forgotten.
 
+At the spinner station, Thabo spins the 4-colour spinner 20 times: red 6, blue 4, green 5 and yellow 5. Check: 6 plus 4 plus 5 plus 5 is 20. Like the coin and the die, each result is tallied straight after each spin.
+
 The questions for this section are with you now: recording trials with tallies, completing frequency tables and checking that the total equals the number of trials.
 
 ## Subtopic: Comparing Actual Results
@@ -35,6 +39,8 @@ For the die, 4 came up most often, 5 times, and 3 came up least often, 2 times. 
 The unequal spinner, half red and a quarter each blue and green, was spun 20 times: red 11, blue 5 and green 4. Red came up most often, which matches the bigger red part. Here the difference has a reason.
 
 To compare, use words like more often, less often and about the same. Compare the results with what you expected: equal parts should give roughly equal frequencies, and a bigger part should usually give a bigger frequency.
+
+Combining results from many groups helps. If 5 groups each toss a coin 20 times, there are 100 tosses altogether. The total number of heads will usually be much closer to half, around 50, than one group's result is to 10. More trials give results closer to what we expect.
 
 The error museum, four exhibits. One: thinking that after 3 heads in a row, tails is due; the coin does not remember, so each toss is still equally likely. Two: thinking 6 is harder to roll than other numbers; every number has the same chance. Three: listing 0 to 6 as the outcomes of a die; there are 6 outcomes, 1 to 6. Four: deciding the coin is unfair because heads came up 11 times out of 20; small differences are normal.
 

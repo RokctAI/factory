@@ -12,6 +12,8 @@ Mixed measurements work the same way. A section of the route measures 2 km 350 m
 
 Watch out for small parts. 4 m 5 cm is 400 cm plus 5 cm, which is 405 cm, not 45 cm. 3 km 60 m is 3 000 m plus 60 m, which is 3 060 m.
 
+Converting helps you compare. Is a section of 2 km 350 m longer than a section of 2 500 m? Change the first to metres: 2 350 m. 2 350 is less than 2 500, so the 2 500 m section is longer, by 150 m.
+
 The questions for this section are with you now: changing kilometres to metres, metres to centimetres, and centimetres to millimetres.
 
 ## Subtopic: Changing Smaller Units to Bigger, and Fractions
@@ -24,6 +26,8 @@ Fractions of units are common in real life. Half a kilometre is half of 1 000 m,
 
 So 2 500 m can also be written as 2 and 1/2 km, because 500 m is half a kilometre. And 1 m 25 cm can be written as 1 and 1/4 m.
 
+Some conversions go between millimetres and metres. 1 m is 1 000 mm, because 1 m is 100 cm and each centimetre is 10 mm. So a banner pole 3 000 mm long is 3 m long. To change millimetres to metres, divide by 1 000.
+
 The questions for this section are with you now: changing to bigger units, and converting fractions of kilometres, metres and centimetres.
 
 ## Subtopic: Solving Length Problems
@@ -35,6 +39,8 @@ The class has 6 m of ribbon and cuts it into pieces of 25 cm for medals. Change 
 Water stations are placed every half kilometre between the start and the finish: at 500 m, 1 000 m, 1 500 m and so on. The last one before the finish is at 4 500 m. That is 9 water stations, because 4 500 divided by 500 is 9.
 
 The steps are always the same: read the problem, change all lengths to the same unit, choose the operation, calculate, and write the answer with its unit. Then check that the answer makes sense.
+
+The finish banner needs 3 m 50 cm of rope, and the start banner needs 2 m 75 cm. Change to centimetres: 350 cm and 275 cm. Together they need 625 cm, which is 6 m 25 cm. The class has a 10 m rope, which is 1 000 cm, so 1 000 minus 625 leaves 375 cm, or 3 m 75 cm.
 
 The error museum, four exhibits. One: multiplying by 100 to change kilometres to metres, so 5 km becomes 500 m; a kilometre is 1 000 m. Two: writing 4 m 5 cm as 45 cm; it is 405 cm. Three: thinking half a kilometre is 50 m; it is 500 m. Four: adding 1 km 750 m and 2 and 1/2 km as 1 plus 2 plus 750 plus 1/2 without changing units.
 

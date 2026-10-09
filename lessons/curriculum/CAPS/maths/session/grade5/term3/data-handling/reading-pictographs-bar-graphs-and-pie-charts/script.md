@@ -12,6 +12,8 @@ To answer questions, turn symbols into numbers first. Which week was best? Week 
 
 Checking a display against the words is part of reading critically. If the numbers had not matched, either the pictograph or the paragraph would contain a mistake.
 
+Words, pictures and numbers should all tell the same story. The paragraph says the garden harvested 58 kilograms of tomatoes in four weeks. The pictograph shows the tomatoes week by week, so it gives more detail than the paragraph, but its total must still be 58.
+
 The questions for this section are with you now: reading data in words and turning pictograph symbols into numbers.
 
 ## Subtopic: Reading Bar Graphs
@@ -24,6 +26,8 @@ Questions use the values in different ways. The most volunteers came on Saturday
 
 Bar graphs are good for comparing at a glance. Without reading any numbers, you can see that Saturday 5 had more than twice as many volunteers as Saturday 3, because its bar is more than twice as tall.
 
+Bar graphs can also show how something changes over time. Reading the Saturdays in order, the volunteers went from 12 up to 18, down to 9, then up to 15 and 21. Saturday 3 was a rainy day, which may explain the drop, so knowing the context helps you understand the data.
+
 The questions for this section are with you now: reading values from bar graphs, finding the most and fewest, and calculating differences and totals.
 
 ## Subtopic: Reading Pie Charts and Reading Critically
@@ -33,6 +37,8 @@ A pie chart is a circle divided into slices, where each slice shows a part of th
 To find how many beds each slice stands for, find that fraction of the whole. Half of 40 is 20 spinach beds. A quarter of 40 is 10 tomato beds. An eighth of 40 is 5 beds, so there are 5 onion beds and 5 carrot beds. Check: 20 plus 10 plus 5 plus 5 is 40. A pie chart is best for showing how a whole is shared out.
 
 Reading critically means asking whether a display is fair. A neighbouring garden shows its volunteers in a bar graph whose scale starts at 10, not 0. Its bars for 12 and 18 look like 2 and 8, so 18 seems four times as many as 12 when it is really only 6 more. Always check where the scale starts, what the key says, and whether the title matches the data.
+
+Pie charts work with any total. If the garden had 80 beds with the same pie chart, half would be 40 spinach beds, a quarter would be 20 tomato beds, and an eighth would be 10 beds each for onions and carrots. The slices stay the same size, but the numbers they stand for change with the total.
 
 The error museum, four exhibits. One: counting baskets instead of kilograms, saying week 2 had 5 kilograms of tomatoes instead of 20. Two: counting half a basket as a whole, so week 3 becomes 20 kilograms instead of 18. Three: reading the top of the bar for 9 as the next mark up, 12, instead of 9. Four: saying the onion slice is 8 beds because it is an eighth; an eighth of 40 is 5.
 

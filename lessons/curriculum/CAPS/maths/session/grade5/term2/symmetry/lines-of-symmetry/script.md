@@ -12,6 +12,8 @@ The fold test is the surest way to check. Cut out the shape, fold it along the l
 
 A line of symmetry can run up and down, across, or on a slant. A square has lines in all three directions. A line that only cuts a shape into two parts of the same size is not always a line of symmetry: the two parts must also be mirror images.
 
+A mirror helps when you cannot fold. A learner stands a small mirror upright on the line down the middle of a poster letter A. Half the letter and its reflection show the whole A, so the line is a line of symmetry. On the letter F, no position of the mirror shows the whole letter.
+
 The questions for this section are with you now: recognising lines of symmetry with the fold test and the mirror test.
 
 ## Subtopic: How Many Lines?
@@ -24,6 +26,8 @@ A triangle with three equal sides has 3 lines of symmetry, each from a corner to
 
 A circle has more lines of symmetry than you could ever draw: any straight line through its centre is a line of symmetry. A kite has 1 line, through the corners where the equal sides meet.
 
+Find the number of lines by testing every direction. For a square, test up and down, across and both diagonals: all 4 work. For a rectangle, test the same 4: only up and down and across work. Draw each line you find on a sketch of the shape.
+
 The questions for this section are with you now: counting lines of symmetry in squares, rectangles, triangles, regular polygons and circles.
 
 ## Subtopic: Drawing Symmetrical Shapes
@@ -35,6 +39,8 @@ To complete a symmetrical drawing on grid paper, use the line of symmetry as a m
 A corner that sits on the line of symmetry is its own partner and stays where it is. When the drawing is finished, check it with the fold test or a mirror.
 
 To describe the symmetry of a shape, say how many lines it has and where they are, for example: a rectangle has 2 lines of symmetry, one up and down through the middle and one across through the middle.
+
+Some poster designs have two lines of symmetry, one up and down and one across. Such a design can be completed from just one quarter: reflect the quarter across one line to make a half, then reflect the half across the other line to make the whole.
 
 The error museum, four exhibits. One: saying a rectangle's diagonals are lines of symmetry; folding shows the corners do not meet. Two: saying the letter S has a line of symmetry because both halves look alike; the halves are turned, not mirrored. Three: drawing a partner corner 3 squares from the line when the first corner is 4 squares away; count the squares from the line. Four: saying a circle has 1 or 2 lines; every line through the centre is a line of symmetry.
 

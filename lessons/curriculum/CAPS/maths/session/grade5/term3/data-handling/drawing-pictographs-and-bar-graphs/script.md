@@ -12,6 +12,8 @@ To work out the number of symbols, divide each frequency by the value of one sym
 
 A pictograph needs a title, such as Library books borrowed in one week, and the key written clearly underneath. Without the key, a reader might think Thursday had only 4 books.
 
+Before drawing, the class makes a small planning table with three columns: day, number of books and number of symbols. Monday 20 and 2 symbols, Tuesday 35 and 3 and a half, Wednesday 15 and 1 and a half, Thursday 40 and 4, Friday 25 and 2 and a half. The symbols add up to 13 and a half, which stands for 135 books, matching the total.
+
 The questions for this section are with you now: using a key, working out the number of symbols, and drawing half symbols.
 
 ## Subtopic: Drawing Bar Graphs
@@ -24,6 +26,8 @@ The scale must start at 0 and go up in equal steps. The biggest number is 14, so
 
 Draw a bar for each category, all the same width, with equal gaps between them. The soccer bar goes up to the line for 14. The netball bar goes halfway between 8 and 10, because 9 is halfway. Label the bottom axis Sport and the side axis Number of learners, and give the graph a title: Favourite sports of 36 Grade 5 learners.
 
+Another group draws the same data with steps of 5 on the scale: 0, 5, 10, 15. The soccer bar then stops between 10 and 15, a little closer to 15, and the netball bar stops a little below 10. Both graphs are correct, but the graph with steps of 2 is easier to read exactly.
+
 The questions for this section are with you now: the parts of a bar graph, drawing scales, and the heights of bars.
 
 ## Subtopic: Choosing Keys and Scales
@@ -35,6 +39,8 @@ For a bar graph, look at the largest value and choose a step that reaches it in 
 The scale must be even. A scale of 0, 2, 4, 8, 10 skips 6, so the bars would be the wrong heights. A scale that starts at 2 instead of 0 makes the small bars look much smaller than they really are. Honest graphs use even scales from 0.
 
 Before you finish, check your graph against the table: count the symbols or read each bar back, and make sure every category is there.
+
+The order of the bars is a choice too. Bars can be in the order the categories were asked, or from biggest to smallest, which makes comparisons easier. Whatever order you choose, each label must stay under the right bar, and every category must appear, even if its frequency is 0.
 
 The error museum, four exhibits. One: leaving out the key, so the reader thinks Thursday had 4 books instead of 40. Two: drawing a full symbol for 35 books with a key of 10, so Tuesday shows 40. Three: an uneven scale, 0, 2, 4, 8, 10, so the bars are the wrong heights. Four: bars of different widths, which makes some categories look bigger than they are.
 

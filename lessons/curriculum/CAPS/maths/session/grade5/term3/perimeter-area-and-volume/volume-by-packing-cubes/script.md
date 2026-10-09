@@ -12,6 +12,10 @@ Length is measured in units like centimetres, area in square units, and volume i
 
 Cubes work well because they stack and fit together with no gaps, like bricks in a wall. Balls or marbles would leave gaps, so counting them would not give the true volume.
 
+Volume and capacity use the same kind of unit, but for different jobs. The fudge itself has a volume. The empty gift box has a capacity. When the box is packed full, the volume of the fudge is the same as the capacity of the box.
+
+A centimetre cube is small, about the size of a sugar cube. Bigger objects can be measured with bigger cubes, as long as all the cubes are the same size. A cardboard box packed with 30 matchboxes, all the same size, has a volume of 30 matchboxes, but that unit is less useful than cubic centimetres, because matchboxes are not all made the same.
+
 The questions for this section are with you now: what volume and capacity mean, and why we use cubic units.
 
 ## Subtopic: Packing Boxes with Cubes
@@ -24,6 +28,8 @@ The large gift box has a bottom layer of 5 rows of 4 cubes, which is 20 cubes, a
 
 The steps are always the same: count the cubes in one layer, count the layers, and multiply or add. Check by imagining the box being packed: does each layer fit exactly, with no gaps?
 
+The fudge maker also has a box with a bottom layer of 3 rows of 3 cubes, which is 9 cubes, and 3 layers. 3 times 9 is 27 cubes. This box is a cube itself: 3 cubes long, 3 cubes wide and 3 cubes high.
+
 The questions for this section are with you now: counting cubes in layers and finding the volume of packed boxes.
 
 ## Subtopic: Comparing Volumes and Filling Containers
@@ -33,6 +39,8 @@ Different boxes can have the same volume. A box with a layer of 4 by 3 cubes, 2 
 Capacity can also be found by filling. The fudge maker's jug is filled with sugar, one cup at a time. If 8 cups fill it, its capacity is 8 cups. To compare two containers, fill them with the same unit, such as the same cup, and count. The container that takes more cups has the bigger capacity.
 
 A box 10 cm long, 10 cm wide and 10 cm high holds 1 000 centimetre cubes, because each layer has 100 cubes and there are 10 layers. That box would hold exactly 1 litre of water, which links volume to the capacity units you will meet in Term 4.
+
+Filling can also compare containers of different shapes. The fudge maker pours dry rice into the 24-piece box and then into a small round tin, using the same spoon. The box takes 5 spoonfuls and the tin takes 8, so the tin has the bigger capacity, even though it is a different shape.
 
 The error museum, four exhibits. One: counting only the cubes you can see from the front, 8, instead of all 24. Two: counting only the bottom layer, 12, and forgetting the second layer. Three: using cubes of different sizes, so the count does not compare fairly. Four: writing the volume as 24 square centimetres; volume uses cubic units.
 

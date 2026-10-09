@@ -12,6 +12,8 @@ Square units must all be the same size, and they must cover the shape with no ga
 
 A square centimetre is a square 1 cm long and 1 cm wide. On centimetre grid paper, each small square is 1 square centimetre. A 5 by 3 rectangle drawn on that paper has an area of 15 square centimetres. Area always needs the word square in its unit, because it counts squares, not lengths.
 
+There are two ways to count the squares in a rectangle. Count every square one by one, or count the squares in one row and the number of rows, and multiply. A 6 by 4 rectangle has 4 rows of 6 squares, which is 24 square units. Both ways give the same answer, but multiplying is faster for big rectangles.
+
 The questions for this section are with you now: what area means, counting squares in rectangles and squares, and square units.
 
 ## Subtopic: Counting Squares in Irregular Shapes
@@ -24,6 +26,8 @@ Some designs have slanted edges that cut squares in half. Two half squares make 
 
 Count whole squares first, then pair up the halves. Write the area with its unit: 8 square units.
 
+Some shapes are easier to count if you split them into rectangles. A T-shaped design is a bar 6 squares long and 1 square high, on top of a stem 2 squares wide and 3 squares high. The bar has 6 squares and the stem has 6 squares, so the T has an area of 12 square units.
+
 The questions for this section are with you now: counting squares in L shapes and other irregular shapes, and using half squares.
 
 ## Subtopic: Comparing Areas and Estimating
@@ -33,6 +37,8 @@ Shapes that look different can have the same area. A 4 by 3 rectangle has 12 squ
 Shapes with the same area can have different perimeters. The 4 by 3 rectangle has a perimeter of 14 units, but the 6 by 2 rectangle has a perimeter of 16 units. Area counts the squares inside; perimeter measures the distance around the outside.
 
 For a shape with curved edges, like a round rug, you cannot count exactly, so you estimate. Count every whole square inside. Then look at the part squares: count each one that is half or more as 1, and leave out each one that is less than half. For the round rug, the class counts 21 whole squares and 8 part squares of half or more, so the area is about 29 square units.
+
+Estimating helps you check exact counts. Before counting the L-shaped design, the class estimates that it covers about as much as a 4 by 3 rectangle, which is 12 squares. The exact count, 12, matches, so they can trust it.
 
 The error museum, four exhibits. One: counting the dots where the grid lines cross instead of the squares, so a 5 by 3 rectangle seems to have 24. Two: counting half squares as whole squares, so the triangle seems to have 10 square units instead of 8. Three: mixing up area and perimeter, so the 4 by 3 rectangle is given an area of 14. Four: writing the area as 15 with no unit, or as 15 cm; area needs square units.
 

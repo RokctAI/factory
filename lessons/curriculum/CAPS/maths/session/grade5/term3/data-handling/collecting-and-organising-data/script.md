@@ -12,6 +12,8 @@ The class also decides on the source of the data, meaning who or where it comes 
 
 The class decides to ask all 40 Grade 5 learners, so the answers describe the whole grade. Asking only the learners in the front row would not give a fair picture.
 
+Before the real survey, the class tries the question on five learners from another class. One says she comes by bus and then taxi, which shows why the class needed the longest-part rule. Testing a question like this is called a trial run, and it catches problems before all 40 answers are collected.
+
 The questions for this section are with you now: the steps of the data cycle, good questions and categories, and sources of data.
 
 ## Subtopic: Tally Marks and Frequency Tables
@@ -24,6 +26,8 @@ Always check the total. 17 plus 9 plus 6 plus 5 plus 3 is 40, which matches the 
 
 Tallying is fast and neat because you do not have to cross out and rewrite a number each time a new answer comes in. You just add one stroke. Walk with 17 learners shows as three bundles of five and two single strokes.
 
+The class checks the table by reading the tallies again. Taxi shows one bundle and four singles, which is 9. Bus shows one bundle and one single, which is 6. Car is one bundle, 5, and bicycle is three singles, 3. Every tally matches its frequency.
+
 The questions for this section are with you now: reading and making tally marks, completing frequency tables and checking totals.
 
 ## Subtopic: Ordering and Organising Data
@@ -35,6 +39,8 @@ Data can also be numbers rather than categories. The class asks 12 learners how 
 When ordering a list, cross off each number as you write it, and count at the end to make sure the new list has as many numbers as the old one: 12 in, 12 out.
 
 An organised table is ready for the next steps of the cycle: drawing a graph and answering questions about the data.
+
+Ordering also makes comparisons easy. Are there more walkers than learners who come by taxi, bus and car together? Those three groups make 9 plus 6 plus 5, which is 20, so there are 3 fewer walkers than learners in those three groups. Comparisons like this help the school plan the drop-off area.
 
 The error museum, four exhibits. One: drawing five or more single strokes without bundling them, so counts are slow and easy to get wrong. Two: not checking the total, so a learner counted twice makes 41 answers from 40 learners. Three: ordering categories alphabetically, bicycle, bus, car, taxi, walk, instead of by size. Four: using categories that overlap, such as car and lift from a parent, so one learner could fit both.
 

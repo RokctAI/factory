@@ -12,6 +12,8 @@ Choose the tool to suit the length too. A ruler, usually 30 cm long and marked i
 
 The class uses a ruler for the pencil, a metre stick for the classroom door, a tape measure for the long jump, and a trundle wheel for the running track.
 
+Sometimes two tools could work, and you choose the better one. The long jump could be measured by moving a metre stick along, but a tape measure is quicker and more accurate, because it reaches from the board to the mark in the sand in one go.
+
 The questions for this section are with you now: choosing sensible units and the right measuring tools.
 
 ## Subtopic: Estimating and Measuring
@@ -24,6 +26,8 @@ The class measures 2D shapes, like the cover of an exercise book, and 3D objects
 
 With a trundle wheel, set the arrow at the start, push the wheel in a straight line, and count the clicks. The running track straight measures 100 clicks, so it is 100 m long.
 
+Estimating improves with practice. The class estimates the length of the classroom as 8 m, then measures it with a tape measure: 7 m 60 cm. The estimate was close. Next they estimate the long jump pit as 6 m and measure 5 m 80 cm. Comparing estimates with measurements trains your eye.
+
 The questions for this section are with you now: estimating lengths and reading rulers, tape measures and trundle wheels.
 
 ## Subtopic: Recording, Comparing and Ordering
@@ -35,6 +39,8 @@ At the long jump, four learners jump: Sipho 2 m 35 cm, Amahle 2 m 8 cm, Kayla 1 
 Be careful with 2 m 8 cm. The 8 is only 8 centimetres, so 2 m 8 cm is shorter than 2 m 35 cm. Writing every jump in centimetres makes this clear: 198 cm, 208 cm, 235 cm, 250 cm.
 
 The distance from school to the sports ground is 2 km, and the running track around the field is 400 m. When you compare lengths in different units, change them to the same unit first, which the next lesson covers in detail.
+
+Lengths in one unit can be ordered like ordinary numbers. The class measures four pencils: 124 mm, 98 mm, 140 mm and 112 mm. From shortest to longest: 98 mm, 112 mm, 124 mm, 140 mm.
 
 The error museum, four exhibits. One: measuring from the edge of the ruler instead of the 0 mark, adding a few millimetres. Two: thinking 2 m 8 cm is longer than 2 m 35 cm because 8 looks bigger than 3; compare 8 cm with 35 cm. Three: recording 124 without a unit. Four: choosing a 30 cm ruler to measure the school field.
 

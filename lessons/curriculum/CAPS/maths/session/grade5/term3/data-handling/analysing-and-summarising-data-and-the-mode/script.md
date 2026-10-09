@@ -12,6 +12,8 @@ Then ask about the source. The data comes from one Grade 5 class, asked by their
 
 Then ask about the context: when and why was the data collected? The survey was done in winter, when cold mornings might keep some learners inside. In summer the results could be different. Thinking about the source and the context stops us from claiming more than the data shows.
 
+Questions can also compare groups of categories. How many learners do something active, playing soccer or skipping? 12 plus 8 is 20. How many do something quiet, chatting or reading? 7 plus 5 is 12. So 8 more learners are active than quiet at break.
+
 The questions for this section are with you now: answering questions about categories, sources and the context of data.
 
 ## Subtopic: Summarising and Predicting
@@ -24,6 +26,8 @@ A prediction says what is likely to happen in a similar situation. If another Gr
 
 A good summary uses numbers from the data, compares groups, and does not claim things the data does not show.
 
+A summary can also be spoken. When the class reports to the principal, one learner says: most of our class plays soccer at break, 12 out of 32, and only 5 of us read, so we think a second soccer ball and a few skipping ropes would be well used. It is short, clear and backed by numbers.
+
 The questions for this section are with you now: writing summaries, drawing conclusions and making predictions.
 
 ## Subtopic: The Mode
@@ -35,6 +39,8 @@ The mode is the value that appears most often. To find it, order the data or tal
 The mode is useful for decisions. The shop should send more size 4 shoes than any other size. The mode answers the question what is most common, which is often exactly what you need to know.
 
 Be careful to give the value, not how many times it appears. The mode is size 4, not 8. Sometimes two values tie for most often, and then the data has two modes. The mode can also be used with categories: the modal break-time activity is soccer.
+
+The mode can be found from a tally too. Tallied, the shoe sizes show one stroke for size 2, four strokes for size 3, a bundle and three strokes for size 4, a bundle for size 5 and two strokes for size 6. The longest tally, for size 4, shows the mode at a glance.
 
 The error museum, four exhibits. One: giving the biggest value, size 6, as the mode; the mode is the most common value, not the largest. Two: giving the frequency, 8, as the mode instead of the value, size 4. Three: claiming that soccer is the most popular break-time activity for all children in South Africa, from one class of 32. Four: predicting that the next class will certainly choose soccer; it probably will, but it is not certain.
 

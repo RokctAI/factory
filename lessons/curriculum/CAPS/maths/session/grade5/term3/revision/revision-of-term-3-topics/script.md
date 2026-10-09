@@ -12,6 +12,8 @@ In a pictograph with the key one star stands for 2 visitors, food needs 15 divid
 
 Reading the data: food was the most popular stall, and books the least. Food had 9 more votes than books, because 15 minus 6 is 9. The modal stall is food. A sensible conclusion is that next year the school should plan for more food stalls, and a prediction is that food will probably be popular again.
 
+Always read a display before its numbers: the title, the key or scale, and the labels. A bar graph of the votes needs a scale that starts at 0 and goes up in equal steps, with bars of equal width. A pie chart of the same votes would show food as a little more than a third of the circle, because 15 out of 40 is more than a third.
+
 The questions for this section are with you now: naming 3D objects, tallies and tables, pictographs and bar graphs, and the mode.
 
 ## Subtopic: Probability and Length
@@ -24,6 +26,8 @@ Conversions use three facts: 10 mm is 1 cm, 100 cm is 1 m and 1 000 m is 1 km. M
 
 When ordering lengths, compare the biggest unit first: 1 m 98 cm is shorter than 2 m 8 cm, and 2 m 8 cm is shorter than 2 m 35 cm.
 
+A spinner with unequal parts behaves differently. A spinner that is half red gives red more often, because the red part is bigger. Before deciding whether a difference in results is surprising, ask whether the parts of the spinner are equal.
+
 The questions for this section are with you now: outcomes and trials, measuring tools, and converting and ordering lengths.
 
 ## Subtopic: Perimeter, Area and Volume
@@ -35,6 +39,8 @@ Area: a tablecloth design on grid paper is 6 squares long and 4 squares wide. It
 Area and perimeter are different. The 6 by 4 design has an area of 24 square units, but its perimeter is 6 plus 4 plus 6 plus 4, which is 20 units.
 
 Volume: a box of sweets is packed with centimetre cubes. The bottom layer has 3 rows of 2, which is 6 cubes, and there are 2 layers, so the volume is 12 cubic centimetres.
+
+Choose the measure that fits the question. Lace around the cloth is perimeter. Paint to cover the stall sign is area. Sweets to fill the box is volume. Naming the measure first tells you which unit to write: metres, square units or cubic units.
 
 The error museum, four exhibits. One: calling a tin a circle; the circle is one face, and the tin is a cylinder. Two: counting half a star as a whole star in a pictograph. Three: changing 1 and 1/2 km to 150 m; it is 1 500 m. Four: giving the 6 by 4 design an area of 20, which is its perimeter; the area is 24 square units.
 

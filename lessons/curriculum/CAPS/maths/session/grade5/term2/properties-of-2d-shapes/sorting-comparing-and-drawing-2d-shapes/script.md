@@ -12,6 +12,8 @@ A sorting table with three columns works well: only straight, only curved, and b
 
 Comparing two shapes means saying what is the same and what is different. A circle and an oval both have only one curved side, but a circle is equally round all the way around, while an oval is longer one way than the other.
 
+Curved shapes have names too. An oval is like a stretched circle. A semicircle is half a circle. A quarter circle has two straight sides and one curved side. These names let you describe curved shapes as exactly as polygons.
+
 The questions for this section are with you now: describing shapes by their sides and sorting them into straight, curved and both.
 
 ## Subtopic: Sorting and Comparing by Number of Sides
@@ -24,6 +26,8 @@ You can compare shapes by counting. A hexagon has 3 more sides than a triangle. 
 
 Sometimes you sort by two properties at once. Among the 4-sided shapes, the club makes two groups: those with all sides equal, the squares, and those without, the rectangles and the kite. A table with rows and columns, or two overlapping circles called a Venn diagram, shows sorting by two properties clearly.
 
+Comparing two shapes in full sentences helps. A pentagon and a hexagon both have only straight sides, but the hexagon has 1 more side. A triangle and a semicircle both have a straight side, but the triangle has 3 straight sides, while the semicircle has 1 straight side and 1 curved side.
+
 The questions for this section are with you now: sorting polygons by number of sides and comparing shapes.
 
 ## Subtopic: Drawing Shapes on Grid Paper
@@ -35,6 +39,8 @@ To draw a rectangle 5 squares long and 3 squares high: start at a corner where t
 For other polygons, plan the corners first. A triangle needs only 3 corners: mark them, then join them with a ruler. A house-shaped pentagon is a square with a triangle on top: draw a 4 by 4 square, mark a point 2 squares above the middle of the top side, and join it to the two top corners, then rub out the top side of the square. Count the outside sides: 5. A hexagon can be drawn by marking 6 corners and joining them in order.
 
 Always count the sides of your finished drawing and check that it is closed, with no gaps where the lines should meet.
+
+Grid paper also helps you draw different triangles. Join three dots to make a triangle with one square corner along the grid lines. Then move the top dot to make a triangle with two equal sides. Draw several and compare their sides and corners.
 
 The error museum, four exhibits. One: putting the semicircle with the polygons because it has a straight side; it also has a curved side, so it belongs with both. Two: putting a big triangle and a small triangle in different groups; size does not change the number of sides. Three: counting lines instead of squares, starting with the line you are on as one, so a side meant to be 5 squares long is only 4. Four: leaving the top of the square inside the house shape and calling it a pentagon; the outline has 5 sides, and the extra line is not part of it.
 

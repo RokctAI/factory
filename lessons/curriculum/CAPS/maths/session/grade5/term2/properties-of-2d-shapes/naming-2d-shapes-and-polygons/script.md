@@ -12,6 +12,8 @@ Polygons are named by the number of their sides. A triangle has 3 sides. A quadr
 
 A circle is a 2D shape too, but it is not a polygon, because its outline is one curved line with no straight sides and no vertices. The class finds circles in the painted beads around a doorway. A shape with some straight sides and some curved sides, such as a semicircle, is not a polygon either.
 
+Polygons are all around the cultural village. The doors are rectangles, the roof edges make triangles, and some painted borders are made of pentagons and hexagons. Counting the sides of each shape before naming it is the habit that never fails.
+
 The questions for this section are with you now: deciding what is a polygon and naming polygons by their number of sides.
 
 ## Subtopic: Regular and Irregular Polygons
@@ -24,6 +26,8 @@ Both conditions matter. A rhombus has 4 equal sides, but two of its angles are p
 
 Irregular polygons are still named by their sides. Any shape with 6 straight sides is a hexagon, whether it looks like a honeycomb cell or like a bent letter L. The letter L shape has 6 sides, so it is an irregular hexagon. Count the sides; do not judge by how familiar the shape looks.
 
+You can test whether a polygon is regular with a ruler and a square corner. Measure every side: if one is different, the polygon is irregular. Then compare the corners. A square passes both tests, a long rectangle fails the side test, and a rhombus with two pointy corners fails the corner test.
+
 The questions for this section are with you now: deciding whether a polygon is regular or irregular, and naming irregular polygons.
 
 ## Subtopic: Recognising Shapes in Any Position
@@ -35,6 +39,8 @@ The quadrilateral family includes squares, rectangles and other 4-sided shapes. 
 Visualising means picturing a shape in your mind from a description. A closed shape with 7 straight sides of equal length and 7 equal angles is a regular heptagon. A shape made from a rectangle with a semicircle on one end has a curved side, so it is not a polygon.
 
 To name any shape, ask three questions. Is it closed? Are all the sides straight? How many sides does it have? Then decide whether all the sides and angles are equal.
+
+Visualising also works with cuts. Picture a regular hexagon and cut it with a straight line through two opposite corners. Each half has 4 sides, so each half is a quadrilateral. Imagining cuts and turns like this builds a strong picture of shapes in your mind.
 
 The error museum, four exhibits. One: calling a turned square a diamond and saying it is a different shape; it is still a square. Two: calling a circle a polygon with many sides; it has no straight sides. Three: saying a rectangle is regular because its corners are all equal; its sides are not all equal. Four: calling the L shape a quadrilateral because it looks like a rectangle; it has 6 sides, so it is a hexagon.
 
