@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Round 4 736 to the nearest 10, 100 and 1 000, and explain each one.",
+      "expected_answer": "Nearest 10: the units digit is 6, so round up to 4 740. Nearest 100: the tens digit is 3, so round down to 4 700. Nearest 1 000: the hundreds digit is 7, so round up to 5 000."
+    },
+    {
+      "id": "cc2",
+      "question": "50 learners sit 8 to a table. How many tables are needed? Explain the remainder.",
+      "expected_answer": "50 divided by 8 is 6 remainder 2. 6 tables seat 48 learners, and the 2 left over still need a seat, so 7 tables are needed."
+    },
+    {
+      "id": "cc3",
+      "question": "Squares in a row use 4, 7 and 10 matchsticks for 1, 2 and 3 squares. Give the rule and find the sticks for 5 squares.",
+      "expected_answer": "Each new square adds 3 sticks, so the rule is number of squares times 3, plus 1. For 5 squares: 5 times 3 is 15, plus 1 is 16 sticks."
+    }
+  ]
+}

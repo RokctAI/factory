@@ -1,0 +1,1 @@
+Today we learn about volume, the amount of space an object takes up or a box can hold. We pack boxes with cubes and count them, layer by layer, to develop an understanding of cubic units. We also fill containers with cups of water and beans to compare how much they hold. We pack a lunch box and a shoe box with building blocks in a classroom in Mahikeng.

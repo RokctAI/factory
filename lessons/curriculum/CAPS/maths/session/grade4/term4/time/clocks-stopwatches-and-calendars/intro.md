@@ -1,0 +1,1 @@
+Today we use stopwatches to time short events in seconds, and we read calendars to find days and dates. We learn how many seconds are in a minute, how many days are in each month, what a leap year is, and how to find the day of the week for any date on a calendar. We time races at an athletics day in Bloemfontein and plan the school term with a calendar on the classroom wall.

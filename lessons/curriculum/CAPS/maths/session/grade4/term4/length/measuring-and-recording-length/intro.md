@@ -1,0 +1,1 @@
+Today we measure how long, wide, tall and far things are. We learn the units millimetres, centimetres, metres and kilometres, and when to use each one. We estimate first, then measure with a ruler, a metre stick, a tape measure and a trundle wheel. We measure a pencil, a classroom, a learner and the school field in Kimberley, and we record, compare and order the lengths we find.

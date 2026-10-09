@@ -1,0 +1,1 @@
+Today we change between millilitres and litres and use capacity to solve problems. We learn that half a litre is 500 millilitres and a quarter of a litre is 250 millilitres, and we write capacities like 2 litres and 400 millilitres in millilitres. Then we solve problems at a soccer tournament in Mthatha, where a community kitchen makes soup and juice for the teams.

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why there are 7 days, not 8, from 3 March to 10 March.",
+      "expected_answer": "We count the jumps from one date to the next: 3 to 4 is one day, and so on to 10, which is 7 jumps. 10 minus 3 is 7. Counting the dates 3 to 10 gives 8, which includes the starting day and is too many."
+    },
+    {
+      "id": "cc2",
+      "question": "Find the number of days from 16 June to 9 August, showing each step.",
+      "expected_answer": "June has 30 days, so 16 June to 30 June is 14 days. July has 31 days. 31 July to 9 August is 9 days. Total: 14 plus 31 plus 9, which is 54 days."
+    },
+    {
+      "id": "cc3",
+      "question": "School closes on 9 December and opens on 14 January the next year. How many days is the holiday, and how can you check the answer?",
+      "expected_answer": "9 December to 31 December is 22 days, and 31 December to 14 January is 14 days, so 36 days. Check: it is a bit more than one month, and one month is about 30 days, so 36 is sensible."
+    }
+  ]
+}
