@@ -1,0 +1,18 @@
+### subtopic_1 — Seeing Equivalent Fractions
+**Assistant:** How can two different fractions be equal? Four eighths has bigger numbers than one half.
+
+**Tutor:** Because the numbers in a fraction are not amounts by themselves; they describe a sharing. In four eighths, the 8 says the pieces are small, eighths, and the 4 says you have four of them. In one half, the 2 says the pieces are big, halves, and the 1 says you have just one. Four small pieces can be exactly as much as one big piece. Think of money: one R10 note and two R5 coins are different things to hold, but they are the same amount of money. Fractions work the same way. When you cut every half of a pizza into four, each half becomes four eighths. You did not add pizza or take any away, you just made more cuts. The bigger numbers in four eighths come from making the pieces smaller, not from having more pizza. So a fraction with bigger numbers is not necessarily bigger. To know whether two fractions are the same amount, look at a picture, look at the fraction wall, or check that one comes from the other by multiplying the top and bottom by the same number. Two times 1 is 2 and four times 1 is 4: one half becomes four eighths when you multiply both numbers by 4.
+
+***
+
+### subtopic_2 — Making Equivalent Fractions
+**Assistant:** Why is it wrong to add the same number to the top and the bottom? I did the same thing to both.
+
+**Tutor:** Doing the same thing to both sounds fair, but adding and multiplying behave very differently with fractions. Multiplying top and bottom by 2 means cutting every piece into 2: you get twice as many pieces, each half the size, so the amount stays the same. Adding 1 to the top and bottom means something quite different: it changes the size of the pieces and also hands you an extra piece. Take one half and add 1 to both numbers. You get two thirds. Look at the fraction wall: two thirds reaches well past one half. You gained pizza out of nowhere. Try it again: one half becomes three quarters if you add 2 to both, which is even more. The rule that keeps the amount the same is multiplying, because multiplying top and bottom by the same number is like cutting every slice into the same number of smaller slices. A useful check is to ask yourself what you did to the pizza. If you can describe it as cutting every slice into equal smaller slices, the new fraction is equivalent. If you cannot, it probably is not, and a quick sketch on two strips will show you the difference straight away.
+
+***
+
+### subtopic_3 — Using Equivalent Fractions
+**Assistant:** When will I use equivalent fractions? They just seem like a trick.
+
+**Tutor:** You will use them every time you need to compare, add or share fractions that are cut differently, which is very often. Suppose a recipe needs three quarters of a cup of milk and you have a jug marked only in eighths. You need to know that three quarters is six eighths, so you pour to the sixth line. Suppose one shop sells five eighths of a kilogram of mince for the same price as another sells three quarters of a kilogram. Change three quarters to six eighths and you see the second shop gives one eighth more. In the next lesson you will add fractions, and adding is only easy when the bottom numbers are the same; equivalent fractions are how you make them the same. Later, in Grade 5 and beyond, you will add fractions like one half and one third by changing both into sixths, which is the same trick used a little more cleverly. Equivalent fractions are also how measurements are written in different units, such as half a metre being fifty centimetres out of a hundred. So it is not just a trick; it is the tool that lets fractions with different bottom numbers talk to each other.

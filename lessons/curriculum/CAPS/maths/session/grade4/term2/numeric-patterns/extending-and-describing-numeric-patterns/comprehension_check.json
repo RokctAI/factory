@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "The pattern 20, 35, 50, 65 describes money in a box. Find the rule, the next two numbers and the number before 20.",
+      "expected_answer": "Subtracting neighbours gives 15 each time, so the rule is start at 20 and add 15. The next two numbers are 80 and 95. Before 20 is 20 minus 15, which is 5."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to tell whether 3, 6, 12, 24 is a constant-difference or constant-ratio pattern, and find the next number.",
+      "expected_answer": "Subtracting neighbours gives 3, 6, 12, which are not constant, so it is not constant difference. Dividing neighbours gives 2 each time, so it is a constant-ratio pattern with ratio 2. The next number is 24 times 2, which is 48."
+    },
+    {
+      "id": "cc3",
+      "question": "Create one constant-difference pattern and one constant-ratio pattern, each with four numbers, and describe each rule so that a friend could continue it.",
+      "expected_answer": "Example difference pattern: start at 7 and add 4: 7, 11, 15, 19. Example ratio pattern: start at 4 and multiply by 3: 4, 12, 36, 108. Each description gives the starting number and the rule."
+    }
+  ]
+}

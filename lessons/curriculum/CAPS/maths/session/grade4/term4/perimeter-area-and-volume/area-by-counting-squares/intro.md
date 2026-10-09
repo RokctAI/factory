@@ -1,0 +1,1 @@
+Today we learn about area, the amount of flat surface a shape covers. We measure area by counting squares on a grid, and we learn that area is measured in square units. We cover a table with sticky notes, count squares inside rectangles and irregular shapes, and compare the area and perimeter of rooms and gardens in a house plan from Gqeberha.

@@ -1,0 +1,18 @@
+### subtopic_1 — Fractions
+**Assistant:** Term 3 had so many different topics. How do I revise them all?
+
+**Tutor:** Group them into families and practise one key skill from each, with its check. The first family is fractions. Make sure you can name a fraction from a picture, compare two fractions, find an equivalent fraction by multiplying top and bottom, add fractions with the same bottom number and find a fraction of a group. The check is a quick sketch: a bar cut into parts shows whether your answer makes sense. The second family is data and chance. Practise tallying, drawing a bar graph with a scale from 0, reading a pie chart as fractions of the whole, writing a two-sentence summary and listing the outcomes of a coin and a dice. The check is the total: the counts must add up to the number of people or trials. The third family is mass. Practise changing kilograms to grams, reading a scale by finding what one mark is worth, and solving a problem in grams. The check is the unit: every answer needs one, and it must make sense. The fourth family is shapes. Practise building a composite shape, testing for symmetry by folding and saying which shapes tessellate. The check is the fold or the gap test. One skill and one check per family covers the term.
+
+***
+
+### subtopic_2 — Data and Probability
+**Assistant:** Why do fractions keep coming back in other topics, like pie charts and mass?
+
+**Tutor:** Because fractions are one of the most useful ideas in maths, and once you know them you see them everywhere. A pie chart is a whole group cut into fractions, so reading it is finding a fraction of a group: a quarter of 40 visitors is 10. Mass uses fractions of a kilogram: half a kilogram is 500 grams because it is half of 1 000 grams, and a quarter is 250 grams. Probability will use fractions too: in later grades you will say the chance of rolling a 6 is one sixth. Even tessellations and composite shapes connect, because a hexagon made of 6 triangles shows each triangle is one sixth of the hexagon. This is good news for your revision. If you are confident with fractions, many other questions become easier, because the hard part is often finding a fraction of something, which is always divide by the bottom and multiply by the top. So if you have limited time, make sure fractions are strong first. Then when you meet a pie chart, a mass question or a sharing problem in the test, you will recognise the fraction hiding inside it and know exactly what to do.
+
+***
+
+### subtopic_3 — Mass and Transformations
+**Assistant:** What are the most important checking habits for the Term 3 test?
+
+**Tutor:** There are four, one for each kind of question. For fractions, draw a quick diagram. A bar cut into eighths, with your parts shaded, shows at once whether three quarters really is six eighths or whether your sum is sensible. If your answer to adding two fractions is smaller than one of the fractions you started with, the diagram will show you something went wrong. For data, check the total. The tallies or the slices of a pie chart must add up to the number of people asked, and the bars on your graph must match your table. For mass, check the unit and the size. Every answer needs grams or kilograms, and the answer should make sense: a bag of sweets is grams, a sack of potatoes is kilograms, and nobody carries 3 000 kilograms home. Change to the same unit before comparing. For shapes and probability, do the test. Fold the shape in your mind to check symmetry, look for gaps to check a tessellation, and list every outcome before you answer a chance question. Finally, read each question to the end and answer what it actually asks. These habits take seconds and save marks every time.

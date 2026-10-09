@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "List the possible outcomes of tossing a coin, rolling a dice and spinning a spinner with four equal colours.",
+      "expected_answer": "Coin: heads, tails. Dice: 1, 2, 3, 4, 5, 6. Spinner: red, blue, green, yellow, one outcome for each colour."
+    },
+    {
+      "id": "cc2",
+      "question": "Ayanda tossed a coin 20 times and got 11 heads. How many tails did she get, and is the result surprising?",
+      "expected_answer": "20 minus 11 is 9 tails. It is not surprising: we expect about 10 heads and 10 tails, and 11 and 9 is close. Chance results are usually near the expected numbers, not exactly on them."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why, in 30 rolls of a fair dice, we expect each number about 5 times, and why the actual results are not all exactly 5.",
+      "expected_answer": "There are 6 equally likely outcomes, and 30 divided by 6 is 5, so we expect about 5 of each. Each roll is a chance event, so the results spread around 5, such as from 3 to 7, and they change every time the experiment is repeated."
+    }
+  ]
+}

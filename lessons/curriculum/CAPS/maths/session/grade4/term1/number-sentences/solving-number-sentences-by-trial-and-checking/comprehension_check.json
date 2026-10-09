@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve 8 times box equals 96 by trial and improvement, showing at least two trials, and then by the inverse operation.",
+      "expected_answer": "Trial: 8 times 10 is 80, too small; 8 times 13 is 104, too big; 8 times 12 is 96, correct, so the box is 12. Inverse: divide 96 by 8, which is 12. Both methods give 12, and substituting gives 8 times 12 equals 96, which is true."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to check by substitution whether 47 or 37 is the correct missing number in 100 minus box equals 63.",
+      "expected_answer": "Put each number in the box and work out the left side. 100 minus 47 is 53, not 63, so the sentence is false and 47 is wrong. 100 minus 37 is 63, so the sentence is true and 37 is correct."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why box minus 268 equals 457 is solved by adding, not subtracting, and give the answer.",
+      "expected_answer": "The box is the amount you started with before 268 was taken away, leaving 457. To get back to the start you add the 268 back: 457 plus 268 is 725. Check: 725 minus 268 is 457."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+### subtopic_1 — Adding Pieces of the Same Size
+**Assistant:** Why don't we add the bottom numbers? We add everything else.
+
+**Tutor:** Because the bottom number is not a count of things you have; it is the name of the size of the pieces. Think of it like a unit, the way rand or metres are units. If you have 2 rand and get 3 more rand, you have 5 rand, not 5 double-rand. In the same way, 2 eighths and 3 eighths make 5 eighths. The word eighths tells you what kind of pieces you are counting, and the pieces do not change size when you put them together. If you added the bottom numbers and wrote five sixteenths, you would be saying the slab now has 16 blocks, but you never cut any blocks; you just counted some. Sixteenths are also tiny, so five sixteenths is less than the two eighths and three eighths you started with, which is impossible when you are adding. That is a good warning sign: when you add, the answer should be bigger than each of the parts. Here is a habit that stops the mistake: say the fraction with its name. Two eighths plus three eighths, said aloud, sounds just like two apples plus three apples, and you would never say five double-apples. Keep the name, add the number.
+
+***
+
+### subtopic_2 — Making One Whole and More
+**Assistant:** What do I do when my answer has a bigger top number than bottom number?
+
+**Tutor:** It means the total is more than one whole, and that is perfectly fine; it just needs tidying up. Remember that when the top equals the bottom, you have exactly one whole: four quarters, six sixths, eight eighths. So take out as many wholes as you can. Six quarters has four quarters in it, which is one whole, and 2 quarters are left over. So six quarters is one whole and two quarters. Seven sixths is one whole and one sixth. Eleven eighths is one whole and three eighths. A picture helps: draw two circles cut into quarters and shade six quarters, filling the first circle completely and two quarters of the second. You can see one whole circle and part of another. In real life this happens all the time. Two learners each drink three quarters of a litre of juice; together they drank more than one litre, one and a half litres in fact. In Grade 4 you will usually write such answers as wholes and parts, and sometimes as a fraction with the big top number. Both are correct. Read what the question asks for, and if it is a story, give the answer in the way that makes most sense for the story.
+
+***
+
+### subtopic_3 — Fraction Problems
+**Assistant:** How do I know when a word problem wants me to add fractions?
+
+**Tutor:** Look for the same signals you use with whole numbers: words like altogether, in total, both together, how much did they use, how far did she walk in all. Those mean join the parts, so add. Then check that the fractions are parts of the same whole. If a family eats two sixths of a pizza at lunch and three sixths of the same pizza at supper, both fractions are of the same pizza, so adding makes sense: five sixths of the pizza is eaten. If the question then asks how much is left, it wants the part that finishes the whole. The whole is six sixths, and five have been eaten, so one sixth is left. A good way to stay on track is to draw the whole first, then shade each part in a different colour. The picture tells you what has been joined and what remains. Time and measuring stories work the same way. One quarter of an hour of spelling and two quarters of maths is three quarters of an hour. Knowing that one quarter of an hour is 15 minutes lets you say it as 45 minutes. Always end by reading the question again and checking that your answer has the right name: of a pizza, of a bag, of an hour.

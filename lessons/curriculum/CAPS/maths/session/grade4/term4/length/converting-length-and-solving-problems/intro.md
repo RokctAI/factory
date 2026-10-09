@@ -1,0 +1,1 @@
+Today we change between millimetres, centimetres, metres and kilometres, and we use lengths to solve problems. We learn that half a metre is 50 centimetres and a quarter of a kilometre is 250 metres, and we solve problems about ribbons, planks, fences and running tracks. We use a sewing shop and the athletics track at a school in Upington.

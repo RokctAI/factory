@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how to count forwards in 25s from 1 275 to 1 400 and describe the pattern you see in the last two digits.",
+      "expected_answer": "Add 25 each time: 1 275, 1 300, 1 325, 1 350, 1 375, 1 400. The last two digits cycle through 75, 00, 25, 50, 75, 00, and the hundreds digit goes up by one every time the ending passes 00."
+    },
+    {
+      "id": "cc2",
+      "question": "Count back in 100s from 3 250 to 2 850, writing every number, and explain what happens when you cross 3 000.",
+      "expected_answer": "3 250, 3 150, 3 050, 2 950, 2 850. When you go below 3 000 the thousands digit drops from 3 to 2 and the hundreds digit becomes 9, so 3 050 minus 100 is 2 950 and not 3 950 or 2 050."
+    },
+    {
+      "id": "cc3",
+      "question": "A sequence reads 840, 843, 846, blank, 852. Explain how you find the missing number and how you check your answer.",
+      "expected_answer": "Subtract neighbours: 843 minus 840 is 3 and 846 minus 843 is 3, so the step is 3. The missing number is 846 plus 3, which is 849. Check: 849 plus 3 is 852, which matches the next number given."
+    }
+  ]
+}

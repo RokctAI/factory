@@ -1,0 +1,1 @@
+Today we add fractions that have the same bottom number. Two eighths of a slab plus three eighths of a slab is five eighths: we count the pieces, and the size of the pieces stays the same. We use pizza slices, a chocolate slab and a jug of juice to add fractions, to see when fractions make one whole, and to solve fraction problems from everyday life.

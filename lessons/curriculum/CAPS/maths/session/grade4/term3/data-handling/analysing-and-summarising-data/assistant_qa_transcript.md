@@ -1,0 +1,18 @@
+### subtopic_1 — Asking Questions of the Data
+**Assistant:** What is the difference between a summary and just reading out the table?
+
+**Tutor:** Reading out the table repeats every number, and listeners soon lose track. A summary picks out what matters and says it in plain sentences. Think of the difference between someone reading you every score from every soccer match of the season and someone telling you that your team won the league, scored the most goals and lost only twice. The second is a summary: it tells you the story. For the tuck shop, the table says Monday 24, Tuesday 18, Wednesday 20, Thursday 16, Friday 34. A summary says the shop sold 112 vetkoek in the week, Friday was busiest with 34, Thursday was quietest with 16, and Friday sold more than double Thursday. Notice that the summary still uses numbers, because numbers make it believable. A summary with no numbers, like the shop sold lots of vetkoek, is too vague to be useful. The skill is choosing the few numbers that matter most: usually the total, the biggest, the smallest and one interesting comparison. Then check each sentence against the data before you say or write it. A good summary is short enough to say in half a minute and true in every word.
+
+***
+
+### subtopic_2 — Summarising Data in Words
+**Assistant:** If Friday was busiest this week, why can't I say it will definitely be busiest next week?
+
+**Tutor:** Because the future can be different from the past, and one week is not much evidence. Friday might have been busy this week because it was a special day: maybe it was a sports day or the day before a long weekend, and many children bought treats. Next week, Friday might be rainy and half the school might stay home, or there might be a school trip. Your data cannot know about those things. So a careful prediction uses words like probably or likely: Friday will probably be the busiest day again. That is honest, because it shows you are following the pattern without pretending to see the future. If you had data from many weeks and Friday was the busiest every single time, your prediction would be much stronger, and the tuck shop could plan with more confidence. Weather forecasters work like this. They say there is a good chance of rain tomorrow rather than it will definitely rain, because they are making a prediction from patterns, not reading tomorrow's newspaper. Using probably is not a weakness in your answer; it shows you understand what data can and cannot tell you.
+
+***
+
+### subtopic_3 — Making Predictions
+**Assistant:** How do I know which questions the data cannot answer?
+
+**Tutor:** Ask yourself whether the answer is actually written in the data, or whether you would have to guess. The subject survey tells you how many learners chose each subject, so it can answer how many, which is most popular and how many more. It does not tell you why they chose those subjects, because nobody was asked why. It does not tell you what the Grade 5s think, because they were not asked. It does not tell you whether the learners who chose Maths also like Natural Sciences, because each learner chose only one subject. If a question needs information that was never collected, the honest answer is that the data does not tell us, and that we would need to collect more data to find out. This is an important part of the data cycle: the report often leads to a new question, and the new question needs a new survey. For example, the class might next ask, why do you like your favourite subject? and give choices such as the teacher, the activities or being good at it. Spotting what the data cannot tell you is not a failure; it is how good researchers decide what to ask next.

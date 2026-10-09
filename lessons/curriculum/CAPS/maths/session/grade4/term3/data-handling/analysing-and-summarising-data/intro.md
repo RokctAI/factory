@@ -1,0 +1,1 @@
+Today we finish the data cycle. We ask questions of our data, we write a short summary of what the data shows, and we make predictions about what might happen next. We use a week of vetkoek sales at a tuck shop in Bethlehem and a class survey of favourite school subjects, and we learn that a good summary is short, uses the numbers, and says what the numbers mean.

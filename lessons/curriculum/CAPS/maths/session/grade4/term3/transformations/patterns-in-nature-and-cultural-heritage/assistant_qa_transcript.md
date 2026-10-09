@@ -1,0 +1,18 @@
+### subtopic_1 — Patterns in Nature
+**Assistant:** Why are there so many hexagons in nature, like in honeycomb?
+
+**Tutor:** Bees are very good engineers, even though they do not know any maths. They need to build many cells to store honey and raise young bees, using as little wax as possible, because making wax costs them a lot of energy. The cells need to fit together with no gaps, so no space is wasted, which means the shape must tessellate. Only a few regular shapes tessellate on their own: triangles, squares and hexagons. Of these three, the hexagon is the roundest, closest to a circle, so it holds the most honey for the amount of wall around it. A hexagon cell also shares each of its walls with a neighbour, so one wall does two jobs. The result is a structure that is strong, uses little wax and wastes no space. Hexagons appear elsewhere in nature too: in the patterns on some tortoise shells and in the cracks that form when mud dries, which often meet in shapes close to hexagons. People copy the idea in engineering, using honeycomb panels in aeroplanes because they are light and strong. So when you see a hexagon in nature, it is often there because it is the best shape for the job.
+
+***
+
+### subtopic_2 — Patterns in Everyday Life
+**Assistant:** Is it right to describe cultural art using maths? Isn't it art, not maths?
+
+**Tutor:** It is art, and it is also full of maths, and seeing both does not take anything away from it. The artists who paint Ndebele houses, make Zulu beadwork or press litema patterns into walls plan their designs very carefully. They choose shapes, repeat them in rows and grids, keep lines straight and parallel, and balance the two sides of a design so it is symmetric. Those are exactly the ideas you have been learning: lines, 2D shapes, tessellations and lines of symmetry. Describing a pattern in maths words is a way of noticing the skill and care that went into it. When you say this beadwork has a row of triangles repeated along it, with a line of symmetry down the middle, you are paying attention to how it was made. The important thing is to be respectful and accurate. These patterns belong to living traditions with their own meanings, and the colours and shapes often carry messages that maths cannot describe. So we use maths to describe the shapes and structure, and we learn about the meanings from the people and communities who make the art. Both ways of looking help us appreciate it more.
+
+***
+
+### subtopic_3 — Patterns in Our Cultural Heritage
+**Assistant:** Why do road signs have different shapes? Wouldn't one shape be simpler?
+
+**Tutor:** Different shapes help drivers recognise a sign instantly, even before they can read the words, and even from far away, at night, in rain or when the sign is dirty or partly hidden. A stop sign is a regular octagon, and it is the only sign with that shape, so a driver who sees an octagon knows to stop even if the word on it cannot be read. A yield sign is a triangle with its point facing down, which is also unusual, so it stands out. Many signs that give orders, like speed limits, are circles, and many warning signs are triangles pointing up. In this way the shape of a sign tells the driver what kind of message is coming. If all signs were the same shape, drivers would have to read every one carefully, which takes time and could cause accidents. Symmetry helps too: symmetric shapes look balanced and are easy to recognise from any distance. So road signs are a good example of maths being used on purpose in everyday life. Next time you travel, try naming the shape of each sign you see and counting its lines of symmetry. You will start to notice the system behind them.

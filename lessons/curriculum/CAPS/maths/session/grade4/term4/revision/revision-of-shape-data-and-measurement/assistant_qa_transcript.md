@@ -1,0 +1,18 @@
+### subtopic_1 — Shapes, Objects, Symmetry and Tessellations
+**Assistant:** How can I remember all the different measurement units for the test?
+
+**Tutor:** Look for the pattern, because most of the units follow the same one. In the metric system, many big units are 1 000 of a small unit. 1 kilometre is 1 000 metres, 1 kilogram is 1 000 grams and 1 litre is 1 000 millilitres. The word kilo means a thousand, and milli means a thousandth, so the names themselves give you the clue. There are two lengths that are different: 1 metre is 100 centimetres, because centi means a hundredth, and 1 centimetre is 10 millimetres. Time is the odd one out, because it does not use tens at all: 60 seconds make a minute, 60 minutes make an hour and 24 hours make a day. A good way to revise is to make a small table with four rows, one each for length, mass, capacity and time, and write the units and how they connect. Then learn a benchmark for each unit, like a paper clip for a gram, a bag of sugar for a kilogram, a teaspoon for 5 millilitres and a milk carton for a litre. When you get an answer in the test, picture the benchmark and ask whether the answer makes sense. A water bottle that holds 500 litres would be too heavy to lift, so the unit must be millilitres.
+
+***
+
+### subtopic_2 — Data Handling and Probability
+**Assistant:** I always mix up perimeter and area. How can I tell them apart?
+
+**Tutor:** Think about what you would do with each one in real life. Perimeter is the distance around the edge. If you want to put a fence around the vegetable garden, a frame around a picture or a border around a notice board, you need the perimeter. You walk around the outside and add up the lengths of all the sides: 8 plus 5 plus 8 plus 5 is 26 metres of fence. The answer is a length, so it is in metres or centimetres. Area is the amount of surface inside. If you want to cover the garden with compost, tile a floor or paint a wall, you need the area. You count how many squares fit inside: a rectangle 4 squares long and 3 squares wide covers 12 squares. The answer is in squares, not in metres. One trick is to say peri means around, like a perimeter fence going around a field. Another is to imagine an ant. If the ant walks along the edge, it is walking the perimeter. If the ant has to visit every square inside, it is covering the area. Before you answer a question, ask yourself: is this about the edge or about the inside? That one question decides which one to find.
+
+***
+
+### subtopic_3 — Measurement: Time, Units, Perimeter, Area and Volume
+**Assistant:** What are the most important checking habits for the end-of-year test?
+
+**Tutor:** There are four, one for each kind of question. For shapes, test the property. Count the sides before naming a polygon, count the faces before describing a 3D object, and fold the shape in your mind before saying it has a line of symmetry. For data, check the total. The tally counts or the bars on a graph must add up to the number of people asked, and the scale on a bar graph must start at 0 with equal steps. For measurement, check the unit and the size. Every answer needs a unit, and it must be sensible: a garden fence of 26 metres makes sense, but a fence of 26 millimetres does not. Change to the same unit before comparing, and remember that time uses 60 and 24, not 100. For number work inside the measurement questions, estimate first and check with the opposite operation afterwards. Finally, read each question to the end and answer what it actually asks. If it asks for the perimeter, do not give the area, and if it asks for the answer in millilitres, change it before you write it down. These habits take only a few seconds each, and they save marks every time.

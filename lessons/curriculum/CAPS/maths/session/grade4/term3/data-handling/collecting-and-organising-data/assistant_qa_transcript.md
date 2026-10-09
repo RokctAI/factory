@@ -1,0 +1,18 @@
+### subtopic_1 — The Data Cycle
+**Assistant:** Why do we bother with tally marks? Can't I just write the numbers?
+
+**Tutor:** You could, but tally marks are much easier while the answers are still coming in. Imagine 32 learners calling out their favourite fruit one after another. If you write numbers, every time someone says mango you have to cross out 3 and write 4, then cross out 4 and write 5, and soon the page is a mess and you lose your place. With tally marks you just add one small line each time, without stopping to count. At the end, the lines are already grouped into bundles of five, so counting them is quick: count the bundles in fives and add the leftover lines. Two bundles and three lines is 10 plus 3, which is 13. The bundles also make mistakes easier to spot, because a bundle with six lines or a missing cross line stands out. People who count things for a living, such as traffic counters standing at a busy road in Johannesburg, often use tally marks or a clicker for exactly this reason. Once the counting is finished, you write the totals as numbers in a table, so you get the best of both: easy counting during the survey and clear numbers afterwards.
+
+***
+
+### subtopic_2 — Counting with Tally Marks
+**Assistant:** What makes a good survey question? Ours gave silly answers.
+
+**Tutor:** A good survey question does three things. First, it asks about one thing only. Which fruit do you like best? is about one thing. Which fruit and which sport do you like? is two questions squashed together, and the answers get mixed up. Second, its answers can be counted. If you ask what do you think about fruit, people give long answers that are impossible to sort into groups. If you give a short list of choices, apple, banana, orange, mango or grapes, every answer falls into one group and can be tallied. You can add a choice called other for anyone whose favourite is not on the list. Third, it fits the reason you are asking. The tuck shop wants to know which fruit to stock, so asking about favourite fruit helps it; asking whether learners like fruit only gives yes and no, which does not tell the tuck shop what to buy. Before your next survey, try your question on two or three friends first. If they are confused, or their answers do not fit into groups, change the question before you ask the whole class. A good question makes every later step of the data cycle easier.
+
+***
+
+### subtopic_3 — Organising Data in Tables
+**Assistant:** Why must the totals add up to the number of people? Does it matter if one is missing?
+
+**Tutor:** It matters because the whole point of a survey is to tell the true story of the group. If 32 learners are in the class and your totals add up to 31, then one learner's answer is missing, and you do not know which fruit it was. If the totals add up to 33, someone was counted twice. Either way, your results are no longer exactly right. In a small survey one mistake might not change which fruit wins, but it could. Suppose mango and apple are very close: if the missing learner liked mango, the two might be equal, and the tuck shop might make a different decision. Checking the total is quick and catches these mistakes before you draw graphs and write reports based on wrong numbers. It is like counting your change at the shop: it takes a moment and saves you from being short. A good habit is to write the total at the bottom of the frequency column and compare it with the number of people you asked. If a learner was absent, write that in a note under the table, so the reader knows why the total is 31 and not 32. That kind of honesty is what makes data trustworthy.

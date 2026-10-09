@@ -1,0 +1,1 @@
+Today we see that fractions and division are two ways of saying the same thing. Sharing 1 roti among 4 people gives each one quarter, and 1 divided by 4 is one quarter. We also find fractions of a group, like one quarter of 20 sweets, and we solve sharing and grouping problems where the leftovers become fractions. We use rotis, sweets and loaves of bread at a family gathering.

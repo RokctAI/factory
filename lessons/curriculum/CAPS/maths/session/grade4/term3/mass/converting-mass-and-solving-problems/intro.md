@@ -1,0 +1,1 @@
+Today we change between grams and kilograms and use mass to solve problems. We learn that half a kilogram is 500 grams and a quarter of a kilogram is 250 grams, and we write masses like 2 kilograms and 300 grams in grams. Then we solve shopping and cooking problems at a market in Paarl, adding, subtracting, multiplying and sharing masses.

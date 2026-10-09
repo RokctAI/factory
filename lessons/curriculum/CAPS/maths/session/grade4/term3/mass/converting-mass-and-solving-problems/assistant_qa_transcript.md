@@ -1,0 +1,18 @@
+### subtopic_1 — Changing Kilograms and Grams
+**Assistant:** Why do we change everything into grams before adding? Can't I add kilograms and grams separately?
+
+**Tutor:** You can add them separately, and sometimes that works nicely. 2 kg 300 g plus 1 kg 200 g is 3 kg 500 g: add the kilograms, add the grams, done. The trouble comes when the grams add up to more than 1 000. Try 2 kg 500 g plus 750 g. Adding separately gives 2 kg and 1 250 g, which is a strange answer, because 1 250 g contains another whole kilogram. You then have to fix it: 1 250 g is 1 kg 250 g, so the total is 3 kg 250 g. It is just like carrying in column addition, where 10 units become a ten. Changing everything into grams first avoids the fixing step: 2 500 plus 750 is 3 250 g, and then you change back once at the end, 3 kg 250 g. With subtraction the grams method is even more helpful, because taking 1 kg 800 g from 5 kg separately needs borrowing a kilogram. In grams, 5 000 minus 1 800 is 3 200, simple. So both ways are correct, but grams first is usually safer. Whichever way you choose, check your answer by estimating: 2 and a half kilograms plus nearly a kilogram should be about three and a half.
+
+***
+
+### subtopic_2 — Fractions of a Kilogram
+**Assistant:** How can half a kilogram be 500 grams? Half of a kilogram sounds like it should be half a gram or something small.
+
+**Tutor:** The word half applies to the whole kilogram, not to a single gram. A kilogram is a big amount, 1 000 grams, so half of it is still a good amount: 500 grams, about the mass of a tub of margarine. Think of it like money. Half of R1 000 is R500, not 50 cents. When you take a fraction of something, you take that fraction of all of it. So any fraction of a kilogram is that fraction of 1 000 grams. A quarter of a kilogram is 1 000 divided by 4, which is 250 grams. Three quarters is 750 grams. A fifth is 200 grams. An eighth is 125 grams. These come up all the time in shops and kitchens. Butchers sell mince in half kilogram packs. Recipes ask for a quarter of a kilogram of butter. Tea is sold in 250 gram boxes, which is a quarter of a kilogram. A helpful picture is a 1 kg bag of sugar divided into four equal cups: each cup holds 250 grams. Once you see that a kilogram is a big whole made of 1 000 small grams, fractions of it make sense in the same way as fractions of a group of 1 000 sweets.
+
+***
+
+### subtopic_3 — Solving Mass Problems
+**Assistant:** How do I know whether the answer should be in grams or kilograms?
+
+**Tutor:** Read the question first and last. Often it tells you, for example, give your answer in kilograms and grams. If it does, change your answer into that form at the end. If it does not, choose the unit that makes the answer easiest to understand. A mass of 3 250 g is correct, but people at a market would probably say three and a quarter kilograms or 3 kg 250 g, because that is how they think about potatoes. A mass of 250 g for a packet of biscuits is best left in grams, because a quarter of a kilogram is less natural for a small packet. The general rule is the same as when you measure: grams for light things, kilograms or kilograms and grams for heavier things. Whatever unit you choose, write it. An answer of 250 on its own could be 250 g, which is a packet of biscuits, or 250 kg, which is a small horse, and the marker cannot guess which you meant. Finally, check that the answer is sensible. If a family buys a few bags of vegetables and your answer says 3 250 kg, you know straight away that the unit is wrong, because nobody carries three tonnes of potatoes home from the market.

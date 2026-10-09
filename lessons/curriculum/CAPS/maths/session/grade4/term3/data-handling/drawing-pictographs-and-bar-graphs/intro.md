@@ -1,0 +1,1 @@
+Today we turn data into pictures. We draw pictographs, where one small picture stands for one learner, and bar graphs, where the height of each bar shows how many. We learn what every good graph needs: a title, labels, neat equal spacing and a clear scale. We use the fruit survey and a count of books read by groups in a class in Mbombela.

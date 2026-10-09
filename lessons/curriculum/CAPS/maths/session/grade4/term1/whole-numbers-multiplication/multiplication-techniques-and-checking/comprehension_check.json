@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Work out 48 times 5 by two different techniques and show that they agree.",
+      "expected_answer": "Breaking down: 40 times 5 is 200 and 8 times 5 is 40, total 240. Compensating: 50 times 5 is 250, minus 2 times 5 which is 10, gives 240. Or halving: 48 times 10 is 480, half is 240. All give 240."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why halving one number and doubling the other does not change the answer, using 16 times 25.",
+      "expected_answer": "16 trays of 25 rolls can be pushed together in pairs to make 8 trays of 50 rolls. No rolls were added or removed, only regrouped, so 16 times 25 and 8 times 50 are both 400."
+    },
+    {
+      "id": "cc3",
+      "question": "Show how division checks that 15 times 12 equals 180.",
+      "expected_answer": "Division undoes multiplication, so 180 divided by 12 should give 15. Twelve times 10 is 120, leaving 60, and twelve times 5 is 60, so 180 divided by 12 is 15. The product is confirmed."
+    }
+  ]
+}

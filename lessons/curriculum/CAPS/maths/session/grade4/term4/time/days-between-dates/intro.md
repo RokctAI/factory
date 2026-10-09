@@ -1,0 +1,1 @@
+Today we work out how many days there are between two dates. How many days until the holidays? How many days from a birthday in one year to a celebration in the next? We learn to count on to the end of a month and then add the days in the next months, and we use this to plan a school trip and count down to the December holidays in Durban.

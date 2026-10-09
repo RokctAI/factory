@@ -1,0 +1,18 @@
+### subtopic_1 — What a Fraction Is
+**Assistant:** Why do the parts have to be equal? If I cut a melktert into 4 pieces, aren't they quarters?
+
+**Tutor:** Not unless the pieces are the same size, and here is why that matters. A fraction name tells you how big a piece is compared with the whole. One quarter means a piece that fits into the whole exactly 4 times. If you cut a melktert into one huge piece and three thin ones, you do have 4 pieces, but the huge piece might be more than half the tart and the thin ones much less than a quarter each. If you called them all quarters, then someone who was promised one quarter could get a thin slice or a huge one, and the word would mean nothing. That is why the rule is equal parts first, names second. In a test, a picture with unequal parts is a trap: count the pieces, but before you write a fraction, check that they are the same size. If they are not, the honest answer is that the picture does not show quarters at all. This idea will help you later too, because when we add fractions we can only add parts of the same size, and when we compare fractions we can only compare wholes of the same size. Fairness and fractions go together: a fraction is a fair share.
+
+***
+
+### subtopic_2 — Reading and Drawing Fractions in Diagrams
+**Assistant:** When I see a picture, I sometimes write the shaded over the unshaded. Why is that wrong?
+
+**Tutor:** It is a very common slip, and it happens because both numbers come from counting in the picture. The bottom number of a fraction must always be the total number of equal parts in the whole, because it tells you what size the parts are. If a chocolate slab has 8 blocks and 3 are eaten, the blocks are eighths, so the eaten part is three eighths. Writing 3 over 5, the eaten over the left, would mean the slab had only 5 blocks, which is not true. A good habit is to say the fraction in words before you write it: three of the eight blocks. The word of tells you that the 8 is the whole. Then ask the second question: how much is left? Five of the eight blocks, five eighths. Check that the two fractions together make eight eighths, the whole slab. If your two numbers add up to the whole, you have used the right bottom number. If you ever get a fraction whose bottom number is smaller than the number of pieces you can see, stop and recount, because the bottom number must count every equal part, shaded or not.
+
+***
+
+### subtopic_3 — Comparing Fractions in Diagrams
+**Assistant:** How can one eighth be smaller than one half when 8 is bigger than 2?
+
+**Tutor:** Because the 8 is not counting how much you get; it is counting how many people or pieces share the whole. Imagine one melktert shared between 2 people. Each gets one half, a big slice. Now imagine the same melktert shared among 8 people. Each gets one eighth, a thin slice. More people sharing the same tart means each person gets less. So a bigger bottom number means smaller pieces. The fraction wall shows this beautifully: the half strip has 2 long pieces, the eighth strip has 8 short ones, and both strips are the same length. If you compare one piece from each strip, the half is clearly longer. This is the opposite of what happens with whole numbers, where 8 is more than 2, so it can feel strange at first. A helpful habit is to picture the sharing every time: one over a big number means a thin slice, and one over a small number means a fat slice. When the top numbers are the same, like one half and one eighth, the fraction with the smaller bottom number is the bigger fraction. Your brain will soon do this without the picture, but the picture is always there to check.

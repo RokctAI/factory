@@ -1,0 +1,1 @@
+Today we measure perimeter, the distance all the way around the outside of a shape. We walk around a vegetable garden, measure the edges of a book and a photo frame with a ruler, and add up the sides of rectangles, squares and other shapes. We solve fencing problems for a school garden in Thohoyandou, including working out how much the fence will cost.

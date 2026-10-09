@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "A flow diagram says times 3 then plus 1. Find the output for input 7 and the input for output 31, explaining both methods.",
+      "expected_answer": "Forwards: 7 times 3 is 21, plus 1 is 22. Backwards: undo the plus 1 by subtracting 1 from 31 to get 30, then undo the times 3 by dividing by 3 to get 10."
+    },
+    {
+      "id": "cc2",
+      "question": "Inputs 1, 2, 3, 4 give outputs 5, 9, 13, 17. Find the rule and explain how you tested it.",
+      "expected_answer": "The outputs go up by 4 each time, so the rule multiplies by 4. 1 times 4 is 4 but the output is 5, so add 1. Rule: times 4 then plus 1. Test: 2 times 4 plus 1 is 9, 3 times 4 plus 1 is 13, 4 times 4 plus 1 is 17, all correct."
+    },
+    {
+      "id": "cc3",
+      "question": "Write the rule times 3 then plus 1 in words and as a number sentence, and explain why plus 1 then times 3 is not equivalent.",
+      "expected_answer": "Words: multiply the picture number by 3 and add 1. Number sentence: 3 times box plus 1 equals the output. Plus 1 then times 3 gives a different output for the same input, for example input 2 gives 7 one way and 9 the other, so they are not equivalent."
+    }
+  ]
+}
