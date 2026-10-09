@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the rule for the mechanical advantage of pulley systems and apply it to a 60 newton load on a tackle with three load-bearing rope sections, including the distance trade-off and efficiency if the measured effort is 24 newtons.",
+      "expected_answer": "The ideal mechanical advantage equals the number of rope sections supporting the movable block, counted as the sections running upward from it; the section from the fixed block to the hand does not count. For three sections the ideal advantage is 3, so the ideal effort is 60 over 3, which is 20 newtons, and lifting the load 0.5 metres requires 1.5 metres of rope. A measured effort of 24 newtons gives an actual advantage of 60 over 24, which is 2.5, and an efficiency of 2.5 over 3, about 83 percent, the shortfall being due to the lower block's weight and friction at the sheaves."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what mechanical control systems do and do not do, and describe the ratchet and pawl, a brake and a cleat in one or two sentences each with an application.",
+      "expected_answer": "Control systems govern motion but supply and multiply no force. A ratchet and pawl allows rotation in one direction only: a saw-toothed wheel and a spring-loaded pawl that rides the sloping faces and jams on the steep faces, used in winches and ratchet spanners. A brake stops motion by friction and converts the energy of motion into heat: the disc brake clamps pads onto a disc by hydraulic pressure, and the bicycle rim brake pinches rubber blocks onto the rim through a lever and cable. A cleat holds a rope under load by friction or jamming so that load tightens the grip, and releases it instantly: horn, cam and jam cleats on boats, flagpoles and washing lines."
+    },
+    {
+      "id": "cc3",
+      "question": "State the gear ratio rule and calculate the output for a 15-tooth driver and 45-tooth driven gear at 300 revolutions per minute, then state in one line each what an idler, a bevel pair, a rack and pinion and a worm gear do.",
+      "expected_answer": "Gear ratio is driven teeth over driver teeth: 45 over 15 is 3 to 1, so the output turns at 300 over 3, which is 100 revolutions per minute, with about three times the turning force and in the opposite direction; speed and force are traded. An idler between driver and driven restores the original direction and leaves the ratio unchanged. A bevel pair has teeth on cones and turns the axis of rotation through 90 degrees with the same ratio rules. A rack and pinion converts rotation into straight-line motion, the rack moving one tooth spacing per pinion tooth per turn. A worm gear advances its wheel one tooth per turn of the worm, so the ratio equals the wheel's tooth count, giving a large self-locking reduction."
+    }
+  ]
+}

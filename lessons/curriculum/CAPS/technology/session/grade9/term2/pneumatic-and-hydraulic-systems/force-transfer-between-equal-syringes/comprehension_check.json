@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe what happens when the master plunger of two equal syringes joined by a tube is pushed in, and state the relationship between the input and output force and distance.",
+      "expected_answer": "The fluid in the sealed system is forced out of the master syringe along the tube into the slave syringe, pushing its plunger out. The push on the master raises the pressure of the fluid, which acts on the slave plunger. Because the syringes have equal cross-sections, the same volume moved means the slave moves out the same distance the master moves in, and the force at the slave equals the force at the master, slightly reduced by friction in the seals. Equal syringes transfer a force and a distance unchanged; they do not multiply either."
+    },
+    {
+      "id": "cc2",
+      "question": "Distinguish between pneumatic and hydraulic systems and explain why the two feel different when the master is pushed.",
+      "expected_answer": "A pneumatic system is filled with a gas such as air; a hydraulic system is filled with a liquid such as water or oil. Gases compress, so in the pneumatic system the air squashes first, the master feels spongy, the slave moves less and later, and the compressed air springs back when released. Liquids do not compress noticeably, so in the hydraulic system the slave moves immediately by the same amount with a firm feel and nothing springs back. Hydraulic systems suit precise firm control such as brakes and jacks; pneumatic systems suit quick or springy actions such as air tools and bus doors."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the fair test for force transfer between equal syringes with air and with water, naming the variables and the expected conclusion.",
+      "expected_answer": "Independent variable: the fluid, air then water. Dependent variables: distance the slave moves for a set master movement, and the force on the master needed to lift set masses on the slave. Controlled: the same two equal syringes, tube, master distances of 20 millimetres and masses of 100, 200 and 500 grams. The water system is filled under the surface and all bubbles removed. Expected: with water the slave moves the same distance and lifts each mass with nearly the same force, immediately; with air the slave moves less until the air is compressed and the feel is spongy. Conclusion: equal syringes transfer force and distance equally, directly in a hydraulic system and only after compression in a pneumatic one; a little force is lost to friction."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, in terms of particles, why gases are compressible and liquids are not, and describe a demonstration of each.",
+      "expected_answer": "Gas particles are far apart, moving fast with mostly empty space between them, so a push moves them closer by taking up that space and the volume shrinks easily. Liquid particles are touching and only slide past each other, so forcing them closer means pushing the particles themselves together against the forces between them, which needs enormous pressure for a tiny change; liquids are treated as incompressible. Demonstration: a syringe of air with its nozzle blocked can be pushed in a long way and springs back when released; a syringe of water with its nozzle blocked cannot be pushed in at all."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe three effects of compressibility inside a fluid power system and explain why air in brake lines is dangerous.",
+      "expected_answer": "Compressed gas stores energy like a spring, giving it back on expansion, which is useful in air tools but makes a burst air line whip dangerously. Compressibility delays transfer, since the master must squash the gas before pressure rises enough to move the slave, so output lags and exact positioning is hard, whereas a liquid moves the slave instantly by a fixed amount. Compressibility cushions, so a pneumatic cylinder gives under a returning load while a hydraulic one holds rigid. Air in brake lines means the pedal stroke first squashes the bubble, the pedal feels spongy and travels further, the pads apply late and the car stops later, so mechanics bleed the brakes to remove the air."
+    },
+    {
+      "id": "cc3",
+      "question": "Give the reasons for choosing a hydraulic system and the reasons for choosing a pneumatic system, with two examples of each, and name a machine that uses both.",
+      "expected_answer": "Hydraulic where force must be large, exact and rigid, and high pressure is needed without stored-energy hazards: car brakes, the hydraulic jack and press, excavator arms, rescue spreaders; drawbacks are messy leaks and the need to exclude air. Pneumatic where movement must be fast, light, clean and safe or a soft cushioned action is wanted, and air can be stored and piped: air tools, bus doors, dentist's chairs, grippers, tyres; drawbacks are limited force, imprecise positioning and the hazard of stored energy. A truck uses hydraulic brakes with pneumatic suspension and door openers."
+    }
+  ]
+}

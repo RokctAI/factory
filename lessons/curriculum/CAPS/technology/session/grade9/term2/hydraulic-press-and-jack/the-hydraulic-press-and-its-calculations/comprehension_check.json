@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the parts of a hydraulic press, explain how it produces a large force, and give three uses.",
+      "expected_answer": "A press has a small effort or pump cylinder driven by a lever or motor, a large ram or load cylinder carrying a plate or tool, a connecting pipe filled with oil, a reservoir with a one-way valve so repeated pumping drives the ram, and a release valve to return it. Pushing the effort plunger raises the oil pressure, which by Pascal's principle is the same at the ram; the ram's much larger area therefore carries a much larger force, in the ratio of the areas. Oil lubricates the seals and resists rust and freezing. Uses: pressing bearings and bushes in vehicle repair, bending and punching steel plate, baling scrap, pressing bricks or tiles, extracting seed oil, stamping car body panels."
+    },
+    {
+      "id": "cc2",
+      "question": "Write the hydraulic press equation, state where it comes from, and show how it is rearranged to find the load force and the effort force.",
+      "expected_answer": "Because the pressure is the same at both cylinders, effort force over effort area equals load force over load area: F1 over A1 equals F2 over A2. Load force F2 equals F1 times A2 over A1, the effort multiplied by the area ratio; effort force F1 equals F2 times A1 over A2. The larger area always goes with the larger force. Forces are in newtons, areas in the same units on both sides, and a mass in kilograms is converted to newtons by multiplying by 10."
+    },
+    {
+      "id": "cc3",
+      "question": "A press has an effort cylinder of 3 square centimetres and a ram of 60 square centimetres and must lift a 1 200 kilogram engine. Calculate the effort force needed and the pressure in the oil, showing your checks.",
+      "expected_answer": "Weight of the engine is 1 200 times 10, which is 12 000 newtons. F1 equals F2 times A1 over A2, which is 12 000 times 3 over 60, which is 600 newtons. Check: the area ratio is 20, so the effort should be a twentieth of the load, and 600 is a twentieth of 12 000; the smaller area carries the smaller force. Pressure equals 600 over 3, which is 200 newtons per square centimetre, and 12 000 over 60 is also 200, confirming equal pressure; in pascals that is 2 000 kilopascals."
+    }
+  ]
+}

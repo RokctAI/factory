@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how a block and tackle is made up and state the rule linking load-bearing ropes to mechanical advantage.",
+      "expected_answer": "A block and tackle consists of a fixed upper block and a movable lower block attached to the load, each holding one or more sheaves, with a single rope threaded between them and its free end leaving the upper block. The fixed block turns the pull downward; the movable block hangs the load from several rope sections. Because the rope is continuous, its tension is the same throughout, and the load is shared equally by the sections pulling up on the movable block. The ideal mechanical advantage therefore equals the number of load-bearing rope sections: two sections give 2, three give 3, four give 4."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain which rope sections count as load-bearing and state the distance trade-off for a tackle with mechanical advantage 4.",
+      "expected_answer": "A section counts if it runs upward from the movable block, either passing round one of its sheaves or being tied to it. The section that leaves the fixed block and goes to the hand does not count because it pulls on the fixed block, which is held by the beam. With four load-bearing sections, each shortens by the lift distance, so the free end must be pulled four times as far as the load rises, four metres of rope for one metre of lift. Effort times effort distance equals load times load distance, less friction."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the three-tackle investigation and explain why the measured mechanical advantage is less than the count and why efficiency falls as sheaves are added.",
+      "expected_answer": "Build tackles with two, three and four load-bearing sections using the same blocks and a 20 newton load; measure effort with a spring balance and rope pulled for a 200 millimetre lift. Expected: about 10, 7 and 5 newtons with 400, 600 and 800 millimetres of rope. Measured efforts exceed the ideal because the effort also lifts the lower block's weight and overcomes friction at every sheave. Efficiency is actual over ideal mechanical advantage, typically 70 to 90 percent, and falls as sheaves are added because each adds friction and rope stiffness."
+    }
+  ]
+}

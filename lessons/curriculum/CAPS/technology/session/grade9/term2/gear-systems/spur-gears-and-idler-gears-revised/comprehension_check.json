@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how two meshing spur gears transmit motion and why they turn in opposite directions, and state how tooth count governs their relative speed.",
+      "expected_answer": "Spur gears are wheels with straight teeth on parallel axles whose teeth interlock so that the driver's teeth push the driven gear's teeth round at the meshing point; because one pushes the other at that point, the two gears rotate in opposite directions. Each tooth of the driver that passes the meshing point moves one tooth of the driven gear past it, so in one revolution of the driver the driven gear turns through as many teeth as the driver has. Equal tooth counts give equal speeds; a driven gear with more teeth turns slower, with fewer teeth faster, in proportion to the tooth counts."
+    },
+    {
+      "id": "cc2",
+      "question": "Define gear ratio and calculate the output speed and force change for a 12-tooth driver turning a 36-tooth driven gear at 90 revolutions per minute, and for the reverse arrangement.",
+      "expected_answer": "Gear ratio is driven teeth divided by driver teeth. A 12-tooth driver and 36-tooth driven gear give 36 over 12, a ratio of 3 to 1; the output turns at 90 divided by 3, which is 30 revolutions per minute, and its turning force is about three times the input, less friction. Reversed, a 36-tooth driver and 12-tooth driven gear give 12 over 36, a ratio of 1 to 3; the output turns at 270 revolutions per minute with about a third of the turning force. Speed and force are traded; work in equals work out."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the effect of an idler gear on direction and ratio, give two uses, and explain how a compound gear train differs.",
+      "expected_answer": "An idler placed between driver and driven gear is turned opposite to the driver and turns the driven gear opposite again, so the output rotates in the same direction as the input. The ratio is unchanged because the idler's teeth appear in both stages and cancel, leaving driven over driver. Uses include a maize mill where the stones must turn a particular way, a car's reverse gear and bridging a gap between shafts. A compound train has two gears of different sizes fixed on one shaft, one driven by the previous stage and one driving the next, so the stage ratios multiply, giving large reductions in a small space."
+    }
+  ]
+}

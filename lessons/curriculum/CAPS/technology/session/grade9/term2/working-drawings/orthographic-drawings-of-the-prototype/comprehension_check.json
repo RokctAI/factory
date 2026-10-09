@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain the difference between a design sketch and a working drawing, and describe the first angle orthographic layout.",
+      "expected_answer": "A design sketch shows what the machine looks like and how it works in a general way, usually pictorially, and cannot be measured. A working drawing fixes the exact size, position and fixing of every part so that a maker can build it without the designer, using orthographic views that look at the object square-on with no perspective so lengths are true at the stated scale. In first angle projection the front view is drawn in the middle of the sheet, the top view directly below it and the left side view to the right of it, with the first angle symbol, a truncated cone, in the title block to declare the convention."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the steps for drawing the lifting machine's three views at a scale of 1 to 10, including how hidden detail and centre lines are shown.",
+      "expected_answer": "Draw a border and title block with title, scale, date, name, sheet number and the first angle symbol. At 1 to 10, a 1200 by 700 by 500 frame becomes 120 by 70 by 50 on paper. Draw faint construction lines, then the front view: two uprights, the beam, the platform between them, the winch drum as a circle with its handle, the pulley on the beam and the rope path. Project widths down to the top view and heights across to the side view, using a 45 degree line to transfer depths between top and side. Add the 500 depth, line in the outlines darkly, show hidden edges such as the guide behind the platform and bolts behind the winch as dashed lines, and mark the drum and pulley axes with long-dash short-dash centre lines."
+    },
+    {
+      "id": "cc3",
+      "question": "State the dimensioning rules and describe the parts list for the working drawing, then list four checks before the drawing is finished.",
+      "expected_answer": "Dimension lines are thin with arrowheads touching extension lines; the number, the true size in millimetres regardless of scale, sits above the line; each size is given once in the view where it is clearest, overall dimensions outside detail ones, with the diameter symbol for round features. The parts list tabulates item number, name, quantity, material and size for every component, such as two pine uprights 50 by 50 by 1200, a plywood platform, the winch, pulley, rope and fixings, with balloon numbers on the drawing pointing to each part; it doubles as the shopping list. Checks: views aligned so widths match front to top and heights front to side; scale stated and used consistently; every part dimensioned; hidden lines dashed and outlines dark, so a stranger could build it."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the rack and pinion and explain how it converts rotary motion into linear motion.",
+      "expected_answer": "A rack is a straight bar with gear teeth along one edge, equivalent to a gear of infinite radius; a pinion is a small spur gear of the same tooth size meshing with it. When the pinion turns, each of its teeth passing the meshing point pushes one rack tooth past, so the rack slides along its length by one tooth spacing per pinion tooth; reversing the pinion reverses the rack. If instead the rack is pushed, the pinion turns, so the mechanism converts rotary motion to linear motion and back with no slip. Whether the rack or the pinion travels depends on which is fixed."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how a rack and pinion operates an automatic sliding gate and a car's steering, naming one safety feature of each.",
+      "expected_answer": "In a sliding gate a toothed rack is fixed along the bottom of the gate and a motor beside the driveway drives a pinion meshing with it; turning the pinion slides the gate along its track until a limit switch stops it, and reversing the motor closes it. Safety features include an infrared beam or safety edge that stops and reverses the gate for an obstruction, and a manual release that disengages the pinion during a power cut. In steering, the steering wheel turns a column with a pinion meshing with a rack lying across the car; the rack slides left or right and tie rods turn both front wheels together. The rack must never jam, and a small pinion gives fine control with light effort."
+    },
+    {
+      "id": "cc3",
+      "question": "Calculate the rack travel for one turn of a 12-tooth pinion with teeth 10 millimetres apart, the turns needed to open a 4 metre gate, and explain what changing the pinion size does.",
+      "expected_answer": "Travel per turn equals pinion teeth times tooth spacing: 12 times 10 millimetres is 120 millimetres per turn. A 4 metre gate is 4000 millimetres, so 4000 divided by 120 gives about 33 turns of the pinion. A larger pinion moves the rack further per turn but, acting at a larger radius, pushes with less force for the same motor torque; a smaller pinion moves it less per turn and pushes harder. The choice trades speed of travel against force, as with other gear systems."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what is meant by the input, process and output of a system, using the hydraulic jack and one other example, and explain how process steps chain together.",
+      "expected_answer": "Input is what goes into a system to make it work, such as energy, force, material or information; process is what the system does to the input, often in several steps; output is the result the system exists to produce, plus any by-products. For the jack: input is the user's hand force on the handle with the oil in the reservoir and the load; process is the lever, pump, valves, pressurised oil and ram; output is the load raised and held, with a little heat from friction. A kettle takes cold water and electrical energy, heats the water, and outputs hot water and steam. Process steps chain because the output of one step is the input of the next: the lever's output force is the pump plunger's input, and so on."
+    },
+    {
+      "id": "cc2",
+      "question": "Draw or describe the systems diagram of a hydraulic jack, listing the boxes in order and showing how the release path is included.",
+      "expected_answer": "Left to right: Input box with hand force on handle, oil in reservoir, load. Process boxes in order: lever handle multiplies the force about ten times and moves the pump plunger; pump plunger forces oil through the outlet one-way valve, raising its pressure, while the inlet one-way valve admits oil from the reservoir on the up-stroke; pressurised oil enters the ram cylinder; the ram piston with about fifty times the area converts pressure to a large force and rises a small distance per stroke. Output box: load raised and held; a small arrow for heat from friction. The release path is a separate branch: user opens the release valve, oil flows from the ram cylinder back to the reservoir, the ram descends. Labels note force increasing, distance decreasing and pressure equal through the oil."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain feedback and control in the jack's systems diagram and give three other situations where systems diagrams are used.",
+      "expected_answer": "Feedback is information about the output fed back to an earlier stage so the input or process can be adjusted, drawn as an arrow from the output back along the bottom to the input or a control box. The user is one controller: watching the load rise and choosing when to stop pumping and how far to open the release. The overload valve is an automatic controller: it senses oil pressure, compares it with the rated value by a spring, and opens to bypass oil to the reservoir if the pressure is too high, drawn as a branch from the pressurised oil back to the reservoir. Systems diagrams are used for car braking systems, water purification plants, factory production lines, plastics recycling plants, computer programs and timetables, to agree what a system must do before deciding how."
+    }
+  ]
+}
