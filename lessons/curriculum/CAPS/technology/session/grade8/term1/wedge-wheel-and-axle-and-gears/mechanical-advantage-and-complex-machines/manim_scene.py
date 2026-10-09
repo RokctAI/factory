@@ -1,0 +1,135 @@
+# Copyright (c) 2026 ROKCT INTELLIGENCE (PTY) LTD
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published
+# by the Free Software Foundation, version 3.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+from manim import *
+
+# Band-layout whiteboard scene for mechanical-advantage-and-complex-machines (Part 1 Expert
+# subtopics 1-3, Part 2 Simplifier subtopics 4-6). One band per teaching
+# beat, camera moves down to fresh space, nothing is removed. Write-only
+# reveals on single-string Tex keep the export inside the whiteboard
+# primitive vocabulary. Dwell time proportional to subtopics.json
+# (190/170/150/120/110/100 of 840 s).
+
+BAND = config.frame_height
+
+
+def band_shift(k):
+    return DOWN * BAND * k
+
+
+def strike(m):
+    return Line(m.get_corner(DL) + 0.08 * DL, m.get_corner(UR) + 0.08 * UR,
+                color=RED, stroke_width=6)
+
+
+class MechanicalAdvantageComplexMachinesSession(MovingCameraScene):
+    def next_band(self, k):
+        self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
+
+    def write_rows(self, k, title, rows, scale=0.8, box=None, box_color=YELLOW):
+        t = Tex(title).scale(1.15).shift(band_shift(k) + UP * 2.4)
+        self.play(Write(t))
+        self.wait(1.5)
+        made = []
+        for i, r in enumerate(rows):
+            m = Tex(r).scale(scale).shift(band_shift(k) + UP * (1.3 - 0.95 * i))
+            self.play(Write(m))
+            self.wait(2.3)
+            made.append(m)
+        if box is not None:
+            self.play(Create(SurroundingRectangle(made[box], color=box_color)))
+            self.wait(2)
+        return made
+
+    def construct(self):
+        # Intro beat: topic held full-screen while intro.md plays.
+        self.wait(42)
+
+        # ============ Part 1 — Expert ============
+        # --- Band 0 (subtopic_1): What Mechanical Advantage Means
+        self.write_rows(0, "What Mechanical Advantage Means", [
+            "MA = load divided by effort",
+            "Above 1 stronger, below 1 faster",
+            "The price is always distance",
+            "Match the MA to the job",
+        ], scale=0.82, box=2)
+
+        # --- Band 1 (subtopic_2): Six Simple Machines
+        self.next_band(1)
+        self.write_rows(1, "Six Simple Machines", [
+            "Lever, wheel and axle, pulley",
+            "Inclined plane, wedge, screw",
+            "Gears: wheel and axle with teeth",
+            "Cams and cranks: rotary to reciprocating",
+        ], scale=0.82, box=2)
+
+        # --- Band 2 (subtopic_3): Complex Machines Combine Simple Ones
+        self.next_band(2)
+        self.write_rows(2, "Complex Machines Combine Simple Ones", [
+            "Bicycle: pedals, chain, brakes, clamp",
+            "Hand drill: crank, big gear, small gear",
+            "Can opener: lever, knob, gear, wedge",
+            "Follow the force from input to output",
+        ], scale=0.82, box=3)
+
+        # --- Band 3 (subtopic_3): error museum
+        self.next_band(3)
+        em = Tex("Error museum").scale(1.2).shift(band_shift(3) + UP * 2.4)
+        self.play(Write(em))
+        self.wait(1.5)
+        errs = [
+            "``A higher MA is always better''",
+            "``Machines create energy''",
+            "``Gears are a kind of pulley''",
+            "``A complex machine is one thing''",
+        ]
+        for i, e in enumerate(errs):
+            t = Tex(e).scale(0.9).shift(band_shift(3) + UP * (1.3 - 1.0 * i))
+            self.play(Write(t))
+            self.play(Create(strike(t)))
+            self.wait(1.8)
+        self.wait(1.5)
+
+        # ============ Part 2 — Simplifier ============
+        # --- Band 4 (subtopic_4): Small Push, Big Result
+        self.next_band(4)
+        self.write_rows(4, "Small Push, Big Result", [
+            "Load divided by push",
+            "Bigger than 1: stronger",
+            "Less than 1: faster",
+            "Long plank, small push",
+        ], scale=0.9, box=3)
+
+        # --- Band 5 (subtopic_5): The Six Helpers
+        self.next_band(5)
+        self.write_rows(5, "The Six Helpers", [
+            "Six simple machines",
+            "Doorknob, ramp, axe, bottle cap",
+            "Gears lock with teeth",
+            "Cam bumps, crank swings",
+        ], scale=0.9, box=0)
+
+        # --- Band 6 (subtopic_6): Machines Inside Machines
+        self.next_band(6)
+        self.write_rows(6, "Machines Inside Machines", [
+            "Simple machines joined up",
+            "Pedals, chain, brakes, clamp",
+            "Crank to big gear to small gear",
+            "Name each one on the way",
+        ], scale=0.9, box=3)
+
+        last = Tex("Mechanical advantage is load over effort, distance is the price, and every complex machine is simple machines joined up.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
+        self.play(Write(last))
+        self.play(Create(SurroundingRectangle(last, color=YELLOW)))
+        self.wait(4)
