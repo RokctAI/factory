@@ -1,0 +1,1 @@
+Today we learn smart ways to divide and reliable ways to check. We split 756 learners into equal groups for a sports day in Brits, share R936 among 12 classes and fill vans with 15 boxes each, practising estimating first, breaking the number down, building up, halving or doubling both numbers, and multiplying back to check.

@@ -1,0 +1,1 @@
+Today we recognise, draw and describe lines of symmetry in flat shapes. A Grade 5 class in Soweto makes posters and paper cut-outs for Youth Day, and we use folding, mirrors and grid paper to find every line of symmetry in shapes and letters and to complete symmetrical designs.

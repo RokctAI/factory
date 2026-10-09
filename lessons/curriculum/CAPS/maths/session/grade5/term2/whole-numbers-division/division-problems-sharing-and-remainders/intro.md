@@ -1,0 +1,1 @@
+Today we solve real problems with division and learn what to do with a remainder. We pack bread rolls at a soup kitchen in Khayelitsha, book buses for a school trip, cut ribbon, share money and sweets, and find the price of one item, and in every problem we read the question again to decide whether to round up, round down or use the remainder itself.

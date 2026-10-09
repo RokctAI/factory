@@ -1,0 +1,1 @@
+Today we learn that different fractions can name the same amount. We cut a birthday cake in George into halves, quarters and eighths, look at a box of 12 eggs and build a fraction wall, so that we can make equivalent fractions, simplify them, and use them to compare fractions that look different.

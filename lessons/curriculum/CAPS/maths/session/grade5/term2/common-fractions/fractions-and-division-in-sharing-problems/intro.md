@@ -1,0 +1,1 @@
+Today we discover that a fraction is also a division, and we use that to solve sharing and grouping problems. At a family braai in Mamelodi we share pizzas, oranges and rotis among children, and we measure flour for amagwinya in quarter cups, so that leftovers become fractions and we can count how many fraction pieces fit into an amount.

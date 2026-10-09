@@ -1,0 +1,1 @@
+Today we use flow diagrams and tables to find inputs, outputs and rules for number patterns. A school vetkoek stall in East London works out prices for different orders, and we show the same rule in words, in a flow diagram, in a table and as a number sentence, and check that they all agree.

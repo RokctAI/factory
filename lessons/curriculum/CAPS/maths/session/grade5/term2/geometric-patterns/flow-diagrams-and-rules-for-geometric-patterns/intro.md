@@ -1,0 +1,1 @@
+Today we use flow diagrams to work with the rules of geometric patterns. A school in Kimberley sets out tables in rows for a fundraising supper, and we find the number of chairs for any row, work backwards from the chairs to the tables, and show the same rule in words, in a flow diagram and as a number sentence.

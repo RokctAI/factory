@@ -1,0 +1,18 @@
+### subtopic_1 — Patterns That Grow by the Same Amount
+**Assistant:** Why does the matchstick pattern add 3 matches and not 4, when every square has 4 sides?
+
+**Tutor:** Because each new square is built against the side of the square before it, so one of its four sides is already there. Picture shape 1, a single square made of 4 matches. To make shape 2, you put a new square on the right. The left side of the new square is the right side of the old square, so you only need to add a top, a bottom and a right side: 3 matches. Shape 2 has 4 plus 3, which is 7 matches. Every new square after that works the same way, borrowing one side and adding 3. This shared side is the reason the pattern rule is times 3 plus 1, not times 4. The plus 1 is the very first left side, which no square borrows. You can check the rule by thinking about shape 3: three squares, each adding a top, a bottom and a right side, which is 9 matches, plus the first left side, 10 matches. If the squares were not touching, each one would need all 4 sides, and the pattern would be 4, 8, 12, 16, adding 4 every time. So the way the shapes are joined decides the rule. Whenever you investigate a geometric pattern, look carefully at what is shared and what is new in each step.
+
+***
+
+### subtopic_2 — Patterns That Grow Faster
+**Assistant:** How can I find the next number when the differences keep changing?
+
+**Tutor:** Write down the differences, and then look for a pattern in them. The differences are numbers too, and they often follow a simple rule of their own. In the dot triangles, 1, 3, 6, 10, the differences are 2, 3 and 4. Those differences go up by 1 each time, so the next difference must be 5, and the next triangle has 10 plus 5, which is 15 dots. In the square tiles, 1, 4, 9, 16, the differences are 3, 5 and 7. They go up by 2 each time, so the next difference is 9, giving 25. In the doubling pattern, 1, 2, 4, 8, the differences are 1, 2 and 4, and those differences are doubling too, so the next difference is 8, giving 16. Once you have found the pattern in the differences, check it by working forward from a number you already know. It also helps to think about the shapes. A new triangle gets a whole new bottom row, and each new row is 1 longer than the last, which is why the differences grow by 1. Patterns that look strange at first usually make sense once you connect the numbers to the pictures.
+
+***
+
+### subtopic_3 — Describing and Using Rules
+**Assistant:** Why do I need a rule for shape 20 if I can just keep drawing?
+
+**Tutor:** Because drawing 20 shapes takes a long time, uses a lot of matches, and gives many chances to miscount, while a good rule gives the answer in one calculation. For shape 20 of the matchstick pattern, you would need to draw 20 squares in a row and count 61 matches one by one. With the rule shape number times 3 plus 1, you work out 20 times 3 plus 1 in a few seconds. For shape 100, drawing is hopeless, but the rule still takes seconds: 301 matches. There is another reason. Finding a rule means you understand why the pattern works, not just what it looks like. Once you know that each square adds 3 and the first side adds 1, you can answer questions in reverse too, such as which shape uses 46 matches: take away the 1 to get 45, and 45 divided by 3 is 15, so shape 15. Drawing cannot easily answer that question. Rules are also how patterns are used in real life. A builder who knows that each extra metre of fence needs a certain number of poles does not draw the whole fence; she uses the rule. Patterns and rules are the beginning of algebra, which you will learn in high school.

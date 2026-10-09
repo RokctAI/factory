@@ -1,0 +1,1 @@
+Today we describe, sort and compare flat shapes by their straight and curved sides and by how many sides they have, and then we draw shapes on grid paper. A Grade 5 craft club in Gqeberha cuts out shapes for a hanging mobile, sorts them into groups, and plans new shapes on squared paper before cutting them.

@@ -1,0 +1,1 @@
+Today we learn to add and subtract fractions with the same bottom number, and to add and subtract mixed numbers. We measure flour for a bakery in Paarl, share a pizza cut into 12 slices and follow a family hiking in the Drakensberg, so that we can see why the bottom number stays the same and how to swap between wholes and pieces.

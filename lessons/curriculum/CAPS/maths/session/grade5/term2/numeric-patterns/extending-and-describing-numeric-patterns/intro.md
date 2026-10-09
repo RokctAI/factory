@@ -1,0 +1,1 @@
+Today we investigate number patterns that grow or shrink by the same amount each time, and patterns that multiply or divide by the same number each time. A learner in Durban saves money every week, a message is passed around a school, and a water tank empties, and we extend each pattern, describe its rule in our own words and make up patterns of our own.

@@ -1,0 +1,1 @@
+Today we investigate patterns made of shapes and learn to extend them and describe their rules in our own words. A Grade 5 class in Mbombela builds a display with matchstick squares, dot triangles, square tiles and folded paper, and we discover that some patterns grow by the same amount each time while others grow faster and faster.

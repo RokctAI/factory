@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "One table seats 6, two tables seat 10 and three tables seat 14. Write the rule as a flow diagram and find the chairs for 5 tables.",
+      "expected_answer": "The flow diagram is input, then times 4, then plus 2, then output. For 5 tables, 5 times 4 is 20, and 20 plus 2 is 22 chairs."
+    },
+    {
+      "id": "cc2",
+      "question": "A row of tables uses 30 chairs. Using the rule times 4 then plus 2, how many tables are there? Explain.",
+      "expected_answer": "Work backwards with opposite operations in the opposite order. 30 minus 2 is 28, and 28 divided by 4 is 7. So there are 7 tables. Check: 7 times 4 is 28, plus 2 is 30."
+    },
+    {
+      "id": "cc3",
+      "question": "Are times 4 then plus 2, and plus 2 then times 4, the same rule? Explain with an input.",
+      "expected_answer": "No. For input 5, times 4 then plus 2 gives 22, but plus 2 then times 4 gives 7 times 4, which is 28. The outputs are different, so the rules are not equivalent."
+    }
+  ]
+}
