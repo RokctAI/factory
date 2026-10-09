@@ -1,0 +1,10 @@
+{
+  "_comment": "Grade R activity-pack lines (every maths, English Home Language, Life Skills and English First Additional Language pack whose id matches *.gradeR.*), rendered from the pack JSONs under lessons/curriculum/CAPS/*/r3_packs/gradeR/ by voice_batch/r3_lines.py. All four grade batches and r3_packs_4_praise.json share one agent branch, so the merge job folds them into one r3_manifest and one agent PR. Only one batch renders per run: the daily scan picks the first (sorted) batch with lines still pending, so these run in order R, 1, 2, 3, praise.",
+  "kind": "r3",
+  "voice": "voice_a",
+  "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
+  "ref_sha256": "de4a86bdea53fa5722cb8d08edd699098207019a8a2611bf569491a4e6993d5f",
+  "agent_branch": "rokct/r3-pack-audio",
+  "locale": "en",
+  "packs": "*.gradeR.*"
+}
