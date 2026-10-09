@@ -1,0 +1,1 @@
+Today we learn to round off numbers to the nearest 5, 10, 100 and 1 000. Rounding gives a simpler number close to the real one, and it is how we estimate before we calculate. We use the runners in a fun run in Durban, the price of a fridge and a stove, and a class paying for a school outing to decide when to round up, when to round down and which digit tells us.

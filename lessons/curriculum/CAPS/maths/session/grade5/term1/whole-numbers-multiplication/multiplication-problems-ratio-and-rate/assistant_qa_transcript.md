@@ -1,0 +1,18 @@
+### subtopic_1 — Money and Measurement Problems
+**Assistant:** How do I know that a money problem needs multiplying and not adding?
+
+**Tutor:** Look for equal groups: the same amount happening again and again. 36 bags at R95 a bag means R95, then another R95, then another, 36 times. You could add R95 thirty-six times, but multiplication is the shortcut for repeated adding of the same amount, so it is the right operation. Words such as each, every, per, a, apiece and at often signal equal groups: R95 a bag, R148 each, R18 per trip. But, as with all clue words, read the whole story. If a builder buys one bag of cement at R95 and one bag of lime at R80, the amounts are different, so you add them, even though the word at appears. If the story says the builder has R5 000 and wants to know how many R95 bags he can buy, that is still about equal groups, but now the number of groups is unknown, so it becomes division. A good test is to ask yourself: do I know the size of one group and the number of groups? If yes, multiply. Do I know the total and the size of one group, or the total and the number of groups? Then divide. Do I have different amounts to put together? Then add. Writing the number sentence before calculating makes that choice visible.
+
+***
+
+### subtopic_2 — Ratio: Comparing the Same Kind
+**Assistant:** What is the difference between a ratio and a fraction?
+
+**Tutor:** A ratio compares one part with another part, while a fraction compares a part with the whole. In the class where boys to girls is 2 to 3, the ratio compares boys with girls: for every 2 boys there are 3 girls. If you want to say what fraction of the class is boys, you compare the boys with the whole group. Each group of 2 boys and 3 girls has 5 learners, so 2 out of every 5 learners are boys, which is two fifths. The girls are three fifths. Mixing these up is a very common mistake. Someone who reads 2 to 3 as two thirds would say that most of the class is boys, which is the opposite of the truth, because there are more girls than boys. The two ideas are closely connected, and you can always move from one to the other by adding the parts of the ratio to find the whole. With concrete mixed 1 to 3, the parts make 4, so one quarter of the mix is cement and three quarters is sand. You will work with fractions in more detail in Term 2. For now, remember: ratio compares part to part, fraction compares part to whole, and the whole is the parts added together.
+
+***
+
+### subtopic_3 — Rate: Comparing Different Kinds
+**Assistant:** Why is the bigger pack not always the cheaper choice?
+
+**Tutor:** Because the bigger pack has more in it, so its total price is naturally higher, and the total price alone does not tell you whether each item is cheap or expensive. To compare fairly, you need a rate: the price for one item. 4 cans for R48 is R12 per can, because 48 shared by 4 is 12. 6 cans for R66 is R11 per can, because 66 shared by 6 is 11. Now the comparison is fair, and the 6-pack is cheaper per can by R1, even though you pay R18 more at the till. Shops know that many people only look at the total, so sometimes a big pack actually costs more per item than a small one, and checking the price for one item protects you. Many supermarket shelf labels in South Africa show a unit price, such as the price per 100 g or per litre, for exactly this reason. Remember that cheaper per item is only a good deal if you will use everything you buy. If the extra cans will go flat or the extra tomatoes will go bad, the smaller pack might still be the better choice. Rates help you make the decision with real information instead of guessing.

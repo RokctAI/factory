@@ -1,0 +1,1 @@
+Today we learn what every digit in a six-digit number is worth. We use 136 482 learners writing a test in KwaZulu-Natal and a house in Gqeberha priced at R765 430 to name the six places, break numbers up into their parts and build them back, and we use digit cards to make the biggest and smallest numbers possible.

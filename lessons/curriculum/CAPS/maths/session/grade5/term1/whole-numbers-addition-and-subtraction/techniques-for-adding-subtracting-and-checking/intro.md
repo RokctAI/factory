@@ -1,0 +1,1 @@
+Today we learn quick ways to add and subtract big numbers and to check our answers. We use a school book fair in East London and a fundraising target to practise breaking numbers down and building them up, rounding and compensating, and jumping along a number line, and we always check one technique with another.

@@ -1,0 +1,18 @@
+### subtopic_1 — Multiples of Two-Digit Numbers
+**Assistant:** How can I remember which is a factor and which is a multiple?
+
+**Tutor:** Think about size and direction. Multiples are usually bigger than the number, and factors are usually smaller. The multiples of 12 are 12, 24, 36 and onwards, growing for ever, because you keep multiplying 12 by bigger and bigger numbers. The factors of 48 are 1, 2, 3, 4, 6, 8, 12, 16, 24 and 48, all of them 48 or smaller, because they have to fit into 48 exactly. So multiples go up and out, and factors go down and in. A sentence that always works is: a factor times something makes a multiple. 12 times 4 makes 48, so 12 and 4 are factors of 48, and 48 is a multiple of 12 and a multiple of 4. You can also think about the words. A multiple comes from multiply, so it is the answer to a multiplication. A factor is like a part in a factory that helps to make something; factors are the pieces that multiply together to make the number. The two ideas always come together: if 12 is a factor of 48, then 48 is a multiple of 12. They are two ways of describing the same fact, 12 times 4 equals 48, from opposite ends. In a test, when you are not sure, write the multiplication down and see which number is the answer.
+
+***
+
+### subtopic_2 — Factors of Numbers to 100
+**Assistant:** How do I know when I have found all the factors of a number?
+
+**Tutor:** Search in pairs, starting at 1, and stop as soon as the numbers in the pairs meet or cross. For 72, test 1 first: 1 times 72. Then 2: 2 times 36. Then 3: 3 times 24. Then 4: 4 times 18. 5 does not divide 72 exactly, because 72 does not end in 0 or 5. Then 6: 6 times 12. 7 does not work, because 7 times 10 is 70 and 72 is only 2 more. Then 8: 8 times 9. The next number to test is 9, but 9 is already in the pair 8 times 9. From now on every factor you find would just be a pair you already have, turned around. So you can stop, and the full list is the numbers from all the pairs: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36 and 72. This method makes it very hard to miss a factor, because you tested every number on the way up. For 36, the pairs meet exactly: 6 times 6, so 6 is written once and 36 has an odd number of factors, nine of them. A quick check is that every factor you list must divide the number exactly. If you list 16 for 72, test it: 16 times 4 is 64 and 16 times 5 is 80, so 16 is not a factor.
+
+***
+
+### subtopic_3 — Common Multiples and Common Factors
+**Assistant:** Where would I ever use common multiples in real life?
+
+**Tutor:** Whenever two things come in different-sized groups or repeat at different times, and you want them to match up. The juice and muffins are a real example: if juice comes in packs of 12 and muffins in packs of 18, buying 2 packs of each gives 24 juices and 36 muffins, which is unfair or wasteful. The lowest common multiple, 36, tells you the smallest order that matches exactly. Hot dog rolls and sausages are a famous version of the same problem, because they are often sold in different-sized packs. Timetables are another. If one taxi leaves the rank every 12 minutes and another every 18 minutes, and both leave together at 7:00, they will next leave together after 36 minutes, at 7:36. Repeating events work the same way: if one tap drips every 15 seconds and another every 25 seconds, they drip together every 75 seconds. Common factors are useful too, for splitting things fairly. If you have 48 pencils and 72 erasers to pack into identical parcels with nothing left over, the number of parcels must be a common factor, and the highest common factor, 24, gives the most parcels: 2 pencils and 3 erasers in each.

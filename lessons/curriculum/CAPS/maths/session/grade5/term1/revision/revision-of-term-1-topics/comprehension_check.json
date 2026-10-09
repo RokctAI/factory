@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Round 148 365 to the nearest 10, 100 and 1 000.",
+      "expected_answer": "Nearest 10: the units digit 5 rounds up, giving 148 370. Nearest 100: the tens digit 6 rounds up, giving 148 400. Nearest 1 000: the hundreds digit 3 rounds down, giving 148 000."
+    },
+    {
+      "id": "cc2",
+      "question": "Work out 153 840 minus 148 365 and check your answer by adding.",
+      "expected_answer": "153 840 minus 148 365 is 5 475. Check: 148 365 plus 5 475 is 153 840, which is the number we started with."
+    },
+    {
+      "id": "cc3",
+      "question": "24 stalls each pay R135. Work out the total and check with an estimate.",
+      "expected_answer": "20 times 135 is 2 700 and 4 times 135 is 540, so the total is R3 240. Estimate: 25 times 130 is 3 250, which is close, so the answer makes sense."
+    }
+  ]
+}

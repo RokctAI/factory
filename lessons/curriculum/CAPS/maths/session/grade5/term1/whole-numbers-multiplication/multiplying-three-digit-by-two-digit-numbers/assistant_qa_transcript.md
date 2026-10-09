@@ -1,0 +1,18 @@
+### subtopic_1 — Multiplying by Tens and by One Digit
+**Assistant:** Why does multiplying by 10 move the digits one place to the left?
+
+**Tutor:** Because every place in our number system is worth ten times the place on its right, so making something ten times bigger is the same as moving it one place left. Think of 345 as 3 hundreds, 4 tens and 5 units. Multiply each part by 10. 5 units become 50, which is 5 tens. 4 tens become 40 tens, which is 4 hundreds. 3 hundreds become 30 hundreds, which is 3 thousands. So 345 times 10 is 3 thousands, 4 hundreds, 5 tens and 0 units: 3 450. Every digit has moved up one seat, and the units seat, now empty, is filled with a 0. Some people say you just add a zero, and that shortcut gives the right answer for whole numbers, but it hides what is really happening. When you meet decimal numbers in later grades, adding a zero to 3,5 gives 3,50, which is not ten times bigger at all, while moving the digits one place left gives 35, which is. So it is worth understanding the real reason now. The same idea explains multiplying by 100: every digit moves two places left, so 345 times 100 is 34 500. And multiplying by 20 is multiplying by 2 and then moving one place, so 345 times 20 is 690 moved left, which is 6 900.
+
+***
+
+### subtopic_2 — The Grid Method
+**Assistant:** Why are there always six products in the grid for a three-digit number times a two-digit number?
+
+**Tutor:** Because every part of the first number has to be multiplied by every part of the second, and three parts meeting two parts gives three times two meetings. Picture 345 times 28 as a big rectangle of 345 rows and 28 columns, like seats in a hall. Cut the rows into groups of 300, 40 and 5, and cut the columns into groups of 20 and 8. The rectangle is now cut into six smaller rectangles, one for each pair of groups, and every seat is in exactly one of them. To count all the seats, you must count all six rectangles. If you count only some of them, for example 300 times 20 and 45 times 8, you miss whole blocks of seats, and the answer, 6 360, is far too small. That is why the grid is such a useful picture: you can see every block, so it is hard to forget one. When you move on to long multiplication, the six products are still there, but they are hidden. The first row, 345 times 8, adds up three of them, and the second row, 345 times 20, adds up the other three. Knowing that helps you check: if a row looks too small or too big, you can rebuild its three products to find the slip.
+
+***
+
+### subtopic_3 — Long Multiplication in Columns
+**Assistant:** Why do we write a zero at the start of the second row in long multiplication?
+
+**Tutor:** Because the second row is multiplying by the tens digit, and the answer is a number of tens, so it has to start in the tens column. In 144 times 24, the 2 in 24 is really 2 tens, or 20. So the second row is 144 times 20, which is 2 880. If we work out 144 times 2, we get 288, but that is 288 tens, not 288 units. Writing a 0 in the units place first pushes the 288 one place to the left, so that it is worth 2 880, the true value. Without the 0, the second row would be 288 instead of 2 880, and the final answer would be 576 plus 288, which is 864, far too small. An estimate shows the problem straight away: 144 times 24 must be roughly 140 times 25, which is 3 500, so 864 cannot be right. Some learners prefer to write 144 times 20 directly, as 2 880, instead of writing the 0 and then multiplying by 2. That is fine, because it gives the same row. What matters is that the second row is worth tens. When you meet three-digit by three-digit multiplication in later grades, a third row will start with two zeros, for the same reason: it is multiplying by hundreds.

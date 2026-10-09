@@ -1,0 +1,18 @@
+### subtopic_1 — Doubling and Halving
+**Assistant:** Why does doubling one number and halving the other keep the answer the same?
+
+**Tutor:** Because the doubling makes the answer twice as big and the halving makes it half as big, and those two changes cancel each other out exactly. A picture makes it convincing. Imagine 16 rows of 25 learners standing on the field for the sports day. Now ask every second row to step forward and join the row in front of it. The rows are now twice as long, 50 learners each, but there are only half as many rows, 8 of them. Nobody has arrived and nobody has left, so the number of learners on the field is still the same. That is exactly what 16 times 25 equals 8 times 50 means. You can keep going: join the rows in pairs again to get 4 rows of 100, which is obviously 400. The same idea works the other way round, splitting rows in half to make more, shorter rows. What you cannot do is double both numbers, because that is like doubling the rows and also doubling their length, which makes four times as many learners. 32 times 50 is 1 600, which is four times 400. If you ever forget which way it goes, try it with small numbers you know: 4 times 6 is 24, and 2 times 12 is also 24, but 8 times 12 is 96.
+
+***
+
+### subtopic_2 — Breaking Down, Building Up and Compensating
+**Assistant:** With 199 times 12, why do I take away 12 and not just 1?
+
+**Tutor:** Because the extra 1 was added to every one of the 12 tickets, not just once. When you change 199 to 200, each ticket now costs R1 too much. Twelve families each buying a ticket that is R1 too expensive means twelve extra rands altogether. So 200 times 12, which is 2 400, is R12 too much, and the real cost is 2 400 minus 12, which is 2 388. A common mistake is to think only about the change to the price, which was 1, and to forget that it happened 12 times. A quick way to stay safe is to write the compensation as a small multiplication of its own. You rounded 199 up by 1, and there are 12 of them, so the extra is 1 times 12. If you rounded 198 up to 200, the extra would be 2 times 12, which is 24, and 198 times 12 would be 2 400 minus 24, which is 2 376. Checking with an estimate does not help much here, because 2 399 and 2 388 are both close to 2 400. A division check does help: 2 388 divided by 12 is 199 exactly, but 2 399 divided by 12 leaves a remainder, so it cannot be right.
+
+***
+
+### subtopic_3 — Estimating and Checking by Division
+**Assistant:** If I estimate, do I still need to check with division?
+
+**Tutor:** An estimate and a division check do different jobs, so it is best to use both when the answer matters. An estimate is fast and tells you whether the answer is roughly the right size. If you multiply 412 by 19 and get 78 280 or 782, the estimate of 8 000 shows at once that a digit is in the wrong place. That catches the biggest mistakes, the ones that would make an answer silly. But an estimate cannot tell 7 828 from 7 838, because both are close to 8 000. A small slip in one digit slips straight past it. A division check is exact. If 7 828 divided by 19 gives exactly 412, the product is right; if it gives a remainder, there is a mistake somewhere. The cost is that division takes longer, and in Grade 5 you are still learning to divide by two-digit numbers, so the division should use easy facts or building up. A sensible habit is to always estimate, because it is quick, and to check with division when the numbers allow an easy division, or when the answer will be used for something important, like money. In a test, both checks protect your marks; in real life, they protect your money.

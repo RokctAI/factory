@@ -1,0 +1,18 @@
+### subtopic_1 — Six Places and Their Values
+**Assistant:** Why is each place worth ten times the place next to it, and not some other number?
+
+**Tutor:** Because our number system is built on bundles of ten, which is why it is called the base ten system. Long ago people counted on their fingers, and ten fingers made a natural bundle. When you have ten units, you bundle them into one ten. When you have ten tens, you bundle them into one hundred, and so on up the places. Each new place on the left is simply the next size of bundle, so it is always worth ten times the place before it. The rule has a big advantage: you only ever need the ten digits 0 to 9, because as soon as a place reaches ten it is exchanged for one in the next place. That is why 136 482 plus 4 000 becomes 140 482: the thousands place reached ten and passed a one to the ten thousands place. Other bundle sizes do exist in everyday life. Time uses 60 seconds in a minute and 60 minutes in an hour, and eggs are sometimes counted in dozens of 12. Those systems work, but they are harder to calculate with, which is why measurement in South Africa uses metres, litres and grams, all built on tens. Computers use a system built on twos inside their chips, but they show us answers in base ten because that is what people read easily.
+
+***
+
+### subtopic_2 — Expanded Notation and Building Numbers
+**Assistant:** Does 136 482 have 6 thousands or 136 thousands?
+
+**Tutor:** Both statements are true, because they answer two different questions, and that is why it is important to read the question carefully. The thousands digit of 136 482 is 6. That tells you what sits in the thousands seat, after all the bigger bundles have been taken out. The 1 and the 3 on the left are hundred thousands and ten thousands, which are also made of thousands: one hundred thousand is 100 thousands, and three ten thousands are 30 thousands. Add them all up and the number contains 100 plus 30 plus 6, which is 136 whole thousands. Money makes this easy to picture. If R136 482 were paid in R1 000 notes only, you would count out 136 notes and still owe R482. If the question asks what digit is in the thousands place, the answer is 6. If it asks how many whole thousands there are, or how many R1 000 notes, the answer is 136. The same idea works for every place. 136 482 has an 8 in the tens place, but it contains 13 648 whole tens. A quick way to count whole thousands is to cover up the last three digits: what is left, 136, is the number of thousands.
+
+***
+
+### subtopic_3 — Changing Digits and Digit Cards
+**Assistant:** Why can't the smallest number from the cards start with 0? Isn't 0 the smallest digit?
+
+**Tutor:** Zero is the smallest digit, and in most places it is the right choice for making a number small. But a zero at the very front does not count as a digit at all. If you write 024 579, the zero in front is worth nothing and holds no place, because there is no bigger digit to its left that needs it as a placeholder. The number is really 24 579, which has only five digits. The question asked for a six-digit number made from all six cards, so a number with five digits does not answer it. The trick is to put the smallest digit that is not zero first, which is 2, and then put the 0 straight after it, in the place worth the next most, the ten thousands. Then the rest go in order from smallest to biggest: 204 579. Notice that the 0 still does its job of making the number small, just one place later. If a question asked for the smallest number of any length using some of the cards, the answer would be different, so always check what is being asked. Zero is also the reason the biggest number ends in 0: 975 420. The smallest digit goes in the place worth the least, the units.

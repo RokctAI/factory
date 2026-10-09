@@ -1,0 +1,1 @@
+Today we learn about multiples and factors of numbers up to 100. We set out chairs in a school hall in Mahikeng, buy juice in packs of 12 and muffins in packs of 18, and split learners into equal teams, so that we can see how multiples grow by skip-counting, how factors come in pairs, and how to find numbers that two numbers share.

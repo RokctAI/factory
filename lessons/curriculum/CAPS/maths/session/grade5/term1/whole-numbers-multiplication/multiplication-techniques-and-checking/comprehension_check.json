@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Use doubling and halving to work out 16 times 25.",
+      "expected_answer": "Halve 16 and double 25 to get 8 times 50. Halve and double again to get 4 times 100, which is 400."
+    },
+    {
+      "id": "cc2",
+      "question": "Work out 199 times 12 by rounding and compensating, and explain the compensation.",
+      "expected_answer": "200 times 12 is 2 400. Using 200 instead of 199 adds 1 extra for each of the 12 tickets, which is 12 too many, so take 12 off: 2 388."
+    },
+    {
+      "id": "cc3",
+      "question": "Work out 48 times 15 by breaking down and check your answer by division.",
+      "expected_answer": "48 times 10 is 480 and 48 times 5 is half of that, 240. 480 plus 240 is 720. Check: 720 divided by 15 is 48, so the answer is right."
+    }
+  ]
+}

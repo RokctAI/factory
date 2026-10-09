@@ -1,0 +1,1 @@
+Today we learn to add and subtract numbers with five and six digits in columns. We use the crowds at a music festival in Bloemfontein and a family in Mbombela saving for a car to practise carrying, exchanging and subtracting across zeros, and we check every answer with an estimate and the opposite operation.

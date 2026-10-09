@@ -1,0 +1,1 @@
+Today we learn to multiply a three-digit number by a two-digit number. We use a bakery in Soweto that bakes 345 loaves a day, a school that buys pencils in boxes of 144, and learners paying R35 each for a trip, and we build up from multiplying by tens, to the grid method, to long multiplication in columns.

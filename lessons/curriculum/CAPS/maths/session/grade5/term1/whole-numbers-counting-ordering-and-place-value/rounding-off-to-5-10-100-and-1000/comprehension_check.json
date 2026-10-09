@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Round 21 367 to the nearest 5, 10, 100 and 1 000, and say which digit you looked at each time.",
+      "expected_answer": "Nearest 5: the units digit is 7, and 21 367 is 2 away from 21 365 and 3 away from 21 370, so 21 365. Nearest 10: units digit 7, round up, 21 370. Nearest 100: tens digit 6, round up, 21 400. Nearest 1 000: hundreds digit 3, round down, 21 000."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why 2 449 rounded to the nearest 100 is 2 400 and not 2 500.",
+      "expected_answer": "The tens digit is 4, so 2 449 is closer to 2 400 than to 2 500. Rounding in stages, first to 2 450 and then up to 2 500, gives the wrong answer; you must round the original number in one step."
+    },
+    {
+      "id": "cc3",
+      "question": "A fridge costs R6 748 and a stove costs R4 395. Estimate the total by rounding to the nearest R100 and explain how the estimate helps.",
+      "expected_answer": "R6 700 plus R4 400 is about R11 100. The exact total is R11 143, which is close to the estimate, so the exact answer makes sense. An answer such as R1 114 or R111 430 would be spotted as a mistake."
+    }
+  ]
+}

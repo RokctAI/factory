@@ -1,0 +1,1 @@
+Today we learn to turn a word problem into a number sentence before we solve it. We use a bottle-top recycling drive at a school in Mthatha, minibus taxis carrying learners and Lerato's savings to see which operation a story needs, where the missing number goes, and how brackets show the first step when a problem has two steps.

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Work out 34 567 plus 9 998 by rounding and compensating, and explain the compensation.",
+      "expected_answer": "Add 10 000 instead of 9 998: 34 567 plus 10 000 is 44 567. 10 000 is 2 more than 9 998, so we added 2 too many; take 2 off to get 44 565."
+    },
+    {
+      "id": "cc2",
+      "question": "Use a number line to work out 42 000 minus 38 750 by counting up.",
+      "expected_answer": "Start at 38 750. Jump 250 to 39 000, then jump 3 000 to 42 000. The jumps add up to 3 250, so 42 000 minus 38 750 is 3 250."
+    },
+    {
+      "id": "cc3",
+      "question": "Use two techniques for 65 432 minus 19 997: one to calculate and one to check.",
+      "expected_answer": "Round and compensate: 65 432 minus 20 000 is 45 432, and we took away 3 too many, so give 3 back to get 45 435. Check with the inverse: 45 435 plus 19 997 is 45 435 plus 20 000 minus 3, which is 65 432, so the answer is right."
+    }
+  ]
+}
