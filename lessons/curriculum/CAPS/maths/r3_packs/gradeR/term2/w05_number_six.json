@@ -20,7 +20,7 @@
   },
   "rounds": [
     {"type": "listen_tap", "prompt": "Tap the number six.", "options": ["numeral_5", "numeral_6", "numeral_4"], "answer": "numeral_6", "praise": "Yes! That is six."},
-    {"type": "say_it", "prompt": "Say it with me. Six!", "accept": ["six", "6", "siks", "sex", "sicks"]},
+    {"type": "say_it", "prompt": "Say it with me. Six!", "accept": ["six", "6", "siks", "sicks"]},
     {"type": "count_tap", "prompt": "Count the eggs in the box. How many?", "image": "eggs_six", "count": "6", "options": ["4", "5", "6"], "answer": "6", "praise": "Six eggs! Good counting."},
     {"type": "count_tap", "prompt": "How many red bricks?", "image": "bricks_red_five", "count": "5", "options": ["5", "6"], "answer": "5"},
     {"type": "listen_tap", "prompt": "Which dice shows six dots?", "options": ["dice_five", "dice_six", "dice_four"], "answer": "dice_six", "praise": "Yes! Six dots."},

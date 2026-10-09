@@ -20,7 +20,7 @@
   },
   "rounds": [
     {"type": "listen_tap", "prompt": "The ball is on the right of the boy. Which picture shows that?", "options": ["ball_right", "ball_left"], "answer": "ball_right", "praise": "Yes! The ball is on his right."},
-    {"type": "listen_tap", "prompt": "Which hand is the girl lifting? The hand holding the cup is her left hand.", "options": ["girl_left_hand_up", "girl_right_hand_up"], "answer": "girl_left_hand_up", "praise": "Yes! Her left hand."},
+    {"type": "listen_tap", "prompt": "Which girl is lifting her left hand?", "options": ["girl_left_hand_up", "girl_right_hand_up"], "answer": "girl_left_hand_up", "praise": "Yes! Her left hand."},
     {"type": "say_it", "prompt": "The lion is on the left. The elephant is on the right. Where is the lion?", "accept": ["left", "on the left", "the left", "lef", "links"], "image": "lion_left_elephant_right"},
     {"type": "listen_tap", "prompt": "Which runner is turning right?", "options": ["runner_turn_right", "runner_turn_left"], "answer": "runner_turn_right", "praise": "Yes! Turning right."},
     {"type": "listen_tap", "prompt": "Kick the ball with your right foot! Which child kicks with the right foot?", "options": ["kick_right_foot", "kick_left_foot"], "answer": "kick_right_foot", "praise": "Great kick!"}

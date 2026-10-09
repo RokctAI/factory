@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which dinosaur is first in the line?", "image": "dinos_in_line", "options": ["dino_first", "dino_last", "dino_middle"], "answer": "dino_first", "praise": "Yes! That one is first."},
     {"type": "listen_tap", "prompt": "Which dinosaur is last in the line?", "image": "dinos_in_line", "options": ["dino_last", "dino_first", "dino_middle"], "answer": "dino_last", "praise": "Yes! That one is last."},
     {"type": "listen_tap", "prompt": "The tortoises race. Who came second?", "image": "tortoise_race", "options": ["tortoise_second", "tortoise_first", "tortoise_third"], "answer": "tortoise_second", "praise": "Yes! Second place."},
-    {"type": "say_it", "prompt": "The crocodile is third in the race. Where is the crocodile? Say first, second or third.", "accept": ["third", "3rd", "the third", "turd", "therd"], "image": "croc_third"},
+    {"type": "say_it", "prompt": "The crocodile is third in the race. Where is the crocodile? Say first, second or third.", "accept": ["third", "3rd", "the third", "therd"], "image": "croc_third"},
     {"type": "listen_tap", "prompt": "Which lizard is fourth? Count first, second, third, fourth.", "image": "lizards_in_line", "options": ["lizard_fourth", "lizard_second", "lizard_sixth"], "answer": "lizard_fourth", "praise": "Yes! Fourth!"}
   ],
   "hints": ["Start counting at the front. First, second, third.", "The one at the very end is last."],
