@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.c",
   "prereq_skills": ["efal.phonics.sound.b"],
-  "images": ["cat", "cap", "mop", "bed", "can", "man", "hat", "cot", "tile_c", "tile_o", "tutor_holds_cap"],
+  "images": ["cat", "cap", "mop", "bed", "can", "man", "hat", "cot", "letter_c", "letter_o", "tutor_holds_cap"],
   "show": {
     "line": "Listen. c, c, cat. c, c, cap! Cat starts with c.",
     "image": "cat"
@@ -23,7 +23,7 @@
     {"type": "say_it", "prompt": "Say the sound with me. c, as in cat!", "accept": ["c", "k", "kuh", "cat"]},
     {"type": "blend", "prompt": "Listen. c, a, n. What word is it?", "sounds": ["c", "a", "n"], "options": ["can", "cap", "man"], "answer": "can", "praise": "Can! c, a, n."},
     {"type": "listen_tap", "prompt": "Which word rhymes with cat?", "options": ["hat", "cap", "cot"], "answer": "hat", "praise": "Yes! Cat, hat. They rhyme."},
-    {"type": "listen_tap", "prompt": "Is it c or o? Listen. Cop.", "options": ["tile_c", "tile_o"], "answer": "tile_c", "praise": "Yes! Cop starts with c."},
+    {"type": "listen_tap", "prompt": "Is it c or o? Listen. Cop.", "options": ["letter_c", "letter_o"], "answer": "letter_c", "praise": "Yes! Cop starts with c."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "cat", "accept": ["cat", "kat", "cut"]}
   ],
   "hints": ["Open your mouth and click at the back. c, c, c.", "Cat and kite start with the same sound."],

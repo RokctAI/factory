@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.m",
   "prereq_skills": ["efal.phonics.sound.n"],
-  "images": ["mat", "mop", "pot", "nest", "tile_m", "tile_n", "man", "nap", "nose", "tutor_holds_nest"],
+  "images": ["mat", "mop", "pot", "nest", "letter_m", "letter_n", "man", "nap", "nose", "tutor_holds_nest"],
   "show": {
     "line": "Listen. m, m, mat. Mmm, yummy! Mat starts with m.",
     "image": "mat"
@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with m, as in mat?", "options": ["mop", "pot", "nest"], "answer": "mop", "praise": "Yes! m, m, mop."},
     {"type": "say_it", "prompt": "Say the sound with me. m, as in man!", "accept": ["m", "mm", "mmm", "man"]},
-    {"type": "listen_tap", "prompt": "Is it m or n? Listen. Man.", "options": ["tile_m", "tile_n"], "answer": "tile_m", "praise": "Yes! Man starts with m."},
+    {"type": "listen_tap", "prompt": "Is it m or n? Listen. Man.", "options": ["letter_m", "letter_n"], "answer": "letter_m", "praise": "Yes! Man starts with m."},
     {"type": "blend", "prompt": "Listen. m, a, n. What word is it?", "sounds": ["m", "a", "n"], "options": ["man", "mat", "nap"], "answer": "man", "praise": "Man! m, a, n."},
     {"type": "match_sort", "prompt": "Does it start with m or n? Sort the pictures.", "groups": ["m", "n"], "items": [{"image": "mop", "group": "m"}, {"image": "man", "group": "m"}, {"image": "mat", "group": "m"}, {"image": "nest", "group": "n"}, {"image": "nose", "group": "n"}]}
   ],

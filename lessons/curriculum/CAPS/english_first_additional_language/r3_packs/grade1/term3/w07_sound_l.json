@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.l",
   "prereq_skills": ["efal.phonics.sound.f"],
-  "images": ["lips", "lion", "fan", "rat", "lot", "lid", "hot", "tile_l", "tile_f", "leg", "fish", "tutor_holds_lid"],
+  "images": ["lips", "lion", "fan", "rat", "lot", "lid", "hot", "letter_l", "letter_f", "leg", "fish", "tutor_holds_lid"],
   "show": {
     "line": "Listen. l, l, lip. l, l, lid! Lip starts with l.",
     "image": "lips"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which one starts with l, as in lid?", "options": ["lion", "fan", "rat"], "answer": "lion", "praise": "Yes! l, l, lion."},
     {"type": "say_it", "prompt": "Say the sound with me. l, as in lap!", "accept": ["l", "ll", "lll", "lap"]},
     {"type": "blend", "prompt": "Listen. l, o, t. What word is it?", "sounds": ["l", "o", "t"], "options": ["lot", "lid", "hot"], "answer": "lot", "praise": "Lot! l, o, t."},
-    {"type": "listen_tap", "prompt": "Is it l or f? Listen. Lap.", "options": ["tile_l", "tile_f"], "answer": "tile_l", "praise": "Yes! Lap starts with l."},
+    {"type": "listen_tap", "prompt": "Is it l or f? Listen. Lap.", "options": ["letter_l", "letter_f"], "answer": "letter_l", "praise": "Yes! Lap starts with l."},
     {"type": "match_sort", "prompt": "Does it start with l or f? Sort the pictures.", "groups": ["l", "f"], "items": [{"image": "lid", "group": "l"}, {"image": "lion", "group": "l"}, {"image": "leg", "group": "l"}, {"image": "fish", "group": "f"}, {"image": "fan", "group": "f"}]}
   ],
   "hints": ["Put your tongue behind your top teeth. l, l, l.", "Say the sounds, then say them fast."],

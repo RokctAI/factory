@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.y",
   "prereq_skills": ["efal.phonics.ending.x"],
-  "images": ["child_nods_yes", "yoghurt", "wig", "jam", "tile_y", "tile_j", "num_1", "num_2", "num_3", "tutor_holds_jam"],
+  "images": ["child_nods_yes", "yoghurt", "wig", "jam", "letter_y", "letter_j", "numeral_1", "numeral_2", "numeral_3", "tutor_holds_jam"],
   "show": {
     "line": "Listen. y, y, yes. y, y, yum! Yes starts with y.",
     "image": "child_nods_yes"
@@ -21,9 +21,9 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with y, as in yes?", "options": ["yoghurt", "wig", "jam"], "answer": "yoghurt", "praise": "Yes! y, y, yoghurt."},
     {"type": "say_it", "prompt": "Say the sound with me. y, as in yum!", "accept": ["y", "yuh", "ye", "yum"]},
-    {"type": "listen_tap", "prompt": "Is it y or j? Listen. Yet.", "options": ["tile_y", "tile_j"], "answer": "tile_y", "praise": "Yes! Yet starts with y."},
+    {"type": "listen_tap", "prompt": "Is it y or j? Listen. Yet.", "options": ["letter_y", "letter_j"], "answer": "letter_y", "praise": "Yes! Yet starts with y."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "yes", "accept": ["yes", "yis", "jes"]},
-    {"type": "listen_tap", "prompt": "Clap the word special. Spe, cial. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Spe, cial."}
+    {"type": "listen_tap", "prompt": "Clap the word special. Spe, cial. How many claps?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two claps! Spe, cial."}
   ],
   "hints": ["Smile and say y. y, y, yes.", "y and j are different. Yes, jet."],
   "beat_the_tutor": {

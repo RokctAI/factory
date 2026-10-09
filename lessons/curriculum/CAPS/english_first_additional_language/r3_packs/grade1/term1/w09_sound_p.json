@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.p",
   "prereq_skills": ["efal.phonics.sound.t"],
-  "images": ["pencil", "pot", "sun", "tap", "tile_p", "tile_s", "sat", "pen", "map", "mat", "path", "sand", "tutor_holds_pot"],
+  "images": ["pencil", "pot", "sun", "tap", "letter_p", "letter_s", "sat", "pen", "map", "mat", "path", "sand", "tutor_holds_pot"],
   "show": {
     "line": "Listen. p, p, pencil. p, p, path! Pencil starts with p.",
     "image": "pencil"
@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with p, as in pencil?", "options": ["pot", "sun", "tap"], "answer": "pot", "praise": "Yes! p, p, pot."},
     {"type": "say_it", "prompt": "Say the sound with me. p, as in pencil!", "accept": ["p", "puh", "pe", "pencil"]},
-    {"type": "listen_tap", "prompt": "Is it s or p? Listen. Path.", "options": ["tile_p", "tile_s"], "answer": "tile_p", "praise": "Yes! Path starts with p."},
+    {"type": "listen_tap", "prompt": "Is it s or p? Listen. Path.", "options": ["letter_p", "letter_s"], "answer": "letter_p", "praise": "Yes! Path starts with p."},
     {"type": "listen_tap", "prompt": "Which word rhymes with pat?", "options": ["sat", "pen", "map"], "answer": "sat", "praise": "Yes! Pat, sat. They rhyme."},
     {"type": "blend", "prompt": "Listen. m, a, p. What word is it?", "sounds": ["m", "a", "p"], "options": ["map", "mat", "tap"], "answer": "map", "praise": "Map! m, a, p."},
     {"type": "match_sort", "prompt": "Does it start with p or s? Sort the pictures.", "groups": ["p", "s"], "items": [{"image": "pencil", "group": "p"}, {"image": "pot", "group": "p"}, {"image": "path", "group": "p"}, {"image": "sun", "group": "s"}, {"image": "sand", "group": "s"}]}

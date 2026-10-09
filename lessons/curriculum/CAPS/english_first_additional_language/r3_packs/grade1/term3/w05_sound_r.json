@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.r",
   "prereq_skills": ["efal.phonics.sound.u"],
-  "images": ["red_dress", "rat", "nut", "dog", "tile_r", "tile_n", "rip", "nip", "rabbit", "ring", "nest", "nose", "tutor_holds_nut"],
+  "images": ["red_dress", "rat", "nut", "dog", "letter_r", "letter_n", "rip", "nip", "rabbit", "ring", "nest", "nose", "tutor_holds_nut"],
   "show": {
     "line": "Listen. r, r, red. r, r, rat! Red starts with r.",
     "image": "red_dress"
@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with r, as in red?", "options": ["rat", "nut", "dog"], "answer": "rat", "praise": "Yes! r, r, rat."},
     {"type": "say_it", "prompt": "Say the sound with me. r, as in run!", "accept": ["r", "rr", "rrr", "run"]},
-    {"type": "listen_tap", "prompt": "Is it r or n? Listen. Rod.", "options": ["tile_r", "tile_n"], "answer": "tile_r", "praise": "Yes! Rod starts with r."},
+    {"type": "listen_tap", "prompt": "Is it r or n? Listen. Rod.", "options": ["letter_r", "letter_n"], "answer": "letter_r", "praise": "Yes! Rod starts with r."},
     {"type": "blend", "prompt": "Listen. r, i, p. What word is it?", "sounds": ["r", "i", "p"], "options": ["rip", "rat", "nip"], "answer": "rip", "praise": "Rip! r, i, p."},
     {"type": "match_sort", "prompt": "Does it start with r or n? Sort the pictures.", "groups": ["r", "n"], "items": [{"image": "rat", "group": "r"}, {"image": "rabbit", "group": "r"}, {"image": "ring", "group": "r"}, {"image": "nest", "group": "n"}, {"image": "nose", "group": "n"}]}
   ],

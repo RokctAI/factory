@@ -13,16 +13,16 @@
   },
   "skill": "efal.phonics.sound.g",
   "prereq_skills": ["efal.phonics.ending.ck"],
-  "images": ["gate", "goat", "sock", "bed", "gas", "gap", "bus", "num_1", "num_2", "num_3", "gift", "cat", "cap", "tutor_holds_got"],
+  "images": ["gate", "goat", "sock", "bed", "gas", "gap", "bus", "numeral_1", "numeral_2", "numeral_3", "gift", "cat", "cap", "tutor_holds_got"],
   "show": {
-    "line": "Listen. g, g, gun. g, g, gap! Gap starts with g.",
+    "line": "Listen. g, g, goat. g, g, gap! Gap starts with g.",
     "image": "gate"
   },
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with g?", "options": ["goat", "sock", "bed"], "answer": "goat", "praise": "Yes! g, g, goat."},
     {"type": "say_it", "prompt": "Say the sound with me. g, as in got!", "accept": ["g", "guh", "ge", "got"]},
     {"type": "blend", "prompt": "Listen. g, a, s. What word is it?", "sounds": ["g", "a", "s"], "options": ["gas", "gap", "bus"], "answer": "gas", "praise": "Gas! g, a, s."},
-    {"type": "listen_tap", "prompt": "Clap the word taxi. Ta, xi. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Ta, xi."},
+    {"type": "listen_tap", "prompt": "Clap the word taxi. Ta, xi. How many claps?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two claps! Ta, xi."},
     {"type": "match_sort", "prompt": "Does it start with g or c? Sort the pictures.", "groups": ["g", "c"], "items": [{"image": "goat", "group": "g"}, {"image": "gate", "group": "g"}, {"image": "gift", "group": "g"}, {"image": "cat", "group": "c"}, {"image": "cap", "group": "c"}]}
   ],
   "hints": ["g comes from the back of your throat. g, g, g.", "Clap for each part. Ta, xi."],

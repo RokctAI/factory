@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.i",
   "prereq_skills": ["efal.phonics.sound.p"],
-  "images": ["child_sits", "word_sit", "word_sat", "pit", "pat", "tip", "tile_i", "tile_p", "tap", "sit", "tutor_holds_sit"],
+  "images": ["child_sits", "word_sit", "word_sat", "pit", "pat", "tip", "letter_i", "letter_p", "tap", "sit", "tutor_holds_sit"],
   "show": {
     "line": "Listen. i, i, it. i, i, sit! Sit has the i sound.",
     "image": "child_sits"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which word has the i sound? Sit, sat.", "options": ["word_sit", "word_sat"], "answer": "word_sit", "praise": "Yes! s, i, t. Sit."},
     {"type": "say_it", "prompt": "Say the sound with me. i, as in it!", "accept": ["i", "ih", "it", "e"]},
     {"type": "blend", "prompt": "Listen. p, i, t. What word is it?", "sounds": ["p", "i", "t"], "options": ["pit", "pat", "tip"], "answer": "pit", "praise": "Pit! p, i, t."},
-    {"type": "listen_tap", "prompt": "Is it p or i? Listen. It.", "options": ["tile_i", "tile_p"], "answer": "tile_i", "praise": "Yes! It starts with i."},
+    {"type": "listen_tap", "prompt": "Is it p or i? Listen. It.", "options": ["letter_i", "letter_p"], "answer": "letter_i", "praise": "Yes! It starts with i."},
     {"type": "blend", "prompt": "Listen. t, i, p. What word is it?", "sounds": ["t", "i", "p"], "options": ["tip", "tap", "sit"], "answer": "tip", "praise": "Tip! t, i, p."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "sit", "accept": ["sit", "set", "seat"]}
   ],

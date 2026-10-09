@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.n",
   "prereq_skills": ["efal.phonics.sound.i"],
-  "images": ["baby_nap", "nose", "tin", "sun", "pin", "pit", "tip", "tile_n", "tile_i", "tutor_holds_tip"],
+  "images": ["baby_nap", "nose", "tin", "sun", "pin", "pit", "tip", "letter_n", "letter_i", "tutor_holds_tip"],
   "show": {
     "line": "Listen. n, n, nap. n, n, net! Nap starts with n.",
     "image": "baby_nap"
@@ -23,7 +23,7 @@
     {"type": "say_it", "prompt": "Say the sound with me. n, as in nap!", "accept": ["n", "nn", "nuh", "nap"]},
     {"type": "blend", "prompt": "Listen. p, i, n. What word is it?", "sounds": ["p", "i", "n"], "options": ["pin", "tin", "pit"], "answer": "pin", "praise": "Pin! p, i, n."},
     {"type": "blend", "prompt": "Listen. t, i, n. What word is it?", "sounds": ["t", "i", "n"], "options": ["tin", "pin", "tip"], "answer": "tin", "praise": "Tin! t, i, n."},
-    {"type": "listen_tap", "prompt": "Is it i or n? Listen. Nip.", "options": ["tile_n", "tile_i"], "answer": "tile_n", "praise": "Yes! Nip starts with n."},
+    {"type": "listen_tap", "prompt": "Is it i or n? Listen. Nip.", "options": ["letter_n", "letter_i"], "answer": "letter_n", "praise": "Yes! Nip starts with n."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "nap", "accept": ["nap", "nep", "nab"]}
   ],
   "hints": ["Put your tongue up and hum. n, n, n.", "Listen for n at the start or at the end."],

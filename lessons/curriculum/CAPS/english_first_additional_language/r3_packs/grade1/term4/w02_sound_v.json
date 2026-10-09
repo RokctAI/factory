@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.v",
   "prereq_skills": ["efal.phonics.sound.j"],
-  "images": ["van", "vet", "fan", "bed", "tile_v", "tile_f", "wet", "vase", "fish", "tutor_holds_fan"],
+  "images": ["van", "vet", "fan", "bed", "letter_v", "letter_f", "wet", "vase", "fish", "tutor_holds_fan"],
   "show": {
     "line": "Listen. v, v, van. Your lip buzzes! Van starts with v.",
     "image": "van"
@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with v, as in van?", "options": ["vet", "fan", "bed"], "answer": "vet", "praise": "Yes! v, v, vet."},
     {"type": "say_it", "prompt": "Say the sound with me. v, as in van!", "accept": ["v", "vv", "vuh", "van"]},
-    {"type": "listen_tap", "prompt": "Is it v or f? Listen. Vat.", "options": ["tile_v", "tile_f"], "answer": "tile_v", "praise": "Yes! Vat starts with v."},
+    {"type": "listen_tap", "prompt": "Is it v or f? Listen. Vat.", "options": ["letter_v", "letter_f"], "answer": "letter_v", "praise": "Yes! Vat starts with v."},
     {"type": "blend", "prompt": "Listen. v, e, t. What word is it?", "sounds": ["v", "e", "t"], "options": ["vet", "van", "wet"], "answer": "vet", "praise": "Vet! The vet helps animals."},
     {"type": "match_sort", "prompt": "Does it start with v or f? Sort the pictures.", "groups": ["v", "f"], "items": [{"image": "van", "group": "v"}, {"image": "vet", "group": "v"}, {"image": "vase", "group": "v"}, {"image": "fish", "group": "f"}, {"image": "fan", "group": "f"}]}
   ],

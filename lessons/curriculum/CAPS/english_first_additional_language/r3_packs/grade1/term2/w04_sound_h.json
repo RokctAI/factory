@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.h",
   "prereq_skills": ["efal.phonics.sound.m"],
-  "images": ["hen", "hat", "mat", "pin", "hit", "tip", "num_1", "num_2", "num_3", "hut", "mop", "man", "tutor_holds_hat"],
+  "images": ["hen", "hat", "mat", "pin", "hit", "tip", "numeral_1", "numeral_2", "numeral_3", "hut", "mop", "man", "tutor_holds_hat"],
   "show": {
     "line": "Listen. h, h, hen. Breathe out, h! The little red hen starts with h.",
     "image": "hen"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which one starts with h, as in hen?", "options": ["hat", "mat", "pin"], "answer": "hat", "praise": "Yes! h, h, hat."},
     {"type": "say_it", "prompt": "Say the sound with me. h, as in hut!", "accept": ["h", "huh", "ha", "hut"]},
     {"type": "blend", "prompt": "Listen. h, i, t. What word is it?", "sounds": ["h", "i", "t"], "options": ["hit", "hat", "tip"], "answer": "hit", "praise": "Hit! h, i, t."},
-    {"type": "listen_tap", "prompt": "Clap the word garden. Gar, den. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Gar, den."},
+    {"type": "listen_tap", "prompt": "Clap the word garden. Gar, den. How many claps?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two claps! Gar, den."},
     {"type": "match_sort", "prompt": "Does it start with h or m? Sort the pictures.", "groups": ["h", "m"], "items": [{"image": "hen", "group": "h"}, {"image": "hat", "group": "h"}, {"image": "hut", "group": "h"}, {"image": "mop", "group": "m"}, {"image": "man", "group": "m"}]}
   ],
   "hints": ["Put your hand in front of your mouth. h! Feel the air.", "Clap for each part of the word."],

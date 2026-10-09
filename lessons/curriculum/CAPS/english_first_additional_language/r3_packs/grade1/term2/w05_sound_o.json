@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.o",
   "prereq_skills": ["efal.phonics.sound.h"],
-  "images": ["pot", "word_top", "word_tap", "mop", "map", "pit", "top", "num_2", "num_3", "num_4", "tutor_holds_top"],
+  "images": ["pot", "word_top", "word_tap", "mop", "map", "pit", "top", "numeral_2", "numeral_3", "numeral_4", "tutor_holds_top"],
   "show": {
     "line": "Listen. o, o, on. o, o, pot! Pot has the o sound.",
     "image": "pot"
@@ -23,7 +23,7 @@
     {"type": "say_it", "prompt": "Say the sound with me. o, as in on!", "accept": ["o", "aw", "oh", "on"]},
     {"type": "blend", "prompt": "Listen. m, o, p. What word is it?", "sounds": ["m", "o", "p"], "options": ["mop", "map", "pot"], "answer": "mop", "praise": "Mop! m, o, p."},
     {"type": "blend", "prompt": "Listen. p, o, t. What word is it?", "sounds": ["p", "o", "t"], "options": ["pot", "pit", "top"], "answer": "pot", "praise": "Pot! p, o, t."},
-    {"type": "listen_tap", "prompt": "Clap the word elephant. El, e, phant. How many claps?", "options": ["num_2", "num_3", "num_4"], "answer": "num_3", "praise": "Three claps! El, e, phant."},
+    {"type": "listen_tap", "prompt": "Clap the word elephant. El, e, phant. How many claps?", "options": ["numeral_2", "numeral_3", "numeral_4"], "answer": "numeral_3", "praise": "Three claps! El, e, phant."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "top", "accept": ["top", "tob", "tap"]}
   ],
   "hints": ["Make your mouth round. o, o, on.", "Say the sounds, then say them fast."],

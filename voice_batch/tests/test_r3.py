@@ -177,11 +177,12 @@ class Respellings(unittest.TestCase):
         cls.plain = {i["key"]: i for i in R.build_r3_lines(respellings=NO_RESP)}
         cls.items = {i["key"]: i for i in R.build_r3_lines()}
 
-    def test_keys_exist_and_are_english(self):
+    def test_keys_exist(self):
+        # A letter-sound line can sit in any subject (a Life Skills pack
+        # asks "it starts with d"), so keys only have to name a real line.
         self.assertTrue(self.resp["by_key"])
         for k in self.resp["by_key"]:
             self.assertIn(k, self.plain)
-            self.assertTrue(k.startswith(EN), k)
         for t in self.resp["by_text"]:
             self.assertIn(t, {i["text"] for i in self.plain.values()})
 

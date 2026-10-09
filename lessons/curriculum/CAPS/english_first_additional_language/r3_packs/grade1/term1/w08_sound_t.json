@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.t",
   "prereq_skills": ["efal.phonics.sound.s"],
-  "images": ["tiger", "tap", "sun", "ant", "tile_t", "tile_s", "sat", "mat", "map", "table", "snail", "tutor_holds_tap"],
+  "images": ["tiger", "tap", "sun", "ant", "letter_t", "letter_s", "sat", "mat", "map", "table", "snail", "tutor_holds_tap"],
   "show": {
     "line": "Listen. t, t, tap. t, t, tiger! Tap and tiger start with t.",
     "image": "tiger"
@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with t, as in tiger?", "options": ["tap", "sun", "ant"], "answer": "tap", "praise": "Yes! t, t, tap."},
     {"type": "say_it", "prompt": "Say the sound with me. t, as in tap!", "accept": ["t", "tuh", "te", "tap"]},
-    {"type": "listen_tap", "prompt": "Is it s or t? Listen. Tiger.", "options": ["tile_t", "tile_s"], "answer": "tile_t", "praise": "Yes! Tiger starts with t."},
+    {"type": "listen_tap", "prompt": "Is it s or t? Listen. Tiger.", "options": ["letter_t", "letter_s"], "answer": "letter_t", "praise": "Yes! Tiger starts with t."},
     {"type": "blend", "prompt": "Listen. s, a, t. What word is it?", "sounds": ["s", "a", "t"], "options": ["sat", "mat", "tap"], "answer": "sat", "praise": "Sat! s, a, t."},
     {"type": "blend", "prompt": "Listen. m, a, t. What word is it?", "sounds": ["m", "a", "t"], "options": ["mat", "sat", "map"], "answer": "mat", "praise": "Mat! m, a, t."},
     {"type": "match_sort", "prompt": "Does it start with t or s? Sort the pictures.", "groups": ["t", "s"], "items": [{"image": "tap", "group": "t"}, {"image": "tiger", "group": "t"}, {"image": "table", "group": "t"}, {"image": "sun", "group": "s"}, {"image": "snail", "group": "s"}]}

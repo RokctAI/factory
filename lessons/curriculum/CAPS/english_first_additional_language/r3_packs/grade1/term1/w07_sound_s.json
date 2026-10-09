@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.s",
   "prereq_skills": ["efal.phonics.sound.a"],
-  "images": ["snake", "sun", "apple", "map", "snail", "ant", "dog", "tile_s", "tile_a", "tile_t", "sand", "tutor_holds_apple"],
+  "images": ["snake", "sun", "apple", "map", "snail", "ant", "dog", "letter_s", "letter_a", "letter_t", "sand", "tutor_holds_apple"],
   "show": {
     "line": "Listen. s, s, snake. The snake says sssss! Snake starts with s.",
     "image": "snake"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which one starts with s, as in snake?", "options": ["sun", "apple", "map"], "answer": "sun", "praise": "Yes! s, s, sun."},
     {"type": "say_it", "prompt": "Say the sound with me. s, as in snake!", "accept": ["s", "ss", "sss", "snake"]},
     {"type": "listen_tap", "prompt": "Which one starts with s?", "options": ["snail", "ant", "dog"], "answer": "snail", "praise": "Yes! s, s, snail."},
-    {"type": "listen_tap", "prompt": "Tap the letter that says s.", "options": ["tile_s", "tile_a", "tile_t"], "answer": "tile_s", "praise": "Yes! This letter says s."},
+    {"type": "listen_tap", "prompt": "Tap the letter that says s.", "options": ["letter_s", "letter_a", "letter_t"], "answer": "letter_s", "praise": "Yes! This letter says s."},
     {"type": "match_sort", "prompt": "Does it start with s or a? Sort the pictures.", "groups": ["s", "a"], "items": [{"image": "sun", "group": "s"}, {"image": "sand", "group": "s"}, {"image": "snake", "group": "s"}, {"image": "ant", "group": "a"}, {"image": "apple", "group": "a"}]}
   ],
   "hints": ["Make a long snake sound. sssss.", "Is it s like snake, or a like ant?"],
