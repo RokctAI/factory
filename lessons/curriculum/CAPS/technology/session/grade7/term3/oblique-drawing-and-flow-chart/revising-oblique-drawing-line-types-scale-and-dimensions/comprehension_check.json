@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how an oblique drawing of a box is constructed, distinguish cavalier from cabinet oblique, and explain how to choose the front face.",
+      "expected_answer": "The front face is drawn first, true to shape and size at the chosen scale, as seen looking straight at it. Each edge running away from the viewer is drawn at 45 degrees to the horizontal, up and to the right with a set square, along the diagonals of squared paper, and the back face is drawn parallel to the front and joined. In cavalier oblique the receding edges are at full length, which makes the box look too deep; in cabinet oblique they are at half length, which looks natural and is the textbook convention, so a 60 depth at half scale becomes 30 and then 15 on the slant. The face with the most detail or circles goes at the front, where it is drawn true and circles stay circles rather than becoming ellipses; for the crane the side with mast, arm and winch is the front."
+    },
+    {
+      "id": "cc2",
+      "question": "State the four line types used on a technical drawing and their meanings, explain what a scale is and how a conversion table is used.",
+      "expected_answer": "A thick continuous line is a visible outline or edge, drawn dark with a 2B pencil; a thin continuous line is a construction, projection, dimension or extension line, drawn lightly; a thin dashed line shows hidden detail behind a face, such as a dowel inside a tube; a thin chain line of long and short dashes is a centre line through a circle or axis. Scale is the ratio of drawing size to real size, 1:1 full size, 1:2 half size, 2:1 twice size, chosen so the drawing fills the page, and written in the title block as SCALE 1:2. Dimensions written on the drawing are always the real sizes. Before drawing, a table lists each real length and its drawing length, for example mast 350 becomes 175 and the receding base depth 210 becomes 105 at scale and 52.5 in cabinet oblique, so the drawing is made once without rubbing out."
+    },
+    {
+      "id": "cc3",
+      "question": "List the rules for dimensioning a drawing, including circles and receding edges, and describe the contents of a title block.",
+      "expected_answer": "Dimensions are in millimetres with the unit stated once in the title block; each dimension appears once, on the clearest view. A thin dimension line runs parallel to the edge about 10 millimetres clear of the outline, ending in arrowheads that touch thin extension lines projected from the edge's ends; the number sits just above the middle of the line, reading from the bottom or right, never touching it; smaller dimensions sit nearer the outline so lines never cross. Circles are dimensioned by diameter with the diameter symbol and have crossing centre lines, holes are located to their centres, and radii use R with an arrow touching the arc. On receding oblique edges the dimension line is drawn parallel at 45 degrees and gives the true length. The title block at the bottom holds the title, drawer's name, date, scale, units and, in the PAT, the team and project."
+    }
+  ]
+}

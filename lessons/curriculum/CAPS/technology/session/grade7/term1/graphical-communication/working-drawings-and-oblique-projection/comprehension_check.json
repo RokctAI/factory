@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the steps for producing a dimensioned 2D working drawing of the tool box front panel at a scale of 1 to 2.",
+      "expected_answer": "Choose and write the scale, 1 to 2, so the 300 by 150 millimetre panel is drawn 150 by 75. Draw feint construction lines for the outer rectangle, the centre lines and the 80 by 30 hand hole, check proportions and darken the outlines. Add thin extension lines from the edges and thin dimension lines with arrowheads placed a little away from the outline, writing the real sizes in millimetres without the unit: 300, 150, 80, 30, and the position of the hole, such as 20 from the top, using the centre line to show it is central. Each size appears once, and a title block gives the name, scale and date."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to draw an object in oblique projection on squared paper and why the front face is chosen for any circular features.",
+      "expected_answer": "Draw the front face true shape and size to scale using the grid lines, then from each visible corner draw a depth line back at 45 degrees, which on squared paper runs one square across for one square up so all lines are parallel. Mark the same depth on each, usually half the true depth, join the ends to form the back edges, and darken the visible outlines. Circles on the front face remain true circles, whereas on the receding faces they become ovals that are hard to draw, so round features are placed on the front face."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare the purposes of a working drawing and an oblique drawing, and state which conventions each uses.",
+      "expected_answer": "A working drawing gives the exact information needed to make a part: one face, true lengths, scale stated and every real size in millimetres dimensioned once. An oblique drawing shows what the whole object looks like and how its parts fit, for explaining and checking the idea, and is not fully dimensioned because its depth lines are not true length. Both use dark outlines, feint construction lines, dashed hidden detail, centre lines on circles and a stated scale."
+    }
+  ]
+}
