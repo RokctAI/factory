@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the npn transistor, name its legs, draw its symbol in words and explain its basic action.",
+      "expected_answer": "The npn transistor is a three-legged component, in the kit a BC547, with an emitter, a base and a collector; the legs are identified from the kit card or data sheet with the flat face toward the viewer. The symbol is a vertical bar for the base with two angled lines leaving one side: the collector line plain and the emitter line carrying an arrow pointing outward, which marks it as npn. With no current into the base, no current flows from collector to emitter and the transistor is off, like an open switch. When a small current flows into the base and out of the emitter, a current up to about a hundred times larger is allowed from collector to emitter; the base is made about 0.6 volts more positive than the emitter to turn it on, the collector connects toward positive through the load and the emitter to negative."
+    },
+    {
+      "id": "cc2",
+      "question": "Draw in words a transistor switch circuit controlled by a light-dependent resistor, explain the role of the base resistor, and explain how the action is inverted to make a night light.",
+      "expected_answer": "The battery positive connects through the load, an LED with its 470 ohm resistor, to the collector; the emitter connects to battery negative. The base connects to the junction of a light-dependent resistor from positive and a fixed resistor of tens of kilohms to negative. In daylight the LDR's resistance is low, current flows into the base and the transistor turns on, lighting the LED; in darkness the LDR's resistance is high, the base current stops and the LED goes out. A resistor is always present in the base path to limit the base current, since the base-emitter junction conducts like a diode at about 0.6 volts and would be destroyed without it. Swapping the LDR and the fixed resistor makes the base current flow in darkness instead, so the LED comes on at night."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the transistor acts as an amplifier, relate this to its switching action, and list four precautions when using transistors.",
+      "expected_answer": "As an amplifier the transistor is operated in the region between off and fully on: a small varying current into the base, from a microphone or aerial, produces a collector current that varies in the same pattern but about a hundred times larger, enlarging the signal without changing its shape; the energy comes from the supply, not the transistor. The switch is the same property driven to its extremes, base current either absent or plentiful so the collector current is either zero or the maximum the load allows. Precautions: identify the legs from the kit card before inserting; always include a base resistor; keep the collector current within the rating, about 100 milliamperes for a BC547, so motors need a larger transistor; solder quickly to avoid heating the junction and touch something earthed first to discharge static."
+    }
+  ]
+}

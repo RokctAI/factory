@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Summarise the rules for drawing and reading circuits, including series and parallel connection and AND and OR logic.",
+      "expected_answer": "A circuit works only as a complete loop from positive to negative; diagrams use standard symbols with straight wires and junction dots, conventional current drawn from positive to negative and polarised components the correct way round. In series there is one path with the same current everywhere, cells add their voltages, lamps and resistors share the supply in proportion to resistance, and one failure stops all; in parallel there are several paths, each branch has the full voltage, branch currents add, cells in parallel share current without adding voltage, and branches are independent. Switches in series give AND logic, output only when all are closed, used for safety interlocks; switches in parallel give OR logic, output when any is closed, used for alarms; two switches give a four-row truth table. Circuits are read by drawing with symbols, tracing the loop and counting paths."
+    },
+    {
+      "id": "cc2",
+      "question": "Summarise Ohm's law, its investigation and graph, and the key calculations with their common errors.",
+      "expected_answer": "Voltage in volts is measured across a component with a voltmeter, current in amperes in the loop with an ammeter never placed across a supply, and resistance in ohms from colour bands or volts over amps. Ohm's law: at constant temperature current is directly proportional to voltage, V equals I times R, rearranged as I equals V over R and R equals V over I with milliamperes converted. The investigation uses a 100 ohm resistor with one, two and three cells, giving about 1.45 volts and 14.5 milliamperes, 2.9 and 29, 4.4 and 44, tabulated with repeats and a volts over amps column near 100; the graph of voltage against current is a straight line of best fit through the origin whose gradient is the resistance, compared with the marked value. Series resistors add and share voltage; parallel branches take the full voltage and add currents; the LED resistor is supply minus 2 volts over the current; battery life is capacity over current. Errors: unconverted milliamperes, supply voltage used for the resistor with an LED present, Ohm's law applied to an LED, and the law stated without constant temperature."
+    },
+    {
+      "id": "cc3",
+      "question": "Summarise the term's components, giving each one's rule, and describe the two standard circuits.",
+      "expected_answer": "A diode conducts with its anode toward positive and blocks when reversed, dropping 0.7 volts. An LED is a diode that lights, drops 2 volts, has its long leg as anode and needs its own series resistor. Resistor colour bands give two digits and a number of zeros with a tolerance band; yellow violet brown gold is 470 ohms at 5 percent. Switches are push-to-make for momentary contact, SPST for on-off, SPDT for changeover and DPDT for reversing a motor. An npn transistor lets a small base current control a collector current about a hundred times larger, with the load on the collector, the emitter to negative and always a base resistor, acting as a sensor-driven switch or an amplifier. The LDR's resistance falls with light, the NTC thermistor's falls with heat and the PTC's rises, and probe pairs conduct when bridged by water, each used in a divider feeding the base. A capacitor stores charge, with timing of resistance times capacitance, and electrolytics are polarised. Standard circuits: a 4.5 volt battery, switch, 470 ohm resistor and LED in series giving about 5 milliamperes; and an LDR and resistor divider driving a transistor whose collector circuit holds a buzzer on 3 volts, sounding when light falls."
+    }
+  ]
+}

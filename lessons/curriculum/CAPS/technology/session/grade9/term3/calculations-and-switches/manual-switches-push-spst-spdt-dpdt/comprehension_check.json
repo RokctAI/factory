@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what is meant by the poles and throws of a switch and by latching and momentary action, and give the circuit symbol.",
+      "expected_answer": "Poles are the number of separate circuits a switch controls at once, each with its own moving contact; throws are the number of positions each pole can be connected to. A single-pole single-throw switch controls one circuit on or off; a single-pole double-throw connects one circuit to either of two paths; a double-pole double-throw does this for two circuits with one lever. A latching switch, such as a toggle or slide, stays where it is put; a momentary switch, such as a push button, returns when released, either push-to-make, closing while pressed, or push-to-break, opening while pressed. The symbol is a gap in the wire with a hinged bar, drawn open, with extra contacts for additional throws and a dotted line linking poles that move together."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the push-to-make switch and the SPST toggle, and explain the role of each in the PAT tank indicator circuit.",
+      "expected_answer": "A push-to-make switch has two contacts held apart by a spring and closes only while pressed, giving momentary contact; it is used for doorbells, keyboard keys and test buttons. In the PAT it is connected in parallel with the reed switch sensor so that pressing it lights the LED regardless of the tank level, proving the battery and LED work, and releasing it returns control to the sensor. An SPST toggle is a latching on-off switch with one pole and one throw and two terminals, used for lights and power switches. In the PAT it is connected in series with the buzzer on its own parallel branch so that opening it silences the buzzer at night while the LED on the other branch continues to show the warning."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the SPDT and DPDT switches, explain how a DPDT reverses a motor, and give a method for choosing a switch for a purpose.",
+      "expected_answer": "An SPDT switch has one pole and two throws, three terminals with a common connected to either of the other two, and acts as a changeover, selecting between two lamps, two fan speeds or a steady and a flashing LED. A DPDT is two SPDT switches on one lever, six terminals, with a dotted line in the symbol. To reverse a motor, each pole is wired to a motor terminal and the supply is connected to the two sets of throws crossed over, so that flipping the switch swaps which motor terminal sees positive and which sees negative, reversing rotation. To choose a switch, decide how many circuits must be controlled at once, the poles; how many positions each must be routed to, the throws; whether it must stay or return, latching or momentary; and the current and voltage it must carry, its rating."
+    }
+  ]
+}

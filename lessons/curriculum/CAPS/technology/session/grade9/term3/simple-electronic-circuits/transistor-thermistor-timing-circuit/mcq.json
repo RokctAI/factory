@@ -1,0 +1,316 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "The Circuit: Thermistor, Variable Resistor, Transistor, LED, Capacitor and Switch",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "The switch is placed in:",
+          "options": [
+            "The base lead",
+            "The positive lead so the whole circuit can be turned off",
+            "Across the LED",
+            "Across the capacitor"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The sensing divider consists of:",
+          "options": [
+            "Two LEDs",
+            "Thermistor and variable resistor in series across the supply",
+            "Buzzer and transistor",
+            "Two capacitors"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "The capacitor is connected from:",
+          "options": [
+            "Collector to positive",
+            "Base to negative, positive lead on the base",
+            "LED to LED",
+            "Switch to battery"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The variable resistor's job is to:",
+          "options": [
+            "Protect the LED",
+            "Set the switching threshold",
+            "Sense temperature",
+            "Store charge"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "How It Works: Sensing Temperature and Setting the Threshold",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "Junction voltage equals supply times:",
+          "options": [
+            "Top over total",
+            "Bottom over total",
+            "Top times bottom",
+            "Total over bottom"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "10 kilohms above and 2 kilohms below on 4.5 volts gives a junction of:",
+          "options": [
+            "0.75 volts",
+            "3.75 volts",
+            "0.9 volts",
+            "4.5 volts"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "Cooling the NTC thermistor makes the junction:",
+          "options": [
+            "Rise",
+            "Fall",
+            "Stay the same",
+            "Reverse"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "Turning the variable resistor up means the LED:",
+          "options": [
+            "Stays on until it is colder",
+            "Is off until it is warmer",
+            "Never lights",
+            "Flashes"
+          ],
+          "correct_index": 0,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q5",
+          "question": "Swapping thermistor and variable resistor gives an LED that is on when:",
+          "options": [
+            "Warm",
+            "Cold",
+            "Dark",
+            "Wet"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Capacitor's Role, Building the Circuit and Adapting It",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "The capacitor prevents:",
+          "options": [
+            "Heating",
+            "Flicker near the threshold",
+            "Current",
+            "Charging"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "10 kilohms and 100 microfarads give a delay of about:",
+          "options": [
+            "1 millisecond",
+            "1 second",
+            "1 minute",
+            "1 hour"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "No LED at any setting points to:",
+          "options": [
+            "The capacitor",
+            "LED or transistor polarity",
+            "The switch being on",
+            "The thermistor"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "Replacing the thermistor with an LDR gives:",
+          "options": [
+            "A moisture alarm",
+            "A light alarm",
+            "A timer",
+            "A motor"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Six Parts, One Job",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "How many polarised parts does the circuit have?",
+          "options": [
+            "One",
+            "Two",
+            "Three",
+            "None"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "The base resistor:",
+          "options": [
+            "Sets the threshold",
+            "Protects the base",
+            "Lights the LED",
+            "Senses heat"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "Reading left to right the diagram shows:",
+          "options": [
+            "Output, process, input",
+            "Sensing, deciding, showing",
+            "Battery only",
+            "Nothing"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Warm Enough, Light On",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "Warm mug, thermistor 3 kilohms, variable 2: junction about:",
+          "options": [
+            "0.4 volts",
+            "0.75 volts",
+            "1.8 volts",
+            "4.5 volts"
+          ],
+          "correct_index": 2,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "Set the alarm temperature by:",
+          "options": [
+            "Changing the LED",
+            "Turning the variable resistor until the LED just comes on at that temperature",
+            "Adding cells",
+            "Removing the capacitor"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "Sensor on top gives:",
+          "options": [
+            "Cold-on",
+            "Warm-on",
+            "Always on",
+            "Never on"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "A Pause Before It Switches",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "A larger capacitor gives:",
+          "options": [
+            "A shorter pause",
+            "A longer pause",
+            "No pause",
+            "A brighter LED"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "No delay at all points to:",
+          "options": [
+            "The switch",
+            "The capacitor reversed or missing",
+            "The LED",
+            "The battery"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "A buzzer in place of the LED is allowed if:",
+          "options": [
+            "It is loud",
+            "Its current is within the transistor's rating",
+            "It is red",
+            "It is big"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "Explaining the circuit without naming each part's job is:",
+          "options": [
+            "Good practice",
+            "An error",
+            "Required",
+            "Faster and fine"
+          ],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

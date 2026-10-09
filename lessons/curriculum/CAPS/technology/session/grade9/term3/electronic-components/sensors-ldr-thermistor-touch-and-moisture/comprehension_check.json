@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the light-dependent resistor, how its resistance varies with light, how it is tested, and how it is placed in a transistor circuit.",
+      "expected_answer": "The LDR is a disc of semiconductor, usually cadmium sulphide, with a zigzag track and two legs, no polarity, and a symbol of a resistor rectangle with two arrows pointing in. Its resistance falls as light increases: hundreds of kilohms to a megohm in darkness, a few kilohms in room light, a few hundred ohms in sunlight. It is tested with a multimeter on ohms, recording readings covered by a hand, in room light and under a torch. In a transistor circuit it is connected in series with a fixed or variable resistor across the supply to form a voltage divider, with the transistor's base taken from the junction; the fixed resistor's value sets the light level at which the base passes 0.6 volts and the transistor switches, and swapping the two components inverts the action."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the difference between NTC and PTC thermistors, describe how a thermistor is tested, and give two uses with their circuit placement.",
+      "expected_answer": "A thermistor's resistance changes strongly with temperature. The negative temperature coefficient type falls as it warms, from about 10 kilohms at room temperature to 3 kilohms between warm fingers and a few hundred ohms in hot water; the positive temperature coefficient type rises as it warms, often sharply above a set temperature, which allows it to act as a self-resetting current limiter. It is tested with a multimeter on ohms at room temperature and then warmed by fingers or a lamp, never a flame, and for an investigation a table of temperature against resistance is recorded with a thermometer and warm water. Uses: a fire or overheating alarm, with the NTC thermistor in the upper position of the divider so the transistor turns on as it warms; a frost warning for seedlings, with the NTC in the lower position so the transistor turns on as it cools, a variable resistor setting the switching temperature."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe touch and moisture detectors, their limitations, and explain how a sensor is chosen for a PAT device.",
+      "expected_answer": "Touch and moisture detectors are two metal contacts with a non-conducting gap; a fingertip or damp soil or water bridging the gap passes a small current, too small to drive a load but enough for a transistor base. Touch pads on a box or screw heads form a touch switch; two probes in soil or at the bottom of a tank form a moisture or level detector. Dry gives nearly open circuit; wet gives a few kilohms to tens of kilohms depending on the purity of the water, so rainwater conducts far less than tap water and the sensor must be tested with the actual water; probes corrode, especially the positive one, so stainless steel or carbon and intermittent current are preferred. A sensor is chosen by the condition to be detected, darkness, temperature, a hand, or wetness, and by the meter test: the sensor with the largest, cleanest change at that condition gives a transistor that switches fully rather than hovering half on."
+    }
+  ]
+}

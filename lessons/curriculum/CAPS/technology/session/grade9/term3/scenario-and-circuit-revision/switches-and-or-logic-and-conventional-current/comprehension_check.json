@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Draw and explain a circuit with two switches in series controlling a lamp, give its truth table and name a real device that uses this logic.",
+      "expected_answer": "The circuit is a cell, switch A, switch B and a lamp joined in one loop. Current can flow only if both gaps are closed, so the lamp lights only when A and B are both closed; this is AND logic. Truth table: A open and B open, lamp off; A open and B closed, off; A closed and B open, off; A closed and B closed, on. A bakery dough mixer uses it: a lid switch closed when the lid is down and a start button in series mean the motor runs only with the lid closed and the button pressed, so lifting the lid stops the blades."
+    },
+    {
+      "id": "cc2",
+      "question": "Draw and explain a circuit with two switches in parallel controlling a lamp, give its truth table and name a real device that uses this logic.",
+      "expected_answer": "Switch A and switch B are connected side by side between the same two points, and that pair is in series with a lamp and a cell. Closing either switch gives a complete path, so the lamp lights when A or B or both are closed, and is off only when both are open; this is OR logic. Truth table: both open, off; A closed only, on; B closed only, on; both closed, on. A van's interior light uses it: the driver's door switch and the sliding door switch are in parallel so that opening either door lights the lamp; burglar alarms with several sensors in parallel work the same way."
+    },
+    {
+      "id": "cc3",
+      "question": "State the convention for the direction of current and explain how AND and OR logic are read from a description of a device, using a combined example.",
+      "expected_answer": "Conventional current is drawn flowing from the positive terminal of the supply through the circuit to the negative terminal; although electrons in a wire move the other way, the convention is kept because circuit behaviour is identical and all diagrams and component markings use it, so direction-sensitive components such as diodes are drawn to pass conventional current from the triangle's base to its point. Words such as all, both and only when indicate conditions that must all be met, so switches in series, AND; words such as any, either and or indicate that one condition is enough, so switches in parallel, OR. For a buzzer that sounds when the tank is low and the silence switch is on, or when the test button is pressed, the float switch and silence switch are drawn in series, and that pair in parallel with the test button, the network then in series with the buzzer and battery."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why circuit diagrams use standard symbols and list the symbols for a cell, a lamp, a switch, a resistor, an LED and a junction.",
+      "expected_answer": "Standard symbols let any reader build exactly the circuit that was designed, in the same way that orthographic drawing fixes a shape; pictures of components vary from person to person and hide the connections. A cell is a long thin line for the positive terminal beside a short thick line for the negative; a lamp is a circle with a cross inside; a switch is a gap in the wire with a hinged bar, drawn open; a resistor is a rectangle; an LED is a diode, a triangle pointing at a bar, with two small arrows pointing away from it; and a junction where wires join is marked with a dot. Wires are drawn as straight horizontal and vertical lines with right-angle corners."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the behaviour of cells and lamps connected in series, with reference to current, voltage, brightness and failure.",
+      "expected_answer": "In series the components form a single path, so the same current flows through every component. Cells connected positive to negative add their voltages: two 1.5 volt cells give 3 volts and three give 4.5 volts. Lamps in series share the supply voltage: one lamp across 3 volts glows at full brightness, two identical lamps receive 1.5 volts each and glow dimly, and three are dimmer still, because the supply is divided among them. If one lamp burns out or is removed, the only path is broken and every lamp goes out."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare series and parallel connection of lamps and cells, and explain why house lighting is wired in parallel.",
+      "expected_answer": "Series: one path, the same current everywhere, voltage shared among the components, cells adding voltage, and a single failure stopping everything. Parallel: several paths, each branch receiving the full supply voltage, current divided among the branches, cells sharing current and lasting longer without adding voltage, and branches independent of one another. House lighting is wired in parallel so that every lamp receives the full mains voltage and full brightness, each can be switched independently, and one failed bulb does not darken the rest; the cost is that the supply must deliver the sum of the branch currents."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what a resistor does, how its value is marked on large and small resistors, and how it appears on a circuit diagram.",
+      "expected_answer": "A resistor is made to have a definite resistance, measured in ohms, so that it limits the current in a circuit or divides a voltage; a low resistance lets more current flow for a given voltage, a high resistance less, and a thousand ohms is written k and a million M. Large power resistors have their value printed in figures, such as 10R or 4k7 with the letter in place of the decimal point. Small resistors are too small for figures and carry coloured bands round the body that can be read from any angle. On a circuit diagram the resistor is a rectangle with its value, not its colours, written beside it, such as 470 ohms."
+    },
+    {
+      "id": "cc2",
+      "question": "State the colour code for the digits 0 to 9 and read the following resistors: yellow violet brown, red red red, brown black orange; then give the colours for 330 ohms and 47k.",
+      "expected_answer": "Black 0, brown 1, red 2, orange 3, yellow 4, green 5, blue 6, violet 7, grey 8, white 9. With the tolerance band to the right, the first two bands are digits and the third is the number of zeros. Yellow violet brown: 4, 7, one zero, 470 ohms. Red red red: 2, 2, two zeros, 2200 ohms or 2k2. Brown black orange: 1, 0, three zeros, 10 000 ohms or 10k. For 330 ohms: 3, 3, one zero, orange orange brown. For 47k, which is 47 000 ohms: 4, 7, three zeros, yellow violet orange."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the tolerance band, describe how a resistor is checked with a multimeter, and explain how a calculated value of 250 ohms is matched to a real resistor.",
+      "expected_answer": "The fourth band, set apart, gives tolerance: gold 5 percent, silver 10 percent, none 20 percent; a gold-banded 470 ohm resistor is guaranteed to lie between about 447 and 494 ohms. To check, set a multimeter to ohms and touch the probes to the two leads of the loose resistor without holding the leads in the fingers, since skin conducts, and without the resistor in a circuit, where other components would form parallel paths; a reading such as 468 or 473 is within tolerance. Resistors are made in standard values, 10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82 and multiples of ten, so 250 ohms is matched to the nearest value, 270, or to the next value up where the current must not exceed the calculated amount, which is why the PAT LED circuit uses 470 ohms for a safe, slightly dimmer current."
+    }
+  ]
+}

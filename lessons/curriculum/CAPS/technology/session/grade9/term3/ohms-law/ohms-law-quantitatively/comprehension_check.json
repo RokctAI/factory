@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define voltage, current and resistance, give their units, and state how each is measured in a circuit.",
+      "expected_answer": "Voltage, or potential difference, is the electrical push between two points, measured in volts with a voltmeter connected across the two points, in parallel with the component. Current is the rate of flow of charge, measured in amperes with an ammeter connected in the path, in series, so that the whole current passes through it; small currents are given in milliamperes, thousandths of an ampere. Resistance is the opposition a component offers to current, measured in ohms, read from a resistor's colour bands or calculated as voltage over current. A multimeter is set to the correct range before connecting and is never set to amperes and connected across a supply."
+    },
+    {
+      "id": "cc2",
+      "question": "State Ohm's law in words and as an equation, explain what directly proportional means using readings for a 100 ohm resistor, and name a component to which the law does not apply.",
+      "expected_answer": "Ohm's law states that the current through a conductor at constant temperature is directly proportional to the potential difference across it; as an equation, V equals I times R, with V in volts, I in amperes and R in ohms. Directly proportional means that doubling the voltage doubles the current and the graph of current against voltage is a straight line through the origin: for a 100 ohm resistor, 1 volt gives 10 milliamperes, 2 volts 20, 3 volts 30 and 4.5 volts 45, and volts divided by amperes gives 100 every time. The law does not apply to a filament lamp, whose resistance rises as it heats, nor to a diode or LED, which behaves as a nearly fixed voltage drop."
+    },
+    {
+      "id": "cc3",
+      "question": "Give the three forms of Ohm's law and calculate: the voltage across a 470 ohm resistor carrying 5 milliamperes; the current through 1500 ohms on 4.5 volts; and the resistor needed to pass 10 milliamperes through an LED dropping 2 volts on a 4.5 volt battery.",
+      "expected_answer": "V equals I times R; I equals V over R; R equals V over I, with currents converted to amperes. Voltage across 470 ohms at 5 milliamperes: 0.005 times 470 equals 2.35 volts. Current through 1500 ohms on 4.5 volts: 4.5 over 1500 equals 0.003 amperes, which is 3 milliamperes. LED resistor: the LED takes 2 volts, leaving 2.5 volts across the resistor; R equals 2.5 over 0.01, which is 250 ohms, so a 270 ohm standard value or, for a safer 5.3 milliamperes, the kit's 470 ohm resistor is used. Each answer is checked for sense: a few volts and a few milliamperes in a battery circuit."
+    }
+  ]
+}

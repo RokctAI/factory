@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the circuit for the Ohm's law investigation, including how the voltmeter and ammeter are connected and how the meters are set up before the first reading.",
+      "expected_answer": "The circuit is a series loop: a holder with one, two or three 1.5 volt cells connected positive to negative, a switch, and a 100 ohm resistor, back to the cells. The voltmeter is connected across the resistor, one probe at each end, in parallel, so it reads the potential difference across the resistor while drawing almost no current. The ammeter is connected in series by opening the loop between the switch and the resistor and inserting the meter in the gap, so all the current passes through it. Red probes face the positive side. Before connecting, the voltmeter is set to a direct current range above 5 volts and the ammeter to a direct current milliampere range above 50 milliamperes, and the circuit with both meters is drawn in symbols on the results page."
+    },
+    {
+      "id": "cc2",
+      "question": "State the expected readings for one, two and three cells across a 100 ohm resistor, and explain what it means if the current does not rise when a cell is added.",
+      "expected_answer": "One fresh cell gives about 1.45 to 1.5 volts across the resistor and about 14 to 15 milliamperes; two cells give about 2.9 to 3 volts and 29 to 30 milliamperes; three give about 4.4 to 4.5 volts and 44 to 45 milliamperes, each added cell raising both readings by roughly equal steps so that voltage over current stays near 100 ohms. The voltages fall slightly short of 1.5 per cell because of the cells' internal resistance. If the current does not rise when a cell is added, the cell is dead or reversed, or if the voltage rose but the current did not, the ammeter is on the wrong range or is not actually in the loop; the fault is found and the reading retaken."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the results table for the investigation and explain the rules for honest recording, including what to do with an anomalous row.",
+      "expected_answer": "The table has a row for one, two and three cells and columns for the number of cells, three voltage readings and their mean, three current readings and their mean, and mean voltage divided by mean current, which should remain near the resistor's 100 ohms in every row. Readings are written in ink as they are taken, to the meter's last stable digit, as shown and not as predicted, and each cell count is repeated with the switch opened between readings. Anything unusual, a warm cell, a flickering display, a loose clip, is noted beside the table. An anomalous row, such as one giving 115 ohms, is remeasured with the connections checked and the retake and a note recorded; it is never deleted, because the difference carries information and a table of perfect values looks invented."
+    }
+  ]
+}

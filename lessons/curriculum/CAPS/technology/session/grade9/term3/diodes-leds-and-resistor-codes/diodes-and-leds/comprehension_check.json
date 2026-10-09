@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe a diode, its symbol and the meaning of forward and reverse bias, and give two uses of ordinary diodes.",
+      "expected_answer": "A diode is a two-terminal component with an anode and a cathode that conducts current in one direction only. When the anode is toward the positive side of the supply it is forward biased and conducts, dropping about 0.7 volts; when the cathode is toward positive it is reverse biased and blocks, acting as an open switch. The symbol is a triangle, the anode side, pointing at a bar, the cathode, with the triangle showing the direction conventional current may flow; the real component has a band at the cathode end. Uses: rectifying alternating current to one-way current in a charger, and preventing a battery discharging back through a solar panel at night, or protecting a switching transistor from the voltage spike when a motor or relay is switched off."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what an LED is, how to identify its legs, and why it must always be used with a series resistor, including how the resistor value is chosen for a 4.5 volt supply.",
+      "expected_answer": "An LED is a diode that emits light when forward biased; its symbol is the diode symbol with two small arrows pointing away. The longer leg is the anode and the flat spot on the body's rim marks the cathode. An LED drops a nearly fixed voltage of about 2 volts and has almost no resistance once conducting, so connected directly across a 4.5 volt battery the current rises uncontrolled and it burns out at once. A series resistor absorbs the voltage the LED does not need and sets the current: with 4.5 volts supply and 2 volts across the LED, the resistor drops 2.5 volts; for 10 milliamperes the value is 2.5 divided by 0.01, which is 250 ohms, so a 270 ohm or, for a safe slightly dimmer current, a 470 ohm resistor is used."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how LEDs are used as indicators in the PAT tank device, including LED choice, showing two states and correct handling.",
+      "expected_answer": "The indicator circuit is the 4.5 volt battery, the level sensor switch, a resistor of a few hundred ohms and the LED in series, with the LED's anode toward positive. A high-brightness red LED, or a flashing LED, is chosen so the warning is visible in daylight from the kitchen window and catches the eye while saving battery. Two states can be shown with a green LED for full and a red for low, each with its own sensor and its own resistor, connected in parallel across the battery so each receives the full voltage; a resistor is never shared between parallel LEDs. The anode is identified by the longer leg and the cathode by the flat spot before soldering, the LED is never connected without a resistor, legs are bent with pliers, and polarity is checked on the diagram because a reversed LED simply does not light."
+    }
+  ]
+}
