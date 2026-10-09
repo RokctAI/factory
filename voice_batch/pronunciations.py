@@ -10,6 +10,13 @@ voice_batch/pronunciations.json:
                spelling. The global list never touches it; a line that
                uses it must say which one it means inline, or the batch
                fails.
+  "names":     ["<name>", ...]  proper nouns spoken as written whose
+               spelling the ASR model does not know (it hears "Kavitha" and
+               writes "Kavita"). Nothing spoken changes; the QC gate
+               wildcards them like a respelled word. Lines also wildcard the
+               persona names the pipeline knows: an assistant's own name
+               (voices/<id>.voice.json "name"), the tutor names filled into
+               its host lines, and a tutor's own display name.
 
 Inline, in a line's script: {{Thendo|TEN-doh}}. The TTS text gets the part
 after the bar; the display text (what the manifest records) and the ASR
@@ -51,14 +58,14 @@ def _clean(s: str) -> str:
 
 
 def empty() -> dict:
-    return {"words": {}, "ambiguous": {}}
+    return {"words": {}, "ambiguous": {}, "names": []}
 
 
 def validate(raw) -> dict:
     """The file's content, checked. Raises PronunciationError."""
     if not isinstance(raw, dict):
         raise PronunciationError("pronunciations must be a JSON object")
-    unknown = set(raw) - {"words", "ambiguous"} - {k for k in raw if k.startswith("_")}
+    unknown = set(raw) - {"words", "ambiguous", "names"} - {k for k in raw if k.startswith("_")}
     if unknown:
         raise PronunciationError(f"unknown field(s): {sorted(unknown)}")
     words, amb = raw.get("words", {}), raw.get("ambiguous", {})
@@ -78,6 +85,13 @@ def validate(raw) -> dict:
                 isinstance(v, str) and SPOKEN_RE.fullmatch(v) and v.strip() for v in vs):
             raise PronunciationError(f"ambiguous: {w!r} needs a list of at least two respellings")
         out["ambiguous"][w] = [_clean(v) for v in vs]
+    names = raw.get("names", [])
+    if not isinstance(names, list):
+        raise PronunciationError('"names" must be a list')
+    for n in names:
+        if not isinstance(n, str) or not WORD_RE.fullmatch(n):
+            raise PronunciationError(f"names: bad name {n!r}")
+        out["names"].append(_clean(n))
     both = {w.lower() for w in out["words"]} & {w.lower() for w in out["ambiguous"]}
     if both:
         raise PronunciationError(f"in both words and ambiguous: {sorted(both)}")
@@ -157,6 +171,18 @@ def apply(text: str, pron: dict | None = None) -> tuple[str, str, list[list[str]
         out.append(plain[pos:])
         tts.append("".join(out))
     return _clean("".join(disp)), _clean("".join(tts)), wild
+
+
+def name_wild(text: str, names) -> list[list[str]]:
+    """[[name, name], ...] for each whole-word use of a name in `text`
+    (display text, any case), longest name first, never overlapping: the
+    ASR wildcard for a proper noun spoken as written."""
+    hits: list[tuple[int, int, str]] = []
+    for n in sorted({_clean(n) for n in names if n and n.strip()}, key=lambda n: -len(n)):
+        for m in _word_re(n).finditer(text):
+            if not any(a < m.end() and m.start() < b for a, b, _ in hits):
+                hits.append((m.start(), m.end(), m.group(0)))
+    return [[f, f] for _, _, f in sorted(hits)]
 
 
 def ambiguous_uses(text: str, pron: dict | None = None) -> list[str]:

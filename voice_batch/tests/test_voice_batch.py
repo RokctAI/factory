@@ -20,6 +20,9 @@ from textnorm import TAIL_PAD, norm_words, speak_text, split_sentences, tts_prom
 class TextNorm(unittest.TestCase):
     def test_split(self):
         self.assertEqual(split_sentences("Right. Go on! Why?  Yes."), ["Right.", "Go on!", "Why?", "Yes."])
+        self.assertEqual(split_sentences("Class starts in 3... 2... 1... Sharing now."),
+                         ["Class starts in 3... 2... 1...", "Sharing now."])
+        self.assertEqual(split_sentences("Wait... Then go. It's 10... ok."), ["Wait...", "Then go.", "It's 10...", "ok."])
 
     def test_speak_text_punctuation_only(self):
         self.assertEqual(speak_text("Method: a by c - two, three — done."), "Method, a by c, two, three, done.")
