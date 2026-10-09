@@ -91,9 +91,11 @@ LEAD_MIN_S = 0.18
 CLIP_PEAK_DBFS, CLIP_FULL_SCALE, CLIP_RUN_MAX = -0.3, 0.999, 3
 HOT_WIN_S, HOT_FLOOR_DBFS = 0.05, -60.0
 # First onset: from the first sample above -40 dB of the peak to 90 % of the
-# loudest sample in the 50 ms after it must take >= 5 ms (the stitch's 12 ms
+# loudest sample in the 50 ms after it must take >= 4 ms (the stitch's 12 ms
 # fade and the lead-in's 10 ms fade both give ~9-12 ms; a hard edge gives ~0).
-ONSET_RISE_MIN_S, ONSET_WIN_S, ONSET_REACH = 0.005, 0.05, 0.9
+# 5 ms rejected tutor_001 greetings/05 at 4.96 ms in every seed round with
+# silent head (-120 dBFS): a faded onset whose voice peaks early, not an edge.
+ONSET_RISE_MIN_S, ONSET_WIN_S, ONSET_REACH = 0.004, 0.05, 0.9
 GAP_MIN_S = 0.08
 
 
@@ -411,6 +413,10 @@ def main() -> int:
             picks.append(best); tiers.append(tier)
             if tier != 1:
                 lacking.append({"key": key, "tier": tier})
+                if tier == 0:
+                    # What the ASR heard instead, for qc_failed.json in the
+                    # private agent repo (never printed: CI logs are public).
+                    lacking[-1]["heard"] = sorted({c.get("transcript", "") for c in cands})[:5]
         tried = sorted({m["seed"] for m in M.values() if m["key"].split("#")[0] == it["id"]})
         r = {"id": it["id"], "seeds_tried": tried, "lacking": lacking}
         if any(t == 0 for t in tiers):

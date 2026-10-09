@@ -127,8 +127,9 @@ class RoundHistory(unittest.TestCase):
             work = Path(d)
             items = [{"id": "a", "render_text": ["One."]}]
             rounds = iter([
-                {"id": "a", "status": "incomplete", "lacking": [{"key": "a#1", "tier": 0}]},
+                {"id": "a", "status": "incomplete", "lacking": [{"key": "a#1", "tier": 0, "heard": ["Won.", "On."]}]},
                 {"id": "a", "status": "fail", "lacking": [{"key": "a#1", "tier": 2}], "asr_word_errors": 1,
+                 "asr_transcript": "Won.",
                  "gate": {"asr": False, "loudness": False, "f0": True}, "checks": {"integrated_db": -25.5}},
                 {"id": "a", "status": "fail", "lacking": [], "gate": {"lead_in": False, "onset": False},
                  "checks": {"lead_in_ms": 20.0, "head_rms_dbfs": -30.0, "onset_rise_ms": 1.0}, "seeds_tried": [11, 22, 33, 44, 55]},
@@ -144,8 +145,10 @@ class RoundHistory(unittest.TestCase):
                 (r,) = run.render_rounds(items, work, Path("ref.wav"), Path("s"), args, "t")
         self.assertEqual(r["status"], "fail")
         self.assertEqual([x["round"] for x in r["rounds"]], [1, 2, 3])
-        self.assertEqual(r["rounds"][0]["failing"], {"asr": {"sentences_without_word_exact_take": 1}})
-        self.assertEqual(r["rounds"][1]["failing"], {"asr": {"asr_word_errors": 1}, "loudness": {"integrated_db": -25.5}})
+        self.assertEqual(r["rounds"][0]["failing"], {"asr": {"sentences_without_word_exact_take": 1,
+                                                             "heard": [{"sentence": 1, "heard": ["Won.", "On."]}]}})
+        self.assertEqual(r["rounds"][1]["failing"], {"asr": {"asr_word_errors": 1, "asr_transcript": "Won."},
+                                                     "loudness": {"integrated_db": -25.5}})
         self.assertEqual(r["rounds"][2]["failing"], {"lead_in": {"lead_in_ms": 20.0},
                                                      "onset": {"head_rms_dbfs": -30.0, "onset_rise_ms": 1.0}})
         self.assertEqual(r["rounds"][2]["seeds"], [55])

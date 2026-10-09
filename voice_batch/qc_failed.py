@@ -14,7 +14,8 @@ clips on the agent branch (the private agent repo only, never factory):
                      (parallel shards share that folder)
 
 Each entry: line id, line text, the failing gates and their values for
-every round, the attempt count, the batch file, the CI run id and a UTC
+every round (for the ASR gate, what the ASR heard: the stitched line's
+transcript, or each sentence's distinct take transcripts), the attempt count, the batch file, the CI run id and a UTC
 date. A line that later passes leaves the manifest's failed list, so it
 drops out of the file; an empty file is deleted. Stdlib only.
 """
@@ -36,13 +37,16 @@ def failing(r: dict) -> dict:
     """{gate: measured value(s)} for every gate a QC result failed."""
     if r.get("status") == "incomplete":
         # No word-exact take at all for some sentence: the ASR gate.
-        return {"asr": {"sentences_without_word_exact_take": sum(1 for x in r.get("lacking", []) if x.get("tier") == 0)
-                        or len(r.get("lacking", []))}}
+        out = {"sentences_without_word_exact_take": sum(1 for x in r.get("lacking", []) if x.get("tier") == 0)
+               or len(r.get("lacking", []))}
+        heard = [{"sentence": int(x["key"].rsplit("#", 1)[1]), "heard": x["heard"]}
+                 for x in r.get("lacking", []) if x.get("heard")]
+        return {"asr": {**out, **({"heard": heard} if heard else {})}}
     checks = r.get("checks") or {}
     values = {
         "f0": lambda: _pick(r, "median_f0_hz"),
         "similarity": lambda: _pick(r, "similarity", "similarity_threshold"),
-        "asr": lambda: _pick(r, "asr_word_errors"),
+        "asr": lambda: _pick(r, "asr_word_errors", "asr_transcript"),
         "tail": lambda: _pick(r, "tail_db"),
         "loudness": lambda: _pick(checks, "integrated_db"),
         "lead_in": lambda: _pick(checks, "lead_in_ms"),

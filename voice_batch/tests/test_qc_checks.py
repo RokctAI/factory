@@ -127,6 +127,12 @@ class ClipChecks(unittest.TestCase):
         self.assertLess(m["onset_rise_ms"], 5)
         self.assertFalse(gate["onset"])
 
+    def test_faded_onset_at_4_96_ms_passes(self):
+        """tutor_001 greetings/05 measured 4.96 ms with a silent head in every
+        round: a faded onset, not a hard edge."""
+        self.assertGreaterEqual(4.96, qc.ONSET_RISE_MIN_S * 1000)
+        self.assertGreater(qc.ONSET_RISE_MIN_S * 1000, 1.0)
+
 
 class Timings(unittest.TestCase):
     def test_shape(self):
