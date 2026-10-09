@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which shape is cut into halves? Two equal parts.", "options": ["circle_halves", "circle_quarters", "circle_whole"], "answer": "circle_halves", "praise": "Yes! Two equal parts. Halves."},
     {"type": "listen_tap", "prompt": "Which chocolate is cut into quarters? Four equal parts.", "options": ["bar_quarters", "bar_halves", "bar_thirds"], "answer": "bar_quarters", "praise": "Yes! Four equal pieces. Quarters."},
-    {"type": "say_it", "prompt": "This bread is cut into three equal pieces. What is each piece called? Say it.", "accept": ["a third", "third", "thirds", "one third", "turd"], "image": "bread_thirds"},
+    {"type": "say_it", "prompt": "This bread is cut into three equal pieces. What is each piece called? Say it.", "accept": ["a third", "third", "thirds", "one third"], "image": "bread_thirds"},
     {"type": "listen_tap", "prompt": "Which shape has one half coloured in?", "options": ["square_half_shaded", "square_quarter_shaded", "square_all_shaded"], "answer": "square_half_shaded", "praise": "Yes! One of two equal parts is coloured."},
     {"type": "listen_tap", "prompt": "Is this cut fairly into halves? Tap yes or no.", "image": "circle_unequal_cut", "options": ["word_no", "word_yes"], "answer": "word_no", "praise": "No! Halves must be the same size."},
     {"type": "match_sort", "prompt": "Halves or quarters? Put each picture in its group.", "groups": ["halves", "quarters"], "items": [{"image": "apple_halves", "group": "halves"}, {"image": "rectangle_halves", "group": "halves"}, {"image": "orange_quarters", "group": "quarters"}, {"image": "square_quarters", "group": "quarters"}, {"image": "circle_quarters", "group": "quarters"}]}

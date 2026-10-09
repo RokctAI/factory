@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "what_next", "prompt": "January, February, March. Which month comes next?", "sequence": ["January", "February", "March"], "options": ["April", "June", "May"], "answer": "April", "praise": "April! January, February, March, April."},
     {"type": "listen_tap", "prompt": "Which month is the first month of the year?", "options": ["month_january", "month_december", "month_june"], "answer": "month_january", "praise": "Yes! January starts the year."},
-    {"type": "say_it", "prompt": "Which month comes after June? Say the month.", "accept": ["july", "joo lie", "jew lie"], "image": "calendar_june"},
+    {"type": "say_it", "prompt": "Which month comes after June? Say the month.", "accept": ["july", "joo lie", "joo ly"], "image": "calendar_june"},
     {"type": "what_next", "prompt": "September, October, November. Which month comes next?", "sequence": ["September", "October", "November"], "options": ["December", "January", "August"], "answer": "December", "praise": "December! The last month of the year."},
     {"type": "listen_tap", "prompt": "Which month is the last month of the year?", "options": ["month_december", "month_january", "month_november"], "answer": "month_december", "praise": "Yes! December ends the year."},
     {"type": "count_tap", "prompt": "Count the months on the calendar. How many months in a year?", "image": "calendar_year", "count": "12", "options": ["10", "12", "7"], "answer": "12", "praise": "Twelve months in a year!"},

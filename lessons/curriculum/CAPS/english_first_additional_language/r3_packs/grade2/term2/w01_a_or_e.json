@@ -13,14 +13,14 @@
   },
   "skill": "efal.phonics.vowel.a_e_contrast",
   "prereq_skills": ["efal.phonics.vowel.short_o_u"],
-  "images": ["mat_and_pen", "tile_e", "tile_a", "word_pen", "word_pan", "word_cat", "word_bag", "word_leg", "word_ten", "tutor_holds_word_pen"],
+  "images": ["mat_and_pen", "letter_e", "letter_a", "word_pen", "word_pan", "word_cat", "word_bag", "word_leg", "word_ten", "tutor_holds_word_pen"],
   "show": {
     "line": "a or e? Listen closely. Mat has a. Pen has e!",
     "image": "mat_and_pen"
   },
   "rounds": [
-    {"type": "listen_tap", "prompt": "Listen. Leg. Is it a or e?", "options": ["tile_e", "tile_a"], "answer": "tile_e", "praise": "Yes! l, e, g. Leg."},
-    {"type": "listen_tap", "prompt": "Listen. Mat. Is it a or e?", "options": ["tile_a", "tile_e"], "answer": "tile_a", "praise": "Yes! m, a, t. Mat."},
+    {"type": "listen_tap", "prompt": "Listen. Leg. Is it a or e?", "options": ["letter_e", "letter_a"], "answer": "letter_e", "praise": "Yes! l, e, g. Leg."},
+    {"type": "listen_tap", "prompt": "Listen. Mat. Is it a or e?", "options": ["letter_a", "letter_e"], "answer": "letter_a", "praise": "Yes! m, a, t. Mat."},
     {"type": "listen_tap", "prompt": "Tap the word pen.", "options": ["word_pen", "word_pan"], "answer": "word_pen", "praise": "Yes! Pen."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "bed", "accept": ["bed", "bad", "bet"]},
     {"type": "match_sort", "prompt": "Is it a or e in the middle? Sort the words.", "groups": ["a", "e"], "items": [{"image": "word_cat", "group": "a"}, {"image": "word_pan", "group": "a"}, {"image": "word_bag", "group": "a"}, {"image": "word_leg", "group": "e"}, {"image": "word_ten", "group": "e"}]}

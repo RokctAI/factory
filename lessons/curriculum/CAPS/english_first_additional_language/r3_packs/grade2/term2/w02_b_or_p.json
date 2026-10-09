@@ -13,14 +13,14 @@
   },
   "skill": "efal.phonics.consonant.b_p_contrast",
   "prereq_skills": ["efal.phonics.vowel.a_e_contrast"],
-  "images": ["bun", "tile_b", "tile_p", "word_bat", "word_pat", "bus", "ball", "bed", "pot", "pen", "tutor_holds_word_pin"],
+  "images": ["bun", "letter_b", "letter_p", "word_bat", "word_pat", "bus", "ball", "bed", "pot", "pen", "tutor_holds_word_pin"],
   "show": {
     "line": "b or p? b has a voice. p is just a puff! Bun, pan.",
     "image": "bun"
   },
   "rounds": [
-    {"type": "listen_tap", "prompt": "Listen. Bun. Is it b or p?", "options": ["tile_b", "tile_p"], "answer": "tile_b", "praise": "Yes! Bun starts with b."},
-    {"type": "listen_tap", "prompt": "Listen. Pit. Is it b or p?", "options": ["tile_p", "tile_b"], "answer": "tile_p", "praise": "Yes! Pit starts with p."},
+    {"type": "listen_tap", "prompt": "Listen. Bun. Is it b or p?", "options": ["letter_b", "letter_p"], "answer": "letter_b", "praise": "Yes! Bun starts with b."},
+    {"type": "listen_tap", "prompt": "Listen. Pit. Is it b or p?", "options": ["letter_p", "letter_b"], "answer": "letter_p", "praise": "Yes! Pit starts with p."},
     {"type": "listen_tap", "prompt": "Tap the word bat.", "options": ["word_bat", "word_pat"], "answer": "word_bat", "praise": "Yes! Bat."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "pig", "accept": ["pig", "big", "peg"]},
     {"type": "match_sort", "prompt": "Does it start with b or p? Sort the pictures.", "groups": ["b", "p"], "items": [{"image": "bus", "group": "b"}, {"image": "ball", "group": "b"}, {"image": "bed", "group": "b"}, {"image": "pot", "group": "p"}, {"image": "pen", "group": "p"}]}
