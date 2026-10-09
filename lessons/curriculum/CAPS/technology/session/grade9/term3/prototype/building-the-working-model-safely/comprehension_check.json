@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how a team plans the build of the model and state the safety rules for soldering, cutting and drilling.",
+      "expected_answer": "The parts list from the exploded view is laid out on the bench, each part beside its balloon number and ticked off; tools are gathered, and the circuit diagram, exploded view and orthographic drawing are pinned in view. The order follows the exploded view in reverse: the empty box is drilled and cut first, the circuit is built and tested on its board as a separate unit, the battery holder and board are fitted, the lid components are fitted and wired, the box is closed and labelled, with team members working in parallel on drilling, soldering and wiring. Safety: safety glasses for soldering, cutting and drilling; the iron kept in its stand and held only by the handle, hot joints not touched for a minute; cutters pointed down and away from faces; the craft knife used on a board away from the holding hand; work clamped for drilling; hair tied back, no food on the bench, hands washed after handling solder; and anyone may stop the work for an unsafe practice."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the steps of making a good solder joint, how a dry joint is recognised, and the checks made before and after soldering each component.",
+      "expected_answer": "The iron is heated, its tip wiped on a damp sponge and tinned; the component is inserted and its lead bent to hold it; the tip is placed touching both the lead and the copper pad for about two seconds; solder is fed to the heated joint, not to the iron, so it melts and flows round the lead and over the pad; the solder is withdrawn, then the iron, and the joint is held still while it sets. A good joint is bright, smooth and volcano-shaped; a dry joint is dull, lumpy or a ball sitting on the lead and may move when the lead is wiggled, and is reflowed with fresh solder. Before soldering, polarity is checked against the diagram for the LED's long leg, the capacitor's stripe, the transistor's flat face and the buzzer's plus; on strip board the tracks are cut where the diagram requires breaks. After soldering, leads are trimmed close with the cutters pointing away, and the board is tested with the battery and sensor before it is fitted into the box."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the enclosure is prepared and the model finished to scale, and how the completed model is tested against the brief.",
+      "expected_answer": "Hole positions for the LED, switch and cable are marked from the orthographic drawing, started with a small bit so the drill does not wander, drilled to the part's diameter and trimmed of burrs, with a grommet or gland for the cable; the battery holder is fixed so it cannot rattle, the board is mounted on spacers or glued, and the lid components are wired with slack. The model's dimensions are measured against the orthographic drawing, full size for a small device or at a stated scale, and its appearance checked against the 3D sketch. After closing and labelling, each numbered specification is tested and the result recorded: LED lighting on sensor trigger, visibility at ten metres in daylight tested outdoors, test button operation, standby current measured near zero, sound switching off, and the sensor housing dunked for water resistance; failures are fixed or honestly reported, and the bench is cleaned with the iron off."
+    }
+  ]
+}

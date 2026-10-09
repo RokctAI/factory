@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe a worm gear and explain how one turn of the worm advances the wheel, and why the wheel cannot drive the worm.",
+      "expected_answer": "A worm gear consists of a worm, a shaft with a single screw thread, meshing with a worm wheel, a gear with curved teeth, the shafts at right angles. The wheel's teeth sit in the worm's thread, so one full turn of the worm advances the thread by one pitch and pushes the wheel round by exactly one tooth. The thread angle is shallow, so when the wheel's teeth press on the thread, nearly all the force presses against the thread face and friction cancels the small part acting to turn the worm; the worm therefore always drives the wheel and the system is self-locking."
+    },
+    {
+      "id": "cc2",
+      "question": "State the ratio rule for a single-thread worm gear and calculate the output speed and force change for a 40-tooth wheel driven by a worm at 1200 revolutions per minute.",
+      "expected_answer": "For a single-thread worm the ratio equals the number of teeth on the wheel, because the worm behaves as a one-tooth gear. A 40-tooth wheel gives 40 to 1: the worm turns 40 times for one turn of the wheel. At 1200 revolutions per minute input, the output is 1200 divided by 40, which is 30 revolutions per minute, and the turning force is about 40 times the input, less a large friction loss because the thread slides against the teeth; worm gears are often only 50 to 90 percent efficient. The input must make 40 turns for each output turn."
+    },
+    {
+      "id": "cc3",
+      "question": "Give four applications of the worm gear that depend on its self-locking property and evaluate the mechanism for fitness for purpose and safety.",
+      "expected_answer": "Applications: guitar tuning pegs, where the string stays in tune when the peg is released; winches and workshop hoists, where the drum holds its load with the handle untouched; sliding gate motors, where the gate stays shut against a push; car window winders and adjustable spanners, where the setting holds under load. Fitness for purpose: excellent for large reduction and holding in a small space, poor where efficiency or drive from the output is needed. Safety: self-locking prevents a dropped handle spinning back, but the friction generates heat requiring lubrication, and exposed worms must be guarded against fingers."
+    }
+  ]
+}

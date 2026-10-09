@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what an exploded view is, what it shows that an assembled drawing does not, and how it relates to the other design drawings.",
+      "expected_answer": "An exploded view is a 3D drawing in which the parts of an assembly are moved apart along one or more straight axes, each keeping its orientation and position relative to the axis, with thin alignment lines showing how they slide back together. An assembled drawing shows only the outside, the lid, LED, button and screw heads, while the exploded view reveals the inner parts, the circuit board, battery holder and fixings, the order in which they are assembled and where each fixing goes. It complements the circuit diagram, which gives the electrical connections, the 3D sketch, which gives appearance, and the orthographic working drawing, which fixes sizes; together they let a stranger understand, build and repair the device."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how the exploded view of the PAT indicator box is drawn, including the axis, the order of parts and the drawing conventions.",
+      "expected_answer": "A light vertical construction line is drawn as the axis, since the box comes apart upward. Parts are placed on it in assembly order from the bottom: the box base with its screw bosses; the battery holder with its wires; the circuit board with the transistor, resistors and capacitor as simple shapes on it; the lid; the LED and push button exploded upward out of their holes in the lid; and the screws as short slotted cylinders floating above their holes. A part that comes off sideways, such as a cable gland, is exploded along a second horizontal axis. Each part is drawn in isometric at the same scale and angle on a 30 degree grid, gaps are kept to about half a part height, thin dashed alignment lines run along the axis through holes and locating features, outlines are medium weight and hidden detail is omitted."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the labelling, parts list and title block of the exploded drawing and give four checks that it is complete.",
+      "expected_answer": "Each part carries a balloon, a small circle with a number joined by a thin leader line, numbered in assembly order from the base upward, with identical parts sharing a number and their quantity noted. A parts list on the sheet gives number, name, quantity, material and size or type for every balloon, matching the list used for the working drawing and the costing. The sheet has a border and a title block with the device name, the title Exploded Assembly, the scale or NTS, the date and the team, plus notes for steps the drawing cannot show such as soldering wires before fitting the board. Checks: every part in the list is drawn; every drawn part is numbered; every alignment line leads to a real hole or feature; and a stranger could assemble the device from the drawing alone."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain, using the behaviour of two connected syringes, the difference between pneumatic and hydraulic systems and why liquids are used in jacks and brakes.",
+      "expected_answer": "Two equal syringes joined by tubing and filled with air transmit a push with a soft, delayed response, because gases compress: the push first squashes the air before the far plunger moves. Filled with water the far plunger moves immediately and by the same distance, because liquids are practically incompressible and the volume pushed out of one syringe must enter the other. Pneumatic systems use gas and are soft and light; hydraulic systems use liquid and are stiff, precise and strong. Jacks and brakes use liquid so that the full force is transmitted at once; air in a brake line makes the pedal spongy because the push compresses the air instead of moving the pads."
+    },
+    {
+      "id": "cc2",
+      "question": "State Pascal's principle and show how it leads to force multiplication and the distance trade-off, with a numerical example.",
+      "expected_answer": "Pascal's principle states that pressure applied to a confined liquid is transmitted equally and undiminished throughout the liquid. Pressure is force over area, so input force over input area equals output force over output area, and a larger output area carries a proportionally larger force; mechanical advantage equals output area over input area. Because the volume leaving the input equals the volume entering the output, input area times input distance equals output area times output distance, so the larger piston moves the shorter distance. With areas of 2 and 10 square centimetres, mechanical advantage is 5: a 40 newton push gives 200 newtons out, and 10 centimetres in moves the output 2 centimetres; work in equals work out, less friction."
+    },
+    {
+      "id": "cc3",
+      "question": "Perform a press calculation for a 100 newton force on a 5 square centimetre piston driving a 50 square centimetre ram, and describe the systems diagram of a hydraulic jack.",
+      "expected_answer": "Step one: pressure equals force over area, 100 over 5, which is 20 newtons per square centimetre. Step two: output force equals pressure times area, 20 times 50, which is 1000 newtons. Step three: check that the larger area carries the larger force, ten times the area and ten times the force, with consistent units. The jack's systems diagram has labelled blocks joined by arrows: input, force on the handle; process, lever multiplies force, plunger pressurises oil, pressure transmitted to the ram, large ram area multiplies force, one-way valve holds the load between strokes; output, load lifted through a small distance, with a release valve to lower it. It is a diagram of function, not a picture of the jack."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Draw and describe the simple series circuit of a battery, switch and lamp, and explain why the switch must be in series with the lamp.",
+      "expected_answer": "The circuit is a single loop: a battery drawn on the left with its positive terminal at the top, a wire to a switch, the switch to a lamp, the lamp back to the battery's negative terminal. With the switch open the loop has a gap and the lamp is off; closed, the loop is complete and conventional current flows from positive through the switch and lamp to negative, lighting the lamp. The switch must be in series because it controls by breaking the path; a switch in parallel with the lamp would, when closed, divert current round the lamp and short it out, leaving the lamp dark and draining the battery."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe a methodical procedure for fault-finding a series circuit that does not light, and state where a voltmeter and an ammeter are connected and what they should read.",
+      "expected_answer": "Test in order: first the supply and load together by touching the lamp holder's leads directly to the battery terminals; if it lights, both are good. Second, if not, swap in a known-good lamp. Third, bridge the switch with a spare lead; if the lamp lights the switch is faulty or miswired. Fourth, check each lead for a crocodile clip gripping insulation. A voltmeter is connected across a component, in parallel, and should read about 4.5 volts across the battery, nearly the same across a working lamp with the switch closed, the full battery voltage across an open switch and nearly zero across a closed one. An ammeter is connected in the loop, in series, and should read a few tenths of an ampere for a torch bulb; zero with the switch closed indicates a break. An ammeter is never connected across the battery."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the simple series circuit develops into the PAT indicator circuit and list the habits that carry over.",
+      "expected_answer": "The PAT indicator keeps the same loop of supply, switch and load but substitutes parts suited to the job: the lamp is replaced by an LED with a series resistor to limit its current, the push switch by a sensor such as a float switch, water probes, a reed switch or a transistor driven by a light-dependent resistor, and the supply remains three cells in series giving 4.5 volts. The habits that carry over are drawing first with symbols and positive at the top, matching the supply voltage to the load's rating, placing every control in series with what it controls, fault-finding in the order supply, load, switch, leads, and measuring voltage across components and current in the loop."
+    }
+  ]
+}

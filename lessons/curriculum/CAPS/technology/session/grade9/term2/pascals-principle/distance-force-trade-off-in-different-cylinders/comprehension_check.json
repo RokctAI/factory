@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the equal volume rule for two connected hydraulic cylinders as an equation and use it to find the extension of a slave of 10 square centimetres when a master of 2 square centimetres is pushed in 10 centimetres.",
+      "expected_answer": "Because the liquid is incompressible, the volume leaving the master equals the volume entering the slave: master area times master distance equals slave area times slave distance. Volume moved is 2 times 10, which is 20 cubic centimetres; the slave extension is 20 divided by 10, which is 2 centimetres. The slave moves one fifth of the master's distance because its area is five times greater; the distance ratio is the inverse of the area ratio."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe the method for calculating a slave's extension, including what to do when diameters rather than areas are given and how units are handled.",
+      "expected_answer": "Write down both areas and the master distance; find the volume moved as master area times master distance; divide by the slave area for the slave distance; check that a larger slave area gives a smaller distance. If diameters are given, calculate each area as pi times the radius squared first; the area ratio is the square of the diameter ratio, so doubling the diameter gives four times the area and a quarter of the distance. Keep units consistent, centimetres with square centimetres giving cubic centimetres, or metres with square metres; a sense check catches a mixed-unit error."
+    },
+    {
+      "id": "cc3",
+      "question": "Combine the force and distance rules to define mechanical advantage for a hydraulic system and describe the three cases above, equal to and below 1 with an example of each.",
+      "expected_answer": "Pascal's principle gives slave force equals master force times slave area over master area; the volume rule gives slave distance equals master distance times master area over slave area; so force times distance is equal at both ends and energy is conserved. Mechanical advantage equals output force over input force, which equals slave area over master area. Above 1 when the slave is larger: strong and slow, as in the hydraulic jack, press and brakes. Equal to 1 when the areas are equal: pure transfer, as in equal syringes. Below 1 when the slave is smaller: fast and weak, used where a short master stroke must give a long quick slave movement, as in some excavator and control linkages."
+    }
+  ]
+}

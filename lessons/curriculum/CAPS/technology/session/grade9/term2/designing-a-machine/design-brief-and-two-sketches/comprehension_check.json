@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write a one-sentence design brief for the storeroom lifting machine and give four measurable specifications and three constraints.",
+      "expected_answer": "Brief: design and make a machine that lifts loads of up to 50 kilograms from the floor to a shelf 900 millimetres high in a small storeroom, for a shop owner working alone without electricity. Specifications: it must lift 500 newtons; it must lift through 900 millimetres; the operator's effort must not exceed 150 newtons; it must hold the load at any height if released; it must stop at the top of travel and have guards over pinch points; it must fit through an 800 millimetre doorway or be built in place. Constraints: a budget of 600 rand, materials from the local hardware store with no welding, and completion in three weeks."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe two genuinely different sketched designs for the machine, naming the mechanisms and controls used in each.",
+      "expected_answer": "Sketch A: a timber frame of two uprights and a beam against the wall, a hand winch with a ratchet and pawl on one upright, a rope from the drum over a fixed pulley on the beam to a movable pulley on a platform that slides between guides, giving mechanical advantage from both the tackle and the winch; the ratchet holds the load and a stop limits the top of travel. Sketch B: a scissor platform in timber and steel strip driven by a threaded rod turned by a crank through a worm gear, so it rises steadily and is self-locking at any height, mounted on castors to roll clear of the doorway. The two differ in lifting mechanism, in holding control and in how they deal with space."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the final solution is chosen and justify a choice between the two sketches.",
+      "expected_answer": "Each sketch is compared against each specification and constraint in turn: load, height, effort, holding, top stop, guards, fit, cost, materials and time. Sketch B holds itself by the worm, is steadier and rolls out of the way, which suits a room with children, but at about 650 rand it breaks the budget and its scissor pivots are hard to make without welding. Sketch A is within budget at about 450 rand, uses hardware-shop parts and is simpler to build, but needs good platform guides to stop swinging and relies on the ratchet being engaged. A justified choice is Sketch A's frame and winch, with a self-locking worm winch in place of the ratchet winch and castors borrowed from Sketch B if the budget allows, with every reason pointing to the brief."
+    }
+  ]
+}

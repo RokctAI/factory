@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Draw in words the transistor circuit with thermistor, variable resistor, LED, capacitor and switch, and state the job of each component.",
+      "expected_answer": "A 4.5 volt battery with an SPST switch in the positive lead. From the switched positive, an NTC thermistor runs to a junction and a variable resistor from the junction to negative, forming the sensing divider; the junction connects through a 10 kilohm base resistor to the base of an npn transistor whose emitter goes to negative; a 470 ohm resistor and an LED run from positive to the collector; and a 100 microfarad electrolytic capacitor connects from the base to negative with its positive lead on the base, every part labelled with its value. Jobs: the switch turns the circuit on and off; the thermistor senses temperature; the variable resistor sets the switching threshold; the base resistor protects the base; the transistor switches the load; the LED resistor protects the LED; the LED shows the result; the capacitor smooths flicker and adds a delay."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how the circuit responds to temperature, calculate the junction voltage for the thermistor at 10 kilohms and the variable resistor at 2 kilohms, and explain how the threshold is set and inverted.",
+      "expected_answer": "The thermistor and variable resistor share the 4.5 volt supply in proportion to their resistances, and the junction voltage is the supply times the lower resistance over the total: with 10 kilohms above and 2 kilohms below, 4.5 times 2 over 12 gives 0.75 volts, above the transistor's 0.6 volt threshold, so the LED is on. Cooling the NTC thermistor raises its resistance, lowering the junction below 0.6 volts and switching the LED off; warming it lowers its resistance and raises the junction, switching the LED on. Turning the variable resistor up raises the junction at every temperature, so the LED stays on until it is colder; turning it down means the LED is off until it is warmer; the user turns it until the LED just comes on at the wanted temperature. Swapping the thermistor and variable resistor inverts the action so the LED comes on when cold, a frost warning."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the role of the capacitor, describe how the circuit is tested, and describe two adaptations of the circuit for other PAT devices.",
+      "expected_answer": "The capacitor from base to negative smooths and delays the base voltage: near the threshold the junction voltage wobbles above and below 0.6 volts, and without the capacitor the LED would flicker, but the capacitor must charge and discharge through the resistors before the base can change, absorbing brief wobbles and making the LED respond a second or so after a real change, with about 10 kilohms times 100 microfarads giving one second; a larger capacitor lengthens the pause. Testing: switch on at room temperature, adjust the variable resistor until the LED is just off, warm the thermistor and observe the LED coming on after a pause, cool it with a damp cloth and observe it going off after a pause, and try a larger capacitor. Adaptations: replacing the thermistor with an LDR gives a light alarm; replacing it with two probes gives a moisture alarm; replacing the LED and resistor with a small buzzer gives an audible alarm, within the transistor's current rating."
+    }
+  ]
+}

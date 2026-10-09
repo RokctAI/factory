@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain how a design scenario is turned into precise requirements, using a machine to lift heavy bags onto a shelf as an example.",
+      "expected_answer": "The scenario is converted into facts under headings. The task: lift loads up to 50 kilograms, about 500 newtons, through 900 millimetres from floor to shelf, about twenty times a week. The user: an owner who works alone and can pull perhaps 150 newtons comfortably, with children present. The place: a small storeroom, a concrete floor, an 800 millimetre doorway, no reliable electricity. The limits: a budget near 600 rand, hardware shop materials, no welding. Each fact rules options in or out: the load and effort require a mechanical advantage of at least 3 to 4, no power requires hand operation, the doorway fixes the size and children require that the load can never fall."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how the lifting job is broken into parts and list candidate mechanisms for each, with one reason for or against each.",
+      "expected_answer": "The job is split into lifting, moving sideways, applying the input and guiding the load. Lifting: a block and tackle with four load-bearing ropes gives advantage 4 over the full height but the load swings; a hydraulic bottle jack gives a large advantage but only about 150 millimetres of stroke; a worm-geared hand winch gives a large advantage and holds itself but costs more. Moving sideways: a rack and pinion slide, a trolley on rails or a swinging boom. Input: a crank handle is easier than a rope for repeated lifts. Guiding: a frame with vertical guides or a scissor platform prevents swinging. Each is tabulated with advantage, travel, speed, cost and main problem."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how hazards are matched to control systems in the investigation and what the written summary should contain.",
+      "expected_answer": "Each hazard is listed with the control that addresses it: the load falling is prevented by a cleat or, better, a ratchet and pawl on a winch drum, or by a self-locking worm winch; a platform sliding off the shelf by a stop or brake; pinch points at gears and ropes by guards; over-travel at the top by a limit. Ergonomics is investigated by measuring the user's comfortable force and handle height, and space by noting that the machine must not block the doorway. The summary states the need in one sentence, the key numbers, the shortlist of mechanisms and controls with reasons, and the questions still open, so the design brief rests on facts."
+    }
+  ]
+}

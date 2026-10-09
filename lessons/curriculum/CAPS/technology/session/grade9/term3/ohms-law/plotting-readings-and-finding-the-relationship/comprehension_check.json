@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how the graph for the Ohm's law investigation is set up and plotted, including axes, scales and points.",
+      "expected_answer": "Potential difference in volts is plotted on the vertical axis and current in amperes, or milliamperes, on the horizontal axis, so that the gradient gives resistance directly; each axis is labelled with its quantity and unit. Scales are chosen so the points fill most of the paper, for example 1 volt per two large squares and 10 milliamperes per two large squares, both starting at zero because the origin is a meaningful point, and running in even steps. The mean readings for one, two and three cells, about 1.45 volts and 14.5 milliamperes, 2.9 and 29, and 4.4 and 44, are plotted as small neat crosses and checked against the table before any line is drawn."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain what a line of best fit is, why it is drawn rather than joining the points, and what a straight line through the origin shows about the relationship between voltage and current.",
+      "expected_answer": "A line of best fit is a single straight line drawn with a ruler as close as possible to all the plotted points, with roughly as many above as below, and here through the origin since zero voltage gives zero current. It is drawn instead of joining the points because each point carries small measurement errors and a dot-to-dot zigzag would present those errors as real changes in the resistor's behaviour, whereas the line averages them and shows the underlying relationship. A straight line through the origin shows direct proportionality: voltage divided by current is the same at every point and doubling the voltage doubles the current, confirming Ohm's law for the resistor at constant temperature, in contrast to the curve of a heating lamp or the offset line of a diode."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the resistance is found from the graph, compare it with the marked value, and write a suitable conclusion for the investigation.",
+      "expected_answer": "The gradient of the line is found from two widely separated points on it as the change in voltage divided by the change in current, with current in amperes: from the origin to 4.4 volts at 0.044 amperes gives 4.4 over 0.044, which is 100 volts per ampere, and a volt per ampere is an ohm, so the resistance is about 100 ohms. The marked value, brown black brown gold, is 100 ohms within 5 percent, so a graphical value between 95 and 105 agrees. Conclusion: the graph of potential difference against current is a straight line through the origin, so the current through the resistor is directly proportional to the potential difference across it, confirming Ohm's law; the gradient gives a resistance of about 100 ohms, agreeing with the marked value within tolerance; the cells' internal resistance reduced the voltages slightly below 1.5 volts per cell without affecting the gradient."
+    }
+  ]
+}

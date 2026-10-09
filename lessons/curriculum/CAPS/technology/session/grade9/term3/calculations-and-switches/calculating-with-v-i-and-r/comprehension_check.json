@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Set out a full Ohm's law calculation for the current through a 470 ohm resistor on a 4.5 volt supply and explain the purpose of each line.",
+      "expected_answer": "Line one, known and wanted: V equals 4.5 volts, R equals 470 ohms, I is required. Line two, the formula in the needed form: I equals V over R. Line three, substitution with units: I equals 4.5 volts over 470 ohms. Line four, calculation: I equals 0.0096 amperes. Line five, answer and check: 9.6 milliamperes, a sensible current for a small resistor on a battery. Writing the knowns prevents using the wrong quantity, the formula line shows the method, substitution with units catches conversion errors such as unconverted milliamperes, and the final sense check catches slips such as an answer in amperes or kiloamperes that could not occur in a battery circuit."
+    },
+    {
+      "id": "cc2",
+      "question": "State the rules for resistors in series and use them to find the LED series resistor for 4.5, 6 and 9 volt supplies at 10 milliamperes.",
+      "expected_answer": "In series the same current flows through every component and the resistances add; the supply voltage is shared between them in proportion to their resistances because V equals I times R applies to each with the common current. An LED in series with its resistor takes a fixed 2 volts and the resistor takes the remainder. On 4.5 volts the resistor has 2.5 volts and R equals 2.5 over 0.01, which is 250 ohms, so 270 ohms is chosen. On 6 volts it has 4 volts, giving 400 ohms, so 390 ohms. On 9 volts it has 7 volts, giving 700 ohms, so 680 ohms. The next standard value up is chosen where a lower, safer current is preferred."
+    },
+    {
+      "id": "cc3",
+      "question": "State the rules for resistors in parallel, calculate the total current drawn by the PAT circuit with its LED branch and a 15 milliampere buzzer branch both on, and estimate battery life in standby and in warning.",
+      "expected_answer": "In parallel each branch has the full supply voltage across it, each branch's current is found separately by Ohm's law, the currents add to give the total, and the combined resistance is less than the smallest branch. The LED branch on 4.5 volts with a 470 ohm resistor and a 2 volt LED draws 2.5 over 470, about 5.3 milliamperes; the buzzer branch draws 15 milliamperes; the total with both on is about 20 milliamperes, or 5.3 with the buzzer silenced. With a 2000 milliampere-hour battery, standby life is effectively years because the reed switch is open and the current is zero; in warning with the LED alone, 2000 over 5.3 gives about 380 hours, over two weeks; with the buzzer as well, 2000 over 20 gives about 100 hours. The six-month specification is met because the device draws nothing in standby."
+    }
+  ]
+}

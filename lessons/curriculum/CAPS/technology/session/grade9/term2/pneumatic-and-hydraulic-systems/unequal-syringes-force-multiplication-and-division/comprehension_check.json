@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why a small master syringe driving a large slave syringe multiplies force, and describe what happens to the distance moved.",
+      "expected_answer": "The push on the small master plunger produces a pressure in the fluid. That same pressure acts over the whole face of the large slave plunger, which has a greater area, so the total force on it is greater in the same proportion as the area: if the slave area is 2.5 times the master area, the output force is about 2.5 times the input force, giving a mechanical advantage above 1. Because the same volume of liquid moves from one cylinder to the other and the slave has a larger area, the slave moves a shorter distance, 8 millimetres for 20 millimetres of master travel in that example. Force is multiplied and distance divided by the same ratio."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe what happens when the large syringe is the master and the small one is the slave, and relate the two arrangements to each other.",
+      "expected_answer": "The push on the large master is spread over a large area, producing a low pressure, which acting on the small slave's small area gives a small force, so the force is divided and the mechanical advantage is below 1. The same volume of liquid moving into the narrow slave cylinder moves its plunger a long way, so distance is multiplied, for example 8 millimetres in gives about 20 millimetres out. The two arrangements are the same system driven from opposite ends: the plunger with the larger area always carries the larger force and moves the shorter distance, so choosing which end is the master chooses whether force or distance is multiplied, as with moving a lever's pivot or choosing which gear drives."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the investigation that measures the force and distance trade-off for unequal syringes, and state the conclusion including the role of force times distance.",
+      "expected_answer": "With a water-filled, bubble-free 5 and 20 millilitre pair, push the small master a measured 20 millimetres and record the slave's movement, averaging repeats; place masses of 200, 500 and 1 000 grams on the slave and measure with a spring balance the force on the master needed to lift each; record input force, output force and their ratio; then swap master and slave and repeat with the same pushes and masses. Expected: about 2.5 times the force and about 2.5 times less distance with the small master, and the reverse with the large master, slightly less than ideal because of friction. Input force times input distance roughly equals output force times output distance, so energy in equals energy out less friction, and a hydraulic system multiplies force only by dividing distance."
+    }
+  ]
+}

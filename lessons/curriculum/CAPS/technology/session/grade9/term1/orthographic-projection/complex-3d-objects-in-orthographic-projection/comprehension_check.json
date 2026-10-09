@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how a 45 degree chamfer along the top front edge of a block appears in the front, top and side views, and state which view shows its true angle.",
+      "expected_answer": "In the side view, which looks along the chamfer, it appears as a true sloping line at 45 degrees joining a point on the front face to a point on the top face; this view shows the true angle. In the front view the chamfer is seen edge-on and appears as a horizontal line below the top edge, with the sloping face foreshortened into a strip. In the top view it appears as a foreshortened strip along the front edge. Only the view along the chamfer's length shows its real angle."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how a hole drilled through a block from the top is drawn in the three views, including the line types and centre lines.",
+      "expected_answer": "In the top view the hole is a circle drawn with the compass set to the radius, with two thin chain centre lines crossing at its centre; it is dimensioned by its diameter with a leader line. In the front and side views the hole is hidden, so it appears as two dashed vertical lines the diameter apart running from the top face to the bottom face, with a thin chain centre line between them. If the hole does not go through, the dashed lines stop at the hole's depth and are closed by a dashed line."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain the method for reading three given views back into a solid object and how to check your answer.",
+      "expected_answer": "Start with the simplest view and identify its features. Take each feature and find it in the other two views along the projection lines: a circle must appear as parallel dashed or dark lines elsewhere, a notch in one outline as a line across the others, a sloping line as a foreshortened face. Build up the object feature by feature. Check by sketching the object in isometric and projecting it mentally back into three views: every line in the given views must be explained by an edge of the object, and every edge of the object must appear in the views."
+    }
+  ]
+}

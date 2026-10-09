@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how you would choose the views and the scale for a working drawing of the stairs and ramp, and justify your choices.",
+      "expected_answer": "Three views are needed: a front view, a plan below it showing widths, treads and landing, and a side view on the opposite side showing the step profile and ramp gradient; the view with most information, often the side, may be used as the front. The structure is about 10 metres long and 1 500 high including rails, so on A4 landscape a scale of 1:50 gives about 200 by 30 millimetres, leaving room for dimensions and a title block, while a riser of 150 is still 3 millimetres and drawable; 1:50 is a standard scale and is written in the title block."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain the order of steps for producing the drawing and how the views are kept aligned.",
+      "expected_answer": "Convert the brief's sizes once in a table. Draw a feint ground line and set out the front view from the converted sizes. Drop feint vertical projection lines to draw the plan directly below with matching widths. Project heights across with feint horizontal lines and transfer depths from the plan with a 45 degree line to draw the side view on the right. Add hidden detail dashed, correct line types, add dimensions in real sizes once each, and complete the title block. The feint projection lines, left on the drawing, keep widths and heights aligned between views."
+    },
+    {
+      "id": "cc3",
+      "question": "List the dimensions you would place in the side view and in the plan of the stairs and ramp, and state two checks that confirm the drawing matches the brief.",
+      "expected_answer": "Side view: risers as 4 at 150 equals 600, treads as 4 at 250 equals 1 000, overall rise 600, handrail height 900. Plan: stair width 1 200, ramp width 1 200, ramp length 7 200, landing 1 200, overall length. Checks: ramp length divided by rise equals 12, confirming 1 in 12; number of risers times riser height equals the rise of 600; also confirm dimensions are real sizes not scaled, and that widths in the plan sit directly below the same widths in the front view."
+    }
+  ]
+}

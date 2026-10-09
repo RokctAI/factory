@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the standards for a circuit diagram of a design idea and describe the diagram for a simple float-switch tank indicator with a test button.",
+      "expected_answer": "The diagram uses standard symbols, straight wires with right-angle corners and junction dots, the supply on the left with positive at the top and the signal flowing from sensor to output left to right; every component carries its value or type, and polarised components, the battery, LED and any diode or electrolytic capacitor, are drawn the correct way round with the LED's triangle pointing from positive toward negative. The float-switch indicator is a 4.5 volt battery in series with a float switch that closes when the level falls, a 470 ohm resistor and a high-brightness red LED, with a push-button test switch connected in parallel with the float switch so that either closes the loop. Tracing from positive confirms the LED lights when the level is low or the button is pressed."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe what a 3D sketch of the device must show and explain how it is checked against the circuit diagram.",
+      "expected_answer": "The 3D sketch shows the device as the user sees it: the indoor indicator as a small box on the windowsill with the LED and test button on its front face, the battery holder inside shown by a cut-away or dotted outline and the wire leaving the back; the outdoor sensor unit on the tank with its housing and the wire running down the stand; a hand or figure for scale; labels on the main parts; and approximate dimensions such as a 90 by 60 by 30 millimetre box and a 12 metre wire. It is checked by confirming that every component on the circuit diagram has a physical place in the sketch, the LED on the face, the resistor and any transistor on a board inside, the battery in its holder, switches reachable and the sensor at the tank, and that the enclosure is large enough to hold them."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how the team chooses a final solution and justify a combined design for the tank indicator.",
+      "expected_answer": "The team draws a table with the brief's numbered specifications and constraints down the side and the ideas across the top, filling each cell with a tick, cross or note. For the tank indicator: the reed switch idea needs no hole in the tank, is sealed against rain and draws no standby current, so it has the best sensor; the probe and transistor idea has the best output, a flashing high-brightness LED with a silenceable buzzer, but its probes corrode and it draws standby current; the float switch idea is simplest and cheapest. The final solution combines the sealed reed switch and magnet float, the flashing LED and silenceable buzzer, and the simple series circuit without a transistor since the reed switch can carry the LED current, with the reasons written against specification numbers and the final diagram and sketch redrawn clean with a costed parts list."
+    }
+  ]
+}

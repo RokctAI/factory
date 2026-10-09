@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Write a one-sentence design brief for the tank warning device and explain how each phrase is justified by the investigation.",
+      "expected_answer": "Design and make a device that warns a household when the water in their outdoor tank is nearly empty, showing the warning clearly inside the house, for a family in Mahikeng without reliable mains electricity. The product and job, a device that warns of a nearly empty tank, come from the investigated problem of taps running dry without warning; showing the warning clearly inside the house comes from the grandmother's weak eyesight and her request for a light visible from the kitchen window; the user and setting, a family without reliable mains, come from the recorded setting of an outdoor tank on a stand with battery power only. No circuit or component is named, so the sentence describes the need and not a solution."
+    },
+    {
+      "id": "cc2",
+      "question": "Give six measurable specifications for the device, covering input, output, supply, enclosure and use, and explain how an untestable specification is rewritten.",
+      "expected_answer": "Input: detect when the water falls below one fifth of the tank without the tank being opened. Output: show a warning visible from the kitchen window at ten metres in daylight, with any sound switchable off. Supply: run from a 4.5 or 6 volt battery drawing less than 0.5 milliamperes while the tank is full, so the battery lasts six months. Enclosure: the sensor must survive rain and sun outdoors and the wire to the indoor unit must be at least twelve metres and protected. Use: include a test button so the battery can be checked and be operated by the user on the first attempt with a single label. Size: the indoor unit no larger than a cellphone. An untestable specification such as must be reliable is rewritten as operates correctly on twenty consecutive tests, so that the evaluation can record a pass or fail."
+    },
+    {
+      "id": "cc3",
+      "question": "Distinguish specifications from constraints, list the constraints for the PAT device, and explain why evaluation criteria are written in the brief.",
+      "expected_answer": "Specifications describe what the device must do and have, and are written by the team from the investigation; constraints are limits imposed from outside that the team cannot change. The constraints are: components from the class kit and the local electronics shop; a stated budget of about 80 rand beyond the kit; the time of weeks 3 to 9 for design and making; no mains electricity in the device; and a full-size model for a small indicator. Evaluation criteria, a test for each numbered specification and judgement under fitness for purpose, safety, ergonomics, cost and aesthetics, are written in the brief before the device exists so that the team cannot later choose tests the device happens to pass, and so every member knows what a successful device looks like."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how a capacitor stores charge and energy, state the unit of capacitance and its common fractions, and give the circuit symbol.",
+      "expected_answer": "A capacitor is two metal plates, often rolled foils, separated by a thin insulating dielectric. Connected across a battery, electrons are pushed onto one plate and drawn off the other, so one plate becomes negative and the other positive, and charge builds until the voltage between the plates equals the battery voltage, after which current stops; the energy is stored in the electric field between the plates and remains when the battery is disconnected. Capacitance, the charge stored per volt, is measured in farads; as a farad is very large, practical values are in microfarads, millionths, nanofarads, thousand-millionths, and picofarads, million-millionths. The symbol is two parallel lines with a gap and leads from the outer sides, with a curved line or plus sign marking the positive plate of a polarised capacitor."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why charging a capacitor through a resistor slows down, state the time rule and calculate the time for a 10 kilohm resistor and a 100 microfarad capacitor.",
+      "expected_answer": "At the first instant the capacitor has no voltage, so the whole battery voltage is across the resistor and the current is largest. As charge accumulates the capacitor's voltage rises and opposes the battery, leaving less voltage across the resistor, so by Ohm's law the current falls and charge arrives more slowly; the capacitor voltage approaches the battery voltage ever more gradually. The capacitor reaches about two thirds of the supply voltage after a time equal to resistance times capacitance, and is nearly full after about five times that. For 10 kilohms and 100 microfarads, 10 000 ohms times 0.0001 farads gives 1 second, so the capacitor is nearly fully charged after about 5 seconds; doubling either value doubles the time, which is the basis of simple timers."
+    },
+    {
+      "id": "cc3",
+      "question": "Compare ceramic and electrolytic capacitors, state the polarity and voltage rules for electrolytics, and give three uses of capacitors in simple circuits.",
+      "expected_answer": "Ceramic and film capacitors are small discs or blocks with values from picofarads to a few microfarads, marked with codes such as 104 for 100 nanofarads, and are not polarised, so they can be connected either way. Electrolytic capacitors are aluminium cans giving large values, 1 to thousands of microfarads, but are polarised: a stripe marks the negative lead, which is also shorter, and it must connect toward the negative side of the circuit; the rated voltage printed on the can must exceed the circuit voltage, since a reversed or over-voltaged electrolytic heats, swells and can burst. Uses: smoothing the pulses after the diodes in a charger to give a steady output; timing, where a capacitor charging through a resistor delays a transistor switching; and storing a burst of energy, as in a camera flash, or holding an LED on briefly after a momentary sensor contact."
+    }
+  ]
+}

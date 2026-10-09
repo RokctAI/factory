@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Draw in words the LED circuit with a 470 ohm resistor, a switch and a 4.5 volt battery, and trace it to predict its behaviour and current.",
+      "expected_answer": "A 4.5 volt battery is drawn on the left with positive at the top. A wire runs from the positive terminal to a switch, drawn open and labelled with its type, then to a resistor rectangle labelled 470 ohms, then to the LED, drawn as a diode triangle pointing toward the negative side with two arrows leaving it and labelled with its colour, and from the LED's cathode back to the negative terminal, forming one loop with straight wires and right-angle corners. With the switch open there is a gap and the LED is dark. With the switch closed, conventional current flows from positive through the switch, drops about 2.5 volts across the resistor, passes through the LED dropping about 2 volts and lighting it, and returns to negative; the current is 2.5 divided by 470, about 5.3 milliamperes, safe and visible."
+    },
+    {
+      "id": "cc2",
+      "question": "Draw in words the LDR and buzzer circuit on a 3 volt battery and explain when and why the buzzer sounds.",
+      "expected_answer": "A 3 volt battery is drawn with positive at the top. From positive, a fixed resistor of 10 kilohms, or a variable resistor, runs down to a junction, and the LDR runs from the junction to negative, forming a divider. From positive a second path runs through the buzzer, labelled with its polarity, to the collector of an npn transistor whose emitter goes to negative. The junction connects through a 10 kilohm base resistor to the base; the transistor is labelled with its type and legs. In bright light the LDR's resistance is low, pulling the junction and base below 0.6 volts, so the transistor is off and the buzzer silent. When light falls, the LDR's resistance rises to hundreds of kilohms, the fixed resistor pulls the junction toward positive, the base exceeds 0.6 volts, the transistor turns on and the buzzer sounds. Swapping the LDR and fixed resistor inverts the action."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how the two circuits are built on a breadboard, checked and tested, and name the commonest faults.",
+      "expected_answer": "The breadboard joins holes in rows of five across the middle and in long supply rails at the sides. The battery clip goes to the rails, red to positive and black to negative, and each component is placed row by row following the diagram: switch, resistor, LED with its long leg toward positive, or for the second circuit the divider, the base resistor, the transistor with legs checked against the kit card and the buzzer with its positive lead toward the rail. Before power, every component and connection is checked against the diagram. Testing follows the prediction: the LED lights when the switch is pressed, with about 2.5 volts measured across the resistor and 2 across the LED; the buzzer sounds when the LDR is covered and stops in light, with the variable resistor set so it just stops in the room's light. Faults are found in order: battery and clip, LED polarity, miscounted rows, transistor legs; readings and results are recorded beside the diagram."
+    }
+  ]
+}

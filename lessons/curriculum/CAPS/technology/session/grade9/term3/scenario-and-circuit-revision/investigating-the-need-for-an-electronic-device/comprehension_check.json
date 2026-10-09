@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe how a scenario for an electronic device is investigated, using the water tank warning example, and state what is recorded about the users and the setting.",
+      "expected_answer": "The scenario is read as a problem of detecting a condition and telling someone: the family cannot see the water level in an opaque tank and discovers it is empty only when a tap runs dry. The main user, the grandmother with weak eyesight who checks often, and the secondary users, the children, are described, along with the setting: an outdoor tank in strong sunlight, the family ten metres away in the kitchen, no mains electricity at the tank, and exposure to rain and sun. Constraints such as a small budget and components from a local shop are noted, together with what the device must not do: open the tank, use mains near water, drain its battery quickly or be too complex to repair."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why existing solutions and a user interview are part of the investigation and what each contributes.",
+      "expected_answer": "Existing solutions, from banging on the tank to float switches, LED ladders and ultrasonic gauges, are compared for what they sense, how they show the result, what they cost and what power they need; they reveal the circuits that could be used, such as a float switch being a simple switch, cell and lamp circuit, and show where each misses the particular need, for example by requiring mains power or sitting on the tank rather than in the kitchen. The user interview asks when the warning is needed, where it should appear, whether light or sound is preferred and how often a battery may be changed; the grandmother's answers, a bright light visible from the kitchen window and no buzzer at night, directly shape the specifications and are recorded as evidence."
+    },
+    {
+      "id": "cc3",
+      "question": "State the device as input, process and output and list the resulting electronic requirements for the circuit.",
+      "expected_answer": "Input: a sensor that detects the water level, such as a float switch or probes that lose contact when the water falls below them. Process: the decision that the level is low, made by the switch closing or a transistor turning on. Output: a bright LED visible from the kitchen window, possibly flashing, with an optional buzzer that can be switched off. Electronic requirements: a sensor that changes state at the chosen level; a switch or transistor to respond; a high-brightness LED with a series resistor to protect it; a battery of about 4.5 or 6 volts; very low current drain when the tank is full; a waterproof enclosure; and a long two-core wire from tank to kitchen or a sensor at the kitchen end."
+    }
+  ]
+}

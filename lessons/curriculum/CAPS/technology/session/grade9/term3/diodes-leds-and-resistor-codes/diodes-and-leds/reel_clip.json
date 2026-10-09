@@ -1,0 +1,15 @@
+{
+  "element_type": "lesson_reel",
+  "lesson_id": "technology_g9_diodes_and_leds",
+  "lesson_title": "Long Leg to Plus",
+  "hook_text": "Everyone kills one LED. Here is why it died and how the next one lives.",
+  "hook_source_file": "script.md",
+  "clip_script": "A diode is a one-way valve. Triangle pointing at a bar; current goes the way the triangle points. Backwards, it blocks. Chargers, solar systems, motor protection, all diodes. An LED is a diode that glows. Long leg to plus, flat spot is minus. It drops about 2 volts and has almost no resistance, so straight across a 4.5 volt battery the current runs away and it dies in a flash. The fix is a resistor in series, a few hundred ohms, to take the spare 2.5 volts and hold the current around 10 milliamperes. 470 ohms in your PAT. Every LED gets its own resistor. Not lighting? It is probably backwards. Flip it.",
+  "visual_style": "Whiteboard diode symbol with a flow arrow and a blocked arrow; an LED with long leg marked plus; a flash and X for the unprotected LED; a resistor sliding into the loop; 4.5 - 2 = 2.5 written.",
+  "mood": "Friendly and a little rueful, like a lab partner confessing.",
+  "pacing": "Valve, uses, LED legs, death, resistor, 470, flip it.",
+  "call_to_action": "Watch the full lesson and build a one-LED circuit with a 470 ohm resistor on a 4.5 volt battery.",
+  "platform": "tiktok",
+  "duration_seconds": 60,
+  "guardrail_applied": "age_13_17"
+}

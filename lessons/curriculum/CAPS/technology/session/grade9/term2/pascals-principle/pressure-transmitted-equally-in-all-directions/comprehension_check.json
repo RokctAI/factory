@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define pressure, give its unit, and explain with an example why the same force can produce very different pressures.",
+      "expected_answer": "Pressure is force divided by the area over which it acts; the unit is the pascal, one newton per square metre, with 100 kilopascals being roughly atmospheric pressure. The same 10 newton push on a thumb spread over a few square centimetres gives a modest pressure, but on the point of a drawing pin, with an area of a fraction of a square millimetre, it gives a pressure thousands of times greater, so the pin pierces the desk and the thumb does not. Rearranged, force equals pressure times area, so the same pressure on a larger area gives a larger force."
+    },
+    {
+      "id": "cc2",
+      "question": "State Pascal's principle, including its conditions, and explain how it accounts for force multiplication in unequal cylinders.",
+      "expected_answer": "Pascal's principle: when pressure is applied to a confined, incompressible fluid at rest, the change in pressure is transmitted undiminished to every part of the fluid and to the walls of its container, acting equally in all directions. The conditions are a sealed system, a liquid, and no significant flow. A push on a small master plunger produces a pressure equal to force over its small area; that pressure is transmitted unchanged to the large slave plunger; there force equals pressure times the large area, so the output force exceeds the input in the ratio of the areas. The same pressure can reach several slaves at once through pipes of any length."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe two demonstrations of Pascal's principle and explain how the principle operates in a car's hydraulic brake system.",
+      "expected_answer": "A capped plastic bottle of water with four holes at the same height gives four equal jets when squeezed anywhere, and all strengthen together when squeezed harder; a water-filled balloon squeezed at one point bulges equally everywhere else; one master syringe connected to four slaves moves all four together. In the brakes, the pedal pushes a master cylinder, fluid fills sealed pipes to a slave cylinder at each wheel, and the pressure is the same at all four at the same instant so the brakes apply together and the car stops straight; larger front slave cylinders give larger force from the same pressure by force equals pressure times area; a leak would drop the pressure everywhere, so cars use two independent circuits."
+    }
+  ]
+}
