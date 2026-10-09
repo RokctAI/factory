@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the structure of a truth table, state how many rows two, three and four inputs require and why, and explain how rows are ordered and why that matters.",
+      "expected_answer": "A truth table has one column per input followed by an output column, and one row for every possible combination of input values with that combination's output written at the end. Two inputs each able to be 0 or 1 give four rows, three inputs give eight and four give sixteen, because each added input doubles the rows by repeating every existing combination once with the new input at 0 and once at 1. Rows are ordered by counting upwards in binary, 00, 01, 10, 11, with the rightmost column alternating 0, 1 every row, the next every two rows and the next every four, so that no combination is omitted or repeated and two people's tables for the same gate match line by line. The table says everything and only what matters, removing the ambiguity of word descriptions, can be checked against a real circuit row by row, and serves as the design document that a system is built to and tested against, as the panic button's truth table will be."
+    },
+    {
+      "id": "cc2",
+      "question": "Write out the AND truth table, describe its signature shape, and explain how it is verified on the bench and recorded.",
+      "expected_answer": "A 0 B 0 output 0; A 0 B 1 output 0; A 1 B 0 output 0; A 1 B 1 output 1, so the output column is a single 1 in the bottom row with 0s above, the signature of AND, where output is 1 only when every input is 1. It is verified on the series-switch circuit of cell, switch A, switch B and lamp in one loop by setting the switches to each row in turn and comparing the lamp with the table: both open dark, tick; A open B closed dark, tick; A closed B open dark, tick; both closed lit, tick. A disagreeing row shows the circuit or table is wrong, as when switch B is wired across the lamp instead of in series so the lamp lights with A alone and row three fails, pointing to the fault. The test is recorded with predicted and observed columns ticked or crossed per row; marks reward a table matching the gate, a circuit matching the table, and the testing that connects them, with finding and fixing a mismatch being the real work."
+    },
+    {
+      "id": "cc3",
+      "question": "Write out the OR truth table, compare it with the AND table, and explain how to read a table back into a gate and a switch circuit, with examples.",
+      "expected_answer": "A 0 B 0 output 0; A 0 B 1 output 1; A 1 B 0 output 1; A 1 B 1 output 1, so the output column is a single 0 in the top row with 1s below, the signature of OR, verified on the parallel-switch circuit row by row. Side by side the input columns are identical and only the output differs: AND and OR agree on the first row, both 0, and the last, both 1, and disagree on the two middle rows where exactly one input is 1, AND giving 0 and OR giving 1, so a tester must try the mixed cases to tell the gates apart. Reading backwards, a single 1 at the bottom is AND built from switches in series, a single 0 at the top is OR built from switches in parallel; a car interior light that comes on when either door opens has a 1 in every row but the first, so OR with two door switches in parallel with the lamp; a lift moving only with doors closed and a button pressed has a 1 only in the last row, so AND with two switches in series with the motor; an eight-row table with a single 1 in the last row is a three-input AND with three switches in series, and a single 0 in the first row is a three-input OR with three switches in parallel."
+    }
+  ]
+}
