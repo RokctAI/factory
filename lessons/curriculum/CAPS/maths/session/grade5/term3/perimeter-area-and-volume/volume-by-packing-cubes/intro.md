@@ -1,0 +1,1 @@
+Today we find the volume of boxes by packing them with cubes, and the capacity of containers by filling them, and we learn why volume is measured in cubic units. A Grade 5 class in Paarl helps a local fudge maker pack cube-shaped fudge into gift boxes, counting layers to see how many pieces each box holds.

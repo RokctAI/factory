@@ -1,0 +1,1 @@
+Today we do simple experiments with coins, dice and spinners, list all the possible outcomes, and count what actually happens in up to 20 trials. A Grade 5 class in Bethlehem holds a maths games afternoon, and we record their results, compare them, and see why real results are seldom perfectly even.

@@ -1,0 +1,1 @@
+Today we estimate and measure length with rulers, metre sticks, tape measures and trundle wheels, and we record, compare and order lengths in millimetres, centimetres, metres and kilometres. A Grade 5 class in Ladysmith measures everything from a pencil to the school field for a sports day, choosing the right tool for each job.

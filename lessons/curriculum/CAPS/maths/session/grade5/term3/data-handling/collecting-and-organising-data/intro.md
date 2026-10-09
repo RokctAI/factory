@@ -1,0 +1,1 @@
+Today we start the data cycle: asking a clear question, collecting answers with tally marks, recording them in a table and ordering the groups from smallest to largest. A Grade 5 class in George wants to know how learners get to school, and we follow their survey from the first question to a neat, ordered table.

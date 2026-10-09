@@ -1,0 +1,1 @@
+Today we read and interpret data shown in words, pictographs, bar graphs and pie charts, and we learn to read them critically. A community vegetable garden in Polokwane reports on its harvest, its volunteers and its garden beds, and we answer questions from each kind of display and spot graphs that could mislead.

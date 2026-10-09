@@ -1,0 +1,1 @@
+Today we turn tables of data into pictures: pictographs, where one symbol stands for several things, and bar graphs with a title, labels and a scale. A Grade 5 class in Mthatha records how many library books are borrowed each day and which sports learners like best, and we draw clear, honest graphs of both.

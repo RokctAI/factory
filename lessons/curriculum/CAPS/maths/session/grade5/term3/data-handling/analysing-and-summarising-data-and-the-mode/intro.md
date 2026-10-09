@@ -1,0 +1,1 @@
+Today we finish the data cycle: we analyse data by asking good questions about it, summarise it in a short paragraph, draw conclusions and make predictions, and find the mode, the value that appears most often. A Grade 5 class in Mahikeng surveys break-time activities and shoe sizes, and we turn their numbers into clear statements and sensible decisions.

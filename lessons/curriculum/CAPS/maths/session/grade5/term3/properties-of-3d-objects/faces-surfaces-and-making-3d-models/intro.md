@@ -1,0 +1,1 @@
+Today we describe, sort and compare solid objects by the shapes of their faces, how many faces they have, and whether their surfaces are flat or curved. A Grade 5 class in Rustenburg runs a recycling project, building models from cut-out shapes and cutting open old boxes to see the flat nets they were folded from.

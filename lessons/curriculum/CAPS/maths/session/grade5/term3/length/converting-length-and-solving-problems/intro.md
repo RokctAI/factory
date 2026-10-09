@@ -1,0 +1,1 @@
+Today we change lengths between millimetres, centimetres, metres and kilometres, including fractions like half a kilometre, and we use these conversions to solve problems. A Grade 5 class in Knysna helps to plan a 5 km fun run, working out route sections, ribbon for medals and the places for water stations.
