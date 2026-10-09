@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why an idler gear makes the first and last gears of a train turn in the same direction, prove with a 30-tooth driver, a 12-tooth idler and a 30-tooth driven gear that the idler does not change the velocity ratio, and state the rule for direction in a simple gear train.",
+      "expected_answer": "Each mesh reverses direction, so the driver turns the idler backwards and the idler turns the driven gear forwards again, leaving the first and last gears turning the same way. One turn of the 30-tooth driver pushes 30 teeth past the first mesh, turning the 12-tooth idler 30 over 12, two and a half turns; those turns push 30 teeth past the second mesh, turning the 30-tooth driven gear exactly once, so the ratio is 1 to 1; with a 20-tooth idler it turns one and a half times, still pushing 30 teeth, and the ratio is unchanged, because the idler is driven and driving with the same teeth. The overall velocity ratio of a train is the final driven gear's teeth over the first driver's teeth, idlers set only direction, and in a simple train an odd number of gears gives the same direction at both ends while an even number gives the opposite."
+    },
+    {
+      "id": "cc2",
+      "question": "Define synchronised rotation, explain why gears rather than belts or chains are used to achieve it, and describe how a double-drum winder and two other machines use it.",
+      "expected_answer": "Synchronised rotation is two or more shafts turning at exactly the same speed in a fixed relationship so they never drift out of step. Belts slip under load and chains stretch as they wear, but gears cannot slip and hold the relationship exactly, with an idler used where the shafts must also turn the same way. A double-drum winder has two drums with ropes wound in opposite senses so one conveyance rises as the other descends; geared together they stay in step so both cages reach their landings together. Conveyor rollers are geared through idlers to turn at the same speed in the same direction; a printing press keeps its cylinders in step so the image lands in the same place, with feed rollers synchronised through idlers; a car's camshaft turns at exactly half crankshaft speed so valves open at the same point every cycle; a clock's hour and minute hands turn the same way at a fixed 12 to 1 through a train with idlers."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why an idler's teeth experience more wear than those of the gears it connects, why idlers are made of a harder material, the risk of making them too hard, and what to check on a model gear train.",
+      "expected_answer": "An idler meshes with two gears, so each of its teeth is pushed by the driver and pushes the driven gear on every revolution, twice the contact of a tooth on a gear with one mesh; a small idler also turns faster than its larger neighbours, so each tooth passes a meshing point more often, giving more contact, sliding and wear. Making the idler of a harder or tougher material, hardened steel among mild steel, bronze among brass, or the metal gear in a plastic kit, means it wears slowly and the train wears evenly. If the idler is too hard and brittle it can chip a tooth and jam, or wear the softer gears it meshes with, so a harder but still tough material is chosen, and lubrication and scheduled inspection of idlers and small pinions reduce failures. On a model, use the hardest gear as the idler, keep the train short and the idler no smaller than needed, and after test runs check for a gear running warm or shedding plastic dust."
+    }
+  ]
+}

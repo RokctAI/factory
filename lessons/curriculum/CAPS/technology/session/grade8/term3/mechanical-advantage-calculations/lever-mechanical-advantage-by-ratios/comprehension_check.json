@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Define mechanical advantage in terms of forces, explain what values above, equal to and below one mean with an example of each, and explain why a mechanical advantage of six means the effort moves six times as far as the load.",
+      "expected_answer": "Mechanical advantage is load divided by effort, both in newtons, so it has no unit; a crowbar lifting 600 newtons with 100 newtons of effort has a mechanical advantage of 6. Above one the machine multiplies force, as in a crowbar or wheelbarrow; equal to one it changes only direction or position, as in a single fixed pulley or a seesaw with equal arms; below one it multiplies distance or speed at the cost of force, as in a broom, fishing rod, cricket bat or the forearm. Work in equals work out apart from friction, and work is force times distance, so if the load is six times the effort the effort must move through six times the distance, which is why the crowbar handle swings far while the slab rises little."
+    },
+    {
+      "id": "cc2",
+      "question": "Define effort arm and load arm, derive mechanical advantage as effort arm over load arm, and explain why a second-class lever always has mechanical advantage above one and a third-class lever always below one.",
+      "expected_answer": "The effort arm is the distance from the fulcrum to the point where the effort acts and the load arm is the distance from the fulcrum to the load. A rigid bar turning about the fulcrum moves each point a distance proportional to its distance from the fulcrum, so the effort moves in proportion to the effort arm and the load in proportion to the load arm; since effort times its distance equals load times its distance, effort times effort arm equals load times load arm, giving mechanical advantage equals effort arm over load arm, which agrees with load over effort. In a second-class lever the load lies between the fulcrum and the effort, so the effort arm is always longer than the load arm and the ratio is always above one, as in a wheelbarrow or bottle opener; in a third-class lever the effort lies between the fulcrum and the load, so the effort arm is always shorter and the ratio is always below one, as in a broom or tweezers."
+    },
+    {
+      "id": "cc3",
+      "question": "Calculate the mechanical advantage of a crowbar with effort arm 1.2 metres and load arm 0.2 metres lifting a 600 newton slab, a wheelbarrow with handles 1.5 metres and load 0.5 metres from the axle carrying 400 newtons, and a brake lever with finger 80 millimetres and cable 20 millimetres from the pivot, and explain why the measured value for the crowbar is lower than the calculated one.",
+      "expected_answer": "Crowbar: 1.2 over 0.2 gives 6, so the ideal effort is 600 over 6, 100 newtons. Wheelbarrow: 1.5 over 0.5 gives 3, so the effort is 400 over 3, about 133 newtons, and moving the load towards the wheel shortens the load arm and raises the advantage. Brake lever: 80 over 20 gives 4, so a 30 newton finger pull puts 120 newtons on the cable, which moves a quarter as far as the finger. The measured crowbar effort, about 110 newtons giving an actual mechanical advantage of about 5.5, is higher than ideal because friction at the fulcrum and the weight of the bar itself absorb some effort, so the actual value is below the ideal from the arms, and both are reported with the reason."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why electrical pylons are built as open lattice frames rather than solid posts, and name two other pylon designs with the situations in which they are used.",
+      "expected_answer": "The loads (cable weight and pull, wind, self-weight) are carried by the four corner legs and the bracing between them, so the material a solid post would have elsewhere does little; leaving it out saves steel, weight and transport cost and lets the wind blow through. Lattice towers can be transported as angles and bolted together on remote sites. Other designs: monopole (single tubular pole) used near towns and roads where land is scarce and appearance matters; guyed mast (thin mast held by anchored cables) used in flat open country where land is available; heavier tension or angle towers at corners where cables pull sideways."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how cross-bracing stiffens a pylon panel when the wind blows, and explain a second job the bracing does for the corner legs.",
+      "expected_answer": "Two diagonals crossing in a panel divide it into triangles, which cannot change shape without stretching or crushing a member. When wind racks the panel towards a parallelogram, one diagonal is stretched (tension) and the other shortened (compression); both resist and hold the panel square, with roles swapping when the wind reverses. The bracing also connects to the long slender legs every metre or two, holding them straight so that each short section cannot buckle (bow sideways) under compression, which allows thinner legs."
+    },
+    {
+      "id": "cc3",
+      "question": "List three advantages and three disadvantages of the lattice pylon, and explain how the final judgement depends on the purpose and situation.",
+      "expected_answer": "Advantages: very strong and stiff for its weight; least steel for its height; wind passes through; transportable in parts and bolted on site; proven and easy to inspect. Disadvantages: thousands of bolts to make and check; many surfaces to rust and paint; dangerous to climb; considered ugly; large land footprint; bird collisions. Judgement depends on purpose: for a high-voltage line across open farmland, cost and strength dominate and the lattice tower is best; along a city road the footprint and appearance matter more and a monopole may be chosen despite heavier steel and cost."
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "From Specification to Gate: Why the Panic Button Is an OR",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "'Any one button sets off the alarm' describes a:",
+          "options": ["Three-input AND", "Three-input OR", "NOT gate", "Series circuit"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "The three push switches are connected in:",
+          "options": ["Series", "Parallel", "A single loop", "No circuit"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "Three switches in series would sound the alarm only when:",
+          "options": ["One is pressed", "All three are pressed at once", "None is pressed", "Two are pressed"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "The buzzer and lamp are connected:",
+          "options": ["In series with each other", "In parallel with each other", "Across one switch", "To the reset only"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q5",
+          "question": "An LED lamp needs:",
+          "options": ["No resistor", "A series resistor, about 330 ohms", "Mains", "A relay"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "Drawing the Circuit Diagram With Standard Symbols",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "On the cell symbol the long thin line is:",
+          "options": ["Negative", "Positive", "Earth", "The switch"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Three parallel switch branches need how many junction dots?",
+          "options": ["Two", "Six", "Three", "None"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "The buzzer symbol is:",
+          "options": ["A circle with a cross", "A half-circle with two leads", "A rectangle", "A triangle"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The Grade 8 reset is shown as:",
+          "options": ["A relay", "A toggle switch in parallel with the push switches", "A fuse", "A second battery"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q5",
+          "question": "Standby current is zero because:",
+          "options": ["The battery is flat", "Every switch is open at rest", "The buzzer is off", "The LED blocks it"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The Eight-Row Truth Table and Testing the Built Circuit",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "Three inputs give a truth table of:",
+          "options": ["Four rows", "Eight rows", "Three rows", "Six rows"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "The panic button's output column has:",
+          "options": ["One 1 and seven 0s", "One 0 and seven 1s", "All 1s", "All 0s"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "The first row of the table represents:",
+          "options": ["All buttons pressed", "No button pressed", "Bed only", "A fault"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "If the toilet button alone does nothing but the others work:",
+          "options": ["The battery is flat", "The toilet branch is open", "The table is wrong", "The buzzer is dead"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q5",
+          "question": "Standby is tested with:",
+          "options": ["A voltmeter across the buzzer", "An ammeter in the main line reading zero", "A ruler", "A stopwatch"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Which Gate Does the Spec Ask For?",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "The gate was chosen by:",
+          "options": ["Habit", "Reading the specification", "The teacher", "Chance"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "A buzzer and lamp in series might:",
+          "options": ["Both work better", "Share the voltage so the buzzer fails to sound", "Short the battery", "Reverse"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "The LED's long leg goes to:",
+          "options": ["Negative", "Positive", "The switch", "The resistor only"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Drawing It Properly",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A long toilet lead is shown as:",
+          "options": ["A wandering line", "A longer line with a note", "A relay", "Nothing"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "A real self-latching alarm uses:",
+          "options": ["A fuse", "A relay", "A bigger battery", "Mains"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "The diagram's title should be:",
+          "options": ["Omitted", "'Panic button alarm circuit' with name and date", "A drawing of Gogo", "The price"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "A partner should be able to:",
+          "options": ["Colour it", "Trace positive to negative through each switch alone", "Fold it", "Guess the voltage"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Eight Rows and a Bench Test",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "The alarm sounding with nothing pressed means:",
+          "options": ["Success", "A switch wired closed or leads touching", "The table is wrong", "Low battery"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "Rows with two buttons pressed are:",
+          "options": ["Padding", "Needed to catch faults like a mis-wired series switch", "Impossible", "Optional"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "The examiner wants:",
+          "options": ["Only a diagram", "Diagram, truth table and test record", "Only a poster", "Only a table"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "A diagram without junction dots:",
+          "options": ["Is fine", "Cannot distinguish branches from crossings", "Is neater", "Is required"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

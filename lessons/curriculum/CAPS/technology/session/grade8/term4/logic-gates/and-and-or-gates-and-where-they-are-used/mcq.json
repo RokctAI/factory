@@ -1,0 +1,222 @@
+{
+  "subtopics": [
+    {
+      "ref": "subtopic_1",
+      "title": "Logic: Inputs, Outputs and the Idea of a Gate",
+      "questions": [
+        {
+          "id": "subtopic_1_q1",
+          "question": "Logic signals have:",
+          "options": ["Many states", "Two states", "No states", "Three states"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q2",
+          "question": "A logic gate's output is fixed by:",
+          "options": ["Chance", "A rule for every input combination", "Temperature", "The user"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q3",
+          "question": "This term gates are built from:",
+          "options": ["Transistors", "Switches and a lamp", "Motors", "Mirrors"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q4",
+          "question": "A machine needing two conditions before running uses:",
+          "options": ["OR", "AND", "NOT", "No gate"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_1_q5",
+          "question": "Real gates in a chip are made of:",
+          "options": ["Switches", "Transistors", "Lamps", "Cells"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_2",
+      "title": "The AND Gate: Both Switches, One Lamp",
+      "questions": [
+        {
+          "id": "subtopic_2_q1",
+          "question": "An AND gate's output is on when:",
+          "options": ["Any input is on", "All inputs are on", "No input is on", "One input is off"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q2",
+          "question": "Switches in series form:",
+          "options": ["An OR gate", "An AND gate", "A NOT gate", "No gate"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q3",
+          "question": "With two series switches, how many of the four combinations light the lamp?",
+          "options": ["Three", "One", "Two", "Four"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q4",
+          "question": "The AND symbol is:",
+          "options": ["A shield", "A D shape, flat at the inputs", "A circle", "A triangle"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_2_q5",
+          "question": "A microwave heating only with door closed and start pressed is:",
+          "options": ["OR", "AND", "NOT", "A short"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_3",
+      "title": "The OR Gate: Either Switch, One Lamp, and Where Each Is Used",
+      "questions": [
+        {
+          "id": "subtopic_3_q1",
+          "question": "An OR gate's output is off only when:",
+          "options": ["Any input is on", "All inputs are off", "Both inputs are on", "One input is on"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q2",
+          "question": "Switches in parallel form:",
+          "options": ["An AND gate", "An OR gate", "A NOT gate", "A fuse"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q3",
+          "question": "With two parallel switches, how many combinations light the lamp?",
+          "options": ["One", "Three", "Two", "None"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q4",
+          "question": "A burglar alarm triggered by any door or window is:",
+          "options": ["AND", "OR", "NOT", "Series"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_3_q5",
+          "question": "The 'or' in an OR gate:",
+          "options": ["Excludes both", "Includes both", "Means neither", "Means one exactly"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_4",
+      "title": "Yes and No",
+      "questions": [
+        {
+          "id": "subtopic_4_q1",
+          "question": "0 and 1 are the same as:",
+          "options": ["Red and blue", "Off and on", "Hot and cold", "Big and small"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q2",
+          "question": "One switch and a lamp is a gate where output:",
+          "options": ["Flips input", "Equals input", "Ignores input", "Doubles input"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_4_q3",
+          "question": "NOT turns a 1 into:",
+          "options": ["A 2", "A 0", "A 1", "Nothing"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_5",
+      "title": "Both, or Nothing",
+      "questions": [
+        {
+          "id": "subtopic_5_q1",
+          "question": "A guillotine needing both hands on buttons is AND because:",
+          "options": ["It is faster", "Both hands are then away from the blade", "It saves power", "It is cheaper"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q2",
+          "question": "If one AND input fails off, the machine:",
+          "options": ["Runs anyway", "Refuses to run, which is safe", "Explodes", "Runs faster"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q3",
+          "question": "An ATM paying out on valid card AND correct PIN is:",
+          "options": ["OR", "AND", "NOT", "Parallel"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_5_q4",
+          "question": "The AND symbol's flat side is at the:",
+          "options": ["Output", "Inputs", "Top", "Bottom"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    },
+    {
+      "ref": "subtopic_6",
+      "title": "Either Will Do",
+      "questions": [
+        {
+          "id": "subtopic_6_q1",
+          "question": "OR's weakness is:",
+          "options": ["Missed alarms", "False alarms from one faulty sensor", "Too many wires", "Slowness"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q2",
+          "question": "The panic button with several buttons is at heart:",
+          "options": ["AND", "OR", "NOT", "A resistor"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q3",
+          "question": "Closing both OR switches makes the lamp:",
+          "options": ["Twice as bright", "The same brightness", "Dimmer", "Off"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        },
+        {
+          "id": "subtopic_6_q4",
+          "question": "The microwave stopping on door open OR timer done shows:",
+          "options": ["Only AND", "Systems combining AND and OR", "No logic", "A fault"],
+          "correct_index": 1,
+          "time_limit_seconds": 30
+        }
+      ]
+    }
+  ]
+}

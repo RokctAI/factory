@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what a single-view 2D working drawing is, how you would choose which face to draw for the PAT frame, and why the drawing is kept flat rather than drawn in 3D.",
+      "expected_answer": "It shows one face of the object exactly as seen looking straight at it, with height and width only and no depth or perspective. Choose the face that shows the most about the shape and the features the maker must cut, usually the front: for the frame, the view showing overall height and width, uprights, base, braces, axle hole positions and the pulley. It is kept flat because a flat view can be measured and dimensioned exactly, which a 3D oblique or isometric drawing cannot; depth is given by notes or hidden detail."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how to choose a scale for a 400 mm by 300 mm frame front on A4 paper, and outline the set-out procedure from construction lines to dark outlines.",
+      "expected_answer": "Measure the usable paper area after margins (about 150 by 230 mm on A4 portrait) and choose the largest standard scale that fits: 1:1 would not fit, 1:5 would be too small, so 1:2, giving a 200 by 150 mm view; write the scale in the title block. Draw feint construction lines for the base and one side, measure the scaled overall rectangle, set out the uprights (20 mm real becomes 10 mm), base rail, braces and the axle hole (50 mm from the top becomes 25 mm) on the centre line, all feint. Check the set-out by measuring and comparing both sides, then darken every visible edge with a continuous outline using a ruler and compass, leaving the construction lines feint beneath."
+    },
+    {
+      "id": "cc3",
+      "question": "List the steps for completing the drawing after the outlines are dark, including line types, the order of dimensioning, the title block and the final check.",
+      "expected_answer": "Add dashed hidden detail lines for features behind the front face; add thin chain centre lines crossing at every hole and the pulley and down the centre of a symmetrical frame. Dimension in real millimetres, outside the view about 10 mm away: overall width and height first (300, 400), then member sizes (20, 30), then locations and hole diameters (50 from the top to the axle centre line, diameter symbol 6), with projection lines, dimension lines with arrowheads and the figure above, each size once, no crossing. Add a title block with the title, scale 1:2, 'all dimensions in mm', team names and date. Finally apply the maker's test: a classmate must be able to list every part and size to cut without asking questions."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "element_type": "lesson_reel",
+  "lesson_id": "technology_g8_circuit_diagram_and_truth_table",
+  "lesson_title": "Three Buttons, One Alarm",
+  "hook_text": "The spec says any one of three buttons must sound the alarm. That one sentence tells you the gate, the circuit and the truth table. Watch it unfold.",
+  "hook_source_file": "script.md",
+  "clip_script": "Any one button: that is OR, and OR is switches in parallel, so three push switches side by side between the battery and the alarm. Series would be AND, all three at once, never. Buzzer and lamp in parallel at the output so each gets full volts; LED with its 330 ohm resistor. Draw it: battery left, three branches, six dots, outputs, back to minus; a toggle in parallel as the reset; zero standby because every switch is open. Eight rows, 000 to 111; one 0, seven 1s. Build it, test every row, and let any failed row point at the fault.",
+  "visual_style": "Whiteboard spec sentence transforming into a three-input OR symbol, then into three parallel switches; a diagram draws itself with dots appearing; an eight-row table fills with a single 0 and seven 1s; ticks appear as switches are pressed.",
+  "mood": "Decisive, integrated, satisfying.",
+  "pacing": "Spec to gate, output devices, diagram, refinements, table, test.",
+  "call_to_action": "Watch the full lesson and draw the panic button diagram with all six junction dots.",
+  "platform": "tiktok",
+  "duration_seconds": 60,
+  "guardrail_applied": "age_13_17"
+}

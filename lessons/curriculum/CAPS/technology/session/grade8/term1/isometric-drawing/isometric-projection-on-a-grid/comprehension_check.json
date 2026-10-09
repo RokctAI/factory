@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "State the rules of isometric projection, explain which edges are drawn at true scaled length, and give two differences between isometric and oblique projection.",
+      "expected_answer": "The height axis is vertical and the width and depth axes slope up at 30 degrees to the horizontal, right and left, so the three axes are 120 degrees apart. Every edge parallel to one of these axes is drawn parallel to it at its true scaled length; edges not on an axis, such as diagonal braces, are found by locating their ends on the axes and joining them. Differences from oblique: oblique shows the front face flat and true with depth at 45 degrees, while isometric shows top, front and side all foreshortened equally with no face flat; and isometric axis lengths are all true so it can be dimensioned reliably, while oblique depth is a convention that cannot be measured."
+    },
+    {
+      "id": "cc2",
+      "question": "Describe how to construct a rectangular box and then a braced frame on isometric grid paper.",
+      "expected_answer": "Start at the lowest front corner. Count grid units vertically for the height, up-right for the width and up-left for the depth, drawing three edges meeting at the corner. Complete the front face with a vertical at the far end of the width edge and a sloping top edge; complete the side face the same way; complete the top by drawing the two top edges back parallel to the width and depth axes until they meet. For a frame, draw the base rectangle as a parallelogram on the ground, raise verticals at each corner as thin boxes, join the tops with rails, add cross-rails, and draw the diagonal braces last by joining the corner points they connect. Construct feint on the grid, then darken visible outlines."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how to choose the scale for the isometric drawing of a 400 mm by 300 mm by 200 mm frame on A4 grid paper with 10 mm units, how to locate the axle, and how dimensions are placed on an isometric drawing.",
+      "expected_answer": "At 1:2 the frame becomes 200, 150 and 100 mm, which is 20, 15 and 10 grid units, fitting A4 with room for dimensions; write the scale on the drawing. Locate the axle by counting down from the top of the two uprights it passes through to the hole centres, marking each with a cross, then drawing the axle line between them and beyond the frame for the crank, with the pulley as a small ellipse. Dimension lines are drawn parallel to the edge they measure, in the plane of that face: width dimensions slope with the width axis, depth with the depth axis, height vertically. Give overall width 300, depth 200 and height 400 in real millimetres plus key features such as the axle height; never dimension diagonals."
+    }
+  ]
+}

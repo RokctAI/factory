@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the parts of an electrochemical cell and how it produces a voltage, explain why its voltage is fixed and what running flat means, and distinguish voltage from capacity and primary from secondary cells.",
+      "expected_answer": "A cell has two electrodes of different materials, zinc and a carbon rod with manganese dioxide in a common dry cell, and an electrolyte paste between them that conducts ions; reactions at the electrodes push electrons onto the zinc and pull them from the carbon, creating a voltage, and when a circuit connects the terminals electrons flow through the device while ions move inside and the reactants are consumed. The chemistry fixes the voltage, about 1.5 volts for a dry cell, 2 for lead-acid and 3.7 for lithium, and a larger cell gives the same voltage for longer. Running flat is the reactants running out, with voltage sagging and internal resistance rising; a primary cell's reactions cannot be reversed so it is finished, while a secondary cell's reactions can be driven backwards by a charger for many cycles. Voltage is the push; capacity, in ampere-hours or milliampere-hours, is how long the push lasts, so a 2000 milliampere-hour cell gives roughly 200 milliamps for ten hours. Polarity is marked by the raised positive button and flat negative end, and flat cells are recycled, never shorted or heated."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how cells connected in series behave, with voltage, current and capacity, and set out the advantages and disadvantages of a series battery.",
+      "expected_answer": "In series the positive of each cell touches the negative of the next so the voltages add, 3 volts for two cells, 4.5 for three, 6 for four, and a 9 volt battery is six cells in series; the current is the same through all cells because there is one path, and the capacity equals one cell's because all charge passes through every cell. Advantages are higher voltage from cheap standard cells for devices rated at 3, 6 or 9 volts, simple construction and no cell carrying more than the device current. Disadvantages are that the stack is only as good as its weakest cell, which drags the voltage down and may be driven backwards and leak; a reversed cell subtracts its voltage so four cells with one reversed give 3 volts; and running time is no longer than a single cell's. A 3 volt bulb on three cells in series burns out because voltage above its rating drives excess current."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how cells connected in parallel behave, set out the advantages and disadvantages of a parallel battery, and describe how to choose between series and parallel.",
+      "expected_answer": "In parallel all positives are joined and all negatives are joined, so the voltage stays at one cell's value while each cell supplies a share of the current and the capacities add, giving three 2000 milliampere-hour cells 1.5 volts at 6000 milliampere-hours. Advantages are longer running time at the same voltage, higher available current without stressing one cell, and continued operation if one cell fails open. Disadvantages are that cells must be identical in type and state of charge or current flows from the fresher into the weaker cell as wasted heat, a cell failing short drains the others, and the voltage cannot be raised. Choose by asking what voltage the device needs, answered by series, and how long it must run, answered by parallel, combining both in series-parallel banks as in electric car packs and solar home battery banks."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Name the four main line types used on a working drawing, describe how each is drawn and state what each shows.",
+      "expected_answer": "Outline (object line): dark, thick, continuous; shows the visible edges of the object. Construction line: very feint, thin, continuous; used to set out the drawing, project between views and locate centres, and left on lightly. Hidden detail line: medium dashed line of short dashes; shows edges that exist but cannot be seen from the viewing direction, such as a hole seen from the side. Centre line: thin chain line of long and short dashes; marks the centres of holes and circles and the axes of cylinders or symmetrical objects."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how a scale is written and read, convert a real length of 250 mm to a drawing at 1:5 and a real diameter of 15 mm to a drawing at 2:1, and state what the written dimensions on a scaled drawing represent.",
+      "expected_answer": "A scale is written as drawing size : real size. 1:2 is half size, 1:10 a tenth (reducing scales); 2:1 is twice full size (enlarging). On a reducing scale divide the real size by the second number: 250 mm at 1:5 is drawn 50 mm. On an enlarging scale multiply: 15 mm at 2:1 is drawn 30 mm. The dimensions written on the drawing are always the real sizes, never the paper sizes, so the 250 mm part is labelled 250 however small it is drawn."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the three parts of a dimension and give five rules for placing dimensions correctly on a working drawing.",
+      "expected_answer": "Projection (extension) lines: thin continuous lines from the ends of the feature at right angles to it, with a small gap from the outline. Dimension line: a thin continuous line between them, parallel to the feature, with an arrowhead touching each projection line. Dimension figure: the number in millimetres with no unit, written above the middle of the dimension line, reading from the bottom or right. Rules: all dimensions in mm; place dimensions outside the outline about 10 mm away; do not let dimension lines cross each other or outlines; give each size once only; always give overall length, width and height; locate holes from centre lines and give diameters with the diameter symbol and radii with R."
+    }
+  ]
+}

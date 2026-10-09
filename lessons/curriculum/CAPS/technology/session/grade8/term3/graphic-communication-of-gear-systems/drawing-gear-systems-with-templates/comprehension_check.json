@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the conventions for representing a gear in a technical drawing, including how tooth count, direction, driver and driven, and concentric gears on one shaft are shown.",
+      "expected_answer": "A gear is represented by its pitch circle, the circle through the middle of its teeth on which meshing gears roll, drawn as a thin continuous or chain line with a small cross at the centre; individual teeth are not drawn, and the tooth count is written beside the gear as, for example, 40T, with an outside diameter added as a second circle only if needed. Because meshing gears share a tooth size, pitch diameters are proportional to tooth counts at a chosen scale, and meshing gears are drawn with pitch circles touching at one point. Direction is shown by a curved arrow around part of each circle, the input gear is labelled driver and the output labelled driven, shafts are small circles at the centres, idlers are labelled, and two gears fixed on one shaft are drawn concentric in the front view and side by side on a common shaft line in a side view. The velocity ratio, mechanical advantage and a sentence describing the train are written beside it, with a title block giving name, team, date and scale."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain how to draw a 20T driver meshing with a 40T driven gear at 1 millimetre per tooth and then a 20T-12T-20T idler train, including centre distances, arrows and the notes written beside each.",
+      "expected_answer": "At 1 millimetre per tooth the pitch circles are 20 and 40 millimetres; the centre distance is the sum of the pitch radii, 10 plus 20, 30 millimetres, measured along a horizontal construction line from the driver's centre. Both circles are drawn with a compass so they touch at one point, labelled 20T and 40T, with a clockwise arrow on the driver and anticlockwise on the driven gear, and the note counter-rotation, VR 40/20 = 2:1, driven turns at half speed with twice the torque. For the idler train three centres lie on a line with distances 10 plus 6 and 6 plus 10, 16 and 16 millimetres; the three circles each touch their neighbour, arrows run clockwise, anticlockwise, clockwise, the middle gear is labelled idler, and the note reads same direction at the ends, VR 20/20 = 1:1, idler does not affect the ratio. Construction lines are drawn lightly first, circles and arrows firmed, and labels added in capitals, checking that circles neither overlap nor leave gaps and that arrows alternate at every mesh."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how a slower driven gear and a faster driven gear are drawn using 12T and 48T gears, how a second compound stage is added, and how scale and layout are chosen for a working drawing of a model winder train.",
+      "expected_answer": "For a slower driven gear the 12T is the driver and the 48T the driven gear, pitch circles 12 and 48 millimetres with centres 30 millimetres apart, labelled and arrowed, with the note VR 48/12 = 4:1, driven at one quarter speed with four times the torque, MA 4. For a faster driven gear the same circles are drawn with the 48T labelled driver, arrows still alternating, and the note VR 12/48 = 1:4, driven four times faster with one quarter the torque, MA 0.25, showing that the ratio depends on which gear drives. A second compound stage is a 12T circle drawn concentric with the 48T, sharing its centre, driving another 48T 30 millimetres further on, noted as a two-stage compound train, VR 4 x 4 = 16:1, output in the same direction as the input. Scale is chosen so the whole train fits the sheet with room for labels, 1 millimetre per tooth for small trains or half that for large ones, written in the title block; centres may lie on a horizontal line for clarity or be folded to match the model's frame, since a working drawing shows the real layout."
+    }
+  ]
+}

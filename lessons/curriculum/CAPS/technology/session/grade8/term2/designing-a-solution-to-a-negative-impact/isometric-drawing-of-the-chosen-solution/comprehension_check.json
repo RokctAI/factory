@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Describe the three isometric axes, explain the difference between isometric and non-isometric lines, and show how a scale is chosen for a drawing of a 180 by 120 by 60 millimetre container on a 10 millimetre grid.",
+      "expected_answer": "The three isometric axes meet at the front corner: one vertical and two sloping at 30 degrees above the horizontal to the left and right. Lines parallel to an axis are isometric and are drawn at their true scaled length and can be measured; lines not parallel to any axis, such as slopes and diagonals, are non-isometric and are found by locating their endpoints along isometric lines, never by direct measurement. The scale is chosen so the drawing fits the sheet with room for notes while remaining readable: at 1:2 the container becomes 90 by 60 by 30 millimetres, which on a 10 millimetre grid is 9 by 6 by 3 units, and the scale is recorded in the title block."
+    },
+    {
+      "id": "cc2",
+      "question": "Set out the step-by-step method for drawing the chosen solution in isometric, and explain how hidden or internal features are shown.",
+      "expected_answer": "Record overall length, width and height and the scale, converting to grid units; choose the viewing corner so the most informative faces, such as the lid and detailed side, are visible; draw the bounding box lightly with the vertical and two 30-degree axes and the parallel edges to close it; locate features by counting along isometric edges from the box corners, drawing ribs, slots, lips and wall thickness as inner outlines or noting thickness if too thin; darken the object's edges and leave construction faint; check every sketched feature appears with correct proportions. Hidden detail is not shown in a single isometric; instead a second view from the other side, a cut-away removing a quarter of the box along isometric planes to reveal the inside, or an exploded isometric separating parts along the axes is used."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how dimensions are placed on an isometric drawing and which values are written, how a circle on an isometric face is drawn, and how sloping faces are constructed.",
+      "expected_answer": "Dimensions are placed along isometric lines with extension and dimension lines parallel to the measured edge, written in millimetres without units and as full-size values, not drawing-size, so the maker never multiplies by the scale; only necessary dimensions are given, each once, with thickness as a note and the scale in the title block. A circle on an isometric face appears as an ellipse, drawn by constructing the isometric square containing it, marking the midpoints of its sides and sweeping a curve through them, or using the four-centre compass approximation; a cylinder is two ellipses joined by two lines. Sloping faces are non-isometric, so their top and bottom edges are located along isometric lines and the endpoints joined; the slope is never measured on the drawing."
+    }
+  ]
+}
