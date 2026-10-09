@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain what first angle orthographic projection is and what each of the three standard views shows.",
+      "expected_answer": "It is a method of drawing an object as separate true views, each looking straight at one face at right angles so that sizes and angles are undistorted. The front view shows width and height; the top view or plan shows width and depth; the side or end view shows depth and height. Together the three views give every dimension without distortion, unlike a pictorial drawing."
+    },
+    {
+      "id": "cc2",
+      "question": "State the first angle rule for placing the views and explain how it differs from third angle projection.",
+      "expected_answer": "In first angle the top view is drawn directly below the front view, aligned so widths match, and the left side view is drawn to the right of the front view, aligned so heights match; the side view goes on the opposite side from the face it shows because the view is projected onto the pane beyond the object. In third angle the top view goes above the front view and the side view on the same side as the face shown. A symbol in the title block declares which system is used, and CAPS uses first angle."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the three views of a 60 millimetre cube with a 20 by 20 millimetre step cut across the top front edge, and the order in which you would draw them.",
+      "expected_answer": "Front view: a 60 by 60 square with a dark horizontal line 40 millimetres up, the edge of the step seen head-on. Left side view, placed to the right: an L shape 60 deep and 60 high with a 20 by 20 notch at the top front. Top view, placed below the front view: a 60 by 60 square with a line 20 millimetres from the front edge where the step drops. Order: draw the front view, project widths down with feint lines for the top view, project heights across for the side view, transfer depth with a 45 degree line, then add the step lines dark and any hidden edges dashed."
+    }
+  ]
+}
