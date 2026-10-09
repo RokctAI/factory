@@ -384,6 +384,13 @@ def main() -> int:
     sentence_of = {f"{it['id']}#{k}": s for it in lines for k, s in enumerate(it["sentences"], 1)}
     wild_of = {f"{it['id']}#{k}": w for it in lines for k, w in enumerate(it.get("sentence_wild", []), 1)}
 
+    # Takes a failed line was assembled from. When every sentence had a
+    # passing take but the stitched clip failed, the next round would pick
+    # the very same best takes again and fail identically, so it picks from
+    # the others.
+    rpath = work / "rejected_takes.json"
+    rejected = set(json.loads(rpath.read_text(encoding="utf-8"))) if rpath.exists() else set()
+
     for p, meta in index.items():
         if p in M or not Path(p).exists():
             continue
@@ -399,7 +406,7 @@ def main() -> int:
         picks, tiers, lacking = [], [], []
         for k in range(1, len(it["sentences"]) + 1):
             key = f"{it['id']}#{k}"
-            cands = [dict(m, path=p) for p, m in M.items() if m["key"] == key]
+            cands = [dict(m, path=p) for p, m in M.items() if m["key"] == key and p not in rejected]
             best, tier = pick(cands, args.f0_target, args.f0_tolerance)
             picks.append(best); tiers.append(tier)
             if tier != 1:
@@ -444,9 +451,14 @@ def main() -> int:
                        "tail_db": b.get("tail_db")}
                       for k, (b, t) in enumerate(zip(picks, tiers), 1)],
         })
+        if r["status"] == "fail" and not lacking:
+            bad = {g for g, ok in gate.items() if not ok}
+            # Onset and lead-in only look at the start of the clip.
+            rejected.update(b["path"] for b in (picks[:1] if bad <= {"onset", "lead_in"} else picks))
         results.append(r)
         print(f"line {it['id']}: {r['status']} dur={dur}s f0={fm['f0']} sim={fm['res']} (>= {thr}) "
               f"asr_errors={fm['err']} tail={fm['tail_db']} wpm={tm['wpm']} checks={cm} seeds={r['seeds']}", flush=True)
+    rpath.write_text(json.dumps(sorted(rejected), indent=1), encoding="utf-8")
     (work / "results.json").write_text(json.dumps(results, indent=1, ensure_ascii=False), encoding="utf-8")
     return 0
 

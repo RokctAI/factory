@@ -1,6 +1,6 @@
 """Pronunciations: the global word list, inline {{word|respelling}}, the
 ambiguous-word gate and the ASR wildcard. Model-free; own fixtures only
-(the shipped pronunciations.json is empty on purpose).
+(the shipped pronunciations.json has no words on purpose).
 Run: python -m pytest voice_batch/tests
 """
 import json
@@ -27,7 +27,26 @@ class ShippedFile(unittest.TestCase):
         raw = json.loads(P.PRONUNCIATIONS.read_text(encoding="utf-8"))
         self.assertEqual((raw["words"], raw["ambiguous"]), ({}, {}))
         self.assertIn("{{", raw["_comment"])
-        self.assertEqual(P.load(), P.empty())
+        self.assertEqual(P.load(), {**P.empty(), "names": raw.get("names", [])})
+
+
+class Names(unittest.TestCase):
+    def test_validate(self):
+        self.assertEqual(P.validate({"names": ["Supacharge", "van Zyl"]})["names"], ["Supacharge", "van Zyl"])
+        for bad in ({"names": "Supacharge"}, {"names": [""]}, {"names": ["a.b"]}, {"names": [3]}):
+            with self.assertRaises(P.PronunciationError, msg=str(bad)):
+                P.validate(bad)
+
+    def test_name_wild_longest_first_whole_words(self):
+        self.assertEqual(P.name_wild("Over to you, John Petersen. Johnny's here.", ["John", "John Petersen"]),
+                         [["John Petersen", "John Petersen"]])
+        self.assertEqual(P.name_wild("I'm kavitha.", ["Kavitha"]), [["kavitha", "kavitha"]])
+
+    def test_a_name_the_asr_misspells_still_matches(self):
+        wild = P.name_wild("Welcome back, I'm Kavitha.", ["Kavitha"])
+        self.assertEqual(P.word_errors_wild("Welcome back, I'm Kavitha.", "Welcome back, I'm Kavita.", wild), 0)
+        self.assertEqual(P.word_errors_wild("Welcome back, I'm Kavitha.", "Welcome back, I'm Kavita.", []), 1)
+        self.assertEqual(P.word_errors_wild("Welcome back, I'm Kavitha.", "Welcome back, Kavita.", wild), 1)
 
 
 class Validate(unittest.TestCase):

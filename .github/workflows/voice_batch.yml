@@ -173,6 +173,14 @@ jobs:
           else
             bash voice_batch/ci/changed_batches.sh "$EVENT" "$BEFORE" "$AFTER" "$BATCH_PATH" "$DEFAULT_BRANCH" > "$RUNNER_TEMP/batches.txt"
           fi
+          # A push that adds several batches renders none of them here: the
+          # daily scan renders them one per run, in sorted order.
+          n=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)
+          if [ "$EVENT" = "push" ] && [ "$n" -gt 1 ]; then
+            echo "::notice::$n batch files in one push; the daily scan renders them one per run, in order"
+            echo "$n batch files in one push: the daily scan renders them one per run, in order." >> "$GITHUB_STEP_SUMMARY"
+            : > "$RUNNER_TEMP/batches.txt"
+          fi
           echo "Batches:"; sed 's/^/  /' "$RUNNER_TEMP/batches.txt"
           echo "count=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)" >> "$GITHUB_OUTPUT"
 

@@ -50,14 +50,15 @@ def spoken_text(md: str) -> str:
     return text
 
 
-def pronounced_fields(id_: str, text: str, pron: dict | None) -> dict:
+def pronounced_fields(id_: str, text: str, pron: dict | None, names=()) -> dict:
     """The text fields every render item carries, with pronunciations
     applied sentence by sentence (shared with r3_lines.item).
 
     text        display text: inline markup resolved to the display word
     sentences   display sentences (the per-take ASR reference)
     render_text what the TTS is given, one per sentence
-    sentence_wild / asr_wild  the respelled words the ASR check wildcards
+    sentence_wild / asr_wild  the respelled words and names (`names` plus
+                pronunciations.json "names") the ASR check wildcards
     tts_text    only when a pronunciation changed the spoken text"""
     try:
         parts = [pronunciations.apply(s, pron) for s in split_sentences(text)]
@@ -65,13 +66,15 @@ def pronounced_fields(id_: str, text: str, pron: dict | None) -> dict:
         raise pronunciations.PronunciationError(f"line {id_}: {exc}") from None
     display = " ".join(p[0] for p in parts)
     render = [speak_text(p[1]) for p in parts]
+    every_name = [*((pron or {}).get("names") or []), *names]
+    wild = [p[2] + pronunciations.name_wild(p[0], every_name) for p in parts]
     out = {
         "text": display, "source_text": text,
         "text_sha256": hashlib.sha256(display.encode("utf-8")).hexdigest(),
         "render_sha256": hashlib.sha256("\n".join(render).encode("utf-8")).hexdigest(),
         "sentences": [p[0] for p in parts], "render_text": render,
-        "sentence_wild": [p[2] for p in parts], "asr_text": display,
-        "asr_wild": [w for p in parts for w in p[2]],
+        "sentence_wild": wild, "asr_text": display,
+        "asr_wild": [w for sw in wild for w in sw],
         "pronounced": [w[0] for p in parts for w in p[2]],
     }
     tts = " ".join(p[1] for p in parts)
@@ -80,8 +83,9 @@ def pronounced_fields(id_: str, text: str, pron: dict | None) -> dict:
     return out
 
 
-def _item(id_: str, category: str, text: str, team_rel: str, wav: str, script: str, pron: dict | None) -> dict:
-    return {"id": id_, "category": category, **pronounced_fields(id_, text, pron),
+def _item(id_: str, category: str, text: str, team_rel: str, wav: str, script: str, pron: dict | None,
+          names=()) -> dict:
+    return {"id": id_, "category": category, **pronounced_fields(id_, text, pron, names),
             "file": f"{team_rel}/{wav}", "script": script}
 
 ASSISTANT_ROSTER = "lms/team/assistants/CAPS/roster.json"
@@ -156,6 +160,20 @@ def host_duos(root: Path, assistant: str) -> list[tuple[str, str]]:
     return duos
 
 
+def persona_name(root: Path, persona: str) -> list[str]:
+    """[the persona's own name] from voices/<id>.voice.json "name" (or a
+    tutor's display name), [] when there is none."""
+    n = _json(root / "lms/team/voices" / f"{persona}.voice.json").get("name")
+    if isinstance(n, str) and n.strip():
+        return [n.strip()]
+    if persona.startswith("tutor_"):
+        try:
+            return [tutor_display_name(root, persona)]
+        except ValueError:
+            pass
+    return []
+
+
 def fill_placeholders(text: str, names: dict[str, str]) -> str:
     def sub(m: re.Match) -> str:
         if m.group(1) not in names:
@@ -175,6 +193,7 @@ def build_assistant_lines(root: Path, assistant: str, categories: list[str], pro
     adir = root / rel
     items: list[dict] = []
     duos: list[tuple[str, str]] | None = None
+    own = persona_name(root, assistant)
     for cat in categories:
         if cat not in ASSISTANT_CATEGORIES:
             raise ValueError(f"unknown category {cat}")
@@ -188,7 +207,7 @@ def build_assistant_lines(root: Path, assistant: str, categories: list[str], pro
             used = set(PLACEHOLDER_RE.findall(text))
             if not used:
                 items.append(_item(f"{assistant}/{cat}/{md.stem}", cat, text, rel,
-                                   f"{cat}/{md.stem}.wav", script, pron))
+                                   f"{cat}/{md.stem}.wav", script, pron, own))
                 continue
             unknown = used - set(DUO_PLACEHOLDERS)
             if unknown:
@@ -204,14 +223,15 @@ def build_assistant_lines(root: Path, assistant: str, categories: list[str], pro
                 names = dict(zip(DUO_PLACEHOLDERS, (tutor_display_name(root, e), tutor_display_name(root, s))))
                 sfx = f"@{e}+{s}"
                 items.append(_item(f"{assistant}/{cat}/{md.stem}{sfx}", cat, fill_placeholders(text, names), rel,
-                                   f"{cat}/{md.stem}{sfx}.wav", script, pron))
+                                   f"{cat}/{md.stem}{sfx}.wav", script, pron, [*own, *names.values()]))
     if categories and categories[0] == ASSISTANT_CATEGORIES[0]:
         vj = root / "lms/team/voices" / f"{assistant}.voice.json"
         if vj.is_file():
             line = json.loads(vj.read_text(encoding="utf-8")).get("sample_line")
             if isinstance(line, str) and line.strip():
                 items.append(_item(f"{assistant}_sample_line", categories[0], " ".join(line.split()), rel,
-                                   "samples/sample_line.wav", f"lms/team/voices/{assistant}.voice.json#sample_line", pron))
+                                   "samples/sample_line.wav", f"lms/team/voices/{assistant}.voice.json#sample_line", pron,
+                                   own))
     return items
 
 
@@ -223,6 +243,7 @@ def build_lines(agent_root: str | Path, tutor: str, categories: list[str], pron:
         return build_assistant_lines(root, tutor, categories, pron)
     team_rel = f"lms/team/tutors/CAPS/{tutor}"
     tdir = root / team_rel
+    own = persona_name(root, tutor)
     items: list[dict] = []
     for cat in categories:
         if cat in CLIP_CATEGORIES:
@@ -230,7 +251,7 @@ def build_lines(agent_root: str | Path, tutor: str, categories: list[str], pron:
                 text = spoken_text(md.read_text(encoding="utf-8"))
                 if text:
                     items.append(_item(f"{tutor}/{cat}/{md.stem}", cat, text, team_rel,
-                                       f"{cat}/{md.stem}.wav", f"{team_rel}/{cat}/{md.name}", pron))
+                                       f"{cat}/{md.stem}.wav", f"{team_rel}/{cat}/{md.name}", pron, own))
         elif cat == "teaching":
             sj = tdir / "samples.json"
             if sj.is_file():
@@ -238,13 +259,13 @@ def build_lines(agent_root: str | Path, tutor: str, categories: list[str], pron:
                     sid, script = s.get("id"), s.get("script")
                     if isinstance(sid, str) and re.fullmatch(r"[A-Za-z0-9_]+", sid) and script:
                         items.append(_item(sid, cat, " ".join(script.split()), team_rel,
-                                           f"samples/{sid}.wav", f"{team_rel}/samples.json#{sid}", pron))
+                                           f"samples/{sid}.wav", f"{team_rel}/samples.json#{sid}", pron, own))
             vj = root / "lms/team/voices" / f"{tutor}.voice.json"
             if vj.is_file():
                 line = json.loads(vj.read_text(encoding="utf-8")).get("sample_line")
                 if line:
                     items.append(_item(f"{tutor}_sample_line", cat, " ".join(line.split()), team_rel,
-                                       "samples/sample_line.wav", f"lms/team/voices/{tutor}.voice.json#sample_line", pron))
+                                       "samples/sample_line.wav", f"lms/team/voices/{tutor}.voice.json#sample_line", pron, own))
         else:
             raise ValueError(f"unknown category {cat}")
     return items

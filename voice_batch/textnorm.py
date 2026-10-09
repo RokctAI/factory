@@ -1,6 +1,8 @@
 """Text handling shared by the renderer and the QC gate.
 
-* split_sentences: a line is rendered one sentence at a time.
+* split_sentences: a line is rendered one sentence at a time. A countdown
+  ("in 3... 2... 1...") stays in one sentence: rendered alone, a bare "2..."
+  never came back word-exact from the ASR.
 * speak_text: punctuation-only changes for the TTS prompt (a spaced hyphen
   or dash is a pause, never "minus"; a colon is a comma). Words never change.
 * tts_prompt: what the model is actually given for one sentence - the
@@ -14,7 +16,7 @@ from __future__ import annotations
 import difflib
 import re
 
-_SENT_RE = re.compile(r"(?<=[.!?])\s+")
+_SENT_RE = re.compile(r"(?<=[.!?])(?<!\d\.\.\.)\s+|(?<=\d\.\.\.)\s+(?!\d)")
 
 
 def split_sentences(text: str) -> list[str]:

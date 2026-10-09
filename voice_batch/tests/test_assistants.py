@@ -217,6 +217,21 @@ class HostPlaceholders(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "student_name"):
                 lines.build_lines(d, AID, ["intro"], {}, kind="assistant")
 
+    def test_persona_and_tutor_names_are_asr_wildcards(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            self._agent(d, {"9": AID})
+            (d / "lms/team/voices" / f"{AID}.voice.json").write_text(json.dumps({"name": "Kavitha"}))
+            (d / lines.team_rel(AID) / "intro/new.md").write_text("I'm Kavitha. Class starts in 3... 2... 1...\n")
+            pron = {"words": {}, "ambiguous": {}, "names": ["Supacharge"]}
+            items = {it["id"]: it for it in lines.build_lines(d, AID, ["intro"], pron, kind="assistant")}
+            new = items[f"{AID}/intro/new"]
+            self.assertEqual(new["sentences"], ["I'm Kavitha.", "Class starts in 3... 2... 1..."])
+            self.assertEqual(new["sentence_wild"], [[["Kavitha", "Kavitha"]], []])
+            self.assertEqual(new["pronounced"], [])
+            ret = items[f"{AID}/intro/returning@tutor_001+tutor_002"]
+            self.assertEqual(ret["sentence_wild"], [[], [["Name 1", "Name 1"]]])
+
     def test_display_name_prefers_roster_then_still(self):
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
