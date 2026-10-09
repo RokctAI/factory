@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.w",
   "prereq_skills": ["efal.phonics.sound.v"],
-  "images": ["dog_wags", "wig", "van", "pig", "wag", "bag", "tile_w", "tile_v", "tutor_holds_wig"],
+  "images": ["dog_wags", "wig", "van", "pig", "wag", "bag", "letter_w", "letter_v", "tutor_holds_wig"],
   "show": {
     "line": "Listen. w, w, wet. The dog's tail goes wag, wag! Wag starts with w.",
     "image": "dog_wags"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which one starts with w, as in wet?", "options": ["wig", "van", "pig"], "answer": "wig", "praise": "Yes! w, w, wig."},
     {"type": "say_it", "prompt": "Say the sound with me. w, as in wall!", "accept": ["w", "wuh", "we", "wall"]},
     {"type": "blend", "prompt": "Listen. w, a, g. What word is it?", "sounds": ["w", "a", "g"], "options": ["wag", "wig", "bag"], "answer": "wag", "praise": "Wag! w, a, g."},
-    {"type": "listen_tap", "prompt": "Is it w or v? Listen. Wet.", "options": ["tile_w", "tile_v"], "answer": "tile_w", "praise": "Yes! Wet starts with w."},
+    {"type": "listen_tap", "prompt": "Is it w or v? Listen. Wet.", "options": ["letter_w", "letter_v"], "answer": "letter_w", "praise": "Yes! Wet starts with w."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "will", "accept": ["will", "wil", "well"]}
   ],
   "hints": ["Make your lips round like a kiss. w, w, w.", "w has round lips. v has teeth."],

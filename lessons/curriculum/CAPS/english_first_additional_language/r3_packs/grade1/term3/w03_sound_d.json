@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.d",
   "prereq_skills": ["efal.phonics.sound.g"],
-  "images": ["dog", "dig", "bed", "gap", "dot", "pot", "num_1", "num_2", "num_3", "dad", "duck", "bat", "tutor_holds_dig"],
+  "images": ["dog", "dig", "bed", "gap", "dot", "pot", "numeral_1", "numeral_2", "numeral_3", "dad", "duck", "bat", "tutor_holds_dig"],
   "show": {
     "line": "Listen. d, d, dog. d, d, dad! Dog starts with d.",
     "image": "dog"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which one starts with d, as in dog?", "options": ["dig", "bed", "gap"], "answer": "dig", "praise": "Yes! d, d, dig."},
     {"type": "say_it", "prompt": "Say the sound with me. d, as in dad!", "accept": ["d", "duh", "de", "dad"]},
     {"type": "blend", "prompt": "Listen. d, o, t. What word is it?", "sounds": ["d", "o", "t"], "options": ["dot", "dog", "pot"], "answer": "dot", "praise": "Dot! d, o, t."},
-    {"type": "listen_tap", "prompt": "Clap the word beetroot. Beet, root. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Beet, root."},
+    {"type": "listen_tap", "prompt": "Clap the word beetroot. Beet, root. How many claps?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two claps! Beet, root."},
     {"type": "match_sort", "prompt": "Does it start with d or b? Sort the pictures.", "groups": ["d", "b"], "items": [{"image": "dog", "group": "d"}, {"image": "dad", "group": "d"}, {"image": "duck", "group": "d"}, {"image": "bed", "group": "b"}, {"image": "bat", "group": "b"}]}
   ],
   "hints": ["Tap your tongue behind your teeth. d, d, d.", "Clap for each part of the word."],

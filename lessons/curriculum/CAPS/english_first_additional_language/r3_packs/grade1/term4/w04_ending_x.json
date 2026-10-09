@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.ending.x",
   "prereq_skills": ["efal.phonics.sound.w"],
-  "images": ["fox", "box", "bus", "dog", "six", "sit", "fix", "fan", "num_6", "cat", "tutor_holds_bus"],
+  "images": ["fox", "box", "bus", "dog", "six", "sit", "fix", "fan", "numeral_6", "cat", "tutor_holds_bus"],
   "show": {
     "line": "Listen to the end. Fox, box, six! They end with x.",
     "image": "fox"
@@ -23,7 +23,7 @@
     {"type": "blend", "prompt": "Listen. s, i, x. What word is it?", "sounds": ["s", "i", "x"], "options": ["six", "sit", "fix"], "answer": "six", "praise": "Six! s, i, x."},
     {"type": "listen_tap", "prompt": "Which word rhymes with fox?", "options": ["box", "fix", "fan"], "answer": "box", "praise": "Yes! Fox, box. They rhyme."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "fix", "accept": ["fix", "fiks", "fox"]},
-    {"type": "match_sort", "prompt": "Does it end with x? Sort the pictures.", "groups": ["yes", "no"], "items": [{"image": "fox", "group": "yes"}, {"image": "box", "group": "yes"}, {"image": "num_6", "group": "yes"}, {"image": "bus", "group": "no"}, {"image": "cat", "group": "no"}]}
+    {"type": "match_sort", "prompt": "Does it end with x? Sort the pictures.", "groups": ["yes", "no"], "items": [{"image": "fox", "group": "yes"}, {"image": "box", "group": "yes"}, {"image": "numeral_6", "group": "yes"}, {"image": "bus", "group": "no"}, {"image": "cat", "group": "no"}]}
   ],
   "hints": ["x at the end sounds like k and s together.", "Listen to the very last sound."],
   "beat_the_tutor": {

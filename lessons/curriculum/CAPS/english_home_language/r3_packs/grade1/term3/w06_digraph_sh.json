@@ -13,7 +13,7 @@
   },
   "skill": "phonics.digraph.sh",
   "prereq_skills": ["phonics.blend.l_blends"],
-  "images": ["ship", "shop", "sock", "hat", "shell", "bell", "tile_sh", "tile_s", "tile_ch", "sheep", "shoe", "sun", "tutor_holds_sock"],
+  "images": ["ship", "shop", "sock", "hat", "shell", "bell", "letter_sh", "letter_s", "letter_ch", "sheep", "shoe", "sun", "tutor_holds_sock"],
   "show": {
     "line": "Two letters, one sound! s and h together say sh. sh, sh, ship. Quiet like a library!",
     "image": "ship"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which one starts with sh, as in ship?", "options": ["shop", "sock", "hat"], "answer": "shop", "praise": "sh, sh, shop."},
     {"type": "say_it", "prompt": "Say the sound with me. sh, as in ship!", "accept": ["sh", "shh", "shuh", "she"]},
     {"type": "blend", "prompt": "Listen. sh, e, ll. What word is it?", "sounds": ["sh", "e", "ll"], "options": ["shell", "ship", "bell"], "answer": "shell", "praise": "Shell! sh, e, ll."},
-    {"type": "listen_tap", "prompt": "Tap the letters that say sh.", "options": ["tile_sh", "tile_s", "tile_ch"], "answer": "tile_sh", "praise": "s and h together say sh."},
+    {"type": "listen_tap", "prompt": "Tap the letters that say sh.", "options": ["letter_sh", "letter_s", "letter_ch"], "answer": "letter_sh", "praise": "s and h together say sh."},
     {"type": "listen_tap", "prompt": "Which one does not start with sh?", "options": ["sheep", "shoe", "sun"], "answer": "sun", "praise": "Sun starts with just s."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "shop", "accept": ["shop", "shap", "shup"]},
     {"type": "match_sort", "prompt": "Does it start with sh or just s? Sort the pictures.", "groups": ["sh", "s"], "items": [{"image": "ship", "group": "sh"}, {"image": "shop", "group": "sh"}, {"image": "sheep", "group": "sh"}, {"image": "sun", "group": "s"}, {"image": "sock", "group": "s"}]}

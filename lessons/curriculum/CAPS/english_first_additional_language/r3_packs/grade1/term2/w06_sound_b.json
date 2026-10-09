@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.b",
   "prereq_skills": ["efal.phonics.sound.o"],
-  "images": ["bed", "bun", "hen", "pot", "tile_b", "tile_h", "red", "bat", "hat", "bin", "tutor_holds_bin"],
+  "images": ["bed", "bun", "hen", "pot", "letter_b", "letter_h", "red", "bat", "hat", "bin", "tutor_holds_bin"],
   "show": {
     "line": "Listen. b, b, bed. b, b, bat! Bed starts with b.",
     "image": "bed"
@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "listen_tap", "prompt": "Which one starts with b, as in bed?", "options": ["bun", "hen", "pot"], "answer": "bun", "praise": "Yes! b, b, bun."},
     {"type": "say_it", "prompt": "Say the sound with me. b, as in bat!", "accept": ["b", "buh", "be", "bat"]},
-    {"type": "listen_tap", "prompt": "Is it b or h? Listen. Bin.", "options": ["tile_b", "tile_h"], "answer": "tile_b", "praise": "Yes! Bin starts with b."},
+    {"type": "listen_tap", "prompt": "Is it b or h? Listen. Bin.", "options": ["letter_b", "letter_h"], "answer": "letter_b", "praise": "Yes! Bin starts with b."},
     {"type": "listen_tap", "prompt": "Which word rhymes with bed?", "options": ["red", "bat", "bun"], "answer": "red", "praise": "Yes! Bed, red. They rhyme."},
     {"type": "blend", "prompt": "Listen. b, a, t. What word is it?", "sounds": ["b", "a", "t"], "options": ["bat", "bed", "hat"], "answer": "bat", "praise": "Bat! b, a, t."},
     {"type": "match_sort", "prompt": "Does it start with b or h? Sort the pictures.", "groups": ["b", "h"], "items": [{"image": "bed", "group": "b"}, {"image": "bat", "group": "b"}, {"image": "bin", "group": "b"}, {"image": "hen", "group": "h"}, {"image": "hat", "group": "h"}]}

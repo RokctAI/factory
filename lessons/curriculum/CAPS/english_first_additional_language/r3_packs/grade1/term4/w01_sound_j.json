@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.j",
   "prereq_skills": ["efal.phonics.ending.ll"],
-  "images": ["jam", "jug", "dog", "sun", "jog", "num_1", "num_2", "num_3", "jet", "goat", "gate", "tutor_holds_jet"],
+  "images": ["jam", "jug", "dog", "sun", "jog", "numeral_1", "numeral_2", "numeral_3", "jet", "goat", "gate", "tutor_holds_jet"],
   "show": {
     "line": "Listen. j, j, jam. j, j, jug! Jam starts with j.",
     "image": "jam"
@@ -22,7 +22,7 @@
     {"type": "listen_tap", "prompt": "Which one starts with j, as in jam?", "options": ["jug", "dog", "sun"], "answer": "jug", "praise": "Yes! j, j, jug."},
     {"type": "say_it", "prompt": "Say the sound with me. j, as in jet!", "accept": ["j", "juh", "je", "jet"]},
     {"type": "blend", "prompt": "Listen. j, o, g. What word is it?", "sounds": ["j", "o", "g"], "options": ["jog", "jug", "dog"], "answer": "jog", "praise": "Jog! j, o, g."},
-    {"type": "listen_tap", "prompt": "Clap the name Thandi. Than, di. How many claps?", "options": ["num_1", "num_2", "num_3"], "answer": "num_2", "praise": "Two claps! Than, di."},
+    {"type": "listen_tap", "prompt": "Clap the name Thandi. Than, di. How many claps?", "options": ["numeral_1", "numeral_2", "numeral_3"], "answer": "numeral_2", "praise": "Two claps! Than, di."},
     {"type": "match_sort", "prompt": "Does it start with j or g? Sort the pictures.", "groups": ["j", "g"], "items": [{"image": "jam", "group": "j"}, {"image": "jug", "group": "j"}, {"image": "jet", "group": "j"}, {"image": "goat", "group": "g"}, {"image": "gate", "group": "g"}]}
   ],
   "hints": ["j sounds like the start of jump. j, j, j.", "Clap for each part of the name."],

@@ -21,7 +21,7 @@
   "rounds": [
     {"type": "blend", "prompt": "Listen. f, r, o, g. What word is it?", "sounds": ["f", "r", "o", "g"], "options": ["frog", "fog", "dog"], "answer": "frog", "praise": "Frog! f, r, o, g."},
     {"type": "blend", "prompt": "Listen. s, n, a, ke. What animal is it?", "sounds": ["s", "n", "a", "ke"], "options": ["snake", "snail", "lake"], "answer": "snake", "praise": "Snake!"},
-    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "crab", "accept": ["crab", "crap", "cab"]},
+    {"type": "read_to_me", "prompt": "Read this word to me.", "text": "crab", "accept": ["crab", "krab", "cab"]},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "duck", "accept": ["duck", "dock", "dug"]},
     {"type": "say_it", "prompt": "Break it up! Say the sounds in frog.", "accept": ["f r o g", "f-r-o-g", "fff rrr aw guh", "frog"], "image": "frog"}
   ],

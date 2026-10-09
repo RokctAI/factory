@@ -13,7 +13,7 @@
   },
   "skill": "efal.phonics.sound.e",
   "prereq_skills": ["efal.phonics.sound.c"],
-  "images": ["net", "word_pen", "word_pan", "ten", "tin", "pet", "pot", "pen", "tile_e", "tile_k", "tutor_holds_net"],
+  "images": ["net", "word_pen", "word_pan", "ten", "tin", "pet", "pot", "pen", "letter_e", "letter_k", "tutor_holds_net"],
   "show": {
     "line": "Listen. e, e, egg. e, e, net! Net has the e sound.",
     "image": "net"
@@ -23,7 +23,7 @@
     {"type": "say_it", "prompt": "Say the sound with me. e, as in egg!", "accept": ["e", "eh", "egg", "ae"]},
     {"type": "blend", "prompt": "Listen. t, e, n. What word is it?", "sounds": ["t", "e", "n"], "options": ["ten", "tin", "net"], "answer": "ten", "praise": "Ten! t, e, n."},
     {"type": "blend", "prompt": "Listen. p, e, t. What word is it?", "sounds": ["p", "e", "t"], "options": ["pet", "pot", "pen"], "answer": "pet", "praise": "Pet! p, e, t."},
-    {"type": "listen_tap", "prompt": "Is it k or e? Listen. Egg.", "options": ["tile_e", "tile_k"], "answer": "tile_e", "praise": "Yes! Egg starts with e."},
+    {"type": "listen_tap", "prompt": "Is it k or e? Listen. Egg.", "options": ["letter_e", "letter_k"], "answer": "letter_e", "praise": "Yes! Egg starts with e."},
     {"type": "read_to_me", "prompt": "Read this word to me.", "text": "set", "accept": ["set", "sit", "sat"]}
   ],
   "hints": ["Open your mouth a little. e, e, egg.", "Listen to the middle sound."],
