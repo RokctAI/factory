@@ -39,7 +39,8 @@ def failing(r: dict) -> dict:
         # No word-exact take at all for some sentence: the ASR gate.
         out = {"sentences_without_word_exact_take": sum(1 for x in r.get("lacking", []) if x.get("tier") == 0)
                or len(r.get("lacking", []))}
-        heard = [{"sentence": int(x["key"].rsplit("#", 1)[1]), "heard": x["heard"]}
+        heard = [{"sentence": int(x["key"].rsplit("#", 1)[1]), "heard": x["heard"],
+                   **({"dead_air_takes": x["dead_air_takes"]} if x.get("dead_air_takes") else {})}
                  for x in r.get("lacking", []) if x.get("heard")]
         return {"asr": {**out, **({"heard": heard} if heard else {})}}
     checks = r.get("checks") or {}

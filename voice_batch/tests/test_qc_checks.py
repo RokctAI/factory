@@ -191,5 +191,25 @@ class MeterWordTimestamps(unittest.TestCase):
         self.assertEqual(out["words"], [{"w": " Hi", "start": 0.2, "end": 0.4}])
 
 
+def test_take_with_dead_air_never_counts():
+    # tutor_011 greetings/06: ~6 s of generated noise before "We work
+    # carefully today." The ASR heard the four words, so it passed.
+    good = {"err": 0, "f0": 196.0, "res": 0.9, "swings": 0, "tail_db": -60.0, "span": 1.6, "n_words": 4}
+    noisy = dict(good, span=8.4, f0=196.5)
+    assert not qc.span_ok(noisy) and qc.span_ok(good)
+    assert qc.pick([noisy], 196.0, 12.0) == (None, 0)
+    assert qc.pick([noisy, dict(good, f0=200.0)], 196.0, 12.0)[0]["span"] == 1.6
+    # A slow real read (80 wpm) and takes measured before span existed pass.
+    assert qc.span_ok(dict(good, span=1.5 + 0.75 * 4))
+    assert qc.span_ok({"err": 0})
+
+
+def test_sound_span_measures_noise_the_asr_skips():
+    sr = 24_000
+    quiet, loud = np.zeros(sr), 0.3 * np.sin(np.arange(3 * sr) / 5.0)
+    assert abs(qc.sound_span_s(np.concatenate([quiet, loud, quiet]), sr) - 3.0) < 0.05
+
+
 if __name__ == "__main__":
     unittest.main()
+

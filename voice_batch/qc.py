@@ -20,6 +20,9 @@ Selection: among the sentence's passing takes, median F0 closest to
            takes are used (tier 2) and the final gate decides. A take whose
            last 50 ms is above -34 dB of its loudest frame (it ends mid-word)
            never counts, even when the ASR still heard the clipped word.
+           Nor does one whose sound span (trimmed at -40 dB) runs past
+           1.5 s + 0.75 s per word: seconds of generated non-speech the
+           ASR skipped over.
 Stitch   : trim at -40 dB with 40 ms padding, 12 ms fades, 200-240 ms
            silence (280-320 ms pauses between words), -20 dBFS, 24 kHz
            mono PCM_16. Lead-in after the trim and before normalising: the
@@ -97,6 +100,13 @@ HOT_WIN_S, HOT_FLOOR_DBFS = 0.05, -60.0
 # silent head (-120 dBFS): a faded onset whose voice peaks early, not an edge.
 ONSET_RISE_MIN_S, ONSET_WIN_S, ONSET_REACH = 0.004, 0.05, 0.9
 GAP_MIN_S = 0.08
+# Dead air: a take's sound span (trimmed at -40 dB, as the stitch trims) may
+# last at most SPAN_BASE_S + SPAN_PER_WORD_S per word of its sentence. The
+# model sometimes generates seconds of loud non-speech before a sentence; the
+# ASR hears the words after it and passes the take (tutor_011 greetings/06:
+# ~6 s of noise before a 4-word sentence). 0.75 s/word is ~80 wpm, half the
+# slowest pace any voice targets, so a slow real read never trips it.
+SPAN_BASE_S, SPAN_PER_WORD_S = 1.5, 0.75
 
 
 def lead_in(x, sr: int = SR, lead_s: float = LEAD_S, fade_s: float = LEAD_FADE_S):
@@ -261,6 +271,29 @@ def pyin_bounds(target: float = TARGET_F0, tolerance: float = F0_TOLERANCE) -> t
     return min(50.0, round(lo * 0.6)), max(300.0, hi * 2)
 
 
+def sound_span_s(x, sr: int = SR, top_db: float = 40.0, frame: int = 512, hop: int = 128) -> float:
+    """Seconds from the first to the last frame within top_db of the loudest
+    frame's RMS (librosa.effects.trim's rule, as the stitch trims)."""
+    import numpy as np
+    x = np.asarray(x, dtype=np.float64)
+    if len(x) < frame:
+        return round(len(x) / sr, 3)
+    n = 1 + (len(x) - frame) // hop
+    idx = np.arange(frame)[None, :] + hop * np.arange(n)[:, None]
+    rms = np.sqrt(np.mean(x[idx] ** 2, axis=1))
+    loud = np.flatnonzero(rms > rms.max() * 10 ** (-top_db / 20)) if rms.max() > 0 else []
+    if not len(loud):
+        return 0.0
+    return round(((loud[-1] - loud[0]) * hop + frame) / sr, 3)
+
+
+def span_ok(c: dict) -> bool:
+    """A take's sound span fits its word count (no dead air); takes measured
+    before the span was recorded count as fitting."""
+    span, n = c.get("span"), c.get("n_words")
+    return span is None or not n or span <= SPAN_BASE_S + SPAN_PER_WORD_S * n
+
+
 def take_rank(m: dict, target: float = TARGET_F0) -> tuple:
     return (abs(m["f0"] - target), m["swings"], -m["res"])
 
@@ -269,7 +302,8 @@ def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOL
     """(best take, tier) — tier 1 strict pass, tier 2 word-exact only, 0 none."""
     lo, hi = f0_range(target, tolerance)
     # A take that ends mid-word never counts, however well the ASR heard it.
-    exact = [c for c in cands if c["err"] == 0 and tail_ok(c.get("tail_db", -120.0))]
+    # Nor does one padded with seconds of non-speech the ASR skipped over.
+    exact = [c for c in cands if c["err"] == 0 and tail_ok(c.get("tail_db", -120.0)) and span_ok(c)]
     strict = [c for c in exact if lo <= c["f0"] <= hi and c["res"] >= TAKE_SIM_MIN]
     rank = lambda c: take_rank(c, target)  # noqa: E731
     if strict:
@@ -356,7 +390,8 @@ class Meter:
         res = float(np.dot(e, self.R) / np.linalg.norm(e) / np.linalg.norm(self.R))
         return {"dur": round(len(w) / 16000, 3), "res": round(res, 4), "err": word_errors_wild(text, tx, wild),
                 "f0": round(float(np.median(fv)), 2) if len(fv) else 0.0, "swings": int(swings), "transcript": tx,
-                "tail_db": tail_db(x, sr), "words": words}
+                "tail_db": tail_db(x, sr), "span": sound_span_s(x, sr), "n_words": len(text.split()),
+                "words": words}
 
 
 def main() -> int:
@@ -417,6 +452,9 @@ def main() -> int:
                     # What the ASR heard instead, for qc_failed.json in the
                     # private agent repo (never printed: CI logs are public).
                     lacking[-1]["heard"] = sorted({c.get("transcript", "") for c in cands})[:5]
+                    dead = sum(not span_ok(c) for c in cands)
+                    if dead:
+                        lacking[-1]["dead_air_takes"] = dead
         tried = sorted({m["seed"] for m in M.values() if m["key"].split("#")[0] == it["id"]})
         r = {"id": it["id"], "seeds_tried": tried, "lacking": lacking}
         if any(t == 0 for t in tiers):
