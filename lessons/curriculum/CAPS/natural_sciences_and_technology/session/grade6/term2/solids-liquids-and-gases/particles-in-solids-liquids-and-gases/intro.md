@@ -1,0 +1,1 @@
+Today a Grade 6 class in Pietermaritzburg goes out onto the school field and becomes the particles of a block of ice, a glass of water and a puff of steam. They stand packed together, then slide past each other, then run apart. We learn that all matter is made up of tiny particles, and how the particles are arranged and move in solids, liquids and gases.

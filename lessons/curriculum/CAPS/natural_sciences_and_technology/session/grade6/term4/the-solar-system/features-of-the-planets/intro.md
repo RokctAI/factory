@@ -1,0 +1,1 @@
+Today a Grade 6 class in Bethlehem in the Free State makes a set of planet cards, like sports cards, with a picture of each planet and its numbers on the back. Then they play a game of comparing cards to see which planet wins for size, heat and number of moons. We learn the features of each planet: its size, position, orbit, what it is made of and how many moons it has.

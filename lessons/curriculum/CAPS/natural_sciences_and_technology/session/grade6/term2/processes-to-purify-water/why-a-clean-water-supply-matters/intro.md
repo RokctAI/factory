@@ -1,0 +1,1 @@
+Today a Grade 6 class in a village near Lusikisiki in the Eastern Cape celebrates the new tap at their school. Until last year, learners carried buckets of water from a stream, and many children got sick with diarrhoea. We learn why a supply of clean water is so important for people, plants and animals, why South Africa must look after its water, and how we can save it.

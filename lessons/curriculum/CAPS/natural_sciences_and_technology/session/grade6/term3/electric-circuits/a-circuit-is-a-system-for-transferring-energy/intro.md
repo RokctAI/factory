@@ -1,0 +1,1 @@
+Today a Grade 6 class in East London takes apart a broken bicycle light and a toy fan, and lays out the parts on their desks. Then they build their own circuits from cells, wires, bulbs, buzzers and small motors. We learn that an electric circuit is a system for transferring energy, and that every circuit needs an energy source, conducting wires and a device that uses the energy.

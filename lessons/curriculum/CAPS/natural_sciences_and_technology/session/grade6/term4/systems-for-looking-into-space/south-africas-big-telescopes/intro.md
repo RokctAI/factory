@@ -1,0 +1,1 @@
+Today a Grade 6 class in Carnarvon in the Northern Cape is told to switch off every cell phone before a visit to the MeerKAT radio telescope, with its sixty-four giant dishes standing in the Karoo. On the way home, they stop at Sutherland to see SALT, a huge light telescope. We learn how South Africa has built and uses some of the largest telescopes in the world.

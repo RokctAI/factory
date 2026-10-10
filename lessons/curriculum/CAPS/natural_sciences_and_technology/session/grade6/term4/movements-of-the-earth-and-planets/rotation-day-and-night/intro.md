@@ -1,0 +1,1 @@
+Today a Grade 6 class in Kokstad in KwaZulu-Natal darkens their classroom and shines a torch on a spinning globe. Then a learner explains why her cousin in New York was eating lunch when she was going to bed. We learn that each planet spins on its axis, that the Earth's rotation takes about twenty-four hours, and that it causes day and night and the Sun's path across our sky.

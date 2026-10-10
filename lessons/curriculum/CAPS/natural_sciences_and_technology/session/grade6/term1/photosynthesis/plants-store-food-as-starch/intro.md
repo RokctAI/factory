@@ -1,0 +1,1 @@
+Today a Grade 6 class in Durban walks through the busy Warwick Junction market, where traders sell potatoes, sweet potatoes, madumbe, mealies, beans, bananas and cabbages. Every one of these is a part of a plant that was packed with food. We learn that plants change some of their glucose into starch, and store it in their leaves, stems, roots, flowers, fruits and seeds.

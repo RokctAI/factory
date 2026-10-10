@@ -1,0 +1,1 @@
+Today we revise all of Term 1, Life and Living. A Grade 6 class in George in the Western Cape plans and cooks a healthy lunch in their school garden. From the green vegetable beds to the plate, and from the plate to the compost heap, they follow the journey of food and energy. We remind ourselves of the big ideas and fix the mistakes learners often make.

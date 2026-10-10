@@ -1,0 +1,1 @@
+Today a Grade 6 class in Welkom in the Free State holds a sugar race. Groups time how long sugar takes to dissolve in hot and cold water, with and without stirring, and as a sugar cube, ordinary sugar and fine icing sugar. We learn that temperature, stirring or shaking, and the grain size of the solute all affect how fast a substance dissolves, and how to plan a fair test.
