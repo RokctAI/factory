@@ -1,0 +1,1 @@
+Today a Grade 5 class from Harrismith in the Free State stops at a road cutting, where a hillside was cut open to build a road. In the cut, they can see layers: dark soil at the top, paler soil below, and solid rock at the bottom. We learn how rocks slowly break into tiny grains, how those grains become soil, and what the layers of topsoil, subsoil and rock are.

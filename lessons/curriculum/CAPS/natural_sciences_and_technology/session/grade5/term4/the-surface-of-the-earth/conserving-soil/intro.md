@@ -1,0 +1,1 @@
+Today a Grade 5 class from Matatiele in the Eastern Cape visits a hillside cut by deep dongas, huge ditches where rain has washed the soil away. They meet a community team that is healing the land with grass, stone walls and careful grazing. We learn how soil is lost through erosion, what people do that makes it worse, and how we can conserve soil, which takes so long to form.

@@ -1,0 +1,1 @@
+Today a Grade 5 class in Lichtenburg in North West sets up a rock museum in their classroom. A parent who works at the town's cement factory brings limestone from the quarry, and the learners add sandstone and shale. They look, feel, scratch and test each rock, and find out how people use them. We learn about three sedimentary rocks, their layers, and how we build with them.
