@@ -1,0 +1,1 @@
+Today we visit a village near Mahikeng, in North West, on the day a drilling machine comes to make a new borehole. We learn how people get water from under the ground, the difference between a well and a borehole, how water is pumped up with hand pumps, windmills and solar pumps, and why groundwater must be protected and used carefully.

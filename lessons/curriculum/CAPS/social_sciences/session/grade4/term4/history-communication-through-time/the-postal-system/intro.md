@@ -1,0 +1,1 @@
+Today we visit the old milkwood tree in Mossel Bay, called the Post Office Tree, with a Grade 4 class that is posting letters to pen pals. We learn how the postal system began in South Africa, how letters were carried by runners, coaches, trains, ships and aeroplanes, how stamps and addresses work, and how the post is used today.

@@ -1,0 +1,1 @@
+Today we visit a neighbourhood in Makhanda, in the Eastern Cape, where the taps sometimes run dry during droughts and water trucks bring water to the people. We learn which places need water trucks, how water is delivered, the problems with getting water this way, and why trucks can only be a short-term answer.

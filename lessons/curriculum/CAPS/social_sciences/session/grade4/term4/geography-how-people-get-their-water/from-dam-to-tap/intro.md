@@ -1,0 +1,1 @@
+Today we join a Grade 4 class from Pietermaritzburg on a visit to a water treatment works next to Midmar Dam, near Howick in KwaZulu-Natal. We follow the water on its long journey from the dam, through the treatment works where it is cleaned, to the reservoirs and along the pipes to our taps, and we find out what happens to the water after it goes down the drain.

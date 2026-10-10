@@ -1,0 +1,1 @@
+Today we visit Ayanda, a Grade 4 learner in Umlazi, in Durban, who looks through her grandmother's old photo albums and compares them with the photos on her mother's cell phone. We learn how cameras and photography developed, how cell phones were invented and came to South Africa, how a cell phone works, and how these inventions have changed the way people communicate.

@@ -1,0 +1,1 @@
+Today we visit Asanda, a Grade 4 learner who lives in a village in the Eastern Cape, where her family collects water from a stream and a spring. We learn how people collect and carry water directly from rivers, streams and springs, the hard work and dangers involved, and how people can make river water safer to drink.

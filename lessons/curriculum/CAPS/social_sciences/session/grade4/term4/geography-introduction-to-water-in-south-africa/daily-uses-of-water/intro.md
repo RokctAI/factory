@@ -1,0 +1,1 @@
+Today we start a new Geography topic, Water in South Africa. We join a Grade 4 class in Cape Town that keeps a water diary for one day, writing down every time they use water. We learn the daily uses of water in our personal lives, why our bodies need water, how much water we use, and simple ways to save it, with lessons from the time Cape Town nearly ran out of water.

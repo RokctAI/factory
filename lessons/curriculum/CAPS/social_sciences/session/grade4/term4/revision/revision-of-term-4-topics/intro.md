@@ -1,0 +1,1 @@
+Today we revise all of Term 4, and remember how it links to Term 3. A Grade 4 class in Upington, in the Northern Cape, holds an end-of-year expo, with a table for each part of the term. We revise water in South Africa, from its uses and the water cycle to the ways people get their water, and communication through time, from the post and telegraph to cell phones and the internet.

@@ -1,0 +1,1 @@
+Today we visit Musa, a Grade 4 learner in Newcastle, in KwaZulu-Natal, whose grandfather has listened to the radio every day of his life and remembers the first night of television in South Africa. We learn how radio and television were invented, how they came to South Africa, how they changed people's lives, and how people listen and watch today.
