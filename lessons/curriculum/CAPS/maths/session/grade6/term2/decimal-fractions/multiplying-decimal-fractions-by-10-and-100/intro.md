@@ -1,0 +1,1 @@
+Today we learn to multiply decimal fractions by 10 and by 100. A home bakery in Gqeberha sells koeksisters for R4,75 each and ties boxes with ribbon, so that we can see how the digits move on the place value chart and use this to work out prices and change metres into centimetres.

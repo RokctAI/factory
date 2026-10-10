@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Use the picture of square tables in a row to explain the rule times 2, plus 2.",
+      "expected_answer": "Each table has one person on its top side and one on its bottom side, which is 2 per table. There is also one person at each end of the row, which is 2 more. So seats = tables × 2 + 2."
+    },
+    {
+      "id": "cc2",
+      "question": "How many square tables in a row are needed for 62 guests? Work backwards and check.",
+      "expected_answer": "Undo plus 2: 62 − 2 = 60. Undo times 2: 60 ÷ 2 = 30 tables. Check: 30 × 2 + 2 = 62."
+    },
+    {
+      "id": "cc3",
+      "question": "Show that add 1, then double gives the same seats as double, then add 2, for 1, 2 and 3 tables.",
+      "expected_answer": "For 1 table, 2 × 2 = 4 and 1 × 2 + 2 = 4; for 2 tables, 3 × 2 = 6 and 2 × 2 + 2 = 6; for 3 tables, 4 × 2 = 8 and 3 × 2 + 2 = 8. They match every time, so the rules are equivalent."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Today we learn about decimal fractions with tenths and hundredths. A long jumper in Bloemfontein jumps 3,68 m, a sprinter runs 100 m in 12,45 seconds, and a learner counts out coins, so that we can read and write decimals, say what each digit is worth and count forwards and backwards in decimal steps.

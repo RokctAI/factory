@@ -1,0 +1,1 @@
+Today we revise all the Term 3 topics. A new community park opens in Mbombela, with a walking path, a sandpit, hexagonal paving, a round fountain, a climbing frame and a big map at the gate, so that we can practise length, perimeter, area and volume, 2D shapes, angles and symmetry, and transformations and 3D objects.

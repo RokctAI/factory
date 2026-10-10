@@ -1,0 +1,1 @@
+Today we learn to recognise and name acute, right, obtuse, straight and reflex angles and revolutions, and to find them in 2D shapes. Sizwe spends a Saturday at a skate park in Cape Town, turning on his board, riding ramps and leaning on railings, so that we can compare every angle with a right angle and a straight angle, and describe the angles inside shapes.

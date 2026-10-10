@@ -1,0 +1,1 @@
+Today we learn the place value of digits in numbers up to nine digits. We read South Africa's population of 62 027 503 from the 2022 census, the distance from the Earth to the Sun of 149 600 000 km and a lotto jackpot of R125 000 000, so that we can say what each digit is worth, break numbers into parts and write them in words.

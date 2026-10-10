@@ -1,0 +1,1 @@
+Today we learn to recognise, draw and describe lines of symmetry in 2D shapes. At a craft market in Pretoria, beadwork panels, road signs and the letters on a banner show halves that match like mirror images, so that we can test for symmetry by folding, count the lines of symmetry in shapes and complete symmetrical drawings on a grid.

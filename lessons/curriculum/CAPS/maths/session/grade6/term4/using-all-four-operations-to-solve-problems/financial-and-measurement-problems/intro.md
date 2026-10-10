@@ -1,0 +1,1 @@
+Today we use all four operations to solve problems with whole numbers and fractions in money and measurement contexts, including grouping and equal sharing. A Grade 6 class in Vryheid runs a vetkoek and juice stall at the school's spring market, so that we can work out costs, income and profit, measure out flour, oil and juice, and share what is left over fairly.

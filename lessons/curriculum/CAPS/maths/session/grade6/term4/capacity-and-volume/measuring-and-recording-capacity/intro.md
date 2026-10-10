@@ -1,0 +1,1 @@
+Today we learn to estimate, measure, record, compare and order capacity and volume in millilitres, litres and kilolitres. The Mokoena family in Welkom makes ginger beer for a celebration, measuring with spoons, cups and jugs and filling bottles from a big water tank, so that we can choose the right unit, read measuring jugs carefully and compare amounts in the same unit.

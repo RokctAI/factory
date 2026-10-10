@@ -1,0 +1,1 @@
+Today we learn about prime numbers up to 100. A Grade 6 class in Polokwane builds rectangles with bottle tops, crosses out numbers on a hundred square, and sorts numbers into primes and composites, so that we can say what makes a number prime, find all the primes to 100 and explain why 1 is not prime.

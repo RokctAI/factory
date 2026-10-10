@@ -1,0 +1,1 @@
+Today we learn that a common fraction, a decimal fraction and a percentage can name the same number, and we solve problems with decimals. A Grade 6 class in Mahikeng runs a market day to raise money, selling cupcakes and popcorn, so that we can change between fractions, decimals and percentages, compare them and work out takings, change and profit.

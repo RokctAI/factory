@@ -1,0 +1,1 @@
+Today we learn to find fractions of whole numbers and to solve problems with fractions, including sharing and grouping. A sheep farmer near Graaff-Reinet counts his flock, friends share pizzas and juice fairly, and a shop gives a discount, so that we can find a fraction of an amount, share things into fraction parts and use fractions with money and measurement.

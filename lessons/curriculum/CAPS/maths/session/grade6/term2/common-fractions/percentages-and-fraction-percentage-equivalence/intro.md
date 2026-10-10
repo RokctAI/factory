@@ -1,0 +1,1 @@
+Today we learn about percentages. A learner in Durban gets 17 out of 20 in a test, a shop takes 10 percent off its prices, and every bill in South Africa includes 15 percent VAT, so that we can change fractions into percentages and back again, and find percentages of whole numbers.

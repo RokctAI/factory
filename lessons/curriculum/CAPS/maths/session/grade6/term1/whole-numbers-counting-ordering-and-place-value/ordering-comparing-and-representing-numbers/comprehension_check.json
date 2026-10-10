@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Compare 245 380 000 and 245 308 000 and write the answer with a sign.",
+      "expected_answer": "Both numbers have nine digits. Comparing from the left, the hundred millions, ten millions, millions and hundred thousands are the same, and the ten thousands are 8 and 0. So 245 380 000 > 245 308 000."
+    },
+    {
+      "id": "cc2",
+      "question": "Write R245 380 000, R245 308 000 and R254 038 000 in descending order.",
+      "expected_answer": "R254 038 000, R245 380 000, R245 308 000. The 5 in the ten millions place makes R254 038 000 the biggest, and the 8 in the ten thousands place makes R245 380 000 bigger than R245 308 000."
+    },
+    {
+      "id": "cc3",
+      "question": "On a number line from 245 000 000 to 246 000 000 marked in steps of 100 000, between which two marks does 245 380 000 sit, and which one is it closer to?",
+      "expected_answer": "It sits between 245 300 000 and 245 400 000. It is 80 000 past 245 300 000 and only 20 000 before 245 400 000, so it is closer to 245 400 000."
+    }
+  ]
+}

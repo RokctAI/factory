@@ -1,0 +1,1 @@
+Today we learn to investigate, extend and describe geometric patterns. We build rows of squares with matchsticks, watch a beadwork artist in KwaZulu-Natal grow a square of beads, and fold paper to see how sections multiply, so that we can count what is added each time, extend a pattern in a table and describe its rule in our own words.

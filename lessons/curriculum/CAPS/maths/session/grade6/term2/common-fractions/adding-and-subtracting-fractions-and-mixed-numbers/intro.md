@@ -1,0 +1,1 @@
+Today we learn to add and subtract common fractions where one denominator is a multiple of the other, and to add and subtract mixed numbers. A family in Paarl bakes koeksisters and measures flour and syrup in cups, and a running club in Gqeberha adds up the distances its members run, so that we can make the denominators match and then add or take away the pieces.

@@ -1,0 +1,1 @@
+Today we learn different ways to add and subtract big numbers and to check our answers. A stokvel in Gqeberha adds up its savings, a car dealer works out prices close to round numbers, and we jump along number lines, so that we can choose a quick method and always check the answer with a second one.

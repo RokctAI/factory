@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Work out 486 357 + 275 896 and explain each carry.",
+      "expected_answer": "762 253. Units 7 plus 6 is 13, write 3 carry 1. Tens 5 plus 9 plus 1 is 15, write 5 carry 1. Hundreds 3 plus 8 plus 1 is 12, write 2 carry 1. Thousands 6 plus 5 plus 1 is 12, write 2 carry 1. Ten thousands 8 plus 7 plus 1 is 16, write 6 carry 1. Hundred thousands 4 plus 2 plus 1 is 7."
+    },
+    {
+      "id": "cc2",
+      "question": "Work out 604 020 − 285 467 and check your answer.",
+      "expected_answer": "318 553. To check, add 318 553 and 285 467, which gives 604 020, the number we started with."
+    },
+    {
+      "id": "cc3",
+      "question": "What happens to a zero when you borrow across it? Use 7 000 − 1 to explain.",
+      "expected_answer": "The zero becomes 9. In 7 000 − 1 you borrow from the 7, which becomes 6, and the hundreds and tens zeros each become 9, while the units become 10. 10 − 1 is 9, so the answer is 6 999."
+    }
+  ]
+}

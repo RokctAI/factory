@@ -1,0 +1,1 @@
+Today we learn to add and subtract whole numbers with five and six digits. We count visitors to a theme park near Johannesburg, measure water in a reservoir in Bloemfontein and add up books collected by three schools, so that we can carry and borrow correctly in columns and check our answers.

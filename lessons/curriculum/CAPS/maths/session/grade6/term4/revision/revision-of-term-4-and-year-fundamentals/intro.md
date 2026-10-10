@@ -1,0 +1,1 @@
+Today we revise the Term 4 topics and the number skills of the whole year, ready for the end-of-year test. A school in eMalahleni holds its year-end fun day, with races, a water cooler, a fruit stall and a big tally board, so that we can practise mass, capacity and time, data handling, and whole numbers, fractions, decimals and percentages.

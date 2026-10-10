@@ -1,0 +1,1 @@
+Today we learn to use flow diagrams and tables to find input values, output values and rules. A jumping castle business in Soweto charges a delivery fee plus a price per hour, and we show its prices in words, in a flow diagram, in a table and as a number sentence, so that we can see that all four describe the same rule.

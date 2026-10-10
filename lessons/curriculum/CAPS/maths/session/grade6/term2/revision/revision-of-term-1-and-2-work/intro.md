@@ -1,0 +1,1 @@
+Today we revise the work of Terms 1 and 2. A school in Polokwane holds a greening day and plants 1 344 tree seedlings, so that we can practise whole number calculations and number sentences, numeric and geometric patterns, and common fractions, decimals and percentages, with a check for each.

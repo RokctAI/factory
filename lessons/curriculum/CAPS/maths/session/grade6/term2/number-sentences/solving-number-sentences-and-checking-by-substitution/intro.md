@@ -1,0 +1,1 @@
+Today we learn to solve number sentences and to check our answers. A spaza shop in Tembisa packs stock in boxes, a learner guesses a mystery number, and we test our answers by putting them back into the sentence, so that we can solve by looking, solve by trying and improving, and always prove that the answer is right.

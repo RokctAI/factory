@@ -1,0 +1,1 @@
+Today we learn three properties of numbers and the special role of 0 in addition. A tuck shop in Kimberley adds up its stock in the easiest order, a school concert sells tickets in rows, and we test which rules work for subtraction, so that we can reorder, regroup and break up sums to make them easier.

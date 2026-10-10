@@ -1,0 +1,18 @@
+### subtopic_1 — Numbers: Place Value, Primes and Rounding
+**Assistant:** How should I revise for the Term 1 test without getting overwhelmed?
+
+**Tutor:** Make a short list of the tools and practise each one a little, rather than trying to read everything at once. The Term 1 tools are: place value and ordering of big numbers, primes, rounding, adding and subtracting in columns, techniques for checking, multiplying with long multiplication, factors and prime factors, long division with remainders, the order of operations, and ratio and rate. For each tool, do two or three practice questions and then check them yourself with an estimate or the inverse operation. That way you practise the skill and the check together. If one tool feels shaky, spend a bit more time on it, and come back to it the next day. Short, regular practice works better than one long session the night before, because your brain needs sleep to store what you learn. It also helps to explain a method aloud to someone at home, even if they are not doing maths. If you can explain how to borrow across a zero or why the remainder made the school book 21 buses, you really understand it. Finally, read each test question twice before you start, and underline what it is asking for.
+
+***
+
+### subtopic_2 — Adding and Subtracting with Checks
+**Assistant:** How do I know which operation to use in a long word problem?
+
+**Tutor:** Picture the story and ask what is happening to the amounts. Joining amounts together is addition: Saturday's visitors and Sunday's visitors make the weekend total. Comparing two amounts or finding what is left is subtraction: how much more was raised this year than last year. Many equal groups is multiplication: 125 stalls each paying R240. Sharing equally or making equal groups is division: 3 024 rolls packed in trays of 24. A ratio tells you to scale both parts by the same number, and a rate with per tells you to multiply for a total or divide for a rate. Many test problems have two steps. For example: the fair raised R30 000 from stalls and spent R6 418 on decorations; how much is left? First find what you need, then subtract. Write each step on its own line, with words saying what it is. Before you calculate, make a quick estimate so you know roughly what the answer should be. After you calculate, check that the answer fits the story: money left over should be less than the money you started with, and the number of buses should be a whole number.
+
+***
+
+### subtopic_3 — Multiplying and Dividing
+**Assistant:** Which mistakes do learners make most often in Term 1, and how can I avoid them?
+
+**Tutor:** The most common slips are small ones in method, not big ones in understanding. First, forgetting placeholder zeros in long multiplication. Say tens row, one zero; hundreds row, two zeros, every time. Second, borrowing mistakes in subtraction, especially across zeros. Remember that every zero you pass becomes 9. Third, rounding in steps or looking at the wrong digit. Always find the rounding place and look only at the digit to its right. Fourth, working from left to right when there are mixed operations. Brackets first, then times and divide, then plus and minus. Fifth, writing the first digit of a long division answer in the wrong place, so the answer is ten times too big. An estimate catches this. Sixth, ignoring what a remainder means in the story. The best defence against all of these is checking. Add back to check subtraction. Multiply back to check division. Estimate to check multiplication. Every check takes less than a minute, and it can save you many marks. Teachers also give marks for working, so set out your steps neatly even if you are not sure of the final answer.

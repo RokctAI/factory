@@ -1,0 +1,1 @@
+Today we learn to describe, sort and compare 3D objects by their faces, vertices and edges, and to make models of them. The maths club in Thohoyandou builds frames from drinking straws, toothpicks and clay, and folds nets cut from old cereal boxes, so that we can count faces, vertices and edges carefully and see the patterns behind them.

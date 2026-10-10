@@ -1,0 +1,1 @@
+Today we learn to name polygons and to tell regular polygons from irregular ones. A Grade 6 class walks through the centre of Durban spotting shapes in road signs, windows, paving and a honeycomb at a market stall, so that we can name shapes by their sides, decide whether they are regular, and describe, sort and compare them.

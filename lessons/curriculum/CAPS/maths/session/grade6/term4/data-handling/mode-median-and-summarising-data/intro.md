@@ -1,0 +1,1 @@
+Today we learn to find the mode and the median of a set of data, and to summarise data in words, drawing conclusions and making predictions. A school netball team in Kroonstad records its goals in nine matches, so that we can find the most common score, the middle score, and write a short report on how the team is doing.

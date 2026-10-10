@@ -1,0 +1,1 @@
+Today we learn about multiples and factors of two-digit and three-digit numbers, and about prime factors. A choir festival in Pietermaritzburg splits 120 sopranos and 84 altos into equal groups, taxis and buses leave a rank at different times, and we build factor trees, so that we can find multiples, list factors in pairs and break numbers into their prime factors.

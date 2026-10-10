@@ -1,0 +1,1 @@
+Today we compare two or more quantities of the same kind using ratio, and two quantities of different kinds using rate. A family bakery in Ladysmith mixes juice, shares rolls between its bakers, prices its packs and sends out a delivery bakkie, so that we can solve ratio and rate problems and work out which pack is the better buy.

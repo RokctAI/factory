@@ -1,0 +1,1 @@
+Today we learn how to work out calculations that have more than one operation, with and without brackets. A family buys tickets to a show at the Durban beachfront, a class shares the cost of a bus, and a market stall works out its takings, so that we can do the operations in the right order and get the same answer every time.

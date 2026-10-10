@@ -1,0 +1,1 @@
+Today we learn to recognise, visualise and name 3D objects: rectangular prisms, cubes, tetrahedrons and other pyramids. A Grade 6 class sorts packaging at a recycling depot in Bloemfontein, finding cereal boxes, dice, pyramid tea bags and gift boxes, so that we can name objects by their faces and compare tetrahedrons with other pyramids.

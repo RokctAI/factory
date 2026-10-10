@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Explain why the matchstick pattern for a row of squares goes 4, 7, 10, 13, and give the rule.",
+      "expected_answer": "The first square needs 4 matches. Each new square shares a side with the one before, so it adds only 3 matches. The rule is 3 times the number of squares, plus 1."
+    },
+    {
+      "id": "cc2",
+      "question": "How many beads are in square panel 5 and in panel 10? Explain.",
+      "expected_answer": "Each panel is a square, so the beads are the panel number times itself. Panel 5 has 5 × 5 = 25 beads and panel 10 has 10 × 10 = 100 beads."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe the paper-folding pattern and say how many sections there are after 5 folds.",
+      "expected_answer": "Each fold doubles the number of sections: 2, 4, 8, 16, 32. After 5 folds there are 32 sections."
+    }
+  ]
+}

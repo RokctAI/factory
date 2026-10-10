@@ -1,0 +1,1 @@
+Today we learn to investigate, extend and describe numeric patterns. A learner in Durban follows a savings plan, a chain message spreads across a school, and a supermarket stacks cans in a triangle, so that we can find the rule of a pattern, continue it in a table and describe it in our own words, even when the gaps are not all the same.

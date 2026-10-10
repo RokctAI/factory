@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "When it is 14:00 in Johannesburg, what time is it in Beijing, 6 hours ahead, and in São Paulo, 5 hours behind?",
+      "expected_answer": "Beijing is ahead, so add 6 hours to get 20:00. São Paulo is behind, so subtract 5 hours to get 09:00."
+    },
+    {
+      "id": "cc2",
+      "question": "A flight leaves Johannesburg at 10:30 and takes 8 hours. What is the local time in Dubai, 2 hours ahead, when it lands?",
+      "expected_answer": "In South African time it lands at 18:30. Dubai is 2 hours ahead, so the local time there is 20:30."
+    },
+    {
+      "id": "cc3",
+      "question": "When it is 20:00 in Johannesburg, what is the time and day in Tokyo, 7 hours ahead?",
+      "expected_answer": "Adding 7 hours passes midnight: 4 hours take you to midnight and 3 more hours take you to 03:00. So it is 03:00 the next day in Tokyo."
+    }
+  ]
+}

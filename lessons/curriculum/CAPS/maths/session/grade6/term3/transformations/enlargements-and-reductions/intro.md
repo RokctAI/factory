@@ -1,0 +1,1 @@
+Today we learn to draw enlargements and reductions of triangles and quadrilaterals and to compare their size and shape. A print shop in Mthatha enlarges a school logo for a banner and reduces it for a badge, so that we can multiply every side by the same number on a grid, keep the angles the same, and check whether a new shape really is the same shape.
