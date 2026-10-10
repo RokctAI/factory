@@ -1,0 +1,1 @@
+Today we follow Ayanda, a Grade 4 learner in Durban, who keeps a Moon diary for a whole month, drawing the Moon from her balcony every clear evening. We learn that the Moon's shape seems to change because we see different amounts of its sunlit half, that these shapes are called phases, and that the pattern repeats every twenty-nine and a half days.

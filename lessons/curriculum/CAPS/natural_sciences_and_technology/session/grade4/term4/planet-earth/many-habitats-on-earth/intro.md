@@ -1,0 +1,1 @@
+Today we join the Ndlovu family on a road trip across South Africa, from the dry red sand of the Kalahari to the wet forests and the sea. We learn that the Earth has many different habitats, that habitats differ in how hot, cold, wet or dry they are, and that each habitat has plants and animals that are suited to living there.

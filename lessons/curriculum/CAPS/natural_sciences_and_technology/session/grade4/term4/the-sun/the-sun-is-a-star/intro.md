@@ -1,0 +1,1 @@
+Today we join a Grade 4 class in Polokwane, Limpopo, as they build a giant model of the Sun and the Earth on their school soccer field. We learn that the Sun is a star made of hot gas that gives out heat and light, that it is much bigger than the Earth and very far away, and that it is the closest star to the Earth.

@@ -1,0 +1,1 @@
+Today we join a Grade 4 class in Pretoria as they race balloon rockets along strings across their classroom. We learn that a rocket is a system that moves forward by pushing hot exhaust gases out of its back end, how the parts of a rocket work together, and why a rocket can fly in space where there is no air.

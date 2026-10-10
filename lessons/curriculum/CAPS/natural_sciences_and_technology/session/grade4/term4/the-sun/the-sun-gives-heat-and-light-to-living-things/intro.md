@@ -1,0 +1,1 @@
+Today we visit a grape farm near Upington on the Orange River, one of the sunniest places in South Africa. A Grade 4 class sees grapes drying into raisins in the hot sun. We learn that the Sun gives the light that plants need to make food, the heat that keeps animals and people warm, and the energy that people use in many ways, and that too much sun can also harm us.

@@ -1,0 +1,1 @@
+Today we join a Grade 4 class in Bloemfontein, Free State, on Naledi's birthday. Her class turns the playground into a model of the solar system. We learn that the Earth moves around the Sun in a path called an orbit, that one orbit takes one year, that the Sun is at the centre of the solar system, and that the Earth is one of eight planets that travel around the Sun.

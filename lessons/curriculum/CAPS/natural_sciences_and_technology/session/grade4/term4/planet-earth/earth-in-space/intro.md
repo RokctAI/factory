@@ -1,0 +1,1 @@
+Today we visit Sutherland in the Northern Cape, a small Karoo town with some of the darkest skies in South Africa and a giant telescope on the hill. A Grade 4 class camps out to look at the night sky. We learn that the Earth is a planet in space, that from Earth we see the Sun in the day and the Moon and stars at night, and that stars are suns very, very far away.
