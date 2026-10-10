@@ -1,0 +1,1 @@
+Today a Grade 6 class in Polokwane, in Limpopo, compares two world temperature maps, one for January and one for July, while video-calling a partner school in Norway. We learn why places near the equator are hot, places near the poles are cold and places in between are mild, how to read January and July temperature maps, and why the seasons are opposite in the two hemispheres.

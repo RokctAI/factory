@@ -1,0 +1,1 @@
+Today a Grade 6 class in Klerksdorp, in North West, looks at holiday photographs their teacher took among the giant red dunes of the Namib Desert. We find where the world's hot deserts are, learn why they form, and read a climate graph to discover a climate with very little rain, scorching days and surprisingly cold nights.

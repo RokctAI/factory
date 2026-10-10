@@ -1,0 +1,1 @@
+Today a Grade 6 class in Mbombela, in Mpumalanga, compares its rain gauge readings with those of a pen-pal school in Port Nolloth, on the dry west coast of the Northern Cape. We learn how to read an annual rainfall map of the world, where the wettest and driest areas are, and why some places get a lot of rain while others get almost none.

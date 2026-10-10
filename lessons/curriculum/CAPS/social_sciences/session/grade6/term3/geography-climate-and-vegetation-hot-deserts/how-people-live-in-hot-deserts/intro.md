@@ -1,0 +1,1 @@
+Today a Grade 6 class in Kuruman, in the Northern Cape, visits the Eye of Kuruman, a strong natural spring in a dry land. We learn how people have found ways to live in hot deserts, from nomadic herders in the Sahara and hunter-gatherers in the Kalahari to oasis farmers and modern desert cities, and how they get water, food, shelter and clothing.

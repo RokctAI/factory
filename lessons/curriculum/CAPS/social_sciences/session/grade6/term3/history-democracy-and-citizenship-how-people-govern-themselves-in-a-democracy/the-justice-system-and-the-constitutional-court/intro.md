@@ -1,0 +1,1 @@
+Today a Grade 6 class from Ekurhuleni visits Constitution Hill in Johannesburg, where South Africa's highest court stands on the site of an old prison. We learn how the justice system works, from the police to the courts, what equality under the law and a fair trial mean, and why the Constitutional Court is so important for our democracy.

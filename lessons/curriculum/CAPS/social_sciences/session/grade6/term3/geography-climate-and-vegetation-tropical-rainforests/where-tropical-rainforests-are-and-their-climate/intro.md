@@ -1,0 +1,1 @@
+Today a Grade 6 class in Pietermaritzburg, in KwaZulu-Natal, listens to voice notes from a learner's cousin, who works at a research station in the rainforest of the Congo Basin. We find where the world's tropical rainforests are, and we read a climate graph to discover their hot, wet climate, with rain in every month and almost the same temperature all year.

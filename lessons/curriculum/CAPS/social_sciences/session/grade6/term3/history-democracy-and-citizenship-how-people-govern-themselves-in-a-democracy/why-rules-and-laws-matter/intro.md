@@ -1,0 +1,1 @@
+Today a Grade 6 class in Rustenburg, in North West, writes its own classroom rules, and a learner's mother, who is a traffic officer, visits to talk about the laws of the road. We learn the difference between rules and laws, who makes them, why every society needs them, what makes a law fair, and what happened when South Africa had unjust laws.

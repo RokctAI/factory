@@ -1,0 +1,1 @@
+Today a Grade 6 class from Pretoria stands beneath the giant statue of Nelson Mandela at the Union Buildings, where he became president in 1994. We learn how South Africa's first democratic government was formed, what the Government of National Unity was, and how the new government tried to heal the country and improve people's lives.

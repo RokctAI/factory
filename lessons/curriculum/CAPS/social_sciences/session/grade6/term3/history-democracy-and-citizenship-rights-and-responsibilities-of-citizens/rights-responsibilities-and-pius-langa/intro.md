@@ -1,0 +1,1 @@
+Today a Grade 6 class in Durban, in KwaZulu-Natal, builds a wall display that pairs each right in the Bill of Rights with a responsibility. We learn what rights are, which rights the Bill of Rights protects, why every right comes with responsibilities, and the life of Pius Langa, a factory worker who studied part-time and rose to become Chief Justice of South Africa.
