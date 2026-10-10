@@ -1,0 +1,1 @@
+Today we visit Zara, a Grade 4 learner in Cape Town, whose great-grandfather delivered telegrams on a bicycle when he was a boy. We learn how the electric telegraph sent messages in Morse code along wires, how the telephone carried voices, how these inventions came to South Africa, and how they changed people's lives.

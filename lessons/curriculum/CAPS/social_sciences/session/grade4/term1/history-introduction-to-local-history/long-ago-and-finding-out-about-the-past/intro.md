@@ -1,0 +1,1 @@
+Today we visit Lindiwe, a Grade 4 learner in Soweto, as she asks her grandmother what life was like long ago. We remember what we learnt in the Foundation Phase about how people lived in the past, we find out what local history is, and we learn the four main ways historians find out about the past.

@@ -1,0 +1,1 @@
+Today we spend a day with Thabo and his family in Motherwell, in Gqeberha in the Eastern Cape. His baby sister visits the clinic, his grandmother cares for the children, and the family cooks and lights the home at night. We learn about three more things all people need: health, care and energy, and how people in different places meet these needs.

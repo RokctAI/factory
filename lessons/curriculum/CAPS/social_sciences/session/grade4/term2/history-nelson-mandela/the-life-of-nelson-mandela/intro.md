@@ -1,0 +1,1 @@
+Today a Grade 4 class from Mthatha visits the Nelson Mandela Museum at Qunu, in the Eastern Cape, near the village where Nelson Mandela grew up. We learn the life story of Nelson Mandela, from a herd boy in Qunu to a lawyer, a prisoner and finally the first democratically elected President of South Africa, and why he is an example of a good leader.

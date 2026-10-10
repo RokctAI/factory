@@ -1,0 +1,1 @@
+Today we walk to school with Ayanda, a Grade 4 learner in Durban. Along the way she passes a huge fig tree, the Umgeni River, a bridge, a water tower and the giant arch of the Moses Mabhida Stadium. We learn what landmarks are, the difference between natural and human-made landmarks, and how to describe and draw a short journey.

@@ -1,0 +1,1 @@
+Today a Grade 4 class in Pietermaritzburg, in KwaZulu-Natal, prepares to choose a class captain. Before they vote, their teacher asks: what makes someone a leader? We start our History topic, learning from leaders. We find out what a leader is, the many kinds of leaders around us, and the different ways people become leaders.

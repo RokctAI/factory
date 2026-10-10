@@ -1,0 +1,1 @@
+Today we visit three families in different parts of South Africa: one in Durban, one in a village in Limpopo, and one in the fishing village of Paternoster on the West Coast. We learn the five ways people get their food: buying, growing, collecting, fishing and hunting, and why people in different places get their food in different ways.

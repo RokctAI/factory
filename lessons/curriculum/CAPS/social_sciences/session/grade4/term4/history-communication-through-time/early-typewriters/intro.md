@@ -1,0 +1,1 @@
+Today we join a Grade 4 class in Kimberley, in the Northern Cape, that finds an old typewriter in the school storeroom. The school secretary shows them how it works. We learn how people wrote before typewriters, who invented the typewriter, how a typewriter works without electricity, and how typewriters changed offices, work and writing.

@@ -1,0 +1,1 @@
+Today a Grade 4 class in Kimberley, in the Northern Cape, goes on a walk to look at buildings. They see homes, a kraal and chicken coops, shops, a school, a clinic, a bank, places of worship, a factory and the railway station. We learn what each kind of building is used for, and why different settlements have different buildings.

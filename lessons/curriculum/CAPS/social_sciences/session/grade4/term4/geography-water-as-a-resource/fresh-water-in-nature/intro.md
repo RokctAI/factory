@@ -1,0 +1,1 @@
+Today we go on a school hike in the Drakensberg with a Grade 4 class from Bergville, in KwaZulu-Natal. We follow fresh water in nature: rain falling on the mountains, wetlands that soak it up, streams and rivers that carry it, lakes that hold it, and water hidden under the ground that comes out as springs.

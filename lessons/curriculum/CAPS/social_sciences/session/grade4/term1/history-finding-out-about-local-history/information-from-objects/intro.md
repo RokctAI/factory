@@ -1,0 +1,1 @@
+Today a Grade 4 class in Mbombela, in Mpumalanga, turns their classroom into a museum. Learners bring old objects from home: a grinding stone, a flat iron, a paraffin lamp, an old coin and a clay pot. We learn how objects give us information about the past, how to question an object like a historian, and how museums and archaeologists help us.

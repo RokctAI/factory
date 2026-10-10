@@ -1,0 +1,1 @@
+Today we join Naledi, a Grade 4 learner from Soweto, on a busy weekday morning in Johannesburg. We look at the most common kinds of transport that people use today, how goods are moved around the country, and a case study of how exhaust fumes from vehicles damage the air in big cities, and what people can do about it.

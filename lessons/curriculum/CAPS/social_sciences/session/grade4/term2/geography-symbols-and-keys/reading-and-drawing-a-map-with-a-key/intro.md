@@ -1,0 +1,1 @@
+Today we visit Sanele, a Grade 4 learner who lives on a sugar cane farm near KwaDukuza, in KwaZulu-Natal. His class reads a map of the farm, then a map of a nearby village and part of a town. Then each learner draws a map of their own area. We learn how to read a map using its symbols and key, and how to draw our own map with symbols and a key.

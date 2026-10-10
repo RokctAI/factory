@@ -1,0 +1,1 @@
+Today we join a Grade 4 class in Durban that does an experiment with a bowl of salty sea water, some plastic wrap and a sunny windowsill. We learn the difference between salt water and fresh water, how much of the earth's water is fresh enough to drink, and how the natural water cycle moves water from the sea to the land and back to the sea again.

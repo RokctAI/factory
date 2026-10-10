@@ -1,0 +1,1 @@
+Today we revise all of Term 1. The Grade 4 class in Mthatha turns their classroom into three revision stations: places where people live, finding the way and people's needs, and local history. We visit each station, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.

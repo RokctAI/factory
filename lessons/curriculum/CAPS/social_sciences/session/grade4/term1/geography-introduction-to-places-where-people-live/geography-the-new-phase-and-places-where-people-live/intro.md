@@ -1,0 +1,1 @@
+Today we start Grade 4 Social Sciences. A Grade 4 class in Mthatha opens their new Social Sciences books for the first time. We learn that Social Sciences is made up of Geography and History, what changes now that we are in the Intermediate Phase, and we begin our first Geography topic: places where people live.

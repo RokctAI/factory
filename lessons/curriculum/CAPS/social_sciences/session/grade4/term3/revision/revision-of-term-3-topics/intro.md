@@ -1,0 +1,1 @@
+Today we revise all of Term 3. A Grade 4 class in Polokwane, in Limpopo, follows the journey of an orange from a citrus farm near Tzaneen all the way to a shop in another country. Along the way, they revise food and farming in South Africa, and transport through time on land, on water and in the air.

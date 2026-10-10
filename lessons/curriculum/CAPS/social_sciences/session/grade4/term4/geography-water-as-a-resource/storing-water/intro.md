@@ -1,0 +1,1 @@
+Today we visit a family in a village near Giyani, in Limpopo, where the summers bring rain but the winters are long and dry. We learn why people need to store water, and the different ways they store it, from clay pots and buckets at home to rain-water tanks, town reservoirs and huge dams on rivers. We also learn how to keep stored water clean and safe.

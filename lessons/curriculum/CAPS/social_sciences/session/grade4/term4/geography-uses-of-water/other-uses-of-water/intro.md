@@ -1,0 +1,1 @@
+Today we follow the Vaal River with a Grade 4 class from Vereeniging, in Gauteng. Along the river, we see that water is used for much more than drinking and washing. We learn how water is used for farming, in factories and mines, to make electricity, in gardens and parks, and for fun and sport.

@@ -1,0 +1,1 @@
+Today we travel to the Ceres valley in the Western Cape, where farmers grow apples and pears. First we learn what crop farming is and which crops are most important in South Africa, such as maize, wheat, sugar cane and fruit. Then we follow a year on a fruit farm, from the cold winter to the busy picking season, and see how the fruit reaches shops here and in other countries.

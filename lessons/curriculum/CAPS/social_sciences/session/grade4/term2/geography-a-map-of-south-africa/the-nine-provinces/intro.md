@@ -1,0 +1,1 @@
+Today a Grade 4 class in Pretoria builds a giant floor puzzle of South Africa, with one piece for each province. We learn the names of the nine provinces, where each one is on a map of South Africa, their capital cities, and which provinces are biggest, smallest, coastal and inland.
