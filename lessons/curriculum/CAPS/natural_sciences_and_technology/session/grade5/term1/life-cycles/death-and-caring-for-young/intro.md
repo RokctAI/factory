@@ -1,0 +1,1 @@
+Today a Grade 5 class from Manguzi joins a night walk on the beach in iSimangaliso Wetland Park, where loggerhead and leatherback turtles come ashore to lay their eggs. The rangers explain that only a few hatchlings will grow up. We learn that death can happen at any stage of a life cycle, and how many animals care for their young to help them survive.

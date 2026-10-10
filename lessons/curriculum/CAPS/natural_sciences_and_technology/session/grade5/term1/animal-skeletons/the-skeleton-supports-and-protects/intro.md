@@ -1,0 +1,1 @@
+Today a Grade 5 class in Cape Town watches the riders get ready for a big cycle race around the Cape Peninsula. The riders wear helmets and padding, but their bodies already have built-in protection. We learn how the skeleton supports the body and protects soft organs: the skull, the backbone and the ribs, and how the limbs and hip bones help us move.

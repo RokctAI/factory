@@ -1,0 +1,1 @@
+Today a Grade 5 class in Bloemfontein meets the model skeleton that stands in the corner of their science room, and they clean and study the bones left over from a roast chicken. We learn that a vertebrate skeleton is made of bones and joints inside the body, and that together they form a strong frame.

@@ -1,0 +1,1 @@
+Today a Grade 5 class in Durban watches a new building rise next to their school. First come steel and concrete columns and beams, and only later the walls. We learn that a structure is anything with a shape that can carry a load, that a vertebrate skeleton is a frame structure, and we build a model skeleton from drinking straws and pipe cleaners.

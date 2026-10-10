@@ -1,0 +1,1 @@
+Today a Grade 5 class from Mbombela spends a morning beside a big marula tree on a farm near the Kruger National Park. They watch bees, sunbirds, weaver birds, baboons and dung beetles busy around the tree. We learn how plants and animals depend on each other, and on the water, soil, air and sunlight in their habitat.

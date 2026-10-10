@@ -1,0 +1,1 @@
+Today we revise all of Term 1, Life and Living. A Grade 5 class in Pietermaritzburg turns their classroom into a nature trail with five stations: plants and animals on Earth, animal skeletons, skeletons as structures, food chains and life cycles. We visit each station, remind ourselves of the big ideas and fix the mistakes learners often make.
