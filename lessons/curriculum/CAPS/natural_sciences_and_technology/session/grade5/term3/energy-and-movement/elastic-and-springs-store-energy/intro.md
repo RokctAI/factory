@@ -1,0 +1,1 @@
+Today a Grade 5 class in Klerksdorp empties a box of springy things onto their desks: elastic bands, a clicky pen, a clothes peg, a stapler, a mattress spring and an old wind-up clock. They stretch, twist and squash them all. We learn that stretched or twisted elastic and compressed springs store energy, and that the more we stretch or squash them, the more energy they store.

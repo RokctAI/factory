@@ -1,0 +1,1 @@
+Today a Grade 5 class from Bergville goes on a school camp in the Drakensberg. As the evening gets cold, the camp leader shows them how to build and light a fire in a safe fire pit, and how to put it out. We learn that burning fuels gives us useful heat and light, that fuels need heat to start burning, and that they need oxygen to keep burning.

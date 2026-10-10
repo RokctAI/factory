@@ -1,0 +1,1 @@
+Today a Grade 5 class near Kriel in Mpumalanga, where several coal-fired power stations stand on the horizon, follows the journey of electricity from a lump of coal to the light in their classroom. We learn how a power station turns the energy in coal into electricity, and how mains electricity travels in a huge circuit along power lines to our homes and back.

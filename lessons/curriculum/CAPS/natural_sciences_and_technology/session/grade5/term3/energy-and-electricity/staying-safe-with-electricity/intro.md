@@ -1,0 +1,1 @@
+Today a Grade 5 class in Tembisa goes on an electricity safety hunt around their school and homes, after an electrician visits to talk about dangers he sees every day. They look for damaged cords, overloaded plugs, wet hands near switches and loose wires in the street. We learn the safety precautions that keep us safe from mains electricity indoors and outdoors.
