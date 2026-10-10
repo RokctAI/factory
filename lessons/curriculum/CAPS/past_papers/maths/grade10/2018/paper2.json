@@ -1,0 +1,434 @@
+{
+ "_comment": [
+  "Department of Basic Education Grade 10 Mathematics P2 (statistics, analytical geometry, trigonometry, measurement and Euclidean geometry), November 2018 national common examination.",
+  "Questions and marking-guideline answers transcribed from the rendered pages of the official PDFs",
+  "(paper2.pdf, paper2_memo.pdf); the text layer does not hold usable equations. Notation:",
+  "^ for powers, sqrt() for roots, a/b for fractions, decimal commas as printed. memo_answer is the",
+  "guideline's final answer and memo_working its working (tick marks and mark descriptors left out).",
+  "The guideline is bilingual (English/Afrikaans); only the English is transcribed. Graphs and diagrams are described",
+  "in brackets in the question text. The information sheet printed with the paper is not transcribed.",
+  "The question paper and the marking guideline are scans with no text layer.",
+  "FORMAT: 100 marks, 2 hours, eight compulsory questions (Q1 14, Q2 17, Q3 11, Q4 15, Q5 12, Q6 7, Q7 9,",
+  "Q8 15). Candidates answer in a 12-page SPECIAL ANSWER BOOK (paper2_answer_book.pdf) with the frequency",
+  "table for 1.1 and the grid for 5.1.1."
+ ],
+ "paper_id": "dbe_maths_g10_p2_2018_nov",
+ "source": "Department of Basic Education",
+ "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade10Exams.aspx",
+ "paper_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=RZ22JJ5tljc%3d&tabid=1853&portalid=0&mid=8657",
+ "memo_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=_QJV3vhD7tw%3d&tabid=1853&portalid=0&mid=8657",
+ "paper_file": "paper2.pdf",
+ "memo_file": "paper2_memo.pdf",
+ "answer_book_file": "paper2_answer_book.pdf",
+ "copyright": "© Department of Basic Education, 2018. Reproduced for educational use with attribution.",
+ "subject": "Maths",
+ "grade": 10,
+ "paper": "P2",
+ "session": "November 2018",
+ "language": "English",
+ "total_marks": 100,
+ "time_hours": 2,
+ "questions": [
+  {
+   "ref": "Q1.1",
+   "context": "QUESTION 1 | The line graph below shows test marks out of 10 obtained by a Grade 10 class. [Line graph, frequency of each mark: 0 - 0; 1 - 3; 2 - 4; 3 - 5; 4 - 3; 5 - 6; 6 - 0; 7 - 7; 8 - 9; 9 - 5; 10 - 0.]",
+   "text": "Complete the frequency column in the table provided in the ANSWER BOOK.",
+   "marks": 2,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "frequency_table_from_graph",
+   "memo_answer": "Marks 0 to 10 with frequencies 0 ; 3 ; 4 ; 5 ; 3 ; 6 ; 0 ; 7 ; 9 ; 5 ; 0",
+   "memo_working": "2 marks: all 11 values correct; 1 mark: 5 to 10 values correct",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2",
+   "text": "How many learners wrote the test?",
+   "marks": 1,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "graph_reading",
+   "memo_answer": "42 learners",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3.1",
+   "context": "1.3 Calculate the:",
+   "text": "Range for the data",
+   "marks": 2,
+   "topic": "Statistics: dispersion and box-and-whisker plots",
+   "solution_method": "range",
+   "memo_answer": "Range = 8",
+   "memo_working": "9 - 1 (answer only: full marks)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3.2",
+   "text": "Mean for the test",
+   "marks": 3,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "mean_from_frequency",
+   "memo_answer": "Mean = 5,57",
+   "memo_working": "((1 × 3) + (2 × 4) + (3 × 5) + (4 × 3) + (5 × 6) + (7 × 7) + (8 × 9) + (9 × 5))/42 = 234/42",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.4",
+   "text": "Determine the median for the data.",
+   "marks": 3,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "median",
+   "memo_answer": "Median = 6",
+   "memo_working": "position (n + 1)/2 = 21,5th; Q2 = (5 + 7)/2",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.5",
+   "text": "Draw a box and whisker diagram for the data.",
+   "marks": 3,
+   "topic": "Statistics: dispersion and box-and-whisker plots",
+   "solution_method": "draw_box_whisker",
+   "memo_answer": "Box and whisker diagram on a scale from 1 to 10: whiskers from 1 to 9, box from Q1 = 3 to Q3 = 8 with the median line at 6 (marks: Q1, Q3, rest of the box).",
+   "checkable": false
+  },
+  {
+   "ref": "Q2.1.1",
+   "context": "QUESTION 2 | In the diagram below, P(1 ; 0), Q(6 ; 3) and R(9 ; -2) are the vertices of a triangle such that PQ = QR and PQ ⊥ QR. T is a point on PQ such that T is the midpoint of PQ. S is the point of intersection of RQ and the x-axis. V is a point on the x-axis such that QŜV = 121°. QP̂S = θ. 2.1 Determine the:",
+   "text": "Length of PQ. Leave your answer in surd form.",
+   "marks": 2,
+   "topic": "Analytical geometry",
+   "solution_method": "distance_formula",
+   "memo_answer": "PQ = sqrt(34)",
+   "memo_working": "sqrt((1 - 6)^2 + (0 - 3)^2) = sqrt(25 + 9)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.2",
+   "text": "Gradient of PQ",
+   "marks": 2,
+   "topic": "Analytical geometry",
+   "solution_method": "gradient_formula",
+   "memo_answer": "m_PQ = 3/5",
+   "memo_working": "(3 - 0)/(6 - 1)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.3",
+   "text": "Coordinates of T",
+   "marks": 2,
+   "topic": "Analytical geometry",
+   "solution_method": "midpoint_formula",
+   "memo_answer": "T(7/2 ; 3/2)",
+   "memo_working": "((1 + 6)/2 ; (0 + 3)/2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.1",
+   "context": "2.2 Calculate the:",
+   "text": "Area of ΔQTR",
+   "marks": 3,
+   "topic": "Analytical geometry",
+   "solution_method": "area_of_triangle",
+   "memo_answer": "17/2 = 8,5 square units",
+   "memo_working": "QR = QP = sqrt(34); QT = 1/2 sqrt(34); area = 1/2 (QR)(QT) = 1/2 (sqrt(34))(1/2 sqrt(34))",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.2",
+   "text": "Size of θ, with reasons",
+   "marks": 2,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "angle_reasoning",
+   "memo_answer": "θ = 31°",
+   "memo_working": "θ = 121° - 90° [ext. ∠ of Δ]. OR QŜP = 59° [∠s on a str. line]; θ = 31° [∠ sum of Δ]",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.3",
+   "text": "Coordinates of S",
+   "marks": 3,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "trig_or_gradient_coordinates",
+   "memo_answer": "S(7,8 ; 0)",
+   "memo_working": "cos θ = PQ/PS: PS = sqrt(34)/cos 31° = 6,80; x = 6,8 + 1. OR m_QR = -5/3 = (3 - 0)/(6 - x); 9 = -30 + 5x; x = 7,8. OR QR: y = -(5/3)x + 13, y = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Determine, with reasons, the gradient of the line through T and the midpoint of PR.",
+   "marks": 3,
+   "topic": "Euclidean geometry: the midpoint theorem",
+   "solution_method": "midpoint_theorem_gradient",
+   "memo_answer": "-5/3",
+   "memo_working": "m_QR = (3 - (-2))/(6 - 9) = -5/3; the line through T and the midpoint of PR is parallel to QR [midpoint theorem]. OR midpoint of PR (5 ; -1); m = (3/2 - (-1))/(7/2 - 5)",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.1",
+   "context": "QUESTION 3 | 3.1 In the diagram below, ΔQPR is a right-angled triangle with QP̂R = 90°.",
+   "text": "Use the sketch to determine the ratio of tan(90° - R).",
+   "marks": 1,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_ratio_definition",
+   "memo_answer": "tan(90° - R) = PR/QP",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.2",
+   "text": "Write down the trigonometric ratio that is equal to QR/QP.",
+   "marks": 1,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_ratio_definition",
+   "memo_answer": "sec Q (OR cosec R)",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2.1",
+   "context": "3.2 S(-3 ; -4) is a point on the Cartesian plane such that OS makes an angle of θ with the positive x-axis. Calculate the following WITHOUT using a calculator:",
+   "text": "The length of OS",
+   "marks": 2,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "distance_formula",
+   "memo_answer": "OS = 5",
+   "memo_working": "sqrt((-3)^2 + (-4)^2) [Pythagoras]",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2.2",
+   "text": "The value of sec θ + sin^2 θ",
+   "marks": 3,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_diagram_evaluation",
+   "memo_answer": "-77/75",
+   "memo_working": "-5/3 + (-4/5)^2 = -5/3 + 16/25",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.3",
+   "text": "Determine the value of the following WITHOUT using a calculator: cosec 45°/(sin 90°.tan 60°)",
+   "marks": 4,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "special_angles",
+   "memo_answer": "2/sqrt(6) (= sqrt(2)/sqrt(3))",
+   "memo_working": "(1/sin 45°)/((1)(sqrt(3))) = (2/sqrt(2)) ÷ sqrt(3). If the answer is left as sqrt(6)/3 with no other rationalisation working: max 3/4 marks",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | 4.1 In the diagram below, ABC, ACD and ADE are right-angled triangles. BÂE = 90° and BÂC = 30°. BC = 20 units and AD = 60 units. [Right angles at B, C and D.] Calculate the:",
+   "text": "Length of AC",
+   "marks": 2,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "solving_right_triangles",
+   "memo_answer": "AC = 40",
+   "memo_working": "sin 30° = 20/AC (OR cos 60°, cosec 30°, sec 60°)",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "Size of CÂD",
+   "marks": 2,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "trig_ratio_angle",
+   "memo_answer": "CÂD = 48,19°",
+   "memo_working": "cos CÂD = AC/60 = 40/60",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.3",
+   "text": "Length of DE",
+   "marks": 3,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "solving_right_triangles",
+   "memo_answer": "DE = 12,55",
+   "memo_working": "DÂE = 90° - (30° + 48,19°) = 11,81°; tan 11,81° = DE/60",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.1",
+   "context": "4.2 Solve for x, correct to ONE decimal place, where 0° ≤ x ≤ 90°:",
+   "text": "tan x = 2,01",
+   "marks": 2,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "solve_trig_equation",
+   "memo_answer": "x = 63,5°",
+   "memo_working": "if the rounding is incorrect: max 1/2 marks",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.2",
+   "text": "5cos x + 2 = 4",
+   "marks": 3,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "solve_trig_equation",
+   "memo_answer": "x = 66,4°",
+   "memo_working": "5cos x = 2; cos x = 2/5; x = 66,4218...°",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.3",
+   "text": "cosec x/2 = 3",
+   "marks": 3,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "solve_trig_equation",
+   "memo_answer": "x = 9,6°",
+   "memo_working": "cosec x = 6; sin x = 1/6",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.1",
+   "context": "QUESTION 5 | 5.1 Consider the function f(x) = -3tan x.",
+   "text": "Sketch, on the grid provided in the ANSWER BOOK, the graph of f for 0° ≤ x ≤ 360°. Clearly show ALL the intercepts and asymptotes.",
+   "marks": 3,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "sketch_graph",
+   "memo_answer": "Decreasing tan-shaped branches through (0° ; 0), (180° ; 0) and (360° ; 0) and through (45° ; -3), (135° ; 3), (225° ; -3), (315° ; 3), with dashed asymptotes x = 90° and x = 270° (marks: shape through a ±3 point, x-intercepts, both asymptotes).",
+   "checkable": false
+  },
+  {
+   "ref": "Q5.1.2a",
+   "context": "5.1.2 Hence, or otherwise, write down the:",
+   "text": "Period of f",
+   "marks": 1,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "period_of_function",
+   "memo_answer": "180°",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.2b",
+   "text": "Equation of h if h is the reflection of f about the x-axis",
+   "marks": 1,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "trig_transformation",
+   "memo_answer": "h(x) = 3tan x",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.1",
+   "context": "5.2 Sketched below is the graph of g(x) = a.cos bθ [Graph: g starts at (0° ; -2), passes through (90° ; 0), has a maximum (180° ; 2), passes through (270° ; 0) and returns to (360° ; -2).]",
+   "text": "Write down the values of a and b.",
+   "marks": 2,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "read_trig_parameters",
+   "memo_answer": "a = -2 ; b = 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.2",
+   "text": "Use the graph to determine the value(s) of x for which g(x) > 0.",
+   "marks": 1,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "90° < x < 270° OR x ∈ (90° ; 270°)",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.3",
+   "text": "Determine the range of h if h is the image of g if g is shifted down TWO units.",
+   "marks": 2,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "range_after_transformation",
+   "memo_answer": "-4 ≤ y ≤ 0 OR y ∈ [-4 ; 0]",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.4",
+   "text": "Determine, using the graph, the value of: -2(cos 0° + cos 1° + cos 2° + ... + cos 358° + cos 359° + cos 360°)",
+   "marks": 2,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "symmetry_of_trig_graph",
+   "memo_answer": "-2",
+   "memo_working": "-2(1): the cosine values cancel in pairs except cos 0° (or cos 360°) = 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1",
+   "context": "QUESTION 6 | The diagram below shows a cup with a volume of 117π cm^3 and an inner diameter of 60 mm. Ignore the thickness of the cup. [Cylinder of height h.] Calculate the:",
+   "text": "Height of the cup",
+   "marks": 3,
+   "topic": "Measurement: area, volume and surface area",
+   "solution_method": "volume_of_cylinder",
+   "memo_answer": "h = 13 cm",
+   "memo_working": "r = 3 cm; V = πr^2 h; 117π = π(3)^2 h",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.2",
+   "text": "Total surface area of the water that touches the cup if the cup is 80% full with water",
+   "marks": 4,
+   "topic": "Measurement: area, volume and surface area",
+   "solution_method": "surface_area_of_cylinder",
+   "memo_answer": "224,31 cm^2",
+   "memo_working": "πr^2 + 2πrh = π(3)^2 + 2π(3)(13) × 0,8 = π(3)^2 + 2π(3)(10,4)",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1",
+   "context": "QUESTION 7 | Give reasons for ALL geometry statements in QUESTIONS 7 and 8.",
+   "text": "Complete the statement so that it is TRUE: The line drawn from the midpoint of the one side of a triangle, parallel to the second side, ...",
+   "marks": 1,
+   "topic": "Euclidean geometry: the midpoint theorem",
+   "solution_method": "theorem_recall",
+   "memo_answer": "bisects the third side",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2.1",
+   "context": "7.2 ACS is a triangle. P is a point on AS and R is a point on AC such that PSRQ is a parallelogram. PQ intersects AC at B such that B is the midpoint of AR. QC is joined. Also, CR = PS, Ĉ1 = 50° and BP = 60 mm. [Angles: Q̂1 = CQ̂R; Ĉ1 = QĈR; R̂3 = QR̂B; B̂1, B̂2, B̂3 at B; P̂1, P̂2 at P.]",
+   "text": "Calculate the size of Â.",
+   "marks": 5,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometry_angle_reasoning",
+   "memo_answer": "Â = 100°",
+   "memo_working": "CR = PS [given]; PS = QR [opp sides of ∥m =]; CR = QR; Q̂1 = Ĉ1 = 50° [∠s opp = sides]; R̂3 = 100° [ext ∠ of Δ]; Â = R̂3 = 100° [alt ∠s, QR ∥ AS]",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2.2",
+   "text": "Determine the length of QP.",
+   "marks": 3,
+   "topic": "Euclidean geometry: the midpoint theorem",
+   "solution_method": "midpoint_theorem",
+   "memo_answer": "QP = 120 mm",
+   "memo_working": "AP = PS [line from midpoint ∥ to one side of Δ]; RS = 120 [midpoint theorem]; QP = RS = 120 [opp sides of ∥m =]. OR ΔQBR ≡ ΔPBA (∠∠S), QB = BP = 60",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1.1",
+   "context": "QUESTION 8 | 8.1 ABCD is a parallelogram. E and F are points on AB and DC respectively such that AE = CF. DE is produced to J and CJ is drawn. BF is produced to K and AK is drawn. [CJ meets AB at G and AK meets DC at H; Ê1 = JÊB, Ê3 = AÊD, F̂1 = KF̂D, F̂3 = BF̂C and D̂1 = EDF.] Prove that:",
+   "text": "DJ ∥ BK",
+   "marks": 5,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "AB = DC and AE + EB = DF + FC [opp sides of ∥m =]; AE = CF [given]; EB = DF; DF ∥ EB [opp sides of ∥m ∥]; EDFB is a parallelogram [one pair opp sides = and ∥]; ED ∥ FB, so DJ ∥ BK. (Alternatives use ΔAED ≡ ΔCFB [S∠S].)",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.1.2",
+   "text": "Ê1 = F̂1",
+   "marks": 4,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "Ê1 = D̂1 [corresp ∠s, AB ∥ DC]; F̂1 = D̂1 [alt ∠s, DE ∥ FB]; therefore Ê1 = F̂1. (Alternatives: via Ê3 = F̂1 and vert. opp. ∠s, or opp ∠s of parallelogram EDFB.)",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.1",
+   "context": "8.2 In the diagram below O is the centre of the circle. A and B lie on the circumference of the circle. AP = BP. [OP meets chord AB at T; OA, OB, PA and PB are drawn.] Prove that:",
+   "text": "AT = BT",
+   "marks": 5,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "AP = BP [given]; OA = OB [radii]; OAPB is a kite [two pairs adj sides =]; AT = TB [one diagonal of a kite bisects the other]. OR ΔOAP ≡ ΔOBP (SSS), then ΔOAT ≡ ΔOBT (S∠S)",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.2",
+   "text": "OT̂A = 90°",
+   "marks": 1,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "OT̂A = 90° [properties of a kite: diagonals ⊥]. OR OT̂A = OT̂B (ΔOTA ≡ ΔOTB) and OT̂A + OT̂B = 180° [∠s on a str. line]",
+   "checkable": false
+  }
+ ]
+}

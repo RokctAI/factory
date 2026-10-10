@@ -1,0 +1,527 @@
+{
+ "_comment": [
+  "Eastern Cape Department of Education Grade 11 Mathematics P1 (algebra, patterns, functions, finance and probability), November 2024 provincial common examination.",
+  "Questions and marking-guideline answers transcribed from the rendered pages of the official PDFs",
+  "(paper1.pdf, paper1_memo.pdf); the text layer does not hold usable equations. Notation:",
+  "^ for powers, sqrt() for roots, a/b for fractions, decimal commas as printed. memo_answer is the",
+  "guideline's final answer and memo_working its working (tick marks and mark descriptors left out).",
+  "The guideline is bilingual (English/Afrikaans); only the English is transcribed. Graphs and diagrams are described",
+  "in brackets in the question text. The information sheet printed with the paper is not transcribed.",
+  "FORMAT: 150 marks, 3 hours, ten compulsory questions (Q1 26, Q2 17, Q3 11, Q4 15, Q5 17, Q6 16,",
+  "Q7 13, Q8 16, Q9 11, Q10 8)."
+ ],
+ "paper_id": "ecdoe_maths_g11_p1_2024_nov",
+ "source": "Eastern Cape Department of Education",
+ "source_url": "https://ecexams.co.za/2024_November_Gr_11_Exams.htm",
+ "paper_download_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/MATHS%20P1%20QP%20GR11%20NOV2024_watermark.zip",
+ "memo_download_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/MATHS%20P1%20MEMO%20GR11%20NOV2024_ENG_AFR_watermark.pdf",
+ "paper_file": "paper1.pdf",
+ "memo_file": "paper1_memo.pdf",
+ "copyright": "© Eastern Cape Department of Education, 2024. Reproduced for educational use with attribution.",
+ "subject": "Maths",
+ "grade": 11,
+ "paper": "P1",
+ "session": "November 2024",
+ "language": "English",
+ "total_marks": 150,
+ "time_hours": 3,
+ "questions": [
+  {
+   "ref": "Q1.1.1",
+   "context": "QUESTION 1 | 1.1 Solve for x:",
+   "text": "x^2 - 2x - 8 = 0",
+   "marks": 2,
+   "topic": "Equations: quadratic equations",
+   "solution_method": "factorise_trinomial",
+   "memo_answer": "x = 4 or x = -2",
+   "memo_working": "(x - 4)(x + 2) = 0 (answers only: full marks)",
+   "memo_note": "The guideline's mark column prints x = -4; the working gives x = 4.",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.2",
+   "text": "2x^2 - 3x = 7 (answers correct to TWO decimal places)",
+   "marks": 4,
+   "topic": "Equations: quadratic formula and completing the square",
+   "solution_method": "quadratic_formula",
+   "memo_answer": "x = 2,77 or x = -1,27",
+   "memo_working": "2x^2 - 3x - 7 = 0; x = (-(-3) ± sqrt((-3)^2 - 4(2)(-7)))/(2(2)). Penalise 1 mark for incorrect rounding.",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.3",
+   "text": "(x + 1)(4 - x) > 0 ; where x ∈ N",
+   "marks": 3,
+   "topic": "Inequalities: quadratic inequalities",
+   "solution_method": "quadratic_inequality",
+   "memo_answer": "x ∈ {1 ; 2 ; 3}",
+   "memo_working": "(x + 1)(x - 4) < 0; critical values x = -1 or x = 4; -1 < x < 4 but x ∈ N",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.1",
+   "context": "1.2 Given: 14/p = p + 5",
+   "text": "Solve for p",
+   "marks": 3,
+   "topic": "Equations: quadratic equations",
+   "solution_method": "factorise_trinomial",
+   "memo_answer": "p = -7 or p = 2",
+   "memo_working": "p(p + 5) = 14; p^2 + 5p - 14 = 0; (p + 7)(p - 2) = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.2",
+   "text": "Hence, or otherwise, solve for x if 14/sqrt(x + 5) = sqrt(x + 5) + 5",
+   "marks": 4,
+   "topic": "Exponents and surds",
+   "solution_method": "hence_substitution",
+   "memo_answer": "x = -1",
+   "memo_working": "let sqrt(x + 5) = p: 2 = sqrt(x + 5) or -7 = sqrt(x + 5); but -7 ≠ sqrt(x + 5); x + 5 = (2)^2; x = 4 - 5",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3",
+   "text": "Solve for x and y simultaneously: -3y = 1 - x and x^2 - 2xy - y^2 - 7 = 0",
+   "marks": 6,
+   "topic": "Equations: simultaneous equations (one linear, one quadratic)",
+   "solution_method": "substitution_method",
+   "memo_answer": "x = 10, y = 3 or x = -2, y = -1",
+   "memo_working": "x = 1 + 3y; (1 + 3y)^2 - 2y(1 + 3y) - y^2 - 7 = 0; 1 + 6y + 9y^2 - 2y - 6y^2 - y^2 - 7 = 0; 2y^2 + 4y - 6 = 0; y^2 - 2y - 3 = 0; (y - 3)(y + 1) = 0",
+   "memo_note": "Official answer kept. The guideline divides 2y^2 + 4y - 6 = 0 to y^2 - 2y - 3 = 0; it should be y^2 + 2y - 3 = 0, (y + 3)(y - 1) = 0, giving x = 4, y = 1 or x = -8, y = -3 (both satisfy the original equations; x = 10, y = 3 does not).",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.4",
+   "text": "If 2x^(-1) + x^(-2) = 3 and x < 0, determine, without using a calculator, the value of 2(6x - 1)^(-1).",
+   "marks": 4,
+   "topic": "Equations: quadratic equations",
+   "solution_method": "negative_exponent_equation",
+   "memo_answer": "-2/3",
+   "memo_working": "2/x + 1/x^2 = 3; 2x + 1 - 3x^2 = 0; 3x^2 - 2x - 1 = 0; (3x + 1)(x - 1) = 0; x = -1/3 (x < 0); 2/(6(-1/3) - 1) = 2/(-2 - 1)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1",
+   "text": "Simplify fully, without using a calculator: (sqrt(32) - sqrt(18) + 3sqrt(3)) / (sqrt(108) + sqrt(8))",
+   "marks": 4,
+   "topic": "Exponents and surds",
+   "solution_method": "simplify_surds",
+   "memo_answer": "1/2",
+   "memo_working": "= (4sqrt(2) - 3sqrt(2) + 3sqrt(3))/(6sqrt(3) + 2sqrt(2)) = (3sqrt(3) + sqrt(2))/(2(3sqrt(3) + sqrt(2)))",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.1",
+   "context": "2.2 Solve for x:",
+   "text": "2x^(-5/2) = 64",
+   "marks": 3,
+   "topic": "Exponential equations",
+   "solution_method": "rational_exponent_equation",
+   "memo_answer": "x = 1/4",
+   "memo_working": "x^(-5/2) = 32; x = (2^5)^(-2/5) = 2^(-2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.2",
+   "text": "3.5^x - 5^(x - 1) = 14",
+   "marks": 5,
+   "topic": "Exponential equations",
+   "solution_method": "exponential_common_factor",
+   "memo_answer": "x = 1",
+   "memo_working": "3.5^x - 5^x.5^(-1) = 14; 5^x(3 - 1/5) = 14; 5^x(14/5) = 14; 5^x = 5",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Calculate a possible value for a^2 + b^2, if it is given that a and b are rational numbers such that sqrt(a) + sqrt(b) = sqrt(9 + sqrt(56)).",
+   "marks": 5,
+   "topic": "Exponents and surds",
+   "solution_method": "surd_equating_rational_parts",
+   "memo_answer": "a^2 + b^2 = 53",
+   "memo_working": "square both sides: a + b + 2sqrt(ab) = 9 + 2sqrt(14) (sqrt(56) = 2sqrt(14)); a + b = 9 and ab = 14; a = 2 and b = 7 (or a = 7, b = 2); 2^2 + 7^2 = 53",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.1",
+   "context": "QUESTION 3 | 3.1 Consider the linear number pattern: -5 ; -9 ; -13 ; ...",
+   "text": "Write down the next TWO terms of the pattern.",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "extend_pattern",
+   "memo_answer": "-17 ; -21",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.2",
+   "text": "Determine an expression for the nth term of the pattern.",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_general_term",
+   "memo_answer": "Tn = -4n - 1",
+   "memo_working": "d = -4; -5 = -4(1) + c; c = -1",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.3",
+   "text": "Calculate the value of n for which Tn = -141.",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "solve_for_term_number",
+   "memo_answer": "n = 35",
+   "memo_working": "-141 = -4n - 1; -140 = -4n",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2",
+   "text": "In a linear number pattern the first term is x and a common difference is 5 less than the first term. Calculate the value of the first term if it is given that the sum of the first three terms of the linear number pattern is 63.",
+   "marks": 5,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "form_and_solve_equation",
+   "memo_answer": "x = 13",
+   "memo_working": "d = x - 5; terms x ; x + (x - 5) ; x + 2(x - 5); x + x + (x - 5) + x + 2(x - 5) = 63; 6x - 15 = 63; 6x = 78",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1",
+   "context": "QUESTION 4 | Given the number pattern 24 ; 10 ; 0 ; -6 ; ...",
+   "text": "Show that the above number pattern is quadratic.",
+   "marks": 2,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "second_difference_test",
+   "memo_answer": "First differences -14 ; -10 ; -6; second differences 4 ; 4 (constant), so the pattern is quadratic.",
+   "checkable": false
+  },
+  {
+   "ref": "Q4.2",
+   "text": "Determine the nth term of the quadratic number pattern in the form, Tn = an^2 + bn + c.",
+   "marks": 4,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "quadratic_general_term",
+   "memo_answer": "Tn = 2n^2 - 20n + 42",
+   "memo_working": "2a = 4, a = 2; 3(2) + b = -14, b = -20; a + b + c = 24, c = 42",
+   "memo_note": "The guideline's mark column prints a = 6, b = -9, c = 6; the working and final answer give 2, -20 and 42.",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.3",
+   "text": "Calculate the value of T52.",
+   "marks": 2,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "substitute_and_evaluate",
+   "memo_answer": "T52 = 4 410",
+   "memo_working": "2(52)^2 - 20(52) + 42",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.4",
+   "text": "Determine the smallest value of the quadratic number pattern.",
+   "marks": 3,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "turning_point_of_pattern",
+   "memo_answer": "-8",
+   "memo_working": "n = -(-20)/(2(2)) = 5; T5 = 2(5)^2 - 20(5) + 42 = -8. OR Tn = 2(n - 5)^2 - 8",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.5",
+   "text": "Determine the value(s) of n for which the terms of the quadratic number pattern will be positive.",
+   "marks": 4,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "quadratic_inequality",
+   "memo_answer": "1 ≤ n < 3 or n > 7, n ∈ N",
+   "memo_working": "2n^2 - 20n + 42 > 0; n^2 - 10n + 21 > 0; (n - 7)(n - 3) > 0; critical values 3 and 7 (also accepted: 1 ≤ n ≤ 2 or n ≥ 8)",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1",
+   "context": "QUESTION 5 | The lines y = -x + 4 and y = x - 2 are the axes of symmetry of the function f(x) = -3/(x + p) + q.",
+   "text": "Show that p = -3 and q = 1.",
+   "marks": 4,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "axes_of_symmetry_hyperbola",
+   "memo_answer": "p = -3 and q = 1",
+   "memo_working": "x - 2 = -x + 4; 2x = 6; x = 3, so x - 3 = 0 and p = -3; y = 3 - 2 = 1, so q = 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2",
+   "text": "Calculate the x-intercept of f.",
+   "marks": 2,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "intercepts",
+   "memo_answer": "(6 ; 0)",
+   "memo_working": "-3/(x - 3) + 1 = 0; -3/(x - 3) = -1; -x + 3 = -3; x = 6",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.3",
+   "text": "Calculate the y-intercept of f.",
+   "marks": 2,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "intercepts",
+   "memo_answer": "(0 ; 2)",
+   "memo_working": "y = -3/(0 - 3) + 1 = 2",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.4",
+   "text": "Sketch the graph of f. Clearly label all intercepts with the axes and asymptotes.",
+   "marks": 3,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "sketch_graph",
+   "memo_answer": "Hyperbola with dashed asymptotes x = 3 and y = 1, branches in the second and fourth quadrants relative to the asymptotes: the left branch passes through (0 ; 2) and rises towards x = 3; the right branch comes up from below next to x = 3 and passes through (6 ; 0) towards y = 1 (marks: shape, asymptotes, intercepts).",
+   "checkable": false
+  },
+  {
+   "ref": "Q5.5",
+   "text": "Write down the domain of g if g is the reflection of f along the line x = 0.",
+   "marks": 3,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "domain_after_transformation",
+   "memo_answer": "x ∈ R ; x ≠ -3",
+   "memo_working": "g(x) = f(-x) = -3/(-x - 3) + 1; vertical asymptote -x - 3 = 0, x = -3",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.6",
+   "text": "For which values of x will x.f(x) ≤ 0?",
+   "marks": 3,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "x ≤ 0 or 3 < x ≤ 6",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1",
+   "context": "QUESTION 6 | Sketched below is the graph of f(x) = x^2 - 4x - 5 for x ∈ (-∞ ; 6]. A and B are the x-intercepts and C the y-intercept of f. [Graph: parabola opening upwards through A (negative x-axis), C (negative y-axis) and B (positive x-axis), ending at a solid point above x = 6.]",
+   "text": "Determine the value of f(6).",
+   "marks": 1,
+   "topic": "Functions: the parabola",
+   "solution_method": "substitute_and_evaluate",
+   "memo_answer": "f(6) = 7",
+   "memo_working": "(6)^2 - 4(6) - 5",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.2",
+   "text": "Determine the coordinates of A and B.",
+   "marks": 3,
+   "topic": "Functions: the parabola",
+   "solution_method": "intercepts",
+   "memo_answer": "A(-1 ; 0) and B(5 ; 0)",
+   "memo_working": "x^2 - 4x - 5 = 0; (x - 5)(x + 1) = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.3",
+   "text": "Hence, calculate the length of AB.",
+   "marks": 1,
+   "topic": "Functions: the parabola",
+   "solution_method": "distance_on_axis",
+   "memo_answer": "AB = 6 units",
+   "memo_working": "AB = x_B - x_A = 5 - (-1)",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.4",
+   "text": "Write down the equation of g in the form g(x) = ax^2 + bx + c, if it is given that g(x) is obtained by shifting f(x) two units to the right and five units up.",
+   "marks": 3,
+   "topic": "Functions: the parabola",
+   "solution_method": "translate_parabola",
+   "memo_answer": "g(x) = x^2 - 8x - 12",
+   "memo_working": "g(x) = (x - 2)^2 - 4(x - 2) - 5 + 5 = x^2 - 4x + 4 - 4x + 8 - 5 + 5",
+   "memo_note": "Official answer kept; the expansion x^2 - 4x + 4 - 4x + 8 - 5 + 5 gives x^2 - 8x + 12.",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.5",
+   "text": "Suppose h is a tangent, to the curve f at a certain point, with a gradient of -2. Calculate the y-intercept of h.",
+   "marks": 5,
+   "topic": "Functions: the parabola",
+   "solution_method": "tangent_discriminant",
+   "memo_answer": "y-intercept = -6",
+   "memo_working": "h(x) = -2x + c; x^2 - 4x - 5 = -2x + c; x^2 - 2x - 5 - c = 0; Δ = (-2)^2 - 4(1)(-5 - c) = 24 + 4c; tangent so Δ = 0; c = -6",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.6",
+   "text": "For which values of k will f(x) - k = 0 have just one real root?",
+   "marks": 3,
+   "topic": "Equations: nature of roots",
+   "solution_method": "horizontal_line_intersections",
+   "memo_answer": "k = -9 or k > 7",
+   "memo_working": "turning point x = -(-4)/(2(1)) = 2, f(2) = -9; on the restricted domain the line y = k cuts f once at the turning point or above the end point (6 ; 7)",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1",
+   "context": "QUESTION 7 | The graphs of f(x) = -(b)^x + 8 and g(x) = (3/2)x + 7 are drawn below. A(-2 ; 4) and B are points of intersection of f and g. B is the y-intercept of both graphs f and g. [Graph: f increases towards the dashed asymptote above B; the straight line g passes through A and B.]",
+   "text": "Write down the coordinates of B.",
+   "marks": 1,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "intercepts",
+   "memo_answer": "B(0 ; 7)",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2",
+   "text": "Show that b = 1/2.",
+   "marks": 2,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "substitute_point_exponential",
+   "memo_answer": "b = 1/2",
+   "memo_working": "4 = -b^(-2) + 8; b^(-2) = 4; b^2 = 1/4; b = ±sqrt(1/4); b > 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.3",
+   "text": "Write down the average gradient of f between A and B.",
+   "marks": 2,
+   "topic": "Functions: average gradient",
+   "solution_method": "average_gradient",
+   "memo_answer": "3/2",
+   "memo_working": "A and B also lie on g, gradient 3/2",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.4",
+   "text": "Write down the equation of the asymptote of f.",
+   "marks": 1,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "read_asymptote",
+   "memo_answer": "y = 8",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.5",
+   "text": "Calculate the vertical distance between f and g at x = -1.",
+   "marks": 3,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "vertical_distance_between_graphs",
+   "memo_answer": "1/2 unit",
+   "memo_working": "f(-1) = -(1/2)^(-1) + 8 = 6; g(-1) = (3/2)(-1) + 7 = 11/2; 6 - 11/2",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.6",
+   "text": "Describe the transformation of f to h if h(x) = (1/2)^x - 5.",
+   "marks": 2,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "describe_transformation",
+   "memo_answer": "Reflection along the x-axis, then a vertical translation of 3 units upwards.",
+   "memo_working": "-f(x) = (1/2)^x - 8; h(x) = (1/2)^x - 8 + 3",
+   "checkable": false
+  },
+  {
+   "ref": "Q7.7",
+   "text": "For which values of x is f(x) ≥ g(x)?",
+   "marks": 2,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "-2 ≤ x ≤ 0 or x ∈ [-2 ; 0]",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1",
+   "text": "A Google Chromebook costs R14 500 and depreciates by 13% p.a. compounded annually calculated on the reducing-balance method. Calculate what a Google Chromebook will be worth after exactly 5 years.",
+   "marks": 3,
+   "topic": "Finance, growth and decay",
+   "solution_method": "reducing_balance_depreciation",
+   "memo_answer": "R7 227,10",
+   "memo_working": "A = P(1 - i)^n = 14 500(1 - 0,13)^5",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2.1",
+   "context": "8.2 Koza deposits R15 000 into a bank account for a period of 10 years. The interest rate for the first four years is 6% per annum compounded monthly. For the next six years, the interest rate changes to 10% per annum compounded semi-annually.",
+   "text": "Convert the nominal rates to annual effective rates. (Answers correct to FOUR decimal places)",
+   "marks": 4,
+   "topic": "Finance, growth and decay",
+   "solution_method": "nominal_to_effective",
+   "memo_answer": "6,1678% and 10,25%",
+   "memo_working": "i_eff = (1 + 0,06/12)^12 - 1 = 6,1678%; i_eff = (1 + 0,1/2)^2 - 1 = 10,25%",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2.2",
+   "text": "Hence, use the effective rates or otherwise, calculate the future value of the savings at the end of the ten-year period.",
+   "marks": 4,
+   "topic": "Finance, growth and decay",
+   "solution_method": "compound_interest_timeline",
+   "memo_answer": "R34 224,26",
+   "memo_working": "A = 15 000(1 + 6,1678/100)^4 (1 + 0,1025)^6",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2.3",
+   "text": "The interest rate for the first 4 years remains at 6% p.a. compounded monthly. For the next 2 years the interest rate is x% p.a. compounded quarterly. For the last 4 years the interest rate is x% p.a. compounded semi-annually. If Koza receives R48 897,03 at the end of the 10-year period, determine the interest rate for the last 6 years, i.e. the value of x.",
+   "marks": 5,
+   "topic": "Finance, growth and decay",
+   "solution_method": "solve_for_interest_rate",
+   "memo_answer": "Interest rate = 16,23%",
+   "memo_working": "15 000(1 + 0,06/12)^48 (1 + x/4)^8 (1 + x/2)^8 = 48 897,03; [(1 + x/4)(1 + x/2)]^8 = 2,565784627; 1 + x/2 + x/4 + x^2/8 = 1,125; 8 + 4x + 2x + x^2 = 9; x^2 + 6x - 1 = 0; x = (-6 ± sqrt(6^2 - 4(1)(-1)))/2 = 0,1623 (x ≠ -6,1623)",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.1",
+   "context": "QUESTION 9 | 9.1 A certain company uses a camera detector system to detect trespassers. Two independent cameras, A and B are installed, one at the front main gate and the other one at the back of the building. If someone trespasses, the probability that the person will be detected by camera A is 0,5 and the probability that the person will be detected by camera B is 0,6.",
+   "text": "If there is a trespasser, what is the probability that the trespasser will be detected by at least one camera?",
+   "marks": 3,
+   "topic": "Probability",
+   "solution_method": "addition_rule",
+   "memo_answer": "0,8",
+   "memo_working": "P(A or B) = P(A) + P(B) - P(A and B) = 0,5 + 0,6 - (0,5 × 0,6)",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.2",
+   "text": "Determine the probability that the trespasser will not be detected.",
+   "marks": 2,
+   "topic": "Probability",
+   "solution_method": "complement_probability",
+   "memo_answer": "0,2",
+   "memo_working": "P(not detected) = 1 - P(at least one) = 1 - 0,8",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.2.1",
+   "context": "9.2 At a certain high school, a survey was carried out on 110 learners, about their subject choices. The Venn diagram shows the results of the survey in terms of: • Mathematics (M) • Physical Sciences (P) • Accounting (A) [Venn diagram: M only 26; M and P only 9; P only 24; M and A only 12; M, P and A x; P and A only 4; A only 15; none 12.]",
+   "text": "Show that x = 8.",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "venn_unknown",
+   "memo_answer": "x = 8",
+   "memo_working": "x = 110 - (26 + 9 + 12 + 4 + 24 + 15 + 12)",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.2.2",
+   "text": "Calculate the probability that a learner chosen at random does only one of the three subjects.",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "probability_from_venn",
+   "memo_answer": "65/110 = 13/22 ≈ 0,59",
+   "memo_working": "(26 + 24 + 15)/110",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.2.3",
+   "text": "Calculate the probability that a learner chosen at random does Mathematics and Accounting, but not Physical Sciences.",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "probability_from_venn",
+   "memo_answer": "12/110 = 6/55 ≈ 0,12",
+   "checkable": true
+  },
+  {
+   "ref": "Q10",
+   "text": "Bennie has two fair spinners. (Circles are divided into 3 and 8 equal parts, respectively) [SPINNER 1: three equal sectors RED, BLUE and GREEN. SPINNER 2: eight equal sectors, 3 RED and 5 BLUE.] Bennie is going to spin both spinners. What is the probability that it lands on the same colour after spinning each spinner once?",
+   "marks": 8,
+   "topic": "Probability: tree diagrams and contingency tables",
+   "solution_method": "tree_diagram_probability",
+   "memo_answer": "1/3 (≈ 0,33)",
+   "memo_working": "tree diagram: R, B, G each 1/3 on spinner 1, then B 5/8 and R 3/8 on spinner 2; P(B ; B) = 1/3 × 5/8 = 5/24; P(R ; R) = 1/3 × 3/8 = 1/8; 5/24 + 1/8 = 1/3",
+   "checkable": true
+  }
+ ]
+}

@@ -1,0 +1,572 @@
+{
+ "_comment": [
+  "Eastern Cape Department of Education Grade 11 Mathematics P2 (statistics, analytical geometry, trigonometry, measurement and Euclidean geometry), November 2025 provincial common examination.",
+  "Questions and marking-guideline answers transcribed from the rendered pages of the official PDFs",
+  "(paper2.pdf, paper2_memo.pdf); the text layer does not hold usable equations. Notation:",
+  "^ for powers, sqrt() for roots, a/b for fractions, decimal commas as printed. memo_answer is the",
+  "guideline's final answer and memo_working its working (tick marks and mark descriptors left out).",
+  "The guideline is bilingual (English/Afrikaans); only the English is transcribed. Graphs and diagrams are described",
+  "in brackets in the question text. The information sheet printed with the paper is not transcribed.",
+  "FORMAT: 150 marks, 3 hours, ten compulsory questions (Q1 11, Q2 10, Q3 27, Q4 32, Q5 10, Q6 7, Q7 11,",
+  "Q8 15, Q9 22, Q10 5). Geometry answers go in a separate ANSWER BOOK with the diagrams",
+  "(paper2_answer_book.pdf). Angle names use a circumflex on the vertex letter as printed (WÛQ, Ô1)."
+ ],
+ "paper_id": "ecdoe_maths_g11_p2_2025_nov",
+ "source": "Eastern Cape Department of Education",
+ "source_url": "https://ecexams.co.za/2025_November_Gr_11_Exams.htm",
+ "paper_download_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/MATHS%20P2%20GR%2011%202025_watermark.zip",
+ "memo_download_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/MATHS%20P2%20MEMO%20GR%2011%20%20NOVEMBER%202025%20(ENG%20&%20AFR)_watermark.pdf",
+ "paper_file": "paper2.pdf",
+ "memo_file": "paper2_memo.pdf",
+ "answer_book_file": "paper2_answer_book.pdf",
+ "copyright": "© Eastern Cape Department of Education, 2025. Reproduced for educational use with attribution.",
+ "subject": "Maths",
+ "grade": 11,
+ "paper": "P2",
+ "session": "November 2025",
+ "language": "English",
+ "total_marks": 150,
+ "time_hours": 3,
+ "questions": [
+  {
+   "ref": "Q1.1",
+   "context": "QUESTION 1 | The following data represent the prize allocation (in R1 000) for the top ten male finishers in the 2025 20 km Marathon, listed in descending order from 10th place to the first place. Note that the prize money for 6th place and 3rd place were not disclosed. The mean prize across the available data is R21 770. [Prizes: 3 600 ; 4 500 ; 5 400 ; 6 200 ; x ; 12 300 ; 15 800 ; y ; 43 800 ; 87 500]",
+   "text": "Calculate the value of x if the median (Q2) of the data is 9 700.",
+   "marks": 2,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "median_unknown_value",
+   "memo_answer": "x = 7 100",
+   "memo_working": "(x + 12 300)/2 = 9 700",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2",
+   "text": "Calculate the value of y.",
+   "marks": 3,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "mean_unknown_value",
+   "memo_answer": "y = 31 500",
+   "memo_working": "(y + 186 200)/10 = 21 770",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3",
+   "text": "Identify any outlier.",
+   "marks": 1,
+   "topic": "Statistics: variance, standard deviation and outliers",
+   "solution_method": "identify_outlier",
+   "memo_answer": "87 500",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.4",
+   "text": "Determine the standard deviation of the prize money.",
+   "marks": 2,
+   "topic": "Statistics: variance, standard deviation and outliers",
+   "solution_method": "standard_deviation",
+   "memo_answer": "σ = 25 258,19",
+   "memo_working": "calculator, population standard deviation of the ten values",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.5",
+   "text": "An amount of R200 is added to each of the top 10 participants. How will this adjustment affect the mean, the median and the standard deviation of the data?",
+   "marks": 3,
+   "topic": "Statistics: variance, standard deviation and outliers",
+   "solution_method": "effect_of_adding_constant",
+   "memo_answer": "The mean will increase by R200; the median will increase by R200; the standard deviation will remain the same.",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1",
+   "context": "QUESTION 2 | The cumulative frequency graph presents data from a survey conducted in a certain restaurant, detailing the distribution of tips earned by employees during their shift. [Ogive \"Cumulative Frequency graph\": tips in rands (0-70) on the horizontal axis, cumulative frequency (0-150) on the vertical axis; plotted points (0 ; 0), (10 ; 12), (20 ; 24), (30 ; 52), (40 ; 118), (50 ; 135), (60 ; 140) joined by a smooth curve.]",
+   "text": "How many employees participated in the survey?",
+   "marks": 1,
+   "topic": "Statistics: histograms, frequency polygons and ogives",
+   "solution_method": "ogive_reading",
+   "memo_answer": "140 employees",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2",
+   "text": "Write down the modal class of the data.",
+   "marks": 1,
+   "topic": "Statistics: histograms, frequency polygons and ogives",
+   "solution_method": "modal_class_from_ogive",
+   "memo_answer": "30 < x ≤ 40",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Determine how many employees earned R24 or less from the cumulative frequency graph.",
+   "marks": 2,
+   "topic": "Statistics: histograms, frequency polygons and ogives",
+   "solution_method": "ogive_reading",
+   "memo_answer": "32 employees",
+   "memo_working": "reading from the graph at R24",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.4",
+   "text": "Determine the number of employees that earned R20 ≤ x ≤ R40.",
+   "marks": 2,
+   "topic": "Statistics: histograms, frequency polygons and ogives",
+   "solution_method": "ogive_reading",
+   "memo_answer": "94",
+   "memo_working": "118 - 24 = 94",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.5",
+   "text": "Determine the 25th percentile and the upper quartile of the data.",
+   "marks": 2,
+   "topic": "Statistics: histograms, frequency polygons and ogives",
+   "solution_method": "quartiles_from_ogive",
+   "memo_answer": "Q1 = R25 ; Q3 = R38",
+   "memo_working": "25th percentile at cumulative frequency 35 = R25; 75th percentile at 105 = R38",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.6",
+   "text": "Calculate the interquartile range of the data.",
+   "marks": 2,
+   "topic": "Statistics: histograms, frequency polygons and ogives",
+   "solution_method": "interquartile_range",
+   "memo_answer": "IQR = R13",
+   "memo_working": "IQR = Q3 - Q1 = R38 - R25",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1",
+   "context": "QUESTION 3 | In the diagram, W(1 ; 6), V, S and Q are the vertices of a quadrilateral WVSQ. P(0 ; 2) is the point where line PQ intersects the y-axis and R(3 ; 0) is the point where line QR intersects the x-axis. WV ∥ QS and WU = UV. PQRO is a rectangle. [Diagram: S(13 ; 3); U is the midpoint of WV and QU is drawn; PQ is horizontal and QR vertical.]",
+   "text": "Write down the coordinates of Q.",
+   "marks": 1,
+   "topic": "Analytical geometry",
+   "solution_method": "read_coordinates",
+   "memo_answer": "Q(3 ; 2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2",
+   "text": "Calculate the gradient of QS.",
+   "marks": 2,
+   "topic": "Analytical geometry",
+   "solution_method": "gradient_formula",
+   "memo_answer": "m_QS = 1/10",
+   "memo_working": "(3 - 2)/(13 - 3)",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.3",
+   "text": "Determine the equation of WV.",
+   "marks": 3,
+   "topic": "Analytical geometry",
+   "solution_method": "equation_of_parallel_line",
+   "memo_answer": "y = (1/10)x + 59/10",
+   "memo_working": "m_WV = m_QS = 1/10; 6 = (1/10)(1) + c, c = 59/10 (OR y - 6 = (1/10)(x - 1))",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.4",
+   "text": "If it is further given that the equation of QU is y = (3/2)x - 5/2, show that the coordinates of V are (11 ; 7).",
+   "marks": 5,
+   "topic": "Analytical geometry",
+   "solution_method": "intersection_and_midpoint",
+   "memo_answer": "11 = x_V ; 5 = y_V",
+   "memo_working": "(3/2)x - 5/2 = (1/10)x + 59/10; (7/5)x = 42/5; x_U = 6; y_U = (3/2)(6) - 5/2 = 13/2; U is the midpoint of WV: 6 = (1 + x_V)/2 ; 13/2 = (6 + y_V)/2",
+   "memo_note": "The guideline's last line prints 5 = y_V; 13/2 = (6 + y_V)/2 gives y_V = 7, as the question requires.",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.5",
+   "text": "Prove that WVSQ is a parallelogram.",
+   "marks": 4,
+   "topic": "Analytical geometry",
+   "solution_method": "prove_parallelogram_midpoints",
+   "memo_answer": "WVSQ is a parallelogram (diagonals bisect each other).",
+   "memo_working": "M_WS = ((13 + 1)/2 ; (3 + 6)/2) = (7 ; 9/2); M_QV = ((11 + 3)/2 ; (7 + 2)/2) = (7 ; 9/2); the diagonals have the same midpoint",
+   "checkable": false
+  },
+  {
+   "ref": "Q3.6",
+   "text": "Determine the length of WV. Leave your answer in surd form.",
+   "marks": 2,
+   "topic": "Analytical geometry",
+   "solution_method": "distance_formula",
+   "memo_answer": "WV = sqrt(101)",
+   "memo_working": "WV = sqrt((1 - 11)^2 + (6 - 7)^2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.7",
+   "text": "Calculate the size of WÛQ.",
+   "marks": 4,
+   "topic": "Analytical geometry",
+   "solution_method": "angle_between_lines",
+   "memo_answer": "WÛQ = 50,6°",
+   "memo_working": "inclination of WV: tan θ = 1/10, θ = 5,71°; inclination of QU: tan α = 3/2, α = 56,31°; WÛQ = UQ̂S = 56,31° - 5,71° = 50,6° [alt. ∠s, WV ∥ QS]",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.8",
+   "text": "Determine the ratio: Area of PQRO / Area of ΔQUW",
+   "marks": 6,
+   "topic": "Trigonometry: the sine rule and the area rule",
+   "solution_method": "area_rule_ratio",
+   "memo_answer": "4/7",
+   "memo_working": "WU = sqrt(101)/2; UQ = sqrt((6 - 3)^2 + (13/2 - 2)^2) = 3sqrt(13)/2; area ΔQUW = 1/2 × 3sqrt(13)/2 × sqrt(101)/2 × sin 50,60° = 10,50; area PQRO = 2 × 3 = 6; 6/10,50 = 4/7",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | 4.1 In the diagram below, O is the point of origin. OR = k, RÔS = 45°, R(t ; 3) is a point in the first quadrant and point S lies on the x-axis such that OS ⊥ RS. Without using a calculator, calculate the value(s) of the following:",
+   "text": "t",
+   "marks": 2,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "special_angle_ratio",
+   "memo_answer": "t = 3",
+   "memo_working": "tan 45° = 3/t",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "k",
+   "marks": 2,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "special_angle_ratio",
+   "memo_answer": "k = 3sqrt(2)",
+   "memo_working": "sin 45° = 3/k (OR cos 45° = t/k = 3/k)",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.1",
+   "context": "4.2 Given: 8cos^2 α - 2 = 0",
+   "text": "Determine the value of cos α where cos α > 0 and 0° < α < 180°",
+   "marks": 2,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "solve_trig_ratio",
+   "memo_answer": "cos α = 1/2",
+   "memo_working": "cos^2 α = 1/4",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.2",
+   "text": "Hence, or otherwise, use a diagram to determine the value of 4[tan^2 α - cos^2 α]",
+   "marks": 3,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_diagram_evaluation",
+   "memo_answer": "11",
+   "memo_working": "diagram with x = 1, r = 2, y = sqrt(2^2 - 1^2) = sqrt(3); 4[(sqrt(3)/1)^2 - (1/2)^2] = 4(3 - 1/4) = 11",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.3.1",
+   "context": "4.3 Given: (cos x . tan x) / (2[sin x . cos(x - 90°) + cos x . cos(-x)])",
+   "text": "Simplify the above expression to a single trigonometric ratio of x.",
+   "marks": 6,
+   "topic": "Trigonometry: identities and reduction formulae",
+   "solution_method": "reduction_and_identities",
+   "memo_answer": "sin x / 2",
+   "memo_working": "= (cos x . sin x/cos x) / (2[sin x . sin x + cos x . cos x]) = sin x / (2[sin^2 x + cos^2 x]) = sin x/(2(1))",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.3.2",
+   "text": "Hence, or otherwise, write down the period of the expression in QUESTION 4.3",
+   "marks": 1,
+   "topic": "Trigonometry: identities and reduction formulae",
+   "solution_method": "period_of_function",
+   "memo_answer": "360°",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.4",
+   "text": "Simplify: (cos 42° sin 48° - tan^2(-45°)) / cos^2 132° without using a calculator.",
+   "marks": 5,
+   "topic": "Trigonometry: identities and reduction formulae",
+   "solution_method": "reduction_formulae",
+   "memo_answer": "-1",
+   "memo_working": "= (cos 42° . cos 42° - (-tan 45°)^2)/(cos(90° + 42°))^2 = (cos^2 42° - (-1)^2)/(-sin 42°)^2 = (cos^2 42° - 1)/sin^2 42° = (1 - sin^2 42° - 1)/sin^2 42° = -1",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.5.1",
+   "context": "4.5 Given the identity: tan β - sin β . cos β = tan β . sin^2 β",
+   "text": "Prove the above identity.",
+   "marks": 3,
+   "topic": "Trigonometry: identities and reduction formulae",
+   "solution_method": "prove_identity",
+   "memo_answer": "LHS = tan β . sin^2 β = RHS",
+   "memo_working": "LHS = sin β/cos β - sin β . cos β = (sin β - sin β cos^2 β)/cos β = sin β(1 - cos^2 β)/cos β = tan β . sin^2 β",
+   "checkable": false
+  },
+  {
+   "ref": "Q4.5.2",
+   "text": "For which value(s) of β will the identity in QUESTION 4.5 be undefined in the interval β ∈ [-180° ; 180°]?",
+   "marks": 2,
+   "topic": "Trigonometry: identities and reduction formulae",
+   "solution_method": "undefined_values",
+   "memo_answer": "β = -90° and β = 90°",
+   "memo_working": "cos β = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.6",
+   "text": "Determine the general solution of: 3sin θ = -2cos^2 θ",
+   "marks": 6,
+   "topic": "Trigonometry: equations and general solutions",
+   "solution_method": "trig_general_solution",
+   "memo_answer": "θ = 210° + k.360° or θ = 330° + k.360°, k ∈ Z",
+   "memo_working": "2(1 - sin^2 θ) + 3sin θ = 0; 2sin^2 θ - 3sin θ - 2 = 0; (2sin θ + 1)(sin θ - 2) = 0; sin θ = -1/2 (sin θ ≠ 2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1",
+   "context": "QUESTION 5 | Given: f(x) = a sin(x/2) - 1 and g(x) = cos x + q, x ∈ [-90° ; 270°]. [Graph: g starts at (-90° ; 0), has a maximum (0° ; 1), passes through (90° ; 0), has a minimum (180° ; -1) and ends at (270° ; 0); f increases from about (-90° ; -1,71) through (0° ; -1) to a maximum (180° ; 0) and ends at about (270° ; -0,29). The graphs meet at x = 90° and near x = 270°.] Use the graphs to answer the following questions where x ∈ [-90° ; 270°]:",
+   "text": "Determine the values of a and q",
+   "marks": 2,
+   "topic": "Trigonometry: graphs",
+   "solution_method": "read_trig_parameters",
+   "memo_answer": "a = 1 ; q = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2",
+   "text": "Write down the range of f",
+   "marks": 2,
+   "topic": "Trigonometry: graphs",
+   "solution_method": "range_of_trig_graph",
+   "memo_answer": "y ∈ [-2 ; 0] or -2 ≤ y ≤ 0",
+   "memo_note": "The answer follows the guideline; on the given interval f only reaches about -1,71 at x = -90°.",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.3",
+   "text": "Write down the amplitude of g",
+   "marks": 1,
+   "topic": "Trigonometry: graphs",
+   "solution_method": "amplitude",
+   "memo_answer": "Amplitude = 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.4",
+   "text": "Write down the value(s) of x where f(x) - g(x) = -2",
+   "marks": 1,
+   "topic": "Trigonometry: graphs",
+   "solution_method": "graph_reading",
+   "memo_answer": "x = 0°",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.5",
+   "text": "For which values of x is f(x).g(x) ≤ 0?",
+   "marks": 2,
+   "topic": "Trigonometry: graphs",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "-90° ≤ x ≤ 90°",
+   "memo_note": "As printed in the guideline. Because f ≤ 0 on the whole interval, f(x).g(x) ≤ 0 also holds at x = 180° (f = 0) and x = 270° (g = 0).",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.6",
+   "text": "The graph of h is obtained by shifting the graph of g by 90° to the left. Determine the equation of h in its simplest form.",
+   "marks": 2,
+   "topic": "Trigonometry: graphs",
+   "solution_method": "trig_transformation",
+   "memo_answer": "h(x) = -sin x",
+   "memo_working": "h(x) = g(x + 90°) = cos(x + 90°)",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1",
+   "context": "QUESTION 6 | A man standing on a horizontal plane at point O observes two helicopters positioned at points P and Q. The lines of sight from point O to each helicopter form angles of elevation θ and β with the horizontal plane. Additionally, a second man located in the helicopter at point P observes the helicopter at point Q, and his line of sight forms an angle of elevation α with the horizontal plane at P, measured along line PQ. ON ⊥ NR and OP = x. [Diagram: OT is horizontal at O; θ is the angle TÔP and β the angle TÔQ; SP is a horizontal line through P and α the angle SP̂Q; N is vertically above O and NQR is horizontal.]",
+   "text": "Show that: OQ̂P = 180° - (β + α)",
+   "marks": 2,
+   "topic": "Trigonometry: the sine rule and the area rule",
+   "solution_method": "angle_proof_triangle",
+   "memo_answer": "OQ̂P = 180° - (β + α)",
+   "memo_working": "QP̂O = θ + α (SP̂O = θ [alt. ∠s, SP ∥ OT]); QÔP = β - θ; OQ̂P = 180° - (θ + α) - (β - θ) [sum of ∠s in Δ] = 180° - (β + α)",
+   "checkable": false
+  },
+  {
+   "ref": "Q6.2",
+   "text": "Show that OQ = x.sin(α + θ) / sin(β + α)",
+   "marks": 3,
+   "topic": "Trigonometry: the sine rule and the area rule",
+   "solution_method": "sine_rule_show_that",
+   "memo_answer": "OQ = x.sin(α + θ)/sin(β + α)",
+   "memo_working": "sine rule in ΔOPQ: OQ/sin P̂ = OP/sin OQ̂P; OQ/sin(α + θ) = x/sin[180° - (β + α)]; sin[180° - (β + α)] = sin(β + α)",
+   "checkable": false
+  },
+  {
+   "ref": "Q6.3",
+   "text": "Determine the value of x if θ = 15°, β = 60°, α = 30° and OQ = 5sqrt(2)",
+   "marks": 2,
+   "topic": "Trigonometry: the sine rule and the area rule",
+   "solution_method": "sine_rule_substitution",
+   "memo_answer": "x = 10",
+   "memo_working": "5sqrt(2)/sin 45° = x/sin 90°",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1",
+   "context": "QUESTION 7 | A closed rectangular box has a length (L) that is twice its width (W), and its height (H) is 3 cm more than its width. The surface area of the box is 784 cm^2. The length of the width is x cm. [Diagram of the box with L, H and x marked; formula box: P = 2l + 2b; A = l × b; V = lbh; SA = 2lb + 2lh + 2bh.]",
+   "text": "Write down the length (L) and height (H) of the box in terms of x.",
+   "marks": 2,
+   "topic": "Measurement: volume and surface area",
+   "solution_method": "express_in_terms_of_x",
+   "memo_answer": "L = 2x ; H = 3 + x",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2",
+   "text": "Write an expression for the total surface area of the rectangular box in terms of x.",
+   "marks": 3,
+   "topic": "Measurement: volume and surface area",
+   "solution_method": "surface_area_expression",
+   "memo_answer": "SA = 10x^2 + 18x",
+   "memo_working": "SA = 2(2x × x) + 2(x(3 + x)) + 2(2x(3 + x)) = 4x^2 + 6x + 2x^2 + 12x + 4x^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.3",
+   "text": "Hence or otherwise, determine the value of x.",
+   "marks": 4,
+   "topic": "Measurement: volume and surface area",
+   "solution_method": "surface_area_equation",
+   "memo_answer": "x = 8",
+   "memo_working": "10x^2 + 18x = 784; 10x^2 + 18x - 784 = 0; 5x^2 + 9x - 392 = 0; (5x + 49)(x - 8) = 0; x ≠ -49/5",
+   "memo_note": "The guideline prints 5x^2 + 9x + 392 = 0 and x ≠ 40/5; the factors give 5x^2 + 9x - 392 and x = -49/5.",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.4",
+   "text": "Calculate the volume of the box.",
+   "marks": 2,
+   "topic": "Measurement: volume and surface area",
+   "solution_method": "volume_of_prism",
+   "memo_answer": "V = 1 408 cm^3",
+   "memo_working": "V = (8)(2 × 8)(3 + 8)",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1",
+   "context": "QUESTION 8 | 8.1 In the diagram below, O is the centre of the circle. AC is a chord. OB is drawn perpendicular to the chord.",
+   "text": "Use the diagram above to prove the theorem which states that the line drawn from the centre of a circle perpendicular to a chord bisects the chord, that is, prove that AB = BC.",
+   "marks": 5,
+   "topic": "Euclidean geometry: circle theorems (centre, chords, angles)",
+   "solution_method": "geometric_proof",
+   "memo_answer": "Construction: join OA and OC. In ΔAOB and ΔCOB: AO = CO [radii]; AB̂O = CB̂O = 90° [∠s on a str. line]; OB = OB [common]; ΔAOB ≡ ΔCOB [RHS]; therefore AB = BC.",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.1",
+   "context": "8.2 In the diagram, TR is the diameter of the circle that passes through centre U. P, R, S and T are points on the circumference of the circle. UQ is a line from centre such that UQ ⊥ PR and PR is drawn. TS = x cm, SR = (x + 2) cm, PR = 8 cm and UQ = 3 cm. Calculate, giving reasons, the length of:",
+   "text": "UR",
+   "marks": 4,
+   "topic": "Euclidean geometry: circle theorems (centre, chords, angles)",
+   "solution_method": "perpendicular_from_centre",
+   "memo_answer": "UR = 5 cm",
+   "memo_working": "PQ = QR = 4 cm [line from centre ⊥ to chord]; UR = sqrt(4^2 + 3^2) = 5 [Pyth. theorem]",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2.2",
+   "text": "TS",
+   "marks": 6,
+   "topic": "Euclidean geometry: circle theorems (centre, chords, angles)",
+   "solution_method": "angle_in_semicircle_pythagoras",
+   "memo_answer": "TS = 6 cm",
+   "memo_working": "TR = 2(UR) = 10 [diameter]; Ŝ = 90° [∠ in semi-circle]; 10^2 = x^2 + (x + 2)^2 [Pyth. theorem]; 2x^2 + 4x - 96 = 0; x^2 + 2x - 48 = 0; (x - 6)(x + 8) = 0; x = 6 (x ≠ -8)",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.1",
+   "context": "QUESTION 9 | 9.1 In the diagram below, O is the centre of the circle. ACDE and BCDE are cyclic quadrilaterals. GCF is a tangent to the circle at point C. Chord CE and line OC are drawn. Ê2 = 15°. [Diagram: BE is a diameter through O; angles at E numbered 1 (EA side), 2 (between EB and EC) and 3 (EC to ED); angles at C numbered 1 to 6 from CG round to CF; Ô1 is the angle BÔC and Ô2 the angle EÔC.] Determine the size of the following angles below, giving reasons:",
+   "text": "Ô1",
+   "marks": 2,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "circle_angle_reasoning",
+   "memo_answer": "Ô1 = 30° [∠ at centre = 2 × ∠ at circumference]",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.2",
+   "text": "Â",
+   "marks": 2,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "circle_angle_reasoning",
+   "memo_answer": "Â = 75°",
+   "memo_working": "Ô2 = 150° [∠s on a str. line]; Â = 75° [∠ at centre = 2 × ∠ at circumference]",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.3",
+   "text": "D̂",
+   "marks": 2,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "circle_angle_reasoning",
+   "memo_answer": "D̂ = 105° [opp. ∠s of a cyclic quad]",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.4",
+   "text": "EĈF",
+   "marks": 2,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "circle_angle_reasoning",
+   "memo_answer": "EĈF = 75° [tan chord theorem]",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.5",
+   "text": "OĈG",
+   "marks": 2,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "circle_angle_reasoning",
+   "memo_answer": "OĈG = 90° [radius ⊥ tangent]",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.2.1",
+   "context": "9.2 In the diagram below, P, Q, R and T are points on the circumference of the circle. PS is a tangent to the circle at P. Chord QR is produced to S. M and N are points on PS and RP respectively such that MN ∥ PR. PN is drawn. QT is produced to M. [Diagram: N lies on RS (QR produced); angles at P numbered 1 (between the tangent and PQ), 2, 3 and 4 (next to PM); M̂1, M̂2 at M; N̂1, N̂2, N̂3 at N; R̂1, R̂2 at R; Q̂1, Q̂2 at Q.]",
+   "text": "Name TWO other angles each equal to P̂1",
+   "marks": 4,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "circle_angle_reasoning",
+   "memo_answer": "Any two of: R̂1 [tan chord theorem]; MN̂Q [corresp. ∠s, MN ∥ PR]; PT̂Q [∠s in same segment]",
+   "checkable": false
+  },
+  {
+   "ref": "Q9.2.2",
+   "text": "Prove that MNQP is a cyclic quadrilateral.",
+   "marks": 4,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "geometric_proof",
+   "memo_answer": "SP̂R = Q̂1 [tan chord theorem]; SP̂R = M̂1 [corresp. ∠s, MN ∥ PR]; therefore Q̂1 = M̂1; MNQP is a cyclic quad [converse ext. ∠ of a cyclic quad]",
+   "memo_note": "The guideline writes SP̂Q for the tangent-chord angle; the angle meant is SP̂R (between tangent PS and chord PR).",
+   "checkable": false
+  },
+  {
+   "ref": "Q9.2.3",
+   "text": "Prove that PN bisects SP̂R",
+   "marks": 4,
+   "topic": "Euclidean geometry: cyclic quadrilaterals and tangents",
+   "solution_method": "geometric_proof",
+   "memo_answer": "P̂3 = N̂2 [alt. ∠s, MN ∥ PR]; N̂2 = Q̂1 [∠s in same segment]; Q̂1 = P̂4 [tan chord theorem]; therefore P̂3 = P̂4, so PN bisects SP̂R",
+   "checkable": false
+  },
+  {
+   "ref": "Q10",
+   "context": "QUESTION 10 | In the diagram below, A, B, C, D, E and F are points on the circumference of the circle. AD intersect CF at point G and CE at point H. AB ∥ FC and CE = BD. [Angles at G numbered 1, 2, 3 with Ĝ3 below AD on the C side; angles at H numbered 1, 2, 3.]",
+   "text": "Prove that AD ∥ FE",
+   "marks": 5,
+   "topic": "Euclidean geometry: circle theorems (centre, chords, angles)",
+   "solution_method": "geometric_proof",
+   "memo_answer": "Ĝ3 = Â [corresp. ∠s, GC ∥ AB]; Â = F̂ [∠s subtended by equal chords]; therefore Ĝ3 = F̂; AD ∥ FE [corresp. ∠s equal]",
+   "memo_note": "The guideline's last line prints AB ∥ FE; the statement proved is AD ∥ FE.",
+   "checkable": false
+  }
+ ]
+}
