@@ -1,0 +1,286 @@
+{
+ "_comment": [
+  "Eastern Cape Department of Education Grade 10 Mathematical Literacy P2, November 2019 provincial common examination.",
+  "Questions and marking-guideline answers extracted from the text layer of the official PDFs",
+  "(paper2.pdf, paper2_memo.pdf) and read against the rendered pages. Mathematical",
+  "Literacy questions hang off shared scenario boxes: the scenario (tables, graphs, plans and maps",
+  "described in bracketed words) is the 'context' of the first sub-question of each block and applies",
+  "to the sub-questions after it. memo_answer gives the guideline's working and final answer with",
+  "decimal commas kept; the guideline's mark codes (M method, A accuracy, CA consistent accuracy, RT",
+  "reading from table, C conclusion, O opinion, S simplification, R rounding) and level tags are left out.",
+  "FORMAT: 75 marks, 1½ hours, four compulsory questions (Q1 finance and measurement 26, Q2 measurement",
+  "13, Q3 maps 15, Q4 data handling and probability 21). An official ERRATA sheet issued with the paper",
+  "is tracked as paper2_errata.pdf; its amendments are",
+  "recorded in memo_note on 2.2.1, 2.2.2, 3.1.1, 3.2.1, 3.2.2, 4.1.1, 4.1.2 and 4.3.3. The marking guideline's running header reads 'EC/NOVEMBER 2018' but",
+  "its content is the 2019 Grade 10 P2 guideline."
+ ],
+ "paper_id": "ecdoe_mathlit_g10_p2_2019_nov",
+ "source": "Eastern Cape Department of Education",
+ "source_url": "https://ecexams.co.za/2019_November_Gr_10_Exams.htm",
+ "paper_download_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/Maths%20Lit%20QP%20P2.zip",
+ "memo_download_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/MATHS%20LIT%20P2%20GR10%20MEMO%20NOV2019.zip",
+ "paper_file": "paper2.pdf",
+ "memo_file": "paper2_memo.pdf",
+ "errata_file": "paper2_errata.pdf",
+ "copyright": "© Eastern Cape Department of Education, 2019. Reproduced for educational use with attribution.",
+ "subject": "Mathematical Literacy",
+ "grade": 10,
+ "paper": "P2",
+ "session": "November 2019",
+ "language": "English",
+ "total_marks": 75,
+ "time_hours": 1.5,
+ "questions": [
+  {
+   "ref": "Q1.1.1",
+   "context": "QUESTION 1 | 1.1 Your friend, Kim, has asked you to help him with his bank statement. He is sure there are some errors on the bank statement as some things just do not make sense to him. Below is a copy of Kim's bank statement. [FIRST NATIONAL BANK statement for January 2019, Mr Kim de Villiers, 28 Nahoon Street, Nahoon 5241; account number 23456799, Vincent Park Branch, branch code 211021. Columns: Date | Details | Debit | Credit | Fees | Balance. Rows: 1/1/19 Opening balance | | | | 12 783,56; 3/1/19 Deposit | | 1 000,00 | 15,00 | 13 768,56; 5/1/19 Payment: Con Cars | 876,45 | | 2,50 | 12 889,61; 5/1/19 Payment: M Smith | 2 000,00 | | 2,50 | 10 887,11; 12/1/19 EFT Purchase | 125,60 | | 1,00 | A; 26/1/19 Payment: S Yusuf | 2 600,00 | | 2,50 | 8 158,01; 28/1/19 Salary | | 11 560,00 | | 19 718,01.] (NOTE: EFT means electronic funds transfer.) • The fee for deposits is R2,00 plus R1,00 for every R100,00. • Stop order payments cost R2,50 regardless of the amount. • Card purchases cost R1,00 regardless of the amount. • Rent is Kim's biggest expense. Use the above bank statement to answer the questions below.",
+   "text": "Determine the missing value of A.",
+   "marks": 2,
+   "topic": "Finance: banking and bank charges",
+   "solution_method": "balance_calculation",
+   "memo_answer": "A = R10 887,11 - R125,60 - R1,00 = R10 760,51",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.2",
+   "text": "Kim claims that there is a mistake in the fees column. Indicate where this mistake occurred and verify, with the necessary calculations, whether his statement is valid or not.",
+   "marks": 4,
+   "topic": "Finance: banking and bank charges",
+   "solution_method": "fee_verification",
+   "memo_answer": "Deposit fee = R2,00 + R1,00 x (number of R100s)\nFee for 03/1/2019 = R2 + R1 x (R1 000 ÷ R100) = R2 + R10 = R12 (the statement shows R15)\nThe statement is valid.",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.3",
+   "text": "The bank has confirmed that there is indeed an error on his statement. If the error is corrected, what should Kim’s balance be on the 28 January 2019?",
+   "marks": 2,
+   "topic": "Finance: banking and bank charges",
+   "solution_method": "balance_correction",
+   "memo_answer": "Balance 28/1/19 = R19 718,01 + (R15 - R12) = R19 721,01",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.4",
+   "text": "Kim states that her bank fees for January 2019 will be more than R30,00. Verify, with the necessary calculations, whether his estimation is valid or not. Keep in mind that the error has been corrected.",
+   "marks": 3,
+   "topic": "Finance: banking and bank charges",
+   "solution_method": "fee_total_verification",
+   "memo_answer": "Bank fees = R12 + R2,50 + R2,50 + R1,00 + R2,50 = R20,50\nHis statement is not correct.",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.5",
+   "text": "State ONE possible reason why banks are charging fees (to their customers).",
+   "marks": 2,
+   "topic": "Finance: banking and bank charges",
+   "solution_method": "opinion",
+   "memo_answer": "So that they can do their daily operations\nOR to be able to pay their employees\nOR that is their way of getting an income\n(accept other relevant reasoning)",
+   "checkable": false
+  },
+  {
+   "ref": "Q1.2.1",
+   "context": "1.2 Kim received an increase in his salary of 3,5% in April 2019. He wants to save his monthly increment and is planning to use it to build a concrete floor for his bird cage. [Pictures: concrete, wheelbarrow, bucket, cement.] Kim needs a concrete mixture of 0,27 cubic metres of cement, sand and gravel to make a concrete floor for his bird cage. He has a bucket with a capacity of 8 ℓ and a wheelbarrow with a capacity of 50 ℓ. Assume that 1 m³ = 1 000 litres.",
+   "text": "Calculate how much litres of concrete mixture will Kim need to build a floor for his cage.",
+   "marks": 2,
+   "topic": "Measurement: perimeter, area and volume",
+   "solution_method": "unit_conversion",
+   "memo_answer": "0,27 x 1 000 = 270 ℓ",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.2",
+   "text": "The ratio of cement to sand to gravel is 1 : 3 : 5. How many litres of each cement, sand and gravel is needed? Assume that the volume of the concrete is more or less the same as the sum of the volumes of all the ingredients (cement, sand and gravel).",
+   "marks": 4,
+   "topic": "Numbers: ratio, rate and proportion",
+   "solution_method": "ratio_sharing",
+   "memo_answer": "Ratio total = 1 + 3 + 5 = 9\nCement = 1/9 x 270 ℓ = 30 ℓ\nSand = 3/9 x 270 ℓ = 90 ℓ\nGravel = 5/9 x 270 ℓ = 150 ℓ",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.3",
+   "text": "Kim has asked Thato to do this work for him and he has agreed to do it on a Saturday. Calculate the amount of money Kim will have to pay Thato if the rate is R45,75 per hour (and part thereof) and he will finish the job in 5,4 hours. [NOTE: The rate is double on weekends.]",
+   "marks": 3,
+   "topic": "Numbers: ratio, rate and proportion",
+   "solution_method": "rate_calculation",
+   "memo_answer": "Amount to be paid = R45,75 x (5 + 1) x 2 = R549",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.4",
+   "text": "The total cost for building material is R1 524,99, excluding labour. Kim saves his increment for six months. Verify, with the necessary calculations, whether Kim will have enough money to start the project early in October 2019.",
+   "marks": 4,
+   "topic": "Finance: income, expenditure and budgets",
+   "solution_method": "savings_verification",
+   "memo_answer": "Total costs = R1 524,99 + R549 = R2 073,99\nTotal savings = (3,5% x R11 560) x 6 months = R2 427,60\nKim will have enough money for the project.",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.1",
+   "context": "QUESTION 2 | 2.1 Thembinkosi wants to put a trampoline in his yard as entertainment for his children. [Photograph: a round trampoline set into the ground in a garden.] The dimensions for the trampoline are shown below: [Diagram: a cylinder with diameter 4,3 m and height 90 cm.] He has started by digging a hole in order for the trampoline to be placed in the hole. Although Thembinkosi has used some of the dug-up sand, he has two-thirds of the sand left over. A company is prepared to collect the leftover sand free of charge, provided there is more than 5 m³ sand.",
+   "text": "Calculate the area of the base of the hole in square metres, rounded off to 2 decimal places. You may use the formula: Area = π r², where r = radius and π = 3,142",
+   "marks": 2,
+   "topic": "Measurement: perimeter, area and volume",
+   "solution_method": "area_of_circle",
+   "memo_answer": "Area = π r² = 3,142 x 2,15 x 2,15 = 14,52 m²",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.2",
+   "text": "Determine, showing ALL calculations, whether there is enough sand for the company to come and collect it free of charge. You may use the formula: Volume = Area of base x height",
+   "marks": 4,
+   "topic": "Measurement: perimeter, area and volume",
+   "solution_method": "volume_of_cylinder",
+   "memo_answer": "Volume of the cylinder = 14,52 x 0,9 = 13,07 m³\n2/3 x 13,07 = 8,71 m³\nThere is enough sand for it to be collected free of charge.",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.1",
+   "context": "2.2 Thembinkosi has a backyard with an area of 929 m2.",
+   "text": "Thembinkosi has prepared a space of 3% of the area in his backyard for the construction of the trampoline. Verify, with the necessary calculations, whether the prepared space will be enough or not.",
+   "marks": 3,
+   "topic": "Numbers: percentage calculations",
+   "solution_method": "percentage_of_quantity",
+   "memo_answer": "Space prepared = 3% x 929 m² = 27,87 m²\nArea of trampoline = 14,52 m²\nHe will have enough space.",
+   "memo_note": "Official errata (13 Nov 2019) also accepts: 14,52 ÷ 929 x 100 = 1,56% needed, therefore 3% will be sufficient.",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.2",
+   "text": "Thembinkosi currently pays R2 534 per month for insurance on his household. His broker told him that his insurance premium will go up by 2,5% after the trampoline has been installed. He predicts that his new monthly insurance premium will be R2 800. Verify, with the necessary calculations, whether his statement is valid or not.",
+   "marks": 4,
+   "topic": "Numbers: percentage calculations",
+   "solution_method": "percentage_increase_verification",
+   "memo_answer": "New premium = (2,5% x R2 534) + R2 534 = R2 597,35\nHis estimation is not correct.",
+   "memo_note": "Official errata also accepts: (2 800 - 2 534) ÷ 2 534 x 100 = 10,5% increase; statement is not valid.",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.1",
+   "context": "QUESTION 3 | Montego Pet Nutrition is a company that manufactures premium quality pet food that is distributed nationally and globally. The factory has undergone a R70 million-rand upgrade to its premises in Graaff-Reinet, Eastern Cape. [Road map of part of the Eastern Cape with a compass (N at the top) showing Graaff-Reinet, Pearston, Cradock, Somerset East, Jansenville, Wolwefontein, Glenconnor, Kariega, Kirkwood, Addo, Uitenhage, Despatch, Port Elizabeth, Humansdorp and Jeffrey's Bay; route R75 runs from Graaff-Reinet south-east through Jansenville, Wolwefontein and Kariega to Uitenhage and Port Elizabeth, with distances in km marked between towns.] Scale: 1 : 2 500 000 | 3.1",
+   "text": "Determine the shortest route, with a motor vehicle by road for delivering boxes of the pet food to the harbour in Port Elizabeth.",
+   "marks": 3,
+   "topic": "Maps and plans: scale and maps",
+   "solution_method": "route_description",
+   "memo_answer": "From Graaff-Reinet take the R75 route, passing Jansenville, Wolwefontein, Kariega and Uitenhage, until you reach Port Elizabeth (mention at least 2 towns).",
+   "memo_note": "Official errata: R75 only earns full marks; OR using map distances R75: 16+66+29+23+37+16+47+34 = 268 km, R63: 16+58+37+14+113+16+24+48 = 326 km, so the shortest route is the R75.",
+   "checkable": false
+  },
+  {
+   "ref": "Q3.1.2",
+   "text": "In which direction would they travel from Graaff-Reinet to Port Elizabeth?",
+   "marks": 2,
+   "topic": "Maps and plans: scale and maps",
+   "solution_method": "compass_direction",
+   "memo_answer": "South-east",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.3",
+   "text": "Why do you think the boxes are being delivered to the harbour in Port Elizabeth?",
+   "marks": 2,
+   "topic": "Maps and plans: scale and maps",
+   "solution_method": "opinion",
+   "memo_answer": "The boxes will be sent overseas.\nOR any other logical reason.",
+   "checkable": false
+  },
+  {
+   "ref": "Q3.2.1",
+   "context": "3.2",
+   "text": "Use the number scale to determine the straight-line distance from Addo to Port Elizabeth. Give your answer in kilometres.",
+   "marks": 4,
+   "topic": "Maps and plans: scale and maps",
+   "solution_method": "number_scale_distance",
+   "memo_answer": "Measured distance = 2 cm or 20 mm [accept 1,9-2,4 cm]\nActual distance = 2 x 2 500 000 = 5 000 000 cm ÷ 100 000 = 50 km",
+   "memo_note": "The guideline labels the measurement 'Distance from Addo to Uitenhage'; the question asks for Addo to Port Elizabeth, and the 50 km answer is the one used in 3.2.2. Official errata (distances changed in printing): accept 2,3 cm (2,1 cm-2,5 cm), OR Addo-PE = 72 km from the distances given on the map.",
+   "checkable": false
+  },
+  {
+   "ref": "Q3.2.2",
+   "text": "The driver travels at a speed of 100 km/h and leaves Addo at 10h00. He predicts that he will reach Port Elizabeth at 10h55. Verify, with the necessary calculations, whether his statement is valid or not. Use the formula: Distance = speed × time",
+   "marks": 4,
+   "topic": "Measurement: substitution into formulae",
+   "solution_method": "distance_speed_time",
+   "memo_answer": "Time = distance ÷ speed = 50 km ÷ 100 km/h = 0,5 h = 30 min\nHis prediction is not valid; he will reach PE at 10:30.",
+   "memo_note": "Official errata, another option: distance = 100 km/h x (55 min ÷ 60) = 91,67 km travelled; not valid, he travelled further than 57,5 km (CA from 3.2.1).",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | 4.1 Mrs Base, a Mathematical Literacy teacher at Zinako High School, recorded the results of her Grade 10 learners in the final examination as a percentage, as shown below: 63 57 32 96 90 60 73 87 57 78 46 48 80 88 33 55 46 67 60 78 57 60 50 47 54 71 84 85 77 81",
+   "text": "Calculate the average mark of the Grade10 Mathematical Literacy learners in the final examination.",
+   "marks": 3,
+   "topic": "Data handling: collecting, organising and summarising data",
+   "solution_method": "mean_calculation",
+   "memo_answer": "Average = total of marks ÷ number of learners = 1 960 ÷ 30 = 65,33",
+   "memo_note": "Official errata: no penalty for rounding - accept 65,3 or 65.",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "Mrs Base claims that the mode of the data will be 78%. Explain what the mode is and verify whether her statement is valid or not.",
+   "marks": 3,
+   "topic": "Data handling: collecting, organising and summarising data",
+   "solution_method": "mode_verification",
+   "memo_answer": "The mode is the number that appears the most in the data.\nMode = 57%, therefore her statement is invalid.",
+   "memo_note": "Official errata: the correct mode is 57% and 60%; do not penalise for not mentioning both modes.",
+   "checkable": false
+  },
+  {
+   "ref": "Q4.2.1",
+   "context": "4.2 Mrs Base's learners' performance in the examination is summarised in the table below. [TABLE 1: RATING CODE WITH SUMMARY OF LEARNERS' PERFORMANCE. Columns: Rating code | Description | Percentage | Number of learners. Rows: 7 Outstanding 80-100 A; 6 Meritorious 70-79 5; 5 Substantial 60-69 5; 4 Adequate 50-59 B; 3 Moderate 40-49 4; 2 Elementary 30-39 2; 1 Not achieved 0-29 0.]",
+   "text": "Determine the values of A and B.",
+   "marks": 2,
+   "topic": "Data handling: collecting, organising and summarising data",
+   "solution_method": "frequency_count",
+   "memo_answer": "A = 8\nB = 6",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.2",
+   "text": "What is the probability that a learner from Mrs Base’s Mathematical Literacy class scored less than 60% in final examinations? Write your answer as a percentage.",
+   "marks": 2,
+   "topic": "Probability in everyday contexts",
+   "solution_method": "probability_percentage",
+   "memo_answer": "P(less than 60%) = (6 + 4 + 2 + 0) ÷ 30 x 100 = 40%",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.3.1",
+   "context": "4.3 Study the pie charts below that show the Amathole District Municipality's service delivery for a particular period. The number of households for this particular period is 324 292. [Pie chart 'Housing': Houses 71%, Shacks 12%, Other 6%, Apartments 5%, Semi-detached houses A. Pie chart 'Toilet facility': Flush toilets B, Bucket toilets 6%, No formal toilets 2%, Pit toilets 1%, Other 1%.] Refer to the pie charts above to answer the questions below.",
+   "text": "Determine the missing value of A and calculate how many semi-detached houses are in the Amathole District Municipality.",
+   "marks": 4,
+   "topic": "Data handling: representing and analysing graphs",
+   "solution_method": "pie_chart_percentage",
+   "memo_answer": "A = 100% - (6 + 5 + 12 + 71)% = 6%\nSemi-detached houses = 6% x 324 292 = 19 457,52 ≈ 19 458",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.3.2",
+   "text": "Determine the number of households which has flush toilets.",
+   "marks": 3,
+   "topic": "Data handling: representing and analysing graphs",
+   "solution_method": "percentage_of_quantity",
+   "memo_answer": "Flush toilets = 90% x 324 292 = 291 862,8 ≈ 291 863",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.3.3",
+   "text": "Write down the percentage of shacks as a ratio to the number of ‘other’.",
+   "marks": 2,
+   "topic": "Data handling: representing and analysing graphs",
+   "solution_method": "ratio_simplification",
+   "memo_answer": "Ratio = 12% : 6% = 2 : 1",
+   "memo_note": "Official errata: the question never asked to simplify - 12 : 6 earns full marks; also accept unit form 1 : 0,5.",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.3.4",
+   "text": "Give an example of the type of housing referred to as ‘other’ in the pie chart above.",
+   "marks": 2,
+   "topic": "Data handling: representing and analysing graphs",
+   "solution_method": "opinion",
+   "memo_answer": "Granny flats OR RDP houses (accept any other relevant answer)",
+   "checkable": false
+  }
+ ]
+}
