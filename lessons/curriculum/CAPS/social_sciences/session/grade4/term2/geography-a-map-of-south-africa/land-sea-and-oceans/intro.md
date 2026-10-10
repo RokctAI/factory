@@ -1,0 +1,1 @@
+Today a Grade 4 class from Bredasdorp, in the Western Cape, visits Cape Agulhas, the southernmost tip of Africa. A big map there shows where the Atlantic and Indian Oceans meet. We learn how land and sea are shown on a map, the names of the two oceans along South Africa's coast, and which countries share South Africa's borders on land.

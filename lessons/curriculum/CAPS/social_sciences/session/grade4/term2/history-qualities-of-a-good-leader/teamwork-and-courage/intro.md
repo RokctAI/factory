@@ -1,0 +1,1 @@
+Today we join a Grade 4 netball team in Rustenburg, in North West, at half-time in a hard match. Their captain shows them how to pull together. We learn two more qualities of a good leader: a good leader works with a team, and a good leader has courage and is brave. We meet leaders who showed these qualities, including Oliver Tambo, Siya Kolisi and Helen Suzman.

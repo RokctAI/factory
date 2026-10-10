@@ -1,0 +1,1 @@
+Today a Grade 4 class from KwaDukuza, in KwaZulu-Natal, visits the Luthuli Museum in Groutville, the home of Chief Albert Luthuli. We learn three more qualities of a good leader: a good leader is dedicated, committed to others, and prepared to sacrifice for others. We meet Albert Luthuli and Mahatma Gandhi, and ordinary people who show these qualities every day.

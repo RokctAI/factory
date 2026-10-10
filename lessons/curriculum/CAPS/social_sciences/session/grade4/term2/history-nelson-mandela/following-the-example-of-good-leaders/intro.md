@@ -1,0 +1,1 @@
+Today is Mandela Day, the 18th of July. A Grade 4 class in eMalahleni, in Mpumalanga, spends sixty-seven minutes helping their community. We learn how ordinary people, including children, can follow the example of good leaders like Nelson Mandela in everyday life, and how we can grow into good leaders ourselves.

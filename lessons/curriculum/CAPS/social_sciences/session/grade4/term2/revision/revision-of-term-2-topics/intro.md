@@ -1,0 +1,1 @@
+Today we revise all of Term 2. The Grade 4 class in George, in the Western Cape, follows a treasure hunt around the school, with a clue at each stop. The clues cover map skills, from plan views to the map of South Africa, and learning from leaders, from the qualities of a good leader to the life of Nelson Mandela.

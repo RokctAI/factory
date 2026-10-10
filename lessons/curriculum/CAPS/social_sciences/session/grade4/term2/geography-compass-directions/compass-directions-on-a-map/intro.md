@@ -1,0 +1,1 @@
+Today a Grade 4 class goes on a school camp at Golden Gate Highlands National Park, in the Free State. They watch the sun rise and set, use a compass, and read a map of the camp with a north arrow. We learn the four compass directions, north, east, south and west, and how to use them to describe where places are on a map.

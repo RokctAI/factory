@@ -1,0 +1,1 @@
+Today a Grade 4 class in George, in the Western Cape, starts the map skills topic. They look at a mug, a hat and a shoe from the side and from above, and then draw their classroom as if they were a bird looking down. We learn the difference between a side view and a plan view, and why maps are drawn from above.

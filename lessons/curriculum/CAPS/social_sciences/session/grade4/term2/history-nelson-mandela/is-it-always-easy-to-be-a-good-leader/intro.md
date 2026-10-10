@@ -1,0 +1,1 @@
+Today a Grade 4 class from Cape Town takes the ferry to Robben Island. A former political prisoner shows them Nelson Mandela's cell and tells them what life was like there. We ask three questions: is it always easy to be a good leader? Are good leaders always popular? And are good leaders perfect?

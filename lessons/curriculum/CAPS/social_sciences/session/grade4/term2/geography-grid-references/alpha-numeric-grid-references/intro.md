@@ -1,0 +1,1 @@
+Today a Grade 4 class in Welkom, in the Free State, plays a treasure hunt on a big map of their neighbourhood with a grid drawn over it. We learn what an alpha-numeric grid is, how to read a grid reference to find a place, and how to give the grid reference of a place on a simple large-scale map.

@@ -1,0 +1,1 @@
+Today a Grade 4 class in Mahikeng, in North West, opens a box of pen-pal letters from Grade 4 learners in all nine provinces. Each letter describes where its writer lives. We learn the main cities and towns of each province, how to find our own settlement on a map of South Africa, and how to describe where we live.

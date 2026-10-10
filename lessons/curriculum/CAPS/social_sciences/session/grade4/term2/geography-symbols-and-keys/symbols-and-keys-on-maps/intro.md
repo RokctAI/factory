@@ -1,0 +1,1 @@
+Today Amahle, a Grade 4 learner, explores the town of Stellenbosch in the Western Cape with a tourist map. The map is full of tiny pictures, letters, lines and colours. We learn what map symbols are, the different kinds of symbols, and how a key explains what each symbol means on South African maps.
