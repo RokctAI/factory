@@ -6,7 +6,8 @@
 * speak_text: punctuation-only changes for the TTS prompt (a spaced hyphen
   or dash is a pause, never "minus"; a colon is a comma). Words never change.
 * tts_prompt: what the model is actually given for one sentence - the
-  sentence plus TAIL_PAD, so the model does not stop on the last phoneme.
+  sentence plus TAIL_PAD, so the model does not stop on the last phoneme;
+  a closing countdown's "1..." becomes "1.".
 * norm_words / word_errors: the word-exact ASR check. Numbers, a few
   spelling variants and ASR homophones are normalised; everything else
   must match exactly.
@@ -39,8 +40,15 @@ def speak_text(sentence: str) -> str:
 TAIL_PAD = " ..."
 
 
+# A sentence ending in a countdown ("takes over in 3... 2... 1...") gave the
+# model "1... ..." to finish on: it dropped the "one" or ran on into seconds
+# of babble (assistant_005's intro and handover lines, every seed). The
+# last count ends the sentence with a full stop instead.
+_END_COUNT_RE = re.compile(r"(\d)\.\.\.$")
+
+
 def tts_prompt(sentence: str) -> str:
-    s = sentence.rstrip()
+    s = _END_COUNT_RE.sub(r"\1.", sentence.rstrip())
     if s and s[-1] not in ".!?":
         s += "."
     return s + TAIL_PAD

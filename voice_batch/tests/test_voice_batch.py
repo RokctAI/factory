@@ -48,6 +48,12 @@ class TextNorm(unittest.TestCase):
         self.assertEqual(tts_prompt("Let us begin."), "Let us begin. ...")
         self.assertEqual(tts_prompt("Ready?"), "Ready? ...")
         self.assertEqual(tts_prompt("Not you, not today "), "Not you, not today. ...")
+
+    def test_tts_prompt_ends_a_closing_countdown_with_a_full_stop(self):
+        self.assertEqual(tts_prompt("Class starts in 3... 2... 1..."), "Class starts in 3... 2... 1. ...")
+        self.assertEqual(tts_prompt("Wait..."), "Wait... ...")
+        self.assertEqual(norm_words(tts_prompt("Class starts in 3... 2... 1...")),
+                         norm_words("Class starts in 3... 2... 1..."))
         # the pad is punctuation only: the ASR words are unchanged
         self.assertEqual(norm_words(tts_prompt("Two x minus 3.")), norm_words("Two x minus 3."))
 
