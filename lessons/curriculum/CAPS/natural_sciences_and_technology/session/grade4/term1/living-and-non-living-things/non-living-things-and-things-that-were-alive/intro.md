@@ -1,0 +1,1 @@
+Today we take a walk along the beach in Durban with a bag for a clean-up. We find a crab, seaweed, shells, driftwood, sand, a plastic bottle and a rusty tin. We learn to sort everything into three groups: things that are living, things that were once living and are now dead, and things that were never alive at all.

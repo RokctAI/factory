@@ -1,0 +1,1 @@
+Today we visit a village near Mthatha in the Eastern Cape, where Lwazi and his grandmother look at the full Moon through a pair of binoculars. We learn that the Moon is a ball of rock with no air and no water, that it is much smaller than the Earth, and that it is much closer to the Earth than the Sun is.

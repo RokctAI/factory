@@ -1,0 +1,1 @@
+Today we spend a Saturday afternoon at a family braai in Soweto. We look at the solid bricks of the braai stand, pour cool drink and water into different glasses, and smell the boerewors from across the yard. We learn that all materials are solids, liquids or gases, and we learn how each one behaves.

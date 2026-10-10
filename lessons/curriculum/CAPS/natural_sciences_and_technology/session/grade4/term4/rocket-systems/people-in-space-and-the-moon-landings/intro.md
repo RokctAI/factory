@@ -1,0 +1,1 @@
+Today we visit a science centre in Cape Town, where a Grade 4 class watches old film of the first Moon landing on a big screen. We learn that people have used rockets to send satellites and astronauts into space, that twelve astronauts have walked on the Moon, and that today people from many countries, including South Africa, have travelled into space.

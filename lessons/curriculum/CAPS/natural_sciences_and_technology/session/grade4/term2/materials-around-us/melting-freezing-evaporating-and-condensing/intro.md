@@ -1,0 +1,1 @@
+Today we spend a hot December day with a family in Upington, one of the hottest towns in South Africa. Ice lollies melt in the sun, a pot of water boils on the stove for pap, a cold glass of cool drink gets wet on the outside, and a candle drips wax. We learn how heating and cooling make materials change from one state to another: melting, freezing, evaporating and condensing.

@@ -1,0 +1,1 @@
+Today we revise all of Term 2, Matter and Materials. A Grade 4 class in Mbombela builds a poster wall with four panels: solids, liquids and gases; changes of state and the water cycle; raw materials and their properties; and strong shapes and frames. We work through each panel, remind ourselves of the big ideas and fix the mistakes learners often make.

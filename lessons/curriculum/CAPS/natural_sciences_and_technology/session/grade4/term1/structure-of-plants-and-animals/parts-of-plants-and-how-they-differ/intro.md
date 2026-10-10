@@ -1,0 +1,1 @@
+Today we dig into a school vegetable garden in Mthatha. We pull up a carrot, look closely at a bean plant, and pick a ripe tomato. We learn the six main parts of a plant: roots, stems, leaves, flowers, fruits and seeds, and what each part does. Then we compare plants and see how different their parts can be in size, shape and colour.

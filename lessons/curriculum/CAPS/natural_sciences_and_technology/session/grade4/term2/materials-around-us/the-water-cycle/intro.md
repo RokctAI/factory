@@ -1,0 +1,1 @@
+Today we follow one drop of water on a long journey across KwaZulu-Natal. It starts as snow on the Drakensberg, melts into the Tugela River, flows to the sea, rises into the sky and falls again as rain. We learn how water evaporates, condenses, freezes and melts as it moves round and round in the water cycle.

@@ -1,0 +1,1 @@
+Today we visit iSimangaliso Wetland Park on the coast of KwaZulu-Natal, where lakes, swamps, forest, grassland and beaches meet. We watch hippos, crocodiles, birds, frogs and sea turtles, and we find out the five things every animal needs from its habitat: food, water, shelter, a safe place to have babies and a way to escape danger.

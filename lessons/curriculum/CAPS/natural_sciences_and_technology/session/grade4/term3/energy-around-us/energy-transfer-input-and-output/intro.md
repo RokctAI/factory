@@ -1,0 +1,1 @@
+Today we visit a sheep farm near Beaufort West in the Karoo. A windpump creaks in the wind, solar panels shine on the roof, electricity wires run to the farmhouse, a kettle boils, a radio plays and a tractor rumbles. We learn how energy is transferred from a source to where it is needed, and how machines and appliances take in input energy and give out useful output energy.

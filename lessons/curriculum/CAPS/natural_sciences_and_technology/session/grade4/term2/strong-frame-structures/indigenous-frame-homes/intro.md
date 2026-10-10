@@ -1,0 +1,1 @@
+Today a Grade 4 class in Springbok in Namaqualand visits a matjieshuis, a traditional Nama mat house, at a local heritage site. Then they look at pictures of traditional Zulu and Xhosa homes. We learn how these indigenous homes are built on a framework of poles, or struts, tied together, and why that framework makes them strong, light and well suited to where people lived.

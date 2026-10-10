@@ -1,0 +1,1 @@
+Today a Grade 4 class in eMalahleni in Mpumalanga looks out of the school bus window at Eskom pylons, a tower crane on a building site and the roof trusses of a new house. Back in class, they build frames from paper struts. We learn why struts joined into triangles make strong, stable frame structures, and we spot triangles in roofs, bridges, cranes, pylons and even skeletons.

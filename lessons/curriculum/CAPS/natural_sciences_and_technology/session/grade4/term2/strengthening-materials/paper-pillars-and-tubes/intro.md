@@ -1,0 +1,1 @@
+Today a Grade 4 class in Bethlehem in the Free State holds a pillar contest. Each group folds or rolls sheets of paper into hollow pillars with circle, triangle and square shapes, then stacks books on top until they collapse. We learn which shapes are strongest, why, and how to roll paper into thin tubes called struts for building frames.

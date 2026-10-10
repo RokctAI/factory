@@ -1,0 +1,1 @@
+Today we revise all of Term 4, Planet Earth and Beyond. A Grade 4 class in Kimberley turns their school hall into a space exhibition for their families, with stations about the Earth, the Sun, the solar system, the Moon and rockets. At each station we remind ourselves of the big ideas of the term.

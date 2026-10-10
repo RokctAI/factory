@@ -1,0 +1,1 @@
+Today a Grade 4 class in Mahikeng takes on a challenge: build a bridge across a gap between two piles of books, using only one sheet of paper, and make it hold as many coins as possible. A flat sheet sags under one coin. We learn four ways to make paper much stronger: folding, rolling, layering and corrugating.
