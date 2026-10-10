@@ -1,0 +1,1 @@
+Today a Grade 6 class in Newcastle, in KwaZulu-Natal, uses coloured stickers to mark crowded and empty parts of the world on a large world map. We learn how the world's more than eight billion people are spread across the continents, which regions are crowded and which are almost empty, and the natural and human reasons for this pattern.

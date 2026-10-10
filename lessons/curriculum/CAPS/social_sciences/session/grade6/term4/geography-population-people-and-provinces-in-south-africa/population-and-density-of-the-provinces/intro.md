@@ -1,0 +1,1 @@
+Today a Grade 6 class in Komani, in the Eastern Cape, draws two bar graphs on the board: one showing how many people live in each of South Africa's nine provinces, and one showing each province's population density. We learn how to read bar graphs and line graphs, compare the provinces, and explain why the province with the most people is not always the most crowded.

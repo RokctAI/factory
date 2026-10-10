@@ -1,0 +1,1 @@
+Today we revise all of Term 4. A Grade 6 class in Richards Bay, in KwaZulu-Natal, sets up three revision corners in the classroom: why people live where they do in South Africa, population around the world and Cairo, and medicine through time. We visit each corner, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.

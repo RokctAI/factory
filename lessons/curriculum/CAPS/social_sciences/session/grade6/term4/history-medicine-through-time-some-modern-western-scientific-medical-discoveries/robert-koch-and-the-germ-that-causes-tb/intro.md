@@ -1,0 +1,1 @@
+Today a Grade 6 class in Gqeberha, in the Eastern Cape, takes part in World TB Day on the twenty-fourth of March, when a nurse from the local clinic visits. We learn how the German doctor Robert Koch developed new ways to study germs, how he discovered the germ that causes tuberculosis in 1882, and how TB is prevented and cured today in South Africa, which still has many cases.
