@@ -1,0 +1,1 @@
+Today we learn to divide a three-digit number by a two-digit number. We pack apples from a farm in Ceres into boxes of 24, put learners from a school in Welkom onto buses with 32 seats, and share money equally, using times tables, big chunks and a table of multiples, and we check every answer by multiplying back.

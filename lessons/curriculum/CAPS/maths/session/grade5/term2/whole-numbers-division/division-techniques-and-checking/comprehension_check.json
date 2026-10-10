@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Estimate 756 divided by 18 and then find the exact answer by building up.",
+      "expected_answer": "Estimate: 800 divided by 20 is 40. Build up: 18 times 40 is 720, and 756 minus 720 is 36, which is 2 more 18s. So 756 divided by 18 is 42, which is close to the estimate."
+    },
+    {
+      "id": "cc2",
+      "question": "Work out 936 divided by 12 by halving both numbers, and check by multiplying.",
+      "expected_answer": "Halve both to get 468 divided by 6. 420 divided by 6 is 70 and 48 divided by 6 is 8, so the answer is 78. Check: 78 times 12 is 780 plus 156, which is 936."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain why 480 divided by 12 is not 480 divided by 10 plus 480 divided by 2.",
+      "expected_answer": "Dividing by 12 asks how many 12s fit into 480, which is 40. Splitting the divisor gives 48 plus 240, which is 288, far too big. You may split the number being divided, but not the number you divide by."
+    }
+  ]
+}

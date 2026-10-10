@@ -1,0 +1,1 @@
+Today we pull the whole of Term 3 together before the test. We revisit 3D objects, collecting and showing data, the mode, probability, length and conversions, perimeter, area and volume. One running story, a school fun day in Port Shepstone, shows every skill where it is actually used, and we practise the checks that make each answer sure.

@@ -1,0 +1,1 @@
+Today we learn three ways to find the missing number in a number sentence: seeing it straight away from facts we know, trying and improving, and undoing the operation. We use egg trays on a farm near Bethlehem and books in a school library in Polokwane, and we finish every answer by putting it back into the sentence to prove that it is right.

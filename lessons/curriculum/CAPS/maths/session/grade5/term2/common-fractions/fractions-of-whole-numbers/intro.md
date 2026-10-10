@@ -1,0 +1,1 @@
+Today we learn to find a fraction of a whole number, like three quarters of a class or two fifths of some money. We use a Grade 5 class in Kroonstad, pocket money, a cycle race and the minutes in an hour to find one part first, then as many parts as the fraction asks for, and we decide whether a question wants the part or what is left.

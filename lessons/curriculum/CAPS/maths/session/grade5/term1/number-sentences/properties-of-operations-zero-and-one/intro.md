@@ -1,0 +1,1 @@
+Today we learn three properties of operations that make calculations easier: swapping the order, changing the grouping and splitting a number to multiply. We also meet two special numbers, 0 and 1. We set up a school hall in Kimberley for prize-giving, with rows of chairs, tickets at R25 and boxes of cool drinks, and we learn where each property works and where it does not.

@@ -1,0 +1,1 @@
+Today we read, tell and write time on analogue and digital clocks, in hours, minutes and seconds, using both 12-hour time with a.m. and p.m. and 24-hour time. A Grade 5 learner and his family take a long-distance bus from Gqeberha to Cape Town, and we read the clocks, tickets and timetables along the way.

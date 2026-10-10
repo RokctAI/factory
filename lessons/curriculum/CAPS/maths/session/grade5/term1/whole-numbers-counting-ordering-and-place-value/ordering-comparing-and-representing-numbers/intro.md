@@ -1,0 +1,1 @@
+Today we learn to read, write, compare and order whole numbers with up to six digits. We build on the four-digit numbers from Grade 4 and use visitors to three game reserves in Limpopo and the prices of two bakkies in Kimberley to see how a long number splits into groups of three, how to decide which number is bigger, and how to line numbers up from smallest to biggest.

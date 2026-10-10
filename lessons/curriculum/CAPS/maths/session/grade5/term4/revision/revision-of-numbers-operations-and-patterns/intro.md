@@ -1,0 +1,1 @@
+Today we revise the number work of the whole year before the final test: whole numbers, place value and rounding, the four operations, common fractions, and number patterns with flow diagrams. One running story, an end-of-year concert at a school in George, shows every skill where it is actually used, and we practise the checks that make each answer sure.

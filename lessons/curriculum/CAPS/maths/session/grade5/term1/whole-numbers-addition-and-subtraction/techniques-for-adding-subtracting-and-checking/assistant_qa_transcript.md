@@ -1,0 +1,18 @@
+### subtopic_1 — Breaking Down and Building Up
+**Assistant:** Why should I learn other methods if the column method always works?
+
+**Tutor:** The column method is reliable, but it is not always the quickest or the most sensible, and relying on one method means you have nothing to check it with. Think of 34 567 plus 9 998. In columns, you would carry in four places, and each carry is a chance to slip. With rounding and compensating, you add 10 000, which only changes one digit, and take off 2. It takes a few seconds in your head, with very little to go wrong. The same is true for 42 000 minus 38 750, where column subtraction means exchanging across zeros, but counting up on a number line needs just two jumps. The other methods also build number sense: the feeling for how big numbers are and how they fit together. A learner who sees that 9 998 is nearly 10 000 and that 650 and 350 make 1 000 is thinking about the numbers, not just following steps, and that learner is much more likely to notice when an answer looks wrong. Finally, CAPS asks you to use two techniques, one to calculate and one to check, so a second method is not optional. The best mathematicians choose a method to suit the numbers, and they keep the column method for the times when no shortcut fits.
+
+***
+
+### subtopic_2 — Rounding and Compensating
+**Assistant:** When I compensate, how do I remember whether to add or subtract the extra?
+
+**Tutor:** Do not try to remember a rule; instead, ask yourself what you actually did and undo the part that was wrong. In 34 567 plus 9 998, you were supposed to add 9 998, but you added 10 000. That is 2 more than you should have added, so your answer is 2 too big. To fix a number that is too big, take the extra off: 44 567 minus 2 is 44 565. In 65 432 minus 19 997, you were supposed to take away 19 997, but you took away 20 000. That is 3 more than you should have taken, so your answer is 3 too small. To fix a number that is too small, give the extra back: 45 432 plus 3 is 45 435. Money makes this easy to picture. If a shopkeeper owes you R9 998 and pays you R10 000, you give back R2. If you owe R19 997 and pay R20 000, you get R3 change. When in doubt, check with an estimate or the inverse. 34 567 plus about 10 000 must be about 44 500, and 44 565 fits; 44 569 also fits the estimate, so here the inverse is the better check: 44 565 minus 9 998 gives back 34 567, but 44 569 minus 9 998 does not.
+
+***
+
+### subtopic_3 — Number Lines and Inverse Checks
+**Assistant:** Why should my check use a different method from the one I used to work it out?
+
+**Tutor:** Because if you made a mistake in your method, repeating the same method can easily repeat the same mistake. Suppose you compensated the wrong way in 34 567 plus 9 998 and wrote 44 569. If you check by doing the same rounding and compensating again, you will probably think the same wrong thought, add 2 instead of subtracting it, and get 44 569 again. The check agrees with the answer, but both are wrong, and you now feel confident about a wrong answer, which is worse than being unsure. A different method comes at the problem from another direction, so it is very unlikely to make the same slip. The inverse is the most powerful choice because it goes backwards: 44 569 minus 9 998 gives 34 571, not 34 567, and the mistake shows at once. An estimate is a different kind of check. It is quick and catches big mistakes, like a carry forgotten in the thousands, but it will not notice a small slip of 2 or 4. So use an estimate to make sure you are in the right area, and use the inverse to make sure you are exactly right. Builders do the same thing when they measure a wall with a tape and then check it by counting bricks.

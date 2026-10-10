@@ -1,0 +1,1 @@
+Today we solve real problems about money and measurement using addition and subtraction. We follow a family budget in Pietermaritzburg, a spaza shop's profit, a truck loaded with maize and sugar, and a water tank on a farm in the Karoo, and we use the same five steps every time: understand, write a number sentence, calculate, check and answer with units.

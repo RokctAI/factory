@@ -1,0 +1,1 @@
+Today we estimate and measure mass with kitchen scales, bathroom scales and balances, and we record, compare and order masses in grams and kilograms. A Grade 5 learner helps at her family's fruit and vegetable stall in Tzaneen, weighing mangoes, avocados and potatoes, and we read every kind of scale carefully.

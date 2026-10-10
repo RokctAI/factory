@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Sort a circle, a triangle and a semicircle by the kind of sides they have. Explain each one.",
+      "expected_answer": "The triangle has only straight sides, 3 of them. The circle has only a curved side. The semicircle has both a straight side and a curved side, so it goes in the group for both."
+    },
+    {
+      "id": "cc2",
+      "question": "A tiny triangle and a huge triangle are sorted by number of sides. Do they go in the same group? Explain.",
+      "expected_answer": "Yes. Both have 3 sides. Size does not change the number of sides, so they both belong in the 3-sided group."
+    },
+    {
+      "id": "cc3",
+      "question": "Describe how to draw a rectangle 5 squares long and 3 squares high on grid paper.",
+      "expected_answer": "Start at a corner where lines cross. Go 5 squares right, 3 squares up, 5 squares left and 3 squares down to the start. Count squares, not lines, and check that the opposite sides are equal."
+    }
+  ]
+}

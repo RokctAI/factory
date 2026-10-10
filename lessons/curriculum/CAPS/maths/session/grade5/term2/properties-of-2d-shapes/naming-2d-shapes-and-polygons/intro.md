@@ -1,0 +1,1 @@
+Today we recognise and name flat shapes, from triangles and quadrilaterals to pentagons, hexagons and heptagons, and we learn what makes a polygon regular or irregular. A Grade 5 class visits a cultural village in Mpumalanga, where Ndebele wall paintings are full of shapes, and we name every shape we find, even when it is turned around.

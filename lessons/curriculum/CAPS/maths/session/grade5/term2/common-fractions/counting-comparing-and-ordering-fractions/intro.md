@@ -1,0 +1,1 @@
+Today we learn to count in fractions and to compare and order fractions up to twelfths. We use an egg box of 12 eggs, a slab of chocolate with 8 blocks and a fun run in Polokwane marked every quarter of a kilometre to count forwards and backwards past whole numbers, to decide which fraction is bigger, and to line fractions up on a number line.

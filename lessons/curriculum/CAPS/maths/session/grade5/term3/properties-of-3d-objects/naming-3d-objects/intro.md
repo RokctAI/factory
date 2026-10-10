@@ -1,0 +1,1 @@
+Today we recognise and name solid objects: prisms, cubes, cylinders, cones and pyramids. A Grade 5 learner helps at her aunt's spaza shop in Pietermaritzburg, where the shelves are full of boxes, tins and packets, and we name each object, picture it in our minds and compare cubes with rectangular prisms.

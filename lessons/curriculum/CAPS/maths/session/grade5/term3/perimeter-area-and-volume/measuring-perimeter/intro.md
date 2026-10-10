@@ -1,0 +1,1 @@
+Today we measure perimeter, the distance all the way around the outside of a shape, using rulers and measuring tapes. A Grade 5 class in eMalahleni makes frames for their artwork and puts a fence around a new garden bed, measuring every side and adding carefully so that nothing runs short.

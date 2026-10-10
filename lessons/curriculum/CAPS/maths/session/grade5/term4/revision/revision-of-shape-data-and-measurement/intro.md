@@ -1,0 +1,1 @@
+Today we revise shape, space, data and measurement from the whole year before the final test: 2D shapes, symmetry, 3D objects and transformations; time, length, mass and capacity; data and probability; and perimeter, area and volume. One running story, a Grade 5 camp near Clarens, shows every skill in use, and we practise the checks that make each answer sure.

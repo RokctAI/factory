@@ -1,0 +1,1 @@
+Today we learn quick ways to multiply and reliable ways to check. We use a sports day in Rustenburg, with teams of learners, juice for the players, taxis bringing the visitors and family tickets at R199, to practise doubling and halving, breaking down and building up, rounding and compensating, and checking every product with an estimate and with division.

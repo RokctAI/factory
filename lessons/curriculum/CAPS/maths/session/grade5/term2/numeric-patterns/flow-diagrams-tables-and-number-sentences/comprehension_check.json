@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Delivered vetkoek cost R6 each plus R5 for delivery. Write the rule as a flow diagram and find the cost of 8 vetkoek.",
+      "expected_answer": "The flow diagram is input, then times 6, then plus 5, then output. For 8 vetkoek, 8 times 6 is 48, and 48 plus 5 is 53, so the cost is R53."
+    },
+    {
+      "id": "cc2",
+      "question": "A table has inputs 2, 4, 6, 8 and outputs 7, 13, 19, 25. Find the rule and explain how you know.",
+      "expected_answer": "The inputs go up by 2 and the outputs go up by 6, so each 1 more in the input adds 3. The rule starts with times 3. 2 times 3 is 6 and the output is 7, so add 1. The rule is times 3, then plus 1, and it works for every column."
+    },
+    {
+      "id": "cc3",
+      "question": "6 times a number plus 5 equals 35. Find the number and explain.",
+      "expected_answer": "Work backwards with opposite operations in the opposite order. 35 minus 5 is 30, and 30 divided by 6 is 5. The number is 5. Check: 5 times 6 is 30, plus 5 is 35."
+    }
+  ]
+}

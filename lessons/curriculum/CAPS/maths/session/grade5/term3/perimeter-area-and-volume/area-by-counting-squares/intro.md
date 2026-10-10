@@ -1,0 +1,1 @@
+Today we find the area of shapes by counting squares on a grid, and we learn why area is measured in square units. A Grade 5 class in Thohoyandou plans a reading corner on grid paper, counting squares to see how much carpet each design needs, including shapes with half squares and curved edges.

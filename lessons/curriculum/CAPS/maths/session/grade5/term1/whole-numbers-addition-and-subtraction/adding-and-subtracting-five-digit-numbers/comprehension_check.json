@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Add 24 586 and 18 937 in columns, explaining each carry.",
+      "expected_answer": "Units: 6 plus 7 is 13, write 3 carry 1. Tens: 8 plus 3 plus 1 is 12, write 2 carry 1. Hundreds: 5 plus 9 plus 1 is 15, write 5 carry 1. Thousands: 4 plus 8 plus 1 is 13, write 3 carry 1. Ten thousands: 2 plus 1 plus 1 is 4. The total is 43 523."
+    },
+    {
+      "id": "cc2",
+      "question": "Work out 24 586 minus 18 937 and check your answer by adding.",
+      "expected_answer": "24 586 minus 18 937 is 5 649. Check: 18 937 plus 5 649 is 24 586, which is the number we started with, so the answer is correct."
+    },
+    {
+      "id": "cc3",
+      "question": "Explain how to work out 50 000 minus 23 476 using 49 999.",
+      "expected_answer": "49 999 minus 23 476 needs no exchanging and gives 26 523. Because 49 999 is 1 less than 50 000, add 1 back to get 26 524."
+    }
+  ]
+}
