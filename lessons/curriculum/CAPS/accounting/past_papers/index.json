@@ -43,7 +43,95 @@
           "notes": "QP (Eng, 16 pp = 15 pages + formula sheet), marking guidelines (Eng, 13 pp) and 11-page Special Answer Book all cover/mid/late-page verified, supplied by owner upload 2026-08-06 batch 5, tracked at past_papers/accounting/grade12/2025/paper2.pdf + paper2_memo.pdf + paper2_answer_book.pdf (answer book fileticket=t08Pta3AYdE). QP+memo pair complete."
         }
       ]
+    },
+    {
+      "session": "November 2025 Grade 11 (Eastern Cape Department of Education provincial common examination)",
+      "grade": 11,
+      "provider": "Eastern Cape Department of Education",
+      "session_page": "https://ecexams.co.za/2025_November_Gr_11_Exams.htm",
+      "papers": [
+        {
+          "paper": 1,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/ACCOUNTING%20P1%20GR11%20QP%20NOV2025watermark.zip",
+          "memo_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/ACCOUNTING%20P1%20GR11%20MEMO%20NOV2025_watermark.zip",
+          "repo_paper": "past_papers/accounting/grade11/2025/paper1.json"
+        },
+        {
+          "paper": 2,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/ACCOUNTING%20P2%20GR11%20NOV%202025_watermark.zip",
+          "memo_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/ACCOUNTING%20P2%20%20MEMO%20GR11%20NOV%202025watermark.zip",
+          "repo_paper": "past_papers/accounting/grade11/2025/paper2.json"
+        }
+      ]
+    },
+    {
+      "session": "November 2024 Grade 11 (Eastern Cape Department of Education provincial common examination)",
+      "grade": 11,
+      "provider": "Eastern Cape Department of Education",
+      "session_page": "https://ecexams.co.za/2024_November_Gr_11_Exams.htm",
+      "papers": [
+        {
+          "paper": 1,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/ACCOUNTING%20%20P1%20GR11%20NOV%202024watermark.zip",
+          "memo_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/EC%20ACCOUNTING%20P1%20GR11%20%20MG%20NOV%202024_watermark.zip",
+          "repo_paper": "past_papers/accounting/grade11/2024/paper1.json"
+        },
+        {
+          "paper": 2,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/Accounting%20P2%20QP%20GR11%20NOV%202024watermark.zip",
+          "memo_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/ACCOUNTING%20P2%20MEMO%20GR11%20NOV%202024_watermark.zip",
+          "repo_paper": "past_papers/accounting/grade11/2024/paper2.json"
+        }
+      ]
+    },
+    {
+      "session": "November 2019 Grade 10 (Eastern Cape Department of Education provincial common examination)",
+      "grade": 10,
+      "provider": "Eastern Cape Department of Education",
+      "session_page": "https://ecexams.co.za/2019_November_Gr_10_Exams.htm",
+      "papers": [
+        {
+          "paper": 1,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P1%20GR10%20QP%20NOV2019.zip",
+          "memo_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P1%20GR10%20MEMO%20NOV2019.zip",
+          "repo_paper": "past_papers/accounting/grade10/2019/paper1.json"
+        },
+        {
+          "paper": 2,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P2%20GR10%20QP%20NOV%202019.zip",
+          "memo_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P2%20MEMO%20GR10%20NOV%202019.zip",
+          "repo_paper": "past_papers/accounting/grade10/2019/paper2.json"
+        }
+      ]
+    },
+    {
+      "session": "November 2018 Grade 10 (Eastern Cape Department of Education provincial common examination)",
+      "grade": 10,
+      "provider": "Eastern Cape Department of Education",
+      "session_page": "https://ecexams.co.za/2018_November_Gr_10_Exams.htm",
+      "papers": [
+        {
+          "paper": 1,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P1%20QP.zip",
+          "memo_url": "https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P1%20Memo.zip",
+          "repo_paper": "past_papers/accounting/grade10/2018/paper1.json"
+        },
+        {
+          "paper": 2,
+          "language": "English",
+          "question_paper_url": "https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P2%20QP.zip",
+          "memo_url": "https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P2%20Memo.zip",
+          "repo_paper": "past_papers/accounting/grade10/2018/paper2.json"
+        }
+      ]
     }
   ],
-  "note": "Index of real DBE sources; PDF ingestion + question-to-subtopic linking is the past-papers pipeline task (docs/past-papers-linking-brief.md, past_papers.py). This is also the honest source for pre-filling example_problem on topic rows. Only Gr 12 papers are published nationally; Gr 10-11 papers are provincial."
+  "note": "Index of real DBE sources; PDF ingestion + question-to-subtopic linking is the past-papers pipeline task (docs/past-papers-linking-brief.md, past_papers.py). This is also the honest source for pre-filling example_problem on topic rows. Only Gr 12 papers are published nationally; Gr 10-11 papers are provincial. Grade 10 and 11 sessions (grade field set per session) are provincial or DBE common examinations; Eastern Cape Department of Education papers are taken from ecexams.co.za, the provincial examination portal the DBE site links to. The PDFs are tracked beside each paperN.json under lessons/curriculum/CAPS/past_papers/."
 }

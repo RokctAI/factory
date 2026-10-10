@@ -1,0 +1,374 @@
+{
+ "_comment": [
+  "Eastern Cape Department of Education Grade 11 Mathematical Literacy P1, November 2024 provincial common examination.",
+  "Questions and marking-guideline answers extracted from the text layer of the official PDFs",
+  "(paper1.pdf, paper1_memo.pdf) and read against the rendered pages. Mathematical",
+  "Literacy questions hang off shared scenario boxes: the scenario (tables, graphs, plans and maps",
+  "described in bracketed words) is the 'context' of the first sub-question of each block and applies",
+  "to the sub-questions after it. memo_answer gives the guideline's working and final answer with",
+  "decimal commas kept; the guideline's mark codes (M method, A accuracy, CA consistent accuracy, RT",
+  "reading from table, C conclusion, O opinion, S simplification, R rounding) and level tags are left out.",
+  "FORMAT: 100 marks, 2 hours, four compulsory questions (Q1 26, Q2 26, Q3 17, Q4 31). The ANSWER SHEET",
+  "for 4.1.3/4.1.4 is printed in the question paper. The guideline calls the unknown in 4.2.2 'F'; the",
+  "paper calls it E."
+ ],
+ "paper_id": "ecdoe_mathlit_g11_p1_2024_nov",
+ "source": "Eastern Cape Department of Education",
+ "source_url": "https://ecexams.co.za/2024_November_Gr_11_Exams.htm",
+ "paper_download_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/MATHS%20LIT%20P1%20GR11%20QP%20NOV%202024_watermark.zip",
+ "memo_download_url": "https://ecexams.co.za/2024_November_Gr_11_Exams/MATHS%20LIT%20P1%20MEMO%20GR%2011%20NOV2024_watermark.zip",
+ "paper_file": "paper1.pdf",
+ "memo_file": "paper1_memo.pdf",
+ "copyright": "© Eastern Cape Department of Education, 2024. Reproduced for educational use with attribution.",
+ "subject": "Mathematical Literacy",
+ "grade": 11,
+ "paper": "P1",
+ "session": "November 2024",
+ "language": "English",
+ "total_marks": 100,
+ "time_hours": 2,
+ "questions": [
+  {
+   "ref": "Q1.1.1",
+   "context": "QUESTION 1 | 1.1 Mrs Link ordered clothing items and received the invoice below. [INVOICE (Canva). Billed to: Ave Link, 6 Prince Road; invoice no. 2468 093 753 8800; 16 February 2024. Item | unit price | quantity | price: White camisole top | $123 | 1 | $123; Cuban collar shirt | $127 | 4 | A; Floral cotton dress | $123 | B | $369. Subtotal $1 000; Tax (0%) $0; TOTAL $1 000. Payment information: Briand Bank, account number 123-456-8900; Samira Hadid; pay by 5 March 2024; 331 Anywhere St., Any City ST 32110.]",
+   "text": "Write down the name of the service provider.",
+   "marks": 2,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "read_value_from_document",
+   "memo_answer": "Canva (accept Samira Hadid)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.2",
+   "text": "Calculate the value of A.",
+   "marks": 2,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "multiplication",
+   "memo_answer": "A = $127 x 4 = $508",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.3",
+   "text": "Define the term invoice.",
+   "marks": 2,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "definition",
+   "memo_answer": "An invoice is a list of goods or services rendered as well as a statement of the amount due.",
+   "checkable": false
+  },
+  {
+   "ref": "Q1.1.4",
+   "text": "Determine the value of B.",
+   "marks": 2,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "division",
+   "memo_answer": "B = $369 ÷ $123 = 3",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.5",
+   "text": "Write down the due date.",
+   "marks": 2,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "read_value_from_document",
+   "memo_answer": "5 March 2024",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.6",
+   "text": "Convert the total amount in dollars to rand, if R1,00 = $0,053.",
+   "marks": 2,
+   "topic": "Finance: exchange rates",
+   "solution_method": "exchange_rate_conversion",
+   "memo_answer": "R1,00 = $0,053, so $1 000 = $1 000 x R1,00 ÷ $0,053 = R18 867,92",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.1",
+   "context": "1.2 Metro church members are planning to have a church service at a resort for a weekend. They received quotes from two different resorts, both of which accommodate a maximum of 10 people per resort. Mt View Resort costs R1 200 per night including breakfast. Forest Resort costs R950 per night. [TABLE 1: COSTS FOR BOTH RESORTS. Number of people: 0, 1, C, 4, 8, 10. Cost for Mt View Resort: 1 200 in every column. Cost for Forest Resort: 950, 950, 950, 950, 950, D.]",
+   "text": "Identify the type of relationship illustrated in the table above.",
+   "marks": 2,
+   "topic": "Patterns and relationships: tables, formulae and graphs",
+   "solution_method": "relationship_type",
+   "memo_answer": "Constant / fixed relationship",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.2",
+   "text": "Calculate how much the church members will pay if only five members attend the service at Mt View Resort.",
+   "marks": 2,
+   "topic": "Patterns and relationships: tables, formulae and graphs",
+   "solution_method": "read_value_from_table",
+   "memo_answer": "R1 200,00",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.3",
+   "text": "Determine the following missing values in the table: (a) C (2) (b) D (2)",
+   "marks": 4,
+   "topic": "Patterns and relationships: tables, formulae and graphs",
+   "solution_method": "table_completion",
+   "memo_answer": "(a) C = 2 (accept 3)\n(b) D = R950",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3.1",
+   "context": "1.3 A Grade 11 Mathematical Literacy class wrote a March cycle test. The results of the cycle test are shown in the graph below. [Bar graph 2024 GRADE 11 MARCH CYCLE TEST RESULTS: number of learners per percentage level - 0-29: 29; 30-49: 23; 50-69: 3; 70-100: 4.]",
+   "text": "Determine the number of learners that wrote the cycle test.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "read_value_from_graph",
+   "memo_answer": "29 + 23 + 3 + 4 = 59 learners",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3.2",
+   "text": "Calculate the percentage of learners who failed the cycle test.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "percentage_of_total",
+   "memo_answer": "% fail = 29/59 x 100 = 49,15%",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3.3",
+   "text": "Write down the modal class percentage levels.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "modal_class",
+   "memo_answer": "0-29",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.1",
+   "context": "QUESTION 2 | 2.1 Study the Eastern Cape Provincial Budget 2024/2025 framework and its focus areas on sectors. The summary of payment and estimates per sector is shown in the table below. [TABLE 2: EASTERN CAPE PROVINCIAL BUDGET 2024/2025 - sector | 2024/2025 (in rand) | 2025/2026 (in rand): Education 42 441 422 | 44 104 248; Health 30 106 843 | 31 029 965; Social Development 2 972 172 | 3 100 547; Sports, Recreation, Arts and Culture 1 043 363 | 1 074 493; Community Safety 144 840 | 150 179; Total 76 708 640 | 79 459 432.] [Adapted from People's guide to the budget]",
+   "text": "Explain the meaning of the term budget.",
+   "marks": 2,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "definition",
+   "memo_answer": "A budget is a financial plan outlining income and expenses over a period of time.\nOR a tool to help manage finances, achieve financial goals and make informed decisions about spending and saving.",
+   "checkable": false
+  },
+  {
+   "ref": "Q2.1.2",
+   "text": "Write down the amount allocated for health in 2025/2026 in words.",
+   "marks": 2,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "number_in_words",
+   "memo_answer": "Thirty-one million and twenty-nine thousand, nine hundred and sixty-five",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.3",
+   "text": "Calculate the percentage increase of the Education sector for the 2024/2025 and 2025/2026 financial year. Give your answer to the nearest percentage. You may use the following formula: Percentage increase = (new value - old value) ÷ old value x 100%",
+   "marks": 4,
+   "topic": "Finance: interest and inflation",
+   "solution_method": "percentage_change",
+   "memo_answer": "% increase = (44 104 248 - 42 441 422) ÷ 42 441 422 x 100 = 3,92% ≈ 4%",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.1",
+   "context": "2.2 Mr Paul is a businessman. He wants to attend a meeting and searched for a meter taxi online. He found the prices of two companies: Daniel's company and Jerry's company. Daniel's company charges the following for a single trip: • a minimum call-out fee of R50 per trip and the first three kilometres are free; • thereafter, R12,00 for each additional kilometre or part thereof. Jerry's company charges a flat rate of R14,50 per kilometre.",
+   "text": "Write down the formula for calculating the cost for Daniel’s company in the form of: Cost =",
+   "marks": 2,
+   "topic": "Finance: tariffs, VAT, UIF and exchange rates",
+   "solution_method": "tariff_formula",
+   "memo_answer": "Cost = R50 + R12,00 x (number of km travelled - 3)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.2",
+   "text": "The distance for a single trip to the meeting is 80 km. Mr Paul makes the statement that Jerry’s taxi company will be the cheapest. Verify, showing ALL calculations, that his statement is correct.",
+   "marks": 6,
+   "topic": "Finance: tariffs, VAT, UIF and exchange rates",
+   "solution_method": "tariff_comparison",
+   "memo_answer": "Daniel: R50,00 + R12,00 x (80 km - 3) = R50,00 + R12,00 x 77 = R50,00 + R924,00 = R974,00\nJerry: R14,50 x 80 = R1 160,00\nHis statement is incorrect (Daniel's company is cheaper).",
+   "memo_note": "The guideline writes Jerry's working as 'R14,00 x R80,00'; the rate is R14,50 per km and the answer R1 160,00 uses it.",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.3",
+   "text": "Mr Paul had another trip. He paid Daniel R1 214 for a single trip. Determine the distance travelled during this trip.",
+   "marks": 4,
+   "topic": "Finance: tariffs, VAT, UIF and exchange rates",
+   "solution_method": "solve_tariff_equation",
+   "memo_answer": "R1 214,00 = R50,00 + R12,00 x (D - 3)\nR1 164,00 = R12,00 x (D - 3)\nD - 3 = 97\nD = 100 km",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Mr Mnotho and his wife both secured new jobs overseas. They applied at a Boys High School for their two sons. The first son will be doing Grade 10 and the second son will be doing Grade 8. They will be staying at the hostel. Mr Mnotho received the following information regarding the school fees. [TABLE 3: SCHOOL FEE STRUCTURE FOR 2024: school fees R48 800,00; hostel fees R66 800,00; total R115 600,00.] School fees must be paid before the end of January. Hostel fees must be paid at the beginning of each year. Discount for siblings is offered as follows: • second child gets 10% discount on school fees and 5% discount on hostel fees; • third child gets 15% discount on school fees and 10% discount on hostel fees. Calculate the total discount amount that Mr Mnotho and his wife will get from the school.",
+   "marks": 6,
+   "topic": "Finance: financial documents, income and expenditure",
+   "solution_method": "discount_calculation",
+   "memo_answer": "Discount on school fees = R48 800,00 x 10/100 = R4 880,00\nDiscount on hostel fees = R66 800 x 5/100 = R3 340,00\nTotal discount = R4 880,00 + R3 340,00 = R8 220,00",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1",
+   "context": "QUESTION 3 | Study TABLE 4 below showing crypto ownership of the top 13 countries in 2023 and answer the questions that follow. [TABLE 4: TOP 13 COUNTRIES WITH CRYPTO CURRENCY - no. | country | value | percentage (%): 1 Indonesia 12 615 365 | 4,55; 2 Colombia 2 505 605 | 4,81; 3 Morocco 1 854 162 | 4,90; 4 Kenya 2 713 117 | 4,92; 5 Turkey 4 684 727 | 5,54; 6 United Kingdom 3 740 280 | 5,52; 7 Argentina 2 544 102 | 5,56; 8 Nigeria 12 862 740 | 5,75; 9 Russia 8 485 749 | 5,87; 10 Pakistan 15 400 547 | 6,40; 11 Brazil 15 400 547 | 6,40; 12 India 103 317 638 | 7,23; 13 Thailand 6 692 796 | 9,32; TOTAL (blank).] [Source: za.pinterest.com]",
+   "text": "Write down the country with the highest value of crypto currency.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "read_value_from_table",
+   "memo_answer": "India",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2",
+   "text": "Arrange the values owned by the countries in descending order.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "ordering_data",
+   "memo_answer": "103 317 638; 15 400 547; 15 400 547; 12 862 740; 12 615 365; 8 485 749; 6 692 796; 4 684 727; 3 740 280; 2 713 117; 2 544 102; 2 505 605; 1 854 162",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.3",
+   "text": "Calculate the difference between the maximum value and the minimum value.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "range",
+   "memo_answer": "Difference = 103 317 638 - 1 854 162 = 101 463 478",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.4",
+   "text": "Determine the number of countries with a percentage between 5% and 6%.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "counting_from_table",
+   "memo_answer": "5",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.5",
+   "text": "Determine the median country of the top 13 countries.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "median",
+   "memo_answer": "Thailand",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.6",
+   "text": "Name the type of graph that would best display the above information.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "graph_choice",
+   "memo_answer": "Bar graph / line graph",
+   "checkable": false
+  },
+  {
+   "ref": "Q3.7",
+   "text": "Calculate the probability, as a decimal, of randomly selecting a percentage between 3% and 6%.",
+   "marks": 3,
+   "topic": "Probability: simple and compound events",
+   "solution_method": "probability_decimal",
+   "memo_answer": "Probability = 9/13 = 0,69",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.8",
+   "text": "Write down the number of countries from the list of top 13 countries with crypto currency that are found in Africa.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "counting_from_table",
+   "memo_answer": "3 countries",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | 4.1 The learners of the Student Christian Association (SCA) of South Africa are planning to celebrate the 128th year of existence of the organisation in October 2024. The Student Christian Association (SCA) was founded in 1869 through missionary work in Stellenbosch. Celebrations will take place in the Eastern Cape. The Eastern Cape region of SCA learners, as the hosting province, are planning to have a fundraising event. They intend to use one of the biggest stadiums in the province as the venue. Their planning is as follows: • Stadium R50,00 per learner • Decorations R2 400,00. [TABLE 5: COST OF USING THE STADIUM - number of learners 0, 10, 20, 40, 50, 100; cost in rand 2 400, 2 900, 3 400, 4 400, 4 900, 7 400.] After calculating all the expenses, they decided to fundraise by selling t-shirts that will be worn during the celebrations, at R150,00 each. [TABLE 6: INCOME FROM SELLING T-SHIRTS - number of learners 0, 10, 20, 40, 50, 100; income in rand 0, 1 500, 3 000, 6 000, 7 500, 15 000.]",
+   "text": "The cost of using the stadium is expected to increase in 2025. Write down the term used to explain the yearly general increase of goods or services.",
+   "marks": 2,
+   "topic": "Finance: interest and inflation",
+   "solution_method": "definition",
+   "memo_answer": "Inflation",
+   "checkable": false
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "Show how the total cost of using the stadium when 100 learners booked to attend the session, is calculated.",
+   "marks": 3,
+   "topic": "Finance: profit, break-even, interest and inflation",
+   "solution_method": "cost_formula",
+   "memo_answer": "Cost = R2 400,00 + R50,00 x number of learners = R2 400,00 + R50,00 x 100 = R2 400,00 + R5 000,00 = R7 400,00",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.3",
+   "text": "Use TABLE 6 to draw a line graph of the income from selling t-shirts, on the axis provided on the ANSWER SHEET.",
+   "marks": 3,
+   "topic": "Finance: profit, break-even, interest and inflation",
+   "solution_method": "graph_drawing",
+   "memo_answer": "A straight line from (0; 0) to (100; 15 000) on the answer-sheet axes (number of learners 0-110 horizontally, cost in rands 0-16 000 vertically). (1 mark starting point (0; 0), 1 mark end point (100; 15 000), 1 mark straight line)",
+   "checkable": false
+  },
+  {
+   "ref": "Q4.1.4",
+   "text": "Indicate on the graph with a letter B, a point that will determine the number of t-shirts the SCA learners must sell to break even.",
+   "marks": 2,
+   "topic": "Finance: profit, break-even, interest and inflation",
+   "solution_method": "break_even_from_graph",
+   "memo_answer": "24 learners buying 24 t-shirts, indicated as B on the graph (where the income line crosses the cost line, at R3 600)",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.5",
+   "text": "After the fundraiser the learners made a profit of R7 500 and they deposited it in an investment account, earning interest of 10,5% p.a. compounded annually. The student body claims that after 3 years they will have more than R10 000 in the account. Verify, showing ALL calculations, whether the statement is valid.",
+   "marks": 5,
+   "topic": "Finance: interest and inflation",
+   "solution_method": "compound_interest",
+   "memo_answer": "End of year 1: R7 500 + 10,5/100 x R7 500 = R7 500 + R787,50 = R8 287,50\nEnd of year 2: R8 287,50 + R870,1875 = R9 157,6875\nEnd of year 3: R9 157,6875 + R961,5571875 = R10 119,24\nStatement is valid.\nOR balance = R7 500 x 1,105 x 1,105 x 1,105 = R10 119,24; valid",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.1",
+   "context": "4.2 The 2023 Grade 11 Mathematical Literacy class of Zulu High School wrote an examination marked out of 100 marks. The results are shown in the table below: 43 32 86 39 30 26 62 39 40 41 50 21 18 38 26 33 69 17 22 51 21 37 24 12 24 41 54 41 E 14 15 55 49 64 60 49 15 40 44 53 31 13 23 26.",
+   "text": "Is the above data continuous or discrete?",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "data_classification",
+   "memo_answer": "Discrete",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.2",
+   "text": "The mean of the above data is equal to 37. Calculate the value of E.",
+   "marks": 5,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "missing_value_from_mean",
+   "memo_answer": "37 = (1 588 + E) ÷ 44\n1 588 + E = 37 x 44 = 1 628\nE = 1 628 - 1 588 = 40",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.3",
+   "text": "The Mathematical Literacy teacher, Mrs Lee, states that the results shown in the table above are more clustered together. Verify, with the necessary calculations, whether her statement is correct.",
+   "marks": 4,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "range_spread_verification",
+   "memo_answer": "In order: 12 13 14 15 15 17 18 21 21 22 23 24 24 26 26 26 30 31 32 33 37 38 39 39 40 40 40 41 41 41 43 44 49 49 50 51 53 54 55 60 62 64 69 86\nRange = 86 - 12 = 74\nThe statement is not correct: the range is big, so the data are far apart from each other.",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.4",
+   "text": "Determine the number of learners who achieved 30% or more.",
+   "marks": 2,
+   "topic": "Data handling: summarising and representing data",
+   "solution_method": "counting_data",
+   "memo_answer": "28 learners",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.5",
+   "text": "Write down the probability of selecting learners who achieved more than 80% as a decimal. (Correct your answer to 3 decimals places.)",
+   "marks": 3,
+   "topic": "Probability: simple and compound events",
+   "solution_method": "probability_decimal",
+   "memo_answer": "P = 1/44 = 0,023",
+   "checkable": true
+  }
+ ]
+}

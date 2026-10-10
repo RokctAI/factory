@@ -1,0 +1,525 @@
+{
+ "_comment": [
+  "Eastern Cape Department of Education Grade 11 Mathematics P1 (algebra, patterns, functions, finance and probability), November 2025 provincial common examination.",
+  "Questions and marking-guideline answers transcribed from the rendered pages of the official PDFs",
+  "(paper1.pdf, paper1_memo.pdf); the text layer does not hold usable equations. Notation:",
+  "^ for powers, sqrt() for roots, a/b for fractions, decimal commas as printed. memo_answer is the",
+  "guideline's final answer and memo_working its working (tick marks and mark descriptors left out).",
+  "The guideline is bilingual (English/Afrikaans); only the English is transcribed. Graphs and diagrams are described",
+  "in brackets in the question text. The information sheet printed with the paper is not transcribed.",
+  "FORMAT: 150 marks, 3 hours, nine compulsory questions (Q1 27, Q2 19, Q3 9, Q4 14, Q5 17, Q6 16,",
+  "Q7 13, Q8 17, Q9 18)."
+ ],
+ "paper_id": "ecdoe_maths_g11_p1_2025_nov",
+ "source": "Eastern Cape Department of Education",
+ "source_url": "https://ecexams.co.za/2025_November_Gr_11_Exams.htm",
+ "paper_download_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/MATHS%20P1%20QP%20GR11%20NOV%202025_watermark.zip",
+ "memo_download_url": "https://ecexams.co.za/2025_November_Gr_11_Exams/MATHS%20P1%20MEMO%20GR11%20NOV%202025%20E+A_watermark.pdf",
+ "paper_file": "paper1.pdf",
+ "memo_file": "paper1_memo.pdf",
+ "copyright": "© Eastern Cape Department of Education, 2025. Reproduced for educational use with attribution.",
+ "subject": "Maths",
+ "grade": 11,
+ "paper": "P1",
+ "session": "November 2025",
+ "language": "English",
+ "total_marks": 150,
+ "time_hours": 3,
+ "questions": [
+  {
+   "ref": "Q1.1.1",
+   "context": "QUESTION 1 | 1.1 Solve for x:",
+   "text": "x(2x + 6) = 0",
+   "marks": 2,
+   "topic": "Equations: quadratic equations",
+   "solution_method": "zero_product_property",
+   "memo_answer": "x = 0 or x = -3",
+   "memo_working": "2x + 6 = 0 or x = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.2",
+   "text": "4x^2 = 9 - 3x (correct to TWO decimal places)",
+   "marks": 4,
+   "topic": "Equations: quadratic formula and completing the square",
+   "solution_method": "quadratic_formula",
+   "memo_answer": "x = 1,17 or x = -1,92",
+   "memo_working": "4x^2 + 3x - 9 = 0; x = (-3 ± sqrt(3^2 - 4(4)(-9)))/(2(4)) = (-3 ± sqrt(153))/8. Penalise 1 mark for incorrect rounding.",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.3",
+   "text": "x(x - 4) + 2(4 - x) > 0",
+   "marks": 4,
+   "topic": "Inequalities: quadratic inequalities",
+   "solution_method": "quadratic_inequality",
+   "memo_answer": "x < 2 or x > 4",
+   "memo_working": "x(x - 4) - 2(x - 4) > 0; (x - 4)(x - 2) > 0; critical values x = 4 or x = 2; the parabola is above the x-axis outside the roots",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.4a",
+   "context": "1.1.4 Given: f(x) = sqrt(x + 14)/(x + 2)",
+   "text": "For which value(s) of x will f(x) be real?",
+   "marks": 2,
+   "topic": "Exponents and surds",
+   "solution_method": "domain_of_surd_expression",
+   "memo_answer": "x ≥ -14 and x ≠ -2",
+   "memo_working": "x + 14 ≥ 0 and x + 2 ≠ 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.4b",
+   "text": "Solve for x, if f(x) = 1",
+   "marks": 4,
+   "topic": "Exponents and surds",
+   "solution_method": "surd_equation_squaring",
+   "memo_answer": "x = 2 (x = -5 excluded)",
+   "memo_working": "sqrt(x + 14) = x + 2; x + 14 = x^2 + 4x + 4; x^2 + 3x - 10 = 0; (x + 5)(x - 2) = 0; x ≠ -5 or x = 2",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2",
+   "text": "Solve simultaneously for x and y: x - 3y = 1 and x^2 - 2xy + 9y^2 = 17",
+   "marks": 6,
+   "topic": "Equations: simultaneous equations (one linear, one quadratic)",
+   "solution_method": "substitution_method",
+   "memo_answer": "x = 4, y = 1 or x = -3, y = -4/3",
+   "memo_working": "x = 3y + 1; (3y + 1)^2 - 2y(3y + 1) + 9y^2 = 17; 9y^2 + 6y + 1 - 6y^2 - 2y + 9y^2 - 17 = 0; 12y^2 + 4y - 16 = 0; 3y^2 + y - 4 = 0; (y - 1)(3y + 4) = 0; y = 1 or y = -4/3; x = 4 or x = -3",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3",
+   "text": "Determine the value of x that will satisfy the equation (without the use of a calculator and show all your working): 1 + 10/(1 + 1/(1 + 1/x)) = 7",
+   "marks": 5,
+   "topic": "Algebraic expressions: algebraic fractions",
+   "solution_method": "simplify_complex_fraction",
+   "memo_answer": "x = 2",
+   "memo_working": "1 + 1/x = (x + 1)/x; 1/((x + 1)/x) = x/(x + 1); 1 + x/(x + 1) = (2x + 1)/(x + 1); 1 + 10(x + 1)/(2x + 1) = 7; (2x + 1 + 10x + 10)/(2x + 1) = 7; 12x + 11 = 14x + 7; 2x = 4; x = 2",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1",
+   "text": "Simplify the following expression: (125^x . sqrt(5^(4x - 2))) / (cuberoot(5^(12x + 6)) . 5^x)",
+   "marks": 4,
+   "topic": "Exponents and surds",
+   "solution_method": "exponent_laws_prime_bases",
+   "memo_answer": "1/125 (= 5^(-3))",
+   "memo_working": "= (5^(3x) . 5^(2x - 1))/(5^(4x + 2) . 5^x) = 5^(3x + 2x - 1 - 4x - 2 - x) = 5^(-3) = 1/125",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.1",
+   "context": "2.2 Solve for x:",
+   "text": "6x^(3/2) = 48",
+   "marks": 3,
+   "topic": "Exponential equations",
+   "solution_method": "rational_exponent_equation",
+   "memo_answer": "x = 4",
+   "memo_working": "x^(3/2) = 8; x = (2^3)^(2/3) = 2^2 = 4",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.2",
+   "text": "x^(1/2) - 3x^(1/4) + 2 = 0",
+   "marks": 4,
+   "topic": "Exponential equations",
+   "solution_method": "substitution_k_form",
+   "memo_answer": "x = 16 or x = 1",
+   "memo_working": "(x^(1/4))^2 - 3x^(1/4) + 2 = 0; let k = x^(1/4): k^2 - 3k + 2 = 0; (k - 2)(k - 1) = 0; x^(1/4) = 2 or x^(1/4) = 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Given: The area of a rectangle is (16^x - 100) cm^2 and the breadth is (4^x + 10) cm. Determine the length of the rectangle in terms of x.",
+   "marks": 4,
+   "topic": "Exponents and surds",
+   "solution_method": "difference_of_squares_exponents",
+   "memo_answer": "Length = 4^x - 10",
+   "memo_working": "A = L × B: 16^x - 100 = L(4^x + 10); L = ((4^x)^2 - 100)/(4^x + 10) = (4^x - 10)(4^x + 10)/(4^x + 10) = 4^x - 10",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.4",
+   "text": "The difference between the squares of two consecutive integers is 45. Determine the value of the square of the sum of these two consecutive integers. Hint: Let the smaller integer be x.",
+   "marks": 4,
+   "topic": "Equations: quadratic equations",
+   "solution_method": "form_and_solve_equation",
+   "memo_answer": "2025",
+   "memo_working": "smaller integer x, next x + 1; (x + 1)^2 - x^2 = 45; x^2 + 2x + 1 - x^2 = 45; 2x = 44; x = 22; (22 + 23)^2 = 2025",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.1",
+   "context": "QUESTION 3 | 3.1 Consider the following linear number pattern: 5,5 ; 5,0 ; 4,5 ; ...",
+   "text": "Write down the next TWO terms in the number pattern.",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "extend_pattern",
+   "memo_answer": "4 ; 3,5",
+   "memo_working": "d = -0,5",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.2",
+   "text": "Calculate the general term of the number pattern, in the form Tn = bn + c",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_general_term",
+   "memo_answer": "Tn = -0,5n + 6",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.3",
+   "text": "Which term in the number pattern is the first to be less than -113,5?",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_inequality_term",
+   "memo_answer": "n = 240 (T240)",
+   "memo_working": "-0,5n + 6 < -113,5; -0,5n < -119,5; n > 239",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2",
+   "text": "The constant difference of a linear number pattern is 5 and the 38th term is 192. Determine the value of the first term.",
+   "marks": 3,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_general_term",
+   "memo_answer": "First term is 7",
+   "memo_working": "Tn = 5n + c; 192 = 5(38) + c; c = 2; T1 = 5(1) + 2 = 7",
+   "memo_note": "The guideline numbers this answer 3.2.1.",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | 4.1 Given the nth term of the quadratic number pattern: Tn = n^2 - 12n + k",
+   "text": "If T62 = 3132, determine the value of k.",
+   "marks": 2,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "substitute_and_solve",
+   "memo_answer": "k = 32",
+   "memo_working": "3132 = (62)^2 - 12(62) + k",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "Determine the first THREE terms of the first difference number pattern.",
+   "marks": 2,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "first_differences",
+   "memo_answer": "-9 ; -7 ; -5",
+   "memo_working": "T1 = 1 - 12 + 32 = 21; T2 = 4 - 24 + 32 = 12; T3 = 9 - 36 + 32 = 5; first differences -9 ; -7 ; -5",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.3",
+   "text": "Calculate the value of n for which the quadratic number pattern will have a minimum.",
+   "marks": 2,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "turning_point_of_pattern",
+   "memo_answer": "n = 6",
+   "memo_working": "n = -(-12)/(2(1)) = 6",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.4",
+   "text": "Determine T(n-1), in terms of n.",
+   "marks": 2,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "substitute_expression",
+   "memo_answer": "T(n-1) = n^2 - 14n + 45",
+   "memo_working": "T(n-1) = (n - 1)^2 - 12(n - 1) + 32 = n^2 - 2n + 1 - 12n + 12 + 32",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.5",
+   "text": "Between which two consecutive terms of the quadratic number pattern, will the difference be 149?",
+   "marks": 3,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "first_difference_general_term",
+   "memo_answer": "Between T80 and T81",
+   "memo_working": "Tn - T(n-1) = 149; n^2 - 12n + 32 - n^2 + 14n - 45 = 149; 2n - 13 = 149; n = 81; consecutive terms are 80 and 81. OR first-difference pattern Tn = 2n - 11 = 149 gives n = 80; terms 80 and 81",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2",
+   "text": "In a quadratic number pattern, the second term is 4, the third term is three times the first term and the fourth term is 18. Determine the value of T3.",
+   "marks": 3,
+   "topic": "Number patterns: quadratic sequences",
+   "solution_method": "equal_second_differences",
+   "memo_answer": "T3 = 9",
+   "memo_working": "terms x ; 4 ; 3x ; 18; first differences 4 - x ; 3x - 4 ; 18 - 3x; second differences 4x - 8 ; -6x + 22; 4x - 8 = -6x + 22; 10x = 30; x = 3; T3 = 3x = 9",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1",
+   "context": "QUESTION 5 | The graphs of f(x) = a/(x + p) + q and g(x) = x/3 + c are drawn below. C(3 ; -1) is the point of intersection between the asymptotes of f. A and B are x- and y-intercepts of f and g respectively. E(4 ; 2) is a point on f in the first quadrant. [Graph: hyperbola f with branches in the first and third quadrants relative to the asymptotes x = 3 and y = -1; straight line g passes through B on the y-axis, C(3 ; -1) and A on the positive x-axis, making angle θ with the x-axis at A; f also passes through A and B.]",
+   "text": "Write down the value of p.",
+   "marks": 1,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "read_asymptote",
+   "memo_answer": "p = -3",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2",
+   "text": "Determine the equation of f.",
+   "marks": 3,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "hyperbola_equation",
+   "memo_answer": "f(x) = 3/(x - 3) - 1",
+   "memo_working": "f(x) = a/(x - 3) - 1; substitute (4 ; 2): 2 = a/(4 - 3) - 1; a = 3",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.3",
+   "text": "Determine the coordinates of A and B.",
+   "marks": 3,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "intercepts",
+   "memo_answer": "A(6 ; 0) and B(0 ; -2)",
+   "memo_working": "g through C(3 ; -1): -1 = 3/3 + c, c = -2, so B(0 ; -2); g(x) = 0: x/3 - 2 = 0, x = 6, A(6 ; 0). OR f(0) = -2 gives B; f(x) = 0: 3/(x - 3) = 1, x = 6",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.4",
+   "text": "Write down the domain of h, if h(x) = f[-(x - 4)]",
+   "marks": 3,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "domain_after_transformation",
+   "memo_answer": "x ∈ R ; x ≠ 1",
+   "memo_working": "Replace x by -(x - 4): vertical asymptote -(x - 4) - 3 = 0, x = 1. OR h(x) = 3/(-(x - 4) - 3) - 1 = -3/(x - 1) - 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.5",
+   "text": "Determine the value of x, for which f(x).g(x) < 0",
+   "marks": 2,
+   "topic": "Functions: the hyperbola",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "x > 3 ; x ≠ 6 (OR 3 < x < 6 or x > 6)",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.6",
+   "text": "Calculate the area of ΔABE if the length AB = 2sqrt(10) units.",
+   "marks": 5,
+   "topic": "Analytical geometry",
+   "solution_method": "area_rule_with_inclination",
+   "memo_answer": "Area = 8 units^2",
+   "memo_working": "m_AB = 1/3, θ = 18,43°, so BÂO = 18,43° (vertically opposite angles); m_EA = (0 - 2)/(6 - 4) = -1, reference angle EÂO = 45°; EÂB = 63,43°; EA = sqrt((4 - 6)^2 + (2 - 0)^2) = 2sqrt(2); area = 1/2 × EA × AB × sin EÂB = 1/2 × 2sqrt(2) × 2sqrt(10) × sin 63,43° = 8",
+   "memo_note": "The guideline numbers this answer 5.6.1.",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1",
+   "context": "QUESTION 6 | The graphs of f(x) = -x^2 - 6x and g(x) = ax^2 + bx are drawn below. g is the reflection of f along the x-axis. A and B(-5 ; n) are symmetrical on f along x = -p, i.e. the axes of symmetry. [Graph: f is a solid parabola opening downwards through O and F on the negative x-axis, with B(-5 ; n) left of the turning point and A just left of the y-axis; g is a dashed parabola opening upwards through F and O. C on g and D on f lie on a vertical line that meets the x-axis at E, to the left of F.]",
+   "text": "Write down the equation of f in the turning point form, i.e. y = a(x + p)^2 + q",
+   "marks": 3,
+   "topic": "Functions: the parabola",
+   "solution_method": "turning_point_form",
+   "memo_answer": "f(x) = -(x + 3)^2 + 9",
+   "memo_working": "a = -1; x = -(-6)/(2(-1)) = -3; f(-3) = -(-3)^2 - 6(-3) = 9. OR complete the square: -(x^2 + 6x + 9 - 9) = -(x + 3)^2 + 9",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.2",
+   "text": "Determine the coordinates of A.",
+   "marks": 3,
+   "topic": "Functions: the parabola",
+   "solution_method": "symmetry_of_parabola",
+   "memo_answer": "A(-1 ; 5)",
+   "memo_working": "axis of symmetry x = -3; (x_B + x_A)/2 = -3; (-5 + x_A)/2 = -3; x_A = -1; f(-1) = -1 + 6 = 5",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.3",
+   "text": "Determine the length of OE if CD = 14 units.",
+   "marks": 5,
+   "topic": "Functions: the parabola",
+   "solution_method": "vertical_distance_between_graphs",
+   "memo_answer": "OE = 7 units",
+   "memo_working": "g(x) = x^2 + 6x; CD = g(x) - f(x) = x^2 + 6x - (-x^2 - 6x) = 2x^2 + 12x = 14; x^2 + 6x - 7 = 0; (x + 7)(x - 1) = 0; x = -7 (x = 1 rejected)",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.4.1",
+   "context": "6.4 Determine the value(s) of k for which:",
+   "text": "f(x) = -x^2 - 6x + k will have non-real roots.",
+   "marks": 2,
+   "topic": "Equations: nature of roots",
+   "solution_method": "nature_of_roots",
+   "memo_answer": "k < -9",
+   "memo_working": "shift f (maximum 9) down by more than 9 units",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.4.2",
+   "text": "f(x + k) will have two real roots that have different signs.",
+   "marks": 3,
+   "topic": "Equations: nature of roots",
+   "solution_method": "horizontal_shift_roots",
+   "memo_answer": "-6 < k < 0",
+   "memo_working": "roots of f: -x^2 - 6x = 0, x(x + 6) = 0, x = 0 or x = -6; shift horizontally so that 0 lies strictly between the shifted roots",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1.1",
+   "context": "QUESTION 7 | 7.1 Given: f(x) = (1/3)^(x + 1) - 3",
+   "text": "Write down the equation of the asymptote of f",
+   "marks": 1,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "read_asymptote",
+   "memo_answer": "y = -3",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1.2",
+   "text": "Calculate the coordinates of the intercepts of f",
+   "marks": 3,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "intercepts",
+   "memo_answer": "x-intercept (-2 ; 0); y-intercept (0 ; -8/3)",
+   "memo_working": "(1/3)^(x + 1) = 3 = (1/3)^(-1); x + 1 = -1; x = -2; y = (1/3)^1 - 3 = -8/3 ≈ -2,67",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1.3",
+   "text": "Sketch the graph of f. Indicate the horizontal asymptote as well as the intercepts with the axes.",
+   "marks": 3,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "sketch_graph",
+   "memo_answer": "Decreasing exponential curve through (-2 ; 0) and (0 ; -2,67), approaching the dashed asymptote y = -3 as x increases (marks: shape, x- and y-intercepts, asymptote).",
+   "checkable": false
+  },
+  {
+   "ref": "Q7.1.4",
+   "text": "Determine the value of x for which f(x) ≥ 0",
+   "marks": 2,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "x ≤ -2",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2",
+   "text": "An exponential function with equation h(x) = a.k^x + r has the following properties: • The range is y ∈ (-2 ; ∞) • The points (0 ; 0) and (2 ; 6) lie on the graph. Determine the equation of h, in the form y = ...",
+   "marks": 4,
+   "topic": "Functions: the exponential graph",
+   "solution_method": "exponential_equation_from_points",
+   "memo_answer": "h(x) = 2.2^x - 2",
+   "memo_working": "r = -2; (0 ; 0): 0 = a.k^0 - 2, a = 2; (2 ; 6): 6 = 2k^2 - 2, k^2 = 4, k = 2 (k > 0)",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1",
+   "text": "A motorbike costs R250 000 and depreciates by 13% p.a. annually, calculated on the reducing balance method. Calculate what the motorbike will be worth after 6 years.",
+   "marks": 3,
+   "topic": "Finance, growth and decay",
+   "solution_method": "reducing_balance_depreciation",
+   "memo_answer": "R108 406,55",
+   "memo_working": "A = P(1 - i)^n = 250 000(1 - 0,13)^6",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2",
+   "text": "Convert an annual effective rate of 7,5% per annum to a nominal rate per annum compounded quarterly.",
+   "marks": 3,
+   "topic": "Finance, growth and decay",
+   "solution_method": "effective_to_nominal",
+   "memo_answer": "7,30% p.a. compounded quarterly",
+   "memo_working": "1 + 0,075 = (1 + i_nom/4)^4; i_nom = 4(fourthroot(43/40) - 1) = 0,07297...",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.3",
+   "text": "Rodney starts an investment with a deposit of R25 000. Two years later, he deposits another R10 000. Exactly four years after he started the investment, he withdraws R5 000. For the first two years, the interest is calculated at 4% per annum, compounded monthly and thereafter it is calculated at 7% per annum, compounded semi-annually. What is the accumulated amount of the investment exactly five years after the initial deposit?",
+   "marks": 5,
+   "topic": "Finance, growth and decay",
+   "solution_method": "compound_interest_timeline",
+   "memo_answer": "R40 222,91",
+   "memo_working": "A = [25 000(1 + 0,04/12)^24 + 10 000](1 + 0,07/2)^6 - 5 000(1 + 0,07/2)^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.4",
+   "text": "Brian borrows R x at an annual interest rate of 12% p.a. He has two options to repay the loan. OPTION 1: Pay R5 000, 2 years after the loan was granted and the remaining amount, 4 years after the loan was granted. The interest is compounded annually. OPTION 2: Pay R3 000, 1 year after the loan was granted and the remaining amount, 3 years after the loan was granted. The interest is compounded semi-annually. If the total amount paid in both options is the same, calculate the value of x.",
+   "marks": 6,
+   "topic": "Finance, growth and decay",
+   "solution_method": "equate_loan_options",
+   "memo_answer": "x = R16 029,45",
+   "memo_working": "Option 1: (x(1,12)^2 - 5 000)(1,12)^2; Option 2: (x(1,06)^2 - 3 000)(1,06)^4; equate: x(1,12)^4 - 5 000(1,12)^2 = x(1,06)^6 - 3 000(1,06)^4; -2 484,56912 = -0,1550002477x",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.1.1",
+   "context": "QUESTION 9 | 9.1 A and B are independent events. It is further given that: • P(A) = 0,3 • P(B) = 0,6",
+   "text": "Are the events, A and B mutually exclusive? Motivate your answer.",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "motivate_answer",
+   "memo_answer": "No. P(A and B) = P(A) × P(B) = 0,3 × 0,6 = 0,18 ≠ 0",
+   "checkable": false
+  },
+  {
+   "ref": "Q9.1.2",
+   "text": "Represent the information on a Venn diagram.",
+   "marks": 3,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "draw_venn_diagram",
+   "memo_answer": "Venn diagram in sample space S = 1: A only 0,12; A and B 0,18; B only 0,42; outside A and B 0,28",
+   "checkable": false
+  },
+  {
+   "ref": "Q9.1.3",
+   "text": "Calculate P(not A and not B).",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "complement_probability",
+   "memo_answer": "0,28",
+   "memo_working": "P(not A and not B) = P[not(A or B)] = 0,28",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.2.1",
+   "context": "9.2 The contingency table below represents 106 athletes' responses regarding jogging on the sand. [Table: Enjoy jogging on sand - male 26, female 30, total 56; Do not enjoy jogging on sand - male 16, female 34, total 50; Total - male 42, female 64, total 106.]",
+   "text": "If an athlete from this group is chosen randomly, what is the probability that it is a male?",
+   "marks": 1,
+   "topic": "Probability: tree diagrams and contingency tables",
+   "solution_method": "probability_from_table",
+   "memo_answer": "42/106 = 21/53",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.2.2",
+   "text": "Is the event \"enjoy jogging on sand\" independent of the gender?",
+   "marks": 4,
+   "topic": "Probability: tree diagrams and contingency tables",
+   "solution_method": "test_independence",
+   "memo_answer": "No, the events are not independent.",
+   "memo_working": "P(enjoy) × P(male) = 56/106 × 42/106 = 0,20932...; P(enjoy and male) = 26/106 = 0,24528...; not equal",
+   "checkable": true
+  },
+  {
+   "ref": "Q9.3.1",
+   "context": "9.3 During the summer season in South Africa, the probability of sunny weather on any given day is 0,7. If it is sunny, the probability that a person uses sunscreen is x. If it is not sunny, the probability of using sunscreen is 0,2x.",
+   "text": "Draw a tree diagram, clearly labelling the branches and indicating the outcomes.",
+   "marks": 3,
+   "topic": "Probability: tree diagrams and contingency tables",
+   "solution_method": "draw_tree_diagram",
+   "memo_answer": "First branches: sunny S 0,7 and not sunny S' 0,3. From S: uses sunscreen U x, not U' 1 - x. From S': U 0,2x, U' 1 - 0,2x. Outcomes: SU 0,7x; SU' 0,7(1 - x); S'U 0,06x; S'U' 0,3(1 - 0,2x).",
+   "checkable": false
+  },
+  {
+   "ref": "Q9.3.2",
+   "text": "If it is given that the overall probability of using sunscreen on a randomly selected day is 0,62, determine the value of x.",
+   "marks": 3,
+   "topic": "Probability: tree diagrams and contingency tables",
+   "solution_method": "tree_diagram_equation",
+   "memo_answer": "x = 0,82",
+   "memo_working": "0,7x + 0,06x = 0,62; 0,76x = 0,62",
+   "memo_note": "0,62/0,76 = 0,8158; the guideline rounds to 0,82.",
+   "checkable": true
+  }
+ ]
+}

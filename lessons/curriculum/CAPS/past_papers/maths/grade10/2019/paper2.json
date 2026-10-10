@@ -1,0 +1,473 @@
+{
+ "_comment": [
+  "Department of Basic Education Grade 10 Mathematics P2 (statistics, analytical geometry, trigonometry, measurement and Euclidean geometry), November 2019 national common examination.",
+  "Questions and marking-guideline answers transcribed from the rendered pages of the official PDFs",
+  "(paper2.pdf, paper2_memo.pdf); the text layer does not hold usable equations. Notation:",
+  "^ for powers, sqrt() for roots, a/b for fractions, decimal commas as printed. memo_answer is the",
+  "guideline's final answer and memo_working its working (tick marks and mark descriptors left out).",
+  "The guideline is bilingual (English/Afrikaans); only the English is transcribed. Graphs and diagrams are described",
+  "in brackets in the question text. The information sheet printed with the paper is not transcribed.",
+  "Both PDFs were obtained from the Eastern Cape Department of Education exam archive (source_url); the",
+  "page headers read 'DBE/November 2019' and 'CAPS - Grade 10', i.e. this is the national DBE paper",
+  "written in the province. The question paper is a scan with no text layer.",
+  "FORMAT: 100 marks, 2 hours, eight compulsory questions (Q1 16, Q2 15, Q3 15, Q4 16, Q5 8, Q6 9, Q7 9,",
+  "Q8 12). Candidates answer in a SPECIAL ANSWER BOOK (paper2_answer_book.pdf) that holds the scaled line",
+  "for 1.1.4 and the diagrams."
+ ],
+ "paper_id": "ecdoe_maths_g10_p2_2019_nov",
+ "source": "Eastern Cape Department of Education",
+ "source_url": "https://ecexams.co.za/2019_November_Gr_10_Exams.htm",
+ "paper_download_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/MATHS%20P2%20GRADE%2010%20NOV%202019.zip",
+ "memo_download_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/Mathematics%20P2%20Grade%2010%20Nov%202019%20Memo%20Afr%20&%20Eng.pdf",
+ "paper_file": "paper2.pdf",
+ "memo_file": "paper2_memo.pdf",
+ "answer_book_file": "paper2_answer_book.pdf",
+ "copyright": "© Eastern Cape Department of Education, 2019. Reproduced for educational use with attribution.",
+ "subject": "Maths",
+ "grade": 10,
+ "paper": "P2",
+ "session": "November 2019",
+ "language": "English",
+ "total_marks": 100,
+ "time_hours": 2,
+ "questions": [
+  {
+   "ref": "Q1.1.1",
+   "context": "QUESTION 1 | 1.1 An ice cream vendor recorded his daily sales for a period of time. The number of ice creams that he sold each day is given in the table below. [5 ; 7 ; 8 ; 10 ; 13 ; 15 ; 15 ; 15 ; 21 ; 24 ; 29 ; 30 ; 32 ; 36 ; 38 ; 44 ; 45 ; 51 ; 55]",
+   "text": "Write down the mode of the data set.",
+   "marks": 1,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "mode",
+   "memo_answer": "15",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.2",
+   "text": "Determine the median of the data set.",
+   "marks": 1,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "median",
+   "memo_answer": "Median = 24",
+   "memo_working": "position (n + 1)/2 = 10th position",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.3",
+   "text": "Calculate the interquartile range.",
+   "marks": 3,
+   "topic": "Statistics: dispersion and box-and-whisker plots",
+   "solution_method": "interquartile_range",
+   "memo_answer": "IQR = 25",
+   "memo_working": "Q3 - Q1 = 38 - 13",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.4",
+   "text": "On the scaled line provided in the ANSWER BOOK, draw a box and whisker diagram for the data set.",
+   "marks": 2,
+   "topic": "Statistics: dispersion and box-and-whisker plots",
+   "solution_method": "draw_box_whisker",
+   "memo_answer": "Box and whisker diagram: whiskers from 5 to 55, box from 13 to 38 with the median line at 24.",
+   "checkable": false
+  },
+  {
+   "ref": "Q1.2.1",
+   "context": "1.2 Learners in a certain class wrote a Mathematics test that had a maximum mark of 10. The teacher represented the marks obtained by the learners of this class in the bar graph below. [Bar graph \"distribution of marks scored in Mathematics test\", frequency of each mark: 0 - 2; 1 - 5; 2 - 2; 3 - 9; 4 - 1; 5 - 0; 6 - 6; 7 - 6; 8 - 5; 9 - 3; 10 - 1.]",
+   "text": "How many learners scored 8 marks out of 10 for the test?",
+   "marks": 1,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "graph_reading",
+   "memo_answer": "5 learners",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.2",
+   "text": "How many learners are in this class?",
+   "marks": 1,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "graph_reading",
+   "memo_answer": "40 learners",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.3",
+   "text": "Calculate the range of the marks scored in the test.",
+   "marks": 2,
+   "topic": "Statistics: dispersion and box-and-whisker plots",
+   "solution_method": "range",
+   "memo_answer": "Range = 10",
+   "memo_working": "10 - 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.4",
+   "text": "If the pass mark for the test was 50%, what percentage of the learners failed the test?",
+   "marks": 2,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "percentage_from_graph",
+   "memo_answer": "47,5%",
+   "memo_working": "learners below 5 marks: 1 + 9 + 2 + 5 + 2 = 19; 19/40 × 100",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.5",
+   "text": "Calculate the mean mark scored in the test.",
+   "marks": 3,
+   "topic": "Statistics: measures of central tendency and dispersion",
+   "solution_method": "mean_from_frequency",
+   "memo_answer": "Mean = 39/8 = 4,88",
+   "memo_working": "((0 × 2) + (1 × 5) + (2 × 2) + (3 × 9) + ... + (10 × 1))/40 = 195/40",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.1",
+   "context": "QUESTION 2 | In the diagram below, A(1 ; 3), B(x ; y) and E(-2 ; -1) are points on a Cartesian plane. C(2 ; 1) is the midpoint of AB. Also, F is a point such that AF = FB and AF ⊥ FB. [Diagram: A above the x-axis, E in the third quadrant, B below the x-axis to the right; F to the right of AB with a right angle at F.] 2.1 Determine the:",
+   "text": "Length of AE",
+   "marks": 2,
+   "topic": "Analytical geometry",
+   "solution_method": "distance_formula",
+   "memo_answer": "AE = 5",
+   "memo_working": "sqrt((1 + 2)^2 + (3 + 1)^2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.2",
+   "text": "Gradient of AC",
+   "marks": 2,
+   "topic": "Analytical geometry",
+   "solution_method": "gradient_formula",
+   "memo_answer": "m_AC = -2",
+   "memo_working": "(3 - 1)/(1 - 2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.3",
+   "text": "Coordinates of B",
+   "marks": 3,
+   "topic": "Analytical geometry",
+   "solution_method": "midpoint_formula",
+   "memo_answer": "B(3 ; -1)",
+   "memo_working": "2 = (1 + x)/2, x = 3; 1 = (y + 3)/2, y = -1",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2",
+   "text": "BE is joined to form a special quadrilateral AFBE. Name the special quadrilateral AFBE. Give full justification for your answer.",
+   "marks": 3,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "classify_quadrilateral",
+   "memo_answer": "AFBE is a kite.",
+   "memo_working": "BE = sqrt((3 + 2)^2 + (-1 + 1)^2) = 5 (or 3 + 2 along a horizontal line); BE = AE and AF = BF: two pairs of adjacent sides equal, but opposite sides not equal",
+   "checkable": false
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Calculate the area of ΔAFB.",
+   "marks": 5,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "area_of_triangle",
+   "memo_answer": "Area = 5 units^2",
+   "memo_working": "AB = sqrt((3 - 1)^2 + (-1 - 3)^2) = 2sqrt(5), so AC = sqrt(5); in ΔACF Â = 45°, tan 45° = CF/sqrt(5), CF = sqrt(5); area = 1/2 × AB × CF = 1/2 × 2sqrt(5) × sqrt(5)",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1",
+   "text": "If x = 37° and y = 44°, calculate the value of sin^2 x + 2cos y.",
+   "marks": 1,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "calculator_trig",
+   "memo_answer": "1,80",
+   "memo_working": "sin^2 37° + 2cos 44°",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2",
+   "text": "WITHOUT using a calculator, determine the value of (sin 30°.cot 45°)/(cos 30°.tan 60°)",
+   "marks": 3,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "special_angles",
+   "memo_answer": "1/3",
+   "memo_working": "((1/2).1)/((sqrt(3)/2).sqrt(3))",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.3.1",
+   "context": "3.3 In the diagram below, ΔACD is right-angled at C. E lies on AD such that CE is perpendicular to AD.",
+   "text": "Write down the ratio for cos D in ΔACD.",
+   "marks": 1,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_ratio_definition",
+   "memo_answer": "cos D = CD/AD",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.3.2",
+   "text": "Write down the ratio for cos D in ΔCED.",
+   "marks": 1,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_ratio_definition",
+   "memo_answer": "cos D = DE/CD",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.3.3",
+   "text": "If AD = 13 units and DC = 5 units, calculate the length of ED.",
+   "marks": 2,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "equate_trig_ratios",
+   "memo_answer": "ED = 25/13 = 1,92 units",
+   "memo_working": "CD/AD = DE/CD (both cos D); ED = CD^2/AD",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.4.1",
+   "context": "3.4 Given that cos θ = 5/13 and sin θ < 0. With the aid of a diagram and WITHOUT using a calculator, determine the value of:",
+   "text": "sin θ",
+   "marks": 3,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_diagram_evaluation",
+   "memo_answer": "sin θ = -12/13",
+   "memo_working": "diagram in the fourth quadrant: y^2 = 13^2 - 5^2 = 144; y = -12",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.4.2",
+   "text": "sec θ + tan^2 θ + 1",
+   "marks": 4,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "trig_diagram_evaluation",
+   "memo_answer": "234/25",
+   "memo_working": "13/5 + (-12/5)^2 + 1 = 13/5 + 144/25 + 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | 4.1 If 0° ≤ θ ≤ 90°, solve for θ in each of the following questions:",
+   "text": "2sin θ + 1 = 1,28",
+   "marks": 2,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "solve_trig_equation",
+   "memo_answer": "θ = 8,05°",
+   "memo_working": "2sin θ = 0,28; sin θ = 0,14",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "tan 2θ = 4cot 60°",
+   "marks": 3,
+   "topic": "Trigonometry: ratios, special angles and right-angled triangles",
+   "solution_method": "solve_trig_equation",
+   "memo_answer": "θ = 33,29°",
+   "memo_working": "tan 2θ = 4/sqrt(3); 2θ = 66,5867...°",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.1",
+   "context": "4.2 In the diagram below, B is the foot of a multi-storey building. Three people, D, E and C, are standing at the windows on three different floors. They are all looking at object A on the ground, which is in the same horizontal plane as B. AC = 9 units, BC = 5 units and Â1 = Â2 = Â3. [D, E and C lie on the vertical line BC; Â1 = DÂB, Â2 = EÂD, Â3 = CÂE.] Calculate the:",
+   "text": "Size of CÂB",
+   "marks": 2,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "trig_ratio_angle",
+   "memo_answer": "CÂB = 33,75°",
+   "memo_working": "sin A = BC/AC = 5/9 (OR cos A = 2sqrt(14)/9 OR tan A = 5/(2sqrt(14)))",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.2",
+   "text": "Length of AE",
+   "marks": 5,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "solving_right_triangles",
+   "memo_answer": "AE = 8,10",
+   "memo_working": "AB = sqrt(9^2 - 5^2) = 7,48 (or cos 33,75° × 9); BÂE = 2/3 × 33,75° = 22,5°; cos 22,5° = 7,48/AE; AE = 8,096...",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.3",
+   "text": "Length of DE",
+   "marks": 4,
+   "topic": "Trigonometry: 2D problems",
+   "solution_method": "solving_right_triangles",
+   "memo_answer": "DE = 1,61 units (or 1,62)",
+   "memo_working": "BE = sqrt(8,1^2 - 7,48^2) = 3,11 (or sin 22,5° × 8,10 = 3,10); in ΔABD tan 11,25° = DB/AB, DB = 1,49; DE = BE - DB",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.1",
+   "context": "QUESTION 5 | Sketched below are the graphs of f(x) = 2cos x and g(x) = sin x - 1 for the interval x ∈ [0° ; 270°]. [f: from (0° ; 2) down through (90° ; 0) to the minimum (180° ; -2) and up to (270° ; 0). g: from (0° ; -1) up to the maximum (90° ; 0) and down to (270° ; -2). The graphs meet at (90° ; 0) and once more between 180° and 270°.] 5.1 Write down the:",
+   "text": "Period of f",
+   "marks": 1,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "period_of_function",
+   "memo_answer": "360°",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.2",
+   "text": "Range of g",
+   "marks": 2,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "range_of_trig_graph",
+   "memo_answer": "-2 ≤ y ≤ 0 or y ∈ [-2 ; 0]",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.3",
+   "text": "Number of solution(s) to f(x) = g(x) in the interval 0° ≤ x ≤ 270°",
+   "marks": 1,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "graph_reading",
+   "memo_answer": "2 solutions",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2",
+   "text": "For which value(s) of x in the interval 0° ≤ x ≤ 270° is f(x).g(x) ≥ 0?",
+   "marks": 2,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "90° ≤ x ≤ 270° or x ∈ [90° ; 270°]",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.3",
+   "text": "The graph h is obtained by reflecting graph g about the x-axis. Write down the coordinates of the minimum turning point of h in the interval 0° ≤ x ≤ 270°.",
+   "marks": 2,
+   "topic": "Functions: trigonometric graphs",
+   "solution_method": "trig_transformation",
+   "memo_answer": "(90° ; 0)",
+   "memo_working": "h(x) = -sin x + 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1",
+   "context": "QUESTION 6 | An open rectangular cardboard box has the following dimensions: length = 25 cm, breadth = 15 cm and height = x cm. The volume of the box is 3 000 cm^3. Fifteen (15) identical cans of cold drink fit snugly into the box, as shown in the diagram below. The box and the cans are of equal height. (Ignore the thickness of the cardboard in your calculations.) [Diagram: the cans stand in 5 rows of 3 along the 25 cm length.]",
+   "text": "Calculate the height of the box.",
+   "marks": 3,
+   "topic": "Measurement: area, volume and surface area",
+   "solution_method": "volume_of_prism",
+   "memo_answer": "8 cm",
+   "memo_working": "3 000 = 25 × 15 × x; x = 3 000/375",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.2",
+   "text": "Calculate the radius of a can.",
+   "marks": 2,
+   "topic": "Measurement: area, volume and surface area",
+   "solution_method": "dimension_from_diagram",
+   "memo_answer": "2,5 cm",
+   "memo_working": "diameter of each can = 5 cm",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.3",
+   "text": "If a can is filled to the top, calculate the volume of cold drink contained in the can.",
+   "marks": 2,
+   "topic": "Measurement: area, volume and surface area",
+   "solution_method": "volume_of_cylinder",
+   "memo_answer": "157,08 cm^3",
+   "memo_working": "πr^2 h = π(2,5)^2(8)",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.4",
+   "text": "Calculate the volume of the space in between all the cans in the box.",
+   "marks": 2,
+   "topic": "Measurement: area, volume and surface area",
+   "solution_method": "volume_difference",
+   "memo_answer": "643,80 cm^3",
+   "memo_working": "3 000 - (15 × 157,08) = 3 000 - 2 356,20",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1.1",
+   "context": "QUESTION 7 | Give reasons for ALL geometry statements used in QUESTIONS 7 and 8. 7.1 In the diagram, EFGH is a rectangle having diagonals intersecting at M. M̂2 = 60° and L̂2 = 40°. [K and L lie on HG; MK and ML are drawn; M̂2 = EM̂H, M̂1 = FM̂G and M̂3 = KM̂L; F̂1 = EF̂M; L̂2 = ML̂K.] Calculate the size of:",
+   "text": "F̂1",
+   "marks": 2,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometry_angle_reasoning",
+   "memo_answer": "F̂1 = 30°",
+   "memo_working": "EM̂F = 120° [∠s on a straight line]; F̂1 = Ê1 = 30° [∠s opp. = sides; diagonals of a rectangle are equal and bisect each other]",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1.2",
+   "text": "GM̂L",
+   "marks": 3,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometry_angle_reasoning",
+   "memo_answer": "GM̂L = 10°",
+   "memo_working": "Ê1 = Ĝ1 = 30° [alt. ∠s, EF ∥ HG]; L̂2 = Ĝ1 + GM̂L [ext. ∠ of Δ]; 40° = 30° + GM̂L",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2",
+   "context": "7.2 PQRS is a rhombus with diagonals PR and SQ intersecting at M. The perimeter of the rhombus is 12 cm. L is the midpoint of PS.",
+   "text": "Calculate the length of LM.",
+   "marks": 4,
+   "topic": "Euclidean geometry: the midpoint theorem",
+   "solution_method": "midpoint_theorem",
+   "memo_answer": "LM = 1,5 cm",
+   "memo_working": "one side = 12/4 = 3 cm, so SR = 3 cm; PM = MR [diagonals of rhombus]; PL = LS [given]; in ΔPSR LM = 1/2 SR [midpoint theorem]",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1",
+   "text": "Complete the statement so that it is TRUE: The diagonals of a parallelogram ... each other.",
+   "marks": 1,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "theorem_recall",
+   "memo_answer": "bisect each other",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2.1",
+   "context": "8.2 In the diagram below, P is the midpoint of side WQ of ΔWQR. V is on WR such that VP ∥ RQ. PV is produced by its own length to S. PW is produced to T and ST drawn.",
+   "text": "Give a reason why WV = VR.",
+   "marks": 1,
+   "topic": "Euclidean geometry: the midpoint theorem",
+   "solution_method": "theorem_recall",
+   "memo_answer": "A line drawn from the midpoint of one side of a triangle parallel to another side bisects the third side.",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.2a",
+   "context": "8.2.2 Prove that:",
+   "text": "ΔVWP ≡ ΔVRS",
+   "marks": 3,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "In ΔVWP and ΔVRS: WV = VR [proved]; VP = SV [given]; V̂1 = V̂3 [vert. opp. ∠s]; ΔVWP ≡ ΔVRS [SAS]",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.2b",
+   "text": "SWPR is a parallelogram",
+   "marks": 2,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "WV = VR [proved] and VP = SV [given], so SWPR is a parallelogram [diagonals bisect each other]",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.2c",
+   "text": "PQRS is a parallelogram",
+   "marks": 3,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "PQ ∥ SR (WP ∥ SR) and SP ∥ RQ [given]: PQRS is a parallelogram [both pairs of opp. sides ∥]. OR PQ ∥ SR and PQ = SR (PQ = WP = SR): one pair of opp. sides equal and ∥",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.3",
+   "text": "If it is further given that RSTW is a parallelogram, show that TQ = 3SR.",
+   "marks": 2,
+   "topic": "Euclidean geometry: quadrilaterals",
+   "solution_method": "geometric_proof",
+   "memo_answer": "TQ = 3SR",
+   "memo_working": "SR = TW [RSTW is a parallelogram]; SR = WP [proved]; WP = QP [given]; TQ = TW + WP + PQ = 3SR",
+   "checkable": false
+  }
+ ]
+}

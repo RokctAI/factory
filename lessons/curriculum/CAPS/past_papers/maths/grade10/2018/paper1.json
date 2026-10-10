@@ -1,0 +1,493 @@
+{
+ "_comment": [
+  "Department of Basic Education Grade 10 Mathematics P1 (algebra, patterns, functions, finance and probability), November 2018 national common examination.",
+  "Questions and marking-guideline answers transcribed from the rendered pages of the official PDFs",
+  "(paper1.pdf, paper1_memo.pdf); the text layer does not hold usable equations. Notation:",
+  "^ for powers, sqrt() for roots, a/b for fractions, decimal commas as printed. memo_answer is the",
+  "guideline's final answer and memo_working its working (tick marks and mark descriptors left out).",
+  "The guideline is bilingual (English/Afrikaans); only the English is transcribed. Graphs and diagrams are described",
+  "in brackets in the question text. The information sheet printed with the paper is not transcribed.",
+  "The question paper is a scan with no text layer.",
+  "FORMAT: 100 marks, 2 hours, eight compulsory questions (Q1 18, Q2 15, Q3 10, Q4 6, Q5 17, Q6 12, Q7 11,",
+  "Q8 11)."
+ ],
+ "paper_id": "dbe_maths_g10_p1_2018_nov",
+ "source": "Department of Basic Education",
+ "source_url": "https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade10Exams.aspx",
+ "paper_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=xB_6NSmf6m8%3d&tabid=1853&portalid=0&mid=8657",
+ "memo_download_url": "https://www.education.gov.za/LinkClick.aspx?fileticket=odfn3DagL_E%3d&tabid=1853&portalid=0&mid=8657",
+ "paper_file": "paper1.pdf",
+ "memo_file": "paper1_memo.pdf",
+ "copyright": "© Department of Basic Education, 2018. Reproduced for educational use with attribution.",
+ "subject": "Maths",
+ "grade": 10,
+ "paper": "P1",
+ "session": "November 2018",
+ "language": "English",
+ "total_marks": 100,
+ "time_hours": 2,
+ "questions": [
+  {
+   "ref": "Q1.1.1",
+   "context": "QUESTION 1 | 1.1 Factorise the following expressions fully:",
+   "text": "4x - x^3",
+   "marks": 2,
+   "topic": "Algebraic expressions: factorisation",
+   "solution_method": "common_factor_difference_of_squares",
+   "memo_answer": "x(2 - x)(2 + x)",
+   "memo_working": "x(4 - x^2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.2",
+   "text": "x^2 + 15x - 54",
+   "marks": 2,
+   "topic": "Algebraic expressions: factorisation",
+   "solution_method": "factorise_trinomial",
+   "memo_answer": "(x + 18)(x - 3)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.3",
+   "text": "y - xy + x - 1",
+   "marks": 3,
+   "topic": "Algebraic expressions: factorisation",
+   "solution_method": "factorise_by_grouping",
+   "memo_answer": "(y - 1)(1 - x)",
+   "memo_working": "y(1 - x) - 1(1 - x)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.1",
+   "context": "1.2 Simplify the following expressions fully:",
+   "text": "(x + 2)(x^2 - x + 3)",
+   "marks": 2,
+   "topic": "Algebraic expressions: products and simplifying",
+   "solution_method": "expand_brackets",
+   "memo_answer": "x^3 + x^2 + x + 6",
+   "memo_working": "x^3 - x^2 + 3x + 2x^2 - 2x + 6",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.2",
+   "text": "5/(x + 3) - 3/(2 - x)",
+   "marks": 3,
+   "topic": "Algebraic expressions: algebraic fractions",
+   "solution_method": "subtract_algebraic_fractions",
+   "memo_answer": "(8x - 1)/((x + 3)(x - 2)) OR (1 - 8x)/((x + 3)(2 - x))",
+   "memo_working": "5/(x + 3) + 3/(x - 2) = (5(x - 2) + 3(x + 3))/((x + 3)(x - 2)) = (5x - 10 + 3x + 9)/((x + 3)(x - 2))",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.3",
+   "text": "(25^(-x).15^(x + 1))/(3^x.5^(-x))",
+   "marks": 3,
+   "topic": "Exponents",
+   "solution_method": "exponent_laws_prime_bases",
+   "memo_answer": "15",
+   "memo_working": "= (5^(-2x).3^(x + 1).5^(x + 1))/(3^x.5^(-x)) = 5^(-2x + x + 1 + x).3^(x + 1 - x) = 5^1.3^1",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.3",
+   "text": "Determine the value of (3p + q)^2 if 9p^2 + q^2 = 12 and pq = -3.",
+   "marks": 3,
+   "topic": "Algebraic expressions: products and simplifying",
+   "solution_method": "expand_and_substitute",
+   "memo_answer": "-6",
+   "memo_working": "(3p + q)^2 = 9p^2 + 6pq + q^2 = 12 + 6(-3)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.1",
+   "context": "QUESTION 2 | 2.1 Solve for x:",
+   "text": "px + qx = a",
+   "marks": 2,
+   "topic": "Equations: linear, quadratic, literal and exponential",
+   "solution_method": "literal_equation",
+   "memo_answer": "x = a/(p + q) ; p ≠ -q",
+   "memo_working": "x(p + q) = a (no restriction: full marks)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.2",
+   "text": "2x^2 - 5x + 2 = 0",
+   "marks": 3,
+   "topic": "Equations: linear, quadratic, literal and exponential",
+   "solution_method": "factorise_trinomial",
+   "memo_answer": "x = 1/2 or x = 2",
+   "memo_working": "(2x - 1)(x - 2) = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.3",
+   "text": "(1/2)^(3x + 1) = 32",
+   "marks": 3,
+   "topic": "Equations: linear, quadratic, literal and exponential",
+   "solution_method": "exponential_equation",
+   "memo_answer": "x = -2",
+   "memo_working": "2^(-3x - 1) = 2^5; -3x - 1 = 5; 3x = -6",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.1",
+   "context": "2.2 Given: -11 ≤ 3m - 8 < 4",
+   "text": "Solve for m.",
+   "marks": 2,
+   "topic": "Linear inequalities",
+   "solution_method": "linear_inequality",
+   "memo_answer": "-1 ≤ m < 4",
+   "memo_working": "-3 ≤ 3m < 12",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.2",
+   "text": "Hence, write down the number of integers that satisfy the inequality.",
+   "marks": 1,
+   "topic": "Linear inequalities",
+   "solution_method": "count_integers",
+   "memo_answer": "5 integers",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Solve simultaneously for x and y if: 5x + 4y = 21 and 2x = 3 - y",
+   "marks": 4,
+   "topic": "Equations: simultaneous linear equations",
+   "solution_method": "simultaneous_linear",
+   "memo_answer": "x = -3 ; y = 9",
+   "memo_working": "y = 3 - 2x; 5x + 4(3 - 2x) = 21; -3x = 9; x = -3; y = 3 - 2(-3). OR elimination: 8x + 4y = 12 minus 5x + 4y = 21 gives 3x = -9",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1",
+   "context": "QUESTION 3 | Consider the finite linear pattern: 20 ; 17 ; 14 ; ... ; -103",
+   "text": "Write down the 4th term of the pattern.",
+   "marks": 1,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "extend_pattern",
+   "memo_answer": "T4 = 11",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2",
+   "text": "Determine the expression for the nth term.",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_general_term",
+   "memo_answer": "Tn = -3n + 23",
+   "memo_working": "Tn = -3n + q; 14 = -3(3) + q; q = 23",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.3",
+   "text": "Calculate the number of terms in the sequence.",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "solve_for_term_number",
+   "memo_answer": "n = 42",
+   "memo_working": "-3n + 23 = -103; 3n = 126",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.4",
+   "text": "Which term is the first to have a negative value?",
+   "marks": 3,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_inequality_term",
+   "memo_answer": "T8",
+   "memo_working": "-3n + 23 < 0; n > 23/3; n = 8",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.5",
+   "text": "What is the value of the 19th even-valued term in the sequence?",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "pattern_reasoning",
+   "memo_answer": "-88",
+   "memo_working": "T = -3(37) + 23",
+   "memo_note": "The even values are the odd-numbered terms, so the 19th even-valued term is T37; the guideline labels it T39 but substitutes n = 37.",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | Samantha is investigating a pattern of dots represented in the diagram below. [Pattern 1: 1 dot, 1^2 = 1; pattern 2: 1 + 3 = 2^2 = 4 dots; pattern 3: 1 + 3 + 5 = 3^2 = 9 dots, drawn as nested L-shapes in a square.] 4.1 Write down:",
+   "text": "The number of dots in the 4th pattern",
+   "marks": 1,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "extend_pattern",
+   "memo_answer": "16",
+   "memo_working": "4^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "The number of dots in the 13th pattern",
+   "marks": 1,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "extend_pattern",
+   "memo_answer": "169",
+   "memo_working": "13^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.3",
+   "text": "A formula for the number of dots in the nth pattern",
+   "marks": 1,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "general_term_from_pattern",
+   "memo_answer": "Tn = n^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2",
+   "text": "Hence, or otherwise, calculate the value of: 1 + 3 + 5 + ... + 43",
+   "marks": 3,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "sum_of_odd_numbers",
+   "memo_answer": "484",
+   "memo_working": "Tn = 2n - 1 = 43; n = 22; total dots = 22^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.1",
+   "context": "QUESTION 5 | Sketched below are the graphs of f(x) = ax^2 + q and g(x) = (1/2)^x - 4. A and B are the x-intercepts of f. The graphs intersect at A and point E(1 ; 3) lies on f. C is the turning point of f and D is the y-intercept of g. [f opens downwards with turning point C on the positive y-axis; g decreases through A and D towards the dashed asymptote.] 5.1 Write down the:",
+   "text": "Coordinates of D",
+   "marks": 2,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "intercepts",
+   "memo_answer": "D(0 ; -3)",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.2",
+   "text": "Range of g",
+   "marks": 1,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "range_of_function",
+   "memo_answer": "y > -4",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.1",
+   "context": "5.2 Calculate the:",
+   "text": "Coordinates of A",
+   "marks": 2,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "intercepts",
+   "memo_answer": "A(-2 ; 0)",
+   "memo_working": "0 = (1/2)^x - 4; 2^(-x) = 2^2; x = -2",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.2",
+   "text": "Values of a and q",
+   "marks": 4,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "parabola_equation",
+   "memo_answer": "a = -1 ; q = 4",
+   "memo_working": "at E(1 ; 3): 3 = a + q; at A(-2 ; 0): 0 = 4a + q, q = -4a; a = -1",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.3.1",
+   "context": "5.3 Determine the:",
+   "text": "Length of CD",
+   "marks": 2,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "distance_on_axis",
+   "memo_answer": "CD = 7 units",
+   "memo_working": "y_C - y_D = 4 - (-3)",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.3.2",
+   "text": "Equation of a straight line through A and D",
+   "marks": 3,
+   "topic": "Analytical geometry",
+   "solution_method": "equation_of_line",
+   "memo_answer": "y = -(3/2)x - 3",
+   "memo_working": "m = -3/2; 0 = -(3/2)(-2) + c; c = -3",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.4.1",
+   "context": "5.4 For which values of x is:",
+   "text": "f(x) > 0?",
+   "marks": 2,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "graph_inequality_reading",
+   "memo_answer": "-2 < x < 2 OR x ∈ (-2 ; 2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.4.2",
+   "text": "f decreasing?",
+   "marks": 1,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "graph_reading",
+   "memo_answer": "x > 0 OR x ∈ (0 ; ∞)",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1.1",
+   "context": "QUESTION 6 | The equation of the function g(x) = a/x + q passes through the point (3 ; 2) and has a range of y ∈ (-∞ ; 1) ∪ (1 ; ∞). 6.1 Determine the:",
+   "text": "Equation of g",
+   "marks": 3,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "hyperbola_equation",
+   "memo_answer": "g(x) = 3/x + 1",
+   "memo_working": "q = 1; 2 = a/3 + 1; a = 3",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1.2",
+   "text": "Equation of h, the axis of symmetry of g which has a positive gradient",
+   "marks": 2,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "axis_of_symmetry_hyperbola",
+   "memo_answer": "h(x) = x + 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.2",
+   "text": "Sketch the graphs of g and h on the same system of axes. Clearly show ALL the asymptotes and intercepts with axes.",
+   "marks": 4,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "sketch_graph",
+   "memo_answer": "Hyperbola g with asymptotes x = 0 and y = 1, one branch in the first quadrant above y = 1 and the other below y = 1 left of the y-axis through the x-intercept (-3 ; 0); straight line h through (-1 ; 0) and (0 ; 1) passing through the centre (0 ; 1) of g (marks: shape of g, asymptotes, positive gradient of h, x-intercepts of g and h).",
+   "checkable": false
+  },
+  {
+   "ref": "Q6.3",
+   "text": "Write the equations of the asymptotes of f if f(x) = -g(x) + 5.",
+   "marks": 3,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "asymptotes_after_transformation",
+   "memo_answer": "x = 0 and y = 4",
+   "memo_working": "f(x) = -(3/x + 1) + 5 = -3/x + 4",
+   "memo_note": "The guideline numbers this answer 6.4.",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1",
+   "context": "QUESTION 7 | Read the advertisement below. [Buy a Samsung J5 for only R229 per month. You have 24 months to pay. No deposit is required.]",
+   "text": "Calculate the total amount to be paid over a period of 24 months.",
+   "marks": 1,
+   "topic": "Finance and growth",
+   "solution_method": "multiply_instalments",
+   "memo_answer": "R5 496",
+   "memo_working": "R229 × 24",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2",
+   "text": "The monthly instalment, quoted in the advertisement, is calculated on a hire purchase agreement which charges interest of 7,5% p.a. on the cash price of the cellphone. Show that the price of the cellphone is R4 779,13.",
+   "marks": 2,
+   "topic": "Finance and growth",
+   "solution_method": "simple_interest_present_value",
+   "memo_answer": "P = R4 779,13",
+   "memo_working": "A = P(1 + in); 5 496 = P(1 + 0,075 × 2)",
+   "checkable": false
+  },
+  {
+   "ref": "Q7.3",
+   "text": "Calculate the total interest paid over a period of 24 months if the cellphone is bought with this hire purchase agreement.",
+   "marks": 1,
+   "topic": "Finance and growth",
+   "solution_method": "interest_difference",
+   "memo_answer": "R716,87",
+   "memo_working": "R5 496 - R4 779,13",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.4",
+   "text": "The cellphone is insured at 11,5% p.a of the cash price. The total insurance is calculated and then split up over 24 months. It is then added to the monthly instalment. Calculate the new monthly instalment if the customer wants to insure the cellphone.",
+   "marks": 3,
+   "topic": "Finance and growth",
+   "solution_method": "hire_purchase_instalment",
+   "memo_answer": "R274,80",
+   "memo_working": "insurance per month = R4 779,13 × 0,115/12 = R45,80; R45,80 + R229",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.5",
+   "text": "The cost of the cellphone is subject to inflation and increases to a cash price of R5 100,00 after 2 years. Calculate the annual inflation rate.",
+   "marks": 4,
+   "topic": "Finance and growth",
+   "solution_method": "solve_for_interest_rate",
+   "memo_answer": "3,30%",
+   "memo_working": "A = P(1 + i)^n: 5 100 = 4 779,13(1 + i)^2; i = sqrt(1,067139835) - 1 = 0,03302460526",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1.1a",
+   "context": "QUESTION 8 | 8.1 In a random physical sciences experiment, A and B are two different events. It was found that: P(A) = 2/5, P(B') = 3/8 and P(A or B) = 5/7. 8.1.1 Calculate:",
+   "text": "P(B)",
+   "marks": 2,
+   "topic": "Probability",
+   "solution_method": "complement_probability",
+   "memo_answer": "5/8",
+   "memo_working": "P(B) = 1 - P(B') = 1 - 3/8",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1.1b",
+   "text": "P(A and B)",
+   "marks": 3,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "addition_rule",
+   "memo_answer": "87/280 = 0,31",
+   "memo_working": "5/7 = 2/5 + 5/8 - P(A and B)",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.1.2",
+   "text": "Hence, determine whether events A and B are mutually exclusive. Motivate your answer.",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "motivate_answer",
+   "memo_answer": "Not mutually exclusive, since P(A and B) ≠ 0.",
+   "checkable": false
+  },
+  {
+   "ref": "Q8.2.1",
+   "context": "8.2 The Venn diagrams below represent different scenarios of events A and B. Write down the probability of the shaded region for EACH of the diagrams below.",
+   "text": "[Venn diagram: only the overlap of A and B is shaded.]",
+   "marks": 1,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "venn_notation",
+   "memo_answer": "P(A ∩ B) OR P(A and B)",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2.2",
+   "text": "[Venn diagram: everything outside A and B is shaded.]",
+   "marks": 1,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "venn_notation",
+   "memo_answer": "P(A ∪ B)' OR P(A or B)'",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.2.3",
+   "text": "[Venn diagram: A and B are shaded except for their overlap.]",
+   "marks": 1,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "venn_notation",
+   "memo_answer": "P(A ∩ B)' OR P(A and B)'",
+   "memo_note": "As printed in the guideline; the shaded region drawn (A or B but not both) leaves out the region outside both circles, so it is P(A or B) - P(A and B) rather than P(A and B)'.",
+   "checkable": true
+  },
+  {
+   "ref": "Q8.3",
+   "text": "Which diagram(s) in QUESTIONS 8.2.1, 8.2.2 or 8.2.3 represent mutually exclusive events?",
+   "marks": 1,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "identify_mutually_exclusive",
+   "memo_answer": "8.2.3",
+   "checkable": true
+  }
+ ]
+}

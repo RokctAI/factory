@@ -6,6 +6,7 @@ terms were checked before fetching anything. Checked 2026-07-15.
 | Source | Status | Terms / robots findings | Verdict |
 |---|---|---|---|
 | **DBE** (education.gov.za) | **USED** | Official NSC/Grade 11 papers are published for public download. [terms.aspx](https://www.education.gov.za/terms.aspx): DBE retains copyright ("Copyright: Department of Basic Education"); prohibits obtaining material "through any means not intentionally made available" — the exam-paper download links ARE intentionally provided. No robots rule against `/LinkClick.aspx` document downloads; no scraping prohibition in the terms. | OK to fetch the intentionally-published papers, with attribution + copyright notice. |
+| **Eastern Cape DoE exam archive** (ecexams.co.za) | **USED** (2026-10-10) | Official provincial site of the Eastern Cape Department of Education, publishing its Grade 10/11 common examination papers and marking guidelines (and DBE papers it redistributes) for public download from per-session `.htm` index pages. No robots.txt (404, checked 2026-10-10); no terms page restricting download. Reachable on the no-www https host (`https://ecexams.co.za/`); the www host resets connections from the work environment. | OK to fetch the intentionally-published papers and memos, with attribution + copyright notice. |
 | **WCED ePortal** (wcedeportal.co.za) | **NOT USED** | robots.txt explicitly disallows `ClaudeBot` (and GPTBot, CCBot, Google-Extended, etc.), and carries a content signal `ai-train=no`. | Excluded — respect the block. |
 | **Testpapers** (testpapers.co.za) | **NOT USED** | Aggregator/redistributor of DBE papers; no visible terms/licence page. Since the DBE is the primary rights holder and publishes the same papers directly, there is no need to scrape a third-party redistributor. | Excluded — go to the primary source instead. |
 | **SA Exam Papers** (saexampapers.co.za) | **NOT USED** | Same reasoning as Testpapers — third-party aggregator; primary source available. | Excluded. |
@@ -101,3 +102,33 @@ trusted by filename.
   Grade 11 Nov 2018 papers (URL recorded in `FETCH_QUEUE.md`); the site is
   egress-blocked from this environment (CONNECT 403), so nothing was
   fetched from it.
+
+## Grade 10/11 batch (2026-10-10)
+
+Fetched directly in the work environment (education.gov.za and the no-www
+ecexams.co.za host both reachable on 2026-10-10; neither publishes a
+robots.txt). Every file was saved to its own scratch directory, read only
+through isolated parsers, and tracked beside the extracted `paperN.json`.
+
+- **ecexams.co.za** (Eastern Cape DoE) — Grade 11 November 2025 and 2024
+  provincial common papers and marking guidelines
+  (`2025_November_Gr_11_Exams.htm`, `2024_November_Gr_11_Exams.htm`) and the
+  Grade 10 November 2019 and 2018 papers (`2019_November_Gr_10_Exams.htm`,
+  `2018_November_Gr_10_Exams.htm`), for Mathematics, Mathematical Literacy,
+  Physical Sciences, Accounting, Economics and Geography. Question papers
+  come as zips (paper, answer book, addendum or annexure); only the English
+  files are tracked. The 2019 Mathematics and Physical Sciences papers are
+  national DBE papers (DBE page headers) distributed through this archive.
+- **DBE Grade 10 page**
+  (<https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade10Exams.aspx>)
+  — Grade 10 Mathematics and Physical Sciences, November 2018 (papers,
+  memos and the Mathematics P2 answer book). The page covers only these two
+  subjects, latest year 2018.
+- **DBE Grade 11 page** (`Grade11Exams.aspx`) — the official marking
+  guidelines for the legacy Grade 11 Mathematics P1 (November 2017 and 2018)
+  and Physical Sciences P1 (November 2018), from the `memo_download_url` in
+  each `paper.json`, now tracked as `paper1_memo.pdf`.
+
+Per-paper URLs are in each subject's `index.json` and in the Grade 10/11
+section of `FETCH_QUEUE.md`, which also lists what is still outstanding and
+the provincial portals that were unreachable.

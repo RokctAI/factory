@@ -128,89 +128,123 @@ session-page HTML):
 | [ ] | Mathematical Literacy P1 Answer Book (Eng) — NEW ROW batch 5: the 2025 ML annexures live in this 17-pp Special Answer Book (QP p 13 references 'ANNEXURE B in the ANSWER BOOK'), needed for annexure-dependent transcription; direct fileticket not yet harvested — fetch from the session page (label "Answer Book 1 (English)" in the Mathematical Literacy module). Direct-PDF search 2026-08-07 (Ray reports the link at right is an htm landing page, not a PDF — correct, it is the session page): NO direct-PDF alternative found — no Nov 2025 ML Answer Book file was sighted verbatim on any sanctioned mirror (theanswer.co.za, stanmorephysics.com, ecexams.co.za; all three egress-blocked here, searched via web-result snippets only; WCED hosts answer books but stays excluded per SOURCES.md). The htm session page remains the path — on it, click "Answer Book 1 (English)" under Mathematical Literacy; the click itself yields the direct LinkClick.aspx PDF download | <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx> |
 | [ ] | Mathematical Literacy P2 Answer Book (Eng) — NEW ROW batch 5: same as above for P2 (17-pp Special Answer Book holding Annexures A–D; QP p 14 references 'ANNEXURE D in the ANSWER BOOK'). Direct-PDF search 2026-08-07: same result as the P1 row — NO direct-PDF alternative sighted on sanctioned mirrors; the htm session page remains the path (click "Answer Book 2 (English)" under Mathematical Literacy) | <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx> |
 
-## GRADE 10 PAPERS — needs manual fetch
+## GRADE 10 AND 11 PAPERS (batch of 2026-10-10)
 
-Grade 10 papers are provincial, not national (per the standing note in every
-subject `index.json`: "Only Gr 12 papers are published nationally; Gr 10-11
-papers are provincial"), and NO Grade 10 paper URL exists anywhere in this
-repo — neither `links.json` nor the subject `index.json` files carry one — so
-no direct PDF URL below can be derived from repo evidence. Per the
-no-fabrication rule, none is guessed: every URL cell reads "URL needed —
-manual fetch". Likely fetch paths, both PATTERN-DERIVED from URLs already in
-this file (verify on open, NOT sighted):
+Scope: official DBE or provincial common papers only, the two most recent
+November sessions per grade, each with its official marking guidelines.
+education.gov.za and ecexams.co.za (no-www host) were reachable from the work
+environment on 2026-10-10, so every paper and memo below was fetched
+directly, tracked beside its `paperN.json`, transcribed and linked to the
+existing Grade 10/11 lessons (`links.json`). URLs are also recorded in each
+subject's `index.json`.
 
-- **ecexams.co.za** (Eastern Cape DoE, the provincial mirror already used for
-  the Gr 11 memo leads above) publishes per-session directory index pages
-  named `<year>_November_Gr_<grade>_Exams.htm` — the Gr 11 indexes
-  <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm> and
-  <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> were sighted
-  verbatim, implying Gr 10 analogues
-  <https://www.ecexams.co.za/2017_November_Gr_10_Exams.htm> and
-  <https://www.ecexams.co.za/2018_November_Gr_10_Exams.htm>. Open the index,
-  click through to each paper/memo, and record the real URLs back into the
-  rows below.
-- **DBE portal navigation** — `links.json` records the Gr 11 session page
-  `Grade11Exams.aspx`; check the NSC Examinations portal for a Grade 10
-  sibling page rather than guessing its URL.
+- **Grade 11**: Eastern Cape Department of Education provincial common
+  examinations, November 2025 and November 2024.
+- **Grade 10**: November 2019 and November 2018 are the most recent real
+  Grade 10 exam sessions. The EC archive's "November 2020 Gr. 10
+  Examinations" page (<https://ecexams.co.za/2020_November_Gr_10_Exemplars.htm>)
+  holds exemplars only, and no later Grade 10 session is published there;
+  the DBE Grade 10 page
+  (<https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade10Exams.aspx>)
+  carries Mathematics and Physical Sciences only, latest year 2018. The
+  2019 Mathematics and Physical Sciences papers are national DBE papers
+  (page headers read DBE/November 2019) distributed through the EC archive.
+- **June**: no official Grade 10 or 11 June common papers are published on
+  the reachable portals (the EC archive lists November sessions and
+  exemplars only), so none are included.
 
-Years follow the legacy Gr 11 convention above (November 2017 + November
-2018); subjects and per-subject P1/P2 rows follow the existing grade
-sections. Every row unchecked.
+### Grade 11 — November 2025
 
-### Mathematics
+Session page: <https://ecexams.co.za/2025_November_Gr_11_Exams.htm>
 
-| Done | Paper | Question paper URL | Memo URL |
+| Done | Paper (tracked at `past_papers/...`) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Mathematics P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Mathematics P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Mathematics P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Mathematics P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [x] | Mathematics P1 — `maths/grade11/2025/paper1.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/MATHS%20P1%20QP%20GR11%20NOV%202025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/MATHS%20P1%20MEMO%20GR11%20NOV%202025%20E+A_watermark.pdf> |
+| [x] | Mathematics P2 — `maths/grade11/2025/paper2.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/MATHS%20P2%20GR%2011%202025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/MATHS%20P2%20MEMO%20GR%2011%20%20NOVEMBER%202025%20(ENG%20&%20AFR)_watermark.pdf> |
+| [x] | Mathematical Literacy P1 — `mathematical_literacy/grade11/2025/paper1.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/MATHS%20LITERACY%20P1%20GR11%20QP%20NOV2025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/MATHS%20LITERACY%20P1%20GR11%20MEMO%20NOV2025_watermark.zip> |
+| [x] | Mathematical Literacy P2 — `mathematical_literacy/grade11/2025/paper2.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/MATHS%20LIT%20P2%20GRADE%2011%20NOV%202025%20QPAPER_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/MATHS%20LIT%20%20P2%20GRADE%2011%20NOV%202025%20MEMO_watermark.zip> |
+| [x] | Physical Sciences P1 — `physical_sciences/grade11/2025/paper1.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/PHYSICAL%20SC%20P1%20QP%20GR11%20NOV%202025watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/PHYSICAL%20SC%20P1%20MEMO%20NOV%202025%20E+A_watermark.pdf> |
+| [x] | Physical Sciences P2 — `physical_sciences/grade11/2025/paper2.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/PHYSICAL%20SC%20P2%20QP%20GR11%20NOVEMBER%202025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/PHYSICAL%20SCIENCES%20P2%20GRADE%2011%20MEMO%20NOVEMBER%202025%20ENG%20&%20AFR_watermark.pdf> |
+| [x] | Accounting P1 — `accounting/grade11/2025/paper1.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/ACCOUNTING%20P1%20GR11%20QP%20NOV2025watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/ACCOUNTING%20P1%20GR11%20MEMO%20NOV2025_watermark.zip> |
+| [x] | Accounting P2 — `accounting/grade11/2025/paper2.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/ACCOUNTING%20P2%20GR11%20NOV%202025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/ACCOUNTING%20P2%20%20MEMO%20GR11%20NOV%202025watermark.zip> |
+| [x] | Economics P1 — `economics/grade11/2025/paper1.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/ECONOMICS%20P1%20GR11%20QP%20NOVEMBER%202025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/ECONOMICS%20P1%20GR11%20QP%20NOVEMBER%202025%20MARKING%20GUIDELINE_watermark.zip> |
+| [x] | Economics P2 — `economics/grade11/2025/paper2.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/ECONOMICS%20P2%20GR11%20QP%20NOV2025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/ECONOMICS%20P2%20GR11%20MEMO%20NOV2025_watermark.zip> |
+| [x] | Geography P1 — `geography/grade11/2025/paper1.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/GEOGRAPHY%20P1%20QP.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/GEOGAPHY%20P1%20MEMO%20GR11%20NOV%202025watermark.zip> |
+| [x] | Geography P2 — `geography/grade11/2025/paper2.json` | <https://ecexams.co.za/2025_November_Gr_11_Exams/Question%20Papers%20Gr%2011/GEOGRAPHY%20P2%20GR11%20QP%20NOV2025_watermark.zip> | <https://ecexams.co.za/2025_November_Gr_11_Exams/GEOGRAPHY%20P2%20GR11%20%20NOV2025%20MARKING%20GUIDELINE_watermark.zip> |
 
-### Mathematical Literacy
+### Grade 11 — November 2024
 
-| Done | Paper | Question paper URL | Memo URL |
+Session page: <https://ecexams.co.za/2024_November_Gr_11_Exams.htm>
+
+| Done | Paper (tracked at `past_papers/...`) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Mathematical Literacy P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Mathematical Literacy P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Mathematical Literacy P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Mathematical Literacy P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [x] | Mathematics P1 — `maths/grade11/2024/paper1.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/MATHS%20P1%20QP%20GR11%20NOV2024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/MATHS%20P1%20MEMO%20GR11%20NOV2024_ENG_AFR_watermark.pdf> |
+| [x] | Mathematics P2 — `maths/grade11/2024/paper2.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/MATHS%20P2%20QP%20GR11%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/MATHS%20P2%20GRADE%2011%20NOV%202024%20ENG_AFR%20MARKING%20GUIDELINE_watermark.pdf> |
+| [x] | Mathematical Literacy P1 — `mathematical_literacy/grade11/2024/paper1.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/MATHS%20LIT%20P1%20GR11%20QP%20NOV%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/MATHS%20LIT%20P1%20MEMO%20GR%2011%20NOV2024_watermark.zip> |
+| [x] | Mathematical Literacy P2 — `mathematical_literacy/grade11/2024/paper2.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/MATHS%20LIT%20P2%20GRADE%2011%20NOV%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/MATHS%20LIT%20P2%20GRADE%2011%20NOV%202024%20MARKING%20GUIDELINE_watermark.zip> |
+| [x] | Physical Sciences P1 — `physical_sciences/grade11/2024/paper1.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/PHYS%20SCIENCES%20%20P1%20QP%20GR11%20NOV%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/PHYS%20SCIENCES%20P1%20GR11%20MEMO%20NOV%202024%20ENG%20+%20AFR_watermark.pdf> |
+| [x] | Physical Sciences P2 — `physical_sciences/grade11/2024/paper2.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/PHYSICAL%20Sc.%20P2%20QP%20GR11%20NOV%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/PHYSICAL%20SCIENCES%20P2%20GR11%20MEMO%202024%20ENG_AFR_watermark.pdf> |
+| [x] | Accounting P1 — `accounting/grade11/2024/paper1.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/ACCOUNTING%20%20P1%20GR11%20NOV%202024watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/EC%20ACCOUNTING%20P1%20GR11%20%20MG%20NOV%202024_watermark.zip> |
+| [x] | Accounting P2 — `accounting/grade11/2024/paper2.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/Accounting%20P2%20QP%20GR11%20NOV%202024watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/ACCOUNTING%20P2%20MEMO%20GR11%20NOV%202024_watermark.zip> |
+| [x] | Economics P1 — `economics/grade11/2024/paper1.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/ECONOMICS%20P1%20GR11%20QP%20NOV%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/ECONOMICS%20P1%20GR11%20MEMO%20NOV%202024_watermark.zip> |
+| [x] | Economics P2 — `economics/grade11/2024/paper2.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/ECONOMICS%20GRADE%2011%20P2%20QP%20NOV%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/ECONOMICS%20GRADE%2011%20P2%20MG%20NOV%202024_watermark.zip> |
+| [x] | Geography P1 — `geography/grade11/2024/paper1.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/GEOGRAPHY%20P1%20QP%20GR11%20NOV%202024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/GEOGRAPHY%20P1%20MEMO%20GR11%20NOV%202024_watermark.zip> |
+| [x] | Geography P2 — `geography/grade11/2024/paper2.json` | <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/GEOGRAPHY%20P2%20GR11%20QP%20NOV2024_watermark.zip> | <https://ecexams.co.za/2024_November_Gr_11_Exams/GEOGRAPHY%20P2%20GR11%20MEMO%20NOV2024_watermark.zip> |
 
-### Physical Sciences
+### Grade 10 — November 2019
 
-| Done | Paper | Question paper URL | Memo URL |
+Session page: <https://ecexams.co.za/2019_November_Gr_10_Exams.htm>
+
+| Done | Paper (tracked at `past_papers/...`) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Physical Sciences P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Physical Sciences P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Physical Sciences P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Physical Sciences P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+| [x] | Mathematics P1 — `maths/grade10/2019/paper1.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/Maths%20Gr%2010%20P1%20QP.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/Mathematics%20P1%20Grade%2010%20Nov%202019%20Memo%20Afr%20&%20Eng.pdf> |
+| [x] | Mathematics P2 — `maths/grade10/2019/paper2.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/MATHS%20P2%20GRADE%2010%20NOV%202019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/Mathematics%20P2%20Grade%2010%20Nov%202019%20Memo%20Afr%20&%20Eng.pdf> |
+| [x] | Mathematical Literacy P1 — `mathematical_literacy/grade10/2019/paper1.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/MATHS%20LIT%20P1%20GR10%20QP%20FINAL%20NOV2019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/MATHS%20LIT%20P1%20GR10%20MEMO%20FINAL%20NOV2019.zip> |
+| [x] | Mathematical Literacy P2 — `mathematical_literacy/grade10/2019/paper2.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/Maths%20Lit%20QP%20P2.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/MATHS%20LIT%20P2%20GR10%20MEMO%20NOV2019.zip> |
+| [x] | Physical Sciences P1 — `physical_sciences/grade10/2019/paper1.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/Physical%20Sciences%20P1%20Gr%2010%20Nov%202019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/Physical%20Sciences%20P1%20Gr%2010%20Nov%202019%20Memo%20Afr%20&%20Eng.pdf> |
+| [x] | Physical Sciences P2 — `physical_sciences/grade10/2019/paper2.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/Physical%20Sciences%20P2%20Gr%2010%20Nov%202019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/Physical%20Sciences%20P2%20Gr%2010%20Nov%202019%20Memo%20Afr%20&%20Eng.pdf> |
+| [x] | Accounting P1 — `accounting/grade10/2019/paper1.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P1%20GR10%20QP%20NOV2019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P1%20GR10%20MEMO%20NOV2019.zip> |
+| [x] | Accounting P2 — `accounting/grade10/2019/paper2.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P2%20GR10%20QP%20NOV%202019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/ACCOUNTING%20P2%20MEMO%20GR10%20NOV%202019.zip> |
+| [x] | Economics P1 — `economics/grade10/2019/paper1.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/ECONOMICS%20P1%20QP%20GR10%20NOV%202019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/ECONOMICS%20P1%20MEMO%20GR10%20NOV%202019.zip> |
+| [x] | Economics P2 — `economics/grade10/2019/paper2.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/ECONOMICS%20P2%20GR11%20QP%20NOV2019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/ECONOMICS%20P2%20GR10%20MEMO%20NOV2019.zip> |
+| [x] | Geography P1 — `geography/grade10/2019/paper1.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/GEOGRAPHY%20P1%20GR10%20QP%20NOV2019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/GEO%20P1%20GR10%20MEMO%20NOV2019.zip> |
+| [x] | Geography P2 — `geography/grade10/2019/paper2.json` | <https://ecexams.co.za/2019_November_Gr_10_Exams/GEOGRAPHY%20P2%20QP%20GR10%20NOV%202019.zip> | <https://ecexams.co.za/2019_November_Gr_10_Exams/GEOGRAPHY%20P2%20GR10%20MEMO%20NOV2019.zip> |
 
-### Accounting
+### Grade 10 — November 2018
 
-| Done | Paper | Question paper URL | Memo URL |
+Session page: <https://ecexams.co.za/2018_November_Gr_10_Exams.htm>, <https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/Grade10Exams.aspx>
+
+| Done | Paper (tracked at `past_papers/...`) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Accounting (Nov 2017 — single paper in this era) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Accounting (Nov 2018 — single paper in this era) | URL needed — manual fetch | URL needed — manual fetch |
+| [x] | Mathematics P1 — `maths/grade10/2018/paper1.json` | <https://www.education.gov.za/LinkClick.aspx?fileticket=xB_6NSmf6m8%3d&tabid=1853&portalid=0&mid=8657> | <https://www.education.gov.za/LinkClick.aspx?fileticket=odfn3DagL_E%3d&tabid=1853&portalid=0&mid=8657> |
+| [x] | Mathematics P2 — `maths/grade10/2018/paper2.json` | <https://www.education.gov.za/LinkClick.aspx?fileticket=RZ22JJ5tljc%3d&tabid=1853&portalid=0&mid=8657> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_QJV3vhD7tw%3d&tabid=1853&portalid=0&mid=8657> |
+| [x] | Mathematical Literacy P1 — `mathematical_literacy/grade10/2018/paper1.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Maths%20Lit%20P1%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Maths%20Lit%20P1%20Memo.zip> |
+| [x] | Mathematical Literacy P2 — `mathematical_literacy/grade10/2018/paper2.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Maths%20Lit%20P2%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Maths%20Lit%20P2%20Memo.zip> |
+| [x] | Physical Sciences P1 — `physical_sciences/grade10/2018/paper1.json` | <https://www.education.gov.za/LinkClick.aspx?fileticket=NbdCRLTzv7E%3d&tabid=1853&portalid=0&mid=8656> | <https://www.education.gov.za/LinkClick.aspx?fileticket=St4cmfQVTdM%3d&tabid=1853&portalid=0&mid=8656> |
+| [x] | Physical Sciences P2 — `physical_sciences/grade10/2018/paper2.json` | <https://www.education.gov.za/LinkClick.aspx?fileticket=e-67gT6qA1I%3d&tabid=1853&portalid=0&mid=8656> | <https://www.education.gov.za/LinkClick.aspx?fileticket=Ni2da6SmL6E%3d&tabid=1853&portalid=0&mid=8656> |
+| [x] | Accounting P1 — `accounting/grade10/2018/paper1.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P1%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P1%20Memo.zip> |
+| [x] | Accounting P2 — `accounting/grade10/2018/paper2.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P2%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Accounting%20P2%20Memo.zip> |
+| [x] | Economics P1 — `economics/grade10/2018/paper1.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Economics%20P1%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Economics%20P1%20Memo.zip> |
+| [x] | Economics P2 — `economics/grade10/2018/paper2.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Economics%20P2%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Economics%20P2%20Memo.zip> |
+| [x] | Geography P1 — `geography/grade10/2018/paper1.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Geography%20P1%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Geography%20P1%20Memo.zip> |
+| [x] | Geography P2 — `geography/grade10/2018/paper2.json` | <https://ecexams.co.za/2018_November_Gr_10_Exams/Geography%20P2%20QP.zip> | <https://ecexams.co.za/2018_November_Gr_10_Exams/Geography%20P2%20Memo.zip> |
 
-### Economics
+### Still outstanding (Grade 10/11)
 
-| Done | Paper | Question paper URL | Memo URL |
-|:---:|---|---|---|
-| [ ] | Economics P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Economics P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Economics P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Economics P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
+Every paper above has its official memo; nothing in scope is missing a memo.
+The items below are supporting material that is blocked or was never published.
 
-### Geography
+| Done | Item | URL |
+|:---:|---|---|
+| [ ] | Mathematics Gr 11 P2 Nov 2024 answer book (25 pp, referred to on the question paper). It is not in the question-paper zip and the session page has no separate link; `maths/grade11/2024/paper2.json` is complete without it. Fetch it if the EC archive adds it. | <https://ecexams.co.za/2024_November_Gr_11_Exams.htm> (zip: <https://ecexams.co.za/2024_November_Gr_11_Exams/Question%20Papers/MATHS%20P2%20QP%20GR11%202024_watermark.zip>) |
+| [ ] | Geography Gr 11 P2 Nov 2024 Mbombela topographic and orthophoto map sheets: not published with the paper (the mapwork questions are transcribed from the paper and memo). | <https://ecexams.co.za/2024_November_Gr_11_Exams.htm> |
+| [ ] | Geography Gr 10 P2 Nov 2019 and Nov 2018 topographic and orthophoto map sheets: resource material collected by schools, never published online. | <https://ecexams.co.za/2019_November_Gr_10_Exams.htm>, <https://ecexams.co.za/2018_November_Gr_10_Exams.htm> |
+| [ ] | Geography Gr 11 Nov 2025 P1 (Howick) and P2 (2529CC EMALAHLENI, about 50 MB) map sheets: published inside the question-paper zips but deliberately not tracked (size). Fetch from the zip URLs in `geography/past_papers/index.json` if needed. | <https://ecexams.co.za/2025_November_Gr_11_Exams.htm> |
+| [ ] | Other provincial portals, not reachable from the work environment on 2026-10-10 (CONNECT 502 or connection reset), so no papers from them are included: Gauteng <https://www.education.gpg.gov.za/>, KwaZulu-Natal <https://www.kzneducation.gov.za/>, Free State <https://www.education.fs.gov.za/>, Limpopo <https://www.limpopo-education.gov.za/>, Mpumalanga <https://www.mpuedu.gov.za/>, Northern Cape <https://www.ncedu.ncpg.gov.za/>, North West <https://nwdesd.nwpg.gov.za/>. The WCED ePortal stays excluded (robots block, see SOURCES.md). | (see item) |
 
-| Done | Paper | Question paper URL | Memo URL |
-|:---:|---|---|---|
-| [ ] | Geography P1 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Geography P2 (Nov 2017) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Geography P1 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
-| [ ] | Geography P2 (Nov 2018) | URL needed — manual fetch | URL needed — manual fetch |
-
-When a row's real URLs are recorded, also add the session/paper to the
-subject `index.json` per "How to extend this queue" below.
+The earlier Grade 10 November 2017 rows were dropped: 2017 is outside the
+"two most recent years" scope. If wanted, the official papers are on
+<https://ecexams.co.za/2017_November_Gr_10_Exams.htm>.
 
 ## Done
 
@@ -370,9 +404,9 @@ papers are NOT listed here — their PDFs are already tracked next to their
 
 | Done | Paper (extracted to) | Question paper URL | Memo URL |
 |:---:|---|---|---|
-| [ ] | Mathematics Gr 11 P1 Nov 2017 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2017/paper1.pdf` (7 pp scan, cover/mid/late pages verified; matches the paper.json). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2017 Eng.pdf`, byte-identical md5 `80f35be…` to the tracked QP) — the memo URL at right, labelled "Memo 1 (Afrikaans and English)" on Grade11Exams.aspx, is what still needs downloading [direct PDF — click and save]. Mirror search 2026-08-06: no direct link found on acceptable hosts (WCED ePortal excluded per SOURCES.md robots block; Scribd/Studypool are viewer pages, not PDFs). Direct-link search 2026-08-07: two ecexams.co.za leads (host still egress-blocked here — CONNECT 403 re-verified 2026-08-07, so neither could be fetched): (a) the 2017 Gr 11 directory exists — index page <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm>, sibling file sighted VERBATIM in search results: <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P2%20Memo.pdf> — the P1 analogue <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P1%20Memo.pdf> was pattern-guessed from that sibling and is now DEAD: 404/not-found confirmed by Ray's manual fetch 2026-08-08 — do not retry it. URL needed — manual fetch via the ecexams index page <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm> (this index page WAS sighted verbatim): open it and click the Maths P1 memo link if one is listed. SIBLING-PATTERN CAUTION (2026-08-08): the sighted P2 URL above shares the same short-name `Maths PN Memo.pdf` pattern as the dead P1 guess — treat it as suspect until actually opened; the ecexams URLs that ARE corroborated elsewhere in this file (2018 Gr 11 and 2019 Gr 11 directories, rows below) all use the long DBE filenames (e.g. `Mathematics P2 Grade 11 Nov 2018 Memo Eng & Afr.pdf`), so the 2017 short names may simply not be what the index links. No replacement URL is recorded because no 2017 Gr 11 filename pattern is confirmed working anywhere in this repo — derive the real one from the .htm index. No other row in this file uses the `2017_November_Gr_11_Exams/` pattern. (b) sighted VERBATIM but UNVERIFIED (host blocked): stanmorephysics combined QP+memo <https://stanmorephysics.com/wp-content/uploads/2020/07/Mathematics-P1-Nov-2017-and-memo.pdf> — CAUTION: grade not confirmable from snippets (may be the Gr 12 NSC Nov 2017 paper, not Gr 11) — check the cover on open before trusting it | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
-| [ ] | Mathematics Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2018/paper1.pdf` (16 pp scan: Eng pp 1-8 + Afr pp 9-16, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `5d85abb…` to the tracked QP). ALTERNATIVE direct memo PDF found by web search 2026-08-06 on the Eastern Cape DoE exam site (URL observed verbatim in search results; ecexams.co.za is egress-blocked here so unfetched-but-real) [direct PDF — click and save]: <https://www.ecexams.co.za/2018_November_Gr_11_Exams/Mathematics%20P1%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf> — or use the DBE memo URL at right. Link-type check 2026-08-07 (Ray reports the remaining links resolve to htm): the ecexams URL above IS a direct `.pdf` static-file path — the site's `.htm` pages are only its directory indexes; the host is still egress-blocked here (CONNECT 403 re-verified 2026-08-07) so it could not be fetched, but the sibling P2 memo in the same directory was sighted VERBATIM in search results 2026-08-07 (<https://www.ecexams.co.za/2018_November_Gr_11_Exams/Mathematics%20P2%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf>), corroborating directory and filename pattern. If the P1 link misbehaves in a browser (the raw `&` in the filename can trip some link handlers), open the index <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> and click "Mathematics P1 Grade 11 Nov 2018 Memo Eng & Afr" | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
-| [ ] | Physical Sciences Gr 11 P1 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `physical_sciences/grade11/2018/paper1.pdf` (15 pp + 2 data sheets, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Physical Sciences P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `84a2fb6…` to the tracked QP). Mirror search 2026-08-06: no direct link found — the same ecexams.co.za directory that holds the Maths Gr 11 Nov 2018 memo (`https://www.ecexams.co.za/2018_November_Gr_11_Exams/`) very likely holds it too, link label best guess "Physical Sciences P1 Grade 11 Nov 2018 Memo Eng & Afr.pdf" (NOT verified — site egress-blocked here); otherwise use the DBE memo URL at right [direct PDF — click and save]. Direct-link search 2026-08-07: still no verbatim sighting of the 2018 P1 file itself, but the filename pattern is now corroborated by a VERBATIM-sighted 2019 sibling (<https://ecexams.co.za/2019_November_Gr_11_Exams/Physical%20Sciences%20P2%20Grade%2011%20Nov%202019%20Memo%20Eng%20&%20Afr.pdf>), upgrading the best-guess URL to candidate — verify on open: <https://www.ecexams.co.za/2018_November_Gr_11_Exams/Physical%20Sciences%20P1%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf> (pattern-guess, NOT sighted; ecexams still CONNECT 403 here 2026-08-07). If it 404s, open the index <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> and click the Physical Sciences P1 memo link | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
+| [x] | Mathematics Gr 11 P1 Nov 2017 — DONE 2026-10-10: the official DBE marking guidelines were fetched from the memo URL at right (education.gov.za now reachable) and are tracked at `maths/grade11/2017/paper1_memo.pdf`; `paper.json` `memo_file` updated. History: QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2017/paper1.pdf` (7 pp scan, cover/mid/late pages verified; matches the paper.json). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2017 Eng.pdf`, byte-identical md5 `80f35be…` to the tracked QP) — the memo URL at right, labelled "Memo 1 (Afrikaans and English)" on Grade11Exams.aspx, is what still needs downloading [direct PDF — click and save]. Mirror search 2026-08-06: no direct link found on acceptable hosts (WCED ePortal excluded per SOURCES.md robots block; Scribd/Studypool are viewer pages, not PDFs). Direct-link search 2026-08-07: two ecexams.co.za leads (host still egress-blocked here — CONNECT 403 re-verified 2026-08-07, so neither could be fetched): (a) the 2017 Gr 11 directory exists — index page <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm>, sibling file sighted VERBATIM in search results: <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P2%20Memo.pdf> — the P1 analogue <https://www.ecexams.co.za/2017_November_Gr_11_Exams/Maths%20P1%20Memo.pdf> was pattern-guessed from that sibling and is now DEAD: 404/not-found confirmed by Ray's manual fetch 2026-08-08 — do not retry it. URL needed — manual fetch via the ecexams index page <https://www.ecexams.co.za/2017_November_Gr_11_Exams.htm> (this index page WAS sighted verbatim): open it and click the Maths P1 memo link if one is listed. SIBLING-PATTERN CAUTION (2026-08-08): the sighted P2 URL above shares the same short-name `Maths PN Memo.pdf` pattern as the dead P1 guess — treat it as suspect until actually opened; the ecexams URLs that ARE corroborated elsewhere in this file (2018 Gr 11 and 2019 Gr 11 directories, rows below) all use the long DBE filenames (e.g. `Mathematics P2 Grade 11 Nov 2018 Memo Eng & Afr.pdf`), so the 2017 short names may simply not be what the index links. No replacement URL is recorded because no 2017 Gr 11 filename pattern is confirmed working anywhere in this repo — derive the real one from the .htm index. No other row in this file uses the `2017_November_Gr_11_Exams/` pattern. (b) sighted VERBATIM but UNVERIFIED (host blocked): stanmorephysics combined QP+memo <https://stanmorephysics.com/wp-content/uploads/2020/07/Mathematics-P1-Nov-2017-and-memo.pdf> — CAUTION: grade not confirmable from snippets (may be the Gr 12 NSC Nov 2017 paper, not Gr 11) — check the cover on open before trusting it | <https://www.education.gov.za/LinkClick.aspx?fileticket=b5H9lDVw-o4%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=DDENSGJw7eo%3d&tabid=1869&portalid=0&mid=8659> |
+| [x] | Mathematics Gr 11 P1 Nov 2018 — DONE 2026-10-10: the official DBE marking guidelines were fetched from the memo URL at right (education.gov.za now reachable) and are tracked at `maths/grade11/2018/paper1_memo.pdf`; `paper.json` `memo_file` updated. History: QP supplied by owner upload 2026-08-06 batch 3, tracked at `maths/grade11/2018/paper1.pdf` (16 pp scan: Eng pp 1-8 + Afr pp 9-16, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Mathematics P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `5d85abb…` to the tracked QP). ALTERNATIVE direct memo PDF found by web search 2026-08-06 on the Eastern Cape DoE exam site (URL observed verbatim in search results; ecexams.co.za is egress-blocked here so unfetched-but-real) [direct PDF — click and save]: <https://www.ecexams.co.za/2018_November_Gr_11_Exams/Mathematics%20P1%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf> — or use the DBE memo URL at right. Link-type check 2026-08-07 (Ray reports the remaining links resolve to htm): the ecexams URL above IS a direct `.pdf` static-file path — the site's `.htm` pages are only its directory indexes; the host is still egress-blocked here (CONNECT 403 re-verified 2026-08-07) so it could not be fetched, but the sibling P2 memo in the same directory was sighted VERBATIM in search results 2026-08-07 (<https://www.ecexams.co.za/2018_November_Gr_11_Exams/Mathematics%20P2%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf>), corroborating directory and filename pattern. If the P1 link misbehaves in a browser (the raw `&` in the filename can trip some link handlers), open the index <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> and click "Mathematics P1 Grade 11 Nov 2018 Memo Eng & Afr" | <https://www.education.gov.za/LinkClick.aspx?fileticket=1KiiLnULnVY%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=_uRPiTTn5y4%3d&tabid=1869&portalid=0&mid=8659> |
+| [x] | Physical Sciences Gr 11 P1 Nov 2018 — DONE 2026-10-10: the official DBE marking guidelines were fetched from the memo URL at right (education.gov.za now reachable) and are tracked at `physical_sciences/grade11/2018/paper1_memo.pdf`; `paper.json` `memo_file` updated. History: QP supplied by owner upload 2026-08-06 batch 3, tracked at `physical_sciences/grade11/2018/paper1.pdf` (15 pp + 2 data sheets, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Physical Sciences P1 Grade 11 Nov 2018 Eng.pdf`, byte-identical md5 `84a2fb6…` to the tracked QP). Mirror search 2026-08-06: no direct link found — the same ecexams.co.za directory that holds the Maths Gr 11 Nov 2018 memo (`https://www.ecexams.co.za/2018_November_Gr_11_Exams/`) very likely holds it too, link label best guess "Physical Sciences P1 Grade 11 Nov 2018 Memo Eng & Afr.pdf" (NOT verified — site egress-blocked here); otherwise use the DBE memo URL at right [direct PDF — click and save]. Direct-link search 2026-08-07: still no verbatim sighting of the 2018 P1 file itself, but the filename pattern is now corroborated by a VERBATIM-sighted 2019 sibling (<https://ecexams.co.za/2019_November_Gr_11_Exams/Physical%20Sciences%20P2%20Grade%2011%20Nov%202019%20Memo%20Eng%20&%20Afr.pdf>), upgrading the best-guess URL to candidate — verify on open: <https://www.ecexams.co.za/2018_November_Gr_11_Exams/Physical%20Sciences%20P1%20Grade%2011%20Nov%202018%20Memo%20Eng%20&%20Afr.pdf> (pattern-guess, NOT sighted; ecexams still CONNECT 403 here 2026-08-07). If it 404s, open the index <https://www.ecexams.co.za/2018_November_Gr_11_Exams.htm> and click the Physical Sciences P1 memo link | <https://www.education.gov.za/LinkClick.aspx?fileticket=_BnHGkPLTbs%3d&tabid=1869&portalid=0&mid=8659> | <https://www.education.gov.za/LinkClick.aspx?fileticket=ip1nUg1Suw0%3d&tabid=1869&portalid=0&mid=8658> |
 | [ ] | Geography Gr 12 P2 Nov 2018 — QP supplied by owner upload 2026-08-06 batch 3, tracked at `geography/grade12/2018/paper2.pdf` (15 pp mapwork paper, 75 marks, verified). MEMO still missing: batch 4 (2026-08-06) re-supplied the QP again (`Geography P2 Nov 2018 Eng.pdf`, byte-identical md5 `553fb16…` to the tracked QP). Mirror search 2026-08-06: no direct link found on acceptable hosts — the DBE file is named "Geography P2 Nov 2018 FINAL Memo Eng.pdf" (per Yumpu/Scribd viewer copies); WCED ePortal hosts it at page <https://wcedeportal.co.za/eresource/115736> (link label "NSC NOV 2018 Geography Paper 2 MEMO") but WCED is excluded per SOURCES.md robots block, so use the DBE memo URL at right [direct PDF — click and save]. Direct-link search 2026-08-07: still no direct PDF sighted verbatim on sanctioned hosts (stanmorephysics's Geography Gr 12 mirror files only go back to Nov 2022). ecexams.co.za's Gr 12 NSC Nov 2018 index page DOES exist (sighted verbatim: <https://www.ecexams.co.za/2018_November_NSC_Exams.htm>) and by the site's convention (directory named after the index page + DBE original filename) would hold the memo at candidate — verify on open: <https://www.ecexams.co.za/2018_November_NSC_Exams/Geography%20P2%20Nov%202018%20FINAL%20Memo%20Eng.pdf> (pattern-guess, NOT sighted; ecexams egress-blocked here, CONNECT 403 re-verified 2026-08-07); if it 404s, open the .htm index and click the Geography P2 memo link — otherwise the DBE memo URL at right remains primary | <https://www.education.gov.za/LinkClick.aspx?fileticket=SyVEO7Woybo%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> | <https://www.education.gov.za/LinkClick.aspx?fileticket=uMTatGRjfvI%3d&tabid=2268&portalid=0&mid=8393&forcedownload=true> |
 
 ### School calendars

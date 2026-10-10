@@ -1,0 +1,444 @@
+{
+ "_comment": [
+  "Department of Basic Education Grade 10 Mathematics P1 (algebra, patterns, finance, functions and probability), November 2019 national common examination.",
+  "Questions and marking-guideline answers transcribed from the rendered pages of the official PDFs",
+  "(paper1.pdf, paper1_memo.pdf); the text layer does not hold usable equations. Notation:",
+  "^ for powers, sqrt() for roots, a/b for fractions, decimal commas as printed. memo_answer is the",
+  "guideline's final answer and memo_working its working (tick marks and mark descriptors left out).",
+  "The guideline is bilingual (English/Afrikaans); only the English is transcribed. Graphs and diagrams are described",
+  "in brackets in the question text. The information sheet printed with the paper is not transcribed.",
+  "Both PDFs were obtained from the Eastern Cape Department of Education exam archive (source_url); the",
+  "page headers read 'DBE/November 2019' and 'CAPS - Grade 10', i.e. this is the national DBE paper",
+  "written in the province. The question paper is a scan with no text layer.",
+  "FORMAT: 100 marks, 2 hours, seven compulsory questions (Q1 13, Q2 19, Q3 16, Q4 10, Q5 14, Q6 16, Q7 12)."
+ ],
+ "paper_id": "ecdoe_maths_g10_p1_2019_nov",
+ "source": "Eastern Cape Department of Education",
+ "source_url": "https://ecexams.co.za/2019_November_Gr_10_Exams.htm",
+ "paper_download_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/Maths%20Gr%2010%20P1%20QP.zip",
+ "memo_download_url": "https://ecexams.co.za/2019_November_Gr_10_Exams/Mathematics%20P1%20Grade%2010%20Nov%202019%20Memo%20Afr%20&%20Eng.pdf",
+ "paper_file": "paper1.pdf",
+ "memo_file": "paper1_memo.pdf",
+ "copyright": "© Eastern Cape Department of Education, 2019. Reproduced for educational use with attribution.",
+ "subject": "Maths",
+ "grade": 10,
+ "paper": "P1",
+ "session": "November 2019",
+ "language": "English",
+ "total_marks": 100,
+ "time_hours": 2,
+ "questions": [
+  {
+   "ref": "Q1.1.1",
+   "context": "QUESTION 1 | 1.1 Factorise the following expressions fully:",
+   "text": "3y^2 + y",
+   "marks": 1,
+   "topic": "Algebraic expressions: factorisation",
+   "solution_method": "common_factor",
+   "memo_answer": "y(3y + 1)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.2",
+   "text": "x^2 - 10x - 24",
+   "marks": 2,
+   "topic": "Algebraic expressions: factorisation",
+   "solution_method": "factorise_trinomial",
+   "memo_answer": "(x - 12)(x + 2)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.1.3",
+   "text": "9x^2 - y^2 + 10y - 25",
+   "marks": 3,
+   "topic": "Algebraic expressions: factorisation",
+   "solution_method": "grouping_difference_of_squares",
+   "memo_answer": "(3x + y - 5)(3x - y + 5)",
+   "memo_working": "= 9x^2 - (y^2 - 10y + 25) = 9x^2 - (y - 5)^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.1",
+   "context": "1.2 Simplify the following expressions fully:",
+   "text": "(4 + 1/x)(2 - 3/x)",
+   "marks": 2,
+   "topic": "Algebraic expressions: products and simplifying",
+   "solution_method": "expand_brackets",
+   "memo_answer": "8 - 10/x - 3/x^2",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.2",
+   "text": "(5x - 5)/(5x)",
+   "marks": 2,
+   "topic": "Algebraic expressions: algebraic fractions",
+   "solution_method": "simplify_algebraic_fraction",
+   "memo_answer": "(x - 1)/x (OR 1 - 1/x)",
+   "memo_working": "5(x - 1)/(5x) OR 5x/(5x) - 5/(5x)",
+   "checkable": true
+  },
+  {
+   "ref": "Q1.2.3",
+   "text": "(3^(x + 1) + 3^x)/(27.3^(-1 + x))",
+   "marks": 3,
+   "topic": "Exponents",
+   "solution_method": "exponent_common_factor",
+   "memo_answer": "4/9",
+   "memo_working": "= (3^x.3 + 3^x)/(27.3^(-1).3^x) = 3^x(3 + 1)/(3^x.27/3)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.1",
+   "context": "QUESTION 2 | 2.1 Solve for x:",
+   "text": "2x^2 - 10x = 0",
+   "marks": 2,
+   "topic": "Equations: linear, quadratic, literal and exponential",
+   "solution_method": "common_factor_equation",
+   "memo_answer": "x = 0 or x = 5",
+   "memo_working": "2x(x - 5) = 0",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.2",
+   "text": "px - kx = k - p",
+   "marks": 3,
+   "topic": "Equations: linear, quadratic, literal and exponential",
+   "solution_method": "literal_equation",
+   "memo_answer": "x = -1",
+   "memo_working": "x(p - k) = k - p; x = -(k - p)/(k - p)",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.1.3",
+   "text": "2^(x/3) = 1/128",
+   "marks": 3,
+   "topic": "Equations: linear, quadratic, literal and exponential",
+   "solution_method": "exponential_equation",
+   "memo_answer": "x = -21",
+   "memo_working": "2^(x/3) = 2^(-7); x/3 = -7",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.1",
+   "context": "2.2 Given: (x + 5)/2 > -2",
+   "text": "Solve for x.",
+   "marks": 2,
+   "topic": "Linear inequalities",
+   "solution_method": "linear_inequality",
+   "memo_answer": "x > -9",
+   "memo_working": "x + 5 > -4",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.2.2",
+   "text": "If x ∈ R, represent the solution to QUESTION 2.2.1 on a number line.",
+   "marks": 1,
+   "topic": "Linear inequalities",
+   "solution_method": "number_line",
+   "memo_answer": "Number line with an open circle at -9 and an arrow to the right.",
+   "checkable": false
+  },
+  {
+   "ref": "Q2.3",
+   "text": "Solve simultaneously for x and y if: x(x - 3) + y(3 - x) = 0",
+   "marks": 4,
+   "topic": "Algebraic expressions: factorisation",
+   "solution_method": "factorise_equation",
+   "memo_answer": "x = 3 or y = x",
+   "memo_working": "x(x - 3) - y(x - 3) = 0; (x - 3)(x - y) = 0",
+   "memo_note": "Only one equation is printed; the guideline solves it by factorising.",
+   "checkable": true
+  },
+  {
+   "ref": "Q2.4",
+   "text": "During a fundraising event, only R10, R20 and R50 notes were collected. In the final count, there were twice as many R20 notes as there were R50 notes, and 15 more R10 notes than R50 notes. If R10 150 was collected in total, determine the number of R10, R20 and R50 notes that were collected.",
+   "marks": 4,
+   "topic": "Equations: simultaneous linear equations",
+   "solution_method": "word_problem_linear",
+   "memo_answer": "R10 notes = 115 ; R20 notes = 200 ; R50 notes = 100",
+   "memo_working": "let the number of R50 notes be x: R10 notes x + 15, R20 notes 2x; 10(x + 15) + 20(2x) + 50x = 10 150; 100x = 10 000; x = 100",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.1",
+   "context": "QUESTION 3 | 3.1 Given the linear pattern: 2x + 1 ; 3x + 3 ; 4x + 5 ; ...",
+   "text": "Write down the next term in the pattern.",
+   "marks": 1,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "extend_pattern",
+   "memo_answer": "5x + 7",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.2",
+   "text": "Write, in terms of x, the formula for Tn, the general term of the pattern.",
+   "marks": 3,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_general_term",
+   "memo_answer": "Tn = xn + 2n + x - 1",
+   "memo_working": "Tn = mn + c with m = x + 2; 2x + 1 = x + 2 + c gives c = x - 1; Tn = (x + 2)n + (x - 1)",
+   "memo_note": "The guideline's working uses the second term (4x + 5 = 3x + 6 + q) for the same constant q = x - 1.",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.3",
+   "text": "If the value of the 13th term of the pattern is 95, calculate the value of x.",
+   "marks": 2,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "substitute_and_solve",
+   "memo_answer": "x = 5",
+   "memo_working": "95 = 13x + 2(13) + x - 1; 14x = 70",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.1.4",
+   "text": "If x = 5, determine the largest value of n for which Tn < 158.",
+   "marks": 3,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_inequality_term",
+   "memo_answer": "n = 21",
+   "memo_working": "Tn = 5n + 2n + 5 - 1 = 7n + 4 < 158; 7n < 154; n < 22",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2.1",
+   "context": "3.2 An air-traffic control tower is constructed at an airport. The front view of the tower is shown in the diagram below. AB, the first horizontal support from the bottom, is 7,9 m long and is secured to the ground. Additional horizontal supports are secured parallel to AB and are 50 cm apart. Each additional support above is 10 cm shorter than the one below it. CD is the 45th horizontal support. AD and BC are lateral supports on which the horizontal supports are secured. [Diagram: trapezium ABCD with horizontal rungs; height H marked.]",
+   "text": "Calculate the height (H), in cm, of the tower.",
+   "marks": 1,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "pattern_in_context",
+   "memo_answer": "2 200 cm",
+   "memo_working": "H = 50 × 44",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2.2",
+   "text": "Calculate the length, in metres, of the 45th horizontal support.",
+   "marks": 3,
+   "topic": "Number patterns: linear sequences",
+   "solution_method": "linear_general_term",
+   "memo_answer": "3,5 m",
+   "memo_working": "Tn = -0,1n + c; 7,9 = -0,1 + c; c = 8; T45 = -0,1(45) + 8",
+   "checkable": true
+  },
+  {
+   "ref": "Q3.2.3",
+   "text": "Calculate the area, in square metres, enclosed by supports AB, BC, CD and AD.",
+   "marks": 3,
+   "topic": "Measurement: area, volume and surface area",
+   "solution_method": "area_of_trapezium",
+   "memo_answer": "125,4 m^2",
+   "memo_working": "area of trapezium = 1/2(AB + CD)H = 1/2(3,5 + 7,9)(22)",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.1",
+   "context": "QUESTION 4 | 4.1 Peter wants to buy a computer costing R7 950, on a hire-purchase agreement. The conditions of the agreement are: • Peter must pay a deposit of 25% of the purchase price. • Interest is charged at 15% per annum simple interest on the balance. • He must also pay a compulsory monthly insurance premium of R70,75. • The balance is to be settled in monthly instalments.",
+   "text": "Calculate the balance after Peter pays the deposit.",
+   "marks": 2,
+   "topic": "Finance and growth",
+   "solution_method": "percentage_of_quantity",
+   "memo_answer": "R5 962,50",
+   "memo_working": "deposit = 25/100 × R7 950 = R1 987,50; R7 950 - R1 987,50 (OR 75/100 × R7 950)",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.1.2",
+   "text": "If the balance is to be paid off in 24 months, calculate Peter's total monthly instalment.",
+   "marks": 4,
+   "topic": "Finance and growth",
+   "solution_method": "hire_purchase_instalment",
+   "memo_answer": "R393,72",
+   "memo_working": "A = P(1 + in) = 5 962,50(1 + 0,15 × 2) = R7 751,25; monthly payment = 7 751,25/24 + 70,75",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.1",
+   "context": "4.2 The table below shows the cost of one British pound and one US dollar in South African rand. [England: Pound (£), R23,43; USA: Dollar ($), R14,58]",
+   "text": "It costs £55 to fill a car with 80 litres of petrol in England. How much will it cost to fill up with the same quantity of petrol if you were paying in South African rand?",
+   "marks": 1,
+   "topic": "Finance and growth",
+   "solution_method": "exchange_rate_conversion",
+   "memo_answer": "R1 288,65",
+   "memo_working": "£55 × R23,43",
+   "checkable": true
+  },
+  {
+   "ref": "Q4.2.2",
+   "text": "An English visitor to the USA notices a car on sale for $5 500. A similar vehicle in England costs £3 500. In which country is the car more expensive? Justify your answer with relevant calculations.",
+   "marks": 3,
+   "topic": "Finance and growth",
+   "solution_method": "exchange_rate_comparison",
+   "memo_answer": "The car is more expensive in England.",
+   "memo_working": "$5 500 = 5 500 × 14,58/23,43 = £3 422,54 < £3 500. OR £3 500 = 3 500 × 23,43/14,58 = $5 624,49 > $5 500",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.1",
+   "context": "QUESTION 5 | Sketched below are the graphs of f(x) = k/x + q and g(x) = x + 2. • The equation of the horizontal asymptote of f is y = 1. • Graph g cuts the x-axis at B. • Graphs f and g intersect at A and B. [Graph: hyperbola f with branches in the first quadrant and around B in the third quadrant; straight line g through B on the negative x-axis and A in the first quadrant.] 5.1 Write down the:",
+   "text": "Value of q",
+   "marks": 1,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "read_asymptote",
+   "memo_answer": "q = 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.1.2",
+   "text": "Domain of f",
+   "marks": 2,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "domain_of_hyperbola",
+   "memo_answer": "x ∈ R ; x ≠ 0 (OR x ∈ (-∞ ; 0) ∪ (0 ; ∞))",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.1",
+   "context": "5.2 Determine the:",
+   "text": "Equation of the line of symmetry of f that has a negative gradient",
+   "marks": 2,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "axis_of_symmetry_hyperbola",
+   "memo_answer": "y = -x + 1",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.2",
+   "text": "Equation of f",
+   "marks": 4,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "hyperbola_equation",
+   "memo_answer": "f(x) = 2/x + 1",
+   "memo_working": "B: x + 2 = 0, x = -2; 0 = k/(-2) + 1; k = 2",
+   "checkable": true
+  },
+  {
+   "ref": "Q5.2.3",
+   "text": "Coordinates of A, a point of intersection of f and g",
+   "marks": 5,
+   "topic": "Functions: the hyperbola and exponential graphs",
+   "solution_method": "intersection_line_hyperbola",
+   "memo_answer": "A(1 ; 3)",
+   "memo_working": "2/x + 1 = x + 2; 2 + x = x^2 + 2x; x^2 + x - 2 = 0; (x + 2)(x - 1) = 0; x = -2 or x = 1; at A x = 1, y = 3",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1.1",
+   "context": "QUESTION 6 | The graphs defined as g(x) = ax^2 + q and f(x) = k^x - 4 both pass through (-2 ; 0) on the x-axis. The y-intercept of g is (0 ; -5). 6.1 Write down the:",
+   "text": "Equation of the asymptote of f",
+   "marks": 1,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "read_asymptote",
+   "memo_answer": "y = -4",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1.2",
+   "text": "Value of q",
+   "marks": 1,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "read_parameter",
+   "memo_answer": "q = -5",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.1.3",
+   "text": "Coordinates of the other x-intercept of g",
+   "marks": 1,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "symmetry_of_parabola",
+   "memo_answer": "(2 ; 0)",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.2.1",
+   "context": "6.2 Determine the equation of:",
+   "text": "g",
+   "marks": 2,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "parabola_equation",
+   "memo_answer": "g(x) = (5/4)x^2 - 5",
+   "memo_working": "0 = a(-2)^2 - 5; a = 5/4",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.2.2",
+   "text": "f",
+   "marks": 3,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "exponential_equation_from_points",
+   "memo_answer": "f(x) = (1/2)^x - 4",
+   "memo_working": "0 = k^(-2) - 4; 1/k^2 = 4; k^2 = 1/4; k = 1/2",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.3",
+   "text": "Calculate the y-intercept of f.",
+   "marks": 2,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "intercepts",
+   "memo_answer": "y = -3",
+   "memo_working": "y = (1/2)^0 - 4",
+   "checkable": true
+  },
+  {
+   "ref": "Q6.4",
+   "text": "On the same system of axes, sketch the graphs of g and f. Show ALL the intercepts with the axes and asymptote(s).",
+   "marks": 6,
+   "topic": "Functions: parabola, hyperbola, exponential and straight line",
+   "solution_method": "sketch_graph",
+   "memo_answer": "g: parabola opening upwards with x-intercepts (-2 ; 0) and (2 ; 0) and turning point (0 ; -5). f: decreasing exponential curve through (-2 ; 0) and (0 ; -3), approaching the dashed asymptote y = -4 (marks: f asymptote, y-intercept, shape; g x-intercepts, turning point, shape).",
+   "checkable": false
+  },
+  {
+   "ref": "Q7.1.1",
+   "context": "QUESTION 7 | 7.1 For two events A and B, it is given that P(A) = 0,30 ; P(B) = 0,65 and P(A or B) = 0,74.",
+   "text": "Calculate P(A and B).",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "addition_rule",
+   "memo_answer": "P(A and B) = 0,21",
+   "memo_working": "0,74 = 0,30 + 0,65 - P(A and B)",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.1.2",
+   "text": "Hence, represent the above information in a Venn diagram.",
+   "marks": 4,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "draw_venn_diagram",
+   "memo_answer": "Venn diagram: A only 0,09; A and B 0,21; B only 0,44; outside 0,26",
+   "checkable": false
+  },
+  {
+   "ref": "Q7.1.3",
+   "text": "Are the events A and B mutually exclusive? Give a reason.",
+   "marks": 2,
+   "topic": "Probability: Venn diagrams",
+   "solution_method": "motivate_answer",
+   "memo_answer": "No; P(A and B) ≠ 0 (there is an intersection)",
+   "checkable": false
+  },
+  {
+   "ref": "Q7.2.1",
+   "context": "7.2 A circular spinner is divided into 12 equal sectors. Each sector is numbered from 1 to 12. When spun, the spinner has an equal chance of stopping at any of the numbers 1 to 12.",
+   "text": "For any random spin, what is the probability that the spinner will stop at a square number?",
+   "marks": 1,
+   "topic": "Probability",
+   "solution_method": "theoretical_probability",
+   "memo_answer": "1/4",
+   "memo_working": "n(S) = 12; square numbers 1 ; 4 ; 9; 3/12",
+   "checkable": true
+  },
+  {
+   "ref": "Q7.2.2",
+   "text": "The number that the spinner stopped at after the first spin was recorded. The number that the spinner stopped at after the second spin was also recorded. Calculate the probability that the sum of the two numbers at which the spinner stopped is greater than 2.",
+   "marks": 3,
+   "topic": "Probability",
+   "solution_method": "complement_probability",
+   "memo_answer": "143/144 ≈ 0,99",
+   "memo_working": "P(sum = 2) = 1/144; P(sum > 2) = 1 - 1/144",
+   "checkable": true
+  }
+ ]
+}
