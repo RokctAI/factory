@@ -1,0 +1,1 @@
+Today a Grade 6 class in Polokwane draws lines on oranges with a koki pen to turn them into little globes. We learn what lines of latitude and longitude are, how they are measured in degrees, and the special lines with names: the equator, the tropics, the polar circles and the Greenwich Meridian.

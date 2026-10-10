@@ -1,0 +1,1 @@
+Today a Grade 6 class from Lephalale climbs the wooden stairs to the flat top of Mapungubwe Hill with a park guide. We learn why Mapungubwe is called the first state in southern Africa, how its king was seen as a sacred leader with special links to the ancestors and the rain, why the royal family lived on the hill, and why the stone walls there were something new.

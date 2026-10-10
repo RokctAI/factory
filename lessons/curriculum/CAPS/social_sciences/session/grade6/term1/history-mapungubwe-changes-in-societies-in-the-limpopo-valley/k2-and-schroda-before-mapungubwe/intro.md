@@ -1,0 +1,1 @@
+Today a Grade 6 class in Makhado digs through two trays of layered sand, labelled Schroda and K2, looking for clues hidden by their teacher. We learn about these two large settlements in the Limpopo Valley that came before Mapungubwe: who lived there, roughly when, what archaeologists found there, and what the finds tell us about trade, wealth and change.

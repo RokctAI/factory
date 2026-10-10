@@ -1,0 +1,1 @@
+Today a Grade 6 class in Kimberley starts the year on the netball court, where a big compass rose has been painted on the ground. We look at what Grade 6 Geography covers this year, and we revise the globe, the equator, the poles, the four main compass points and the eight directions from a fixed point.

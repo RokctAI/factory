@@ -1,0 +1,1 @@
+Today a Grade 6 class in Bloemfontein goes on a treasure hunt across a big wall map of the world, using only clues written in degrees. We learn how latitude and longitude appear on a flat map, how to read the position of a city in degrees, and how to find a country or city when we are given its latitude and longitude.

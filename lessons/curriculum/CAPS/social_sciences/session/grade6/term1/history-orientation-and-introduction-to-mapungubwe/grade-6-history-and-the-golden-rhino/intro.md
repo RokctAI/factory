@@ -1,0 +1,1 @@
+Today a Grade 6 class from Tshwane visits the Mapungubwe gallery at a university museum in Pretoria, where the famous golden rhino is kept. We look at what Grade 6 History covers this year and how it is assessed, revise what we learnt about Mapungubwe's golden objects in Grade 5, and find out how historians and archaeologists know about a kingdom that left no written records.

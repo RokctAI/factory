@@ -1,0 +1,1 @@
+Today a Grade 6 class in Mokopane makes its own golden rhinos from cardboard and kitchen foil, and builds a model of Mapungubwe town in three layers. We learn why Mapungubwe is seen as the first town in southern Africa, how its people were divided into distinct social classes, and why the golden rhino and other golden objects were symbols of royal power.
