@@ -1,0 +1,1 @@
+Today a Grade 6 class in Lephalale in Limpopo, a town next to a huge coal mine and one of the biggest power stations in the world, looks closely at a lump of coal. They find the print of an ancient leaf pressed into it. We learn that coal, oil and natural gas are fossil fuels, formed over millions of years from dead plants and animals, and that they are non-renewable.

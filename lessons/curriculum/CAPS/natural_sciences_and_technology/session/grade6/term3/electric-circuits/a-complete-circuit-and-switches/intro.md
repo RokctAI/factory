@@ -1,0 +1,1 @@
+Today a Grade 6 class in Middelburg in Mpumalanga tries to light a bulb with one cell and some wires, and finds that most of their first tries fail. Then they hunt for faults, and make their own switch from a paper clip and two drawing pins. We learn that a circuit must be a complete, unbroken pathway, and that a switch breaks or completes the circuit.

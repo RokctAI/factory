@@ -1,0 +1,1 @@
+Today a Grade 6 class from Makhanda in the Eastern Cape visits the science festival held in their town every year, and then builds their own models: a lighthouse with a working light, a steady-hand buzzer game, and a small cart driven by a motor. We learn how electric circuits are used in models and toys, and how to design, make and evaluate a model with a circuit.
