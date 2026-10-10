@@ -1,0 +1,1 @@
+Today a Grade 5 class in Langa, Cape Town, enters a competition to design a safe, comfortable home for a family who lost their shack in a winter fire. They must choose a material for every part, from the walls to the floor tiles to the curtains. We learn why processed materials are so useful: they can be strong, durable, waterproof, fire resistant, colourful or textured.

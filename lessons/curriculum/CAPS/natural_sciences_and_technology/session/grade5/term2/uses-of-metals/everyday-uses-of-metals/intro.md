@@ -1,0 +1,1 @@
+Today a Grade 5 class in Welkom visits a scrap metal recycling yard, piled high with old cars, roofing sheets, pots, bicycles, wire and cooldrink cans. They sort the scrap by what each object was used for. We learn how metals are used for coins, wire, jewellery, furniture, buildings, bridges, cars, utensils and roofs, and how the properties of each metal suit its use.
