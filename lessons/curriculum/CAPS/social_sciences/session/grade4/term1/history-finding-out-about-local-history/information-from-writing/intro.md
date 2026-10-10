@@ -1,0 +1,1 @@
+Today we visit a primary school in Makhanda, in the Eastern Cape, that is about to celebrate its hundredth birthday. The Grade 4 class finds an old logbook, a register, newspaper cuttings and letters in the office cupboard, and reads the date on the foundation stone. We learn which kinds of writing give us information about the past, and how to read a written source carefully.

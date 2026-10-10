@@ -1,0 +1,1 @@
+Today a Grade 4 class in Upington, in the Northern Cape, starts its local history project. Their teacher explains how to do a project step by step, and the learners choose topics about the history of their town on the Orange River. We learn what a project is, and the steps to follow to plan, collect, put together and hand in a good project.

@@ -1,0 +1,1 @@
+Today we visit Mulalo, a Grade 4 learner in a village near Thohoyandou, in Limpopo. For her local history project, she interviews her grandfather about how the village has changed since he was a boy. We learn how stories and interviews give us information about the past, and how to plan, do and use an interview.

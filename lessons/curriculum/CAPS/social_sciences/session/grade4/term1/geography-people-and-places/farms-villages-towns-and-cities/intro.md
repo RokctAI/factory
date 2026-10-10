@@ -1,0 +1,1 @@
+Today we take a trip from a farm to a city. Lerato lives on a farm near Bethlehem in the Free State, and one Saturday her family drives all the way to Bloemfontein. Along the road we stop at a farm, a village, a town and a city, and we learn how these four places to live are different.

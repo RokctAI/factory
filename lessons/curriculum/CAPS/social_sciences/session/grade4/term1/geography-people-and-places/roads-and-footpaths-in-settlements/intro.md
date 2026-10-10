@@ -1,0 +1,1 @@
+Today we follow Sipho, a Grade 4 learner in Khayelitsha, near Cape Town, on his way to school. He walks along a footpath across an open field, then along busy streets, past the main road with its taxis and buses, and he can hear the traffic on the N2 highway. We learn how roads and footpaths are used in settlements, and how to use them safely.

@@ -1,0 +1,1 @@
+Today a Grade 4 class in Kimberley visits the Big Hole museum. They study old photographs of the diamond diggings, a painting and a rock engraving made by San people long ago. We learn the kinds of pictures that give information about the past, how to read a picture like a detective, and how to compare pictures of then and now.

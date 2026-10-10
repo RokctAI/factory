@@ -1,0 +1,1 @@
+Today we are in Mahikeng, in North West. Kagiso's cousin is visiting from Rustenburg and wants to walk to the library on her own. Kagiso must explain the way clearly. We learn how to give directions from one place to another using left and right, straight on, landmarks and the names of roads.

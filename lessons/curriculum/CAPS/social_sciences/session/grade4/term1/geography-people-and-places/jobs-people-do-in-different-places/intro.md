@@ -1,0 +1,1 @@
+Today is career day at a primary school in Polokwane, in Limpopo. Parents come to the Grade 4 class to talk about their jobs: a farmer, a nurse, a taxi driver, a miner and a factory worker. We learn which jobs people do on farms, in villages, in towns and in cities, and why the place where people live shapes the work they do.

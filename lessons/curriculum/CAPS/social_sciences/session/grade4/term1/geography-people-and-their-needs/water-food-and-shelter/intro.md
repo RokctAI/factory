@@ -1,0 +1,1 @@
+Today we visit a village near Giyani in Limpopo, where Tsakani lives with her grandmother. We follow them through a day: fetching water, growing and cooking food, and keeping their home strong. We learn about three things that all people need, water, food and shelter, and the different ways people in different places meet these needs.

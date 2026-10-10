@@ -1,0 +1,1 @@
+Today we are back with Neo and his Grade 4 class in Upington. The learners bring the information they have found to class: photographs, printouts, interview notes and drawings of objects. We learn how to bring information to class, how to organise and classify it into groups and in time order, and how to make good notes to continue building the project.
