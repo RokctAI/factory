@@ -1,0 +1,1 @@
+Today a Grade 6 class in Polokwane keeps a food diary for a week, writing down everything they eat and drink. Then they compare their diaries on a big chart and draw their meals on paper plates. We learn that a diet is the selection of foods we eat every day, and that a balanced diet has all four nutrient groups, as well as water and fibre, in the right amounts.

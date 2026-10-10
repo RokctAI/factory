@@ -1,0 +1,1 @@
+Today a Grade 6 class in Gqeberha sets up a fish tank with water plants for their classroom. On a sunny morning they spot tiny bubbles rising from the leaves of the pondweed. We learn that plants give off oxygen when they make food, that animals and people breathe in that oxygen and breathe out carbon dioxide, and that plants take in carbon dioxide again.
