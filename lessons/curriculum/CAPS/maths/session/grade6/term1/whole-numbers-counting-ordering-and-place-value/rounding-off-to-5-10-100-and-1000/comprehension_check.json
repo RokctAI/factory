@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Round 54 687 to the nearest 10, 100 and 1 000.",
+      "expected_answer": "To the nearest 10 it is 54 690, because the units digit is 7. To the nearest 100 it is 54 700, because the tens digit is 8. To the nearest 1 000 it is 55 000, because the hundreds digit is 6."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why 1 449 rounded to the nearest 1 000 is 1 000 and not 2 000.",
+      "expected_answer": "You look only at the hundreds digit, which is 4. That is less than 5, so you round down to 1 000. 1 449 is 449 away from 1 000 but 551 away from 2 000, so 1 000 is closer."
+    },
+    {
+      "id": "cc3",
+      "question": "Estimate 54 687 + 38 214 by rounding to the nearest 1 000, and say how it helps.",
+      "expected_answer": "55 000 + 38 000 = 93 000. The exact answer, 92 901, is close to 93 000, so the estimate shows the exact answer is sensible."
+    }
+  ]
+}

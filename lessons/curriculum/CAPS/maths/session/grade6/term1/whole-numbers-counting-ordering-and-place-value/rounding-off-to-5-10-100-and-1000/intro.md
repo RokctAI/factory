@@ -1,0 +1,1 @@
+Today we learn to round off whole numbers to the nearest 5, 10, 100 and 1 000. We look at a crowd of 54 687 at a rugby match in Durban, a car that has driven 1 248 350 km and prices at a spaza shop, so that we can round quickly and correctly and use rounding to estimate answers.

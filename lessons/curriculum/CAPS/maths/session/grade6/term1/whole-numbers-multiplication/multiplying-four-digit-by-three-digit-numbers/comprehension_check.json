@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Work out 1 245 × 236 by breaking up 236.",
+      "expected_answer": "1 245 × 6 = 7 470; 1 245 × 30 = 37 350; 1 245 × 200 = 249 000. Adding: 7 470 + 37 350 + 249 000 = 293 820."
+    },
+    {
+      "id": "cc2",
+      "question": "Explain why the tens row of 3 408 × 125 starts with a zero.",
+      "expected_answer": "The 2 in 125 stands for 20, so we need 3 408 × 20, not 3 408 × 2. The zero moves every digit one place left, which multiplies by 10, so the row is 68 160."
+    },
+    {
+      "id": "cc3",
+      "question": "Estimate 2 006 × 304, then work out the exact answer.",
+      "expected_answer": "Estimate: 2 000 × 300 = 600 000. Exact: 2 006 × 4 = 8 024 and 2 006 × 300 = 601 800, so the answer is 609 824, which is close to the estimate."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Today we revise all the Term 1 topics. A school fun fair in Kimberley raised R245 368 this year, welcomed thousands of visitors, rented out stalls and sold boerewors rolls in trays, so that we can practise place value, primes and rounding, adding and subtracting, multiplying and dividing, and the checks that go with each.

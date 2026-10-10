@@ -1,0 +1,1 @@
+Today we learn to compare, order and represent numbers up to nine digits. Three towns in the Eastern Cape plan their budgets for the year, a cellphone company counts its text messages, and we place big numbers on a number line, so that we can say which number is bigger, put lists in order and find where a number sits between two others.

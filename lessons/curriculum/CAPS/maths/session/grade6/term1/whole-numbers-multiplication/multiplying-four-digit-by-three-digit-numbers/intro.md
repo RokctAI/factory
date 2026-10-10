@@ -1,0 +1,1 @@
+Today we learn to multiply a four-digit number by a three-digit number. A shoe factory in Pinetown makes 1 245 pairs of school shoes a day, a printer packs exercise books in boxes of 125, and a farmer plants rows of seedlings, so that we can break the multiplication into three smaller ones, set it out in columns and check that the answer is sensible.

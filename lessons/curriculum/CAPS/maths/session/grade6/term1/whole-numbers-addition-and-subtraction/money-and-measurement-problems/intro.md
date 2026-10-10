@@ -1,0 +1,1 @@
+Today we solve addition and subtraction problems about money and measurement. A family in Mthatha plans a holiday on a budget of R25 000, they drive 1 268 km to Cape Town, and a farmer sells part of a maize harvest, so that we can choose the right operation, set out our working and check that our answers make sense.

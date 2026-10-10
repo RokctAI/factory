@@ -1,0 +1,1 @@
+Today we learn to divide a four-digit number by a three-digit number using long division. A concert hall in East London has 8 432 seats in equal rows, an egg farm packs 9 375 eggs into boxes, and a printer shares 5 000 pages among workers, so that we can estimate, divide step by step, deal with remainders and check by multiplying.

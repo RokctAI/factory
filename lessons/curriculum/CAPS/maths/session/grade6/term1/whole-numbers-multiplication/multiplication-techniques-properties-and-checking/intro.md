@@ -1,0 +1,1 @@
+Today we learn smart ways to multiply and to check our answers. A bakery in Mbombela packs rolls in trays of 25 and 48, a teacher orders exercise books in boxes, and we use the properties of multiplication, including the special number 1, so that we can multiply quickly in our heads and always check with a second method.

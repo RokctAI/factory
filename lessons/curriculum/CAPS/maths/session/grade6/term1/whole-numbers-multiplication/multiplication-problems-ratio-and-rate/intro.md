@@ -1,0 +1,1 @@
+Today we solve multiplication problems about money, measurement, ratio and rate. A school in Rustenburg buys tablets for its learners, a builder mixes cement and sand, and a delivery van drives at a steady speed, so that we can multiply to find totals, use ratios to keep mixtures the same and use rates to compare different kinds of amounts.

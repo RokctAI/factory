@@ -1,0 +1,1 @@
+Today we learn different ways to divide and to check our answers. A recycling club in eMalahleni packs cans into bags of 12, a soccer academy shares out water and kit, and we break numbers into friendly parts, take away big chunks and multiply back, so that we can divide in more than one way and always know our answer is right.

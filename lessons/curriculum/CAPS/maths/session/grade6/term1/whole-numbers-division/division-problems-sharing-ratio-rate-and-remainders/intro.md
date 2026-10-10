@@ -1,0 +1,1 @@
+Today we solve division problems about sharing, grouping, money, measurement, ratio and rate. A school in Polokwane hires buses for 1 350 learners, friends share a prize in a ratio, and a family car uses petrol at a steady rate, so that we can choose division, decide what to do with a remainder and use division to find unit prices and rates.
