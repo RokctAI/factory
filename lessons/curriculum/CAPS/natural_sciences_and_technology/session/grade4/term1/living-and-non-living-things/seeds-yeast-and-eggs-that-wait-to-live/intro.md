@@ -1,0 +1,1 @@
+Today we visit Gogo's kitchen in Gqeberha, where three things on the shelf look dead but are not. A dry sugar bean, a packet of dried yeast and an egg from her hens all seem lifeless. We find out that each one is only resting, and we learn what water, warmth and food do to wake each one up.

@@ -1,0 +1,1 @@
+Today we revise all of Term 1, Life and Living. A Grade 4 class in East London sets up five stations in the school hall: living and non-living things, the parts of plants and animals, what plants need to grow, habitats, and animal shelters. We visit each station, remind ourselves of the big ideas, and fix the mistakes learners often make.

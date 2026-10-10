@@ -1,0 +1,1 @@
+Today we visit a school garden in Graaff-Reinet in the Karoo, where the gardener grows new plants without buying any. She plants pieces of stem called cuttings, and she sows seeds she saved last year. We learn how a new plant grows from a cutting and from a seed, and we test what seeds need to germinate: water and warmth.

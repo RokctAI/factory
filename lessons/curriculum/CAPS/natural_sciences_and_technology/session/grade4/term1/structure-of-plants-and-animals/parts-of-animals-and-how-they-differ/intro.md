@@ -1,0 +1,1 @@
+Today we spend a morning at the Johannesburg Zoo. We look at a lion, an elephant, a zebra, an ostrich, a crocodile, a tortoise, a frog and a beetle. We learn the basic parts most animals share: a head, a body, a tail, limbs and sense organs. Then we see how different these parts can be in size and shape, and we compare the coverings on their bodies.

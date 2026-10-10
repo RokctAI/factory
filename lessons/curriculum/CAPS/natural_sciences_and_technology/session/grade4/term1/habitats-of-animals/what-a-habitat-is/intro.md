@@ -1,0 +1,1 @@
+Today a Grade 4 class in Bloemfontein paints a big mural of South Africa on their classroom wall. They divide it into four habitats: grassland, forest, river and sea. We learn what a habitat is and visit each one to see which plants and animals live there and why they suit that place.

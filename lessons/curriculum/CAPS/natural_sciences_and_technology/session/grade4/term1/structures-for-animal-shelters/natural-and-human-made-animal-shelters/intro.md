@@ -1,0 +1,1 @@
+Today we visit a farm near Upington in the Northern Cape. A giant sociable weaver nest hangs in a camel thorn tree, a tortoise walks past, owls live in a hollow tree and paper wasps buzz under the roof. The farmer keeps a dog in a kennel, cattle in a kraal and horses in a stable. We learn about natural animal shelters and human-made animal shelters, and why animals need them.

@@ -1,0 +1,1 @@
+Today a Grade 4 class in Pietermaritzburg sets up a test with bean seedlings in three pots. One pot goes into a dark cupboard, one is never watered, and one stays on a sunny windowsill and gets water every day. We watch what happens over two weeks and find out what plants need to grow: light, water and air.
