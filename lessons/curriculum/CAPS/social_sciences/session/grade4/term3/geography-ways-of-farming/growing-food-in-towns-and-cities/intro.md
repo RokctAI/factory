@@ -1,0 +1,1 @@
+Today we visit a community food garden in Khayelitsha, in Cape Town, where a group of women grow vegetables between the houses. We also see a rooftop garden in Johannesburg and a school garden in Soweto. We learn why people grow food in towns and cities, where and how they do it, and the benefits and challenges of urban farming.

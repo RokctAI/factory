@@ -1,0 +1,1 @@
+Today we join Kagiso, a Grade 4 learner from Hartbeespoort, who watches hot-air balloons rise over the Magaliesberg mountains at sunrise, and who later flies from OR Tambo International Airport to visit his aunt in Cape Town. We learn about the first balloon flights, about airships, and about modern air transport, including jet aeroplanes, helicopters and air ambulances.

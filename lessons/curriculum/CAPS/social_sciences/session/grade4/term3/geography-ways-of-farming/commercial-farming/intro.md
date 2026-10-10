@@ -1,0 +1,1 @@
+Today we visit Mrs Mofokeng's maize farm near Bothaville, in the Free State, at harvest time. The fields are huge, and machines do much of the work. We learn what commercial farming is, how commercial farmers use machines, workers and water, and how their crops and animals travel from the farm to shops in South Africa and to other countries.

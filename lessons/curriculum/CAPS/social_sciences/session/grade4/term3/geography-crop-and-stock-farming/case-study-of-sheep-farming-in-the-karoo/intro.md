@@ -1,0 +1,1 @@
+Today we visit Mr and Mrs Jacobs on their sheep farm near Graaff-Reinet, in the Great Karoo. The Karoo is a very dry area, but it is one of the most important sheep farming areas in South Africa. We find out why sheep do well there, how farmers find water and look after the veld, and how wool and meat travel from the farm to the rest of the world.

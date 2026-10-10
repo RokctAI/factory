@@ -1,0 +1,1 @@
+Today we join a Grade 4 class in Bloemfontein that is making a large farming map of South Africa for the classroom wall. We learn how to use symbols and a key to show farming on a map, where the main crops and farm animals are found in South Africa, and why the wetter east and the drier west are farmed in different ways.

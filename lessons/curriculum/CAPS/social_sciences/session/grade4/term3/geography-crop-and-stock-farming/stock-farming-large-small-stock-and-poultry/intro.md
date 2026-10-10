@@ -1,0 +1,1 @@
+Today we visit Mrs Khumalo's farm in the KwaZulu-Natal Midlands, where cows, goats, sheep and chickens are kept. Farming animals is called stock farming. We learn the difference between large stock, small stock and poultry, what each kind of animal gives us, and how farmers look after their animals so they stay healthy.

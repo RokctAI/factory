@@ -1,0 +1,1 @@
+Today we visit a transport museum in Johannesburg, where a Grade 4 class sees real ox-wagons, carts and coaches from long ago. We learn how people in South Africa used animals to carry loads and pull sledges, carts, wagons and coaches, who used them and why, and what was good and difficult about travelling with animals.

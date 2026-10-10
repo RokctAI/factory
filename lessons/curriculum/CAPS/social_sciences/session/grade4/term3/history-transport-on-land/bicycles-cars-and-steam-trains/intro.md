@@ -1,0 +1,1 @@
+Today we meet Thabo, a Grade 4 learner in Durban, whose grandfather once drove steam trains. We learn how the bicycle changed from a wooden machine with no pedals to the bicycle we know today, how the first motor cars were made, and how the steam engine and the train changed transport in the world and in South Africa.

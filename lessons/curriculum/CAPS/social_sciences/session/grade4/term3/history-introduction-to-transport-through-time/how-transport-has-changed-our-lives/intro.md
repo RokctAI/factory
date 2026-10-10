@@ -1,0 +1,1 @@
+Today we start a new History topic, Transport through time. We meet Gogo Nomsa, who lives near Mthatha in the Eastern Cape, and hear how people travelled when she was young and how they travelled long before that. We learn what transport is, the three ways people travel, which are on land, on water and in the air, and how changes in transport have changed people's lives.

@@ -1,0 +1,1 @@
+Today we visit Siphokazi and her family on their homestead near Flagstaff, in the Eastern Cape. Her family grows maize, beans and pumpkins, and keeps cattle, goats and chickens, mainly to feed themselves. We learn what subsistence farming is, what a year on a subsistence farm looks like, and the challenges subsistence farmers face.

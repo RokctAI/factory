@@ -1,0 +1,1 @@
+Today a Grade 4 class in Bloemfontein, in the Free State, sets up a food market in the school hall, with tables full of food. Their job is to sort it all. We start our Geography topic, food and farming in South Africa, by learning that our food comes from plants and animals, and how to classify foods into groups.

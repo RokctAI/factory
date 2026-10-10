@@ -1,0 +1,1 @@
+Today we visit the harbour in Durban with Ayesha, a Grade 4 learner whose aunt is a marine pilot who guides huge ships safely into the port. We learn how the first steamships changed water transport, how mail ships linked South Africa to Britain, and what kinds of ships and boats carry people and goods on water today.
