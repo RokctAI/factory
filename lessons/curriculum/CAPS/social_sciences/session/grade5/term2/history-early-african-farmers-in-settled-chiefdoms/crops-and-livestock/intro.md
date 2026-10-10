@@ -1,0 +1,1 @@
+Today a Grade 5 class in Giyani, in Limpopo, works in the school garden, where they have planted sorghum, millet and beans, and a farmer from the village brings two Nguni cattle to visit. We learn which crops early African farmers grew, how they farmed with iron hoes, which animals they kept, and how cattle, sheep and goats were used.

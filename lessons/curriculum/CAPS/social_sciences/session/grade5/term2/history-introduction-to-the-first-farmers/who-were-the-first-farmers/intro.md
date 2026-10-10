@@ -1,0 +1,1 @@
+Today a Grade 5 class in Mashishing, also called Lydenburg, in Mpumalanga, looks at copies of the Lydenburg Heads, clay sculptures made by farming people about one and a half thousand years ago. We find out who the first farmers in southern Africa were, when and how they arrived, and what was new about their way of life compared with the hunter-gatherers and herders.

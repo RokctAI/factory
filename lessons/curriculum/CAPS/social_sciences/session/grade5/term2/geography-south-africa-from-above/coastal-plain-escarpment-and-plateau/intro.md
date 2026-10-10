@@ -1,0 +1,1 @@
+Today a Grade 5 class travels by bus from Durban to Johannesburg on the N3, climbing from the warm coast up through the hills and over Van Reenen's Pass onto the high, flat Highveld. We learn what the coastal plain, the Great Escarpment and the plateau are, and where to find each one in South Africa.

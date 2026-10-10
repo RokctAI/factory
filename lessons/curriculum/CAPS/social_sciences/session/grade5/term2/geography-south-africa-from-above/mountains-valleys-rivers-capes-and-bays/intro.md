@@ -1,0 +1,1 @@
+Today a Grade 5 class from Simon's Town stands at the lookout at Cape Point, high above the sea, with False Bay on one side and the open Atlantic Ocean on the other. We learn the meanings of mountains, ranges, valleys, hills, rivers, waterfalls, capes and bays, with examples of each from South Africa.

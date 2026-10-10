@@ -1,0 +1,1 @@
+Today a Grade 5 class in Ulundi, in KwaZulu-Natal, visits a local farmer's herd of Nguni cattle, with hides of many colours and patterns, and the farmer explains why cattle mean so much more than meat and milk. We learn about the role of the chief in early farming societies, and the role of cattle as wealth, in marriage, in ceremonies and in loans that linked people together.

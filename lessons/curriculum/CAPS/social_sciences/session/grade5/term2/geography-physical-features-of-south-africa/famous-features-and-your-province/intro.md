@@ -1,0 +1,1 @@
+Today a Grade 5 class in Gqeberha, overlooking Algoa Bay in the Eastern Cape, makes a giant map of South Africa with stickers for its most famous physical features. We learn where Table Mountain, the uKhahlamba-Drakensberg, the Waterberg, Lake St Lucia, Augrabies Falls, Cape Point and Algoa Bay are, and how to find the main physical features of our own province.

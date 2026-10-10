@@ -1,0 +1,1 @@
+Today a Grade 5 class in Kroonstad, in the Free State, receives six postcards from their teacher, who is on a long road trip around South Africa. We learn where the Highveld, the Lowveld, the Great Karoo, the Little Karoo, the Kalahari and Namaqualand are, and what each region is like.

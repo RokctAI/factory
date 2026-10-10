@@ -1,0 +1,1 @@
+Today a Grade 5 class takes a long-distance train from Cape Town to Johannesburg, watching the landscape change from fruit farms and mountains to the dry Karoo and the flat Highveld. We learn how physical features are linked to where people live and the work they do.

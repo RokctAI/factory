@@ -1,0 +1,1 @@
+Today we revise all of Term 2. A Grade 5 class in Bloemfontein, in the Free State, sets up three revision tables in the classroom: the landscape of South Africa, rivers and dams, and the first farmers. We visit each table, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.
