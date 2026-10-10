@@ -1,0 +1,1 @@
+Today a Grade 5 class from Ladybrand, in the Free State, looks across the Mohokare, or Caledon, River to Maseru, the capital city of Lesotho, a country with no sea at all. We learn the difference between landlocked and coastal countries, which African countries are north or south of the equator or right on it, and about the islands of Madagascar and Zanzibar.

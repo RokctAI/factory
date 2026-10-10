@@ -1,0 +1,1 @@
+Today we revise all of Term 1. A Grade 5 class in Mahikeng, in North West, turns the school hall into three revision tables: the world and the compass, the map of Africa, and hunter-gatherers and herders. We visit each table, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.

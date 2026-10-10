@@ -1,0 +1,1 @@
+Today a Grade 5 class visits a San heritage centre on the West Coast, where San guides share their culture, their languages and their knowledge of plants. We learn what ethnography is, how researchers learnt about San life by living with San communities in the Kalahari, and why we must be careful when we use what we learn from people today to understand people long ago.

@@ -1,0 +1,1 @@
+Today a Grade 5 class in KwaDukuza, in KwaZulu-Natal, looks at tiny stone points in a museum display about a nearby cave, where scientists found some of the oldest evidence of arrows in the world. We learn how the invention of the bow and arrow changed hunting, how San hunters made and used their bows and poisoned arrows, and how they tracked animals.

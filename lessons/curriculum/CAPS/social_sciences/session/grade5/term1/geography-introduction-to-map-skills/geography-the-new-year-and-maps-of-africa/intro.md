@@ -1,0 +1,1 @@
+Today a Grade 5 class in Upington, in the Northern Cape, starts the year by unrolling a big new wall map of Africa. We learn what Geography is, what we study in Grade 5 and how our work is assessed, we revise the four compass directions, and we find out why this term's map skills focus on Africa, our own continent.

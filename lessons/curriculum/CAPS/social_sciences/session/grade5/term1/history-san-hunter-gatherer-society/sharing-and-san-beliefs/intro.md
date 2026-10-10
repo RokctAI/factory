@@ -1,0 +1,1 @@
+Today a Grade 5 class on a school camp near the Kgalagadi Transfrontier Park, in the Northern Cape, sits around a fire under a sky full of stars while a San storyteller tells them about the old ways. We learn how San groups were organised, why sharing was so important, how decisions were made without chiefs, and what the San believed about the spirit world, healing and the eland.

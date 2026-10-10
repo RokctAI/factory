@@ -1,0 +1,1 @@
+Today a Grade 5 class from Durban stands on the beachfront, looking out over the warm Indian Ocean, with a globe in their teacher's hands. We learn where Africa is on a world map and on a globe, how big it is, which continents are its neighbours, and which oceans and seas surround it.

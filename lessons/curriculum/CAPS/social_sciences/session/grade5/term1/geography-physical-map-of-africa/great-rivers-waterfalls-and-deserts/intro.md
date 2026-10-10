@@ -1,0 +1,1 @@
+Today a Grade 5 class in Springbok, in Namaqualand, builds a model of Africa in the school sandpit, with blue string for rivers and patches of dry sand for deserts. We learn about Africa's great rivers, the Nile, Niger, Congo, Zambezi, Limpopo and Gariep-Orange, the famous Victoria and Maletsunyane waterfalls, and the Sahara and Namib deserts.

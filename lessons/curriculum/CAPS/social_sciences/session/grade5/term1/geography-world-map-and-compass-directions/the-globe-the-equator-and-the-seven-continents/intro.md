@@ -1,0 +1,1 @@
+Today a Grade 5 class in Polokwane, in Limpopo, gathers round a spinning globe and a big world map. We learn where the North Pole, the South Pole and the equator are, how the equator divides the Earth into two halves, and the names and places of the seven continents and the five oceans.

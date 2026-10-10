@@ -1,0 +1,1 @@
+Today a Grade 5 class from Mossel Bay visits a museum display about the caves along the southern Cape coast, where tiny shell beads and stone tools tell us about people who lived long ago. We learn how historians find out about hunter-gatherers and herders from four kinds of sources: stories, objects, rock paintings and books.

@@ -1,0 +1,1 @@
+Today a Grade 5 class on a school tour of OR Tambo International Airport, in Gauteng, watches the departures board light up with flights to Cairo, Lagos and Nairobi. We learn about four of Africa's biggest and most important cities, Cairo, Lagos, Johannesburg and Nairobi, where they are on the map, and why they grew so big.

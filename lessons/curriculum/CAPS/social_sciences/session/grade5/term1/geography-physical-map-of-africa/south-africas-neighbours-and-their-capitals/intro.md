@@ -1,0 +1,1 @@
+Today a Grade 5 class in Kimberley, in the Northern Cape, plans an imaginary road trip on a big map, visiting every country that shares a border with South Africa. We learn the names of South Africa's six neighbouring countries, where each one is, and the name of each capital city.
