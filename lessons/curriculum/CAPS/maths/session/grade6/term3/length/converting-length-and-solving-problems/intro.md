@@ -1,0 +1,1 @@
+Today we learn to convert between millimetres, centimetres, metres and kilometres, using whole numbers, decimals and fractions, and to solve problems with length. Lindiwe trains for a cycling race near Upington and keeps a logbook of her rides, so that we can change units in both directions and add, subtract and share lengths correctly.

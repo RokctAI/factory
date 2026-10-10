@@ -1,0 +1,1 @@
+Today we learn to describe patterns in nature, in our cultural heritage and in modern everyday life using the language of shapes and transformations. A Grade 6 class visits a Ndebele cultural village in Mpumalanga and walks a nature trail, so that we can spot lines, 2D shapes, 3D objects, symmetry, translations, reflections and rotations, and describe them clearly.

@@ -1,0 +1,1 @@
+Today we investigate how perimeter and area are related in rectangles and squares, and how surface area and volume are related in boxes. A farmer in the Karoo has 24 m of fencing for a chicken run, and a gift shop folds boxes from cardboard, so that we can see that the same perimeter can give different areas and the same volume can use different amounts of cardboard.

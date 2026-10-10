@@ -1,0 +1,1 @@
+Today we learn to find volume and capacity by packing and filling, and to understand why the volume of a rectangular prism is length times width times height. A fruit packhouse in Ceres packs boxes into cartons and crates into trucks, so that we can count cubes in layers, use the rule, and solve packing problems.

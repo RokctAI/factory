@@ -1,0 +1,1 @@
+Today we learn to find area by counting squares on a grid and to develop the rule for the area of squares and rectangles. A family in Pietermaritzburg re-tiles their kitchen floor and plants a new lawn, so that we can count square units, estimate the area of irregular shapes, multiply length by width, and work out how many tiles and how much grass to buy.

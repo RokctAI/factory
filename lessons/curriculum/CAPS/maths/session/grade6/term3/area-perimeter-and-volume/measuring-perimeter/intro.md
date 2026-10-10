@@ -1,0 +1,1 @@
+Today we learn to measure and calculate perimeter. A school in George fences its new vegetable gardens and frames pictures for the hall, so that we can measure around shapes with rulers and tape measures, add up sides, use quick rules for rectangles, squares and regular polygons, find missing sides and work out what a fence will cost.

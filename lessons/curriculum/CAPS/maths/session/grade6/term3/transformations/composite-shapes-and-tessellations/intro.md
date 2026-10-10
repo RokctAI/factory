@@ -1,0 +1,1 @@
+Today we learn to slide, flip and turn shapes to make composite shapes and tessellations. Mrs Mokoena runs a paving business in Kimberley and lays square, triangular, hexagonal and brick-shaped pavers in patterns, so that we can name translations, reflections and rotations, build new shapes from old ones and cover a surface with no gaps and no overlaps.

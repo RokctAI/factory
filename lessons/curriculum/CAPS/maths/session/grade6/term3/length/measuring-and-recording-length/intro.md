@@ -1,0 +1,1 @@
+Today we learn to estimate, measure and record lengths. A Grade 6 class in Rustenburg plans a school fun run, measuring an eraser, a desk, the classroom and the whole route, so that we can choose the right unit and instrument, read scales carefully, and compare and order lengths written in millimetres, centimetres, metres and kilometres.

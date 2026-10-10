@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Find the perimeter of a rectangular garden 12 m long and 8 m wide in two ways.",
+      "expected_answer": "Add all four sides: 12 + 8 + 12 + 8 = 40 m. Or add the length and the width to get 20 m, and double it to get 40 m."
+    },
+    {
+      "id": "cc2",
+      "question": "Why is 96 not the perimeter of a 12 m by 8 m rectangle?",
+      "expected_answer": "96 is 12 times 8, which counts the squares inside the rectangle. The perimeter is the distance around the edge, which is 40 m."
+    },
+    {
+      "id": "cc3",
+      "question": "Fencing costs R35 per metre. How much does it cost to fence a garden with a perimeter of 40 m?",
+      "expected_answer": "Multiply the perimeter by the price per metre: 40 × R35 = R1 400."
+    }
+  ]
+}

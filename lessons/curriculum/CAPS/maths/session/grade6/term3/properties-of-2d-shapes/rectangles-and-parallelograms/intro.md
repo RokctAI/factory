@@ -1,0 +1,1 @@
+Today we learn how rectangles and parallelograms are the same and how they are different, and how they fit with the other quadrilaterals. Mr Dlamini builds a bookshelf and a folding security gate in his workshop in Soweto, so that we can look at parallel sides, equal sides and angles, and see what happens when a rectangle is pushed out of shape.

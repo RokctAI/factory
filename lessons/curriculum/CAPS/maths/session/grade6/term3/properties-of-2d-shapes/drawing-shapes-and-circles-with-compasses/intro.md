@@ -1,0 +1,1 @@
+Today we learn to draw 2D shapes on grid paper and to draw circles and circle patterns with a pair of compasses. A Grade 6 class in East London designs a mural for the school wall, planning squares, rectangles and triangles on grid paper and a flower pattern made of circles, so that we can use grids, radius and diameter accurately.
