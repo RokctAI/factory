@@ -58,9 +58,21 @@ jobs:
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add lessons/practice_bank.json
-            git commit -m "[CI] Rebuild practice bank"
-            git push
+            # Another workflow can push to main while the bank builds, so
+            # rebuild on the latest main and retry instead of failing.
+            for attempt in 1 2 3 4; do
+              git add lessons/practice_bank.json
+              git commit -m "[CI] Rebuild practice bank"
+              if git push; then exit 0; fi
+              git fetch origin main
+              git reset --hard origin/main
+              python3 lessons/scripts/CAPS/build_practice_bank.py
+              if git diff --quiet -- lessons/practice_bank.json; then
+                echo "practice_bank.json already current on main"; exit 0
+              fi
+              sleep $((attempt * 5))
+            done
+            exit 1
           fi
 
       - name: Publish to rlms backend
