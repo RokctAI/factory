@@ -1,0 +1,1 @@
+Today a Grade 6 class in Soweto in Gauteng stays late at school for a stargazing evening, when a member of a local astronomy club sets up a telescope on the sports field. Through it, a faint smudge in the sky becomes a planet with stripes and four tiny moons. We learn how telescopes work as systems, the different kinds of telescopes, and the information they gather about space.

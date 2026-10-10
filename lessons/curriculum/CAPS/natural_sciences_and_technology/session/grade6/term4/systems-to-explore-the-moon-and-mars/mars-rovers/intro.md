@@ -1,0 +1,1 @@
+Today a Grade 6 class in Springbok in the Northern Cape goes on a field trip into the rocky, red-brown hills of Namaqualand, which look a lot like photographs of Mars. Back at school, they build a model rover that must find its own way across the classroom floor. We learn how robotic rovers have explored the surface of Mars, how they are designed, and what they have discovered.

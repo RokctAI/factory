@@ -1,0 +1,1 @@
+Today a Grade 6 class in Kuruman in the Northern Cape builds a model of the Solar System on the school field, with a beach ball for the Sun and peppercorns and marbles for the planets. They pace out the distances and are amazed at how far apart everything is. We learn that the Sun is at the centre of our Solar System, with eight planets and the asteroid belt moving around it.

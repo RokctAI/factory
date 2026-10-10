@@ -1,0 +1,1 @@
+Today a Grade 6 class in Giyani in Limpopo meets on the school field on the night of a full moon, with a borrowed pair of binoculars and a torch. The Moon is so bright that they can see their shadows. We learn that moons do not give out their own light but reflect light from the Sun, and we explore the craters, mountains and plains on the surface of our Moon.
