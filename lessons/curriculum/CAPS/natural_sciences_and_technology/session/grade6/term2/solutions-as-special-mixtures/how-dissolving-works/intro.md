@@ -1,0 +1,1 @@
+Today a Grade 6 class in Mahikeng in North West places a few coloured sweets in a plate of water and watches rainbow colours creep slowly towards the middle. Then they drop a tea bag into a glass of hot water without stirring. We learn what happens to the particles when a solid dissolves: the solute particles break away and spread out between the particles of the solvent.

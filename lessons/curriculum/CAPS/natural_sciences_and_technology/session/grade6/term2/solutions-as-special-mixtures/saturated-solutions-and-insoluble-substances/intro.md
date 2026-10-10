@@ -1,0 +1,1 @@
+Today a Grade 6 class in Paarl helps a parent make the thick, sweet syrup for koeksisters, the plaited doughnuts sold at school fairs. They keep adding spoons of sugar to a jug of cold water until no more will dissolve. Then they test sand, chalk, flour and oil. We learn what a saturated solution is, and that some substances are insoluble and do not dissolve at all.
