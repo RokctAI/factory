@@ -1,0 +1,1 @@
+Today we visit a maize farm near Ventersdorp in the North West. The farmer shows a Grade 4 class her tall green maize plants and the cobs that will be milled into maize meal for pap. We learn that plants use sunlight to make their own food, that they store energy in their leaves, stems, roots, fruits and seeds, and that the energy in all our food first came from the Sun.

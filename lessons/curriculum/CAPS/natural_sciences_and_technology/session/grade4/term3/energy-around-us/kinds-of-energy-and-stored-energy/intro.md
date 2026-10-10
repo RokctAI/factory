@@ -1,0 +1,1 @@
+Today we go camping with a family in the Magaliesberg mountains near Pretoria. There is a rushing river, a breeze flapping the tent, a crackling campfire, a torch, a guitar and a cooler box full of food. We learn the kinds of energy around us, movement, heat, light and sound, and the places where energy is stored, in food, wood, coal, oil products and natural gas.

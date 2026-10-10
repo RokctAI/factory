@@ -1,0 +1,1 @@
+Today we revise all of Term 3, Energy and Change. A Grade 4 class in Pietermaritzburg follows an energy trail around their school, with stops at the tuck shop, the vegetable garden, the school kitchen, the music room and the gate next to the busy road. At each stop we remind ourselves of the big ideas about energy, food chains, machines, instruments and sound.

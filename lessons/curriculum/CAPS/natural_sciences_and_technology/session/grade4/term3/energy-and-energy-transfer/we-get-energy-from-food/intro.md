@@ -1,0 +1,1 @@
+Today we join a Grade 4 class at their school sports day in Bloemfontein. Thandeka runs the 100 metres, jumps in the long jump and cheers for her team. By lunchtime she feels tired and hungry. We learn that we use energy for everything we do, and that we get that energy from the food we eat.

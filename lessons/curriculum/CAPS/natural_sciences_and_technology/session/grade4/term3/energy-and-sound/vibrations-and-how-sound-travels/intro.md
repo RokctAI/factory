@@ -1,0 +1,1 @@
+Today a Grade 4 class in Kimberley does a set of sound experiments. They hum with their fingers on their throats, twang rulers on their desks, watch rice jump on a drum, listen with their ears pressed to a desk and talk through a string telephone. We learn that sounds are made by vibrations, and that vibrations travel outwards through air, water, plastic, metal and wood.
