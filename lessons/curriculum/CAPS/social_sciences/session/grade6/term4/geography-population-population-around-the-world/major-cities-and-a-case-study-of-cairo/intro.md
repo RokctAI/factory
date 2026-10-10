@@ -1,0 +1,1 @@
+Today a Grade 6 class in Paarl, in the Western Cape, looks at photographs sent by a learner's aunt, a nurse working in Cairo, the capital of Egypt. We learn how maps show the world's major cities and their population sizes, what a megacity is, and, in a case study of Cairo, why one of Africa's biggest cities grew up exactly where it is, on the River Nile.

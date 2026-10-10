@@ -1,0 +1,1 @@
+Today a Grade 6 class in Gqeberha lays six maps on the floor, from a map of the whole world down to a street map around their school. We learn what scale means, why every map must be drawn smaller than the real world, and the difference between small-scale maps that show big areas and large-scale maps that show small areas in great detail.

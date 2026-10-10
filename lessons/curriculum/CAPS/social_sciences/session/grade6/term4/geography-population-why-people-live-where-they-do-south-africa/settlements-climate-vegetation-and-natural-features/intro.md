@@ -1,0 +1,1 @@
+Today a Grade 6 class in Vereeniging, in Gauteng, walks along the banks of the Vaal River and asks why their town grew up right here. We learn what a settlement is, and how climate, vegetation and natural features such as rivers, springs, harbours, flat land and mountain passes have decided where settlements grew in South Africa.

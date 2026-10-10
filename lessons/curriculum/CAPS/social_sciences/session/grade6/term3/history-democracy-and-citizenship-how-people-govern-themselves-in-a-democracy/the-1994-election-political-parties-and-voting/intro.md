@@ -1,0 +1,1 @@
+Today a Grade 6 class in Mthatha, in the Eastern Cape, interviews grandparents who voted for the first time in April 1994. We learn what political parties are, how the first democratic election was organised, how people voted, which parties won, and how elections work in South Africa today.

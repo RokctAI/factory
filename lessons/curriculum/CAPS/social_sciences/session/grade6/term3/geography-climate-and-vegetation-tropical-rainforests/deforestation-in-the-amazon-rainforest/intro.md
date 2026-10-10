@@ -1,0 +1,1 @@
+Today a Grade 6 class in Knysna, in the Western Cape, compares satellite photographs of the Amazon rainforest taken many years apart. We learn what deforestation is, why people cut down rainforests, what the consequences are for plants, animals, people and the climate, and what can be done, using the Amazon rainforest in Brazil as a case study.

@@ -1,0 +1,1 @@
+Today a Grade 6 class from Springbok, in Namaqualand in the Northern Cape, explores a nature reserve full of succulents, quiver trees and little stone plants. We learn how the plants and animals of hot deserts are adapted to survive with very little water, scorching days and cold nights, with examples from the Namib, the Kalahari and the Sahara.

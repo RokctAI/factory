@@ -1,0 +1,1 @@
+Today a Grade 6 class in Ermelo, in Mpumalanga, measures how crowded their classroom is compared with the school field, and then studies a dot map of South Africa's population. We learn what population distribution and population density mean, how to calculate density, and how to read a distribution map that shows where South Africa's people live.

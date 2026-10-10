@@ -1,0 +1,1 @@
+Today a Grade 6 class in Upington, in the Northern Cape, checks the school weather station every morning for a week. We start our new Geography topic, climate and vegetation around the world, by remembering what we learned about weather in Grade 5, and learning the difference between weather, which changes from day to day, and climate, the pattern of weather over many years.

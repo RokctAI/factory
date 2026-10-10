@@ -1,0 +1,1 @@
+Today a Grade 6 class in Kimberley, in the Northern Cape, peers down into the Big Hole, where a diamond rush created a town almost overnight. We learn how resources and human activities such as mining, fishing and trade have created settlements in South Africa, and how laws, in the past under apartheid and in the present, have decided where people may live.

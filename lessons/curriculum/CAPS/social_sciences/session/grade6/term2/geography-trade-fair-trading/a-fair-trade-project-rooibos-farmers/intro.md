@@ -1,0 +1,1 @@
+Today a Grade 6 class from Clanwilliam visits small-scale rooibos farmers in the dry hills of the Cederberg and Bokkeveld, and tastes a cup of rooibos tea with a fair trade label on the box. We learn how fair trade works, what the fair trade label promises, and how a fair trade project helps small farmers and their community.

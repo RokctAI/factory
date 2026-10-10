@@ -1,0 +1,1 @@
+Today a Grade 6 class in Welkom, a gold-mining town in the Free State, visits a jeweller's workshop, where a goldsmith shapes a ring at a bench. We follow the case study of gold to jewellery: how gold is mined deep underground, how tonnes of rock become a small gold bar, how a jeweller turns gold into jewellery, and how value is added at every step.

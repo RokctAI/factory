@@ -1,0 +1,1 @@
+Today a Grade 6 class in Mbombela starts a news map wall that will grow all year. We learn how to take a place from a news report, find it in the atlas index, work out its latitude and longitude, mark it on a world map, and ask what Geography can tell us about why the event happened there.

@@ -1,0 +1,1 @@
+Today a Grade 6 class in George, in the Western Cape, watches a debate in Parliament on television, and their teacher hands round a pocket-sized copy of the Constitution. We learn how Parliament is made up, what it does, how a law is made, and why the Constitution is the highest law of South Africa.

@@ -1,0 +1,1 @@
+Today a Grade 6 class in Soweto, in Gauteng, votes for its representatives on the school's Representative Council of Learners. We start our new History topic, democracy and citizenship, by learning what democracy means, where the idea came from, how it differs from other kinds of government, and what it means to be a citizen of South Africa.

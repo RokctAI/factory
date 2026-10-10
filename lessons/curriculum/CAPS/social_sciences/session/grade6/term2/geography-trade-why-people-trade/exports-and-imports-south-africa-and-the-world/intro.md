@@ -1,0 +1,1 @@
+Today a Grade 6 class from Durban watches huge container ships sail in and out of the harbour from a lookout point on the Bluff. We learn what exports and imports are, what South Africa sells to and buys from the world, which countries we trade with most, and how our ports, roads and railways move goods across borders.

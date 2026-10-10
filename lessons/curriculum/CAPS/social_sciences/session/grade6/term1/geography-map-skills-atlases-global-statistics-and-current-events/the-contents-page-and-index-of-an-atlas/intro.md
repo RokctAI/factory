@@ -1,0 +1,1 @@
+Today a Grade 6 class in Upington holds an atlas speed challenge: who can find a map, a city or a country fastest? We learn how the contents page of an atlas is organised, from the world to continents to countries, how to use the index at the back, and how to read a grid reference to find a place on the page.

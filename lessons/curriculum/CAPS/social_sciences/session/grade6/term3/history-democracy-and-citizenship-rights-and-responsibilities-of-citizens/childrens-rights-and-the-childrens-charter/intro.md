@@ -1,0 +1,1 @@
+Today a Grade 6 class in Bloemfontein, in the Free State, takes part in Child Protection Week and designs posters about children's rights. We learn which special rights children have under the Constitution, how children themselves wrote the Children's Charter of South Africa in 1992, and what responsibilities come with being a child in a democracy.

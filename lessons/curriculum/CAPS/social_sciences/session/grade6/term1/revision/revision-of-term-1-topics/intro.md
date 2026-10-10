@@ -1,0 +1,1 @@
+Today we revise all of Term 1. A Grade 6 class in Kroonstad, in the Free State, turns the school hall into three revision tables: atlases and latitude and longitude, scale and distance, and the kingdom of Mapungubwe. We visit each table, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.

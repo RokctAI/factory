@@ -1,0 +1,1 @@
+Today a Grade 6 class from Bredasdorp visits Cape Agulhas, the southern tip of Africa. We learn how the equator, the Greenwich Meridian and the one hundred and eighty degree line divide the Earth into four hemispheres, and why South Africa lies in both the Southern and the Eastern Hemispheres.

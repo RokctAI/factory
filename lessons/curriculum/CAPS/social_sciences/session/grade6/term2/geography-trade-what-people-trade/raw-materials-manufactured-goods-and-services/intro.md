@@ -1,0 +1,1 @@
+Today a Grade 6 class in Graaff-Reinet follows the journey of a woolly jersey, from a merino sheep on a Karoo farm to a shop in the city. We learn the three kinds of things people trade: raw materials, also called primary products, manufactured goods, also called secondary products, and skills and services.

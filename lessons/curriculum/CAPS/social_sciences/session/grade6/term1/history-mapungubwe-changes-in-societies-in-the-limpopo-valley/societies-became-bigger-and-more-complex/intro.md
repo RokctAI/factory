@@ -1,0 +1,1 @@
+Today a Grade 6 class in Musina builds three clay models on one long table: a small farming homestead, a big busy village and a town with a king on a hill. We find out how societies in the Limpopo Valley grew bigger, more organised and more complex between about 900 and 1300 AD, and why this change happened.

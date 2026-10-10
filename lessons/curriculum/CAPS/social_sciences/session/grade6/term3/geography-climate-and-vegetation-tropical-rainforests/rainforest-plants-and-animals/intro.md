@@ -1,0 +1,1 @@
+Today a Grade 6 class in East London, in the Eastern Cape, builds a tall model of a tropical rainforest out of boxes, string and paper leaves. We climb through the four layers of the rainforest, from the dark forest floor to the tallest trees, and learn how the plants and animals are adapted to life in a hot, wet and crowded forest.

@@ -1,0 +1,1 @@
+Today a Grade 6 class in Pietermaritzburg holds a swap market, where learners try to trade without money and quickly run into problems. We learn why people trade, what barter is, why barter can be difficult, and how money makes buying and selling much easier.

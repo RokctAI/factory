@@ -1,0 +1,1 @@
+Today a Grade 6 class in Johannesburg plans a pretend holiday to Durban and Cape Town, and measures the distances on a map of South Africa. We learn two ways to measure straight-line distances between cities, with a ruler and a word scale, and with a paper strip and a line scale, and why the distance by road is always longer.

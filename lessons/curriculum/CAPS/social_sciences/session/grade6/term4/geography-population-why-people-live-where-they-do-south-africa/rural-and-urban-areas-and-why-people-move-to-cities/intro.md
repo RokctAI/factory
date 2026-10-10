@@ -1,0 +1,1 @@
+Today a Grade 6 class in Khayelitsha, in Cape Town, listens to a classmate describe her family's move from a village in the Eastern Cape to the city. We learn the difference between rural and urban areas, why so many people move from rural areas to towns and cities, and what this movement means for both the countryside and the city.

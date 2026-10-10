@@ -1,0 +1,1 @@
+Today a Grade 6 class in Tzaneen compares a crate of fresh tomatoes from a nearby farm with bottles of tomato sauce from the supermarket. We learn why manufactured goods are usually worth much more than the raw materials they are made from, what adding value means, why the prices of raw materials go up and down, and why it matters for jobs and for countries like South Africa.

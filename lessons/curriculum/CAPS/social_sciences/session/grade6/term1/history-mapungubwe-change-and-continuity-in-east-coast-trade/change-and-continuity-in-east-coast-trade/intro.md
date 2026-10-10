@@ -1,0 +1,1 @@
+Today a Grade 6 class in Giyani hangs two washing lines across the classroom: one for things that changed and one for things that stayed the same. We look at the East Coast trade with settlements inland over several hundred years, from before Mapungubwe to the arrival of the Portuguese, and sort the evidence into change and continuity.

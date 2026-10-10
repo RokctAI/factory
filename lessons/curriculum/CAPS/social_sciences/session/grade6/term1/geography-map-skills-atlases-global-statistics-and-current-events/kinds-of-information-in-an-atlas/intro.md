@@ -1,0 +1,1 @@
+Today a Grade 6 class in Mthatha opens a brand-new box of atlases in the school library. We find out what an atlas is and the many kinds of information it holds: physical maps, political maps, maps about one theme such as rainfall or population, city maps, flags and tables of world statistics.

@@ -1,0 +1,1 @@
+Today a Grade 6 class in Mahikeng, in North West, raises the national flag and sings the national anthem at a Monday morning assembly. We learn about South Africa's national symbols since 1994: the national flag, the coat of arms with its motto in an ancient San language, and the national anthem sung in five languages, and what they tell us about unity in a diverse country.

@@ -1,0 +1,1 @@
+Today a Grade 6 class in Durban visits a spice stall in a busy market, where the air smells of pepper, cinnamon and cloves. We learn two big reasons why Europeans set out to explore in the 1400s: curiosity about the unknown world, and the search for trade and profit, especially from spices, silk and gold.

@@ -1,0 +1,1 @@
+Today a Grade 6 class in Sabie, in Mpumalanga, walks through a pine plantation and learns that these trees first came from forests in the far north of the world. We find where the great natural coniferous forests are, read a climate graph to discover their long, freezing winters and short, cool summers, and see how cone-bearing trees are suited to the cold.

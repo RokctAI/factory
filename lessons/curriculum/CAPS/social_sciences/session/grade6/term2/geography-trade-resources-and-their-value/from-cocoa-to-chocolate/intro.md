@@ -1,0 +1,1 @@
+Today a Grade 6 class in East London shares a slab of chocolate and then asks where it really came from. We follow the case study of cocoa to chocolate: where cocoa trees grow, how farmers in West Africa harvest and dry the beans, how factories turn them into chocolate, and who earns most of the money along the way.

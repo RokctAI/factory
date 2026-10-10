@@ -1,0 +1,1 @@
+Today a Grade 6 class in Hogsback, in the Amathole mountains, plans a hike using a trail map, and then photocopies the map larger to see it better. We learn the different ways a map shows its scale, especially word scales and line scales, how to read them, how to change one into the other, and why a line scale stays correct when a map is made bigger or smaller.

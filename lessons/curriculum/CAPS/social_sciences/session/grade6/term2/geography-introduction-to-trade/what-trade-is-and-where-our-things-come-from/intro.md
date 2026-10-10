@@ -1,0 +1,1 @@
+Today a Grade 6 class in Soweto empties a school bag onto the desk and asks where every item came from. We start the topic of trade: what trade is, the important words we will use this term, and how trade links our homes and towns to the rest of South Africa and the world.

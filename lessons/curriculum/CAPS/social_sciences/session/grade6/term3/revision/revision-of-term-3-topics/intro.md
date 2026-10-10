@@ -1,0 +1,1 @@
+Today we revise all of Term 3. A Grade 6 class in Welkom, in the Free State, turns the school hall into three revision stations: climates of the world, rainforests, deserts and coniferous forests, and democracy and citizenship. We visit each station, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.
