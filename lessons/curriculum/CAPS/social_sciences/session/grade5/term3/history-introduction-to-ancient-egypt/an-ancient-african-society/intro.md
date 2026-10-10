@@ -1,0 +1,1 @@
+Today a Grade 5 class in Polokwane, in Limpopo, stretches a ribbon across a big map of Africa, from their town all the way north to Cairo, in Egypt. We are introduced to ancient Egypt: where it was, when it existed, why it is called an African society, and how we know about it today.

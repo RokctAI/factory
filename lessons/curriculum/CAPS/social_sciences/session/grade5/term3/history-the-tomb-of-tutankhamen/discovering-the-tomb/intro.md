@@ -1,0 +1,1 @@
+Today a Grade 5 class in Pretoria, in Gauteng, reads a copy of an old newspaper from 1922 announcing an amazing discovery in Egypt. We learn about the discovery of Tutankhamun's tomb: who found it, when it was found, why they were searching for it, and how the tomb was opened step by step.

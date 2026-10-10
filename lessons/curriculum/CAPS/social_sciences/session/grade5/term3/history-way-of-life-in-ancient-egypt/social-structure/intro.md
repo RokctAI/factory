@@ -1,0 +1,1 @@
+Today a Grade 5 class in East London, in the Eastern Cape, builds a giant paper pyramid on the classroom wall, with one pharaoh at the top and many farmers at the bottom. We learn about the social structure of ancient Egypt: the pharaoh, officials and priests, scribes, soldiers, craftspeople, farmers and servants, and what life was like for women and children.

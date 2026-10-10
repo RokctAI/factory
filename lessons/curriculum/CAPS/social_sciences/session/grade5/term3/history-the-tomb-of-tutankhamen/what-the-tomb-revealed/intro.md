@@ -1,0 +1,1 @@
+Today a Grade 5 class in Stellenbosch, in the Western Cape, turns their classroom into a museum of replica objects from Tutankhamun's tomb, each with a label explaining what it tells us. We learn what the discovery revealed about ancient Egyptian society: beliefs about the afterlife, mummification, the wealth of the pharaoh, the skill of craftspeople, trade, and daily life.

@@ -1,0 +1,1 @@
+Today a Grade 5 class in Mbombela, in Mpumalanga, sees how one week of weather, a heatwave, a thunderstorm and a cool, misty morning, changes what people wear, eat, do and plan. We learn how weather affects people's daily lives: clothing, homes, farming, transport, health and safety, and how people prepare for extreme weather.

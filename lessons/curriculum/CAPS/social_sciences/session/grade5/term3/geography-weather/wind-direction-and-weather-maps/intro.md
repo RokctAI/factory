@@ -1,0 +1,1 @@
+Today a Grade 5 class in Cape Town watches the strong south-easter, known as the Cape Doctor, blowing a tablecloth of cloud over Table Mountain, then reads a weather map on the television news. We learn how to find and describe wind direction with a wind vane and windsock, and how to read the symbols on weather maps in newspapers, on television and on phones.

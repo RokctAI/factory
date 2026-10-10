@@ -1,0 +1,1 @@
+Today we revise all of Term 3. A Grade 5 class in Durban, in KwaZulu-Natal, sets up three revision tables: weather and measuring, rainfall, climate and vegetation, and ancient Egypt. We visit each table, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.
