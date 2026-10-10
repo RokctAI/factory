@@ -1,0 +1,1 @@
+Today a Grade 5 class in Mthatha starts a growth project. They measure bean plants every few days, keep a diary about a hen and her chicks at a learner's home, and mark their own heights on a chart behind the classroom door. We learn that plants and animals grow and develop all through their lives, and the difference between growing and developing.

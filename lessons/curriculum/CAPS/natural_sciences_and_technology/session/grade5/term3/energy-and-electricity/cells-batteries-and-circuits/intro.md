@@ -1,0 +1,1 @@
+Today a Grade 5 class in Soshanguve talks about the evening the power went off and they did homework by torchlight. Then they open up a torch to see how it works, and build their own circuits with cells, wires, bulbs and switches. We learn that energy can be stored in cells and batteries, and that a circuit transfers electrical energy to where it is needed.

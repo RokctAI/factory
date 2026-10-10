@@ -1,0 +1,1 @@
+Today a Grade 5 class in eMalahleni, a town surrounded by coal mines, collects examples of fuels from home: a lump of coal, firewood, a bottle of paraffin, a small gas canister, a candle and a packet of peanuts. We learn that a fuel is a material with stored energy, that food is a fuel for our bodies, and that the energy in most fuels first came from the Sun.

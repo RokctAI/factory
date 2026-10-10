@@ -1,0 +1,1 @@
+Today a Grade 5 class in Thohoyandou looks after a vegetable garden at their school, with rows of spinach, beans and maize. They wonder how the plants grow so big when nobody feeds them. We learn how green plants make their own food from water, carbon dioxide and sunlight, and how they give off the oxygen that we breathe.

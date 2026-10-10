@@ -1,0 +1,1 @@
+Today a Grade 5 class from Rustenburg hikes in the Magaliesberg mountains in North West. They climb over bare grey rock, dig in the soft soil along the path, and spot plants, insects and birds everywhere. We learn that the Earth's outer layer, the crust, is made of rock and soil, and that soil, air, water and sunlight together support life on Earth.

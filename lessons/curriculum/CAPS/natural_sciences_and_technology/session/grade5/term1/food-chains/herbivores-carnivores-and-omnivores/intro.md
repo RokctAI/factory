@@ -1,0 +1,1 @@
+Today a Grade 5 class from Richards Bay goes on a school trip to the Hluhluwe-iMfolozi Park in KwaZulu-Natal, the park famous for saving the white rhino. They watch rhinos grazing, a pride of lions resting and a troop of baboons searching for food. We learn why animals need food, and how to sort them by what they eat: herbivores, carnivores and omnivores.

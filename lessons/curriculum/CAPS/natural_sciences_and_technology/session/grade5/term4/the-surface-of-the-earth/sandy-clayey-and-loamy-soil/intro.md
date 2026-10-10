@@ -1,0 +1,1 @@
+Today a Grade 5 class in Giyani in Limpopo is planning a school food garden. They collect three soils: sand from a dry riverbed, sticky clay from near the dam, and dark, crumbly soil from a vegetable patch. With simple tests, they find out what soil contains, how the three soils differ, and which one is best for growing spinach and tomatoes.

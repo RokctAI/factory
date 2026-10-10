@@ -1,0 +1,1 @@
+Today a Grade 5 class in Kimberley plans a pretend road trip around South Africa. They stop in the fynbos of the Western Cape, the dry Karoo, the bushveld of Limpopo, the grassland of the highveld, a wetland in KwaZulu-Natal and the sea. We learn that many different plants and animals live in different habitats, and what makes a plant or animal indigenous to South Africa.

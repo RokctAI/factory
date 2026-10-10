@@ -1,0 +1,1 @@
+Today a Grade 5 class from Colesberg spends a day at the Gariep Dam, the biggest dam in South Africa. They watch a fish eagle swoop down to snatch a fish, and frogs, snakes and grasshoppers along the shore. We learn how a food chain shows who eats whom, why it always starts with a plant, and how energy is passed along the chain.

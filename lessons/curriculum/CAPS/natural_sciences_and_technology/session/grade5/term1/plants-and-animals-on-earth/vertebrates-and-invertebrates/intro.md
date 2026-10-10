@@ -1,0 +1,1 @@
+Today a Grade 5 class in Gqeberha goes on a sorting walk along the beach and the rock pools, and then visits the museum in town. They find crabs, mussels, starfish, a jellyfish, gulls and a fish skeleton. We learn how to sort animals into two big groups: invertebrates, which have no backbone, and vertebrates, which have a backbone and a skeleton of bones inside.

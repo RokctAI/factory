@@ -223,6 +223,14 @@ class ReleaseIdentityTests(_RosterCase):
                 self.assertEqual(ident["grade"], g)
                 self.assertEqual(ident["subject_key"], folder)
 
+    def test_intermediate_phase_nst_display_keeps_lowercase_and(self):
+        for g in (4, 5, 6):
+            root, pkg = self.package("natural_sciences_and_technology", g)
+            ident = roc.lesson_identity(pkg, root)
+            self.assertEqual(ident["subject"], "Natural Sciences and Technology")
+            self.assertEqual(ident["type"], "lesson.natural_sciences_and_technology")
+            self.assertEqual(ident["grade"], g)
+
     def test_new_folders_stay_out_of_the_seed_map(self):
         for folder in NEW_FOLDERS:
             self.assertNotIn(folder, lp.CAPS_TYPE_BY_FOLDER)

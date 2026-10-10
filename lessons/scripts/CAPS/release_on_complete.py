@@ -133,6 +133,7 @@ SUBJECT_DISPLAY = {
     "natural_sciences": "Natural Sciences",
     "social_sciences": "Social Sciences",
     "economic_and_management_sciences": "Economic and Management Sciences",
+    "natural_sciences_and_technology": "Natural Sciences and Technology",
 }
 
 PART2_RE = re.compile(r"^#\s*Part\s*2\b", re.IGNORECASE | re.MULTILINE)

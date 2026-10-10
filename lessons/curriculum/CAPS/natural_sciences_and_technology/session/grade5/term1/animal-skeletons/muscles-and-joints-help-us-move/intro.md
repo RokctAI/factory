@@ -1,0 +1,1 @@
+Today a Grade 5 class in Soweto practises a pantsula dance for the school's Heritage Day concert. As they jump, kick, spin and stamp, their teacher stops the music to ask what is really happening inside their arms and legs. We learn how muscles attached to the skeleton pull on bones, and how joints let the bones move.

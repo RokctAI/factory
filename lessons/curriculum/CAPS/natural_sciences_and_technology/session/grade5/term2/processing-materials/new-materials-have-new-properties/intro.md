@@ -1,0 +1,1 @@
+Today a Grade 5 class in Upington holds a Technology Day. They make plaster of Paris handprints, small concrete stepping stones, clay pinch pots and bread rolls, and then they test what they have made. We learn that new materials often have very different properties from the materials they were made from, and that many of these changes cannot be undone.

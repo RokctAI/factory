@@ -1,0 +1,1 @@
+Today a Grade 5 class visits the harbour at Lambert's Bay on the West Coast, where fishing boats bring in crayfish and the rocks are covered in mussels. They find empty crab shells, snail shells and a sea urchin. We learn that some invertebrates have skeletons on the outside that are shell structures, and why a hollow, curved shell is so strong.

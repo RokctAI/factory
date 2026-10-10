@@ -1,0 +1,1 @@
+Today a Grade 5 class in Durban watches the Sun rise over the Indian Ocean, and then video-calls a class in Brazil, where it is still the middle of the night. Back in the classroom, they use a globe and a torch to find out why. We learn that the Earth spins on its axis once in about 24 hours, giving us day and night, and why the Sun seems to rise in the east and set in the west.

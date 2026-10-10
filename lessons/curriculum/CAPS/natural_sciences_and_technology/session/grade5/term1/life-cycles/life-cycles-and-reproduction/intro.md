@@ -1,0 +1,1 @@
+Today a Grade 5 class in Giyani follows the life of the mopane worm, which many families collect and eat in summer. They also watch frogspawn in a school pond and plant maize seeds. We learn what a life cycle is, how plants and animals reproduce, and how one generation gives rise to the next.

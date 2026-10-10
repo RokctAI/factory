@@ -1,0 +1,1 @@
+Today a Grade 5 class from Plettenberg Bay watches people bungee jump from the Bloukrans Bridge, where a stretchy cord catches each jumper and bounces them back up. Back at school, they build cotton-reel tractors powered by twisted elastic bands. We learn that when stretched elastic or a compressed spring is released, its stored energy is changed into movement energy.

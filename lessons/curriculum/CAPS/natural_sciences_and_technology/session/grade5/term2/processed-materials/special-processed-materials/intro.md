@@ -1,0 +1,1 @@
+Today a Grade 5 class in Mahikeng watches the last weeks of work on a new community library next to their school. Builders lay floor tiles, fit windows, run plastic pipes, hang curtains and paint the walls. We learn about seven processed materials with special properties: plaster of Paris, concrete, fabrics, ceramics, glass, plastics and paints.

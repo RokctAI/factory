@@ -1,0 +1,1 @@
+Today two firefighters visit a primary school in Alexandra, Johannesburg, with their fire engine. They talk to the Grade 5 class about how fires start in homes and in the veld, how to prevent them, and what to do if there is a fire. We learn how to use fuels safely, how to escape a fire, and how to help someone who is burnt.
