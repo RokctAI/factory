@@ -1,0 +1,1 @@
+Today a Grade 5 class visits the Gariep Dam, on the border of the Free State and the Eastern Cape, and stands on the huge concrete wall above the biggest reservoir in South Africa. We learn what a dam is, why people build dams, and, in a case study of the Gariep Dam, how dams change the physical environment, for good and for bad.

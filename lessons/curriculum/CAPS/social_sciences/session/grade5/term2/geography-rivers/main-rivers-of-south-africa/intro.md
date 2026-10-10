@@ -1,0 +1,1 @@
+Today a Grade 5 class from Pietermaritzburg watches the start of a famous canoe race that follows rivers all the way to the sea at Durban. We learn the main rivers of South Africa, where each one begins, its major tributaries, which way it flows and where it reaches the sea, using a map of the country's rivers.

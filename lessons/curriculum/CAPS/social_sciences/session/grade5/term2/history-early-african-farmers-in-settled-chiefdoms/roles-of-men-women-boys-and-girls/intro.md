@@ -1,0 +1,1 @@
+Today a Grade 5 class near Mthatha, in the Eastern Cape, interviews a grandfather and a grandmother from their village about how they grew up, herding calves and scaring birds from the fields. We learn about the roles of men, women, boys and girls in early farming societies, how children helped to produce food, and how initiation marked the step into adulthood.

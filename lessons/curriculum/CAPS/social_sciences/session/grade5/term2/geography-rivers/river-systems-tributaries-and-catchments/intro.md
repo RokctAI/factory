@@ -1,0 +1,1 @@
+Today a Grade 5 class from Douglas, in the Northern Cape, stands at the place where two of South Africa's biggest rivers, the Vaal and the Gariep, meet and join together. We learn what a river system is, what tributaries and confluences are, and what a catchment area is, using the great Gariep-Vaal river system as our example.

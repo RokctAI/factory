@@ -1,0 +1,1 @@
+Today we revise all of Term 4. A Grade 5 class in Kimberley, in the Northern Cape, sets up three revision tables near the Big Hole: minerals and mines, mining's effects on the environment and people, and the heritage trail. We visit each table, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.

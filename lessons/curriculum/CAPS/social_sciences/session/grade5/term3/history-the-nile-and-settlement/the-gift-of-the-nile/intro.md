@@ -1,0 +1,1 @@
+Today a Grade 5 class in Musina, in Limpopo, near the Limpopo River, builds a model of the Nile Valley in a sand tray and floods it with water to see what happens. We learn how the Nile River and its yearly flood made life possible in the desert, and how it shaped where and how the ancient Egyptians settled, farmed and travelled.

@@ -1,0 +1,1 @@
+Today a Grade 5 class from Bergville hikes up to the high plateau of Mont-aux-Sources in the Drakensberg, where small streams begin and the Thukela River tumbles over the edge in the Tugela Falls. We learn where rivers begin and end, why they always flow from high areas down to the sea, and the parts of a river from source to mouth.

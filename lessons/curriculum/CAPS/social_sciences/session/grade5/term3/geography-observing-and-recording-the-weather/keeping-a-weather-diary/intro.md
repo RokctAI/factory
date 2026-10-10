@@ -1,0 +1,1 @@
+Today a Grade 5 class in Kimberley, in the Northern Cape, starts a two-week weather project, recording temperature, cloud cover, precipitation and wind every school day in a weather diary. We learn how to observe and record the weather carefully, how to draw a table and graphs from our records, and how to spot patterns and explain how the weather affects daily life.

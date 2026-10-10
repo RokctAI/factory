@@ -1,0 +1,1 @@
+Today a Grade 5 class in Johannesburg, in Gauteng, plans a pretend holiday around South Africa and must decide what to pack for each place. We learn the difference between weather and climate, how climate is described using temperature and rainfall over many years, and the main kinds of climate found in South Africa.

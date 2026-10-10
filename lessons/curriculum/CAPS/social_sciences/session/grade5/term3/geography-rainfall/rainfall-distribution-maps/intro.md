@@ -1,0 +1,1 @@
+Today a Grade 5 class in Durban, in KwaZulu-Natal, compares rainfall with their pen pals in Springbok, in the Northern Cape, using a rainfall distribution map of South Africa. We learn how to read a rainfall map with a key, why the east of South Africa gets much more rain than the west, and why water is so precious in our country.

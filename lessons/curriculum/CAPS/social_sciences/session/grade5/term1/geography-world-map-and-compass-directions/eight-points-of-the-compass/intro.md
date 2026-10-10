@@ -1,0 +1,1 @@
+Today a Grade 5 class visits the lighthouse at Cape Agulhas, the southernmost tip of Africa, where a big compass rose is painted near the viewing point. We learn the eight points of the compass, how to describe the direction of a place from a fixed point, and how to use the eight directions on a world map.

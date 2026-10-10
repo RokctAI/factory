@@ -1,0 +1,1 @@
+Today a Grade 5 class visits the Richtersveld, in the far north-west of the Northern Cape, where Nama families still move with their goats and sheep and build dome-shaped houses covered with reed mats. We learn about the pastoral way of life of the Khoikhoi herders of the Later Stone Age, and how the San and the Khoikhoi shared the same landscape.

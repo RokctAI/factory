@@ -1,0 +1,1 @@
+Today a Grade 5 class in Welkom, in the Free State, watches the school nurse check a learner's pulse and look at a grazed knee, and then compares her work with that of physicians in ancient Egypt. We learn how Egyptian physicians examined patients, which diseases and injuries they treated, what they knew about the body, and how they mixed medicine with religion.

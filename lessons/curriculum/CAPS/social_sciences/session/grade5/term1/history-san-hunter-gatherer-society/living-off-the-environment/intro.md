@@ -1,0 +1,1 @@
+Today a Grade 5 class from Clanwilliam goes on a guided walk in the Cederberg mountains, past orange sandstone rocks and rock shelters. We learn how San hunter-gatherers lived off the environment in the Later Stone Age, gathering plants and hunting animals, finding water and shelter, and moving with the seasons as wild food became available.

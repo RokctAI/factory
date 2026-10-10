@@ -1,0 +1,1 @@
+Today a Grade 5 class from Estcourt, in KwaZulu-Natal, walks with a guide to Game Pass Shelter in the Drakensberg, where San paintings of eland and people cover the rock walls. We learn about San rock art in the uKhahlamba-Drakensberg Park, how it was made, what it may mean, and why it is precious heritage that must be protected.

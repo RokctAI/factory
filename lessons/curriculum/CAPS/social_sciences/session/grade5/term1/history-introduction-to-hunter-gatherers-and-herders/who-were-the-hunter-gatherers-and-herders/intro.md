@@ -1,0 +1,1 @@
+Today a Grade 5 class in Graaff-Reinet, in the Karoo, stretches a long timeline rope across the school hall to see just how far back History can go. We learn what History is, what we study in Grade 5 History and how our work is assessed, and we meet the first people of this topic: the San hunter-gatherers and the Khoikhoi herders of southern Africa.

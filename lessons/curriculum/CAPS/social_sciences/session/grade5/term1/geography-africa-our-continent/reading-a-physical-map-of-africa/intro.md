@@ -1,0 +1,1 @@
+Today a Grade 5 class in Bloemfontein, high on the plateau in the Free State, opens their atlases at a colourful physical map of Africa. We learn what a physical map shows, what sea level and height above sea level mean, and how colours and a key show high and low areas, rivers and lakes.

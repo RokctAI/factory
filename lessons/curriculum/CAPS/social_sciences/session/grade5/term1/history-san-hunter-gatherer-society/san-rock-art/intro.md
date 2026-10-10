@@ -1,0 +1,1 @@
+Today a Grade 5 class hikes to Game Pass Shelter at Kamberg, in the uKhahlamba-Drakensberg, to see a famous panel of San rock paintings of eland. We learn where, when, how and why San rock art was made, how researchers interpret it, and how the Linton rock art panel inspired South Africa's coat of arms.

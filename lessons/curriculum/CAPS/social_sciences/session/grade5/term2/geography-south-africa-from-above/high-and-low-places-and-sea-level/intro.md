@@ -1,0 +1,1 @@
+Today a Grade 5 class from Underberg rides up the steep Sani Pass in a 4x4 vehicle, watching a height reading on a phone climb as they go. We learn about high and low places, what sea level is, how height above sea level is measured, and how maps show high and low land in South Africa.

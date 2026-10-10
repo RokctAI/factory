@@ -1,0 +1,1 @@
+Today a Grade 5 class in Gqeberha, in the Eastern Cape, writes their names in hieroglyphics inside oval cartouches, adds up numbers using Egyptian symbols, and looks for the bright star Sirius in the evening sky. We learn about hieroglyphic writing, ancient Egyptian mathematics, and how the Egyptians studied the stars to make a calendar.

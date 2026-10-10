@@ -1,0 +1,1 @@
+Today a Grade 5 class from Thohoyandou, in Limpopo, sits in on a village meeting where a headman and elders discuss giving land to a young family. We learn why and where the first farmers chose to settle in southern Africa, and how they thought about land: as something that belonged to the whole community, not something to be bought and sold.

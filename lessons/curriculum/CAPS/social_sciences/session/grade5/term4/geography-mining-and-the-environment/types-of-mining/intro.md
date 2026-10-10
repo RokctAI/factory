@@ -1,0 +1,1 @@
+Today a Grade 5 class visits the Big Hole in Kimberley, in the Northern Cape, an enormous old diamond mine dug largely by hand, and then watches a video of a modern open pit and a deep underground shaft. We learn what mining is, and about the main types of mining: open pit, surface, shaft and deep-level mining.

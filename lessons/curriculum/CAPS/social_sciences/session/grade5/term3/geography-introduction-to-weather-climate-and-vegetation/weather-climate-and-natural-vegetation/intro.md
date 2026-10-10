@@ -1,0 +1,1 @@
+Today a Grade 5 class in Upington, in the Northern Cape, sits in the shade of a camel thorn tree on a hot summer morning. We use their schoolyard to introduce the topic: weather, what it is like today, climate, what it is usually like, and natural vegetation, the plants that grow there on their own.

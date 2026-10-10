@@ -1,0 +1,1 @@
+Today a Grade 5 class in Germiston, on the East Rand of Gauteng, looks out at an old yellow mine dump and sorts a box of rock samples on their desks. We are introduced to minerals and mining: what minerals are, why they are called non-renewable resources, and why South Africa is one of the world's great mining countries.

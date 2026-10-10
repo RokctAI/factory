@@ -1,0 +1,1 @@
+Today a Grade 5 class in Rustenburg, in North West, sets up a small weather station in the school grounds, with a thermometer in a white box and a rain gauge on a pole. We learn how temperature and rain are measured, which instruments are used, how to read them, and the units we use: degrees Celsius and millimetres.

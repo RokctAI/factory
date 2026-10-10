@@ -1,0 +1,1 @@
+Today a Grade 5 class visits Kirstenbosch National Botanical Garden in Cape Town, where they see fynbos, forest trees and plants from the dry Karoo growing side by side. We learn what natural vegetation is, the main kinds of natural vegetation in South Africa, and how plants are adapted to the climate where they grow.

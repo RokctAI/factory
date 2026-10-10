@@ -1,0 +1,1 @@
+Today a Grade 5 class in Soweto, in Gauteng, celebrates Heritage Day, with learners in traditional clothing, family recipes, songs in many languages and a visit to Vilakazi Street. We learn what heritage is: natural and cultural heritage, things we can touch and things we cannot, personal, community and national heritage, and why heritage must be protected.

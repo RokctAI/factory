@@ -1,0 +1,1 @@
+Today a Grade 5 class from Musina, in Limpopo, visits a viewpoint above the Beitbridge border post, where trucks cross the bridge over the Limpopo River into Zimbabwe. We learn what a country is, what a capital city is, why South Africa has three capital cities, and how borders are shown on maps, including borders that follow rivers and lakes.

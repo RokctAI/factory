@@ -1,0 +1,1 @@
+Today a Grade 5 class in Mahikeng, in North West, plans an imaginary heritage trail through all nine provinces of South Africa, with a heritage passport to stamp at each stop. We are introduced to the topic: what a heritage trail is, the provinces we will visit, and the different kinds of heritage we will meet along the way.

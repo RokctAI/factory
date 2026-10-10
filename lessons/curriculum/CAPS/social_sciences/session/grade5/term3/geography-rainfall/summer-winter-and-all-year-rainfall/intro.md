@@ -1,0 +1,1 @@
+Today a Grade 5 class in George, in the Western Cape, compares bar graphs of monthly rainfall for Pretoria, Cape Town and their own town. We learn about South Africa's three rainfall patterns, summer rainfall, winter rainfall and all-year rainfall, where each is found on a map, and how to read them from bar graphs.

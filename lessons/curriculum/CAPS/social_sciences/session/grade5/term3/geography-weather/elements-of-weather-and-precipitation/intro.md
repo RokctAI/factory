@@ -1,0 +1,1 @@
+Today a Grade 5 class in Harrismith, in the Free State, watches a summer thunderstorm roll in from the mountains, bringing heavy rain and a short burst of hail. We learn about the elements of weather, temperature, wind, cloud cover and rainfall, and about the three main kinds of precipitation: rain, hail and snow.

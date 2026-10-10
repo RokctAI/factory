@@ -1,0 +1,1 @@
+Today a Grade 5 class from Pretoria, in Gauteng, visits the Sterkfontein Caves in the Cradle of Humankind, where some of the world's most important fossils of early human ancestors have been found. We learn why the Cradle of Humankind is a heritage site of world significance, what has been discovered there, and how scientists study it.

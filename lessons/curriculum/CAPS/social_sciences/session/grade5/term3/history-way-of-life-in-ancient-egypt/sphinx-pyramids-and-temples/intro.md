@@ -1,0 +1,1 @@
+Today a Grade 5 class in Pietermaritzburg, in KwaZulu-Natal, builds model pyramids from sugar cubes and a model Sphinx from clay. We learn why and how the ancient Egyptians built pyramids, what the Great Sphinx is, and what temples were for, and how these buildings show the Egyptians' beliefs and skills.

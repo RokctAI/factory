@@ -1,0 +1,1 @@
+Today a Grade 5 class from Mahikeng, in North West, visits a kgotla, a traditional meeting place in a village nearby, where the community gathers under a big tree to discuss problems with the kgosi, or chief. We learn how early farming societies were organised: families and clans, chiefs, headmen and councils, and how people made a living through farming, crafts and trade.

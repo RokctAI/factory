@@ -1,0 +1,1 @@
+Today a Grade 5 class from Makhado, in Limpopo, visits Mapungubwe National Park, climbs the steep hill where kings once lived, and sees a photograph of the famous golden rhinoceros. We learn about the kingdom of Mapungubwe, the golden objects found there, and what these objects tell us about an African society that traded across the Indian Ocean about eight hundred years ago.

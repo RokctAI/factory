@@ -1,0 +1,1 @@
+Today a Grade 5 class from Eshowe, in KwaZulu-Natal, visits a heritage village where a traditional homestead has been rebuilt, with round, thatched houses arranged in a circle around a cattle kraal. We learn how early African farmers built their homesteads and villages, what the houses were made of, how a homestead was laid out, and how homesteads grouped together into villages.

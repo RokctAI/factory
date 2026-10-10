@@ -1,0 +1,1 @@
+Today a Grade 5 class in Rustenburg, in North West, looks at photographs their teacher took when she climbed Mount Kilimanjaro and visited Lake Malawi. We learn about Africa's highest mountains, Kilimanjaro and Mount Kenya, and its largest lakes, Lake Victoria, Lake Tanganyika and Lake Malawi, and find them on a physical map.

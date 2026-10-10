@@ -1,0 +1,1 @@
+Today a Grade 5 class from Paarl, in the Western Cape, climbs to the top of Paarl Rock, a giant granite dome, and looks out over mountains, a river valley, farms and the town below. We learn what physical features are, how they differ from human features, and get a first look at the big shape of South Africa's land.
