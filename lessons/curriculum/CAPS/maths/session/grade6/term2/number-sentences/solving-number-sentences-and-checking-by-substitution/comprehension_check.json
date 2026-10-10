@@ -1,0 +1,19 @@
+{
+  "questions": [
+    {
+      "id": "cc1",
+      "question": "Solve box − 2 480 = 3 520 and check your answer.",
+      "expected_answer": "Undo the subtraction by adding: 3 520 + 2 480 = 6 000, so the box is 6 000. Check: 6 000 − 2 480 = 3 520, which is true."
+    },
+    {
+      "id": "cc2",
+      "question": "Use trial and improvement to solve box × 24 = 1 128. Show your tries.",
+      "expected_answer": "Try 40: 40 × 24 = 960, too small. Try 50: 50 × 24 = 1 200, too big. Try 47: 47 × 24 = 1 128, just right. The box is 47."
+    },
+    {
+      "id": "cc3",
+      "question": "A learner says the box in 3 × box + 5 = 32 is 10. Use substitution to check, and find the correct box.",
+      "expected_answer": "3 × 10 + 5 = 35, which is not 32, so 10 is wrong. Try 9: 3 × 9 + 5 = 32, which is true. The box is 9."
+    }
+  ]
+}

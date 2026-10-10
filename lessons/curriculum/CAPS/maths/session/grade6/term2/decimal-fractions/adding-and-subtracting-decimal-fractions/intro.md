@@ -1,0 +1,1 @@
+Today we learn to add and subtract decimal fractions with up to two decimal places. A Grade 6 class goes on a camp in the Drakensberg, buys food at a shop on the way and hikes to a waterfall and a cave, so that we can add and subtract decimals by lining up the commas, estimate the answers and check them with the inverse operation.

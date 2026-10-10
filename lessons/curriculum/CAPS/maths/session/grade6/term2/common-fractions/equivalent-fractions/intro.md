@@ -1,0 +1,1 @@
+Today we learn to recognise and use equivalent forms of common fractions with one-digit and two-digit denominators. We break a chocolate slab of 24 blocks into different groups, look at a soccer team's results for the season, and write fractions as hundredths, so that we can make equivalent fractions, simplify fractions and see that different fractions can name the same amount.

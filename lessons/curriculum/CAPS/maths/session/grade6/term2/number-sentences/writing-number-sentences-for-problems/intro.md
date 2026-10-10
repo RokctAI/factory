@@ -1,0 +1,1 @@
+Today we learn to write number sentences that describe problem situations. A cricket club in Benoni sells tickets for a big match, sets out seats in rows and shares out money after the game, so that we can turn a story into a number sentence, put the box where the unknown belongs and use brackets for problems with two steps.

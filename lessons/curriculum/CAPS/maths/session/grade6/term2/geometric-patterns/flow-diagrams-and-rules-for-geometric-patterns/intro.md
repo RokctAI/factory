@@ -1,0 +1,1 @@
+Today we learn to use flow diagrams and tables for geometric patterns. A school in Kimberley pushes tables together for a prize-giving dinner, and we build rows of hexagons from matchsticks, so that we can find the rule from the pictures, work out outputs and inputs, and show the same rule in words, a flow diagram, a table and a number sentence.

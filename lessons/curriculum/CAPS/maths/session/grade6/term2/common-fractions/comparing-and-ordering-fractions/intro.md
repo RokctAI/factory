@@ -1,0 +1,1 @@
+Today we learn to compare and order common fractions, including tenths and hundredths. Apple farmers in Ceres compare how much of their orchards they have picked, learners compare parts of a running track, and we place fractions on a number line, so that we can say which fraction is bigger and put a list of fractions in order.

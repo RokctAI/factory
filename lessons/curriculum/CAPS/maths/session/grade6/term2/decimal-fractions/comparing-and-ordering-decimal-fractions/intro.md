@@ -1,0 +1,1 @@
+Today we learn to compare and order decimal fractions. At a school swimming gala in Durban, five swimmers race 50 m freestyle and their times are written to two decimal places, so that we can decide which decimal is bigger, put decimals in order and round decimals to the nearest whole number and the nearest tenth.
