@@ -1,0 +1,1 @@
+Today a Grade 6 class from George visits the Dias Museum in Mossel Bay, where a full-size copy of a caravel stands indoors and a freshwater spring still flows nearby. We learn what happened in 1488 when Bartolomeu Dias and his crew landed at Mossel Bay and met Khoikhoi herders, how the meeting ended in violence, and how the same event looks from two very different points of view.

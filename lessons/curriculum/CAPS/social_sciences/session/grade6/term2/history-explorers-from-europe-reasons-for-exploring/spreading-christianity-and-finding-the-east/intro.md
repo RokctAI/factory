@@ -1,0 +1,1 @@
+Today a Grade 6 class from Kenton-on-Sea walks over the dunes to a stone cross on a rocky point called Kwaaihoek, where Bartolomeu Dias placed a cross in 1488. We learn two more reasons why Europeans explored: to spread the Christian religion, and to cross the oceans to find a sea route to the East, and we compare the routes chosen by Portugal and Spain.

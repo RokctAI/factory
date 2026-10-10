@@ -1,0 +1,1 @@
+Today a Grade 6 class in Paarl looks at a cheap T-shirt and asks a hard question: who paid the real price for it? We learn what fair and unfair trade mean, how unfair trade can lead to low pay, unsafe work, child labour and exploitation, and why the price we pay in a shop does not always show the human cost.

@@ -1,0 +1,1 @@
+Today a Grade 6 class in Makhanda learns to draw a road that disappears into the distance, using a trick that European artists rediscovered about six hundred years ago. We learn what the European Renaissance was, when and where it began, the new ideas in art, learning, science and printing that it brought, and why it was a turning point that helped lead to voyages of exploration.

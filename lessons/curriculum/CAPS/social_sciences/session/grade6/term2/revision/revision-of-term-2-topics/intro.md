@@ -1,0 +1,1 @@
+Today we revise all of Term 2. A Grade 6 class in Kimberley, in the Northern Cape, sets up three revision stalls in the school hall, like a small market: trade and why people trade, adding value and fair trade, and the explorers from Europe. We visit each stall, remind ourselves of the big ideas from Geography and History, and fix the mistakes learners often make.
