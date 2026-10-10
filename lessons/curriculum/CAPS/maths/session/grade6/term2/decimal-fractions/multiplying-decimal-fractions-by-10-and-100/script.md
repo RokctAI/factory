@@ -34,7 +34,7 @@ In money, this pattern is easy to see. A sweet that costs R0,25 is 25 cents. Ten
 
 The questions for this section are with you now: multiplying decimals by 100 and finding missing numbers.
 
-## Subtopic: Using ×10 and ×100 in Measurement and Money
+## Subtopic: Using Times 10 and Times 100 in Measurement and Money
 
 Many units are linked by 10 and 100. There are 100 cents in R1, 100 cm in 1 m, and 10 mm in 1 cm. To change a bigger unit into a smaller unit, we multiply, because there will be more of the smaller units.
 

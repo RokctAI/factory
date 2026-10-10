@@ -14,7 +14,7 @@
 
 from manim import *
 
-# Band-layout whiteboard scene for multiplying-decimal-fractions-by-10-and-100 (Part 1 Expert
+# Band-layout whiteboard scene for collecting-and-organising-data (Part 1 Expert
 # subtopics 1-3, Part 2 Simplifier subtopics 4-6). One band per teaching
 # beat, camera moves down to fresh space, nothing is removed. Write-only
 # reveals on single-string Tex keep the export inside the whiteboard
@@ -33,7 +33,7 @@ def strike(m):
                 color=RED, stroke_width=6)
 
 
-class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
+class CollectingAndOrganisingDataSession(MovingCameraScene):
     def next_band(self, k):
         self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
 
@@ -57,31 +57,31 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.wait(42)
 
         # ============ Part 1 — Expert ============
-        # --- Band 0 (subtopic_1): Multiplying Decimals by 10
-        self.write_rows(0, "Multiplying Decimals by 10", [
-            "Times 10: one place left",
-            "4,75 times 10 = 47,5",
-            "3,08 times 10 = 30,8",
-            "0,35 m times 10 = 3,5 m",
+        # --- Band 0 (subtopic_1): Asking Questions and Collecting Data
+        self.write_rows(0, "Asking Questions and Collecting Data", [
+            "Data answers a question",
+            "Survey, observation, records",
+            "Clear, fair questions with choices",
+            "Yes or no: simplest",
         ], scale=0.82, box=2)
 
-        # --- Band 1 (subtopic_2): Multiplying Decimals by 100
+        # --- Band 1 (subtopic_2): Tally Marks and Frequency Tables
         self.next_band(1)
-        self.write_rows(1, "Multiplying Decimals by 100", [
-            "Times 100: two places left",
-            "4,75 times 100 = 475",
-            "2,4 times 100 = 240",
-            "0,07 times 100 = 7",
+        self.write_rows(1, "Tally Marks and Frequency Tables", [
+            "Tally: four lines, fifth across",
+            "Walk 15, taxi 9, bus 6, car 4, bicycle 2",
+            "Total: 36 learners",
+            "Breakfast: yes 27, no 9",
         ], scale=0.82, box=2)
 
-        # --- Band 2 (subtopic_3): Using Times 10 and Times 100 in Measurement and Money
+        # --- Band 2 (subtopic_3): Organising and Ordering Data
         self.next_band(2)
-        self.write_rows(2, "Using Times 10 and Times 100 in Measurement and Money", [
-            "R1 = 100 cents",
-            "R3,60 = 360 cents",
-            "2,45 m = 245 cm",
-            "12,5 cm = 125 mm",
-        ], scale=0.82, box=3)
+        self.write_rows(2, "Organising and Ordering Data", [
+            "Smallest to largest",
+            "Bicycle, car, bus, taxi, walk",
+            "Intervals: 0 to 9, 10 to 19, 20 to 29",
+            "No overlaps",
+        ], scale=0.82, box=1)
 
         # --- Band 3 (subtopic_3): error museum
         self.next_band(3)
@@ -89,10 +89,10 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.play(Write(em))
         self.wait(1.5)
         errs = [
-            "``4,75 times 10 = 4,750''",
-            "``2,4 times 100 = 2,400''",
-            "``0,35 times 100 = 3,5''",
-            "``R3,60 = 36 cents''",
+            "``Five upright lines''",
+            "``Total not checked''",
+            "``Soccer is the best, isn't it?''",
+            "``0 to 10, 10 to 20''",
         ]
         for i, e in enumerate(errs):
             t = Tex(e).scale(0.9).shift(band_shift(3) + UP * (1.3 - 1.0 * i))
@@ -103,34 +103,34 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
 
         # ============ Part 2 — Simplifier ============
 
-        # --- Band 4 (subtopic_4): Times 10
+        # --- Band 4 (subtopic_4): Ask a Clear Question
         self.next_band(4)
-        self.write_rows(4, "Times 10", [
-            "Times 10",
-            "Each digit moves one place left",
-            "Ten times bigger",
-            "R4,75 to R47,50",
-        ], scale=0.9, box=1)
+        self.write_rows(4, "Ask a Clear Question", [
+            "Ask a clear question",
+            "Give choices",
+            "Do not push",
+            "Ask once each",
+        ], scale=0.9, box=0)
 
-        # --- Band 5 (subtopic_5): Times 100
+        # --- Band 5 (subtopic_5): Tally in Fives
         self.next_band(5)
-        self.write_rows(5, "Times 100", [
-            "Times 100",
-            "Two places left",
-            "Zeros fill gaps",
-            "2,4 to 240",
-        ], scale=0.9, box=3)
-
-        # --- Band 6 (subtopic_6): Rand, Cents and Centimetres
-        self.next_band(6)
-        self.write_rows(6, "Rand, Cents and Centimetres", [
-            "Rand to cents: times 100",
-            "Metres to cm: times 100",
-            "Cm to mm: times 10",
-            "Small units, big number",
+        self.write_rows(5, "Tally in Fives", [
+            "Tally in fives",
+            "Four lines, one across",
+            "Check the total",
+            "36",
         ], scale=0.9, box=2)
 
-        last = Tex("Times 10 moves every digit one place left; times 100 moves every digit two places left.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
+        # --- Band 6 (subtopic_6): Put It in Order
+        self.next_band(6)
+        self.write_rows(6, "Put It in Order", [
+            "Put it in order",
+            "Smallest first",
+            "Largest last",
+            "Walk wins",
+        ], scale=0.9, box=1)
+
+        last = Tex("Ask a clear question, tally in fives, check the total, then order the groups from smallest to largest.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
         self.play(Write(last))
         self.play(Create(SurroundingRectangle(last, color=YELLOW)))
         self.wait(4)

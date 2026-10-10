@@ -1,0 +1,1 @@
+Today we learn to estimate, measure, record, compare and order mass in grams and kilograms. Mrs Jacobs bakes for a church bazaar in Paarl, weighing flour, butter and eggs on kitchen scales and a balance, while her grandson checks his own mass on the bathroom scale, so that we can choose the right instrument, read scales carefully and compare masses in the same unit.

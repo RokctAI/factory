@@ -1,0 +1,1 @@
+Today we learn to read time zone maps, calculate time differences between places, and solve problems involving time. Ayanda's family in Johannesburg phones relatives in Accra, Dubai, Beijing and São Paulo, and an uncle flies to Dubai, so that we can add or subtract hours for places east and west of South Africa, cross midnight correctly and work out arrival times.

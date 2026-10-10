@@ -1,0 +1,1 @@
+Today we learn to collect data using questionnaires, tally marks and tables, and to organise and order it. A Grade 6 class of 36 learners in Soweto surveys how everyone travels to school, which sport they like best and whether they eat breakfast, so that we can ask clear questions, tally answers in fives, check totals and order groups from smallest to largest.

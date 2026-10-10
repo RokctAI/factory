@@ -1,0 +1,1 @@
+Today we learn to read calendars and calculate time intervals, from seconds and minutes up to years, decades and centuries. A Grade 6 class plans its school calendar around Heritage Day and the holidays and makes a timeline of South African history, so that we can find days of the week, count on in hours and minutes, and measure long stretches of time.

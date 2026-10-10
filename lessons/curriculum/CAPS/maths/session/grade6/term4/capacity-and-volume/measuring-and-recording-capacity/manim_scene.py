@@ -14,7 +14,7 @@
 
 from manim import *
 
-# Band-layout whiteboard scene for multiplying-decimal-fractions-by-10-and-100 (Part 1 Expert
+# Band-layout whiteboard scene for measuring-and-recording-capacity (Part 1 Expert
 # subtopics 1-3, Part 2 Simplifier subtopics 4-6). One band per teaching
 # beat, camera moves down to fresh space, nothing is removed. Write-only
 # reveals on single-string Tex keep the export inside the whiteboard
@@ -33,7 +33,7 @@ def strike(m):
                 color=RED, stroke_width=6)
 
 
-class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
+class MeasuringAndRecordingCapacitySession(MovingCameraScene):
     def next_band(self, k):
         self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
 
@@ -57,31 +57,31 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.wait(42)
 
         # ============ Part 1 — Expert ============
-        # --- Band 0 (subtopic_1): Multiplying Decimals by 10
-        self.write_rows(0, "Multiplying Decimals by 10", [
-            "Times 10: one place left",
-            "4,75 times 10 = 47,5",
-            "3,08 times 10 = 30,8",
-            "0,35 m times 10 = 3,5 m",
-        ], scale=0.82, box=2)
+        # --- Band 0 (subtopic_1): Units and Benchmarks
+        self.write_rows(0, "Units and Benchmarks", [
+            "ml, l, kl",
+            "1 000 ml = 1 l; 1 000 l = 1 kl",
+            "Teaspoon 5 ml, tablespoon 15 ml",
+            "Cup 250 ml: 4 cups = 1 l",
+        ], scale=0.82, box=1)
 
-        # --- Band 1 (subtopic_2): Multiplying Decimals by 100
+        # --- Band 1 (subtopic_2): Measuring with Spoons, Cups and Jugs
         self.next_band(1)
-        self.write_rows(1, "Multiplying Decimals by 100", [
-            "Times 100: two places left",
-            "4,75 times 100 = 475",
-            "2,4 times 100 = 240",
-            "0,07 times 100 = 7",
+        self.write_rows(1, "Measuring with Spoons, Cups and Jugs", [
+            "200 ml split into 4 spaces: 50 ml",
+            "Second mark after 400: 500 ml",
+            "Read at eye level",
+            "3 tablespoons = 45 ml",
         ], scale=0.82, box=2)
 
-        # --- Band 2 (subtopic_3): Using Times 10 and Times 100 in Measurement and Money
+        # --- Band 2 (subtopic_3): Recording, Comparing and Ordering
         self.next_band(2)
-        self.write_rows(2, "Using Times 10 and Times 100 in Measurement and Money", [
-            "R1 = 100 cents",
-            "R3,60 = 360 cents",
-            "2,45 m = 245 cm",
-            "12,5 cm = 125 mm",
-        ], scale=0.82, box=3)
+        self.write_rows(2, "Recording, Comparing and Ordering", [
+            "1,5 l = 1 500 ml",
+            "1 500 ml is more than 1 250 ml",
+            "750 ml; 1 800 ml; 2 l",
+            "4 l + 250 ml = 4 250 ml",
+        ], scale=0.82, box=1)
 
         # --- Band 3 (subtopic_3): error museum
         self.next_band(3)
@@ -89,10 +89,10 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.play(Write(em))
         self.wait(1.5)
         errs = [
-            "``4,75 times 10 = 4,750''",
-            "``2,4 times 100 = 2,400''",
-            "``0,35 times 100 = 3,5''",
-            "``R3,60 = 36 cents''",
+            "``Reading the jug from above''",
+            "``1 250 ml is more than 1,5 l''",
+            "``3 tablespoons = 3 ml''",
+            "``A half-full 2 l bottle holds 2 l''",
         ]
         for i, e in enumerate(errs):
             t = Tex(e).scale(0.9).shift(band_shift(3) + UP * (1.3 - 1.0 * i))
@@ -103,34 +103,34 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
 
         # ============ Part 2 — Simplifier ============
 
-        # --- Band 4 (subtopic_4): Times 10
+        # --- Band 4 (subtopic_4): Millilitres, Litres, Kilolitres
         self.next_band(4)
-        self.write_rows(4, "Times 10", [
-            "Times 10",
-            "Each digit moves one place left",
-            "Ten times bigger",
-            "R4,75 to R47,50",
-        ], scale=0.9, box=1)
+        self.write_rows(4, "Millilitres, Litres, Kilolitres", [
+            "Three units",
+            "Small: ml",
+            "Bottles: l",
+            "Tanks: kl",
+        ], scale=0.9, box=0)
 
-        # --- Band 5 (subtopic_5): Times 100
+        # --- Band 5 (subtopic_5): Eye Level
         self.next_band(5)
-        self.write_rows(5, "Times 100", [
-            "Times 100",
-            "Two places left",
-            "Zeros fill gaps",
-            "2,4 to 240",
-        ], scale=0.9, box=3)
-
-        # --- Band 6 (subtopic_6): Rand, Cents and Centimetres
-        self.next_band(6)
-        self.write_rows(6, "Rand, Cents and Centimetres", [
-            "Rand to cents: times 100",
-            "Metres to cm: times 100",
-            "Cm to mm: times 10",
-            "Small units, big number",
+        self.write_rows(5, "Eye Level", [
+            "Eye level",
+            "Value of each mark",
+            "Bend down",
+            "Read the flat middle",
         ], scale=0.9, box=2)
 
-        last = Tex("Times 10 moves every digit one place left; times 100 moves every digit two places left.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
+        # --- Band 6 (subtopic_6): Same Unit, Then Compare
+        self.next_band(6)
+        self.write_rows(6, "Same Unit, Then Compare", [
+            "Same unit, then compare",
+            "1,5 l = 1 500 ml",
+            "More than 1 250 ml",
+            "Bottle holds more",
+        ], scale=0.9, box=1)
+
+        last = Tex("1 000 ml make 1 litre: read jugs at eye level and compare amounts in the same unit.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
         self.play(Write(last))
         self.play(Create(SurroundingRectangle(last, color=YELLOW)))
         self.wait(4)

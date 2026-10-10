@@ -1,0 +1,1 @@
+Today we learn to convert between grams and kilograms, using whole numbers, decimals and fractions, and to solve problems with mass. A farm stall near Tzaneen sells avocados, mangoes and nuts and loads crates onto a bakkie, so that we can change units in both directions and add, multiply and share masses correctly.

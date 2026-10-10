@@ -14,7 +14,7 @@
 
 from manim import *
 
-# Band-layout whiteboard scene for multiplying-decimal-fractions-by-10-and-100 (Part 1 Expert
+# Band-layout whiteboard scene for ratio-and-rate-problems (Part 1 Expert
 # subtopics 1-3, Part 2 Simplifier subtopics 4-6). One band per teaching
 # beat, camera moves down to fresh space, nothing is removed. Write-only
 # reveals on single-string Tex keep the export inside the whiteboard
@@ -33,7 +33,7 @@ def strike(m):
                 color=RED, stroke_width=6)
 
 
-class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
+class RatioAndRateProblemsSession(MovingCameraScene):
     def next_band(self, k):
         self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
 
@@ -57,31 +57,31 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.wait(42)
 
         # ============ Part 1 — Expert ============
-        # --- Band 0 (subtopic_1): Multiplying Decimals by 10
-        self.write_rows(0, "Multiplying Decimals by 10", [
-            "Times 10: one place left",
-            "4,75 times 10 = 47,5",
-            "3,08 times 10 = 30,8",
-            "0,35 m times 10 = 3,5 m",
-        ], scale=0.82, box=2)
+        # --- Band 0 (subtopic_1): Ratio
+        self.write_rows(0, "Ratio", [
+            "1 cup to 4 cups: ratio 1 : 4",
+            "Order matters: water to concentrate is 4 : 1",
+            "2 : 8 is the same as 1 : 4",
+            "12 : 18 simplifies to 2 : 3",
+        ], scale=0.82, box=1)
 
-        # --- Band 1 (subtopic_2): Multiplying Decimals by 100
+        # --- Band 1 (subtopic_2): Rate
         self.next_band(1)
-        self.write_rows(1, "Multiplying Decimals by 100", [
-            "Times 100: two places left",
-            "4,75 times 100 = 475",
-            "2,4 times 100 = 240",
-            "0,07 times 100 = 7",
-        ], scale=0.82, box=2)
+        self.write_rows(1, "Rate", [
+            "R18 for 6 rolls: R3 per roll",
+            "240 km in 3 hours: 80 km per hour",
+            "48 rolls in 20 minutes: 144 per hour",
+            "A rate needs units and per",
+        ], scale=0.82, box=0)
 
-        # --- Band 2 (subtopic_3): Using Times 10 and Times 100 in Measurement and Money
+        # --- Band 2 (subtopic_3): Solving Ratio and Rate Problems
         self.next_band(2)
-        self.write_rows(2, "Using Times 10 and Times 100 in Measurement and Money", [
-            "R1 = 100 cents",
-            "R3,60 = 360 cents",
-            "2,45 m = 245 cm",
-            "12,5 cm = 125 mm",
-        ], scale=0.82, box=3)
+        self.write_rows(2, "Solving Ratio and Rate Problems", [
+            "35 rolls in 3 : 4: 7 parts of 5",
+            "Shares: 15 and 20",
+            "R3 per roll against R2,50 per roll",
+            "50 g per roll: 1 750 g for 35 rolls",
+        ], scale=0.82, box=1)
 
         # --- Band 3 (subtopic_3): error museum
         self.next_band(3)
@@ -89,10 +89,10 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.play(Write(em))
         self.wait(1.5)
         errs = [
-            "``4,75 times 10 = 4,750''",
-            "``2,4 times 100 = 2,400''",
-            "``0,35 times 100 = 3,5''",
-            "``R3,60 = 36 cents''",
+            "``Concentrate to water as 4 : 1''",
+            "``35 rolls shared equally in 3 : 4''",
+            "``The bigger pack is always cheaper''",
+            "``Speed as 240 times 3''",
         ]
         for i, e in enumerate(errs):
             t = Tex(e).scale(0.9).shift(band_shift(3) + UP * (1.3 - 1.0 * i))
@@ -103,34 +103,34 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
 
         # ============ Part 2 — Simplifier ============
 
-        # --- Band 4 (subtopic_4): Times 10
+        # --- Band 4 (subtopic_4): Same Kind
         self.next_band(4)
-        self.write_rows(4, "Times 10", [
-            "Times 10",
-            "Each digit moves one place left",
-            "Ten times bigger",
-            "R4,75 to R47,50",
+        self.write_rows(4, "Same Kind", [
+            "Same kind",
+            "Ratio with a colon",
+            "No units",
+            "Order matters",
         ], scale=0.9, box=1)
 
-        # --- Band 5 (subtopic_5): Times 100
+        # --- Band 5 (subtopic_5): Different Kinds
         self.next_band(5)
-        self.write_rows(5, "Times 100", [
-            "Times 100",
-            "Two places left",
-            "Zeros fill gaps",
-            "2,4 to 240",
+        self.write_rows(5, "Different Kinds", [
+            "Different kinds",
+            "Rate with per",
+            "R3 per roll",
+            "80 km per hour",
+        ], scale=0.9, box=1)
+
+        # --- Band 6 (subtopic_6): Best Buy
+        self.next_band(6)
+        self.write_rows(6, "Best Buy", [
+            "Best buy",
+            "Add the parts",
+            "Find one part",
+            "Compare the price for one",
         ], scale=0.9, box=3)
 
-        # --- Band 6 (subtopic_6): Rand, Cents and Centimetres
-        self.next_band(6)
-        self.write_rows(6, "Rand, Cents and Centimetres", [
-            "Rand to cents: times 100",
-            "Metres to cm: times 100",
-            "Cm to mm: times 10",
-            "Small units, big number",
-        ], scale=0.9, box=2)
-
-        last = Tex("Times 10 moves every digit one place left; times 100 moves every digit two places left.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
+        last = Tex("Ratio compares the same kind, rate compares different kinds with per, and the price for one finds the better buy.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
         self.play(Write(last))
         self.play(Create(SurroundingRectangle(last, color=YELLOW)))
         self.wait(4)

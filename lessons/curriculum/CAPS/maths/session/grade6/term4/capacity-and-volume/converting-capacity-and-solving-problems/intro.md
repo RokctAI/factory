@@ -1,0 +1,1 @@
+Today we learn to convert between millilitres, litres and kilolitres, using whole numbers, decimals and fractions, and to solve problems with capacity. A school in Cape Town runs a water-saving project with its rain tank, taps, bottles and showers, so that we can change units in both directions and work out how long water will last and how much we can save.

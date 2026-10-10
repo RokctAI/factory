@@ -12,7 +12,7 @@
 
 ***
 
-### subtopic_3 — Using ×10 and ×100 in Measurement and Money
+### subtopic_3 — Using Times 10 and Times 100 in Measurement and Money
 **Assistant:** Why do I multiply when I change metres to centimetres?
 
 **Tutor:** Because centimetres are smaller units, so you need more of them to cover the same length. One metre is the same length as 100 centimetres. So 2 metres is 200 centimetres, and 2,45 metres is 2,45 times 100 centimetres, which is 245 cm. The length of the table has not changed; we are just counting it in smaller pieces, and smaller pieces mean a bigger number. Money works the same way. One rand is 100 cents, so R3,60 is 3,60 times 100, which is 360 cents. The amount of money is the same, but there are more of the smaller coins. A good way to check is to ask whether your answer should be bigger or smaller. Changing from a big unit to a small unit should give a bigger number. If you change 2,45 m to centimetres and get 0,0245, your answer is far too small, and you know you divided instead of multiplying. Later you will learn to change small units into big units, and then you will divide, because you need fewer of the bigger units.

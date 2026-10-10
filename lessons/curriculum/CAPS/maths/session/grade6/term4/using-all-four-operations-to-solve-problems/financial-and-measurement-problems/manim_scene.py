@@ -14,7 +14,7 @@
 
 from manim import *
 
-# Band-layout whiteboard scene for multiplying-decimal-fractions-by-10-and-100 (Part 1 Expert
+# Band-layout whiteboard scene for financial-and-measurement-problems (Part 1 Expert
 # subtopics 1-3, Part 2 Simplifier subtopics 4-6). One band per teaching
 # beat, camera moves down to fresh space, nothing is removed. Write-only
 # reveals on single-string Tex keep the export inside the whiteboard
@@ -33,7 +33,7 @@ def strike(m):
                 color=RED, stroke_width=6)
 
 
-class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
+class FinancialAndMeasurementProblemsSession(MovingCameraScene):
     def next_band(self, k):
         self.play(self.camera.frame.animate.move_to(band_shift(k)), run_time=0.8)
 
@@ -57,31 +57,31 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.wait(42)
 
         # ============ Part 1 — Expert ============
-        # --- Band 0 (subtopic_1): Multiplying Decimals by 10
-        self.write_rows(0, "Multiplying Decimals by 10", [
-            "Times 10: one place left",
-            "4,75 times 10 = 47,5",
-            "3,08 times 10 = 30,8",
-            "0,35 m times 10 = 3,5 m",
+        # --- Band 0 (subtopic_1): Money Problems
+        self.write_rows(0, "Money Problems", [
+            "Costs: R89 plus R65 plus R146 is R300",
+            "Income: 120 times R5 is R600",
+            "Profit: R600 minus R300 is R300",
+            "Change: R50 minus R35 is R15",
         ], scale=0.82, box=2)
 
-        # --- Band 1 (subtopic_2): Multiplying Decimals by 100
+        # --- Band 1 (subtopic_2): Measurement Problems with Fractions
         self.next_band(1)
-        self.write_rows(1, "Multiplying Decimals by 100", [
-            "Times 100: two places left",
-            "4,75 times 100 = 475",
-            "2,4 times 100 = 240",
-            "0,07 times 100 = 7",
-        ], scale=0.82, box=2)
+        self.write_rows(1, "Measurement Problems with Fractions", [
+            "2 kg is 2 000 g",
+            "Three quarters of 2 000 g is 1 500 g",
+            "Three fifths of 2 000 ml is 1 200 ml",
+            "5 000 ml in 250 ml cups: 20 cups",
+        ], scale=0.82, box=1)
 
-        # --- Band 2 (subtopic_3): Using Times 10 and Times 100 in Measurement and Money
+        # --- Band 2 (subtopic_3): Grouping and Equal Sharing
         self.next_band(2)
-        self.write_rows(2, "Using Times 10 and Times 100 in Measurement and Money", [
-            "R1 = 100 cents",
-            "R3,60 = 360 cents",
-            "2,45 m = 245 cm",
-            "12,5 cm = 125 mm",
-        ], scale=0.82, box=3)
+        self.write_rows(2, "Grouping and Equal Sharing", [
+            "3 tarts for 4 helpers: three quarters each",
+            "3 litres in quarter-litre cups: 12 cups",
+            "One third of R348 is R116",
+            "R232 shared by 4 is R58",
+        ], scale=0.82, box=0)
 
         # --- Band 3 (subtopic_3): error museum
         self.next_band(3)
@@ -89,10 +89,10 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
         self.play(Write(em))
         self.wait(1.5)
         errs = [
-            "``4,75 times 10 = 4,750''",
-            "``2,4 times 100 = 2,400''",
-            "``0,35 times 100 = 3,5''",
-            "``R3,60 = 36 cents''",
+            "``Profit as income plus costs: R900''",
+            "``Three quarters of 2 kg as 750 g''",
+            "``5 divided by 250 for the cups''",
+            "``3 tarts for 4 as four thirds each''",
         ]
         for i, e in enumerate(errs):
             t = Tex(e).scale(0.9).shift(band_shift(3) + UP * (1.3 - 1.0 * i))
@@ -103,34 +103,34 @@ class MultiplyingDecimalFractionsBy10And100Session(MovingCameraScene):
 
         # ============ Part 2 — Simplifier ============
 
-        # --- Band 4 (subtopic_4): Times 10
+        # --- Band 4 (subtopic_4): Money Sense
         self.next_band(4)
-        self.write_rows(4, "Times 10", [
-            "Times 10",
-            "Each digit moves one place left",
-            "Ten times bigger",
-            "R4,75 to R47,50",
-        ], scale=0.9, box=1)
-
-        # --- Band 5 (subtopic_5): Times 100
-        self.next_band(5)
-        self.write_rows(5, "Times 100", [
-            "Times 100",
-            "Two places left",
-            "Zeros fill gaps",
-            "2,4 to 240",
+        self.write_rows(4, "Money Sense", [
+            "Money sense",
+            "Add the costs",
+            "Multiply for income",
+            "Profit: income minus costs",
         ], scale=0.9, box=3)
 
-        # --- Band 6 (subtopic_6): Rand, Cents and Centimetres
-        self.next_band(6)
-        self.write_rows(6, "Rand, Cents and Centimetres", [
-            "Rand to cents: times 100",
-            "Metres to cm: times 100",
-            "Cm to mm: times 10",
-            "Small units, big number",
-        ], scale=0.9, box=2)
+        # --- Band 5 (subtopic_5): Parts of Measures
+        self.next_band(5)
+        self.write_rows(5, "Parts of Measures", [
+            "Parts of measures",
+            "Change to grams first",
+            "Divide, then multiply",
+            "1 500 g of flour",
+        ], scale=0.9, box=3)
 
-        last = Tex("Times 10 moves every digit one place left; times 100 moves every digit two places left.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
+        # --- Band 6 (subtopic_6): Share and Group
+        self.next_band(6)
+        self.write_rows(6, "Share and Group", [
+            "Share and group",
+            "Sharing: size of each share",
+            "Grouping: how many groups",
+            "Three quarters of a tart",
+        ], scale=0.9, box=3)
+
+        last = Tex("Read the story, choose the operations, make the units match, and check that the answer makes sense.").scale(0.9).shift(band_shift(6) + DOWN * 2.6)
         self.play(Write(last))
         self.play(Create(SurroundingRectangle(last, color=YELLOW)))
         self.wait(4)

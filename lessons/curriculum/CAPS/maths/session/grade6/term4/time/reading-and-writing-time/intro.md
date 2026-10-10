@@ -1,0 +1,1 @@
+Today we learn to read, tell and write time in 12-hour and 24-hour formats on analogue and digital clocks, watches and stopwatches. A family catches the overnight bus from Johannesburg to Durban and times a race on the beach with a stopwatch, so that we can read clock hands, change between a.m., p.m. and 24-hour time, and read stopwatch times accurately.

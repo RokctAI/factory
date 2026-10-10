@@ -1,0 +1,1 @@
+Today we learn to draw pictographs where one picture stands for many, bar graphs and double bar graphs. Two Grade 6 classes at a school in Durban compete to collect cans for recycling from February to May, so that we can choose a key, draw a scale with equal steps, draw bars accurately and compare two sets of data side by side.
