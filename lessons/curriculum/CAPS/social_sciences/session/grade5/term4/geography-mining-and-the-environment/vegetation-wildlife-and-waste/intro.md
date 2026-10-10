@@ -1,0 +1,1 @@
+Today a Grade 5 class near Richards Bay, in KwaZulu-Natal, walks through coastal dune forest that was replanted after the sand was mined for minerals, and then looks at photographs of waste rock dumps and tailings dams. We learn how mining destroys vegetation and wildlife habitats, what waste mining produces, and how waste can be managed and land rehabilitated.

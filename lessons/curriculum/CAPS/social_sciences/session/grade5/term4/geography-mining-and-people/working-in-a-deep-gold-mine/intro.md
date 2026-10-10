@@ -1,0 +1,1 @@
+Today a Grade 5 class in Carletonville, on the West Rand of Gauteng, visits a mine training centre, where a retired miner shows them a model of a deep gold mine and lets them crawl through a low, dark practice tunnel. We learn about the challenges of working in a deep gold mine: the long journey down, heat, ventilation, rock falls and dust.

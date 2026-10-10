@@ -1,0 +1,1 @@
+Today a Grade 5 class from Mogale City, in Gauteng, tests the water of a stream near old gold mines and finds it orange and sour, and then looks at a photograph of a hazy winter sky over the coal fields of Mpumalanga. We learn how mining can pollute water and air, what acid mine drainage is, and how mining companies, the government and communities try to reduce pollution.

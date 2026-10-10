@@ -1,0 +1,1 @@
+Today a Grade 5 class in Johannesburg, in Gauteng, the City of Gold, marks the mines of South Africa on a big map with coloured symbols and finds that towns cluster around them. We learn where South Africa's main mineral and coal mines are, how to read a map of mines using a key, and how mining has shaped where people settle.

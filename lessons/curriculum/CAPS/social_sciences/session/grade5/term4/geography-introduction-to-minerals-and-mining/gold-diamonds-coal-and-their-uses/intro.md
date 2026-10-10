@@ -1,0 +1,1 @@
+Today a Grade 5 class in Bloemfontein, in the Free State, holds a show-and-tell of things made with gold, diamonds and coal, from a wedding ring to a diamond-tipped drill bit and a bag of coal for a braai. We learn about South Africa's main minerals, especially gold, diamonds and coal, where they are found, and how they are used.

@@ -1,0 +1,1 @@
+Today a Grade 5 class from Mitchells Plain, in Cape Town, visits the Castle of Good Hope, the oldest surviving colonial building in South Africa, with its five pointed corners and thick stone walls. We learn about the Castle's history, how its meaning has changed over more than three hundred years, and how heritage is linked to changing identities.

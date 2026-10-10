@@ -1,0 +1,1 @@
+Today a Grade 5 class in eMalahleni, in Mpumalanga, the place of coal, looks at a piece of rock with the print of an ancient fern leaf, while the cooling towers of a power station stand on the horizon. We learn how coal formed from ancient swamp plants over millions of years, why it is a non-renewable resource, and how it is used and the problems it causes.

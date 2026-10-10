@@ -1,0 +1,1 @@
+Today a Grade 5 class in Rustenburg, in North West, attends a mine safety open day, where they try on hard hats, cap lamps, ear muffs and safety boots, and see a self-rescuer and a refuge bay. We learn about the health and safety risks for miners, and the rules, equipment and rights that protect them.
