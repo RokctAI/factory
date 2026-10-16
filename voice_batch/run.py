@@ -504,7 +504,8 @@ def main() -> int:
     # r3
     ap.add_argument("--batch", help="r3: the batch JSON (packs / lines / locale come from it)")
     ap.add_argument("--shard", default="1/1", help="r3: k/n, this job's contiguous share of the lines")
-    ap.add_argument("--factory-root", default=str(HERE.parent))
+    # The R-3 packs live in the lessons checkout (LESSONS_ROOT) since the split.
+    ap.add_argument("--factory-root", default=os.environ.get("LESSONS_ROOT") or str(HERE.parent))
     # resumable runs (resume.py)
     ap.add_argument("--budget-minutes", type=float,
                     default=resume.env_float("RENDER_BUDGET_MINUTES", resume.DEFAULT_BUDGET_MINUTES),
