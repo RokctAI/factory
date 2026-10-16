@@ -78,16 +78,19 @@ def main() -> int:
                     "--ref", str(ref), "--scripts-dir", str(agent / "lms/team/scripts"),
                     "--model-path", args.model_path], check=True)
     import mp3
-    ff = shutil.which("ffmpeg")
+    import numpy as np
+    import soundfile as sf
     report = []
     for j in jobs:
         wav = Path(j["out"])
         if not wav.is_file():
             report.append({"file": None, "key": j["key"], "seed": j["seed"], "status": "render failed"})
             continue
+        # The batch's 200 ms lead-in, without ffmpeg (hosted runners lack it).
+        x, sr = sf.read(str(wav), dtype="float32", always_2d=True)
+        x = x.mean(axis=1)
         padded = wav.with_name(wav.stem + ".lead.wav")
-        subprocess.run([ff, "-nostdin", "-loglevel", "error", "-y", "-i", str(wav), "-af", "adelay=200",
-                        "-ac", "1", "-ar", "24000", "-c:a", "pcm_s16le", str(padded)], check=True)
+        sf.write(str(padded), np.concatenate([np.zeros(sr // 5, dtype="float32"), x]), sr, subtype="PCM_16")
         dst = out / f"{j['key']}-B{j['seed']}.mp3"
         mp3.encode(padded, dst)
         report.append({"file": dst.name, "key": j["key"], "seed": j["seed"]})
