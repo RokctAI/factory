@@ -154,6 +154,14 @@ class RoundHistory(unittest.TestCase):
         self.assertEqual(r["rounds"][2]["seeds"], [55])
 
 
+def fake_encode(wav, m4a, *a, **k):
+    # the AAC step (ffmpeg) is not under test: copy the take's bytes
+    from pathlib import Path
+    Path(m4a).parent.mkdir(parents=True, exist_ok=True)
+    Path(m4a).write_bytes(Path(wav).read_bytes())
+    return "fake"
+
+
 class ResumableRun(unittest.TestCase):
     """run_tutor (kind assistant fixture) with the rounds faked and a fake clock."""
 
@@ -190,7 +198,8 @@ class ResumableRun(unittest.TestCase):
                                                                   run=lambda c: self.pushes.append(c) or 0))
         env = {"GITHUB_OUTPUT": str(self.out), "RENDER_SERIES": series or ""}
         with mock.patch.object(run, "render_rounds", self.fake_rounds), mock.patch.object(run, "versions", lambda: {}), \
-                mock.patch.object(run.pronunciations, "load", lambda: {}), mock.patch.dict(os.environ, env):
+                mock.patch.object(run.pronunciations, "load", lambda: {}), mock.patch.dict(os.environ, env), \
+                mock.patch("aac.encode", fake_encode):
             self.assertEqual(run.run_tutor(args, self.d, self.ref, self.d / "lms/team/scripts"), 0)
         outputs = dict(ln.split("=", 1) for ln in self.out.read_text().split())
         return outputs, json.loads((self.d / lines.team_rel(AID) / f"{VOICE}_manifest.timekeeping.json").read_text())

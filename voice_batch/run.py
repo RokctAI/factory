@@ -44,7 +44,6 @@ import json
 import os
 import re
 import shlex
-import shutil
 import subprocess
 import sys
 import time
@@ -289,6 +288,7 @@ def unchanged(prev: dict | None, it: dict, agent: Path, ref_sha: str, extra: tup
 
 
 def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
+    import aac
     only = {x for x in args.lines.split(",") if x}
     kind = getattr(args, "kind", "tutor")
     tutor_rel = team_rel(args.tutor)
@@ -336,6 +336,8 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
     started = time.time()
     by_id = {it["id"]: it for it in items}
     manifest.update({"tutor": args.tutor, "category": args.category, **run_header(args, ref, agent)})
+    manifest["settings"]["output"] = {"format": "aac", "container": "m4a", "bitrate_kbps": aac.BITRATE_KBPS,
+                                      "sample_rate": aac.SAMPLE_RATE, "channels": 1}
     if kind == "assistant":
         from batch import voice_spec
         spec = voice_spec(agent, args.tutor)
@@ -354,15 +356,15 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
             tally["pass" if r["status"] == "pass" else "fail"] += 1
             if r["status"] == "pass":
                 dst = agent / it["file"]
-                dst.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(r["final_path"], dst)
+                encoder = aac.encode(r["final_path"], dst)
                 write_timings(dst, r)
                 lines[it["id"]] = {
                     "id": it["id"], "category": it["category"], "text": it["text"], "text_sha256": it["text_sha256"],
                     "render_sha256": it["render_sha256"],
                     **({"tts_text": it["tts_text"], "pronounced": it["pronounced"], "needs_listen": True}
                        if "tts_text" in it else {}),
-                    "script": it["script"], "file": it["file"], **score_fields(r), "sha256": r["sha256"],
+                    "script": it["script"], "file": it["file"], **score_fields(r), "sha256": sha256_file(dst),
+                    "wav_sha256": r["sha256"], "encoder": encoder,
                     "sentences": [dict(t, text=s) for t, s in zip(r["takes"], it["sentences"])],
                     "seeds_tried": r["seeds_tried"],
                 }

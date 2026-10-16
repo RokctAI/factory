@@ -241,8 +241,10 @@ last round's failing gates. The public job summary gives only a one-line
 count and the ids.
 
 Output layout in the agent repo (audio beside its script):
-`lms/team/tutors/CAPS/<tutor>/<category>/NN.wav`,
-`.../samples/<sample id>.wav`, `.../samples/sample_line.wav`.
+`lms/team/tutors/CAPS/<tutor>/<category>/NN.m4a`,
+`.../samples/<sample id>.m4a`, `.../samples/sample_line.m4a`. Clips are AAC
+48 kbps mono in an `.m4a` file (`aac.py`); the stitched WAV stays in the work
+dir and its hash is kept as `wav_sha256`.
 
 ## Caches
 

@@ -5,7 +5,7 @@
 #   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH r3 VOICE LABEL
 #   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH pronunciation VOICE LABEL
 #
-# Only rokct/ branches. A tutor job stages only the tutor's .wav files, their <clip>.timings.json,
+# Only rokct/ branches. A tutor job stages only the tutor's .m4a files, their <clip>.timings.json,
 # <voice>_manifest[.<category>].json and <clip dir>/qc_failed.json; an r3 job stages only
 # lms/dart/templates/assets/r3_packs/audio/<key>.mp3, <key>.timings.json,
 # r3_manifest.<voice>[.partNN].json and qc_failed.<voice>.json directly in that folder (additions,
@@ -57,8 +57,8 @@ elif [ "$tutor" = "pronunciation" ]; then
   ext="mp3"; manifest="$tdir/audition.json"
 elif printf '%s' "$tutor" | grep -qE '^(tutor|assistant)_[0-9]{3}$'; then
   case "$tutor" in tutor_*) tdir="lms/team/tutors/CAPS/$tutor" ;; *) tdir="lms/team/assistants/CAPS/$tutor" ;; esac
-  allowed="^$tdir/(.+\.wav|.+\.timings\.json|${voice}_manifest(\.[a-z]+)?\.json|([a-z_]+/)?qc_failed\.json)$"
-  ext="wav"; manifest="$tdir/${voice}_manifest.json"
+  allowed="^$tdir/(.+\.m4a|.+\.timings\.json|${voice}_manifest(\.[a-z]+)?\.json|([a-z_]+/)?qc_failed\.json)$"
+  ext="m4a"; manifest="$tdir/${voice}_manifest.json"
 else
   echo "::error::target must be tutor_NNN, assistant_NNN, r3 or pronunciation"; exit 1
 fi
@@ -91,12 +91,12 @@ else
     if [ -e "$m" ]; then agit add -- "$m"; fi
   done
   { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; } \
-    | { grep -E '\.wav$' || true; } | sort -u | while IFS= read -r f; do agit add -- "$f"; done
+    | { grep -E '\.m4a$' || true; } | sort -u | while IFS= read -r f; do agit add -- "$f"; done
   # run.py writes <clip>.timings.json next to each committed clip: stage it
   # (new or changed) whenever its clip is there, never a stray one.
   { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; } \
     | { grep -E '\.timings\.json$' || true; } | sort -u | while IFS= read -r f; do
-      if [ -e "${f%.timings.json}.wav" ]; then agit add -- "$f"; fi
+      if [ -e "${f%.timings.json}.m4a" ]; then agit add -- "$f"; fi
     done
   # qc_failed.json beside the clips (run.py): new, changed, or deleted once
   # every line in it has passed.
