@@ -63,15 +63,18 @@ on:
 permissions:
   contents: read
 
-# One batch run at a time. Inside a run each category job has its own runner
-# and renders one line at a time (VibeVoice on CPU peaks ~12.5 GB of 16 GB).
-# A continuation dispatched from inside a run waits here behind it. GitHub
-# keeps only ONE pending run per group: a run queued after the continuation
-# (a push, a dispatch, the schedule) replaces it, and that run then renders
-# its own batch (the schedule picks the first pending batch, so an
-# interrupted chain resumes from the next scheduled run at the latest).
+# One run at a time per batch, so different batches render side by side
+# (public repo: runner minutes are free). Inside a run each category job has
+# its own runner and renders one line at a time (VibeVoice on CPU peaks
+# ~12.5 GB of 16 GB). The R-3 batches share one agent branch and one
+# r3_manifest, so they share one group. A continuation dispatched from
+# inside a run carries its batch_path and waits here behind it. GitHub keeps
+# only ONE pending run per group: a second dispatch of the same batch
+# replaces the waiting one. Scheduled and push runs (no batch_path) each
+# have their own group; the daily schedule picks the first pending batch,
+# so an interrupted chain resumes from the next scheduled run at the latest.
 concurrency:
-  group: voice-batch
+  group: voice-batch-${{ contains(inputs.batch_path, '/r3_packs_') && 'r3' || inputs.batch_path || github.event_name }}
   cancel-in-progress: false
 
 env:
@@ -648,8 +651,8 @@ jobs:
   # Re-dispatch this workflow for the same batch when the merge job found
   # lines left by a render job's time budget (continuation + 1, capped at
   # CONTINUATION_CAP by resume.py). A workflow_dispatch made with GITHUB_TOKEN
-  # does start a run; it queues behind this one in the voice-batch
-  # concurrency group.
+  # does start a run; it carries batch_path, so it queues behind this one in
+  # the batch's concurrency group.
   continue:
     name: Continue the batch
     needs: [plan, merge]
