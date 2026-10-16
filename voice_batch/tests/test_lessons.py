@@ -31,6 +31,13 @@ ROLES = {"rel": REL, "lesson_id": "maths_g9_algebraic-expressions_like-terms", "
 
 
 class Parsing(unittest.TestCase):
+    def test_split_thousands_are_spoken_and_checked_as_one_number(self):
+        from textnorm import speak_text, word_errors
+        self.assertEqual(speak_text("A deposit of R1 200 at 1 753 m."), "A deposit of R1200 at 1753 m.")
+        self.assertEqual(word_errors("a deposit of R1 200", "a deposit of R1,200"), 0)
+        self.assertEqual(word_errors("12 metres", "12 meters"), 0)
+        self.assertGreater(word_errors("a deposit of R1 200", "a deposit of R"), 0)
+
     def test_qa_turns_labels_and_continuations(self):
         md = ("**Assistant:** First question?\n\n**Tutor:** An answer\nthat runs on.\n\n***\n\n"
               "**Thandi:** Second **bold** one?\n\n**Tutor:** Second answer.\n")
