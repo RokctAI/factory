@@ -1,0 +1,153 @@
+name: Voice style A/B
+
+# A listening test (voice_batch/ab_style.py): each line as the batch
+# rendered it (A) next to the same line rendered whole in one prompt (B,
+# seeds 11/22/33). The clips go to a private lessons pre-release
+# (ab-style-<run>), never to this public repo. Logs carry keys only.
+
+on:
+  workflow_dispatch:
+    inputs:
+      persona:
+        description: 'Persona whose voice to test (from voice_batch/lesson_voices.json)'
+        default: 'assistant_005'
+      r3:
+        description: 'Comma-separated R-3 line keys rendered on the agent branch below'
+        default: ''
+      agent_branch:
+        description: 'Agent branch holding the A takes of the R-3 lines'
+        default: 'rokct/r3-pack-audio'
+      lesson:
+        description: 'A lesson path under school/curriculum/CAPS whose nervous script to test (A from the stems pre-release)'
+        default: ''
+  # TRIAL (remove before merge)
+  push:
+    branches: [claude/project-thread-9rs5bm]
+    paths: ['.github/workflows/ab_style.yml']
+
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: '3.11'
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  LESSONS_ROOT: ${{ github.workspace }}/_lessons
+  LESSONS_DIR: school
+  TEAM_ROOT: ${{ github.workspace }}/.agent/lms/team
+  PERSONA: ${{ inputs.persona || 'assistant_005' }}
+  R3: ${{ inputs.r3 || 'maths.gradeR.term3.w03_boxes.show,maths.gradeR.term4.w05_bird_story_sums.rounds_0_story,english_home_language.gradeR.term4.w03_sound_d.rounds_2_story,maths.gradeR.term3.w09_story_sums_eight.rounds_3_prompt' }}
+  AGENT_BRANCH: ${{ inputs.agent_branch || 'rokct/r3-pack-audio' }}
+  LESSON: ${{ inputs.lesson || 'maths/session/grade9/term1/integers/multi-step-integer-problems-in-context' }}
+
+jobs:
+  ab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Free disk space
+        run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android /opt/hostedtoolcache/CodeQL
+
+      - uses: actions/checkout@v4
+
+      - name: Check out lessons (private; text only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/scripts/CAPS/
+            /school/curriculum/CAPS/*/r3_packs/
+            /school/curriculum/CAPS/*/session/
+
+      - name: Check out agent team, refs and the A takes (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.AGENT_BRANCH }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /lms/team/tutors/CAPS/
+            /lms/team/assistants/CAPS/
+            /lms/team/voices/*.json
+            /lms/team/voice_refs/
+            /lms/team/scripts/
+            /lms/dart/lib/src/common/application/r3/
+            /lms/dart/lib/src/translations/
+            /lms/dart/templates/assets/r3_packs/audio/*.show.mp3
+            /lms/dart/templates/assets/r3_packs/audio/*_story.mp3
+            /lms/dart/templates/assets/r3_packs/audio/*_prompt.mp3
+            !/lms/team/tutors/CAPS/**/*.wav
+            !/lms/team/assistants/CAPS/**/*.wav
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: voice_batch/requirements.txt
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r voice_batch/requirements.txt
+
+      - name: Restore model weights
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Render B
+        run: |
+          set +x
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION']))")
+          python voice_batch/ab_style.py --agent-root .agent --voice-persona "$PERSONA" --r3 "$R3" \
+            --lesson "$LESSON" --model-path "$model_path" --out "$RUNNER_TEMP/ab"
+
+      - name: Add A takes and publish to a private lessons pre-release
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          set +x
+          out="$RUNNER_TEMP/ab"; n=0
+          IFS=',' read -ra keys <<< "$R3"
+          for k in "${keys[@]}"; do
+            n=$((n + 1))
+            src=".agent/lms/dart/templates/assets/r3_packs/audio/$k.mp3"
+            if [ -f "$src" ]; then cp "$src" "$out/$n-$k-A.mp3"; else echo "no A take for $k"; fi
+          done
+          if [ -n "$LESSON" ]; then
+            n=$((n + 1)); slug="${LESSON##*/}"
+            IFS=/ read -r subject _s grade term topic _l <<< "$LESSON"
+            tag="stems-${subject//_/-}-$grade-$term"
+            if gh release download "$tag" --repo RokctAI/lessons --pattern "$topic--$slug--$PERSONA--nervous.mp3" --dir "$RUNNER_TEMP/a" 2>/dev/null; then
+              mv "$RUNNER_TEMP/a/$topic--$slug--$PERSONA--nervous.mp3" "$out/$n-$slug.nervous-A.mp3"
+            else
+              echo "no A take for the nervous script yet (lesson_audio has not rendered it)"
+            fi
+          fi
+          tag="ab-style-${GITHUB_RUN_ID}"
+          gh release create "$tag" --repo RokctAI/lessons --prerelease --target main \
+            --title "Voice style A/B ($PERSONA)" \
+            --notes "A = the batch method (one sentence at a time, flattest take). B = the whole line in one prompt, seeds 11/22/33, no take selection. Listen to each A next to its Bs."
+          gh release upload "$tag" "$out"/*.mp3 "$out/ab.json" --repo RokctAI/lessons
+          echo "Published $(ls "$out"/*.mp3 | wc -l) clips to RokctAI/lessons release $tag" | tee -a "$GITHUB_STEP_SUMMARY"
