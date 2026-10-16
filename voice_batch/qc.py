@@ -23,7 +23,9 @@ Selection: among the sentence's passing takes, median F0 closest to
            Nor does one whose sound span (trimmed at -40 dB) runs past
            1.5 s + 0.75 s per word: seconds of generated non-speech the
            ASR skipped over.
-Stitch   : trim at -40 dB with 40 ms padding, 12 ms fades, 200-240 ms
+Stitch   : trim at -40 dB (an edge noise burst of <= 200 ms that
+           sits >= 100 ms from the speech is dropped, not kept as speech)
+           with 40 ms padding, 12 ms fades, 200-240 ms
            silence (280-320 ms pauses between words), -20 dBFS, 24 kHz
            mono PCM_16. Lead-in after the trim and before normalising: the
            silence before the first sound is padded up to 200 ms (only the
@@ -71,6 +73,10 @@ SIM_LONG, SIM_SHORT, LONG_S = 0.88, 0.83, 5.0
 TAKE_SIM_MIN = SIM_SHORT
 GAPS_S = (0.22, 0.20, 0.24, 0.22)   # + 2 x 40 ms padding = 300/280/320/300 ms pauses
 PAD_S, FADE_S = 0.04, 0.012
+# An edge sound island this short, this far from the speech, is a click or
+# noise burst, not a word (speech_bounds). Measured on librosa's centred
+# 512-sample frames, which widen an island by ~40 ms.
+BLIP_MAX_S, BLIP_GAP_S = 0.20, 0.10
 # Tail check: the last TAIL_WIN_S of a take or line, relative to its loudest
 # 10 ms frame, must be below TAIL_MAX_DB. Speech still sounding there means
 # the model stopped mid-word (the ASR often still hears the clipped word).
@@ -314,14 +320,33 @@ def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOL
     return None, 0
 
 
-def stitch(arrays: list, sr: int = SR):
+def speech_bounds(x, sr: int = SR, top_db: float = 40.0, frame: int = 512, hop: int = 128,
+                  blip_max_s: float = BLIP_MAX_S, blip_gap_s: float = BLIP_GAP_S) -> tuple[int, int]:
+    """(start, end) samples of a take's speech: the -40 dB trim, minus any
+    short sound island (a click or noise burst the engine left before the
+    first word or after the last) that sits apart from the speech. Such a
+    burst is above -40 dB, so the plain trim kept it and the stitch put an
+    audible scratch inside the pause between sentences. A real word lost
+    this way fails the final ASR gate, so the line is retried, not shipped."""
     import librosa
+    iv = [list(v) for v in librosa.effects.split(x, top_db=top_db, frame_length=frame, hop_length=hop)]
+    if not iv:
+        return 0, len(x)
+    short, gap = blip_max_s * sr, blip_gap_s * sr
+    while len(iv) > 1 and iv[0][1] - iv[0][0] <= short and iv[1][0] - iv[0][1] >= gap:
+        iv.pop(0)
+    while len(iv) > 1 and iv[-1][1] - iv[-1][0] <= short and iv[-1][0] - iv[-2][1] >= gap:
+        iv.pop()
+    return int(iv[0][0]), int(iv[-1][1])
+
+
+def stitch(arrays: list, sr: int = SR):
     import numpy as np
     fade, pad = int(FADE_S * sr), int(PAD_S * sr)
     out, pauses = [], []
     for j, x in enumerate(arrays):
         x = np.asarray(x, dtype=np.float64)
-        _, (s, e) = librosa.effects.trim(x, top_db=40, frame_length=512, hop_length=128)
+        s, e = speech_bounds(x, sr)
         x = x[max(0, s - pad):min(len(x), e + pad)].copy()
         ramp = np.linspace(0, 1, fade) ** 2
         x[:fade] *= ramp
