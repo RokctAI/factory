@@ -1,0 +1,670 @@
+name: Voice batch
+
+# Push a batch JSON into voice_batches/inbox/ on main (or run it by hand) and
+# this renders a tutor's standing lines in the tutor's consented cloned voice
+# (kind "tutor"), or the Grades R-3 activity-pack lines (kind "r3"), gates
+# every line, and commits the passing audio + a manifest straight to a
+# rokct/ branch of the private RokctAI/agent repo. See voice_batch/README.md.
+#
+# PUBLIC-REPO SAFETY — this repository is public, the audio is not:
+#   * No pull_request trigger: the job needs MONOREPO_PAT and fork PRs must
+#     never get it.
+#   * No upload-artifact, and nothing audio-related is cached: fork PR runs
+#     can restore caches. Only public model weights are cached.
+#   * Logs and the job summary carry line ids and scores only — never line
+#     text, transcripts, respellings, audio or the reference clip.
+#   * The reference is read from the agent checkout and verified against the
+#     batch's sha256; it never leaves the runner.
+#   * push_agent.sh only pushes to rokct/ branches (never main), only the tutor's .wav
+#     files + manifest + qc_failed.json (kind tutor) or the .mp3 files + r3_manifest
+#     and qc_failed.<voice> JSONs
+#     directly in lms/dart/templates/assets/r3_packs/audio/ (kind r3), with
+#     the token masked and never stored in .git/config.
+#
+# Idempotent: re-running a batch re-renders only lines whose text or
+# reference changed and overwrites the same files on the agent branch.
+#
+# Resumable (voice_batch/resume.py): each render job checkpoint-pushes its
+# installed lines while it runs, and stops cleanly before a seed round that
+# would end past RENDER_BUDGET_MINUTES (300, from the job's first step; the
+# job's timeout-minutes is 330, under GitHub's 360). Lines it did not reach
+# are listed as "remaining" in its manifest. The merge job then re-dispatches
+# this workflow for the same batch (input continuation + 1, at most 5) and
+# opens the agent PR only once nothing is remaining (or the cap is reached).
+# A line that failed every seed round is final-failed, never remaining.
+#
+# Daily schedule: the plan job scans every batch in voice_batches/inbox/
+# (sorted) and renders the first one that still has a line not done on its
+# agent branch or agent main; nothing pending -> no render jobs at all.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'voice_batches/inbox/**.json'
+  schedule:
+    # Daily, off-peak (01:23 UTC): render the first batch with lines pending.
+    - cron: '23 1 * * *'
+  workflow_dispatch:
+    inputs:
+      batch_path:
+        description: 'Batch JSON, e.g. voice_batches/inbox/tutor_001_voice_a_batch1.json (empty = every JSON in voice_batches/inbox/)'
+        required: false
+        default: ''
+      continuation:
+        description: 'Set by the merge job when it re-dispatches an incomplete batch (0 = a fresh run; capped at 5)'
+        required: false
+        default: '0'
+      series:
+        description: 'Set by the merge job: the run id that started this chain of continuations'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+# One batch run at a time. Inside a run each category job has its own runner
+# and renders one line at a time (VibeVoice on CPU peaks ~12.5 GB of 16 GB).
+# A continuation dispatched from inside a run waits here behind it. GitHub
+# keeps only ONE pending run per group: a run queued after the continuation
+# (a push, a dispatch, the schedule) replaces it, and that run then renders
+# its own batch (the schedule picks the first pending batch, so an
+# interrupted chain resumes from the next scheduled run at the latest).
+concurrency:
+  group: voice-batch
+  cancel-in-progress: false
+
+env:
+  # R-3 packs come from the lessons checkout (phase 1 of the split).
+  LESSONS_ROOT: ${{ github.workspace }}/_lessons
+  LESSONS_DIR: school
+  PYTHON_VERSION: '3.11'
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  # ASR for the word-exact gate, cached on its own (small, separate key).
+  ASR_MODEL: small.en
+  ASR_DOWNLOAD_ROOT: /home/runner/.cache/voice-batch-asr
+  # radio_ads' ASR model: part of the SHARED weights entry below, so the
+  # entry this workflow saves is byte-for-byte what radio_ads would save.
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  # Resumable renders (voice_batch/resume.py). Keep the budget well under the
+  # render job's timeout-minutes (330): the margin covers the round in flight
+  # past the estimate, the final push and the summary.
+  RENDER_BUDGET_MINUTES: ${{ vars.RENDER_BUDGET_MINUTES || '300' }}
+  RENDER_CHUNK_LINES: '4'
+  RENDER_PUSH_MINUTES: '15'
+  CONTINUATION_CAP: '5'
+
+jobs:
+  plan:
+    name: Find and validate batches
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      count: ${{ steps.list.outputs.count }}
+      continuation: ${{ steps.chain.outputs.continuation }}
+      series: ${{ steps.chain.outputs.series }}
+      file: ${{ steps.plan.outputs.file }}
+      kind: ${{ steps.plan.outputs.kind }}
+      matrix_json: ${{ steps.plan.outputs.matrix_json }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Phase 1: the R-3 packs live in the private lessons repo; r3_lines.py
+      # reads them through LESSONS_ROOT / LESSONS_DIR (workflow env).
+      - name: Check out the R-3 packs (lessons, private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/curriculum/CAPS/*/r3_packs/
+            /school/scripts/CAPS/
+
+      # continuation counts the re-dispatches of one incomplete batch; series
+      # is the run that started the chain (failed lines are final within it).
+      - name: Continuation
+        id: chain
+        env:
+          CONTINUATION: ${{ inputs.continuation || '0' }}
+          SERIES: ${{ inputs.series || github.run_id }}
+        run: |
+          if ! printf '%s' "$CONTINUATION" | grep -qE '^[0-9]{1,3}$' || ! printf '%s' "$SERIES" | grep -qE '^[0-9]{1,20}$'; then
+            echo "::error::continuation and series must be numbers"; exit 1
+          fi
+          echo "continuation=$CONTINUATION" >> "$GITHUB_OUTPUT"
+          echo "series=$SERIES" >> "$GITHUB_OUTPUT"
+          if [ "$CONTINUATION" != 0 ]; then echo "continuation $CONTINUATION of at most $CONTINUATION_CAP (series run $SERIES)"; fi
+
+      # Schedule only: agent main without audio (scripts, voice specs, R-3
+      # app sources, manifests) for the pending scan.
+      - name: Check out agent main for the pending scan (private)
+        if: github.event_name == 'schedule'
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: main
+          path: .agentmain
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /lms/team/tutors/CAPS/
+            /lms/team/assistants/CAPS/
+            /lms/team/voices/*.json
+            /lms/team/scripts/
+            /lms/dart/templates/assets/r3_packs/audio/*manifest*.json
+            /lms/dart/lib/src/common/application/r3/
+            /lms/dart/lib/src/translations/
+            !*.wav
+            !*.mp3
+            !*.timings.json
+            !*.png
+            !*.jpg
+            !*.webp
+            !*.mp4
+
+      - name: List batches
+        id: list
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          BATCH_PATH: ${{ inputs.batch_path }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          set +x
+          if [ "$EVENT" = "schedule" ]; then
+            bash voice_batch/ci/scan_pending.sh .agentmain > "$RUNNER_TEMP/batches.txt"
+          else
+            bash voice_batch/ci/changed_batches.sh "$EVENT" "$BEFORE" "$AFTER" "$BATCH_PATH" "$DEFAULT_BRANCH" > "$RUNNER_TEMP/batches.txt"
+          fi
+          # A push that adds several batches renders none of them here: the
+          # daily scan renders them one per run, in sorted order.
+          n=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)
+          if [ "$EVENT" = "push" ] && [ "$n" -gt 1 ]; then
+            echo "::notice::$n batch files in one push; the daily scan renders them one per run, in order"
+            echo "$n batch files in one push: the daily scan renders them one per run, in order." >> "$GITHUB_STEP_SUMMARY"
+            : > "$RUNNER_TEMP/batches.txt"
+          fi
+          echo "Batches:"; sed 's/^/  /' "$RUNNER_TEMP/batches.txt"
+          echo "count=$(grep -c . "$RUNNER_TEMP/batches.txt" || true)" >> "$GITHUB_OUTPUT"
+
+      - name: Validate batch and build the job matrix (categories, or r3 shards)
+        id: plan
+        env:
+          COUNT: ${{ steps.list.outputs.count }}
+        run: |
+          if [ "$COUNT" = "0" ]; then
+            echo "No added or changed batch JSON under voice_batches/inbox/; nothing to render." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if [ "$COUNT" != "1" ]; then
+            echo "::error::$COUNT batch files changed in one push; push (or dispatch) one batch per run."
+            exit 1
+          fi
+          file=$(head -n1 "$RUNNER_TEMP/batches.txt")
+          python3 voice_batch/batch.py "$file" > "$RUNNER_TEMP/batch.out"
+          cat "$RUNNER_TEMP/batch.out" >> "$GITHUB_OUTPUT"
+          echo "file=$file" >> "$GITHUB_OUTPUT"
+          grep -E '^(kind|tutor|voice|agent_branch|categories|locale|line_count|f0_target_hz|f0_tolerance_hz|matrix_json)=' "$RUNNER_TEMP/batch.out" | sed 's/^/  /'
+
+      # Create a missing agent branch once, at main's tip, before the matrix
+      # starts: every render job then checks out and appends to an existing
+      # branch, and none of them races its siblings to create it. An existing
+      # branch is left as it is (render jobs append to it).
+      - name: Create the agent branch from main if it does not exist
+        if: steps.list.outputs.count == '1'
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          AGENT_BRANCH: ${{ steps.plan.outputs.agent_branch }}
+        run: |
+          set +x
+          if [ -z "$AGENT_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::This workflow reads and writes the private RokctAI/agent repo with the org secret MONOREPO_PAT. Make it available to RokctAI/factory and re-run."
+            exit 1
+          fi
+          GITHUB_OUTPUT=/dev/null bash voice_batch/ci/resolve_agent_ref.sh --create "$AGENT_BRANCH"
+
+  # One job per category (kind tutor) or per ~40-line shard (kind r3, at
+  # most 8), each on its own runner (16 GB, one render at a time inside it),
+  # all restoring the same shared weights cache. Each commits its own files
+  # to the agent branch as soon as it finishes.
+  render:
+    name: Render ${{ matrix.category }} ${{ matrix.shard }}
+    needs: plan
+    if: needs.plan.outputs.count == '1'
+    runs-on: ubuntu-latest
+    # Under GitHub's 360; RENDER_BUDGET_MINUTES (300) stops the render first.
+    timeout-minutes: 330
+    outputs:
+      # Matrix jobs share one outputs map (the last job to finish wins), so
+      # the merge job decides from the manifests' "remaining" lists instead.
+      incomplete: ${{ steps.render.outputs.incomplete }}
+      remaining: ${{ steps.render.outputs.remaining }}
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.matrix_json) }}
+    steps:
+      # The time budget counts from here, so setup time is inside it.
+      - name: Start the time budget
+        run: echo "JOB_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Check MONOREPO_PAT is set
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          set +x
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::This workflow reads and writes the private RokctAI/agent repo with the org secret MONOREPO_PAT. Make it available to RokctAI/factory and re-run."
+            exit 1
+          fi
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - uses: actions/checkout@v4
+
+      # Phase 1: the R-3 packs live in the private lessons repo; r3_lines.py
+      # reads them through LESSONS_ROOT / LESSONS_DIR (workflow env).
+      - name: Check out the R-3 packs (lessons, private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/curriculum/CAPS/*/r3_packs/
+            /school/scripts/CAPS/
+
+      - name: Read batch
+        id: batch
+        env:
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+        run: python3 voice_batch/batch.py "$BATCH_FILE" >> "$GITHUB_OUTPUT"
+
+      # The plan job created the agent branch if it was missing, so this
+      # normally checks it out. If it is gone again (its PR was merged and
+      # the branch auto-deleted mid-run), check out main instead and start
+      # the branch from it; push_agent.sh's push then recreates it on the
+      # remote. The sha256 check below runs on whichever was checked out.
+      - name: Resolve agent branch (main if it does not exist)
+        id: agentref
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: bash voice_batch/ci/resolve_agent_ref.sh "$AGENT_BRANCH"
+
+      - name: Check out agent branch (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ steps.agentref.outputs.ref }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: ${{ steps.batch.outputs.sparse }}
+          sparse-checkout-cone-mode: ${{ steps.batch.outputs.kind != 'assistant' }}
+
+      - name: Start the agent branch from main
+        if: steps.agentref.outputs.create == 'true'
+        env:
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: git -C .agent checkout --quiet -b "$AGENT_BRANCH"
+
+      # Tutor scripts are only visible now: fail the job if a line uses an
+      # "ambiguous" word (pronunciations.json) without an inline
+      # {{word|respelling}}, or has malformed markup. Errors name the line
+      # id and the word, never the line text.
+      - name: Check pronunciations
+        env:
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+        run: python3 voice_batch/batch.py --agent-root .agent "$BATCH_FILE" > /dev/null
+
+      - name: Verify reference sha256
+        env:
+          REF_PATH: ${{ steps.batch.outputs.ref_path }}
+          REF_SHA: ${{ steps.batch.outputs.ref_sha256 }}
+        run: |
+          got=$(sha256sum ".agent/$REF_PATH" | cut -d' ' -f1)
+          if [ "$got" != "$REF_SHA" ]; then
+            echo "::error::reference sha256 does not match the batch; refusing to render"
+            exit 1
+          fi
+          echo "reference sha256 verified"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: voice_batch/requirements.txt
+
+      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r voice_batch/requirements.txt
+          python -c "import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)"
+
+      # SHARED with radio_ads.yml: same path, same key format. radio_ads keys
+      # on the model's current main revision; this workflow pins that revision,
+      # so while they agree both workflows reuse ONE ~5.6 GB entry.
+      - name: Restore model weights (shared with radio_ads)
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Download model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])  # tokenizer repo
+          from faster_whisper import WhisperModel
+          WhisperModel(os.environ["RADIO_ADS_ASR_MODEL"], device="cpu", compute_type="int8")
+          PY
+          du -sh "$HF_HOME/hub"
+
+      - name: Save model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: ${{ steps.models.outputs.cache-primary-key }}
+
+      # small.en for English; a non-English r3 batch (locale af) gets the
+      # multilingual model named by batch.py.
+      - name: Restore ASR model
+        id: asr
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-${{ steps.batch.outputs.asr_model }}
+
+      - name: Download ASR model
+        if: steps.asr.outputs.cache-hit != 'true'
+        env:
+          ASR_MODEL: ${{ steps.batch.outputs.asr_model }}
+        run: |
+          python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+          du -sh "$ASR_DOWNLOAD_ROOT"
+
+      # run.py checkpoint-pushes (push_agent.sh) after each chunk of lines, at
+      # most every RENDER_PUSH_MINUTES, and stops at RENDER_BUDGET_MINUTES
+      # with step outputs incomplete / remaining. The push after it is the
+      # final one (a no-op when the last checkpoint already carried it).
+      - name: Render, gate and commit ${{ matrix.category }} ${{ matrix.shard }} to the agent branch
+        id: render
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          RENDER_SERIES: ${{ needs.plan.outputs.series }}
+          HF_HUB_OFFLINE: '1'
+          KIND: ${{ steps.batch.outputs.kind }}
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+          CATEGORY: ${{ matrix.category }}
+          SHARD: ${{ matrix.shard }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          REF_PATH: ${{ steps.batch.outputs.ref_path }}
+          REF_SHA: ${{ steps.batch.outputs.ref_sha256 }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+          LINES: ${{ steps.batch.outputs.lines }}
+          F0_TARGET: ${{ steps.batch.outputs.f0_target_hz }}
+          F0_TOLERANCE: ${{ steps.batch.outputs.f0_tolerance_hz }}
+          LOCALE: ${{ steps.batch.outputs.locale }}
+          ASR_MODEL: ${{ steps.batch.outputs.asr_model }}
+        run: |
+          set +x
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          common=(--agent-root .agent --voice "$VOICE" --ref ".agent/$REF_PATH" --ref-sha256 "$REF_SHA"
+                  --model-path "$model_path" --work "$RUNNER_TEMP/voice_batch" --asr-model "$ASR_MODEL"
+                  --language "$LOCALE" --f0-target "$F0_TARGET" --f0-tolerance "$F0_TOLERANCE")
+          if [ "$KIND" = "r3" ]; then
+            push=(bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" "r3 shard $SHARD")
+            python voice_batch/run.py --kind r3 "${common[@]}" --batch "$BATCH_FILE" --shard "$SHARD" \
+              --checkpoint-cmd "$(printf '%q ' "${push[@]}")"
+          else
+            push=(bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" "$CATEGORY")
+            python voice_batch/run.py --kind "$KIND" "${common[@]}" --tutor "$TUTOR" --category "$CATEGORY" --lines "$LINES" \
+              --checkpoint-cmd "$(printf '%q ' "${push[@]}")"
+          fi
+          "${push[@]}"
+
+      - name: Job summary
+        if: always()
+        env:
+          KIND: ${{ steps.batch.outputs.kind }}
+          CATEGORY: ${{ matrix.category }}
+          SHARD: ${{ matrix.shard }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+        run: |
+          if [ "$KIND" = "r3" ]; then
+            m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.part$(printf '%02d' "${SHARD%%/*}").json"
+          else
+            m=".agent/$TEAM_DIR/${VOICE}_manifest.$CATEGORY.json"
+          fi
+          python3 voice_batch/summary.py "$m" >> "$GITHUB_STEP_SUMMARY"
+
+  # Fold the per-category manifests into <voice>_manifest.json (kind tutor),
+  # or the per-shard parts into r3_manifest.<voice>.json (kind r3), on the
+  # branch.
+  merge:
+    name: Merge manifest
+    needs: [plan, render]
+    if: always() && needs.plan.outputs.count == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      incomplete: ${{ steps.state.outputs.incomplete }}
+      remaining: ${{ steps.state.outputs.remaining }}
+      dispatch: ${{ steps.state.outputs.dispatch }}
+      next: ${{ steps.state.outputs.next }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Phase 1: the R-3 packs live in the private lessons repo; r3_lines.py
+      # reads them through LESSONS_ROOT / LESSONS_DIR (workflow env).
+      - name: Check out the R-3 packs (lessons, private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/curriculum/CAPS/*/r3_packs/
+            /school/scripts/CAPS/
+
+      - name: Read batch
+        id: batch
+        env:
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+        run: python3 voice_batch/batch.py "$BATCH_FILE" >> "$GITHUB_OUTPUT"
+
+      # The plan job creates the agent branch at main's tip (or the first
+      # render job to push recreates it). If it is missing here, or still
+      # sits at main's tip, no render job pushed anything: there is nothing
+      # to merge and no PR to open, so skip the rest (the failed render jobs
+      # already turn the run red).
+      - name: Check the agent branch exists
+        id: agentref
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: bash voice_batch/ci/resolve_agent_ref.sh "$AGENT_BRANCH"
+
+      - name: Nothing rendered
+        if: steps.agentref.outputs.create == 'true' || steps.agentref.outputs.empty == 'true'
+        run: |
+          echo "::notice::no lines rendered, no agent PR opened"
+          echo "no lines rendered, no agent PR opened" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Check out agent branch (private)
+        if: steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ steps.batch.outputs.agent_branch }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: ${{ steps.batch.outputs.kind == 'r3' && 'lms/dart/templates/assets/r3_packs/audio' || steps.batch.outputs.team_dir }}
+
+      - name: Merge and commit
+        if: steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          KIND: ${{ steps.batch.outputs.kind }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+        run: |
+          set +x
+          if [ "$KIND" = "r3" ]; then
+            python3 voice_batch/merge_manifest.py --r3 .agent/lms/dart/templates/assets/r3_packs/audio "$VOICE"
+            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" manifest
+          else
+            python3 voice_batch/merge_manifest.py ".agent/$TEAM_DIR" "$VOICE"
+            bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" "$TUTOR" "$VOICE" manifest
+          fi
+
+      # Lines left by a render job's time budget (this batch's categories
+      # only). Any left: re-dispatch (the continue job) unless the cap is
+      # reached, and hold the agent PR back until the batch is complete.
+      - name: Batch state (complete, or continue)
+        id: state
+        if: steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+        env:
+          KIND: ${{ steps.batch.outputs.kind }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          CATEGORIES: ${{ steps.batch.outputs.categories }}
+          CONTINUATION: ${{ needs.plan.outputs.continuation }}
+        run: |
+          if [ "$KIND" = "r3" ]; then
+            left=$(python3 voice_batch/resume.py remaining ".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json")
+          else
+            # shellcheck disable=SC2086  # categories are validated words
+            left=$(python3 voice_batch/resume.py remaining ".agent/$TEAM_DIR/${VOICE}_manifest.json" $CATEGORIES)
+          fi
+          echo "remaining=$left" >> "$GITHUB_OUTPUT"
+          if [ "$left" = 0 ]; then
+            echo "incomplete=false" >> "$GITHUB_OUTPUT"; echo "dispatch=false" >> "$GITHUB_OUTPUT"
+            echo "batch complete: no lines left"
+            exit 0
+          fi
+          echo "incomplete=true" >> "$GITHUB_OUTPUT"
+          nxt=$(python3 voice_batch/resume.py next "$CONTINUATION")
+          printf '%s\n' "$nxt" >> "$GITHUB_OUTPUT"
+          if printf '%s\n' "$nxt" | grep -qx 'dispatch=true'; then
+            msg="$left line(s) left after the time budget; continuation $((CONTINUATION + 1)) dispatched, the agent PR opens when the batch is complete"
+          else
+            msg="$left line(s) still left after $CONTINUATION continuation(s) (the cap): no further dispatch; opening the agent PR with what rendered"
+          fi
+          echo "::notice::$msg"
+          echo "$msg" >> "$GITHUB_STEP_SUMMARY"
+
+      # Open a PR from the agent branch into main (ready for review) if none
+      # is open; otherwise leave one comment with this run's counts. Counts
+      # and the run URL only, never line text or ids.
+      - name: Open the agent PR (or note this run on the open one)
+        if: >-
+          steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+          && steps.state.outputs.dispatch != 'true'
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          KIND: ${{ steps.batch.outputs.kind }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+          AGENT_BRANCH: ${{ steps.batch.outputs.agent_branch }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set +x
+          if [ "$KIND" = "r3" ]; then
+            target=r3; m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json"
+          else
+            target="$TUTOR"; m=".agent/$TEAM_DIR/${VOICE}_manifest.json"
+          fi
+          python3 voice_batch/ci/open_agent_pr.py --repo RokctAI/agent --head "$AGENT_BRANCH" --base main \
+            --target "$target" --voice "$VOICE" --manifest "$m" --run-url "$RUN_URL"
+
+      - name: Job summary
+        if: always() && steps.agentref.outputs.create != 'true' && steps.agentref.outputs.empty != 'true'
+        env:
+          KIND: ${{ steps.batch.outputs.kind }}
+          TUTOR: ${{ steps.batch.outputs.tutor }}
+          TEAM_DIR: ${{ steps.batch.outputs.team_dir }}
+          VOICE: ${{ steps.batch.outputs.voice }}
+        run: |
+          if [ "$KIND" = "r3" ]; then
+            m=".agent/lms/dart/templates/assets/r3_packs/audio/r3_manifest.$VOICE.json"
+          else
+            m=".agent/$TEAM_DIR/${VOICE}_manifest.json"
+          fi
+          python3 voice_batch/summary.py "$m" >> "$GITHUB_STEP_SUMMARY"
+
+  # Re-dispatch this workflow for the same batch when the merge job found
+  # lines left by a render job's time budget (continuation + 1, capped at
+  # CONTINUATION_CAP by resume.py). A workflow_dispatch made with GITHUB_TOKEN
+  # does start a run; it queues behind this one in the voice-batch
+  # concurrency group.
+  continue:
+    name: Continue the batch
+    needs: [plan, merge]
+    if: always() && needs.merge.outputs.dispatch == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Dispatch the next continuation
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.ref_name }}
+          BATCH_FILE: ${{ needs.plan.outputs.file }}
+          NEXT: ${{ needs.merge.outputs.next }}
+          SERIES: ${{ needs.plan.outputs.series }}
+        run: |
+          gh api -X POST "repos/$REPO/actions/workflows/voice_batch.yml/dispatches" \
+            -f ref="$REF" -f "inputs[batch_path]=$BATCH_FILE" -f "inputs[continuation]=$NEXT" -f "inputs[series]=$SERIES"
+          echo "dispatched continuation $NEXT of $BATCH_FILE on $REF (series run $SERIES)" | tee -a "$GITHUB_STEP_SUMMARY"

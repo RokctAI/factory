@@ -1,0 +1,47 @@
+name: Session Scheduler
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Every 30 minutes
+  workflow_dispatch:
+
+jobs:
+  manage_sessions:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Initiate Protocol
+        run: |
+          if [ -f ".rokct/initiate.py" ]; then
+            echo "🚀 Running local initiate.py..."
+            python .rokct/initiate.py
+          else
+            echo "🌐 Fetching web initiate.py from remote protocol..."
+            curl -sSL https://raw.githubusercontent.com/RokctAI/The-Rokct-Protocol/main/profiles/web/initiate.py -o initiate_temp.py
+            python initiate_temp.py
+            rm initiate_temp.py
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install PyYAML
+
+      - name: Update Session State
+        run: python .rokct/skills/agent_delegation/scripts/manage_sessions.py
+
+      - name: Commit State Update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .rokct/agent/session_state.md
+          if git diff --staged --quiet; then
+            echo "No state changes."
+          else
+            git commit -m "chore: update session state [skip ci]"
+            git push origin main
+          fi

@@ -1,0 +1,93 @@
+name: NSC Subject Stats - Refresh Into Agent
+# How many Grade 12 learners write each NSC subject, nationally, per year
+# (lms/frappe/src/tenant/rlms/data/nsc_subject_stats.json in the private
+# RokctAI/agent repo). The DBE publishes the NSC Examination Report each
+# January for the previous November's exams; agent's own
+# fetch_nsc_subject_stats.py finds the newest one on the DBE's pages, checks
+# every row against the report's percentages and adds the new year (older
+# years are kept, for trends). It runs here because agent is private and its
+# Actions minutes are scarce (same reason as agent_checks.yml).
+#
+# Like voice_batch.yml and school_terms_to_agent.yml, this never touches
+# agent main: a change is pushed to the rokct/nsc-stats branch and a PR is
+# opened (or the open one updated), with MONOREPO_PAT passed as a per-command
+# header, never stored. A report the parser cannot read fails the run.
+on:
+  schedule:
+    - cron: '23 6 15 1,2,3 *'  # 15th of Jan, Feb and Mar, 06:23 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: nsc-stats-to-agent
+  cancel-in-progress: false
+
+env:
+  AGENT_BRANCH: rokct/nsc-stats
+  STATS: lms/frappe/src/tenant/rlms/data/nsc_subject_stats.json
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out agent main (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: main
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: lms/frappe/src/tenant/rlms/data
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pdftotext
+        run: sudo apt-get update -q && sudo apt-get install -y -q poppler-utils
+
+      - name: Fetch the newest NSC Examination Report into agent's stats
+        run: |
+          script=.agent/lms/frappe/src/tenant/rlms/data/fetch_nsc_subject_stats.py
+          if [ ! -f "$script" ]; then
+            echo "::notice::agent main has no fetch_nsc_subject_stats.py yet; nothing to do"
+            exit 0
+          fi
+          python "$script"
+
+      - name: Push the update and open the agent PR
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set +x
+          cd .agent
+          # Only the "retrieved" dates changed: no new or revised numbers.
+          if [ -z "$(git diff -- "$STATS" | grep -E '^[-+] ' | grep -v '"retrieved"')" ]; then
+            echo "agent's NSC subject stats are already current"
+            exit 0
+          fi
+          b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
+          echo "::add-mask::$b64"
+          # Every git command carries the header: the sparse checkout may
+          # lazily fetch a blob from the private remote.
+          agit() { git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $b64" "$@"; }
+          agit config user.name "github-actions[bot]"
+          agit config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          agit checkout --quiet -B "$AGENT_BRANCH"
+          agit add -- "$STATS"
+          agit commit --quiet -m "NSC subject stats: refresh from the newest DBE Examination Report" \
+            -m "Fetched by factory's nsc_stats_to_agent.yml ($RUN_URL)."
+          # A bot-only branch rebuilt from agent main on every run.
+          agit push --quiet --force origin "HEAD:refs/heads/$AGENT_BRANCH"
+          if [ -z "$(gh pr list --repo RokctAI/agent --head "$AGENT_BRANCH" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --repo RokctAI/agent --head "$AGENT_BRANCH" --base main \
+              --title "NSC subject stats: refresh from the newest DBE Examination Report" \
+              --body "fetch_nsc_subject_stats.py found a newer or revised NSC Examination Report: Grade 12 learners who wrote each subject, per year. Run: $RUN_URL"
+          else
+            echo "updated the open agent PR on $AGENT_BRANCH"
+          fi

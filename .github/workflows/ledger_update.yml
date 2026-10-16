@@ -1,0 +1,70 @@
+name: Ledger Update
+on:
+  workflow_call:
+    inputs:
+      id:
+        required: true
+        type: string
+      type:
+        required: true
+        type: string
+      theme:
+        required: true
+        type: string
+      status:
+        required: true
+        type: string
+      agent:
+        required: true
+        type: string
+      session:
+        required: true
+        type: string
+      pr:
+        required: false
+        type: string
+
+jobs:
+  update_ledger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The calling workflow usually pushed a card commit moments ago;
+          # start from the branch tip, not the triggering SHA, or our push
+          # is rejected as non-fast-forward.
+          ref: main
+          # The ledger lives in the content repo the card belongs to
+          # (split/routes.py card_target). Callers pass secrets: inherit.
+          repository: RokctAI/${{ startsWith(inputs.type, 'lesson.') && 'lessons' || startsWith(inputs.type, 'bible') && 'bible' || startsWith(inputs.type, 'film') && 'film' || 'books' }}
+          token: ${{ secrets.MONOREPO_PAT }}
+
+      - name: Append to Ledger
+        env:
+          CARD_ID: ${{ inputs.id }}
+          CARD_TYPE: ${{ inputs.type }}
+          CARD_THEME: ${{ inputs.theme }}
+          CARD_STATUS: ${{ inputs.status }}
+          CARD_AGENT: ${{ inputs.agent }}
+          CARD_SESSION: ${{ inputs.session }}
+          CARD_PR: ${{ inputs.pr }}
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M")
+          PR_VALUE="$CARD_PR"
+          if [ -z "$PR_VALUE" ]; then PR_VALUE="—"; fi
+
+          echo "| $CARD_ID | $CARD_TYPE | $CARD_THEME | $CARD_STATUS | $CARD_AGENT | $CARD_SESSION | $PR_VALUE | $TIMESTAMP |" >> .rokct/agent/log/ledger.md
+
+      - name: Commit Ledger Update
+        env:
+          CARD_ID: ${{ inputs.id }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .rokct/agent/log/ledger.md
+          git commit -m "chore: update ledger for $CARD_ID [skip ci]" || exit 0
+          for i in 1 2 3; do
+            git push origin main && break
+            git pull --rebase origin main || { git rebase --abort; exit 1; }
+            sleep $((RANDOM % 4 + 1))
+          done

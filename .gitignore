@@ -1,13 +1,19 @@
 __pycache__/
 *.pyc
 *.log
-node_modules/
-dist/
-build/
-.env
-.venv/
-.DS_Store
+# The state-machine audit trail must be committed: level workflows
+# `git add` these after every transition, and an ignored path makes
+# that command exit 1 and fail the step.
+!.rokct/agent/log/transitions.log
+!.rokct/agent/log/errors.log
 
-# Protocol working state — installed by .rokct/initiate.py, not committed.
-.rokct/skills/
-.rokct/tmp/
+# Rendered at Reel build time (sponsor_voice job); never committed.
+social/facebook/assets/voice_tenderassist.wav
+
+# Split: voiced audio and content never sit in this public repo.
+radio_ads/out/
+radio_ads/samples/
+social/facebook/assets/voice_*.wav
+_lessons/
+_social/
+_engine/

@@ -1,0 +1,68 @@
+name: Content router
+
+# The content repos (lessons, books, bible, film, social, startupos) are
+# private and run no workflows. This polls their main branches and dispatches
+# the engine workflows whose push filters their new commits match. See
+# .github/scripts/content_router.py; the table is .github/content_router.json.
+#
+# The last commit seen per repo is kept in cursors.json on the router-state
+# branch of this repo (commit SHAs only).
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report what would be dispatched; dispatch nothing and keep the cursors'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # cursors.json on router-state
+
+concurrency:
+  group: content-router
+  cancel-in-progress: false
+
+jobs:
+  route:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load cursors
+        run: |
+          if git fetch --depth 1 origin router-state 2>/dev/null; then
+            git show FETCH_HEAD:cursors.json > "$RUNNER_TEMP/cursors.json"
+          else
+            echo '{}' > "$RUNNER_TEMP/cursors.json"
+          fi
+
+      - name: Route
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          ARGS=""
+          [ "$DRY_RUN" = "true" ] && ARGS="--dry-run"
+          python3 .github/scripts/content_router.py --state "$RUNNER_TEMP/cursors.json" $ARGS
+
+      - name: Save cursors
+        if: always() && inputs.dry_run != true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          tmp="$RUNNER_TEMP/state"
+          rm -rf "$tmp"
+          git worktree add --detach "$tmp"
+          cd "$tmp"
+          git checkout --orphan router-state-next
+          git rm -rq --cached . || true
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp "$RUNNER_TEMP/cursors.json" cursors.json
+          git add cursors.json
+          git commit -qm "router: cursors [skip ci]"
+          # One commit, replaced each run: the branch holds state, not history.
+          git push -f origin HEAD:refs/heads/router-state

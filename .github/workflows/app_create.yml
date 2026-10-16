@@ -1,0 +1,274 @@
+name: App Create (reusable)
+
+# Creates a standalone app repo, seeds it from templates/app, pushes main and
+# opens its "Build v0" issue. Reusable so the label front-end
+# (app_spawn.yml) is not the only way in — a merged PR adding an app folder
+# can call this the same way. Nothing here reads issue state; everything it
+# needs arrives as an input.
+#
+# FACTORY_PAT is whatever token the caller resolved — MONOREPO_PAT, the
+# cross-repo credential the rest of the factory already uses, unless a
+# repo-level FACTORY_PAT secret overrides it. Creating repos needs more than
+# pushing to them: classic `repo` scope, or a fine-grained token whose
+# resource owner IS the target owner (see docs/app-factory.md).
+#
+# The `owner` input is canonicalised here rather than trusted, so a caller
+# that is not app_spawn.yml cannot hand us `rokctai` and silently lose the
+# protocol bootstrap. See .github/scripts/owners.py.
+#
+# The final step hands the new repo to the fleet's roadmap module so the
+# factory's own machinery can pick it up. It is optional and advisory: by the
+# time it runs the repo exists and Build v0 is open, so it never fails the
+# job. Unset RLMS_SITE_URL and it skips.
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      description:
+        required: true
+        type: string
+      visibility:
+        required: true
+        type: string
+      owner:
+        required: true
+        type: string
+      spec:
+        required: false
+        type: string
+        default: ''
+      source_issue:
+        required: false
+        type: string
+        default: ''
+      # One of nextjs/flutter/frappe, or empty for the stack-neutral common
+      # scaffold. The seeder validates the value; here it is passed through
+      # and, best-effort, pinned on the new repo as a topic.
+      stack:
+        required: false
+        type: string
+        default: ''
+    secrets:
+      FACTORY_PAT:
+        required: true
+      # Optional, and optional all the way down: the roadmap hand-off is the
+      # last step and skips itself when RLMS_SITE_URL is empty. A caller that
+      # passes none of these still spawns a complete repo.
+      RLMS_SITE_URL:
+        required: false
+      RLMS_API_KEY:
+        required: false
+      RLMS_API_SECRET:
+        required: false
+    outputs:
+      repo_url:
+        value: ${{ jobs.create.outputs.repo_url }}
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    outputs:
+      repo_url: ${{ steps.create_repo.outputs.repo_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # GitHub logins are case-insensitive; initiate.py's `RokctAI/` origin
+      # test is not. Resolve the spelling once, then use it everywhere below.
+      - name: Resolve owner
+        id: owner
+        env:
+          RAW_OWNER: ${{ inputs.owner }}
+        run: |
+          owner=$(python3 .github/scripts/owners.py "$RAW_OWNER")
+          echo "owner=$owner" >> "$GITHUB_OUTPUT"
+          echo "Target owner resolved to $owner (given: $RAW_OWNER)."
+
+      # Fail here with the scope named, not later with a bare 404 from the
+      # creation call. A classic PAT advertises its scopes in a response
+      # header; a fine-grained one does not, so that case is only warned on.
+      - name: Check token can create repositories
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+        run: |
+          if ! scopes=$(gh api -i /user 2>/dev/null | tr -d '\r' | grep -i '^x-oauth-scopes:'); then
+            echo "::error::The factory PAT is not a usable GitHub token (GET /user failed). Check FACTORY_PAT, or MONOREPO_PAT if FACTORY_PAT is unset."
+            exit 1
+          fi
+          scopes="${scopes#*: }"
+          if [ -z "$scopes" ]; then
+            echo "Fine-grained token detected; its resource owner must be ${{ steps.owner.outputs.owner }}, with Administration: write."
+          elif ! echo "$scopes" | grep -qw 'repo'; then
+            echo "::error::The factory PAT cannot create repositories. It has scopes [$scopes]; it needs classic \`repo\` scope, or a fine-grained token whose resource owner is ${{ steps.owner.outputs.owner }} with Administration: write. See docs/app-factory.md."
+            exit 1
+          fi
+
+      # `gh repo create` goes through GraphQL, which has its own hourly quota
+      # separate from REST. When that quota is spent (seen 2026-09-10 on #166:
+      # "GraphQL: API rate limit already exceeded for user ID ...") the REST
+      # scope check above still passes, so fall back to the REST create
+      # endpoint rather than failing the spawn on a quota the rest of the job
+      # never touches. Same token, same permissions, same resulting repo.
+      - name: Create repository
+        id: create_repo
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          OWNER: ${{ steps.owner.outputs.owner }}
+          NAME: ${{ inputs.name }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
+          VISIBILITY: ${{ inputs.visibility }}
+          DESCRIPTION: ${{ inputs.description }}
+        run: |
+          if gh repo create "$TARGET" --"$VISIBILITY" --description "$DESCRIPTION" 2>create.err; then
+            echo "Created $TARGET via gh repo create."
+          else
+            cat create.err
+            echo "::warning::gh repo create (GraphQL) failed for $TARGET; retrying via the REST API."
+            private=false; [ "$VISIBILITY" = "private" ] && private=true
+            # An org owner uses /orgs/{org}/repos; a user owner uses /user/repos,
+            # which only ever creates under the token's own account.
+            owner_type=$(gh api "/users/$OWNER" --jq .type 2>/dev/null || echo unknown)
+            if [ "$owner_type" = "Organization" ]; then
+              endpoint="/orgs/$OWNER/repos"
+            else
+              token_login=$(gh api /user --jq .login 2>/dev/null || echo '')
+              if [ "$(echo "$token_login" | tr '[:upper:]' '[:lower:]')" != "$(echo "$OWNER" | tr '[:upper:]' '[:lower:]')" ]; then
+                echo "::error::Could not create $TARGET. gh repo create failed (see above) and the REST fallback cannot help: $OWNER is not an organization and is not the account that owns the factory PAT (${token_login:-unknown}). See docs/app-factory.md."
+                exit 1
+              fi
+              endpoint="/user/repos"
+            fi
+            if ! gh api -X POST "$endpoint" \
+                  -f name="$NAME" \
+                  -f description="$DESCRIPTION" \
+                  -F private="$private" 2>create_rest.err >/dev/null; then
+              cat create_rest.err
+              echo "::error::Could not create $TARGET (GraphQL and REST both failed). If this is a permissions failure, the factory PAT needs classic \`repo\` scope, or must be a fine-grained token whose resource owner is $OWNER with Administration: write. See docs/app-factory.md."
+              exit 1
+            fi
+            echo "Created $TARGET via REST $endpoint."
+          fi
+          echo "repo_url=https://github.com/$TARGET" >> "$GITHUB_OUTPUT"
+
+      # Advisory, so an agent (or a person) can see the chosen stack from the
+      # repo page without opening the tree. The repo, seed and Build v0 issue
+      # do not depend on it, so a failed topics call must not fail the spawn.
+      - name: Set stack topic on the repo
+        if: inputs.stack != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
+          STACK: ${{ inputs.stack }}
+        run: |
+          gh repo edit "$TARGET" --add-topic "$STACK" \
+            || echo "::warning::Could not set topic '$STACK' on $TARGET; continuing."
+
+      - name: Seed scaffold
+        env:
+          APP_SPEC: ${{ inputs.spec }}
+          STACK: ${{ inputs.stack }}
+        run: |
+          printf '%s\n' "$APP_SPEC" > spec.txt
+          python3 .github/scripts/seed_app_repo.py \
+            --template templates/app \
+            --dest seed \
+            --name "${{ inputs.name }}" \
+            --description "${{ inputs.description }}" \
+            --spec-file spec.txt \
+            --owner "${{ steps.owner.outputs.owner }}" \
+            --visibility "${{ inputs.visibility }}" \
+            --issue "${{ inputs.source_issue }}" \
+            ${STACK:+--stack "$STACK"}
+
+      # A composed Next.js shell's composer.json must be real on day one
+      # (Ray, 2026-09-10: an empty one "is same as not being there") and
+      # current: its SDK list comes from the protocol's main, read over
+      # HTTPS - the registry template named by the app_type
+      # (core/utils/frappe/composer/<app_type>.json) when one exists, else the
+      # SDK consumers index (sdk_consumers.json) when it lists this shell,
+      # else the protocol's generated nextjs_compose_example.json (the
+      # kernel) - and every pin is the sha256 of that SDK's install.py at its
+      # ref, computed now, not a digest copied into the template months ago.
+      # FACTORY_PAT (the cross-repo MONOREPO_PAT) reads the private SDK repos
+      # for the pins; the protocol repo itself is public. Only when the
+      # protocol cannot be read at all does the overlay's own telemetry +
+      # base default stand, logged loudly.
+      - name: Generate composer.json from the protocol (Next.js shells)
+        if: inputs.stack == 'nextjs'
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          APP_NAME: ${{ inputs.name }}
+        run: |
+          python3 .github/scripts/seed_composer.py \
+            --dest seed \
+            --app-type "$(tr -d '\r\n[:space:]' < seed/.rokct/config/app_type)" \
+            --name "$APP_NAME"
+
+      - name: Push main
+        working-directory: seed
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
+        run: |
+          git init -q -b main
+          git config user.name "rokct-bot"
+          git config user.email "rokct-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "chore: seed ${{ inputs.name }} from factory scaffold [skip ci]"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${TARGET}.git"
+          git push -q origin main
+
+      # `gh issue create` also touches GraphQL (repository lookup), so it can
+      # fail on the same spent quota as `gh repo create` above. Same shape:
+      # try gh first, then the REST issues endpoint with the same title/body.
+      - name: Open Build v0 issue
+        env:
+          GH_TOKEN: ${{ secrets.FACTORY_PAT }}
+          TARGET: ${{ steps.owner.outputs.owner }}/${{ inputs.name }}
+          SOURCE_ISSUE: ${{ inputs.source_issue }}
+        run: |
+          title="Build v0"
+          body=$(printf '%s\n' \
+            "The brief is in [docs/spec.md](../blob/main/docs/spec.md); how to work on this repo is in [AGENTS.md](../blob/main/AGENTS.md)." \
+            "" \
+            "Run \`bash .rokct/bootstrap.sh\` first, then ship a v0 a person can run." \
+            "" \
+            "Spawned from $SOURCE_ISSUE.")
+          if gh issue create --repo "$TARGET" --title "$title" --body "$body" 2>issue.err; then
+            echo "Opened '$title' on $TARGET via gh issue create."
+          else
+            cat issue.err
+            echo "::warning::gh issue create failed for $TARGET; retrying via the REST API."
+            if ! gh api -X POST "/repos/$TARGET/issues" \
+                  -f title="$title" \
+                  -f body="$body" 2>issue_rest.err >/dev/null; then
+              cat issue_rest.err
+              echo "::error::Could not open '$title' on $TARGET (gh issue create and REST both failed)."
+              exit 1
+            fi
+            echo "Opened '$title' on $TARGET via REST /repos/$TARGET/issues."
+          fi
+
+      # The other half of the loop: the repo now exists on GitHub, so tell the
+      # roadmap module about it and let the fleet's own scheduling pick it up.
+      # `continue-on-error` is belt to the script's braces — register_roadmap.py
+      # already swallows every failure and exits 0, but a spawn that has
+      # already produced a repo and an issue must not go red for a backend
+      # that was slow, unconfigured, or having a bad day.
+      - name: Register with the roadmap
+        continue-on-error: true
+        env:
+          RLMS_SITE_URL: ${{ secrets.RLMS_SITE_URL }}
+          RLMS_API_KEY: ${{ secrets.RLMS_API_KEY }}
+          RLMS_API_SECRET: ${{ secrets.RLMS_API_SECRET }}
+          APP_NAME: ${{ inputs.name }}
+          APP_DESCRIPTION: ${{ inputs.description }}
+          REPO_URL: ${{ steps.create_repo.outputs.repo_url }}
+        run: |
+          python3 .github/scripts/register_roadmap.py \
+            --title "$APP_NAME" \
+            --repo-url "$REPO_URL" \
+            --description "$APP_DESCRIPTION"

@@ -1,0 +1,11 @@
+# torch/torchaudio: install the CPU wheels first (see README)
+# vibevoice: pip install -e <clone of github.com/vibevoice-community/VibeVoice>
+transformers==4.51.3
+numpy
+scipy
+soundfile
+librosa
+pyloudnorm
+jsonschema>=4.18
+faster-whisper
+imageio-ffmpeg

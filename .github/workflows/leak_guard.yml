@@ -1,0 +1,22 @@
+name: Leak guard
+
+# This repository is public and works on private content and cloned voices.
+# Every change is checked for the ways those could leak: tracked audio or
+# content, artifacts, caches and pull_request_target. See
+# .github/scripts/leak_guard.py.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  leak_guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check
+        run: python3 .github/scripts/leak_guard.py

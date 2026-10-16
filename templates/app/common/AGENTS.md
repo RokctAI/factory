@@ -1,14 +1,14 @@
-# Agent build brief — newfactory
+# Agent build brief — {{APP_NAME}}
 
 You are the first agent on this repository. It contains a brief and nothing
 else. Your job is to turn the brief into a working application.
 
 ## What this is
 
-**newfactory** — Public CI engine: runs every factory workflow on free public minutes against the private content repos.
+**{{APP_NAME}}** — {{APP_DESCRIPTION}}
 
-Repo: `RokctAI/newfactory` (public)
-Accepted from: <https://github.com/RokctAI/factory/issues/269>
+Repo: `{{APP_REPO}}` ({{APP_VISIBILITY}})
+Accepted from: <{{SOURCE_ISSUE}}>
 
 ## Read first
 

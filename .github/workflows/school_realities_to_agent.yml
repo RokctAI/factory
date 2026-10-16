@@ -1,0 +1,94 @@
+name: School Realities - Refresh Into Agent
+# How many learners are in each grade, per year, nationally and per province
+# (lms/frappe/src/tenant/rlms/data/school_realities.json in the private
+# RokctAI/agent repo). The DBE publishes School Realities once a year on its
+# EMIS Statistical Publications page, with no fixed month, so this checks
+# monthly. Agent's own fetch_school_realities.py finds the newest edition,
+# reads Table 4 by word position (pdfplumber), checks it against its own
+# totals and adds the year (older years are kept, for trends). It runs here
+# because agent is private and its Actions minutes are scarce (same reason as
+# agent_checks.yml).
+#
+# Like nsc_stats_to_agent.yml, this never touches agent main: a change is
+# pushed to the rokct/school-realities branch and a PR is opened (or the open
+# one updated), with MONOREPO_PAT passed as a per-command header, never
+# stored. An edition the script cannot read fails the run.
+on:
+  schedule:
+    - cron: '41 6 20 * *'  # 20th of every month, 06:41 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: school-realities-to-agent
+  cancel-in-progress: false
+
+env:
+  AGENT_BRANCH: rokct/school-realities
+  DATA: lms/frappe/src/tenant/rlms/data/school_realities.json
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out agent main (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: main
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: lms/frappe/src/tenant/rlms/data
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pdfplumber
+        run: python -m pip install --quiet pdfplumber
+
+      - name: Fetch the newest School Realities into agent's data
+        run: |
+          script=.agent/lms/frappe/src/tenant/rlms/data/fetch_school_realities.py
+          if [ ! -f "$script" ]; then
+            echo "::notice::agent main has no fetch_school_realities.py yet; nothing to do"
+            exit 0
+          fi
+          python "$script"
+
+      - name: Push the update and open the agent PR
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set +x
+          cd .agent
+          # Only the "retrieved" dates changed: no new or revised numbers.
+          if [ -z "$(git diff -- "$DATA" | grep -E '^[-+] ' | grep -v '"retrieved"')" ]; then
+            echo "agent's School Realities data is already current"
+            exit 0
+          fi
+          b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
+          echo "::add-mask::$b64"
+          # Every git command carries the header: the sparse checkout may
+          # lazily fetch a blob from the private remote.
+          agit() { git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $b64" "$@"; }
+          agit config user.name "github-actions[bot]"
+          agit config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          agit checkout --quiet -B "$AGENT_BRANCH"
+          agit add -- "$DATA"
+          agit commit --quiet -m "School Realities: refresh learners per grade from the newest DBE edition" \
+            -m "Fetched by factory's school_realities_to_agent.yml ($RUN_URL)."
+          # A bot-only branch rebuilt from agent main on every run.
+          agit push --quiet --force origin "HEAD:refs/heads/$AGENT_BRANCH"
+          if [ -z "$(gh pr list --repo RokctAI/agent --head "$AGENT_BRANCH" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --repo RokctAI/agent --head "$AGENT_BRANCH" --base main \
+              --title "School Realities: refresh learners per grade from the newest DBE edition" \
+              --body "fetch_school_realities.py found a newer or revised DBE School Realities edition: learners per grade, nationally and per province. Run: $RUN_URL"
+          else
+            echo "updated the open agent PR on $AGENT_BRANCH"
+          fi

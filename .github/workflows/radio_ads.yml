@@ -1,0 +1,279 @@
+name: Radio ads
+
+# Push an ad JSON into radio_ads/inbox/ and this renders it: the finished
+# MP3 + WAV + report.json are committed to the private RokctAI/social repo
+# under radio_ads/out/<id>/. This repo is public, so nothing voiced is
+# uploaded as an artifact or cached here (anyone can download a public
+# repo's artifacts, and fork PR runs can restore its caches).
+# See radio_ads/README.md ("Render in CI") for the one-time setup:
+#   * secret   MONOREPO_PAT  the org's cross-repo token (already set; it reads
+#                            the private RokctAI/agent, like agent_checks.yml)
+#   * variable VOICES_REF    OPTIONAL: branch/tag/SHA of RokctAI/agent holding
+#                            lms/team/voices (defaults to main)
+#
+# Deliberately no pull_request trigger: the job needs MONOREPO_PAT and
+# fork PRs must never get it. The persona voices are copied into
+# radio_ads/voices/ (git-ignored), used for rendering and never printed,
+# committed or uploaded; only the rendered ads are.
+
+on:
+  push:
+    paths:
+      - 'radio_ads/inbox/**.json'
+  # The daily Reel workflow calls this for one job (radio_ads/reel_jobs/)
+  # and reads the result from RokctAI/social.
+  workflow_call:
+    inputs:
+      ad_path:
+        type: string
+        required: true
+    secrets:
+      MONOREPO_PAT:
+        required: true
+  workflow_dispatch:
+    inputs:
+      ad_path:
+        description: 'Ad JSON to render, e.g. radio_ads/inbox/my_ad.json (empty = every JSON in radio_ads/inbox/)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+# One render at a time: VibeVoice on CPU peaks around 12.5 GB of the
+# runner's 16 GB. A queued run waits; note GitHub keeps only the newest
+# pending run per group, so if three pushes land while one is rendering the
+# middle one is cancelled (re-render it with "Run workflow").
+concurrency:
+  group: radio-ads
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: '3.11'
+  # vibevoice-community/VibeVoice commit the factory was built and tested on;
+  # override with the repository variable VIBEVOICE_REF.
+  VIBEVOICE_REF: ${{ vars.VIBEVOICE_REF || '952326ddb264062466a888cf32a5b2f4e803e16e' }}
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  # Pinned model revision, the same one voice_batch.yml and
+  # pronunciation_audition.yml use. Download, render (adfactory/tts.py reads
+  # this variable) and the weights cache key all use it.
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  # faster-whisper model for the word check (make_ad.py default is base.en;
+  # set the variable ASR_MODEL to e.g. small.en for a stricter check).
+  ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  VOICES_REF: ${{ vars.VOICES_REF || 'main' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+
+jobs:
+  plan:
+    name: Find and validate ads
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      count: ${{ steps.plan.outputs.count }}
+    steps:
+      - name: Check MONOREPO_PAT is set
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::The persona voices live in the private repo RokctAI/agent, so this workflow needs the org cross-repo token to read them. Make sure the secret MONOREPO_PAT is available to RokctAI/factory (organization secret with this repository selected, or a repository secret under Settings -> Secrets and variables -> Actions) and that the token can read RokctAI/agent, then re-run this workflow. See radio_ads/README.md 'Render in CI'."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: List ads to render
+        id: list
+        env:
+          # A call (from a schedule) names its one ad, like a dispatch does.
+          EVENT: ${{ inputs.ad_path != '' && 'workflow_dispatch' || github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          AD_PATH: ${{ inputs.ad_path }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          bash radio_ads/ci/changed_ads.sh "$EVENT" "$BEFORE" "$AFTER" "$AD_PATH" "$DEFAULT_BRANCH" > "$RUNNER_TEMP/ads.txt"
+          echo "Ads to render:"
+          sed 's/^/  /' "$RUNNER_TEMP/ads.txt"
+          echo "count=$(grep -c . "$RUNNER_TEMP/ads.txt" || true)" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch persona voices (RokctAI/agent)
+        if: steps.list.outputs.count != '0'
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.VOICES_REF }}
+          path: .agent-voices
+          fetch-depth: 1
+          sparse-checkout: lms/team/voices
+          persist-credentials: false
+
+      - name: Install voices into radio_ads/voices
+        if: steps.list.outputs.count != '0'
+        run: bash radio_ads/ci/install_voices.sh .agent-voices
+
+      - uses: actions/setup-python@v5
+        if: steps.list.outputs.count != '0'
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Validate
+        if: steps.list.outputs.count != '0'
+        run: |
+          python -m pip install --quiet 'jsonschema>=4.18'
+          mapfile -t ads < "$RUNNER_TEMP/ads.txt"
+          python radio_ads/make_ad.py --validate "${ads[@]}"
+
+      - name: Build render matrix
+        id: plan
+        env:
+          COUNT: ${{ steps.list.outputs.count }}
+        run: |
+          if [ "$COUNT" = "0" ]; then
+            echo "No added or changed ad JSONs under radio_ads/inbox/; nothing to render." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
+          else
+            echo "matrix=$(python radio_ads/ci/plan.py "$RUNNER_TEMP/ads.txt")" >> "$GITHUB_OUTPUT"
+          fi
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+  render:
+    name: Render ${{ matrix.id }}
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - name: Free disk space
+        run: |
+          df -h / | tail -1
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - uses: actions/checkout@v4
+
+      - name: Fetch persona voices (RokctAI/agent)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.VOICES_REF }}
+          path: .agent-voices
+          fetch-depth: 1
+          sparse-checkout: lms/team/voices
+          persist-credentials: false
+
+      - name: Install voices into radio_ads/voices
+        run: bash radio_ads/ci/install_voices.sh .agent-voices
+
+      - name: Install ffmpeg (with rubberband)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends ffmpeg
+          ffmpeg -hide_banner -filters | grep -q rubberband && echo "rubberband filter available"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: radio_ads/requirements.txt
+
+      - name: Install Python dependencies (CPU torch, VibeVoice fork)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet https://github.com/vibevoice-community/VibeVoice.git "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r radio_ads/requirements.txt
+          python -c "import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)"
+          df -h / | tail -1
+
+      - name: Restore model weights
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.ASR_MODEL }}
+
+      - name: Download model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          model_path = snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          # The processor pulls its tokenizer from a second repo; fetch it now so it is cached too.
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(model_path)
+          from faster_whisper import WhisperModel
+          WhisperModel(os.environ["ASR_MODEL"], device="cpu", compute_type="int8")
+          PY
+          du -sh "$HF_HOME/hub"
+          df -h / | tail -1
+
+      - name: Save model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: ${{ steps.models.outputs.cache-primary-key }}
+
+      - name: Render ${{ matrix.file }}
+        env:
+          AD_FILE: ${{ matrix.file }}
+        run: python radio_ads/make_ad.py "$AD_FILE" --asr-model "$ASR_MODEL"
+
+      - name: Job summary
+        if: always()
+        env:
+          AD_ID: ${{ matrix.id }}
+          AD_FILE: ${{ matrix.file }}
+        run: |
+          report="radio_ads/out/$AD_ID/report.json"
+          if [ -f "$report" ]; then
+            python radio_ads/ci/summary.py "$report" >> "$GITHUB_STEP_SUMMARY"
+            echo "Saved to RokctAI/social at radio_ads/out/$AD_ID/." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Radio ad \`$AD_ID\` failed to render ($AD_FILE); see the Render step log." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Check out social (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/social
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _social
+          sparse-checkout: radio_ads/out
+
+      - name: Save the rendered ad in RokctAI/social
+        env:
+          AD_ID: ${{ matrix.id }}
+        run: |
+          dest="_social/radio_ads/out/$AD_ID"
+          mkdir -p "$dest"
+          for f in "$AD_ID.mp3" "$AD_ID.wav" report.json ad.json; do
+            cp "radio_ads/out/$AD_ID/$f" "$dest/"
+          done
+          cd _social
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "radio_ads/out/$AD_ID"
+          if git diff --staged --quiet; then echo "Unchanged."; exit 0; fi
+          git commit -m "radio ad: $AD_ID [skip ci]"
+          for i in 1 2 3; do
+            git push origin HEAD:main && break
+            git pull --rebase origin main || { git rebase --abort || true; exit 1; }
+            sleep $((RANDOM % 3 + 1))
+          done

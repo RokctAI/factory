@@ -1,0 +1,342 @@
+{
+  "push": {
+    "RokctAI/film": [
+      {
+        "workflow": "film_proposal.yml",
+        "paths": [
+          "film/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      }
+    ],
+    "RokctAI/lessons": [
+      {
+        "workflow": "ieb_licence_gate.yml",
+        "paths": [
+          "school/IEB/**",
+          "school/curriculum/IEB/**",
+          "school/scripts/IEB/check_ieb_licence.py",
+          "school/scripts/IEB/tests/test_check_ieb_licence.py",
+          "school/scripts/CAPS/build_knowledge_bites_index.py",
+          "school/scripts/CAPS/curriculum_target.py"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "knowledge_bites_index.yml",
+        "paths": [
+          "school/**",
+          "!school/knowledge_bites_index.json",
+          "!school/review_index.json",
+          "!school/practice_bank.json",
+          "!school/skills_index.json"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson0_topic_selection.yml",
+        "paths": [
+          "school/curriculum/*.json",
+          "school/curriculum/CAPS/**/*.json"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson1_plan_generation.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson2_concept_expansion.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson3_rules_check.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md",
+          "school/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson4_evaluation.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson_compliance.yml",
+        "paths": [
+          ".rokct/agent/jobs/**/*.md",
+          "school/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson_regeneration.yml",
+        "paths": [
+          "school/reviews/*.json",
+          "!school/reviews/regen_state.json"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson_release_on_complete.yml",
+        "paths": [
+          "school/curriculum/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "math_verify.yml",
+        "paths": [
+          "school/**",
+          "school/curriculum/**/script.md",
+          "school/curriculum/**/question.md",
+          "school/curriculum/**/manim_scene.py"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "mojibake_check.yml",
+        "paths": [
+          ".rokct/agent/jobs/**/*.md",
+          "school/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "practice_bank.yml",
+        "paths": [
+          "school/curriculum/CAPS/*/session/**",
+          "school/curriculum/CAPS/past_papers/**",
+          "school/scripts/CAPS/build_practice_bank.py",
+          "school/content_layers.json",
+          "school/scripts/CAPS/content_layers.py"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "privacy-check_lessons.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "review_index.yml",
+        "paths": [
+          "school/**",
+          ".rokct/agent/jobs/**",
+          "!school/review_index.json",
+          "!school/knowledge_bites_index.json",
+          "!school/practice_bank.json",
+          "!school/skills_index.json"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "school_terms_to_agent.yml",
+        "paths": [
+          "school/curriculum/CAPS/school_calendar/*.json"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "skills_index.yml",
+        "paths": [
+          "school/curriculum/CAPS/*/skills/**",
+          "school/curriculum/*/skills/**",
+          "school/scripts/CAPS/build_skills_index.py"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "lesson_unit_tests.yml",
+        "paths": [
+          "school/scripts/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      }
+    ],
+    "RokctAI/books": [
+      {
+        "workflow": "level1_idea_generation.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "level2_concept_expansion.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "level3_rule_generation.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "level6_publish.yml",
+        "paths": [
+          "books/drafts/**/metadata.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "level6a_visual_summary.yml",
+        "paths": [
+          "books/drafts/**/metadata.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "level6b_visual_briefs.yml",
+        "paths": [
+          "books/drafts/**/metadata.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "level6c_reel_brief.yml",
+        "paths": [
+          "books/published/**/metadata.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "privacy-check_books.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      }
+    ]
+  },
+  "pull_request": {
+    "RokctAI/film": [
+      {
+        "workflow": "film_proposal.yml",
+        "paths": [
+          "film/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      }
+    ],
+    "RokctAI/lessons": [
+      {
+        "workflow": "ieb_licence_gate.yml",
+        "paths": [
+          "school/IEB/**",
+          "school/curriculum/IEB/**",
+          "school/scripts/IEB/check_ieb_licence.py",
+          "school/scripts/IEB/tests/test_check_ieb_licence.py",
+          "school/scripts/CAPS/build_knowledge_bites_index.py",
+          "school/scripts/CAPS/curriculum_target.py"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "math_verify.yml",
+        "paths": [
+          "school/**",
+          "school/curriculum/**/script.md",
+          "school/curriculum/**/question.md",
+          "school/curriculum/**/manim_scene.py"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
+        "workflow": "privacy-check_lessons.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      }
+    ],
+    "RokctAI/books": [
+      {
+        "workflow": "privacy-check_books.yml",
+        "paths": [
+          ".rokct/agent/jobs/pending/*.md"
+        ],
+        "branches": [
+          "main"
+        ]
+      }
+    ]
+  }
+}

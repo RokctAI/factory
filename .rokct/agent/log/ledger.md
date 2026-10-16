@@ -1,0 +1,207 @@
+| ID | Type | Theme | Status | Agent | Session | PR | Timestamp |
+|---|---|---|---|---|---|---|---|
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | pending_approval | groq | GROQ-29289670521 | — | 2026-07-13 22:23 |
+| maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | concept_expanding | jules | 17326401218826374780 | — | 2026-07-13 22:37 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | pending_concept_approval | system | SYS-LESSON-RULES-29290688660 | — | 2026-07-13 22:41 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | evaluated | system | SYS-LESSON-EVAL-29290763798 | — | 2026-07-13 22:43 |
+| maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | pending_concept_approval | system | SYS-LESSON-RULES-29292233088 | — | 2026-07-13 23:11 |
+| maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | evaluated | system | SYS-LESSON-EVAL-29292343116 | — | 2026-07-13 23:13 |
+| maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | pending_approval | groq | GROQ-29294000997 | — | 2026-07-13 23:46 |
+| physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | pending_approval | groq | GROQ-29294756169 | — | 2026-07-14 00:02 |
+| physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | concept_expanding | jules | 14590217926937046181 | — | 2026-07-14 00:04 |
+| geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0 | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Gradient calculation | pending_approval | groq | GROQ-29294978117 | — | 2026-07-14 00:06 |
+| economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | pending_approval | groq | GROQ-29295085255 | — | 2026-07-14 00:08 |
+| economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | concept_expanding | jules | 4664121147337177218 | — | 2026-07-14 00:10 |
+| physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | pending_concept_approval | system | SYS-LESSON-RULES-29295383337 | — | 2026-07-14 00:14 |
+| physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | evaluated | system | SYS-LESSON-EVAL-29295450180 | — | 2026-07-14 00:16 |
+| geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0 | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Gradient calculation | pending_concept_approval | system | SYS-LESSON-RULES-29295612340 | — | 2026-07-14 00:19 |
+| geography_g12_geographical_skills_and_techniques_gradient_ca_dc21d0 | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Gradient calculation | evaluated | system | SYS-LESSON-EVAL-29295661422 | — | 2026-07-14 00:21 |
+| economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | pending_concept_approval | system | SYS-LESSON-RULES-29295777171 | — | 2026-07-14 00:23 |
+| economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | evaluated | system | SYS-LESSON-EVAL-29295819853 | — | 2026-07-14 00:24 |
+| physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58 | lesson.physical_sciences | Physical Sciences Grade 11: Quantitative Aspects of Chemical Change - Stoichiometric calculations | pending_approval | groq | GROQ-29296843467 | — | 2026-07-14 00:47 |
+| maths_g12_finance_growth_and_decay_compound_growth_b9eede | lesson.maths | Maths Grade 12: Finance, Growth and Decay - Compound growth | pending_approval | groq | GROQ-29296931354 | — | 2026-07-14 00:49 |
+| maths_g12_quadratic_equations_factoring_method_5b7a49 | lesson.maths | Maths Grade 12: Quadratic Equations - Factoring method | pending_approval | groq | GROQ-29297585999 | — | 2026-07-14 01:03 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | pending_approval | groq | GROQ-29297722025 | — | 2026-07-14 01:06 |
+| mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - Municipal tariff calculations | pending_approval | groq | GROQ-29306278810 | — | 2026-07-14 04:34 |
+| maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | pending_approval | groq | GROQ-29307515962 | — | 2026-07-14 05:03 |
+| maths_g12_sequences_and_series_geometric_sequences_a6eefc | lesson.maths | Maths Grade 12: Sequences and Series - Geometric sequences | pending_approval | groq | GROQ-29307743473 | — | 2026-07-14 05:08 |
+| economics_g11_crosscheck_corruption_test_c0ffee | lesson.economics | Economics Grade 11: Dynamics of Markets - Crosscheck corruption test | pending_concept_approval (crosscheck: failed) | system | SYS-LESSON-RULES-29307893004 | — | 2026-07-14 05:12 |
+| physical_sciences_g11_electric_circuits_resistors_in_paralle_6f716c | lesson.physical_sciences | Physical Sciences Grade 11: Electric Circuits - Resistors in parallel | pending_approval | groq | GROQ-29308001163 | — | 2026-07-14 05:14 |
+| geography_g12_crosscheck_clean_test_beef01 | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Crosscheck clean test | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29308115955 | — | 2026-07-14 05:17 |
+| physical_sciences_g12_work_energy_and_power_conservation_of__663086 | lesson.physical_sciences | Physical Sciences Grade 12: Work, Energy and Power - Conservation of mechanical energy | pending_approval | groq | GROQ-29308179046 | — | 2026-07-14 05:18 |
+| economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | pending_approval | groq | GROQ-29312940336 | — | 2026-07-14 06:57 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | pending_approval | groq | GROQ-29321900343 | — | 2026-07-14 09:29 |
+| economics_g12_macroeconomics_the_multiplier_646d16 | lesson.economics | Economics Grade 12: Macroeconomics - The multiplier | pending_approval | groq | GROQ-29328025321 | — | 2026-07-14 11:12 |
+| geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b | lesson.geography | Geography Grade 12: Climate and Weather - Mid-latitude cyclones | pending_approval | groq | GROQ-29334115969 | — | 2026-07-14 12:52 |
+| geography_g12_geographical_skills_and_techniques_map_scale_a_eb274e | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Map scale and distance | pending_approval | groq | GROQ-29344162645 | — | 2026-07-14 15:10 |
+| geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d | lesson.geography | Geography Grade 12: Geomorphology - River profiles and rejuvenation | pending_approval | groq | GROQ-29351264503 | — | 2026-07-14 16:50 |
+| mathematical_literacy_g11_finance_simple_interest_8f7530 | lesson.maths_literacy | Mathematical Literacy Grade 11: Finance - Simple interest | pending_approval | groq | GROQ-29359202867 | — | 2026-07-14 18:46 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | pending_approval | groq | GROQ-29361804737 | — | 2026-07-14 19:26 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | pending_approval | groq | GROQ-29366784147 | — | 2026-07-14 20:43 |
+| 1._cosmic_dreams_f07a10 | poetry | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-14 21:00 |
+| 5._starlight_serenades_438caf | sonnet | 5. Starlight Serenades | pending_approval | groq | GROQ-29369181492 | — | 2026-07-14 21:21 |
+| mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | pending_approval | groq | GROQ-29370288020 | — | 2026-07-14 21:39 |
+| 3._echoes_of_silence_361e76 | haiku | 3. Echoes of Silence | pending_approval | groq | GROQ-29373019090 | — | 2026-07-14 22:27 |
+| 2._forgotten_memories_1d661c | narrative | 2. Forgotten Memories | pending_approval | groq | GROQ-29375976604 | — | 2026-07-14 23:23 |
+| 4._whispers_of_wilderness_381f06 | free verse | 4. Whispers of Wilderness | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-15 21:00 |
+| 1._cosmic_dreams_80c3ce | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29452114428 | — | 2026-07-15 21:29 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | produced | level6 | L6-29544844964 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-17 00:30 |
+| maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | concept_expanding | jules | 16504558747801172975 | — | 2026-07-17 01:27 |
+| maths_g12_quadratic_equations_factoring_method_5b7a49 | lesson.maths | Maths Grade 12: Quadratic Equations - Factoring method | concept_expanding | jules | 3403277436368705929 | — | 2026-07-17 01:39 |
+| maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | expansion_requested | system | SYS-LESSON-RULES-29548205232 | — | 2026-07-17 01:44 |
+| maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | concept_generated | system | SYS-LESSON-RULES-29548411983 | — | 2026-07-17 01:50 |
+| maths_g11_quadratic_equations_completing_the_square_17b6b3 | lesson.maths | Maths Grade 11: Quadratic Equations - Completing the square | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29548951236 | — | 2026-07-17 02:03 |
+| maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | concept_expanding | jules | 15804134847597659344 | — | 2026-07-17 05:58 |
+| maths_g12_quadratic_equations_factoring_method_5b7a49 | lesson.maths | Maths Grade 12: Quadratic Equations - Factoring method | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29558914612 | — | 2026-07-17 06:02 |
+| maths_g12_sequences_and_series_geometric_sequences_a6eefc | lesson.maths | Maths Grade 12: Sequences and Series - Geometric sequences | concept_expanding | jules | 211243395616906974 | — | 2026-07-17 06:10 |
+| physical_sciences_g11_electric_circuits_resistors_in_paralle_6f716c | lesson.physical_sciences | Physical Sciences Grade 11: Electric Circuits - Resistors in parallel | concept_expanding | jules | 15775271273051863376 | — | 2026-07-17 06:12 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_expanding | jules | 15343190423449107152 | — | 2026-07-17 06:28 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_expanding | jules | 12859818732587201883 | — | 2026-07-17 06:31 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_expanding | jules | 5210686244777653205 | — | 2026-07-17 06:33 |
+| economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | concept_expanding | jules | 1343133640742130634 | — | 2026-07-17 06:39 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_expanding | jules | 17162214382753259622 | — | 2026-07-17 06:42 |
+| economics_g12_macroeconomics_the_multiplier_646d16 | lesson.economics | Economics Grade 12: Macroeconomics - The multiplier | concept_expanding | jules | 5955950585964261694 | — | 2026-07-17 06:45 |
+| geography_g12_climate_and_weather_mid_latitude_cyclones_e6381b | lesson.geography | Geography Grade 12: Climate and Weather - Mid-latitude cyclones | concept_expanding | jules | 17446768834112973071 | — | 2026-07-17 06:47 |
+| geography_g12_geographical_skills_and_techniques_map_scale_a_eb274e | lesson.geography | Geography Grade 12: Geographical Skills and Techniques - Map scale and distance | concept_expanding | jules | 5127417025643281737 | — | 2026-07-17 06:49 |
+| geography_g12_geomorphology_river_profiles_and_rejuvenation_0d881d | lesson.geography | Geography Grade 12: Geomorphology - River profiles and rejuvenation | concept_expanding | jules | 3451728773305540569 | — | 2026-07-17 06:52 |
+| mathematical_literacy_g11_finance_simple_interest_8f7530 | lesson.maths_literacy | Mathematical Literacy Grade 11: Finance - Simple interest | concept_expanding | jules | 3976552925239419319 | — | 2026-07-17 06:54 |
+| mathematical_literacy_g12_finance_municipal_tariff_calculati_85b00d | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - Municipal tariff calculations | concept_expanding | jules | 5535244184001178324 | — | 2026-07-17 06:56 |
+| mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | concept_expanding | jules | 4618649057992835417 | — | 2026-07-17 06:58 |
+| physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58 | lesson.physical_sciences | Physical Sciences Grade 11: Quantitative Aspects of Chemical Change - Stoichiometric calculations | concept_expanding | jules | 1175543269283372186 | — | 2026-07-17 07:00 |
+| physical_sciences_g12_work_energy_and_power_conservation_of__663086 | lesson.physical_sciences | Physical Sciences Grade 12: Work, Energy and Power - Conservation of mechanical energy | concept_expanding | jules | 6978791425481847477 | — | 2026-07-17 07:02 |
+| maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | expansion_requested | system | SYS-LESSON-RULES-29570864183 | — | 2026-07-17 09:41 |
+| maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | concept_generated | system | SYS-LESSON-RULES-29570900479 | — | 2026-07-17 09:42 |
+| maths_g12_sequences_and_series_arithmetic_sequences_15f439 | lesson.maths | Maths Grade 12: Sequences and Series - Arithmetic sequences | concept_generated | system | SYS-LESSON-RULES-29570930084 | — | 2026-07-17 09:43 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | expansion_requested | system | SYS-LESSON-RULES-29570954430 | — | 2026-07-17 09:43 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29570997558 | — | 2026-07-17 09:44 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571026540 | — | 2026-07-17 09:44 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571051410 | — | 2026-07-17 09:44 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571100009 | — | 2026-07-17 09:45 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571126571 | — | 2026-07-17 09:46 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571155632 | — | 2026-07-17 09:46 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571307844 | — | 2026-07-17 09:49 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571330890 | — | 2026-07-17 09:49 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571374392 | — | 2026-07-17 09:50 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571416520 | — | 2026-07-17 09:51 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571473210 | — | 2026-07-17 09:52 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | concept_generated | system | SYS-LESSON-RULES-29571645403 | — | 2026-07-17 09:55 |
+| accounting_g11_cost_accounting_break_even_analysis_ad0b83 | lesson.accounting | Accounting Grade 11: Cost Accounting - Break-even analysis | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29571704847 | — | 2026-07-17 09:56 |
+| 1._cosmic_dreams_aa1120 | poetry | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-17 20:55 |
+| 2._forgotten_memories_008deb | narrative | 2. Forgotten Memories | pending_approval | groq | GROQ-29613911785 | — | 2026-07-17 21:12 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_generated | system | SYS-LESSON-RULES-29643106649 | — | 2026-07-18 11:45 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | concept_generated | system | SYS-LESSON-RULES-29645083449 | — | 2026-07-18 12:51 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | reproduced | level6 | L6-29645083395 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-18 12:53 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | expansion_requested | system | SYS-LESSON-RULES-29645560781 | — | 2026-07-18 13:07 |
+| accounting_g11_reconciliations_bank_reconciliation_statement_ba219e | lesson.accounting | Accounting Grade 11: Reconciliations - Bank reconciliation statement | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29662419379 | — | 2026-07-18 21:53 |
+| economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f | lesson.economics | Economics Grade 11: Dynamics of Markets - Demand and supply equilibrium | produced | level6 | L6-29674853662 | https://github.com/RokctAI/factory/releases/download/lesson-economics_g11_dynamics_of_markets_demand_and_supply_equilibr_eeb10f/manifest.json | 2026-07-19 05:27 |
+| maths_g11_quadratic_equations_quadratic_formula_6e05ed | lesson.maths | Maths Grade 11: Quadratic Equations - Quadratic formula | produced | level6 | L6-29674853662 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_quadratic_formula_6e05ed/manifest.json | 2026-07-19 05:28 |
+| physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed | lesson.physical_sciences | Physical Sciences Grade 11: Newtons Laws - Newtons second law | produced | level6 | L6-29674853662 | https://github.com/RokctAI/factory/releases/download/lesson-physical_sciences_g11_newton_s_laws_newton_s_second_law_fb6bed/manifest.json | 2026-07-19 05:28 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | reproduced | level6 | L6-29702153033 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-19 20:16 |
+| 3._wildflower_soul_36e5b2 | free verse | 3. Wildflower Soul | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-19 20:48 |
+| 1._cosmic_dreams_3148d3 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29703899957 | — | 2026-07-19 21:11 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | expansion_requested | system | SYS-LESSON-RULES-29709258655 | — | 2026-07-20 00:16 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | reproduced | level6 | L6-29728112187 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-20 08:32 |
+| 3._urban_oasis_c7fd3b | spoken word | 3. Urban Oasis | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-20 21:12 |
+| 1._cosmic_dreams_2809b9 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29783973345 | — | 2026-07-20 22:27 |
+| maths_g11_quadratic_equations_factoring_method_31d165 | lesson.maths | Maths Grade 11: Quadratic Equations - Factoring method | reproduced | level6 | L6-29855793486 | https://github.com/RokctAI/factory/releases/download/lesson-maths_g11_quadratic_equations_factoring_method_31d165/manifest.json | 2026-07-21 18:07 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_generated | system | SYS-LESSON-RULES-29868973124 | — | 2026-07-21 21:12 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_generated | system | SYS-LESSON-RULES-29871427569 | — | 2026-07-21 21:49 |
+| mathematical_literacy_g12_finance_vat_calculations_655ffb | lesson.maths_literacy | Mathematical Literacy Grade 12: Finance - VAT calculations | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29872190462 | — | 2026-07-21 22:01 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | concept_generated | system | SYS-LESSON-RULES-29907455191 | — | 2026-07-22 09:19 |
+| accounting_g11_value_added_tax_vat_calculations_09d287 | lesson.accounting | Accounting Grade 11: Value Added Tax - VAT calculations | pending_concept_approval (crosscheck: passed) | system | SYS-LESSON-RULES-29909218268 | — | 2026-07-22 09:45 |
+| 3._wildflower_soul_66d8c1 | free verse | 3. Wildflower Soul | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-22 21:07 |
+| 5._whispers_in_the_attic_4d5268 | poetry | 5. Whispers in the Attic | pending_approval | groq | GROQ-29963073924 | — | 2026-07-22 22:30 |
+| 4._midnight_miracles_c0bc8b | poetry | 4. Midnight Miracles | pending_approval | groq | GROQ-29970508411 | — | 2026-07-23 00:57 |
+| 3._starlight_serenades_9853b0 | poetry | 3. Starlight Serenades | pending_approval | groq | GROQ-29980251552 | — | 2026-07-23 04:43 |
+| 1._cosmic_dreams_f83e1e | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-29989548478 | — | 2026-07-23 07:53 |
+| 2._forgotten_libraries_868b40 | short story | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-24 21:03 |
+| echoes_in_the_night_656777 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30131228118 | — | 2026-07-24 22:32 |
+| lost_cities_of_the_mind_6eded8 | poetry | Lost Cities of the Mind | pending_approval | groq | GROQ-30137473883 | — | 2026-07-25 00:57 |
+| beyond_the_starlight_6f5a1c | poetry | Beyond the Starlight | pending_approval | groq | GROQ-30144298514 | — | 2026-07-25 04:35 |
+| whispers_of_the_forest_1d8150 | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30149414700 | — | 2026-07-25 07:30 |
+| shores_of_memories_54fa6a | poetry | Shores of Memories | pending_approval | groq | GROQ-30153843562 | — | 2026-07-25 10:04 |
+| 4._whispers_of_wilderness_ef57d9 | nature poetry | 4. Whispers of Wilderness | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-26 20:57 |
+| whispers_of_the_forest_ad240e | fantasy | Whispers of the Forest | pending_approval | groq | GROQ-30221014616 | — | 2026-07-26 21:25 |
+| echoes_in_the_night_0247a7 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30223108835 | — | 2026-07-26 22:26 |
+| beyond_the_silence_197d40 | mystery | Beyond the Silence | pending_approval | groq | GROQ-30225221766 | — | 2026-07-26 23:25 |
+| shores_of_memories_e73f6e | romance | Shores of Memories | pending_approval | groq | GROQ-30228933289 | — | 2026-07-27 01:05 |
+| economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | concept_generated | system | SYS-LESSON-RULES-30301398258 | — | 2026-07-27 20:10 |
+| economics_g11_dynamics_of_markets_price_elasticity_of_demand_04003d | lesson.economics | Economics Grade 11: Dynamics of Markets - Price elasticity of demand | pending_concept_approval | system | SYS-LESSON-RULES-30303136471 | — | 2026-07-27 20:34 |
+| 2._forgotten_memories_2e6a10 | narrative poetry | 2. Forgotten Memories | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-28 21:08 |
+| 3._starlight_serenades_4b6af2 | musical poetry | 3. Starlight Serenades | pending_approval # next step is concept_expanding | groq | — | — | 2026-07-30 21:10 |
+| 5._starlight_serenade_125e99 | poetry | 5. Starlight Serenade | pending_approval | groq | GROQ-30587469607 | — | 2026-07-30 22:32 |
+| 4._whispers_of_wilderness_08f40f | poetry | 4. Whispers of Wilderness | pending_approval | groq | GROQ-30595121807 | — | 2026-07-31 01:00 |
+| 1._cosmic_dreams_95b9f6 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-30605171521 | — | 2026-07-31 04:50 |
+| 3._echoes_of_silence_3f10c6 | poetry | 3. Echoes of Silence | pending_approval | groq | GROQ-30615507456 | — | 2026-07-31 08:13 |
+| 1._cosmic_dreams_400c48 | poetry collection | 1. Cosmic Dreams | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-01 20:52 |
+| forgotten_cities_38b131 | poetry | Forgotten Cities | pending_approval | groq | GROQ-30718668744 | — | 2026-08-01 21:13 |
+| echoes_in_the_night_511617 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30720863112 | — | 2026-08-01 22:17 |
+| beyond_the_starlight_d5a400 | poetry | Beyond the Starlight | pending_approval | groq | GROQ-30723255608 | — | 2026-08-01 23:24 |
+| whispers_of_the_forest_5a10e0 | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30726274848 | — | 2026-08-02 01:02 |
+| shores_of_memories_d188c8 | poetry | Shores of Memories | pending_approval | groq | GROQ-30732916982 | — | 2026-08-02 04:47 |
+| 4._whispers_in_the_woods_29e9f7 | nature-inspired prose | 4. Whispers in the Woods | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-02 20:55 |
+| echoes_in_the_night_5621a4 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30767419518 | — | 2026-08-02 21:14 |
+| forgotten_cities_6861a0 | poetry | Forgotten Cities | pending_approval | groq | GROQ-30769685343 | — | 2026-08-02 22:15 |
+| whispers_of_the_forest_4556d0 | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30772202487 | — | 2026-08-02 23:25 |
+| starlight_serenades_682613 | poetry | Starlight Serenades | pending_approval | groq | GROQ-30775826163 | — | 2026-08-03 01:01 |
+| shores_of_memories_3e4e06 | poetry | Shores of Memories | pending_approval | groq | GROQ-30785668358 | — | 2026-08-03 04:54 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_generated | system | SYS-LESSON-RULES-30805534441 | — | 2026-08-03 10:26 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_generated | system | SYS-LESSON-RULES-30810174016 | — | 2026-08-03 11:36 |
+| 2._forgotten_memories_40b0d9 | short story | 2. Forgotten Memories | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-03 21:02 |
+| echoes_in_the_night_9fd74e | poetry | Echoes in the Night | pending_approval | groq | GROQ-30855232853 | — | 2026-08-03 21:35 |
+| forgotten_cities_c316ef | poetry | Forgotten Cities | pending_approval | groq | GROQ-30862595996 | — | 2026-08-03 23:32 |
+| starlight_serenades_8a47ae | poetry | Starlight Serenades | pending_approval | groq | GROQ-30875613658 | — | 2026-08-04 03:44 |
+| whispers_of_the_forest_4bb3fe | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30886427200 | — | 2026-08-04 07:05 |
+| shores_of_memories_c714cb | poetry | Shores of Memories | pending_approval | groq | GROQ-30899152593 | — | 2026-08-04 10:05 |
+| 2._forgotten_libraries_cab1d2 | short story anthology | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-04 21:12 |
+| forgotten_cities_275055 | poetry | Forgotten Cities | pending_approval | groq | GROQ-30956781250 | — | 2026-08-04 22:33 |
+| echoes_in_the_night_1631d9 | poetry | Echoes in the Night | pending_approval | groq | GROQ-30964616381 | — | 2026-08-05 00:52 |
+| whispers_of_the_forest_3c93a1 | poetry | Whispers of the Forest | pending_approval | groq | GROQ-30975516688 | — | 2026-08-05 04:34 |
+| starlight_serenades_e687e6 | poetry | Starlight Serenades | pending_approval | groq | GROQ-30987118875 | — | 2026-08-05 07:59 |
+| shores_of_memories_89e26a | poetry | Shores of Memories | pending_approval | groq | GROQ-30999391624 | — | 2026-08-05 10:56 |
+| 5._midnight_reflections_c21ab5 | contemporary poetry | 5. Midnight Reflections | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-07 00:52 |
+| echoes_in_the_night_116f29 | poetry | Echoes in the Night | pending_approval | groq | GROQ-31144137711 | — | 2026-08-07 03:22 |
+| forgotten_cities_3c8e04 | poetry | Forgotten Cities | pending_approval | groq | GROQ-31149638830 | — | 2026-08-07 05:09 |
+| whispers_of_the_forest_b5bbdf | poetry | Whispers of the Forest | pending_approval | groq | GROQ-31154652902 | — | 2026-08-07 06:38 |
+| starlight_serenades_c7bc7b | poetry | Starlight Serenades | pending_approval | groq | GROQ-31162130549 | — | 2026-08-07 08:33 |
+| shores_of_memories_73f109 | poetry | Shores of Memories | pending_approval | groq | GROQ-31169838416 | — | 2026-08-07 10:23 |
+| 2._forgotten_memories_fa00bb | narrative poetry | 2. Forgotten Memories | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-08 20:29 |
+| garden_of_starlight_2bbe8c | celestial | Garden of Starlight | pending_approval | groq | GROQ-31277987775 | — | 2026-08-08 20:53 |
+| echoes_in_the_abyss_ea0585 | emotional | Echoes in the Abyss | pending_approval | groq | GROQ-31280323669 | — | 2026-08-08 21:52 |
+| fractured_time_b549a2 | philosophical | Fractured Time | pending_approval | groq | GROQ-31282696085 | — | 2026-08-08 22:53 |
+| whispers_of_forgotten_memories_75fdbe | nostalgic | Whispers of Forgotten Memories | pending_approval | groq | GROQ-31284845186 | — | 2026-08-08 23:50 |
+| shattered_mirrors_72c1d2 | psychological | Shattered Mirrors | pending_approval | groq | GROQ-31290570619 | — | 2026-08-09 02:33 |
+| 5._midnight_miracles_953a32 | magical realism anthology | 5. Midnight Miracles | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-09 20:32 |
+| echoes_of_memories_cc4b12 | nostalgia | Echoes of Memories | pending_approval | groq | GROQ-31335585107 | — | 2026-08-09 20:58 |
+| blossoming_chaos_0ca661 | surrealism | Blossoming Chaos | pending_approval | groq | GROQ-31338047341 | — | 2026-08-09 21:55 |
+| whispers_in_the_night_53798e | mystery | Whispers in the Night | pending_approval | groq | GROQ-31340588444 | — | 2026-08-09 22:55 |
+| shores_of_solitude_84a6a7 | philosophical | Shores of Solitude | pending_approval | groq | GROQ-31343008311 | — | 2026-08-09 23:54 |
+| 5._starlight_serenade_629051 | lyric poetry | 5. Starlight Serenade | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-10 20:41 |
+| echoes_of_memories_05bcf4 | poetry | Echoes of Memories | pending_approval | groq | GROQ-31432360381 | — | 2026-08-10 21:08 |
+| beyond_the_silence_03cbe3 | poetry | Beyond the Silence | pending_approval | groq | GROQ-31436620759 | — | 2026-08-10 22:03 |
+| fractured_light_9484b6 | poetry | Fractured Light | pending_approval | groq | GROQ-31440719875 | — | 2026-08-10 23:02 |
+| whispers_in_the_night_0bf485 | poetry | Whispers in the Night | pending_approval | groq | GROQ-31444192923 | — | 2026-08-10 23:56 |
+| the_weight_of_wings_7062bb | poetry | The Weight of Wings | pending_approval | groq | GROQ-31452669299 | — | 2026-08-11 02:32 |
+| 4._midnight_whispers_d24943 | noir poetry | 4. Midnight Whispers | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-11 20:42 |
+| 4._midnight_miracles_a50c10 | fantasy | 4. Midnight Miracles | pending_approval | groq | GROQ-31536557094 | — | 2026-08-11 21:10 |
+| 1._cosmic_dreams_99d638 | poetry | 1. Cosmic Dreams | pending_approval | groq | GROQ-31541147572 | — | 2026-08-11 22:09 |
+| 5._whispers_in_the_attic_6484f9 | mystery | 5. Whispers in the Attic | pending_approval | groq | GROQ-31545293993 | — | 2026-08-11 23:08 |
+| 3._starlight_serenades_bc5714 | poetry | 3. Starlight Serenades | pending_approval | groq | GROQ-31548850495 | — | 2026-08-12 00:04 |
+| 2._forgotten_libraries_0d9be5 | short story | 2. Forgotten Libraries | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-12 20:43 |
+| echoes_in_the_night_35a198 | poetry | Echoes in the Night | pending_approval | groq | GROQ-31641172771 | — | 2026-08-12 21:13 |
+| beyond_the_starlight_e090ca | poetry | Beyond the Starlight | pending_approval | groq | GROQ-31645588555 | — | 2026-08-12 22:07 |
+| forgotten_cities_b6355a | poetry | Forgotten Cities | pending_approval | groq | GROQ-31649668219 | — | 2026-08-12 23:24 |
+| whispers_of_the_forest_9a936f | poetry | Whispers of the Forest | pending_approval | groq | GROQ-31653123017 | — | 2026-08-13 01:35 |
+| shores_of_memories_eec36c | poetry | Shores of Memories | pending_approval | groq | GROQ-31662773235 | — | 2026-08-13 03:23 |
+| economics_g12_economic_pursuits_inflation_and_the_cpi_b92223 | lesson.economics | Economics Grade 12: Economic Pursuits - Inflation and the CPI | concept_generated | system | SYS-LESSON-RULES-31785757552 | — | 2026-08-14 08:53 |
+| physical_sciences_g11_quantitative_aspects_of_chemical_chang_068f58 | lesson.physical_sciences | Physical Sciences Grade 11: Quantitative Aspects of Chemical Change - Stoichiometric calculations | concept_generated | system | SYS-LESSON-RULES-31785910537 | — | 2026-08-14 08:55 |
+| velvet_hour_50e53e | poetry | Velvet Hour | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-14 20:30 |
+| phantom_bloom_4a964e | poetry | Phantom Bloom | pending_approval | groq | GROQ-31839798578 | — | 2026-08-14 20:51 |
+| ember_atlas_4eec13 | poetry | Ember Atlas | pending_approval | groq | GROQ-31843775984 | — | 2026-08-14 21:45 |
+| cartography_of_the_soul_2b5b02 | poetry | Cartography of the Soul | pending_approval | groq | GROQ-31847808216 | — | 2026-08-14 22:45 |
+| aural_tapestry_04acc6 | poetry | Aural Tapestry | pending_approval | groq | GROQ-31851300017 | — | 2026-08-14 23:43 |
+| memory_keepers_dc5fec | science fiction | Memory Keepers | pending_approval # next step is concept_expanding | groq | — | — | 2026-08-16 20:21 |
+| beyond_the_event_horizon_649e62 | space opera | Beyond the Event Horizon | pending_approval | groq | GROQ-31971363584 | — | 2026-08-16 20:43 |
+| the_shadow_weaver_a12b03 | paranormal thriller | The Shadow Weaver | pending_approval | groq | GROQ-31974147405 | — | 2026-08-16 21:40 |
+| the_lost_city_archives_e969b0 | historical mystery | The Lost City Archives | pending_approval | groq | GROQ-31977084810 | — | 2026-08-16 22:43 |
+| starlight_serenade_522a81 | fantasy romance | Starlight Serenade | pending_approval | groq | GROQ-31979746301 | — | 2026-08-16 23:40 |

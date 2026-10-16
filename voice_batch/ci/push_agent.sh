@@ -1,0 +1,150 @@
+#!/usr/bin/env bash
+# Commit one job's passing audio + its manifest to the agent branch.
+#
+#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH TUTOR VOICE CATEGORY
+#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH r3 VOICE LABEL
+#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH pronunciation VOICE LABEL
+#
+# Only rokct/ branches. A tutor job stages only the tutor's .wav files, their <clip>.timings.json,
+# <voice>_manifest[.<category>].json and <clip dir>/qc_failed.json; an r3 job stages only
+# lms/dart/templates/assets/r3_packs/audio/<key>.mp3, <key>.timings.json,
+# r3_manifest.<voice>[.partNN].json and qc_failed.<voice>.json directly in that folder (additions,
+# changes, and the merge job's removal of folded part manifests); a
+# pronunciation audition job stages only
+# lms/team/voices/samples/pronunciation/<voice>/<slug>.mp3 and audition.json
+# there (voices/samples/ never ships in the app bundle). Never the
+# reference, never anything else. Then it
+# pushes with the token passed as an HTTP header (git -c, scoped to the origin
+# host) on every git command in the checkout. The token is masked, never
+# echoed, never written to .git/config; xtrace is off.
+# Idempotent: re-running over identical files commits nothing. Parallel
+# category jobs touch disjoint files, so a rejected push is resolved by
+# rebasing this job's one commit onto the remote branch and retrying (up to 8
+# times, with jitter; a failed fetch or rebase-time network error is retried
+# too, not fatal). The voice batch plan job creates the branch before the
+# matrix starts, so render jobs normally only append to it. If it does not
+# exist yet (the job started it from main after the old one was merged and
+# deleted): the first push creates it, and a sibling that loses that race
+# finds it on the remote and rebases onto it. Any other failing command is
+# reported as an ::error:: annotation naming its line and exit code.
+# The checkout is a sparse, blob-less partial clone, so any git command (add,
+# ls-files, commit, rebase) may lazily fetch a missing blob from the promisor
+# remote: every one carries the header, or that fetch fails with "could not
+# read Username".
+set +x
+set -Eeuo pipefail
+# A failure inside agit is reported at the agit call: its line and arguments
+# (the git subcommand and paths), never the expanded header.
+trap 'rc=$?; if [ "${FUNCNAME[0]:-}" = agit ]; then at="${BASH_LINENO[0]}"; cmd="agit $*"; else at="$LINENO"; cmd="$BASH_COMMAND"; fi
+  echo "::error::push_agent.sh line $at: \"$cmd\" exited $rc"' ERR
+
+dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor, r3 or pronunciation}"; voice="${4:?voice}"; category="${5:?category}"
+: "${AGENT_PAT:?AGENT_PAT must be set}"
+case "$branch" in
+  rokct/*) ;;
+  *) echo "::error::refusing to push to non-rokct/ branch"; exit 1 ;;
+esac
+if ! printf '%s' "$voice" | grep -qE '^[a-z][a-z0-9_]{0,31}$'; then
+  echo "::error::bad voice name"; exit 1
+fi
+if [ "$tutor" = "r3" ]; then
+  tdir="lms/dart/templates/assets/r3_packs/audio"
+  allowed="^$tdir/([A-Za-z0-9_][A-Za-z0-9_.-]*\.mp3|[A-Za-z0-9_][A-Za-z0-9_.-]*\.timings\.json|r3_manifest\.${voice}(\.part[0-9]{2})?\.json|qc_failed\.${voice}\.json)$"
+  ext="mp3"; manifest="$tdir/r3_manifest.${voice}.json"
+elif [ "$tutor" = "pronunciation" ]; then
+  tdir="lms/team/voices/samples/pronunciation/$voice"
+  allowed="^$tdir/([a-z0-9][a-z0-9-]*\.mp3|audition\.json)$"
+  ext="mp3"; manifest="$tdir/audition.json"
+elif printf '%s' "$tutor" | grep -qE '^(tutor|assistant)_[0-9]{3}$'; then
+  case "$tutor" in tutor_*) tdir="lms/team/tutors/CAPS/$tutor" ;; *) tdir="lms/team/assistants/CAPS/$tutor" ;; esac
+  allowed="^$tdir/(.+\.wav|.+\.timings\.json|${voice}_manifest(\.[a-z]+)?\.json|([a-z_]+/)?qc_failed\.json)$"
+  ext="wav"; manifest="$tdir/${voice}_manifest.json"
+else
+  echo "::error::target must be tutor_NNN, assistant_NNN, r3 or pronunciation"; exit 1
+fi
+cd "$dir"
+
+b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
+echo "::add-mask::$b64"
+auth="AUTHORIZATION: basic $b64"
+# Scope the header to origin's scheme://host/ (https://github.com/ in CI).
+host="$(git remote get-url origin | sed -E 's#^([a-z]+://[^/]+/).*#\1#')"
+# Every git command below goes through agit, not just fetch and push: the
+# checkout is blob-less, so any of them may lazily fetch a missing blob from
+# the promisor remote. A non-cone sparse checkout (kind assistant) leaves the
+# root .gitignore unchecked-out, and git add / ls-files --exclude-standard /
+# commit read it (and .gitattributes) from the index, which fetches the blob.
+# -c is inherited by git's child processes (GIT_CONFIG_PARAMETERS), which
+# covers those lazy fetches; it is never written to .git/config.
+agit() { git -c "http.${host}.extraheader=$auth" "$@"; }
+
+agit config user.name "github-actions[bot]"
+agit config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+if [ "$tutor" = "r3" ] || [ "$tutor" = "pronunciation" ]; then
+  # Only files directly in the audio folder that match the allow-list:
+  # new, modified, or deleted (the merge job removes folded part manifests).
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; agit ls-files --deleted -- "$tdir"; } \
+    | { grep -E "$allowed" || true; } | sort -u | while IFS= read -r f; do agit add -A -- "$f"; done
+else
+  for m in "$tdir/${voice}"_manifest*.json; do
+    if [ -e "$m" ]; then agit add -- "$m"; fi
+  done
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; } \
+    | { grep -E '\.wav$' || true; } | sort -u | while IFS= read -r f; do agit add -- "$f"; done
+  # run.py writes <clip>.timings.json next to each committed clip: stage it
+  # (new or changed) whenever its clip is there, never a stray one.
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; } \
+    | { grep -E '\.timings\.json$' || true; } | sort -u | while IFS= read -r f; do
+      if [ -e "${f%.timings.json}.wav" ]; then agit add -- "$f"; fi
+    done
+  # qc_failed.json beside the clips (run.py): new, changed, or deleted once
+  # every line in it has passed.
+  { agit ls-files --others --exclude-standard -- "$tdir"; agit ls-files --modified -- "$tdir"; agit ls-files --deleted -- "$tdir"; } \
+    | { grep -E "^$tdir/([a-z_]+/)?qc_failed\.json$" || true; } | sort -u | while IFS= read -r f; do agit add -A -- "$f"; done
+fi
+if agit diff --cached --quiet; then
+  echo "category $category: nothing new to commit"
+  exit 0
+fi
+echo "Staged:"
+agit diff --cached --name-only | sed 's/^/  /'
+if agit diff --cached --name-only | grep -v -E "$allowed"; then
+  echo "::error::unexpected staged path; refusing to commit"; exit 1
+fi
+n_audio=$(agit diff --cached --name-only --diff-filter=AM | grep -c "\.$ext\$" || true)
+agit commit --quiet -m "$tutor $voice: $category audio ($n_audio file(s)) from factory voice batch CI" \
+  -m "Rendered and gated by RokctAI/factory voice_batch (run ${GITHUB_RUN_ID:-local}). Per-line seeds, scores and hashes are in $manifest."
+# This job's commit sits alone on top of base; rebases replay only base..HEAD.
+base="$(agit rev-parse HEAD~1)"
+
+tries=8
+for i in $(seq 1 "$tries"); do
+  if agit push --quiet origin "HEAD:refs/heads/$branch"; then
+    echo "category $category: pushed $(agit rev-parse --short HEAD) to $branch"
+    exit 0
+  fi
+  # 2 = the branch is not on the remote (yet): nothing to rebase onto, retry
+  # the push that creates it.
+  rc=0; agit ls-remote --exit-code --heads origin "refs/heads/$branch" > /dev/null || rc=$?
+  if [ "$rc" = 2 ]; then
+    echo "push failed (attempt $i); $branch is not on the remote yet, retrying"
+  elif [ "$rc" != 0 ]; then
+    echo "push failed (attempt $i); could not reach the agent repo (ls-remote exit $rc), retrying"
+  else
+    echo "push rejected (attempt $i); rebasing on the remote branch"
+    if ! agit fetch --quiet --depth=50 origin "$branch"; then
+      echo "fetch of $branch failed (attempt $i), retrying"
+    elif ! agit rebase --quiet --onto FETCH_HEAD "$base"; then
+      # Categories write disjoint files, so this is not a content conflict.
+      agit rebase --abort || true
+      echo "::error::rebase onto the agent branch failed"; exit 1
+    else
+      base="$(agit rev-parse FETCH_HEAD)"
+      continue
+    fi
+  fi
+  sleep $((RANDOM % 5 + 2))
+done
+echo "::error::could not push to the agent branch after $tries attempts"
+exit 1

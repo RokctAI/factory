@@ -1,0 +1,151 @@
+name: Social - Daily Opportunity Reel
+
+# One Reel a day on the RokctAI Facebook Page, TikTok and YouTube Shorts,
+# built from an open, verified opportunity in RokctAI/opportunities and
+# rendered by RokctAI/agent's tiktok_render.py. See social/facebook/README.md.
+on:
+  schedule:
+    - cron: '0 5 * * *'  # 07:00 SAST - grant (an investor once grants run out)
+    - cron: '0 10 * * *' # 12:00 SAST - tender
+    - cron: '0 15 * * *' # 17:00 SAST - spotlight (investor / funding tip on alternate days)
+  workflow_dispatch:
+    inputs:
+      stream:
+        description: 'Which slot to post'
+        type: choice
+        options: [grant, tender, spotlight]
+        default: grant
+      dry_run:
+        description: 'Render only, do not publish'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: facebook-daily-post
+  cancel-in-progress: false
+
+jobs:
+  # "Brought to you by TenderAssist", spoken, on tender Reels. Off until Ray
+  # names a voice for public use and the variable REEL_SPONSOR_VOICE is set
+  # to 'on'. The clip is committed only to the private RokctAI/social repo.
+  sponsor_voice:
+    if: vars.REEL_SPONSOR_VOICE == 'on' && (github.event.schedule == '0 10 * * *' || inputs.stream == 'tender')
+    uses: ./.github/workflows/radio_ads.yml
+    with:
+      ad_path: radio_ads/reel_jobs/facebook_reel_tenderassist_15.json
+    secrets:
+      MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+
+  post:
+    needs: sponsor_voice
+    # The Reel posts with or without the sponsor line.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Voice clips for public Reels never sit in this public repo: they are
+      # copied in from the private social repo for the render only.
+      - name: Check out the voice clips (social, private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/social
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _social
+          persist-credentials: false
+          sparse-checkout: |
+            social/facebook/assets
+            radio_ads/out/facebook_reel_tenderassist_15
+
+      - name: Place the voice clips
+        env:
+          SPONSOR: ${{ needs.sponsor_voice.result == 'success' }}
+        run: |
+          cp _social/social/facebook/assets/voice_*.wav social/facebook/assets/
+          if [ "$SPONSOR" = "true" ]; then
+            cp _social/radio_ads/out/facebook_reel_tenderassist_15/facebook_reel_tenderassist_15.wav \
+               social/facebook/assets/voice_tenderassist.wav
+          fi
+
+      - name: Checkout opportunities
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/opportunities
+          path: _opportunities
+
+      - name: Checkout agent (renderer)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _agent
+          sparse-checkout: lms/team/scripts
+
+      - name: Install render tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+          pip install pillow requests
+
+      # Page credentials live in Occultation .env/production.env (below the
+      # END_FLUTTER marker), never as repo secrets. Values are masked before
+      # use, parsed outside the workspace, and the fetched file is deleted
+      # in-step. Missing keys make this a dry run, not a failure.
+      - name: Resolve platform credentials
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          ENV_FILE="$RUNNER_TEMP/production.env"
+          if [ -z "$GH_TOKEN" ] || ! gh api "repos/RokctAI/Occultation/contents/.env/production.env" -H "Accept: application/vnd.github.v3.raw" > "$ENV_FILE"; then
+            rm -f "$ENV_FILE"
+            echo "::warning::Could not fetch Occultation production.env - running as a dry run."
+            exit 0
+          fi
+          for NAME in FACEBOOK_PAGE_ID FACEBOOK_PAGE_ACCESS_TOKEN \
+                      TIKTOK_CLIENT_KEY TIKTOK_CLIENT_SECRET TIKTOK_REFRESH_TOKEN \
+                      YOUTUBE_CLIENT_ID YOUTUBE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN; do
+            LINE=$(grep -E "^[[:space:]]*(export[[:space:]]+)?${NAME}=" "$ENV_FILE" | head -n 1 | tr -d '\r')
+            VALUE=$(printf '%s' "$LINE" | cut -d= -f2- | sed -e "s/^[[:space:]]*//" -e "s/[[:space:]]*\$//" -e "s/^[\"']//" -e "s/[\"']\$//")
+            if [ -n "$VALUE" ]; then
+              echo "::add-mask::$VALUE"
+              echo "$NAME=$VALUE" >> "$GITHUB_ENV"
+              echo "✅ $NAME resolved."
+            else
+              echo "::notice::$NAME is empty in Occultation production.env - that platform is skipped."
+            fi
+          done
+          rm -f "$ENV_FILE"
+
+      - name: Build and post today's Reel
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+          STREAM_INPUT: ${{ inputs.stream }}
+        run: |
+          case "$SCHEDULE" in
+            '0 10 * * *') STREAM=tender ;;
+            '0 15 * * *') STREAM=spotlight ;;
+            '0 5 * * *')  STREAM=grant ;;
+            *)            STREAM="${STREAM_INPUT:-grant}" ;;
+          esac
+          ARGS="--stream $STREAM"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          python social/facebook/opportunity_post.py \
+            --opportunities _opportunities --agent _agent --out "$RUNNER_TEMP/facebook" $ARGS
+
+      # Always: a platform that failed must not lose the ones that posted.
+      - name: Record the post
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add social/facebook/posted.json
+          if git diff --staged --quiet; then
+            echo "Nothing published - ledger unchanged."
+          else
+            git commit -m "chore(social): record today's opportunity Reel [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

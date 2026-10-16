@@ -1,0 +1,30 @@
+name: Lesson unit tests
+
+# Stdlib unittest suites for the lesson pipeline scripts in the private
+# RokctAI/lessons repo (school/scripts/CAPS/tests/). content_router.yml
+# dispatches this when school/scripts/ changes there.
+on:
+  workflow_dispatch:
+    inputs:
+      router_before:
+        description: 'Set by content_router: start of the pushed range. Leave empty when running by hand.'
+        required: false
+        default: ''
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run unittest suite (school/scripts)
+        run: python3 -m unittest discover -s school/scripts/CAPS/tests -v
