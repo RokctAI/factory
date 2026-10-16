@@ -20,10 +20,6 @@ on:
       lesson:
         description: 'A lesson path under school/curriculum/CAPS whose nervous script to test (A from the stems pre-release)'
         default: ''
-  # TRIAL (remove before merge) (run 2)
-  push:
-    branches: [claude/project-thread-9rs5bm]
-    paths: ['.github/workflows/ab_style.yml']
 
 permissions:
   contents: read
@@ -43,7 +39,7 @@ env:
   PERSONA: ${{ inputs.persona || 'assistant_005' }}
   R3: ${{ inputs.r3 || 'maths.gradeR.term3.w03_boxes.show,maths.gradeR.term4.w05_bird_story_sums.rounds_0_story,english_home_language.gradeR.term4.w03_sound_d.rounds_2_story,maths.gradeR.term3.w09_story_sums_eight.rounds_3_prompt' }}
   AGENT_BRANCH: ${{ inputs.agent_branch || 'main' }}
-  LESSON: ${{ inputs.lesson || 'maths/session/grade9/term1/integers/multi-step-integer-problems-in-context' }}
+  LESSON: ${{ inputs.lesson }}
 
 jobs:
   ab:

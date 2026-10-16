@@ -30,10 +30,6 @@ name: Lesson audio
 # so the next run carries on where it stopped.
 
 on:
-  # TRIAL (remove before merge): one Grade 9 lesson, run from this branch (run 2).
-  push:
-    branches: [claude/project-thread-9rs5bm]
-    paths: ['.github/workflows/lesson_audio.yml']
   schedule:
     - cron: '17 */3 * * *'
   workflow_dispatch:
@@ -134,7 +130,7 @@ jobs:
       - name: Plan
         id: plan
         env:
-          ONLY: ${{ github.event_name == 'push' && 'maths/session/grade9/term1/integers/multi-step-integer-problems-in-context' || inputs.only }}
+          ONLY: ${{ inputs.only }}
         run: |
           python3 voice_batch/lesson_audio.py plan --lessons-root _lessons --agent-root .agent \
             --only "$ONLY" --summary "$GITHUB_STEP_SUMMARY"
@@ -269,7 +265,7 @@ jobs:
 
   animations:
     name: Export Manim scenes
-    if: github.event_name == 'schedule' || github.event_name == 'push' || inputs.animations
+    if: github.event_name == 'schedule' || inputs.animations
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -301,5 +297,5 @@ jobs:
       - name: Export and commit
         env:
           LESSONS_PAT: ${{ secrets.MONOREPO_PAT }}
-          ONLY: ${{ github.event_name == 'push' && 'maths/session/grade9/term1/integers/multi-step-integer-problems-in-context' || inputs.only }}
+          ONLY: ${{ inputs.only }}
         run: python voice_batch/lesson_animations.py --lessons-root _lessons --max 300 --only "$ONLY" --commit
