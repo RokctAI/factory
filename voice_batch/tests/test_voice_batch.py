@@ -132,6 +132,28 @@ class Selection(unittest.TestCase):
         self.assertAlmostEqual(float(y[0]), 0.0, places=6)
 
 
+    def test_stitch_drops_an_edge_noise_burst(self):
+        # a 130 ms burst at the start of a take, 350 ms before the words,
+        # used to survive the -40 dB trim and land inside the pause as a scratch
+        import numpy as np
+        from qc import speech_bounds
+        sr = 24000
+        tone = lambda s, a=0.3: a * np.sin(np.arange(int(s * sr)) * 2 * np.pi * 110 / sr)
+        rng = np.random.default_rng(0)
+        burst = 0.05 * rng.standard_normal(int(0.13 * sr))
+        gap, pad = np.zeros(int(0.35 * sr)), np.zeros(int(0.5 * sr))
+        take = np.concatenate([pad, burst, gap, tone(1), pad])
+        s, e = speech_bounds(take, sr)
+        self.assertGreaterEqual(s / sr, 0.5 + 0.13 + 0.35 - 0.02)  # starts at the words
+        y, _ = stitch([np.concatenate([pad, tone(1), pad]), take], sr)
+        clean, _ = stitch([np.concatenate([pad, tone(1), pad])] * 2, sr)
+        self.assertAlmostEqual(len(y) / sr, len(clean) / sr, delta=0.02)
+        # a short word close to the speech stays (only far-off islands go)
+        word = np.concatenate([pad, tone(0.12), np.zeros(int(0.05 * sr)), tone(1), pad])
+        self.assertLess(speech_bounds(word, sr)[0] / sr, 0.55)
+        # a take that is only one short sound is kept whole
+        self.assertLess(speech_bounds(np.concatenate([pad, tone(0.1), pad]), sr)[0] / sr, 0.55)
+
 class Tail(unittest.TestCase):
     """A take or line whose last 50 ms still has speech energy was cut off."""
     sr = 24000

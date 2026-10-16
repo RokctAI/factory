@@ -57,7 +57,7 @@ class LeadIn(unittest.TestCase):
     def test_stitch_leads_in_before_normalise(self):
         from types import SimpleNamespace as NS
         from unittest import mock
-        fake = NS(effects=NS(trim=lambda x, **kw: (x, (0, len(x)))))   # trim keeps the whole take
+        fake = NS(effects=NS(split=lambda x, **kw: np.array([[0, len(x)]])))   # the whole take is speech
         with mock.patch.dict(sys.modules, {"librosa": fake}):
             y, _ = qc.stitch([tone(0.5, rise_s=0), tone(0.5, rise_s=0)])
         self.assertGreaterEqual(qc.lead_s(y), 0.199)
