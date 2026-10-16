@@ -231,7 +231,11 @@ class RealPackages(unittest.TestCase):
             self.assertEqual(first[0], "intro")
             segs = sorted(k for k in first + second if k.startswith("seg"))
             self.assertEqual(len(segs), len(set(segs)), "every segment has exactly one speaker")
-            self.assertTrue(L.build_items(root, f, r, "tutor_001", {}, L.persona_names(agent)))
+            items = L.build_items(root, f, r, "tutor_001", {}, L.persona_names(agent))
+        self.assertTrue(items)
+        # qc.py writes the gated WAV at final_wav (soundfile picks the
+        # format from the extension); the MP3 is encoded from it.
+        self.assertTrue(all(it["final_wav"].endswith(".wav") and it["file"].endswith(".mp3") for it in items))
 
 
 if __name__ == "__main__":

@@ -196,7 +196,8 @@ def build_items(lessons_root: Path, folder: Path, r: dict, persona: str, pron: d
         id_ = f"{r['rel']}#{persona}/{key}"
         items.append({"id": id_, "category": CATEGORY, "key": key, "lesson": r["rel"], "persona": persona,
                       **pronounced_fields(id_, text, pron, names),
-                      "file": stem_rel(r, persona, key), "script": f"{r['rel']}/{source}"})
+                      "file": stem_rel(r, persona, key), "final_wav": stem_rel(r, persona, key)[:-4] + ".wav",
+                      "script": f"{r['rel']}/{source}"})
     return items
 
 

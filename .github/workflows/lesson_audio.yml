@@ -30,7 +30,7 @@ name: Lesson audio
 # so the next run carries on where it stopped.
 
 on:
-  # TRIAL (remove before merge): one Grade 9 lesson, run from this branch.
+  # TRIAL (remove before merge): one Grade 9 lesson, run from this branch (run 2).
   push:
     branches: [claude/project-thread-9rs5bm]
     paths: ['.github/workflows/lesson_audio.yml']
