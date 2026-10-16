@@ -260,6 +260,53 @@ failing lines adds ~30%. Categories run in parallel, so a full tutor batch
 takes about as long as the greetings job (~1 h). A 3-line smoke batch takes
 ~20 min.
 
+## Lesson audio
+
+[`.github/workflows/lesson_audio.yml`](../.github/workflows/lesson_audio.yml)
+renders the session packages in `RokctAI/lessons` part by part. A lesson has
+up to three speakers ([`lesson_lines.py`](lesson_lines.py)):
+
+| Speaker | Lines (keys) |
+|---|---|
+| first tutor (expert) | `intro.md` (`intro`), `script.md` up to `# Part 2` (`segNN`, one per subtopic), the Tutor turns of the Q&A (`qaNN_answer`) |
+| second tutor | `script.md` from `# Part 2` (`segNN`) |
+| grade host | the asking turns of the Q&A (`qaNN_ask`), `assistant_nervous_script.md` (`nervous`) |
+
+Each speaker renders as soon as THEIR voice is approved in
+[`lesson_voices.json`](lesson_voices.json), whatever the others have
+(owner, 2026-10-16), so CI keeps working and a lesson is done by the time
+its last voice arrives. Voice A never renders Grade R–3, and two personas
+of one `voice_family` never share a lesson (that part is skipped).
+`lessons_enabled: false` in the syllabus switches a grade or topic off.
+
+Every three hours the plan job packs pending parts into up to
+`LESSON_AUDIO_JOBS` (6) jobs of one persona, about `LESSON_AUDIO_JOB_WORDS`
+(4000) words each. A job renders with the batch render and QC above, but
+one seed per round (11, 22, 33, 44, 55), and stops cleanly at the time
+budget; the next run carries on.
+
+Where things go:
+
+- **MP3 stems** (mono 24 kHz 64 kbps): assets on a lessons pre-release per
+  subject, grade and term, `stems-<subject>-<grade>-<term>`. Never in git,
+  so the repo stays small. Each asset is
+  `<topic>--<lesson>--<persona>--<key>.mp3`.
+- **Records**, committed to lessons `main` with `[skip ci]` in the lesson
+  folder, `voice/<persona>/`: `manifest.json` (passed lines with scores and
+  their asset, failed lines, what is left, `complete`) and `qc_failed.json`.
+- **`voice/<persona>/redo.json`**, written by hand: passed lines that sound
+  wrong on listening, `{"redo": [{"key": "seg03", "sha256": "<the MP3's
+  sha256 from manifest.json>", "note": "..."}]}`. The next run re-renders
+  that key on seeds it has not had (+100 per rejection).
+- **`animations.export.json`**: the lesson's Manim export (the `animations`
+  job, once per scene change, [`lesson_animations.py`](lesson_animations.py)).
+
+Release: `lesson_release_on_complete.yml` runs
+[`lesson_release_prep.py`](lesson_release_prep.py) first. Once every
+speaker's manifest is complete, it joins the tutors' segments into
+`audio.mp3` + `timings.json` (exact subtopic bounds) and aligns the Manim
+export into `animations.json`; the release then publishes them as usual.
+
 ## Local tests
 
 ```bash

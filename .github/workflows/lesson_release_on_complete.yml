@@ -5,8 +5,9 @@ name: Lesson Release on Folder Complete
 # The session-tree release path: a lesson under
 # school/curriculum/CAPS/<subject>/session/... releases automatically once
 # its package is complete (9 content files in this repo + audio.mp3 at the
-# same relative path under the audio root in the agent checkout) and passes
-# compliance. No job cards, no manual approval step — the folder is the
+# same relative path under the audio root in the agent checkout, either
+# hand-placed or joined from the lesson_audio.yml stems once every speaker's
+# part is rendered) and passes compliance. No job cards, no manual approval step — the folder is the
 # contract. The card-tree lessons keep their Level 6 batch path
 # (lesson6_production.yml) untouched; this path is additive.
 #
@@ -107,6 +108,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config ffmpeg
           pip install manim requests python-dotenv
+
+      # Lessons rendered by lesson_audio.yml: once every speaker's part is
+      # in, join the tutors' stems from the stems pre-release into
+      # <audio root>/<lesson>/audio.mp3 + timings.json, and align the
+      # committed Manim export into the folder's animations.json, so the
+      # release below finds a complete package. Hand-placed audio wins.
+      - name: Check out the engine (lesson audio helpers)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          path: _engine
+          persist-credentials: false
+
+      - name: Prepare lessons whose voices are all rendered
+        env:
+          LESSONS_PAT: ${{ secrets.MONOREPO_PAT }}
+          TEAM_ROOT: agent/lms/team
+        run: |
+          python _engine/voice_batch/lesson_release_prep.py --lessons-root . \
+            --audio-root "$AUDIO_ROOT" --filter "$FOLDER_FILTER" --max "$MAX_RELEASES"
 
       - name: Release complete lessons
         id: release
