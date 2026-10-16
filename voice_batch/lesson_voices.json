@@ -1,0 +1,44 @@
+{
+  "_comment": [
+    "Personas whose approved voice may render LESSON audio (lesson_audio.py).",
+    "A persona not listed here is unvoiced: its parts of a lesson wait, and",
+    "every other part of the same lesson still renders (owner, 2026-10-16).",
+    "Each entry names the locked reference clip in the private agent repo",
+    "and its sha256; the render refuses a clip whose hash differs. f0 values",
+    "are the median-F0 gate (qc.py), the same ones the standing-line batches",
+    "under voice_batches/inbox/ use for that voice. Add a persona only once",
+    "the owner has approved its voice. Same-source rule: personas sharing a",
+    "voice_family never share a lesson (checked per lesson, from the voice",
+    "specs); Voice A never renders Grade R-3."
+  ],
+  "voices": {
+    "tutor_001": {
+      "voice": "voice_a",
+      "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
+      "ref_sha256": "de4a86bdea53fa5722cb8d08edd699098207019a8a2611bf569491a4e6993d5f",
+      "f0_target_hz": 102,
+      "f0_tolerance_hz": 8
+    },
+    "tutor_004": {
+      "voice": "voice_a_brother",
+      "ref_path": "lms/team/voice_refs/voice_a_brother_ref.wav",
+      "ref_sha256": "87014e322510cea665f2571166a6547fb24633999da65bd913cf0be2b246f735",
+      "f0_target_hz": 89,
+      "f0_tolerance_hz": 15
+    },
+    "tutor_011": {
+      "voice": "voice_b",
+      "ref_path": "lms/team/voice_refs/voice_b_ref.wav",
+      "ref_sha256": "30c7ab70671dcd2c7239337d8de2dd2e6c9b468a11c0e7028646cc244ab6564d",
+      "f0_target_hz": 196,
+      "f0_tolerance_hz": 12
+    },
+    "assistant_005": {
+      "voice": "voice_b_sister",
+      "ref_path": "lms/team/voice_refs/voice_b_sister_ref.wav",
+      "ref_sha256": "cc3019bbabc019685d7953eedaf0766822c73f01f8c43936b2384634195d738f",
+      "f0_target_hz": 241,
+      "f0_tolerance_hz": 25
+    }
+  }
+}

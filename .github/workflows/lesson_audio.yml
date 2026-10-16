@@ -1,0 +1,301 @@
+name: Lesson audio
+
+# Renders lesson audio part by part: each speaker of a session package in
+# RokctAI/lessons (first tutor, second tutor, the grade's host) renders as
+# soon as THAT speaker has an approved voice (voice_batch/lesson_voices.json),
+# whatever the others have, so CI is busy and a lesson is finished by the
+# time its last voice arrives (owner, 2026-10-16). Who speaks what:
+# voice_batch/lesson_lines.py. The lesson release copies the parts once
+# every speaker's part is in (lesson_release_prep.py, run by
+# lesson_release_on_complete.yml).
+#
+# Where things go (owner, 2026-10-16):
+#   * MP3 stems: assets on a lessons PRE-RELEASE per subject/grade/term
+#     (stems-<subject>-<grade>-<term>), never in git, so the repo stays small.
+#   * Records, committed to lessons main with [skip ci] in the lesson folder:
+#     voice/<persona>/manifest.json (passed lines with their asset, failed
+#     lines, what is left), voice/<persona>/qc_failed.json, and
+#     animations.export.json (the Manim export, once per scene change).
+#   * voice/<persona>/redo.json (written by hand) lists passed lines the
+#     owner rejected on listening; the next run re-renders them on new seeds.
+#
+# PUBLIC-REPO SAFETY, as voice_batch.yml: no pull_request trigger, no
+# artifacts, only public model weights cached, logs carry lesson paths,
+# line keys and numbers only, the reference clip is verified by sha256 and
+# never leaves the runner.
+#
+# Every few hours the plan job takes up to LESSON_AUDIO_JOBS (6) jobs of one
+# persona each, packed to about LESSON_AUDIO_JOB_WORDS (4000) pending words;
+# each job stops cleanly at RENDER_BUDGET_MINUTES and checkpoints as it goes,
+# so the next run carries on where it stopped.
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Comma-separated lesson paths under school/curriculum/CAPS (empty = all)'
+        required: false
+        default: ''
+      max_jobs:
+        description: 'Render jobs this run (empty = LESSON_AUDIO_JOBS, 6)'
+        required: false
+        default: ''
+      animations:
+        description: 'Also export Manim scenes this run'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# One run at a time; a scheduled run that finds one in progress waits.
+concurrency:
+  group: lesson-audio
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: '3.11'
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  ASR_MODEL: small.en
+  ASR_DOWNLOAD_ROOT: /home/runner/.cache/voice-batch-asr
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  RENDER_BUDGET_MINUTES: ${{ vars.RENDER_BUDGET_MINUTES || '300' }}
+  RENDER_CHUNK_LINES: '2'
+  RENDER_PUSH_MINUTES: '15'
+  LESSON_AUDIO_JOBS: ${{ inputs.max_jobs || vars.LESSON_AUDIO_JOBS || '6' }}
+  LESSON_AUDIO_JOB_WORDS: ${{ vars.LESSON_AUDIO_JOB_WORDS || '4000' }}
+  TEAM_ROOT: ${{ github.workspace }}/.agent/lms/team
+
+jobs:
+  plan:
+    name: Find lesson parts to render
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      count: ${{ steps.plan.outputs.count }}
+      matrix_json: ${{ steps.plan.outputs.matrix_json }}
+    steps:
+      - name: Check MONOREPO_PAT is set
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::This workflow reads the private lessons and agent repos with the org secret MONOREPO_PAT."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - name: Check out lessons (private; text only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/scripts/CAPS/
+            /school/curriculum/CAPS/*/session/
+            /school/curriculum/CAPS/*/syllabus/*.json
+
+      - name: Check out agent team records (private; no audio)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /lms/team/tutors/CAPS/
+            /lms/team/assistants/CAPS/
+            /lms/team/voices/*.json
+            !*.wav
+            !*.mp3
+            !*.png
+            !*.jpg
+            !*.webp
+            !*.mp4
+
+      - name: Plan
+        id: plan
+        env:
+          ONLY: ${{ inputs.only }}
+        run: |
+          python3 voice_batch/lesson_audio.py plan --lessons-root _lessons --agent-root .agent \
+            --only "$ONLY" --summary "$GITHUB_STEP_SUMMARY"
+
+  render:
+    name: Render ${{ matrix.persona }}
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.matrix_json) }}
+    steps:
+      - name: Start the time budget
+        run: echo "JOB_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - uses: actions/checkout@v4
+
+      - name: Check out lessons (private; text only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/scripts/CAPS/
+            /school/curriculum/CAPS/*/session/
+            /school/curriculum/CAPS/*/syllabus/*.json
+
+      - name: Check out agent team, voice refs and renderer (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /lms/team/tutors/CAPS/
+            /lms/team/assistants/CAPS/
+            /lms/team/voices/*.json
+            /lms/team/voice_refs/
+            /lms/team/scripts/
+            !/lms/team/tutors/CAPS/**/*.wav
+            !/lms/team/assistants/CAPS/**/*.wav
+            !*.mp3
+            !*.png
+            !*.jpg
+            !*.webp
+            !*.mp4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: voice_batch/requirements.txt
+
+      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r voice_batch/requirements.txt
+
+      # SHARED with voice_batch.yml and radio_ads.yml: same path, same key.
+      - name: Restore model weights
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Download model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])
+          PY
+
+      - name: Restore ASR model
+        id: asr
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-${{ env.ASR_MODEL }}
+
+      - name: Download ASR model
+        if: steps.asr.outputs.cache-hit != 'true'
+        run: python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+
+      # Checkpoints (lesson_stems.py push) upload the passed stems to the
+      # pre-release and commit the lesson records as the job goes; the push
+      # after the render is the final one.
+      - name: Render, gate, upload and record
+        env:
+          LESSONS_PAT: ${{ secrets.MONOREPO_PAT }}
+          HF_HUB_OFFLINE: '1'
+          PERSONA: ${{ matrix.persona }}
+          LESSONS: ${{ matrix.lessons }}
+        run: |
+          set +x
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          stems="$RUNNER_TEMP/lesson_stems"
+          push=(python voice_batch/ci/lesson_stems.py push --lessons-root _lessons --stems-root "$stems"
+                --persona "$PERSONA" --lessons "$LESSONS")
+          python voice_batch/lesson_audio.py render --lessons-root _lessons --agent-root .agent \
+            --stems-root "$stems" --persona "$PERSONA" --lessons "$LESSONS" \
+            --model-path "$model_path" --work "$RUNNER_TEMP/lesson_audio" \
+            --checkpoint-cmd "$(printf '%q ' "${push[@]}")"
+          "${push[@]}"
+
+  animations:
+    name: Export Manim scenes
+    if: github.event_name == 'schedule' || inputs.animations
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out lessons (private; text only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/scripts/CAPS/
+            /school/curriculum/CAPS/*/session/
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Manim (no LaTeX; the exporter shims Tex)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config
+          python -m pip install manim
+
+      - name: Export and commit
+        env:
+          LESSONS_PAT: ${{ secrets.MONOREPO_PAT }}
+          ONLY: ${{ inputs.only }}
+        run: python voice_batch/lesson_animations.py --lessons-root _lessons --max 300 --only "$ONLY" --commit

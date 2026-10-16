@@ -128,7 +128,7 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
     budget = getattr(args, "budget", None)
     stopped = False
     history: dict[str, list] = {}   # per line: each round's failing gates (qc_failed.json)
-    for rnd, seeds in enumerate(SEED_ROUNDS, 1):
+    for rnd, seeds in enumerate(getattr(args, "seed_rounds", SEED_ROUNDS), 1):
         jobs = []
         for key in sorted(pending):
             for seed in seeds:
@@ -184,8 +184,8 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
     return results
 
 
-def round1_takes(items: list[dict]) -> int:
-    return sum(len(it["render_text"]) for it in items) * len(SEED_ROUNDS[0])
+def round1_takes(items: list[dict], seed_rounds=SEED_ROUNDS) -> int:
+    return sum(len(it["render_text"]) for it in items) * len(seed_rounds[0])
 
 
 def drive(items: list[dict], work: Path, ref: Path, scripts: Path, args, label: str, install, write) -> list[str]:
@@ -203,7 +203,7 @@ def drive(items: list[dict], work: Path, ref: Path, scripts: Path, args, label: 
         ckpt.push(force=True)
     for n, start in enumerate(range(0, len(items), size), 1):
         part = items[start:start + size]
-        if budget is not None and not budget.allows(round1_takes(part)):
+        if budget is not None and not budget.allows(round1_takes(part, getattr(args, "seed_rounds", SEED_ROUNDS))):
             print(f"::notice::{label}: time budget reached before chunk {n} "
                   f"({budget.elapsed() / 60:.0f} min elapsed); {len(remaining)} line(s) left for the next run")
             break
@@ -237,7 +237,7 @@ def run_header(args, ref: Path, agent: Path) -> dict:
         },
         "settings": {
             "prompt": f"Speaker 1: <sentence>{TAIL_PAD}", "tail_pad": TAIL_PAD, "cfg_scale": 1.3, "ddpm_steps": 10,
-            "seed_rounds": [list(s) for s in SEED_ROUNDS], "per_sentence": True,
+            "seed_rounds": [list(s) for s in getattr(args, "seed_rounds", SEED_ROUNDS)], "per_sentence": True,
             "pause_ms": [280, 320], "fade_ms": 12, "trim_top_db": 40,
             "loudness_dbfs": -20.0, "sample_rate": 24000, "channels": 1, "subtype": "PCM_16",
             "selection": f"word-exact takes; median F0 closest to {args.f0_target:g} Hz, then fewest upward swings, then higher similarity",

@@ -29,7 +29,15 @@ def speak_text(sentence: str) -> str:
     s = s.replace(" — ", ", ").replace("—", ", ").replace(" – ", ", ")
     s = s.replace(" - ", ", ")
     s = re.sub(r":\s+", ", ", s)
+    s = join_thousands(s)
     return " ".join(s.split())
+
+
+def join_thousands(s: str) -> str:
+    """'R1 200' and '1 753 m' (SA style, a space between digit groups) as
+    one number. The model skips a split number entirely (heard 'a deposit
+    of R' for 'R1 200'), and the ASR writes it unsplit."""
+    return re.sub(r"(?<=\d)[ \u00a0\u202f](?=\d{3}(?!\d))", "", s)
 
 
 # The model often stops generating on the final phoneme of its prompt, so a
@@ -67,13 +75,22 @@ def _n2w(n: int) -> str:
     if n < 1000:
         rest = n % 100
         return _ONES[n // 100] + " hundred" + ("" if rest == 0 else " and " + _n2w(rest))
+    for size, name in ((10 ** 9, "billion"), (10 ** 6, "million"), (1000, "thousand")):
+        if n >= size and n < size * 1000:
+            rest = n % size
+            return (_n2w(n // size) + " " + name
+                    + ("" if rest == 0 else (" and " if rest < 100 else " ") + _n2w(rest)))
     return str(n)
 
 
 # British/American spelling pairs the ASR model may pick either way.
 _SPELLING = {"practice": "practise", "factorize": "factorise", "factorizing": "factorising",
              "factorized": "factorised", "recognize": "recognise", "organize": "organise",
-             "okay": "ok"}
+             "okay": "ok", "meter": "metre", "meters": "metres", "centimeter": "centimetre",
+             "centimeters": "centimetres", "millimeter": "millimetre", "millimeters": "millimetres",
+             "kilometer": "kilometre", "kilometers": "kilometres", "liter": "litre", "liters": "litres",
+             "milliliter": "millilitre", "milliliters": "millilitres", "color": "colour", "colors": "colours",
+             "center": "centre", "centers": "centres"}
 
 # Homophones the ASR model writes for a correctly spoken word (a sentence-
 # final "guessed" comes back as "guest"). Applied to both sides, so either
@@ -82,7 +99,8 @@ _HOMOPHONES = {"guest": "guessed"}
 
 
 def norm_words(text: str) -> list[str]:
-    s = text.lower().replace("’", "'").replace("'", "")
+    s = join_thousands(text.lower().replace("’", "'").replace("'", ""))
+    s = re.sub(r"(?<=\d),(?=\d{3}(?!\d))", "", s)
     s = s.replace("×", " times ").replace("²", " squared ").replace("−", "-")
     s = re.sub(r"(^|[\s(=,])-\s*(?=\d)", r"\1 minus ", s)
     s = re.sub(r"(\d)([a-z])", r"\1 \2", s)
