@@ -3,9 +3,11 @@
 Audio sits beside its script (the app convention the factory clip table
 uses: ref 'tutor_001/greetings/02' -> script tutors/CAPS/tutor_001/greetings/02.md):
 
-  <cat>/NN.md                       -> <cat>/NN.wav   (acknowledgements, greetings, signoffs)
-  samples.json  samples[].id        -> samples/<id>.wav
-  voices/<tutor>.voice.json sample_line -> samples/sample_line.wav
+  <cat>/NN.md                       -> <cat>/NN.m4a   (acknowledgements, greetings, signoffs)
+  samples.json  samples[].id        -> samples/<id>.m4a
+  voices/<tutor>.voice.json sample_line -> samples/sample_line.m4a
+
+The app gets AAC (aac.py); the gated WAV stays a work file ("final_wav").
 
 Pronunciations (pronunciations.py) apply to every line: "text" is the
 display text (inline {{word|respelling}} resolved to the word), the TTS gets
@@ -85,8 +87,11 @@ def pronounced_fields(id_: str, text: str, pron: dict | None, names=()) -> dict:
 
 def _item(id_: str, category: str, text: str, team_rel: str, wav: str, script: str, pron: dict | None,
           names=()) -> dict:
+    clip = wav[:-4] + AAC_EXT if wav.endswith(".wav") else wav
     return {"id": id_, "category": category, **pronounced_fields(id_, text, pron, names),
-            "file": f"{team_rel}/{wav}", "script": script}
+            "file": f"{team_rel}/{clip}", "final_wav": f"{team_rel}/{wav}", "script": script}
+
+AAC_EXT = ".m4a"   # aac.EXT; kept here so lines.py imports nothing heavy
 
 ASSISTANT_ROSTER = "lms/team/assistants/CAPS/roster.json"
 TUTOR_ROSTER = "lms/team/tutors/CAPS/roster.json"
@@ -183,12 +188,12 @@ def fill_placeholders(text: str, names: dict[str, str]) -> str:
 
 
 def build_assistant_lines(root: Path, assistant: str, categories: list[str], pron: dict | None) -> list[dict]:
-    """An assistant's named scripts: <cat>/<stem>.md -> <cat>/<stem>.wav, id
+    """An assistant's named scripts: <cat>/<stem>.md -> <cat>/<stem>.m4a, id
     '<assistant>/<cat>/<stem>'. A script naming the session's tutors
     ({first_tutor} = expert, {second_tutor} = simplifier) becomes one line per
     duo of the grade(s) the assistant hosts, id and wav suffixed
     '@<expert>+<simplifier>'; with no duo (no live grade) it is skipped. The voice spec's optional sample_line goes in
-    the first category as samples/sample_line.wav."""
+    the first category as samples/sample_line.m4a."""
     rel = team_rel(assistant)
     adir = root / rel
     items: list[dict] = []

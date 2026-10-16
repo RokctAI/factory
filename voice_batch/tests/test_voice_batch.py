@@ -225,9 +225,11 @@ class Lines(unittest.TestCase):
             Path(d, "lms/team/voices/tutor_009.voice.json").write_text(json.dumps({"sample_line": "C."}))
             items = build_lines(d, "tutor_009", ["greetings", "teaching"])
             self.assertEqual([i["file"] for i in items], [
-                "lms/team/tutors/CAPS/tutor_009/greetings/01.wav",
-                "lms/team/tutors/CAPS/tutor_009/samples/tutor_009_sample_01.wav",
-                "lms/team/tutors/CAPS/tutor_009/samples/sample_line.wav"])
+                "lms/team/tutors/CAPS/tutor_009/greetings/01.m4a",
+                "lms/team/tutors/CAPS/tutor_009/samples/tutor_009_sample_01.m4a",
+                "lms/team/tutors/CAPS/tutor_009/samples/sample_line.m4a"])
+            # the gated WAV is a work file only (qc writes it under work/final)
+            self.assertEqual(items[0]["final_wav"], "lms/team/tutors/CAPS/tutor_009/greetings/01.wav")
             self.assertEqual(items[0]["sentences"], ["One.", "Two."])
 
     @unittest.skipUnless(os.environ.get("AGENT_ROOT"), "AGENT_ROOT not set")

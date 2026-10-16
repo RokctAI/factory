@@ -87,7 +87,9 @@ jobs:
             /lms/dart/templates/assets/r3_packs/audio/*_story.mp3
             /lms/dart/templates/assets/r3_packs/audio/*_prompt.mp3
             !/lms/team/tutors/CAPS/**/*.wav
+            !/lms/team/tutors/CAPS/**/*.m4a
             !/lms/team/assistants/CAPS/**/*.wav
+            !/lms/team/assistants/CAPS/**/*.m4a
 
       - uses: actions/setup-python@v5
         with:

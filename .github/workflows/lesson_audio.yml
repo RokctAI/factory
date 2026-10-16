@@ -121,6 +121,7 @@ jobs:
             /lms/team/assistants/CAPS/
             /lms/team/voices/*.json
             !*.wav
+            !*.m4a
             !*.mp3
             !*.png
             !*.jpg
@@ -188,7 +189,9 @@ jobs:
             /lms/team/voice_refs/
             /lms/team/scripts/
             !/lms/team/tutors/CAPS/**/*.wav
+            !/lms/team/tutors/CAPS/**/*.m4a
             !/lms/team/assistants/CAPS/**/*.wav
+            !/lms/team/assistants/CAPS/**/*.m4a
             !*.mp3
             !*.png
             !*.jpg

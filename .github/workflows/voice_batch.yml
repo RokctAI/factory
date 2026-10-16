@@ -171,6 +171,7 @@ jobs:
             /lms/dart/lib/src/common/application/r3/
             /lms/dart/lib/src/translations/
             !*.wav
+            !*.m4a
             !*.mp3
             !*.timings.json
             !*.png
@@ -371,6 +372,8 @@ jobs:
           git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
           python -m pip install -e "$RUNNER_TEMP/VibeVoice"
           python -m pip install -r voice_batch/requirements.txt
+          # tutor and host clips are encoded to AAC (.m4a) by ffmpeg (voice_batch/aac.py)
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends ffmpeg; }
           python -c "import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)"
 
       # SHARED with radio_ads.yml: same path, same key format. radio_ads keys

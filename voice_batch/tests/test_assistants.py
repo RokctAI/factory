@@ -91,7 +91,8 @@ class AssistantLines(unittest.TestCase):
             self.assertIn(f"{AID}/timekeeping/five_min_warning", ids)
             self.assertIn(f"{AID}_sample_line", ids)
             it = next(x for x in items if x["id"] == f"{AID}/handover/into_break")
-            self.assertEqual(it["file"], f"lms/team/assistants/CAPS/{AID}/handover/into_break.wav")
+            self.assertEqual(it["file"], f"lms/team/assistants/CAPS/{AID}/handover/into_break.m4a")
+            self.assertEqual(it["final_wav"], f"lms/team/assistants/CAPS/{AID}/handover/into_break.wav")
             self.assertEqual(it["script"], f"lms/team/assistants/CAPS/{AID}/handover/into_break.md")
             self.assertEqual(it["text"], "Right, into break now.")
 
@@ -106,6 +107,14 @@ class AssistantLines(unittest.TestCase):
         self.assertEqual(lines.team_rel("tutor_001"), "lms/team/tutors/CAPS/tutor_001")
         with self.assertRaises(ValueError):
             lines.team_rel("../x")
+
+
+def fake_encode(wav, m4a, *a, **k):
+    # the AAC step (ffmpeg) is not under test: copy the take's bytes
+    from pathlib import Path
+    Path(m4a).parent.mkdir(parents=True, exist_ok=True)
+    Path(m4a).write_bytes(Path(wav).read_bytes())
+    return "fake"
 
 
 class AssistantRun(unittest.TestCase):
@@ -140,14 +149,16 @@ class AssistantRun(unittest.TestCase):
             args.pace_wpm, args.pace_tolerance = run.voice_pace(d, AID)
             self.assertEqual((args.pace_wpm, args.pace_tolerance), (132, 12))
             with mock.patch.object(run, "render_rounds", fake_rounds), mock.patch.object(run, "versions", lambda: {}), \
-                    mock.patch.object(run.pronunciations, "load", lambda: {}):
+                    mock.patch.object(run.pronunciations, "load", lambda: {}), mock.patch("aac.encode", fake_encode):
                 self.assertEqual(run.run_tutor(args, d, ref, d / "lms/team/scripts"), 0)
             adir = d / lines.team_rel(AID)
-            self.assertEqual((adir / "handover/into_break.wav").read_bytes(), b"audio")
-            self.assertTrue((adir / "handover/out_of_break.wav").exists())
+            self.assertEqual((adir / "handover/into_break.m4a").read_bytes(), b"audio")
+            self.assertTrue((adir / "handover/out_of_break.m4a").exists())
             m = json.loads((adir / "voice_b_sister_manifest.handover.json").read_text())
             self.assertEqual((m["kind"], m["assistant"], m["agreement_in_place"]), ("assistant", AID, False))
             self.assertEqual(m["settings"]["gate"]["median_f0_hz"], [216.0, 266.0])
+            self.assertEqual(m["settings"]["output"]["format"], "aac")
+            self.assertEqual(m["lines"][0]["encoder"], "fake")
             self.assertEqual([e["id"] for e in m["lines"]], [f"{AID}/handover/into_break", f"{AID}/handover/out_of_break"])
             self.assertFalse((d / "lms/team/tutors").exists())
 

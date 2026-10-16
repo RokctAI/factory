@@ -209,7 +209,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.write(a, f"{ADIR}/sub/{key1}.mp3", b"nested")
         self.write(a, f"{ADIR}/notes.txt", b"no")
         self.write(a, f"{ADIR}/r3_manifest.voice_y.json", b"{}")
-        self.write(a, f"{TDIR}/greetings/01.wav", b"tutor-audio")
+        self.write(a, f"{TDIR}/greetings/01.m4a", b"tutor-audio")
         self.write(a, "lms/team/voice_refs/voice_a_ref.wav", b"changed-ref")
         self.write(b, f"{ADIR}/r3.r3_praise_yes.mp3", b"mp3-2")
         self.write(b, f"{ADIR}/r3_manifest.voice_x.part02.json", b'{"lines": []}\n')
@@ -224,7 +224,7 @@ class PushAgentRebaseTest(unittest.TestCase):
                   f"{ADIR}/r3_manifest.voice_x.part01.json", f"{ADIR}/r3_manifest.voice_x.part02.json"):
             self.assertIn(f, files)
         for f in (f"{ADIR}/sub/{key1}.mp3", f"{ADIR}/notes.txt", f"{ADIR}/r3_manifest.voice_y.json",
-                  f"{TDIR}/greetings/01.wav"):
+                  f"{TDIR}/greetings/01.m4a"):
             self.assertNotIn(f, files)
         self.assertEqual(self.git("show", f"{BRANCH}:lms/team/voice_refs/voice_a_ref.wav",
                                   cwd=self.tmp / "srv" / "agent.git").stdout, "ref")
@@ -253,7 +253,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.write(a, f"{PDIR}/voice_a/Bad Name.mp3", b"no")
         self.write(a, f"{PDIR}/voice_a/sub/x.mp3", b"no")
         self.write(a, f"{PDIR}/voice_b/x.mp3", b"no")
-        self.write(a, f"{TDIR}/greetings/01.wav", b"no")
+        self.write(a, f"{TDIR}/greetings/01.m4a", b"no")
         self.write(b, f"{PDIR}/voice_b/mahikeng--mah-hee-keng.mp3", b"b1")
         self.write(b, f"{PDIR}/voice_b/audition.json", b"{}\n")
         first = self.push(a, "audition", "pronunciation", "voice_a")
@@ -265,7 +265,7 @@ class PushAgentRebaseTest(unittest.TestCase):
                   f"{PDIR}/voice_b/mahikeng--mah-hee-keng.mp3", f"{PDIR}/voice_b/audition.json"):
             self.assertIn(f, files)
         for f in (f"{PDIR}/voice_a/Bad Name.mp3", f"{PDIR}/voice_a/sub/x.mp3", f"{PDIR}/voice_b/x.mp3",
-                  f"{TDIR}/greetings/01.wav"):
+                  f"{TDIR}/greetings/01.m4a"):
             self.assertNotIn(f, files)
 
     def test_r3_refuses_unexpected_and_bad_args(self):
@@ -283,9 +283,9 @@ class PushAgentRebaseTest(unittest.TestCase):
 
     def test_rejected_push_rebases_with_auth(self):
         a, b = self.checkout("teaching"), self.checkout("greetings")
-        self.write(a, f"{TDIR}/samples/sample_line.wav", b"teaching-audio")
+        self.write(a, f"{TDIR}/samples/sample_line.m4a", b"teaching-audio")
         self.write(a, f"{TDIR}/voice_a_manifest.teaching.json", b'{"lines": []}\n')
-        self.write(b, f"{TDIR}/greetings/01.wav", b"greetings-audio")
+        self.write(b, f"{TDIR}/greetings/01.m4a", b"greetings-audio")
         self.write(b, f"{TDIR}/voice_a_manifest.greetings.json", b'{"lines": []}\n')
 
         first = self.push(a, "teaching")
@@ -296,7 +296,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.assertIn("pushed", second.stdout)
 
         files = self.git("ls-tree", "-r", "--name-only", BRANCH, cwd=self.tmp / "srv" / "agent.git").stdout.split()
-        for f in (f"{TDIR}/samples/sample_line.wav", f"{TDIR}/greetings/01.wav",
+        for f in (f"{TDIR}/samples/sample_line.m4a", f"{TDIR}/greetings/01.m4a",
                   f"{TDIR}/voice_a_manifest.teaching.json", f"{TDIR}/voice_a_manifest.greetings.json",
                   "outside/big.bin"):
             self.assertIn(f, files)
@@ -308,7 +308,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         """<clip>.timings.json next to a committed clip goes to the agent
         branch with it; a stray timings file or any other extra does not."""
         a = self.checkout("timings")
-        self.write(a, f"{TDIR}/greetings/01.wav", b"greetings-audio")
+        self.write(a, f"{TDIR}/greetings/01.m4a", b"greetings-audio")
         self.write(a, f"{TDIR}/greetings/01.timings.json", b'{"wpm": 120}\n')
         self.write(a, f"{TDIR}/voice_a_manifest.greetings.json", b'{"lines": []}\n')
         self.write(a, f"{TDIR}/greetings/orphan.timings.json", b"{}\n")
@@ -318,7 +318,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertIn(f"{TDIR}/greetings/01.timings.json", r.stdout)
         files = self.remote_files()
-        for f in (f"{TDIR}/greetings/01.wav", f"{TDIR}/greetings/01.timings.json",
+        for f in (f"{TDIR}/greetings/01.m4a", f"{TDIR}/greetings/01.timings.json",
                   f"{TDIR}/voice_a_manifest.greetings.json"):
             self.assertIn(f, files)
         for f in (f"{TDIR}/greetings/orphan.timings.json", f"{TDIR}/greetings/notes.txt",
@@ -377,14 +377,14 @@ class PushAgentRebaseTest(unittest.TestCase):
     def test_missing_branch_is_recreated_from_main(self):
         self.delete_remote_branch()
         a = self.start_from_main("teaching")
-        self.write(a, f"{TDIR}/samples/sample_line.wav", b"teaching-audio")
+        self.write(a, f"{TDIR}/samples/sample_line.m4a", b"teaching-audio")
         self.write(a, f"{TDIR}/voice_a_manifest.teaching.json", b'{"lines": []}\n')
         r = self.push(a, "teaching")
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertIn("pushed", r.stdout)
         self.assertNotIn("rejected", r.stdout)
         files = self.remote_files()
-        for f in (f"{TDIR}/samples/sample_line.wav", f"{TDIR}/voice_a_manifest.teaching.json", "outside/big.bin"):
+        for f in (f"{TDIR}/samples/sample_line.m4a", f"{TDIR}/voice_a_manifest.teaching.json", "outside/big.bin"):
             self.assertIn(f, files)
         main = self.git("rev-parse", "main", cwd=self.tmp / "srv" / "agent.git").stdout.strip()
         self.assertEqual(self.git("rev-parse", f"{BRANCH}~1", cwd=self.tmp / "srv" / "agent.git").stdout.strip(), main)
@@ -400,7 +400,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/main", cwd=self.seed)
         c = self.start_from_main("praise")
         for d, cat in ((a, "teaching"), (b, "greetings"), (c, "praise")):
-            self.write(d, f"{TDIR}/{cat}/01.wav", f"{cat}-audio".encode())
+            self.write(d, f"{TDIR}/{cat}/01.m4a", f"{cat}-audio".encode())
             self.write(d, f"{TDIR}/voice_a_manifest.{cat}.json", b'{"lines": []}\n')
 
         first = self.push(a, "teaching")
@@ -414,7 +414,7 @@ class PushAgentRebaseTest(unittest.TestCase):
 
         files = self.remote_files()
         for cat in ("teaching", "greetings", "praise"):
-            self.assertIn(f"{TDIR}/{cat}/01.wav", files)
+            self.assertIn(f"{TDIR}/{cat}/01.m4a", files)
             self.assertIn(f"{TDIR}/voice_a_manifest.{cat}.json", files)
         self.assertNotIn("outside/later.txt", files)
         log = self.git("rev-list", "--count", f"main~1..{BRANCH}", cwd=self.tmp / "srv" / "agent.git").stdout.strip()
@@ -429,7 +429,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         jobs = []
         for cat in cats:
             d = self.start_from_main(cat)
-            self.write(d, f"{TDIR}/{cat}/01.wav", f"{cat}-audio".encode())
+            self.write(d, f"{TDIR}/{cat}/01.m4a", f"{cat}-audio".encode())
             self.write(d, f"{TDIR}/voice_a_manifest.{cat}.json", b'{"lines": []}\n')
             jobs.append((d, cat))
         for cat, rc, out, err in self.push_concurrently(jobs):
@@ -438,7 +438,7 @@ class PushAgentRebaseTest(unittest.TestCase):
             self.assertNotIn("::error::", out)
         files = self.remote_files()
         for cat in cats:
-            self.assertIn(f"{TDIR}/{cat}/01.wav", files)
+            self.assertIn(f"{TDIR}/{cat}/01.m4a", files)
             self.assertIn(f"{TDIR}/voice_a_manifest.{cat}.json", files)
         self.assertEqual(self.git("rev-list", "--count", f"main..{BRANCH}", cwd=self.tmp / "srv" / "agent.git")
                          .stdout.strip(), str(len(cats)))
@@ -459,14 +459,14 @@ class PushAgentRebaseTest(unittest.TestCase):
         jobs = []
         for cat in ("teaching", "greetings"):
             d = self.checkout(cat)
-            self.write(d, f"{TDIR}/{cat}/01.wav", f"{cat}-audio".encode())
+            self.write(d, f"{TDIR}/{cat}/01.m4a", f"{cat}-audio".encode())
             self.write(d, f"{TDIR}/voice_a_manifest.{cat}.json", b'{"lines": []}\n')
             jobs.append((d, cat))
         for cat, rc, out, err in self.push_concurrently(jobs):
             self.assertEqual(rc, 0, f"{cat}: {out}{err}")
         files = self.remote_files()
         for cat in ("teaching", "greetings"):
-            self.assertIn(f"{TDIR}/{cat}/01.wav", files)
+            self.assertIn(f"{TDIR}/{cat}/01.m4a", files)
         self.assertEqual(self.remote_sha(f"{BRANCH}~2"), self.remote_sha("main"))
         # The merge job now sees a non-empty branch.
         r, out = self.resolve()
@@ -497,7 +497,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         ignore_blob = self.git("rev-parse", "HEAD:.gitignore", cwd=a).stdout.strip()
         missing = self.git("rev-list", "--objects", "--missing=print", "HEAD", cwd=a).stdout
         self.assertIn("?" + ignore_blob, missing.split())
-        self.write(a, f"{adir}/handover/01.wav", b"handover-audio")
+        self.write(a, f"{adir}/handover/01.m4a", b"handover-audio")
         self.write(a, f"{adir}/voice_b_manifest.handover.json", b'{"lines": []}\n')
         self.write(a, f"{adir}/voice_b_manifest.intro.json", b'{"lines": ["intro", "again"]}\n')
         r = self.push(a, "handover", "assistant_005", "voice_b")
@@ -505,7 +505,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.assertNotIn("promisor remote", r.stderr)
         self.assertIn("pushed", r.stdout)
         files = self.remote_files()
-        for f in (f"{adir}/handover/01.wav", f"{adir}/voice_b_manifest.handover.json", ".gitignore"):
+        for f in (f"{adir}/handover/01.m4a", f"{adir}/voice_b_manifest.handover.json", ".gitignore"):
             self.assertIn(f, files)
         self.assertEqual(self.git("show", f"{BRANCH}:{adir}/voice_b_manifest.intro.json",
                                   cwd=self.tmp / "srv" / "agent.git").stdout, '{"lines": ["intro", "again"]}\n')
@@ -518,7 +518,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         """A git command that dies outside the push loop names itself in an
         ::error:: line instead of a bare exit code."""
         a = self.checkout("broken")
-        self.write(a, f"{TDIR}/greetings/01.wav", b"audio")
+        self.write(a, f"{TDIR}/greetings/01.m4a", b"audio")
         (a / ".git" / "index.lock").write_text("")
         r = self.push(a, "greetings")
         self.assertNotEqual(r.returncode, 0)
@@ -530,19 +530,19 @@ class PushAgentRebaseTest(unittest.TestCase):
         checkpoint rebases its one new commit and lands, and a checkpoint
         with nothing new commits nothing."""
         a, b = self.checkout("teaching"), self.checkout("greetings")
-        self.write(a, f"{TDIR}/samples/sample_01.wav", b"t1")
+        self.write(a, f"{TDIR}/samples/sample_01.m4a", b"t1")
         self.write(a, f"{TDIR}/voice_a_manifest.teaching.json", b'{"lines": [1], "remaining": [2]}\n')
         self.assertEqual(self.push(a, "teaching").returncode, 0)
-        self.write(b, f"{TDIR}/greetings/01.wav", b"g1")
+        self.write(b, f"{TDIR}/greetings/01.m4a", b"g1")
         self.write(b, f"{TDIR}/voice_a_manifest.greetings.json", b'{"lines": [1]}\n')
         r = self.push(b, "greetings")
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.write(a, f"{TDIR}/samples/sample_02.wav", b"t2")
+        self.write(a, f"{TDIR}/samples/sample_02.m4a", b"t2")
         self.write(a, f"{TDIR}/voice_a_manifest.teaching.json", b'{"lines": [1, 2]}\n')
         r = self.push(a, "teaching")
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertIn("push rejected (attempt 1)", r.stdout)
-        for f in (f"{TDIR}/samples/sample_01.wav", f"{TDIR}/samples/sample_02.wav", f"{TDIR}/greetings/01.wav"):
+        for f in (f"{TDIR}/samples/sample_01.m4a", f"{TDIR}/samples/sample_02.m4a", f"{TDIR}/greetings/01.m4a"):
             self.assertIn(f, self.remote_files())
         self.assertEqual(self.git("show", f"{BRANCH}:{TDIR}/voice_a_manifest.teaching.json",
                                   cwd=self.tmp / "srv" / "agent.git").stdout, '{"lines": [1, 2]}\n')
@@ -553,7 +553,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         (r3: qc_failed.<voice>.json in the audio folder), and when every line
         in it has passed run.py deletes it and the deletion is pushed."""
         a = self.checkout("qcfail")
-        self.write(a, f"{TDIR}/greetings/01.wav", b"g1")
+        self.write(a, f"{TDIR}/greetings/01.m4a", b"g1")
         self.write(a, f"{TDIR}/greetings/qc_failed.json", b'{"failed": [{"id": "tutor_001/greetings/02"}]}\n')
         self.write(a, f"{TDIR}/voice_a_manifest.greetings.json", b'{"lines": []}\n')
         self.write(a, f"{ADIR}/qc_failed.voice_a.json", b'{"failed": []}\n')
@@ -565,11 +565,11 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertIn(f"{ADIR}/qc_failed.voice_a.json", self.remote_files())
         (a / TDIR / "greetings/qc_failed.json").unlink()
-        self.write(a, f"{TDIR}/greetings/02.wav", b"g2")
+        self.write(a, f"{TDIR}/greetings/02.m4a", b"g2")
         r = self.push(a, "greetings")
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertNotIn(f"{TDIR}/greetings/qc_failed.json", self.remote_files())
-        self.assertIn(f"{TDIR}/greetings/02.wav", self.remote_files())
+        self.assertIn(f"{TDIR}/greetings/02.m4a", self.remote_files())
 
     def test_scan_pending_picks_the_first_pending_batch(self):
         """The scheduled scan against the agent remote: the first batch with
@@ -583,7 +583,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         from test_resume import done_manifest
         seed = self.seed
         make_agent(seed)
-        self.write(seed, "lms/team/assistants/CAPS/assistant_005/handover/into_break.wav", b"audio")
+        self.write(seed, "lms/team/assistants/CAPS/assistant_005/handover/into_break.m4a", b"audio")
         self.git("add", "-A", cwd=seed)
         self.git("commit", "--quiet", "-m", "scripts", cwd=seed)
         self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/main", cwd=seed)
@@ -598,8 +598,8 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.write(factory, "voice_batches/inbox/broken.json", b"{")
         self.git("add", "-A", cwd=factory)
         self.git("commit", "--quiet", "-m", "inbox", cwd=factory)
-        agent = self.checkout("scanmain", "main", patterns=("/lms/team/", "!*.wav"))
-        self.assertFalse((agent / "lms/team/assistants/CAPS/assistant_005/handover/into_break.wav").exists())
+        agent = self.checkout("scanmain", "main", patterns=("/lms/team/", "!*.wav", "!*.m4a"))
+        self.assertFalse((agent / "lms/team/assistants/CAPS/assistant_005/handover/into_break.m4a").exists())
 
         def scan():
             r = subprocess.run(["bash", str(SCAN), str(agent)], cwd=factory, capture_output=True, text=True,
