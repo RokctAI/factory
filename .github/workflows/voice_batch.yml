@@ -219,7 +219,7 @@ jobs:
           python3 voice_batch/batch.py "$file" > "$RUNNER_TEMP/batch.out"
           cat "$RUNNER_TEMP/batch.out" >> "$GITHUB_OUTPUT"
           echo "file=$file" >> "$GITHUB_OUTPUT"
-          grep -E '^(kind|tutor|voice|agent_branch|categories|locale|line_count|f0_target_hz|f0_tolerance_hz|matrix_json)=' "$RUNNER_TEMP/batch.out" | sed 's/^/  /'
+          grep -E '^(kind|tutor|voice|agent_branch|categories|locale|line_count|f0_target_hz|f0_tolerance_hz|similarity_min_lt_5s|similarity_min_ge_5s|matrix_json)=' "$RUNNER_TEMP/batch.out" | sed 's/^/  /'
 
       # Create a missing agent branch once, at main's tip, before the matrix
       # starts: every render job then checks out and appends to an existing
@@ -443,6 +443,8 @@ jobs:
           LINES: ${{ steps.batch.outputs.lines }}
           F0_TARGET: ${{ steps.batch.outputs.f0_target_hz }}
           F0_TOLERANCE: ${{ steps.batch.outputs.f0_tolerance_hz }}
+          SIM_SHORT: ${{ steps.batch.outputs.similarity_min_lt_5s }}
+          SIM_LONG: ${{ steps.batch.outputs.similarity_min_ge_5s }}
           LOCALE: ${{ steps.batch.outputs.locale }}
           ASR_MODEL: ${{ steps.batch.outputs.asr_model }}
         run: |
@@ -450,7 +452,8 @@ jobs:
           model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
           common=(--agent-root .agent --voice "$VOICE" --ref ".agent/$REF_PATH" --ref-sha256 "$REF_SHA"
                   --model-path "$model_path" --work "$RUNNER_TEMP/voice_batch" --asr-model "$ASR_MODEL"
-                  --language "$LOCALE" --f0-target "$F0_TARGET" --f0-tolerance "$F0_TOLERANCE")
+                  --language "$LOCALE" --f0-target "$F0_TARGET" --f0-tolerance "$F0_TOLERANCE"
+                  --sim-short "$SIM_SHORT" --sim-long "$SIM_LONG")
           if [ "$KIND" = "r3" ]; then
             push=(bash voice_batch/ci/push_agent.sh .agent "$AGENT_BRANCH" r3 "$VOICE" "r3 shard $SHARD")
             python voice_batch/run.py --kind r3 "${common[@]}" --batch "$BATCH_FILE" --shard "$SHARD" \

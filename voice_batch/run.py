@@ -152,6 +152,8 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
         subprocess.run([sys.executable, str(HERE / "qc.py"), "--work", str(work), "--ref", str(ref),
                         "--scripts-dir", str(scripts), "--asr-model", args.asr_model,
                         "--f0-target", str(args.f0_target), "--f0-tolerance", str(args.f0_tolerance),
+                        "--sim-short", str(getattr(args, "sim_short", qc.SIM_SHORT)),
+                        "--sim-long", str(getattr(args, "sim_long", qc.SIM_LONG)),
                         "--language", args.language, "--pace-wpm", str(args.pace_wpm),
                         "--pace-tolerance", str(args.pace_tolerance)], check=True)
         print("::endgroup::", flush=True)
@@ -219,6 +221,7 @@ def drive(items: list[dict], work: Path, ref: Path, scripts: Path, args, label: 
 
 def run_header(args, ref: Path, agent: Path) -> dict:
     lo, hi = f0_range(args.f0_target, args.f0_tolerance)
+    sim_short, sim_long = getattr(args, "sim_short", qc.SIM_SHORT), getattr(args, "sim_long", qc.SIM_LONG)
     ref_rel = str(ref.relative_to(agent)) if ref.is_relative_to(agent) else ref.name
     head = {
         "voice": args.voice,
@@ -240,7 +243,7 @@ def run_header(args, ref: Path, agent: Path) -> dict:
             "selection": f"word-exact takes; median F0 closest to {args.f0_target:g} Hz, then fewest upward swings, then higher similarity",
             "gate": {"median_f0_hz": [round(lo, 2), round(hi, 2)], "f0_target_hz": args.f0_target,
                      "f0_tolerance_hz": args.f0_tolerance,
-                     "similarity_min_ge_5s": 0.88, "similarity_min_lt_5s": 0.83, "asr": "word-exact",
+                     "similarity_min_ge_5s": sim_long, "similarity_min_lt_5s": sim_short, "asr": "word-exact",
                      "tail_max_db": TAIL_MAX_DB, "tail_window_ms": int(TAIL_WIN_S * 1000),
                      "pace_wpm": args.pace_wpm, "pace_tolerance_wpm": args.pace_tolerance, "pace_gate": "report-only",
                      "loudness_target_db": qc.NORM_TARGET_DB, "loudness_tolerance_db": qc.LOUDNESS_TOL_DB,
@@ -441,7 +444,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
             it = by_id[r["id"]]
             tally["pass" if r["status"] == "pass" else "fail"] += 1
             base = {"id": it["id"], "key": it["key"], "locale": it["locale"], "category": "r3",
-                    "needs_listen": it["needs_listen"]}
+                    "needs_listen": it["needs_listen"] or bool(r.get("similarity_lowered"))}
             if r["status"] == "pass":
                 dst = agent / it["file"]
                 encoder = mp3.encode(r["final_path"], dst)
@@ -490,6 +493,8 @@ def main() -> int:
     ap.add_argument("--language", default="en", help="ASR language")
     ap.add_argument("--f0-target", type=float, default=TARGET_F0)
     ap.add_argument("--f0-tolerance", type=float, default=F0_TOLERANCE)
+    ap.add_argument("--sim-short", type=float, default=qc.SIM_SHORT, help="similarity bar for clips under 5 s")
+    ap.add_argument("--sim-long", type=float, default=qc.SIM_LONG, help="similarity bar for clips of 5 s or more")
     ap.add_argument("--persona", help="persona id whose lms/team/voices/<id>.voice.json sets the pace gate "
                     "(default: --tutor; none -> 149 +/- 15 wpm)")
     # tutor

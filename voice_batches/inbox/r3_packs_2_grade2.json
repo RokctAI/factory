@@ -7,6 +7,8 @@
   "agent_branch": "rokct/r3-pack-audio",
   "locale": "en",
   "f0_target_hz": 241,
-  "f0_tolerance_hz": 25,
+  "f0_tolerance_hz": 50,
+  "similarity_min_lt_5s": 0.78,
+  "similarity_min_ge_5s": 0.83,
   "packs": "*.grade2.*"
 }

@@ -213,6 +213,23 @@ def respelled(key: str, text: str, resp: dict) -> str | None:
     return t if t and t != text else None
 
 
+# A respelled sound ("ah", "nuh", "mmm"): the ASR spells these every which
+# way ("ahh", "AHHH!", "nah"), so the check wildcards them like a name.
+SOUND_RE = re.compile(r"[a-z]{1,3}|([a-z])\1{2,}")
+
+
+def sound_wild(f: dict, display: str) -> None:
+    """Add a wildcard to f's ASR fields for each respelled sound: a short
+    word of the respelling that the display text does not use."""
+    from textnorm import norm_words
+    shown = set(norm_words(display))
+    sounds = {w for s in f["sentences"] for w in norm_words(s) if w not in shown and SOUND_RE.fullmatch(w)}
+    if not sounds:
+        return
+    f["sentence_wild"] = [w + pronunciations.name_wild(s, sounds) for s, w in zip(f["sentences"], f["sentence_wild"])]
+    f["asr_wild"] = [w for sw in f["sentence_wild"] for w in sw]
+
+
 # ---------------------------------------------------------------------------
 # Render items
 # ---------------------------------------------------------------------------
@@ -228,6 +245,8 @@ def item(key: str, text: str, locale: str, source: str, resp: dict, pron: dict |
     display = pronunciations.display_text(text) if pronunciations.has_markup(text) else text
     tts = respelled(key, display, resp)
     f = pronounced_fields(file_id(key, locale), tts or text, pron)
+    if tts is not None:
+        sound_wild(f, display)
     fid = file_id(key, locale)
     it = {
         "id": fid, "key": key, "locale": locale, "category": "r3", "text": display,

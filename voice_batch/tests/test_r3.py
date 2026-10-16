@@ -19,7 +19,8 @@ sys.path.insert(0, str(HERE))
 import batch  # noqa: E402
 import merge_manifest  # noqa: E402
 import r3_lines as R  # noqa: E402
-from qc import f0_range, pick, pyin_bounds  # noqa: E402
+from pronunciations import word_errors_wild  # noqa: E402
+from qc import f0_range, pick, pyin_bounds, sim_threshold  # noqa: E402
 from textnorm import norm_words  # noqa: E402
 
 FACTORY = HERE.parent
@@ -221,6 +222,21 @@ class Respellings(unittest.TestCase):
                 self.assertFalse(it["needs_listen"])
                 self.assertNotIn("tts_text", it)
 
+    def test_respelled_sounds_are_wildcards(self):
+        resp = {"by_key": {}, "by_text": {"Nose starts with n.": "Nose starts with nuh."}}
+        it = R.item("x.show", "Nose starts with n.", "en", "t", resp)
+        self.assertEqual(it["sentence_wild"], [[["nuh", "nuh"]]])
+        self.assertEqual(word_errors_wild(it["asr_text"], "Nose starts with nah.", it["asr_wild"]), 0)
+        self.assertEqual(word_errors_wild(it["asr_text"], "Nose starts with ah ha.", it["asr_wild"]), 0)
+        self.assertEqual(word_errors_wild(it["asr_text"], "Nosed starts with nah.", it["asr_wild"]), 1)
+        # Words the display text already uses stay word-exact.
+        resp = {"by_key": {}, "by_text": {"a, a, ant.": "Ah, ah, ant."}}
+        it = R.item("x.show", "a, a, ant.", "en", "t", resp)
+        self.assertEqual(it["asr_wild"], [["Ah", "Ah"], ["ah", "ah"]])
+        self.assertEqual(word_errors_wild(it["asr_text"], "Ahh, ah, aunt.", it["asr_wild"]), 1)
+        # An unrespelled line gets no sound wildcards.
+        self.assertEqual(R.item("x.show", "Find the ant.", "en", "t", NO_RESP)["asr_wild"], [])
+
     def test_by_text(self):
         it = R.item("x.show", "a as in ant.", "en", "t", {"by_key": {}, "by_text": {"a as in ant.": "Ah, as in ant."}})
         self.assertEqual((it["asr_text"], it["text"], it["needs_listen"]), ("Ah, as in ant.", "a as in ant.", True))
@@ -255,6 +271,16 @@ class R3Batch(unittest.TestCase):
         b = load(dict(GOOD, f0_target_hz=210, f0_tolerance_hz=25))
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (210.0, 25.0))
         self.assertIn("f0_target_hz=210", batch.outputs(b))
+
+    def test_similarity_bars(self):
+        b = load(GOOD)
+        self.assertEqual((b["similarity_min_lt_5s"], b["similarity_min_ge_5s"]), (0.83, 0.88))
+        b = load(dict(GOOD, similarity_min_lt_5s=0.78, similarity_min_ge_5s=0.83))
+        self.assertEqual((b["similarity_min_lt_5s"], b["similarity_min_ge_5s"]), (0.78, 0.83))
+        self.assertIn("similarity_min_lt_5s=0.78", batch.outputs(b))
+        for bad in (0.5, 1.0, "0.8"):
+            with self.assertRaises(batch.BatchError):
+                load(dict(GOOD, similarity_min_lt_5s=bad))
 
     def test_outputs_carry_no_text(self):
         b = load(GOOD)
@@ -294,6 +320,13 @@ class F0Gate(unittest.TestCase):
         self.assertEqual(pick([high], 210, 20), (high, 1))
         self.assertEqual(pick([low], 210, 20)[1], 2)
         self.assertEqual(pyin_bounds(210, 20), (50.0, 460.0))
+
+    def test_similarity_bars(self):
+        self.assertEqual((sim_threshold(4.9), sim_threshold(5.0)), (0.83, 0.88))
+        self.assertEqual((sim_threshold(4.9, 0.78, 0.83), sim_threshold(5.0, 0.78, 0.83)), (0.78, 0.83))
+        t = {"err": 0, "f0": 241, "swings": 0, "res": 0.8}
+        self.assertEqual(pick([t], 241, 25)[1], 2)
+        self.assertEqual(pick([t], 241, 25, 0.78), (t, 1))
 
 
 class Mp3(unittest.TestCase):

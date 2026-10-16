@@ -21,7 +21,10 @@ Two kinds:
   Optional "lines" ids of the form '<id>/<category>/<stem>'.
 
 All take an optional F0 gate: "f0_target_hz" and "f0_tolerance_hz"
-(defaults: the Voice A values, 102 +/- 8 Hz, i.e. 94-110 Hz).
+(defaults: the Voice A values, 102 +/- 8 Hz, i.e. 94-110 Hz), and an
+optional voice-match gate: "similarity_min_lt_5s" and "similarity_min_ge_5s"
+(defaults 0.83 and 0.88; a line that passes only below the defaults is
+flagged needs_listen).
 
 Pronunciations (voice_batch/pronunciations.json): the file must be valid,
 and no line may use an "ambiguous" word outside an inline
@@ -60,6 +63,15 @@ F0_TARGET_HZ = 102.0
 F0_TOLERANCE_HZ = 8.0
 F0_TARGET_RANGE = (50.0, 400.0)
 F0_TOLERANCE_RANGE = (1.0, 80.0)
+# Voice-match gate defaults (Resemblyzer similarity to the reference, by clip
+# length); a batch may lower them for a voice that scores low against its
+# own reference (e.g. a pitch-shifted one). Lines that pass only because of
+# a lowered bar are flagged needs_listen.
+SIM_SHORT = 0.83
+SIM_LONG = 0.88
+SIM_RANGE = (0.6, 0.95)
+
+SIM_KEYS = ("similarity_min_lt_5s", "similarity_min_ge_5s")
 
 R3_LINES_PER_SHARD = 40
 R3_MAX_SHARDS = 8
@@ -138,7 +150,7 @@ def _load_tutor(raw: dict) -> dict:
         out["lines"] = sorted(set(lines))
         # Only run the categories the filter actually touches.
         out["categories"] = [c for c in out["categories"] if any(category_of(x, out["tutor"]) == c for x in lines)]
-    _unknown(raw, set(PATTERNS) | {"kind", "categories", "lines", "f0_target_hz", "f0_tolerance_hz"})
+    _unknown(raw, set(PATTERNS) | {"kind", "categories", "lines", "f0_target_hz", "f0_tolerance_hz", *SIM_KEYS})
     out["matrix"] = [{"category": c, "shard": ""} for c in out["categories"]]
     return out
 
@@ -159,7 +171,7 @@ def _load_assistant(raw: dict) -> dict:
         out["lines"] = sorted(set(lines))
         out["categories"] = [c for c in out["categories"]
                              if any(assistant_category_of(x, out["assistant"]) == c for x in lines)]
-    _unknown(raw, set(ASSISTANT_PATTERNS) | {"kind", "categories", "lines", "f0_target_hz", "f0_tolerance_hz"})
+    _unknown(raw, set(ASSISTANT_PATTERNS) | {"kind", "categories", "lines", "f0_target_hz", "f0_tolerance_hz", *SIM_KEYS})
     out["tutor"] = out["assistant"]   # the target id the CI steps pass around
     out["matrix"] = [{"category": c, "shard": ""} for c in out["categories"]]
     return out
@@ -215,7 +227,7 @@ def _load_r3(raw: dict, factory_root: Path | None) -> dict:
     shards = r3_lines.shard_count(n, R3_LINES_PER_SHARD, R3_MAX_SHARDS)
     out["matrix"] = [{"category": "r3", "shard": f"{k}/{shards}"} for k in range(1, shards + 1)]
     out["categories"] = ["r3"]
-    _unknown(raw, set(COMMON) | {"kind", "packs", "lines", "locale", "f0_target_hz", "f0_tolerance_hz"})
+    _unknown(raw, set(COMMON) | {"kind", "packs", "lines", "locale", "f0_target_hz", "f0_tolerance_hz", *SIM_KEYS})
     return out
 
 
@@ -265,6 +277,8 @@ def load_batch(path: str | Path, factory_root: Path | None = None, agent_root: s
     out["f0_target_hz"] = _num(raw, "f0_target_hz", spec.get("f0_target_hz", F0_TARGET_HZ), F0_TARGET_RANGE)
     out["f0_tolerance_hz"] = _num(raw, "f0_tolerance_hz", spec.get("f0_tolerance_hz", F0_TOLERANCE_HZ),
                                   F0_TOLERANCE_RANGE)
+    out["similarity_min_lt_5s"] = _num(raw, "similarity_min_lt_5s", SIM_SHORT, SIM_RANGE)
+    out["similarity_min_ge_5s"] = _num(raw, "similarity_min_ge_5s", SIM_LONG, SIM_RANGE)
     errs = pronunciation_errors(out, agent_root, factory_root)
     if errs:
         raise BatchError("; ".join(errs))
@@ -290,6 +304,8 @@ def outputs(b: dict) -> list[str]:
             "categories_json=" + json.dumps(b["categories"]),
             "matrix_json=" + json.dumps(b["matrix"]),
             f"f0_target_hz={b['f0_target_hz']:g}", f"f0_tolerance_hz={b['f0_tolerance_hz']:g}",
+            f"similarity_min_lt_5s={b['similarity_min_lt_5s']:g}",
+            f"similarity_min_ge_5s={b['similarity_min_ge_5s']:g}",
             f"locale={b.get('locale', 'en')}",
             f"asr_model={ASR_MODEL_EN if b.get('locale', 'en') == 'en' else ASR_MODEL_MULTI}",
             f"line_count={b.get('line_count', '')}",
