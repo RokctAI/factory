@@ -256,8 +256,8 @@ def tail_ok(db: float) -> bool:
     return db <= TAIL_MAX_DB
 
 
-def sim_threshold(duration_s: float) -> float:
-    return SIM_LONG if duration_s >= LONG_S else SIM_SHORT
+def sim_threshold(duration_s: float, short: float = SIM_SHORT, long: float = SIM_LONG) -> float:
+    return long if duration_s >= LONG_S else short
 
 
 def f0_range(target: float = TARGET_F0, tolerance: float = F0_TOLERANCE) -> tuple[float, float]:
@@ -298,13 +298,14 @@ def take_rank(m: dict, target: float = TARGET_F0) -> tuple:
     return (abs(m["f0"] - target), m["swings"], -m["res"])
 
 
-def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOLERANCE) -> tuple[dict | None, int]:
+def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOLERANCE,
+         sim_min: float = TAKE_SIM_MIN) -> tuple[dict | None, int]:
     """(best take, tier) — tier 1 strict pass, tier 2 word-exact only, 0 none."""
     lo, hi = f0_range(target, tolerance)
     # A take that ends mid-word never counts, however well the ASR heard it.
     # Nor does one padded with seconds of non-speech the ASR skipped over.
     exact = [c for c in cands if c["err"] == 0 and tail_ok(c.get("tail_db", -120.0)) and span_ok(c)]
-    strict = [c for c in exact if lo <= c["f0"] <= hi and c["res"] >= TAKE_SIM_MIN]
+    strict = [c for c in exact if lo <= c["f0"] <= hi and c["res"] >= sim_min]
     rank = lambda c: take_rank(c, target)  # noqa: E731
     if strict:
         return min(strict, key=rank), 1
@@ -402,6 +403,8 @@ def main() -> int:
     ap.add_argument("--asr-model", default=os.environ.get("ASR_MODEL", "small.en"))
     ap.add_argument("--f0-target", type=float, default=TARGET_F0)
     ap.add_argument("--f0-tolerance", type=float, default=F0_TOLERANCE)
+    ap.add_argument("--sim-short", type=float, default=SIM_SHORT)
+    ap.add_argument("--sim-long", type=float, default=SIM_LONG)
     ap.add_argument("--language", default="en")
     ap.add_argument("--pace-wpm", type=float, default=PACE_WPM)
     ap.add_argument("--pace-tolerance", type=float, default=PACE_TOL_WPM)
@@ -444,7 +447,7 @@ def main() -> int:
         for k in range(1, len(it["sentences"]) + 1):
             key = f"{it['id']}#{k}"
             cands = [dict(m, path=p) for p, m in M.items() if m["key"] == key and p not in rejected]
-            best, tier = pick(cands, args.f0_target, args.f0_tolerance)
+            best, tier = pick(cands, args.f0_target, args.f0_tolerance, min(args.sim_short, TAKE_SIM_MIN))
             picks.append(best); tiers.append(tier)
             if tier != 1:
                 lacking.append({"key": key, "tier": tier})
@@ -475,7 +478,7 @@ def main() -> int:
         fm = meter.measure(dst, it.get("asr_text", it["text"]), it.get("asr_wild"))
         x, _ = sf.read(str(dst))
         dur = round(len(x) / SR, 3)
-        thr = sim_threshold(dur)
+        thr = sim_threshold(dur, args.sim_short, args.sim_long)
         tm = timings(it["text"], fm.get("words", []), dur)
         cgate, cm = clip_checks(x, SR, tm["wpm"] if tm["words"] else None, (args.pace_wpm, args.pace_tolerance))
         gate = {"f0": lo <= fm["f0"] <= hi, "similarity": fm["res"] >= thr, "asr": fm["err"] == 0,
@@ -484,6 +487,8 @@ def main() -> int:
             "status": "pass" if all(gate.values()) else "fail", "gate": gate, "final_path": str(dst),
             "duration_s": dur, "median_f0_hz": fm["f0"], "upward_swings": fm["swings"],
             "similarity": fm["res"], "similarity_threshold": thr, "asr_match": fm["err"] == 0,
+            # Passed only because the batch lowered the bar: a human listens.
+            "similarity_lowered": fm["res"] < sim_threshold(dur),
             "asr_word_errors": fm["err"], "asr_transcript": fm["transcript"], "tail_db": fm["tail_db"],
             "rms_dbfs": round(float(20 * np.log10(np.sqrt(np.mean(x ** 2)))), 2),
             "peak": round(float(np.max(np.abs(x))), 4), "pauses_ms": pauses,
