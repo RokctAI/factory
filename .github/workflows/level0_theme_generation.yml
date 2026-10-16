@@ -28,6 +28,9 @@ jobs:
           fi
 
       - name: Check Queue and Trigger
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+          ENGINE_REPO: ${{ github.repository }}
         run: |
           TYPES=("book.poetry" "book.fiction" "book.short_story" "book.children" "film.documentary")
 
@@ -84,12 +87,12 @@ jobs:
               git config --global user.name "github-actions[bot]"
               git config --global user.email "github-actions[bot]@users.noreply.github.com"
               git add .rokct/agent/prompts/in_progress/level0_theme_discovery.json
-              # Deliberately NOT [skip ci]: agent.yml's push trigger watches this exact
-              # path (.rokct/agent/prompts/in_progress/*.json) to process the new prompt.
-              # [skip ci] here would suppress that trigger entirely, leaving the prompt
-              # written but never actually processed -- which is what was happening.
-              git commit -m "🤖 [CI] Trigger Theme Discovery for $TYPE" || true
+              git commit -m "🤖 [CI] Trigger Theme Discovery for $TYPE [skip ci]" || true
               eval "git push origin main"
+
+              # books has no workflows, so nothing fires on that push: run the
+              # engine's agent.yml, whose books-queue job processes the prompt.
+              GH_TOKEN="$MONOREPO_PAT" gh workflow run agent.yml --repo "$ENGINE_REPO" --ref main
 
               # Break after triggering one to avoid overwhelming
               break
