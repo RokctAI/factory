@@ -27,6 +27,7 @@ import merge_manifest  # noqa: E402
 import pending  # noqa: E402
 import qc_failed  # noqa: E402
 import resume  # noqa: E402
+import voice_paths  # noqa: E402
 from test_assistants import AID, make_agent  # noqa: E402
 
 heavy = {m: types.ModuleType(m) for m in ("numpy", "librosa", "soundfile", "faster_whisper", "resemblyzer")
@@ -169,6 +170,7 @@ class ResumableRun(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.d = Path(self.tmp.name)
         make_agent(self.d, {"agreement_in_place": False})
+        self.v = self.d / "voices_checkout"       # the voice repo checkout (audio, manifests)
         self.ref = self.d / "ref.wav"
         self.ref.write_bytes(b"ref")
         self.take = self.d / "take.wav"
@@ -200,9 +202,9 @@ class ResumableRun(unittest.TestCase):
         with mock.patch.object(run, "render_rounds", self.fake_rounds), mock.patch.object(run, "versions", lambda: {}), \
                 mock.patch.object(run.pronunciations, "load", lambda: {}), mock.patch.dict(os.environ, env), \
                 mock.patch("aac.encode", fake_encode):
-            self.assertEqual(run.run_tutor(args, self.d, self.ref, self.d / "lms/team/scripts"), 0)
+            self.assertEqual(run.run_tutor(args, self.d, self.ref, self.d / "lms/team/scripts", voice=self.v), 0)
         outputs = dict(ln.split("=", 1) for ln in self.out.read_text().split())
-        return outputs, json.loads((self.d / lines.team_rel(AID) / f"{VOICE}_manifest.timekeeping.json").read_text())
+        return outputs, json.loads((self.v / voice_paths.team_dir(AID) / f"{VOICE}_manifest.timekeeping.json").read_text())
 
     def ids(self):
         return [f"{AID}/timekeeping/{s}" for s in ("halfway", "five_min_warning", "wrap_up")]
@@ -249,7 +251,7 @@ class ResumableRun(unittest.TestCase):
     def test_final_failed_line_is_logged_in_qc_failed_then_cleared_when_it_passes(self):
         bad = self.ids()[2]
         self.fail_ids = {bad}
-        log = self.d / lines.team_rel(AID) / "timekeeping" / "qc_failed.json"
+        log = self.v / voice_paths.team_dir(AID) / "timekeeping" / "qc_failed.json"
         with mock.patch.dict(os.environ, {"BATCH_FILE": "voice_batches/inbox/x.json", "GITHUB_RUN_ID": "4242"}):
             self.run_once(budget_minutes=0)
         (e,) = json.loads(log.read_text())["failed"]
@@ -320,21 +322,21 @@ def make_batches(root: Path, specs: dict) -> list[Path]:
     for name, cats in specs.items():
         p = root / f"{name}.json"
         p.write_text(json.dumps({"kind": "assistant", "assistant": AID, "voice": VOICE,
-                                 "ref_path": "lms/team/voice_refs/v.wav", "ref_sha256": REF_SHA,
+                                 "ref_path": "voices/refs/v.wav", "ref_sha256": REF_SHA,
                                  "agent_branch": f"rokct/{name}", "categories": cats}))
         out.append(p)
     return out
 
 
 def done_manifest(root: Path, category: str, agent: Path, failed: bool = False) -> None:
-    """Manifest under root (agent main or an exported branch) with every line
-    of the category passed (or failed every round), built from agent."""
+    """Manifest under root (voice repo main or an exported branch) with every
+    line of the category passed (or failed every round), built from agent."""
     items = lines.build_lines(agent, AID, [category], kind="assistant")
     entries = [{"id": it["id"], "text_sha256": it["text_sha256"], "render_sha256": it["render_sha256"],
                 "tail_pad": resume.TAIL_PAD, **({"ref_sha256": REF_SHA} if failed else {})} for it in items]
     m = {"reference": {"sha256": REF_SHA}, "category": category,
          "lines": [] if failed else entries, "failed": entries if failed else []}
-    p = root / lines.team_rel(AID) / f"{VOICE}_manifest.{category}.json"
+    p = root / voice_paths.team_dir(AID) / f"{VOICE}_manifest.{category}.json"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(m))
 
@@ -345,6 +347,7 @@ class PendingScan(unittest.TestCase):
         self.d = Path(self.tmp.name)
         self.agent = self.d / "agent"
         make_agent(self.agent)
+        self.vmain = self.d / "voicesmain"        # the voice repo's main (manifests only)
         self.branch = self.d / "branch"
         self.a, self.b = make_batches(self.d, {"a_handover": ["handover"], "b_timekeeping": ["timekeeping"]})
 
@@ -354,9 +357,10 @@ class PendingScan(unittest.TestCase):
     def scan(self):
         lst = self.d / "list.tsv"
         lst.write_text(f"{self.a}\t{self.branch}\n{self.b}\t\n")
-        hit = pending.first_pending([(str(self.a), [self.agent, self.branch]), (str(self.b), [self.agent])],
+        hit = pending.first_pending([(str(self.a), [self.vmain, self.branch]), (str(self.b), [self.vmain])],
                                     self.agent)
-        r = subprocess.run([sys.executable, str(HERE / "pending.py"), "--agent-root", str(self.agent), "--scan", str(lst)],
+        r = subprocess.run([sys.executable, str(HERE / "pending.py"), "--agent-root", str(self.agent),
+                            "--voice-root", str(self.vmain), "--scan", str(lst)],
                            capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertEqual(r.stdout.strip(), hit[0] if hit else "")
@@ -364,12 +368,12 @@ class PendingScan(unittest.TestCase):
 
     def test_picks_the_first_pending_batch(self):
         self.assertEqual(self.scan(), (str(self.a), 2))            # nothing rendered: the first batch
-        done_manifest(self.branch, "handover", self.agent)                      # a is done on its agent branch
+        done_manifest(self.branch, "handover", self.agent)                      # a is done on its voice branch
         self.assertEqual(self.scan(), (str(self.b), 3))
 
     def test_nothing_pending_means_no_matrix(self):
         done_manifest(self.branch, "handover", self.agent)
-        done_manifest(self.agent, "timekeeping", self.agent, failed=True)       # all final-failed on main: done
+        done_manifest(self.vmain, "timekeeping", self.agent, failed=True)       # all final-failed on main: done
         self.assertIsNone(self.scan())
         if yaml is None:
             return
@@ -378,9 +382,13 @@ class PendingScan(unittest.TestCase):
         self.assertEqual(plan["render"]["if"], "needs.plan.outputs.count == '1'")
         self.assertIn("needs.plan.outputs.count == '1'", plan["merge"]["if"])
 
+    def test_manifests_in_the_agent_checkout_do_not_count(self):
+        done_manifest(self.agent, "handover", self.agent)   # the agent checkout is not a manifests root
+        self.assertEqual(self.scan(), (str(self.a), 2))
+
     def test_changed_text_is_pending_again(self):
         done_manifest(self.branch, "handover", self.agent)
-        done_manifest(self.agent, "timekeeping", self.agent)
+        done_manifest(self.vmain, "timekeeping", self.agent)
         self.assertIsNone(self.scan())
         md = self.agent / lines.team_rel(AID) / "timekeeping/halfway.md"
         md.write_text("# halfway\n\nNew words now.\n")

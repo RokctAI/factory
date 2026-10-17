@@ -2,12 +2,12 @@
 """Render, QC and install one category of a tutor's lines, or one shard of
 the Grades R-3 pack lines.
 
-    python voice_batch/run.py --agent-root .agent --tutor tutor_001 --voice voice_a \
-        --ref .agent/lms/team/voice_refs/voice_a_ref.wav --ref-sha256 <hex> \
+    python voice_batch/run.py --agent-root .agent --voice-root .voices --tutor tutor_001 --voice voice_a \
+        --ref .voices/voices/refs/voice_a_ref.wav --ref-sha256 <hex> \
         --category greetings --model-path <snapshot dir> --work $RUNNER_TEMP/vb
 
     python voice_batch/run.py --kind r3 --batch voice_batches/inbox/<r3 batch>.json --shard 3/8 \
-        --agent-root .agent --voice <voice> --ref .agent/<ref> --ref-sha256 <hex> \
+        --agent-root .agent --voice-root .voices --voice <voice> --ref .voices/<ref> --ref-sha256 <hex> \
         --model-path <snapshot dir> --work $RUNNER_TEMP/vb [--f0-target 102 --f0-tolerance 8]
 
 Rounds: seeds 11/22/33, then 44, then 55. After each round qc.py picks and
@@ -26,15 +26,18 @@ out of seed rounds is failed (final), never remaining; with RENDER_SERIES set
 a continuation run skips lines already final-failed in the same series.
 
 Render and QC run as separate processes so the TTS model (~12 GB) and the
-ASR/speaker models are never resident together. Tutor lines: passing files
-are copied beside their scripts in the agent checkout and recorded in
-<tutor dir>/<voice>_manifest.<category>.json. Assistant lines (--kind
-assistant --tutor assistant_NNN) work the same way under
-lms/team/assistants/CAPS/<id>, and the manifest records the voice spec's
-agreement_in_place flag. R-3 lines: passing files are
-encoded to <key>.mp3 in lms/dart/templates/assets/r3_packs/audio/ and
-recorded in r3_manifest.<voice>.partNN.json beside them (merge_manifest.py
-folds the parts into r3_manifest.<voice>.json). Logs ids and numbers only.
+ASR/speaker models are never resident together. Scripts, voice specs and
+R-3 app sources are read from the agent checkout (--agent-root, read-only);
+audio and manifests go to the voice-repo checkout (--voice-root, paths from
+voice_paths.py). Tutor lines: passing files go to
+voices/team/tutors/CAPS/<tutor>/ at the same path as their scripts in agent,
+recorded in <that dir>/<voice>_manifest.<category>.json. Assistant lines
+(--kind assistant --tutor assistant_NNN) work the same way under
+voices/team/assistants/CAPS/<id>, and the manifest records the voice spec's
+agreement_in_place flag. R-3 lines: passing files are encoded to <key>.mp3
+in voices/r3/ and recorded in r3_manifest.<voice>.partNN.json beside them
+(merge_manifest.py folds the parts into r3_manifest.<voice>.json). Logs ids
+and numbers only.
 """
 from __future__ import annotations
 
@@ -53,10 +56,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import pronunciations  # noqa: E402
-from lines import ASSISTANT_CATEGORIES, build_lines, team_rel  # noqa: E402
+from lines import ASSISTANT_CATEGORIES, build_lines  # noqa: E402
 import qc  # noqa: E402
 import qc_failed  # noqa: E402
 import resume  # noqa: E402
+import voice_paths  # noqa: E402
 from qc import F0_TOLERANCE, TAIL_MAX_DB, TAIL_WIN_S, TARGET_F0, f0_range, pace_spec  # noqa: E402
 from textnorm import TAIL_PAD  # noqa: E402
 
@@ -218,10 +222,10 @@ def drive(items: list[dict], work: Path, ref: Path, scripts: Path, args, label: 
     return remaining
 
 
-def run_header(args, ref: Path, agent: Path) -> dict:
+def run_header(args, ref: Path, voice: Path) -> dict:
     lo, hi = f0_range(args.f0_target, args.f0_tolerance)
     sim_short, sim_long = getattr(args, "sim_short", qc.SIM_SHORT), getattr(args, "sim_long", qc.SIM_LONG)
-    ref_rel = str(ref.relative_to(agent)) if ref.is_relative_to(agent) else ref.name
+    ref_rel = str(ref.relative_to(voice)) if ref.is_relative_to(voice) else ref.name
     head = {
         "voice": args.voice,
         "reference": {"path": ref_rel, "sha256": args.ref_sha256},
@@ -277,24 +281,24 @@ def failed_fields(r: dict) -> dict:
                                  "asr_match", "tail_db", "wpm", "pace", "checks", "gate") if k in r}}
 
 
-def unchanged(prev: dict | None, it: dict, agent: Path, ref_sha: str, extra: tuple = ()) -> bool:
+def unchanged(prev: dict | None, it: dict, voice: Path, ref_sha: str, extra: tuple = ()) -> bool:
     # A line rendered without the current tail pad (before the clipped-last-
     # word fix) counts as changed, so the next batch re-renders it.
     return bool(prev and prev.get("text_sha256") == it["text_sha256"]
                 and prev.get("tail_pad") == TAIL_PAD
                 and all(prev.get(k) == it[k] for k in extra)
                 and prev.get("ref_sha256", ref_sha) == ref_sha
-                and (agent / it["file"]).exists() and sha256_file(agent / it["file"]) == prev.get("sha256"))
+                and (voice / it["file"]).exists() and sha256_file(voice / it["file"]) == prev.get("sha256"))
 
 
-def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
+def run_tutor(args, agent: Path, ref: Path, scripts: Path, voice: Path | None = None) -> int:
     import aac
     only = {x for x in args.lines.split(",") if x}
     kind = getattr(args, "kind", "tutor")
-    tutor_rel = team_rel(args.tutor)
+    voice = agent if voice is None else voice
     # One manifest per category so parallel category jobs never touch the same
     # file; merge_manifest.py folds them into <voice>_manifest.json afterwards.
-    manifest_path = agent / tutor_rel / f"{args.voice}_manifest.{args.category}.json"
+    manifest_path = voice / voice_paths.team_dir(args.tutor) / f"{args.voice}_manifest.{args.category}.json"
     manifest = load_json(manifest_path)
     done = {e["id"]: e for e in manifest.get("lines", [])}
     same_ref = manifest.get("reference", {}).get("sha256") == args.ref_sha256
@@ -319,7 +323,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
         # pronunciation now changes what is spoken.
         legacy = prev is not None and "render_sha256" not in prev and "tts_text" not in it
         same_render = legacy or (prev or {}).get("render_sha256") == it["render_sha256"]
-        if same_ref and same_render and unchanged(prev, it, agent, args.ref_sha256):
+        if same_ref and same_render and unchanged(prev, it, voice, args.ref_sha256):
             print(f"line {it['id']}: already rendered for this text and reference, skipping")
             continue
         if series and resume.final_failed(prev_failed.get(it["id"]), it, args.ref_sha256, series):
@@ -335,7 +339,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
 
     started = time.time()
     by_id = {it["id"]: it for it in items}
-    manifest.update({"tutor": args.tutor, "category": args.category, **run_header(args, ref, agent)})
+    manifest.update({"tutor": args.tutor, "category": args.category, **run_header(args, ref, voice)})
     manifest["settings"]["output"] = {"format": "aac", "container": "m4a", "bitrate_kbps": aac.BITRATE_KBPS,
                                       "sample_rate": aac.SAMPLE_RATE, "channels": 1}
     if kind == "assistant":
@@ -355,7 +359,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
             it = by_id[r["id"]]
             tally["pass" if r["status"] == "pass" else "fail"] += 1
             if r["status"] == "pass":
-                dst = agent / it["file"]
+                dst = voice / it["file"]
                 encoder = aac.encode(r["final_path"], dst)
                 write_timings(dst, r)
                 lines[it["id"]] = {
@@ -385,7 +389,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
         manifest_path.parent.mkdir(parents=True, exist_ok=True)
         manifest_path.write_text(json.dumps(manifest, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         # <clip dir>/qc_failed.json: the category's final-failed lines (a line that passes drops out).
-        qc_failed.write_by_clip_dir(agent, {str(Path(it["file"]).parent) for it in built}, manifest["failed"])
+        qc_failed.write_by_clip_dir(voice, {str(Path(it["file"]).parent) for it in built}, manifest["failed"])
 
     remaining = drive(items, Path(args.work).resolve() / args.category, ref, scripts, args, args.category, install, write)
     print(f"category {args.category}: {tally['pass']} passed, {tally['fail']} failed, {len(remaining)} left "
@@ -394,7 +398,7 @@ def run_tutor(args, agent: Path, ref: Path, scripts: Path) -> int:
     return 0
 
 
-def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
+def run_r3(args, agent: Path, ref: Path, scripts: Path, voice: Path | None = None) -> int:
     import mp3
     from batch import load_batch
     from r3_lines import AUDIO_DIR, build_r3_lines, shard
@@ -405,7 +409,8 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
                   locale=b["locale"], agent_root=agent)
     items_all = build_r3_lines(only=b.get("lines"), **common)
     mine = shard(items_all, k, n)
-    audio = agent / AUDIO_DIR
+    voice = agent if voice is None else voice
+    audio = voice / AUDIO_DIR
     audio.mkdir(parents=True, exist_ok=True)
     merged = load_json(audio / f"r3_manifest.{args.voice}.json")
     part_path = audio / f"r3_manifest.{args.voice}.part{k:02d}.json"
@@ -416,7 +421,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
     prev_failed = {e["id"]: e for m in (merged, part) for e in m.get("failed", [])}
     items = []
     for it in mine:
-        if unchanged(done.get(it["id"]), it, agent, args.ref_sha256, ("render_sha256",)):
+        if unchanged(done.get(it["id"]), it, voice, args.ref_sha256, ("render_sha256",)):
             print(f"line {it['id']}: already rendered for this text and reference, skipping")
             continue
         if series and resume.final_failed(prev_failed.get(it["id"]), it, args.ref_sha256, series):
@@ -433,7 +438,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
 
     started = time.time()
     by_id = {it["id"]: it for it in items}
-    part.update({"kind": "r3", "locale": b["locale"], "shard": f"{k}/{n}", **run_header(args, ref, agent)})
+    part.update({"kind": "r3", "locale": b["locale"], "shard": f"{k}/{n}", **run_header(args, ref, voice)})
     part["settings"]["output"] = {"format": "mp3", "bitrate_kbps": mp3.BITRATE_KBPS, "sample_rate": mp3.SAMPLE_RATE,
                                   "channels": 1, "dir": AUDIO_DIR}
     lines = {e["id"]: e for e in part.get("lines", [])}
@@ -448,7 +453,7 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
             base = {"id": it["id"], "key": it["key"], "locale": it["locale"], "category": "r3",
                     "needs_listen": it["needs_listen"] or bool(r.get("similarity_lowered"))}
             if r["status"] == "pass":
-                dst = agent / it["file"]
+                dst = voice / it["file"]
                 encoder = mp3.encode(r["final_path"], dst)
                 write_timings(dst, r)
                 lines[it["id"]] = {
@@ -485,7 +490,9 @@ def run_r3(args, agent: Path, ref: Path, scripts: Path) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--kind", choices=("tutor", "r3", "assistant"), default="tutor")
-    ap.add_argument("--agent-root", required=True)
+    ap.add_argument("--agent-root", required=True, help="agent checkout: scripts, voice specs (read-only)")
+    ap.add_argument("--voice-root", help="voice-repo checkout the audio and manifests go to "
+                    "(voice_paths.py; default: --agent-root)")
     ap.add_argument("--voice", required=True)
     ap.add_argument("--ref", required=True)
     ap.add_argument("--ref-sha256", required=True)
@@ -530,6 +537,7 @@ def main() -> int:
         ap.error("--batch and --shard k/n are required for kind r3")
 
     agent = Path(args.agent_root).resolve()
+    voice = Path(args.voice_root).resolve() if args.voice_root else agent
     ref = Path(args.ref).resolve()
     if sha256_file(ref) != args.ref_sha256:
         print("::error::reference sha256 does not match the batch; refusing to render")
@@ -544,8 +552,8 @@ def main() -> int:
     args.pace_wpm, args.pace_tolerance = voice_pace(agent, args.persona or args.tutor)
     print(f"pace gate: {args.pace_wpm:g} +/- {args.pace_tolerance:g} wpm")
     if args.kind == "r3":
-        return run_r3(args, agent, ref, scripts)
-    return run_tutor(args, agent, ref, scripts)
+        return run_r3(args, agent, ref, scripts, voice)
+    return run_tutor(args, agent, ref, scripts, voice)
 
 
 if __name__ == "__main__":

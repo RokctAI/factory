@@ -1,5 +1,9 @@
 """Build the render list for one tutor from the agent repo's team layout.
 
+Scripts are read from the agent checkout; the audio ("file") goes to the
+voice repo (voice_paths.py: voices/team/... in RokctAI/lessons), at the same
+path relative to the team folder.
+
 Audio sits beside its script (the app convention the factory clip table
 uses: ref 'tutor_001/greetings/02' -> script tutors/CAPS/tutor_001/greetings/02.md):
 
@@ -22,6 +26,7 @@ from pathlib import Path
 
 import pronunciations
 import sys
+import voice_paths
 from textnorm import speak_text, split_sentences
 
 CLIP_CATEGORIES = ("acknowledgements", "greetings", "signoffs")
@@ -29,7 +34,8 @@ ASSISTANT_CATEGORIES = ("intro", "handover", "signoff", "timekeeping")
 
 
 def team_rel(target: str) -> str:
-    """The agent-repo team folder of a tutor_NNN or assistant_NNN."""
+    """The agent-repo team folder of a tutor_NNN or assistant_NNN (scripts,
+    persona files; read-only). Its audio is under voice_paths.team_dir."""
     if re.fullmatch(r"assistant_\d{3}", target):
         return f"lms/team/assistants/CAPS/{target}"
     if re.fullmatch(r"tutor_\d{3}", target):
@@ -89,7 +95,7 @@ def _item(id_: str, category: str, text: str, team_rel: str, wav: str, script: s
           names=()) -> dict:
     clip = wav[:-4] + AAC_EXT if wav.endswith(".wav") else wav
     return {"id": id_, "category": category, **pronounced_fields(id_, text, pron, names),
-            "file": f"{team_rel}/{clip}", "final_wav": f"{team_rel}/{wav}", "script": script}
+            "file": voice_paths.voice_path(f"{team_rel}/{clip}"), "final_wav": f"{team_rel}/{wav}", "script": script}
 
 AAC_EXT = ".m4a"   # aac.EXT; kept here so lines.py imports nothing heavy
 

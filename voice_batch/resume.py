@@ -12,7 +12,7 @@ seed rounds are recorded as failed (final), and the rest are listed under
 pushes what is installed so far (push_agent.sh), at most every
 RENDER_PUSH_MINUTES. The merge job counts "remaining" across the batch's
 manifests; if any line is left it re-dispatches the workflow (a
-continuation, at most CONTINUATION_CAP of them) and holds the agent PR back
+continuation, at most CONTINUATION_CAP of them) and holds the voice PR back
 until the batch is complete.
 
     python voice_batch/resume.py remaining MANIFEST [CATEGORY ...]   # prints a count

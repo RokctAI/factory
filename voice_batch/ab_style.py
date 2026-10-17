@@ -3,13 +3,15 @@
 than the batch method (one sentence at a time, the take nearest the target
 pitch with the fewest upward swings)?
 
-    python voice_batch/ab_style.py --agent-root .agent --voice-persona assistant_005 \
+    python voice_batch/ab_style.py --agent-root .agent --voice-root .voices --voice-persona assistant_005 \
         --r3 <key>,<key> [--lesson <rel>] --model-path <snapshot> --out DIR
 
 B renders each line's whole text as ONE prompt on seeds 11, 22 and 33, with
 no take selection, so the listener hears the model's own phrasing across
 sentences. A is the line as the batch rendered it (passed in by the
-workflow from the agent branch or the stems pre-release). Writes
+workflow from the voice-repo branch or the stems pre-release). The reference
+is read from the voice-repo checkout (--voice-root, voice_paths.py), the
+scripts and R-3 app sources from the agent checkout. Writes
 DIR/<n>-<key>-B<seed>.mp3 (with the batch's 200 ms lead-in) and
 DIR/ab.json (keys, seeds, durations; no text). Logs keys and numbers only.
 """
@@ -55,6 +57,7 @@ def texts(args) -> list[tuple[str, str]]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--agent-root", required=True)
+    ap.add_argument("--voice-root", default="", help="voice-repo checkout holding the reference (default: --agent-root)")
     ap.add_argument("--lessons-root", default=os.environ.get("LESSONS_ROOT", ""))
     ap.add_argument("--voice-persona", required=True)
     ap.add_argument("--r3", default="")
@@ -65,7 +68,7 @@ def main() -> int:
     import lesson_lines as L
     v = L.load_voices()[args.voice_persona]
     agent = Path(args.agent_root).resolve()
-    ref = agent / v["ref_path"]
+    ref = (Path(args.voice_root).resolve() if args.voice_root else agent) / v["ref_path"]
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     work = out / "_work"

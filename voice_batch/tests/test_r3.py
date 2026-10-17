@@ -30,7 +30,7 @@ import r3_pack_check  # noqa: E402
 AGENT_ROOT = os.environ.get("AGENT_ROOT")
 PROBE = FACTORY / "voice_batches" / "examples" / "r3_phonics_probe.json"
 EN = ("english_home_language.", "english_first_additional_language.")
-GOOD = {"kind": "r3", "voice": "voice_x", "ref_path": "lms/team/voice_refs/voice_x_ref.wav",
+GOOD = {"kind": "r3", "voice": "voice_x", "ref_path": "voices/refs/voice_x_ref.wav",
         "ref_sha256": "0" * 64, "agent_branch": "rokct/r3-test"}
 NO_RESP = {"by_key": {}, "by_text": {}}
 # Grade 1 digraph and blend tokens that are respelled as one sound (sh, ch, th, bl-ack, sp-ot).
@@ -287,7 +287,9 @@ class R3Batch(unittest.TestCase):
         out = "\n".join(batch.outputs(b))
         for i in R.build_r3_lines()[:50]:
             self.assertNotIn(i["text"], out)
-        self.assertIn("sparse<<SPARSE_EOF\nlms/dart/templates/assets/r3_packs/audio\n", out)
+        self.assertIn("sparse<<SPARSE_EOF\nlms/team/scripts\n", out)
+        self.assertIn("voice_sparse<<SPARSE_EOF\nvoices/refs\nvoices/r3\nSPARSE_EOF", out)
+        self.assertIn("voice_dir=voices/r3", out)
         self.assertIn('matrix_json=[{"category": "r3", "shard": "1/8"}', out)
 
     def test_probe_example(self):
@@ -302,7 +304,7 @@ class R3Batch(unittest.TestCase):
 
 class F0Gate(unittest.TestCase):
     def test_tutor_defaults_unchanged(self):
-        good = {"tutor": "tutor_001", "voice": "voice_a", "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
+        good = {"tutor": "tutor_001", "voice": "voice_a", "ref_path": "voices/refs/voice_a_ref.wav",
                 "ref_sha256": "0" * 64, "agent_branch": "rokct/x-y", "categories": ["teaching"]}
         b = load(good)
         self.assertEqual((b["kind"], b["f0_target_hz"], b["f0_tolerance_hz"]), ("tutor", 102.0, 8.0))
@@ -406,8 +408,9 @@ class RunR3Install(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
             agent = d / "agent"
-            (agent / "lms/team/voice_refs").mkdir(parents=True)
-            ref = agent / "lms/team/voice_refs/voice_a_ref.wav"
+            voices = d / "voices_checkout"            # the voice repo checkout (audio, manifests, refs)
+            (voices / "voices/refs").mkdir(parents=True)
+            ref = voices / "voices/refs/voice_a_ref.wav"
             ref.write_bytes(b"ref")
             sha = hashlib.sha256(b"ref").hexdigest()
             wav = d / "take.wav"
@@ -440,20 +443,22 @@ class RunR3Install(unittest.TestCase):
                 PROBE_TMP = d / "probe.json"
                 PROBE_TMP.write_text(json.dumps(b))
                 args.batch = str(PROBE_TMP)
-                self.assertEqual(run.run_r3(args, agent, ref, agent / "lms/team/scripts"), 0)
-                audio = agent / R.AUDIO_DIR
+                self.assertEqual(run.run_r3(args, agent, ref, agent / "lms/team/scripts", voices), 0)
+                self.assertEqual(R.AUDIO_DIR, "voices/r3")
+                audio = voices / R.AUDIO_DIR
                 part = json.loads((audio / "r3_manifest.voice_a.part01.json").read_text())
                 self.assertEqual((len(part["lines"]), len(part["failed"])), (5, 1))
                 e = part["lines"][0]
                 self.assertTrue(e["needs_listen"])
                 self.assertIn("tts_text", e)
                 self.assertNotEqual(e["tts_text"], e["text"])
-                self.assertTrue((agent / e["file"]).is_file())
+                self.assertTrue((voices / e["file"]).is_file())
+                self.assertEqual(part["reference"]["path"], "voices/refs/voice_a_ref.wav")
                 self.assertEqual(part["settings"]["gate"]["median_f0_hz"], [94.0, 110.0])
                 self.assertEqual(part["settings"]["output"]["bitrate_kbps"], 64)
                 self.assertFalse(list(audio.glob("*.wav")))
                 # Second run: the 5 installed lines are skipped, only the failed one re-renders.
-                self.assertEqual(run.run_r3(args, agent, ref, agent / "lms/team/scripts"), 0)
+                self.assertEqual(run.run_r3(args, agent, ref, agent / "lms/team/scripts", voices), 0)
                 self.assertEqual(len(calls[1]), 1)
                 self.assertEqual(calls[1][0], calls[0][0])
             finally:

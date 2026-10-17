@@ -5,9 +5,9 @@ someone can listen to a pronunciations.json entry and adjust it.
     # plan: which words changed, which voices (GitHub step outputs)
     python voice_batch/audition.py plan --before <sha> --after <sha> [--words "Mahikeng,Thendo"]
 
-    # render one voice's clips into the agent checkout
-    python voice_batch/audition.py render --agent-root .agent --voice voice_a \
-        --ref .agent/<ref> --ref-sha256 <hex> --model-path <snapshot dir> \
+    # render one voice's clips into the voice-repo checkout (scripts from agent)
+    python voice_batch/audition.py render --agent-root .agent --voice-root .voices --voice voice_a \
+        --ref .voices/<ref> --ref-sha256 <hex> --model-path <snapshot dir> \
         --work $RUNNER_TEMP/audition --words-json words.json --summary summary.md
 
 Changed words: keys added to or changed in "words" (their respelling), and
@@ -22,9 +22,9 @@ and the tail check from qc.py (tail_db/tail_ok: last 50 ms at or below
 -34 dB of the loudest 10 ms frame). The prompt carries textnorm's tail pad. If none
 passes, the best-scoring take is kept and marked passed: false.
 
-Output (agent repo, never this public repo):
-lms/team/voices/samples/pronunciation/<voice>/<word>--<respelling>.mp3 plus
-audition.json beside them. voices/samples/ is excluded from the app bundle.
+Output (the private voice repo, voice_paths.py: RokctAI/lessons; never this
+public repo): voices/samples/pronunciation/<voice>/<word>--<respelling>.mp3
+plus audition.json beside them. Samples are not part of the app bundle.
 Logs and the summary carry words, respellings and paths only: the same text
 that is already public in pronunciations.json.
 """
@@ -43,6 +43,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import pronunciations  # noqa: E402
+import voice_paths  # noqa: E402
 from qc import tail_db, tail_ok  # noqa: E402
 from textnorm import speak_text  # noqa: E402
 
@@ -50,7 +51,7 @@ PRON_REL = "voice_batch/pronunciations.json"
 INBOX = HERE.parent / "voice_batches" / "inbox"
 VOICES = ("voice_a", "voice_b")
 BRANCH = "rokct/pronunciation-audition"
-OUT_DIR = "lms/team/voices/samples/pronunciation"
+OUT_DIR = f"{voice_paths.samples_dir()}/pronunciation"   # in the voice repo
 SEEDS = (11, 22, 33)
 MAX_CLIPS = 30
 MIN_SIM, MIN_S, MAX_S, MIN_DBFS = 0.75, 0.4, 8.0, -45.0
@@ -159,7 +160,7 @@ def voices(inbox: Path = INBOX, names: tuple = VOICES) -> list[dict]:
         if len(refs[v]) != 1:
             raise AuditionError(f"{v}: expected one pinned reference in {inbox.name}/, found {len(refs[v])}")
         (ref_path, sha), = refs[v]
-        if not (isinstance(ref_path, str) and re.fullmatch(r"lms/team/voice_refs/[A-Za-z0-9_]+\.wav", ref_path)
+        if not (isinstance(ref_path, str) and re.fullmatch(voice_paths.ref_path_re(), ref_path)
                 and isinstance(sha, str) and re.fullmatch(r"[0-9a-f]{64}", sha)):
             raise AuditionError(f"{v}: bad ref_path or ref_sha256")
         out.append({"voice": v, "ref_path": ref_path, "ref_sha256": sha})
@@ -225,10 +226,11 @@ def render(args) -> int:
     import mp3
     rows = json.loads(Path(args.words_json).read_text(encoding="utf-8"))
     agent, ref, work = Path(args.agent_root).resolve(), Path(args.ref).resolve(), Path(args.work).resolve()
+    voice = Path(args.voice_root).resolve() if getattr(args, "voice_root", "") else agent
     if hashlib.sha256(ref.read_bytes()).hexdigest() != args.ref_sha256:
         print("::error::reference sha256 does not match; refusing to render")
         return 1
-    out_dir = agent / OUT_DIR / args.voice
+    out_dir = voice / OUT_DIR / args.voice
     out_dir.mkdir(parents=True, exist_ok=True)
     work.mkdir(parents=True, exist_ok=True)
     scripts = agent / "lms/team/scripts"
@@ -266,7 +268,7 @@ def render(args) -> int:
                   "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
     clips = index.setdefault("clips", {})
     lines = [f"### Pronunciation audition `{args.voice}`", "",
-             f"Agent branch `{BRANCH}`", "",
+             f"Branch `{BRANCH}` of {voice_paths.VOICE_REPO}", "",
              "| word | respelling | file | QC |", "|---|---|---|---|"]
     failed = 0
     for r in rows:
@@ -277,7 +279,7 @@ def render(args) -> int:
             continue
         seed, best = min(t.items(), key=lambda kv: (not kv[1]["passed"], -kv[1]["similarity"]))
         rel = f"{OUT_DIR}/{args.voice}/{r['clip']}.mp3"
-        encoder = mp3.encode(best["wav"], agent / rel)
+        encoder = mp3.encode(best["wav"], voice / rel)
         clips[r["clip"]] = {
             "word": r["word"], "respelling": r["respelling"], "kind": r["kind"], "carrier": r["carrier"],
             "file": rel, "seed": seed, "seeds_tried": sorted(t), "encoder": encoder,
@@ -305,6 +307,7 @@ def main(argv: list[str] | None = None) -> int:
     r = sub.add_parser("render")
     for a in ("--agent-root", "--voice", "--ref", "--ref-sha256", "--model-path", "--work", "--words-json"):
         r.add_argument(a, required=True)
+    r.add_argument("--voice-root", default="", help="voice-repo checkout the clips go to (default: --agent-root)")
     r.add_argument("--summary", default="")
     args = ap.parse_args(argv)
     if args.cmd == "render":

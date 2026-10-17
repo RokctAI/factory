@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Fold the per-category manifests into one <voice>_manifest.json.
 
-    python voice_batch/merge_manifest.py <agent>/lms/team/tutors/CAPS/<tutor> <voice>
-    python voice_batch/merge_manifest.py --r3 <agent>/lms/dart/templates/assets/r3_packs/audio <voice>
+    python voice_batch/merge_manifest.py <voice repo>/voices/team/tutors/CAPS/<tutor> <voice>
+    python voice_batch/merge_manifest.py --r3 <voice repo>/voices/r3 <voice>
+
+(paths from voice_paths.py: batch.py's voice_dir output)
 
 Category jobs run in parallel and each writes <voice>_manifest.<category>.json,
 so they never collide. This merges them (lines and failures in category
@@ -17,7 +19,7 @@ so the audio folder keeps one manifest per voice.
 "remaining" (lines a render job left for a continuation run when its time
 budget ran out, resume.py) is carried over: per category for a tutor
 ({category: [ids]}), one list for r3. The merge job counts it to decide
-whether to re-dispatch the workflow and hold the agent PR back.
+whether to re-dispatch the workflow and hold the voice PR back.
 """
 from __future__ import annotations
 

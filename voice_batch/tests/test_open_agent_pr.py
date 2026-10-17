@@ -129,7 +129,7 @@ class OpenAgentPr(unittest.TestCase):
         self.assertTrue(body.rstrip().endswith("https://claude.ai/code/session_01WVrZ3ZtDLBuD78jnGwzGHF"))
         self.assertIn("🤖 Generated with [Claude Code](https://claude.com/claude-code)", body)
         self.assertIn("Before", body)
-        self.assertIn("Merging this PR ships the audio into the app bundle", body)
+        self.assertIn("Merging this PR publishes the audio on main", body)
         self.assertIn("https://github.com/RokctAI/factory/actions/runs/7", body)
         self.assertIn("This run: 1 passed, 1 failed, 1 respelled for phonics", body)
         self.assertIn("Branch manifest total: 2 passed, 1 failed", body)

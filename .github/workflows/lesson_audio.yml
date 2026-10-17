@@ -72,6 +72,9 @@ env:
   LESSON_AUDIO_JOBS: ${{ inputs.max_jobs || vars.LESSON_AUDIO_JOBS || '6' }}
   LESSON_AUDIO_JOB_WORDS: ${{ vars.LESSON_AUDIO_JOB_WORDS || '4000' }}
   TEAM_ROOT: ${{ github.workspace }}/.agent/lms/team
+  # Voice references (voice_batch/voice_paths.py): one switch.
+  VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+  VOICE_ROOT: ${{ vars.VOICE_ROOT || 'voices' }}
 
 jobs:
   plan:
@@ -173,7 +176,7 @@ jobs:
             /school/curriculum/CAPS/*/session/
             /school/curriculum/CAPS/*/syllabus/*.json
 
-      - name: Check out agent team, voice refs and renderer (private)
+      - name: Check out agent team and renderer (private; read-only)
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
@@ -186,7 +189,6 @@ jobs:
             /lms/team/tutors/CAPS/
             /lms/team/assistants/CAPS/
             /lms/team/voices/*.json
-            /lms/team/voice_refs/
             /lms/team/scripts/
             !/lms/team/tutors/CAPS/**/*.wav
             !/lms/team/tutors/CAPS/**/*.m4a
@@ -197,6 +199,20 @@ jobs:
             !*.jpg
             !*.webp
             !*.mp4
+
+      - name: Voice paths
+        id: vp
+        run: echo "refs=$(python3 voice_batch/voice_paths.py refs)" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the voice refs (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .voices
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: ${{ steps.vp.outputs.refs }}
 
       - uses: actions/setup-python@v5
         with:
@@ -260,7 +276,7 @@ jobs:
           stems="$RUNNER_TEMP/lesson_stems"
           push=(python voice_batch/ci/lesson_stems.py push --lessons-root _lessons --stems-root "$stems"
                 --persona "$PERSONA" --lessons "$LESSONS")
-          python voice_batch/lesson_audio.py render --lessons-root _lessons --agent-root .agent \
+          python voice_batch/lesson_audio.py render --lessons-root _lessons --agent-root .agent --voice-root .voices \
             --stems-root "$stems" --persona "$PERSONA" --lessons "$LESSONS" \
             --model-path "$model_path" --work "$RUNNER_TEMP/lesson_audio" \
             --checkpoint-cmd "$(printf '%q ' "${push[@]}")"

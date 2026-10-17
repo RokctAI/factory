@@ -13,6 +13,15 @@
     ],
     "RokctAI/lessons": [
       {
+        "workflow": "baked_samples_to_agent.yml",
+        "paths": [
+          "voices/team/tutors/CAPS/*/samples/**"
+        ],
+        "branches": [
+          "main"
+        ]
+      },
+      {
         "workflow": "ieb_licence_gate.yml",
         "paths": [
           "school/IEB/**",

@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """How many of a batch's lines are still to render (the scheduled scan).
 
-    python voice_batch/pending.py --agent-root .agentmain --root .agentmain --root <branch manifests> BATCH_JSON
-    python voice_batch/pending.py --agent-root .agentmain --scan LIST   # prints the first pending batch, or nothing
+    python voice_batch/pending.py --agent-root .agentmain --root .voicesmain --root <branch manifests> BATCH_JSON
+    python voice_batch/pending.py --agent-root .agentmain --voice-root .voicesmain --scan LIST
+        # prints the first pending batch, or nothing
 
 LIST has one "<batch path>\t<branch manifests dir>" line per batch, in scan
-order (the dir is empty when the batch's agent branch does not exist); agent
-main's manifests always count.
+order (the dir is empty when the batch's voice-repo branch does not exist);
+the voice repo main's manifests (--voice-root, default --agent-root) always
+count. Manifests sit at voice_paths.py paths (voices/... in RokctAI/lessons).
 
 Builds the batch's lines from the agent checkout (scripts, voice specs, R-3
 app sources) exactly as run.py does, then reads the batch's manifests under
-every --root (agent main, and the files of the batch's agent branch exported
+every --root (voice repo main, and the files of the batch's branch exported
 by ci/scan_pending.sh). A line is done when any of them has a current passed
 entry for it (same text, spoken text, tail pad and reference: manifest
 fields only, no audio hash) or a failed entry for the same text and
@@ -41,13 +43,10 @@ def _load(p: Path) -> dict | None:
 
 def manifests(b: dict, root: Path) -> list[dict]:
     """The batch's manifests under one root: the merged one and the parts."""
+    d = root / batchmod.voice_dir(b)
     if b["kind"] == "r3":
-        from r3_lines import AUDIO_DIR
-        d = root / AUDIO_DIR
         paths = [d / f"r3_manifest.{b['voice']}.json", *sorted(d.glob(f"r3_manifest.{b['voice']}.part[0-9][0-9].json"))]
     else:
-        from lines import team_rel
-        d = root / team_rel(b["tutor"])
         paths = [d / f"{b['voice']}_manifest.json", *(d / f"{b['voice']}_manifest.{c}.json" for c in b["categories"])]
     return [m for m in map(_load, paths) if m is not None]
 
@@ -104,18 +103,21 @@ def first_pending(batches: list[tuple[str, list[Path]]], agent_root: Path,
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--agent-root", required=True, help="agent checkout the lines are built from")
+    ap.add_argument("--voice-root", help="voice-repo main checkout whose manifests count as done in --scan "
+                    "(default: --agent-root)")
     ap.add_argument("--root", action="append", default=[], help="a tree whose manifests count as done (repeatable)")
     ap.add_argument("--factory-root", default=None)
     ap.add_argument("--scan", help="file of '<batch>\\t<branch dir>' lines: print the first pending batch")
     ap.add_argument("batch", nargs="?")
     a = ap.parse_args(argv)
     agent = Path(a.agent_root)
+    voice_main = Path(a.voice_root) if a.voice_root else agent
     if a.scan:
         batches = []
         for ln in Path(a.scan).read_text(encoding="utf-8").splitlines():
             if ln.strip():
                 path, _, extra = ln.partition("\t")
-                batches.append((path, [agent, *([Path(extra)] if extra else [])]))
+                batches.append((path, [voice_main, *([Path(extra)] if extra else [])]))
         hit = first_pending(batches, agent, Path(a.factory_root) if a.factory_root else None)
         if hit:
             print(hit[0])
