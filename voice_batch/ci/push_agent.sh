@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
-# Commit one job's passing audio + its manifest to the agent branch.
+# Commit one job's passing audio + its manifest to the voice-repo branch
+# (RokctAI/lessons since phase 2 of the split; the name is historical).
 #
-#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH TUTOR VOICE CATEGORY
-#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH r3 VOICE LABEL
-#   AGENT_PAT=... push_agent.sh AGENT_DIR BRANCH pronunciation VOICE LABEL
+#   AGENT_PAT=... push_agent.sh VOICE_DIR BRANCH TUTOR VOICE CATEGORY
+#   AGENT_PAT=... push_agent.sh VOICE_DIR BRANCH r3 VOICE LABEL
+#   AGENT_PAT=... push_agent.sh VOICE_DIR BRANCH pronunciation VOICE LABEL
 #
+# VOICE_DIR is the voice-repo checkout; the folders come from
+# voice_batch/voice_paths.py (VOICE_ROOT, default voices/).
 # Only rokct/ branches. A tutor job stages only the tutor's .m4a files, their <clip>.timings.json,
-# <voice>_manifest[.<category>].json and <clip dir>/qc_failed.json; an r3 job stages only
-# lms/dart/templates/assets/r3_packs/audio/<key>.mp3, <key>.timings.json,
+# <voice>_manifest[.<category>].json and <clip dir>/qc_failed.json under
+# voices/team/{tutors,assistants}/CAPS/<id>/; an r3 job stages only
+# voices/r3/<key>.mp3, <key>.timings.json,
 # r3_manifest.<voice>[.partNN].json and qc_failed.<voice>.json directly in that folder (additions,
 # changes, and the merge job's removal of folded part manifests); a
 # pronunciation audition job stages only
-# lms/team/voices/samples/pronunciation/<voice>/<slug>.mp3 and audition.json
-# there (voices/samples/ never ships in the app bundle). Never the
+# voices/samples/pronunciation/<voice>/<slug>.mp3 and audition.json
+# there (samples never ship in the app bundle). Never the
 # reference, never anything else. Then it
 # pushes with the token passed as an HTTP header (git -c, scoped to the origin
 # host) on every git command in the checkout. The token is masked, never
@@ -38,7 +42,7 @@ set -Eeuo pipefail
 trap 'rc=$?; if [ "${FUNCNAME[0]:-}" = agit ]; then at="${BASH_LINENO[0]}"; cmd="agit $*"; else at="$LINENO"; cmd="$BASH_COMMAND"; fi
   echo "::error::push_agent.sh line $at: \"$cmd\" exited $rc"' ERR
 
-dir="${1:?agent dir}"; branch="${2:?branch}"; tutor="${3:?tutor, r3 or pronunciation}"; voice="${4:?voice}"; category="${5:?category}"
+dir="${1:?voice repo dir}"; branch="${2:?branch}"; tutor="${3:?tutor, r3 or pronunciation}"; voice="${4:?voice}"; category="${5:?category}"
 : "${AGENT_PAT:?AGENT_PAT must be set}"
 case "$branch" in
   rokct/*) ;;
@@ -47,16 +51,17 @@ esac
 if ! printf '%s' "$voice" | grep -qE '^[a-z][a-z0-9_]{0,31}$'; then
   echo "::error::bad voice name"; exit 1
 fi
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 if [ "$tutor" = "r3" ]; then
-  tdir="lms/dart/templates/assets/r3_packs/audio"
+  tdir="$(python3 "$here/voice_paths.py" dir r3)"
   allowed="^$tdir/([A-Za-z0-9_][A-Za-z0-9_.-]*\.mp3|[A-Za-z0-9_][A-Za-z0-9_.-]*\.timings\.json|r3_manifest\.${voice}(\.part[0-9]{2})?\.json|qc_failed\.${voice}\.json)$"
   ext="mp3"; manifest="$tdir/r3_manifest.${voice}.json"
 elif [ "$tutor" = "pronunciation" ]; then
-  tdir="lms/team/voices/samples/pronunciation/$voice"
+  tdir="$(python3 "$here/voice_paths.py" dir pronunciation "$voice")"
   allowed="^$tdir/([a-z0-9][a-z0-9-]*\.mp3|audition\.json)$"
   ext="mp3"; manifest="$tdir/audition.json"
 elif printf '%s' "$tutor" | grep -qE '^(tutor|assistant)_[0-9]{3}$'; then
-  case "$tutor" in tutor_*) tdir="lms/team/tutors/CAPS/$tutor" ;; *) tdir="lms/team/assistants/CAPS/$tutor" ;; esac
+  tdir="$(python3 "$here/voice_paths.py" dir "$tutor")"
   allowed="^$tdir/(.+\.m4a|.+\.timings\.json|${voice}_manifest(\.[a-z]+)?\.json|([a-z_]+/)?qc_failed\.json)$"
   ext="m4a"; manifest="$tdir/${voice}_manifest.json"
 else
@@ -130,7 +135,7 @@ for i in $(seq 1 "$tries"); do
   if [ "$rc" = 2 ]; then
     echo "push failed (attempt $i); $branch is not on the remote yet, retrying"
   elif [ "$rc" != 0 ]; then
-    echo "push failed (attempt $i); could not reach the agent repo (ls-remote exit $rc), retrying"
+    echo "push failed (attempt $i); could not reach the voice repo (ls-remote exit $rc), retrying"
   else
     echo "push rejected (attempt $i); rebasing on the remote branch"
     if ! agit fetch --quiet --depth=50 origin "$branch"; then
@@ -138,7 +143,7 @@ for i in $(seq 1 "$tries"); do
     elif ! agit rebase --quiet --onto FETCH_HEAD "$base"; then
       # Categories write disjoint files, so this is not a content conflict.
       agit rebase --abort || true
-      echo "::error::rebase onto the agent branch failed"; exit 1
+      echo "::error::rebase onto the voice branch failed"; exit 1
     else
       base="$(agit rev-parse FETCH_HEAD)"
       continue
@@ -146,5 +151,5 @@ for i in $(seq 1 "$tries"); do
   fi
   sleep $((RANDOM % 5 + 2))
 done
-echo "::error::could not push to the agent branch after $tries attempts"
+echo "::error::could not push to the voice branch after $tries attempts"
 exit 1

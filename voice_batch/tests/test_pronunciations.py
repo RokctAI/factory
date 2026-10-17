@@ -125,7 +125,7 @@ class Ambiguous(unittest.TestCase):
         t = Path(d, "lms/team/tutors/CAPS/tutor_009/greetings")
         t.mkdir(parents=True)
         (t / "01.md").write_text(text)
-        b = {"tutor": "tutor_009", "voice": "voice_a", "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
+        b = {"tutor": "tutor_009", "voice": "voice_a", "ref_path": "voices/refs/voice_a_ref.wav",
              "ref_sha256": "0" * 64, "agent_branch": "rokct/x", "categories": ["greetings"]}
         p = Path(d, "b.json")
         p.write_text(json.dumps(b))

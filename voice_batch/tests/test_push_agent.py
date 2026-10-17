@@ -29,9 +29,9 @@ SCAN = ROOT / "voice_batch" / "ci" / "scan_pending.sh"
 TOKEN = "test-token"
 EXPECTED = "Basic " + base64.b64encode(f"x-access-token:{TOKEN}".encode()).decode()
 BRANCH = "rokct/tutor-001-voice-a-test"
-TDIR = "lms/team/tutors/CAPS/tutor_001"
-ADIR = "lms/dart/templates/assets/r3_packs/audio"
-PDIR = "lms/team/voices/samples/pronunciation"
+TDIR = "voices/team/tutors/CAPS/tutor_001"
+ADIR = "voices/r3"
+PDIR = "voices/samples/pronunciation"
 
 
 def http_backend() -> str | None:
@@ -126,7 +126,7 @@ class PushAgentRebaseTest(unittest.TestCase):
 
         seed = self.tmp / "seed"
         self.git("init", "--quiet", "-b", BRANCH, str(seed))
-        self.write(seed, "lms/team/voice_refs/voice_a_ref.wav", b"ref")
+        self.write(seed, "voices/refs/voice_a_ref.wav", b"ref")
         self.write(seed, "outside/big.bin", b"x" * 1000)
         self.write(seed, f"{TDIR}/README", b"tutor")
         self.write(seed, f"{ADIR}/README.md", b"r3 audio")
@@ -160,7 +160,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         if patterns:
             self.git("sparse-checkout", "set", "--no-cone", *patterns, cwd=d)
         else:
-            self.git("sparse-checkout", "set", TDIR, ADIR, PDIR, "lms/team/voice_refs", cwd=d)
+            self.git("sparse-checkout", "set", TDIR, ADIR, PDIR, "voices/refs", cwd=d)
         self.git("-c", self.hdr, "fetch", "--quiet", "--filter=blob:none", "--depth=1", "origin",
                  f"+refs/heads/{ref}:refs/remotes/origin/{ref}", cwd=d)
         self.git("-c", self.hdr, "checkout", "--quiet", "-B", ref, f"refs/remotes/origin/{ref}", cwd=d)
@@ -210,7 +210,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.write(a, f"{ADIR}/notes.txt", b"no")
         self.write(a, f"{ADIR}/r3_manifest.voice_y.json", b"{}")
         self.write(a, f"{TDIR}/greetings/01.m4a", b"tutor-audio")
-        self.write(a, "lms/team/voice_refs/voice_a_ref.wav", b"changed-ref")
+        self.write(a, "voices/refs/voice_a_ref.wav", b"changed-ref")
         self.write(b, f"{ADIR}/r3.r3_praise_yes.mp3", b"mp3-2")
         self.write(b, f"{ADIR}/r3_manifest.voice_x.part02.json", b'{"lines": []}\n')
 
@@ -226,7 +226,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         for f in (f"{ADIR}/sub/{key1}.mp3", f"{ADIR}/notes.txt", f"{ADIR}/r3_manifest.voice_y.json",
                   f"{TDIR}/greetings/01.m4a"):
             self.assertNotIn(f, files)
-        self.assertEqual(self.git("show", f"{BRANCH}:lms/team/voice_refs/voice_a_ref.wav",
+        self.assertEqual(self.git("show", f"{BRANCH}:voices/refs/voice_a_ref.wav",
                                   cwd=self.tmp / "srv" / "agent.git").stdout, "ref")
 
         # The merge job: fold the parts into one manifest and remove them.
@@ -484,14 +484,14 @@ class PushAgentRebaseTest(unittest.TestCase):
         lazily fetches its blob from the promisor remote. That fetch must carry
         the auth header, or it dies with "could not read Username" / "could not
         fetch ... from promisor remote" at the first git add."""
-        adir = "lms/team/assistants/CAPS/assistant_005"
+        adir = "voices/team/assistants/CAPS/assistant_005"
         self.write(self.seed, ".gitignore", b"*.tmp\n__pycache__/\n")
         self.write(self.seed, ".gitattributes", b"* text=auto\n*.py text eol=lf\n")
         self.write(self.seed, f"{adir}/voice_b_manifest.intro.json", b'{"lines": ["intro"]}\n')
         self.git("add", "-A", cwd=self.seed)
         self.git("commit", "--quiet", "-m", "root files and an earlier manifest", cwd=self.seed)
         self.git("-c", self.hdr, "push", "--quiet", self.url, f"HEAD:refs/heads/{BRANCH}", cwd=self.seed)
-        patterns = (f"/{adir}/", "/lms/team/voice_refs/")
+        patterns = (f"/{adir}/", "/voices/refs/")
         a = self.checkout("handover", patterns=patterns)
         self.assertFalse((a / ".gitignore").exists())
         ignore_blob = self.git("rev-parse", "HEAD:.gitignore", cwd=a).stdout.strip()
@@ -572,7 +572,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.assertIn(f"{TDIR}/greetings/02.m4a", self.remote_files())
 
     def test_scan_pending_picks_the_first_pending_batch(self):
-        """The scheduled scan against the agent remote: the first batch with
+        """The scheduled scan against the voice repo remote: the first batch with
         a line left; then the next one once the first is done on its branch;
         then nothing once every line is done or final-failed on main."""
         import json
@@ -583,7 +583,8 @@ class PushAgentRebaseTest(unittest.TestCase):
         from test_resume import done_manifest
         seed = self.seed
         make_agent(seed)
-        self.write(seed, "lms/team/assistants/CAPS/assistant_005/handover/into_break.m4a", b"audio")
+        self.write(seed, "lms/team/assistants/CAPS/assistant_005/handover/into_break.m4a", b"old agent audio")
+        self.write(seed, "voices/team/assistants/CAPS/assistant_005/handover/into_break.m4a", b"audio")
         self.git("add", "-A", cwd=seed)
         self.git("commit", "--quiet", "-m", "scripts", cwd=seed)
         self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/main", cwd=seed)
@@ -593,16 +594,20 @@ class PushAgentRebaseTest(unittest.TestCase):
         for name, cat in (("a_handover", "handover"), ("b_timekeeping", "timekeeping")):
             self.write(factory, f"voice_batches/inbox/{name}.json", json.dumps({
                 "kind": "assistant", "assistant": AID, "voice": "voice_b_sister",
-                "ref_path": "lms/team/voice_refs/v.wav", "ref_sha256": "ab" * 32,
+                "ref_path": "voices/refs/v.wav", "ref_sha256": "ab" * 32,
                 "agent_branch": f"rokct/{name.replace('_', '-')}", "categories": [cat]}).encode())
         self.write(factory, "voice_batches/inbox/broken.json", b"{")
         self.git("add", "-A", cwd=factory)
         self.git("commit", "--quiet", "-m", "inbox", cwd=factory)
+        import voice_paths
+        # One test remote plays both repos: agent main (scripts) and the voice repo's main (manifests only).
         agent = self.checkout("scanmain", "main", patterns=("/lms/team/", "!*.wav", "!*.m4a"))
         self.assertFalse((agent / "lms/team/assistants/CAPS/assistant_005/handover/into_break.m4a").exists())
+        voices = self.checkout("scanvoices", "main", patterns=tuple(voice_paths.manifest_patterns()))
+        self.assertFalse((voices / "voices/team/assistants/CAPS/assistant_005/handover/into_break.m4a").exists())
 
         def scan(skip=""):
-            r = subprocess.run(["bash", str(SCAN), str(agent)], cwd=factory, capture_output=True, text=True,
+            r = subprocess.run(["bash", str(SCAN), str(agent), str(voices)], cwd=factory, capture_output=True, text=True,
                                env={**self.env, "AGENT_PAT": TOKEN, "SCAN_SKIP_LANES": skip})
             self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
             self.assertNotIn(TOKEN, r.stdout + r.stderr)
@@ -612,7 +617,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         # a's lane has a run in flight: the scan moves on to b; "r3" skips no tutor batch
         self.assertEqual(scan("voice_batches/inbox/a_handover.json"), "voice_batches/inbox/b_timekeeping.json")
         self.assertEqual(scan("r3"), "voice_batches/inbox/a_handover.json")
-        # a's lines pass on its agent branch (main untouched)
+        # a's lines pass on its voice branch (main untouched)
         self.git("checkout", "--quiet", "-b", "rokct/a-handover", cwd=seed)
         done_manifest(seed, "handover", seed)
         self.git("add", "-A", cwd=seed)
@@ -627,7 +632,7 @@ class PushAgentRebaseTest(unittest.TestCase):
         self.git("add", "-A", cwd=seed)
         self.git("commit", "--quiet", "-m", "b failed", cwd=seed)
         self.git("-c", self.hdr, "push", "--quiet", self.url, "HEAD:refs/heads/main", cwd=seed)
-        self.git("-c", self.hdr, "pull", "--quiet", "origin", "main", cwd=agent)
+        self.git("-c", self.hdr, "pull", "--quiet", "origin", "main", cwd=voices)
         self.assertEqual(scan(), "")
 
 

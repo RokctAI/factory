@@ -4,7 +4,8 @@
     python voice_batch/batch.py voice_batches/inbox/<batch>.json >> "$GITHUB_OUTPUT"
 
 A batch names WHAT to render; the audio and the reference live only in the
-private agent repo. Every field is pattern-checked because it flows into
+private voice repo (voice_paths.py: RokctAI/lessons voices/), the scripts
+and voice specs in the private agent repo. Every field is pattern-checked because it flows into
 paths, git refs and shell arguments.
 
 Two kinds:
@@ -42,6 +43,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import voice_paths  # noqa: E402
 
 CATEGORIES = ("acknowledgements", "greetings", "signoffs", "teaching")
 ASSISTANT_CATEGORIES = ("intro", "handover", "signoff", "timekeeping")
@@ -49,7 +51,7 @@ DUO_SUFFIX_RE = r"@tutor_\d{3}\+tutor_\d{3}"  # per-duo host line variant (lines
 KINDS = ("tutor", "r3", "assistant")
 COMMON = {
     "voice": r"[a-z][a-z0-9_]{0,31}",
-    "ref_path": r"lms/team/voice_refs/[A-Za-z0-9_]+\.wav",
+    "ref_path": voice_paths.ref_path_re(),   # in the voice repo (voices/refs/)
     "ref_sha256": r"[0-9a-f]{64}",
     "agent_branch": r"rokct/[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*",
 }
@@ -78,14 +80,14 @@ R3_MAX_SHARDS = 8
 ASR_MODEL_EN = "small.en"
 ASR_MODEL_MULTI = "small"
 
-SPARSE_TUTOR = ("lms/team/tutors/CAPS/{tutor}", "lms/team/voices", "lms/team/voice_refs", "lms/team/scripts")
+# The agent checkout (read-only inputs: scripts, voice specs, R-3 app sources).
+SPARSE_TUTOR = ("lms/team/tutors/CAPS/{tutor}", "lms/team/voices", "lms/team/scripts")
 # Non-cone patterns (the workflow turns cone mode off for assistants): the
 # rosters and tutor cards name the session's tutor duo in host lines.
-SPARSE_ASSISTANT = ("/lms/team/assistants/CAPS/{tutor}/", "/lms/team/voices/", "/lms/team/voice_refs/",
+SPARSE_ASSISTANT = ("/lms/team/assistants/CAPS/{tutor}/", "/lms/team/voices/",
                     "/lms/team/scripts/", "/lms/team/assistants/CAPS/roster.json", "/lms/team/tutors/CAPS/roster.json",
                     "/lms/team/tutors/CAPS/*/tutor.md", "/lms/team/tutors/CAPS/*/appearance/still.json")
-SPARSE_R3 = ("lms/dart/templates/assets/r3_packs/audio", "lms/team/voice_refs", "lms/team/scripts",
-             "lms/dart/lib/src/common/application/r3", "lms/dart/lib/src/translations")
+SPARSE_R3 = ("lms/team/scripts", "lms/dart/lib/src/common/application/r3", "lms/dart/lib/src/translations")
 
 
 class BatchError(ValueError):
@@ -285,6 +287,17 @@ def load_batch(path: str | Path, factory_root: Path | None = None, agent_root: s
     return out
 
 
+def voice_dir(b: dict) -> str:
+    """The voice-repo folder this batch's audio and manifests go to."""
+    return voice_paths.r3_dir() if b["kind"] == "r3" else voice_paths.team_dir(b["tutor"])
+
+
+def voice_sparse_paths(b: dict) -> list[str]:
+    """Cone-mode sparse paths of the voice-repo checkout: the references and
+    the batch's audio folder."""
+    return [voice_paths.refs_dir(), voice_dir(b)]
+
+
 def sparse_paths(b: dict) -> list[str]:
     if b["kind"] == "r3":
         return list(SPARSE_R3)
@@ -297,7 +310,8 @@ def outputs(b: dict) -> list[str]:
     """GitHub step output lines. Ids, paths and numbers only, never text."""
     from lines import team_rel
     out = [f"kind={b['kind']}", f"tutor={b.get('tutor', '')}",
-           f"team_dir={team_rel(b['tutor']) if b.get('tutor') else ''}"]
+           f"team_dir={team_rel(b['tutor']) if b.get('tutor') else ''}",
+           f"voice_repo={voice_paths.VOICE_REPO}", f"voice_dir={voice_dir(b)}"]
     out += [f"{k}={b[k]}" for k in COMMON]
     out += [f"categories={' '.join(b['categories'])}",
             f"lines={','.join(b.get('lines', []))}",
@@ -309,7 +323,8 @@ def outputs(b: dict) -> list[str]:
             f"locale={b.get('locale', 'en')}",
             f"asr_model={ASR_MODEL_EN if b.get('locale', 'en') == 'en' else ASR_MODEL_MULTI}",
             f"line_count={b.get('line_count', '')}",
-            "sparse<<SPARSE_EOF", *sparse_paths(b), "SPARSE_EOF"]
+            "sparse<<SPARSE_EOF", *sparse_paths(b), "SPARSE_EOF",
+            "voice_sparse<<SPARSE_EOF", *voice_sparse_paths(b), "SPARSE_EOF"]
     return out
 
 

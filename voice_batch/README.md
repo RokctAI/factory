@@ -3,13 +3,41 @@
 Renders a tutor's standing lines (acknowledgements, greetings, sign-offs,
 teaching snippets) in the tutor's consented cloned voice (kind `tutor`), or
 the Grades R–3 activity-pack lines (kind `r3`), gates every line, and
-commits the passing audio on a `rokct/` branch of the private
-`RokctAI/agent` repo, then opens (or notes the run on) a PR from that
-branch into `main`. Workflow: [`.github/workflows/voice_batch.yml`](../.github/workflows/voice_batch.yml).
+commits the passing audio on a `rokct/` branch of the private voice repo
+(`RokctAI/lessons`, under `voices/`), then opens (or notes the run on) a PR
+from that branch into its `main` for the owner to listen and merge.
+Workflow: [`.github/workflows/voice_batch.yml`](../.github/workflows/voice_batch.yml).
+
+**Where things live (phase 2 of the repo split).** Voice audio, manifests,
+QC logs and the reference WAVs moved from `RokctAI/agent` to
+`RokctAI/lessons`. [`voice_paths.py`](voice_paths.py) is the one switch:
+`VOICE_REPO` (default `RokctAI/lessons`) and `VOICE_ROOT` (default `voices`),
+set by the workflows from the repository variables of the same names.
+
+| agent (before)                                      | voice repo (now)                               |
+|-----------------------------------------------------|------------------------------------------------|
+| `lms/team/voice_refs/<x>.wav`                       | `voices/refs/<x>.wav`                          |
+| `lms/dart/templates/assets/r3_packs/audio/<f>`      | `voices/r3/<f>`                                |
+| `lms/team/{tutors,assistants}/CAPS/<id>/<audio>`    | `voices/team/{tutors,assistants}/CAPS/<id>/<audio>` |
+| `lms/team/voices/samples/<f>`                       | `voices/samples/<f>`                           |
+
+`<audio>` is the clips, `*.timings.json`, `<voice>_manifest*.json` and
+`qc_failed.json`. Scripts, persona JSON, voice specs
+(`lms/team/voices/*.voice.json`), `lms/team/scripts/` and the R-3 app
+sources stay in agent and are read from an agent `main` checkout
+(`--agent-root .agent`, read-only); the audio goes to the voice-repo
+checkout (`--voice-root .voices`). Setting `VOICE_REPO=RokctAI/agent` and
+`VOICE_ROOT=.` restores the old layout. The one-off
+[`ci/migrate_voices_to_lessons.py`](ci/migrate_voices_to_lessons.py) copies
+the existing files from an agent checkout into a lessons checkout (sha256
+verified, paths inside manifests rewritten; `--check` only reports; it never
+deletes anything from agent). Some names still say "agent" for history:
+the batch field `agent_branch` (a branch of the voice repo),
+`ci/push_agent.sh`, `ci/open_agent_pr.py`, `ci/resolve_agent_ref.sh`.
 
 **Nothing identifying and no audio ever lands in this public repo.** The
 reference clip, the line scripts and the rendered audio live only in the
-private agent repo; this repo holds code plus a small batch JSON naming ids,
+private repos; this repo holds code plus a small batch JSON naming ids,
 paths and a hash. The job has no artifact upload, caches only public model
 weights, and logs/summaries show line ids and scores only.
 
@@ -22,8 +50,8 @@ run the workflow by hand ("Run workflow", `batch_path`):
 {
   "tutor": "tutor_001",
   "voice": "voice_a",
-  "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
-  "ref_sha256": "<sha256 of the reference in the agent branch>",
+  "ref_path": "voices/refs/voice_a_ref.wav",
+  "ref_sha256": "<sha256 of the reference in the voice repo>",
   "agent_branch": "rokct/<branch>",
   "categories": ["acknowledgements", "greetings", "signoffs", "teaching"],
   "lines": ["tutor_001/greetings/01", "tutor_001_sample_line"]
@@ -44,7 +72,7 @@ behave exactly as before). Set them for any other voice.
 {
   "kind": "r3",
   "voice": "<voice>",
-  "ref_path": "lms/team/voice_refs/<voice>_ref.wav",
+  "ref_path": "voices/refs/<voice>_ref.wav",
   "ref_sha256": "<sha256>",
   "agent_branch": "rokct/<branch>",
   "packs": "english_home_language.gradeR.term1.*",
@@ -80,7 +108,7 @@ respelling, and is marked `needs_listen: true` in the manifest: a person
 should listen before merging. `voice_batches/examples/r3_phonics_probe.json`
 is a 6-line probe for this; it runs only if moved into `inbox/`.
 
-Output: `lms/dart/templates/assets/r3_packs/audio/<key>.mp3` (mono, 24 kHz,
+Output: `voices/r3/<key>.mp3` in the voice repo (mono, 24 kHz,
 64 kbps CBR, via lameenc or ffmpeg), which the app's `AssetTutorVoice` plays
 as `assets/r3_packs/audio/<key>.mp3`, plus `r3_manifest.<voice>.json`
 beside it (shards write `r3_manifest.<voice>.partNN.json`; the merge job
@@ -135,10 +163,10 @@ pronunciations apply after them.
 manual run of `pronunciation_audition.yml` with a comma-separated `words`
 list) renders one short clip per changed word and voice (every variant of
 a changed ambiguous entry), so someone can listen and adjust. The clips go
-to the agent repo's `rokct/pronunciation-audition` branch, never to this
-repo: `lms/team/voices/samples/pronunciation/<voice>/<word>--<respelling>.mp3`,
-with `audition.json` beside them. `voices/samples/` is excluded from the app
-bundle by `sync_team_assets.dart`. No agent PR is opened. The carrier is
+to the voice repo's `rokct/pronunciation-audition` branch, never to this
+repo: `voices/samples/pronunciation/<voice>/<word>--<respelling>.mp3`,
+with `audition.json` beside them. Samples never ship in the app bundle.
+No PR is opened. The carrier is
 `<respelling>. <respelling>.`, one take, seeds 11/22/33 until a light QC
 passes (0.4–8 s, not silent, similarity ≥ 0.75, and `qc.py`'s tail check:
 last 50 ms ≤ -34 dB); no ASR check, since these are unusual words. Otherwise the
@@ -148,8 +176,9 @@ best take is kept and marked `passed: false`.
 
 1. **plan** lists the changed batch, validates it (`batch.py`) and emits one
    matrix entry per category (tutor) or per shard (r3, at most 8).
-2. **render** (one runner per category, in parallel): checks out the agent
-   branch, verifies the reference sha256 (fails on mismatch), installs CPU
+2. **render** (one runner per category, in parallel): checks out agent main
+   (scripts, read-only) and the voice repo's `rokct/` branch (references and
+   this batch's audio folder), verifies the reference sha256 (fails on mismatch), installs CPU
    torch + the pinned VibeVoice fork, restores the model weights, then
    `run.py`:
    - splits each line into sentences (`textnorm.py`, `lines.py`: spoken
@@ -172,14 +201,14 @@ best take is kept and marked `passed: false`.
      as failed, audio not committed. A line rendered before the tail pad
      existed (no `tail_pad` in its manifest entry) is re-rendered;
    - writes `<voice>_manifest.<category>.json` and commits the passing
-     WAVs + that manifest to the agent branch (`ci/push_agent.sh`, with
+     clips + that manifest to the voice branch (`ci/push_agent.sh`, with
      rebase-and-retry because category jobs push concurrently).
 3. **merge** folds the category manifests into `<voice>_manifest.json`
    (r3: the shard parts into `r3_manifest.<voice>.json`), then
-   `ci/open_agent_pr.py` opens a ready-for-review PR from the agent branch
-   into `main` if none is open, or leaves one comment on the open one with
+   `ci/open_agent_pr.py` opens a ready-for-review PR from the voice branch
+   into the voice repo's `main` if none is open, or leaves one comment on the open one with
    this run's pass/fail counts (counts and run URL only). Merging that PR
-   ships the audio into the app bundle.
+   publishes the audio on `main`.
 
 ## Long batches: time budget, checkpoints, continuations
 
@@ -202,7 +231,7 @@ renders are resumable (`resume.py`):
 - **Continuations.** The merge job counts `remaining` across the batch's
   manifests. If any line is left, it dispatches this workflow again with the
   same `batch_path`, `continuation` + 1 and the same `series`, at most 5
-  times, using `GITHUB_TOKEN` with `actions: write`. The agent PR opens only
+  times, using `GITHUB_TOKEN` with `actions: write`. The voice PR opens only
   when nothing is left, or when the cap is reached. Already-pushed lines are
   skipped. A line that failed every seed round is **final-failed**, never
   remaining: within one series it is not retried.
@@ -214,9 +243,10 @@ renders are resumable (`resume.py`):
 ## Daily schedule
 
 The workflow also runs every day at 01:23 UTC. The plan job checks out agent
-main without audio and runs `ci/scan_pending.sh`. For each batch in
+main without audio (to build the lines) and the voice repo's main with only
+its manifests, and runs `ci/scan_pending.sh`. For each batch in
 `voice_batches/inbox/` (sorted), the scan fetches only the manifests of the
-batch's agent branch, and `pending.py` counts the lines that are not done. A
+batch's voice branch, and `pending.py` counts the lines that are not done. A
 line is done when it has a passed entry for the same text and reference, or
 when it is final-failed. The first batch with lines left is rendered; the
 next day's run picks the next one. If nothing is pending, the plan job ends
@@ -225,9 +255,9 @@ in about a minute, with no render jobs, no model download and no PR.
 ## Failed QC log
 
 Every final-failed line is listed in a `qc_failed.json` beside its clips on
-the agent branch (the private agent repo only). For a tutor or assistant
-that is `<team dir>/<clip dir>/qc_failed.json`. For r3 it is
-`qc_failed.<voice>.json` in the R-3 audio folder, written by the merge job.
+the voice branch (the private voice repo only). For a tutor or assistant
+that is `voices/team/.../<id>/<clip dir>/qc_failed.json`. For r3 it is
+`voices/r3/qc_failed.<voice>.json`, written by the merge job.
 An entry holds:
 
 - the line id and text;
@@ -236,12 +266,13 @@ An entry holds:
 - the attempt count, the batch file, the run id and a UTC date.
 
 When the line later passes, its entry is removed, and an empty file is
-deleted. The agent PR has a short "Failed QC" table: ids, attempts and the
+deleted. The voice PR has a short "Failed QC" table: ids, attempts and the
 last round's failing gates. The public job summary gives only a one-line
 count and the ids.
 
-Output layout in the agent repo (audio beside its script):
-`lms/team/tutors/CAPS/<tutor>/<category>/NN.m4a`,
+Output layout in the voice repo (each clip at its script's path relative to
+the team folder in agent):
+`voices/team/tutors/CAPS/<tutor>/<category>/NN.m4a`,
 `.../samples/<sample id>.m4a`, `.../samples/sample_line.m4a`. Clips are AAC
 48 kbps mono in an `.m4a` file (`aac.py`); the stitched WAV stays in the work
 dir and its hash is kept as `wav_sha256`.

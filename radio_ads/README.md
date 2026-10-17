@@ -86,15 +86,17 @@ shows duration, LUFS, true peak and the word check for each ad.
 
 Setup: none beyond what the org already has.
 
-- **Secret `MONOREPO_PAT`.** The persona voices are in the private repo
-  RokctAI/agent. The workflow reads them with the org's existing
-  cross-repo token `MONOREPO_PAT` (the same one `agent_checks.yml` uses to
-  check out RokctAI/agent), so no new token is needed. If the secret is not
+- **Secret `MONOREPO_PAT`.** The persona reference WAVs are in the private
+  repo RokctAI/lessons under `voices/samples/` (moved there from
+  RokctAI/agent in phase 2 of the repo split; `voice_batch/voice_paths.py`),
+  the persona specs (`*.voice.json`) in RokctAI/agent `lms/team/voices/`.
+  The workflow reads both with the org's existing cross-repo token
+  `MONOREPO_PAT`, so no new token is needed. If the secret is not
   available to RokctAI/factory the run stops at the first step with an
   error saying so.
-- **Variable `VOICES_REF` (optional).** Branch, tag or SHA of RokctAI/agent
-  to take the voices from. Defaults to `main`, where the voices now live
-  (agent PR #319), so leave it unset.
+- **Variable `VOICES_REF` (optional).** Branch, tag or SHA of the voice repo
+  (`vars.VOICE_REPO`, default RokctAI/lessons) to take the WAVs from.
+  Defaults to `main`, so leave it unset.
 
 Then:
 

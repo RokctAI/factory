@@ -1,0 +1,106 @@
+name: Baked Samples - Sync Into Agent
+# The app bakes in only the tutor-card samples of the first three tutors
+# (Ray, 2026-10-17); every other voice clip stays in RokctAI/lessons voices/
+# and is downloaded on demand through the backend. This copies those samples
+# from lessons into agent's lms/team/tutors/CAPS/<tutor>/samples/ with
+# voice_batch/ci/sync_baked_to_agent.py, so the app's bundle follows lessons.
+#
+# Like school_terms_to_agent.yml, this never touches agent main: changes go
+# to the rokct/baked-samples branch and a PR is opened (or the open one
+# updated), with MONOREPO_PAT passed as a per-command header, never stored.
+# Agent's own sync_team_assets workflow copies the samples into the app trees
+# once that PR merges. Logs carry paths and counts only.
+on:
+  schedule:
+    - cron: '41 4 * * 1'  # Mondays 04:41 UTC: the fallback
+  workflow_dispatch:
+    inputs:
+      router_before:
+        description: 'Set by content_router: start of the pushed range. Leave empty when running by hand.'
+        required: false
+        default: ''
+
+concurrency:
+  group: baked-samples-to-agent
+  cancel-in-progress: false
+
+env:
+  AGENT_BRANCH: rokct/baked-samples
+  SAMPLES_ROOT: lms/team/tutors/CAPS
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out the voice repo samples (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .voices
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: voices/team/tutors
+
+      - name: Check out agent main (private)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: main
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: lms/team/tutors
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Copy the baked samples into agent
+        id: sync
+        run: |
+          if [ ! -d .voices/voices/team/tutors ]; then
+            echo "::notice::the voice repo has no voices/team/tutors yet; nothing to do"
+            echo "changed=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python voice_batch/ci/sync_baked_to_agent.py --voices .voices --agent .agent
+
+      - name: Push the samples and open the agent PR
+        if: steps.sync.outputs.changed != '0'
+        env:
+          AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set +x
+          cd .agent
+          b64="$(printf 'x-access-token:%s' "$AGENT_PAT" | base64 -w0)"
+          echo "::add-mask::$b64"
+          # Every git command carries the header: the sparse checkout may
+          # lazily fetch a blob from the private remote.
+          agit() { git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $b64" "$@"; }
+          agit config user.name "github-actions[bot]"
+          agit config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          agit checkout --quiet -B "$AGENT_BRANCH"
+          agit add -A -- "$SAMPLES_ROOT"
+          if agit diff --cached --quiet; then
+            echo "agent already has every baked sample"
+            exit 0
+          fi
+          agit commit --quiet -m "Baked samples: copy the first three tutors' samples from lessons" \
+            -m "Copied by factory's baked_samples_to_agent.yml ($RUN_URL) from voices/team/tutors/CAPS/."
+          # A bot-only branch rebuilt from agent main on every run.
+          agit push --quiet --force origin "HEAD:refs/heads/$AGENT_BRANCH"
+          if [ -z "$(gh pr list --repo RokctAI/agent --head "$AGENT_BRANCH" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --repo RokctAI/agent --head "$AGENT_BRANCH" --base main \
+              --title "Baked samples: copy the first three tutors' samples from lessons" \
+              --body "The app bakes in only the tutor-card samples of tutor_001, tutor_002 and tutor_003; everything else is downloaded through the backend. This copies their samples from lessons with sync_baked_to_agent.py. Run: $RUN_URL"
+          else
+            echo "updated the open agent PR on $AGENT_BRANCH"
+          fi

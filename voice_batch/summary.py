@@ -2,8 +2,8 @@
 """Markdown pass/fail table from a voice manifest: ids and numbers only
 (no line text, transcripts or audio), because the factory repo is public.
 
-    python voice_batch/summary.py <agent>/lms/team/tutors/CAPS/<tutor>/<voice>_manifest.json >> "$GITHUB_STEP_SUMMARY"
-    python voice_batch/summary.py <agent>/lms/dart/templates/assets/r3_packs/audio/r3_manifest.<voice>.json >> "$GITHUB_STEP_SUMMARY"
+    python voice_batch/summary.py <voice repo>/voices/team/tutors/CAPS/<tutor>/<voice>_manifest.json >> "$GITHUB_STEP_SUMMARY"
+    python voice_batch/summary.py <voice repo>/voices/r3/r3_manifest.<voice>.json >> "$GITHUB_STEP_SUMMARY"
 """
 from __future__ import annotations
 

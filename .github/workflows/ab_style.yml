@@ -12,10 +12,10 @@ on:
         description: 'Persona whose voice to test (from voice_batch/lesson_voices.json)'
         default: 'assistant_005'
       r3:
-        description: 'Comma-separated R-3 line keys rendered on the agent branch below'
+        description: 'Comma-separated R-3 line keys rendered on the voice branch below'
         default: ''
-      agent_branch:
-        description: 'Agent branch holding the A takes of the R-3 lines'
+      voice_branch:
+        description: 'Branch of the voice repo (vars.VOICE_REPO, default RokctAI/lessons) holding the A takes of the R-3 lines'
         default: 'main'
       lesson:
         description: 'A lesson path under school/curriculum/CAPS whose nervous script to test (A from the stems pre-release)'
@@ -36,9 +36,12 @@ env:
   LESSONS_ROOT: ${{ github.workspace }}/_lessons
   LESSONS_DIR: school
   TEAM_ROOT: ${{ github.workspace }}/.agent/lms/team
+  # Voice audio and references (voice_batch/voice_paths.py): one switch.
+  VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+  VOICE_ROOT: ${{ vars.VOICE_ROOT || 'voices' }}
   PERSONA: ${{ inputs.persona || 'assistant_005' }}
   R3: ${{ inputs.r3 || 'maths.gradeR.term3.w03_boxes.show,maths.gradeR.term4.w05_bird_story_sums.rounds_0_story,english_home_language.gradeR.term4.w03_sound_d.rounds_2_story,maths.gradeR.term3.w09_story_sums_eight.rounds_3_prompt' }}
-  AGENT_BRANCH: ${{ inputs.agent_branch || 'main' }}
+  VOICE_BRANCH: ${{ inputs.voice_branch || 'main' }}
   LESSON: ${{ inputs.lesson }}
 
 jobs:
@@ -65,12 +68,11 @@ jobs:
             /school/curriculum/CAPS/*/r3_packs/
             /school/curriculum/CAPS/*/session/
 
-      - name: Check out agent team, refs and the A takes (private)
+      - name: Check out agent team and R-3 app sources (private; read-only)
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
           token: ${{ secrets.MONOREPO_PAT }}
-          ref: ${{ env.AGENT_BRANCH }}
           path: .agent
           fetch-depth: 1
           persist-credentials: false
@@ -79,17 +81,35 @@ jobs:
             /lms/team/tutors/CAPS/
             /lms/team/assistants/CAPS/
             /lms/team/voices/*.json
-            /lms/team/voice_refs/
             /lms/team/scripts/
             /lms/dart/lib/src/common/application/r3/
             /lms/dart/lib/src/translations/
-            /lms/dart/templates/assets/r3_packs/audio/*.show.mp3
-            /lms/dart/templates/assets/r3_packs/audio/*_story.mp3
-            /lms/dart/templates/assets/r3_packs/audio/*_prompt.mp3
             !/lms/team/tutors/CAPS/**/*.wav
             !/lms/team/tutors/CAPS/**/*.m4a
             !/lms/team/assistants/CAPS/**/*.wav
             !/lms/team/assistants/CAPS/**/*.m4a
+
+      - name: Voice paths
+        id: vp
+        run: |
+          echo "refs=$(python3 voice_batch/voice_paths.py refs)" >> "$GITHUB_OUTPUT"
+          echo "r3=$(python3 voice_batch/voice_paths.py r3)" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the voice refs and the A takes (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.VOICE_BRANCH }}
+          path: .voices
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /${{ steps.vp.outputs.refs }}/
+            /${{ steps.vp.outputs.r3 }}/*.show.mp3
+            /${{ steps.vp.outputs.r3 }}/*_story.mp3
+            /${{ steps.vp.outputs.r3 }}/*_prompt.mp3
 
       - uses: actions/setup-python@v5
         with:
@@ -118,19 +138,20 @@ jobs:
         run: |
           set +x
           model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION']))")
-          python voice_batch/ab_style.py --agent-root .agent --voice-persona "$PERSONA" --r3 "$R3" \
+          python voice_batch/ab_style.py --agent-root .agent --voice-root .voices --voice-persona "$PERSONA" --r3 "$R3" \
             --lesson "$LESSON" --model-path "$model_path" --out "$RUNNER_TEMP/ab"
 
       - name: Add A takes and publish to a private lessons pre-release
         env:
           GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          R3_DIR: ${{ steps.vp.outputs.r3 }}
         run: |
           set +x
           out="$RUNNER_TEMP/ab"; n=0
           IFS=',' read -ra keys <<< "$R3"
           for k in "${keys[@]}"; do
             n=$((n + 1))
-            src=".agent/lms/dart/templates/assets/r3_packs/audio/$k.mp3"
+            src=".voices/$R3_DIR/$k.mp3"
             if [ -f "$src" ]; then cp "$src" "$out/$n-$k-A.mp3"; else echo "no A take for $k"; fi
           done
           if [ -n "$LESSON" ]; then
