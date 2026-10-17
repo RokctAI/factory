@@ -5,7 +5,7 @@
 
 Reads the titles of the other voice batch runs that are not completed, one
 per line, and prints each one's lane once: "r3" for the R-3 batches (they
-share one agent branch and one r3_manifest), else the batch path. A run
+share one voice branch and one r3_manifest), else the batch path. A run
 started with batch_path is titled "Voice batch: <path>" (run-name in
 voice_batch.yml); any other title is a run whose batch is unknown (a
 scheduled or push run, or one started before run-name) and prints "*".

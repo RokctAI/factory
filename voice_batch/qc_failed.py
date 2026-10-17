@@ -4,12 +4,13 @@
 A line that runs out of seed rounds is recorded in the job's manifest
 "failed" list with its per-round gate failures (run.py). This module
 projects those entries into qc_failed.json files committed next to the
-clips on the agent branch (the private agent repo only, never factory):
+clips on the voice-repo branch (private RokctAI/lessons, voice_paths.py;
+never factory):
 
-  tutor / assistant  <team dir>/<clip dir>/qc_failed.json, per category
-                     (greetings/, signoffs/, samples/ for teaching, ...),
-                     written by the render job with its manifest
-  r3                 lms/dart/templates/assets/r3_packs/audio/qc_failed.<voice>.json,
+  tutor / assistant  voices/team/.../<id>/<clip dir>/qc_failed.json, per
+                     category (greetings/, signoffs/, samples/ for
+                     teaching, ...), written by the render job with its manifest
+  r3                 voices/r3/qc_failed.<voice>.json,
                      written by the merge job from the merged manifest
                      (parallel shards share that folder)
 
@@ -84,10 +85,10 @@ def write(path: Path, failed_entries: list[dict]) -> None:
         path.unlink()
 
 
-def write_by_clip_dir(agent: Path, clip_dirs: set[str], failed_entries: list[dict]) -> None:
+def write_by_clip_dir(root: Path, clip_dirs: set[str], failed_entries: list[dict]) -> None:
     """One qc_failed.json per clip folder of a category (tutor / assistant)."""
     for d in sorted(clip_dirs):
-        write(agent / d / QC_FAILED, [e for e in failed_entries
+        write(root / d / QC_FAILED, [e for e in failed_entries
                                       if str(Path(e.get("file_not_committed", "")).parent) == d])
 
 

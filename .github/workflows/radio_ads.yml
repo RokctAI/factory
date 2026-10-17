@@ -7,9 +7,11 @@ name: Radio ads
 # repo's artifacts, and fork PR runs can restore its caches).
 # See radio_ads/README.md ("Render in CI") for the one-time setup:
 #   * secret   MONOREPO_PAT  the org's cross-repo token (already set; it reads
-#                            the private RokctAI/agent, like agent_checks.yml)
-#   * variable VOICES_REF    OPTIONAL: branch/tag/SHA of RokctAI/agent holding
-#                            lms/team/voices (defaults to main)
+#                            the private RokctAI/agent and RokctAI/lessons)
+#   * variable VOICES_REF    OPTIONAL: branch/tag/SHA of the voice repo
+#                            (vars.VOICE_REPO, default RokctAI/lessons) holding
+#                            voices/samples/*.wav (defaults to main); the
+#                            persona specs come from RokctAI/agent main
 #
 # Deliberately no pull_request trigger: the job needs MONOREPO_PAT and
 # fork PRs must never get it. The persona voices are copied into
@@ -61,7 +63,12 @@ env:
   # faster-whisper model for the word check (make_ad.py default is base.en;
   # set the variable ASR_MODEL to e.g. small.en for a stricter check).
   ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  # Ref of the voice repo the reference WAVs are taken from (persona specs
+  # always come from RokctAI/agent main).
   VOICES_REF: ${{ vars.VOICES_REF || 'main' }}
+  # Where the reference WAVs live (voice_batch/voice_paths.py): one switch.
+  VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+  VOICE_ROOT: ${{ vars.VOICE_ROOT || 'voices' }}
   HF_HOME: /home/runner/.cache/huggingface
   HF_HUB_DISABLE_TELEMETRY: '1'
 
@@ -79,7 +86,7 @@ jobs:
           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
           if [ -z "$MONOREPO_PAT" ]; then
-            echo "::error title=MONOREPO_PAT missing::The persona voices live in the private repo RokctAI/agent, so this workflow needs the org cross-repo token to read them. Make sure the secret MONOREPO_PAT is available to RokctAI/factory (organization secret with this repository selected, or a repository secret under Settings -> Secrets and variables -> Actions) and that the token can read RokctAI/agent, then re-run this workflow. See radio_ads/README.md 'Render in CI'."
+            echo "::error title=MONOREPO_PAT missing::The persona voices live in the private repos RokctAI/lessons (reference WAVs) and RokctAI/agent (specs), so this workflow needs the org cross-repo token to read them. Make sure the secret MONOREPO_PAT is available to RokctAI/factory (organization secret with this repository selected, or a repository secret under Settings -> Secrets and variables -> Actions) and that the token can read RokctAI/agent and RokctAI/lessons, then re-run this workflow. See radio_ads/README.md 'Render in CI'."
             exit 1
           fi
 
@@ -102,21 +109,39 @@ jobs:
           sed 's/^/  /' "$RUNNER_TEMP/ads.txt"
           echo "count=$(grep -c . "$RUNNER_TEMP/ads.txt" || true)" >> "$GITHUB_OUTPUT"
 
-      - name: Fetch persona voices (RokctAI/agent)
+      - name: Voice paths
+        id: vp
+        if: steps.list.outputs.count != '0'
+        run: echo "samples=$(python3 voice_batch/voice_paths.py samples)" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch persona reference voices (voice repo)
+        if: steps.list.outputs.count != '0'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.VOICES_REF }}
+          path: .voice-samples
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /${{ steps.vp.outputs.samples }}/*.wav
+          persist-credentials: false
+
+      - name: Fetch persona specs (RokctAI/agent)
         if: steps.list.outputs.count != '0'
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
           token: ${{ secrets.MONOREPO_PAT }}
-          ref: ${{ env.VOICES_REF }}
           path: .agent-voices
           fetch-depth: 1
-          sparse-checkout: lms/team/voices
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /lms/team/voices/*.voice.json
           persist-credentials: false
 
       - name: Install voices into radio_ads/voices
         if: steps.list.outputs.count != '0'
-        run: bash radio_ads/ci/install_voices.sh .agent-voices
+        run: bash radio_ads/ci/install_voices.sh .voice-samples .agent-voices
 
       - uses: actions/setup-python@v5
         if: steps.list.outputs.count != '0'
@@ -163,19 +188,35 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      - name: Fetch persona voices (RokctAI/agent)
+      - name: Voice paths
+        id: vp
+        run: echo "samples=$(python3 voice_batch/voice_paths.py samples)" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch persona reference voices (voice repo)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: ${{ env.VOICES_REF }}
+          path: .voice-samples
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /${{ steps.vp.outputs.samples }}/*.wav
+          persist-credentials: false
+
+      - name: Fetch persona specs (RokctAI/agent)
         uses: actions/checkout@v4
         with:
           repository: RokctAI/agent
           token: ${{ secrets.MONOREPO_PAT }}
-          ref: ${{ env.VOICES_REF }}
           path: .agent-voices
           fetch-depth: 1
-          sparse-checkout: lms/team/voices
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /lms/team/voices/*.voice.json
           persist-credentials: false
 
       - name: Install voices into radio_ads/voices
-        run: bash radio_ads/ci/install_voices.sh .agent-voices
+        run: bash radio_ads/ci/install_voices.sh .voice-samples .agent-voices
 
       - name: Install ffmpeg (with rubberband)
         run: |

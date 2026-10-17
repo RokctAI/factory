@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Open a PR in the agent repo from a batch's rokct/ branch into main, or,
-when one is already open, leave one short comment with this run's counts.
+"""Open a PR in the voice repo (voice_paths.VOICE_REPO, RokctAI/lessons since
+phase 2 of the split; it was RokctAI/agent, hence the name) from a batch's
+rokct/ branch into main, or, when one is already open, leave one short
+comment with this run's counts.
 
-    AGENT_PAT=... python voice_batch/ci/open_agent_pr.py --repo RokctAI/agent \\
+    AGENT_PAT=... python voice_batch/ci/open_agent_pr.py --repo RokctAI/lessons \\
         --head rokct/<branch> --target <tutor_NNN|r3> --voice <voice> \\
         --manifest <merged manifest> [--run-id ID --run-url URL]
 
@@ -25,6 +27,7 @@ import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import voice_paths  # noqa: E402
 from qc_failed import last_failing  # noqa: E402
 
 ATTRIBUTION = "<!-- ccr-projects-attribution -->\n_Requested by **Ray** via a Claude Code Project_"
@@ -99,14 +102,14 @@ def title(target: str, voice: str) -> str:
 
 def pr_body(target: str, voice: str, c: dict, run_url: str, manifest: dict | None = None) -> str:
     what = "Grades R-3 activity-pack lines" if target == "r3" else "the tutor's standing lines"
-    where = ("lms/dart/templates/assets/r3_packs/audio/ (MP3s plus r3_manifest)" if target == "r3"
-             else "the tutor's team folder (WAVs beside their scripts plus the voice manifest)")
+    where = (f"{voice_paths.r3_dir()}/ (MP3s plus r3_manifest)" if target == "r3"
+             else f"{voice_paths.team_dir(target)}/ (clips at their scripts' paths plus the voice manifest)")
     return "\n".join([
         ATTRIBUTION, "",
         "## Before / After", "",
         f"**Before:** main has none of this batch's rendered audio for {what} in `{voice}`.", "",
         f"**After:** the factory voice batch CI rendered and gated the audio and committed it to {where} "
-        "on this branch. **Merging this PR ships the audio into the app bundle.**", "",
+        "on this branch. **Merging this PR publishes the audio on main.**", "",
         "## Run", "",
         f"- {run_url or 'run URL not available'}",
         f"- {counts_line(c)}", "",
@@ -123,7 +126,7 @@ def comment_body(c: dict, run_url: str, marker: str, manifest: dict | None = Non
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", required=True)
+    ap.add_argument("--repo", default=voice_paths.VOICE_REPO)
     ap.add_argument("--head", required=True)
     ap.add_argument("--base", default="main")
     ap.add_argument("--target", required=True)

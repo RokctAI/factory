@@ -17,8 +17,9 @@ unknown type or a round missing a required field), so it equals the pack's
 round index for every pack that passes r3_pack_check.py.
 
 AssetTutorVoice (agent lms/dart/templates/routes/lms_route_pages.dart)
-plays assets/r3_packs/audio/<key>.mp3, which the SDK installs from
-lms/dart/templates/assets/r3_packs/audio/ in the agent repo.
+plays assets/r3_packs/audio/<key>.mp3. The rendered MP3s and manifests
+live in the voice repo (voice_paths.py: voices/r3/ in RokctAI/lessons; they
+were in agent lms/dart/templates/assets/r3_packs/audio/ before phase 2).
 
 Phonics: voice_batch/r3_respellings.json maps a line key (or an exact line
 text) to a TTS-only text, e.g. "a as in ant" -> "ah, as in ant", so the
@@ -40,6 +41,7 @@ import sys
 from pathlib import Path
 
 import pronunciations
+import voice_paths
 from lines import pronounced_fields
 
 # Where the R-3 packs live. In the factory they sit beside this code; once
@@ -51,7 +53,7 @@ sys.path.insert(0, str(FACTORY / LESSONS_DIR / "scripts" / "CAPS"))
 from r3_pack_check import ROUND_TYPES  # noqa: E402  (same table as the app's R3Round.requiredFields)
 
 PACK_GLOB = f"{LESSONS_DIR}/curriculum/CAPS/*/r3_packs/grade*/term*/*.json"
-AUDIO_DIR = "lms/dart/templates/assets/r3_packs/audio"
+AUDIO_DIR = voice_paths.r3_dir()   # in the voice repo checkout, not agent
 RESPELLINGS = Path(__file__).resolve().parent / "r3_respellings.json"
 ENGINE_DART = "lms/dart/lib/src/common/application/r3/r3_session_engine.dart"
 TRANSLATIONS_DART = "lms/dart/lib/src/translations/lms_{locale}_translations.dart"

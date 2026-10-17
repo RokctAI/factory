@@ -7,7 +7,7 @@ package, in that speaker's approved voice, as soon as the voice exists.
         [--max-jobs 6 --job-words 4000 --only <lesson rel>,...]
 
     # one job: one persona, one or more lessons
-    python voice_batch/lesson_audio.py render --lessons-root _lessons --agent-root .agent \
+    python voice_batch/lesson_audio.py render --lessons-root _lessons --agent-root .agent --voice-root .voices \
         --persona tutor_001 --lessons <rel>,<rel> --model-path <snapshot> --work $RUNNER_TEMP/la \
         [--checkpoint-cmd "bash voice_batch/ci/push_lessons.sh ..."]
 
@@ -15,7 +15,9 @@ package, in that speaker's approved voice, as soon as the voice exists.
     python voice_batch/lesson_audio.py assemble --lessons-root _lessons --stems-root <dir> \
         --lesson <rel> --out <dir>
 
-Who speaks what is lesson_lines.py. Stems (one MP3 per subtopic segment,
+The locked reference clips (lesson_voices.json ref_path) are read from the
+voice-repo checkout (--voice-root; voice_paths.py: RokctAI/lessons voices/refs/),
+scripts and voice specs from the agent checkout. Who speaks what is lesson_lines.py. Stems (one MP3 per subtopic segment,
 intro, Q&A turn and nervous-student script; mono 24 kHz 64 kbps) land under
 <stems root>/<lesson rel>/voice/<persona>/ with manifest.json beside them.
 The render is run.py's per-sentence render + QC gate, with one seed per
@@ -89,13 +91,14 @@ def cmd_render(args) -> int:
     import run as R
 
     lessons_root, agent = Path(args.lessons_root).resolve(), Path(args.agent_root).resolve()
+    voice = Path(args.voice_root).resolve() if getattr(args, "voice_root", "") else agent
     stems = Path(args.stems_root).resolve()
     voices = L.load_voices()
     if args.persona not in voices:
         print(f"::error::{args.persona} has no approved lesson voice (lesson_voices.json)")
         return 1
     v = voices[args.persona]
-    ref = agent / v["ref_path"]
+    ref = voice / v["ref_path"]
     if not ref.is_file() or R.sha256_file(ref) != v["ref_sha256"]:
         print("::error::reference sha256 does not match lesson_voices.json; refusing to render")
         return 1
@@ -137,13 +140,13 @@ def cmd_render(args) -> int:
             for e in errs:
                 print(f"::error::{e}")
             continue
-        left_total += render_lesson(args, r, built, stems, caps, ref, scripts, agent)
+        left_total += render_lesson(args, r, built, stems, caps, ref, scripts, voice)
     R.resume.write_outputs(left_total)
     return 0
 
 
 def render_lesson(args, r: dict, built: list[dict], stems: Path, records: Path, ref: Path, scripts: Path,
-                  agent: Path) -> int:
+                  voice: Path) -> int:
     """Render one persona's pending lines of one lesson: MP3s into the stems
     root (uploaded to the stems pre-release by the checkpoint command), the
     manifest + qc_failed.json into the lesson folder (`records`, the lessons
@@ -166,7 +169,7 @@ def render_lesson(args, r: dict, built: list[dict], stems: Path, records: Path, 
     failed = {e["id"]: e for e in manifest.get("failed", []) if e["id"] in order}
     manifest.update({"kind": "lesson", "lesson": r["rel"], "lesson_id": r["lesson_id"], "persona": args.persona,
                      "roles": {k: r[k] for k in ("first", "second", "host", "split")},
-                     **R.run_header(args, ref, agent)})
+                     **R.run_header(args, ref, voice)})
     manifest["reference"]["path"] = args.ref_path
     manifest["settings"]["output"] = {"format": "mp3", "bitrate_kbps": mp3.BITRATE_KBPS,
                                       "sample_rate": mp3.SAMPLE_RATE, "channels": 1}
@@ -315,6 +318,8 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("render")
     p.add_argument("--lessons-root", required=True)
     p.add_argument("--agent-root", required=True)
+    p.add_argument("--voice-root", default="", help="voice-repo checkout holding the reference clips "
+                   "(default: --agent-root)")
     p.add_argument("--stems-root", required=True, help="where the MP3 stems are written (outside the checkout)")
     p.add_argument("--persona", required=True)
     p.add_argument("--lessons", required=True)

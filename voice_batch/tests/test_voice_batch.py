@@ -63,7 +63,7 @@ class TextNorm(unittest.TestCase):
 
 
 class Batch(unittest.TestCase):
-    good = {"tutor": "tutor_001", "voice": "voice_a", "ref_path": "lms/team/voice_refs/voice_a_ref.wav",
+    good = {"tutor": "tutor_001", "voice": "voice_a", "ref_path": "voices/refs/voice_a_ref.wav",
             "ref_sha256": "0" * 64, "agent_branch": "rokct/x-y", "categories": ["teaching", "greetings"]}
 
     def load(self, d):
@@ -81,12 +81,12 @@ class Batch(unittest.TestCase):
                 self.load(dict(self.good, **{k: v}))
 
     def test_voice_b_batch1(self):
-        """tutor_011's first Voice B batch pins the agent reference and its
+        """tutor_011's first Voice B batch pins the voice-repo reference and its
         own F0 gate (196 +/- 12 Hz), and renders to a rokct/ branch."""
         b = batch.load_batch(Path(__file__).resolve().parents[2]
                              / "voice_batches/inbox/tutor_011_voice_b_batch1.json")
         self.assertEqual((b["tutor"], b["voice"], b["ref_path"], b["ref_sha256"]), (
-            "tutor_011", "voice_b", "lms/team/voice_refs/voice_b_ref.wav",
+            "tutor_011", "voice_b", "voices/refs/voice_b_ref.wav",
             "30c7ab70671dcd2c7239337d8de2dd2e6c9b468a11c0e7028646cc244ab6564d"))
         self.assertEqual((b["f0_target_hz"], b["f0_tolerance_hz"]), (196.0, 12.0))
         self.assertEqual(b["agent_branch"], "rokct/tutor-011-voice-b-batch1")
@@ -239,9 +239,9 @@ class Lines(unittest.TestCase):
             Path(d, "lms/team/voices/tutor_009.voice.json").write_text(json.dumps({"sample_line": "C."}))
             items = build_lines(d, "tutor_009", ["greetings", "teaching"])
             self.assertEqual([i["file"] for i in items], [
-                "lms/team/tutors/CAPS/tutor_009/greetings/01.m4a",
-                "lms/team/tutors/CAPS/tutor_009/samples/tutor_009_sample_01.m4a",
-                "lms/team/tutors/CAPS/tutor_009/samples/sample_line.m4a"])
+                "voices/team/tutors/CAPS/tutor_009/greetings/01.m4a",
+                "voices/team/tutors/CAPS/tutor_009/samples/tutor_009_sample_01.m4a",
+                "voices/team/tutors/CAPS/tutor_009/samples/sample_line.m4a"])
             # the gated WAV is a work file only (qc writes it under work/final)
             self.assertEqual(items[0]["final_wav"], "lms/team/tutors/CAPS/tutor_009/greetings/01.wav")
             self.assertEqual(items[0]["sentences"], ["One.", "Two."])

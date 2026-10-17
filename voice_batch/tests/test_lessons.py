@@ -49,7 +49,7 @@ class Parsing(unittest.TestCase):
         for persona, v in L.load_voices().items():
             self.assertRegex(persona, r"^(tutor|assistant)_\d{3}$")
             self.assertRegex(v["ref_sha256"], r"^[0-9a-f]{64}$")
-            self.assertTrue(v["ref_path"].startswith("lms/team/voice_refs/"))
+            self.assertTrue(v["ref_path"].startswith("voices/refs/"))
             self.assertGreater(v["f0_tolerance_hz"], 0)
 
 

@@ -117,14 +117,14 @@ class Voices(unittest.TestCase):
     def test_real_inbox_pins_one_ref_per_voice(self):
         vs = {v["voice"]: v for v in A.voices()}
         self.assertEqual(set(vs), {"voice_a", "voice_b"})
-        self.assertEqual(vs["voice_a"]["ref_path"], "lms/team/voice_refs/voice_a_ref.wav")
-        self.assertEqual(vs["voice_b"]["ref_path"], "lms/team/voice_refs/voice_b_ref.wav")
+        self.assertEqual(vs["voice_a"]["ref_path"], "voices/refs/voice_a_ref.wav")
+        self.assertEqual(vs["voice_b"]["ref_path"], "voices/refs/voice_b_ref.wav")
 
     def test_conflicting_or_missing_ref_fails(self):
         with tempfile.TemporaryDirectory() as d:
             for n, sha in (("a", "1" * 64), ("b", "2" * 64)):
                 Path(d, f"{n}.json").write_text(json.dumps(
-                    {"voice": "voice_a", "ref_path": "lms/team/voice_refs/voice_a_ref.wav", "ref_sha256": sha}))
+                    {"voice": "voice_a", "ref_path": "voices/refs/voice_a_ref.wav", "ref_sha256": sha}))
             with self.assertRaises(A.AuditionError):
                 A.voices(Path(d), ("voice_a",))
             with self.assertRaises(A.AuditionError):

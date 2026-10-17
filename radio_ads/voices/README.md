@@ -6,15 +6,18 @@ this folder is committed except this README.
 `"cast": {"driver": {"voice": "tutor_008"}}` resolves to `voices/tutor_008.wav`
 (and reads `voices/tutor_008.voice.json` for metadata if present).
 
-## Fill it from the agent repo
+## Fill it from the private repos
 
-The tutor/assistant persona voices live in `RokctAI/agent` on `main`
-(PR #319, merged):
+The tutor/assistant persona reference WAVs live in `RokctAI/lessons` under
+`voices/samples/` (moved from RokctAI/agent in phase 2 of the repo split);
+their `.voice.json` specs stay in `RokctAI/agent`:
 
 ```bash
+git clone --depth 1 --filter=blob:none --sparse https://github.com/RokctAI/lessons.git /tmp/lessons
+git -C /tmp/lessons sparse-checkout set voices/samples
+cp /tmp/lessons/voices/samples/*.wav           radio_ads/voices/
 git clone --depth 1 https://github.com/RokctAI/agent.git /tmp/agent
-cp /tmp/agent/lms/team/voices/samples/*.wav   radio_ads/voices/
-cp /tmp/agent/lms/team/voices/*.voice.json    radio_ads/voices/
+cp /tmp/agent/lms/team/voices/*.voice.json     radio_ads/voices/
 ```
 
 That gives `tutor_001` .. `tutor_012` and `assistant_001` .. `assistant_003`

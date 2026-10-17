@@ -11,6 +11,7 @@ HERE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(HERE))
 import batch  # noqa: E402
 import lines  # noqa: E402
+import voice_paths  # noqa: E402
 
 AID = "assistant_005"
 SCRIPTS = {
@@ -44,6 +45,9 @@ class AssistantBatch(unittest.TestCase):
             self.assertIn(p, sp)
         out = batch.outputs(b)
         self.assertIn(f"team_dir=lms/team/assistants/CAPS/{AID}", out)
+        self.assertIn(f"voice_dir=voices/team/assistants/CAPS/{AID}", out)
+        self.assertEqual(batch.voice_sparse_paths(b), ["voices/refs", f"voices/team/assistants/CAPS/{AID}"])
+        self.assertFalse(any("voice_refs" in p for p in sp))
         self.assertIn("f0_target_hz=241", out)
 
     def _write(self, d: Path, **kw) -> Path:
@@ -91,7 +95,7 @@ class AssistantLines(unittest.TestCase):
             self.assertIn(f"{AID}/timekeeping/five_min_warning", ids)
             self.assertIn(f"{AID}_sample_line", ids)
             it = next(x for x in items if x["id"] == f"{AID}/handover/into_break")
-            self.assertEqual(it["file"], f"lms/team/assistants/CAPS/{AID}/handover/into_break.m4a")
+            self.assertEqual(it["file"], f"voices/team/assistants/CAPS/{AID}/handover/into_break.m4a")
             self.assertEqual(it["final_wav"], f"lms/team/assistants/CAPS/{AID}/handover/into_break.wav")
             self.assertEqual(it["script"], f"lms/team/assistants/CAPS/{AID}/handover/into_break.md")
             self.assertEqual(it["text"], "Right, into break now.")
@@ -150,8 +154,11 @@ class AssistantRun(unittest.TestCase):
             self.assertEqual((args.pace_wpm, args.pace_tolerance), (132, 12))
             with mock.patch.object(run, "render_rounds", fake_rounds), mock.patch.object(run, "versions", lambda: {}), \
                     mock.patch.object(run.pronunciations, "load", lambda: {}), mock.patch("aac.encode", fake_encode):
-                self.assertEqual(run.run_tutor(args, d, ref, d / "lms/team/scripts"), 0)
-            adir = d / lines.team_rel(AID)
+                self.assertEqual(run.run_tutor(args, d, ref, d / "lms/team/scripts", voice=d / "lessons"), 0)
+            # audio and manifests go to the voice repo checkout, never the agent one
+            adir = d / "lessons" / voice_paths.team_dir(AID)
+            self.assertFalse(list((d / lines.team_rel(AID)).rglob("*.m4a")))
+            self.assertFalse(list((d / lines.team_rel(AID)).glob("*manifest*")))
             self.assertEqual((adir / "handover/into_break.m4a").read_bytes(), b"audio")
             self.assertTrue((adir / "handover/out_of_break.m4a").exists())
             m = json.loads((adir / "voice_b_sister_manifest.handover.json").read_text())
@@ -205,7 +212,7 @@ class HostPlaceholders(unittest.TestCase):
             self.assertNotIn(f"{AID}/intro/returning", items)
             it = items[f"{AID}/intro/returning@tutor_001+tutor_002"]
             self.assertEqual(it["text"], "Welcome back. Name 1 takes over.")
-            self.assertEqual(it["file"], f"{lines.team_rel(AID)}/intro/returning@tutor_001+tutor_002.wav")
+            self.assertEqual(it["file"], f"{voice_paths.team_dir(AID)}/intro/returning@tutor_001+tutor_002.wav")
             self.assertEqual(items[f"{AID}/handover/out_of_break@tutor_003+tutor_004"]["text"],
                              "Over to you, Name 4. Say Ngubane.")
             self.assertEqual(sum(k.startswith(f"{AID}/intro/returning@") for k in items), 3)
