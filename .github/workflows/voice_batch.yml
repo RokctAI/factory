@@ -213,7 +213,14 @@ jobs:
             busy="$(python3 voice_batch/ci/busy_lanes.py < "$RUNNER_TEMP/titles.txt")"
             if [ -n "$busy" ]; then echo "Lanes with a run in flight:"; printf '%s\n' "$busy" | sed 's/^/  /'; fi
           fi
-          if printf '%s\n' "$busy" | grep -qxF '*'; then
+          # voice_batches/PAUSED on main holds new chains (schedule and push)
+          # while a chain already rendering finishes: its continuations carry
+          # batch_path, so they are not held. Delete the file to resume.
+          if { [ "$EVENT" = "schedule" ] || [ "$EVENT" = "push" ]; } && [ -f voice_batches/PAUSED ]; then
+            echo "::notice::voice_batches/PAUSED is on main; this $EVENT run renders nothing"
+            echo "voice_batches/PAUSED is on main: this $EVENT run renders nothing (continuations and manual runs are not held)." >> "$GITHUB_STEP_SUMMARY"
+            : > "$RUNNER_TEMP/batches.txt"
+          elif printf '%s\n' "$busy" | grep -qxF '*'; then
             echo "::notice::another voice batch run of unknown batch is in flight; this $EVENT run renders nothing"
             echo "Another voice batch run of unknown batch is in flight; this $EVENT run renders nothing." >> "$GITHUB_STEP_SUMMARY"
             : > "$RUNNER_TEMP/batches.txt"
