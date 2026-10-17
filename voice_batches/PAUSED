@@ -1,0 +1,5 @@
+New voice batch chains are on hold while voice audio moves from agent to
+RokctAI/lessons (phase 2 of the factory split). While this file is on main,
+scheduled and push runs of voice_batch.yml render nothing. A chain that is
+already rendering still finishes, because its continuations carry batch_path,
+and a manual run with batch_path still renders. Delete this file to resume.
