@@ -530,11 +530,14 @@ jobs:
 
   # Fold the per-category manifests into <voice>_manifest.json (kind tutor),
   # or the per-shard parts into r3_manifest.<voice>.json (kind r3), on the
-  # branch.
+  # branch. Not on a cancelled run: by then the next run of the batch may
+  # already be rendering, and folding would delete the part manifests its
+  # jobs are checkpointing to (their pushes then fail to rebase). The next
+  # run's merge folds whatever the cancelled run pushed.
   merge:
     name: Merge manifest
     needs: [plan, render]
-    if: always() && needs.plan.outputs.count == '1'
+    if: ${{ !cancelled() && needs.plan.outputs.count == '1' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
@@ -695,11 +698,11 @@ jobs:
   # lines left by a render job's time budget (continuation + 1, capped at
   # CONTINUATION_CAP by resume.py). A workflow_dispatch made with GITHUB_TOKEN
   # does start a run; it carries batch_path, so it queues behind this one in
-  # the batch's concurrency group.
+  # the batch's concurrency group. A cancelled run dispatches nothing.
   continue:
     name: Continue the batch
     needs: [plan, merge]
-    if: always() && needs.merge.outputs.dispatch == 'true'
+    if: ${{ !cancelled() && needs.merge.outputs.dispatch == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
