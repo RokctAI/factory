@@ -22,7 +22,11 @@ Selection: among the sentence's passing takes, median F0 closest to
            never counts, even when the ASR still heard the clipped word.
            Nor does one whose sound span (trimmed at -40 dB) runs past
            1.5 s + 0.75 s per word: seconds of generated non-speech the
-           ASR skipped over.
+           ASR skipped over. Nor does a hissy take ("open mic"): its
+           5-11 kHz share of the power on speech frames (hiss_db) more than
+           12 dB above the reference's. Measured on Kavitha: approved R-3
+           clips sit 3 to 11 dB above her reference; the two takes that
+           sounded like an open mic sat 14 to 15 dB above it.
 Stitch   : trim at -40 dB (an edge noise burst of <= 200 ms that
            sits >= 100 ms from the speech is dropped, not kept as speech)
            with 40 ms padding, 12 ms fades, 200-240 ms
@@ -71,6 +75,8 @@ F0_TOLERANCE = 8.0
 F0_RANGE = (TARGET_F0 - F0_TOLERANCE, TARGET_F0 + F0_TOLERANCE)
 SIM_LONG, SIM_SHORT, LONG_S = 0.88, 0.83, 5.0
 TAKE_SIM_MIN = SIM_SHORT
+HISS_BAND_HZ = (5000.0, 11000.0)
+HISS_MARGIN_DB = 12.0
 GAPS_S = (0.22, 0.20, 0.24, 0.22)   # + 2 x 40 ms padding = 300/280/320/300 ms pauses
 PAD_S, FADE_S = 0.04, 0.012
 # An edge sound island this short, this far from the speech, is a click or
@@ -293,6 +299,34 @@ def sound_span_s(x, sr: int = SR, top_db: float = 40.0, frame: int = 512, hop: i
     return round(((loud[-1] - loud[0]) * hop + frame) / sr, 3)
 
 
+def hiss_db(x, sr: int = SR, band: tuple[float, float] = HISS_BAND_HZ, frame_s: float = 0.025) -> float | None:
+    """Median share (dB) of the power in `band` on speech frames (within
+    35 dB of the loudest). Broadband hiss under the voice raises it; None
+    when the clip is too short or the rate too low to measure."""
+    import numpy as np
+    x = np.asarray(x, dtype=float)
+    x = x.mean(1) if x.ndim > 1 else x
+    fr = int(frame_s * sr)
+    n = len(x) // fr if fr else 0
+    if n < 4 or sr < 2 * band[1]:
+        return None
+    F = x[:n * fr].reshape(n, fr)
+    db = 10 * np.log10((F ** 2).mean(1) + 1e-12)
+    speech = db > db.max() - 35
+    P = np.abs(np.fft.rfft(F * np.hanning(fr), axis=1)) ** 2
+    fq = np.fft.rfftfreq(fr, 1 / sr)
+    hi = P[:, (fq > band[0]) & (fq < band[1])].sum(1)
+    tot = P[:, fq > 80].sum(1) + 1e-20
+    return round(float(10 * np.log10(np.median(hi[speech] / tot[speech]) + 1e-12)), 2)
+
+
+def hiss_ok(c: dict, ref_hiss: float | None, margin: float = HISS_MARGIN_DB) -> bool:
+    """A take's hiss is within `margin` dB of the reference's; takes measured
+    before hiss was recorded, or without a reference figure, count as fine."""
+    h = c.get("hiss")
+    return h is None or ref_hiss is None or h <= ref_hiss + margin
+
+
 def span_ok(c: dict) -> bool:
     """A take's sound span fits its word count (no dead air); takes measured
     before the span was recorded count as fitting."""
@@ -305,12 +339,13 @@ def take_rank(m: dict, target: float = TARGET_F0) -> tuple:
 
 
 def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOLERANCE,
-         sim_min: float = TAKE_SIM_MIN) -> tuple[dict | None, int]:
+         sim_min: float = TAKE_SIM_MIN, ref_hiss: float | None = None) -> tuple[dict | None, int]:
     """(best take, tier) — tier 1 strict pass, tier 2 word-exact only, 0 none."""
     lo, hi = f0_range(target, tolerance)
     # A take that ends mid-word never counts, however well the ASR heard it.
     # Nor does one padded with seconds of non-speech the ASR skipped over.
-    exact = [c for c in cands if c["err"] == 0 and tail_ok(c.get("tail_db", -120.0)) and span_ok(c)]
+    exact = [c for c in cands if c["err"] == 0 and tail_ok(c.get("tail_db", -120.0)) and span_ok(c)
+             and hiss_ok(c, ref_hiss)]
     strict = [c for c in exact if lo <= c["f0"] <= hi and c["res"] >= sim_min]
     rank = lambda c: take_rank(c, target)  # noqa: E731
     if strict:
@@ -377,6 +412,9 @@ class Meter:
         import numpy as np
         f, v = self._pyin(w)
         self.hi = float(np.percentile(f[v], 90))
+        import soundfile as sf
+        rx, rsr = sf.read(str(ref))
+        self.ref_hiss = hiss_db(rx, rsr)
 
     @staticmethod
     def r16(p):
@@ -417,6 +455,7 @@ class Meter:
         return {"dur": round(len(w) / 16000, 3), "res": round(res, 4), "err": word_errors_wild(text, tx, wild),
                 "f0": round(float(np.median(fv)), 2) if len(fv) else 0.0, "swings": int(swings), "transcript": tx,
                 "tail_db": tail_db(x, sr), "span": sound_span_s(x, sr), "n_words": len(text.split()),
+                "hiss": hiss_db(x, sr),
                 "words": words}
 
 
@@ -463,7 +502,7 @@ def main() -> int:
         m.pop("words", None)
         M[p] = {**m, **meta}
         print(f"take {meta['key']} seed{meta['seed']}: err={m['err']} f0={m['f0']} swings={m['swings']} "
-              f"sim={m['res']} dur={m['dur']} tail={m['tail_db']}", flush=True)
+              f"sim={m['res']} dur={m['dur']} tail={m['tail_db']} hiss={m['hiss']}", flush=True)
         mpath.write_text(json.dumps(M, indent=1), encoding="utf-8")
 
     results = []
@@ -472,7 +511,8 @@ def main() -> int:
         for k in range(1, len(it["sentences"]) + 1):
             key = f"{it['id']}#{k}"
             cands = [dict(m, path=p) for p, m in M.items() if m["key"] == key and p not in rejected]
-            best, tier = pick(cands, args.f0_target, args.f0_tolerance, min(args.sim_short, TAKE_SIM_MIN))
+            best, tier = pick(cands, args.f0_target, args.f0_tolerance, min(args.sim_short, TAKE_SIM_MIN),
+                              meter.ref_hiss)
             picks.append(best); tiers.append(tier)
             if tier != 1:
                 lacking.append({"key": key, "tier": tier})
@@ -483,6 +523,9 @@ def main() -> int:
                     dead = sum(not span_ok(c) for c in cands)
                     if dead:
                         lacking[-1]["dead_air_takes"] = dead
+                    hissy = sum(not hiss_ok(c, meter.ref_hiss) for c in cands)
+                    if hissy:
+                        lacking[-1]["hissy_takes"] = hissy
         tried = sorted({m["seed"] for m in M.values() if m["key"].split("#")[0] == it["id"]})
         r = {"id": it["id"], "seeds_tried": tried, "lacking": lacking}
         if any(t == 0 for t in tiers):
