@@ -13,6 +13,10 @@
 # text and reference, or one that failed every seed round) and picks the
 # first batch with any left. Run from the factory checkout root.
 #
+# SCAN_SKIP_LANES (optional, one lane per line, from busy_lanes.py) skips the
+# batches whose lane already has a run in flight: "r3" skips every R-3 batch,
+# a batch path skips that batch.
+#
 # Logs batch paths and counts only. Only rokct/ branches are read. The token
 # goes in an HTTP header scoped to the agent host on every git command (agit;
 # blob-less, so `git show` lazily fetches the manifest blob and needs it too),
@@ -39,8 +43,13 @@ list="$tmp/list.tsv"
 : > "$list"
 
 n=0
+skip="${SCAN_SKIP_LANES:-}"
 while IFS= read -r f; do
   n=$((n + 1))
+  if [ -n "$skip" ] && printf '%s\n' "$skip" | grep -qxF "$(python3 "$here/ci/busy_lanes.py" --lane "$f")"; then
+    echo "scan: $f: a run for its lane is in flight; skipped" >&2
+    continue
+  fi
   if ! out="$(python3 "$here/batch.py" "$f" 2>/dev/null)"; then
     echo "::warning::scan: $f is not a valid batch; skipped" >&2
     continue

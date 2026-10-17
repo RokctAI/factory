@@ -601,14 +601,17 @@ class PushAgentRebaseTest(unittest.TestCase):
         agent = self.checkout("scanmain", "main", patterns=("/lms/team/", "!*.wav", "!*.m4a"))
         self.assertFalse((agent / "lms/team/assistants/CAPS/assistant_005/handover/into_break.m4a").exists())
 
-        def scan():
+        def scan(skip=""):
             r = subprocess.run(["bash", str(SCAN), str(agent)], cwd=factory, capture_output=True, text=True,
-                               env={**self.env, "AGENT_PAT": TOKEN})
+                               env={**self.env, "AGENT_PAT": TOKEN, "SCAN_SKIP_LANES": skip})
             self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
             self.assertNotIn(TOKEN, r.stdout + r.stderr)
             return r.stdout.strip()
 
         self.assertEqual(scan(), "voice_batches/inbox/a_handover.json")
+        # a's lane has a run in flight: the scan moves on to b; "r3" skips no tutor batch
+        self.assertEqual(scan("voice_batches/inbox/a_handover.json"), "voice_batches/inbox/b_timekeeping.json")
+        self.assertEqual(scan("r3"), "voice_batches/inbox/a_handover.json")
         # a's lines pass on its agent branch (main untouched)
         self.git("checkout", "--quiet", "-b", "rokct/a-handover", cwd=seed)
         done_manifest(seed, "handover", seed)

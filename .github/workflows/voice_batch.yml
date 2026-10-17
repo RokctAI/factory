@@ -37,6 +37,10 @@ name: Voice batch
 # (sorted) and renders the first one that still has a line not done on its
 # agent branch or agent main; nothing pending -> no render jobs at all.
 
+# The title carries the batch, so a scheduled or push run can tell which
+# batches already have a run in flight (List batches, below).
+run-name: "Voice batch${{ inputs.batch_path && format(': {0}', inputs.batch_path) || '' }}"
+
 on:
   push:
     branches: [main]
@@ -71,7 +75,10 @@ permissions:
 # inside a run carries its batch_path and waits here behind it. GitHub keeps
 # only ONE pending run per group: a second dispatch of the same batch
 # replaces the waiting one. Scheduled and push runs (no batch_path) each
-# have their own group; the daily schedule picks the first pending batch,
+# have their own group, so they cannot queue in a batch's lane: instead the
+# plan job skips any batch whose lane has a run in flight or waiting (read
+# from the run titles), and renders nothing while a run of unknown batch is
+# going. The daily schedule picks the first pending batch with a free lane,
 # so an interrupted chain resumes from the next scheduled run at the latest.
 concurrency:
   group: voice-batch-${{ contains(inputs.batch_path, '/r3_packs_') && 'r3' || inputs.batch_path || github.event_name }}
@@ -107,6 +114,9 @@ jobs:
     name: Find and validate batches
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read   # the other voice batch runs in flight (List batches)
     outputs:
       count: ${{ steps.list.outputs.count }}
       continuation: ${{ steps.chain.outputs.continuation }}
@@ -188,10 +198,27 @@ jobs:
           BATCH_PATH: ${{ inputs.batch_path }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           AGENT_PAT: ${{ secrets.MONOREPO_PAT }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set +x
-          if [ "$EVENT" = "schedule" ]; then
-            bash voice_batch/ci/scan_pending.sh .agentmain > "$RUNNER_TEMP/batches.txt"
+          # Scheduled and push runs sit outside the batch lanes (concurrency,
+          # above), so they must not pick a batch another run is rendering:
+          # list the lanes of every other run of this workflow that is not
+          # completed, from its title ("*" = a run whose batch is unknown).
+          busy=""
+          if [ "$EVENT" = "schedule" ] || [ "$EVENT" = "push" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/actions/workflows/voice_batch.yml/runs?per_page=100" \
+              --jq ".workflow_runs[] | select(.status != \"completed\" and .id != $GITHUB_RUN_ID) | .display_title" \
+              > "$RUNNER_TEMP/titles.txt"
+            busy="$(python3 voice_batch/ci/busy_lanes.py < "$RUNNER_TEMP/titles.txt")"
+            if [ -n "$busy" ]; then echo "Lanes with a run in flight:"; printf '%s\n' "$busy" | sed 's/^/  /'; fi
+          fi
+          if printf '%s\n' "$busy" | grep -qxF '*'; then
+            echo "::notice::another voice batch run of unknown batch is in flight; this $EVENT run renders nothing"
+            echo "Another voice batch run of unknown batch is in flight; this $EVENT run renders nothing." >> "$GITHUB_STEP_SUMMARY"
+            : > "$RUNNER_TEMP/batches.txt"
+          elif [ "$EVENT" = "schedule" ]; then
+            SCAN_SKIP_LANES="$busy" bash voice_batch/ci/scan_pending.sh .agentmain > "$RUNNER_TEMP/batches.txt"
           else
             bash voice_batch/ci/changed_batches.sh "$EVENT" "$BEFORE" "$AFTER" "$BATCH_PATH" "$DEFAULT_BRANCH" > "$RUNNER_TEMP/batches.txt"
           fi
@@ -201,6 +228,12 @@ jobs:
           if [ "$EVENT" = "push" ] && [ "$n" -gt 1 ]; then
             echo "::notice::$n batch files in one push; the daily scan renders them one per run, in order"
             echo "$n batch files in one push: the daily scan renders them one per run, in order." >> "$GITHUB_STEP_SUMMARY"
+            : > "$RUNNER_TEMP/batches.txt"
+          fi
+          if [ "$EVENT" = "push" ] && [ -s "$RUNNER_TEMP/batches.txt" ] \
+             && printf '%s\n' "$busy" | grep -qxF "$(python3 voice_batch/ci/busy_lanes.py --lane "$(head -n1 "$RUNNER_TEMP/batches.txt")")"; then
+            echo "::notice::a run for this batch's lane is in flight; the daily scan renders it once the lane is free"
+            echo "A run for this batch's lane is in flight; the daily scan renders it once the lane is free." >> "$GITHUB_STEP_SUMMARY"
             : > "$RUNNER_TEMP/batches.txt"
           fi
           echo "Batches:"; sed 's/^/  /' "$RUNNER_TEMP/batches.txt"
