@@ -105,6 +105,20 @@ class Selection(unittest.TestCase):
     def t(self, err, f0, sw, res):
         return {"err": err, "f0": f0, "swings": sw, "res": res}
 
+    def test_hissy_take_never_counts(self):
+        import numpy as np
+        from qc import hiss_db
+        sr = 24000
+        t = np.arange(sr) / sr
+        voice = 0.3 * np.sin(2 * np.pi * 220 * t) * (1 + np.sin(2 * np.pi * 3 * t))
+        noise = np.random.default_rng(0).normal(0, 0.02, sr)
+        clean, hissy = hiss_db(voice, sr), hiss_db(voice + noise, sr)
+        self.assertGreater(hissy - clean, 12)
+        a, b = dict(self.t(0, 101, 1, 0.9), hiss=hissy), dict(self.t(0, 104, 2, 0.9), hiss=clean)
+        self.assertIs(pick([a, b], ref_hiss=clean)[0], b)
+        self.assertEqual(pick([a], ref_hiss=clean), (None, 0))
+        self.assertIs(pick([a])[0], a)  # no reference figure: not gated
+
     def test_order(self):
         a, b, c = self.t(0, 104, 2, 0.9), self.t(0, 101, 5, 0.85), self.t(1, 102, 0, 0.99)
         self.assertIs(pick([a, b, c])[0], b)
