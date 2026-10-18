@@ -220,6 +220,28 @@ class TestRealTemplateTree(unittest.TestCase):
                 stack,
             )
 
+    def test_nextjs_ships_the_license_report_the_fleet_linter_writes(self):
+        # The fleet linter writes licenses.json into every Node repo and opens
+        # a Fleet Standardization PR whenever the committed copy differs
+        # (polaris-web#3). Seeding its exact output - keyed by the package
+        # name and version, the runner checks the repo out under its slug,
+        # and the trailing blank line it writes - keeps a fresh shell from
+        # drawing that PR.
+        report = (self.template / "nextjs" / "licenses.json").read_text()
+        self.assertTrue(report.endswith("}\n}\n\n"))
+        version = json.loads(
+            (self.template / "nextjs" / "package.json").read_text()
+        )["version"]
+        data = json.loads(
+            seed_app_repo.substitute(report, {"APP_SLUG": "demo-web"})
+        )
+        self.assertEqual(list(data), [f"demo-web@{version}"])
+        entry = data[f"demo-web@{version}"]
+        self.assertEqual(entry["path"], "/home/runner/work/demo-web/demo-web")
+        self.assertEqual(
+            entry["licenseFile"], "/home/runner/work/demo-web/demo-web/README.md"
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
