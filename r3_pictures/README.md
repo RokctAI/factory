@@ -12,14 +12,14 @@ time from the private repos and is never committed here:
 | Input | What it is | Where it lives |
 |---|---|---|
 | `--slugs` | the picture slugs the R-3 packs use | RokctAI/agent `lms/dart/test/r3_pack_picture_slugs.json` |
-| `--text` | every word, phrase or sentence a picture prints | private (RokctAI/lessons); never in this repo |
+| `--text` | every word, phrase or sentence a picture prints | RokctAI/lessons `school/r3_pictures/r3_picture_text.json` (private); never in this repo |
 
 ## Run
 
 ```sh
 python3 r3_pictures/build.py \
   --slugs    ../agent/lms/dart/test/r3_pack_picture_slugs.json \
-  --text     ../lessons/<path>/r3_picture_text.json \
+  --text     ../lessons/school/r3_pictures/r3_picture_text.json \
   --existing ../agent/lms/dart/templates/assets/r3_pictures \
   --out      /tmp/r3_pictures_out \
   --manifest /tmp/r3_pictures.json \
