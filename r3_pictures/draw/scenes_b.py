@@ -1,0 +1,105 @@
+from props import *
+from nature import tree, sun
+import objects  # noqa: F401
+import animals  # noqa: F401
+
+S = shadow
+
+
+def sc(slug, *parts):
+    art(slug, *parts)
+
+
+L, Rr = 58, 142  # left and right figure spots for two-person scenes
+s2 = .78
+
+# ---- friends ------------------------------------------------------------------
+sc('friends_ball', S(100, 182, 84), K(L, s2, la=(-34, -60), ra=(40, -130)), GL(Rr, s2, la=(-40, -130), ra=(34, -60)), P('M86 70 Q100 40 114 70', None, 4, 'stroke-dasharray="4 8" opacity=".5"'), ball(100, 44, 13))
+sc('friends_reading', S(100, 182, 84), K(L + 10, s2, ra=(36, -84)), GL(Rr - 10, s2, la=(-36, -84)), book(100, 116, 48, RED))
+sc('friends_eating', S(100, 182, 84), K(L, s2, ra=(16, -112)), GL(Rr, s2, la=(-16, -112)), apple(70, 92, 9), g(130, 92, 1, R(-10, -8, 20, 16, '#F2D6A0', rx=3)))
+sc('friends_skipping', S(100, 182, 84), K(L, s2, legs='jump', la=(-34, -60), ra=(36, -70)), GL(Rr, s2, legs='jump', la=(-36, -70), ra=(34, -60)), P('M86 128 Q100 196 114 128', None, 4, f'stroke="{RED}"'))
+sc('friends_playing', S(100, 182, 84), K(L, s2, legs='run', la=(-40, -80), ra=(40, -110), face_kind='open'), GL(Rr, s2, legs='jump', la=(-40, -140), ra=(40, -140), face_kind='open'), ball(100, 166, 12))
+sc('friends_sharing', S(100, 182, 84), K(L, s2, ra=(40, -80)), GL(Rr, s2, la=(-40, -80)), apple(90, 116, 10), apple(110, 116, 10, GREEN))
+sc('good_friend', S(100, 182, 80), K(L + 16, s2, ra=(56, -96)), GL(Rr - 16, s2, la=(-56, -96)), P('M100 34 Q100 22 110 22 Q120 22 120 34 Q120 44 100 56 Q80 44 80 34 Q80 22 90 22 Q100 22 100 34 Z', ROSE, 4))
+sc('take_turns', S(100, 182, 84), K(L, s2, ra=(40, -80)), GL(Rr, s2, la=(-40, -80)), P('M84 114 L120 114 L114 136 L90 136 Z', RED, 4), P('M86 112 Q102 92 118 112', None, 4), P('M70 40 Q100 20 130 40 M130 40 L120 30 M130 40 L118 46', None, 5, f'stroke="{GREEN}"'))
+sc('share_crayons', S(100, 182, 84), K(L, s2, ra=(36, -80)), GL(Rr, s2, la=(-36, -80)), R(82, 112, 36, 26, GOLD, rx=4), crayon(88, 106, RED, s=.7), crayon(100, 104, BLUE, s=.7), crayon(112, 106, GREEN, s=.7))
+sc('say_sorry', S(100, 182, 84), K(L, s2, la=(-10, -96), ra=(10, -96), face_kind='sad'), GL(Rr, s2, face_kind='smile'), P('M100 60 Q100 52 106 52 Q112 52 112 60 Q112 66 100 74 Q88 66 88 60 Q88 52 94 52 Q100 52 100 60 Z', ROSE, 4))
+sc('hit', S(100, 182, 84), K(L, s2, ra=(56, -110), face_kind='angry'), GL(Rr, s2, face_kind='sad', la=(-30, -130), ra=(30, -130)), P('M108 64 L114 52 L118 66 L130 62 L122 72 L132 80 L118 80 L116 92 L108 80 L96 84 L102 74 L94 66 Z', GOLD, 3))
+sc('tease', S(100, 182, 84), K(L, s2, ra=(56, -96), face_kind='open'), GL(Rr, s2, face_kind='sad'), P('M20 30 L30 40 M36 22 L36 36', None, 4, 'opacity=".5"'))
+sc('shaking_hands', S(100, 182, 84), K(L + 6, s2, ra=(48, -86), shirt=RED), K(Rr - 6, s2, la=(-48, -86), shirt=BLUE, skin=SKIN2), C(100, 115, 8, SKIN1, 4))
+sc('pushing_player', S(100, 182, 84), K(L, s2, legs='walk', ra=(56, -100), la=(30, -90), shirt=RED, face_kind='angry'), g(Rr + 6, 186, s2, kid(shirt=BLUE, skin=SKIN2, legs='run', face_kind='sad', la=(-40, -140), ra=(40, -140)), rot=18))
+sc('child_sharing', ALL['friends_sharing'])
+sc('child_grabbing', S(100, 182, 84), K(L, s2, ra=(64, -96), face_kind='angry', legs='walk'), GL(Rr, s2, face_kind='sad', la=(-40, -96)), g(100, 108, 1, P('M-16 -8 L16 -8 L20 8 L-20 8 Z', RED, 4), C(-10, 12, 5, INK, 0), C(10, 12, 5, INK, 0)), P('M150 70 Q148 80 152 84', None, 4, f'stroke="{BLUE}"'))
+alias('grab_toy', 'child_grabbing')
+alias('grab', 'child_grabbing')
+sc('child_pushing', S(100, 182, 84), K(L, s2, legs='walk', ra=(56, -100), la=(30, -90), face_kind='angry'), g(Rr + 6, 186, s2, girl(legs='run', face_kind='sad', la=(-40, -140), ra=(40, -140)), rot=18))
+alias('push', 'child_pushing')
+sc('help_up', S(100, 182, 84), K(L, s2, ra=(50, -76), la=(-34, -60)), g(146, 182, .7, girl(legs='sit', la=(-48, -88), ra=(30, -50), face_kind='sad')))
+sc('laugh', S(100, 182, 60), K(x=100, face_kind='open', la=(-30, -60), ra=(4, -80)), P('M40 40 Q50 30 60 40 M140 40 Q150 30 160 40 M36 70 L50 66 M150 66 L164 70', None, 4, 'opacity=".5"'))
+sc('run_away', S(100, 182, 56), K(back=True, legs='run', la=(-44, -76), ra=(40, -112)), motion(180, 80, ln=-24))
+sc('help_pick_up', S(100, 182, 84), K(L, s2, legs='sit', ra=(48, -40)), crayon(90, 170, RED, 80), crayon(120, 176, BLUE, -70), crayon(146, 170, GREEN, 60), GL(162, .6))
+sc('walk_on_them', S(100, 182, 70), K(x=96, legs='walk', face_kind='flat'), crayon(60, 178, RED, 80), crayon(134, 178, BLUE, -70), P('M100 182 L116 176', None, 0))
+sc('keep_them', S(100, 182, 60), K(x=100, face_kind='flat', la=(-14, -80), ra=(14, -80)), crayon(92, 104, RED, -10), crayon(100, 100, BLUE), crayon(108, 104, GREEN, 10))
+sc('hug_gogo', S(100, 182, 84), GOGO(Rr - 12, .9, la=(-56, -90)), K(L + 14, s2, ra=(56, -90)), P('M100 30 Q100 20 108 20 Q116 20 116 30 Q116 38 100 48 Q84 38 84 30 Q84 20 92 20 Q100 20 100 30 Z', ROSE, 4))
+sc('share_food', S(100, 182, 84), K(L, s2, ra=(42, -82)), GL(Rr, s2, la=(-42, -82)), g(100, 116, 1, P('M-22 0 L0 -16 L22 0 L0 16 Z', '#F2D6A0', 4), P('M0 -16 L0 16', None, 3)))
+sc('pack_toys', S(100, 182, 84), K(L, s2, ra=(44, -66)), R(96, 128, 76, 52, '#D9A066', rx=4), C(118, 122, 12, RED, 4), P('M140 108 L160 108 L160 128 L140 128 Z', BLUE, 4), crayon(150, 100, GREEN, 30, .7))
+alias('pack_away', 'pack_toys')
+sc('throw_blocks', S(100, 182, 60), K(x=80, ra=(40, -150), face_kind='angry'), R(120, 40, 22, 22, RED, rx=3, extra='transform="rotate(20 131 51)"'), R(150, 70, 22, 22, BLUE, rx=3, extra='transform="rotate(-20 161 81)"'), R(160, 30, 18, 18, GOLD, rx=3))
+sc('run_inside', R(20, 120, 70, 10, TAN, rx=3, sw=0), P('M28 130 L28 182 M82 130 L82 182', None, 6), R(20, 120, 70, 10, None, rx=3), S(120, 182, 50), K(x=130, s=.85, legs='run', la=(-44, -76), ra=(40, -112), face_kind='open'), motion(90, 70))
+sc('make_mess', S(100, 182, 84), K(x=70, s=.85, face_kind='open', la=(-40, -130), ra=(40, -130)), R(120, 160, 22, 22, RED, rx=3), C(160, 168, 12, BLUE, 4), crayon(140, 140, GREEN, 70, .8), P('M100 170 Q130 150 180 176 L100 182 Z', '#8A5A2B', 4))
+sc('break_toy', S(100, 182, 70), K(x=70, s=.85, face_kind='angry', la=(-30, -60), ra=(40, -80)), g(150, 150, 1, P('M-30 -10 L-4 -10 L-8 2 L-2 10 L-30 10 Z', RED, 4), C(-22, 16, 6, INK, 0)), g(158, 160, 1, P('M8 -10 L34 -10 L34 10 L6 10 L12 2 Z', RED, 4), C(26, 16, 6, INK, 0), rot=18))
+sc('water_plants', S(100, 182, 84), K(x=70, s=.85, ra=(44, -88)), P('M106 98 L144 98 L140 130 L110 130 Z', GREEN, 4), P('M144 104 L166 90', None, 6), P('M168 96 L172 116 M176 92 L182 110', None, 4, f'stroke="{BLUE}"'),
+    P('M170 182 L170 150', None, 5, f'stroke="{DGREEN}"'), C(170, 144, 10, PK, 4))
+sc('feed_dog', S(100, 182, 84), K(x=70, s=.85, ra=(44, -40)), E(126, 172, 20, 8, RED), C(126, 166, 8, BROWN, 0), g(156, 186, .45, body('dog')))
+sc('carry_bag', S(100, 182, 60), K(la=(-30, -84), ra=(30, -84), face_kind='open'), R(62, 70, 76, 60, '#E8D2A6', rx=10), P('M78 92 L122 92', None, 4))
+sc('set_table', S(100, 182, 80), K(x=70, s=.85, ra=(40, -90)), R(96, 120, 92, 10, TAN, rx=3), P('M104 130 L104 182 M180 130 L180 182', None, 6), plate(150, 112, 18), P('M124 104 L124 118 M176 104 L176 118', None, 4, f'stroke="{GREY}"'), plate(104, 98, 14))
+sc('slam_door', door(60, 50, 70, 132, BROWN), P('M140 70 L160 60 M146 110 L172 110 M140 150 L160 160', None, 6, f'stroke="{RED}"'), P('M118 92 L124 80 L130 94 L142 90 L134 100 L144 108 L130 108 L128 120 L120 108 L108 112 L114 102 L106 94 Z', GOLD, 3))
+sc('hide_shoes', S(100, 182, 70), K(x=90, face_kind='open', la=(-34, -60), ra=(36, -60)), g(140, 150, .4, body('shoe')), g(36, 154, .35, body('shoe')), P('M60 30 Q70 20 76 30', None, 0))
+sc('kick_door', door(110, 50, 70, 132, BROWN), S(80, 182, 50), K(x=70, s=.85, legs='kick_r', face_kind='angry'), P('M104 118 L114 108 M104 136 L118 136', None, 5, f'stroke="{RED}"'))
+sc('sing_to_baby', S(100, 182, 84), K(L, s2, face_kind='open'), R(116, 130, 70, 40, '#E8D2A6', rx=8), P('M120 170 L120 182 M182 170 L182 182', None, 6), baby(150, 124, .7), notes(96, 60))
+sc('shout_at_baby', S(100, 182, 84), K(L, s2, face_kind='shout'), R(116, 130, 70, 40, '#E8D2A6', rx=8), P('M120 170 L120 182 M182 170 L182 182', None, 6), baby(150, 124, .7, 'sad'), P('M96 64 L110 54 M98 80 L116 80', None, 5, f'stroke="{RED}"'))
+sc('walk_away', S(100, 182, 84), K(L - 10, s2, back=True, legs='walk'), R(116, 130, 70, 40, '#E8D2A6', rx=8), P('M120 170 L120 182 M182 170 L182 182', None, 6), baby(150, 124, .7, 'sad'), P('M140 96 Q138 104 142 108', None, 4, f'stroke="{BLUE}"'))
+sc('read_to_gogo', S(100, 182, 84), GOGO(Rr, .8), K(L, s2, la=(20, -90), ra=(44, -90), face_kind='open'), book(84, 108, 40, RED))
+sc('hide_glasses', S(100, 182, 84), GOGO(Rr, .8, glasses=False, face_kind='sad'), K(L, s2, ra=(36, -60)), gogo_glasses(L + 30, 136))
+sc('make_noise', S(100, 182, 84), K(x=80, s=.9, face_kind='open', la=(-30, -110), ra=(36, -80)), g(80, 182, .9, E(36, -80, 20, 8, GREY)), P('M130 50 L150 40 M134 74 L160 74 M130 98 L150 108', None, 6, f'stroke="{RED}"'))
+sc('give_seat', S(100, 182, 84), chair(150, 182, .8), g(150, 186, .66, person(skin=SKIN2, shirt=TAN, pants=BROWN, hairstyle='grey', legs='sit', la=(-30, -50), ra=(30, -50))), K(L, s2, ra=(50, -70)))
+sc('stay_seated', S(100, 182, 84), chair(70, 182, .8), g(70, 186, .66, kid(legs='sit', la=(-30, -50), ra=(30, -50))), AD(Rr + 10, .8, skin=SKIN2, shirt=TAN, pants=BROWN, hairstyle='grey', face_kind='sad', ra=(40, -60)), P('M182 120 L186 182', None, 5, f'stroke="{BROWN}"'))
+sc('drink_it', S(100, 182, 60), K(x=86, ra=(14, -116), face_kind='flat'), g(100, 70, .55, P('M-18 -30 L-18 30 L18 30 L18 -30 Q18 -38 8 -40 L8 -54 L-8 -54 L-8 -40 Q-18 -38 -18 -30 Z', '#B8C98A'), rot=-40))
+sc('share_it', S(100, 182, 84), K(L, s2, ra=(44, -82)), GL(Rr, s2, la=(-44, -82)), bottle(100, 128, .6, '#B8C98A', False))
+sc('tell_adult', S(100, 182, 84), K(L, s2, face_kind='open', ra=(30, -126)), MAMA(Rr, .9, face_kind='flat'), P('M70 30 L106 30 Q112 30 112 36 L112 52 Q112 58 106 58 L84 58 L76 66 L78 58 Q64 58 64 52 L64 36 Q64 30 70 30 Z', WHITE, 4), C(80, 44, 3, INK, 0), C(88, 44, 3, INK, 0), C(96, 44, 3, INK, 0))
+sc('eat_pill', S(100, 182, 70), K(x=80, s=.9, ra=(30, -118), face_kind='open'), g(80, 182, .9, E(30, -124, 7, 4, GOLD, 3)), pills(152, 150, .9))
+sc('hide_bottle', S(100, 182, 70), K(x=90, face_kind='open', la=(-34, -60), ra=(40, -60)), pills(150, 140, .6))
+sc('give_adult', S(100, 182, 84), K(L, s2, ra=(50, -80)), MAMA(Rr, .9, la=(-44, -86)), g(100, 116, .5, body('matchbox')))
+sc('hide_matches', S(100, 182, 70), K(x=90, face_kind='open', la=(-34, -60), ra=(42, -66)), g(146, 120, .32, body('matchbox')))
+SHOP_BG = R(10, 20, 180, 40, '#E8746A', rx=8) + P('M10 60 L190 60', None, 0) + P('M30 20 L30 60 M70 20 L70 60 M110 20 L110 60 M150 20 L150 60', None, 5, 'stroke="#FFFFFF"')
+sc('ask_shop_worker', SHOP_BG, R(110, 120, 80, 62, TAN, rx=4), AD(150, .62, y=128, shirt=GREEN, hairstyle='short', skin=SKIN2), K(70, .8, face_kind='open', ra=(40, -110)))
+sc('leave_shop', SHOP_BG, door(120, 70, 50, 112, BROWN, True), K(80, .8, back=True, legs='walk'))
+sc('go_with_stranger', S(100, 182, 84), AD(Rr, .9, shirt=DGREY, face_kind='flat', la=(-44, -60), hat=P('M-44 -146 L44 -146', None, 7) + P('M-28 -146 Q-26 -178 0 -178 Q26 -178 28 -146 Z', INK)), K(L, s2, ra=(42, -64), legs='walk'))
+sc('say_no_run', S(100, 182, 84), AD(Rr + 10, .9, shirt=DGREY, face_kind='flat', la=(-44, -100), hat=P('M-44 -146 L44 -146', None, 7) + P('M-28 -146 Q-26 -178 0 -178 Q26 -178 28 -146 Z', INK)), K(L - 6, s2, legs='run', face_kind='open', ra=(50, -120), la=(-40, -80)), motion(30, 70))
+sc('take_sweets', S(100, 182, 84), AD(Rr, .9, shirt=DGREY, face_kind='flat', la=(-44, -86), hat=P('M-44 -146 L44 -146', None, 7) + P('M-28 -146 Q-26 -178 0 -178 Q26 -178 28 -146 Z', INK)), K(L, s2, ra=(44, -82)), g(100, 108, .25, P('M50 104 L20 80 L24 128 Z M150 104 L180 80 L176 128 Z', PK), C(100, 104, 48, RED)))
+CAR_SIDE = (P('M10 150 L10 120 Q10 108 24 106 L50 102 L70 74 Q76 66 88 66 L128 66 Q140 66 146 76 L160 104 Q190 108 190 124 L190 150 Z', DGREY) +
+            P('M78 78 L68 102 L106 102 L106 78 Z M116 78 L116 102 L150 102 L140 78 Z', B, 4) + C(50, 154, 18, INK, 0) + C(50, 154, 7, GREY, 0) + C(150, 154, 18, INK, 0) + C(150, 154, 7, GREY, 0))
+sc('stranger_car', S(100, 176, 86), CAR_SIDE, C(128, 88, 12, SKIN1, 4), P('M118 82 L138 82', None, 6), P('M150 96 L172 80', None, 10), P('M150 96 L172 80', None, 4, f'stroke="{SKIN1}"'))
+sc('man_in_car', S(100, 176, 86), CAR_SIDE.replace(DGREY, BLUE), C(128, 88, 12, SKIN2, 4), P('M118 82 Q128 70 138 82', None, 6))
+ROAD = R(10, 120, 180, 70, '#6D7380', rx=0) + P('M20 156 L50 156 M80 156 L110 156 M140 156 L170 156', None, 6, 'stroke="#FFFFFF"')
+sc('holding_hands_road', R(10, 120, 180, 70, '#6D7380'), P('M30 130 L30 180 M60 130 L60 180 M90 130 L90 180 M120 130 L120 180 M150 130 L150 180', None, 14, 'stroke="#FFFFFF"'), AD(120, .8, y=170, shirt=GREEN, la=(-40, -70)), K(70, .6, y=170, ra=(46, -70)))
+sc('playing_road', ROAD, g(30, 120, .5, CAR_SIDE.replace(DGREY, RED)), K(140, .6, y=176, legs='run', face_kind='open', la=(-40, -80), ra=(40, -110)), ball(106, 172, 9))
+sc('busy_road', ROAD, g(4, 96, .5, CAR_SIDE.replace(DGREY, RED)), g(96, 110, .5, CAR_SIDE.replace(DGREY, BLUE)), g(40, 30, .4, CAR_SIDE.replace(DGREY, GOLD)))
+sc('playing_ball_park', P('M10 150 Q100 140 190 150 L190 190 L10 190 Z', G, 0), tree(40, 160, .6), S(120, 182, 50), K(120, .8, legs='kick_r'), ball(160, 166, 10))
+sc('climbing_stove', g(110, 40, .7, body('stove')), K(80, .7, y=150, legs='kick_l', la=(-40, -120), ra=(44, -100), face_kind='open'))
+sc('playground', P('M10 150 Q100 140 190 150 L190 190 L10 190 Z', G, 0), P('M30 160 L30 60 L90 60 L90 160 M30 80 L90 80 M30 100 L90 100 M30 120 L90 120 M30 140 L90 140', None, 6, f'stroke="{RED}"'),
+    P('M90 60 Q130 70 170 160', None, 12, f'stroke="{GOLD}"'), P('M120 30 L120 160 M180 30 L180 160 M114 30 L186 30 M140 30 L140 100 M160 30 L160 100', None, 5), R(132, 100, 36, 8, BROWN, rx=3))
+sc('seesaw', S(100, 182, 84), P('M84 182 L100 150 L116 182 Z', RED), P('M20 170 L180 130', None, 12, f'stroke="{BROWN}"'), K(40, .55, y=166, legs='sit'), GL(160, .55, y=136, legs='sit'))
+sc('child_with_mom', S(100, 182, 80), MAMA(Rr - 10, .95, la=(-44, -66)), K(L + 4, s2, ra=(48, -60)))
+sc('child_helping_family', S(100, 182, 80), MAMA(Rr, .9, la=(-40, -80)), K(L, s2, la=(-30, -84), ra=(40, -84)), plate(100, 110, 18), P('M88 104 L112 104', None, 0))
+sc('helping_hands', g(100, 104, 1.2, P('M-60 20 Q-40 -10 -10 0 L20 10 Q30 16 22 24 L-4 22', SKIN2), P('M60 -10 Q40 20 10 10 L-20 0 Q-30 -6 -22 -14 L4 -12', SKIN1)), P('M100 40 Q100 30 108 30 Q116 30 116 40 Q116 48 100 58 Q84 48 84 40 Q84 30 92 30 Q100 30 100 40 Z', ROSE, 4))
+sc('gogo_and_baby', S(100, 182, 70), GOGO(100, 1, la=(-26, -86), ra=(26, -86)), baby(100, 100, .8))
+sc('mama_cooking', S(100, 182, 80), MAMA(70, .9, ra=(44, -110)), g(70, 182, .9, P('M44 -110 L60 -60', None, 6, f'stroke="{BROWN}"')), g(144, 120, .45, body('cooking_pot')))
+sc('baby_sleeping', S(100, 182, 76), R(30, 110, 140, 56, '#E8D2A6', rx=10), P('M40 110 L40 70 M160 110 L160 70 M70 110 L70 80 M100 110 L100 80 M130 110 L130 80 M40 76 L160 76', None, 5), baby(100, 112, .9, 'sleep'), zzz(140, 40))
+sc('cat_playing', S(100, 182, 70), g(30, 10, .8, body('cat')), C(160, 160, 18, PK), P('M146 150 Q160 166 174 152 M150 166 Q160 154 172 168', None, 3), P('M146 168 Q130 182 120 176', None, 3))
+
+# ---- second pass ----------------------------------------------------------------
+sc('feed_dog', S(100, 182, 84), K(x=60, s=.8, ra=(48, -40)), E(112, 174, 18, 7, RED), C(112, 168, 7, BROWN, 0), g(96, 70, .55, body('dog')))
+sc('helping_hands', hands(100, 126, SKIN2), P('M100 40 Q100 26 112 26 Q124 26 124 40 Q124 52 100 66 Q76 52 76 40 Q76 26 88 26 Q100 26 100 40 Z', ROSE, 4))
+sc('hide_shoes', S(100, 182, 76), K(x=96, face_kind='open', la=(-40, -60), ra=(40, -60)), g(98, 108, .3, body('shoe')), g(6, 108, .3, body('shoe')), R(120, 140, 70, 30, '#9C6B3C', rx=6), P('M126 170 L126 182 M184 170 L184 182', None, 6))
+sc('busy_road', ROAD, g(4, 96, .5, CAR_SIDE.replace(DGREY, RED)), g(96, 110, .5, CAR_SIDE.replace(DGREY, BLUE)), P('M10 120 L190 120', None, 0), g(130, 60, .3, CAR_SIDE.replace(DGREY, GOLD)), P('M10 100 L190 100', None, 0))
