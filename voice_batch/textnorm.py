@@ -3,6 +3,11 @@
 * split_sentences: a line is rendered one sentence at a time. A countdown
   ("in 3... 2... 1...") stays in one sentence: rendered alone, a bare "2..."
   never came back word-exact from the ASR.
+* render_sentences: the sentences as rendered. A sentence of three words or
+  fewer ("Listen.", "Yes!", "q, q, quack.") joins its neighbour: rendered
+  alone, the model mostly gave dead air or babble the ASR heard as "Thanks
+  for watching!" (606 of the 778 sentences without a word-exact take in
+  Kavitha's Grade R failures; 576 of them three words or fewer).
 * speak_text: punctuation-only changes for the TTS prompt (a spaced hyphen
   or dash is a pause, never "minus"; a colon is a comma). Words never change.
 * tts_prompt: what the model is actually given for one sentence - the
@@ -22,6 +27,21 @@ _SENT_RE = re.compile(r"(?<=[.!?])(?<!\d\.\.\.)\s+|(?<=\d\.\.\.)\s+(?!\d)")
 
 def split_sentences(text: str) -> list[str]:
     return [s.strip() for s in _SENT_RE.split(" ".join(text.split())) if s.strip()]
+
+
+SHORT_WORDS = 3
+
+
+def render_sentences(text: str) -> list[str]:
+    """split_sentences, with each short sentence joined to the one before
+    it (the first one to the one after it)."""
+    out: list[str] = []
+    for s in split_sentences(text):
+        if out and (len(s.split()) <= SHORT_WORDS or len(out[-1].split()) <= SHORT_WORDS):
+            out[-1] = f"{out[-1]} {s}"
+        else:
+            out.append(s)
+    return out
 
 
 def speak_text(sentence: str) -> str:

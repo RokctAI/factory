@@ -244,11 +244,12 @@ class HostPlaceholders(unittest.TestCase):
             pron = {"words": {}, "ambiguous": {}, "names": ["Supacharge"]}
             items = {it["id"]: it for it in lines.build_lines(d, AID, ["intro"], pron, kind="assistant")}
             new = items[f"{AID}/intro/new"]
-            self.assertEqual(new["sentences"], ["I'm Kavitha.", "Class starts in 3... 2... 1..."])
-            self.assertEqual(new["sentence_wild"], [[["Kavitha", "Kavitha"]], []])
+            # "I'm Kavitha." is short, so it is rendered with the next sentence
+            self.assertEqual(new["sentences"], ["I'm Kavitha. Class starts in 3... 2... 1..."])
+            self.assertEqual(new["sentence_wild"], [[["Kavitha", "Kavitha"]]])
             self.assertEqual(new["pronounced"], [])
             ret = items[f"{AID}/intro/returning@tutor_001+tutor_002"]
-            self.assertEqual(ret["sentence_wild"], [[], [["Name 1", "Name 1"]]])
+            self.assertEqual(ret["sentence_wild"], [[["Name 1", "Name 1"]]])
 
     def test_display_name_prefers_roster_then_still(self):
         with tempfile.TemporaryDirectory() as d:
