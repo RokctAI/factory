@@ -3,6 +3,7 @@
 Set AGENT_ROOT to a RokctAI/agent checkout to also check the real line
 scripts (skipped otherwise; the scripts are private and never copied here).
 """
+import hashlib
 import json
 import os
 import sys
@@ -14,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import batch  # noqa: E402
 from lines import build_lines, spoken_text  # noqa: E402
 from qc import TAIL_MAX_DB, pick, sim_threshold, stitch, tail_db, tail_ok  # noqa: E402
-from textnorm import TAIL_PAD, norm_words, speak_text, split_sentences, tts_prompt, word_errors  # noqa: E402
+from textnorm import TAIL_PAD, norm_words, render_sentences, speak_text, split_sentences, tts_prompt, word_errors  # noqa: E402
 
 
 class TextNorm(unittest.TestCase):
@@ -23,6 +24,16 @@ class TextNorm(unittest.TestCase):
         self.assertEqual(split_sentences("Class starts in 3... 2... 1... Sharing now."),
                          ["Class starts in 3... 2... 1...", "Sharing now."])
         self.assertEqual(split_sentences("Wait... Then go. It's 10... ok."), ["Wait...", "Then go.", "It's 10...", "ok."])
+
+    def test_render_sentences_join_short_ones(self):
+        self.assertEqual(render_sentences("Yes! q, q, quack."), ["Yes! q, q, quack."])
+        self.assertEqual(render_sentences("Let's listen together. a, a, ant. Ant starts with a!"),
+                         ["Let's listen together. a, a, ant.", "Ant starts with a!"])
+        self.assertEqual(render_sentences("Listen. Which picture starts with the sound? Tap it."),
+                         ["Listen. Which picture starts with the sound? Tap it."])
+        self.assertEqual(render_sentences("Look at the big red ball. Now find the small blue ball."),
+                         ["Look at the big red ball.", "Now find the small blue ball."])
+        self.assertEqual(render_sentences("Listen."), ["Listen."])
 
     def test_speak_text_punctuation_only(self):
         self.assertEqual(speak_text("Method: a by c - two, three — done."), "Method, a by c, two, three, done.")
@@ -244,7 +255,9 @@ class Lines(unittest.TestCase):
                 "voices/team/tutors/CAPS/tutor_009/samples/sample_line.m4a"])
             # the gated WAV is a work file only (qc writes it under work/final)
             self.assertEqual(items[0]["final_wav"], "lms/team/tutors/CAPS/tutor_009/greetings/01.wav")
-            self.assertEqual(items[0]["sentences"], ["One.", "Two."])
+            self.assertEqual(items[0]["sentences"], ["One. Two."])  # short sentences render together
+            # hashed per split sentence, so clips rendered before the join stay current
+            self.assertEqual(items[0]["render_sha256"], hashlib.sha256("One.\nTwo.".encode("utf-8")).hexdigest())
 
     @unittest.skipUnless(os.environ.get("AGENT_ROOT"), "AGENT_ROOT not set")
     def test_real_tutor_001(self):

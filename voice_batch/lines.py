@@ -27,7 +27,7 @@ from pathlib import Path
 import pronunciations
 import sys
 import voice_paths
-from textnorm import speak_text, split_sentences
+from textnorm import render_sentences, speak_text, split_sentences
 
 CLIP_CATEGORIES = ("acknowledgements", "greetings", "signoffs")
 ASSISTANT_CATEGORIES = ("intro", "handover", "signoff", "timekeeping")
@@ -69,7 +69,10 @@ def pronounced_fields(id_: str, text: str, pron: dict | None, names=()) -> dict:
                 pronunciations.json "names") the ASR check wildcards
     tts_text    only when a pronunciation changed the spoken text"""
     try:
-        parts = [pronunciations.apply(s, pron) for s in split_sentences(text)]
+        parts = [pronunciations.apply(s, pron) for s in render_sentences(text)]
+        # Hashed per split sentence, as before render_sentences joined the
+        # short ones: a clip that already passed is not rendered again.
+        render_key = [speak_text(pronunciations.apply(s, pron)[1]) for s in split_sentences(text)]
     except pronunciations.PronunciationError as exc:
         raise pronunciations.PronunciationError(f"line {id_}: {exc}") from None
     display = " ".join(p[0] for p in parts)
@@ -79,7 +82,7 @@ def pronounced_fields(id_: str, text: str, pron: dict | None, names=()) -> dict:
     out = {
         "text": display, "source_text": text,
         "text_sha256": hashlib.sha256(display.encode("utf-8")).hexdigest(),
-        "render_sha256": hashlib.sha256("\n".join(render).encode("utf-8")).hexdigest(),
+        "render_sha256": hashlib.sha256("\n".join(render_key).encode("utf-8")).hexdigest(),
         "sentences": [p[0] for p in parts], "render_text": render,
         "sentence_wild": wild, "asr_text": display,
         "asr_wild": [w for sw in wild for w in sw],
