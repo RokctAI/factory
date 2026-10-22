@@ -73,6 +73,16 @@ class Planning(unittest.TestCase):
                          ["intro", "seg00", "seg01", "seg02"])  # a new reference redoes all
         self.assertEqual(L.redo_shift(redo + [{"key": "seg00", "sha256": "x"}], "seg00"), 200)
 
+    def test_asr_only_failures_under_an_older_qc_retry_once(self):
+        items = [self.item("intro"), self.item("seg00"), self.item("seg01")]
+        base = {"render_sha256": "r1", "ref_sha256": "R", "tail_pad": TAIL_PAD}
+        asr = {"rounds": [{"round": 5, "failing": {"asr": {"sentences_without_word_exact_take": 1}}}]}
+        sim = {"rounds": [{"round": 5, "failing": {"similarity": 0.8}}]}
+        manifest = {"failed": [{"id": items[0]["id"], **base, **asr},           # old QC, ASR only: retry
+                               {"id": items[1]["id"], **base, **sim},           # voice match: settled
+                               {"id": items[2]["id"], **base, **asr, "qc": L.LESSON_QC}]}  # failed under this QC
+        self.assertEqual([it["key"] for it in L.pending_items(items, manifest, "R")], ["intro"])
+
     def test_pack_one_persona_per_job_round_robin(self):
         todo = ([{"persona": "assistant_005", "lesson": f"a{i}", "words": 300} for i in range(5)]
                 + [{"persona": "tutor_001", "lesson": f"t{i}", "words": 2500} for i in range(3)])

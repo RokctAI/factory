@@ -43,6 +43,12 @@ sys.path.insert(0, str(HERE))
 import lesson_lines as L  # noqa: E402
 
 LESSON_SEED_ROUNDS = ([11], [22], [33], [44], [55])
+# A lesson part is a paragraph of ~16 sentences; one sentence the ASR never
+# heard word-exact in five seeds used to fail the whole part (85% of tutor
+# parts by 2026-10-22, mostly subject words misheard: "formulae" as
+# "formality"). On the last round such a sentence may pass one word off,
+# and the part is flagged for a listen (qc.py --near-miss-words).
+LESSON_NEAR_MISS_WORDS = 1
 
 
 def outputs(**kv) -> None:
@@ -106,6 +112,7 @@ def cmd_render(args) -> int:
     args.f0_target, args.f0_tolerance = float(v["f0_target_hz"]), float(v["f0_tolerance_hz"])
     args.pace_wpm, args.pace_tolerance = R.voice_pace(agent, args.persona)
     args.seed_rounds = LESSON_SEED_ROUNDS
+    args.near_miss_words = LESSON_NEAR_MISS_WORDS
     started = os.environ.get("JOB_STARTED_AT", "")
     args.budget = R.resume.Budget(args.budget_minutes, start=float(started) if started.isdigit() else None)
     args.checkpoint = (R.resume.Checkpoint(shlex.split(args.checkpoint_cmd), args.push_every_minutes)
@@ -186,12 +193,16 @@ def render_lesson(args, r: dict, built: list[dict], stems: Path, records: Path, 
                 encoder = mp3.encode(res["final_path"], dst)
                 lines[it["id"]] = {**base, "file": Path(it["file"]).name, **R.score_fields(res),
                                    "sha256": R.sha256_file(dst), "wav_sha256": res["sha256"], "encoder": encoder,
-                                   **({"pronounced": it["pronounced"], "needs_listen": True}
-                                      if it.get("pronounced") else {}),
+                                   **({"pronounced": it["pronounced"]} if it.get("pronounced") else {}),
+                                   **({"near_miss_sentences": res["near_miss_sentences"]}
+                                      if res.get("near_miss_sentences") else {}),
+                                   **({"needs_listen": True}
+                                      if it.get("pronounced") or res.get("asr_lowered") else {}),
                                    "seeds_tried": res["seeds_tried"]}
                 failed.pop(it["id"], None)
             else:
-                failed[it["id"]] = {**base, **R.failed_fields(res), **R.qc_failed.entry_fields(it, res)}
+                failed[it["id"]] = {**base, "qc": L.LESSON_QC, **R.failed_fields(res),
+                                    **R.qc_failed.entry_fields(it, res)}
                 lines.pop(it["id"], None)
                 stale = stems / it["file"]
                 if stale.exists():
