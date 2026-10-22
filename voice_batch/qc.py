@@ -27,6 +27,12 @@ Selection: among the sentence's passing takes, median F0 closest to
            12 dB above the reference's. Measured on Kavitha: approved R-3
            clips sit 3 to 11 dB above her reference; the two takes that
            sounded like an open mic sat 14 to 15 dB above it.
+           --near-miss-words N (lessons, last seed round only): a sentence
+           with no word-exact take may use one the ASR heard at most N
+           words off that passes F0, similarity and the checks above
+           (tier 3); the whole-clip ASR gate then allows those misses plus
+           one word per 8 sentences, and the line is flagged asr_lowered
+           for a human listen.
 Stitch   : trim at -40 dB (an edge noise burst of <= 200 ms that
            sits >= 100 ms from the speech is dropped, not kept as speech)
            with 40 ms padding, 12 ms fades, 200-240 ms
@@ -339,19 +345,27 @@ def take_rank(m: dict, target: float = TARGET_F0) -> tuple:
 
 
 def pick(cands: list[dict], target: float = TARGET_F0, tolerance: float = F0_TOLERANCE,
-         sim_min: float = TAKE_SIM_MIN, ref_hiss: float | None = None) -> tuple[dict | None, int]:
-    """(best take, tier) — tier 1 strict pass, tier 2 word-exact only, 0 none."""
+         sim_min: float = TAKE_SIM_MIN, ref_hiss: float | None = None,
+         near_miss: int = 0) -> tuple[dict | None, int]:
+    """(best take, tier) — tier 1 strict pass, tier 2 word-exact only, 0 none.
+    With near_miss > 0 and no word-exact take, tier 3: a take the ASR heard
+    at most near_miss words off that passes every other take check. It is
+    flagged for a human listen (the ASR mishears subject words such as
+    "formulae" on takes that sound right)."""
     lo, hi = f0_range(target, tolerance)
     # A take that ends mid-word never counts, however well the ASR heard it.
     # Nor does one padded with seconds of non-speech the ASR skipped over.
-    exact = [c for c in cands if c["err"] == 0 and tail_ok(c.get("tail_db", -120.0)) and span_ok(c)
-             and hiss_ok(c, ref_hiss)]
+    clean = [c for c in cands if tail_ok(c.get("tail_db", -120.0)) and span_ok(c) and hiss_ok(c, ref_hiss)]
+    exact = [c for c in clean if c["err"] == 0]
     strict = [c for c in exact if lo <= c["f0"] <= hi and c["res"] >= sim_min]
     rank = lambda c: take_rank(c, target)  # noqa: E731
     if strict:
         return min(strict, key=rank), 1
     if exact:
         return min(exact, key=rank), 2
+    near = [c for c in clean if 0 < c["err"] <= near_miss and lo <= c["f0"] <= hi and c["res"] >= sim_min]
+    if near:
+        return min(near, key=lambda c: (c["err"], *rank(c))), 3
     return None, 0
 
 
@@ -472,6 +486,9 @@ def main() -> int:
     ap.add_argument("--language", default="en")
     ap.add_argument("--pace-wpm", type=float, default=PACE_WPM)
     ap.add_argument("--pace-tolerance", type=float, default=PACE_TOL_WPM)
+    ap.add_argument("--near-miss-words", type=int, default=0,
+                    help="accept a sentence take this many ASR words off when no take is word-exact "
+                         "(flagged for a listen); run.py passes it on the last seed round only")
     args = ap.parse_args()
     lo, hi = f0_range(args.f0_target, args.f0_tolerance)
     sys.path.insert(0, args.scripts_dir)
@@ -512,9 +529,9 @@ def main() -> int:
             key = f"{it['id']}#{k}"
             cands = [dict(m, path=p) for p, m in M.items() if m["key"] == key and p not in rejected]
             best, tier = pick(cands, args.f0_target, args.f0_tolerance, min(args.sim_short, TAKE_SIM_MIN),
-                              meter.ref_hiss)
+                              meter.ref_hiss, args.near_miss_words)
             picks.append(best); tiers.append(tier)
-            if tier != 1:
+            if tier not in (1, 3):
                 lacking.append({"key": key, "tier": tier})
                 if tier == 0:
                     # What the ASR heard instead, for qc_failed.json in the
@@ -549,7 +566,14 @@ def main() -> int:
         thr = sim_threshold(dur, args.sim_short, args.sim_long)
         tm = timings(it["text"], fm.get("words", []), dur)
         cgate, cm = clip_checks(x, SR, tm["wpm"] if tm["words"] else None, (args.pace_wpm, args.pace_tolerance))
-        gate = {"f0": lo <= fm["f0"] <= hi, "similarity": fm["res"] >= thr, "asr": fm["err"] == 0,
+        # Each sentence was already heard on its own. On a long stitched clip
+        # the ASR drifts a word now and then, so the whole-clip check allows
+        # the near-miss sentences' own misses plus one word per 8 sentences;
+        # any miss allowed here flags the line for a listen.
+        asr_allow = 0
+        if args.near_miss_words:
+            asr_allow = sum(b["err"] for b, t in zip(picks, tiers) if t == 3) + len(picks) // 8
+        gate = {"f0": lo <= fm["f0"] <= hi, "similarity": fm["res"] >= thr, "asr": fm["err"] <= asr_allow,
                 "tail": tail_ok(fm["tail_db"]), **cgate}
         r.update({
             "status": "pass" if all(gate.values()) else "fail", "gate": gate, "final_path": str(dst),
@@ -557,6 +581,9 @@ def main() -> int:
             "similarity": fm["res"], "similarity_threshold": thr, "asr_match": fm["err"] == 0,
             # Passed only because the batch lowered the bar: a human listens.
             "similarity_lowered": fm["res"] < sim_threshold(dur),
+            # Passed on a near-miss sentence or a whole-clip ASR allowance: a human listens.
+            "asr_lowered": fm["err"] > 0 or 3 in tiers,
+            "near_miss_sentences": [k for k, t in enumerate(tiers, 1) if t == 3],
             "asr_word_errors": fm["err"], "asr_transcript": fm["transcript"], "tail_db": fm["tail_db"],
             "rms_dbfs": round(float(20 * np.log10(np.sqrt(np.mean(x ** 2)))), 2),
             "peak": round(float(np.max(np.abs(x))), 4), "pauses_ms": pauses,

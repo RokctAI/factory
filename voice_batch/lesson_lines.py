@@ -39,6 +39,9 @@ from lines import pronounced_fields, spoken_text  # noqa: E402
 
 VOICES_FILE = HERE / "lesson_voices.json"
 STEM_DIR = "voice"
+# Bumped when the lesson QC gate changes so that lines failed under the old
+# gate get one more try (pending_items). 2: near-miss sentences (2026-10-22).
+LESSON_QC = 2
 MANIFEST = "manifest.json"
 CATEGORY = "lesson"
 TURN_RE = re.compile(r"^\*\*([A-Za-z][\w ]*):\*\*\s*(.*)$")
@@ -239,15 +242,25 @@ def redo_shift(redo: list[dict], key: str) -> int:
     return 100 * sum(1 for e in redo if e["key"] == key)
 
 
+def retry_failed(entry: dict) -> bool:
+    """A failed line whose last round failed only the ASR check, under a QC
+    older than LESSON_QC. Seeds are fixed, so a line that failed on voice
+    match or pitch would fail the same way again: only ASR misses retry."""
+    rounds = entry.get("rounds") or [{}]
+    failing = set((rounds[-1].get("failing") or {}).keys())
+    return entry.get("qc", 1) < LESSON_QC and bool(failing) and failing <= {"asr"}
+
+
 def pending_items(items: list[dict], manifest: dict, ref_sha: str, redo: list[dict] = ()) -> list[dict]:
     """Items not yet rendered for this text and reference, plus passed lines
     the owner rejected on listening (redo.json names the rejected MP3 by its
     sha256; a fresh take has another hash). A line that failed every seed
     round for the same text and reference is settled: it needs a script or
-    voice change, not another run."""
+    voice change, not another run, unless it failed only the ASR check
+    under an older QC (LESSON_QC), which gets it one more try."""
     from textnorm import TAIL_PAD
     done = {e["id"]: e for e in manifest.get("lines", [])}
-    failed = {e["id"]: e for e in manifest.get("failed", [])}
+    failed = {e["id"]: e for e in manifest.get("failed", []) if not retry_failed(e)}
     rejected = {(e["key"], e.get("sha256")) for e in redo}
     out = []
     for it in items:

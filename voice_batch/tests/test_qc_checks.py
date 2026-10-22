@@ -213,3 +213,17 @@ def test_sound_span_measures_noise_the_asr_skips():
 if __name__ == "__main__":
     unittest.main()
 
+
+
+def test_near_miss_take_only_when_asked_and_no_exact_take():
+    # "formulae" heard as "formality": one word off, voice and pitch fine.
+    near = {"err": 1, "f0": 102.0, "res": 0.9, "swings": 0, "tail_db": -60.0, "span": 3.0, "n_words": 6}
+    assert qc.pick([near], 102.0, 8.0) == (None, 0)
+    assert qc.pick([near], 102.0, 8.0, near_miss=1) == (near, 3)
+    # Two words off, off pitch, or a weak voice match never count.
+    assert qc.pick([dict(near, err=2)], 102.0, 8.0, near_miss=1) == (None, 0)
+    assert qc.pick([dict(near, f0=130.0)], 102.0, 8.0, near_miss=1) == (None, 0)
+    assert qc.pick([dict(near, res=0.7)], 102.0, 8.0, near_miss=1) == (None, 0)
+    # A word-exact take wins, even off pitch (tier 2, as before).
+    exact = dict(near, err=0, f0=130.0)
+    assert qc.pick([near, exact], 102.0, 8.0, near_miss=1) == (exact, 2)

@@ -131,7 +131,9 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
     budget = getattr(args, "budget", None)
     stopped = False
     history: dict[str, list] = {}   # per line: each round's failing gates (qc_failed.json)
-    for rnd, seeds in enumerate(getattr(args, "seed_rounds", SEED_ROUNDS), 1):
+    rounds = getattr(args, "seed_rounds", SEED_ROUNDS)
+    near_miss = getattr(args, "near_miss_words", 0)
+    for rnd, seeds in enumerate(rounds, 1):
         jobs = []
         for key in sorted(pending):
             for seed in seeds:
@@ -158,7 +160,9 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
                         "--sim-short", str(getattr(args, "sim_short", qc.SIM_SHORT)),
                         "--sim-long", str(getattr(args, "sim_long", qc.SIM_LONG)),
                         "--language", args.language, "--pace-wpm", str(args.pace_wpm),
-                        "--pace-tolerance", str(args.pace_tolerance)], check=True)
+                        "--pace-tolerance", str(args.pace_tolerance),
+                        # Near misses only once the word-exact seeds are spent.
+                        "--near-miss-words", str(near_miss if rnd == len(rounds) else 0)], check=True)
         print("::endgroup::", flush=True)
         if budget is not None:
             budget.record(len(jobs), time.time() - t0)
@@ -241,6 +245,7 @@ def run_header(args, ref: Path, voice: Path) -> dict:
         "settings": {
             "prompt": f"Speaker 1: <sentence>{TAIL_PAD}", "tail_pad": TAIL_PAD, "cfg_scale": 1.3, "ddpm_steps": 10,
             "seed_rounds": [list(s) for s in getattr(args, "seed_rounds", SEED_ROUNDS)], "per_sentence": True,
+            "near_miss_words": getattr(args, "near_miss_words", 0),
             "pause_ms": [280, 320], "fade_ms": 12, "trim_top_db": 40,
             "loudness_dbfs": -20.0, "sample_rate": 24000, "channels": 1, "subtype": "PCM_16",
             "selection": f"word-exact takes; median F0 closest to {args.f0_target:g} Hz, then fewest upward swings, then higher similarity",
