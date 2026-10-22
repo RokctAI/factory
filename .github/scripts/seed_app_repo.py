@@ -31,6 +31,17 @@ BINARY_SUFFIXES = (".png", ".jpg", ".jpeg", ".gif", ".ico", ".pdf", ".zip")
 STACKS = ("nextjs", "flutter", "frappe")
 
 
+def out_name(name):
+    """Name a template file is written under in the seeded app.
+
+    `*.dart.template` files are kept inert in the factory (so Dart tooling
+    never picks them up here) and become `*.dart` in the app.
+    """
+    if name.endswith(".dart.template"):
+        return name[: -len(".template")]
+    return RENAMES.get(name, name)
+
+
 def substitute(text, values):
     return TOKEN_RE.sub(lambda m: values.get(m.group(1), m.group(0)), text)
 
@@ -60,7 +71,7 @@ def copy_tree(template, dest, values):
         os.makedirs(out_dir, exist_ok=True)
         for name in files:
             src = os.path.join(root, name)
-            out = os.path.join(out_dir, RENAMES.get(name, name))
+            out = os.path.join(out_dir, out_name(name))
             if name.lower().endswith(BINARY_SUFFIXES):
                 shutil.copy2(src, out)
             else:
