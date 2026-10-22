@@ -121,6 +121,17 @@ class SeedTestCase(SeedRunner, unittest.TestCase):
         return t
 
 
+class TestDartTemplateRename(SeedTestCase):
+    def test_dart_template_becomes_dart(self):
+        t = self.make_layered_template()
+        write(t / "common" / "test" / "x_test.dart.template", "void main() {}\n")
+        write(t / "common" / "notes.txt.template", "keep\n")
+        self.seed(t, self.dest)
+        self.assertTrue((self.dest / "test" / "x_test.dart").is_file())
+        self.assertFalse((self.dest / "test" / "x_test.dart.template").exists())
+        self.assertTrue((self.dest / "notes.txt.template").is_file())
+
+
 class TestFlatLegacyTemplate(SeedTestCase):
     def test_flat_copy_renames_and_substitutes(self):
         self.seed(self.make_flat_template(), self.dest)
