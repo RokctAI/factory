@@ -121,15 +121,37 @@ _HOMOPHONES = {"guest": "guessed"}
 def norm_words(text: str) -> list[str]:
     s = join_thousands(text.lower().replace("’", "'").replace("'", ""))
     s = re.sub(r"(?<=\d),(?=\d{3}(?!\d))", "", s)
-    s = s.replace("×", " times ").replace("²", " squared ").replace("−", "-")
+    s = s.replace("×", " times ").replace("²", " squared ").replace("−", "-").replace("%", " percent ")
     s = re.sub(r"(^|[\s(=,])-\s*(?=\d)", r"\1 minus ", s)
     s = re.sub(r"(\d)([a-z])", r"\1 \2", s)
     s = re.sub(r"\d+", lambda m: " " + _n2w(int(m.group())) + " ", s)
     s = re.sub(r"[^a-z ]", " ", s)
-    return [_HOMOPHONES.get(w, w) for w in (_SPELLING.get(w, w) for w in s.split())]
+    return [_HOMOPHONES.get(w, w) for w in (_ise(_SPELLING.get(w, w)) for w in s.split())]
+
+
+# -ize/-ise (organizing, summarize, organization): the ASR writes American,
+# the scripts British. Both sides fold to -is-.
+_IZE_RE = re.compile(r"(?<=\w\w)iz(e|es|ed|ing|ation|ations|er|ers)$")
+
+
+def _ise(w: str) -> str:
+    return _IZE_RE.sub(r"is\1", w)
+
+
+def _compounds(a: list[str], b: list[str]) -> list[str]:
+    """b with each word that is two adjacent words of a run together
+    ("markup" for "mark-up", "crosscast" for "cross-cast") split back into
+    those two words."""
+    pairs = {x + y: (x, y) for x, y in zip(a, a[1:])}
+    out: list[str] = []
+    for w in b:
+        out.extend(pairs[w] if w in pairs and w not in a else (w,))
+    return out
 
 
 def word_errors(reference: str, hypothesis: str) -> int:
     a, b = norm_words(reference), norm_words(hypothesis)
+    b = _compounds(a, b)
+    a = _compounds(b, a)
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     return sum(max(i2 - i1, j2 - j1) for op, i1, i2, j1, j2 in sm.get_opcodes() if op != "equal")

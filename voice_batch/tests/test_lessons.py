@@ -38,6 +38,16 @@ class Parsing(unittest.TestCase):
         self.assertEqual(word_errors("12 metres", "12 meters"), 0)
         self.assertGreater(word_errors("a deposit of R1 200", "a deposit of R"), 0)
 
+    def test_asr_check_folds_spelling_percent_and_compounds(self):
+        # Heard on lesson takes that sounded right (2026-10-22 failures).
+        from textnorm import word_errors
+        self.assertEqual(word_errors("organising and summarising data", "organizing and summarizing data"), 0)
+        self.assertEqual(word_errors("the mark-up is 50 percent", "the markup is 50%"), 0)
+        self.assertEqual(word_errors("Cross-cast: sales", "Crosscast sales"), 0)
+        self.assertEqual(word_errors("a sister-in-charge", "a sister in charge"), 0)
+        # A real miss still counts.
+        self.assertEqual(word_errors("finally, guard against bias", "finally, god against bias"), 1)
+
     def test_qa_turns_labels_and_continuations(self):
         md = ("**Assistant:** First question?\n\n**Tutor:** An answer\nthat runs on.\n\n***\n\n"
               "**Thandi:** Second **bold** one?\n\n**Tutor:** Second answer.\n")
