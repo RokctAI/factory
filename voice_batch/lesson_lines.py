@@ -41,7 +41,8 @@ VOICES_FILE = HERE / "lesson_voices.json"
 STEM_DIR = "voice"
 # Bumped when the lesson QC gate changes so that lines failed under the old
 # gate get one more try (pending_items). 2: near-miss sentences (2026-10-22).
-LESSON_QC = 2
+# 3: the ASR check folds -ize/-ise, % and run-together compounds (2026-10-23).
+LESSON_QC = 3
 MANIFEST = "manifest.json"
 CATEGORY = "lesson"
 TURN_RE = re.compile(r"^\*\*([A-Za-z][\w ]*):\*\*\s*(.*)$")
