@@ -24,7 +24,7 @@ name: Lesson audio
 # line keys and numbers only, the reference clip is verified by sha256 and
 # never leaves the runner.
 #
-# Every few hours the plan job takes up to LESSON_AUDIO_JOBS (6) jobs of one
+# Every few hours the plan job takes up to LESSON_AUDIO_JOBS (15) jobs of one
 # persona each, packed to about LESSON_AUDIO_JOB_WORDS (4000) pending words;
 # each job stops cleanly at RENDER_BUDGET_MINUTES and checkpoints as it goes,
 # so the next run carries on where it stopped.
@@ -39,7 +39,7 @@ on:
         required: false
         default: ''
       max_jobs:
-        description: 'Render jobs this run (empty = LESSON_AUDIO_JOBS, 6)'
+        description: 'Render jobs this run (empty = LESSON_AUDIO_JOBS, 15)'
         required: false
         default: ''
       animations:
@@ -69,7 +69,7 @@ env:
   RENDER_BUDGET_MINUTES: ${{ vars.RENDER_BUDGET_MINUTES || '300' }}
   RENDER_CHUNK_LINES: '2'
   RENDER_PUSH_MINUTES: '15'
-  LESSON_AUDIO_JOBS: ${{ inputs.max_jobs || vars.LESSON_AUDIO_JOBS || '6' }}
+  LESSON_AUDIO_JOBS: ${{ inputs.max_jobs || vars.LESSON_AUDIO_JOBS || '15' }}
   LESSON_AUDIO_JOB_WORDS: ${{ vars.LESSON_AUDIO_JOB_WORDS || '4000' }}
   TEAM_ROOT: ${{ github.workspace }}/.agent/lms/team
   # Voice references (voice_batch/voice_paths.py): one switch.
@@ -147,7 +147,9 @@ jobs:
     timeout-minutes: 330
     strategy:
       fail-fast: false
-      max-parallel: 6
+      # Public repo, free runners: 15 of the org's 20 concurrent jobs, the
+      # rest left for other workflows (R-3 voice batches are parked).
+      max-parallel: 15
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.matrix_json) }}
     steps:
