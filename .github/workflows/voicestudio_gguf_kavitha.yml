@@ -1,0 +1,151 @@
+name: VoiceStudio OmniVoice GGUF listening test (Kavitha)
+
+# One-off listening test: the same line cloned from one approved voice
+# reference with VoiceStudio's OmniVoice GGUF engine (omnivoice.cpp at
+# the commit VoiceStudio pins, CPU quant Q4_K_M and Q8_0) and with its
+# regular in-process OmniVoice engine. Clips go to a private agent
+# branch, never to this public repo. Logs carry timings and scores only.
+
+on:
+  push:
+    branches: [claude/project-thread-9new64]
+    paths: ['.github/workflows/voicestudio_gguf_kavitha.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  OMNIVOICE_CPP_SHA: 886fc079838ca7400cb2b42b36e2a65aa1daabe8
+  GGUF_REPO: Serveurperso/OmniVoice-GGUF
+  GGUF_REV: 361609388ae572a820d085185bbbe2a2aac4b30e
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+  REF: voices/refs/voice_b_sister_ref.wav
+  OUT_BRANCH: rokct/voicestudio-gguf-kavitha
+  LINE: >-
+    Good evening, everyone. Tonight we are going to solve a simple equation together.
+    If two x plus three equals eleven, we first take away three from both sides,
+    which leaves two x equals eight. Then we divide by two, so x equals four.
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Check out the voice reference (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .voices
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /${{ env.REF }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build omnivoice.cpp (CPU)
+        run: |
+          git clone --quiet --recurse-submodules https://github.com/ServeurpersoCom/omnivoice.cpp.git "$RUNNER_TEMP/cpp"
+          cd "$RUNNER_TEMP/cpp"
+          git checkout --quiet "$OMNIVOICE_CPP_SHA"
+          git submodule update --quiet --init --recursive
+          cmake -B build -DCMAKE_BUILD_TYPE=Release > /dev/null
+          cmake --build build -j"$(nproc)" > /dev/null
+          ./build/omnivoice-tts --help 2>&1 | head -1
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --quiet omnivoice huggingface_hub soundfile numpy faster-whisper resemblyzer
+
+      - name: Download GGUF weights
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import hf_hub_download
+          for q in ("Q4_K_M", "Q8_0"):
+              for part in ("base", "tokenizer"):
+                  hf_hub_download(os.environ["GGUF_REPO"], f"omnivoice-{part}-{q}.gguf",
+                                  revision=os.environ["GGUF_REV"], local_dir=os.path.join(os.environ["RUNNER_TEMP"], "gguf"))
+          PY
+          ls -la "$RUNNER_TEMP/gguf"/*.gguf
+
+      - name: Render
+        run: |
+          python - <<'PY'
+          import json, os, subprocess, time
+          import numpy as np, soundfile as sf
+          tmp = os.environ["RUNNER_TEMP"]; out = os.path.join(tmp, "out"); os.makedirs(out, exist_ok=True)
+          line = os.environ["LINE"].strip()
+
+          # Same reference for every engine: whole sentences up to ~12 s,
+          # transcribed so the cloners get a matching ref text. Never logged.
+          from faster_whisper import WhisperModel
+          ref_full = os.path.join(".voices", os.environ["REF"])
+          segs, _ = WhisperModel("base.en", device="cpu", compute_type="int8").transcribe(ref_full)
+          keep, end = [], 0.0
+          for s in segs:
+              if s.end > 12.5 and keep: break
+              keep.append(s.text.strip()); end = s.end
+          wav, sr = sf.read(ref_full)
+          ref = os.path.join(tmp, "ref.wav"); sf.write(ref, wav[: int((end + 0.15) * sr)], sr)
+          ref_txt = os.path.join(tmp, "ref.txt"); open(ref_txt, "w").write(" ".join(keep))
+          print(f"reference trimmed to {end:.1f} s")
+
+          results = {}
+          cpp = os.path.join(tmp, "cpp", "build", "omnivoice-tts")
+          for q in ("Q4_K_M", "Q8_0"):
+              name = f"gguf_{q}"
+              t = time.time()
+              p = subprocess.run([cpp, "--model", f"{tmp}/gguf/omnivoice-base-{q}.gguf",
+                                  "--codec", f"{tmp}/gguf/omnivoice-tokenizer-{q}.gguf",
+                                  "--ref-wav", ref, "--ref-text", ref_txt, "--lang", "English",
+                                  "--seed", "42", "-o", f"{out}/{name}.wav"],
+                                 input=line.encode(), stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+              if p.returncode:
+                  print(f"{name} failed, exit {p.returncode}: {p.stderr.decode()[-800:]}"); continue
+              results[name] = {"gen_s": round(time.time() - t, 1)}
+              print(name, results[name], flush=True)
+
+          import torch
+          from omnivoice import OmniVoice
+          torch.manual_seed(42)
+          t = time.time()
+          model = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cpu", dtype=torch.float32)
+          load = time.time() - t; t = time.time()
+          audio = model.generate(text=line, language="English", ref_audio=ref, ref_text=open(ref_txt).read())[0]
+          sf.write(f"{out}/pytorch_full.wav", np.asarray(audio.cpu() if hasattr(audio, "cpu") else audio).squeeze(), 24000)
+          results["pytorch_full"] = {"gen_s": round(time.time() - t, 1), "load_s": round(load, 1)}
+
+          from resemblyzer import VoiceEncoder, preprocess_wav
+          enc = VoiceEncoder("cpu"); r = enc.embed_utterance(preprocess_wav(ref_full))
+          for name, d in results.items():
+              p = f"{out}/{name}.wav"; a, s = sf.read(p)
+              d["audio_s"] = round(len(a) / s, 2); d["rtf"] = round(d["gen_s"] / d["audio_s"], 2)
+              d["wpm"] = round(len(line.split()) / (d["audio_s"] / 60), 1)
+              d["voice_match"] = round(float(np.dot(r, enc.embed_utterance(preprocess_wav(p)))), 3)
+              d["dbfs"] = round(float(20 * np.log10(np.sqrt(np.mean(a ** 2)) + 1e-9)), 1)
+          json.dump(results, open(f"{out}/results.json", "w"), indent=2)
+          print(json.dumps(results, indent=2))
+          PY
+
+      - name: Push clips to a private agent branch
+        if: always()
+        env:
+          PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          command -v ffmpeg > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; }
+          cd "$RUNNER_TEMP/out"
+          for f in *.wav; do ffmpeg -loglevel error -y -i "$f" -af loudnorm=I=-18 -ar 24000 -b:a 128k "${f%.wav}.mp3"; done
+          git init --quiet -b "$OUT_BRANCH" push && cd push
+          mkdir -p voicestudio_gguf_kavitha && cp ../*.mp3 voicestudio_gguf_kavitha/ && { cp ../results.json voicestudio_gguf_kavitha/ 2>/dev/null || true; }
+          git add -A
+          git -c user.name=rokct-bot -c user.email=bot@rokct.ai commit --quiet -m "VoiceStudio GGUF listening test clips, Kavitha [skip ci]"
+          git push --quiet --force "https://x-access-token:${PAT}@github.com/RokctAI/agent.git" "HEAD:refs/heads/$OUT_BRANCH"
+          echo "pushed to RokctAI/agent $OUT_BRANCH"
