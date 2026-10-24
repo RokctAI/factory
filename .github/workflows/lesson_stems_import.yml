@@ -1,0 +1,76 @@
+name: Lesson stems import
+
+# Lesson audio rendered outside CI (the sandbox box, owner 2026-10-24) has
+# no direct route to the release API, so the box pushes its MP3s and lesson
+# records to a staging branch of RokctAI/lessons. This job moves the MP3s
+# onto the stems-<subject>-<grade>-<term> pre-releases and commits the
+# records to lessons main, the same way a lesson_audio.yml job's final push
+# does (voice_batch/ci/import_staged_stems.py). Lesson parts CI has also
+# rendered are skipped, never overwritten.
+#
+# PUBLIC-REPO SAFETY, as lesson_audio.yml: no pull_request trigger, no
+# artifacts, logs carry lesson paths, personas and counts only.
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Staging branch on RokctAI/lessons'
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lesson-stems-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    name: Import staged stems
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check MONOREPO_PAT is set
+        env:
+          MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$MONOREPO_PAT" ]; then
+            echo "::error title=MONOREPO_PAT missing::This workflow writes the private lessons repo with the org secret MONOREPO_PAT."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - name: Check out lessons main (private; text only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/scripts/CAPS/
+            /school/curriculum/CAPS/*/session/
+            /school/curriculum/CAPS/*/syllabus/*.json
+
+      - name: Check out the staging branch (records and stems)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          ref: ${{ inputs.branch }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _stage
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /_sandbox_stems/
+            /school/curriculum/CAPS/*/session/**/voice/
+
+      - name: Upload stems and commit records
+        env:
+          LESSONS_PAT: ${{ secrets.MONOREPO_PAT }}
+        run: python3 voice_batch/ci/import_staged_stems.py --stage _stage --lessons-root _lessons
