@@ -1,0 +1,135 @@
+name: VoiceStudio Grade R sample lines (Kavitha)
+
+# One-off listening test: ten real Grade R pack lines in Kavitha's voice
+# from VoiceStudio's regular OmniVoice engine, next to the VibeVoice take
+# where one already passed. Clips and line texts go to a private agent
+# branch, never to this public repo. Logs carry keys and timings only.
+
+on:
+  push:
+    branches: [claude/project-thread-9new64]
+    paths: ['.github/workflows/voicestudio_r3_samples.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  LESSONS_ROOT: ${{ github.workspace }}/_lessons
+  LESSONS_DIR: school
+  VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+  VOICE_ROOT: ${{ vars.VOICE_ROOT || 'voices' }}
+  REF: voices/refs/voice_b_sister_ref.wav
+  OUT_BRANCH: rokct/voicestudio-r3-samples
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out Grade R packs, Kavitha's reference and the VibeVoice takes (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/scripts/CAPS/
+            /school/curriculum/CAPS/*/r3_packs/
+            /${{ env.REF }}
+            /voices/r3/
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --quiet omnivoice huggingface_hub soundfile numpy faster-whisper resemblyzer
+
+      - name: Render
+        run: |
+          python - <<'PY'
+          import json, os, random, shutil, sys, time
+          import numpy as np, soundfile as sf, torch
+          sys.path.insert(0, "voice_batch")
+          import r3_lines
+          tmp = os.environ["RUNNER_TEMP"]; out = os.path.join(tmp, "out"); os.makedirs(out, exist_ok=True)
+          lessons = os.environ["LESSONS_ROOT"]
+
+          # Ten Grade R lines across the kinds a child hears: letter sounds
+          # and very short lines (the ones VibeVoice failed most), shows,
+          # stories and prompts.
+          rows = r3_lines.build_r3_lines(packs=["*.gradeR.*"])
+          words = lambda it: len(it["text"].split())
+          kinds = {
+              "sound": [it for it in rows if "tts_text" in it and it["needs_listen"]],
+              "short": [it for it in rows if words(it) <= 3 and "tts_text" not in it],
+              "show": [it for it in rows if it["key"].endswith(".show") and words(it) > 3],
+              "story": [it for it in rows if it["key"].endswith("_story")],
+              "prompt": [it for it in rows if it["key"].endswith("_prompt") and words(it) > 3],
+          }
+          rng = random.Random(24); picks, seen = [], set()
+          for kind, n in (("sound", 2), ("short", 2), ("show", 2), ("story", 2), ("prompt", 2)):
+              pool = [it for it in kinds[kind] if it["id"] not in seen]
+              for it in rng.sample(pool, min(n, len(pool))):
+                  picks.append((kind, it)); seen.add(it["id"])
+          print("picked", len(picks), "of", len(rows), "Grade R lines", flush=True)
+
+          from faster_whisper import WhisperModel
+          ref_full = os.path.join(lessons, os.environ["REF"])
+          segs, _ = WhisperModel("base.en", device="cpu", compute_type="int8").transcribe(ref_full)
+          keep, end = [], 0.0
+          for s in segs:
+              if s.end > 12.5 and keep: break
+              keep.append(s.text.strip()); end = s.end
+          wav, sr = sf.read(ref_full)
+          ref = os.path.join(tmp, "ref.wav"); sf.write(ref, wav[: int((end + 0.15) * sr)], sr)
+          ref_text = " ".join(keep)
+
+          from omnivoice import OmniVoice
+          from resemblyzer import VoiceEncoder, preprocess_wav
+          model = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cpu", dtype=torch.float32)
+          enc = VoiceEncoder("cpu"); r = enc.embed_utterance(preprocess_wav(ref_full))
+          lines = []
+          for n, (kind, it) in enumerate(picks, 1):
+              name = f"{n:02d}_{kind}"
+              text = " ".join(it["render_text"])
+              torch.manual_seed(42); t = time.time()
+              audio = model.generate(text=text, language="English", ref_audio=ref, ref_text=ref_text)[0]
+              a = np.asarray(audio.cpu() if hasattr(audio, "cpu") else audio).squeeze()
+              sf.write(f"{out}/{name}_voicestudio.wav", a, 24000)
+              row = {"clip": name, "key": it["key"], "text": it["text"], "rendered_text": text,
+                     "gen_s": round(time.time() - t, 1), "audio_s": round(len(a) / 24000, 2),
+                     "voice_match": round(float(np.dot(r, enc.embed_utterance(preprocess_wav(f"{out}/{name}_voicestudio.wav")))), 3)}
+              vv = os.path.join(lessons, it["file"])
+              row["vibevoice_take"] = os.path.exists(vv)
+              if row["vibevoice_take"]:
+                  shutil.copy(vv, f"{out}/{name}_vibevoice.mp3")
+              lines.append(row)
+              print(name, it["key"], {k: row[k] for k in ("gen_s", "audio_s", "voice_match", "vibevoice_take")}, flush=True)
+          json.dump(lines, open(f"{out}/lines.json", "w"), indent=2)
+          PY
+
+      - name: Push clips to a private agent branch
+        if: always()
+        env:
+          PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          cd "$RUNNER_TEMP/out"
+          for f in *.wav; do ffmpeg -loglevel error -y -i "$f" -af "adelay=300,loudnorm=I=-18" -ar 24000 -b:a 128k "${f%.wav}.mp3"; done
+          git init --quiet -b "$OUT_BRANCH" push && cd push
+          mkdir -p voicestudio_r3_samples && cp ../*.mp3 voicestudio_r3_samples/ && { cp ../lines.json voicestudio_r3_samples/ 2>/dev/null || true; }
+          git add -A
+          git -c user.name=rokct-bot -c user.email=bot@rokct.ai commit --quiet -m "VoiceStudio Grade R sample clips [skip ci]"
+          git push --quiet --force "https://x-access-token:${PAT}@github.com/RokctAI/agent.git" "HEAD:refs/heads/$OUT_BRANCH"
+          echo "pushed to RokctAI/agent $OUT_BRANCH"
