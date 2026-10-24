@@ -18,6 +18,12 @@ import import_staged_stems as I  # noqa: E402
 REL = "maths/session/grade9/term4/topic-a/lesson-b"
 
 
+def stems(root: Path, persona: str, rel: str = REL) -> None:
+    d = root / I.STEMS_DIR / rel / "voice" / persona
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "seg00.mp3").write_bytes(b"mp3")
+
+
 def manifest(root: Path, persona: str, keys: list[str]) -> Path:
     d = root / "school/curriculum/CAPS" / REL / "voice" / persona
     d.mkdir(parents=True, exist_ok=True)
@@ -40,6 +46,7 @@ class Import(unittest.TestCase):
 
     def test_staged_record_is_copied_and_pushed(self):
         manifest(self.stage, "tutor_001", ["seg00", "seg01"])
+        stems(self.stage, "tutor_001")
         self.assertEqual(I.staged(self.stage), {"tutor_001": [REL]})
         run = self.run_import()
         self.assertEqual(run.call_count, 1)
@@ -52,10 +59,20 @@ class Import(unittest.TestCase):
 
     def test_ci_work_on_main_is_never_overwritten(self):
         manifest(self.stage, "tutor_001", ["seg00"])
+        stems(self.stage, "tutor_001")
         theirs = manifest(self.main, "tutor_001", ["seg00", "seg05"])
         run = self.run_import()
         run.assert_not_called()
         self.assertEqual(I.keys_passed(theirs), {"seg00", "seg05"})
+
+    def test_records_without_staged_stems_are_main_s_own_and_left_alone(self):
+        # The staging branch is a copy of lessons: CI's records ride along.
+        manifest(self.stage, "tutor_004", ["seg00"])
+        theirs = manifest(self.main, "tutor_004", ["seg00"])
+        theirs.write_text(json.dumps({"lines": [{"key": "seg00"}], "failed": [{"key": "seg01"}]}), encoding="utf-8")
+        self.assertEqual(I.staged(self.stage), {})
+        self.run_import().assert_not_called()
+        self.assertIn("failed", json.loads(theirs.read_text(encoding="utf-8")))
 
 
 if __name__ == "__main__":

@@ -5,10 +5,12 @@ pre-releases, and their records onto lessons main.
 
     LESSONS_PAT=... import_staged_stems.py --stage _stage --lessons-root _lessons
 
-The staging branch holds, at the paths a render job uses:
+The staging branch (a branch of lessons, so a full copy of it) holds, at
+the paths a render job uses:
     school/curriculum/CAPS/<rel>/voice/<persona>/manifest.json (+ qc_failed.json)
     _sandbox_stems/<rel>/voice/<persona>/<key>.mp3
-Each staged record is copied into the lessons main checkout and
+Only lesson parts with stems under _sandbox_stems/ are imported. Each
+staged record is copied into the lessons main checkout and
 lesson_stems.py push uploads the MP3s it lists and commits the records to
 main with [skip ci], exactly as a lesson_audio.yml job's final push does.
 A lesson part whose main manifest already has passed lines the staged one
@@ -33,13 +35,19 @@ STEMS_DIR = "_sandbox_stems"
 
 
 def staged(stage: Path) -> dict[str, list[str]]:
-    """{persona: [lesson rel]} for every staged manifest."""
-    caps = L.curriculum_root(stage)
+    """{persona: [lesson rel]} for every lesson part with stems staged under
+    _sandbox_stems/. The staging branch is a full copy of lessons, so every
+    other manifest on it is main's own (possibly older) record and is left
+    alone."""
+    caps, root = L.curriculum_root(stage), stage / STEMS_DIR
     out: dict[str, list[str]] = {}
-    for m in sorted(caps.glob(f"*/session/*/*/*/*/{L.STEM_DIR}/*/{L.MANIFEST}")):
-        persona = m.parent.name
-        rel = str(m.parent.parent.parent.relative_to(caps))
-        out.setdefault(persona, []).append(rel)
+    for d in sorted(root.glob(f"*/session/*/*/*/*/{L.STEM_DIR}/*")):
+        if not d.is_dir():
+            continue
+        persona = d.name
+        rel = str(d.parent.parent.relative_to(root))
+        if (caps / rel / L.STEM_DIR / persona / L.MANIFEST).is_file():
+            out.setdefault(persona, []).append(rel)
     return out
 
 
