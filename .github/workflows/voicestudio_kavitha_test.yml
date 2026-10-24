@@ -1,0 +1,114 @@
+name: VoiceStudio Kavitha listening test
+
+# One-off listening test: Kavitha's approved reference cloned with
+# VoiceStudio's regular OmniVoice engine, a host line and a Grade R line,
+# each at normal speed and slowed with the engine's own speed setting.
+# Clips go to a private agent branch, never to this public repo. Logs
+# carry timings and scores only.
+
+on:
+  push:
+    branches: [claude/project-thread-9new64]
+    paths: ['.github/workflows/voicestudio_kavitha_test.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+  REF: voices/refs/voice_b_sister_ref.wav
+  OUT_BRANCH: rokct/voicestudio-kavitha-test
+  HOST_LINE: >-
+    Welcome back, Grade 9. Before we start, take out your workbook and a pencil.
+    Tonight your tutor will show you how to read a bar graph, and at the end you can send in your questions.
+  KIDS_LINE: >-
+    Hello, my friends! Let us count the apples together. One, two, three.
+    Well done! Now, can you show me three fingers?
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Check out the voice reference (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .voices
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /${{ env.REF }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --quiet omnivoice huggingface_hub soundfile numpy faster-whisper resemblyzer
+
+      - name: Render
+        run: |
+          python - <<'PY'
+          import json, os, time
+          import numpy as np, soundfile as sf, torch
+          tmp = os.environ["RUNNER_TEMP"]; out = os.path.join(tmp, "out"); os.makedirs(out, exist_ok=True)
+
+          # Whole sentences of the reference up to ~12 s, transcribed for the
+          # cloner. Never logged.
+          from faster_whisper import WhisperModel
+          ref_full = os.path.join(".voices", os.environ["REF"])
+          segs, _ = WhisperModel("base.en", device="cpu", compute_type="int8").transcribe(ref_full)
+          keep, end = [], 0.0
+          for s in segs:
+              if s.end > 12.5 and keep: break
+              keep.append(s.text.strip()); end = s.end
+          wav, sr = sf.read(ref_full)
+          ref = os.path.join(tmp, "ref.wav"); sf.write(ref, wav[: int((end + 0.15) * sr)], sr)
+          ref_text = " ".join(keep)
+          print(f"reference trimmed to {end:.1f} s", flush=True)
+
+          from omnivoice import OmniVoice
+          model = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cpu", dtype=torch.float32)
+          results = {}
+          for label, var in (("host", "HOST_LINE"), ("kids", "KIDS_LINE")):
+              line = os.environ[var].strip()
+              for speed in (1.0, 0.8):
+                  name = f"kavitha_{label}_speed{speed:.1f}".replace(".", "")
+                  torch.manual_seed(42); t = time.time()
+                  audio = model.generate(text=line, language="English", ref_audio=ref, ref_text=ref_text, speed=speed)[0]
+                  sf.write(f"{out}/{name}.wav", np.asarray(audio.cpu() if hasattr(audio, "cpu") else audio).squeeze(), 24000)
+                  results[name] = {"gen_s": round(time.time() - t, 1), "words": len(line.split())}
+                  print(name, results[name], flush=True)
+
+          from resemblyzer import VoiceEncoder, preprocess_wav
+          enc = VoiceEncoder("cpu"); r = enc.embed_utterance(preprocess_wav(ref_full))
+          for name, d in results.items():
+              p = f"{out}/{name}.wav"; a, s = sf.read(p)
+              d["audio_s"] = round(len(a) / s, 2); d["rtf"] = round(d["gen_s"] / d["audio_s"], 2)
+              d["wpm"] = round(d.pop("words") / (d["audio_s"] / 60), 1)
+              d["voice_match"] = round(float(np.dot(r, enc.embed_utterance(preprocess_wav(p)))), 3)
+          json.dump(results, open(f"{out}/results.json", "w"), indent=2)
+          print(json.dumps(results, indent=2))
+          PY
+
+      - name: Push clips to a private agent branch
+        if: always()
+        env:
+          PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          cd "$RUNNER_TEMP/out"
+          for f in *.wav; do ffmpeg -loglevel error -y -i "$f" -af loudnorm=I=-18 -ar 24000 -b:a 128k "${f%.wav}.mp3"; done
+          git init --quiet -b "$OUT_BRANCH" push && cd push
+          mkdir -p voicestudio_kavitha_test && cp ../*.mp3 voicestudio_kavitha_test/ && { cp ../results.json voicestudio_kavitha_test/ 2>/dev/null || true; }
+          git add -A
+          git -c user.name=rokct-bot -c user.email=bot@rokct.ai commit --quiet -m "VoiceStudio Kavitha listening test clips [skip ci]"
+          git push --quiet --force "https://x-access-token:${PAT}@github.com/RokctAI/agent.git" "HEAD:refs/heads/$OUT_BRANCH"
+          echo "pushed to RokctAI/agent $OUT_BRANCH"
