@@ -6,7 +6,7 @@
 
 jobs.json: [{"key": "<line id>#<n>", "text": "...", "seed": 11, "out": "takes/..wav"}]
 Uses the agent repo's render_voices.Renderer (VibeVoice, CPU, cfg 1.3,
-10 DDPM steps, 'Speaker 1:' prompt) and its -20 dBFS / 24 kHz / PCM_16
+10 DDPM steps unless --ddpm-steps says otherwise, 'Speaker 1:' prompt) and its -20 dBFS / 24 kHz / PCM_16
 writer, so CI renders exactly like the local pipeline. Each sentence goes
 to the model as textnorm.tts_prompt (sentence + " ...") so its last word is
 not clipped. Logs ids, seeds and timings only; never the text.
@@ -27,6 +27,8 @@ def main() -> int:
     ap.add_argument("--ref", required=True)
     ap.add_argument("--scripts-dir", required=True)
     ap.add_argument("--model-path", required=True)
+    ap.add_argument("--ddpm-steps", type=int, default=0,
+                    help="diffusion steps per frame; 0 keeps render_voices' default (10)")
     args = ap.parse_args()
 
     jobs = [j for j in json.loads(Path(args.jobs).read_text(encoding="utf-8")) if not Path(j["out"]).exists()]
@@ -39,7 +41,7 @@ def main() -> int:
     import render_voices as rv
     from textnorm import tts_prompt
 
-    r = rv.Renderer(args.model_path, "cpu", rv.DEFAULT_DDPM_STEPS, rv.DEFAULT_CFG_SCALE)
+    r = rv.Renderer(args.model_path, "cpu", args.ddpm_steps or rv.DEFAULT_DDPM_STEPS, rv.DEFAULT_CFG_SCALE)
     r.load()
     ref = Path(args.ref)
     failures = 0

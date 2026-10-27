@@ -66,6 +66,7 @@ from textnorm import TAIL_PAD  # noqa: E402
 
 TUTOR_ORDER = ("acknowledgements", "greetings", "signoffs", "teaching")
 SEED_ROUNDS = ([11, 22, 33], [44], [55])
+DEFAULT_DDPM_STEPS = 10  # render_voices default; a voice may raise it (lesson_voices.json ddpm_steps)
 
 
 def sha256_file(p: Path) -> str:
@@ -152,7 +153,8 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
         (work / "jobs.json").write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
         print(f"::group::{label} round {rnd}: seeds {seeds}, {len(pending)} sentence(s)", flush=True)
         subprocess.run([sys.executable, str(HERE / "render_takes.py"), "--jobs", str(work / "jobs.json"),
-                        "--ref", str(ref), "--scripts-dir", str(scripts), "--model-path", args.model_path],
+                        "--ref", str(ref), "--scripts-dir", str(scripts), "--model-path", args.model_path,
+                        "--ddpm-steps", str(ddpm_steps(args))],
                        check=True)
         subprocess.run([sys.executable, str(HERE / "qc.py"), "--work", str(work), "--ref", str(ref),
                         "--scripts-dir", str(scripts), "--asr-model", args.asr_model,
@@ -226,6 +228,11 @@ def drive(items: list[dict], work: Path, ref: Path, scripts: Path, args, label: 
     return remaining
 
 
+def ddpm_steps(args) -> int:
+    """Diffusion steps for this voice: lesson_voices.json `ddpm_steps`, else the default 10."""
+    return int(getattr(args, "ddpm_steps", 0) or DEFAULT_DDPM_STEPS)
+
+
 def run_header(args, ref: Path, voice: Path) -> dict:
     lo, hi = f0_range(args.f0_target, args.f0_tolerance)
     sim_short, sim_long = getattr(args, "sim_short", qc.SIM_SHORT), getattr(args, "sim_long", qc.SIM_LONG)
@@ -243,7 +250,7 @@ def run_header(args, ref: Path, voice: Path) -> dict:
             "library_versions": versions(),
         },
         "settings": {
-            "prompt": f"Speaker 1: <sentence>{TAIL_PAD}", "tail_pad": TAIL_PAD, "cfg_scale": 1.3, "ddpm_steps": 10,
+            "prompt": f"Speaker 1: <sentence>{TAIL_PAD}", "tail_pad": TAIL_PAD, "cfg_scale": 1.3, "ddpm_steps": ddpm_steps(args),
             "seed_rounds": [list(s) for s in getattr(args, "seed_rounds", SEED_ROUNDS)], "per_sentence": True,
             "near_miss_words": getattr(args, "near_miss_words", 0),
             "pause_ms": [280, 320], "fade_ms": 12, "trim_top_db": 40,

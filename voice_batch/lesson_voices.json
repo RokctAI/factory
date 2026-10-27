@@ -9,7 +9,8 @@
     "under voice_batches/inbox/ use for that voice. Add a persona only once",
     "the owner has approved its voice. Same-source rule: personas sharing a",
     "voice_family never share a lesson (checked per lesson, from the voice",
-    "specs); Voice A never renders Grade R-3."
+    "specs); Voice A never renders Grade R-3.",
+    "ddpm_steps (optional, default 10): diffusion steps for that voice. Voice F sounds robotic in places at 10 and was approved at 20."
   ],
   "voices": {
     "tutor_001": {
@@ -39,6 +40,14 @@
       "ref_sha256": "cc3019bbabc019685d7953eedaf0766822c73f01f8c43936b2384634195d738f",
       "f0_target_hz": 241,
       "f0_tolerance_hz": 25
+    },
+    "tutor_016": {
+      "voice": "voice_f",
+      "ref_path": "voices/refs/voice_f_ref.wav",
+      "ref_sha256": "d354b1250b76695ceb82e3c7d12f99b51276ade3bcf3eab8d370d7e7234b9640",
+      "f0_target_hz": 185,
+      "f0_tolerance_hz": 20,
+      "ddpm_steps": 20
     }
   }
 }
