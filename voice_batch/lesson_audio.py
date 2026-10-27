@@ -110,6 +110,7 @@ def cmd_render(args) -> int:
         return 1
     args.voice, args.ref_sha256, args.ref_path = v["voice"], v["ref_sha256"], v["ref_path"]
     args.f0_target, args.f0_tolerance = float(v["f0_target_hz"]), float(v["f0_tolerance_hz"])
+    args.ddpm_steps = int(v.get("ddpm_steps", 0))
     args.pace_wpm, args.pace_tolerance = R.voice_pace(agent, args.persona)
     args.seed_rounds = LESSON_SEED_ROUNDS
     args.near_miss_words = LESSON_NEAR_MISS_WORDS

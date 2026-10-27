@@ -61,6 +61,13 @@ class Parsing(unittest.TestCase):
             self.assertRegex(v["ref_sha256"], r"^[0-9a-f]{64}$")
             self.assertTrue(v["ref_path"].startswith("voices/refs/"))
             self.assertGreater(v["f0_tolerance_hz"], 0)
+            self.assertIsInstance(v.get("ddpm_steps", 10), int)
+
+    def test_ddpm_steps_default_and_per_voice(self):
+        import run as R
+        self.assertEqual(R.ddpm_steps(types.SimpleNamespace()), 10)
+        self.assertEqual(R.ddpm_steps(types.SimpleNamespace(ddpm_steps=0)), 10)
+        self.assertEqual(R.ddpm_steps(types.SimpleNamespace(ddpm_steps=20)), 20)
 
 
 class Planning(unittest.TestCase):
