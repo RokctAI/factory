@@ -24,7 +24,10 @@
 #                                      protocol composer and every SDK named by
 #                                      the registry template
 #                                      (.rokct/config/app_type ->
-#                                      core/utils/frappe/composer/<app_type>.json),
+#                                      core/utils/nextjs/composer/<app_type>.json)
+#                                      or, when the protocol has no template
+#                                      for this app_type (every client site),
+#                                      by this shell's own composer.json,
 #                                      replaces .rokct/cache/<sdk>/ wholesale,
 #                                      rewrites .rokct/lock.json (every SDK's
 #                                      pins and its home_sdk flag), the
@@ -109,7 +112,13 @@ ROOT = os.getcwd()
 PROTOCOL_GIT = "https://github.com/RokctAI/The-Rokct-Protocol"
 PROTOCOL_FILES = ("sdk_composer.py", "sdk_installer_base.py")
 PROTOCOL_UTILS_REL = os.path.join("core", "utils", "nextjs")
-PROTOCOL_TEMPLATES_REL = os.path.join("core", "utils", "frappe", "composer")
+# Next.js shells' sdks[] templates live in core/utils/nextjs/composer/ since
+# the protocol split them out of the frappe registry; the frappe directory is
+# kept as a fallback for a protocol ref that predates the split.
+PROTOCOL_TEMPLATES_RELS = (
+    os.path.join("core", "utils", "nextjs", "composer"),
+    os.path.join("core", "utils", "frappe", "composer"),
+)
 
 ROKCT_DIR = os.path.join(ROOT, ".rokct")
 CACHE_DIR = os.path.join(ROKCT_DIR, "cache")
@@ -424,6 +433,28 @@ def vendor_composer(protocol_dir):
     return pins
 
 
+def registry_template(protocol_dir, app_type):
+    """The protocol's registry template for this app_type, or None. None is
+    the normal case for a client shell (Ray, 2026-10-31: no per-client
+    compose templates): the shell's own committed composer.json - its
+    sdks[], home_sdk and "data" mode - is then the composition, and
+    sdk_composer.py composes from it as committed."""
+    candidates = [os.path.join(protocol_dir, rel, f"{app_type}.json") for rel in PROTOCOL_TEMPLATES_RELS]
+    return next((c for c in candidates if os.path.exists(c)), None)
+
+
+def announce_composition_source(protocol_dir, app_type):
+    template = registry_template(protocol_dir, app_type)
+    if template is not None:
+        print(f"[*] composition: registry template {os.path.relpath(template, protocol_dir)}")
+        return
+    if not os.path.exists(COMPOSER_JSON):
+        die(f"no registry template '{app_type}' in the protocol checkout "
+            f"(looked in {', '.join(PROTOCOL_TEMPLATES_RELS)}) and no composer.json is committed - nothing to compose.")
+    print(f"[i] composition: no registry template '{app_type}' in the protocol checkout "
+          f"(looked in {', '.join(PROTOCOL_TEMPLATES_RELS)}); composing from this shell's own committed composer.json.")
+
+
 def guard_sibling_checkouts(protocol_dir, app_type):
     """sdk_composer.resolve_and_cache_sdks() prefers ../<repo> next to this
     repo over cloning, and that path skips enforce_sdk_pin(). A refresh must
@@ -431,10 +462,9 @@ def guard_sibling_checkouts(protocol_dir, app_type):
     a sibling checkout present unless explicitly allowed."""
     if os.environ.get("ROKCT_REFRESH_ALLOW_SIBLINGS", "").lower() in ("1", "true", "yes"):
         return
-    template = os.path.join(protocol_dir, PROTOCOL_TEMPLATES_REL, f"{app_type}.json")
-    if not os.path.exists(template):
-        die(f"registry template '{app_type}' is missing from the protocol checkout ({PROTOCOL_TEMPLATES_REL}/{app_type}.json)")
-    urls = {s.get("git") for s in load_json(template).get("sdks", [])
+    template = registry_template(protocol_dir, app_type)
+    source = template or COMPOSER_JSON
+    urls = {s.get("git") for s in load_json(source).get("sdks", [])
             if isinstance(s, dict) and s.get("enabled", True) and s.get("git")}
     parent = os.path.dirname(ROOT)
     siblings = sorted(os.path.join(parent, repo_name(u)) for u in urls
@@ -679,13 +709,15 @@ def refresh():
     print("[*] compose: REFRESH mode - re-fetching the composer and every SDK from upstream.")
     app_type = read_app_type()
     if not app_type:
-        die(".rokct/config/app_type is missing - this shell names no registry template.")
+        die(".rokct/config/app_type is missing - the shell must name its app_type (a registry template, or its own composer.json when there is none).")
     deps_before = dependency_maps()
     tmp_dir = os.path.join(ROKCT_DIR, "tmp")
     os.makedirs(tmp_dir, exist_ok=True)
     protocol_dir = os.path.join(tmp_dir, "The-Rokct-Protocol")
     try:
         protocol_ref = clone_protocol(protocol_dir)
+        announce_composition_source(protocol_dir, app_type)
+        from_template = registry_template(protocol_dir, app_type) is not None
         guard_sibling_checkouts(protocol_dir, app_type)
         composer_pins = vendor_composer(protocol_dir)
         wipe_cache()
@@ -699,7 +731,8 @@ def refresh():
             shutil.rmtree(os.path.join(CACHE_DIR, entry))
     reconcile_tracked_host_files()
     sdks = build_lock(protocol_ref, composer_pins, app_type)
-    restore_composer_json()
+    if from_template:
+        restore_composer_json()
     write_composed_gitignore_block()
     # Tell the shell wrapper whether package-lock.json needs regenerating:
     # only when the installers merged a dependency the host did not already

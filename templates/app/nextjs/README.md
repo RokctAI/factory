@@ -56,21 +56,22 @@ bash scripts/compose.sh && npm run build
 
 `refresh` composes from the registry template named by
 `.rokct/config/app_type` (`{{APP_SLUG}}`, the slug of the name given in the
-factory issue form): `core/utils/frappe/composer/{{APP_SLUG}}.json` in
-`RokctAI/The-Rokct-Protocol`. **Adding that template to the protocol
-registry is what makes `compose.sh refresh` work for a new app** — until it
-exists the refresh stops at its registry guard. Start it from the
+factory issue form) when `RokctAI/The-Rokct-Protocol` has one
+(`core/utils/nextjs/composer/{{APP_SLUG}}.json`, else the frappe one). When
+it has none, the refresh logs one `[i]` line and composes from this shell's
+own committed `composer.json` (its `sdks[]`, `home_sdk` and `data` mode): a
+client website needs no protocol template. Start `composer.json` from the
 protocol's `nextjs_compose_example.json` (its `sdks[]` is the kernel this
 shell already composes; `_available_sdks` is the menu of every other SDK with
-a Next.js half, with repo, path, version and pin per the consumers index)
-and mirror the result here in `composer.json`.
+a Next.js half, with repo, path, version and pin per the consumers index).
 
-Two manual steps remain for every new shell:
-
-1. The registry template above.
-2. The home SDK: flag exactly one non-kernel entry `"home_sdk": true` — it
-   owns `app/page.tsx` and `base_sdk`'s single-answer landing registries.
-   The spawn cannot pick it.
+One manual step remains for every new shell: the home SDK. Flag exactly one
+non-kernel entry `"home_sdk": true` — it owns `app/page.tsx` and
+`base_sdk`'s single-answer landing registries. The spawn cannot pick it. A
+client website with no backend sets `"data": "local"` and makes
+`corporate_sdk` its home: the site is then its `data/` folder and its art in
+`public/`, with no SDK of its own (corporate's
+`nextjs/docs/local-sites.md`).
 
 Once base_sdk 1.35.0 is composed, add `data/` per the base docs.
 
