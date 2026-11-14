@@ -131,8 +131,27 @@ jobs:
             echo "No end_protocol.py; skipping."
           fi
           rm -rf .rokct/tmp
-          # end_protocol leaves a .sync_ready marker for a workspace sync that
-          # SDK repos do not run; never commit it into the SDK repo.
+
+      # Replaces the sync_workspace.yml the SDK repos no longer run: moves the
+      # decision log and other working files to the parent workspace
+      # (RokctAI/occultation). sync_workspace.py redacts the token in errors.
+      - name: Workspace sync (decision logs to parent)
+        working-directory: sdk
+        env:
+          PARENT_REPO_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -f .rokct/.sync_ready ] && [ -f .rokct/.workspace_config.json ] && [ -f .rokct/sync_workspace.py ]; then
+            python3 .rokct/sync_workspace.py
+          else
+            echo "No sync marker or workspace config; skipping workspace sync."
+          fi
+
+      - name: Drop sync leftovers before commit
+        if: always()
+        working-directory: sdk
+        run: |
+          # Never commit the marker or the parent clone into the SDK repo.
+          rm -rf .rokct/.parent_clone
           rm -f .rokct/.sync_ready
 
       - name: Whitespace fix (scoped)
