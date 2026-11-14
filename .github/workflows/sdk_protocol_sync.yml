@@ -8,7 +8,7 @@ name: SDK Protocol Sync
 # Triggers:
 #   repository_dispatch  event_type sdk-protocol-sync, client_payload {repo, ref, sha}
 #   workflow_dispatch    inputs repo, ref
-#   schedule             weekly sweep over SDK_LIST (zero private minutes)
+#   schedule             weekly sweep: starts one run per repo in SDK_LIST
 #
 # Secrets: MONOREPO_PAT must be set on RokctAI/factory. Values are never printed.
 
@@ -42,7 +42,23 @@ env:
   SDK_LIST: "RokctAI/productivity RokctAI/agent RokctAI/commerce RokctAI/core RokctAI/corporate RokctAI/hardware RokctAI/pay RokctAI/zones RokctAI/Users"
 
 jobs:
+  # Weekly sweep: start one sync run per SDK repo in SDK_LIST.
+  sweep:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Start a sync for every SDK repo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for r in $SDK_LIST; do
+            gh workflow run sdk_protocol_sync.yml -R "$GITHUB_REPOSITORY" -f repo="$r" -f ref=main
+          done
+
   sync:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -56,9 +72,6 @@ jobs:
           EVENT: ${{ github.event_name }}
         run: |
           repo="${PAYLOAD_REPO:-${INPUT_REPO:-}}"
-          if [ -z "$repo" ] && [ "$EVENT" = "schedule" ]; then
-            repo="RokctAI/productivity"
-          fi
           if [ -z "$repo" ]; then
             echo "No target repo given."
             exit 1
