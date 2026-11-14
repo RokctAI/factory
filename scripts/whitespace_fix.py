@@ -64,6 +64,8 @@ def main(argv):
         if not os.path.isdir(root):
             continue
         for path in walk(root):
+            if os.path.islink(path):
+                continue
             with open(path, "rb") as fh:
                 data = fh.read()
             if is_binary(data):

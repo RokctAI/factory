@@ -167,6 +167,12 @@ jobs:
             git checkout -b "$branch"
           fi
 
+          if git diff --cached --quiet; then
+            echo "no_changes=true" >> "$GITHUB_OUTPUT"
+            echo "Open sync PR already has these changes."
+            exit 0
+          fi
+
           git commit -m "chore(rokct): protocol sync and whitespace fix [skip ci]"
           git push origin "HEAD:refs/heads/$branch"
 
