@@ -1,0 +1,67 @@
+name: SDK Watch (notifier)
+
+# Notifier for PRIVATE SDK repos that costs them zero Actions minutes.
+# Private repos cannot run a notify workflow (minutes exhausted), so factory
+# polls each SDK repo's main branch on free public minutes. When main has a
+# new commit, it starts sdk_protocol_sync.yml for that repo.
+# Last-seen SHAs are kept in the Actions cache (one entry per repo + SHA).
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write   # start sdk_protocol_sync.yml in this repo
+  contents: read
+
+concurrency:
+  group: sdk-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        # Keep in step with SDK_LIST in sdk_protocol_sync.yml.
+        repo: [RokctAI/productivity]
+    steps:
+      - name: Read SDK main SHA
+        id: head
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          REPO: ${{ matrix.repo }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then echo "MONOREPO_PAT is not set"; exit 1; fi
+          sha=$(gh api "repos/$REPO/commits/main" --jq .sha)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          echo "key=sdk-seen-${REPO//\//-}-$sha" >> "$GITHUB_OUTPUT"
+          mkdir -p .seen && echo "$sha" > .seen/sha
+
+      - name: Seen before?
+        id: seen
+        uses: actions/cache/restore@v4
+        with:
+          path: .seen
+          key: ${{ steps.head.outputs.key }}
+          lookup-only: true
+
+      - name: Start protocol sync
+        if: steps.seen.outputs.cache-hit != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ matrix.repo }}
+          SHA: ${{ steps.head.outputs.sha }}
+        run: |
+          gh workflow run sdk_protocol_sync.yml -R "$GITHUB_REPOSITORY" -f repo="$REPO" -f ref=main
+          echo "Started sync for $REPO at $SHA" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Remember SHA
+        if: steps.seen.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .seen
+          key: ${{ steps.head.outputs.key }}
