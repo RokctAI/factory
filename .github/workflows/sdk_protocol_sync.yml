@@ -1,0 +1,228 @@
+name: SDK Protocol Sync
+
+# Protocol upkeep for PRIVATE SDK repos, run on free public-repo minutes.
+# Clones the SDK repo, runs its .rokct/initiate.py (and end_protocol.py),
+# normalises whitespace under .rokct/ and .github/workflows/, and opens a
+# DRAFT PR on the SDK repo. The SDK repo itself never runs these steps.
+#
+# Triggers:
+#   repository_dispatch  event_type sdk-protocol-sync, client_payload {repo, ref, sha}
+#   workflow_dispatch    inputs repo, ref
+#   schedule             weekly sweep over SDK_LIST (zero private minutes)
+#
+# Secrets: MONOREPO_PAT must be set on RokctAI/factory. Values are never printed.
+
+on:
+  repository_dispatch:
+    types: [sdk-protocol-sync]
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "SDK repo to sync, owner/name (must be in SDK_LIST)"
+        required: true
+        type: string
+        default: RokctAI/productivity
+      ref:
+        description: "Ignored for the base: sync always starts from main"
+        required: false
+        type: string
+        default: main
+  schedule:
+    - cron: '0 3 * * 1' # Weekly, Monday 03:00 UTC
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sdk-sync-${{ github.event.client_payload.repo || inputs.repo || 'schedule' }}
+  cancel-in-progress: true
+
+env:
+  # Only these repos may be synced. Payloads are untrusted; anything else is rejected.
+  SDK_LIST: "RokctAI/productivity"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      # Allowlist is the first step: no checkout happens for a rejected repo.
+      # Untrusted values go through env, never directly into the script.
+      - name: Resolve and allowlist target repo
+        id: allow
+        env:
+          PAYLOAD_REPO: ${{ github.event.client_payload.repo }}
+          INPUT_REPO: ${{ inputs.repo }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          repo="${PAYLOAD_REPO:-${INPUT_REPO:-}}"
+          if [ -z "$repo" ] && [ "$EVENT" = "schedule" ]; then
+            repo="RokctAI/productivity"
+          fi
+          if [ -z "$repo" ]; then
+            echo "No target repo given."
+            exit 1
+          fi
+          allowed=0
+          for r in $SDK_LIST; do
+            if [ "$repo" = "$r" ]; then allowed=1; fi
+          done
+          if [ "$allowed" -ne 1 ]; then
+            echo "Rejected: $repo is not in SDK_LIST."
+            exit 1
+          fi
+          echo "repo=$repo" >> "$GITHUB_OUTPUT"
+          echo "Target: $repo"
+
+      - name: Check MONOREPO_PAT is set
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "MONOREPO_PAT is not set on this repository. Add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          echo "MONOREPO_PAT is set."
+
+      - name: Checkout factory (scripts)
+        uses: actions/checkout@v4
+
+      - name: Checkout SDK repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.allow.outputs.repo }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          ref: main
+          path: sdk
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set git identity
+        working-directory: sdk
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Require SDK marker
+        run: |
+          if [ ! -f sdk/.rokct/config/is_sdk ]; then
+            echo "Repo not marked as SDK (.rokct/config/is_sdk missing). Stopping."
+            exit 1
+          fi
+          echo "SDK marker present."
+
+      # CI must be unset for initiate: it skips the workflow-removal block when
+      # CI is set, and that block is needed to drop protocol CI in the SDK repo.
+      - name: Run initiate on the SDK clone
+        working-directory: sdk
+        run: |
+          if [ ! -f .rokct/initiate.py ]; then
+            echo "Missing .rokct/initiate.py in the SDK repo. Add it there first."
+            exit 1
+          fi
+          env -u CI python3 .rokct/initiate.py
+
+      - name: Run end_protocol on the SDK clone
+        working-directory: sdk
+        run: |
+          if [ -f .rokct/end_protocol.py ]; then
+            python3 .rokct/end_protocol.py
+          else
+            echo "No end_protocol.py; skipping."
+          fi
+          rm -rf .rokct/tmp
+
+      - name: Whitespace fix (scoped)
+        run: |
+          python3 scripts/whitespace_fix.py sdk/.rokct sdk/.github/workflows
+
+      - name: Commit, push, and open or update draft PR
+        id: pr
+        working-directory: sdk
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          REPO: ${{ steps.allow.outputs.repo }}
+        run: |
+          set -euo pipefail
+          git add -A -- .rokct .github/workflows
+          if git diff --cached --quiet; then
+            echo "no_changes=true" >> "$GITHUB_OUTPUT"
+            echo "No protocol changes to sync."
+            exit 0
+          fi
+
+          existing=$(gh pr list --repo "$REPO" --state open --json headRefName \
+            --jq '[.[] | select(.headRefName | startswith("ci/protocol-sync-"))][0].headRefName // empty')
+
+          short=$(git rev-parse --short=7 HEAD)
+          branch="${existing:-ci/protocol-sync-$short}"
+
+          if [ -n "$existing" ]; then
+            git fetch origin "$existing"
+            git stash push --include-untracked -m sync -q
+            git checkout -B "$branch" "origin/$existing"
+            git stash pop -q || { echo "Conflict updating $existing; stopping."; exit 1; }
+            git add -A -- .rokct .github/workflows
+          else
+            git checkout -b "$branch"
+          fi
+
+          if git diff --cached --quiet; then
+            echo "no_changes=true" >> "$GITHUB_OUTPUT"
+            echo "Open sync PR already has these changes."
+            exit 0
+          fi
+
+          git commit -m "chore(rokct): protocol sync and whitespace fix [skip ci]"
+          git push origin "HEAD:refs/heads/$branch"
+
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          echo "existing=${existing:-}" >> "$GITHUB_OUTPUT"
+
+          {
+            echo '<!-- claude-projects-attribution: {"github_login":"RendaniSinyage"} -->'
+            echo '_Requested by **Ray** · [project thread](https://claude.ai/code/project/chan_01MJV7TxmZvhvGn1RbE6GrYf?thread=cmsg_01MJV7TxmZvhvGn1RbE6GrYfKR3cqQbR7jsgRvMaQptCPr)_'
+            echo
+            echo "Automated protocol sync from RokctAI/factory (sdk_protocol_sync.yml)."
+            echo
+            echo "Files changed in this commit:"
+            echo
+            git show --name-status --format= HEAD | while IFS=$'\t' read -r status path rest; do
+              case "$status" in
+                D) echo "- removed: \`$path\`" ;;
+                A) echo "- added: \`$path\`" ;;
+                M) echo "- modified: \`$path\`" ;;
+                *) echo "- $status: \`$path\`" ;;
+              esac
+            done
+          } > "$RUNNER_TEMP/pr_body.md"
+
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --repo "$REPO" --body-file "$RUNNER_TEMP/pr_body.md" >/dev/null
+            url=$(gh pr view "$existing" --repo "$REPO" --json url --jq .url)
+          else
+            url=$(gh pr create --repo "$REPO" --draft --base main --head "$branch" \
+              --title "chore(rokct): protocol sync and whitespace fix" \
+              --body-file "$RUNNER_TEMP/pr_body.md")
+          fi
+          echo "pr_url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Job summary
+        if: always()
+        env:
+          REPO: ${{ steps.allow.outputs.repo }}
+          NO_CHANGES: ${{ steps.pr.outputs.no_changes }}
+          PR_URL: ${{ steps.pr.outputs.pr_url }}
+        run: |
+          {
+            echo "### SDK protocol sync"
+            echo "- Repo: \`$REPO\`"
+            echo "- Source sha: \`$(git -C sdk rev-parse --short HEAD 2>/dev/null || echo unknown)\`"
+            if [ "${NO_CHANGES:-}" = "true" ]; then
+              echo "- Result: no changes"
+            elif [ -n "${PR_URL:-}" ]; then
+              echo "- Result: draft PR $PR_URL"
+            else
+              echo "- Result: failed before PR; see log"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
