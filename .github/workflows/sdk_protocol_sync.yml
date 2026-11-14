@@ -35,11 +35,11 @@ permissions:
 
 concurrency:
   group: sdk-sync-${{ github.event.client_payload.repo || inputs.repo || 'schedule' }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   # Only these repos may be synced. Payloads are untrusted; anything else is rejected.
-  SDK_LIST: "RokctAI/productivity"
+  SDK_LIST: "RokctAI/productivity RokctAI/agent RokctAI/commerce RokctAI/core RokctAI/corporate RokctAI/hardware RokctAI/pay RokctAI/zones RokctAI/Users"
 
 jobs:
   sync:
