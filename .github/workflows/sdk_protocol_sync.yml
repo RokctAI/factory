@@ -131,6 +131,9 @@ jobs:
             echo "No end_protocol.py; skipping."
           fi
           rm -rf .rokct/tmp
+          # end_protocol leaves a .sync_ready marker for a workspace sync that
+          # SDK repos do not run; never commit it into the SDK repo.
+          rm -f .rokct/.sync_ready
 
       - name: Whitespace fix (scoped)
         run: |
