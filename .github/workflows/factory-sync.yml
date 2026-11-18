@@ -23,6 +23,16 @@ jobs:
             rm initiate_temp.py
           fi
 
+      # The app shell template keeps copies of the two workflows that initiate
+      # refreshes at the repo root (protocol play-deploy and guided-tour), so new
+      # app shells start from the same workflow code. Copied after initiate so the
+      # refreshed files are the ones that land in the template.
+      - name: Copy Protocol Workflows Into The App Template
+        run: |
+          cp .github/workflows/play-deploy.yml templates/app/flutter/.github/workflows/play-deploy.yml
+          cp .github/workflows/guided-tour.yml templates/app/flutter/.github/workflows/guided-tour.yml
+          git diff --stat -- templates/app/flutter/.github/workflows || true
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
