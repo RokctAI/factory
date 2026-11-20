@@ -54,7 +54,7 @@ env:
   PYTHON_VERSION: '3.11'
   # The ad engine is rokct-media level 2 (rokct_media.compose), one audio
   # engine with lessons; a protocol commit, never a branch name.
-  ROKCT_MEDIA_REF: ${{ vars.ROKCT_MEDIA_REF || 'd3ab8703fc4d42db30d82cfb656f98b6430cec7d' }}
+  ROKCT_MEDIA_REF: ${{ vars.ROKCT_MEDIA_REF || '496c521681deb68254d4c4dc888aabe4bb0e0e3b' }}
   # vibevoice-community/VibeVoice commit the factory was built and tested on;
   # override with the repository variable VIBEVOICE_REF.
   VIBEVOICE_REF: ${{ vars.VIBEVOICE_REF || '952326ddb264062466a888cf32a5b2f4e803e16e' }}

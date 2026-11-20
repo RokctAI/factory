@@ -87,7 +87,7 @@ jobs:
       # Reel soundtrack: rokct-media's music synth (one audio engine).
       - name: Install render tools
         env:
-          ROKCT_MEDIA_REF: ${{ vars.ROKCT_MEDIA_REF || 'd3ab8703fc4d42db30d82cfb656f98b6430cec7d' }}
+          ROKCT_MEDIA_REF: ${{ vars.ROKCT_MEDIA_REF || '496c521681deb68254d4c4dc888aabe4bb0e0e3b' }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
