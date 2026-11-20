@@ -1,0 +1,33 @@
+# Session report: talking, blinking tutors (2026-11-20)
+
+## Task
+Ray: tutors only have one appearance picture, with no mouth or blink frames. A profile picture alone looks like the team is hiding. Make tutors visible, talking and blinking, even if only briefly.
+
+## Scope agreed with Ray
+- No video in the app. Use pictures plus a timing file, which the app plays (fades + small head sway).
+- Face pictures live in the private lessons repo and download through the backend. They are never baked into the app.
+- Tutors are on screen for intros, sign-offs and the sample lesson only, not whole lessons.
+- Hosts are on screen whenever they talk.
+- No faces during break questions for now.
+
+## Progress
+- Tested on CPU: LivePortrait (smooth face motion), Wav2Lip (blurry), JoyVASA (eyes drift off-identity), MuseTalk v1.5 (sharp lips).
+- Ray picked the look (combo): LivePortrait jaw/eyes + MuseTalk lips.
+- Pictures + timing per line:
+  1. LivePortrait with the head held still.
+  2. MuseTalk lips.
+  3. Keep only distinct mouth pictures.
+  4. Eye pictures for blinks.
+- First picture try was rejected ("its bad"). v2 was close; Ray saw the nose moving oddly. v3 fixes it by starting the mouth pictures below the nostrils.
+- Sizes for a 6 s line: 59 pictures = ~100 KB, 23 pictures = ~40 KB (video ~95 KB). Plus ~40 KB per tutor (base + eyes). Timing file <1 KB.
+- Waiting on Ray: pick 59 or 23 pictures.
+
+## Next
+- Rework the factory tool (talking_head/ + talking clip workflow) to output picture kits and timing files instead of video. This goes in a separate code PR.
+
+## PRs opened this session
+| PR | State | What it does |
+|---|---|---|
+| This PR | Draft (report only, never ready) | Session report |
+
+## Decisions (with reasons) are in decision_log.md

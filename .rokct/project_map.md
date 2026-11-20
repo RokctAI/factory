@@ -13,3 +13,8 @@
 ## Critical Files
 *   `README.md`: Entry point.
 *   `system/memory.md`: User preferences and lessons.
+
+## Factory areas
+*   `.rokct/sessions/`: one report per session (never delete or move).
+*   `.rokct/decision_log.md`: decisions with reasons.
+*   `talking_head/` (in progress, separate PR): makes talking/blinking tutor face pictures + timing from one portrait (LivePortrait + MuseTalk, CPU).
