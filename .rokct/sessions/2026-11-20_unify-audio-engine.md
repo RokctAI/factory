@@ -13,7 +13,8 @@
 | :--- | :--- | :--- |
 | The-Rokct-Protocol #610 | ready | Catches rokct-media up with today's lesson renderer |
 | factory #66 | ready | Parity check, voice_batch vs rokct-media |
-| factory (this report) | draft, never ready | Session report |
+| factory #71 | ready | Keeps `.rokct/sessions/` when a session ends (end_protocol.py synced from the protocol) |
+| factory #69 (this report) | draft, never ready | Session report |
 
 ## Next
 *   Step 3: lessons render through rokct-media behind a `MEDIA_ENGINE` switch. Waits for Ray's go-ahead.
