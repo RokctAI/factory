@@ -1,7 +1,7 @@
 name: SDK Compliance
 
-# Runs shared-workflows sdk_validator.py --compliance (no AI) over the PRIVATE
-# SDK repos on free public-repo minutes. Report only: changes nothing.
+# Runs shared-workflows sdk_validator.py --compliance (no AI) over every SDK
+# repo (found by its .rokct/config/is_sdk marker) on free public-repo minutes. Report only: changes nothing.
 # Factory is public, so only the per-SDK summary table (SDK name, PASS/FAIL,
 # counts by kind) goes to the job summary. The raw validator log, which names
 # private file paths, is never printed or uploaded.
@@ -17,9 +17,6 @@ permissions:
 concurrency:
   group: sdk-compliance
   cancel-in-progress: false
-
-env:
-  SDK_REPOS: "productivity agent commerce core corporate hardware pay zones Users"
 
 jobs:
   compliance:
@@ -37,9 +34,27 @@ jobs:
         with:
           path: factory
 
+      # Finds SDK repos itself: every RokctAI repo whose main has the
+      # .rokct/config/is_sdk marker. A new SDK repo is picked up once marked.
+      - name: Discover SDK repos
+        id: discover
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          repos=""
+          for r in $(gh api --paginate "orgs/RokctAI/repos?type=all&per_page=100" --jq '.[] | select(.archived|not) | .name'); do
+            if gh api "repos/RokctAI/$r/contents/.rokct/config/is_sdk" --silent 2>/dev/null; then
+              repos="$repos $r"
+            fi
+          done
+          if [ -z "$repos" ]; then echo "No SDK repos found"; exit 1; fi
+          echo "repos=$repos" >> "$GITHUB_OUTPUT"
+          echo "SDK repos found: $(echo $repos | wc -w)"
+
       - name: Clone shared-workflows and SDK repos (read only)
         env:
           GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          SDK_REPOS: ${{ steps.discover.outputs.repos }}
         run: |
           mkdir -p ws
           git config --global credential.helper '!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f'
