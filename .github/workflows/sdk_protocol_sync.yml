@@ -135,6 +135,9 @@ jobs:
           fi
           env -u CI python3 .rokct/initiate.py
 
+      # end_protocol.py drops pristine protocol templates. It can also delete
+      # files the repo tracks on main (productivity#93); the Content guard
+      # step below puts those back before commit.
       - name: Run end_protocol on the SDK clone
         working-directory: sdk
         run: |
@@ -171,6 +174,11 @@ jobs:
         run: |
           python3 scripts/whitespace_fix.py sdk/.rokct sdk/.github/workflows
 
+      # Keeps memory.md as on main (no CI bot Safe ID), restores any tracked
+      # .rokct/ or workflow file the steps deleted, and fails if one is still lost.
+      - name: Content guard
+        run: python3 scripts/sync_guard.py sdk
+
       - name: Commit, push, and open or update draft PR
         id: pr
         working-directory: sdk
@@ -190,7 +198,7 @@ jobs:
             --jq '[.[] | select(.headRefName | startswith("ci/protocol-sync-"))][0].headRefName // empty')
 
           short=$(git rev-parse --short=7 HEAD)
-          branch="${existing:-ci/protocol-sync-$short}"
+          branch="${existing:-ci/protocol-sync-$short-$GITHUB_RUN_ID}"
 
           if [ -n "$existing" ]; then
             git fetch origin "$existing"
