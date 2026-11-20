@@ -71,3 +71,6 @@ header = (
 )
 out.write_text(header + "\n".join(rows) + "\n")
 print(f"wrote {out}: pass={passes} fail={fails} exit={run.returncode}")
+if passes + fails == 0:
+    print("no SDKs were checked (clone or layout problem)")
+    sys.exit(1)
