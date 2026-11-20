@@ -18,10 +18,10 @@
 | factory #75 | merged | Step 3: lessons render with rokct-media (MEDIA_ENGINE switch, default rokct-media, rollback by variable). Parity passed: 8/8 takes identical for 3 voices, switch round matches |
 | The-Rokct-Protocol #611, #613 | closed, replaced by #615 | Branch stopped syncing after #610's merge deleted it |
 | The-Rokct-Protocol #615 | merged | Steps 4-5: radio ads (compose) and Reel music move into rokct-media; CI installs compose test deps |
-| factory #74 | ready (pinned to protocol main 496c521) | Steps 4-6: radio ads and Reels call rokct-media; lesson6 vibevoice option gone |
+| factory #74 | merged (pinned to protocol main 496c521) | Steps 4-6: radio ads and Reels call rokct-media; lesson6 vibevoice option gone |
 | lessons #283 | merged | Step 6: dead vibevoice backend removed |
 | The-Rokct-Protocol #612 | merged | Step 7: vertical video assembly (level 3 groundwork) |
-| agent #640 | ready (CI billing-blocked; --check output identical) | Step 7: tiktok_render imports the assembly |
+| agent #640 | merged (CI billing-blocked; --check output identical) | Step 7: tiktok_render imports the assembly |
 | factory #69 (this report) | draft, never ready | Session report |
 
 ## Ray's go-ahead
