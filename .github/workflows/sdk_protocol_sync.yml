@@ -192,7 +192,7 @@ jobs:
             --jq '[.[] | select(.headRefName | startswith("ci/protocol-sync-"))][0].headRefName // empty')
 
           short=$(git rev-parse --short=7 HEAD)
-          branch="${existing:-ci/protocol-sync-$short}"
+          branch="${existing:-ci/protocol-sync-$short-$GITHUB_RUN_ID}"
 
           if [ -n "$existing" ]; then
             git fetch origin "$existing"
