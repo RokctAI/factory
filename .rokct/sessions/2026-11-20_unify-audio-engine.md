@@ -11,7 +11,7 @@
 ## PRs
 | PR | State | What it does |
 | :--- | :--- | :--- |
-| The-Rokct-Protocol #610 | ready | Catches rokct-media up with today's lesson renderer |
+| The-Rokct-Protocol #610 | merged 2026-11-20 | Catches rokct-media up with today's lesson renderer |
 | factory #66 | ready | Parity check, voice_batch vs rokct-media |
 | factory #71 | ready | Keeps `.rokct/sessions/` when a session ends (end_protocol.py synced from the protocol) |
 | factory #69 (this report) | draft, never ready | Session report |
