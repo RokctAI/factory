@@ -28,6 +28,6 @@ Ray: tutors only have one appearance picture, with no mouth or blink frames. A p
 ## PRs opened this session
 | PR | State | What it does |
 |---|---|---|
-| This PR | Draft (report only, never ready) | Session report |
+| #67 (this PR) | Draft (report only, never ready) | Session report |
 
 ## Decisions (with reasons) are in decision_log.md
