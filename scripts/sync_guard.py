@@ -5,8 +5,9 @@ Usage: python3 scripts/sync_guard.py <sdk_clone_dir>
 Run after the protocol steps and before the commit. It
   1. restores .rokct/memory.md from HEAD (a sync never edits a repo's memory;
      initiate.py otherwise appends the CI bot as a second "Safe ID"), and
-  2. fails the run if any tracked file under .rokct/ or .github/workflows/
-     was deleted, other than the files in ALLOWED_DELETIONS.
+  2. restores every tracked file under .rokct/ or .github/workflows/ that the
+     sync deleted (other than ALLOWED_DELETIONS), and fails the run if any
+     is still missing afterwards.
 """
 
 import subprocess
@@ -39,6 +40,9 @@ def main(repo):
         if tracked(repo, path):
             git(repo, "checkout", "HEAD", "--", path)
             print(f"[guard] kept {path} as on main")
+    for path in deleted_files(repo):
+        git(repo, "checkout", "HEAD", "--", path)
+        print(f"[guard] restored {path} (tracked on main)")
     lost = deleted_files(repo)
     if lost:
         print("[guard] Sync would delete repo content; stopping:", file=sys.stderr)

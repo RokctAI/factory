@@ -135,12 +135,18 @@ jobs:
           fi
           env -u CI python3 .rokct/initiate.py
 
-      # end_protocol.py is NOT run here: it is a local end-of-session cleanup
-      # that deletes .rokct files matching protocol templates, which removed
-      # repo-only content (productivity#93). Only drop the temp dir.
-      - name: Drop initiate temp files
+      # end_protocol.py drops pristine protocol templates. It can also delete
+      # files the repo tracks on main (productivity#93); the Content guard
+      # step below puts those back before commit.
+      - name: Run end_protocol on the SDK clone
         working-directory: sdk
-        run: rm -rf .rokct/tmp
+        run: |
+          if [ -f .rokct/end_protocol.py ]; then
+            python3 .rokct/end_protocol.py
+          else
+            echo "No end_protocol.py; skipping."
+          fi
+          rm -rf .rokct/tmp
 
       # Replaces the sync_workspace.yml the SDK repos no longer run: moves the
       # decision log and other working files to the parent workspace
@@ -168,8 +174,8 @@ jobs:
         run: |
           python3 scripts/whitespace_fix.py sdk/.rokct sdk/.github/workflows
 
-      # Keeps memory.md as on main (no CI bot Safe ID) and fails the run if
-      # any tracked .rokct/ or workflow file would be deleted.
+      # Keeps memory.md as on main (no CI bot Safe ID), restores any tracked
+      # .rokct/ or workflow file the steps deleted, and fails if one is still lost.
       - name: Content guard
         run: python3 scripts/sync_guard.py sdk
 
