@@ -20,7 +20,7 @@
 *(Agent to append new lessons here when a mistake is made or a correction is received)*
 
 *   **[Date]** - [Lesson]
-*   **2026-11-20** - Report rule (Ray): every session opens one DRAFT PR holding only its report (task first, every PR opened with its state and what it does), keeps it updated until the session ends, and never marks it ready. All code goes in separate PRs. Keep memory.md, decision_log.md, project_map.md and active_session.txt current; session reports go in .rokct/agent/sessions/ (end_protocol.py deletes unknown folders at the .rokct/ root, but keeps agent/) and are never deleted or moved (Session Retention prunes them).
+*   **2026-11-20** - Report rule (Ray): every session opens one DRAFT PR holding only its report (task first, every PR opened with its state and what it does), keeps it updated until the session ends, and never marks it ready. All code goes in separate PRs. Keep memory.md, decision_log.md, project_map.md and active_session.txt current; session reports go in .rokct/sessions/ and are never deleted or moved (Session Retention prunes them).
 *   **2026-11-20** - Run the protocol's gatekeeper skill before marking any code PR ready (Ray).
 
 

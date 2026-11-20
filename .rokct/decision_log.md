@@ -1,11 +1,12 @@
-# Decision Log
+# Architectural Decision Log (ADR)
 
-| Date | Decision | Reason | By |
-|---|---|---|---|
-| 2026-11-20 | Talking tutors use pictures + a timing file, not video | Saves data; nothing baked into the app; same approach as Manim board animations | Ray |
-| 2026-11-20 | Face pictures live in the lessons repo and download via the backend | The app must not carry per-tutor content | Ray |
-| 2026-11-20 | Tutors on screen only for intros, sign-offs and the sample lesson; hosts whenever they talk; no faces during break questions | Hosts talk little; keeps scope small and polished | Ray |
-| 2026-11-20 | Look = LivePortrait jaw/eyes + MuseTalk lips ("combo") | Best lip shape and keeps blinks; Wav2Lip blurry, JoyVASA off-identity | Ray |
-| 2026-11-20 | Mouth pictures start below the nostrils | Starting higher made the nose move oddly | Ray (feedback), Claude (fix) |
-| 2026-11-20 | Each session opens one draft, report-only PR that is never marked ready; code goes in separate PRs | Ray's reporting rule | Ray |
-| 2026-11-20 | Run the protocol's gatekeeper skill before marking any code PR ready | Ray's PR rule | Ray |
+**Purpose**: Record clear "Subject Closed" decisions to prevent re-debating them.
+
+| ID | Date | Topic | Decision | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| ADR-TT-1 | 2026-11-20 | Talking tutors: delivery | Pictures + a timing file, not video. Reason (Ray): saves data, nothing baked into the app, same idea as Manim board data. | **DECIDED** |
+| ADR-TT-2 | 2026-11-20 | Talking tutors: storage | Face pictures live in the lessons repo and download via the backend. Reason (Ray): the app must not carry per-tutor content. | **DECIDED** |
+| ADR-TT-3 | 2026-11-20 | Talking tutors: scope | Tutors on screen for intros, sign-offs and the sample lesson only; hosts whenever they talk; no faces during break questions. Reason (Ray): hosts talk little; keep it small and polished. | **DECIDED** |
+| ADR-TT-4 | 2026-11-20 | Talking tutors: look | LivePortrait jaw/eyes + MuseTalk lips. Reason: best lips and keeps blinks; Wav2Lip blurry, JoyVASA off-identity. | **DECIDED** |
+| ADR-TT-5 | 2026-11-20 | Talking tutors: mouth area | Mouth pictures start below the nostrils. Reason: starting higher made the nose move oddly (Ray's feedback). | **DECIDED** |
+| ADR-TT-6 | 2026-11-20 | PR flow | One draft report-only PR per session, never ready; code in separate PRs; gatekeeper before any PR goes ready. Reason: Ray's standing rules. | **DECIDED** |
