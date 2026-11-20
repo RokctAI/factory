@@ -45,9 +45,9 @@ on:
   workflow_dispatch:
     inputs:
       audio_backend:
-        description: 'Audio backend: sapi (CPU, no GPU) or vibevoice (needs GPU runner)'
+        description: 'Proof voice for the timeline (real lesson audio comes from lesson_audio.yml, rokct-media)'
         type: choice
-        options: [sapi, vibevoice]
+        options: [sapi]
         default: sapi
       max_cards:
         description: 'Max evaluated cards to produce this run'
@@ -56,9 +56,8 @@ on:
         description: 'Only produce cards whose id contains this substring (e.g. maths). Empty = all.'
         default: ''
 
-# The audio backend defaults to the CPU-only `sapi` path so this workflow runs
-# green on a standard runner. For production audio, dispatch with
-# audio_backend=vibevoice AND change `runs-on` below to your GPU runner label.
+# The assembler's audio is the CPU-only `sapi` proof voice. Production lesson
+# audio is rendered by lesson_audio.yml with rokct-media (one audio engine).
 env:
   AUDIO_BACKEND: ${{ github.event.inputs.audio_backend || 'sapi' }}
   MAX_CARDS: ${{ github.event.inputs.max_cards || '5' }}

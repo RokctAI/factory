@@ -25,6 +25,7 @@ pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
 git clone https://github.com/vibevoice-community/VibeVoice.git vendor/VibeVoice
 pip install -e vendor/VibeVoice
 pip install -r requirements.txt           # pins transformers==4.51.3 (the pin matters)
+pip install "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@<sha>#subdirectory=core/utils/rokct_media"   # the engine (use the commit radio_ads.yml pins)
 huggingface-cli download microsoft/VibeVoice-1.5B    # 5.1 GB, MIT licence
 ```
 
@@ -188,14 +189,10 @@ Artifacts are kept 30 days.
 
 ```
 make_ad.py              CLI (render / --validate / --watch)
-adfactory/schema.py     loading, defaults, validation
-adfactory/tts.py        VibeVoice engine + line cache
-adfactory/align.py      faster-whisper: joint-dialogue split, word check
-adfactory/bed.py        procedural music beds and SFX
-adfactory/dsp.py        ffmpeg, stretch, ducking, limiter, loudness
-adfactory/pipeline.py   the ad pipeline
-adfactory/watch.py      inbox watcher
-schema/ad.schema.json   JSON Schema
+                        the engine is rokct-media level 2: The-Rokct-Protocol
+                        core/utils/rokct_media/rokct_media/compose/ (schema,
+                        tts line cache, align, beds, dsp, pipeline, watch,
+                        ad.schema.json), moved there from adfactory/ 2026-11-20
 examples/               example ads
 inbox/                  drop ad JSONs here (committed ones render in CI)
 ci/                     helper scripts for .github/workflows/radio_ads.yml

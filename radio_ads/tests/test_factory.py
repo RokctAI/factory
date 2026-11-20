@@ -9,7 +9,6 @@ from __future__ import annotations
 
 import json
 import shutil
-import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -17,12 +16,11 @@ from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(HERE))
 
-from adfactory import bed, dsp  # noqa: E402
-from adfactory.schema import AdError, load_ad  # noqa: E402
-from adfactory.pipeline import make_ad  # noqa: E402
-from adfactory.watch import watch  # noqa: E402
+from rokct_media.compose import bed, dsp  # noqa: E402
+from rokct_media.compose.pipeline import make_ad  # noqa: E402
+from rokct_media.compose.schema import AdError, load_ad  # noqa: E402
+from rokct_media.compose.watch import watch  # noqa: E402
 
 
 def base_ad(**over):
@@ -58,7 +56,7 @@ class FactoryTest(unittest.TestCase):
         return p
 
     def test_examples_validate_shape(self):
-        from adfactory.schema import validate_shape
+        from rokct_media.compose.schema import validate_shape
         for f in (HERE / "examples").glob("*.json"):
             self.assertEqual(validate_shape(json.loads(f.read_text())), [], f.name)
 
