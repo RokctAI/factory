@@ -60,9 +60,10 @@ jobs:
 
       - name: Run compliance report
         run: |
-          python3 factory/scripts/sdk_compliance_report.py "$PWD/ws" report.md > /dev/null 2>&1 || true
-          if [ ! -s report.md ]; then
-            echo "Compliance report was not produced." >> "$GITHUB_STEP_SUMMARY"
+          rc=0
+          python3 factory/scripts/sdk_compliance_report.py "$PWD/ws" report.md > /dev/null 2>&1 || rc=$?
+          if [ ! -s report.md ] || [ "$rc" -ne 0 ]; then
+            echo "Compliance report failed or checked no SDKs." >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
           cat report.md >> "$GITHUB_STEP_SUMMARY"
