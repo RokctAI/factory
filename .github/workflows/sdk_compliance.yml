@@ -1,0 +1,84 @@
+name: SDK Compliance
+
+# Runs shared-workflows sdk_validator.py --compliance (no AI) over every SDK
+# repo (found by its .rokct/config/is_sdk marker) on free public-repo minutes. Report only: changes nothing.
+# Factory is public, so only the per-SDK summary table (SDK name, PASS/FAIL,
+# counts by kind) goes to the job summary. The raw validator log, which names
+# private file paths, is never printed or uploaded.
+
+on:
+  schedule:
+    - cron: '0 4 * * 1' # Weekly, Monday 04:00 UTC (after the protocol sync)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sdk-compliance
+  cancel-in-progress: false
+
+jobs:
+  compliance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check MONOREPO_PAT is set
+        env:
+          PAT: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          if [ -z "$PAT" ]; then echo "MONOREPO_PAT is not set"; exit 1; fi
+
+      - name: Checkout factory
+        uses: actions/checkout@v4
+        with:
+          path: factory
+
+      # Finds SDK repos itself: every RokctAI repo whose main has the
+      # .rokct/config/is_sdk marker. A new SDK repo is picked up once marked.
+      - name: Discover SDK repos
+        id: discover
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          repos=""
+          for r in $(gh api --paginate "orgs/RokctAI/repos?type=all&per_page=100" --jq '.[] | select(.archived|not) | .name'); do
+            if gh api "repos/RokctAI/$r/contents/.rokct/config/is_sdk" --silent 2>/dev/null; then
+              repos="$repos $r"
+            fi
+          done
+          if [ -z "$repos" ]; then echo "No SDK repos found"; exit 1; fi
+          echo "repos=$repos" >> "$GITHUB_OUTPUT"
+          echo "SDK repos found: $(echo $repos | wc -w)"
+
+      - name: Clone shared-workflows and SDK repos (read only)
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+          SDK_REPOS: ${{ steps.discover.outputs.repos }}
+        run: |
+          mkdir -p ws
+          git config --global credential.helper '!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f'
+          for r in shared-workflows $SDK_REPOS; do
+            git clone -q --depth 1 "https://github.com/RokctAI/$r.git" "ws/$r"
+          done
+          git config --global --unset credential.helper
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install validator requirements
+        run: |
+          req=ws/shared-workflows/scripts/requirements.txt
+          if [ -f "$req" ]; then pip install -q -r "$req"; fi
+
+      - name: Run compliance report
+        run: |
+          rc=0
+          python3 factory/scripts/sdk_compliance_report.py "$PWD/ws" report.md > /dev/null 2>&1 || rc=$?
+          if [ ! -s report.md ] || [ "$rc" -ne 0 ]; then
+            echo "Compliance report failed or checked no SDKs." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
