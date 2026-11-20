@@ -10,13 +10,17 @@ See README.md for setup and SCHEMA.md for the ad format.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(HERE))
+# The engine is rokct-media's level 2 (rokct_media.compose, moved there from
+# radio_ads/adfactory on 2026-11-20). Relative ad paths and the default
+# voices/ and cache/ stay this folder's.
+os.environ.setdefault("ROKCT_MEDIA_COMPOSE_ROOT", str(HERE))
 
-from adfactory.schema import AdError, load_ad  # noqa: E402
+from rokct_media.compose.schema import AdError, load_ad  # noqa: E402
 
 
 def main(argv=None) -> int:
@@ -53,7 +57,7 @@ def main(argv=None) -> int:
     kwargs = dict(voices_dir=Path(args.voices), cache_dir=Path(args.cache), asr=not args.no_asr,
                   asr_model=args.asr_model, engine_override=args.engine)
     if args.watch:
-        from adfactory.watch import watch
+        from rokct_media.compose.watch import watch
         try:
             watch(Path(args.watch), Path(args.out), Path(args.failed) if args.failed else None,
                   interval=args.interval, once=args.once, **kwargs)
@@ -63,7 +67,7 @@ def main(argv=None) -> int:
 
     if not args.ads:
         ap.error("give an ad JSON, --validate FILES, or --watch INBOX")
-    from adfactory.pipeline import make_ad
+    from rokct_media.compose.pipeline import make_ad
     rc = 0
     for f in args.ads:
         try:

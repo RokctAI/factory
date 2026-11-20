@@ -52,12 +52,15 @@ concurrency:
 
 env:
   PYTHON_VERSION: '3.11'
+  # The ad engine is rokct-media level 2 (rokct_media.compose), one audio
+  # engine with lessons; a protocol commit, never a branch name.
+  ROKCT_MEDIA_REF: ${{ vars.ROKCT_MEDIA_REF || '496c521681deb68254d4c4dc888aabe4bb0e0e3b' }}
   # vibevoice-community/VibeVoice commit the factory was built and tested on;
   # override with the repository variable VIBEVOICE_REF.
   VIBEVOICE_REF: ${{ vars.VIBEVOICE_REF || '952326ddb264062466a888cf32a5b2f4e803e16e' }}
   TTS_MODEL: microsoft/VibeVoice-1.5B
   # Pinned model revision, the same one voice_batch.yml and
-  # pronunciation_audition.yml use. Download, render (adfactory/tts.py reads
+  # pronunciation_audition.yml use. Download, render (rokct_media/compose/tts.py reads
   # this variable) and the weights cache key all use it.
   TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
   # faster-whisper model for the word check (make_ad.py default is base.en;
@@ -151,7 +154,7 @@ jobs:
       - name: Validate
         if: steps.list.outputs.count != '0'
         run: |
-          python -m pip install --quiet 'jsonschema>=4.18'
+          python -m pip install --quiet 'jsonschema>=4.18' "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${ROKCT_MEDIA_REF}#subdirectory=core/utils/rokct_media"
           mapfile -t ads < "$RUNNER_TEMP/ads.txt"
           python radio_ads/make_ad.py --validate "${ads[@]}"
 
@@ -230,7 +233,7 @@ jobs:
           cache: pip
           cache-dependency-path: radio_ads/requirements.txt
 
-      - name: Install Python dependencies (CPU torch, VibeVoice fork)
+      - name: Install Python dependencies (CPU torch, VibeVoice fork, rokct-media)
         run: |
           python -m pip install --upgrade pip
           python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
@@ -238,6 +241,7 @@ jobs:
           git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
           python -m pip install -e "$RUNNER_TEMP/VibeVoice"
           python -m pip install -r radio_ads/requirements.txt
+          python -m pip install "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${ROKCT_MEDIA_REF}#subdirectory=core/utils/rokct_media"
           python -c "import torch, transformers; print('torch', torch.__version__, '| transformers', transformers.__version__)"
           df -h / | tail -1
 

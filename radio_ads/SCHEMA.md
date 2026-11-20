@@ -1,6 +1,6 @@
 # Ad JSON format
 
-Machine-readable schema: [`schema/ad.schema.json`](schema/ad.schema.json)
+Machine-readable schema: [`ad.schema.json`](https://github.com/RokctAI/The-Rokct-Protocol/blob/main/core/utils/rokct_media/rokct_media/compose/ad.schema.json) in rokct-media (`rokct_media/compose/`)
 (JSON Schema 2020-12). Check files with:
 
 ```bash
