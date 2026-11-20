@@ -46,6 +46,10 @@ on:
         description: 'Also export Manim scenes this run'
         type: boolean
         default: true
+      media_engine:
+        description: 'Engine for takes and the QC gate (empty = MEDIA_ENGINE variable, else rokct-media)'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -72,6 +76,11 @@ env:
   LESSON_AUDIO_JOBS: ${{ inputs.max_jobs || vars.LESSON_AUDIO_JOBS || '15' }}
   LESSON_AUDIO_JOB_WORDS: ${{ vars.LESSON_AUDIO_JOB_WORDS || '4000' }}
   TEAM_ROOT: ${{ github.workspace }}/.agent/lms/team
+  # One audio engine (step 3): rokct-media renders and gates the takes. It
+  # gives byte-identical results to voice_batch (media_parity.yml); set the
+  # MEDIA_ENGINE variable to voice_batch to switch back without a code change.
+  MEDIA_ENGINE: ${{ inputs.media_engine || vars.MEDIA_ENGINE || 'rokct-media' }}
+  ROKCT_MEDIA_REF: ${{ vars.ROKCT_MEDIA_REF || '530ee9ce413bf38eb21e26e60370006903f4dec9' }}
   # Voice references (voice_batch/voice_paths.py): one switch.
   VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
   VOICE_ROOT: ${{ vars.VOICE_ROOT || 'voices' }}
@@ -130,6 +139,15 @@ jobs:
             !*.jpg
             !*.webp
             !*.mp4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      # The plan splits and respells lines with the same engine that renders them.
+      - name: Install rokct-media (core only)
+        if: env.MEDIA_ENGINE == 'rokct-media'
+        run: python -m pip install --quiet "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${ROKCT_MEDIA_REF}#subdirectory=core/utils/rokct_media"
 
       - name: Plan
         id: plan
@@ -222,7 +240,7 @@ jobs:
           cache: pip
           cache-dependency-path: voice_batch/requirements.txt
 
-      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork)
+      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork, rokct-media)
         run: |
           python -m pip install --upgrade pip
           python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
@@ -230,6 +248,8 @@ jobs:
           git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
           python -m pip install -e "$RUNNER_TEMP/VibeVoice"
           python -m pip install -r voice_batch/requirements.txt
+          python -m pip install "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${ROKCT_MEDIA_REF}#subdirectory=core/utils/rokct_media"
+          echo "Takes and QC gate: $MEDIA_ENGINE"
 
       # SHARED with voice_batch.yml and radio_ads.yml: same path, same key.
       - name: Restore model weights
