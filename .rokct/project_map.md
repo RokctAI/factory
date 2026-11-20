@@ -18,4 +18,4 @@
 *   `radio_ads/`: JSON script in, mastered radio ad out (VibeVoice voices, music bed, SFX, loudness).
 *   `social/facebook/`: daily opportunity Reel (code-drawn motion graphics, music, voice lines) posted to Facebook/TikTok/YouTube.
 *   `voice_batch/`, `.github/workflows/lesson_audio.yml`: lesson voice rendering.
-*   Microdrama / TV-ad video: not built yet; tests and findings in `.rokct/agent/sessions/2026-11-20_*`. Shared engine code belongs in rokct-media (The-Rokct-Protocol `core/utils/rokct_media/`).
+*   Microdrama / TV-ad video: not built yet; tests and findings in `.rokct/sessions/2026-11-20_*`. Shared engine code belongs in rokct-media (The-Rokct-Protocol `core/utils/rokct_media/`).
