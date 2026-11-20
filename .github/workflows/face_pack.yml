@@ -19,13 +19,13 @@ name: Face pack
 # (Ray, 2026-11-20).
 #
 # Portraits and line text come from agent (read-only); voice audio from the
-# voice repo, which is only read. All packs of a run are committed together to
-# the voice repo next to each member's voices
-# (voices/team/<kind>/CAPS/<persona>/face/<style>/) on one rokct/faces-<style>-<run>
-# branch, with a pull request. Logs carry names, counts and sizes only, never
+# voice repo, which is only read. Each member's pack is pushed straight to the
+# voice repo next to their voices (voices/team/<kind>/CAPS/<persona>/face/<style>/)
+# on one rokct/faces-<style>-<run> branch, and the run opens one pull request.
+# No artifacts: on this public repo they would publish members' faces. Logs carry names, counts and sizes only, never
 # line text: this repo is public.
 # A PR touching talking_head/ makes tutor_001's pack from one stand-in line and
-# keeps it as a workflow artifact (nothing is committed).
+# reports its size only (nothing is kept).
 
 on:
   workflow_dispatch:
@@ -164,7 +164,7 @@ jobs:
           python -m pip install -r talking_head/requirements.txt
 
       - name: Restore engines and weights
-        uses: actions/cache@v4
+        uses: actions/cache@v4  # leak-guard: allow TH_ROOT holds only engine clones and public model weights (setup.sh)
         with:
           path: |
             ${{ env.TH_ROOT }}
@@ -210,57 +210,51 @@ jobs:
           fi
           rm -f "$txt"
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: face-${{ env.STYLE }}-${{ matrix.persona }}
-          path: ${{ runner.temp }}/face
-          retention-days: 7
-
-  commit:
-    # One pull request in the voice repo for every pack this run made.
-    needs: pack
-    if: always() && github.event_name != 'pull_request' && needs.pack.result != 'skipped'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: face-${{ env.STYLE }}-*
-          path: ${{ runner.temp }}/face
-          merge-multiple: true
-
-      - name: Check out the voice repo (private)
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ env.VOICE_REPO }}
-          token: ${{ secrets.MONOREPO_PAT }}
-          path: .voices
-          fetch-depth: 1
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /${{ env.VOICE_ROOT }}/team/*/CAPS/*/face/
-
-      - name: Commit the packs next to the voices
+      - name: Commit the pack next to the voices (shared branch in the voice repo)
+        # Packs are pushed straight to the private voice repo: an artifact on this
+        # public repo would publish members' faces.
+        if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
         run: |
           set +x
-          shopt -s nullglob; packs=("$RUNNER_TEMP"/face/*/)
-          [ ${#packs[@]} -gt 0 ] || { echo "no packs were made"; exit 1; }
+          kind=$([[ "$PERSONA" == tutor_* ]] && echo tutors || echo assistants)
+          dest="$VOICE_ROOT/team/$kind/CAPS/$PERSONA/face/$STYLE"
           branch="rokct/faces-$STYLE-$GITHUB_RUN_ID"
           cd .voices
           git config user.name "rokct-factory"; git config user.email "factory@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${VOICE_REPO}.git"
-          git checkout -b "$branch"
-          for p in "${packs[@]}"; do
-            persona=$(basename "$p"); kind=$([[ "$persona" == tutor_* ]] && echo tutors || echo assistants)
-            dest="$VOICE_ROOT/team/$kind/CAPS/$persona/face/$STYLE"
-            rm -rf "$dest"; mkdir -p "$dest"; cp -r "$p." "$dest/"
-            git add -A "$dest"
-            echo "$persona: $(ls "$dest"/m*.webp | wc -l) mouth pictures, $(du -sk "$dest" | cut -f1) KB" | tee -a "$GITHUB_STEP_SUMMARY"
+          git sparse-checkout add "/$dest/"
+          if git fetch -q --depth 1 origin "$branch" 2>/dev/null; then git checkout -q -B "$branch" FETCH_HEAD; else git checkout -q -b "$branch"; fi
+          rm -rf "$dest"; mkdir -p "$dest"; cp -r "$RUNNER_TEMP/face/$PERSONA/." "$dest/"
+          git add -A "$dest"
+          git commit -q -m "Face pack: $PERSONA $STYLE ($(ls "$dest"/m*.webp | wc -l) mouth pictures) [skip ci]"
+          for try in 1 2 3 4 5 6; do
+            git push -q origin "HEAD:$branch" && break
+            sleep $(( try * 7 )); git fetch -q --depth 20 origin "$branch" && git rebase -q FETCH_HEAD
           done
-          git commit -q -m "Face packs ($STYLE): ${#packs[@]} members [skip ci]"
-          git push -q origin "$branch"
-          gh pr create --repo "$VOICE_REPO" --head "$branch" --base main \
-            --title "Face packs ($STYLE): ${#packs[@]} members" \
-            --body "Talking-face pictures made by factory face_pack.yml (run ${GITHUB_RUN_ID}): per member shared mouth pictures, base and eye pictures, and a timing file per line that has a voice. Voice files are unchanged."
-          echo "Committed to $VOICE_REPO $branch" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "$PERSONA: $(du -sk "$dest" | cut -f1) KB on $branch" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Pack size (PR test; nothing is kept)
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "$PERSONA: $(ls "$RUNNER_TEMP/face/$PERSONA"/m*.webp | wc -l) mouth pictures, $(du -sk "$RUNNER_TEMP/face/$PERSONA" | cut -f1) KB" | tee -a "$GITHUB_STEP_SUMMARY"
+
+  pr:
+    # One pull request in the voice repo for every pack this run pushed.
+    needs: pack
+    if: always() && github.event_name != 'pull_request' && needs.pack.result != 'skipped'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open the pull request
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          set +x
+          branch="rokct/faces-$STYLE-$GITHUB_RUN_ID"
+          n=$(gh api "repos/$VOICE_REPO/compare/main...$branch" --jq .ahead_by 2>/dev/null || echo 0)
+          [ "$n" -gt 0 ] || { echo "no packs were pushed"; exit 1; }
+          gh api -X POST "repos/$VOICE_REPO/pulls" -f head="$branch" -f base=main \
+            -f title="Face packs ($STYLE): $n members" \
+            -f body="Talking-face pictures made by factory face_pack.yml (run ${GITHUB_RUN_ID}): per member shared mouth pictures, base and eye pictures, and a timing file per line that has a voice. Voice files are unchanged." --jq .html_url \
+            | tee -a "$GITHUB_STEP_SUMMARY"
