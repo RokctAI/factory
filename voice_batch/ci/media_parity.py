@@ -15,6 +15,9 @@ seeds, hashes and numbers only, never line text.
         --voice-root .voices --scripts-dir .agent/lms/team/scripts \
         --model-path <snapshot> --work $RUNNER_TEMP/parity [--seeds 11,22]
 
+The audio check also runs the lesson renderer's own loop (run.render_rounds)
+with MEDIA_ENGINE=rokct-media, as lesson_audio.yml does, and compares it too.
+
 Pass = the same sentences, render text and ASR wildcards for every line
 (text); the same take bytes, the same chosen seeds, the same gate verdicts
 and the same final clip bytes (audio). Exit 1 on any difference.
@@ -179,6 +182,18 @@ def cmd_audio(args) -> int:
     run([sys.executable, "-m", "rokct_media.qc.worker", "sentences", "--work", str(work / "new"),
          "--ref", str(ref), "--asr-model", args.asr_model, *gate])
 
+    # The lesson renderer's own loop (run.render_rounds) with the MEDIA_ENGINE
+    # switch on: what lesson_audio.yml runs. Same seeds, one round.
+    import qc as Q
+    import run as R
+    os.environ["MEDIA_ENGINE"] = "rokct-media"
+    rargs = argparse.Namespace(model_path=args.model_path, ddpm_steps=steps, f0_target=v["f0_target_hz"],
+                               f0_tolerance=v["f0_tolerance_hz"], sim_short=Q.SIM_SHORT, sim_long=Q.SIM_LONG,
+                               language="en", pace_wpm=Q.PACE_WPM, pace_tolerance=Q.PACE_TOL_WPM,
+                               asr_model=args.asr_model, seed_rounds=(seeds,), near_miss_words=args.near_miss)
+    switch_r = {r["id"]: r for r in R.render_rounds([dict(i) for i in new_items], work / "switch", ref,
+                                                    Path(args.scripts_dir), rargs, "switch")}
+
     rows, bad = [], list(text_bad)
     # Every take, byte for byte.
     oi = json.loads((work / "old" / "takes_index.json").read_text(encoding="utf-8"))
@@ -195,8 +210,10 @@ def cmd_audio(args) -> int:
     old_r = {r["id"]: r for r in json.loads((work / "old" / "results.json").read_text(encoding="utf-8"))}
     new_r = {r["id"]: r for r in json.loads((work / "new" / "results.json").read_text(encoding="utf-8"))}
     for id_, _t in TEST_LINES:
-        a, b = old_r.get(id_, {}), new_r.get(id_, {})
+        a, b, c = old_r.get(id_, {}), new_r.get(id_, {}), switch_r.get(id_, {})
         diff = [k for k in LINE_KEYS if a.get(k) != b.get(k)]
+        # sha256 is the finished clip's, so equal results mean an identical clip.
+        diff += [f"switch:{k}" for k in LINE_KEYS if a.get(k) != c.get(k)]
         rows.append((id_, a.get("status"), b.get("status"), "same" if not diff else ", ".join(diff)))
         if diff:
             bad.append(f"line {id_}: {', '.join(diff)}")

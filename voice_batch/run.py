@@ -67,6 +67,39 @@ from textnorm import TAIL_PAD  # noqa: E402
 TUTOR_ORDER = ("acknowledgements", "greetings", "signoffs", "teaching")
 SEED_ROUNDS = ([11, 22, 33], [44], [55])
 DEFAULT_DDPM_STEPS = 10  # render_voices default; a voice may raise it (lesson_voices.json ddpm_steps)
+# Which engine renders and gates the takes (step 3 of the one-engine move):
+#   voice_batch : render_takes.py + qc.py in this folder
+#   rokct-media : The-Rokct-Protocol core/utils/rokct_media (pip package),
+#                 proven byte-identical by ci/media_parity.py
+ENGINES = ("voice_batch", "rokct-media")
+
+
+def media_engine() -> str:
+    e = os.environ.get("MEDIA_ENGINE", "").strip() or "voice_batch"
+    if e not in ENGINES:
+        raise SystemExit(f"MEDIA_ENGINE must be one of {', '.join(ENGINES)}, not {e!r}")
+    return e
+
+
+def engine_commands(work: Path, ref: Path, scripts: Path, args, near_miss: int) -> list[list[str]]:
+    """The render command, then the QC gate command, for the selected engine."""
+    steps = ddpm_steps(args)
+    gate = ["--f0-target", str(args.f0_target), "--f0-tolerance", str(args.f0_tolerance),
+            "--sim-short", str(getattr(args, "sim_short", qc.SIM_SHORT)),
+            "--sim-long", str(getattr(args, "sim_long", qc.SIM_LONG)),
+            "--language", args.language, "--pace-wpm", str(args.pace_wpm),
+            "--pace-tolerance", str(args.pace_tolerance), "--near-miss-words", str(near_miss)]
+    jobs = str(work / "jobs.json")
+    if media_engine() == "rokct-media":
+        opts = {"model_path": args.model_path, "cfg_scale": 1.3, "ddpm_steps": steps}
+        return [[sys.executable, "-m", "rokct_media.speech.takes", "--jobs", jobs, "--ref", str(ref),
+                 "--engine", "voice_model", "--no-cache", "--engine-opts", json.dumps(opts)],
+                [sys.executable, "-m", "rokct_media.qc.worker", "sentences", "--work", str(work), "--ref", str(ref),
+                 "--asr-model", args.asr_model, *gate]]
+    return [[sys.executable, str(HERE / "render_takes.py"), "--jobs", jobs, "--ref", str(ref),
+             "--scripts-dir", str(scripts), "--model-path", args.model_path, "--ddpm-steps", str(steps)],
+            [sys.executable, str(HERE / "qc.py"), "--work", str(work), "--ref", str(ref),
+             "--scripts-dir", str(scripts), "--asr-model", args.asr_model, *gate]]
 
 
 def sha256_file(p: Path) -> str:
@@ -76,7 +109,7 @@ def sha256_file(p: Path) -> str:
 def versions() -> dict:
     out = {"python": sys.version.split()[0]}
     for pkg in ("torch", "transformers", "vibevoice", "faster-whisper", "ctranslate2", "resemblyzer",
-                "librosa", "numpy", "soundfile"):
+                "librosa", "numpy", "soundfile", "rokct-media"):
         try:
             out[pkg] = metadata.version(pkg)
         except metadata.PackageNotFoundError:
@@ -152,19 +185,9 @@ def render_rounds(items: list[dict], work: Path, ref: Path, scripts: Path, args,
         index_path.write_text(json.dumps(index, indent=1), encoding="utf-8")
         (work / "jobs.json").write_text(json.dumps(jobs, ensure_ascii=False), encoding="utf-8")
         print(f"::group::{label} round {rnd}: seeds {seeds}, {len(pending)} sentence(s)", flush=True)
-        subprocess.run([sys.executable, str(HERE / "render_takes.py"), "--jobs", str(work / "jobs.json"),
-                        "--ref", str(ref), "--scripts-dir", str(scripts), "--model-path", args.model_path,
-                        "--ddpm-steps", str(ddpm_steps(args))],
-                       check=True)
-        subprocess.run([sys.executable, str(HERE / "qc.py"), "--work", str(work), "--ref", str(ref),
-                        "--scripts-dir", str(scripts), "--asr-model", args.asr_model,
-                        "--f0-target", str(args.f0_target), "--f0-tolerance", str(args.f0_tolerance),
-                        "--sim-short", str(getattr(args, "sim_short", qc.SIM_SHORT)),
-                        "--sim-long", str(getattr(args, "sim_long", qc.SIM_LONG)),
-                        "--language", args.language, "--pace-wpm", str(args.pace_wpm),
-                        "--pace-tolerance", str(args.pace_tolerance),
-                        # Near misses only once the word-exact seeds are spent.
-                        "--near-miss-words", str(near_miss if rnd == len(rounds) else 0)], check=True)
+        # Near misses only once the word-exact seeds are spent.
+        for cmd in engine_commands(work, ref, scripts, args, near_miss if rnd == len(rounds) else 0):
+            subprocess.run(cmd, check=True)
         print("::endgroup::", flush=True)
         if budget is not None:
             budget.record(len(jobs), time.time() - t0)
@@ -248,6 +271,7 @@ def run_header(args, ref: Path, voice: Path) -> dict:
             "asr_model": args.asr_model, "asr_language": args.language,
             "speaker_encoder": "resemblyzer", "device": "cpu",
             "library_versions": versions(),
+            "renderer": media_engine(),
         },
         "settings": {
             "prompt": f"Speaker 1: <sentence>{TAIL_PAD}", "tail_pad": TAIL_PAD, "cfg_scale": 1.3, "ddpm_steps": ddpm_steps(args),

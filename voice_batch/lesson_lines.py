@@ -37,6 +37,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from lines import pronounced_fields, spoken_text  # noqa: E402
 
+if os.environ.get("MEDIA_ENGINE", "").strip() == "rokct-media":
+    # One engine: rokct-media splits, respells and wildcards the text too
+    # (media_parity.py text: identical on every lesson part).
+    from rokct_media.speech.plan import pronounced_fields  # noqa: E402,F811
+
 VOICES_FILE = HERE / "lesson_voices.json"
 STEM_DIR = "voice"
 # Bumped when the lesson QC gate changes so that lines failed under the old
