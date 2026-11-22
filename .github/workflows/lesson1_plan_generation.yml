@@ -5,8 +5,7 @@ name: Lesson 1 - Plan Generation
 # GROQ PLAN GENERATION IS DISABLED (owner decision, 2026-07-22).
 # ---------------------------------------------------------------------------
 # Level 1 captured the tutor / example problem / prior knowledge / lesson
-# angle via a Groq call. Under direct in-context authoring (the same decision
-# that retired Jules at Level 2/3), those come from the authoring session
+# angle via a Groq call. Under direct in-context authoring, those come from the authoring session
 # itself, not a separate generation call. The generate_plan job below is gated
 # OFF (if: false), kept rather than deleted so the mechanics stay visible and
 # re-enabling is a deliberate, documented one-line change — do NOT flip it
@@ -64,7 +63,6 @@ jobs:
         id: delegate_task
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
           MONOREPO_PAT: ${{ secrets.MONOREPO_PAT }}
         run: |
           # Find the first lesson.* card with status: theme_generated.

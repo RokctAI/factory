@@ -89,7 +89,7 @@ This prompt is a template. `{age}` is replaced with the actual age. The protecti
 - World rules → book rules → poem/chapter rules → stanza/scene rules → line rules
 - Rules reference the metarules file for that type
 - Human approves once. This is the last human touch before full automation.
-- Agent: **Jules** (complex, file-writing task)
+- Agent: **direct authoring** (complex, file-writing task)
 - CI writes to ledger
 
 ### Level 4 — Generation Loop (Fully Automated)
@@ -99,7 +99,7 @@ This prompt is a template. `{age}` is replaced with the actual age. The protecti
 - Comparator agent evaluates original vs suggestion — improvement or regression?
 - Best version survives
 - Loop continues until quality thresholds are met
-- Agent: **Jules**
+- Agent: **direct authoring**
 - CI writes to ledger at each loop iteration
 
 ### Level 5 — Draft (Fourth Human Gate)
@@ -113,7 +113,7 @@ This prompt is a template. `{age}` is replaced with the actual age. The protecti
 - On human acceptance: cover brief triggered, credits generated, copyright statement generated, opening letter generated
 - PDF assembled from all markdown files in the folder
 - Entire `{book_name}/` folder moved from `books/drafts/` to `books/published/`
-- Agent: **Jules**
+- Agent: **direct authoring**
 - CI writes to ledger
 
 ---
@@ -131,9 +131,9 @@ RokctAI/factory/                         # New repo, separate from opportunities
       completed/                         # One-time prompts that have finished
 
     jobs/
-      pending/                           # Jobs waiting for Jules to pick up
-      running/                           # Jules currently working on this
-      done/                              # Jules finished, PR opened and merged
+      pending/                           # Jobs waiting to be picked up
+      running/                           # currently being worked on
+      done/                              # finished, PR opened and merged
 
     log/
       ledger.md                          # Single source of truth — CI writes only, agents read only
@@ -174,12 +174,12 @@ RokctAI/factory/                         # New repo, separate from opportunities
     level0_theme_generation.yml          # Scheduled — triggers Groq if Level 1 queue < 5
     level1_idea_generation.yml           # Triggers on new theme card
     level2_concept_expansion.yml         # Triggers on approved idea
-    level3_rule_generation.yml           # Triggers on approved concept — opens Jules session
-    level4_generation_loop.yml           # Daily 08:00 — Jules writing session
-    level4_evaluation_loop.yml           # Weekend — Jules evaluation session
+    level3_rule_generation.yml           # Triggers on approved concept
+    level4_generation_loop.yml           # Daily 08:00
+    level4_evaluation_loop.yml           # Weekend
     level6_publish.yml                   # Triggers on human acceptance
     ledger_update.yml                    # Called by all other workflows to update ledger
-    session_scheduler.yml                # Manages Jules session slots and conflicts
+    session_scheduler.yml                # Manages agent session slots and conflicts
 
 books/
   drafts/
@@ -246,20 +246,20 @@ File: `.rokct/agent/log/ledger.md`
 | loneliness_a3f7 | book.poetry  | loneliness | idea_generated          | groq  | GS-0001  | —     | 2026-04-29 08:00    |
 | loneliness_a3f7 | book.poetry  | loneliness | pending_approval        | —     | —        | —     | 2026-04-29 08:01    |
 | loneliness_a3f7 | book.poetry  | loneliness | concept_expanding       | groq  | GS-0002  | —     | 2026-04-29 09:00    |
-| loneliness_a3f7 | book.poetry  | loneliness | rules_generating        | jules | JS-0001  | #12   | 2026-04-29 20:00    |
-| loneliness_a3f7 | book.poetry  | loneliness | writing                 | jules | JS-0002  | #15   | 2026-04-30 08:00    |
-| loneliness_a3f7 | book.poetry  | loneliness | draft_ready             | jules | JS-0003  | #18   | 2026-05-03 20:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | rules_generating        | agent | JS-0001  | #12   | 2026-04-29 20:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | writing                 | agent | JS-0002  | #15   | 2026-04-30 08:00    |
+| loneliness_a3f7 | book.poetry  | loneliness | draft_ready             | agent | JS-0003  | #18   | 2026-05-03 20:00    |
 | loneliness_a3f7 | book.poetry  | loneliness | published               | human | —        | #22   | 2026-05-04 10:00    |
 ```
 
 Session naming:
 - Groq sessions: `GS-XXXX`
-- Jules sessions: `JS-XXXX`
+- Agent sessions: `JS-XXXX`
 - Human actions: `human`
 
 ---
 
-## 8. Jules Session Management
+## 8. Agent Session Management
 
 ### Daily Sessions
 - **08:00 weekdays** — Writing session. One book at a time. Full focus. Deep work.
@@ -267,7 +267,7 @@ Session naming:
 
 ### Weekend Sessions
 - **Saturday + Sunday** — Evaluation session. All books in draft or in_progress swept in one session.
-- Jules has a **session availability file**: `.rokct/agent/session_state.md`
+- The agent has a **session availability file**: `.rokct/agent/session_state.md`
 
 ```markdown
 ---
@@ -278,17 +278,17 @@ weekend_finished:
 ---
 ```
 
-- When Jules starts weekend evaluation: sets `weekend_block: running`
-- When Jules finishes early: sets `weekend_block: open` — block is freed for other jobs
+- When the agent starts weekend evaluation: sets `weekend_block: running`
+- When the agent finishes early: sets `weekend_block: open` — block is freed for other jobs
 - Scheduler reads this before opening any new session
 - If `running`: wait
 - If `open` on weekend: available for evaluation or overflow writing
 
 ### Session Rules
-- Maximum 2 active Jules sessions at any time
+- Maximum 2 active agent sessions at any time
 - No two sessions writing the same book simultaneously
 - Evaluation sessions can touch multiple books — read heavy, no write conflicts
-- All Jules PRs are auto-merged (Jules is trusted as owner)
+- Agent PRs follow the normal review flow
 
 ---
 
@@ -387,10 +387,10 @@ One input file. Four different planets.
 3. Guardrails — static prompt templates for each age group
 4. Metarules — book.poetry first, other types can be empty stubs
 5. Groq prompt cards — Level 0 and Level 1 scheduled prompts
-6. Jules job templates — writing, evaluation, publishing
+6. Agent job templates — writing, evaluation, publishing
 7. Session scheduler — reads ledger, manages slots
 8. GitHub Actions workflows — one per pipeline level
-9. Session state file — Jules weekend availability
+9. Session state file — weekend availability
 10. Book folder templates — metadata, credits, copyright stubs
 ## Reliability Layer (Added post-audit)
 
@@ -412,7 +412,7 @@ Three fields control visual generation:
   visuals_illustration_scope: none|per_poem|per_chapter
 
 Four stage pipeline:
-  Stage 6a: Jules summarizes full book into visuals/book_summary.md
+  Stage 6a: The agent summarizes full book into visuals/book_summary.md
   Stage 6b: Groq generates cover.json from summary
   Stage 6c: Groq generates illustration JSON files one at a time
   Stage 6d: Image rendering from JSON files (external system, not yet implemented)

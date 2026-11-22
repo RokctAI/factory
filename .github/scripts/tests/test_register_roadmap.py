@@ -143,11 +143,6 @@ class PayloadTests(unittest.TestCase):
         self.assertIn(register_roadmap.DEFAULT_STATUS, register_roadmap.STATUS_OPTIONS)
         self.assertEqual(register_roadmap.DEFAULT_STATUS, "Idea Passed")
 
-    def test_the_jules_key_is_never_sent(self):
-        # It falls back to Roadmap Settings on the site; it must not become a
-        # factory secret by the back door.
-        self.assertNotIn("jules_api_key", self.opener.payload)
-
     def test_no_secret_leaks_into_the_log(self):
         self.assertNotIn("secret456", self.output)
         self.assertNotIn("key123", self.output)
