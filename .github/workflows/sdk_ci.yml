@@ -1,0 +1,264 @@
+name: SDK CI (Offloaded)
+
+# CI for the PRIVATE SDK repos, run on free public-repo minutes.
+# Each SDK repo runs only notify_factory_ci.yml, which sends a
+# repository_dispatch (event_type sdk-ci) with the repo, event, PR or issue
+# number and commit. This workflow checks out THAT repo at THAT commit and
+# acts on THAT PR. Results go back to the PR as commit statuses
+# (factory/lint, factory/security, factory/license, factory/semantic).
+#
+# Replaces the 11 shared-workflows wrappers removed from the SDK repos on
+# 14 Nov: linter, security, license, size, semantic, labeler, assign,
+# welcome, merge, stale, todo.
+#
+# Logs are public: output is limited to file paths, rule ids and counts.
+# Secrets: MONOREPO_PAT (org secret). Values are never printed.
+
+on:
+  repository_dispatch:
+    types: [sdk-ci]
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "SDK repo, owner/name (must be in SDK_LIST)"
+        required: true
+        type: string
+      pr:
+        description: "PR number (optional)"
+        required: false
+        type: string
+  schedule:
+    - cron: '30 2 * * *' # Daily: stale, merge sweep
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sdk-ci-${{ github.event.client_payload.repo || inputs.repo || 'schedule' }}-${{ github.event.client_payload.pr || github.event.client_payload.sha || inputs.pr || github.run_id }}
+  cancel-in-progress: true
+
+env:
+  SDK_LIST: "RokctAI/productivity RokctAI/agent RokctAI/commerce RokctAI/core RokctAI/corporate RokctAI/hardware RokctAI/pay RokctAI/zones RokctAI/Users"
+
+jobs:
+  # Allowlist first: payloads are untrusted, nothing is checked out for a rejected repo.
+  gate:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    outputs:
+      repo: ${{ steps.g.outputs.repo }}
+      event: ${{ steps.g.outputs.event }}
+      pr: ${{ steps.g.outputs.pr }}
+      issue: ${{ steps.g.outputs.issue }}
+      sha: ${{ steps.g.outputs.sha }}
+      before: ${{ steps.g.outputs.before }}
+    steps:
+      - name: Resolve and allowlist
+        id: g
+        env:
+          P_REPO: ${{ github.event.client_payload.repo || inputs.repo }}
+          P_EVENT: ${{ github.event.client_payload.event || 'pull_request' }}
+          P_PR: ${{ github.event.client_payload.pr || inputs.pr }}
+          P_ISSUE: ${{ github.event.client_payload.issue }}
+          P_SHA: ${{ github.event.client_payload.sha }}
+          P_BEFORE: ${{ github.event.client_payload.before }}
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+        run: |
+          ok=0; for r in $SDK_LIST; do [ "$r" = "$P_REPO" ] && ok=1; done
+          [ "$ok" = 1 ] || { echo "Repo not in SDK_LIST, rejected."; exit 1; }
+          [[ "$P_EVENT" =~ ^(pull_request|push|issues)$ ]] || { echo "Bad event."; exit 1; }
+          [[ -z "$P_PR" || "$P_PR" =~ ^[0-9]+$ ]] || { echo "Bad PR number."; exit 1; }
+          [[ -z "$P_ISSUE" || "$P_ISSUE" =~ ^[0-9]+$ ]] || { echo "Bad issue number."; exit 1; }
+          [ -n "$GH_TOKEN" ] || { echo "MONOREPO_PAT is not available to factory."; exit 1; }
+          sha="$P_SHA"
+          if [ -n "$P_PR" ] && [ -z "$sha" ]; then
+            sha=$(gh api "repos/$P_REPO/pulls/$P_PR" --jq .head.sha)
+          fi
+          [[ -z "$sha" || "$sha" =~ ^[0-9a-f]{40}$ ]] || { echo "Bad sha."; exit 1; }
+          [[ -z "$P_BEFORE" || "$P_BEFORE" =~ ^[0-9a-f]{40}$ ]] || { echo "Bad base sha."; exit 1; }
+          {
+            echo "repo=$P_REPO"; echo "event=$P_EVENT"; echo "pr=$P_PR"
+            echo "issue=$P_ISSUE"; echo "sha=$sha"; echo "before=$P_BEFORE"
+          } >> "$GITHUB_OUTPUT"
+          echo "Target: $P_REPO ($P_EVENT) PR=${P_PR:-none} issue=${P_ISSUE:-none}"
+
+  # linter + security + license: code checks on the target repo's commit.
+  checks:
+    needs: gate
+    if: needs.gate.outputs.sha != '' && needs.gate.outputs.event != 'issues'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+      REPO: ${{ needs.gate.outputs.repo }}
+      SHA: ${{ needs.gate.outputs.sha }}
+    steps:
+      - name: Checkout factory (scripts)
+        uses: actions/checkout@v4
+        with:
+          path: factory
+
+      - name: Checkout the SDK repo at the notified commit
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ needs.gate.outputs.repo }}
+          ref: ${{ needs.gate.outputs.sha }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: target
+          persist-credentials: false
+
+      - name: Checkout shared-workflows (validator)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/shared-workflows
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: sw
+          persist-credentials: false
+
+      - name: Mark pending
+        run: |
+          for c in lint security license; do
+            python3 factory/scripts/sdk_ci.py status --repo "$REPO" --sha "$SHA" --context "$c" --state pending --description "Running in factory"
+          done
+
+      - name: Install tools
+        run: |
+          python3 -m pip install --quiet ruff yamllint bandit pip-audit
+          sudo apt-get install -y -qq shellcheck >/dev/null
+          GL=8.21.2
+          curl -sSL "https://github.com/gitleaks/gitleaks/releases/download/v${GL}/gitleaks_${GL}_linux_x64.tar.gz" | tar -xz -C /usr/local/bin gitleaks
+
+      # linter: Python (ruff), YAML, shell, SDK compliance.
+      - name: Lint
+        id: lint
+        working-directory: target
+        run: |
+          fail=0
+          if git ls-files '*.py' | grep -q .; then
+            ruff check --output-format=concise --exclude '.rokct' . || fail=1
+          fi
+          if git ls-files '*.yml' '*.yaml' | grep -q .; then
+            git ls-files -z '*.yml' '*.yaml' | grep -zv '^.rokct/' | xargs -0 -r \
+              yamllint -f parsable -d '{extends: relaxed, rules: {line-length: disable}}' || fail=1
+          fi
+          if git ls-files '*.sh' | grep -q .; then
+            git ls-files -z '*.sh' | grep -zv '^.rokct/' | xargs -0 -r shellcheck -f gcc -S warning || fail=1
+          fi
+          # SDK compliance is report-only (same as factory's weekly SDK Compliance run).
+          if [ -f ../sw/scripts/requirements.txt ]; then python3 -m pip install --quiet -r ../sw/scripts/requirements.txt; fi
+          ( cd ../sw/scripts && python3 sdk_validator.py --compliance --root "$GITHUB_WORKSPACE/target" >/dev/null 2>&1 ) || true
+          if [ -f ../sw/scripts/sdk_errors.log ]; then
+            echo "SDK compliance findings (report-only): $(grep -c '\[ERROR\]' ../sw/scripts/sdk_errors.log || true)"
+          fi
+          echo "fail=$fail" >> "$GITHUB_OUTPUT"
+
+      # security: secret scan (redacted), Bandit, dependency audit.
+      - name: Security
+        id: sec
+        working-directory: target
+        run: |
+          fail=0
+          gitleaks detect --no-git --redact --no-banner --exit-code 1 -s . --report-format json --report-path ../gitleaks.json >/dev/null 2>&1 || fail=1
+          if [ -s ../gitleaks.json ]; then
+            python3 -c "import json;d=json.load(open('../gitleaks.json'));[print(f\"secret? {x['File']}:{x['StartLine']} ({x['RuleID']})\") for x in d]"
+          fi
+          if git ls-files '*.py' | grep -q .; then
+            bandit -q -r . -x ./.rokct,./tests,./test -ll -f custom --msg-template '{relpath}:{line} {test_id} {severity}' || fail=1
+          fi
+          for req in $(git ls-files 'requirements*.txt' '**/requirements*.txt'); do
+            pip-audit -r "$req" --progress-spinner off --format columns || fail=1
+          done
+          echo "fail=$fail" >> "$GITHUB_OUTPUT"
+
+      # license: header check with the repo's .licenserc.yaml or the shared default.
+      - name: License headers
+        id: lic
+        working-directory: target
+        run: |
+          if [ ! -f .licenserc.yaml ]; then
+            sed -n '/cat > .licenserc.generated.yaml <<.EOF./,/^          EOF/p' ../sw/.github/workflows/universal-license.yml \
+              | sed '1d;$d' | sed 's/^          //' > .licenserc.yaml
+          fi
+          fail=0
+          docker run --rm -v "$PWD:/github/workspace" -w /github/workspace \
+            apache/skywalking-eyes:0.4.0 -c .licenserc.yaml header check > ../license.txt 2>&1 || fail=1
+          grep -E 'invalid|ERROR' ../license.txt | grep -oE '[^ ]+\.(py|js|jsx|ts|tsx|dart)' | head -50 | sed 's/^/missing header: /' || true
+          echo "fail=$fail" >> "$GITHUB_OUTPUT"
+
+      - name: Post statuses on the PR commit
+        if: always()
+        env:
+          LINT: ${{ steps.lint.outputs.fail }}
+          SEC: ${{ steps.sec.outputs.fail }}
+          LIC: ${{ steps.lic.outputs.fail }}
+        run: |
+          st() { [ "$1" = "0" ] && echo success || echo failure; }
+          python3 factory/scripts/sdk_ci.py status --repo "$REPO" --sha "$SHA" --context lint --state "$(st "${LINT:-1}")" --description "ruff, yamllint, shellcheck, SDK compliance"
+          python3 factory/scripts/sdk_ci.py status --repo "$REPO" --sha "$SHA" --context security --state "$(st "${SEC:-1}")" --description "gitleaks (redacted), bandit, pip-audit"
+          python3 factory/scripts/sdk_ci.py status --repo "$REPO" --sha "$SHA" --context license --state "$(st "${LIC:-1}")" --description "License headers"
+
+  # size, semantic, assign, welcome, merge: act on the target repo's PR.
+  pr:
+    needs: gate
+    if: needs.gate.outputs.pr != ''
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+      REPO: ${{ needs.gate.outputs.repo }}
+      PR: ${{ needs.gate.outputs.pr }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Size label
+        run: python3 scripts/sdk_ci.py size --repo "$REPO" --pr "$PR"
+      - name: Semantic title
+        if: always()
+        run: python3 scripts/sdk_ci.py semantic --repo "$REPO" --pr "$PR"
+      - name: Assign
+        if: always()
+        run: python3 scripts/sdk_ci.py assign --repo "$REPO" --pr "$PR"
+      - name: Welcome
+        if: always()
+        run: python3 scripts/sdk_ci.py welcome --repo "$REPO" --pr "$PR"
+      - name: Auto-merge
+        if: always()
+        run: python3 scripts/sdk_ci.py merge --repo "$REPO" --pr "$PR"
+
+  # labeler + welcome for issues.
+  issue:
+    needs: gate
+    if: needs.gate.outputs.issue != ''
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/sdk_ci.py labeler --repo "${{ needs.gate.outputs.repo }}" --issue "${{ needs.gate.outputs.issue }}"
+      - if: always()
+        run: python3 scripts/sdk_ci.py welcome --repo "${{ needs.gate.outputs.repo }}" --issue "${{ needs.gate.outputs.issue }}"
+
+  # todo: issues for TODO/FIXME lines added by a push to main.
+  todo:
+    needs: gate
+    if: needs.gate.outputs.event == 'push' && needs.gate.outputs.before != ''
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/sdk_ci.py todo --repo "${{ needs.gate.outputs.repo }}" --before "${{ needs.gate.outputs.before }}" --after "${{ needs.gate.outputs.sha }}"
+
+  # stale + merge sweep: daily across every SDK repo, no notifier needed.
+  daily:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stale and merge sweep
+        run: |
+          for r in $SDK_LIST; do
+            echo "== $r"
+            python3 scripts/sdk_ci.py stale --repo "$r" || echo "stale failed for $r"
+            python3 scripts/sdk_ci.py sweep --repo "$r" || echo "sweep failed for $r"
+          done
