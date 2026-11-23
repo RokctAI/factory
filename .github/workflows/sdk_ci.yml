@@ -89,7 +89,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
       REPO: ${{ needs.gate.outputs.repo }}
       SHA: ${{ needs.gate.outputs.sha }}
     steps:
@@ -116,6 +115,8 @@ jobs:
           persist-credentials: false
 
       - name: Mark pending
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
         run: |
           for c in lint security license; do
             python3 factory/scripts/sdk_ci.py status --repo "$REPO" --sha "$SHA" --context "$c" --state pending --description "Running in factory"
@@ -188,6 +189,7 @@ jobs:
       - name: Post statuses on the PR commit
         if: always()
         env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
           LINT: ${{ steps.lint.outputs.fail }}
           SEC: ${{ steps.sec.outputs.fail }}
           LIC: ${{ steps.lic.outputs.fail }}
