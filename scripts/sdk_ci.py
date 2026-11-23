@@ -15,7 +15,7 @@ Commands (all take --repo owner/name; the token comes from GH_TOKEN):
   labeler  --issue N     version label from the issue body checkboxes
   merge    --pr N        arm auto-merge (allowed authors, not draft, no workflow files)
   sweep                  re-evaluate every open PR for auto-merge
-  stale                  label/close inactive issues and PRs (60 + 7 days)
+  stale                  label inactive issues and PRs after 60 days (never closes)
   todo     --before B --after A   open issues for TODO/FIXME lines added in a push
 
 Values are never printed beyond repo names, numbers and file paths.
@@ -37,7 +37,7 @@ ASSIGN_CANDIDATES = ["RendaniSinyage", "RokctBOT"]
 SEMANTIC_TYPES = ["feat", "fix", "docs", "style", "refactor", "perf", "test",
                   "build", "ci", "chore", "revert"]
 SIZES = [("size/xs", 10), ("size/s", 100), ("size/m", 500), ("size/l", 1000)]
-STALE_DAYS, CLOSE_DAYS = 60, 7
+STALE_DAYS = 60
 STALE_EXEMPT = {"security", "critical", "pinned"}
 TODO_RE = re.compile(r"\b(TODO|FIXME)\b[:\s]+(.{3,120})")
 
@@ -206,10 +206,10 @@ def cmd_stale(a):
         stale_label = "no-pr-activity" if is_pr else "no-issue-activity"
         idle = now - dt.datetime.fromisoformat(it["updated_at"].replace("Z", "+00:00"))
         n = it["number"]
-        if stale_label in labels and idle.days >= CLOSE_DAYS:
-            gh("PATCH", f"/repos/{a.repo}/issues/{n}", {"state": "closed"})
-            print(f"#{n}: closed after {CLOSE_DAYS} more idle days")
-        elif stale_label not in labels and idle.days >= STALE_DAYS:
+        # Label only: nothing is ever closed automatically.
+        if stale_label in labels:
+            continue
+        if idle.days >= STALE_DAYS:
             kind = "PR" if is_pr else "issue"
             add_labels(a.repo, n, [stale_label])
             gh("POST", f"/repos/{a.repo}/issues/{n}/comments", {
