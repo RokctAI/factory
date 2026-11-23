@@ -43,12 +43,6 @@ An autonomous publishing factory that generates, evaluates, improves, and publis
 - `templates/app/`: Scaffold for spawned app repos — see [docs/app-factory.md](docs/app-factory.md).
 - How an approved app idea becomes a repository: [docs/app-spawn-lifecycle.md](docs/app-spawn-lifecycle.md).
 
-## 🤖 Jules Sessions
-
-Jules (the primary AI agent) runs in scheduled sessions:
-- **Daily Writing Sessions**: Weekdays at 08:00 UTC.
-- **Weekend Evaluation Sessions**: Deep audit of all active drafts.
-
 ## 📖 Ledger
 
 The `.rokct/agent/log/ledger.md` is the single source of truth for the system state. **Only CI workflows are permitted to write to the ledger.**

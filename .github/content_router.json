@@ -68,15 +68,6 @@
         ]
       },
       {
-        "workflow": "lesson2_concept_expansion.yml",
-        "paths": [
-          ".rokct/agent/jobs/pending/*.md"
-        ],
-        "branches": [
-          "main"
-        ]
-      },
-      {
         "workflow": "lesson3_rules_check.yml",
         "paths": [
           ".rokct/agent/jobs/pending/*.md",
@@ -223,54 +214,9 @@
         ]
       },
       {
-        "workflow": "level2_concept_expansion.yml",
-        "paths": [
-          ".rokct/agent/jobs/pending/*.md"
-        ],
-        "branches": [
-          "main"
-        ]
-      },
-      {
-        "workflow": "level3_rule_generation.yml",
-        "paths": [
-          ".rokct/agent/jobs/pending/*.md"
-        ],
-        "branches": [
-          "main"
-        ]
-      },
-      {
         "workflow": "level6_publish.yml",
         "paths": [
           "books/drafts/**/metadata.md"
-        ],
-        "branches": [
-          "main"
-        ]
-      },
-      {
-        "workflow": "level6a_visual_summary.yml",
-        "paths": [
-          "books/drafts/**/metadata.md"
-        ],
-        "branches": [
-          "main"
-        ]
-      },
-      {
-        "workflow": "level6b_visual_briefs.yml",
-        "paths": [
-          "books/drafts/**/metadata.md"
-        ],
-        "branches": [
-          "main"
-        ]
-      },
-      {
-        "workflow": "level6c_reel_brief.yml",
-        "paths": [
-          "books/published/**/metadata.md"
         ],
         "branches": [
           "main"
