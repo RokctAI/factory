@@ -9,7 +9,7 @@ mouth box, and near-duplicates across ALL lines are merged.
 
   python pack_persona.py <lines_dir> <face_dir> [--merge 3.5] [--no-lines]
 --no-lines is for stand-in speech (a member with no voice yet): only the shared
-pictures and their shape numbers are kept; line_timing.py adds real lines later.
+pictures are kept; draw the real lines once the member has a voice.
 <lines_dir> holds <category>/<line>/ folders made by face_pack.py. Writes:
   <face_dir>/base.webp, eyes_open|half|shut.webp, m000.webp ...
   <face_dir>/face.json                    size, mouth_box, eyes_box, line list
@@ -74,7 +74,7 @@ def main():
     for i, im in enumerate(kept):
         cv2.imwrite(os.path.join(a.face_dir, f'm{i:03d}.webp'), im, [cv2.IMWRITE_WEBP_QUALITY, 85])
     t0 = T[lines[0]]
-    # each shared picture's shape numbers (mean of the lines' pictures merged into it), for line_timing.py
+    # each shared picture's shape numbers (mean of the lines' pictures merged into it)
     shapes = [np.round(np.mean(v, 0), 2).tolist() if v else None for v in sh]
     if any(v is None for v in shapes):
         shapes = None

@@ -16,8 +16,7 @@ The mouth box starts just below the nostrils: starting higher made the nose
 move oddly (Ray, 2026-11-20).
 
   python face_pack.py lips.mp4 out_dir [--params params.npy] [--merge 3.5]
---params stores each mouth picture's shape numbers (timing.json 'shapes'), so
-line_timing.py can later time new lines against the same pictures.
+--params stores each mouth picture's shape numbers (timing.json 'shapes').
 Needs LP_SRC (LivePortrait, used for the face points and the eye pictures)."""
 import os, sys, json, argparse
 import numpy as np, cv2
