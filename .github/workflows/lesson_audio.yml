@@ -335,6 +335,12 @@ jobs:
           sudo apt-get install -y libcairo2-dev libpango1.0-dev pkg-config
           python -m pip install manim
 
+      # lesson_lines (imported by the exporter) splits text with rokct-media
+      # when MEDIA_ENGINE is rokct-media, so this job needs it too.
+      - name: Install rokct-media (core only)
+        if: env.MEDIA_ENGINE == 'rokct-media'
+        run: python -m pip install --quiet "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${ROKCT_MEDIA_REF}#subdirectory=core/utils/rokct_media"
+
       - name: Export and commit
         env:
           LESSONS_PAT: ${{ secrets.MONOREPO_PAT }}
