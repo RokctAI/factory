@@ -228,11 +228,6 @@ hand-off. The site then fills the document out in the background, from the
 repo's own GitHub metadata rather than from anything the factory sends. So
 this step's job is just to open the door.
 
-**No AI key travels from the factory.** The doctype has an optional
-per-roadmap `jules_api_key`, and the step deliberately does not send it.
-Nothing on that path calls an AI service on any key, so no AI key has to
-exist as a factory secret.
-
 **It cannot fail a spawn.** By the time this runs, the repo exists, `main` is
 pushed and `Build v0` is open — a Frappe outage must not turn that into a red
 workflow. So the script swallows every failure, exits 0 either way, and the

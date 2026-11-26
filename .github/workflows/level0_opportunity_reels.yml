@@ -1,4 +1,4 @@
-name: Level 0 - Opportunity Reels
+name: Level 0 - Clean Expired Opportunity Cards
 on:
   schedule:
     - cron: '0 0 * * 1' # Runs once a week on Monday at 00:00
@@ -67,17 +67,3 @@ jobs:
           else
             echo "No expired cards to remove."
           fi
-
-      - name: Trigger Jules to pull new Opportunities for Reels
-        env:
-          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
-        run: |
-          echo "🚀 Triggering Jules to select top 5 opportunities..."
-
-          SYSTEM_PROMPT="You are a social media manager for RokctAI. Your job is to review opportunity cards from the external opportunities repo and select the top 5 that are furthest from their closing date (plenty of time left to apply). For each selected card, generate a job card in the factory's 'opportunities/' directory containing a social media reel brief designed to hook users and drive them to rokct.ai."
-
-          python .rokct/skills/agent_delegation/scripts/call_jules.py create \
-            --repo "sources/github/RokctAI/opportunities" \
-            --prompt "TASK: Review opportunity cards across grants, tenders, and equity. Select top 5 active opportunities prioritizing those furthest from expiry (plenty of time left). Generate a job card in the factory 'opportunities/' directory for each. The card must include: type (e.g., opportunity.grants), closing_date, and a reel brief containing: element_type, hook_text, call_to_action ('Find more at rokct.ai'). Refer to factory metarules for reel_rules.md." \
-            --title "Weekly Opportunity Reels Generation" \
-            --automation-mode "AUTO_CREATE_PR"

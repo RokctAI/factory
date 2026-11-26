@@ -1,0 +1,210 @@
+name: Media engine parity
+
+# Step 2 of the one-engine move (thread "Unify audio into one rokct-media
+# engine", 2026-11-20): before lesson audio switches from voice_batch to
+# rokct-media (RokctAI/The-Rokct-Protocol core/utils/rokct_media), prove the
+# two give the same result.
+#
+#   text : every lesson part of every speaker is split, respelled and
+#          wildcarded by both; any difference fails (no model, ~2 min).
+#   audio: per approved voice (Voice A, the Grade 9 host, Voice F with its own
+#          diffusion steps), fixed generic test lines are rendered on the same
+#          seeds and gated by both; every take, verdict and finished clip must
+#          be byte-identical.
+#
+# Changes nothing: no commits, no releases, no artifacts. PUBLIC-REPO SAFETY,
+# as lesson_audio.yml: no pull_request trigger, logs carry ids, seeds, hashes
+# and numbers only, the reference clip is verified by sha256 and never leaves
+# the runner.
+
+on:
+  workflow_dispatch:
+    inputs:
+      protocol_ref:
+        description: 'The-Rokct-Protocol commit to test (full sha)'
+        required: false
+        default: ''
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/media_parity.yml'
+      - 'voice_batch/ci/media_parity.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: media-parity-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: '3.11'
+  # rokct-media under test: a protocol commit, never a branch name.
+  PROTOCOL_REF: ${{ inputs.protocol_ref || vars.ROKCT_MEDIA_REF || '530ee9ce413bf38eb21e26e60370006903f4dec9' }}
+  VIBEVOICE_REPO: https://github.com/vibevoice-community/VibeVoice.git
+  VIBEVOICE_REF: 952326ddb264062466a888cf32a5b2f4e803e16e
+  TTS_MODEL: microsoft/VibeVoice-1.5B
+  TTS_MODEL_REVISION: c00898d257e6b46004e3e2866a47534085fb685a
+  ASR_MODEL: small.en
+  ASR_DOWNLOAD_ROOT: /home/runner/.cache/voice-batch-asr
+  RADIO_ADS_ASR_MODEL: ${{ vars.ASR_MODEL || 'base.en' }}
+  HF_HOME: /home/runner/.cache/huggingface
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  TEAM_ROOT: ${{ github.workspace }}/.agent/lms/team
+  VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
+  VOICE_ROOT: ${{ vars.VOICE_ROOT || 'voices' }}
+
+jobs:
+  text:
+    name: Text parity (every lesson part)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out lessons (private; text only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/lessons
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: _lessons
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /school/scripts/CAPS/
+            /school/curriculum/CAPS/*/session/
+            /school/curriculum/CAPS/*/syllabus/*.json
+
+      - name: Check out agent team records (private; no audio)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /lms/team/tutors/CAPS/
+            /lms/team/assistants/CAPS/
+            /lms/team/voices/*.json
+            !*.wav
+            !*.m4a
+            !*.mp3
+            !*.png
+            !*.jpg
+            !*.webp
+            !*.mp4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install rokct-media (core only)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${PROTOCOL_REF}#subdirectory=core/utils/rokct_media"
+
+      - name: Compare
+        run: python voice_batch/ci/media_parity.py text --lessons-root _lessons
+
+  audio:
+    name: Audio parity ${{ matrix.persona }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        # Voice A (approved settings), the Grade 9 host, Voice F (20 steps).
+        persona: [tutor_001, assistant_005, tutor_016]
+    steps:
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android \
+                      /opt/hostedtoolcache/CodeQL /usr/share/swift /usr/local/share/boost
+          df -h / | tail -1
+
+      - uses: actions/checkout@v4
+
+      - name: Check out the renderer (agent, private; scripts only)
+        uses: actions/checkout@v4
+        with:
+          repository: RokctAI/agent
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .agent
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: lms/team/scripts
+
+      - name: Voice paths
+        id: vp
+        run: echo "refs=$(python3 voice_batch/voice_paths.py refs)" >> "$GITHUB_OUTPUT"
+
+      - name: Check out the voice refs (private)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.VOICE_REPO }}
+          token: ${{ secrets.MONOREPO_PAT }}
+          path: .voices
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: ${{ steps.vp.outputs.refs }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: voice_batch/requirements.txt
+
+      - name: Install Python dependencies (CPU torch, pinned VibeVoice fork, rokct-media)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          git clone --quiet "$VIBEVOICE_REPO" "$RUNNER_TEMP/VibeVoice"
+          git -C "$RUNNER_TEMP/VibeVoice" checkout --quiet "$VIBEVOICE_REF"
+          python -m pip install -e "$RUNNER_TEMP/VibeVoice"
+          python -m pip install -r voice_batch/requirements.txt
+          python -m pip install "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${PROTOCOL_REF}#subdirectory=core/utils/rokct_media"
+
+      # SHARED with voice_batch.yml, lesson_audio.yml and radio_ads.yml.
+      - name: Restore model weights
+        id: models
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-whisper-${{ env.RADIO_ADS_ASR_MODEL }}
+          restore-keys: |
+            radio-ads-hf-vibevoice15b-${{ env.TTS_MODEL_REVISION }}-
+
+      - name: Download model weights
+        if: steps.models.outputs.cache-hit != 'true'
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import snapshot_download
+          snapshot_download(os.environ["TTS_MODEL"], revision=os.environ["TTS_MODEL_REVISION"])
+          from vibevoice.processor.vibevoice_processor import VibeVoiceProcessor
+          VibeVoiceProcessor.from_pretrained(os.environ["TTS_MODEL"])
+          PY
+
+      - name: Restore ASR model
+        id: asr
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.ASR_DOWNLOAD_ROOT }}
+          key: voice-batch-asr-faster-whisper-${{ env.ASR_MODEL }}
+
+      - name: Download ASR model
+        if: steps.asr.outputs.cache-hit != 'true'
+        run: python -c "import os; from faster_whisper import WhisperModel; WhisperModel(os.environ['ASR_MODEL'], device='cpu', compute_type='int8', download_root=os.environ['ASR_DOWNLOAD_ROOT'])"
+
+      - name: Render and gate with both engines, then compare
+        env:
+          HF_HUB_OFFLINE: '1'
+          PERSONA: ${{ matrix.persona }}
+        run: |
+          model_path=$(python -c "import os; from huggingface_hub import snapshot_download; print(snapshot_download(os.environ['TTS_MODEL'], revision=os.environ['TTS_MODEL_REVISION'], local_files_only=True))")
+          python voice_batch/ci/media_parity.py audio --persona "$PERSONA" \
+            --voice-root .voices --scripts-dir .agent/lms/team/scripts \
+            --model-path "$model_path" --work "$RUNNER_TEMP/parity"

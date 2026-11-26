@@ -84,11 +84,14 @@ jobs:
           path: _agent
           sparse-checkout: lms/team/scripts
 
+      # Reel soundtrack: rokct-media's music synth (one audio engine).
       - name: Install render tools
+        env:
+          ROKCT_MEDIA_REF: ${{ vars.ROKCT_MEDIA_REF || '496c521681deb68254d4c4dc888aabe4bb0e0e3b' }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
-          pip install pillow requests
+          pip install pillow requests "rokct-media @ git+https://github.com/RokctAI/The-Rokct-Protocol@${ROKCT_MEDIA_REF}#subdirectory=core/utils/rokct_media"
 
       # Page credentials live in Occultation .env/production.env (below the
       # END_FLUTTER marker), never as repo secrets. Values are masked before

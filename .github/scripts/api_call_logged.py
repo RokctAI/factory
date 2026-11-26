@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-"""Rate-limit-aware wrapper around the pin-fetched Groq/Jules delegate.
+"""Rate-limit-aware wrapper around the pin-fetched Groq delegate.
 
 Implements the logging half of docs/lesson-pipeline-scale-hardening-brief.md
 section 3: the shared delegate (fetched from The-Rokct-Protocol at CI start
@@ -23,7 +23,7 @@ lockout surfaces as a generic failed step with no trace in the log. This
 factory-side wrapper adds that visibility WITHOUT touching the Protocol repo:
 
   - it invokes the same scaffold the call sites already use
-    (.rokct/skills/agent_delegation/scripts/call_groq.py / call_jules.py),
+    (.rokct/skills/agent_delegation/scripts/call_groq.py),
     passing all remaining arguments through and echoing stdout/stderr, so
     `RESPONSE=$(python .rokct/skills/.../call_groq.py groq --prompt ...)`
     becomes
@@ -66,7 +66,6 @@ from pathlib import Path
 DEFAULT_USAGE_LOG = ".rokct/agent/log/api_usage.jsonl"
 DELEGATE_BY_API = {
     "groq": ".rokct/skills/agent_delegation/scripts/call_groq.py",
-    "jules": ".rokct/skills/agent_delegation/scripts/call_jules.py",
 }
 RATE_LIMIT_RE = re.compile(r"(?i)\b429\b|too many requests|rate.?limit")
 RETRY_AFTER_RE = re.compile(r"(?i)retry.after[\s:=\"']+([0-9]+(?:\.[0-9]+)?)")
@@ -149,7 +148,7 @@ def annotate_new_records(before_count, retries, run_id, job_id):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(
-        description="Run the pin-fetched Groq/Jules delegate with 429 "
+        description="Run the pin-fetched Groq delegate with 429 "
                     "retry + rate-limit event logging.")
     ap.add_argument("--api", choices=sorted(DELEGATE_BY_API), default="groq",
                     help="Which delegate scaffold to run (default: groq)")
