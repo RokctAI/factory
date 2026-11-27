@@ -152,7 +152,7 @@ class PayloadShapeTests(unittest.TestCase):
     """build_payload on its own — the field names are load-bearing."""
 
     def test_description_is_omitted_when_blank(self):
-        # discover_roadmap_context fills it in from the repo when it is empty.
+        # enrich_roadmap_from_repo fills it in from the repo when it is empty.
         payload = register_roadmap.build_payload(TITLE, REPO_URL, "")
         self.assertNotIn("description", payload)
         self.assertEqual(set(payload), {"title", "source_repository", "status"})
