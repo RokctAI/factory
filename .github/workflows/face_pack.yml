@@ -5,25 +5,26 @@ name: Face pack
 # timing file per greeting / sign-off (tutors) or intro / sign-off / handover
 # line (hosts). The app shows these full screen while the line's audio plays.
 # Code: talking_head/ (still-head LivePortrait, MuseTalk lips, GFPGAN mouth
-# sharpening, face_pack.py, pack_persona.py). CPU only.
+# sharpening, face_pack.py, pack_persona.py, plan_faces.py). CPU only.
 #
-# Each line is drawn from the member's own voice (~20 min per line on CPU),
-# so the mouth follows exactly what they say. A member with no voice yet gets
-# pictures only: their portrait speaks a few lines in a stand-in voice and no
-# timing files are kept (Ray, 2026-11-23: the app plays a lesson only once all
-# its audio exists). Run them again once their voice exists. Timing real lines
-# against stand-in pictures was tried and looked wrong (Ray, 2026-11-20).
+# Each line is drawn from the member's own voice, so the mouth follows exactly
+# what they say. A member with no voice yet gets pictures only: their portrait
+# speaks a few lines in a stand-in voice and no timing files are kept (Ray,
+# 2026-11-23: the app plays a lesson only once all its audio exists). Run them
+# again once their voice exists. Timing real lines against stand-in pictures
+# was tried and looked wrong (Ray, 2026-11-20).
 # One pack per style: 'clear' (Grade R-3, wider mouth) and 'normal' are separate
 # (Ray, 2026-11-20).
 #
-# Portraits and line text come from agent (read-only); voice audio from the
-# voice repo, which is only read. Each member's pack is pushed straight to the
-# voice repo next to their voices (voices/team/<kind>/CAPS/<persona>/face/<style>/)
-# on one rokct/faces-<style>-<run> branch, and the run opens one pull request.
-# No artifacts: on this public repo they would publish members' faces. Logs carry names, counts and sizes only, never
-# line text: this repo is public.
-# A PR touching talking_head/ makes tutor_001's pack from their first greeting
-# and reports its size only (nothing is kept).
+# A line takes about an hour on a GitHub runner, so each line is its own job.
+# Line packs are pushed to the run's branch in the voice repo under
+# face/<style>.lines/, then one job per member merges them into the shared pack
+# (face/<style>/) and removes the line folders. The run opens one pull request.
+# No artifacts: on this public repo they would publish members' faces.
+# Portraits and line text come from agent (read-only); voice audio is only read.
+# Logs carry names, counts and sizes only, never line text: this repo is public.
+# A PR touching talking_head/ draws tutor_001's first greeting and reports its
+# size only (nothing is kept).
 
 on:
   workflow_dispatch:
@@ -71,52 +72,51 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     outputs:
+      draw: ${{ steps.p.outputs.draw }}
       personas: ${{ steps.p.outputs.personas }}
     steps:
-      - name: Check out agent team list (private; read-only)
-        if: inputs.personas == 'all'
-        uses: actions/checkout@v4
-        with:
-          repository: RokctAI/agent
-          token: ${{ secrets.MONOREPO_PAT }}
-          path: .agent
-          fetch-depth: 1
-          persist-credentials: false
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /lms/team/tutors/CAPS/*/appearance/renders/card_1080x1440.webp
-            /lms/team/assistants/CAPS/*/appearance/renders/card_1080x1440.webp
+      - uses: actions/checkout@v4
+
       - id: p
         env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
           PERSONAS: ${{ github.event_name == 'pull_request' && 'tutor_001' || inputs.personas }}
         run: |
-          if [ "$PERSONAS" = all ]; then
-            list=$(ls -d .agent/lms/team/{tutors,assistants}/CAPS/*/appearance/renders/card_1080x1440.webp | cut -d/ -f6)
-          else
-            list=$(echo "$PERSONAS" | tr ',' '\n' | xargs -n1)
-          fi
-          echo "personas=$(echo "$list" | grep -E '^(tutor|assistant)_[0-9]+$' | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
-          echo "$(echo "$list" | wc -l) members" | tee -a "$GITHUB_STEP_SUMMARY"
+          set +x
+          # File lists only (no file contents): who has a portrait and which lines have audio.
+          list() {
+            git clone -q --filter=blob:none --no-checkout --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/$1.git" "$RUNNER_TEMP/$2"
+            git -C "$RUNNER_TEMP/$2" ls-tree -r --name-only HEAD "$3"
+          }
+          list RokctAI/agent agent lms/team > "$RUNNER_TEMP/agent_files.txt"
+          list "$VOICE_REPO" voices "$VOICE_ROOT/team" | sed "s|^$VOICE_ROOT/|voices/|" > "$RUNNER_TEMP/voice_files.txt"
+          (cd talking_head && python3 plan_faces.py "$RUNNER_TEMP/agent_files.txt" "$RUNNER_TEMP/voice_files.txt" \
+             "$PERSONAS" "$STANDIN" "$LINES") > "$RUNNER_TEMP/plan.json" 2> "$RUNNER_TEMP/plan.log"
+          tee -a "$GITHUB_STEP_SUMMARY" < "$RUNNER_TEMP/plan.log"
+          echo "draw=$(jq -c .draw "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+          echo "personas=$(jq -c .personas "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+          echo "$(jq '.draw | length' "$RUNNER_TEMP/plan.json") lines to draw" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "$(jq '.draw | length' "$RUNNER_TEMP/plan.json")" -gt 0 ]
 
-  pack:
+  draw:
+    # One line per job.
     needs: plan
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 300
     strategy:
       fail-fast: false
-      max-parallel: 10
+      max-parallel: 20
       matrix:
-        persona: ${{ fromJSON(needs.plan.outputs.personas) }}
+        include: ${{ fromJSON(needs.plan.outputs.draw) }}
     env:
       PERSONA: ${{ matrix.persona }}
+      LINE: ${{ matrix.line }}
+      WHO: ${{ matrix.who }}
     steps:
       - name: Free disk space
         run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/.ghcup /usr/local/lib/android /opt/hostedtoolcache/CodeQL
 
       - uses: actions/checkout@v4
-
-      - name: Stand-in member
-        run: echo "STANDIN_PERSONA=${STANDIN%%:*}" >> "$GITHUB_ENV"
 
       - name: Check out agent team (private; read-only)
         uses: actions/checkout@v4
@@ -128,25 +128,22 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            /lms/team/tutors/CAPS/${{ env.PERSONA }}/
-            /lms/team/assistants/CAPS/${{ env.PERSONA }}/
-            /lms/team/tutors/CAPS/${{ env.STANDIN_PERSONA || env.PERSONA }}/
-            /lms/team/assistants/CAPS/${{ env.STANDIN_PERSONA || env.PERSONA }}/
+            /lms/team/tutors/CAPS/${{ matrix.persona }}/
+            /lms/team/assistants/CAPS/${{ matrix.persona }}/
+            /lms/team/tutors/CAPS/${{ matrix.who }}/
+            /lms/team/assistants/CAPS/${{ matrix.who }}/
 
-      - name: Check out the voice repo (private; read-only)
+      - name: Check out the voice repo (private)
         uses: actions/checkout@v4
         with:
           repository: ${{ env.VOICE_REPO }}
           token: ${{ secrets.MONOREPO_PAT }}
           path: .voices
           fetch-depth: 1
-          persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            /${{ env.VOICE_ROOT }}/team/tutors/CAPS/${{ env.PERSONA }}/
-            /${{ env.VOICE_ROOT }}/team/assistants/CAPS/${{ env.PERSONA }}/
-            /${{ env.VOICE_ROOT }}/team/tutors/CAPS/${{ env.STANDIN_PERSONA || env.PERSONA }}/
-            /${{ env.VOICE_ROOT }}/team/assistants/CAPS/${{ env.STANDIN_PERSONA || env.PERSONA }}/
+            /${{ env.VOICE_ROOT }}/team/tutors/CAPS/${{ matrix.who }}/
+            /${{ env.VOICE_ROOT }}/team/assistants/CAPS/${{ matrix.who }}/
 
       - uses: actions/setup-python@v5
         with:
@@ -175,69 +172,92 @@ jobs:
           grep -E '^(LP_SRC|MUSE_SRC|GFPGAN_WEIGHTS)=' "$RUNNER_TEMP/setup.out" >> "$GITHUB_ENV"
           python -c "from torchaudio.pipelines import MMS_FA as b; b.get_model()" > /dev/null
 
-      - name: Draw the pictures
+      - name: Draw the line
         run: |
           set +x
-          lines_dir="$RUNNER_TEMP/lines"; mkdir -p "$lines_dir"; txt="$RUNNER_TEMP/text.txt"
+          txt="$RUNNER_TEMP/text.txt"; out="$RUNNER_TEMP/line"
           portrait=$(python talking_head/line_text.py --portrait .agent "$PERSONA")
-          if [ -n "$LINES" ]; then IFS=',' read -ra own <<< "$LINES"
-          else mapfile -t own < <(python talking_head/line_text.py --list .agent "$PERSONA"); fi
-          voiced=()
-          for line in "${own[@]}"; do
-            line=$(echo "$line" | xargs)
-            python talking_head/line_text.py .agent ".voices/$VOICE_ROOT" "$PERSONA" "$line" "$txt" > /dev/null 2>&1 && voiced+=("$line")
-          done
-          if [ ${#voiced[@]} -gt 0 ]; then
-            draw=("${voiced[@]}"); who="$PERSONA"; flag=
-            echo "$PERSONA: ${#voiced[@]} of ${#own[@]} lines drawn from their own voice" | tee -a "$GITHUB_STEP_SUMMARY"
-          elif [ -n "$STANDIN" ]; then
-            IFS=',' read -ra draw <<< "${STANDIN#*:}"; who="$STANDIN_PERSONA"; flag=--no-lines
-            echo "$PERSONA: no voice yet, pictures only from ${#draw[@]} stand-in lines ($who)" | tee -a "$GITHUB_STEP_SUMMARY"
-          else
-            echo "$PERSONA: no voice yet and no stand-in set" >&2; exit 1
-          fi
-          for line in "${draw[@]}"; do
-            line=$(echo "$line" | xargs)
-            files=$(python talking_head/line_text.py .agent ".voices/$VOICE_ROOT" "$who" "$line" "$txt")
-            start=$(date +%s)
-            bash talking_head/make_face_pack.sh "$portrait" "${files##*$'\t'}" "$txt" "$lines_dir/$line" "$STYLE"
-            echo "$line: $(( $(date +%s) - start ))s" | tee -a "$GITHUB_STEP_SUMMARY"
-          done
-          python talking_head/pack_persona.py "$lines_dir" "$RUNNER_TEMP/face/$PERSONA" $flag | tee -a "$GITHUB_STEP_SUMMARY"
+          files=$(python talking_head/line_text.py .agent ".voices/$VOICE_ROOT" "$WHO" "$LINE" "$txt")
+          start=$(date +%s)
+          bash talking_head/make_face_pack.sh "$portrait" "${files##*$'\t'}" "$txt" "$out" "$STYLE"
           rm -f "$txt"
+          src=$([ "$WHO" = "$PERSONA" ] && echo "own voice" || echo "stand-in")
+          echo "$PERSONA $LINE ($src): $(ls "$out"/m*.webp | wc -l) mouth pictures, $(( $(date +%s) - start ))s" | tee -a "$GITHUB_STEP_SUMMARY"
 
-      - name: Commit the pack next to the voices (shared branch in the voice repo)
-        # Packs are pushed straight to the private voice repo: an artifact on this
-        # public repo would publish members' faces.
+      - name: Push the line pack to the run's branch in the voice repo
+        # Straight to the private voice repo: an artifact on this public repo
+        # would publish members' faces.
         if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
         run: |
           set +x
           kind=$([[ "$PERSONA" == tutor_* ]] && echo tutors || echo assistants)
-          dest="$VOICE_ROOT/team/$kind/CAPS/$PERSONA/face/$STYLE"
+          dest="$VOICE_ROOT/team/$kind/CAPS/$PERSONA/face/$STYLE.lines/$LINE"
           branch="rokct/faces-$STYLE-$GITHUB_RUN_ID"
           cd .voices
           git config user.name "rokct-factory"; git config user.email "factory@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${VOICE_REPO}.git"
-          git sparse-checkout add "/$dest/"
+          git sparse-checkout set --no-cone "/$dest/"
           if git fetch -q --depth 1 origin "$branch" 2>/dev/null; then git checkout -q -B "$branch" FETCH_HEAD; else git checkout -q -b "$branch"; fi
-          rm -rf "$dest"; mkdir -p "$dest"; cp -r "$RUNNER_TEMP/face/$PERSONA/." "$dest/"
+          mkdir -p "$dest"; cp -r "$RUNNER_TEMP/line/." "$dest/"
           git add -A "$dest"
-          git commit -q -m "Face pack: $PERSONA $STYLE ($(ls "$dest"/m*.webp | wc -l) mouth pictures) [skip ci]"
-          for try in 1 2 3 4 5 6; do
-            git push -q origin "HEAD:$branch" && break
-            sleep $(( try * 7 )); git fetch -q --depth 20 origin "$branch" && git rebase -q FETCH_HEAD
+          git commit -q -m "Face line: $PERSONA $LINE $STYLE [skip ci]"
+          for try in 1 2 3 4 5 6 7 8; do
+            git push -q origin "HEAD:$branch" && exit 0
+            sleep $(( try * 5 + RANDOM % 10 ))
+            git fetch -q --depth 20 origin "$branch" && git rebase -q FETCH_HEAD
           done
-          echo "$PERSONA: $(du -sk "$dest" | cut -f1) KB on $branch" | tee -a "$GITHUB_STEP_SUMMARY"
+          exit 1
 
-      - name: Pack size (PR test; nothing is kept)
-        if: github.event_name == 'pull_request'
+  pack:
+    # One job per member: merge their line packs into the shared pack.
+    needs: [plan, draw]
+    if: always() && github.event_name != 'pull_request' && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 1   # all push to the same branch
+      matrix:
+        member: ${{ fromJSON(needs.plan.outputs.personas) }}
+    env:
+      PERSONA: ${{ matrix.member.persona }}
+      OWN: ${{ matrix.member.own }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Merge the member's lines on the run's branch
+        env:
+          GH_TOKEN: ${{ secrets.MONOREPO_PAT }}
         run: |
-          echo "$PERSONA: $(ls "$RUNNER_TEMP/face/$PERSONA"/m*.webp | wc -l) mouth pictures, $(du -sk "$RUNNER_TEMP/face/$PERSONA" | cut -f1) KB" | tee -a "$GITHUB_STEP_SUMMARY"
+          set +x
+          python -m pip install -q numpy opencv-python-headless
+          kind=$([[ "$PERSONA" == tutor_* ]] && echo tutors || echo assistants)
+          face="$VOICE_ROOT/team/$kind/CAPS/$PERSONA/face"
+          branch="rokct/faces-$STYLE-$GITHUB_RUN_ID"
+          git clone -q --depth 1 --filter=blob:none --sparse -b "$branch" \
+            "https://x-access-token:${GH_TOKEN}@github.com/${VOICE_REPO}.git" "$RUNNER_TEMP/v" \
+            || { echo "$PERSONA: no lines were pushed" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; }
+          cd "$RUNNER_TEMP/v"
+          git sparse-checkout set --no-cone "/$face/"
+          lines="$face/$STYLE.lines"; pack="$face/$STYLE"
+          [ -d "$lines" ] || { echo "$PERSONA: no lines were drawn" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1; }
+          n=$(find "$lines" -name timing.json | wc -l)
+          flag=$([ "$OWN" = true ] && echo "" || echo --no-lines)
+          [ ! -e "$pack" ] || git rm -rq -- "$pack"
+          python "$GITHUB_WORKSPACE/talking_head/pack_persona.py" "$lines" "$pack" $flag | tail -1 | sed "s/^/$PERSONA: /" | tee -a "$GITHUB_STEP_SUMMARY"
+          git rm -rq -- "$lines"
+          git config user.name "rokct-factory"; git config user.email "factory@users.noreply.github.com"
+          git add -A "$pack"
+          git commit -q -m "Face pack: $PERSONA $STYLE from $n lines ($(ls "$pack"/m*.webp | wc -l) mouth pictures) [skip ci]"
+          git push -q origin "HEAD:$branch"
 
   pr:
-    # One pull request in the voice repo for every pack this run pushed.
+    # One pull request in the voice repo for every pack this run made.
     needs: pack
     if: always() && github.event_name != 'pull_request' && needs.pack.result != 'skipped'
     runs-on: ubuntu-latest
@@ -248,9 +268,16 @@ jobs:
         run: |
           set +x
           branch="rokct/faces-$STYLE-$GITHUB_RUN_ID"
-          n=$(gh api "repos/$VOICE_REPO/compare/main...$branch" --jq .ahead_by 2>/dev/null || echo 0)
-          [ "$n" -gt 0 ] || { echo "no packs were pushed"; exit 1; }
+          git clone -q --depth 1 --filter=blob:none --no-checkout -b "$branch" \
+            "https://x-access-token:${GH_TOKEN}@github.com/${VOICE_REPO}.git" "$RUNNER_TEMP/v" \
+            || { echo "nothing was pushed"; exit 1; }
+          files=$(git -C "$RUNNER_TEMP/v" ls-tree -r --name-only HEAD "$VOICE_ROOT/team")
+          n=$(grep -c "/face/$STYLE/face.json$" <<< "$files" || true)
+          left=$(grep -c "/face/$STYLE.lines/" <<< "$files" || true)
+          [ "$n" -gt 0 ] || { echo "no packs were made"; exit 1; }
+          note=""
+          [ "$left" -eq 0 ] || note=" Some line folders ($STYLE.lines) are still on the branch because a member's merge failed; they must be removed before merging."
           gh api -X POST "repos/$VOICE_REPO/pulls" -f head="$branch" -f base=main \
             -f title="Face packs ($STYLE): $n members" \
-            -f body="Talking-face pictures made by factory face_pack.yml (run ${GITHUB_RUN_ID}): per member shared mouth pictures, base and eye pictures, and a timing file per line that has a voice. Voice files are unchanged." --jq .html_url \
-            | tee -a "$GITHUB_STEP_SUMMARY"
+            -f body="Talking-face pictures made by factory face_pack.yml (run ${GITHUB_RUN_ID}): per member shared mouth pictures, base and eye pictures, and a timing file per line drawn from the member's own voice. Members with no voice yet have pictures only.${note} Voice files are unchanged." \
+            --jq .html_url | tee -a "$GITHUB_STEP_SUMMARY"
