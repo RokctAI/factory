@@ -50,14 +50,18 @@ tried and dropped: the mouth drifted off the words.
 source <(bash talking_head/setup.sh ~/.talking_head | sed 's/^/export /')
 ```
 
-`.github/workflows/face_pack.yml` (manual run: persona, style, lines) makes a
-member's pack (from their own voice, or pictures only from the stand-in lines
-when they have no voice yet) and opens a pull request in the private voice repo next to their
-voices (`voices/team/<kind>/CAPS/<persona>/face/<style>/`). Nothing is
-committed here. Logs carry names, counts and sizes only.
+`.github/workflows/face_pack.yml` (manual run: members or `all`, style, lines)
+makes members' packs and opens one pull request in the private voice repo next
+to their voices (`voices/team/<kind>/CAPS/<persona>/face/<style>/`).
+`plan_faces.py` decides from the repos' file lists which lines each member is
+drawn from (their own voice, or the stand-in lines when they have no voice
+yet). Each line is its own job, since a line takes about an hour on a GitHub
+runner; a last job per member merges the lines. Nothing is committed here.
+Logs carry names, counts and sizes only.
 
 **Speed:** about 6 s of CPU per frame (LivePortrait ~3.5 s, GFPGAN ~2.8 s,
-plus MuseTalk), so roughly 15-25 minutes per 6-second line.
+plus MuseTalk), so roughly 15-25 minutes per 6-second line in the sandbox and
+about an hour on a GitHub runner.
 
 **Engines** (pinned in `setup.sh`):
 - LivePortrait (KwaiVGI); face detector InsightFace buffalo_l.
