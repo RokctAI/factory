@@ -89,7 +89,7 @@ def build_payload(title, repo_url, description="", status=DEFAULT_STATUS):
     Field names are the doctype's own: `title` (which is also the autoname
     source, so it becomes the document name), `source_repository` and `status`
     are the three reqd fields; `description` is optional and only sent when we
-    have one, since `discover_roadmap_context` fills it in from the repo when
+    have one, since the Roadmap's `enrich_roadmap_from_repo` job fills it in from the repo when
     it is blank.
     """
     payload = {
