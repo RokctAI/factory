@@ -5,16 +5,14 @@ name: Face pack
 # timing file per greeting / sign-off (tutors) or intro / sign-off / handover
 # line (hosts). The app shows these full screen while the line's audio plays.
 # Code: talking_head/ (still-head LivePortrait, MuseTalk lips, GFPGAN mouth
-# sharpening, face_pack.py, pack_persona.py, line_timing.py). CPU only.
+# sharpening, face_pack.py, pack_persona.py). CPU only.
 #
-# Two ways to draw the pictures:
-#  - standin set (default): the member's portrait speaks a few stand-in lines
-#    from another member's approved voice (Ray, 2026-11-20), so members with no
-#    voice yet get pictures too. Their own lines are then timed against those
-#    pictures in seconds (line_timing.py); lines without audio yet are skipped
-#    and can be added later.
-#  - standin empty: every one of the member's own lines is drawn from their own
-#    voice (slow: ~20 min per line).
+# Each line is drawn from the member's own voice (~20 min per line on CPU),
+# so the mouth follows exactly what they say. A member with no voice yet gets
+# pictures only: their portrait speaks a few lines in a stand-in voice and no
+# timing files are kept (Ray, 2026-11-23: the app plays a lesson only once all
+# its audio exists). Run them again once their voice exists. Timing real lines
+# against stand-in pictures was tried and looked wrong (Ray, 2026-11-20).
 # One pack per style: 'clear' (Grade R-3, wider mouth) and 'normal' are separate
 # (Ray, 2026-11-20).
 #
@@ -24,8 +22,8 @@ name: Face pack
 # on one rokct/faces-<style>-<run> branch, and the run opens one pull request.
 # No artifacts: on this public repo they would publish members' faces. Logs carry names, counts and sizes only, never
 # line text: this repo is public.
-# A PR touching talking_head/ makes tutor_001's pack from one stand-in line and
-# reports its size only (nothing is kept).
+# A PR touching talking_head/ makes tutor_001's pack from their first greeting
+# and reports its size only (nothing is kept).
 
 on:
   workflow_dispatch:
@@ -39,10 +37,10 @@ on:
         options: [normal, clear]
         default: normal
       standin:
-        description: 'Stand-in voice lines that draw the pictures, as <persona>:<line>,<line>. Empty = draw each own line from its own voice (slow)'
+        description: 'For members with no voice yet: stand-in lines that draw their pictures, as <persona>:<line>,<line>'
         default: 'tutor_001:greetings/01,greetings/02,greetings/03,signoffs/01'
       lines:
-        description: 'Own lines to time, comma-separated (greetings/01, intro/new ...); empty = all of them'
+        description: 'Own lines to draw, comma-separated (greetings/01, intro/new ...); empty = all of them'
         default: ''
   pull_request:
     paths:
@@ -59,7 +57,7 @@ concurrency:
 env:
   PYTHON_VERSION: '3.11'
   STYLE: ${{ inputs.style || 'normal' }}
-  STANDIN: ${{ github.event_name == 'pull_request' && 'tutor_001:greetings/01' || inputs.standin }}
+  STANDIN: ${{ inputs.standin }}
   LINES: ${{ github.event_name == 'pull_request' && 'greetings/01' || inputs.lines }}
   VOICE_REPO: ${{ vars.VOICE_REPO || 'RokctAI/lessons' }}
   VOICE_ROOT: ${{ vars.VOICE_ROOT || 'voices' }}
@@ -158,7 +156,7 @@ jobs:
 
       - name: Install
         run: |
-          sudo apt-get install -y -qq ffmpeg > /dev/null
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           python -m pip install --upgrade pip
           python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
           python -m pip install -r talking_head/requirements.txt
@@ -184,11 +182,19 @@ jobs:
           portrait=$(python talking_head/line_text.py --portrait .agent "$PERSONA")
           if [ -n "$LINES" ]; then IFS=',' read -ra own <<< "$LINES"
           else mapfile -t own < <(python talking_head/line_text.py --list .agent "$PERSONA"); fi
-          if [ -n "$STANDIN" ]; then
+          voiced=()
+          for line in "${own[@]}"; do
+            line=$(echo "$line" | xargs)
+            python talking_head/line_text.py .agent ".voices/$VOICE_ROOT" "$PERSONA" "$line" "$txt" > /dev/null 2>&1 && voiced+=("$line")
+          done
+          if [ ${#voiced[@]} -gt 0 ]; then
+            draw=("${voiced[@]}"); who="$PERSONA"; flag=
+            echo "$PERSONA: ${#voiced[@]} of ${#own[@]} lines drawn from their own voice" | tee -a "$GITHUB_STEP_SUMMARY"
+          elif [ -n "$STANDIN" ]; then
             IFS=',' read -ra draw <<< "${STANDIN#*:}"; who="$STANDIN_PERSONA"; flag=--no-lines
-            echo "$PERSONA: pictures from ${#draw[@]} stand-in lines ($who)" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "$PERSONA: no voice yet, pictures only from ${#draw[@]} stand-in lines ($who)" | tee -a "$GITHUB_STEP_SUMMARY"
           else
-            draw=("${own[@]}"); who="$PERSONA"; flag=
+            echo "$PERSONA: no voice yet and no stand-in set" >&2; exit 1
           fi
           for line in "${draw[@]}"; do
             line=$(echo "$line" | xargs)
@@ -198,16 +204,6 @@ jobs:
             echo "$line: $(( $(date +%s) - start ))s" | tee -a "$GITHUB_STEP_SUMMARY"
           done
           python talking_head/pack_persona.py "$lines_dir" "$RUNNER_TEMP/face/$PERSONA" $flag | tee -a "$GITHUB_STEP_SUMMARY"
-          if [ -n "$STANDIN" ]; then
-            for line in "${own[@]}"; do
-              line=$(echo "$line" | xargs)
-              if files=$(python talking_head/line_text.py .agent ".voices/$VOICE_ROOT" "$PERSONA" "$line" "$txt" 2>/dev/null); then
-                python talking_head/line_timing.py "$RUNNER_TEMP/face/$PERSONA" "${files##*$'\t'}" "$txt" "$line" --style "$STYLE" | tee -a "$GITHUB_STEP_SUMMARY"
-              else
-                echo "$line: no voice yet (time it later with line_timing.py)" | tee -a "$GITHUB_STEP_SUMMARY"
-              fi
-            done
-          fi
           rm -f "$txt"
 
       - name: Commit the pack next to the voices (shared branch in the voice repo)

@@ -39,6 +39,11 @@ There is one pack per style (`normal` and `clear`).
 line the way the app plays it. Any head movement is applied to the whole
 composed picture, so eyes and mouth always move with the head.
 
+Members with no voice yet get pictures only (`--no-lines`): their portrait
+speaks a few stand-in lines and no timing files are kept. Their real lines are
+drawn once their voice exists. Timing real lines against stand-in pictures was
+tried and dropped: the mouth drifted off the words.
+
 ## Running it
 
 ```
@@ -46,7 +51,8 @@ source <(bash talking_head/setup.sh ~/.talking_head | sed 's/^/export /')
 ```
 
 `.github/workflows/face_pack.yml` (manual run: persona, style, lines) makes a
-member's pack and opens a pull request in the private voice repo next to their
+member's pack (from their own voice, or pictures only from the stand-in lines
+when they have no voice yet) and opens a pull request in the private voice repo next to their
 voices (`voices/team/<kind>/CAPS/<persona>/face/<style>/`). Nothing is
 committed here. Logs carry names, counts and sizes only.
 

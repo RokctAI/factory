@@ -16,8 +16,7 @@ The mouth box starts just below the nostrils: starting higher made the nose
 move oddly (Ray, 2026-11-20).
 
   python face_pack.py lips.mp4 out_dir [--params params.npy] [--merge 3.5]
---params stores each mouth picture's shape numbers (timing.json 'shapes'), so
-line_timing.py can later time new lines against the same pictures.
+--params stores each mouth picture's shape numbers (timing.json 'shapes').
 Needs LP_SRC (LivePortrait, used for the face points and the eye pictures)."""
 import os, sys, json, argparse
 import numpy as np, cv2
@@ -48,17 +47,19 @@ def face_points(img):
     return f[0]['kps'] if isinstance(f[0], dict) else f[0].kps
 
 
-def mouth_box(F, base, top):
-    """Where the frames really change (largest moving blob), from `top` down."""
+def mouth_box(F, base, top, bottom):
+    """Where the frames really change (largest moving blob), between `top` and `bottom`.
+    `bottom` (below the chin) keeps changes on the collar or shirt out of the box:
+    they made a big box whose pictures looked alike, so nearly all were merged."""
     d = np.percentile(np.abs(F.astype(np.int16) - base[None].astype(np.int16)).sum(3), 90, axis=0)
-    d[:top] = 0
+    d[:top] = 0; d[bottom:] = 0
     m = cv2.morphologyEx((d > 70).astype(np.uint8), cv2.MORPH_CLOSE, np.ones((15, 15), np.uint8))
     n, _, st, _ = cv2.connectedComponentsWithStats(m)
     if n < 2:
         raise SystemExit('the mouth never moves in this clip')
     k = 1 + int(np.argmax(st[1:, 4])); x0, y0, w, h = st[k, :4]
     H, W = base.shape[:2]; s = W / 584.          # margins were tuned on a 584-wide face
-    return [int(max(0, x0 - 30 * s)), int(top), int(min(W, x0 + w + 30 * s)), int(min(H, y0 + h + 55 * s))]
+    return [int(max(0, x0 - 30 * s)), int(top), int(min(W, x0 + w + 30 * s)), int(min(H, bottom, y0 + h + 55 * s))]
 
 
 def eye_pictures(base_path, kps, out):
@@ -101,7 +102,8 @@ def main():
     kps = face_points(base)
     nose_y, mouth_y = kps[2, 1], kps[3:5, 1].mean()
     top = int(nose_y + 0.45 * (mouth_y - nose_y))          # just under the nostrils
-    box = mouth_box(F, base, top)
+    bottom = int(mouth_y + 2.4 * (mouth_y - nose_y))       # below the chin, room for an open jaw
+    box = mouth_box(F, base, top, bottom)
     P = F[:, box[1]:box[3], box[0]:box[2]]
     small = lambda im: cv2.resize(im, (48, 36), interpolation=cv2.INTER_AREA).astype(float)
     kept, ks, seq = [], [], []
