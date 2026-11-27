@@ -24,6 +24,7 @@ import hashlib
 import io
 import json
 import sys
+import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -67,6 +68,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--max", type=int, default=200)
     ap.add_argument("--only", default="")
     ap.add_argument("--commit", action="store_true")
+    ap.add_argument("--minutes", type=float, default=0,
+                    help="stop starting new exports after this many minutes (0 = no limit), "
+                         "so the job commits its work before its timeout")
     args = ap.parse_args(argv)
     lessons_root = Path(args.lessons_root).resolve()
     caps = L.curriculum_root(lessons_root)
@@ -75,7 +79,11 @@ def main(argv: list[str] | None = None) -> int:
             if (not only or str(f.relative_to(caps)) in only) and stale(f)]
     print(f"{len(todo)} lesson(s) need a Manim export; doing up to {args.max}")
     done, failed = [], 0
+    t0 = time.monotonic()
     for f in todo[:args.max]:
+        if args.minutes and time.monotonic() - t0 > args.minutes * 60:
+            print(f"time budget of {args.minutes:g} min used; stopping here")
+            break
         rel = str(f.relative_to(caps))
         try:
             n = export(lessons_root, f)
@@ -91,7 +99,7 @@ def main(argv: list[str] | None = None) -> int:
             continue
         done.append(rel)
         print(f"{rel}: {n} primitive(s)")
-    print(f"exported {len(done)}, failed {failed}, left {max(0, len(todo) - args.max)}")
+    print(f"exported {len(done)}, failed {failed}, left {len(todo) - len(done)}")
     if args.commit and done:
         import lesson_stems
         paths = [f"school/curriculum/CAPS/{rel}/{EXPORT}" for rel in done]
