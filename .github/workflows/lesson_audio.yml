@@ -345,4 +345,4 @@ jobs:
         env:
           LESSONS_PAT: ${{ secrets.MONOREPO_PAT }}
           ONLY: ${{ inputs.only }}
-        run: python voice_batch/lesson_animations.py --lessons-root _lessons --max 300 --only "$ONLY" --commit
+        run: python -u voice_batch/lesson_animations.py --lessons-root _lessons --max 300 --minutes 70 --only "$ONLY" --commit
