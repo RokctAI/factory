@@ -3,7 +3,7 @@ name: SDK Protocol Sync
 # Protocol upkeep for PRIVATE SDK repos, run on free public-repo minutes.
 # Clones the SDK repo, runs its .rokct/initiate.py (and end_protocol.py),
 # normalises whitespace under .rokct/ and .github/workflows/, and opens a
-# DRAFT PR on the SDK repo. The SDK repo itself never runs these steps.
+# ready (non-draft) PR on the SDK repo. The SDK repo itself never runs these steps.
 #
 # Triggers:
 #   repository_dispatch  event_type sdk-protocol-sync, client_payload {repo, ref, sha}
@@ -179,7 +179,7 @@ jobs:
       - name: Content guard
         run: python3 scripts/sync_guard.py sdk
 
-      - name: Commit, push, and open or update draft PR
+      - name: Commit, push, and open or update ready PR
         id: pr
         working-directory: sdk
         env:
@@ -242,9 +242,10 @@ jobs:
 
           if [ -n "$existing" ]; then
             gh pr edit "$existing" --repo "$REPO" --body-file "$RUNNER_TEMP/pr_body.md" >/dev/null
+            gh pr ready "$existing" --repo "$REPO" >/dev/null 2>&1 || true
             url=$(gh pr view "$existing" --repo "$REPO" --json url --jq .url)
           else
-            url=$(gh pr create --repo "$REPO" --draft --base main --head "$branch" \
+            url=$(gh pr create --repo "$REPO" --base main --head "$branch" \
               --title "chore(rokct): protocol sync and whitespace fix" \
               --body-file "$RUNNER_TEMP/pr_body.md")
           fi
@@ -264,7 +265,7 @@ jobs:
             if [ "${NO_CHANGES:-}" = "true" ]; then
               echo "- Result: no changes"
             elif [ -n "${PR_URL:-}" ]; then
-              echo "- Result: draft PR $PR_URL"
+              echo "- Result: PR $PR_URL"
             else
               echo "- Result: failed before PR; see log"
             fi
